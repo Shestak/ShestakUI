@@ -307,6 +307,7 @@ local function LoadSkin()
 
 				-- Background
 				frame.Background:Kill()
+				frame.BGAtlas:Kill()
 				frame.IconBorder:Kill()
 				frame.glow:Kill()
 				frame.shine:Kill()
@@ -545,7 +546,7 @@ local function LoadSkin()
 		end
 	end
 	hooksecurefunc("AlertFrame_SetGarrisonMissionAlertFrameAnchors", SkinGarrisonMissionPopUp)
-	
+
 	local function SkinGarrisonFollowerPopUp()
 		local frame = _G["GarrisonFollowerAlertFrame"]
 

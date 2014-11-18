@@ -13,7 +13,7 @@ T.RaidBuffs = {
 		{33763, "TOPLEFT", {0.4, 0.8, 0.2}},				-- Lifebloom
 		{48438, "BOTTOMRIGHT", {0.8, 0.4, 0}},				-- Wild Growth
 		{102342, "LEFT", {0.45, 0.3, 0.2}, true},			-- Ironbark
-		{102351, "RIGHT", {0.4, 0.9, 0.4}},					-- Cenarion Ward
+		{155777, "RIGHT", {0.4, 0.9, 0.4}},					-- Rejuvenation (Germination)
 	},
 	MONK = {
 		{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},				-- Renewing Mist
@@ -25,6 +25,7 @@ T.RaidBuffs = {
 		{53563, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Light
 		{20925, "BOTTOMLEFT", {0.9, 0.9, 0.1}},				-- Sacred Shield
 		{114163, "BOTTOMLEFT", {0.9, 0.6, 0.4}},			-- Eternal Flame
+		{157007, "TOPLEFT", {1, 0.5, 0.2}},					-- Beacon of Insight
 		{1022, "BOTTOMRIGHT", {0.2, 0.2, 1}, true},			-- Hand of Protection
 		{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},		-- Hand of Freedom
 		{1038, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},		-- Hand of Salvation
@@ -93,6 +94,7 @@ T.RaidDebuffs = {
 -- Highmaul
 	-- The Butcher
 	[SpellName(156152)] = 3,	-- Gushing Wounds
+	[SpellName(156147)] = 3,	-- The Cleaver
 	-- Kargath Bladefist
 	[SpellName(159178)] = 3,	-- Open Wounds (Tank switch)
 	[SpellName(159113)] = 3,	-- Impale (DoT)
@@ -101,10 +103,18 @@ T.RaidDebuffs = {
 	[SpellName(167200)] = 3,	-- Arcane Wound (DoT)
 	-- Ko'ragh
 	[SpellName(161242)] = 3,	-- Caustic Energy (DoT)
+	[SpellName(162184)] = 3,	-- Expel Magic: Shadow
 	-- Tectus
+	[SpellName(162892)] = 3,	-- Petrification
 	-- Brackenspore
+	[SpellName(163241)] = 3,	-- Rot (Stacks)
 	-- Imperator Mar'gok
 	[SpellName(158605)] = 3,	-- Mark of Chaos
+	[SpellName(164176)] = 3,	-- Mark of Chaos: Displacement
+	[SpellName(164178)] = 3,	-- Mark of Chaos: Fortification
+	[SpellName(164191)] = 3,	-- Mark of Chaos: Replication
+	[SpellName(157763)] = 3,	-- Fixate
+	[SpellName(158553)] = 3,	-- Crush Armor (Stacks)
 -----------------------------------------------------------------
 -- Pandaria
 -----------------------------------------------------------------

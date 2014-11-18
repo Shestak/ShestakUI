@@ -250,8 +250,6 @@ C["filger_spells"] = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Shroud of Purgatory
-			{spellID = 116888, filter = "ICD", trigger = "BUFF", duration = 180},
 		},
 	},
 	["DRUID"] = {
@@ -438,8 +436,6 @@ C["filger_spells"] = {
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Lightweave (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
 			-- Legendary Meta Gems
@@ -605,8 +601,6 @@ C["filger_spells"] = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Lightweave
-			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Purified Bindings of Immerseus (Intellect, Proc)
 			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
@@ -943,8 +937,6 @@ C["filger_spells"] = {
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Lightweave (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Legendary Meta Gems
 			-- Sinister Primal Diamond (Caster DPS)
@@ -1109,8 +1101,6 @@ C["filger_spells"] = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Lightweave
-			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Purified Bindings of Immerseus (Intellect, Proc)
 			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
@@ -1139,6 +1129,8 @@ C["filger_spells"] = {
 			{spellID = 122783, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Energizing Brew
 			{spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thunder Focus Tea
+			{spellID = 116680, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Momentum
 			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -1152,6 +1144,12 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].player_proc_icon)},
 
 			-- Buffs
+			-- Elusive Brew
+			{spellID = 128939, unitID = "player", caster = "player", filter = "BUFF", absID = true, count = 12},
+			-- Mana Tea
+			{spellID = 115867, unitID = "player", caster = "player", filter = "BUFF", absID = true, count = 18},
+			-- Tigereye Brew
+			{spellID = 125195, unitID = "player", caster = "player", filter = "BUFF", absID = true, count = 10},
 			-- Tiger Power
 			{spellID = 125359, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combo Breaker: Blackout Kick
@@ -1164,6 +1162,8 @@ C["filger_spells"] = {
 			{spellID = 118674, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Serpent's Zeal
 			{spellID = 127722, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tiger Strikes
+			{spellID = 120273, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- General
@@ -1250,8 +1250,6 @@ C["filger_spells"] = {
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Lightweave (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
 			-- Legendary Meta Gems
@@ -1316,6 +1314,8 @@ C["filger_spells"] = {
 			{spellID = 119392, filter = "CD"},
 			-- Ring of Peace
 			{spellID = 116844, filter = "CD"},
+			-- Thunder Focus Tea
+			{spellID = 116680, filter = "CD"},
 			-- Dampen Harm
 			{spellID = 122278, filter = "CD"},
 			-- Flying Serpent Kick
@@ -1518,8 +1518,6 @@ C["filger_spells"] = {
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Lightweave (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
 			-- Legendary Meta Gems
@@ -1752,8 +1750,6 @@ C["filger_spells"] = {
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Lightweave (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
 			-- Legendary Meta Gems
@@ -1921,8 +1917,6 @@ C["filger_spells"] = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Lightweave
-			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Purified Bindings of Immerseus (Intellect, Proc)
 			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
@@ -2303,8 +2297,6 @@ C["filger_spells"] = {
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Lightweave (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 
 			-- Legendary Meta Gems
@@ -2448,8 +2440,6 @@ C["filger_spells"] = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Lightweave
-			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Purified Bindings of Immerseus (Intellect, Proc)
 			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
@@ -2550,8 +2540,6 @@ C["filger_spells"] = {
 			-- Caster General
 			-- Jade Spirit (Intellect + Spirit)
 			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Lightweave (Intellect)
-			{spellID = 125487, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Legendary Meta Gems
 			-- Sinister Primal Diamond (Caster DPS)
@@ -2592,7 +2580,7 @@ C["filger_spells"] = {
 			-- Immolate
 			{spellID = 348, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Unstable Affliction
-			{spellID = 30108, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 30108, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
 			-- Haunt
 			{spellID = 48181, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
@@ -2679,8 +2667,6 @@ C["filger_spells"] = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
-			-- Lightweave
-			{spellID = 125487, filter = "ICD", trigger = "BUFF", duration = 60},
 			-- Purified Bindings of Immerseus (Intellect, Proc)
 			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
@@ -2717,6 +2703,8 @@ C["filger_spells"] = {
 			{spellID = 12292, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Recklesness
 			{spellID = 1719, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shield Charge
+			{spellID = 169667, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sweeping Strikes
 			{spellID = 12328, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Victorious
@@ -2743,6 +2731,8 @@ C["filger_spells"] = {
 			{spellID = 122510, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Meat Cleaver
 			{spellID = 85739, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Unyielding Strikes
+			{spellID = 169686, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enrage
 			{spellID = 12880, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rude Interruption
@@ -2875,8 +2865,6 @@ C["filger_spells"] = {
 			{spellID = 1160, filter = "CD"},
 			-- Enraged Regeneration
 			{spellID = 55694, filter = "CD"},
-			-- Commanding Shout
-			{spellID = 469, filter = "CD"},
 			-- Shield Wall
 			{spellID = 871, filter = "CD"},
 			-- Last Stand
@@ -2939,6 +2927,14 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].special_proc_icon)},
 
 			-- Potions
+			-- Draenic Agility Potion
+			{spellID = 156423, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Draenic Intellect Potion
+			{spellID = 156426, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Draenic Strength Potion
+			{spellID = 156428, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Draenic Armor Potion
+			{spellID = 156430, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Virmen's Bite
 			{spellID = 105697, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Potion of Mogu Power
@@ -3613,7 +3609,7 @@ C["filger_spells"] = {
 			{spellID = 34976, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Orb of Power
 			{spellID = 121175, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Seaforium
+			-- Carrying Seaforium
 			{spellID = 66271, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Drink
 			{spellID = 80167, unitID = "target", caster = "all", filter = "BUFF"},

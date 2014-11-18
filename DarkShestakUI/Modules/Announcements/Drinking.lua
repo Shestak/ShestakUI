@@ -10,7 +10,7 @@ frame:SetScript("OnEvent", function(self, event, ...)
 	if not (event == "UNIT_SPELLCAST_SUCCEEDED" and GetZonePVPInfo() == "arena") then return end
 
 	local unit, _, _, _, spellID = ...
-	if UnitIsEnemy("player", unit) and (spellID == 118358 or spellID == 104270) then
-		SendChatMessage(UnitName(unit)..L_MISC_DRINKING, "PARTY")
+	if UnitIsEnemy("player", unit) and (GetSpellInfo(spellID) == GetSpellInfo(118358) or GetSpellInfo(spellID) == GetSpellInfo(167152)) then
+		SendChatMessage(UnitClass(unit).." "..UnitName(unit)..L_MISC_DRINKING, T.CheckChat(true))
 	end
 end)

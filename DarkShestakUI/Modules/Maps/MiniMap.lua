@@ -65,6 +65,9 @@ QueueStatusMinimapButtonBorder:Hide()
 -- Hide world map button
 MiniMapWorldMapButton:Hide()
 
+-- Hide Garrison icon
+GarrisonLandingPageMinimapButton:Kill()
+
 -- Instance Difficulty icon
 MiniMapInstanceDifficulty:SetParent(Minimap)
 MiniMapInstanceDifficulty:ClearAllPoints()
@@ -118,11 +121,6 @@ HelpOpenTicketButton:SetNormalTexture("Interface\\Icons\\inv_misc_note_03")
 HelpOpenTicketButton:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 HelpOpenTicketButton:GetPushedTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 HelpOpenTicketButton:SetSize(16, 16)
-
--- Garrison icon
-GarrisonLandingPageMinimapButton:ClearAllPoints()
-GarrisonLandingPageMinimapButton:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 3, 2)
-GarrisonLandingPageMinimapButton:SetSize(32, 32)
 
 -- GhostFrame
 GhostFrame:StripTextures()
@@ -243,6 +241,10 @@ local micromenu = {
 
 if not IsTrialAccount() and not C_StorePublic.IsDisabledByParentalControls() then
 	tinsert(micromenu, {text = BLIZZARD_STORE, notCheckable = 1, func = function() StoreMicroButton:Click() end})
+end
+
+if T.level > 89 then
+	tinsert(micromenu, {text = GARRISON_LANDING_PAGE_TITLE, notCheckable = 1, func = function() GarrisonLandingPage_Toggle() end})
 end
 
 Minimap:SetScript("OnMouseUp", function(self, button)
