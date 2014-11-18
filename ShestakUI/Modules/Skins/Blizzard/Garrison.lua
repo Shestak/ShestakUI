@@ -93,17 +93,17 @@ local function LoadSkin()
 	T.SkinCloseButton(GarrisonCapacitiveDisplayFrameCloseButton)
 	GarrisonCapacitiveDisplayFrame.StartWorkOrderButton:SkinButton()
 
-	local function Reagents()
-		for _, button in pairs(GarrisonCapacitiveDisplayFrame.CapacitiveDisplay.Reagents) do
-			-- button:StripTextures()
-			button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			button:CreateBackdrop("Default")
-			button.backdrop:ClearAllPoints()
-			button.backdrop:SetPoint("TOPLEFT", button.Icon, -2, 2)
-			button.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, 2, -2)
-		end
-	end
-	hooksecurefunc("GarrisonCapacitiveDisplayFrame_Update", Reagents)
+	-- local function Reagents()
+		-- for _, button in pairs(GarrisonCapacitiveDisplayFrame.CapacitiveDisplay.Reagents) do
+			-- -- button:StripTextures()
+			-- button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			-- button:CreateBackdrop("Default")
+			-- button.backdrop:ClearAllPoints()
+			-- button.backdrop:SetPoint("TOPLEFT", button.Icon, -2, 2)
+			-- button.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, 2, -2)
+		-- end
+	-- end
+	-- hooksecurefunc("GarrisonCapacitiveDisplayFrame_Update", Reagents)
 end
 
 T.SkinFuncs["Blizzard_GarrisonUI"] = LoadSkin
