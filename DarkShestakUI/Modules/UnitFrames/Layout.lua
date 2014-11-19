@@ -653,6 +653,7 @@ local function Shared(self, unit)
 			self.ClassMana = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 			self.ClassMana:SetTextColor(0.0, 1, 0.59)
 		end
+	end
 
 	-- Counter bar
 	if unit == "player" or unit == "pet" then
