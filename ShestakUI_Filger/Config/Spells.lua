@@ -307,6 +307,8 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].player_proc_icon)},
 
 			-- Buffs
+			-- Bloodtalons
+			{spellID = 145152, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lunar Peak
 			{spellID = 171743, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Solar Peak
