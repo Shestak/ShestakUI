@@ -56,11 +56,8 @@ local function IsGossipQuestTrivial(index)
 	return not not select(((index * 6) - 6) + 3, GetGossipAvailableQuests())
 end
 
-local function GetCreatureID()
-	local type, _, _, _, _, id = string.split(":", UnitGUID("npc") or "")
-	if type == "Creature" and id and tonumber(id) then
-		return tonumber(id)
-	end
+local function GetNPCID()
+	return tonumber(string.match(UnitGUID('npc') or '', 'Creature%-.-%-.-%-.-%-.-%-(.-)%-'))
 end
 
 Monomyth:Register("GOSSIP_SHOW", function()
@@ -91,8 +88,8 @@ Monomyth:Register("GOSSIP_SHOW", function()
 		end
 	end
 
-	local creatureID = GetCreatureID()
-	if creatureID and creatureID == 57850 then
+	local npcID = GetNPCID()
+	if npcID and npcID == 57850 then
 		SelectGossipOption(1)
 	end
 end)
@@ -104,8 +101,8 @@ local darkmoonNPC = {
 }
 
 Monomyth:Register("GOSSIP_CONFIRM", function(index)
-	local creatureID = GetCreatureID()
-	if creatureID and darkmoonNPC[creatureID] then
+	local npcID = GetNPCID()
+	if npcID and darkmoonNPC[npcID] then
 		SelectGossipOption(index, "", true)
 		StaticPopup_Hide("GOSSIP_CONFIRM")
 	end
