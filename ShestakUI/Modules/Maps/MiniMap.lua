@@ -66,7 +66,8 @@ QueueStatusMinimapButtonBorder:Hide()
 MiniMapWorldMapButton:Hide()
 
 -- Hide Garrison icon
-GarrisonLandingPageMinimapButton:Kill()
+GarrisonLandingPageMinimapButton:SetScale(0.0001)
+GarrisonLandingPageMinimapButton:SetAlpha(0)
 
 -- Instance Difficulty icon
 MiniMapInstanceDifficulty:SetParent(Minimap)
