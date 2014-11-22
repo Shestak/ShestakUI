@@ -93,9 +93,9 @@ AceGUI.RegisterAsWidget = function(self, widget)
 	elseif TYPE == "EditBox" then
 		local frame = widget.editbox
 		local button = widget.button
-		_G[frame:GetName().."Left"]:Kill()
-		_G[frame:GetName().."Middle"]:Kill()
-		_G[frame:GetName().."Right"]:Kill()
+		frame.Left:Kill()
+		frame.Middle:Kill()
+		frame.Right:Kill()
 		frame:SetHeight(17)
 		frame:CreateBackdrop("Overlay")
 		frame.backdrop:SetPoint("TOPLEFT", -2, 0)
