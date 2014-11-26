@@ -1965,6 +1965,8 @@ C["filger_spells"] = {
 			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Subterfuge
 			{spellID = 115192, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shadow Reflection
+			{spellID = 152151, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2114,6 +2116,8 @@ C["filger_spells"] = {
 			{spellID = 74001, filter = "CD"},
 			-- Vanish
 			{spellID = 1856, filter = "CD"},
+			-- Shadow Reflection
+			{spellID = 152151, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
