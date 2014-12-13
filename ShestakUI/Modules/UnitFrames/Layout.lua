@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.unitframe.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -36,12 +36,12 @@ local function Shared(self, unit)
 
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", self:GetName().."_Health", self)
-	if unit == "player" or unit == "target" or unit == "arena" or unit == "boss" then
-		self.Health:SetHeight(21)
-	elseif unit == "arenatarget" then
-		self.Health:SetHeight(27)
+	if unit == "player" or unit == "target" then	--修改
+		self.Health:SetHeight(33)	--修改
+	elseif unit == "arena" or unit == "arenatarget" or unit == "boss" then	--修改
+		self.Health:SetHeight(27)	--修改
 	else
-		self.Health:SetHeight(13)
+		self.Health:SetHeight(15)	--修改
 	end
 	self.Health:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 	self.Health:SetPoint("TOPRIGHT", self, "TOPRIGHT", 0, 0)
@@ -77,23 +77,29 @@ local function Shared(self, unit)
 	end
 
 	self.Health.value = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-	if unit == "player" or unit == "pet" or unit == "focus" then
-		self.Health.value:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
+	if unit == "player" then	--修改
+		self.Health.value:SetPoint("LEFT", self.Health, "LEFT", 2, 2)	--修改
 		self.Health.value:SetJustifyH("RIGHT")
-	elseif unit == "arena" then
-		if C.unitframe.arena_on_right == true then
-			self.Health.value:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
-			self.Health.value:SetJustifyH("LEFT")
-		else
-			self.Health.value:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
-			self.Health.value:SetJustifyH("RIGHT")
-		end
+	elseif unit == "target" then	--修改
+		self.Health.value:SetPoint("TOPLEFT", self.Health, "TOPLEFT", 0, 0)	--修改
+		self.Health.value:SetJustifyH("LEFT")	--修改
 	elseif unit == "boss" then
 		if C.unitframe.boss_on_right == true then
-			self.Health.value:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
+			self.Health.value:SetPoint("TOPLEFT", self.Health, "TOPLEFT", 2, -2)	--修改
 			self.Health.value:SetJustifyH("LEFT")
 		else
-			self.Health.value:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
+			self.Health.value:SetPoint("TOPRIGHT", self.Health, "TOPRIGHT", -2, -2)	--修改
+			self.Health.value:SetJustifyH("RIGHT")
+		end
+	elseif unit == "pet" or unit == "focus" then	--修改
+		self.Health.value:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)	--修改
+		self.Health.value:SetJustifyH("RIGHT")	--修改
+	elseif unit == "arena" then
+		if C.unitframe.arena_on_right == true then
+			self.Health.value:SetPoint("TOPLEFT", self.Health, "TOPLEFT", 2, -2)	--修改
+			self.Health.value:SetJustifyH("LEFT")
+		else
+			self.Health.value:SetPoint("TOPRIGHT", self.Health, "TOPRIGHT", -2, -2)	--修改
 			self.Health.value:SetJustifyH("RIGHT")
 		end
 	elseif unit == "arenatarget" then
@@ -105,16 +111,16 @@ local function Shared(self, unit)
 
 	-- Power bar
 	self.Power = CreateFrame("StatusBar", self:GetName().."_Power", self)
-	if unit == "player" or unit == "target" or unit == "arena" or unit == "boss" then
-		self.Power:SetHeight(5)
-	elseif unit == "arenatarget" then
-		self.Power:SetHeight(0)
+	if unit == "player" or unit == "target" or unit == "boss" or unit == "arena" then	--修改
+		self.Power:SetHeight(2)	--修改
 	else
-		self.Power:SetHeight(2)
+		self.Power:SetHeight(0)
 	end
-	self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -1)
-	self.Power:SetPoint("TOPRIGHT", self.Health, "BOTTOMRIGHT", 0, -1)
+	self.Power:SetPoint("BOTTOMLEFT", self.Health, "BOTTOMLEFT", 5, 5)	--修改
+	self.Power:SetPoint("BOTTOMRIGHT", self.Health, "BOTTOMRIGHT", -5, 5)	--修改
 	self.Power:SetStatusBarTexture(C.media.texture)
+	self.Power:CreateBackdrop("Default", "Shadow")	--修改
+	self.Power:SetFrameLevel(self.Health:GetFrameLevel() + 2)	--修改
 
 	self.Power.frequentUpdates = true
 	self.Power.colorDisconnected = true
@@ -142,28 +148,31 @@ local function Shared(self, unit)
 
 	self.Power.value = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 	if unit == "player" then
-		self.Power.value:SetPoint("RIGHT", self.Power, "RIGHT", 0, 0)
-		self.Power.value:SetJustifyH("RIGHT")
-	elseif unit == "arena" then
-		if C.unitframe.arena_on_right == true then
-			self.Power.value:SetPoint("LEFT", self.Power, "LEFT", 2, 0)
-			self.Power.value:SetJustifyH("LEFT")
-		else
-			self.Power.value:SetPoint("RIGHT", self.Power, "RIGHT", 0, 0)
-			self.Power.value:SetJustifyH("RIGHT")
-		end
+		self.Power.value:SetPoint("RIGHT", self.Health, "RIGHT", 0, 2)	--修改
+		self.Power.value:SetJustifyH("RIGHT")	--修改
+	elseif unit == "target" then
+		self.Power.value:SetPoint("TOPLEFT", self.Health.value, "BOTTOMLEFT", 0, 0)	--修改
+		self.Power.value:SetJustifyH("LEFT")	--修改
 	elseif unit == "boss" then
 		if C.unitframe.boss_on_right == true then
-			self.Power.value:SetPoint("LEFT", self.Power, "LEFT", 2, 0)
-			self.Power.value:SetJustifyH("LEFT")
+			self.Power.value:SetPoint("TOPLEFT", self.Health.value, "BOTTOMLEFT", 0, -1)	--修改
+			self.Power.value:SetJustifyH("LEFT")	--修改
 		else
-			self.Power.value:SetPoint("RIGHT", self.Power, "RIGHT", 0, 0)
-			self.Power.value:SetJustifyH("RIGHT")
+			self.Power.value:SetPoint("TOPRIGHT", self.Health.value, "BOTTOMRIGHT", 0, -1)	--修改
+			self.Power.value:SetJustifyH("RIGHT")	--修改
+		end
+	elseif unit == "arena" then
+		if C.unitframe.arena_on_right == true then
+			self.Power.value:SetPoint("TOPLEFT", self.Health.value, "BOTTOMLEFT", 0, -1)	--修改
+			self.Power.value:SetJustifyH("LEFT")	--修改
+		else
+			self.Power.value:SetPoint("TOPRIGHT", self.Health.value, "BOTTOMRIGHT", 0, -1)	--修改
+			self.Power.value:SetJustifyH("RIGHT")	--修改
 		end
 	elseif unit == "pet" or unit == "focus" or unit == "focustarget" or unit == "targettarget" then
 		self.Power.value:Hide()
 	else
-		self.Power.value:SetPoint("LEFT", self.Power, "LEFT", 2, 0)
+		self.Power.value:SetPoint("LEFT", self.Power, "LEFT", 0, 0)	--修改
 		self.Power.value:SetJustifyH("LEFT")
 	end
 
@@ -174,9 +183,9 @@ local function Shared(self, unit)
 			self.Level = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		end
 		if unit == "target" then
-			self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
+			self.Info:SetPoint("RIGHT", self.Level, "LEFT", 0, 0)	--修改
 			self:Tag(self.Info, "[GetNameColor][NameLong]")
-			self.Level:SetPoint("RIGHT", self.Power, "RIGHT", 0, 0)
+			self.Level:SetPoint("RIGHT", self.Health, "RIGHT", 0, 5)	--修改
 			self:Tag(self.Level, "[cpoints] [Threat] [DiffColor][level][shortclassification]")
 		elseif unit == "focus" or unit == "pet" then
 			self.Info:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
@@ -186,20 +195,20 @@ local function Shared(self, unit)
 				self:Tag(self.Info, "[GetNameColor][NameMedium]")
 			end
 		elseif unit == "arenatarget" then
-			self.Info:SetPoint("CENTER", self.Health, "CENTER", 1, 0)
+			self.Info:SetPoint("CENTER", self.Health, "CENTER", 0, 0)	--修改
 			self:Tag(self.Info, "[GetNameColor][NameArena]")
 		elseif unit == "arena" then
 			if C.unitframe.arena_on_right == true then
-				self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
+				self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 6)	--修改
 			else
-				self.Info:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
+				self.Info:SetPoint("LEFT", self.Health, "LEFT", 2, 6)	--修改
 			end
 			self:Tag(self.Info, "[GetNameColor][NameMedium]")
 		elseif unit == "boss" then
 			if C.unitframe.boss_on_right == true then
-				self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
+				self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 6)	--修改
 			else
-				self.Info:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
+				self.Info:SetPoint("LEFT", self.Health, "LEFT", 2, 6)	--修改
 			end
 			self:Tag(self.Info, "[GetNameColor][NameMedium]")
 		else
@@ -220,8 +229,8 @@ local function Shared(self, unit)
 		-- Combat icon
 		if C.unitframe.icons_combat == true then
 			self.Combat = self.Health:CreateTexture(nil, "OVERLAY")
-			self.Combat:SetSize(18, 18)
-			self.Combat:SetPoint("TOPRIGHT", 4, 8)
+			self.Combat:SetSize(22, 22)
+			self.Combat:SetPoint("TOPRIGHT", 2, 11)	--修改
 		end
 
 		-- Resting icon
@@ -229,6 +238,10 @@ local function Shared(self, unit)
 			self.Resting = self.Power:CreateTexture(nil, "OVERLAY")
 			self.Resting:SetSize(18, 18)
 			self.Resting:SetPoint("BOTTOMLEFT", -8, -8)
+			self.Resting:SetTexture("Interface\\AddOns\\ShestakUI_Media\\Media\\Icon\\rested")	--定义icon材质
+			local _, class = UnitClass("player")	--获取职业
+			local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class]	--获取职业颜色
+			self.Resting:SetVertexColor(color.r, color.g, color.b)	----定义icon材质
 		end
 
 		-- Leader/Assistant/ML icons
@@ -254,6 +267,7 @@ local function Shared(self, unit)
 			self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 			self.LFDRole:SetSize(12, 12)
 			self.LFDRole:SetPoint("TOPLEFT", 10, 8)
+			self.LFDRole:SetTexture("Interface\\AddOns\\ShestakUI_Media\\Media\\Icon\\lfd_role")	--定义icon材质
 		end
 
 		-- Rune bar
@@ -903,6 +917,30 @@ local function Shared(self, unit)
 
 			self:SetScript("OnEnter", function(self) FlashInfo.ManaLevel:Hide() self.Status:Show() UnitFrame_OnEnter(self) end)
 			self:SetScript("OnLeave", function(self) FlashInfo.ManaLevel:Show() self.Status:Hide() UnitFrame_OnLeave(self) end)
+			--增加PvP icon
+			self.PvP = self.Health:CreateTexture(nil, "OVERLAY")
+			self.PvP:SetSize(20, 20)
+			self.PvP:SetPoint("CENTER", self.Health, "CENTER", 0, 5)
+			self.PvP.Override = function(frame, event, unit)
+				if(unit ~= self.unit) then return end
+
+				local factionGroup = UnitFactionGroup(unit)
+				if factionGroup == "Neutral" then
+					self.PvP:SetTexture(nil)
+					self.PvP:Hide()
+				else
+					if(UnitIsPVPFreeForAll(unit)) then
+						self.PvP:SetTexture[[Interface\TargetingFrame\UI-PVP-FFA]]
+						self.PvP:Show()
+					elseif(factionGroup and UnitIsPVP(unit)) then
+						self.PvP:SetTexture([[Interface\AddOns\ShestakUI_Media\Media\Icon\ui-pvp-]]..factionGroup)
+						self.PvP:Show()
+					else
+						self.PvP:Hide()
+					end
+				end
+			end
+			----
 		end
 	end
 
@@ -1198,6 +1236,7 @@ local function Shared(self, unit)
 		self.RaidIcon:SetParent(self.Health)
 		self.RaidIcon:SetSize((unit == "player" or unit == "target") and 15 or 12, (unit == "player" or unit == "target") and 15 or 12)
 		self.RaidIcon:SetPoint("TOP", self.Health, 0, 0)
+		self.RaidIcon:SetTexture("Interface\\AddOns\\ShestakUI_Media\\Media\\Icon\\raidicons.blp")	--定义icon材质
 	end
 
 	-- Debuff highlight
@@ -1269,26 +1308,26 @@ oUF:RegisterStyle("Shestak", Shared)
 
 local player = oUF:Spawn("player", "oUF_Player")
 player:SetPoint(unpack(C.position.unitframes.player))
-player:SetSize(217, 27)
+player:SetSize(217, 33)	--修改
 
 local target = oUF:Spawn("target", "oUF_Target")
 target:SetPoint(unpack(C.position.unitframes.target))
-target:SetSize(217, 27)
+target:SetSize(217, 33)	--修改
 
 if C.unitframe.show_pet == true then
 	local pet = oUF:Spawn("pet", "oUF_Pet")
 	pet:SetPoint(unpack(C.position.unitframes.pet))
-	pet:SetSize(105, 16)
+	pet:SetSize(105, 15)	--修改
 end
 
 if C.unitframe.show_focus == true then
 	local focus = oUF:Spawn("focus", "oUF_Focus")
 	focus:SetPoint(unpack(C.position.unitframes.focus))
-	focus:SetSize(105, 16)
+	focus:SetSize(105, 15)	--修改
 
 	local focustarget = oUF:Spawn("focustarget", "oUF_FocusTarget")
 	focustarget:SetPoint(unpack(C.position.unitframes.focus_target))
-	focustarget:SetSize(105, 16)
+	focustarget:SetSize(105, 15)	--修改
 else
 	local focus = oUF:Spawn("focus", "oUF_Focus")
 end
@@ -1296,7 +1335,7 @@ end
 if C.unitframe.show_target_target == true then
 	local targettarget = oUF:Spawn("targettarget", "oUF_TargetTarget")
 	targettarget:SetPoint(unpack(C.position.unitframes.target_target))
-	targettarget:SetSize(105, 16)
+	targettarget:SetSize(105, 15)	--修改
 end
 
 if C.unitframe.show_boss == true then
@@ -1310,7 +1349,7 @@ if C.unitframe.show_boss == true then
 				boss[i]:SetPoint("BOTTOMLEFT", C.position.unitframes.boss[2], "LEFT", C.position.unitframes.boss[4] + 46, C.position.unitframes.boss[5])
 			end
 		else
-			boss[i]:SetPoint("BOTTOM", boss[i-1], "TOP", 0, 30)
+			boss[i]:SetPoint("BOTTOM", boss[i-1], "TOP", 0, 40)	--修改
 		end
 		boss[i]:SetSize(150, 27)
 	end
@@ -1327,7 +1366,7 @@ if C.unitframe.show_arena == true then
 				arena[i]:SetPoint("BOTTOMLEFT", C.position.unitframes.arena[2], "LEFT", C.position.unitframes.arena[4] + 120, C.position.unitframes.arena[5])
 			end
 		else
-			arena[i]:SetPoint("BOTTOM", arena[i-1], "TOP", 0, 30)
+			arena[i]:SetPoint("BOTTOM", arena[i-1], "TOP", 0, 40)	--修改
 		end
 		arena[i]:SetSize(150, 27)
 	end
@@ -1342,9 +1381,9 @@ if C.unitframe.show_arena == true then
 				arenatarget[i]:SetPoint("TOPRIGHT", arena[i], "TOPLEFT", -7, 0)
 			end
 		else
-			arenatarget[i]:SetPoint("BOTTOM", arenatarget[i-1], "TOP", 0, 30)
+			arenatarget[i]:SetPoint("BOTTOM", arenatarget[i-1], "TOP", 0, 40)	--修改
 		end
-		arenatarget[i]:SetSize(30, 27)
+		arenatarget[i]:SetSize(50, 27)
 	end
 end
 
