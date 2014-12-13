@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	LiteStats configuration file
@@ -133,43 +133,43 @@ LPSTAT_CONFIG = {
 			--	Leech [leech]%	Avoidance [avoidance]%
 		spec1fmt = class"Power: ".."[power]"..class"  Crit: ".."[crit]%"..class"  Haste: ".."[haste]%", -- Spec #1 string
 		spec2fmt = class"Power: ".."[power]"..class"  Crit: ".."[crit]%"..class"  Haste: ".."[haste]%", -- Spec #2 string
-		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",
-		x_off = -20, y_off = 6,
+		anchor_frame = "Talents", anchor_to = "right", anchor_from = "left",
+		x_off = -3, y_off = 0,
 	},
 	Bags = {
 		enabled = C.toppanel.enable,
 		fmt = class"B: ".."%d/%d",
-		anchor_frame = "Stats", anchor_to = "topleft", anchor_from = "bottomleft",
-		x_off = 0, y_off = -5,
+		anchor_frame = "Location", anchor_to = "right", anchor_from = "left",
+		x_off = -3, y_off = 0,
 	},
 	Helm = {
 		enabled = C.toppanel.enable,
 		fmt = class"H: ".."%s",
-		anchor_frame = "Bags", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0,
+		anchor_frame = "Loot", anchor_to = "right", anchor_from = "left",
+		x_off = -3, y_off = 0,
 	},
 	Cloak = {
 		enabled = C.toppanel.enable,
 		fmt = class"C: ".."%s",
-		anchor_frame = "Helm", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0,
+		anchor_frame = "Helm", anchor_to = "right", anchor_from = "left",
+		x_off = -3, y_off = 0,
 	},
 	Loot = {
 		enabled = C.toppanel.enable,
 		fmt = class"L: ".."%s",
-		anchor_frame = "Cloak", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0,
+		anchor_frame = "Bags", anchor_to = "right", anchor_from = "left",
+		x_off = -3, y_off = 0,
 	},
 	Nameplates = {
 		enabled = C.toppanel.enable,
 		fmt = class"N: ".."%s",
-		anchor_frame = "Loot", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0,
+		anchor_frame = "Cloak", anchor_to = "right", anchor_from = "left",
+		x_off = -3, y_off = 0,
 	},
 	Talents = {
 		enabled = C.toppanel.enable,
-		anchor_frame = "Stats", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = -3, tip_y = 13
+		anchor_frame = "Nameplates", anchor_to = "right", anchor_from = "left",
+		x_off = -3, y_off = 0, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = -3, tip_y = 13
 	},
 -- MiniMap block
 	Ping = {
