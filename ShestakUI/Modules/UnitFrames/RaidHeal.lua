@@ -4,6 +4,24 @@ if C.unitframe.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	UnitFrames based on oUF_Caellian(by Caellian)
 ----------------------------------------------------------------------------------------
+local f = CreateFrame("Frame", "f", UIParent)
+f:SetTemplate("Default")
+f:SetPoint("BOTTOMRIGHT", Minimap, "TOPRIGHT", 21, 2)		--位置
+f:SetSize(7, 7)
+	
+function f:OnDrag()
+	self:EnableMouse(true)
+	self:SetMovable(true)
+	self:RegisterForDrag("LEFTBUTTON")
+	self:SetScript("OnDragStart", function(self)
+		self:StartMoving()
+	end)
+	self:SetScript("OnDragStop", function(self)
+	self:StopMovingOrSizing()
+	end)
+end
+f:OnDrag()
+-----------------------------------------
 local _, ns = ...
 local oUF = ns.oUF
 
@@ -423,7 +441,7 @@ oUF:Factory(function(self)
 					"columnAnchorPoint", "LEFT"
 				)
 				if i == 1 then
-					raidgroup:SetPoint(unpack(C.position.unitframes.raid_heal))
+					raidgroup:SetPoint("TOPLEFT", f, "BOTTOMRIGHT", 0, 0)	--位置
 				else
 					raidgroup:SetPoint("TOPLEFT", raid[i-1], "BOTTOMLEFT", 0, -7)
 				end
