@@ -416,6 +416,8 @@ C["filger_spells"] = {
 			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Light of the Cosmos (Intellect, Proc)
 			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 梦魇之火 
+			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 			-- Prismatic Prison of Pride (Intellect, Proc)
 			{spellID = 146314, unitID = "player", caster = "player", filter = "BUFF"},
@@ -933,6 +935,8 @@ C["filger_spells"] = {
 			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Light of the Cosmos (Intellect, Proc)
 			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 梦魇之火 
+			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -1403,6 +1407,20 @@ C["filger_spells"] = {
 			{spellID = 114163, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sacred Shield
 			{spellID = 20925, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- 玛尔拉德的真理
+			{spellID = 156990, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 炽天使
+			{spellID = 152262, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 莉亚德琳的公正
+			{spellID = 156989, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 乌瑟尔的决心
+			{spellID = 156988, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 图拉杨的裁决
+			{spellID = 156987, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 最终审判
+			{spellID = 157048, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 正义盾击
+			{spellID = 132403, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1737,6 +1755,8 @@ C["filger_spells"] = {
 			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Light of the Cosmos (Intellect, Proc)
 			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 梦魇之火 
+			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 			-- Prismatic Prison of Pride (Intellect, Proc)
 			{spellID = 146314, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1965,6 +1985,8 @@ C["filger_spells"] = {
 			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Subterfuge
 			{spellID = 115192, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shadow Reflection
+			{spellID = 152151, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2114,6 +2136,8 @@ C["filger_spells"] = {
 			{spellID = 74001, filter = "CD"},
 			-- Vanish
 			{spellID = 1856, filter = "CD"},
+			-- Shadow Reflection
+			{spellID = 152151, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
@@ -2280,6 +2304,8 @@ C["filger_spells"] = {
 			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Light of the Cosmos (Intellect, Proc)
 			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 梦魇之火 
+			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster Heal
 			-- Prismatic Prison of Pride (Intellect, Proc)
 			{spellID = 146314, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2536,6 +2562,8 @@ C["filger_spells"] = {
 			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Light of the Cosmos (Intellect, Proc)
 			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 梦魇之火 
+			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -2796,6 +2824,8 @@ C["filger_spells"] = {
 			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Strength, Proc)
 			{spellID = 126700, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 碳酸红宝石
+			{spellID = 126513, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -3590,6 +3620,8 @@ C["filger_spells"] = {
 			{spellID = 5246, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Silenced (Gag Order)
 			{spellID = 18498, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- 刺耳怒吼
+			{spellID = 12323, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Racial
 			-- War Stomp
