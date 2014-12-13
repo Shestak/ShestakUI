@@ -9,11 +9,18 @@ local oUF = ns.oUF
 
 -- Frame size
 local party_width = 140
-local party_height = 27
-local partytarget_width = 30
-local partytarget_height = 27
-local unit_width = 104
-local unit_height = 17
+local party_height = 20	--27
+local partytarget_width = 50	--30
+local partytarget_height = 20	--27
+local unit_width = 105	--104
+local unit_height = 15	--17
+--------------------------------------------
+--增加的设置
+local unittank_width = 60
+local unittank_height = 20
+local partypet_width = 20
+local partypet_height = 20
+--------------------------------------------
 
 -- Create layout
 local function Shared(self, unit)
@@ -37,18 +44,18 @@ local function Shared(self, unit)
 	self.Health:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 	self.Health:SetPoint("TOPRIGHT", self, "TOPRIGHT", 0, 0)
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
-		self.Health:SetHeight(27)
+		self.Health:SetHeight(partytarget_height)	--27
 	elseif unit == "tank" then
-		self.Health:SetHeight(23)
+		self.Health:SetHeight(unittank_height)	--23
 	elseif unit == "raid" then
-		self.Health:SetHeight(15)
+		self.Health:SetHeight(unit_height)	--15
 	elseif unit == "party" then
-		self.Health:SetHeight(21)
+		self.Health:SetHeight(party_height)	--21
 	else
-		self.Health:SetHeight(17)
+		self.Health:SetHeight(unit_height)	--17
 	end
 	self.Health:SetStatusBarTexture(C.media.texture)
-
+	
 	self.Health.PostUpdate = function(health, unit)
 		if not UnitIsConnected(unit) or UnitIsDead(unit) or UnitIsGhost(unit) then
 			health:SetValue(0)
@@ -77,7 +84,7 @@ local function Shared(self, unit)
 	else
 		self.Health.bg.multiplier = 0.2
 	end
-
+--[[
 	if not (self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and unit ~= "tank")) then
 		self.Health.value = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		if unit == "tank" then
@@ -126,15 +133,15 @@ local function Shared(self, unit)
 			self.Power.value:SetJustifyH("RIGHT")
 		end
 	end
-
+]]
 	-- Names
 	self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
-		self.Info:SetPoint("CENTER", self.Health, "CENTER", 2, 0)
+		self.Info:SetPoint("CENTER", self.Health, "CENTER", 2, 0)	--"CENTER", self.Health, "CENTER", 2, 0
 	elseif unit == "tank" then
-		self.Info:SetPoint("CENTER", self.Health, "CENTER", 0, 4)
+		self.Info:SetPoint("LEFT", self.Health, "LEFT", 2, 0)	--"CENTER", self.Health, "CENTER", 0, 4
 	else
-		self.Info:SetPoint("LEFT", self.Health, "LEFT", 3, 0)
+		self.Info:SetPoint("LEFT", self.Health, "LEFT", 13, 0)	--"LEFT", self.Health, "LEFT", 3, 0
 		self.Info:SetJustifyH("LEFT")
 	end
 	if self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and unit ~= "tank") then
@@ -151,7 +158,8 @@ local function Shared(self, unit)
 	if C.raidframe.icons_role == true and not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
 		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 		self.LFDRole:SetSize(12, 12)
-		self.LFDRole:SetPoint("TOPRIGHT", self.Health, 2, 5)
+		self.LFDRole:SetPoint("LEFT", self.Health, "LEFT", 0, 0)	--"TOPRIGHT", self.Health, 2, 5
+		self.LFDRole:SetTexture("Interface\\AddOns\\ShestakUI_Media\\Media\\Icon\\lfd_role")	--定义role icons材质
 	end
 
 	-- Leader/Assistant/ML icons
@@ -159,17 +167,17 @@ local function Shared(self, unit)
 		-- Leader icon
 		self.Leader = self.Health:CreateTexture(nil, "OVERLAY")
 		self.Leader:SetSize(12, 12)
-		self.Leader:SetPoint("TOPLEFT", self.Health, -3, 8)
+		self.Leader:SetPoint("RIGHT", self.Health, "RIGHT", -2, 0)	--"TOPLEFT", self.Health, -3, 8
 
 		-- Assistant icon
 		self.Assistant = self.Health:CreateTexture(nil, "OVERLAY")
 		self.Assistant:SetSize(12, 12)
-		self.Assistant:SetPoint("TOPLEFT", self.Health, -3, 8)
+		self.Assistant:SetPoint("RIGHT", self.Health, "RIGHT", -2, 0)	--"TOPLEFT", self.Health, -3, 8
 
 		-- Master looter
 		self.MasterLooter = self.Health:CreateTexture(nil, "OVERLAY")
 		self.MasterLooter:SetSize(12, 12)
-		self.MasterLooter:SetPoint("BOTTOMLEFT", self.Health, -3, -8)
+		self.MasterLooter:SetPoint("RIGHT", self.Health, "RIGHT", -15, 0)	--"TOPRIGHT", self.Health, 3, 8
 	end
 
 	-- Agro border
@@ -184,14 +192,15 @@ local function Shared(self, unit)
 	if C.raidframe.icons_raid_mark == true then
 		self.RaidIcon = self.Health:CreateTexture(nil, "OVERLAY")
 		self.RaidIcon:SetSize(12, 12)
-		self.RaidIcon:SetPoint("CENTER", self.Health, "TOP")
+		self.RaidIcon:SetPoint("CENTER", self.Health, "CENTER")	--"CENTER", self.Health, "TOP"
+		self.RaidIcon:SetTexture("Interface\\AddOns\\ShestakUI_Media\\Media\\Icon\\raidicons")	--定义role icons材质
 	end
 
 	-- Ready check icons
 	if C.raidframe.icons_ready_check == true then
 		self.ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
 		self.ReadyCheck:SetSize(12, 12)
-		self.ReadyCheck:SetPoint("BOTTOMRIGHT", self.Health, 2, -1)
+		self.ReadyCheck:SetPoint("LEFT", self.Health, "LEFT", 0, 0)	--"BOTTOMRIGHT", self.Health, 2, -1
 	end
 
 	if unit == "party" and (not (self:GetAttribute("unitsuffix") == "target")) and (not (self:GetAttribute("unitsuffix") == "pet")) then
@@ -254,9 +263,9 @@ local function Shared(self, unit)
 	-- Smooth bars
 	if C.unitframe.plugins_smooth_bar == true then
 		self.Health.Smooth = true
-		if not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
-			self.Power.Smooth = true
-		end
+		--if not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
+			--self.Power.Smooth = true
+		--end
 	end
 
 	return self
@@ -287,7 +296,7 @@ oUF:Factory(function(self)
 			"sortMethod", C.raidframe.by_role and "NAME",
 			"showParty", true,
 			"showRaid", true,
-			"yOffset", T.Scale(28),
+			"yOffset", T.Scale(40),	--28
 			"point", "BOTTOM"
 		)
 		party:SetPoint(unpack(C.position.unitframes.party_dps))
@@ -309,21 +318,21 @@ oUF:Factory(function(self)
 			"sortMethod", C.raidframe.by_role and "NAME",
 			"showParty", true,
 			"showRaid", true,
-			"yOffset", T.Scale(28),
+			"yOffset", T.Scale(40),	--28
 			"point", "BOTTOM"
 		)
 		partytarget:SetPoint("TOPLEFT", party, "TOPRIGHT", 7, 0)
 
 		-- Party pets
-		local partypet = self:SpawnHeader("oUF_PartyPet", nil, "custom [@raid6,exists] hide;show",
-			"oUF-initialConfigFunction", [[
-				local header = self:GetParent()
-				self:SetWidth(header:GetAttribute("initial-width"))
-				self:SetHeight(header:GetAttribute("initial-height"))
-				self:SetAttribute("useOwnerUnit", "true")
-				self:SetAttribute("unitsuffix", "pet")
-			]],
-			"initial-width", T.Scale(partytarget_width),
+		--local partypet = self:SpawnHeader("oUF_PartyPet", nil, "custom [@raid6,exists] hide;show",
+			--"oUF-initialConfigFunction", [[
+				--local header = self:GetParent()
+				--self:SetWidth(header:GetAttribute("initial-width"))
+				--self:SetHeight(header:GetAttribute("initial-height"))
+				--self:SetAttribute("useOwnerUnit", "true")
+				--self:SetAttribute("unitsuffix", "pet")
+			--]],
+			--[["initial-width", T.Scale(partytarget_width),
 			"initial-height", T.Scale(partytarget_height),
 			"showSolo", C.raidframe.solo_mode,
 			"showPlayer", C.raidframe.player_in_party,
@@ -336,7 +345,7 @@ oUF:Factory(function(self)
 			"point", "BOTTOM"
 		)
 
-		partypet:SetPoint("BOTTOMLEFT", party, "BOTTOMRIGHT", 44, 0)
+		partypet:SetPoint("BOTTOMLEFT", party, "BOTTOMRIGHT", 44, 0)]]
 	end
 
 	if C.raidframe.show_raid == true then
@@ -365,10 +374,10 @@ oUF:Factory(function(self)
 			)
 			if i == 1 then
 				raidgroup:SetPoint(unpack(C.position.unitframes.raid_dps))
-			elseif i == 5 then
-				raidgroup:SetPoint("TOPLEFT", raid[1], "TOPRIGHT", 7, 0)
+			elseif i == 6 then		--i==5
+				raidgroup:SetPoint("TOPLEFT", raid[1], "TOPRIGHT", 20, 0)	--7, 0
 			else
-				raidgroup:SetPoint("TOPLEFT", raid[i-1], "BOTTOMLEFT", 0, -7)
+				raidgroup:SetPoint("TOPLEFT", raid[i-1], "BOTTOMLEFT", 0, -20)	--0, -7
 			end
 			raid[i] = raidgroup
 		end
@@ -383,8 +392,8 @@ oUF:Factory(function(self)
 		end
 		local raidtank = self:SpawnHeader("oUF_MainTank", nil, "raid",
 			"oUF-initialConfigFunction", ([[
-				self:SetWidth(60)
-				self:SetHeight(26)
+				self:SetWidth(T.Scale(unittank_width))
+				self:SetHeight(T.Scale(unittank_height))
 			]]),
 			"showRaid", true,
 			"yOffset", T.Scale(-7),
