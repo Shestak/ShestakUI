@@ -1,8 +1,8 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.nameplate.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Based on dNameplates(by Dawn, editor Elv22)
+--	Based on dNameplates(by Dawn, editor Elv22) --383-389/638-647/688增加目标提示
 ----------------------------------------------------------------------------------------
 local frames, numChildren, select = {}, -1, select
 local goodR, goodG, goodB = unpack(C.nameplate.good_color)
@@ -380,6 +380,14 @@ local function SkinObjects(frame, nameFrame)
 	hp.bg:SetAllPoints(hp)
 	hp.bg:SetTexture(1, 1, 1, 0.2)
 
+--	--增加目标提示★
+	hp.target_ind = hp:CreateTexture(nil, 'OVERLAY', nil)
+	hp.target_ind:SetSize(10, 10)
+	hp.target_ind:SetPoint("LEFT", hp, "TOPLEFT")
+	hp.target_ind:SetTexture("Interface\\AddOns\\zzz\\media\\Tar")
+	hp.target_ind:Hide()
+--	--
+
 	hp:HookScript("OnShow", UpdateObjects)
 	frame.hp = hp
 
@@ -627,6 +635,17 @@ local function MatchGUID(frame, destGUID, spellID)
 	end
 end
 
+--	--增加目标提示★
+local function ShowTargetInd(frame)
+	if UnitExists("target") and frame:GetParent():GetAlpha() == 1 and UnitName("target") == frame.hp.name:GetText() then
+	--if frame.guid == UnitGUID("target") and frame.guid ~= nil then
+		frame.hp.target_ind:Show()
+	else
+		frame.hp.target_ind:Hide()
+	end
+end
+--	--
+
 -- Run a function for all visible nameplates, we use this for the blacklist, to check unitguid, and to hide drunken text
 local function ForEachPlate(functionToRun, ...)
 	for frame in pairs(frames) do
@@ -666,6 +685,7 @@ NamePlates:SetScript("OnUpdate", function(self, elapsed)
 
 	ForEachPlate(ShowHealth)
 	ForEachPlate(CheckBlacklist)
+	ForEachPlate(ShowTargetInd)  --增加目标提示★
 	if C.nameplate.track_auras then
 		ForEachPlate(CheckUnit_Guid)
 	end
