@@ -11,17 +11,17 @@ elseif T.client == "zhTW" then
 end
 
 local spells = (UnitFactionGroup("player") == "Horde") and {
-	[1] = {3567,11417},		-- Orgrimmar
-	[2] = {3563,11418},		-- Undercity
-	[3] = {3566,11420},		-- Thunder Bluff
-	[4] = {32272,32267},	-- Silvermoon
-	[5] = {49358,49361},	-- Stonard
-	[6] = {35715,35717},	-- Shattrath
-	[7] = {53140,53142},	-- Dalaran
-	[8] = {88344,88346},	-- Tol Barad
-	[9] = {120145,120146},	-- Ancient Dalaran
-	[10] = {132627,132626},	-- Vale of Eternal Blossoms
-	[11] = {176242,176244},	-- Warspear
+	[1] = {3567,11417, h1},		-- Orgrimmar
+	[2] = {3563,11418, h2},		-- Undercity
+	[3] = {3566,11420, h3},		-- Thunder Bluff
+	[4] = {32272,32267, h4},	-- Silvermoon
+	[5] = {49358,49361, h5},	-- Stonard
+	[6] = {35715,35717, h6},	-- Shattrath
+	[7] = {53140,53142, h7},	-- Dalaran
+	[8] = {88344,88346, h8},	-- Tol Barad
+	[9] = {120145,120146, h9},	-- Ancient Dalaran
+	[10] = {132627,132626, h10},	-- Vale of Eternal Blossoms
+	[11] = {176242,176244, h11},	-- Warspear
 } or { -- Alliance
 	[1] = {3561,10059, a1},		-- Stormwind
 	[2] = {3562,11416, a2},		-- Ironforge
