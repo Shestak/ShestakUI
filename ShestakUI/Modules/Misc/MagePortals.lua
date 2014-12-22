@@ -17,17 +17,17 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 	[10] = {132627,132626},	-- Vale of Eternal Blossoms
 	[11] = {176242,176244},	-- Warspear
 } or { -- Alliance
-	[1] = {3561,10059},		-- Stormwind
-	[2] = {3562,11416},		-- Ironforge
-	[3] = {3565,11419},		-- Darnassus
-	[4] = {32271,32266},	-- Exodar
-	[5] = {49359,49360},	-- Theramore
-	[6] = {33690,33691},	-- Shattrath
-	[7] = {53140,53142},	-- Dalaran
-	[8] = {88342,88345},	-- Tol Barad
-	[9] = {120145,120146},	-- Ancient Dalaran
-	[10] = {132621,132620},	-- Vale of Eternal Blossoms
-	[11] = {176248,176246},	-- Stormshield
+	[1] = {3561,10059,"暴風城"},		-- Stormwind
+	[2] = {3562,11416,"鐵爐堡"},		-- Ironforge
+	[3] = {3565,11419,"達納蘇斯"},		-- Darnassus
+	[4] = {32271,32266,"艾克索達"},	-- Exodar
+	[5] = {49359,49360,"塞拉摩"},	-- Theramore
+	[6] = {33690,33691,"撒塔斯"},	-- Shattrath
+	[7] = {53140,53142,"達拉然"},	-- Dalaran
+	[8] = {88342,88345,"托巴拉德"},	-- Tol Barad
+	[9] = {120145,120146,"遠古達拉然"},	-- Ancient Dalaran
+	[10] = {132621,132620,"恆春谷"},	-- Vale of Eternal Blossoms
+	[11] = {176248,176246,"暴風之盾"},	-- Stormshield
 }
 
 local frame = CreateFrame("Frame", "TeleportMenu", UIParent)
@@ -51,7 +51,7 @@ for i, spell in pairs(spells) do
 
 	local l = b:CreateFontString("TeleportMenuName"..i, "OVERLAY")
 	l:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-	l:SetText(string.sub(teleport, string.find(teleport, ":") + 1))
+	l:SetText(spell[3])
 	b:SetFontString(l)
 
 	b:RegisterForClicks("LeftButtonDown", "RightButtonDown")
