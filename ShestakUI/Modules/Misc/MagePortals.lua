@@ -4,6 +4,12 @@ if T.class ~= "MAGE" or T.level < 17 then return end
 ----------------------------------------------------------------------------------------
 --	Mage portals menu(by Foof and Tohveli)
 ----------------------------------------------------------------------------------------
+if T.client == "zhCN" then
+	a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11 = "暴風城", "鐵爐堡", "達納蘇斯", "艾克索達", "塞拉摩", "撒塔斯", "達拉然", "托巴拉德", "遠古達拉然", "恆春谷", "暴風之盾"
+elseif T.client == "zhTW" then
+	a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11 =  "暴風城", "鐵爐堡", "達納蘇斯", "艾克索達", "塞拉摩", "撒塔斯", "達拉然", "托巴拉德", "遠古達拉然", "恆春谷", "暴風之盾"
+end
+
 local spells = (UnitFactionGroup("player") == "Horde") and {
 	[1] = {3567,11417},		-- Orgrimmar
 	[2] = {3563,11418},		-- Undercity
@@ -17,17 +23,17 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 	[10] = {132627,132626},	-- Vale of Eternal Blossoms
 	[11] = {176242,176244},	-- Warspear
 } or { -- Alliance
-	[1] = {3561,10059,"暴風城"},		-- Stormwind
-	[2] = {3562,11416,"鐵爐堡"},		-- Ironforge
-	[3] = {3565,11419,"達納蘇斯"},		-- Darnassus
-	[4] = {32271,32266,"艾克索達"},	-- Exodar
-	[5] = {49359,49360,"塞拉摩"},	-- Theramore
-	[6] = {33690,33691,"撒塔斯"},	-- Shattrath
-	[7] = {53140,53142,"達拉然"},	-- Dalaran
-	[8] = {88342,88345,"托巴拉德"},	-- Tol Barad
-	[9] = {120145,120146,"遠古達拉然"},	-- Ancient Dalaran
-	[10] = {132621,132620,"恆春谷"},	-- Vale of Eternal Blossoms
-	[11] = {176248,176246,"暴風之盾"},	-- Stormshield
+	[1] = {3561,10059, a1},		-- Stormwind
+	[2] = {3562,11416, a2},		-- Ironforge
+	[3] = {3565,11419, a3},		-- Darnassus
+	[4] = {32271,32266, a4},	-- Exodar
+	[5] = {49359,49360, a5},	-- Theramore
+	[6] = {33690,33691, a6},	-- Shattrath
+	[7] = {53140,53142, a7},	-- Dalaran
+	[8] = {88342,88345, a8},	-- Tol Barad
+	[9] = {120145,120146, a9},	-- Ancient Dalaran
+	[10] = {132621,132620, a10},	-- Vale of Eternal Blossoms
+	[11] = {176248,176246, a11},	-- Stormshield
 }
 
 local frame = CreateFrame("Frame", "TeleportMenu", UIParent)
