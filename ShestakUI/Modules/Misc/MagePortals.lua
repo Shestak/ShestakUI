@@ -14,28 +14,28 @@ end
 
 local spells = (UnitFactionGroup("player") == "Horde") and {
 	[1] = {3567,11417, Portalname[12]},		-- Orgrimmar
-	[2] = {3563,11418, Portalname[13},		-- Undercity
+	[2] = {3563,11418, Portalname[13]},		-- Undercity
 	[3] = {3566,11420, Portalname[14]},		-- Thunder Bluff
-	[4] = {32272,32267, Portalname[15]},	-- Silvermoon
-	[5] = {49358,49361, Portalname[16]},	-- Stonard
-	[6] = {35715,35717, Portalname[17]},	-- Shattrath
-	[7] = {53140,53142, Portalname[18]},	-- Dalaran
-	[8] = {88344,88346, Portalname[19]},	-- Tol Barad
-	[9] = {120145,120146, Portalname[20]},	-- Ancient Dalaran
-	[10] = {132627,132626, Portalname[21]},	-- Vale of Eternal Blossoms
-	[11] = {176242,176244, Portalname[22]},	-- Warspear
+	[4] = {32272,32267, Portalname[15]},		-- Silvermoon
+	[5] = {49358,49361, Portalname[16]},		-- Stonard
+	[6] = {35715,35717, Portalname[17]},		-- Shattrath
+	[7] = {53140,53142, Portalname[18]},		-- Dalaran
+	[8] = {88344,88346, Portalname[19]},		-- Tol Barad
+	[9] = {120145,120146, Portalname[20]},		-- Ancient Dalaran
+	[10] = {132627,132626, Portalname[21]},		-- Vale of Eternal Blossoms
+	[11] = {176242,176244, Portalname[22]},		-- Warspear
 } or { -- Alliance
 	[1] = {3561,10059, Portalname[1]},		-- Stormwind
 	[2] = {3562,11416, Portalname[2]},		-- Ironforge
 	[3] = {3565,11419, Portalname[3]},		-- Darnassus
-	[4] = {32271,32266, Portalname[4]},	-- Exodar
-	[5] = {49359,49360, Portalname[5]},	-- Theramore
-	[6] = {33690,33691, Portalname[6]},	-- Shattrath
-	[7] = {53140,53142, Portalname[7]},	-- Dalaran
-	[8] = {88342,88345, Portalname[8]},	-- Tol Barad
-	[9] = {120145,120146, Portalname[9]},	-- Ancient Dalaran
-	[10] = {132621,132620, Portalname[10]},	-- Vale of Eternal Blossoms
-	[11] = {176248,176246, Portalname[11]},	-- Stormshield
+	[4] = {32271,32266, Portalname[4]},		-- Exodar
+	[5] = {49359,49360, Portalname[5]},		-- Theramore
+	[6] = {33690,33691, Portalname[6]},		-- Shattrath
+	[7] = {53140,53142, Portalname[7]},		-- Dalaran
+	[8] = {88342,88345, Portalname[8]},		-- Tol Barad
+	[9] = {120145,120146, Portalname[9]},		-- Ancient Dalaran
+	[10] = {132621,132620, Portalname[10]},		-- Vale of Eternal Blossoms
+	[11] = {176248,176246, Portalname[11]},		-- Stormshield
 }
 
 local frame = CreateFrame("Frame", "TeleportMenu", UIParent)
