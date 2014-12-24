@@ -92,7 +92,7 @@ hooksecurefunc("UnitPopup_OnClick", function(self)
 			n = n or name
 			r = r or GetRealmName()
 
-			linkurl = "http://www.battlenet.com.cn/wow/character/"..urlencode(r).."/"..urlencode(n).."/advanced"
+			linkurl = "http://www.battlenet.com.cn/wow/zh/character/"..urlencode(r).."/"..urlencode(n).."/advanced"
 			inputBox.editBox:SetText(linkurl)
 			inputBox.editBox:HighlightText()
 			return
