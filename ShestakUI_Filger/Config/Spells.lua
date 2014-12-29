@@ -116,17 +116,97 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = 30,
 			Position = {unpack(C["filger_position"].cooldown)},
-
-				-- 物品
-                -- 手套
-                {slotID = 10, filter = "CD" },
-                -- 腰带
-                {slotID = 6, filter = "CD" },
-                -- 披风
-                {slotID = 15, filter = "CD" },
-                -- 饰品
-                {slotID = 13, filter = "CD" },
-                {slotID = 14, filter = "CD" },
+			
+			-- Self
+			-- Mind Freeze
+			{spellID = 47528, filter = "CD"},
+			-- Strangulate
+			{spellID = 47476, filter = "CD"},
+			-- Gnaw (Ghoul)
+			{spellID = 47481, filter = "CD"},
+			-- Remorseless Winter
+			{spellID = 108200, filter = "CD"},
+			-- Dark Simulacrum
+			{spellID = 77606, filter = "CD"},
+			-- Soul Reaper
+			{spellID = 130736, filter = "CD"},
+			-- Death Grip
+			{spellID = 49576, filter = "CD"},
+			-- Plague Leech
+			{spellID = 123693, filter = "CD"},
+			-- Death and Decay
+			{spellID = 43265, filter = "CD"},
+			-- Death's Advance
+			{spellID = 96268, filter = "CD"},
+			-- Rune Tap
+			{spellID = 48982, filter = "CD"},
+			-- Anti-Magic Shell
+			{spellID = 48707, filter = "CD"},
+			-- Vampiric Blood
+			{spellID = 55233, filter = "CD"},
+			-- Pillar of Frost
+			{spellID = 51271, filter = "CD"},
+			-- Outbreak
+			{spellID = 77575, filter = "CD"},
+			-- Gorefiend's Grasp
+			{spellID = 108199, filter = "CD"},
+			-- Raise Dead
+			{spellID = 46584, filter = "CD"},
+			-- Dancing Rune Weapon
+			{spellID = 49028, filter = "CD"},
+			-- Unholy Blight
+			{spellID = 115989, filter = "CD"},
+			-- Lichborne
+			{spellID = 49039, filter = "CD"},
+			-- Desecrated Ground
+			{spellID = 108201, filter = "CD"},
+			-- Death Pact
+			{spellID = 48743, filter = "CD"},
+			-- Anti-Magic Zone
+			{spellID = 51052, filter = "CD"},
+			-- Icebound Fortitude
+			{spellID = 48792, filter = "CD"},
+			-- Summon Gargoyle
+			{spellID = 49206, filter = "CD"},
+			
+			-- Racial种族buff cd
+			-- Every Man for Himself (Human)
+			{spellID = 59752, filter = "CD"},
+			-- Stoneform (Dwarf)
+			{spellID = 20594, filter = "CD"},
+			-- Shadowmeld (Night Elf)
+			{spellID = 58984, filter = "CD"},
+			-- Escape Artist (Gnome)
+			{spellID = 20589, filter = "CD"},
+			-- Gift of the Naaru (Draenei)
+			{spellID = 28880, filter = "CD"},
+			-- Darkflight (Worgen)
+			{spellID = 68992, filter = "CD"},
+			-- Blood Fury (Orc)
+			{spellID = 20572, filter = "CD"},
+			-- Will of the Forsaken (Forsaken)
+			{spellID = 7744, filter = "CD"},
+			-- Cannibalize (Forsaken)
+			{spellID = 20577, filter = "CD"},
+			-- War Stomp (Tauren)
+			{spellID = 20549, filter = "CD"},
+			-- Berserking (Troll)
+			{spellID = 26297, filter = "CD"},
+			-- Arcane Torrent (Blood Elf)
+			{spellID = 69179, filter = "CD"},
+			-- Rocket Jump (Goblin)
+			{spellID = 69070, filter = "CD"},
+			
+			-- 物品
+			-- 手套
+			{slotID = 10, filter = "CD" },
+			-- 腰带
+			{slotID = 6, filter = "CD" },
+			-- 披风
+			{slotID = 15, filter = "CD" },
+			-- 饰品
+			{slotID = 13, filter = "CD" },
+			{slotID = 14, filter = "CD" },
 		},
 	},
 	["DRUID"] = {
@@ -321,45 +401,84 @@ C["filger_spells"] = {
 			IconSize = 30,
 			Position = {unpack(C["filger_position"].cooldown)},
 
-				--狂暴
-                { spellID = 50334, filter = "CD" },
-                --狂暴恢復
-                { spellID = 22842, filter = "CD" },
-                --複生
-                { spellID = 20484, filter = "CD" },
-                --樹皮術
-                { spellID = 22812, filter = "CD" },
-                --寧靜
-                { spellID = 740, filter = "CD" },
-                --自然戒備
-                { spellID = 124974, filter = "CD" },
-                --星穹大連線
-                { spellID = 112071, filter = "CD" },
-                --野性位移
-                { spellID = 102280, filter = "CD" },
-                --化身:艾露恩之眷
-                { spellID = 102560, filter = "CD" },
-                --狂奔怒吼
-                { spellID = 106898, filter = "CD" },
-                --急奔
-                { spellID = 1850, filter = "CD" },
-                --日光术
-                { spellID = 78675, filter = "CD" },
-                --猛虎之怒
-                { spellID = 5217, filter = "CD" },
-                --影遁
-                { spellID = 58984, filter = "CD" },
+			-- Self
+			-- Nature's Cure
+			{spellID = 88423, filter = "CD"},
+			-- Remove Corruption
+			{spellID = 2782, filter = "CD"},
+			-- Skull Bash
+			{spellID = 106839, filter = "CD"},
+			-- Mangle
+			{spellID = 33917, filter = "CD"},
+			-- Wild Growth
+			{spellID = 48438, filter = "CD"},
+			-- Swiftmend
+			{spellID = 18562, filter = "CD"},
+			-- Growl
+			{spellID = 6795, filter = "CD"},
+			-- Maim
+			{spellID = 22570, filter = "CD"},
+			-- Starsurge
+			{spellID = 78674, filter = "CD"},
+			-- Wild Charge
+			{spellID = 102401, filter = "CD"},
+			-- Force of Nature
+			{spellID = 102693, filter = "CD"},
+			-- Faerie Fire
+			{spellID = 770, filter = "CD"},
+			-- Tiger's Fury
+			{spellID = 5217, filter = "CD"},
+			-- Incapacitating Roar
+			{spellID = 99, filter = "CD"},
+			-- Mass Entanglement
+			{spellID = 102359, filter = "CD"},
+			-- Typhoon
+			{spellID = 132469, filter = "CD"},
+			-- Mighty Bash
+			{spellID = 5211, filter = "CD"},
+			-- Solar Beam
+			{spellID = 78675, filter = "CD"},
+			-- Barkskin
+			{spellID = 22812, filter = "CD"},
+			-- Ironbark
+			{spellID = 102342, filter = "CD"},
+			-- Nature's Swiftness
+			{spellID = 132158, filter = "CD"},
+			-- Ursol's Vortex
+			{spellID = 102793, filter = "CD"},
+			-- Nature's Vigil
+			{spellID = 124974, filter = "CD"},
+			-- Berserk
+			{spellID = 106952, filter = "CD"},
+			-- Incarnation: Son of Ursoc
+			{spellID = 102558, filter = "CD"},
+			-- Incarnation: Tree of Life
+			{spellID = 33891, filter = "CD"},
+			-- Incarnation: Chosen of Elunee
+			{spellID = 102560, filter = "CD"},
+			-- Incarnation: King of the Jungle
+			{spellID = 102543, filter = "CD"},
 
-                -- 物品
-                -- 手套
-                {slotID = 10, filter = "CD" },
-                -- 腰带
-                {slotID = 6, filter = "CD" },
-                -- 披风
-                {slotID = 15, filter = "CD" },
-                -- 饰品
-                {slotID = 13, filter = "CD" },
-                {slotID = 14, filter = "CD" },
+			-- Racial
+			-- Shadowmeld (Night Elf)
+			{spellID = 58984, filter = "CD"},
+			-- Darkflight (Worgen)
+			{spellID = 68992, filter = "CD"},
+			-- War Stomp (Tauren)
+			{spellID = 20549, filter = "CD"},
+			-- Berserking (Troll)
+			{spellID = 26297, filter = "CD", absID = true},
+
+			-- 物品
+			-- 手套
+			{slotID = 10, filter = "CD" },
+			-- 腰带
+			{slotID = 6, filter = "CD" },
+			-- 披风
+			{slotID = 15, filter = "CD" },
+			-- 饰品
+			{slotID = 13, filter = "CD" },
+			{slotID = 14, filter = "CD" },
 		},
 	},
 	["HUNTER"] = {
@@ -467,44 +586,101 @@ C["filger_spells"] = {
 			IconSize = 30,
 			Position = {unpack(C["filger_position"].cooldown)},
 
-				--急速射擊
-                { spellID = 3045, filter = "CD" },
-                --奧術之流
-                { spellID = 25046, filter = "CD" },
-                --誤導
-                { spellID = 34477, filter = "CD" },
-                --偽裝
-                { spellID = 51753, filter = "CD" },
-                --爆炸陷阱
-                { spellID = 13813, filter = "CD" },
-                --冰凍陷阱
-                { spellID = 1499, filter = "CD" },
-                --毒蛇陷阱
-                { spellID = 34600, filter = "CD" },
-                --翼龍釘刺
-                { spellID = 19386, filter = "CD" },
-                --主人的召喚
-                { spellID = 53271, filter = "CD" },
-                --假死
-                { spellID = 5384, filter = "CD" },
-                --兇暴野獸
-                { spellID = 120679, filter = "CD" },
-                --黑鴉獵殺
-                { spellID = 131894, filter = "CD" },
-                --山貓衝刺
-                { spellID = 120697, filter = "CD" },
+			-- Self
+			-- Concussive Shot
+			{spellID = 5116, filter = "CD"},
+			-- Counter Shot
+			{spellID = 147362, filter = "CD"},
+			-- Kill Command
+			{spellID = 34026, filter = "CD"},
+			-- Explosive Shot
+			{spellID = 53301, filter = "CD"},
+			-- Chimera Shot
+			{spellID = 53209, filter = "CD"},
+			-- Kill Shot
+			{spellID = 53351, filter = "CD"},
+			-- Glaive Toss
+			{spellID = 117050, filter = "CD"},
+			-- Barrage
+			{spellID = 120360, filter = "CD"},
+			-- Disengage
+			{spellID = 781, filter = "CD"},
+			-- Dire Beast
+			{spellID = 120679, filter = "CD"},
+			-- Fervor
+			{spellID = 82726, filter = "CD"},
+			-- Misdirection
+			{spellID = 34477, filter = "CD"},
+			-- Feign Death
+			{spellID = 5384, filter = "CD"},
+			-- Explosive Trap
+			{spellID = 13813, filter = "CD"},
+			-- Ice Trap
+			{spellID = 13809, filter = "CD"},
+			-- Binding Shot
+			{spellID = 117526, filter = "CD"},
+			-- Master's Call
+			{spellID = 53271, filter = "CD"},
+			-- Powershot
+			{spellID = 109259, filter = "CD"},
+			-- Wyvern Sting
+			{spellID = 19386, filter = "CD"},
+			-- Intimidation
+			{spellID = 19577, filter = "CD"},
+			-- Bestial Wrath
+			{spellID = 19574, filter = "CD"},
+			-- A Murder of Crows
+			{spellID = 131894, filter = "CD"},
+			-- Lynx Rush
+			{spellID = 120697, filter = "CD"},
+			-- Exhilaration
+			{spellID = 109304, filter = "CD"},
+			-- Rapid Fire
+			{spellID = 3045, filter = "CD"},
+			-- Deterrence
+			{spellID = 19263, filter = "CD"},
+			-- Spirit Mend (Pet)
+			{spellID = 90361, filter = "CD"},
 
-                -- 物品
-                -- 手套
-                {slotID = 10, filter = "CD" },
-                -- 腰带
-                {slotID = 6, filter = "CD" },
-                -- 披风
-                {slotID = 15, filter = "CD" },
-                -- 饰品
-                {slotID = 13, filter = "CD" },
-                {slotID = 14, filter = "CD" },
-		},
+			-- Racial
+			-- Every Man for Himself (Human)
+			{spellID = 59752, filter = "CD"},
+			-- Stoneform (Dwarf)
+			{spellID = 20594, filter = "CD"},
+			-- Shadowmeld (Night Elf)
+			{spellID = 58984, filter = "CD"},
+			-- Gift of the Naaru (Draenei)
+			{spellID = 28880, filter = "CD"},
+			-- Darkflight (Worgen)
+			{spellID = 68992, filter = "CD"},
+			-- Blood Fury (Orc)
+			{spellID = 20572, filter = "CD"},
+			-- Will of the Forsaken (Forsaken)
+			{spellID = 7744, filter = "CD"},
+			-- Cannibalize (Forsaken)
+			{spellID = 20577, filter = "CD"},
+			-- War Stomp (Tauren)
+			{spellID = 20549, filter = "CD"},
+			-- Berserking (Troll)
+			{spellID = 26297, filter = "CD"},
+			-- Arcane Torrent (Blood Elf)
+			{spellID = 69179, filter = "CD"},
+			-- Rocket Jump (Goblin)
+			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
+
+			-- 物品
+			-- 手套
+			{slotID = 10, filter = "CD" },
+			-- 腰带
+			{slotID = 6, filter = "CD" },
+			-- 披风
+			{slotID = 15, filter = "CD" },
+			-- 饰品
+			{slotID = 13, filter = "CD" },
+			{slotID = 14, filter = "CD" },
+	},
 	},
 	["MAGE"] = {
 		{
@@ -527,42 +703,42 @@ C["filger_spells"] = {
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].player_proc)},
 
-				--冰霜之指
-                { spellID = 44544, unitID = "player", caster = "player", filter = "BUFF" },
-                --焦炎之痕
-                { spellID = 48108, unitID = "player", caster = "player", filter = "BUFF" },
-                --飛彈彈幕
-                { spellID = 79683, unitID = "player", caster = "player", filter = "BUFF" },
-                --秘法強化
-                { spellID = 12042, unitID = "player", caster = "player", filter = "BUFF" },
-                --秘法衝擊
-                { spellID = 36032, unitID = "player", caster = "player", filter = "DEBUFF" },
-                --寒冰護體
-                { spellID = 11426, unitID = "player", caster = "player", filter = "BUFF" },
-                --腦部凍結
-                { spellID = 57761, unitID = "player", caster = "player", filter = "BUFF" },
-                --升溫
-                { spellID = 48107, unitID = "player", caster = "player", filter = "BUFF" },
-                --咒法結界
-                { spellID = 1463, unitID = "player", caster = "player", filter = "BUFF" },
-                --力之符文
-                { spellID = 116014, unitID = "player", caster = "player", filter = "BUFF" },
-                --咒法轉移
-                { spellID = 116267, unitID = "player", caster = "player", filter = "BUFF" },
-                --冰寒脈動
-                { spellID = 12472, unitID = "player", caster = "player", filter = "BUFF" },
-                --氣定神閒
-                { spellID = 12043, unitID = "player", caster = "player", filter = "BUFF" },
-                --時光倒轉
-                { spellID = 110909, unitID = "player", caster = "player", filter = "BUFF" },
-                --時光護盾
-                { spellID = 115610, unitID = "player", caster = "player", filter = "BUFF" },
-                --燒灼
-                { spellID = 87023, unitID = "player", caster = "player", filter = "DEBUFF" },
-                --強效隱形
-                { spellID = 113862, unitID = "player", caster = "player", filter = "BUFF" },
-                --冰霜炸彈
-                { spellID = 112948, filter = "CD" },
+			--冰霜之指
+			{ spellID = 44544, unitID = "player", caster = "player", filter = "BUFF" },
+			--焦炎之痕
+			{ spellID = 48108, unitID = "player", caster = "player", filter = "BUFF" },
+			--飛彈彈幕
+			{ spellID = 79683, unitID = "player", caster = "player", filter = "BUFF" },
+			--秘法強化
+			{ spellID = 12042, unitID = "player", caster = "player", filter = "BUFF" },
+			--秘法衝擊
+			{ spellID = 36032, unitID = "player", caster = "player", filter = "DEBUFF" },
+			--寒冰護體
+			{ spellID = 11426, unitID = "player", caster = "player", filter = "BUFF" },
+			--腦部凍結
+			{ spellID = 57761, unitID = "player", caster = "player", filter = "BUFF" },
+			--升溫
+			{ spellID = 48107, unitID = "player", caster = "player", filter = "BUFF" },
+			--咒法結界
+			{ spellID = 1463, unitID = "player", caster = "player", filter = "BUFF" },
+			--力之符文
+			{ spellID = 116014, unitID = "player", caster = "player", filter = "BUFF" },
+			--咒法轉移
+			{ spellID = 116267, unitID = "player", caster = "player", filter = "BUFF" },
+			--冰寒脈動
+			{ spellID = 12472, unitID = "player", caster = "player", filter = "BUFF" },
+			--氣定神閒
+			{ spellID = 12043, unitID = "player", caster = "player", filter = "BUFF" },
+			--時光倒轉
+			{ spellID = 110909, unitID = "player", caster = "player", filter = "BUFF" },
+			--時光護盾
+			{ spellID = 115610, unitID = "player", caster = "player", filter = "BUFF" },
+			--燒灼
+			{ spellID = 87023, unitID = "player", caster = "player", filter = "DEBUFF" },
+			--強效隱形
+			{ spellID = 113862, unitID = "player", caster = "player", filter = "BUFF" },
+			--冰霜炸彈
+			{ spellID = 112948, filter = "CD" },
 		},
 		{
 			Name = "T_BUFF",
@@ -630,27 +806,94 @@ C["filger_spells"] = {
 			IconSize = 30,
 			Position = {unpack(C["filger_position"].cooldown)},
 
-			--镜像术
-			{ spellID = 55342, filter = "CD" },
-			--隐形术
-			{ spellID = 66, filter = "CD" },
-			--燃火
-			{ spellID = 11129, filter = "CD" },
-			--唤醒
-			{ spellID = 12051, filter = "CD" },
-			--秘法強化
-			{ spellID = 12042, filter = "CD" },
-			--急速冷卻
-			{ spellID = 11958, filter = "CD" },
-			--極度冰凍
-			{ spellID = 44572, filter = "CD" },
-			--冰寒脈動
-			{ spellID = 12472, filter = "CD" },
-			--寒冰屏障
-			{ spellID = 45438, filter = "CD" },
-			--冰霜之球
-			{ spellID = 84714, filter = "CD" },
+			-- Self
+			-- Remove Curse
+			{spellID = 475, filter = "CD"},
+			-- Frostjaw
+			{spellID = 102051, filter = "CD"},
+			-- Counterspell
+			{spellID = 2139, filter = "CD"},
+			-- Blink
+			{spellID = 1953, filter = "CD"},
+			-- Blazing Speed
+			{spellID = 108843, filter = "CD"},
+			-- Deep Freeze
+			{spellID = 44572, filter = "CD"},
+			-- Frost Nova
+			{spellID = 122, filter = "CD"},
+			-- Ice Ward
+			{spellID = 111264, filter = "CD"},
+			-- Ring of Frost
+			{spellID = 113724, filter = "CD"},
+			-- Ice Barrier
+			{spellID = 11426, filter = "CD"},
+			-- Temporal Shield
+			{spellID = 115610, filter = "CD"},
+			-- Incanter's Ward
+			{spellID = 1463, filter = "CD"},
+			-- Fire Blast
+			{spellID = 2136, filter = "CD"},
+			-- Frost Bomb
+			{spellID = 112948, filter = "CD"},
+			-- Flamestrike
+			{spellID = 2120, filter = "CD"},
+			-- Cone of Cold
+			{spellID = 120, filter = "CD"},
+			-- Freeze (Pet)
+			{spellID = 33395, filter = "CD"},
+			-- Ice Floes
+			{spellID = 108839, filter = "CD"},
+			-- Combustion
+			{spellID = 11129, filter = "CD"},
+			-- Frozen Orb
+			{spellID = 84714, filter = "CD"},
+			-- Arcane Power
+			{spellID = 12042, filter = "CD"},
+			-- Presence of Mind
+			{spellID = 12043, filter = "CD"},
+			-- Evocation
+			{spellID = 12051, filter = "CD"},
+			-- Icy Veins
+			{spellID = 12472, filter = "CD"},
+			-- Cold Snap
+			{spellID = 11958, filter = "CD"},
+			-- Mirror Image
+			{spellID = 55342, filter = "CD"},
+			-- Alter Time
+			{spellID = 108978, filter = "CD"},
+			-- Ice Block
+			{spellID = 45438, filter = "CD"},
+			-- Invisibility
+			{spellID = 66, filter = "CD"},
 
+			-- Racial
+			-- Every Man for Himself (Human)
+			{spellID = 59752, filter = "CD"},
+			-- Stoneform (Dwarf)
+			{spellID = 20594, filter = "CD"},
+			-- Shadowmeld (Night Elf)
+			{spellID = 58984, filter = "CD"},
+			-- Escape Artist (Gnome)
+			{spellID = 20589, filter = "CD"},
+			-- Gift of the Naaru (Draenei)
+			{spellID = 28880, filter = "CD"},
+			-- Darkflight (Worgen)
+			{spellID = 68992, filter = "CD"},
+			-- Blood Fury (Orc)
+			{spellID = 20572, filter = "CD"},
+			-- Will of the Forsaken (Forsaken)
+			{spellID = 7744, filter = "CD"},
+			-- Cannibalize (Forsaken)
+			{spellID = 20577, filter = "CD"},
+			-- Berserking (Troll)
+			{spellID = 26297, filter = "CD"},
+			-- Arcane Torrent (Blood Elf)
+			{spellID = 69179, filter = "CD"},
+			-- Rocket Jump (Goblin)
+			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
+			
 			-- 物品
 			-- 手套
 			{slotID = 10, filter = "CD" },
@@ -767,22 +1010,77 @@ C["filger_spells"] = {
 			IconSize = 30,
 			Position = {unpack(C["filger_position"].cooldown)},
 
-			--冥思禪功
-			{ spellID = 115176, filter = "CD" },
-			--乾坤挪移
-			{ spellID = 122470, filter = "CD" },
-			--召喚白虎雪怒
-			{ spellID = 123904, filter = "CD" },
-			--凝神絕釀
-			{ spellID = 115288, filter = "CD" },
-			--石形絕釀
-			{ spellID = 115203, filter = "CD" },
-			--召喚玄牛雕像
-			{ spellID = 115315, filter = "CD" },
-			--氣繭護體
-			{ spellID = 116849, filter = "CD" },
-			--五氣歸元
-			{ spellID = 115310, filter = "CD" },
+			-- Self
+			-- Detox
+			{spellID = 115450, filter = "CD"},
+			-- Spear Hand Strike
+			{spellID = 116705, filter = "CD"},
+			-- Paralysis
+			{spellID = 115078, filter = "CD"},
+			-- Expel Harm
+			{spellID = 115072, filter = "CD"},
+			-- Rising Sun Kick
+			{spellID = 107428, filter = "CD"},
+			-- Provoke
+			{spellID = 115546, filter = "CD"},
+			-- Zen Sphere
+			{spellID = 124081, filter = "CD"},
+			-- Chi Wave
+			{spellID = 115098, filter = "CD"},
+			-- Fists of Fury
+			{spellID = 113656, filter = "CD"},
+			-- Chi Burst
+			{spellID = 123986, filter = "CD"},
+			-- Guard
+			{spellID = 115295, filter = "CD"},
+			-- Charging Ox Wave
+			{spellID = 119392, filter = "CD"},
+			-- Ring of Peace
+			{spellID = 116844, filter = "CD"},
+			-- Thunder Focus Tea
+			{spellID = 116680, filter = "CD"},
+			-- Dampen Harm
+			{spellID = 122278, filter = "CD"},
+			-- Flying Serpent Kick
+			{spellID = 101545, filter = "CD"},
+			-- Energizing Brew
+			{spellID = 115288, filter = "CD"},
+			-- Touch of Karma
+			{spellID = 122470, filter = "CD"},
+			-- Touch of Death
+			{spellID = 115080, filter = "CD"},
+			-- Nimble Brew
+			{spellID = 137562, filter = "CD"},
+			-- Life Cocoon
+			{spellID = 116849, filter = "CD"},
+			-- Invoke Xuen, the White Tiger
+			{spellID = 123904, filter = "CD"},
+
+			-- Racial
+			-- Every Man for Himself (Human)
+			{spellID = 59752, filter = "CD"},
+			-- Stoneform (Dwarf)
+			{spellID = 20594, filter = "CD"},
+			-- Shadowmeld (Night Elf)
+			{spellID = 58984, filter = "CD"},
+			-- Escape Artist (Gnome)
+			{spellID = 20589, filter = "CD"},
+			-- Gift of the Naaru (Draenei)
+			{spellID = 28880, filter = "CD"},
+			-- Blood Fury (Orc)
+			{spellID = 20572, filter = "CD"},
+			-- Will of the Forsaken (Forsaken)
+			{spellID = 7744, filter = "CD"},
+			-- Cannibalize (Forsaken)
+			{spellID = 20577, filter = "CD"},
+			-- War Stomp (Tauren)
+			{spellID = 20549, filter = "CD"},
+			-- Berserking (Troll)
+			{spellID = 26297, filter = "CD"},
+			-- Arcane Torrent (Blood Elf)
+			{spellID = 69179, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 
 			-- 物品
 			-- 手套
@@ -914,10 +1212,67 @@ C["filger_spells"] = {
 			IconSize = 30,
 			Position = {unpack(C["filger_position"].cooldown)},
 
-			--精通光環
-			{ spellID = 31821, filter = "CD" },
-			--聖佑術
-			{ spellID = 498, filter = "CD" },
+			-- Self
+			-- Cleanse
+			{spellID = 4987, filter = "CD"},
+			-- Rebuke
+			{spellID = 96231, filter = "CD"},
+			-- Repentance
+			{spellID = 20066, filter = "CD"},
+			-- Turn Evil
+			{spellID = 10326, filter = "CD"},
+			-- Hammer of Justice
+			{spellID = 853, filter = "CD"},
+			-- Judgment
+			{spellID = 20271, filter = "CD"},
+			-- Consecration
+			{spellID = 26573, filter = "CD"},
+			-- Holy Wrath
+			{spellID = 119072, filter = "CD"},
+			-- Avenger's Shield
+			{spellID = 31935, filter = "CD"},
+			-- Exorcism
+			{spellID = 879, filter = "CD"},
+			-- Holy Prism
+			{spellID = 114165, filter = "CD"},
+			-- Hand of Freedom
+			{spellID = 1044, filter = "CD"},
+			-- Hand of Purity
+			{spellID = 114039, filter = "CD"},
+			-- Speed of Light
+			{spellID = 85499, filter = "CD"},
+			-- Divine Protection
+			{spellID = 498, filter = "CD"},
+			-- Execution Sentence
+			{spellID = 114157, filter = "CD"},
+			-- Light's Hammer
+			{spellID = 114158, filter = "CD"},
+			-- Blinding Light
+			{spellID = 115750, filter = "CD"},
+			-- Holy Avenger
+			{spellID = 105809, filter = "CD"},
+			-- Devotion Aura
+			{spellID = 31821, filter = "CD"},
+			-- Hand of Sacrifice
+			{spellID = 6940, filter = "CD"},
+			-- Avenging Wrath
+			{spellID = 31884, filter = "CD"},
+			-- Ardent Defender
+			{spellID = 31850, filter = "CD"},
+			-- Hand of Protection
+			{spellID = 1022, filter = "CD"},
+
+			-- Racial
+			-- Every Man for Himself (Human)
+			{spellID = 59752, filter = "CD"},
+			-- Stoneform (Dwarf)
+			{spellID = 20594, filter = "CD"},
+			-- Gift of the Naaru (Draenei)
+			{spellID = 28880, filter = "CD"},
+			-- War Stomp (Tauren)
+			{spellID = 20549, filter = "CD"},
+			-- Arcane Torrent (Blood Elf)
+			{spellID = 69179, filter = "CD"},
 
 			-- 物品
 			-- 手套
@@ -1115,26 +1470,83 @@ C["filger_spells"] = {
 			IconSize = 30,
 			Position = {unpack(C["filger_position"].cooldown)},
 
-			--光束泉
-			{ spellID = 126135, filter = "CD" },
-			--神聖禮頌
-			{ spellID = 64843, filter = "CD" },
-			--守護聖靈
-			{ spellID = 47788, filter = "CD" },
-			--真言術:壁
-			{ spellID = 62618, filter = "CD" },
-			--痛苦鎮壓
-			{ spellID = 33206, filter = "CD" },
-			--影散
-			{ spellID = 47585, filter = "CD" },
-			--吸血鬼的擁抱
-			{ spellID = 15286, filter = "CD" },
-			--暗影魔
-			{ spellID = 34433, filter = "CD" },
-			--注入能量
-			{ spellID = 10060, filter = "CD" },
-			--絕望禱言
-			{ spellID = 19236, filter = "CD" },
+			-- Self
+			-- Purify
+			{spellID = 527, filter = "CD"},
+			-- Mass Dispel
+			{spellID = 32375, filter = "CD"},
+			-- Penance
+			{spellID = 47540, filter = "CD"},
+			-- Mind Blast
+			{spellID = 8092, filter = "CD"},
+			-- Holy Fire
+			{spellID = 14914, filter = "CD"},
+			-- Circle of Healing
+			{spellID = 34861, filter = "CD"},
+			-- Prayer of Mending
+			{spellID = 33076, filter = "CD"},
+			-- Divine Star
+			{spellID = 110744, filter = "CD"},
+			-- Cascade
+			{spellID = 121135, filter = "CD"},
+			-- Archangel
+			{spellID = 81700, filter = "CD"},
+			-- Holy Word: Chastise
+			{spellID = 88625, filter = "CD"},
+			-- Halo
+			{spellID = 120517, filter = "CD"},
+			-- Shadow Word: Death
+			{spellID = 32379, filter = "CD"},
+			-- Psychic Scream
+			{spellID = 8122, filter = "CD"},
+			-- Psychic Horror
+			{spellID = 64044, filter = "CD"},
+			-- Silence
+			{spellID = 15487, filter = "CD"},
+			-- Power Infusion
+			{spellID = 10060, filter = "CD"},
+			-- Dispersion
+			{spellID = 47585, filter = "CD"},
+			-- Pain Suppression
+			{spellID = 33206, filter = "CD"},
+			-- Guardian Spirit
+			{spellID = 47788, filter = "CD"},
+			-- Power Word: Barrier
+			{spellID = 62618, filter = "CD"},
+			-- Desperate Prayer
+			{spellID = 19236, filter = "CD"},
+			-- Leap of Faith
+			{spellID = 73325, filter = "CD"},
+			-- Void Tendrils
+			{spellID = 108920, filter = "CD"},
+
+			-- Racial
+			-- Every Man for Himself (Human)
+			{spellID = 59752, filter = "CD"},
+			-- Stoneform (Dwarf)
+			{spellID = 20594, filter = "CD"},
+			-- Shadowmeld (Night Elf)
+			{spellID = 58984, filter = "CD"},
+			-- Escape Artist (Gnome)
+			{spellID = 20589, filter = "CD"},
+			-- Gift of the Naaru (Draenei)
+			{spellID = 28880, filter = "CD"},
+			-- Darkflight (Worgen)
+			{spellID = 68992, filter = "CD"},
+			-- Will of the Forsaken (Forsaken)
+			{spellID = 7744, filter = "CD"},
+			-- Cannibalize (Forsaken)
+			{spellID = 20577, filter = "CD"},
+			-- War Stomp (Tauren)
+			{spellID = 20549, filter = "CD"},
+			-- Berserking (Troll)
+			{spellID = 26297, filter = "CD"},
+			-- Arcane Torrent (Blood Elf)
+			{spellID = 69179, filter = "CD"},
+			-- Rocket Jump (Goblin)
+			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 
 			-- 物品
 			-- 手套
@@ -1306,40 +1718,59 @@ C["filger_spells"] = {
 			IconSize = 30,
 			Position = {unpack(C["filger_position"].cooldown)},
 
-			--死亡標記
-			{ spellID = 137619, filter = "CD" },
-			--暗影步
-			{ spellID = 36554, filter = "CD" },
-			--预备
-			{ spellID = 14185, filter = "CD" },
-			--疾跑
-			{ spellID = 2983, filter = "CD" },
-			--斗篷
-			{ spellID = 31224, filter = "CD" },
-			--闪避
-			{ spellID = 5277, filter = "CD" },
-			--影舞
-			{ spellID = 51713, filter = "CD" },
-			--預謀
-			{ spellID = 14183, filter = "CD" },
-			--致盲
-			{ spellID = 2094, filter = "CD" },
-			--偷天換日
-			{ spellID = 57934, filter = "CD" },
-			--战斗就绪
-			{ spellID = 74001, filter = "CD" },
-			--烟雾弹
-			{ spellID = 76577, filter = "CD" },
-			--消失
-			{ spellID = 1856, filter = "CD" },
-			--宿怨
-			{ spellID = 79140, filter = "CD" },
-			--狂舞杀戮
-			{ spellID = 51690, filter = "CD" },
-			--能量刺激
-			{ spellID = 13750, filter = "CD" },
-			--奧術之流
-			{ spellID = 25046, filter = "CD" },
+			-- Self
+			-- Stealth
+			{spellID = 1784, filter = "CD"},
+			-- Kick
+			{spellID = 1766, filter = "CD"},
+			-- Gouge
+			{spellID = 1776, filter = "CD"},
+			-- Kidney Shot
+			{spellID = 408, filter = "CD"},
+			-- Premiditation
+			{spellID = 14183, filter = "CD"},
+			-- Sprint
+			{spellID = 2983, filter = "CD"},
+			-- Killing Spree
+			{spellID = 51690, filter = "CD"},
+			-- Adrenaline Rush
+			{spellID = 13750, filter = "CD"},
+			-- Vendetta
+			{spellID = 79140, filter = "CD"},
+			-- Shadow Dance
+			{spellID = 51713, filter = "CD"},
+			-- Combat Readiness
+			{spellID = 74001, filter = "CD"},
+			-- Vanish
+			{spellID = 1856, filter = "CD"},
+
+			-- Racial
+			-- Every Man for Himself (Human)
+			{spellID = 59752, filter = "CD"},
+			-- Stoneform (Dwarf)
+			{spellID = 20594, filter = "CD"},
+			-- Shadowmeld (Night Elf)
+			{spellID = 58984, filter = "CD"},
+			-- Escape Artist (Gnome)
+			{spellID = 20589, filter = "CD"},
+			-- Darkflight (Worgen)
+			{spellID = 68992, filter = "CD"},
+			-- Blood Fury (Orc)
+			{spellID = 20572, filter = "CD"},
+			-- Will of the Forsaken (Forsaken)
+			{spellID = 7744, filter = "CD"},
+			-- Cannibalize (Forsaken)
+			{spellID = 20577, filter = "CD"},
+			-- Berserking (Troll)
+			{spellID = 26297, filter = "CD"},
+			-- Arcane Torrent (Blood Elf)
+			{spellID = 69179, filter = "CD"},
+			-- Rocket Jump (Goblin)
+			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
+			-- Shadow Reflection
+			{spellID = 152151, filter = "CD"},
 
 			-- 物品
 			-- 手套
@@ -1489,10 +1920,67 @@ C["filger_spells"] = {
 			IconSize = 30,
 			Position = {unpack(C["filger_position"].cooldown)},
 
-			--火元素圖騰
-			{ spellID = 2894, filter = "CD" },
-			--土元素圖騰
-			{ spellID = 2062, filter = "CD" },
+			-- Self
+			-- Cleanse Spirit
+			{spellID = 51886, filter = "CD"},
+			-- Wind Shear
+			{spellID = 57994, filter = "CD"},
+			-- Hex
+			{spellID = 51514, filter = "CD"},
+			-- Earth Shock
+			{spellID = 8042, filter = "CD"},
+			-- Lava Burst
+			{spellID = 51505, filter = "CD"},
+			-- Riptide
+			{spellID = 61295, filter = "CD"},
+			-- Stormstrike
+			{spellID = 17364, filter = "CD"},
+			-- Lava Lash
+			{spellID = 60103, filter = "CD"},
+			-- Healing Rain
+			{spellID = 73920, filter = "CD"},
+			-- Elemental Blast
+			{spellID = 117014, filter = "CD"},
+			-- Unleash Elements
+			{spellID = 73680, filter = "CD"},
+			-- Thunderstorm
+			{spellID = 51490, filter = "CD"},
+			-- Earthbind Totem
+			{spellID = 2484, filter = "CD"},
+			-- Tremor Totem
+			{spellID = 8143, filter = "CD"},
+			-- Shamanistic Rage
+			{spellID = 30823, filter = "CD"},
+			-- Stone Bulwark Totem
+			{spellID = 108270, filter = "CD"},
+			-- Astral Shift
+			{spellID = 108271, filter = "CD"},
+			-- Ancestral Swiftness
+			{spellID = 16188, filter = "CD"},
+			-- Feral Spirit
+			{spellID = 51533, filter = "CD"},
+			-- Spiritwalker's Grace
+			{spellID = 79206, filter = "CD"},
+			-- Ancestral Guidance
+			{spellID = 108281, filter = "CD"},
+			-- Ascendance
+			{spellID = 114049, filter = "CD"},
+
+			-- Racial
+			-- Stoneform (Dwarf)
+			{spellID = 20594, filter = "CD"},
+			-- Gift of the Naaru (Draenei)
+			{spellID = 28880, filter = "CD"},
+			-- Blood Fury (Orc)
+			{spellID = 20572, filter = "CD"},
+			-- War Stomp (Tauren)
+			{spellID = 20549, filter = "CD"},
+			-- Berserking (Troll)
+			{spellID = 26297, filter = "CD"},
+			-- Rocket Jump (Goblin)
+			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 
 			-- 物品
 			-- 手套
@@ -1680,6 +2168,52 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = 30,
 			Position = {unpack(C["filger_position"].cooldown)},
+			
+			-- Self
+			-- Devour Magic (Felhunter)
+			{spellID = 19505, filter = "CD"},
+			-- Spell Lock (Felhunter)
+			{spellID = 19647, filter = "CD"},
+			-- Shadowfury
+			{spellID = 30283, filter = "CD"},
+			-- Howl of Terror
+			{spellID = 5484, filter = "CD"},
+			-- Mortal Coil
+			{spellID = 6789, filter = "CD"},
+			-- Sacrifice (Voidwalker)
+			{spellID = 7812, filter = "CD"},
+			-- Hand of Gul'dan
+			{spellID = 105174, filter = "CD"},
+			-- Demonic Circle: Teleport
+			{spellID = 48020, filter = "CD"},
+			-- Felstorm
+			{spellID = 89751, filter = "CD"},
+			-- Soulburn
+			{spellID = 74434, filter = "CD"},
+			-- Grimoire of Service
+			{spellID = 108501, filter = "CD"},
+
+			-- Racial
+			-- Every Man for Himself (Human)
+			{spellID = 59752, filter = "CD"},
+			-- Stoneform (Dwarf)
+			{spellID = 20594, filter = "CD"},
+			-- Escape Artist (Gnome)
+			{spellID = 20589, filter = "CD"},
+			-- Darkflight (Worgen)
+			{spellID = 68992, filter = "CD"},
+			-- Blood Fury (Orc)
+			{spellID = 20572, filter = "CD"},
+			-- Will of the Forsaken (Forsaken)
+			{spellID = 7744, filter = "CD"},
+			-- Cannibalize (Forsaken)
+			{spellID = 20577, filter = "CD"},
+			-- Berserking (Troll)
+			{spellID = 26297, filter = "CD"},
+			-- Arcane Torrent (Blood Elf)
+			{spellID = 69179, filter = "CD"},
+			-- Rocket Jump (Goblin)
+			{spellID = 69070, filter = "CD"},
 
 			-- 物品
 			-- 手套
@@ -1814,18 +2348,71 @@ C["filger_spells"] = {
 			IconSize = 30,
 			Position = {unpack(C["filger_position"].cooldown)},
 
-			--鲁莽
-			{ spellID = 1719, filter = "CD" },
-			--浴血奋战
-			{ spellID = 12292, filter = "CD" },
-			--盾墙
-			{ spellID = 871, filter = "CD" },
-			--集结呐喊
-			{ spellID = 97462, filter = "CD" },
-			--破胆怒吼
-			{ spellID = 5246, filter = "CD" },
-			--天神下凡
-			{ spellID = 107574, filter = "CD" },
+			-- Self
+			-- Pummel
+			{spellID = 6552, filter = "CD"},
+			-- Shield Slam
+			{spellID = 23922, filter = "CD"},
+			-- Shockwave
+			{spellID = 46968, filter = "CD"},
+			-- Storm Bolt
+			{spellID = 107570, filter = "CD"},
+			-- Thunder Clap
+			{spellID = 6343, filter = "CD"},
+			-- Taunt
+			{spellID = 355, filter = "CD"},
+			-- Colossus Smash
+			{spellID = 86346, filter = "CD"},
+			-- Charge
+			{spellID = 100, filter = "CD"},
+			-- Spell Reflection
+			{spellID = 23920, filter = "CD"},
+			-- Intervene
+			{spellID = 3411, filter = "CD"},
+			-- Berserker Rage
+			{spellID = 18499, filter = "CD"},
+			-- Heroic Leap
+			{spellID = 6544, filter = "CD"},
+			-- Demoralizing Shout
+			{spellID = 1160, filter = "CD"},
+			-- Enraged Regeneration
+			{spellID = 55694, filter = "CD"},
+			-- Shield Wall
+			{spellID = 871, filter = "CD"},
+			-- Last Stand
+			{spellID = 12975, filter = "CD"},
+			-- Rallying Cry
+			{spellID = 97462, filter = "CD"},
+
+			-- Racial
+			-- Every Man for Himself (Human)
+			{spellID = 59752, filter = "CD"},
+			-- Stoneform (Dwarf)
+			{spellID = 20594, filter = "CD"},
+			-- Shadowmeld (Night Elf)
+			{spellID = 58984, filter = "CD"},
+			-- Escape Artist (Gnome)
+			{spellID = 20589, filter = "CD"},
+			-- Gift of the Naaru (Draenei)
+			{spellID = 28880, filter = "CD"},
+			-- Darkflight (Worgen)
+			{spellID = 68992, filter = "CD"},
+			-- Blood Fury (Orc)
+			{spellID = 20572, filter = "CD"},
+			-- Will of the Forsaken (Forsaken)
+			{spellID = 7744, filter = "CD"},
+			-- Cannibalize (Forsaken)
+			{spellID = 20577, filter = "CD"},
+			-- War Stomp (Tauren)
+			{spellID = 20549, filter = "CD"},
+			-- Berserking (Troll)
+			{spellID = 26297, filter = "CD"},
+			-- Arcane Torrent (Blood Elf)
+			{spellID = 69179, filter = "CD"},
+			-- Rocket Jump (Goblin)
+			{spellID = 69070, filter = "CD"},
+			-- Quaking Palm (Pandaren)
+			{spellID = 107079, filter = "CD"},
 
 			-- 物品
 			-- 手套
