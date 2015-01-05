@@ -8,8 +8,8 @@ local T, C, L, _ = unpack(select(2, ...))
 	C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -33, -75}
 	C["position"].raid_cooldown = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -75}
 	--C["position"].map = {"LEFT", UIParent, "LEFT", 0, 150}
-	C["position"].unitframes.arena = {"BOTTOMRIGHT", UIParent, "RIGHT", -100, -70}
-	C["position"].unitframes.boss = {"BOTTOMRIGHT", UIParent, "RIGHT", -100, -70}
+	C["position"].unitframes.arena = {"BOTTOMRIGHT", UIParent, "RIGHT", -270, -70}
+	C["position"].unitframes.boss = {"BOTTOMRIGHT", UIParent, "RIGHT", -270, -70}
 	C["actionbar"].petbar_horizontal = true
 	C["position"].pet_horizontal = {"BOTTOM", UIParent, "BOTTOM", 0, 64}
 	
