@@ -1200,9 +1200,9 @@ local function Shared(self, unit)
 		if C.aura.boss_buffs == true then
 			self.Auras = CreateFrame("Frame", nil, self)
 			if C.unitframe.boss_on_right == true then
-				self.Auras:SetPoint("RIGHT", self, "LEFT", -5, 0)
-				self.Auras.initialAnchor = "RIGHT"
-				self.Auras["growth-x"] = "LEFT"
+				self.Auras:SetPoint("LEFT", self, "RIGHT", 5, 0)	--("RIGHT", self, "LEFT", -5, 0)
+				self.Auras.initialAnchor = "LEFT"	--RIGHT
+				self.Auras["growth-x"] = "RIGHT"	--LEFT
 			else
 				self.Auras:SetPoint("LEFT", self, "RIGHT", 5, 0)
 				self.Auras.initialAnchor = "LEFT"
