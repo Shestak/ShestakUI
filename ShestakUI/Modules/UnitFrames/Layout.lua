@@ -6,6 +6,50 @@ if C.unitframe.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 local _, ns = ...
 local oUF = ns.oUF
+local LargePetCastbar = false	--true/大型施法条 false/小型施法条
+
+----------------------------------------------------------------------------------------
+-- boss框体只显示自己debuff函数
+----------------------------------------------------------------------------------------
+T.OnlyMyDebuffsToBoss = function(icons, unit, icon, index, offset, filter, isDebuff, duration, timeLeft) 
+	local _, _, _, _, dtype, duration, expirationTime, _, isStealable = UnitAura(unit, index, icon.filter) 
+
+	local playerUnits = { 
+		player = true, 
+		pet = true, 
+		vehicle = true, 
+	} 
+
+	if icon.debuff then 
+		if not UnitIsFriend("player", unit) and not playerUnits[icon.owner] then 
+			icon:Hide() 
+		elseif C.aura.debuff_color_type == true then 
+            local color = DebuffTypeColor[dtype] or DebuffTypeColor.none 
+            icon:SetBackdropBorderColor(color.r, color.g, color.b) 
+            icon.icon:SetDesaturated(false) 
+		else 
+			icon:SetBackdropBorderColor(1, 0, 0) 
+		end 
+	elseif (isStealable or ((T.class == "MAGE" or T.class == "PRIEST" or T.class == "SHAMAN" or T.class == "HUNTER") and dtype == "Magic")) and not UnitIsFriend("player", unit) then 
+		icon:SetBackdropBorderColor(1, 0.85, 0) 
+	else 
+		icon:SetBackdropBorderColor(unpack(C.media.border_color)) 
+	end 
+
+	if duration and duration > 0 and C.aura.show_timer == true then 
+		icon.remaining:Show() 
+		icon.timeLeft = expirationTime 
+		icon:SetScript("OnUpdate", CreateAuraTimer) 
+	else 
+		icon.remaining:Hide() 
+		icon.timeLeft = math.huge 
+		icon:SetScript("OnUpdate", nil) 
+	end 
+
+	icon.first = true 
+end
+--以上为自定义添加
+----------------------------------------------------------------------------------------
 
 -- Create layout
 local function Shared(self, unit)
@@ -944,7 +988,7 @@ local function Shared(self, unit)
 		end
 	end
 
-	if C.unitframe.unit_castbar == true and unit ~= "arenatarget" then
+	if C.unitframe.unit_castbar == true and unit ~= "arenatarget" and unit ~= "pet"  then	-- (and unit ~= "pet")  pet施法条另行定义
 		self.Castbar = CreateFrame("StatusBar", self:GetName().."_Castbar", self)
 		self.Castbar:SetStatusBarTexture(C.media.texture, "ARTWORK")
 
@@ -1100,6 +1144,51 @@ local function Shared(self, unit)
 			end
 		end
 	end
+	
+----------------------------------------------------------------------------------------
+--	更改pet施法条style
+	if C.unitframe.unit_castbar == true and unit == "pet" then
+		self.Castbar = CreateFrame("StatusBar", self:GetName().."_Castbar", self)
+		self.Castbar:SetStatusBarTexture(C.media.texture, "ARTWORK")
+
+		self.Castbar.bg = self.Castbar:CreateTexture(nil, "BORDER")
+		self.Castbar.bg:SetAllPoints()
+		self.Castbar.bg:SetTexture(C.media.texture)
+
+		self.Castbar.Overlay = CreateFrame("Frame", nil, self.Castbar)
+		self.Castbar.Overlay:SetTemplate("Default")
+		self.Castbar.Overlay:SetFrameLevel(1)
+		self.Castbar.Overlay:SetFrameStrata("BACKGROUND")
+		self.Castbar.Overlay:SetPoint("TOPLEFT", -2, 2)
+		self.Castbar.Overlay:SetPoint("BOTTOMRIGHT", 2, -2)
+
+		self.Castbar.PostCastStart = T.PostCastStart
+		self.Castbar.PostChannelStart = T.PostChannelStart
+		
+		if LargePetCastbar == true then
+			self.Castbar:SetPoint("BOTTOM", "ActionBarAnchor", "TOP", 0, 158)
+			self.Castbar:SetWidth(281)
+			self.Castbar:SetHeight(10)
+			
+			self.Castbar.Time = T.SetFontString(self.Castbar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+			self.Castbar.Time:SetPoint("RIGHT", self.Castbar, "RIGHT", 0, 0)
+			self.Castbar.Time:SetTextColor(1, 1, 1)
+			self.Castbar.Time:SetJustifyH("RIGHT")
+			self.Castbar.CustomTimeText = T.CustomCastTimeText
+			self.Castbar.CustomDelayText = T.CustomCastDelayText
+
+			self.Castbar.Text = T.SetFontString(self.Castbar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+			self.Castbar.Text:SetPoint("LEFT", self.Castbar, "LEFT", 2, 0)
+			self.Castbar.Text:SetPoint("RIGHT", self.Castbar.Time, "LEFT", -1, 0)
+			self.Castbar.Text:SetTextColor(1, 1, 1)
+			self.Castbar.Text:SetJustifyH("LEFT")
+		else
+			self.Castbar:SetPoint("TOPLEFT", self, "BOTTOMLEFT", 0, -7)
+			self.Castbar:SetWidth(105)
+			self.Castbar:SetHeight(5)
+		end
+	end
+----------------------------------------------------------------------------------------
 
 	-- Swing bar
 	if C.unitframe.plugins_swing == true and unit == "player" then
@@ -1208,7 +1297,7 @@ local function Shared(self, unit)
 				self.Auras.initialAnchor = "LEFT"
 				self.Auras["growth-x"] = "RIGHT"
 			end
-			self.Auras.numDebuffs = 0
+			self.Auras.numDebuffs = 3	--boss框架debuff改为3
 			self.Auras.numBuffs = 3
 			self.Auras:SetHeight(31)
 			self.Auras:SetWidth(87)
@@ -1216,7 +1305,7 @@ local function Shared(self, unit)
 			self.Auras.size = T.Scale(31)
 			self.Auras.gap = true
 			self.Auras.PostCreateIcon = T.PostCreateAura
-			self.Auras.PostUpdateIcon = T.PostUpdateIcon
+			self.Auras.PostUpdateIcon = T.OnlyMyDebuffsToBoss	--调用新函数（misc-OnlyMyDebuffsToBoss.lua）(T.PostUpdateIcon)
 		end
 
 		self:HookScript("OnShow", T.UpdateAllElements)
