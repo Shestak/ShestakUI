@@ -13,7 +13,7 @@ local DBMSkin = CreateFrame("Frame")
 DBMSkin:RegisterEvent("PLAYER_LOGIN")
 DBMSkin:RegisterEvent("ADDON_LOADED")
 DBMSkin:SetScript("OnEvent", function(self, event, addon)
-	if IsAddOnLoaded("DBM-Core") then
+	if IsAddOnLoaded("DBM") then
 		local function SkinBars(self)
 			for bar in self:GetBarIterator() do
 				if not bar.injected then
@@ -386,7 +386,7 @@ OnLogon:RegisterEvent("PLAYER_ENTERING_WORLD")
 OnLogon:SetScript("OnEvent", function(self, event)
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 
-	if IsAddOnLoaded("DBM-Core") then
+	if IsAddOnLoaded("DBM") then
 		if DBM_SavedOptions.InstalledBars ~= C.actionbar.bottombars then
 			StaticPopup_Show("SETTINGS_DBM")
 		end
