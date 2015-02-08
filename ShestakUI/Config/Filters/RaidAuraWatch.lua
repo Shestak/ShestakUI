@@ -222,30 +222,6 @@ T.RaidDebuffs = {
 	[SpellName(164178)] = 2, -- 混沌标记：强固         
 	[SpellName(164191)] = 2, -- 混沌标记：复制 
 
--- Highmaul
-	-- The Butcher
-	[SpellName(156152)] = 3,	-- Gushing Wounds
-	[SpellName(156147)] = 3,	-- The Cleaver
-	-- Kargath Bladefist
-	[SpellName(159178)] = 3,	-- Open Wounds (Tank switch)
-	[SpellName(159113)] = 3,	-- Impale (DoT)
-	-- Twin Ogron
-	[SpellName(155569)] = 3,	-- Injured (DoT)
-	[SpellName(167200)] = 3,	-- Arcane Wound (DoT)
-	-- Ko'ragh
-	[SpellName(161242)] = 3,	-- Caustic Energy (DoT)
-	[SpellName(162184)] = 3,	-- Expel Magic: Shadow
-	-- Tectus
-	[SpellName(162892)] = 3,	-- Petrification
-	-- Brackenspore
-	[SpellName(163241)] = 3,	-- Rot (Stacks)
-	-- Imperator Mar'gok
-	[SpellName(158605)] = 3,	-- Mark of Chaos
-	[SpellName(164176)] = 3,	-- Mark of Chaos: Displacement
-	[SpellName(164178)] = 3,	-- Mark of Chaos: Fortification
-	[SpellName(164191)] = 3,	-- Mark of Chaos: Replication
-	[SpellName(157763)] = 3,	-- Fixate
-	[SpellName(158553)] = 3,	-- Crush Armor (Stacks)
 -----------------------------------------------------------------
 -- Pandaria
 -----------------------------------------------------------------
