@@ -80,17 +80,148 @@ T.RaidDebuffs = {
 -----------------------------------------------------------------
 -- Draenor
 -----------------------------------------------------------------
--- Blackrock Foundry
-	-- Beastlord Darmac
-	-- Flamebender Ka'graz
-	-- Gruul the Subjugated
-	-- Blast Furnace
-	-- Hans'gar and Franzok
-	-- Iron Maidens
-	-- Kromog
-	-- Operator Thogar
-	-- Oregorger
-	-- Warlord Blackhand
+-- 黑石铸造厂 
+	--格鲁尔 
+	[SpellName(155080)] = 4, -- 煉獄切割 分担组DOT 
+	[SpellName(155078)] = 3, -- 压迫打击 普攻坦克易伤 
+	[SpellName(162322)] = 5, -- 炼狱打击 吃刀坦克易伤 
+	[SpellName(155506)] = 2, -- 石化 
+
+	--奥尔高格 
+	[SpellName(156203)] = 5, -- 呕吐黑石 远程躲 
+	[SpellName(156374)] = 5, -- 爆炸裂片 近战躲 
+	[SpellName(156297)] = 3, -- 酸液洪流 副坦克易伤 
+	[SpellName(173471)] = 4, -- 酸液巨口 主坦克DOT 
+	[SpellName(155900)] = 2, -- 翻滚之怒 击倒 
+
+	--爆裂熔炉 
+	[SpellName(156932)] = 5, -- 崩裂 
+	[SpellName(178279)] = 4, -- 炸弹 
+	[SpellName(155192)] = 4, -- 炸弹 
+	[SpellName(176121)] = 6, -- 不稳定的火焰 点名八码爆炸 
+	[SpellName(155196)] = 2, -- 锁定 
+	[SpellName(155743)] = 5, -- 熔渣池 
+	[SpellName(155240)] = 3, -- 淬火 坦克易伤 
+	[SpellName(155242)] = 3, -- 高热 三层换坦 
+	[SpellName(155225)] = 5, -- 熔化 点名 
+	[SpellName(155223)] = 5, -- 熔化 
+
+	--汉斯加尔与弗兰佐克 
+	[SpellName(157139)] = 3, -- 折脊碎椎 跳跃易伤 
+	[SpellName(160838)] = 2, -- 干扰怒吼 
+	[SpellName(160845)] = 2, -- 干扰怒吼 
+	[SpellName(160847)] = 2, -- 干扰怒吼 
+	[SpellName(160848)] = 2, -- 干扰怒吼 
+	[SpellName(155818)] = 4, -- 灼热燃烧 场地边缘的火 
+
+	--缚火者卡格拉兹 
+	[SpellName(154952)] = 3, -- 锁定 
+	[SpellName(155074)] = 1, -- 焦灼吐息 坦克易伤 
+	[SpellName(155049)] = 2, -- 火焰链接 
+	[SpellName(154932)] = 4, -- 熔岩激流 点名分摊 
+	[SpellName(155277)] = 5, -- 炽热光辉 点名AOE 
+	[SpellName(155314)] = 1, -- 岩浆猛击 冲锋火线 
+	[SpellName(163284)] = 2, -- 升腾烈焰 坦克DOT 
+
+	--克罗莫格 
+	[SpellName(156766)] = 1, -- 扭曲护甲 坦克易伤 
+	[SpellName(157059)] = 2, -- 纠缠之地符文 
+	[SpellName(161839)] = 3, -- 破碎大地符文 
+	[SpellName(161923)] = 3, -- 破碎大地符文 
+
+	--兽王达玛克
+	[SpellName(154960)] = 4, -- 长矛钉刺 
+	[SpellName(155061)] = 1, -- 狂乱撕扯 狼阶段流血 
+	[SpellName(162283)] = 1, -- 狂乱撕扯 BOSS继承的流血 
+	[SpellName(154989)] = 3, -- 炼狱吐息 
+	[SpellName(154981)] = 5, -- 爆燃 秒驱 
+	[SpellName(155030)] = 2, -- 炽燃利齿 龙阶段坦克易伤 
+	[SpellName(155236)] = 2, -- 碾碎护甲 象阶段坦克易伤 
+	[SpellName(155499)] = 3, -- 高热弹片 
+	[SpellName(155657)] = 4, -- 烈焰灌注 
+	[SpellName(159044)] = 1, -- 强震 
+	[SpellName(162277)] = 1, -- 强震 
+
+	--主管索戈尔 
+	[SpellName(155921)] = 2, -- 点燃 坦克易伤 
+	[SpellName(165195)] = 4, -- 实验型脉冲手雷 
+	[SpellName(156310)] = 3, -- 熔岩震击 
+	[SpellName(159481)] = 3, -- 延时攻城炸弹 
+	[SpellName(164380)] = 2, -- 燃烧 
+	[SpellName(164280)] = 2, -- 热能冲击 
+
+	--钢铁女武神 
+	[SpellName(156631)] = 2, -- 急速射击 
+	[SpellName(164271)] = 3, -- 穿透射击 
+	[SpellName(158601)] = 1, -- 主炮轰击 
+	[SpellName(156214)] = 4, -- 震颤暗影 
+	[SpellName(158315)] = 2, -- 暗影猎杀 
+	[SpellName(159724)] = 3, -- 鲜血仪式 
+	[SpellName(158010)] = 2, -- 浸血觅心者 
+	[SpellName(158692)] = 1, -- 致命投掷 
+	[SpellName(158702)] = 2, -- 锁定 
+	[SpellName(158683)] = 3, -- 堕落之血 
+
+	--黑手 
+	[SpellName(156096)] = 5, -- 死亡标记 
+   	
+--悬槌堡 
+	-- 1 卡加斯 
+	[SpellName(158986)] = 2, -- 冲锋 
+	[SpellName(159178)] = 5, -- 迸裂创伤         
+	[SpellName(162497)] = 3, -- 搜寻猎物       
+	[SpellName(163130)] = 3, -- 着火 
+
+	-- 2 屠夫 
+	[SpellName(156151)] = 3, -- 捶肉槌 
+	[SpellName(156147)] = 5, -- 切肉刀           
+	[SpellName(156152)] = 3, -- 龟裂创伤         
+	[SpellName(163046)] = 4, -- 白鬼硫酸 
+
+	-- 3 泰克图斯 
+	[SpellName(162346)] = 4,  -- 晶化弹幕  点名 
+	[SpellName(162370)] = 3, -- 晶化弹幕   踩到 
+
+	-- 4  布兰肯斯波 
+	[SpellName(163242)] = 5, -- 感染孢子 
+	[SpellName(159426)] = 5, -- 回春孢子 
+	[SpellName(163241)] = 4, -- 溃烂 
+	[SpellName(159220)] = 2,  -- 死疽吐息   
+	[SpellName(160179)] = 2,  -- 蚀脑真菌 
+	[SpellName(165223)] = 6, -- 爆裂灌注 
+	[SpellName(163666)] = 3, -- 脉冲高热 
+
+	-- 5  独眼魔双子 
+	[SpellName(155569)] = 3, -- 受伤 
+	[SpellName(158241)] = 4, -- 烈焰   
+	[SpellName(163372)] = 4, -- 奥能动荡 
+	[SpellName(167200)] = 3, -- 奥术致伤 
+	[SpellName(163297)] = 3, -- 扭曲奥能 
+
+	-- 6 克拉戈 
+	[SpellName(172813)] = 5, -- 魔能散射：冰霜 
+	[SpellName(162185)] = 5, -- 魔能散射：火焰 
+	[SpellName(162184)] = 3, -- 魔能散射：暗影 
+	[SpellName(162186)] = 2, -- 魔能散射：奥术 
+	[SpellName(161345)] = 2, -- 压制力场 
+	[SpellName(161242)] = 3, -- 废灵标记 
+	[SpellName(172886)] = 4, -- 废灵璧垒 
+	[SpellName(172895)] = 4, -- 魔能散射：邪能  点名 
+	[SpellName(172917)] = 4, -- 魔能散射：邪能  踩到 
+	[SpellName(163472)] = 2, -- 统御之力 
+
+	-- 7 元首 
+	[SpellName(157763)] = 3,  -- 锁定         
+	[SpellName(159515)] = 4, -- 狂莽突击         
+	[SpellName(156225)] = 4, -- 烙印       
+	[SpellName(164004)] = 4, -- 烙印：偏移         
+	[SpellName(164006)] = 4, -- 烙印：强固         
+	[SpellName(164005)] = 4, -- 烙印：复制         
+	[SpellName(158605)] = 2, -- 混沌标记         
+	[SpellName(164176)] = 2, -- 混沌标记：偏移           
+	[SpellName(164178)] = 2, -- 混沌标记：强固         
+	[SpellName(164191)] = 2, -- 混沌标记：复制 
+
 -- Highmaul
 	-- The Butcher
 	[SpellName(156152)] = 3,	-- Gushing Wounds
