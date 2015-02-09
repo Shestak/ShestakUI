@@ -81,147 +81,147 @@ T.RaidDebuffs = {
 -- Draenor
 -----------------------------------------------------------------
 
--- Blackrock Foundry 黑石铸造厂 
-	--Gruul 格鲁尔 
-	[SpellName(155080)] = 4, -- Inferno Slice 煉獄切割 分担组DOT 
-	[SpellName(155078)] = 3, -- Overwhelming Blows 压迫打击 普攻坦克易伤 
-	[SpellName(162322)] = 5, -- Inferno Strike 炼狱打击 吃刀坦克易伤 
-	[SpellName(155506)] = 2, -- Petrified 石化 
+-- Blackrock Foundry
+	--Gruul
+	[SpellName(155080)] = 4, -- Inferno Slice
+	[SpellName(155078)] = 3, -- Overwhelming Blows
+	[SpellName(162322)] = 5, -- Inferno Strike
+	[SpellName(155506)] = 2, -- Petrified
 
-	--Oregorger 奥尔高格 
-	[SpellName(156203)] = 5, -- Retched Blackrock 呕吐黑石 远程躲 
-	[SpellName(156374)] = 5, -- Explosive Shard 爆炸裂片 近战躲 
-	[SpellName(156297)] = 3, -- Acid Torrent 酸液洪流 副坦克易伤 
-	[SpellName(173471)] = 4, -- Acid Maw 酸液巨口 主坦克DOT 
-	[SpellName(155900)] = 2, -- Rolling Fury 翻滚之怒 击倒 
+	--Oregorger
+	[SpellName(156203)] = 5, -- Retched Blackrock
+	[SpellName(156374)] = 5, -- Explosive Shard
+	[SpellName(156297)] = 3, -- Acid Torrent
+	[SpellName(173471)] = 4, -- Acid Maw
+	[SpellName(155900)] = 2, -- Rolling Fury
 
-	--Blast Furnace 爆裂熔炉 
-	[SpellName(156932)] = 5, -- Rupture 崩裂 
-	[SpellName(178279)] = 4, -- Bomb 炸弹 
-	[SpellName(155192)] = 4, -- Bomb 炸弹 
-	[SpellName(176121)] = 6, -- Volatile Fire 不稳定的火焰 点名八码爆炸 
-	[SpellName(155196)] = 2, -- Fixate 锁定 
-	[SpellName(155743)] = 5, -- Slag Pool 熔渣池 
-	[SpellName(155240)] = 3, -- Tempered 淬火 坦克易伤 
-	[SpellName(155242)] = 3, -- Heat 高热 三层换坦 
-	[SpellName(155225)] = 5, -- Melt 熔化 点名 
-	[SpellName(155223)] = 5, -- Melt熔化 
+	--Blast Furnace
+	[SpellName(156932)] = 5, -- Rupture
+	[SpellName(178279)] = 4, -- Bomb
+	[SpellName(155192)] = 4, -- Bomb
+	[SpellName(176121)] = 6, -- Volatile Fire
+	[SpellName(155196)] = 2, -- Fixate
+	[SpellName(155743)] = 5, -- Slag Pool
+	[SpellName(155240)] = 3, -- Tempered
+	[SpellName(155242)] = 3, -- Heat
+	[SpellName(155225)] = 5, -- Melt
+	[SpellName(155223)] = 5, -- Melt
 
-	--Hans'gar and Franzok 汉斯加尔与弗兰佐克 
-	[SpellName(157139)] = 3, -- Shattered Vertebrae 折脊碎椎 跳跃易伤 
-	[SpellName(160838)] = 2, -- Disrupting Roar干扰怒吼 
-	[SpellName(160845)] = 2, -- Disrupting Roar干扰怒吼 
-	[SpellName(160847)] = 2, -- Disrupting Roar干扰怒吼 
-	[SpellName(160848)] = 2, -- Disrupting Roar干扰怒吼 
-	[SpellName(155818)] = 4, -- Scorching Burns 灼热燃烧 场地边缘的火 
+	--Hans'gar and Franzok
+	[SpellName(157139)] = 3, -- Shattered Vertebrae
+	[SpellName(160838)] = 2, -- Disrupting Roar
+	[SpellName(160845)] = 2, -- Disrupting Roar
+	[SpellName(160847)] = 2, -- Disrupting Roar
+	[SpellName(160848)] = 2, -- Disrupting Roar
+	[SpellName(155818)] = 4, -- Scorching Burns
 
-	--Flamebender Ka'graz 缚火者卡格拉兹 
-	[SpellName(154952)] = 3, -- Fixate 锁定 
-	[SpellName(155074)] = 1, -- Charring Breath 焦灼吐息 坦克易伤 
-	[SpellName(155049)] = 2, -- Singe 火焰链接 
-	[SpellName(154932)] = 4, -- Molten Torrent 熔岩激流 点名分摊 
-	[SpellName(155277)] = 5, -- Blazing Radiance炽热光辉 点名AOE 
-	[SpellName(155314)] = 1, -- Lava Slash 岩浆猛击 冲锋火线 
-	[SpellName(163284)] = 2, -- Rising Flames升腾烈焰 坦克DOT 
+	--Flamebender Ka'graz
+	[SpellName(154952)] = 3, -- Fixate
+	[SpellName(155074)] = 1, -- Charring Breath
+	[SpellName(155049)] = 2, -- Singe
+	[SpellName(154932)] = 4, -- Molten Torrent
+	[SpellName(155277)] = 5, -- Blazing Radiance
+	[SpellName(155314)] = 1, -- Lava Slash
+	[SpellName(163284)] = 2, -- Rising Flames
 
-	--Kromog 克罗莫格 
-	[SpellName(156766)] = 1, -- Warped Armor 扭曲护甲 坦克易伤 
-	[SpellName(157059)] = 2, -- Rune of Grasping Earth 纠缠之地符文 
-	[SpellName(161839)] = 3, -- Rune of Crushing Earth 破碎大地符文 
-	[SpellName(161923)] = 3, -- Rune of Crushing Earth 破碎大地符文 
+	-- Kromog
+	[SpellName(156766)] = 1, -- Warped Armor
+	[SpellName(157059)] = 2, -- Rune of Grasping Earth
+	[SpellName(161839)] = 3, -- Rune of Crushing Earth
+	[SpellName(161923)] = 3, -- Rune of Crushing Earth
 
-	-- Beastlord Darmac兽王达玛克
-	[SpellName(154960)] = 4, -- Pinned Down 长矛钉刺 
-	[SpellName(155061)] = 1, -- Rend and Tear 狂乱撕扯 狼阶段流血 
-	[SpellName(162283)] = 1, -- Rend and Tear 狂乱撕扯 BOSS继承的流血 
-	[SpellName(154989)] = 3, -- Inferno Breath 炼狱吐息 
-	[SpellName(154981)] = 5, -- Conflagration 爆燃 秒驱 
-	[SpellName(155030)] = 2, -- Seared Flesh 炽燃利齿 龙阶段坦克易伤 
-	[SpellName(155236)] = 2, -- Crush Armor 碾碎护甲 象阶段坦克易伤 
-	[SpellName(155499)] = 3, -- Superheated Shrapnel 高热弹片 
-	[SpellName(155657)] = 4, -- Flame Infusion 烈焰灌注 
-	[SpellName(159044)] = 1, -- Epicenter 强震 
-	[SpellName(162277)] = 1, -- Epicenter 强震 
+	-- Beastlord Darmac
+	[SpellName(154960)] = 4, -- Pinned Down
+	[SpellName(155061)] = 1, -- Rend and Tear
+	[SpellName(162283)] = 1, -- Rend and Tear
+	[SpellName(154989)] = 3, -- Inferno Breath
+	[SpellName(154981)] = 5, -- Conflagration
+	[SpellName(155030)] = 2, -- Seared Flesh
+	[SpellName(155236)] = 2, -- Crush Armor
+	[SpellName(155499)] = 3, -- Superheated Shrapnel
+	[SpellName(155657)] = 4, -- Flame Infusion
+	[SpellName(159044)] = 1, -- Epicenter
+	[SpellName(162277)] = 1, -- Epicenter
 
-	--Operator Thogar 主管索戈尔 
-	[SpellName(155921)] = 2, -- Enkindle 点燃 坦克易伤 
-	[SpellName(165195)] = 4, -- Prototype Pulse Grenade 实验型脉冲手雷 
-	[SpellName(156310)] = 3, -- Lava Shock 熔岩震击 
-	[SpellName(159481)] = 3, -- Delayed Siege Bomb 延时攻城炸弹 
-	[SpellName(164380)] = 2, -- Burning 燃烧 
-	[SpellName(164280)] = 2, -- Heat Blast 热能冲击 
+	-- Operator Thogar
+	[SpellName(155921)] = 2, -- Enkindle
+	[SpellName(165195)] = 4, -- Prototype Pulse Grenade
+	[SpellName(156310)] = 3, -- Lava Shock
+	[SpellName(159481)] = 3, -- Delayed Siege Bomb
+	[SpellName(164380)] = 2, -- Burning
+	[SpellName(164280)] = 2, -- Heat Blast
 
-	--Iron Maidens 钢铁女武神 
-	[SpellName(156631)] = 2, -- Rapid Fire 急速射击 
-	[SpellName(164271)] = 3, -- Penetrating Shot 穿透射击 
-	[SpellName(158601)] = 1, -- Dominator Blast 主炮轰击 
-	[SpellName(156214)] = 4, -- Convulsive Shadows 震颤暗影 
-	[SpellName(158315)] = 2, -- Dark Hunt 暗影猎杀 
-	[SpellName(159724)] = 3, -- Blood Ritual 鲜血仪式 
-	[SpellName(158010)] = 2, -- 浸血觅心者 
-	[SpellName(158692)] = 1, -- Bloodsoaked Heartseeker 致命投掷 
-	[SpellName(158702)] = 2, -- Fixate 锁定 
-	[SpellName(158683)] = 3, -- Corrupted Blood 堕落之血 
+	-- Iron Maidens
+	[SpellName(156631)] = 2, -- Rapid Fire
+	[SpellName(164271)] = 3, -- Penetrating Shot
+	[SpellName(158601)] = 1, -- Dominator Blast
+	[SpellName(156214)] = 4, -- Convulsive Shadows
+	[SpellName(158315)] = 2, -- Dark Hunt
+	[SpellName(159724)] = 3, -- Blood Ritual
+	[SpellName(158010)] = 2, -- Bloodsoaked Heartseeker
+	[SpellName(158692)] = 1, -- Deadly Throw
+	[SpellName(158702)] = 2, -- Fixate
+	[SpellName(158683)] = 3, -- Corrupted Blood
 
-	--Warlord Blackhand 黑手 
-	[SpellName(156096)] = 5, -- Marked for Death 死亡标记  
+	-- Warlord Blackhand
+	[SpellName(156096)] = 5, -- Marked for Death
    	
--- Highmaul 悬槌堡 
-	-- Kargath Bladefist 卡加斯 
-	[SpellName(158986)] = 2, -- 冲锋 
-	[SpellName(159178)] = 5, -- 迸裂创伤         
-	[SpellName(162497)] = 3, -- 搜寻猎物       
-	[SpellName(163130)] = 3, -- 着火 
+-- Highmaul
+	-- Kargath Bladefist
+	[SpellName(158986)] = 2, -- Berserker Rush
+	[SpellName(159178)] = 5, -- Open Wounds
+	[SpellName(162497)] = 3, -- On the Hunt
+	[SpellName(163130)] = 3, -- Inflamed
 
-	-- The Butcher 屠夫 
-	[SpellName(156151)] = 3, -- Berserker Rush 捶肉槌 
-	[SpellName(156147)] = 5, -- The Cleaver 切肉刀           
-	[SpellName(156152)] = 3, -- Gushing Wounds 龟裂创伤         
-	[SpellName(163046)] = 4, -- Pale Vitriol 白鬼硫酸 
+	-- The Butcher
+	[SpellName(156151)] = 3, -- The Tenderizer
+	[SpellName(156147)] = 5, -- The Cleaver
+	[SpellName(156152)] = 3, -- Gushing Wounds 
+	[SpellName(163046)] = 4, -- Pale Vitriol
 
-	-- Tectus 泰克图斯 
-	[SpellName(162346)] = 4,  -- crystalline barrage 晶化弹幕 点名 
-	[SpellName(162370)] = 3, -- Crystalline Barrage 晶化弹幕 踩到 
+	-- Tectus
+	[SpellName(162346)] = 4, -- crystalline barrage
+	[SpellName(162370)] = 3, -- Crystalline Barrage
 
-	-- Brackenspore 布兰肯斯波 
-	[SpellName(163242)] = 5, -- Infesting Spores 感染孢子 
-	[SpellName(159426)] = 5, -- Rejuvenating Spores 回春孢子 
-	[SpellName(163241)] = 4, -- Rot 溃烂 
-	[SpellName(159220)] = 2,  -- Necrotic Breath 死疽吐息   
-	[SpellName(160179)] = 2,  -- Mind Fungus 蚀脑真菌 
-	[SpellName(165223)] = 6, -- Burning Infusion 爆裂灌注 
-	[SpellName(163666)] = 3, -- Pulsing Heat 脉冲高热 
+	-- Brackenspore
+	[SpellName(163242)] = 5, -- Infesting Spores
+	[SpellName(159426)] = 5, -- Rejuvenating Spores
+	[SpellName(163241)] = 4, -- Rot
+	[SpellName(159220)] = 2, -- Necrotic Breath
+	[SpellName(160179)] = 2, -- Mind Fungus
+	[SpellName(165223)] = 6, -- Burning Infusion
+	[SpellName(163666)] = 3, -- Pulsing Heat
 
-	-- Twin Ogron 独眼魔双子 
-	[SpellName(155569)] = 3, -- Injured 受伤 
-	[SpellName(158241)] = 4, -- Blaze 烈焰   
-	[SpellName(163372)] = 4, -- Arcane Volatility 奥能动荡 
-	[SpellName(167200)] = 3, -- Arcane Wound 奥术致伤 
-	[SpellName(163297)] = 3, -- Arcane Twisted 扭曲奥能 
+	-- Twin Ogron
+	[SpellName(155569)] = 3, -- Injured
+	[SpellName(158241)] = 4, -- Blaze
+	[SpellName(163372)] = 4, -- Arcane Volatility
+	[SpellName(167200)] = 3, -- Arcane Wound
+	[SpellName(163297)] = 3, -- Arcane Twisted
 
-	-- Koragh 克拉戈 
-	[SpellName(172813)] = 5, -- Expel Magic: Frost 魔能散射：冰霜 
-	[SpellName(162185)] = 5, -- Expel Magic: Fire 魔能散射：火焰 
-	[SpellName(162184)] = 3, -- Expel Magic: Shadow 魔能散射：暗影 
-	[SpellName(162186)] = 2, -- Expel Magic: Arcane 魔能散射：奥术 
-	[SpellName(161345)] = 2, -- Suppression Field 压制力场 
-	[SpellName(161242)] = 3, -- Caustic Energy 废灵璧垒 
-	[SpellName(172886)] = 4, -- Mark of Nullification 废灵标记
-	[SpellName(172895)] = 4, -- Expel Magic: Fel 魔能散射：邪能  点名 
-	[SpellName(172917)] = 4, -- Expel Magic: Fel 魔能散射：邪能  踩到 
-	[SpellName(163472)] = 2, -- Dominating Power 统御之力 
+	-- Koragh
+	[SpellName(172813)] = 5, -- Expel Magic: Frost
+	[SpellName(162185)] = 5, -- Expel Magic: Fire
+	[SpellName(162184)] = 3, -- Expel Magic: Shadow
+	[SpellName(162186)] = 2, -- Expel Magic: Arcane
+	[SpellName(161345)] = 2, -- Suppression Field
+	[SpellName(161242)] = 3, -- Caustic Energy
+	[SpellName(172886)] = 4, -- Mark of Nullification
+	[SpellName(172895)] = 4, -- Expel Magic: Fel
+	[SpellName(172917)] = 4, -- Expel Magic: Fel
+	[SpellName(163472)] = 2, -- Dominating Power
 
-	-- Imperator Mar'gok 元首 
-	[SpellName(157763)] = 3,  -- Fixate 锁定         
-	[SpellName(159515)] = 4, -- Accelerated Assault 狂莽突击         
-	[SpellName(156225)] = 4, -- Branded 烙印       
-	[SpellName(164004)] = 4, -- Branded: Displacement 烙印：偏移         
-	[SpellName(164006)] = 4, -- Branded: Replication 烙印：强固         
-	[SpellName(164005)] = 4, -- Branded: Fortification 烙印：复制         
-	[SpellName(158605)] = 2, -- Mark of Chaos 混沌标记         
-	[SpellName(164176)] = 2, -- Mark of Chaos: Displacement 混沌标记：偏移           
-	[SpellName(164178)] = 2, -- Mark of Chaos: Fortification 混沌标记：强固         
-	[SpellName(164191)] = 2, -- Mark of Chaos: Replication 混沌标记：复制
+	-- Imperator Mar'gok
+	[SpellName(157763)] = 3,  -- Fixate  
+	[SpellName(159515)] = 4, -- Accelerated Assault       
+	[SpellName(156225)] = 4, -- Branded
+	[SpellName(164004)] = 4, -- Branded: Displacement
+	[SpellName(164006)] = 4, -- Branded: Replication
+	[SpellName(164005)] = 4, -- Branded: Fortification
+	[SpellName(158605)] = 2, -- Mark of Chaos
+	[SpellName(164176)] = 2, -- Mark of Chaos: Displacement
+	[SpellName(164178)] = 2, -- Mark of Chaos: Fortification
+	[SpellName(164191)] = 2, -- Mark of Chaos: Replication
 
 -----------------------------------------------------------------
 -- Pandaria
