@@ -166,62 +166,62 @@ T.RaidDebuffs = {
 	--Warlord Blackhand 黑手 
 	[SpellName(156096)] = 5, -- Marked for Death 死亡标记  
    	
---悬槌堡 
-	-- 1 卡加斯 
+-- Highmaul 悬槌堡 
+	-- Kargath Bladefist 卡加斯 
 	[SpellName(158986)] = 2, -- 冲锋 
 	[SpellName(159178)] = 5, -- 迸裂创伤         
 	[SpellName(162497)] = 3, -- 搜寻猎物       
 	[SpellName(163130)] = 3, -- 着火 
 
-	-- 2 屠夫 
-	[SpellName(156151)] = 3, -- 捶肉槌 
-	[SpellName(156147)] = 5, -- 切肉刀           
-	[SpellName(156152)] = 3, -- 龟裂创伤         
-	[SpellName(163046)] = 4, -- 白鬼硫酸 
+	-- The Butcher 屠夫 
+	[SpellName(156151)] = 3, -- Berserker Rush 捶肉槌 
+	[SpellName(156147)] = 5, -- The Cleaver 切肉刀           
+	[SpellName(156152)] = 3, -- Gushing Wounds 龟裂创伤         
+	[SpellName(163046)] = 4, -- Pale Vitriol 白鬼硫酸 
 
-	-- 3 泰克图斯 
-	[SpellName(162346)] = 4,  -- 晶化弹幕  点名 
-	[SpellName(162370)] = 3, -- 晶化弹幕   踩到 
+	-- Tectus 泰克图斯 
+	[SpellName(162346)] = 4,  -- crystalline barrage 晶化弹幕 点名 
+	[SpellName(162370)] = 3, -- Crystalline Barrage 晶化弹幕 踩到 
 
-	-- 4  布兰肯斯波 
-	[SpellName(163242)] = 5, -- 感染孢子 
-	[SpellName(159426)] = 5, -- 回春孢子 
-	[SpellName(163241)] = 4, -- 溃烂 
-	[SpellName(159220)] = 2,  -- 死疽吐息   
-	[SpellName(160179)] = 2,  -- 蚀脑真菌 
-	[SpellName(165223)] = 6, -- 爆裂灌注 
-	[SpellName(163666)] = 3, -- 脉冲高热 
+	-- Brackenspore 布兰肯斯波 
+	[SpellName(163242)] = 5, -- Infesting Spores 感染孢子 
+	[SpellName(159426)] = 5, -- Rejuvenating Spores 回春孢子 
+	[SpellName(163241)] = 4, -- Rot 溃烂 
+	[SpellName(159220)] = 2,  -- Necrotic Breath 死疽吐息   
+	[SpellName(160179)] = 2,  -- Mind Fungus 蚀脑真菌 
+	[SpellName(165223)] = 6, -- Burning Infusion 爆裂灌注 
+	[SpellName(163666)] = 3, -- Pulsing Heat 脉冲高热 
 
-	-- 5  独眼魔双子 
-	[SpellName(155569)] = 3, -- 受伤 
-	[SpellName(158241)] = 4, -- 烈焰   
-	[SpellName(163372)] = 4, -- 奥能动荡 
-	[SpellName(167200)] = 3, -- 奥术致伤 
-	[SpellName(163297)] = 3, -- 扭曲奥能 
+	-- Twin Ogron 独眼魔双子 
+	[SpellName(155569)] = 3, -- Injured 受伤 
+	[SpellName(158241)] = 4, -- Blaze 烈焰   
+	[SpellName(163372)] = 4, -- Arcane Volatility 奥能动荡 
+	[SpellName(167200)] = 3, -- Arcane Wound 奥术致伤 
+	[SpellName(163297)] = 3, -- Arcane Twisted 扭曲奥能 
 
-	-- 6 克拉戈 
-	[SpellName(172813)] = 5, -- 魔能散射：冰霜 
-	[SpellName(162185)] = 5, -- 魔能散射：火焰 
-	[SpellName(162184)] = 3, -- 魔能散射：暗影 
-	[SpellName(162186)] = 2, -- 魔能散射：奥术 
-	[SpellName(161345)] = 2, -- 压制力场 
-	[SpellName(161242)] = 3, -- 废灵标记 
-	[SpellName(172886)] = 4, -- 废灵璧垒 
-	[SpellName(172895)] = 4, -- 魔能散射：邪能  点名 
-	[SpellName(172917)] = 4, -- 魔能散射：邪能  踩到 
-	[SpellName(163472)] = 2, -- 统御之力 
+	-- Koragh 克拉戈 
+	[SpellName(172813)] = 5, -- Expel Magic: Frost 魔能散射：冰霜 
+	[SpellName(162185)] = 5, -- Expel Magic: Fire 魔能散射：火焰 
+	[SpellName(162184)] = 3, -- Expel Magic: Shadow 魔能散射：暗影 
+	[SpellName(162186)] = 2, -- Expel Magic: Arcane 魔能散射：奥术 
+	[SpellName(161345)] = 2, -- Suppression Field 压制力场 
+	[SpellName(161242)] = 3, -- Caustic Energy 废灵璧垒 
+	[SpellName(172886)] = 4, -- Mark of Nullification 废灵标记
+	[SpellName(172895)] = 4, -- Expel Magic: Fel 魔能散射：邪能  点名 
+	[SpellName(172917)] = 4, -- Expel Magic: Fel 魔能散射：邪能  踩到 
+	[SpellName(163472)] = 2, -- Dominating Power 统御之力 
 
-	-- 7 元首 
-	[SpellName(157763)] = 3,  -- 锁定         
-	[SpellName(159515)] = 4, -- 狂莽突击         
-	[SpellName(156225)] = 4, -- 烙印       
-	[SpellName(164004)] = 4, -- 烙印：偏移         
-	[SpellName(164006)] = 4, -- 烙印：强固         
-	[SpellName(164005)] = 4, -- 烙印：复制         
-	[SpellName(158605)] = 2, -- 混沌标记         
-	[SpellName(164176)] = 2, -- 混沌标记：偏移           
-	[SpellName(164178)] = 2, -- 混沌标记：强固         
-	[SpellName(164191)] = 2, -- 混沌标记：复制 
+	-- Imperator Mar'gok 元首 
+	[SpellName(157763)] = 3,  -- Fixate 锁定         
+	[SpellName(159515)] = 4, -- Accelerated Assault 狂莽突击         
+	[SpellName(156225)] = 4, -- Branded 烙印       
+	[SpellName(164004)] = 4, -- Branded: Displacement 烙印：偏移         
+	[SpellName(164006)] = 4, -- Branded: Replication 烙印：强固         
+	[SpellName(164005)] = 4, -- Branded: Fortification 烙印：复制         
+	[SpellName(158605)] = 2, -- Mark of Chaos 混沌标记         
+	[SpellName(164176)] = 2, -- Mark of Chaos: Displacement 混沌标记：偏移           
+	[SpellName(164178)] = 2, -- Mark of Chaos: Fortification 混沌标记：强固         
+	[SpellName(164191)] = 2, -- Mark of Chaos: Replication 混沌标记：复制
 
 -----------------------------------------------------------------
 -- Pandaria
