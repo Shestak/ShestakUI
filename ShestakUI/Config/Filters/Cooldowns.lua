@@ -7,13 +7,45 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 if C.raidcooldown.enable == true then
 	T.raid_spells = {
+
 		[20484] = 600,	-- Rebirth
 		[61999] = 600,	-- Raise Ally
 		[20707] = 600,	-- Soulstone
 		[126393] = 600,	-- Eternal Guardian (Quilen)
 		[159956] = 600,	-- Dust of Life (Moth)
 		[159931] = 600,	-- Gift of Chi-Ji (Crane)
-		[108280] = 180,	-- Healing Tide Totem
+		
+		[740] = 180,  -- Tranquility
+		[115310] = 180,  -- Revival
+		[64843] = 180,  -- Divine Hymn
+		[108280] = 180,  -- Healing Tide Totem
+		[157535] = 90,  -- Breath of the Serpent
+		[15286] = 180,  -- Vampiric Embrace
+		[108281] = 120,  -- Ancestral Guidance
+		
+		[62618] = 180,  -- Power Word: Barrier
+		[98008] = 180,  -- Spirit Link Totem
+		[31821] = 180,   -- Devotion Aura
+		[51052] = 120,  -- Anti-Magic Zone
+		[97462] = 180,  -- Rallying Cry
+		[88611] = 180,  --Smoke Bomb
+		
+		[102342] = 60,  -- Ironbark
+		[116849] = 120,  -- Life Cocoon
+		[6940] = 120,  -- Hand of Sacrifice
+		[33206] = 180,  -- Pain Suppression
+		[47788] = 180,  --Guardian Spirit
+		[114030] = 120,  --Vigilance
+		[633] = 600,  -- Lay on Hands
+		[114039] = 600,  -- Hand of Purity
+		
+		[32182] = 300,  -- Heroism
+		[2825] = 300,   -- Bloodlust
+		[80353] = 300,  -- Time Warp
+		[90355] = 300,  -- Ancient Hysteria
+		[159916] = 120,  -- Amplify Magic
+		[106898] = 120,  -- Stampeding Roar
+		[172106] = 180,  -- Aspect of the Fox
 	}
 end
 
