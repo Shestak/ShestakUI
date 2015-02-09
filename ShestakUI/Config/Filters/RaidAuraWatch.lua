@@ -81,90 +81,90 @@ T.RaidDebuffs = {
 -- Draenor
 -----------------------------------------------------------------
 
--- 黑石铸造厂 
-	--格鲁尔 
-	[SpellName(155080)] = 4, -- 煉獄切割 分担组DOT 
-	[SpellName(155078)] = 3, -- 压迫打击 普攻坦克易伤 
-	[SpellName(162322)] = 5, -- 炼狱打击 吃刀坦克易伤 
-	[SpellName(155506)] = 2, -- 石化 
+-- Blackrock Foundry 黑石铸造厂 
+	--Gruul 格鲁尔 
+	[SpellName(155080)] = 4, -- Inferno Slice 煉獄切割 分担组DOT 
+	[SpellName(155078)] = 3, -- Overwhelming Blows 压迫打击 普攻坦克易伤 
+	[SpellName(162322)] = 5, -- Inferno Strike 炼狱打击 吃刀坦克易伤 
+	[SpellName(155506)] = 2, -- Petrified 石化 
 
-	--奥尔高格 
-	[SpellName(156203)] = 5, -- 呕吐黑石 远程躲 
-	[SpellName(156374)] = 5, -- 爆炸裂片 近战躲 
-	[SpellName(156297)] = 3, -- 酸液洪流 副坦克易伤 
-	[SpellName(173471)] = 4, -- 酸液巨口 主坦克DOT 
-	[SpellName(155900)] = 2, -- 翻滚之怒 击倒 
+	--Oregorger 奥尔高格 
+	[SpellName(156203)] = 5, -- Retched Blackrock 呕吐黑石 远程躲 
+	[SpellName(156374)] = 5, -- Explosive Shard 爆炸裂片 近战躲 
+	[SpellName(156297)] = 3, -- Acid Torrent 酸液洪流 副坦克易伤 
+	[SpellName(173471)] = 4, -- Acid Maw 酸液巨口 主坦克DOT 
+	[SpellName(155900)] = 2, -- Rolling Fury 翻滚之怒 击倒 
 
-	--爆裂熔炉 
-	[SpellName(156932)] = 5, -- 崩裂 
-	[SpellName(178279)] = 4, -- 炸弹 
-	[SpellName(155192)] = 4, -- 炸弹 
-	[SpellName(176121)] = 6, -- 不稳定的火焰 点名八码爆炸 
-	[SpellName(155196)] = 2, -- 锁定 
-	[SpellName(155743)] = 5, -- 熔渣池 
-	[SpellName(155240)] = 3, -- 淬火 坦克易伤 
-	[SpellName(155242)] = 3, -- 高热 三层换坦 
-	[SpellName(155225)] = 5, -- 熔化 点名 
-	[SpellName(155223)] = 5, -- 熔化 
+	--Blast Furnace 爆裂熔炉 
+	[SpellName(156932)] = 5, -- Rupture 崩裂 
+	[SpellName(178279)] = 4, -- Bomb 炸弹 
+	[SpellName(155192)] = 4, -- Bomb 炸弹 
+	[SpellName(176121)] = 6, -- Volatile Fire 不稳定的火焰 点名八码爆炸 
+	[SpellName(155196)] = 2, -- Fixate 锁定 
+	[SpellName(155743)] = 5, -- Slag Pool 熔渣池 
+	[SpellName(155240)] = 3, -- Tempered 淬火 坦克易伤 
+	[SpellName(155242)] = 3, -- Heat 高热 三层换坦 
+	[SpellName(155225)] = 5, -- Melt 熔化 点名 
+	[SpellName(155223)] = 5, -- Melt熔化 
 
-	--汉斯加尔与弗兰佐克 
-	[SpellName(157139)] = 3, -- 折脊碎椎 跳跃易伤 
-	[SpellName(160838)] = 2, -- 干扰怒吼 
-	[SpellName(160845)] = 2, -- 干扰怒吼 
-	[SpellName(160847)] = 2, -- 干扰怒吼 
-	[SpellName(160848)] = 2, -- 干扰怒吼 
-	[SpellName(155818)] = 4, -- 灼热燃烧 场地边缘的火 
+	--Hans'gar and Franzok 汉斯加尔与弗兰佐克 
+	[SpellName(157139)] = 3, -- Shattered Vertebrae 折脊碎椎 跳跃易伤 
+	[SpellName(160838)] = 2, -- Disrupting Roar干扰怒吼 
+	[SpellName(160845)] = 2, -- Disrupting Roar干扰怒吼 
+	[SpellName(160847)] = 2, -- Disrupting Roar干扰怒吼 
+	[SpellName(160848)] = 2, -- Disrupting Roar干扰怒吼 
+	[SpellName(155818)] = 4, -- Scorching Burns 灼热燃烧 场地边缘的火 
 
-	--缚火者卡格拉兹 
-	[SpellName(154952)] = 3, -- 锁定 
-	[SpellName(155074)] = 1, -- 焦灼吐息 坦克易伤 
-	[SpellName(155049)] = 2, -- 火焰链接 
-	[SpellName(154932)] = 4, -- 熔岩激流 点名分摊 
-	[SpellName(155277)] = 5, -- 炽热光辉 点名AOE 
-	[SpellName(155314)] = 1, -- 岩浆猛击 冲锋火线 
-	[SpellName(163284)] = 2, -- 升腾烈焰 坦克DOT 
+	--Flamebender Ka'graz 缚火者卡格拉兹 
+	[SpellName(154952)] = 3, -- Fixate 锁定 
+	[SpellName(155074)] = 1, -- Charring Breath 焦灼吐息 坦克易伤 
+	[SpellName(155049)] = 2, -- Singe 火焰链接 
+	[SpellName(154932)] = 4, -- Molten Torrent 熔岩激流 点名分摊 
+	[SpellName(155277)] = 5, -- Blazing Radiance炽热光辉 点名AOE 
+	[SpellName(155314)] = 1, -- Lava Slash 岩浆猛击 冲锋火线 
+	[SpellName(163284)] = 2, -- Rising Flames升腾烈焰 坦克DOT 
 
-	--克罗莫格 
-	[SpellName(156766)] = 1, -- 扭曲护甲 坦克易伤 
-	[SpellName(157059)] = 2, -- 纠缠之地符文 
-	[SpellName(161839)] = 3, -- 破碎大地符文 
-	[SpellName(161923)] = 3, -- 破碎大地符文 
+	--Kromog 克罗莫格 
+	[SpellName(156766)] = 1, -- Warped Armor 扭曲护甲 坦克易伤 
+	[SpellName(157059)] = 2, -- Rune of Grasping Earth 纠缠之地符文 
+	[SpellName(161839)] = 3, -- Rune of Crushing Earth 破碎大地符文 
+	[SpellName(161923)] = 3, -- Rune of Crushing Earth 破碎大地符文 
 
-	--兽王达玛克
-	[SpellName(154960)] = 4, -- 长矛钉刺 
-	[SpellName(155061)] = 1, -- 狂乱撕扯 狼阶段流血 
-	[SpellName(162283)] = 1, -- 狂乱撕扯 BOSS继承的流血 
-	[SpellName(154989)] = 3, -- 炼狱吐息 
-	[SpellName(154981)] = 5, -- 爆燃 秒驱 
-	[SpellName(155030)] = 2, -- 炽燃利齿 龙阶段坦克易伤 
-	[SpellName(155236)] = 2, -- 碾碎护甲 象阶段坦克易伤 
-	[SpellName(155499)] = 3, -- 高热弹片 
-	[SpellName(155657)] = 4, -- 烈焰灌注 
-	[SpellName(159044)] = 1, -- 强震 
-	[SpellName(162277)] = 1, -- 强震 
+	-- Beastlord Darmac兽王达玛克
+	[SpellName(154960)] = 4, -- Pinned Down 长矛钉刺 
+	[SpellName(155061)] = 1, -- Rend and Tear 狂乱撕扯 狼阶段流血 
+	[SpellName(162283)] = 1, -- Rend and Tear 狂乱撕扯 BOSS继承的流血 
+	[SpellName(154989)] = 3, -- Inferno Breath 炼狱吐息 
+	[SpellName(154981)] = 5, -- Conflagration 爆燃 秒驱 
+	[SpellName(155030)] = 2, -- Seared Flesh 炽燃利齿 龙阶段坦克易伤 
+	[SpellName(155236)] = 2, -- Crush Armor 碾碎护甲 象阶段坦克易伤 
+	[SpellName(155499)] = 3, -- Superheated Shrapnel 高热弹片 
+	[SpellName(155657)] = 4, -- Flame Infusion 烈焰灌注 
+	[SpellName(159044)] = 1, -- Epicenter 强震 
+	[SpellName(162277)] = 1, -- Epicenter 强震 
 
-	--主管索戈尔 
-	[SpellName(155921)] = 2, -- 点燃 坦克易伤 
-	[SpellName(165195)] = 4, -- 实验型脉冲手雷 
-	[SpellName(156310)] = 3, -- 熔岩震击 
-	[SpellName(159481)] = 3, -- 延时攻城炸弹 
-	[SpellName(164380)] = 2, -- 燃烧 
-	[SpellName(164280)] = 2, -- 热能冲击 
+	--Operator Thogar 主管索戈尔 
+	[SpellName(155921)] = 2, -- Enkindle 点燃 坦克易伤 
+	[SpellName(165195)] = 4, -- Prototype Pulse Grenade 实验型脉冲手雷 
+	[SpellName(156310)] = 3, -- Lava Shock 熔岩震击 
+	[SpellName(159481)] = 3, -- Delayed Siege Bomb 延时攻城炸弹 
+	[SpellName(164380)] = 2, -- Burning 燃烧 
+	[SpellName(164280)] = 2, -- Heat Blast 热能冲击 
 
-	--钢铁女武神 
-	[SpellName(156631)] = 2, -- 急速射击 
-	[SpellName(164271)] = 3, -- 穿透射击 
-	[SpellName(158601)] = 1, -- 主炮轰击 
-	[SpellName(156214)] = 4, -- 震颤暗影 
-	[SpellName(158315)] = 2, -- 暗影猎杀 
-	[SpellName(159724)] = 3, -- 鲜血仪式 
+	--Iron Maidens 钢铁女武神 
+	[SpellName(156631)] = 2, -- Rapid Fire 急速射击 
+	[SpellName(164271)] = 3, -- Penetrating Shot 穿透射击 
+	[SpellName(158601)] = 1, -- Dominator Blast 主炮轰击 
+	[SpellName(156214)] = 4, -- Convulsive Shadows 震颤暗影 
+	[SpellName(158315)] = 2, -- Dark Hunt 暗影猎杀 
+	[SpellName(159724)] = 3, -- Blood Ritual 鲜血仪式 
 	[SpellName(158010)] = 2, -- 浸血觅心者 
-	[SpellName(158692)] = 1, -- 致命投掷 
-	[SpellName(158702)] = 2, -- 锁定 
-	[SpellName(158683)] = 3, -- 堕落之血 
+	[SpellName(158692)] = 1, -- Bloodsoaked Heartseeker 致命投掷 
+	[SpellName(158702)] = 2, -- Fixate 锁定 
+	[SpellName(158683)] = 3, -- Corrupted Blood 堕落之血 
 
-	--黑手 
-	[SpellName(156096)] = 5, -- 死亡标记 
+	--Warlord Blackhand 黑手 
+	[SpellName(156096)] = 5, -- Marked for Death 死亡标记  
    	
 --悬槌堡 
 	-- 1 卡加斯 
