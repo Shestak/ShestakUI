@@ -8,7 +8,13 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.reminder.raid_buffs_enable == true then
 	-- General buffs
 	T.ReminderBuffs = {
+		Rune = {	--for WOD
+			175457, -- Focus Augment Rune
+			175456, -- Stout Augment Rune
+			175439, -- Hyper Augment Rune
+		},
 		Flask = {
+			176151,
 			156071,	-- Draenic Strength Flask
 			156077,	-- Draenic Stamina Flask
 			156070,	-- Draenic Intellect Flask
@@ -36,7 +42,25 @@ if C.reminder.raid_buffs_enable == true then
 			105681,	-- Mantid Elixir
 		},
 		Food = {
-			104280,	-- Well Fed
+		104273, --250 Agility
+		104274, --275 Agility
+		104275, --300 Agility
+
+		104267, -- 250 Strength
+		104271, -- 275 Strength
+		104272, -- 300 Strength
+
+		104264, -- 250 Intellect
+		104276, -- 275 Intellect
+		104277, -- 300 Intellect
+
+		104277, -- 250 Spirit
+		104279, -- 275 Spirit
+		104280, -- 300 Spirit
+
+		104281, -- 375 Stamina
+		104282, -- 415 Stamina
+		104283, -- 450 Stamina
 		},
 		Stat = {
 			1126,	-- Mark of the Wild
