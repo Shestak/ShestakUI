@@ -1,12 +1,13 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.announcements.flask_food ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Checks the usage of flasks and food of your party/raid members(ffCheck by Silverwind)
 ----------------------------------------------------------------------------------------
-local noFood, noFlask, unitBuffs = {}, {}, {}
+local noFood, noFlask, noRune, unitBuffs = {}, {}, {}, {}
 local foods = T.ReminderBuffs["Food"]
 local flasks = T.ReminderBuffs["Flask"]
+local Runes = T.ReminderBuffs["Rune"]
 
 local function scan(unit)
 	table.wipe(unitBuffs)
@@ -37,6 +38,15 @@ local function checkFlask(unit)
 	end
 end
 
+local function checkRune(unit)
+	scan(unit)
+	for _, id in pairs(Runes) do
+		if unitBuffs[GetSpellInfo(id)] then
+			return true
+		end
+	end
+end
+
 local function checkUnit(unit)
 	local name = UnitName(unit)
 	if not checkFood(unit) then
@@ -44,6 +54,9 @@ local function checkUnit(unit)
 	end
 	if not checkFlask(unit) then
 		noFlask[#noFlask + 1] = name
+	end
+	if not checkRune(unit) then
+		noRune[#noRune + 1] = name
 	end
 end
 
@@ -60,6 +73,7 @@ local function run(autoreport)
 
 	table.wipe(noFood)
 	table.wipe(noFlask)
+	table.wipe(noRune)
 
 	if UnitInRaid("player") then
 		checkType = "raid"
@@ -102,8 +116,18 @@ local function run(autoreport)
 			print(output)
 		end
 	end
+	
+	if #noRune > 0 then
+		table.sort(noRune)
+		output = L_ANNOUNCE_FF_NORUNE..table.concat(noRune, ", ")
+		if C.announcements.flask_food_raid then
+			SendChatMessage(output, T.CheckChat())
+		else
+			print(output)
+		end
+	end
 
-	if #noFood == 0 and #noFlask == 0 then
+	if #noFood == 0 and #noFlask == 0 and #noRune == 0 then
 		if C.announcements.flask_food_raid then
 			SendChatMessage(L_ANNOUNCE_FF_ALLBUFFED, T.CheckChat())
 		else
