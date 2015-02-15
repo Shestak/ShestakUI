@@ -13,8 +13,9 @@ L_ANNOUNCE_LA_PLACED = "光束泉已放置！"
 L_ANNOUNCE_LA_CHARGES = "次剩餘."
 
 -- Announce flasks and food
-L_ANNOUNCE_FF_NOFOOD = "缺少食物Buff: "
+L_ANNOUNCE_FF_NOFOOD = "缺少食物: "
 L_ANNOUNCE_FF_NOFLASK = "缺少精煉藥劑: "
+L_ANNOUNCE_FF_NORUNE = "缺少符文: "
 L_ANNOUNCE_FF_ALLBUFFED = "已獲得所有增益!"
 L_ANNOUNCE_FF_CHECK_BUTTON = "檢查食物和精煉"
 
