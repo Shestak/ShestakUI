@@ -301,6 +301,8 @@ C["filger_spells"] = {
                 { spellID = 135286, unitID = "player", caster = "player", filter = "BUFF" },
                 --野蛮防御
                 { spellID = 132402, unitID = "player", caster = "player", filter = "BUFF" },
+                --落日余晖
+                { spellID = 155592, unitID = "player", caster = "player", filter = "BUFF" },
 		},
 		{
 			Name = "T_BUFF",
