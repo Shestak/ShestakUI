@@ -12,7 +12,7 @@ local microbuttons = {
 	"QuestLogMicroButton",
 	"GuildMicroButton",
 	"LFDMicroButton",
-	"CompanionsMicroButton",
+	"CollectionsMicroButton",
 	"EJMicroButton",
 	"StoreMicroButton",
 	"MainMenuMicroButton"
