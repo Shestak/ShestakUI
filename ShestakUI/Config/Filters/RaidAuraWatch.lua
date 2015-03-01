@@ -23,6 +23,7 @@ T.RaidBuffs = {
 	},
 	PALADIN = {
 		{53563, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Light
+	        {156910, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Faith
 		{20925, "BOTTOMLEFT", {0.9, 0.9, 0.1}},				-- Sacred Shield
 		{114163, "BOTTOMLEFT", {0.9, 0.6, 0.4}},			-- Eternal Flame
 		{157007, "TOPLEFT", {1, 0.5, 0.2}},					-- Beacon of Insight
