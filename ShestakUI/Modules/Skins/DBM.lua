@@ -184,14 +184,14 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 				if count == 1 then
 					local _, anch = bar:GetPoint()
 					bar:ClearAllPoints()
-					if DBM_SavedOptions.HealthFrameGrowUp then
+					if DBM_AllSavedOptions["Default"].HealthFrameGrowUp then
 						bar:SetPoint("BOTTOM", anch, "TOP", 0, 3)
 					else
 						bar:SetPoint("TOP", anch, "BOTTOM", 0, -3)
 					end
 				else
 					bar:ClearAllPoints()
-					if DBM_SavedOptions.HealthFrameGrowUp then
+					if DBM_AllSavedOptions["Default"].HealthFrameGrowUp then
 						bar:SetPoint("BOTTOMLEFT", prev, "TOPLEFT", 0, 3)
 					else
 						bar:SetPoint("TOPLEFT", prev, "BOTTOMLEFT", 0, -3)
