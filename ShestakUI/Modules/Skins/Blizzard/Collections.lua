@@ -409,18 +409,17 @@ local function LoadSkin()
 	end)
 
 	-- Heirlooms
-	HeirloomsJournalFilterButton:SetPoint("TOPRIGHT", HeirloomsJournal, "TOPRIGHT", -15, -34)
-
-	T.SkinEditBox(HeirloomsJournal.SearchBox)
 	HeirloomsJournal.iconsFrame:StripTextures()
-
+	T.SkinEditBox(HeirloomsJournal.SearchBox, nil, 18)
 	T.SkinNextPrevButton(HeirloomsJournal.navigationFrame.nextPageButton)
 	T.SkinNextPrevButton(HeirloomsJournal.navigationFrame.prevPageButton)
+	HeirloomsJournalFilterButton:SetPoint("TOPLEFT", HeirloomsJournal.SearchBox, "TOPRIGHT", 5, 2)
 	HeirloomsJournal.progressBar:StripTextures()
 	HeirloomsJournal.progressBar:CreateBackdrop("Overlay")
 	HeirloomsJournal.progressBar:SetStatusBarTexture(C.media.texture)
-	HeirloomsJournal.progressBar:SetFrameLevel(ToyBox.progressBar:GetFrameLevel() + 2)
+	HeirloomsJournal.progressBar:SetFrameLevel(HeirloomsJournal.progressBar:GetFrameLevel() + 2)
 	T.SkinDropDownBox(HeirloomsJournalClassDropDown)
+	
 
 	hooksecurefunc(HeirloomsJournal, "LayoutCurrentPage", function()
 		for i = 1, #HeirloomsJournal.heirloomHeaderFrames do
