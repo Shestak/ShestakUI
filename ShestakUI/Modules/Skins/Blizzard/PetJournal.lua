@@ -1,7 +1,6 @@
 local T, C, L, _ = unpack(select(2, ...))
-
 ----------------------------------------------------------------------------------------
---	PetJournal skin
+--	Collections skin
 ----------------------------------------------------------------------------------------
 local LoadTootlipSkin = CreateFrame("Frame")
 LoadTootlipSkin:RegisterEvent("ADDON_LOADED")
@@ -10,8 +9,7 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
 		self:UnregisterEvent("ADDON_LOADED")
 		return
 	end
-
-	if addon == "Blizzard_PetJournal" then
+	if addon == "Blizzard_Collections" then
 		PetJournalPrimaryAbilityTooltip.Background:SetTexture(nil)
 		PetJournalPrimaryAbilityTooltip.Delimiter1:SetTexture(nil)
 		PetJournalPrimaryAbilityTooltip.Delimiter2:SetTexture(nil)
@@ -28,23 +26,15 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
 end)
 
 if C.skins.blizzard_frames ~= true then return end
-
 local function LoadSkin()
-	local StripAllTextures = {
-		"MountJournal",
-		"PetJournalParent",
-		"PetJournalRightInset",
-		"PetJournalLeftInset",
-		"PetJournalPetCard",
-		"PetJournalPetCardInset",
-		"PetJournalLoadoutBorder",
-		"PetJournalSpellSelect",
-		"PetJournalPetCardXPBar",
-		"ToyBoxProgressBar"
-	}
 
-	for _, object in pairs(StripAllTextures) do
-		_G[object]:StripTextures()
+	CollectionsJournal:StripTextures()
+	CollectionsJournal:SetTemplate('Transparent')
+	CollectionsJournal:Hide()
+	CollectionsJournalPortrait:SetAlpha(0)
+	
+	for i=1, 4 do
+		T.SkinTab(_G['CollectionsJournalTab'..i])
 	end
 
 	local buttons = {
@@ -53,6 +43,8 @@ local function LoadSkin()
 		"PetJournalFindBattle",
 		"PetJournalFilterButton",
 		"MountJournalFilterButton",
+		"MountJournalSummonRandomFavoriteButton",
+		"HeirloomsJournalFilterButton",
 		"ToyBoxFilterButton"
 	}
 
@@ -60,12 +52,10 @@ local function LoadSkin()
 		_G[buttons[i]]:SkinButton()
 	end
 
-	PetJournalParent:SetTemplate("Transparent")
-	PetJournalParentPortrait:Hide()
 	T.SkinTab(PetJournalParentTab1)
 	T.SkinTab(PetJournalParentTab2)
 	T.SkinTab(PetJournalParentTab3)
-	T.SkinCloseButton(PetJournalParentCloseButton)
+	T.SkinCloseButton(CollectionsJournalCloseButton)
 
 	-- MountJournal
 	MountJournal.LeftInset:StripTextures()
@@ -121,14 +111,13 @@ local function LoadSkin()
 	local function ColorSelectedMount()
 		for i = 1, #MountJournal.ListScrollFrame.buttons do
 			local button = _G["MountJournalListScrollFrameButton"..i]
-			local name = _G["MountJournalListScrollFrameButton"..i.."Name"]
 
 			if button.selectedTexture:IsShown() then
-				name:SetTextColor(1, 1, 0)
+				button.name:SetTextColor(1, 1, 0)
 				button.backdrop:SetBackdropBorderColor(1, 1, 0)
 				button.DragButton.backdrop:SetBackdropBorderColor(1, 1, 0)
 			else
-				name:SetTextColor(1, 1, 1)
+				button.name:SetTextColor(1, 1, 1)
 				button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 				button.DragButton.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 			end
@@ -251,7 +240,6 @@ local function LoadSkin()
 
 	hooksecurefunc("PetJournal_UpdatePetList", ColorSelectedPet)
 	hooksecurefunc(PetJournalListScrollFrame, "update", ColorSelectedPet)
-
 	PetJournalAchievementStatus:DisableDrawLayer("BACKGROUND")
 
 	PetJournalHealPetButton:CreateBackdrop("Default")
@@ -371,27 +359,30 @@ local function LoadSkin()
 	PetJournalPetCardHealthFrame.healthBar:CreateBackdrop("Overlay")
 	PetJournalPetCardHealthFrame.healthBar:SetStatusBarTexture(C.media.texture)
 
+	PetJournalPetCardXPBar:StripTextures()
 	PetJournalPetCardXPBar:CreateBackdrop("Overlay")
 	PetJournalPetCardXPBar:SetStatusBarTexture(C.media.texture)
 	PetJournalPetCardXPBar:SetPoint("BOTTOM", PetJournalPetCard.backdrop, "BOTTOM", 0, 6)
 	PetJournalPetCardXPBar:SetFrameLevel(PetJournalPetCardXPBar:GetFrameLevel() + 2)
 
 	-- ToyBox
-	ToyBoxIconsFrame:StripTextures()
+	ToyBox.iconsFrame:StripTextures()
 	T.SkinEditBox(ToyBox.searchBox, nil, 18)
-	T.SkinNextPrevButton(ToyBoxPrevPageButton)
-	T.SkinNextPrevButton(ToyBoxNextPageButton)
+	T.SkinNextPrevButton(ToyBox.navigationFrame.nextPageButton)
+	T.SkinNextPrevButton(ToyBox.navigationFrame.prevPageButton)
 	ToyBoxFilterButton:SetPoint("TOPLEFT", ToyBox.searchBox, "TOPRIGHT", 5, 2)
-	ToyBoxProgressBarBar:SetTexture(C.media.texture)
-	ToyBoxProgressBar:CreateBackdrop("Overlay")
-	ToyBoxProgressBar:SetFrameLevel(ToyBoxProgressBar:GetFrameLevel() + 2)
+	ToyBox.progressBar:StripTextures()
+	ToyBox.progressBar:CreateBackdrop("Overlay")
+	ToyBox.progressBar:SetStatusBarTexture(C.media.texture)
+	ToyBox.progressBar:SetFrameLevel(ToyBox.progressBar:GetFrameLevel() + 2)
+	
 
 	for i = 1, 18 do
-		_G["ToySpellButton"..i.."SlotFrameCollected"]:SetTexture("")
-		_G["ToySpellButton"..i.."SlotFrameUncollected"]:SetTexture("")
-		local button = _G["ToySpellButton"..i]
-		local icon = _G["ToySpellButton"..i.."IconTexture"]
-		local uicon = _G["ToySpellButton"..i.."IconTextureUncollected"]
+		ToyBox.iconsFrame["spellButton"..i].slotFrameCollected:SetTexture("")
+		ToyBox.iconsFrame["spellButton"..i].slotFrameUncollected:SetTexture("")
+		local button = ToyBox.iconsFrame['spellButton'..i]
+		local icon = ToyBox.iconsFrame["spellButton"..i].iconTexture
+		local uicon = ToyBox.iconsFrame["spellButton"..i].iconTextureUncollected
 
 		button:StyleButton(nil, 0)
 		button:CreateBackdrop("Default")
@@ -405,20 +396,73 @@ local function LoadSkin()
 		uicon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 
-	hooksecurefunc("ToySpellButton_UpdateButton", function(self)
-		local toyString = _G[self:GetName().."ToyName"]
-
-		if PlayerHasToy(self.itemID) then
-			local _, _, quality = GetItemInfo(self.itemID)
-			if quality then
-				toyString:SetTextColor(GetItemQualityColor(quality))
+		hooksecurefunc("ToySpellButton_UpdateButton", function(self)
+			if (PlayerHasToy(self.itemID)) then
+				local quality = select(3, GetItemInfo(self.itemID))
+				local r, g, b = GetItemQualityColor(quality)
+				self.TextColor = { r, g, b }
+				self:SetBackdropBorderColor(r, g, b)
 			else
-				toyString:SetTextColor(1, 1, 1)
+				self:SetBackdropBorderColor(unpack(C.media.border_color))
+				self.TextColor = { .6, .6, .6 }
 			end
-		else
-			toyString:SetTextColor(0.5, 0.5, 0.5)
+		end)
+	--Heirlooms
+	HeirloomsJournalFilterButton:SetPoint("TOPRIGHT", HeirloomsJournal, "TOPRIGHT", -15, -34)
+	
+	T.SkinEditBox(HeirloomsJournal.SearchBox)
+	HeirloomsJournal.iconsFrame:StripTextures()
+
+	T.SkinNextPrevButton(HeirloomsJournal.navigationFrame.nextPageButton)
+	T.SkinNextPrevButton(HeirloomsJournal.navigationFrame.prevPageButton)
+	HeirloomsJournal.progressBar:StripTextures()
+	HeirloomsJournal.progressBar:CreateBackdrop("Overlay")
+	HeirloomsJournal.progressBar:SetStatusBarTexture(C.media.texture)
+	HeirloomsJournal.progressBar:SetFrameLevel(ToyBox.progressBar:GetFrameLevel() + 2)
+	T.SkinDropDownBox(HeirloomsJournalClassDropDown)
+	
+	hooksecurefunc(HeirloomsJournal, "LayoutCurrentPage", function()
+		for i=1, #HeirloomsJournal.heirloomHeaderFrames do
+			local header = HeirloomsJournal.heirloomHeaderFrames[i]
+			header.text:SetTextColor( .9, .8, .5 )
 		end
+		
+		for i=1, #HeirloomsJournal.heirloomEntryFrames do
+			local button = HeirloomsJournal.heirloomEntryFrames[i]
+			if(not button.skinned) then
+				button.skinned = true
+				button:StyleButton(nil, 0)
+				button:CreateBackdrop("Default")
+				button.iconTextureUncollected:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				button.iconTextureUncollected:SetTexture(button.iconTexture:GetTexture())
+				HeirloomsJournal:UpdateButton(button)
+			end
+			
+			if(C_Heirloom.PlayerHasHeirloom(button.itemID)) then
+				button.name:SetTextColor( .9, .8, .5 )
+			else
+				button.name:SetTextColor(0.6, 0.6, 0.6)
+			end
+		end
+	end)
+	
+	hooksecurefunc(HeirloomsJournal, "UpdateButton", function(self, button)
+			button.slotFrameCollected:SetTexture("")
+			button.slotFrameUncollected:SetTexture("")
+			button.iconTextureUncollected:SetTexCoord(.08, .92, .08, .92)
+			button.iconTexture:SetPoint("TOPLEFT")
+			button.iconTexture:SetPoint("BOTTOMRIGHT")
+			button.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			button.iconTextureUncollected:SetPoint("TOPLEFT")
+			button.iconTextureUncollected:SetPoint("BOTTOMRIGHT")
+			button.iconTextureUncollected:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			button.styled = true
+		if(C_Heirloom.PlayerHasHeirloom(button.itemID)) then
+			button.name:SetTextColor( .9, .8, .5 )
+		else
+			button.name:SetTextColor(0.6, 0.6, 0.6)
+		end	
 	end)
 end
 
-T.SkinFuncs["Blizzard_PetJournal"] = LoadSkin
+T.SkinFuncs["Blizzard_Collections"] = LoadSkin
