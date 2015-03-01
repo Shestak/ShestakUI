@@ -690,6 +690,10 @@ C["filger_spells"] = {
 			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Proc)
 			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Spirit of the Warlords
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Steady Focus
+			{spellID = 177668, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -711,6 +715,8 @@ C["filger_spells"] = {
 
 			-- Black Arrow
 			{spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Serpent Sting
+			{spellID = 87935, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Explosive Shot
 			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Narrow Escape
@@ -1373,6 +1379,8 @@ C["filger_spells"] = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
+			-- Tiger Power
+			{spellID = 125359, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 	},
 	["PALADIN"] = {
