@@ -13,7 +13,7 @@ local DBMSkin = CreateFrame("Frame")
 DBMSkin:RegisterEvent("PLAYER_LOGIN")
 DBMSkin:RegisterEvent("ADDON_LOADED")
 DBMSkin:SetScript("OnEvent", function(self, event, addon)
-	if IsAddOnLoaded("DBM") then
+	if IsAddOnLoaded("DBM-Core") then
 		local function SkinBars(self)
 			for bar in self:GetBarIterator() do
 				if not bar.injected then
@@ -184,14 +184,14 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 				if count == 1 then
 					local _, anch = bar:GetPoint()
 					bar:ClearAllPoints()
-					if DBM_SavedOptions.HealthFrameGrowUp then
+					if DBM_AllSavedOptions["Default"].HealthFrameGrowUp then
 						bar:SetPoint("BOTTOM", anch, "TOP", 0, 3)
 					else
 						bar:SetPoint("TOP", anch, "BOTTOM", 0, -3)
 					end
 				else
 					bar:ClearAllPoints()
-					if DBM_SavedOptions.HealthFrameGrowUp then
+					if DBM_AllSavedOptions["Default"].HealthFrameGrowUp then
 						bar:SetPoint("BOTTOMLEFT", prev, "TOPLEFT", 0, 3)
 					else
 						bar:SetPoint("TOPLEFT", prev, "BOTTOMLEFT", 0, -3)
@@ -299,72 +299,75 @@ end)
 --	DBM settings(by ALZA and help from Affli)
 ----------------------------------------------------------------------------------------
 function T.UploadDBM()
-	DBM_SavedOptions.Enabled = true
-	DBM_SavedOptions.ShowMinimapButton = C.skins.minimap_buttons and true or false
-	DBM_SavedOptions.WarningIconLeft = false
-	DBM_SavedOptions.WarningIconRight = false
-	DBM_SavedOptions["WarningColors"] = {
-		{["b"] = T.color.b, ["g"] = T.color.g, ["r"] = T.color.r,},
-		{["b"] = T.color.b, ["g"] = T.color.g, ["r"] = T.color.r,},
-		{["b"] = T.color.b, ["g"] = T.color.g, ["r"] = T.color.r,},
-		{["b"] = T.color.b, ["g"] = T.color.g, ["r"] = T.color.r,},
-	}
-	DBM_SavedOptions.HealthFrameGrowUp = false
-	DBM_SavedOptions.HealthFrameWidth = 218
-	DBM_SavedOptions.HPFrameX = 100
-	DBM_SavedOptions.HPFramePoint = "LEFT"
-	DBM_SavedOptions.RangeFrameX = 244
-	DBM_SavedOptions.RangeFramePoint = "LEFT"
-	DBM_SavedOptions.ShowSpecialWarnings = true
-	DBM_SavedOptions.SpecialWarningFont = C.media.normal_font
-	DBM_SavedOptions.SpecialWarningFontSize = 50
-	DBM_SavedOptions.SpecialWarningX = 0
-	DBM_SavedOptions.SpecialWarningY = 75
+	if IsAddOnLoaded("DBM-Core") then
+		DBM_UseDualProfile = false
+		DBM_AllSavedOptions["Default"].Enabled = true
+		DBM_AllSavedOptions["Default"].ShowMinimapButton = C.skins.minimap_buttons and true or false
+		DBM_AllSavedOptions["Default"].WarningIconLeft = false
+		DBM_AllSavedOptions["Default"].WarningIconRight = false
+		DBM_AllSavedOptions["Default"].WarningColors = {
+			{["b"] = T.color.b, ["g"] = T.color.g, ["r"] = T.color.r,},
+			{["b"] = T.color.b, ["g"] = T.color.g, ["r"] = T.color.r,},
+			{["b"] = T.color.b, ["g"] = T.color.g, ["r"] = T.color.r,},
+			{["b"] = T.color.b, ["g"] = T.color.g, ["r"] = T.color.r,},
+		}
+		DBM_AllSavedOptions["Default"].HealthFrameGrowUp = false
+		DBM_AllSavedOptions["Default"].HealthFrameWidth = 218
+		DBM_AllSavedOptions["Default"].HPFrameX = 100
+		DBM_AllSavedOptions["Default"].HPFramePoint = "LEFT"
+		DBM_AllSavedOptions["Default"].RangeFrameX = 244
+		DBM_AllSavedOptions["Default"].RangeFramePoint = "LEFT"
+		DBM_AllSavedOptions["Default"].ShowSpecialWarnings = true
+		DBM_AllSavedOptions["Default"].SpecialWarningFont = C.media.normal_font
+		DBM_AllSavedOptions["Default"].SpecialWarningFontSize = 50
+		DBM_AllSavedOptions["Default"].SpecialWarningX = 0
+		DBM_AllSavedOptions["Default"].SpecialWarningY = 75
 
-	DBT_PersistentOptions["DBM"].StartColorR = T.color.r
-	DBT_PersistentOptions["DBM"].StartColorG = T.color.g
-	DBT_PersistentOptions["DBM"].StartColorB = T.color.b
-	DBT_PersistentOptions["DBM"].EndColorR = T.color.r
-	DBT_PersistentOptions["DBM"].EndColorG = T.color.g
-	DBT_PersistentOptions["DBM"].EndColorB = T.color.b
-	DBT_PersistentOptions["DBM"].Scale = 1
-	DBT_PersistentOptions["DBM"].HugeScale = 1
-	DBT_PersistentOptions["DBM"].BarXOffset = 0
-	DBT_PersistentOptions["DBM"].BarYOffset = 7
-	DBT_PersistentOptions["DBM"].Font = C.font.stylization_font
-	DBT_PersistentOptions["DBM"].FontSize = C.font.stylization_font_size
-	DBT_PersistentOptions["DBM"].Width = 189
-	DBT_PersistentOptions["DBM"].TimerX = 143
-	DBT_PersistentOptions["DBM"].TimerPoint = "BOTTOMLEFT"
-	DBT_PersistentOptions["DBM"].FillUpBars = true
-	DBT_PersistentOptions["DBM"].IconLeft = true
-	DBT_PersistentOptions["DBM"].ExpandUpwards = true
-	DBT_PersistentOptions["DBM"].Texture = C.media.texture
-	DBT_PersistentOptions["DBM"].IconRight = false
-	DBT_PersistentOptions["DBM"].HugeBarXOffset = 0
-	DBT_PersistentOptions["DBM"].HugeBarsEnabled = false
-	DBT_PersistentOptions["DBM"].HugeWidth = 189
-	DBT_PersistentOptions["DBM"].HugeTimerX = 7
-	DBT_PersistentOptions["DBM"].HugeTimerPoint = "CENTER"
-	DBT_PersistentOptions["DBM"].HugeBarYOffset = 7
+		DBT_AllPersistentOptions["Default"]["DBM"].StartColorR = T.color.r
+		DBT_AllPersistentOptions["Default"]["DBM"].StartColorG = T.color.g
+		DBT_AllPersistentOptions["Default"]["DBM"].StartColorB = T.color.b
+		DBT_AllPersistentOptions["Default"]["DBM"].EndColorR = T.color.r
+		DBT_AllPersistentOptions["Default"]["DBM"].EndColorG = T.color.g
+		DBT_AllPersistentOptions["Default"]["DBM"].EndColorB = T.color.b
+		DBT_AllPersistentOptions["Default"]["DBM"].Scale = 1
+		DBT_AllPersistentOptions["Default"]["DBM"].HugeScale = 1
+		DBT_AllPersistentOptions["Default"]["DBM"].BarXOffset = 0
+		DBT_AllPersistentOptions["Default"]["DBM"].BarYOffset = 7
+		DBT_AllPersistentOptions["Default"]["DBM"].Font = C.font.stylization_font
+		DBT_AllPersistentOptions["Default"]["DBM"].FontSize = C.font.stylization_font_size
+		DBT_AllPersistentOptions["Default"]["DBM"].Width = 189
+		DBT_AllPersistentOptions["Default"]["DBM"].TimerX = 143
+		DBT_AllPersistentOptions["Default"]["DBM"].TimerPoint = "BOTTOMLEFT"
+		DBT_AllPersistentOptions["Default"]["DBM"].FillUpBars = true
+		DBT_AllPersistentOptions["Default"]["DBM"].IconLeft = true
+		DBT_AllPersistentOptions["Default"]["DBM"].ExpandUpwards = true
+		DBT_AllPersistentOptions["Default"]["DBM"].Texture = C.media.texture
+		DBT_AllPersistentOptions["Default"]["DBM"].IconRight = false
+		DBT_AllPersistentOptions["Default"]["DBM"].HugeBarXOffset = 0
+		DBT_AllPersistentOptions["Default"]["DBM"].HugeBarsEnabled = false
+		DBT_AllPersistentOptions["Default"]["DBM"].HugeWidth = 189
+		DBT_AllPersistentOptions["Default"]["DBM"].HugeTimerX = 7
+		DBT_AllPersistentOptions["Default"]["DBM"].HugeTimerPoint = "CENTER"
+		DBT_AllPersistentOptions["Default"]["DBM"].HugeBarYOffset = 7
 
-	if C.actionbar.bottombars == 1 then
-		DBM_SavedOptions.HPFrameY = 126
-		DBM_SavedOptions.RangeFrameY = 101
-		DBT_PersistentOptions["DBM"].TimerY = 139
-		DBT_PersistentOptions["DBM"].HugeTimerY = -136
-	elseif C.actionbar.bottombars == 2 then
-		DBM_SavedOptions.HPFrameY = 154
-		DBM_SavedOptions.RangeFrameY = 129
-		DBT_PersistentOptions["DBM"].TimerY = 167
-		DBT_PersistentOptions["DBM"].HugeTimerY = -108
-	elseif C.actionbar.bottombars == 3 then
-		DBM_SavedOptions.HPFrameY = 182
-		DBM_SavedOptions.RangeFrameY = 157
-		DBT_PersistentOptions["DBM"].TimerY = 195
-		DBT_PersistentOptions["DBM"].HugeTimerY = -80
+		if C.actionbar.bottombars == 1 then
+			DBM_AllSavedOptions["Default"].HPFrameY = 126
+			DBM_AllSavedOptions["Default"].RangeFrameY = 101
+			DBT_AllPersistentOptions["Default"]["DBM"].TimerY = 139
+			DBT_AllPersistentOptions["Default"]["DBM"].HugeTimerY = -136
+		elseif C.actionbar.bottombars == 2 then
+			DBM_AllSavedOptions["Default"].HPFrameY = 154
+			DBM_AllSavedOptions["Default"].RangeFrameY = 129
+			DBT_AllPersistentOptions["Default"]["DBM"].TimerY = 167
+			DBT_AllPersistentOptions["Default"]["DBM"].HugeTimerY = -108
+		elseif C.actionbar.bottombars == 3 then
+			DBM_AllSavedOptions["Default"].HPFrameY = 182
+			DBM_AllSavedOptions["Default"].RangeFrameY = 157
+			DBT_AllPersistentOptions["Default"]["DBM"].TimerY = 195
+			DBT_AllPersistentOptions["Default"]["DBM"].HugeTimerY = -80
+		end
+		DBM_AllSavedOptions["Default"].InstalledBars = C.actionbar.bottombars
 	end
-	DBM_SavedOptions.InstalledBars = C.actionbar.bottombars
 end
 
 StaticPopupDialogs.SETTINGS_DBM = {
@@ -386,8 +389,8 @@ OnLogon:RegisterEvent("PLAYER_ENTERING_WORLD")
 OnLogon:SetScript("OnEvent", function(self, event)
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 
-	if IsAddOnLoaded("DBM") then
-		if DBM_SavedOptions.InstalledBars ~= C.actionbar.bottombars then
+	if IsAddOnLoaded("DBM-Core") then
+		if DBM_AllSavedOptions["Default"].InstalledBars ~= C.actionbar.bottombars then
 			StaticPopup_Show("SETTINGS_DBM")
 		end
 	end
