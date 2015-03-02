@@ -392,8 +392,8 @@ oUF:Factory(function(self)
 		end
 		local raidtank = self:SpawnHeader("oUF_MainTank", nil, "raid",
 			"oUF-initialConfigFunction", ([[
-				self:SetWidth(T.Scale(unittank_width))
-				self:SetHeight(T.Scale(unittank_height))
+				self:SetWidth(60)
+				self:SetHeight(20)
 			]]),
 			"showRaid", true,
 			"yOffset", T.Scale(-7),
