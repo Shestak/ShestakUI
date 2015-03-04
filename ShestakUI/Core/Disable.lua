@@ -25,9 +25,9 @@ if C.actionbar.bottombars < 1 then
 	C.actionbar.bottombars = 1
 end
 
-if C.actionbar.petbar_horizontal == true then
-	C.actionbar.stancebar_horizontal = false
-end
+--if C.actionbar.petbar_horizontal == true then
+	--C.actionbar.stancebar_horizontal = false
+--end
 
 if C.error.black == true and C.error.white == true then
 	C.error.white = false
