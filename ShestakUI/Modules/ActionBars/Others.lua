@@ -54,13 +54,29 @@ vehicle:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 vehicle:SetTemplate("Default")
 vehicle:StyleButton(true)
 vehicle:RegisterForClicks("AnyUp")
-vehicle:SetScript("OnClick", function()
-	for i = 1, NUM_POSSESS_SLOTS do
-		local _, name, enabled = GetPossessInfo(i)
-		if enabled then
-			CancelUnitBuff("player", name)
-		end
+vehicle:SetScript("OnClick", function(self)
+	if ( UnitOnTaxi("player") ) then
+		TaxiRequestEarlyLanding()
+		self:GetNormalTexture():SetVertexColor(1, 0, 0)
+		self:EnableMouse(false)
+	else
+		VehicleExit()
 	end
-	VehicleExit()
 end)
-RegisterStateDriver(vehicle, "visibility", "[canexitvehicle][possessbar] show; hide")
+vehicle:SetScript("OnEnter", MainMenuBarVehicleLeaveButton_OnEnter)
+vehicle:SetScript("OnLeave", GameTooltip_Hide)
+vehicle:RegisterEvent("PLAYER_ENTERING_WORLD")
+vehicle:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
+vehicle:RegisterEvent("UPDATE_MULTI_CAST_ACTIONBAR")
+vehicle:RegisterEvent("UNIT_ENTERED_VEHICLE")
+vehicle:RegisterEvent("UNIT_EXITED_VEHICLE")
+vehicle:RegisterEvent("VEHICLE_UPDATE")
+vehicle:SetScript("OnEvent", function(self)
+	if ( CanExitVehicle() and ActionBarController_GetCurrentActionBarState() == LE_ACTIONBAR_STATE_MAIN ) then
+		self:Show()
+		self:GetNormalTexture():SetVertexColor(1, 1, 1)
+		self:EnableMouse(true)
+	else
+		self:Hide()
+	end
+end)
