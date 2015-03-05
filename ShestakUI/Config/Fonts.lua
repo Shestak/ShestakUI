@@ -125,11 +125,11 @@ if T.client == "zhTW" then
 
 	C["font"].combat_text_font = "Fonts\\bLEI00D.ttf"
 	C["font"].combat_text_font_size = 16
-	C["font"].combat_text_font_style = ""
+	C["font"].combat_text_font_style = "OUTLINE"
 	C["font"].combat_text_font_shadow = true
 
 	C["font"].chat_font = "Fonts\\bLEI00D.ttf"
-	C["font"].chat_font_style = ""
+	C["font"].chat_font_style = "OUTLINE"
 	C["font"].chat_font_shadow = true
 
 	C["font"].chat_tabs_font = "Fonts\\bLEI00D.ttf"
@@ -205,11 +205,11 @@ elseif T.client == "zhCN" then
 
 	C["font"].combat_text_font = "Fonts\\ARKai_T.ttf"
 	C["font"].combat_text_font_size = 16
-	C["font"].combat_text_font_style = ""
+	C["font"].combat_text_font_style = "OUTLINE"
 	C["font"].combat_text_font_shadow = true
 
 	C["font"].chat_font = "Fonts\\ARKai_T.ttf"
-	C["font"].chat_font_style = ""
+	C["font"].chat_font_style = "OUTLINE"
 	C["font"].chat_font_shadow = true
 
 	C["font"].chat_tabs_font = "Fonts\\ARKai_T.ttf"
