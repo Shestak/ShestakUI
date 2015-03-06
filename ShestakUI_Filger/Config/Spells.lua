@@ -1467,7 +1467,7 @@ C["filger_spells"] = {
 			-- Psychic Scream
 			{spellID = 8122, unitID = "focus", caster = "player", filter = "DEBUFF"},
 			--虛無觸鬚
-            { spellID = 114404, unitID = "focus", caster = "all", filter = "DEBUFF" },
+			{ spellID = 114404, unitID = "focus", caster = "all", filter = "DEBUFF" },
 		},
 		{
 			Name = "COOLDOWN",
@@ -2263,6 +2263,8 @@ C["filger_spells"] = {
 
 			--驟亡
 			{ spellID = 52437, unitID = "player", caster = "player", filter = "BUFF" },
+			 --不屈打擊
+			{ spellID = 169686, unitID = "player", caster = "player", filter = "BUFF" },
 			--狂暴之怒
 			{ spellID = 18499, unitID = "player", caster = "player", filter = "BUFF" },
 			--魯莽
