@@ -47,19 +47,19 @@ local function LoadSkin()
 	GarrisonBuildingFrame.InfoBox.UpgradeButton:SkinButton()
 	GarrisonBuildingFrame.BuildingLevelTooltip:StripTextures()
 	GarrisonBuildingFrame.BuildingLevelTooltip:SetTemplate('Transparent')
-	
+
 	GarrisonLandingPage:StripTextures()
 	GarrisonLandingPage:SetTemplate("Transparent")
 	T.SkinCloseButton(GarrisonLandingPage.CloseButton)
 	GarrisonLandingPageTab1:SetPoint("TOPLEFT", GarrisonLandingPage, "BOTTOMLEFT", 70, 2)
 	T.SkinTab(GarrisonLandingPageTab1)
 	T.SkinTab(GarrisonLandingPageTab2)
-	
+
 	GarrisonLandingPage.FollowerList:StripTextures()
 	GarrisonLandingPage.FollowerList:SetTemplate("Transparent")
 	GarrisonLandingPage.FollowerList.SearchBox:SetPoint("TOPLEFT", 2, 25)
 	T.SkinEditBox(GarrisonLandingPage.FollowerList.SearchBox)
-	
+
 	GarrisonMissionFrame:StripTextures()
 	GarrisonMissionFrame.TitleText:Show()
 	GarrisonMissionFrame:SetTemplate("Transparent")
@@ -129,7 +129,7 @@ local function LoadSkin()
 			reward:GetRegions():Hide()
 			if not reward.border then
 				reward.border = CreateFrame("Frame", nil, reward)
-				reward.Icon:SetTexCoord(.08, .92, .08, .92)
+				reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			end
 		end
 	end)
@@ -137,21 +137,21 @@ local function LoadSkin()
 	hooksecurefunc("GarrisonMissionPage_SetReward", function(frame, reward)
 		frame.BG:SetTexture()
 		if not frame.backdrop then
-			frame.Icon:SetTexCoord(.08, .92, .08, .92)
+			frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		end
 		frame.Icon:SetDrawLayer("BORDER", 0)
 	end)
 
 	hooksecurefunc("GarrisonMissionPage_UpdateStartButton", function(missionPage)
 		missionPage.StartMissionButton.Flash:Hide()
-		missionPage.StartMissionButton.FlashAnim:Stop();
+		missionPage.StartMissionButton.FlashAnim:Stop()
 	end)
-	
+
 	-- Capacitive display frame
 	GarrisonCapacitiveDisplayFrame:StripTextures(true)
 	GarrisonCapacitiveDisplayFrame.Inset:StripTextures()
 	GarrisonCapacitiveDisplayFrame:SetTemplate("Transparent")
-	
+
 	T.SkinNextPrevButton(GarrisonCapacitiveDisplayFrame.DecrementButton)
 	T.SkinNextPrevButton(GarrisonCapacitiveDisplayFrame.IncrementButton)
 	GarrisonCapacitiveDisplayFrame.Count:StripTextures()
@@ -161,7 +161,7 @@ local function LoadSkin()
 	GarrisonCapacitiveDisplayFrame.CreateAllWorkOrdersButton:SkinButton()
 	local CapacitiveDisplay = GarrisonCapacitiveDisplayFrame.CapacitiveDisplay
 	CapacitiveDisplay.IconBG:SetTexture()
-	CapacitiveDisplay.ShipmentIconFrame.Icon:SetTexCoord(.08, .92, .08, .92)
+	CapacitiveDisplay.ShipmentIconFrame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	CapacitiveDisplay.ShipmentIconFrame:SetTemplate("Default", true)
 	CapacitiveDisplay.ShipmentIconFrame.Icon:SetPoint("TOPLEFT", -2, 2)
 	CapacitiveDisplay.ShipmentIconFrame.Icon:SetPoint("BOTTOMRIGHT", 2, -2)
@@ -177,12 +177,12 @@ local function LoadSkin()
 			local reagent = reagents[reagentIndex]
 			while reagent do
 				reagent.NameFrame:SetTexture()
-				reagent.Icon:SetTexCoord(.08, .92, .08, .92)
+				reagent.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				reagent.Icon:SetDrawLayer("BORDER")
 
 				if not reagent.border then
 					reagent.border = CreateFrame("Frame", nil, reagent)
-					reagent.Icon:SetTexCoord(.08, .92, .08, .92)
+					reagent.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 					reagent.Count:SetParent(reagent.border)
 				end
 
