@@ -307,6 +307,8 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].player_proc_icon)},
 
 			-- Buffs
+			-- Bloodtalons
+			{spellID = 145152, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lunar Peak
 			{spellID = 171743, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Solar Peak
@@ -688,6 +690,10 @@ C["filger_spells"] = {
 			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets (Agility, Proc)
 			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Spirit of the Warlords
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Steady Focus
+			{spellID = 177668, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- General
@@ -709,6 +715,8 @@ C["filger_spells"] = {
 
 			-- Black Arrow
 			{spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Serpent Sting
+			{spellID = 87935, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Explosive Shot
 			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Narrow Escape
@@ -1371,6 +1379,8 @@ C["filger_spells"] = {
 			{slotID = 14, filter = "CD"},
 
 			-- Internal
+			-- Tiger Power
+			{spellID = 125359, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 	},
 	["PALADIN"] = {
@@ -1963,6 +1973,8 @@ C["filger_spells"] = {
 			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Subterfuge
 			{spellID = 115192, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shadow Reflection
+			{spellID = 152151, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2112,6 +2124,8 @@ C["filger_spells"] = {
 			{spellID = 74001, filter = "CD"},
 			-- Vanish
 			{spellID = 1856, filter = "CD"},
+			-- Shadow Reflection
+			{spellID = 152151, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)

@@ -22,7 +22,7 @@ function button:PLAYER_LOGIN()
 	local ARMOR_TYPE = T.client == "ruRU" and "Доспехи" or ARMOR
 
 	if IsSpellKnown(51005) then
-		spells[ITEM_MILLABLE] = {GetSpellInfo(51005), 0.5, 1, 0.5}
+		milling = true
 	end
 
 	if IsSpellKnown(31252) then
@@ -42,7 +42,9 @@ function button:PLAYER_LOGIN()
 		if item and not InCombatLockdown() and IsAltKeyDown() and not (AuctionFrame and AuctionFrame:IsShown()) then
 			local spell, r, g, b = ScanTooltip(self, spells)
 
-			if not spell and disenchanter then
+			if not spell and milling and (GetItemCount(tonumber(string.match(link, 'item:(%d+):'))) >= 5) then 
+				spell, r, g, b = GetSpellInfo(51005), 0.5, 1, 0.5 
+			elseif not spell and disenchanter then
 				local _, _, itemRarity, _, _, itemType = GetItemInfo(item)
 				if not (itemType == ARMOR_TYPE or itemType == ENCHSLOT_WEAPON) or not (itemRarity and (itemRarity > 1 and itemRarity < 5)) then return end
 				spell, r, g, b = GetSpellInfo(13262), 0.5, 0.5, 1

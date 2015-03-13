@@ -23,6 +23,7 @@ T.RaidBuffs = {
 	},
 	PALADIN = {
 		{53563, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Light
+	        {156910, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Faith
 		{20925, "BOTTOMLEFT", {0.9, 0.9, 0.1}},				-- Sacred Shield
 		{114163, "BOTTOMLEFT", {0.9, 0.6, 0.4}},			-- Eternal Flame
 		{157007, "TOPLEFT", {1, 0.5, 0.2}},					-- Beacon of Insight
@@ -80,41 +81,149 @@ T.RaidDebuffs = {
 -----------------------------------------------------------------
 -- Draenor
 -----------------------------------------------------------------
+
 -- Blackrock Foundry
-	-- Beastlord Darmac
-	-- Flamebender Ka'graz
-	-- Gruul the Subjugated
-	-- Blast Furnace
-	-- Hans'gar and Franzok
-	-- Iron Maidens
+	--Gruul
+	[SpellName(155080)] = 4, -- Inferno Slice
+	[SpellName(155078)] = 3, -- Overwhelming Blows
+	[SpellName(162322)] = 5, -- Inferno Strike
+	[SpellName(155506)] = 2, -- Petrified
+
+	--Oregorger
+	[SpellName(156203)] = 5, -- Retched Blackrock
+	[SpellName(156374)] = 5, -- Explosive Shard
+	[SpellName(156297)] = 3, -- Acid Torrent
+	[SpellName(173471)] = 4, -- Acid Maw
+	[SpellName(155900)] = 2, -- Rolling Fury
+
+	--Blast Furnace
+	[SpellName(156932)] = 5, -- Rupture
+	[SpellName(178279)] = 4, -- Bomb
+	[SpellName(155192)] = 4, -- Bomb
+	[SpellName(176121)] = 6, -- Volatile Fire
+	[SpellName(155196)] = 2, -- Fixate
+	[SpellName(155743)] = 5, -- Slag Pool
+	[SpellName(155240)] = 3, -- Tempered
+	[SpellName(155242)] = 3, -- Heat
+	[SpellName(155225)] = 5, -- Melt
+	[SpellName(155223)] = 5, -- Melt
+
+	--Hans'gar and Franzok
+	[SpellName(157139)] = 3, -- Shattered Vertebrae
+	[SpellName(160838)] = 2, -- Disrupting Roar
+	[SpellName(160845)] = 2, -- Disrupting Roar
+	[SpellName(160847)] = 2, -- Disrupting Roar
+	[SpellName(160848)] = 2, -- Disrupting Roar
+	[SpellName(155818)] = 4, -- Scorching Burns
+
+	--Flamebender Ka'graz
+	[SpellName(154952)] = 3, -- Fixate
+	[SpellName(155074)] = 1, -- Charring Breath
+	[SpellName(155049)] = 2, -- Singe
+	[SpellName(154932)] = 4, -- Molten Torrent
+	[SpellName(155277)] = 5, -- Blazing Radiance
+	[SpellName(155314)] = 1, -- Lava Slash
+	[SpellName(163284)] = 2, -- Rising Flames
+
 	-- Kromog
+	[SpellName(156766)] = 1, -- Warped Armor
+	[SpellName(157059)] = 2, -- Rune of Grasping Earth
+	[SpellName(161839)] = 3, -- Rune of Crushing Earth
+	[SpellName(161923)] = 3, -- Rune of Crushing Earth
+
+	-- Beastlord Darmac
+	[SpellName(154960)] = 4, -- Pinned Down
+	[SpellName(155061)] = 1, -- Rend and Tear
+	[SpellName(162283)] = 1, -- Rend and Tear
+	[SpellName(154989)] = 3, -- Inferno Breath
+	[SpellName(154981)] = 5, -- Conflagration
+	[SpellName(155030)] = 2, -- Seared Flesh
+	[SpellName(155236)] = 2, -- Crush Armor
+	[SpellName(155499)] = 3, -- Superheated Shrapnel
+	[SpellName(155657)] = 4, -- Flame Infusion
+	[SpellName(159044)] = 1, -- Epicenter
+	[SpellName(162277)] = 1, -- Epicenter
+
 	-- Operator Thogar
-	-- Oregorger
+	[SpellName(155921)] = 2, -- Enkindle
+	[SpellName(165195)] = 4, -- Prototype Pulse Grenade
+	[SpellName(156310)] = 3, -- Lava Shock
+	[SpellName(159481)] = 3, -- Delayed Siege Bomb
+	[SpellName(164380)] = 2, -- Burning
+	[SpellName(164280)] = 2, -- Heat Blast
+
+	-- Iron Maidens
+	[SpellName(156631)] = 2, -- Rapid Fire
+	[SpellName(164271)] = 3, -- Penetrating Shot
+	[SpellName(158601)] = 1, -- Dominator Blast
+	[SpellName(156214)] = 4, -- Convulsive Shadows
+	[SpellName(158315)] = 2, -- Dark Hunt
+	[SpellName(159724)] = 3, -- Blood Ritual
+	[SpellName(158010)] = 2, -- Bloodsoaked Heartseeker
+	[SpellName(158692)] = 1, -- Deadly Throw
+	[SpellName(158702)] = 2, -- Fixate
+	[SpellName(158683)] = 3, -- Corrupted Blood
+
 	-- Warlord Blackhand
+	[SpellName(156096)] = 5, -- Marked for Death
+   	
 -- Highmaul
-	-- The Butcher
-	[SpellName(156152)] = 3,	-- Gushing Wounds
-	[SpellName(156147)] = 3,	-- The Cleaver
 	-- Kargath Bladefist
-	[SpellName(159178)] = 3,	-- Open Wounds (Tank switch)
-	[SpellName(159113)] = 3,	-- Impale (DoT)
-	-- Twin Ogron
-	[SpellName(155569)] = 3,	-- Injured (DoT)
-	[SpellName(167200)] = 3,	-- Arcane Wound (DoT)
-	-- Ko'ragh
-	[SpellName(161242)] = 3,	-- Caustic Energy (DoT)
-	[SpellName(162184)] = 3,	-- Expel Magic: Shadow
+	[SpellName(158986)] = 2, -- Berserker Rush
+	[SpellName(159178)] = 5, -- Open Wounds
+	[SpellName(162497)] = 3, -- On the Hunt
+	[SpellName(163130)] = 3, -- Inflamed
+
+	-- The Butcher
+	[SpellName(156151)] = 3, -- The Tenderizer
+	[SpellName(156147)] = 5, -- The Cleaver
+	[SpellName(156152)] = 3, -- Gushing Wounds 
+	[SpellName(163046)] = 4, -- Pale Vitriol
+
 	-- Tectus
-	[SpellName(162892)] = 3,	-- Petrification
+	[SpellName(162346)] = 4, -- crystalline barrage
+	[SpellName(162370)] = 3, -- Crystalline Barrage
+
 	-- Brackenspore
-	[SpellName(163241)] = 3,	-- Rot (Stacks)
+	[SpellName(163242)] = 5, -- Infesting Spores
+	[SpellName(159426)] = 5, -- Rejuvenating Spores
+	[SpellName(163241)] = 4, -- Rot
+	[SpellName(159220)] = 2, -- Necrotic Breath
+	[SpellName(160179)] = 2, -- Mind Fungus
+	[SpellName(165223)] = 6, -- Burning Infusion
+	[SpellName(163666)] = 3, -- Pulsing Heat
+
+	-- Twin Ogron
+	[SpellName(155569)] = 3, -- Injured
+	[SpellName(158241)] = 4, -- Blaze
+	[SpellName(163372)] = 4, -- Arcane Volatility
+	[SpellName(167200)] = 3, -- Arcane Wound
+	[SpellName(163297)] = 3, -- Arcane Twisted
+
+	-- Koragh
+	[SpellName(172813)] = 5, -- Expel Magic: Frost
+	[SpellName(162185)] = 5, -- Expel Magic: Fire
+	[SpellName(162184)] = 3, -- Expel Magic: Shadow
+	[SpellName(162186)] = 2, -- Expel Magic: Arcane
+	[SpellName(161345)] = 2, -- Suppression Field
+	[SpellName(161242)] = 3, -- Caustic Energy
+	[SpellName(172886)] = 4, -- Mark of Nullification
+	[SpellName(172895)] = 4, -- Expel Magic: Fel
+	[SpellName(172917)] = 4, -- Expel Magic: Fel
+	[SpellName(163472)] = 2, -- Dominating Power
+
 	-- Imperator Mar'gok
-	[SpellName(158605)] = 3,	-- Mark of Chaos
-	[SpellName(164176)] = 3,	-- Mark of Chaos: Displacement
-	[SpellName(164178)] = 3,	-- Mark of Chaos: Fortification
-	[SpellName(164191)] = 3,	-- Mark of Chaos: Replication
-	[SpellName(157763)] = 3,	-- Fixate
-	[SpellName(158553)] = 3,	-- Crush Armor (Stacks)
+	[SpellName(157763)] = 3,  -- Fixate  
+	[SpellName(159515)] = 4, -- Accelerated Assault       
+	[SpellName(156225)] = 4, -- Branded
+	[SpellName(164004)] = 4, -- Branded: Displacement
+	[SpellName(164006)] = 4, -- Branded: Replication
+	[SpellName(164005)] = 4, -- Branded: Fortification
+	[SpellName(158605)] = 2, -- Mark of Chaos
+	[SpellName(164176)] = 2, -- Mark of Chaos: Displacement
+	[SpellName(164178)] = 2, -- Mark of Chaos: Fortification
+	[SpellName(164191)] = 2, -- Mark of Chaos: Replication
+
 -----------------------------------------------------------------
 -- Pandaria
 -----------------------------------------------------------------

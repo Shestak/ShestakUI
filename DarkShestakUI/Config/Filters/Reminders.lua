@@ -145,6 +145,15 @@ if C.reminder.solo_buffs_enable == true then
 				["spells"] = {
 					1126,	-- Mark of the Wild
 				},
+				["negate_spells"] = {
+					159988,	-- Bark of the Wild (Dog)
+					160017,	-- Blessing of Kongs (Gorilla)
+					90363,	-- Embrace of the Shale Spider
+					160077,	-- Strength of the Earth (Worm)
+					115921,	-- Legacy of the Emperor
+					116781,	-- Legacy of the White Tiger
+					20217,	-- Blessing of Kings
+				},
 				["combat"] = true,
 				["instance"] = true,
 				["pvp"] = true,
@@ -155,6 +164,12 @@ if C.reminder.solo_buffs_enable == true then
 				["spells"] = {
 					1459,	-- Arcane Brilliance
 					61316,	-- Dalaran Brilliance
+				},
+				["negate_spells"] = {
+					126309,	-- Still Water (Water Strider)
+					128433,	-- Serpent's Cunning (Serpent)
+					90364,	-- Qiraji Fortitude (Silithid)
+					109773,	-- Dark Intent
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -168,6 +183,7 @@ if C.reminder.solo_buffs_enable == true then
 				},
 				["negate_spells"] = {
 					1126,	-- Mark of the Wild
+					159988,	-- Bark of the Wild (Dog)
 					160017,	-- Blessing of Kongs (Gorilla)
 					90363,	-- Embrace of the Shale Spider
 					160077,	-- Strength of the Earth (Worm)
@@ -183,7 +199,13 @@ if C.reminder.solo_buffs_enable == true then
 					116781,	-- Legacy of the White Tiger
 				},
 				["negate_spells"] = {
+					91126,	-- Mark of the Wild
+					159988,	-- Bark of the Wild (Dog)
+					160017,	-- Blessing of Kongs (Gorilla)
 					90363,	-- Embrace of the Shale Spider
+					160077,	-- Strength of the Earth (Worm)
+					115921,	-- Legacy of the Emperor
+					20217,	-- Blessing of Kings
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -224,10 +246,13 @@ if C.reminder.solo_buffs_enable == true then
 					19740,	-- Blessing of Might
 				},
 				["negate_spells"] = {
-					116956,	-- Grace of Air
-					93435,	-- Roar of Courage
-					128997,	-- Spirit Beast Blessing
 					155522,	-- Power of the Grave
+					24907,	-- Moonkin Aura
+					93435,	-- Roar of Courage (Cat)
+					160039,	-- Keen Senses (Hydra)
+					160073,	-- Plainswalking (Tallstrider)
+					128997,	-- Spirit Beast Blessing
+					116956,	-- Grace of Air
 				},
 				["personal"] = {
 					20217,	-- Blessing of Kings
@@ -291,6 +316,13 @@ if C.reminder.solo_buffs_enable == true then
 			[1] = {	-- Dark Intent group
 				["spells"] = {
 					109773,	-- Dark Intent
+				},
+				["negate_spells"] = {
+					1459,	-- Arcane Brilliance
+					61316,	-- Dalaran Brilliance
+					126309,	-- Still Water (Water Strider)
+					128433,	-- Serpent's Cunning (Serpent)
+					90364,	-- Qiraji Fortitude (Silithid)
 				},
 				["combat"] = true,
 				["instance"] = true,

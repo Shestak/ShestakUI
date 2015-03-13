@@ -66,7 +66,8 @@ QueueStatusMinimapButtonBorder:Hide()
 MiniMapWorldMapButton:Hide()
 
 -- Hide Garrison icon
-GarrisonLandingPageMinimapButton:Kill()
+GarrisonLandingPageMinimapButton:SetScale(0.0001)
+GarrisonLandingPageMinimapButton:SetAlpha(0)
 
 -- Instance Difficulty icon
 MiniMapInstanceDifficulty:SetParent(Minimap)
@@ -219,11 +220,11 @@ local micromenu = {
 	{text = ENCOUNTER_JOURNAL, notCheckable = 1, func = function()
 		ToggleEncounterJournal()
 	end},
-	{text = MOUNTS_AND_PETS, notCheckable = 1, func = function()
+	{text = COLLECTIONS, notCheckable = 1, func = function()
 		if InCombatLockdown() then
 			print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return
 		end
-		TogglePetJournal()
+		ToggleCollectionsJournal()
 	end},
 	{text = HELP_BUTTON, notCheckable = 1, func = function()
 		ToggleHelpFrame()

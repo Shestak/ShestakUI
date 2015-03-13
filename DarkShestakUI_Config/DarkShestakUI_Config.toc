@@ -1,13 +1,13 @@
-## Interface: 60000
+## Interface: 60100
 ## Title: |cff1784d1Dark ShestakUI Config|r
 ## Notes: In-game configuration for Dark ShestakUI
 ## Author: Tohveli
-## Version: 1.05
+## Version: 1.06
 ## Credits: Elv22, Fernir, Tukz
 ## RequiredDeps: DarkShestakUI
 ## SavedVariables: GUIConfigAll, GUIConfigSettings
 ## SavedVariablesPerCharacter: GUIConfig
-## X-Curse-Packaged-Version: 1.05
+## X-Curse-Packaged-Version: 1.06
 ## X-Curse-Project-Name: Dark ShestakUI
 ## X-Curse-Project-ID: darkshestakui
 ## X-WoWI-ID: 21824

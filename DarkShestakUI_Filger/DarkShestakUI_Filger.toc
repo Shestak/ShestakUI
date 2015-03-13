@@ -1,12 +1,12 @@
-## Interface: 60000
+## Interface: 60100
 ## Title: |cff1784d1Dark ShestakUI Filger|r
 ## Notes: Class timers for ShestakUI
 ## Author: Nils Ruesch
-## Version: 1.05
+## Version: 1.06
 ## Credits: Affli, Ildyria, SinaC
 ## Thanks: Erratic, Wetxius
 ## RequiredDeps: DarkShestakUI
-## X-Curse-Packaged-Version: 1.05
+## X-Curse-Packaged-Version: 1.06
 ## X-Curse-Project-Name: Dark ShestakUI
 ## X-Curse-Project-ID: darkshestakui
 ## X-WoWI-ID: 21824
