@@ -22,7 +22,13 @@ for _, event in pairs({
 	"CHAT_MSG_BN_WHISPER",
 	"CHAT_MSG_SAY",
 	"CHAT_MSG_INSTANCE_CHAT",
-	"CHAT_MSG_INSTANCE_CHAT_LEADER"
+	"CHAT_MSG_INSTANCE_CHAT_LEADER",
+	"CHAT_MSG_BATTLEGROUND_LEADER",
+	"CHAT_MSG_BN_CONVERSATION",
+	"CHAT_MSG_RAID_WARNING",
+	"CHAT_MSG_OFFICER",
+	"CHAT_MSG_BATTLEGROUND",
+	"CHAT_MSG_YELL"
 }) do
 	ChatFrame_AddMessageEventFilter(event, function(self, event, str, ...)
 		for _, pattern in pairs(patterns) do
@@ -34,12 +40,18 @@ for _, event in pairs({
 	end)
 end
 
-local orig = SetItemRef
-function SetItemRef(link, str, ...)
-	if string.sub(link, 1, 3) ~= "url" then return orig(link, str, ...) end
-
-	local editbox = ChatEdit_ChooseBoxForSend()
-	ChatEdit_ActivateChat(editbox)
-	editbox:Insert(string.sub(link, 5))
-	editbox:HighlightText()
+local SetHyperlink = _G.ItemRefTooltip.SetHyperlink
+function _G.ItemRefTooltip:SetHyperlink(link, ...)
+	if link and (strsub(link, 1, 3) == "url") then
+		local url = strsub(link, 5)
+		
+		local editbox = ChatEdit_ChooseBoxForSend()
+		ChatEdit_ActivateChat(editbox)
+		editbox:Insert(string.sub(link, 5))
+		editbox:HighlightText()
+		
+		return
+     end
+	 
+	 SetHyperlink(self, link, ...)
 end
