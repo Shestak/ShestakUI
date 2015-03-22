@@ -1,16 +1,14 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.chat.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Invite player(by Zork)
+--	Alt Click to Invite player
 ----------------------------------------------------------------------------------------
-local origSetItemRef = SetItemRef
-SetItemRef = function(link, text, ...)
-	local linkType = string.sub(link, 1, 6)
-	if IsAltKeyDown() and linkType == "player" then
-		local name = string.match(link, "player:([^:]+)")
-		InviteUnit(name)
-		return nil
+hooksecurefunc("SetItemRef", function(link) --Secure hook to avoid taint
+	if IsAltKeyDown() then
+		local ChatFrameEditBox = ChatEdit_ChooseBoxForSend()
+		local player = link:match("^player:([^:]+)")
+		InviteToGroup(player)
+		ChatEdit_OnEscapePressed(ChatFrameEditBox) -- Secure hook opens whisper, so closing it.
 	end
-	return origSetItemRef(link, text, ...)
-end
+end)
