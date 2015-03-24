@@ -141,6 +141,9 @@ function Stuffing:SlotUpdate(b)
 
 	if b.cooldown and StuffingFrameBags and StuffingFrameBags:IsShown() then
 		local start, duration, enable = GetContainerItemCooldown(b.bag, b.slot)
+		if ( duration > 0 and enable == 1 ) then
+ 			CooldownFrame_SetTimer(b.cooldown, start, duration, enable)
+		end
 		CooldownFrame_SetTimer(b.cooldown, start, duration, enable)
 	end
 
