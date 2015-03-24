@@ -36,6 +36,7 @@ local function LoadSkin()
 		"InterfaceOptionsFrameCancel",
 		"InterfaceOptionsFrameTab1",
 		"InterfaceOptionsFrameTab2",
+		"InterfaceOptionsSocialPanelTwitterLoginButton",
 		"InterfaceOptionsHelpPanelResetTutorials"
 	}
 
@@ -80,6 +81,7 @@ local function LoadSkin()
 		"DisplayPanelCinematicSubtitles",
 		"DisplayPanelRotateMinimap",
 		"DisplayPanelShowAccountAchievments",
+		"DisplayPanelShowFreeBagSpace",
 		-- Objectives
 		"ObjectivesPanelAutoQuestTracking",
 		"ObjectivesPanelMapQuestDifficulty",
@@ -94,6 +96,7 @@ local function LoadSkin()
 		"SocialPanelGuildMemberAlert",
 		"SocialPanelChatMouseScroll",
 		"SocialPanelWholeChatWindowClickable",
+		"SocialPanelEnableTwitter",
 		-- ActionBars
 		"ActionBarsPanelBottomLeft",
 		"ActionBarsPanelBottomRight",
@@ -187,6 +190,11 @@ local function LoadSkin()
 		"MousePanelClickToMove",
 		"MousePanelWoWMouse",
 		"MousePanelEnableMouseSpeed",
+		--Assessability
+		"AccessibilityPanelMovePad",
+		"AccessibilityPanelColorblindMode",
+		--Watev
+		"NamesPanelUnitNameplatesNameplateClassColors",
 		-- Help
 		"HelpPanelShowTutorials",
 		"HelpPanelEnhancedTooltips",
@@ -258,6 +266,7 @@ local function LoadSkin()
 		"CameraPanelStyleDropDown",
 		"MousePanelClickMoveStyleDropDown",
 		"ObjectivesPanelQuestSorting",
+		"AccessibilityPanelColorFilterDropDown",
 		"DisplayPanelOutlineDropDown"
 	}
 
@@ -294,7 +303,9 @@ local function LoadSkin()
 		"InterfaceOptionsCameraPanelMaxDistanceSlider",
 		"InterfaceOptionsCameraPanelFollowSpeedSlider",
 		"InterfaceOptionsMousePanelMouseSensitivitySlider",
-		"InterfaceOptionsMousePanelMouseLookSpeedSlider"
+		"InterfaceOptionsMousePanelMouseLookSpeedSlider",
+		"InterfaceOptionsAccessibilityPanelColorblindStrengthSlider",
+		"OpacityFrameSlider"
 	}
 
 	for i = 1, getn(sliders) do
