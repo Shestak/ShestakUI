@@ -58,9 +58,8 @@ local ShowTip = function(tip, link)
 	tip:SetHyperlink(link)
 end
 
---// Quick Fix for taint error, bit buggy atm / opens 2x windows sometimes of same.
---local _SetItemRef = SetItemRef
-hooksecurefunc("SetItemRef", function(...)
+local _SetItemRef = SetItemRef
+function SetItemRef(...)
 	local link, text, button = ...
 	local handled = strsplit(":", link)
 	if not IsModifiedClick() and handled and types[handled] then
@@ -69,6 +68,6 @@ hooksecurefunc("SetItemRef", function(...)
 			ShowTip(tip, link)
 		end
 	else
-		--return _SetItemRef(...)
+		return _SetItemRef(...)
 	end
-end)
+end
