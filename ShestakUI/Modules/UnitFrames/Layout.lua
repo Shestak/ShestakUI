@@ -347,7 +347,7 @@ local function Shared(self, unit)
 				self.HarmonyBar:SetSize(217, 7)
 
 				for i = 1, 6 do
-					self.HarmonyBar[i] = CreateFrame("StatusBar", nil, self.HarmonyBar)
+					self.HarmonyBar[i] = CreateFrame("StatusBar", self:GetName().."_HarmonyBar", self.HarmonyBar)
 					self.HarmonyBar[i]:SetSize(213 / 6, 7)
 					if i == 1 then
 						self.HarmonyBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -374,7 +374,7 @@ local function Shared(self, unit)
 				self.TotemBar.Destroy = true
 
 				for i = 1, 1 do
-					self.TotemBar[i] = CreateFrame("StatusBar", nil, self.TotemBar)
+					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
 					self.TotemBar[i]:SetSize(53, 7)
 					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
@@ -396,7 +396,7 @@ local function Shared(self, unit)
 			self.ShadowOrbsBar:SetSize(217, 7)
 
 			for i = 1, 5 do
-				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", nil, self.ShadowOrbsBar)
+				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", self:GetName().."_ShadowOrbsBar", self.ShadowOrbsBar)
 				self.ShadowOrbsBar[i]:SetSize(215 / 5, 7)
 				if i == 1 then
 					self.ShadowOrbsBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -425,7 +425,7 @@ local function Shared(self, unit)
 			self.HolyPower:SetSize(217, 7)
 
 			for i = 1, 5 do
-				self.HolyPower[i] = CreateFrame("StatusBar", nil, self.HolyPower)
+				self.HolyPower[i] = CreateFrame("StatusBar", self:GetName().."_HolyPowerBar", self.HolyPower)
 				self.HolyPower[i]:SetSize(213 / 5, 7)
 				if i == 1 then
 					self.HolyPower[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -454,7 +454,7 @@ local function Shared(self, unit)
 			self.WarlockSpecBars:SetSize(217, 7)
 
 			for i = 1, 4 do
-				self.WarlockSpecBars[i] = CreateFrame("StatusBar", nil, self.WarlockSpecBars)
+				self.WarlockSpecBars[i] = CreateFrame("StatusBar", self:GetName().."_WarlockSpecBar", self.WarlockSpecBars)
 				self.WarlockSpecBars[i]:SetSize(214 / 4, 7)
 				if i == 1 then
 					self.WarlockSpecBars[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -484,7 +484,7 @@ local function Shared(self, unit)
 			self.TotemBar.Destroy = true
 
 			for i = 1, 4 do
-				self.TotemBar[i] = CreateFrame("StatusBar", nil, self.TotemBar)
+				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
 				self.TotemBar[i]:SetSize(213 / 4, 7)
 
 				local fixpos
@@ -555,7 +555,7 @@ local function Shared(self, unit)
 				self.TotemBar.Destroy = true
 
 				for i = 1, 3 do
-					self.TotemBar[i] = CreateFrame("StatusBar", nil, self.TotemBar)
+					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
 					self.TotemBar[i]:SetSize(108 / 3, 7)
 					if i == 1 then
 						self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
@@ -584,7 +584,7 @@ local function Shared(self, unit)
 				self.TotemBar.Destroy = true
 
 				for i = 1, 1 do
-					self.TotemBar[i] = CreateFrame("StatusBar", nil, self.TotemBar)
+					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
 					self.TotemBar[i]:SetSize(53, 7)
 					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
@@ -608,7 +608,7 @@ local function Shared(self, unit)
 			self.TotemBar.Destroy = true
 
 			for i = 1, 2 do
-				self.TotemBar[i] = CreateFrame("StatusBar", nil, self.TotemBar)
+				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
 				self.TotemBar[i]:SetSize(108 / 2, 7)
 				if i == 1 then
 					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
@@ -638,7 +638,7 @@ local function Shared(self, unit)
 			end
 			self.VengeanceBar:SetSize(217, 7)
 
-			self.VengeanceBar.Bar = CreateFrame("StatusBar", nil, self.VengeanceBar)
+			self.VengeanceBar.Bar = CreateFrame("StatusBar", self:GetName().."_VengeanceBar", self.VengeanceBar)
 			self.VengeanceBar.Bar:SetPoint("LEFT", self.VengeanceBar, "LEFT", 0, 0)
 			self.VengeanceBar.Bar:SetSize(217, 7)
 			self.VengeanceBar.Bar:SetStatusBarTexture(C.media.texture)
@@ -767,7 +767,7 @@ local function Shared(self, unit)
 	end
 
 	if unit == "pet" or unit == "targettarget" or unit == "focus" or unit == "focustarget" then
-		self.Debuffs = CreateFrame("Frame", nil, self)
+		self.Debuffs = CreateFrame("Frame", self:GetName().."Debuffs", self)
 		self.Debuffs:SetHeight(25)
 		self.Debuffs:SetWidth(109)
 		self.Debuffs.size = T.Scale(25)
@@ -825,7 +825,7 @@ local function Shared(self, unit)
 		end
 
 		if unit == "player" then
-			self.Debuffs = CreateFrame("Frame", nil, self)
+			self.Debuffs = CreateFrame("Frame", self:GetName().."playeraura", self)
 			self.Debuffs:SetHeight(165)
 			self.Debuffs:SetWidth(221)
 			self.Debuffs.size = T.Scale(25)
@@ -849,7 +849,7 @@ local function Shared(self, unit)
 		end
 
 		if unit == "target" then
-			self.Auras = CreateFrame("Frame", nil, self)
+			self.Auras = CreateFrame("Frame", self:GetName().."tagetaura", self)
 			self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5)
 			self.Auras.initialAnchor = "BOTTOMLEFT"
 			self.Auras["growth-x"] = "RIGHT"
@@ -872,7 +872,7 @@ local function Shared(self, unit)
 				self.CPoints:SetSize(217, 7)
 
 				for i = 1, 5 do
-					self.CPoints[i] = CreateFrame("StatusBar", nil, self.CPoints)
+					self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar", self.CPoints)
 					self.CPoints[i]:SetSize(213 / 5, 7)
 					if i == 1 then
 						self.CPoints[i]:SetPoint("LEFT", self.CPoints)
@@ -1234,7 +1234,7 @@ local function Shared(self, unit)
 		self.Trinket:SetTemplate("Default")
 		self.FactionIcon:SetTemplate("Default")
 
-		self.AuraTracker = CreateFrame("Frame", nil, self)
+		self.AuraTracker = CreateFrame("Frame", self:GetName().."_AuraTracker", self)
 		self.AuraTracker:SetWidth(self.Trinket:GetWidth())
 		self.AuraTracker:SetHeight(self.Trinket:GetHeight())
 		self.AuraTracker:SetPoint("CENTER", self.Trinket, "CENTER")
@@ -1265,7 +1265,7 @@ local function Shared(self, unit)
 	end
 
 	if C.unitframe.show_boss and unit == "boss" then
-		self.AltPowerBar = CreateFrame("StatusBar", nil, self.Health)
+		self.AltPowerBar = CreateFrame("StatusBar", self:GetName().."AltPowerBar", self.Health)
 		self.AltPowerBar:SetFrameLevel(self.Health:GetFrameLevel() + 1)
 		self.AltPowerBar:SetHeight(4)
 		self.AltPowerBar:SetStatusBarTexture(C.media.texture)
