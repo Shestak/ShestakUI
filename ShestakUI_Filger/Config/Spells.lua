@@ -1467,7 +1467,7 @@ C["filger_spells"] = {
 			-- Psychic Scream
 			{spellID = 8122, unitID = "focus", caster = "player", filter = "DEBUFF"},
 			--虛無觸鬚
-			{ spellID = 114404, unitID = "focus", caster = "all", filter = "DEBUFF" },
+            { spellID = 114404, unitID = "focus", caster = "all", filter = "DEBUFF" },
 		},
 		{
 			Name = "COOLDOWN",
@@ -2263,8 +2263,6 @@ C["filger_spells"] = {
 
 			--驟亡
 			{ spellID = 52437, unitID = "player", caster = "player", filter = "BUFF" },
-			 --不屈打擊
-			{ spellID = 169686, unitID = "player", caster = "player", filter = "BUFF" },
 			--狂暴之怒
 			{ spellID = 18499, unitID = "player", caster = "player", filter = "BUFF" },
 			--魯莽
@@ -2830,8 +2828,20 @@ C["filger_spells"] = {
                 -- 纳鲁的赐福
                 { spellID =  28880, unitID = "player", caster = "all", filter = "BUFF" },
 
-            --套装特效    
-				--法師T16, 冰凍意念
+            --套装特效
+			
+				--德鲁伊
+				--T17 自然的睿智
+				{spellID = 177794, unitID = "player", caster = "player", filter = "BUFF"},
+				
+				--牧师
+				--T17 明澈思维
+				{spellID = 167695, unitID = "player", caster = "player", filter = "BUFF"},
+				--T17 強化大天使
+				{spellID = 172359, unitID = "player", caster = "player", filter = "BUFF"},
+				
+				--法師
+				--T16 冰凍意念
                 { spellID = 146557, unitID = "player", caster = "all", filter = "BUFF" },
                 { spellID = 145252, unitID = "player", caster = "all", filter = "BUFF" },
 		},
