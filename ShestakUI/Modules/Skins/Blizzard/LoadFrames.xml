@@ -37,7 +37,6 @@
 	<Script file="ItemSocketing.lua"/>
 	<Script file="ItemText.lua"/>
 	<Script file="ItemUpgrade.lua"/>
-	<Script file="LFR.lua"/>
 	<Script file="Loot.lua"/>
 	<Script file="LossOfControl.lua"/>
 	<Script file="MacClient.lua"/>
