@@ -27,7 +27,40 @@ local function LoadSkin()
 		SideDressUpFrame:ClearAllPoints()
 		SideDressUpFrame:SetPoint("TOPLEFT", AuctionFrame, "TOPRIGHT", 3, 0)
 	end)
-
+	
+	--WoW Token Tutorial Frame
+	WowTokenGameTimeTutorial:CreateBackdrop("Transparent")
+	T.SkinCloseButton(WowTokenGameTimeTutorial.CloseButton)
+	WowTokenGameTimeTutorial.Inset.InsetBorderBottom:SetAlpha(0)
+	WowTokenGameTimeTutorial.Inset.InsetBorderRight:SetAlpha(0)
+	WowTokenGameTimeTutorial.Inset.InsetBorderBottomLeft:SetAlpha(0)
+	WowTokenGameTimeTutorial.Inset.InsetBorderBottomRight:SetAlpha(0)
+	WowTokenGameTimeTutorial.Inset.InsetBorderTopLeft:SetAlpha(0)
+	WowTokenGameTimeTutorial.Inset.InsetBorderLeft:SetAlpha(0)
+	WowTokenGameTimeTutorial.Inset.InsetBorderTopRight:SetAlpha(0)
+	WowTokenGameTimeTutorial.Inset.InsetBorderTop:SetAlpha(0)
+	WowTokenGameTimeTutorial.Inset.Bg:SetAlpha(0)
+	WowTokenGameTimeTutorialTitleBg:SetAlpha(0)
+	WowTokenGameTimeTutorialBg:SetAlpha(0)
+	WowTokenGameTimeTutorialTopRightCorner:SetAlpha(0)
+	WowTokenGameTimeTutorialTopLeftCorner:SetAlpha(0)
+	WowTokenGameTimeTutorialTopBorder:SetAlpha(0)
+	WowTokenGameTimeTutorialBotLeftCorner:SetAlpha(0)
+	WowTokenGameTimeTutorialBotRightCorner:SetAlpha(0)
+	WowTokenGameTimeTutorialBottomBorder:SetAlpha(0)
+	WowTokenGameTimeTutorialLeftBorder:SetAlpha(0)
+	WowTokenGameTimeTutorialRightBorder:SetAlpha(0)
+	
+	do
+		local Token = BrowseWowTokenResults.Token
+		local icon = Token.Icon
+		local iconBorder = Token.IconBorder
+	
+		Token.ItemBorder:Hide()
+			Token:StyleButton()
+			Token:CreateBackdrop("Transparent")
+	end
+	
 	-- Progress Frame
 	AuctionProgressFrame:StripTextures()
 	AuctionProgressFrame:SetTemplate("Transparent")
@@ -73,13 +106,15 @@ local function LoadSkin()
 		"AuctionsCloseButton",
 		"BrowseResetButton",
 		"AuctionsStackSizeMaxButton",
-		"AuctionsNumStacksMaxButton"
+		"AuctionsNumStacksMaxButton",
+		"StoreButton"
 	}
 
 	for _, button in pairs(buttons) do
-		_G[button]:SkinButton()
+		_G[button]:SkinButton(true)
 	end
-
+	BrowseWowTokenResults.Buyout:SkinButton(true)
+	
 	-- Fix Button Positions
 	AuctionsCloseButton:SetPoint("BOTTOMRIGHT", AuctionFrameAuctions, "BOTTOMRIGHT", 66, 10)
 	AuctionsCancelAuctionButton:SetPoint("RIGHT", AuctionsCloseButton, "LEFT", -4, 0)
@@ -137,10 +172,14 @@ local function LoadSkin()
 
 	for i = 1, NUM_FILTERS_TO_DISPLAY do
 		local tab = _G["AuctionFilterButton"..i]
-		tab:StripTextures()
 		tab:StyleButton()
 	end
-
+		
+	hooksecurefunc("FilterButton_SetType", function(button)
+		local tex = button:GetNormalTexture();
+		tex:SetAlpha(0)
+	end)
+	
 	local editboxs = {
 		"BrowseName",
 		"BrowseMinLevel",
@@ -277,7 +316,7 @@ local function LoadSkin()
 	AuctionFrameAuctions.bg2:SetPoint("TOPLEFT", AuctionFrameAuctions.bg1, "TOPRIGHT", 3, 0)
 	AuctionFrameAuctions.bg2:SetPoint("BOTTOMRIGHT", AuctionFrame, -8, 35)
 	AuctionFrameAuctions.bg2:SetFrameLevel(AuctionFrameAuctions.bg2:GetFrameLevel() - 2)
-
+	
 	-- Auctionator
 	if not IsAddOnLoaded("Auctionator") then return end
 
