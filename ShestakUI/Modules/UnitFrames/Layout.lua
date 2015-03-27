@@ -322,7 +322,7 @@ local function Shared(self, unit)
 			self.Runes:SetSize(217, 7)
 
 			for i = 1, 6 do
-				self.Runes[i] = CreateFrame("StatusBar", nil, self.Runes)
+				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_RuneBar"..i, self.Runes)
 				self.Runes[i]:SetSize(212 / 6, 7)
 				if i == 1 then
 					self.Runes[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -347,7 +347,7 @@ local function Shared(self, unit)
 				self.HarmonyBar:SetSize(217, 7)
 
 				for i = 1, 6 do
-					self.HarmonyBar[i] = CreateFrame("StatusBar", self:GetName().."_HarmonyBar", self.HarmonyBar)
+					self.HarmonyBar[i] = CreateFrame("StatusBar", self:GetName().."_HarmonyBar"..i, self.HarmonyBar)
 					self.HarmonyBar[i]:SetSize(213 / 6, 7)
 					if i == 1 then
 						self.HarmonyBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -374,7 +374,7 @@ local function Shared(self, unit)
 				self.TotemBar.Destroy = true
 
 				for i = 1, 1 do
-					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
+					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self.TotemBar)
 					self.TotemBar[i]:SetSize(53, 7)
 					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
@@ -396,7 +396,7 @@ local function Shared(self, unit)
 			self.ShadowOrbsBar:SetSize(217, 7)
 
 			for i = 1, 5 do
-				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", self:GetName().."_ShadowOrbsBar", self.ShadowOrbsBar)
+				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", self:GetName().."_ShadowOrbsBar"..i, self.ShadowOrbsBar)
 				self.ShadowOrbsBar[i]:SetSize(215 / 5, 7)
 				if i == 1 then
 					self.ShadowOrbsBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -425,7 +425,7 @@ local function Shared(self, unit)
 			self.HolyPower:SetSize(217, 7)
 
 			for i = 1, 5 do
-				self.HolyPower[i] = CreateFrame("StatusBar", self:GetName().."_HolyPowerBar", self.HolyPower)
+				self.HolyPower[i] = CreateFrame("StatusBar", self:GetName().."_HolyPowerBar"..i, self.HolyPower)
 				self.HolyPower[i]:SetSize(213 / 5, 7)
 				if i == 1 then
 					self.HolyPower[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -454,7 +454,7 @@ local function Shared(self, unit)
 			self.WarlockSpecBars:SetSize(217, 7)
 
 			for i = 1, 4 do
-				self.WarlockSpecBars[i] = CreateFrame("StatusBar", self:GetName().."_WarlockSpecBar", self.WarlockSpecBars)
+				self.WarlockSpecBars[i] = CreateFrame("StatusBar", self:GetName().."_WarlockSpecBar"..i, self.WarlockSpecBars)
 				self.WarlockSpecBars[i]:SetSize(214 / 4, 7)
 				if i == 1 then
 					self.WarlockSpecBars[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -484,7 +484,7 @@ local function Shared(self, unit)
 			self.TotemBar.Destroy = true
 
 			for i = 1, 4 do
-				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
+				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self.TotemBar)
 				self.TotemBar[i]:SetSize(213 / 4, 7)
 
 				local fixpos
@@ -520,13 +520,13 @@ local function Shared(self, unit)
 				self.EclipseBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.EclipseBar:SetSize(217, 7)
 
-				self.EclipseBar.LunarBar = CreateFrame("StatusBar", nil, self.EclipseBar)
+				self.EclipseBar.LunarBar = CreateFrame("StatusBar", self:GetName().."_EclipseBar_LunarBar", self.EclipseBar)
 				self.EclipseBar.LunarBar:SetPoint("LEFT", self.EclipseBar, "LEFT", 0, 0)
 				self.EclipseBar.LunarBar:SetSize(self.EclipseBar:GetWidth(), self.EclipseBar:GetHeight())
 				self.EclipseBar.LunarBar:SetStatusBarTexture(C.media.texture)
 				self.EclipseBar.LunarBar:SetStatusBarColor(0.80, 0.80, 0.20)
 
-				self.EclipseBar.SolarBar = CreateFrame("StatusBar", nil, self.EclipseBar)
+				self.EclipseBar.SolarBar = CreateFrame("StatusBar", self:GetName().."_EclipseBar_SolarBar", self.EclipseBar)
 				self.EclipseBar.SolarBar:SetPoint("LEFT", self.EclipseBar.LunarBar:GetStatusBarTexture(), "RIGHT", 0, 0)
 				self.EclipseBar.SolarBar:SetSize(self.EclipseBar:GetWidth(), self.EclipseBar:GetHeight())
 				self.EclipseBar.SolarBar:SetStatusBarTexture(C.media.texture)
@@ -555,7 +555,7 @@ local function Shared(self, unit)
 				self.TotemBar.Destroy = true
 
 				for i = 1, 3 do
-					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
+					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self.TotemBar)
 					self.TotemBar[i]:SetSize(108 / 3, 7)
 					if i == 1 then
 						self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
@@ -584,7 +584,7 @@ local function Shared(self, unit)
 				self.TotemBar.Destroy = true
 
 				for i = 1, 1 do
-					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
+					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self.TotemBar)
 					self.TotemBar[i]:SetSize(53, 7)
 					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
@@ -608,7 +608,7 @@ local function Shared(self, unit)
 			self.TotemBar.Destroy = true
 
 			for i = 1, 2 do
-				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
+				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self.TotemBar)
 				self.TotemBar[i]:SetSize(108 / 2, 7)
 				if i == 1 then
 					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
@@ -638,7 +638,7 @@ local function Shared(self, unit)
 			end
 			self.VengeanceBar:SetSize(217, 7)
 
-			self.VengeanceBar.Bar = CreateFrame("StatusBar", self:GetName().."_VengeanceBar", self.VengeanceBar)
+			self.VengeanceBar.Bar = CreateFrame("StatusBar", self:GetName().."_VengeanceBar.Bar", self.VengeanceBar)
 			self.VengeanceBar.Bar:SetPoint("LEFT", self.VengeanceBar, "LEFT", 0, 0)
 			self.VengeanceBar.Bar:SetSize(217, 7)
 			self.VengeanceBar.Bar:SetStatusBarTexture(C.media.texture)
@@ -673,7 +673,7 @@ local function Shared(self, unit)
 			self.Experience.bg:SetTexture(C.media.texture)
 			self.Experience.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
 
-			self.Experience.Rested = CreateFrame("StatusBar", nil, self.Experience)
+			self.Experience.Rested = CreateFrame("StatusBar", self:GetName().."_Experience_Rested", self.Experience)
 			self.Experience.Rested:SetParent(self.Experience)
 			self.Experience.Rested:SetOrientation("Vertical")
 			self.Experience.Rested:SetAllPoints()
@@ -767,7 +767,7 @@ local function Shared(self, unit)
 	end
 
 	if unit == "pet" or unit == "targettarget" or unit == "focus" or unit == "focustarget" then
-		self.Debuffs = CreateFrame("Frame", self:GetName().."Debuffs", self)
+		self.Debuffs = CreateFrame("Frame", self:GetName().."_Debuffs", self)
 		self.Debuffs:SetHeight(25)
 		self.Debuffs:SetWidth(109)
 		self.Debuffs.size = T.Scale(25)
@@ -825,7 +825,7 @@ local function Shared(self, unit)
 		end
 
 		if unit == "player" then
-			self.Debuffs = CreateFrame("Frame", self:GetName().."playeraura", self)
+			self.Debuffs = CreateFrame("Frame", self:GetName().."_PlayerAura", self)
 			self.Debuffs:SetHeight(165)
 			self.Debuffs:SetWidth(221)
 			self.Debuffs.size = T.Scale(25)
@@ -849,7 +849,7 @@ local function Shared(self, unit)
 		end
 
 		if unit == "target" then
-			self.Auras = CreateFrame("Frame", self:GetName().."tagetaura", self)
+			self.Auras = CreateFrame("Frame", self:GetName().."_TargetAura", self)
 			self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5)
 			self.Auras.initialAnchor = "BOTTOMLEFT"
 			self.Auras["growth-x"] = "RIGHT"
@@ -872,7 +872,7 @@ local function Shared(self, unit)
 				self.CPoints:SetSize(217, 7)
 
 				for i = 1, 5 do
-					self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar", self.CPoints)
+					self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar"..i, self.CPoints)
 					self.CPoints[i]:SetSize(213 / 5, 7)
 					if i == 1 then
 						self.CPoints[i]:SetPoint("LEFT", self.CPoints)
@@ -1221,7 +1221,7 @@ local function Shared(self, unit)
 		self.Trinket = CreateFrame("Frame", self:GetName().."_Trinket", self)
 		self.Trinket:SetSize(31, 31)
 
-		self.FactionIcon = CreateFrame("Frame", nil, self)
+		self.FactionIcon = CreateFrame("Frame", self:GetName().."_FactionIcon", self)
 		self.FactionIcon:SetSize(31, 31)
 
 		if C.unitframe.arena_on_right == true then
@@ -1265,7 +1265,7 @@ local function Shared(self, unit)
 	end
 
 	if C.unitframe.show_boss and unit == "boss" then
-		self.AltPowerBar = CreateFrame("StatusBar", self:GetName().."AltPowerBar", self.Health)
+		self.AltPowerBar = CreateFrame("StatusBar", self:GetName().."_AltPowerBar", self.Health)
 		self.AltPowerBar:SetFrameLevel(self.Health:GetFrameLevel() + 1)
 		self.AltPowerBar:SetHeight(4)
 		self.AltPowerBar:SetStatusBarTexture(C.media.texture)
@@ -1287,7 +1287,7 @@ local function Shared(self, unit)
 		self:Tag(self.AltPowerBar.text, "[AltPower]")
 
 		if C.aura.boss_buffs == true then
-			self.Auras = CreateFrame("Frame", nil, self)
+			self.Auras = CreateFrame("Frame", self:GetName().."_BossAuras", self)
 			if C.unitframe.boss_on_right == true then
 				self.Auras:SetPoint("LEFT", self, "RIGHT", 5, 0)	--("RIGHT", self, "LEFT", -5, 0)
 				self.Auras.initialAnchor = "LEFT"	--RIGHT
@@ -1341,7 +1341,7 @@ local function Shared(self, unit)
 
 	-- Incoming heal text/bar
 	if C.raidframe.plugins_healcomm == true then
-		local mhpb = CreateFrame("StatusBar", nil, self.Health)
+		local mhpb = CreateFrame("StatusBar", self:GetName().."_mhpb", self.Health)
 		mhpb:SetPoint("TOPLEFT", self.Health:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
 		mhpb:SetPoint("BOTTOMLEFT", self.Health:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
 		if unit == "player" or unit == "target" then
@@ -1356,7 +1356,7 @@ local function Shared(self, unit)
 		mhpb:SetStatusBarTexture(C.media.texture)
 		mhpb:SetStatusBarColor(0, 1, 0.5, 0.2)
 
-		local ohpb = CreateFrame("StatusBar", nil, self.Health)
+		local ohpb = CreateFrame("StatusBar", self:GetName().."_ohpb", self.Health)
 		ohpb:SetPoint("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
 		ohpb:SetPoint("BOTTOMLEFT", mhpb:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
 		ohpb:SetWidth(mhpb:GetWidth())
