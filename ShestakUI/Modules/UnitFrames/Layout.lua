@@ -791,7 +791,7 @@ local function Shared(self, unit)
 		end
 
 		if unit == "target" then
-			self.Auras = CreateFrame("Frame", self:GetName().."tagetaura", self)
+			self.Auras = CreateFrame("Frame", self:GetName().."targetaura", self)
 			self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5)
 			self.Auras.initialAnchor = "BOTTOMLEFT"
 			self.Auras["growth-x"] = "RIGHT"
@@ -1107,7 +1107,7 @@ local function Shared(self, unit)
 		self.Trinket:SetTemplate("Default")
 		self.FactionIcon:SetTemplate("Default")
 
-		self.AuraTracker = CreateFrame("Frame", nil, self)
+		self.AuraTracker = CreateFrame("Frame", self:GetName().."_Auratracker", self)
 		self.AuraTracker:SetWidth(self.Trinket:GetWidth())
 		self.AuraTracker:SetHeight(self.Trinket:GetHeight())
 		self.AuraTracker:SetPoint("CENTER", self.Trinket, "CENTER")
@@ -1160,7 +1160,7 @@ local function Shared(self, unit)
 		self:Tag(self.AltPowerBar.text, "[AltPower]")
 
 		if C.aura.boss_buffs == true then
-			self.Auras = CreateFrame("Frame", nil, self)
+			self.Auras = CreateFrame("Frame", self:GetName().."_AuraBossBuff", self)
 			if C.unitframe.boss_on_right == true then
 				self.Auras:SetPoint("RIGHT", self, "LEFT", -5, 0)
 				self.Auras.initialAnchor = "RIGHT"
