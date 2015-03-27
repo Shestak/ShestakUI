@@ -50,7 +50,17 @@ local function LoadSkin()
 	WowTokenGameTimeTutorialBottomBorder:SetAlpha(0)
 	WowTokenGameTimeTutorialLeftBorder:SetAlpha(0)
 	WowTokenGameTimeTutorialRightBorder:SetAlpha(0)
-
+	
+	do
+		local Token = BrowseWowTokenResults.Token
+		local icon = Token.Icon
+		local iconBorder = Token.IconBorder
+	
+		Token.ItemBorder:Hide()
+			Token:StyleButton()
+			Token:CreateBackdrop("Transparent")
+	end
+	
 	-- Progress Frame
 	AuctionProgressFrame:StripTextures()
 	AuctionProgressFrame:SetTemplate("Transparent")
@@ -103,7 +113,8 @@ local function LoadSkin()
 	for _, button in pairs(buttons) do
 		_G[button]:SkinButton(true)
 	end
-
+	BrowseWowTokenResults.Buyout:SkinButton(true)
+	
 	-- Fix Button Positions
 	AuctionsCloseButton:SetPoint("BOTTOMRIGHT", AuctionFrameAuctions, "BOTTOMRIGHT", 66, 10)
 	AuctionsCancelAuctionButton:SetPoint("RIGHT", AuctionsCloseButton, "LEFT", -4, 0)
