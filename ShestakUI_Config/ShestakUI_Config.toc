@@ -4,6 +4,7 @@
 ## Author: Tohveli
 ## Version: 5.07
 ## Credits: Elv22, Fernir, Tukz
+## Thanks: Tryllemann, Wetxius
 ## RequiredDeps: ShestakUI
 ## SavedVariables: GUIConfigAll, GUIConfigSettings
 ## SavedVariablesPerCharacter: GUIConfig
