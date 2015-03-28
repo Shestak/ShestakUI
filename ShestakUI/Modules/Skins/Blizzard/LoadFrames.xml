@@ -16,6 +16,7 @@
 	<Script file="Collections.lua"/>
 	<Script file="Container.lua"/>
 	<Script file="DebugTools.lua"/>
+	<Script file="deathRecap.lua"/>
 	<Script file="DressUp.lua"/>
 	<Script file="EncounterJournal.lua"/>
 	<Script file="FrameStack.lua"/>
