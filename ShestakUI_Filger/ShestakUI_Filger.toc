@@ -4,7 +4,7 @@
 ## Author: Nils Ruesch
 ## Version: 5.07
 ## Credits: Affli, Ildyria, SinaC
-## Thanks: Erratic, Wetxius
+## Thanks: Erratic, Tryllemann, Wetxius
 ## RequiredDeps: ShestakUI
 ## X-Curse-Packaged-Version: 5.07
 ## X-Curse-Project-Name: ShestakUI
