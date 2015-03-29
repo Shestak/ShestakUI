@@ -1147,7 +1147,7 @@ C["filger_spells"] = {
 			--戰爭藝術
 			{ spellID = 59578, unitID = "player", caster = "player", filter = "BUFF" },
 			--復仇之怒
-			{ spellID = 31884, unitID = "player", caster = "player", filter = "BUFF" },
+			{ spellID = 31884, unitID = "player", caster = "player", filter = "BUFF"},
 			--精通光環
 			{ spellID = 31821, unitID = "player", caster = "player", filter = "BUFF" },
 			--圣盾術
@@ -1848,6 +1848,8 @@ C["filger_spells"] = {
 			{ spellID = 157174, unitID = "player", caster = "player", filter = "BUFF" },
 			--火焰释放
 			{ spellID = 165462, unitID = "player", caster = "player", filter = "BUFF" },
+			--狂怒釋放
+			{ spellID = 118473, unitID = "target", caster = "player", filter = "BUFF" },
 			--Riptide / Springflut
 			{ spellID = 61295, unitID = "player", caster = "player", filter = "BUFF" },
 		},
@@ -1864,8 +1866,8 @@ C["filger_spells"] = {
 			{ spellID = 974, unitID = "target", caster = "player", filter = "BUFF" },
 			--冰凍之力
 			{ spellID = 63685, unitID = "target", caster = "player", filter = "DEBUFF" },
-			--狂怒釋放
-			{ spellID = 118473, unitID = "target", caster = "player", filter = "BUFF" },
+			--陷地图腾（天赋）
+            { spellID = 64695, unitID = "target", caster = "player", filter = "BUFF" },			
 		},
 		{
 			Name = "T_PROC",
@@ -1929,6 +1931,8 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].cooldown)},
 
 			-- Self
+			--升腾
+			{ spellID = 114050, filter = "CD" },
 			-- Cleanse Spirit
 			{spellID = 51886, filter = "CD"},
 			-- Wind Shear
@@ -2563,6 +2567,8 @@ C["filger_spells"] = {
                 { spellID = 126599, unitID = "player", caster = "all", filter = "BUFF" },
                 -- 群星之瓶 (敏捷, 触发)
                 { spellID = 126554, unitID = "player", caster = "all", filter = "BUFF" },
+				-- 炼金 飾品 (敏捷)
+                { spellID = 60233, unitID = "player", caster = "all", filter = "BUFF" },
                 -- PvP飾品 (敏捷, 使用)
                 { spellID = 126690, unitID = "player", caster = "all", filter = "BUFF" },
                 -- PvP飾品 (敏捷, 觸發)
@@ -2841,9 +2847,12 @@ C["filger_spells"] = {
 				{spellID = 172359, unitID = "player", caster = "player", filter = "BUFF"},
 				
 				--法師
-				--T16 冰凍意念
-                { spellID = 146557, unitID = "player", caster = "all", filter = "BUFF" },
-                { spellID = 145252, unitID = "player", caster = "all", filter = "BUFF" },
+				--T17
+				
+				--圣骑士
+				--2T17 指引之光战甲
+				{spellID = 166831, unitID = "player", caster = "player", filter = "BUFF"},
+				{spellID = 165442, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_P",
