@@ -1848,8 +1848,12 @@ C["filger_spells"] = {
 			{ spellID = 157174, unitID = "player", caster = "player", filter = "BUFF" },
 			--火焰释放
 			{ spellID = 165462, unitID = "player", caster = "player", filter = "BUFF" },
-			--狂怒釋放
-			{ spellID = 118473, unitID = "target", caster = "player", filter = "BUFF" },
+			--怒火释放（元素）
+			{ spellID = 118470, unitID = "player", caster = "player", filter = "BUFF" },
+		   --怒火释放（治疗）
+			{ spellID = 118473, unitID = "player", caster = "player", filter = "BUFF" },
+			--怒火释放（增强）
+			{ spellID = 118472, unitID = "player", caster = "player", filter = "BUFF" },
 			--Riptide / Springflut
 			{ spellID = 61295, unitID = "player", caster = "player", filter = "BUFF" },
 		},
@@ -1889,7 +1893,7 @@ C["filger_spells"] = {
 			--Riptide / Springflut
 			{ spellID = 61295, unitID = "target", caster = "player", filter = "BUFF" },
 			--地震术
-			{ spellID = 61882, unitID = "target", caster = "player", filter = "DEBUFF" },
+			{ spellID = 182387, unitID = "target", caster = "player", filter = "DEBUFF" },
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
