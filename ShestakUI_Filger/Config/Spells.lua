@@ -2841,8 +2841,12 @@ C["filger_spells"] = {
             --套装特效
 			
 				--德鲁伊
-				--T17 自然的睿智
+				--4T17 自然的睿智(堆叠)
 				{spellID = 177794, unitID = "player", caster = "player", filter = "BUFF"},
+		                --4T17 自然的睿智(触发)
+		                {spellID = 167715, unitID = "player", caster = "player", filter = "BUFF"},
+		                --2T17 自然迅捷
+		                {spellID = 132158, unitID = "player", caster = "player", filter = "BUFF"},
 				
 				--牧师
 				--T17 明澈思维
