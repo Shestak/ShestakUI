@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.unitframe.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -283,7 +283,7 @@ local function Shared(self, unit)
 				self.HarmonyBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 
 				for i = 1, 6 do
-					self.HarmonyBar[i] = CreateFrame("StatusBar", nil, self.HarmonyBar)
+					self.HarmonyBar[i] = CreateFrame("StatusBar", self:GetName().."_HarmonyBar", self.HarmonyBar)
 					self.HarmonyBar[i]:SetSize(176 / 6, 7)
 					if i == 1 then
 						self.HarmonyBar[i]:SetPoint("LEFT", self.HarmonyBar, "LEFT", 0, 0)
@@ -310,7 +310,7 @@ local function Shared(self, unit)
 				self.TotemBar.Destroy = true
 
 				for i = 1, 1 do
-					self.TotemBar[i] = CreateFrame("StatusBar", nil, self.TotemBar)
+					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
 					self.TotemBar[i]:SetSize(53, 7)
 					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
@@ -333,7 +333,7 @@ local function Shared(self, unit)
 			self.ShadowOrbsBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 
 			for i = 1, 5 do
-				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", nil, self.ShadowOrbsBar)
+				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", self:GetName().."_ShadowOrbsBar", self.ShadowOrbsBar)
 				self.ShadowOrbsBar[i]:SetSize(178 / 5, 7)
 				if i == 1 then
 					self.ShadowOrbsBar[i]:SetPoint("LEFT", self.ShadowOrbsBar, "LEFT", 0, 0)
@@ -363,7 +363,7 @@ local function Shared(self, unit)
 			self.HolyPower:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 
 			for i = 1, 5 do
-				self.HolyPower[i] = CreateFrame("StatusBar", nil, self.HolyPower)
+				self.HolyPower[i] = CreateFrame("StatusBar", self:GetName().."_HolyPowerBar", self.HolyPower)
 				self.HolyPower[i]:SetSize(176 / 5, 7)
 				if i == 1 then
 					self.HolyPower[i]:SetPoint("LEFT", self.HolyPower, "LEFT", 0, 0)
@@ -393,7 +393,7 @@ local function Shared(self, unit)
 			self.WarlockSpecBars:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 
 			for i = 1, 4 do
-				self.WarlockSpecBars[i] = CreateFrame("StatusBar", nil, self.WarlockSpecBars)
+				self.WarlockSpecBars[i] = CreateFrame("StatusBar", self:GetName().."WarlockSpecBar"..i, self.WarlockSpecBars)
 				self.WarlockSpecBars[i]:SetSize(177 / 4, 7)
 				if i == 1 then
 					self.WarlockSpecBars[i]:SetPoint("LEFT", self.WarlockSpecBars, "LEFT", 0, 0)
@@ -424,7 +424,7 @@ local function Shared(self, unit)
 			self.TotemBar.Destroy = true
 
 			for i = 1, 4 do
-				self.TotemBar[i] = CreateFrame("StatusBar", nil, self.TotemBar)
+				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
 				self.TotemBar[i]:SetSize(177 / 4, 7)
 
 				local fixpos
@@ -684,7 +684,7 @@ local function Shared(self, unit)
 	end
 
 	if unit == "pet" or unit == "targettarget" or unit == "focus" or unit == "focustarget" then
-		self.Debuffs = CreateFrame("Frame", nil, self)
+		self.Debuffs = CreateFrame("Frame", self:GetName().."Debuffs", self)
 		self.Debuffs:SetHeight(25)
 		self.Debuffs:SetWidth(109)
 		self.Debuffs.size = T.Scale(25)
@@ -741,7 +741,7 @@ local function Shared(self, unit)
 		end
 
 		if unit == "target" then
-			self.Auras = CreateFrame("Frame", nil, self)
+			self.Auras = CreateFrame("Frame", self:GetName().."targetaura", self)
 			self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5)
 			self.Auras.initialAnchor = "BOTTOMLEFT"
 			self.Auras["growth-x"] = "RIGHT"
@@ -1071,7 +1071,7 @@ local function Shared(self, unit)
 		self.Trinket:SetTemplate("Default")
 		self.FactionIcon:SetTemplate("Default")
 
-		self.AuraTracker = CreateFrame("Frame", nil, self)
+		self.AuraTracker = CreateFrame("Frame", self:GetName().."_Auratracker", self)
 		self.AuraTracker:SetWidth(self.Trinket:GetWidth())
 		self.AuraTracker:SetHeight(self.Trinket:GetHeight())
 		self.AuraTracker:SetPoint("CENTER", self.Trinket, "CENTER")

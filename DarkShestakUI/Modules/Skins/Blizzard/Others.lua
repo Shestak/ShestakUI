@@ -10,6 +10,17 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 
 	-- Stuff not in Blizzard load-on-demand
 	if addon == "DarkShestakUI" then
+		--Skinn checkButtons
+		local checkButtons = {
+			"LFDRoleCheckPopupRoleButtonTank",
+			"LFDRoleCheckPopupRoleButtonDPS",
+			"LFDRoleCheckPopupRoleButtonHealer"
+			}
+
+		for _, object in pairs(checkButtons) do
+			T.SkinCheckBox(_G[object].checkButton)
+		end
+		
 		-- Blizzard Frame reskin
 		local bgskins = {
 			"GameMenuFrame",
@@ -19,6 +30,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"ReadyCheckFrame",
 			"ColorPickerFrame",
 			"LFDRoleCheckPopup",
+			"LFDReadyCheckPopup",
 			"ChannelPulloutBackground",
 			"ChannelPulloutTab",
 			"GuildInviteFrame",
@@ -173,6 +185,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"RolePollPopupAcceptButton",
 			"LFDRoleCheckPopupDeclineButton",
 			"LFDRoleCheckPopupAcceptButton",
+			"LFDReadyCheckPopupAcceptButton",
 			"StackSplitOkayButton",
 			"StackSplitCancelButton",
 			"RaidUtilityConvertButton",
@@ -197,7 +210,9 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 				buttons:SkinButton()
 			end
 		end
-
+		LFDReadyCheckPopup.YesButton:SkinButton(true)
+		LFDReadyCheckPopup.NoButton:SkinButton(true)
+		
 		-- Button position or text
 		_G["ColorPickerOkayButton"]:ClearAllPoints()
 		_G["ColorPickerOkayButton"]:SetPoint("BOTTOMLEFT", _G["ColorPickerFrame"], "BOTTOMLEFT", 6, 6)

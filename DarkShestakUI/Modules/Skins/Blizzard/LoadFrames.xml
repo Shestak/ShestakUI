@@ -16,6 +16,7 @@
 	<Script file="Collections.lua"/>
 	<Script file="Container.lua"/>
 	<Script file="DebugTools.lua"/>
+	<Script file="DeathRecap.lua"/>
 	<Script file="DressUp.lua"/>
 	<Script file="EncounterJournal.lua"/>
 	<Script file="FrameStack.lua"/>
@@ -37,7 +38,6 @@
 	<Script file="ItemSocketing.lua"/>
 	<Script file="ItemText.lua"/>
 	<Script file="ItemUpgrade.lua"/>
-	<Script file="LFR.lua"/>
 	<Script file="Loot.lua"/>
 	<Script file="LossOfControl.lua"/>
 	<Script file="MacClient.lua"/>
