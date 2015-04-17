@@ -54,29 +54,34 @@ vehicle:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 vehicle:SetTemplate("Default")
 vehicle:StyleButton(true)
 vehicle:RegisterForClicks("AnyUp")
-vehicle:SetScript("OnClick", function(self)
+
+hooksecurefunc("MainMenuBarVehicleLeaveButton_Update", function()
+	if CanExitVehicle() then
+		if UnitOnTaxi("player") then
+			vehicle:SetScript("OnClick", function(self)
+				TaxiRequestEarlyLanding()
+				self:LockHighlight()
+			end)
+		else
+			vehicle:SetScript("OnClick", function(self)
+				VehicleExit()
+			end)
+		end
+		vehicle:Show()
+	else
+		vehicle:Hide()
+	end
+end)
+
+--set tooltip
+vehicle:SetScript("OnEnter", function(self)
 	if UnitOnTaxi("player") then
-		TaxiRequestEarlyLanding()
-		self:GetNormalTexture():SetVertexColor(1, 0, 0)
-		self:EnableMouse(false)
+		GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+		GameTooltip:SetText(TAXI_CANCEL, T.color.r, T.color.g, T.color.b);
+		GameTooltip:AddLine(TAXI_CANCEL_DESCRIPTION, 1, 1, 1, true);
+		GameTooltip:Show();
 	else
-		VehicleExit()
+		GameTooltip_AddNewbieTip(self, LEAVE_VEHICLE, T.color.r, T.color.g, T.color.b, nil);
 	end
 end)
-vehicle:SetScript("OnEnter", MainMenuBarVehicleLeaveButton_OnEnter)
-vehicle:SetScript("OnLeave", GameTooltip_Hide)
-vehicle:RegisterEvent("PLAYER_ENTERING_WORLD")
-vehicle:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
-vehicle:RegisterEvent("UPDATE_MULTI_CAST_ACTIONBAR")
-vehicle:RegisterEvent("UNIT_ENTERED_VEHICLE")
-vehicle:RegisterEvent("UNIT_EXITED_VEHICLE")
-vehicle:RegisterEvent("VEHICLE_UPDATE")
-vehicle:SetScript("OnEvent", function(self)
-	if CanExitVehicle() and ActionBarController_GetCurrentActionBarState() == LE_ACTIONBAR_STATE_MAIN then
-		self:Show()
-		self:GetNormalTexture():SetVertexColor(1, 1, 1)
-		self:EnableMouse(true)
-	else
-		self:Hide()
-	end
-end)
+vehicle:SetScript("OnLeave", function() GameTooltip:Hide() end)
