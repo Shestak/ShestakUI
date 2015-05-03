@@ -74,8 +74,9 @@ local function Enable(self, unit)
 		self:RegisterEvent("UNIT_POWER", Path)
 		self:RegisterEvent("UNIT_DISPLAYPOWER", Path)
 		self:RegisterEvent('PLAYER_TALENT_UPDATE', Path)
-
-		hb.maxChi = 5
+		self:RegisterEvent("UNIT_MAXPOWER", Path)
+		
+		hb.maxChi = 0
 
 		return true
 	end
