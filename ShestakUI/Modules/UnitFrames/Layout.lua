@@ -7,6 +7,8 @@ if C.unitframe.enable ~= true then return end
 local _, ns = ...
 local oUF = ns.oUF
 local LargePetCastbar = false	--true/大型施法条 false/小型施法条
+local TargetGlow = true	--boss框架中，玩家目标高亮
+local MouseGlow = true
 
 ----------------------------------------------------------------------------------------
 -- boss框体只显示自己debuff函数
@@ -1318,6 +1320,43 @@ local function Shared(self, unit)
 		self:RegisterEvent("UNIT_THREAT_LIST_UPDATE", T.UpdateThreat)
 		self:RegisterEvent("UNIT_THREAT_SITUATION_UPDATE", T.UpdateThreat)
 	end
+	
+	------------------------------------------------------
+	--UNIT为PLAYER的目标时边框着色
+	if TargetGlow == true then
+		self.TargetGlow = CreateFrame("Frame", self:GetName().."_TargetGlow", self)
+		self.TargetGlow:SetTemplate(t)
+		self.TargetGlow:ClearAllPoints()
+		self.TargetGlow:SetPoint("TOPLEFT", -2, 2)
+		self.TargetGlow:SetPoint("BOTTOMRIGHT", 2, -2)
+		self.TargetGlow:Hide()
+		--print("TargetGlow Hide")
+		table.insert(self.__elements, T.UpdateTargetGlow)
+		self:RegisterEvent("PLAYER_TARGET_CHANGED", T.UpdateTargetGlow)
+		self:RegisterEvent("PLAYER_ENTERING_WORLD", T.UpdateTargetGlow)
+		self:RegisterEvent("GROUP_ROSTER_UPDATE", T.UpdateTargetGlow)
+	end
+	--UNIT为鼠标悬停的目标时边框着色
+	if MouseGlow == true then
+		self.MouseGlow = CreateFrame("Frame", self:GetName().."_MouseGlow", self)
+		self.MouseGlow:SetTemplate(t)
+		self.MouseGlow:ClearAllPoints()
+		self.MouseGlow:SetPoint("TOPLEFT", -2, 2)
+		self.MouseGlow:SetPoint("BOTTOMRIGHT", 2, -2)
+		self.MouseGlow:Hide()
+
+		self:HookScript("OnEnter", function(self)
+			self.MouseGlow:Show()
+			self.MouseGlow:SetBackdropBorderColor(1, 1, 1)
+			--print("MouseGlow > Show")
+		end)
+		self:HookScript("OnLeave", function(self)
+			self.MouseGlow:Hide()
+			--self.MouseGlow:SetBackdropBorderColor(unpack(C.media.backdrop_color))
+			--print("MouseGlow > Hide")
+		end)
+	end
+	------------------------------------------------------
 
 	-- Raid marks
 	if C.raidframe.icons_raid_mark == true then
