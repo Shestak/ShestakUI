@@ -381,11 +381,17 @@ local function SkinObjects(frame, nameFrame)
 	hp.bg:SetTexture(1, 1, 1, 0.2)
 
 --	--增加目标提示★
-	hp.target_ind = hp:CreateTexture(nil, 'OVERLAY', nil)
-	hp.target_ind:SetSize(10, 10)
-	hp.target_ind:SetPoint("LEFT", hp, "TOPLEFT")
-	hp.target_ind:SetTexture("Interface\\AddOns\\zzz\\media\\Tar")
-	hp.target_ind:Hide()
+	hp.targetIndicator = CreateFrame("Frame", self:GetName().."_targetIndicator", WorldFrame)
+	hp.targetIndicator:SetFrameLevel(0)
+	hp.targetIndicator:SetFrameStrata("BACKGROUND")
+	hp.targetIndicator:SetPoint("TOPLEFT", hp, "TOPLEFT", -T.mult*9, T.mult*9)
+	hp.targetIndicator:SetPoint("BOTTOMRIGHT", hp, "BOTTOMRIGHT", T.mult*9, -T.mult*9)
+	hp.targetIndicator:SetBackdrop( {
+		edgeFile = "Interface\\AddOns\\ShestakUI_Media\\Media\\Borders\\Shadow.tga", edgeSize = T.mult*8,
+ 		insets = {left = T.mult, right = T.mult, top = T.mult, bottom = T.mult},
+ 	})
+	--hp.targetIndicator:SetBackdropBorderColor(1, 1, 1, 1)
+	hp.targetIndicator:Hide()
 --	--
 
 	hp:HookScript("OnShow", UpdateObjects)
@@ -636,12 +642,12 @@ local function MatchGUID(frame, destGUID, spellID)
 end
 
 --	--增加目标提示★
-local function ShowTargetInd(frame)
+local function ShowTargetIndicator(frame)
 	if UnitExists("target") and frame:GetParent():GetAlpha() == 1 and UnitName("target") == frame.hp.name:GetText() then
 	--if frame.guid == UnitGUID("target") and frame.guid ~= nil then
-		frame.hp.target_ind:Show()
+		frame.hp.targetIndicator:Show()
 	else
-		frame.hp.target_ind:Hide()
+		frame.hp.targetIndicator:Hide()
 	end
 end
 --	--
@@ -685,7 +691,7 @@ NamePlates:SetScript("OnUpdate", function(self, elapsed)
 
 	ForEachPlate(ShowHealth)
 	ForEachPlate(CheckBlacklist)
-	ForEachPlate(ShowTargetInd)  --增加目标提示★
+	ForEachPlate(ShowTargetIndicator)  --增加目标提示★
 	if C.nameplate.track_auras then
 		ForEachPlate(CheckUnit_Guid)
 	end
