@@ -1406,6 +1406,46 @@ local CountOffSets = {
 	BOTTOM = {0, 0},
 }
 
+------------------------------------------------------
+--UNIT为PLAYER的目标时边框着色
+T.UpdateTargetGlow = function(self, event, unit)
+	if self.unit ~= unit then return end
+	
+	if UnitIsUnit(unit, "target") then
+		--[[self.TargetGlow:Show()
+		--print("TargetGlow Show")
+		local reaction = UnitReaction(unit, "player")
+		
+		if UnitIsPlayer(unit) then
+			local _, class = UnitClass(unit)
+			if class then
+				local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class]
+				self.TargetGlow:SetBackdropBorderColor(color.r, color.g, color.b)
+			else
+				self.TargetGlow:SetBackdropBorderColor(unpack(C.media.border_color))
+			end
+		elseif reaction then
+			local color = FACTION_BAR_COLORS[reaction]
+			if (unit and unit:find("boss%d")) or (unit and unit:find("arena%d")) or (unit and unit:find("party%d")) or (unit and unit:find("raid%d"))then
+				self.TargetGlow:SetBackdropBorderColor(1, 1, 1)
+			else
+				self.TargetGlow:SetBackdropBorderColor(color.r, color.g, color.b)
+			end
+		else
+			self.TargetGlow:SetBackdropBorderColor(unpack(C.media.border_color))
+		end]]--
+		if (unit and unit:find("boss%d")) or (unit and unit:find("arena%d")) or (unit and unit:find("party%d")) or (unit and unit:find("raid%d")) then
+			self.TargetGlow:Show()
+			self.TargetGlow:SetBackdropBorderColor(1, 1, 1)
+		end
+	else
+		self.TargetGlow:Hide()
+		--print("NoTarget!TargetGlow > Hide")
+		
+	end
+end
+------------------------------------------------------
+
 T.CreateAuraWatchIcon = function(self, icon)
 	icon:SetTemplate("Default")
 	icon.icon:SetPoint("TOPLEFT", icon, 1, -1)
