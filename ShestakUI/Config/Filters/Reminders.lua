@@ -6,9 +6,17 @@ local T, C, L, _ = unpack(select(2, ...))
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 if C.reminder.raid_buffs_enable == true then
-	-- General buffs
 	T.ReminderBuffs = {
-		[1] = {	--Flask
+		[1] = {1, 144053},	-- RAID_BUFF_1 Stats, 试炼场属性buff
+		[2] = {2, 144051},	-- RAID_BUFF_2 Stamina, 试炼场耐力buff
+		[3] = {4, 144046},	-- RAID_BUFF_4 Haste, 试炼场急速buff
+		[4] = {6, 144047},	-- RAID_BUFF_6 Critical Strike, 试炼场暴击buff
+		[5] = {7, 144048},	-- RAID_BUFF_7 Mastery, 试炼场精通buff
+		[6] = {8, 175651},	-- RAID_BUFF_8 Multistrike, 试炼场溅射buff
+		[7] = {9, 175649},	-- RAID_BUFF_9 Versatility, 试炼场全能buff
+		[8] = {3, 144041},	-- RAID_BUFF_3 Attack Power, 试炼场攻强buff
+		[9] = {5, 144042},	-- RAID_BUFF_5 Spell Power, 试炼场法强buff
+		[10] = {	--Flask
 			176151,
 			156071,	-- Draenic Strength Flask
 			156077,	-- Draenic Stamina Flask
@@ -24,7 +32,7 @@ if C.reminder.raid_buffs_enable == true then
 			105693,	-- Flask of Falling Leaves
 			105689,	-- Flask of Spring Blossoms
 		},
-		[2] = {	--Food
+		[11] = {	--Food
 			104273, --250 Agility
 			104274, --275 Agility
 			104275, --300 Agility
@@ -45,121 +53,12 @@ if C.reminder.raid_buffs_enable == true then
 			104282, -- 415 Stamina
 			104283, -- 450 Stamina
 		},
-		[3] = {	--Stat
-			144053,	-- 试炼场
-			1126,	-- Mark of the Wild
-			159988,	-- Bark of the Wild (Dog)
-			160017,	-- Blessing of Kongs (Gorilla)
-			90363,	-- Embrace of the Shale Spider
-			160077,	-- Strength of the Earth (Worm)
-			115921,	-- Legacy of the Emperor
-			116781,	-- Legacy of the White Tiger
-			20217,	-- Blessing of Kings
-			72586, -- 遗忘王者祝福：4%属性
-			160206, -- 孤狼：巨猿之力
-		},
-		[4] = {	--Stamina
-			144051,	-- 试炼场
-			21562,	-- Power Word: Fortitude
-			90364,	-- Qiraji Fortitude (Silithid)
-			160003,	-- Savage Vigor (Rylak)
-			160014,	-- Sturdiness (Goat)
-			166928,	-- Blood Pact
-			469,	-- Commanding Shout
-			111922,	-- Runescroll of Fortitude III
-			160199, -- 孤狼：巨熊之韧
-		},
-		[5] = {	--Crit
-			144047,	-- 试炼场
-			24932, -- 野德兽群领袖
-			116781, -- 武僧白虎传承
-			1459, -- 奥术光辉
-			61316, -- 达拉然光辉
-			126309, -- 水黾：净水
-			24604, -- 狼：狂怒之嚎
-			90309, -- 魔暴龙：惊人咆哮
-			126373, -- 魁麟：无畏之嚎
-			90363, -- 页岩蛛：页岩蛛之拥
-			160052, -- 迅猛龙：兽群之力
-			160200, -- 孤狼：迅猛龙之恶
-		},
-		[6] = {     -- Mastery 5%精通
-			144048,	-- 试炼场
-			 19740, -- 圣骑力量祝福
-			155522, -- DKT幽冥之力
-			 24907, -- 鸟德枭兽形态
-			116956, -- 萨满风之优雅
-			 93435, -- 豹：勇气咆哮
-			128997, -- 灵魂兽：灵魂兽祝福
-			160039, -- 九头蛇：敏锐感知
-			160073, -- 陆行鸟：如履平地
-			160198, -- 孤狼：猫之优雅
-		},
-		[7] = {     --Multistrike 5%溅射
-			175651,	-- 试炼场
-			166916,	-- 踏风风怒
-			109773,	-- 术士黑暗意图
-			113742, -- 盗贼迅刃之黠
-			 49868, -- 暗牧思维加速
-			159733, -- 蜥蜴：邪恶凝视
-			 54644, -- 奇美拉：冰息
-			 58604, -- 熔岩犬：双重撕咬
-			 34889, -- 龙鹰：迅捷打击
-			160011, -- 狐狸：灵敏反应
-			 57386, -- 犀牛：狂野之力
-			 24844, -- 风蛇：狂风呼啸
-			172968, -- 孤狼：龙鹰之速
-		},
-		[8] = {     --Versatility 3%全能
-			175649,	-- 试炼场
-			167187, -- 惩戒圣洁光环
-			 55610, -- DK邪恶光环
-			  1126, -- 德鲁伊野性印记
-			167188, -- 战士振奋风采
-			159735, -- 猛禽：坚韧
-			 35290, -- 野猪：不屈
-			160045, -- 刺猬：防御鬃毛
-			 50518, -- 掠夺者：角质护甲
-			 57386, -- 犀牛：狂野之力
-			160077, -- 虫：大地之力
-			172967, -- 孤狼：掠食者之力
-		},
-		[9] = {     --Haste 5%急速
-			144046,	-- 试炼场
-			113742, -- 盗贼迅刃之黠
-			 49868, -- 暗牧思维加速
-			 55610, -- DK邪恶光环
-			116956, -- 萨满风之优雅
-			160003, -- 双头飞龙：野性活力
-			128432, -- 土狼：厉声嚎叫
-			135678, -- 孢子蝠：充能孢子
-			160074, -- 蜂：虫群疾速
-			160203, -- 孤狼：土狼之速
-		},
-		[10] = {	-- Attack Power
-			144041,	-- 试炼场
-			57330,	-- Horn of Winter
-			19506,	-- Trueshot Aura
-			6673,	-- Battle Shout
-		},
-		[11] = {	-- Spell Power
-			144042, -- 试炼场
-			1459,	-- Arcane Brilliance
-			61316,	-- Dalaran Brilliance
-			126309,	-- Still Water (Water Strider)
-			128433,	-- Serpent's Cunning (Serpent)
-			90364,	-- Qiraji Fortitude (Silithid)
-			160205, -- 孤狼：神龙之智
-			109773,	-- Dark Intent
-		},
-		[12] = {    -- 治疗石
-		  5512, -- 治疗石
-		},
-		[13] = {	--for WOD Rune
+		[12] = {	--for WOD Rune
 			175457, -- Focus Augment Rune
 			175456, -- Stout Augment Rune
 			175439, -- Hyper Augment Rune
 		},
+		[13] = 5512, -- 治疗石
 	}
 end
 
