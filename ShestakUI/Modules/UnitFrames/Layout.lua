@@ -417,7 +417,7 @@ local function Shared(self, unit)
 			self:Tag(self.WarlockSpecBars.text, "[DemonicFury]")
 		end
 		-- Rogue/Druid Combo bar
-		if C.unitframe_class_bar.combo == true then
+		if C.unitframe_class_bar.combo == true and T.class == "ROGUE" or T.class == "DRUID" then
 			self.CPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)
 			self.CPoints:CreateBackdrop("Default")
 			self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
