@@ -150,7 +150,10 @@ local function LoadSkin()
 		"RaidGraphics_SunshaftsDropDown",
 		"RaidGraphics_ParticleDensityDropDown",
 		"RaidGraphics_RefractionDropDown",
-		"RaidGraphics_SSAODropDown"
+		"RaidGraphics_SSAODropDown",
+		"RaidGraphics_DepthEffectsDropDown",
+		"RaidGraphics_LightingQualityDropDown",
+		"RaidGraphics_OutlineModeDropDown"
 	}
 
 	for i = 1, getn(dropdown) do
