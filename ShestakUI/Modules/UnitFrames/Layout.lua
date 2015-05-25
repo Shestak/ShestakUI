@@ -424,7 +424,7 @@ local function Shared(self, unit)
 			self.CPoints:SetSize(217, 7)
 
 			for i = 1, 5 do
-				self.CPoints[i] = CreateFrame("StatusBar", nil, self.CPoints)
+				self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar", self.CPoints)
 				self.CPoints[i]:SetSize(213 / 5, 7)
 				if i == 1 then
 					self.CPoints[i]:SetPoint("LEFT", self.CPoints)
