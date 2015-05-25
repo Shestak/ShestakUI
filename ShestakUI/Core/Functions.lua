@@ -1026,8 +1026,8 @@ T.UpdateComboPoint = function(self, event, unit)
 		end
 	else
 		for i = 1, MAX_COMBO_POINTS do
-			cpoints:Hide()
-			cpoints[i]:Hide()
+			cpoints:Show()
+			cpoints[i]:Show()
 		end
 	end
 
