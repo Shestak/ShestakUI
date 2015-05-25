@@ -296,6 +296,10 @@ C["filger_spells"] = {
 			{spellID = 1850, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cenarion Ward
 			{spellID = 102351, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Solar Empower
+			{spellID = 164545, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lunar Empower
+			{spellID = 164547, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
