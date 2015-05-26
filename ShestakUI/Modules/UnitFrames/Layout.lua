@@ -441,6 +441,24 @@ local function Shared(self, unit)
 			self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
 
 			self.CPoints.Override = T.UpdateComboPoint
+			
+			if T.class == "ROGUE" then
+				self.Anticipation = CreateFrame("Frame", self:GetName().."_Anticipation", self)
+				self.Anticipation:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				self.Anticipation:SetSize(217, 3)
+				
+				for i = 1, 5 do
+					self.Anticipation[i] = CreateFrame("StatusBar", self:GetName().."_Anticipation"..i, self.Anticipation)
+					self.Anticipation[i]:SetSize(213 / 5, 3)
+					if i == 1 then
+						self.Anticipation[i]:SetPoint("LEFT", self.Anticipation)
+					else
+						self.Anticipation[i]:SetPoint("LEFT", self.Anticipation[i-1], "RIGHT", 1, 0)
+					end
+					self.Anticipation[i]:SetStatusBarTexture(C.media.texture)
+					self.Anticipation[i]:SetStatusBarColor(0, 0, 0, 1)
+				end
+			end
 		end
 		-- Totem bar
 		if C.unitframe_class_bar.totem == true and T.class == "SHAMAN" then
