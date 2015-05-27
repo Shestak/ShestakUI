@@ -13,6 +13,7 @@
 	<Script file="Elements\Aura.lua"/>
 	<Script file="Elements\Health.lua"/>
 	<Script file="Elements\CPoints.lua"/>
+	<Script file="Elements\Anticipation.lua"/>
 	<Script file="Elements\RIcons.lua"/>
 	<Script file="Elements\Leader.lua"/>
 	<Script file="Elements\Combat.lua"/>
