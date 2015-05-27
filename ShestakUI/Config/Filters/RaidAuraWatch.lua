@@ -88,17 +88,20 @@ T.RaidDebuffs = {
 	[SpellName(155078)] = 3, -- Overwhelming Blows
 	[SpellName(162322)] = 5, -- Inferno Strike
 	[SpellName(155506)] = 2, -- Petrified
-
+	[SpellName(173192)] = 4, -- Cave In
+	[SpellName(155326)] = 3, -- Petrifying Slam
+	[SpellName(165300)] = 4, -- Flare Mythic
+				
 	--Oregorger
 	[SpellName(156203)] = 5, -- Retched Blackrock
 	[SpellName(156374)] = 5, -- Explosive Shard
 	[SpellName(156297)] = 3, -- Acid Torrent
 	[SpellName(173471)] = 4, -- Acid Maw
 	[SpellName(155900)] = 2, -- Rolling Fury
-
+				
 	--Blast Furnace
-	[SpellName(156932)] = 5, -- Rupture
-	[SpellName(178279)] = 4, -- Bomb
+	[SpellName(156934)] = 5, -- Rupture
+	[SpellName(176133)] = 4, -- Bomb
 	[SpellName(155192)] = 4, -- Bomb
 	[SpellName(176121)] = 6, -- Volatile Fire
 	[SpellName(155196)] = 2, -- Fixate
@@ -107,7 +110,7 @@ T.RaidDebuffs = {
 	[SpellName(155242)] = 3, -- Heat
 	[SpellName(155225)] = 5, -- Melt
 	[SpellName(155223)] = 5, -- Melt
-
+	
 	--Hans'gar and Franzok
 	[SpellName(157139)] = 3, -- Shattered Vertebrae
 	[SpellName(160838)] = 2, -- Disrupting Roar
@@ -115,6 +118,8 @@ T.RaidDebuffs = {
 	[SpellName(160847)] = 2, -- Disrupting Roar
 	[SpellName(160848)] = 2, -- Disrupting Roar
 	[SpellName(155818)] = 4, -- Scorching Burns
+	[SpellName(161570)] = 4, -- Searing Plates
+	[SpellName(157853)] = 4, -- Aftershock
 
 	--Flamebender Ka'graz
 	[SpellName(154952)] = 3, -- Fixate
@@ -123,16 +128,20 @@ T.RaidDebuffs = {
 	[SpellName(154932)] = 4, -- Molten Torrent
 	[SpellName(155277)] = 5, -- Blazing Radiance
 	[SpellName(155314)] = 1, -- Lava Slash
-	[SpellName(163284)] = 2, -- Rising Flames
-
+	[SpellName(163284)] = 2, -- Rising Flames	
+	[SpellName(155318)] = 3, -- Lava Slash
+	[SpellName(162293)] = 3, -- Empowered Armament
+	[SpellName(155493)] = 3, -- Firestorm
+	[SpellName(163633)] = 4, -- Magma Monsoon
+				
 	-- Kromog
 	[SpellName(156766)] = 1, -- Warped Armor
-	[SpellName(157059)] = 2, -- Rune of Grasping Earth
 	[SpellName(161839)] = 3, -- Rune of Crushing Earth
-	[SpellName(161923)] = 3, -- Rune of Crushing Earth
+	[SpellName(157060)] = 2, -- Rune of Grasping Earth
+	[SpellName(156844)] = 3, -- Stone Breath
 
 	-- Beastlord Darmac
-	[SpellName(154960)] = 4, -- Pinned Down
+	[SpellName(155365)] = 4, -- Pinned Down
 	[SpellName(155061)] = 1, -- Rend and Tear
 	[SpellName(162283)] = 1, -- Rend and Tear
 	[SpellName(154989)] = 3, -- Inferno Breath
@@ -143,7 +152,10 @@ T.RaidDebuffs = {
 	[SpellName(155657)] = 4, -- Flame Infusion
 	[SpellName(159044)] = 1, -- Epicenter
 	[SpellName(162277)] = 1, -- Epicenter
-
+	[SpellName(162276)] = 3, -- Unsteady Mythic
+	[SpellName(155222)] = 4, -- Tantrum
+	[SpellName(155399)] = 5, -- Conflagration
+				
 	-- Operator Thogar
 	[SpellName(155921)] = 2, -- Enkindle
 	[SpellName(165195)] = 4, -- Prototype Pulse Grenade
@@ -151,28 +163,66 @@ T.RaidDebuffs = {
 	[SpellName(159481)] = 3, -- Delayed Siege Bomb
 	[SpellName(164380)] = 2, -- Burning
 	[SpellName(164280)] = 2, -- Heat Blast
-
+	[SpellName(155701)] = 3, -- Serrated Slash
+				
 	-- Iron Maidens
-	[SpellName(156631)] = 2, -- Rapid Fire
-	[SpellName(164271)] = 3, -- Penetrating Shot
-	[SpellName(158601)] = 1, -- Dominator Blast
-	[SpellName(156214)] = 4, -- Convulsive Shadows
+	[SpellName(156629)] = 2, -- Rapid Fire
+	[SpellName(164264)] = 3, -- Penetrating Shot
+	[SpellName(158602)] = 1, -- Dominator Blast
+	[SpellName(156112)] = 4, -- Convulsive Shadows
 	[SpellName(158315)] = 2, -- Dark Hunt
 	[SpellName(159724)] = 3, -- Blood Ritual
 	[SpellName(158010)] = 2, -- Bloodsoaked Heartseeker
 	[SpellName(158692)] = 1, -- Deadly Throw
 	[SpellName(158702)] = 2, -- Fixate
 	[SpellName(158683)] = 3, -- Corrupted Blood
-
-	-- Warlord Blackhand
+	[SpellName(156601)] = 3, -- Sanguine Strikes
+	[SpellName(170395)] = 3, -- Sorka Sprey
+	[SpellName(170405)] = 3, -- Maraks Blood Calling
+	[SpellName(158686)] = 4, -- Expose Armor
+	[SpellName(159585)] = 5, -- Deploy Turret
+			
+	-- Blackhand
 	[SpellName(156096)] = 5, -- Marked for Death
+	[SpellName(156743)] = 4, -- Impaled
+	[SpellName(156047)] = 3, -- Slagged
+	[SpellName(156401)] = 3, -- Molten Slag
+	[SpellName(156404)] = 3, -- Burned
+	[SpellName(158054)] = 3, -- Shattering Smash
+	[SpellName(156888)] = 3, -- Overheated
+	[SpellName(157000)] = 5, -- Attach Slag Bombs
+	[SpellName(156999)] = 5, -- Throw Slag Bombs
    	
 -- Highmaul
+	--Trash
+	[SpellName(175601)] = 3, -- Tainted Claws
+	[SpellName(175599)] = 3, -- Devour
+	[SpellName(172069)] = 3, -- Radiating Poison
+	[SpellName(172066)] = 3, -- Radiating Poison
+	[SpellName(166779)] = 3, -- Staggering Blow
+	[SpellName(56037)] = 3, -- Rune of Destruction
+	[SpellName(175654)] = 3, -- Rune of Disintegration
+	[SpellName(166185)] = 3, -- Rending Slash
+	[SpellName(166175)] = 3, -- Earth Devastating Slam
+	[SpellName(174404)] = 3, -- Frozen Core
+	[SpellName(173763)] = 3, -- Wild Flames
+	[SpellName(174500)] = 3, -- Rending Throw
+	[SpellName(174939)] = 3, -- Time Stop
+	[SpellName(172115)] = 3, -- Earthen Thrust
+	[SpellName(166200)] = 3, -- Arcane Volatility
+	[SpellName(174473)] = 3, -- Corrupted Blood
+	
 	-- Kargath Bladefist
 	[SpellName(158986)] = 2, -- Berserker Rush
 	[SpellName(159178)] = 5, -- Open Wounds
 	[SpellName(162497)] = 3, -- On the Hunt
-	[SpellName(163130)] = 3, -- Inflamed
+	[SpellName(159113)] = 5, -- Impale
+	[SpellName(159213)] = 3, -- Monsters Brawl
+	[SpellName(159410)] = 4, -- Mauling Brew
+	[SpellName(160521)] = 2, -- Vile Breath
+	[SpellName(159386)] = 3, -- Iron Bomb
+	[SpellName(159188)] = 3, -- Grapple
+	[SpellName(159202)] = 4, -- Flame jet
 
 	-- The Butcher
 	[SpellName(156151)] = 3, -- The Tenderizer
@@ -181,8 +231,10 @@ T.RaidDebuffs = {
 	[SpellName(163046)] = 4, -- Pale Vitriol
 
 	-- Tectus
-	[SpellName(162346)] = 4, -- crystalline barrage
+	[SpellName(162346)] = 4, -- Crystalline Barrage
 	[SpellName(162370)] = 3, -- Crystalline Barrage
+	[SpellName(162892)] = 4, -- Petrification
+	[SpellName(162475)] = 5, -- Tectonic Upheaval
 
 	-- Brackenspore
 	[SpellName(163242)] = 5, -- Infesting Spores
@@ -192,13 +244,19 @@ T.RaidDebuffs = {
 	[SpellName(160179)] = 2, -- Mind Fungus
 	[SpellName(165223)] = 6, -- Burning Infusion
 	[SpellName(163666)] = 3, -- Pulsing Heat
+	[SpellName(163590)] = 5, -- Creeping Moss
+	[SpellName(159972)] = 3, -- Flesh Eater
 
 	-- Twin Ogron
 	[SpellName(155569)] = 3, -- Injured
 	[SpellName(158241)] = 4, -- Blaze
-	[SpellName(163372)] = 4, -- Arcane Volatility
+	[SpellName(163374)] = 4, -- Arcane Volatility
 	[SpellName(167200)] = 3, -- Arcane Wound
 	[SpellName(163297)] = 3, -- Arcane Twisted
+	[SpellName(158026)] = 5, -- Enfeebling Roar
+	[SpellName(159709)] = 5, -- Weakened Defenses
+	[SpellName(167179)] = 5, -- Weakened Defenses
+	[SpellName(158200)] = 4, -- Quake
 
 	-- Koragh
 	[SpellName(172813)] = 5, -- Expel Magic: Frost
@@ -211,6 +269,8 @@ T.RaidDebuffs = {
 	[SpellName(172895)] = 4, -- Expel Magic: Fel
 	[SpellName(172917)] = 4, -- Expel Magic: Fel
 	[SpellName(163472)] = 2, -- Dominating Power
+	[SpellName(161358)] = 4, -- Suppression Field
+	[SpellName(156803)] = 3, -- Nullification Barrier
 
 	-- Imperator Mar'gok
 	[SpellName(157763)] = 3,  -- Fixate  
@@ -223,6 +283,14 @@ T.RaidDebuffs = {
 	[SpellName(164176)] = 2, -- Mark of Chaos: Displacement
 	[SpellName(164178)] = 2, -- Mark of Chaos: Fortification
 	[SpellName(164191)] = 2, -- Mark of Chaos: Replication
+	[SpellName(158619)] = 3, -- Fetter
+	[SpellName(157349)] = 4, -- Force Nova
+	[SpellName(164232)] = 4, -- Force Nova: Displacement
+	[SpellName(164235)] = 4, -- Force Nova: Fortification
+	[SpellName(164240)] = 4, -- Force Nova: Replication
+	[SpellName(158553)] = 5, -- Crush Armor
+	[SpellName(165102)] = 4, -- Infinite Darkness
+	[SpellName(157801)] = 3, -- Slow
 
 -----------------------------------------------------------------
 -- Pandaria
