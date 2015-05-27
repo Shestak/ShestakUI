@@ -10,6 +10,7 @@ local LargePetCastbar = false	--true/大型施法条 false/小型施法条
 local TargetGlow = true	--boss框架中，玩家目标高亮
 local MouseGlow = true
 
+
 ----------------------------------------------------------------------------------------
 -- boss框体只显示自己debuff函数
 ----------------------------------------------------------------------------------------
@@ -294,13 +295,13 @@ local function Shared(self, unit)
 		if C.raidframe.icons_leader == true then
 			-- Leader icon
 			self.Leader = self.Health:CreateTexture(nil, "OVERLAY")
-			self.Leader:SetSize(14, 14)
-			self.Leader:SetPoint("TOPLEFT", -3, 9)
+			self.Leader:SetSize(12, 12)
+			self.Leader:SetPoint("TOPLEFT", 10, 8)	--修改
 
 			-- Assistant icon
 			self.Assistant = self.Health:CreateTexture(nil, "OVERLAY")
 			self.Assistant:SetSize(12, 12)
-			self.Assistant:SetPoint("TOPLEFT", -3, 8)
+			self.Assistant:SetPoint("TOPLEFT", 10, 8)	--修改
 
 			-- Master looter icon
 			self.MasterLooter = self.Health:CreateTexture(nil, "OVERLAY")
@@ -312,7 +313,7 @@ local function Shared(self, unit)
 		if C.raidframe.icons_role == true then
 			self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
 			self.LFDRole:SetSize(12, 12)
-			self.LFDRole:SetPoint("TOPLEFT", 10, 8)
+			self.LFDRole:SetPoint("TOPLEFT", -3, 8)	--修改
 			self.LFDRole:SetTexture("Interface\\AddOns\\ShestakUI_Media\\Media\\Icon\\lfd_role")	--定义icon材质
 		end
 
@@ -476,7 +477,52 @@ local function Shared(self, unit)
 			self.WarlockSpecBars.text:SetPoint("CENTER", self.WarlockSpecBars, "CENTER", 0, 0)
 			self:Tag(self.WarlockSpecBars.text, "[DemonicFury]")
 		end
+		
+		-- Rogue/Druid Combo bar
+		if C.unitframe_class_bar.combo == true and T.class == "ROGUE" or T.class == "DRUID" then
+			self.CPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)
+			self.CPoints:CreateBackdrop("Default")
+			self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			self.CPoints:SetSize(217, 7)
 
+			for i = 1, 5 do
+				self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar"..i, self.CPoints)
+				self.CPoints[i]:SetSize(213 / 5, 7)
+				if i == 1 then
+					self.CPoints[i]:SetPoint("LEFT", self.CPoints)
+				else
+					self.CPoints[i]:SetPoint("LEFT", self.CPoints[i-1], "RIGHT", 1, 0)
+				end
+				self.CPoints[i]:SetStatusBarTexture(C.media.texture)
+			end
+
+			self.CPoints[1]:SetStatusBarColor(0.9, 0.1, 0.1)
+			self.CPoints[2]:SetStatusBarColor(0.9, 0.1, 0.1)
+			self.CPoints[3]:SetStatusBarColor(0.9, 0.9, 0.1)
+			self.CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
+			self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
+
+			self.CPoints.Override = T.UpdateComboPoint
+			
+			if T.class == "ROGUE" then
+				self.Anticipation = CreateFrame("Frame", self:GetName().."_Anticipation", self)
+				self.Anticipation:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				self.Anticipation:SetSize(217, 3)
+				
+				for i = 1, 5 do
+					self.Anticipation[i] = CreateFrame("StatusBar", self:GetName().."_Anticipation"..i, self.Anticipation)
+					self.Anticipation[i]:SetSize(213 / 5, 3)
+					if i == 1 then
+						self.Anticipation[i]:SetPoint("LEFT", self.Anticipation)
+					else
+						self.Anticipation[i]:SetPoint("LEFT", self.Anticipation[i-1], "RIGHT", 1, 0)
+					end
+					self.Anticipation[i]:SetStatusBarTexture(C.media.texture)
+					self.Anticipation[i]:SetStatusBarColor(0, 0, 0, 1)
+				end
+			end
+		end
+		
 		-- Totem bar
 		if C.unitframe_class_bar.totem == true and T.class == "SHAMAN" then
 			self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
@@ -840,6 +886,7 @@ local function Shared(self, unit)
 			or (T.class == "DRUID" and C.unitframe_class_bar.eclipse == true)
 			or (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
 			or (T.class == "WARLOCK" and C.unitframe_class_bar.shard == true)
+			or (T.class == "ROGUE" and C.unitframe_class_bar.combo == true)
 			or (T.class == "MONK" and C.unitframe_class_bar.chi == true) then
 				self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
 			else
@@ -865,33 +912,6 @@ local function Shared(self, unit)
 			self.Auras.gap = true
 			self.Auras.PostCreateIcon = T.PostCreateAura
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
-
-			-- Rogue/Druid Combo bar
-			if C.unitframe_class_bar.combo == true then
-				self.CPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)
-				self.CPoints:CreateBackdrop("Default")
-				self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.CPoints:SetSize(217, 7)
-
-				for i = 1, 5 do
-					self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar"..i, self.CPoints)
-					self.CPoints[i]:SetSize(213 / 5, 7)
-					if i == 1 then
-						self.CPoints[i]:SetPoint("LEFT", self.CPoints)
-					else
-						self.CPoints[i]:SetPoint("LEFT", self.CPoints[i-1], "RIGHT", 1, 0)
-					end
-					self.CPoints[i]:SetStatusBarTexture(C.media.texture)
-				end
-
-				self.CPoints[1]:SetStatusBarColor(0.9, 0.1, 0.1)
-				self.CPoints[2]:SetStatusBarColor(0.9, 0.1, 0.1)
-				self.CPoints[3]:SetStatusBarColor(0.9, 0.9, 0.1)
-				self.CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
-				self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
-
-				self.CPoints.Override = T.UpdateComboPoint
-			end
 
 			-- Priest Range bar
 			if C.unitframe_class_bar.range == true and T.class == "PRIEST" then
@@ -1320,7 +1340,7 @@ local function Shared(self, unit)
 		self:RegisterEvent("UNIT_THREAT_LIST_UPDATE", T.UpdateThreat)
 		self:RegisterEvent("UNIT_THREAT_SITUATION_UPDATE", T.UpdateThreat)
 	end
-	
+
 	------------------------------------------------------
 	--UNIT为PLAYER的目标时边框着色
 	if TargetGlow == true then
@@ -1357,7 +1377,7 @@ local function Shared(self, unit)
 		end)
 	end
 	------------------------------------------------------
-
+	
 	-- Raid marks
 	if C.raidframe.icons_raid_mark == true then
 		self.RaidIcon = self:CreateTexture(nil, "OVERLAY")
