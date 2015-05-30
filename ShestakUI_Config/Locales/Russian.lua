@@ -1,4 +1,4 @@
-﻿if GetLocale() ~= "ruRU" then return end
+if GetLocale() ~= "ruRU" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for ruRU client
@@ -356,6 +356,7 @@ L_GUI_UF_PLUGINS_DIMINISHING = "Иконка диминишинга на рам�
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Классовые панели"
 L_GUI_UF_PLUGINS_COMBO_BAR = "Индикатор серии приемов"
+L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS = "Always show Combo bar for Druid"
 L_GUI_UF_PLUGINS_SHADOW_BAR = "Индикатор темных сфер"
 L_GUI_UF_PLUGINS_CHI_BAR = "Индикатор ци"
 L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Индикатор отмщения (для танков)"
