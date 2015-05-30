@@ -985,7 +985,7 @@ T.UpdateEclipse = function(self, login)
 		eb:SetScript("OnUpdate", nil)
 	end
 
-	if eb:IsShown() then
+	if eb:IsShown() or (T.class == "DRUID" and C.unitframe_class_bar.combo == true) then
 		txt:Show()
 		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
 	else
@@ -1013,6 +1013,22 @@ T.UpdateComboPoint = function(self, event, unit)
 			cpoints[i]:SetAlpha(0.2)
 		end
 	end
+	if T.class == "DRUID" then
+        local CheckForm = CreateFrame("Frame", self:GetName().."_CheckForm", cpoints)
+        CheckForm:RegisterEvent("UNIT_AURA")
+        CheckForm:RegisterEvent("PLAYER_LOGIN")
+        CheckForm:SetScript("OnEvent", function(self, event)
+            if (event == "PLAYER_LOGIN" or event == "UNIT_AURA") then
+                local unit = self.unit or "player"
+                local name = UnitBuff(unit, GetSpellInfo(768))
+                if name then
+                    cpoints:Show()
+                else
+                    cpoints:Hide()
+                end
+            end
+        end)
+    end
 end
 
 local ticks = {}
