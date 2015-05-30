@@ -1,4 +1,4 @@
-﻿if GetLocale() ~= "deDE" then return end
+if GetLocale() ~= "deDE" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for deDE client
@@ -356,6 +356,7 @@ L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns Symbole auf Arena Fenstern"
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Unit Frames Klassenleisten"
 L_GUI_UF_PLUGINS_COMBO_BAR = "Symbole für Schurke/Druide Kombopunkte"
+L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS = "Always show Combo bar for Druid"
 L_GUI_UF_PLUGINS_SHADOW_BAR = "Aktiviere Schattenkugel Leiste"
 L_GUI_UF_PLUGINS_CHI_BAR = "Ativiere Chi Leiste"
 L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Zeige Rachebar an"
