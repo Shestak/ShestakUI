@@ -3021,8 +3021,6 @@ C["filger_spells"] = {
 			{spellID = 31821, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Rallying Cry
 			{spellID = 97463, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Amplify Magic
-			{spellID = 159916, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
 			{spellID = 57933, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar
@@ -3033,8 +3031,6 @@ C["filger_spells"] = {
 			{spellID = 8178, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Lightwell Renew
 			{spellID = 7001, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Aspect of the Fox
-			{spellID = 172106, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Slow Fall
 			{spellID = 130, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Levitate
