@@ -1,4 +1,4 @@
-﻿if GetLocale() ~= "zhTW" then return end
+if GetLocale() ~= "zhTW" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for zhTW client
@@ -356,6 +356,7 @@ L_GUI_UF_PLUGINS_DIMINISHING = "競技場框架顯示技能遞減"
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "職業欄"
 L_GUI_UF_PLUGINS_COMBO_BAR = "連擊點"
+L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS = "Always show Combo bar for Druid"
 L_GUI_UF_PLUGINS_SHADOW_BAR = "暗影寶珠"
 L_GUI_UF_PLUGINS_CHI_BAR = "真氣"
 L_GUI_UF_PLUGINS_VENGEANCE_BAR = "復仇"

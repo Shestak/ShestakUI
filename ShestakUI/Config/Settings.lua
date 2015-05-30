@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	ShestakUI main configuration file
@@ -460,6 +460,7 @@ C["unitframe"] = {
 ----------------------------------------------------------------------------------------
 C["unitframe_class_bar"] = {
 	["combo"] = true,							-- Rogue/Druid Combo bar
+	["comboalways"] = false,					-- Always show Combo bar for Druid
 	["shadow"] = true,							-- Shadow Orbs bar
 	["chi"] = true,								-- Chi bar
 	["vengeance"] = true,						-- Vengeance bar (for Tanks)

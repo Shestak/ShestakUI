@@ -1,4 +1,4 @@
-﻿----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 --	Localization for enUS and enGB client
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "Total Reset UI"
@@ -353,6 +353,7 @@ L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames"
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Unit Frames Class bars"
 L_GUI_UF_PLUGINS_COMBO_BAR = "Enable Rogue/Druid Combo bar"
+L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS = "Always show Combo bar for Druid"
 L_GUI_UF_PLUGINS_SHADOW_BAR = "Enable Shadow Orbs bar"
 L_GUI_UF_PLUGINS_CHI_BAR = "Enable Chi bar"
 L_GUI_UF_PLUGINS_VENGEANCE_BAR = "Enable Vengeance bar (for Tanks)"

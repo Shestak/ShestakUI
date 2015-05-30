@@ -356,6 +356,7 @@ L_GUI_UF_PLUGINS_DIMINISHING = "竞技场框架显示技能递减"
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "职业栏"
 L_GUI_UF_PLUGINS_COMBO_BAR = "连击点"
+L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS = "Always show Combo bar for Druid"
 L_GUI_UF_PLUGINS_SHADOW_BAR = "暗影宝珠"
 L_GUI_UF_PLUGINS_CHI_BAR = "真气"
 L_GUI_UF_PLUGINS_VENGEANCE_BAR = "复仇"
