@@ -150,6 +150,8 @@ L_PANELS_AFK_LCLICK = "Left-Click to go back."
 
 -- Cooldowns
 L_COOLDOWNS = "CD: "
+L_COOLDOWNS_COMBATRESS = "Combat resurrect: "
+L_COOLDOWNS_NEXTTIME = "Next time: "
 
 -- Autoinvite
 L_INVITE_ENABLE = "Autoinvite ON: "
