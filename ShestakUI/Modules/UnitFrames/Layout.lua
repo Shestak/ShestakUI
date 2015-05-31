@@ -1677,18 +1677,3 @@ VerticalTargetLine:SetScript("OnEvent", function(self)
 		self:SetBackdropBorderColor(unpack(C.media.border_color))
 	end
 end)
-
-
-
-local currentSpec = GetSpecialization()
-local form = GetShapeshiftFormID()
-print("form:",form)
-print("spec:",currentSpec)
-if currentSpec then
-   local _, currentSpecName = GetSpecializationInfo(currentSpec)
-   print("Your current spec:", currentSpecName)
-else
-   print("You do not currently have a spec.")
-end
-
-print("point:",MAX_COMBO_POINTS)
