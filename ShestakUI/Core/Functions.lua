@@ -1417,7 +1417,7 @@ T.UpdateTargetGlow = function(self, event, unit)
 		else
 			self.TargetGlow:SetBackdropBorderColor(unpack(C.media.border_color))
 		end]]--
-		if (unit and unit:find("boss%d")) or (unit and unit:find("arena%d")) or (unit and unit:find("party%d")) or (unit and unit:find("raid%d")) then
+		if (unit and unit:find("boss%d")) or (unit and unit:find("arena%d")) then	--or (unit and unit:find("party%d")) or (unit and unit:find("raid%d")) then
 			self.TargetGlow:Show()
 			self.TargetGlow:SetBackdropBorderColor(1, 1, 1)
 		end
@@ -1426,6 +1426,45 @@ T.UpdateTargetGlow = function(self, event, unit)
 		--print("NoTarget!TargetGlow > Hide")
 		
 	end
+end
+------------------------------------------------------
+-- boss框体只显示自己debuff函数
+T.OnlyMyDebuffsToBoss = function(icons, unit, icon, index, offset, filter, isDebuff, duration, timeLeft) 
+	local _, _, _, _, dtype, duration, expirationTime, _, isStealable = UnitAura(unit, index, icon.filter) 
+
+	local playerUnits = { 
+		player = true, 
+		pet = true, 
+		vehicle = true, 
+	} 
+
+	if icon.debuff then 
+		if not UnitIsFriend("player", unit) and not playerUnits[icon.owner] then 
+			icon:Hide() 
+		elseif C.aura.debuff_color_type == true then 
+            local color = DebuffTypeColor[dtype] or DebuffTypeColor.none 
+            icon:SetBackdropBorderColor(color.r, color.g, color.b) 
+            icon.icon:SetDesaturated(false) 
+		else 
+			icon:SetBackdropBorderColor(1, 0, 0) 
+		end 
+	elseif (isStealable or ((T.class == "MAGE" or T.class == "PRIEST" or T.class == "SHAMAN" or T.class == "HUNTER") and dtype == "Magic")) and not UnitIsFriend("player", unit) then 
+		icon:SetBackdropBorderColor(1, 0.85, 0) 
+	else 
+		icon:SetBackdropBorderColor(unpack(C.media.border_color)) 
+	end 
+
+	if duration and duration > 0 and C.aura.show_timer == true then 
+		icon.remaining:Show() 
+		icon.timeLeft = expirationTime 
+		icon:SetScript("OnUpdate", CreateAuraTimer) 
+	else 
+		icon.remaining:Hide() 
+		icon.timeLeft = math.huge 
+		icon:SetScript("OnUpdate", nil) 
+	end 
+
+	icon.first = true 
 end
 ------------------------------------------------------
 
