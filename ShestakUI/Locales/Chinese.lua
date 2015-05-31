@@ -155,6 +155,8 @@ L_PANELS_AFK_LCLICK = "左键点击返回."
 
 -- Cooldowns
 L_COOLDOWNS = "CD: "
+L_COOLDOWNS_COMBATRESS = "战斗复活剩余: "
+L_COOLDOWNS_NEXTTIME = "下次: "
 
 -- Autoinvite
 L_INVITE_ENABLE = "自动邀请功能启用: "
