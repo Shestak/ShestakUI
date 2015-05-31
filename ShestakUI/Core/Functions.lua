@@ -987,10 +987,10 @@ T.UpdateEclipse = function(self, login)
 
 	if eb:IsShown() then
 		txt:Show()
-		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
+		--if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
 	else
 		txt:Hide()
-		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
+		--if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
 	end
 end
 
@@ -1002,7 +1002,7 @@ end
 
 T.UpdateComboPoint = function(self, event, unit)
 	if unit == "pet" then return end
-
+	
 	local cpoints = self.CPoints
 	local cp = (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and UnitPower("vehicle", 4) or UnitPower("player", 4)
 
@@ -1012,6 +1012,27 @@ T.UpdateComboPoint = function(self, event, unit)
 		else
 			cpoints[i]:SetAlpha(0.2)
 		end
+	end
+
+	if T.class == "DRUID" then
+		local CatForm = function(self, event, unit)
+			local unit = self.unit or "player"
+			local name = UnitBuff(unit, GetSpellInfo(768))
+			if name then
+				cpoints:Show()
+			else
+				cpoints:Hide()
+			end
+		end
+		
+		local CheckForm = CreateFrame("Frame", self:GetName().."_CheckForm", cpoints)
+		CheckForm:RegisterEvent("UNIT_AURA")
+		CheckForm:RegisterEvent("PLAYER_LOGIN")
+		CheckForm:RegisterEvent("PLAYER_ENTERING_WORLD")
+		CheckForm:SetScript("OnEvent", CatForm)
+		CheckForm:SetScript("OnUpdate", CatForm)
+		CheckForm:SetScript("OnShow", CatForm)
+		CheckForm:SetScript("OnHide", CatForm)
 	end
 end
 
