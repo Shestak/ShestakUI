@@ -36,7 +36,7 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
 	end
 end)
 
-if Viks.skins.blizzard_frames ~= true then return end
+if C.skins.blizzard_frames ~= true then return end
 
 local function LoadSkin()
 	-- Building frame
