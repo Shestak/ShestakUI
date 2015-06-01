@@ -50,18 +50,40 @@ local CreateFS = function(frame, fsize, fstyle)
 end
 
 local UpdatePositions = function()
-	for i = 1, #bars do
-		bars[i]:ClearAllPoints()
-		if i == 1 then
-			bars[i]:SetPoint("BOTTOMRIGHT", RaidCDAnchor, "BOTTOMRIGHT", -2, 2)
-		else
-			if C.raidcooldown.upwards == true then
-				bars[i]:SetPoint("BOTTOMLEFT", bars[i-1], "TOPLEFT", 0, 13)
+	if charges and Ressesbars[1] then
+		Ressesbars[1]:SetPoint("BOTTOMRIGHT", RaidCDAnchor, "BOTTOMRIGHT", -2, 2)
+		Ressesbars[1].id = 1
+		for i = 1, #bars do
+			bars[i]:ClearAllPoints()
+			if i == 1 then
+				if C.raidcooldown.upwards == true then
+					bars[i]:SetPoint("BOTTOMLEFT", Ressesbars[1], "TOPLEFT", 0, 13)
+				else
+					bars[i]:SetPoint("TOPLEFT", Ressesbars[1], "BOTTOMLEFT", 0, -13)
+				end
 			else
-				bars[i]:SetPoint("TOPLEFT", bars[i-1], "BOTTOMLEFT", 0, -13)
+				if C.raidcooldown.upwards == true then
+					bars[i]:SetPoint("BOTTOMLEFT", bars[i-1], "TOPLEFT", 0, 13)
+				else
+					bars[i]:SetPoint("TOPLEFT", bars[i-1], "BOTTOMLEFT", 0, -13)
+				end
 			end
+			bars[i].id = i
 		end
-		bars[i].id = i
+	else
+		for i = 1, #bars do
+			bars[i]:ClearAllPoints()
+			if i == 1 then
+				bars[i]:SetPoint("BOTTOMLEFT", RaidCDAnchor, "TOPLEFT", -2, 2)
+			else
+				if C.raidcooldown.upwards == true then
+					bars[i]:SetPoint("BOTTOMLEFT", bars[i-1], "TOPLEFT", 0, 13)
+				else
+					bars[i]:SetPoint("TOPLEFT", bars[i-1], "BOTTOMLEFT", 0, -13)
+				end
+			end
+			bars[i].id = i
+		end	
 	end
 end
 
@@ -268,7 +290,7 @@ local OnEvent = function(self, event, ...)
 				end
 				inBossCombat = true
 			end
-			StartTimer("战斗复活", 20484)
+			StartTimer("CombatRess", 20484)
 		elseif not charges and inBossCombat then
 			inBossCombat = nil
 			currentNumResses = 0
