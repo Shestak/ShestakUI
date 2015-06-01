@@ -404,6 +404,14 @@ function T.SkinCloseButton(f, point, text, pixel)
 	f:HookScript("OnLeave", T.SetOriginalBackdrop)
 end
 
+function T:HandleIcon(icon, parent)
+	parent = parent or icon:GetParent();
+
+	icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	parent:CreateBackdrop('Default')
+	icon:SetParent(parent.backdrop)
+end
+
 function T.SkinSlider(f)
 	f:SetBackdrop(nil)
 
