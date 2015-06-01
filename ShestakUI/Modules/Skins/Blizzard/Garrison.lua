@@ -6,7 +6,7 @@ local T, C, L, _ = unpack(select(2, ...))
 local LoadTootlipSkin = CreateFrame("Frame")
 LoadTootlipSkin:RegisterEvent("ADDON_LOADED")
 LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
-	if IsAddOnLoaded("Skinner") or IsAddOnLoaded("Aurora") or not C.tooltip.enable then
+	if IsAddOnLoaded("Skinner") or IsAddOnLoaded("Aurora") or not Viks.tooltip.enable then
 		self:UnregisterEvent("ADDON_LOADED")
 		return
 	end
@@ -36,7 +36,7 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
 	end
 end)
 
-if C.skins.blizzard_frames ~= true then return end
+if Viks.skins.blizzard_frames ~= true then return end
 
 local function LoadSkin()
 	-- Building frame
@@ -47,24 +47,51 @@ local function LoadSkin()
 	GarrisonBuildingFrame.InfoBox.UpgradeButton:SkinButton()
 	GarrisonBuildingFrame.BuildingLevelTooltip:StripTextures()
 	GarrisonBuildingFrame.BuildingLevelTooltip:SetTemplate('Transparent')
-
 	GarrisonLandingPage:StripTextures()
 	GarrisonLandingPage:SetTemplate("Transparent")
 	T.SkinCloseButton(GarrisonLandingPage.CloseButton)
 	GarrisonLandingPageTab1:SetPoint("TOPLEFT", GarrisonLandingPage, "BOTTOMLEFT", 70, 2)
 	T.SkinTab(GarrisonLandingPageTab1)
 	T.SkinTab(GarrisonLandingPageTab2)
-
+	T.SkinTab(GarrisonLandingPageTab3)
 	GarrisonLandingPage.FollowerList:StripTextures()
 	GarrisonLandingPage.FollowerList:SetTemplate("Transparent")
 	GarrisonLandingPage.FollowerList.SearchBox:SetPoint("TOPLEFT", 2, 25)
 	T.SkinEditBox(GarrisonLandingPage.FollowerList.SearchBox)
-
 	GarrisonMissionFrame:StripTextures()
 	GarrisonMissionFrame.TitleText:Show()
 	GarrisonMissionFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(GarrisonMissionFrame.CloseButton)
 	T.SkinCloseButton(GarrisonMissionFrame.MissionTab.MissionPage.CloseButton)
+	GarrisonShipyardFrame:StripTextures(true)
+	GarrisonShipyardFrame.BorderFrame:StripTextures(true)
+	GarrisonShipyardFrame:CreateBackdrop("Transparent")
+	--GarrisonLandingPage.ShipFollowerList:StripTextures()
+	GarrisonLandingPage.ShipFollowerList:SetTemplate("Transparent")
+	T.SkinEditBox(GarrisonLandingPage.ShipFollowerList.SearchBox)
+	T.SkinCloseButton(GarrisonShipyardFrame.BorderFrame.CloseButton2)
+	T.SkinTab(GarrisonShipyardFrameTab1)
+	T.SkinTab(GarrisonShipyardFrameTab2)
+	
+	-- ShipYard: Naval Map
+	local MissionTab = GarrisonShipyardFrame.MissionTab
+	local MissionList = MissionTab.MissionList
+	MissionList:CreateBackdrop("Transparent")
+	
+	-- ShipYard: Mission
+	local MissionPage = MissionTab.MissionPage
+	T.SkinCloseButton(MissionPage.CloseButton)
+	MissionPage.CloseButton:SetFrameLevel(MissionPage.CloseButton:GetFrameLevel() + 2)
+	MissionList.CompleteDialog.BorderFrame.ViewButton:SkinButton()
+	GarrisonShipyardFrame.MissionComplete.NextMissionButton:SkinButton()
+	MissionList.CompleteDialog:SetAllPoints(MissionList.MapTexture)
+	GarrisonShipyardFrame.MissionCompleteBackground:SetAllPoints(MissionList.MapTexture)
+	MissionPage.StartMissionButton:SkinButton()
+	MissionPage.StartMissionButton.Flash:Hide()
+	MissionPage.StartMissionButton.Flash.Show = T.dummy
+	MissionPage.StartMissionButton.FlashAnim:Stop()
+	MissionPage.StartMissionButton.FlashAnim.Play = T.dummy
+	GarrisonMissionFrameHelpBoxButton:SkinButton()
 
 	-- Handle MasterPlan AddOn
 	do
@@ -93,7 +120,7 @@ local function LoadSkin()
 	StartButton:SkinButton()
 	StartButton.overlay:SetVertexColor(0.3, 0.3, 0.3, 0.3)
 	StartButton:SetScript("OnLeave", function(self)
-		StartButton:SetBackdropBorderColor(unpack(C.media.border_color))
+		StartButton:SetBackdropBorderColor(unpack(Viks.media.bordercolor))
 		StartButton.overlay:SetVertexColor(0.3, 0.3, 0.3, 0.3)
 	end)
 
@@ -141,17 +168,12 @@ local function LoadSkin()
 		end
 		frame.Icon:SetDrawLayer("BORDER", 0)
 	end)
-
-	hooksecurefunc("GarrisonMissionPage_UpdateStartButton", function(missionPage)
-		missionPage.StartMissionButton.Flash:Hide()
-		missionPage.StartMissionButton.FlashAnim:Stop()
-	end)
-
+	
 	-- Capacitive display frame
 	GarrisonCapacitiveDisplayFrame:StripTextures(true)
 	GarrisonCapacitiveDisplayFrame.Inset:StripTextures()
 	GarrisonCapacitiveDisplayFrame:SetTemplate("Transparent")
-
+	
 	T.SkinNextPrevButton(GarrisonCapacitiveDisplayFrame.DecrementButton)
 	T.SkinNextPrevButton(GarrisonCapacitiveDisplayFrame.IncrementButton)
 	GarrisonCapacitiveDisplayFrame.Count:StripTextures()
