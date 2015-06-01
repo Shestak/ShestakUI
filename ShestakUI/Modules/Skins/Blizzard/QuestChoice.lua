@@ -13,11 +13,11 @@ local function LoadSkin()
         local icon = rewards.Item.Icon
         local currencies = rewards.Currencies
 
-		T:HandleIcon(icon)
+		T.HandleIcon(icon)
 
         for j = 1, 3 do
             local cu = currencies["Currency"..j]
-			T:HandleIcon(cu.Icon)
+			T.HandleIcon(cu.Icon)
         end
     end
 
