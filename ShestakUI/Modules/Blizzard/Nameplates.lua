@@ -374,6 +374,7 @@ local function SkinObjects(frame, nameFrame)
 	hp.name:SetPoint("BOTTOMRIGHT", hp, "TOPRIGHT", 3, 4)
 	hp.name:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * T.noscalemult, C.font.nameplates_font_style)
 	hp.name:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
+	hp.name:SetJustifyH("LEFT")	--增加对齐方式
 	hp.oldname = oldname
 
 	hp.bg = hp:CreateTexture(nil, "BORDER")
@@ -381,17 +382,36 @@ local function SkinObjects(frame, nameFrame)
 	hp.bg:SetTexture(1, 1, 1, 0.2)
 
 --	--增加目标提示★
-	hp.targetIndicator = CreateFrame("Frame", self:GetName().."_targetIndicator", WorldFrame)
-	hp.targetIndicator:SetFrameLevel(0)
-	hp.targetIndicator:SetFrameStrata("BACKGROUND")
-	hp.targetIndicator:SetPoint("TOPLEFT", hp, "TOPLEFT", -T.mult*9, T.mult*9)
-	hp.targetIndicator:SetPoint("BOTTOMRIGHT", hp, "BOTTOMRIGHT", T.mult*9, -T.mult*9)
-	hp.targetIndicator:SetBackdrop( {
-		edgeFile = "Interface\\AddOns\\ShestakUI_Media\\Media\\Borders\\Shadow.tga", edgeSize = T.mult*8,
- 		insets = {left = T.mult, right = T.mult, top = T.mult, bottom = T.mult},
- 	})
-	--hp.targetIndicator:SetBackdropBorderColor(1, 1, 1, 1)
-	hp.targetIndicator:Hide()
+	hp.TargetIndicator = CreateFrame("Frame", self:GetName().."_TargetIndicator", hp)
+	hp.TargetIndicator.bordertop = hp.TargetIndicator:CreateTexture(nil, "BORDER")
+	hp.TargetIndicator.bordertop:SetPoint("TOPLEFT", hp, "TOPLEFT", -T.noscalemult * 4, T.noscalemult * 4)
+	hp.TargetIndicator.bordertop:SetPoint("TOPRIGHT", hp, "TOPRIGHT", T.noscalemult * 4, T.noscalemult * 4)
+	hp.TargetIndicator.bordertop:SetHeight(T.noscalemult*1)
+	hp.TargetIndicator.bordertop:SetTexture(1, 1, 1)
+	hp.TargetIndicator.bordertop:SetDrawLayer("BORDER", -7)
+
+	hp.TargetIndicator.borderbottom = hp.TargetIndicator:CreateTexture(nil, "BORDER")
+	hp.TargetIndicator.borderbottom:SetPoint("BOTTOMLEFT", hp, "BOTTOMLEFT", -T.noscalemult * 4, -T.noscalemult * 4)
+	hp.TargetIndicator.borderbottom:SetPoint("BOTTOMRIGHT", hp, "BOTTOMRIGHT", T.noscalemult * 4, -T.noscalemult * 4)
+	hp.TargetIndicator.borderbottom:SetHeight(T.noscalemult*1)
+	hp.TargetIndicator.borderbottom:SetTexture(1, 1, 1)
+	hp.TargetIndicator.borderbottom:SetDrawLayer("BORDER", -7)
+
+	hp.TargetIndicator.borderleft = hp.TargetIndicator:CreateTexture(nil, "BORDER")
+	hp.TargetIndicator.borderleft:SetPoint("TOPLEFT", hp, "TOPLEFT", -T.noscalemult * 4, T.noscalemult * 4)
+	hp.TargetIndicator.borderleft:SetPoint("BOTTOMLEFT", hp, "BOTTOMLEFT", T.noscalemult * 4, -T.noscalemult * 4)
+	hp.TargetIndicator.borderleft:SetWidth(T.noscalemult*1)
+	hp.TargetIndicator.borderleft:SetTexture(1, 1, 1)
+	hp.TargetIndicator.borderleft:SetDrawLayer("BORDER", -7)
+
+	hp.TargetIndicator.borderright = hp.TargetIndicator:CreateTexture(nil, "BORDER")
+	hp.TargetIndicator.borderright:SetPoint("TOPRIGHT", hp, "TOPRIGHT", T.noscalemult * 4, T.noscalemult * 4)
+	hp.TargetIndicator.borderright:SetPoint("BOTTOMRIGHT", hp, "BOTTOMRIGHT", -T.noscalemult * 4, -T.noscalemult * 4)
+	hp.TargetIndicator.borderright:SetWidth(T.noscalemult*1)
+	hp.TargetIndicator.borderright:SetTexture(1, 1, 1)
+	hp.TargetIndicator.borderright:SetDrawLayer("BORDER", -7)
+
+	hp.TargetIndicator:Hide()
 --	--
 
 	hp:HookScript("OnShow", UpdateObjects)
@@ -482,8 +502,9 @@ local function SkinObjects(frame, nameFrame)
 	-- Raid icon
 	if not frame.raidicon then
 		raidicon:ClearAllPoints()
-		raidicon:SetPoint("BOTTOM", hp, "TOP", 0, C.nameplate.track_auras == true and 38 or 16)
+		raidicon:SetPoint("BOTTOMRIGHT", hp, "TOPRIGHT")	--raidicon:SetPoint("BOTTOM", hp, "TOP", 0, C.nameplate.track_auras == true and 38 or 16)
 		raidicon:SetSize((C.nameplate.height * 2) + 8, (C.nameplate.height * 2) + 8)
+		raidicon:SetTexture("Interface\\AddOns\\ShestakUI_Media\\Media\\Icon\\raidicons")
 		frame.raidicon = raidicon
 	end
 
