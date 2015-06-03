@@ -51,21 +51,21 @@ end
 
 local UpdatePositions = function()
 	if charges and Ressesbars[1] then
-		Ressesbars[1]:SetPoint("BOTTOMRIGHT", RaidCDAnchor, "BOTTOMRIGHT", -2, 2)
+		Ressesbars[1]:SetPoint("TOPRIGHT", RaidCDAnchor, "TOPRIGHT", 0, 0)
 		Ressesbars[1].id = 1
 		for i = 1, #bars do
 			bars[i]:ClearAllPoints()
 			if i == 1 then
 				if C.raidcooldown.upwards == true then
-					bars[i]:SetPoint("BOTTOMLEFT", Ressesbars[1], "TOPLEFT", 0, 13)
+					bars[i]:SetPoint("BOTTOMRIGHT", Ressesbars[1], "TOPRIGHT", 0, 13)
 				else
-					bars[i]:SetPoint("TOPLEFT", Ressesbars[1], "BOTTOMLEFT", 0, -13)
+					bars[i]:SetPoint("TOPRIGHT", Ressesbars[1], "BOTTOMRIGHT", 0, -13)
 				end
 			else
 				if C.raidcooldown.upwards == true then
-					bars[i]:SetPoint("BOTTOMLEFT", bars[i-1], "TOPLEFT", 0, 13)
+					bars[i]:SetPoint("BOTTOMRIGHT", bars[i-1], "TOPRIGHT", 0, 13)
 				else
-					bars[i]:SetPoint("TOPLEFT", bars[i-1], "BOTTOMLEFT", 0, -13)
+					bars[i]:SetPoint("TOPRIGHT", bars[i-1], "BOTTOMRIGHT", 0, -13)
 				end
 			end
 			bars[i].id = i
@@ -74,12 +74,12 @@ local UpdatePositions = function()
 		for i = 1, #bars do
 			bars[i]:ClearAllPoints()
 			if i == 1 then
-				bars[i]:SetPoint("BOTTOMLEFT", RaidCDAnchor, "TOPLEFT", -2, 2)
+				bars[i]:SetPoint("TOPRIGHT", RaidCDAnchor, "TOPRIGHT", 0, 0)
 			else
 				if C.raidcooldown.upwards == true then
-					bars[i]:SetPoint("BOTTOMLEFT", bars[i-1], "TOPLEFT", 0, 13)
+					bars[i]:SetPoint("BOTTOMRIGHT", bars[i-1], "TOPRIGHT", 0, 13)
 				else
-					bars[i]:SetPoint("TOPLEFT", bars[i-1], "BOTTOMLEFT", 0, -13)
+					bars[i]:SetPoint("TOPRIGHT", bars[i-1], "BOTTOMRIGHT", 0, -13)
 				end
 			end
 			bars[i].id = i
