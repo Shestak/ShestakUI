@@ -92,7 +92,9 @@ local function LoadSkin()
 	MissionPage.StartMissionButton.FlashAnim:Stop()
 	MissionPage.StartMissionButton.FlashAnim.Play = T.dummy
 	GarrisonMissionFrameHelpBoxButton:SkinButton()
-
+	GarrisonShipyardFrame.MissionTab.MissionList.CompleteDialog.BorderFrame:StripTextures()
+	GarrisonShipyardFrame.MissionTab.MissionList.CompleteDialog.BorderFrame:SetTemplate("Transparent")
+	
 	-- Handle MasterPlan AddOn
 	do
 		local function skinMasterPlan()
