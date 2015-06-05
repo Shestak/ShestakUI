@@ -1,4 +1,4 @@
-﻿## Interface: 60100
+﻿## Interface: 60200
 ## Title: ShestakUI
 ## Notes: A total UI overhaul for World of Warcraft
 ## Author: Shestak
