@@ -92,9 +92,7 @@ local function LoadSkin()
 	MissionPage.StartMissionButton.FlashAnim:Stop()
 	MissionPage.StartMissionButton.FlashAnim.Play = T.dummy
 	GarrisonMissionFrameHelpBoxButton:SkinButton()
-	GarrisonShipyardFrame.MissionTab.MissionList.CompleteDialog.BorderFrame:StripTextures()
-	GarrisonShipyardFrame.MissionTab.MissionList.CompleteDialog.BorderFrame:SetTemplate("Transparent")
-	
+
 	-- Handle MasterPlan AddOn
 	do
 		local function skinMasterPlan()
@@ -134,7 +132,10 @@ local function LoadSkin()
 	GarrisonMissionFrameFollowers:SetTemplate("Transparent")
 	T.SkinEditBox(GarrisonMissionFrameFollowers.SearchBox)
 	T.SkinScrollBar(GarrisonMissionFrameFollowersListScrollFrameScrollBar)
-
+	T.SkinScrollBar(GarrisonLandingPageReportListListScrollFrameScrollBar)
+	T.SkinScrollBar(GarrisonLandingPageListScrollFrameScrollBar)
+	T.SkinScrollBar(GarrisonLandingPage.FollowerListscrollFrame.scrollBar)
+	
 	-- Mission list
 	local MissionTab = GarrisonMissionFrame.MissionTab
 	local MissionList = MissionTab.MissionList
