@@ -106,7 +106,7 @@ local function LoadSkin()
 	T.SkinDropDownBox(CalendarCreateEventHourDropDown, 68)
 	T.SkinDropDownBox(CalendarCreateEventMinuteDropDown, 68)
 	T.SkinDropDownBox(CalendarCreateEventAMPMDropDown, 68)
-	T.SkinDropDownBox(CalendarCreateEventRepeatOptionDropDown, 120)
+	--T.SkinDropDownBox(CalendarCreateEventRepeatOptionDropDown, 120)
 	CalendarCreateEventIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	CalendarCreateEventIcon.SetTexCoord = T.dummy
 
