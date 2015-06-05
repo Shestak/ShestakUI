@@ -68,6 +68,9 @@ local function LoadSkin()
 
 	-- Regular scroll bar
 	T.SkinScrollBar(MacroButtonScrollFrame)
+	T.SkinScrollBar(MacroButtonScrollFrameScrollBar)
+	T.SkinScrollBar(MacroFrameScrollFrameScrollBar)
+	T.SkinScrollBar(MacroPopupScrollFrameScrollBar)
 
 	MacroPopupFrame:HookScript("OnShow", function(self)
 		self:ClearAllPoints()
