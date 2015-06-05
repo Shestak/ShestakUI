@@ -76,16 +76,10 @@ local function LoadSkin()
 	
 	hooksecurefunc("NavBar_AddButton", function(self, buttonData)
 		local navButton = self.navList[#self.navList]
-
-
-	if not navButton.skinned then
-		navButton:SkinButton(true)
-
-		if(navButton.MenuArrowButton) then
-			T.SkinNextPrevButton(navButton.MenuArrowButton, true)
-		end
-		navButton.skinned = true
-	end
+			if not navButton.skinned then
+				navButton:SkinButton(true)
+				navButton.skinned = true
+			end
 	end)
 	
 	for i = 1, AJ_MAX_NUM_SUGGESTIONS do
