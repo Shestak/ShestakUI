@@ -136,7 +136,6 @@ local function LoadSkin()
 	T.SkinScrollBar(GarrisonMissionFrameFollowersListScrollFrameScrollBar)
 	T.SkinScrollBar(GarrisonLandingPageReportListListScrollFrameScrollBar)
 	T.SkinScrollBar(GarrisonLandingPageListScrollFrameScrollBar)
-	T.SkinScrollBar(GarrisonLandingPage.FollowerListscrollFrame.scrollBar)
 	
 	-- Mission list
 	local MissionTab = GarrisonMissionFrame.MissionTab
