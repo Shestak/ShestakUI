@@ -133,6 +133,7 @@ T.SkinFuncs = {}
 T.SkinFuncs["ShestakUI"] = {}
 
 function T.SkinScrollBar(frame)
+
 	if _G[frame:GetName().."BG"] then
 		_G[frame:GetName().."BG"]:SetTexture(nil)
 	end
@@ -147,6 +148,43 @@ function T.SkinScrollBar(frame)
 	end
 	if _G[frame:GetName().."Middle"] then
 		_G[frame:GetName().."Middle"]:SetTexture(nil)
+	end
+	
+	if _G[frame:GetName().."ScrollUpButton"] and _G[frame:GetName().."ScrollDownButton"] then
+		_G[frame:GetName().."ScrollUpButton"]:StripTextures()
+		if not _G[frame:GetName().."ScrollUpButton"].icon then
+			T.SkinNextPrevButton(_G[frame:GetName().."ScrollUpButton"], true)
+			_G[frame:GetName().."ScrollUpButton"]:SetSize(_G[frame:GetName().."ScrollUpButton"]:GetWidth() + 7, _G[frame:GetName().."ScrollUpButton"]:GetHeight() + 7)
+			scrolldn = false
+		end
+
+		_G[frame:GetName().."ScrollDownButton"]:StripTextures()
+		if not _G[frame:GetName().."ScrollDownButton"].icon then
+			T.SkinNextPrevButton(_G[frame:GetName().."ScrollDownButton"], true)
+			_G[frame:GetName().."ScrollDownButton"]:SetSize(_G[frame:GetName().."ScrollDownButton"]:GetWidth() + 7, _G[frame:GetName().."ScrollDownButton"]:GetHeight() + 7)
+			scrolldn = true
+		end
+
+		if not frame.trackbg then
+			frame.trackbg = CreateFrame("Frame", nil, frame)
+			frame.trackbg:SetPoint("TOPLEFT", _G[frame:GetName().."ScrollUpButton"], "BOTTOMLEFT", 0, -1)
+			frame.trackbg:SetPoint("BOTTOMRIGHT", _G[frame:GetName().."ScrollDownButton"], "TOPRIGHT", 0, 1)
+			frame.trackbg:SetTemplate("Transparent")
+		end
+
+		if frame:GetThumbTexture() then
+			if not thumbTrim then thumbTrim = 3 end
+			frame:GetThumbTexture():SetTexture(nil)
+			if not frame.thumbbg then
+				frame.thumbbg = CreateFrame("Frame", nil, frame)
+				frame.thumbbg:SetPoint("TOPLEFT", frame:GetThumbTexture(), "TOPLEFT", 2, -thumbTrim)
+				frame.thumbbg:SetPoint("BOTTOMRIGHT", frame:GetThumbTexture(), "BOTTOMRIGHT", -2, thumbTrim)
+				frame.thumbbg:SetTemplate("Default", true, true)
+				if frame.trackbg then
+					frame.thumbbg:SetFrameLevel(frame.trackbg:GetFrameLevel())
+				end
+			end
+		end
 	end
 end
 
@@ -190,7 +228,7 @@ end
 
 function T.SkinNextPrevButton(btn, horizontal, left)
 	local normal, pushed, disabled
-	local isPrevButton = btn:GetName() and (string.find(btn:GetName(), "Left") or string.find(btn:GetName(), "Prev") or string.find(btn:GetName(), "Decrement") or string.find(btn:GetName(), "Back")) or left
+	local isPrevButton = btn:GetName() and (string.find(btn:GetName(), "Left") or string.find(btn:GetName(), "Prev") or string.find(btn:GetName(), "Decrement") or string.find(btn:GetName(), "Back"))
 
 	if btn:GetNormalTexture() then
 		normal = btn:GetNormalTexture():GetTexture()
@@ -233,9 +271,15 @@ function T.SkinNextPrevButton(btn, horizontal, left)
 
 	if normal and pushed and disabled then
 		if horizontal then
+			if scrolldn == true then
+			btn:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Up")
+			btn:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Down")
+			btn:SetDisabledTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Disabled")
+			else
 			btn:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Up")
 			btn:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Down")
 			btn:SetDisabledTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Disabled")
+			end
 			btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.72, 0.65, 0.29, 0.65, 0.72)
 			if btn:GetPushedTexture() then
 				btn:GetPushedTexture():SetTexCoord(0.3, 0.35, 0.3, 0.8, 0.65, 0.35, 0.65, 0.8)
