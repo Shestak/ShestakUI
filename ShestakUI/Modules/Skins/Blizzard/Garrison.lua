@@ -18,6 +18,10 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
 			FloatingGarrisonMissionTooltip,
 			GarrisonFollowerAbilityTooltip,
 			GarrisonBuildingFrame.BuildingLevelTooltip,
+			GarrisonShipyardFollowerTooltip,
+			FloatingGarrisonShipyardFollowerTooltip,
+			GarrisonFollowerTooltip,	
+			
 		}
 		for i, tt in pairs(Tooltips) do
 			tt.Background:SetTexture(nil)
@@ -135,7 +139,9 @@ local function LoadSkin()
 	T.SkinEditBox(GarrisonMissionFrameFollowers.SearchBox)
 	T.SkinScrollBar(GarrisonMissionFrameFollowersListScrollFrameScrollBar)
 	T.SkinScrollBar(GarrisonLandingPageReportListListScrollFrameScrollBar)
-	T.SkinScrollBar(GarrisonLandingPageListScrollFrameScrollBar)
+	T.SkinScrollBar(GarrisonMissionFrame.FollowerList.listScroll.scrollBar)
+	T.SkinScrollBar(GarrisonShipyardFrame.FollowerList.listScroll.scrollBar)
+	--T.SkinScrollBar(GarrisonLandingPageListScrollFrameScrollBar)
 	
 	-- Mission list
 	local MissionTab = GarrisonMissionFrame.MissionTab
