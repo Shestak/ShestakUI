@@ -63,75 +63,66 @@ C["filger_spells"] = {
 			{spellID = 114851, unitID = "player", caster = "player", filter = "BUFF", count = 10},
 
 			-- Trinkets
-			-- General
-			-- Darkmoon Cards (Proc)
-			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tank
-			-- Rook's Unlucky Talisman (Reduces damage, Use)
-			{spellID = 146343, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Resolve of Niuzao (Dodge, Use)
-			{spellID = 146344, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
-			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
-			{spellID = 138864, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stuff of Nightmares (Dodge, Proc)
-			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Vial of Dragon's Blood (Dodge, Proc)
-			{spellID = 126533, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Warlord Figurine (Mastery, Use)
-			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Physical Strength DPS
-			-- Evil Eye of Galakras (Strength, Proc)
-			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thok's Tail Tip (Strength, Proc)
-			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Skeer's Bloodsoaked Talisman (Strength, Proc)
-			{spellID = 146285, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fusion-Fire Core (Strength, Proc)
-			{spellID = 148899, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Celestial Celerity (Haste, Proc) [Alacrity of Xuen]
-			{spellID = 146296, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Brutal Talisman of the Shado-Pan Assault (Strength, Proc)
-			{spellID = 138702, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fabled Feather of Ji-Kun (Strength, Proc)
-			{spellID = 138759, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Spark of Zandalar (Strength, Proc)
-			{spellID = 138958, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Primordius' Talisman of Rage (Strength, Proc)
-			{spellID = 138870, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Gaze of the Twins (Crit, Proc)
-			{spellID = 139170, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Helmbreaker Medallion (Crit, Use)
-			{spellID = 136084, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Darkmist Vortex (Haste, Proc)
-			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lei Shin's Final Orders (Strength, Proc)
-			{spellID = 126582, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Charioteer Figurine (Strength, Use)
-			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Iron Belly Wok (Haste, Use)
-			{spellID = 129812, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Strength, Use)
-			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Strength, Proc)
-			{spellID = 126700, unitID = "player", caster = "player", filter = "BUFF"},
-
+			-- 1.0: Darkmoon Cards
+			-- Melee DPS (Crit, Proc)
+			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tanking (Crit, Proc)
+			{spellID = 162918, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 2.0: PvP Trinkets
+			-- Battlemaster (Health, Use)
+			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS [Strength] (Versatility, Use)
+			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS [Strength] (Versatility, Proc)
+			{spellID = 182063, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Tanking
+			-- Battering Talisman (Haste, Proc)
+			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blast Furnace Door (Mastery, Proc)
+			{spellID = 177056, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Evergaze Arcane Eidolon (Bonus Armor, Proc)
+			{spellID = 177053, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Relic of Blood (Haste, Proc)
+			{spellID = 176937, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Kyb's Foolish Perseverance (Health, Use)
+			{spellID = 176460, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Petrified Flesh-Eating Spore (Mastery, Proc)
+			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Pol's Blinded Eye (Mastery, Use)
+			{spellID = 176876, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Stoneheart Idol (Crit, Proc)
+			{spellID = 176982, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tablet of Turnbuckle Teamwork (Bonus Armor, Use)
+			{spellID = 176873, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 4.0: Melee DPS [Strength]
+			-- Forgemaster's Insignia (Multistrike, Proc)
+			{spellID = 177096, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Fang (Multistrike, Proc)
+			{spellID = 176935, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Horn of the Screaming Spirits (Mastery, Proc)
+			{spellID = 177042, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Mote of the Mountain (Versatility, Proc)
+			{spellID = 176974, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Scabbard of Kyanos (Strength, Use)
+			{spellID = 177189, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tectus' Beating Heart (Crit, Proc)
+			{spellID = 177040, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vial of Convulsive Shadows (Multistrike, Use)
+			{spellID = 176874, unitID = "player", caster = "player", filter = "BUFF"},
+			
 			-- Enchants
-			-- General
-			-- Tank
-			-- River's Song (Dodge)
-			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Physical General
-			-- Physical Melee
-			-- Dancing Steel (Strength)
-			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
-
-			-- Legendary Meta Gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Mark of Blackrock (Bonus Armor)
+			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Bleeding Hollow (Mastery)
+			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Shadowmoon (Spirit)
+			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Frostwolf (Multistrike)
+			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Thunderlord (Crit)
+			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Warsong (Haste)
+			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -239,6 +230,8 @@ C["filger_spells"] = {
 			{spellID = 69070, filter = "CD"},
 
 			-- Items
+			-- Neck
+			{slotID = 2, filter = "CD"},
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -248,8 +241,6 @@ C["filger_spells"] = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
-
-			-- Internal
 		},
 	},
 	["DRUID"] = {
@@ -328,133 +319,107 @@ C["filger_spells"] = {
 			-- Predatory Swiftness
 			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
 
-			-- Item sets
+			-- Item Sets
 			-- Sage Mender (T16)
 			{spellID = 144871, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			-- General
-			-- Darkmoon Cards (Proc)
-			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tank
-			-- Rook's Unlucky Talisman (Reduces damage, Use)
-			{spellID = 146343, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Resolve of Niuzao (Dodge, Use)
-			{spellID = 146344, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
-			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
-			{spellID = 138864, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stuff of Nightmares (Dodge, Proc)
-			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Vial of Dragon's Blood (Dodge, Proc)
-			{spellID = 126533, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Warlord Figurine (Mastery, Use)
-			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Physical Agility DPS
-			-- Assurance of Consequence (Agility, Proc)
-			{spellID = 146308, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Haromm's Talisman (Agility, Proc)
-			{spellID = 148903, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Sigil of Rampage (Agility, Proc)
-			{spellID = 148896, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ticking Ebon Detonator (Agility, Proc)
-			{spellID = 146310, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Discipline of Xuen (Crit, Proc)
-			{spellID = 146312, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
-			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Bad Juju (Agility, Proc)
-			{spellID = 138938, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Talisman of Bloodlust (Haste, Proc)
-			{spellID = 138895, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Rune of Re-Origination (Convert, Proc)
-			{spellID = 139120, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Renataki's Soul Charm (Agility, Proc)
-			{spellID = 138756, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Arrowflight Medallion (Crit, Use)
-			{spellID = 136086, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Terror in the Mists (Crit, Proc)
-			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Bandit Figurine (Haste, Use)
-			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Bottle of Infinite Stars (Agility, Proc)
-			{spellID = 126554, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Agility, Use)
-			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Agility, Proc)
-			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster General
-			-- Shock-Charger Medallion Figurine (Intellect, Use)
-			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Magistrate Figurine (Crit, Use)
-			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Use)
-			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Proc)
-			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS
-			-- Purified Bindings of Immerseus (Intellect, Proc)
-			{spellID = 146046, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kardris' Toxic Totem (Intellect, Proc)
-			{spellID = 148906, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Frenzied Crystal of Rage (Intellect, Proc)
-			{spellID = 148897, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Black Blood of Y'Shaarj (Intellect, Proc)
-			{spellID = 146184, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Yu'lon's Bite (Crit, Proc)
-			{spellID = 146218, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Unerring Vision of Lei-Shen (Crit, Proc)
-			{spellID = 138963, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
-			{spellID = 138703, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Cha-Ye's Essence of Brilliance (Intellect, Proc)
-			{spellID = 139133, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Breath of the Hydra (Intellect, Proc)
-			{spellID = 138898, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Wushoolay's Final Choice (Intellect, Proc)
-			{spellID = 138786, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Essence of Terror (Haste, Proc)
-			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Light of the Cosmos (Intellect, Proc)
-			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster Heal
-			-- Prismatic Prison of Pride (Intellect, Proc)
-			{spellID = 146314, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nazgrim's Burnished Insignia (Intellect, Proc)
-			{spellID = 148908, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thok's Acid-Grooved Tooth (Intellect, Proc)
-			{spellID = 148911, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Qin-xi's Polarizing Seal (Intellect, Proc)
-			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
-
+			-- 1.0: Darkmoon Cards
+			-- Caster DPS (Crit, Proc)
+			{spellID = 162920, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Healing (Spirit, Proc)
+			{spellID = 162914, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS (Crit, Proc)
+			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tanking (Crit, Proc)
+			{spellID = 162918, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 2.0: PvP Trinkets
+			-- Battlemaster (Health, Use)
+			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster DPS (Versatility, Use)
+			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster DPS (Versatility, Proc)
+			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS [Agility] (Versatility, Use)
+			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS [Agility] (Versatility, Proc)
+			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Tanking
+			-- Battering Talisman (Haste, Proc)
+			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blast Furnace Door (Mastery, Proc)
+			{spellID = 177056, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Evergaze Arcane Eidolon (Bonus Armor, Proc)
+			{spellID = 177053, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Relic of Blood (Haste, Proc)
+			{spellID = 176937, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Kyb's Foolish Perseverance (Health, Use)
+			{spellID = 176460, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Petrified Flesh-Eating Spore (Mastery, Proc)
+			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Pol's Blinded Eye (Mastery, Use)
+			{spellID = 176876, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Stoneheart Idol (Crit, Proc)
+			{spellID = 176982, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tablet of Turnbuckle Teamwork (Bonus Armor, Use)
+			{spellID = 176873, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 4.0: Melee DPS [Agility]
+			-- Beating Heart of the Mountain (Multistrike, Use)
+			{spellID = 176878, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blackheart Enforcer's Medallion (Multistrike, Proc)
+			{spellID = 176984, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Jar of Doom (Mastery, Proc)
+			{spellID = 176939, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Humming Blackiron Trigger (Crit, Proc)
+			{spellID = 177067, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lucky Double-Sided Coin (Agility, Use)
+			{spellID = 177597, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Meaty Dragonspine Trophy (Haste, Proc)
+			{spellID = 177035, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Scales of Doom (Multistrike, Proc)
+			{spellID = 177038, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 5.0: Caster DPS
+			-- Blackiron Micro Crucible (Multistrike, Proc)
+			{spellID = 177081, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Copeland's Clarity (Spellpower, Use)
+			{spellID = 177594, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darmac's Unstoppable Talisman (Haste, Proc)
+			{spellID = 177051, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Orb of Putrescence (Mastery, Proc)
+			{spellID = 176941, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Furyheart Talisman (Haste, Proc)
+			{spellID = 176980, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Goren Soul Repository (Crit, Proc)
+			{spellID = 177046, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shards of Nothing (Haste, Use)
+			{spellID = 176875, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 6.0: Healing
+			-- Auto-Repairing Autoclave (Haste, Proc)
+			{spellID = 177086, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elementalist's Shielding Talisman (Multistrike, Proc)
+			{spellID = 177063, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Emblem of Caustic Healing (Haste, Use)
+			{spellID = 176879, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Censer of Faith (Haste, Proc)
+			{spellID = 176943, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Immaculate Living Mushroom (Crit, Proc)
+			{spellID = 176978, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ironspike Chew Toy (Spirit, Proc)
+			{spellID = 177060, unitID = "player", caster = "player", filter = "BUFF"},
+			
 			-- Enchants
-			-- General
-			-- Tank
-			-- River's Song (Dodge)
-			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Physical General
-			-- Physical Melee
-			-- Dancing Steel (Agility)
-			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Caster General
-			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Caster Heal
-
-			-- Legendary Meta Gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF", absID = true},
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
-
-			-- Legendary Cloak
-			-- Spirit of Chi-Ji
-			{spellID = 146200, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Blackrock (Bonus Armor)
+			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Bleeding Hollow (Mastery)
+			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Shadowmoon (Spirit)
+			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Frostwolf (Multistrike)
+			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Thunderlord (Crit)
+			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Warsong (Haste)
+			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -596,6 +561,8 @@ C["filger_spells"] = {
 			{spellID = 26297, filter = "CD", absID = true},
 
 			-- Items
+			-- Neck
+			{slotID = 2, filter = "CD"},
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -605,10 +572,6 @@ C["filger_spells"] = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
-
-			-- Internal
-			-- Purified Bindings of Immerseus (Intellect, Proc)
-			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["HUNTER"] = {
@@ -633,6 +596,8 @@ C["filger_spells"] = {
 			{spellID = 90361, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Posthaste
 			{spellID = 118922, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sniper Training
+			{spellID = 168811, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -656,57 +621,39 @@ C["filger_spells"] = {
 			{spellID = 136, unitID = "pet", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			-- General
-			-- Darkmoon Cards (Proc)
-			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Physical Agility DPS
-			-- Assurance of Consequence (Agility, Proc)
-			{spellID = 146308, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Haromm's Talisman (Agility, Proc)
-			{spellID = 148903, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Sigil of Rampage (Agility, Proc)
-			{spellID = 148896, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ticking Ebon Detonator (Agility, Proc)
-			{spellID = 146310, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Discipline of Xuen (Crit, Proc)
-			{spellID = 146312, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
-			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Bad Juju (Agility, Proc)
-			{spellID = 138938, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Talisman of Bloodlust (Haste, Proc)
-			{spellID = 138895, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Rune of Re-Origination (Convert, Proc)
-			{spellID = 139120, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Renataki's Soul Charm (Agility, Proc)
-			{spellID = 138756, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Arrowflight Medallion (Crit, Use)
-			{spellID = 136086, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Terror in the Mists (Crit, Proc)
-			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Bandit Figurine (Haste, Use)
-			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Bottle of Infinite Stars (Agility, Proc)
-			{spellID = 126554, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Agility, Use)
-			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Agility, Proc)
-			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Spirit of the Warlords
-			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Steady Focus
-			{spellID = 177668, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.0: Darkmoon Cards
+			-- Ranged DPS (Crit, Proc)
+			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 2.0: PvP Trinkets
+			-- Battlemaster (Health, Use)
+			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ranged DPS [Agility] (Versatility, Use)
+			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ranged DPS [Agility] (Versatility, Proc)
+			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Ranged DPS [Agility]
+			-- Beating Heart of the Mountain (Multistrike, Use)
+			{spellID = 176878, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blackheart Enforcer's Medallion (Multistrike, Proc)
+			{spellID = 176984, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Jar of Doom (Mastery, Proc)
+			{spellID = 176939, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Humming Blackiron Trigger (Crit, Proc)
+			{spellID = 177067, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lucky Double-Sided Coin (Agility, Use)
+			{spellID = 177597, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Meaty Dragonspine Trophy (Haste, Proc)
+			{spellID = 177035, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Scales of Doom (Multistrike, Proc)
+			{spellID = 177038, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- General
-			-- Physical General
-			-- Physical Ranged
-			-- Mirror Scope (Crit)
-			{spellID = 109092, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lord Blastington's Scope of Doom (Agility)
-			{spellID = 109085, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Hemet's Heartseeker (Mastery)
+			{spellID = 173288, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Megawatt Filament (Crit)
+			{spellID = 156060, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Oglethorpe's Missile Splitter (Multistrike)
+			{spellID = 156055, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -834,6 +781,8 @@ C["filger_spells"] = {
 			{spellID = 107079, filter = "CD"},
 
 			-- Items
+			-- Neck
+			{slotID = 2, filter = "CD"},
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -843,8 +792,6 @@ C["filger_spells"] = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
-
-			-- Internal
 		},
 	},
 	["MAGE"] = {
@@ -904,55 +851,45 @@ C["filger_spells"] = {
 			{spellID = 48108, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			-- General
-			-- Darkmoon Cards (Proc)
-			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster General
-			-- Shock-Charger Medallion Figurine (Intellect, Use)
-			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Magistrate Figurine (Crit, Use)
-			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Use)
-			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Proc)
-			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS
-			-- Purified Bindings of Immerseus (Intellect, Proc)
-			{spellID = 146046, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kardris' Toxic Totem (Intellect, Proc)
-			{spellID = 148906, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Frenzied Crystal of Rage (Intellect, Proc)
-			{spellID = 148897, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Black Blood of Y'Shaarj (Intellect, Proc)
-			{spellID = 146184, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Yu'lon's Bite (Crit, Proc)
-			{spellID = 146218, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Unerring Vision of Lei-Shen (Crit, Proc)
-			{spellID = 138963, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
-			{spellID = 138703, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Cha-Ye's Essence of Brilliance (Intellect, Proc)
-			{spellID = 139133, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Breath of the Hydra (Intellect, Proc)
-			{spellID = 138898, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Wushoolay's Final Choice (Intellect, Proc)
-			{spellID = 138786, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Essence of Terror (Haste, Proc)
-			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Light of the Cosmos (Intellect, Proc)
-			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.0: Darkmoon Cards
+			-- Caster DPS (Crit, Proc)
+			{spellID = 162920, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 2.0: PvP Trinkets
+			-- Battlemaster (Health, Use)
+			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster DPS (Versatility, Use)
+			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster DPS (Versatility, Proc)
+			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Caster DPS
+			-- Blackiron Micro Crucible (Multistrike, Proc)
+			{spellID = 177081, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Copeland's Clarity (Spellpower, Use)
+			{spellID = 177594, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darmac's Unstoppable Talisman (Haste, Proc)
+			{spellID = 177051, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Orb of Putrescence (Mastery, Proc)
+			{spellID = 176941, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Furyheart Talisman (Haste, Proc)
+			{spellID = 176980, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Goren Soul Repository (Crit, Proc)
+			{spellID = 177046, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shards of Nothing (Haste, Use)
+			{spellID = 176875, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- General
-			-- Caster General
-			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-
-			-- Legendary Meta Gems
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Blackrock (Bonus Armor)
+			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Bleeding Hollow (Mastery)
+			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Shadowmoon (Spirit)
+			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Frostwolf (Multistrike)
+			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Thunderlord (Crit)
+			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Warsong (Haste)
+			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -981,6 +918,8 @@ C["filger_spells"] = {
 			{spellID = 83853, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Freeze (Pet)
 			{spellID = 33395, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Water Jet (Pet)
+			{spellID = 135029, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Nova
 			{spellID = 122, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Ice Ward
@@ -1046,8 +985,8 @@ C["filger_spells"] = {
 			{spellID = 2120, filter = "CD"},
 			-- Cone of Cold
 			{spellID = 120, filter = "CD"},
-			-- Freeze (Pet)
-			{spellID = 33395, filter = "CD"},
+			-- Water Jet (Pet)
+			{spellID = 135029, filter = "CD"},
 			-- Ice Floes
 			{spellID = 108839, filter = "CD"},
 			-- Combustion
@@ -1072,6 +1011,8 @@ C["filger_spells"] = {
 			{spellID = 45438, filter = "CD"},
 			-- Invisibility
 			{spellID = 66, filter = "CD"},
+			-- Comet Storm
+			{spellID = 153595, filter = "CD"},
 
 			-- Racial
 			-- Every Man for Himself (Human)
@@ -1102,6 +1043,8 @@ C["filger_spells"] = {
 			{spellID = 107079, filter = "CD"},
 
 			-- Items
+			-- Neck
+			{slotID = 2, filter = "CD"},
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -1111,10 +1054,6 @@ C["filger_spells"] = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
-
-			-- Internal
-			-- Purified Bindings of Immerseus (Intellect, Proc)
-			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["MONK"] = {
@@ -1139,12 +1078,32 @@ C["filger_spells"] = {
 			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Diffuse Magic
 			{spellID = 122783, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dampen Harm
+			{spellID = 122278, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Energizing Brew
 			{spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thunder Focus Tea
 			{spellID = 116680, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Momentum
 			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
+		},
+		{
+			Name = "T_DEBUFF_ICON",
+			Direction = "RIGHT",
+			Mode = "ICON",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 37,
+			Position = {unpack(C["filger_position"].target_debuff_icon)},
+
+			-- Heavy Stagger
+			{spellID = 124273, unitID = "player", caster = "player", filter = "DEBUFF"},
+			-- Dizzying Haze
+			{spellID = 116330, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Breath of Fire
+			{spellID = 123725, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Rising Sun Kick
+			{spellID = 130320, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1178,117 +1137,81 @@ C["filger_spells"] = {
 			{spellID = 120273, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			-- General
-			-- Darkmoon Cards (Proc)
-			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tank
-			-- Rook's Unlucky Talisman (Reduces damage, Use)
-			{spellID = 146343, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Resolve of Niuzao (Dodge, Use)
-			{spellID = 146344, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
-			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
-			{spellID = 138864, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stuff of Nightmares (Dodge, Proc)
-			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Vial of Dragon's Blood (Dodge, Proc)
-			{spellID = 126533, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Warlord Figurine (Mastery, Use)
-			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Physical Agility DPS
-			-- Assurance of Consequence (Agility, Proc)
-			{spellID = 146308, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Haromm's Talisman (Agility, Proc)
-			{spellID = 148903, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Sigil of Rampage (Agility, Proc)
-			{spellID = 148896, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ticking Ebon Detonator (Agility, Proc)
-			{spellID = 146310, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Discipline of Xuen (Crit, Proc)
-			{spellID = 146312, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
-			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Bad Juju (Agility, Proc)
-			{spellID = 138938, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Talisman of Bloodlust (Haste, Proc)
-			{spellID = 138895, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Rune of Re-Origination (Convert, Proc)
-			{spellID = 139120, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Renataki's Soul Charm (Agility, Proc)
-			{spellID = 138756, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Arrowflight Medallion (Crit, Use)
-			{spellID = 136086, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Terror in the Mists (Crit, Proc)
-			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Bandit Figurine (Haste, Use)
-			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Bottle of Infinite Stars (Agility, Proc)
-			{spellID = 126554, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Agility, Use)
-			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Agility, Proc)
-			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster General
-			-- Shock-Charger Medallion Figurine (Intellect, Use)
-			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Magistrate Figurine (Crit, Use)
-			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Use)
-			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Proc)
-			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster Heal
-			-- Prismatic Prison of Pride (Intellect, Proc)
-			{spellID = 146314, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nazgrim's Burnished Insignia (Intellect, Proc)
-			{spellID = 148908, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thok's Acid-Grooved Tooth (Intellect, Proc)
-			{spellID = 148911, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Qin-xi's Polarizing Seal (Intellect, Proc)
-			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.0: Darkmoon Cards
+			-- Healing (Spirit, Proc)
+			{spellID = 162914, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS (Crit, Proc)
+			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tanking (Crit, Proc)
+			{spellID = 162918, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 2.0: PvP Trinkets
+			-- Battlemaster (Health, Use)
+			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS [Agility] (Versatility, Use)
+			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS [Agility] (Versatility, Proc)
+			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Tanking
+			-- Battering Talisman (Haste, Proc)
+			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blast Furnace Door (Mastery, Proc)
+			{spellID = 177056, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Evergaze Arcane Eidolon (Bonus Armor, Proc)
+			{spellID = 177053, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Relic of Blood (Haste, Proc)
+			{spellID = 176937, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Kyb's Foolish Perseverance (Health, Use)
+			{spellID = 176460, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Petrified Flesh-Eating Spore (Mastery, Proc)
+			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Pol's Blinded Eye (Mastery, Use)
+			{spellID = 176876, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Stoneheart Idol (Crit, Proc)
+			{spellID = 176982, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tablet of Turnbuckle Teamwork (Bonus Armor, Use)
+			{spellID = 176873, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 4.0: Melee DPS [Agility]
+			-- Beating Heart of the Mountain (Multistrike, Use)
+			{spellID = 176878, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blackheart Enforcer's Medallion (Multistrike, Proc)
+			{spellID = 176984, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Jar of Doom (Mastery, Proc)
+			{spellID = 176939, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Humming Blackiron Trigger (Crit, Proc)
+			{spellID = 177067, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lucky Double-Sided Coin (Agility, Use)
+			{spellID = 177597, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Meaty Dragonspine Trophy (Haste, Proc)
+			{spellID = 177035, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Scales of Doom (Multistrike, Proc)
+			{spellID = 177038, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 5.0: Healing
+			-- Auto-Repairing Autoclave (Haste, Proc)
+			{spellID = 177086, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elementalist's Shielding Talisman (Multistrike, Proc)
+			{spellID = 177063, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Emblem of Caustic Healing (Haste, Use)
+			{spellID = 176879, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Censer of Faith (Haste, Proc)
+			{spellID = 176943, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Immaculate Living Mushroom (Crit, Proc)
+			{spellID = 176978, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ironspike Chew Toy (Spirit, Proc)
+			{spellID = 177060, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- General
-			-- Tank
-			-- River's Song (Dodge)
-			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Physical General
-			-- Physical Melee
-			-- Dancing Steel (Agility)
-			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Caster General
-			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Caster Heal
-
-			-- Legendary Meta Gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF", absID = true},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
-
-			-- Legendary Cloak
-			-- Spirit of Chi-Ji
-			{spellID = 146200, unitID = "player", caster = "all", filter = "BUFF"},
-		},
-		{
-			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
-			Mode = "ICON",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = 37,
-			Position = {unpack(C["filger_position"].target_debuff_icon)},
-
-			-- Heavy Stagger
-			{spellID = 124273, unitID = "player", caster = "player", filter = "DEBUFF"},
-			-- Dizzying Haze
-			{spellID = 116330, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Breath of Fire
-			{spellID = 123725, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Mark of Blackrock (Bonus Armor)
+			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Bleeding Hollow (Mastery)
+			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Shadowmoon (Spirit)
+			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Frostwolf (Multistrike)
+			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Thunderlord (Crit)
+			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Warsong (Haste)
+			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "COOLDOWN",
@@ -1372,6 +1295,8 @@ C["filger_spells"] = {
 			{spellID = 107079, filter = "CD"},
 
 			-- Items
+			-- Neck
+			{slotID = 2, filter = "CD"},
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -1441,108 +1366,86 @@ C["filger_spells"] = {
 			-- Long Arm of the Law
 			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
 
-			-- Item sets
+			-- Item Sets
 			-- Divine Crusader (T16)
 			{spellID = 144595, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			-- General
-			-- Darkmoon Cards (Proc)
-			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tank
-			-- Rook's Unlucky Talisman (Reduces damage, Use)
-			{spellID = 146343, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Resolve of Niuzao (Dodge, Use)
-			{spellID = 146344, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
-			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
-			{spellID = 138864, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stuff of Nightmares (Dodge, Proc)
-			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Vial of Dragon's Blood (Dodge, Proc)
-			{spellID = 126533, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Warlord Figurine (Mastery, Use)
-			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Physical Strength DPS
-			-- Evil Eye of Galakras (Strength, Proc)
-			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thok's Tail Tip (Strength, Proc)
-			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Skeer's Bloodsoaked Talisman (Strength, Proc)
-			{spellID = 146285, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fusion-Fire Core (Strength, Proc)
-			{spellID = 148899, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Alacrity of Xuen (Haste, Proc)
-			{spellID = 146296, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Brutal Talisman of the Shado-Pan Assault (Strength, Proc)
-			{spellID = 138702, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fabled Feather of Ji-Kun (Strength, Proc)
-			{spellID = 138759, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Spark of Zandalar (Strength, Proc)
-			{spellID = 138958, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Primordius' Talisman of Rage (Strength, Proc)
-			{spellID = 138870, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Gaze of the Twins (Crit, Proc)
-			{spellID = 139170, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Helmbreaker Medallion (Crit, Use)
-			{spellID = 136084, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Darkmist Vortex (Haste, Proc)
-			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lei Shin's Final Orders (Strength, Proc)
-			{spellID = 126582, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Charioteer Figurine (Strength, Use)
-			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Iron Belly Wok (Haste, Use)
-			{spellID = 129812, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Strength, Use)
-			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Strength, Proc)
-			{spellID = 126700, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster General
-			-- Shock-Charger Medallion Figurine (Intellect, Use)
-			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Magistrate Figurine (Crit, Use)
-			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Use)
-			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Proc)
-			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster Heal
-			-- Prismatic Prison of Pride (Intellect, Proc)
-			{spellID = 146314, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nazgrim's Burnished Insignia (Intellect, Proc)
-			{spellID = 148908, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thok's Acid-Grooved Tooth (Intellect, Proc)
-			{spellID = 148911, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Qin-xi's Polarizing Seal (Intellect, Proc)
-			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.0: Darkmoon Cards
+			-- Healing (Spirit, Proc)
+			{spellID = 162914, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS (Crit, Proc)
+			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tanking (Crit, Proc)
+			{spellID = 162918, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 2.0: PvP Trinkets
+			-- Battlemaster (Health, Use)
+			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS [Strength] (Versatility, Use)
+			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS [Strength] (Versatility, Proc)
+			{spellID = 182063, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Tanking
+			-- Battering Talisman (Haste, Proc)
+			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blast Furnace Door (Mastery, Proc)
+			{spellID = 177056, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Evergaze Arcane Eidolon (Bonus Armor, Proc)
+			{spellID = 177053, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Relic of Blood (Haste, Proc)
+			{spellID = 176937, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Kyb's Foolish Perseverance (Health, Use)
+			{spellID = 176460, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Petrified Flesh-Eating Spore (Mastery, Proc)
+			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Pol's Blinded Eye (Mastery, Use)
+			{spellID = 176876, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Stoneheart Idol (Crit, Proc)
+			{spellID = 176982, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tablet of Turnbuckle Teamwork (Bonus Armor, Use)
+			{spellID = 176873, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 4.0: Melee DPS [Strength]
+			-- Forgemaster's Insignia (Multistrike, Proc)
+			{spellID = 177096, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Fang (Multistrike, Proc)
+			{spellID = 176935, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Horn of the Screaming Spirits (Mastery, Proc)
+			{spellID = 177042, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Mote of the Mountain (Versatility, Proc)
+			{spellID = 176974, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Scabbard of Kyanos (Strength, Use)
+			{spellID = 177189, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tectus' Beating Heart (Crit, Proc)
+			{spellID = 177040, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vial of Convulsive Shadows (Multistrike, Use)
+			{spellID = 176874, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 5.0: Healing
+			-- Auto-Repairing Autoclave (Haste, Proc)
+			{spellID = 177086, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elementalist's Shielding Talisman (Multistrike, Proc)
+			{spellID = 177063, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Emblem of Caustic Healing (Haste, Use)
+			{spellID = 176879, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Censer of Faith (Haste, Proc)
+			{spellID = 176943, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Immaculate Living Mushroom (Crit, Proc)
+			{spellID = 176978, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ironspike Chew Toy (Spirit, Proc)
+			{spellID = 177060, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- General
-			-- Tank
-			-- River's Song (Dodge)
-			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Physical General
-			-- Physical Melee
-			-- Dancing Steel (Strength)
-			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Caster General
-			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Caster Heal
-
-			-- Legendary Meta Gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF", absID = true},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
-
-			-- Legendary Cloak
-			-- Spirit of Chi-Ji
-			{spellID = 146200, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Blackrock (Bonus Armor)
+			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Bleeding Hollow (Mastery)
+			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Shadowmoon (Spirit)
+			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Frostwolf (Multistrike)
+			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Thunderlord (Crit)
+			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Warsong (Haste)
+			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1636,6 +1539,8 @@ C["filger_spells"] = {
 			{spellID = 69179, filter = "CD"},
 
 			-- Items
+			-- Neck
+			{slotID = 2, filter = "CD"},
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -1645,8 +1550,6 @@ C["filger_spells"] = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
-
-			-- Internal
 		},
 	},
 	["PRIEST"] = {
@@ -1710,71 +1613,60 @@ C["filger_spells"] = {
 			{spellID = 132573, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			-- General
-			-- Darkmoon Cards (Proc)
-			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster General
-			-- Shock-Charger Medallion Figurine (Intellect, Use)
-			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Magistrate Figurine (Crit, Use)
-			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Use)
-			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Proc)
-			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS
-			-- Purified Bindings of Immerseus (Intellect, Proc)
-			{spellID = 146046, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kardris' Toxic Totem (Intellect, Proc)
-			{spellID = 148906, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Frenzied Crystal of Rage (Intellect, Proc)
-			{spellID = 148897, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Black Blood of Y'Shaarj (Intellect, Proc)
-			{spellID = 146184, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Yu'lon's Bite (Crit, Proc)
-			{spellID = 146218, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Unerring Vision of Lei-Shen (Crit, Proc)
-			{spellID = 138963, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
-			{spellID = 138703, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Cha-Ye's Essence of Brilliance (Intellect, Proc)
-			{spellID = 139133, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Breath of the Hydra (Intellect, Proc)
-			{spellID = 138898, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Wushoolay's Final Choice (Intellect, Proc)
-			{spellID = 138786, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Essence of Terror (Haste, Proc)
-			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Light of the Cosmos (Intellect, Proc)
-			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster Heal
-			-- Prismatic Prison of Pride (Intellect, Proc)
-			{spellID = 146314, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nazgrim's Burnished Insignia (Intellect, Proc)
-			{spellID = 148908, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thok's Acid-Grooved Tooth (Intellect, Proc)
-			{spellID = 148911, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Qin-xi's Polarizing Seal (Intellect, Proc)
-			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
-
+			-- 1.0: Darkmoon Cards
+			-- Caster DPS (Crit, Proc)
+			{spellID = 162920, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Healing (Spirit, Proc)
+			{spellID = 162914, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 2.0: PvP Trinkets
+			-- Battlemaster (Health, Use)
+			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster DPS (Versatility, Use)
+			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster DPS (Versatility, Proc)
+			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Caster DPS
+			-- Blackiron Micro Crucible (Multistrike, Proc)
+			{spellID = 177081, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Copeland's Clarity (Spellpower, Use)
+			{spellID = 177594, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darmac's Unstoppable Talisman (Haste, Proc)
+			{spellID = 177051, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Orb of Putrescence (Mastery, Proc)
+			{spellID = 176941, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Furyheart Talisman (Haste, Proc)
+			{spellID = 176980, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Goren Soul Repository (Crit, Proc)
+			{spellID = 177046, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shards of Nothing (Haste, Use)
+			{spellID = 176875, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 4.0: Healing
+			-- Auto-Repairing Autoclave (Haste, Proc)
+			{spellID = 177086, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elementalist's Shielding Talisman (Multistrike, Proc)
+			{spellID = 177063, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Emblem of Caustic Healing (Haste, Use)
+			{spellID = 176879, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Censer of Faith (Haste, Proc)
+			{spellID = 176943, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Immaculate Living Mushroom (Crit, Proc)
+			{spellID = 176978, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ironspike Chew Toy (Spirit, Proc)
+			{spellID = 177060, unitID = "player", caster = "player", filter = "BUFF"},
+			
 			-- Enchants
-			-- General
-			-- Caster General
-			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Caster Heal
-
-			-- Legendary Meta Gems
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
-
-			-- Legendary Cloak
-			-- Spirit of Chi-Ji
-			{spellID = 146200, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Blackrock (Bonus Armor)
+			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Bleeding Hollow (Mastery)
+			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Shadowmoon (Spirit)
+			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Frostwolf (Multistrike)
+			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Thunderlord (Crit)
+			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Warsong (Haste)
+			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1920,6 +1812,8 @@ C["filger_spells"] = {
 			{spellID = 107079, filter = "CD"},
 
 			-- Items
+			-- Neck
+			{slotID = 2, filter = "CD"},
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -1929,10 +1823,6 @@ C["filger_spells"] = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
-
-			-- Internal
-			-- Purified Bindings of Immerseus (Intellect, Proc)
-			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["ROGUE"] = {
@@ -2002,51 +1892,45 @@ C["filger_spells"] = {
 			{spellID = 121153, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			-- General
-			-- Darkmoon Cards (Proc)
-			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Physical Agility DPS
-			-- Assurance of Consequence (Agility, Proc)
-			{spellID = 146308, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Haromm's Talisman (Agility, Proc)
-			{spellID = 148903, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Sigil of Rampage (Agility, Proc)
-			{spellID = 148896, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ticking Ebon Detonator (Agility, Proc)
-			{spellID = 146310, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Discipline of Xuen (Crit, Proc)
-			{spellID = 146312, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
-			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Bad Juju (Agility, Proc)
-			{spellID = 138938, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Talisman of Bloodlust (Haste, Proc)
-			{spellID = 138895, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Rune of Re-Origination (Convert, Proc)
-			{spellID = 139120, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Renataki's Soul Charm (Agility, Proc)
-			{spellID = 138756, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Arrowflight Medallion (Crit, Use)
-			{spellID = 136086, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Terror in the Mists (Crit, Proc)
-			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Bandit Figurine (Haste, Use)
-			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Bottle of Infinite Stars (Agility, Proc)
-			{spellID = 126554, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Agility, Use)
-			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Agility, Proc)
-			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
-
+			-- 1.0: Darkmoon Cards
+			-- Melee DPS (Crit, Proc)
+			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 2.0: PvP Trinkets
+			-- Battlemaster (Health, Use)
+			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS [Agility] (Versatility, Use)
+			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS [Agility] (Versatility, Proc)
+			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Melee DPS [Agility]
+			-- Beating Heart of the Mountain (Multistrike, Use)
+			{spellID = 176878, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blackheart Enforcer's Medallion (Multistrike, Proc)
+			{spellID = 176984, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Jar of Doom (Mastery, Proc)
+			{spellID = 176939, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Humming Blackiron Trigger (Crit, Proc)
+			{spellID = 177067, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lucky Double-Sided Coin (Agility, Use)
+			{spellID = 177597, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Meaty Dragonspine Trophy (Haste, Proc)
+			{spellID = 177035, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Scales of Doom (Multistrike, Proc)
+			{spellID = 177038, unitID = "player", caster = "player", filter = "BUFF"},
+			
 			-- Enchants
-			-- General
-			-- Physical General
-			-- Physical Melee
-			-- Dancing Steel (Agility)
-			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Blackrock (Bonus Armor)
+			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Bleeding Hollow (Mastery)
+			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Shadowmoon (Spirit)
+			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Frostwolf (Multistrike)
+			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Thunderlord (Crit)
+			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Warsong (Haste)
+			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2158,6 +2042,8 @@ C["filger_spells"] = {
 			{spellID = 107079, filter = "CD"},
 
 			-- Items
+			-- Neck
+			{slotID = 2, filter = "CD"},
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -2167,8 +2053,6 @@ C["filger_spells"] = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
-
-			-- Internal
 		},
 	},
 	["SHAMAN"] = {
@@ -2224,108 +2108,81 @@ C["filger_spells"] = {
 			{spellID = 53390, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			-- General
-			-- Darkmoon Cards (Proc)
-			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Physical Agility DPS
-			-- Assurance of Consequence (Agility, Proc)
-			{spellID = 146308, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Haromm's Talisman (Agility, Proc)
-			{spellID = 148903, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Sigil of Rampage (Agility, Proc)
-			{spellID = 148896, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ticking Ebon Detonator (Agility, Proc)
-			{spellID = 146310, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Discipline of Xuen (Crit, Proc)
-			{spellID = 146312, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Vicious Talisman of the Shado-Pan Assault (Agility, Proc)
-			{spellID = 138699, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Bad Juju (Agility, Proc)
-			{spellID = 138938, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Talisman of Bloodlust (Haste, Proc)
-			{spellID = 138895, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Rune of Re-Origination (Convert, Proc)
-			{spellID = 139120, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Renataki's Soul Charm (Agility, Proc)
-			{spellID = 138756, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Arrowflight Medallion (Crit, Use)
-			{spellID = 136086, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Terror in the Mists (Crit, Proc)
-			{spellID = 126649, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Bandit Figurine (Haste, Use)
-			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Bottle of Infinite Stars (Agility, Proc)
-			{spellID = 126554, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Agility, Use)
-			{spellID = 126690, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Agility, Proc)
-			{spellID = 126707, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster General
-			-- Shock-Charger Medallion Figurine (Intellect, Use)
-			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Magistrate Figurine (Crit, Use)
-			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Use)
-			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Proc)
-			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS
-			-- Purified Bindings of Immerseus (Intellect, Proc)
-			{spellID = 146046, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kardris' Toxic Totem (Intellect, Proc)
-			{spellID = 148906, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Frenzied Crystal of Rage (Intellect, Proc)
-			{spellID = 148897, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Black Blood of Y'Shaarj (Intellect, Proc)
-			{spellID = 146184, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Yu'lon's Bite (Crit, Proc)
-			{spellID = 146218, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Unerring Vision of Lei-Shen (Crit, Proc)
-			{spellID = 138963, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
-			{spellID = 138703, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Cha-Ye's Essence of Brilliance (Intellect, Proc)
-			{spellID = 139133, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Breath of the Hydra (Intellect, Proc)
-			{spellID = 138898, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Wushoolay's Final Choice (Intellect, Proc)
-			{spellID = 138786, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Essence of Terror (Haste, Proc)
-			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Light of the Cosmos (Intellect, Proc)
-			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster Heal
-			-- Prismatic Prison of Pride (Intellect, Proc)
-			{spellID = 146314, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nazgrim's Burnished Insignia (Intellect, Proc)
-			{spellID = 148908, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thok's Acid-Grooved Tooth (Intellect, Proc)
-			{spellID = 148911, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Qin-xi's Polarizing Seal (Intellect, Proc)
-			{spellID = 126588, unitID = "player", caster = "player", filter = "BUFF"},
-
+			-- 1.0: Darkmoon Cards
+			-- Caster DPS (Crit, Proc)
+			{spellID = 162920, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Healing (Spirit, Proc)
+			{spellID = 162914, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS (Crit, Proc)
+			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 2.0: PvP Trinkets
+			-- Battlemaster (Health, Use)
+			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster DPS (Versatility, Use)
+			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster DPS (Versatility, Proc)
+			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS [Agility] (Versatility, Use)
+			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS [Agility] (Versatility, Proc)
+			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Melee DPS [Agility]
+			-- Beating Heart of the Mountain (Multistrike, Use)
+			{spellID = 176878, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blackheart Enforcer's Medallion (Multistrike, Proc)
+			{spellID = 176984, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Jar of Doom (Mastery, Proc)
+			{spellID = 176939, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Humming Blackiron Trigger (Crit, Proc)
+			{spellID = 177067, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lucky Double-Sided Coin (Agility, Use)
+			{spellID = 177597, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Meaty Dragonspine Trophy (Haste, Proc)
+			{spellID = 177035, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Scales of Doom (Multistrike, Proc)
+			{spellID = 177038, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 4.0: Caster DPS
+			-- Blackiron Micro Crucible (Multistrike, Proc)
+			{spellID = 177081, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Copeland's Clarity (Spellpower, Use)
+			{spellID = 177594, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darmac's Unstoppable Talisman (Haste, Proc)
+			{spellID = 177051, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Orb of Putrescence (Mastery, Proc)
+			{spellID = 176941, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Furyheart Talisman (Haste, Proc)
+			{spellID = 176980, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Goren Soul Repository (Crit, Proc)
+			{spellID = 177046, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shards of Nothing (Haste, Use)
+			{spellID = 176875, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 5.0: Healing
+			-- Auto-Repairing Autoclave (Haste, Proc)
+			{spellID = 177086, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elementalist's Shielding Talisman (Multistrike, Proc)
+			{spellID = 177063, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Emblem of Caustic Healing (Haste, Use)
+			{spellID = 176879, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Censer of Faith (Haste, Proc)
+			{spellID = 176943, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Immaculate Living Mushroom (Crit, Proc)
+			{spellID = 176978, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ironspike Chew Toy (Spirit, Proc)
+			{spellID = 177060, unitID = "player", caster = "player", filter = "BUFF"},
+			
 			-- Enchants
-			-- General
-			-- Physical General
-			-- Physical Melee
-			-- Dancing Steel (Agility)
-			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Caster General
-			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Caster Heal
-
-			-- Legendary Meta Gems
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Courageous Primal Diamond (Caster Heal)
-			{spellID = 137288, unitID = "player", caster = "all", filter = "BUFF"},
-
-			-- Legendary Cloak
-			-- Spirit of Chi-Ji
-			{spellID = 146200, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Blackrock (Bonus Armor)
+			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Bleeding Hollow (Mastery)
+			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Shadowmoon (Spirit)
+			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Frostwolf (Multistrike)
+			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Thunderlord (Crit)
+			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Warsong (Haste)
+			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2447,6 +2304,8 @@ C["filger_spells"] = {
 			{spellID = 107079, filter = "CD"},
 
 			-- Items
+			-- Neck
+			{slotID = 2, filter = "CD"},
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -2456,10 +2315,6 @@ C["filger_spells"] = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
-
-			-- Internal
-			-- Purified Bindings of Immerseus (Intellect, Proc)
-			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["WARLOCK"] = {
@@ -2508,60 +2363,50 @@ C["filger_spells"] = {
 			-- Demonic Synergy
 			{spellID = 171982, unitID = "player", caster = "player", filter = "BUFF"},
 
-			-- Item sets
+			-- Item Sets
 			-- Ember Master (T16)
 			{spellID = 145164, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			-- General
-			-- Darkmoon Cards (Proc)
-			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster General
-			-- Shock-Charger Medallion Figurine (Intellect, Use)
-			{spellID = 136082, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Magistrate Figurine (Crit, Use)
-			{spellID = 126605, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Use)
-			{spellID = 126683, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Spell Power, Proc)
-			{spellID = 126705, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS
-			-- Purified Bindings of Immerseus (Intellect, Proc)
-			{spellID = 146046, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kardris' Toxic Totem (Intellect, Proc)
-			{spellID = 148906, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Frenzied Crystal of Rage (Intellect, Proc)
-			{spellID = 148897, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Black Blood of Y'Shaarj (Intellect, Proc)
-			{spellID = 146184, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Yu'lon's Bite (Crit, Proc)
-			{spellID = 146218, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Unerring Vision of Lei-Shen (Crit, Proc)
-			{spellID = 138963, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Volatile Talisman of the Shado-Pan Assault (Haste, Proc)
-			{spellID = 138703, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Cha-Ye's Essence of Brilliance (Intellect, Proc)
-			{spellID = 139133, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Breath of the Hydra (Intellect, Proc)
-			{spellID = 138898, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Wushoolay's Final Choice (Intellect, Proc)
-			{spellID = 138786, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Essence of Terror (Haste, Proc)
-			{spellID = 126659, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Light of the Cosmos (Intellect, Proc)
-			{spellID = 126577, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.0: Darkmoon Cards
+			-- Caster DPS (Crit, Proc)
+			{spellID = 162920, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 2.0: PvP Trinkets
+			-- Battlemaster (Health, Use)
+			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster DPS (Versatility, Use)
+			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Caster DPS (Versatility, Proc)
+			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Caster DPS
+			-- Blackiron Micro Crucible (Multistrike, Proc)
+			{spellID = 177081, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Copeland's Clarity (Spellpower, Use)
+			{spellID = 177594, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darmac's Unstoppable Talisman (Haste, Proc)
+			{spellID = 177051, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Orb of Putrescence (Mastery, Proc)
+			{spellID = 176941, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Furyheart Talisman (Haste, Proc)
+			{spellID = 176980, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Goren Soul Repository (Crit, Proc)
+			{spellID = 177046, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shards of Nothing (Haste, Use)
+			{spellID = 176875, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- General
-			-- Caster General
-			-- Jade Spirit (Intellect + Spirit)
-			{spellID = 104993, unitID = "player", caster = "all", filter = "BUFF"},
-
-			-- Legendary Meta Gems
-			-- Sinister Primal Diamond (Caster DPS)
-			{spellID = 137590, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Blackrock (Bonus Armor)
+			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Bleeding Hollow (Mastery)
+			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Shadowmoon (Spirit)
+			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Frostwolf (Multistrike)
+			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Thunderlord (Crit)
+			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Warsong (Haste)
+			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2674,6 +2519,8 @@ C["filger_spells"] = {
 			{spellID = 69070, filter = "CD"},
 
 			-- Items
+			-- Neck
+			{slotID = 2, filter = "CD"},
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -2683,10 +2530,6 @@ C["filger_spells"] = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
-
-			-- Internal
-			-- Purified Bindings of Immerseus (Intellect, Proc)
-			{spellID = 146046, filter = "ICD", trigger = "BUFF", duration = 115},
 		},
 	},
 	["WARRIOR"] = {
@@ -2757,75 +2600,66 @@ C["filger_spells"] = {
 			{spellID = 86663, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			-- General
-			-- Darkmoon Cards (Proc)
-			{spellID = 128985, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Health, Use)
-			{spellID = 126697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tank
-			-- Rook's Unlucky Talisman (Reduces damage, Use)
-			{spellID = 146343, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Resolve of Niuzao (Dodge, Use)
-			{spellID = 146344, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Steadfast Talisman of the Shado-Pan Assault (Dodge, Use)
-			{spellID = 138728, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Delicate Vial of the Sanguinaire (Mastery, Proc)
-			{spellID = 138864, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stuff of Nightmares (Dodge, Proc)
-			{spellID = 126646, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Vial of Dragon's Blood (Dodge, Proc)
-			{spellID = 126533, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Warlord Figurine (Mastery, Use)
-			{spellID = 126597, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Physical Strength DPS
-			-- Evil Eye of Galakras (Strength, Proc)
-			{spellID = 146245, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thok's Tail Tip (Strength, Proc)
-			{spellID = 146250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Skeer's Bloodsoaked Talisman (Strength, Proc)
-			{spellID = 146285, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fusion-Fire Core (Strength, Proc)
-			{spellID = 148899, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Alacrity of Xuen (Haste, Proc)
-			{spellID = 146296, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Brutal Talisman of the Shado-Pan Assault (Strength, Proc)
-			{spellID = 138702, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fabled Feather of Ji-Kun (Strength, Proc)
-			{spellID = 138759, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Spark of Zandalar (Strength, Proc)
-			{spellID = 138958, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Primordius' Talisman of Rage (Strength, Proc)
-			{spellID = 138870, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Gaze of the Twins (Crit, Proc)
-			{spellID = 139170, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Helmbreaker Medallion (Crit, Use)
-			{spellID = 136084, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Darkmist Vortex (Haste, Proc)
-			{spellID = 126657, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lei Shin's Final Orders (Strength, Proc)
-			{spellID = 126582, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Jade Charioteer Figurine (Strength, Use)
-			{spellID = 126599, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Iron Belly Wok (Haste, Use)
-			{spellID = 129812, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Strength, Use)
-			{spellID = 126679, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets (Strength, Proc)
-			{spellID = 126700, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.0: Darkmoon Cards
+			-- Melee DPS (Crit, Proc)
+			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tanking (Crit, Proc)
+			{spellID = 162918, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 2.0: PvP Trinkets
+			-- Battlemaster (Health, Use)
+			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS [Strength] (Versatility, Use)
+			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Melee DPS [Strength] (Versatility, Proc)
+			{spellID = 182063, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Tanking
+			-- Battering Talisman (Haste, Proc)
+			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blast Furnace Door (Mastery, Proc)
+			{spellID = 177056, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Evergaze Arcane Eidolon (Bonus Armor, Proc)
+			{spellID = 177053, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Relic of Blood (Haste, Proc)
+			{spellID = 176937, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Kyb's Foolish Perseverance (Health, Use)
+			{spellID = 176460, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Petrified Flesh-Eating Spore (Mastery, Proc)
+			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Pol's Blinded Eye (Mastery, Use)
+			{spellID = 176876, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Stoneheart Idol (Crit, Proc)
+			{spellID = 176982, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tablet of Turnbuckle Teamwork (Bonus Armor, Use)
+			{spellID = 176873, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 4.0: Melee DPS [Strength]
+			-- Forgemaster's Insignia (Multistrike, Proc)
+			{spellID = 177096, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Formidable Fang (Multistrike, Proc)
+			{spellID = 176935, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Horn of the Screaming Spirits (Mastery, Proc)
+			{spellID = 177042, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Mote of the Mountain (Versatility, Proc)
+			{spellID = 176974, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Scabbard of Kyanos (Strength, Use)
+			{spellID = 177189, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tectus' Beating Heart (Crit, Proc)
+			{spellID = 177040, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vial of Convulsive Shadows (Multistrike, Use)
+			{spellID = 176874, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- General
-			-- Tank
-			-- River's Song (Dodge)
-			{spellID = 116660, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Physical General
-			-- Physical Melee
-			-- Dancing Steel (Strength)
-			{spellID = 120032, unitID = "player", caster = "all", filter = "BUFF"},
-
-			-- Legendary Meta Gems
-			-- Indomitable Primal Diamond (Tank)
-			{spellID = 137593, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Mark of Blackrock (Bonus Armor)
+			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Bleeding Hollow (Mastery)
+			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Shadowmoon (Spirit)
+			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Frostwolf (Multistrike)
+			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Thunderlord (Crit)
+			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of Warsong (Haste)
+			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2921,6 +2755,8 @@ C["filger_spells"] = {
 			{spellID = 107079, filter = "CD"},
 
 			-- Items
+			-- Neck
+			{slotID = 2, filter = "CD"},
 			-- Gloves
 			{slotID = 10, filter = "CD"},
 			-- Belt
@@ -2930,8 +2766,6 @@ C["filger_spells"] = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
-
-			-- Internal
 		},
 	},
 	["ALL"] = {
@@ -2944,6 +2778,68 @@ C["filger_spells"] = {
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].special_proc_icon)},
 
+			-- Experience & Reputation
+			-- Ancient Knowledge
+			{spellID = 127250, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Accelerated Learning
+			{spellID = 178119, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Darkmoon Faire (Carousel)
+			{spellID = 46668, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Darkmoon Faire (Top Hat)
+			{spellID = 136583, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Elixir of Shadows
+			{spellID = 37678, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			
+			-- Fishing
+			-- Draenor Fishing
+			-- Abyssal Gulper Eel Bait
+			{spellID = 158038, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Black Lake Sturgeon Bait
+			{spellID = 158035, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Blackwater Whiptail Bait
+			{spellID = 158039, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Fat Sleeper Bait
+			{spellID = 158034, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Fire Ammonite Bait
+			{spellID = 158036, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Jawless Skulker Bait
+			{spellID = 158031, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Sea Scorpion Bait
+			{spellID = 158037, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Northrend Fishing
+			-- Dalaran Fountain (Gold Coin)
+			{spellID = 59125, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Pandaria Fishing
+			-- Ancient Pandaren Fishing Charm
+			{spellID = 125164, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Angler's Fishing Raft
+			{spellID = 124036, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Bipsi's Bobbing Berg
+			{spellID = 152421, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Sharpened Tuskarr Spear
+			{spellID = 128357, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			
+			-- Other (Draenor)
+			-- Aviana's Feather
+			{spellID = 176286, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Goblin Glider Kit
+			{spellID = 126389, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Shieldtronic Shield
+			{spellID = 173260, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Spirit of Shinri
+			{spellID = 174004, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Stealthman 54
+			{spellID = 156136, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- "Skyterror" Personal Delivery System
+			{spellID = 168342, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Whispers of Rai'Vosh
+			{spellID = 167273, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- XD-57 "Bullseye" Guided Rocket Kit
+			{spellID = 168225, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Other (Pandaria)
+			-- Ash Covered Horn
+			{spellID = 148626, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			
 			-- Potions
 			-- Draenic Agility Potion
 			{spellID = 156423, unitID = "player", caster = "player", filter = "BUFF"},
