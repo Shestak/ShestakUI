@@ -65,9 +65,9 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Melee DPS (Crit, Proc)
-			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking (Crit, Proc)
-			{spellID = 162918, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162917, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -326,13 +326,13 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Caster DPS (Crit, Proc)
-			{spellID = 162920, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing (Spirit, Proc)
-			{spellID = 162914, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162913, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Melee DPS (Crit, Proc)
-			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking (Crit, Proc)
-			{spellID = 162918, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162917, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -623,7 +623,7 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Ranged DPS (Crit, Proc)
-			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -853,7 +853,7 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Caster DPS (Crit, Proc)
-			{spellID = 162920, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1139,11 +1139,11 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Healing (Spirit, Proc)
-			{spellID = 162914, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162913, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Melee DPS (Crit, Proc)
-			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking (Crit, Proc)
-			{spellID = 162918, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162917, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1373,11 +1373,11 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Healing (Spirit, Proc)
-			{spellID = 162914, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162913, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Melee DPS (Crit, Proc)
-			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking (Crit, Proc)
-			{spellID = 162918, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162917, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1615,9 +1615,9 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Caster DPS (Crit, Proc)
-			{spellID = 162920, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing (Spirit, Proc)
-			{spellID = 162914, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162913, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1894,7 +1894,7 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Melee DPS (Crit, Proc)
-			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2110,11 +2110,11 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Caster DPS (Crit, Proc)
-			{spellID = 162920, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing (Spirit, Proc)
-			{spellID = 162914, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162913, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Melee DPS (Crit, Proc)
-			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2370,7 +2370,7 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Caster DPS (Crit, Proc)
-			{spellID = 162920, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2602,9 +2602,9 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Melee DPS (Crit, Proc)
-			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking (Crit, Proc)
-			{spellID = 162918, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162917, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
