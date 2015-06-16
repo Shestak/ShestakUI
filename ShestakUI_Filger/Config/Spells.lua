@@ -919,7 +919,7 @@ C["filger_spells"] = {
 			-- Freeze (Pet)
 			{spellID = 33395, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Water Jet (Pet)
-			{spellID = 135029, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 135029, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Nova
 			{spellID = 122, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Ice Ward
