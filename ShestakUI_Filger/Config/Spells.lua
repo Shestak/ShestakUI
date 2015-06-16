@@ -2783,12 +2783,16 @@ C["filger_spells"] = {
 			{spellID = 127250, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Accelerated Learning
 			{spellID = 178119, unitID = "player", caster = "all", filter = "BUFF", absID = true},
-			-- Darkmoon Faire (Carousel)
+			-- Darkmoon Faire: Carousel
 			{spellID = 46668, unitID = "player", caster = "all", filter = "BUFF", absID = true},
-			-- Darkmoon Faire (Top Hat)
+			-- Darkmoon Faire: Top Hat
 			{spellID = 136583, unitID = "player", caster = "all", filter = "BUFF", absID = true},
-			-- Elixir of Shadows
+			-- Elixir of Shadows (Outlands)
 			{spellID = 37678, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Guild Battle Standard: Alliance
+			{spellID = 90216, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Guild Battle Standard: Horde
+			{spellID = 90708, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			
 			-- Fishing
 			-- Draenor Fishing
