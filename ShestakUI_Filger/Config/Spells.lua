@@ -2844,7 +2844,7 @@ C["filger_spells"] = {
 			-- Ash Covered Horn
 			{spellID = 148626, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			
-			-- Potions
+			-- Potions: General
 			-- Draenic Agility Potion
 			{spellID = 156423, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Draenic Intellect Potion
@@ -2865,6 +2865,13 @@ C["filger_spells"] = {
 			{spellID = 2379, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Speed (BG)
 			{spellID = 23451, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Potions: Brawler's Guild
+			-- Brawler's Draenic Agility Potion
+			{spellID = 176107, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Brawler's Draenic Intellect Potion
+			{spellID = 176108, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Brawler's Draenic Strength Potion
+			{spellID = 176109, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Leeroy Jenkins
 			-- Bloodlust
