@@ -2801,17 +2801,21 @@ C["filger_spells"] = {
 
 			-- Ashran
 			-- Ancient Artifact
-			{spellID = 168506, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			{spellID = 168506, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Boulder Shield
-			{spellID = 169373, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			{spellID = 169373, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Scroll of Speed
-			{spellID = 171250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			{spellID = 171250, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Scroll of Protection
-			{spellID = 171249, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			{spellID = 171249, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Star Root Tuber
-			{spellID = 161495, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			{spellID = 161495, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Wand of Lightning Shield
-			{spellID = 171725, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			{spellID = 171725, unitID = "player", caster = "all", filter = "BUFF"},
+			
+			-- Brawler's Guild
+			-- Strange Feeling
+			{spellID = 134851, unitID = "player", caster = "all", filter = "DEBUFF"},
 			
 			-- Experience & Reputation
 			-- Ancient Knowledge
