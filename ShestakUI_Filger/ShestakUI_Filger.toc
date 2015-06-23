@@ -1,8 +1,8 @@
-## Interface: 60100
+## Interface: 60200
 ## Title: ShestakUI Filger
 ## Notes: Class timers for ShestakUI
 ## Author: Nils Ruesch
-## Version: 5.06
+## Version: 5.08
 ## Credits: Affli, Ildyria, SinaC
 ## Thanks: Erratic, Wetxius
 ## RequiredDeps: ShestakUI
