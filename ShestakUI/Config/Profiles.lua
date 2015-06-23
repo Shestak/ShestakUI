@@ -130,11 +130,13 @@ local T, C, L, _ = unpack(select(2, ...))
 	C["font"].unit_frames_font_size = 11
 	C["font"].combat_text_font_style = "OUTLINE"
 	C["font"].chat_font_style = "OUTLINE"
+	
 --Position options
 	C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -33, -75}
 	C["position"].raid_cooldown = {"TOPRIGHT", UIParent, "TOPRIGHT", -21, -75}
 	C["position"].unitframes.arena = {"BOTTOMRIGHT", UIParent, "RIGHT", -270, -70}
 	C["position"].unitframes.boss = {"BOTTOMRIGHT", UIParent, "RIGHT", -270, -70}
-	C["position"].pet_horizontal = {"BOTTOM", UIParent, "BOTTOM", 0, 64}
-	C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", 154, 64}
+	C["position"].bottom_bars = {"BOTTOM", UIParent, "BOTTOM", 0, 24}
+	C["position"].pet_horizontal = {"BOTTOM", UIParent, "BOTTOM", 0, 80}
+	C["position"].stance_bar = {"BOTTOM", UIParent, "BOTTOM", 154, 80}
 --end
