@@ -65,9 +65,12 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Melee DPS (Crit, Proc)
-			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking (Crit, Proc)
-			{spellID = 162918, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162917, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.1: Alchemy Stones
+			-- Strength
+			{spellID = 60229, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -115,8 +118,6 @@ C["filger_spells"] = {
 			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of Bleeding Hollow (Mastery)
 			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Shadowmoon (Spirit)
-			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of the Frostwolf (Multistrike)
 			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of the Thunderlord (Crit)
@@ -326,13 +327,18 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Caster DPS (Crit, Proc)
-			{spellID = 162920, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing (Spirit, Proc)
-			{spellID = 162914, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162913, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Melee DPS (Crit, Proc)
-			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking (Crit, Proc)
-			{spellID = 162918, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162917, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.1: Alchemy Stones
+			-- Agility
+			{spellID = 60233, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Intellect
+			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -623,7 +629,10 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Ranged DPS (Crit, Proc)
-			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.1: Alchemy Stones
+			-- Agility
+			{spellID = 60233, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -853,7 +862,10 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Caster DPS (Crit, Proc)
-			{spellID = 162920, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.1: Alchemy Stones
+			-- Intellect
+			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -878,12 +890,8 @@ C["filger_spells"] = {
 			{spellID = 176875, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- Mark of Blackrock (Bonus Armor)
-			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of Bleeding Hollow (Mastery)
 			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Shadowmoon (Spirit)
-			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of the Frostwolf (Multistrike)
 			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of the Thunderlord (Crit)
@@ -919,7 +927,7 @@ C["filger_spells"] = {
 			-- Freeze (Pet)
 			{spellID = 33395, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Water Jet (Pet)
-			{spellID = 135029, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 135029, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Nova
 			{spellID = 122, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Ice Ward
@@ -1139,11 +1147,16 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Healing (Spirit, Proc)
-			{spellID = 162914, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162913, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Melee DPS (Crit, Proc)
-			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking (Crit, Proc)
-			{spellID = 162918, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162917, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.1: Alchemy Stones
+			-- Agility
+			{spellID = 60233, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Intellect
+			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1373,11 +1386,16 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Healing (Spirit, Proc)
-			{spellID = 162914, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162913, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Melee DPS (Crit, Proc)
-			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking (Crit, Proc)
-			{spellID = 162918, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162917, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.1 Alchemy Stones
+			-- Strength
+			{spellID = 60229, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Intellect
+			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1615,9 +1633,12 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Caster DPS (Crit, Proc)
-			{spellID = 162920, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing (Spirit, Proc)
-			{spellID = 162914, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162913, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.1: Alchemy Stones
+			-- Intellect
+			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1655,8 +1676,6 @@ C["filger_spells"] = {
 			{spellID = 177060, unitID = "player", caster = "player", filter = "BUFF"},
 			
 			-- Enchants
-			-- Mark of Blackrock (Bonus Armor)
-			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of Bleeding Hollow (Mastery)
 			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of Shadowmoon (Spirit)
@@ -1894,7 +1913,10 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Melee DPS (Crit, Proc)
-			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.1: Alchemy Stones
+			-- Agility
+			{spellID = 60233, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1919,12 +1941,8 @@ C["filger_spells"] = {
 			{spellID = 177038, unitID = "player", caster = "player", filter = "BUFF"},
 			
 			-- Enchants
-			-- Mark of Blackrock (Bonus Armor)
-			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of Bleeding Hollow (Mastery)
 			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Shadowmoon (Spirit)
-			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of the Frostwolf (Multistrike)
 			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of the Thunderlord (Crit)
@@ -2110,11 +2128,16 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Caster DPS (Crit, Proc)
-			{spellID = 162920, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing (Spirit, Proc)
-			{spellID = 162914, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162913, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Melee DPS (Crit, Proc)
-			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.1: Alchemy Stones
+			-- Agility
+			{spellID = 60233, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Intellect
+			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2171,8 +2194,6 @@ C["filger_spells"] = {
 			{spellID = 177060, unitID = "player", caster = "player", filter = "BUFF"},
 			
 			-- Enchants
-			-- Mark of Blackrock (Bonus Armor)
-			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of Bleeding Hollow (Mastery)
 			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of Shadowmoon (Spirit)
@@ -2370,7 +2391,10 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Caster DPS (Crit, Proc)
-			{spellID = 162920, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.1: Alchemy Stones
+			-- Intellect
+			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2395,12 +2419,8 @@ C["filger_spells"] = {
 			{spellID = 176875, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- Mark of Blackrock (Bonus Armor)
-			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of Bleeding Hollow (Mastery)
 			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Shadowmoon (Spirit)
-			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of the Frostwolf (Multistrike)
 			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of the Thunderlord (Crit)
@@ -2602,9 +2622,12 @@ C["filger_spells"] = {
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Melee DPS (Crit, Proc)
-			{spellID = 162916, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking (Crit, Proc)
-			{spellID = 162918, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 162917, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.1: Alchemy Stones
+			-- Strength
+			{spellID = 60229, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2652,8 +2675,6 @@ C["filger_spells"] = {
 			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of Bleeding Hollow (Mastery)
 			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Shadowmoon (Spirit)
-			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of the Frostwolf (Multistrike)
 			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mark of the Thunderlord (Crit)
@@ -2778,69 +2799,90 @@ C["filger_spells"] = {
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].special_proc_icon)},
 
+			-- Ashran
+			-- Ancient Artifact
+			{spellID = 168506, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Boulder Shield
+			{spellID = 169373, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Scroll of Speed
+			{spellID = 171250, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Scroll of Protection
+			{spellID = 171249, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Star Root Tuber
+			{spellID = 161495, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Wand of Lightning Shield
+			{spellID = 171725, unitID = "player", caster = "all", filter = "BUFF"},
+			
+			-- Brawler's Guild
+			-- Strange Feeling
+			{spellID = 134851, unitID = "player", caster = "all", filter = "DEBUFF"},
+			
 			-- Experience & Reputation
 			-- Ancient Knowledge
-			{spellID = 127250, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 127250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Accelerated Learning
-			{spellID = 178119, unitID = "player", caster = "all", filter = "BUFF", absID = true},
-			-- Darkmoon Faire (Carousel)
-			{spellID = 46668, unitID = "player", caster = "all", filter = "BUFF", absID = true},
-			-- Darkmoon Faire (Top Hat)
-			{spellID = 136583, unitID = "player", caster = "all", filter = "BUFF", absID = true},
-			-- Elixir of Shadows
-			{spellID = 37678, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 178119, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Darkmoon Faire: Carousel
+			{spellID = 46668, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Darkmoon Faire: Top Hat
+			{spellID = 136583, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Elixir of Shadows (Outlands)
+			{spellID = 37678, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Guild Battle Standard: Alliance
+			{spellID = 90216, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Guild Battle Standard: Horde
+			{spellID = 90708, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			
-			-- Fishing
-			-- Draenor Fishing
+			-- Fishing: Draenor
 			-- Abyssal Gulper Eel Bait
-			{spellID = 158038, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 158038, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Black Lake Sturgeon Bait
-			{spellID = 158035, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 158035, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Blackwater Whiptail Bait
-			{spellID = 158039, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 158039, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Fat Sleeper Bait
-			{spellID = 158034, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 158034, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Fire Ammonite Bait
-			{spellID = 158036, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 158036, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Jawless Skulker Bait
-			{spellID = 158031, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 158031, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Sea Scorpion Bait
-			{spellID = 158037, unitID = "player", caster = "all", filter = "BUFF", absID = true},
-			-- Northrend Fishing
-			-- Dalaran Fountain (Gold Coin)
-			{spellID = 59125, unitID = "player", caster = "all", filter = "BUFF", absID = true},
-			-- Pandaria Fishing
+			{spellID = 158037, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Fishing: Pandaria
 			-- Ancient Pandaren Fishing Charm
-			{spellID = 125164, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 125164, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Angler's Fishing Raft
-			{spellID = 124036, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 124036, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Bipsi's Bobbing Berg
-			{spellID = 152421, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 152421, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Sharpened Tuskarr Spear
-			{spellID = 128357, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 128357, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Fishing: Northrend
+			-- Dalaran Fountain (Gold Coin)
+			{spellID = 59125, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			
-			-- Other (Draenor)
+			-- Miscellaneous: Draenor
 			-- Aviana's Feather
-			{spellID = 176286, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 176286, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Goblin Glider Kit
 			{spellID = 126389, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Shieldtronic Shield
 			{spellID = 173260, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Spirit of Shinri
-			{spellID = 174004, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 174004, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Stealthman 54
 			{spellID = 156136, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- "Skyterror" Personal Delivery System
-			{spellID = 168342, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 168342, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Whispers of Rai'Vosh
-			{spellID = 167273, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 167273, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- XD-57 "Bullseye" Guided Rocket Kit
-			{spellID = 168225, unitID = "player", caster = "all", filter = "BUFF", absID = true},
-			-- Other (Pandaria)
+			{spellID = 168225, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Miscellaneous: Pandaria
 			-- Ash Covered Horn
-			{spellID = 148626, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			{spellID = 148626, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			
-			-- Potions
+			-- Potions: General
 			-- Draenic Agility Potion
 			{spellID = 156423, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Draenic Intellect Potion
@@ -2861,6 +2903,13 @@ C["filger_spells"] = {
 			{spellID = 2379, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Speed (BG)
 			{spellID = 23451, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Potions: Brawler's Guild
+			-- Brawler's Draenic Agility Potion
+			{spellID = 176107, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Brawler's Draenic Intellect Potion
+			{spellID = 176108, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Brawler's Draenic Strength Potion
+			{spellID = 176109, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Leeroy Jenkins
 			-- Bloodlust
@@ -3511,17 +3560,26 @@ C["filger_spells"] = {
 			-- Impaling Spear (Wind Lord Mel'jarak)
 			{spellID = 122224, unitID = "target", caster = "all", filter = "DEBUFF"},
 
-			-- All
-			-- Warsong Flag
-			{spellID = 23333, unitID = "target", caster = "all", filter = "BUFF"},
-			{spellID = 23335, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Ashran
+			-- Ancient Artifact
+			{spellID = 168506, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Boulder Shield
+			{spellID = 169373, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Scroll of Protection
+			{spellID = 171249, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Star Root Tuber
+			{spellID = 161495, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Battlegrounds
 			-- Netherstorm Flag
 			{spellID = 34976, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Orb of Power
 			{spellID = 121175, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Carrying Seaforium
+			-- Warsong Flag
+			{spellID = 23333, unitID = "target", caster = "all", filter = "BUFF"},
+			{spellID = 23335, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Seaforium Bombs
 			{spellID = 66271, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Drink
+			-- Drinking
 			{spellID = 80167, unitID = "target", caster = "all", filter = "BUFF"},
 		},
 	},
