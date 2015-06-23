@@ -81,7 +81,90 @@ T.RaidDebuffs = {
 -----------------------------------------------------------------
 -- Draenor
 -----------------------------------------------------------------
-
+-- Hellfire Citadel
+	-- Hellfire Assault
+	[SpellName(184369)] = 7, -- Howling Axe (target)
+	[SpellName(180079)] = 4, -- Fellfire Munition
+	-- Fel Reaver
+	[SpellName(179897)] = 6, -- Blitz
+	[SpellName(185978)] = 7, -- Firebomb Vulnerability
+	[SpellName(182373)] = 4, -- Firebomb Vulnerability
+	[SpellName(182280)] = 8, -- Artillery
+	[SpellName(182074)] = 3, -- Immolation, Unstable Orb
+	[SpellName(182001)] = 3, -- Immolation, Unstable Orb
+	-- Gorefiend
+	[SpellName(179867)] = 3, -- Gorefiend's Corruption
+	[SpellName(181295)] = 4, -- Digest
+	[SpellName(179977)] = 8, -- Touch of Doom
+	[SpellName(179864)] = 6, -- Shadow of Death
+	[SpellName(179909)] = 9, -- Shared Fate (rooted player)
+	[SpellName(179908)] = 8, -- Shared Fate (other players)
+	-- Kilrogg Deadeye
+	[SpellName(181488)] = 3, -- Vision of Death
+	[SpellName(188929)] = 7, -- Heart Seeker (target)
+	[SpellName(180389)] = 4, -- Heart Seeker (dot)
+	-- Socrethar
+	[SpellName(182038)] = 3, -- Shattered Defense
+	[SpellName(188666)] = 7, -- Eternal Hunger (mythic add fixate)
+	[SpellName(189627)] = 7, -- Volatile Fel Orb (fixate)
+	[SpellName(180415)] = 4, -- Fel Prison
+	-- Xhul'horac
+	[SpellName(188208)] = 7, -- Ablaze
+	[SpellName(186073)] = 7, -- Felsinged
+	[SpellName(186407)] = 8, -- Fel Surge
+	[SpellName(186500)] = 9, -- Chains of Fel
+	[SpellName(186063)] = 7, -- Wasting Void
+	[SpellName(186333)] = 8, -- Void Surge
+	-- Fel Lord Zakuun
+	[SpellName(181508)] = 9, -- Seed of Destruction
+	[SpellName(181653)] = 7, -- Fel Crystals (too close)
+	[SpellName(179428)] = 8, -- Rumbling Fissure (soak)
+	[SpellName(182008)] = 3, -- Latent Energy (can't soak anymore)
+	[SpellName(179407)] = 6, -- Disembodied (in shadow realm)
+	-- Kormrok
+	[SpellName(187819)] = 7, -- Hands
+	[SpellName(181345)] = 7, -- Hand (tank)
+	-- Tyrant Velhari
+	[SpellName(185237)] = 6, -- Touch of Harm
+	[SpellName(185238)] = 6, -- Touch of Harm
+	[SpellName(185241)] = 7, -- Edict of Condemnation
+	[SpellName(180526)] = 7, -- Font of Corruption
+	-- Shadow-Lord Iskar
+	[SpellName(181957)] = 9, -- Phantasmal Wind
+	[SpellName(182200)] = 4, -- Fel Chakram
+	[SpellName(182178)] = 4, -- Fel Chakram
+	[SpellName(182325)] = 2, -- Phantasmal Wounds
+	[SpellName(185239)] = 1, -- Radiance of Anzu
+	[SpellName(185510)] = 3, -- Dark Bindings
+	[SpellName(182600)] = 2, -- Fel Fire
+	[SpellName(179219)] = 3, -- Fel Bomb
+	[SpellName(181753)] = 3, -- Fel Bomb
+	-- Mannoroth
+	[SpellName(181275)] = 8, -- Curse of Legion
+	[SpellName(181099)] = 7, -- Mark of Doom
+	[SpellName(181597)] = 4, -- Mannoroths Gaze
+	[SpellName(182006)] = 4, -- Mannoroths Gaze
+	[SpellName(181841)] = 6, -- Shadowforce
+	[SpellName(182088)] = 6, -- Shadowforce
+	-- Hellfire Council
+	[SpellName(184360)] = 7, -- Fel Rage
+	[SpellName(184449)] = 5, -- Mark of Necromancer
+	[SpellName(185065)] = 5, -- Mark of Necromancer
+	[SpellName(184450)] = 5, -- Mark of Necromancer
+	[SpellName(185066)] = 5, -- Mark of Necromancer
+	[SpellName(184676)] = 5, -- Mark of Necromancer
+	[SpellName(184652)] = 3, -- Reap
+	-- Archimonde
+	[SpellName(184964)] = 7, -- Shackled Torment
+	[SpellName(186123)] = 6, -- Focused Chaos
+	[SpellName(185014)] = 6, -- Wrought Chaos
+	[SpellName(186952)] = 8, -- Nether Banish
+	[SpellName(189891)] = 8, -- Nether Banish
+	[SpellName(186961)] = 8, -- Nether Banish
+	[SpellName(183634)] = 7, -- Shadowfel Burst
+	[SpellName(189895)] = 6, -- Void Star Fixate
+	[SpellName(190049)] = 4, -- Nether Corruption
+	
 -- Blackrock Foundry
 	--Gruul
 	[SpellName(155080)] = 4, -- Inferno Slice
