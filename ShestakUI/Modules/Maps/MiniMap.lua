@@ -217,7 +217,7 @@ local micromenu = {
 			end
 		end
 	end},
-	{text = ENCOUNTER_JOURNAL, notCheckable = 1, func = function()
+	{text = ADVENTURE_JOURNAL, notCheckable = 1, func = function()
 		ToggleEncounterJournal()
 	end},
 	{text = COLLECTIONS, notCheckable = 1, func = function()
