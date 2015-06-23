@@ -20,6 +20,7 @@ local function LoadSkin()
 
 	T.SkinEditBox(EncounterJournalSearchBox)
 	T.SkinCloseButton(EncounterJournalCloseButton)
+	T.SkinDropDownBox(EncounterJournalInstanceSelectTierDropDown)
 
 	EncounterJournalInset:StripTextures(true)
 	EncounterJournal:HookScript("OnShow", function()
@@ -57,7 +58,21 @@ local function LoadSkin()
 	T.SkinScrollBar(EncounterJournalInstanceSelectScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoDetailsScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoLootScrollFrameScrollBar)
+	T.SkinScrollBar(EncounterJournalEncounterFrameInstanceFrameLoreScrollFrameScrollBar)
+	T.SkinScrollBar(EncounterJournalEncounterFrameInfoOverviewScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoBossesScrollFrameScrollBar)
+	
+	
+	for i = 1, AJ_MAX_NUM_SUGGESTIONS do
+		local suggestion = EncounterJournal.suggestFrame["Suggestion"..i];
+		if i == 1 then
+			suggestion.button:SkinButton()
+			T.SkinNextPrevButton(suggestion.prevButton)
+			T.SkinNextPrevButton(suggestion.nextButton)
+		else
+			suggestion.centerDisplay.button:SkinButton()
+		end
+	end
 end
 
 T.SkinFuncs["Blizzard_EncounterJournal"] = LoadSkin
