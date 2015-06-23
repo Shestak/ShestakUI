@@ -1,12 +1,12 @@
-## Interface: 60100
+## Interface: 60200
 ## Title: ShestakUI Filger
 ## Notes: Class timers for ShestakUI
 ## Author: Nils Ruesch
-## Version: 5.07
+## Version: 5.08
 ## Credits: Affli, Ildyria, SinaC
 ## Thanks: Erratic, Tryllemann, Wetxius
 ## RequiredDeps: ShestakUI
-## X-Curse-Packaged-Version: 5.07
+## X-Curse-Packaged-Version: 5.08
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## X-WoWI-ID: 19033
