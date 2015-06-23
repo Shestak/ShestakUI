@@ -16,13 +16,13 @@ local function LoadSkin()
 
 	local buttons = {
 		"HelpFrameAccountSecurityOpenTicket",
-		"HelpFrameOpenTicketHelpTopIssues",
+		--"HelpFrameOpenTicketHelpTopIssues",
 		"HelpFrameOpenTicketHelpOpenTicket",
-		"HelpFrameOpenTicketHelpItemRestoration",
+		--"HelpFrameOpenTicketHelpItemRestoration",
 		"HelpFrameKnowledgebaseSearchButton",
 		"HelpFrameKnowledgebaseNavBarHomeButton",
 		"HelpFrameCharacterStuckStuck",
-		"GMChatOpenLog",
+		--"GMChatOpenLog",
 		"HelpFrameTicketSubmit",
 		"HelpFrameTicketCancel",
 		"HelpFrameGM_ResponseNeedMoreHelp",
@@ -87,7 +87,9 @@ local function LoadSkin()
 	end
 
 	T.SkinScrollBar(HelpFrameKnowledgebaseScrollFrame2ScrollBar)
-
+	T.SkinScrollBar(HelpFrameReportBugScrollFrameScrollBar)
+	T.SkinScrollBar(HelpFrameSubmitSuggestionScrollFrameScrollBar)
+	
 	-- Sub buttons
 	for i = 1, #buttons do
 		local b = _G[buttons[i]]
@@ -112,7 +114,6 @@ local function LoadSkin()
 		local t = _G["HelpFrameButton"..i.."Selected"]
 
 		b:SkinButton()
-
 		b.text:SetFont(C.media.normal_font, 13)
 
 		if t then
