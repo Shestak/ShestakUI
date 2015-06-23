@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	Based on LiteStats(by Katae)
@@ -1419,7 +1419,7 @@ if stats.enabled then
 		OnUpdate = function(self, u)
 			self.elapsed = self.elapsed + u
 			if self.fired and self.elapsed > 2.5 then
-				self.text:SetText(gsub(stats[format("spec%dfmt", GetActiveSpecGroup())], "%[(%w-)%]", tags))
+				self.text:SetText(gsub(stats[format("spec%dfmt", GetSpecialization())], "%[(%w-)%]", tags))
 				self.elapsed, self.fired = 0, false
 			end
 		end
