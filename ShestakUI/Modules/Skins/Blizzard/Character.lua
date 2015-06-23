@@ -104,7 +104,8 @@ local function LoadSkin()
 		"PaperDollTitlesPaneScrollBar",
 		"PaperDollEquipmentManagerPaneScrollBar",
 		"CharacterStatsPaneScrollBar",
-		"TokenFrameContainerScrollBar"
+		"TokenFrameContainerScrollBar",
+		"ReputationListScrollFrameScrollBar"
 	}
 
 	for _, scrollbar in pairs(scrollbars) do
