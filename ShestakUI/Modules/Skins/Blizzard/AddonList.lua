@@ -30,9 +30,9 @@ local function LoadSkin()
 	AddonListInset:SetTemplate("Overlay")
 	AddonListInset:SetPoint("BOTTOMRIGHT", -6, 29)
 
-	for i = 1, MAX_ADDONS_DISPLAYED do
-		T.SkinCheckBox(_G["AddonListEntry" .. i .. "Enabled"])
-	end
+	--for i = 1, MAX_ADDONS_DISPLAYED do
+		--T.SkinCheckBox(_G["AddonListEntry" .. i .. "Enabled"])
+	--end
 
 	T.SkinScrollBar(AddonListScrollFrameScrollBar)
 	T.SkinCloseButton(AddonListCloseButton)
