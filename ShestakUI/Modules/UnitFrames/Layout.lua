@@ -956,7 +956,7 @@ local function Shared(self, unit)
 					self.PvP:Hide()
 				else
 					if(UnitIsPVPFreeForAll(unit)) then
-						self.PvP:SetTexture[[Interface\TargetingFrame\UI-PVP-FFA]]
+						self.PvP:SetTexture([[Interface\TargetingFrame\UI-PVP-FFA]])
 						self.PvP:Show()
 					elseif(factionGroup and UnitIsPVP(unit)) then
 						self.PvP:SetTexture([[Interface\AddOns\ShestakUI_Media\Media\Icon\ui-pvp-]]..factionGroup)
