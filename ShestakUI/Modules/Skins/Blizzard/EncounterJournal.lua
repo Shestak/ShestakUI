@@ -58,35 +58,10 @@ local function LoadSkin()
 	T.SkinScrollBar(EncounterJournalInstanceSelectScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoDetailsScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoLootScrollFrameScrollBar)
+	T.SkinScrollBar(EncounterJournalEncounterFrameInstanceFrameLoreScrollFrameScrollBar)
+	T.SkinScrollBar(EncounterJournalEncounterFrameInfoOverviewScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoBossesScrollFrameScrollBar)
-		
-	local function navButtonFrameLevel(self)
-		for i=1, #self.navList do
-			local navButton = self.navList[i]
-			local lastNav = self.navList[i-1]
-			if navButton and lastNav then
-				if lastNav:GetFrameLevel() > 2 then
-					navButton:SetFrameLevel(lastNav:GetFrameLevel() - 2)
-				else
-					navButton:SetFrameLevel(0)
-				end
-			end
-		end
-	end
 	
-	hooksecurefunc("NavBar_AddButton", function(self, buttonData)
-		local navButton = self.navList[#self.navList]
-
-
-	if not navButton.skinned then
-		navButton:SkinButton(true)
-
-		if(navButton.MenuArrowButton) then
-			T.SkinNextPrevButton(navButton.MenuArrowButton, true)
-		end
-		navButton.skinned = true
-	end
-	end)
 	
 	for i = 1, AJ_MAX_NUM_SUGGESTIONS do
 		local suggestion = EncounterJournal.suggestFrame["Suggestion"..i];
