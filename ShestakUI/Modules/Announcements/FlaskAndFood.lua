@@ -5,9 +5,9 @@ if C.announcements.flask_food ~= true then return end
 --	Checks the usage of flasks and food of your party/raid members(ffCheck by Silverwind)
 ----------------------------------------------------------------------------------------
 local noFood, noFlask, noRune, unitBuffs = {}, {}, {}, {}
-local foods = T.ReminderBuffs["Food"]
-local flasks = T.ReminderBuffs["Flask"]
-local Runes = T.ReminderBuffs["Rune"]
+local foods = T.ReminderBuffs[11]
+local flasks = T.ReminderBuffs[10]
+local Runes = T.ReminderBuffs[12]
 
 local function scan(unit)
 	table.wipe(unitBuffs)
