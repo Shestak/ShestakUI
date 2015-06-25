@@ -20,6 +20,7 @@ local unittank_width = 60
 local unittank_height = 20
 local partypet_width = 20
 local partypet_height = 20
+
 local TargetGlow = true	--boss框架中，玩家目标高亮
 local MouseGlow = true
 --------------------------------------------
@@ -226,7 +227,7 @@ local function Shared(self, unit)
 		end)
 	end
 	------------------------------------------------------
-
+	
 	-- Raid marks
 	if C.raidframe.icons_raid_mark == true then
 		self.RaidIcon = self.Health:CreateTexture(nil, "OVERLAY")
