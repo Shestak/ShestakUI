@@ -502,7 +502,7 @@ local function SkinObjects(frame, nameFrame)
 	-- Raid icon
 	if not frame.raidicon then
 		raidicon:ClearAllPoints()
-		raidicon:SetPoint("BOTTOMRIGHT", hp, "TOPRIGHT")	--raidicon:SetPoint("BOTTOM", hp, "TOP", 0, C.nameplate.track_auras == true and 38 or 16)
+		raidicon:SetPoint("BOTTOMRIGHT", hp, "TOPRIGHT")	--0, C.nameplate.track_auras == true and 38 or 16)
 		raidicon:SetSize((C.nameplate.height * 2) + 8, (C.nameplate.height * 2) + 8)
 		raidicon:SetTexture("Interface\\AddOns\\ShestakUI_Media\\Media\\Icon\\raidicons")
 		frame.raidicon = raidicon
@@ -666,9 +666,9 @@ end
 local function ShowTargetIndicator(frame)
 	if UnitExists("target") and frame:GetParent():GetAlpha() == 1 and UnitName("target") == frame.hp.name:GetText() then
 	--if frame.guid == UnitGUID("target") and frame.guid ~= nil then
-		frame.hp.targetIndicator:Show()
+		frame.hp.TargetIndicator:Show()
 	else
-		frame.hp.targetIndicator:Hide()
+		frame.hp.TargetIndicator:Hide()
 	end
 end
 --	--
