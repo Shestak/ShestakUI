@@ -8,12 +8,12 @@ if C.raidframe.plugins_aura_watch ~= true then return end
 ----------------------------------------------------------------------------------------
 T.RaidBuffs = {
 	DRUID = {
-		{774, "TOPRIGHT", {0.8, 0.4, 0.8}},					-- Rejuvenation
+		{774, "TOPRIGHT", {0.8, 0.4, 0.8}},				-- Rejuvenation
 		{8936, "BOTTOMLEFT", {0.2, 0.8, 0.2}},				-- Regrowth
 		{33763, "TOPLEFT", {0.4, 0.8, 0.2}},				-- Lifebloom
 		{48438, "BOTTOMRIGHT", {0.8, 0.4, 0}},				-- Wild Growth
 		{102342, "LEFT", {0.45, 0.3, 0.2}, true},			-- Ironbark
-		{155777, "RIGHT", {0.4, 0.9, 0.4}},					-- Rejuvenation (Germination)
+		{155777, "RIGHT", {0.4, 0.9, 0.4}},				-- Rejuvenation (Germination)
 	},
 	MONK = {
 		{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},				-- Renewing Mist
@@ -25,13 +25,13 @@ T.RaidBuffs = {
 		{53563, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Light
 		{156910, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Faith
 		{20925, "BOTTOMLEFT", {0.9, 0.9, 0.1}},				-- Sacred Shield
-		{114163, "BOTTOMLEFT", {0.9, 0.6, 0.4}},			-- Eternal Flame
-		{157007, "TOPLEFT", {1, 0.5, 0.2}},					-- Beacon of Insight
+		{156322, "TOPLEFT", {0.9, 0.6, 0.4}},				-- Eternal Flame
+		{157007, "TOPLEFT", {1, 0.5, 0.2}},				-- Beacon of Insight
 		{1022, "BOTTOMRIGHT", {0.2, 0.2, 1}, true},			-- Hand of Protection
-		{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},		-- Hand of Freedom
-		{1038, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},		-- Hand of Salvation
-		{6940, "BOTTOMRIGHT", {0.89, 0.1, 0.1}, true},		-- Hand of Sacrifice
-		{114039, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},		-- Hand of Purity
+		{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},			-- Hand of Freedom
+		{1038, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},			-- Hand of Salvation
+		{6940, "BOTTOMRIGHT", {0.89, 0.1, 0.1}, true},			-- Hand of Sacrifice
+		{114039, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},			-- Hand of Purity
 	},
 	PRIEST = {
 		{6788, "TOPRIGHT", {1, 0, 0}, true},				-- Weakened Soul
@@ -43,10 +43,10 @@ T.RaidBuffs = {
 	},
 	SHAMAN = {
 		{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Riptide
-		{974, "BOTTOMRIGHT", {0.2, 0.7, 0.2}, true},		-- Earth Shield
+		{974, "BOTTOMRIGHT", {0.2, 0.7, 0.2}, true},			-- Earth Shield
 	},
 	HUNTER = {
-		{35079, "TOPRIGHT", {0.2, 0.2, 1}},					-- Misdirection
+		{35079, "TOPRIGHT", {0.2, 0.2, 1}},				-- Misdirection
 	},
 	MAGE = {
 		{111264, "TOPRIGHT", {0.2, 0.2, 1}},				-- Ice Ward
@@ -58,13 +58,13 @@ T.RaidBuffs = {
 		{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},				-- Soulstone
 	},
 	WARRIOR = {
-		{114030, "TOPLEFT", {0.2, 0.2, 1}},					-- Vigilance
+		{114030, "TOPLEFT", {0.2, 0.2, 1}},				-- Vigilance
 		{3411, "TOPRIGHT", {0.89, 0.1, 0.1}},				-- Intervene
 	},
 	ALL = {
-		{23333, "LEFT", {1, 0, 0}, true}, 					-- Warsong flag, Horde
-		{23335, "LEFT", {0, 0, 1}, true},					-- Warsong flag, Alliance
-		{34976, "LEFT", {1, 0, 0}, true}, 					-- Netherstorm Flag
+		{23333, "LEFT", {1, 0, 0}, true}, 				-- Warsong flag, Horde
+		{23335, "LEFT", {0, 0, 1}, true},				-- Warsong flag, Alliance
+		{34976, "LEFT", {1, 0, 0}, true}, 				-- Netherstorm Flag
 	},
 }
 
@@ -82,89 +82,182 @@ T.RaidDebuffs = {
 -- Draenor
 -----------------------------------------------------------------
 	-- 60200 Hellfire Citadel
-	-- Hellfire Assault
-	[SpellName(184369)] = 7, -- Howling Axe (target)
-	[SpellName(180079)] = 4, -- Fellfire Munition
-	-- Fel Reaver
-	[SpellName(179897)] = 6, -- Blitz
-	[SpellName(185978)] = 7, -- Firebomb Vulnerability
-	[SpellName(182373)] = 4, -- Firebomb Vulnerability
-	[SpellName(182280)] = 8, -- Artillery
-	[SpellName(182074)] = 3, -- Immolation, Unstable Orb
-	[SpellName(182001)] = 3, -- Immolation, Unstable Orb
-	-- Gorefiend
-	[SpellName(179867)] = 3, -- Gorefiend's Corruption
-	[SpellName(181295)] = 4, -- Digest
-	[SpellName(179977)] = 8, -- Touch of Doom
-	[SpellName(179864)] = 6, -- Shadow of Death
-	[SpellName(179909)] = 9, -- Shared Fate (rooted player)
-	[SpellName(179908)] = 8, -- Shared Fate (other players)
-	-- Kilrogg Deadeye
-	[SpellName(181488)] = 3, -- Vision of Death
-	[SpellName(188929)] = 7, -- Heart Seeker (target)
-	[SpellName(180389)] = 4, -- Heart Seeker (dot)
-	-- Socrethar
-	[SpellName(182038)] = 3, -- Shattered Defense
-	[SpellName(188666)] = 7, -- Eternal Hunger (mythic add fixate)
-	[SpellName(189627)] = 7, -- Volatile Fel Orb (fixate)
-	[SpellName(180415)] = 4, -- Fel Prison
-	-- Xhul'horac
-	[SpellName(188208)] = 7, -- Ablaze
-	[SpellName(186073)] = 7, -- Felsinged
-	[SpellName(186407)] = 8, -- Fel Surge
-	[SpellName(186500)] = 9, -- Chains of Fel
-	[SpellName(186063)] = 7, -- Wasting Void
-	[SpellName(186333)] = 8, -- Void Surge
-	-- Fel Lord Zakuun
-	[SpellName(181508)] = 9, -- Seed of Destruction
-	[SpellName(181653)] = 7, -- Fel Crystals (too close)
-	[SpellName(179428)] = 8, -- Rumbling Fissure (soak)
-	[SpellName(182008)] = 3, -- Latent Energy (can't soak anymore)
-	[SpellName(179407)] = 6, -- Disembodied (in shadow realm)
-	-- Kormrok
-	[SpellName(187819)] = 7, -- Hands
-	[SpellName(181345)] = 7, -- Hand (tank)
-	-- Tyrant Velhari
-	[SpellName(185237)] = 6, -- Touch of Harm
-	[SpellName(185238)] = 6, -- Touch of Harm
-	[SpellName(185241)] = 7, -- Edict of Condemnation
-	[SpellName(180526)] = 7, -- Font of Corruption
-	-- Shadow-Lord Iskar
-	[SpellName(181957)] = 9, -- Phantasmal Wind
-	[SpellName(182200)] = 4, -- Fel Chakram
-	[SpellName(182178)] = 4, -- Fel Chakram
-	[SpellName(182325)] = 2, -- Phantasmal Wounds
-	[SpellName(185239)] = 1, -- Radiance of Anzu
-	[SpellName(185510)] = 3, -- Dark Bindings
-	[SpellName(182600)] = 2, -- Fel Fire
-	[SpellName(179219)] = 3, -- Fel Bomb
-	[SpellName(181753)] = 3, -- Fel Bomb
-	-- Mannoroth
-	[SpellName(181275)] = 8, -- Curse of Legion
-	[SpellName(181099)] = 7, -- Mark of Doom
-	[SpellName(181597)] = 4, -- Mannoroths Gaze
-	[SpellName(182006)] = 4, -- Mannoroths Gaze
-	[SpellName(181841)] = 6, -- Shadowforce
-	[SpellName(182088)] = 6, -- Shadowforce
-	-- Hellfire Council
-	[SpellName(184360)] = 7, -- Fel Rage
-	[SpellName(184449)] = 5, -- Mark of Necromancer
-	[SpellName(185065)] = 5, -- Mark of Necromancer
-	[SpellName(184450)] = 5, -- Mark of Necromancer
-	[SpellName(185066)] = 5, -- Mark of Necromancer
-	[SpellName(184676)] = 5, -- Mark of Necromancer
-	[SpellName(184652)] = 3, -- Reap
-	-- Archimonde
-	[SpellName(184964)] = 7, -- Shackled Torment
-	[SpellName(186123)] = 6, -- Focused Chaos
-	[SpellName(185014)] = 6, -- Wrought Chaos
-	[SpellName(186952)] = 8, -- Nether Banish
-	[SpellName(189891)] = 8, -- Nether Banish
-	[SpellName(186961)] = 8, -- Nether Banish
-	[SpellName(183634)] = 7, -- Shadowfel Burst
-	[SpellName(189895)] = 6, -- Void Star Fixate
-	[SpellName(190049)] = 4, -- Nether Corruption
-		
+	-- #1 地獄火突襲戰/奇袭地狱火
+	[SpellName(186016)] = 4, -- 魔焰彈藥/邪火弹药 拿彈藥的dot
+	[SpellName(184379)] = 1, -- 哀嚎之斧/啸风战斧 點名出人群三角站位
+	[SpellName(184238)] = 3, -- 畏縮！/颤抖！ 減速
+	[SpellName(184243)] = 2, -- 猛擊/猛击 坦克 易傷
+	[SpellName(185806)] = 1, -- 傳導震波衝擊/导电冲击脉冲 魔法 擊暈
+	[SpellName(180022)] = 1, -- 鑽洞/钻孔 你要被車碾了
+	[SpellName(185157)] = 4, -- 燃燒/灼烧 正面錐形aoe dot
+	[SpellName(187655)] = 4, -- 腐化虹吸/腐化虹吸 M
+
+	-- #2 鋼鐵劫奪者/钢铁掠夺者
+	[SpellName(182074)] = 4, -- 焚燒/献祭 踩到火
+	[SpellName(182001)] = 3, -- 不穩定的球體/不稳定的宝珠 8碼分散
+	[SpellName(182280)] = 1, -- 砲擊/炮击 離boss越遠傷害越低，p1只點坦，p2點全部
+	[SpellName(182003)] = 4, -- 燃料污漬/燃料尾痕 踩到水減速
+	[SpellName(179897)] = 4, -- 閃擊/迅猛突袭 被夾住啦
+	[SpellName(185242)] = 4, -- 閃擊/迅猛突袭 被夾住啦
+	[SpellName(185978)] = 3, -- 火焰彈易傷/易爆火焰炸弹 M 火焰炸彈爆炸易傷
+
+	-- #3 寇姆洛克/考莫克
+	[SpellName(181345)] = 2, -- 邪惡碎擊/攫取之手 坦克 被手抓
+	[SpellName(181321)] = 2, -- 魔化之觸/邪能之触 坦克 擊飛50%法易傷
+	[SpellName(181306)] = 2, -- 炸裂爆發/爆裂冲击 坦克 定身，10秒爆炸，40碼aoe
+	[SpellName(187819)] = 3, -- 粉碎/邪污碾压 被手抓
+	[SpellName(180270)] = 4, -- 暗影團塊/暗影血球 強化紫色暗影波
+	[SpellName(185519)] = 4, -- 熾熱團塊/炽热血球 強化黃色暗影波
+	[SpellName(185521)] = 4, -- 邪惡團塊/邪污血球 強化綠色暗影波
+	[SpellName(181082)] = 6, -- 暗影池/暗影之池 掉進水池
+	[SpellName(186559)] = 6, -- 熾焰火池/火焰之池 掉進水池
+	[SpellName(186560)] = 6, -- 邪惡池塘/邪污之池 掉進水池
+	[SpellName(181208)] = 5, -- 暗影殘渣/暗影残渣 M 接水dot
+	[SpellName(185686)] = 5, -- 熾熱殘渣/爆炸残渣 M 接水dot
+	[SpellName(185687)] = 5, -- 腐惡殘渣/邪恶残渣 M 接水dot
+
+	-- #4 地獄火高階議會/地狱火高阶议会
+	[SpellName(184449)] = 5, -- 死靈法師印記/死灵印记 魔法
+	[SpellName(184450)] = 5, -- 死靈法師印記/死灵印记 魔法
+	[SpellName(184676)] = 5, -- 死靈法師印記/死灵印记 魔法
+	[SpellName(185065)] = 3, -- 死靈法師印記/死灵印记 魔法
+	[SpellName(185066)] = 1, -- 死靈法師印記/死灵印记 魔法
+	[SpellName(184360)] = 1, -- 惡魔之怒/堕落狂怒 血沸點名
+	[SpellName(184847)] = 2, -- 強酸創傷/酸性创伤 坦克 破甲
+	[SpellName(184652)] = 3, -- 收割/暗影收割 踩圈
+	-- [SpellName(184357)] = 6, -- 腐壞之血/污血 降低血量上限
+	[SpellName(184355)] = 5, -- 血液沸騰/血液沸腾 M 血沸對最遠的5人上流血dot
+
+	-- #5 基爾羅格·亡眼/基尔罗格·死眼
+	[SpellName(188929)] = 1, -- 追心飛刀/剖心飞刀 點名飛刀
+	[SpellName(180389)] = 3, -- 追心飛刀/剖心飞刀 流血DOT
+	[SpellName(182159)] = 4, -- 惡魔腐化/邪能腐蚀 特殊能量
+	[SpellName(184396)] = 3, -- 惡魔腐化/邪能腐蚀 疊滿被心控
+	[SpellName(180313)] = 4, -- 惡魔附身/恶魔附身 被心控
+	[SpellName(180718)] = 3, -- 不朽決心/永痕的决心 玩家 增傷，可疊20層
+	[SpellName(181488)] = 6, -- 死亡幻象/死亡幻象
+	[SpellName(185563)] = 3, -- 不死救贖/永恒的救赎 玩家debuff 一個光圈，站進去清腐化
+	[SpellName(180200)] = 2, -- 撕碎護甲/碎甲 坦克 不該中；身上有主動減傷就不會中(同萊登)
+	[SpellName(180575)] = 6, -- 魔化烈焰/邪能烈焰
+	[SpellName(183917)] = 5, -- 撕裂嚎叫/撕裂嚎叫 玩家 流血dot
+	[SpellName(188852)] = 6, -- 濺血/溅血 踩水
+	[SpellName(184067)] = 6, -- 魔化之沼/邪能腐液  踩水
+
+	-- #6 血魔/血魔
+	[SpellName(180093)] = 4, -- 靈魂箭雨/灵魂箭雨 緩速
+	[SpellName(179864)] = 1, -- 死亡之影/死亡之影 點名進場
+	[SpellName(179867)] = 6, -- 血魔的腐化/血魔的腐化 進過場，不能再次進場
+	[SpellName(181295)] = 3, -- 消化/消化 內場，debuff結束秒殺，剩3秒出場
+	[SpellName(180148)] = 1, -- 嗜命/生命渴望 玩家 傀儡(小怪)盯人，追上10碼爆炸
+	[SpellName(179977)] = 1, -- 末日之觸/毁灭之触 去角落放圈
+	[SpellName(179995)] = 6, -- 末日之井/末日井 踩到圈
+	[SpellName(185190)] = 6, -- 魔化烈焰/邪能烈焰 大怪buff
+	[SpellName(185189)] = 4, -- 魔化之怒/邪能之怒 大怪dot
+	[SpellName(179908)] = 3, -- 命運共享/命运相连 找被定身的集合消連線，能動
+	[SpellName(179909)] = 3, -- 命運共享/命运相连 找被定身的集合消連線，定身
+	[SpellName(186770)] = 6, -- 碰到血魔的洗澡水
+
+	-- #7 暗影領主伊斯卡/暗影领主伊斯卡
+	[SpellName(185239)] = 5, -- 安祖烈光/安苏之光 拿球疊dot
+	[SpellName(182325)] = 3, -- dot，hp90%以上消失或拿球消
+	[SpellName(182600)] = 6, -- 魔化火焰/邪能焚化 踩火
+	[SpellName(181957)] = 5, -- 吹下去，拿球消
+	[SpellName(182200)] = 1, -- 魔化戰輪/邪能飞轮 出人群
+	[SpellName(182178)] = 1, -- 魔化戰輪/邪能飞轮 出人群
+	[SpellName(179219)] = 6, -- 幻魅魔化炸彈/幻影邪能炸弹 魔法 別驅
+	[SpellName(181753)] = 3, -- 魔化炸彈/邪能炸弹 魔法 拿球驅散
+	[SpellName(181824)] = 2, -- 幻魅腐化/幻影腐蚀 坦克 10秒後爆炸，拿球清
+	[SpellName(187344)] = 3, -- 幻魅火葬/幻影焚化 近戰 幻魅腐化給附近的人的易傷
+	[SpellName(185456)] = 3, -- 絕望之鍊/绝望之链 M 配對(無誤)
+	[SpellName(185510)] = 3, -- 黑暗束縛/暗影之缚 M 把鍊子綁在一起，沒有鍊子的人靠近會引爆
+
+	-- #8永恆者索奎薩爾/永恒者索克雷萨
+	[SpellName(182038)] = 2, -- 粉碎防禦/粉碎防御 迴盪之擊易傷，分攤，坦克2次換
+	[SpellName(189627)] = 1, -- 烈性魔珠/易爆的邪能宝珠 點名球追人，追到爆炸
+	[SpellName(182218)] = 4, -- 魔炎殘渣/邪炽冲锋 衝鋒留下綠火，75%減速
+	[SpellName(180415)] = 4, -- 魔化牢籠/邪能牢笼 水晶暈人
+	[SpellName(189540)] = 5, -- 極限威能/压倒能量 傀儡隨便電人，6秒dot
+	[SpellName(184124)] = 1, -- 曼那瑞之賜/堕落者之赐 綠圈aoe，別靠近別人
+	[SpellName(182769)] = 2, -- 恐怖凝視/魅影重重 p2被小怪追
+	[SpellName(184239)] = 3, -- 暗言術：痛苦/暗言术：恶 魔法 喚影師施放，驅散
+	[SpellName(182900)] = 4, -- 惡性糾纏/恶毒鬼魅 小怪恐懼
+	[SpellName(188666)] = 2, -- 永世饑渴/无尽饥渴 M 玩家 潛獵者追人，正面秒殺
+	[SpellName(190776)] = 4, -- 索奎薩爾的應變之計/索克雷萨之咒 M 潛獵者傀儡易傷
+
+	-- #9 女暴君維哈里/暴君维哈里
+	[SpellName(180000)] = 2, -- 凋零徽印/凋零契印 坦克	2-4層換坦
+	-- [SpellName(179987)] = 6, -- 蔑視光環/蔑视光环
+	-- [SpellName(181683)] = 6, -- 壓迫光環/抑制光环
+	-- [SpellName(179993)] = 6, -- 惡意光環/怨恨光环
+	[SpellName(180526)] = 1, -- 腐化洗禮/腐蚀序列 P2 aoe標記，被標記的人會5碼aoe
+	[SpellName(180166)] = 3, -- 魔法 吸收治療量，驅散跳到別人身上
+	[SpellName(180164)] = 3, -- 魔法 吸收治療量，驅散跳到別人身上
+	[SpellName(182459)] = 6, -- 定罪赦令/谴责法令 分攤
+	[SpellName(180604)] = 4, -- 剝奪之地/亵渎之地 P3地板紫圈
+
+	-- #10 惡魔領主札昆/邪能领主扎昆
+	[SpellName(189260)] = 3, -- 裂魂/破碎之魂 進場的暗影易傷
+	[SpellName(179407)] = 4, -- 虛體/魂不附体 進場debuff
+	[SpellName(182008)] = 4, -- 潛在能量/潜伏能量 撞到波爆炸
+	[SpellName(189032)] = 4, -- 被污染/玷污 吸收盾，分別是綠/黃/紅燈，刷滿6碼爆炸
+	[SpellName(189031)] = 3, -- 被污染/玷污 吸收盾，分別是綠/黃/紅燈，刷滿6碼爆炸
+	[SpellName(189030)] = 2, -- 被污染/玷污 吸收盾，分別是綠/黃/紅燈，刷滿6碼爆炸
+	[SpellName(179428)] = 3, -- 轟隆裂隙/轰鸣的裂隙 站在漩渦上，一個漩渦只要一個人踩
+	[SpellName(181508)] = 1, -- 毀滅種子/毁灭之种 出人群
+	[SpellName(181515)] = 1, -- 毀滅種子/毁灭之种 出人群
+	[SpellName(181653)] = 4, -- 惡魔水晶/邪能水晶
+	[SpellName(188998)] = 6, -- 耗竭靈魂/枯竭灵魂 M 不能再次進場
+
+	-- #11 祖霍拉克/祖霍拉克
+	[SpellName(186134)] = 3, -- 魔化之觸/邪蚀 受到火焰傷害的標記，持續15秒，碰到暗影傷害會爆炸
+	[SpellName(186135)] = 3, -- 魔化之觸/邪蚀 受到火焰傷害的標記，持續15秒，碰到暗影傷害會爆炸
+	[SpellName(185656)] = 3, -- 影魔殲滅/邪影屠戮
+	[SpellName(186073)] = 6, -- 魔化焦灼/邪能炙烤 踩到綠火
+	[SpellName(186063)] = 6, -- 破滅虛空/虚空消耗 踩到紫水
+	[SpellName(186407)] = 2, -- 惡魔奔騰/魔能喷涌 點名，5秒後腳下出綠火
+	[SpellName(186333)] = 2, -- 虛無怒濤/灵能涌动 點名，5秒後腳下出紫水
+	[SpellName(186448)] = 6, -- 魔炎亂舞/邪焰乱舞
+	[SpellName(186453)] = 6, -- 魔炎亂舞/邪焰乱舞
+	[SpellName(186785)] = 6, -- 枯萎凝視/凋零凝视
+	[SpellName(186783)] = 6, -- 枯萎凝視/凋零凝视
+	[SpellName(188208)] = 5, -- 著火/点燃 小鬼火球砸中的dot
+	-- [SpellName(186547)] = 6, -- 黑洞/黑洞 全團aoe直到踩掉為止
+	[SpellName(186500)] = 4, -- 魔化鎖鍊/邪能锁链 跑遠拉斷
+
+	-- #12 瑪諾洛斯/玛诺洛斯
+	[SpellName(181275)] = 4, -- 軍團的詛咒/军团诅咒 詛咒 驅散召喚領主
+	[SpellName(181099)] = 1, -- 毀滅印記/末日印记 玩家 受到傷害移除並爆炸，20碼AOE
+	[SpellName(181119)] = 2, -- 末日尖刺/末日之刺 坦克 層數越高，結束時的傷害越高
+	[SpellName(189717)] = 2, -- 末日尖刺/末日之刺 坦克層數越高，結束時的傷害越高
+	[SpellName(182171)] = 6, -- 瑪諾洛斯之血/玛洛诺斯之血 踩到P1綠水
+	[SpellName(184252)] = 2, -- 刺傷/穿刺之伤 坦克 (p2p3/p4)不該中；旋刃戳刺時身上有主動減傷就不會中(同萊登)
+	[SpellName(191231)] = 2, -- 刺傷/穿刺之伤 坦克 (p2p3/p4)不該中；旋刃戳刺時身上有主動減傷就不會中(同萊登)
+	[SpellName(181359)] = 2, -- 巨力衝擊/巨力冲击 坦克 擊飛
+	[SpellName(181597)] = 4, -- 瑪諾洛斯的凝視/玛诺洛斯凝视 恐懼，分攤傷害
+	[SpellName(181841)] = 4, -- 暗影之力/暗影之力 推人(小心加速)
+	[SpellName(182006)] = 4, -- 瑪諾洛斯的強力凝視/强化玛诺洛斯凝视 恐懼，分攤傷害產生白水
+	[SpellName(182088)] = 4, -- 強化暗影之力/强化暗影之力 p4推人
+	[SpellName(182031)] = 6, -- 凝視之影/凝视暗影 踩到白色
+	[SpellName(190482)] = 3, -- 擁抱暗影/束缚暗影 M
+
+	-- #13 阿克蒙德/阿克蒙德
+	[SpellName(183634)] = 4, -- 影魔衝擊/暗影冲击 擊飛，分攤落地傷害
+	[SpellName(187742)] = 2, -- 暗影爆破/暗影冲击 玩家/坦克	大怪易傷，坦克2層換
+	[SpellName(183864)] = 2, -- 暗影爆破/暗影冲击 玩家/坦克	大怪易傷，坦克2層換
+	[SpellName(183828)] = 5, -- 死亡烙印/死亡烙印 坦克 dot 大怪死才消失
+	[SpellName(183586)] = 5, -- 毀滅之火/魔火 踩火dot
+	[SpellName(182879)] = 2, -- 毀滅之火鎖定/魔火锁定 追人
+	[SpellName(183963)] = 3, -- 那魯之光/纳鲁之光 伊芮爾的小球，免疫暗影傷害
+	[SpellName(185014)] = 4, -- 聚集混沌/聚焦混乱 即將被傳遞塑形混沌
+	[SpellName(186123)] = 3, -- 塑型混沌/精炼混乱 正面直線aoe，傳遞給箭頭指向的人
+	[SpellName(184964)] = 4, -- 束縛折磨/枷锁酷刑 遠離靈魂30碼消除
+	[SpellName(186952)] = 2, -- 虛空放逐/虚空放逐 坦克 進場
+	[SpellName(186961)] = 2, -- 虛空放逐/虚空放逐 坦克 進場
+	[SpellName(187047)] = 4, -- 吞噬生命/吞噬声明 內場，降低受到的治療量
+	[SpellName(189891)] = 6, -- 虛空裂隙/虚空撕裂 傳送門在外場變成的水池
+	[SpellName(190049)] = 3, -- 虛空腐化/虚空腐化 內場易傷
+	[SpellName(188796)] = 6, -- 惡魔腐化/邪能腐蚀 場邊綠水
+
 	-- 黑石铸造厂 
 	--格鲁尔 
 	[SpellName(155080)] = 4, -- 煉獄切割 分担组DOT 
