@@ -154,6 +154,9 @@ L_PANELS_AFK_LCLICK = "Clic gauche pour revenir."
 
 -- Cooldowns
 L_COOLDOWNS = "Temps de recharge : "
+L_COOLDOWNS_COMBATRESS = "CombatRess" -- Needs review
+L_COOLDOWNS_COMBATRESS_REMAINDER = "Combat resurrect: " -- Needs review
+L_COOLDOWNS_NEXTTIME = "Next time: " -- Needs review
 
 -- Autoinvite
 L_INVITE_ENABLE = "Invitation automatique activée : "
