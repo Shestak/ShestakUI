@@ -154,6 +154,9 @@ L_PANELS_AFK_LCLICK = "左鍵點擊脫離暫離狀態"
 
 -- Cooldowns
 L_COOLDOWNS = "CD: "
+L_COOLDOWNS_COMBATRESS = "戰復"
+L_COOLDOWNS_COMBATRESS_REMAINDER = "戰復剩餘: "
+L_COOLDOWNS_NEXTTIME = "下次: "
 
 -- Autoinvite
 L_INVITE_ENABLE = "自動邀請功能已啟用: "
