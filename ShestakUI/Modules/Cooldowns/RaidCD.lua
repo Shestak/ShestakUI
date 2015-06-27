@@ -143,7 +143,7 @@ end
 local OnMouseDown = function(self, button)
 	if button == "LeftButton" then
 		if self.isResses then
-			SendChatMessage(sformat(L_COOLDOWNS_COMBATRESS.."%d, "..L_COOLDOWNS_NEXTTIME.."%s.", currentNumResses, self.right:GetText()), T.CheckChat)
+			SendChatMessage(sformat(L_COOLDOWNS_COMBATRESS_REMAINDER.."%d, "..L_COOLDOWNS_NEXTTIME.."%s.", currentNumResses, self.right:GetText()), T.CheckChat)
 		else
 			SendChatMessage(sformat(L_COOLDOWNS.."%s - %s: %s", self.name, GetSpellLink(self.spellId), self.right:GetText()), T.CheckChat())
 		end
