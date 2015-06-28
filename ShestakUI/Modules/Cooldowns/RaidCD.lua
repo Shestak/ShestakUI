@@ -143,7 +143,7 @@ end
 local OnMouseDown = function(self, button)
 	if button == "LeftButton" then
 		if self.isResses then
-			SendChatMessage(sformat(L_COOLDOWNS_COMBATRESS.."%d, "..L_COOLDOWNS_NEXTTIME.."%s.", currentNumResses, self.right:GetText()), T.CheckChat)
+			SendChatMessage(sformat(L_COOLDOWNS_COMBATRESS_REMAINDER.."%d, "..L_COOLDOWNS_NEXTTIME.."%s.", currentNumResses, self.right:GetText()), T.CheckChat)
 		else
 			SendChatMessage(sformat(L_COOLDOWNS.."%s - %s: %s", self.name, GetSpellLink(self.spellId), self.right:GetText()), T.CheckChat())
 		end
@@ -206,19 +206,20 @@ local StartTimer = function(name, spellId)
 	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(name))]
 	if charges and spellId == 20484 then
 		--初始化战复技能计时条
-		local curCharges, _, _, duration = GetSpellCharges(20484)
+		local curCharges, _, start, duration = GetSpellCharges(20484)
 		currentNumResses = curCharges
-		bar.endTime = GetTime() + duration
-		bar.startTime = GetTime()
+		bar.startTime = start
+		bar.endTime = start + duration
 		bar.left:SetText(name.." : "..curCharges)
-		bar.name = name
 		bar.right:SetText(FormatTime(duration))
+		bar.isResses = true
+		bar.name = name
+		bar.spell = spell
+		bar.spellId = spellId
 		if C.raidcooldown.show_icon == true then
 			bar.icon:SetNormalTexture(icon)
 			bar.icon:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		end
-		bar.spell = spell
-		bar.spellId = spellId
 		bar:Show()
 		if color then
 			bar:SetStatusBarColor(color.r, color.g, color.b)
@@ -227,8 +228,9 @@ local StartTimer = function(name, spellId)
 			bar:SetStatusBarColor(0.3, 0.7, 0.3)
 			bar.bg:SetVertexColor(0.3, 0.7, 0.3, 0.2)
 		end
-		bar:EnableMouse(true)
+		
 		bar:SetScript("OnUpdate", BarUpdate)
+		bar:EnableMouse(true)
 		bar:SetScript("OnEnter", OnEnter)
 		bar:SetScript("OnLeave", OnLeave)
 		bar:SetScript("OnMouseDown", OnMouseDown)
@@ -237,17 +239,18 @@ local StartTimer = function(name, spellId)
 			table.sort(Ressesbars, sortByExpiration)
 		end
 	else
-		bar.endTime = GetTime() + T.raid_spells[spellId]
 		bar.startTime = GetTime()
+		bar.endTime = GetTime() + T.raid_spells[spellId]
 		bar.left:SetText(format("%s - %s", name:gsub("%-[^|]+", ""), spell))
-		bar.name = name
 		bar.right:SetText(FormatTime(T.raid_spells[spellId]))
+		bar.isResses = false
+		bar.name = name
+		bar.spell = spell
+		bar.spellId = spellId
 		if C.raidcooldown.show_icon == true then
 			bar.icon:SetNormalTexture(icon)
 			bar.icon:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		end
-		bar.spell = spell
-		bar.spellId = spellId
 		bar:Show()
 		if color then
 			bar:SetStatusBarColor(color.r, color.g, color.b)
@@ -256,8 +259,9 @@ local StartTimer = function(name, spellId)
 			bar:SetStatusBarColor(0.3, 0.7, 0.3)
 			bar.bg:SetVertexColor(0.3, 0.7, 0.3, 0.2)
 		end
-		bar:EnableMouse(true)
+
 		bar:SetScript("OnUpdate", BarUpdate)
+		bar:EnableMouse(true)
 		bar:SetScript("OnEnter", OnEnter)
 		bar:SetScript("OnLeave", OnLeave)
 		bar:SetScript("OnMouseDown", OnMouseDown)
@@ -290,7 +294,7 @@ local OnEvent = function(self, event, ...)
 				end
 				inBossCombat = true
 			end
-			StartTimer("CombatRess", 20484)
+			StartTimer(L_COOLDOWNS_COMBATRESS, 20484)
 		elseif not charges and inBossCombat then
 			inBossCombat = nil
 			currentNumResses = 0
@@ -315,29 +319,24 @@ local OnEvent = function(self, event, ...)
 				end
 			end
 		end
-	elseif event == "ZONE_CHANGED_NEW_AREA" and select(2, IsInInstance()) == "arena" or not IsInGroup() then
+	elseif event == "ZONE_CHANGED_NEW_AREA" and select(2, IsInInstance()) == "arena" then
 		for _, v in pairs(Ressesbars) do
 			StopTimer(v)
 		end
 		for _, v in pairs(bars) do
 			StopTimer(v)
 		end
-	elseif event == "ENCOUNTER_END" and IsInRaid() then
-		for k, v in pairs(bars) do
-			if v.endTime - v.startTime >= 300 then v.endTime = 0 end
-		end
 	end
 end
 
-local addon = CreateFrame("Frame")
-addon:SetScript("OnEvent", OnEvent)
-addon:RegisterEvent("PLAYER_ENTERING_WORLD")
-addon:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-addon:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-addon:RegisterEvent("ENCOUNTER_END")
+local f = CreateFrame("Frame")
+f:SetScript("OnEvent", OnEvent)
+f:RegisterEvent("PLAYER_ENTERING_WORLD")
+f:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+f:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 
 SlashCmdList.RaidCD = function()
-	StartTimer(UnitName('player'), 740)
+	StartTimer(UnitName("player"), 740)
 	StartTimer(UnitName("player"), 20484)	-- Rebirth
 	StartTimer(UnitName("player"), 20707)	-- Soulstone
 	StartTimer(UnitName("player"), 108280)	-- Healing Tide Totem
