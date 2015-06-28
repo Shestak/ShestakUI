@@ -2813,10 +2813,6 @@ C["filger_spells"] = {
 			-- Wand of Lightning Shield
 			{spellID = 171725, unitID = "player", caster = "all", filter = "BUFF"},
 			
-			-- Brawler's Guild
-			-- Strange Feeling
-			{spellID = 134851, unitID = "player", caster = "all", filter = "DEBUFF"},
-			
 			-- Experience & Reputation
 			-- Ancient Knowledge
 			{spellID = 127250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
@@ -2942,7 +2938,13 @@ C["filger_spells"] = {
 			{spellID = 58984, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Gift of the Naaru (Draenei)
 			{spellID = 28880, unitID = "player", caster = "all", filter = "BUFF"},
-
+			
+			-- Zone Buffs
+			-- Fel Sludge (Tanaan Jungle)
+			{spellID = 188520, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Strange Feeling (Brawler's Guild)
+			{spellID = 134851, unitID = "player", caster = "all", filter = "DEBUFF"},
+			
 			-- Other
 			-- Hand of Protection
 			{spellID = 1022, unitID = "player", caster = "all", filter = "BUFF"},
