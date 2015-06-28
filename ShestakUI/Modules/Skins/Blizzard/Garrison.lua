@@ -126,7 +126,7 @@ local function LoadSkin()
 	StartButton:SkinButton()
 	StartButton.overlay:SetVertexColor(0.3, 0.3, 0.3, 0.3)
 	StartButton:SetScript("OnLeave", function(self)
-		StartButton:SetBackdropBorderColor(unpack(Viks.media.bordercolor))
+		StartButton:SetBackdropBorderColor(unpack(C.media.border_color))
 		StartButton.overlay:SetVertexColor(0.3, 0.3, 0.3, 0.3)
 	end)
 
