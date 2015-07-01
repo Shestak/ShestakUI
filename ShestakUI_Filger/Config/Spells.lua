@@ -2354,6 +2354,8 @@ C["filger_spells"] = {
 			{spellID = 74434, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Swap
 			{spellID = 86211, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Kiljaeden's Cunning
+			{spellID = 137587, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Burning Rush
 			{spellID = 111400, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fire and Brimstone
