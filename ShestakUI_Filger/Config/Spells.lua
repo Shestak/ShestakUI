@@ -320,10 +320,6 @@ C["filger_spells"] = {
 			-- Predatory Swiftness
 			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
 
-			-- Item Sets
-			-- Sage Mender (T16)
-			{spellID = 144871, unitID = "player", caster = "player", filter = "BUFF"},
-
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Caster DPS (Crit, Proc)
@@ -825,8 +821,6 @@ C["filger_spells"] = {
 			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Barrier
 			{spellID = 11426, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ice Ward
-			{spellID = 111264, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Heating Up
 			{spellID = 48107, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Floes
@@ -1378,10 +1372,6 @@ C["filger_spells"] = {
 			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Long Arm of the Law
 			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
-
-			-- Item Sets
-			-- Divine Crusader (T16)
-			{spellID = 144595, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
@@ -2348,6 +2338,8 @@ C["filger_spells"] = {
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].player_buff_icon)},
 
+			-- Blood Horror
+			{spellID = 111397, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Dark Bargain
 			{spellID = 110913, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unending Resolve
@@ -2383,10 +2375,6 @@ C["filger_spells"] = {
 			{spellID = 117828, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Demonic Synergy
 			{spellID = 171982, unitID = "player", caster = "player", filter = "BUFF"},
-
-			-- Item Sets
-			-- Ember Master (T16)
-			{spellID = 145164, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
@@ -2990,6 +2978,8 @@ C["filger_spells"] = {
 			{spellID = 121557, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Fear Ward
 			{spellID = 6346, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Ice Ward
+			{spellID = 111264, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
@@ -3361,8 +3351,12 @@ C["filger_spells"] = {
 			{spellID = 24394, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Mage
+			-- Evanesce
+			{spellID = 157913, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Ice Block
 			{spellID = 45438, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Ice Ward
+			{spellID = 111264, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Invisibility
 			{spellID = 66, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Evocation
@@ -3497,6 +3491,8 @@ C["filger_spells"] = {
 			{spellID = 118345, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Warlock
+			-- Blood Horror
+			{spellID = 111397, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Dark Bargain
 			{spellID = 110913, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Unending Resolve
