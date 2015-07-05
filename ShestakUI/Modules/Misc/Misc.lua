@@ -241,3 +241,10 @@ filter:SetScript("OnEvent", function(self, event, addon, ...)
 		end
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Boss Banner Hider
+----------------------------------------------------------------------------------------
+BossBanner.PlayBanner = function()
+
+end

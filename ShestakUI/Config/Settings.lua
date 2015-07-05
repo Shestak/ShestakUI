@@ -103,6 +103,7 @@ C["automation"] = {
 	["currency_cap"] = false,					-- Auto popup for currency cap
 	["buff_on_scroll"] = false,					-- Cast buff on mouse scroll
 	["open_items"] = false,						-- Auto opening of items in bag
+	["bannerhide"] = true,						-- Auto hiding Boss Banner Loot Frame
 }
 
 ----------------------------------------------------------------------------------------

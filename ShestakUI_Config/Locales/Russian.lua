@@ -76,6 +76,7 @@ L_GUI_AUTOMATION_LOGGING_COMBAT = "Включать запись журнала 
 L_GUI_AUTOMATION_CURRENCY_CAP = "Окно лимита валюты (Доблесть/Честь)"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Накладывать эффекты прокруткой колеса мыши"
 L_GUI_AUTOMATION_OPEN_ITEMS = "Открывать сундуки, ящики и т.д"
+L_GUI_AUTOMATION_BANNER_HIDE = "Auto hiding Boss Banner Loot Frame"
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"

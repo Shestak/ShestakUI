@@ -76,6 +76,7 @@ L_GUI_AUTOMATION_LOGGING_COMBAT = "团队副本时自动开启战斗记录"
 L_GUI_AUTOMATION_CURRENCY_CAP = "自动弹出货币提示框"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "使用鼠标滚轮施放Buff"
 L_GUI_AUTOMATION_OPEN_ITEMS = "自动打开背包中的封装物品"
+L_GUI_AUTOMATION_BANNER_HIDE = "Auto hiding Boss Banner Loot Frame"
 
 -- Skins options
 L_GUI_SKINS = "界面样式增强"
