@@ -600,6 +600,8 @@ C["filger_spells"] = {
 			{spellID = 118922, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sniper Training
 			{spellID = 168811, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Beast Cleave
+			{spellID = 118455, unitID = "pet", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
