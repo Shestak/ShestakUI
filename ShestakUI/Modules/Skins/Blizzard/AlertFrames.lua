@@ -512,7 +512,7 @@ local function LoadSkin()
 	hooksecurefunc("AlertFrame_SetGarrisonBuildingAlertFrameAnchors", SkinGarrisonBuildingPopUp)
 
 	local function SkinGarrisonMissionPopUp()
-		local frame = _G["GarrisonMissionAlertFrame"]
+		local frame = GarrisonMissionAlertFrame
 
 		if frame then
 			frame:SetAlpha(1)
@@ -532,6 +532,8 @@ local function LoadSkin()
 			frame:GetRegions():Hide()
 			frame.glow:Kill()
 			frame.shine:Kill()
+			frame.IconBG:Hide()
+			frame.Background:Kill()
 
 			-- Icon
 			--frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
