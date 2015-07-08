@@ -11,18 +11,17 @@ local GearDB, SpecDB = {}, {}
 local nextInspectRequest = 0
 local lastInspectRequest = 0
 
-local prefixColor = '|cffF9D700'
-local detailColor = '|cffffffff'
+local prefixColor = "|cffF9D700"
+local detailColor = "|cffffffff"
 
-local gearPrefix = STAT_AVERAGE_ITEM_LEVEL .. ': '
-local specPrefix = SPECIALIZATION .. ': '
+local gearPrefix = STAT_AVERAGE_ITEM_LEVEL .. ": "
+local specPrefix = SPECIALIZATION .. ": "
 local _
 
 --- Create Frame ---
-local f = CreateFrame('Frame', 'CloudyUnitInfo')
-f:RegisterEvent('UNIT_INVENTORY_CHANGED')
-f:RegisterEvent('INSPECT_READY')
-
+local f = CreateFrame("Frame", "CloudyUnitInfo")
+f:RegisterEvent("UNIT_INVENTORY_CHANGED")
+f:RegisterEvent("INSPECT_READY")
 
 --- Set Unit Info ---
 local function SetUnitInfo(gear, spec)
@@ -33,7 +32,7 @@ local function SetUnitInfo(gear, spec)
 
 	local gearLine, specLine
 	for i = 2, GameTooltip:NumLines() do
-		local line = _G['GameTooltipTextLeft' .. i]
+		local line = _G["GameTooltipTextLeft" .. i]
 		local text = line:GetText()
 
 		if text and strfind(text, gearPrefix) then
@@ -70,7 +69,7 @@ end
 local function IsPVPItem(link)
 	local itemStats = GetItemStats(link)
 	for stat in pairs(itemStats) do
-		if (stat == 'ITEM_MOD_RESILIENCE_RATING_SHORT') or (stat == 'ITEM_MOD_PVP_POWER_SHORT') then
+		if (stat == "ITEM_MOD_RESILIENCE_RATING_SHORT") or (stat == "ITEM_MOD_PVP_POWER_SHORT") then
 			return true
 		end
 	end
@@ -140,7 +139,7 @@ local function UnitGear(unit)
 						end
 
 						if (i >= 16) then
-							if (slot == 'INVTYPE_2HWEAPON') or (slot == 'INVTYPE_RANGED') or ((slot == 'INVTYPE_RANGEDRIGHT') and (class == 'HUNTER')) then
+							if (slot == "INVTYPE_2HWEAPON") or (slot == "INVTYPE_RANGED") or ((slot == "INVTYPE_RANGEDRIGHT") and (class == "HUNTER")) then
 								twohand = twohand + 1
 							end
 						end
@@ -161,15 +160,15 @@ local function UnitGear(unit)
 	end
 
 	if (not delay) then
-		if (unit == 'player') and (GetAverageItemLevel() > 0) then
+		if (unit == "player") and (GetAverageItemLevel() > 0) then
 			_, ilvl = GetAverageItemLevel()
 		else
 			ilvl = total / count
 		end
 
-		if (ilvl > 0) then ilvl = string.format('%.1f', ilvl) end
-		if (boa > 0) then ilvl = ilvl .. '  |cffe6cc80' .. boa .. ' ' .. HEIRLOOMS end
-		if (pvp > 0) then ilvl = ilvl .. '  |cffa335ee' .. pvp .. ' ' .. PVP end
+		if (ilvl > 0) then ilvl = string.format("%.1f", ilvl) end
+		if (boa > 0) then ilvl = ilvl .. "  |cffe6cc80" .. boa .. " " .. HEIRLOOMS end
+		if (pvp > 0) then ilvl = ilvl .. "  |cffa335ee" .. pvp .. " " .. PVP end
 	else
 		ilvl = nil
 	end
@@ -177,14 +176,13 @@ local function UnitGear(unit)
 	return ilvl
 end
 
-
 --- Unit Specialization ---
 local function UnitSpec(unit)
 	if (not unit) or (UnitGUID(unit) ~= currentGUID) then return end
 
 	local specName
 
-	if (unit == 'player') then
+	if (unit == "player") then
 		local specIndex = GetSpecialization()
 
 		if specIndex then
@@ -205,14 +203,13 @@ local function UnitSpec(unit)
 	return specName
 end
 
-
 --- Scan Current Unit ---
 local function ScanUnit(unit, forced)
 	local cachedGear, cachedSpec
 
-	if UnitIsUnit(unit, 'player') then
-		cachedGear = UnitGear('player')
-		cachedSpec = UnitSpec('player')
+	if UnitIsUnit(unit, "player") then
+		cachedGear = UnitGear("player")
+		cachedSpec = UnitSpec("player")
 
 		SetUnitInfo(cachedGear or CONTINUED, cachedSpec or CONTINUED)
 	else
@@ -221,7 +218,7 @@ local function ScanUnit(unit, forced)
 		cachedGear = GearDB[currentGUID]
 		--cachedSpec = SpecDB[currentGUID]
 		--always to get spec
-		cachedSpec = UnitSpec('player')
+		cachedSpec = UnitSpec("player")
 
 		--cachedGear? ok...skip get gear
 		if cachedGear and not forced then
@@ -229,11 +226,11 @@ local function ScanUnit(unit, forced)
 		end
 
 		if not (IsShiftKeyDown() or forced) then
-			if UnitAffectingCombat('player') then return end
+			if UnitAffectingCombat("player") then return end
 		end
 
 		if (not UnitIsVisible(unit)) then return end
-		if UnitIsDeadOrGhost('player') or UnitOnTaxi('player') then return end
+		if UnitIsDeadOrGhost("player") or UnitOnTaxi("player") then return end
 		if InspectFrame and InspectFrame:IsShown() then return end
 		
 		--press shift To refresh
@@ -253,35 +250,33 @@ local function ScanUnit(unit, forced)
 	end
 end
 
-
 --- Character Info Sheet ---
-hooksecurefunc('PaperDollFrame_SetItemLevel', function(self, unit)
-	if (unit ~= 'player') then return end
+hooksecurefunc("PaperDollFrame_SetItemLevel", function(self, unit)
+	if (unit ~= "player") then return end
 
 	local total, equip = GetAverageItemLevel()
-	if (total > 0) then total = string.format('%.1f', total) end
-	if (equip > 0) then equip = string.format('%.1f', equip) end
+	if (total > 0) then total = string.format("%.1f", total) end
+	if (equip > 0) then equip = string.format("%.1f", equip) end
 
 	local ilvl = equip
 	if (equip ~= total) then
-		ilvl = equip .. ' / ' .. total
+		ilvl = equip .. " / " .. total
 	end
 
-	local ilvlLine = _G[self:GetName() .. 'StatText']
+	local ilvlLine = _G[self:GetName() .. "StatText"]
 	ilvlLine:SetText(ilvl)
 
-	self.tooltip = detailColor .. STAT_AVERAGE_ITEM_LEVEL .. ' ' .. ilvl
+	self.tooltip = detailColor .. STAT_AVERAGE_ITEM_LEVEL .. " " .. ilvl
 end)
 
-
 --- Handle Events ---
-f:SetScript('OnEvent', function(self, event, ...)
-	if (event == 'UNIT_INVENTORY_CHANGED') then
+f:SetScript("OnEvent", function(self, event, ...)
+	if (event == "UNIT_INVENTORY_CHANGED") then
 		local unit = ...
 		if (UnitGUID(unit) == currentGUID) then
 			ScanUnit(unit, true)
 		end
-	elseif (event == 'INSPECT_READY') then
+	elseif (event == "INSPECT_READY") then
 		local guid = ...
 		if (guid ~= currentGUID) then return end
 
@@ -299,7 +294,7 @@ f:SetScript('OnEvent', function(self, event, ...)
 	end
 end)
 
-f:SetScript('OnUpdate', function(self, elapsed)
+f:SetScript("OnUpdate", function(self, elapsed)
 	nextInspectRequest = nextInspectRequest - elapsed
 	if (nextInspectRequest > 0) then return end
 
@@ -311,7 +306,7 @@ f:SetScript('OnUpdate', function(self, elapsed)
 	end
 end)
 
-GameTooltip:HookScript('OnTooltipSetUnit', function(self)
+GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 	local _, unit = self:GetUnit()
 
 	if (not unit) or (not CanInspect(unit)) then return end
