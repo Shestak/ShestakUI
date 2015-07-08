@@ -38,7 +38,7 @@ L_GUI_MISC_COLOR_PICKER = "Selezionatore colore migliorato"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "Pergamena Incantamento sul riquadro sul riquadro abilità di commercio"
 L_GUI_MISC_ARCHAEOLOGY = "Archeologia: reliquie e recuperi"
 L_GUI_MISC_CHARS_CURRENCY = "Traccia la valuta complessiva posseduta dai tuoi personaggi"
-L_GUI_MISC_ARMORY_LINK = "Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)" -- Needs review
+L_GUI_MISC_ARMORY_LINK = "Aggiungi un link all’Armeria nei menu a comparsa delle unità (ciò disattiva alcune voce nei menu)"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"
@@ -56,7 +56,7 @@ L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Annuncia l'uso di cibi e tonici nel canal
 L_GUI_ANNOUNCEMENTS_FEASTS = "Annuncia l'uso di tripudi/calderoni/anime/robots per le riparazioni"
 L_GUI_ANNOUNCEMENTS_PORTALS = "Annuncia l'uso di un portale/Rituale d'Evocazione"
 L_GUI_ANNOUNCEMENTS_BAD_GEAR = "Controlla l'equip. non idoneo in instance"
-L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Check Safari Hat" -- Needs review
+L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Controlla se il Cappello da Safari sia indossato o meno"
 
 -- Automation options
 L_GUI_AUTOMATION = "Automatismi"
@@ -75,7 +75,7 @@ L_GUI_AUTOMATION_TAB_BINDER = "Usando il tasto TAB, consente di prendere come be
 L_GUI_AUTOMATION_LOGGING_COMBAT = "In instances da incursione, 'auto-attiva' la registrazione del Registro di combattimento in un file di testo"
 L_GUI_AUTOMATION_CURRENCY_CAP = "Popup automatico valuta massima raggiunta"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Lancia benefici con la rotellina del mouse"
-L_GUI_AUTOMATION_OPEN_ITEMS = "Auto opening of items in bag" -- Needs review
+L_GUI_AUTOMATION_OPEN_ITEMS = "Apertura automatica degli oggetti nelle sacche"
 L_GUI_AUTOMATION_BANNER_HIDE = "Auto hiding Boss Banner Loot Frame"
 
 -- Skins options
