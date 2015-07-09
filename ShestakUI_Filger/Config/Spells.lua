@@ -2341,27 +2341,29 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].player_buff_icon)},
 
 			-- Blood Horror
-			{spellID = 111397, unitID = "player", caster = "all", filter = "BUFF"},
+			{spellID = 111397, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Burning Rush
+			{spellID = 111400, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Bargain
 			{spellID = 110913, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Unending Resolve
-			{spellID = 104773, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dark Regeneration
+			{spellID = 108359, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Soul: Knowledge
 			{spellID = 113861, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Soul: Misery
 			{spellID = 113860, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Soul: Instability
 			{spellID = 113858, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fire And Brimstone
+			{spellID = 108683, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Kiljaeden's Cunning
+			{spellID = 137587, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soulburn
 			{spellID = 74434, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Swap
 			{spellID = 86211, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kiljaeden's Cunning
-			{spellID = 137587, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Burning Rush
-			{spellID = 111400, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fire and Brimstone
-			{spellID = 108683, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Unending Resolve
+			{spellID = 104773, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
