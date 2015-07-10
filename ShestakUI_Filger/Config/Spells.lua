@@ -2862,8 +2862,12 @@ C["filger_spells"] = {
 			{spellID = 174004, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Stealthman 54
 			{spellID = 156136, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Skull Of The Mad Chief
+			{spellID = 187451, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- "Skyterror" Personal Delivery System
 			{spellID = 168342, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Throbbing Blood Orb
+			{spellID = 187299, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Whispers of Rai'Vosh
 			{spellID = 167273, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- XD-57 "Bullseye" Guided Rocket Kit
