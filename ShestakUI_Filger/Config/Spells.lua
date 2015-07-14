@@ -3191,28 +3191,34 @@ C["filger_spells"] = {
 			{spellID = 51490, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Warlock
-			-- Shadowfury
-			{spellID = 30283, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Axe Toss (Felguard)
 			{spellID = 89766, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Blood Horror
+			{spellID = 137143, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Conflagrate
+			{spellID = 17962, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Cripple (Doomguard)
+			{spellID = 170995, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
+			-- Debilitate (Terrorguard) 
+			{spellID = 170996, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Fear
 			{spellID = 118699, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Howl of Terror
 			{spellID = 5484, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Blood Horror
-			{spellID = 137143, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Mesmerize (Shivarra)
+			{spellID = 115268, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Meteor Strike (Abyssal)
+			{spellID = 171156, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mortal Coil
 			{spellID = 6789, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Seduction (Succubus)
 			{spellID = 6358, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Mesmerize (Shivarra)
-			{spellID = 115268, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Unstable Affliction
-			{spellID = 31117, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
-			-- Conflagrate
-			{spellID = 17962, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Shadowflame
 			{spellID = 47960, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Shadowfury
+			{spellID = 30283, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Unstable Affliction
+			{spellID = 31117, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 
 			-- Warrior
 			-- Storm Bolt
@@ -3510,26 +3516,30 @@ C["filger_spells"] = {
 			-- Soulstone
 			{spellID = 20707, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
+			-- Axe Toss (Felguard)
+			{spellID = 89766, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Banish
 			{spellID = 710, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Shadowfury
-			{spellID = 30283, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Axe Toss (Felguard)
-			{spellID = 89766, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Fear
-			{spellID = 118699, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Howl of Terror
-			{spellID = 5484, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Blood Horror
-			{spellID = 137143, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Mortal Coil
-			{spellID = 6789, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Seduction (Succubus)
-			{spellID = 6358, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 137143, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Debilitate (Terrorguard) 
+			{spellID = 170996, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Fear
+			{spellID = 118699, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Howl of Terror
+			{spellID = 5484, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mesmerize (Shivarra)
-			{spellID = 115268, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 115268, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Meteor Strike (Abyssal)
+			{spellID = 171156, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Mortal Coil
+			{spellID = 6789, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Seduction (Succubus)
+			{spellID = 6358, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Shadowfury
+			{spellID = 30283, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Unstable Affliction
-			{spellID = 31117, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
+			{spellID = 31117, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 
 			-- Warrior
 			-- Spell Reflection
