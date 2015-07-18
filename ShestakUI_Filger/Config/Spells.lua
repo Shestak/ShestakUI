@@ -891,7 +891,7 @@ C["filger_spells"] = {
 			-- Ice Block
 			{spellID = 45438, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Invisibility
-			{spellID = 32612, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 32612, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Greater Invisibility
 			{spellID = 110960, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Icy Veins
@@ -3115,6 +3115,8 @@ C["filger_spells"] = {
 			{spellID = 156136, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Skull Of The Mad Chief
 			{spellID = 187451, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Treeassassin's Guise
+			{spellID = 170425, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- "Skyterror" Personal Delivery System
 			{spellID = 168342, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Throbbing Blood Orb
@@ -3127,7 +3129,7 @@ C["filger_spells"] = {
 			-- Ash Covered Horn
 			{spellID = 148626, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			
-			-- Potions: General
+			-- Potions: Draenor
 			-- Draenic Agility Potion
 			{spellID = 156423, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Draenic Intellect Potion
@@ -3136,25 +3138,37 @@ C["filger_spells"] = {
 			{spellID = 156428, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Draenic Armor Potion
 			{spellID = 156430, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Virmen's Bite
+			-- Potions: Pandaria
+			-- Virmen's Bite (Agility)
 			{spellID = 105697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Potion of Mogu Power
+			-- Potion of Mogu Power (Strength)
 			{spellID = 105706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Potion of the Jade Serpent
+			-- Potion of the Jade Serpent (Intellect)
 			{spellID = 105702, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kafa Press
+			-- Kafa Press (Haste)
 			{spellID = 125282, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Speed (Potion)
+			-- Potions: Miscellaneous
+			-- Invisibility Potion
+			{spellID = 11392, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Darkwater Potion
+			{spellID = 105707, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Draenic Invisibility Potion
+			{spellID = 175833, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Draenic Swiftness Potion
+			{spellID = 175790, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Potion of Luck
+			{spellID = 135855, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Potion of Treasure Finding
+			{spellID = 80263, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Swiftness Potion
 			{spellID = 2379, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Speed (BG)
-			{spellID = 23451, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Potions: Brawler's Guild
 			-- Brawler's Draenic Agility Potion
-			{spellID = 176107, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 176107, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Brawler's Draenic Intellect Potion
-			{spellID = 176108, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 176108, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Brawler's Draenic Strength Potion
-			{spellID = 176109, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 176109, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 
 			-- Leeroy Jenkins
 			-- Bloodlust
@@ -3189,10 +3203,12 @@ C["filger_spells"] = {
 			{spellID = 28880, unitID = "player", caster = "all", filter = "BUFF"},
 			
 			-- Zone Buffs
+			-- Burst of Speed (Battlegrounds)
+			{spellID = 23451, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Fel Sludge (Tanaan Jungle)
-			{spellID = 188520, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 188520, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Strange Feeling (Brawler's Guild)
-			{spellID = 134851, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 134851, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			
 			-- Other
 			-- Hand of Protection
