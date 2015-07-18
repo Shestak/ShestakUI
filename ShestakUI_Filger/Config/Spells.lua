@@ -891,7 +891,7 @@ C["filger_spells"] = {
 			-- Ice Block
 			{spellID = 45438, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Invisibility
-			{spellID = 32612, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 32612, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Greater Invisibility
 			{spellID = 110960, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Icy Veins
@@ -3153,22 +3153,22 @@ C["filger_spells"] = {
 			-- Darkwater Potion
 			{spellID = 105707, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Draenic Invisibility Potion
-			{spellID = 175833, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 175833, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Draenic Swiftness Potion
-			{spellID = 175790, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 175790, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Potion of Luck
-			{spellID = 135855, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 135855, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Potion of Treasure Finding
-			{spellID = 80263, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 80263, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Swiftness Potion
 			{spellID = 2379, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Potions: Brawler's Guild
 			-- Brawler's Draenic Agility Potion
-			{spellID = 176107, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 176107, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Brawler's Draenic Intellect Potion
-			{spellID = 176108, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 176108, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Brawler's Draenic Strength Potion
-			{spellID = 176109, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 176109, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 
 			-- Leeroy Jenkins
 			-- Bloodlust
