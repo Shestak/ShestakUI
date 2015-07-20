@@ -2570,6 +2570,8 @@ C["filger_spells"] = {
 			{spellID = 113858, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fire And Brimstone
 			{spellID = 108683, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Healthstone
+			{spellID = 6262, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kiljaeden's Cunning
 			{spellID = 137587, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soulburn
