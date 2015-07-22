@@ -3657,6 +3657,8 @@ C["filger_spells"] = {
 			{spellID = 13159, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Deterrence
 			{spellID = 19263, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Feign Death
+			{spellID = 5384, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Posthaste
 			{spellID = 118922, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
