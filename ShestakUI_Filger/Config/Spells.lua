@@ -1752,6 +1752,8 @@ C["filger_spells"] = {
 			{spellID = 17, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Renew
 			{spellID = 139, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Spectral Guise
+			{spellID = 112833, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spirit Shell
 			{spellID = 109964, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Vampiric Embrace
