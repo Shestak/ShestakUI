@@ -411,6 +411,13 @@ L_GUI_STATS_FPS = "Кадры в секунду"
 L_GUI_STATS_EXPERIENCE = "Опыт"
 L_GUI_STATS_COORDS = "Координаты"
 L_GUI_STATS_LOCATION = "Зона"
+L_GUI_STATS_CURRENCY = "Currency Tab" --Need review
+L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Show Archaeology under currency tab" --Need review
+L_GUI_STATS_CURRENCY_COOKING = "Show Coocking under currency tab" --Need review
+L_GUI_STATS_CURRENCY_PROFESSIONS = "Show Professions under currency tab" --Need review
+L_GUI_STATS_CURRENCY_RAID = "Show Raid Seals under currency tab" --Need review
+L_GUI_STATS_CURRENCY_PVP = "Show PvP under currency tab" --Need review
+L_GUI_STATS_CURRENCY_MISCELLANEOUS = "Show Miscellaneous under currency tab" --Need review
 
 -- Error options
 L_GUI_ERROR = "Ошибки боя"

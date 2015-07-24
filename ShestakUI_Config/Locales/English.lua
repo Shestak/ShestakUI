@@ -408,6 +408,13 @@ L_GUI_STATS_FPS = "FPS"
 L_GUI_STATS_EXPERIENCE = "Experience"
 L_GUI_STATS_COORDS = "Coords"
 L_GUI_STATS_LOCATION = "Location"
+L_GUI_STATS_CURRENCY = "Currency Tab"
+L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Show Archaeology under currency tab"
+L_GUI_STATS_CURRENCY_COOKING = "Show Coocking under currency tab"
+L_GUI_STATS_CURRENCY_PROFESSIONS = "Show Professions under currency tab"
+L_GUI_STATS_CURRENCY_RAID = "Show Raid Seals under currency tab"
+L_GUI_STATS_CURRENCY_PVP = "Show PvP under currency tab"
+L_GUI_STATS_CURRENCY_MISCELLANEOUS = "Show Miscellaneous under currency tab"
 
 -- Error options
 L_GUI_ERROR = "Errors"

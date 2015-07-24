@@ -38,6 +38,7 @@ local latency = modules.Latency
 local memory = modules.Memory
 local durability = modules.Durability
 local gold = modules.Gold
+local gold2 = modules.Gold2
 local clock = modules.Clock
 local location = modules.Location
 local coords = modules.Coords
@@ -593,6 +594,155 @@ if gold.enabled then
 end
 
 ----------------------------------------------------------------------------------------
+--	Gold2
+----------------------------------------------------------------------------------------
+if gold.enabled then
+	local function Currency(id, weekly, capped)
+		local name, amount, tex, week, weekmax, maxed, discovered = GetCurrencyInfo(id)
+		local r, g, b = 1, 1, 1
+		for i = 1, GetNumWatchedTokens() do
+			local _, _, _, itemID = GetBackpackCurrencyInfo( i )
+			if id == itemID then r, g, b = .77, .12, .23 end
+		end
+		if (amount == 0 and r == 1) then return end
+		if weekly then
+			if discovered then GameTooltip:AddDoubleLine("\124T" .. tex .. ":12\124t " .. name, "Current: " .. amount .. " - " .. WEEKLY .. ": " .. week .. " / " .. weekmax, r, g, b, r, g, b) end
+		elseif capped  then
+			if id == 392 then maxed = 4000 end
+			if discovered then GameTooltip:AddDoubleLine("\124T" .. tex .. ":12\124t " .. name, amount .. " / " .. maxed, r, g, b, r, g, b) end
+		else
+			if discovered then GameTooltip:AddDoubleLine("\124T" .. tex .. ":12\124t " .. name, amount, r, g, b, r, g, b) end
+		end
+	end
+	Inject("Gold2", {
+		OnLoad = function(self)
+			self.started = GetMoney()
+			RegEvents(self, "PLAYER_LOGIN PLAYER_MONEY MERCHANT_SHOW")
+			if not SavedStats.JunkIgnore then SavedStats.JunkIgnore = {} end
+		end,
+		OnEvent = function(self, event)
+			conf.Gold2 = GetMoney()
+			self.text:SetText(formatgold(2, conf.Gold2))
+		end,
+		OnEnter = function(self)
+			local curgold = GetMoney()
+			local prof1, prof2, archaeology, _, cooking = GetProfessions()
+			conf.Gold2 = curgold
+			GameTooltip:SetOwner(self, "ANCHOR_NONE")
+			GameTooltip:ClearAllPoints()
+			GameTooltip:SetPoint(gold2.tip_anchor, gold2.tip_frame, gold2.tip_x, gold2.tip_y)
+			GameTooltip:ClearLines()
+			GameTooltip:AddLine(CURRENCY, tthead.r, tthead.g, tthead.b)
+			GameTooltip:AddLine(" ")
+			if self.started ~= curgold then
+				local gained = curgold > self.started
+				local color = gained and "|cff55ff55" or "|cffff5555"
+				GameTooltip:AddDoubleLine(L_STATS_SESSION_GAIN, format("%s$|r %s %s$|r", color, formatgold(1, abs(self.started - curgold)), color), 1, 1, 1, 1, 1, 1)
+				GameTooltip:AddLine(" ")
+			end
+			GameTooltip:AddLine(L_STATS_SERVER_GOLD, ttsubh.r, ttsubh.g, ttsubh.b)
+			local total = 0
+			for char, conf in pairs(SavedStats[realm]) do
+				if conf.Gold2 and conf.Gold2 > 99 then
+					GameTooltip:AddDoubleLine(char, formatgold(1, conf.Gold2), 1, 1, 1, 1, 1, 1)
+					total = total + conf.Gold2
+				end
+			end
+			GameTooltip:AddDoubleLine(" ", "-----------------", 1, 1, 1, 0.5, 0.5, 0.5)
+			GameTooltip:AddDoubleLine(TOTAL, formatgold(1, total), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+			GameTooltip:AddLine(" ")
+
+			local currencies = 0
+			for i = 1, GetCurrencyListSize() do
+				local name, _, _, _, watched, count, icon = GetCurrencyListInfo(i)
+				if watched then
+					if currencies == 0 then GameTooltip:AddLine(format("%s %s", STATUS_TEXT_PLAYER, CURRENCY), ttsubh.r, ttsubh.g, ttsubh.b) end
+					local r, g, b
+					if count > 0 then r, g, b = 1, 1, 1 else r, g, b = 0.5, 0.5, 0.5 end
+					GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", count, icon, t_icon), r, g, b, r, g, b)
+					currencies = currencies + 1
+				end
+			end
+			if currencies > 0 then GameTooltip:AddLine(" ") end
+			if archaeology and C.stats.CurrArchaeology then
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddLine(PROFESSIONS_ARCHAEOLOGY .. ": ", ttsubh.r, ttsubh.g, ttsubh.b)
+				Currency(398)
+				Currency(384)
+				Currency(393)
+				Currency(677)
+				Currency(400)
+				Currency(394)
+				Currency(397)
+				Currency(676)
+				Currency(401)
+				Currency(385)
+				Currency(399)
+				Currency(829)
+				Currency(944)
+				Currency(810)
+				Currency(821)
+				Currency(754)
+				Currency(677)
+				Currency(676)
+			end
+
+			if cooking and C.stats.CurrCooking then
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddLine(PROFESSIONS_COOKING .. ": ", ttsubh.r, ttsubh.g, ttsubh.b)
+				Currency(81)
+				Currency(402)
+			end
+
+			if C.stats.CurrProfessions then
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddLine(L_STATS_CURRENCY_PROFESSIONS_T..":", ttsubh.r, ttsubh.g, ttsubh.b)
+				Currency(910) --Secret of Draenor Alchemy
+				Currency(1020) --Secret of Draenor Blacksmithing
+				Currency(1008) --Secret of Draenor Jewelcrafting
+				Currency(1017) --Secret of Draenor Leatherworking
+				Currency(999) --Secret of Draenor Tailoring
+
+			end
+
+			if C.stats.CurrRaid then
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddLine(L_STATS_CURRENCY_RAID_T..": ", ttsubh.r, ttsubh.g, ttsubh.b)
+				Currency(1129, false, true) --Seal of Inevitable Fate
+				Currency(994, false, true) --Seal of Tempered Fate
+			end
+
+			if C.stats.CurrPvP then
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddLine(PVP_FLAG..":", ttsubh.r, ttsubh.g, ttsubh.b)
+				Currency(390, true) --Conquest Points
+				Currency(392, false, true) --Honor Points
+			end
+
+			if C.stats.CurrMiscellaneous then
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddLine(MISCELLANEOUS..":", ttsubh.r, ttsubh.g, ttsubh.b)
+				Currency(515) --Darkmoon Prize Ticket
+				Currency(944, false, true) --Artifact Fragment
+				Currency(980, false, true) --Dingy Iron Coins (Rogue)
+				Currency(824, false, true) --Garrison Resources
+				Currency(823) --Apexis Crystal
+				Currency(1101) --Oil
+			end
+			GameTooltip:AddDoubleLine(" ", L_STATS_AUTO_SELL..": "..(conf.AutoSell and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
+			GameTooltip:Show()
+		end,
+		OnClick = function(self, button)
+			if button == "LeftButton" then
+				ToggleCharacter("TokenFrame")
+			elseif button == "RightButton" then
+				conf.AutoSell = not conf.AutoSell
+				self:GetScript("OnEnter")(self)
+			end
+		end
+	})
+end
+----------------------------------------------------------------------------------------
 --	Clock
 ----------------------------------------------------------------------------------------
 if clock.enabled then
@@ -648,12 +798,12 @@ if clock.enabled then
 			local oneraid
 			local heroicDifficulty = {DUNGEON_DIFFICULTY2, DUNGEON_DIFFICULTY_5PLAYER_HEROIC, RAID_DIFFICULTY3, RAID_DIFFICULTY4, RAID_DIFFICULTY_10PLAYER_HEROIC, RAID_DIFFICULTY_25PLAYER_HEROIC}
 			for i = 1, GetNumSavedInstances() do
-				local name, _, reset, _, locked, extended, _, isRaid, maxPlayers, difficulty, numEncounters, encounterProgress  = GetSavedInstanceInfo(i)
-				if isRaid and (locked or extended) then
+				local name,_,reset,difficulty,locked,extended,_,isRaid,maxPlayers,_,numEncounters,encounterProgress = GetSavedInstanceInfo(i)
+				if isRaid and (locked or extended) or maxPlayers == 5 and difficulty == 23 and (locked or extended) then
 					local tr, tg, tb, diff
 					if not oneraid then
 						GameTooltip:AddLine(" ")
-						GameTooltip:AddLine(CALENDAR_FILTER_RAID_LOCKOUTS, ttsubh.r, ttsubh.g, ttsubh.b)
+						GameTooltip:AddLine(CALENDAR_FILTER_RAID_LOCKOUTS.." / Mythic(s)", ttsubh.r, ttsubh.g, ttsubh.b)
 						oneraid = true
 					end
 					if extended then tr, tg, tb = 0.3, 1, 0.3 else tr, tg, tb = 1, 1, 1 end
@@ -664,7 +814,11 @@ if clock.enabled then
 						end
 					end
 					if (numEncounters and numEncounters > 0) and (encounterProgress and encounterProgress > 0) then
+						if maxPlayers == 5 and difficulty == 23 then
+						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s] (%s/%s)", "M: "..name, maxPlayers, diff or "", encounterProgress, numEncounters), fmttime(reset), 1, 1, 1, tr, tg, tb)
+						else
 						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s] (%s/%s)", name, maxPlayers, diff or "", encounterProgress, numEncounters), fmttime(reset), 1, 1, 1, tr, tg, tb)
+						end
 					else
 						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s]", name, maxPlayers, diff or ""), fmttime(reset), 1, 1, 1, tr, tg, tb)
 					end
@@ -681,6 +835,13 @@ if clock.enabled then
 					end
 					GameTooltip:AddDoubleLine(name, fmttime(reset), 1, 1, 1, 1, 1, 1)
 				end
+			end
+			if( UnitLevel( "player" ) >= 100 ) then
+				local c = 0
+				for i,q in ipairs({36054,36055,36056,36057,36058,36060,37453,37452,37454,37455,37456,37457,37458,37459}) do if (IsQuestFlaggedCompleted(q)) then c=c+1 end end
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddLine("Misc", ttsubh.r, ttsubh.g, ttsubh.b)
+				GameTooltip:AddDoubleLine( "Seals this week" .. ": ", c, 1, 1, 1, 1, 1, 1)
 			end
 			GameTooltip:Show()
 		end,

@@ -532,6 +532,14 @@ C["stats"] = {
 	["experience"] = true,						-- Experience
 	["coords"] = true,							-- Coords
 	["location"] = true,						-- Location
+	["currency"] = true,						-- Currency
+	["CurrArchaeology"] = false,				-- Show Archaeology under currency tab
+	["CurrCooking"] = false,					-- Show Coocking under currency tab
+	["CurrProfessions"] = false,				-- Show Professions under currency tab
+	["CurrRaid"] = true,						-- Show Seals under currency tab
+	["CurrPvP"] = false,						-- Show PvP under currency tab
+	["CurrMiscellaneous"] = true,				-- Show Miscellaneous under currency tab
+	
 }
 
 ----------------------------------------------------------------------------------------
