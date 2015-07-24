@@ -227,6 +227,7 @@ local function Local(o)
 	if o == "UIConfigtooltipachievements" then o = L_GUI_TOOLTIP_ACHIEVEMENTS end
 	if o == "UIConfigtooltiptarget" then o = L_GUI_TOOLTIP_TARGET end
 	if o == "UIConfigtooltiptitle" then o = L_GUI_TOOLTIP_TITLE end
+	if o == "UIConfigtooltiprealm" then o = L_GUI_TOOLTIP_REALM end
 	if o == "UIConfigtooltiprank" then o = L_GUI_TOOLTIP_RANK end
 	if o == "UIConfigtooltiparena_experience" then o = L_GUI_TOOLTIP_ARENA_EXPERIENCE end
 	if o == "UIConfigtooltipspell_id" then o = L_GUI_TOOLTIP_SPELL_ID end
