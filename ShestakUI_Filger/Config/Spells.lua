@@ -3142,14 +3142,8 @@ C["filger_spells"] = {
 			-- Miscellaneous: Draenor
 			-- Aviana's Feather
 			{spellID = 176286, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Goblin Glider Kit
-			{spellID = 126389, unitID = "player", caster = "all", filter = "BUFF", absID = true},
-			-- Shieldtronic Shield
-			{spellID = 173260, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Spirit of Shinri
 			{spellID = 174004, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Stealthman 54
-			{spellID = 156136, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Skull Of The Mad Chief
 			{spellID = 187451, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Treeassassin's Guise
@@ -3220,10 +3214,16 @@ C["filger_spells"] = {
 			{spellID = 80353, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Professions
+			-- Goblin Glider Kit
+			{spellID = 126389, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Nitro Boosts
 			{spellID = 54861, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Parachute
 			{spellID = 55001, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shieldtronic Shield
+			{spellID = 173260, unitID = "player", caster = "all", filter = "BUFF", absID = true},
+			-- Stealthman 54
+			{spellID = 156136, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 
 			-- Racial
 			-- Berserking (Troll)
@@ -3663,6 +3663,8 @@ C["filger_spells"] = {
 			{spellID = 5384, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Posthaste
 			{spellID = 118922, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Spirit Mend
+			{spellID = 90361, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Binding Shot
 			{spellID = 117526, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
@@ -3883,11 +3885,11 @@ C["filger_spells"] = {
 			-- War Stomp
 			{spellID = 20549, unitID = "target", caster = "all", filter = "DEBUFF"},
 			
-			-- Raids: Pandaria
-			-- Heart of Fear
-			-- Impaling Spear (Wind Lord Mel'jarak)
-			{spellID = 122224, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Professions
+			-- Shieldtronic Shield
+			{spellID = 173260, unitID = "target", caster = "all", filter = "BUFF"},
 			
+			-- Player vs. Player
 			-- Ashran
 			-- Ancient Artifact
 			{spellID = 168506, unitID = "target", caster = "all", filter = "BUFF"},
@@ -3907,7 +3909,7 @@ C["filger_spells"] = {
 			{spellID = 23335, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Seaforium Bombs
 			{spellID = 66271, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Player vs. Player
+			-- Other
 			-- Ba'ruun's Bountiful Bloom
 			{spellID = 167268, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Drinking
