@@ -1069,7 +1069,7 @@ T.UpdateComboPoint = function(self, event, unit)
     if (T.class == "DRUID" and C.unitframe_class_bar.comboalways ~= true) then
         local CatForm = function(self, event, unit)
             local unit = self.unit or "player"
-            local name = UnitBuff(unit, GetSpellInfo(768))
+            local name = UnitBuff(unit, GetSpellInfo(768)) or UnitBuff(unit, GetSpellInfo(171745))
             if name then
                 cpoints:Show()
 				if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
