@@ -107,6 +107,7 @@ local function LoadSkin()
 			local MissionPage = GarrisonMissionFrame.MissionTab.MissionPage
 			T.SkinCloseButton(MissionPage.MinimizeButton, nil, "-")
 			MissionPage.MinimizeButton:SetFrameLevel(MissionPage:GetFrameLevel() + 2)
+			MPCompleteAll:SkinButton()
 		end
 
 		if IsAddOnLoaded("MasterPlan") then
