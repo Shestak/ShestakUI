@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	ShestakUI main configuration file
@@ -103,6 +103,7 @@ C["automation"] = {
 	["currency_cap"] = false,					-- Auto popup for currency cap
 	["buff_on_scroll"] = false,					-- Cast buff on mouse scroll
 	["open_items"] = false,						-- Auto opening of items in bag
+	["bannerhide"] = true,						-- Auto hiding Boss Banner Loot Frame
 }
 
 ----------------------------------------------------------------------------------------
@@ -253,7 +254,8 @@ C["tooltip"] = {
 	["talents"] = false,						-- Show tooltip talents
 	["achievements"] = true,					-- Comparing achievements in tooltip
 	["target"] = true,							-- Target player in tooltip
-	["title"] = false,							-- Player title and realm name in tooltip
+	["title"] = false,							-- Player title in tooltip
+	["realm"] = true,							-- Player realm name in tooltip
 	["rank"] = true,							-- Player guild-rank in tooltip
 	["arena_experience"] = false,				-- Player PvP experience in arena
 	["spell_id"] = false,						-- Id number spells
