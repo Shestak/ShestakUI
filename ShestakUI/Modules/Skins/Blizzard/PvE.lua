@@ -55,7 +55,9 @@ local function LoadSkin()
 		"RaidFinderQueueFramePartyBackfillBackfillButton",
 		"RaidFinderQueueFramePartyBackfillNoBackfillButton",
 		"LFDQueueFramePartyBackfillBackfillButton",
-		"LFDQueueFramePartyBackfillNoBackfillButton"
+		"LFDQueueFramePartyBackfillNoBackfillButton",
+		"LFGInvitePopupAcceptButton",
+		"LFGInvitePopupDeclineButton"
 	}
 
 	for i = 1, #buttons do
