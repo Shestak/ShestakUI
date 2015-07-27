@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	Force readycheck warning
@@ -241,3 +241,10 @@ filter:SetScript("OnEvent", function(self, event, addon, ...)
 		end
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Boss Banner Hider
+----------------------------------------------------------------------------------------
+if C.automation.bannerhide == true then
+	BossBanner.PlayBanner = function() end
+end
