@@ -1068,7 +1068,7 @@ T.UpdateComboPoint = function(self, event, unit)
 	if T.class == "DRUID" then
 		local CatForm = function(self, event, unit)
 			local unit = self.unit or "player"
-			local name = UnitBuff(unit, GetSpellInfo(768))
+			local name = UnitBuff(unit, GetSpellInfo(768)) or UnitBuff(unit, GetSpellInfo(171745))
 			if name then
 				cpoints:Show()
 			else
