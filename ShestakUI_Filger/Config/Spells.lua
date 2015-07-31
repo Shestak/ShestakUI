@@ -660,6 +660,8 @@ C["filger_spells"] = {
 			{spellID = 118455, unitID = "pet", caster = "player", filter = "BUFF"},
 			-- Bestial Wrath
 			{spellID = 19574, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Camouflage
+			{spellID = 51755, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Deterrence
 			{spellID = 19263, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Focus Fire
@@ -3351,6 +3353,8 @@ C["filger_spells"] = {
 			-- Hunter
 			-- Ankle Crack (Crocolisk)
 			{spellID = 50433, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Aspect of the Cheetah
+			{spellID = 5118, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Aspect of the Pack
 			{spellID = 13159, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Binding Shot
