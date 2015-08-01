@@ -246,8 +246,9 @@ local function StyleFlyoutButton(self)
 		local x = GetFlyoutID(i)
 		local _, _, numSlots, isKnown = GetFlyoutInfo(x)
 		if isKnown then
+			if numSlots > buttons then
 			buttons = numSlots
-			break
+			end
 		end
 	end
 end
