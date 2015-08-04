@@ -754,14 +754,36 @@ C["filger_spells"] = {
 			IconSize = 37,
 			Position = {unpack(C["filger_position"].target_debuff_icon)},
 
+			-- Ankle Crack (Crocolisk)
+			{spellID = 50433, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Black Arrow
 			{spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Concussive Shot
+			{spellID = 5116, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Entrapment
+			{spellID = 135373, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Explosive Shot
 			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Freezing Trap
+			{spellID = 3355, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Freezing Trap (Glyph)
+			{spellID = 61394, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Frost Breath (Chimaera)
+			{spellID = 54644, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Frozen Ammo
+			{spellID = 162546, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Ice Trap
+			{spellID = 135299, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Narrow Escape
 			{spellID = 136634, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Poisoned Ammo
+			{spellID = 162543, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Serpent Sting
 			{spellID = 87935, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Warp Time (Warp Stalker)
+			{spellID = 35346, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Wyvern Sting
+			{spellID = 19386, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -2045,6 +2067,8 @@ C["filger_spells"] = {
 			{spellID = 13750, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blade Flurry
 			{spellID = 13877, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Burst of Speed
+			{spellID = 108212, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cheating Death
 			{spellID = 45182, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cloak of Shadows
@@ -3667,8 +3691,6 @@ C["filger_spells"] = {
 			{spellID = 5384, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Posthaste
 			{spellID = 118922, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Spirit Mend
-			{spellID = 90361, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Binding Shot
 			{spellID = 117526, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
