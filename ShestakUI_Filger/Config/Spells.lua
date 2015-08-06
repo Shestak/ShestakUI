@@ -1935,7 +1935,7 @@ C["filger_spells"] = {
 			-- Vampiric Touch
 			{spellID = 34914, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Void Entropy
-			{spellID = 155361, unitID = "target", caster = "player", filter = "BUFF"},
+			{spellID = 155361, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
