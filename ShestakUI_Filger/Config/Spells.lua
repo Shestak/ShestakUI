@@ -663,7 +663,7 @@ C["filger_spells"] = {
 			-- Bestial Wrath
 			{spellID = 19574, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Camouflage
-			{spellID = 51755, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 51755, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Deterrence
 			{spellID = 19263, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Focus Fire
