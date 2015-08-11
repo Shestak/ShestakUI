@@ -165,13 +165,6 @@ function T.SkinScrollBar(frame)
 			scrolldn = true
 		end
 
-		-- if not frame.trackbg then
-			-- frame.trackbg = CreateFrame("Frame", nil, frame)
-			-- frame.trackbg:SetPoint("TOPLEFT", _G[frame:GetName().."ScrollUpButton"], "BOTTOMLEFT", 0, -1)
-			-- frame.trackbg:SetPoint("BOTTOMRIGHT", _G[frame:GetName().."ScrollDownButton"], "TOPRIGHT", 0, 1)
-			-- frame.trackbg:SetTemplate("Transparent")
-		-- end
-
 		if frame:GetThumbTexture() then
 			if not thumbTrim then thumbTrim = 3 end
 			frame:GetThumbTexture():SetTexture(nil)
