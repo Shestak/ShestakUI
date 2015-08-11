@@ -412,13 +412,13 @@ L_GUI_STATS_FPS = "帧数"
 L_GUI_STATS_EXPERIENCE = "经验"
 L_GUI_STATS_COORDS = "坐标"
 L_GUI_STATS_LOCATION = "位置"
-L_GUI_STATS_CURRENCY = "Currency Tab" --Need review
-L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Show Archaeology under currency tab" --Need review
-L_GUI_STATS_CURRENCY_COOKING = "Show Coocking under currency tab" --Need review
-L_GUI_STATS_CURRENCY_PROFESSIONS = "Show Professions under currency tab" --Need review
-L_GUI_STATS_CURRENCY_RAID = "Show Raid Seals under currency tab" --Need review
-L_GUI_STATS_CURRENCY_PVP = "Show PvP under currency tab" --Need review
-L_GUI_STATS_CURRENCY_MISCELLANEOUS = "Show Miscellaneous under currency tab" --Need review
+L_GUI_STATS_CURRENCY = "Currency Tab" -- Needs review
+L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Show Archaeology under currency tab" -- Needs review
+L_GUI_STATS_CURRENCY_COOKING = "Show Coocking under currency tab" -- Needs review
+L_GUI_STATS_CURRENCY_PROFESSIONS = "Show Professions under currency tab" -- Needs review
+L_GUI_STATS_CURRENCY_RAID = "Show Raid Seals under currency tab" -- Needs review
+L_GUI_STATS_CURRENCY_PVP = "Show PvP under currency tab" -- Needs review
+L_GUI_STATS_CURRENCY_MISCELLANEOUS = "Show Miscellaneous under currency tab" --Needs review
 
 -- Error options
 L_GUI_ERROR = "错误收集"
