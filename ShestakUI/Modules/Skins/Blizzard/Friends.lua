@@ -105,6 +105,15 @@ local function LoadSkin()
 		_G[button]:SkinButton()
 	end
 
+	local scrollbars = {
+		"FriendsFrameFriendsScrollFrameScrollBar",
+		"WhoListScrollFrameScrollBar"
+	}
+
+	for _, scrollbar in pairs(scrollbars) do
+		T.SkinScrollBar(_G[scrollbar])
+	end
+
 	-- Reposition buttons
 	WhoFrameWhoButton:SetPoint("RIGHT", WhoFrameAddFriendButton, "LEFT", -3, 0)
 	WhoFrameAddFriendButton:SetPoint("RIGHT", WhoFrameGroupInviteButton, "LEFT", -3, 0)
