@@ -27,6 +27,7 @@ ExtraActionBarFrame:SetScript("OnMouseUp", function()
 end)
 
 RegisterStateDriver(anchor, "visibility", "[petbattle] hide; show")
+
 ------------------------------------------------------------------------------------------
 --	Skin ExtraActionBarFrame(by Zork)
 ------------------------------------------------------------------------------------------

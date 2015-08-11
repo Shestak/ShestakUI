@@ -42,8 +42,8 @@ function button:PLAYER_LOGIN()
 		if item and not InCombatLockdown() and IsAltKeyDown() and not (AuctionFrame and AuctionFrame:IsShown()) then
 			local spell, r, g, b = ScanTooltip(self, spells)
 
-			if not spell and milling and (GetItemCount(tonumber(string.match(link, 'item:(%d+):'))) >= 5) then 
-				spell, r, g, b = GetSpellInfo(51005), 0.5, 1, 0.5 
+			if not spell and milling and (GetItemCount(tonumber(string.match(link, 'item:(%d+):'))) >= 5) then
+				spell, r, g, b = GetSpellInfo(51005), 0.5, 1, 0.5
 			elseif not spell and disenchanter then
 				local _, _, itemRarity, _, _, itemType = GetItemInfo(item)
 				if not (itemType == ARMOR_TYPE or itemType == ENCHSLOT_WEAPON) or not (itemRarity and (itemRarity > 1 and itemRarity < 5)) then return end

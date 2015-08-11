@@ -82,7 +82,6 @@ local QuickQuestDB = {
 	}
 }
 
-
 local modifier = false
 function QuickQuest:Register(event, method, override)
 	local newmethod

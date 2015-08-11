@@ -194,12 +194,6 @@ LPSTAT_CONFIG = {
 		tip_x = cBN and 0 or C.bag.enable and -50 or -21,
 		tip_y = cBN and 85 or C.bag.enable and 0 or 20
 	},
-	Gold2 = {
-		enabled = true,
-		style = 2, -- Display styles: [1] 55g 21s 11c [2] 8829.4g [3] 823.55.94
-		anchor_frame = "Location", anchor_to = "right", anchor_from = "left",
-		x_off = -20, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20
-	},
 }
 
 LPSTAT_PROFILES = {
@@ -213,7 +207,7 @@ LPSTAT_PROFILES = {
 	},
 	DRUID = {
 		Stats = {
-			spec1fmt = class"Power: ".."[power]"..class" Mastery: ".."[mastery]%"..class"  Multi: ".."[strike]%", --Balance 			-> Intellect > Mastery >= Multistrike >= Crit >= Haste > Versatility 
+			spec1fmt = class"Power: ".."[power]"..class" Mastery: ".."[mastery]%"..class"  Multi: ".."[strike]%", --Balance 			-> Intellect > Mastery >= Multistrike >= Crit >= Haste > Versatility
 			spec2fmt = class"Power: ".."[power]"..class" Crit: ".."[crit]%"..class"  Haste: ".."[haste]%", -- Feral 					-> Agility > Crit >= Haste >= Multistrike > Versatility > Mastery
 			spec3fmt = class"Armor: ".."[armor]"..class" Multi: ".."[strike]%"..class" Mastery: ".."[mastery]%", --Guardian 			-> Armor > Stamina > Multistrike > Bonus Armor > Mastery > Versatility >= Agility = Haste > Crit
 			spec4fmt = class"Power: ".."[power]"..class" Haste: ".."[haste]%"..class" Mastery: ".."[mastery]%", --Restoration 			-> Intellect > Haste > Mastery > Multistrike > Crit > Versatility > Spirit

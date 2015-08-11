@@ -539,7 +539,7 @@ C["stats"] = {
 	["currency_raid"] = true,					-- Show Seals under currency tab
 	["currency_pvp"] = true,					-- Show PvP under currency tab
 	["currency_misc"] = true,					-- Show Miscellaneous under currency tab
-	
+
 }
 
 ----------------------------------------------------------------------------------------

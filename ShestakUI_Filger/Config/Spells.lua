@@ -132,7 +132,7 @@ C["filger_spells"] = {
 			{spellID = 165822, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unending Hunger (Strength, Proc)
 			{spellID = 183941, unitID = "player", caster = "player", filter = "BUFF"},
-			
+
 			-- Enchants
 			-- Mark of Blackrock (Bonus Armor)
 			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
@@ -160,7 +160,7 @@ C["filger_spells"] = {
 			{spellID = 55078, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Fever
 			{spellID = 55095, unitID = "target", caster = "player", filter = "DEBUFF"},
-			
+
 			-- Trinket Effects
 			-- Fel Burn (Empty Drinking Horn)
 			{spellID = 184256, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -222,7 +222,7 @@ C["filger_spells"] = {
 			-- Summon Gargoyle
 			{spellID = 49206, filter = "CD"},
 			-- Unholy Blight
-			{spellID = 115989, filter = "CD"},			
+			{spellID = 115989, filter = "CD"},
 			-- Vampiric Blood
 			{spellID = 55233, filter = "CD"},
 
@@ -473,7 +473,7 @@ C["filger_spells"] = {
 			{spellID = 165535, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Voidmender's Shadowgem (Crit, Use)
 			{spellID = 165532, unitID = "player", caster = "player", filter = "BUFF"},
-			
+
 			-- Enchants
 			-- Mark of Blackrock (Bonus Armor)
 			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
@@ -511,7 +511,7 @@ C["filger_spells"] = {
 			{spellID = 164815, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Thrash
 			{spellID = 77758, unitID = "target", caster = "player", filter = "DEBUFF"},
-			
+
 			-- Trinket Effects
 			-- Mark of Doom (Prophecy of Fear)
 			{spellID = 184073, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -630,7 +630,7 @@ C["filger_spells"] = {
 			{spellID = 58984, filter = "CD"},
 			-- War Stomp (Tauren)
 			{spellID = 20549, filter = "CD"},
-			
+
 			-- Items
 			-- Back
 			{slotID = 15, filter = "CD"},
@@ -1053,7 +1053,7 @@ C["filger_spells"] = {
 			{spellID = 31589, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Water Jet (Pet)
 			{spellID = 135029, unitID = "target", caster = "player", filter = "DEBUFF"},
-			
+
 			-- Trinket Effects
 			-- Mark of Doom (Prophecy of Fear)
 			{spellID = 184073, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -1661,7 +1661,7 @@ C["filger_spells"] = {
 			{spellID = 25771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Seal of Justice
 			{spellID = 20170, unitID = "target", caster = "player", filter = "DEBUFF"},
-			
+
 			-- Trinket Effects
 			-- Fel Burn (Empty Drinking Horn)
 			{spellID = 184256, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -1736,7 +1736,7 @@ C["filger_spells"] = {
 			{spellID = 20594, filter = "CD"},
 			-- War Stomp (Tauren)
 			{spellID = 20549, filter = "CD"},
-			
+
 			-- Items
 			-- Back
 			{slotID = 15, filter = "CD"},
@@ -1878,7 +1878,7 @@ C["filger_spells"] = {
 			{spellID = 165535, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Voidmender's Shadowgem (Crit, Use)
 			{spellID = 165532, unitID = "player", caster = "player", filter = "BUFF"},
-			
+
 			-- Enchants
 			-- Mark of Bleeding Hollow (Mastery)
 			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
@@ -1904,7 +1904,7 @@ C["filger_spells"] = {
 			{spellID = 87194, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Void Tendrils
 			{spellID = 114404, unitID = "target", caster = "player", filter = "DEBUFF"},
-						
+
 			-- Trinket Effects
 			-- Mark of Doom (Prophecy of Fear)
 			{spellID = 184073, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -2124,7 +2124,7 @@ C["filger_spells"] = {
 			{spellID = 84746, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shallow Insight
 			{spellID = 84745, unitID = "player", caster = "player", filter = "BUFF"},
-			
+
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Melee DPS (Crit, Proc)
@@ -2165,7 +2165,7 @@ C["filger_spells"] = {
 			{spellID = 184293, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Witherbark's Branch (Haste, Proc)
 			{spellID = 165822, unitID = "player", caster = "player", filter = "BUFF"},
-			
+
 			-- Enchants
 			-- Mark of Bleeding Hollow (Mastery)
 			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
@@ -2450,7 +2450,7 @@ C["filger_spells"] = {
 			{spellID = 165535, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Voidmender's Shadowgem (Crit, Use)
 			{spellID = 165532, unitID = "player", caster = "player", filter = "BUFF"},
-			
+
 			-- Enchants
 			-- Mark of Bleeding Hollow (Mastery)
 			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
@@ -2480,7 +2480,7 @@ C["filger_spells"] = {
 			{spellID = 8056, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Stormstrike
 			{spellID = 17364, unitID = "target", caster = "player", filter = "DEBUFF"},
-						
+
 			-- Trinket Effects
 			-- Mark of Doom (Prophecy of Fear)
 			{spellID = 184073, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -2718,7 +2718,7 @@ C["filger_spells"] = {
 			-- Self
 			-- Enslave Demon
 			{spellID = 1098, unitID = "target", caster = "player", filter = "DEBUFF"},
-			
+
 			-- Trinket Effects
 			-- Mark of Doom (Prophecy of Fear)
 			{spellID = 184073, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -3004,7 +3004,7 @@ C["filger_spells"] = {
 			{spellID = 1715, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Rend
 			{spellID = 772, unitID = "target", caster = "player", filter = "DEBUFF"},
-						
+
 			-- Trinket Effects
 			-- Fel Burn (Empty Drinking Horn)
 			{spellID = 184256, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -3124,7 +3124,7 @@ C["filger_spells"] = {
 			{spellID = 161495, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Wand of Lightning Shield
 			{spellID = 171725, unitID = "player", caster = "all", filter = "BUFF"},
-			
+
 			-- Experience & Reputation
 			-- Ancient Knowledge
 			{spellID = 127250, unitID = "player", caster = "player", filter = "BUFF", absID = true},
@@ -3140,7 +3140,7 @@ C["filger_spells"] = {
 			{spellID = 90216, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Guild Battle Standard: Horde
 			{spellID = 90708, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			
+
 			-- Fishing: Draenor
 			-- Abyssal Gulper Eel Bait
 			{spellID = 158038, unitID = "player", caster = "player", filter = "BUFF", absID = true},
@@ -3168,7 +3168,7 @@ C["filger_spells"] = {
 			-- Fishing: Northrend
 			-- Dalaran Fountain (Gold Coin)
 			{spellID = 59125, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			
+
 			-- Miscellaneous: Draenor
 			-- Aviana's Feather
 			{spellID = 176286, unitID = "player", caster = "player", filter = "BUFF", absID = true},
@@ -3189,7 +3189,7 @@ C["filger_spells"] = {
 			-- Miscellaneous: Pandaria
 			-- Ash Covered Horn
 			{spellID = 148626, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			
+
 			-- Potions: Draenor
 			-- Draenic Agility Potion
 			{spellID = 156423, unitID = "player", caster = "player", filter = "BUFF"},
@@ -3268,7 +3268,7 @@ C["filger_spells"] = {
 			{spellID = 58984, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stoneform (Dwarf)
 			{spellID = 65116, unitID = "player", caster = "player", filter = "BUFF"},
-			
+
 			-- Zone Buffs
 			-- Burst of Speed (Battlegrounds)
 			{spellID = 23451, unitID = "player", caster = "all", filter = "BUFF", absID = true},
@@ -3276,7 +3276,7 @@ C["filger_spells"] = {
 			{spellID = 188520, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Strange Feeling (Brawler's Guild)
 			{spellID = 134851, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
-			
+
 			-- Other
 			-- Angelic Feather
 			{spellID = 121557, unitID = "player", caster = "all", filter = "BUFF"},
@@ -3535,7 +3535,7 @@ C["filger_spells"] = {
 			{spellID = 17962, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Cripple (Doomguard)
 			{spellID = 170995, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
-			-- Debilitate (Terrorguard) 
+			-- Debilitate (Terrorguard)
 			{spellID = 170996, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Fear
 			{spellID = 118699, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -3863,7 +3863,7 @@ C["filger_spells"] = {
 			{spellID = 710, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Blood Horror
 			{spellID = 137143, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Debilitate (Terrorguard) 
+			-- Debilitate (Terrorguard)
 			{spellID = 170996, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Fear
 			{spellID = 118699, unitID = "target", caster = "all", filter = "DEBUFF"},
@@ -3914,11 +3914,11 @@ C["filger_spells"] = {
 			{spellID = 107079, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- War Stomp
 			{spellID = 20549, unitID = "target", caster = "all", filter = "DEBUFF"},
-			
+
 			-- Professions
 			-- Shieldtronic Shield
 			{spellID = 173260, unitID = "target", caster = "all", filter = "BUFF"},
-			
+
 			-- Player vs. Player
 			-- Ashran
 			-- Ancient Artifact

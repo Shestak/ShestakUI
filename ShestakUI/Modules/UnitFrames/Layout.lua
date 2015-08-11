@@ -65,7 +65,6 @@ local function Shared(self, unit)
 		self.Health.Smooth = true
 	end
 
-
 	self.Health.PostUpdate = T.PostUpdateHealth
 
 	-- Health bar background
@@ -104,7 +103,6 @@ local function Shared(self, unit)
 		self.Health.value:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
 		self.Health.value:SetJustifyH("LEFT")
 	end
-
 
 	-- Power bar
 	self.Power = CreateFrame("StatusBar", self:GetName().."_Power", self)
@@ -211,7 +209,6 @@ local function Shared(self, unit)
 		end
 	end
 
-
 	if unit == "player" then
 		self.FlashInfo = CreateFrame("Frame", "FlashInfo", self)
 		self.FlashInfo:SetScript("OnUpdate", T.UpdateManaLevel)
@@ -259,7 +256,6 @@ local function Shared(self, unit)
 			self.LFDRole:SetSize(12, 12)
 			self.LFDRole:SetPoint("TOPLEFT", 10, 8)
 		end
-
 
 		-- Rune bar
 		if C.unitframe_class_bar.rune == true and T.class == "DEATHKNIGHT" then
@@ -421,6 +417,7 @@ local function Shared(self, unit)
 			self.WarlockSpecBars.text:SetPoint("CENTER", self.WarlockSpecBars, "CENTER", 0, 0)
 			self:Tag(self.WarlockSpecBars.text, "[DemonicFury]")
 		end
+
 		-- Rogue/Druid Combo bar
 		if C.unitframe_class_bar.combo == true and T.class == "ROGUE" or T.class == "DRUID" then
 			self.CPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)
@@ -446,12 +443,12 @@ local function Shared(self, unit)
 			self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
 
 			self.CPoints.Override = T.UpdateComboPoint
-			
+
 			if T.class == "ROGUE" then
 				self.Anticipation = CreateFrame("Frame", self:GetName().."_Anticipation", self)
 				self.Anticipation:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.Anticipation:SetSize(217, 3)
-				
+
 				for i = 1, 5 do
 					self.Anticipation[i] = CreateFrame("StatusBar", self:GetName().."_Anticipation"..i, self.Anticipation)
 					self.Anticipation[i]:SetSize(213 / 5, 3)
@@ -465,6 +462,7 @@ local function Shared(self, unit)
 				end
 			end
 		end
+
 		-- Totem bar
 		if C.unitframe_class_bar.totem == true and T.class == "SHAMAN" then
 			self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
@@ -563,7 +561,6 @@ local function Shared(self, unit)
 			end
 		end
 
-
 		-- Mocking Banner bar
 		if C.unitframe_class_bar.totem == true and T.class == "WARRIOR" then
 			if C.unitframe_class_bar.totem == true then
@@ -615,7 +612,6 @@ local function Shared(self, unit)
 				self.TotemBar[i].bg.multiplier = 0.2
 			end
 		end
-
 
 		-- Vengeance bar
 		if C.unitframe_class_bar.vengeance == true then
@@ -730,7 +726,6 @@ local function Shared(self, unit)
 		end
 	end
 
-
 	-- Counter bar
 	if unit == "player" or unit == "pet" then
 		self.CounterBar = CreateFrame("StatusBar", self:GetName().."_CounterBar", self)
@@ -843,7 +838,6 @@ local function Shared(self, unit)
 			self.Debuffs.PostUpdateIcon = T.PostUpdateIcon
 		end
 
-
 		if unit == "target" then
 			self.Auras = CreateFrame("Frame", self:GetName().."targetaura", self)
 			self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5)
@@ -859,8 +853,6 @@ local function Shared(self, unit)
 			self.Auras.gap = true
 			self.Auras.PostCreateIcon = T.PostCreateAura
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
-
-
 
 			-- Priest Range bar
 			if C.unitframe_class_bar.range == true and T.class == "PRIEST" then
@@ -935,7 +927,6 @@ local function Shared(self, unit)
 		end
 	end
 
-
 	if C.unitframe.unit_castbar == true and unit ~= "arenatarget" then
 		self.Castbar = CreateFrame("StatusBar", self:GetName().."_Castbar", self)
 		self.Castbar:SetStatusBarTexture(C.media.texture, "ARTWORK")
@@ -990,7 +981,6 @@ local function Shared(self, unit)
 			self.Castbar:SetHeight(5)
 		end
 
-
 		if unit == "focus" then
 			self.Castbar.Button = CreateFrame("Frame", nil, self.Castbar)
 			self.Castbar.Button:SetHeight(65)
@@ -1021,7 +1011,6 @@ local function Shared(self, unit)
 				self.Time:SetText(("|cffaf5050%s %.1f|r"):format(self.channeling and "-" or "+", abs(self.delay)))
 			end
 		end
-
 
 		if unit == "player" or unit == "target" or unit == "arena" or unit == "boss" then
 			self.Castbar.Time = T.SetFontString(self.Castbar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
@@ -1108,7 +1097,6 @@ local function Shared(self, unit)
 			self.Swing:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
 		end
 
-
 		self.Swing.bg = self.Swing:CreateTexture(nil, "BORDER")
 		self.Swing.bg:SetAllPoints(self.Swing)
 		self.Swing.bg:SetTexture(C.media.texture)
@@ -1122,7 +1110,6 @@ local function Shared(self, unit)
 		self.Swing.Text:SetPoint("CENTER", 0, 0)
 		self.Swing.Text:SetTextColor(1, 1, 1)
 	end
-
 
 	if C.unitframe.show_arena and unit == "arena" then
 		self.Trinket = CreateFrame("Frame", self:GetName().."_Trinket", self)
@@ -1217,7 +1204,6 @@ local function Shared(self, unit)
 
 		self:HookScript("OnShow", T.UpdateAllElements)
 	end
-
 
 	-- Agro border
 	if C.raidframe.aggro_border == true and unit ~= "arenatarget" then
@@ -1367,7 +1353,6 @@ if C.unitframe.show_arena == true then
 		arena[i]:SetSize(150, 27)
 	end
 
-
 	local arenatarget = {}
 	for i = 1, 5 do
 		arenatarget[i] = oUF:Spawn("arena"..i.."target", "oUF_Arena"..i.."Target")
@@ -1514,7 +1499,6 @@ SlashCmdList.TEST_UF = function(msg)
 				end
 			end
 		end
-
 
 		if C.unitframe.show_boss == true then
 			for i = 1, MAX_BOSS_FRAMES do

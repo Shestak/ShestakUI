@@ -4,7 +4,7 @@ if C.tooltip.enable ~= true or C.tooltip.average_lvl ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Equipped average item level(Cloudy Unit Info by Cloudyfa)
 ----------------------------------------------------------------------------------------
---- Variables ---
+--- Variables
 local currentUNIT, currentGUID
 local GearDB = {}
 
@@ -146,15 +146,15 @@ local function UnitGear(unit)
 	end
 
 	if not delay then
-		if (unit == "player") and (GetAverageItemLevel() > 0) then
+		if unit == "player" and GetAverageItemLevel() > 0 then
 			_, ilvl = GetAverageItemLevel()
 		else
 			ilvl = total / count
 		end
 
-		if (ilvl > 0) then ilvl = string.format("%.1f", ilvl) end
-		if (boa > 0) then ilvl = ilvl .. "  |cffe6cc80" .. boa .. " " .. HEIRLOOMS end
-		if (pvp > 0) then ilvl = ilvl .. "  |cffa335ee" .. pvp .. " " .. PVP end
+		if ilvl > 0 then ilvl = string.format("%.1f", ilvl) end
+		if boa > 0 then ilvl = ilvl.."  |cffe6cc80"..boa.." "..HEIRLOOMS end
+		if pvp > 0 then ilvl = ilvl.."  |cffa335ee"..pvp.." "..PVP end
 	else
 		ilvl = nil
 	end
