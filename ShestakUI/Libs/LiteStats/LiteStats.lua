@@ -602,7 +602,7 @@ if gold.enabled then
 
 			end
 
-			if C.stats.currency_raid and UnitLevel("player") >= 100 then
+			if C.stats.currency_raid and T.level >= 100 then
 				GameTooltip:AddLine(" ")
 				GameTooltip:AddLine(L_STATS_CURRENCY_RAID_T, ttsubh.r, ttsubh.g, ttsubh.b)
 				Currency(1129, false, true)	-- Seal of Inevitable Fate
@@ -772,7 +772,7 @@ if clock.enabled then
 					GameTooltip:AddDoubleLine(name, fmttime(reset), 1, 1, 1, 1, 1, 1)
 				end
 			end
-			if UnitLevel("player") >= 100 then
+			if T.level >= 100 then
 				local c = 0
 				for i, q in ipairs({36054, 36055, 36056, 36057, 36058, 36060, 37453, 37452, 37454, 37455, 37456, 37457, 37458, 37459}) do if IsQuestFlaggedCompleted(q) then c = c + 1 end end
 				GameTooltip:AddLine(" ")

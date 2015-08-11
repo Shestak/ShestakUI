@@ -424,7 +424,7 @@ local function BagUpdate(bag)
 		local _, id, active = GetContainerItemQuestInfo(bag, slot)
 		if id and not active and not IsQuestFlaggedCompleted(id) and not QuickQuestDB.itemBlacklist[id] then
 			local level = GetContainerItemQuestLevel(bag, slot)
-			if level <= UnitLevel("player") then
+			if level <= T.level then
 				UseContainerItem(bag, slot)
 			end
 		end

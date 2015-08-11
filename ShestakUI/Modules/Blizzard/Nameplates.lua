@@ -313,7 +313,7 @@ local function UpdateObjects(frame)
 	end
 
 	-- Setup level text
-	local level, elite, mylevel = tonumber(frame.hp.oldlevel:GetText()), frame.hp.elite:IsShown(), UnitLevel("player")
+	local level, elite, mylevel = tonumber(frame.hp.oldlevel:GetText()), frame.hp.elite:IsShown(), T.level
 	frame.hp.level:ClearAllPoints()
 	if C.nameplate.class_icons == true and frame.isClass == true then
 		frame.hp.level:SetPoint("RIGHT", frame.hp.name, "LEFT", -2, 0)
