@@ -451,7 +451,6 @@ local function Local(o)
 	if o == "UIConfigstatsexperience" then o = L_GUI_STATS_EXPERIENCE end
 	if o == "UIConfigstatscoords" then o = L_GUI_STATS_COORDS end
 	if o == "UIConfigstatslocation" then o = L_GUI_STATS_LOCATION end
-	if o == "UIConfigstatscurrency" then o = L_GUI_STATS_CURRENCY end
 	if o == "UIConfigstatscurrency_archaeology" then o = L_GUI_STATS_CURRENCY_ARCHAEOLOGY end
 	if o == "UIConfigstatscurrency_cooking" then o = L_GUI_STATS_CURRENCY_COOKING end
 	if o == "UIConfigstatscurrency_professions" then o = L_GUI_STATS_CURRENCY_PROFESSIONS end

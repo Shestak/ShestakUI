@@ -412,7 +412,6 @@ L_GUI_STATS_FPS = "FPS (Marcos por segundo)"
 L_GUI_STATS_EXPERIENCE = "Experiencia"
 L_GUI_STATS_COORDS = "Coordenadas"
 L_GUI_STATS_LOCATION = "Localización"
-L_GUI_STATS_CURRENCY = "Currency Tab" -- Needs review
 L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Show Archaeology under currency tab" -- Needs review
 L_GUI_STATS_CURRENCY_COOKING = "Show Coocking under currency tab" -- Needs review
 L_GUI_STATS_CURRENCY_PROFESSIONS = "Show Professions under currency tab" -- Needs review

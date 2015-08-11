@@ -412,7 +412,6 @@ L_GUI_STATS_FPS = "帧数"
 L_GUI_STATS_EXPERIENCE = "经验"
 L_GUI_STATS_COORDS = "坐标"
 L_GUI_STATS_LOCATION = "位置"
-L_GUI_STATS_CURRENCY = "Currency Tab" -- Needs review
 L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Show Archaeology under currency tab" -- Needs review
 L_GUI_STATS_CURRENCY_COOKING = "Show Coocking under currency tab" -- Needs review
 L_GUI_STATS_CURRENCY_PROFESSIONS = "Show Professions under currency tab" -- Needs review

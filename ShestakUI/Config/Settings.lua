@@ -533,7 +533,6 @@ C["stats"] = {
 	["experience"] = true,						-- Experience
 	["coords"] = true,							-- Coords
 	["location"] = true,						-- Location
-	["currency"] = true,						-- Currency
 	["currency_archaeology"] = true,			-- Show Archaeology under currency tab
 	["currency_cooking"] = true,				-- Show Coocking under currency tab
 	["currency_professions"] = true,			-- Show Professions under currency tab

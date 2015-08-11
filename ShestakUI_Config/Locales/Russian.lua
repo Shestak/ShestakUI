@@ -412,7 +412,6 @@ L_GUI_STATS_FPS = "Кадры в секунду"
 L_GUI_STATS_EXPERIENCE = "Опыт"
 L_GUI_STATS_COORDS = "Координаты"
 L_GUI_STATS_LOCATION = "Зона"
-L_GUI_STATS_CURRENCY = "Currency Tab" -- Needs review
 L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Show Archaeology under currency tab" -- Needs review
 L_GUI_STATS_CURRENCY_COOKING = "Show Coocking under currency tab" -- Needs review
 L_GUI_STATS_CURRENCY_PROFESSIONS = "Show Professions under currency tab" -- Needs review
