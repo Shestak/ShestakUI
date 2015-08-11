@@ -122,8 +122,8 @@ if C.skins.blizzard_frames == true then
 	end)
 end
 
-local frame1 = CreateFrame("Frame")
-frame1:RegisterEvent("PLAYER_ENTERING_WORLD")
-frame1:SetScript("OnEvent", function(self, event)
-		ObjectiveTracker_Collapse()
-end)
+-- local frame1 = CreateFrame("Frame")
+-- frame1:RegisterEvent("PLAYER_ENTERING_WORLD")
+-- frame1:SetScript("OnEvent", function(self, event)
+	-- ObjectiveTracker_Collapse()
+-- end)
