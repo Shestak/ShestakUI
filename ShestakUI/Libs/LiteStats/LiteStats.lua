@@ -602,7 +602,7 @@ if gold.enabled then
 
 			end
 
-			if C.stats.currency_raid then
+			if C.stats.currency_raid and UnitLevel("player") >= 100 then
 				GameTooltip:AddLine(" ")
 				GameTooltip:AddLine(L_STATS_CURRENCY_RAID_T, ttsubh.r, ttsubh.g, ttsubh.b)
 				Currency(1129, false, true)	-- Seal of Inevitable Fate
