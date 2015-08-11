@@ -61,14 +61,14 @@ end
 
 local isCaster = {
 	DEATHKNIGHT = {nil, nil, nil},
-	DRUID = {true}, -- Balance
+	DRUID = {true},					-- Balance
 	HUNTER = {nil, nil, nil},
 	MAGE = {true, true, true},
 	MONK = {nil, nil, nil},
 	PALADIN = {nil, nil, nil},
-	PRIEST = {nil, nil, true}, -- Shadow
+	PRIEST = {nil, nil, true},		-- Shadow
 	ROGUE = {nil, nil, nil},
-	SHAMAN = {true}, -- Elemental
+	SHAMAN = {true},				-- Elemental
 	WARLOCK = {true, true, true},
 	WARRIOR = {nil, nil, nil}
 }
@@ -149,7 +149,7 @@ function T.SkinScrollBar(frame)
 	if _G[frame:GetName().."Middle"] then
 		_G[frame:GetName().."Middle"]:SetTexture(nil)
 	end
-	
+
 	if _G[frame:GetName().."ScrollUpButton"] and _G[frame:GetName().."ScrollDownButton"] then
 		_G[frame:GetName().."ScrollUpButton"]:StripTextures()
 		if not _G[frame:GetName().."ScrollUpButton"].icon then
@@ -165,21 +165,21 @@ function T.SkinScrollBar(frame)
 			scrolldn = true
 		end
 
-		if not frame.trackbg then
-			frame.trackbg = CreateFrame("Frame", nil, frame)
-			frame.trackbg:SetPoint("TOPLEFT", _G[frame:GetName().."ScrollUpButton"], "BOTTOMLEFT", 0, -1)
-			frame.trackbg:SetPoint("BOTTOMRIGHT", _G[frame:GetName().."ScrollDownButton"], "TOPRIGHT", 0, 1)
-			frame.trackbg:SetTemplate("Transparent")
-		end
+		-- if not frame.trackbg then
+			-- frame.trackbg = CreateFrame("Frame", nil, frame)
+			-- frame.trackbg:SetPoint("TOPLEFT", _G[frame:GetName().."ScrollUpButton"], "BOTTOMLEFT", 0, -1)
+			-- frame.trackbg:SetPoint("BOTTOMRIGHT", _G[frame:GetName().."ScrollDownButton"], "TOPRIGHT", 0, 1)
+			-- frame.trackbg:SetTemplate("Transparent")
+		-- end
 
 		if frame:GetThumbTexture() then
 			if not thumbTrim then thumbTrim = 3 end
 			frame:GetThumbTexture():SetTexture(nil)
 			if not frame.thumbbg then
 				frame.thumbbg = CreateFrame("Frame", nil, frame)
-				frame.thumbbg:SetPoint("TOPLEFT", frame:GetThumbTexture(), "TOPLEFT", 2, -thumbTrim)
-				frame.thumbbg:SetPoint("BOTTOMRIGHT", frame:GetThumbTexture(), "BOTTOMRIGHT", -2, thumbTrim)
-				frame.thumbbg:SetTemplate("Default", true, true)
+				frame.thumbbg:SetPoint("TOPLEFT", frame:GetThumbTexture(), "TOPLEFT", 0, -thumbTrim)
+				frame.thumbbg:SetPoint("BOTTOMRIGHT", frame:GetThumbTexture(), "BOTTOMRIGHT", 0, thumbTrim)
+				frame.thumbbg:SetTemplate("Default")
 				if frame.trackbg then
 					frame.thumbbg:SetFrameLevel(frame.trackbg:GetFrameLevel())
 				end
@@ -272,13 +272,13 @@ function T.SkinNextPrevButton(btn, horizontal, left)
 	if normal and pushed and disabled then
 		if horizontal then
 			if scrolldn == true then
-			btn:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Up")
-			btn:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Down")
-			btn:SetDisabledTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Disabled")
+				btn:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Up")
+				btn:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Down")
+				btn:SetDisabledTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Disabled")
 			else
-			btn:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Up")
-			btn:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Down")
-			btn:SetDisabledTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Disabled")
+				btn:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Up")
+				btn:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Down")
+				btn:SetDisabledTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Disabled")
 			end
 			btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.72, 0.65, 0.29, 0.65, 0.72)
 			if btn:GetPushedTexture() then
@@ -448,10 +448,10 @@ function T.SkinCloseButton(f, point, text, pixel)
 end
 
 function T.HandleIcon(icon, parent)
-	parent = parent or icon:GetParent();
+	parent = parent or icon:GetParent()
 
 	icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	parent:CreateBackdrop('Default')
+	parent:CreateBackdrop("Default")
 	icon:SetParent(parent.backdrop)
 end
 
