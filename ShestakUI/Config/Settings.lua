@@ -534,12 +534,12 @@ C["stats"] = {
 	["coords"] = true,							-- Coords
 	["location"] = true,						-- Location
 	["currency"] = true,						-- Currency
-	["CurrArchaeology"] = false,				-- Show Archaeology under currency tab
-	["CurrCooking"] = false,					-- Show Coocking under currency tab
-	["CurrProfessions"] = false,				-- Show Professions under currency tab
-	["CurrRaid"] = true,						-- Show Seals under currency tab
-	["CurrPvP"] = false,						-- Show PvP under currency tab
-	["CurrMiscellaneous"] = true,				-- Show Miscellaneous under currency tab
+	["currency_archaeology"] = true,			-- Show Archaeology under currency tab
+	["currency_cooking"] = true,				-- Show Coocking under currency tab
+	["currency_professions"] = true,			-- Show Professions under currency tab
+	["currency_raid"] = true,					-- Show Seals under currency tab
+	["currency_pvp"] = true,					-- Show PvP under currency tab
+	["currency_misc"] = true,					-- Show Miscellaneous under currency tab
 	
 }
 
