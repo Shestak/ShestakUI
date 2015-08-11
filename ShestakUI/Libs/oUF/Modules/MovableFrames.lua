@@ -361,13 +361,7 @@ do
 		-- We have to define a minHeight on the header if it doesn't have one. The
 		-- reason for this is that the header frame will have an height of 0.1 when
 		-- it doesn't have any frames visible.
-		if(
-			isHeader and
-			(
-				not isHeader:GetAttribute("minHeight") and math.floor(isHeader:GetHeight()) == 0 or
-				not isHeader:GetAttribute("minWidth") and math.floor(isHeader:GetWidth()) == 0
-			)
-		) then
+		if isHeader and (not isHeader:GetAttribute("minHeight") and math.floor(isHeader:GetHeight()) == 0 or not isHeader:GetAttribute("minWidth") and math.floor(isHeader:GetWidth()) == 0) then
 			isHeader:SetHeight(obj:GetHeight())
 			isHeader:SetWidth(obj:GetWidth())
 

@@ -1,9 +1,9 @@
 local T, C, L, _ = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
----------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 --	Hide Blizzard ActionBars stuff(by Tukz)
----------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 do
 	MainMenuBar:SetScale(0.00001)
 	MainMenuBar:EnableMouse(false)
@@ -144,7 +144,7 @@ end
 function T.HideSpiral(f, alpha)
 	f:SetSwipeTexture(1, 1, 1)
 	f:SetSwipeColor(0, 0, 0, alpha * 0.8)
-	f:SetBlingTexture('', 0, 0, 0, 0)
+	f:SetBlingTexture("", 0, 0, 0, 0)
 end
 
 local EventSpiral = CreateFrame("Frame")

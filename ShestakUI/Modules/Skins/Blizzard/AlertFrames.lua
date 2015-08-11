@@ -281,7 +281,7 @@ local function LoadSkin()
 					_G["CriteriaAlertFrame"..i.."IconTexture"].b:SetTemplate("Default")
 					_G["CriteriaAlertFrame"..i.."IconTexture"].b:SetPoint("TOPLEFT", _G["CriteriaAlertFrame"..i.."IconTexture"], "TOPLEFT", -2, 2)
 					_G["CriteriaAlertFrame"..i.."IconTexture"].b:SetPoint("BOTTOMRIGHT", _G["CriteriaAlertFrame"..i.."IconTexture"], "BOTTOMRIGHT", 2, -2)
-					_G['CriteriaAlertFrame'..i..'IconTexture']:SetParent(_G["CriteriaAlertFrame"..i.."IconTexture"].b)
+					_G["CriteriaAlertFrame"..i.."IconTexture"]:SetParent(_G["CriteriaAlertFrame"..i.."IconTexture"].b)
 				end
 			end
 		end

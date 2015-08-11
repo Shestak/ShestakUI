@@ -756,8 +756,8 @@ if clock.enabled then
 		OnEvent = function(self) if self.hovered then self:GetScript("OnEnter")(self) end end,
 		OnEnter = function(self)
 			if not self.hovered then RequestRaidInfo() self.hovered = true end
-			local weekday = select(date"%w"+1,CalendarGetWeekdayNames())
-			local month = select(date"%m",CalendarGetMonthNames())
+			local weekday = select(date"%w"+1, CalendarGetWeekdayNames())
+			local month = select(date"%m", CalendarGetMonthNames())
 			GameTooltip:SetOwner(self, "ANCHOR_NONE")
 			GameTooltip:ClearAllPoints()
 			GameTooltip:SetPoint(clock.tip_anchor, clock.tip_frame, clock.tip_x, clock.tip_y)
@@ -836,12 +836,12 @@ if clock.enabled then
 					GameTooltip:AddDoubleLine(name, fmttime(reset), 1, 1, 1, 1, 1, 1)
 				end
 			end
-			if( UnitLevel( "player" ) >= 100 ) then
+			if UnitLevel( "player" ) >= 100 then
 				local c = 0
-				for i,q in ipairs({36054,36055,36056,36057,36058,36060,37453,37452,37454,37455,37456,37457,37458,37459}) do if (IsQuestFlaggedCompleted(q)) then c=c+1 end end
+				for i, q in ipairs({36054, 36055, 36056, 36057, 36058, 36060, 37453, 37452, 37454, 37455, 37456, 37457, 37458, 37459}) do if (IsQuestFlaggedCompleted(q)) then c = c + 1 end end
 				GameTooltip:AddLine(" ")
 				GameTooltip:AddLine("Misc", ttsubh.r, ttsubh.g, ttsubh.b)
-				GameTooltip:AddDoubleLine( "Seals this week" .. ": ", c, 1, 1, 1, 1, 1, 1)
+				GameTooltip:AddDoubleLine("Seals this week" .. ": ", c, 1, 1, 1, 1, 1, 1)
 			end
 			GameTooltip:Show()
 		end,

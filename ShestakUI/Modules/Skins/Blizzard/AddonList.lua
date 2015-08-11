@@ -7,14 +7,14 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	local Frames = {
 		AddonList,
-		AddonListInset,
+		AddonListInset
 	}
 
 	local Buttons = {
 		AddonListEnableAllButton,
 		AddonListDisableAllButton,
 		AddonListCancelButton,
-		AddonListOkayButton,
+		AddonListOkayButton
 	}
 
 	for _, Frames in pairs(Frames) do

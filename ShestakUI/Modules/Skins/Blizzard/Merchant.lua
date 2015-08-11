@@ -23,7 +23,7 @@ local function LoadSkin()
 	MerchantBuyBackItem.backdrop:SetPoint("BOTTOMRIGHT", 2, -6)
 
 	-- Skin tabs
-	for i= 1, 2 do
+	for i = 1, 2 do
 		T.SkinTab(_G["MerchantFrameTab"..i])
 	end
 

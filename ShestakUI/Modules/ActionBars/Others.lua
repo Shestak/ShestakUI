@@ -1,9 +1,9 @@
 local T, C, L, _ = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
-------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 --	Manage others stuff for ActionBars(by Tukz)
-------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:SetScript("OnEvent", function(self, event)

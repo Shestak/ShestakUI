@@ -20,7 +20,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		for _, object in pairs(checkButtons) do
 			T.SkinCheckBox(_G[object].checkButton)
 		end
-		
+
 		-- Blizzard Frame reskin
 		local bgskins = {
 			"GameMenuFrame",
@@ -98,7 +98,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		SplashFrame:CreateBackdrop("Transparent")
 		SplashFrame.BottomCloseButton:SkinButton()
 		T.SkinCloseButton(SplashFrame.TopCloseButton)
-		
+
 		--NavBar Buttons (Used in WorldMapFrame, EncounterJournal and HelpFrame)
 		local function SkinNavBarButtons(self)
 			local navButton = self.navList[#self.navList]
@@ -222,7 +222,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		end
 		LFDReadyCheckPopup.YesButton:SkinButton(true)
 		LFDReadyCheckPopup.NoButton:SkinButton(true)
-		
+
 		-- Button position or text
 		_G["ColorPickerOkayButton"]:ClearAllPoints()
 		_G["ColorPickerOkayButton"]:SetPoint("BOTTOMLEFT", _G["ColorPickerFrame"], "BOTTOMLEFT", 6, 6)

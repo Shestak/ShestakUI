@@ -77,7 +77,7 @@ local borderDisplay = function(frame, color)
 end
 
 function oGlow:RegisterColor(name, r, g, b)
-	if(rawget(colorTable, name)) then
+	if rawget(colorTable, name) then
 		return nil, string.format("Color [%s] is already registered.", name)
 	else
 		rawset(colorTable, name, {r, g, b})
