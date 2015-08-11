@@ -214,7 +214,7 @@ local OnTooltipSetUnit = function(self)
 	local _, playerFaction = UnitFactionGroup("player")
 	local relationship = UnitRealmRelationship(unit)
 	local UnitPVPName = UnitPVPName
-	
+
 	if level and level == -1 then
 		if classification == "worldboss" then
 			level = "|cffff0000|r"..ENCOUNTER_JOURNAL_ENCOUNTER
@@ -229,15 +229,15 @@ local OnTooltipSetUnit = function(self)
 	else classification = "" end
 
 
-	if (UnitPVPName(unit)) and C.tooltip.title then
+	if UnitPVPName(unit) and C.tooltip.title then
 		name = UnitPVPName(unit)
 	end
-	
+
 	_G["GameTooltipTextLeft1"]:SetText(name)
 	if realm and realm ~= "" and C.tooltip.realm then
-		self:AddLine("Realm: "..realm, r, g, b)
+		self:AddLine(FRIENDS_LIST_REALM.."|cffffffff"..realm.."|r")
 	end
-	
+
 
 	if UnitIsPlayer(unit) then
 		if UnitIsAFK(unit) then
