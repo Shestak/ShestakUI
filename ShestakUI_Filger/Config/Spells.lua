@@ -2453,6 +2453,18 @@ C["filger_spells"] = {
 			Position = {unpack(C["filger_position"].player_special)},
 
 			--飾品
+				-- 尼萨姆斯(智力输出)
+                {spellID = 187616, unitID = "player", caster = "all", filter = "BUFF"},
+				-- 萨克图斯(坦克)
+                {spellID = 187617, unitID = "player", caster = "all", filter = "BUFF"},
+				-- 伊瑟拉鲁斯(治疗)
+                {spellID = 187618, unitID = "player", caster = "all", filter = "BUFF"},
+				-- 索拉苏斯(力量输出)
+                {spellID = 187619, unitID = "player", caster = "all", filter = "BUFF"},
+				-- 玛鲁斯(敏捷输出)
+                {spellID = 187620, unitID = "player", caster = "all", filter = "BUFF"},
+				
+			--飾品
 				--錮法索銀指環 690
                 -- 大法師的白熱光 (智力) 
                 {spellID = 177159, unitID = "player", caster = "player", filter = "BUFF"}, 
@@ -2833,9 +2845,9 @@ C["filger_spells"] = {
                 -- 奔窜咆哮
                 {spellID = 106898, unitID = "player", caster = "all", filter = "BUFF"},
                 -- 灵狐守护
-                {spellID = 172106, unitID = "player", caster = "all", filter = "BUFF"},
+                --{spellID = 172106, unitID = "player", caster = "all", filter = "BUFF"},
                 -- 魔法增效
-                {spellID = 159916, unitID = "player", caster = "all", filter = "BUFF"},
+                --{spellID = 159916, unitID = "player", caster = "all", filter = "BUFF"},
 
             --橙色多彩
                 -- 不屈之源钻 (耐力, 减伤)
@@ -2910,9 +2922,9 @@ C["filger_spells"] = {
 			-- 60200地狱火堡垒
 				-- 1 奇袭地狱火
 				-- 邪火弹药 Felfire-Munitions
-				{spellID = 186016, unitID = "player", caster = "all", filter = "DEBUFF"},
+				{spellID = 180079, unitID = "player", caster = "all", filter = "DEBUFF"},
 				-- 啸风战斧 howling-axe
-				{spellID = 184379, unitID = "player", caster = "all", filter = "DEBUFF"},
+				{spellID = 184369, unitID = "player", caster = "all", filter = "DEBUFF"},
 				-- 颤抖 cower
 				{spellID = 184238, unitID = "player", caster = "all", filter = "DEBUFF"},
 				-- 猛击 slam
@@ -2938,8 +2950,10 @@ C["filger_spells"] = {
 				-- 迅猛突袭 blitz
 				{spellID = 179897, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 				{spellID = 185242, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
-				--M 易爆火焰炸弹 firebomb-vulnerability
+				-- 易爆火焰炸弹 firebomb-vulnerability
 				{spellID = 185978, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--M 火焰易伤
+				{spellID = 182373, unitID = "player", caster = "all", filter = "DEBUFF"},
 				
 				-- 3 考莫克
 				-- 攫取之手 foul-crush
@@ -3012,7 +3026,7 @@ C["filger_spells"] = {
 				{spellID = 183917, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 				-- 溅血 blood-splatter
 				{spellID = 188852, unitID = "player", caster = "all", filter = "DEBUFF"},
-				-- 邪能腐液 fel-puddle
+				-- M 邪能腐液 fel-puddle
 				{spellID = 184067, unitID = "player", caster = "all", filter = "DEBUFF"},
 				
 				-- 6 血魔
@@ -3030,6 +3044,10 @@ C["filger_spells"] = {
 				{spellID = 179977, unitID = "player", caster = "all", filter = "DEBUFF"},
 				-- 末日井 doom-well
 				{spellID = 179995, unitID = "player", caster = "all", filter = "DEBUFF"},
+				-- 邪能之怒
+				{spellID = 185190, unitID = "player", caster = "all", filter = "DEBUFF"},
+				-- 邪能烈焰
+				{spellID = 185189, unitID = "player", caster = "all", filter = "DEBUFF"},
 				-- 命运相连 shared-fate
 				{spellID = 179908, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 				{spellID = 179909, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
@@ -3084,8 +3102,6 @@ C["filger_spells"] = {
 				{spellID = 188666, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 				-- M 索克雷萨之咒 socrethars-contingency
 				{spellID = 190776, unitID = "player", caster = "all", filter = "DEBUFF"},
-				-- M 步履蹒跚 blooded-tracker
-				{spellID = 188767, unitID = "player", caster = "all", filter = "DEBUFF"},
 				
 				-- 9 女暴君維哈里
 				-- 凋零契印 seal-of-decay
@@ -3154,7 +3170,7 @@ C["filger_spells"] = {
 				{spellID = 186547, unitID = "player", caster = "all", filter = "DEBUFF"},
 				-- 邪能锁链 chains-of-fel
 				{spellID = 186500, unitID = "player", caster = "all", filter = "DEBUFF"},
-				-- 強化魔化鎖鍊 empowered-chains-of-fel
+				-- M 強化魔化鎖鍊 empowered-chains-of-fel
 				{spellID = 189775, unitID = "player", caster = "all", filter = "DEBUFF"},
 				
 				-- 12 瑪諾洛斯/mannoroth
@@ -3671,13 +3687,16 @@ C["filger_spells"] = {
 				-- 恶魔变形 metamorphosis
 				{spellID = 181968, unitID = "target", caster = "all", filter = "BUFF"},
 				-- 修复 repair
-				{spellID = 185816, unitID = "target", caster = "all", filter = "BUFF"},
+				{spellID = 185816, unitID = "target", caster = "all", filter = "BUFF", absID = true},
+				{spellID = 188884, unitID = "target", caster = "all", filter = "BUFF", absID = true},
 				
 				-- 2 钢铁掠夺者
 				-- 重击 pounding
 				{spellID = 182020, unitID = "target", caster = "all", filter = "BUFF"},
 				
 				-- 3 考莫克
+				-- 激怒
+				{spellID = 186882, unitID = "target", caster = "all", filter = "BUFF"},
 				-- 暗影能量 shadow-energy
 				{spellID = 180115, unitID = "target", caster = "all", filter = "BUFF"},
 				-- 爆炸能量 explosive-energy
@@ -3688,7 +3707,7 @@ C["filger_spells"] = {
 				{spellID = 180244, unitID = "target", caster = "all", filter = "BUFF"},
 				
 				-- 4 地狱火高阶议会
-				-- 梦魇幻影 nightmare-visage
+				--梦魇幻影 nightmare-visage
 				{spellID = 184657, unitID = "target", caster = "all", filter = "BUFF", absID = true},
 				--邪能風暴 felstorm
 				{spellID = 183701, unitID = "target", caster = "all", filter = "BUFF"},
@@ -3704,6 +3723,8 @@ C["filger_spells"] = {
 				--5 基爾羅格.亡眼
 				--撕裂嚎叫 rending-howl
 				{spellID = 186919, unitID = "target", caster = "all", filter = "BUFF", absID = true},
+				--灰烬吐息 内场小怪
+				{spellID = 180033, unitID = "target", caster = "all", filter = "BUFF"},
 				--死亡挣扎 death-throes
 				{spellID = 180224, unitID = "target", caster = "all", filter = "BUFF"},
 				--死亡之门 deaths-door
@@ -3714,18 +3735,21 @@ C["filger_spells"] = {
 				--6 血魔
 				--生命渴望 hunger-for-life
 				{spellID = 185038, unitID = "target", caster = "all", filter = "BUFF", absID = true},
-				--邪能烈焰 fel-flames
-				{spellID = 185190, unitID = "target", caster = "all", filter = "BUFF"},
-				--邪能之怒 fel-flames
-				{spellID = 185189, unitID = "target", caster = "all", filter = "BUFF"},
 				--灵魂纽带 nexus-of-souls
 				{spellID = 180491, unitID = "target", caster = "all", filter = "BUFF"},
 				--狂野怒吼 bellowing-shout
 				{spellID = 181582, unitID = "target", caster = "all", filter = "BUFF"},
 				--灵魂盛宴 feast-of-souls
 				{spellID = 181973, unitID = "target", caster = "all", filter = "BUFF"},
+				--M 抗拒
+				{spellID = 189131, unitID = "target", caster = "all", filter = "BUFF"},
 				
 				--7 暗影領主伊斯卡
+				--邪能导管
+				{spellID = 181827, unitID = "target", caster = "all", filter = "BUFF"},
+				--邪能强化
+				{spellID = 181831, unitID = "target", caster = "all", filter = "BUFF"},
+				
 				--8 永恆者索奎薩爾
 				--邪能壁垒 fel-barrier
 				{spellID = 184053, unitID = "target", caster = "all", filter = "BUFF"},
@@ -3743,6 +3767,7 @@ C["filger_spells"] = {
 				{spellID = 180300, unitID = "target", caster = "all", filter = "BUFF"},
 				
 				--10 惡魔領主札昆
+				
 				--11 祖霍拉克
 				--混乱压制 overwhelming-chaos
 				{spellID = 187204, unitID = "target", caster = "all", filter = "BUFF"},
