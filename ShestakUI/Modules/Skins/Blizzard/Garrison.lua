@@ -20,8 +20,7 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
 			GarrisonBuildingFrame.BuildingLevelTooltip,
 			GarrisonShipyardFollowerTooltip,
 			FloatingGarrisonShipyardFollowerTooltip,
-			GarrisonFollowerTooltip,	
-			
+			GarrisonFollowerTooltip
 		}
 		for i, tt in pairs(Tooltips) do
 			tt.Background:SetTexture(nil)
@@ -50,7 +49,7 @@ local function LoadSkin()
 	GarrisonBuildingFrame.TownHallBox.UpgradeButton:SkinButton()
 	GarrisonBuildingFrame.InfoBox.UpgradeButton:SkinButton()
 	GarrisonBuildingFrame.BuildingLevelTooltip:StripTextures()
-	GarrisonBuildingFrame.BuildingLevelTooltip:SetTemplate('Transparent')
+	GarrisonBuildingFrame.BuildingLevelTooltip:SetTemplate("Transparent")
 	GarrisonLandingPage:StripTextures()
 	GarrisonLandingPage:SetTemplate("Transparent")
 	T.SkinCloseButton(GarrisonLandingPage.CloseButton)
@@ -76,12 +75,12 @@ local function LoadSkin()
 	T.SkinCloseButton(GarrisonShipyardFrame.BorderFrame.CloseButton2)
 	T.SkinTab(GarrisonShipyardFrameTab1)
 	T.SkinTab(GarrisonShipyardFrameTab2)
-	
+
 	-- ShipYard: Naval Map
 	local MissionTab = GarrisonShipyardFrame.MissionTab
 	local MissionList = MissionTab.MissionList
 	MissionList:CreateBackdrop("Transparent")
-	
+
 	-- ShipYard: Mission
 	local MissionPage = MissionTab.MissionPage
 	T.SkinCloseButton(MissionPage.CloseButton)
@@ -143,7 +142,7 @@ local function LoadSkin()
 	T.SkinScrollBar(GarrisonMissionFrame.FollowerList.listScroll.scrollBar)
 	T.SkinScrollBar(GarrisonShipyardFrame.FollowerList.listScroll.scrollBar)
 	--T.SkinScrollBar(GarrisonLandingPageListScrollFrameScrollBar)
-	
+
 	-- Mission list
 	local MissionTab = GarrisonMissionFrame.MissionTab
 	local MissionList = MissionTab.MissionList
@@ -179,12 +178,12 @@ local function LoadSkin()
 		end
 		frame.Icon:SetDrawLayer("BORDER", 0)
 	end)
-	
+
 	-- Capacitive display frame
 	GarrisonCapacitiveDisplayFrame:StripTextures(true)
 	GarrisonCapacitiveDisplayFrame.Inset:StripTextures()
 	GarrisonCapacitiveDisplayFrame:SetTemplate("Transparent")
-	
+
 	T.SkinNextPrevButton(GarrisonCapacitiveDisplayFrame.DecrementButton)
 	T.SkinNextPrevButton(GarrisonCapacitiveDisplayFrame.IncrementButton)
 	GarrisonCapacitiveDisplayFrame.Count:StripTextures()
