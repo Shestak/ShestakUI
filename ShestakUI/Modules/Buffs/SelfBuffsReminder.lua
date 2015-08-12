@@ -12,7 +12,7 @@ local function OnEvent(self, event, arg1, arg2)
 	if not group.spells then return end
 	if not GetActiveSpecGroup() then return end
 	if event == "UNIT_AURA" and arg1 ~= "player" then return end
-	if group.level and UnitLevel("player") < group.level then return end
+	if group.level and T.level < group.level then return end
 
 	self:Hide()
 	if group.negate_spells then
