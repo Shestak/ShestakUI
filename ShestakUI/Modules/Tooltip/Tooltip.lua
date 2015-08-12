@@ -1,4 +1,4 @@
-local T, C, L, _ = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(select(2, ...))
 if C.tooltip.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -228,14 +228,16 @@ local OnTooltipSetUnit = function(self)
 	elseif classification == "elite" then classification = "+"
 	else classification = "" end
 
-	if (UnitPVPName(unit)) and C.tooltip.title then
+
+	if UnitPVPName(unit) and C.tooltip.title then
 		name = UnitPVPName(unit)
 	end
-	
+
 	_G["GameTooltipTextLeft1"]:SetText(name)
 	if realm and realm ~= "" and C.tooltip.realm then
-		self:AddLine("Realm: "..realm, r, g, b)
+		self:AddLine(FRIENDS_LIST_REALM.."|cffffffff"..realm.."|r")
 	end
+
 
 	if UnitIsPlayer(unit) then
 		if UnitIsAFK(unit) then
