@@ -8,7 +8,7 @@ frame:RegisterEvent("ADDON_LOADED")
 frame:SetScript("OnEvent", function(self, event, addon)
 	if addon == "Blizzard_TrainerUI" then
 		local button = CreateFrame("Button", "ClassTrainerTrainAllButton", ClassTrainerFrame, "UIPanelButtonTemplate")
-		button:SetText(QUICKBUTTON_NAME_EVERYTHING)
+		button:SetText(ACHIEVEMENTFRAME_FILTER_ALL)
 		if C.skins.blizzard_frames == true then
 			button:SkinButton()
 			button:SetPoint("TOPRIGHT", ClassTrainerTrainButton, "TOPLEFT", -3, 0)
