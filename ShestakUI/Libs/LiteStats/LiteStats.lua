@@ -475,19 +475,14 @@ end
 if gold.enabled then
 	local function Currency(id, weekly, capped)
 		local name, amount, tex, week, weekmax, maxed, discovered = GetCurrencyInfo(id)
-		local r, g, b = 1, 1, 1
-		for i = 1, GetNumWatchedTokens() do
-			local _, _, _, itemID = GetBackpackCurrencyInfo(i)
-			if id == itemID then r, g, b = 0.77, 0.12, 0.23 end
-		end
-		if amount == 0 and r == 1 then return end
+		if amount == 0 then return end
 		if weekly then
-			if discovered then GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", "Current: ".. amount.." - "..WEEKLY..": "..week.." / "..weekmax, tex, t_icon), r, g, b, r, g, b) end
+			if discovered then GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", "Current: ".. amount.." - "..WEEKLY..": "..week.." / "..weekmax, tex, t_icon), 1, 1, 1, 1, 1, 1) end
 		elseif capped  then
 			if id == 392 then maxed = 4000 end
-			if discovered then GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", amount.." / "..maxed, tex, t_icon), r, g, b, r, g, b) end
+			if discovered then GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", amount.." / "..maxed, tex, t_icon), 1, 1, 1, 1, 1, 1) end
 		else
-			if discovered then GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", amount, tex, t_icon), r, g, b, r, g, b) end
+			if discovered then GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", amount, tex, t_icon), 1, 1, 1, 1, 1, 1) end
 		end
 	end
 	Inject("Gold", {
@@ -559,7 +554,6 @@ if gold.enabled then
 					currencies = currencies + 1
 				end
 			end
-			if currencies > 0 then GameTooltip:AddLine(" ") end
 			if archaeology and C.stats.currency_archaeology then
 				GameTooltip:AddLine(" ")
 				GameTooltip:AddLine(PROFESSIONS_ARCHAEOLOGY, ttsubh.r, ttsubh.g, ttsubh.b)
@@ -582,11 +576,10 @@ if gold.enabled then
 				Currency(677)
 				Currency(676)
 			end
-			
+
 			if cooking and C.stats.currency_cooking then
 				GameTooltip:AddLine(" ")
 				GameTooltip:AddLine(PROFESSIONS_COOKING, ttsubh.r, ttsubh.g, ttsubh.b)
-				--GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", count, icon, t_icon), r, g, b, r, g, b)
 				Currency(81)
 				Currency(402)
 			end
