@@ -208,7 +208,7 @@ local micromenu = {
 	end},
 	{text = DUNGEONS_BUTTON, notCheckable = 1, func = function()
 		if T.level >= SHOW_LFD_LEVEL then
-			PVEFrame_ToggleFrame()
+			PVEFrame_ToggleFrame("GroupFinderFrame", nil)
 		else
 			if C.error.white == false then
 				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL), 1, 0.1, 0.1)
