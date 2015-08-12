@@ -49,6 +49,18 @@ local function LoadSkin()
 	HonorFrame.BonusFrame.DiceButton:SkinButton()
 	HonorFrame.BonusFrame.ShadowOverlay:StripTextures()
 
+	HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1:SetTemplate("Default")
+	HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetAllPoints()
+	HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetPoint("TOPLEFT", 2, -2)
+	HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
+	HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+	HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1:SetTemplate("Default")
+	HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1.Icon:SetAllPoints()
+	HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1.Icon:SetPoint("TOPLEFT", 2, -2)
+	HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
+	HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
 	for _, i in pairs({"RandomBGButton", "Arena1Button", "Arena2Button"}) do
 		local button = HonorFrame.BonusFrame[i]
 		button:StripTextures()
