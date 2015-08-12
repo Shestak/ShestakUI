@@ -5,7 +5,7 @@ if C.tooltip.enable ~= true or C.tooltip.talents ~= true then return end
 --	Target Talents(TipTacTalents by Aezay)
 ----------------------------------------------------------------------------------------
 -- Constants
-local TALENTS_PREFIX = TALENTS..":|cffffffff "
+local TALENTS_PREFIX = SPECIALIZATION..":|cffffffff "
 local CACHE_SIZE = 25
 local INSPECT_DELAY = 0.2
 local INSPECT_FREQ = 2
