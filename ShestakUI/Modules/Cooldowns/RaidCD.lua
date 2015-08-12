@@ -83,7 +83,7 @@ local UpdatePositions = function()
 				end
 			end
 			bars[i].id = i
-		end	
+		end
 	end
 end
 
@@ -225,7 +225,7 @@ local StartTimer = function(name, spellId)
 			bar:SetStatusBarColor(0.3, 0.7, 0.3)
 			bar.bg:SetVertexColor(0.3, 0.7, 0.3, 0.2)
 		end
-		
+
 		bar:SetScript("OnUpdate", BarUpdate)
 		bar:EnableMouse(true)
 		bar:SetScript("OnEnter", OnEnter)
