@@ -190,7 +190,6 @@ end
 local StartTimer = function(name, spellId)
 	local spell, _, icon = GetSpellInfo(spellId)
 	if charges and spellId == 20484 then
-		-- 团队首领战中战复技能计时特殊处理 -- Needs review
 		for _, v in pairs(Ressesbars) do
 			UpdateCharges(v)
 			return
@@ -198,14 +197,12 @@ local StartTimer = function(name, spellId)
 	end
 	for _, v in pairs(bars) do
 		if v.name == name and v.spell == spell then
-			-- 发现重复计时事件时重置计时条,适应战复以外充能技能 -- Needs review
 			StopTimer(v)
 		end
 	end
 	local bar = CreateBar()
 	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(name))]
 	if charges and spellId == 20484 then
-		-- 初始化战复技能计时条 -- Needs review
 		local curCharges, _, start, duration = GetSpellCharges(20484)
 		currentNumResses = curCharges
 		bar.startTime = start
@@ -336,7 +333,6 @@ f:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 f:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 
 SlashCmdList.RaidCD = function()
-	StartTimer(UnitName("player"), 740)		-- 
 	StartTimer(UnitName("player"), 20484)	-- Rebirth
 	StartTimer(UnitName("player"), 20707)	-- Soulstone
 	StartTimer(UnitName("player"), 108280)	-- Healing Tide Totem
