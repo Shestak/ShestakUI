@@ -107,7 +107,8 @@ local function LoadSkin()
 
 	local scrollbars = {
 		"FriendsFrameFriendsScrollFrameScrollBar",
-		"WhoListScrollFrameScrollBar"
+		"WhoListScrollFrameScrollBar",
+		"ChannelRosterScrollFrameScrollBar"
 	}
 
 	for _, scrollbar in pairs(scrollbars) do

@@ -44,7 +44,9 @@ local function LoadSkin()
 	GossipFrame.backdrop:SetAllPoints()
 
 	T.SkinCloseButton(GossipFrameCloseButton, GossipFrame.backdrop)
-	T.SkinScrollBar(GossipGreetingScrollFrame)
+
+	GossipGreetingScrollFrame:StripTextures()
+	T.SkinScrollBar(GossipGreetingScrollFrameScrollBar)
 
 	NPCFriendshipStatusBar:StripTextures()
 	NPCFriendshipStatusBar:SetStatusBarTexture(C.media.texture)

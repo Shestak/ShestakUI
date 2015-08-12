@@ -72,6 +72,8 @@ local function LoadSkin()
 	ClassTrainerFrameSkillStepButtonHighlight:SetTexture(1, 1, 1, 0.3)
 	ClassTrainerFrameSkillStepButton.selectedTex:SetTexture(1, 1, 1, 0.3)
 
+	T.SkinScrollBar(ClassTrainerScrollFrameScrollBar)
+
 	ClassTrainerStatusBar:StripTextures()
 	ClassTrainerStatusBar:SetStatusBarTexture(C.media.texture)
 	ClassTrainerStatusBar:CreateBackdrop("Overlay")

@@ -379,4 +379,6 @@ elseif C.skins.blizzard_frames == true then
 	SpellBinderScrollFrameSpellList:StripTextures()
 	SpellBinderScrollFrameSpellList:SetTemplate("Overlay")
 	T.SkinCloseButton(SpellBinderCloseButton)
+
+	T.SkinScrollBar(SpellBinderScrollFrameSpellListScrollBar)
 end

@@ -66,6 +66,7 @@ local function LoadSkin()
 
 	LFGListApplicationDialog.SignUpButton:SkinButton()
 	LFGListApplicationDialog.CancelButton:SkinButton()
+
 	local checkButtons = {
 		"LFDQueueFrameRoleButtonTank",
 		"LFDQueueFrameRoleButtonHealer",
@@ -84,6 +85,20 @@ local function LoadSkin()
 	T.SkinCheckBox(LFGListApplicationDialog.TankButton.CheckButton)
 	T.SkinCheckBox(LFGListApplicationDialog.HealerButton.CheckButton)
 	T.SkinCheckBox(LFGListApplicationDialog.DamagerButton.CheckButton)
+
+	local scrollbars = {
+		"ScenarioQueueFrameSpecificScrollFrameScrollBar",
+		"LFGListApplicationViewerScrollFrameScrollBar",
+		"LFDQueueFrameSpecificListScrollFrameScrollBar",
+		"LFDQueueFrameRandomScrollFrameScrollBar"
+	}
+
+	for _, scrollbar in pairs(scrollbars) do
+		T.SkinScrollBar(_G[scrollbar])
+	end
+
+	T.SkinScrollBar(LFGListFrame.SearchPanel.ScrollFrame.scrollBar)
+
 	for i = 1, 4 do
 		local button = GroupFinderFrame["groupButton"..i]
 
@@ -377,14 +392,11 @@ local function LoadSkin()
 	LFGListFrame.SearchPanel.RefreshButton.Icon:SetPoint("CENTER")
 
 	T.SkinEditBox(LFGListFrame.SearchPanel.SearchBox)
-	T.SkinScrollBar(LFGListFrame.SearchPanel.ScrollFrame.scrollBar)
 
 	T.SkinCloseButton(PVEFrameCloseButton)
 	T.SkinCloseButton(LFGDungeonReadyStatusCloseButton, nil, "-")
 	T.SkinCloseButton(LFGDungeonReadyDialogCloseButton, LFGDungeonReadyDialog, "-")
 
-	T.SkinScrollBar(LFGListApplicationViewerScrollFrameScrollBar)
-	T.SkinScrollBar(LFDQueueFrameSpecificListScrollFrameScrollBar)
 	LFDQueueFrameSpecificListScrollFrameScrollBackgroundTopLeft:SetTexture(nil)
 	LFDQueueFrameSpecificListScrollFrameScrollBackgroundBottomRight:SetTexture(nil)
 	LFDQueueFrameRandomScrollFrameScrollBackground:SetTexture(nil)
@@ -459,7 +471,6 @@ local function LoadSkin()
 	LFGListFrame.ApplicationViewer.RemoveEntryButton:SetPoint("BOTTOMLEFT", -1, 3)
 	LFGListFrame.ApplicationViewer.EditButton:ClearAllPoints()
 	LFGListFrame.ApplicationViewer.EditButton:SetPoint("BOTTOMRIGHT", -6, 3)
-	T.SkinScrollBar(LFGListApplicationViewerScrollFrameScrollBar)
 	LFGListApplicationViewerScrollFrameScrollBar:ClearAllPoints()
 	LFGListApplicationViewerScrollFrameScrollBar:SetPoint("TOPLEFT", LFGListFrame.ApplicationViewer.Inset, "TOPRIGHT", 0, -14)
 	LFGListApplicationViewerScrollFrameScrollBar:SetPoint("BOTTOMLEFT", LFGListFrame.ApplicationViewer.Inset, "BOTTOMRIGHT", 0, 14)

@@ -55,6 +55,9 @@ local function LoadSkin()
 
 	T.SkinCloseButton(TradeSkillFrameCloseButton)
 
+	T.SkinScrollBar(TradeSkillListScrollFrameScrollBar)
+	T.SkinScrollBar(TradeSkillDetailScrollFrameScrollBar)
+
 	hooksecurefunc("TradeSkillFrame_SetSelection", function(id)
 		TradeSkillSkillIcon:StyleButton()
 		TradeSkillSkillIcon:SetTemplate("Default")
