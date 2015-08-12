@@ -144,7 +144,7 @@ end
 function T.HideSpiral(f, alpha)
 	f:SetSwipeTexture(1, 1, 1)
 	f:SetSwipeColor(0, 0, 0, alpha * 0.8)
-	f:SetBlingTexture('', 0, 0, 0, 0)
+	f:SetBlingTexture("", 0, 0, 0, 0)
 end
 
 local EventSpiral = CreateFrame("Frame")
