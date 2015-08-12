@@ -313,13 +313,16 @@ local function UpdateObjects(frame)
 	end
 
 	-- Setup level text
-	local level, elite, mylevel = tonumber(frame.hp.oldlevel:GetText()), frame.hp.elite:IsShown(), UnitLevel("player")
+	local level, elite, mylevel = tonumber(frame.hp.oldlevel:GetText()), frame.hp.elite:IsShown(), T.level
 	frame.hp.level:ClearAllPoints()
+	frame.hp.level:SetPoint("BOTTOMRIGHT", frame.hp, "TOPRIGHT", 3, 3)	--改变等级显示位置
+	--[[
 	if C.nameplate.class_icons == true and frame.isClass == true then
 		frame.hp.level:SetPoint("RIGHT", frame.hp.name, "LEFT", -2, 0)
 	else
 		frame.hp.level:SetPoint("RIGHT", frame.hp, "LEFT", -2, 0)
 	end
+	]]--
 	frame.hp.level:SetTextColor(frame.hp.oldlevel:GetTextColor())
 	if frame.hp.boss:IsShown() then
 		frame.hp.level:SetText("??")
