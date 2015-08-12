@@ -410,6 +410,13 @@ L_GUI_STATS_FPS = "帧数"
 L_GUI_STATS_EXPERIENCE = "经验"
 L_GUI_STATS_COORDS = "坐标"
 L_GUI_STATS_LOCATION = "位置"
+L_GUI_STATS_CURRENCY = "货币标签"
+L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "考古"
+L_GUI_STATS_CURRENCY_COOKING = "烹饪"
+L_GUI_STATS_CURRENCY_PROFESSIONS = "专业技能"
+L_GUI_STATS_CURRENCY_RAID = "Show Raid Seals under currency tab" -- Needs review
+L_GUI_STATS_CURRENCY_PVP = "Show PvP under currency tab" -- Needs review
+L_GUI_STATS_CURRENCY_MISCELLANEOUS = "其它"
 
 -- Error options
 L_GUI_ERROR = "错误收集"
