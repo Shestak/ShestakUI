@@ -44,7 +44,7 @@ local Colors = {
 
 local Update = function(self, event, unit)
 	local rb = self.RangeBar
-	if(rb.PreUpdate) then
+	if rb.PreUpdate then
 		rb:PreUpdate()
 	end
 
