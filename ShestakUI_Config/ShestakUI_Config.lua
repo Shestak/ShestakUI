@@ -722,6 +722,13 @@ function CreateUIConfig()
 	slider:SetValueStep(20)
 	slider:SetScript("OnValueChanged", function(self, value) groups:SetVerticalScroll(value) end)
 
+	if not slider.bg then
+		slider.bg = CreateFrame("Frame", nil, slider)
+		slider.bg:SetPoint("TOPLEFT", slider:GetThumbTexture(), "TOPLEFT", 7, -7)
+		slider.bg:SetPoint("BOTTOMRIGHT", slider:GetThumbTexture(), "BOTTOMRIGHT", -7, 7)
+		slider.bg:SetTemplate("Overlay")
+	end
+
 	local function sortMyTable(a, b)
 		return ALLOWED_GROUPS[a] < ALLOWED_GROUPS[b]
 	end

@@ -36,6 +36,8 @@ local function LoadSkin()
 	KeyBindingFrame.scrollFrame.scrollBorderMiddle:SetTexture("")
 	KeyBindingFrame.scrollFrame.scrollFrameScrollBarBackground:SetTexture("")
 
+	T.SkinScrollBar(KeyBindingFrameScrollFrameScrollBar)
+
 	for i = 1, KEY_BINDINGS_DISPLAYED do
 		local button1 = _G["KeyBindingFrameKeyBinding"..i.."Key1Button"]
 		local button2 = _G["KeyBindingFrameKeyBinding"..i.."Key2Button"]
