@@ -133,7 +133,6 @@ T.SkinFuncs = {}
 T.SkinFuncs["ShestakUI"] = {}
 
 function T.SkinScrollBar(frame)
-
 	if _G[frame:GetName().."BG"] then
 		_G[frame:GetName().."BG"]:SetTexture(nil)
 	end
@@ -166,12 +165,11 @@ function T.SkinScrollBar(frame)
 		end
 
 		if frame:GetThumbTexture() then
-			if not thumbTrim then thumbTrim = 3 end
 			frame:GetThumbTexture():SetTexture(nil)
 			if not frame.thumbbg then
 				frame.thumbbg = CreateFrame("Frame", nil, frame)
-				frame.thumbbg:SetPoint("TOPLEFT", frame:GetThumbTexture(), "TOPLEFT", 0, -thumbTrim)
-				frame.thumbbg:SetPoint("BOTTOMRIGHT", frame:GetThumbTexture(), "BOTTOMRIGHT", 0, thumbTrim)
+				frame.thumbbg:SetPoint("TOPLEFT", frame:GetThumbTexture(), "TOPLEFT", 0, -3)
+				frame.thumbbg:SetPoint("BOTTOMRIGHT", frame:GetThumbTexture(), "BOTTOMRIGHT", 0, 3)
 				frame.thumbbg:SetTemplate("Overlay")
 				if frame.trackbg then
 					frame.thumbbg:SetFrameLevel(frame.trackbg:GetFrameLevel())
@@ -388,7 +386,7 @@ function T.SkinCheckBox(frame)
 		frame:SetHighlightTexture(highligh)
 	end
 
-	if frame.SetCheckedTexture and frame.SetCheckedTexture ~= nil then
+	if frame.SetCheckedTexture then
 		local checked = frame:CreateTexture(nil, nil, self)
 		checked:SetTexture(1, 0.82, 0, 0.8)
 		checked:SetPoint("TOPLEFT", frame, 6, -6)
@@ -404,14 +402,14 @@ function T.SkinCheckBox(frame)
 		frame:SetDisabledCheckedTexture(disabled)
 	end
 
-	-- frame:HookScript("OnDisable", function(self)
-		-- if not self.SetDisabledTexture then return end
-		-- if self:GetChecked() then
-			-- self:SetDisabledTexture(disabled)
-		-- else
-			-- self:SetDisabledTexture("")
-		-- end
-	-- end)
+	frame:HookScript("OnDisable", function(self)
+		if not self.SetDisabledTexture then return end
+		if self:GetChecked() then
+			self:SetDisabledTexture(disabled)
+		else
+			self:SetDisabledTexture("")
+		end
+	end)
 end
 
 function T.SkinCloseButton(f, point, text, pixel)
