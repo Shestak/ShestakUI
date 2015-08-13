@@ -56,7 +56,7 @@ local function LoadSkin()
 		button:SetPoint("RIGHT", frame, "RIGHT", -10, 3)
 		button.SetPoint = T.dummy
 
-		T.SkinNextPrevButton(button, true)
+		T.SkinNextPrevButton(button)
 
 		frame:CreateBackdrop("Default")
 		frame.backdrop:SetPoint("TOPLEFT", 20, 2)

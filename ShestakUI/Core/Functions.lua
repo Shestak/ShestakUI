@@ -219,9 +219,11 @@ function T.SkinTab(tab, bg)
 	end
 end
 
-function T.SkinNextPrevButton(btn, horizontal, left)
+function T.SkinNextPrevButton(btn)
 	local normal, pushed, disabled
 	local isPrevButton = btn:GetName() and (string.find(btn:GetName(), "Left") or string.find(btn:GetName(), "Prev") or string.find(btn:GetName(), "Decrement") or string.find(btn:GetName(), "Back"))
+	local isScrollUpButton = btn:GetName() and string.find(btn:GetName(), "ScrollUp")
+	local isScrollDownButton = btn:GetName() and string.find(btn:GetName(), "ScrollDown")
 
 	if btn:GetNormalTexture() then
 		normal = btn:GetNormalTexture():GetTexture()
@@ -237,22 +239,40 @@ function T.SkinNextPrevButton(btn, horizontal, left)
 
 	btn:StripTextures()
 
-	if not normal and isPrevButton then
-		normal = "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Up"
-	elseif not normal then
-		normal = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up"
+	if not normal then
+		if isPrevButton then
+			normal = "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Up"
+		elseif isScrollUpButton then
+			normal = "Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Up"
+		elseif isScrollDownButton then
+			normal = "Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Up"
+		else
+			normal = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up"
+		end
 	end
 
-	if not pushed and isPrevButton then
-		pushed = "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Down"
-	elseif not pushed then
-		pushed = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Down"
+	if not pushed then
+		if isPrevButton then
+			pushed = "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Down"
+		elseif isScrollUpButton then
+			pushed = "Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Down"
+		elseif isScrollDownButton then
+			pushed = "Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Down"
+		else
+			pushed = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Down"
+		end
 	end
 
-	if not disabled and isPrevButton then
-		disabled = "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Disabled"
-	elseif not disabled then
-		disabled = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Disabled"
+	if not disabled then
+		if isPrevButton then
+			disabled = "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Disabled"
+		elseif isScrollUpButton then
+			disabled = "Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Disabled"
+		elseif isScrollDownButton then
+			disabled = "Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Disabled"
+		else
+			disabled = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Disabled"
+		end
 	end
 
 	btn:SetNormalTexture(normal)
@@ -263,31 +283,12 @@ function T.SkinNextPrevButton(btn, horizontal, left)
 	btn:SetSize(btn:GetWidth() - 7, btn:GetHeight() - 7)
 
 	if normal and pushed and disabled then
-		if horizontal then
-			if scrolldn == true then
-				btn:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Up")
-				btn:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Down")
-				btn:SetDisabledTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Disabled")
-			else
-				btn:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Up")
-				btn:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Down")
-				btn:SetDisabledTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Disabled")
-			end
-			btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.72, 0.65, 0.29, 0.65, 0.72)
-			if btn:GetPushedTexture() then
-				btn:GetPushedTexture():SetTexCoord(0.3, 0.35, 0.3, 0.8, 0.65, 0.35, 0.65, 0.8)
-			end
-			if btn:GetDisabledTexture() then
-				btn:GetDisabledTexture():SetTexCoord(0.3, 0.29, 0.3, 0.75, 0.65, 0.29, 0.65, 0.75)
-			end
-		else
-			btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.81, 0.65, 0.29, 0.65, 0.81)
-			if btn:GetPushedTexture() then
-				btn:GetPushedTexture():SetTexCoord(0.3, 0.35, 0.3, 0.81, 0.65, 0.35, 0.65, 0.81)
-			end
-			if btn:GetDisabledTexture() then
-				btn:GetDisabledTexture():SetTexCoord(0.3, 0.29, 0.3, 0.75, 0.65, 0.29, 0.65, 0.75)
-			end
+		btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.81, 0.65, 0.29, 0.65, 0.81)
+		if btn:GetPushedTexture() then
+			btn:GetPushedTexture():SetTexCoord(0.3, 0.35, 0.3, 0.81, 0.65, 0.35, 0.65, 0.81)
+		end
+		if btn:GetDisabledTexture() then
+			btn:GetDisabledTexture():SetTexCoord(0.3, 0.29, 0.3, 0.75, 0.65, 0.29, 0.65, 0.75)
 		end
 
 		btn:GetNormalTexture():ClearAllPoints()
@@ -387,7 +388,7 @@ function T.SkinCheckBox(frame)
 		frame:SetHighlightTexture(highligh)
 	end
 
-	if frame.SetCheckedTexture then
+	if frame.SetCheckedTexture and frame.SetCheckedTexture ~= nil then
 		local checked = frame:CreateTexture(nil, nil, self)
 		checked:SetTexture(1, 0.82, 0, 0.8)
 		checked:SetPoint("TOPLEFT", frame, 6, -6)
@@ -403,14 +404,14 @@ function T.SkinCheckBox(frame)
 		frame:SetDisabledCheckedTexture(disabled)
 	end
 
-	frame:HookScript("OnDisable", function(self)
-		if not self.SetDisabledTexture then return end
-		if self:GetChecked() then
-			self:SetDisabledTexture(disabled)
-		else
-			self:SetDisabledTexture("")
-		end
-	end)
+	-- frame:HookScript("OnDisable", function(self)
+		-- if not self.SetDisabledTexture then return end
+		-- if self:GetChecked() then
+			-- self:SetDisabledTexture(disabled)
+		-- else
+			-- self:SetDisabledTexture("")
+		-- end
+	-- end)
 end
 
 function T.SkinCloseButton(f, point, text, pixel)

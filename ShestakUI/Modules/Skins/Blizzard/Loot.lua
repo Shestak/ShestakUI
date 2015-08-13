@@ -11,8 +11,8 @@ local function LoadSkin()
 	LootFrameInset:StripTextures()
 	LootFrame:SetTemplate("Transparent")
 
-	T.SkinNextPrevButton(LootFrameDownButton, true)
-	T.SkinNextPrevButton(LootFrameUpButton, true)
+	T.SkinNextPrevButton(LootFrameDownButton)
+	T.SkinNextPrevButton(LootFrameUpButton)
 
 	T.SkinCloseButton(LootFrameCloseButton)
 

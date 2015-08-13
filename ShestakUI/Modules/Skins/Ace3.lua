@@ -35,7 +35,7 @@ AceGUI.RegisterAsWidget = function(self, widget)
 		button:ClearAllPoints()
 		button:SetPoint("RIGHT", frame, "RIGHT", -20, 0)
 
-		T.SkinNextPrevButton(button, true)
+		T.SkinNextPrevButton(button)
 
 		if not frame.backdrop then
 			frame:CreateBackdrop("Overlay")
@@ -54,7 +54,7 @@ AceGUI.RegisterAsWidget = function(self, widget)
 		local text = frame.text
 		frame:StripTextures()
 
-		T.SkinNextPrevButton(button, true)
+		T.SkinNextPrevButton(button)
 		frame.text:ClearAllPoints()
 		frame.text:SetPoint("RIGHT", button, "LEFT", -2, 0)
 

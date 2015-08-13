@@ -224,8 +224,8 @@ local function LoadSkin()
 	end
 
 	T.SkinEditBox(_G["CombatConfigSettingsNameEditBox"], nil, _G["CombatConfigSettingsNameEditBox"]:GetHeight() - 2)
-	T.SkinNextPrevButton(_G["ChatConfigMoveFilterUpButton"], true)
-	T.SkinNextPrevButton(_G["ChatConfigMoveFilterDownButton"], true)
+	T.SkinNextPrevButton(_G["ChatConfigMoveFilterUpButton"])
+	T.SkinNextPrevButton(_G["ChatConfigMoveFilterDownButton"])
 	_G["ChatConfigMoveFilterUpButton"]:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Up")
 	_G["ChatConfigMoveFilterUpButton"]:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollUp-Down")
 	_G["ChatConfigFrameDefaultButton"]:SetWidth(125)
