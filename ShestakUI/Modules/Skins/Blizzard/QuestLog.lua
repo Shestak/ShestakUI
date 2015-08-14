@@ -12,7 +12,9 @@ local function LoadSkin()
 	QuestLogPopupDetailFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 
 	T.SkinCloseButton(QuestLogPopupDetailFrameCloseButton, QuestLogPopupDetailFrame.backdrop)
-	T.SkinScrollBar(QuestLogPopupDetailFrameScrollFrame)
+
+	QuestLogPopupDetailFrameScrollFrame:StripTextures()
+	T.SkinScrollBar(QuestLogPopupDetailFrameScrollFrameScrollBar)
 
 	QuestLogPopupDetailFrame.ShowMapButton:SkinButton(true)
 	QuestLogPopupDetailFrame.ShowMapButton.Text:ClearAllPoints()
