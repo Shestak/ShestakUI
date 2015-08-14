@@ -133,7 +133,6 @@ T.SkinFuncs = {}
 T.SkinFuncs["ShestakUI"] = {}
 
 function T.SkinScrollBar(frame)
-
 	if _G[frame:GetName().."BG"] then
 		_G[frame:GetName().."BG"]:SetTexture(nil)
 	end
@@ -163,20 +162,12 @@ function T.SkinScrollBar(frame)
 			_G[frame:GetName().."ScrollDownButton"]:SetSize(_G[frame:GetName().."ScrollDownButton"]:GetWidth() + 7, _G[frame:GetName().."ScrollDownButton"]:GetHeight() + 7)
 		end
 
-		--if not frame.trackbg then
-			--frame.trackbg = CreateFrame("Frame", nil, frame)
-			--frame.trackbg:SetPoint("TOPLEFT", _G[frame:GetName().."ScrollUpButton"], "BOTTOMLEFT", 0, -1)
-			--frame.trackbg:SetPoint("BOTTOMRIGHT", _G[frame:GetName().."ScrollDownButton"], "TOPRIGHT", 0, 1)
-			--frame.trackbg:SetTemplate("Transparent")
-		--end
-
 		if frame:GetThumbTexture() then
-			if not thumbTrim then thumbTrim = 3 end
 			frame:GetThumbTexture():SetTexture(nil)
 			if not frame.thumbbg then
 				frame.thumbbg = CreateFrame("Frame", nil, frame)
-				frame.thumbbg:SetPoint("TOPLEFT", frame:GetThumbTexture(), "TOPLEFT", 0, -thumbTrim)
-				frame.thumbbg:SetPoint("BOTTOMRIGHT", frame:GetThumbTexture(), "BOTTOMRIGHT", 0, thumbTrim)
+				frame.thumbbg:SetPoint("TOPLEFT", frame:GetThumbTexture(), "TOPLEFT", 0, -3)
+				frame.thumbbg:SetPoint("BOTTOMRIGHT", frame:GetThumbTexture(), "BOTTOMRIGHT", 0, 3)
 				frame.thumbbg:SetTemplate("Default")
 				if frame.trackbg then
 					frame.thumbbg:SetFrameLevel(frame.trackbg:GetFrameLevel())
