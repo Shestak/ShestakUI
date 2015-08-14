@@ -222,7 +222,17 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		end
 		LFDReadyCheckPopup.YesButton:SkinButton(true)
 		LFDReadyCheckPopup.NoButton:SkinButton(true)
-		
+
+		-- Reskin scrollbars
+		local scrollbars = {
+			"BaudErrorFrameListScrollBoxScrollBarScrollBar",
+			"BaudErrorFrameDetailScrollFrameScrollBar"
+		}
+
+		for _, scrollbar in pairs(scrollbars) do
+			T.SkinScrollBar(_G[scrollbar])
+		end
+
 		-- Button position or text
 		_G["ColorPickerOkayButton"]:ClearAllPoints()
 		_G["ColorPickerOkayButton"]:SetPoint("BOTTOMLEFT", _G["ColorPickerFrame"], "BOTTOMLEFT", 6, 6)
