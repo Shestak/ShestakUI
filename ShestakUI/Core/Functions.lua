@@ -1045,41 +1045,41 @@ T.UpdateReputationColor = function(self, event, unit, bar)
 end
 
 T.UpdateComboPoint = function(self, event, unit)
-    if unit == "pet" then return end
+	if unit == "pet" then return end
 
-    local cpoints = self.CPoints
-    local cp = (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and UnitPower("vehicle", 4) or UnitPower("player", 4)
+	local cpoints = self.CPoints
+	local cp = (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and UnitPower("vehicle", 4) or UnitPower("player", 4)
 
-    for i = 1, MAX_COMBO_POINTS do
-        if i <= cp then
-            cpoints[i]:SetAlpha(1)
-        else
-            cpoints[i]:SetAlpha(0.2)
-        end
-    end
+	for i = 1, MAX_COMBO_POINTS do
+		if i <= cp then
+			cpoints[i]:SetAlpha(1)
+		else
+			cpoints[i]:SetAlpha(0.2)
+		end
+	end
 
-    if (T.class == "DRUID" and C.unitframe_class_bar.comboalways ~= true) then
-        local CatForm = function(self, event, unit)
-            local unit = self.unit or "player"
-            local name = UnitBuff(unit, GetSpellInfo(768)) or UnitBuff(unit, GetSpellInfo(171745))
-            if name then
-                cpoints:Show()
+	if T.class == "DRUID" and C.unitframe_class_bar.comboalways ~= true then
+		local CatForm = function(self, event, unit)
+			local unit = self.unit or "player"
+			local name = UnitBuff(unit, GetSpellInfo(768)) or UnitBuff(unit, GetSpellInfo(171745))
+			if name then
+				cpoints:Show()
 				if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
-            else
-                cpoints:Hide()
+			else
+				cpoints:Hide()
 				if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
-            end
-        end
+			end
+		end
 
-        local CheckForm = CreateFrame("Frame", self:GetName().."_CheckForm", cpoints)
-        CheckForm:RegisterEvent("UNIT_AURA")
-        CheckForm:RegisterEvent("PLAYER_LOGIN")
-        CheckForm:RegisterEvent("PLAYER_ENTERING_WORLD")
-        CheckForm:SetScript("OnEvent", CatForm)
-        CheckForm:SetScript("OnUpdate", CatForm)
-        CheckForm:SetScript("OnShow", CatForm)
-        CheckForm:SetScript("OnHide", CatForm)
-    end
+		local CheckForm = CreateFrame("Frame", self:GetName().."_CheckForm", cpoints)
+		CheckForm:RegisterEvent("UNIT_AURA")
+		CheckForm:RegisterEvent("PLAYER_LOGIN")
+		CheckForm:RegisterEvent("PLAYER_ENTERING_WORLD")
+		CheckForm:SetScript("OnEvent", CatForm)
+		CheckForm:SetScript("OnUpdate", CatForm)
+		CheckForm:SetScript("OnShow", CatForm)
+		CheckForm:SetScript("OnHide", CatForm)
+	end
 end
 
 local ticks = {}
