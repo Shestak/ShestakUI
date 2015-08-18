@@ -73,15 +73,15 @@ hooksecurefunc("MainMenuBarVehicleLeaveButton_Update", function()
 	end
 end)
 
---set tooltip
+-- Set tooltip
 vehicle:SetScript("OnEnter", function(self)
 	if UnitOnTaxi("player") then
-		GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
-		GameTooltip:SetText(TAXI_CANCEL, T.color.r, T.color.g, T.color.b);
-		GameTooltip:AddLine(TAXI_CANCEL_DESCRIPTION, 1, 1, 1, true);
-		GameTooltip:Show();
+		GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+		GameTooltip:SetText(TAXI_CANCEL, T.color.r, T.color.g, T.color.b)
+		GameTooltip:AddLine(TAXI_CANCEL_DESCRIPTION, 1, 1, 1, true)
+		GameTooltip:Show()
 	else
-		GameTooltip_AddNewbieTip(self, LEAVE_VEHICLE, T.color.r, T.color.g, T.color.b, nil);
+		GameTooltip_AddNewbieTip(self, LEAVE_VEHICLE, T.color.r, T.color.g, T.color.b, nil)
 	end
 end)
 vehicle:SetScript("OnLeave", function() GameTooltip:Hide() end)

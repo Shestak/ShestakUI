@@ -180,7 +180,7 @@ local function LoadSkin()
 	end
 
 	hooksecurefunc("FilterButton_SetType", function(button)
-		local tex = button:GetNormalTexture();
+		local tex = button:GetNormalTexture()
 		tex:SetAlpha(0)
 	end)
 

@@ -25,7 +25,8 @@ local function timer_Create(parent, interval)
 		end
 	end)
 
-	local a = updater:CreateAnimation("Animation"); a:SetOrder(1)
+	local a = updater:CreateAnimation("Animation")
+	a:SetOrder(1)
 
 	parent.Start = function(self)
 		self:Stop()
