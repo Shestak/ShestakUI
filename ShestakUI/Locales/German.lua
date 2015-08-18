@@ -433,6 +433,6 @@ L_EXTRA_ZONEACHID = {
 	["Tal der Ewigen Blüten"]			= {X = 6979, A =    0, H =    0},
 	-- Boolean Explores
 	["Insel von Quel'Danas"]			= {X =  868, A =    0, H =    0},
-	["Ahn'Qiraj: Das Gefallene Königreich"] = {X =    0, A =    0, H =    0},
+	["Ahn'Qiraj: Das Gefallene Königreich"] = {X = 0, A =    0, H =    0},
 	["Tausendwintersee"]				= {X =    0, A =    0, H =    0},
 }
