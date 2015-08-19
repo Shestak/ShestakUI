@@ -421,6 +421,8 @@ C["filger_spells"] = {
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
 			{spellID = 165485, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Malicious Censer
+			{spellID = 183926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror of the Blademaster (Images, Proc)
 			{spellID = 184270, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Capacitator (Damage, Proc)
@@ -1336,6 +1338,8 @@ C["filger_spells"] = {
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
 			{spellID = 165485, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Malicious Censer
+			{spellID = 183926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror of the Blademaster (Images, Proc)
 			{spellID = 184270, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Capacitator (Damage, Proc)
@@ -2159,6 +2163,8 @@ C["filger_spells"] = {
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
 			{spellID = 165485, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Malicious Censer
+			{spellID = 183926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror of the Blademaster (Images, Proc)
 			{spellID = 184270, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Capacitator (Damage, Proc)
@@ -2398,6 +2404,8 @@ C["filger_spells"] = {
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
 			{spellID = 165485, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Malicious Censer
+			{spellID = 183926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror of the Blademaster (Images, Proc)
 			{spellID = 184270, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Capacitator (Damage, Proc)
