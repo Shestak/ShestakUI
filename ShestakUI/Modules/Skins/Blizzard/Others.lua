@@ -230,7 +230,10 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		}
 
 		for _, scrollbar in pairs(scrollbars) do
-			T.SkinScrollBar(_G[scrollbar])
+			local bars = _G[_G[scrollbar]]
+			if bars then
+				T.SkinScrollBar(bars)
+			end
 		end
 
 		-- Button position or text
