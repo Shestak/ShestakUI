@@ -112,7 +112,7 @@ for i = 1, 12 do
 	local _, instanceType = IsInInstance()
 	if (not IsInGroup() or instanceType ~= "raid") and C.reminder.raid_buffs_always == false then
 		button:Hide()
-	else
+	elseif (IsInGroup() or instanceType ~= "raid") or C.reminder.raid_buffs_always == true then
 		button:Show()
 	end
 end
