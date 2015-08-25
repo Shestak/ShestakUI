@@ -1,4 +1,4 @@
-﻿----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 --	Localization for enUS and enGB client
 ----------------------------------------------------------------------------------------
 -- Announce your Lightwell
@@ -150,8 +150,8 @@ L_PANELS_AFK_LCLICK = "Left-Click to go back."
 
 -- Cooldowns
 L_COOLDOWNS = "CD: "
-L_COOLDOWNS_COMBATRESS = "CombatRess"
-L_COOLDOWNS_COMBATRESS_REMAINDER = "Combat resurrect: "
+L_COOLDOWNS_COMBATRESS = "BattleRes"
+L_COOLDOWNS_COMBATRESS_REMAINDER = "Battle Resurrection: "
 L_COOLDOWNS_NEXTTIME = "Next time: "
 
 -- Autoinvite
