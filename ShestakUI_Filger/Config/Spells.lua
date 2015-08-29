@@ -421,7 +421,7 @@ C["filger_spells"] = {
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
 			{spellID = 165485, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Malicious Censer
+			-- Malicious Censer (Agility, Proc)
 			{spellID = 183926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror of the Blademaster (Images, Proc)
 			{spellID = 184270, unitID = "player", caster = "player", filter = "BUFF"},
@@ -734,7 +734,7 @@ C["filger_spells"] = {
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
 			{spellID = 165485, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Malicious Censer
+			-- Malicious Censer (Agility, Proc)
 			{spellID = 183926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror of the Blademaster (Images, Proc)
 			{spellID = 184270, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1340,7 +1340,7 @@ C["filger_spells"] = {
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
 			{spellID = 165485, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Malicious Censer
+			-- Malicious Censer (Agility, Proc)
 			{spellID = 183926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror of the Blademaster (Images, Proc)
 			{spellID = 184270, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2169,7 +2169,7 @@ C["filger_spells"] = {
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
 			{spellID = 165485, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Malicious Censer
+			-- Malicious Censer (Agility, Proc)
 			{spellID = 183926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror of the Blademaster (Images, Proc)
 			{spellID = 184270, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2410,7 +2410,7 @@ C["filger_spells"] = {
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
 			{spellID = 165485, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Malicious Censer
+			-- Malicious Censer (Agility, Proc)
 			{spellID = 183926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror of the Blademaster (Images, Proc)
 			{spellID = 184270, unitID = "player", caster = "player", filter = "BUFF"},
@@ -3148,8 +3148,8 @@ C["filger_spells"] = {
 			{spellID = 46668, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Darkmoon Faire: Top Hat
 			{spellID = 136583, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Elixir of Shadows (Outlands)
-			{spellID = 37678, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Elixir of the Rapid Mind
+			{spellID = 189375, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Guild Battle Standard: Alliance
 			{spellID = 90216, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Guild Battle Standard: Horde
