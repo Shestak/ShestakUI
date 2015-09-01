@@ -15,7 +15,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"LFDRoleCheckPopupRoleButtonTank",
 			"LFDRoleCheckPopupRoleButtonDPS",
 			"LFDRoleCheckPopupRoleButtonHealer"
-			}
+		}
 
 		for _, object in pairs(checkButtons) do
 			T.SkinCheckBox(_G[object].checkButton)
@@ -99,7 +99,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		SplashFrame.BottomCloseButton:SkinButton()
 		T.SkinCloseButton(SplashFrame.TopCloseButton)
 
-		--NavBar Buttons (Used in WorldMapFrame, EncounterJournal and HelpFrame)
+		-- NavBar Buttons (Used in WorldMapFrame, EncounterJournal and HelpFrame)
 		local function SkinNavBarButtons(self)
 			local navButton = self.navList[#self.navList]
 			if navButton and not navButton.isSkinned then
@@ -276,6 +276,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		T.SkinCloseButton(_G["RolePollPopupCloseButton"])
 		T.SkinCloseButton(_G["ItemRefCloseButton"])
 		T.SkinCloseButton(_G["BNToastFrameCloseButton"])
+		T.SkinCloseButton(_G["FloatingGarrisonFollowerTooltip.CloseButton"])
 		if C.skins.blizzard_frames == true then
 			if T.client == "ruRU" then
 				_G["DeclensionFrame"]:SetTemplate("Transparent")
