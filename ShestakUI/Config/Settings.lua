@@ -461,6 +461,8 @@ C["unitframe"] = {
 --	Unit Frames Class bar options
 ----------------------------------------------------------------------------------------
 C["unitframe_class_bar"] = {
+	["width"] = 217,							-- Class bar Width
+	["height"] = 7,								-- Class bar Height
 	["combo"] = true,							-- Rogue/Druid Combo bar
 	["shadow"] = true,							-- Shadow Orbs bar
 	["chi"] = true,								-- Chi bar
