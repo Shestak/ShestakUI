@@ -276,7 +276,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		T.SkinCloseButton(_G["RolePollPopupCloseButton"])
 		T.SkinCloseButton(_G["ItemRefCloseButton"])
 		T.SkinCloseButton(_G["BNToastFrameCloseButton"])
-		T.SkinCloseButton(_G["FloatingGarrisonFollowerTooltip.CloseButton"])
+		T.SkinCloseButton(FloatingGarrisonFollowerTooltip.CloseButton)
 		if C.skins.blizzard_frames == true then
 			if T.client == "ruRU" then
 				_G["DeclensionFrame"]:SetTemplate("Transparent")
