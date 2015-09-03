@@ -391,6 +391,8 @@ local function Local(o)
 
 	-- Unit Frames Class bar options
 	if o == "UIConfigunitframe_class_bar" then o = L_GUI_UF_PLUGINS_CLASS_BAR end
+	if o == "UIConfigunitframe_class_barwidth" then o = L_GUI_UF_PLUGINS_CLASS_BAR_WIDTH end
+	if o == "UIConfigunitframe_class_barheight" then o = L_GUI_UF_PLUGINS_CLASS_BAR_HEIGHT end
 	if o == "UIConfigunitframe_class_barcombo" then o = L_GUI_UF_PLUGINS_COMBO_BAR end
 	if o == "UIConfigunitframe_class_barshadow" then o = L_GUI_UF_PLUGINS_SHADOW_BAR end
 	if o == "UIConfigunitframe_class_barchi" then o = L_GUI_UF_PLUGINS_CHI_BAR end
