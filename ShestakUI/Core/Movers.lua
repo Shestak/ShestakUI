@@ -29,6 +29,7 @@ T.MoverFrames = {
 	oUF_Target_Castbar,
 	oUF_Player_Portrait,
 	oUF_Target_Portrait,
+	ClassBarAnchor,
 }
 
 local moving = false
