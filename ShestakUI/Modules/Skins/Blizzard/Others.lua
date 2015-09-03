@@ -15,7 +15,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"LFDRoleCheckPopupRoleButtonTank",
 			"LFDRoleCheckPopupRoleButtonDPS",
 			"LFDRoleCheckPopupRoleButtonHealer"
-			}
+		}
 
 		for _, object in pairs(checkButtons) do
 			T.SkinCheckBox(_G[object].checkButton)
@@ -269,13 +269,14 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["ChannelPulloutTabMiddle"]:SetTexture(nil)
 		_G["ChannelPulloutTabRight"]:SetTexture(nil)
 		_G["StaticPopup1CloseButton"]:HookScript("OnShow", function(self)
-				self:StripTextures(true)
-				T.SkinCloseButton(self, nil, "-")
-			end)
+			self:StripTextures(true)
+			T.SkinCloseButton(self, nil, "-")
+		end)
 		T.SkinCloseButton(_G["ChannelPulloutCloseButton"])
 		T.SkinCloseButton(_G["RolePollPopupCloseButton"])
 		T.SkinCloseButton(_G["ItemRefCloseButton"])
 		T.SkinCloseButton(_G["BNToastFrameCloseButton"])
+		T.SkinCloseButton(_G["FloatingGarrisonFollowerTooltip.CloseButton"])
 		if C.skins.blizzard_frames == true then
 			if T.client == "ruRU" then
 				_G["DeclensionFrame"]:SetTemplate("Transparent")
