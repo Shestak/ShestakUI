@@ -275,17 +275,23 @@ local function Shared(self, unit)
 			self.LFDRole:SetPoint("TOPLEFT", -3, 8)	--修改
 			self.LFDRole:SetTexture("Interface\\AddOns\\ShestakUI_Media\\Media\\Icon\\lfd_role")	--定义icon材质
 		end
-
+		
+		-- ClassBarAnchor
+		local classbaranchor = CreateFrame("Frame", "ClassBarAnchor", self)
+		classbaranchor:CreatePanel("Invisible", 1, 1, unpack(C.position.unitframes.class_bar))
+		classbaranchor:SetSize(C.unitframe_class_bar.width, C.unitframe_class_bar.height)
+		classbaranchor:SetFrameStrata("LOW")
+		
 		-- Rune bar
 		if C.unitframe_class_bar.rune == true and T.class == "DEATHKNIGHT" then
-			self.Runes = CreateFrame("Frame", self:GetName().."_RuneBar", self)
+			self.Runes = CreateFrame("Frame", self:GetName().."_RuneBar", classbaranchor)
 			self.Runes:CreateBackdrop("Default")
-			self.Runes:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.Runes:SetSize(217, 7)
+			self.Runes:SetPoint("BOTTOM", classbaranchor, "BOTTOM", 0, 0)
+			self.Runes:SetSize(C.unitframe_class_bar.width, C.unitframe_class_bar.height)
 
 			for i = 1, 6 do
 				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_RuneBar"..i, self.Runes)
-				self.Runes[i]:SetSize(213 / 6, 7)
+				self.Runes[i]:SetSize((C.unitframe_class_bar.width - 4) / 6, C.unitframe_class_bar.height)
 				if i == 1 then
 					self.Runes[i]:SetPoint("LEFT", self.Runes, "LEFT", 0, 0)
 				else
@@ -303,14 +309,14 @@ local function Shared(self, unit)
 		if T.class == "MONK" then
 			-- Chi bar
 			if C.unitframe_class_bar.chi == true then
-				self.HarmonyBar = CreateFrame("Frame", self:GetName().."_HarmonyBar", self)
+				self.HarmonyBar = CreateFrame("Frame", self:GetName().."_HarmonyBar", classbaranchor)
 				self.HarmonyBar:CreateBackdrop("Default")
-				self.HarmonyBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.HarmonyBar:SetSize(217, 7)
+				self.HarmonyBar:SetPoint("BOTTOM", classbaranchor, "BOTTOM", 0, 0)
+				self.HarmonyBar:SetSize(C.unitframe_class_bar.width, C.unitframe_class_bar.height)
 
 				for i = 1, 6 do
 					self.HarmonyBar[i] = CreateFrame("StatusBar", self:GetName().."_HarmonyBar"..i, self.HarmonyBar)
-					self.HarmonyBar[i]:SetSize(213 / 6, 7)
+					self.HarmonyBar[i]:SetSize((C.unitframe_class_bar.width - 4) / 6, C.unitframe_class_bar.height)
 					if i == 1 then
 						self.HarmonyBar[i]:SetPoint("LEFT", self.HarmonyBar, "LEFT", 0, 0)
 					else
@@ -328,16 +334,16 @@ local function Shared(self, unit)
 
 			-- Statue bar
 			if C.unitframe_class_bar.totem == true then
-				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
+				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", classbaranchor)
 				--self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 				self.TotemBar:CreateBackdrop("Default")
-				self.TotemBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.TotemBar:SetSize(217, 7)
+				self.TotemBar:SetPoint("BOTTOM", classbaranchor, "BOTTOM", 0, 0)
+				self.TotemBar:SetSize(C.unitframe_class_bar.width, C.unitframe_class_bar.height)
 				self.TotemBar.Destroy = true
 
 				for i = 1, 1 do
 					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self.TotemBar)
-					self.TotemBar[i]:SetSize(213, 7)
+					self.TotemBar[i]:SetSize((C.unitframe_class_bar.width - 4), C.unitframe_class_bar.height)
 					self.TotemBar[i]:SetPoint("LEFT", self.TotemBar, "LEFT", 0, 0)
 					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
 					self.TotemBar[i]:SetMinMaxValues(0, 1)
@@ -352,14 +358,14 @@ local function Shared(self, unit)
 
 		-- Shadow Orbs bar
 		if C.unitframe_class_bar.shadow == true and T.class == "PRIEST" then
-			self.ShadowOrbsBar = CreateFrame("Frame", self:GetName().."_ShadowOrbsBar", self)
+			self.ShadowOrbsBar = CreateFrame("Frame", self:GetName().."_ShadowOrbsBar", classbaranchor)
 			self.ShadowOrbsBar:CreateBackdrop("Default")
-			self.ShadowOrbsBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.ShadowOrbsBar:SetSize(217, 7)
+			self.ShadowOrbsBar:SetPoint("BOTTOM", classbaranchor, "BOTTOM", 0, 0)
+			self.ShadowOrbsBar:SetSize(C.unitframe_class_bar.width, C.unitframe_class_bar.height)
 
 			for i = 1, 5 do
 				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", self:GetName().."_ShadowOrbsBar"..i, self.ShadowOrbsBar)
-				self.ShadowOrbsBar[i]:SetSize(213 / 5, 7)
+				self.ShadowOrbsBar[i]:SetSize((C.unitframe_class_bar.width - 4) / 5, C.unitframe_class_bar.height)
 				if i == 1 then
 					self.ShadowOrbsBar[i]:SetPoint("LEFT", self.ShadowOrbsBar, "LEFT", 0, 0)
 				else
@@ -381,14 +387,14 @@ local function Shared(self, unit)
 
 		-- Holy Power bar
 		if C.unitframe_class_bar.holy == true and T.class == "PALADIN" then
-			self.HolyPower = CreateFrame("Frame", self:GetName().."_HolyPowerBar", self)
+			self.HolyPower = CreateFrame("Frame", self:GetName().."_HolyPowerBar", classbaranchor)
 			self.HolyPower:CreateBackdrop("Default")
-			self.HolyPower:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.HolyPower:SetSize(217, 7)
+			self.HolyPower:SetPoint("BOTTOM", classbaranchor, "BOTTOM", 0, 0)
+			self.HolyPower:SetSize(C.unitframe_class_bar.width, C.unitframe_class_bar.height)
 
 			for i = 1, 5 do
 				self.HolyPower[i] = CreateFrame("StatusBar", self:GetName().."_HolyPowerBar"..i, self.HolyPower)
-				self.HolyPower[i]:SetSize(213 / 5, 7)
+				self.HolyPower[i]:SetSize((C.unitframe_class_bar.width - 4) / 5, C.unitframe_class_bar.height)
 				if i == 1 then
 					self.HolyPower[i]:SetPoint("LEFT", self.HolyPower, "LEFT", 0, 0)
 				else
@@ -410,14 +416,14 @@ local function Shared(self, unit)
 
 		-- Shard/Burning bar
 		if C.unitframe_class_bar.shard == true and T.class == "WARLOCK" then
-			self.WarlockSpecBars = CreateFrame("Frame", self:GetName().."_WarlockSpecBar", self)
+			self.WarlockSpecBars = CreateFrame("Frame", self:GetName().."_WarlockSpecBar", classbaranchor)
 			self.WarlockSpecBars:CreateBackdrop("Default")
-			self.WarlockSpecBars:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.WarlockSpecBars:SetSize(217, 7)
+			self.WarlockSpecBars:SetPoint("BOTTOM", classbaranchor, "BOTTOM", 0, 0)
+			self.WarlockSpecBars:SetSize(C.unitframe_class_bar.width, C.unitframe_class_bar.height)
 
 			for i = 1, 4 do
 				self.WarlockSpecBars[i] = CreateFrame("StatusBar", self:GetName().."_WarlockSpecBar"..i, self.WarlockSpecBars)
-				self.WarlockSpecBars[i]:SetSize(213 / 4, 7)
+				self.WarlockSpecBars[i]:SetSize((C.unitframe_class_bar.width - 4) / 4, C.unitframe_class_bar.height)
 				if i == 1 then
 					self.WarlockSpecBars[i]:SetPoint("LEFT", self.WarlockSpecBars, "LEFT", 0, 0)
 				else
@@ -439,14 +445,14 @@ local function Shared(self, unit)
 		
 		-- Rogue/Druid Combo bar
 		if C.unitframe_class_bar.combo == true and T.class == "ROGUE" or T.class == "DRUID" then
-			self.CPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)
+			self.CPoints = CreateFrame("Frame", self:GetName().."_ComboBar", classbaranchor)
 			self.CPoints:CreateBackdrop("Default")
-			self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.CPoints:SetSize(217, 7)
+			self.CPoints:SetPoint("BOTTOM", classbaranchor, "BOTTOM", 0, 0)
+			self.CPoints:SetSize(C.unitframe_class_bar.width, C.unitframe_class_bar.height, C.unitframe_class_bar.height)
 
 			for i = 1, 5 do
 				self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar"..i, self.CPoints)
-				self.CPoints[i]:SetSize(213 / 5, 7)
+				self.CPoints[i]:SetSize((C.unitframe_class_bar.width - 4) / 5, C.unitframe_class_bar.height)
 				if i == 1 then
 					self.CPoints[i]:SetPoint("LEFT", self.CPoints, "LEFT", 0, 0)
 				else
@@ -464,13 +470,13 @@ local function Shared(self, unit)
 			self.CPoints.Override = T.UpdateComboPoint
 
 			if T.class == "ROGUE" then
-				self.Anticipation = CreateFrame("Frame", self:GetName().."_Anticipation", self)
-				self.Anticipation:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.Anticipation:SetSize(217, 3)
+				self.Anticipation = CreateFrame("Frame", self:GetName().."_Anticipation", self.CPoints)
+				self.Anticipation:SetPoint("BOTTOM", self.CPoints, "BOTTOM", 0, 0)
+				self.Anticipation:SetSize(C.unitframe_class_bar.width, 3)
 				
 				for i = 1, 5 do
 					self.Anticipation[i] = CreateFrame("StatusBar", self:GetName().."_Anticipation"..i, self.Anticipation)
-					self.Anticipation[i]:SetSize(213 / 5, 3)
+					self.Anticipation[i]:SetSize((C.unitframe_class_bar.width - 4) / 5, 3)
 					if i == 1 then
 						self.Anticipation[i]:SetPoint("LEFT", self.Anticipation, "LEFT", 0, 0)
 					else
@@ -484,21 +490,21 @@ local function Shared(self, unit)
 		
 		-- Totem bar
 		if C.unitframe_class_bar.totem == true and T.class == "SHAMAN" then
-			self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
+			self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", classbaranchor)
 			self.TotemBar:CreateBackdrop("Default")
-			self.TotemBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.TotemBar:SetSize(217, 7)
+			self.TotemBar:SetPoint("BOTTOM", classbaranchor, "BOTTOM", 0, 0)
+			self.TotemBar:SetSize(C.unitframe_class_bar.width, C.unitframe_class_bar.height)
 			self.TotemBar.Destroy = true
 
 			for i = 1, 4 do
 				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self.TotemBar)
-				self.TotemBar[i]:SetSize(213 / 4, 7)
+				self.TotemBar[i]:SetSize((C.unitframe_class_bar.width - 4) / 4, C.unitframe_class_bar.height)
 
 				local fixpos
 				if i == 2 then
 					self.TotemBar[i]:SetPoint("LEFT", self.TotemBar, "LEFT", 0, 0)
 				elseif i == 1 then
-					self.TotemBar[i]:SetPoint("LEFT", self.TotemBar, "LEFT", 55, 7)
+					self.TotemBar[i]:SetPoint("LEFT", self.TotemBar, "LEFT", 55, C.unitframe_class_bar.height)
 				else
 					fixpos = i
 					if i == 3 then fixpos = i-1 end
@@ -522,10 +528,10 @@ local function Shared(self, unit)
 
 			-- Eclipse bar
 			if C.unitframe_class_bar.eclipse == true then
-				self.EclipseBar = CreateFrame("Frame", self:GetName().."_EclipseBar", self)
+				self.EclipseBar = CreateFrame("Frame", self:GetName().."_EclipseBar", classbaranchor)
 				self.EclipseBar:CreateBackdrop("Default")
-				self.EclipseBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.EclipseBar:SetSize(217, 7)
+				self.EclipseBar:SetPoint("BOTTOM", classbaranchor, "BOTTOM", 0, 0)
+				self.EclipseBar:SetSize(C.unitframe_class_bar.width, C.unitframe_class_bar.height)
 
 				self.EclipseBar.LunarBar = CreateFrame("StatusBar", self:GetName().."_EclipseBar_LunarBar", self.EclipseBar)
 				self.EclipseBar.LunarBar:SetPoint("LEFT", self.EclipseBar, "LEFT", 0, 0)
@@ -554,16 +560,16 @@ local function Shared(self, unit)
 
 			-- Mushroom bar
 			if C.unitframe_class_bar.totem == true then
-				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
+				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", classbaranchor)
 				--self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 				self.TotemBar:CreateBackdrop("Default")
-				self.TotemBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.TotemBar:SetSize(217, 7)
+				self.TotemBar:SetPoint("BOTTOM", classbaranchor, "BOTTOM", 0, 0)
+				self.TotemBar:SetSize(C.unitframe_class_bar.width, C.unitframe_class_bar.height)
 				self.TotemBar.Destroy = true
 
 				for i = 1, 3 do
 					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self.TotemBar)
-					self.TotemBar[i]:SetSize(213 / 3, 7)
+					self.TotemBar[i]:SetSize((C.unitframe_class_bar.width - 4) / 3, C.unitframe_class_bar.height)
 					if i == 1 then
 						self.TotemBar[i]:SetPoint("LEFT", self.TotemBar, "LEFT", 0, 0)
 					else
@@ -583,16 +589,16 @@ local function Shared(self, unit)
 		-- Mocking Banner bar
 		if C.unitframe_class_bar.totem == true and T.class == "WARRIOR" then
 			if C.unitframe_class_bar.totem == true then
-				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
+				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", classbaranchor)
 				--self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 				self.TotemBar:CreateBackdrop("Default")
-				self.TotemBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.TotemBar:SetSize(217, 7)
+				self.TotemBar:SetPoint("BOTTOM", classbaranchor, "BOTTOM", 0, 0)
+				self.TotemBar:SetSize(C.unitframe_class_bar.width, C.unitframe_class_bar.height)
 				self.TotemBar.Destroy = true
 
 				for i = 1, 1 do
 					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self.TotemBar)
-					self.TotemBar[i]:SetSize(213, 7)
+					self.TotemBar[i]:SetSize((C.unitframe_class_bar.width - 4), C.unitframe_class_bar.height)
 					self.TotemBar[i]:SetPoint("LEFT", self.TotemBar, "LEFT", 0, 0)
 					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
 					self.TotemBar[i]:SetMinMaxValues(0, 1)
@@ -607,16 +613,16 @@ local function Shared(self, unit)
 
 		-- Rune of Power bar
 		if C.unitframe_class_bar.totem == true and T.class == "MAGE" then
-			self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
+			self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", classbaranchor)
 			--self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
 			self.TotemBar:CreateBackdrop("Default")
-			self.TotemBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.TotemBar:SetSize(217, 7)
+			self.TotemBar:SetPoint("BOTTOM", classbaranchor, "BOTTOM", 0, 0)
+			self.TotemBar:SetSize(C.unitframe_class_bar.width, C.unitframe_class_bar.height)
 			self.TotemBar.Destroy = true
 
 			for i = 1, 2 do
 				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar"..i, self.TotemBar)
-				self.TotemBar[i]:SetSize(213 / 2, 7)
+				self.TotemBar[i]:SetSize((C.unitframe_class_bar.width - 4) / 2, C.unitframe_class_bar.height)
 				if i == 1 then
 					self.TotemBar[i]:SetPoint("LEFT", self.TotemBar, "LEFT", 0, 0)
 				else
@@ -634,20 +640,20 @@ local function Shared(self, unit)
 
 		-- Vengeance bar
 		if C.unitframe_class_bar.vengeance == true then
-			self.VengeanceBar = CreateFrame("Frame", self:GetName().."_VengeanceBar", self)
+			self.VengeanceBar = CreateFrame("Frame", self:GetName().."_VengeanceBar", classbaranchor)
 			self.VengeanceBar:CreateBackdrop("Default")
 			--if (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
 			--or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true)
 			--or (T.class == "MONK" and C.unitframe_class_bar.chi == true) then
-				self.VengeanceBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
+				self.VengeanceBar:SetPoint("BOTTOM", classbaranchor, "TOP", 0, 7)
 			--else
 				--self.VengeanceBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			--end
-			self.VengeanceBar:SetSize(217, 7)
+			self.VengeanceBar:SetSize(C.unitframe_class_bar.width, C.unitframe_class_bar.height)
 
 			self.VengeanceBar.Bar = CreateFrame("StatusBar", self:GetName().."_VengeanceBar.Bar", self.VengeanceBar)
 			self.VengeanceBar.Bar:SetPoint("LEFT", self.VengeanceBar, "LEFT", 0, 0)
-			self.VengeanceBar.Bar:SetSize(217, 7)
+			self.VengeanceBar.Bar:SetSize(C.unitframe_class_bar.width, C.unitframe_class_bar.height)
 			self.VengeanceBar.Bar:SetStatusBarTexture(C.media.texture)
 			self.VengeanceBar.Bar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
 
