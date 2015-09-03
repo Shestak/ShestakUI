@@ -17,14 +17,14 @@ local function LoadSkin()
 	local buttons = {
 		"HelpFrameAccountSecurityOpenTicket",
 		--"HelpFrameOpenTicketHelpTopIssues",
-		"HelpFrameOpenTicketHelpOpenTicket",
+		--"HelpFrameOpenTicketHelpOpenTicket",
 		--"HelpFrameOpenTicketHelpItemRestoration",
 		"HelpFrameKnowledgebaseSearchButton",
 		"HelpFrameKnowledgebaseNavBarHomeButton",
 		"HelpFrameCharacterStuckStuck",
 		--"GMChatOpenLog",
-		"HelpFrameTicketSubmit",
-		"HelpFrameTicketCancel",
+		--"HelpFrameTicketSubmit",
+		--"HelpFrameTicketCancel",
 		"HelpFrameGM_ResponseNeedMoreHelp",
 		"HelpFrameGM_ResponseCancel",
 		"HelpFrameSubmitSuggestionSubmit",
@@ -47,18 +47,6 @@ local function LoadSkin()
 	HelpFrameHeader:StripTextures(true)
 	HelpFrameHeader:SetFrameLevel(HelpFrameHeader:GetFrameLevel() + 2)
 	HelpFrameKnowledgebaseErrorFrame:SetFrameLevel(HelpFrameKnowledgebaseErrorFrame:GetFrameLevel() + 2)
-
-	HelpFrameTicketScrollFrame:StripTextures()
-	HelpFrameTicketScrollFrame:CreateBackdrop("Overlay")
-	HelpFrameTicketScrollFrame.backdrop:SetPoint("TOPLEFT", -4, 4)
-	HelpFrameTicketScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 6, -4)
-
-	for i = 1, HelpFrameTicket:GetNumChildren() do
-		local child = select(i, HelpFrameTicket:GetChildren())
-		if not child:GetName() then
-			child:StripTextures()
-		end
-	end
 
 	HelpFrameReportBugScrollFrame:StripTextures()
 	HelpFrameReportBugScrollFrame:CreateBackdrop("Overlay")
@@ -163,7 +151,7 @@ local function LoadSkin()
 	HelpFrame:CreateBackdrop("Transparent")
 	T.SkinEditBox(HelpFrameKnowledgebaseSearchBox)
 	T.SkinScrollBar(HelpFrameKnowledgebaseScrollFrameScrollBar)
-	T.SkinScrollBar(HelpFrameTicketScrollFrameScrollBar)
+	--T.SkinScrollBar(HelpFrameTicketScrollFrameScrollBar)
 	T.SkinCloseButton(HelpFrameCloseButton, HelpFrame.backdrop)
 	T.SkinCloseButton(HelpFrameKnowledgebaseErrorFrameCloseButton, HelpFrameKnowledgebaseErrorFrame.backdrop)
 
