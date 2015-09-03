@@ -340,7 +340,7 @@ end
 
 -- This is where we create most 'Static' objects for the nameplate
 local function SkinObjects(frame, nameFrame)
-	local oldhp, cb = frame:GetChildren()
+	local oldhp, ab, cb = frame:GetChildren()
 	local threat, hpborder, overlay, oldlevel, bossicon, raidicon, elite = frame:GetRegions()
 	local oldname = nameFrame:GetRegions()
 	local _, cbborder, cbshield, cbicon, cbname, cbshadow = cb:GetRegions()
@@ -391,19 +391,40 @@ local function SkinObjects(frame, nameFrame)
 
 	hp.TargetIndicator.bordertop = hp.TargetIndicator:CreateTexture(nil, "BORDER")
 	hp.TargetIndicator.bordertop:SetPoint("BOTTOM", hp, "TOP", T.noscalemult * 0, T.noscalemult * 3)
-	hp.TargetIndicator.bordertop:SetSize(T.noscalemult*200, T.noscalemult*15)
-	hp.TargetIndicator.bordertop:SetTexture("Interface\\AddOns\\zzz\\Media\\highlight_top")
+	hp.TargetIndicator.bordertop:SetSize(T.noscalemult*140, T.noscalemult*14)
+	hp.TargetIndicator.bordertop:SetTexture("Interface\\AddOns\\zzz\\Media\\Loc-RedLine-Top")
 	hp.TargetIndicator.bordertop:SetBlendMode("ADD")
-	hp.TargetIndicator.bordertop:SetVertexColor(T.color.r, T.color.g, T.color.b)
+	--hp.TargetIndicator.bordertop:SetVertexColor(T.color.r, T.color.g, T.color.b)
+	hp.TargetIndicator.bordertop:SetVertexColor(1, 0, 1, 1)
 	hp.TargetIndicator.bordertop:SetDrawLayer("BORDER", -8)
 
 	hp.TargetIndicator.borderbottom = hp.TargetIndicator:CreateTexture(nil, "BORDER")
 	hp.TargetIndicator.borderbottom:SetPoint("TOP", hp, "BOTTOM", T.noscalemult * 0, -T.noscalemult * 3)
-	hp.TargetIndicator.borderbottom:SetSize(T.noscalemult*200, T.noscalemult*15)
-	hp.TargetIndicator.borderbottom:SetTexture("Interface\\AddOns\\zzz\\Media\\highlight_bottom")
+	hp.TargetIndicator.borderbottom:SetSize(T.noscalemult*140, T.noscalemult*14)
+	hp.TargetIndicator.borderbottom:SetTexture("Interface\\AddOns\\zzz\\Media\\Loc-RedLine-Bottom")
 	hp.TargetIndicator.borderbottom:SetBlendMode("ADD")
-	hp.TargetIndicator.borderbottom:SetVertexColor(T.color.r, T.color.g, T.color.b)
+	--hp.TargetIndicator.borderbottom:SetVertexColor(T.color.r, T.color.g, T.color.b)
+	hp.TargetIndicator.borderbottom:SetVertexColor(1, 0, 1, 1)
 	hp.TargetIndicator.borderbottom:SetDrawLayer("BORDER", -8)
+--[[
+	hp.TargetIndicator.borderleft = hp.TargetIndicator:CreateTexture(nil, "BORDER")
+	hp.TargetIndicator.borderleft:SetPoint("RIGHT", hp, "LEFT", -T.noscalemult * 3, T.noscalemult * 0)
+	hp.TargetIndicator.borderleft:SetSize(T.noscalemult*13, T.noscalemult*33)
+	hp.TargetIndicator.borderleft:SetTexture("Interface\\AddOns\\zzz\\Media\\Loc-RedLine-Left")
+	hp.TargetIndicator.borderleft:SetBlendMode("ADD")
+	--hp.TargetIndicator.borderleft:SetVertexColor(T.color.r, T.color.g, T.color.b)
+	hp.TargetIndicator.borderleft:SetVertexColor(1, 0, 1, 1)
+	hp.TargetIndicator.borderleft:SetDrawLayer("BORDER", -8)
+	
+	hp.TargetIndicator.borderright = hp.TargetIndicator:CreateTexture(nil, "BORDER")
+	hp.TargetIndicator.borderright:SetPoint("LEFT", hp, "RIGHT", T.noscalemult * 3, T.noscalemult * 0)
+	hp.TargetIndicator.borderright:SetSize(T.noscalemult*13, T.noscalemult*33)
+	hp.TargetIndicator.borderright:SetTexture("Interface\\AddOns\\zzz\\Media\\Loc-RedLine-Right")
+	hp.TargetIndicator.borderright:SetBlendMode("ADD")
+	--hp.TargetIndicator.borderright:SetVertexColor(T.color.r, T.color.g, T.color.b)
+	hp.TargetIndicator.borderright:SetVertexColor(1, 0, 1, 1)
+	hp.TargetIndicator.borderright:SetDrawLayer("BORDER", -8)
+	]]--
 --[[
 	hp.TargetIndicator.borderleft = hp.TargetIndicator:CreateFontString(nil, "ARTWORK")
 	hp.TargetIndicator.borderleft:SetPoint("RIGHT", hp.level, "LEFT", T.noscalemult * 3, T.noscalemult * 3)
@@ -458,6 +479,10 @@ local function SkinObjects(frame, nameFrame)
 		cb.name:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 		cb.name:SetTextColor(1, 1, 1)
 	end
+
+	-- Absorb Bar 
+	ab:ClearAllPoints()
+	frame.ab = ab
 
 	-- Create Class Icon
 	if C.nameplate.class_icons == true then
