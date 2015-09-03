@@ -64,5 +64,6 @@ C["position"] = {
 		["player_castbar"] = {"BOTTOM", "ActionBarAnchor", "TOP", 0, 175},			-- Player Castbar
 		["target_castbar"] = {"BOTTOM", "oUF_Player_Castbar", "TOP", 0, 7},			-- Target Castbar
 		["focus_castbar"] = {"CENTER", UIParent, "CENTER", 0, 250},					-- Focus Castbar icon
+		["class_bar"] = {"BOTTOM", "oUF_Player", "TOP", 0, 7},						-- Class bar
 	},
 }
