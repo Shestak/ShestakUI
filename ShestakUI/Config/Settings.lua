@@ -551,3 +551,35 @@ C["error"] = {
 	["white"] = false,							-- Show errors from white list
 	["combat"] = false,							-- Hide all errors in combat
 }
+
+----------------------------------------------------------------------------------------
+--	zzz options
+----------------------------------------------------------------------------------------
+C["zzz"] = {
+	["Model_enable"] = true,
+	["Model_drag"] = false,
+	["Model_rotate"] = true,
+	["Chat_ScrollDown"] = true,
+	["Chat_HideLanguage"] = true,
+	["CombatAlert"] = true,
+	["MapBoss3D"] = true,
+	["WorldMap"] = true,
+	["MiniTrinketMenu"] = true,
+	["MicroMenu"] = true,
+	["Difficulty"] = true,
+	["Threat"] = true,
+	["Currency"] = true,
+	["ObjectiveTracker"] = true,
+	["QuickTalents"] = true,
+	["Focuser"] = true,
+	["SuddenDeath"] = true,
+	["SnowfallCursor"] = true,
+	["MicroButton"] = true,
+	["Misc_VignetteAlert"] = true,
+	["Misc_autopet"] = false,
+	["Misc_FlashTaskBar"] = true,
+	["ItemType"] = false,
+	["Loot"] = true,
+	["AFK"] = true,
+	
+}

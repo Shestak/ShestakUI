@@ -31,6 +31,7 @@ local ALLOWED_GROUPS = {
 	["toppanel"] = 24,
 	["error"] = 25,
 	["stats"] = 26,
+	["zzz"] = 26,
 }
 
 local function Local(o)
@@ -464,6 +465,33 @@ local function Local(o)
 	if o == "UIConfigerrorblack" then o = L_GUI_ERROR_BLACK end
 	if o == "UIConfigerrorwhite" then o = L_GUI_ERROR_WHITE end
 	if o == "UIConfigerrorcombat" then o = L_GUI_ERROR_HIDE_COMBAT end
+	
+	-- zzz options
+	if o == "UIConfigzzz" then o = "杂货铺" end
+	if o == "UIConfigzzzModel_enable" then o = "启用目标3D模型" end
+	if o == "UIConfigzzzModel_drag" then o = "3D模型点击移动" end
+	if o == "UIConfigzzzModel_rotate" then o = "3D模型旋转" end
+	if o == "UIConfigzzzChat_ScrollDown" then o = "聊天內容自動滾動到底部" end
+	if o == "UIConfigzzzChat_HideLanguage" then o = "移动/隐藏聊天输入框语言按鈕" end
+	if o == "UIConfigzzzCombatAlert" then o = "进入/离开战斗提示" end
+	if o == "UIConfigzzzMapBoss3D" then o = "副本地图 Boss 3D模型" end
+	if o == "UIConfigzzzWorldMap" then o = "地圖上標記隊友名稱縮寫並顯示是否戰鬥或死亡" end
+	if o == "UIConfigzzzMiniTrinketMenu" then o = "饰品插件" end
+	if o == "UIConfigzzzMicroMenu" then o = "微型菜单" end
+	if o == "UIConfigzzzDifficulty" then o = "副本难度提示" end
+	if o == "UIConfigzzzThreat" then o = "威胁值" end
+	if o == "UIConfigzzzCurrency" then o = "常用货币显示" end
+	if o == "UIConfigzzzObjectiveTracker" then o = "任务追踪增强" end
+	if o == "UIConfigzzzFocuser" then o = "焦点" end
+	if o == "UIConfigzzzSuddenDeath" then o = "斩杀提示" end
+	if o == "UIConfigzzzSnowfallCursor" then o = "鼠标位置闪光" end
+	if o == "UIConfigzzzMicroButton" then o = "增加skada/Roll按钮" end
+	if o == "UIConfigzzzMisc_VignetteAlert" then o = "稀有提示" end
+	if o == "UIConfigzzzMisc_autopet" then o = "自动召唤宠物" end
+	if o == "UIConfigzzzMisc_FlashTaskBar" then o = "任务栏闪光" end
+	if o == "UIConfigzzzItemType" then o = "鼠标提示物品分类" end
+	if o == "UIConfigzzzLoot" then o = "拾取自动确认" end
+	if o == "UIConfigzzzAFK" then o = "AFK界面" end
 
 	T.option = o
 end

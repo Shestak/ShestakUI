@@ -243,6 +243,32 @@
 	<Script file="Modules\Tooltip\UnitRole.lua"/>
 	<Script file="Modules\Tooltip\CheckItemTransmogrify.lua"/>
 	<Script file="Modules\Tooltip\InstanceLockCompare.lua"/>
+	
+	<Script file="zzz\Model.lua"/>
+	<Script file="zzz\CombatAlert.lua"/>
+	<Script file="zzz\Difficulty.lua"/>
+	<Script file="zzz\Fish.lua"/>
+	<Script file="zzz\Focuser.lua"/>
+	<Script file="zzz\Chat.lua"/>
+	<Script file="zzz\Worldmap.lua"/>
+	<Script file="zzz\Loot.lua"/>
+	<Script file="zzz\MapBoss3D.lua"/>
+	<Script file="zzz\MiniTrinketMenu.lua"/>
+	<Script file="zzz\Rollbar.lua"/>
+	<Script file="zzz\MicroButton.lua"/>
+	<Script file="zzz\MacroTooltip.lua"/>
+	<Script file="zzz\ObjectiveTracker.lua"/>
+	<Script file="zzz\Currency.lua"/>
+	<Script file="zzz\BodyguardFocusAlert.lua"/>
+	<Script file="zzz\MicroMenu.lua"/>
+	<Script file="zzz\SuddenDeath.lua"/>
+	<Script file="zzz\SnowfallCursor.lua"/>
+	<Script file="zzz\Tip.lua"/>
+	<Script file="zzz\Iskar.lua"/>
+	<Script file="zzz\QuickTalents.lua"/>
+	<Script file="zzz\Misc.lua"/>
+	<Script file="zzz\AFK.lua"/>
+	<Script file="zzz\Threat\Threat.lua"/>
 
 	<Script file="Core\Movers.lua"/>
 </Ui>

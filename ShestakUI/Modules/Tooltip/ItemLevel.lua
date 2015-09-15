@@ -226,6 +226,7 @@ end)
 
 --- Handle Events
 f:SetScript("OnEvent", function(self, event, ...)
+	wipe(GearDB)
 	if event == "UNIT_INVENTORY_CHANGED" then
 		local unit = ...
 		if UnitGUID(unit) == currentGUID then
