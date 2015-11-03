@@ -71,6 +71,11 @@ C["filger_spells"] = {
 			-- 1.1: Alchemy Stones
 			-- Strength
 			{spellID = 60229, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.2: Hallow's End
+			-- Brawler's Statue (Bonus Armor, Use)
+			{spellID = 127967, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Coren's Cold Chromium (Attack Power, Proc)
+			{spellID = 127926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -362,6 +367,15 @@ C["filger_spells"] = {
 			{spellID = 60233, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Intellect
 			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.2: Hallow's End
+			-- Brawler's Statue (Bonus Armor, Use)
+			{spellID = 127967, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Coren's Cold Chromium (Attack Power, Proc)
+			{spellID = 127926, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Mithril Wristwatch (Spell Power, Proc)
+			{spellID = 127924, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thousand-Year Pickled Egg (Haste, Proc)
+			{spellID = 127914, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -421,7 +435,7 @@ C["filger_spells"] = {
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
 			{spellID = 165485, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Malicious Censer
+			-- Malicious Censer (Agility, Proc)
 			{spellID = 183926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror of the Blademaster (Images, Proc)
 			{spellID = 184270, unitID = "player", caster = "player", filter = "BUFF"},
@@ -707,6 +721,9 @@ C["filger_spells"] = {
 			-- 1.1: Alchemy Stones
 			-- Agility
 			{spellID = 60233, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.2: Hallow's End
+			-- Coren's Cold Chromium (Attack Power, Proc)
+			{spellID = 127926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -734,7 +751,7 @@ C["filger_spells"] = {
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
 			{spellID = 165485, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Malicious Censer
+			-- Malicious Censer (Agility, Proc)
 			{spellID = 183926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror of the Blademaster (Images, Proc)
 			{spellID = 184270, unitID = "player", caster = "player", filter = "BUFF"},
@@ -978,6 +995,9 @@ C["filger_spells"] = {
 			-- 1.1: Alchemy Stones
 			-- Intellect
 			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.2: Hallow's End
+			-- Mithril Wristwatch (Spell Power, Proc)
+			{spellID = 127924, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1285,6 +1305,13 @@ C["filger_spells"] = {
 			{spellID = 60233, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Intellect
 			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.2: Hallow's End
+			-- Brawler's Statue (Bonus Armor, Use)
+			{spellID = 127967, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Coren's Cold Chromium (Attack Power, Proc)
+			{spellID = 127926, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thousand-Year Pickled Egg (Haste, Proc)
+			{spellID = 127914, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1340,7 +1367,7 @@ C["filger_spells"] = {
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
 			{spellID = 165485, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Malicious Censer
+			-- Malicious Censer (Agility, Proc)
 			{spellID = 183926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror of the Blademaster (Images, Proc)
 			{spellID = 184270, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1549,11 +1576,18 @@ C["filger_spells"] = {
 			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking (Crit, Proc)
 			{spellID = 162917, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 1.1 Alchemy Stones
+			-- 1.1: Alchemy Stones
 			-- Strength
 			{spellID = 60229, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Intellect
 			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.2: Hallow's End
+			-- Brawler's Statue (Bonus Armor, Use)
+			{spellID = 127967, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Coren's Cold Chromium (Attack Power, Proc)
+			{spellID = 127926, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thousand-Year Pickled Egg (Haste, Proc)
+			{spellID = 127914, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1831,6 +1865,11 @@ C["filger_spells"] = {
 			-- 1.1: Alchemy Stones
 			-- Intellect
 			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.2: Hallow's End
+			-- Mithril Wristwatch (Spell Power, Proc)
+			{spellID = 127924, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thousand-Year Pickled Egg (Haste, Proc)
+			{spellID = 127914, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2142,6 +2181,9 @@ C["filger_spells"] = {
 			-- 1.1: Alchemy Stones
 			-- Agility
 			{spellID = 60233, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.2: Hallow's End
+			-- Coren's Cold Chromium (Attack Power, Proc)
+			{spellID = 127926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2169,7 +2211,7 @@ C["filger_spells"] = {
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
 			{spellID = 165485, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Malicious Censer
+			-- Malicious Censer (Agility, Proc)
 			{spellID = 183926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror of the Blademaster (Images, Proc)
 			{spellID = 184270, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2379,6 +2421,13 @@ C["filger_spells"] = {
 			{spellID = 60233, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Intellect
 			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.2: Hallow's End
+			-- Coren's Cold Chromium (Attack Power, Proc)
+			{spellID = 127926, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Mithril Wristwatch (Spell Power, Proc)
+			{spellID = 127924, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thousand-Year Pickled Egg (Haste, Proc)
+			{spellID = 127914, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2410,7 +2459,7 @@ C["filger_spells"] = {
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
 			{spellID = 165485, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Malicious Censer
+			-- Malicious Censer (Agility, Proc)
 			{spellID = 183926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror of the Blademaster (Images, Proc)
 			{spellID = 184270, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2678,6 +2727,9 @@ C["filger_spells"] = {
 			-- 1.1: Alchemy Stones
 			-- Intellect
 			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.2: Hallow's End
+			-- Mithril Wristwatch (Spell Power, Proc)
+			{spellID = 127924, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2927,6 +2979,11 @@ C["filger_spells"] = {
 			-- 1.1: Alchemy Stones
 			-- Strength
 			{spellID = 60229, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 1.2: Hallow's End
+			-- Brawler's Statue (Bonus Armor, Use)
+			{spellID = 127967, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Coren's Cold Chromium (Attack Power, Proc)
+			{spellID = 127926, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -3138,7 +3195,7 @@ C["filger_spells"] = {
 			{spellID = 161495, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Wand of Lightning Shield
 			{spellID = 171725, unitID = "player", caster = "all", filter = "BUFF"},
-
+			
 			-- Potions: Draenor
 			-- Draenic Agility Potion
 			{spellID = 156423, unitID = "player", caster = "player", filter = "BUFF"},
@@ -3180,7 +3237,7 @@ C["filger_spells"] = {
 			-- Brawler's Draenic Strength Potion
 			{spellID = 176109, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 
-			-- Leeroy Jenkins
+			-- Raid Amplification: General
 			-- Ancient Hysteria
 			{spellID = 90355, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Drums of Rage
@@ -3191,6 +3248,15 @@ C["filger_spells"] = {
 			{spellID = 32182, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Time Warp
 			{spellID = 80353, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Raid Amplification: Draenor
+			-- Maalus, The Blood Drinker
+			{spellID = 187615, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Nithramus, The All-Seer
+			{spellID = 187611, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Sanctus, Sigil Of The Unbroken
+			{spellID = 187613, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Thorasus, The Stone Heart Of Draenor
+			{spellID = 187614, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Professions
 			-- Goblin Glider Kit
