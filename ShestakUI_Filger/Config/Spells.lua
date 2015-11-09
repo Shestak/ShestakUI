@@ -3237,9 +3237,11 @@ C["filger_spells"] = {
 			-- Brawler's Draenic Strength Potion
 			{spellID = 176109, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 
-			-- Raid Amplification: General
+			-- Raid Amplifiers: General
 			-- Ancient Hysteria
 			{spellID = 90355, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Drums of Fury
+			{spellID = 178207, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Drums of Rage
 			{spellID = 146555, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Bloodlust
@@ -3248,7 +3250,7 @@ C["filger_spells"] = {
 			{spellID = 32182, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Time Warp
 			{spellID = 80353, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Raid Amplification: Draenor
+			-- Raid Amplifiers: Draenor
 			-- Maalus, The Blood Drinker
 			{spellID = 187615, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Nithramus, The All-Seer
