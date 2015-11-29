@@ -2173,7 +2173,7 @@ C["filger_spells"] = {
 			-- Item Sets
 			-- Deathly Shadows (T18)
 			{spellID = 188700, unitID = "player", caster = "player", filter = "BUFF"},
-			
+
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
 			-- Melee DPS (Crit, Proc)
@@ -3195,7 +3195,7 @@ C["filger_spells"] = {
 			{spellID = 161495, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Wand of Lightning Shield
 			{spellID = 171725, unitID = "player", caster = "all", filter = "BUFF"},
-			
+
 			-- Potions: Draenor
 			-- Draenic Agility Potion
 			{spellID = 156423, unitID = "player", caster = "player", filter = "BUFF"},
