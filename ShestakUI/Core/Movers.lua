@@ -21,7 +21,7 @@ T.MoverFrames = {
 	ThreatMeterAnchor,
 	LootRollAnchor,
 	RaidBuffsAnchor,
-	DCPAnchor,
+	PulseCDAnchor,
 	AutoButtonAnchor,
 	TooltipAnchor,
 	ChatBar,

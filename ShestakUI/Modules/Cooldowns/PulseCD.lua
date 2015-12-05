@@ -9,11 +9,11 @@ local fadeInTime, fadeOutTime, maxAlpha, elapsed, runtimer = 0.5, 0.7, 1, 0, 0
 local animScale, iconSize, holdTime, threshold = C.pulsecooldown.anim_scale, C.pulsecooldown.size, C.pulsecooldown.hold_time, C.pulsecooldown.threshold
 local cooldowns, animating, watching = {}, {}, {}
 
-local anchor = CreateFrame("Frame", "DCPAnchor", UIParent)
+local anchor = CreateFrame("Frame", "PulseCDAnchor", UIParent)
 anchor:SetSize(C.pulsecooldown.size, C.pulsecooldown.size)
 anchor:SetPoint(unpack(C.position.pulse_cooldown))
 
-local frame = CreateFrame("Frame", "DCPFrame", anchor)
+local frame = CreateFrame("Frame", "PulseCDFrame", anchor)
 frame:SetScript("OnEvent", function(self, event, ...) self[event](self, ...) end)
 frame:SetBackdrop({
 	bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = T.noscalemult,
