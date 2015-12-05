@@ -238,7 +238,7 @@ SLASH_FRAME2 = "/акфьу"
 --	Frame Stack on Cyrillic
 ----------------------------------------------------------------------------------------
 SlashCmdList.FSTACK = function()
-	SlashCmdList.FRAMESTACK()
+	SlashCmdList.FRAMESTACK(0)
 end
 SLASH_FSTACK1 = "/аыефсл"
 SLASH_FSTACK2 = "/fs"
