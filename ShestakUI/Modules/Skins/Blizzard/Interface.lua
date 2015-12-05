@@ -82,6 +82,7 @@ local function LoadSkin()
 		"DisplayPanelRotateMinimap",
 		"DisplayPanelShowAccountAchievments",
 		"DisplayPanelShowFreeBagSpace",
+		"DisplayPanelAJAlerts",
 		-- Objectives
 		"ObjectivesPanelAutoQuestTracking",
 		"ObjectivesPanelMapQuestDifficulty",
