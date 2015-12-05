@@ -396,7 +396,7 @@ local function Local(o)
 	if o == "UIConfigunitframe_class_barcomboalways" then o = L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS end
 	if o == "UIConfigunitframe_class_barshadow" then o = L_GUI_UF_PLUGINS_SHADOW_BAR end
 	if o == "UIConfigunitframe_class_barchi" then o = L_GUI_UF_PLUGINS_CHI_BAR end
-	if o == "UIConfigunitframe_class_barvengeance" then o = L_GUI_UF_PLUGINS_VENGEANCE_BAR end
+	if o == "UIConfigunitframe_class_barresolve" then o = L_GUI_UF_PLUGINS_RESOLVE_BAR end
 	if o == "UIConfigunitframe_class_bareclipse" then o = L_GUI_UF_PLUGINS_ECLIPSE_BAR end
 	if o == "UIConfigunitframe_class_barholy" then o = L_GUI_UF_PLUGINS_HOLY_BAR end
 	if o == "UIConfigunitframe_class_barshard" then o = L_GUI_UF_PLUGINS_SHARD_BAR end

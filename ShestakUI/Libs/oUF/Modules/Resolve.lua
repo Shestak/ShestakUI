@@ -1,5 +1,5 @@
 local T, C, L = unpack(select(2, ...))
-if C.unitframe.enable ~= true or C.unitframe_class_bar.vengeance ~= true then return end
+if C.unitframe.enable ~= true or C.unitframe_class_bar.resolve ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Based on oUF_VengeanceBar(by Evilpaul)
@@ -7,25 +7,25 @@ if C.unitframe.enable ~= true or C.unitframe_class_bar.vengeance ~= true then re
 local _, ns = ...
 local oUF = ns.oUF
 
-local VENGEANCE_ID = GetSpellInfo(158300)
+local RESOLVE_ID = GetSpellInfo(158300)
 
 local Update = function(self, event, unit)
 	if self.unit ~= unit then return end
 
-	local vb = self.VengeanceBar
+	local vb = self.ResolveBar
 
 	if vb.PreUpdate then vb:PreUpdate(unit) end
 
-	local _, _, _, _, _, _, _, _, _, _, spellid, _, _, _, vengeanceValue = UnitBuff("player", VENGEANCE_ID)
+	local _, _, _, _, _, _, _, _, _, _, spellid, _, _, _, resolveValue = UnitBuff("player", RESOLVE_ID)
 
-	if spellid == 158300 and vengeanceValue and vengeanceValue > 0 then
+	if spellid == 158300 and resolveValue and resolveValue > 0 then
 		vb.Bar:SetMinMaxValues(0, 200)
 
 		if vb.Text then
-			vb.Text:SetText(vengeanceValue)
+			vb.Text:SetText(resolveValue)
 		end
 
-		vb.Bar:SetValue(vengeanceValue)
+		vb.Bar:SetValue(resolveValue)
 		vb:Show()
 
 		if self.Debuffs then
@@ -63,7 +63,7 @@ local Update = function(self, event, unit)
 end
 
 local Path = function(self, ...)
-	return (self.VengeanceBar.Override or Update) (self, ...)
+	return (self.ResolveBar.Override or Update) (self, ...)
 end
 
 local ForceUpdate = function(element)
@@ -71,7 +71,7 @@ local ForceUpdate = function(element)
 end
 
 local Enable = function(self)
-	local vb = self.VengeanceBar
+	local vb = self.ResolveBar
 	if vb then
 		vb.__owner = self
 		vb.ForceUpdate = ForceUpdate
@@ -84,11 +84,11 @@ local Enable = function(self)
 end
 
 local Disable = function(self)
-	local vb = self.VengeanceBar
+	local vb = self.ResolveBar
 	if vb then
 		self:UnregisterEvent("UNIT_AURA", Path)
 		self:UnregisterEvent("UNIT_MAXHEALTH", Path)
 	end
 end
 
-oUF:AddElement("VengeanceBar", Path, Enable, Disable)
+oUF:AddElement("ResolveBar", Path, Enable, Disable)

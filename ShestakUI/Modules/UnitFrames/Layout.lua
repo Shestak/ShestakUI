@@ -613,32 +613,32 @@ local function Shared(self, unit)
 			end
 		end
 
-		-- Vengeance bar
-		if C.unitframe_class_bar.vengeance == true then
-			self.VengeanceBar = CreateFrame("Frame", self:GetName().."_VengeanceBar", self)
-			self.VengeanceBar:CreateBackdrop("Default")
+		-- Resolve bar
+		if C.unitframe_class_bar.resolve == true then
+			self.ResolveBar = CreateFrame("Frame", self:GetName().."_ResolveBar", self)
+			self.ResolveBar:CreateBackdrop("Default")
 			if (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
 			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true)
 			or (T.class == "MONK" and C.unitframe_class_bar.chi == true) then
-				self.VengeanceBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
+				self.ResolveBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
 			else
-				self.VengeanceBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				self.ResolveBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			end
-			self.VengeanceBar:SetSize(217, 7)
+			self.ResolveBar:SetSize(217, 7)
 
-			self.VengeanceBar.Bar = CreateFrame("StatusBar", nil, self.VengeanceBar)
-			self.VengeanceBar.Bar:SetPoint("LEFT", self.VengeanceBar, "LEFT", 0, 0)
-			self.VengeanceBar.Bar:SetSize(217, 7)
-			self.VengeanceBar.Bar:SetStatusBarTexture(C.media.texture)
-			self.VengeanceBar.Bar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
+			self.ResolveBar.Bar = CreateFrame("StatusBar", nil, self.ResolveBar)
+			self.ResolveBar.Bar:SetPoint("LEFT", self.ResolveBar, "LEFT", 0, 0)
+			self.ResolveBar.Bar:SetSize(217, 7)
+			self.ResolveBar.Bar:SetStatusBarTexture(C.media.texture)
+			self.ResolveBar.Bar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
 
-			self.VengeanceBar.bg = self.VengeanceBar.Bar:CreateTexture(nil, "BORDER")
-			self.VengeanceBar.bg:SetAllPoints()
-			self.VengeanceBar.bg:SetTexture(C.media.texture)
-			self.VengeanceBar.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
+			self.ResolveBar.bg = self.ResolveBar.Bar:CreateTexture(nil, "BORDER")
+			self.ResolveBar.bg:SetAllPoints()
+			self.ResolveBar.bg:SetTexture(C.media.texture)
+			self.ResolveBar.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
 
-			self.VengeanceBar.Text = T.SetFontString(self.VengeanceBar.Bar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.VengeanceBar.Text:SetPoint("CENTER", self.VengeanceBar.Bar, "CENTER", 0, 0)
+			self.ResolveBar.Text = T.SetFontString(self.ResolveBar.Bar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+			self.ResolveBar.Text:SetPoint("CENTER", self.ResolveBar.Bar, "CENTER", 0, 0)
 		end
 
 		-- Experience bar

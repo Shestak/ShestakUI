@@ -54,12 +54,12 @@
 	<Script file="Modules\RaidDebuffs.lua"/>
 	<Script file="Modules\RangeBar.lua"/>
 	<Script file="Modules\Reputation.lua"/>
+	<Script file="Modules\Resolve.lua"/>
 	<Script file="Modules\Smooth.lua"/>
 	<Script file="Modules\Swing.lua"/>
 	<Script file="Modules\Talents.lua"/>
 	<Script file="Modules\TotemBar.lua"/>
 	<Script file="Modules\Trinkets.lua"/>
-	<Script file="Modules\Vengeance.lua"/>
 
 	<!-- Clique Support -->
 	<Button name="oUF_ClickCastUnitTemplate" virtual="true" inherits="SecureUnitButtonTemplate,SecureHandlerEnterLeaveTemplate">
