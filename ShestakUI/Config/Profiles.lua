@@ -131,7 +131,7 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["unitframe"].plugins_experience_bar = true
 	C["unitframe"].plugins_friendship_bar = true
 	C["unitframe"].plugins_smooth_bar = true
-	C["unitframe"].plugins_talents = true
+	C["unitframe"].plugins_enemy_spec = true
 	C["unitframe"].plugins_fader = true
 	C["unitframe"].plugins_diminishing = true
 	C["raidframe"].raid_tanks_tt = true

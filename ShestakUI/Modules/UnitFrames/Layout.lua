@@ -868,10 +868,10 @@ local function Shared(self, unit)
 			end
 
 			-- Talent spec
-			if C.unitframe.plugins_talents == true then
-				self.Talents = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-				self.Talents:SetTextColor(1, 0, 0)
-				self.Talents:SetPoint("BOTTOM", self.Power, "BOTTOM", 0, -1)
+			if C.unitframe.plugins_enemy_spec == true then
+				self.EnemySpec = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+				self.EnemySpec:SetTextColor(1, 0, 0)
+				self.EnemySpec:SetPoint("BOTTOM", self.Power, "BOTTOM", 0, -1)
 			end
 
 			-- Quest icon
@@ -1145,15 +1145,15 @@ local function Shared(self, unit)
 		self.AuraTracker.text:SetPoint("CENTER", self.AuraTracker, 0, 0)
 		self.AuraTracker:SetScript("OnUpdate", T.AuraTrackerTime)
 
-		if C.unitframe.plugins_talents == true then
-			self.Talents = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.Talents:SetTextColor(1, 0, 0)
+		if C.unitframe.plugins_enemy_spec == true then
+			self.EnemySpec = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+			self.EnemySpec:SetTextColor(1, 0, 0)
 			if C.unitframe.arena_on_right == true then
-				self.Talents:SetPoint("RIGHT", self.Power, "RIGHT", 0, 0)
-				self.Talents:SetJustifyH("LEFT")
+				self.EnemySpec:SetPoint("RIGHT", self.Power, "RIGHT", 0, 0)
+				self.EnemySpec:SetJustifyH("LEFT")
 			else
-				self.Talents:SetPoint("LEFT", self.Power, "LEFT", 2, 0)
-				self.Talents:SetJustifyH("RIGHT")
+				self.EnemySpec:SetPoint("LEFT", self.Power, "LEFT", 2, 0)
+				self.EnemySpec:SetJustifyH("RIGHT")
 			end
 		end
 	end
@@ -1474,8 +1474,8 @@ SlashCmdList.TEST_UF = function(msg)
 				_G["oUF_Arena"..i.."Target"]:Show()
 				_G["oUF_Arena"..i.."Target"]:UpdateAllElements()
 
-				if C.unitframe.plugins_talents == true then
-					_G["oUF_Arena"..i].Talents:SetText(TALENTS)
+				if C.unitframe.plugins_enemy_spec == true then
+					_G["oUF_Arena"..i].EnemySpec:SetText(TALENTS)
 				end
 
 				if C.unitframe.plugins_diminishing == true then

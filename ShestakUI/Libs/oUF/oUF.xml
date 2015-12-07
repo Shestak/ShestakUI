@@ -45,6 +45,7 @@
 	<Script file="Modules\CombatFeedback.lua"/>
 	<Script file="Modules\CounterBar.lua"/>
 	<Script file="Modules\DebuffHighlight.lua"/>
+	<Script file="Modules\EnemySpec.lua"/>
 	<Script file="Modules\Experience.lua"/>
 	<Script file="Modules\FactionIcon.lua"/>
 	<Script file="Modules\Fader.lua"/>
@@ -57,7 +58,6 @@
 	<Script file="Modules\Resolve.lua"/>
 	<Script file="Modules\Smooth.lua"/>
 	<Script file="Modules\Swing.lua"/>
-	<Script file="Modules\Talents.lua"/>
 	<Script file="Modules\TotemBar.lua"/>
 	<Script file="Modules\Trinkets.lua"/>
 
