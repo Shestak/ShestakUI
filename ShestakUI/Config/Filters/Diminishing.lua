@@ -139,3 +139,10 @@ T.DiminishingIcons = {
 	["rnddis"] = GetIcon(31661),
 	["silence"] = GetIcon(15487),
 }
+
+for spell in pairs(T.DiminishingSpells) do
+	local name = GetSpellInfo(spell)
+	if not name then
+		print("|cffff0000WARNING: spell ID ["..tostring(spell).."] no longer exists! Report this to Shestak.|r")
+	end
+end

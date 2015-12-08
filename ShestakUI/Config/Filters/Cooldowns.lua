@@ -42,10 +42,14 @@ if C.raidcooldown.enable == true then
 		[2825] = 300,	-- Bloodlust
 		[80353] = 300,	-- Time Warp
 		[90355] = 300,	-- Ancient Hysteria
-		[159916] = 120,	-- Amplify Magic
 		[106898] = 120,	-- Stampeding Roar
-		[172106] = 180,	-- Aspect of the Fox
 	}
+	for spell in pairs(T.raid_spells) do
+		local name = GetSpellInfo(spell)
+		if not name then
+			print("|cffff0000WARNING: spell ID ["..tostring(spell).."] no longer exists! Report this to Shestak.|r")
+		end
+	end
 end
 
 if C.enemycooldown.enable == true then
@@ -53,7 +57,7 @@ if C.enemycooldown.enable == true then
 		-- Interrupts and Silences
 		[57994] = 12,	-- Wind Shear
 		[47528] = 15,	-- Mind Freeze
-		[80965] = 15,	-- Skull Bash
+		[106839] = 15,	-- Skull Bash
 		[116705] = 15,	-- Spear Hand Strike
 		[96231] = 15,	-- Rebuke
 		[1766] = 15,	-- Kick
@@ -101,6 +105,12 @@ if C.enemycooldown.enable == true then
 		[33206] = 180,	-- Pain Suppression
 		[7744] = 180,	-- Will of the Forsaken (Racial)
 	}
+	for spell in pairs(T.enemy_spells) do
+		local name = GetSpellInfo(spell)
+		if not name then
+			print("|cffff0000WARNING: spell ID ["..tostring(spell).."] no longer exists! Report this to Shestak.|r")
+		end
+	end
 end
 
 if C.pulsecooldown.enable == true then

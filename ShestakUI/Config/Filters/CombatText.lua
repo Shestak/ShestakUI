@@ -343,3 +343,10 @@ elseif T.class == "WARRIOR" then
 		T.healfilter[159363] = true	-- Blood Craze
 	end
 end
+
+for spell in pairs(T.aoespam) do
+	local name = GetSpellInfo(spell)
+	if not name then
+		print("|cffff0000WARNING: spell ID ["..tostring(spell).."] no longer exists! Report this to Shestak.|r")
+	end
+end
