@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.error.white ~= true and C.error.black ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	All errors on www.wowwiki.com/WoW_Constants/Errors
+--	All errors on http://wowwiki.wikia.com/wiki/WoW_Constants/Errors
 ----------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------
