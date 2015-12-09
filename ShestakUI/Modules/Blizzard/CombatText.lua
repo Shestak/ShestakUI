@@ -936,11 +936,17 @@ if C.combattext.healing then
 						local color = {}
 						local rawamount = amount
 						if C.combattext.show_overhealing and abs(overhealing) > 0 then
-							amount = math.floor(amount-overhealing).." ["..floor(overhealing).."]"
+							if C.combattext.short_numbers == true then
+								amount = T.ShortValue(math.floor(amount-overhealing)).." ["..T.ShortValue(floor(overhealing)).."]"
+							else
+								amount = math.floor(amount-overhealing).." ["..floor(overhealing).."]"
+							end
+						else
+							if C.combattext.short_numbers == true then
+								amount = T.ShortValue(amount)
+							end
 						end
-						if C.combattext.short_numbers == true then
-							amount = T.ShortValue(amount)
-						end
+
 						if critical then
 							amount = "|cffFF0000"..C.combattext.crit_prefix.."|r"..amount.."|cffFF0000"..C.combattext.crit_postfix.."|r"
 							color = {0.1, 1, 0.1}
