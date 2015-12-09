@@ -135,6 +135,7 @@ L_GUI_COMBATTEXT_MERGE_MELEE = "Merges multiple auto attack damage spam"
 L_GUI_COMBATTEXT_DISPEL = "Tells you about your dispels"
 L_GUI_COMBATTEXT_INTERRUPT = "Tells you about your interrupts"
 L_GUI_COMBATTEXT_DIRECTION = "Scrolling Direction('top'(goes down) or 'bottom'(goes up))"
+L_GUI_COMBATTEXT_SHORT_NUMBERS = "Use short numbers ('25.3k' instead of '25342')"
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Buffs Reminder"

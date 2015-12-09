@@ -138,6 +138,7 @@ L_GUI_COMBATTEXT_MERGE_MELEE = "Объединять автоатаки в од�
 L_GUI_COMBATTEXT_DISPEL = "Отображать ваши рассеивания"
 L_GUI_COMBATTEXT_INTERRUPT = "Отображать ваши прерывания"
 L_GUI_COMBATTEXT_DIRECTION = "Направление прокрутки текста боя ('top'[вниз] или 'bottom'[вверх])"
+L_GUI_COMBATTEXT_SHORT_NUMBERS = "Сокращать цифры ('25.3k' вместо '25342')"
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Напоминания"

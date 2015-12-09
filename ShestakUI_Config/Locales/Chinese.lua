@@ -138,6 +138,7 @@ L_GUI_COMBATTEXT_MERGE_MELEE = "将多个自动攻击伤害合并为一条信息
 L_GUI_COMBATTEXT_DISPEL = "当你驱散成功时提示"
 L_GUI_COMBATTEXT_INTERRUPT = "当你打断成功时提示"
 L_GUI_COMBATTEXT_DIRECTION = "滚动方向('top'(向上) or 'bottom'(向下))"
+L_GUI_COMBATTEXT_SHORT_NUMBERS = "Use short numbers ('25.3k' instead of '25342')" -- Need review
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Buff提示"

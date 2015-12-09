@@ -138,6 +138,7 @@ L_GUI_COMBATTEXT_MERGE_MELEE = "Merges multiple auto attack damage spam" -- Need
 L_GUI_COMBATTEXT_DISPEL = "Informiert dich über deine Bannungen"
 L_GUI_COMBATTEXT_INTERRUPT = "Informiert dich über deine Unterbrechungen"
 L_GUI_COMBATTEXT_DIRECTION = "Bildlaufrichtung('top'(geht hoch) or 'bottom'(goes runter))"
+L_GUI_COMBATTEXT_SHORT_NUMBERS = "Use short numbers ('25.3k' instead of '25342')" -- Need review
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Erinnerungen für Buffs"

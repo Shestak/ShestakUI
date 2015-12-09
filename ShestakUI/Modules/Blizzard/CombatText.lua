@@ -64,15 +64,30 @@ local function OnEvent(self, event, subevent, ...)
 			return
 		else
 			if subevent == "DAMAGE" then
+				if C.combattext.short_numbers == true then
+					arg2 = T.ShortValue(arg2)
+				end
 				xCT1:AddMessage("-"..arg2, 0.75, 0.1, 0.1)
 			elseif subevent == "DAMAGE_CRIT" then
+				if C.combattext.short_numbers == true then
+					arg2 = T.ShortValue(arg2)
+				end
 				xCT1:AddMessage("|cffFF0000"..C.combattext.crit_prefix.."|r".."-"..arg2.."|cffFF0000"..C.combattext.crit_postfix.."|r", 1, 0.1, 0.1)
 			elseif subevent == "SPELL_DAMAGE" then
+				if C.combattext.short_numbers == true then
+					arg2 = T.ShortValue(arg2)
+				end
 				xCT1:AddMessage("-"..arg2, 0.75, 0.3, 0.85)
 			elseif subevent == "SPELL_DAMAGE_CRIT" then
+				if C.combattext.short_numbers == true then
+					arg2 = T.ShortValue(arg2)
+				end
 				xCT1:AddMessage("|cffFF0000"..C.combattext.crit_prefix.."|r".."-"..arg2.."|cffFF0000"..C.combattext.crit_postfix.."|r", 1, 0.3, 0.5)
 			elseif subevent == "HEAL" then
 				if arg3 >= C.combattext.heal_treshold then
+					if C.combattext.short_numbers == true then
+						arg3 = T.ShortValue(arg3)
+					end
 					if arg2 then
 						if COMBAT_TEXT_SHOW_FRIENDLY_NAMES == "1" then
 							xCT2:AddMessage(arg2.." +"..arg3, 0.1, 0.75, 0.1)
@@ -83,6 +98,9 @@ local function OnEvent(self, event, subevent, ...)
 				end
 			elseif subevent == "HEAL_CRIT" then
 				if arg3 >= C.combattext.heal_treshold then
+					if C.combattext.short_numbers == true then
+						arg3 = T.ShortValue(arg3)
+					end
 					if arg2 then
 						if COMBAT_TEXT_SHOW_FRIENDLY_NAMES == "1" then
 							xCT2:AddMessage(arg2.." +"..arg3, 0.1, 1, 0.1)
@@ -93,10 +111,16 @@ local function OnEvent(self, event, subevent, ...)
 				end
 			elseif subevent == "PERIODIC_HEAL" then
 				if arg3 >= C.combattext.heal_treshold then
+					if C.combattext.short_numbers == true then
+						arg3 = T.ShortValue(arg3)
+					end
 					xCT2:AddMessage("+"..arg3, 0.1, 0.5, 0.1)
 				end
 			elseif subevent == "ABSORB_ADDED" and GetCVar("CombatHealingAbsorbSelf") == "1" then
 				if arg3 >= C.combattext.heal_treshold then
+					if C.combattext.short_numbers == true then
+						arg3 = T.ShortValue(arg3)
+					end
 					if arg2 then
 						if COMBAT_TEXT_SHOW_FRIENDLY_NAMES == "1" then
 							xCT2:AddMessage(arg2.." +"..arg3, 0.6, 0.65, 0.1)
@@ -137,6 +161,10 @@ local function OnEvent(self, event, subevent, ...)
 				xCT1:AddMessage(REFLECT, 0.5, 0.5, 0.5)
 			elseif subevent == "RESIST" then
 				if arg3 then
+					if C.combattext.short_numbers == true then
+						arg2 = T.ShortValue(arg2)
+						arg3 = T.ShortValue(arg3)
+					end
 					if COMBAT_TEXT_SHOW_RESISTANCES == "1" then
 						xCT1:AddMessage(part:format(arg2, RESIST, arg3), 0.75, 0.5, 0.5)
 					else
@@ -147,6 +175,10 @@ local function OnEvent(self, event, subevent, ...)
 				end
 			elseif subevent == "BLOCK" then
 				if arg3 then
+					if C.combattext.short_numbers == true then
+						arg2 = T.ShortValue(arg2)
+						arg3 = T.ShortValue(arg3)
+					end
 					if COMBAT_TEXT_SHOW_RESISTANCES == "1" then
 						xCT1:AddMessage(part:format(arg2, BLOCK, arg3), 0.75, 0.5, 0.5)
 					else
@@ -157,6 +189,10 @@ local function OnEvent(self, event, subevent, ...)
 				end
 			elseif subevent == "ABSORB" then
 				if arg3 then
+					if C.combattext.short_numbers == true then
+						arg2 = T.ShortValue(arg2)
+						arg3 = T.ShortValue(arg3)
+					end
 					if COMBAT_TEXT_SHOW_RESISTANCES == "1" then
 						xCT1:AddMessage(part:format(arg2, ABSORB, arg3), 0.75, 0.5, 0.5)
 					else
@@ -167,6 +203,10 @@ local function OnEvent(self, event, subevent, ...)
 				end
 			elseif subevent == "SPELL_RESIST" then
 				if arg3 then
+					if C.combattext.short_numbers == true then
+						arg2 = T.ShortValue(arg2)
+						arg3 = T.ShortValue(arg3)
+					end
 					if COMBAT_TEXT_SHOW_RESISTANCES == "1" then
 						xCT1:AddMessage(part:format(arg2, RESIST, arg3), 0.5, 0.3, 0.5)
 					else
@@ -177,6 +217,10 @@ local function OnEvent(self, event, subevent, ...)
 				end
 			elseif subevent == "SPELL_BLOCK" then
 				if arg3 then
+					if C.combattext.short_numbers == true then
+						arg2 = T.ShortValue(arg2)
+						arg3 = T.ShortValue(arg3)
+					end
 					if COMBAT_TEXT_SHOW_RESISTANCES == "1" then
 						xCT1:AddMessage(part:format(arg2, BLOCK, arg3), 0.5, 0.3, 0.5)
 					else
@@ -187,6 +231,10 @@ local function OnEvent(self, event, subevent, ...)
 				end
 			elseif subevent == "SPELL_ABSORB" then
 				if arg3 then
+					if C.combattext.short_numbers == true then
+						arg2 = T.ShortValue(arg2)
+						arg3 = T.ShortValue(arg3)
+					end
 					if COMBAT_TEXT_SHOW_RESISTANCES == "1" then
 						xCT1:AddMessage(part:format(arg2, ABSORB, arg3), 0.5, 0.3, 0.5)
 					else
@@ -647,6 +695,9 @@ if C.combattext.merge_aoe_spam then
 						else
 							count = ""
 						end
+						if C.combattext.short_numbers == true then
+							SQ[k]["queue"] = T.ShortValue(SQ[k]["queue"])
+						end
 						xCT4:AddMessage(SQ[k]["queue"]..count..SQ[k]["msg"], unpack(SQ[k]["color"]))
 						SQ[k]["queue"] = 0
 						SQ[k]["count"] = 0
@@ -688,6 +739,9 @@ if C.combattext.damage then
 				local amount, _, _, _, _, _, critical = select(12, ...)
 				if amount >= C.combattext.treshold then
 					local rawamount = amount
+					if C.combattext.short_numbers == true then
+						amount = T.ShortValue(amount)
+					end
 					if critical then
 						amount = "|cffFF0000"..C.combattext.crit_prefix.."|r"..amount.."|cffFF0000"..C.combattext.crit_postfix.."|r"
 					end
@@ -719,6 +773,9 @@ if C.combattext.damage then
 				local spellId, _, _, amount, _, _, _, _, _, critical = select(12, ...)
 				if amount >= C.combattext.treshold then
 					msg = amount
+					if C.combattext.short_numbers == true then
+						msg = T.ShortValue(msg)
+					end
 					if critical then
 						msg = "|cffFF0000"..C.combattext.crit_prefix.."|r"..msg.."|cffFF0000"..C.combattext.crit_postfix.."|r"
 					end
@@ -733,6 +790,9 @@ if C.combattext.damage then
 				if amount >= C.combattext.treshold then
 					local color = {}
 					local rawamount = amount
+					if C.combattext.short_numbers == true then
+						amount = T.ShortValue(amount)
+					end
 					if critical then
 						amount = "|cffFF0000"..C.combattext.crit_prefix.."|r"..amount.."|cffFF0000"..C.combattext.crit_postfix.."|r"
 					end
@@ -875,6 +935,9 @@ if C.combattext.healing then
 					if amount >= C.combattext.heal_treshold then
 						local color = {}
 						local rawamount = amount
+						if C.combattext.short_numbers == true then
+							amount = T.ShortValue(amount)
+						end
 						if C.combattext.show_overhealing and abs(overhealing) > 0 then
 							amount = math.floor(amount-overhealing).." ["..floor(overhealing).."]"
 						end
