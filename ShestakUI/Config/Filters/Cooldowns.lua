@@ -101,9 +101,9 @@ if C.enemycooldown.enable == true then
 		[137562] = 120,	-- Nimble Brew
 		[47585] = 120,	-- Dispersion
 		[1856] = 120,	-- Vanish
+		[7744] = 120,	-- Will of the Forsaken (Racial)
 		[19263] = 180,	-- Deterrence
 		[33206] = 180,	-- Pain Suppression
-		[7744] = 180,	-- Will of the Forsaken (Racial)
 	}
 	for spell in pairs(T.enemy_spells) do
 		local name = GetSpellInfo(spell)
