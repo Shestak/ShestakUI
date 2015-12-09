@@ -167,7 +167,7 @@ C["filger_spells"] = {
 			{spellID = 55095, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			-- Fel Burn (Empty Drinking Horn)
+			-- Fel Burn [Empty Drinking Horn]
 			{spellID = 184256, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
@@ -529,7 +529,7 @@ C["filger_spells"] = {
 			{spellID = 77758, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			-- Mark of Doom (Prophecy of Fear)
+			-- Mark of Doom [Prophecy of Fear]
 			{spellID = 184073, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
@@ -1079,7 +1079,7 @@ C["filger_spells"] = {
 			{spellID = 135029, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			-- Mark of Doom (Prophecy of Fear)
+			-- Mark of Doom [Prophecy of Fear]
 			{spellID = 184073, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
@@ -1703,7 +1703,7 @@ C["filger_spells"] = {
 			{spellID = 20170, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			-- Fel Burn (Empty Drinking Horn)
+			-- Fel Burn [Empty Drinking Horn]
 			{spellID = 184256, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
@@ -1951,7 +1951,7 @@ C["filger_spells"] = {
 			{spellID = 114404, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			-- Mark of Doom (Prophecy of Fear)
+			-- Mark of Doom [Prophecy of Fear]
 			{spellID = 184073, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
@@ -2545,7 +2545,7 @@ C["filger_spells"] = {
 			{spellID = 17364, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			-- Mark of Doom (Prophecy of Fear)
+			-- Mark of Doom [Prophecy of Fear]
 			{spellID = 184073, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
@@ -2690,7 +2690,7 @@ C["filger_spells"] = {
 			{spellID = 113860, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Soul: Instability
 			{spellID = 113858, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fire And Brimstone
+			-- Fire and Brimstone
 			{spellID = 108683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healthstone
 			{spellID = 6262, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2786,7 +2786,7 @@ C["filger_spells"] = {
 			{spellID = 1098, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			-- Mark of Doom (Prophecy of Fear)
+			-- Mark of Doom [Prophecy of Fear]
 			{spellID = 184073, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
@@ -3077,7 +3077,7 @@ C["filger_spells"] = {
 			{spellID = 772, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			-- Fel Burn (Empty Drinking Horn)
+			-- Fel Burn [Empty Drinking Horn]
 			{spellID = 184256, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
@@ -3251,17 +3251,17 @@ C["filger_spells"] = {
 			-- Time Warp
 			{spellID = 80353, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Raid Amplifiers: Draenor
-			-- Maalus, The Blood Drinker
+			-- Maalus, the Blood Drinker
 			{spellID = 187615, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Nithramus, The All-Seer
+			-- Nithramus, the All-Seer
 			{spellID = 187611, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Sanctus, Sigil Of The Unbroken
+			-- Sanctus, Sigil of the Unbroken
 			{spellID = 187613, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Thorasus, The Stone Heart Of Draenor
+			-- Thorasus, the Stone Heart of Draenor
 			{spellID = 187614, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Professions
-			-- Goblin Glider Kit
+			-- Goblin Glider [Goblin Glider Kit]
 			{spellID = 126389, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Nitro Boosts
 			{spellID = 54861, unitID = "player", caster = "player", filter = "BUFF"},
@@ -3269,7 +3269,7 @@ C["filger_spells"] = {
 			{spellID = 55001, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shieldtronic Shield
 			{spellID = 173260, unitID = "player", caster = "all", filter = "BUFF", absID = true},
-			-- Stealthman 54
+			-- Stealth Field [Stealthman 54]
 			{spellID = 156136, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 
 			-- Racial
@@ -3287,7 +3287,7 @@ C["filger_spells"] = {
 			{spellID = 65116, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Zone Buffs
-			-- Burst of Speed (Battlegrounds)
+			-- Speed (Battlegrounds)
 			{spellID = 23451, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Fel Sludge (Tanaan Jungle)
 			{spellID = 188520, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
