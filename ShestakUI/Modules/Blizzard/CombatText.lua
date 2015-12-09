@@ -935,11 +935,11 @@ if C.combattext.healing then
 					if amount >= C.combattext.heal_treshold then
 						local color = {}
 						local rawamount = amount
-						if C.combattext.short_numbers == true then
-							amount = T.ShortValue(amount)
-						end
 						if C.combattext.show_overhealing and abs(overhealing) > 0 then
 							amount = math.floor(amount-overhealing).." ["..floor(overhealing).."]"
+						end
+						if C.combattext.short_numbers == true then
+							amount = T.ShortValue(amount)
 						end
 						if critical then
 							amount = "|cffFF0000"..C.combattext.crit_prefix.."|r"..amount.."|cffFF0000"..C.combattext.crit_postfix.."|r"
