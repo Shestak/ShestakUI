@@ -393,6 +393,7 @@ L_GUI_UF_ICONS_READY_CHECK = "Icone dell'appello"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Evidenzia texture + icona delle penalità"
 L_GUI_UF_PLUGINS_AURA_WATCH = "Icone delle penalità d'incursione"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer sulle icone delle penalità d'incursione"
+L_GUI_UF_PLUGINS_PVP_DEBUFFS = "Show also PvP debuff icons (from the list)" -- Need review
 L_GUI_UF_PLUGINS_HEALCOMM = "Mostra le cure in arrivo sul riquadro"
 L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "'Auto-lancia' resurrezione col tasto centrale quando l'unità è morta (non funziona con Clique attiva)"
 

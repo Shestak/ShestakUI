@@ -393,6 +393,7 @@ L_GUI_UF_ICONS_READY_CHECK = "Отображать иконки готовнос
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Иконка + текстура снимаемых отрицательных эффектов"
 L_GUI_UF_PLUGINS_AURA_WATCH = "Отображать рейдовые отрицательные эффекты"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Таймер на отрицательных эффектах"
+L_GUI_UF_PLUGINS_PVP_DEBUFFS = "Отображать PvP дебаффы (из списка)"
 L_GUI_UF_PLUGINS_HEALCOMM = "Отображать поступающее лечение"
 L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Автовоскрешение средней кнопкой мыши (не работает с Clique)"
 
