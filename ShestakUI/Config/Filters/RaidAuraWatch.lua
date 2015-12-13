@@ -550,8 +550,8 @@ if C.raidframe.plugins_pvp_debuffs == true then
 		[SpellName(47476)] = 3,		-- Strangulate
 		-- Druid
 		[SpellName(33786)] = 3,		-- Cyclone
-		[SpellName(339)] = 2,		-- Entangling Roots
 		[SpellName(78675)] = 3,		-- Solar Beam
+		[SpellName(339)] = 2,		-- Entangling Roots
 		-- Hunter
 		[SpellName(3355)] = 3,		-- Freezing Trap
 		[SpellName(19386)] = 3,		-- Wyvern Sting
