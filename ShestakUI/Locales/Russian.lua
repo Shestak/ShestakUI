@@ -154,9 +154,9 @@ L_PANELS_AFK_LCLICK = "Нажмите ЛКМ, чтобы вернуться."
 
 -- Cooldowns
 L_COOLDOWNS = "Перезарядка: "
-L_COOLDOWNS_COMBATRESS = "CombatRess" -- Needs review
-L_COOLDOWNS_COMBATRESS_REMAINDER = "Combat resurrect: " -- Needs review
-L_COOLDOWNS_NEXTTIME = "Next time: " -- Needs review
+L_COOLDOWNS_COMBATRESS = "Возрождение"
+L_COOLDOWNS_COMBATRESS_REMAINDER = "Возрождений в бою: "
+L_COOLDOWNS_NEXTTIME = "Следующее: "
 
 -- Autoinvite
 L_INVITE_ENABLE = "Автоприглашение включено: "
@@ -250,7 +250,7 @@ L_STATS_BANDWIDTH = "Скорость:"
 L_STATS_DOWNLOAD = "Загрузка:"
 L_STATS_CLEARED_JUNK = "Очищен нежелательный список исключений."
 L_STATS_CLEAR_EXCEPTIONS = "Очистить список исключений."
-L_STATS_CURRENCY_RAID_T = "Raid Seals" -- Needs review
+L_STATS_CURRENCY_RAID_T = "Печати"
 L_STATS_WORLD_MAP = "Нажатие открывает карту."
 L_STATS_CURRENT_XP = "Текущий/Макс. опыт"
 L_STATS_MEMORY_USAGE = "Использование памяти Blizzard:"
