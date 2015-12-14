@@ -305,6 +305,7 @@ L_STATS_WATCH_CURRENCY = "Bereits gesehene Gegenstände aus dem Abzeichen-Fenste
 L_STATS_WATCH_FACTIONS = "Überwache Fraktionen aus dem Ruffenster."
 L_STATS_TOOLTIP_TIME_PLAYED = "Wenn das max. Level erreicht ist, wird das Tooltip die gespielte Zeit für den Account anzeigen."
 L_STATS_TOOLTIP_EXPERIENCE = "Wenn unter dem max. Level, wird ein Tooltip mit weiteren Details angezeigt."
+L_STATS_SEALS = "Seals this week" -- Needs review
 
 -- Slash commands
 L_SLASHCMD_HELP = {

@@ -305,6 +305,7 @@ L_STATS_WATCH_CURRENCY = "Consulté onglet monnaie articles se reflétera dans l
 L_STATS_WATCH_FACTIONS = "Superviser les factions de l'onglet de Réputation."
 L_STATS_TOOLTIP_TIME_PLAYED = "Quand vous êtes au niveau maximum, la bulle d'aide affichera les détails du temps de jeu pour ce compte."
 L_STATS_TOOLTIP_EXPERIENCE = "Quand vous êtes en dessous du niveau maximum, une bulle d'aide affichera les détails concernant votre expérience."
+L_STATS_SEALS = "Seals this week" -- Needs review
 
 -- Slash commands
 L_SLASHCMD_HELP = {

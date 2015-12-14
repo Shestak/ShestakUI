@@ -305,6 +305,7 @@ L_STATS_WATCH_CURRENCY = "Показывает отображаемую валю
 L_STATS_WATCH_FACTIONS = "Просмотр фракций из окна репутации."
 L_STATS_TOOLTIP_TIME_PLAYED = "Когда уровень максимальный, подсказка будет показывать время игры персонажами."
 L_STATS_TOOLTIP_EXPERIENCE = "Когда уровень не максимальный, подсказка будет показывать подробности опыта."
+L_STATS_SEALS = "Печатей на этой неделе"
 
 -- Slash commands
 L_SLASHCMD_HELP = {

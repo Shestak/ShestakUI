@@ -301,6 +301,7 @@ L_STATS_WATCH_CURRENCY = "Watched currency tab items will reflect onto the toolt
 L_STATS_WATCH_FACTIONS = "Watch factions from the character faction UI."
 L_STATS_TOOLTIP_TIME_PLAYED = "When at max level, the tooltip will show time played details for the account."
 L_STATS_TOOLTIP_EXPERIENCE = "When below max level, a tooltip will be displayed with experience details."
+L_STATS_SEALS = "Seals this week"
 
 -- Slash commands
 L_SLASHCMD_HELP = {

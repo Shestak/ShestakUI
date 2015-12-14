@@ -305,6 +305,7 @@ L_STATS_WATCH_CURRENCY = "在货币面板选定的项目将在鼠标提示中显
 L_STATS_WATCH_FACTIONS = "从角色面板查看"
 L_STATS_TOOLTIP_TIME_PLAYED = "达到最高等级后,提示将显示角色上线时间纪录"
 L_STATS_TOOLTIP_EXPERIENCE = "未达最高等级时,提示将显示经验值信息"
+L_STATS_SEALS = "Seals this week" -- Needs review
 
 -- Slash commands
 L_SLASHCMD_HELP = {
