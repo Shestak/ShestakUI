@@ -243,9 +243,6 @@ elseif T.class == "ROGUE" then
 		T.merge[168908] = 16511		-- Hemorrhage
 		T.merge[121411] = 122233	-- Crimson Tempest
 	end
-	if C.combattext.healing then
-		T.healfilter[112974] = true	-- Leeching Poison
-	end
 elseif T.class == "SHAMAN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
