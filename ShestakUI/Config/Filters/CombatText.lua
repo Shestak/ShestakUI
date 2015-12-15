@@ -126,6 +126,9 @@ elseif T.class == "MAGE" then
 		T.aoespam[157997] = 1		-- Ice Nova
 		T.aoespam[157980] = 1		-- Supernova
 		T.aoespam[135029] = 3		-- Water Jet (Pet)
+		T.aoespam[155152] = 3		-- Prismatic Crystal
+		T.aoespam[153596] = 3		-- Comet Storm
+		T.aoespam[153640] = 3		-- Arcane Orb
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
