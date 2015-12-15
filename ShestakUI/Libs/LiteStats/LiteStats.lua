@@ -1508,11 +1508,7 @@ if stats.enabled then
 		OnUpdate = function(self, u)
 			self.elapsed = self.elapsed + u
 			if self.fired and self.elapsed > 2.5 then
-				if T.level >= SHOW_TALENT_LEVEL then
-				self.text:SetText(gsub(stats[format("spec%dfmt", GetSpecialization())], "%[(%w-)%]", tags))
-				else
-				self.text:SetText(gsub(stats[format("spec%dfmt", GetActiveSpecGroup())], "%[(%w-)%]", tags))
-				end
+				self.text:SetText(gsub(stats[format("spec%dfmt", GetSpecialization() and GetSpecialization() or 1)], "%[(%w-)%]", tags))
 				self.elapsed, self.fired = 0, false
 			end
 		end
