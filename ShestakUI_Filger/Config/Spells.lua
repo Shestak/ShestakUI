@@ -83,6 +83,9 @@ C["filger_spells"] = {
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Melee DPS [Strength] (Versatility, Proc)
 			{spellID = 182063, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Heirlooms
+			-- Gronntooth War Horn (Strength, Proc)
+			{spellID = 201405, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Tanking
 			-- Battering Talisman (Haste, Proc)
 			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
@@ -376,6 +379,11 @@ C["filger_spells"] = {
 			{spellID = 127924, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thousand-Year Pickled Egg (Haste, Proc)
 			{spellID = 127914, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Heirlooms
+			-- Infallible Tracking Charm
+			{spellID = 201408, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Orb Of Voidsight
+			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -729,6 +737,9 @@ C["filger_spells"] = {
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ranged DPS [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Heirlooms
+			-- Infallible Tracking Charm
+			{spellID = 201408, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Ranged DPS [Agility]
 			-- Beating Heart of the Mountain (Multistrike, Use)
 			{spellID = 176878, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1003,6 +1014,9 @@ C["filger_spells"] = {
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS (Versatility, Proc)
 			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Heirlooms
+			-- Orb Of Voidsight
+			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Caster DPS
 			-- Blackiron Micro Crucible (Multistrike, Proc)
 			{spellID = 177081, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1317,6 +1331,11 @@ C["filger_spells"] = {
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Melee DPS [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Heirlooms
+			-- Infallible Tracking Charm
+			{spellID = 201408, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Orb Of Voidsight
+			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Tanking
 			-- Battering Talisman (Haste, Proc)
 			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1593,6 +1612,11 @@ C["filger_spells"] = {
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Melee DPS [Strength] (Versatility, Proc)
 			{spellID = 182063, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Heirlooms
+			-- Gronntooth War Horn (Strength, Proc)
+			{spellID = 201405, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Orb Of Voidsight
+			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Tanking
 			-- Battering Talisman (Haste, Proc)
 			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1875,6 +1899,9 @@ C["filger_spells"] = {
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS (Versatility, Proc)
 			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Heirlooms
+			-- Orb Of Voidsight
+			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Caster DPS
 			-- Blackiron Micro Crucible (Multistrike, Proc)
 			{spellID = 177081, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2189,6 +2216,9 @@ C["filger_spells"] = {
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Melee DPS [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Heirlooms
+			-- Infallible Tracking Charm
+			{spellID = 201408, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Melee DPS [Agility]
 			-- Beating Heart of the Mountain (Multistrike, Use)
 			{spellID = 176878, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2435,6 +2465,11 @@ C["filger_spells"] = {
 			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Melee DPS [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Heirlooms
+			-- Infallible Tracking Charm
+			{spellID = 201408, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Orb Of Voidsight
+			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Melee DPS [Agility]
 			-- Beating Heart of the Mountain (Multistrike, Use)
 			{spellID = 176878, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2733,6 +2768,9 @@ C["filger_spells"] = {
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS (Versatility, Proc)
 			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Heirlooms
+			-- Orb Of Voidsight
+			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Caster DPS
 			-- Blackiron Micro Crucible (Multistrike, Proc)
 			{spellID = 177081, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2987,6 +3025,9 @@ C["filger_spells"] = {
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Melee DPS [Strength] (Versatility, Proc)
 			{spellID = 182063, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 3.0: Heirlooms
+			-- Gronntooth War Horn (Strength, Proc)
+			{spellID = 201405, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Tanking
 			-- Battering Talisman (Haste, Proc)
 			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
