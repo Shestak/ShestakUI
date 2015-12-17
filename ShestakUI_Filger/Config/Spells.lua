@@ -383,8 +383,6 @@ C["filger_spells"] = {
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS (Versatility, Proc)
 			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS [Agility] (Versatility, Use)
-			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Melee DPS [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Tanking
@@ -2435,8 +2433,6 @@ C["filger_spells"] = {
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Caster DPS (Versatility, Proc)
 			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS [Agility] (Versatility, Use)
-			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Melee DPS [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Melee DPS [Agility]
