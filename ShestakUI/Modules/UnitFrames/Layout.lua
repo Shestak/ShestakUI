@@ -867,7 +867,7 @@ local function Shared(self, unit)
 				self.RangeBar.bg:SetTexture(C.media.texture)
 			end
 
-			-- Talent spec
+			-- Enemy specialization
 			if C.unitframe.plugins_enemy_spec == true then
 				self.EnemySpec = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 				self.EnemySpec:SetTextColor(1, 0, 0)
@@ -1475,7 +1475,7 @@ SlashCmdList.TEST_UF = function(msg)
 				_G["oUF_Arena"..i.."Target"]:UpdateAllElements()
 
 				if C.unitframe.plugins_enemy_spec == true then
-					_G["oUF_Arena"..i].EnemySpec:SetText(TALENTS)
+					_G["oUF_Arena"..i].EnemySpec:SetText(SPECIALIZATION)
 				end
 
 				if C.unitframe.plugins_diminishing == true then
