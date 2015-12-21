@@ -305,6 +305,7 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[171017] = 0		-- Meteor Strike (Infrenal)
 		T.aoespam[104318] = 3		-- Fel Firebolt
 		T.aoespam[3110] = 3			-- Firebolt (Imp)
+		T.aoespam[184075] = 3		-- Doom Nova
 		T.merge[157736] = 348		-- Immolate
 		T.merge[108686] = 348		-- Immolate
 		T.merge[131737] = 980		-- Agony (Drain Soul)
