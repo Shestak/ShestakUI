@@ -78,6 +78,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	if C.nameplate.enable then
 		InterfaceOptionsCombatPanelEnemyCastBarsOnNameplates:Kill()
 		InterfaceOptionsNamesPanelUnitNameplatesNameplateClassColors:Kill()
+		SetCVar("ShowClassColorInNameplate", 1)
 	end
 
 	if C.minimap.enable then
