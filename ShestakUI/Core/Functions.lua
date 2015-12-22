@@ -372,7 +372,8 @@ function T.SkinDropDownBox(frame, width)
 end
 
 function T.SkinCheckBox(frame, default)
-	frame:StripTextures()
+	frame:SetNormalTexture("")
+	frame:SetPushedTexture("")
 	frame:CreateBackdrop("Overlay")
 	frame:SetFrameLevel(frame:GetFrameLevel() + 2)
 	frame.backdrop:SetPoint("TOPLEFT", 4, -4)
