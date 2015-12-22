@@ -1,11 +1,13 @@
 local _E
+local hooked
 
 local updateContents = function(self)
 	if not IsAddOnLoaded("Blizzard_VoidStorageUI") then return end
 
 	for slot = 1, VOID_WITHDRAW_MAX or 80 do
 		local slotFrame = _G["VoidStorageStorageButton"..slot]
-		self:CallFilters("voidstore", slotFrame, _E and GetVoidItemInfo(VoidStorageFrame.page, slot))
+		local page = VoidStorageFrame.page
+		self:CallFilters("voidstore", slotFrame, _E and (GetVoidItemInfo(page, slot)))
 	end
 
 	for slot = 1, VOID_WITHDRAW_MAX or 9 do
@@ -31,6 +33,19 @@ local update = function(self)
 	return updateContents(self)
 end
 
+local function hookCheck(self)
+	if not (IsAddOnLoaded("Blizzard_VoidStorageUI") and oGlow:IsPipeEnabled"voidstore") then return end
+
+	if not hooked then
+		hooksecurefunc("VoidStorage_SetPageNumber", function()
+			updateContents(self)
+		end)
+		hooked = true
+
+		self:UnregisterEvent("VOID_STORAGE_OPEN", hookCheck)
+	end
+end
+
 local enable = function(self)
 	_E = true
 
@@ -39,6 +54,7 @@ local enable = function(self)
 	self:RegisterEvent("VOID_STORAGE_UPDATE", update)
 	self:RegisterEvent("VOID_TRANSFER_DONE", update)
 	self:RegisterEvent("VOID_STORAGE_OPEN", update)
+	self:RegisterEvent("VOID_STORAGE_OPEN", hookCheck)
 end
 
 local disable = function(self)
@@ -49,6 +65,7 @@ local disable = function(self)
 	self:UnregisterEvent("VOID_STORAGE_UPDATE", update)
 	self:UnregisterEvent("VOID_TRANSFER_DONE", update)
 	self:UnregisterEvent("VOID_STORAGE_OPEN", update)
+	self:UnregisterEvent("VOID_STORAGE_OPEN", hookCheck)
 end
 
 oGlow:RegisterPipe("voidstore", enable, disable, update, "Void storage frame")
