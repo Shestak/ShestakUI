@@ -10,7 +10,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 
 	-- Stuff not in Blizzard load-on-demand
 	if addon == "ShestakUI" then
-		--Skinn checkButtons
+		-- Skin checkButtons
 		local checkButtons = {
 			"LFDRoleCheckPopupRoleButtonTank",
 			"LFDRoleCheckPopupRoleButtonDPS",
@@ -98,6 +98,12 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		SplashFrame:CreateBackdrop("Transparent")
 		SplashFrame.BottomCloseButton:SkinButton()
 		T.SkinCloseButton(SplashFrame.TopCloseButton)
+
+		-- Social Browser frame
+		SocialBrowserFrame:StripTextures()
+		SocialBrowserFrame:SetTemplate("Transparent")
+		T.SkinCloseButton(SocialBrowserFrame.CloseButton)
+		SocialBrowserFrame.CloseButton:SetSize(16, 16)
 
 		-- NavBar Buttons (Used in WorldMapFrame, EncounterJournal and HelpFrame)
 		local function SkinNavBarButtons(self)
