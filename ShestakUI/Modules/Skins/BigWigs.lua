@@ -121,7 +121,9 @@ local applystyle = function(bar)
 	bar.candyBarBar.OldSetPoint = bar.candyBarBar.SetPoint
 	bar.candyBarBar.SetPoint = T.dummy
 	bar.candyBarBar:SetStatusBarTexture(C.media.texture)
-	if not bar.data["bigwigs:emphasized"] == true then bar.candyBarBar:SetStatusBarColor(T.color.r, T.color.g, T.color.b, 1) end
+	if not bar.data["bigwigs:emphasized"] == true then
+		bar.candyBarBar:SetStatusBarColor(T.color.r, T.color.g, T.color.b, 1)
+	end
 	bar.candyBarBackground:SetTexture(C.media.texture)
 
 	-- Setup icon positions and other things
@@ -148,8 +150,8 @@ local function registerStyle()
 		})
 	end
 	bars.defaultDB.barStyle = "ShestakUI"
-	if prox and bars.defaultDB.barStyle == "ShestakUI" then
-		hooksecurefunc(prox, "RestyleWindow", function()
+	if BigWigsLoader and bars.defaultDB.barStyle == "ShestakUI" then
+		BigWigsLoader.RegisterMessage("BigWigs_Plugins", "BigWigs_FrameCreated", function()
 			BigWigsProximityAnchor:SetTemplate("Transparent")
 		end)
 	end
@@ -160,7 +162,7 @@ f:RegisterEvent("ADDON_LOADED")
 f:SetScript("OnEvent", function(self, event, addon)
 	if event == "ADDON_LOADED" then
 		if addon == "BigWigs_Plugins" then
-			if BigWigs3DB.namespaces.BigWigs_Plugins_Bars.profiles.Default.InstalledBars ~= C.actionbar.bottombars then
+			if not BigWigs3DB.namespaces.BigWigs_Plugins_Bars or BigWigs3DB.namespaces.BigWigs_Plugins_Bars.profiles.Default.InstalledBars ~= C.actionbar.bottombars then
 				StaticPopup_Show("BW_TEST")
 			end
 			registerStyle()
