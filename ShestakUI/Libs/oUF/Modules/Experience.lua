@@ -13,15 +13,15 @@ end
 
 local function SetTooltip(self)
 	local unit = self:GetParent().unit
-	local min, max = GetXP(unit)
+	local cur, max = GetXP(unit)
 
 	local bar = 20
 
 	GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, -5)
 	GameTooltip:AddLine(COMBAT_XP_GAIN.." "..format(LEVEL_GAINED, T.level))
 	GameTooltip:AddLine(" ")
-	GameTooltip:AddLine(string.format(L_STATS_CURRENT_XP..": %d / %d (%d%% - %d/%d)", min, max, min / max * 100, bar - (bar * (max - min) / max), bar))
-	GameTooltip:AddLine(string.format(L_STATS_REMAINING_XP..": %d (%d%% - %d/%d)", max - min, (max - min) / max * 100, 1 + bar * (max - min) / max, bar))
+	GameTooltip:AddLine(string.format(L_STATS_CURRENT_XP..": %d / %d (%d%% - %d/%d)", cur, max, cur / max * 100, bar - (bar * (max - cur) / max), bar))
+	GameTooltip:AddLine(string.format(L_STATS_REMAINING_XP..": %d (%d%% - %d/%d)", max - cur, (max - cur) / max * 100, 1 + bar * (max - cur) / max, bar))
 
 	if self.rested then
 		GameTooltip:AddLine(string.format("|cff0090ff"..L_STATS_RESTED_XP..": +%d (%d%%)", self.rested, self.rested / max * 100))
@@ -35,43 +35,52 @@ local function Update(self, event, unit)
 
 	local experience = self.Experience
 
-	if UnitLevel(unit) == MAX_PLAYER_LEVEL or UnitHasVehicleUI("player") then
-		experience:Hide()
+	if IsXPUserDisabled() or UnitLevel("player") == experience.__max or UnitHasVehicleUI("player") then
+		return experience:Hide()
 	else
 		experience:Show()
 	end
 
-	local min, max = GetXP(unit)
+	local cur, max = GetXP(unit)
 	experience:SetMinMaxValues(0, max)
-	experience:SetValue(min)
+	experience:SetValue(cur)
 
 	if experience.Text then
-		experience.Text:SetFormattedText("%d / %d", min, max)
+		experience.Text:SetFormattedText("%d / %d", cur, max)
 	end
 
 	if experience.Rested then
 		local rested = GetXPExhaustion() or 0
 		experience.Rested:SetMinMaxValues(0, max)
-		experience.Rested:SetValue(math.min(min + rested, max))
+		experience.Rested:SetValue(math.min(cur + rested, max))
 		experience.rested = rested
 	end
 
 	if experience.PostUpdate then
-		return experience:PostUpdate(unit, min, max)
+		return experience:PostUpdate(unit, cur, max)
 	end
 end
 
 local function Enable(self, unit)
 	local experience = self.Experience
-	if experience then
+	if experience and unit == "player" then
 		local Update = experience.Update or Update
+
+		local levelRestriction = GetRestrictedAccountData()
+		if levelRestriction > 0 then
+			experience.__max = levelRestriction
+		else
+			experience.__max = MAX_PLAYER_LEVEL
+		end
 
 		self:RegisterEvent("PLAYER_XP_UPDATE", Update)
 		self:RegisterEvent("PLAYER_LEVEL_UP", Update)
+		self:RegisterEvent("DISABLE_XP_GAIN", Update, true)
+		self:RegisterEvent("ENABLE_XP_GAIN", Update, true)
 
 		if experience.Rested then
 			self:RegisterEvent("UPDATE_EXHAUSTION", Update)
-			experience.Rested:SetFrameLevel(1)
+			experience.Rested:SetFrameLevel(experience:GetFrameLevel() - 1)
 		end
 
 		if not experience.noTooltip then

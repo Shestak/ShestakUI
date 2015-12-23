@@ -666,7 +666,7 @@ local function Shared(self, unit)
 			self.Experience.Rested:SetOrientation("Vertical")
 			self.Experience.Rested:SetAllPoints()
 			self.Experience.Rested:SetStatusBarTexture(C.media.texture)
-			self.Experience.Rested:SetStatusBarColor(0, 0, 1, 0.5)
+			self.Experience.Rested:SetStatusBarColor(0, 0.5, 1, 0.5)
 
 			self.Experience:HookScript("OnEnter", function(self) self:SetAlpha(1) end)
 			self.Experience:HookScript("OnLeave", function(self) self:SetAlpha(0) end)
