@@ -292,7 +292,7 @@ SlashCmdList.TEST_EXTRABUTTON = function()
 		ExtraActionBarFrame:SetAlpha(1)
 		ExtraActionButton1:Show()
 		ExtraActionButton1:SetAlpha(1)
-		ExtraActionButton1.icon:SetTexture("Interface\\Icons\\INV_Pet_DiseasedSquirrel")
+		ExtraActionButton1.icon:SetTexture("Interface\\Icons\\spell_deathknight_breathofsindragosa")
 		ExtraActionButton1.icon:Show()
 		ExtraActionButton1.icon:SetAlpha(1)
 	end

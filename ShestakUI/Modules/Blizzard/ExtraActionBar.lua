@@ -2,29 +2,15 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
 ------------------------------------------------------------------------------------------
---	Make ExtraActionBarFrame movable(use macro /click ExtraActionButton1)
+--	Make ExtraActionBarFrame movable (use macro /click ExtraActionButton1)
 ------------------------------------------------------------------------------------------
-local anchor = CreateFrame("Frame", nil, UIParent)
+local anchor = CreateFrame("Frame", "ExtraButtonAnchor", UIParent)
 anchor:SetPoint(unpack(C.position.extra_button))
-anchor:SetSize(ExtraActionBarFrame:GetSize())
+anchor:SetSize(ExtraActionButton1:GetSize())
 
-ExtraActionBarFrame:SetParent(anchor)
+ExtraActionBarFrame:SetParent(UIParent)
 ExtraActionBarFrame:ClearAllPoints()
 ExtraActionBarFrame:SetPoint("CENTER", anchor, "CENTER")
-ExtraActionBarFrame:SetMovable(true)
-ExtraActionBarFrame:SetUserPlaced(true)
-ExtraActionBarFrame:SetFrameStrata("MEDIUM")
-ExtraActionBarFrame:SetScript("OnMouseDown", function()
-	if IsAltKeyDown() or IsShiftKeyDown() then
-		if not InCombatLockdown() then
-			ExtraActionBarFrame:ClearAllPoints()
-		end
-		ExtraActionBarFrame:StartMoving()
-	end
-end)
-ExtraActionBarFrame:SetScript("OnMouseUp", function()
-	ExtraActionBarFrame:StopMovingOrSizing()
-end)
 
 RegisterStateDriver(anchor, "visibility", "[petbattle] hide; show")
 
