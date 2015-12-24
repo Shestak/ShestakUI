@@ -859,6 +859,60 @@ function Stuffing:Layout(isBank)
 	end
 end
 
+local function Stuffing_Sort(args)
+	if not args then
+		args = ""
+	end
+
+	Stuffing.itmax = 0
+	Stuffing:SetBagsForSorting(args)
+	Stuffing:SortBags()
+end
+
+function Stuffing:SetBagsForSorting(c)
+	Stuffing_Open()
+
+	self.sortBags = {}
+
+	local cmd = ((c == nil or c == "") and {"d"} or {strsplit("/", c)})
+
+	for _, s in ipairs(cmd) do
+		if s == "c" then
+			self.sortBags = {}
+		elseif s == "d" then
+			if not self.bankFrame or not self.bankFrame:IsShown() then
+				for _, i in ipairs(BAGS_BACKPACK) do
+					if self.bags[i] and self.bags[i].bagType == ST_NORMAL then
+						table.insert(self.sortBags, i)
+					end
+				end
+			else
+				for _, i in ipairs(BAGS_BANK) do
+					if self.bags[i] and self.bags[i].bagType == ST_NORMAL then
+						table.insert(self.sortBags, i)
+					end
+				end
+			end
+		elseif s == "p" then
+			if not self.bankFrame or not self.bankFrame:IsShown() then
+				for _, i in ipairs(BAGS_BACKPACK) do
+					if self.bags[i] and self.bags[i].bagType == ST_SPECIAL then
+						table.insert(self.sortBags, i)
+					end
+				end
+			else
+				for _, i in ipairs(BAGS_BANK) do
+					if self.bags[i] and self.bags[i].bagType == ST_SPECIAL then
+						table.insert(self.sortBags, i)
+					end
+				end
+			end
+		else
+			table.insert(self.sortBags, tonumber(s))
+		end
+	end
+end
+
 function Stuffing:ADDON_LOADED(addon)
 	if addon ~= "ShestakUI" then return nil end
 
@@ -1001,6 +1055,230 @@ function Stuffing:BAG_UPDATE_COOLDOWN()
 	end
 end
 
+function Stuffing:SortOnUpdate(e)
+	if not self.elapsed then
+		self.elapsed = 0
+	end
+
+	if not self.itmax then
+		self.itmax = 0
+	end
+
+	self.elapsed = self.elapsed + e
+
+	if self.elapsed < 0.1 then
+		return
+	end
+
+	self.elapsed = 0
+	self.itmax = self.itmax + 1
+
+	local changed, blocked = false, false
+
+	if self.sortList == nil or next(self.sortList, nil) == nil then
+		-- Wait for all item locks to be released
+		local locks = false
+
+		for i, v in pairs(self.buttons) do
+			local _, _, l = GetContainerItemInfo(v.bag, v.slot)
+			if l then
+				locks = true
+			else
+				v.block = false
+			end
+		end
+
+		if locks then
+			-- Something still locked
+			return
+		else
+			-- All unlocked. get a new table
+			self:SetScript("OnUpdate", nil)
+			self:SortBags()
+
+			if self.sortList == nil then
+				return
+			end
+		end
+	end
+
+	-- Go through the list and move stuff if we can
+	for i, v in ipairs(self.sortList) do
+		repeat
+			if v.ignore then
+				blocked = true
+				break
+			end
+
+			if v.srcSlot.block then
+				changed = true
+				break
+			end
+
+			if v.dstSlot.block then
+				changed = true
+				break
+			end
+
+			local _, _, l1 = GetContainerItemInfo(v.dstSlot.bag, v.dstSlot.slot)
+			local _, _, l2 = GetContainerItemInfo(v.srcSlot.bag, v.srcSlot.slot)
+
+			if l1 then
+				v.dstSlot.block = true
+			end
+
+			if l2 then
+				v.srcSlot.block = true
+			end
+
+			if l1 or l2 then
+				break
+			end
+
+			if v.sbag ~= v.dbag or v.sslot ~= v.dslot then
+				if v.srcSlot.name ~= v.dstSlot.name then
+					v.srcSlot.block = true
+					v.dstSlot.block = true
+					PickupContainerItem(v.sbag, v.sslot)
+					PickupContainerItem(v.dbag, v.dslot)
+					changed = true
+					break
+				end
+			end
+		until true
+	end
+
+	self.sortList = nil
+
+	if (not changed and not blocked) or self.itmax > 250 then
+		self:SetScript("OnUpdate", nil)
+		self.sortList = nil
+	end
+end
+
+local function InBags(x)
+	if not Stuffing.bags[x] then
+		return false
+	end
+
+	for _, v in ipairs(Stuffing.sortBags) do
+		if x == v then
+			return true
+		end
+	end
+	return false
+end
+
+
+function Stuffing:SortBags()
+	local free
+	local total = 0
+	local bagtypeforfree
+
+	if StuffingFrameBank and StuffingFrameBank:IsShown() then
+		for i = 5, 11 do
+			free, bagtypeforfree = GetContainerNumFreeSlots(i)
+			if bagtypeforfree == 0 then
+				total = free + total
+			end
+		end
+		total = GetContainerNumFreeSlots(-1) + total
+	else
+		for i = 0, 4 do
+			free, bagtypeforfree = GetContainerNumFreeSlots(i)
+			if bagtypeforfree == 0 then
+				total = free + total
+			end
+		end
+	end
+
+	if total == 0 then
+		print("|cffff0000"..ERROR_CAPS.." - "..ERR_INV_FULL.."|r")
+		return
+	end
+
+	local bs = self.sortBags
+	if #bs < 1 then
+		return
+	end
+
+	local st = {}
+	local bank = false
+
+	Stuffing_Open()
+
+	for i, v in pairs(self.buttons) do
+		if InBags(v.bag) then
+			self:SlotUpdate(v)
+
+			if v.name then
+				local _, cnt, _, _, _, _, clink = GetContainerItemInfo(v.bag, v.slot)
+				local n, _, q, iL, rL, c1, c2, _, Sl = GetItemInfo(clink)
+				table.insert(st, {srcSlot = v, sslot = v.slot, sbag = v.bag, sort = q..c1..c2..rL..n..iL..Sl..(#self.buttons - i)})
+			end
+		end
+	end
+
+	-- Sort them
+	table.sort(st, function(a, b)
+		return a.sort > b.sort
+	end)
+
+	-- For each button we want to sort, get a destination button
+	local st_idx = #bs
+	local dbag = bs[st_idx]
+	local dslot = GetContainerNumSlots(dbag)
+
+	for i, v in ipairs(st) do
+		v.dbag = dbag
+		v.dslot = dslot
+		v.dstSlot = self:SlotNew(dbag, dslot)
+
+		dslot = dslot - 1
+
+		if dslot == 0 then
+			while true do
+				st_idx = st_idx - 1
+
+				if st_idx < 0 then
+					break
+				end
+
+				dbag = bs[st_idx]
+
+				if Stuffing:BagType(dbag) == ST_NORMAL or Stuffing:BagType(dbag) == ST_SPECIAL or dbag < 1 then
+					break
+				end
+			end
+
+			dslot = GetContainerNumSlots(dbag)
+		end
+	end
+
+	-- Throw various stuff out of the search list
+	local changed = true
+	while changed do
+		changed = false
+		-- XXX why doesn't this remove all x->x moves in one pass?
+
+		for i, v in ipairs(st) do
+			-- Source is same as destination
+			if (v.sslot == v.dslot) and (v.sbag == v.dbag) then
+				table.remove(st, i)
+				changed = true
+			end
+		end
+	end
+
+	-- Kick off moving of stuff, if needed
+	if st == nil or next(st, nil) == nil then
+		self:SetScript("OnUpdate", nil)
+	else
+		self.sortList = st
+		self:SetScript("OnUpdate", Stuffing.SortOnUpdate)
+	end
+end
+
 function Stuffing:PLAYERBANKBAGSLOTS_CHANGED()
 	if not StuffingPurchaseButtonBank then return end
 	local _, full = GetNumBankSlots()
@@ -1027,6 +1305,17 @@ function Stuffing.Menu(self, level)
 		SortBags()
 		SortBankBags()
 		SortReagentBankBags()
+	end
+	UIDropDownMenu_AddButton(info, level)
+
+	wipe(info)
+	info.text = BAG_FILTER_CLEANUP.." №2"
+	info.notCheckable = 1
+	info.func = function()
+		if InCombatLockdown() then
+			print("|cffffff00"..ERR_NOT_IN_COMBAT) return
+		end
+		Stuffing_Sort("d")
 	end
 	UIDropDownMenu_AddButton(info, level)
 
