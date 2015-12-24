@@ -250,7 +250,7 @@ L_STATS_BANDWIDTH = "宽带占用:"
 L_STATS_DOWNLOAD = "下载:"
 L_STATS_CLEARED_JUNK = "清除自动出售例外名单列表"
 L_STATS_CLEAR_EXCEPTIONS = "清除例外名单列表"
-L_STATS_CURRENCY_RAID_T = "Raid Seals" -- Needs review
+L_STATS_CURRENCY_RAID_T = "副本徽记"
 L_STATS_WORLD_MAP = "点击开启世界地图"
 L_STATS_CURRENT_XP = "当前/升级所需经验值"
 L_STATS_MEMORY_USAGE = "插件内存占用:"
@@ -305,7 +305,7 @@ L_STATS_WATCH_CURRENCY = "在货币面板选定的项目将在鼠标提示中显
 L_STATS_WATCH_FACTIONS = "从角色面板查看"
 L_STATS_TOOLTIP_TIME_PLAYED = "达到最高等级后,提示将显示角色上线时间纪录"
 L_STATS_TOOLTIP_EXPERIENCE = "未达最高等级时,提示将显示经验值信息"
-L_STATS_SEALS = "Seals this week" -- Needs review
+L_STATS_SEALS = "本周已领徽记"
 
 -- Slash commands
 L_SLASHCMD_HELP = {
