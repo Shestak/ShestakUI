@@ -419,7 +419,7 @@ local function Shared(self, unit)
 		end
 
 		-- Rogue/Druid Combo bar
-		if C.unitframe_class_bar.combo == true and T.class == "ROGUE" or T.class == "DRUID" then
+		if C.unitframe_class_bar.combo == true and (T.class == "ROGUE" or T.class == "DRUID") then
 			self.CPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)
 			self.CPoints:CreateBackdrop("Default")
 			self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -822,13 +822,12 @@ local function Shared(self, unit)
 			self.Debuffs["growth-y"] = "UP"
 			self.Debuffs["growth-x"] = "LEFT"
 			if (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true)
-			or (T.class == "SHAMAN" and C.unitframe_class_bar.totem == true)
 			or (T.class == "DRUID" and C.unitframe_class_bar.eclipse == true)
+			or ((T.class == "DRUID" or T.class == "ROGUE") and C.unitframe_class_bar.combo == true)
+			or (T.class == "MONK" and C.unitframe_class_bar.chi == true)
 			or (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
-			or (T.class == "WARLOCK" and C.unitframe_class_bar.shard == true)
-			or (T.class == "ROGUE" and C.unitframe_class_bar.combo == true)
-			or (T.class == "DRUID" and C.unitframe_class_bar.combo == true)
-			or (T.class == "MONK" and C.unitframe_class_bar.chi == true) then
+			or (T.class == "SHAMAN" and C.unitframe_class_bar.totem == true)
+			or (T.class == "WARLOCK" and C.unitframe_class_bar.shard == true) then
 				self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
 			else
 				self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5)
