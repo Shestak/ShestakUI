@@ -76,7 +76,7 @@ L_GUI_AUTOMATION_LOGGING_COMBAT = "团队副本时自动开启战斗记录"
 L_GUI_AUTOMATION_CURRENCY_CAP = "自动弹出货币提示框"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "使用鼠标滚轮施放Buff"
 L_GUI_AUTOMATION_OPEN_ITEMS = "自动打开背包中的封装物品"
-L_GUI_AUTOMATION_BANNER_HIDE = "Auto hiding Boss Banner Loot Frame"
+L_GUI_AUTOMATION_BANNER_HIDE = "自动隐藏Boss额外拾取提示"
 
 -- Skins options
 L_GUI_SKINS = "界面样式增强"
@@ -138,7 +138,7 @@ L_GUI_COMBATTEXT_MERGE_MELEE = "将多个自动攻击伤害合并为一条信息
 L_GUI_COMBATTEXT_DISPEL = "当你驱散成功时提示"
 L_GUI_COMBATTEXT_INTERRUPT = "当你打断成功时提示"
 L_GUI_COMBATTEXT_DIRECTION = "滚动方向('top'(向上) or 'bottom'(向下))"
-L_GUI_COMBATTEXT_SHORT_NUMBERS = "Use short numbers ('25.3k' instead of '25342')" -- Need review
+L_GUI_COMBATTEXT_SHORT_NUMBERS = "数值以K为单位显示"
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Buff提示"
@@ -201,8 +201,8 @@ L_GUI_TOOLTIP_HIDE_COMBAT = "战斗中隐藏提示"
 L_GUI_TOOLTIP_TALENTS = "天赋"
 L_GUI_TOOLTIP_ACHIEVEMENTS = "成就比较"
 L_GUI_TOOLTIP_TARGET = "目标的目标"
-L_GUI_TOOLTIP_TITLE = "Player title in tooltip" -- Need review
-L_GUI_TOOLTIP_REALM = "Player realm name in tooltip" -- Need review
+L_GUI_TOOLTIP_TITLE = "目标头衔"
+L_GUI_TOOLTIP_REALM = "目标所在服务器名"
 L_GUI_TOOLTIP_RANK = "公会会阶"
 L_GUI_TOOLTIP_ARENA_EXPERIENCE = "竞技场等级"
 L_GUI_TOOLTIP_SPELL_ID = "法术ID"
@@ -359,7 +359,7 @@ L_GUI_UF_PLUGINS_DIMINISHING = "竞技场框架显示技能递减"
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "职业栏"
 L_GUI_UF_PLUGINS_COMBO_BAR = "连击点"
-L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS = "Always show Combo bar for Druid"
+L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS = "总是显示德鲁伊连击点"
 L_GUI_UF_PLUGINS_SHADOW_BAR = "暗影宝珠"
 L_GUI_UF_PLUGINS_CHI_BAR = "真气"
 L_GUI_UF_PLUGINS_RESOLVE_BAR = "复仇"
@@ -393,7 +393,7 @@ L_GUI_UF_ICONS_READY_CHECK = "就绪确认标记"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "高亮DeBuff图示"
 L_GUI_UF_PLUGINS_AURA_WATCH = "团队法术监视"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "团队减益时间"
-L_GUI_UF_PLUGINS_PVP_DEBUFFS = "Show also PvP debuff icons (from the list)" -- Need review
+L_GUI_UF_PLUGINS_PVP_DEBUFFS = "PvP DeBuff图示"
 L_GUI_UF_PLUGINS_HEALCOMM = "受到的治疗"
 L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "鼠标中键点击已死亡角色时,自动施放复活技能(Clique启用时无效)"
 
@@ -414,12 +414,12 @@ L_GUI_STATS_FPS = "帧数"
 L_GUI_STATS_EXPERIENCE = "经验"
 L_GUI_STATS_COORDS = "坐标"
 L_GUI_STATS_LOCATION = "位置"
-L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Show Archaeology under currency tab" -- Needs review
-L_GUI_STATS_CURRENCY_COOKING = "Show Coocking under currency tab" -- Needs review
-L_GUI_STATS_CURRENCY_PROFESSIONS = "Show Professions under currency tab" -- Needs review
-L_GUI_STATS_CURRENCY_RAID = "Show Raid Seals under currency tab" -- Needs review
-L_GUI_STATS_CURRENCY_PVP = "Show PvP under currency tab" -- Needs review
-L_GUI_STATS_CURRENCY_MISCELLANEOUS = "Show Miscellaneous under currency tab" --Needs review
+L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "考古"
+L_GUI_STATS_CURRENCY_COOKING = "烹饪"
+L_GUI_STATS_CURRENCY_PROFESSIONS = "专业技能"
+L_GUI_STATS_CURRENCY_RAID = "副本代币"
+L_GUI_STATS_CURRENCY_PVP = "PvP代币"
+L_GUI_STATS_CURRENCY_MISCELLANEOUS = "其它"
 
 -- Error options
 L_GUI_ERROR = "错误收集"
