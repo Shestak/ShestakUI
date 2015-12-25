@@ -9,6 +9,7 @@ if C.combattext.enable ~= true then return end
 -- General filter outgoing healing
 if C.combattext.healing then
 	T.healfilter = {}
+	T.healfilter[143924] = true		-- Leech
 end
 
 -- General merge outgoing damage
@@ -241,6 +242,8 @@ elseif T.class == "ROGUE" then
 		T.aoespam[22482] = 3		-- Blade Flurry
 		T.aoespam[16511] = 3		-- Hemorrhage
 		T.aoespam[5374] = 0			-- Mutilate
+		T.aoespam[86392] = 3		-- Main Gauche
+		T.aoespam[157607] = 3		-- Instant Poison
 		T.merge[27576] = 5374		-- Mutilate Off-Hand
 		T.merge[113780] = 2818		-- Deadly Poison
 		T.merge[168908] = 16511		-- Hemorrhage
