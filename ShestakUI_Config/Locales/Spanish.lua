@@ -369,7 +369,8 @@ L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Ne
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Unit Frames Class bars" -- Needs review
 L_GUI_UF_PLUGINS_COMBO_BAR = "Iconos de puntos de combo de Pícaros/Druidas"
-L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS = "Always show Combo bar for Druid"
+L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS = "Always show Combo bar for Druid" -- Need review
+L_GUI_UF_PLUGINS_COMBO_BAR_OLD = "Show combo point on the target" -- Need review
 L_GUI_UF_PLUGINS_SHADOW_BAR = "Enable Shadow Orbs bar" -- Needs review
 L_GUI_UF_PLUGINS_CHI_BAR = "Enable Chi bar" -- Needs review
 L_GUI_UF_PLUGINS_RESOLVE_BAR = "Activar barra de venganza"

@@ -419,7 +419,7 @@ local function Shared(self, unit)
 		end
 
 		-- Rogue/Druid Combo bar
-		if C.unitframe_class_bar.combo == true and (T.class == "ROGUE" or T.class == "DRUID") then
+		if C.unitframe_class_bar.combo == true and C.unitframe_class_bar.combo_old ~= true and (T.class == "ROGUE" or T.class == "DRUID") then
 			self.CPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)
 			self.CPoints:CreateBackdrop("Default")
 			self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -823,7 +823,7 @@ local function Shared(self, unit)
 			self.Debuffs["growth-x"] = "LEFT"
 			if (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true)
 			or (T.class == "DRUID" and C.unitframe_class_bar.eclipse == true)
-			or ((T.class == "DRUID" or T.class == "ROGUE") and C.unitframe_class_bar.combo == true)
+			or ((T.class == "DRUID" or T.class == "ROGUE") and C.unitframe_class_bar.combo == true and C.unitframe_class_bar.combo_old ~= true)
 			or (T.class == "MONK" and C.unitframe_class_bar.chi == true)
 			or (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
 			or (T.class == "SHAMAN" and C.unitframe_class_bar.totem == true)
@@ -852,6 +852,33 @@ local function Shared(self, unit)
 			self.Auras.gap = true
 			self.Auras.PostCreateIcon = T.PostCreateAura
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
+
+			-- Rogue/Druid Combo bar
+			if C.unitframe_class_bar.combo == true and C.unitframe_class_bar.combo_old == true and (T.class == "ROGUE" or T.class == "DRUID") then
+				self.CPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)
+				self.CPoints:CreateBackdrop("Default")
+				self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				self.CPoints:SetSize(217, 7)
+
+				for i = 1, 5 do
+					self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar", self.CPoints)
+					self.CPoints[i]:SetSize(213 / 5, 7)
+					if i == 1 then
+						self.CPoints[i]:SetPoint("LEFT", self.CPoints)
+					else
+						self.CPoints[i]:SetPoint("LEFT", self.CPoints[i-1], "RIGHT", 1, 0)
+					end
+					self.CPoints[i]:SetStatusBarTexture(C.media.texture)
+				end
+
+				self.CPoints[1]:SetStatusBarColor(0.9, 0.1, 0.1)
+				self.CPoints[2]:SetStatusBarColor(0.9, 0.1, 0.1)
+				self.CPoints[3]:SetStatusBarColor(0.9, 0.9, 0.1)
+				self.CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
+				self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
+
+				self.CPoints.Override = T.UpdateComboPointOld
+			end
 
 			-- Priest Range bar
 			if C.unitframe_class_bar.range == true and T.class == "PRIEST" then

@@ -477,6 +477,7 @@ C["unitframe"] = {
 C["unitframe_class_bar"] = {
 	["combo"] = true,							-- Rogue/Druid Combo bar
 	["comboalways"] = false,					-- Always show Combo bar for Druid
+	["combo_old"] = false,						-- Show combo point on the target 
 	["shadow"] = true,							-- Shadow Orbs bar
 	["chi"] = true,								-- Chi bar
 	["resolve"] = true,							-- Resolve bar (for Tanks)

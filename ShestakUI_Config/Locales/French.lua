@@ -370,6 +370,7 @@ L_GUI_UF_PLUGINS_DIMINISHING = "Icones de rendement décroissants sur les fenêt
 L_GUI_UF_PLUGINS_CLASS_BAR = "Barres de classe"
 L_GUI_UF_PLUGINS_COMBO_BAR = "Afficher la barre des points de combo pour les Voleurs/Druides"
 L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS = "Toujours montrer la barre des points de combo pour la classe Druide"
+L_GUI_UF_PLUGINS_COMBO_BAR_OLD = "Show combo point on the target" -- Need review
 L_GUI_UF_PLUGINS_SHADOW_BAR = "Activer la barre des Orbes d'ombre"
 L_GUI_UF_PLUGINS_CHI_BAR = "Activer la barre de Chi"
 L_GUI_UF_PLUGINS_RESOLVE_BAR = "Active la barre de menace"
