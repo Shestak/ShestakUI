@@ -244,10 +244,12 @@ elseif T.class == "ROGUE" then
 		T.aoespam[5374] = 0			-- Mutilate
 		T.aoespam[86392] = 3		-- Main Gauche
 		T.aoespam[157607] = 3		-- Instant Poison
+		T.aoespam[57841] = 3		-- Killing Spree
 		T.merge[27576] = 5374		-- Mutilate Off-Hand
 		T.merge[113780] = 2818		-- Deadly Poison
 		T.merge[168908] = 16511		-- Hemorrhage
 		T.merge[121411] = 122233	-- Crimson Tempest
+		T.merge[57842] = 57841		-- Killing Spree Off-Hand
 	end
 elseif T.class == "SHAMAN" then
 	if C.combattext.merge_aoe_spam then
