@@ -37,6 +37,7 @@
 	<Script file="Config\Filters\Cooldowns.lua"/>
 	<Script file="Config\Filters\Diminishing.lua"/>
 	<Script file="Config\Filters\Errors.lua"/>
+	<Script file="Config\Filters\FilgerSpells.lua"/>
 	<Script file="Config\Filters\Nameplates.lua"/>
 	<Script file="Config\Filters\NeedItems.lua"/>
 	<Script file="Config\Filters\OpenItems.lua"/>
@@ -64,6 +65,7 @@
 	<Script file="Modules\Misc\ArmoryLink.lua"/>
 	<Script file="Modules\Misc\CharsCurrency.lua"/>
 	<Script file="Modules\Misc\ClickCast.lua"/>
+	<Script file="Modules\Misc\Filger.lua"/>
 	<Script file="Modules\Misc\GemCounter.lua"/>
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
 	<Script file="Modules\Misc\HealerIconNameplate.lua"/>
@@ -152,8 +154,6 @@
 	<Script file="Modules\Buffs\AuraSource.lua"/>
 	<Script file="Modules\Buffs\BuffFrame.lua"/>
 	<Script file="Modules\Buffs\ConsolidatedBuffs.lua"/>
-	<Script file="Modules\Buffs\FilgerSpells.lua"/>
-	<Script file="Modules\Buffs\Filger.lua"/>
 	<Script file="Modules\Buffs\SelfBuffsReminder.lua"/>
 	<Script file="Modules\Buffs\RaidBuffsReminder.lua"/>
 
