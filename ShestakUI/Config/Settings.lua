@@ -447,6 +447,8 @@ C["unitframe"] = {
 	["boss_on_right"] = true,					-- Boss frames on the right
 	["show_arena"] = true,						-- Show arena frames
 	["arena_on_right"] = true,					-- Arena frames on the right
+	["boss_debuffs"] = 0,						-- Number of debuffs on the boss frames
+	["boss_buffs"] = 3,							-- Number of buffs on the boss frames
 	-- Icons
 	["icons_pvp"] = false,						-- Mouseover PvP text(not icons) on player and target frames
 	["icons_combat"] = true,					-- Combat icon

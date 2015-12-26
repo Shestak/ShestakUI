@@ -382,6 +382,8 @@ local function Local(o)
 	if o == "UIConfigunitframeboss_on_right" then o = L_GUI_UF_BOSS_RIGHT end
 	if o == "UIConfigunitframeshow_arena" then o = L_GUI_UF_SHOW_ARENA end
 	if o == "UIConfigunitframearena_on_right" then o = L_GUI_UF_ARENA_RIGHT end
+	if o == "UIConfigunitframeboss_debuffs" then o = L_GUI_UF_BOSS_DEBUFFS end
+	if o == "UIConfigunitframeboss_buffs" then o = L_GUI_UF_BOSS_BUFFS end
 	if o == "UIConfigunitframeicons_pvp" then o = L_GUI_UF_ICONS_PVP end
 	if o == "UIConfigunitframeicons_combat" then o = L_GUI_UF_ICONS_COMBAT end
 	if o == "UIConfigunitframeicons_resting" then o = L_GUI_UF_ICONS_RESTING end
