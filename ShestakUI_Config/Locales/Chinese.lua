@@ -320,12 +320,12 @@ L_GUI_AURA_CAST_BY = "鼠标提示中,显示Buff/DeBuff提供者"
 L_GUI_AURA_CLASSCOLOR_BORDER = "自身Buff图示边框按职业著色"
 
 -- Filger
-L_GUI_FILGER = "Filger"
-L_GUI_FILGER_ENABLE = "Enable Filger" -- Need review
-L_GUI_FILGER_TEST_MODE = "Test icon mode" -- Need review
-L_GUI_FILGER_MAX_TEST_ICON = "The number of icons to the test" -- Need review
-L_GUI_FILGER_SHOW_TOOLTIP = "Show tooltip" -- Need review
-L_GUI_FILGER_DISABLE_CD = "Disable cooldowns" -- Need review
+L_GUI_FILGER = "法术监视"
+L_GUI_FILGER_ENABLE = "开启法术监视"
+L_GUI_FILGER_TEST_MODE = "调试模式"
+L_GUI_FILGER_MAX_TEST_ICON = "调试模式图示数量"
+L_GUI_FILGER_SHOW_TOOLTIP = "开启提示"
+L_GUI_FILGER_DISABLE_CD = "关闭法术CD监视"
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "开启单位框架增强"
@@ -346,8 +346,8 @@ L_GUI_UF_SHOW_BOSS = "Boss框架"
 L_GUI_UF_BOSS_RIGHT = "右侧显示Boss框架"
 L_GUI_UF_SHOW_ARENA = "竞技场框架"
 L_GUI_UF_ARENA_RIGHT = "右侧显示竞技场框架"
-L_GUI_UF_BOSS_DEBUFFS = "Number of debuffs on the boss frames" -- Need review
-L_GUI_UF_BOSS_BUFFS = "Number of buffs on the boss frames" -- Need review
+L_GUI_UF_BOSS_DEBUFFS = "Boss框架DeBuff数量"
+L_GUI_UF_BOSS_BUFFS = "Boss框架Buff数量"
 L_GUI_UF_ICONS_PVP = "鼠标悬停玩家/目标时,显示PvP状态"
 L_GUI_UF_ICONS_COMBAT = "战斗标记"
 L_GUI_UF_ICONS_RESTING = "休息标记"
@@ -370,7 +370,7 @@ L_GUI_UF_PLUGINS_DIMINISHING = "竞技场框架显示技能递减"
 L_GUI_UF_PLUGINS_CLASS_BAR = "职业栏"
 L_GUI_UF_PLUGINS_COMBO_BAR = "连击点"
 L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS = "总是显示德鲁伊连击点"
-L_GUI_UF_PLUGINS_COMBO_BAR_OLD = "Show combo point on the target" -- Need review
+L_GUI_UF_PLUGINS_COMBO_BAR_OLD = "目标框架显示连击点"
 L_GUI_UF_PLUGINS_SHADOW_BAR = "暗影宝珠"
 L_GUI_UF_PLUGINS_CHI_BAR = "真气"
 L_GUI_UF_PLUGINS_RESOLVE_BAR = "复仇"
