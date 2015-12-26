@@ -319,6 +319,14 @@ L_GUI_AURA_DEBUFF_COLOR_TYPE = "Debuffs nach Art einfärben"
 L_GUI_AURA_CAST_BY = "Zeige im Tooltip an von wem ein Stärkungs- bzw. Schwächngszauber gewirkt wurde"
 L_GUI_AURA_CLASSCOLOR_BORDER = "Aktiviere Klassenfarbe für Spielerbuffs"
 
+-- Filger
+L_GUI_FILGER = "Filger"
+L_GUI_FILGER_ENABLE = "Enable Filger" -- Need review
+L_GUI_FILGER_TEST_MODE = "Test icon mode" -- Need review
+L_GUI_FILGER_MAX_TEST_ICON = "The number of icons to the test" -- Need review
+L_GUI_FILGER_SHOW_TOOLTIP = "Show tooltip" -- Need review
+L_GUI_FILGER_DISABLE_CD = "Disable cooldowns" -- Need review
+
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Unitframes aktivieren"
 L_GUI_UF_OWN_COLOR = "Farbe für die Lebensleiste festlegen"

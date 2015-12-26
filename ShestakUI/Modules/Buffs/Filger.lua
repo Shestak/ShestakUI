@@ -1,5 +1,5 @@
-local T, C, L, _ = unpack(ShestakUI)
-if C.unitframe.enable ~= true then return end
+local T, C, L, _ = unpack(select(2, ...))
+if C.unitframe.enable ~= true or C.filger.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Filger(by Nils Ruesch, editors Affli/SinaC/Ildyria)
@@ -266,7 +266,7 @@ function Filger:DisplayActives()
 			bar:SetScript("OnUpdate", nil)
 		end
 		bar.spellID = value.spid
-		if C["filger_settings"].show_tooltip then
+		if C.filger.show_tooltip then
 			bar:EnableMouse(true)
 			bar:SetScript("OnEnter", Filger.TooltipOnEnter)
 			bar:SetScript("OnLeave", Filger.TooltipOnLeave)
@@ -292,6 +292,7 @@ function Filger:OnEvent(event, unit)
 
 		for i = 1, #C["filger_spells"][T.class][id], 1 do
 			local data = C["filger_spells"][T.class][id][i]
+			if C.filger.disable_cd == true and (data.filter == "CD" or data.filter == "ICD") then return end
 			local found = false
 			local name, icon, count, duration, start, spid
 			spid = 0
@@ -470,9 +471,9 @@ if C["filger_spells"] and C["filger_spells"][T.class] then
 		frame.Position = data.Position or "CENTER"
 		frame:SetPoint(unpack(data.Position))
 
-		if C["filger_settings"].config_mode then
+		if C.filger.test_mode then
 			frame.actives = {}
-			for j = 1, math.min(C["filger_settings"].max_test_icon, #C["filger_spells"][T.class][i]), 1 do
+			for j = 1, math.min(C.filger.max_test_icon, #C["filger_spells"][T.class][i]), 1 do
 				local data = C["filger_spells"][T.class][i][j]
 				local name, icon
 				if data.spellID then

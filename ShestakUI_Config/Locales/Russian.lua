@@ -319,6 +319,14 @@ L_GUI_AURA_DEBUFF_COLOR_TYPE = "Цвета краёв отрицательных
 L_GUI_AURA_CAST_BY = "Отображать имя того, кто применил эффект"
 L_GUI_AURA_CLASSCOLOR_BORDER = "Окрашивать края положительных эффектов игрока в цвет класса"
 
+-- Filger
+L_GUI_FILGER = "Filger"
+L_GUI_FILGER_ENABLE = "Включить Filger"
+L_GUI_FILGER_TEST_MODE = "Тестирование иконок"
+L_GUI_FILGER_MAX_TEST_ICON = "Количество иконок для теста"
+L_GUI_FILGER_SHOW_TOOLTIP = "Показывать подсказку для иконок"
+L_GUI_FILGER_DISABLE_CD = "Выключить блок перезарядок"
+
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Включить рамки портретов"
 L_GUI_UF_OWN_COLOR = "Использовать свой цвет для полос здоровья"

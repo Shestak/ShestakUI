@@ -1,5 +1,5 @@
-local T, C, L, _ = unpack(ShestakUI)
-if C.unitframe.enable ~= true then return end
+local T, C, L, _ = unpack(select(2, ...))
+if C.unitframe.enable ~= true or C.filger.enable ~= true then return end
 
 C["filger_spells"] = {
 	["DEATHKNIGHT"] = {
@@ -10,7 +10,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_buff_icon)},
+			Position = {unpack(C.position.filger.player_buff_icon)},
 
 			-- Anti-Magic Shell
 			{spellID = 48707, unitID = "player", caster = "player", filter = "BUFF"},
@@ -40,7 +40,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_proc_icon)},
+			Position = {unpack(C.position.filger.player_proc_icon)},
 
 			-- Buffs
 			-- Blood Charge
@@ -162,7 +162,7 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 186,
-			Position = {unpack(C["filger_position"].target_bar)},
+			Position = {unpack(C.position.filger.target_bar)},
 
 			-- Blood Plague
 			{spellID = 55078, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -180,7 +180,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 30,
-			Position = {unpack(C["filger_position"].cooldown)},
+			Position = {unpack(C.position.filger.cooldown)},
 
 			-- Self
 			-- Anti-Magic Shell
@@ -287,7 +287,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_buff_icon)},
+			Position = {unpack(C.position.filger.player_buff_icon)},
 
 			-- Barkskin
 			{spellID = 22812, unitID = "player", caster = "player", filter = "BUFF"},
@@ -335,7 +335,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_proc_icon)},
+			Position = {unpack(C.position.filger.player_proc_icon)},
 
 			-- Buffs
 			-- Bloodtalons
@@ -517,7 +517,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].target_debuff_icon)},
+			Position = {unpack(C.position.filger.target_debuff_icon)},
 
 			-- Immobilized
 			{spellID = 45334, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -547,7 +547,7 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 186,
-			Position = {unpack(C["filger_position"].target_bar)},
+			Position = {unpack(C.position.filger.target_bar)},
 
 			-- Cenarion Ward
 			{spellID = 102351, unitID = "target", caster = "player", filter = "BUFF"},
@@ -571,7 +571,7 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 189,
-			Position = {unpack(C["filger_position"].pve_cc)},
+			Position = {unpack(C.position.filger.pve_cc)},
 
 			-- Cyclone
 			{spellID = 33786, unitID = "focus", caster = "all", filter = "DEBUFF"},
@@ -585,7 +585,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 30,
-			Position = {unpack(C["filger_position"].cooldown)},
+			Position = {unpack(C.position.filger.cooldown)},
 
 			-- Self
 			-- Barkskin
@@ -678,7 +678,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_buff_icon)},
+			Position = {unpack(C.position.filger.player_buff_icon)},
 
 			-- Beast Cleave
 			{spellID = 118455, unitID = "pet", caster = "player", filter = "BUFF"},
@@ -706,7 +706,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_proc_icon)},
+			Position = {unpack(C.position.filger.player_proc_icon)},
 
 			-- Buffs
 			-- Frenzy
@@ -784,7 +784,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].target_debuff_icon)},
+			Position = {unpack(C.position.filger.target_debuff_icon)},
 
 			-- Ankle Crack (Crocolisk)
 			{spellID = 50433, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -826,7 +826,7 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 189,
-			Position = {unpack(C["filger_position"].pve_cc)},
+			Position = {unpack(C.position.filger.pve_cc)},
 
 			-- Wyvern Sting
 			{spellID = 19386, unitID = "focus", caster = "player", filter = "DEBUFF"},
@@ -838,7 +838,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 30,
-			Position = {unpack(C["filger_position"].cooldown)},
+			Position = {unpack(C.position.filger.cooldown)},
 
 			-- Self
 			-- A Murder of Crows
@@ -949,7 +949,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_buff_icon)},
+			Position = {unpack(C.position.filger.player_buff_icon)},
 
 			-- Alter Time
 			{spellID = 110909, unitID = "player", caster = "player", filter = "BUFF"},
@@ -985,7 +985,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_proc_icon)},
+			Position = {unpack(C.position.filger.player_proc_icon)},
 
 			-- Buffs
 			-- Arcane Missiles
@@ -1059,7 +1059,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].target_debuff_icon)},
+			Position = {unpack(C.position.filger.target_debuff_icon)},
 
 			-- Arcane Charge
 			{spellID = 36032, unitID = "player", caster = "player", filter = "DEBUFF"},
@@ -1103,7 +1103,7 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 189,
-			Position = {unpack(C["filger_position"].pve_cc)},
+			Position = {unpack(C.position.filger.pve_cc)},
 
 			-- Polymorph
 			{spellID = 118, unitID = "focus", caster = "all", filter = "DEBUFF"},
@@ -1115,7 +1115,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 30,
-			Position = {unpack(C["filger_position"].cooldown)},
+			Position = {unpack(C.position.filger.cooldown)},
 
 			-- Self
 			-- Alter Time
@@ -1232,7 +1232,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_buff_icon)},
+			Position = {unpack(C.position.filger.player_buff_icon)},
 
 			-- Dampen Harm
 			{spellID = 122278, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1262,7 +1262,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].target_debuff_icon)},
+			Position = {unpack(C.position.filger.target_debuff_icon)},
 
 			-- Breath of Fire
 			{spellID = 123725, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -1280,7 +1280,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_proc_icon)},
+			Position = {unpack(C.position.filger.player_proc_icon)},
 
 			-- Buffs
 			-- Combo Breaker: Blackout Kick
@@ -1436,7 +1436,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 30,
-			Position = {unpack(C["filger_position"].cooldown)},
+			Position = {unpack(C.position.filger.cooldown)},
 
 			-- Self
 			-- Charging Ox Wave
@@ -1539,7 +1539,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_buff_icon)},
+			Position = {unpack(C.position.filger.player_buff_icon)},
 
 			-- Ardent Defender
 			{spellID = 31850, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1567,7 +1567,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_proc_icon)},
+			Position = {unpack(C.position.filger.player_proc_icon)},
 
 			-- Buffs
 			-- Bastion of Glory
@@ -1711,7 +1711,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].target_debuff_icon)},
+			Position = {unpack(C.position.filger.target_debuff_icon)},
 
 			-- Censure
 			{spellID = 31803, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -1735,7 +1735,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 30,
-			Position = {unpack(C["filger_position"].cooldown)},
+			Position = {unpack(C.position.filger.cooldown)},
 
 			-- Self
 			-- Ardent Defender
@@ -1824,7 +1824,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_buff_icon)},
+			Position = {unpack(C.position.filger.player_buff_icon)},
 
 			-- Archangel
 			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1854,7 +1854,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_proc_icon)},
+			Position = {unpack(C.position.filger.player_proc_icon)},
 
 			-- Buffs
 			-- Borrowed Time
@@ -1968,7 +1968,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].target_debuff_icon)},
+			Position = {unpack(C.position.filger.target_debuff_icon)},
 
 			-- Mind Blast (Glyph)
 			{spellID = 87194, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -1988,7 +1988,7 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 186,
-			Position = {unpack(C["filger_position"].target_bar)},
+			Position = {unpack(C.position.filger.target_bar)},
 
 			-- Devouring Plague
 			{spellID = 2944, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -2016,7 +2016,7 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 189,
-			Position = {unpack(C["filger_position"].pve_cc)},
+			Position = {unpack(C.position.filger.pve_cc)},
 
 			-- Shackle Undead
 			{spellID = 9484, unitID = "focus", caster = "player", filter = "DEBUFF"},
@@ -2030,7 +2030,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 30,
-			Position = {unpack(C["filger_position"].cooldown)},
+			Position = {unpack(C.position.filger.cooldown)},
 
 			-- Self
 			-- Archangel
@@ -2135,7 +2135,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_buff_icon)},
+			Position = {unpack(C.position.filger.player_buff_icon)},
 
 			-- Adrenaline Rush
 			{spellID = 13750, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2181,7 +2181,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_proc_icon)},
+			Position = {unpack(C.position.filger.player_proc_icon)},
 
 			-- Buffs
 			-- Anticipation
@@ -2265,7 +2265,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].target_debuff_icon)},
+			Position = {unpack(C.position.filger.target_debuff_icon)},
 
 			-- Crippling Poison
 			{spellID = 3409, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -2297,7 +2297,7 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 189,
-			Position = {unpack(C["filger_position"].pve_cc)},
+			Position = {unpack(C.position.filger.pve_cc)},
 
 			-- Blind
 			{spellID = 2094, unitID = "focus", caster = "player", filter = "DEBUFF"},
@@ -2311,7 +2311,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 30,
-			Position = {unpack(C["filger_position"].cooldown)},
+			Position = {unpack(C.position.filger.cooldown)},
 
 			-- Self
 			-- Adrenaline Rush
@@ -2392,7 +2392,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_buff_icon)},
+			Position = {unpack(C.position.filger.player_buff_icon)},
 
 			-- Ancestral Guidance
 			{spellID = 108281, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2426,7 +2426,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_proc_icon)},
+			Position = {unpack(C.position.filger.player_proc_icon)},
 
 			-- Buffs
 			-- Elemental Blast
@@ -2564,7 +2564,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].target_debuff_icon)},
+			Position = {unpack(C.position.filger.target_debuff_icon)},
 
 			-- Earthgrab
 			{spellID = 64695, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -2588,7 +2588,7 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 186,
-			Position = {unpack(C["filger_position"].target_bar)},
+			Position = {unpack(C.position.filger.target_bar)},
 
 			-- Earth Shield
 			{spellID = 974, unitID = "target", caster = "player", filter = "BUFF"},
@@ -2604,7 +2604,7 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 189,
-			Position = {unpack(C["filger_position"].pve_cc)},
+			Position = {unpack(C.position.filger.pve_cc)},
 
 			-- Hex
 			{spellID = 51514, unitID = "focus", caster = "player", filter = "DEBUFF"},
@@ -2616,7 +2616,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 30,
-			Position = {unpack(C["filger_position"].cooldown)},
+			Position = {unpack(C.position.filger.cooldown)},
 
 			-- Self
 			-- Ancestral Guidance
@@ -2705,7 +2705,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_buff_icon)},
+			Position = {unpack(C.position.filger.player_buff_icon)},
 
 			-- Blood Horror
 			{spellID = 111397, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2741,7 +2741,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_proc_icon)},
+			Position = {unpack(C.position.filger.player_proc_icon)},
 
 			-- Buffs
 			-- Backdraft
@@ -2813,7 +2813,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].target_debuff_icon)},
+			Position = {unpack(C.position.filger.target_debuff_icon)},
 
 			-- Self
 			-- Enslave Demon
@@ -2832,7 +2832,7 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 186,
-			Position = {unpack(C["filger_position"].target_bar)},
+			Position = {unpack(C.position.filger.target_bar)},
 
 			-- Agony
 			{spellID = 980, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -2858,7 +2858,7 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = 25,
 			BarWidth = 189,
-			Position = {unpack(C["filger_position"].pve_cc)},
+			Position = {unpack(C.position.filger.pve_cc)},
 
 			-- Banish
 			{spellID = 710, unitID = "focus", caster = "player", filter = "DEBUFF"},
@@ -2872,7 +2872,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 30,
-			Position = {unpack(C["filger_position"].cooldown)},
+			Position = {unpack(C.position.filger.cooldown)},
 
 			-- Self
 			-- Demonic Circle: Teleport
@@ -2945,7 +2945,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_buff_icon)},
+			Position = {unpack(C.position.filger.player_buff_icon)},
 
 			-- Avatar
 			{spellID = 107574, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2983,7 +2983,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].player_proc_icon)},
+			Position = {unpack(C.position.filger.player_proc_icon)},
 
 			-- Bloodsurge
 			{spellID = 46916, unitID = "player", caster = "player", filter = "BUFF"},
@@ -3102,7 +3102,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].target_debuff_icon)},
+			Position = {unpack(C.position.filger.target_debuff_icon)},
 
 			-- Colossus Smash
 			{spellID = 86346, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -3124,7 +3124,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 30,
-			Position = {unpack(C["filger_position"].cooldown)},
+			Position = {unpack(C.position.filger.cooldown)},
 
 			-- Self
 			-- Berserker Rage
@@ -3217,7 +3217,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 37,
-			Position = {unpack(C["filger_position"].special_proc_icon)},
+			Position = {unpack(C.position.filger.special_proc_icon)},
 
 			-- Ashran
 			-- Ancient Artifact
@@ -3386,7 +3386,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 60,
-			Position = {unpack(C["filger_position"].pve_debuff)},
+			Position = {unpack(C.position.filger.pve_debuff)},
 
 			-- Death Knight
 			-- Asphyxiate
@@ -3678,7 +3678,7 @@ C["filger_spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 60,
-			Position = {unpack(C["filger_position"].target_buff_icon)},
+			Position = {unpack(C.position.filger.target_buff_icon)},
 
 			-- Death Knight
 			-- Anti-Magic Shell

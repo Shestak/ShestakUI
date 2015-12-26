@@ -152,6 +152,8 @@
 	<Script file="Modules\Buffs\AuraSource.lua"/>
 	<Script file="Modules\Buffs\BuffFrame.lua"/>
 	<Script file="Modules\Buffs\ConsolidatedBuffs.lua"/>
+	<Script file="Modules\Buffs\FilgerSpells.lua"/>
+	<Script file="Modules\Buffs\Filger.lua"/>
 	<Script file="Modules\Buffs\SelfBuffsReminder.lua"/>
 	<Script file="Modules\Buffs\RaidBuffsReminder.lua"/>
 

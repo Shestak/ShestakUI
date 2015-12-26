@@ -25,12 +25,13 @@ local ALLOWED_GROUPS = {
 	["nameplate"] = 18,
 	["actionbar"] = 19,
 	["aura"] = 20,
-	["unitframe"] = 21,
-	["unitframe_class_bar"] = 22,
-	["raidframe"] = 23,
-	["toppanel"] = 24,
-	["error"] = 25,
-	["stats"] = 26,
+	["filger"] = 21,
+	["unitframe"] = 22,
+	["unitframe_class_bar"] = 23,
+	["raidframe"] = 24,
+	["toppanel"] = 25,
+	["error"] = 26,
+	["stats"] = 27,
 }
 
 local function Local(o)
@@ -352,6 +353,14 @@ local function Local(o)
 	if o == "UIConfigauradebuff_color_type" then o = L_GUI_AURA_DEBUFF_COLOR_TYPE end
 	if o == "UIConfigauracast_by" then o = L_GUI_AURA_CAST_BY end
 	if o == "UIConfigauraclasscolor_border" then o = L_GUI_AURA_CLASSCOLOR_BORDER end
+
+	-- Filger
+	if o == "UIConfigfilger" then o = L_GUI_FILGER end
+	if o == "UIConfigfilgerenable" then o = L_GUI_FILGER_ENABLE end
+	if o == "UIConfigfilgertest_mode" then o = L_GUI_FILGER_TEST_MODE end
+	if o == "UIConfigfilgermax_test_icon" then o = L_GUI_FILGER_MAX_TEST_ICON end
+	if o == "UIConfigfilgershow_tooltip" then o = L_GUI_FILGER_SHOW_TOOLTIP end
+	if o == "UIConfigfilgerdisable_cd" then o = L_GUI_FILGER_DISABLE_CD end
 
 	-- Unit Frames options
 	if o == "UIConfigunitframe" then o = UNITFRAME_LABEL end

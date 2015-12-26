@@ -316,6 +316,14 @@ L_GUI_AURA_DEBUFF_COLOR_TYPE = "Color debuff by type"
 L_GUI_AURA_CAST_BY = "Show who cast a buff/debuff in its tooltip"
 L_GUI_AURA_CLASSCOLOR_BORDER = "Enable classcolor border for player buffs"
 
+-- Filger
+L_GUI_FILGER = "Filger"
+L_GUI_FILGER_ENABLE = "Enable Filger"
+L_GUI_FILGER_TEST_MODE = "Test icon mode"
+L_GUI_FILGER_MAX_TEST_ICON = "The number of icons to the test"
+L_GUI_FILGER_SHOW_TOOLTIP = "Show tooltip"
+L_GUI_FILGER_DISABLE_CD = "Disable cooldowns"
+
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Enable unit frames"
 L_GUI_UF_OWN_COLOR = "Set your color for health bars"

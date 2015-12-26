@@ -319,6 +319,14 @@ L_GUI_AURA_DEBUFF_COLOR_TYPE = "DeBuff按法術類型著色"
 L_GUI_AURA_CAST_BY = "提示Buff/DeBuff提供者"
 L_GUI_AURA_CLASSCOLOR_BORDER = "自身Buff圖示邊框按職業著色"
 
+-- Filger
+L_GUI_FILGER = "Filger"
+L_GUI_FILGER_ENABLE = "Enable Filger" -- Need review
+L_GUI_FILGER_TEST_MODE = "Test icon mode" -- Need review
+L_GUI_FILGER_MAX_TEST_ICON = "The number of icons to the test" -- Need review
+L_GUI_FILGER_SHOW_TOOLTIP = "Show tooltip" -- Need review
+L_GUI_FILGER_DISABLE_CD = "Disable cooldowns" -- Need review
+
 -- Unit Frames options
 L_GUI_UF_ENABLE = "開啟單位框架增強"
 L_GUI_UF_OWN_COLOR = "自定義顏色"

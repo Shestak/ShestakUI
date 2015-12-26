@@ -119,6 +119,7 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["aura"].pet_debuffs = true
 	C["aura"].tot_debuffs = true
 	C["aura"].cast_by = true
+	C["filger"].show_tooltip = true
 	C["unitframe"].own_color = true
 	C["unitframe"].uf_color = {0.15, 0.15, 0.15}
 	C["unitframe"].enemy_health_color = false
