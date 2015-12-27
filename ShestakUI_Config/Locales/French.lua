@@ -242,6 +242,7 @@ L_GUI_BAGS_BAG = "Nombre de colonne pour les sacs"
 -- Minimap options
 L_GUI_MINIMAP_ENABLE = "Activer la minicarte"
 L_GUI_MINIMAP_ICON = "Icone de pistage"
+L_GUI_GARRISON_ICON = "Garrison icon" -- Need review
 L_GUI_MINIMAP_SIZE = "Taille de la minicarte"
 L_GUI_MINIMAP_HIDE_COMBAT = "Cacher la minimap en combat"
 L_GUI_MINIMAP_TOGGLE_MENU = "Montre le menu déroulant"

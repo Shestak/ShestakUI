@@ -242,6 +242,7 @@ L_GUI_BAGS_BAG = "Anzahl der Spalten in der Tasche"
 -- Minimap options
 L_GUI_MINIMAP_ENABLE = "Minimap aktivieren"
 L_GUI_MINIMAP_ICON = "Aufspüren-Symbol"
+L_GUI_GARRISON_ICON = "Garrison icon" -- Need review
 L_GUI_MINIMAP_SIZE = "Kartengröße"
 L_GUI_MINIMAP_HIDE_COMBAT = "Minimap im Kampf verstecken"
 L_GUI_MINIMAP_TOGGLE_MENU = "Zeige Toggle Menü"

@@ -242,6 +242,7 @@ L_GUI_BAGS_BAG = "Numero di colonne nella sacca principale"
 -- Minimap options
 L_GUI_MINIMAP_ENABLE = "Attiva la minimappa"
 L_GUI_MINIMAP_ICON = "Icona tracciamento"
+L_GUI_GARRISON_ICON = "Garrison icon" -- Need review
 L_GUI_MINIMAP_SIZE = "Dimensioni della minimappa"
 L_GUI_MINIMAP_HIDE_COMBAT = "Nascondi la minimappa in combattimento"
 L_GUI_MINIMAP_TOGGLE_MENU = "Mostra il menu a scomparsa"

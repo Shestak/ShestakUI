@@ -308,6 +308,7 @@ C["bag"] = {
 C["minimap"] = {
 	["enable"] = true,							-- Enable minimap
 	["tracking_icon"] = false,					-- Tracking icon
+	["garrison_icon"] = false,					-- Garrison icon
 	["size"] = 130,								-- Minimap size
 	["hide_combat"] = false,					-- Hide minimap in combat
 	["toggle_menu"] = true,						-- Show toggle menu

@@ -242,6 +242,7 @@ L_GUI_BAGS_BAG = "背包每行格数"
 -- Minimap options
 L_GUI_MINIMAP_ENABLE = "开启迷你地图增强"
 L_GUI_MINIMAP_ICON = "追踪菜单"
+L_GUI_GARRISON_ICON = "Garrison icon" -- Need review
 L_GUI_MINIMAP_SIZE = "迷你地图大小"
 L_GUI_MINIMAP_HIDE_COMBAT = "战斗中隐藏迷你地图"
 L_GUI_MINIMAP_TOGGLE_MENU = "小地图顶部快捷菜单"
