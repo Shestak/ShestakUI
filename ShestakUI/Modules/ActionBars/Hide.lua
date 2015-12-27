@@ -142,9 +142,8 @@ end
 
 -- Fix cooldown spiral alpha (WoD bug)
 function T.HideSpiral(f, alpha)
-	f:SetSwipeTexture(1, 1, 1)
 	f:SetSwipeColor(0, 0, 0, alpha * 0.8)
-	f:SetBlingTexture("", 0, 0, 0, 0)
+	f:SetDrawBling(alpha == 1)
 end
 
 local EventSpiral = CreateFrame("Frame")
@@ -154,7 +153,7 @@ EventSpiral:SetScript("OnEvent", function()
 		RightBarMouseOver(0)
 	end
 
-	if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
+	if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true and C.actionbar.petbar_hide ~= true then
 		PetBarMouseOver(0)
 	end
 
