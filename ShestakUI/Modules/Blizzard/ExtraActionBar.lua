@@ -6,6 +6,7 @@ if C.actionbar.enable ~= true then return end
 ------------------------------------------------------------------------------------------
 local anchor = CreateFrame("Frame", "ExtraButtonAnchor", UIParent)
 anchor:SetPoint(unpack(C.position.extra_button))
+ExtraActionButton1:SetSize(53, 53)
 anchor:SetSize(ExtraActionButton1:GetSize())
 
 ExtraActionBarFrame:SetParent(UIParent)
