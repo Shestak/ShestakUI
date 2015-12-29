@@ -21,6 +21,7 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[148009] = 3			-- Spirit of Chi-Ji
 	T.aoespam[149276] = 3			-- Flurry of Xuen
 	T.aoespam[147891] = 3			-- Flurry of Xuen
+	T.aoespam[184075] = 3			-- Doom Nova (Prophecy of Fear - Trinket)
 end
 
 -- Class config
@@ -310,7 +311,6 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[171017] = 0		-- Meteor Strike (Infrenal)
 		T.aoespam[104318] = 3		-- Fel Firebolt
 		T.aoespam[3110] = 3			-- Firebolt (Imp)
-		T.aoespam[184075] = 3		-- Doom Nova
 		T.merge[157736] = 348		-- Immolate
 		T.merge[108686] = 348		-- Immolate
 		T.merge[131737] = 980		-- Agony (Drain Soul)
