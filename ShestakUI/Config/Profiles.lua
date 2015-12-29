@@ -143,3 +143,45 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["toppanel"].enable = false
 	C["stats"].battleground = true
 end
+
+----------------------------------------------------------------------------------------
+--	Sw2rT1 Config
+----------------------------------------------------------------------------------------
+if T.name == "Вилкинсон" or T.name == "Нупачимучка" or T.name == "Пратифный"
+or T.name == "Рукалицо" or T.name == "Трольпаладин" or T.name == "Чаккерс"
+or T.name == "Релика" or T.name == "Тинейд" or T.name == "Тупаяшколота" then
+	C["general"].welcome_message = false
+	C["misc"].shift_marking = false
+	C["misc"].raid_tools = false
+	C["misc"].hide_bg_spam = true
+	C["misc"].gem_counter = true
+	C["misc"].disenchanting = true
+	C["announcements"].pull_countdown = false
+	C["announcements"].portals = true
+	C["automation"].accept_invite = true
+	C["automation"].accept_quest = true
+	C["automation"].auto_collapse = true
+	C["automation"].currency_cap = true
+	C["skins"].blizzard_frames = true
+	C["skins"].minimap_buttons = true
+	C["skins"].combustion_helper = true
+	C["skins"].dbm = true
+	C["combattext"].crit_prefix = ""
+	C["combattext"].crit_postfix = ""
+	C["raidcooldown"].enable = false
+	C["threat"].enable = false
+	C["tooltip"].item_icon = true
+	C["tooltip"].hide_combat = true
+	C["tooltip"].title = true
+	C["tooltip"].raid_icon = true
+	C["tooltip"].average_lvl = true
+	C["tooltip"].item_count = true
+	C["tooltip"].instance_lock = true
+	C["chat"].combatlog = false
+	C["chat"].damage_meter_spam = true
+	C["map"].fog_of_war = true
+	C["nameplate"].combat = true
+	C["aura"].focus_debuffs = true
+	C["unitframe"].enemy_health_color = false
+	C["raidframe"].icons_role = true
+end
