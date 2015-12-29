@@ -3653,7 +3653,7 @@ C["filger_spells"] = {
 			{spellID = 116784, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Throne of Thunder
 			-- Biting Cold (Council of Elders)
-			{spellID = 136992, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 136992, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Cinder (Megaera)
 			{spellID = 134391, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Focused Lightning (Jin'rokh the Breaker)
