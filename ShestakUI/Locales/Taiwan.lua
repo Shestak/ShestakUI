@@ -129,6 +129,7 @@ L_ERRORFRAME_L = "點擊查看錯誤"
 -- Bags
 L_BAG_SHOW_BAGS = "顯示背包"
 L_BAG_RIGHT_CLICK_SEARCH = "點擊右鍵以搜尋物品"
+L_BAG_STACK_MENU = "堆疊"
 
 -- Grab mail
 L_MAIL_STOPPED = "無法拾取, 背囊已滿."

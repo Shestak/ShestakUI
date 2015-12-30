@@ -129,6 +129,7 @@ L_ERRORFRAME_L = "Clic gauche pour afficher les erreurs."
 -- Bags
 L_BAG_SHOW_BAGS = "Montrer les sacs"
 L_BAG_RIGHT_CLICK_SEARCH = "Clic droit pour rechercher"
+L_BAG_STACK_MENU = "Empiler"
 
 -- Grab mail
 L_MAIL_STOPPED = "Inventaire plein."

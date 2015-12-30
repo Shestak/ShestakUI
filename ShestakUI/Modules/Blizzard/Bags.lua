@@ -1279,6 +1279,68 @@ function Stuffing:SortBags()
 	end
 end
 
+function Stuffing:RestackOnUpdate(e)
+	if not self.elapsed then
+		self.elapsed = 0
+	end
+
+	self.elapsed = self.elapsed + e
+
+	if self.elapsed < 0.1 then return end
+
+	self.elapsed = 0
+	self:Restack()
+end
+
+function Stuffing:Restack()
+	local st = {}
+
+	Stuffing_Open()
+
+	for i, v in pairs(self.buttons) do
+		if InBags(v.bag) then
+			local _, cnt, _, _, _, _, clink = GetContainerItemInfo(v.bag, v.slot)
+			if clink then
+				local n, _, _, _, _, _, _, s = GetItemInfo(clink)
+
+				if n and cnt ~= s then
+					if not st[n] then
+						st[n] = {{item = v, size = cnt, max = s}}
+					else
+						table.insert(st[n], {item = v, size = cnt, max = s})
+					end
+				end
+			end
+		end
+	end
+
+	local did_restack = false
+
+	for i, v in pairs(st) do
+		if #v > 1 then
+			for j = 2, #v, 2 do
+				local a, b = v[j - 1], v[j]
+				local _, _, l1 = GetContainerItemInfo(a.item.bag, a.item.slot)
+				local _, _, l2 = GetContainerItemInfo(b.item.bag, b.item.slot)
+
+				if l1 or l2 then
+					did_restack = true
+				else
+					PickupContainerItem(a.item.bag, a.item.slot)
+					PickupContainerItem(b.item.bag, b.item.slot)
+					did_restack = true
+				end
+			end
+		end
+	end
+
+	if did_restack then
+		self:SetScript("OnUpdate", Stuffing.RestackOnUpdate)
+	else
+		self:SetScript("OnUpdate", nil)
+	end
+end
+
 function Stuffing:PLAYERBANKBAGSLOTS_CHANGED()
 	if not StuffingPurchaseButtonBank then return end
 	local _, full = GetNumBankSlots()
@@ -1299,7 +1361,7 @@ function Stuffing.Menu(self, level)
 	if level ~= 1 then return end
 
 	wipe(info)
-	info.text = BAG_FILTER_CLEANUP
+	info.text = BAG_FILTER_CLEANUP.." Blizzard"
 	info.notCheckable = 1
 	info.func = function()
 		SortBags()
@@ -1309,13 +1371,25 @@ function Stuffing.Menu(self, level)
 	UIDropDownMenu_AddButton(info, level)
 
 	wipe(info)
-	info.text = BAG_FILTER_CLEANUP.." №2"
+	info.text = BAG_FILTER_CLEANUP
 	info.notCheckable = 1
 	info.func = function()
 		if InCombatLockdown() then
 			print("|cffffff00"..ERR_NOT_IN_COMBAT) return
 		end
 		Stuffing_Sort("d")
+	end
+	UIDropDownMenu_AddButton(info, level)
+
+	wipe(info)
+	info.text = L_BAG_STACK_MENU
+	info.notCheckable = 1
+	info.func = function()
+		if InCombatLockdown() then
+			print("|cffffff00"..ERR_NOT_IN_COMBAT) return
+		end
+		Stuffing:SetBagsForSorting("d")
+		Stuffing:Restack()
 	end
 	UIDropDownMenu_AddButton(info, level)
 
