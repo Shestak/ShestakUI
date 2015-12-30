@@ -386,6 +386,7 @@ local function LoadSkin()
 
 		button:StyleButton(nil, 0)
 		button:CreateBackdrop("Default")
+		button.cooldown:SetAllPoints(icon)
 
 		icon:SetPoint("TOPLEFT")
 		icon:SetPoint("BOTTOMRIGHT")
