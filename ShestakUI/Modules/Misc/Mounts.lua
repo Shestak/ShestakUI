@@ -1,5 +1,6 @@
 ----------------------------------------------------------------------------------------
 --	Universal Mount macro(by Monolit)
+--	/cancelform [noform:4]
 --	/run Mountz("your_ground_mount","your_flying_mount","your_underwater_mount")
 ----------------------------------------------------------------------------------------
 function Mountz(groundmount, flyingmount, underwatermount)
