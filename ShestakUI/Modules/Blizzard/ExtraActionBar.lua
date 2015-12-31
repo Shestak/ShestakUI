@@ -6,12 +6,13 @@ if C.actionbar.enable ~= true then return end
 ------------------------------------------------------------------------------------------
 local anchor = CreateFrame("Frame", "ExtraButtonAnchor", UIParent)
 anchor:SetPoint(unpack(C.position.extra_button))
-ExtraActionButton1:SetSize(53, 53)
-anchor:SetSize(ExtraActionButton1:GetSize())
+anchor:SetSize(53, 53)
 
 ExtraActionBarFrame:SetParent(UIParent)
 ExtraActionBarFrame:ClearAllPoints()
 ExtraActionBarFrame:SetPoint("CENTER", anchor, "CENTER")
+ExtraActionBarFrame:SetSize(53, 53)
+ExtraActionBarFrame.ignoreFramePositionManager = true
 
 RegisterStateDriver(anchor, "visibility", "[petbattle] hide; show")
 
@@ -29,3 +30,4 @@ button.style:SetTexture(nil)
 hooksecurefunc(texture, "SetTexture", disableTexture)
 
 button:StyleButton()
+button:SetSize(53, 53)
