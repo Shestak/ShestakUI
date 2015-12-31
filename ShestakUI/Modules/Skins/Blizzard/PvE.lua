@@ -392,6 +392,8 @@ local function LoadSkin()
 	LFGListFrame.SearchPanel.RefreshButton:SetSize(24, 24)
 	LFGListFrame.SearchPanel.RefreshButton.Icon:SetPoint("CENTER")
 
+	LFGListFrame.SearchPanel.FilterButton:SetPoint("LEFT", LFGListFrame.SearchPanel.SearchBox, "RIGHT", 5, 0)
+
 	T.SkinEditBox(LFGListFrame.SearchPanel.SearchBox)
 
 	T.SkinCloseButton(PVEFrameCloseButton)
