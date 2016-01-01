@@ -90,6 +90,8 @@ for _, headerName in pairs({"QuestHeader", "AchievementHeader", "ScenarioHeader"
 	ObjectiveTrackerFrame.BlocksFrame[headerName].Background:Hide()
 end
 
+BONUS_OBJECTIVE_TRACKER_MODULE.Header.Background:Hide()
+
 ----------------------------------------------------------------------------------------
 --	Skin ObjectiveTrackerFrame.HeaderMenu.MinimizeButton
 ----------------------------------------------------------------------------------------
