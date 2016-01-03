@@ -1,7 +1,10 @@
 local parent, ns = ...
 local oUF = ns.oUF
 
-local Update = function(self, event)
+local Path
+local Update = function(self, event, unit)
+	if(self.unit ~= unit) then return end
+
 	local resurrect = self.ResurrectIcon
 	if(resurrect.PreUpdate) then
 		resurrect:PreUpdate()
@@ -10,8 +13,10 @@ local Update = function(self, event)
 	local incomingResurrect = UnitHasIncomingResurrection(self.unit)
 	if(incomingResurrect) then
 		resurrect:Show()
+		self:RegisterEvent('UNIT_HEALTH', Path)
 	else
 		resurrect:Hide()
+		self:UnregisterEvent('UNIT_HEALTH', Path)
 	end
 
 	if(resurrect.PostUpdate) then
@@ -19,7 +24,7 @@ local Update = function(self, event)
 	end
 end
 
-local Path = function(self, ...)
+Path = function(self, ...)
 	return (self.ResurrectIcon.Override or Update) (self, ...)
 end
 
@@ -33,7 +38,7 @@ local Enable = function(self)
 		resurrect.__owner = self
 		resurrect.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent('INCOMING_RESURRECT_CHANGED', Path)
+		self:RegisterEvent('INCOMING_RESURRECT_CHANGED', Path, true)
 
 		if(resurrect:IsObjectType('Texture') and not resurrect:GetTexture()) then
 			resurrect:SetTexture[[Interface\RaidFrame\Raid-Icon-Rez]]

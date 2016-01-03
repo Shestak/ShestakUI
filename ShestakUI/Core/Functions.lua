@@ -735,11 +735,6 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 				border:SetAlpha(1)
 			end
 		end
-		if min == 0 and self:GetParent().ResurrectIcon then
-			self:GetParent().ResurrectIcon:SetAlpha(1)
-		elseif self:GetParent().ResurrectIcon or (self:GetParent().ResurrectIcon and min == max) then
-			self:GetParent().ResurrectIcon:SetAlpha(0)
-		end
 	end
 end
 
