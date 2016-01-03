@@ -1557,6 +1557,8 @@ C["filger_spells"] = {
 			{spellID = 105809, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sacred Shield
 			{spellID = 20925, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Seraphim
+			{spellID = 152262, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Speed of Light
 			{spellID = 85499, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -1572,8 +1574,12 @@ C["filger_spells"] = {
 			-- Buffs
 			-- Bastion of Glory
 			{spellID = 114637, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Final Verdict
+			{spellID = 157048, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Daybreak
 			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Divine Crusader
+			{spellID = 144595, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Purpose
 			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grand Crusader
@@ -1584,6 +1590,8 @@ C["filger_spells"] = {
 			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
 			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Supplication
+			{spellID = 94686, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
