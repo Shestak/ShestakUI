@@ -76,7 +76,7 @@ L_GUI_AUTOMATION_LOGGING_COMBAT = "Automatisch Kampflog in Raids als Textdatei m
 L_GUI_AUTOMATION_CURRENCY_CAP = "Auto Popup beim Marken Limit"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Wirke Stärkungszauber mit Mausrad"
 L_GUI_AUTOMATION_OPEN_ITEMS = "Auto opening of items in bag" -- Needs review
-L_GUI_AUTOMATION_BANNER_HIDE = "Auto hiding Boss Banner Loot Frame"
+L_GUI_AUTOMATION_BANNER_HIDE = "Auto hiding Boss Banner Loot Frame" -- Need review
 
 -- Skins options
 L_GUI_SKINS = "Stilisierung"
