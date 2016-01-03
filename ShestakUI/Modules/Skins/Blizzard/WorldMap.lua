@@ -155,12 +155,29 @@ local function LoadSkin()
 		end
 	end)
 
+	local function SkinRewardSpell(button)
+		local name = button:GetName()
+		local icon = button.Icon
+
+		_G[name.."NameFrame"]:Hide()
+		_G[name.."SpellBorder"]:Hide()
+
+		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+		button:CreateBackdrop("Default")
+		button.backdrop:ClearAllPoints()
+		button.backdrop:SetPoint("TOPLEFT", icon, -2, 2)
+		button.backdrop:SetPoint("BOTTOMRIGHT", icon, 2, -2)
+	end
+
 	SkinReward(QuestInfoSkillPointFrame)
 	SkinReward(QuestInfoSpellObjectiveFrame)
 	SkinReward(MapQuestInfoRewardsFrame.SpellFrame)
 	SkinReward(MapQuestInfoRewardsFrame.XPFrame)
 	SkinReward(MapQuestInfoRewardsFrame.MoneyFrame)
 	SkinReward(MapQuestInfoRewardsFrame.SkillPointFrame)
+
+	SkinRewardSpell(QuestInfoRewardSpell)
 
 	T.SkinDropDownBox(WorldMapLevelDropDown)
 	WorldMapLevelDropDown:ClearAllPoints()
