@@ -178,6 +178,7 @@ local function LoadSkin()
 	SkinReward(MapQuestInfoRewardsFrame.SkillPointFrame)
 
 	SkinRewardSpell(QuestInfoRewardSpell)
+	SkinRewardSpell(QuestInfoSpellObjectiveFrame)
 
 	T.SkinDropDownBox(WorldMapLevelDropDown)
 	WorldMapLevelDropDown:ClearAllPoints()
