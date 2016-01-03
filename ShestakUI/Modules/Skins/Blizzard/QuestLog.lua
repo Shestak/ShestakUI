@@ -85,14 +85,11 @@ local function LoadSkin()
 		QuestObjectiveText()
 	end)
 
-	hooksecurefunc("QuestInfo_ShowRequiredMoney", function()
-		local requiredMoney = GetQuestLogRequiredMoney()
-		if requiredMoney > 0 then
-			if requiredMoney > GetMoney() then
-				QuestInfoRequiredMoneyText:SetTextColor(0.6, 0.6, 0.6)
-			else
-				QuestInfoRequiredMoneyText:SetTextColor(1, 0.8, 0)
-			end
+	hooksecurefunc(QuestInfoRequiredMoneyText, "SetTextColor", function(self, r, g, b)
+		if r == 0 then
+			self:SetTextColor(1, 0.8, 0)
+		elseif r == 0.2 then
+			self:SetTextColor(0.6, 0.6, 0.6)
 		end
 	end)
 end
