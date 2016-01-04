@@ -74,7 +74,7 @@ local function Copy(cf)
 	FCF_SetChatWindowFontSize(cf, cf, 0.01)
 	local text = ""
 	for i = 1, cf:GetNumMessages() do
-		text = text .. cf:GetMessageInfo(i) .. "\n"
+		text = text..cf:GetMessageInfo(i).."\n"
 	end
 	text = text:gsub("|[Tt]Interface\\TargetingFrame\\UI%-RaidTargetingIcon_(%d):0|[Tt]", "{rt%1}")
 	text = text:gsub("|[Tt][^|]+|[Tt]", "")
