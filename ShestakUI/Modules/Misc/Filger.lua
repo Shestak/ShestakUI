@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.unitframe.enable ~= true or C.filger.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Filger(by Nils Ruesch, editors Affli/SinaC/Ildyria)
+--	Lightweight buff/debuff tracking (Filger by Nils Ruesch, editors Affli/SinaC/Ildyria)
 ----------------------------------------------------------------------------------------
 SpellActivationOverlayFrame:SetFrameStrata("BACKGROUND")
 local Filger = {}
