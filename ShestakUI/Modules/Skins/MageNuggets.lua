@@ -9,15 +9,7 @@ frame:RegisterEvent("PLAYER_LOGIN")
 frame:SetScript("OnEvent", function(self, event)
 	if not IsAddOnLoaded("MageNuggets") then return end
 
-	MageNugz.cautSize = 3
-	MageNugz.ssMonitorSize = 3
-	MageNugz.procMonitorSize = 3
-	MageNugz.livingBCounterSize = 3
-	MageNugz.polyFrameSize = 3
-	MageNugz.spMonitorSize = 3
-	MageNugz.moonkinProcSize = 3
-	MageNugz.cooldownSize = 3
-	MageNugz.moonkinSize = 3
+	MageNuggets.cooldownSize = 3
 
 	local sparks = {
 		"MageNugMBProcFrame_ProcBarSpark",
@@ -28,7 +20,6 @@ frame:SetScript("OnEvent", function(self, event)
 		"MageNugLB1_Frame_BarSpark",
 		"MageNugLB2_Frame_BarSpark",
 		"MageNugLB3_Frame_BarSpark",
-		"MageNugSSProcFrame_ProcBarSpark"
 	}
 
 	for i = 1, getn(sparks) do
@@ -40,9 +31,6 @@ frame:SetScript("OnEvent", function(self, event)
 
 	local icons = {
 		"MNPyromaniac_FrameTexture",
-		"MNcombust_FrameTexture",
-		"MNcritMass_FrameTexture",
-		"MNarcanepower_FrameTexture",
 		"MageNugMI_FrameTexture1",
 		"MageNugCauterize_FrameTexture1",
 		"MageNugMBProcFrameTexture",
@@ -52,7 +40,6 @@ frame:SetScript("OnEvent", function(self, event)
 		"MageNugBFProcFrameTexture",
 		"MageNugProcFrameTexture",
 		"MageNugClearcast_FrameTexture",
-		"MageNugManaGem_FrameTexture",
 		"MageNugAB_FrameTexture",
 		"MageNugIgnite_FrameTexture",
 		"MageNugLB_FrameTextureIcon",
@@ -60,10 +47,6 @@ frame:SetScript("OnEvent", function(self, event)
 		"MNmoonFire_FrameTexture",
 		"MNinsectSwarm_FrameTexture",
 		"MNstarSurge_FrameTexture",
-		"MageNugCastMoonFrameTexture",
-		"MageNugCastInsectFrameTexture",
-		"MageNugCastStarsurgeFrameTexture",
-		"MageNugSSProcFrameTexture",
 		"MageNugCD1_Frame_Texture",
 		"MageNugCD2_Frame_Texture",
 		"MageNugCD3_Frame_Texture",
@@ -220,9 +203,6 @@ frame:SetScript("OnEvent", function(self, event)
 
 	local backdrops = {
 		"MNPyromaniac_Frame",
-		"MNcombust_Frame",
-		"MNcritMass_Frame",
-		"MNarcanepower_Frame",
 		"MageNugMBProcFrame",
 		"MageNugPolyFrame",
 		"MageNugFoFProcFrame",
@@ -234,9 +214,6 @@ frame:SetScript("OnEvent", function(self, event)
 		"MageNugLB1_Frame",
 		"MageNugLB2_Frame",
 		"MageNugLB3_Frame",
-		"MageNugCastMoonFrame",
-		"MageNugCastInsectFrame",
-		"MageNugCastStarsurgeFrame",
 		"MageNugSSProcFrame"
 	}
 
@@ -248,9 +225,6 @@ frame:SetScript("OnEvent", function(self, event)
 	end
 
 	local texts = {
-		"MNcombust_FrameText",
-		"MNcritMass_FrameText",
-		"MNarcanepower_FrameText",
 		"MageNugMI_Frame_MIText",
 		"MageNugMI_Frame_MIText1",
 		"MageNugCauterize_Frame_Text",
@@ -270,7 +244,6 @@ frame:SetScript("OnEvent", function(self, event)
 		"MageNugProcFrameText2",
 		"MageNugClearcast_FrameText",
 		"MageNugClearcast_FrameText2",
-		"MageNugManaGem_Frame_Text2",
 		"MageNugAB_FrameText",
 		"MageNugAB_FrameText1",
 		"MageNugAB_FrameText2",
@@ -291,11 +264,6 @@ frame:SetScript("OnEvent", function(self, event)
 		"MNmoonFire_FrameText",
 		"MNinsectSwarm_FrameText",
 		"MNstarSurge_FrameText",
-		"MageNugCastMoonFrameText",
-		"MageNugCastInsectFrameText",
-		"MageNugCastStarsurgeFrameText",
-		"MageNugSSProcFrameText",
-		"MageNugSSProcFrameText2",
 		"MageNugCD_Frame_Text",
 		"MageNugCD1_Frame_Text",
 		"MageNugCD2_Frame_Text",
@@ -328,14 +296,12 @@ frame:SetScript("OnEvent", function(self, event)
 		"MageNugBFProcFrame_ProcBar",
 		"MageNugProcFrame_ProcBar",
 		"MageNugClearcast_Frame_Bar",
-		"MageNugManaGem_Frame_Bar",
 		"MageNugAB_Frame_ABBar",
 		"MageNugIgnite_Frame_Bar",
 		"MageNugLB1_Frame_Bar",
 		"MageNugLB2_Frame_Bar",
 		"MageNugLB3_Frame_Bar",
 		"MageNugMoonkin_Frame_Bar",
-		"MageNugSSProcFrame_ProcBar",
 		"MageNugMI_Frame_MiBar",
 		"MageNugCD1_Frame_Bar",
 		"MageNugCD2_Frame_Bar",
@@ -351,34 +317,6 @@ frame:SetScript("OnEvent", function(self, event)
 			bar:SetStatusBarTexture(C.media.texture)
 		end
 	end
-
-	-- MNcombust_Frame
-	MNcombust_Frame:CreateBackdrop("Default")
-	MNcombust_Frame.backdrop:SetPoint("TOPLEFT", MNcombust_FrameTexture, -2, 2)
-	MNcombust_Frame.backdrop:SetPoint("BOTTOMRIGHT", MNcombust_FrameTexture, 2, -2)
-	MNcombust_Frame:ClearAllPoints()
-	MNcombust_Frame:SetPoint("BOTTOMLEFT", MageNugSP_Frame, "TOPLEFT", 23, 3)
-
-	MNcombust_FrameText:ClearAllPoints()
-	MNcombust_FrameText:SetPoint("CENTER", MNcombust_Frame, "CENTER", 0, 0)
-
-	-- MNcritMass_Frame
-	MNcritMass_Frame:CreateBackdrop("Default")
-	MNcritMass_Frame.backdrop:SetPoint("TOPLEFT", MNcritMass_FrameTexture, -2, 2)
-	MNcritMass_Frame.backdrop:SetPoint("BOTTOMRIGHT", MNcritMass_FrameTexture, 2, -2)
-	MNcritMass_Frame:ClearAllPoints()
-	MNcritMass_Frame:SetPoint("BOTTOMLEFT", MageNugSP_Frame, "TOPLEFT", 45, 3)
-
-	MNcritMass_FrameText:ClearAllPoints()
-	MNcritMass_FrameText:SetPoint("CENTER", MNcritMass_Frame, "CENTER", 0, 0)
-
-	-- MNarcanepower_Frame
-	MNarcanepower_Frame:CreateBackdrop("Default")
-	MNarcanepower_Frame.backdrop:SetPoint("TOPLEFT", MNarcanepower_FrameTexture, -2, 2)
-	MNarcanepower_Frame.backdrop:SetPoint("BOTTOMRIGHT", MNarcanepower_FrameTexture, 2, -2)
-
-	MNarcanepower_FrameText:ClearAllPoints()
-	MNarcanepower_FrameText:SetPoint("CENTER", MNarcanepower_Frame, "CENTER", 0, 0)
 
 	-- MageNugMI_Frame
 	MageNugMI_FrameTexture1:SetSize(21, 21)
@@ -419,7 +357,7 @@ frame:SetScript("OnEvent", function(self, event)
 	MageNugCauterize_Frame_Text1:SetPoint("RIGHT", MageNugCauterize_Frame_Bar, "RIGHT", 0, 0)
 
 	-- MageNugMBProcFrame
-	MageNugMBProcFrameTexture:SetSize(21, 21)
+	MageNugMBProcFrameTextureBorder:Hide()
 
 	MageNugMBProcFrame:CreateBackdrop("Default")
 	MageNugMBProcFrame.backdrop:SetPoint("TOPLEFT", MageNugMBProcFrameTexture, -2, 2)
@@ -439,7 +377,7 @@ frame:SetScript("OnEvent", function(self, event)
 	MageNugMBProcFrameText2:SetPoint("RIGHT", MageNugMBProcFrame_ProcBar, "RIGHT", 0, 0)
 
 	-- MageNugPolyFrame
-	MageNugPolyFrameTexture:SetSize(21, 21)
+	MageNugPolyFrameTextureBorder:Hide()
 
 	MageNugPolyFrame:CreateBackdrop("Default")
 	MageNugPolyFrame.backdrop:SetPoint("TOPLEFT", MageNugPolyFrameTexture, -2, 2)
@@ -459,7 +397,7 @@ frame:SetScript("OnEvent", function(self, event)
 	MageNugPolyFrameTimerText:SetPoint("RIGHT", MageNugPolyFrame_Bar, "RIGHT", 0, 0)
 
 	-- MageNugFoFProcFrame
-	MageNugFoFProcFrameTexture:SetSize(21, 21)
+	MageNugFoFProcFrameTextureBorder:Hide()
 
 	MageNugFoFProcFrame:CreateBackdrop("Default")
 	MageNugFoFProcFrame.backdrop:SetPoint("TOPLEFT", MageNugFoFProcFrameTexture, -2, 2)
@@ -502,7 +440,7 @@ frame:SetScript("OnEvent", function(self, event)
 	MageNugImpactProcFrameText2:SetPoint("RIGHT", MageNugImpactProcFrame_ProcBar, "RIGHT", 0, 0)
 
 	-- MageNugBFProcFrame
-	MageNugBFProcFrameTexture:SetSize(21, 21)
+	MageNugBFProcFrameTextureBorder:Hide()
 
 	MageNugBFProcFrame:CreateBackdrop("Default")
 	MageNugBFProcFrame.backdrop:SetPoint("TOPLEFT", MageNugBFProcFrameTexture, -2, 2)
@@ -522,7 +460,7 @@ frame:SetScript("OnEvent", function(self, event)
 	MageNugBFProcFrameText2:SetPoint("RIGHT", MageNugBFProcFrame_ProcBar, "RIGHT", 0, 0)
 
 	-- MageNugProcFrame
-	MageNugProcFrameTexture:SetSize(21, 21)
+	MageNugProcFrameTextureBorder:Hide()
 
 	MageNugProcFrame:CreateBackdrop("Default")
 	MageNugProcFrame.backdrop:SetPoint("TOPLEFT", MageNugProcFrameTexture, -2, 2)
@@ -566,19 +504,6 @@ frame:SetScript("OnEvent", function(self, event)
 	MageNugClearcast_FrameTexture:SetPoint("TOPLEFT", 2, -2)
 	MageNugClearcast_FrameTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 
-	-- MageNugManaGem_Frame
-	MageNugManaGem_Frame:SetTemplate("Default")
-
-	MageNugManaGem_FrameTexture:SetDrawLayer("ARTWORK")
-	MageNugManaGem_FrameTexture:ClearAllPoints()
-	MageNugManaGem_FrameTexture:SetPoint("TOPLEFT", 2, -2)
-	MageNugManaGem_FrameTexture:SetPoint("BOTTOMRIGHT", -2, 2)
-
-	MageNugManaGem_Frame_Text:SetFont(C.font.stylization_font, C.font.stylization_font_size * 2, C.font.stylization_font_style)
-	MageNugManaGem_Frame_Text:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
-	MageNugManaGem_Frame_Text:ClearAllPoints()
-	MageNugManaGem_Frame_Text:SetPoint("CENTER", MageNugManaGem_Frame, "CENTER", 0, 0)
-
 	-- MageNugAB_Frame
 	MageNugAB_Frame:SetTemplate("Default")
 
@@ -616,7 +541,7 @@ frame:SetScript("OnEvent", function(self, event)
 	-- MageNugLB1_Frame
 	MageNugLB1_Frame:SetFrameStrata("BACKGROUND")
 	MageNugLB1_Frame:CreateBackdrop("Default")
-	MageNugLB1_Frame.backdrop:SetPoint("TOPLEFT", MageNugLB1_Frame, -2, 2)
+	MageNugLB1_Frame.backdrop:SetPoint("TOPLEFT", MageNugLB1_Frame, -2, 0)
 	MageNugLB1_Frame.backdrop:SetPoint("BOTTOMRIGHT", MageNugLB1_Frame, 2, -1)
 	MageNugLB1_Frame:ClearAllPoints()
 	MageNugLB1_Frame:SetPoint("BOTTOMLEFT", MageNugLB_Frame, "BOTTOMRIGHT", 5, 1)
@@ -632,7 +557,7 @@ frame:SetScript("OnEvent", function(self, event)
 	-- MageNugLB2_Frame
 	MageNugLB2_Frame:SetFrameStrata("BACKGROUND")
 	MageNugLB2_Frame:CreateBackdrop("Default")
-	MageNugLB2_Frame.backdrop:SetPoint("TOPLEFT", MageNugLB2_Frame, -2, 2)
+	MageNugLB2_Frame.backdrop:SetPoint("TOPLEFT", MageNugLB2_Frame, -2, 0)
 	MageNugLB2_Frame.backdrop:SetPoint("BOTTOMRIGHT", MageNugLB2_Frame, 2, -1)
 	MageNugLB2_Frame:ClearAllPoints()
 	MageNugLB2_Frame:SetPoint("BOTTOM", MageNugLB1_Frame, "TOP", 0, 6)
@@ -648,7 +573,7 @@ frame:SetScript("OnEvent", function(self, event)
 	-- MageNugLB3_Frame
 	MageNugLB3_Frame:SetFrameStrata("BACKGROUND")
 	MageNugLB3_Frame:CreateBackdrop("Default")
-	MageNugLB3_Frame.backdrop:SetPoint("TOPLEFT", MageNugLB3_Frame, -2, 2)
+	MageNugLB3_Frame.backdrop:SetPoint("TOPLEFT", MageNugLB3_Frame, -2, 0)
 	MageNugLB3_Frame.backdrop:SetPoint("BOTTOMRIGHT", MageNugLB3_Frame, 2, -1)
 	MageNugLB3_Frame:ClearAllPoints()
 	MageNugLB3_Frame:SetPoint("BOTTOM", MageNugLB2_Frame, "TOP", 0, 6)
@@ -715,41 +640,6 @@ frame:SetScript("OnEvent", function(self, event)
 
 	MNstarSurge_FrameText:ClearAllPoints()
 	MNstarSurge_FrameText:SetPoint("CENTER", MNstarSurge_Frame, 0, 0)
-
-	-- MageNugCastMoonFrame
-	MageNugCastMoonFrame:CreateBackdrop("Default")
-	MageNugCastMoonFrame.backdrop:SetPoint("TOPLEFT", MageNugCastMoonFrameTexture, -2, 2)
-	MageNugCastMoonFrame.backdrop:SetPoint("BOTTOMRIGHT", MageNugCastMoonFrameTexture, 2, -2)
-
-	-- MageNugCastInsectFrame
-	MageNugCastInsectFrame:CreateBackdrop("Default")
-	MageNugCastInsectFrame.backdrop:SetPoint("TOPLEFT", MageNugCastInsectFrameTexture, -2, 2)
-	MageNugCastInsectFrame.backdrop:SetPoint("BOTTOMRIGHT", MageNugCastInsectFrameTexture, 2, -2)
-
-	-- MageNugCastStarsurgeFrame
-	MageNugCastStarsurgeFrame:CreateBackdrop("Default")
-	MageNugCastStarsurgeFrame.backdrop:SetPoint("TOPLEFT", MageNugCastStarsurgeFrameTexture, -2, 2)
-	MageNugCastStarsurgeFrame.backdrop:SetPoint("BOTTOMRIGHT", MageNugCastStarsurgeFrameTexture, 2, -2)
-
-	-- MageNugSSProcFrame
-	MageNugSSProcFrameTexture:SetSize(21, 21)
-
-	MageNugSSProcFrame:CreateBackdrop("Default")
-	MageNugSSProcFrame.backdrop:SetPoint("TOPLEFT", MageNugSSProcFrameTexture, -2, 2)
-	MageNugSSProcFrame.backdrop:SetPoint("BOTTOMRIGHT", MageNugSSProcFrameTexture, 2, -2)
-
-	MageNugSSProcFrame_ProcBar:SetFrameStrata("BACKGROUND")
-	MageNugSSProcFrame_ProcBar:SetWidth(186)
-	MageNugSSProcFrame_ProcBar:SetHeight(15)
-	MageNugSSProcFrame_ProcBar:CreateBackdrop("Default")
-	MageNugSSProcFrame_ProcBar:ClearAllPoints()
-	MageNugSSProcFrame_ProcBar:SetPoint("BOTTOMLEFT", MageNugSSProcFrameTexture, "BOTTOMRIGHT", 7, 0)
-
-	MageNugSSProcFrameText:ClearAllPoints()
-	MageNugSSProcFrameText:SetPoint("LEFT", MageNugSSProcFrame_ProcBar, "LEFT", 2, 0)
-
-	MageNugSSProcFrameText2:ClearAllPoints()
-	MageNugSSProcFrameText2:SetPoint("RIGHT", MageNugSSProcFrame_ProcBar, "RIGHT", 0, 0)
 
 	-- MageNugCD_Frame
 	for i = 1, 6 do
