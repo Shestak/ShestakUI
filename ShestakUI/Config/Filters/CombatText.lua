@@ -17,22 +17,27 @@ if C.combattext.merge_aoe_spam then
 	T.merge = {}
 	T.aoespam = {}
 	T.aoespam[6603] = 3				-- Auto Attack
-	T.aoespam[148008] = 3			-- Essence of Yu'lon
-	T.aoespam[148009] = 3			-- Spirit of Chi-Ji
-	T.aoespam[149276] = 3			-- Flurry of Xuen
-	T.aoespam[147891] = 3			-- Flurry of Xuen
+	T.aoespam[148008] = 3			-- Essence of Yu'lon (Legedary Cloak)
+	T.aoespam[148009] = 3			-- Spirit of Chi-Ji (Legedary Cloak)
+	T.aoespam[149276] = 3			-- Flurry of Xuen (Legedary Cloak)
+	T.aoespam[147891] = 3			-- Flurry of Xuen (Legedary Cloak)
 	T.aoespam[184075] = 3			-- Doom Nova (Prophecy of Fear - Trinket)
+	T.aoespam[187626] = 1			-- Maalus (Legedary Ring)
+	T.aoespam[187625] = 1			-- Nithramus (Legedary Ring)
+	T.aoespam[187624] = 1			-- Thorasus (Legedary Ring)
 end
 
 -- Class config
 if T.class == "DEATHKNIGHT" then
 	if C.combattext.merge_aoe_spam then
+		T.aoespam[168828] = 3		-- Necrosis
+		T.aoespam[155159] = 3		-- Necrotic Plague
 		T.aoespam[55095] = 3		-- Frost Fever
 		T.aoespam[55078] = 3		-- Blood Plague
 		T.aoespam[50842] = 0		-- Blood Boil
 		T.aoespam[49184] = 0		-- Howling Blast
 		T.aoespam[52212] = 3		-- Death and Decay
-		T.aoespam[50401] = 3		-- Razor Frost
+		T.aoespam[50401] = 3		-- Razorice
 		T.aoespam[91776] = 3		-- Claw (Ghoul)
 		T.aoespam[49020] = 0		-- Obliterate
 		T.aoespam[49143] = 0		-- Frost Strike
@@ -44,6 +49,7 @@ if T.class == "DEATHKNIGHT" then
 		T.merge[66188] = 49998		-- Death Strike Off-Hand
 	end
 	if C.combattext.healing then
+		T.healfilter[53365] = true	-- Unholy Strength
 		T.healfilter[119980] = true	-- Conversion
 	end
 elseif T.class == "DRUID" then
@@ -131,6 +137,9 @@ elseif T.class == "MAGE" then
 		T.aoespam[155152] = 3		-- Prismatic Crystal
 		T.aoespam[153596] = 3		-- Comet Storm
 		T.aoespam[153640] = 3		-- Arcane Orb
+		T.aoespam[157977] = 3		-- Unstable Magic
+		T.aoespam[153564] = 3		-- Meteor
+		T.aoespam[155158] = 3		-- Meteor Burn
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
@@ -175,6 +184,7 @@ elseif T.class == "PALADIN" then
 		T.aoespam[119952] = 3		-- Arcing Light
 		T.aoespam[114917] = 3		-- Stay of Execution
 		T.aoespam[144581] = 3		-- Blessing of the Guardians (T16)
+		T.aoespam[159375] = 3		-- Shining Protector
 		-- Damaging spells
 		T.aoespam[81297] = 3		-- Consecration
 		T.aoespam[119072] = .5		-- Holy Wrath
