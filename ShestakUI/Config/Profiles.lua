@@ -184,4 +184,5 @@ or T.name == "Релика" or T.name == "Тинейд" or T.name == "Тупая
 	C["aura"].focus_debuffs = true
 	C["unitframe"].enemy_health_color = false
 	C["raidframe"].icons_role = true
+	C["position"].quest = {"TOPRIGHT", UIParent, "TOPRIGHT", -52, -73}
 end
