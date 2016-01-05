@@ -5,7 +5,7 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 local VehicleAnchor = CreateFrame("Frame", "VehicleAnchor", UIParent)
 VehicleAnchor:SetPoint(unpack(C.position.vehicle))
-VehicleAnchor:SetSize(VehicleSeatIndicator:GetWidth(), VehicleSeatIndicator:GetHeight())
+VehicleAnchor:SetSize(130, 130)
 
 hooksecurefunc(VehicleSeatIndicator, "SetPoint", function(_, _, parent)
 	if parent == "MinimapCluster" or parent == _G["MinimapCluster"] then
