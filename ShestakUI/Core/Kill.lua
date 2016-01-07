@@ -85,6 +85,13 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		InterfaceOptionsDisplayPanelRotateMinimap:Kill()
 	end
 
+	if C.bag.enable then
+		InterfaceOptionsControlsPanelReverseCleanUpBags:Kill()
+		InterfaceOptionsControlsPanelReverseNewLoot:Kill()
+		SetSortBagsRightToLeft(true)
+		SetInsertItemsLeftToRight(false)
+	end
+
 	if C.combattext.enable then
 		InterfaceOptionsCombatTextPanelFCTDropDown:Kill()
 		if C.combattext.blizz_head_numbers ~= true then
