@@ -263,6 +263,7 @@ local function Local(o)
 	-- Bag options
 	if o == "UIConfigbag" then o = L_GUI_BAGS end
 	if o == "UIConfigbagenable" then o = L_GUI_BAGS_ENABLE end
+	if o == "UIConfigbagilvl" then o = L_GUI_BAGS_ILVL end
 	if o == "UIConfigbagbutton_size" then o = L_GUI_BAGS_BUTTON_SIZE end
 	if o == "UIConfigbagbutton_space" then o = L_GUI_BAGS_BUTTON_SPACE end
 	if o == "UIConfigbagbank_columns" then o = L_GUI_BAGS_BANK end

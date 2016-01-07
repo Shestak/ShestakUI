@@ -234,6 +234,7 @@ L_GUI_CHAT_DAMAGE_METER_SPAM = "Объединять спам измерител
 -- Bag options
 L_GUI_BAGS = "Сумки"
 L_GUI_BAGS_ENABLE = "Включить сумки"
+L_GUI_BAGS_ILVL = "Показывать уровень предметов"
 L_GUI_BAGS_BUTTON_SIZE = "Размер ячеек"
 L_GUI_BAGS_BUTTON_SPACE = "Расстояние между ячейками"
 L_GUI_BAGS_BANK = "Количество столбцов в банке"

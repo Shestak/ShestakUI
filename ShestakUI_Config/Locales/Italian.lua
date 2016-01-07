@@ -234,6 +234,7 @@ L_GUI_CHAT_DAMAGE_METER_SPAM = "Riunisce lo spam di un contatore dei danni in un
 -- Bag options
 L_GUI_BAGS = "Sacche"
 L_GUI_BAGS_ENABLE = "Attiva le sacche"
+L_GUI_BAGS_ILVL = "Show item level" -- Need review
 L_GUI_BAGS_BUTTON_SIZE = "Dimensioni degli scomparti"
 L_GUI_BAGS_BUTTON_SPACE = "Spazio tra gli scomparti"
 L_GUI_BAGS_BANK = "Numero di colonne in banca"

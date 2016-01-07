@@ -234,6 +234,7 @@ L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link" -- Nee
 -- Bag options
 L_GUI_BAGS = "Bolsas"
 L_GUI_BAGS_ENABLE = "Activar bolsas"
+L_GUI_BAGS_ILVL = "Show item level" -- Need review
 L_GUI_BAGS_BUTTON_SIZE = "Tamaño de los huecos"
 L_GUI_BAGS_BUTTON_SPACE = "Espacio entre huecos"
 L_GUI_BAGS_BANK = "Número de columnas en el banco"

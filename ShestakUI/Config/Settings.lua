@@ -296,6 +296,7 @@ C["chat"] = {
 ----------------------------------------------------------------------------------------
 C["bag"] = {
 	["enable"] = true,							-- Enable bags
+	["ilvl"] = false,							-- Show item level
 	["button_size"] = 27,						-- Buttons size
 	["button_space"] = 3,						-- Buttons space
 	["bank_columns"] = 17,						-- Horizontal number of columns in bank
@@ -332,7 +333,7 @@ C["loot"] = {
 	["rolllootframe"] = true,					-- Enable group roll frame
 	["icon_size"] = 22,							-- Icon size
 	["width"] = 221,							-- Loot window width
-	["auto_greed"] = true,						-- Push "greed" or "disenchant" button when an item roll at max level
+	["auto_greed"] = true,						-- Push "greed" or "disenchant" button when green item roll at max level
 	["auto_confirm_de"] = true,					-- Auto confirm disenchant
 }
 

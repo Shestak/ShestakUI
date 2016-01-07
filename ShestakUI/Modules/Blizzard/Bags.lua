@@ -129,6 +129,16 @@ end
 local trashButton = {}
 local trashBag = {}
 
+local upgrades = {
+	["1"] = 8, ["373"] = 4, ["374"] = 8, ["375"] = 4, ["376"] = 4, ["377"] = 4,
+	["379"] = 4, ["380"] = 4, ["446"] = 4, ["447"] = 8, ["452"] = 8, ["454"] = 4,
+	["455"] = 8, ["457"] = 8, ["459"] = 4, ["460"] = 8, ["461"] = 12, ["462"] = 16,
+	["466"] = 4, ["467"] = 8, ["469"] = 4, ["470"] = 8, ["471"] = 12, ["472"] = 16,
+	["477"] = 4, ["478"] = 8, ["480"] = 8, ["492"] = 4, ["493"] = 8, ["495"] = 4,
+	["496"] = 8, ["497"] = 12, ["498"] = 16, ["504"] = 12, ["505"] = 16, ["506"] = 20,
+	["507"] = 24, ["530"] = 5, ["531"] = 10
+}
+
 function Stuffing:SlotUpdate(b)
 	local texture, count, locked, quality = GetContainerItemInfo(b.bag, b.slot)
 	local clink = GetContainerItemLink(b.bag, b.slot)
@@ -139,13 +149,23 @@ function Stuffing:SlotUpdate(b)
 		b.frame:SetBackdropBorderColor(unpack(C.media.border_color))
 	end
 
+	if C.bag.ilvl == true then
+		b.frame.text:SetText()
+	end
+
 	if b.cooldown and StuffingFrameBags and StuffingFrameBags:IsShown() then
 		local start, duration, enable = GetContainerItemCooldown(b.bag, b.slot)
 		CooldownFrame_SetTimer(b.cooldown, start, duration, enable)
 	end
 
 	if clink then
-		b.name, _, _, _, b.level = GetItemInfo(clink)
+		b.name, _, _, b.itemlevel, b.level = GetItemInfo(clink)
+
+		if C.bag.ilvl == true and b.itemlevel and b.itemlevel > 1 and quality > 1 then
+			local upgrade = clink:match(":(%d+)\124h%[")
+			if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
+			b.frame.text:SetText(b.itemlevel + upgrades[upgrade])
+		end
 
 		if (IsItemUnusable(clink) or b.level and b.level > T.level) and not locked then
 			_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
@@ -407,6 +427,12 @@ function Stuffing:SlotNew(bag, slot)
 		ret.count:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
 		ret.count:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
 		ret.count:SetPoint("BOTTOMRIGHT", 1, 1)
+
+		if C.bag.ilvl == true then
+			ret.frame:FontString("text", C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
+			ret.frame.text:SetPoint("CENTER", 0, 5)
+			ret.frame.text:SetTextColor(1, 1, 0)
+		end
 
 		local Battlepay = _G[ret.frame:GetName()].BattlepayItemTexture
 		if Battlepay then

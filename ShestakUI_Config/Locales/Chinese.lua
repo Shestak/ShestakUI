@@ -234,6 +234,7 @@ L_GUI_CHAT_DAMAGE_METER_SPAM = "在链接中合并垃圾邮件"
 -- Bag options
 L_GUI_BAGS = "背包"
 L_GUI_BAGS_ENABLE = "开启背包增强"
+L_GUI_BAGS_ILVL = "Show item level" -- Need review
 L_GUI_BAGS_BUTTON_SIZE = "格子大小"
 L_GUI_BAGS_BUTTON_SPACE = "格子间距"
 L_GUI_BAGS_BANK = "银行每行格数"
