@@ -130,7 +130,7 @@ local trashButton = {}
 local trashBag = {}
 
 function Stuffing:SlotUpdate(b)
-	local texture, count, locked = GetContainerItemInfo(b.bag, b.slot)
+	local texture, count, locked, quality = GetContainerItemInfo(b.bag, b.slot)
 	local clink = GetContainerItemLink(b.bag, b.slot)
 	local isQuestItem, questId = GetContainerItemQuestInfo(b.bag, b.slot)
 
@@ -145,7 +145,7 @@ function Stuffing:SlotUpdate(b)
 	end
 
 	if clink then
-		b.name, _, b.rarity, _, b.level = GetItemInfo(clink)
+		b.name, _, _, _, b.level = GetItemInfo(clink)
 
 		if (IsItemUnusable(clink) or b.level and b.level > T.level) and not locked then
 			_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
@@ -154,13 +154,13 @@ function Stuffing:SlotUpdate(b)
 		end
 
 		-- Color slot according to item quality
-		if not b.frame.lock and b.rarity and b.rarity > 1 and not (isQuestItem or questId) then
-			b.frame:SetBackdropBorderColor(GetItemQualityColor(b.rarity))
+		if not b.frame.lock and quality and quality > 1 and not (isQuestItem or questId) then
+			b.frame:SetBackdropBorderColor(GetItemQualityColor(quality))
 		elseif isQuestItem or questId then
 			b.frame:SetBackdropBorderColor(1, 1, 0)
 		end
 	else
-		b.name, b.rarity, b.level = nil, nil, nil
+		b.name, b.level = nil, nil
 	end
 
 	SetItemButtonTexture(b.frame, texture)
