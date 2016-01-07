@@ -266,6 +266,14 @@ function CreateReagentContainer()
 		button:ClearAllPoints()
 		button:SetSize(C.bag.button_size, C.bag.button_size)
 
+		local _, _, _, quality = GetContainerItemInfo(-3, i)
+		local clink = GetContainerItemLink(-3, i)
+		if clink then
+			if quality and quality > 1 then
+				button:SetBackdropBorderColor(GetItemQualityColor(quality))
+			end
+		end
+
 		if i == 1 then
 			button:SetPoint("TOPLEFT", Reagent, "TOPLEFT", 10, -27)
 			LastRowButton = button
@@ -926,7 +934,7 @@ function Stuffing:ADDON_LOADED(addon)
 	self:RegisterEvent("GUILDBANKFRAME_CLOSED")
 	self:RegisterEvent("PLAYERBANKSLOTS_CHANGED")
 	self:RegisterEvent("PLAYERBANKBAGSLOTS_CHANGED")
-	--self:RegisterEvent("PLAYERREAGENTBANKSLOTS_CHANGED")
+	self:RegisterEvent("PLAYERREAGENTBANKSLOTS_CHANGED")
 	self:RegisterEvent("BAG_CLOSED")
 	self:RegisterEvent("BAG_UPDATE_COOLDOWN")
 	--self:RegisterEvent("REAGENTBANK_UPDATE")
@@ -973,6 +981,21 @@ function Stuffing:PLAYERBANKSLOTS_CHANGED(id)
 
 	if self.bankFrame and self.bankFrame:IsShown() then
 		self:BagSlotUpdate(-1)
+	end
+end
+
+function Stuffing:PLAYERREAGENTBANKSLOTS_CHANGED()
+	for i = 1, 98 do
+		local button = _G["ReagentBankFrameItem" .. i]
+		local _, _, _, quality = GetContainerItemInfo(-3, i)
+		local clink = GetContainerItemLink(-3, i)
+		button:SetBackdropBorderColor(unpack(C.media.border_color))
+
+		if clink then
+			if quality and quality > 1 then
+				button:SetBackdropBorderColor(GetItemQualityColor(quality))
+			end
+		end
 	end
 end
 
