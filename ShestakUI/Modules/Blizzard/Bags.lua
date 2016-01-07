@@ -430,7 +430,7 @@ function Stuffing:SlotNew(bag, slot)
 
 		if C.bag.ilvl == true then
 			ret.frame:FontString("text", C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
-			ret.frame.text:SetPoint("CENTER", 0, 5)
+			ret.frame.text:SetPoint("TOPLEFT", 1, -1)
 			ret.frame.text:SetTextColor(1, 1, 0)
 		end
 
