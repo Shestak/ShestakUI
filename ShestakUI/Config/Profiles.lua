@@ -164,7 +164,6 @@ or T.name == "Релика" or T.name == "Тинейд" or T.name == "Тупая
 	C["automation"].currency_cap = true
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
-	C["skins"].combustion_helper = true
 	C["skins"].dbm = true
 	C["combattext"].crit_prefix = ""
 	C["combattext"].crit_postfix = ""
@@ -179,6 +178,7 @@ or T.name == "Релика" or T.name == "Тинейд" or T.name == "Тупая
 	C["tooltip"].instance_lock = true
 	C["chat"].combatlog = false
 	C["chat"].damage_meter_spam = true
+	C["bag"].ilvl = true
 	C["map"].fog_of_war = true
 	C["nameplate"].combat = true
 	C["aura"].focus_debuffs = true
