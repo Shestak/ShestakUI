@@ -296,7 +296,9 @@ function CreateReagentContainer()
 	MoneyFrame_Update(ReagentBankFrame.UnlockInfo.CostMoneyFrame, GetReagentBankCost())
 	ReagentBankFrameUnlockInfo:StripTextures()
 	ReagentBankFrameUnlockInfo:SetAllPoints(Reagent)
-	ReagentBankFrameUnlockInfo:SetTemplate("Overlay")
+	ReagentBankFrameUnlockInfo:SetTemplate("Transparent")
+	ReagentBankFrameUnlockInfo:SetFrameStrata("FULLSCREEN")
+	ReagentBankFrameUnlockInfo:SetClampedToScreen(true)
 	ReagentBankFrameUnlockInfoPurchaseButton:SkinButton()
 end
 
