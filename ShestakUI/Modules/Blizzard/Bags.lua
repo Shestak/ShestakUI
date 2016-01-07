@@ -198,6 +198,7 @@ function CreateReagentContainer()
 	Reagent:SetFrameLevel(_G["StuffingFrameBank"]:GetFrameLevel() + 5)
 	Reagent:EnableMouse(true)
 	Reagent:SetMovable(true)
+	Reagent:SetClampedToScreen(true)
 	Reagent:SetScript("OnMouseDown", function(self, button)
 		if IsShiftKeyDown() and button == "LeftButton" then
 			self:StartMoving()
@@ -298,7 +299,6 @@ function CreateReagentContainer()
 	ReagentBankFrameUnlockInfo:SetAllPoints(Reagent)
 	ReagentBankFrameUnlockInfo:SetTemplate("Transparent")
 	ReagentBankFrameUnlockInfo:SetFrameStrata("FULLSCREEN")
-	ReagentBankFrameUnlockInfo:SetClampedToScreen(true)
 	ReagentBankFrameUnlockInfoPurchaseButton:SkinButton()
 end
 
