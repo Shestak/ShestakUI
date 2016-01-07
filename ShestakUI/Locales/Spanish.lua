@@ -262,7 +262,6 @@ L_STATS_VIEW_NOTES = "Manten pulsada la tecla Alt para ver rangos, notas y notas
 L_STATS_HR = "hr"
 L_STATS_INF = "inf"
 L_STATS_ALREADY_EXCEPTIONS = "ya esta en la lista de excepciones."
-L_STATS_NOT_JUNK = "no es basura."
 L_STATS_ITEMLINK = "enlace del objeto"
 L_STATS_JUNK_EXCEPTIONS = "Excepciones de basura"
 L_STATS_JUNK_LIST = "Lista de basura"

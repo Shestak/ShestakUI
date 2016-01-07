@@ -262,7 +262,6 @@ L_STATS_VIEW_NOTES = "Maintenez enfoncé la touche Alt pour voir les grades, not
 L_STATS_HR = "Par heure"
 L_STATS_INF = "infini"
 L_STATS_ALREADY_EXCEPTIONS = "est déjà dans la liste d'exceptions."
-L_STATS_NOT_JUNK = "n'est pas une camelote"
 L_STATS_ITEMLINK = "élément Lien"
 L_STATS_JUNK_EXCEPTIONS = "Exceptions de camelote"
 L_STATS_JUNK_LIST = "Liste de camelote"

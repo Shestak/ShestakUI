@@ -262,7 +262,6 @@ L_STATS_VIEW_NOTES = "Зажмите Alt для просмотра званий,
 L_STATS_HR = "ч"
 L_STATS_INF = "бесконечный"
 L_STATS_ALREADY_EXCEPTIONS = "Уже в списке исключений."
-L_STATS_NOT_JUNK = "не является нежелательной."
 L_STATS_ITEMLINK = "Ссылка на предмет"
 L_STATS_JUNK_EXCEPTIONS = "Нежелательные исключения"
 L_STATS_JUNK_LIST = "Нежелательный список"

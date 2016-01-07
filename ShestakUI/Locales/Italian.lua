@@ -262,7 +262,6 @@ L_STATS_VIEW_NOTES = "Tieni premuto il tasto Alt per visualizzare ranghi, note e
 L_STATS_HR = "o"
 L_STATS_INF = "inf"
 L_STATS_ALREADY_EXCEPTIONS = "è già nell'elenco delle eccezioni."
-L_STATS_NOT_JUNK = "non è una cianfrusaglia."
 L_STATS_ITEMLINK = "Link all'oggetto"
 L_STATS_JUNK_EXCEPTIONS = "Eccezioni elenco cianfrusaglie"
 L_STATS_JUNK_LIST = "Elenco cianfrusaglie"

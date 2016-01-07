@@ -262,7 +262,6 @@ L_STATS_VIEW_NOTES = "Halte die Alt-Taste gedrückt, zum Anzeigen der Ränge, No
 L_STATS_HR = "std"
 L_STATS_INF = "unend"
 L_STATS_ALREADY_EXCEPTIONS = "ist bereits in der Ausnahmeliste."
-L_STATS_NOT_JUNK = "ist kein Junk."
 L_STATS_ITEMLINK = "itemlink"
 L_STATS_JUNK_EXCEPTIONS = "Junk-Ausnahmen"
 L_STATS_JUNK_LIST = "Junk-Liste"

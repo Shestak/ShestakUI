@@ -501,9 +501,9 @@ if gold.enabled then
 						if link then
 							local itemstring, ignore = strmatch(link, "|Hitem:(%d-):"), false
 							for _, exception in pairs(SavedStats.JunkIgnore) do
-								if exception == itemstring then ignore = true; break end
+								if exception == itemstring then ignore = true break end
 							end
-							if select(3, GetItemInfo(link)) == 0 and not ignore then
+							if (select(3, GetItemInfo(link)) == 0 and not ignore) or (ignore and select(3, GetItemInfo(link)) ~= 0) then
 								profit = profit + select(11, GetItemInfo(link)) * select(2, GetContainerItemInfo(bag, slot))
 								UseContainerItem(bag, slot)
 							end
@@ -645,20 +645,35 @@ if gold.enabled then
 			SavedStats.JunkIgnore = {}
 			print("|cff66C6FF"..L_STATS_CLEARED_JUNK)
 		elseif action == "add" or strfind(action, "^del") or strfind(action, "^rem") then
+			local _, mouselink = GameTooltip:GetItem()
 			for id in s:gmatch("|Hitem:(%d-):") do
-				local _, link, rarity = GetItemInfo(id)
+				mouselink = nil
+				local _, link = GetItemInfo(id)
 				if action == "add" then
-					if rarity == 0 then
-						if not tContains(SavedStats.JunkIgnore,id) then
-							tinsert(SavedStats.JunkIgnore, id)
-							print(format("|cff66C6FF%s:|r %s", L_STATS_ADDED_JUNK, link))
-						else
-							print(format("%s |cff66C6FF%s", link, L_STATS_ALREADY_EXCEPTIONS))
-						end
-					else print(format("|cff66C6FF", link, L_STATS_NOT_JUNK)) end
+					if not tContains(SavedStats.JunkIgnore,id) then
+						tinsert(SavedStats.JunkIgnore, id)
+						print(format("|cff66C6FF%s:|r %s", L_STATS_ADDED_JUNK, link))
+					else
+						print(format("%s |cff66C6FF%s", link, L_STATS_ALREADY_EXCEPTIONS))
+					end
 				elseif strfind(action, "^del") or strfind(action, "^rem") then
 					tDeleteItem(SavedStats.JunkIgnore, id)
 					print(format("|cff66C6FF%s:|r %s", L_STATS_REMOVED_JUNK, link))
+				end
+			end
+			if mouselink then
+				for id in mouselink:gmatch("|Hitem:(%d-):") do
+					if action == "add" then
+						if not tContains(SavedStats.JunkIgnore,id) then
+							tinsert(SavedStats.JunkIgnore, id)
+							print(format("|cff66C6FF%s:|r %s", L_STATS_ADDED_JUNK, mouselink))
+						else
+							print(format("%s |cff66C6FF%s", mouselink, L_STATS_ALREADY_EXCEPTIONS))
+						end
+					elseif strfind(action, "^del") or strfind(action, "^rem") then
+						tDeleteItem(SavedStats.JunkIgnore, id)
+						print(format("|cff66C6FF%s:|r %s", L_STATS_REMOVED_JUNK, mouselink))
+					end
 				end
 			end
 		else
