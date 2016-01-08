@@ -414,11 +414,11 @@ local function SkinObjects(frame, nameFrame)
 		cb.name:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 		cb.name:SetTextColor(1, 1, 1)
 	end
-	
-	-- absorb bar 
+
+	-- absorb bar
 	ab:ClearAllPoints()
 	frame.ab = ab
-	
+
 	-- Create Class Icon
 	if C.nameplate.class_icons == true then
 		local cIconTex = hp:CreateTexture(nil, "OVERLAY")
@@ -546,14 +546,14 @@ end
 
 -- Create our blacklist for nameplates
 local function CheckBlacklist(frame, ...)
-	if C.nameplate.name_abbrev == true then return end
-	if T.PlateBlacklist[frame.hp.name:GetText()] then
-		frame:SetScript("OnUpdate", function() end)
-		frame.hp:Hide()
-		frame.cb:Hide()
-		frame.overlay:Hide()
-		frame.hp.oldlevel:Hide()
-	end
+	--WoD if C.nameplate.name_abbrev == true then return end
+	-- if T.PlateBlacklist[frame.hp.name:GetText()] then
+		-- frame:SetScript("OnUpdate", function() end)
+		-- frame.hp:Hide()
+		-- frame.cb:Hide()
+		-- frame.overlay:Hide()
+		-- frame.hp.oldlevel:Hide()
+	-- end
 end
 
 -- Force the name text of a nameplate to be behind other nameplates unless it is our target
@@ -576,7 +576,7 @@ local function ShowHealth(frame, ...)
 	local d = (valueHealth / maxHealth) * 100
 
 	if C.nameplate.health_value == true then
-		-- Forcing percent only, due to possible bug in 6.2.2 
+		-- Forcing percent only, due to possible bug in 6.2.2
 		--frame.hp.value:SetText(T.ShortValue(valueHealth).." - "..(string.format("%d%%", math.floor((valueHealth / maxHealth) * 100))))
 		frame.hp.value:SetText(string.format("%d%%", math.floor((valueHealth / maxHealth) * 100)))
 	end
