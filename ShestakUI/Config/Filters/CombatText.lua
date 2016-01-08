@@ -22,6 +22,7 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[149276] = 3			-- Flurry of Xuen (Legedary Cloak)
 	T.aoespam[147891] = 3			-- Flurry of Xuen (Legedary Cloak)
 	T.aoespam[184075] = 3			-- Doom Nova (Prophecy of Fear - Trinket)
+	T.aoespam[184075] = 3			-- Darklight Ray (Unblinking Gaze of Sethe - Trinket)
 	T.aoespam[187626] = 1			-- Maalus (Legedary Ring)
 	T.aoespam[187625] = 1			-- Nithramus (Legedary Ring)
 	T.aoespam[187624] = 1			-- Thorasus (Legedary Ring)
