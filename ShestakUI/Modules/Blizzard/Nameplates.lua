@@ -546,14 +546,18 @@ end
 
 -- Create our blacklist for nameplates
 local function CheckBlacklist(frame, ...)
-	--WoD if C.nameplate.name_abbrev == true then return end
-	-- if T.PlateBlacklist[frame.hp.name:GetText()] then
-		-- frame:SetScript("OnUpdate", function() end)
-		-- frame.hp:Hide()
-		-- frame.cb:Hide()
-		-- frame.overlay:Hide()
-		-- frame.hp.oldlevel:Hide()
-	-- end
+	if C.nameplate.name_abbrev == true then return end
+	if T.PlateBlacklist[frame.hp.name:GetText()] then
+		frame:SetScript("OnUpdate", function() end)
+		frame.hp:SetAlpha(0)
+		frame.cb:Hide()
+		frame.overlay:Hide()
+		frame.hp.oldlevel:Hide()
+		frame.hide = true
+	elseif frame.hide then
+		frame.hp:SetAlpha(1)
+		frame.hide = false
+	end
 end
 
 -- Force the name text of a nameplate to be behind other nameplates unless it is our target
