@@ -110,6 +110,7 @@ local function LoadSkin()
 			T.SkinCloseButton(MissionPage.MinimizeButton, nil, "-")
 			MissionPage.MinimizeButton:SetFrameLevel(MissionPage:GetFrameLevel() + 2)
 			MPCompleteAll:SkinButton()
+			MPPokeTentativeParties:SkinButton()
 		end
 
 		if IsAddOnLoaded("MasterPlan") then
