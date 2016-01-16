@@ -106,13 +106,4 @@ T.PlateBlacklist = {
 	-- Gundrak
 	["Fanged Pit Viper"] = true,
 	["Клыкастая глубинная гадюка"] = true,
-	-- Totems
-	["Air Totem"] = true,
-	["Тотем воздуха"] = true,
-	["Water Totem"] = true,
-	["Тотем воды"] = true,
-	["Fire Totem"] = true,
-	["Тотем огня"] = true,
-	["Earth Totem"] = true,
-	["Тотем земли"] = true,
 }
