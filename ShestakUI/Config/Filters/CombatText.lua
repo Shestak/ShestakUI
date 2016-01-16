@@ -141,6 +141,8 @@ elseif T.class == "MAGE" then
 		T.aoespam[157977] = 3		-- Unstable Magic
 		T.aoespam[153564] = 3		-- Meteor
 		T.aoespam[155158] = 3		-- Meteor Burn
+		T.aoespam[88084] = 3		-- Arcane Blast (Mirror Image)
+		T.aoespam[59638] = 3		-- Frostbolt (Mirror Image)
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
@@ -257,6 +259,7 @@ elseif T.class == "ROGUE" then
 		T.aoespam[86392] = 3		-- Main Gauche
 		T.aoespam[157607] = 3		-- Instant Poison
 		T.aoespam[57841] = 3		-- Killing Spree
+		T.aoespam[1943] = 3			-- Rupture
 		T.merge[27576] = 5374		-- Mutilate Off-Hand
 		T.merge[113780] = 2818		-- Deadly Poison
 		T.merge[168908] = 16511		-- Hemorrhage
