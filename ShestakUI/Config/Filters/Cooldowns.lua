@@ -7,7 +7,7 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 if C.raidcooldown.enable == true then
 	T.raid_spells = {
-		-- Battle rez
+		-- Battle resurrection
 		[20484] = 600,	-- Rebirth
 		[61999] = 600,	-- Raise Ally
 		[20707] = 600,	-- Soulstone

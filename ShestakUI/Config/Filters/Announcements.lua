@@ -7,13 +7,14 @@
 ----------------------------------------------------------------------------------------
 if C.announcements.spells == true then
 	T.AnnounceSpells = {
-		34477,	-- Misdirection
-		19801,	-- Tranquilizing Shot
-		57934,	-- Tricks of the Trade
-		633,	-- Lay on Hands
-		20484,	-- Rebirth
 		61999,	-- Raise Ally
+		20484,	-- Rebirth
 		20707,	-- Soulstone
+		31821,	-- Devotion Aura
+		633,	-- Lay on Hands
+		34477,	-- Misdirection
+		57934,	-- Tricks of the Trade
+		19801,	-- Tranquilizing Shot
 		2908,	-- Soothe
 	}
 end
