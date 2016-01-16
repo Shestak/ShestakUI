@@ -41,11 +41,9 @@ T.ChatSpamList = {
 	"іcq",
 	"аsя",
 	"asя",
+	"dving.ru",
 	"nigmаz.сom",
-	"rpgbox.ru",
 	"rpgdealer.ru",
-	"arenamasters.ru",
 	"project-razgrom.ru",
-	"[www.project-razgrom.ru]",
-	"dving.ru"
+	"[www.project-razgrom.ru]"
 }
