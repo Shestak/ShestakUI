@@ -95,8 +95,10 @@ if C.announcements.bad_gear == true then
 			84660,	-- Pandaren Fishing Pole
 			84661,	-- Dragon Fishing Pole
 			45992,	-- Jeweled Fishing Pole
-			86559,	-- Frying Pan
 			45991,	-- Bone Fishing Pole
+			116826,	-- Draenic Fishing Pole
+			116825,	-- Savage Fishing Pole
+			86559,	-- Frying Pan
 		},
 		-- Off-hand
 		[17] = {
