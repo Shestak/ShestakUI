@@ -217,8 +217,10 @@ OnLogon:SetScript("OnEvent", function(self, event)
 
 		-- Hack for 4K and WQHD Resolution
 		local customScale = min(2, max(0.32, 768 / string.match(GetCVar("gxResolution"), "%d+x(%d+)")))
-		if customScale < 0.64 then
+		if C.general.auto_scale == true and customScale < 0.64 then
 			UIParent:SetScale(customScale)
+		elseif customScale < 0.64 then
+			UIParent:SetScale(C.general.uiscale)
 		end
 
 		-- Install default if we never ran ShestakUI on this character
