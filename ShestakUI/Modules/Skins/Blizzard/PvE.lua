@@ -151,7 +151,7 @@ local function LoadSkin()
 			local moneyicon = _G["LFDQueueFrameRandomScrollFrameChildFrameMoneyRewardIconTexture"]
 
 			if money then
-				local texture = moneyicon:GetTexture()
+				local texture = moneyicon:GetTexture() or [[Interface\Icons\inv_misc_coin_01]]
 
 				money:StripTextures()
 
@@ -160,12 +160,13 @@ local function LoadSkin()
 				moneyicon:SetPoint("TOPLEFT", 2, -2)
 				moneyicon:SetDrawLayer("OVERLAY")
 
-				if not money.backdrop then
-					money:CreateBackdrop("Default")
-					money.backdrop:SetPoint("TOPLEFT", moneyicon, "TOPLEFT", -2, 2)
-					money.backdrop:SetPoint("BOTTOMRIGHT", moneyicon, "BOTTOMRIGHT", 2, -2)
+				if not money.border then
+					money.border = CreateFrame("Frame", nil, money)
+					money.border:CreateBackdrop("Default")
+					money.border.backdrop:SetPoint("TOPLEFT", moneyicon, -2, 2)
+					money.border.backdrop:SetPoint("BOTTOMRIGHT", moneyicon, 2, -2)
 
-					moneyicon:SetParent(money.backdrop)
+					moneyicon:SetParent(money.border.backdrop)
 					moneyicon.SetPoint = T.dummy
 				end
 			end
@@ -181,25 +182,26 @@ local function LoadSkin()
 
 				count:SetDrawLayer("OVERLAY")
 
-				if not button.backdrop then
-					button:CreateBackdrop("Default")
-					button.backdrop:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
-					button.backdrop:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+				if not button.border then
+					button.border = CreateFrame("Frame", nil, button)
+					button.border:CreateBackdrop("Default")
+					button.border.backdrop:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
+					button.border.backdrop:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
 
-					icon:SetParent(button.backdrop)
+					icon:SetParent(button.border.backdrop)
 					icon.SetPoint = T.dummy
 
 					if count then
-						count:SetParent(button.backdrop)
+						count:SetParent(button.border.backdrop)
 					end
 					if role1 then
-						role1:SetParent(button.backdrop)
+						role1:SetParent(button.border.backdrop)
 					end
 					if role2 then
-						role2:SetParent(button.backdrop)
+						role2:SetParent(button.border.backdrop)
 					end
 					if role3 then
-						role3:SetParent(button.backdrop)
+						role3:SetParent(button.border.backdrop)
 					end
 				end
 			end
@@ -218,7 +220,7 @@ local function LoadSkin()
 			local moneyicon = _G["RaidFinderQueueFrameScrollFrameChildFrameMoneyRewardIconTexture"]
 
 			if money then
-				local texture = moneyicon:GetTexture()
+				local texture = moneyicon:GetTexture() or [[Interface\Icons\inv_misc_coin_01]]
 
 				money:StripTextures()
 
@@ -227,12 +229,13 @@ local function LoadSkin()
 				moneyicon:SetPoint("TOPLEFT", 2, -2)
 				moneyicon:SetDrawLayer("OVERLAY")
 
-				if not money.backdrop then
-					money:CreateBackdrop("Default")
-					money.backdrop:SetPoint("TOPLEFT", moneyicon, "TOPLEFT", -2, 2)
-					money.backdrop:SetPoint("BOTTOMRIGHT", moneyicon, "BOTTOMRIGHT", 2, -2)
+				if not money.border then
+					money.border = CreateFrame("Frame", nil, money)
+					money.border:CreateBackdrop("Default")
+					money.border.backdrop:SetPoint("TOPLEFT", moneyicon, -2, 2)
+					money.border.backdrop:SetPoint("BOTTOMRIGHT", moneyicon, 2, -2)
 
-					moneyicon:SetParent(money.backdrop)
+					moneyicon:SetParent(money.border.backdrop)
 					moneyicon.SetPoint = T.dummy
 				end
 			end
@@ -249,25 +252,26 @@ local function LoadSkin()
 
 				count:SetDrawLayer("OVERLAY")
 
-				if not button.backdrop then
-					button:CreateBackdrop("Default")
-					button.backdrop:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
-					button.backdrop:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+				if not button.border then
+					button.border = CreateFrame("Frame", nil, button)
+					button.border:CreateBackdrop("Default")
+					button.border.backdrop:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
+					button.border.backdrop:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
 
-					icon:SetParent(button.backdrop)
+					icon:SetParent(button.border.backdrop)
 					icon.SetPoint = T.dummy
 
 					if count then
-						count:SetParent(button.backdrop)
+						count:SetParent(button.border.backdrop)
 					end
 					if role1 then
-						role1:SetParent(button.backdrop)
+						role1:SetParent(button.border.backdrop)
 					end
 					if role2 then
-						role2:SetParent(button.backdrop)
+						role2:SetParent(button.border.backdrop)
 					end
 					if role3 then
-						role3:SetParent(button.backdrop)
+						role3:SetParent(button.border.backdrop)
 					end
 				end
 			end
@@ -283,7 +287,7 @@ local function LoadSkin()
 			local moneyicon = _G["ScenarioQueueFrameRandomScrollFrameChildFrameMoneyRewardIconTexture"]
 
 			if money then
-				local texture = moneyicon:GetTexture()
+				local texture = moneyicon:GetTexture() or [[Interface\Icons\inv_misc_coin_01]]
 
 				money:StripTextures()
 
@@ -292,12 +296,13 @@ local function LoadSkin()
 				moneyicon:SetPoint("TOPLEFT", 2, -2)
 				moneyicon:SetDrawLayer("OVERLAY")
 
-				if not money.backdrop then
-					money:CreateBackdrop("Default")
-					money.backdrop:SetPoint("TOPLEFT", moneyicon, "TOPLEFT", -2, 2)
-					money.backdrop:SetPoint("BOTTOMRIGHT", moneyicon, "BOTTOMRIGHT", 2, -2)
+				if not money.border then
+					money.border = CreateFrame("Frame", nil, money)
+					money.border:CreateBackdrop("Default")
+					money.border.backdrop:SetPoint("TOPLEFT", moneyicon, -2, 2)
+					money.border.backdrop:SetPoint("BOTTOMRIGHT", moneyicon, 2, -2)
 
-					moneyicon:SetParent(money.backdrop)
+					moneyicon:SetParent(money.border.backdrop)
 					moneyicon.SetPoint = T.dummy
 				end
 			end
@@ -310,15 +315,16 @@ local function LoadSkin()
 
 				count:SetDrawLayer("OVERLAY")
 
-				if not button.backdrop then
-					button:CreateBackdrop("Default")
-					button.backdrop:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
-					button.backdrop:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+				if not button.border then
+					button.border = CreateFrame("Frame", nil, button)
+					button.border:CreateBackdrop("Default")
+					button.border.backdrop:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
+					button.border.backdrop:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
 
-					icon:SetParent(button.backdrop)
+					icon:SetParent(button.border.backdrop)
 
 					if count then
-						count:SetParent(button.backdrop)
+						count:SetParent(button.border.backdrop)
 					end
 				end
 			end
