@@ -147,6 +147,12 @@ local function LoadSkin()
 	end
 
 	-- PetJournal
+	PetJournal.LeftInset:StripTextures()
+	PetJournal.RightInset:StripTextures()
+	PetJournal.PetCardInset:StripTextures()
+	PetJournal.loadoutBorder:StripTextures()
+	PetJournalPetCardBG:Hide()
+
 	PetJournalTutorialButton.Ring:Hide()
 	PetJournalTutorialButton:SetPoint("TOPLEFT", PetJournal, "TOPLEFT", -5, 10)
 
@@ -311,6 +317,9 @@ local function LoadSkin()
 		_G["PetJournalLoadoutPet"..i.."XPBar"]:SetFrameLevel(_G["PetJournalLoadoutPet"..i.."XPBar"]:GetFrameLevel() + 2)
 	end
 
+	PetJournal.SpellSelect.BgEnd:Hide()
+	PetJournal.SpellSelect.BgTiled:Hide()
+
 	for i = 1, 2 do
 		local button = _G["PetJournalSpellSelectSpell"..i]
 		local icon = _G["PetJournalSpellSelectSpell"..i.."Icon"]
@@ -338,6 +347,10 @@ local function LoadSkin()
 		button.icon:SetPoint("TOPLEFT", 2, -2)
 		button.icon:SetPoint("BOTTOMRIGHT", -2, 2)
 	end
+
+	PetJournalPetCard.AbilitiesBG1:SetAlpha(0)
+	PetJournalPetCard.AbilitiesBG2:SetAlpha(0)
+	PetJournalPetCard.AbilitiesBG3:SetAlpha(0)
 
 	PetJournalPetCard:CreateBackdrop("Overlay")
 	PetJournalPetCard.backdrop:SetPoint("TOPLEFT", 0, -2)
