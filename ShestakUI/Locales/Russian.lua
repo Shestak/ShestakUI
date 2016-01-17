@@ -73,6 +73,7 @@ L_ZONE_TOLBARAD = "Тол Барад"
 L_ZONE_TOLBARADPEN = "Полуостров Тол Барад"
 L_ZONE_ARATHIBASIN = "Низина Арати"
 L_ZONE_GILNEAS = "Битва за Гилнеас"
+L_ZONE_ANCIENTDALARAN = "Даларанский кратер"
 
 -- WatchFrame Wowhead link
 L_WATCH_WOWHEAD_LINK = "Ссылка на Wowhead"

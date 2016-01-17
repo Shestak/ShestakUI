@@ -51,7 +51,12 @@ for i, spell in pairs(spells) do
 
 	local l = b:CreateFontString("TeleportMenuName"..i, "OVERLAY")
 	l:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-	l:SetText(string.sub(teleport, string.find(teleport, ":") + 1))
+	if i == 9 then
+		l:SetText(L_ZONE_ANCIENTDALARAN)
+	else
+		l:SetText(string.sub(teleport, string.find(teleport, ":") + 1))
+	end
+
 	b:SetFontString(l)
 
 	b:RegisterForClicks("LeftButtonDown", "RightButtonDown")

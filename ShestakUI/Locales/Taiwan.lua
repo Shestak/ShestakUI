@@ -73,6 +73,7 @@ L_ZONE_TOLBARAD = "托巴拉德"
 L_ZONE_TOLBARADPEN = "托巴拉德半島"
 L_ZONE_ARATHIBASIN = "阿拉希盆地"
 L_ZONE_GILNEAS = "吉爾尼斯之戰"
+L_ZONE_ANCIENTDALARAN = "達拉然陷坑"
 
 -- WatchFrame Wowhead link
 L_WATCH_WOWHEAD_LINK = "Wowhead鏈接"

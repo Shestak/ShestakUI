@@ -73,6 +73,7 @@ L_ZONE_TOLBARAD = "Tol Barad"
 L_ZONE_TOLBARADPEN = "Péninsule de Tol Barad"
 L_ZONE_ARATHIBASIN = "Bassin d'Arathi"
 L_ZONE_GILNEAS = "La bataille de Gilnéas"
+L_ZONE_ANCIENTDALARAN = "Cratère de Dalaran"
 
 -- WatchFrame Wowhead link
 L_WATCH_WOWHEAD_LINK = "Lien Wowhead"
