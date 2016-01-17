@@ -27,7 +27,7 @@ function stArch:OnLoad(self)
 	stArch["title"]["text"]:SetText(PROFESSIONS_ARCHAEOLOGY)
 
 	-- Close button
-	stArch["close"] = CreateFrame("Frame", "ArchCloseButton", self)
+	stArch["close"] = CreateFrame("Button", "ArchCloseButton", self)
 	T.SkinCloseButton(stArch["close"], nil, nil, true)
 	stArch["close"]:SetWidth(12)
 	stArch["close"]:SetHeight(12)
@@ -260,7 +260,7 @@ function stArch:updateSkillBar()
 	skill["bar"]:SetValue(skill["rank"])
 	skill["text"]:SetText(skill["rank"].."/"..skill["maxRank"])
 
-	if (skill["rank"] + 5) > skill["maxRank"] and skill["maxRank"] ~= 600 then
+	if (skill["rank"] + 5) > skill["maxRank"] and skill["maxRank"] ~= 700 then
 		skill["bar"]:SetStatusBarColor(0.7, 0.2, 0)
 	else
 		skill["bar"]:SetStatusBarColor(0, 0.4, 0.8)
@@ -388,10 +388,10 @@ function stArch:EnableSolve(index, button)
 
 		if GetNumArtifactsByRace(index) > 0 then
 			if stArch["artifactInfo"][index]["canSolve"] then
-				if not ((stArch["archSkill"]["rank"] + 5) > stArch["archSkill"]["maxRank"] and stArch["archSkill"]["maxRank"] ~= 600) or IsShiftKeyDown() then
+				if not ((stArch["archSkill"]["rank"] + 5) > stArch["archSkill"]["maxRank"] and stArch["archSkill"]["maxRank"] ~= 700) or IsShiftKeyDown() then
 					SolveArtifact()
 				end
-				if (stArch["archSkill"]["rank"] + 5) > stArch["archSkill"]["maxRank"] and stArch["archSkill"]["maxRank"] ~= 600 and not IsShiftKeyDown() then
+				if (stArch["archSkill"]["rank"] + 5) > stArch["archSkill"]["maxRank"] and stArch["archSkill"]["maxRank"] ~= 700 and not IsShiftKeyDown() then
 					print("[|cffe76a6ast|rArch] You should go train before finishing this cast or you won't get all your skill points! (Hold shift if you don't care and still want to complete your artifact now)")
 				end
 			end
@@ -416,7 +416,7 @@ function stArch:OnEvent()
 	stArch:updateSkillLevel()
 	stArch:updateSkillBar()
 
-	if stArch["archSkill"]["rank"] == 600 then
+	if stArch["archSkill"]["rank"] == 700 then
 		stArch["archSkill"]["frame"]:Hide()
 	end
 end
