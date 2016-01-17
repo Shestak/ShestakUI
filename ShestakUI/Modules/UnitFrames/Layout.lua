@@ -813,7 +813,7 @@ local function Shared(self, unit)
 		end
 
 		if unit == "player" then
-			self.Debuffs = CreateFrame("Frame", nil, self)
+			self.Debuffs = CreateFrame("Frame", self:GetName().."Debuffs", self)
 			self.Debuffs:SetHeight(165)
 			self.Debuffs:SetWidth(221)
 			self.Debuffs.size = T.Scale(25)
@@ -838,7 +838,7 @@ local function Shared(self, unit)
 		end
 
 		if unit == "target" then
-			self.Auras = CreateFrame("Frame", self:GetName().."targetaura", self)
+			self.Auras = CreateFrame("Frame", self:GetName().."Auras", self)
 			self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5)
 			self.Auras.initialAnchor = "BOTTOMLEFT"
 			self.Auras["growth-x"] = "RIGHT"
