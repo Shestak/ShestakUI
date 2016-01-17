@@ -93,9 +93,8 @@ for i, unit in pairs(units) do
 	unit.HealthText:SetPoint("CENTER", unit.HealthBarBackdrop, "CENTER")
 
 	unit.LevelUnderlay:SetAlpha(0)
-	unit.Level:SetFontObject(SystemFont_Large)
-	unit.Level:ClearAllPoints()
-	unit.Level:SetPoint("BOTTOMLEFT", unit.Icon, "BOTTOMLEFT", 2, 2)
+	unit.Level:SetFontObject(NumberFont_Outline_Large)
+	unit.Level:SetTextColor(1, 1, 1)
 
 	unit.BorderFlash:Kill()
 end
