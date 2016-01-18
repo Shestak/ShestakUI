@@ -292,6 +292,7 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[32175] = 0		-- Stormstrike
 		T.aoespam[114089] = 3		-- Windlash
 		T.aoespam[115357] = 0		-- Windstrike
+		T.aoespam[177601] = 3		-- Liquid Magma
 		T.merge[168477] = 421		-- Chain Lightning (Multi)
 		T.merge[168489] = 114074	-- Lava Beam (Multi)
 		T.merge[32176] = 32175		-- Stormstrike Off-Hand
@@ -361,26 +362,5 @@ elseif T.class == "WARRIOR" then
 		T.healfilter[117313] = true	-- Bloodthirst Heal
 		T.healfilter[55694] = true	-- Enraged Regeneration
 		T.healfilter[159363] = true	-- Blood Craze
-	end
-end
-
-for spell in pairs(T.aoespam) do
-	local name = GetSpellInfo(spell)
-	if not name then
-		print("|cffff0000WARNING: spell ID ["..tostring(spell).."] no longer exists! Report this to Shestak.|r")
-	end
-end
-
-for spell in pairs(T.merge) do
-	local name = GetSpellInfo(spell)
-	if not name then
-		print("|cffff0000WARNING: spell ID ["..tostring(spell).."] no longer exists! Report this to Shestak.|r")
-	end
-end
-
-for spell in pairs(T.healfilter) do
-	local name = GetSpellInfo(spell)
-	if not name then
-		print("|cffff0000WARNING: spell ID ["..tostring(spell).."] no longer exists! Report this to Shestak.|r")
 	end
 end
