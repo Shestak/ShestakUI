@@ -311,7 +311,6 @@ local function Shared(self, unit)
 			if C.unitframe_class_bar.totem == true then
 				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
 				self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
-				self.TotemBar:CreateBorder(false, true)
 				self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 				self.TotemBar:SetSize(53, 7)
 				self.TotemBar.Destroy = true
@@ -322,6 +321,7 @@ local function Shared(self, unit)
 					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
 					self.TotemBar[i]:SetMinMaxValues(0, 1)
+					self.TotemBar[i]:CreateBorder(false, true)
 
 					self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
 					self.TotemBar[i].bg:SetAllPoints()
@@ -537,7 +537,6 @@ local function Shared(self, unit)
 			if C.unitframe_class_bar.totem == true then
 				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
 				self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
-				self.TotemBar:CreateBorder(false, true)
 				self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 				self.TotemBar:SetSize(108, 7)
 				self.TotemBar.Destroy = true
@@ -552,6 +551,7 @@ local function Shared(self, unit)
 					end
 					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
 					self.TotemBar[i]:SetMinMaxValues(0, 1)
+					self.TotemBar[i]:CreateBorder(false, true)
 
 					self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
 					self.TotemBar[i].bg:SetAllPoints()
@@ -566,7 +566,6 @@ local function Shared(self, unit)
 			if C.unitframe_class_bar.totem == true then
 				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
 				self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
-				self.TotemBar:CreateBorder(false, true)
 				self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 				self.TotemBar:SetSize(53, 7)
 				self.TotemBar.Destroy = true
@@ -577,6 +576,7 @@ local function Shared(self, unit)
 					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
 					self.TotemBar[i]:SetMinMaxValues(0, 1)
+					self.TotemBar[i]:CreateBorder(false, true)
 
 					self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
 					self.TotemBar[i].bg:SetAllPoints()
@@ -590,7 +590,6 @@ local function Shared(self, unit)
 		if C.unitframe_class_bar.totem == true and T.class == "MAGE" then
 			self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
 			self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
-			self.TotemBar:CreateBorder(false, true)
 			self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 			self.TotemBar:SetSize(108, 7)
 			self.TotemBar.Destroy = true
@@ -605,6 +604,7 @@ local function Shared(self, unit)
 				end
 				self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
 				self.TotemBar[i]:SetMinMaxValues(0, 1)
+				self.TotemBar[i]:CreateBorder(false, true)
 
 				self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
 				self.TotemBar[i].bg:SetAllPoints()

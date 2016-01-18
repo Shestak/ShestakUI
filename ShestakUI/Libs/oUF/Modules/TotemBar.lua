@@ -62,12 +62,12 @@ local function UpdateSlot(self, slot)
 			totem[slot]:SetValue(0)
 		end
 		if T.class ~= "SHAMAN" then
-			totem:Show()
+			totem[slot]:Show()
 		end
 	else
 		totem[slot]:SetValue(0)
 		if T.class ~= "SHAMAN" then
-			totem:Hide()
+			totem[slot]:Hide()
 		end
 	end
 end
