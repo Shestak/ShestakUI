@@ -45,12 +45,6 @@ if C.raidcooldown.enable == true then
 		-- Other
 		[106898] = 120,	-- Stampeding Roar
 	}
-	for spell in pairs(T.raid_spells) do
-		local name = GetSpellInfo(spell)
-		if not name then
-			print("|cffff0000WARNING: spell ID ["..tostring(spell).."] no longer exists! Report this to Shestak.|r")
-		end
-	end
 end
 
 if C.enemycooldown.enable == true then
@@ -106,12 +100,6 @@ if C.enemycooldown.enable == true then
 		[19263] = 180,	-- Deterrence
 		[33206] = 180,	-- Pain Suppression
 	}
-	for spell in pairs(T.enemy_spells) do
-		local name = GetSpellInfo(spell)
-		if not name then
-			print("|cffff0000WARNING: spell ID ["..tostring(spell).."] no longer exists! Report this to Shestak.|r")
-		end
-	end
 end
 
 if C.pulsecooldown.enable == true then

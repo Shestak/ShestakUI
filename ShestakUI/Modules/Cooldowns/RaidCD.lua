@@ -326,6 +326,13 @@ local OnEvent = function(self, event, ...)
 	end
 end
 
+for spell in pairs(T.raid_spells) do
+	local name = GetSpellInfo(spell)
+	if not name then
+		print("|cffff0000WARNING: spell ID ["..tostring(spell).."] no longer exists! Report this to Shestak.|r")
+	end
+end
+
 local f = CreateFrame("Frame")
 f:SetScript("OnEvent", OnEvent)
 f:RegisterEvent("PLAYER_ENTERING_WORLD")
