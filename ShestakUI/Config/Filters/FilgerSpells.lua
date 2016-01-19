@@ -37,6 +37,8 @@ C["filger_spells"] = {
 			{spellID = 115989, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vampiric Blood
 			{spellID = 55233, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Summon Gargoyle
+			{spellID = 49206, filter = "ICD", trigger = "NONE", duration = 40},
 		},
 		{
 			Name = "P_PROC_ICON",
