@@ -60,7 +60,7 @@ L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Проверять Шляпу для сафа�
 
 -- Automation options
 L_GUI_AUTOMATION = "Автоматизация"
-L_GUI_AUTOMATION_RESURRECTION = "Воскрешение на полях боя"
+L_GUI_AUTOMATION_RELEASE = "Покидать тело на полях боя"
 L_GUI_AUTOMATION_SCREENSHOT = "Сохранять скриншот, если получено достижение"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Окно сборки артефактов"
 L_GUI_AUTOMATION_CHEFS_HAT = "Надевать Поварской колпак при готовке"

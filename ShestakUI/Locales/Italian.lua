@@ -68,7 +68,6 @@ L_MISC_SCROLL = "Pergamena"
 L_RAID_UTIL_DISBAND = "Sciogli il gruppo"
 
 -- Zone name
-L_ZONE_WINTERGRASP = "Lungoinverno"
 L_ZONE_TOLBARAD = "Tol Barad"
 L_ZONE_TOLBARADPEN = "Penisola di Tol Barad"
 L_ZONE_ARATHIBASIN = "Bacino d'Arathi"

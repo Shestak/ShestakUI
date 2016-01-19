@@ -68,7 +68,6 @@ L_MISC_SCROLL = "附魔卷轴"
 L_RAID_UTIL_DISBAND = "解散团队"
 
 -- Zone name
-L_ZONE_WINTERGRASP = "冬拥湖"
 L_ZONE_TOLBARAD = "托尔巴拉德"
 L_ZONE_TOLBARADPEN = "托尔巴拉德半岛"
 L_ZONE_ARATHIBASIN = "阿拉希盆地"

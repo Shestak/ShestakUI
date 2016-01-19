@@ -60,7 +60,7 @@ L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Check Safari Hat" -- Needs review
 
 -- Automation options
 L_GUI_AUTOMATION = "Automatisierung"
-L_GUI_AUTOMATION_RESURRECTION = "Automatisch im Schlachtfeld wiederbeleben"
+L_GUI_AUTOMATION_RELEASE = "Automatisch im Schlachtfeld wiederbeleben"
 L_GUI_AUTOMATION_SCREENSHOT = "Speicher einen Screenshot wenn ein Achivment errungen wird"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto Popup für gelöste Artefakte"
 L_GUI_AUTOMATION_CHEFS_HAT = "Automatisch Kochmütze anlegen"

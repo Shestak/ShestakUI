@@ -87,7 +87,7 @@ local function Local(o)
 
 	-- Automation options
 	if o == "UIConfigautomation" then o = L_GUI_AUTOMATION end
-	if o == "UIConfigautomationresurrection" then o = L_GUI_AUTOMATION_RESURRECTION end
+	if o == "UIConfigautomationresurrection" then o = L_GUI_AUTOMATION_RELEASE end
 	if o == "UIConfigautomationscreenshot" then o = L_GUI_AUTOMATION_SCREENSHOT end
 	if o == "UIConfigautomationsolve_artifact" then o = L_GUI_AUTOMATION_SOLVE_ARTIFACT end
 	if o == "UIConfigautomationchefs_hat" then o = L_GUI_AUTOMATION_CHEFS_HAT end

@@ -73,7 +73,7 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["misc"].move_blizzard = true
 	C["announcements"].flask_food = true
 	C["announcements"].pull_countdown = false
-	C["automation"].resurrection = false
+	C["automation"].release = false
 	C["automation"].decline_duel = false
 	C["automation"].solve_artifact = false
 	C["skins"].blizzard_frames = true

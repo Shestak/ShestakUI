@@ -1,12 +1,9 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.automation.resurrection ~= true then return end
+if C.automation.release ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Auto resurrection
+--	Auto release the spirit in battlegrounds
 ----------------------------------------------------------------------------------------
-local WINTERGRASP = L_ZONE_WINTERGRASP
-local BARAD = L_ZONE_TOLBARAD
-
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_DEAD")
 frame:SetScript("OnEvent", function(self, event)
@@ -15,8 +12,10 @@ frame:SetScript("OnEvent", function(self, event)
 		local status = GetBattlefieldStatus(i)
 		if status == "active" then inBattlefield = true end
 	end
-	if (T.class ~= "SHAMAN") and not (HasSoulstone() and CanUseSoulstone()) then
-		if (tostring(GetZoneText()) == WINTERGRASP) or (tostring(GetZoneText()) == BARAD) or inBattlefield == true then
+	if not (HasSoulstone() and CanUseSoulstone()) then
+		SetMapToCurrentZone()
+		local areaID = GetCurrentMapAreaID() or 0
+		if areaID == 501 or areaID == 708 or areaID == 978 or areaID == 1009 or areaID == 1011 or inBattlefield == true then
 			RepopMe()
 		end
 	end

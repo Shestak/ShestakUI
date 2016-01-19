@@ -60,7 +60,7 @@ L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Vérifie l'équipement du Chapeau de Safari"
 
 -- Automation options
 L_GUI_AUTOMATION = "Automatisation"
-L_GUI_AUTOMATION_RESURRECTION = "Autorésurrection en champ de bataille"
+L_GUI_AUTOMATION_RELEASE = "Autorésurrection en champ de bataille"
 L_GUI_AUTOMATION_SCREENSHOT = "Prend une capture d'écran quand un haut-fait est accomplie"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Affiche automatiquement une fenêtre pour la résolution d'un artéfact"
 L_GUI_AUTOMATION_CHEFS_HAT = "Equipe automatiquement le Chapeau de cuisine"

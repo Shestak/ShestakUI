@@ -60,7 +60,7 @@ L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "检查'狩猎帽'使用情况"
 
 -- Automation options
 L_GUI_AUTOMATION = "自动设定"
-L_GUI_AUTOMATION_RESURRECTION = "战场中自动释放灵魂"
+L_GUI_AUTOMATION_RELEASE = "战场中自动释放灵魂"
 L_GUI_AUTOMATION_SCREENSHOT = "获得成就时自动截屏"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "自动弹出帮助框架"
 L_GUI_AUTOMATION_CHEFS_HAT = "自动装备'大厨的帽子'"

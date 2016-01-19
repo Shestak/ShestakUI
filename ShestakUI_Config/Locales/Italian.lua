@@ -60,7 +60,7 @@ L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Controlla se il Cappello da Safari sia indossa
 
 -- Automation options
 L_GUI_AUTOMATION = "Automatismi"
-L_GUI_AUTOMATION_RESURRECTION = "'Auto-risorgi' nei Campi di Battaglia"
+L_GUI_AUTOMATION_RELEASE = "'Auto-risorgi' nei Campi di Battaglia"
 L_GUI_AUTOMATION_SCREENSHOT = "Cattura una schermata quando completi un'impresa"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Popup automatico restauro manufatto"
 L_GUI_AUTOMATION_CHEFS_HAT = "'Auto-indossa' il cappello da cuoco"

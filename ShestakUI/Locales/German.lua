@@ -68,7 +68,6 @@ L_MISC_SCROLL = "Rolle"
 L_RAID_UTIL_DISBAND = "Gruppe auflösen"
 
 -- Zone name
-L_ZONE_WINTERGRASP = "Tausendwintersee"
 L_ZONE_TOLBARAD = "Tol Barad"
 L_ZONE_TOLBARADPEN = "Halbinsel von Tol Barad"
 L_ZONE_ARATHIBASIN = "Arathibecken"

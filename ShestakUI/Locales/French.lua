@@ -68,7 +68,6 @@ L_MISC_SCROLL = "Parchemin"
 L_RAID_UTIL_DISBAND = "Dissoudre le raid"
 
 -- Zone name
-L_ZONE_WINTERGRASP = "Joug-d'hiver"
 L_ZONE_TOLBARAD = "Tol Barad"
 L_ZONE_TOLBARADPEN = "Péninsule de Tol Barad"
 L_ZONE_ARATHIBASIN = "Bassin d'Arathi"
