@@ -152,14 +152,14 @@ function T.SkinScrollBar(frame)
 	if _G[frame:GetName().."ScrollUpButton"] and _G[frame:GetName().."ScrollDownButton"] then
 		_G[frame:GetName().."ScrollUpButton"]:StripTextures()
 		if not _G[frame:GetName().."ScrollUpButton"].icon then
-			T.SkinNextPrevButton(_G[frame:GetName().."ScrollUpButton"], true)
+			T.SkinNextPrevButton(_G[frame:GetName().."ScrollUpButton"])
 			_G[frame:GetName().."ScrollUpButton"]:SetSize(_G[frame:GetName().."ScrollUpButton"]:GetWidth() + 7, _G[frame:GetName().."ScrollUpButton"]:GetHeight() + 7)
 			scrolldn = false
 		end
 
 		_G[frame:GetName().."ScrollDownButton"]:StripTextures()
 		if not _G[frame:GetName().."ScrollDownButton"].icon then
-			T.SkinNextPrevButton(_G[frame:GetName().."ScrollDownButton"], true)
+			T.SkinNextPrevButton(_G[frame:GetName().."ScrollDownButton"])
 			_G[frame:GetName().."ScrollDownButton"]:SetSize(_G[frame:GetName().."ScrollDownButton"]:GetWidth() + 7, _G[frame:GetName().."ScrollDownButton"]:GetHeight() + 7)
 			scrolldn = true
 		end
@@ -363,7 +363,7 @@ function T.SkinDropDownBox(frame, width)
 	button:SetPoint("RIGHT", frame, "RIGHT", -10, 3)
 	button.SetPoint = T.dummy
 	scrolldn = false
-	T.SkinNextPrevButton(button, true)
+	T.SkinNextPrevButton(button)
 
 	frame:CreateBackdrop("Overlay")
 	frame:SetFrameLevel(frame:GetFrameLevel() + 2)
