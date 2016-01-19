@@ -297,7 +297,7 @@ function Filger:OnEvent(event, unit, _, _, _, spellID)
 			local name, icon, count, duration, start, spid
 			spid = 0
 
-			if data.filter == "BUFF" and (not data.spec or data.spec == ptt) and event ~= "UNIT_SPELLCAST_SUCCEEDED" then
+			if data.filter == "BUFF" and (not data.spec or data.spec == ptt) then
 				local caster, spn, expirationTime
 				spn, _, _ = GetSpellInfo(data.spellID)
 				name, _, icon, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitBuff(data.unitID, data.spellID, spn, data.absID)
@@ -307,7 +307,7 @@ function Filger:OnEvent(event, unit, _, _, _, spellID)
 						found = true
 					end
 				end
-			elseif data.filter == "DEBUFF" and (not data.spec or data.spec == ptt) and event ~= "UNIT_SPELLCAST_SUCCEEDED" then
+			elseif data.filter == "DEBUFF" and (not data.spec or data.spec == ptt) then
 				local caster, spn, expirationTime
 				spn, _, _ = GetSpellInfo(data.spellID)
 				name, _, icon, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitDebuff(data.unitID, data.spellID, spn, data.absID)
@@ -315,7 +315,7 @@ function Filger:OnEvent(event, unit, _, _, _, spellID)
 					start = expirationTime - duration
 					found = true
 				end
-			elseif data.filter == "CD" and (not data.spec or data.spec == ptt) and event ~= "UNIT_SPELLCAST_SUCCEEDED" then
+			elseif data.filter == "CD" and (not data.spec or data.spec == ptt) then
 				if data.spellID then
 					name, _, icon = GetSpellInfo(data.spellID)
 					if data.absID then
