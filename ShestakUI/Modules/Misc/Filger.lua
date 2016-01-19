@@ -347,6 +347,7 @@ function Filger:OnEvent(event, unit, _, _, _, spellID)
 				elseif data.trigger == "NONE" then
 					if unit == "player" and spellID == data.spellID then
 						name, _, icon = GetSpellInfo(data.spellID)
+						spid = data.spellID
 					end
 				end
 				if name then
@@ -497,13 +498,15 @@ if C["filger_spells"] and C["filger_spells"][T.class] then
 				if data.filter == "CD" then
 					frame:RegisterEvent("SPELL_UPDATE_COOLDOWN")
 					break
+				elseif data.trigger == "NONE" then
+					frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
+					break
 				end
 			end
 			frame:RegisterEvent("UNIT_AURA")
 			frame:RegisterEvent("PLAYER_FOCUS_CHANGED")
 			frame:RegisterEvent("PLAYER_TARGET_CHANGED")
 			frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-			frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 			frame:SetScript("OnEvent", Filger.OnEvent)
 		end
 	end
