@@ -1545,7 +1545,7 @@ SLASH_TEST_UF3 = "/testuf"
 SLASH_TEST_UF4 = "/еуыега"
 
 ----------------------------------------------------------------------------------------
---	Player line
+--	Player/Target line
 ----------------------------------------------------------------------------------------
 if C.unitframe.lines == true then
 	local HorizontalPlayerLine = CreateFrame("Frame", "HorizontalPlayerLine", oUF_Player)
@@ -1553,12 +1553,7 @@ if C.unitframe.lines == true then
 
 	local VerticalPlayerLine = CreateFrame("Frame", "VerticalPlayerLine", oUF_Player)
 	VerticalPlayerLine:CreatePanel("ClassColor", 1, 98, "RIGHT", HorizontalPlayerLine, "LEFT", 0, 13)
-end
 
-----------------------------------------------------------------------------------------
---	Target line
-----------------------------------------------------------------------------------------
-if C.unitframe.lines == true then
 	local HorizontalTargetLine = CreateFrame("Frame", "HorizontalTargetLine", oUF_Target)
 	HorizontalTargetLine:CreatePanel("ClassColor", 228, 1, "TOPRIGHT", "oUF_Target", "BOTTOMRIGHT", 5, -5)
 	HorizontalTargetLine:RegisterEvent("PLAYER_TARGET_CHANGED")
