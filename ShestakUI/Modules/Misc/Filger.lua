@@ -292,7 +292,7 @@ function Filger:OnEvent(event, unit, _, _, _, spellID)
 
 		for i = 1, #C["filger_spells"][T.class][id], 1 do
 			local data = C["filger_spells"][T.class][id][i]
-			if C.filger.disable_cd == true and (data.filter == "CD" or data.filter == "ICD") then return end
+			if C.filger.disable_cd == true and (data.filter == "CD" or (data.filter == "ICD" and data.trigger ~= "NONE")) then return end
 			local found = false
 			local name, icon, count, duration, start, spid
 			spid = 0
