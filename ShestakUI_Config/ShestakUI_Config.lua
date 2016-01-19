@@ -741,9 +741,10 @@ function CreateUIConfig()
 
 	if not slider.bg then
 		slider.bg = CreateFrame("Frame", nil, slider)
-		slider.bg:SetPoint("TOPLEFT", slider:GetThumbTexture(), "TOPLEFT", 7, -7)
+		slider.bg:SetPoint("TOPLEFT", slider:GetThumbTexture(), "TOPLEFT", 10, -7)
 		slider.bg:SetPoint("BOTTOMRIGHT", slider:GetThumbTexture(), "BOTTOMRIGHT", -7, 7)
 		slider.bg:SetTemplate("Overlay")
+		slider:GetThumbTexture():SetAlpha(0)
 	end
 
 	local function sortMyTable(a, b)
@@ -810,6 +811,14 @@ function CreateUIConfig()
 	slider:SetOrientation("VERTICAL")
 	slider:SetValueStep(20)
 	slider:SetScript("OnValueChanged", function(self, value) group:SetVerticalScroll(value) end)
+
+	if not slider.bg then
+		slider.bg = CreateFrame("Frame", nil, slider)
+		slider.bg:SetPoint("TOPLEFT", slider:GetThumbTexture(), "TOPLEFT", 10, -7)
+		slider.bg:SetPoint("BOTTOMRIGHT", slider:GetThumbTexture(), "BOTTOMRIGHT", -7, 7)
+		slider.bg:SetTemplate("Overlay")
+		slider:GetThumbTexture():SetAlpha(0)
+	end
 
 	for i in pairs(ALLOWED_GROUPS) do
 		local frame = CreateFrame("Frame", "UIConfig"..i, UIConfigGroup)
