@@ -27,8 +27,8 @@ local function LoadSkin()
 		SideDressUpFrame:ClearAllPoints()
 		SideDressUpFrame:SetPoint("TOPLEFT", AuctionFrame, "TOPRIGHT", 3, 0)
 	end)
-	
-	--WoW Token Tutorial Frame
+
+	-- WoW Token Tutorial Frame
 	WowTokenGameTimeTutorial:CreateBackdrop("Transparent")
 	T.SkinCloseButton(WowTokenGameTimeTutorial.CloseButton)
 	WowTokenGameTimeTutorial.Inset.InsetBorderBottom:SetAlpha(0)
@@ -50,17 +50,17 @@ local function LoadSkin()
 	WowTokenGameTimeTutorialBottomBorder:SetAlpha(0)
 	WowTokenGameTimeTutorialLeftBorder:SetAlpha(0)
 	WowTokenGameTimeTutorialRightBorder:SetAlpha(0)
-	
+
 	do
 		local Token = BrowseWowTokenResults.Token
 		local icon = Token.Icon
 		local iconBorder = Token.IconBorder
-	
+
 		Token.ItemBorder:Hide()
-			Token:StyleButton()
-			Token:CreateBackdrop("Transparent")
+		Token:StyleButton()
+		Token:CreateBackdrop("Transparent")
 	end
-	
+
 	-- Progress Frame
 	AuctionProgressFrame:StripTextures()
 	AuctionProgressFrame:SetTemplate("Transparent")
@@ -114,7 +114,7 @@ local function LoadSkin()
 		_G[button]:SkinButton(true)
 	end
 	BrowseWowTokenResults.Buyout:SkinButton(true)
-	
+
 	-- Fix Button Positions
 	AuctionsCloseButton:SetPoint("BOTTOMRIGHT", AuctionFrameAuctions, "BOTTOMRIGHT", 66, 10)
 	AuctionsCancelAuctionButton:SetPoint("RIGHT", AuctionsCloseButton, "LEFT", -4, 0)
@@ -174,12 +174,12 @@ local function LoadSkin()
 		local tab = _G["AuctionFilterButton"..i]
 		tab:StyleButton()
 	end
-		
+
 	hooksecurefunc("FilterButton_SetType", function(button)
 		local tex = button:GetNormalTexture();
 		tex:SetAlpha(0)
 	end)
-	
+
 	local editboxs = {
 		"BrowseName",
 		"BrowseMinLevel",
@@ -204,6 +204,7 @@ local function LoadSkin()
 		T.SkinEditBox(_G[editbox])
 		_G[editbox]:SetTextInsets(1, 1, -1, 1)
 	end
+	_G["BrowseName"]:SetTextInsets(15, 15, -1, 1)
 	BrowseMaxLevel:SetPoint("LEFT", BrowseMinLevel, "RIGHT", 8, 0)
 	AuctionsStackSizeEntry.backdrop:SetAllPoints()
 	AuctionsNumStacksEntry.backdrop:SetAllPoints()
@@ -316,7 +317,7 @@ local function LoadSkin()
 	AuctionFrameAuctions.bg2:SetPoint("TOPLEFT", AuctionFrameAuctions.bg1, "TOPRIGHT", 3, 0)
 	AuctionFrameAuctions.bg2:SetPoint("BOTTOMRIGHT", AuctionFrame, -8, 35)
 	AuctionFrameAuctions.bg2:SetFrameLevel(AuctionFrameAuctions.bg2:GetFrameLevel() - 2)
-	
+
 	-- Auctionator
 	if not IsAddOnLoaded("Auctionator") then return end
 
