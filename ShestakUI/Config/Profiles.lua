@@ -147,9 +147,8 @@ end
 ----------------------------------------------------------------------------------------
 --	Sw2rT1 Config
 ----------------------------------------------------------------------------------------
-if T.name == "Вилкинсон" or T.name == "Нупачимучка" or T.name == "Пратифный"
-or T.name == "Рукалицо" or T.name == "Трольпаладин" or T.name == "Чаккерс"
-or T.name == "Релика" or T.name == "Тинейд" or T.name == "Тупаяшколота" then
+if T.name == "Чаккичак" or T.name == "Чаккноррис" or T.name == "Чакерс"
+or T.name == "Чакернаут" or T.name == "Чаккис" or T.name == "Эзэрвуд" then
 	C["general"].welcome_message = false
 	C["misc"].shift_marking = false
 	C["misc"].raid_tools = false
