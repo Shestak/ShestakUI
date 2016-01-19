@@ -1547,37 +1547,41 @@ SLASH_TEST_UF4 = "/еуыега"
 ----------------------------------------------------------------------------------------
 --	Player line
 ----------------------------------------------------------------------------------------
-local HorizontalPlayerLine = CreateFrame("Frame", "HorizontalPlayerLine", oUF_Player)
-HorizontalPlayerLine:CreatePanel("ClassColor", 228, 1, "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -5, -5)
+if C.unitframe.lines == true then
+	local HorizontalPlayerLine = CreateFrame("Frame", "HorizontalPlayerLine", oUF_Player)
+	HorizontalPlayerLine:CreatePanel("ClassColor", 228, 1, "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -5, -5)
 
-local VerticalPlayerLine = CreateFrame("Frame", "VerticalPlayerLine", oUF_Player)
-VerticalPlayerLine:CreatePanel("ClassColor", 1, 98, "RIGHT", HorizontalPlayerLine, "LEFT", 0, 13)
+	local VerticalPlayerLine = CreateFrame("Frame", "VerticalPlayerLine", oUF_Player)
+	VerticalPlayerLine:CreatePanel("ClassColor", 1, 98, "RIGHT", HorizontalPlayerLine, "LEFT", 0, 13)
+end
 
 ----------------------------------------------------------------------------------------
 --	Target line
 ----------------------------------------------------------------------------------------
-local HorizontalTargetLine = CreateFrame("Frame", "HorizontalTargetLine", oUF_Target)
-HorizontalTargetLine:CreatePanel("ClassColor", 228, 1, "TOPRIGHT", "oUF_Target", "BOTTOMRIGHT", 5, -5)
-HorizontalTargetLine:RegisterEvent("PLAYER_TARGET_CHANGED")
-HorizontalTargetLine:SetScript("OnEvent", function(self)
-	local _, class = UnitClass("target")
-	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class]
-	if color then
-		self:SetBackdropBorderColor(color.r, color.g, color.b)
-	else
-		self:SetBackdropBorderColor(unpack(C.media.border_color))
-	end
-end)
+if C.unitframe.lines == true then
+	local HorizontalTargetLine = CreateFrame("Frame", "HorizontalTargetLine", oUF_Target)
+	HorizontalTargetLine:CreatePanel("ClassColor", 228, 1, "TOPRIGHT", "oUF_Target", "BOTTOMRIGHT", 5, -5)
+	HorizontalTargetLine:RegisterEvent("PLAYER_TARGET_CHANGED")
+	HorizontalTargetLine:SetScript("OnEvent", function(self)
+		local _, class = UnitClass("target")
+		local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class]
+		if color then
+			self:SetBackdropBorderColor(color.r, color.g, color.b)
+		else
+			self:SetBackdropBorderColor(unpack(C.media.border_color))
+		end
+	end)
 
-local VerticalTargetLine = CreateFrame("Frame", "VerticalTargetLine", oUF_Target)
-VerticalTargetLine:CreatePanel("ClassColor", 1, 98, "LEFT", HorizontalTargetLine, "RIGHT", 0, 13)
-VerticalTargetLine:RegisterEvent("PLAYER_TARGET_CHANGED")
-VerticalTargetLine:SetScript("OnEvent", function(self)
-	local _, class = UnitClass("target")
-	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class]
-	if color then
-		self:SetBackdropBorderColor(color.r, color.g, color.b)
-	else
-		self:SetBackdropBorderColor(unpack(C.media.border_color))
-	end
-end)
+	local VerticalTargetLine = CreateFrame("Frame", "VerticalTargetLine", oUF_Target)
+	VerticalTargetLine:CreatePanel("ClassColor", 1, 98, "LEFT", HorizontalTargetLine, "RIGHT", 0, 13)
+	VerticalTargetLine:RegisterEvent("PLAYER_TARGET_CHANGED")
+	VerticalTargetLine:SetScript("OnEvent", function(self)
+		local _, class = UnitClass("target")
+		local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class]
+		if color then
+			self:SetBackdropBorderColor(color.r, color.g, color.b)
+		else
+			self:SetBackdropBorderColor(unpack(C.media.border_color))
+		end
+	end)
+end

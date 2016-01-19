@@ -60,7 +60,7 @@ L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "检查'狩猎帽'使用情况"
 
 -- Automation options
 L_GUI_AUTOMATION = "自动设定"
-L_GUI_AUTOMATION_RELEASE = "战场中自动释放灵魂"
+L_GUI_AUTOMATION_RELEASE = "战场中自动释放灵魂" -- Need review
 L_GUI_AUTOMATION_SCREENSHOT = "获得成就时自动截屏"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "自动弹出帮助框架"
 L_GUI_AUTOMATION_CHEFS_HAT = "自动装备'大厨的帽子'"
@@ -337,6 +337,7 @@ L_GUI_UF_ENEMY_HEALTH_COLOR = "敌对目标生命条以红色着色"
 L_GUI_UF_TOTAL_VALUE = "玩家/目标框架显示详细的文字变化"
 L_GUI_UF_COLOR_VALUE = "生命值/魔法值按职业着色"
 L_GUI_UF_BAR_COLOR_VALUE = "生命值按剩余血量着色"
+L_GUI_UF_LINES = "Show Player and Target lines" -- Need review
 L_GUI_UF_UNIT_CASTBAR = "施法条"
 L_GUI_UF_CASTBAR_ICON = "施法条图示"
 L_GUI_UF_CASTBAR_LATENCY = "施法条延迟"

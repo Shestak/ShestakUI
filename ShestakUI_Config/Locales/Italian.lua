@@ -60,7 +60,7 @@ L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Controlla se il Cappello da Safari sia indossa
 
 -- Automation options
 L_GUI_AUTOMATION = "Automatismi"
-L_GUI_AUTOMATION_RELEASE = "'Auto-risorgi' nei Campi di Battaglia"
+L_GUI_AUTOMATION_RELEASE = "'Auto-risorgi' nei Campi di Battaglia" -- Need review
 L_GUI_AUTOMATION_SCREENSHOT = "Cattura una schermata quando completi un'impresa"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Popup automatico restauro manufatto"
 L_GUI_AUTOMATION_CHEFS_HAT = "'Auto-indossa' il cappello da cuoco"
@@ -337,6 +337,7 @@ L_GUI_UF_ENEMY_HEALTH_COLOR = "Colora di rosso la barra della salute dei nemici"
 L_GUI_UF_TOTAL_VALUE = "Visualizza un testo sui riquadri di giocatore e bersaglio con i valori XXXX/Totale"
 L_GUI_UF_COLOR_VALUE = "Valori di salute e mana colorati"
 L_GUI_UF_BAR_COLOR_VALUE = "Barra della salute colorata in base alla salute restante"
+L_GUI_UF_LINES = "Show Player and Target lines" -- Need review
 L_GUI_UF_UNIT_CASTBAR = "Mostra le barre incantesimi"
 L_GUI_UF_CASTBAR_ICON = "Mostra le icone della barra incantesimi"
 L_GUI_UF_CASTBAR_LATENCY = "Latenza della barra incantesimi"

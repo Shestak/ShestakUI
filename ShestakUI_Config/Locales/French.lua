@@ -60,7 +60,7 @@ L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Vérifie l'équipement du Chapeau de Safari"
 
 -- Automation options
 L_GUI_AUTOMATION = "Automatisation"
-L_GUI_AUTOMATION_RELEASE = "Autorésurrection en champ de bataille"
+L_GUI_AUTOMATION_RELEASE = "Autorésurrection en champ de bataille" -- Need review
 L_GUI_AUTOMATION_SCREENSHOT = "Prend une capture d'écran quand un haut-fait est accomplie"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Affiche automatiquement une fenêtre pour la résolution d'un artéfact"
 L_GUI_AUTOMATION_CHEFS_HAT = "Equipe automatiquement le Chapeau de cuisine"
@@ -337,6 +337,7 @@ L_GUI_UF_ENEMY_HEALTH_COLOR = "Si activée, la couleur des cibles ennemi est rou
 L_GUI_UF_TOTAL_VALUE = "Afficher la vie des joueur/cible avec XXXX/Total"
 L_GUI_UF_COLOR_VALUE = "Valeur de vie/mana colorée"
 L_GUI_UF_BAR_COLOR_VALUE = "Couleur de barre de vie en fonction des points de vie"
+L_GUI_UF_LINES = "Show Player and Target lines" -- Need review
 L_GUI_UF_UNIT_CASTBAR = "Voir la barre de cast"
 L_GUI_UF_CASTBAR_ICON = "Voir l'icone de la barre de cast"
 L_GUI_UF_CASTBAR_LATENCY = "Voir la latence de la barre de cast"
