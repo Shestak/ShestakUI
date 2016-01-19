@@ -982,6 +982,10 @@ C["filger_spells"] = {
 			{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Prismatic Crystal
+			{spellID = 152087, filter = "ICD", trigger = "NONE", duration = 12},
+			-- Mirror Image
+			{spellID = 55342, filter = "ICD", trigger = "NONE", duration = 40},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1175,6 +1179,8 @@ C["filger_spells"] = {
 			{spellID = 55342, filter = "CD"},
 			-- Presence of Mind
 			{spellID = 12043, filter = "CD"},
+			-- Prismatic Crystal
+			{spellID = 152087, filter = "CD"},
 			-- Remove Curse
 			{spellID = 475, filter = "CD"},
 			-- Ring of Frost
