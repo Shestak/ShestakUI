@@ -20,7 +20,7 @@ local OnLeave = function()
 end
 
 local createAuraIcon = function(icons, index)
-	local button = CreateFrame("Button", icons:GetName().."Button"..index, icons)
+	local button = CreateFrame("Button", icons:GetName() and icons:GetName().."Button"..index or "oUF_Aura", icons)
 	button:EnableMouse(true)
 	button:RegisterForClicks'RightButtonUp'
 
