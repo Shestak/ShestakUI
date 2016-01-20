@@ -267,10 +267,8 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 		_G["DBM_GUI_OptionsFrame"]:SetTemplate("Transparent")
 		_G["DBM_GUI_OptionsFramePanelContainer"]:SetTemplate("Overlay")
 
-		_G["DBM_GUI_OptionsFrameTab1"]:StripTextures()
 		_G["DBM_GUI_OptionsFrameTab1"]:ClearAllPoints()
 		_G["DBM_GUI_OptionsFrameTab1"]:SetPoint("TOPLEFT", _G["DBM_GUI_OptionsFrameBossMods"], "TOPLEFT", 10, 27)
-		_G["DBM_GUI_OptionsFrameTab2"]:StripTextures()
 		_G["DBM_GUI_OptionsFrameTab2"]:ClearAllPoints()
 		_G["DBM_GUI_OptionsFrameTab2"]:SetPoint("TOPLEFT", _G["DBM_GUI_OptionsFrameTab1"], "TOPRIGHT", 6, 0)
 
@@ -281,6 +279,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 		_G["DBM_GUI_OptionsFrameHeader"]:SetPoint("TOP", DBM_GUI_OptionsFrame, 0, 7)
 
 		local dbmbskins = {
+			"DBM_GUI_OptionsFrameWebsiteButton",
 			"DBM_GUI_OptionsFrameOkay",
 			"DBM_GUI_OptionsFrameTab1",
 			"DBM_GUI_OptionsFrameTab2"
@@ -288,8 +287,8 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 
 		for i = 1, getn(dbmbskins) do
 			local buttons = _G[dbmbskins[i]]
-			if buttons then
-				buttons:SkinButton()
+			if buttons and not buttons.overlay then
+				buttons:SkinButton(true)
 			end
 		end
 	end
