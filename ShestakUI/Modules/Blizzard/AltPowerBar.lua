@@ -101,6 +101,7 @@ status:SetScript("OnUpdate", function(self, elapsed)
 		local power = UnitPower("player", ALTERNATE_POWER_INDEX)
 		local mpower = UnitPowerMax("player", ALTERNATE_POWER_INDEX)
 		local texture, r, g, b = UnitAlternatePowerTextureInfo("player", 2, 0)
+		texture = string.upper(texture)
 		if blizzColors[texture] then
 			r, g, b = blizzColors[texture].r, blizzColors[texture].g, blizzColors[texture].b
 		elseif not texture then
