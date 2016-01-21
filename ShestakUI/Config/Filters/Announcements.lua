@@ -86,8 +86,8 @@ if C.announcements.bad_gear == true then
 		},
 		-- Back
 		[15] = {
-			65360,	-- Cloak of Coordination
-			65274,	-- Cloak of Coordination
+			65360,	-- Cloak of Coordination (Alliance)
+			65274,	-- Cloak of Coordination (Horde)
 		},
 		-- Main-Hand
 		[16] = {
