@@ -39,7 +39,10 @@ local function LoadSkin()
 		"LFGDungeonReadyDialogFiligree",
 		"ScenarioQueueFrameRandomScrollFrameScrollBackground",
 		"ScenarioQueueFrameRandomScrollFrameScrollBackgroundTopLeft",
-		"ScenarioQueueFrameRandomScrollFrameScrollBackgroundBottomRight"
+		"ScenarioQueueFrameRandomScrollFrameScrollBackgroundBottomRight",
+		"RaidFinderQueueFrameScrollFrameScrollBackground",
+		"RaidFinderQueueFrameScrollFrameScrollBackgroundTopLeft",
+		"RaidFinderQueueFrameScrollFrameScrollBackgroundBottomRight"
 	}
 
 	for _, texture in pairs(KillTextures) do
@@ -90,7 +93,8 @@ local function LoadSkin()
 		"ScenarioQueueFrameSpecificScrollFrameScrollBar",
 		"LFGListApplicationViewerScrollFrameScrollBar",
 		"LFDQueueFrameSpecificListScrollFrameScrollBar",
-		"LFDQueueFrameRandomScrollFrameScrollBar"
+		"LFDQueueFrameRandomScrollFrameScrollBar",
+		"RaidFinderQueueFrameScrollFrameScrollBar"
 	}
 
 	for _, scrollbar in pairs(scrollbars) do
