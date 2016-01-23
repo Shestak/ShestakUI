@@ -48,7 +48,7 @@ function stArch:OnLoad(self)
 		progressBars[i]["bar"] = CreateFrame("StatusBar", "ArchBar"..i, progressBars[i]["border"], "TextStatusBar")
 		progressBars[i]["race"] = progressBars[i]["bar"]:CreateFontString()
 		progressBars[i]["progress"] = progressBars[i]["bar"]:CreateFontString()
-		progressBars[i]["solve"] = CreateFrame("Button", "ArchBar"..i, self, "SecureHandlerClickTemplate")
+		progressBars[i]["solve"] = CreateFrame("Button", "ArchBar"..i, self)
 
 		-- Border
 		progressBars[i]["border"]:SetWidth(progressBars["frame"]:GetWidth() - 10)
@@ -218,16 +218,14 @@ function stArch:OnLoad(self)
 end
 
 function stArch:UpdateFrameHeight(self)
-	if not InCombatLockdown() then
-		-- Update frame Sizes to fit correctly
-		stArch["progressBars"]["frame"]:SetHeight(stArch["progressBars"][1]["border"]:GetHeight() * 15 + 82)
-		stArch["progressBars"]["solveFrame"]:SetHeight(stArch["progressBars"]["frame"]:GetHeight())
-		stArch["progressBars"]["solveToggle"]:SetHeight(stArch["progressBars"]["frame"]:GetHeight())
-		if stArch["archSkill"]["frame"]:IsShown() then
-			self:SetHeight(stArch["title"]:GetHeight() + stArch["progressBars"]["frame"]:GetHeight()+stArch["archSkill"]["frame"]:GetHeight() + 7)
-		else
-			self:SetHeight(stArch["title"]:GetHeight() + stArch["progressBars"]["frame"]:GetHeight() + 5)
-		end
+	-- Update frame Sizes to fit correctly
+	stArch["progressBars"]["frame"]:SetHeight(stArch["progressBars"][1]["border"]:GetHeight() * 15 + 82)
+	stArch["progressBars"]["solveFrame"]:SetHeight(stArch["progressBars"]["frame"]:GetHeight())
+	stArch["progressBars"]["solveToggle"]:SetHeight(stArch["progressBars"]["frame"]:GetHeight())
+	if stArch["archSkill"]["frame"]:IsShown() then
+		self:SetHeight(stArch["title"]:GetHeight() + stArch["progressBars"]["frame"]:GetHeight()+stArch["archSkill"]["frame"]:GetHeight() + 7)
+	else
+		self:SetHeight(stArch["title"]:GetHeight() + stArch["progressBars"]["frame"]:GetHeight() + 5)
 	end
 end
 
@@ -520,25 +518,22 @@ b:SetSize(19, 19)
 b:SetAlpha(0)
 
 b:SetScript("OnClick", function(self)
-	if not InCombatLockdown() then
-		if _G["stArchaeologyFrame"]:IsShown() then
-			_G["stArchaeologyFrame"]:Hide()
-			SavedOptionsPerChar.Archaeology = false
-		else
-			_G["stArchaeologyFrame"]:Show()
-			SavedOptionsPerChar.Archaeology = true
-		end
-		if C.minimap.toggle_menu and _G["TTMenuAddOnBackground"]:IsShown() then
-			_G["TTMenuAddOnBackground"]:Hide()
-		end
-		if C.minimap.toggle_menu and _G["TTMenuBackground"]:IsShown() then
-			_G["TTMenuBackground"]:Hide()
-		end
+	if _G["stArchaeologyFrame"]:IsShown() then
+		_G["stArchaeologyFrame"]:Hide()
+		SavedOptionsPerChar.Archaeology = false
+	else
+		_G["stArchaeologyFrame"]:Show()
+		SavedOptionsPerChar.Archaeology = true
+	end
+	if C.minimap.toggle_menu and _G["TTMenuAddOnBackground"]:IsShown() then
+		_G["TTMenuAddOnBackground"]:Hide()
+	end
+	if C.minimap.toggle_menu and _G["TTMenuBackground"]:IsShown() then
+		_G["TTMenuBackground"]:Hide()
 	end
 end)
 
 b:SetScript("OnEnter", function()
-	if InCombatLockdown() then return end
 	b:FadeIn()
 end)
 
