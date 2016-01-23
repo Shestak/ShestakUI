@@ -21,6 +21,8 @@ local function LoadSkin()
 	T.SkinCheckBox(IsUsableCheckButton)
 	T.SkinCheckBox(ShowOnPlayerCheckButton)
 	T.SkinCheckBox(ExactMatchCheckButton)
+	T.SkinCheckBox(Atr_Exact_Search_Button)
+	T.SkinCheckBox(Atr_Adv_Search_Button)
 
 	-- Dress Up Frame
 	AuctionFrame:HookScript("OnShow", function()
@@ -325,7 +327,6 @@ local function LoadSkin()
 		"Atr_Search_Button",
 		"Atr_Back_Button",
 		"Atr_Buy1_Button",
-		"Atr_Adv_Search_Button",
 		"Atr_FullScanButton",
 		"Auctionator1Button",
 		"Atr_ListTabsTab1",
@@ -352,7 +353,6 @@ local function LoadSkin()
 		"Atr_MngSListsButton",
 		"Auctionator_Search",
 		"Atr_SaveThisList_Button",
-		"Atr_Exact_Search_Button",
 	}
 
 	for i = 1, getn(buttons) do
@@ -391,7 +391,10 @@ local function LoadSkin()
 		"Atr_AS_Minlevel",
 		"Atr_AS_Maxlevel",
 		"Atr_AS_MinItemlevel",
-		"Atr_AS_MaxItemlevel"
+		"Atr_AS_MaxItemlevel",
+		"Atr_StartingPriceGold",
+		"Atr_StartingPriceSilver",
+		"Atr_StartingPriceCopper"
 	}
 
 	for i = 1, getn(editbox) do
@@ -462,10 +465,6 @@ local function LoadSkin()
 	Auctionator1Button:ClearAllPoints()
 	Auctionator1Button:SetPoint("TOPRIGHT", Atr_Main_Panel, "TOPRIGHT", -35, -4)
 	Atr_Search_Button:SetHeight(22)
-	Atr_Adv_Search_Button:SetHeight(22)
-	Atr_Adv_Search_Button:SetPoint("BOTTOMLEFT", Atr_Search_Button, "TOPRIGHT", 3, 3)
-	Atr_Exact_Search_Button:SetHeight(22)
-	Atr_Exact_Search_Button:SetPoint("TOP", Atr_Adv_Search_Button, "BOTTOM", 0, -3)
 	Atr_Back_Button:SetHeight(22)
 	Atr_FullScanButton:SetSize(100, 25)
 	Atr_FullScanButton:ClearAllPoints()
