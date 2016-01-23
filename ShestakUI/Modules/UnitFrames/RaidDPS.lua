@@ -195,7 +195,7 @@ local function Shared(self, unit)
 	end
 
 	if unit == "party" and (not (self:GetAttribute("unitsuffix") == "target")) and (not (self:GetAttribute("unitsuffix") == "pet")) then
-		self.Debuffs = CreateFrame("Frame", nil, self)
+		self.Debuffs = CreateFrame("Frame", self:GetName().."Debuffs", self)
 		self.Debuffs:SetPoint("TOPLEFT", self, "BOTTOMLEFT", -2, -5)
 		self.Debuffs:SetHeight(18)
 		self.Debuffs:SetWidth(144)
