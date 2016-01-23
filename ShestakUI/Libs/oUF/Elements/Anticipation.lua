@@ -8,14 +8,14 @@ local ANTICIPATION = GetSpellInfo(115189)
 local function UpdateBar(self, elapsed)
 	if not self.expirationTime then return end
 	self.elapsed = (self.elapsed or 0) + elapsed
-	if self.elapsed >= 0.5 then	
+	if self.elapsed >= 0.5 then
 		local timeLeft = self.expirationTime - GetTime()
 		if timeLeft > 0 then
 			self:SetValue(timeLeft)
 		else
 			self:SetScript("OnUpdate", nil)
 		end
-	end		
+	end
 end
 
 local Update = function(self, event)
@@ -37,14 +37,14 @@ local Update = function(self, event)
 		bar:Show()
 	end
 
-	if bar:IsShown() then		
+	if bar:IsShown() then
 		for i = 1, maxCharges do
 			if start and timeLeft then
 				bar[i]:SetMinMaxValues(0, start)
 				bar[i].duration = start
 				bar[i].expirationTime = timeLeft
 			end
-			
+
 			if i <= charges then
 				bar[i]:Show()
 				bar[i]:SetValue(start)
@@ -54,9 +54,9 @@ local Update = function(self, event)
 				bar[i]:SetValue(0)
 				bar[i]:SetScript("OnUpdate", nil)
 			end
-		end		
+		end
 	end
-	
+
 	if(bar.PostUpdate) then
 		return bar:PostUpdate(event, charges, maxCharges)
 	end
@@ -87,17 +87,17 @@ local function Enable(self, unit)
 
 			bar[i]:SetFrameLevel(bar:GetFrameLevel() + 1)
 			bar[i]:GetStatusBarTexture():SetHorizTile(false)
-			
+
 			if bar[i].bg then
 				bar[i]:SetMinMaxValues(0, 1)
 				bar[i]:SetValue(0)
 				bar[i].bg:SetAlpha(0.2)
 				bar[i].bg:SetAllPoints()
-			end		
+			end
 		end
-		
+
 		return true;
-	end	
+	end
 end
 
 local function Disable(self,unit)
@@ -109,5 +109,5 @@ local function Disable(self,unit)
 		bar:Hide()
 	end
 end
-			
+
 oUF:AddElement("Anticipation",Path,Enable,Disable)

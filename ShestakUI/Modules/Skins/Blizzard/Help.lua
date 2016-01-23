@@ -16,15 +16,10 @@ local function LoadSkin()
 
 	local buttons = {
 		"HelpFrameAccountSecurityOpenTicket",
-		--"HelpFrameOpenTicketHelpTopIssues",
-		--"HelpFrameOpenTicketHelpOpenTicket",
-		--"HelpFrameOpenTicketHelpItemRestoration",
 		"HelpFrameKnowledgebaseSearchButton",
 		"HelpFrameKnowledgebaseNavBarHomeButton",
 		"HelpFrameCharacterStuckStuck",
 		--"GMChatOpenLog",
-		--"HelpFrameTicketSubmit",
-		--"HelpFrameTicketCancel",
 		"HelpFrameGM_ResponseNeedMoreHelp",
 		"HelpFrameGM_ResponseCancel",
 		"HelpFrameSubmitSuggestionSubmit",
@@ -77,7 +72,7 @@ local function LoadSkin()
 	T.SkinScrollBar(HelpFrameKnowledgebaseScrollFrame2ScrollBar)
 	T.SkinScrollBar(HelpFrameReportBugScrollFrameScrollBar)
 	T.SkinScrollBar(HelpFrameSubmitSuggestionScrollFrameScrollBar)
-	
+
 	-- Sub buttons
 	for i = 1, #buttons do
 		local b = _G[buttons[i]]
@@ -151,7 +146,6 @@ local function LoadSkin()
 	HelpFrame:CreateBackdrop("Transparent")
 	T.SkinEditBox(HelpFrameKnowledgebaseSearchBox)
 	T.SkinScrollBar(HelpFrameKnowledgebaseScrollFrameScrollBar)
-	--T.SkinScrollBar(HelpFrameTicketScrollFrameScrollBar)
 	T.SkinCloseButton(HelpFrameCloseButton, HelpFrame.backdrop)
 	T.SkinCloseButton(HelpFrameKnowledgebaseErrorFrameCloseButton, HelpFrameKnowledgebaseErrorFrame.backdrop)
 

@@ -116,7 +116,7 @@ local function Visibility(self, event, unit)
 
 		Update(self, nil, "player")
 	else
-		if wsb:IsShown() then 
+		if wsb:IsShown() then
 			wsb:Hide()
 		end
 	end
