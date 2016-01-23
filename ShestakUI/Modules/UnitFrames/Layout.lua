@@ -1051,6 +1051,7 @@ local function Shared(self, unit)
 			self.Castbar.Text:SetPoint("RIGHT", self.Castbar.Time, "LEFT", -1, 0)
 			self.Castbar.Text:SetTextColor(1, 1, 1)
 			self.Castbar.Text:SetJustifyH("LEFT")
+			self.Castbar.Text:SetHeight(C.font.unit_frames_font_size)
 
 			if C.unitframe.castbar_icon == true and unit ~= "arena" then
 				self.Castbar.Button = CreateFrame("Frame", nil, self.Castbar)
