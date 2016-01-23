@@ -999,7 +999,7 @@ C["filger_spells"] = {
 			Position = {unpack(C.position.filger.player_proc_icon)},
 
 			-- Buffs
-			-- Arcane Missiles
+			-- Arcane Missiles!
 			{spellID = 79683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brain Freeze
 			{spellID = 57761, unitID = "player", caster = "player", filter = "BUFF"},
@@ -3298,6 +3298,8 @@ C["filger_spells"] = {
 			-- Raid Amplifiers: General
 			-- Ancient Hysteria
 			{spellID = 90355, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Netherwinds
+			{spellID = 160452, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Drums of Fury
 			{spellID = 178207, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Drums of Rage
@@ -3310,13 +3312,13 @@ C["filger_spells"] = {
 			{spellID = 80353, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Raid Amplifiers: Draenor
 			-- Maalus, the Blood Drinker
-			{spellID = 187615, unitID = "player", caster = "all", filter = "BUFF"},
+			{spellID = 187806, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Nithramus, the All-Seer
-			{spellID = 187611, unitID = "player", caster = "all", filter = "BUFF"},
+			{spellID = 187616, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Sanctus, Sigil of the Unbroken
-			{spellID = 187613, unitID = "player", caster = "all", filter = "BUFF"},
+			{spellID = 187617, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Thorasus, the Stone Heart of Draenor
-			{spellID = 187614, unitID = "player", caster = "all", filter = "BUFF"},
+			{spellID = 187619, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Professions
 			-- Goblin Glider [Goblin Glider Kit]
@@ -3381,7 +3383,7 @@ C["filger_spells"] = {
 			{spellID = 1706, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Life Cocoon
 			{spellID = 116849, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Lightwell: Renew
+			-- Lightwell Renew
 			{spellID = 7001, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mass Spell Reflection
 			{spellID = 114028, unitID = "player", caster = "all", filter = "BUFF"},
@@ -4014,7 +4016,7 @@ C["filger_spells"] = {
 			{spellID = 23335, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Seaforium Bombs
 			{spellID = 66271, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Other
+			-- Drinking in Arena
 			-- Ba'ruun's Bountiful Bloom
 			{spellID = 167268, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Drinking
