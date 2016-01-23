@@ -399,6 +399,7 @@ end
 
 function stArch:DisableSolve(button)
 	button["text"]:SetTextColor(0.5, 0.5, 0.5)
+	button:SetBackdropBorderColor(unpack(C.media.border_color))
 	button:SetScript("OnEnter", function() end)
 	button:SetScript("OnLeave", function() end)
 	button:SetScript("OnMouseUp", function() end)
