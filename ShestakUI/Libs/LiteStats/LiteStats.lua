@@ -711,7 +711,7 @@ if clock.enabled then
 			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_REALMTIME, ":", ""), zsub(GameTime_GetGameTime(true), "%s*AM", "am", "%s*PM", "pm"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			GameTooltip:AddLine(" ")
 			for i = 1, 2 do
-				local _, localizedName, isActive, _, startTime, _ = GetWorldPVPAreaInfo(i)
+				local _, localizedName, isActive, _, startTime = GetWorldPVPAreaInfo(i)
 				local r, g, b = 1, 1, 1
 				if i == 1 then
 					SetMapByID(485)
