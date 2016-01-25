@@ -21,8 +21,6 @@ local function LoadSkin()
 	T.SkinCheckBox(IsUsableCheckButton)
 	T.SkinCheckBox(ShowOnPlayerCheckButton)
 	T.SkinCheckBox(ExactMatchCheckButton)
-	T.SkinCheckBox(Atr_Exact_Search_Button)
-	T.SkinCheckBox(Atr_Adv_Search_Button)
 
 	-- Dress Up Frame
 	AuctionFrame:HookScript("OnShow", function()
@@ -431,6 +429,9 @@ local function LoadSkin()
 			_G[frames[i]]:StripTextures()
 		end
 	end
+
+	T.SkinCheckBox(Atr_Exact_Search_Button)
+	T.SkinCheckBox(Atr_Adv_Search_Button)
 
 	Atr_Mask:ClearAllPoints()
 	Atr_Mask:SetPoint("TOPLEFT", AuctionFrame, "TOPLEFT", 0, 0)
