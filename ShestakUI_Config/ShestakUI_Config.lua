@@ -685,7 +685,7 @@ function CreateUIConfig()
 	-- Version Title
 	local TitleBoxVer = CreateFrame("Frame", "TitleBoxVer", UIConfigMain)
 	TitleBoxVer:SetWidth(180)
-	TitleBoxVer:SetHeight(24)
+	TitleBoxVer:SetHeight(26)
 	TitleBoxVer:SetPoint("TOPLEFT", UIConfigMain, "TOPLEFT", 23, -15)
 
 	local TitleBoxVerText = TitleBoxVer:CreateFontString("UIConfigTitleVer", "OVERLAY", "GameFontNormal")
@@ -695,7 +695,7 @@ function CreateUIConfig()
 	-- Main Frame Title
 	local TitleBox = CreateFrame("Frame", "TitleBox", UIConfigMain)
 	TitleBox:SetWidth(540)
-	TitleBox:SetHeight(24)
+	TitleBox:SetHeight(26)
 	TitleBox:SetPoint("TOPLEFT", TitleBoxVer, "TOPRIGHT", 15, 0)
 
 	local TitleBoxText = TitleBox:CreateFontString("UIConfigTitle", "OVERLAY", "GameFontNormal")
