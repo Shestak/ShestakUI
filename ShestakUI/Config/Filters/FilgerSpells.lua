@@ -1080,8 +1080,6 @@ C["filger_spells"] = {
 			{spellID = 120, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Freeze (Pet)
 			{spellID = 33395, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Frostfire Bolt
-			{spellID = 44614, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Bomb
 			{spellID = 112948, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Nova
