@@ -82,8 +82,14 @@ if not modules then return end
 
 if modules and ((coords and coords.enabled) or (location and location.enabled)) then
 	ls:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-	ls:SetScript("OnUpdate", function() coordX, coordY = GetPlayerMapPosition(P) end)
-	WorldMapFrame:HookScript("OnHide", SetMapToCurrentZone)
+	ls:SetScript("OnUpdate", function(self, elapsed)
+		self.elapsed = (self.elapsed or 0) + elapsed
+		if self.elapsed >= 0.2 then
+			coordX, coordY = GetPlayerMapPosition(P)
+			self.elapsed = 0
+		end
+	end)
+	WorldMapDetailFrame:HookScript("OnHide", SetMapToCurrentZone)
 	function Coords() return format(coords and coords.fmt or "%d, %d", coordX * 100, coordY * 100) end
 end
 
