@@ -251,3 +251,8 @@ end)
 if C.automation.bannerhide == true then
 	BossBanner.PlayBanner = function() end
 end
+
+----------------------------------------------------------------------------------------
+--	Change UIErrorsFrame strata
+----------------------------------------------------------------------------------------
+UIErrorsFrame:SetFrameLevel(0)

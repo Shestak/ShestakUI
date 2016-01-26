@@ -22,6 +22,7 @@ local function LoadSkin()
 
 				if not frame.backdrop then
 					frame:CreateBackdrop("Transparent")
+					frame:SetFrameLevel(3)
 					frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -2, -6)
 					frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 6)
 
@@ -53,7 +54,7 @@ local function LoadSkin()
 				-- Icon border
 				if not _G["AchievementAlertFrame"..i.."IconTexture"].b then
 					_G["AchievementAlertFrame"..i.."IconTexture"].b = CreateFrame("Frame", nil, frame)
-					_G["AchievementAlertFrame"..i.."IconTexture"].b:SetFrameLevel(0)
+					_G["AchievementAlertFrame"..i.."IconTexture"].b:SetFrameLevel(3)
 					_G["AchievementAlertFrame"..i.."IconTexture"].b:SetTemplate("Default")
 					_G["AchievementAlertFrame"..i.."IconTexture"].b:SetPoint("TOPLEFT", _G["AchievementAlertFrame"..i.."IconTexture"], "TOPLEFT", -2, 2)
 					_G["AchievementAlertFrame"..i.."IconTexture"].b:SetPoint("BOTTOMRIGHT", _G["AchievementAlertFrame"..i.."IconTexture"], "BOTTOMRIGHT", 2, -2)
@@ -403,6 +404,7 @@ local function LoadSkin()
 
 			if not frame.backdrop then
 				frame:CreateBackdrop("Transparent")
+				frame:SetFrameLevel(1)
 				frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -5, -6)
 				frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 1, 6)
 
@@ -422,7 +424,7 @@ local function LoadSkin()
 			-- Icon border
 			if not frame.Icon.b then
 				frame.Icon.b = CreateFrame("Frame", nil, frame)
-				frame.Icon.b:SetFrameLevel(0)
+				frame.Icon.b:SetFrameLevel(1)
 				frame.Icon.b:SetTemplate("Default")
 				frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
 				frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
