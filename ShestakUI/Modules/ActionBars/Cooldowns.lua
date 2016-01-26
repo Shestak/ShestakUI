@@ -99,7 +99,8 @@ end
 local function Timer_Start(self, start, duration, charges, maxCharges)
 	local remainingCharges = charges or 0
 
-	if start > 0 and duration > 2 and remainingCharges == 0 and (not self.noOCC) and not string.find(self:GetName(), "ChargeCooldown") then
+	if self:GetName() and string.find(self:GetName(), "ChargeCooldown") then return end
+	if start > 0 and duration > 2 and remainingCharges == 0 and (not self.noOCC) then
 		local timer = self.timer or Timer_Create(self)
 		timer.start = start
 		timer.duration = duration
