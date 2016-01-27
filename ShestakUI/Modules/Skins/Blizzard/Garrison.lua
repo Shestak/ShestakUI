@@ -78,11 +78,15 @@ local function LoadSkin()
 	T.SkinEditBox(GarrisonLandingPage.ShipFollowerList.SearchBox)
 
 	-- Recruiter frame
-	GarrisonRecruiterFrame:StripTextures()
+	GarrisonRecruiterFrame:StripTextures(true)
 	GarrisonRecruiterFrame:SetTemplate("Transparent")
 	GarrisonRecruiterFrame.Inset:StripTextures()
 	T.SkinCloseButton(GarrisonRecruiterFrame.CloseButton)
 	GarrisonRecruiterFrame.UnavailableFrame:GetChildren():SkinButton()
+	GarrisonRecruiterFrame.Pick.ChooseRecruits:SkinButton()
+	T.SkinDropDownBox(GarrisonRecruiterFrame.Pick.ThreatDropDown)
+	T.SkinCheckBox(GarrisonRecruiterFrame.Pick.Radio1)
+	T.SkinCheckBox(GarrisonRecruiterFrame.Pick.Radio2)
 
 	-- ShipYard
 	GarrisonShipyardFrame:StripTextures(true)
