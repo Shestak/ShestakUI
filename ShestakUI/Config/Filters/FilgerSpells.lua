@@ -3308,7 +3308,8 @@ C["filger_spells"] = {
 			{spellID = 32182, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Time Warp
 			{spellID = 80353, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Raid Amplifiers: Draenor
+
+			-- Legendary Rings
 			-- Maalus, the Blood Drinker
 			{spellID = 187806, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Nithramus, the All-Seer
@@ -3409,253 +3410,266 @@ C["filger_spells"] = {
 			IconSize = 60,
 			Position = {unpack(C.position.filger.pve_debuff)},
 
+			-- Crowd Controls
 			-- Death Knight
-			-- Asphyxiate
-			{spellID = 108194, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Chains of Ice
-			{spellID = 45524, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Chilblains
-			{spellID = 50435, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Dark Simulacrum
-			{spellID = 77606, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Gnaw (Ghoul)
-			{spellID = 91800, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Monstrous Blow (Mutated Ghoul)
-			{spellID = 91797, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Remorseless Winter
 			{spellID = 115001, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Shroud of Purgatory
-			{spellID = 116888, unitID = "player", caster = "player", filter = "DEBUFF"},
-			-- Strangulate
-			{spellID = 47476, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Asphyxiate
+			{spellID = 108194, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Monstrous Blow (Mutated Ghoul)
+			{spellID = 91797, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Gnaw (Ghoul)
+			{spellID = 91800, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Druid
 			-- Cyclone
 			{spellID = 33786, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Entangling Roots
-			{spellID = 339, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Fae Silence
-			{spellID = 114238, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Immobilized
-			{spellID = 45334, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Incapacitating Roar
 			{spellID = 99, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Infected Wounds
-			{spellID = 58180, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mighty Bash
 			{spellID = 5211, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Maim
 			{spellID = 22570, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Rake
 			{spellID = 163505, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
-			-- Solar Beam
-			{spellID = 78675, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Typhoon
-			{spellID = 61391, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Hunter
-			-- Ankle Crack (Crocolisk)
-			{spellID = 50433, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Aspect of the Cheetah
-			{spellID = 5118, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Aspect of the Pack
-			{spellID = 13159, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Binding Shot
-			{spellID = 117526, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Concussive Shot
-			{spellID = 5116, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Entrapment
-			{spellID = 135373, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Freezing Trap
 			{spellID = 3355, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Wyvern Sting
+			{spellID = 19386, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Binding Shot
+			{spellID = 117526, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Intimidation
+			{spellID = 24394, unitID = "player", caster = "all", filter = "DEBUFF"},
+
+			-- Mage
+			-- Polymorph
+			{spellID = 118, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Ring of Frost
+			{spellID = 82691, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Deep Freeze
+			{spellID = 44572, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Dragon's Breath
+			{spellID = 31661, unitID = "player", caster = "all", filter = "DEBUFF"},
+
+			-- Monk
+			-- Paralysis
+			{spellID = 115078, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Leg Sweep
+			{spellID = 119381, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Charging Ox Wave
+			{spellID = 119392, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Fists of Fury
+			{spellID = 120086, unitID = "player", caster = "all", filter = "DEBUFF"},
+
+			-- Paladin
+			-- Repentance
+			{spellID = 20066, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Turn Evil
+			{spellID = 10326, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Fist of Justice
+			{spellID = 105593, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Hammer of Justice
+			{spellID = 853, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Blinding Light
+			{spellID = 105421, unitID = "player", caster = "all", filter = "DEBUFF"},
+
+			-- Priest
+			-- Dominate Mind
+			{spellID = 605, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Psychic Horror
+			{spellID = 64044, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Psychic Scream
+			{spellID = 8122, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Sin and Punishment
+			{spellID = 87204, unitID = "player", caster = "all", filter = "DEBUFF"},
+
+			-- Rogue
+			-- Sap
+			{spellID = 6770, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Blind
+			{spellID = 2094, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Cheap Shot
+			{spellID = 1833, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Kidney Shot
+			{spellID = 408, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Gouge
+			{spellID = 1776, unitID = "player", caster = "all", filter = "DEBUFF"},
+
+			-- Shaman
+			-- Hex
+			{spellID = 51514, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Static Charge
+			{spellID = 118905, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Pulverize (Earth Elemental)
+			{spellID = 118345, unitID = "player", caster = "all", filter = "DEBUFF"},
+
+			-- Warlock
+			-- Fear
+			{spellID = 118699, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Seduction (Succubus)
+			{spellID = 6358, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Mesmerize (Shivarra)
+			{spellID = 115268, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Howl of Terror
+			{spellID = 5484, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Axe Toss (Felguard)
+			{spellID = 89766, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Blood Horror
+			{spellID = 137143, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Shadowfury
+			{spellID = 30283, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Mortal Coil
+			{spellID = 6789, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Meteor Strike (Abyssal)
+			{spellID = 171156, unitID = "player", caster = "all", filter = "DEBUFF"},
+
+			-- Warrior
+			-- Intimidating Shout
+			{spellID = 5246, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Storm Bolt
+			{spellID = 132169, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
+			-- Shockwave
+			{spellID = 132168, unitID = "player", caster = "all", filter = "DEBUFF"},
+
+			-- Racial
+			-- Quaking Palm
+			{spellID = 107079, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- War Stomp
+			{spellID = 20549, unitID = "player", caster = "all", filter = "DEBUFF"},
+
+			-- Silences
+			-- Strangulate
+			{spellID = 47476, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Solar Beam
+			{spellID = 78675, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Fae Silence
+			{spellID = 114238, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Frostjaw
+			{spellID = 102051, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Avenger's Shield
+			{spellID = 31935, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Silence
+			{spellID = 15487, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Garrote
+			{spellID = 1330, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Unstable Affliction
+			{spellID = 31117, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
+			-- Arcane Torrent
+			{spellID = 28730, unitID = "player", caster = "all", filter = "DEBUFF"},
+
+			-- Roots
+			-- Chains of Ice
+			{spellID = 45524, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Entangling Roots
+			{spellID = 339, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Mass Entanglement
+			{spellID = 102359, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Immobilized
+			{spellID = 45334, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Entrapment
+			{spellID = 135373, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Narrow Escape
+			{spellID = 136634, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Frost Nova
+			{spellID = 122, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Ice Ward
+			{spellID = 111340, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Freeze (Water Elemental)
+			{spellID = 33395, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Disable
+			{spellID = 116706, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
+			-- Mind Blast (Glyph)
+			{spellID = 87194, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Void Tendril's Grasp
+			{spellID = 114404, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Frozen Power
+			{spellID = 63685, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Earthgrab
+			{spellID = 64695, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Debilitate (Terrorguard)
+			{spellID = 170996, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Staggering Shout
+			{spellID = 107566, unitID = "player", caster = "all", filter = "DEBUFF"},
+
+			-- Slows
+			-- Chilblains
+			{spellID = 50435, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Infected Wounds
+			{spellID = 58180, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Typhoon
+			{spellID = 61391, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Concussive Shot
+			{spellID = 5116, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Freezing Trap (Glyph)
 			{spellID = 61394, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Breath (Chimaera)
 			{spellID = 54644, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ice Trap
 			{spellID = 135299, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Intimidation
-			{spellID = 24394, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Narrow Escape
-			{spellID = 136634, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Warp Time (Warp Stalker)
 			{spellID = 35346, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Wyvern Sting
-			{spellID = 19386, unitID = "player", caster = "all", filter = "DEBUFF"},
-
-			-- Mage
-			-- Cauterize
-			{spellID = 87023, unitID = "player", caster = "player", filter = "DEBUFF"},
+			-- Ankle Crack (Crocolisk)
+			{spellID = 50433, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Chilled
 			{spellID = 7321, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Cone of Cold
 			{spellID = 120, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Deep Freeze
-			{spellID = 44572, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Dragon's Breath
-			{spellID = 31661, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Freeze (Pet)
-			{spellID = 33395, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frostbolt
 			{spellID = 116, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frostfire Bolt
 			{spellID = 44614, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Frostjaw
-			{spellID = 102051, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Frost Nova
-			{spellID = 122, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Ice Ward
-			{spellID = 111340, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Polymorph
-			{spellID = 118, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Ring of Frost
-			{spellID = 82691, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Slow
 			{spellID = 31589, unitID = "player", caster = "all", filter = "DEBUFF"},
-
-			-- Monk
-			-- Charging Ox Wave
-			{spellID = 119392, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Disable
-			{spellID = 116706, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
-			-- Fists of Fury
-			{spellID = 120086, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Leg Sweep
-			{spellID = 119381, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Paralysis
-			{spellID = 115078, unitID = "player", caster = "all", filter = "DEBUFF"},
-
-			-- Paladin
-			-- Avenger's Shield
-			{spellID = 31935, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Blinding Light
-			{spellID = 105421, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Dazing Shield (Glyph)
 			{spellID = 63529, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Denounce
-			{spellID = 2812, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Fist of Justice
-			{spellID = 105593, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Hammer of Justice
-			{spellID = 853, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Repentance
-			{spellID = 20066, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Seal of Justice
 			{spellID = 20170, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Turn Evil
-			{spellID = 10326, unitID = "player", caster = "all", filter = "DEBUFF"},
-
-			-- Priest
-			-- Dominate Mind
-			{spellID = 605, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Mind Blast (Glyph)
-			{spellID = 87194, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mind Flay
 			{spellID = 15407, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Psychic Horror
-			{spellID = 64044, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Psychic Scream
-			{spellID = 8122, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Silence
-			{spellID = 15487, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Sin and Punishment
-			{spellID = 87204, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Void Tendrils
-			{spellID = 114404, unitID = "player", caster = "all", filter = "DEBUFF"},
-
-			-- Rogue
-			-- Blind
-			{spellID = 2094, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Cheap Shot
-			{spellID = 1833, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Crippling Poison
-			{spellID = 3409, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Deadly Throw
 			{spellID = 26679, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Garrote
-			{spellID = 1330, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Gouge
-			{spellID = 1776, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Kidney Shot
-			{spellID = 408, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Sap
-			{spellID = 6770, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Smoke Bomb
-			{spellID = 76577, unitID = "player", caster = "all", filter = "DEBUFF"},
-
-			-- Shaman
+			-- Crippling Poison
+			{spellID = 3409, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Earthbind
 			{spellID = 3600, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Earthgrab
-			{spellID = 64695, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Earthquake
 			{spellID = 77505, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Shock
 			{spellID = 8056, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Hex
-			{spellID = 51514, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Pulverize (Earth Elemental)
-			{spellID = 118345, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Static Charge
-			{spellID = 118905, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Thunderstorm
 			{spellID = 51490, unitID = "player", caster = "all", filter = "DEBUFF"},
-
-			-- Warlock
-			-- Axe Toss (Felguard)
-			{spellID = 89766, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Blood Horror
-			{spellID = 137143, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Conflagrate
 			{spellID = 17962, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Cripple (Doomguard)
 			{spellID = 170995, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
-			-- Debilitate (Terrorguard)
-			{spellID = 170996, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Fear
-			{spellID = 118699, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Howl of Terror
-			{spellID = 5484, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Mesmerize (Shivarra)
-			{spellID = 115268, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Meteor Strike (Abyssal)
-			{spellID = 171156, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Mortal Coil
-			{spellID = 6789, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Seduction (Succubus)
-			{spellID = 6358, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Shadowflame
-			{spellID = 47960, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Shadowfury
-			{spellID = 30283, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Unstable Affliction
-			{spellID = 31117, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
-
-			-- Warrior
-			-- Colossus Smash
-			{spellID = 86346, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Hamstring
 			{spellID = 1715, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Intimidating Shout
-			{spellID = 5246, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Piercing Howl
 			{spellID = 12323, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Shockwave
-			{spellID = 132168, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Staggering Shout
-			{spellID = 107566, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Storm Bolt
-			{spellID = 132169, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Warbringer
 			{spellID = 7922, unitID = "player", caster = "all", filter = "DEBUFF"},
 
-			-- Racial
-			-- Arcane Torrent
-			{spellID = 28730, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Quaking Palm
-			{spellID = 107079, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- War Stomp
-			{spellID = 20549, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Other
+			-- Dark Simulacrum
+			{spellID = 77606, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Shroud of Purgatory
+			{spellID = 116888, unitID = "player", caster = "player", filter = "DEBUFF"},
+			-- Aspect of the Cheetah
+			{spellID = 5118, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Aspect of the Pack
+			{spellID = 13159, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Cauterize
+			{spellID = 87023, unitID = "player", caster = "player", filter = "DEBUFF"},
+			-- Denounce
+			{spellID = 2812, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Smoke Bomb
+			{spellID = 76577, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Colossus Smash
+			{spellID = 86346, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Rocket Fuel Leak
+			{spellID = 94794, unitID = "player", caster = "player", filter = "DEBUFF"},
 
 			-- Raids: Pandaria
 			-- Heart of Fear
@@ -3687,10 +3701,6 @@ C["filger_spells"] = {
 			{spellID = 135695, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Torrent of Ice (Megaera)
 			{spellID = 139857, unitID = "player", caster = "all", filter = "DEBUFF"},
-
-			-- Other
-			-- Rocket Fuel Leak
-			{spellID = 94794, unitID = "player", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "T_BUFF",
