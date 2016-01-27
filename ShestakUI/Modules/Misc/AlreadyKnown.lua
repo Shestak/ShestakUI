@@ -37,6 +37,7 @@ local function IsKnown(itemLink)
 	if speciesID then return C_PetJournal.GetNumCollectedInfo(speciesID) > 0 and true end
 
 	local itemID = itemLink:match("item:(%d+):")
+	if not itemID then return end
 	if knowns[itemID] then return true end
 
 	local _, _, _, _, _, itemType, itemSubType = GetItemInfo(itemID)
