@@ -16,6 +16,12 @@ ExtraActionBarFrame.ignoreFramePositionManager = true
 
 RegisterStateDriver(anchor, "visibility", "[petbattle] hide; show")
 
+DraenorZoneAbilityFrame:SetParent(UIParent)
+DraenorZoneAbilityFrame:ClearAllPoints()
+DraenorZoneAbilityFrame:SetPoint("CENTER", anchor, "CENTER")
+DraenorZoneAbilityFrame:SetSize(53, 53)
+DraenorZoneAbilityFrame.ignoreFramePositionManager = true
+
 ------------------------------------------------------------------------------------------
 --	Skin ExtraActionBarFrame(by Zork)
 ------------------------------------------------------------------------------------------
@@ -31,3 +37,26 @@ hooksecurefunc(texture, "SetTexture", disableTexture)
 
 button:StyleButton()
 button:SetSize(53, 53)
+
+------------------------------------------------------------------------------------------
+--	Skin DraenorZoneAbilityFrame
+------------------------------------------------------------------------------------------
+local button = DraenorZoneAbilityFrame.SpellButton
+local texture = button.Style
+local disableTexture = function(style, texture)
+	if texture then
+		style:SetTexture(nil)
+	end
+end
+button.Style:SetTexture(nil)
+hooksecurefunc(texture, "SetTexture", disableTexture)
+
+button:StripTextures()
+button:SetTemplate("Default")
+button:StyleButton()
+button:SetSize(53, 53)
+
+button.Icon:SetDrawLayer("ARTWORK")
+button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+button.Icon:SetPoint("TOPLEFT", button, 2, -2)
+button.Icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
