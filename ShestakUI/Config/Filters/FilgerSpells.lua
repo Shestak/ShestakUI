@@ -3353,53 +3353,55 @@ C["filger_spells"] = {
 			-- Strange Feeling (Brawler's Guild)
 			{spellID = 134851, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 
-			-- Other
-			-- Angelic Feather
-			{spellID = 121557, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Body and Soul
-			{spellID = 65081, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Damage Reduction
+			-- Life Cocoon
+			{spellID = 116849, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Guardian Spirit
+			{spellID = 47788, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Pain Suppression
+			{spellID = 33206, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Ironbark
+			{spellID = 102342, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Devotion Aura
 			{spellID = 31821, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Hand of Protection
+			{spellID = 1022, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Hand of Sacrifice
+			{spellID = 6940, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Hand of Purity
+			{spellID = 114039, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Vigilance
+			{spellID = 114030, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Rallying Cry
+			{spellID = 97463, unitID = "player", caster = "all", filter = "BUFF"},
+
+			-- Other
 			-- Fear Ward
 			{spellID = 6346, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Grounding Totem
 			{spellID = 8178, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Guardian Spirit
-			{spellID = 47788, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Hand of Freedom
-			{spellID = 1044, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Hand of Protection
-			{spellID = 1022, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Hand of Purity
-			{spellID = 114039, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Hand of Sacrifice
-			{spellID = 6940, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Ice Ward
-			{spellID = 111264, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Ironbark
-			{spellID = 102342, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Levitate
-			{spellID = 1706, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Life Cocoon
-			{spellID = 116849, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Lightwell Renew
-			{spellID = 7001, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mass Spell Reflection
 			{spellID = 114028, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Pain Suppression
-			{spellID = 33206, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Rallying Cry
-			{spellID = 97463, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Slow Fall
-			{spellID = 130, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Stampeding Roar
-			{spellID = 77764, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tiger's Lust
 			{spellID = 116841, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Body and Soul
+			{spellID = 65081, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Angelic Feather
+			{spellID = 121557, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Stampeding Roar
+			{spellID = 77764, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Hand of Freedom
+			{spellID = 1044, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Ice Ward
+			{spellID = 111264, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Lightwell Renew
+			{spellID = 7001, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
 			{spellID = 57933, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Vigilance
-			{spellID = 114030, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Slow Fall
+			{spellID = 130, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Levitate
+			{spellID = 1706, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
