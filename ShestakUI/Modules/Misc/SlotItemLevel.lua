@@ -11,15 +11,25 @@ local slots = {
 	"LegsSlot", "FeetSlot", "Finger0Slot", "Finger1Slot", "Trinket0Slot", "Trinket1Slot"
 }
 
-local upgrades = {
-	["1"] = 8, ["373"] = 4, ["374"] = 8, ["375"] = 4, ["376"] = 4, ["377"] = 4,
-	["379"] = 4, ["380"] = 4, ["446"] = 4, ["447"] = 8, ["452"] = 8, ["454"] = 4,
-	["455"] = 8, ["457"] = 8, ["459"] = 4, ["460"] = 8, ["461"] = 12, ["462"] = 16,
-	["466"] = 4, ["467"] = 8, ["469"] = 4, ["470"] = 8, ["471"] = 12, ["472"] = 16,
-	["477"] = 4, ["478"] = 8, ["480"] = 8, ["492"] = 4, ["493"] = 8, ["495"] = 4,
-	["496"] = 8, ["497"] = 12, ["498"] = 16, ["504"] = 12, ["505"] = 16, ["506"] = 20,
-	["507"] = 24, ["529"] = 0, ["530"] = 5, ["531"] = 10
-}
+-- iLevel retrieval
+local S_ITEM_LEVEL = "^"..gsub(ITEM_LEVEL, "%%d", "(%%d+)")
+local scantip = CreateFrame("GameTooltip", "ItemLevelScanTooltip", nil, "GameTooltipTemplate")
+scantip:SetOwner(UIParent, "ANCHOR_NONE")
+
+local function GetItemLevel(itemLink)
+	scantip:SetOwner(UIParent, "ANCHOR_NONE")
+	scantip:SetHyperlink(itemLink)
+	for i = 2, scantip:NumLines() do -- Line 1 = name so skip
+		local text = _G["ItemLevelScanTooltipTextLeft"..i]:GetText()
+		if text and text ~= "" then
+			local currentLevel = strmatch(text, S_ITEM_LEVEL)
+			if currentLevel then
+				return currentLevel
+			end
+		end
+	end
+	scantip:Hide()
+end
 
 local function CreateButtonsText(frame)
 	for _, slot in pairs(slots) do
@@ -56,12 +66,9 @@ local function UpdateButtonsText(frame)
 					if ilevel == 1 then
 						text:SetText("")
 					else
-						if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
-						if upgrades[upgrade] > 0 then
-							text:SetText("|cffffd200"..ilevel + upgrades[upgrade])
-						else
-							text:SetText("|cFFFFFF00"..ilevel + upgrades[upgrade])
-						end
+						local currentLevel = GetItemLevel(item)
+						ilevel = currentLevel and currentLevel or ilevel
+						text:SetText("|cFFFFFF00"..ilevel)
 					end
 				end
 			else
