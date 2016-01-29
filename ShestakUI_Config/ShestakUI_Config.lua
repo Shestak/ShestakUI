@@ -54,7 +54,6 @@ local function Local(o)
 	if o == "UIConfigmiscprofession_tabs" then o = L_GUI_MISC_PROFESSION_TABS end
 	if o == "UIConfigmischide_bg_spam" then o = L_GUI_MISC_HIDE_BG_SPAM end
 	if o == "UIConfigmiscitem_level" then o = L_GUI_MISC_ITEM_LEVEL end
-	if o == "UIConfigmiscgem_counter" then o = L_GUI_MISC_GEM_COUNTER end
 	if o == "UIConfigmiscalready_known" then o = L_GUI_MISC_ALREADY_KNOWN end
 	if o == "UIConfigmiscdisenchanting" then o = L_GUI_MISC_DISENCHANTING end
 	if o == "UIConfigmiscsum_buyouts" then o = L_GUI_MISC_SUM_BUYOUTS end

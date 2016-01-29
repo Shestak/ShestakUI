@@ -68,7 +68,6 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["general"].welcome_message = false
 	C["misc"].invite_keyword = "inv"
 	C["misc"].item_level = true
-	C["misc"].gem_counter = true
 	C["misc"].already_known = true
 	C["misc"].move_blizzard = true
 	C["announcements"].flask_food = true
@@ -153,7 +152,6 @@ or T.name == "Чакернаут" or T.name == "Чаккис" or T.name == "Эз
 	C["misc"].shift_marking = false
 	C["misc"].raid_tools = false
 	C["misc"].hide_bg_spam = true
-	C["misc"].gem_counter = true
 	C["misc"].disenchanting = true
 	C["announcements"].pull_countdown = false
 	C["announcements"].portals = true

@@ -27,7 +27,6 @@ L_GUI_MISC_RAID_TOOLS = "Herramientas de Raid"
 L_GUI_MISC_PROFESSION_TABS = "Pestanas de profesiones de artesania y marcos de comercio"
 L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG" -- Needs review
 L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
-L_GUI_MISC_GEM_COUNTER = "Displays how many red/blue/yellow gems you have" -- Needs review
 L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets that is already known" -- Needs review
 L_GUI_MISC_DISENCHANTING = "Milling, Prospecting and Disenchanting by Alt + click" -- Needs review
 L_GUI_MISC_SUM_BUYOUTS = "Sum up all current auctions" -- Needs review
