@@ -16,7 +16,9 @@ frame:SetScript("OnEvent", function(self, event, id)
 				return
 			end
 		end
-		if RollOnLoot(id, 3) then
+		local link = GetLootRollItemLink(id)
+		local _, _, _, _, reqLevel = GetItemInfo(link)
+		if RollOnLoot(id, 3) and reqLevel > 90 then
 			RollOnLoot(id, 3)
 		else
 			RollOnLoot(id, 2)
