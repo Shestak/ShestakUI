@@ -4,7 +4,6 @@ if C.misc.item_level ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Item level on slot buttons in Character/InspectFrame(by Tukz)
 ----------------------------------------------------------------------------------------
-local time = 3
 local slots = {
 	"HeadSlot", "NeckSlot", "ShoulderSlot", "BackSlot", "ChestSlot", "ShirtSlot", "TabardSlot",
 	"WristSlot", "MainHandSlot", "SecondaryHandSlot", "HandsSlot", "WaistSlot",
@@ -17,7 +16,6 @@ local scantip = CreateFrame("GameTooltip", "ItemLevelScanTooltip", nil, "GameToo
 scantip:SetOwner(UIParent, "ANCHOR_NONE")
 
 local function GetItemLevel(itemLink)
-	scantip:SetOwner(UIParent, "ANCHOR_NONE")
 	scantip:SetHyperlink(itemLink)
 	for i = 2, scantip:NumLines() do -- Line 1 = name so skip
 		local text = _G["ItemLevelScanTooltipTextLeft"..i]:GetText()
@@ -28,7 +26,6 @@ local function GetItemLevel(itemLink)
 			end
 		end
 	end
-	scantip:Hide()
 end
 
 local function CreateButtonsText(frame)
@@ -59,7 +56,6 @@ local function UpdateButtonsText(frame)
 		elseif item then
 			local oldilevel = text:GetText()
 			local _, _, _, ilevel = GetItemInfo(item)
-			local upgrade = item:match(":(%d+)\124h%[")
 
 			if ilevel then
 				if ilevel ~= oldilevel then
@@ -92,16 +88,6 @@ OnEvent:SetScript("OnEvent", function(self, event)
 		UpdateButtonsText("Inspect")
 	else
 		UpdateButtonsText("Character")
-	end
-end)
-OnEvent:SetScript("OnUpdate", function(self, elapsed)
-	time = time + elapsed
-	if time >= 3 then
-		if InspectFrame and InspectFrame:IsShown() then
-			UpdateButtonsText("Inspect")
-		else
-			UpdateButtonsText("Character")
-		end
 	end
 end)
 

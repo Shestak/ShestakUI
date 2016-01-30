@@ -69,7 +69,6 @@ local scantip = CreateFrame("GameTooltip", "ItemLevelScanTooltip", nil, "GameToo
 scantip:SetOwner(UIParent, "ANCHOR_NONE")
 
 local function GetItemLevel(itemLink)
-	scantip:SetOwner(UIParent, "ANCHOR_NONE")
 	scantip:SetHyperlink(itemLink)
 	for i = 2, scantip:NumLines() do -- Line 1 = name so skip
 		local text = _G["ItemLevelScanTooltipTextLeft"..i]:GetText()
@@ -80,7 +79,6 @@ local function GetItemLevel(itemLink)
 			end
 		end
 	end
-	scantip:Hide()
 end
 
 --- Unit Gear Info
