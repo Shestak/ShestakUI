@@ -5,6 +5,8 @@ if C.tooltip.enable ~= true then return end
 --	Based on aTooltip(by ALZA)
 ----------------------------------------------------------------------------------------
 local StoryTooltip = QuestScrollFrame.StoryTooltip
+StoryTooltip:SetFrameLevel(4)
+
 local tooltips = {
 	GameTooltip,
 	ItemRefTooltip,
@@ -34,7 +36,7 @@ for _, tt in pairs(tooltips) do
 		local bg = CreateFrame("Frame", nil, tt)
 		bg:SetPoint("TOPLEFT")
 		bg:SetPoint("BOTTOMRIGHT")
-		bg:SetFrameLevel(tt:GetFrameLevel() -1)
+		bg:SetFrameLevel(tt:GetFrameLevel() - 1)
 		bg:SetTemplate("Transparent")
 
 		tt.GetBackdrop = function() return backdrop end
