@@ -8,7 +8,7 @@ C["position"] = {
 	-- Miscellaneous positions
 	["minimap_buttons"] = {"TOPRIGHT", Minimap, "TOPLEFT", -3, 2},					-- Minimap buttons
 	["minimap"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 24},				-- Minimap
-	["map"] = {"BOTTOM", UIParent, "BOTTOM", -120, 320},							-- Map
+	["map"] = {"BOTTOM", UIParent, "BOTTOM", 0, 320},								-- Map
 	["chat"] = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 24, 23},						-- Chat
 	["bag"] = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5},							-- Bag
 	["bank"] = {"LEFT", UIParent, "LEFT", 23, 150},									-- Bank
