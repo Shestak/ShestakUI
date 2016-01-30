@@ -12,7 +12,9 @@ local function SetRole()
 		elseif spec ~= nil then
 			if GetNumGroupMembers() > 0 then
 				local role = GetSpecializationRole(spec)
-				UnitSetRole("player", role)
+				if UnitGroupRolesAssigned("player") ~= role then
+					UnitSetRole("player", role)
+				end
 			end
 		end
 	end
