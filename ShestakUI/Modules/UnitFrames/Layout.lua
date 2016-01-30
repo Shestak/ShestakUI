@@ -265,7 +265,7 @@ local function Shared(self, unit)
 			self.Runes:SetSize(217, 7)
 
 			for i = 1, 6 do
-				self.Runes[i] = CreateFrame("StatusBar", nil, self.Runes)
+				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_RuneBar", self.Runes)
 				self.Runes[i]:SetSize(212 / 6, 7)
 				if i == 1 then
 					self.Runes[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -542,7 +542,7 @@ local function Shared(self, unit)
 				self.TotemBar.Destroy = true
 
 				for i = 1, 3 do
-					self.TotemBar[i] = CreateFrame("StatusBar", nil, self.TotemBar)
+					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
 					self.TotemBar[i]:SetSize(108 / 3, 7)
 					if i == 1 then
 						self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
@@ -571,7 +571,7 @@ local function Shared(self, unit)
 				self.TotemBar.Destroy = true
 
 				for i = 1, 1 do
-					self.TotemBar[i] = CreateFrame("StatusBar", nil, self.TotemBar)
+					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
 					self.TotemBar[i]:SetSize(53, 7)
 					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
@@ -595,7 +595,7 @@ local function Shared(self, unit)
 			self.TotemBar.Destroy = true
 
 			for i = 1, 2 do
-				self.TotemBar[i] = CreateFrame("StatusBar", nil, self.TotemBar)
+				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
 				self.TotemBar[i]:SetSize(108 / 2, 7)
 				if i == 1 then
 					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
