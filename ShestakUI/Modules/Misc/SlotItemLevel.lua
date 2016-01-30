@@ -42,8 +42,8 @@ local function UpdateButtonsText(frame)
 
 	for _, slot in pairs(slots) do
 		local id = GetInventorySlotInfo(slot)
-		local item
 		local text = _G[frame..slot].t
+		local item
 
 		if frame == "Inspect" then
 			item = GetInventoryItemLink("target", id)
@@ -75,6 +75,8 @@ local function UpdateButtonsText(frame)
 		end
 	end
 end
+
+CharacterFrame:HookScript("OnShow", function(self) UpdateButtonsText("Character") end)
 
 local OnEvent = CreateFrame("Frame")
 OnEvent:RegisterEvent("PLAYER_LOGIN")
