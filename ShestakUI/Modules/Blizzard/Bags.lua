@@ -135,7 +135,6 @@ local scantip = CreateFrame("GameTooltip", "ItemLevelScanTooltip", nil, "GameToo
 scantip:SetOwner(UIParent, "ANCHOR_NONE")
 
 local function GetItemLevel(itemLink)
-	scantip:SetOwner(UIParent, "ANCHOR_NONE")
 	scantip:SetHyperlink(itemLink)
 	for i = 2, scantip:NumLines() do -- Line 1 = name so skip
 		local text = _G["ItemLevelScanTooltipTextLeft"..i]:GetText()
@@ -146,7 +145,6 @@ local function GetItemLevel(itemLink)
 			end
 		end
 	end
-	scantip:Hide()
 end
 
 function Stuffing:SlotUpdate(b)
@@ -225,7 +223,7 @@ function CreateReagentContainer()
 	Reagent:SetPoint("TOPLEFT", _G["StuffingFrameBank"], "TOPLEFT", 0, 0)
 	Reagent:SetTemplate("Transparent")
 	Reagent:SetFrameStrata(_G["StuffingFrameBank"]:GetFrameStrata())
-	Reagent:SetFrameLevel(_G["StuffingFrameBank"]:GetFrameLevel() + 5)
+	Reagent:SetFrameLevel(_G["StuffingFrameBank"]:GetFrameLevel())
 	Reagent:EnableMouse(true)
 	Reagent:SetMovable(true)
 	Reagent:SetClampedToScreen(true)
@@ -559,7 +557,7 @@ function Stuffing:CreateBagFrame(w)
 	local f = CreateFrame("Frame", n, UIParent)
 	f:EnableMouse(true)
 	f:SetMovable(true)
-	f:SetFrameStrata("DIALOG")
+	f:SetFrameStrata("MEDIUM")
 	f:SetFrameLevel(5)
 	f:SetScript("OnMouseDown", function(self, button)
 		if IsShiftKeyDown() and button == "LeftButton" then
