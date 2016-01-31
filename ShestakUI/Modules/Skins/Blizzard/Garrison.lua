@@ -78,7 +78,7 @@ local function LoadSkin()
 	T.SkinEditBox(GarrisonLandingPage.ShipFollowerList.SearchBox)
 
 	GarrisonLandingPage.Report.InProgress:ClearAllPoints()
-	GarrisonLandingPage.Report.InProgress:SetPoint("BOTTOMLEFT", GarrisonLandingPageReportList, "TOPLEFT", 6, 2)
+	GarrisonLandingPage.Report.InProgress:SetPoint("BOTTOMLEFT", GarrisonLandingPageReportList, "TOPLEFT", 5, 2)
 
 	GarrisonLandingPage.Report.Available:ClearAllPoints()
 	GarrisonLandingPage.Report.Available:SetPoint("LEFT", GarrisonLandingPage.Report.InProgress, "RIGHT", 4, 0)
@@ -96,8 +96,8 @@ local function LoadSkin()
 		local unselectedTab = GarrisonLandingPage.Report.unselectedTab
 		unselectedTab:SetHeight(36)
 
-		self:SetWidth(197)
-		unselectedTab:SetWidth(197)
+		self:SetWidth(198)
+		unselectedTab:SetWidth(198)
 
 		unselectedTab:SetNormalTexture("")
 		unselectedTab.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
