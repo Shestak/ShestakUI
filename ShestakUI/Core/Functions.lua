@@ -217,9 +217,9 @@ function T.SkinTab(tab, bg)
 	end
 end
 
-function T.SkinNextPrevButton(btn)
+function T.SkinNextPrevButton(btn, left)
 	local normal, pushed, disabled
-	local isPrevButton = btn:GetName() and (string.find(btn:GetName(), "Left") or string.find(btn:GetName(), "Prev") or string.find(btn:GetName(), "Decrement") or string.find(btn:GetName(), "Back"))
+	local isPrevButton = btn:GetName() and (string.find(btn:GetName(), "Left") or string.find(btn:GetName(), "Prev") or string.find(btn:GetName(), "Decrement") or string.find(btn:GetName(), "Back")) or left
 	local isScrollUpButton = btn:GetName() and string.find(btn:GetName(), "ScrollUp")
 	local isScrollDownButton = btn:GetName() and string.find(btn:GetName(), "ScrollDown")
 
