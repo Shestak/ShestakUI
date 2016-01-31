@@ -147,13 +147,15 @@ local function LoadSkin()
 		local button = frame.RewardButtons[index]
 		if not button.restyled then
 			SkinReward(button)
-			if button == frame.RewardButtons[3] and GetNumQuestLogChoices() > 2 then
-				button:ClearAllPoints()
-				button:SetPoint("TOPLEFT", frame.RewardButtons[1], "BOTTOMLEFT", 0, -5)
-				button.SetPoint = T.dummy
-				button:Hide()
-			end
 			button.restyled = true
+		end
+
+		local mapReward = MapQuestInfoRewardsFrame.RewardButtons[index]
+		if mapReward then
+			mapReward.Icon:SetSize(30, 30)
+			if GetNumQuestLogChoices() > 2 then
+				mapReward.Icon:SetSize(26, 26)
+			end
 		end
 	end)
 
@@ -173,7 +175,6 @@ local function LoadSkin()
 	end
 
 	SkinReward(QuestInfoSkillPointFrame)
-	SkinReward(QuestInfoSpellObjectiveFrame)
 	SkinReward(MapQuestInfoRewardsFrame.SpellFrame)
 	SkinReward(MapQuestInfoRewardsFrame.XPFrame)
 	SkinReward(MapQuestInfoRewardsFrame.MoneyFrame)
