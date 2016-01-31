@@ -33,6 +33,10 @@ MinimapBorderTop:Hide()
 MinimapZoomIn:Hide()
 MinimapZoomOut:Hide()
 
+-- Hide Blob Ring
+Minimap:SetArchBlobRingScalar(0)
+Minimap:SetQuestBlobRingScalar(0)
+
 -- Hide Voice Chat Frame
 MiniMapVoiceChatFrame:Kill()
 VoiceChatTalkers:Kill()
