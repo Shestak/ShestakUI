@@ -1059,7 +1059,7 @@ T.UpdateComboPoint = function(self, event, unit)
 	end
 
 	if T.class == "DRUID" and C.unitframe_class_bar.comboalways ~= true then
-		local CatForm = function(self, event, unit)
+		local function CatForm(self, event, unit)
 			local unit = self.unit or "player"
 			local name = UnitBuff(unit, GetSpellInfo(768)) or UnitBuff(unit, GetSpellInfo(171745))
 			if name then
@@ -1071,14 +1071,10 @@ T.UpdateComboPoint = function(self, event, unit)
 			end
 		end
 
-		local CheckForm = CreateFrame("Frame", self:GetName().."_CheckForm", cpoints)
-		CheckForm:RegisterEvent("UNIT_AURA")
-		CheckForm:RegisterEvent("PLAYER_LOGIN")
-		CheckForm:RegisterEvent("PLAYER_ENTERING_WORLD")
-		CheckForm:SetScript("OnEvent", CatForm)
-		CheckForm:SetScript("OnUpdate", CatForm)
-		CheckForm:SetScript("OnShow", CatForm)
-		CheckForm:SetScript("OnHide", CatForm)
+		local frame = CreateFrame("Frame")
+		frame:RegisterEvent("UNIT_AURA")
+		frame:SetScript("OnEvent", CatForm)
+		CatForm(self, event, unit)
 	end
 end
 
