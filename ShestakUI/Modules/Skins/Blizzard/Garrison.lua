@@ -77,6 +77,31 @@ local function LoadSkin()
 	GarrisonLandingPage.ShipFollowerList:SetTemplate("Transparent")
 	T.SkinEditBox(GarrisonLandingPage.ShipFollowerList.SearchBox)
 
+	GarrisonLandingPage.Report.InProgress:ClearAllPoints()
+	GarrisonLandingPage.Report.InProgress:SetPoint("BOTTOMLEFT", GarrisonLandingPageReportList, "TOPLEFT", -1, 2)
+
+	for _, tab in pairs({GarrisonLandingPage.Report.InProgress, GarrisonLandingPage.Report.Available}) do
+		tab:CreateBackdrop("Overlay")
+		tab.backdrop:SetAllPoints()
+		tab:StyleButton()
+
+		tab.Text:ClearAllPoints()
+		tab.Text:SetPoint("CENTER")
+	end
+
+	hooksecurefunc("GarrisonLandingPageReport_SetTab", function(self)
+		local unselectedTab = GarrisonLandingPage.Report.unselectedTab
+		unselectedTab:SetHeight(36)
+
+		unselectedTab:SetNormalTexture("")
+		unselectedTab.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+		unselectedTab.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
+
+		self:SetNormalTexture("")
+		self.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
+		self.backdrop.overlay:SetVertexColor(1, 0.82, 0, 0.3)
+	end)
+
 	-- Recruiter frame
 	GarrisonRecruiterFrame:StripTextures(true)
 	GarrisonRecruiterFrame:SetTemplate("Transparent")
