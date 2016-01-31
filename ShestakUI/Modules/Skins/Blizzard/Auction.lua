@@ -439,6 +439,17 @@ local function LoadSkin()
 
 	Atr_Adv_Search_Dialog:SetTemplate("Transparent")
 	Atr_FullScanFrame:SetTemplate("Overlay")
+
+	Atr_FullScanResults:CreateBorder(true, true)
+	local border = CreateFrame("Frame", "Atr_FullScanResultsBorder", Atr_FullScanResults)
+	border:SetPoint("TOPLEFT")
+	border:SetPoint("BOTTOMRIGHT")
+	border:SetBackdrop({
+		edgeFile = C.media.blank, edgeSize = T.mult,
+		insets = {left = T.mult, right = T.mult, top = T.mult, bottom = T.mult}
+	})
+	border:SetBackdropBorderColor(unpack(C.media.border_color))
+
 	Atr_Buy_Confirm_Frame:SetTemplate("Default")
 	Atr_CheckActives_Frame:SetTemplate("Transparent")
 	Atr_Error_Frame:SetTemplate("Transparent")
