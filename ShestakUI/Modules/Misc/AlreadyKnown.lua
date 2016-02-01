@@ -6,9 +6,9 @@ if C.misc.already_known ~= true then return end
 ----------------------------------------------------------------------------------------
 local color = {r = 0.1, g = 1, b = 0.1}
 local knowns, lines = {}, {}
-local _, _, _, _, glyph, _, recipe = GetAuctionItemClasses()
-local _, _, pet, _, toy, mount = GetAuctionItemSubClasses(9)
-local knowables = {[glyph] = true, [recipe] = true, [pet] = true, [mount] = true, [toy] = true}
+local _, _, _, consumable, glyph, _, recipe, _, misc = GetAuctionItemClasses()
+local _, _, pet, _, _, mount = GetAuctionItemSubClasses(9)
+local knowables = {[consumable] = true, [glyph] = true, [recipe] = true, [misc] = true, [pet] = true, [mount] = true}
 
 local pattern = ITEM_PET_KNOWN:gsub("%(", "%%(")
 pattern = pattern:gsub("%)", "%%)")
