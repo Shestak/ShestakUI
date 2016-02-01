@@ -204,35 +204,70 @@ SlashCmdList.FRAME = function(arg)
 	if arg ~= nil then FRAME = arg end
 	if arg ~= nil and arg:GetName() ~= nil then
 		local point, relativeTo, relativePoint, xOfs, yOfs = arg:GetPoint()
-		ChatFrame1:AddMessage("|cffCC0000~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-		ChatFrame1:AddMessage("Name: |cffFFD100"..arg:GetName())
+		print("|cffCC0000--------------------------------------------------------------------|r")
+		print("Name: |cffFFD100"..arg:GetName().."|r")
 		if arg:GetParent() and arg:GetParent():GetName() then
-			ChatFrame1:AddMessage("Parent: |cffFFD100"..arg:GetParent():GetName())
+			print("Parent: |cffFFD100"..arg:GetParent():GetName().."|r")
 		end
 
-		ChatFrame1:AddMessage("Width: |cffFFD100"..format("%.2f", arg:GetWidth()))
-		ChatFrame1:AddMessage("Height: |cffFFD100"..format("%.2f", arg:GetHeight()))
-		ChatFrame1:AddMessage("Strata: |cffFFD100"..arg:GetFrameStrata())
-		ChatFrame1:AddMessage("Level: |cffFFD100"..arg:GetFrameLevel())
+		print("Width: |cffFFD100"..format("%.2f", arg:GetWidth()).."|r")
+		print("Height: |cffFFD100"..format("%.2f", arg:GetHeight()).."|r")
+		print("Strata: |cffFFD100"..arg:GetFrameStrata().."|r")
+		print("Level: |cffFFD100"..arg:GetFrameLevel().."|r")
 
 		if relativeTo and relativeTo:GetName() then
-			ChatFrame1:AddMessage("Point: |cffFFD100"..point.."|r anchored to "..relativeTo:GetName().."'s |cffFFD100"..relativePoint)
+			print('Point: |cffFFD100 "'..point..'", '..relativeTo:GetName()..', "'..relativePoint..'"'.."|r")
 		end
 		if xOfs then
-			ChatFrame1:AddMessage("X: |cffFFD100"..format("%.2f", xOfs))
+			print("|rX: |cffFFD100"..format("%.2f", xOfs))
 		end
 		if yOfs then
-			ChatFrame1:AddMessage("Y: |cffFFD100"..format("%.2f", yOfs))
+			print("|rY: |cffFFD100"..format("%.2f", yOfs))
 		end
-		ChatFrame1:AddMessage("|cffCC0000~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+		print("|cffCC0000--------------------------------------------------------------------|r")
 	elseif arg == nil then
-		ChatFrame1:AddMessage("Invalid frame name")
+		print("Invalid frame name")
 	else
-		ChatFrame1:AddMessage("Could not find frame info")
+		print("Could not find frame info")
 	end
 end
 SLASH_FRAME1 = "/frame"
 SLASH_FRAME2 = "/акфьу"
+
+----------------------------------------------------------------------------------------
+--	Print /framestack info in chat
+----------------------------------------------------------------------------------------
+SlashCmdList["FRAMELIST"] = function(msg)
+	if not FrameStackTooltip then
+		UIParentLoadAddOn("Blizzard_DebugTools")
+	end
+
+	local isPreviouslyShown = FrameStackTooltip:IsShown()
+	if not isPreviouslyShown then
+		if msg == tostring(true) then
+			FrameStackTooltip_Toggle(true)
+		else
+			FrameStackTooltip_Toggle()
+		end
+	end
+
+	print("|cffCC0000--------------------------------------------------------------------|r")
+	for i = 2, FrameStackTooltip:NumLines() do
+		local text = _G["FrameStackTooltipTextLeft"..i]:GetText()
+		if text and text ~= "" then
+			print("|cffFFD100"..text)
+		end
+	end
+	print("|cffCC0000--------------------------------------------------------------------|r")
+
+	if not isPreviouslyShown then
+		FrameStackTooltip_Toggle()
+	end
+end
+SLASH_FRAMELIST1 = "/framelist"
+SLASH_FRAMELIST2 = "/акфьудшые"
+SLASH_FRAMELIST3 = "/fl"
+SLASH_FRAMELIST4 = "/ад"
 
 ----------------------------------------------------------------------------------------
 --	Frame Stack on Cyrillic
