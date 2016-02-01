@@ -131,3 +131,56 @@ end
 -- frame1:SetScript("OnEvent", function(self, event)
 	-- ObjectiveTracker_Collapse()
 -- end)
+
+----------------------------------------------------------------------------------------
+--	Skin bonus objective progress bar
+----------------------------------------------------------------------------------------
+hooksecurefunc(BONUS_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(self, block, line)
+	local progressBar = line.ProgressBar
+	local bar = progressBar.Bar
+	local icon = bar.Icon
+
+	if not progressBar.styled then
+		local label = bar.Label
+
+		bar.BarBG:Hide()
+		bar.BarFrame:Hide()
+
+		bar:SetStatusBarTexture(C.media.texture)
+		bar:CreateBackdrop("Default")
+		bar.backdrop:SetPoint("TOPLEFT", -3, 2)
+		bar.backdrop:SetPoint("BOTTOMRIGHT", 2, -2)
+
+		label:ClearAllPoints()
+		label:SetPoint("CENTER")
+		label:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+
+		icon:SetMask(nil)
+		icon:SetDrawLayer("BACKGROUND", 1)
+		icon:SetPoint("RIGHT", 24, 0)
+		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		icon:SetSize(17, 17)
+
+		local bg = icon:GetParent():CreateTexture(nil, "BACKGROUND")
+		bg:SetPoint("TOPLEFT", icon, -3, 3)
+		bg:SetPoint("BOTTOMRIGHT", icon, 3, -3)
+		bg:SetTexture(C.media.blank)
+		bg:SetVertexColor(0, 0, 0)
+
+		local bg = icon:GetParent():CreateTexture(nil, "BACKGROUND")
+		bg:SetPoint("TOPLEFT", icon, -2, 2)
+		bg:SetPoint("BOTTOMRIGHT", icon, 2, -2)
+		bg:SetTexture(C.media.blank)
+		bg:SetVertexColor(0.37, 0.3, 0.3, 1)
+
+		local bg = icon:GetParent():CreateTexture(nil, "BACKGROUND")
+		bg:SetPoint("TOPLEFT", icon, -1, 1)
+		bg:SetPoint("BOTTOMRIGHT", icon, 1, -1)
+		bg:SetTexture(C.media.blank)
+		bg:SetVertexColor(0, 0, 0)
+
+		progressBar.styled = true
+	end
+
+	bar.IconBG:Hide()
+end)
