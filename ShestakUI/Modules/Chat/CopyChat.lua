@@ -53,13 +53,9 @@ local function CreatCopyFrame()
 	end)
 
 	local close = CreateFrame("Button", "CopyCloseButton", frame, "UIPanelCloseButton")
-	if C.skins.blizzard_frames == true then
-		T.SkinCloseButton(close)
-		scrollArea:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -27, 8)
-	else
-		close:SetPoint("TOPRIGHT", frame, "TOPRIGHT")
-		scrollArea:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -30, 8)
-	end
+	T.SkinCloseButton(close)
+	scrollArea:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -27, 8)
+	T.SkinScrollBar(CopyScrollScrollBar)
 
 	isf = true
 end
