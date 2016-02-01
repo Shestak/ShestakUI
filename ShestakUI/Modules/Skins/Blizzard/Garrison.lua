@@ -150,33 +150,6 @@ local function LoadSkin()
 	GarrisonShipyardFrame.MissionTab.MissionList.CompleteDialog.BorderFrame:StripTextures()
 	GarrisonShipyardFrame.MissionTab.MissionList.CompleteDialog.BorderFrame:SetTemplate("Transparent")
 
-	-- Handle MasterPlan AddOn
-	do
-		local function skinMasterPlan()
-			T.SkinTab(GarrisonLandingPageTab4)
-			T.SkinTab(GarrisonMissionFrameTab3)
-			T.SkinTab(GarrisonMissionFrameTab4)
-			T.SkinTab(GarrisonShipyardFrameTab3)
-			local MissionPage = GarrisonMissionFrame.MissionTab.MissionPage
-			T.SkinCloseButton(MissionPage.MinimizeButton, nil, "-")
-			MissionPage.MinimizeButton:SetFrameLevel(MissionPage:GetFrameLevel() + 2)
-			MPCompleteAll:SkinButton()
-			MPPokeTentativeParties:SkinButton()
-		end
-
-		if IsAddOnLoaded("MasterPlan") then
-			skinMasterPlan()
-		else
-			local f = CreateFrame("Frame")
-			f:RegisterEvent("ADDON_LOADED")
-			f:SetScript("OnEvent", function(self, event, addon)
-				if addon == "MasterPlan" then
-					skinMasterPlan()
-					self:UnregisterEvent("ADDON_LOADED")
-				end
-			end)
-		end
-	end
 	local StartButton = GarrisonMissionFrame.MissionTab.MissionPage.StartMissionButton
 	StartButton:SkinButton()
 	StartButton.overlay:SetVertexColor(0.3, 0.3, 0.3, 0.3)
@@ -188,6 +161,8 @@ local function LoadSkin()
 	GarrisonMissionFrameFollowers:StripTextures()
 	GarrisonMissionFrameFollowers:SetTemplate("Transparent")
 	T.SkinEditBox(GarrisonMissionFrameFollowers.SearchBox)
+	GarrisonMissionFrameFollowers.SearchBox:SetPoint("TOPLEFT", 2, 25)
+	GarrisonMissionFrameFollowers.SearchBox:SetSize(301, 20)
 	T.SkinScrollBar(GarrisonMissionFrameFollowersListScrollFrameScrollBar)
 	T.SkinScrollBar(GarrisonLandingPageReportListListScrollFrameScrollBar)
 	T.SkinScrollBar(GarrisonMissionFrame.FollowerList.listScroll.scrollBar)
@@ -281,6 +256,38 @@ local function LoadSkin()
 				reagent = reagents[reagentIndex]
 			end
 		end)
+	end
+	
+	-- Handle MasterPlan AddOn
+	do
+		local function skinMasterPlan()
+			T.SkinTab(GarrisonLandingPageTab4)
+			T.SkinTab(GarrisonMissionFrameTab3)
+			T.SkinTab(GarrisonMissionFrameTab4)
+			T.SkinTab(GarrisonShipyardFrameTab3)
+			local MissionPage = GarrisonMissionFrame.MissionTab.MissionPage
+			T.SkinCloseButton(MissionPage.MinimizeButton, nil, "-")
+			MissionPage.MinimizeButton:SetPoint("TOPRIGHT", GarrisonMissionFrame.MissionTab.MissionPage.CloseButton, "TOPLEFT", -3, 0)
+			MissionPage.MinimizeButton:SetFrameLevel(MissionPage:GetFrameLevel() + 2)
+			GarrisonMissionFrame.MissionTab.MissionPage.CloseButton:SetSize(18, 18)
+			GarrisonMissionFrame.MissionTab.MissionPage.CloseButton:SetPoint("TOPRIGHT", -4, -4)
+			MPCompleteAll:SkinButton()
+			MPPokeTentativeParties:SkinButton()
+			GarrisonMissionFrameFollowers.SearchBox:SetSize(270, 20)
+		end
+
+		if IsAddOnLoaded("MasterPlan") then
+			skinMasterPlan()
+		else
+			local f = CreateFrame("Frame")
+			f:RegisterEvent("ADDON_LOADED")
+			f:SetScript("OnEvent", function(self, event, addon)
+				if addon == "MasterPlan" then
+					skinMasterPlan()
+					self:UnregisterEvent("ADDON_LOADED")
+				end
+			end)
+		end
 	end
 end
 
