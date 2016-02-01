@@ -56,10 +56,45 @@ local function LoadSkin()
 	GarrisonMissionFrame.TitleText:Show()
 	GarrisonMissionFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(GarrisonMissionFrame.CloseButton)
-	T.SkinCloseButton(GarrisonMissionFrame.MissionTab.MissionPage.CloseButton)
 	GarrisonMissionFrameTab1:SetPoint("BOTTOMLEFT", GarrisonMissionFrame, "BOTTOMLEFT", 11, -40)
 	T.SkinTab(GarrisonMissionFrameTab1)
 	T.SkinTab(GarrisonMissionFrameTab2)
+
+	-- Mission list
+	local MissionTab = GarrisonMissionFrame.MissionTab
+	local MissionList = MissionTab.MissionList
+	local MissionPage = GarrisonMissionFrame.MissionTab.MissionPage
+	MissionList:DisableDrawLayer("BORDER")
+	T.SkinScrollBar(MissionList.listScroll.scrollBar)
+	T.SkinCloseButton(MissionPage.CloseButton)
+	MissionPage.CloseButton:SetFrameLevel(MissionPage:GetFrameLevel() + 2)
+	MissionList.CompleteDialog.BorderFrame.ViewButton:SkinButton()
+	MissionPage.StartMissionButton:SkinButton()
+	GarrisonMissionFrame.MissionComplete.NextMissionButton:SkinButton()
+
+	hooksecurefunc("GarrisonMissionButton_SetRewards", function(self, rewards, numRewards)
+		if self.numRewardsStyled == nil then
+			self.numRewardsStyled = 0
+		end
+		while self.numRewardsStyled < numRewards do
+			self.numRewardsStyled = self.numRewardsStyled + 1
+			local reward = self.Rewards[self.numRewardsStyled]
+			local icon = reward.Icon
+			reward:GetRegions():Hide()
+			if not reward.border then
+				reward.border = CreateFrame("Frame", nil, reward)
+				reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			end
+		end
+	end)
+
+	hooksecurefunc("GarrisonMissionPage_SetReward", function(frame, reward)
+		frame.BG:SetTexture()
+		if not frame.backdrop then
+			frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		end
+		frame.Icon:SetDrawLayer("BORDER", 0)
+	end)
 
 	-- Landing page
 	GarrisonLandingPage:StripTextures()
@@ -170,42 +205,6 @@ local function LoadSkin()
 	T.SkinScrollBar(GarrisonLandingPageFollowerListListScrollFrameScrollBar)
 	T.SkinScrollBar(GarrisonLandingPageShipFollowerListListScrollFrameScrollBar)
 
-	-- Mission list
-	local MissionTab = GarrisonMissionFrame.MissionTab
-	local MissionList = MissionTab.MissionList
-	local MissionPage = GarrisonMissionFrame.MissionTab.MissionPage
-	MissionList:DisableDrawLayer("BORDER")
-	T.SkinScrollBar(MissionList.listScroll.scrollBar)
-	T.SkinCloseButton(MissionPage.CloseButton)
-	MissionPage.CloseButton:SetFrameLevel(MissionPage:GetFrameLevel() + 2)
-	MissionList.CompleteDialog.BorderFrame.ViewButton:SkinButton()
-	MissionPage.StartMissionButton:SkinButton()
-	GarrisonMissionFrame.MissionComplete.NextMissionButton:SkinButton()
-
-	hooksecurefunc("GarrisonMissionButton_SetRewards", function(self, rewards, numRewards)
-		if self.numRewardsStyled == nil then
-			self.numRewardsStyled = 0
-		end
-		while self.numRewardsStyled < numRewards do
-			self.numRewardsStyled = self.numRewardsStyled + 1
-			local reward = self.Rewards[self.numRewardsStyled]
-			local icon = reward.Icon
-			reward:GetRegions():Hide()
-			if not reward.border then
-				reward.border = CreateFrame("Frame", nil, reward)
-				reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			end
-		end
-	end)
-
-	hooksecurefunc("GarrisonMissionPage_SetReward", function(frame, reward)
-		frame.BG:SetTexture()
-		if not frame.backdrop then
-			frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		end
-		frame.Icon:SetDrawLayer("BORDER", 0)
-	end)
-
 	-- Capacitive display frame
 	GarrisonCapacitiveDisplayFrame:StripTextures(true)
 	GarrisonCapacitiveDisplayFrame.Inset:StripTextures()
@@ -257,7 +256,7 @@ local function LoadSkin()
 			end
 		end)
 	end
-	
+
 	-- Handle MasterPlan AddOn
 	do
 		local function skinMasterPlan()
