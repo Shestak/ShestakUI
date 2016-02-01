@@ -911,7 +911,7 @@ if guild.enabled then
 		wipe(guildTable)
 		for i = 1, GetNumGuildMembers() do
 			local name, rank, _, level, _, zone, note, officernote, connected, status, class, _, _, mobile = GetGuildRosterInfo(i)
-			name = Ambiguate(name, "guild")
+			name = Ambiguate(name, "none")
 			guildTable[i] = {name, rank, level, zone, note, officernote, connected, status, class, mobile}
 		end
 		table.sort(guildTable, function(a, b)
@@ -1045,7 +1045,7 @@ if guild.enabled then
 						end
 						name, rank, _, level, _, zone, note, officernote, connected, status, class, _, _, isMobile = GetGuildRosterInfo(i)
 						if (connected or isMobile) and level >= guild.threshold then
-							name = Ambiguate(name, "guild")
+							name = Ambiguate(name, "none")
 							if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1, 0.3 else zone_r, zone_g, zone_b = 1, 1, 1 end
 							if isMobile then zone = "|cffa5a5a5"..REMOTE_CHAT.."|r" end
 							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)

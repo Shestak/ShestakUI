@@ -21,7 +21,7 @@ if C.automation.accept_invite == true then
 		end
 		if IsInGuild() then
 			for i = 1, GetNumGuildMembers() do
-				if Ambiguate(GetGuildRosterInfo(i), "guild") == name then
+				if Ambiguate(GetGuildRosterInfo(i), "none") == name then
 					return true
 				end
 			end
