@@ -81,6 +81,7 @@ local function LoadSkin()
 
 	QuestMapFrame.DetailsFrame.CompleteQuestFrame:StripTextures()
 	QuestMapFrame.DetailsFrame.CompleteQuestFrame.CompleteButton:SkinButton(true)
+	QuestMapFrame.DetailsFrame.CompleteQuestFrame.CompleteButton:SetPoint("TOP", 0, 4)
 
 	QuestNPCModel:StripTextures()
 	QuestNPCModel:CreateBackdrop("Transparent")
