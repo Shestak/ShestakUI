@@ -219,10 +219,10 @@ SlashCmdList.FRAME = function(arg)
 			print('Point: |cffFFD100 "'..point..'", '..relativeTo:GetName()..', "'..relativePoint..'"'.."|r")
 		end
 		if xOfs then
-			print("|rX: |cffFFD100"..format("%.2f", xOfs))
+			print("X: |cffFFD100"..format("%.2f", xOfs).."|r")
 		end
 		if yOfs then
-			print("|rY: |cffFFD100"..format("%.2f", yOfs))
+			print("Y: |cffFFD100"..format("%.2f", yOfs).."|r")
 		end
 		print("|cffCC0000--------------------------------------------------------------------|r")
 	elseif arg == nil then
