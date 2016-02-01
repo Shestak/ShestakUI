@@ -270,6 +270,14 @@ local function LoadSkin()
 			MissionPage.MinimizeButton:SetFrameLevel(MissionPage:GetFrameLevel() + 2)
 			GarrisonMissionFrame.MissionTab.MissionPage.CloseButton:SetSize(18, 18)
 			GarrisonMissionFrame.MissionTab.MissionPage.CloseButton:SetPoint("TOPRIGHT", -4, -4)
+
+			local MissionPage = GarrisonShipyardFrame.MissionTab.MissionPage
+			T.SkinCloseButton(MissionPage.MinimizeButton, nil, "-")
+			MissionPage.MinimizeButton:SetPoint("TOPRIGHT", GarrisonShipyardFrame.MissionTab.MissionPage.CloseButton, "TOPLEFT", -3, 0)
+			MissionPage.MinimizeButton:SetFrameLevel(MissionPage:GetFrameLevel() + 2)
+			GarrisonShipyardFrame.MissionTab.MissionPage.CloseButton:SetSize(18, 18)
+			GarrisonShipyardFrame.MissionTab.MissionPage.CloseButton:SetPoint("TOPRIGHT", -4, -4)
+
 			MPCompleteAll:SkinButton()
 			MPPokeTentativeParties:SkinButton()
 			GarrisonMissionFrameFollowers.SearchBox:SetSize(270, 20)
