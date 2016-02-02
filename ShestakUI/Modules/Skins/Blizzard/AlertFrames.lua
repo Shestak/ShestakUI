@@ -583,6 +583,7 @@ local function LoadSkin()
 
 			-- Background
 			frame:GetRegions():Hide()
+			frame.FollowerBG:SetAlpha(0)
 			frame.glow:Kill()
 			frame.shine:Kill()
 
