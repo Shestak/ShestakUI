@@ -53,7 +53,10 @@ local function LoadSkin()
 	GarrisonBuildingFrame:StripTextures()
 	GarrisonBuildingFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(GarrisonBuildingFrame.CloseButton)
+
+	GarrisonBuildingFrame.TownHallBox.UpgradeButton:StripTextures(true)
 	GarrisonBuildingFrame.TownHallBox.UpgradeButton:SkinButton()
+	GarrisonBuildingFrame.InfoBox.UpgradeButton:StripTextures(true)
 	GarrisonBuildingFrame.InfoBox.UpgradeButton:SkinButton()
 
 	-- Mission UI
@@ -209,6 +212,18 @@ local function LoadSkin()
 	T.SkinScrollBar(GarrisonShipyardFrame.FollowerList.listScroll.scrollBar)
 	T.SkinScrollBar(GarrisonLandingPageFollowerListListScrollFrameScrollBar)
 	T.SkinScrollBar(GarrisonLandingPageShipFollowerListListScrollFrameScrollBar)
+
+	-- Confirmation popup
+	local Confirmation = GarrisonBuildingFrame.Confirmation
+	Confirmation:StripTextures()
+	Confirmation:SetTemplate("Transparent")
+
+	Confirmation.CancelButton:SkinButton()
+	Confirmation.BuildButton:SkinButton()
+	Confirmation.UpgradeButton:SkinButton()
+	Confirmation.UpgradeGarrisonButton:SkinButton()
+	Confirmation.ReplaceButton:SkinButton()
+	Confirmation.SwitchButton:SkinButton()
 
 	-- Capacitive display frame
 	GarrisonCapacitiveDisplayFrame:StripTextures(true)
