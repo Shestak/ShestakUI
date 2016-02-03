@@ -2100,6 +2100,10 @@ C["filger_spells"] = {
 			{spellID = 15487, filter = "CD"},
 			-- Void Tendrils
 			{spellID = 108920, filter = "CD"},
+			-- Spectral Guise
+			{spellID = 112833, filter = "CD"},
+			-- Fade
+			{spellID = 586, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
@@ -3884,6 +3888,8 @@ C["filger_spells"] = {
 			{spellID = 33206, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Phantasm
 			{spellID = 114239, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Spectral Guise
+			{spellID = 119030, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Dominate Mind
 			{spellID = 605, unitID = "target", caster = "all", filter = "DEBUFF"},
