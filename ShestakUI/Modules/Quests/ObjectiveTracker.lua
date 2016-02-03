@@ -143,29 +143,11 @@ hooksecurefunc(BONUS_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(self, 
 	if not progressBar.styled then
 		local label = bar.Label
 
-		bar.BarBG:Hide()
 		bar.BarFrame:Hide()
 		bar.BarGlow:Kill()
-		bar:SetSize(203, 21)
+		bar:SetSize(203, 23)
 
 		bar:SetStatusBarTexture(C.media.texture)
-		bar:CreateBorder(true, true)
-
-		bar.b = CreateFrame("Frame", nil, bar)
-		bar.b:SetFrameLevel(2)
-		bar.b:SetTemplate("Default")
-		bar.b:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
-		bar.b:SetPoint("BOTTOMRIGHT", bar, "BOTTOMRIGHT", 0, 0)
-		bar.b:SetBackdropColor(0, 0, 0.05, 1)
-
-		local border = CreateFrame("Frame", "$parentBorder", bar)
-		border:SetPoint("TOPLEFT", 0, 0)
-		border:SetPoint("BOTTOMRIGHT", 0, 0)
-		border:SetBackdrop({
-			edgeFile = C.media.blank, edgeSize = T.mult,
-			insets = {left = T.mult, right = T.mult, top = T.mult, bottom = T.mult}
-		})
-		border:SetBackdropBorderColor(unpack(C.media.border_color))
 
 		label:ClearAllPoints()
 		label:SetPoint("CENTER")
