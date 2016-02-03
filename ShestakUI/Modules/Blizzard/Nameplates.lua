@@ -439,7 +439,7 @@ local function SkinObjects(frame, nameFrame)
 	-- Create CastBar Icon
 	cbicon:ClearAllPoints()
 	cbicon:SetPoint("TOPLEFT", hp, "TOPRIGHT", 8, 0)
-	cbicon:SetSize((C.nameplate.height * 2) + 8, (C.nameplate.height * 2) + 8)
+	cbicon:SetSize((C.nameplate.height * 2 * T.noscalemult) + 8, (C.nameplate.height * 2 * T.noscalemult) + 8)
 	cbicon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	cbicon:SetDrawLayer("OVERLAY")
 	cb.icon = cbicon
@@ -601,11 +601,11 @@ local function ShowHealth(frame, ...)
 	if GetUnitName("target") and frame:GetParent():GetAlpha() == 1 then
 		frame.hp:SetSize((C.nameplate.width + C.nameplate.ad_width) * T.noscalemult, (C.nameplate.height + C.nameplate.ad_height) * T.noscalemult)
 		frame.cb:SetPoint("BOTTOMLEFT", frame.hp, "BOTTOMLEFT", 0, -8-((C.nameplate.height + C.nameplate.ad_height) * T.noscalemult))
-		frame.cb.icon:SetSize(((C.nameplate.height + C.nameplate.ad_height) * 2) + 8, ((C.nameplate.height + C.nameplate.ad_height) * 2) + 8)
+		frame.cb.icon:SetSize(((C.nameplate.height + C.nameplate.ad_height) * 2 * T.noscalemult) + 8, ((C.nameplate.height + C.nameplate.ad_height) * 2 * T.noscalemult) + 8)
 	else
 		frame.hp:SetSize(C.nameplate.width * T.noscalemult, C.nameplate.height * T.noscalemult)
 		frame.cb:SetPoint("BOTTOMLEFT", frame.hp, "BOTTOMLEFT", 0, -8-(C.nameplate.height * T.noscalemult))
-		frame.cb.icon:SetSize((C.nameplate.height * 2) + 8, (C.nameplate.height * 2) + 8)
+		frame.cb.icon:SetSize((C.nameplate.height * 2 * T.noscalemult) + 8, (C.nameplate.height * 2 * T.noscalemult) + 8)
 	end
 end
 
