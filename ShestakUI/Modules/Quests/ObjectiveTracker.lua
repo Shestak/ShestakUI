@@ -145,11 +145,27 @@ hooksecurefunc(BONUS_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(self, 
 
 		bar.BarBG:Hide()
 		bar.BarFrame:Hide()
+		bar.BarGlow:Kill()
+		bar:SetSize(203, 21)
 
 		bar:SetStatusBarTexture(C.media.texture)
-		bar:CreateBackdrop("Default")
-		bar.backdrop:SetPoint("TOPLEFT", -3, 2)
-		bar.backdrop:SetPoint("BOTTOMRIGHT", 2, -2)
+		bar:CreateBorder(true, true)
+
+		bar.b = CreateFrame("Frame", nil, bar)
+		bar.b:SetFrameLevel(2)
+		bar.b:SetTemplate("Default")
+		bar.b:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
+		bar.b:SetPoint("BOTTOMRIGHT", bar, "BOTTOMRIGHT", 0, 0)
+		bar.b:SetBackdropColor(0, 0, 0.05, 1)
+
+		local border = CreateFrame("Frame", "$parentBorder", bar)
+		border:SetPoint("TOPLEFT", 0, 0)
+		border:SetPoint("BOTTOMRIGHT", 0, 0)
+		border:SetBackdrop({
+			edgeFile = C.media.blank, edgeSize = T.mult,
+			insets = {left = T.mult, right = T.mult, top = T.mult, bottom = T.mult}
+		})
+		border:SetBackdropBorderColor(unpack(C.media.border_color))
 
 		label:ClearAllPoints()
 		label:SetPoint("CENTER")
@@ -165,20 +181,21 @@ hooksecurefunc(BONUS_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(self, 
 		bg:SetPoint("TOPLEFT", icon, -3, 3)
 		bg:SetPoint("BOTTOMRIGHT", icon, 3, -3)
 		bg:SetTexture(C.media.blank)
-		bg:SetVertexColor(0, 0, 0)
+		bg:SetVertexColor(unpack(C.media.backdrop_color))
 
 		local bg = icon:GetParent():CreateTexture(nil, "BACKGROUND")
 		bg:SetPoint("TOPLEFT", icon, -2, 2)
 		bg:SetPoint("BOTTOMRIGHT", icon, 2, -2)
 		bg:SetTexture(C.media.blank)
-		bg:SetVertexColor(0.37, 0.3, 0.3, 1)
+		bg:SetVertexColor(unpack(C.media.border_color))
 
 		local bg = icon:GetParent():CreateTexture(nil, "BACKGROUND")
 		bg:SetPoint("TOPLEFT", icon, -1, 1)
 		bg:SetPoint("BOTTOMRIGHT", icon, 1, -1)
 		bg:SetTexture(C.media.blank)
-		bg:SetVertexColor(0, 0, 0)
+		bg:SetVertexColor(unpack(C.media.backdrop_color))
 
+		BonusObjectiveTrackerProgressBar_PlayFlareAnim = T.dummy
 		progressBar.styled = true
 	end
 
