@@ -59,7 +59,7 @@ local function LoadSkin()
 	T.SkinScrollBar(TradeSkillDetailScrollFrameScrollBar)
 
 	hooksecurefunc("TradeSkillFrame_SetSelection", function(id)
-		TradeSkillSkillIcon:StyleButton()
+		TradeSkillSkillIcon:StyleButton(true)
 		TradeSkillSkillIcon:SetTemplate("Default")
 		if TradeSkillSkillIcon:GetNormalTexture() then
 			TradeSkillSkillIcon:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
