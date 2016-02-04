@@ -84,7 +84,7 @@ local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 
 	f:SetWidth(w)
 	f:SetHeight(h)
-	f:SetFrameLevel(1)
+	f:SetFrameLevel(3)
 	f:SetFrameStrata("BACKGROUND")
 	f:SetPoint(a1, p, a2, x, y)
 	f:SetBackdrop({
