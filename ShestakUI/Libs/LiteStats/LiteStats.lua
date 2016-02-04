@@ -994,7 +994,7 @@ if guild.enabled then
 							if not guildTable[i][10] then
 								menuCountInvites = menuCountInvites + 1
 								menuList[2].menuList[menuCountInvites] = {
-									text = string.format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r %s", levelc.r * 255, levelc.g * 255, levelc.b * 255, guildTable[i][3], classc.r * 255, classc.g * 255, classc.b * 255, guildTable[i][1], ""),
+									text = string.format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r %s", levelc.r * 255, levelc.g * 255, levelc.b * 255, guildTable[i][3], classc.r * 255, classc.g * 255, classc.b * 255, Ambiguate(guildTable[i][1], "all"), ""),
 									arg1 = guildTable[i][1],
 									notCheckable = true,
 									func = function(self, arg1)
@@ -1006,7 +1006,7 @@ if guild.enabled then
 						end
 						menuCountWhispers = menuCountWhispers + 1
 						menuList[3].menuList[menuCountWhispers] = {
-							text = string.format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r %s", levelc.r * 255, levelc.g * 255, levelc.b * 255, guildTable[i][3], classc.r * 255, classc.g * 255, classc.b * 255, guildTable[i][1], grouped),
+							text = string.format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r %s", levelc.r * 255, levelc.g * 255, levelc.b * 255, guildTable[i][3], classc.r * 255, classc.g * 255, classc.b * 255, Ambiguate(guildTable[i][1], "all"), grouped),
 							arg1 = guildTable[i][1],
 							notCheckable = true,
 							func = function(self, arg1)
@@ -1045,7 +1045,7 @@ if guild.enabled then
 						end
 						name, rank, _, level, _, zone, note, officernote, connected, status, class, _, _, isMobile = GetGuildRosterInfo(i)
 						if (connected or isMobile) and level >= guild.threshold then
-							name = Ambiguate(name, "none")
+							name = Ambiguate(name, "all")
 							if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1, 0.3 else zone_r, zone_g, zone_b = 1, 1, 1 end
 							if isMobile then zone = "|cffa5a5a5"..REMOTE_CHAT.."|r" end
 							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
