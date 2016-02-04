@@ -68,6 +68,8 @@ for i, unit in pairs(units) do
 		unit.FirstAttack:SetPoint("LEFT", unit.HealthBarBackdrop, "RIGHT", 5, 0)
 		unit.FirstAttack:SetTexCoord(unit.SpeedIcon:GetTexCoord())
 		unit.FirstAttack:SetVertexColor(0.1, 0.1, 0.1, 1)
+
+		unit.Level:SetPoint("BOTTOMLEFT", unit.Icon, "BOTTOMLEFT", 2, 2)
 	else
 		unit.HealthBarBackdrop:SetPoint("TOPRIGHT", unit.ActualHealthBar, "TOPRIGHT", 2, 2)
 		unit.HealthBarBackdrop:SetPoint("BOTTOMRIGHT", unit.ActualHealthBar, "BOTTOMRIGHT", 2, -2)
@@ -82,6 +84,8 @@ for i, unit in pairs(units) do
 		unit.FirstAttack:SetPoint("RIGHT", unit.HealthBarBackdrop, "LEFT", -5, 0)
 		unit.FirstAttack:SetTexCoord(0.5, 0, 0.5, 1)
 		unit.FirstAttack:SetVertexColor(0.1, 0.1, 0.1, 1)
+
+		unit.Level:SetPoint("BOTTOMRIGHT", unit.Icon, "BOTTOMRIGHT", -2, 2)
 	end
 
 	unit.PetType:ClearAllPoints()
@@ -152,10 +156,9 @@ hooksecurefunc("PetBattleAuraHolder_Update", function(self)
 				frame.Duration:SetText(turnsRemaining)
 			end
 
-			frame.Duration:SetFont(C.media.normal_font, 12)
-			frame.Duration:SetShadowOffset(1, -1)
+			frame.Duration:SetFontObject(NumberFont_Outline_Med)
 			frame.Duration:ClearAllPoints()
-			frame.Duration:SetPoint("CENTER", frame.Icon, "CENTER", 1, 0)
+			frame.Duration:SetPoint("CENTER", frame.Icon, "CENTER", 1, -2)
 
 			nextFrame = nextFrame + 1
 		end
