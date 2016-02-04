@@ -286,6 +286,9 @@ local function LoadSkin()
 			button:StyleButton()
 			button:SetTemplate("Default")
 
+			button.BlackCover:SetPoint("TOPLEFT", 2, -2)
+			button.BlackCover:SetPoint("BOTTOMRIGHT", -2, 2)
+
 			button.FlyoutArrow:SetTexture("Interface\\Buttons\\ActionBarFlyoutButton")
 
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
