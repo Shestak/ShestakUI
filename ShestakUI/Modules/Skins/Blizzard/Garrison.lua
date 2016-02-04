@@ -265,7 +265,7 @@ local function LoadSkin()
 	local CapacitiveDisplay = GarrisonCapacitiveDisplayFrame.CapacitiveDisplay
 	CapacitiveDisplay.IconBG:SetTexture()
 	CapacitiveDisplay.ShipmentIconFrame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	CapacitiveDisplay.ShipmentIconFrame:SetTemplate("Default", true)
+	CapacitiveDisplay.ShipmentIconFrame:SetTemplate("Default")
 	CapacitiveDisplay.ShipmentIconFrame.Icon:SetPoint("TOPLEFT", -2, 2)
 	CapacitiveDisplay.ShipmentIconFrame.Icon:SetPoint("BOTTOMRIGHT", 2, -2)
 
@@ -279,18 +279,13 @@ local function LoadSkin()
 			local reagents = CapacitiveDisplay.Reagents
 			local reagent = reagents[reagentIndex]
 			while reagent do
-				reagent.NameFrame:SetTexture()
+				reagent.NameFrame:SetAlpha(0)
 				reagent.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				reagent.Icon:SetDrawLayer("BORDER")
-
-				if not reagent.border then
-					reagent.border = CreateFrame("Frame", nil, reagent)
-					reagent.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-					reagent.Count:SetParent(reagent.border)
-				end
 
 				if not reagent.backdrop then
-					reagent:CreateBackdrop("Default", true)
+					reagent:CreateBackdrop("Default")
+					reagent.backdrop:SetPoint("TOPLEFT", reagent.Icon, -2, 2)
+					reagent.backdrop:SetPoint("BOTTOMRIGHT", reagent.Icon, 2, -2)
 				end
 
 				reagentIndex = reagentIndex + 1
