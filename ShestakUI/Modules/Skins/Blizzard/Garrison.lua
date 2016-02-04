@@ -225,6 +225,28 @@ local function LoadSkin()
 	Confirmation.ReplaceButton:SkinButton()
 	Confirmation.SwitchButton:SkinButton()
 
+	-- Recruiter select frame
+	GarrisonRecruitSelectFrame:StripTextures()
+	GarrisonRecruitSelectFrame:SetTemplate("Transparent")
+	T.SkinCloseButton(GarrisonRecruitSelectFrame.CloseButton)
+
+	GarrisonRecruitSelectFrame.FollowerList:StripTextures()
+	GarrisonRecruitSelectFrame.FollowerList:SetTemplate("Transparent")
+
+	T.SkinScrollBar(GarrisonRecruitSelectFrameListScrollFrameScrollBar)
+
+	T.SkinEditBox(GarrisonRecruitSelectFrame.FollowerList.SearchBox)
+	GarrisonRecruitSelectFrame.FollowerList.SearchBox:SetPoint("TOPLEFT", 2, 25)
+	GarrisonRecruitSelectFrame.FollowerList.SearchBox:SetSize(301, 20)
+
+	GarrisonRecruitSelectFrame.FollowerSelection:StripTextures()
+	GarrisonRecruitSelectFrame.FollowerSelection:SetTemplate("Overlay")
+
+	for i = 1, 3 do
+		local recruit = GarrisonRecruitSelectFrame.FollowerSelection["Recruit"..i]
+		recruit.HireRecruits:SkinButton()
+	end
+
 	-- Capacitive display frame
 	GarrisonCapacitiveDisplayFrame:StripTextures(true)
 	GarrisonCapacitiveDisplayFrame.Inset:StripTextures()
