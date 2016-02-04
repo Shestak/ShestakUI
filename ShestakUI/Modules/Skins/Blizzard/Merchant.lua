@@ -17,11 +17,6 @@ local function LoadSkin()
 	MerchantExtraCurrencyBg:StripTextures()
 	MerchantExtraCurrencyInset:StripTextures()
 
-	MerchantBuyBackItem:StripTextures(true)
-	MerchantBuyBackItem:CreateBackdrop("Overlay")
-	MerchantBuyBackItem.backdrop:SetPoint("TOPLEFT", -6, 6)
-	MerchantBuyBackItem.backdrop:SetPoint("BOTTOMRIGHT", 2, -6)
-
 	-- Skin tabs
 	for i = 1, 2 do
 		T.SkinTab(_G["MerchantFrameTab"..i])
@@ -51,6 +46,12 @@ local function LoadSkin()
 	end
 
 	-- Buyback item frame + icon
+	MerchantBuyBackItem:StripTextures(true)
+	MerchantBuyBackItem:CreateBackdrop("Overlay")
+	MerchantBuyBackItem.backdrop:SetPoint("TOPLEFT", -2, 6)
+	MerchantBuyBackItem.backdrop:SetPoint("BOTTOMRIGHT", 2, -5)
+	MerchantBuyBackItemItemButton:SetPoint("TOPLEFT", MerchantBuyBackItem, "TOPLEFT", 4, 0)
+
 	MerchantBuyBackItemItemButton:StripTextures()
 	MerchantBuyBackItemItemButton:StyleButton()
 	MerchantBuyBackItemItemButton:SetTemplate("Default")
