@@ -188,6 +188,15 @@ local function LoadSkin()
 		end
 	end
 
+	hooksecurefunc("UpdateProfessionButton", function(self)
+		for _, button in pairs(professionbuttons) do
+			local button = _G[button]
+			button:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
+			button:GetHighlightTexture():SetPoint("TOPLEFT", button, 4, -4)
+			button:GetHighlightTexture():SetPoint("BOTTOMRIGHT", button, -4, 4)
+		end
+	end)
+
 	local professionstatusbars = {
 		"PrimaryProfession1StatusBar",
 		"PrimaryProfession2StatusBar",
