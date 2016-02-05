@@ -21,12 +21,13 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[148009] = 3			-- Spirit of Chi-Ji (Legedary Cloak)
 	T.aoespam[149276] = 3			-- Flurry of Xuen (Legedary Cloak)
 	T.aoespam[147891] = 3			-- Flurry of Xuen (Legedary Cloak)
-	T.aoespam[184075] = 3			-- Doom Nova (Prophecy of Fear)
-	T.aoespam[183950] = 3			-- Darklight Ray (Unblinking Gaze of Sethe)
-	T.aoespam[184256] = 3			-- Fel Burn (Empty Drinking Horn)
 	T.aoespam[187626] = 1			-- Maalus (Legedary Ring)
 	T.aoespam[187625] = 1			-- Nithramus (Legedary Ring)
 	T.aoespam[187624] = 1			-- Thorasus (Legedary Ring)
+	T.aoespam[184075] = 3			-- Doom Nova (Prophecy of Fear)
+	T.aoespam[183950] = 3			-- Darklight Ray (Unblinking Gaze of Sethe)
+	T.aoespam[184256] = 3			-- Fel Burn (Empty Drinking Horn)
+	T.aoespam[184248] = 3			-- Fel Cleave (Discordant Chorus)
 end
 
 -- Class config
