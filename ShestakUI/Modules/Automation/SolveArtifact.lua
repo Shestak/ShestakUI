@@ -45,6 +45,7 @@ frame:SetScript("OnEvent", function(self, event, message)
 
 		local race, _, stone = GetArchaeologyRaceInfo(race)
 		local artifact, _, rare, _, _, stones = GetSelectedArtifactInfo()
+		if not artifact then return end
 
 		for index = 1, math.min(stones, GetItemCount(stone)) do
 			if not ItemAddedToArtifact(index) then
