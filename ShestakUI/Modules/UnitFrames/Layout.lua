@@ -1582,3 +1582,26 @@ if C.unitframe.lines == true then
 		end
 	end)
 end
+
+----------------------------------------------------------------------------------------
+--	Auto reposition heal raid frame
+----------------------------------------------------------------------------------------
+local function Reposition()
+	if SavedOptions.RaidLayout == "HEAL" and not C.raidframe.raid_groups_vertical then
+		if C.raidframe.raid_groups < 6 then return end
+
+		if C.unitframe.castbar_icon == true then
+			oUF_Player_Castbar:SetPoint(C.position.unitframes.player_castbar[1], C.position.unitframes.player_castbar[2], C.position.unitframes.player_castbar[3], C.position.unitframes.player_castbar[4] + 11, C.position.unitframes.player_castbar[5] + (C.raidframe.raid_groups - 5) * 33)
+		else
+			oUF_Player_Castbar:SetPoint(C.position.unitframes.player_castbar[1], C.position.unitframes.player_castbar[2], C.position.unitframes.player_castbar[3], C.position.unitframes.player_castbar[4], C.position.unitframes.player_castbar[5] + (C.raidframe.raid_groups - 5) * 33)
+		end
+
+		player:SetPoint(C.position.unitframes.player[1], C.position.unitframes.player[2], C.position.unitframes.player[3], C.position.unitframes.player[4], C.position.unitframes.player[5] + (C.raidframe.raid_groups - 5) * 33)
+		target:SetPoint(C.position.unitframes.target[1], C.position.unitframes.target[2], C.position.unitframes.target[3], C.position.unitframes.target[4], C.position.unitframes.target[5] + (C.raidframe.raid_groups - 5) * 33)
+	end
+end
+
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:RegisterEvent("GROUP_ROSTER_UPDATE")
+frame:SetScript("OnEvent", Reposition)
