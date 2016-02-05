@@ -140,200 +140,54 @@ local function LoadSkin()
 		end
 	end)
 
-	hooksecurefunc("LFDQueueFrameRandom_UpdateFrame", function()
-		local dungeonID = LFDQueueFrame.type
-		if type(dungeonID) == "string" then return end
+	hooksecurefunc("LFGRewardsFrame_SetItemButton", function(parentFrame, _, index)
+		local parentName = parentFrame:GetName()
+		local item = _G[parentName.."Item"..index]
 
-		for i = 1, LFD_MAX_REWARDS do
-			local button = _G["LFDQueueFrameRandomScrollFrameChildFrameItem"..i]
-			local icon = _G["LFDQueueFrameRandomScrollFrameChildFrameItem"..i.."IconTexture"]
-			local count = _G["LFDQueueFrameRandomScrollFrameChildFrameItem"..i.."Count"]
-			local role1 = _G["LFDQueueFrameRandomScrollFrameChildFrameItem"..i.."RoleIcon1"]
-			local role2 = _G["LFDQueueFrameRandomScrollFrameChildFrameItem"..i.."RoleIcon2"]
-			local role3 = _G["LFDQueueFrameRandomScrollFrameChildFrameItem"..i.."RoleIcon3"]
-			local money = _G["LFDQueueFrameRandomScrollFrameChildFrameMoneyReward"]
-			local moneyicon = _G["LFDQueueFrameRandomScrollFrameChildFrameMoneyRewardIconTexture"]
+		if item and not item.isSkinned then
+			item.border = CreateFrame("Frame", nil, item)
+			item.border:CreateBackdrop("Default")
+			item.border.backdrop:SetPoint("TOPLEFT", item.Icon, "TOPLEFT", -2, 2)
+			item.border.backdrop:SetPoint("BOTTOMRIGHT", item.Icon, "BOTTOMRIGHT", 2, -2)
 
-			if money then
-				local texture = moneyicon:GetTexture() or [[Interface\Icons\inv_misc_coin_01]]
+			item.Icon:SetPoint("TOPLEFT", 2, -2)
+			item.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			item.Icon:SetDrawLayer("OVERLAY")
+			item.Icon:SetParent(item.border)
 
-				money:StripTextures()
+			item.Count:SetDrawLayer("OVERLAY")
+			item.Count:SetParent(item.border)
 
-				moneyicon:SetTexture(texture)
-				moneyicon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				moneyicon:SetPoint("TOPLEFT", 2, -2)
-				moneyicon:SetDrawLayer("OVERLAY")
+			item.NameFrame:Hide()
 
-				if not money.border then
-					money.border = CreateFrame("Frame", nil, money)
-					money.border:CreateBackdrop("Default")
-					money.border.backdrop:SetPoint("TOPLEFT", moneyicon, -2, 2)
-					money.border.backdrop:SetPoint("BOTTOMRIGHT", moneyicon, 2, -2)
+			item.shortageBorder:SetTexture(nil)
 
-					moneyicon:SetParent(money.border.backdrop)
-					moneyicon.SetPoint = T.dummy
-				end
-			end
+			item.roleIcon1:SetParent(item.border)
+			item.roleIcon2:SetParent(item.border)
 
-			if button then
-				local texture = _G[button:GetName().."IconTexture"]:GetTexture()
-				button:StripTextures()
-
-				icon:SetTexture(texture)
-				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				icon:SetPoint("TOPLEFT", 2, -2)
-				icon:SetDrawLayer("OVERLAY")
-
-				count:SetDrawLayer("OVERLAY")
-
-				if not button.border then
-					button.border = CreateFrame("Frame", nil, button)
-					button.border:CreateBackdrop("Default")
-					button.border.backdrop:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
-					button.border.backdrop:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
-
-					icon:SetParent(button.border.backdrop)
-					icon.SetPoint = T.dummy
-
-					if count then
-						count:SetParent(button.border.backdrop)
-					end
-					if role1 then
-						role1:SetParent(button.border.backdrop)
-					end
-					if role2 then
-						role2:SetParent(button.border.backdrop)
-					end
-					if role3 then
-						role3:SetParent(button.border.backdrop)
-					end
-				end
-			end
+			item.isSkinned = true
 		end
 	end)
 
-	hooksecurefunc("RaidFinderQueueFrameRewards_UpdateFrame", function()
-		for i = 1, LFD_MAX_REWARDS do
-			local button = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i]
-			local icon = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."IconTexture"]
-			local count = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."Count"]
-			local role1 = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."RoleIcon1"]
-			local role2 = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."RoleIcon2"]
-			local role3 = _G["RaidFinderQueueFrameScrollFrameChildFrameItem"..i.."RoleIcon3"]
-			local money = _G["RaidFinderQueueFrameScrollFrameChildFrameMoneyReward"]
-			local moneyicon = _G["RaidFinderQueueFrameScrollFrameChildFrameMoneyRewardIconTexture"]
+	local function SkinMoney(button)
+		_G[button].border = CreateFrame("Frame", nil, _G[button])
+		_G[button].border:CreateBackdrop("Default")
+		_G[button].border.backdrop:SetPoint("TOPLEFT", _G[button.."IconTexture"], "TOPLEFT", -2, 2)
+		_G[button].border.backdrop:SetPoint("BOTTOMRIGHT", _G[button.."IconTexture"], "BOTTOMRIGHT", 2, -2)
 
-			if money then
-				local texture = moneyicon:GetTexture() or [[Interface\Icons\inv_misc_coin_01]]
+		_G[button.."IconTexture"]:SetPoint("TOPLEFT", 2, -2)
+		_G[button.."IconTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		_G[button.."IconTexture"]:SetDrawLayer("OVERLAY")
+		_G[button.."IconTexture"]:SetParent(_G[button].border)
 
-				money:StripTextures()
+		_G[button.."NameFrame"]:Hide()
 
-				moneyicon:SetTexture(texture)
-				moneyicon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				moneyicon:SetPoint("TOPLEFT", 2, -2)
-				moneyicon:SetDrawLayer("OVERLAY")
-
-				if not money.border then
-					money.border = CreateFrame("Frame", nil, money)
-					money.border:CreateBackdrop("Default")
-					money.border.backdrop:SetPoint("TOPLEFT", moneyicon, -2, 2)
-					money.border.backdrop:SetPoint("BOTTOMRIGHT", moneyicon, 2, -2)
-
-					moneyicon:SetParent(money.border.backdrop)
-					moneyicon.SetPoint = T.dummy
-				end
-			end
-
-			if button then
-				local texture = _G[button:GetName().."IconTexture"]:GetTexture()
-
-				button:StripTextures()
-
-				icon:SetTexture(texture)
-				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				icon:SetPoint("TOPLEFT", 2, -2)
-				icon:SetDrawLayer("OVERLAY")
-
-				count:SetDrawLayer("OVERLAY")
-
-				if not button.border then
-					button.border = CreateFrame("Frame", nil, button)
-					button.border:CreateBackdrop("Default")
-					button.border.backdrop:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
-					button.border.backdrop:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
-
-					icon:SetParent(button.border.backdrop)
-					icon.SetPoint = T.dummy
-
-					if count then
-						count:SetParent(button.border.backdrop)
-					end
-					if role1 then
-						role1:SetParent(button.border.backdrop)
-					end
-					if role2 then
-						role2:SetParent(button.border.backdrop)
-					end
-					if role3 then
-						role3:SetParent(button.border.backdrop)
-					end
-				end
-			end
-		end
-	end)
-
-	hooksecurefunc("ScenarioQueueFrameRandom_UpdateFrame", function()
-		for i = 1, LFD_MAX_REWARDS do
-			local button = _G["ScenarioQueueFrameRandomScrollFrameChildFrameItem"..i]
-			local icon = _G["ScenarioQueueFrameRandomScrollFrameChildFrameItem"..i.."IconTexture"]
-			local count = _G["ScenarioQueueFrameRandomScrollFrameChildFrameItem"..i.."Count"]
-			local money = _G["ScenarioQueueFrameRandomScrollFrameChildFrameMoneyReward"]
-			local moneyicon = _G["ScenarioQueueFrameRandomScrollFrameChildFrameMoneyRewardIconTexture"]
-
-			if money then
-				local texture = moneyicon:GetTexture() or [[Interface\Icons\inv_misc_coin_01]]
-
-				money:StripTextures()
-
-				moneyicon:SetTexture(texture)
-				moneyicon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				moneyicon:SetPoint("TOPLEFT", 2, -2)
-				moneyicon:SetDrawLayer("OVERLAY")
-
-				if not money.border then
-					money.border = CreateFrame("Frame", nil, money)
-					money.border:CreateBackdrop("Default")
-					money.border.backdrop:SetPoint("TOPLEFT", moneyicon, -2, 2)
-					money.border.backdrop:SetPoint("BOTTOMRIGHT", moneyicon, 2, -2)
-
-					moneyicon:SetParent(money.border.backdrop)
-					moneyicon.SetPoint = T.dummy
-				end
-			end
-
-			if button then
-				button:StripTextures()
-
-				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				icon:SetDrawLayer("OVERLAY")
-
-				count:SetDrawLayer("OVERLAY")
-
-				if not button.border then
-					button.border = CreateFrame("Frame", nil, button)
-					button.border:CreateBackdrop("Default")
-					button.border.backdrop:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
-					button.border.backdrop:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
-
-					icon:SetParent(button.border.backdrop)
-
-					if count then
-						count:SetParent(button.border.backdrop)
-					end
-				end
-			end
-		end
-	end)
+		_G[button.."Count"]:SetDrawLayer("OVERLAY")
+		_G[button.."Count"]:SetParent(_G[button].border)
+	end
+	SkinMoney("LFDQueueFrameRandomScrollFrameChildFrameMoneyReward")
+	SkinMoney("RaidFinderQueueFrameScrollFrameChildFrameMoneyReward")
+	SkinMoney("ScenarioQueueFrameRandomScrollFrameChildFrameMoneyReward")
 
 	hooksecurefunc("LFGDungeonListButton_SetDungeon", function(button, dungeonID)
 		T.SkinCheckBox(button.enableButton)
