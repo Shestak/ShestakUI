@@ -39,10 +39,12 @@ bar:EnableMouse(true)
 bar:SetMovable(true)
 bar:SetUserPlaced(true)
 bar:SetFrameStrata("HIGH")
-bar:SetScript("OnMouseDown", function()
+bar:SetScript("OnMouseDown", function(self, button)
 	if IsAltKeyDown() or IsShiftKeyDown() then
 		bar:ClearAllPoints()
 		bar:StartMoving()
+	elseif IsControlKeyDown() and button == "RightButton" then
+		bar:SetPoint(unpack(C.position.alt_power_bar))
 	end
 end)
 bar:SetScript("OnMouseUp", function()

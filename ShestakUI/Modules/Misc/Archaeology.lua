@@ -481,7 +481,16 @@ stArchFrame:SetFrameStrata("HIGH")
 stArchFrame:EnableMouse(true)
 stArchFrame:SetMovable(true)
 stArchFrame:SetUserPlaced(true)
-stArchFrame:HookScript("OnMouseDown", function(self) if IsShiftKeyDown() then self:StartMoving() end end)
+stArchFrame:HookScript("OnMouseDown", function(self, button)
+	if IsShiftKeyDown() then
+		self:StartMoving()
+	elseif IsControlKeyDown() and button == "RightButton" then
+		self:SetPoint(unpack(C.position.archaeology))
+		self:StartMoving()
+		self:StopMovingOrSizing()
+		self:SetPoint(unpack(C.position.archaeology))
+	end
+end)
 stArchFrame:HookScript("OnMouseUp", function(self)
 	self:StopMovingOrSizing()
 	stArch:updateFramePosition(self)

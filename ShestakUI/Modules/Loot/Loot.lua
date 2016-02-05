@@ -159,9 +159,11 @@ do
 	Butsu.title = title
 end
 
-Butsu:SetScript("OnMouseDown", function(self)
+Butsu:SetScript("OnMouseDown", function(self, button)
 	if IsAltKeyDown() then
 		self:StartMoving()
+	elseif IsControlKeyDown() and button == "RightButton" then
+		self:SetPoint(unpack(C.position.loot))
 	end
 end)
 
