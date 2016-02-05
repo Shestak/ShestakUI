@@ -20,6 +20,14 @@ hooksecurefunc(ObjectiveTrackerFrame, "SetPoint", function(_, _, parent)
 end)
 ObjectiveTrackerFrame.HeaderMenu.Title:SetAlpha(0)
 
+for _, headerName in pairs({"QuestHeader", "AchievementHeader", "ScenarioHeader"}) do
+	ObjectiveTrackerFrame.BlocksFrame[headerName].Background:Hide()
+end
+
+BONUS_OBJECTIVE_TRACKER_MODULE.Header.Background:Hide()
+
+ScenarioObjectiveTracker_AnimateReward = T.dummy
+
 ----------------------------------------------------------------------------------------
 --	Skin ObjectiveTrackerFrame item buttons
 ----------------------------------------------------------------------------------------
@@ -87,12 +95,6 @@ end)
 		-- self.lines[i].text:SetTextColor(self.lines[i].col.r, self.lines[i].col.g, self.lines[i].col.b)
 	-- end
 -- end)
-
-for _, headerName in pairs({"QuestHeader", "AchievementHeader", "ScenarioHeader"}) do
-	ObjectiveTrackerFrame.BlocksFrame[headerName].Background:Hide()
-end
-
-BONUS_OBJECTIVE_TRACKER_MODULE.Header.Background:Hide()
 
 ----------------------------------------------------------------------------------------
 --	Skin ObjectiveTrackerFrame.HeaderMenu.MinimizeButton
