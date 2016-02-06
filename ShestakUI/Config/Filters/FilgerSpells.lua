@@ -299,7 +299,7 @@ C["filger_spells"] = {
 			-- Barkskin
 			{spellID = 22812, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Berserk
-			{spellID = 50334, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 50334, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Celestial Alignment
 			{spellID = 112071, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Cenarion Ward
@@ -598,7 +598,7 @@ C["filger_spells"] = {
 			-- Barkskin
 			{spellID = 22812, filter = "CD"},
 			-- Berserk
-			{spellID = 106952, filter = "CD"},
+			{spellID = 106952, filter = "CD", absID = true},
 			-- Faerie Fire
 			{spellID = 770, filter = "CD"},
 			-- Force of Nature
