@@ -1602,6 +1602,5 @@ local function Reposition()
 end
 
 local frame = CreateFrame("Frame")
-frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-frame:RegisterEvent("GROUP_ROSTER_UPDATE")
+frame:RegisterEvent("PLAYER_LOGIN")
 frame:SetScript("OnEvent", Reposition)
