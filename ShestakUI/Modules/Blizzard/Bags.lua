@@ -129,23 +129,15 @@ end
 local trashButton = {}
 local trashBag = {}
 
--- iLevel retrieval
-local S_ITEM_LEVEL = "^"..gsub(ITEM_LEVEL, "%%d", "(%%d+)")
-local scantip = CreateFrame("GameTooltip", "ItemLevelScanTooltip", nil, "GameTooltipTemplate")
-scantip:SetOwner(UIParent, "ANCHOR_NONE")
-
-local function GetItemLevel(itemLink)
-	scantip:SetHyperlink(itemLink)
-	for i = 2, scantip:NumLines() do -- Line 1 = name so skip
-		local text = _G["ItemLevelScanTooltipTextLeft"..i]:GetText()
-		if text and text ~= "" then
-			local currentLevel = strmatch(text, S_ITEM_LEVEL)
-			if currentLevel then
-				return currentLevel
-			end
-		end
-	end
-end
+local upgrades = {
+	["1"] = 8, ["373"] = 4, ["374"] = 8, ["375"] = 4, ["376"] = 4, ["377"] = 4,
+	["379"] = 4, ["380"] = 4, ["446"] = 4, ["447"] = 8, ["452"] = 8, ["454"] = 4,
+	["455"] = 8, ["457"] = 8, ["459"] = 4, ["460"] = 8, ["461"] = 12, ["462"] = 16,
+	["466"] = 4, ["467"] = 8, ["469"] = 4, ["470"] = 8, ["471"] = 12, ["472"] = 16,
+	["477"] = 4, ["478"] = 8, ["480"] = 8, ["492"] = 4, ["493"] = 8, ["495"] = 4,
+	["496"] = 8, ["497"] = 12, ["498"] = 16, ["504"] = 12, ["505"] = 16, ["506"] = 20,
+	["507"] = 24, ["530"] = 5, ["531"] = 10
+}
 
 function Stuffing:SlotUpdate(b)
 	local texture, count, locked, quality = GetContainerItemInfo(b.bag, b.slot)
@@ -158,7 +150,7 @@ function Stuffing:SlotUpdate(b)
 	end
 
 	if C.bag.ilvl == true then
-		b.frame.text:SetText()
+		b.frame.text:SetText("")
 	end
 
 	if b.cooldown and StuffingFrameBags and StuffingFrameBags:IsShown() then
@@ -170,9 +162,9 @@ function Stuffing:SlotUpdate(b)
 		b.name, _, _, b.itemlevel, b.level = GetItemInfo(clink)
 
 		if C.bag.ilvl == true and b.itemlevel and b.itemlevel > 1 and quality > 1 then
-			local currentLevel = GetItemLevel(clink)
-			b.itemlevel = currentLevel and currentLevel or b.itemlevel
-			b.frame.text:SetText(b.itemlevel)
+			local upgrade = clink:match(":(%d+)\124h%[")
+			if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
+			b.frame.text:SetText(b.itemlevel + upgrades[upgrade])
 		end
 
 		if (IsItemUnusable(clink) or b.level and b.level > T.level) and not locked then
