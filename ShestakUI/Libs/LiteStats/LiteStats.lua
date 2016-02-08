@@ -752,7 +752,7 @@ if clock.enabled then
 					local tr, tg, tb, diff
 					if not oneraid then
 						GameTooltip:AddLine(" ")
-						GameTooltip:AddLine(CALENDAR_FILTER_RAID_LOCKOUTS.." / Mythic(s)", ttsubh.r, ttsubh.g, ttsubh.b)
+						GameTooltip:AddLine(CALENDAR_FILTER_RAID_LOCKOUTS.." / "..DUNGEONS, ttsubh.r, ttsubh.g, ttsubh.b)
 						oneraid = true
 					end
 					if extended then tr, tg, tb = 0.3, 1, 0.3 else tr, tg, tb = 1, 1, 1 end
