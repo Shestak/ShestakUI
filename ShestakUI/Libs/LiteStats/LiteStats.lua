@@ -747,7 +747,7 @@ if clock.enabled then
 			local oneraid
 			local heroicDifficulty = {DUNGEON_DIFFICULTY2, DUNGEON_DIFFICULTY_5PLAYER_HEROIC, RAID_DIFFICULTY3, RAID_DIFFICULTY4, RAID_DIFFICULTY_10PLAYER_HEROIC, RAID_DIFFICULTY_25PLAYER_HEROIC}
 			for i = 1, GetNumSavedInstances() do
-				local name,_,reset,difficulty,locked,extended,_,isRaid,maxPlayers,_,numEncounters,encounterProgress = GetSavedInstanceInfo(i)
+				local name, _, reset, difficulty, locked, extended, _, isRaid, maxPlayers, _, numEncounters, encounterProgress = GetSavedInstanceInfo(i)
 				if isRaid and (locked or extended) or maxPlayers == 5 and difficulty == 23 and (locked or extended) then
 					local tr, tg, tb, diff
 					if not oneraid then
@@ -756,7 +756,7 @@ if clock.enabled then
 						oneraid = true
 					end
 					if extended then tr, tg, tb = 0.3, 1, 0.3 else tr, tg, tb = 1, 1, 1 end
-					for i, value in pairs(heroicDifficulty) do
+					for _, value in pairs(heroicDifficulty) do
 						if value == difficulty then
 							diff = "H"
 							break
@@ -787,7 +787,7 @@ if clock.enabled then
 			end
 			if T.level >= 100 then
 				local c = 0
-				for i, q in ipairs({36054, 36055, 36056, 36057, 36058, 36060, 37453, 37452, 37454, 37455, 37456, 37457, 37458, 37459}) do if IsQuestFlaggedCompleted(q) then c = c + 1 end end
+				for _, q in ipairs({36054, 36055, 36056, 36057, 36058, 36060, 37453, 37452, 37454, 37455, 37456, 37457, 37458, 37459}) do if IsQuestFlaggedCompleted(q) then c = c + 1 end end
 				GameTooltip:AddLine(" ")
 				GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
 				GameTooltip:AddDoubleLine(L_STATS_SEALS..": ", c, 1, 1, 1, 1, 1, 1)
