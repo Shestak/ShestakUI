@@ -1,9 +1,43 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	EncounterJournal skin
 ----------------------------------------------------------------------------------------
+local LoadTootlipSkin = CreateFrame("Frame")
+LoadTootlipSkin:RegisterEvent("ADDON_LOADED")
+LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
+	if IsAddOnLoaded("Skinner") or IsAddOnLoaded("Aurora") or not C.tooltip.enable then
+		self:UnregisterEvent("ADDON_LOADED")
+		return
+	end
+
+	if addon == "Blizzard_EncounterJournal" then
+		local tooltip = EncounterJournalTooltip
+		local item1 = tooltip.Item1
+		local item2 = tooltip.Item2
+		tooltip:SetTemplate("Transparent")
+
+		local b = CreateFrame("Frame", "$parentBackdrop", item1)
+		b:SetPoint("TOPLEFT", item1.icon, -2, 2)
+		b:SetPoint("BOTTOMRIGHT", item1.icon, 2, -2)
+		b:SetFrameLevel(1)
+		b:SetTemplate("Default")
+
+		local c = CreateFrame("Frame", "$parentBackdrop", item2)
+		c:SetPoint("TOPLEFT", item2.icon, -2, 2)
+		c:SetPoint("BOTTOMRIGHT", item2.icon, 2, -2)
+		c:SetFrameLevel(1)
+		c:SetTemplate("Default")
+
+		item1.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		item2.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+		item1.IconBorder:SetTexture(nil)
+		item2.IconBorder:SetTexture(nil)
+	end
+end)
+
+if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	EncounterJournal:StripTextures(true)
 	EncounterJournal:CreateBackdrop("Transparent")
