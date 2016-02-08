@@ -74,20 +74,17 @@ local function LoadSkin()
 		EncounterJournalEncounterFrameInfoModelTab
 	}
 	for _, tab in pairs(tabs) do
-		tab:SetTemplate("Transparent")
-		tab:SetSize(60, 54)
+		tab:CreateBackdrop("Default")
+		tab.backdrop:SetPoint('TOPLEFT', 3, -3)
+		tab.backdrop:SetPoint('BOTTOMRIGHT', 0, 2)
 		tab:SetNormalTexture("")
 		tab:SetPushedTexture("")
 		tab:SetDisabledTexture("")
 		tab:SetHighlightTexture("")
-		tab:ClearAllPoints()
 	end
 
-	EncounterJournalEncounterFrameInfoOverviewTab:SetPoint("TOPLEFT", EncounterJournalEncounterFrameInfo, "TOPRIGHT", 11, -40)
-	EncounterJournalEncounterFrameInfoLootTab:SetPoint("TOP", EncounterJournalEncounterFrameInfoOverviewTab, "BOTTOM", 0, -3)
-	EncounterJournalEncounterFrameInfoBossTab:SetPoint("TOP", EncounterJournalEncounterFrameInfoLootTab, "BOTTOM", 0, -3)
-	EncounterJournalEncounterFrameInfoModelTab:SetPoint("TOP", EncounterJournalEncounterFrameInfoBossTab, "BOTTOM", 0, -3)
-	EncounterJournalEncounterFrameInfoModelTab.SetPoint = T.dummy
+	EncounterJournalEncounterFrameInfoOverviewTab:SetPoint("TOPLEFT", EncounterJournalEncounterFrameInfo, "TOPRIGHT", 8, -40)
+	EncounterJournalEncounterFrameInfoOverviewTab.SetPoint = T.dummy
 
 	T.SkinScrollBar(EncounterJournalInstanceSelectScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoDetailsScrollFrameScrollBar)

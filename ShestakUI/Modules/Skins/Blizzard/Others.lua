@@ -110,6 +110,11 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			local navButton = self.navList[#self.navList]
 			if navButton and not navButton.isSkinned then
 				navButton:SkinButton(true)
+				if navButton.MenuArrowButton then
+					navButton.MenuArrowButton:SetNormalTexture(nil)
+					navButton.MenuArrowButton:SetPushedTexture(nil)
+					navButton.MenuArrowButton:SetHighlightTexture(nil)
+				end
 				navButton.isSkinned = true
 			end
 		end
