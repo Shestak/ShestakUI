@@ -457,8 +457,13 @@ function T.SkinSlider(f)
 
 	local bd = CreateFrame("Frame", nil, f)
 	bd:SetTemplate("Overlay")
-	bd:SetPoint("TOPLEFT", 14, -2)
-	bd:SetPoint("BOTTOMRIGHT", -15, 3)
+	if f:GetOrientation() == "VERTICAL" then
+		bd:SetPoint("TOPLEFT", -2, -6)
+		bd:SetPoint("BOTTOMRIGHT", 2, 6)
+	else
+		bd:SetPoint("TOPLEFT", 14, -2)
+		bd:SetPoint("BOTTOMRIGHT", -15, 3)
+	end
 	bd:SetFrameLevel(f:GetFrameLevel() - 1)
 
 	local slider = select(4, f:GetRegions())
