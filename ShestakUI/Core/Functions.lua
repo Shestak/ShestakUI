@@ -174,6 +174,32 @@ function T.SkinScrollBar(frame)
 				if frame.trackbg then
 					frame.thumbbg:SetFrameLevel(frame.trackbg:GetFrameLevel())
 				end
+
+				frame:HookScript("OnShow", function()
+					local _, maxValue = frame:GetMinMaxValues()
+					if maxValue == 0 then
+						frame:Hide()
+					else
+						frame:Show()
+					end
+				end)
+
+				frame:HookScript("OnMinMaxChanged", function()
+					local _, maxValue = frame:GetMinMaxValues()
+					if maxValue == 0 then
+						frame:Hide()
+					else
+						frame:Show()
+					end
+				end)
+
+				frame:HookScript("OnDisable", function()
+					frame:Hide()
+				end)
+
+				frame:HookScript("OnEnable", function()
+					frame:Show()
+				end)
 			end
 		end
 	end
