@@ -54,11 +54,15 @@ local function LoadSkin()
 	do
 		local Token = BrowseWowTokenResults.Token
 		local icon = Token.Icon
-		local iconBorder = Token.IconBorder
 
 		Token.ItemBorder:Hide()
-		Token:StyleButton()
-		Token:CreateBackdrop("Transparent")
+		Token.IconBorder:Hide()
+
+		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+		Token:CreateBackdrop("Default")
+		Token.backdrop:SetPoint("TOPLEFT", Token.IconBorder, -2, 2)
+		Token.backdrop:SetPoint("BOTTOMRIGHT", Token.IconBorder, 2, -2)
 	end
 
 	-- Progress Frame
@@ -106,14 +110,14 @@ local function LoadSkin()
 		"AuctionsCloseButton",
 		"BrowseResetButton",
 		"AuctionsStackSizeMaxButton",
-		"AuctionsNumStacksMaxButton",
-		"StoreButton"
+		"AuctionsNumStacksMaxButton"
 	}
 
 	for _, button in pairs(buttons) do
 		_G[button]:SkinButton(true)
 	end
 	BrowseWowTokenResults.Buyout:SkinButton(true)
+	StoreButton:SkinButton()
 
 	-- Fix Button Positions
 	AuctionsCloseButton:SetPoint("BOTTOMRIGHT", AuctionFrameAuctions, "BOTTOMRIGHT", 66, 10)
