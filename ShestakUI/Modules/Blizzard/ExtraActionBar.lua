@@ -57,3 +57,6 @@ button:StyleButton(nil, 0)
 button:SetSize(49, 49)
 
 button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+if C.actionbar.classcolor_border == true then
+	button.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+end

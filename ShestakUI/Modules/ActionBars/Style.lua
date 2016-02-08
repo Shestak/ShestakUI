@@ -62,15 +62,10 @@ local function StyleNormalButton(self)
 		if self:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() and not name:match("ExtraAction") then
 			self:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		end
-		if name:match("ExtraAction") then
-			button:SetTemplate("Default")
-			icon:SetDrawLayer("ARTWORK")
-		else
-			button:CreateBackdrop("Transparent")
-			button.backdrop:SetAllPoints()
-			if C.actionbar.classcolor_border == true then
-				button.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-			end
+		button:CreateBackdrop("Transparent")
+		button.backdrop:SetAllPoints()
+		if C.actionbar.classcolor_border == true then
+			button.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 		end
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
