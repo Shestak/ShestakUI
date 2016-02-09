@@ -387,9 +387,9 @@ C["filger_spells"] = {
 			-- Thousand-Year Pickled Egg (Haste, Proc)
 			{spellID = 127914, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
-			-- Infallible Tracking Charm
+			-- Infallible Tracking Charm [Damage, Proc]
 			{spellID = 201408, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Orb Of Voidsight
+			-- Orb Of Voidsight (Haste, Proc)
 			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
@@ -745,7 +745,7 @@ C["filger_spells"] = {
 			-- Ranged DPS [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
-			-- Infallible Tracking Charm
+			-- Infallible Tracking Charm [Damage, Proc]
 			{spellID = 201408, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Ranged DPS [Agility]
 			-- Beating Heart of the Mountain (Multistrike, Use)
@@ -1026,7 +1026,7 @@ C["filger_spells"] = {
 			-- Caster DPS (Versatility, Proc)
 			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
-			-- Orb Of Voidsight
+			-- Orb Of Voidsight (Haste, Proc)
 			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Caster DPS
 			-- Blackiron Micro Crucible (Multistrike, Proc)
@@ -1343,9 +1343,9 @@ C["filger_spells"] = {
 			-- Melee DPS [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
-			-- Infallible Tracking Charm
+			-- Infallible Tracking Charm [Damage, Proc]
 			{spellID = 201408, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Orb Of Voidsight
+			-- Orb Of Voidsight (Haste, Proc)
 			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Tanking
 			-- Battering Talisman (Haste, Proc)
@@ -1634,7 +1634,7 @@ C["filger_spells"] = {
 			-- 3.0: Heirlooms
 			-- Gronntooth War Horn (Strength, Proc)
 			{spellID = 201405, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Orb Of Voidsight
+			-- Orb Of Voidsight (Haste, Proc)
 			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Tanking
 			-- Battering Talisman (Haste, Proc)
@@ -1919,7 +1919,7 @@ C["filger_spells"] = {
 			-- Caster DPS (Versatility, Proc)
 			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
-			-- Orb Of Voidsight
+			-- Orb Of Voidsight (Haste, Proc)
 			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Caster DPS
 			-- Blackiron Micro Crucible (Multistrike, Proc)
@@ -2240,7 +2240,7 @@ C["filger_spells"] = {
 			-- Melee DPS [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
-			-- Infallible Tracking Charm
+			-- Infallible Tracking Charm [Damage, Proc]
 			{spellID = 201408, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Melee DPS [Agility]
 			-- Beating Heart of the Mountain (Multistrike, Use)
@@ -2489,9 +2489,9 @@ C["filger_spells"] = {
 			-- Melee DPS [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
-			-- Infallible Tracking Charm
+			-- Infallible Tracking Charm [Damage, Proc]
 			{spellID = 201408, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Orb Of Voidsight
+			-- Orb Of Voidsight (Haste, Proc)
 			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Melee DPS [Agility]
 			-- Beating Heart of the Mountain (Multistrike, Use)
@@ -2792,7 +2792,7 @@ C["filger_spells"] = {
 			-- Caster DPS (Versatility, Proc)
 			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
-			-- Orb Of Voidsight
+			-- Orb Of Voidsight (Haste, Proc)
 			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Caster DPS
 			-- Blackiron Micro Crucible (Multistrike, Proc)
