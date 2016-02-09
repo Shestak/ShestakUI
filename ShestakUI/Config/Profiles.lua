@@ -68,7 +68,6 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["general"].welcome_message = false
 	C["misc"].invite_keyword = "inv"
 	C["misc"].item_level = true
-	C["misc"].already_known = true
 	C["misc"].move_blizzard = true
 	C["announcements"].flask_food = true
 	C["announcements"].pull_countdown = false
@@ -83,7 +82,7 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["skins"].my_role_play = true
 	C["combattext"].icons = false
 	C["combattext"].scrollable = true
-	C["combattext"].dk_runes= false
+	C["combattext"].dk_runes = false
 	C["combattext"].killingblow = true
 	C["reminder"].raid_buffs_size = 16.8
 	C["threat"].width = 125

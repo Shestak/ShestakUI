@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.misc.already_known ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Colorizes recipes/mounts/pets that is already known(AlreadyKnown by Villiv)
+--	Colorizes recipes/mounts/pets/toys that is already known(AlreadyKnown by Villiv)
 ----------------------------------------------------------------------------------------
 local color = {r = 0.1, g = 1, b = 0.1}
 local knowns, lines = {}, {}
@@ -47,7 +47,7 @@ local function IsKnown(itemLink)
 
 	tooltip:ClearLines()
 	tooltip:SetHyperlink(itemLink)
-	if not Scan(1, tooltip:NumLines()) then return end
+	if not Scan(2, tooltip:NumLines()) then return end
 
 	if itemSubType ~= pet then knowns[itemID] = true end
 	return true
