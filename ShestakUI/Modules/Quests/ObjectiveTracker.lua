@@ -25,8 +25,8 @@ for _, headerName in pairs({"QuestHeader", "AchievementHeader", "ScenarioHeader"
 end
 
 BONUS_OBJECTIVE_TRACKER_MODULE.Header.Background:Hide()
-
 ScenarioObjectiveTracker_AnimateReward = T.dummy
+OBJECTIVE_TRACKER_DOUBLE_LINE_HEIGHT = 30
 
 ----------------------------------------------------------------------------------------
 --	Skin ObjectiveTrackerFrame item buttons
