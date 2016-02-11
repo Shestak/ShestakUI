@@ -52,11 +52,21 @@ button.Style:SetTexture(nil)
 hooksecurefunc(texture, "SetTexture", disableTexture)
 
 button:StripTextures()
-button:CreateBackdrop("Default")
-button:StyleButton(nil, 0)
-button:SetSize(49, 49)
-
-button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+button:StyleButton()
+button:SetSize(53, 53)
+button:CreateBackdrop("Transparent")
+button.backdrop:SetAllPoints()
 if C.actionbar.classcolor_border == true then
 	button.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 end
+
+button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+button.Icon:SetPoint("TOPLEFT", button, 2, -2)
+button.Icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
+
+button.Count:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
+button.Count:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
+button.Count:SetPoint("BOTTOMRIGHT", 1, -2)
+button.Count:SetJustifyH("RIGHT")
+
+button.Cooldown:SetAllPoints(button.Icon)
