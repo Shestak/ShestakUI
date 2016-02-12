@@ -35,6 +35,7 @@ L_GUI_MISC_ENCHANTMENT_SCROLL = "Enchantment scroll on TradeSkill frame"
 L_GUI_MISC_ARCHAEOLOGY = "Archaeology artifacts and cooldown"
 L_GUI_MISC_CHARS_CURRENCY = "Tracks your currency tokens across multiple characters"
 L_GUI_MISC_ARMORY_LINK = "Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)"
+L_GUI_MISC_MERCHANT_ITEMLEVEL = "Show item level for weapons and armor in merchant"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Announcements"
@@ -230,7 +231,7 @@ L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link"
 -- Bag options
 L_GUI_BAGS = "Bags"
 L_GUI_BAGS_ENABLE = "Enable bags"
-L_GUI_BAGS_ILVL = "Show item level"
+L_GUI_BAGS_ILVL = "Show item level for weapons and armor"
 L_GUI_BAGS_BUTTON_SIZE = "Buttons size"
 L_GUI_BAGS_BUTTON_SPACE = "Buttons space"
 L_GUI_BAGS_BANK = "Number of columns in bank"

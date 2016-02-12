@@ -38,6 +38,7 @@ L_GUI_MISC_ENCHANTMENT_SCROLL = "Onglet : parchemin d'enchantement sur la fenêt
 L_GUI_MISC_ARCHAEOLOGY = "Artéfacts et temps de recharge en Archéologie"
 L_GUI_MISC_CHARS_CURRENCY = "Affiche les jetons et autres monnaies de vos différents personnages"
 L_GUI_MISC_ARMORY_LINK = "Ajouter un lien d'armurerie dans une fenêtre UnitPopupMenus (Cela casse les UnitPopupMenus)"
+L_GUI_MISC_MERCHANT_ITEMLEVEL = "Show item level for weapons and armor in merchant" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"
@@ -233,7 +234,7 @@ L_GUI_CHAT_DAMAGE_METER_SPAM = "Rassemble les lignes de statistiques de dégâts
 -- Bag options
 L_GUI_BAGS = "Sacs"
 L_GUI_BAGS_ENABLE = "Activer les sacs"
-L_GUI_BAGS_ILVL = "Show item level" -- Need review
+L_GUI_BAGS_ILVL = "Show item level for weapons and armor" -- Need review
 L_GUI_BAGS_BUTTON_SIZE = "Taille des boutons"
 L_GUI_BAGS_BUTTON_SPACE = "Espacement des boutons"
 L_GUI_BAGS_BANK = "Nombre de colonne pour la banque"

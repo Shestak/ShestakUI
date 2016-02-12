@@ -38,6 +38,7 @@ L_GUI_MISC_ENCHANTMENT_SCROLL = "Pergamena Incantamento sul riquadro sul riquadr
 L_GUI_MISC_ARCHAEOLOGY = "Archeologia: reliquie e recuperi"
 L_GUI_MISC_CHARS_CURRENCY = "Traccia la valuta complessiva posseduta dai tuoi personaggi"
 L_GUI_MISC_ARMORY_LINK = "Aggiungi un collegamento all’Armeria nei menu a comparsa delle unità (ciò disattiva alcune voci nei menu)"
+L_GUI_MISC_MERCHANT_ITEMLEVEL = "Show item level for weapons and armor in merchant" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"
@@ -233,7 +234,7 @@ L_GUI_CHAT_DAMAGE_METER_SPAM = "Riunisce lo spam di un contatore dei danni in un
 -- Bag options
 L_GUI_BAGS = "Sacche"
 L_GUI_BAGS_ENABLE = "Attiva le sacche"
-L_GUI_BAGS_ILVL = "Show item level" -- Need review
+L_GUI_BAGS_ILVL = "Show item level for weapons and armor" -- Need review
 L_GUI_BAGS_BUTTON_SIZE = "Dimensioni degli scomparti"
 L_GUI_BAGS_BUTTON_SPACE = "Spazio tra gli scomparti"
 L_GUI_BAGS_BANK = "Numero di colonne in banca"

@@ -65,6 +65,7 @@ local function Local(o)
 	if o == "UIConfigmiscarchaeology" then o = L_GUI_MISC_ARCHAEOLOGY end
 	if o == "UIConfigmiscchars_currency" then o = L_GUI_MISC_CHARS_CURRENCY end
 	if o == "UIConfigmiscarmory_link" then o = L_GUI_MISC_ARMORY_LINK end
+	if o == "UIConfigmiscmerchant_itemlevel" then o = L_GUI_MISC_MERCHANT_ITEMLEVEL end
 
 	-- Announcements options
 	if o == "UIConfigannouncements" then o = L_GUI_ANNOUNCEMENTS end

@@ -59,6 +59,7 @@ C["misc"] = {
 	["archaeology"] = false,					-- Archaeology artifacts and cooldown
 	["chars_currency"] = false,					-- Tracks your currency tokens across multiple characters
 	["armory_link"] = false,					-- Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)
+	["merchant_itemlevel"] = false,				-- Show item level for weapons and armor in merchant
 }
 
 ----------------------------------------------------------------------------------------
@@ -295,7 +296,7 @@ C["chat"] = {
 ----------------------------------------------------------------------------------------
 C["bag"] = {
 	["enable"] = true,							-- Enable bags
-	["ilvl"] = false,							-- Show item level
+	["ilvl"] = false,							-- Show item level for weapons and armor
 	["button_size"] = 27,						-- Buttons size
 	["button_space"] = 3,						-- Buttons space
 	["bank_columns"] = 17,						-- Horizontal number of columns in bank

@@ -38,6 +38,7 @@ L_GUI_MISC_ENCHANTMENT_SCROLL = "附魔面板显示附魔卷轴数量"
 L_GUI_MISC_ARCHAEOLOGY = "提示考古学文物辨识及冷却"
 L_GUI_MISC_CHARS_CURRENCY = "追踪所有角色金钱信息"
 L_GUI_MISC_ARMORY_LINK = "头像菜单增加英雄版链接"
+L_GUI_MISC_MERCHANT_ITEMLEVEL = "Show item level for weapons and armor in merchant" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"
@@ -233,7 +234,7 @@ L_GUI_CHAT_DAMAGE_METER_SPAM = "在链接中合并垃圾邮件"
 -- Bag options
 L_GUI_BAGS = "背包"
 L_GUI_BAGS_ENABLE = "开启背包增强"
-L_GUI_BAGS_ILVL = "Show item level" -- Need review
+L_GUI_BAGS_ILVL = "Show item level for weapons and armor" -- Need review
 L_GUI_BAGS_BUTTON_SIZE = "格子大小"
 L_GUI_BAGS_BUTTON_SPACE = "格子间距"
 L_GUI_BAGS_BANK = "银行每行格数"

@@ -38,6 +38,7 @@ L_GUI_MISC_ENCHANTMENT_SCROLL = "Verzauberung auf Rolle im Beruffenster"
 L_GUI_MISC_ARCHAEOLOGY = "Archäologie Artifakte und Abklingzeit"
 L_GUI_MISC_CHARS_CURRENCY = "Zeige deine Währungstoken über diverse Karaktere"
 L_GUI_MISC_ARMORY_LINK = "Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)" -- Needs review
+L_GUI_MISC_MERCHANT_ITEMLEVEL = "Show item level for weapons and armor in merchant" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigeungen"
@@ -233,7 +234,7 @@ L_GUI_CHAT_DAMAGE_METER_SPAM = "Fasse DMG-Meterspam in einer Zeile zusammen"
 -- Bag options
 L_GUI_BAGS = "Taschen"
 L_GUI_BAGS_ENABLE = "Taschen aktivieren"
-L_GUI_BAGS_ILVL = "Show item level" -- Need review
+L_GUI_BAGS_ILVL = "Show item level for weapons and armor" -- Need review
 L_GUI_BAGS_BUTTON_SIZE = "Buttongröße"
 L_GUI_BAGS_BUTTON_SPACE = "Buttonabstand"
 L_GUI_BAGS_BANK = "Anzahl der Spalten in der Bank"
