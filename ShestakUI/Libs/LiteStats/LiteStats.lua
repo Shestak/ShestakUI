@@ -553,7 +553,7 @@ if gold.enabled then
 			for i = 1, GetCurrencyListSize() do
 				local name, _, _, _, watched, count, icon = GetCurrencyListInfo(i)
 				if watched then
-					if currencies == 0 then GameTooltip:AddLine(format("%s %s", STATUS_TEXT_PLAYER, CURRENCY), ttsubh.r, ttsubh.g, ttsubh.b) end
+					if currencies == 0 then GameTooltip:AddLine(TRACKING, ttsubh.r, ttsubh.g, ttsubh.b) end
 					local r, g, b
 					if count > 0 then r, g, b = 1, 1, 1 else r, g, b = 0.5, 0.5, 0.5 end
 					GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", count, icon, t_icon), r, g, b, r, g, b)
