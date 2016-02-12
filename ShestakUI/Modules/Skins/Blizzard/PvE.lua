@@ -190,7 +190,10 @@ local function LoadSkin()
 	SkinMoney("ScenarioQueueFrameRandomScrollFrameChildFrameMoneyReward")
 
 	hooksecurefunc("LFGDungeonListButton_SetDungeon", function(button, dungeonID)
-		T.SkinCheckBox(button.enableButton)
+		if button and not button.skinned then
+			T.SkinCheckBox(button.enableButton)
+			button.skinned = true
+		end
 	end)
 
 	for i = 1, 3 do
