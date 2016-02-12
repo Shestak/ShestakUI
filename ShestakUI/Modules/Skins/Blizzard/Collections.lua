@@ -447,12 +447,15 @@ local function LoadSkin()
 		for i = 1, #HeirloomsJournal.heirloomEntryFrames do
 			local button = HeirloomsJournal.heirloomEntryFrames[i]
 			if not button.skinned then
-				button.skinned = true
 				button:StyleButton(nil, 0)
 				button:CreateBackdrop("Default")
+				button.levelBackground:SetAlpha(0)
+				button.level:SetFontObject("SystemFont_Outline_Small")
+				button.level.SetFontObject = T.dummy
 				button.iconTextureUncollected:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				button.iconTextureUncollected:SetTexture(button.iconTexture:GetTexture())
 				HeirloomsJournal:UpdateButton(button)
+				button.skinned = true
 			end
 
 			if C_Heirloom.PlayerHasHeirloom(button.itemID) then
