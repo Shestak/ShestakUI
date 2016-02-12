@@ -105,7 +105,8 @@ local function LoadSkin()
 		"PaperDollEquipmentManagerPaneScrollBar",
 		"CharacterStatsPaneScrollBar",
 		"TokenFrameContainerScrollBar",
-		"ReputationListScrollFrameScrollBar"
+		"ReputationListScrollFrameScrollBar",
+		"GearManagerDialogPopupScrollFrameScrollBar"
 	}
 
 	for _, scrollbar in pairs(scrollbars) do
@@ -166,6 +167,7 @@ local function LoadSkin()
 		GearManagerDialogPopupEditBox:SetTextInsets(3, 0, 0, 0)
 		GearManagerDialogPopupOkay:SkinButton()
 		GearManagerDialogPopupCancel:SkinButton()
+		GearManagerDialogPopupScrollFrame:SetPoint("TOPRIGHT", -34, -64)
 
 		for i = 1, NUM_GEARSET_ICONS_SHOWN do
 			local button = _G["GearManagerDialogPopupButton"..i]
