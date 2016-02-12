@@ -73,6 +73,30 @@ local upgrades = {
 	["507"] = 24, ["530"] = 5, ["531"] = 10
 }
 
+local function BOALevel(level, id)
+	if level > 97 then
+		if id == 133585 or id == 133595 or id == 133596 or id == 133597 or id == 133598 then
+			level = 715
+		else
+			level = 605 - (100 - level) * 5
+		end
+	elseif level > 90 then
+		level = 590 - (97 - level) * 10
+	elseif level > 85 then
+		level = 463 - (90 - level) * 19.75
+	elseif level > 80 then
+		level = 333 - (85 - level) * 13.5
+	elseif level >= 68 then
+		level = 187 - (80 - level) * 4
+	elseif level >= 58 then
+		level = 109 - (68 - level) * 3
+	else
+		level = level + 5
+	end
+
+	return level
+end
+
 --- Unit Gear Info
 local function UnitGear(unit)
 	if (not unit) or (UnitGUID(unit) ~= currentGUID) then return end
@@ -99,17 +123,19 @@ local function UnitGear(unit)
 					if (not quality) or (not level) then
 						delay = true
 					else
-						local upgrade = itemLink:match(":(%d+)\124h%[")
-						if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
-
-						total = total + (level + upgrades[upgrade])
-
 						if quality == 7 then
 							boa = boa + 1
+							local id = tonumber(strmatch(itemLink, "item:(%d+)"))
+							total = total + BOALevel(ulvl, id)
 						else
 							if IsPVPItem(itemLink) then
 								pvp = pvp + 1
 							end
+
+							local upgrade = itemLink:match(":(%d+)\124h%[")
+							if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
+
+							total = total + (level + upgrades[upgrade])
 						end
 
 						if i >= 16 then
