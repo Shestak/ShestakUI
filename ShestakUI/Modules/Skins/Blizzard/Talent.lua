@@ -7,19 +7,15 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	local buttons = {
 		"PlayerTalentFrameTalentsLearnButton",
-		"PlayerTalentFrameActivateButton",
 		"PlayerTalentFramePetSpecializationLearnButton",
 		"PlayerTalentFrameSpecializationLearnButton"
 	}
 
-	for i = 1, #buttons do
-		_G[buttons[i]]:SkinButton()
-		_G[buttons[i]].overlay:SetVertexColor(0.3, 0.3, 0.3, 0.3)
-		_G[buttons[i]]:SetScript("OnLeave", function(self)
-			_G[buttons[i]]:SetBackdropBorderColor(unpack(C.media.border_color))
-			_G[buttons[i]].overlay:SetVertexColor(0.3, 0.3, 0.3, 0.3)
-		end)
+	for _, button in pairs(buttons) do
+		_G[button]:SkinButton()
+		_G[button].FlashAnim.Play = T.dummy
 	end
+	PlayerTalentFrameActivateButton:SkinButton()
 
 	PlayerTalentFrameTalentsTutorialButton.Ring:Hide()
 	PlayerTalentFrameTalentsTutorialButton:SetPoint("TOPLEFT", PlayerTalentFrame, "TOPLEFT", -12, 12)

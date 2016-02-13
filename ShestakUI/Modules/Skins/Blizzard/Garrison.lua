@@ -64,8 +64,10 @@ local function LoadSkin()
 
 	GarrisonBuildingFrame.TownHallBox.UpgradeButton:StripTextures(true)
 	GarrisonBuildingFrame.TownHallBox.UpgradeButton:SkinButton()
+	GarrisonBuildingFrame.TownHallBox.UpgradeAnim.Play = T.dummy
 	GarrisonBuildingFrame.InfoBox.UpgradeButton:StripTextures(true)
 	GarrisonBuildingFrame.InfoBox.UpgradeButton:SkinButton()
+	GarrisonBuildingFrame.InfoBox.UpgradeAnim.Play = T.dummy
 
 	-- Confirmation popup
 	local Confirmation = GarrisonBuildingFrame.Confirmation
@@ -112,13 +114,9 @@ local function LoadSkin()
 	GarrisonMissionFrame.FollowerTab:StripTextures()
 	GarrisonMissionFrame.FollowerTab:SetTemplate("Overlay")
 
-	local StartButton = GarrisonMissionFrame.MissionTab.MissionPage.StartMissionButton
+	local StartButton = MissionPage.StartMissionButton
 	StartButton:SkinButton()
-	StartButton.overlay:SetVertexColor(0.3, 0.3, 0.3, 0.3)
-	StartButton:SetScript("OnLeave", function(self)
-		StartButton:SetBackdropBorderColor(unpack(C.media.border_color))
-		StartButton.overlay:SetVertexColor(0.3, 0.3, 0.3, 0.3)
-	end)
+	StartButton.FlashAnim.Play = T.dummy
 
 	hooksecurefunc("GarrisonMissionButton_SetRewards", function(self, rewards, numRewards)
 		if self.numRewardsStyled == nil then
@@ -222,9 +220,6 @@ local function LoadSkin()
 	GarrisonShipyardFrame.MissionComplete.NextMissionButton:SkinButton()
 	GarrisonShipyardFrame.MissionCompleteBackground:SetAllPoints(MissionList.MapTexture)
 	MissionPage.StartMissionButton:SkinButton()
-	MissionPage.StartMissionButton.Flash:Hide()
-	MissionPage.StartMissionButton.Flash.Show = T.dummy
-	MissionPage.StartMissionButton.FlashAnim:Stop()
 	MissionPage.StartMissionButton.FlashAnim.Play = T.dummy
 
 	T.SkinEditBox(GarrisonShipyardFrameFollowers.SearchBox)
