@@ -86,10 +86,10 @@ local function BOALevel(level, id)
 		level = 463 - (90 - level) * 19.75
 	elseif level > 80 then
 		level = 333 - (85 - level) * 13.5
-	elseif level >= 68 then
+	elseif level > 67 then
 		level = 187 - (80 - level) * 4
-	elseif level >= 58 then
-		level = 109 - (68 - level) * 3
+	elseif level > 57 then
+		level = 105 - (67 - level) * 2.9
 	else
 		level = level + 5
 	end
