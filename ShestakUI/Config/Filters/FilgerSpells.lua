@@ -2426,7 +2426,7 @@ C["filger_spells"] = {
 			-- Elemental Mastery
 			{spellID = 16166, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lightning Shield
-			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF", spec = 1, count = 6},
+			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF", spec = 1, count = 10},
 			-- Maelstorm Weapon
 			{spellID = 53817, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature Guardian
