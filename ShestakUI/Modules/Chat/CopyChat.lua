@@ -65,20 +65,12 @@ local scrollDown = function()
 end
 
 local function Copy(cf)
-	local id = cf:GetID()
-	local _, size = FCF_GetChatWindowInfo(id)
-	FCF_SetChatWindowFontSize(cf, cf, 0.01)
 	local text = ""
 	for i = 1, cf:GetNumMessages() do
 		text = text..cf:GetMessageInfo(i).."\n"
 	end
 	text = text:gsub("|[Tt]Interface\\TargetingFrame\\UI%-RaidTargetingIcon_(%d):0|[Tt]", "{rt%1}")
 	text = text:gsub("|[Tt][^|]+|[Tt]", "")
-	if size < 11 then
-		FCF_SetChatWindowFontSize(cf, cf, 11)
-	else
-		FCF_SetChatWindowFontSize(cf, cf, size)
-	end
 	if not isf then CreatCopyFrame() end
 	if frame:IsShown() then frame:Hide() return end
 	frame:Show()
