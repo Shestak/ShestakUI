@@ -11,6 +11,6 @@ frame:SetScript("OnEvent", function()
 	if not UnitAura("player", name) and GetItemCount(92738) > 0 then
 		PlaySound("RaidWarning", "master")
 		RaidNotice_AddMessage(RaidWarningFrame, RESISTANCE_NONE.." "..GetSpellLink(158486).."!", ChatTypeInfo["RAID_WARNING"])
-		print("|cffff3300"..RESISTANCE_NONE.." "..GetSpellLink(158486).."|cffff3300!")
+		print("|cffff3300"..RESISTANCE_NONE.." "..GetSpellLink(158486).."|cffff3300!|r")
 	end
 end)

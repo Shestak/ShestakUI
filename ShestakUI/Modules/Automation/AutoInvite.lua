@@ -34,7 +34,7 @@ if C.automation.accept_invite == true then
 		if QueueStatusMinimapButton:IsShown() or GetNumGroupMembers() > 0 then return end
 		if CheckFriend(name) then
 			RaidNotice_AddMessage(RaidWarningFrame, L_INFO_INVITE..name, {r = 0.41, g = 0.8, b = 0.94}, 3)
-			print(format("|cffffff00"..L_INFO_INVITE..name.."."))
+			print(format("|cffffff00"..L_INFO_INVITE..name..".|r"))
 			AcceptGroup()
 			for i = 1, STATICPOPUP_NUMDIALOGS do
 				local frame = _G["StaticPopup"..i]
@@ -74,14 +74,14 @@ end)
 SlashCmdList.AUTOINVITE = function(msg)
 	if msg == "off" then
 		SavedOptionsPerChar.AutoInvite = false
-		print("|cffffff00"..L_INVITE_DISABLE..".")
+		print("|cffffff00"..L_INVITE_DISABLE..".|r")
 	elseif msg == "" then
 		SavedOptionsPerChar.AutoInvite = true
-		print("|cffffff00"..L_INVITE_ENABLE..C.misc.invite_keyword..".")
+		print("|cffffff00"..L_INVITE_ENABLE..C.misc.invite_keyword..".|r")
 		C.misc.invite_keyword = C.misc.invite_keyword
 	else
 		SavedOptionsPerChar.AutoInvite = true
-		print("|cffffff00"..L_INVITE_ENABLE..msg..".")
+		print("|cffffff00"..L_INVITE_ENABLE..msg..".|r")
 		C.misc.invite_keyword = msg
 	end
 end

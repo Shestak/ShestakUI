@@ -206,7 +206,7 @@ local function slprint(...)
 	for i = 2, #t do print(l, t[i]) end
 end
 function SlashCmdList.LSTATS()
-	print("|cffffffffLite|cff66C6FFStats|cffffffff "..L_STATS_TIPS)
+	print("Lite|cff66C6FFStats|r "..L_STATS_TIPS)
 	if memory.enabled then
 		slprint(L_STATS_MEMORY, L_STATS_RC_COLLECTS_GARBAGE)
 	end
@@ -231,7 +231,7 @@ function SlashCmdList.LSTATS()
 	if experience.enabled then
 		slprint(format("%s/%s/%s", COMBAT_XP_GAIN, TIME_PLAYED_MSG, FACTION), L_STATS_RC_EXPERIENCE, L_STATS_WATCH_FACTIONS)
 	end
-	print("|cffBCEE68", format(L_STATS_OTHER_OPTIONS, "|cff66C6FFShestakUI\\Config\\DataText.lua"))
+	print("|cffBCEE68", format(L_STATS_OTHER_OPTIONS, "|cff66C6FFShestakUI\\Config\\DataText.lua").."|r")
 end
 
 CreateFrame("Frame", "LSMenus", UIParent, "UIDropDownMenuTemplate")
@@ -649,7 +649,7 @@ if gold.enabled then
 			end
 		elseif action == "clear" then
 			SavedStats.JunkIgnore = {}
-			print("|cff66C6FF"..L_STATS_CLEARED_JUNK)
+			print("|cff66C6FF"..L_STATS_CLEARED_JUNK.."|r")
 		elseif action == "add" or strfind(action, "^del") or strfind(action, "^rem") then
 			local _, mouselink = GameTooltip:GetItem()
 			for id in s:gmatch("|Hitem:(%d-):") do
@@ -660,7 +660,7 @@ if gold.enabled then
 						tinsert(SavedStats.JunkIgnore, id)
 						print(format("|cff66C6FF%s:|r %s", L_STATS_ADDED_JUNK, link))
 					else
-						print(format("%s |cff66C6FF%s", link, L_STATS_ALREADY_EXCEPTIONS))
+						print(format("%s |cff66C6FF%s|r", link, L_STATS_ALREADY_EXCEPTIONS))
 					end
 				elseif strfind(action, "^del") or strfind(action, "^rem") then
 					tDeleteItem(SavedStats.JunkIgnore, id)
@@ -674,7 +674,7 @@ if gold.enabled then
 							tinsert(SavedStats.JunkIgnore, id)
 							print(format("|cff66C6FF%s:|r %s", L_STATS_ADDED_JUNK, mouselink))
 						else
-							print(format("%s |cff66C6FF%s", mouselink, L_STATS_ALREADY_EXCEPTIONS))
+							print(format("%s |cff66C6FF%s|r", mouselink, L_STATS_ALREADY_EXCEPTIONS))
 						end
 					elseif strfind(action, "^del") or strfind(action, "^rem") then
 						tDeleteItem(SavedStats.JunkIgnore, id)
@@ -683,7 +683,7 @@ if gold.enabled then
 				end
 			end
 		else
-			print("|cffffffffLite|cff66C6FFStats|r: "..L_STATS_JUNK_LIST)
+			print("|Lite|cff66C6FFStats|r: "..L_STATS_JUNK_LIST)
 			print(format("/junk <add||rem(ove)> [%s] - %s", L_STATS_ITEMLINK, L_STATS_REMOVE_EXCEPTION))
 			print("/junk list - "..L_STATS_IGNORED_ITEMS)
 			print("/junk clear - "..L_STATS_CLEAR_EXCEPTIONS)
