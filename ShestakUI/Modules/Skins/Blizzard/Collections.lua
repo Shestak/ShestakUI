@@ -452,6 +452,7 @@ local function LoadSkin()
 				button.levelBackground:SetAlpha(0)
 				button.level:SetFontObject("SystemFont_Outline_Small")
 				button.level.SetFontObject = T.dummy
+				button.level:SetTextColor(1, 1, 1)
 				button.iconTextureUncollected:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				button.iconTextureUncollected:SetTexture(button.iconTexture:GetTexture())
 				HeirloomsJournal:UpdateButton(button)
