@@ -542,23 +542,10 @@ local function LoadSkin()
 			end
 
 			-- Background
-			frame:GetRegions():Hide()
 			frame.glow:Kill()
 			frame.shine:Kill()
 			frame.IconBG:Hide()
 			frame.Background:Kill()
-
-			-- Icon
-			--frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
-			-- Icon border
-			-- if not frame.Icon.b then
-				-- frame.Icon.b = CreateFrame("Frame", nil, frame)
-				-- frame.Icon.b:SetFrameLevel(2)
-				-- frame.Icon.b:SetTemplate("Default")
-				-- frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
-				-- frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
-			-- end
 		end
 	end
 	hooksecurefunc("AlertFrame_SetGarrisonMissionAlertFrameAnchors", SkinGarrisonMissionPopUp)
