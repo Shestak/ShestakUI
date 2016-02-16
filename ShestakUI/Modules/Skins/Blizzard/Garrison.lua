@@ -114,6 +114,10 @@ local function LoadSkin()
 	GarrisonMissionFrame.FollowerTab:StripTextures()
 	GarrisonMissionFrame.FollowerTab:SetTemplate("Overlay")
 
+	for _, item in pairs({GarrisonMissionFrame.FollowerTab.ItemWeapon, GarrisonMissionFrame.FollowerTab.ItemArmor}) do
+		item.Border:Hide()
+	end
+
 	local StartButton = MissionPage.StartMissionButton
 	StartButton:SkinButton()
 	StartButton.FlashAnim.Play = T.dummy
