@@ -4,6 +4,33 @@ if C.unitframe.enable ~= true or C.filger.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Lightweight buff/debuff tracking (Filger by Nils Ruesch, editors Affli/SinaC/Ildyria)
 ----------------------------------------------------------------------------------------
+P_BUFF_ICON_Anchor:SetPoint(unpack(C.position.filger.player_buff_icon))
+P_BUFF_ICON_Anchor:SetSize(37, 37)
+
+P_PROC_ICON_Anchor:SetPoint(unpack(C.position.filger.player_proc_icon))
+P_PROC_ICON_Anchor:SetSize(37, 37)
+
+SPECIAL_P_BUFF_ICON_Anchor:SetPoint(unpack(C.position.filger.special_proc_icon))
+SPECIAL_P_BUFF_ICON_Anchor:SetSize(37, 37)
+
+T_DEBUFF_ICON_Anchor:SetPoint(unpack(C.position.filger.target_debuff_icon))
+T_DEBUFF_ICON_Anchor:SetSize(37, 37)
+
+T_BUFF_Anchor:SetPoint(unpack(C.position.filger.target_buff_icon))
+T_BUFF_Anchor:SetSize(60, 60)
+
+PVE_PVP_DEBUFF_Anchor:SetPoint(unpack(C.position.filger.pve_debuff))
+PVE_PVP_DEBUFF_Anchor:SetSize(60, 60)
+
+PVE_PVP_CC_Anchor:SetPoint(unpack(C.position.filger.pve_cc))
+PVE_PVP_CC_Anchor:SetSize(221, 25)
+
+COOLDOWN_Anchor:SetPoint(unpack(C.position.filger.cooldown))
+COOLDOWN_Anchor:SetSize(30, 30)
+
+T_DE_BUFF_BAR_Anchor:SetPoint(unpack(C.position.filger.target_bar))
+T_DE_BUFF_BAR_Anchor:SetSize(218, 25)
+
 SpellActivationOverlayFrame:SetFrameStrata("BACKGROUND")
 local Filger = {}
 local MyUnits = {player = true, vehicle = true, pet = true}
