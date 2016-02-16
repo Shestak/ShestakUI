@@ -5,28 +5,28 @@ if C.unitframe.enable ~= true or C.filger.enable ~= true then return end
 --	Lightweight buff/debuff tracking (Filger by Nils Ruesch, editors Affli/SinaC/Ildyria)
 ----------------------------------------------------------------------------------------
 P_BUFF_ICON_Anchor:SetPoint(unpack(C.position.filger.player_buff_icon))
-P_BUFF_ICON_Anchor:SetSize(37, 37)
+P_BUFF_ICON_Anchor:SetSize(C.filger.buffs_size, C.filger.buffs_size)
 
 P_PROC_ICON_Anchor:SetPoint(unpack(C.position.filger.player_proc_icon))
-P_PROC_ICON_Anchor:SetSize(37, 37)
+P_PROC_ICON_Anchor:SetSize(C.filger.buffs_size, C.filger.buffs_size)
 
 SPECIAL_P_BUFF_ICON_Anchor:SetPoint(unpack(C.position.filger.special_proc_icon))
-SPECIAL_P_BUFF_ICON_Anchor:SetSize(37, 37)
+SPECIAL_P_BUFF_ICON_Anchor:SetSize(C.filger.buffs_size, C.filger.buffs_size)
 
 T_DEBUFF_ICON_Anchor:SetPoint(unpack(C.position.filger.target_debuff_icon))
-T_DEBUFF_ICON_Anchor:SetSize(37, 37)
+T_DEBUFF_ICON_Anchor:SetSize(C.filger.buffs_size, C.filger.buffs_size)
 
 T_BUFF_Anchor:SetPoint(unpack(C.position.filger.target_buff_icon))
-T_BUFF_Anchor:SetSize(60, 60)
+T_BUFF_Anchor:SetSize(C.filger.pvp_size, C.filger.pvp_size)
 
 PVE_PVP_DEBUFF_Anchor:SetPoint(unpack(C.position.filger.pve_debuff))
-PVE_PVP_DEBUFF_Anchor:SetSize(60, 60)
+PVE_PVP_DEBUFF_Anchor:SetSize(C.filger.pvp_size, C.filger.pvp_size)
 
 PVE_PVP_CC_Anchor:SetPoint(unpack(C.position.filger.pve_cc))
 PVE_PVP_CC_Anchor:SetSize(221, 25)
 
 COOLDOWN_Anchor:SetPoint(unpack(C.position.filger.cooldown))
-COOLDOWN_Anchor:SetSize(30, 30)
+COOLDOWN_Anchor:SetSize(C.filger.cooldown_size, C.filger.cooldown_size)
 
 T_DE_BUFF_BAR_Anchor:SetPoint(unpack(C.position.filger.target_bar))
 T_DE_BUFF_BAR_Anchor:SetSize(218, 25)
@@ -298,8 +298,8 @@ function Filger:DisplayActives()
 			bar:SetScript("OnEnter", Filger.TooltipOnEnter)
 			bar:SetScript("OnLeave", Filger.TooltipOnLeave)
 		end
-		bar:SetWidth(self.IconSize or 37)
-		bar:SetHeight(self.IconSize or 37)
+		bar:SetWidth(self.IconSize or C.filger.buffs_size)
+		bar:SetHeight(self.IconSize or C.filger.buffs_size)
 		bar:SetAlpha(value.data.opacity or 1)
 		bar:Show()
 		index = index + 1
@@ -499,7 +499,7 @@ if C["filger_spells"] and C["filger_spells"][T.class] then
 		frame.Mode = data.Mode or "ICON"
 		frame.Interval = data.Interval or 3
 		frame:SetAlpha(data.Alpha or 1)
-		frame.IconSize = data.IconSize or 37
+		frame.IconSize = data.IconSize or C.filger.buffs_size
 		frame.BarWidth = data.BarWidth or 186
 		frame.Position = data.Position or "CENTER"
 		frame:SetPoint(unpack(data.Position))

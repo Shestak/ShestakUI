@@ -363,6 +363,9 @@ local function Local(o)
 	if o == "UIConfigfilgermax_test_icon" then o = L_GUI_FILGER_MAX_TEST_ICON end
 	if o == "UIConfigfilgershow_tooltip" then o = L_GUI_FILGER_SHOW_TOOLTIP end
 	if o == "UIConfigfilgerdisable_cd" then o = L_GUI_FILGER_DISABLE_CD end
+	if o == "UIConfigfilgerbuffs_size" then o = L_GUI_FILGER_BUFFS_SIZE end
+	if o == "UIConfigfilgercooldown_size" then o = L_GUI_FILGER_COOLDOWN_SIZE end
+	if o == "UIConfigfilgerpvp_size" then o = L_GUI_FILGER_PVP_SIZE end
 
 	-- Unit Frames options
 	if o == "UIConfigunitframe" then o = UNITFRAME_LABEL end

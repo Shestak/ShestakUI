@@ -328,6 +328,9 @@ L_GUI_FILGER_TEST_MODE = "Test icon mode" -- Need review
 L_GUI_FILGER_MAX_TEST_ICON = "The number of icons to the test" -- Need review
 L_GUI_FILGER_SHOW_TOOLTIP = "Show tooltip" -- Need review
 L_GUI_FILGER_DISABLE_CD = "Disable cooldowns" -- Need review
+L_GUI_FILGER_BUFFS_SIZE = "Buffs size" -- Need review
+L_GUI_FILGER_COOLDOWN_SIZE = "Cooldowns size" -- Need review
+L_GUI_FILGER_PVP_SIZE = "PvP debuffs size" -- Need review
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Activer les barres d'unité"

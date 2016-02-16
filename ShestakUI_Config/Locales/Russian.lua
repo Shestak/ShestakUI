@@ -328,6 +328,9 @@ L_GUI_FILGER_TEST_MODE = "Тестирование иконок"
 L_GUI_FILGER_MAX_TEST_ICON = "Количество иконок для теста"
 L_GUI_FILGER_SHOW_TOOLTIP = "Показывать подсказку для иконок"
 L_GUI_FILGER_DISABLE_CD = "Выключить блок перезарядок"
+L_GUI_FILGER_BUFFS_SIZE = "Размер баффов и проков"
+L_GUI_FILGER_COOLDOWN_SIZE = "Размер перезарядок"
+L_GUI_FILGER_PVP_SIZE = "Размер PvP дебаффов"
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "Включить рамки портретов"

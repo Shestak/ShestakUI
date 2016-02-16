@@ -422,6 +422,9 @@ C["filger"] = {
 	["max_test_icon"] = 5,						-- The number of icons to the test
 	["show_tooltip"] = false,					-- Show tooltip
 	["disable_cd"] = false,						-- Disable cooldowns
+	["buffs_size"] = 37,						-- Buffs size
+	["cooldown_size"] = 30,						-- Cooldowns size
+	["pvp_size"] = 60,							-- PvP debuffs size
 }
 
 ----------------------------------------------------------------------------------------

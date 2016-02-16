@@ -24,7 +24,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Anti-Magic Shell
@@ -56,7 +56,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
@@ -196,7 +196,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 30,
+			IconSize = C.filger.cooldown_size,
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
@@ -303,7 +303,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Barkskin
@@ -351,7 +351,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
@@ -533,7 +533,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Immobilized
@@ -601,7 +601,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 30,
+			IconSize = C.filger.cooldown_size,
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
@@ -694,7 +694,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Beast Cleave
@@ -722,7 +722,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
@@ -800,7 +800,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Ankle Crack (Crocolisk)
@@ -854,7 +854,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 30,
+			IconSize = C.filger.cooldown_size,
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
@@ -965,7 +965,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Alter Time
@@ -1005,7 +1005,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
@@ -1079,7 +1079,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Arcane Charge
@@ -1133,7 +1133,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 30,
+			IconSize = C.filger.cooldown_size,
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
@@ -1252,7 +1252,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Dampen Harm
@@ -1282,7 +1282,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Breath of Fire
@@ -1300,7 +1300,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
@@ -1456,7 +1456,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 30,
+			IconSize = C.filger.cooldown_size,
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
@@ -1559,7 +1559,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Ardent Defender
@@ -1589,7 +1589,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
@@ -1739,7 +1739,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Censure
@@ -1763,7 +1763,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 30,
+			IconSize = C.filger.cooldown_size,
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
@@ -1852,7 +1852,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Archangel
@@ -1882,7 +1882,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
@@ -1996,7 +1996,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Mind Blast (Glyph)
@@ -2058,7 +2058,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 30,
+			IconSize = C.filger.cooldown_size,
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
@@ -2167,7 +2167,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Adrenaline Rush
@@ -2213,7 +2213,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
@@ -2297,7 +2297,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Crippling Poison
@@ -2343,7 +2343,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 30,
+			IconSize = C.filger.cooldown_size,
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
@@ -2424,7 +2424,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Ancestral Guidance
@@ -2458,7 +2458,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
@@ -2596,7 +2596,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Earthgrab
@@ -2648,7 +2648,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 30,
+			IconSize = C.filger.cooldown_size,
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
@@ -2737,7 +2737,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Blood Horror
@@ -2773,7 +2773,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
@@ -2845,7 +2845,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Self
@@ -2904,7 +2904,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 30,
+			IconSize = C.filger.cooldown_size,
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
@@ -2977,7 +2977,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Avatar
@@ -3015,7 +3015,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Bloodsurge
@@ -3134,7 +3134,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Colossus Smash
@@ -3156,7 +3156,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 30,
+			IconSize = C.filger.cooldown_size,
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
@@ -3249,7 +3249,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 37,
+			IconSize = C.filger.buffs_size,
 			Position = {"TOP", SPECIAL_P_BUFF_ICON_Anchor},
 
 			-- Ashran
@@ -3423,7 +3423,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 60,
+			IconSize = C.filger.pvp_size,
 			Position = {"TOP", PVE_PVP_DEBUFF_Anchor},
 
 			-- Crowd Controls
@@ -3724,7 +3724,7 @@ C["filger_spells"] = {
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
-			IconSize = 60,
+			IconSize = C.filger.pvp_size,
 			Position = {"TOP", T_BUFF_Anchor},
 
 			-- Death Knight

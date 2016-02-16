@@ -328,6 +328,9 @@ L_GUI_FILGER_TEST_MODE = "调试模式"
 L_GUI_FILGER_MAX_TEST_ICON = "调试模式图示数量"
 L_GUI_FILGER_SHOW_TOOLTIP = "开启提示"
 L_GUI_FILGER_DISABLE_CD = "关闭法术CD监视"
+L_GUI_FILGER_BUFFS_SIZE = "Buffs size" -- Need review
+L_GUI_FILGER_COOLDOWN_SIZE = "Cooldowns size" -- Need review
+L_GUI_FILGER_PVP_SIZE = "PvP debuffs size" -- Need review
 
 -- Unit Frames options
 L_GUI_UF_ENABLE = "开启单位框架增强"
