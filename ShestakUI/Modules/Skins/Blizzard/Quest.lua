@@ -13,6 +13,7 @@ local function LoadSkin()
 	QuestRewardScrollFrame:StripTextures(true)
 	QuestRewardScrollChildFrame:StripTextures(true)
 	QuestProgressScrollFrame:StripTextures(true)
+	QuestGreetingScrollFrame:StripTextures(true)
 	QuestFrameProgressPanel:StripTextures(true)
 	QuestFrameRewardPanel:StripTextures(true)
 
@@ -28,6 +29,9 @@ local function LoadSkin()
 
 	T.SkinCloseButton(QuestFrameCloseButton, QuestFrame.backdrop)
 	T.SkinScrollBar(QuestDetailScrollFrameScrollBar)
+	T.SkinScrollBar(QuestProgressScrollFrameScrollBar)
+	T.SkinScrollBar(QuestRewardScrollFrameScrollBar)
+	T.SkinScrollBar(QuestGreetingScrollFrameScrollBar)
 
 	for i = 1, 6 do
 		local button = _G["QuestProgressItem"..i]
