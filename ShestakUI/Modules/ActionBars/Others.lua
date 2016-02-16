@@ -92,13 +92,13 @@ end)
 vehicle:SetScript("OnEnter", function(self)
 	if UnitOnTaxi("player") then
 		GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-		GameTooltip:SetText(TAXI_CANCEL, T.color.r, T.color.g, T.color.b)
-		GameTooltip:AddLine(TAXI_CANCEL_DESCRIPTION, 1, 1, 1, true)
+		GameTooltip:SetText(TAXI_CANCEL, 1, 1, 1)
+		GameTooltip:AddLine(TAXI_CANCEL_DESCRIPTION, 1, 0.8, 0, true)
 		GameTooltip:Show()
 	elseif IsPossessBarVisible() then
-		GameTooltip_AddNewbieTip(self, CANCEL, T.color.r, T.color.g, T.color.b, nil)
+		GameTooltip_AddNewbieTip(self, CANCEL, 1, 1, 1, nil)
 	else
-		GameTooltip_AddNewbieTip(self, LEAVE_VEHICLE, T.color.r, T.color.g, T.color.b, nil)
+		GameTooltip_AddNewbieTip(self, LEAVE_VEHICLE, 1, 1, 1, nil)
 	end
 end)
 vehicle:SetScript("OnLeave", function() GameTooltip:Hide() end)
