@@ -116,6 +116,8 @@ local function LoadSkin()
 
 	for _, item in pairs({GarrisonMissionFrame.FollowerTab.ItemWeapon, GarrisonMissionFrame.FollowerTab.ItemArmor}) do
 		item.Border:Hide()
+		item.Icon:SetTexCoord(.08, .92, .08, .92)
+		item:CreateBackdrop("Default")
 	end
 
 	local StartButton = MissionPage.StartMissionButton
@@ -129,21 +131,25 @@ local function LoadSkin()
 		while self.numRewardsStyled < numRewards do
 			self.numRewardsStyled = self.numRewardsStyled + 1
 			local reward = self.Rewards[self.numRewardsStyled]
-			local icon = reward.Icon
 			reward:GetRegions():Hide()
-			if not reward.border then
-				reward.border = CreateFrame("Frame", nil, reward)
+			if not reward.backdrop then
 				reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				reward:CreateBackdrop("Default")
+				reward.backdrop:SetPoint("TOPLEFT", reward.Icon,"TOPLEFT", -2, 2)
+				reward.backdrop:SetPoint("BOTTOMRIGHT", reward.Icon,"BOTTOMRIGHT", 2, -2)
+				reward.backdrop:SetFrameLevel(reward:GetFrameLevel())
 			end
 		end
 	end)
 
 	hooksecurefunc("GarrisonMissionPage_SetReward", function(frame, reward)
-		frame.BG:SetTexture()
+		frame.BG:Hide()
 		if not frame.backdrop then
 			frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			frame:CreateBackdrop("Default")
+			frame.backdrop:SetPoint("TOPLEFT", frame.Icon,"TOPLEFT", -2, 2)
+			frame.backdrop:SetPoint("BOTTOMRIGHT", frame.Icon,"BOTTOMRIGHT", 2, -2)
 		end
-		frame.Icon:SetDrawLayer("BORDER", 0)
 	end)
 
 	-- Landing page
@@ -198,6 +204,43 @@ local function LoadSkin()
 		self.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
 		self.backdrop.overlay:SetVertexColor(1, 0.82, 0, 0.3)
 	end)
+
+	for _, xpBar in pairs({GarrisonLandingPage.FollowerTab.XPBar, GarrisonLandingPage.ShipFollowerTab.XPBar, GarrisonMissionFrame.FollowerTab.XPBar}) do
+		xpBar:StripTextures()
+		xpBar:CreateBackdrop("Default")
+		xpBar.backdrop:SetFrameLevel(xpBar.backdrop:GetFrameLevel() + 1)
+		xpBar:SetStatusBarTexture(C.media.texture)
+	end
+
+	local function onShowFollower(self, followerId)
+		local followerList = self
+		local self = self.followerTab
+
+		local abilities = self.AbilitiesFrame.Abilities
+
+		if self.numAbilitiesStyled == nil then
+			self.numAbilitiesStyled = 1
+		end
+
+		local numAbilitiesStyled = self.numAbilitiesStyled
+
+		local ability = abilities[numAbilitiesStyled]
+		while ability do
+			local icon = ability.IconButton.Icon
+
+			icon:SetTexCoord(.08, .92, .08, .92)
+			icon:SetDrawLayer("BACKGROUND", 1)
+			ability.IconButton:CreateBackdrop("Default")
+
+			numAbilitiesStyled = numAbilitiesStyled + 1
+			ability = abilities[numAbilitiesStyled]
+		end
+
+		self.numAbilitiesStyled = numAbilitiesStyled
+	end
+
+	hooksecurefunc(GarrisonMissionFrame.FollowerList, "ShowFollower", onShowFollower)
+	hooksecurefunc(GarrisonLandingPageFollowerList, "ShowFollower", onShowFollower)
 
 	-- ShipYard
 	GarrisonShipyardFrame:StripTextures(true)
