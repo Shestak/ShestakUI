@@ -196,7 +196,7 @@ hooksecurefunc("WorldMapFrame_Update", function()
 		local numtexwide, numtextall = math.ceil(texwidth / 256), math.ceil(texheight / 256)
 
 		-- Work out how many textures are needed to fill the map
-		neededtex = texcount + numtextall * numtexwide
+		local neededtex = texcount + numtextall * numtexwide
 
 		-- Create the textures
 		if neededtex > createdtex then

@@ -118,6 +118,9 @@ local function LoadSkin()
 		item.Border:Hide()
 		item.Icon:SetTexCoord(.08, .92, .08, .92)
 		item:CreateBackdrop("Default")
+		item.backdrop:SetPoint("TOPLEFT", item.Icon,"TOPLEFT", -2, 2)
+		item.backdrop:SetPoint("BOTTOMRIGHT", item.Icon,"BOTTOMRIGHT", 2, -2)
+		item.backdrop:SetFrameLevel(item:GetFrameLevel())
 	end
 
 	local StartButton = MissionPage.StartMissionButton
