@@ -133,6 +133,10 @@ local function LoadSkin()
 			questItem.Name:SetTextColor(1, 1, 1)
 		end
     end)
+
+	QuestInfoRewardsFrame.FollowerFrame:CreateBackdrop("Transparent")
+	QuestInfoRewardsFrame.FollowerFrame.backdrop:SetAllPoints(QuestInfoRewardsFrame.FollowerFrame.BG)
+	QuestInfoRewardsFrame.FollowerFrame.BG:Hide()
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
