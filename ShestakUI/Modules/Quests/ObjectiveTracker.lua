@@ -64,37 +64,26 @@ end)
 ----------------------------------------------------------------------------------------
 --	Difficulty color for ObjectiveTrackerFrame lines
 ----------------------------------------------------------------------------------------
---WoD hooksecurefunc("ObjectiveTracker_Update", function()
-	-- local numQuestWatches = GetNumQuestWatches()
+hooksecurefunc(QUEST_TRACKER_MODULE, "Update", function()
+	for i = 1, GetNumQuestWatches() do
+		local questID, _, questIndex = GetQuestWatchInfo(i)
+		if not questID then
+			break
+		end
+		local _, level = GetQuestLogTitle(questIndex)
+		local col = GetQuestDifficultyColor(level)
+		local block = QUEST_TRACKER_MODULE:GetExistingBlock(questID)
+		block.HeaderText:SetTextColor(col.r, col.g, col.b)
+		block.HeaderText.col = col
+	end
+end)
 
-	-- for i = 1, numQuestWatches do
-		-- local questIndex = GetQuestIndexForWatch(i)
-		-- if questIndex then
-			-- local title, level = GetQuestLogTitle(questIndex)
-			-- local col = GetQuestDifficultyColor(level)
-
-			-- for j = 1, #WATCHFRAME_QUESTLINES do
-				-- if WATCHFRAME_QUESTLINES[j].text:GetText() == title then
-					-- WATCHFRAME_QUESTLINES[j].text:SetTextColor(col.r, col.g, col.b)
-					-- WATCHFRAME_QUESTLINES[j].col = col
-				-- end
-			-- end
-			-- for k = 1, #WATCHFRAME_ACHIEVEMENTLINES do
-				-- WATCHFRAME_ACHIEVEMENTLINES[k].col = nil
-			-- end
-		-- end
-	-- end
--- end)
-
---WoD hooksecurefunc("WatchFrameLinkButtonTemplate_Highlight", function(self, onEnter)
-	-- i = self.startLine
-	-- if not (self.lines[i] and self.lines[i].col) then return end
-	-- if onEnter then
-		-- self.lines[i].text:SetTextColor(1, 0.8, 0)
-	-- else
-		-- self.lines[i].text:SetTextColor(self.lines[i].col.r, self.lines[i].col.g, self.lines[i].col.b)
-	-- end
--- end)
+hooksecurefunc("ObjectiveTrackerBlockHeader_OnLeave", function(self)
+	local block = self:GetParent()
+	if block.HeaderText.col then
+		block.HeaderText:SetTextColor(block.HeaderText.col.r, block.HeaderText.col.g, block.HeaderText.col.b)
+	end
+end)
 
 ----------------------------------------------------------------------------------------
 --	Skin ObjectiveTrackerFrame.HeaderMenu.MinimizeButton
