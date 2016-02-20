@@ -139,7 +139,6 @@ hooksecurefunc(BONUS_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(self, 
 		bar.IconBG:Kill()
 		bar:SetSize(203, 23)
 		bar:SetStatusBarTexture(C.media.texture)
-		bar:SetTemplate("Transparent")
 
 		label:ClearAllPoints()
 		label:SetPoint("CENTER", 0, -1)
