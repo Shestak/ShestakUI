@@ -319,11 +319,15 @@ local function LoadSkin()
 				frame.IconBorder:Kill()
 				frame.glow:Kill()
 				frame.shine:Kill()
+				frame.SpecRing:SetTexture("")
+				frame.SpecIcon:SetPoint("TOPLEFT", 10, -12)
+				frame.SpecIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 				-- Icon
 				frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				frame.Icon:ClearAllPoints()
 				frame.Icon:SetPoint("LEFT", frame.backdrop, 9, 0)
+				frame.Icon:SetDrawLayer("BACKGROUND", -1)
 
 				-- Icon border
 				if not frame.Icon.b then
@@ -333,6 +337,15 @@ local function LoadSkin()
 					frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
 					frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
 				end
+
+				if not frame.SpecIcon.b then
+					frame.SpecIcon.b = CreateFrame("Frame", nil, frame)
+					frame.SpecIcon.b:SetFrameLevel(3)
+					frame.SpecIcon.b:SetTemplate("Default")
+					frame.SpecIcon.b:SetPoint("TOPLEFT", frame.SpecIcon, "TOPLEFT", -2, 2)
+					frame.SpecIcon.b:SetPoint("BOTTOMRIGHT", frame.SpecIcon, "BOTTOMRIGHT", 2, -2)
+				end
+				frame.SpecIcon.b:SetShown(frame.SpecIcon:IsShown() and frame.SpecIcon:GetTexture() ~= nil)
 			end
 		end
 	end
