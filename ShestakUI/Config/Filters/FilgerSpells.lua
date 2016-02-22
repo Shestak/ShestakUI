@@ -989,6 +989,8 @@ C["filger_spells"] = {
 			-- Incanter's Flow
 			{spellID = 1463, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Invisibility
+			{spellID = 66, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Invisibility
 			{spellID = 32612, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Rune of Power
 			{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1546,10 +1548,6 @@ C["filger_spells"] = {
 			-- Trinkets
 			{slotID = 13, filter = "CD"},
 			{slotID = 14, filter = "CD"},
-
-			-- Internal
-			-- Tiger Power
-			{spellID = 125359, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 	},
 	["PALADIN"] = {
@@ -3819,6 +3817,8 @@ C["filger_spells"] = {
 			{spellID = 45438, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Ice Ward
 			{spellID = 111264, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Greater Invisibility
+			{spellID = 113862, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Invisibility
 			{spellID = 66, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Temporal Shield
