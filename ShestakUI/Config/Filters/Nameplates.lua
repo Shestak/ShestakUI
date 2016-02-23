@@ -91,8 +91,11 @@ T.DebuffWhiteList = {
 
 T.PlateBlacklist = {
 	-- Army of the Dead
-	["Army of the Dead Ghoul"] = true,
-	["Вурдалак из войска мертвых"] = true,
+	["Army of the Dead"] = true,
+	["Войско мертвых"] = true,
+	-- Wild Imp
+	["Wild Imp"] = true,
+	["Дикий бес"] = true,
 	-- Hunter Trap
 	["Venomous Snake"] = true,
 	["Ядовитая змея"] = true,

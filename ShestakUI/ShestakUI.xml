@@ -67,7 +67,6 @@
 	<Script file="Modules\Misc\ClickCast.lua"/>
 	<Script file="Modules\Misc\Filger.lua"/>
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
-	<Script file="Modules\Misc\HealerIconNameplate.lua"/>
 	<Script file="Modules\Misc\LFGQueueTimer.lua"/>
 	<Script file="Modules\Misc\MagePortals.lua"/>
 	<Script file="Modules\Misc\Merchant.lua"/>
