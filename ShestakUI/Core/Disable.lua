@@ -50,7 +50,7 @@ if IsAddOnLoaded("Grid") or IsAddOnLoaded("Grid2") or IsAddOnLoaded("HealBot") o
 	C.raidframe.show_raid = false
 end
 
-if IsAddOnLoaded("TidyPlates") or IsAddOnLoaded("Aloft") or IsAddOnLoaded("dNamePlates") or IsAddOnLoaded("caelNamePlates") then
+if IsAddOnLoaded("TidyPlates") or IsAddOnLoaded("Aloft") or IsAddOnLoaded("Kui_Nameplates") or IsAddOnLoaded("rNamePlates") then
 	C.nameplate.enable = false
 end
 
@@ -65,7 +65,7 @@ if IsAddOnLoaded("Mapster") then
 	C.map.map_boss_count = false
 end
 
-if IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter") then
+if IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter") or IsAddOnLoaded("BasicChatMods") then
 	C.chat.enable = false
 end
 
@@ -79,15 +79,15 @@ if IsAddOnLoaded("Afflicted3") or IsAddOnLoaded("InterruptBar") or IsAddOnLoaded
 	C.enemycooldown.enable = false
 end
 
-if IsAddOnLoaded("TipTac") or IsAddOnLoaded("FreebTip") or IsAddOnLoaded("bTooltip") or IsAddOnLoaded("PhoenixTooltip") or IsAddOnLoaded("Icetip") then
+if IsAddOnLoaded("TipTac") or IsAddOnLoaded("FreebTip") or IsAddOnLoaded("bTooltip") or IsAddOnLoaded("PhanxTooltip") or IsAddOnLoaded("Icetip") then
 	C.tooltip.enable = false
 end
 
-if IsAddOnLoaded("Gladius") then
+if IsAddOnLoaded("Gladius") or IsAddOnLoaded("GladiusEx") then
 	C.unitframe.show_arena = false
 end
 
-if IsAddOnLoaded("Omen") or IsAddOnLoaded("sThreatMeter2") or IsAddOnLoaded("SkadaThreat") or IsAddOnLoaded("RecountThreat") then
+if IsAddOnLoaded("Omen") or IsAddOnLoaded("sThreatMeter2") or IsAddOnLoaded("rThreat") then
 	C.threat.enable = false
 end
 
