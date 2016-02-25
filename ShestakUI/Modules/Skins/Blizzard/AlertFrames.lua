@@ -464,8 +464,8 @@ local function LoadSkin()
 				if not frame.backdrop then
 					frame:CreateBackdrop("Transparent")
 					frame:SetFrameLevel(3)
-					frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -14, -6)
-					frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 10, 6)
+					frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 1, -6)
+					frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -5, 6)
 
 					frame:HookScript("OnEnter", FixBg)
 					frame:HookScript("OnShow", FixBg)
@@ -523,6 +523,7 @@ local function LoadSkin()
 
 			-- Icon
 			frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			frame.Icon:SetPoint("LEFT", 20, 0)
 
 			-- Icon border
 			if not frame.Icon.b then
@@ -586,6 +587,7 @@ local function LoadSkin()
 			frame.FollowerBG:SetAlpha(0)
 			frame.glow:Kill()
 			frame.shine:Kill()
+			frame.PortraitFrame:SetPoint("LEFT", 23, 0)
 		end
 	end
 	hooksecurefunc("AlertFrame_SetGarrisonFollowerAlertFrameAnchors", SkinGarrisonFollowerPopUp)
