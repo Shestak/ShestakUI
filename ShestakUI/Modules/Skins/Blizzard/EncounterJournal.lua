@@ -74,7 +74,7 @@ local function LoadSkin()
 		EncounterJournalEncounterFrameInfoModelTab
 	}
 	for _, tab in pairs(tabs) do
-		tab:CreateBackdrop("Default")
+		tab:CreateBackdrop("Overlay")
 		tab.backdrop:SetPoint('TOPLEFT', 3, -3)
 		tab.backdrop:SetPoint('BOTTOMRIGHT', 0, 2)
 		tab:SetNormalTexture("")

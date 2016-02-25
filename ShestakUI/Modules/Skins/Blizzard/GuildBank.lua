@@ -26,6 +26,10 @@ local function LoadSkin()
 
 	GuildBankInfoScrollFrame:StripTextures()
 	GuildBankTransactionsScrollFrame:StripTextures()
+	T.SkinScrollBar(GuildBankInfoScrollFrameScrollBar)
+	T.SkinScrollBar(GuildBankTransactionsScrollFrameScrollBar)
+	GuildBankInfoScrollFrame:SetHeight(GuildBankInfoScrollFrame:GetHeight() - 5)
+	GuildBankTransactionsScrollFrame:SetHeight(GuildBankTransactionsScrollFrame:GetHeight() - 5)
 
 	GuildBankFrame.inset = CreateFrame("Frame", nil, GuildBankFrame)
 	GuildBankFrame.inset:SetTemplate("Overlay")
