@@ -2490,6 +2490,8 @@ C["filger_spells"] = {
 			{spellID = 77762, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tidal Waves
 			{spellID = 53390, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elemental Fusion
+			{spellID = 157174, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
@@ -2718,6 +2720,8 @@ C["filger_spells"] = {
 			{spellID = 73680, filter = "CD"},
 			-- Wind Shear
 			{spellID = 57994, filter = "CD"},
+			-- Cloudburst Totem
+			{spellID = 157153, filter = "CD"},
 
 			-- Racial
 			-- Berserking (Troll)
@@ -2952,6 +2956,8 @@ C["filger_spells"] = {
 			{spellID = 74434, filter = "CD"},
 			-- Spell Lock (Felhunter)
 			{spellID = 19647, filter = "CD"},
+			-- Cataclysm
+			{spellID = 152108, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)

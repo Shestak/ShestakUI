@@ -298,8 +298,11 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[114911] = 3		-- Ancestral Guidance
 		T.aoespam[114942] = 3		-- Healing Tide
 		T.aoespam[114083] = 3		-- Restorative Mists
+		T.aoespam[157333] = 3		-- Soothing Winds
+		T.aoespam[157503] = 1		-- Cloudburst
 		-- Damaging spells
 		T.aoespam[421] = 1			-- Chain Lightning
+		T.merge[168477] = 421		-- Chain Lightning (Multi)
 		T.aoespam[8349] = 0			-- Fire Nova
 		T.aoespam[77478] = 3		-- Earhquake
 		T.aoespam[51490] = 0		-- Thunderstorm
@@ -310,15 +313,15 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[3606] = 3			-- Searing Bolt
 		T.aoespam[170379] = 3		-- Molten Earth
 		T.aoespam[114074] = 1		-- Lava Beam
-		T.aoespam[32175] = 0		-- Stormstrike
-		T.aoespam[114089] = 3		-- Windlash
-		T.aoespam[115357] = 0		-- Windstrike
-		T.aoespam[177601] = 3		-- Liquid Magma
-		T.merge[168477] = 421		-- Chain Lightning (Multi)
 		T.merge[168489] = 114074	-- Lava Beam (Multi)
+		T.aoespam[32175] = 0		-- Stormstrike
 		T.merge[32176] = 32175		-- Stormstrike Off-Hand
+		T.aoespam[114089] = 3		-- Windlash
 		T.merge[114093] = 114089	-- Windlash Off-Hand
+		T.aoespam[115357] = 0		-- Windstrike
 		T.merge[115360] = 115357	-- Windstrike Off-Hand
+		T.aoespam[177601] = 3		-- Liquid Magma
+		T.aoespam[157331] = 3		-- Wind Gust
 	end
 elseif T.class == "WARLOCK" then
 	if C.combattext.merge_aoe_spam then
@@ -347,6 +350,10 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[171017] = 0		-- Meteor Strike (Infrenal)
 		T.aoespam[104318] = 3		-- Fel Firebolt
 		T.aoespam[3110] = 3			-- Firebolt (Imp)
+		T.aoespam[152108] = 1		-- Cataclysm
+		T.aoespam[171018] = 1		-- Meteor Strike
+		T.aoespam[85692] = 3		-- Doom Bolt (Doomguard)
+		T.aoespam[54049] = 3		-- Shadow Bite (Felhunter)
 		T.merge[157736] = 348		-- Immolate
 		T.merge[108686] = 348		-- Immolate
 		T.merge[131737] = 980		-- Agony (Drain Soul)
