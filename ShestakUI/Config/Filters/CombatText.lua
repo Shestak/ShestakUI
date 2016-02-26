@@ -159,13 +159,20 @@ elseif T.class == "MONK" then
 		T.aoespam[115175] = 3		-- Soothing Mist
 		T.aoespam[125953] = 3		-- Soothing Mist (Statue)
 		T.aoespam[126890] = 3		-- Eminence
+		T.merge[159621] = 126890	-- Eminence
+		T.merge[117895] = 126890	-- Eminence (Statue)
 		T.aoespam[117640] = 3		-- Spinning Crane Kick
 		T.aoespam[132463] = 3		-- Chi Wave
 		T.aoespam[130654] = 3		-- Chi Burst
 		T.aoespam[124081] = 3		-- Zen Sphere
 		T.aoespam[124101] = 3		-- Zen Sphere: Detonate
 		T.aoespam[116670] = 0		-- Uplift
-		T.merge[159621] = 126890	-- Eminence
+		T.aoespam[157590] = 3		-- Breath of the Serpent
+		T.aoespam[159620] = 3		-- Chi Explosion
+		T.merge[157681] = 159620	-- Chi Explosion
+		T.merge[173438] = 159620	-- Chi Explosion
+		T.merge[182078] = 159620	-- Chi Explosion
+		T.merge[173439] = 159620	-- Chi Explosion
 		-- Damaging spells
 		T.aoespam[117952] = 3		-- Crackling Jade Lightning
 		T.aoespam[117418] = 3		-- Fists of Fury
@@ -179,6 +186,9 @@ elseif T.class == "MONK" then
 		T.aoespam[148135] = 3		-- Chi Burst
 		T.aoespam[124098] = 3		-- Zen Sphere
 		T.aoespam[125033] = 3		-- Zen Sphere: Detonate
+		T.aoespam[158221] = 3		-- Hurricane Strike
+		T.aoespam[152174] = 3		-- Chi Explosion
+		T.merge[157680] = 152174	-- Chi Explosion
 	end
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then

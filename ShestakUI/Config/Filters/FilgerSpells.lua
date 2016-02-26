@@ -1285,6 +1285,10 @@ C["filger_spells"] = {
 			{spellID = 116740, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Touch of Karma
 			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nimble Brew
+			{spellID = 137562, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Serenity
+			{spellID = 152173, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1514,6 +1518,14 @@ C["filger_spells"] = {
 			{spellID = 115080, filter = "CD"},
 			-- Zen Sphere
 			{spellID = 124081, filter = "CD"},
+			-- Breath of the Serpent
+			{spellID = 157535, filter = "CD"},
+			-- Hurricane Strike
+			{spellID = 152175, filter = "CD"},
+			-- Serenity
+			{spellID = 152173, filter = "CD"},
+			-- Diffuse Magic
+			{spellID = 122783, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
@@ -3640,6 +3652,8 @@ C["filger_spells"] = {
 			{spellID = 54644, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ice Trap
 			{spellID = 135299, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Frozen Ammo
+			{spellID = 162546, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Warp Time (Warp Stalker)
 			{spellID = 35346, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ankle Crack (Crocolisk)
@@ -3864,6 +3878,8 @@ C["filger_spells"] = {
 			{spellID = 116844, unitID = "target", caster = "target", filter = "BUFF"},
 			-- Touch of Karma
 			{spellID = 125174, unitID = "target", caster = "target", filter = "BUFF"},
+			-- Nimble Brew
+			{spellID = 137562, unitID = "target", caster = "target", filter = "BUFF"},
 			-- Debuffs
 			-- Charging Ox Wave
 			{spellID = 119392, unitID = "target", caster = "all", filter = "DEBUFF"},
