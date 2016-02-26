@@ -831,6 +831,9 @@ if C.combattext.damage then
 					end
 					if C.combattext.merge_aoe_spam then
 						spellId = T.merge[spellId] or spellId
+						if sourceFlags == gflags then
+							spellId = 6603
+						end
 						if T.aoespam[spellId] then
 							SQ[spellId]["locked"] = true
 							SQ[spellId]["queue"] = ct.SpamQueue(spellId, rawamount)
