@@ -69,6 +69,7 @@ elseif T.class == "DRUID" then
 		T.aoespam[124988] = 3		-- Nature's Vigil
 		T.aoespam[162359] = 3		-- Genesis
 		T.aoespam[144876] = 3		-- Spark of Life (T16)
+		T.aoespam[155777] = 3		-- Rejuvenation (Germination)
 		-- Damaging spells
 		T.aoespam[164812] = 3		-- Moonfire
 		T.aoespam[164815] = 3		-- Sunfire
@@ -84,6 +85,8 @@ elseif T.class == "DRUID" then
 		T.aoespam[106830] = 3		-- Thrash (Cat Form)
 		T.aoespam[1079] = 3			-- Rip
 		T.aoespam[124991] = 3		-- Nature's Vigil
+		T.aoespam[152221] = 3		-- Stellar Flare
+		T.aoespam[155625] = 3		-- Moonfire (Cat Form)
 	end
 	if C.combattext.healing then
 		T.healfilter[145109] = true	-- Ysera's Gift (Self)
@@ -264,11 +267,15 @@ elseif T.class == "ROGUE" then
 		T.aoespam[157607] = 3		-- Instant Poison
 		T.aoespam[57841] = 3		-- Killing Spree
 		T.aoespam[1943] = 3			-- Rupture
+		T.aoespam[152150] = 3		-- Death from Above
+		T.aoespam[114014] = 3		-- Shuriken Toss
+		T.aoespam[137584] = 3		-- Shuriken Toss
 		T.merge[27576] = 5374		-- Mutilate Off-Hand
 		T.merge[113780] = 2818		-- Deadly Poison
 		T.merge[168908] = 16511		-- Hemorrhage
 		T.merge[121411] = 122233	-- Crimson Tempest
 		T.merge[57842] = 57841		-- Killing Spree Off-Hand
+		T.merge[137585] = 137584	-- Shuriken Toss Off-hand
 	end
 elseif T.class == "SHAMAN" then
 	if C.combattext.merge_aoe_spam then

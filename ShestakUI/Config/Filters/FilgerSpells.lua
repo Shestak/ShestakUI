@@ -554,6 +554,8 @@ C["filger_spells"] = {
 			{spellID = 164815, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Thrash
 			{spellID = 77758, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Stellar Flare
+			{spellID = 152221, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
 			-- Mark of Doom [Prophecy of Fear]
@@ -663,6 +665,8 @@ C["filger_spells"] = {
 			{spellID = 102401, filter = "CD"},
 			-- Wild Growth
 			{spellID = 48438, filter = "CD"},
+			-- Bristling Fur
+			{spellID = 155835, filter = "CD"},
 
 			-- Racial
 			-- Berserking (Troll)
@@ -2375,6 +2379,10 @@ C["filger_spells"] = {
 			{spellID = 1856, filter = "CD"},
 			-- Vendetta
 			{spellID = 79140, filter = "CD"},
+			-- Marked for Death
+			{spellID = 137619, filter = "CD"},
+			-- Death from Above
+			{spellID = 152150, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
