@@ -46,6 +46,8 @@ if T.class == "DEATHKNIGHT" then
 		T.aoespam[49143] = 0		-- Frost Strike
 		T.aoespam[45462] = 0		-- Plague Strike
 		T.aoespam[49998] = 0		-- Death Strike
+		T.aoespam[156000] = 3		-- Defile
+		T.aoespam[155166] = 3		-- Mark of Sindragosa
 		T.merge[66198] = 49020		-- Obliterate Off-Hand
 		T.merge[66196] = 49143		-- Frost Strike Off-Hand
 		T.merge[66216] = 45462		-- Plague Strike Off-Hand

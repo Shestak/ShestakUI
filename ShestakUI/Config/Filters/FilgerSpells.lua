@@ -47,6 +47,8 @@ C["filger_spells"] = {
 			{spellID = 115989, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vampiric Blood
 			{spellID = 55233, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Desecrated Ground
+			{spellID = 115018, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Summon Gargoyle
 			{spellID = 49206, filter = "ICD", trigger = "NONE", duration = 40},
 		},
@@ -250,6 +252,8 @@ C["filger_spells"] = {
 			{spellID = 115989, filter = "CD"},
 			-- Vampiric Blood
 			{spellID = 55233, filter = "CD"},
+			-- Breath of Sindragosa
+			{spellID = 152279, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
