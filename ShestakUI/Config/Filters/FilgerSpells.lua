@@ -3010,6 +3010,8 @@ C["filger_spells"] = {
 			{spellID = 12328, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Victorious
 			{spellID = 32216, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ravager
+			{spellID = 152277, unitID = "player", caster = "player", filter = "BUFF", spec = 3},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -3196,6 +3198,10 @@ C["filger_spells"] = {
 			{spellID = 355, filter = "CD"},
 			-- Thunder Clap
 			{spellID = 6343, filter = "CD"},
+			-- Ravager
+			{spellID = 152277, filter = "CD"},
+			-- Intimidating Shout
+			{spellID = 5246, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)

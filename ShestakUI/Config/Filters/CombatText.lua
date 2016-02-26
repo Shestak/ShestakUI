@@ -356,6 +356,7 @@ elseif T.class == "WARRIOR" then
 		T.aoespam[6572] = 0			-- Revenge
 		T.aoespam[5308] = 0			-- Execute
 		T.aoespam[772] = 3			-- Rend
+		T.aoespam[156287] = 3		-- Ravager
 		T.merge[44949] = 1680		-- Whirlwind Off-Hand
 		T.merge[85384] = 96103		-- Raging Blow Off-Hand
 		T.merge[95738] = 50622		-- Bladestorm Off-Hand
