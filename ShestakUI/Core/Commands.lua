@@ -260,9 +260,8 @@ SlashCmdList["FRAMELIST"] = function(msg)
 	end
 	print("|cffCC0000--------------------------------------------------------------------|r")
 
-	if not isPreviouslyShown then
-		FrameStackTooltip_Toggle()
-	end
+	FrameStackTooltip_Toggle()
+	SlashCmdList.COPY_CHAT()
 end
 SLASH_FRAMELIST1 = "/framelist"
 SLASH_FRAMELIST2 = "/акфьудшые"

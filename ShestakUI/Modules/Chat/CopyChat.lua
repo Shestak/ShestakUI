@@ -82,8 +82,7 @@ for i = 1, NUM_CHAT_WINDOWS do
 	local cf = _G[format("ChatFrame%d", i)]
 	local button = CreateFrame("Button", format("ButtonCF%d", i), cf)
 	button:SetPoint("BOTTOMRIGHT", 0, 1)
-	button:SetHeight(20)
-	button:SetWidth(20)
+	button:SetSize(20, 20)
 	button:SetAlpha(0)
 	button:SetTemplate("Transparent")
 	button:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
@@ -105,4 +104,8 @@ for i = 1, NUM_CHAT_WINDOWS do
 	end)
 	button:SetScript("OnEnter", function() button:FadeIn() end)
 	button:SetScript("OnLeave", function() button:FadeOut() end)
+
+	SlashCmdList.COPY_CHAT = function()
+		Copy(_G["ChatFrame1"])
+	end
 end
