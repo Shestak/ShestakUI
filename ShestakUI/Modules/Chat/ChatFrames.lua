@@ -54,7 +54,7 @@ local function SetChatStyle(frame)
 	local chat = frame:GetName()
 
 	_G[chat]:SetFrameLevel(5)
-	
+
 	-- Removes crap from the bottom of the chatbox so it can go to the bottom of the screen
 	_G[chat]:SetClampedToScreen(false)
 
@@ -245,7 +245,8 @@ local function SetupChatPosAndFont(self)
 				ChatFrame2Tab:EnableMouse(false)
 				ChatFrame2Tab:SetText("")
 				ChatFrame2Tab.SetText = T.dummy
-				ChatFrame2Tab:SetScale(0.001)
+				ChatFrame2Tab:SetWidth(0.001)
+				ChatFrame2Tab.SetWidth = T.dummy
 			end
 		end
 	end
