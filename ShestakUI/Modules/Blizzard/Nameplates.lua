@@ -52,11 +52,31 @@ if C.nameplate.healer_icon == true then
 		end
 	end
 
+	local function CheckArenaHealers(self, elapsed)
+		lastCheck = lastCheck + elapsed
+		if lastCheck > 25 then
+			lastCheck = 0
+			healList = {}
+			for i = 1, 5 do
+				local specID = GetArenaOpponentSpec(i)
+				if specID and specID > 0 then
+					local name = UnitName(format('arena%d', i))
+					local _, talentSpec = GetSpecializationInfoByID(specID)
+					if name and t.healers[talentSpec] then
+						healList[name] = talentSpec
+					end
+				end
+			end
+		end
+	end
+
 	local function CheckLoc(self, event)
 		if event == "PLAYER_ENTERING_WORLD" or event == "PLAYER_ENTERING_BATTLEGROUND" then
 			local _, instanceType = IsInInstance()
 			if instanceType == "pvp" then
 				t:SetScript("OnUpdate", CheckHealers)
+			elseif instanceType == "arena" then
+				t:SetScript("OnUpdate", CheckArenaHealers)
 			else
 				healList = {}
 				t:SetScript("OnUpdate", nil)
