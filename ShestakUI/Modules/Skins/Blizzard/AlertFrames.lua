@@ -399,8 +399,8 @@ local function LoadSkin()
 			if not frame.backdrop then
 				frame:CreateBackdrop("Transparent")
 				frame:SetFrameLevel(3)
-				frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 4, -6)
-				frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -7, 6)
+				frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -16, -6)
+				frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 13, 6)
 
 				frame:HookScript("OnEnter", FixBg)
 				frame:HookScript("OnShow", FixBg)
@@ -564,6 +564,32 @@ local function LoadSkin()
 	end
 	hooksecurefunc("AlertFrame_SetGarrisonMissionAlertFrameAnchors", SkinGarrisonMissionPopUp)
 
+	local function SkinGarrisonShipMissionPopUp()
+		local frame = _G["GarrisonShipMissionAlertFrame"]
+
+		if frame then
+			frame:SetAlpha(1)
+			frame.SetAlpha = T.dummy
+
+			if not frame.backdrop then
+				frame:CreateBackdrop("Transparent")
+				frame:SetFrameLevel(3)
+				frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, -6)
+				frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 6)
+
+				frame:HookScript("OnEnter", FixBg)
+				frame:HookScript("OnShow", FixBg)
+				frame.animIn:HookScript("OnFinished", FixBg)
+			end
+
+			-- Background
+			frame.glow:Kill()
+			frame.shine:Kill()
+			frame.Background:Kill()
+		end
+	end
+	hooksecurefunc("AlertFrame_SetGarrisonShipMissionAlertFrameAnchors", SkinGarrisonShipMissionPopUp)
+
 	local function SkinGarrisonFollowerPopUp()
 		local frame = _G["GarrisonFollowerAlertFrame"]
 
@@ -591,6 +617,32 @@ local function LoadSkin()
 		end
 	end
 	hooksecurefunc("AlertFrame_SetGarrisonFollowerAlertFrameAnchors", SkinGarrisonFollowerPopUp)
+
+	local function SkinGarrisonShipFollowerPopUp()
+		local frame = _G["GarrisonShipFollowerAlertFrame"]
+
+		if frame then
+			frame:SetAlpha(1)
+			frame.SetAlpha = T.dummy
+
+			if not frame.backdrop then
+				frame:CreateBackdrop("Transparent")
+				frame:SetFrameLevel(3)
+				frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, -6)
+				frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 6)
+
+				frame:HookScript("OnEnter", FixBg)
+				frame:HookScript("OnShow", FixBg)
+				frame.animIn:HookScript("OnFinished", FixBg)
+			end
+
+			-- Background
+			frame.glow:Kill()
+			frame.shine:Kill()
+			frame.Background:Kill()
+		end
+	end
+	hooksecurefunc("AlertFrame_SetGarrisonShipFollowerAlertFrameAnchors", SkinGarrisonShipFollowerPopUp)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
