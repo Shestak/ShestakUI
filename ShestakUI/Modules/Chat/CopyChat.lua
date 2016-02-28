@@ -90,8 +90,7 @@ for i = 1, NUM_CHAT_WINDOWS do
 	local buttontexture = button:CreateTexture(nil, "BORDER")
 	buttontexture:SetPoint("CENTER")
 	buttontexture:SetTexture("Interface\\BUTTONS\\UI-GuildButton-PublicNote-Up")
-	buttontexture:SetHeight(16)
-	buttontexture:SetWidth(16)
+	buttontexture:SetSize(16, 16)
 
 	button:SetScript("OnMouseUp", function(self, btn)
 		if btn == "RightButton" then

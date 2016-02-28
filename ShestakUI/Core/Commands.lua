@@ -316,7 +316,7 @@ SLASH_TEST_ACHIEVEMENT1 = "/tach"
 SLASH_TEST_ACHIEVEMENT2 = "/ефср"
 
 ----------------------------------------------------------------------------------------
---	Test and move Blizzard Extra Action Button
+--	Test Blizzard Extra Action Button
 ----------------------------------------------------------------------------------------
 SlashCmdList.TEST_EXTRABUTTON = function()
 	if ExtraActionBarFrame:IsShown() then
