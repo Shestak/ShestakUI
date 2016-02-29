@@ -1833,6 +1833,8 @@ C["filger_spells"] = {
 			{spellID = 85499, filter = "CD"},
 			-- Turn Evil
 			{spellID = 10326, filter = "CD"},
+			-- Seraphim
+			{spellID = 152262, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
