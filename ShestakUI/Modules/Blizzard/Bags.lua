@@ -1268,6 +1268,8 @@ function Stuffing:SortBags()
 				local _, cnt, _, _, _, _, clink = GetContainerItemInfo(v.bag, v.slot)
 				local n, _, q, iL, rL, c1, c2, _, Sl = GetItemInfo(clink)
 				table.insert(st, {srcSlot = v, sslot = v.slot, sbag = v.bag, sort = q..c1..c2..rL..n..iL..Sl..(#self.buttons - i)})
+				if n == GetItemInfo(6948) then c1 = "1" end	-- Hearthstone
+				if n == GetItemInfo(110560) then c1 = "12" end	-- Garrison Hearthstone
 			end
 		end
 	end
