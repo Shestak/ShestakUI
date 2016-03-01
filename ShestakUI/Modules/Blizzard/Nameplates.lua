@@ -325,6 +325,36 @@ function Plates:OnShow()
 	self.NewPlate:Show()
 	Plates.UpdateHealth(self)
 
+	local object = {
+		self.ArtContainer.HealthBar,
+		self.ArtContainer.Border,
+		self.ArtContainer.Highlight,
+		self.ArtContainer.LevelText,
+		self.ArtContainer.EliteIcon,
+		self.ArtContainer.AggroWarningTexture,
+		self.ArtContainer.HighLevelIcon,
+		self.ArtContainer.CastBar,
+		self.ArtContainer.CastBarBorder,
+		self.ArtContainer.CastBarFrameShield,
+		self.ArtContainer.CastBarText,
+		self.ArtContainer.CastBarTextBG,
+		self.NameContainer.NameText
+	}
+
+	for _, object in pairs(object) do
+		objectType = object:GetObjectType()
+		if objectType == "Texture" then
+			object:SetTexture("")
+		elseif objectType == "FontString" then
+			object:SetWidth(0.001)
+		elseif objectType == "StatusBar" then
+			object:SetStatusBarTexture("")
+		end
+		if object ~= self.ArtContainer.HighLevelIcon and object ~= self.ArtContainer.EliteIcon then
+			object:Hide()
+		end
+	end
+
 	local Name = self.NameContainer.NameText:GetText() or "Unknown"
 	local Level = self.ArtContainer.LevelText:GetText() or ""
 	local Boss, Elite = self.ArtContainer.HighLevelIcon, self.ArtContainer.EliteIcon
@@ -530,22 +560,6 @@ function Plates:Skin(obj)
 
 	local Name = Plate.NameContainer.NameText
 
-	HealthBar:SetStatusBarTexture("")
-	LevelText:SetWidth(0.001)
-	Border:SetTexture("")
-	Name:SetWidth(0.001)
-
-	CastBar:SetAlpha(0)
-
-	Boss:SetAlpha(0)
-	Boss:SetTexture(nil)
-	Highlight:SetAlpha(0)
-	Highlight:SetTexture(nil)
-	Elite:SetAlpha(0)
-	Elite:SetTexture(nil)
-	Threat:SetAlpha(0)
-	Threat:SetTexture(nil)
-
 	self.Container[Plate] = CreateFrame("Frame", nil, self)
 
 	local NewPlate = self.Container[Plate]
@@ -598,6 +612,9 @@ function Plates:Skin(obj)
 	NewPlate.CastBar.Background:SetTexture(0.75, 0.75, 0.25, 0.2)
 	NewPlate.CastBar.Background:SetAllPoints()
 
+	NewPlate.hiddenFrame = CreateFrame("Frame", nil, NewPlate)
+	NewPlate.hiddenFrame:Hide()
+	CastBarSpellIcon:SetParent(NewPlate.hiddenFrame)
 	NewPlate.CastBar.Icon = NewPlate.CastBar:CreateTexture(nil, "OVERLAY")
 	NewPlate.CastBar.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	NewPlate.CastBar.Icon:SetSize((C.nameplate.height * 2 * T.noscalemult) + 8, (C.nameplate.height * 2 * T.noscalemult) + 8)
