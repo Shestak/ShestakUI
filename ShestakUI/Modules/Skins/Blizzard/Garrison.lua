@@ -62,12 +62,10 @@ local function LoadSkin()
 	GarrisonBuildingFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(GarrisonBuildingFrame.CloseButton)
 
-	GarrisonBuildingFrame.TownHallBox.UpgradeButton:StripTextures(true)
-	GarrisonBuildingFrame.TownHallBox.UpgradeButton:SkinButton()
-	GarrisonBuildingFrame.TownHallBox.UpgradeAnim.Play = T.dummy
-	GarrisonBuildingFrame.InfoBox.UpgradeButton:StripTextures(true)
-	GarrisonBuildingFrame.InfoBox.UpgradeButton:SkinButton()
-	GarrisonBuildingFrame.InfoBox.UpgradeAnim.Play = T.dummy
+	for _, button in pairs({GarrisonBuildingFrame.TownHallBox.UpgradeButton, GarrisonBuildingFrame.InfoBox.UpgradeButton}) do
+		button:StripTextures(true)
+		button:SkinButton()
+	end
 
 	-- Confirmation popup
 	local Confirmation = GarrisonBuildingFrame.Confirmation
@@ -125,7 +123,6 @@ local function LoadSkin()
 
 	local StartButton = MissionPage.StartMissionButton
 	StartButton:SkinButton()
-	StartButton.FlashAnim.Play = T.dummy
 
 	hooksecurefunc("GarrisonMissionButton_SetRewards", function(self, rewards, numRewards)
 		if self.numRewardsStyled == nil then
@@ -270,7 +267,6 @@ local function LoadSkin()
 	GarrisonShipyardFrame.MissionComplete.NextMissionButton:SkinButton()
 	GarrisonShipyardFrame.MissionCompleteBackground:SetAllPoints(MissionList.MapTexture)
 	MissionPage.StartMissionButton:SkinButton()
-	MissionPage.StartMissionButton.FlashAnim.Play = T.dummy
 
 	T.SkinEditBox(GarrisonShipyardFrameFollowers.SearchBox)
 	GarrisonShipyardFrameFollowers.SearchBox:SetPoint("TOPLEFT", 2, 25)

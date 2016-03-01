@@ -13,11 +13,6 @@ local function LoadSkin()
 
 	for _, button in pairs(buttons) do
 		_G[button]:SkinButton()
-		_G[button].overlay:SetVertexColor(0.3, 0.3, 0.3, 0.3)
-		_G[button]:SetScript("OnLeave", function(self)
-			_G[button]:SetBackdropBorderColor(unpack(C.media.border_color))
-			_G[button].overlay:SetVertexColor(0.3, 0.3, 0.3, 0.3)
-		end)
 	end
 	PlayerTalentFrameActivateButton:SkinButton()
 
