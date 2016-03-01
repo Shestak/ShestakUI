@@ -1835,6 +1835,8 @@ C["filger_spells"] = {
 			{spellID = 10326, filter = "CD"},
 			-- Seraphim
 			{spellID = 152262, filter = "CD"},
+			-- Beacon of Insight
+			{spellID = 157007, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
@@ -1926,6 +1928,8 @@ C["filger_spells"] = {
 			{spellID = 114255, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Twist of Fate
 			{spellID = 123254, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Mending
+			{spellID = 155363, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
@@ -2023,6 +2027,8 @@ C["filger_spells"] = {
 			{spellID = 87194, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Void Tendrils
 			{spellID = 114404, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Saving Grace
+			{spellID = 155274, unitID = "player", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
 			-- Mark of Doom [Prophecy of Fear]
