@@ -19,7 +19,7 @@ oUF.colors.power[7] = oUF.colors.power["SOUL_SHARDS"]
 oUF.colors.power[8] = oUF.colors.power["ECLIPSE"]
 oUF.colors.power[9] = oUF.colors.power["HOLY_POWER"]
 
-local GetDisplayPower = function(power, unit)
+local GetDisplayPower = function(unit)
 	local _, _, _, _, _, _, showOnRaid = UnitAlternatePowerInfo(unit)
 	if(showOnRaid) then
 		return ALTERNATE_POWER_INDEX
@@ -32,7 +32,7 @@ local Update = function(self, event, unit)
 
 	if(power.PreUpdate) then power:PreUpdate(unit) end
 
-	local displayType = power.displayAltPower and GetDisplayPower(power, unit)
+	local displayType = power.displayAltPower and GetDisplayPower(unit)
 	local min, max = UnitPower(unit, displayType), UnitPowerMax(unit, displayType)
 	local disconnected = not UnitIsConnected(unit)
 	power:SetMinMaxValues(0, max)
@@ -48,7 +48,7 @@ local Update = function(self, event, unit)
 	local r, g, b, t
 	if(power.colorTapping and not UnitPlayerControlled(unit) and UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit) and not UnitIsTappedByAllThreatList(unit)) then
 		t = self.colors.tapped
-	elseif(power.colorDisconnected and not UnitIsConnected(unit)) then
+	elseif(power.colorDisconnected and disconnected) then
 		t = self.colors.disconnected
 	elseif(power.colorPower) then
 		local ptype, ptoken, altR, altG, altB = UnitPowerType(unit)
