@@ -902,6 +902,10 @@ local function Stuffing_Sort(args)
 		args = ""
 	end
 
+	if _G["StuffingFrameReagent"] and _G["StuffingFrameReagent"]:IsShown() then
+		SortReagentBankBags()
+		return
+	end
 	Stuffing.itmax = 0
 	Stuffing:SetBagsForSorting(args)
 	Stuffing:SortBags()
@@ -924,7 +928,7 @@ function Stuffing:SetBagsForSorting(c)
 						table.insert(self.sortBags, i)
 					end
 				end
-			else
+			elseif not _G["StuffingFrameReagent"] or not _G["StuffingFrameReagent"]:IsShown() then
 				for _, i in ipairs(BAGS_BANK) do
 					if self.bags[i] and self.bags[i].bagType == ST_NORMAL then
 						table.insert(self.sortBags, i)
