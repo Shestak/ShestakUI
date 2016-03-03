@@ -221,6 +221,7 @@ function CreateReagentContainer()
 	Reagent:EnableMouse(true)
 	Reagent:SetMovable(true)
 	Reagent:SetClampedToScreen(true)
+	Reagent:SetClampRectInsets(0, 0, 0, -20)
 	Reagent:SetScript("OnMouseDown", function(self, button)
 		if IsShiftKeyDown() and button == "LeftButton" then
 			self:StartMoving()
