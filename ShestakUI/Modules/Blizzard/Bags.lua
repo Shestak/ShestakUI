@@ -327,7 +327,7 @@ function CreateReagentContainer()
 	MoneyFrame_Update(ReagentBankFrame.UnlockInfo.CostMoneyFrame, GetReagentBankCost())
 	ReagentBankFrameUnlockInfo:StripTextures()
 	ReagentBankFrameUnlockInfo:SetAllPoints(Reagent)
-	ReagentBankFrameUnlockInfo:SetTemplate("Transparent")
+	ReagentBankFrameUnlockInfo:SetTemplate("Overlay")
 	ReagentBankFrameUnlockInfo:SetFrameStrata("FULLSCREEN")
 	ReagentBankFrameUnlockInfoPurchaseButton:SkinButton()
 end
@@ -1419,9 +1419,13 @@ function Stuffing.Menu(self, level)
 	info.text = BAG_FILTER_CLEANUP.." Blizzard"
 	info.notCheckable = 1
 	info.func = function()
-		SortBags()
-		SortBankBags()
-		SortReagentBankBags()
+		if _G["StuffingFrameReagent"] and _G["StuffingFrameReagent"]:IsShown() then
+			SortReagentBankBags()
+		elseif Stuffing.bankFrame and Stuffing.bankFrame:IsShown() then
+			SortBankBags()
+		else
+			SortBags()
+		end
 	end
 	UIDropDownMenu_AddButton(info, level)
 
