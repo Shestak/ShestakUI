@@ -12,7 +12,7 @@ local function LoadSkin()
 	LootFrame:SetTemplate("Transparent")
 
 	T.SkinNextPrevButton(LootFrameDownButton)
-	T.SkinNextPrevButton(LootFrameUpButton)
+	T.SkinNextPrevButton(LootFrameUpButton, true)
 
 	T.SkinCloseButton(LootFrameCloseButton)
 
