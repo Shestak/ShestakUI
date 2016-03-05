@@ -9,7 +9,7 @@ AchievementAnchor:SetWidth(DungeonCompletionAlertFrame1:GetWidth() - 36)
 AchievementAnchor:SetHeight(DungeonCompletionAlertFrame1:GetHeight() - 4)
 AchievementAnchor:SetPoint(unpack(C.position.achievement))
 
-local POSITION, ANCHOR_POINT, YOFFSET = "BOTTOM", "TOP", -9
+local POSITION, ANCHOR_POINT, YOFFSET, FIRST_YOFFSET = "BOTTOM", "TOP", -9
 
 local function fixAnchors()
 	local point = AchievementAnchor:GetPoint()
@@ -18,14 +18,16 @@ local function fixAnchors()
 		POSITION = "TOP"
 		ANCHOR_POINT = "BOTTOM"
 		YOFFSET = 9
+		FIRST_YOFFSET = YOFFSET - 2
 	else
 		POSITION = "BOTTOM"
 		ANCHOR_POINT = "TOP"
 		YOFFSET = -9
+		FIRST_YOFFSET = YOFFSET + 2
 	end
 
 	AlertFrame:ClearAllPoints()
-	AlertFrame:SetPoint(POSITION, AchievementAnchor, POSITION, 2, YOFFSET)
+	AlertFrame:SetPoint(POSITION, AchievementAnchor, POSITION, 2, FIRST_YOFFSET)
 
 	GroupLootContainer:ClearAllPoints()
 	GroupLootContainer:SetPoint(POSITION, AlertFrame, ANCHOR_POINT, 0, YOFFSET)
