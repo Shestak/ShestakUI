@@ -1,7 +1,11 @@
-local parent, ns = ...
-local oUF = ns.oUF
+local T, C, L = unpack(select(2, ...))
+if C.unitframe.enable ~= true or C.unitframe_class_bar.combo ~= true or T.class ~= "ROGUE" then return end
 
-if select(2, UnitClass("player")) ~= "ROGUE" then return end
+----------------------------------------------------------------------------------------
+--	Based on oUF_Anticipation(by Elv)
+----------------------------------------------------------------------------------------
+local _, ns = ...
+local oUF = ns.oUF
 
 local ANTICIPATION = GetSpellInfo(115189)
 
@@ -81,26 +85,14 @@ local function Enable(self, unit)
 		bar.ForceUpdate = ForceUpdate
 
 		for i = 1, 5 do
-			if not bar[i]:GetStatusBarTexture() then
-				bar[i]:SetStatusBarTexture([=[Interface\TargetingFrame\UI-StatusBar]=])
-			end
-
 			bar[i]:SetFrameLevel(bar:GetFrameLevel() + 1)
-			bar[i]:GetStatusBarTexture():SetHorizTile(false)
-
-			if bar[i].bg then
-				bar[i]:SetMinMaxValues(0, 1)
-				bar[i]:SetValue(0)
-				bar[i].bg:SetAlpha(0.2)
-				bar[i].bg:SetAllPoints()
-			end
 		end
 
-		return true;
+		return true
 	end
 end
 
-local function Disable(self,unit)
+local function Disable(self, unit)
 	local bar = self.Anticipation
 
 	if(bar) then
@@ -110,4 +102,4 @@ local function Disable(self,unit)
 	end
 end
 
-oUF:AddElement("Anticipation",Path,Enable,Disable)
+oUF:AddElement("Anticipation", Path, Enable, Disable)
