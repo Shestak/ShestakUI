@@ -178,27 +178,27 @@ function T.SkinScrollBar(frame)
 				frame:HookScript("OnShow", function()
 					local _, maxValue = frame:GetMinMaxValues()
 					if maxValue == 0 then
-						frame:Hide()
+						frame:SetAlpha(0)
 					else
-						frame:Show()
+						frame:SetAlpha(1)
 					end
 				end)
 
 				frame:HookScript("OnMinMaxChanged", function()
 					local _, maxValue = frame:GetMinMaxValues()
 					if maxValue == 0 then
-						frame:Hide()
+						frame:SetAlpha(0)
 					else
-						frame:Show()
+						frame:SetAlpha(1)
 					end
 				end)
 
 				frame:HookScript("OnDisable", function()
-					frame:Hide()
+					frame:SetAlpha(0)
 				end)
 
 				frame:HookScript("OnEnable", function()
-					frame:Show()
+					frame:SetAlpha(1)
 				end)
 			end
 		end
