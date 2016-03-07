@@ -3724,6 +3724,8 @@ C["filger_spells"] = {
 			{spellID = 13159, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Cauterize
 			{spellID = 87023, unitID = "player", caster = "player", filter = "DEBUFF"},
+			-- Touch of Karma
+			{spellID = 125174, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Denounce
 			{spellID = 2812, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Smoke Bomb
@@ -3885,15 +3887,15 @@ C["filger_spells"] = {
 
 			-- Monk
 			-- Dampen Harm
-			{spellID = 122278, unitID = "player", caster = "target", filter = "BUFF"},
+			{spellID = 122278, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Diffuse Magic
-			{spellID = 122783, unitID = "target", caster = "target", filter = "BUFF"},
+			{spellID = 122783, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Ring of Peace
-			{spellID = 116844, unitID = "target", caster = "target", filter = "BUFF"},
+			{spellID = 116844, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Touch of Karma
-			{spellID = 125174, unitID = "target", caster = "target", filter = "BUFF"},
+			{spellID = 125174, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Nimble Brew
-			{spellID = 137562, unitID = "target", caster = "target", filter = "BUFF"},
+			{spellID = 137562, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Charging Ox Wave
 			{spellID = 119392, unitID = "target", caster = "all", filter = "DEBUFF"},
