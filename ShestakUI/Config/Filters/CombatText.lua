@@ -130,7 +130,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[120] = 0			-- Cone of Cold
 		T.aoespam[114923] = 3		-- Nether Tempest
 		T.aoespam[114954] = 3		-- Nether Tempest (AoE)
-		T.aoespam[7268] = 3			-- Arcane Missiles
+		T.aoespam[7268] = 1.6		-- Arcane Missiles
 		T.aoespam[113092] = 0		-- Frost Bomb
 		T.aoespam[44425] = 0		-- Arcane Barrage
 		T.aoespam[84721] = 3		-- Frozen Orb
@@ -145,7 +145,9 @@ elseif T.class == "MAGE" then
 		T.aoespam[155152] = 3		-- Prismatic Crystal
 		T.aoespam[153596] = 3		-- Comet Storm
 		T.aoespam[153640] = 3		-- Arcane Orb
-		T.aoespam[157977] = 3		-- Unstable Magic
+		T.aoespam[157977] = 0		-- Unstable Magic (Fire)
+		T.aoespam[157978] = 0		-- Unstable Magic (Frost)
+		T.aoespam[157979] = 0		-- Unstable Magic (Arcane)
 		T.aoespam[153564] = 3		-- Meteor
 		T.aoespam[155158] = 3		-- Meteor Burn
 		T.aoespam[88084] = 3		-- Arcane Blast (Mirror Image)
