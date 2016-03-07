@@ -18,15 +18,18 @@ hooksecurefunc(ObjectiveTrackerFrame, "SetPoint", function(_, _, parent)
 		ObjectiveTrackerFrame:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, 0)
 	end
 end)
-ObjectiveTrackerFrame.HeaderMenu.Title:SetAlpha(0)
 
 for _, headerName in pairs({"QuestHeader", "AchievementHeader", "ScenarioHeader"}) do
 	ObjectiveTrackerFrame.BlocksFrame[headerName].Background:Hide()
 end
-
 BONUS_OBJECTIVE_TRACKER_MODULE.Header.Background:Hide()
-ScenarioObjectiveTracker_AnimateReward = T.dummy
+
+ObjectiveTrackerFrame.HeaderMenu.Title:SetAlpha(0)
 OBJECTIVE_TRACKER_DOUBLE_LINE_HEIGHT = 30
+
+-- Kill reward animation when finished dungeon or bonus objectives
+ScenarioObjectiveTracker_AnimateReward = T.dummy
+BonusObjectiveTracker_AnimateReward = T.dummy
 
 ----------------------------------------------------------------------------------------
 --	Skin ObjectiveTrackerFrame item buttons
