@@ -42,7 +42,7 @@ T.DiminishingSpells = {
 	[135373] = {"root"},			-- Entrapment
 	[102359] = {"root"},			-- Mass Entanglement
 	[136634] = {"root"},			-- Narrow Escape
-	[53148] = {"root"},				-- Charge (Pet)
+	[45334] = {"root"},				-- Immobilized
 	[122] = {"root"},				-- Frost Nova
 	[33395] = {"root"},				-- Freeze (Water Elemental)
 	[111340] = {"root"},			-- Ice Ward
@@ -103,6 +103,7 @@ T.DiminishingSpells = {
 	-- Silences
 	[47476] = {"silence"},			-- Strangulate
 	[81261] = {"silence"},			-- Solar Beam
+	[114238] = {"silence"},			-- Fae Silence
 	[102051] = {"silence"},			-- Frostjaw
 	[31935] = {"silence"},			-- Avenger's Shield
 	[15487] = {"silence"},			-- Silence

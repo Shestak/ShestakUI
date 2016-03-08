@@ -551,6 +551,7 @@ if C.raidframe.plugins_pvp_debuffs == true then
 		-- Druid
 		[SpellName(33786)] = 3,		-- Cyclone
 		[SpellName(78675)] = 3,		-- Solar Beam
+		[SpellName(114238)] = 3,	-- Fae Silence
 		[SpellName(339)] = 2,		-- Entangling Roots
 		-- Hunter
 		[SpellName(3355)] = 3,		-- Freezing Trap
@@ -582,6 +583,7 @@ if C.raidframe.plugins_pvp_debuffs == true then
 		[SpellName(6770)] = 3,		-- Sap
 		[SpellName(2094)] = 3,		-- Blind
 		[SpellName(1776)] = 3,		-- Gouge
+		[SpellName(1330)] = 3,		-- Garrote - Silence
 		-- Shaman
 		[SpellName(51514)] = 3,		-- Hex
 		[SpellName(118905)] = 3,	-- Static Charge
