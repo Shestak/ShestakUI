@@ -881,11 +881,17 @@ T.PostUpdatePower = function(power, unit, min, max)
 	end
 end
 
-local UpdateManaLevelDelay = 0
 T.UpdateManaLevel = function(self, elapsed)
-	UpdateManaLevelDelay = UpdateManaLevelDelay + elapsed
-	if UpdateManaLevelDelay < 0.2 or UnitPowerType("player") ~= 0 then return end
-	UpdateManaLevelDelay = 0
+	self.elapsed = (self.elapsed or 0) + elapsed
+	if self.elapsed < 0.2 then return end
+	self.elapsed = 0
+
+	if UnitPowerType("player") ~= 0 then
+		if T.class == "MONK" then
+			self.ManaLevel:SetText()
+		end
+		return
+	end
 
 	local percMana = UnitMana("player") / UnitManaMax("player") * 100
 
