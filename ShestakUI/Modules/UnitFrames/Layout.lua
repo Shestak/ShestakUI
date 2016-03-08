@@ -30,7 +30,6 @@ local function Shared(self, unit)
 		self:SetAttribute("*type2", "togglemenu")
 	end
 
-
 	-- Backdrop for every units
 	self:CreateBackdrop("Default")
 	self:SetFrameStrata("BACKGROUND")
@@ -445,6 +444,7 @@ local function Shared(self, unit)
 
 			self.CPoints.Override = T.UpdateComboPoint
 
+			-- Anticipation bar
 			if T.class == "ROGUE" then
 				self.Anticipation = CreateFrame("Frame", self:GetName().."_Anticipation", self)
 				self.Anticipation:SetFrameLevel(self.Health:GetFrameLevel() + 2)
@@ -711,13 +711,6 @@ local function Shared(self, unit)
 			self.Reputation:HookScript("OnLeave", function(self) self:SetAlpha(0) end)
 			self.Reputation.PostUpdate = T.UpdateReputationColor
 			self.Reputation.Tooltip = true
-		end
-
-		-- Monk mana
-		if T.class == "MONK" then
-			CreateFrame("Frame"):SetScript("OnUpdate", function() T.UpdateClassMana(self) end)
-			self.ClassMana = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.ClassMana:SetTextColor(0.0, 1, 0.59)
 		end
 
 		-- GCD spark
