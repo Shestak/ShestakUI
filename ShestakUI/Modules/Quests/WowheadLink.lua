@@ -19,6 +19,15 @@ elseif T.client == "esES" or T.client == "esMX" then
 elseif T.client == "ptBR" or T.client == "ptPT" then
 	linkQuest = "http://pt.wowhead.com/quest=%d"
 	linkAchievement = "http://pt.wowhead.com/achievement=%d"
+elseif T.client == "itIT" then
+	linkQuest = "http://it.wowhead.com/quest=%d"
+	linkAchievement = "http://it.wowhead.com/achievement=%d"
+elseif T.client == "koKR" then
+	linkQuest = "http://ko.wowhead.com/quest=%d"
+	linkAchievement = "http://ko.wowhead.com/achievement=%d"
+elseif T.client == "zhTW" or T.client == "zhCN" then
+	linkQuest = "http://cn.wowhead.com/quest=%d"
+	linkAchievement = "http://cn.wowhead.com/achievement=%d"
 else
 	linkQuest = "http://www.wowhead.com/quest=%d"
 	linkAchievement = "http://www.wowhead.com/achievement=%d"
