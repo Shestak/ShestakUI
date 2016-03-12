@@ -170,7 +170,7 @@ L_GUI_COOLDOWN_ENEMY_IN_BG = "Show enemy cooldowns in bg zone"
 L_GUI_COOLDOWN_ENEMY_IN_ARENA = "Show enemy cooldowns in arena zone"
 
 -- Pulse cooldowns options
-L_GUI_COOLDOWN_PULSE = "Pulse cooldowns"
+L_GUI_COOLDOWN_PULSE = "Pulse Cooldowns"
 L_GUI_COOLDOWN_PULSE_ENABLE = "Show cooldowns pulse"
 L_GUI_COOLDOWN_PULSE_SIZE = "Cooldowns pulse icon size"
 L_GUI_COOLDOWN_PULSE_SOUND = "Warning sound notification"
@@ -370,7 +370,7 @@ L_GUI_UF_PLUGINS_FADER = "Fade unit frames"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames"
 
 -- Unit Frames Class bar options
-L_GUI_UF_PLUGINS_CLASS_BAR = "Unit Frames Class bars"
+L_GUI_UF_PLUGINS_CLASS_BAR = "Class Power Bars"
 L_GUI_UF_PLUGINS_COMBO_BAR = "Enable Rogue/Druid Combo bar"
 L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS = "Always show Combo bar for Druid"
 L_GUI_UF_PLUGINS_COMBO_BAR_OLD = "Show combo point on the target"
@@ -412,7 +412,7 @@ L_GUI_UF_PLUGINS_HEALCOMM = "Show incoming heal on frame"
 L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on middle-click (doesn't work with Clique)"
 
 -- Panel options
-L_GUI_TOP_PANEL = "Top panel"
+L_GUI_TOP_PANEL = "Top Panel"
 L_GUI_TOP_PANEL_ENABLE = "Enable top panel"
 L_GUI_TOP_PANEL_MOUSE = "Top panel on mouseover"
 L_GUI_TOP_PANEL_WIDTH = "Panel width"
