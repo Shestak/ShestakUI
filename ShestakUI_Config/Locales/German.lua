@@ -39,6 +39,7 @@ L_GUI_MISC_ARCHAEOLOGY = "Archäologie Artifakte und Abklingzeit"
 L_GUI_MISC_CHARS_CURRENCY = "Zeige deine Währungstoken über diverse Karaktere"
 L_GUI_MISC_ARMORY_LINK = "Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)" -- Needs review
 L_GUI_MISC_MERCHANT_ITEMLEVEL = "Show item level for weapons and armor in merchant" -- Need review
+L_GUI_MISC_MINIMIZE_MOUSEOVER = "Mouseover for quest minimize button" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigeungen"
@@ -68,6 +69,7 @@ L_GUI_AUTOMATION_ACCEPT_INVITE = "Einladungen automatisch annehmen"
 L_GUI_AUTOMATION_DECLINE_DUEL = "Duell automatisch ablehnen"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Quests automatisch annehmen"
 L_GUI_AUTOMATION_AUTO_COLLAPSE = "WatchFrame Automatisch in Instanzen reduzuieren"
+L_GUI_AUTOMATION_AUTO_COLLAPSE_RELOAD = "Auto collapse ObjectiveTrackerFrame after reload" -- Need review
 L_GUI_AUTOMATION_SKIP_CINEMATIC = "Auto Cinematics/Filme überspringen"
 L_GUI_AUTOMATION_AUTO_ROLE = "Automatisch die eigene Rolle wählen"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Automatisch einige Buffs abbrechen"

@@ -60,6 +60,7 @@ C["misc"] = {
 	["chars_currency"] = false,					-- Tracks your currency tokens across multiple characters
 	["armory_link"] = false,					-- Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)
 	["merchant_itemlevel"] = false,				-- Show item level for weapons and armor in merchant
+	["minimize_mouseover"] = false,				-- Mouseover for quest minimize button
 }
 
 ----------------------------------------------------------------------------------------
@@ -94,14 +95,15 @@ C["automation"] = {
 	["accept_invite"] = false,					-- Auto accept invite
 	["decline_duel"] = true,					-- Auto decline duel (/disduel to temporarily disable)
 	["accept_quest"] = false,					-- Auto accept quests (disabled if hold Shift)
-	["auto_collapse"] = false,					-- Auto collapse WatchFrame in instance
+	["auto_collapse"] = false,					-- Auto collapse ObjectiveTrackerFrame in instance
+	["auto_collapse_reload"] = false,			-- Auto collapse ObjectiveTrackerFrame after reload
 	["skip_cinematic"] = false,					-- Auto skip cinematics/movies (disabled if hold Ctrl)
 	["auto_role"] = false,						-- Auto set your role
 	["cancel_bad_buffs"] = false,				-- Auto cancel various buffs
 	["tab_binder"] = false,						-- Auto change Tab key to only target enemy players
 	["logging_combat"] = false,					-- Auto enables combat log text file in raid instances
 	["currency_cap"] = false,					-- Auto popup for currency cap
-	["buff_on_scroll"] = false,					-- Cast buff on mouse scroll
+	["buff_on_scroll"] = false,					-- Cast buff on mouse scroll (from the list)
 	["open_items"] = false,						-- Auto opening of items in bag
 	["bannerhide"] = true,						-- Auto hiding Boss Banner Loot Frame
 }

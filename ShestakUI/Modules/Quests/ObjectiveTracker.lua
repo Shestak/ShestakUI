@@ -3,7 +3,7 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Move ObjectiveTrackerFrame
 ----------------------------------------------------------------------------------------
-local frame = CreateFrame("Frame", "WatchFrameAnchor", UIParent)
+local frame = CreateFrame("Frame", "ObjectiveTrackerAnchor", UIParent)
 frame:SetPoint(unpack(C.position.quest))
 frame:SetHeight(150)
 frame:SetWidth(224)
@@ -120,11 +120,26 @@ if C.skins.blizzard_frames == true then
 	end)
 end
 
--- local frame1 = CreateFrame("Frame")
--- frame1:RegisterEvent("PLAYER_ENTERING_WORLD")
--- frame1:SetScript("OnEvent", function(self, event)
-	-- ObjectiveTracker_Collapse()
--- end)
+----------------------------------------------------------------------------------------
+--	Auto collapse ObjectiveTrackerFrame
+----------------------------------------------------------------------------------------
+if C.automation.auto_collapse_reload then
+	local collapse = CreateFrame("Frame")
+	collapse:RegisterEvent("PLAYER_ENTERING_WORLD")
+	collapse:SetScript("OnEvent", function(self, event)
+		ObjectiveTracker_Collapse()
+	end)
+end
+
+----------------------------------------------------------------------------------------
+--	Mouseover for ObjectiveTrackerFrame.HeaderMenu.MinimizeButton
+----------------------------------------------------------------------------------------
+if C.misc.minimize_mouseover then
+	local MinimizeButton = ObjectiveTrackerFrame.HeaderMenu.MinimizeButton
+	MinimizeButton:SetAlpha(0)
+	MinimizeButton:HookScript("OnEnter", function() MinimizeButton:SetAlpha(1) end)
+	MinimizeButton:HookScript("OnLeave", function() MinimizeButton:SetAlpha(0) end)
+end
 
 ----------------------------------------------------------------------------------------
 --	Skin bonus objective progress bar

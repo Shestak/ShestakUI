@@ -39,6 +39,7 @@ L_GUI_MISC_ARCHAEOLOGY = "提示考古學文物辨識及冷卻"
 L_GUI_MISC_CHARS_CURRENCY = "追蹤所有角色金錢信息"
 L_GUI_MISC_ARMORY_LINK = "頭像菜單增加英雄榜鏈接"
 L_GUI_MISC_MERCHANT_ITEMLEVEL = "Show item level for weapons and armor in merchant" -- Need review
+L_GUI_MISC_MINIMIZE_MOUSEOVER = "Mouseover for quest minimize button" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告提醒"
@@ -68,6 +69,7 @@ L_GUI_AUTOMATION_ACCEPT_INVITE = "自動接受組隊邀請"
 L_GUI_AUTOMATION_DECLINE_DUEL = "自動取消决鬥"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "自動接受任務"
 L_GUI_AUTOMATION_AUTO_COLLAPSE = "副本中自動關閉任務追蹤框架"
+L_GUI_AUTOMATION_AUTO_COLLAPSE_RELOAD = "Auto collapse ObjectiveTrackerFrame after reload" -- Need review
 L_GUI_AUTOMATION_SKIP_CINEMATIC = "自動跳過過場動畫"
 L_GUI_AUTOMATION_AUTO_ROLE = "自動設定角色類型"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "自動取消非增益性質的Buff"

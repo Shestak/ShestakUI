@@ -29,7 +29,7 @@ local defaults = {
 		logging = true,
 	},
 	["valor"] = {
-		max = 3000,
+		max = 5000,
 		queueing = true,
 		logging = true,
 	},
