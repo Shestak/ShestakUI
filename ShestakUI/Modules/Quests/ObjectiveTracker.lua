@@ -28,8 +28,8 @@ ObjectiveTrackerFrame.HeaderMenu.Title:SetAlpha(0)
 OBJECTIVE_TRACKER_DOUBLE_LINE_HEIGHT = 30
 
 -- Kill reward animation when finished dungeon or bonus objectives
-ScenarioObjectiveTracker_AnimateReward = T.dummy
-BonusObjectiveTracker_AnimateReward = T.dummy
+ObjectiveTrackerScenarioRewardsFrame.Show = T.dummy
+ObjectiveTrackerBonusRewardsFrame.Show = T.dummy
 
 ----------------------------------------------------------------------------------------
 --	Skin ObjectiveTrackerFrame item buttons
