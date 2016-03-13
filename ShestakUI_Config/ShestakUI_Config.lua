@@ -769,6 +769,35 @@ function CreateUIConfig()
 		return iter
 	end
 
+	local GetOrderedIndex = function(t)
+		local OrderedIndex = {}
+
+		for key in pairs(t) do table.insert(OrderedIndex, key) end
+		table.sort(OrderedIndex)
+		return OrderedIndex
+	end
+
+	local OrderedNext = function(t, state)
+		local Key
+
+		if (state == nil) then
+			t.OrderedIndex = GetOrderedIndex(t)
+			Key = t.OrderedIndex[1]
+			return Key, t[Key]
+		end
+
+		Key = nil
+		for i = 1, #t.OrderedIndex do
+			if (t.OrderedIndex[i] == state) then Key = t.OrderedIndex[i + 1] end
+		end
+
+		if Key then return Key, t[Key] end
+		t.OrderedIndex = nil
+		return
+	end
+
+	local PairsByKeys = function(t) return OrderedNext, t, nil end
+
 	local child = CreateFrame("Frame", nil, groups)
 	child:SetPoint("TOPLEFT")
 	local offset = 5
@@ -833,7 +862,7 @@ function CreateUIConfig()
 		local offset = 5
 
 		if type(C[i]) ~= "table" then error(i.." GroupName not found in config table.") return end
-		for j, value in pairs(C[i]) do
+		for j, value in PairsByKeys(C[i]) do
 			if type(value) == "boolean" then
 				local button = CreateFrame("CheckButton", "UIConfig"..i..j, frame, "InterfaceOptionsCheckButtonTemplate")
 				if IsAddOnLoaded("Aurora") then
