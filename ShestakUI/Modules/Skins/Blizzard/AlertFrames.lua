@@ -116,6 +116,33 @@ local function LoadSkin()
 	end
 	hooksecurefunc("AlertFrame_SetDungeonCompletionAnchors", SkinDungeonPopUp)
 
+	hooksecurefunc("DungeonCompletionAlertFrame_ShowAlert", function()
+		local frame = DungeonCompletionAlertFrame1Reward1
+		local index = 1
+
+		while frame do
+			if not frame.styled then
+				_G["DungeonCompletionAlertFrame1Reward"..index.."Border"]:Hide()
+
+				frame.texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				frame.texture:SetSize(22, 22)
+				if not frame.texture.b then
+					frame.texture.b = CreateFrame("Frame", nil, frame)
+					frame.texture.b:SetFrameLevel(4)
+					frame.texture.b:SetTemplate("Default")
+					frame.texture.b:SetPoint("TOPLEFT", frame.texture, "TOPLEFT", -2, 2)
+					frame.texture.b:SetPoint("BOTTOMRIGHT", frame.texture, "BOTTOMRIGHT", 2, -2)
+				end
+
+				frame.styled = true
+			end
+			frame.texture.b:SetShown(frame.texture:IsShown() and frame.texture:GetTexture() ~= nil)
+
+			index = index + 1
+			frame = _G["DungeonCompletionAlertFrame1Reward"..index]
+		end
+	end)
+
 	local function SkinGuildChallengePopUp()
 		local frame = _G["GuildChallengeAlertFrame"]
 
