@@ -247,7 +247,7 @@ if IsWetxius then
 	C["position"].bag = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 20}
 	C["position"].bank = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 20}
 	C["position"].auto_button = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 33, 83}
-	C["position"].arena = {"BOTTOMRIGHT", UIParent, "RIGHT", -55, -70}
+	C["position"].unitframes.arena = {"BOTTOMRIGHT", UIParent, "RIGHT", -55, -70}
 	if T.level == MAX_PLAYER_LEVEL then
 		C["automation"].screenshot = true
 		C["combattext"].heal_treshold = 1000
