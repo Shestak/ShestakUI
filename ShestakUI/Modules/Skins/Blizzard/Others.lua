@@ -118,10 +118,18 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 					navButton.MenuArrowButton:SetPushedTexture(nil)
 					navButton.MenuArrowButton:SetHighlightTexture(nil)
 				end
+				navButton.xoffset = 1
 				navButton.isSkinned = true
 			end
 		end
 		hooksecurefunc("NavBar_AddButton", SkinNavBarButtons)
+
+		local function SetHomeButtonOffsetX(self)
+			if self.homeButton then
+				self.homeButton.xoffset = 1
+			end
+		end
+		hooksecurefunc("NavBar_Initialize", SetHomeButtonOffsetX)
 
 		-- Cinematic popup
 		_G["CinematicFrameCloseDialog"]:SetScale(C.general.uiscale)
