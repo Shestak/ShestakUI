@@ -69,7 +69,10 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			for j = 1, 3 do
 				_G["StaticPopup"..i.."Button"..j]:SkinButton()
 			end
-			_G["StaticPopup"..i]:SetTemplate("Transparent")
+			_G["StaticPopup"..i]:StripTextures()
+			_G["StaticPopup"..i]:CreateBackdrop("Transparent")
+			_G["StaticPopup"..i].backdrop:SetPoint("TOPLEFT", 2, -2)
+			_G["StaticPopup"..i].backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
 			T.SkinEditBox(_G["StaticPopup"..i.."EditBox"])
 			T.SkinEditBox(_G["StaticPopup"..i.."MoneyInputFrameGold"])
 			T.SkinEditBox(_G["StaticPopup"..i.."MoneyInputFrameSilver"])
