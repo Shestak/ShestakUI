@@ -970,34 +970,34 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
-			-- Alter Time
-			{spellID = 110909, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Arcane Power
-			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Evanesce
-			{spellID = 157913, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Greater Invisibility
-			{spellID = 110960, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Heating Up
-			{spellID = 48107, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ice Barrier
-			{spellID = 11426, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Block
 			{spellID = 45438, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ice Floes
-			{spellID = 108839, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Icy Veins
-			{spellID = 12472, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Incanter's Flow
-			{spellID = 1463, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Invisibility
 			{spellID = 66, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Invisibility
 			{spellID = 32612, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Rune of Power
-			{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Greater Invisibility
+			{spellID = 110960, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Icy Veins
+			{spellID = 12472, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Arcane Power
+			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ice Barrier
+			{spellID = 11426, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Heating Up
+			{spellID = 48107, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Incanter's Flow
+			{spellID = 1463, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ice Floes
+			{spellID = 108839, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Evanesce
+			{spellID = 157913, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Alter Time
+			{spellID = 110909, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rune of Power
+			{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Prismatic Crystal
 			{spellID = 152087, filter = "ICD", trigger = "NONE", duration = 12},
 			-- Mirror Image
@@ -1013,12 +1013,12 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
-			-- Arcane Missiles!
-			{spellID = 79683, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Brain Freeze
-			{spellID = 57761, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fingers of Frost
 			{spellID = 44544, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Brain Freeze
+			{spellID = 57761, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Arcane Missiles!
+			{spellID = 79683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pyroblast!
 			{spellID = 48108, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1088,30 +1088,30 @@ C["filger_spells"] = {
 
 			-- Arcane Charge
 			{spellID = 36032, unitID = "player", caster = "player", filter = "DEBUFF"},
-			-- Combustion
-			{spellID = 83853, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Cone of Cold
-			{spellID = 120, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Freeze (Pet)
-			{spellID = 33395, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Frost Bomb
-			{spellID = 112948, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Frost Nova
-			{spellID = 122, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Ice Ward
-			{spellID = 111340, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Ignite
 			{spellID = 12654, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Living Bomb
 			{spellID = 44457, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Nether Tempest
 			{spellID = 114923, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Frost Bomb
+			{spellID = 112948, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Pyroblast
 			{spellID = 11366, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Slow
-			{spellID = 31589, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Combustion
+			{spellID = 83853, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Freeze (Pet)
+			{spellID = 33395, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Water Jet (Pet)
 			{spellID = 135029, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Frost Nova
+			{spellID = 122, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Ice Ward
+			{spellID = 111340, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Cone of Cold
+			{spellID = 120, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Slow
+			{spellID = 31589, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
 			-- Mark of Doom [Prophecy of Fear]
@@ -1141,68 +1141,68 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
-			-- Alter Time
-			{spellID = 108978, filter = "CD"},
-			-- Arcane Power
-			{spellID = 12042, filter = "CD"},
-			-- Cold Snap
-			{spellID = 11958, filter = "CD"},
-			-- Cone of Cold
-			{spellID = 120, filter = "CD"},
-			-- Counterspell
-			{spellID = 2139, filter = "CD"},
-			-- Blazing Speed
-			{spellID = 108843, filter = "CD"},
-			-- Blink
-			{spellID = 1953, filter = "CD"},
-			-- Combustion
-			{spellID = 11129, filter = "CD"},
-			-- Comet Storm
-			{spellID = 153595, filter = "CD"},
-			-- Deep Freeze
-			{spellID = 44572, filter = "CD"},
-			-- Evocation
-			{spellID = 12051, filter = "CD"},
-			-- Fire Blast
-			{spellID = 2136, filter = "CD"},
-			-- Flamestrike
-			{spellID = 2120, filter = "CD"},
-			-- Frostjaw
-			{spellID = 102051, filter = "CD"},
-			-- Frost Bomb
-			{spellID = 112948, filter = "CD"},
-			-- Frost Nova
-			{spellID = 122, filter = "CD"},
-			-- Frozen Orb
-			{spellID = 84714, filter = "CD"},
-			-- Ice Barrier
-			{spellID = 11426, filter = "CD"},
-			-- Ice Block
-			{spellID = 45438, filter = "CD"},
-			-- Ice Floes
-			{spellID = 108839, filter = "CD"},
-			-- Ice Ward
-			{spellID = 111264, filter = "CD"},
-			-- Icy Veins
-			{spellID = 12472, filter = "CD"},
-			-- Incanter's Ward
-			{spellID = 1463, filter = "CD"},
-			-- Invisibility
-			{spellID = 66, filter = "CD"},
-			-- Mirror Image
-			{spellID = 55342, filter = "CD"},
-			-- Presence of Mind
-			{spellID = 12043, filter = "CD"},
-			-- Prismatic Crystal
-			{spellID = 152087, filter = "CD"},
 			-- Remove Curse
 			{spellID = 475, filter = "CD"},
+			-- Frostjaw
+			{spellID = 102051, filter = "CD"},
+			-- Counterspell
+			{spellID = 2139, filter = "CD"},
+			-- Blink
+			{spellID = 1953, filter = "CD"},
+			-- Blazing Speed
+			{spellID = 108843, filter = "CD"},
+			-- Deep Freeze
+			{spellID = 44572, filter = "CD"},
+			-- Frost Nova
+			{spellID = 122, filter = "CD"},
+			-- Ice Ward
+			{spellID = 111264, filter = "CD"},
 			-- Ring of Frost
 			{spellID = 113724, filter = "CD"},
+			-- Ice Barrier
+			{spellID = 11426, filter = "CD"},
 			-- Temporal Shield
 			{spellID = 115610, filter = "CD"},
+			-- Incanter's Ward
+			{spellID = 1463, filter = "CD"},
+			-- Fire Blast
+			{spellID = 2136, filter = "CD"},
+			-- Frost Bomb
+			{spellID = 112948, filter = "CD"},
+			-- Flamestrike
+			{spellID = 2120, filter = "CD"},
+			-- Cone of Cold
+			{spellID = 120, filter = "CD"},
 			-- Water Jet (Pet)
 			{spellID = 135029, filter = "CD"},
+			-- Comet Storm
+			{spellID = 153595, filter = "CD"},
+			-- Ice Floes
+			{spellID = 108839, filter = "CD"},
+			-- Combustion
+			{spellID = 11129, filter = "CD"},
+			-- Frozen Orb
+			{spellID = 84714, filter = "CD"},
+			-- Arcane Power
+			{spellID = 12042, filter = "CD"},
+			-- Presence of Mind
+			{spellID = 12043, filter = "CD"},
+			-- Alter Time
+			{spellID = 108978, filter = "CD"},
+			-- Evocation
+			{spellID = 12051, filter = "CD"},
+			-- Icy Veins
+			{spellID = 12472, filter = "CD"},
+			-- Prismatic Crystal
+			{spellID = 152087, filter = "CD"},
+			-- Mirror Image
+			{spellID = 55342, filter = "CD"},
+			-- Cold Snap
+			{spellID = 11958, filter = "CD"},
+			-- Ice Block
+			{spellID = 45438, filter = "CD"},
+			-- Invisibility
+			{spellID = 66, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
@@ -1259,48 +1259,30 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
-			-- Dampen Harm
-			{spellID = 122278, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Diffuse Magic
-			{spellID = 122783, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Elusive Brew
-			{spellID = 115308, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Energizing Brew
-			{spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fortifying Brew
-			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Guard
 			{spellID = 115295, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Momentum
-			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thunder Focus Tea
-			{spellID = 116680, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fortifying Brew
+			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elusive Brew
+			{spellID = 115308, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Tigereye Brew
 			{spellID = 116740, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Touch of Karma
 			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Diffuse Magic
+			{spellID = 122783, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dampen Harm
+			{spellID = 122278, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nimble Brew
 			{spellID = 137562, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Serenity
 			{spellID = 152173, unitID = "player", caster = "player", filter = "BUFF"},
-		},
-		{
-			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
-			Mode = "ICON",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = C.filger.buffs_size,
-			Position = {"TOP", T_DEBUFF_ICON_Anchor},
-
-			-- Breath of Fire
-			{spellID = 123725, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Dizzying Haze
-			{spellID = 116330, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Heavy Stagger
-			{spellID = 124273, unitID = "player", caster = "player", filter = "DEBUFF"},
-			-- Rising Sun Kick
-			{spellID = 130320, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Energizing Brew
+			{spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thunder Focus Tea
+			{spellID = 116680, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Momentum
+			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1312,26 +1294,26 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
-			-- Combo Breaker: Blackout Kick
-			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Combo Breaker: Tiger Palm
-			{spellID = 118864, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elusive Brew
 			{spellID = 128939, unitID = "player", caster = "player", filter = "BUFF", absID = true, count = 12},
 			-- Mana Tea
 			{spellID = 115867, unitID = "player", caster = "player", filter = "BUFF", absID = true, count = 18},
-			-- Serpent's Zeal
-			{spellID = 127722, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shuffle
-			{spellID = 115307, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tigereye Brew
 			{spellID = 125195, unitID = "player", caster = "player", filter = "BUFF", absID = true, count = 10},
 			-- Tiger Power
 			{spellID = 125359, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tiger Strikes
-			{spellID = 120273, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combo Breaker: Blackout Kick
+			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combo Breaker: Tiger Palm
+			{spellID = 118864, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shuffle
+			{spellID = 115307, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vital Mists
 			{spellID = 118674, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Serpent's Zeal
+			{spellID = 127722, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Tiger Strikes
+			{spellID = 120273, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
@@ -1459,6 +1441,24 @@ C["filger_spells"] = {
 			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
+			Name = "T_DEBUFF_ICON",
+			Direction = "RIGHT",
+			Mode = "ICON",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = C.filger.buffs_size,
+			Position = {"TOP", T_DEBUFF_ICON_Anchor},
+
+			-- Heavy Stagger
+			{spellID = 124273, unitID = "player", caster = "player", filter = "DEBUFF"},
+			-- Dizzying Haze
+			{spellID = 116330, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Breath of Fire
+			{spellID = 123725, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Rising Sun Kick
+			{spellID = 130320, unitID = "target", caster = "player", filter = "DEBUFF"},
+		},
+		{
 			Name = "COOLDOWN",
 			Direction = "RIGHT",
 			Mode = "ICON",
@@ -1468,58 +1468,58 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
-			-- Charging Ox Wave
-			{spellID = 119392, filter = "CD"},
-			-- Chi Burst
-			{spellID = 123986, filter = "CD"},
-			-- Chi Wave
-			{spellID = 115098, filter = "CD"},
-			-- Dampen Harm
-			{spellID = 122278, filter = "CD"},
 			-- Detox
 			{spellID = 115450, filter = "CD"},
-			-- Energizing Brew
-			{spellID = 115288, filter = "CD"},
-			-- Expel Harm
-			{spellID = 115072, filter = "CD"},
-			-- Fists of Fury
-			{spellID = 113656, filter = "CD"},
-			-- Flying Serpent Kick
-			{spellID = 101545, filter = "CD"},
-			-- Guard
-			{spellID = 115295, filter = "CD"},
-			-- Invoke Xuen, the White Tiger
-			{spellID = 123904, filter = "CD"},
-			-- Life Cocoon
-			{spellID = 116849, filter = "CD"},
-			-- Nimble Brew
-			{spellID = 137562, filter = "CD"},
-			-- Paralysis
-			{spellID = 115078, filter = "CD"},
-			-- Provoke
-			{spellID = 115546, filter = "CD"},
-			-- Ring of Peace
-			{spellID = 116844, filter = "CD"},
-			-- Rising Sun Kick
-			{spellID = 107428, filter = "CD"},
 			-- Spear Hand Strike
 			{spellID = 116705, filter = "CD"},
+			-- Paralysis
+			{spellID = 115078, filter = "CD"},
+			-- Expel Harm
+			{spellID = 115072, filter = "CD"},
+			-- Rising Sun Kick
+			{spellID = 107428, filter = "CD"},
+			-- Provoke
+			{spellID = 115546, filter = "CD"},
+			-- Zen Sphere
+			{spellID = 124081, filter = "CD"},
+			-- Chi Wave
+			{spellID = 115098, filter = "CD"},
+			-- Fists of Fury
+			{spellID = 113656, filter = "CD"},
+			-- Chi Burst
+			{spellID = 123986, filter = "CD"},
+			-- Guard
+			{spellID = 115295, filter = "CD"},
+			-- Charging Ox Wave
+			{spellID = 119392, filter = "CD"},
+			-- Hurricane Strike
+			{spellID = 152175, filter = "CD"},
+			-- Ring of Peace
+			{spellID = 116844, filter = "CD"},
 			-- Thunder Focus Tea
 			{spellID = 116680, filter = "CD"},
+			-- Dampen Harm
+			{spellID = 122278, filter = "CD"},
+			-- Flying Serpent Kick
+			{spellID = 101545, filter = "CD"},
+			-- Energizing Brew
+			{spellID = 115288, filter = "CD"},
+			-- Diffuse Magic
+			{spellID = 122783, filter = "CD"},
+			-- Breath of the Serpent
+			{spellID = 157535, filter = "CD"},
+			-- Serenity
+			{spellID = 152173, filter = "CD"},
 			-- Touch of Karma
 			{spellID = 122470, filter = "CD"},
 			-- Touch of Death
 			{spellID = 115080, filter = "CD"},
-			-- Zen Sphere
-			{spellID = 124081, filter = "CD"},
-			-- Breath of the Serpent
-			{spellID = 157535, filter = "CD"},
-			-- Hurricane Strike
-			{spellID = 152175, filter = "CD"},
-			-- Serenity
-			{spellID = 152173, filter = "CD"},
-			-- Diffuse Magic
-			{spellID = 122783, filter = "CD"},
+			-- Nimble Brew
+			{spellID = 137562, filter = "CD"},
+			-- Life Cocoon
+			{spellID = 116849, filter = "CD"},
+			-- Invoke Xuen, the White Tiger
+			{spellID = 123904, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
