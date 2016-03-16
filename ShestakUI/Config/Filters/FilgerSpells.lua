@@ -308,18 +308,6 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
-			-- Barkskin
-			{spellID = 22812, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Berserk
-			{spellID = 50334, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Celestial Alignment
-			{spellID = 112071, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Cenarion Ward
-			{spellID = 102351, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dash
-			{spellID = 1850, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Heart of the Wild
-			{spellID = 108294, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: Chosen of Elune
 			{spellID = 102560, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: King of the Jungle
@@ -328,24 +316,36 @@ C["filger_spells"] = {
 			{spellID = 102558, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Incarnation: Tree of Life
 			{spellID = 117679, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lunar Empower
-			{spellID = 164547, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nature's Grasp
-			{spellID = 170856, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nature's Vigil
-			{spellID = 124974, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Survival Instincts
+			{spellID = 61336, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Barkskin
+			{spellID = 22812, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Savage Defense
 			{spellID = 132402, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Savage Roar
 			{spellID = 52610, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Solar Empower
-			{spellID = 164545, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Starfall
-			{spellID = 48505, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Survival Instincts
-			{spellID = 61336, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Heart of the Wild
+			{spellID = 108294, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Berserk
+			{spellID = 50334, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Tiger's Fury
 			{spellID = 5217, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Celestial Alignment
+			{spellID = 112071, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nature's Vigil
+			{spellID = 124974, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lunar Empowerment
+			{spellID = 164547, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Solar Empowerment
+			{spellID = 164545, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Starfall
+			{spellID = 184989, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nature's Grasp
+			{spellID = 170856, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dash
+			{spellID = 1850, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cenarion Ward
+			{spellID = 102351, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -359,20 +359,20 @@ C["filger_spells"] = {
 			-- Buffs
 			-- Bloodtalons
 			{spellID = 145152, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Clearcasting
-			{spellID = 16870, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lunar Peak
 			{spellID = 171743, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Predatory Swiftness
-			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Rejuvenation (Glyph)
-			{spellID = 96206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Solar Peak
 			{spellID = 171744, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rejuvenation (Glyph)
+			{spellID = 96206, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Clearcasting
+			{spellID = 16870, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul of the Forest
 			{spellID = 114108, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tooth and Claw
 			{spellID = 135286, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Predatory Swiftness
+			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
@@ -538,22 +538,22 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
-			-- Immobilized
-			{spellID = 45334, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Lacerate
-			{spellID = 33745, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Moonfire
 			{spellID = 164812, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Sunfire
+			{spellID = 164815, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Stellar Flare
+			{spellID = 152221, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Rake
 			{spellID = 155722, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
 			-- Rip
 			{spellID = 1079, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Sunfire
-			{spellID = 164815, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Lacerate
+			{spellID = 33745, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Thrash
 			{spellID = 77758, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Stellar Flare
-			{spellID = 152221, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Immobilized
+			{spellID = 45334, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
 			-- Mark of Doom [Prophecy of Fear]
@@ -570,8 +570,6 @@ C["filger_spells"] = {
 			BarWidth = 186,
 			Position = {"LEFT", T_DE_BUFF_BAR_Anchor},
 
-			-- Cenarion Ward
-			{spellID = 102351, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Lifebloom
 			{spellID = 33763, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Rejuvenation
@@ -580,8 +578,8 @@ C["filger_spells"] = {
 			{spellID = 8936, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Wild Growth
 			{spellID = 48438, unitID = "target", caster = "player", filter = "BUFF"},
-			-- Stellar Flare
-			{spellID = 152221, unitID = "target", caster = "player", filter = "BUFF"},
+			-- Cenarion Ward
+			{spellID = 102351, unitID = "target", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -609,18 +607,56 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
-			-- Barkskin
-			{spellID = 22812, filter = "CD"},
-			-- Berserk
-			{spellID = 106952, filter = "CD", absID = true},
-			-- Faerie Fire
-			{spellID = 770, filter = "CD"},
-			-- Force of Nature
-			{spellID = 102693, filter = "CD"},
+			-- Nature's Cure
+			{spellID = 88423, filter = "CD"},
+			-- Remove Corruption
+			{spellID = 2782, filter = "CD"},
+			-- Skull Bash
+			{spellID = 106839, filter = "CD"},
+			-- Mangle
+			{spellID = 33917, filter = "CD"},
+			-- Wild Growth
+			{spellID = 48438, filter = "CD"},
+			-- Swiftmend
+			{spellID = 18562, filter = "CD"},
 			-- Growl
 			{spellID = 6795, filter = "CD"},
+			-- Maim
+			{spellID = 22570, filter = "CD"},
+			-- Starsurge
+			{spellID = 78674, filter = "CD"},
+			-- Wild Charge
+			{spellID = 102401, filter = "CD"},
+			-- Force of Nature
+			{spellID = 102693, filter = "CD"},
+			-- Faerie Fire
+			{spellID = 770, filter = "CD"},
+			-- Tiger's Fury
+			{spellID = 5217, filter = "CD"},
 			-- Incapacitating Roar
 			{spellID = 99, filter = "CD"},
+			-- Bristling Fur
+			{spellID = 155835, filter = "CD"},
+			-- Mass Entanglement
+			{spellID = 102359, filter = "CD"},
+			-- Typhoon
+			{spellID = 132469, filter = "CD"},
+			-- Mighty Bash
+			{spellID = 5211, filter = "CD"},
+			-- Solar Beam
+			{spellID = 78675, filter = "CD"},
+			-- Barkskin
+			{spellID = 22812, filter = "CD"},
+			-- Ironbark
+			{spellID = 102342, filter = "CD"},
+			-- Nature's Swiftness
+			{spellID = 132158, filter = "CD"},
+			-- Ursol's Vortex
+			{spellID = 102793, filter = "CD"},
+			-- Nature's Vigil
+			{spellID = 124974, filter = "CD"},
+			-- Berserk
+			{spellID = 106952, filter = "CD", absID = true},
 			-- Incarnation: Chosen of Elune
 			{spellID = 102560, filter = "CD"},
 			-- Incarnation: King of the Jungle
@@ -629,42 +665,6 @@ C["filger_spells"] = {
 			{spellID = 102558, filter = "CD"},
 			-- Incarnation: Tree of Life
 			{spellID = 33891, filter = "CD"},
-			-- Ironbark
-			{spellID = 102342, filter = "CD"},
-			-- Maim
-			{spellID = 22570, filter = "CD"},
-			-- Mangle
-			{spellID = 33917, filter = "CD"},
-			-- Mighty Bash
-			{spellID = 5211, filter = "CD"},
-			-- Nature's Cure
-			{spellID = 88423, filter = "CD"},
-			-- Nature's Swiftness
-			{spellID = 132158, filter = "CD"},
-			-- Nature's Vigil
-			{spellID = 124974, filter = "CD"},
-			-- Remove Corruption
-			{spellID = 2782, filter = "CD"},
-			-- Skull Bash
-			{spellID = 106839, filter = "CD"},
-			-- Solar Beam
-			{spellID = 78675, filter = "CD"},
-			-- Starsurge
-			{spellID = 78674, filter = "CD"},
-			-- Swiftmend
-			{spellID = 18562, filter = "CD"},
-			-- Tiger's Fury
-			{spellID = 5217, filter = "CD"},
-			-- Typhoon
-			{spellID = 132469, filter = "CD"},
-			-- Ursol's Vortex
-			{spellID = 102793, filter = "CD"},
-			-- Wild Charge
-			{spellID = 102401, filter = "CD"},
-			-- Wild Growth
-			{spellID = 48438, filter = "CD"},
-			-- Bristling Fur
-			{spellID = 155835, filter = "CD"},
 
 			-- Racial
 			-- Berserking (Troll)
@@ -703,24 +703,24 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
-			-- Beast Cleave
-			{spellID = 118455, unitID = "pet", caster = "player", filter = "BUFF"},
-			-- Bestial Wrath
-			{spellID = 19574, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Camouflage
-			{spellID = 51755, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Deterrence
 			{spellID = 19263, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Focus Fire
-			{spellID = 82692, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Posthaste
-			{spellID = 118922, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rapid Fire
 			{spellID = 3045, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Bestial Wrath
+			{spellID = 19574, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Beast Cleave
+			{spellID = 118455, unitID = "pet", caster = "player", filter = "BUFF"},
+			-- Focus Fire
+			{spellID = 82692, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sniper Training
 			{spellID = 168811, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Camouflage
+			{spellID = 51755, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Spirit Mend
 			{spellID = 90361, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Posthaste
+			{spellID = 118922, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -732,16 +732,16 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
-			-- Frenzy
-			{spellID = 19615, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Lock and Load
-			{spellID = 168980, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Mend Pet
-			{spellID = 136, unitID = "pet", caster = "player", filter = "BUFF"},
 			-- Steady Focus
 			{spellID = 177668, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lock and Load
+			{spellID = 168980, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thrill of the Hunt
 			{spellID = 34720, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frenzy
+			{spellID = 19615, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Mend Pet
+			{spellID = 136, unitID = "pet", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
@@ -809,36 +809,32 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
-			-- Ankle Crack (Crocolisk)
-			{spellID = 50433, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Black Arrow
 			{spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Concussive Shot
-			{spellID = 5116, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Entrapment
-			{spellID = 135373, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Explosive Shot
 			{spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Freezing Trap
-			{spellID = 3355, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Freezing Trap (Glyph)
-			{spellID = 61394, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Frost Breath (Chimaera)
-			{spellID = 54644, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Frozen Ammo
-			{spellID = 162546, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Ice Trap
-			{spellID = 135299, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Narrow Escape
-			{spellID = 136634, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Poisoned Ammo
-			{spellID = 162543, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Serpent Sting
 			{spellID = 87935, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Narrow Escape
+			{spellID = 136634, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Entrapment
+			{spellID = 135373, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Frozen Wake
+			{spellID = 61394, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Warp Time (Warp Stalker)
 			{spellID = 35346, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Wyvern Sting
-			{spellID = 19386, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Ankle Crack (Crocolisk)
+			{spellID = 50433, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Frost Breath (Chimaera)
+			{spellID = 54644, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Concussive Shot
+			{spellID = 5116, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Ice Trap
+			{spellID = 135299, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Poisoned Ammo
+			{spellID = 162543, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Frozen Ammo
+			{spellID = 162546, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -864,60 +860,60 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
-			-- A Murder of Crows
-			{spellID = 131894, filter = "CD"},
 			-- Concussive Shot
 			{spellID = 5116, filter = "CD"},
 			-- Counter Shot
 			{spellID = 147362, filter = "CD"},
-			-- Chimera Shot
-			{spellID = 53209, filter = "CD"},
-			-- Barrage
-			{spellID = 120360, filter = "CD"},
-			-- Bestial Wrath
-			{spellID = 19574, filter = "CD"},
-			-- Binding Shot
-			{spellID = 117526, filter = "CD"},
-			-- Deterrence
-			{spellID = 19263, filter = "CD"},
-			-- Dire Beast
-			{spellID = 120679, filter = "CD"},
-			-- Disengage
-			{spellID = 781, filter = "CD"},
-			-- Exhilaration
-			{spellID = 109304, filter = "CD"},
-			-- Explosive Shot
-			{spellID = 53301, filter = "CD"},
-			-- Explosive Trap
-			{spellID = 13813, filter = "CD"},
-			-- Feign Death
-			{spellID = 5384, filter = "CD"},
-			-- Fervor
-			{spellID = 82726, filter = "CD"},
-			-- Glaive Toss
-			{spellID = 117050, filter = "CD"},
-			-- Ice Trap
-			{spellID = 13809, filter = "CD"},
-			-- Intimidation
-			{spellID = 19577, filter = "CD"},
 			-- Kill Command
 			{spellID = 34026, filter = "CD"},
+			-- Explosive Shot
+			{spellID = 53301, filter = "CD"},
+			-- Chimera Shot
+			{spellID = 53209, filter = "CD"},
 			-- Kill Shot
 			{spellID = 53351, filter = "CD"},
-			-- Lynx Rush
-			{spellID = 120697, filter = "CD"},
-			-- Master's Call
-			{spellID = 53271, filter = "CD"},
+			-- Glaive Toss
+			{spellID = 117050, filter = "CD"},
+			-- Barrage
+			{spellID = 120360, filter = "CD"},
+			-- Disengage
+			{spellID = 781, filter = "CD"},
+			-- Dire Beast
+			{spellID = 120679, filter = "CD"},
+			-- Fervor
+			{spellID = 82726, filter = "CD"},
 			-- Misdirection
 			{spellID = 34477, filter = "CD"},
+			-- Feign Death
+			{spellID = 5384, filter = "CD"},
+			-- Explosive Trap
+			{spellID = 13813, filter = "CD"},
+			-- Ice Trap
+			{spellID = 13809, filter = "CD"},
+			-- Binding Shot
+			{spellID = 117526, filter = "CD"},
+			-- Master's Call
+			{spellID = 53271, filter = "CD"},
 			-- Powershot
 			{spellID = 109259, filter = "CD"},
-			-- Rapid Fire
-			{spellID = 3045, filter = "CD"},
-			-- Spirit Mend (Pet)
-			{spellID = 90361, filter = "CD"},
 			-- Wyvern Sting
 			{spellID = 19386, filter = "CD"},
+			-- Intimidation
+			{spellID = 19577, filter = "CD"},
+			-- Bestial Wrath
+			{spellID = 19574, filter = "CD"},
+			-- A Murder of Crows
+			{spellID = 131894, filter = "CD"},
+			-- Lynx Rush
+			{spellID = 120697, filter = "CD"},
+			-- Exhilaration
+			{spellID = 109304, filter = "CD"},
+			-- Rapid Fire
+			{spellID = 3045, filter = "CD"},
+			-- Deterrence
+			{spellID = 19263, filter = "CD"},
+			-- Spirit Mend (Pet)
+			{spellID = 90361, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
