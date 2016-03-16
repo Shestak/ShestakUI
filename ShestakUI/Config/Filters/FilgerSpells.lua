@@ -1574,26 +1574,26 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
-			-- Ardent Defender
-			{spellID = 31850, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Avenging Wrath
-			{spellID = 31884, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Divine Protection
-			{spellID = 498, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Shield
 			{spellID = 642, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Eternal Flame
-			{spellID = 114163, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Guardian of Ancient Kings
 			{spellID = 86659, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Holy Avenger
 			{spellID = 105809, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Sacred Shield
-			{spellID = 20925, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Avenging Wrath
+			{spellID = 31884, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Seraphim
 			{spellID = 152262, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ardent Defender
+			{spellID = 31850, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Divine Protection
+			{spellID = 498, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Speed of Light
 			{spellID = 85499, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Eternal Flame
+			{spellID = 114163, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sacred Shield
+			{spellID = 20925, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1605,24 +1605,24 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
+			-- Infusion of Light
+			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bastion of Glory
 			{spellID = 114637, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Final Verdict
-			{spellID = 157048, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Daybreak
-			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Divine Crusader
-			{spellID = 144595, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Selfless Healer
+			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Purpose
 			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grand Crusader
 			{spellID = 85416, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Infusion of Light
-			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Daybreak
+			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Divine Crusader
+			{spellID = 144595, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Final Verdict
+			{spellID = 157048, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Long Arm of the Law
 			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Selfless Healer
-			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Supplication
 			{spellID = 94686, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1754,16 +1754,16 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
+			-- Forbearance
+			{spellID = 25771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Censure
 			{spellID = 31803, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Dazing Shield (Glyph)
 			{spellID = 63529, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Denounce
-			{spellID = 2812, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Forbearance
-			{spellID = 25771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Seal of Justice
 			{spellID = 20170, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Denounce
+			{spellID = 2812, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
 			-- Fel Burn [Empty Drinking Horn]
@@ -1779,58 +1779,58 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
-			-- Ardent Defender
-			{spellID = 31850, filter = "CD"},
-			-- Avenger's Shield
-			{spellID = 31935, filter = "CD"},
-			-- Avenging Wrath
-			{spellID = 31884, filter = "CD"},
-			-- Blinding Light
-			{spellID = 115750, filter = "CD"},
 			-- Cleanse
 			{spellID = 4987, filter = "CD"},
-			-- Consecration
-			{spellID = 26573, filter = "CD"},
-			-- Devotion Aura
-			{spellID = 31821, filter = "CD"},
-			-- Divine Protection
-			{spellID = 498, filter = "CD"},
-			-- Execution Sentence
-			{spellID = 114157, filter = "CD"},
-			-- Exorcism
-			{spellID = 879, filter = "CD"},
-			-- Hammer of Justice
-			{spellID = 853, filter = "CD"},
-			-- Hand of Freedom
-			{spellID = 1044, filter = "CD"},
-			-- Hand of Protection
-			{spellID = 1022, filter = "CD"},
-			-- Hand of Purity
-			{spellID = 114039, filter = "CD"},
-			-- Hand of Sacrifice
-			{spellID = 6940, filter = "CD"},
-			-- Holy Avenger
-			{spellID = 105809, filter = "CD"},
-			-- Holy Prism
-			{spellID = 114165, filter = "CD"},
-			-- Holy Wrath
-			{spellID = 119072, filter = "CD"},
-			-- Judgment
-			{spellID = 20271, filter = "CD"},
-			-- Light's Hammer
-			{spellID = 114158, filter = "CD"},
 			-- Rebuke
 			{spellID = 96231, filter = "CD"},
 			-- Repentance
 			{spellID = 20066, filter = "CD"},
-			-- Speed of Light
-			{spellID = 85499, filter = "CD"},
 			-- Turn Evil
 			{spellID = 10326, filter = "CD"},
-			-- Seraphim
-			{spellID = 152262, filter = "CD"},
+			-- Hammer of Justice
+			{spellID = 853, filter = "CD"},
+			-- Judgment
+			{spellID = 20271, filter = "CD"},
+			-- Consecration
+			{spellID = 26573, filter = "CD"},
+			-- Holy Wrath
+			{spellID = 119072, filter = "CD"},
+			-- Avenger's Shield
+			{spellID = 31935, filter = "CD"},
+			-- Exorcism
+			{spellID = 879, filter = "CD"},
 			-- Beacon of Insight
 			{spellID = 157007, filter = "CD"},
+			-- Holy Prism
+			{spellID = 114165, filter = "CD"},
+			-- Hand of Freedom
+			{spellID = 1044, filter = "CD"},
+			-- Hand of Purity
+			{spellID = 114039, filter = "CD"},
+			-- Seraphim
+			{spellID = 152262, filter = "CD"},
+			-- Speed of Light
+			{spellID = 85499, filter = "CD"},
+			-- Divine Protection
+			{spellID = 498, filter = "CD"},
+			-- Execution Sentence
+			{spellID = 114157, filter = "CD"},
+			-- Light's Hammer
+			{spellID = 114158, filter = "CD"},
+			-- Blinding Light
+			{spellID = 115750, filter = "CD"},
+			-- Holy Avenger
+			{spellID = 105809, filter = "CD"},
+			-- Devotion Aura
+			{spellID = 31821, filter = "CD"},
+			-- Hand of Sacrifice
+			{spellID = 6940, filter = "CD"},
+			-- Avenging Wrath
+			{spellID = 31884, filter = "CD"},
+			-- Ardent Defender
+			{spellID = 31850, filter = "CD"},
+			-- Hand of Protection
+			{spellID = 1022, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
@@ -1871,26 +1871,26 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
-			-- Archangel
-			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dispersion
 			{spellID = 47585, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fade
-			{spellID = 586, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Focused Will
-			{spellID = 45242, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Infusion
 			{spellID = 10060, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Archangel
+			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vampiric Embrace
+			{spellID = 15286, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Focused Will
+			{spellID = 45242, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Spectral Guise
+			{spellID = 112833, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fade
+			{spellID = 586, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Spirit Shell
+			{spellID = 109964, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Power Word: Shield
 			{spellID = 17, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Renew
 			{spellID = 139, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Spectral Guise
-			{spellID = 112833, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Spirit Shell
-			{spellID = 109964, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Vampiric Embrace
-			{spellID = 15286, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1902,28 +1902,28 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
-			-- Borrowed Time
-			{spellID = 59889, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Insight
 			{spellID = 123267, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Evangelism
-			{spellID = 81661, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Mind Spike (Glyph)
-			{spellID = 81292, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Serendipity
-			{spellID = 63735, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadowy Insight
 			{spellID = 124430, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadow Word: Insanity
-			{spellID = 132573, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Surge of Darkness
-			{spellID = 87160, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Light
 			{spellID = 114255, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Twist of Fate
-			{spellID = 123254, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Surge of Darkness
+			{spellID = 87160, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Serendipity
+			{spellID = 63735, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mending
 			{spellID = 155363, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Mind Spike (Glyph)
+			{spellID = 81292, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Borrowed Time
+			{spellID = 59889, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Twist of Fate
+			{spellID = 123254, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Evangelism
+			{spellID = 81661, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shadow Word: Insanity
+			{spellID = 132573, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
@@ -2017,10 +2017,10 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
-			-- Mind Blast (Glyph)
-			{spellID = 87194, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Void Tendrils
 			{spellID = 114404, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Mind Blast (Glyph)
+			{spellID = 87194, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Saving Grace
 			{spellID = 155274, unitID = "player", caster = "player", filter = "DEBUFF"},
 
@@ -2039,22 +2039,22 @@ C["filger_spells"] = {
 			BarWidth = 186,
 			Position = {"LEFT", T_DE_BUFF_BAR_Anchor},
 
-			-- Devouring Plague
-			{spellID = 2944, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Renew
+			{spellID = 139, unitID = "target", caster = "player", filter = "BUFF"},
+			-- Prayer of Mending
+			{spellID = 41635, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Guardian Spirit
 			{spellID = 47788, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Pain Suppression
 			{spellID = 33206, unitID = "target", caster = "player", filter = "BUFF"},
-			-- Prayer of Mending
-			{spellID = 41635, unitID = "target", caster = "player", filter = "BUFF"},
-			-- Renew
-			{spellID = 139, unitID = "target", caster = "player", filter = "BUFF"},
+			-- Void Entropy
+			{spellID = 155361, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Shadow Word: Pain
 			{spellID = 589, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Vampiric Touch
 			{spellID = 34914, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Void Entropy
-			{spellID = 155361, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Devouring Plague
+			{spellID = 2944, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -2082,58 +2082,58 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
-			-- Archangel
-			{spellID = 81700, filter = "CD"},
-			-- Cascade
-			{spellID = 121135, filter = "CD"},
-			-- Circle of Healing
-			{spellID = 34861, filter = "CD"},
-			-- Desperate Prayer
-			{spellID = 19236, filter = "CD"},
-			-- Dispersion
-			{spellID = 47585, filter = "CD"},
-			-- Divine Star
-			{spellID = 110744, filter = "CD"},
-			-- Guardian Spirit
-			{spellID = 47788, filter = "CD"},
-			-- Halo
-			{spellID = 120517, filter = "CD"},
-			-- Holy Fire
-			{spellID = 14914, filter = "CD"},
-			-- Holy Word: Chastise
-			{spellID = 88625, filter = "CD"},
-			-- Leap of Faith
-			{spellID = 73325, filter = "CD"},
-			-- Mass Dispel
-			{spellID = 32375, filter = "CD"},
-			-- Mind Blast
-			{spellID = 8092, filter = "CD"},
-			-- Pain Suppression
-			{spellID = 33206, filter = "CD"},
-			-- Penance
-			{spellID = 47540, filter = "CD"},
-			-- Prayer of Mending
-			{spellID = 33076, filter = "CD"},
-			-- Psychic Horror
-			{spellID = 64044, filter = "CD"},
-			-- Psychic Scream
-			{spellID = 8122, filter = "CD"},
 			-- Purify
 			{spellID = 527, filter = "CD"},
-			-- Power Infusion
-			{spellID = 10060, filter = "CD"},
-			-- Power Word: Barrier
-			{spellID = 62618, filter = "CD"},
+			-- Mass Dispel
+			{spellID = 32375, filter = "CD"},
+			-- Penance
+			{spellID = 47540, filter = "CD"},
+			-- Mind Blast
+			{spellID = 8092, filter = "CD"},
+			-- Holy Fire
+			{spellID = 14914, filter = "CD"},
 			-- Shadow Word: Death
 			{spellID = 32379, filter = "CD"},
-			-- Silence
-			{spellID = 15487, filter = "CD"},
-			-- Void Tendrils
-			{spellID = 108920, filter = "CD"},
+			-- Circle of Healing
+			{spellID = 34861, filter = "CD"},
+			-- Prayer of Mending
+			{spellID = 33076, filter = "CD"},
+			-- Divine Star
+			{spellID = 110744, filter = "CD"},
+			-- Cascade
+			{spellID = 121135, filter = "CD"},
+			-- Archangel
+			{spellID = 81700, filter = "CD"},
+			-- Holy Word: Chastise
+			{spellID = 88625, filter = "CD"},
 			-- Spectral Guise
 			{spellID = 112833, filter = "CD"},
 			-- Fade
 			{spellID = 586, filter = "CD"},
+			-- Void Tendrils
+			{spellID = 108920, filter = "CD"},
+			-- Halo
+			{spellID = 120517, filter = "CD"},
+			-- Psychic Scream
+			{spellID = 8122, filter = "CD"},
+			-- Psychic Horror
+			{spellID = 64044, filter = "CD"},
+			-- Silence
+			{spellID = 15487, filter = "CD"},
+			-- Leap of Faith
+			{spellID = 73325, filter = "CD"},
+			-- Power Infusion
+			{spellID = 10060, filter = "CD"},
+			-- Dispersion
+			{spellID = 47585, filter = "CD"},
+			-- Desperate Prayer
+			{spellID = 19236, filter = "CD"},
+			-- Pain Suppression
+			{spellID = 33206, filter = "CD"},
+			-- Guardian Spirit
+			{spellID = 47788, filter = "CD"},
+			-- Power Word: Barrier
+			{spellID = 62618, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
@@ -2190,42 +2190,42 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
+			-- Slice and Dice
+			{spellID = 5171, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Recuperate
+			{spellID = 73651, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Adrenaline Rush
 			{spellID = 13750, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Evasion
+			{spellID = 5277, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Envenom
+			{spellID = 32645, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shadow Dance
+			{spellID = 51713, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Master of Subtlety
+			{spellID = 31665, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cloak of Shadows
+			{spellID = 31224, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vanish
+			{spellID = 1856, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combat Readiness
+			{spellID = 74001, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combat Insight
+			{spellID = 74002, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shadow Reflection
+			{spellID = 152151, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cheating Death
+			{spellID = 45182, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blade Flurry
 			{spellID = 13877, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Burst of Speed
 			{spellID = 108212, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Cheating Death
-			{spellID = 45182, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Cloak of Shadows
-			{spellID = 31224, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Combat Insight
-			{spellID = 74002, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Combat Readiness
-			{spellID = 74001, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Envenom
-			{spellID = 32645, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Evasion
-			{spellID = 5277, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Feint
-			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Master of Subtlety
-			{spellID = 31665, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Recuperate
-			{spellID = 73651, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadow Dance
-			{spellID = 51713, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadow Reflection
-			{spellID = 152151, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Slice and Dice
-			{spellID = 5171, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sprint
 			{spellID = 2983, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Feint
+			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Subterfuge
 			{spellID = 115192, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Vanish
-			{spellID = 1856, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2239,14 +2239,14 @@ C["filger_spells"] = {
 			-- Buffs
 			-- Anticipation
 			{spellID = 115189, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Blindside
-			{spellID = 121153, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Deep Insight
-			{spellID = 84747, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Moderate Insight
-			{spellID = 84746, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shallow Insight
 			{spellID = 84745, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Moderate Insight
+			{spellID = 84746, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Deep Insight
+			{spellID = 84747, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blindside
+			{spellID = 121153, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Item Sets
 			-- Deathly Shadows (T18)
@@ -2320,24 +2320,24 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
-			-- Crippling Poison
-			{spellID = 3409, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Deadly Poison
-			{spellID = 2818, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Find Weakness
-			{spellID = 91021, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Rupture
+			{spellID = 1943, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Garrote
 			{spellID = 703, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Gouge
 			{spellID = 1776, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Hemorrhage
-			{spellID = 16511, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Revealing Strike
 			{spellID = 84617, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Rupture
-			{spellID = 1943, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Hemorrhage
+			{spellID = 16511, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Find Weakness
+			{spellID = 91021, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Vendetta
 			{spellID = 79140, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Deadly Poison
+			{spellID = 2818, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Crippling Poison
+			{spellID = 3409, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Wound Poison
 			{spellID = 8680, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
@@ -2367,36 +2367,36 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
-			-- Adrenaline Rush
-			{spellID = 13750, filter = "CD"},
-			-- Combat Readiness
-			{spellID = 74001, filter = "CD"},
-			-- Gouge
-			{spellID = 1776, filter = "CD"},
-			-- Kick
-			{spellID = 1766, filter = "CD"},
-			-- Kidney Shot
-			{spellID = 408, filter = "CD"},
-			-- Killing Spree
-			{spellID = 51690, filter = "CD"},
-			-- Premiditation
-			{spellID = 14183, filter = "CD"},
-			-- Shadow Dance
-			{spellID = 51713, filter = "CD"},
-			-- Shadow Reflection
-			{spellID = 152151, filter = "CD"},
-			-- Sprint
-			{spellID = 2983, filter = "CD"},
 			-- Stealth
 			{spellID = 1784, filter = "CD"},
-			-- Vanish
-			{spellID = 1856, filter = "CD"},
-			-- Vendetta
-			{spellID = 79140, filter = "CD"},
-			-- Marked for Death
-			{spellID = 137619, filter = "CD"},
+			-- Kick
+			{spellID = 1766, filter = "CD"},
+			-- Gouge
+			{spellID = 1776, filter = "CD"},
+			-- Kidney Shot
+			{spellID = 408, filter = "CD"},
+			-- Premiditation
+			{spellID = 14183, filter = "CD"},
 			-- Death from Above
 			{spellID = 152150, filter = "CD"},
+			-- Sprint
+			{spellID = 2983, filter = "CD"},
+			-- Shadow Dance
+			{spellID = 51713, filter = "CD"},
+			-- Marked for Death
+			{spellID = 137619, filter = "CD"},
+			-- Killing Spree
+			{spellID = 51690, filter = "CD"},
+			-- Vendetta
+			{spellID = 79140, filter = "CD"},
+			-- Shadow Reflection
+			{spellID = 152151, filter = "CD"},
+			-- Combat Readiness
+			{spellID = 74001, filter = "CD"},
+			-- Vanish
+			{spellID = 1856, filter = "CD"},
+			-- Adrenaline Rush
+			{spellID = 13750, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
