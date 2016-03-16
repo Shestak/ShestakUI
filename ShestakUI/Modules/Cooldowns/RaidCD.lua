@@ -18,7 +18,6 @@ local currentNumResses = 0
 local charges = nil
 local inBossCombat = nil
 local timer = 0
-local inEncounter
 local Ressesbars = {}
 local bars = {}
 
@@ -283,7 +282,7 @@ local OnEvent = function(self, event, ...)
 		end
 	end
 	if event == "SPELL_UPDATE_CHARGES" then
-		charges = select(1, GetSpellCharges(20484))
+		charges = GetSpellCharges(20484)
 		if charges then
 			if not inBossCombat then
 				for _, v in pairs(bars) do
