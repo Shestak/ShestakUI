@@ -27,28 +27,26 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
-			-- Anti-Magic Shell
-			{spellID = 48707, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bone Shield
 			{spellID = 49222, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Bone Wall (T16)
-			{spellID = 144948, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dancing Rune Weapon
-			{spellID = 81256, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Death's Advance
-			{spellID = 96268, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vampiric Blood
+			{spellID = 55233, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Icebound Fortitude
 			{spellID = 48792, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Anti-Magic Shell
+			{spellID = 48707, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dancing Rune Weapon
+			{spellID = 81256, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lichborne
 			{spellID = 49039, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pillar of Frost
 			{spellID = 51271, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Unholy Blight
-			{spellID = 115989, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Vampiric Blood
-			{spellID = 55233, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Desecrated Ground
 			{spellID = 115018, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Death's Advance
+			{spellID = 96268, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Unholy Blight
+			{spellID = 115989, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Summon Gargoyle
 			{spellID = 49206, filter = "ICD", trigger = "NONE", duration = 40},
 		},
@@ -62,24 +60,24 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
-			-- Blood Charge
-			{spellID = 114851, unitID = "player", caster = "player", filter = "BUFF", count = 10},
+			-- Scent of Blood
+			{spellID = 50421, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Crimson Scourge
 			{spellID = 81141, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dark Transformation
-			{spellID = 63560, unitID = "pet", caster = "player", filter = "BUFF"},
 			-- Freezing Fog
 			{spellID = 59052, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Killing Machine
 			{spellID = 51124, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Scent of Blood
-			{spellID = 50421, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadow Infusion
-			{spellID = 91342, unitID = "pet", caster = "player", filter = "BUFF", count = 5},
 			-- Sudden Doom
 			{spellID = 81340, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unholy Strength
 			{spellID = 53365, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dark Transformation
+			{spellID = 63560, unitID = "pet", caster = "player", filter = "BUFF"},
+			-- Shadow Infusion
+			{spellID = 91342, unitID = "pet", caster = "player", filter = "BUFF", count = 5},
+			-- Blood Charge
+			{spellID = 114851, unitID = "player", caster = "player", filter = "BUFF", count = 10},
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
@@ -202,58 +200,58 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
-			-- Anti-Magic Shell
-			{spellID = 48707, filter = "CD"},
-			-- Anti-Magic Zone
-			{spellID = 51052, filter = "CD"},
-			-- Dancing Rune Weapon
-			{spellID = 49028, filter = "CD"},
-			-- Dark Simulacrum
-			{spellID = 77606, filter = "CD"},
-			-- Death and Decay
-			{spellID = 43265, filter = "CD"},
-			-- Death Grip
-			{spellID = 49576, filter = "CD"},
-			-- Death Pact
-			{spellID = 48743, filter = "CD"},
-			-- Death's Advance
-			{spellID = 96268, filter = "CD"},
-			-- Desecrated Ground
-			{spellID = 108201, filter = "CD"},
-			-- Gnaw (Ghoul)
-			{spellID = 47481, filter = "CD"},
-			-- Gorefiend's Grasp
-			{spellID = 108199, filter = "CD"},
-			-- Icebound Fortitude
-			{spellID = 48792, filter = "CD"},
-			-- Lichborne
-			{spellID = 49039, filter = "CD"},
 			-- Mind Freeze
 			{spellID = 47528, filter = "CD"},
-			-- Outbreak
-			{spellID = 77575, filter = "CD"},
-			-- Pillar of Frost
-			{spellID = 51271, filter = "CD"},
-			-- Plague Leech
-			{spellID = 123693, filter = "CD"},
-			-- Raise Dead
-			{spellID = 46584, filter = "CD"},
-			-- Remorseless Winter
-			{spellID = 108200, filter = "CD"},
-			-- Rune Tap
-			{spellID = 48982, filter = "CD"},
-			-- Soul Reaper
-			{spellID = 130736, filter = "CD"},
 			-- Strangulate
 			{spellID = 47476, filter = "CD"},
-			-- Summon Gargoyle
-			{spellID = 49206, filter = "CD"},
-			-- Unholy Blight
-			{spellID = 115989, filter = "CD"},
+			-- Gnaw (Ghoul)
+			{spellID = 47481, filter = "CD"},
+			-- Remorseless Winter
+			{spellID = 108200, filter = "CD"},
+			-- Dark Simulacrum
+			{spellID = 77606, filter = "CD"},
+			-- Soul Reaper
+			{spellID = 130736, filter = "CD"},
+			-- Death Grip
+			{spellID = 49576, filter = "CD"},
+			-- Plague Leech
+			{spellID = 123693, filter = "CD"},
+			-- Death and Decay
+			{spellID = 43265, filter = "CD"},
+			-- Death's Advance
+			{spellID = 96268, filter = "CD"},
+			-- Rune Tap
+			{spellID = 48982, filter = "CD"},
+			-- Anti-Magic Shell
+			{spellID = 48707, filter = "CD"},
 			-- Vampiric Blood
 			{spellID = 55233, filter = "CD"},
+			-- Pillar of Frost
+			{spellID = 51271, filter = "CD"},
+			-- Outbreak
+			{spellID = 77575, filter = "CD"},
+			-- Gorefiend's Grasp
+			{spellID = 108199, filter = "CD"},
+			-- Raise Dead
+			{spellID = 46584, filter = "CD"},
+			-- Dancing Rune Weapon
+			{spellID = 49028, filter = "CD"},
+			-- Unholy Blight
+			{spellID = 115989, filter = "CD"},
 			-- Breath of Sindragosa
 			{spellID = 152279, filter = "CD"},
+			-- Lichborne
+			{spellID = 49039, filter = "CD"},
+			-- Desecrated Ground
+			{spellID = 108201, filter = "CD"},
+			-- Death Pact
+			{spellID = 48743, filter = "CD"},
+			-- Anti-Magic Zone
+			{spellID = 51052, filter = "CD"},
+			-- Icebound Fortitude
+			{spellID = 48792, filter = "CD"},
+			-- Summon Gargoyle
+			{spellID = 49206, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
