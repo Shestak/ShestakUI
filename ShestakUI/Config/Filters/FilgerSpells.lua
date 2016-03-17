@@ -81,9 +81,9 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
-			-- Melee DPS (Crit, Proc)
+			-- Spirit of the Warlords (Crit, Proc)
 			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tanking (Crit, Proc)
+			-- Strength of Steel (Crit, Proc)
 			{spellID = 162917, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 1.1: Alchemy Stones
 			-- Strength
@@ -96,14 +96,14 @@ C["filger_spells"] = {
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS [Strength] (Versatility, Use)
+			-- Damage [Strength] (Versatility, Use)
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS [Strength] (Versatility, Proc)
+			-- Damage [Strength] (Versatility, Proc)
 			{spellID = 182063, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
 			-- Gronntooth War Horn (Strength, Proc)
 			{spellID = 201405, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.0: Tanking
+			-- Tanking
 			-- Battering Talisman (Haste, Proc)
 			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blast Furnace Door (Mastery, Proc)
@@ -122,7 +122,6 @@ C["filger_spells"] = {
 			{spellID = 176982, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tablet of Turnbuckle Teamwork (Bonus Armor, Use)
 			{spellID = 176873, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.1: Tanking
 			-- Anzu's Cursed Plume (Mastery, Proc)
 			{spellID = 183931, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enforcer's Stun Grenade (Versatility, Use)
@@ -133,7 +132,7 @@ C["filger_spells"] = {
 			{spellID = 184770, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Xeri'tac's Unhatched Egg Sac (Mastery, Proc)
 			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 4.0: Melee DPS [Strength]
+			-- Damage [Strength]
 			-- Forgemaster's Insignia (Multistrike, Proc)
 			{spellID = 177096, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Formidable Fang (Multistrike, Proc)
@@ -148,7 +147,6 @@ C["filger_spells"] = {
 			{spellID = 177040, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vial of Convulsive Shadows (Multistrike, Use)
 			{spellID = 176874, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 4.1: Melee DPS [Strength]
 			-- Bonemaw's Big Toe (Crit, Use)
 			{spellID = 165532, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Emberscale Talisman (Versatility, Use)
@@ -376,13 +374,13 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
-			-- Caster DPS (Crit, Proc)
+			-- Nightmare Fire (Crit, Proc)
 			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Healing (Spirit, Proc)
+			-- Visions of the Future (Spirit, Proc)
 			{spellID = 162913, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS (Crit, Proc)
+			-- Spirit of the Warlords (Crit, Proc)
 			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tanking (Crit, Proc)
+			-- Strength of Steel (Crit, Proc)
 			{spellID = 162917, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 1.1: Alchemy Stones
 			-- Agility
@@ -406,13 +404,13 @@ C["filger_spells"] = {
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS (Versatility, Use)
+			-- Damage [Intellect] (Versatility, Use)
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS (Versatility, Proc)
+			-- Damage [Intellect] (Versatility, Proc)
 			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS [Agility] (Versatility, Proc)
+			-- Damage [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.0: Tanking
+			-- Tanking
 			-- Battering Talisman (Haste, Proc)
 			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blast Furnace Door (Mastery, Proc)
@@ -431,7 +429,6 @@ C["filger_spells"] = {
 			{spellID = 176982, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tablet of Turnbuckle Teamwork (Bonus Armor, Use)
 			{spellID = 176873, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.1: Tanking
 			-- Anzu's Cursed Plume (Mastery, Proc)
 			{spellID = 183931, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enforcer's Stun Grenade (Versatility, Use)
@@ -440,7 +437,7 @@ C["filger_spells"] = {
 			{spellID = 184770, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Xeri'tac's Unhatched Egg Sac (Mastery, Proc)
 			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 4.0: Melee DPS [Agility]
+			-- Damage [Agility]
 			-- Beating Heart of the Mountain (Multistrike, Use)
 			{spellID = 176878, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blackheart Enforcer's Medallion (Multistrike, Proc)
@@ -455,7 +452,6 @@ C["filger_spells"] = {
 			{spellID = 177035, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Scales of Doom (Multistrike, Proc)
 			{spellID = 177038, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 4.1: Melee DPS [Agility]
 			-- Gor'ashan's Lodestone Spike (Multistrike, Use)
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
@@ -468,7 +464,7 @@ C["filger_spells"] = {
 			{spellID = 184293, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Witherbark's Branch (Haste, Proc)
 			{spellID = 165822, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 5.0: Caster DPS
+			-- Damage [Intellect]
 			-- Blackiron Micro Crucible (Multistrike, Proc)
 			{spellID = 177081, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Copeland's Clarity (Spellpower, Use)
@@ -483,7 +479,6 @@ C["filger_spells"] = {
 			{spellID = 177046, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shards of Nothing (Haste, Use)
 			{spellID = 176875, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 5.1: Caster DPS
 			-- Desecrated Shadowmoon Insignia (Intellect, Proc)
 			{spellID = 183924, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Coagulated Genesaur Blood (Multistrike, Proc)
@@ -492,7 +487,7 @@ C["filger_spells"] = {
 			{spellID = 165543, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fleshrender's Meathook (Haste, Use)
 			{spellID = 165531, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 6.0: Healing
+			-- Healing
 			-- Auto-Repairing Autoclave (Haste, Proc)
 			{spellID = 177086, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elementalist's Shielding Talisman (Multistrike, Proc)
@@ -505,7 +500,6 @@ C["filger_spells"] = {
 			{spellID = 176978, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ironspike Chew Toy (Spirit, Proc)
 			{spellID = 177060, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 6.1: Healing
 			-- Intuition's Gift (Crit, Use)
 			{spellID = 183929, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Leaf of the Ancient Protectors (Versatility, Proc)
@@ -745,7 +739,7 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
-			-- Ranged DPS (Crit, Proc)
+			-- Spirit of the Warlords (Crit, Proc)
 			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 1.1: Alchemy Stones
 			-- Agility
@@ -756,14 +750,14 @@ C["filger_spells"] = {
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ranged DPS [Agility] (Versatility, Use)
+			-- Damage [Agility] (Versatility, Use)
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ranged DPS [Agility] (Versatility, Proc)
+			-- Damage [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
 			-- Infallible Tracking Charm [Damage, Proc]
 			{spellID = 201408, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.0: Ranged DPS [Agility]
+			-- Damage [Agility]
 			-- Beating Heart of the Mountain (Multistrike, Use)
 			{spellID = 176878, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blackheart Enforcer's Medallion (Multistrike, Proc)
@@ -778,7 +772,6 @@ C["filger_spells"] = {
 			{spellID = 177035, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Scales of Doom (Multistrike, Proc)
 			{spellID = 177038, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.1: Ranged DPS [Agility]
 			-- Gor'ashan's Lodestone Spike (Multistrike, Use)
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
@@ -1024,7 +1017,7 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
-			-- Caster DPS (Crit, Proc)
+			-- Nightmare Fire (Crit, Proc)
 			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 1.1: Alchemy Stones
 			-- Intellect
@@ -1035,14 +1028,14 @@ C["filger_spells"] = {
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS (Versatility, Use)
+			-- Damage [Intellect] (Versatility, Use)
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS (Versatility, Proc)
+			-- Damage [Intellect] (Versatility, Proc)
 			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
 			-- Orb Of Voidsight (Haste, Proc)
 			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.0: Caster DPS
+			-- Damage [Intellect]
 			-- Blackiron Micro Crucible (Multistrike, Proc)
 			{spellID = 177081, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Copeland's Clarity (Spellpower, Use)
@@ -1057,7 +1050,6 @@ C["filger_spells"] = {
 			{spellID = 177046, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shards of Nothing (Haste, Use)
 			{spellID = 176875, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.1: Caster DPS
 			-- Desecrated Shadowmoon Insignia (Intellect, Proc)
 			{spellID = 183924, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Coagulated Genesaur Blood (Multistrike, Proc)
@@ -1317,11 +1309,11 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
-			-- Healing (Spirit, Proc)
+			-- Visions of the Future (Spirit, Proc)
 			{spellID = 162913, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS (Crit, Proc)
+			-- Spirit of the Warlords (Crit, Proc)
 			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tanking (Crit, Proc)
+			-- Strength of Steel (Crit, Proc)
 			{spellID = 162917, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 1.1: Alchemy Stones
 			-- Agility
@@ -1338,16 +1330,16 @@ C["filger_spells"] = {
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS [Agility] (Versatility, Use)
+			-- Damage [Agility] (Versatility, Use)
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS [Agility] (Versatility, Proc)
+			-- Damage [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
 			-- Infallible Tracking Charm [Damage, Proc]
 			{spellID = 201408, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Orb Of Voidsight (Haste, Proc)
 			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.0: Tanking
+			-- Tanking
 			-- Battering Talisman (Haste, Proc)
 			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blast Furnace Door (Mastery, Proc)
@@ -1366,7 +1358,6 @@ C["filger_spells"] = {
 			{spellID = 176982, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tablet of Turnbuckle Teamwork (Bonus Armor, Use)
 			{spellID = 176873, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.1: Tanking
 			-- Anzu's Cursed Plume (Mastery, Proc)
 			{spellID = 183931, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enforcer's Stun Grenade (Versatility, Use)
@@ -1375,7 +1366,7 @@ C["filger_spells"] = {
 			{spellID = 184770, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Xeri'tac's Unhatched Egg Sac (Mastery, Proc)
 			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 4.0: Melee DPS [Agility]
+			-- Damage [Agility]
 			-- Beating Heart of the Mountain (Multistrike, Use)
 			{spellID = 176878, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blackheart Enforcer's Medallion (Multistrike, Proc)
@@ -1390,7 +1381,6 @@ C["filger_spells"] = {
 			{spellID = 177035, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Scales of Doom (Multistrike, Proc)
 			{spellID = 177038, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 4.1: Melee DPS [Agility]
 			-- Gor'ashan's Lodestone Spike (Multistrike, Use)
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
@@ -1403,7 +1393,7 @@ C["filger_spells"] = {
 			{spellID = 184293, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Witherbark's Branch (Haste, Proc)
 			{spellID = 165822, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 5.0: Healing
+			-- Healing
 			-- Auto-Repairing Autoclave (Haste, Proc)
 			{spellID = 177086, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elementalist's Shielding Talisman (Multistrike, Proc)
@@ -1416,7 +1406,6 @@ C["filger_spells"] = {
 			{spellID = 176978, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ironspike Chew Toy (Spirit, Proc)
 			{spellID = 177060, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 5.1: Healing
 			-- Intuition's Gift (Crit, Use)
 			{spellID = 183929, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Leaf of the Ancient Protectors (Versatility, Proc)
@@ -1628,11 +1617,11 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
-			-- Healing (Spirit, Proc)
+			-- Visions of the Future (Spirit, Proc)
 			{spellID = 162913, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS (Crit, Proc)
+			-- Spirit of the Warlords (Crit, Proc)
 			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tanking (Crit, Proc)
+			-- Strength of Steel (Crit, Proc)
 			{spellID = 162917, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 1.1: Alchemy Stones
 			-- Strength
@@ -1649,16 +1638,16 @@ C["filger_spells"] = {
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS [Strength] (Versatility, Use)
+			-- Damage [Strength] (Versatility, Use)
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS [Strength] (Versatility, Proc)
+			-- Damage [Strength] (Versatility, Proc)
 			{spellID = 182063, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
 			-- Gronntooth War Horn (Strength, Proc)
 			{spellID = 201405, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Orb Of Voidsight (Haste, Proc)
 			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.0: Tanking
+			-- Tanking
 			-- Battering Talisman (Haste, Proc)
 			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blast Furnace Door (Mastery, Proc)
@@ -1677,7 +1666,6 @@ C["filger_spells"] = {
 			{spellID = 176982, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tablet of Turnbuckle Teamwork (Bonus Armor, Use)
 			{spellID = 176873, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.1: Tanking
 			-- Anzu's Cursed Plume (Mastery, Proc)
 			{spellID = 183931, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enforcer's Stun Grenade (Versatility, Use)
@@ -1686,7 +1674,7 @@ C["filger_spells"] = {
 			{spellID = 184770, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Xeri'tac's Unhatched Egg Sac (Mastery, Proc)
 			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 4.0: Melee DPS [Strength]
+			-- Damage [Strength]
 			-- Forgemaster's Insignia (Multistrike, Proc)
 			{spellID = 177096, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Formidable Fang (Multistrike, Proc)
@@ -1701,7 +1689,6 @@ C["filger_spells"] = {
 			{spellID = 177040, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vial of Convulsive Shadows (Multistrike, Use)
 			{spellID = 176874, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 4.1: Melee DPS [Strength]
 			-- Bonemaw's Big Toe (Crit, Use)
 			{spellID = 165532, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Emberscale Talisman (Versatility, Use)
@@ -1710,7 +1697,7 @@ C["filger_spells"] = {
 			{spellID = 165822, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unending Hunger (Strength, Proc)
 			{spellID = 183941, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 5.0: Healing
+			-- Healing
 			-- Auto-Repairing Autoclave (Haste, Proc)
 			{spellID = 177086, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elementalist's Shielding Talisman (Multistrike, Proc)
@@ -1723,7 +1710,6 @@ C["filger_spells"] = {
 			{spellID = 176978, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ironspike Chew Toy (Spirit, Proc)
 			{spellID = 177060, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 6.1: Healing
 			-- Intuition's Gift (Crit, Use)
 			{spellID = 183929, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Leaf of the Ancient Protectors (Versatility, Proc)
@@ -1927,9 +1913,9 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
-			-- Caster DPS (Crit, Proc)
+			-- Nightmare Fire (Crit, Proc)
 			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Healing (Spirit, Proc)
+			-- Visions of the Future (Spirit, Proc)
 			{spellID = 162913, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 1.1: Alchemy Stones
 			-- Intellect
@@ -1942,14 +1928,14 @@ C["filger_spells"] = {
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS (Versatility, Use)
+			-- Damage [Intellect] (Versatility, Use)
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS (Versatility, Proc)
+			-- Damage [Intellect] (Versatility, Proc)
 			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
 			-- Orb Of Voidsight (Haste, Proc)
 			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.0: Caster DPS
+			-- Damage [Intellect]
 			-- Blackiron Micro Crucible (Multistrike, Proc)
 			{spellID = 177081, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Copeland's Clarity (Spellpower, Use)
@@ -1964,7 +1950,6 @@ C["filger_spells"] = {
 			{spellID = 177046, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shards of Nothing (Haste, Use)
 			{spellID = 176875, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.1: Caster DPS
 			-- Desecrated Shadowmoon Insignia (Intellect, Proc)
 			{spellID = 183924, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Coagulated Genesaur Blood (Multistrike, Proc)
@@ -1973,7 +1958,7 @@ C["filger_spells"] = {
 			{spellID = 165543, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fleshrender's Meathook (Haste, Use)
 			{spellID = 165531, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 4.0: Healing
+			-- Healing
 			-- Auto-Repairing Autoclave (Haste, Proc)
 			{spellID = 177086, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elementalist's Shielding Talisman (Multistrike, Proc)
@@ -1986,7 +1971,6 @@ C["filger_spells"] = {
 			{spellID = 176978, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ironspike Chew Toy (Spirit, Proc)
 			{spellID = 177060, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 4.1: Healing
 			-- Intuition's Gift (Crit, Use)
 			{spellID = 183929, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Leaf of the Ancient Protectors (Versatility, Proc)
@@ -2254,7 +2238,7 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
-			-- Melee DPS (Crit, Proc)
+			-- Spirit of the Warlords (Crit, Proc)
 			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 1.1: Alchemy Stones
 			-- Agility
@@ -2265,14 +2249,14 @@ C["filger_spells"] = {
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS [Agility] (Versatility, Use)
+			-- Damage [Agility] (Versatility, Use)
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS [Agility] (Versatility, Proc)
+			-- Damage [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
 			-- Infallible Tracking Charm [Damage, Proc]
 			{spellID = 201408, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.0: Melee DPS [Agility]
+			-- Damage [Agility]
 			-- Beating Heart of the Mountain (Multistrike, Use)
 			{spellID = 176878, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blackheart Enforcer's Medallion (Multistrike, Proc)
@@ -2287,7 +2271,6 @@ C["filger_spells"] = {
 			{spellID = 177035, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Scales of Doom (Multistrike, Proc)
 			{spellID = 177038, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.1: Melee DPS [Agility]
 			-- Gor'ashan's Lodestone Spike (Multistrike, Use)
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
@@ -2497,11 +2480,11 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
-			-- Caster DPS (Crit, Proc)
+			-- Nightmare Fire (Crit, Proc)
 			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Healing (Spirit, Proc)
+			-- Visions of the Future (Spirit, Proc)
 			{spellID = 162913, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS (Crit, Proc)
+			-- Spirit of the Warlords (Crit, Proc)
 			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 1.1: Alchemy Stones
 			-- Agility
@@ -2518,18 +2501,18 @@ C["filger_spells"] = {
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS (Versatility, Use)
+			-- Damage [Intellect] (Versatility, Use)
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS (Versatility, Proc)
+			-- Damage [Intellect] (Versatility, Proc)
 			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS [Agility] (Versatility, Proc)
+			-- Damage [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
 			-- Infallible Tracking Charm [Damage, Proc]
 			{spellID = 201408, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Orb Of Voidsight (Haste, Proc)
 			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.0: Melee DPS [Agility]
+			-- Damage [Agility]
 			-- Beating Heart of the Mountain (Multistrike, Use)
 			{spellID = 176878, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blackheart Enforcer's Medallion (Multistrike, Proc)
@@ -2544,7 +2527,6 @@ C["filger_spells"] = {
 			{spellID = 177035, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Scales of Doom (Multistrike, Proc)
 			{spellID = 177038, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.1: Melee DPS [Agility]
 			-- Gor'ashan's Lodestone Spike (Multistrike, Use)
 			{spellID = 165542, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kihra's Adrenaline Injector (Mastery, Use)
@@ -2557,7 +2539,7 @@ C["filger_spells"] = {
 			{spellID = 184293, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Witherbark's Branch (Haste, Proc)
 			{spellID = 165822, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 4.0: Caster DPS
+			-- Damage [Intellect]
 			-- Blackiron Micro Crucible (Multistrike, Proc)
 			{spellID = 177081, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Copeland's Clarity (Spellpower, Use)
@@ -2572,7 +2554,6 @@ C["filger_spells"] = {
 			{spellID = 177046, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shards of Nothing (Haste, Use)
 			{spellID = 176875, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 4.1: Caster DPS
 			-- Desecrated Shadowmoon Insignia (Intellect, Proc)
 			{spellID = 183924, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Coagulated Genesaur Blood (Multistrike, Proc)
@@ -2581,7 +2562,7 @@ C["filger_spells"] = {
 			{spellID = 165543, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fleshrender's Meathook (Haste, Use)
 			{spellID = 165531, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 5.0: Healing
+			-- Healing
 			-- Auto-Repairing Autoclave (Haste, Proc)
 			{spellID = 177086, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elementalist's Shielding Talisman (Multistrike, Proc)
@@ -2594,7 +2575,6 @@ C["filger_spells"] = {
 			{spellID = 176978, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ironspike Chew Toy (Spirit, Proc)
 			{spellID = 177060, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 5.1: Healing
 			-- Intuition's Gift (Crit, Use)
 			{spellID = 183929, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Leaf of the Ancient Protectors (Versatility, Proc)
@@ -2816,7 +2796,7 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
-			-- Caster DPS (Crit, Proc)
+			-- Nightmare Fire (Crit, Proc)
 			{spellID = 162919, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 1.1: Alchemy Stones
 			-- Intellect
@@ -2827,14 +2807,14 @@ C["filger_spells"] = {
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS (Versatility, Use)
+			-- Damage [Intellect] (Versatility, Use)
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Caster DPS (Versatility, Proc)
+			-- Damage [Intellect] (Versatility, Proc)
 			{spellID = 182058, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
 			-- Orb Of Voidsight (Haste, Proc)
 			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.0: Caster DPS
+			-- Damage [Intellect]
 			-- Blackiron Micro Crucible (Multistrike, Proc)
 			{spellID = 177081, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Copeland's Clarity (Spellpower, Use)
@@ -2849,7 +2829,6 @@ C["filger_spells"] = {
 			{spellID = 177046, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shards of Nothing (Haste, Use)
 			{spellID = 176875, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.1: Caster DPS
 			-- Desecrated Shadowmoon Insignia (Intellect, Proc)
 			{spellID = 183924, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Coagulated Genesaur Blood (Multistrike, Proc)
@@ -3073,9 +3052,9 @@ C["filger_spells"] = {
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
-			-- Melee DPS (Crit, Proc)
+			-- Spirit of the Warlords (Crit, Proc)
 			{spellID = 162915, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tanking (Crit, Proc)
+			-- Strength of Steel (Crit, Proc)
 			{spellID = 162917, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 1.1: Alchemy Stones
 			-- Strength
@@ -3088,14 +3067,14 @@ C["filger_spells"] = {
 			-- 2.0: PvP Trinkets
 			-- Battlemaster (Health, Use)
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS [Strength] (Versatility, Use)
+			-- Damage [Strength] (Versatility, Use)
 			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Melee DPS [Strength] (Versatility, Proc)
+			-- Damage [Strength] (Versatility, Proc)
 			{spellID = 182063, unitID = "player", caster = "player", filter = "BUFF"},
 			-- 3.0: Heirlooms
 			-- Gronntooth War Horn (Strength, Proc)
 			{spellID = 201405, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.0: Tanking
+			-- Tanking
 			-- Battering Talisman (Haste, Proc)
 			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blast Furnace Door (Mastery, Proc)
@@ -3114,7 +3093,6 @@ C["filger_spells"] = {
 			{spellID = 176982, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tablet of Turnbuckle Teamwork (Bonus Armor, Use)
 			{spellID = 176873, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.1: Tanking
 			-- Anzu's Cursed Plume (Mastery, Proc)
 			{spellID = 183931, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enforcer's Stun Grenade (Versatility, Use)
@@ -3125,7 +3103,7 @@ C["filger_spells"] = {
 			{spellID = 184770, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Xeri'tac's Unhatched Egg Sac (Mastery, Proc)
 			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 4.0: Melee DPS [Strength]
+			-- Damage [Strength]
 			-- Forgemaster's Insignia (Multistrike, Proc)
 			{spellID = 177096, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Formidable Fang (Multistrike, Proc)
@@ -3140,7 +3118,6 @@ C["filger_spells"] = {
 			{spellID = 177040, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vial of Convulsive Shadows (Multistrike, Use)
 			{spellID = 176874, unitID = "player", caster = "player", filter = "BUFF"},
-			-- 3.1: Melee DPS [Strength]
 			-- Bonemaw's Big Toe (Crit, Use)
 			{spellID = 165532, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Emberscale Talisman (Versatility, Use)
