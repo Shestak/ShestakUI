@@ -2451,30 +2451,30 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
-			-- Ancestral Guidance
-			{spellID = 108281, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ascendance
-			{spellID = 114049, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Astral Shift
-			{spellID = 108271, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Elemental Mastery
-			{spellID = 16166, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lightning Shield
-			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF", spec = 1, count = 10},
 			-- Maelstorm Weapon
 			{spellID = 53817, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nature Guardian
-			{spellID = 31616, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lightning Shield
+			{spellID = 324, unitID = "player", caster = "player", filter = "BUFF", spec = 1, count = 10},
 			-- Shamanistic Rage
 			{spellID = 30823, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elemental Mastery
+			{spellID = 16166, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ascendance
+			{spellID = 114049, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spiritwalker's Grace
 			{spellID = 79206, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stone Bulwark
-			{spellID = 114893, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unleash Flame
 			{spellID = 73683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unleash Life
 			{spellID = 73685, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nature Guardian
+			{spellID = 31616, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Stone Bulwark
+			{spellID = 114893, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ancestral Guidance
+			{spellID = 108281, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Astral Shift
+			{spellID = 108271, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2486,10 +2486,10 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
-			-- Elemental Blast
-			{spellID = 118522, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lava Surge
 			{spellID = 77762, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elemental Blast
+			{spellID = 118522, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tidal Waves
 			{spellID = 53390, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elemental Fusion
@@ -2625,14 +2625,14 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
-			-- Earthgrab
-			{spellID = 64695, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Stormstrike
+			{spellID = 17364, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Flame Shock
 			{spellID = 8050, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Shock
 			{spellID = 8056, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Stormstrike
-			{spellID = 17364, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Earthgrab
+			{spellID = 64695, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
 			-- Mark of Doom [Prophecy of Fear]
@@ -2678,52 +2678,52 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
-			-- Ancestral Guidance
-			{spellID = 108281, filter = "CD"},
-			-- Ancestral Swiftness
-			{spellID = 16188, filter = "CD"},
-			-- Ascendance
-			{spellID = 114049, filter = "CD"},
-			-- Astral Shift
-			{spellID = 108271, filter = "CD"},
 			-- Cleanse Spirit
 			{spellID = 51886, filter = "CD"},
-			-- Earthbind Totem
-			{spellID = 2484, filter = "CD"},
-			-- Earth Shock
-			{spellID = 8042, filter = "CD"},
-			-- Elemental Blast
-			{spellID = 117014, filter = "CD"},
-			-- Feral Spirit
-			{spellID = 51533, filter = "CD"},
-			-- Healing Rain
-			{spellID = 73920, filter = "CD"},
-			-- Hex
-			{spellID = 51514, filter = "CD"},
-			-- Lava Burst
-			{spellID = 51505, filter = "CD"},
-			-- Lava Lash
-			{spellID = 60103, filter = "CD"},
-			-- Riptide
-			{spellID = 61295, filter = "CD"},
-			-- Shamanistic Rage
-			{spellID = 30823, filter = "CD"},
-			-- Spiritwalker's Grace
-			{spellID = 79206, filter = "CD"},
-			-- Stone Bulwark Totem
-			{spellID = 108270, filter = "CD"},
-			-- Stormstrike
-			{spellID = 17364, filter = "CD"},
-			-- Thunderstorm
-			{spellID = 51490, filter = "CD"},
-			-- Tremor Totem
-			{spellID = 8143, filter = "CD"},
-			-- Unleash Elements
-			{spellID = 73680, filter = "CD"},
 			-- Wind Shear
 			{spellID = 57994, filter = "CD"},
+			-- Hex
+			{spellID = 51514, filter = "CD"},
+			-- Earth Shock
+			{spellID = 8042, filter = "CD"},
+			-- Lava Burst
+			{spellID = 51505, filter = "CD"},
+			-- Riptide
+			{spellID = 61295, filter = "CD"},
+			-- Stormstrike
+			{spellID = 17364, filter = "CD"},
+			-- Lava Lash
+			{spellID = 60103, filter = "CD"},
+			-- Healing Rain
+			{spellID = 73920, filter = "CD"},
+			-- Elemental Blast
+			{spellID = 117014, filter = "CD"},
+			-- Unleash Elements
+			{spellID = 73680, filter = "CD"},
 			-- Cloudburst Totem
 			{spellID = 157153, filter = "CD"},
+			-- Thunderstorm
+			{spellID = 51490, filter = "CD"},
+			-- Earthbind Totem
+			{spellID = 2484, filter = "CD"},
+			-- Tremor Totem
+			{spellID = 8143, filter = "CD"},
+			-- Shamanistic Rage
+			{spellID = 30823, filter = "CD"},
+			-- Stone Bulwark Totem
+			{spellID = 108270, filter = "CD"},
+			-- Astral Shift
+			{spellID = 108271, filter = "CD"},
+			-- Ancestral Swiftness
+			{spellID = 16188, filter = "CD"},
+			-- Feral Spirit
+			{spellID = 51533, filter = "CD"},
+			-- Spiritwalker's Grace
+			{spellID = 79206, filter = "CD"},
+			-- Ancestral Guidance
+			{spellID = 108281, filter = "CD"},
+			-- Ascendance
+			{spellID = 114049, filter = "CD"},
 
 			-- Racial
 			-- Berserking (Troll)
@@ -2768,32 +2768,34 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
-			-- Blood Horror
-			{spellID = 111397, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Burning Rush
-			{spellID = 111400, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Bargain
 			{spellID = 110913, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dark Regeneration
-			{spellID = 108359, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Unending Resolve
+			{spellID = 104773, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Soul: Knowledge
 			{spellID = 113861, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Soul: Misery
 			{spellID = 113860, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Soul: Instability
 			{spellID = 113858, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fire and Brimstone
-			{spellID = 108683, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Healthstone
-			{spellID = 6262, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kiljaeden's Cunning
-			{spellID = 137587, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soulburn
 			{spellID = 74434, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Swap
 			{spellID = 86211, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Unending Resolve
-			{spellID = 104773, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Kiljaeden's Cunning
+			{spellID = 137587, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dark Regeneration
+			{spellID = 108359, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blood Horror
+			{spellID = 111397, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fire and Brimstone
+			{spellID = 108683, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Burning Rush
+			{spellID = 111400, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sacrificial Pact
+			{spellID = 108416, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Healthstone
+			{spellID = 6262, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2805,12 +2807,12 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
+			-- Molten Core
+			{spellID = 122355, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Backdraft
 			{spellID = 117828, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Demonic Synergy
 			{spellID = 171982, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Molten Core
-			{spellID = 122355, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
@@ -2895,20 +2897,20 @@ C["filger_spells"] = {
 			BarWidth = 186,
 			Position = {"LEFT", T_DE_BUFF_BAR_Anchor},
 
+			-- Doom
+			{spellID = 603, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Agony
 			{spellID = 980, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Corruption
 			{spellID = 146739, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Doom
-			{spellID = 603, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Haunt
-			{spellID = 48181, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Immolate
-			{spellID = 348, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Seed of Corruption
 			{spellID = 27243, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Immolate
+			{spellID = 348, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Unstable Affliction
 			{spellID = 30108, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
+			-- Haunt
+			{spellID = 48181, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -2936,30 +2938,30 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
-			-- Demonic Circle: Teleport
-			{spellID = 48020, filter = "CD"},
 			-- Devour Magic (Felhunter)
 			{spellID = 19505, filter = "CD"},
-			-- Felstorm
-			{spellID = 89751, filter = "CD"},
-			-- Grimoire of Service
-			{spellID = 108501, filter = "CD"},
-			-- Hand of Gul'dan
-			{spellID = 105174, filter = "CD"},
+			-- Spell Lock (Felhunter)
+			{spellID = 19647, filter = "CD"},
+			-- Shadowfury
+			{spellID = 30283, filter = "CD"},
 			-- Howl of Terror
 			{spellID = 5484, filter = "CD"},
 			-- Mortal Coil
 			{spellID = 6789, filter = "CD"},
 			-- Sacrifice (Voidwalker)
 			{spellID = 7812, filter = "CD"},
-			-- Shadowfury
-			{spellID = 30283, filter = "CD"},
-			-- Soulburn
-			{spellID = 74434, filter = "CD"},
-			-- Spell Lock (Felhunter)
-			{spellID = 19647, filter = "CD"},
+			-- Hand of Gul'dan
+			{spellID = 105174, filter = "CD"},
+			-- Demonic Circle: Teleport
+			{spellID = 48020, filter = "CD"},
+			-- Felstorm
+			{spellID = 89751, filter = "CD"},
 			-- Cataclysm
 			{spellID = 152108, filter = "CD"},
+			-- Soulburn
+			{spellID = 74434, filter = "CD"},
+			-- Grimoire of Service
+			{spellID = 108501, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
@@ -3010,36 +3012,36 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
-			-- Avatar
-			{spellID = 107574, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Berserker Rage
-			{spellID = 18499, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Bloodbath
-			{spellID = 12292, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Die by the Sword
-			{spellID = 118038, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Enraged Regeneration
-			{spellID = 55694, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Last Stand
-			{spellID = 12975, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Recklesness
-			{spellID = 1719, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shield Barrier
-			{spellID = 112048, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shield Block
-			{spellID = 2565, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shield Charge
-			{spellID = 169667, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shield Wall
 			{spellID = 871, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Last Stand
+			{spellID = 12975, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Enraged Regeneration
+			{spellID = 55694, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shield Block
+			{spellID = 2565, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shield Barrier
+			{spellID = 112048, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spell Reflection
 			{spellID = 23920, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ravager
+			{spellID = 152277, unitID = "player", caster = "player", filter = "BUFF", spec = 3},
+			-- Die by the Sword
+			{spellID = 118038, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Berserker Rage
+			{spellID = 18499, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Avatar
+			{spellID = 107574, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Bloodbath
+			{spellID = 12292, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Recklesness
+			{spellID = 1719, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shield Charge
+			{spellID = 169667, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sweeping Strikes
 			{spellID = 12328, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Victorious
 			{spellID = 32216, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ravager
-			{spellID = 152277, unitID = "player", caster = "player", filter = "BUFF", spec = 3},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -3050,24 +3052,24 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
-			-- Bloodsurge
-			{spellID = 46916, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Enrage
-			{spellID = 12880, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Meat Cleaver
-			{spellID = 85739, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Raging Blow
-			{spellID = 131116, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Rude Interruption
-			{spellID = 86663, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sudden Death
 			{spellID = 52437, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Raging Blow!
+			{spellID = 131116, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Bloodsurge
+			{spellID = 46916, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sword and Board
 			{spellID = 50227, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ultimatum
 			{spellID = 122510, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Meat Cleaver
+			{spellID = 85739, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unyielding Strikes
 			{spellID = 169686, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Enrage
+			{spellID = 12880, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rude Interruption
+			{spellID = 86663, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
@@ -3169,14 +3171,14 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
-			-- Colossus Smash
-			{spellID = 86346, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Demoralizing Shout
-			{spellID = 1160, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Hamstring
-			{spellID = 1715, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Rend
 			{spellID = 772, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Colossus Smash
+			{spellID = 86346, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Hamstring
+			{spellID = 1715, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Demoralizing Shout
+			{spellID = 1160, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Trinket Effects
 			-- Fel Burn [Empty Drinking Horn]
@@ -3192,44 +3194,44 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
-			-- Berserker Rage
-			{spellID = 18499, filter = "CD"},
-			-- Charge
-			{spellID = 100, filter = "CD"},
+			-- Pummel
+			{spellID = 6552, filter = "CD"},
+			-- Shield Slam
+			{spellID = 23922, filter = "CD"},
+			-- Shockwave
+			{spellID = 46968, filter = "CD"},
+			-- Storm Bolt
+			{spellID = 107570, filter = "CD"},
+			-- Thunder Clap
+			{spellID = 6343, filter = "CD"},
+			-- Taunt
+			{spellID = 355, filter = "CD"},
 			-- Colossus Smash
 			{spellID = 86346, filter = "CD"},
+			-- Charge
+			{spellID = 100, filter = "CD"},
+			-- Spell Reflection
+			{spellID = 23920, filter = "CD"},
+			-- Intervene
+			{spellID = 3411, filter = "CD"},
+			-- Berserker Rage
+			{spellID = 18499, filter = "CD"},
+			-- Heroic Leap
+			{spellID = 6544, filter = "CD"},
 			-- Demoralizing Shout
 			{spellID = 1160, filter = "CD"},
 			-- Enraged Regeneration
 			{spellID = 55694, filter = "CD"},
-			-- Heroic Leap
-			{spellID = 6544, filter = "CD"},
-			-- Intervene
-			{spellID = 3411, filter = "CD"},
-			-- Last Stand
-			{spellID = 12975, filter = "CD"},
-			-- Pummel
-			{spellID = 6552, filter = "CD"},
-			-- Rallying Cry
-			{spellID = 97462, filter = "CD"},
-			-- Shield Slam
-			{spellID = 23922, filter = "CD"},
-			-- Shield Wall
-			{spellID = 871, filter = "CD"},
-			-- Shockwave
-			{spellID = 46968, filter = "CD"},
-			-- Spell Reflection
-			{spellID = 23920, filter = "CD"},
-			-- Storm Bolt
-			{spellID = 107570, filter = "CD"},
-			-- Taunt
-			{spellID = 355, filter = "CD"},
-			-- Thunder Clap
-			{spellID = 6343, filter = "CD"},
 			-- Ravager
 			{spellID = 152277, filter = "CD"},
 			-- Intimidating Shout
 			{spellID = 5246, filter = "CD"},
+			-- Last Stand
+			{spellID = 12975, filter = "CD"},
+			-- Rallying Cry
+			{spellID = 97462, filter = "CD"},
+			-- Shield Wall
+			{spellID = 871, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
