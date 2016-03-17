@@ -271,7 +271,7 @@ end
 
 local OnEvent = function(self, event, ...)
 	if event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
-		if select(2, IsInInstance()) == "raid" then
+		if select(2, IsInInstance()) == "raid" and IsInGroup() then
 			self:RegisterEvent("SPELL_UPDATE_CHARGES")
 		else
 			self:UnregisterEvent("SPELL_UPDATE_CHARGES")
@@ -285,9 +285,6 @@ local OnEvent = function(self, event, ...)
 		charges = GetSpellCharges(20484)
 		if charges then
 			if not inBossCombat then
-				for _, v in pairs(bars) do
-					StopTimer(v)
-				end
 				inBossCombat = true
 			end
 			StartTimer(L_COOLDOWNS_COMBATRESS, 20484)
@@ -309,18 +306,22 @@ local OnEvent = function(self, event, ...)
 			else
 				return
 			end
-			if T.raid_spells[spellId] and show[select(2, IsInInstance())] then
-				if (sourceName == T.name and C.raidcooldown.show_my == true) or sourceName ~= T.name then
+			if T.raid_spells[spellId] and show[select(2, IsInInstance())] and IsInGroup() then
+				if (sourceName == T.name and C.raidcooldown.show_self == true) or sourceName ~= T.name then
 					StartTimer(sourceName, spellId)
 				end
 			end
 		end
-	elseif event == "ZONE_CHANGED_NEW_AREA" and select(2, IsInInstance()) == "arena" then
+	elseif event == "ZONE_CHANGED_NEW_AREA" and select(2, IsInInstance()) == "arena" or not IsInGroup() then
 		for _, v in pairs(Ressesbars) do
 			StopTimer(v)
 		end
 		for _, v in pairs(bars) do
-			StopTimer(v)
+			v.endTime = 0
+		end
+	elseif event == "ENCOUNTER_END" and select(2, IsInInstance()) == "raid" then
+		for _, v in pairs(bars) do
+			v.endTime = 0
 		end
 	end
 end
@@ -337,6 +338,7 @@ f:SetScript("OnEvent", OnEvent)
 f:RegisterEvent("PLAYER_ENTERING_WORLD")
 f:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 f:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+f:RegisterEvent("ENCOUNTER_END")
 
 SlashCmdList.RaidCD = function()
 	StartTimer(UnitName("player"), 20484)	-- Rebirth

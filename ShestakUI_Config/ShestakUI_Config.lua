@@ -186,7 +186,7 @@ local function Local(o)
 	if o == "UIConfigraidcooldownwidth" then o = L_GUI_COOLDOWN_RAID_WIDTH end
 	if o == "UIConfigraidcooldownupwards" then o = L_GUI_COOLDOWN_RAID_SORT end
 	if o == "UIConfigraidcooldownexpiration" then o = L_GUI_COOLDOWN_RAID_EXPIRATION end
-	if o == "UIConfigraidcooldownshow_my" then o = L_GUI_COOLDOWN_RAID_SHOW_MY end
+	if o == "UIConfigraidcooldownshow_self" then o = L_GUI_COOLDOWN_RAID_SHOW_SELF end
 	if o == "UIConfigraidcooldownshow_icon" then o = L_GUI_COOLDOWN_RAID_ICONS end
 	if o == "UIConfigraidcooldownshow_inraid" then o = L_GUI_COOLDOWN_RAID_IN_RAID end
 	if o == "UIConfigraidcooldownshow_inparty" then o = L_GUI_COOLDOWN_RAID_IN_PARTY end

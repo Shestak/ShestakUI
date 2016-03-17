@@ -200,7 +200,7 @@ C["raidcooldown"] = {
 	["width"] = 186,							-- Bars width(if show_icon = false, bar width+28)
 	["upwards"] = false,						-- Sort upwards bars
 	["expiration"] = false,						-- Sort by expiration time
-	["show_my"] = true,							-- Show my cooldowns
+	["show_self"] = true,						-- Show self cooldowns
 	["show_icon"] = true,						-- Show icons
 	["show_inraid"] = true,						-- Show in raid zone
 	["show_inparty"] = true,					-- Show in party zone
