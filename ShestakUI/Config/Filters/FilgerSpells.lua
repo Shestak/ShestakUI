@@ -114,8 +114,6 @@ C["filger_spells"] = {
 			{spellID = 176937, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kyb's Foolish Perseverance (Health, Use)
 			{spellID = 176460, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Petrified Flesh-Eating Spore (Mastery, Proc)
-			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pol's Blinded Eye (Mastery, Use)
 			{spellID = 176876, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stoneheart Idol (Crit, Proc)
@@ -421,8 +419,6 @@ C["filger_spells"] = {
 			{spellID = 176937, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kyb's Foolish Perseverance (Health, Use)
 			{spellID = 176460, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Petrified Flesh-Eating Spore (Mastery, Proc)
-			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pol's Blinded Eye (Mastery, Use)
 			{spellID = 176876, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stoneheart Idol (Crit, Proc)
@@ -1350,8 +1346,6 @@ C["filger_spells"] = {
 			{spellID = 176937, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kyb's Foolish Perseverance (Health, Use)
 			{spellID = 176460, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Petrified Flesh-Eating Spore (Mastery, Proc)
-			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pol's Blinded Eye (Mastery, Use)
 			{spellID = 176876, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stoneheart Idol (Crit, Proc)
@@ -1658,8 +1652,6 @@ C["filger_spells"] = {
 			{spellID = 176937, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kyb's Foolish Perseverance (Health, Use)
 			{spellID = 176460, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Petrified Flesh-Eating Spore (Mastery, Proc)
-			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pol's Blinded Eye (Mastery, Use)
 			{spellID = 176876, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stoneheart Idol (Crit, Proc)
@@ -3085,8 +3077,6 @@ C["filger_spells"] = {
 			{spellID = 176937, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kyb's Foolish Perseverance (Health, Use)
 			{spellID = 176460, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Petrified Flesh-Eating Spore (Mastery, Proc)
-			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pol's Blinded Eye (Mastery, Use)
 			{spellID = 176876, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stoneheart Idol (Crit, Proc)
