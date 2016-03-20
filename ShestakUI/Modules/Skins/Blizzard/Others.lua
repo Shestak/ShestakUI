@@ -97,40 +97,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			T.SkinCloseButton(_G["StaticPopup"..i.."CloseButton"])
 		end
 
-		-- What's new frame
-		SplashFrame:CreateBackdrop("Transparent")
-		SplashFrame.BottomCloseButton:SkinButton()
-		T.SkinCloseButton(SplashFrame.TopCloseButton)
-
-		-- Social Browser frame
-		SocialBrowserFrame:StripTextures()
-		SocialBrowserFrame:SetTemplate("Transparent")
-		T.SkinCloseButton(SocialBrowserFrame.CloseButton)
-		SocialBrowserFrame.CloseButton:SetSize(16, 16)
-
-		-- NavBar Buttons (Used in WorldMapFrame, EncounterJournal and HelpFrame)
-		local function SkinNavBarButtons(self)
-			local navButton = self.navList[#self.navList]
-			if navButton and not navButton.isSkinned then
-				navButton:SkinButton(true)
-				if navButton.MenuArrowButton then
-					navButton.MenuArrowButton:SetNormalTexture(nil)
-					navButton.MenuArrowButton:SetPushedTexture(nil)
-					navButton.MenuArrowButton:SetHighlightTexture(nil)
-				end
-				navButton.xoffset = 1
-				navButton.isSkinned = true
-			end
-		end
-		hooksecurefunc("NavBar_AddButton", SkinNavBarButtons)
-
-		local function SetHomeButtonOffsetX(self)
-			if self.homeButton then
-				self.homeButton.xoffset = 1
-			end
-		end
-		hooksecurefunc("NavBar_Initialize", SetHomeButtonOffsetX)
-
 		-- Cinematic popup
 		_G["CinematicFrameCloseDialog"]:SetScale(C.general.uiscale)
 		_G["CinematicFrameCloseDialog"]:SetTemplate("Transparent")
@@ -306,6 +272,40 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		T.SkinCloseButton(_G["ItemRefCloseButton"])
 		T.SkinCloseButton(_G["BNToastFrameCloseButton"])
 		if C.skins.blizzard_frames == true then
+			-- Social Browser frame
+			SocialBrowserFrame:StripTextures()
+			SocialBrowserFrame:SetTemplate("Transparent")
+			T.SkinCloseButton(SocialBrowserFrame.CloseButton)
+			SocialBrowserFrame.CloseButton:SetSize(16, 16)
+
+			-- What's new frame
+			SplashFrame:CreateBackdrop("Transparent")
+			SplashFrame.BottomCloseButton:SkinButton()
+			T.SkinCloseButton(SplashFrame.TopCloseButton)
+
+			-- NavBar Buttons (Used in WorldMapFrame, EncounterJournal and HelpFrame)
+			local function SkinNavBarButtons(self)
+				local navButton = self.navList[#self.navList]
+				if navButton and not navButton.isSkinned then
+					navButton:SkinButton(true)
+					if navButton.MenuArrowButton then
+						navButton.MenuArrowButton:SetNormalTexture(nil)
+						navButton.MenuArrowButton:SetPushedTexture(nil)
+						navButton.MenuArrowButton:SetHighlightTexture(nil)
+					end
+					navButton.xoffset = 1
+					navButton.isSkinned = true
+				end
+			end
+			hooksecurefunc("NavBar_AddButton", SkinNavBarButtons)
+
+			local function SetHomeButtonOffsetX(self)
+				if self.homeButton then
+					self.homeButton.xoffset = 1
+				end
+			end
+			hooksecurefunc("NavBar_Initialize", SetHomeButtonOffsetX)
+
 			if T.client == "ruRU" then
 				_G["DeclensionFrame"]:SetTemplate("Transparent")
 				_G["DeclensionFrameCancelButton"]:SkinButton()
