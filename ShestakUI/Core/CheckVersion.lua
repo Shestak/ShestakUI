@@ -21,9 +21,6 @@ local check = function(self, event, prefix, message, channel, sender)
 			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "GUILD")
 		end
 	end
-	if event == "PLAYER_ENTERING_WORLD" and IsAddOnLoaded("ShestakUI_Filger") then
-		print("|cffff3300".."Please, delete ShestakUI_Filger, now built-in.".."|r")
-	end
 end
 
 local frame = CreateFrame("Frame")
