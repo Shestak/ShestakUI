@@ -12,6 +12,8 @@ EMPTY_SOCKET_BLUE = "|cff6060ff"..EMPTY_SOCKET_BLUE.."|r"
 
 if T.client ~= "ruRU" then return end
 
+GUILD_ACHIEVEMENT = "Уведомл. для гильдии"
+
 local ttext
 local replace = {
 	["красного цвета"] = "|cffFF4040красного цвета|r",
