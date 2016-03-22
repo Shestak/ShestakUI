@@ -1121,7 +1121,7 @@ if friends.enabled then
 
 		for i = 1, total do
 			local presenceID, presenceName, battleTag, _, toonName, toonID, client, isOnline, _, isAFK, isDND, _, noteText = BNGetFriendInfo(i)
-			local _, _, _, realmName, _, faction, race, class, _, zoneName, level = BNGetToonInfo(presenceID)
+			local _, _, _, realmName, _, faction, race, class, _, zoneName, level = BNGetGameAccountInfo(presenceID)
 			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
 			if GetLocale() ~= "enUS" then
 				for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
@@ -1307,7 +1307,7 @@ if friends.enabled then
 							end
 						end
 						if client == "WoW" then
-							local _, toonName, client, realmName, _, _, _, class, _, zoneName, level = BNGetToonInfo(toonID)
+							local _, toonName, client, realmName, _, _, _, class, _, zoneName, level = BNGetGameAccountInfo(toonID)
 							for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
 							if GetLocale() ~= "enUS" then
 								for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end

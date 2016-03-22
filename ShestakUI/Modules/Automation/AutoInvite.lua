@@ -13,7 +13,7 @@ if C.automation.accept_invite == true then
 		for i = 1, select(2, BNGetNumFriends()) do
 			local presenceID, _, _, _, _, _, client, isOnline = BNGetFriendInfo(i)
 			if client == "WoW" and isOnline then
-				local _, toonName, _, realmName = BNGetToonInfo(presenceID)
+				local _, toonName, _, realmName = BNGetGameAccountInfo(presenceID)
 				if name == toonName or name == toonName.."-"..realmName then
 					return true
 				end
@@ -65,7 +65,7 @@ autoinvite:SetScript("OnEvent", function(self, event, arg1, arg2, ...)
 		if event == "CHAT_MSG_WHISPER" then
 			InviteUnit(arg2)
 		elseif event == "CHAT_MSG_BN_WHISPER" then
-			local _, toonName, _, realmName = BNGetToonInfo(select(11, ...))
+			local _, toonName, _, realmName = BNGetGameAccountInfo(select(11, ...))
 			InviteUnit(toonName.."-"..realmName)
 		end
 	end
