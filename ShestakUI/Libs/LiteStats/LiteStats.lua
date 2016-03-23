@@ -1121,7 +1121,7 @@ if friends.enabled then
 
 		for i = 1, total do
 			local presenceID, presenceName, battleTag, _, toonName, toonID, client, isOnline, _, isAFK, isDND, _, noteText = BNGetFriendInfo(i)
-			local _, _, _, realmName, _, faction, race, class, _, zoneName, level = BNGetGameAccountInfo(presenceID)
+			local _, _, _, realmName, _, faction, race, class, _, zoneName, level = BNGetGameAccountInfo(toonID or presenceID)
 			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
 			if GetLocale() ~= "enUS" then
 				for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
@@ -1296,6 +1296,7 @@ if friends.enabled then
 					GameTooltip:AddLine(BATTLENET_FRIEND)
 					for i = 1, BNtotal do
 						_, presenceName, _, _, toonName, toonID, client, isOnline, _, isAFK, isDND = BNGetFriendInfo(i)
+						if not toonName then toonName = presenceName end
 						if not isOnline then break end
 						if isAFK then
 							status = "|cffE7E716"..L_CHAT_AFK.."|r"
