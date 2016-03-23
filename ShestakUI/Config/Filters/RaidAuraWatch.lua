@@ -155,6 +155,8 @@ T.RaidDebuffs = {
 	[SpellName(183634)] = 7,	-- Shadowfel Burst
 	[SpellName(189895)] = 6,	-- Void Star Fixate
 	[SpellName(190049)] = 4,	-- Nether Corruption
+	[SpellName(189897)] = 4,	-- Doomfire
+	[SpellName(187742)] = 4,	-- Shadow Blast
 -- Blackrock Foundry
 	-- Gruul
 	[SpellName(155080)] = 4,	-- Inferno Slice
