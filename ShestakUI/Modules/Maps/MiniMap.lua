@@ -187,7 +187,11 @@ local micromenu = {
 		if T.level >= SHOW_TALENT_LEVEL then
 			ShowUIPanel(PlayerTalentFrame)
 		else
-			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")
+			if C.error.white == false then
+				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL), 1, 0.1, 0.1)
+			else
+				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")
+			end
 		end
 	end},
 	{text = ACHIEVEMENT_BUTTON, notCheckable = 1, func = function()
@@ -228,7 +232,15 @@ local micromenu = {
 		end
 	end},
 	{text = ADVENTURE_JOURNAL, notCheckable = 1, func = function()
-		ToggleEncounterJournal()
+		if T.level >= SHOW_EJ_LEVEL then
+			ToggleEncounterJournal()
+		else
+			if C.error.white == false then
+				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_EJ_LEVEL), 1, 0.1, 0.1)
+			else
+				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_EJ_LEVEL).."|r")
+			end
+		end
 	end},
 	{text = COLLECTIONS, notCheckable = 1, func = function()
 		if InCombatLockdown() then
