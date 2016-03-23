@@ -103,6 +103,7 @@ local function LoadSkin()
 	local scrollbars = {
 		"FriendsFrameFriendsScrollFrameScrollBar",
 		"FriendsFrameIgnoreScrollFrameScrollBar",
+		"FriendsFriendsScrollFrameScrollBar",
 		"WhoListScrollFrameScrollBar",
 		"ChannelRosterScrollFrameScrollBar"
 	}
@@ -181,6 +182,11 @@ local function LoadSkin()
 	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame:SetTemplate("Overlay")
 	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame.CancelButton:SkinButton()
 	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame.UpdateButton:SkinButton()
+
+	FriendsFrameBattlenetFrame.UnavailableInfoFrame:StripTextures()
+	FriendsFrameBattlenetFrame.UnavailableInfoFrame:CreateBackdrop("Transparent")
+	FriendsFrameBattlenetFrame.UnavailableInfoFrame.backdrop:SetPoint("TOPLEFT", 4, -4)
+	FriendsFrameBattlenetFrame.UnavailableInfoFrame.backdrop:SetPoint("BOTTOMRIGHT", -4, 4)
 
 	BattleTagInviteFrame:SetTemplate("Transparent")
 	for i = 1, BattleTagInviteFrame:GetNumChildren() do
