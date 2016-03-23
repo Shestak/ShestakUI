@@ -1234,7 +1234,7 @@ if friends.enabled then
 								end
 							}
 
-							if BNTable[i][6] == "WoW" and UnitFactionGroup("player") == BNTable[i][12] then
+							if BNTable[i][6] == BNET_CLIENT_WOW and UnitFactionGroup("player") == BNTable[i][12] then
 								if not (UnitInParty(BNTable[i][4]) or UnitInRaid(BNTable[i][4])) then
 									menuCountInvites = menuCountInvites + 1
 									menuList[2].menuList[menuCountInvites] = {
@@ -1295,8 +1295,8 @@ if friends.enabled then
 					GameTooltip:AddLine(" ")
 					GameTooltip:AddLine(BATTLENET_FRIEND)
 					for i = 1, BNtotal do
-						_, presenceName, _, _, toonName, toonID, client, isOnline, _, isAFK, isDND = BNGetFriendInfo(i)
-						if not toonName then toonName = presenceName end
+						_, presenceName, battleTag, _, toonName, toonID, client, isOnline, _, isAFK, isDND = BNGetFriendInfo(i)
+						toonName = BNet_GetValidatedCharacterName(toonName, battleTag, client) or ""
 						if not isOnline then break end
 						if isAFK then
 							status = "|cffE7E716"..L_CHAT_AFK.."|r"
@@ -1307,7 +1307,7 @@ if friends.enabled then
 								status = ""
 							end
 						end
-						if client == "WoW" then
+						if client == BNET_CLIENT_WOW then
 							local _, toonName, client, realmName, _, _, _, class, _, zoneName, level = BNGetGameAccountInfo(toonID)
 							for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
 							if GetLocale() ~= "enUS" then

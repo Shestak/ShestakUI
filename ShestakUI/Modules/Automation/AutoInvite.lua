@@ -12,7 +12,7 @@ if C.automation.accept_invite == true then
 		end
 		for i = 1, select(2, BNGetNumFriends()) do
 			local presenceID, _, _, _, _, _, client, isOnline = BNGetFriendInfo(i)
-			if client == "WoW" and isOnline then
+			if client == BNET_CLIENT_WOW and isOnline then
 				local _, toonName, _, realmName = BNGetGameAccountInfo(presenceID)
 				if name == toonName or name == toonName.."-"..realmName then
 					return true
