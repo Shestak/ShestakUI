@@ -175,7 +175,6 @@ local function LoadSkin()
 		"BuffsPanelConsolidateBuffs",
 		"BuffsPanelShowAllEnemyDebuffs",
 		-- Battle.net
-		"BattlenetPanelConversations",
 		"BattlenetPanelOnlineFriends",
 		"BattlenetPanelOfflineFriends",
 		"BattlenetPanelBroadcasts",
