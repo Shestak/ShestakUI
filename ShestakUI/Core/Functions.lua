@@ -414,15 +414,12 @@ function T.SkinCheckBox(frame, default)
 	end
 
 	if frame.SetCheckedTexture then
-		if default then
-			frame:SetCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check")
-		else
-			local checked = frame:CreateTexture(nil, nil, self)
-			checked:SetTexture(1, 0.82, 0, 0.8)
-			checked:SetPoint("TOPLEFT", frame, 6, -6)
-			checked:SetPoint("BOTTOMRIGHT", frame, -6, 6)
-			frame:SetCheckedTexture(checked)
-		end
+		if default then return end
+		local checked = frame:CreateTexture(nil, nil, self)
+		checked:SetTexture(1, 0.82, 0, 0.8)
+		checked:SetPoint("TOPLEFT", frame, 6, -6)
+		checked:SetPoint("BOTTOMRIGHT", frame, -6, 6)
+		frame:SetCheckedTexture(checked)
 	end
 
 	if frame.SetDisabledCheckedTexture then

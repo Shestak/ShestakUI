@@ -5,33 +5,28 @@ if C.skins.blizzard_frames ~= true then return end
 --	AddonList skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	local Frames = {
-		AddonList,
-		AddonListInset
+	local buttons = {
+		"AddonListEnableAllButton",
+		"AddonListDisableAllButton",
+		"AddonListCancelButton",
+		"AddonListOkayButton"
 	}
 
-	for _, Frames in pairs(Frames) do
-		Frames:StripTextures()
+	for _, button in pairs(buttons) do
+		_G[button]:SkinButton()
 	end
 
-	local Buttons = {
-		AddonListEnableAllButton,
-		AddonListDisableAllButton,
-		AddonListCancelButton,
-		AddonListOkayButton
-	}
-
-	for _, Buttons in pairs(Buttons) do
-		Buttons:SkinButton()
-	end
-
+	AddonList:StripTextures()
 	AddonList:SetTemplate("Transparent")
 	AddonList:SetHeight(AddonList:GetHeight() + 3)
+
+	AddonListInset:StripTextures()
 	AddonListInset:SetTemplate("Overlay")
 	AddonListInset:SetPoint("BOTTOMRIGHT", -6, 29)
 
 	for i = 1, MAX_ADDONS_DISPLAYED do
-		T.SkinCheckBox(_G["AddonListEntry" .. i .. "Enabled"], true)
+		T.SkinCheckBox(_G["AddonListEntry"..i.."Enabled"], true)
+		_G["AddonListEntry"..i.."Load"]:SkinButton()
 	end
 
 	T.SkinScrollBar(AddonListScrollFrameScrollBar)
