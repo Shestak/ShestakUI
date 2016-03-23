@@ -106,6 +106,8 @@ T.RaidDebuffs = {
 	[SpellName(188666)] = 7,	-- Eternal Hunger (Mythic - Fixate)
 	[SpellName(189627)] = 7,	-- Volatile Fel Orb (Fixate)
 	[SpellName(180415)] = 4,	-- Fel Prison
+	[SpellName(184124)] = 3,	-- Gift of the Man'ari
+	[SpellName(189540)] = 4,	-- Overwhelming Power
 	-- Xhul'horac
 	[SpellName(188208)] = 7,	-- Ablaze
 	[SpellName(186073)] = 7,	-- Felsinged
@@ -113,12 +115,15 @@ T.RaidDebuffs = {
 	[SpellName(186500)] = 9,	-- Chains of Fel
 	[SpellName(186063)] = 7,	-- Wasting Void
 	[SpellName(186333)] = 8,	-- Void Surge
+	[SpellName(186785)] = 6,	-- Withering Gaze
+	[SpellName(186448)] = 6,	-- Felblaze Flurry
 	-- Fel Lord Zakuun
 	[SpellName(181508)] = 9,	-- Seed of Destruction
 	[SpellName(181653)] = 7,	-- Fel Crystals
 	[SpellName(179428)] = 8,	-- Rumbling Fissure
 	[SpellName(182008)] = 3,	-- Latent Energy
 	[SpellName(179407)] = 6,	-- Disembodied
+	[SpellName(189032)] = 5,	-- Befouled
 	-- Kormrok
 	[SpellName(187819)] = 7,	-- Crush
 	[SpellName(181345)] = 7,	-- Foul Crush (Tank)
@@ -126,6 +131,7 @@ T.RaidDebuffs = {
 	[SpellName(185237)] = 6,	-- Touch of Harm
 	[SpellName(185241)] = 7,	-- Edict of Condemnation
 	[SpellName(180526)] = 7,	-- Font of Corruption
+	[SpellName(180000)] = 6,	-- Seal of Decay
 	-- Shadow-Lord Iskar
 	[SpellName(181957)] = 9,	-- Phantasmal Wind
 	[SpellName(182200)] = 4,	-- Fel Chakram
