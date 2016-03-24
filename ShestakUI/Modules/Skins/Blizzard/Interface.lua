@@ -71,6 +71,8 @@ local function LoadSkin()
 		"CombatPanelActionButtonUseKeyDown",
 		"CombatPanelEnemyCastBarsOnPortrait",
 		"CombatPanelEnemyCastBarsOnNameplates",
+		"CombatPanelEnemyCastBarsOnOnlyTargetNameplates",
+		"CombatPanelEnemyCastBarsNameplateSpellNames",
 		"CombatPanelLossOfControl",
 		-- Display
 		"DisplayPanelShowCloak",
@@ -257,7 +259,6 @@ local function LoadSkin()
 		"SocialPanelWhisperMode",
 		"SocialPanelTimestamps",
 		"SocialPanelBnWhisperMode",
-		"SocialPanelConversationMode",
 		"ActionBarsPanelPickupActionKeyDropDown",
 		"NamesPanelNPCNamesDropDown",
 		"NamesPanelUnitNameplatesMotionDropDown",
@@ -267,7 +268,8 @@ local function LoadSkin()
 		"MousePanelClickMoveStyleDropDown",
 		"ObjectivesPanelQuestSorting",
 		"AccessibilityPanelColorFilterDropDown",
-		"DisplayPanelOutlineDropDown"
+		"DisplayPanelOutlineDropDown",
+		"StatusTextPanelDisplayDropDown"
 	}
 
 	for i = 1, getn(dropdown) do
