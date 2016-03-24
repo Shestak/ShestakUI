@@ -105,7 +105,7 @@ local function Local(o)
 	if o == "UIConfigautomationcurrency_cap" then o = L_GUI_AUTOMATION_CURRENCY_CAP end
 	if o == "UIConfigautomationbuff_on_scroll" then o = L_GUI_AUTOMATION_BUFF_ON_SCROLL end
 	if o == "UIConfigautomationopen_items" then o = L_GUI_AUTOMATION_OPEN_ITEMS end
-	if o == "UIConfigautomationbannerhide" then o = L_GUI_AUTOMATION_BANNER_HIDE end
+	if o == "UIConfigautomationbanner_hide" then o = L_GUI_AUTOMATION_BANNER_HIDE end
 
 	-- Skins options
 	if o == "UIConfigskins" then o = L_GUI_SKINS end
@@ -413,7 +413,7 @@ local function Local(o)
 	-- Unit Frames Class bar options
 	if o == "UIConfigunitframe_class_bar" then o = L_GUI_UF_PLUGINS_CLASS_BAR end
 	if o == "UIConfigunitframe_class_barcombo" then o = L_GUI_UF_PLUGINS_COMBO_BAR end
-	if o == "UIConfigunitframe_class_barcomboalways" then o = L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS end
+	if o == "UIConfigunitframe_class_barcombo_always" then o = L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS end
 	if o == "UIConfigunitframe_class_barcombo_old" then o = L_GUI_UF_PLUGINS_COMBO_BAR_OLD end
 	if o == "UIConfigunitframe_class_barshadow" then o = L_GUI_UF_PLUGINS_SHADOW_BAR end
 	if o == "UIConfigunitframe_class_barchi" then o = L_GUI_UF_PLUGINS_CHI_BAR end

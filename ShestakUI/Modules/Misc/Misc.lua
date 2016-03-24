@@ -248,7 +248,7 @@ end)
 ----------------------------------------------------------------------------------------
 --	Boss Banner Hider
 ----------------------------------------------------------------------------------------
-if C.automation.bannerhide == true then
+if C.automation.banner_hide == true then
 	BossBanner.PlayBanner = function() end
 end
 

@@ -1092,7 +1092,7 @@ T.UpdateComboPoint = function(self, event, unit)
 		end
 	end
 
-	if T.class == "DRUID" and C.unitframe_class_bar.comboalways ~= true then
+	if T.class == "DRUID" and C.unitframe_class_bar.combo_always ~= true then
 		local function CatForm(self, event, unit)
 			local unit = self.unit or "player"
 			local name = UnitBuff(unit, GetSpellInfo(768)) or UnitBuff(unit, GetSpellInfo(171745))

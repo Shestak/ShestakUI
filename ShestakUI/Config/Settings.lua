@@ -105,7 +105,7 @@ C["automation"] = {
 	["currency_cap"] = false,					-- Auto popup for currency cap
 	["buff_on_scroll"] = false,					-- Cast buff on mouse scroll (from the list)
 	["open_items"] = false,						-- Auto opening of items in bag
-	["bannerhide"] = true,						-- Auto hiding Boss Banner Loot Frame
+	["banner_hide"] = true,						-- Auto hiding Boss Banner Loot Frame
 }
 
 ----------------------------------------------------------------------------------------
@@ -484,7 +484,7 @@ C["unitframe"] = {
 ----------------------------------------------------------------------------------------
 C["unitframe_class_bar"] = {
 	["combo"] = true,							-- Rogue/Druid Combo bar
-	["comboalways"] = false,					-- Always show Combo bar for Druid
+	["combo_always"] = false,					-- Always show Combo bar for Druid
 	["combo_old"] = false,						-- Show combo point on the target
 	["shadow"] = true,							-- Shadow Orbs bar
 	["chi"] = true,								-- Chi bar
@@ -563,7 +563,6 @@ C["stats"] = {
 	["currency_raid"] = true,					-- Show Seals under currency tab
 	["currency_pvp"] = true,					-- Show PvP under currency tab
 	["currency_misc"] = true,					-- Show Miscellaneous under currency tab
-
 }
 
 ----------------------------------------------------------------------------------------
