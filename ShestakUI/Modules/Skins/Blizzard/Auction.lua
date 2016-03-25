@@ -51,19 +51,13 @@ local function LoadSkin()
 	WowTokenGameTimeTutorialLeftBorder:SetAlpha(0)
 	WowTokenGameTimeTutorialRightBorder:SetAlpha(0)
 
-	do
-		local Token = BrowseWowTokenResults.Token
-		local icon = Token.Icon
-
-		Token.ItemBorder:Hide()
-		Token.IconBorder:Hide()
-
-		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
-		Token:CreateBackdrop("Default")
-		Token.backdrop:SetPoint("TOPLEFT", Token.IconBorder, -2, 2)
-		Token.backdrop:SetPoint("BOTTOMRIGHT", Token.IconBorder, 2, -2)
-	end
+	local Token = BrowseWowTokenResultsToken
+	Token.ItemBorder:Hide()
+	Token.IconBorder:Hide()
+	Token.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	Token:CreateBackdrop("Default")
+	Token.backdrop:SetPoint("TOPLEFT", Token.IconBorder, -2, 2)
+	Token.backdrop:SetPoint("BOTTOMRIGHT", Token.IconBorder, 2, -2)
 
 	-- Progress Frame
 	AuctionProgressFrame:StripTextures()
