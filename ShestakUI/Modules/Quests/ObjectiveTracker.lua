@@ -76,8 +76,17 @@ hooksecurefunc(QUEST_TRACKER_MODULE, "Update", function()
 		local _, level = GetQuestLogTitle(questIndex)
 		local col = GetQuestDifficultyColor(level)
 		local block = QUEST_TRACKER_MODULE:GetExistingBlock(questID)
-		block.HeaderText:SetTextColor(col.r, col.g, col.b)
-		block.HeaderText.col = col
+		if block then
+			block.HeaderText:SetTextColor(col.r, col.g, col.b)
+			block.HeaderText.col = col
+		end
+	end
+end)
+
+hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "AddObjective", function(self, block)
+	if block.module == ACHIEVEMENT_TRACKER_MODULE then
+		block.HeaderText:SetTextColor(0.75, 0.61, 0)
+		block.HeaderText.col = nil
 	end
 end)
 
