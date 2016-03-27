@@ -50,11 +50,6 @@ hooksecurefunc(QUEST_TRACKER_MODULE, "SetBlockHeader", function(_, block)
 
 		item.Cooldown:SetAllPoints(item.icon)
 
-		item.HotKey:ClearAllPoints()
-		item.HotKey:SetPoint("BOTTOMRIGHT", 0, 2)
-		item.HotKey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
-		item.HotKey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-
 		item.Count:ClearAllPoints()
 		item.Count:SetPoint("TOPLEFT", 1, -1)
 		item.Count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
