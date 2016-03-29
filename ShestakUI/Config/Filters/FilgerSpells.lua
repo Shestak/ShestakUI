@@ -1292,6 +1292,8 @@ C["filger_spells"] = {
 			{spellID = 125359, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combo Breaker: Blackout Kick
 			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combo Breaker: Chi Explosion
+			{spellID = 159407, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combo Breaker: Tiger Palm
 			{spellID = 118864, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shuffle
