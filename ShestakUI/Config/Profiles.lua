@@ -222,6 +222,7 @@ if IsWetxius then
 	C["chat"].chat_bar_mouseover = true
 	C["chat"].combatlog = false
 	C["minimap"].toggle_menu = false
+	C["map"].fog_of_war = true
 	C["nameplate"].health_value = true
 	C["nameplate"].healer_icon = true
 	C["actionbar"].toggle_mode = false
