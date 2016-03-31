@@ -1587,7 +1587,7 @@ end
 --	Auto reposition heal raid frame
 ----------------------------------------------------------------------------------------
 local function Reposition()
-	if SavedOptions.RaidLayout == "HEAL" and not C.raidframe.raid_groups_vertical then
+	if SavedOptions and SavedOptions.RaidLayout == "HEAL" and not C.raidframe.raid_groups_vertical then
 		if C.raidframe.raid_groups < 6 then return end
 
 		if C.unitframe.castbar_icon == true then
