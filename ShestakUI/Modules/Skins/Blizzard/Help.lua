@@ -19,7 +19,6 @@ local function LoadSkin()
 		"HelpFrameKnowledgebaseSearchButton",
 		"HelpFrameKnowledgebaseNavBarHomeButton",
 		"HelpFrameCharacterStuckStuck",
-		--"GMChatOpenLog",
 		"HelpFrameGM_ResponseNeedMoreHelp",
 		"HelpFrameGM_ResponseCancel",
 		"HelpFrameSubmitSuggestionSubmit",
