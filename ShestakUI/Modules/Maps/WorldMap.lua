@@ -28,6 +28,8 @@ WorldMapFrameAreaPetLevels:SetShadowOffset(2, -2)
 WorldMapFrameAreaDescription:SetFont(C.media.normal_font, 30)
 WorldMapFrameAreaDescription:SetShadowOffset(2, -2)
 
+MapQuestInfoRewardsFrame.XPFrame.Name:SetFont(C.media.normal_font, 13)
+
 ----------------------------------------------------------------------------------------
 --	Change position
 ----------------------------------------------------------------------------------------
