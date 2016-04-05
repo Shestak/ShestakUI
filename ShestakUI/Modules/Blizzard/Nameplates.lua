@@ -654,15 +654,14 @@ function Plates:Skin(obj)
 
 	if C.nameplate.class_icons == true then
 		NewPlate.class = NewPlate.Health:CreateTexture(nil, "OVERLAY")
-		NewPlate.class:SetPoint("TOPRIGHT", NewPlate.Health, "TOPLEFT", -5, 2)
+		NewPlate.class:SetPoint("TOPRIGHT", NewPlate.Health, "TOPLEFT", -8, T.noscalemult * 2)
 		NewPlate.class:SetTexture("Interface\\WorldStateFrame\\Icons-Classes")
-		NewPlate.class:SetSize((C.nameplate.height * 2) + 11, (C.nameplate.height * 2) + 11)
+		NewPlate.class:SetSize((C.nameplate.height * 2 * T.noscalemult) + 11, (C.nameplate.height * 2 * T.noscalemult) + 11)
 
 		NewPlate.class.Glow = CreateFrame("Frame", nil, NewPlate.Health)
 		NewPlate.class.Glow:SetTemplate("Transparent")
 		NewPlate.class.Glow:SetScale(T.noscalemult)
-		NewPlate.class.Glow:SetPoint("TOPLEFT", NewPlate.class, "TOPLEFT", 0, 0)
-		NewPlate.class.Glow:SetPoint("BOTTOMRIGHT", NewPlate.class, "BOTTOMRIGHT", 0, 0)
+		NewPlate.class.Glow:SetAllPoints(NewPlate.class)
 		NewPlate.class.Glow:SetFrameLevel(NewPlate.Health:GetFrameLevel() -1 > 0 and NewPlate.Health:GetFrameLevel() -1 or 0)
 		NewPlate.class.Glow:Hide()
 	end
