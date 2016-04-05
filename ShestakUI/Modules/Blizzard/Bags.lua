@@ -1203,6 +1203,7 @@ function Stuffing:SortBags()
 					local n, _, q, iL, rL, c1, c2, _, Sl = GetItemInfo(itemLink)
 					if n == GetItemInfo(6948) then c1 = "1" end	-- Hearthstone
 					if n == GetItemInfo(110560) then c1 = "12" end	-- Garrison Hearthstone
+					if n == GetItemInfo(64488) then c1 = "1" end	-- The Innkeeper's Daughter
 					-- Fix for battle pets
 					if not n then
 						n = itemLink
