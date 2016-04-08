@@ -60,7 +60,17 @@ local function LoadSkin()
 		local b = _G["LookingForGuildBrowseFrameContainerButton"..i]
 		local t = _G["LookingForGuildAppsFrameContainerButton"..i]
 
-		b:SetBackdrop(nil)
+		b:SetTemplate("Overlay")
+		b:StyleButton()
+		b.selectedTex:SetDrawLayer("ARTWORK")
+		b.selectedTex:SetTexture(1, 0.82, 0, 0.3)
+		b.selectedTex:SetPoint("TOPLEFT", 2, -2)
+		b.selectedTex:SetPoint("BOTTOMRIGHT", -2, 2)
+
+		if i ~= 1 then
+			b:SetPoint("TOPLEFT", _G["LookingForGuildBrowseFrameContainerButton"..i - 1], "BOTTOMLEFT", 0, -2)
+		end
+
 		t:SetBackdrop(nil)
 	end
 
