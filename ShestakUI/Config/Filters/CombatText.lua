@@ -48,10 +48,12 @@ if T.class == "DEATHKNIGHT" then
 		T.aoespam[49998] = 0		-- Death Strike
 		T.aoespam[156000] = 3		-- Defile
 		T.aoespam[155166] = 3		-- Mark of Sindragosa
+		T.aoespam[55090] = 0		-- Scourge Strike
 		T.merge[66198] = 49020		-- Obliterate Off-Hand
 		T.merge[66196] = 49143		-- Frost Strike Off-Hand
 		T.merge[66216] = 45462		-- Plague Strike Off-Hand
 		T.merge[66188] = 49998		-- Death Strike Off-Hand
+		T.merge[70890] = 55090		-- Scourge Strike (Shadow damage)
 	end
 	if C.combattext.healing then
 		T.healfilter[53365] = true	-- Unholy Strength
