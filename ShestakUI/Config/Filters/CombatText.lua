@@ -361,6 +361,7 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[85692] = 3		-- Doom Bolt (Doomguard)
 		T.aoespam[54049] = 3		-- Shadow Bite (Felhunter)
 		T.aoespam[6262] = 3			-- Healthstone
+		T.aoespam[3716] = 3			-- Torment (Voidwalker)
 		T.merge[157736] = 348		-- Immolate
 		T.merge[108686] = 348		-- Immolate
 		T.merge[131737] = 980		-- Agony (Drain Soul)
