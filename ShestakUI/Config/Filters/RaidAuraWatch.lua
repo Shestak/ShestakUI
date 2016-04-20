@@ -618,4 +618,5 @@ T.RaidDebuffsIgnore = {
 	[142862] = true,			-- Ancient Barrier
 	[138309] = true,			-- Slimed
 	[166057] = true,			-- Biting Cold
+	[137619] = true,			-- Marked for Death
 }
