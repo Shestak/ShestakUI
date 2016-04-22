@@ -34,7 +34,7 @@ L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker"
 L_GUI_MISC_ENCHANTMENT_SCROLL = "Enchantment scroll on TradeSkill frame"
 L_GUI_MISC_ARCHAEOLOGY = "Archaeology artifacts and cooldown"
 L_GUI_MISC_CHARS_CURRENCY = "Tracks your currency tokens across multiple characters"
-L_GUI_MISC_ARMORY_LINK = "Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)"
+L_GUI_MISC_ARMORY_LINK = "Add Armory link in UnitPopupMenus (It breaks set focus)"
 L_GUI_MISC_MERCHANT_ITEMLEVEL = "Show item level for weapons and armor in merchant"
 L_GUI_MISC_MINIMIZE_MOUSEOVER = "Mouseover for quest minimize button"
 
