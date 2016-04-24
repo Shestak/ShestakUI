@@ -1276,6 +1276,7 @@ local function Shared(self, unit)
 		end
 		mhpb:SetStatusBarTexture(C.media.texture)
 		mhpb:SetStatusBarColor(0, 1, 0.5, 0.2)
+		mhpb:SetFrameLevel(3)
 
 		local ohpb = CreateFrame("StatusBar", nil, self.Health)
 		ohpb:SetPoint("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
@@ -1283,13 +1284,26 @@ local function Shared(self, unit)
 		ohpb:SetWidth(mhpb:GetWidth())
 		ohpb:SetStatusBarTexture(C.media.texture)
 		ohpb:SetStatusBarColor(0, 1, 0, 0.2)
+		ohpb:SetFrameLevel(3)
+
+		local ahpb = CreateFrame("StatusBar", nil, self.Health)
+		ahpb:SetPoint("TOPLEFT", self.Health:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
+		ahpb:SetPoint("BOTTOMLEFT", self.Health:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
+		ahpb:SetWidth(mhpb:GetWidth())
+		ahpb:SetStatusBarTexture(C.media.texture)
+		ahpb:SetStatusBarColor(1, 1, 0, 0.2)
+		ahpb:SetFrameLevel(3)
 
 		self.HealPrediction = {
 			myBar = mhpb,
 			otherBar = ohpb,
+			absorbBar = ahpb,
+			maxOverflow = 1,
+			frequentUpdates = true,
 			PostUpdate = function(frame)
 				if frame.myBar:GetValue() == 0 then frame.myBar:SetAlpha(0) else frame.myBar:SetAlpha(1) end
 				if frame.otherBar:GetValue() == 0 then frame.otherBar:SetAlpha(0) else frame.otherBar:SetAlpha(1) end
+				if frame.absorbBar:GetValue() == 0 then frame.absorbBar:SetAlpha(0) else frame.absorbBar:SetAlpha(1) end
 			end
 		}
 	end
