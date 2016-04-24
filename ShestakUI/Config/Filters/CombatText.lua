@@ -250,7 +250,8 @@ elseif T.class == "PRIEST" then
 		T.aoespam[110745] = 3		-- Divine Star
 		T.merge[94472] = 81751		-- Atonement
 		-- Damaging spells
-		T.aoespam[47666] = 3		-- Penance
+		T.aoespam[186723] = 3		-- Penance
+		T.merge[47666] = 186723		-- Penance
 		T.aoespam[132157] = 0		-- Holy Nova
 		T.aoespam[589] = 3			-- Shadow Word: Pain
 		T.aoespam[34914] = 3		-- Vampiric Touch
