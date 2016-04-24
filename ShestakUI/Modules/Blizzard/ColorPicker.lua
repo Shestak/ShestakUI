@@ -10,7 +10,7 @@ local editingText
 
 local function UpdateAlphaText()
 	local a = OpacitySliderFrame:GetValue()
-	a = a * 100
+	a = (1 - a) * 100
 	a = math.floor(a + 0.05)
 	ColorPPBoxA:SetText(string.format("%d", a))
 end
@@ -21,7 +21,7 @@ local function UpdateAlpha(tbox)
 		a = 100
 		ColorPPBoxA:SetText(string.format("%d", a))
 	end
-	a = a / 100
+	a = 1 - (a / 100)
 	editingText = true
 	OpacitySliderFrame:SetValue(a)
 	editingText = nil
