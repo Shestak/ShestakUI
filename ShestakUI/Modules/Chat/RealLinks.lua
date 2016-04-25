@@ -21,12 +21,15 @@ local function GetLinkColor(data)
 		else
 			return "|cffffd200"
 		end
+	elseif type == "garrfollower" then
+		local _, _, _, color = GetItemQualityColor(arg2)
+		return "|c"..color
 	elseif type == "quest" then
 		local color = GetQuestDifficultyColor(arg2)
 		return format("|cff%2x%2x%2x", color.r * 255, color.g * 255, color.b * 255)
 	elseif type == "spell" then
 		return "|cff71d5ff"
-	elseif type == "achievement" then
+	elseif type == "achievement" or type == "garrmission" then
 		return "|cffffff00"
 	elseif type == "trade" or type == "enchant" then
 		return "|cffffd000"
@@ -34,7 +37,7 @@ local function GetLinkColor(data)
 		return "|cffff8000"
 	elseif type == "glyph" or type == "journal" then
 		return "|cff66bbff"
-	elseif type == "talent" or type == "battlePetAbil" then
+	elseif type == "talent" or type == "battlePetAbil" or type == "garrfollowerability" then
 		return "|cff4e96f7"
 	elseif type == "levelup" then
 		return "|cffff4e00"
