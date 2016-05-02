@@ -4,29 +4,40 @@ if C.chat.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Colors links in Battle.net whispers(RealLinks by p3lim)
 ----------------------------------------------------------------------------------------
+local queuedMessages = {}
 local function GetLinkColor(data)
-	local type, arg1, arg2, arg3 = string.match(data, "(%w+):(%d+):(%d+):(%d+)")
+	local type, arg1, arg2, arg3 = string.split(":", data)
 	if type == "item" then
 		local _, _, quality = GetItemInfo(arg1)
 		if quality then
-			local _, _, _, hex = GetItemQualityColor(quality)
-			return "|c"..hex
+			local _, _, _, color = GetItemQualityColor(quality)
+			return "|c"..color
+		else
+			return nil, true
+		end
+	elseif type == "quest" then
+		if arg2 then
+			return ConvertRGBtoColorString(GetQuestDifficultyColor(arg2))
+		else
+			return "|cffffd100"
+		end
+	elseif type == "currency" then
+		local link = GetCurrencyLink(arg1)
+		if link then
+			return gsub(link, 0, 10)
 		else
 			return "|cffffffff"
 		end
 	elseif type == "battlepet" then
 		if arg3 ~= -1 then
-			local _, _, _, hex = GetItemQualityColor(arg3)
-			return "|c"..hex
+			local _, _, _, color = GetItemQualityColor(arg3)
+			return "|c"..color
 		else
 			return "|cffffd200"
 		end
 	elseif type == "garrfollower" then
 		local _, _, _, color = GetItemQualityColor(arg2)
 		return "|c"..color
-	elseif type == "quest" then
-		local color = GetQuestDifficultyColor(arg2)
-		return format("|cff%2x%2x%2x", color.r * 255, color.g * 255, color.b * 255)
 	elseif type == "spell" then
 		return "|cff71d5ff"
 	elseif type == "achievement" or type == "garrmission" then
@@ -46,15 +57,31 @@ local function GetLinkColor(data)
 	end
 end
 
-local function AddLinkColors(self, event, msg, ...)
-	local data = string.match(msg, "|H(.-)|h(.-)|h")
-	if data then
-		local newmsg = string.gsub(msg, "|H(.-)|h(.-)|h", GetLinkColor(data).."|H%1|h%2|h|r")
-		return false, newmsg, ...
-	else
-		return false, msg, ...
+local function MessageFilter(self, event, message, ...)
+	for link, data in gmatch(message, "(|H(.-)|h.-|h)") do
+		local color, queue = GetLinkColor(data)
+		if queue then
+			table.insert(queuedMessages, {self, event, message, ...})
+			return true
+		elseif color then
+			local matchLink = "|H" .. data .. "|h.-|h"
+			message = gsub(message, matchLink, color .. link .. "|r", 1)
+		end
 	end
+
+	return false, message, ...
 end
 
-ChatFrame_AddMessageEventFilter("CHAT_MSG_BN_WHISPER", AddLinkColors)
-ChatFrame_AddMessageEventFilter("CHAT_MSG_BN_WHISPER_INFORM", AddLinkColors)
+local Handler = CreateFrame("Frame")
+Handler:RegisterEvent("GET_ITEM_INFO_RECEIVED")
+Handler:SetScript("OnEvent", function()
+	if #queuedMessages > 0 then
+		for index, data in next, queuedMessages do
+			ChatFrame_MessageEventHandler(unpack(data))
+			queuedMessages[index] = nil
+		end
+	end
+end)
+
+ChatFrame_AddMessageEventFilter("CHAT_MSG_BN_WHISPER", MessageFilter)
+ChatFrame_AddMessageEventFilter("CHAT_MSG_BN_WHISPER_INFORM", MessageFilter)
