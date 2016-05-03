@@ -8,7 +8,7 @@ FixTooltip:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
 FixTooltip:RegisterEvent("ACTIONBAR_PAGE_CHANGED")
 FixTooltip:SetScript("OnEvent", function()
 	for i = 1, 12 do
-		local button = _G["ActionButton" .. i]
+		local button = _G["ActionButton"..i]
 		if GameTooltip:GetOwner() == button then
 			GameTooltip:Hide()
 		end
