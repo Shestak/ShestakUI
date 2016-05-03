@@ -7,19 +7,26 @@ local FixTooltip = CreateFrame("Frame")
 FixTooltip:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
 FixTooltip:RegisterEvent("ACTIONBAR_PAGE_CHANGED")
 FixTooltip:SetScript("OnEvent", function()
-	for i = 1, 12 do
-		local button = _G["ActionButton"..i]
-		if GameTooltip:GetOwner() == button then
-			GameTooltip:Hide()
+	local done
+	GameTooltip:HookScript("OnTooltipCleared", function(self)
+		if not done and self:NumLines() == 0 then
+			self:Hide()
+			done = true
 		end
-	end
+	end)
 end)
 
 local FixTooltipBags = CreateFrame("Frame")
 FixTooltipBags:RegisterEvent("BAG_UPDATE_DELAYED")
 FixTooltipBags:SetScript("OnEvent", function()
+	local done
 	if StuffingFrameBags and StuffingFrameBags:IsShown() then
-		GameTooltip:Hide()
+		GameTooltip:HookScript("OnTooltipCleared", function(self)
+			if not done and self:NumLines() == 0 then
+				self:Hide()
+				done = true
+			end
+		end)
 	end
 end)
 
