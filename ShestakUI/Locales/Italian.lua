@@ -130,6 +130,7 @@ L_ERRORFRAME_L = "Clicca per vedere gli errori."
 L_BAG_SHOW_BAGS = "Mostra le sacche"
 L_BAG_RIGHT_CLICK_SEARCH = "Clicca col destro per cercare"
 L_BAG_STACK_MENU = "Impila oggetti identici"
+L_BAG_RIGHT_CLICK_CLOSE = "Right-click to open menu" -- Need review
 
 -- Grab mail
 L_MAIL_STOPPED = "Interrotto, l'inventario è pieno."

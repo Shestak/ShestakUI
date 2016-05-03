@@ -272,6 +272,19 @@ function CreateReagentContainer()
 		end
 	end)
 
+	local tooltip_hide = function()
+		GameTooltip:Hide()
+	end
+
+	local tooltip_show = function(self)
+		GameTooltip:SetOwner(self, "ANCHOR_LEFT", 19, 7)
+		GameTooltip:ClearLines()
+		GameTooltip:SetText(L_BAG_RIGHT_CLICK_CLOSE)
+	end
+
+	Close:HookScript("OnEnter", tooltip_show)
+	Close:HookScript("OnLeave", tooltip_hide)
+
 	for i = 1, 98 do
 		local button = _G["ReagentBankFrameItem" .. i]
 		local icon = _G[button:GetName() .. "IconTexture"]
@@ -547,6 +560,19 @@ function Stuffing:SearchReset()
 	end
 end
 
+local function DragFunction(self, mode)
+	for index = 1, select("#", self:GetChildren()) do
+		local frame = select(index, self:GetChildren())
+		if frame:GetName() and frame:GetName():match("StuffingBag") then
+			if mode then
+				frame:Hide()
+			else
+				frame:Show()
+			end
+		end
+	end
+end
+
 function Stuffing:CreateBagFrame(w)
 	local n = "StuffingFrame"..w
 	local f = CreateFrame("Frame", n, UIParent)
@@ -554,12 +580,17 @@ function Stuffing:CreateBagFrame(w)
 	f:SetMovable(true)
 	f:SetFrameStrata("MEDIUM")
 	f:SetFrameLevel(5)
-	f:SetScript("OnMouseDown", function(self, button)
-		if IsShiftKeyDown() and button == "LeftButton" then
+	f:RegisterForDrag("LeftButton")
+	f:SetScript("OnDragStart", function(self)
+		if IsShiftKeyDown() then
 			self:StartMoving()
+			DragFunction(self, true)
 		end
 	end)
-	f:SetScript("OnMouseUp", f.StopMovingOrSizing)
+	f:SetScript("OnDragStop", function(self)
+		self:StopMovingOrSizing()
+		DragFunction(self, false)
+	end)
 
 	if w == "Bank" then
 		f:SetPoint(unpack(C.position.bank))
@@ -625,6 +656,19 @@ function Stuffing:CreateBagFrame(w)
 		end
 		self:GetParent():Hide()
 	end)
+
+	local tooltip_hide = function()
+		GameTooltip:Hide()
+	end
+
+	local tooltip_show = function(self)
+		GameTooltip:SetOwner(self, "ANCHOR_LEFT", 19, 7)
+		GameTooltip:ClearLines()
+		GameTooltip:SetText(L_BAG_RIGHT_CLICK_CLOSE)
+	end
+
+	f.b_close:HookScript("OnEnter", tooltip_show)
+	f.b_close:HookScript("OnLeave", tooltip_hide)
 
 	-- Create the bags frame
 	local fb = CreateFrame("Frame", n.."BagsFrame", f)
@@ -717,7 +761,7 @@ function Stuffing:InitBags()
 	end
 
 	local tooltip_show = function(self)
-		GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
+		GameTooltip:SetOwner(self, "ANCHOR_TOPLEFT", -12, 11)
 		GameTooltip:ClearLines()
 		GameTooltip:SetText(L_BAG_RIGHT_CLICK_SEARCH)
 	end

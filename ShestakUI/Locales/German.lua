@@ -130,6 +130,7 @@ L_ERRORFRAME_L = "Klick um Fehler anzuzeigen."
 L_BAG_SHOW_BAGS = "Zeige Taschen"
 L_BAG_RIGHT_CLICK_SEARCH = "Rechtsklick um zu suchen"
 L_BAG_STACK_MENU = "Stapeln"
+L_BAG_RIGHT_CLICK_CLOSE = "Right-click to open menu" -- Need review
 
 -- Grab mail
 L_MAIL_STOPPED = "Angehalten, Inventar ist voll."

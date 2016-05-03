@@ -130,6 +130,7 @@ L_ERRORFRAME_L = "Щелкните, чтобы посмотреть ошибки
 L_BAG_SHOW_BAGS = "Показать сумки"
 L_BAG_RIGHT_CLICK_SEARCH = "ПКМ для поиска"
 L_BAG_STACK_MENU = "Сложить"
+L_BAG_RIGHT_CLICK_CLOSE = "ПКМ, чтобы открыть меню"
 
 -- Grab mail
 L_MAIL_STOPPED = "Сбор почты приостановлен. Нет места в сумках."
