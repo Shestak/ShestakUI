@@ -501,12 +501,12 @@ function Plates:UpdateHealthText()
 		self.NewPlate.Health:SetSize((C.nameplate.width + C.nameplate.ad_width) * T.noscalemult, (C.nameplate.height + C.nameplate.ad_height) * T.noscalemult)
 		self.NewPlate.CastBar:SetPoint("BOTTOMLEFT", self.NewPlate.Health, "BOTTOMLEFT", 0, -8-((C.nameplate.height + C.nameplate.ad_height) * T.noscalemult))
 		self.NewPlate.CastBar.Icon:SetSize(((C.nameplate.height + C.nameplate.ad_height) * 2 * T.noscalemult) + 8, ((C.nameplate.height + C.nameplate.ad_height) * 2 * T.noscalemult) + 8)
-		self.NewPlate.Health:SetFrameLevel(2)
+		self.NewPlate.Health:SetFrameLevel(1)
 	else
 		self.NewPlate.Health:SetSize(C.nameplate.width * T.noscalemult, C.nameplate.height * T.noscalemult)
 		self.NewPlate.CastBar:SetPoint("BOTTOMLEFT", self.NewPlate.Health, "BOTTOMLEFT", 0, -8-(C.nameplate.height * T.noscalemult))
 		self.NewPlate.CastBar.Icon:SetSize((C.nameplate.height * 2 * T.noscalemult) + 8, (C.nameplate.height * 2 * T.noscalemult) + 8)
-		self.NewPlate.Health:SetFrameLevel(1)
+		self.NewPlate.Health:SetFrameLevel(0)
 	end
 
 	if UnitExists("target") and self.NewPlate:GetAlpha() == 1 and GetUnitName("target") == self.NewPlate.Name:GetText() then
