@@ -183,3 +183,23 @@ hooksecurefunc(BONUS_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(self, 
 
 	bar.newIconBg:SetShown(icon:IsShown())
 end)
+
+local function IsFramePositionedLeft(frame)
+	local x = frame:GetCenter()
+	local screenWidth = GetScreenWidth()
+	local screenHeight = GetScreenHeight()
+	local positionedLeft = false
+
+	if x and x < (screenWidth / 2) then
+		positionedLeft = true
+	end
+
+	return positionedLeft
+end
+
+hooksecurefunc("BonusObjectiveTracker_ShowRewardsTooltip", function(block)
+	if IsFramePositionedLeft(ObjectiveTrackerFrame) then
+		GameTooltip:ClearAllPoints()
+		GameTooltip:SetPoint("TOPLEFT", block, "TOPRIGHT", 0, 0)
+	end
+end)
