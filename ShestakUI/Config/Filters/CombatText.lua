@@ -226,6 +226,7 @@ elseif T.class == "PALADIN" then
 		T.aoespam[114919] = 3		-- Arcing Light
 		T.aoespam[114916] = 3		-- Execution Sentence
 		T.aoespam[86704] = 0		-- Ancient Fury
+		T.aoespam[157122] = 3		-- Holy Shield
 		T.merge[53595] = 88263		-- Hammer of the Righteous
 	end
 	if C.combattext.healing then
