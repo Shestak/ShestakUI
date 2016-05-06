@@ -1203,6 +1203,7 @@ T.PostCastStart = function(Castbar, unit, name, castid)
 		Castbar.SafeZone:ClearAllPoints()
 		Castbar.SafeZone:SetPoint("TOPRIGHT")
 		Castbar.SafeZone:SetPoint("BOTTOMRIGHT")
+		Castbar.castSent = nil
 	end
 
 	if unit == "player" and C.unitframe.castbar_ticks == true then
@@ -1276,6 +1277,7 @@ T.PostChannelStart = function(Castbar, unit, name)
 		Castbar.SafeZone:ClearAllPoints()
 		Castbar.SafeZone:SetPoint("TOPLEFT")
 		Castbar.SafeZone:SetPoint("BOTTOMLEFT")
+		Castbar.castSent = nil
 	end
 
 	if unit == "player" and C.unitframe.castbar_ticks == true then
