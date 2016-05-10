@@ -1436,3 +1436,8 @@ function Stuffing.Menu(self, level)
 	info.tooltipTitle = CLOSE
 	UIDropDownMenu_AddButton(info, level)
 end
+
+ -- Kill Blizzard functions
+ LootWonAlertFrame_OnClick = T.dummy
+ LootUpgradeFrame_OnClick = T.dummy
+ StorePurchaseAlertFrame_OnClick = T.dummy
