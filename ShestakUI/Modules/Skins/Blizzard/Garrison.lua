@@ -114,10 +114,10 @@ local function LoadSkin()
 
 	for _, item in pairs({GarrisonMissionFrame.FollowerTab.ItemWeapon, GarrisonMissionFrame.FollowerTab.ItemArmor}) do
 		item.Border:Hide()
-		item.Icon:SetTexCoord(.08, .92, .08, .92)
+		item.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		item:CreateBackdrop("Default")
-		item.backdrop:SetPoint("TOPLEFT", item.Icon,"TOPLEFT", -2, 2)
-		item.backdrop:SetPoint("BOTTOMRIGHT", item.Icon,"BOTTOMRIGHT", 2, -2)
+		item.backdrop:SetPoint("TOPLEFT", item.Icon, "TOPLEFT", -2, 2)
+		item.backdrop:SetPoint("BOTTOMRIGHT", item.Icon, "BOTTOMRIGHT", 2, -2)
 		item.backdrop:SetFrameLevel(item:GetFrameLevel())
 	end
 
@@ -135,8 +135,8 @@ local function LoadSkin()
 			if not reward.backdrop then
 				reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				reward:CreateBackdrop("Default")
-				reward.backdrop:SetPoint("TOPLEFT", reward.Icon,"TOPLEFT", -2, 2)
-				reward.backdrop:SetPoint("BOTTOMRIGHT", reward.Icon,"BOTTOMRIGHT", 2, -2)
+				reward.backdrop:SetPoint("TOPLEFT", reward.Icon, "TOPLEFT", -2, 2)
+				reward.backdrop:SetPoint("BOTTOMRIGHT", reward.Icon, "BOTTOMRIGHT", 2, -2)
 				reward.backdrop:SetFrameLevel(reward:GetFrameLevel())
 			end
 		end
@@ -147,8 +147,8 @@ local function LoadSkin()
 		if not frame.backdrop then
 			frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			frame:CreateBackdrop("Default")
-			frame.backdrop:SetPoint("TOPLEFT", frame.Icon,"TOPLEFT", -2, 2)
-			frame.backdrop:SetPoint("BOTTOMRIGHT", frame.Icon,"BOTTOMRIGHT", 2, -2)
+			frame.backdrop:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
+			frame.backdrop:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
 		end
 	end)
 
@@ -228,7 +228,7 @@ local function LoadSkin()
 		while ability do
 			local icon = ability.IconButton.Icon
 
-			icon:SetTexCoord(.08, .92, .08, .92)
+			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			icon:SetDrawLayer("BACKGROUND", 1)
 			ability.IconButton:CreateBackdrop("Default")
 
