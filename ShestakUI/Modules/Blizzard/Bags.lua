@@ -36,14 +36,14 @@ elseif T.class == "WARRIOR" then
 	unusable = {{16}, {}}
 end
 
-for class = 1, 2 do
-	local subs = {GetAuctionItemSubClasses(class)}
-	for i, subclass in ipairs(unusable[class]) do
-		unusable[subs[subclass]] = true
-	end
-	unusable[class] = nil
-	subs = nil
-end
+--BETA for class = 1, 2 do
+	-- local subs = {GetAuctionItemSubClasses(class)}
+	-- for i, subclass in ipairs(unusable[class]) do
+		-- unusable[subs[subclass]] = true
+	-- end
+	-- unusable[class] = nil
+	-- subs = nil
+-- end
 
 local function IsClassUnusable(subclass, slot)
 	if subclass then
@@ -52,14 +52,14 @@ local function IsClassUnusable(subclass, slot)
 end
 
 local function IsItemUnusable(...)
-	if ... then
-		local subclass, _, slot = select(7, GetItemInfo(...))
-		return IsClassUnusable(subclass, slot)
-	end
+	--BETA if ... then
+		-- local subclass, _, slot = select(7, GetItemInfo(...))
+		-- return IsClassUnusable(subclass, slot)
+	-- end
 end
 
 -- Hide bags options in default interface
-InterfaceOptionsDisplayPanelShowFreeBagSpace:Hide()
+--BETA InterfaceOptionsDisplayPanelShowFreeBagSpace:Hide()
 
 Stuffing = CreateFrame("Frame", nil, UIParent)
 Stuffing:RegisterEvent("ADDON_LOADED")
@@ -139,7 +139,8 @@ local upgrades = {
 	["507"] = 24, ["530"] = 5, ["531"] = 10
 }
 
-local weapon, armor = GetAuctionItemClasses()
+--BETA local weapon, armor = GetAuctionItemClasses()
+local weapon, armor = nil, nil
 
 function Stuffing:SlotUpdate(b)
 	local texture, count, locked, quality = GetContainerItemInfo(b.bag, b.slot)
