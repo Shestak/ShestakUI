@@ -31,7 +31,7 @@ T.RaidBuffs = {
 		{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},		-- Hand of Freedom
 		{1038, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},		-- Hand of Salvation
 		{6940, "BOTTOMRIGHT", {0.89, 0.1, 0.1}, true},		-- Hand of Sacrifice
-		{114039, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},		-- Hand of Purity
+		--BETA {114039, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},		-- Hand of Purity
 	},
 	PRIEST = {
 		{6788, "TOPRIGHT", {1, 0, 0}, true},				-- Weakened Soul
@@ -49,10 +49,10 @@ T.RaidBuffs = {
 		{35079, "TOPRIGHT", {0.2, 0.2, 1}},					-- Misdirection
 	},
 	MAGE = {
-		{111264, "TOPRIGHT", {0.2, 0.2, 1}},				-- Ice Ward
+		--BETA {111264, "TOPRIGHT", {0.2, 0.2, 1}},				-- Ice Ward
 	},
 	ROGUE = {
-		{57933, "TOPRIGHT", {0.89, 0.1, 0.1}},				-- Tricks of the Trade
+		--BETA {57933, "TOPRIGHT", {0.89, 0.1, 0.1}},				-- Tricks of the Trade
 	},
 	WARLOCK = {
 		{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},				-- Soulstone
@@ -551,7 +551,7 @@ T.RaidDebuffs = {
 if C.raidframe.plugins_pvp_debuffs == true then
 	T.PvPDebuffs = {
 		-- Death Knight
-		[SpellName(115001)] = 3,	-- Remorseless Winter
+		--BETA [SpellName(115001)] = 3,	-- Remorseless Winter
 		[SpellName(108194)] = 3,	-- Asphyxiate
 		[SpellName(91797)] = 3,		-- Monstrous Blow (Mutated Ghoul)
 		[SpellName(91800)] = 3,		-- Gnaw (Ghoul)
@@ -559,7 +559,7 @@ if C.raidframe.plugins_pvp_debuffs == true then
 		-- Druid
 		[SpellName(33786)] = 3,		-- Cyclone
 		[SpellName(78675)] = 3,		-- Solar Beam
-		[SpellName(114238)] = 3,	-- Fae Silence
+		--BETA [SpellName(114238)] = 3,	-- Fae Silence
 		[SpellName(339)] = 2,		-- Entangling Roots
 		-- Hunter
 		[SpellName(3355)] = 3,		-- Freezing Trap
@@ -569,18 +569,18 @@ if C.raidframe.plugins_pvp_debuffs == true then
 		-- Mage
 		[SpellName(61305)] = 3,		-- Polymorph
 		[SpellName(82691)] = 3,		-- Ring of Frost
-		[SpellName(44572)] = 3,		-- Deep Freeze
+		--BETA [SpellName(44572)] = 3,		-- Deep Freeze
 		[SpellName(31661)] = 3,		-- Dragon's Breath
-		[SpellName(102051)] = 3,	-- Frostjaw
+		--BETA [SpellName(102051)] = 3,	-- Frostjaw
 		[SpellName(122)] = 2,		-- Frost Nova
-		[SpellName(111340)] = 2,	-- Ice Ward
+		--BETA [SpellName(111340)] = 2,	-- Ice Ward
 		-- Monk
 		[SpellName(115078)] = 3,	-- Paralysis
 		[SpellName(119381)] = 3,	-- Leg Sweep
 		-- Paladin
 		[SpellName(20066)] = 3,		-- Repentance
 		[SpellName(853)] = 3,		-- Hammer of Justice
-		[SpellName(105593)] = 3,	-- Fist of Justice
+		--BETA [SpellName(105593)] = 3,	-- Fist of Justice
 		[SpellName(105421)] = 3,	-- Blinding Light
 		-- Priest
 		[SpellName(605)] = 3,		-- Dominate Mind
@@ -595,7 +595,7 @@ if C.raidframe.plugins_pvp_debuffs == true then
 		-- Shaman
 		[SpellName(51514)] = 3,		-- Hex
 		[SpellName(118905)] = 3,	-- Static Charge
-		[SpellName(63685)] = 2,		-- Frozen Power
+		--BETA [SpellName(63685)] = 2,		-- Frozen Power
 		-- Warlock
 		[SpellName(118699)] = 3,	-- Fear
 		[SpellName(6789)] = 3,		-- Mortal Coil

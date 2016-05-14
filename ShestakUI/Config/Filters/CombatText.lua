@@ -128,7 +128,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[42208] = 3		-- Blizzard
 		T.aoespam[122] = 0			-- Frost Nova
 		T.aoespam[1449] = 0			-- Arcane Explosion
-		T.aoespam[83853] = 3		-- Combustion
+		--BETA T.aoespam[83853] = 3		-- Combustion
 		T.aoespam[120] = 0			-- Cone of Cold
 		T.aoespam[114923] = 3		-- Nether Tempest
 		T.aoespam[114954] = 3		-- Nether Tempest (AoE)
@@ -216,7 +216,7 @@ elseif T.class == "PALADIN" then
 		T.aoespam[119072] = .5		-- Holy Wrath
 		T.aoespam[53385] = 0		-- Divine Storm
 		T.aoespam[122032] = 0		-- Exorcism (Glyph)
-		T.aoespam[31803] = 3		-- Censure
+		--BETA T.aoespam[31803] = 3		-- Censure
 		T.aoespam[42463] = 3		-- Seal of Truth
 		T.aoespam[101423] = 3		-- Seal of Righteousness
 		T.aoespam[88263] = 0		-- Hammer of the Righteous
@@ -315,7 +315,7 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[77478] = 3		-- Earhquake
 		T.aoespam[51490] = 0		-- Thunderstorm
 		T.aoespam[8187] = 3			-- Magma Totem
-		T.aoespam[8050] = 3			-- Flame Shock
+		--BETA T.aoespam[8050] = 3			-- Flame Shock
 		T.aoespam[25504] = 3		-- Windfury Attack
 		T.aoespam[10444] = 3		-- Flametongue Attack
 		T.aoespam[3606] = 3			-- Searing Bolt

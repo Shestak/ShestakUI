@@ -28,7 +28,7 @@ if C.raidcooldown.enable == true then
 		[108280] = 180,	-- Healing Tide Totem
 		[15286] = 180,	-- Vampiric Embrace
 		[108281] = 120,	-- Ancestral Guidance
-		[157535] = 90,	-- Breath of the Serpent
+		--BETA [157535] = 90,	-- Breath of the Serpent
 		-- Defense
 		[62618] = 180,	-- Power Word: Barrier
 		[33206] = 180,	-- Pain Suppression
@@ -57,23 +57,23 @@ if C.enemycooldown.enable == true then
 		[96231] = 15,	-- Rebuke
 		[1766] = 15,	-- Kick
 		[6552] = 15,	-- Pummel
-		[102051] = 20,	-- Frostjaw
+		--BETA [102051] = 20,	-- Frostjaw
 		[147362] = 24,	-- Counter Shot
 		[2139] = 24,	-- Counterspell
 		[19647] = 24,	-- Spell Lock
 		[115781] = 24,	-- Optical Blast
-		[102060] = 40,	-- Disrupting Shout
+		--BETA [102060] = 40,	-- Disrupting Shout
 		[15487] = 45,	-- Silence
 		[47476] = 60,	-- Strangulate
 		[78675] = 60,	-- Solar Beam
 		-- Crowd Controls
 		[115078] = 15,	-- Paralysis
 		[20066] = 15,	-- Repentance
-		[10326] = 15,	-- Turn Evil
+		--BETA [10326] = 15,	-- Turn Evil
 		[108194] = 30,	-- Asphyxiate
-		[1499] = 30,	-- Freezing Trap
-		[44572] = 30,	-- Deep Freeze
-		[105593] = 30,	-- Fist of Justice
+		--BETA [1499] = 30,	-- Freezing Trap
+		--BETA [44572] = 30,	-- Deep Freeze
+		--BETA [105593] = 30,	-- Fist of Justice
 		[8122] = 30,	-- Psychic Scream
 		[30283] = 30,	-- Shadowfury
 		[107570] = 30,	-- Storm Bolt
@@ -85,15 +85,15 @@ if C.enemycooldown.enable == true then
 		[51514] = 45,	-- Hex
 		[6789] = 45,	-- Mortal Coil
 		[853] = 60,		-- Hammer of Justice
-		[108200] = 60,	-- Remorseless Winter
+		--BETA [108200] = 60,	-- Remorseless Winter
 		-- Defense abilities
 		[48707] = 45,	-- Anti-Magic Shell
 		[31224] = 60,	-- Cloak of Shadows
-		[8143] = 60,	-- Tremor Totem
+		--BETA [8143] = 60,	-- Tremor Totem
 		[46924] = 60,	-- Bladestorm
 		[108978] = 90,	-- Alter Time
 		[49039] = 120,	-- Lichborne
-		[137562] = 120,	-- Nimble Brew
+		--BETA [137562] = 120,	-- Nimble Brew
 		[47585] = 120,	-- Dispersion
 		[1856] = 120,	-- Vanish
 		[7744] = 120,	-- Will of the Forsaken (Racial)

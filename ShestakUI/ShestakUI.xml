@@ -65,7 +65,7 @@
 	<Script file="Modules\Misc\ArmoryLink.lua"/>
 	<Script file="Modules\Misc\CharsCurrency.lua"/>
 	<Script file="Modules\Misc\ClickCast.lua"/>
-	<!-- <Script file="Modules\Misc\Filger.lua"/> -->
+	<Script file="Modules\Misc\Filger.lua"/>
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
 	<Script file="Modules\Misc\LFGQueueTimer.lua"/>
 	<Script file="Modules\Misc\MagePortals.lua"/>
@@ -239,7 +239,7 @@
 	<Script file="Modules\Tooltip\MultiItemRef.lua"/>
 	<Script file="Modules\Tooltip\PvPRating.lua"/>
 	<Script file="Modules\Tooltip\RuFix.lua"/>
-	<!-- <Script file="Modules\Tooltip\SpellID.lua"/> -->
+	<Script file="Modules\Tooltip\SpellID.lua"/>
 	<Script file="Modules\Tooltip\ItemCount.lua"/>
 	<Script file="Modules\Tooltip\UnitRole.lua"/>
 	<Script file="Modules\Tooltip\CheckItemTransmogrify.lua"/>
