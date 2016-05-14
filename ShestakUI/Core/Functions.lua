@@ -61,6 +61,7 @@ end
 
 local isCaster = {
 	DEATHKNIGHT = {nil, nil, nil},
+	DEMONHUNTER = {nil, nil},
 	DRUID = {true},					-- Balance
 	HUNTER = {nil, nil, nil},
 	MAGE = {true, true, true},

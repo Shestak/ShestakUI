@@ -60,12 +60,12 @@
 	<Script file="Modules\UnitFrames\RaidDPS.lua"/>
 	<Script file="Modules\UnitFrames\RaidHeal.lua"/>
 
-	<Script file="Modules\Misc\AlreadyKnown.lua"/>
+	<!-- <Script file="Modules\Misc\AlreadyKnown.lua"/> -->
 	<Script file="Modules\Misc\Archaeology.lua"/>
 	<Script file="Modules\Misc\ArmoryLink.lua"/>
 	<Script file="Modules\Misc\CharsCurrency.lua"/>
 	<Script file="Modules\Misc\ClickCast.lua"/>
-	<Script file="Modules\Misc\Filger.lua"/>
+	<!-- <Script file="Modules\Misc\Filger.lua"/> -->
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
 	<Script file="Modules\Misc\LFGQueueTimer.lua"/>
 	<Script file="Modules\Misc\MagePortals.lua"/>
@@ -81,7 +81,7 @@
 	<Script file="Modules\Misc\ProfessionTabs.lua"/>
 	<Script file="Modules\Misc\PvPQueueTimer.lua"/>
 	<Script file="Modules\Misc\RaidUtility.lua"/>
-	<Script file="Modules\Misc\SlotItemLevel.lua"/>
+	<!-- <Script file="Modules\Misc\SlotItemLevel.lua"/> -->
 	<Script file="Modules\Misc\SumAucBuyouts.lua"/>
 	<Script file="Modules\Misc\Threat.lua"/>
 	<Script file="Modules\Misc\TrainAll.lua"/>
@@ -129,32 +129,32 @@
 	<Script file="Modules\Automation\SolveArtifact.lua"/>
 	<Script file="Modules\Automation\TabBinder.lua"/>
 
-	<Script file="Modules\Blizzard\Achievements.lua"/>
+	<!-- <Script file="Modules\Blizzard\Achievements.lua"/> -->
 	<Script file="Modules\Blizzard\AltPowerBar.lua"/>
-	<Script file="Modules\Blizzard\Bags.lua"/>
+	<!-- <Script file="Modules\Blizzard\Bags.lua"/> -->
 	<Script file="Modules\Blizzard\CaptureBar.lua"/>
 	<Script file="Modules\Blizzard\ColorPicker.lua"/>
 	<Script file="Modules\Blizzard\CombatText.lua"/>
 	<Script file="Modules\Blizzard\Durability.lua"/>
 	<Script file="Modules\Blizzard\Errors.lua"/>
-	<Script file="Modules\Blizzard\ExtraActionBar.lua"/>
+	<!-- <Script file="Modules\Blizzard\ExtraActionBar.lua"/> -->
 	<Script file="Modules\Blizzard\Fixes.lua"/>
-	<Script file="Modules\Blizzard\Fonts.lua"/>
+	<!-- <Script file="Modules\Blizzard\Fonts.lua"/> -->
 	<Script file="Modules\Blizzard\FriendList.lua"/>
 	<Script file="Modules\Blizzard\Mail.lua"/>
 	<Script file="Modules\Blizzard\MirrorBars.lua"/>
 	<Script file="Modules\Blizzard\MoveBlizzFrames.lua"/>
-	<Script file="Modules\Blizzard\Nameplates.lua"/>
+	<!-- <Script file="Modules\Blizzard\Nameplates.lua"/> -->
 	<Script file="Modules\Blizzard\PetBattle.lua"/>
 	<Script file="Modules\Blizzard\ShiftMark.lua"/>
 	<Script file="Modules\Blizzard\TimerTracker.lua"/>
 	<Script file="Modules\Blizzard\Vehicle.lua"/>
 
 	<Script file="Modules\Buffs\AuraSource.lua"/>
-	<Script file="Modules\Buffs\BuffFrame.lua"/>
-	<Script file="Modules\Buffs\ConsolidatedBuffs.lua"/>
-	<Script file="Modules\Buffs\SelfBuffsReminder.lua"/>
-	<Script file="Modules\Buffs\RaidBuffsReminder.lua"/>
+	<!-- <Script file="Modules\Buffs\BuffFrame.lua"/> -->
+	<!-- <Script file="Modules\Buffs\ConsolidatedBuffs.lua"/> -->
+	<!-- <Script file="Modules\Buffs\SelfBuffsReminder.lua"/> -->
+	<!-- <Script file="Modules\Buffs\RaidBuffsReminder.lua"/> -->
 
 	<Script file="Modules\Chat\ChatFrames.lua"/>
 	<Script file="Modules\Chat\ChatTabs.lua"/>
@@ -200,7 +200,7 @@
 	<Script file="Modules\Quests\QuestLog.lua"/>
 	<Script file="Modules\Quests\WowheadLink.lua"/>
 
-	<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>
+<!-- 	<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>
 	<Script file="Modules\Skins\Ace3.lua"/>
 	<Script file="Modules\Skins\AtlasLoot.lua"/>
 	<Script file="Modules\Skins\Aurora.lua"/>
@@ -228,7 +228,7 @@
 	<Script file="Modules\Skins\Skada.lua"/>
 	<Script file="Modules\Skins\TinyDPS.lua"/>
 	<Script file="Modules\Skins\VanasKoS.lua"/>
-	<Script file="Modules\Skins\WeakAuras.lua"/>
+	<Script file="Modules\Skins\WeakAuras.lua"/> -->
 
 	<Script file="Modules\Tooltip\Tooltip.lua"/>
 	<Script file="Modules\Tooltip\HyperLink.lua"/>
@@ -239,7 +239,7 @@
 	<Script file="Modules\Tooltip\MultiItemRef.lua"/>
 	<Script file="Modules\Tooltip\PvPRating.lua"/>
 	<Script file="Modules\Tooltip\RuFix.lua"/>
-	<Script file="Modules\Tooltip\SpellID.lua"/>
+	<!-- <Script file="Modules\Tooltip\SpellID.lua"/> -->
 	<Script file="Modules\Tooltip\ItemCount.lua"/>
 	<Script file="Modules\Tooltip\UnitRole.lua"/>
 	<Script file="Modules\Tooltip\CheckItemTransmogrify.lua"/>

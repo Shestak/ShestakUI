@@ -46,8 +46,8 @@ frame:SetScript("OnEvent", function(self, event, addon)
 
 	if C.chat.enable then
 		SetCVar("chatStyle", "im")
-		InterfaceOptionsSocialPanelChatStyle:Kill()
-		InterfaceOptionsSocialPanelWholeChatWindowClickable:Kill()
+		--BETA InterfaceOptionsSocialPanelChatStyle:Kill()
+		--BETA InterfaceOptionsSocialPanelWholeChatWindowClickable:Kill()
 	end
 
 	if C.unitframe.enable then
@@ -58,12 +58,12 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		InterfaceOptionsFrameCategoriesButton9:SetAlpha(0)
 		InterfaceOptionsFrameCategoriesButton10:SetScale(0.00001)
 		InterfaceOptionsFrameCategoriesButton10:SetAlpha(0)
-		InterfaceOptionsBuffsPanelCastableBuffs:Kill()
-		InterfaceOptionsBuffsPanelDispellableDebuffs:Kill()
-		InterfaceOptionsBuffsPanelShowAllEnemyDebuffs:Kill()
+		--BETA InterfaceOptionsBuffsPanelCastableBuffs:Kill()
+		--BETA InterfaceOptionsBuffsPanelDispellableDebuffs:Kill()
+		--BETA InterfaceOptionsBuffsPanelShowAllEnemyDebuffs:Kill()
 		InterfaceOptionsCombatPanelTargetOfTarget:Kill()
-		InterfaceOptionsCombatPanelEnemyCastBars:Kill()
-		InterfaceOptionsCombatPanelEnemyCastBarsOnPortrait:Kill()
+		--BETA InterfaceOptionsCombatPanelEnemyCastBars:Kill()
+		--BETA InterfaceOptionsCombatPanelEnemyCastBarsOnPortrait:Kill()
 		SetCVar("showPartyBackground", 0)
 	end
 
@@ -76,8 +76,8 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	end
 
 	if C.nameplate.enable then
-		InterfaceOptionsCombatPanelEnemyCastBarsOnNameplates:Kill()
-		InterfaceOptionsNamesPanelUnitNameplatesNameplateClassColors:Kill()
+		--BETA InterfaceOptionsCombatPanelEnemyCastBarsOnNameplates:Kill()
+		--BETA InterfaceOptionsNamesPanelUnitNameplatesNameplateClassColors:Kill()
 		SetCVar("ShowClassColorInNameplate", 1)
 	end
 
@@ -86,14 +86,14 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	end
 
 	if C.bag.enable then
-		InterfaceOptionsControlsPanelReverseCleanUpBags:Kill()
-		InterfaceOptionsControlsPanelReverseNewLoot:Kill()
+		--BETA InterfaceOptionsControlsPanelReverseCleanUpBags:Kill()
+		--BETA InterfaceOptionsControlsPanelReverseNewLoot:Kill()
 		SetSortBagsRightToLeft(true)
 		SetInsertItemsLeftToRight(false)
 	end
 
 	if C.combattext.enable then
-		InterfaceOptionsCombatTextPanelFCTDropDown:Kill()
+		--BETA InterfaceOptionsCombatTextPanelFCTDropDown:Kill()
 		if C.combattext.blizz_head_numbers ~= true then
 			SetCVar("CombatDamage", 0)
 			SetCVar("PetMeleeDamage", 0)
