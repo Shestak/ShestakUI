@@ -36,10 +36,10 @@ hooksecurefunc("SetItemRef", function(link, ...)
 	if id then addLine(ItemRefTooltip, id) end
 end)
 
-hooksecurefunc(GameTooltip, "SetGlyph", function(self, ...)
-	local id = select(4, GetGlyphSocketInfo(...))
-	if id then addLine(self, id) end
-end)
+--BETA hooksecurefunc(GameTooltip, "SetGlyph", function(self, ...)
+	-- local id = select(4, GetGlyphSocketInfo(...))
+	-- if id then addLine(self, id) end
+-- end)
 
 local function attachItemTooltip(self)
 	local link = select(2, self:GetItem())
