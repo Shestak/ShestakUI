@@ -8,7 +8,12 @@ if C.nameplate.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 local function SpellName(id)
 	local name = GetSpellInfo(id)
-	return name
+	if name then
+		return name
+	else
+		print("|cffff0000WARNING: spell ID ["..tostring(id).."] no longer exists! Report this to Shestak.|r")
+		return "Empty"
+	end
 end
 
 T.DebuffWhiteList = {
