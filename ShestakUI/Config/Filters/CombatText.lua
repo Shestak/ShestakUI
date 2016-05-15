@@ -264,7 +264,7 @@ elseif T.class == "PRIEST" then
 		T.aoespam[120696] = 3		-- Halo
 		T.aoespam[127628] = 3		-- Cascade
 		T.aoespam[122128] = 3		-- Divine Star
-		T.aoespam[129197] = 3		-- Insanity
+		--BETA T.aoespam[129197] = 3		-- Insanity
 		T.aoespam[148859] = 3		-- Shadowy Apparition
 		T.merge[158831] = 2944		-- Devouring Plague
 	end
@@ -345,7 +345,7 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[689] = 3			-- Drain Life
 		T.aoespam[5857] = 3			-- Hellfire
 		T.aoespam[129476] = 3		-- Immolation Aura
-		T.aoespam[103103] = 3		-- Drain Soul
+		--BETA T.aoespam[103103] = 3		-- Drain Soul
 		T.aoespam[86040] = 3		-- Hand of Gul'dan
 		T.aoespam[124915] = 3		-- Chaos Wave
 		T.aoespam[47960] = 3		-- Shadowflame

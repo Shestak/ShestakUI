@@ -20,10 +20,10 @@ T.CastBarTicks = {
 	-- Druid
 	[SpellName(740)] = 4,		-- Tranquility
 	[SpellName(16914)] = 10,	-- Hurricane
-	[SpellName(106996)] = 10,	-- Astral Storm
+	--BETA [SpellName(106996)] = 10,	-- Astral Storm
 	-- Mage
 	[SpellName(5143)] = 5,		-- Arcane Missiles
-	[SpellName(10)] = 8,		-- Blizzard
+	--BETA [SpellName(10)] = 8,		-- Blizzard
 	[SpellName(12051)] = 4,		-- Evocation
 	-- Monk
 	[SpellName(115175)] = 9,	-- Soothing Mist
@@ -34,11 +34,11 @@ T.CastBarTicks = {
 	[SpellName(48045)] = 5,		-- Mind Sear
 	[SpellName(47540)] = 2,		-- Penance
 	[SpellName(64843)] = 4,		-- Divine Hymn
-	[SpellName(129197)] = 3,	-- Insanity
+	--BETA [SpellName(129197)] = 3,	-- Insanity
 	-- Warlock
 	[SpellName(689)] = 6,		-- Drain Life
-	[SpellName(103103)] = 3,	-- Drain Soul
+	--BETA [SpellName(103103)] = 3,	-- Drain Soul
 	[SpellName(755)] = 6,		-- Health Funnel
-	[SpellName(1949)] = 15,		-- Hellfire
+	--BETA [SpellName(1949)] = 15,		-- Hellfire
 	[SpellName(8690)] = 4,		-- Rain of Fire
 }
