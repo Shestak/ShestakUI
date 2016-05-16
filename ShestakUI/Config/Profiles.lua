@@ -14,6 +14,9 @@
 --		C["position"].tooltip = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5}
 --		C["position"].bottom_bars = {"BOTTOM", UIParent, "BOTTOM", 2, 8}
 --		C["position"].unitframes.tank = {"BOTTOMLEFT", UIParent, "BOTTOM", 176, 68}
+--		T.CustomFilgerSpell = {
+--			{"T_DEBUFF_ICON", {spellID = 115767, unitID = "target", caster = "player", filter = "DEBUFF"}},
+--		}
 -- end
 ----------------------------------------------------------------------------------------
 

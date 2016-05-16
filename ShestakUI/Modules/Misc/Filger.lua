@@ -447,6 +447,20 @@ if C["filger_spells"] and C["filger_spells"]["ALL"] then
 	end
 end
 
+if T.CustomFilgerSpell then
+	for _, data in pairs(T.CustomFilgerSpell) do
+		for class, _ in pairs(C["filger_spells"]) do
+			if class == T.class then
+				for i = 1, #C["filger_spells"][class], 1 do
+					if C["filger_spells"][class][i]["Name"] == data[1] then
+						table.insert(C["filger_spells"][class][i], data[2])
+					end
+				end
+			end
+		end
+	end
+end
+
 if C["filger_spells"] and C["filger_spells"][T.class] then
 	for index in pairs(C["filger_spells"]) do
 		if index ~= T.class then
