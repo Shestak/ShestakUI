@@ -1087,8 +1087,14 @@ T.UpdateComboPoint = function(self, event, unit)
 	for i = 1, MAX_COMBO_POINTS do
 		if i <= cp then
 			cpoints[i]:SetAlpha(1)
+			if self.Anticipation then
+				self.Anticipation[i]:SetStatusBarColor(0.2, 0.2, 0.2)
+			end
 		else
 			cpoints[i]:SetAlpha(0.2)
+			if self.Anticipation then
+				self.Anticipation[i]:SetStatusBarColor(0.8, 0.8, 0.8)
+			end
 		end
 	end
 
