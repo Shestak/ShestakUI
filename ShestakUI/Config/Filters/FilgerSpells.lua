@@ -1578,7 +1578,7 @@ C["filger_spells"] = {
 			-- Eternal Flame
 			{spellID = 114163, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sacred Shield
-			{spellID = 20925, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			--BETA {spellID = 20925, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1593,23 +1593,23 @@ C["filger_spells"] = {
 			-- Infusion of Light
 			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bastion of Glory
-			{spellID = 114637, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 114637, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
 			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Purpose
-			{spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 90174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grand Crusader
 			{spellID = 85416, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Daybreak
-			{spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 88819, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Crusader
-			{spellID = 144595, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 144595, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Final Verdict
 			{spellID = 157048, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Long Arm of the Law
-			{spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 87173, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Supplication
-			{spellID = 94686, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 94686, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
@@ -1774,13 +1774,13 @@ C["filger_spells"] = {
 			-- Consecration
 			{spellID = 26573, filter = "CD"},
 			-- Holy Wrath
-			{spellID = 119072, filter = "CD"},
+			--BETA {spellID = 119072, filter = "CD"},
 			-- Avenger's Shield
 			{spellID = 31935, filter = "CD"},
 			-- Exorcism
-			{spellID = 879, filter = "CD"},
+			--BETA {spellID = 879, filter = "CD"},
 			-- Beacon of Insight
-			{spellID = 157007, filter = "CD"},
+			--BETA {spellID = 157007, filter = "CD"},
 			-- Holy Prism
 			{spellID = 114165, filter = "CD"},
 			-- Hand of Freedom
@@ -1794,7 +1794,7 @@ C["filger_spells"] = {
 			-- Divine Protection
 			{spellID = 498, filter = "CD"},
 			-- Execution Sentence
-			{spellID = 114157, filter = "CD"},
+			--BETA {spellID = 114157, filter = "CD"},
 			-- Light's Hammer
 			{spellID = 114158, filter = "CD"},
 			-- Blinding Light

@@ -24,12 +24,12 @@ T.RaidBuffs = {
 	PALADIN = {
 		{53563, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Light
 		{156910, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Faith
-		{20925, "BOTTOMLEFT", {0.9, 0.9, 0.1}},				-- Sacred Shield
+		--BETA {20925, "BOTTOMLEFT", {0.9, 0.9, 0.1}},				-- Sacred Shield
 		{114163, "BOTTOMLEFT", {0.9, 0.6, 0.4}},			-- Eternal Flame
-		{157007, "TOPLEFT", {1, 0.5, 0.2}},					-- Beacon of Insight
+		--BETA {157007, "TOPLEFT", {1, 0.5, 0.2}},					-- Beacon of Insight
 		{1022, "BOTTOMRIGHT", {0.2, 0.2, 1}, true},			-- Hand of Protection
 		{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},		-- Hand of Freedom
-		{1038, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},		-- Hand of Salvation
+		--BETA {1038, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},		-- Hand of Salvation
 		{6940, "BOTTOMRIGHT", {0.89, 0.1, 0.1}, true},		-- Hand of Sacrifice
 		--BETA {114039, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},		-- Hand of Purity
 	},

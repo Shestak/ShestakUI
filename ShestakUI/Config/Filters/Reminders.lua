@@ -241,7 +241,7 @@ if C.reminder.solo_buffs_enable == true then
 					116781,	-- Legacy of the White Tiger
 				},
 				["personal"] = {
-					19740,	-- Blessing of Might
+					--BETA 19740,	-- Blessing of Might
 				},
 				["combat"] = true,
 				["instance"] = true,
@@ -262,7 +262,7 @@ if C.reminder.solo_buffs_enable == true then
 					116956,	-- Grace of Air
 				},
 				["personal"] = {
-					20217,	-- Blessing of Kings
+					--BETA 20217,	-- Blessing of Kings
 				},
 				["combat"] = true,
 				["instance"] = true,

@@ -199,38 +199,38 @@ elseif T.class == "MONK" then
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
-		T.aoespam[20167] = 3		-- Seal of Insight
-		T.aoespam[123530] = 3		-- Battle Insight
+		--BETA T.aoespam[20167] = 3		-- Seal of Insight
+		--BETA T.aoespam[123530] = 3		-- Battle Insight
 		T.aoespam[53652] = 3		-- Beacon of Light
 		T.aoespam[85222] = 0		-- Light of Dawn
-		T.aoespam[82327] = 0		-- Holy Radiance
-		T.aoespam[121129] = 0		-- Daybreak
+		--BETA T.aoespam[82327] = 0		-- Holy Radiance
+		--BETA T.aoespam[121129] = 0		-- Daybreak
 		T.aoespam[114163] = 3		-- Eternal Flame
 		T.aoespam[114852] = 0		-- Holy Prism
 		T.aoespam[119952] = 3		-- Arcing Light
-		T.aoespam[114917] = 3		-- Stay of Execution
+		--BETA T.aoespam[114917] = 3		-- Stay of Execution
 		T.aoespam[144581] = 3		-- Blessing of the Guardians (T16)
-		T.aoespam[159375] = 3		-- Shining Protector
+		--BETA T.aoespam[159375] = 3		-- Shining Protector
 		-- Damaging spells
 		T.aoespam[81297] = 3		-- Consecration
-		T.aoespam[119072] = .5		-- Holy Wrath
+		--BETA T.aoespam[119072] = .5		-- Holy Wrath
 		T.aoespam[53385] = 0		-- Divine Storm
-		T.aoespam[122032] = 0		-- Exorcism (Glyph)
+		--BETA T.aoespam[122032] = 0		-- Exorcism (Glyph)
 		--BETA T.aoespam[31803] = 3		-- Censure
-		T.aoespam[42463] = 3		-- Seal of Truth
-		T.aoespam[101423] = 3		-- Seal of Righteousness
+		--BETA T.aoespam[42463] = 3		-- Seal of Truth
+		--BETA T.aoespam[101423] = 3		-- Seal of Righteousness
 		T.aoespam[88263] = 0		-- Hammer of the Righteous
-		T.aoespam[96172] = 3		-- Hand of Light (Mastery)
+		--BETA T.aoespam[96172] = 3		-- Hand of Light (Mastery)
 		T.aoespam[31935] = .5		-- Avenger's Shield
 		T.aoespam[114871] = 0		-- Holy Prism
 		T.aoespam[114919] = 3		-- Arcing Light
-		T.aoespam[114916] = 3		-- Execution Sentence
+		--BETA T.aoespam[114916] = 3		-- Execution Sentence
 		T.aoespam[86704] = 0		-- Ancient Fury
 		T.aoespam[157122] = 3		-- Holy Shield
 		T.merge[53595] = 88263		-- Hammer of the Righteous
 	end
 	if C.combattext.healing then
-		T.healfilter[115547] = true	-- Glyph of Avenging Wrath
+		--BETA T.healfilter[115547] = true	-- Glyph of Avenging Wrath
 	end
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
