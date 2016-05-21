@@ -244,7 +244,7 @@ L_GUI_BAGS_BAG = "Количество столбцов в сумках"
 
 -- Minimap options
 L_GUI_MINIMAP_ENABLE = "Включить миникарту"
-L_GUI_MINIMAP_ICON = "Иконка слежения объектов"
+L_GUI_MINIMAP_ICON = "Иконка отслеживания объектов"
 L_GUI_GARRISON_ICON = "Иконка гарнизона"
 L_GUI_MINIMAP_SIZE = "Размер миникарты"
 L_GUI_MINIMAP_HIDE_COMBAT = "Скрыть миникарту в бою"
