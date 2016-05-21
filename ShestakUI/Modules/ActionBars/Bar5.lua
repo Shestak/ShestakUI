@@ -15,6 +15,7 @@ else
 	bar:SetAllPoints(RightActionBarAnchor)
 end
 MultiBarBottomRight:SetParent(bar)
+bar:SetFrameStrata("LOW")
 
 for i = 1, 12 do
 	local b = _G["MultiBarBottomRightButton"..i]
