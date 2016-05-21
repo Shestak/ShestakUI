@@ -137,7 +137,7 @@
 	<Script file="Modules\Blizzard\CombatText.lua"/>
 	<Script file="Modules\Blizzard\Durability.lua"/>
 	<Script file="Modules\Blizzard\Errors.lua"/>
-	<!-- <Script file="Modules\Blizzard\ExtraActionBar.lua"/> -->
+	<Script file="Modules\Blizzard\ExtraActionBar.lua"/>
 	<Script file="Modules\Blizzard\Fixes.lua"/>
 	<!-- <Script file="Modules\Blizzard\Fonts.lua"/> -->
 	<Script file="Modules\Blizzard\FriendList.lua"/>
@@ -200,7 +200,7 @@
 	<Script file="Modules\Quests\QuestLog.lua"/>
 	<Script file="Modules\Quests\WowheadLink.lua"/>
 
-<!-- 	<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>
+	<!-- <Include file="Modules\Skins\Blizzard\LoadFrames.xml"/> -->
 	<Script file="Modules\Skins\Ace3.lua"/>
 	<Script file="Modules\Skins\AtlasLoot.lua"/>
 	<Script file="Modules\Skins\Aurora.lua"/>
@@ -228,7 +228,7 @@
 	<Script file="Modules\Skins\Skada.lua"/>
 	<Script file="Modules\Skins\TinyDPS.lua"/>
 	<Script file="Modules\Skins\VanasKoS.lua"/>
-	<Script file="Modules\Skins\WeakAuras.lua"/> -->
+	<Script file="Modules\Skins\WeakAuras.lua"/>
 
 	<Script file="Modules\Tooltip\Tooltip.lua"/>
 	<Script file="Modules\Tooltip\HyperLink.lua"/>
