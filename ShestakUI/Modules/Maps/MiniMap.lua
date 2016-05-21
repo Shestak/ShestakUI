@@ -118,6 +118,7 @@ if StreamingIcon then
 	StreamingIcon:ClearAllPoints()
 	StreamingIcon:SetPoint("BOTTOM", Minimap, "BOTTOM", 0, -10)
 	StreamingIcon:SetScale(0.8)
+	StreamingIcon:SetFrameStrata("BACKGROUND")
 end
 
 -- Ticket icon
