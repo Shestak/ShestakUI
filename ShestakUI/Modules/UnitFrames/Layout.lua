@@ -442,6 +442,10 @@ local function Shared(self, unit)
 			self.CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
 			self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
 
+			if T.class == "DRUID" and C.unitframe_class_bar.combo_always ~= true then
+				self:RegisterEvent("UPDATE_SHAPESHIFT_FORM", T.UpdateComboPoint)
+			end
+
 			self.CPoints.Override = T.UpdateComboPoint
 
 			-- Anticipation bar
@@ -849,7 +853,7 @@ local function Shared(self, unit)
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
 
 			-- Rogue/Druid Combo bar
-			if C.unitframe_class_bar.combo == true and C.unitframe_class_bar.combo_old == true and (T.class == "ROGUE" or T.class == "DRUID") then
+			if C.unitframe_class_bar.combo == true and C.unitframe_class_bar.combo_old == true then
 				self.CPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)
 				self.CPoints:CreateBackdrop("Default")
 				self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
