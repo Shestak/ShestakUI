@@ -1105,11 +1105,11 @@ T.UpdateComboPoint = function(self, event, unit)
 		local form = GetShapeshiftFormID()
 		local spec = GetSpecialization()
 
-		if form == CAT_FORM then
-			self.CPoints:Show()
+		if form == CAT_FORM or ((UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and cp > 0) then
+			cpoints:Show()
 			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
 		else
-			self.CPoints:Hide()
+			cpoints:Hide()
 			if (not form and (spec and spec == 1)) or form == MOONKIN_FORM then return end
 			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
 		end
