@@ -1064,11 +1064,12 @@ T.UpdateEclipse = function(self, login)
 		eb:SetScript("OnUpdate", nil)
 	end
 
-	if eb:IsShown() or (T.class == "DRUID" and C.unitframe_class_bar.combo == true) then
+	if eb:IsShown() then
 		txt:Show()
 		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
 	else
 		txt:Hide()
+		if (C.unitframe_class_bar.combo_always == true or GetShapeshiftFormID() == CAT_FORM) and C.unitframe_class_bar.combo_old ~= true then return end
 		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
 	end
 end
@@ -1084,32 +1085,35 @@ T.UpdateComboPoint = function(self, event, unit)
 
 	local cpoints = self.CPoints
 	local cp = (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and UnitPower("vehicle", 4) or UnitPower("player", 4)
+	local cpOld = (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and GetComboPoints("vehicle", "target") or GetComboPoints("player", "target")
+	if cpOld and cp and (cpOld > cp) then cp = cpOld end
 
 	for i = 1, MAX_COMBO_POINTS do
 		if i <= cp then
 			cpoints[i]:SetAlpha(1)
+			if self.Anticipation then
+				self.Anticipation[i]:SetStatusBarColor(0.2, 0.2, 0.2)
+			end
 		else
 			cpoints[i]:SetAlpha(0.2)
+			if self.Anticipation then
+				self.Anticipation[i]:SetStatusBarColor(0.8, 0.8, 0.8)
+			end
 		end
 	end
 
 	if T.class == "DRUID" and C.unitframe_class_bar.combo_always ~= true then
-		local function CatForm(self, event, unit)
-			local unit = self.unit or "player"
-			local name = UnitBuff(unit, GetSpellInfo(768)) or UnitBuff(unit, GetSpellInfo(171745))
-			if name then
-				cpoints:Show()
-				if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
-			else
-				cpoints:Hide()
-				if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
-			end
-		end
+		local form = GetShapeshiftFormID()
+		local spec = GetSpecialization()
 
-		local frame = CreateFrame("Frame")
-		frame:RegisterEvent("UNIT_AURA")
-		frame:SetScript("OnEvent", CatForm)
-		CatForm(self, event, unit)
+		if form == CAT_FORM or ((UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and cp > 0) then
+			cpoints:Show()
+			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
+		else
+			cpoints:Hide()
+			if (not form and (spec and spec == 1)) or form == MOONKIN_FORM then return end
+			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
+		end
 	end
 end
 
