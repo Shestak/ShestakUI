@@ -557,12 +557,12 @@ C["stats"] = {
 	["experience"] = true,						-- Experience
 	["coords"] = true,							-- Coords
 	["location"] = true,						-- Location
-	["currency_archaeology"] = false,			-- Show Archaeology under currency tab
-	["currency_cooking"] = true,				-- Show Coocking under currency tab
-	["currency_professions"] = true,			-- Show Professions under currency tab
+	["currency_archaeology"] = false,			-- Show Archaeology Fragments under currency tab
+	["currency_cooking"] = true,				-- Show Cooking Awards under currency tab
+	["currency_professions"] = true,			-- Show Profession Tokens under currency tab
 	["currency_raid"] = true,					-- Show Seals under currency tab
-	["currency_pvp"] = true,					-- Show PvP under currency tab
-	["currency_misc"] = true,					-- Show Miscellaneous under currency tab
+	["currency_pvp"] = true,					-- Show PvP Currency under currency tab
+	["currency_misc"] = true,					-- Show Miscellaneous Currency under currency tab
 }
 
 ----------------------------------------------------------------------------------------
