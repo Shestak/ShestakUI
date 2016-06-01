@@ -139,6 +139,41 @@ local upgrades = {
 	["507"] = 24, ["530"] = 5, ["531"] = 10
 }
 
+local function BOALevel(level, id)
+	if level > 97 then
+		if id == 133585 or id == 133595 or id == 133596 or id == 133597 or id == 133598 then
+			level = 715
+		else
+			level = 605 - (100 - level) * 5
+		end
+	elseif level > 90 then
+		level = 590 - (97 - level) * 10
+	elseif level > 85 then
+		level = 463 - (90 - level) * 19.75
+	elseif level > 80 then
+		level = 333 - (85 - level) * 13.5
+	elseif level > 67 then
+		level = 187 - (80 - level) * 4
+	elseif level > 57 then
+		level = 105 - (67 - level) * 2.9
+	elseif level > 5 then
+		level = level + 5
+	else
+		level = 10
+	end
+
+	return floor(level + 0.5)
+end
+
+local timewarped = {
+	[615] = 660, -- Dungeon drops
+	[692] = 675, -- Timewarped badge vendors
+}
+
+local timewarped_warforged = {
+	[656] = 675, -- Dungeon drops
+}
+
 local weapon, armor = GetAuctionItemClasses()
 
 function Stuffing:SlotUpdate(b)
@@ -163,7 +198,15 @@ function Stuffing:SlotUpdate(b)
 	if clink then
 		b.name, _, _, b.itemlevel, b.level, b.itemType = GetItemInfo(clink)
 
-		if C.bag.ilvl == true and b.itemlevel and b.itemlevel > 1 and quality > 1 and (b.itemType == weapon or b.itemType == armor) then
+		if C.bag.ilvl == true and b.itemlevel and quality > 1 and (b.itemType == weapon or b.itemType == armor) then
+			if quality == 7 and b.itemlevel == 1 then
+				b.itemlevel = BOALevel(T.level, tonumber(strmatch(clink, "item:(%d+)")))
+			end
+			if quality ~= 7 and b.itemlevel == 1 then return end
+			local warped = select(15, strsplit(":", clink))
+			local warforged = select(16, strsplit(":", clink))
+			b.itemlevel = timewarped[tonumber(warped)] or b.itemlevel
+			b.itemlevel = timewarped_warforged[tonumber(warforged)] or b.itemlevel
 			local upgrade = clink:match(":(%d+)\124h%[")
 			if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
 			b.frame.text:SetText(b.itemlevel + upgrades[upgrade])
