@@ -20,6 +20,41 @@ local upgrades = {
 	["507"] = 24, ["530"] = 5, ["531"] = 10
 }
 
+local function BOALevel(level, id)
+	if level > 97 then
+		if id == 133585 or id == 133595 or id == 133596 or id == 133597 or id == 133598 then
+			level = 715
+		else
+			level = 605 - (100 - level) * 5
+		end
+	elseif level > 90 then
+		level = 590 - (97 - level) * 10
+	elseif level > 85 then
+		level = 463 - (90 - level) * 19.75
+	elseif level > 80 then
+		level = 333 - (85 - level) * 13.5
+	elseif level > 67 then
+		level = 187 - (80 - level) * 4
+	elseif level > 57 then
+		level = 105 - (67 - level) * 2.9
+	elseif level > 5 then
+		level = level + 5
+	else
+		level = 10
+	end
+
+	return floor(level + 0.5)
+end
+
+local timewarped = {
+	[615] = 660, -- Dungeon drops
+	[692] = 675, -- Timewarped badge vendors
+}
+
+local timewarped_warforged = {
+	[656] = 675, -- Dungeon drops
+}
+
 local function CreateButtonsText(frame)
 	for _, slot in pairs(slots) do
 		local button = _G[frame..slot]
@@ -36,25 +71,34 @@ local function UpdateButtonsText(frame)
 		local id = GetInventorySlotInfo(slot)
 		local text = _G[frame..slot].t
 		local item
+		local ulvl
 
 		if frame == "Inspect" then
 			item = GetInventoryItemLink("target", id)
+			ulvl = UnitLevel("target")
 		else
 			item = GetInventoryItemLink("player", id)
+			ulvl = UnitLevel("player")
 		end
 
 		if slot == "ShirtSlot" or slot == "TabardSlot" then
 			text:SetText("")
 		elseif item then
 			local oldilevel = text:GetText()
-			local _, _, _, ilevel = GetItemInfo(item)
-			local upgrade = item:match(":(%d+)\124h%[")
-
+			local _, _, quality, ilevel = GetItemInfo(item)
 			if ilevel then
 				if ilevel ~= oldilevel then
-					if ilevel == 1 then
+					if quality == 7 and ilevel == 1 then
+						local id = tonumber(strmatch(item, "item:(%d+)"))
+						text:SetText("|cFFFFFF00"..BOALevel(ulvl, id))
+					elseif ilevel == 1 then
 						text:SetText("")
 					else
+						local warped = select(15, strsplit(":", item))
+						local warforged = select(16, strsplit(":", item))
+						ilevel = timewarped[tonumber(warped)] or ilevel
+						ilevel = timewarped_warforged[tonumber(warforged)] or ilevel
+						local upgrade = item:match(":(%d+)\124h%[")
 						if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
 						text:SetText("|cFFFFFF00"..ilevel + upgrades[upgrade])
 					end
