@@ -102,9 +102,6 @@ end profiles = nil end
 
 
 ------------------------------------------
-local function zsub(s, ...) local t = {...} for i = 1, #t, 2 do s = gsub(s, t[i], t[i + 1]) end return s end
-
-
 local function comma_value(n) -- credit http://richard.warburton.it
 	local left, num, right = string.match(n,"^([^%d]*%d)(%d*)(.-)$")
 	return left..(num:reverse():gsub("(%d%d%d)","%1,"):reverse())..right
@@ -126,6 +123,7 @@ local function formatgold(style, amount)
 	end
 end
 
+local function zsub(s, ...) local t = {...} for i = 1, #t, 2 do s = gsub(s, t[i], t[i + 1]) end return s end
 local function abbr(t, s) return t[s] or zsub(_G[strupper(s).."_ONELETTER_ABBR"], "%%d", "", "^%s*", "") end
 local function fmttime(sec, t)
 	local t = t or {}
@@ -479,9 +477,30 @@ end
 --	Gold
 ----------------------------------------------------------------------------------------
 if gold.enabled then
+	local IsSubTitle = 0
 	local function Currency(id, weekly, capped)
 		local name, amount, tex, week, weekmax, maxed, discovered = GetCurrencyInfo(id)
 		if amount == 0 then return end
+		if IsSubTitle == 1 then
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddLine(PROFESSIONS_ARCHAEOLOGY, ttsubh.r, ttsubh.g, ttsubh.b)
+		elseif IsSubTitle == 2 then
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddLine(PROFESSIONS_COOKING, ttsubh.r, ttsubh.g, ttsubh.b)
+		elseif IsSubTitle == 3 then
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddLine(TRADE_SKILLS, ttsubh.r, ttsubh.g, ttsubh.b)
+		elseif IsSubTitle == 4 then
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddLine(L_STATS_CURRENCY_RAID, ttsubh.r, ttsubh.g, ttsubh.b)
+		elseif IsSubTitle == 5 then
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddLine(PVP_FLAG, ttsubh.r, ttsubh.g, ttsubh.b)
+		elseif IsSubTitle == 6 then
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
+		end
+		IsSubTitle = 0
 		if weekly then
 			if discovered then GameTooltip:AddDoubleLine(name, format("%s |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", REFORGE_CURRENT..": ".. amount.." - "..WEEKLY..": "..week.." / "..weekmax, tex, t_icon), 1, 1, 1, 1, 1, 1) end
 		elseif capped then
@@ -561,8 +580,7 @@ if gold.enabled then
 				end
 			end
 			if archaeology and C.stats.currency_archaeology then
-				GameTooltip:AddLine(" ")
-				GameTooltip:AddLine(PROFESSIONS_ARCHAEOLOGY, ttsubh.r, ttsubh.g, ttsubh.b)
+				IsSubTitle = 1
 				Currency(384)	-- Dwarf Archaeology Fragment
 				Currency(385)	-- Troll Archaeology Fragment
 				Currency(393)	-- Fossil Archaeology Fragment
@@ -581,15 +599,13 @@ if gold.enabled then
 			end
 
 			if cooking and C.stats.currency_cooking then
-				GameTooltip:AddLine(" ")
-				GameTooltip:AddLine(PROFESSIONS_COOKING, ttsubh.r, ttsubh.g, ttsubh.b)
+				IsSubTitle = 2
 				Currency(81)	-- Epicurean's Award
 				Currency(402)	-- Ironpaw Token
 			end
 
 			if C.stats.currency_professions then
-				GameTooltip:AddLine(" ")
-				GameTooltip:AddLine(TRADE_SKILLS, ttsubh.r, ttsubh.g, ttsubh.b)
+				IsSubTitle = 3
 				Currency(1008)	-- Secret of Draenor Jewelcrafting
 				Currency(1017)	-- Secret of Draenor Leatherworking
 				Currency(1020)	-- Secret of Draenor Blacksmithing
@@ -598,22 +614,19 @@ if gold.enabled then
 			end
 
 			if C.stats.currency_raid and T.level >= 100 then
-				GameTooltip:AddLine(" ")
-				GameTooltip:AddLine(L_STATS_CURRENCY_RAID_T, ttsubh.r, ttsubh.g, ttsubh.b)
+				IsSubTitle = 4
 				Currency(1129, false, true)	-- Seal of Inevitable Fate
 				Currency(994, false, true)	-- Seal of Tempered Fate
 			end
 
 			if C.stats.currency_pvp then
-				GameTooltip:AddLine(" ")
-				GameTooltip:AddLine(PVP_FLAG, ttsubh.r, ttsubh.g, ttsubh.b)
+				IsSubTitle = 5
 				Currency(390, true)			-- Conquest Points
 				Currency(392, false, true)	-- Honor Points
 			end
 
 			if C.stats.currency_misc then
-				GameTooltip:AddLine(" ")
-				GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
+				IsSubTitle = 6
 				Currency(515)				-- Darkmoon Prize Ticket
 				Currency(944, false, true)	-- Artifact Fragment
 				Currency(980, false, true)	-- Dingy Iron Coins (Rogue)
@@ -784,7 +797,11 @@ if clock.enabled then
 			end
 			if T.level >= 100 then
 				local c = 0
-				for _, q in ipairs({36054, 36055, 36056, 36057, 36058, 36060, 37453, 37452, 37454, 37455, 37456, 37457, 37458, 37459}) do if IsQuestFlaggedCompleted(q) then c = c + 1 end end
+				for _, q in ipairs({36054, 36055, 36056, 36057, 36058, 36060, 37453, 37452, 37454, 37455, 37456, 37457, 37458, 37459}) do
+					if IsQuestFlaggedCompleted(q) then
+						c = c + 1
+					end
+				end
 				GameTooltip:AddLine(" ")
 				GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
 				GameTooltip:AddDoubleLine(L_STATS_SEALS..": ", c, 1, 1, 1, 1, 1, 1)
