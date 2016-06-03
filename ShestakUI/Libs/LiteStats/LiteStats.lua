@@ -563,40 +563,37 @@ if gold.enabled then
 			if archaeology and C.stats.currency_archaeology then
 				GameTooltip:AddLine(" ")
 				GameTooltip:AddLine(PROFESSIONS_ARCHAEOLOGY, ttsubh.r, ttsubh.g, ttsubh.b)
-				Currency(398)
-				Currency(384)
-				Currency(393)
-				Currency(677)
-				Currency(400)
-				Currency(394)
-				Currency(397)
-				Currency(676)
-				Currency(401)
-				Currency(385)
-				Currency(399)
-				Currency(829)
-				Currency(944)
-				Currency(810)
-				Currency(821)
-				Currency(754)
-				Currency(677)
-				Currency(676)
+				Currency(384)	-- Dwarf Archaeology Fragment
+				Currency(385)	-- Troll Archaeology Fragment
+				Currency(393)	-- Fossil Archaeology Fragment
+				Currency(394)	-- Night Elf Archaeology Fragment
+				Currency(397)	-- Orc Archaeology Fragment
+				Currency(398)	-- Draenei Archaeology Fragment
+				Currency(399)	-- Vrykul Archaeology Fragment
+				Currency(400)	-- Nerubian Archaeology Fragment
+				Currency(401)	-- Tol'vir Archaeology Fragment
+				Currency(676)	-- Pandaren Archaeology Fragment
+				Currency(677)	-- Mogu Archaeology Fragment
+				Currency(754)	-- Mantid Archaeology Fragment
+				Currency(821)	-- Draenor Clans Archaeology Fragment
+				Currency(828)	-- Ogre Archaeology Fragment
+				Currency(829)	-- Arakkoa Archaeology Fragment
 			end
 
 			if cooking and C.stats.currency_cooking then
 				GameTooltip:AddLine(" ")
 				GameTooltip:AddLine(PROFESSIONS_COOKING, ttsubh.r, ttsubh.g, ttsubh.b)
-				Currency(81)
-				Currency(402)
+				Currency(81)	-- Epicurean's Award
+				Currency(402)	-- Ironpaw Token
 			end
 
 			if C.stats.currency_professions then
 				GameTooltip:AddLine(" ")
 				GameTooltip:AddLine(TRADE_SKILLS, ttsubh.r, ttsubh.g, ttsubh.b)
-				Currency(910)	-- Secret of Draenor Alchemy
-				Currency(1020)	-- Secret of Draenor Blacksmithing
 				Currency(1008)	-- Secret of Draenor Jewelcrafting
 				Currency(1017)	-- Secret of Draenor Leatherworking
+				Currency(1020)	-- Secret of Draenor Blacksmithing
+				Currency(910)	-- Secret of Draenor Alchemy
 				Currency(999)	-- Secret of Draenor Tailoring
 			end
 
