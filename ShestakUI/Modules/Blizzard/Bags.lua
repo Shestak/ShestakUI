@@ -200,16 +200,16 @@ function Stuffing:SlotUpdate(b)
 
 		if C.bag.ilvl == true and b.itemlevel and quality > 1 and (b.itemType == weapon or b.itemType == armor) then
 			if quality == 7 and b.itemlevel == 1 then
-				b.itemlevel = BOALevel(T.level, tonumber(strmatch(clink, "item:(%d+)")))
+				b.frame.text:SetText(BOALevel(T.level, tonumber(strmatch(clink, "item:(%d+)"))))
+			elseif b.itemlevel > 1 then
+				local warped = select(15, strsplit(":", clink))
+				local warforged = select(16, strsplit(":", clink))
+				b.itemlevel = timewarped[tonumber(warped)] or b.itemlevel
+				b.itemlevel = timewarped_warforged[tonumber(warforged)] or b.itemlevel
+				local upgrade = clink:match(":(%d+)\124h%[")
+				if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
+				b.frame.text:SetText(b.itemlevel + upgrades[upgrade])
 			end
-			if quality ~= 7 and b.itemlevel == 1 then return end
-			local warped = select(15, strsplit(":", clink))
-			local warforged = select(16, strsplit(":", clink))
-			b.itemlevel = timewarped[tonumber(warped)] or b.itemlevel
-			b.itemlevel = timewarped_warforged[tonumber(warforged)] or b.itemlevel
-			local upgrade = clink:match(":(%d+)\124h%[")
-			if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
-			b.frame.text:SetText(b.itemlevel + upgrades[upgrade])
 		end
 
 		if (IsItemUnusable(clink) or b.level and b.level > T.level) and not locked then
