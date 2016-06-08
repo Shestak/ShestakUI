@@ -139,7 +139,7 @@
 	<Script file="Modules\Blizzard\Errors.lua"/>
 	<Script file="Modules\Blizzard\ExtraActionBar.lua"/>
 	<Script file="Modules\Blizzard\Fixes.lua"/>
-	<!-- <Script file="Modules\Blizzard\Fonts.lua"/> -->
+	<Script file="Modules\Blizzard\Fonts.lua"/>
 	<Script file="Modules\Blizzard\FriendList.lua"/>
 	<Script file="Modules\Blizzard\Mail.lua"/>
 	<Script file="Modules\Blizzard\MirrorBars.lua"/>
