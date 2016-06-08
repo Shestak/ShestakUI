@@ -34,7 +34,7 @@ local Update = function(self, event, ...)
 	if event == "COMBAT_LOG_EVENT_UNFILTERED" then
 		local _, eventType, _, sourceGUID, _, _, _, _, _, _, _, spellID = ...
 		if eventType == "SPELL_CAST_SUCCESS" and sourceGUID == UnitGUID(self.unit) and trinketSpells[spellID] then
-			CooldownFrame_SetTimer(self.Trinket.cooldownFrame, GetTime(), trinketSpells[spellID], 1)
+			CooldownFrame_Set(self.Trinket.cooldownFrame, GetTime(), trinketSpells[spellID], 1)
 		end
 	elseif event == "ARENA_OPPONENT_UPDATE" then
 		local unit, type = ...
@@ -44,7 +44,7 @@ local Update = function(self, event, ...)
 			end
 		end
 	elseif event == "PLAYER_ENTERING_WORLD" then
-		CooldownFrame_SetTimer(self.Trinket.cooldownFrame, 1, 1, 1)
+		CooldownFrame_Set(self.Trinket.cooldownFrame, 1, 1, 1)
 	end
 
 	if self.Trinket.PostUpdate then self.Trinket:PostUpdate(event) end
