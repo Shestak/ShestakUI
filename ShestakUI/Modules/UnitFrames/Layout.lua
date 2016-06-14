@@ -508,36 +508,36 @@ local function Shared(self, unit)
 			self.ClassMana:SetTextColor(1, 0.49, 0.04)
 
 			-- Eclipse bar
-			if C.unitframe_class_bar.eclipse == true then
-				self.EclipseBar = CreateFrame("Frame", self:GetName().."_EclipseBar", self)
-				self.EclipseBar:CreateBackdrop("Default")
-				self.EclipseBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.EclipseBar:SetSize(217, 7)
+			--BETA if C.unitframe_class_bar.eclipse == true then
+				-- self.EclipseBar = CreateFrame("Frame", self:GetName().."_EclipseBar", self)
+				-- self.EclipseBar:CreateBackdrop("Default")
+				-- self.EclipseBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				-- self.EclipseBar:SetSize(217, 7)
 
-				self.EclipseBar.LunarBar = CreateFrame("StatusBar", nil, self.EclipseBar)
-				self.EclipseBar.LunarBar:SetPoint("LEFT", self.EclipseBar, "LEFT", 0, 0)
-				self.EclipseBar.LunarBar:SetSize(self.EclipseBar:GetWidth(), self.EclipseBar:GetHeight())
-				self.EclipseBar.LunarBar:SetStatusBarTexture(C.media.texture)
-				self.EclipseBar.LunarBar:SetStatusBarColor(0.80, 0.80, 0.20)
+				-- self.EclipseBar.LunarBar = CreateFrame("StatusBar", nil, self.EclipseBar)
+				-- self.EclipseBar.LunarBar:SetPoint("LEFT", self.EclipseBar, "LEFT", 0, 0)
+				-- self.EclipseBar.LunarBar:SetSize(self.EclipseBar:GetWidth(), self.EclipseBar:GetHeight())
+				-- self.EclipseBar.LunarBar:SetStatusBarTexture(C.media.texture)
+				-- self.EclipseBar.LunarBar:SetStatusBarColor(0.80, 0.80, 0.20)
 
-				self.EclipseBar.SolarBar = CreateFrame("StatusBar", nil, self.EclipseBar)
-				self.EclipseBar.SolarBar:SetPoint("LEFT", self.EclipseBar.LunarBar:GetStatusBarTexture(), "RIGHT", 0, 0)
-				self.EclipseBar.SolarBar:SetSize(self.EclipseBar:GetWidth(), self.EclipseBar:GetHeight())
-				self.EclipseBar.SolarBar:SetStatusBarTexture(C.media.texture)
-				self.EclipseBar.SolarBar:SetStatusBarColor(0.30, 0.30, 0.80)
+				-- self.EclipseBar.SolarBar = CreateFrame("StatusBar", nil, self.EclipseBar)
+				-- self.EclipseBar.SolarBar:SetPoint("LEFT", self.EclipseBar.LunarBar:GetStatusBarTexture(), "RIGHT", 0, 0)
+				-- self.EclipseBar.SolarBar:SetSize(self.EclipseBar:GetWidth(), self.EclipseBar:GetHeight())
+				-- self.EclipseBar.SolarBar:SetStatusBarTexture(C.media.texture)
+				-- self.EclipseBar.SolarBar:SetStatusBarColor(0.30, 0.30, 0.80)
 
-				self.EclipseBar.Text = T.SetFontString(self.EclipseBar.SolarBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-				self.EclipseBar.Text:SetPoint("CENTER", self.EclipseBar, "CENTER", -6, 0)
+				-- self.EclipseBar.Text = T.SetFontString(self.EclipseBar.SolarBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+				-- self.EclipseBar.Text:SetPoint("CENTER", self.EclipseBar, "CENTER", -6, 0)
 
-				self.EclipseBar.Pers = T.SetFontString(self.EclipseBar.SolarBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-				self.EclipseBar.Pers:SetPoint("LEFT", self.EclipseBar.Text, "RIGHT", 2, 0)
-				self:Tag(self.EclipseBar.Pers, "[pereclipse]%")
+				-- self.EclipseBar.Pers = T.SetFontString(self.EclipseBar.SolarBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+				-- self.EclipseBar.Pers:SetPoint("LEFT", self.EclipseBar.Text, "RIGHT", 2, 0)
+				-- self:Tag(self.EclipseBar.Pers, "[pereclipse]%")
 
-				self.EclipseBar:SetScript("OnShow", function() T.UpdateEclipse(self, false) end)
-				self.EclipseBar:SetScript("OnUpdate", function() T.UpdateEclipse(self, true) end)
-				self.EclipseBar:SetScript("OnHide", function() T.UpdateEclipse(self, false) end)
-				self.EclipseBar.PostUpdatePower = T.EclipseDirection
-			end
+				-- self.EclipseBar:SetScript("OnShow", function() T.UpdateEclipse(self, false) end)
+				-- self.EclipseBar:SetScript("OnUpdate", function() T.UpdateEclipse(self, true) end)
+				-- self.EclipseBar:SetScript("OnHide", function() T.UpdateEclipse(self, false) end)
+				-- self.EclipseBar.PostUpdatePower = T.EclipseDirection
+			-- end
 
 			-- Mushroom bar
 			if C.unitframe_class_bar.totem == true then
