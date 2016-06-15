@@ -125,7 +125,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[12654] = 3		-- Ignite
 		T.aoespam[11366] = 3		-- Pyroblast
 		T.aoespam[31661] = 0		-- Dragon's Breath
-		T.aoespam[42208] = 3		-- Blizzard
+		--BETA T.aoespam[42208] = 3		-- Blizzard
 		T.aoespam[122] = 0			-- Frost Nova
 		T.aoespam[1449] = 0			-- Arcane Explosion
 		--BETA T.aoespam[83853] = 3		-- Combustion
@@ -236,7 +236,7 @@ elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
 		T.aoespam[47750] = 3		-- Penance
-		T.aoespam[23455] = 0		-- Holy Nova
+		--BETA T.aoespam[23455] = 0		-- Holy Nova
 		T.aoespam[139] = 3			-- Renew
 		T.aoespam[596] = 0			-- Prayer of Healing
 		T.aoespam[64844] = 3		-- Divine Hymn
@@ -244,10 +244,10 @@ elseif T.class == "PRIEST" then
 		T.aoespam[77489] = 3		-- Echo of Light
 		T.aoespam[34861] = 0		-- Circle of Healing
 		T.aoespam[33110] = 3		-- Prayer of Mending
-		T.aoespam[88686] = 3		-- Holy Word: Sanctuary
+		--BETA T.aoespam[88686] = 3		-- Holy Word: Sanctuary
 		T.aoespam[81751] = 3		-- Atonement
 		T.aoespam[120692] = 3		-- Halo
-		T.aoespam[121148] = 3		-- Cascade
+		--BETA T.aoespam[121148] = 3		-- Cascade
 		T.aoespam[110745] = 3		-- Divine Star
 		T.merge[94472] = 81751		-- Atonement
 		-- Damaging spells
@@ -256,20 +256,20 @@ elseif T.class == "PRIEST" then
 		T.aoespam[132157] = 0		-- Holy Nova
 		T.aoespam[589] = 3			-- Shadow Word: Pain
 		T.aoespam[34914] = 3		-- Vampiric Touch
-		T.aoespam[2944] = 3			-- Devouring Plague
+		--BETA T.aoespam[2944] = 3			-- Devouring Plague
 		T.aoespam[15407] = 3		-- Mind Flay
 		T.aoespam[49821] = 3		-- Mind Sear
 		T.aoespam[14914] = 3		-- Holy Fire
 		T.aoespam[129250] = 3		-- Power Word: Solace
 		T.aoespam[120696] = 3		-- Halo
-		T.aoespam[127628] = 3		-- Cascade
+		--BETA T.aoespam[127628] = 3		-- Cascade
 		T.aoespam[122128] = 3		-- Divine Star
 		--BETA T.aoespam[129197] = 3		-- Insanity
 		T.aoespam[148859] = 3		-- Shadowy Apparition
-		T.merge[158831] = 2944		-- Devouring Plague
+		--BETA T.merge[158831] = 2944		-- Devouring Plague
 	end
 	if C.combattext.healing then
-		T.healfilter[127626] = true	-- Devouring Plague
+		--BETA T.healfilter[127626] = true	-- Devouring Plague
 		T.healfilter[15290] = true	-- Vampiric Embrace
 	end
 elseif T.class == "ROGUE" then

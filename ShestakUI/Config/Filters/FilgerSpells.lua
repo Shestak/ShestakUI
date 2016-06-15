@@ -1005,7 +1005,7 @@ C["filger_spells"] = {
 			-- Fingers of Frost
 			{spellID = 44544, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brain Freeze
-			{spellID = 57761, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 57761, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Arcane Missiles!
 			{spellID = 79683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pyroblast!
@@ -1130,7 +1130,7 @@ C["filger_spells"] = {
 
 			-- Self
 			-- Remove Curse
-			{spellID = 475, filter = "CD"},
+			--BETA {spellID = 475, filter = "CD"},
 			-- Frostjaw
 			--BETA {spellID = 102051, filter = "CD"},
 			-- Counterspell
@@ -1154,7 +1154,7 @@ C["filger_spells"] = {
 			-- Incanter's Ward
 			{spellID = 1463, filter = "CD"},
 			-- Fire Blast
-			{spellID = 2136, filter = "CD"},
+			--BETA {spellID = 2136, filter = "CD"},
 			-- Frost Bomb
 			{spellID = 112948, filter = "CD"},
 			-- Flamestrike
@@ -1168,13 +1168,13 @@ C["filger_spells"] = {
 			-- Ice Floes
 			{spellID = 108839, filter = "CD"},
 			-- Combustion
-			{spellID = 11129, filter = "CD"},
+			--BETA {spellID = 11129, filter = "CD"},
 			-- Frozen Orb
 			{spellID = 84714, filter = "CD"},
 			-- Arcane Power
 			{spellID = 12042, filter = "CD"},
 			-- Presence of Mind
-			{spellID = 12043, filter = "CD"},
+			--BETA {spellID = 12043, filter = "CD"},
 			-- Alter Time
 			{spellID = 108978, filter = "CD"},
 			-- Evocation
@@ -1856,7 +1856,7 @@ C["filger_spells"] = {
 			-- Power Infusion
 			{spellID = 10060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Archangel
-			{spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vampiric Embrace
 			{spellID = 15286, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Focused Will
@@ -1883,7 +1883,7 @@ C["filger_spells"] = {
 
 			-- Buffs
 			-- Divine Insight
-			{spellID = 123267, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 123267, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadowy Insight
 			{spellID = 124430, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Light
@@ -1891,19 +1891,19 @@ C["filger_spells"] = {
 			-- Surge of Darkness
 			{spellID = 87160, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Serendipity
-			{spellID = 63735, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 63735, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mending
-			{spellID = 155363, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 155363, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mind Spike (Glyph)
-			{spellID = 81292, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 81292, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Borrowed Time
-			{spellID = 59889, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 59889, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Twist of Fate
 			{spellID = 123254, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Evangelism
-			{spellID = 81661, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 81661, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadow Word: Insanity
-			{spellID = 132573, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 132573, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
@@ -2000,7 +2000,7 @@ C["filger_spells"] = {
 			-- Mind Blast (Glyph)
 			--BETA {spellID = 87194, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Saving Grace
-			{spellID = 155274, unitID = "player", caster = "player", filter = "DEBUFF"},
+			--BETA {spellID = 155274, unitID = "player", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
 			-- Mark of Doom [Prophecy of Fear]
@@ -2032,7 +2032,7 @@ C["filger_spells"] = {
 			-- Vampiric Touch
 			{spellID = 34914, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Devouring Plague
-			{spellID = 2944, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--BETA {spellID = 2944, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -2079,9 +2079,9 @@ C["filger_spells"] = {
 			-- Divine Star
 			{spellID = 110744, filter = "CD"},
 			-- Cascade
-			{spellID = 121135, filter = "CD"},
+			--BETA {spellID = 121135, filter = "CD"},
 			-- Archangel
-			{spellID = 81700, filter = "CD"},
+			--BETA {spellID = 81700, filter = "CD"},
 			-- Holy Word: Chastise
 			{spellID = 88625, filter = "CD"},
 			-- Spectral Guise
@@ -2089,7 +2089,7 @@ C["filger_spells"] = {
 			-- Fade
 			{spellID = 586, filter = "CD"},
 			-- Void Tendrils
-			{spellID = 108920, filter = "CD"},
+			--BETA {spellID = 108920, filter = "CD"},
 			-- Halo
 			{spellID = 120517, filter = "CD"},
 			-- Psychic Scream
