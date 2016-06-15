@@ -449,24 +449,24 @@ local function Shared(self, unit)
 			self.CPoints.Override = T.UpdateComboPoint
 
 			-- Anticipation bar
-			if T.class == "ROGUE" then
-				self.Anticipation = CreateFrame("Frame", self:GetName().."_Anticipation", self)
-				self.Anticipation:SetFrameLevel(self.Health:GetFrameLevel() + 2)
-				self.Anticipation:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.Anticipation:SetSize(217, 4)
+			--BETA if T.class == "ROGUE" then
+				-- self.Anticipation = CreateFrame("Frame", self:GetName().."_Anticipation", self)
+				-- self.Anticipation:SetFrameLevel(self.Health:GetFrameLevel() + 2)
+				-- self.Anticipation:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				-- self.Anticipation:SetSize(217, 4)
 
-				for i = 1, 5 do
-					self.Anticipation[i] = CreateFrame("StatusBar", self:GetName().."_Anticipation"..i, self.Anticipation)
-					self.Anticipation[i]:SetSize(213 / 5, 4)
-					if i == 1 then
-						self.Anticipation[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-					else
-						self.Anticipation[i]:SetPoint("LEFT", self.Anticipation[i-1], "RIGHT", 1, 0)
-					end
-					self.Anticipation[i]:SetStatusBarTexture(C.media.texture)
-					self.Anticipation[i]:SetStatusBarColor(0.2, 0.2, 0.2)
-				end
-			end
+				-- for i = 1, 5 do
+					-- self.Anticipation[i] = CreateFrame("StatusBar", self:GetName().."_Anticipation"..i, self.Anticipation)
+					-- self.Anticipation[i]:SetSize(213 / 5, 4)
+					-- if i == 1 then
+						-- self.Anticipation[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+					-- else
+						-- self.Anticipation[i]:SetPoint("LEFT", self.Anticipation[i-1], "RIGHT", 1, 0)
+					-- end
+					-- self.Anticipation[i]:SetStatusBarTexture(C.media.texture)
+					-- self.Anticipation[i]:SetStatusBarColor(0.2, 0.2, 0.2)
+				-- end
+			-- end
 		end
 
 		-- Totem bar
