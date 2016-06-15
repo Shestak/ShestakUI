@@ -273,11 +273,12 @@ local function Shared(self, unit)
 					self.Runes[i]:SetPoint("TOPLEFT", self.Runes[i-1], "TOPRIGHT", 1, 0)
 				end
 				self.Runes[i]:SetStatusBarTexture(C.media.texture)
+				self.Runes[i]:SetStatusBarColor(0.69, 0.31, 0.31)
 
 				self.Runes[i].bg = self.Runes[i]:CreateTexture(nil, "BORDER")
 				self.Runes[i].bg:SetAllPoints()
 				self.Runes[i].bg:SetTexture(C.media.texture)
-				self.Runes[i].bg.multiplier = 0.2
+				self.Runes[i].bg:SetVertexColor(0.69, 0.31, 0.31, 0.2)
 			end
 		end
 
