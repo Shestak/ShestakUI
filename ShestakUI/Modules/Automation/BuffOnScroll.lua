@@ -7,7 +7,7 @@ if C.automation.buff_on_scroll ~= true or T.level ~= MAX_PLAYER_LEVEL then retur
 local frame = CreateFrame("Frame", "AutomatorFrame")
 
 DEATHKNIGHT1 = {
-	49222,	-- Bone Shield
+	--BETA 49222,	-- Bone Shield
 	57330,	-- Horn of Winter
 	3714,	-- Path of Frost
 }

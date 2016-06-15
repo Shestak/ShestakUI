@@ -309,18 +309,18 @@ if C.reminder.solo_buffs_enable == true then
 				["pvp"] = true,
 			},
 		},
-		SHAMAN = {
-			[1] = {	-- Shields group
-				["spells"] = {
-					52127,	-- Water Shield
-					324,	-- Lightning Shield
-					974,	-- Earth Shield
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-		},
+		--BETA SHAMAN = {
+			-- [1] = {	-- Shields group
+				-- ["spells"] = {
+					-- 52127,	-- Water Shield
+					-- 324,	-- Lightning Shield
+					-- 974,	-- Earth Shield
+				-- },
+				-- ["combat"] = true,
+				-- ["instance"] = true,
+				-- ["pvp"] = true,
+			-- },
+		-- },
 		WARLOCK = {
 			[1] = {	-- Dark Intent group
 				["spells"] = {
