@@ -317,17 +317,17 @@ C["filger_spells"] = {
 			-- Barkskin
 			{spellID = 22812, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Savage Defense
-			{spellID = 132402, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 132402, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Savage Roar
 			{spellID = 52610, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Heart of the Wild
-			{spellID = 108294, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 108294, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Berserk
 			--BETA {spellID = 50334, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Tiger's Fury
 			{spellID = 5217, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Celestial Alignment
-			{spellID = 112071, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 112071, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature's Vigil
 			{spellID = 124974, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lunar Empowerment
@@ -335,7 +335,7 @@ C["filger_spells"] = {
 			-- Solar Empowerment
 			{spellID = 164545, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Starfall
-			{spellID = 184989, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 184989, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature's Grasp
 			{spellID = 170856, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dash
@@ -356,17 +356,17 @@ C["filger_spells"] = {
 			-- Bloodtalons
 			{spellID = 145152, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lunar Peak
-			{spellID = 171743, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 171743, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Solar Peak
-			{spellID = 171744, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 171744, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rejuvenation (Glyph)
-			{spellID = 96206, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 96206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Clearcasting
 			{spellID = 16870, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul of the Forest
 			{spellID = 114108, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tooth and Claw
-			{spellID = 135286, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 135286, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Predatory Swiftness
 			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -533,13 +533,13 @@ C["filger_spells"] = {
 			-- Sunfire
 			{spellID = 164815, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Stellar Flare
-			{spellID = 152221, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--BETA {spellID = 152221, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Rake
 			{spellID = 155722, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
 			-- Rip
 			{spellID = 1079, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Lacerate
-			{spellID = 33745, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--BETA {spellID = 33745, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Thrash
 			{spellID = 77758, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Immobilized
@@ -618,9 +618,9 @@ C["filger_spells"] = {
 			-- Wild Charge
 			{spellID = 102401, filter = "CD"},
 			-- Force of Nature
-			{spellID = 102693, filter = "CD"},
+			--BETA {spellID = 102693, filter = "CD"},
 			-- Faerie Fire
-			{spellID = 770, filter = "CD"},
+			--BETA {spellID = 770, filter = "CD"},
 			-- Tiger's Fury
 			{spellID = 5217, filter = "CD"},
 			-- Incapacitating Roar
@@ -640,13 +640,13 @@ C["filger_spells"] = {
 			-- Ironbark
 			{spellID = 102342, filter = "CD"},
 			-- Nature's Swiftness
-			{spellID = 132158, filter = "CD"},
+			--BETA {spellID = 132158, filter = "CD"},
 			-- Ursol's Vortex
 			{spellID = 102793, filter = "CD"},
 			-- Nature's Vigil
 			{spellID = 124974, filter = "CD"},
 			-- Berserk
-			{spellID = 106952, filter = "CD", absID = true},
+			--BETA {spellID = 106952, filter = "CD", absID = true},
 			-- Incarnation: Chosen of Elune
 			{spellID = 102560, filter = "CD"},
 			-- Incarnation: King of the Jungle

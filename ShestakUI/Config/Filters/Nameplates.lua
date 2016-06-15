@@ -29,7 +29,7 @@ T.DebuffWhiteList = {
 	[SpellName(164812)] = true,	-- Moonfire
 	[SpellName(164815)] = true,	-- Sunfire
 	[SpellName(58180)] = true,	-- Infected Wounds
-	--BETA [SpellName(33745)] = true,	-- Lacerate
+	-- BETA [SpellName(33745)] = true,	-- Lacerate
 	[SpellName(155722)] = true,	-- Rake
 	[SpellName(1079)] = true,	-- Rip
 	-- Hunter

@@ -69,31 +69,31 @@ elseif T.class == "DRUID" then
 		T.aoespam[157982] = 3		-- Tranquility
 		T.aoespam[81269] = 3		-- Wild Mushroom
 		T.aoespam[124988] = 3		-- Nature's Vigil
-		T.aoespam[162359] = 3		-- Genesis
+		--BETA T.aoespam[162359] = 3		-- Genesis
 		T.aoespam[144876] = 3		-- Spark of Life (T16)
 		T.aoespam[155777] = 3		-- Rejuvenation (Germination)
 		-- Damaging spells
 		T.aoespam[164812] = 3		-- Moonfire
 		T.aoespam[164815] = 3		-- Sunfire
 		T.aoespam[42231] = 3		-- Hurricane
-		T.aoespam[106998] = 3		-- Astral Storm
-		T.aoespam[50288] = 3		-- Starfall
+		--BETA T.aoespam[106998] = 3		-- Astral Storm
+		--BETA T.aoespam[50288] = 3		-- Starfall
 		T.aoespam[61391] = 0		-- Typhoon
 		T.aoespam[155722] = 3		-- Rake
 		T.aoespam[33917] = 0		-- Mangle
 		T.aoespam[106785] = 0		-- Swipe
-		T.aoespam[33745] = 3		-- Lacerate
+		--BETA T.aoespam[33745] = 3		-- Lacerate
 		T.aoespam[77758] = 3		-- Thrash (Bear Form)
 		T.aoespam[106830] = 3		-- Thrash (Cat Form)
 		T.aoespam[1079] = 3			-- Rip
 		T.aoespam[124991] = 3		-- Nature's Vigil
-		T.aoespam[152221] = 3		-- Stellar Flare
+		--BETA T.aoespam[152221] = 3		-- Stellar Flare
 		T.aoespam[155625] = 3		-- Moonfire (Cat Form)
 	end
 	if C.combattext.healing then
 		T.healfilter[145109] = true	-- Ysera's Gift (Self)
 		T.healfilter[145110] = true	-- Ysera's Gift
-		T.healfilter[68285] = true	-- Leader of the Pack
+		--BETA T.healfilter[68285] = true	-- Leader of the Pack
 	end
 elseif T.class == "HUNTER" then
 	if C.combattext.merge_aoe_spam then
