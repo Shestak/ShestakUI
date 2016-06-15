@@ -332,33 +332,33 @@ local function Shared(self, unit)
 		end
 
 		-- Shadow Orbs bar
-		if C.unitframe_class_bar.shadow == true and T.class == "PRIEST" then
-			self.ShadowOrbsBar = CreateFrame("Frame", self:GetName().."_ShadowOrbsBar", self)
-			self.ShadowOrbsBar:CreateBackdrop("Default")
-			self.ShadowOrbsBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.ShadowOrbsBar:SetSize(217, 7)
+		--BETA if C.unitframe_class_bar.shadow == true and T.class == "PRIEST" then
+			-- self.ShadowOrbsBar = CreateFrame("Frame", self:GetName().."_ShadowOrbsBar", self)
+			-- self.ShadowOrbsBar:CreateBackdrop("Default")
+			-- self.ShadowOrbsBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			-- self.ShadowOrbsBar:SetSize(217, 7)
 
-			for i = 1, 5 do
-				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", self:GetName().."_ShadowOrbsBar", self.ShadowOrbsBar)
-				self.ShadowOrbsBar[i]:SetSize(215 / 5, 7)
-				if i == 1 then
-					self.ShadowOrbsBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				else
-					self.ShadowOrbsBar[i]:SetPoint("TOPLEFT", self.ShadowOrbsBar[i-1], "TOPRIGHT", 1, 0)
-				end
-				self.ShadowOrbsBar[i]:SetStatusBarTexture(C.media.texture)
-				self.ShadowOrbsBar[i]:SetStatusBarColor(0.70, 0.32, 0.75)
+			-- for i = 1, 5 do
+				-- self.ShadowOrbsBar[i] = CreateFrame("StatusBar", self:GetName().."_ShadowOrbsBar", self.ShadowOrbsBar)
+				-- self.ShadowOrbsBar[i]:SetSize(215 / 5, 7)
+				-- if i == 1 then
+					-- self.ShadowOrbsBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				-- else
+					-- self.ShadowOrbsBar[i]:SetPoint("TOPLEFT", self.ShadowOrbsBar[i-1], "TOPRIGHT", 1, 0)
+				-- end
+				-- self.ShadowOrbsBar[i]:SetStatusBarTexture(C.media.texture)
+				-- self.ShadowOrbsBar[i]:SetStatusBarColor(0.70, 0.32, 0.75)
 
-				self.ShadowOrbsBar[i].bg = self.ShadowOrbsBar[i]:CreateTexture(nil, "BORDER")
-				self.ShadowOrbsBar[i].bg:SetAllPoints()
-				self.ShadowOrbsBar[i].bg:SetTexture(C.media.texture)
-				self.ShadowOrbsBar[i].bg:SetVertexColor(0.70, 0.32, 0.75, 0.2)
+				-- self.ShadowOrbsBar[i].bg = self.ShadowOrbsBar[i]:CreateTexture(nil, "BORDER")
+				-- self.ShadowOrbsBar[i].bg:SetAllPoints()
+				-- self.ShadowOrbsBar[i].bg:SetTexture(C.media.texture)
+				-- self.ShadowOrbsBar[i].bg:SetVertexColor(0.70, 0.32, 0.75, 0.2)
 
-				self.ShadowOrbsBar[i].width = self.ShadowOrbsBar[i]:GetWidth()
-			end
+				-- self.ShadowOrbsBar[i].width = self.ShadowOrbsBar[i]:GetWidth()
+			-- end
 
-			self.ShadowOrbsBar.Override = T.UpdateShadowOrb
-		end
+			-- self.ShadowOrbsBar.Override = T.UpdateShadowOrb
+		-- end
 
 		-- Holy Power bar
 		if C.unitframe_class_bar.holy == true and T.class == "PALADIN" then
