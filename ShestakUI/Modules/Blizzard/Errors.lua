@@ -8,7 +8,7 @@ if C.error.white == true or C.error.black == true then
 	frame:SetScript("OnEvent", function(self, event, _, text)
 		if C.error.white == true and C.error.black == false then
 			if T.white_list[text] then
-				UIErrorsFrame:AddMessage(text, 1, 0 ,0)
+				UIErrorsFrame:AddMessage(text, 1, 0, 0)
 			else
 				L_INFO_ERRORS = text
 			end
@@ -16,7 +16,7 @@ if C.error.white == true or C.error.black == true then
 			if T.black_list[text] then
 				L_INFO_ERRORS = text
 			else
-				UIErrorsFrame:AddMessage(text, 1, 0 ,0)
+				UIErrorsFrame:AddMessage(text, 1, 0, 0)
 			end
 		end
 	end)
