@@ -215,7 +215,9 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		SetCVar("uiScale", C.general.uiscale)
 
 		-- Hack for 4K and WQHD Resolution
-		local customScale = min(2, max(0.32, 768 / string.match(GetCVar("gxWindowedResolution"), "%d+x(%d+)")))
+		local monitorIndex = (tonumber(GetCVar('gxMonitor')) or 0) + 1
+		local resolution = select(GetCurrentResolution(monitorIndex), GetScreenResolutions(monitorIndex))
+		local customScale = min(2, max(0.32, 768 / string.match(resolution, "%d+x(%d+)")))
 		if C.general.auto_scale == true and customScale < 0.64 then
 			UIParent:SetScale(customScale)
 		elseif customScale < 0.64 then

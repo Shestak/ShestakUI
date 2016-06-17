@@ -16,7 +16,10 @@ T.UIScale = function()
 end
 T.UIScale()
 
-local mult = 768 / string.match(GetCVar("gxWindowedResolution"), "%d+x(%d+)") / C.general.uiscale
+local monitorIndex = (tonumber(GetCVar('gxMonitor')) or 0) + 1
+local resolution = select(GetCurrentResolution(monitorIndex), GetScreenResolutions(monitorIndex))
+
+local mult = 768 / string.match(resolution, "%d+x(%d+)") / C.general.uiscale
 local Scale = function(x)
 	return mult * math.floor(x / mult + 0.5)
 end
