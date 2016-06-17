@@ -65,6 +65,19 @@ local ForceUpdate = function(element)
 	return Path(element.__owner, 'ForceUpdate', element.__owner.unit, 'CHI')
 end
 
+local Visibility = function(self, ...)
+	local hb = self.HarmonyBar
+	local spec = GetSpecialization()
+
+	if spec == SPEC_MONK_WINDWALKER then
+		hb:Show()
+		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
+	else
+		hb:Hide()
+		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
+	end
+end
+
 local function Enable(self, unit)
 	local hb = self.HarmonyBar
 	if hb and unit == "player" then
@@ -73,8 +86,8 @@ local function Enable(self, unit)
 
 		self:RegisterEvent("UNIT_POWER", Path)
 		self:RegisterEvent("UNIT_DISPLAYPOWER", Path)
-		self:RegisterEvent('PLAYER_TALENT_UPDATE', Path)
 		self:RegisterEvent("UNIT_MAXPOWER", Path)
+		self:RegisterEvent('PLAYER_TALENT_UPDATE', Visibility)
 
 		hb.maxChi = 0
 
@@ -87,7 +100,8 @@ local function Disable(self)
 	if(hb) then
 		self:UnregisterEvent("UNIT_POWER", Path)
 		self:UnregisterEvent("UNIT_DISPLAYPOWER", Path)
-		self:UnregisterEvent('PLAYER_TALENT_UPDATE', Path)
+		self:UnregisterEvent("UNIT_MAXPOWER", Path)
+		self:UnregisterEvent('PLAYER_TALENT_UPDATE', Visibility)
 	end
 end
 
