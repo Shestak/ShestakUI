@@ -14,21 +14,16 @@ local function Update(self, event, unit, powerType)
 		hb:PreUpdate(unit)
 	end
 
-	local spacing = select(4, hb[4]:GetPoint())
-	local w = hb:GetWidth()
-	local s = 0
 	local light = UnitPower("player", SPELL_POWER_CHI)
 	local maxChi = UnitPowerMax("player", SPELL_POWER_CHI)
+	local spacing = select(4, hb[5]:GetPoint())
+	local w = hb:GetWidth()
+	local s = 0
 
 	if hb.maxChi ~= maxChi then
-		if maxChi == 4 then
-			hb[5]:Hide()
-			hb[6]:Hide()
-		elseif maxChi == 5 then
-			hb[5]:Show()
+		if maxChi == 5 then
 			hb[6]:Hide()
 		else
-			hb[5]:Show()
 			hb[6]:Show()
 		end
 
@@ -48,7 +43,7 @@ local function Update(self, event, unit, powerType)
 		if i <= light then
 			hb[i]:SetAlpha(1)
 		else
-			hb[i]:SetAlpha(.2)
+			hb[i]:SetAlpha(0.2)
 		end
 	end
 
