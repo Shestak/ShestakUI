@@ -37,6 +37,7 @@
 	<Script file="Elements\Resurrect.lua"/>
 	<Script file="Elements\HarmonyOrbs.lua"/>
 	<Script file="Elements\ShadowOrbs.lua"/>
+	<Script file="Elements\ArcaneCharge.lua"/>
 
 	<Script file="Modules\Anticipation.lua"/>
 	<Script file="Modules\AuraTracker.lua"/>

@@ -419,6 +419,31 @@ local function Shared(self, unit)
 			-- self:Tag(self.WarlockSpecBars.text, "[DemonicFury]")
 		end
 
+		-- BETA Arcane Charge
+		if T.class == "MAGE" then
+			self.ArcaneCharge = CreateFrame("Frame", self:GetName().."ArcaneCharge", self)
+			self.ArcaneCharge:CreateBackdrop("Default")
+			self.ArcaneCharge:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			self.ArcaneCharge:SetSize(217, 7)
+
+			for i = 1, 4 do
+				self.ArcaneCharge[i] = CreateFrame("StatusBar", self:GetName().."ArcaneCharge"..i, self.ArcaneCharge)
+				self.ArcaneCharge[i]:SetSize(213 / 4, 7)
+				if i == 1 then
+					self.ArcaneCharge[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				else
+					self.ArcaneCharge[i]:SetPoint("TOPLEFT", self.ArcaneCharge[i-1], "TOPRIGHT", 1, 0)
+				end
+				self.ArcaneCharge[i]:SetStatusBarTexture(C.media.texture)
+				self.ArcaneCharge[i]:SetStatusBarColor(0.4, 0.8, 1)
+
+				self.ArcaneCharge[i].bg = self.ArcaneCharge[i]:CreateTexture(nil, "BORDER")
+				self.ArcaneCharge[i].bg:SetAllPoints()
+				self.ArcaneCharge[i].bg:SetTexture(C.media.texture)
+				self.ArcaneCharge[i].bg:SetVertexColor(0.4, 0.8, 1, 0.2)
+			end
+		end
+
 		-- Rogue/Druid Combo bar
 		if C.unitframe_class_bar.combo == true and C.unitframe_class_bar.combo_old ~= true and (T.class == "ROGUE" or T.class == "DRUID") then
 			self.CPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)
