@@ -1081,6 +1081,7 @@ T.UpdateReputationColor = function(self, event, unit, bar)
 end
 
 T.UpdateComboPoint = function(self, event, unit)
+	if powerType and powerType ~= 'COMBO_POINTS' then return end
 	if unit == "pet" then return end
 
 	local cpoints = self.CPoints
@@ -1118,6 +1119,7 @@ T.UpdateComboPoint = function(self, event, unit)
 end
 
 T.UpdateComboPointOld = function(self, event, unit)
+	if powerType and powerType ~= 'COMBO_POINTS' then return end
 	if unit == "pet" then return end
 
 	local cpoints = self.CPoints
