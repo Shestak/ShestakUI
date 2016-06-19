@@ -233,13 +233,13 @@ local micromenu = {
 		end
 	end},
 	{text = ADVENTURE_JOURNAL, notCheckable = 1, func = function()
-		if T.level >= SHOW_EJ_LEVEL then
+		if C_AdventureJournal.CanBeShown() then
 			ToggleEncounterJournal()
 		else
 			if C.error.white == false then
-				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_EJ_LEVEL), 1, 0.1, 0.1)
+				UIErrorsFrame:AddMessage(FEATURE_NOT_YET_AVAILABLE, 1, 0.1, 0.1)
 			else
-				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_EJ_LEVEL).."|r")
+				print("|cffffff00"..FEATURE_NOT_YET_AVAILABLE.."|r")
 			end
 		end
 	end},
