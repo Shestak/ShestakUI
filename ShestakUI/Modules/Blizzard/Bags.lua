@@ -174,8 +174,6 @@ local timewarped_warforged = {
 	[656] = 675, -- Dungeon drops
 }
 
--- BETA local weapon, armor = GetAuctionItemClasses()
-local weapon, armor = nil, nil
 function Stuffing:SlotUpdate(b)
 	local texture, count, locked, quality = GetContainerItemInfo(b.bag, b.slot)
 	local clink = GetContainerItemLink(b.bag, b.slot)
@@ -196,9 +194,9 @@ function Stuffing:SlotUpdate(b)
 	end
 
 	if clink then
-		b.name, _, _, b.itemlevel, b.level, b.itemType = GetItemInfo(clink)
+		b.name, _, _, b.itemlevel, b.level, _, _, _, _, _, _, b.itemClassID = GetItemInfo(clink)
 
-		if C.bag.ilvl == true and b.itemlevel and quality > 1 and (b.itemType == weapon or b.itemType == armor) then
+		if C.bag.ilvl == true and b.itemlevel and quality > 1 and (b.itemClassID == 2 or b.itemClassID == 4) then
 			if quality == 7 and b.itemlevel == 1 then
 				b.frame.text:SetText(BOALevel(T.level, tonumber(strmatch(clink, "item:(%d+)"))))
 			elseif b.itemlevel > 1 then
@@ -206,7 +204,8 @@ function Stuffing:SlotUpdate(b)
 				local warforged = select(16, strsplit(":", clink))
 				b.itemlevel = timewarped[tonumber(warped)] or b.itemlevel
 				b.itemlevel = timewarped_warforged[tonumber(warforged)] or b.itemlevel
-				local upgrade = clink:match(":(%d+)\124h%[")
+				--BETA local upgrade = clink:match(":(%d+)\124h%[")
+				local upgrade = 0
 				if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
 				b.frame.text:SetText(b.itemlevel + upgrades[upgrade])
 			end
