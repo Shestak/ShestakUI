@@ -607,7 +607,7 @@ T.PostUpdateHealth = function(health, unit, min, max)
 				end
 			end
 		end
-		if C.unitframe.bar_color_value == true and not (UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit)) then
+		if C.unitframe.bar_color_value == true and not UnitIsTapDenied(unit) then
 			if C.unitframe.own_color == true then
 				r, g, b = C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3]
 			else
@@ -706,7 +706,7 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 				health.bg:SetVertexColor(r * mu, g * mu, b * mu)
 			end
 		end
-		if C.unitframe.bar_color_value == true and not (UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit)) then
+		if C.unitframe.bar_color_value == true and not UnitIsTapDenied(unit) then
 			if C.unitframe.own_color == true then
 				r, g, b = C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3]
 			else
