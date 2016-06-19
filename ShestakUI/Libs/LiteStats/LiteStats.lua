@@ -895,8 +895,8 @@ if ping.enabled then
 			self.animGroup = self.text:CreateAnimationGroup()
 			self.anim = self.animGroup:CreateAnimation("Alpha")
 			self.animGroup:SetScript("OnFinished", function() self.text:Hide() end)
-			--BETA self.anim:SetChange(-1)
-			self.anim:SetOrder(1)
+			self.anim:SetFromAlpha(1)
+			self.anim:SetToAlpha(0)
 			self.anim:SetDuration(2.8)
 			self.anim:SetStartDelay(5)
 			end,

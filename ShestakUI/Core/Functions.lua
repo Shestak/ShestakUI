@@ -536,24 +536,21 @@ T.UpdateAllElements = function(frame)
 end
 
 local SetUpAnimGroup = function(self)
-	self.anim = self:CreateAnimationGroup("Flash")
-	self.anim.fadein = self.anim:CreateAnimation("ALPHA", "FadeIn")
-	self.anim.fadein:SetChange(1)
-	self.anim.fadein:SetOrder(2)
-
-	self.anim.fadeout = self.anim:CreateAnimation("ALPHA", "FadeOut")
-	self.anim.fadeout:SetChange(-1)
-	self.anim.fadeout:SetOrder(1)
+	self.anim = self:CreateAnimationGroup()
+	self.anim:SetLooping("BOUNCE")
+	self.anim.fade = self.anim:CreateAnimation("Alpha")
+	self.anim.fade:SetFromAlpha(1)
+	self.anim.fade:SetToAlpha(0)
+	self.anim.fade:SetDuration(0.6)
+	self.anim.fade:SetSmoothing("IN_OUT")
 end
 
-local Flash = function(self, duration)
+local Flash = function(self)
 	if not self.anim then
 		SetUpAnimGroup(self)
 	end
 
-	if not self.anim:IsPlaying() or duration ~= self.anim.fadein:GetDuration() then
-		self.anim.fadein:SetDuration(duration)
-		self.anim.fadeout:SetDuration(duration)
+	if not self.anim:IsPlaying() then
 		self.anim:Play()
 	end
 end
@@ -884,19 +881,16 @@ T.UpdateManaLevel = function(self, elapsed)
 	if self.elapsed < 0.2 then return end
 	self.elapsed = 0
 
-	if UnitPowerType("player") ~= 0 then
-		if T.class == "MONK" then
+	if UnitPowerType("player") == 0 then
+		local percMana = UnitMana("player") / UnitManaMax("player") * 100
+		if percMana <= 20 and not UnitIsDeadOrGhost("player") then
+			self.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
+			Flash(self)
+		else
 			self.ManaLevel:SetText()
+			StopFlash(self)
 		end
-		return
-	end
-
-	local percMana = UnitMana("player") / UnitManaMax("player") * 100
-
-	if percMana <= 20 and not UnitIsDeadOrGhost("player") then
-		self.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
-		Flash(self, 0.3)
-	else
+	elseif T.class ~= "DRUID" then
 		self.ManaLevel:SetText()
 		StopFlash(self)
 	end
@@ -912,7 +906,7 @@ T.UpdateClassMana = function(self)
 		local percMana = min / max * 100
 		if percMana <= 20 and not UnitIsDeadOrGhost("player") then
 			self.FlashInfo.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
-			Flash(self.FlashInfo, 0.3)
+			Flash(self.FlashInfo)
 		else
 			self.FlashInfo.ManaLevel:SetText()
 			StopFlash(self.FlashInfo)

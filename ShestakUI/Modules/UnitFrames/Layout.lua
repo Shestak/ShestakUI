@@ -212,7 +212,7 @@ local function Shared(self, unit)
 	if unit == "player" then
 		self.FlashInfo = CreateFrame("Frame", "FlashInfo", self)
 		self.FlashInfo:SetScript("OnUpdate", T.UpdateManaLevel)
-		self.FlashInfo:SetToplevel(true)
+		self.FlashInfo:SetFrameLevel(self.Health:GetFrameLevel() + 1)
 		self.FlashInfo:SetAllPoints(self.Health)
 
 		self.FlashInfo.ManaLevel = T.SetFontString(self.FlashInfo, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
