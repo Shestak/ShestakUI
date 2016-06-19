@@ -97,9 +97,6 @@ end
 --	Custom Lag Tolerance(by Elv22)
 ----------------------------------------------------------------------------------------
 if C.general.custom_lagtolerance == true then
-	InterfaceOptionsCombatPanelMaxSpellStartRecoveryOffset:Hide()
-	InterfaceOptionsCombatPanelReducedLagTolerance:Hide()
-
 	local customlag = CreateFrame("Frame")
 	local int = 5
 	local _, _, _, lag = GetNetStats()
