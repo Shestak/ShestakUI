@@ -61,9 +61,6 @@ local function LoadSkin()
 		"PaperDollEquipmentManagerPane"
 	}
 
-	CharacterFrameExpandButton:SetSize(CharacterFrameExpandButton:GetWidth() - 7, CharacterFrameExpandButton:GetHeight() - 7)
-	T.SkinNextPrevButton(CharacterFrameExpandButton)
-
 	EquipmentFlyoutFrameHighlight:Kill()
 	local function SkinItemFlyouts()
 		EquipmentFlyoutFrameButtons:StripTextures()
@@ -103,7 +100,6 @@ local function LoadSkin()
 	local scrollbars = {
 		"PaperDollTitlesPaneScrollBar",
 		"PaperDollEquipmentManagerPaneScrollBar",
-		"CharacterStatsPaneScrollBar",
 		"TokenFrameContainerScrollBar",
 		"ReputationListScrollFrameScrollBar",
 		"GearManagerDialogPopupScrollFrameScrollBar"
@@ -225,16 +221,6 @@ local function LoadSkin()
 	end
 	hooksecurefunc("PaperDollFrame_UpdateSidebarTabs", FixSidebarTabCoords)
 
-	hooksecurefunc("PaperDollFrame_CollapseStatCategory", function(categoryFrame)
-		categoryFrame.BgMinimized:Hide()
-	end)
-
-	hooksecurefunc("PaperDollFrame_ExpandStatCategory", function(categoryFrame)
-		categoryFrame.BgTop:Hide()
-		categoryFrame.BgMiddle:Hide()
-		categoryFrame.BgBottom:Hide()
-	end)
-
 	-- Reputation
 	local function UpdateFactionSkins()
 		ReputationListScrollFrame:StripTextures()
@@ -294,22 +280,6 @@ local function LoadSkin()
 		T.SkinCheckBox(TokenFramePopupBackpackCheckBox)
 		T.SkinCheckBox(TokenFramePopupInactiveCheckBox)
 	end)
-
-	-- Pet
-	PetModelFrame:CreateBackdrop("Default")
-	PetModelFrame.backdrop:SetPoint("TOPLEFT", -2, 2)
-	PetModelFrame.backdrop:SetPoint("BOTTOMRIGHT", 1, -2)
-	T.SkinRotateButton(PetModelFrameRotateRightButton)
-	T.SkinRotateButton(PetModelFrameRotateLeftButton)
-	PetModelFrameRotateLeftButton:ClearAllPoints()
-	PetModelFrameRotateLeftButton:SetPoint("TOPLEFT", PetModelFrame.backdrop, "TOPLEFT", 6, -6)
-	PetModelFrameRotateRightButton:ClearAllPoints()
-	PetModelFrameRotateRightButton:SetPoint("LEFT", PetModelFrameRotateLeftButton, "RIGHT", 4, 0)
-
-	local xtex = PetPaperDollPetInfo:GetRegions()
-	xtex:SetTexCoord(0.12, 0.63, 0.15, 0.55)
-	PetPaperDollPetInfo:CreateBackdrop("Default")
-	PetPaperDollPetInfo:SetSize(24, 24)
 
 	CharacterFrame:SetTemplate("Transparent")
 
