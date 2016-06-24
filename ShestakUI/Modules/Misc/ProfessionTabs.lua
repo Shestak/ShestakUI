@@ -76,7 +76,7 @@ local function UpdateTab(object, name, rank, texture)
 
 		local F, C = unpack(Aurora)
 		tab:SetCheckedTexture(C.media.checked)
-		tab:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
+		tab:GetHighlightTexture():SetColorTexture(1, 1, 1, 0.3)
 		tab:GetHighlightTexture():SetAllPoints(tab:GetNormalTexture())
 		F.CreateBG(tab)
 	elseif C.skins.blizzard_frames == true then

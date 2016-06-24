@@ -98,7 +98,7 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 		end
 	end)
 
-	flash:SetTexture(0.8, 0.8, 0.8, 0.5)
+	flash:SetColorTexture(0.8, 0.8, 0.8, 0.5)
 	flash:SetPoint("TOPLEFT", button, 2, -2)
 	flash:SetPoint("BOTTOMRIGHT", button, -2, 2)
 

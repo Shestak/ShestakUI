@@ -270,7 +270,7 @@ local function START_LOOT_ROLL(rollID, time)
 	f.fsloot:SetVertexColor(color.r, color.g, color.b)
 
 	f.status:SetStatusBarColor(color.r, color.g, color.b, 0.7)
-	f.status.bg:SetTexture(color.r, color.g, color.b)
+	f.status.bg:SetColorTexture(color.r, color.g, color.b)
 
 	f.backdrop:SetBackdropBorderColor(color.r, color.g, color.b, 0.7)
 	f.button.backdrop:SetBackdropBorderColor(color.r, color.g, color.b, 0.7)
@@ -328,7 +328,7 @@ SlashCmdList.TESTROLL = function()
 		f.status:SetMinMaxValues(0, 100)
 		f.status:SetValue(math.random(50, 90))
 		f.status:SetStatusBarColor(r, g, b, 0.7)
-		f.status.bg:SetTexture(r, g, b)
+		f.status.bg:SetColorTexture(r, g, b)
 
 		f.backdrop:SetBackdropBorderColor(r, g, b, 0.7)
 		f.button.backdrop:SetBackdropBorderColor(r, g, b, 0.7)

@@ -84,7 +84,7 @@ local function LoadSkin()
 		end
 
 		if t then
-			t:SetTexture(T.color.r, T.color.g, T.color.b, 0.3)
+			t:SetColorTexture(T.color.r, T.color.g, T.color.b, 0.3)
 			t:SetPoint("TOPLEFT", b, 2, -2)
 			t:SetPoint("BOTTOMRIGHT", b, -2, 2)
 		end
@@ -99,7 +99,7 @@ local function LoadSkin()
 		b.text:SetFont(C.media.normal_font, 13)
 
 		if t then
-			t:SetTexture(T.color.r, T.color.g, T.color.b, 0.3)
+			t:SetColorTexture(T.color.r, T.color.g, T.color.b, 0.3)
 			t:SetPoint("TOPLEFT", b, 2, -2)
 			t:SetPoint("BOTTOMRIGHT", b, -2, 2)
 		end

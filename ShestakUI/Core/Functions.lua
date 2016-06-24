@@ -325,7 +325,7 @@ function T.SkinNextPrevButton(btn, left)
 		if btn:GetPushedTexture() then
 			btn:GetPushedTexture():SetAllPoints(btn:GetNormalTexture())
 		end
-		btn:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
+		btn:GetHighlightTexture():SetColorTexture(1, 1, 1, 0.3)
 		btn:GetHighlightTexture():SetAllPoints(btn:GetNormalTexture())
 	end
 end
@@ -337,7 +337,7 @@ function T.SkinRotateButton(btn)
 	btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.65, 0.69, 0.29, 0.69, 0.65)
 	btn:GetPushedTexture():SetTexCoord(0.3, 0.29, 0.3, 0.65, 0.69, 0.29, 0.69, 0.65)
 
-	btn:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
+	btn:GetHighlightTexture():SetColorTexture(1, 1, 1, 0.3)
 
 	btn:GetNormalTexture():ClearAllPoints()
 	btn:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
@@ -408,7 +408,7 @@ function T.SkinCheckBox(frame, default)
 
 	if frame.SetHighlightTexture then
 		local highligh = frame:CreateTexture(nil, nil, self)
-		highligh:SetTexture(1, 1, 1, 0.3)
+		highligh:SetColorTexture(1, 1, 1, 0.3)
 		highligh:SetPoint("TOPLEFT", frame, 6, -6)
 		highligh:SetPoint("BOTTOMRIGHT", frame, -6, 6)
 		frame:SetHighlightTexture(highligh)
@@ -417,7 +417,7 @@ function T.SkinCheckBox(frame, default)
 	if frame.SetCheckedTexture then
 		if default then return end
 		local checked = frame:CreateTexture(nil, nil, self)
-		checked:SetTexture(1, 0.82, 0, 0.8)
+		checked:SetColorTexture(1, 0.82, 0, 0.8)
 		checked:SetPoint("TOPLEFT", frame, 6, -6)
 		checked:SetPoint("BOTTOMRIGHT", frame, -6, 6)
 		frame:SetCheckedTexture(checked)
@@ -425,7 +425,7 @@ function T.SkinCheckBox(frame, default)
 
 	if frame.SetDisabledCheckedTexture then
 		local disabled = frame:CreateTexture(nil, nil, self)
-		disabled:SetTexture(0.6, 0.6, 0.6, 0.75)
+		disabled:SetColorTexture(0.6, 0.6, 0.6, 0.75)
 		disabled:SetPoint("TOPLEFT", frame, 6, -6)
 		disabled:SetPoint("BOTTOMRIGHT", frame, -6, 6)
 		frame:SetDisabledCheckedTexture(disabled)

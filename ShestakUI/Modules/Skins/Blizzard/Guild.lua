@@ -195,7 +195,7 @@ local function LoadSkin()
 		button:SetTemplate("Overlay")
 		button:StyleButton()
 		button.selectedTex:SetDrawLayer("ARTWORK")
-		button.selectedTex:SetTexture(1, 0.82, 0, 0.3)
+		button.selectedTex:SetColorTexture(1, 0.82, 0, 0.3)
 		button.selectedTex:SetPoint("TOPLEFT", 2, -2)
 		button.selectedTex:SetPoint("BOTTOMRIGHT", -2, 2)
 

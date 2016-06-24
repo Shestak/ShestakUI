@@ -73,7 +73,7 @@ local function LoadSkin()
 		button.SelectedTexture:SetAllPoints()
 		button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
 		button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
-		button.SelectedTexture:SetTexture(1, 0.82, 0, 0.3)
+		button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
 	end
 
 	for i = 1, #HonorFrame.SpecificFrame.buttons do
@@ -83,7 +83,7 @@ local function LoadSkin()
 		button:SetTemplate("Overlay")
 		button:StyleButton()
 		button.SelectedTexture:SetDrawLayer("ARTWORK")
-		button.SelectedTexture:SetTexture(1, 0.82, 0, 0.3)
+		button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
 		button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
 		button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 		if i == 1 then
@@ -116,7 +116,7 @@ local function LoadSkin()
 		button.SelectedTexture:SetAllPoints()
 		button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
 		button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
-		button.SelectedTexture:SetTexture(1, 0.82, 0, 0.3)
+		button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
 	end
 
 	ConquestFrame.Arena3v3:SetPoint("TOP", ConquestFrame.Arena2v2, "BOTTOM", 0, -3)
@@ -147,7 +147,7 @@ local function LoadSkin()
 		button:SetTemplate("Overlay")
 		button:StyleButton()
 		button.SelectedTexture:SetDrawLayer("ARTWORK")
-		button.SelectedTexture:SetTexture(1, 0.82, 0, 0.3)
+		button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
 		button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
 		button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 	end

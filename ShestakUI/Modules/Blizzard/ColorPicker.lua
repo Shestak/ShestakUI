@@ -72,7 +72,7 @@ local function UpdateColor(tbox)
 
 	editingText = true
 	ColorPickerFrame:SetColorRGB(r, g, b)
-	ColorSwatch:SetTexture(r, g, b)
+	ColorSwatch:SetColorTexture(r, g, b)
 	editingText = nil
 end
 
@@ -86,7 +86,7 @@ load:SetScript("OnEvent", function(self, event)
 	ColorPickerFrame:HookScript("OnShow", function(self)
 		-- Get color that will be replaced
 		local r, g, b = ColorPickerFrame:GetColorRGB()
-		ColorPPOldColorSwatch:SetTexture(r, g, b)
+		ColorPPOldColorSwatch:SetColorTexture(r, g, b)
 
 		-- Show/hide the alpha box
 		if ColorPickerFrame.hasOpacity then
@@ -102,7 +102,7 @@ load:SetScript("OnEvent", function(self, event)
 	end)
 
 	ColorPickerFrame:HookScript("OnColorSelect", function(self, r, g, b)
-		ColorSwatch:SetTexture(r, g, b)
+		ColorSwatch:SetColorTexture(r, g, b)
 		if not editingText then
 			UpdateColorTexts(r, g, b)
 		end
@@ -129,7 +129,7 @@ load:SetScript("OnEvent", function(self, event)
 	local t = ColorPickerFrame:CreateTexture("ColorPPOldColorSwatch")
 	local w, h = ColorSwatch:GetSize()
 	t:SetSize(w * 0.75, h * 0.75)
-	t:SetTexture(0, 0, 0)
+	t:SetColorTexture(0, 0, 0)
 
 	-- OldColorSwatch to appear beneath ColorSwatch
 	t:SetDrawLayer("BORDER")
@@ -138,7 +138,7 @@ load:SetScript("OnEvent", function(self, event)
 	-- Add Color Swatch for the copied color
 	t = ColorPickerFrame:CreateTexture("ColorPPCopyColorSwatch")
 	t:SetSize(w, h)
-	t:SetTexture(0, 0, 0)
+	t:SetColorTexture(0, 0, 0)
 	t:Hide()
 
 	-- Add copy button to the ColorPickerFrame
@@ -156,7 +156,7 @@ load:SetScript("OnEvent", function(self, event)
 
 		-- Enable Paste button and display copied color into swatch
 		ColorPPPaste:Enable()
-		ColorPPCopyColorSwatch:SetTexture(colorBuffer.r, colorBuffer.g, colorBuffer.b)
+		ColorPPCopyColorSwatch:SetColorTexture(colorBuffer.r, colorBuffer.g, colorBuffer.b)
 		ColorPPCopyColorSwatch:Show()
 
 		if ColorPickerFrame.hasOpacity then
@@ -178,7 +178,7 @@ load:SetScript("OnEvent", function(self, event)
 	-- Paste color on button click, updating frame components
 	b:SetScript("OnClick", function(self)
 		ColorPickerFrame:SetColorRGB(colorBuffer.r, colorBuffer.g, colorBuffer.b)
-		ColorSwatch:SetTexture(colorBuffer.r, colorBuffer.g, colorBuffer.b)
+		ColorSwatch:SetColorTexture(colorBuffer.r, colorBuffer.g, colorBuffer.b)
 		if ColorPickerFrame.hasOpacity then
 			if colorBuffer.a then -- Color copied had an alpha value
 				OpacitySliderFrame:SetValue(colorBuffer.a)
@@ -196,7 +196,7 @@ load:SetScript("OnEvent", function(self, event)
 
 	b:SetScript("OnClick", function()
 		ColorPickerFrame:SetColorRGB(T.color.r, T.color.g, T.color.b)
-		ColorSwatch:SetTexture(T.color.r, T.color.g, T.color.b)
+		ColorSwatch:SetColorTexture(T.color.r, T.color.g, T.color.b)
 		if ColorPickerFrame.hasOpacity then
 			OpacitySliderFrame:SetValue(0)
 		end
