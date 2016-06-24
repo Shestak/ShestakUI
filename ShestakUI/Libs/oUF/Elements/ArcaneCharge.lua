@@ -52,6 +52,7 @@ local function Enable(self)
 	if(ac) then
 		ac.__owner = self
 		ac.ForceUpdate = ForceUpdate
+		Visibility(self)
 
 		self:RegisterEvent('UNIT_POWER', Path)
 		self:RegisterEvent('PLAYER_TALENT_UPDATE', Visibility)

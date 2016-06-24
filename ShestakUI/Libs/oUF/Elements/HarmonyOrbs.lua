@@ -78,6 +78,7 @@ local function Enable(self, unit)
 	if hb and unit == "player" then
 		hb.__owner = self
 		hb.ForceUpdate = ForceUpdate
+		Visibility(self)
 
 		self:RegisterEvent("UNIT_POWER", Path)
 		self:RegisterEvent("UNIT_DISPLAYPOWER", Path)

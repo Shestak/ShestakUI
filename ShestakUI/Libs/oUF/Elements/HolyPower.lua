@@ -52,6 +52,7 @@ local function Enable(self)
 	if(hp) then
 		hp.__owner = self
 		hp.ForceUpdate = ForceUpdate
+		Visibility(self)
 
 		self:RegisterEvent('UNIT_POWER', Path)
 		self:RegisterEvent('PLAYER_TALENT_UPDATE', Visibility)
