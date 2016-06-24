@@ -53,7 +53,7 @@
 	<!-- <Script file="PvP.lua"/> -->
 	<Script file="Quest.lua"/>
 	<Script file="QuestChoice.lua"/>
-	<!-- <Script file="QuestLog.lua"/> -->
+	<Script file="QuestLog.lua"/>
 	<Script file="Raid.lua"/>
 	<Script file="RaidInfo.lua"/>
 	<Script file="SpellBook.lua"/>
@@ -66,6 +66,6 @@
 	<Script file="Trainer.lua"/>
 	<Script file="Tutorial.lua"/>
 	<Script file="VoidStorage.lua"/>
-	<!-- <Script file="WorldMap.lua"/> -->
+	<Script file="WorldMap.lua"/>
 	<Script file="WorldState.lua"/>
 </Ui>

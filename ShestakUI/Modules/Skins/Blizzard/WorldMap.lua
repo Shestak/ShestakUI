@@ -55,10 +55,10 @@ local function LoadSkin()
 	QuestMapDetailsScrollFrame.backdrop:SetPoint("LEFT", WorldMapFrame.backdrop, "RIGHT", 2, 0)
 	T.SkinScrollBar(QuestMapDetailsScrollFrameScrollBar)
 
-	QuestScrollFrame.ViewAll:SkinButton()
-	QuestScrollFrame.ViewAll:ClearAllPoints()
-	QuestScrollFrame.ViewAll:SetPoint("LEFT", WorldMapFrame.Header, "RIGHT", 2, 0)
-	QuestScrollFrame.ViewAll:SetSize(284, 23)
+	--BETA QuestScrollFrame.ViewAll:SkinButton()
+	-- QuestScrollFrame.ViewAll:ClearAllPoints()
+	-- QuestScrollFrame.ViewAll:SetPoint("LEFT", WorldMapFrame.Header, "RIGHT", 2, 0)
+	-- QuestScrollFrame.ViewAll:SetSize(284, 23)
 
 	QuestMapFrame.DetailsFrame.BackButton:SkinButton()
 	QuestMapFrame.DetailsFrame.BackButton:ClearAllPoints()
@@ -144,8 +144,8 @@ local function LoadSkin()
 		button.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, 2, -2)
 	end
 
-	hooksecurefunc("QuestInfo_GetRewardButton", function(frame, index)
-		local button = frame.RewardButtons[index]
+	hooksecurefunc("QuestInfo_GetRewardButton", function(rewardsFrame, index)
+		local button = rewardsFrame.RewardButtons[index]
 		if not button.restyled then
 			SkinReward(button)
 			button.restyled = true
@@ -176,12 +176,12 @@ local function LoadSkin()
 	end
 
 	SkinReward(QuestInfoSkillPointFrame)
-	SkinReward(MapQuestInfoRewardsFrame.SpellFrame)
+	--BETA SkinReward(MapQuestInfoRewardsFrame.SpellFrame)
 	SkinReward(MapQuestInfoRewardsFrame.XPFrame)
 	SkinReward(MapQuestInfoRewardsFrame.MoneyFrame)
 	SkinReward(MapQuestInfoRewardsFrame.SkillPointFrame)
 
-	SkinRewardSpell(QuestInfoRewardSpell)
+	--BETA SkinRewardSpell(QuestInfoRewardSpell)
 	SkinRewardSpell(QuestInfoSpellObjectiveFrame)
 
 	T.SkinDropDownBox(WorldMapLevelDropDown)

@@ -74,8 +74,8 @@ local function LoadSkin()
 		QuestInfoRewardsFrame.ItemChooseText:SetShadowOffset(1, -1)
 		QuestInfoRewardsFrame.ItemReceiveText:SetTextColor(1, 1, 1)
 		QuestInfoRewardsFrame.ItemReceiveText:SetShadowOffset(1, -1)
-		QuestInfoRewardsFrame.SpellLearnText:SetTextColor(1, 1, 1)
-		QuestInfoRewardsFrame.SpellLearnText:SetShadowOffset(1, -1)
+		--BETA QuestInfoRewardsFrame.SpellLearnText:SetTextColor(1, 1, 1)
+		-- QuestInfoRewardsFrame.SpellLearnText:SetShadowOffset(1, -1)
 		QuestInfoRewardsFrame.XPFrame.ReceiveText:SetTextColor(1, 1, 1)
 		QuestInfoRewardsFrame.XPFrame.ReceiveText:SetShadowOffset(1, -1)
 		QuestInfoRewardsFrame.PlayerTitleText:SetTextColor(1, 1, 1)
@@ -134,9 +134,9 @@ local function LoadSkin()
 		end
     end)
 
-	QuestInfoRewardsFrame.FollowerFrame:CreateBackdrop("Transparent")
-	QuestInfoRewardsFrame.FollowerFrame.backdrop:SetAllPoints(QuestInfoRewardsFrame.FollowerFrame.BG)
-	QuestInfoRewardsFrame.FollowerFrame.BG:Hide()
+	--BETA QuestInfoRewardsFrame.FollowerFrame:CreateBackdrop("Transparent")
+	-- QuestInfoRewardsFrame.FollowerFrame.backdrop:SetAllPoints(QuestInfoRewardsFrame.FollowerFrame.BG)
+	-- QuestInfoRewardsFrame.FollowerFrame.BG:Hide()
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
