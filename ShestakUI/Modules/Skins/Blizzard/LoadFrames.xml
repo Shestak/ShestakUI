@@ -19,7 +19,6 @@
 	<Script file="DeathRecap.lua"/>
 	<Script file="DressUp.lua"/>
 	<Script file="EncounterJournal.lua"/>
-	<Script file="FrameStack.lua"/>
 	<Script file="Friends.lua"/>
 	<Script file="Garrison.lua"/>
 	<Script file="Glyph.lua"/>
