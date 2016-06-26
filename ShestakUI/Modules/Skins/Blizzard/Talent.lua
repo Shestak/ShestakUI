@@ -6,7 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	local buttons = {
-		"PlayerTalentFrameTalentsLearnButton",
+		--BETA "PlayerTalentFrameTalentsLearnButton",
 		"PlayerTalentFramePetSpecializationLearnButton",
 		"PlayerTalentFrameSpecializationLearnButton"
 	}
@@ -44,14 +44,14 @@ local function LoadSkin()
 		select(i, PlayerTalentFrameSpecializationSpellScrollFrameScrollChild:GetRegions()):Hide()
 	end
 
-	PlayerTalentFrameTalentsClearInfoFrame:SetTemplate("Default")
+	--BETA PlayerTalentFrameTalentsClearInfoFrame:SetTemplate("Default")
 
-	PlayerTalentFrameTalentsClearInfoFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	PlayerTalentFrameTalentsClearInfoFrameIcon:SetPoint("TOPLEFT", 2, -2)
-	PlayerTalentFrameTalentsClearInfoFrameIcon:SetPoint("BOTTOMRIGHT", -2, 2)
+	-- PlayerTalentFrameTalentsClearInfoFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	-- PlayerTalentFrameTalentsClearInfoFrameIcon:SetPoint("TOPLEFT", 2, -2)
+	-- PlayerTalentFrameTalentsClearInfoFrameIcon:SetPoint("BOTTOMRIGHT", -2, 2)
 
-	PlayerTalentFrameTalentsClearInfoFrameCount:SetFont(C.media.normal_font, 11, "OUTLINE")
-	PlayerTalentFrameTalentsClearInfoFrameCount:SetPoint("BOTTOMRIGHT", 2, 0)
+	-- PlayerTalentFrameTalentsClearInfoFrameCount:SetFont(C.media.normal_font, 11, "OUTLINE")
+	-- PlayerTalentFrameTalentsClearInfoFrameCount:SetPoint("BOTTOMRIGHT", 2, 0)
 
 	PlayerTalentFrameSpecializationSpellScrollFrameScrollChild.Seperator:SetColorTexture(1, 1, 1)
 	PlayerTalentFrameSpecializationSpellScrollFrameScrollChild.Seperator:SetAlpha(0.2)
@@ -219,7 +219,8 @@ local function LoadSkin()
 		for i = 1, MAX_TALENT_TIERS do
 			for j = 1, NUM_TALENT_COLUMNS do
 				local bu = _G["PlayerTalentFrameTalentsTalentRow"..i.."Talent"..j]
-				if bu.knownSelection:IsShown() then
+				local selected = _G["PlayerTalentFrameTalentsTalentRow"..i.."Talent"..j.."Selection"]
+				if selected:IsShown() then
 					bu.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b, 1)
 					bu.bg.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b, 1)
 					bu.bg.backdrop.overlay:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.3)
@@ -227,11 +228,6 @@ local function LoadSkin()
 					bu.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 					bu.bg.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 					bu.bg.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
-				end
-				if bu.learnSelection:IsShown() then
-					bu.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
-					bu.bg.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
-					bu.bg.backdrop.overlay:SetVertexColor(1, 0.82, 0, 0.3)
 				end
 			end
 		end
