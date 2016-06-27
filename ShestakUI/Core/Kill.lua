@@ -13,8 +13,8 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	end
 
 	if C.unitframe.enable and (SavedOptions and (SavedOptions.RaidLayout == "HEAL" or SavedOptions.RaidLayout == "DPS")) then
-		InterfaceOptionsFrameCategoriesButton11:SetScale(0.00001)
-		InterfaceOptionsFrameCategoriesButton11:SetAlpha(0)
+		InterfaceOptionsFrameCategoriesButton10:SetScale(0.00001)
+		InterfaceOptionsFrameCategoriesButton10:SetAlpha(0)
 		if not InCombatLockdown() then
 			CompactRaidFrameManager:Kill()
 			CompactRaidFrameContainer:Kill()
@@ -46,24 +46,13 @@ frame:SetScript("OnEvent", function(self, event, addon)
 
 	if C.chat.enable then
 		SetCVar("chatStyle", "im")
-		--BETA InterfaceOptionsSocialPanelChatStyle:Kill()
-		--BETA InterfaceOptionsSocialPanelWholeChatWindowClickable:Kill()
 	end
 
 	if C.unitframe.enable then
 		if T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune ~= true then
 			RuneFrame:Kill()
 		end
-		InterfaceOptionsFrameCategoriesButton9:SetScale(0.00001)
-		InterfaceOptionsFrameCategoriesButton9:SetAlpha(0)
-		InterfaceOptionsFrameCategoriesButton10:SetScale(0.00001)
-		InterfaceOptionsFrameCategoriesButton10:SetAlpha(0)
-		--BETA InterfaceOptionsBuffsPanelCastableBuffs:Kill()
-		--BETA InterfaceOptionsBuffsPanelDispellableDebuffs:Kill()
-		--BETA InterfaceOptionsBuffsPanelShowAllEnemyDebuffs:Kill()
 		InterfaceOptionsCombatPanelTargetOfTarget:Kill()
-		--BETA InterfaceOptionsCombatPanelEnemyCastBars:Kill()
-		--BETA InterfaceOptionsCombatPanelEnemyCastBarsOnPortrait:Kill()
 		SetCVar("showPartyBackground", 0)
 	end
 
@@ -76,8 +65,6 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	end
 
 	if C.nameplate.enable then
-		--BETA InterfaceOptionsCombatPanelEnemyCastBarsOnNameplates:Kill()
-		--BETA InterfaceOptionsNamesPanelUnitNameplatesNameplateClassColors:Kill()
 		SetCVar("ShowClassColorInNameplate", 1)
 	end
 
@@ -86,25 +73,17 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	end
 
 	if C.bag.enable then
-		--BETA InterfaceOptionsControlsPanelReverseCleanUpBags:Kill()
-		--BETA InterfaceOptionsControlsPanelReverseNewLoot:Kill()
 		SetSortBagsRightToLeft(true)
 		SetInsertItemsLeftToRight(false)
 	end
 
 	if C.combattext.enable then
-		--BETA InterfaceOptionsCombatTextPanelFCTDropDown:Kill()
 		if C.combattext.blizz_head_numbers ~= true then
-			SetCVar("CombatDamage", 0)
-			SetCVar("PetMeleeDamage", 0)
-			SetCVar("CombatHealing", 0)
-			SetCVar("CombatLogPeriodicSpells", 0)
-			SetCVar("CombatHealingAbsorbTarget", 0)
-			InterfaceOptionsCombatTextPanelTargetDamage:Kill()
-			InterfaceOptionsCombatTextPanelPeriodicDamage:Kill()
-			InterfaceOptionsCombatTextPanelPetDamage:Kill()
-			InterfaceOptionsCombatTextPanelHealing:Kill()
-			InterfaceOptionsCombatTextPanelHealingAbsorbTarget:Kill()
+			--BETA SetCVar("CombatDamage", 0)
+			-- SetCVar("PetMeleeDamage", 0)
+			-- SetCVar("CombatHealing", 0)
+			-- SetCVar("CombatLogPeriodicSpells", 0)
+			-- SetCVar("CombatHealingAbsorbTarget", 0)
 		end
 	end
 end)

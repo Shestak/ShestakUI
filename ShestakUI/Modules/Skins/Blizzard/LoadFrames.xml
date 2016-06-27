@@ -32,7 +32,7 @@
 	<Script file="GuildRegistrar.lua"/>
 	<Script file="Help.lua"/>
 	<Script file="Inspect.lua"/>
-	<!-- <Script file="Interface.lua"/> -->
+	<Script file="Interface.lua"/>
 	<Script file="ItemAlteration.lua"/>
 	<Script file="ItemSocketing.lua"/>
 	<Script file="ItemText.lua"/>
@@ -45,7 +45,7 @@
 	<Script file="Merchant.lua"/>
 	<Script file="MinimapButtons.lua"/>
 	<!-- <Script file="MissingLoot.lua"/> -->
-	<!-- <Script file="Options.lua"/> -->
+	<Script file="Options.lua"/>
 	<Script file="Petition.lua"/>
 	<Script file="PetStable.lua"/>
 	<Script file="ProductChoice.lua"/>
