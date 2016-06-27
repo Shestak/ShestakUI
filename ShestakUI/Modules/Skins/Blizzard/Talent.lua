@@ -253,6 +253,12 @@ local function LoadSkin()
 		PlayerSpecTab1:SetPoint("TOPLEFT", PlayerTalentFrame, "TOPRIGHT", 1, 0)
 		PlayerSpecTab2:SetPoint("TOP", PlayerSpecTab1, "BOTTOM")
 	end)
+
+	-- PVPTalents
+	PlayerTalentFramePVPTalents.XPBar.PrestigeReward.Accept:SkinButton()
+
+	PlayerTalentFramePVPTalentsBg:Hide()
+	PlayerTalentFramePVPTalents:DisableDrawLayer("BORDER")
 end
 
 T.SkinFuncs["Blizzard_TalentUI"] = LoadSkin
