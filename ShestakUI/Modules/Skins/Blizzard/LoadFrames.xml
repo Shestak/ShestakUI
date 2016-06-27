@@ -50,7 +50,7 @@
 	<Script file="PetStable.lua"/>
 	<Script file="ProductChoice.lua"/>
 	<Script file="PvE.lua"/>
-	<!-- <Script file="PvP.lua"/> -->
+	<Script file="PvP.lua"/>
 	<Script file="Quest.lua"/>
 	<Script file="QuestChoice.lua"/>
 	<Script file="QuestLog.lua"/>
