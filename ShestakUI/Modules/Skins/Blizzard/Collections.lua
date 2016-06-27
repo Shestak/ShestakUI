@@ -34,7 +34,7 @@ local function LoadSkin()
 	CollectionsJournal:Hide()
 	CollectionsJournalPortrait:SetAlpha(0)
 
-	for i = 1, 4 do
+	for i = 1, 5 do
 		T.SkinTab(_G["CollectionsJournalTab"..i])
 	end
 
@@ -392,7 +392,6 @@ local function LoadSkin()
 	ToyBox.progressBar:CreateBackdrop("Overlay")
 	ToyBox.progressBar:SetStatusBarTexture(C.media.texture)
 	ToyBox.progressBar:SetFrameLevel(ToyBox.progressBar:GetFrameLevel() + 2)
-
 
 	for i = 1, 18 do
 		ToyBox.iconsFrame["spellButton"..i].slotFrameCollected:SetTexture("")
