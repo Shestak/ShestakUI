@@ -662,34 +662,6 @@ local function Shared(self, unit)
 			end
 		end
 
-		-- Resolve bar
-		--BETA if C.unitframe_class_bar.resolve == true then
-			-- self.ResolveBar = CreateFrame("Frame", self:GetName().."_ResolveBar", self)
-			-- self.ResolveBar:CreateBackdrop("Default")
-			-- if (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
-			-- or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true)
-			-- or (T.class == "MONK" and C.unitframe_class_bar.chi == true) then
-				-- self.ResolveBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
-			-- else
-				-- self.ResolveBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			-- end
-			-- self.ResolveBar:SetSize(217, 7)
-
-			-- self.ResolveBar.Bar = CreateFrame("StatusBar", nil, self.ResolveBar)
-			-- self.ResolveBar.Bar:SetPoint("LEFT", self.ResolveBar, "LEFT", 0, 0)
-			-- self.ResolveBar.Bar:SetSize(217, 7)
-			-- self.ResolveBar.Bar:SetStatusBarTexture(C.media.texture)
-			-- self.ResolveBar.Bar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
-
-			-- self.ResolveBar.bg = self.ResolveBar.Bar:CreateTexture(nil, "BORDER")
-			-- self.ResolveBar.bg:SetAllPoints()
-			-- self.ResolveBar.bg:SetTexture(C.media.texture)
-			-- self.ResolveBar.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
-
-			-- self.ResolveBar.Text = T.SetFontString(self.ResolveBar.Bar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			-- self.ResolveBar.Text:SetPoint("CENTER", self.ResolveBar.Bar, "CENTER", 0, 0)
-		-- end
-
 		-- Experience bar
 		if T.level ~= MAX_PLAYER_LEVEL and C.unitframe.plugins_experience_bar == true then
 			self.Experience = CreateFrame("StatusBar", self:GetName().."_Experience", self)

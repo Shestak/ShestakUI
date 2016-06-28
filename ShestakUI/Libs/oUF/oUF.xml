@@ -57,7 +57,6 @@
 	<Script file="Modules\RaidDebuffs.lua"/>
 	<Script file="Modules\RangeBar.lua"/>
 	<Script file="Modules\Reputation.lua"/>
-	<Script file="Modules\Resolve.lua"/>
 	<Script file="Modules\Smooth.lua"/>
 	<Script file="Modules\Swing.lua"/>
 	<Script file="Modules\TotemBar.lua"/>
