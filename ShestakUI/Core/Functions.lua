@@ -1001,12 +1001,6 @@ T.UpdateHoly = function(self, event, unit, powerType)
 	end
 end
 
-T.UpdateReputationColor = function(self, event, unit, bar)
-	local name, id = GetWatchedFactionInfo()
-	bar:SetStatusBarColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b)
-	bar.bg:SetVertexColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b, 0.2)
-end
-
 T.UpdateComboPoint = function(self, event, unit)
 	if powerType and powerType ~= 'COMBO_POINTS' then return end
 	if unit == "pet" then return end
@@ -1032,7 +1026,6 @@ T.UpdateComboPoint = function(self, event, unit)
 
 	if T.class == "DRUID" and C.unitframe_class_bar.combo_always ~= true then
 		local form = GetShapeshiftFormID()
-		local spec = GetSpecialization()
 
 		if form == CAT_FORM or ((UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and cp > 0) then
 			cpoints:Show()
@@ -1095,6 +1088,12 @@ T.UpdateComboPointOld = function(self, event, unit)
 			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
 		end
 	end
+end
+
+T.UpdateReputationColor = function(self, event, unit, bar)
+	local name, id = GetWatchedFactionInfo()
+	bar:SetStatusBarColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b)
+	bar.bg:SetVertexColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b, 0.2)
 end
 
 local ticks = {}
