@@ -282,6 +282,60 @@ local function Shared(self, unit)
 			end
 		end
 
+		if T.class == "MAGE" then
+			-- Arcane Charge bar
+			if C.unitframe_class_bar.arcane == true then
+				self.ArcaneCharge = CreateFrame("Frame", self:GetName().."ArcaneCharge", self)
+				self.ArcaneCharge:CreateBackdrop("Default")
+				self.ArcaneCharge:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				self.ArcaneCharge:SetSize(217, 7)
+
+				for i = 1, 4 do
+					self.ArcaneCharge[i] = CreateFrame("StatusBar", self:GetName().."ArcaneCharge"..i, self.ArcaneCharge)
+					self.ArcaneCharge[i]:SetSize(213 / 4, 7)
+					if i == 1 then
+						self.ArcaneCharge[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+					else
+						self.ArcaneCharge[i]:SetPoint("TOPLEFT", self.ArcaneCharge[i-1], "TOPRIGHT", 1, 0)
+					end
+					self.ArcaneCharge[i]:SetStatusBarTexture(C.media.texture)
+					self.ArcaneCharge[i]:SetStatusBarColor(0.4, 0.8, 1)
+
+					self.ArcaneCharge[i].bg = self.ArcaneCharge[i]:CreateTexture(nil, "BORDER")
+					self.ArcaneCharge[i].bg:SetAllPoints()
+					self.ArcaneCharge[i].bg:SetTexture(C.media.texture)
+					self.ArcaneCharge[i].bg:SetVertexColor(0.4, 0.8, 1, 0.2)
+				end
+			end
+
+			-- Rune of Power bar
+			if C.unitframe_class_bar.totem == true then
+				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
+				self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
+				self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
+				self.TotemBar:SetSize(108, 7)
+				self.TotemBar.Destroy = true
+
+				for i = 1, 2 do
+					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
+					self.TotemBar[i]:SetSize(108 / 2, 7)
+					if i == 1 then
+						self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
+					else
+						self.TotemBar[i]:SetPoint("TOPLEFT", self.TotemBar[i-1], "TOPRIGHT", 0, 0)
+					end
+					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
+					self.TotemBar[i]:SetMinMaxValues(0, 1)
+					self.TotemBar[i]:CreateBorder(false, true)
+
+					self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
+					self.TotemBar[i].bg:SetAllPoints()
+					self.TotemBar[i].bg:SetTexture(C.media.texture)
+					self.TotemBar[i].bg.multiplier = 0.2
+				end
+			end
+		end
+
 		if T.class == "MONK" then
 			-- Chi bar
 			if C.unitframe_class_bar.chi == true then
@@ -434,31 +488,6 @@ local function Shared(self, unit)
 			--BETA self.WarlockSpecBars.text = T.SetFontString(self.WarlockSpecBars[1], C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 			-- self.WarlockSpecBars.text:SetPoint("CENTER", self.WarlockSpecBars, "CENTER", 0, 0)
 			-- self:Tag(self.WarlockSpecBars.text, "[DemonicFury]")
-		end
-
-		-- BETA Arcane Charge
-		if T.class == "MAGE" then
-			self.ArcaneCharge = CreateFrame("Frame", self:GetName().."ArcaneCharge", self)
-			self.ArcaneCharge:CreateBackdrop("Default")
-			self.ArcaneCharge:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.ArcaneCharge:SetSize(217, 7)
-
-			for i = 1, 4 do
-				self.ArcaneCharge[i] = CreateFrame("StatusBar", self:GetName().."ArcaneCharge"..i, self.ArcaneCharge)
-				self.ArcaneCharge[i]:SetSize(213 / 4, 7)
-				if i == 1 then
-					self.ArcaneCharge[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				else
-					self.ArcaneCharge[i]:SetPoint("TOPLEFT", self.ArcaneCharge[i-1], "TOPRIGHT", 1, 0)
-				end
-				self.ArcaneCharge[i]:SetStatusBarTexture(C.media.texture)
-				self.ArcaneCharge[i]:SetStatusBarColor(0.4, 0.8, 1)
-
-				self.ArcaneCharge[i].bg = self.ArcaneCharge[i]:CreateTexture(nil, "BORDER")
-				self.ArcaneCharge[i].bg:SetAllPoints()
-				self.ArcaneCharge[i].bg:SetTexture(C.media.texture)
-				self.ArcaneCharge[i].bg:SetVertexColor(0.4, 0.8, 1, 0.2)
-			end
 		end
 
 		-- Rogue/Druid Combo bar
@@ -632,33 +661,6 @@ local function Shared(self, unit)
 					self.TotemBar[i].bg:SetTexture(C.media.texture)
 					self.TotemBar[i].bg.multiplier = 0.2
 				end
-			end
-		end
-
-		-- Rune of Power bar
-		if C.unitframe_class_bar.totem == true and T.class == "MAGE" then
-			self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
-			self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
-			self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
-			self.TotemBar:SetSize(108, 7)
-			self.TotemBar.Destroy = true
-
-			for i = 1, 2 do
-				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
-				self.TotemBar[i]:SetSize(108 / 2, 7)
-				if i == 1 then
-					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
-				else
-					self.TotemBar[i]:SetPoint("TOPLEFT", self.TotemBar[i-1], "TOPRIGHT", 0, 0)
-				end
-				self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
-				self.TotemBar[i]:SetMinMaxValues(0, 1)
-				self.TotemBar[i]:CreateBorder(false, true)
-
-				self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
-				self.TotemBar[i].bg:SetAllPoints()
-				self.TotemBar[i].bg:SetTexture(C.media.texture)
-				self.TotemBar[i].bg.multiplier = 0.2
 			end
 		end
 
