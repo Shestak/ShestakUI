@@ -434,31 +434,27 @@ local function Shared(self, unit)
 
 		-- Soul Shards bar
 		if C.unitframe_class_bar.shard == true and T.class == "WARLOCK" then
-			self.WarlockSpecBars = CreateFrame("Frame", self:GetName().."_WarlockSpecBar", self)
-			self.WarlockSpecBars:CreateBackdrop("Default")
-			self.WarlockSpecBars:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.WarlockSpecBars:SetSize(217, 7)
+			self.SoulShards = CreateFrame("Frame", self:GetName().."SoulShards", self)
+			self.SoulShards:CreateBackdrop("Default")
+			self.SoulShards:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			self.SoulShards:SetSize(217, 7)
 
 			for i = 1, 5 do
-				self.WarlockSpecBars[i] = CreateFrame("StatusBar", self:GetName().."WarlockSpecBar"..i, self.WarlockSpecBars)
-				self.WarlockSpecBars[i]:SetSize(213 / 5, 7)
+				self.SoulShards[i] = CreateFrame("StatusBar", self:GetName().."SoulShards"..i, self.SoulShards)
+				self.SoulShards[i]:SetSize(213 / 5, 7)
 				if i == 1 then
-					self.WarlockSpecBars[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+					self.SoulShards[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				else
-					self.WarlockSpecBars[i]:SetPoint("TOPLEFT", self.WarlockSpecBars[i-1], "TOPRIGHT", 1, 0)
+					self.SoulShards[i]:SetPoint("TOPLEFT", self.SoulShards[i-1], "TOPRIGHT", 1, 0)
 				end
-				self.WarlockSpecBars[i]:SetStatusBarTexture(C.media.texture)
-				self.WarlockSpecBars[i]:SetStatusBarColor(0.9, 0.37, 0.37)
+				self.SoulShards[i]:SetStatusBarTexture(C.media.texture)
+				self.SoulShards[i]:SetStatusBarColor(0.9, 0.37, 0.37)
 
-				self.WarlockSpecBars[i].bg = self.WarlockSpecBars[i]:CreateTexture(nil, "BORDER")
-				self.WarlockSpecBars[i].bg:SetAllPoints()
-				self.WarlockSpecBars[i].bg:SetTexture(C.media.texture)
-				self.WarlockSpecBars[i].bg:SetVertexColor(0.9, 0.37, 0.37, 0.2)
+				self.SoulShards[i].bg = self.SoulShards[i]:CreateTexture(nil, "BORDER")
+				self.SoulShards[i].bg:SetAllPoints()
+				self.SoulShards[i].bg:SetTexture(C.media.texture)
+				self.SoulShards[i].bg:SetVertexColor(0.9, 0.37, 0.37, 0.2)
 			end
-
-			--BETA self.WarlockSpecBars.text = T.SetFontString(self.WarlockSpecBars[1], C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			-- self.WarlockSpecBars.text:SetPoint("CENTER", self.WarlockSpecBars, "CENTER", 0, 0)
-			-- self:Tag(self.WarlockSpecBars.text, "[DemonicFury]")
 		end
 
 		-- Rogue/Druid Combo bar
@@ -490,26 +486,6 @@ local function Shared(self, unit)
 			end
 
 			self.CPoints.Override = T.UpdateComboPoint
-
-			-- Anticipation bar
-			--BETA if T.class == "ROGUE" then
-				-- self.Anticipation = CreateFrame("Frame", self:GetName().."_Anticipation", self)
-				-- self.Anticipation:SetFrameLevel(self.Health:GetFrameLevel() + 2)
-				-- self.Anticipation:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				-- self.Anticipation:SetSize(217, 4)
-
-				-- for i = 1, 5 do
-					-- self.Anticipation[i] = CreateFrame("StatusBar", self:GetName().."_Anticipation"..i, self.Anticipation)
-					-- self.Anticipation[i]:SetSize(213 / 5, 4)
-					-- if i == 1 then
-						-- self.Anticipation[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-					-- else
-						-- self.Anticipation[i]:SetPoint("LEFT", self.Anticipation[i-1], "RIGHT", 1, 0)
-					-- end
-					-- self.Anticipation[i]:SetStatusBarTexture(C.media.texture)
-					-- self.Anticipation[i]:SetStatusBarColor(0.2, 0.2, 0.2)
-				-- end
-			-- end
 		end
 
 		-- Totem bar

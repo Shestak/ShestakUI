@@ -38,7 +38,6 @@
 	<Script file="Elements\ArcaneCharge.lua"/>
 	<Script file="Elements\Stagger.lua"/>
 
-	<Script file="Modules\Anticipation.lua"/>
 	<Script file="Modules\AuraTracker.lua"/>
 	<Script file="Modules\AuraWatch.lua"/>
 	<Script file="Modules\AutoResurrect.lua"/>
