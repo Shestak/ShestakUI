@@ -962,45 +962,6 @@ T.UpdatePvPStatus = function(self, elapsed)
 	end
 end
 
---BETA T.UpdateShadowOrb = function(self, event, unit, powerType)
-	-- if self.unit ~= unit or (powerType and powerType ~= "SHADOW_ORBS") then return end
-	-- local num = UnitPower(unit, SPELL_POWER_SHADOW_ORBS)
-	-- local numMax = UnitPowerMax("player", SPELL_POWER_SHADOW_ORBS)
-	-- local barWidth = self.ShadowOrbsBar:GetWidth()
-	-- local spacing = select(4, self.ShadowOrbsBar[4]:GetPoint())
-	-- local lastBar = 0
-
-	-- if numMax ~= self.ShadowOrbsBar.maxPower then
-		-- if numMax == 3 then
-			-- self.ShadowOrbsBar[4]:Hide()
-			-- self.ShadowOrbsBar[5]:Hide()
-			-- for i = 1, 3 do
-				-- if i ~= 3 then
-					-- self.ShadowOrbsBar[i]:SetWidth(barWidth / 3)
-					-- lastBar = lastBar + (barWidth / 3 + spacing)
-				-- else
-					-- self.ShadowOrbsBar[i]:SetWidth(barWidth - lastBar)
-				-- end
-			-- end
-		-- else
-			-- self.ShadowOrbsBar[4]:Show()
-			-- self.ShadowOrbsBar[5]:Show()
-			-- for i = 1, 5 do
-				-- self.ShadowOrbsBar[i]:SetWidth(self.ShadowOrbsBar[i].width)
-			-- end
-		-- end
-		-- self.ShadowOrbsBar.maxPower = numMax
-	-- end
-
-	-- for i = 1, 5 do
-		-- if i <= num then
-			-- self.ShadowOrbsBar[i]:SetAlpha(1)
-		-- else
-			-- self.ShadowOrbsBar[i]:SetAlpha(0.2)
-		-- end
-	-- end
--- end
-
 T.UpdateHoly = function(self, event, unit, powerType)
 	if self.unit ~= unit or (powerType and powerType ~= "HOLY_POWER") then return end
 	local num = UnitPower(unit, SPELL_POWER_HOLY_POWER)
@@ -1040,34 +1001,6 @@ T.UpdateHoly = function(self, event, unit, powerType)
 	end
 end
 
---BETA T.EclipseDirection = function(self)
-	-- if GetEclipseDirection() == "sun" then
-		-- self.Text:SetText("|cff4478BC>>|r")
-	-- elseif GetEclipseDirection() == "moon" then
-		-- self.Text:SetText("|cffE5994C<<|r")
-	-- else
-		-- self.Text:SetText("")
-	-- end
--- end
-
--- T.UpdateEclipse = function(self, login)
-	-- local eb = self.EclipseBar
-	-- local txt = self.EclipseBar.Text
-
-	-- if login then
-		-- eb:SetScript("OnUpdate", nil)
-	-- end
-
-	-- if eb:IsShown() then
-		-- txt:Show()
-		-- if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
-	-- else
-		-- txt:Hide()
-		-- if (C.unitframe_class_bar.combo_always == true or GetShapeshiftFormID() == CAT_FORM) and C.unitframe_class_bar.combo_old ~= true then return end
-		-- if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
-	-- end
--- end
-
 T.UpdateReputationColor = function(self, event, unit, bar)
 	local name, id = GetWatchedFactionInfo()
 	bar:SetStatusBarColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b)
@@ -1106,7 +1039,6 @@ T.UpdateComboPoint = function(self, event, unit)
 			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
 		else
 			cpoints:Hide()
-			if (not form and (spec and spec == 1)) or form == MOONKIN_FORM then return end
 			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
 		end
 	end

@@ -382,7 +382,6 @@ L_GUI_UF_PLUGINS_COMBO_BAR_OLD = "Show combo point on the target" -- Need review
 L_GUI_UF_PLUGINS_ARCANE_BAR = "Enable Arcane Charge bar" -- Need review
 L_GUI_UF_PLUGINS_CHI_BAR = "Attiva la barra di classe del monaco"
 L_GUI_UF_PLUGINS_STAGGER_BAR = "Enable Stagger bar (for Monk Tanks)" -- Need review
-L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Attiva la barra di classe del druido"
 L_GUI_UF_PLUGINS_HOLY_BAR = "Attiva la barra di classe del paladino"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Attiva la barra di classe dello stregone"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Attiva la barra di classe del cavaliere della morte"

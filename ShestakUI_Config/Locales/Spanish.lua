@@ -382,7 +382,6 @@ L_GUI_UF_PLUGINS_COMBO_BAR_OLD = "Show combo point on the target" -- Need review
 L_GUI_UF_PLUGINS_ARCANE_BAR = "Enable Arcane Charge bar" -- Need review
 L_GUI_UF_PLUGINS_CHI_BAR = "Enable Chi bar" -- Needs review
 L_GUI_UF_PLUGINS_STAGGER_BAR = "Enable Stagger bar (for Monk Tanks)" -- Need review
-L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Activar barra de eclipse"
 L_GUI_UF_PLUGINS_HOLY_BAR = "Activar barra de poder sagrado"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Activar barra de fragmentos"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Activar barra de Runas"

@@ -261,15 +261,6 @@ local tagStrings = {
 		end
 	end]],
 
-	['pereclipse'] = [[function(u)
-		local m = UnitPowerMax('player', SPELL_POWER_ECLIPSE)
-		if(m == 0) then
-			return 0
-		else
-			return math.abs(UnitPower('player', SPELL_POWER_ECLIPSE)/m*100)
-		end
-	end]],
-
 	['curmana'] = [[function(unit)
 		return UnitPower(unit, SPELL_POWER_MANA)
 	end]],
@@ -388,7 +379,6 @@ local tagEvents = {
 	["perpp"]				= 'UNIT_MAXPOWER UNIT_POWER',
 	["offline"]				= "UNIT_HEALTH UNIT_CONNECTION",
 	["status"]				= "UNIT_HEALTH PLAYER_UPDATE_RESTING UNIT_CONNECTION",
-	["pereclipse"]			= 'UNIT_POWER_FREQUENT',
 	['curmana']				= 'UNIT_POWER UNIT_MAXPOWER',
 	['maxmana']				= 'UNIT_POWER UNIT_MAXPOWER',
 	['soulshards']			= 'UNIT_POWER',

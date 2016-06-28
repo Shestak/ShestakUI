@@ -489,7 +489,6 @@ C["unitframe_class_bar"] = {
 	["arcane"] = true,							-- Arcane Charge bar
 	["chi"] = true,								-- Chi bar
 	["stagger"] = true,							-- Stagger bar (for Monk Tanks)
-	["eclipse"] = true,							-- Eclipse bar
 	["holy"] = true,							-- Holy Power bar
 	["shard"] = true,							-- Shard/Burning bar
 	["rune"] = true,							-- Rune bar

@@ -403,35 +403,6 @@ local function Shared(self, unit)
 			end
 		end
 
-		-- Shadow Orbs bar
-		--BETA if C.unitframe_class_bar.shadow == true and T.class == "PRIEST" then
-			-- self.ShadowOrbsBar = CreateFrame("Frame", self:GetName().."_ShadowOrbsBar", self)
-			-- self.ShadowOrbsBar:CreateBackdrop("Default")
-			-- self.ShadowOrbsBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			-- self.ShadowOrbsBar:SetSize(217, 7)
-
-			-- for i = 1, 5 do
-				-- self.ShadowOrbsBar[i] = CreateFrame("StatusBar", self:GetName().."_ShadowOrbsBar", self.ShadowOrbsBar)
-				-- self.ShadowOrbsBar[i]:SetSize(215 / 5, 7)
-				-- if i == 1 then
-					-- self.ShadowOrbsBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				-- else
-					-- self.ShadowOrbsBar[i]:SetPoint("TOPLEFT", self.ShadowOrbsBar[i-1], "TOPRIGHT", 1, 0)
-				-- end
-				-- self.ShadowOrbsBar[i]:SetStatusBarTexture(C.media.texture)
-				-- self.ShadowOrbsBar[i]:SetStatusBarColor(0.70, 0.32, 0.75)
-
-				-- self.ShadowOrbsBar[i].bg = self.ShadowOrbsBar[i]:CreateTexture(nil, "BORDER")
-				-- self.ShadowOrbsBar[i].bg:SetAllPoints()
-				-- self.ShadowOrbsBar[i].bg:SetTexture(C.media.texture)
-				-- self.ShadowOrbsBar[i].bg:SetVertexColor(0.70, 0.32, 0.75, 0.2)
-
-				-- self.ShadowOrbsBar[i].width = self.ShadowOrbsBar[i]:GetWidth()
-			-- end
-
-			-- self.ShadowOrbsBar.Override = T.UpdateShadowOrb
-		-- end
-
 		-- Holy Power bar
 		if C.unitframe_class_bar.holy == true and T.class == "PALADIN" then
 			self.HolyPower = CreateFrame("Frame", self:GetName().."_HolyPowerBar", self)
@@ -578,38 +549,6 @@ local function Shared(self, unit)
 			CreateFrame("Frame"):SetScript("OnUpdate", function() T.UpdateClassMana(self) end)
 			self.ClassMana = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 			self.ClassMana:SetTextColor(1, 0.49, 0.04)
-
-			-- Eclipse bar
-			--BETA if C.unitframe_class_bar.eclipse == true then
-				-- self.EclipseBar = CreateFrame("Frame", self:GetName().."_EclipseBar", self)
-				-- self.EclipseBar:CreateBackdrop("Default")
-				-- self.EclipseBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				-- self.EclipseBar:SetSize(217, 7)
-
-				-- self.EclipseBar.LunarBar = CreateFrame("StatusBar", nil, self.EclipseBar)
-				-- self.EclipseBar.LunarBar:SetPoint("LEFT", self.EclipseBar, "LEFT", 0, 0)
-				-- self.EclipseBar.LunarBar:SetSize(self.EclipseBar:GetWidth(), self.EclipseBar:GetHeight())
-				-- self.EclipseBar.LunarBar:SetStatusBarTexture(C.media.texture)
-				-- self.EclipseBar.LunarBar:SetStatusBarColor(0.80, 0.80, 0.20)
-
-				-- self.EclipseBar.SolarBar = CreateFrame("StatusBar", nil, self.EclipseBar)
-				-- self.EclipseBar.SolarBar:SetPoint("LEFT", self.EclipseBar.LunarBar:GetStatusBarTexture(), "RIGHT", 0, 0)
-				-- self.EclipseBar.SolarBar:SetSize(self.EclipseBar:GetWidth(), self.EclipseBar:GetHeight())
-				-- self.EclipseBar.SolarBar:SetStatusBarTexture(C.media.texture)
-				-- self.EclipseBar.SolarBar:SetStatusBarColor(0.30, 0.30, 0.80)
-
-				-- self.EclipseBar.Text = T.SetFontString(self.EclipseBar.SolarBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-				-- self.EclipseBar.Text:SetPoint("CENTER", self.EclipseBar, "CENTER", -6, 0)
-
-				-- self.EclipseBar.Pers = T.SetFontString(self.EclipseBar.SolarBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-				-- self.EclipseBar.Pers:SetPoint("LEFT", self.EclipseBar.Text, "RIGHT", 2, 0)
-				-- self:Tag(self.EclipseBar.Pers, "[pereclipse]%")
-
-				-- self.EclipseBar:SetScript("OnShow", function() T.UpdateEclipse(self, false) end)
-				-- self.EclipseBar:SetScript("OnUpdate", function() T.UpdateEclipse(self, true) end)
-				-- self.EclipseBar:SetScript("OnHide", function() T.UpdateEclipse(self, false) end)
-				-- self.EclipseBar.PostUpdatePower = T.EclipseDirection
-			-- end
 
 			-- Mushroom bar
 			if C.unitframe_class_bar.totem == true then
@@ -838,10 +777,7 @@ local function Shared(self, unit)
 			self.Debuffs["growth-y"] = "UP"
 			self.Debuffs["growth-x"] = "LEFT"
 			if (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true)
-			or (T.class == "DRUID" and C.unitframe_class_bar.eclipse == true)
 			or ((T.class == "DRUID" or T.class == "ROGUE") and C.unitframe_class_bar.combo == true and C.unitframe_class_bar.combo_old ~= true)
-			or (T.class == "MONK" and C.unitframe_class_bar.chi == true)
-			or (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
 			or (T.class == "SHAMAN" and C.unitframe_class_bar.totem == true)
 			or (T.class == "WARLOCK" and C.unitframe_class_bar.shard == true) then
 				self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)

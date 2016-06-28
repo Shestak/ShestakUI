@@ -382,7 +382,6 @@ L_GUI_UF_PLUGINS_COMBO_BAR_OLD = "Show combo point on the target" -- Need review
 L_GUI_UF_PLUGINS_ARCANE_BAR = "Enable Arcane Charge bar" -- Need review
 L_GUI_UF_PLUGINS_CHI_BAR = "真氣"
 L_GUI_UF_PLUGINS_STAGGER_BAR = "Enable Stagger bar (for Monk Tanks)" -- Need review
-L_GUI_UF_PLUGINS_ECLIPSE_BAR = "日蝕/月蝕"
 L_GUI_UF_PLUGINS_HOLY_BAR = "聖光能量"
 L_GUI_UF_PLUGINS_SHARD_BAR = "靈魂碎片"
 L_GUI_UF_PLUGINS_RUNE_BAR = "符文"

@@ -382,7 +382,6 @@ L_GUI_UF_PLUGINS_COMBO_BAR_OLD = "Отображать индикатор сер
 L_GUI_UF_PLUGINS_ARCANE_BAR = "Индикатор чародейского заряда"
 L_GUI_UF_PLUGINS_CHI_BAR = "Индикатор ци"
 L_GUI_UF_PLUGINS_STAGGER_BAR = "Индикатор пошатывания (для танков монахов)"
-L_GUI_UF_PLUGINS_ECLIPSE_BAR = "Индикатор затмений"
 L_GUI_UF_PLUGINS_HOLY_BAR = "Индикатор энергии света"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Индикатор осколков душ"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Индикатор рун"

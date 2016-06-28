@@ -418,7 +418,6 @@ local function Local(o)
 	if o == "UIConfigunitframe_class_bararcane" then o = L_GUI_UF_PLUGINS_ARCANE_BAR end
 	if o == "UIConfigunitframe_class_barchi" then o = L_GUI_UF_PLUGINS_CHI_BAR end
 	if o == "UIConfigunitframe_class_barstagger" then o = L_GUI_UF_PLUGINS_STAGGER_BAR end
-	if o == "UIConfigunitframe_class_bareclipse" then o = L_GUI_UF_PLUGINS_ECLIPSE_BAR end
 	if o == "UIConfigunitframe_class_barholy" then o = L_GUI_UF_PLUGINS_HOLY_BAR end
 	if o == "UIConfigunitframe_class_barshard" then o = L_GUI_UF_PLUGINS_SHARD_BAR end
 	if o == "UIConfigunitframe_class_barrune" then o = L_GUI_UF_PLUGINS_RUNE_BAR end

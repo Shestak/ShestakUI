@@ -32,11 +32,9 @@
 	<Script file="Elements\SoulShards.lua"/>
 	<Script file="Elements\ReadyCheck.lua"/>
 	<Script file="Elements\QIcon.lua"/>
-	<Script file="Elements\EclipseBar.lua"/>
 	<Script file="Elements\AltPowerBar.lua"/>
 	<Script file="Elements\Resurrect.lua"/>
 	<Script file="Elements\HarmonyOrbs.lua"/>
-	<Script file="Elements\ShadowOrbs.lua"/>
 	<Script file="Elements\ArcaneCharge.lua"/>
 	<Script file="Elements\Stagger.lua"/>
 
