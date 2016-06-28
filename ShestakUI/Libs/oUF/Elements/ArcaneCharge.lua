@@ -52,10 +52,9 @@ local function Enable(self)
 	if(ac) then
 		ac.__owner = self
 		ac.ForceUpdate = ForceUpdate
-		Visibility(self)
 
 		self:RegisterEvent('UNIT_POWER', Path)
-		
+
 		ac.Visibility = CreateFrame("Frame", nil, ac)
 		ac.Visibility:RegisterEvent("PLAYER_TALENT_UPDATE")
 		ac.Visibility:SetScript("OnEvent", function(frame, event, unit) Visibility(self, event, unit) end)
