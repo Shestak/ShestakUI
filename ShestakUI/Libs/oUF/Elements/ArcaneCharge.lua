@@ -34,7 +34,7 @@ local ForceUpdate = function(element)
 	return Path(element.__owner, 'ForceUpdate', element.__owner.unit, 'ARCANE_CHARGES')
 end
 
-local Visibility = function(self, ...)
+local function Visibility(self, event, unit)
 	local ac = self.ArcaneCharge
 	local spec = GetSpecialization()
 
@@ -55,7 +55,10 @@ local function Enable(self)
 		Visibility(self)
 
 		self:RegisterEvent('UNIT_POWER', Path)
-		self:RegisterEvent('PLAYER_TALENT_UPDATE', Visibility)
+		
+		ac.Visibility = CreateFrame("Frame", nil, ac)
+		ac.Visibility:RegisterEvent("PLAYER_TALENT_UPDATE")
+		ac.Visibility:SetScript("OnEvent", function(frame, event, unit) Visibility(self, event, unit) end)
 
 		return true
 	end
@@ -65,7 +68,7 @@ local function Disable(self)
 	local ac = self.ArcaneCharge
 	if(ac) then
 		self:UnregisterEvent('UNIT_POWER', Path)
-		self:UnregisterEvent('PLAYER_TALENT_UPDATE', Visibility)
+		ac.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")
 	end
 end
 

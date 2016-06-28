@@ -34,7 +34,7 @@ local ForceUpdate = function(element)
 	return Path(element.__owner, 'ForceUpdate', element.__owner.unit, 'HOLY_POWER')
 end
 
-local Visibility = function(self, ...)
+local function Visibility(self, event, unit)
 	local hp = self.HolyPower
 	local spec = GetSpecialization()
 
@@ -55,7 +55,10 @@ local function Enable(self)
 		Visibility(self)
 
 		self:RegisterEvent('UNIT_POWER', Path)
-		self:RegisterEvent('PLAYER_TALENT_UPDATE', Visibility)
+
+		hp.Visibility = CreateFrame("Frame", nil, hp)
+		hp.Visibility:RegisterEvent("PLAYER_TALENT_UPDATE")
+		hp.Visibility:SetScript("OnEvent", function(frame, event, unit) Visibility(self, event, unit) end)
 
 		return true
 	end
@@ -65,7 +68,7 @@ local function Disable(self)
 	local hp = self.HolyPower
 	if(hp) then
 		self:UnregisterEvent('UNIT_POWER', Path)
-		self:UnregisterEvent('PLAYER_TALENT_UPDATE', Visibility)
+		hp.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")
 	end
 end
 

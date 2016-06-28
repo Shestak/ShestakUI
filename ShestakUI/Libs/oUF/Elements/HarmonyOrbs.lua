@@ -60,7 +60,7 @@ local ForceUpdate = function(element)
 	return Path(element.__owner, 'ForceUpdate', element.__owner.unit, 'CHI')
 end
 
-local Visibility = function(self, ...)
+local function Visibility(self, event, unit)
 	local hb = self.HarmonyBar
 	local spec = GetSpecialization()
 
@@ -79,12 +79,14 @@ local function Enable(self, unit)
 	if hb and unit == "player" then
 		hb.__owner = self
 		hb.ForceUpdate = ForceUpdate
-		Visibility(self)
 
 		self:RegisterEvent("UNIT_POWER", Path)
 		self:RegisterEvent("UNIT_DISPLAYPOWER", Path)
 		self:RegisterEvent("UNIT_MAXPOWER", Path)
-		self:RegisterEvent('PLAYER_TALENT_UPDATE', Visibility)
+
+		hb.Visibility = CreateFrame("Frame", nil, hb)
+		hb.Visibility:RegisterEvent("PLAYER_TALENT_UPDATE")
+		hb.Visibility:SetScript("OnEvent", function(frame, event, unit) Visibility(self, event, unit) end)
 
 		hb.maxChi = 0
 
@@ -98,7 +100,7 @@ local function Disable(self)
 		self:UnregisterEvent("UNIT_POWER", Path)
 		self:UnregisterEvent("UNIT_DISPLAYPOWER", Path)
 		self:UnregisterEvent("UNIT_MAXPOWER", Path)
-		self:UnregisterEvent('PLAYER_TALENT_UPDATE', Visibility)
+		hb.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")
 	end
 end
 
