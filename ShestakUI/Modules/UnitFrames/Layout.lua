@@ -330,6 +330,23 @@ local function Shared(self, unit)
 					self.TotemBar[i].bg.multiplier = 0.2
 				end
 			end
+
+			-- Stagger bar
+			if C.unitframe_class_bar.stagger == true then
+				self.Stagger = CreateFrame("StatusBar", self:GetName().."_Stagger", self)
+				self.Stagger:CreateBackdrop("Default")
+				self.Stagger:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				self.Stagger:SetSize(217, 7)
+				self.Stagger:SetStatusBarTexture(C.media.texture)
+
+				self.Stagger.bg = self.Stagger:CreateTexture(nil, "BORDER")
+				self.Stagger.bg:SetAllPoints()
+				self.Stagger.bg:SetTexture(C.media.texture)
+				self.Stagger.bg.multiplier = 0.2
+
+				self.Stagger.Text = T.SetFontString(self.Stagger, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+				self.Stagger.Text:SetPoint("CENTER", self.Stagger, "CENTER", 0, 0)
+			end
 		end
 
 		-- Shadow Orbs bar

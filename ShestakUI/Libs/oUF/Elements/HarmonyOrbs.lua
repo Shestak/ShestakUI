@@ -69,6 +69,7 @@ local Visibility = function(self, ...)
 		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
 	else
 		hb:Hide()
+		if self.Stagger:IsShown() then return end
 		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
 	end
 end
