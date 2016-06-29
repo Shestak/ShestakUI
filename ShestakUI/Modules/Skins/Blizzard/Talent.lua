@@ -6,13 +6,12 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	local buttons = {
-		--BETA "PlayerTalentFrameTalentsLearnButton",
 		"PlayerTalentFramePetSpecializationLearnButton",
 		"PlayerTalentFrameSpecializationLearnButton"
 	}
 
 	for _, button in pairs(buttons) do
-		_G[button]:SkinButton()
+		_G[button]:SkinButton(true)
 	end
 	PlayerTalentFrameActivateButton:SkinButton()
 
@@ -193,6 +192,7 @@ local function LoadSkin()
 
 		row.TopLine:SetAlpha(0)
 		row.BottomLine:SetAlpha(0)
+		row.GlowFrame:SetAlpha(0)
 
 		for j = 1, NUM_TALENT_COLUMNS do
 			local bu = _G["PlayerTalentFrameTalentsTalentRow"..i.."Talent"..j]
@@ -258,7 +258,7 @@ local function LoadSkin()
 	PlayerTalentFramePVPTalents.XPBar.PrestigeReward.Accept:SkinButton()
 
 	PlayerTalentFramePVPTalentsBg:Hide()
-	PlayerTalentFramePVPTalents:DisableDrawLayer("BORDER")
+	PlayerTalentFramePVPTalents.Talents:DisableDrawLayer("BORDER")
 end
 
 T.SkinFuncs["Blizzard_TalentUI"] = LoadSkin
