@@ -1010,17 +1010,52 @@ T.UpdateComboPoint = function(self, event, unit)
 	local cpOld = (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and GetComboPoints("vehicle", "target") or GetComboPoints("player", "target")
 	if cpOld and cp and (cpOld > cp) then cp = cpOld end
 
-	for i = 1, MAX_COMBO_POINTS do
+	local numMax
+	if (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) then
+		numMax = MAX_COMBO_POINTS
+	else
+		numMax = UnitPowerMax("player", SPELL_POWER_COMBO_POINTS)
+		if numMax == 0 then
+			numMax = MAX_COMBO_POINTS
+		end
+	end
+
+	local spacing = select(4, cpoints[5]:GetPoint())
+	local w = cpoints:GetWidth()
+	local s = 0
+
+	if cpoints.numMax ~= numMax then
+		if numMax == 8 then
+			cpoints[6]:Show()
+			cpoints[7]:Show()
+			cpoints[8]:Show()
+		elseif numMax == 6 then
+			cpoints[6]:Show()
+			cpoints[7]:Hide()
+			cpoints[8]:Hide()
+		else
+			cpoints[6]:Hide()
+			cpoints[7]:Hide()
+			cpoints[8]:Hide()
+		end
+
+		for i = 1, numMax do
+			if i ~= numMax then
+				cpoints[i]:SetWidth(w / numMax - spacing)
+				s = s + (w / numMax)
+			else
+				cpoints[i]:SetWidth(w - s)
+			end
+		end
+
+		cpoints.numMax = numMax
+	end
+
+	for i = 1, numMax do
 		if i <= cp then
 			cpoints[i]:SetAlpha(1)
-			if self.Anticipation then
-				self.Anticipation[i]:SetStatusBarColor(0.2, 0.2, 0.2)
-			end
 		else
 			cpoints[i]:SetAlpha(0.2)
-			if self.Anticipation then
-				self.Anticipation[i]:SetStatusBarColor(0.8, 0.8, 0.8)
-			end
 		end
 	end
 
@@ -1043,13 +1078,51 @@ T.UpdateComboPointOld = function(self, event, unit)
 
 	local cpoints = self.CPoints
 	local cp
+	local numMax
+
 	if UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle") then
 		cp = GetComboPoints("vehicle", "target")
+		numMax = MAX_COMBO_POINTS
 	else
 		cp = GetComboPoints("player", "target")
+		numMax = UnitPowerMax("player", SPELL_POWER_COMBO_POINTS)
+		if numMax == 0 then
+			numMax = MAX_COMBO_POINTS
+		end
 	end
 
-	for i = 1, MAX_COMBO_POINTS do
+	local spacing = select(4, cpoints[5]:GetPoint())
+	local w = cpoints:GetWidth()
+	local s = 0
+
+	if cpoints.numMax ~= numMax then
+		if numMax == 8 then
+			cpoints[6]:Show()
+			cpoints[7]:Show()
+			cpoints[8]:Show()
+		elseif numMax == 6 then
+			cpoints[6]:Show()
+			cpoints[7]:Hide()
+			cpoints[8]:Hide()
+		else
+			cpoints[6]:Hide()
+			cpoints[7]:Hide()
+			cpoints[8]:Hide()
+		end
+
+		for i = 1, numMax do
+			if i ~= numMax then
+				cpoints[i]:SetWidth(w / numMax - spacing)
+				s = s + (w / numMax)
+			else
+				cpoints[i]:SetWidth(w - s)
+			end
+		end
+
+		cpoints.numMax = numMax
+	end
+
+	for i = 1, numMax do
 		if i <= cp then
 			cpoints[i]:SetAlpha(1)
 		else
@@ -1058,12 +1131,12 @@ T.UpdateComboPointOld = function(self, event, unit)
 	end
 
 	if cpoints[1]:GetAlpha() == 1 then
-		for i = 1, MAX_COMBO_POINTS do
+		for i = 1, numMax do
 			cpoints:Show()
 			cpoints[i]:Show()
 		end
 	else
-		for i = 1, MAX_COMBO_POINTS do
+		for i = 1, numMax do
 			cpoints:Hide()
 			cpoints[i]:Hide()
 		end

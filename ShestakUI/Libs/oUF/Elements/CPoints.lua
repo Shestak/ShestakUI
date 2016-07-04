@@ -45,6 +45,7 @@ local Enable = function(self)
 
 		self:RegisterEvent('UNIT_POWER', Path)
 		self:RegisterEvent('PLAYER_TARGET_CHANGED', Path)
+		self:RegisterEvent("UNIT_MAXPOWER", Path)
 
 		for index = 1, MAX_COMBO_POINTS do
 			local cpoint = cpoints[index]
@@ -63,6 +64,7 @@ local Disable = function(self)
 	if(cpoints) then
 		self:UnregisterEvent('UNIT_POWER', Path)
 		self:UnregisterEvent('PLAYER_TARGET_CHANGED', Path)
+		self:UnregisterEvent("UNIT_MAXPOWER", Path)
 	end
 end
 

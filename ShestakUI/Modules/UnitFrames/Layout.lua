@@ -464,9 +464,9 @@ local function Shared(self, unit)
 			self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.CPoints:SetSize(217, 7)
 
-			for i = 1, 5 do
+			for i = 1, 8 do
 				self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar", self.CPoints)
-				self.CPoints[i]:SetSize(213 / 5, 7)
+				self.CPoints[i]:SetSize(213 / 8, 7)
 				if i == 1 then
 					self.CPoints[i]:SetPoint("LEFT", self.CPoints)
 				else
@@ -480,6 +480,9 @@ local function Shared(self, unit)
 			self.CPoints[3]:SetStatusBarColor(0.9, 0.9, 0.1)
 			self.CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
 			self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
+			self.CPoints[6]:SetStatusBarColor(0.1, 0.9, 0.1)
+			self.CPoints[7]:SetStatusBarColor(0.1, 0.9, 0.1)
+			self.CPoints[8]:SetStatusBarColor(0.1, 0.9, 0.1)
 
 			if T.class == "DRUID" and C.unitframe_class_bar.combo_always ~= true then
 				self:RegisterEvent("UPDATE_SHAPESHIFT_FORM", T.UpdateComboPoint)
@@ -788,9 +791,9 @@ local function Shared(self, unit)
 				self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.CPoints:SetSize(217, 7)
 
-				for i = 1, 5 do
+				for i = 1, 8 do
 					self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar", self.CPoints)
-					self.CPoints[i]:SetSize(213 / 5, 7)
+					self.CPoints[i]:SetSize(213 / 8, 7)
 					if i == 1 then
 						self.CPoints[i]:SetPoint("LEFT", self.CPoints)
 					else
@@ -804,6 +807,9 @@ local function Shared(self, unit)
 				self.CPoints[3]:SetStatusBarColor(0.9, 0.9, 0.1)
 				self.CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
 				self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
+				self.CPoints[6]:SetStatusBarColor(0.1, 0.9, 0.1)
+				self.CPoints[7]:SetStatusBarColor(0.1, 0.9, 0.1)
+				self.CPoints[8]:SetStatusBarColor(0.1, 0.9, 0.1)
 
 				self.CPoints.Override = T.UpdateComboPointOld
 			end
