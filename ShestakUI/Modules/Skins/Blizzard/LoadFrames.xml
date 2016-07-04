@@ -21,7 +21,6 @@
 	<Script file="EncounterJournal.lua"/>
 	<Script file="Friends.lua"/>
 	<Script file="Garrison.lua"/>
-	<Script file="Glyph.lua"/>
 	<Script file="GMSurvey.lua"/>
 	<Script file="Gossip.lua"/>
 	<Script file="Greeting.lua"/>
@@ -44,7 +43,6 @@
 	<Script file="Mail.lua"/>
 	<Script file="Merchant.lua"/>
 	<Script file="MinimapButtons.lua"/>
-	<!-- <Script file="MissingLoot.lua"/> -->
 	<Script file="Options.lua"/>
 	<Script file="Petition.lua"/>
 	<Script file="PetStable.lua"/>
