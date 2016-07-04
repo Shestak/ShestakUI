@@ -139,7 +139,7 @@ local function LoadSkin()
 			local bu = self["specButton"..i]
 			if bu.selected then
 				bu.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
-				bu.backdrop.overlay:SetVertexColor(1, 0.82, 0, 0.3)
+				bu.backdrop.overlay:SetVertexColor(1 * 0.3, 0.82 * 0.3, 0, 1)
 				bu.border.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
 			else
 				bu.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
@@ -169,7 +169,12 @@ local function LoadSkin()
 			_G["PlayerTalentFrameSpecializationSpecButton"..i.."Glow"]:Hide()
 			_G["PlayerTalentFrameSpecializationSpecButton"..i.."Glow"].Show = T.dummy
 
-			bu:SetHighlightTexture("")
+			local hover = bu:CreateTexture(nil, nil, self)
+			hover:SetColorTexture(1, 1, 1, 0.3)
+			bu:SetHighlightTexture(hover)
+			bu:GetHighlightTexture():SetPoint("TOPLEFT", 10, 0)
+			bu:GetHighlightTexture():SetPoint("BOTTOMRIGHT", 8, 0)
+
 			bu.bg:SetAlpha(0)
 			bu.learnedTex:SetAlpha(0)
 			bu.selectedTex:SetAlpha(0)
