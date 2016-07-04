@@ -75,7 +75,7 @@ elseif T.class == "DRUID" then
 		-- Damaging spells
 		T.aoespam[164812] = 3		-- Moonfire
 		T.aoespam[164815] = 3		-- Sunfire
-		T.aoespam[42231] = 3		-- Hurricane
+		--BETA T.aoespam[42231] = 3		-- Hurricane
 		--BETA T.aoespam[106998] = 3		-- Astral Storm
 		--BETA T.aoespam[50288] = 3		-- Starfall
 		T.aoespam[61391] = 0		-- Typhoon
