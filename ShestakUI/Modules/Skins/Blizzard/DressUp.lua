@@ -17,7 +17,16 @@ local function LoadSkin()
 	T.SkinCloseButton(DressUpFrameCloseButton, DressUpFrame.backdrop)
 	DressUpFrameCancelButton:SetPoint("BOTTOMRIGHT", DressUpFrame.backdrop, "BOTTOMRIGHT", -4, 4)
 	DressUpFrameResetButton:SetPoint("RIGHT", DressUpFrameCancelButton, "LEFT", -2, 0)
-	--BETA T.SkinDropDownBox(DressUpFrameOutfitDropDown)
+	T.SkinDropDownBox(DressUpFrameOutfitDropDown)
+	DressUpFrameOutfitDropDown:SetSize(195, 34)
+
+	DressUpFrameOutfitDropDown.SaveButton:ClearAllPoints()
+	DressUpFrameOutfitDropDown.SaveButton:SetPoint("RIGHT", DressUpFrameOutfitDropDown, 86, 4)
+
+	WardrobeOutfitFrame:StripTextures()
+	WardrobeOutfitFrame:CreateBackdrop("Transparent")
+	WardrobeOutfitFrame.backdrop:SetPoint("TOPLEFT", 2, -2)
+	WardrobeOutfitFrame.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
 
 	SideDressUpFrame:StripTextures(true)
 	SideDressUpFrame:SetTemplate("Transparent")

@@ -358,6 +358,10 @@ function T.SkinEditBox(frame, width, height)
 	if frame.Right then frame.Right:Kill() end
 	if frame.Middle then frame.Middle:Kill() end
 
+	if frame.LeftTexture then frame.LeftTexture:Kill() end
+	if frame.RightTexture then frame.RightTexture:Kill() end
+	if frame.MiddleTexture then frame.MiddleTexture:Kill() end
+
 	frame:CreateBackdrop("Overlay")
 
 	if frame:GetName() and (frame:GetName():find("Gold") or frame:GetName():find("Silver") or frame:GetName():find("Copper")) then
