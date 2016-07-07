@@ -162,6 +162,7 @@ local function LoadSkin()
 		"CombatPanelSelfCastKeyDropDown",
 		"SocialPanelWhisperMode",
 		"SocialPanelTimestamps",
+		"SocialPanelChatStyle",
 		"ActionBarsPanelPickupActionKeyDropDown",
 		"NamesPanelNPCNamesDropDown",
 		"NamesPanelUnitNameplatesMotionDropDown",
