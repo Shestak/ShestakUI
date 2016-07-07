@@ -483,6 +483,19 @@ local function LoadSkin()
 			button.name:SetTextColor(0.6, 0.6, 0.6)
 		end
 	end)
+
+	-- Wardrobe
+	WardrobeCollectionFrame.ModelsFrame:StripTextures()
+	WardrobeCollectionFrame.progressBar:StripTextures()
+	WardrobeCollectionFrame.progressBar:CreateBackdrop("Overlay")
+	WardrobeCollectionFrame.progressBar:SetStatusBarTexture(C.media.texture)
+	WardrobeCollectionFrame.progressBar:SetFrameLevel(WardrobeCollectionFrame.progressBar:GetFrameLevel() + 2)
+	T.SkinEditBox(WardrobeCollectionFrameSearchBox, nil, 18)
+	WardrobeCollectionFrame.FilterButton:SkinButton()
+	WardrobeCollectionFrame.FilterButton:SetPoint("TOPLEFT", WardrobeCollectionFrameSearchBox, "TOPRIGHT", 5, 2)
+	T.SkinDropDownBox(WardrobeCollectionFrameWeaponDropDown)
+	T.SkinNextPrevButton(WardrobeCollectionFrame.NavigationFrame.PrevPageButton, true)
+	T.SkinNextPrevButton(WardrobeCollectionFrame.NavigationFrame.NextPageButton)
 end
 
 T.SkinFuncs["Blizzard_Collections"] = LoadSkin
