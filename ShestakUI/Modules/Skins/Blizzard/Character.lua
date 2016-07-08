@@ -113,6 +113,13 @@ local function LoadSkin()
 		_G[object]:StripTextures()
 	end
 
+	CharacterStatsPane.ItemLevelCategory:StripTextures()
+	CharacterStatsPane.ItemLevelCategory:SetTemplate("Overlay")
+	CharacterStatsPane.AttributesCategory:StripTextures()
+	CharacterStatsPane.AttributesCategory:SetTemplate("Overlay")
+	CharacterStatsPane.EnhancementsCategory:StripTextures()
+	CharacterStatsPane.EnhancementsCategory:SetTemplate("Overlay")
+
 	-- Titles
 	PaperDollTitlesPane:HookScript("OnShow", function(self)
 		for x, object in pairs(PaperDollTitlesPane.buttons) do
