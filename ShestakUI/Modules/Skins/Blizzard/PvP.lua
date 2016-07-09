@@ -1,9 +1,23 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	PvP skin
 ----------------------------------------------------------------------------------------
+local LoadTootlipSkin = CreateFrame("Frame")
+LoadTootlipSkin:RegisterEvent("ADDON_LOADED")
+LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
+	if IsAddOnLoaded("Skinner") or IsAddOnLoaded("Aurora") or not C.tooltip.enable then
+		self:UnregisterEvent("ADDON_LOADED")
+		return
+	end
+
+	if addon == "Blizzard_PVPUI" then
+		ConquestTooltip:SetTemplate("Transparent")
+		PVPRewardTooltip:SetTemplate("Transparent")
+	end
+end)
+
+if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	for i = 1, 4 do
 		local button = _G["PVPQueueFrameCategoryButton"..i]
@@ -49,6 +63,7 @@ local function LoadSkin()
 	HonorFrame.BonusFrame:StripTextures()
 	HonorFrame.BonusFrame.DiceButton:SkinButton()
 	HonorFrame.BonusFrame.ShadowOverlay:StripTextures()
+	HonorFrame.XPBar:StripTextures()
 
 	--BETA HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1:SetTemplate("Default")
 	-- HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetAllPoints()
@@ -97,22 +112,17 @@ local function LoadSkin()
 	end
 
 	-- ConquestFrame
-	ConquestFrame.Inset:StripTextures()
-	--BETA ConquestPointsBar:StripTextures()
-	-- ConquestPointsBar.progress:SetTexture(C.media.texture)
-	-- ConquestPointsBar:CreateBackdrop("Overlay")
-	-- ConquestPointsBar.backdrop:SetPoint("TOPLEFT", ConquestPointsBar, "TOPLEFT", -2, -1)
-	-- ConquestPointsBar.backdrop:SetPoint("BOTTOMRIGHT", ConquestPointsBar, "BOTTOMRIGHT", 2, 1)
 	ConquestFrame:StripTextures()
+	ConquestFrame.Inset:StripTextures()
 	ConquestFrame.ShadowOverlay:StripTextures()
+	ConquestFrame.XPBar:StripTextures()
 
 	ConquestFrame.RoleInset:StripTextures()
-
 	for _, button in pairs{ConquestFrame.RoleInset.TankIcon, ConquestFrame.RoleInset.HealerIcon, ConquestFrame.RoleInset.DPSIcon} do
 		T.SkinCheckBox(button.checkButton)
 	end
 
-	for _, button in pairs({ConquestFrame.Arena2v2, ConquestFrame.Arena3v3, ConquestFrame.Arena5v5, ConquestFrame.RatedBG}) do
+	for _, button in pairs({ConquestFrame.Arena2v2, ConquestFrame.Arena3v3, ConquestFrame.RatedBG}) do
 		button:StripTextures()
 		button:SetTemplate("Overlay")
 		button:StyleButton()
@@ -125,11 +135,8 @@ local function LoadSkin()
 	end
 
 	ConquestFrame.Arena3v3:SetPoint("TOP", ConquestFrame.Arena2v2, "BOTTOM", 0, -3)
-	--BETA ConquestFrame.Arena5v5:SetPoint("TOP", ConquestFrame.Arena3v3, "BOTTOM", 0, -3)
 
 	ConquestJoinButton:SkinButton(true)
-
-	ConquestTooltip:SetTemplate("Transparent")
 
 	-- WarGamesFrame
 	WarGamesFrame:StripTextures()
