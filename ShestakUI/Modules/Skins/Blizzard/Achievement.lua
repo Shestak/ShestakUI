@@ -41,7 +41,7 @@ local function LoadSkin()
 	end
 
 	AchievementFrame:CreateBackdrop("Transparent")
-	AchievementFrame.backdrop:SetPoint("TOPLEFT", 0, 6)
+	AchievementFrame.backdrop:SetPoint("TOPLEFT", 0, 7)
 	AchievementFrame.backdrop:SetPoint("BOTTOMRIGHT")
 	AchievementFrameHeaderTitle:ClearAllPoints()
 	AchievementFrameHeaderTitle:SetPoint("TOPLEFT", AchievementFrame.backdrop, "TOPLEFT", -22, -8)
@@ -64,7 +64,17 @@ local function LoadSkin()
 
 	T.SkinCloseButton(AchievementFrameCloseButton, AchievementFrame.backdrop)
 	T.SkinDropDownBox(AchievementFrameFilterDropDown)
-	AchievementFrameFilterDropDown:SetPoint("TOPRIGHT", AchievementFrame, "TOPRIGHT", -44, 5)
+	AchievementFrameFilterDropDown:ClearAllPoints()
+	AchievementFrameFilterDropDown:SetPoint("TOPLEFT", AchievementFrameAchievements, "TOPLEFT", -19, 24)
+
+	T.SkinEditBox(AchievementFrame.searchBox)
+	AchievementFrame.searchBox:SetHeight(15)
+	AchievementFrame.searchBox:ClearAllPoints()
+	AchievementFrame.searchBox:SetPoint("TOPRIGHT", AchievementFrame, "TOPRIGHT", -51, 0)
+
+	AchievementFrame.searchResults:StripTextures()
+	AchievementFrame.searchResults:SetTemplate("Transparent")
+	T.SkinCloseButton(AchievementFrame.searchResults.closeButton)
 
 	-- ScrollBars
 	T.SkinScrollBar(AchievementFrameCategoriesContainerScrollBar)
@@ -72,6 +82,9 @@ local function LoadSkin()
 	T.SkinScrollBar(AchievementFrameStatsContainerScrollBar)
 	T.SkinScrollBar(AchievementFrameComparisonContainerScrollBar)
 	T.SkinScrollBar(AchievementFrameComparisonStatsContainerScrollBar)
+	T.SkinScrollBar(AchievementFrameScrollFrameScrollBar)
+
+	AchievementFrameScrollFrameScrollBar:SetPoint("TOPLEFT", AchievementFrameScrollFrame, "TOPRIGHT", -3, -16)
 
 	-- Tabs
 	for i = 1, 3 do
