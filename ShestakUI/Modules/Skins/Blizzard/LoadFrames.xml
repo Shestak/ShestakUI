@@ -32,7 +32,6 @@
 	<Script file="Help.lua"/>
 	<Script file="Inspect.lua"/>
 	<Script file="Interface.lua"/>
-	<Script file="ItemAlteration.lua"/>
 	<Script file="ItemSocketing.lua"/>
 	<Script file="ItemText.lua"/>
 	<Script file="ItemUpgrade.lua"/>

@@ -489,15 +489,38 @@ local function LoadSkin()
 	WardrobeFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(WardrobeFrameCloseButton)
 	T.SkinDropDownBox(WardrobeOutfitDropDown)
-	WardrobeOutfitDropDown:SetSize(220, 34)
+	WardrobeOutfitDropDown:SetSize(221, 34)
 	WardrobeOutfitDropDown.SaveButton:SkinButton()
-	WardrobeOutfitDropDown.SaveButton:SetPoint("TOPLEFT", WardrobeOutfitDropDown, "TOPRIGHT", 3, -2)
-	WardrobeTransmogFrame.ApplyButton:SkinButton()
+	WardrobeOutfitDropDown.SaveButton:SetPoint("TOPLEFT", WardrobeOutfitDropDown, "TOPRIGHT", -2, -2)
 	WardrobeTransmogFrame:StripTextures()
 	WardrobeTransmogFrame.Inset:StripTextures()
 	WardrobeTransmogFrame.SpecButton:SkinButton()
+	WardrobeTransmogFrame.ApplyButton:SkinButton()
 	WardrobeTransmogFrame.SpecButton:SetPoint("RIGHT", WardrobeTransmogFrame.ApplyButton, "LEFT", -2, 0)
 	WardrobeTransmogFrame.Model.ClearAllPendingButton:SkinButton()
+
+	local slots = {"HeadButton", "ShoulderButton", "ChestButton", "ShirtButton", "TabardButton", "WaistButton", "LegsButton", "FeetButton",
+	"WristButton", "HandsButton", "BackButton", "MainHandButton", "SecondaryHandButton"}
+
+	for i = 1, #slots do
+		local slot = WardrobeTransmogFrame.Model[slots[i]]
+		local icon = slot.Icon
+		local border = slot.Border
+
+		if slot then
+			border:Kill()
+
+			slot:StyleButton()
+			slot:SetFrameLevel(slot:GetFrameLevel() + 2)
+			slot:CreateBackdrop("Default")
+			slot.backdrop:SetAllPoints()
+
+			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			icon:ClearAllPoints()
+			icon:SetPoint("TOPLEFT", 2, -2)
+			icon:SetPoint("BOTTOMRIGHT", -2, 2)
+		end
+	end
 
 	WardrobeCollectionFrame.ModelsFrame:StripTextures()
 	WardrobeCollectionFrame.progressBar:StripTextures()
