@@ -44,6 +44,7 @@
 	<Script file="Merchant.lua"/>
 	<Script file="MinimapButtons.lua"/>
 	<Script file="Options.lua"/>
+	<Script file="Orderhall.lua"/>
 	<Script file="Petition.lua"/>
 	<Script file="PetStable.lua"/>
 	<Script file="ProductChoice.lua"/>
