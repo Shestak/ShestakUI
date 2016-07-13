@@ -4,6 +4,7 @@
 	<Script file="AddonList.lua"/>
 	<!-- <Script file="AlertFrames.lua"/> -->
 	<Script file="Archeology.lua"/>
+	<Script file="Artifactui.lua"/>
 	<Script file="Auction.lua"/>
 	<Script file="BarberShop.lua"/>
 	<Script file="Binding.lua"/>
