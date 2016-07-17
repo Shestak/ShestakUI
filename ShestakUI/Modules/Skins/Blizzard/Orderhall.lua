@@ -17,15 +17,15 @@ local function LoadSkin()
 	OrderHallCommandBar.AreaName:SetPoint("LEFT", OrderHallCommandBar.CurrencyIcon, "RIGHT", 10, 0)
 	OrderHallCommandBar.WorldMapButton:ClearAllPoints()
 	OrderHallCommandBar.WorldMapButton:SetPoint("RIGHT", OrderHallCommandBar, -5, -2)
-	
+
 	OrderHallMissionFrame:StripTextures()
 	OrderHallMissionFrame:CreateBackdrop("Transparent")
 	T.SkinCloseButton(OrderHallMissionFrame.CloseButton)
-	
-	for i = 1, 3 do 
+
+	for i = 1, 3 do
 		T.SkinTab(_G["OrderHallMissionFrameTab" .. i])
 	end
-	
+
 	OrderHallMissionFrame.GarrCorners:StripTextures()
 	OrderHallMissionFrameMissions:StripTextures()
 	OrderHallMissionFrameMissionsListScrollFrame:StripTextures()
@@ -65,7 +65,7 @@ local function LoadSkin()
 			Button.isSkinned = true
 		end
 	end
-	
+
 	local Follower = OrderHallMissionFrameFollowers
 	Follower:StripTextures()
 	T.SkinEditBox(Follower.SearchBox)
@@ -74,7 +74,7 @@ local function LoadSkin()
 	OrderHallMissionFrame.MissionTab.MissionPage:StripTextures()
 	T.SkinCloseButton(OrderHallMissionFrame.MissionTab.MissionPage.CloseButton)
 	OrderHallMissionFrame.MissionTab.MissionPage.StartMissionButton:SkinButton()
-	
+
 	local FollowerList = OrderHallMissionFrame.FollowerTab
 	FollowerList:StripTextures()
 	FollowerList.ModelCluster:StripTextures()
@@ -82,7 +82,7 @@ local function LoadSkin()
 	FollowerList.XPBar:StripTextures()
 	FollowerList.XPBar:SetStatusBarTexture(C["media"].texture)
 	FollowerList.XPBar:CreateBackdrop()
-	
+
 	local Mission = OrderHallMissionFrameMissions
 	Mission.CompleteDialog:StripTextures()
 	Mission.CompleteDialog:SetTemplate("Transparent")
