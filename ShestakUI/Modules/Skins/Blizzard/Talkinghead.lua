@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Talking "head" popup dialog
+--	TalkingHeadUI skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	TalkingHeadFrame:StripTextures()

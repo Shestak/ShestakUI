@@ -58,7 +58,7 @@
 	<Script file="SpellBook.lua"/>
 	<Script file="Tabard.lua"/>
 	<Script file="Talent.lua"/>
-	<Script file="Talkinghead.lua"/>
+	<Script file="TalkingHead.lua"/>
 	<Script file="Taxi.lua"/>
 	<Script file="TimeManager.lua"/>
 	<Script file="Trade.lua"/>
