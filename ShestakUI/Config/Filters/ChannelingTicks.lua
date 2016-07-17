@@ -19,7 +19,7 @@ end
 T.CastBarTicks = {
 	-- Druid
 	[SpellName(740)] = 4,		-- Tranquility
-	[SpellName(16914)] = 10,	-- Hurricane
+	--BETA [SpellName(16914)] = 10,	-- Hurricane
 	--BETA [SpellName(106996)] = 10,	-- Astral Storm
 	-- Mage
 	[SpellName(5143)] = 5,		-- Arcane Missiles
