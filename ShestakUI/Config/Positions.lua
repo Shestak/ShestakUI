@@ -37,6 +37,7 @@ C["position"] = {
 	["auto_button"] = {"BOTTOMLEFT", Minimap, "TOPLEFT", -2, 27},					-- Auto button
 	["extra_button"] = {"BOTTOMRIGHT", ActionButton1, "BOTTOMLEFT", -3, 0},			-- Extra action button
 	["alt_power_bar"] = {"TOP", UIParent, "TOP", 0, -21},							-- Alt power bar
+	["talking_head"] = {"TOP", UIParent, "TOP", 0, -21},							-- Talking Head
 	-- ActionBar positions
 	["bottom_bars"] = {"BOTTOM", UIParent, "BOTTOM", 0, 8},							-- Bottom bars
 	["right_bars"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 330},			-- Right bars
