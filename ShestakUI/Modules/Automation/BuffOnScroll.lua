@@ -48,7 +48,11 @@ PALADIN1 = {}
 
 PALADIN2 = {}
 
-PALADIN3 = {}
+PALADIN3 = {
+	203538,	-- Greater Blessing of Kings
+	203528,	-- Greater Blessing of Might
+	203539,	-- Greater Blessing of Wisdom
+}
 
 PRIEST1 = {}
 
