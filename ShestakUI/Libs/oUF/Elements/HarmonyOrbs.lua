@@ -86,6 +86,7 @@ local function Enable(self, unit)
 
 		hb.Visibility = CreateFrame("Frame", nil, hb)
 		hb.Visibility:RegisterEvent("PLAYER_TALENT_UPDATE")
+		hb.Visibility:RegisterEvent("PLAYER_ENTERING_WORLD")
 		hb.Visibility:SetScript("OnEvent", function(frame, event, unit) Visibility(self, event, unit) end)
 
 		hb.maxChi = 0
@@ -101,6 +102,7 @@ local function Disable(self)
 		self:UnregisterEvent("UNIT_DISPLAYPOWER", Path)
 		self:UnregisterEvent("UNIT_MAXPOWER", Path)
 		hb.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")
+		hb.Visibility:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	end
 end
 

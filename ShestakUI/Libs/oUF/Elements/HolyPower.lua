@@ -57,6 +57,7 @@ local function Enable(self)
 
 		hp.Visibility = CreateFrame("Frame", nil, hp)
 		hp.Visibility:RegisterEvent("PLAYER_TALENT_UPDATE")
+		hp.Visibility:RegisterEvent("PLAYER_ENTERING_WORLD")
 		hp.Visibility:SetScript("OnEvent", function(frame, event, unit) Visibility(self, event, unit) end)
 
 		return true
@@ -68,6 +69,7 @@ local function Disable(self)
 	if(hp) then
 		self:UnregisterEvent('UNIT_POWER', Path)
 		hp.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")
+		hp.Visibility:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	end
 end
 
