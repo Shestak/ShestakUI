@@ -18,7 +18,6 @@ local function InstallUI()
 	SetCVar("lootUnderMouse", 0)
 	SetCVar("autoLootDefault", 1)
 	SetCVar("RotateMinimap", 0)
-	--BETA SetCVar("ConsolidateBuffs", 0)
 	SetCVar("autoQuestProgress", 1)
 	SetCVar("scriptErrors", 0)
 	SetCVar("taintLog", 0)
@@ -26,6 +25,7 @@ local function InstallUI()
 	--BETA SetCVar("enableCombatText", 1)
 	SetCVar("autoOpenLootHistory", 0)
 	SetCVar("lossOfControl", 0)
+	SetCVar("nameplateShowSelf", 0)
 
 	-- Setting chat frames
 	if C.chat.enable == true and not (IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter")) then
