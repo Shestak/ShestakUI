@@ -4,7 +4,7 @@
 	<Script file="AddonList.lua"/>
 	<!-- <Script file="AlertFrames.lua"/> -->
 	<Script file="Archeology.lua"/>
-	<Script file="Artifactui.lua"/>
+	<Script file="Artifact.lua"/>
 	<Script file="Auction.lua"/>
 	<Script file="BarberShop.lua"/>
 	<Script file="Binding.lua"/>
@@ -44,7 +44,7 @@
 	<Script file="Merchant.lua"/>
 	<Script file="MinimapButtons.lua"/>
 	<Script file="Options.lua"/>
-	<Script file="Orderhall.lua"/>
+	<Script file="OrderHall.lua"/>
 	<Script file="Petition.lua"/>
 	<Script file="PetStable.lua"/>
 	<Script file="ProductChoice.lua"/>

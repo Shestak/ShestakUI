@@ -4,7 +4,6 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 --	OrderHallUI skin
 ----------------------------------------------------------------------------------------
-
 local function LoadSkin()
 	OrderHallCommandBar:StripTextures()
 	OrderHallCommandBar:SetTemplate("Transparent")
