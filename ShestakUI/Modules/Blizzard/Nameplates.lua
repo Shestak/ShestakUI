@@ -102,42 +102,42 @@ local function CreateVirtualFrame(frame, point)
 	frame.backdrop:SetDrawLayer("BORDER", -8)
 	frame.backdrop:SetPoint("TOPLEFT", point, "TOPLEFT", -T.noscalemult * 3, T.noscalemult * 3)
 	frame.backdrop:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", T.noscalemult * 3, -T.noscalemult * 3)
-	frame.backdrop:SetTexture(unpack(C.media.backdrop_color))
+	frame.backdrop:SetColorTexture(unpack(C.media.backdrop_color))
 
 	frame.bordertop = frame:CreateTexture(nil, "BORDER")
 	frame.bordertop:SetPoint("TOPLEFT", point, "TOPLEFT", -T.noscalemult * 2, T.noscalemult * 2)
 	frame.bordertop:SetPoint("TOPRIGHT", point, "TOPRIGHT", T.noscalemult * 2, T.noscalemult * 2)
 	frame.bordertop:SetHeight(T.noscalemult)
-	frame.bordertop:SetTexture(unpack(C.media.border_color))
+	frame.bordertop:SetColorTexture(unpack(C.media.border_color))
 	frame.bordertop:SetDrawLayer("BORDER", -7)
 
 	frame.borderbottom = frame:CreateTexture(nil, "BORDER")
 	frame.borderbottom:SetPoint("BOTTOMLEFT", point, "BOTTOMLEFT", -T.noscalemult * 2, -T.noscalemult * 2)
 	frame.borderbottom:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", T.noscalemult * 2, -T.noscalemult * 2)
 	frame.borderbottom:SetHeight(T.noscalemult)
-	frame.borderbottom:SetTexture(unpack(C.media.border_color))
+	frame.borderbottom:SetColorTexture(unpack(C.media.border_color))
 	frame.borderbottom:SetDrawLayer("BORDER", -7)
 
 	frame.borderleft = frame:CreateTexture(nil, "BORDER")
 	frame.borderleft:SetPoint("TOPLEFT", point, "TOPLEFT", -T.noscalemult * 2, T.noscalemult * 2)
 	frame.borderleft:SetPoint("BOTTOMLEFT", point, "BOTTOMLEFT", T.noscalemult * 2, -T.noscalemult * 2)
 	frame.borderleft:SetWidth(T.noscalemult)
-	frame.borderleft:SetTexture(unpack(C.media.border_color))
+	frame.borderleft:SetColorTexture(unpack(C.media.border_color))
 	frame.borderleft:SetDrawLayer("BORDER", -7)
 
 	frame.borderright = frame:CreateTexture(nil, "BORDER")
 	frame.borderright:SetPoint("TOPRIGHT", point, "TOPRIGHT", T.noscalemult * 2, T.noscalemult * 2)
 	frame.borderright:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", -T.noscalemult * 2, -T.noscalemult * 2)
 	frame.borderright:SetWidth(T.noscalemult)
-	frame.borderright:SetTexture(unpack(C.media.border_color))
+	frame.borderright:SetColorTexture(unpack(C.media.border_color))
 	frame.borderright:SetDrawLayer("BORDER", -7)
 end
 
 local function SetVirtualBorder(frame, r, g, b)
-	frame.bordertop:SetTexture(r, g, b)
-	frame.borderbottom:SetTexture(r, g, b)
-	frame.borderleft:SetTexture(r, g, b)
-	frame.borderright:SetTexture(r, g, b)
+	frame.bordertop:SetColorTexture(r, g, b)
+	frame.borderbottom:SetColorTexture(r, g, b)
+	frame.borderleft:SetColorTexture(r, g, b)
+	frame.borderright:SetColorTexture(r, g, b)
 end
 
 function Plates:CreateAuraIcon(self)
@@ -146,16 +146,16 @@ function Plates:CreateAuraIcon(self)
 	button:SetHeight(C.nameplate.auras_size)
 
 	button.bg = button:CreateTexture(nil, "BACKGROUND")
-	button.bg:SetTexture(unpack(C.media.backdrop_color))
+	button.bg:SetColorTexture(unpack(C.media.backdrop_color))
 	button.bg:SetAllPoints(button)
 
 	button.bord = button:CreateTexture(nil, "BORDER")
-	button.bord:SetTexture(unpack(C.media.border_color))
+	button.bord:SetColorTexture(unpack(C.media.border_color))
 	button.bord:SetPoint("TOPLEFT", button, "TOPLEFT", T.noscalemult, -T.noscalemult)
 	button.bord:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -T.noscalemult, T.noscalemult)
 
 	button.bg2 = button:CreateTexture(nil, "ARTWORK")
-	button.bg2:SetTexture(unpack(C.media.backdrop_color))
+	button.bg2:SetColorTexture(unpack(C.media.backdrop_color))
 	button.bg2:SetPoint("TOPLEFT", button, "TOPLEFT", T.noscalemult * 2, -T.noscalemult * 2)
 	button.bg2:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -T.noscalemult * 2, T.noscalemult * 2)
 
@@ -293,10 +293,10 @@ function Plates:UpdateCastBar()
 
 	if Shield:IsShown() then
 		self.NewPlate.CastBar:SetStatusBarColor(0.78, 0.25, 0.25)
-		self.NewPlate.CastBar.Background:SetTexture(0.78, 0.25, 0.25, 0.2)
+		self.NewPlate.CastBar.Background:SetColorTexture(0.78, 0.25, 0.25, 0.2)
 	else
 		self.NewPlate.CastBar:SetStatusBarColor(Red, Blue, Green)
-		self.NewPlate.CastBar.Background:SetTexture(0.75, 0.75, 0.25, 0.2)
+		self.NewPlate.CastBar.Background:SetColorTexture(0.75, 0.75, 0.25, 0.2)
 	end
 
 	self.NewPlate.CastBar:SetMinMaxValues(Minimum, Maximum)
@@ -427,7 +427,7 @@ function Plates:UpdateHealthColor()
 	local Red, Green, Blue = Plates.GetColor(self)
 
 	self.NewPlate.Health:SetStatusBarColor(Red, Green, Blue)
-	self.NewPlate.Health.Background:SetTexture(Red, Green, Blue, 0.2)
+	self.NewPlate.Health.Background:SetColorTexture(red, Green, Blue, 0.2)
 	self.NewPlate.Name:SetTextColor(Red, Green, Blue)
 
 	if self.isClass or self.isTapped then return end
@@ -449,10 +449,10 @@ function Plates:UpdateHealthColor()
 				-- No Threat
 				if T.Role == "Tank" then
 					self.NewPlate.Health:SetStatusBarColor(badR, badG, badB)
-					self.NewPlate.Health.Background:SetTexture(badR, badG, badB, 0.2)
+					self.NewPlate.Health.Background:SetColorTexture(badR, badG, badB, 0.2)
 				else
 					self.NewPlate.Health:SetStatusBarColor(goodR, goodG, goodB)
-					self.NewPlate.Health.Background:SetTexture(goodR, goodG, goodB, 0.2)
+					self.NewPlate.Health.Background:SetColorTexture(goodR, goodG, goodB, 0.2)
 				end
 			end
 		else
@@ -461,15 +461,15 @@ function Plates:UpdateHealthColor()
 				-- Have Threat
 				if T.Role == "Tank" then
 					self.NewPlate.Health:SetStatusBarColor(goodR, goodG, goodB)
-					self.NewPlate.Health.Background:SetTexture(goodR, goodG, goodB, 0.2)
+					self.NewPlate.Health.Background:SetColorTexture(goodR, goodG, goodB, 0.2)
 				else
 					self.NewPlate.Health:SetStatusBarColor(badR, badG, badB)
-					self.NewPlate.Health.Background:SetTexture(badR, badG, badB, 0.2)
+					self.NewPlate.Health.Background:SetColorTexture(badR, badG, badB, 0.2)
 				end
 			else
 				-- Losing/Gaining Threat
 				self.NewPlate.Health:SetStatusBarColor(transitionR, transitionG, transitionB)
-				self.NewPlate.Health.Background:SetTexture(transitionR, transitionG, transitionB, 0.2)
+				self.NewPlate.Health.Background:SetColorTexture(transitionR, transitionG, transitionB, 0.2)
 			end
 		end
 	end
@@ -609,7 +609,7 @@ function Plates:Skin(obj)
 	CreateVirtualFrame(NewPlate.CastBar)
 
 	NewPlate.CastBar.Background = NewPlate.CastBar:CreateTexture(nil, "BORDER")
-	NewPlate.CastBar.Background:SetTexture(0.75, 0.75, 0.25, 0.2)
+	NewPlate.CastBar.Background:SetColorTexture(0.75, 0.75, 0.25, 0.2)
 	NewPlate.CastBar.Background:SetAllPoints()
 
 	NewPlate.hiddenFrame = CreateFrame("Frame", nil, NewPlate)

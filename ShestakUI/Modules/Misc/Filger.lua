@@ -267,7 +267,7 @@ function Filger:DisplayActives()
 		end
 		if value.duration and value.duration > 0 then
 			if self.Mode == "ICON" then
-				CooldownFrame_SetTimer(bar.cooldown, value.start, value.duration, 1)
+				CooldownFrame_Set(bar.cooldown, value.start, value.duration, 1)
 				if value.data.filter == "CD" or value.data.filter == "ICD" then
 					bar.value = value
 					bar.activeIndex = activeIndex

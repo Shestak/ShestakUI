@@ -81,7 +81,7 @@
 	<Script file="Modules\Misc\ProfessionTabs.lua"/>
 	<Script file="Modules\Misc\PvPQueueTimer.lua"/>
 	<Script file="Modules\Misc\RaidUtility.lua"/>
-	<Script file="Modules\Misc\SlotItemLevel.lua"/>
+	<!-- <Script file="Modules\Misc\SlotItemLevel.lua"/> -->
 	<Script file="Modules\Misc\SumAucBuyouts.lua"/>
 	<Script file="Modules\Misc\Threat.lua"/>
 	<Script file="Modules\Misc\TrainAll.lua"/>
@@ -114,7 +114,7 @@
 	<Script file="Modules\Announcements\SayThanks.lua"/>
 	<Script file="Modules\Announcements\Spells.lua"/>
 
-	<Script file="Modules\Automation\AutoChefsHat.lua"/>
+	<!-- <Script file="Modules\Automation\AutoChefsHat.lua"/> -->
 	<Script file="Modules\Automation\AutoInvite.lua"/>
 	<Script file="Modules\Automation\AutoOpens.lua"/>
 	<Script file="Modules\Automation\AutoRelease.lua"/>
@@ -129,7 +129,7 @@
 	<Script file="Modules\Automation\SolveArtifact.lua"/>
 	<Script file="Modules\Automation\TabBinder.lua"/>
 
-	<Script file="Modules\Blizzard\Achievements.lua"/>
+	<!-- <Script file="Modules\Blizzard\AlertFrames.lua"/> -->
 	<Script file="Modules\Blizzard\AltPowerBar.lua"/>
 	<Script file="Modules\Blizzard\Bags.lua"/>
 	<Script file="Modules\Blizzard\CaptureBar.lua"/>
@@ -144,17 +144,18 @@
 	<Script file="Modules\Blizzard\Mail.lua"/>
 	<Script file="Modules\Blizzard\MirrorBars.lua"/>
 	<Script file="Modules\Blizzard\MoveBlizzFrames.lua"/>
-	<Script file="Modules\Blizzard\Nameplates.lua"/>
+	<!-- <Script file="Modules\Blizzard\Nameplates.lua"/> -->
 	<Script file="Modules\Blizzard\PetBattle.lua"/>
 	<Script file="Modules\Blizzard\ShiftMark.lua"/>
+	<Script file="Modules\Blizzard\TalkingHead.lua"/>
 	<Script file="Modules\Blizzard\TimerTracker.lua"/>
 	<Script file="Modules\Blizzard\Vehicle.lua"/>
 
 	<Script file="Modules\Buffs\AuraSource.lua"/>
 	<Script file="Modules\Buffs\BuffFrame.lua"/>
-	<Script file="Modules\Buffs\ConsolidatedBuffs.lua"/>
+	<!-- <Script file="Modules\Buffs\ConsolidatedBuffs.lua"/> -->
 	<Script file="Modules\Buffs\SelfBuffsReminder.lua"/>
-	<Script file="Modules\Buffs\RaidBuffsReminder.lua"/>
+	<!-- <Script file="Modules\Buffs\RaidBuffsReminder.lua"/> -->
 
 	<Script file="Modules\Chat\ChatFrames.lua"/>
 	<Script file="Modules\Chat\ChatTabs.lua"/>

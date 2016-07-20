@@ -14,21 +14,16 @@ local function Update(self, event, unit, powerType)
 		hb:PreUpdate(unit)
 	end
 
-	local spacing = select(4, hb[4]:GetPoint())
-	local w = hb:GetWidth()
-	local s = 0
 	local light = UnitPower("player", SPELL_POWER_CHI)
 	local maxChi = UnitPowerMax("player", SPELL_POWER_CHI)
+	local spacing = select(4, hb[5]:GetPoint())
+	local w = hb:GetWidth()
+	local s = 0
 
 	if hb.maxChi ~= maxChi then
-		if maxChi == 4 then
-			hb[5]:Hide()
-			hb[6]:Hide()
-		elseif maxChi == 5 then
-			hb[5]:Show()
+		if maxChi == 5 then
 			hb[6]:Hide()
 		else
-			hb[5]:Show()
 			hb[6]:Show()
 		end
 
@@ -48,7 +43,7 @@ local function Update(self, event, unit, powerType)
 		if i <= light then
 			hb[i]:SetAlpha(1)
 		else
-			hb[i]:SetAlpha(.2)
+			hb[i]:SetAlpha(0.2)
 		end
 	end
 
@@ -65,6 +60,20 @@ local ForceUpdate = function(element)
 	return Path(element.__owner, 'ForceUpdate', element.__owner.unit, 'CHI')
 end
 
+local function Visibility(self, event, unit)
+	local hb = self.HarmonyBar
+	local spec = GetSpecialization()
+
+	if spec == SPEC_MONK_WINDWALKER then
+		hb:Show()
+		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
+	else
+		hb:Hide()
+		if self.Stagger:IsShown() then return end
+		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
+	end
+end
+
 local function Enable(self, unit)
 	local hb = self.HarmonyBar
 	if hb and unit == "player" then
@@ -73,8 +82,12 @@ local function Enable(self, unit)
 
 		self:RegisterEvent("UNIT_POWER", Path)
 		self:RegisterEvent("UNIT_DISPLAYPOWER", Path)
-		self:RegisterEvent('PLAYER_TALENT_UPDATE', Path)
 		self:RegisterEvent("UNIT_MAXPOWER", Path)
+
+		hb.Visibility = CreateFrame("Frame", nil, hb)
+		hb.Visibility:RegisterEvent("PLAYER_TALENT_UPDATE")
+		hb.Visibility:RegisterEvent("PLAYER_ENTERING_WORLD")
+		hb.Visibility:SetScript("OnEvent", function(frame, event, unit) Visibility(self, event, unit) end)
 
 		hb.maxChi = 0
 
@@ -87,7 +100,9 @@ local function Disable(self)
 	if(hb) then
 		self:UnregisterEvent("UNIT_POWER", Path)
 		self:UnregisterEvent("UNIT_DISPLAYPOWER", Path)
-		self:UnregisterEvent('PLAYER_TALENT_UPDATE', Path)
+		self:UnregisterEvent("UNIT_MAXPOWER", Path)
+		hb.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")
+		hb.Visibility:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	end
 end
 

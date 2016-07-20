@@ -76,7 +76,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		button:SetNormalTexture("")
 
 		if flash then
-			flash:SetTexture(0.8, 0.8, 0.8, 0.5)
+			flash:SetColorTexture(0.8, 0.8, 0.8, 0.5)
 			flash:SetPoint("TOPLEFT", button, 2, -2)
 			flash:SetPoint("BOTTOMRIGHT", button, -2, 2)
 		end

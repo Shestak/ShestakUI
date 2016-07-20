@@ -34,6 +34,19 @@ local ForceUpdate = function(element)
 	return Path(element.__owner, 'ForceUpdate', element.__owner.unit, 'HOLY_POWER')
 end
 
+local function Visibility(self, event, unit)
+	local hp = self.HolyPower
+	local spec = GetSpecialization()
+
+	if spec == SPEC_PALADIN_RETRIBUTION then
+		hp:Show()
+		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
+	else
+		hp:Hide()
+		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
+	end
+end
+
 local function Enable(self)
 	local hp = self.HolyPower
 	if(hp) then
@@ -41,6 +54,11 @@ local function Enable(self)
 		hp.ForceUpdate = ForceUpdate
 
 		self:RegisterEvent('UNIT_POWER', Path)
+
+		hp.Visibility = CreateFrame("Frame", nil, hp)
+		hp.Visibility:RegisterEvent("PLAYER_TALENT_UPDATE")
+		hp.Visibility:RegisterEvent("PLAYER_ENTERING_WORLD")
+		hp.Visibility:SetScript("OnEvent", function(frame, event, unit) Visibility(self, event, unit) end)
 
 		return true
 	end
@@ -50,6 +68,8 @@ local function Disable(self)
 	local hp = self.HolyPower
 	if(hp) then
 		self:UnregisterEvent('UNIT_POWER', Path)
+		hp.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")
+		hp.Visibility:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	end
 end
 

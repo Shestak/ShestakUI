@@ -36,14 +36,14 @@ elseif T.class == "WARRIOR" then
 	unusable = {{16}, {}}
 end
 
-for class = 1, 2 do
-	local subs = {GetAuctionItemSubClasses(class)}
-	for i, subclass in ipairs(unusable[class]) do
-		unusable[subs[subclass]] = true
-	end
-	unusable[class] = nil
-	subs = nil
-end
+--BETA for class = 1, 2 do
+	-- local subs = {GetAuctionItemSubClasses(class)}
+	-- for i, subclass in ipairs(unusable[class]) do
+		-- unusable[subs[subclass]] = true
+	-- end
+	-- unusable[class] = nil
+	-- subs = nil
+-- end
 
 local function IsClassUnusable(subclass, slot)
 	if subclass then
@@ -52,14 +52,14 @@ local function IsClassUnusable(subclass, slot)
 end
 
 local function IsItemUnusable(...)
-	if ... then
-		local subclass, _, slot = select(7, GetItemInfo(...))
-		return IsClassUnusable(subclass, slot)
-	end
+	--BETA if ... then
+		-- local subclass, _, slot = select(7, GetItemInfo(...))
+		-- return IsClassUnusable(subclass, slot)
+	-- end
 end
 
 -- Hide bags options in default interface
-InterfaceOptionsDisplayPanelShowFreeBagSpace:Hide()
+--BETA InterfaceOptionsDisplayPanelShowFreeBagSpace:Hide()
 
 Stuffing = CreateFrame("Frame", nil, UIParent)
 Stuffing:RegisterEvent("ADDON_LOADED")
@@ -174,8 +174,6 @@ local timewarped_warforged = {
 	[656] = 675, -- Dungeon drops
 }
 
-local weapon, armor = GetAuctionItemClasses()
-
 function Stuffing:SlotUpdate(b)
 	local texture, count, locked, quality = GetContainerItemInfo(b.bag, b.slot)
 	local clink = GetContainerItemLink(b.bag, b.slot)
@@ -192,13 +190,13 @@ function Stuffing:SlotUpdate(b)
 
 	if b.cooldown and StuffingFrameBags and StuffingFrameBags:IsShown() then
 		local start, duration, enable = GetContainerItemCooldown(b.bag, b.slot)
-		CooldownFrame_SetTimer(b.cooldown, start, duration, enable)
+		CooldownFrame_Set(b.cooldown, start, duration, enable)
 	end
 
 	if clink then
-		b.name, _, _, b.itemlevel, b.level, b.itemType = GetItemInfo(clink)
+		b.name, _, _, b.itemlevel, b.level, _, _, _, _, _, _, b.itemClassID = GetItemInfo(clink)
 
-		if C.bag.ilvl == true and b.itemlevel and quality > 1 and (b.itemType == weapon or b.itemType == armor) then
+		if C.bag.ilvl == true and b.itemlevel and quality > 1 and (b.itemClassID == 2 or b.itemClassID == 4) then
 			if quality == 7 and b.itemlevel == 1 then
 				b.frame.text:SetText(BOALevel(T.level, tonumber(strmatch(clink, "item:(%d+)"))))
 			elseif b.itemlevel > 1 then
@@ -206,7 +204,8 @@ function Stuffing:SlotUpdate(b)
 				local warforged = select(16, strsplit(":", clink))
 				b.itemlevel = timewarped[tonumber(warped)] or b.itemlevel
 				b.itemlevel = timewarped_warforged[tonumber(warforged)] or b.itemlevel
-				local upgrade = clink:match(":(%d+)\124h%[")
+				--BETA local upgrade = clink:match(":(%d+)\124h%[")
+				local upgrade = 0
 				if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
 				b.frame.text:SetText(b.itemlevel + upgrades[upgrade])
 			end

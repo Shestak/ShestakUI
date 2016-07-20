@@ -20,7 +20,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 			UseItemByName(38682)
 		end)
 
-		hooksecurefunc("TradeSkillFrame_SetSelection", function(id)
+		hooksecurefunc(TradeSkillDetailsMixin, "RefreshButtons", function(id)
 			local skillName, _, _, _, altVerb = GetTradeSkillInfo(id)
 			if IsTradeSkillGuild() or IsTradeSkillLinked() then
 				button:Hide()

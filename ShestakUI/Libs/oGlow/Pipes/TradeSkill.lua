@@ -1,6 +1,6 @@
 local _E
 local hook
-
+--[[BETA
 local pipe = function(id)
 	local itemLink = GetTradeSkillItemLink(id)
 
@@ -56,4 +56,4 @@ local disable = function(self)
 	self:UnregisterEvent("ADDON_LOADED", ADDON_LOADED)
 end
 
-oGlow:RegisterPipe("tradeskill", enable, disable, update, "Profession frame")
+oGlow:RegisterPipe("tradeskill", enable, disable, update, "Profession frame")]]

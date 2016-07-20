@@ -78,6 +78,8 @@ local function LoadSkin()
 		end
 	end
 
+	InspectPaperDollFrame.ViewButton:SkinButton()
+
 	-- Unit Background Texture
 	InspectModelFrameBackgroundTopLeft:SetPoint("TOPLEFT", InspectModelFrame.backdrop, "TOPLEFT", 2, -2)
 	InspectModelFrameBackgroundTopRight:SetPoint("TOPRIGHT", InspectModelFrame.backdrop, "TOPRIGHT", -2, -2)

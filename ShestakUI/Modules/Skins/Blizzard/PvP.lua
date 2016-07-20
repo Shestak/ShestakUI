@@ -1,9 +1,23 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	PvP skin
 ----------------------------------------------------------------------------------------
+local LoadTootlipSkin = CreateFrame("Frame")
+LoadTootlipSkin:RegisterEvent("ADDON_LOADED")
+LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
+	if IsAddOnLoaded("Skinner") or IsAddOnLoaded("Aurora") or not C.tooltip.enable then
+		self:UnregisterEvent("ADDON_LOADED")
+		return
+	end
+
+	if addon == "Blizzard_PVPUI" then
+		ConquestTooltip:SetTemplate("Transparent")
+		PVPRewardTooltip:SetTemplate("Transparent")
+	end
+end)
+
+if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	for i = 1, 4 do
 		local button = _G["PVPQueueFrameCategoryButton"..i]
@@ -45,25 +59,25 @@ local function LoadSkin()
 	T.SkinScrollBar(HonorFrameSpecificFrameScrollBar)
 	HonorFrameSpecificFrameScrollBar:SetPoint("TOPLEFT", HonorFrameSpecificFrame, "TOPRIGHT", 0, -15)
 	HonorFrameSpecificFrameScrollBar:SetPoint("BOTTOMLEFT", HonorFrameSpecificFrame, "BOTTOMRIGHT", 0, 15)
-	HonorFrameSoloQueueButton:SkinButton(true)
-	HonorFrameGroupQueueButton:SkinButton(true)
+	HonorFrameQueueButton:SkinButton(true)
 	HonorFrame.BonusFrame:StripTextures()
 	HonorFrame.BonusFrame.DiceButton:SkinButton()
 	HonorFrame.BonusFrame.ShadowOverlay:StripTextures()
+	HonorFrame.XPBar:StripTextures()
 
-	HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1:SetTemplate("Default")
-	HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetAllPoints()
-	HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetPoint("TOPLEFT", 2, -2)
-	HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
-	HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	--BETA HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1:SetTemplate("Default")
+	-- HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetAllPoints()
+	-- HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetPoint("TOPLEFT", 2, -2)
+	-- HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
+	-- HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-	HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1:SetTemplate("Default")
-	HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1.Icon:SetAllPoints()
-	HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1.Icon:SetPoint("TOPLEFT", 2, -2)
-	HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
-	HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	-- HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1:SetTemplate("Default")
+	-- HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1.Icon:SetAllPoints()
+	-- HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1.Icon:SetPoint("TOPLEFT", 2, -2)
+	-- HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
+	-- HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-	for _, i in pairs({"RandomBGButton", "Arena1Button", "Arena2Button"}) do
+	for _, i in pairs({"RandomBGButton", "Arena1Button", "AshranButton"}) do
 		local button = HonorFrame.BonusFrame[i]
 		button:StripTextures()
 		button:SetTemplate("Overlay")
@@ -73,7 +87,7 @@ local function LoadSkin()
 		button.SelectedTexture:SetAllPoints()
 		button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
 		button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
-		button.SelectedTexture:SetTexture(1, 0.82, 0, 0.3)
+		button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
 	end
 
 	for i = 1, #HonorFrame.SpecificFrame.buttons do
@@ -83,7 +97,7 @@ local function LoadSkin()
 		button:SetTemplate("Overlay")
 		button:StyleButton()
 		button.SelectedTexture:SetDrawLayer("ARTWORK")
-		button.SelectedTexture:SetTexture(1, 0.82, 0, 0.3)
+		button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
 		button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
 		button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 		if i == 1 then
@@ -98,16 +112,17 @@ local function LoadSkin()
 	end
 
 	-- ConquestFrame
-	ConquestPointsBar:StripTextures()
-	ConquestFrame.Inset:StripTextures()
-	ConquestPointsBar.progress:SetTexture(C.media.texture)
-	ConquestPointsBar:CreateBackdrop("Overlay")
-	ConquestPointsBar.backdrop:SetPoint("TOPLEFT", ConquestPointsBar, "TOPLEFT", -2, -1)
-	ConquestPointsBar.backdrop:SetPoint("BOTTOMRIGHT", ConquestPointsBar, "BOTTOMRIGHT", 2, 1)
 	ConquestFrame:StripTextures()
+	ConquestFrame.Inset:StripTextures()
 	ConquestFrame.ShadowOverlay:StripTextures()
+	ConquestFrame.XPBar:StripTextures()
 
-	for _, button in pairs({ConquestFrame.Arena2v2, ConquestFrame.Arena3v3, ConquestFrame.Arena5v5, ConquestFrame.RatedBG}) do
+	ConquestFrame.RoleInset:StripTextures()
+	for _, button in pairs{ConquestFrame.RoleInset.TankIcon, ConquestFrame.RoleInset.HealerIcon, ConquestFrame.RoleInset.DPSIcon} do
+		T.SkinCheckBox(button.checkButton)
+	end
+
+	for _, button in pairs({ConquestFrame.Arena2v2, ConquestFrame.Arena3v3, ConquestFrame.RatedBG}) do
 		button:StripTextures()
 		button:SetTemplate("Overlay")
 		button:StyleButton()
@@ -116,15 +131,12 @@ local function LoadSkin()
 		button.SelectedTexture:SetAllPoints()
 		button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
 		button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
-		button.SelectedTexture:SetTexture(1, 0.82, 0, 0.3)
+		button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
 	end
 
 	ConquestFrame.Arena3v3:SetPoint("TOP", ConquestFrame.Arena2v2, "BOTTOM", 0, -3)
-	ConquestFrame.Arena5v5:SetPoint("TOP", ConquestFrame.Arena3v3, "BOTTOM", 0, -3)
 
 	ConquestJoinButton:SkinButton(true)
-
-	ConquestTooltip:SetTemplate("Transparent")
 
 	-- WarGamesFrame
 	WarGamesFrame:StripTextures()
@@ -147,7 +159,7 @@ local function LoadSkin()
 		button:SetTemplate("Overlay")
 		button:StyleButton()
 		button.SelectedTexture:SetDrawLayer("ARTWORK")
-		button.SelectedTexture:SetTexture(1, 0.82, 0, 0.3)
+		button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
 		button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
 		button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 	end

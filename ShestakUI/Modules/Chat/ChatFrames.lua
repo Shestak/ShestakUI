@@ -98,9 +98,9 @@ local function SetChatStyle(frame)
 	_G[format("ChatFrame%sButtonFrame", id)]:Kill()
 
 	-- Kills off the retarded new circle around the editbox
-	_G[format("ChatFrame%sEditBoxFocusLeft", id)]:Kill()
-	_G[format("ChatFrame%sEditBoxFocusMid", id)]:Kill()
-	_G[format("ChatFrame%sEditBoxFocusRight", id)]:Kill()
+	_G[format("ChatFrame%sEditBoxLeft", id)]:Kill()
+	_G[format("ChatFrame%sEditBoxMid", id)]:Kill()
+	_G[format("ChatFrame%sEditBoxRight", id)]:Kill()
 
 	_G[format("ChatFrame%sTabGlow", id)]:Kill()
 

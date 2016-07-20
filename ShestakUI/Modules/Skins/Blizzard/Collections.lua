@@ -34,7 +34,7 @@ local function LoadSkin()
 	CollectionsJournal:Hide()
 	CollectionsJournalPortrait:SetAlpha(0)
 
-	for i = 1, 4 do
+	for i = 1, 5 do
 		T.SkinTab(_G["CollectionsJournalTab"..i])
 	end
 
@@ -92,7 +92,7 @@ local function LoadSkin()
 			button.DragButton.backdrop:SetPoint("TOPLEFT", -1, 1)
 			button.DragButton.backdrop:SetPoint("BOTTOMRIGHT", 1, -1)
 			button.DragButton:StyleButton(nil, 1)
-			button.DragButton.ActiveTexture:SetTexture(0, 1, 0, 0.3)
+			button.DragButton.ActiveTexture:SetColorTexture(0, 1, 0, 0.3)
 			button.DragButton.ActiveTexture:SetPoint("TOPLEFT", 1, -1)
 			button.DragButton.ActiveTexture:SetPoint("BOTTOMRIGHT", -1, 1)
 
@@ -184,7 +184,7 @@ local function LoadSkin()
 			button.dragButton.backdrop:SetPoint("TOPLEFT", -1, 1)
 			button.dragButton.backdrop:SetPoint("BOTTOMRIGHT", 1, -1)
 			button.dragButton:StyleButton(nil, 1)
-			button.dragButton.ActiveTexture:SetTexture(0, 1, 0, 0.3)
+			button.dragButton.ActiveTexture:SetColorTexture(0, 1, 0, 0.3)
 			button.dragButton.ActiveTexture:SetPoint("TOPLEFT", 1, -1)
 			button.dragButton.ActiveTexture:SetPoint("BOTTOMRIGHT", -1, 1)
 			button.dragButton.favorite:SetParent(button.dragButton.backdrop)
@@ -393,7 +393,6 @@ local function LoadSkin()
 	ToyBox.progressBar:SetStatusBarTexture(C.media.texture)
 	ToyBox.progressBar:SetFrameLevel(ToyBox.progressBar:GetFrameLevel() + 2)
 
-
 	for i = 1, 18 do
 		ToyBox.iconsFrame["spellButton"..i].slotFrameCollected:SetTexture("")
 		ToyBox.iconsFrame["spellButton"..i].slotFrameUncollected:SetTexture("")
@@ -484,6 +483,56 @@ local function LoadSkin()
 			button.name:SetTextColor(0.6, 0.6, 0.6)
 		end
 	end)
+
+	-- Wardrobe
+	WardrobeFrame:StripTextures()
+	WardrobeFrame:SetTemplate("Transparent")
+	T.SkinCloseButton(WardrobeFrameCloseButton)
+	T.SkinDropDownBox(WardrobeOutfitDropDown)
+	WardrobeOutfitDropDown:SetSize(221, 34)
+	WardrobeOutfitDropDown.SaveButton:SkinButton()
+	WardrobeOutfitDropDown.SaveButton:SetPoint("TOPLEFT", WardrobeOutfitDropDown, "TOPRIGHT", -2, -2)
+	WardrobeTransmogFrame:StripTextures()
+	WardrobeTransmogFrame.Inset:StripTextures()
+	WardrobeTransmogFrame.SpecButton:SkinButton()
+	WardrobeTransmogFrame.ApplyButton:SkinButton()
+	WardrobeTransmogFrame.SpecButton:SetPoint("RIGHT", WardrobeTransmogFrame.ApplyButton, "LEFT", -2, 0)
+	WardrobeTransmogFrame.Model.ClearAllPendingButton:SkinButton()
+
+	local slots = {"HeadButton", "ShoulderButton", "ChestButton", "ShirtButton", "TabardButton", "WaistButton", "LegsButton", "FeetButton",
+	"WristButton", "HandsButton", "BackButton", "MainHandButton", "SecondaryHandButton"}
+
+	for i = 1, #slots do
+		local slot = WardrobeTransmogFrame.Model[slots[i]]
+		local icon = slot.Icon
+		local border = slot.Border
+
+		if slot then
+			border:Kill()
+
+			slot:StyleButton()
+			slot:SetFrameLevel(slot:GetFrameLevel() + 2)
+			slot:CreateBackdrop("Default")
+			slot.backdrop:SetAllPoints()
+
+			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			icon:ClearAllPoints()
+			icon:SetPoint("TOPLEFT", 2, -2)
+			icon:SetPoint("BOTTOMRIGHT", -2, 2)
+		end
+	end
+
+	WardrobeCollectionFrame.ModelsFrame:StripTextures()
+	WardrobeCollectionFrame.progressBar:StripTextures()
+	WardrobeCollectionFrame.progressBar:CreateBackdrop("Overlay")
+	WardrobeCollectionFrame.progressBar:SetStatusBarTexture(C.media.texture)
+	WardrobeCollectionFrame.progressBar:SetFrameLevel(WardrobeCollectionFrame.progressBar:GetFrameLevel() + 2)
+	T.SkinEditBox(WardrobeCollectionFrameSearchBox, nil, 18)
+	WardrobeCollectionFrame.FilterButton:SkinButton()
+	WardrobeCollectionFrame.FilterButton:SetPoint("TOPLEFT", WardrobeCollectionFrameSearchBox, "TOPRIGHT", 5, 2)
+	T.SkinDropDownBox(WardrobeCollectionFrameWeaponDropDown)
+	T.SkinNextPrevButton(WardrobeCollectionFrame.NavigationFrame.PrevPageButton, true)
+	T.SkinNextPrevButton(WardrobeCollectionFrame.NavigationFrame.NextPageButton)
 end
 
 T.SkinFuncs["Blizzard_Collections"] = LoadSkin

@@ -113,7 +113,7 @@ function GameTooltip_UnitColor(unit)
 		else
 			r, g, b = 1, 1, 1
 		end
-	elseif UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit) and not UnitIsTappedByAllThreatList(unit) or UnitIsDead(unit) then
+	elseif UnitIsTapDenied(unit) or UnitIsDead(unit) then
 		r, g, b = 0.6, 0.6, 0.6
 	else
 		local reaction = T.oUF_colors.reaction[UnitReaction(unit, "player")]

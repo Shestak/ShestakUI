@@ -233,13 +233,13 @@ local micromenu = {
 		end
 	end},
 	{text = ADVENTURE_JOURNAL, notCheckable = 1, func = function()
-		if T.level >= SHOW_EJ_LEVEL then
+		if C_AdventureJournal.CanBeShown() then
 			ToggleEncounterJournal()
 		else
 			if C.error.white == false then
-				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_EJ_LEVEL), 1, 0.1, 0.1)
+				UIErrorsFrame:AddMessage(FEATURE_NOT_YET_AVAILABLE, 1, 0.1, 0.1)
 			else
-				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_EJ_LEVEL).."|r")
+				print("|cffffff00"..FEATURE_NOT_YET_AVAILABLE.."|r")
 			end
 		end
 	end},
@@ -317,22 +317,18 @@ end
 --	Tracking icon
 ----------------------------------------------------------------------------------------
 if C.minimap.tracking_icon then
-	local trackborder = CreateFrame("Frame", nil, UIParent)
-	trackborder:SetFrameLevel(4)
-	trackborder:SetFrameStrata("BACKGROUND")
-	trackborder:SetHeight(20)
-	trackborder:SetWidth(20)
-	trackborder:SetPoint("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 2, 2)
-	trackborder:SetTemplate("ClassColor")
-
 	MiniMapTrackingBackground:Hide()
 	MiniMapTracking:ClearAllPoints()
-	MiniMapTracking:SetPoint("CENTER", trackborder, 2, -2)
+	MiniMapTracking:SetPoint("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 0, -5)
 	MiniMapTrackingButton:SetHighlightTexture(nil)
 	MiniMapTrackingButtonBorder:Hide()
 	MiniMapTrackingIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	MiniMapTrackingIcon:SetWidth(16)
-	MiniMapTrackingIcon:SetHeight(16)
+	MiniMapTrackingIcon:SetSize(16, 16)
+	MiniMapTrackingIcon.SetPoint = T.dummy
+
+	MiniMapTracking:CreateBackdrop("ClassColor")
+	MiniMapTracking.backdrop:SetPoint("TOPLEFT", MiniMapTrackingIcon, -2, 2)
+	MiniMapTracking.backdrop:SetPoint("BOTTOMRIGHT", MiniMapTrackingIcon, 2, -2)
 else
 	MiniMapTracking:Hide()
 end

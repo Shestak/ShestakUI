@@ -19,7 +19,13 @@ local function LoadSkin()
 	scroll.thumbbg:SetPoint("BOTTOMRIGHT", scroll:GetThumbTexture(), "BOTTOMRIGHT", 3, -2)
 	scroll.thumbbg:SetTemplate("Overlay")
 
-	_G["EventTraceTooltip"]:HookScript("OnShow", function(self) self:SetTemplate("Transparent") end)
+	EventTraceTooltip:HookScript("OnShow", function(self)
+		self:SetTemplate("Transparent")
+	end)
+
+	FrameStackTooltip:HookScript("OnShow", function(self)
+		self:SetTemplate("Transparent")
+	end)
 
 	local texs = {
 		"TopLeft",

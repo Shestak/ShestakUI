@@ -5,29 +5,31 @@ if T.class ~= "MAGE" or T.level < 17 then return end
 --	Mage portals menu(by Foof and Tohveli)
 ----------------------------------------------------------------------------------------
 local spells = (UnitFactionGroup("player") == "Horde") and {
-	[1] = {3567,11417},		-- Orgrimmar
-	[2] = {3563,11418},		-- Undercity
-	[3] = {3566,11420},		-- Thunder Bluff
-	[4] = {32272,32267},	-- Silvermoon
-	[5] = {49358,49361},	-- Stonard
-	[6] = {35715,35717},	-- Shattrath
-	[7] = {53140,53142},	-- Dalaran
-	[8] = {88344,88346},	-- Tol Barad
-	[9] = {120145,120146},	-- Ancient Dalaran
-	[10] = {132627,132626},	-- Vale of Eternal Blossoms
-	[11] = {176242,176244},	-- Warspear
+	[1] = {3567,11417},			-- Orgrimmar
+	[2] = {3563,11418},			-- Undercity
+	[3] = {3566,11420},			-- Thunder Bluff
+	[4] = {32272,32267},		-- Silvermoon
+	[5] = {49358,49361},		-- Stonard
+	[6] = {35715,35717},		-- Shattrath
+	[7] = {53140,53142},		-- Dalaran
+	[8] = {88344,88346},		-- Tol Barad
+	[9] = {120145,120146},		-- Ancient Dalaran
+	[10] = {132627,132626},		-- Vale of Eternal Blossoms
+	[11] = {176242,176244},		-- Warspear
+	[12] = {193759, 193759}, 	-- Hall of the Guardian (OrderHall)
 } or { -- Alliance
-	[1] = {3561,10059},		-- Stormwind
-	[2] = {3562,11416},		-- Ironforge
-	[3] = {3565,11419},		-- Darnassus
-	[4] = {32271,32266},	-- Exodar
-	[5] = {49359,49360},	-- Theramore
-	[6] = {33690,33691},	-- Shattrath
-	[7] = {53140,53142},	-- Dalaran
-	[8] = {88342,88345},	-- Tol Barad
-	[9] = {120145,120146},	-- Ancient Dalaran
-	[10] = {132621,132620},	-- Vale of Eternal Blossoms
-	[11] = {176248,176246},	-- Stormshield
+	[1] = {3561,10059},			-- Stormwind
+	[2] = {3562,11416},			-- Ironforge
+	[3] = {3565,11419},			-- Darnassus
+	[4] = {32271,32266},		-- Exodar
+	[5] = {49359,49360},		-- Theramore
+	[6] = {33690,33691},		-- Shattrath
+	[7] = {53140,53142},		-- Dalaran
+	[8] = {88342,88345},		-- Tol Barad
+	[9] = {120145,120146},		-- Ancient Dalaran
+	[10] = {132621,132620},		-- Vale of Eternal Blossoms
+	[11] = {176248,176246},		-- Stormshield
+	[12] = {193759, 193759}, 	-- Hall of the Guardian (OrderHall)
 }
 
 local frame = CreateFrame("Frame", "TeleportMenu", UIParent)

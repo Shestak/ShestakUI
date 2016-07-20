@@ -32,13 +32,12 @@
 	<Script file="Elements\SoulShards.lua"/>
 	<Script file="Elements\ReadyCheck.lua"/>
 	<Script file="Elements\QIcon.lua"/>
-	<Script file="Elements\EclipseBar.lua"/>
 	<Script file="Elements\AltPowerBar.lua"/>
 	<Script file="Elements\Resurrect.lua"/>
 	<Script file="Elements\HarmonyOrbs.lua"/>
-	<Script file="Elements\ShadowOrbs.lua"/>
+	<Script file="Elements\ArcaneCharge.lua"/>
+	<Script file="Elements\Stagger.lua"/>
 
-	<Script file="Modules\Anticipation.lua"/>
 	<Script file="Modules\AuraTracker.lua"/>
 	<Script file="Modules\AuraWatch.lua"/>
 	<Script file="Modules\AutoResurrect.lua"/>
@@ -55,7 +54,6 @@
 	<Script file="Modules\RaidDebuffs.lua"/>
 	<Script file="Modules\RangeBar.lua"/>
 	<Script file="Modules\Reputation.lua"/>
-	<Script file="Modules\Resolve.lua"/>
 	<Script file="Modules\Smooth.lua"/>
 	<Script file="Modules\Swing.lua"/>
 	<Script file="Modules\TotemBar.lua"/>

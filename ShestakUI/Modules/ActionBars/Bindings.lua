@@ -18,7 +18,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 		bind.texture = bind:CreateTexture()
 		bind.texture:SetPoint("TOPLEFT", bind, 2, -2)
 		bind.texture:SetPoint("BOTTOMRIGHT", bind, -2, 2)
-		bind.texture:SetTexture(1, 1, 1, 0.3)
+		bind.texture:SetColorTexture(1, 1, 1, 0.3)
 		bind:Hide()
 
 		local elapsed = 0

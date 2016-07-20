@@ -61,6 +61,7 @@ end
 
 local isCaster = {
 	DEATHKNIGHT = {nil, nil, nil},
+	DEMONHUNTER = {nil, nil},
 	DRUID = {true},					-- Balance
 	HUNTER = {nil, nil, nil},
 	MAGE = {true, true, true},
@@ -324,7 +325,7 @@ function T.SkinNextPrevButton(btn, left)
 		if btn:GetPushedTexture() then
 			btn:GetPushedTexture():SetAllPoints(btn:GetNormalTexture())
 		end
-		btn:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
+		btn:GetHighlightTexture():SetColorTexture(1, 1, 1, 0.3)
 		btn:GetHighlightTexture():SetAllPoints(btn:GetNormalTexture())
 	end
 end
@@ -336,7 +337,7 @@ function T.SkinRotateButton(btn)
 	btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.65, 0.69, 0.29, 0.69, 0.65)
 	btn:GetPushedTexture():SetTexCoord(0.3, 0.29, 0.3, 0.65, 0.69, 0.29, 0.69, 0.65)
 
-	btn:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
+	btn:GetHighlightTexture():SetColorTexture(1, 1, 1, 0.3)
 
 	btn:GetNormalTexture():ClearAllPoints()
 	btn:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
@@ -356,6 +357,10 @@ function T.SkinEditBox(frame, width, height)
 	if frame.Left then frame.Left:Kill() end
 	if frame.Right then frame.Right:Kill() end
 	if frame.Middle then frame.Middle:Kill() end
+
+	if frame.LeftTexture then frame.LeftTexture:Kill() end
+	if frame.RightTexture then frame.RightTexture:Kill() end
+	if frame.MiddleTexture then frame.MiddleTexture:Kill() end
 
 	frame:CreateBackdrop("Overlay")
 
@@ -407,7 +412,7 @@ function T.SkinCheckBox(frame, default)
 
 	if frame.SetHighlightTexture then
 		local highligh = frame:CreateTexture(nil, nil, self)
-		highligh:SetTexture(1, 1, 1, 0.3)
+		highligh:SetColorTexture(1, 1, 1, 0.3)
 		highligh:SetPoint("TOPLEFT", frame, 6, -6)
 		highligh:SetPoint("BOTTOMRIGHT", frame, -6, 6)
 		frame:SetHighlightTexture(highligh)
@@ -416,7 +421,7 @@ function T.SkinCheckBox(frame, default)
 	if frame.SetCheckedTexture then
 		if default then return end
 		local checked = frame:CreateTexture(nil, nil, self)
-		checked:SetTexture(1, 0.82, 0, 0.8)
+		checked:SetColorTexture(1, 0.82, 0, 0.8)
 		checked:SetPoint("TOPLEFT", frame, 6, -6)
 		checked:SetPoint("BOTTOMRIGHT", frame, -6, 6)
 		frame:SetCheckedTexture(checked)
@@ -424,7 +429,7 @@ function T.SkinCheckBox(frame, default)
 
 	if frame.SetDisabledCheckedTexture then
 		local disabled = frame:CreateTexture(nil, nil, self)
-		disabled:SetTexture(0.6, 0.6, 0.6, 0.75)
+		disabled:SetColorTexture(0.6, 0.6, 0.6, 0.75)
 		disabled:SetPoint("TOPLEFT", frame, 6, -6)
 		disabled:SetPoint("BOTTOMRIGHT", frame, -6, 6)
 		frame:SetDisabledCheckedTexture(disabled)
@@ -535,24 +540,21 @@ T.UpdateAllElements = function(frame)
 end
 
 local SetUpAnimGroup = function(self)
-	self.anim = self:CreateAnimationGroup("Flash")
-	self.anim.fadein = self.anim:CreateAnimation("ALPHA", "FadeIn")
-	self.anim.fadein:SetChange(1)
-	self.anim.fadein:SetOrder(2)
-
-	self.anim.fadeout = self.anim:CreateAnimation("ALPHA", "FadeOut")
-	self.anim.fadeout:SetChange(-1)
-	self.anim.fadeout:SetOrder(1)
+	self.anim = self:CreateAnimationGroup()
+	self.anim:SetLooping("BOUNCE")
+	self.anim.fade = self.anim:CreateAnimation("Alpha")
+	self.anim.fade:SetFromAlpha(1)
+	self.anim.fade:SetToAlpha(0)
+	self.anim.fade:SetDuration(0.6)
+	self.anim.fade:SetSmoothing("IN_OUT")
 end
 
-local Flash = function(self, duration)
+local Flash = function(self)
 	if not self.anim then
 		SetUpAnimGroup(self)
 	end
 
-	if not self.anim:IsPlaying() or duration ~= self.anim.fadein:GetDuration() then
-		self.anim.fadein:SetDuration(duration)
-		self.anim.fadeout:SetDuration(duration)
+	if not self.anim:IsPlaying() then
 		self.anim:Play()
 	end
 end
@@ -609,7 +611,7 @@ T.PostUpdateHealth = function(health, unit, min, max)
 				end
 			end
 		end
-		if C.unitframe.bar_color_value == true and not (UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit)) then
+		if C.unitframe.bar_color_value == true and not UnitIsTapDenied(unit) then
 			if C.unitframe.own_color == true then
 				r, g, b = C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3]
 			else
@@ -708,7 +710,7 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 				health.bg:SetVertexColor(r * mu, g * mu, b * mu)
 			end
 		end
-		if C.unitframe.bar_color_value == true and not (UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit)) then
+		if C.unitframe.bar_color_value == true and not UnitIsTapDenied(unit) then
 			if C.unitframe.own_color == true then
 				r, g, b = C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3]
 			else
@@ -883,19 +885,16 @@ T.UpdateManaLevel = function(self, elapsed)
 	if self.elapsed < 0.2 then return end
 	self.elapsed = 0
 
-	if UnitPowerType("player") ~= 0 then
-		if T.class == "MONK" then
+	if UnitPowerType("player") == 0 then
+		local percMana = UnitMana("player") / UnitManaMax("player") * 100
+		if percMana <= 20 and not UnitIsDeadOrGhost("player") then
+			self.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
+			Flash(self)
+		else
 			self.ManaLevel:SetText()
+			StopFlash(self)
 		end
-		return
-	end
-
-	local percMana = UnitMana("player") / UnitManaMax("player") * 100
-
-	if percMana <= 20 and not UnitIsDeadOrGhost("player") then
-		self.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
-		Flash(self, 0.3)
-	else
+	elseif T.class ~= "DRUID" then
 		self.ManaLevel:SetText()
 		StopFlash(self)
 	end
@@ -911,7 +910,7 @@ T.UpdateClassMana = function(self)
 		local percMana = min / max * 100
 		if percMana <= 20 and not UnitIsDeadOrGhost("player") then
 			self.FlashInfo.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
-			Flash(self.FlashInfo, 0.3)
+			Flash(self.FlashInfo)
 		else
 			self.FlashInfo.ManaLevel:SetText()
 			StopFlash(self.FlashInfo)
@@ -967,45 +966,6 @@ T.UpdatePvPStatus = function(self, elapsed)
 	end
 end
 
-T.UpdateShadowOrb = function(self, event, unit, powerType)
-	if self.unit ~= unit or (powerType and powerType ~= "SHADOW_ORBS") then return end
-	local num = UnitPower(unit, SPELL_POWER_SHADOW_ORBS)
-	local numMax = UnitPowerMax("player", SPELL_POWER_SHADOW_ORBS)
-	local barWidth = self.ShadowOrbsBar:GetWidth()
-	local spacing = select(4, self.ShadowOrbsBar[4]:GetPoint())
-	local lastBar = 0
-
-	if numMax ~= self.ShadowOrbsBar.maxPower then
-		if numMax == 3 then
-			self.ShadowOrbsBar[4]:Hide()
-			self.ShadowOrbsBar[5]:Hide()
-			for i = 1, 3 do
-				if i ~= 3 then
-					self.ShadowOrbsBar[i]:SetWidth(barWidth / 3)
-					lastBar = lastBar + (barWidth / 3 + spacing)
-				else
-					self.ShadowOrbsBar[i]:SetWidth(barWidth - lastBar)
-				end
-			end
-		else
-			self.ShadowOrbsBar[4]:Show()
-			self.ShadowOrbsBar[5]:Show()
-			for i = 1, 5 do
-				self.ShadowOrbsBar[i]:SetWidth(self.ShadowOrbsBar[i].width)
-			end
-		end
-		self.ShadowOrbsBar.maxPower = numMax
-	end
-
-	for i = 1, 5 do
-		if i <= num then
-			self.ShadowOrbsBar[i]:SetAlpha(1)
-		else
-			self.ShadowOrbsBar[i]:SetAlpha(0.2)
-		end
-	end
-end
-
 T.UpdateHoly = function(self, event, unit, powerType)
 	if self.unit ~= unit or (powerType and powerType ~= "HOLY_POWER") then return end
 	local num = UnitPower(unit, SPELL_POWER_HOLY_POWER)
@@ -1045,41 +1005,8 @@ T.UpdateHoly = function(self, event, unit, powerType)
 	end
 end
 
-T.EclipseDirection = function(self)
-	if GetEclipseDirection() == "sun" then
-		self.Text:SetText("|cff4478BC>>|r")
-	elseif GetEclipseDirection() == "moon" then
-		self.Text:SetText("|cffE5994C<<|r")
-	else
-		self.Text:SetText("")
-	end
-end
-
-T.UpdateEclipse = function(self, login)
-	local eb = self.EclipseBar
-	local txt = self.EclipseBar.Text
-
-	if login then
-		eb:SetScript("OnUpdate", nil)
-	end
-
-	if eb:IsShown() then
-		txt:Show()
-		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
-	else
-		txt:Hide()
-		if (C.unitframe_class_bar.combo_always == true or GetShapeshiftFormID() == CAT_FORM) and C.unitframe_class_bar.combo_old ~= true then return end
-		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
-	end
-end
-
-T.UpdateReputationColor = function(self, event, unit, bar)
-	local name, id = GetWatchedFactionInfo()
-	bar:SetStatusBarColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b)
-	bar.bg:SetVertexColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b, 0.2)
-end
-
 T.UpdateComboPoint = function(self, event, unit)
+	if powerType and powerType ~= 'COMBO_POINTS' then return end
 	if unit == "pet" then return end
 
 	local cpoints = self.CPoints
@@ -1087,47 +1014,119 @@ T.UpdateComboPoint = function(self, event, unit)
 	local cpOld = (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and GetComboPoints("vehicle", "target") or GetComboPoints("player", "target")
 	if cpOld and cp and (cpOld > cp) then cp = cpOld end
 
-	for i = 1, MAX_COMBO_POINTS do
+	local numMax
+	if (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) then
+		numMax = MAX_COMBO_POINTS
+	else
+		numMax = UnitPowerMax("player", SPELL_POWER_COMBO_POINTS)
+		if numMax == 0 then
+			numMax = MAX_COMBO_POINTS
+		end
+	end
+
+	local spacing = select(4, cpoints[5]:GetPoint())
+	local w = cpoints:GetWidth()
+	local s = 0
+
+	if cpoints.numMax ~= numMax then
+		if numMax == 8 then
+			cpoints[6]:Show()
+			cpoints[7]:Show()
+			cpoints[8]:Show()
+		elseif numMax == 6 then
+			cpoints[6]:Show()
+			cpoints[7]:Hide()
+			cpoints[8]:Hide()
+		else
+			cpoints[6]:Hide()
+			cpoints[7]:Hide()
+			cpoints[8]:Hide()
+		end
+
+		for i = 1, numMax do
+			if i ~= numMax then
+				cpoints[i]:SetWidth(w / numMax - spacing)
+				s = s + (w / numMax)
+			else
+				cpoints[i]:SetWidth(w - s)
+			end
+		end
+
+		cpoints.numMax = numMax
+	end
+
+	for i = 1, numMax do
 		if i <= cp then
 			cpoints[i]:SetAlpha(1)
-			if self.Anticipation then
-				self.Anticipation[i]:SetStatusBarColor(0.2, 0.2, 0.2)
-			end
 		else
 			cpoints[i]:SetAlpha(0.2)
-			if self.Anticipation then
-				self.Anticipation[i]:SetStatusBarColor(0.8, 0.8, 0.8)
-			end
 		end
 	end
 
 	if T.class == "DRUID" and C.unitframe_class_bar.combo_always ~= true then
 		local form = GetShapeshiftFormID()
-		local spec = GetSpecialization()
 
 		if form == CAT_FORM or ((UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and cp > 0) then
 			cpoints:Show()
 			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
 		else
 			cpoints:Hide()
-			if (not form and (spec and spec == 1)) or form == MOONKIN_FORM then return end
 			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
 		end
 	end
 end
 
 T.UpdateComboPointOld = function(self, event, unit)
+	if powerType and powerType ~= 'COMBO_POINTS' then return end
 	if unit == "pet" then return end
 
 	local cpoints = self.CPoints
 	local cp
+	local numMax
+
 	if UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle") then
 		cp = GetComboPoints("vehicle", "target")
+		numMax = MAX_COMBO_POINTS
 	else
 		cp = GetComboPoints("player", "target")
+		numMax = UnitPowerMax("player", SPELL_POWER_COMBO_POINTS)
+		if numMax == 0 then
+			numMax = MAX_COMBO_POINTS
+		end
 	end
 
-	for i = 1, MAX_COMBO_POINTS do
+	local spacing = select(4, cpoints[5]:GetPoint())
+	local w = cpoints:GetWidth()
+	local s = 0
+
+	if cpoints.numMax ~= numMax then
+		if numMax == 8 then
+			cpoints[6]:Show()
+			cpoints[7]:Show()
+			cpoints[8]:Show()
+		elseif numMax == 6 then
+			cpoints[6]:Show()
+			cpoints[7]:Hide()
+			cpoints[8]:Hide()
+		else
+			cpoints[6]:Hide()
+			cpoints[7]:Hide()
+			cpoints[8]:Hide()
+		end
+
+		for i = 1, numMax do
+			if i ~= numMax then
+				cpoints[i]:SetWidth(w / numMax - spacing)
+				s = s + (w / numMax)
+			else
+				cpoints[i]:SetWidth(w - s)
+			end
+		end
+
+		cpoints.numMax = numMax
+	end
+
+	for i = 1, numMax do
 		if i <= cp then
 			cpoints[i]:SetAlpha(1)
 		else
@@ -1136,12 +1135,12 @@ T.UpdateComboPointOld = function(self, event, unit)
 	end
 
 	if cpoints[1]:GetAlpha() == 1 then
-		for i = 1, MAX_COMBO_POINTS do
+		for i = 1, numMax do
 			cpoints:Show()
 			cpoints[i]:Show()
 		end
 	else
-		for i = 1, MAX_COMBO_POINTS do
+		for i = 1, numMax do
 			cpoints:Hide()
 			cpoints[i]:Hide()
 		end
@@ -1166,6 +1165,12 @@ T.UpdateComboPointOld = function(self, event, unit)
 			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
 		end
 	end
+end
+
+T.UpdateReputationColor = function(self, event, unit, bar)
+	local name, id = GetWatchedFactionInfo()
+	bar:SetStatusBarColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b)
+	bar.bg:SetVertexColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b, 0.2)
 end
 
 local ticks = {}

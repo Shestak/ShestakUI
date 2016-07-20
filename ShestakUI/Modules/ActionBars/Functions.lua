@@ -24,7 +24,7 @@ T.ShiftBarUpdate = function()
 			end
 
 			start, duration, enable = GetShapeshiftFormCooldown(i)
-			CooldownFrame_SetTimer(cooldown, start, duration, enable)
+			CooldownFrame_Set(cooldown, start, duration, enable)
 
 			if isActive then
 				StanceBarFrame.lastSelected = button:GetID()

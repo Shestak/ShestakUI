@@ -148,7 +148,8 @@ local function UnitGear(unit)
 							level = timewarped[tonumber(warped)] or level
 							level = timewarped_warforged[tonumber(warforged)] or level
 
-							local upgrade = itemLink:match(":(%d+)\124h%[")
+							--BETA local upgrade = itemLink:match(":(%d+)\124h%[")
+							local upgrade = 0
 							if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
 
 							total = total + (level + upgrades[upgrade])

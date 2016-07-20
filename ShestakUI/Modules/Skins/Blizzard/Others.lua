@@ -116,6 +116,13 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["PetBattleQueueReadyFrame"].AcceptButton:SkinButton()
 		_G["PetBattleQueueReadyFrame"].DeclineButton:SkinButton()
 
+		-- Wardrobe Outfit
+		WardrobeOutfitEditFrame:SetTemplate("Transparent")
+		WardrobeOutfitEditFrame.AcceptButton:SkinButton()
+		WardrobeOutfitEditFrame.CancelButton:SkinButton()
+		WardrobeOutfitEditFrame.DeleteButton:SkinButton()
+		T.SkinEditBox(WardrobeOutfitEditFrame.EditBox, 250, 25)
+
 		-- Reskin Dropdown menu
 		hooksecurefunc("UIDropDownMenu_InitializeHelper", function(frame)
 			for i = 1, UIDROPDOWNMENU_MAXLEVELS do
@@ -225,7 +232,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		}
 
 		for _, scrollbar in pairs(scrollbars) do
-			local bars = _G[_G[scrollbar]]
+			local bars = _G[scrollbar]
 			if bars then
 				T.SkinScrollBar(bars)
 			end

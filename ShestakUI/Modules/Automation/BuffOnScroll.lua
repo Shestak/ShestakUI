@@ -7,36 +7,24 @@ if C.automation.buff_on_scroll ~= true or T.level ~= MAX_PLAYER_LEVEL then retur
 local frame = CreateFrame("Frame", "AutomatorFrame")
 
 DEATHKNIGHT1 = {
-	49222,	-- Bone Shield
-	57330,	-- Horn of Winter
 	3714,	-- Path of Frost
 }
 
 DEATHKNIGHT2 = {
-	57330,	-- Horn of Winter
 	3714,	-- Path of Frost
 }
 
 DEATHKNIGHT3 = {
-	57330,	-- Horn of Winter
 	3714,	-- Path of Frost
 }
 
-DRUID1 = {
-	1126,	-- Mark of the Wild
-}
+DRUID1 = {}
 
-DRUID2 = {
-	1126,	-- Mark of the Wild
-}
+DRUID2 = {}
 
-DRUID3 = {
-	1126,	-- Mark of the Wild
-}
+DRUID3 = {}
 
-DRUID4 = {
-	1126,	-- Mark of the Wild
-}
+DRUID4 = {}
 
 HUNTER1 = {}
 
@@ -44,53 +32,33 @@ HUNTER2 = {}
 
 HUNTER3 = {}
 
-MAGE1 = {
-	1459,	-- Arcane Brilliance
-}
+MAGE1 = {}
 
-MAGE2 = {
-	1459,	-- Arcane Brilliance
-}
+MAGE2 = {}
 
-MAGE3 = {
-	1459,	-- Arcane Brilliance
-}
+MAGE3 = {}
 
-MONK1 = {
-	116781,	-- Legacy of the White Tiger
-}
+MONK1 = {}
 
-MONK2 = {
-	115921,	-- Legacy of the Emperor
-}
+MONK2 = {}
 
-MONK3 = {
-	116781,	-- Legacy of the White Tiger
-}
+MONK3 = {}
 
-PALADIN1 = {
-	20217,	-- Blessing of Kings
-}
+PALADIN1 = {}
 
-PALADIN2 = {
-	20217,	-- Blessing of Kings
-}
+PALADIN2 = {}
 
 PALADIN3 = {
-	20217,	-- Blessing of Kings
+	203538,	-- Greater Blessing of Kings
+	203528,	-- Greater Blessing of Might
+	203539,	-- Greater Blessing of Wisdom
 }
 
-PRIEST1 = {
-	21562,	-- Power Word: Fortitude
-}
+PRIEST1 = {}
 
-PRIEST2 = {
-	21562,	-- Power Word: Fortitude
-}
+PRIEST2 = {}
 
-PRIEST3 = {
-	21562,	-- Power Word: Fortitude
-}
+PRIEST3 = {}
 
 ROGUE1 = {}
 
@@ -98,39 +66,23 @@ ROGUE2 = {}
 
 ROGUE3 = {}
 
-SHAMAN1 = {
-	324,	-- Lightning Shield
-}
+SHAMAN1 = {}
 
-SHAMAN2 = {
-	324,	-- Lightning Shield
-}
+SHAMAN2 = {}
 
 SHAMAN3 = {}
 
-WARLOCK1 = {
-	109773,	-- Dark Intent
-}
+WARLOCK1 = {}
 
-WARLOCK2 = {
-	109773,	-- Dark Intent
-}
+WARLOCK2 = {}
 
-WARLOCK3 = {
-	109773,	-- Dark Intent
-}
+WARLOCK3 = {}
 
-WARRIOR1 = {
-	6673,	-- Battle Shout
-}
+WARRIOR1 = {}
 
-WARRIOR2 = {
-	6673,	-- Battle Shout
-}
+WARRIOR2 = {}
 
-WARRIOR3 = {
-	469,	-- Commanding Shout
-}
+WARRIOR3 = {}
 
 -- Function for waiting through the global cooldown
 local GcTimer = 0
@@ -158,7 +110,7 @@ function CheckBuffs()
 	btn:SetAttribute("spell", nil)
 	for i, v in pairs(_G[T.class..spec]) do
 		local name = GetSpellInfo(v)
-		if not UnitAura("player", name) then
+		if name and not UnitAura("player", name) then
 			if GetSpellCooldown(name) == 0 then
 				btn:SetAttribute("spell", name)
 				SetOverrideBindingClick(btn, true, "MOUSEWHEELUP", "AutoBuffButton")

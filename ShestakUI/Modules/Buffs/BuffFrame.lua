@@ -21,22 +21,22 @@ local BuffsAnchor = CreateFrame("Frame", "BuffsAnchor", UIParent)
 BuffsAnchor:SetPoint(unpack(C.position.player_buffs))
 BuffsAnchor:SetSize((15 * C.aura.player_buff_size) + 42, (C.aura.player_buff_size * 2) + 3)
 
-ConsolidatedBuffs:ClearAllPoints()
-ConsolidatedBuffs:SetPoint("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
-ConsolidatedBuffs:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
-ConsolidatedBuffs.SetPoint = T.dummy
-ConsolidatedBuffs:CreateBackdrop("Default")
-ConsolidatedBuffs.backdrop:SetAllPoints()
-if C.aura.classcolor_border == true then
-	ConsolidatedBuffs.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-end
+--BETA ConsolidatedBuffs:ClearAllPoints()
+-- ConsolidatedBuffs:SetPoint("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
+-- ConsolidatedBuffs:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
+-- ConsolidatedBuffs.SetPoint = T.dummy
+-- ConsolidatedBuffs:CreateBackdrop("Default")
+-- ConsolidatedBuffs.backdrop:SetAllPoints()
+-- if C.aura.classcolor_border == true then
+	-- ConsolidatedBuffs.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+-- end
 
-ConsolidatedBuffsIcon:SetTexCoord(0.16, 0.34, 0.29, 0.7)
-ConsolidatedBuffsIcon:SetSize(C.aura.player_buff_size - 4, C.aura.player_buff_size - 4)
+-- ConsolidatedBuffsIcon:SetTexCoord(0.16, 0.34, 0.29, 0.7)
+-- ConsolidatedBuffsIcon:SetSize(C.aura.player_buff_size - 4, C.aura.player_buff_size - 4)
 
-ConsolidatedBuffsCount:SetPoint("BOTTOMRIGHT", 0, 1)
-ConsolidatedBuffsCount:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
-ConsolidatedBuffsCount:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
+-- ConsolidatedBuffsCount:SetPoint("BOTTOMRIGHT", 0, 1)
+-- ConsolidatedBuffsCount:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
+-- ConsolidatedBuffsCount:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
 for i = 1, NUM_TEMP_ENCHANT_FRAMES do
 	local buff = _G["TempEnchant"..i]
@@ -132,9 +132,9 @@ local function UpdateBuffAnchors()
 	local slack = BuffFrame.numEnchants
 	local mainhand, _, _, offhand = GetWeaponEnchantInfo()
 
-	if ShouldShowConsolidatedBuffFrame() then
-		slack = slack + 1
-	end
+	--BETA if ShouldShowConsolidatedBuffFrame() then
+		-- slack = slack + 1
+	-- end
 
 	for index = 1, BUFF_ACTUAL_DISPLAY do
 		StyleBuffs(buttonName, index)
