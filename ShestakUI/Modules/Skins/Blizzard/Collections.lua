@@ -499,11 +499,8 @@ local function LoadSkin()
 	WardrobeTransmogFrame.SpecButton:SetPoint("RIGHT", WardrobeTransmogFrame.ApplyButton, "LEFT", -2, 0)
 	WardrobeTransmogFrame.Model.ClearAllPendingButton:SkinButton()
 
-	local slots = {"HeadButton", "ShoulderButton", "ChestButton", "ShirtButton", "TabardButton", "WaistButton", "LegsButton", "FeetButton",
-	"WristButton", "HandsButton", "BackButton", "MainHandButton", "SecondaryHandButton"}
-
-	for i = 1, #slots do
-		local slot = WardrobeTransmogFrame.Model[slots[i]]
+	for i = 1, #WardrobeTransmogFrame.Model.SlotButtons do
+		local slot = WardrobeTransmogFrame.Model.SlotButtons[i]
 		local icon = slot.Icon
 		local border = slot.Border
 
