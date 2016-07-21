@@ -50,15 +50,8 @@ T.CheckChat = function(warning)
 end
 
 ----------------------------------------------------------------------------------------
---	Player's Role and Specialization check
+--	Player's role check
 ----------------------------------------------------------------------------------------
-T.CheckSpec = function(spec)
-	local activeGroup = GetActiveSpecGroup()
-	if activeGroup and GetSpecialization(false, false, activeGroup) then
-		return spec == GetSpecialization(false, false, activeGroup)
-	end
-end
-
 local isCaster = {
 	DEATHKNIGHT = {nil, nil, nil},
 	DEMONHUNTER = {nil, nil},
