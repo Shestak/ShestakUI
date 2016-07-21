@@ -33,7 +33,6 @@ local function LoadSkin()
 	TradeSkillFrame.DetailsFrame.CreateButton:SkinButton(true)
 	TradeSkillFrame.DetailsFrame.CreateAllButton:SkinButton(true)
 	TradeSkillFrame.DetailsFrame.ExitButton:SkinButton(true)
-	-- TradeSkillViewGuildCraftersButton:SkinButton(true)
 
 	TradeSkillFrame.LinkToButton:GetNormalTexture():SetTexCoord(0.25, 0.7, 0.37, 0.75)
 	TradeSkillFrame.LinkToButton:GetPushedTexture():SetTexCoord(0.25, 0.7, 0.45, 0.8)
@@ -60,54 +59,60 @@ local function LoadSkin()
 	-- T.SkinScrollBar(TradeSkillFrame.RecipeList.scrollBar)
 	-- T.SkinScrollBar(TradeSkillFrame.DetailsFrame.ScrollBar)
 
-	--BETA TradeSkillFrame.DetailsFrame.Contents.ResultIcon:DisableDrawLayer("OVERLAY")
-	-- hooksecurefunc(TradeSkillDetailsMixin, "RefreshButtons", function()
-		-- TradeSkillFrame.DetailsFrame.Contents.ResultIcon:StyleButton(true)
-		-- TradeSkillFrame.DetailsFrame.Contents.ResultIcon:SetTemplate("Default")
-		-- if TradeSkillFrame.DetailsFrame.Contents.ResultIcon:GetNormalTexture() then
-			-- TradeSkillFrame.DetailsFrame.Contents.ResultIcon:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			-- TradeSkillFrame.DetailsFrame.Contents.ResultIcon:GetNormalTexture():ClearAllPoints()
-			-- TradeSkillFrame.DetailsFrame.Contents.ResultIcon:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
-			-- TradeSkillFrame.DetailsFrame.Contents.ResultIcon:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
-		-- end
-	-- end)
+	hooksecurefunc(TradeSkillFrame.DetailsFrame, "RefreshDisplay", function()
+		local ResultIcon = TradeSkillFrame.DetailsFrame.Contents.ResultIcon
+		ResultIcon:StyleButton(true)
+		ResultIcon:SetTemplate("Default")
+		if ResultIcon:GetNormalTexture() then
+			ResultIcon:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			ResultIcon:GetNormalTexture():ClearAllPoints()
+			ResultIcon:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
+			ResultIcon:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
+		end
+		ResultIcon.Background:SetTexture(nil)
 
-	-- for i = 1, MAX_TRADE_SKILL_REAGENTS do
-		-- local button = _G["TradeSkillFrame.DetailsFrame.Contents.Reagent"..i]
-		-- local icon = _G["TradeSkillReagent"..i.."IconTexture"]
-		-- local count = _G["TradeSkillReagent"..i.."Count"]
+		for i = 1, #TradeSkillFrame.DetailsFrame.Contents.Reagents do
+			local button = TradeSkillFrame.DetailsFrame.Contents.Reagents[i]
+			local icon = button.Icon
+			local count = button.Count
 
-		-- icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		-- icon:SetDrawLayer("OVERLAY")
+			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			icon:SetDrawLayer("OVERLAY")
 
-		-- if not icon.backdrop then
-			-- icon.backdrop = CreateFrame("Frame", nil, button)
-			-- icon.backdrop:SetFrameStrata("BACKGROUND")
-			-- icon.backdrop:SetTemplate("Default")
-			-- icon.backdrop:SetPoint("TOPLEFT", button, "TOPLEFT", 1, -1)
-			-- icon.backdrop:SetPoint("BOTTOMRIGHT", button, "BOTTOMLEFT", 42, 1)
-		-- end
-		-- icon:SetParent(icon.backdrop)
-		-- icon:SetPoint("TOPLEFT", icon.backdrop, "TOPLEFT", 2, -2)
-		-- icon:SetPoint("BOTTOMRIGHT", icon.backdrop, "BOTTOMRIGHT", -2, 2)
+			if not icon.backdrop then
+				icon.backdrop = CreateFrame("Frame", nil, button)
+				icon.backdrop:SetFrameStrata("BACKGROUND")
+				icon.backdrop:SetTemplate("Default")
+				icon.backdrop:SetPoint("TOPLEFT", button, "TOPLEFT", 1, -1)
+				icon.backdrop:SetPoint("BOTTOMRIGHT", button, "BOTTOMLEFT", 42, 1)
+			end
 
-		-- count:SetFont(C.media.normal_font, 12, "OUTLINE")
-		-- count:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
-		-- count:SetDrawLayer("OVERLAY")
+			icon:SetParent(icon.backdrop)
+			icon:SetPoint("TOPLEFT", icon.backdrop, "TOPLEFT", 2, -2)
+			icon:SetPoint("BOTTOMRIGHT", icon.backdrop, "BOTTOMRIGHT", -2, 2)
 
-		-- _G["TradeSkillReagent"..i.."NameFrame"]:Kill()
-	-- end
+			count:SetFont(C.media.normal_font, 12, "OUTLINE")
+			count:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+			count:SetDrawLayer("OVERLAY")
 
-	-- -- Guild Crafters
-	-- TradeSkillGuildFrame:StripTextures()
-	-- TradeSkillGuildFrame:SetTemplate("Transparent")
-	-- TradeSkillGuildFrame:SetPoint("BOTTOMLEFT", TradeSkillFrame, "BOTTOMRIGHT", 3, 19)
-	-- TradeSkillGuildFrameContainer:StripTextures()
-	-- TradeSkillGuildFrameContainer:SetTemplate("Overlay")
-	-- T.SkinCloseButton(TradeSkillGuildFrameCloseButton)
-	-- if Auctionator_Search then
-		-- Auctionator_Search:SkinButton(true)
-	-- end
+			button.NameFrame:Kill()
+		end
+	end)
+
+	-- Guild Crafters
+	TradeSkillFrame.DetailsFrame.ViewGuildCraftersButton.LeftSeparator:SetTexture(nil)
+	TradeSkillFrame.DetailsFrame.ViewGuildCraftersButton.RightSeparator:SetTexture(nil)
+	TradeSkillFrame.DetailsFrame.GuildFrame:StripTextures()
+	TradeSkillFrame.DetailsFrame.GuildFrame:SetTemplate("Transparent")
+	TradeSkillFrame.DetailsFrame.GuildFrame.Container:StripTextures()
+	TradeSkillFrame.DetailsFrame.GuildFrame.Container:SetTemplate("Transparent")
+	TradeSkillFrame.DetailsFrame.ViewGuildCraftersButton:SkinButton(true)
+	T.SkinCloseButton(TradeSkillFrame.DetailsFrame.GuildFrame.CloseButton)
+	--BETA T.SkinScrollBar(TradeSkillFrame.DetailsFrame.GuildFrame.Container.ScrollFrame.scrollBar)
+
+	if Auctionator_Search then
+		Auctionator_Search:SkinButton(true)
+	end
 end
 
 T.SkinFuncs["Blizzard_TradeSkillUI"] = LoadSkin
