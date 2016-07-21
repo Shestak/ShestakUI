@@ -153,10 +153,11 @@ SLASH_INSTTELEPORT2 = "/еудузщке"
 ----------------------------------------------------------------------------------------
 --	Spec switching(by Monolit)
 ----------------------------------------------------------------------------------------
-SlashCmdList.SPEC = function()
+SlashCmdList.SPEC = function(spec)
 	if T.level >= SHOW_TALENT_LEVEL then
-		local spec = GetActiveSpecGroup()
-		if spec == 1 then SetActiveSpecGroup(2) elseif spec == 2 then SetActiveSpecGroup(1) end
+		if GetSpecialization() ~= tonumber(spec) then
+			SetSpecialization(spec)
+		end
 	else
 		print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")
 	end
