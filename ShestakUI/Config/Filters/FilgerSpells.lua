@@ -1984,7 +1984,7 @@ C["filger_spells"] = {
 			--BETA {spellID = 157007, filter = "CD"},
 			-- Holy Prism
 			{spellID = 114165, filter = "CD"},
-			-- Hand of Freedom
+			-- Blessing of Freedom
 			{spellID = 1044, filter = "CD"},
 			--BETA Hand of Purity
 			-- {spellID = 114039, filter = "CD"},
@@ -2002,15 +2002,15 @@ C["filger_spells"] = {
 			{spellID = 115750, filter = "CD"},
 			-- Holy Avenger
 			{spellID = 105809, filter = "CD"},
-			-- Devotion Aura
+			-- Aura Mastery
 			{spellID = 31821, filter = "CD"},
-			-- Hand of Sacrifice
+			-- Blessing of Sacrifice
 			{spellID = 6940, filter = "CD"},
 			-- Avenging Wrath
 			{spellID = 31884, filter = "CD"},
 			-- Ardent Defender
 			{spellID = 31850, filter = "CD"},
-			-- Hand of Protection
+			-- Blessing of Protection
 			{spellID = 1022, filter = "CD"},
 
 			-- Racial
@@ -3584,11 +3584,11 @@ C["filger_spells"] = {
 			{spellID = 33206, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Ironbark
 			{spellID = 102342, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Devotion Aura
+			-- Aura Mastery
 			{spellID = 31821, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Hand of Protection
+			-- Blessing of Protection
 			{spellID = 1022, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Hand of Sacrifice
+			-- Blessing of Sacrifice
 			{spellID = 6940, unitID = "player", caster = "all", filter = "BUFF"},
 			--BETA Hand of Purity
 			-- {spellID = 114039, unitID = "player", caster = "all", filter = "BUFF"},
@@ -3612,7 +3612,7 @@ C["filger_spells"] = {
 			{spellID = 121557, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Stampeding Roar
 			{spellID = 77764, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Hand of Freedom
+			-- Blessing of Freedom
 			{spellID = 1044, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Ice Ward
 			--BETA {spellID = 111264, unitID = "player", caster = "all", filter = "BUFF"},
@@ -4079,19 +4079,19 @@ C["filger_spells"] = {
 			{spellID = 642, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Guardian of Ancient Kings
 			{spellID = 86659, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Hand of Protection
+			-- Blessing of Protection
 			{spellID = 1022, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Divine Protection
 			{spellID = 498, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Ardent Defender
 			{spellID = 31850, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Devotion Aura
+			-- Aura Mastery
 			{spellID = 31821, unitID = "target", caster = "all", filter = "BUFF"},
 			--BETA Hand of Purity
 			-- {spellID = 114039, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Hand of Sacrifice
+			-- Blessing of Sacrifice
 			{spellID = 6940, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Hand of Freedom
+			-- Blessing of Freedom
 			{spellID = 1044, unitID = "target", caster = "all", filter = "BUFF"},
 
 			-- Debuffs

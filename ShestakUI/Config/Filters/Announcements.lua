@@ -10,7 +10,7 @@ if C.announcements.spells == true then
 		61999,	-- Raise Ally
 		20484,	-- Rebirth
 		20707,	-- Soulstone
-		31821,	-- Devotion Aura
+		31821,	-- Aura Mastery
 		633,	-- Lay on Hands
 		34477,	-- Misdirection
 		57934,	-- Tricks of the Trade

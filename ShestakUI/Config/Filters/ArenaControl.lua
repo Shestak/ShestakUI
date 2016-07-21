@@ -117,10 +117,10 @@ T.ArenaControl = {
 	[SpellName(46924)] = 2,		-- Bladestorm
 
 	-- Buffs
-	[SpellName(1022)] = 1,		-- Hand of Protection
-	[SpellName(6940)] = 1,		-- Hand of Sacrifice
-	[SpellName(1044)] = 1,		-- Hand of Freedom
-	[SpellName(31821)] = 1,		-- Devotion Aura
+	[SpellName(1022)] = 1,		-- Blessing of Protection
+	[SpellName(6940)] = 1,		-- Blessing of Sacrifice
+	[SpellName(1044)] = 1,		-- Blessing of Freedom
+	[SpellName(31821)] = 1,		-- Aura Mastery
 	[SpellName(33206)] = 1,		-- Pain Suppression
 	[SpellName(8178)] = 1,		-- Grounding Totem
 

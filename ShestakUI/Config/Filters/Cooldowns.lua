@@ -33,13 +33,13 @@ if C.raidcooldown.enable == true then
 		[62618] = 180,	-- Power Word: Barrier
 		[33206] = 180,	-- Pain Suppression
 		[47788] = 180,	-- Guardian Spirit
-		[31821] = 180,	-- Devotion Aura
+		[31821] = 180,	-- Aura Mastery
 		[98008] = 180,	-- Spirit Link Totem
 		[97462] = 180,	-- Rallying Cry
 		[88611] = 180,	-- Smoke Bomb
 		[51052] = 120,	-- Anti-Magic Zone
 		[116849] = 120,	-- Life Cocoon
-		[6940] = 120,	-- Hand of Sacrifice
+		[6940] = 120,	-- Blessing of Sacrifice
 		[114030] = 120,	-- Vigilance
 		[102342] = 60,	-- Ironbark
 		-- Other

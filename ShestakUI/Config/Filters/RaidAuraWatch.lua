@@ -27,10 +27,10 @@ T.RaidBuffs = {
 		--BETA {20925, "BOTTOMLEFT", {0.9, 0.9, 0.1}},				-- Sacred Shield
 		{114163, "BOTTOMLEFT", {0.9, 0.6, 0.4}},			-- Eternal Flame
 		--BETA {157007, "TOPLEFT", {1, 0.5, 0.2}},					-- Beacon of Insight
-		{1022, "BOTTOMRIGHT", {0.2, 0.2, 1}, true},			-- Hand of Protection
-		{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},		-- Hand of Freedom
+		{1022, "BOTTOMRIGHT", {0.2, 0.2, 1}, true},			-- Blessing of Protection
+		{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},		-- Blessing of Freedom
 		--BETA {1038, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},		-- Hand of Salvation
-		{6940, "BOTTOMRIGHT", {0.89, 0.1, 0.1}, true},		-- Hand of Sacrifice
+		{6940, "BOTTOMRIGHT", {0.89, 0.1, 0.1}, true},		-- Blessing of Sacrifice
 		--BETA {114039, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},		-- Hand of Purity
 	},
 	PRIEST = {
