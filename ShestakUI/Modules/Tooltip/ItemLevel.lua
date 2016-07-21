@@ -249,8 +249,7 @@ hooksecurefunc("PaperDollFrame_SetItemLevel", function(self, unit)
 		ilvl = equip.." / "..total
 	end
 
-	local ilvlLine = _G[self:GetName().."StatText"]
-	ilvlLine:SetText(ilvl)
+	CharacterStatsPane.ItemLevelFrame.Value:SetText(ilvl)
 
 	self.tooltip = detailColor..STAT_AVERAGE_ITEM_LEVEL.." "..ilvl
 end)
