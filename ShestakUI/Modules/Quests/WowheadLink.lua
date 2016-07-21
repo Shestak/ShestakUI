@@ -49,8 +49,7 @@ StaticPopupDialogs.WATCHFRAME_URL = {
 hooksecurefunc("QuestObjectiveTracker_OnOpenDropDown", function(self)
 	local _, b, i, info, questID
 	b = self.activeFrame
-	i = b.questLogIndex
-	_, _, _, _, _, _, _, questID = GetQuestLogTitle(i)
+	questID = b.id
 	info = UIDropDownMenu_CreateInfo()
 	info.text = L_WATCH_WOWHEAD_LINK
 	info.func = function(id)
