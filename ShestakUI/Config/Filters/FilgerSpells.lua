@@ -2427,6 +2427,19 @@ C["filger_spells"] = {
 			-- Blindside
 			--BETA {spellID = 121153, unitID = "player", caster = "player", filter = "BUFF"},
 
+			-- Jolly Roger
+			{spellID = 199603, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Grand Melee
+			{spellID = 193358, unitID = "player", caster = "player", filter = "BUFF"},
+			-- True Bearing
+			{spellID = 193359, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Buried Treasure
+			{spellID = 199600, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Broadsides
+			{spellID = 193356, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shark Infested Waters
+			{spellID = 193357, unitID = "player", caster = "player", filter = "BUFF"},
+
 			-- Item Sets
 			-- Deathly Shadows (T18)
 			{spellID = 188700, unitID = "player", caster = "player", filter = "BUFF"},
