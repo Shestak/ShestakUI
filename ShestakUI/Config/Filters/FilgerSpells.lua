@@ -2371,6 +2371,19 @@ C["filger_spells"] = {
 
 			-- Slice and Dice
 			{spellID = 5171, unitID = "player", caster = "player", filter = "BUFF"},
+			-- rtb jolly roger
+			{spellID = 199603, unitID = "player", caster = "player", filter = "BUFF"},
+			-- rtb grand melee
+			{spellID = 193358, unitID = "player", caster = "player", filter = "BUFF"},
+			-- rtb True Bearing
+			{spellID = 193359, unitID = "player", caster = "player", filter = "BUFF"},
+			-- rtb buried treasure
+			{spellID = 199600, unitID = "player", caster = "player", filter = "BUFF"},
+			-- rtb broadsides
+			{spellID = 193356, unitID = "player", caster = "player", filter = "BUFF"},
+			-- rtb sharks
+			{spellID = 193357, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Recuperate
 			-- Recuperate
 			--BETA {spellID = 73651, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Adrenaline Rush
