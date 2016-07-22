@@ -100,7 +100,7 @@ local function Update(frame, event, unit)
 			if watch.strictMatching then
 				key = spellID
 			else
-				key = name..texture
+				key = name
 			end
 			icon = icons[key]
 			if icon and not T.RaidBuffsIgnore[spellID] and (icon.anyUnit or (caster and icon.fromUnits and icon.fromUnits[caster])) then
@@ -173,7 +173,7 @@ local function setupIcons(self)
 			if watch.strictMatching then
 				watch.watched[icon.spellID] = icon
 			else
-				watch.watched[name..image] = icon
+				watch.watched[name] = icon
 			end
 
 			if watch.PostCreateIcon then watch:PostCreateIcon(icon, icon.spellID, name, self) end
