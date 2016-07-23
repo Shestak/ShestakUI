@@ -330,20 +330,7 @@ local function OnEvent(self, event, subevent, ...)
 	elseif event == "RUNE_POWER_UPDATE" then
 		local arg1 = subevent
 		if GetRuneCooldown(arg1) ~= 0 then return end
-		local rune = GetRuneType(arg1)
-		local msg = COMBAT_TEXT_RUNE[rune]
-		if rune == 1 then
-			r, g, b = 0.75, 0, 0
-		elseif rune == 2 then
-			r, g, b = 0.75, 1, 0
-		elseif rune == 3 then
-			r, g, b = 0, 1, 1
-		elseif rune == 4 then
-			r, g, b = 0.8, 0.7, 0.6
-		end
-		if rune then
-			xCT3:AddMessage("+"..msg, r, g, b)
-		end
+		xCT3:AddMessage("+"..COMBAT_TEXT_RUNE_DEATH, 0.75, 0, 0)
 	elseif event == "UNIT_ENTERED_VEHICLE" or event == "UNIT_EXITING_VEHICLE" then
 		if arg1 == "player" then
 			SetUnit()
