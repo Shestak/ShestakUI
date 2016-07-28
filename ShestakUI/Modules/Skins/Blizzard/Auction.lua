@@ -135,6 +135,7 @@ local function LoadSkin()
 	AuctionsItemButton:StripTextures()
 	AuctionsItemButton:StyleButton(true)
 	AuctionsItemButton:SetTemplate("Default")
+	AuctionsItemButton.IconBorder:Kill()
 
 	AuctionsItemButton:HookScript("OnEvent", function(self, event, ...)
 		if event == "NEW_AUCTION_UPDATE" and self:GetNormalTexture() then
@@ -225,6 +226,7 @@ local function LoadSkin()
 			icon:StyleButton()
 			icon:CreateBackdrop("Default")
 			icon.backdrop:SetAllPoints()
+			icon.IconBorder:Kill()
 		end
 
 		if button then
@@ -251,6 +253,7 @@ local function LoadSkin()
 		icon:StyleButton()
 		icon:CreateBackdrop("Default")
 		icon.backdrop:SetAllPoints()
+		icon.IconBorder:Kill()
 
 		button:StripTextures()
 		button:StyleButton()
@@ -274,6 +277,7 @@ local function LoadSkin()
 		icon:StyleButton()
 		icon:CreateBackdrop("Default")
 		icon.backdrop:SetAllPoints()
+		icon.IconBorder:Kill()
 
 		button:StripTextures()
 		button:StyleButton()
