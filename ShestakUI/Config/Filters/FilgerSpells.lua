@@ -2224,10 +2224,10 @@ C["filger_spells"] = {
 			{spellID = 33206, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Void Entropy
 			{spellID = 155361, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Shadow Word: Pain
-			{spellID = 589, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Vampiric Touch
 			{spellID = 34914, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Shadow Word: Pain
+			{spellID = 589, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Devouring Plague
 			--BETA {spellID = 2944, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
