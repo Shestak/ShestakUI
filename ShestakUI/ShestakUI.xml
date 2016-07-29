@@ -81,7 +81,7 @@
 	<Script file="Modules\Misc\ProfessionTabs.lua"/>
 	<Script file="Modules\Misc\PvPQueueTimer.lua"/>
 	<Script file="Modules\Misc\RaidUtility.lua"/>
-	<!-- <Script file="Modules\Misc\SlotItemLevel.lua"/> -->
+	<Script file="Modules\Misc\SlotItemLevel.lua"/>
 	<Script file="Modules\Misc\SumAucBuyouts.lua"/>
 	<Script file="Modules\Misc\Threat.lua"/>
 	<Script file="Modules\Misc\TrainAll.lua"/>
@@ -154,7 +154,7 @@
 	<Script file="Modules\Buffs\AuraSource.lua"/>
 	<Script file="Modules\Buffs\BuffFrame.lua"/>
 	<Script file="Modules\Buffs\SelfBuffsReminder.lua"/>
-	<!-- <Script file="Modules\Buffs\RaidBuffsReminder.lua"/> -->
+	<Script file="Modules\Buffs\RaidBuffsReminder.lua"/>
 
 	<Script file="Modules\Chat\ChatFrames.lua"/>
 	<Script file="Modules\Chat\ChatTabs.lua"/>

@@ -214,8 +214,8 @@ end
 do
 	CreateButton("FlaskFrame", RaidBuffReminder, true)
 	CreateButton("FoodFrame", FlaskFrame, false)
-	CreateButton("StatFrame", FoodFrame, false)
-	CreateButton("StaminaFrame", StatFrame, false)
-	CreateButton("Spell5Frame", StaminaFrame, false)
-	CreateButton("Spell6Frame", Spell5Frame, false)
+	-- CreateButton("StatFrame", FoodFrame, false)
+	-- CreateButton("StaminaFrame", StatFrame, false)
+	-- CreateButton("Spell5Frame", StaminaFrame, false)
+	-- CreateButton("Spell6Frame", Spell5Frame, false)
 end
