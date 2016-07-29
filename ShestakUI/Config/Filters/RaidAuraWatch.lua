@@ -24,14 +24,12 @@ T.RaidBuffs = {
 	PALADIN = {
 		{53563, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Light
 		{156910, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Faith
-		--BETA {20925, "BOTTOMLEFT", {0.9, 0.9, 0.1}},				-- Sacred Shield
 		{114163, "BOTTOMLEFT", {0.9, 0.6, 0.4}},			-- Eternal Flame
-		--BETA {157007, "TOPLEFT", {1, 0.5, 0.2}},					-- Beacon of Insight
 		{1022, "BOTTOMRIGHT", {0.2, 0.2, 1}, true},			-- Blessing of Protection
 		{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},		-- Blessing of Freedom
-		--BETA {1038, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},		-- Hand of Salvation
+		{204013, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},		-- Blessing of Salvation
 		{6940, "BOTTOMRIGHT", {0.89, 0.1, 0.1}, true},		-- Blessing of Sacrifice
-		--BETA {114039, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},		-- Hand of Purity
+		{204018, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},		-- Blessing of Spellwarding
 	},
 	PRIEST = {
 		{6788, "TOPRIGHT", {1, 0, 0}, true},				-- Weakened Soul
@@ -69,7 +67,7 @@ T.RaidBuffs = {
 }
 
 T.RaidBuffsIgnore = {
-	[65148] = true,		-- Sacred Shield (Proc)
+	-- [65148] = true,		-- Sacred Shield (Proc)
 }
 
 local function SpellName(id)
