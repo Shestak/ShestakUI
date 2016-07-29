@@ -100,12 +100,9 @@ local function BOALevel(level, id)
 end
 
 local timewarped = {
-	[615] = 660, -- Dungeon drops
-	[692] = 675, -- Timewarped badge vendors
-}
-
-local timewarped_warforged = {
-	[656] = 675, -- Dungeon drops
+	["615"] = 660, -- Dungeon drops
+	["692"] = 675, -- Timewarped badge vendors
+	["656"] = 675, -- Warforged Dungeon drops
 }
 
 --- Unit Gear Info
@@ -143,16 +140,17 @@ local function UnitGear(unit)
 								pvp = pvp + 1
 							end
 
-							local warped = select(15, strsplit(":", itemLink))
-							local warforged = select(16, strsplit(":", itemLink))
-							level = timewarped[tonumber(warped)] or level
-							level = timewarped_warforged[tonumber(warforged)] or level
+							local tid = strmatch(itemLink, ".+:512:22.+:(%d+):100")
+							if timewarped[tid] then
+								level = timewarped[tid]
+							end
 
-							--BETA local upgrade = itemLink:match(":(%d+)\124h%[")
-							local upgrade = 0
-							if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
+							local uid = strmatch(itemLink, ".+:(%d+)")
+							if upgrades[uid] then
+								level = level + upgrades[uid]
+							end
 
-							total = total + (level + upgrades[upgrade])
+							total = total + level
 						end
 
 						if i >= 16 then

@@ -47,12 +47,9 @@ local function BOALevel(level, id)
 end
 
 local timewarped = {
-	[615] = 660, -- Dungeon drops
-	[692] = 675, -- Timewarped badge vendors
-}
-
-local timewarped_warforged = {
-	[656] = 675, -- Dungeon drops
+	["615"] = 660, -- Dungeon drops
+	["692"] = 675, -- Timewarped badge vendors
+	["656"] = 675, -- Warforged Dungeon drops
 }
 
 local function CreateButtonsText(frame)
@@ -70,37 +67,41 @@ local function UpdateButtonsText(frame)
 	for _, slot in pairs(slots) do
 		local id = GetInventorySlotInfo(slot)
 		local text = _G[frame..slot].t
-		local item
+		local itemLink
 		local ulvl
 
 		if frame == "Inspect" then
-			item = GetInventoryItemLink("target", id)
+			itemLink = GetInventoryItemLink("target", id)
 			ulvl = UnitLevel("target")
 		else
-			item = GetInventoryItemLink("player", id)
+			itemLink = GetInventoryItemLink("player", id)
 			ulvl = UnitLevel("player")
 		end
 
 		if slot == "ShirtSlot" or slot == "TabardSlot" then
 			text:SetText("")
-		elseif item then
-			local oldilevel = text:GetText()
-			local _, _, quality, ilevel = GetItemInfo(item)
-			if ilevel then
-				if ilevel ~= oldilevel then
-					if quality == 7 and ilevel == 1 then
-						local id = tonumber(strmatch(item, "item:(%d+)"))
+		elseif itemLink then
+			local oldlevel = text:GetText()
+			local _, _, quality, level = GetItemInfo(itemLink)
+			if level then
+				if level ~= oldlevel then
+					if quality == 7 and level == 1 then
+						local id = tonumber(strmatch(itemLink, "item:(%d+)"))
 						text:SetText("|cFFFFFF00"..BOALevel(ulvl, id))
-					elseif ilevel == 1 then
+					elseif level == 1 then
 						text:SetText("")
 					else
-						local warped = select(15, strsplit(":", item))
-						local warforged = select(16, strsplit(":", item))
-						ilevel = timewarped[tonumber(warped)] or ilevel
-						ilevel = timewarped_warforged[tonumber(warforged)] or ilevel
-						local upgrade = item:match(":(%d+)\124h%[")
-						if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
-						text:SetText("|cFFFFFF00"..ilevel + upgrades[upgrade])
+						local tid = strmatch(itemLink, ".+:512:22.+:(%d+):100")
+						if timewarped[tid] then
+							level = timewarped[tid]
+						end
+
+						local uid = strmatch(itemLink, ".+:(%d+)")
+						if upgrades[uid] then
+							level = level + upgrades[uid]
+						end
+
+						text:SetText("|cFFFFFF00"..level)
 					end
 				end
 			else

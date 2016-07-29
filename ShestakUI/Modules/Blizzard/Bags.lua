@@ -177,12 +177,9 @@ local function BOALevel(level, id)
 end
 
 local timewarped = {
-	[615] = 660, -- Dungeon drops
-	[692] = 675, -- Timewarped badge vendors
-}
-
-local timewarped_warforged = {
-	[656] = 675, -- Dungeon drops
+	["615"] = 660, -- Dungeon drops
+	["692"] = 675, -- Timewarped badge vendors
+	["656"] = 675, -- Warforged Dungeon drops
 }
 
 function Stuffing:SlotUpdate(b)
@@ -209,16 +206,20 @@ function Stuffing:SlotUpdate(b)
 
 		if C.bag.ilvl == true and b.itemlevel and quality > 1 and (b.itemClassID == 2 or b.itemClassID == 4) then
 			if quality == 7 and b.itemlevel == 1 then
-				b.frame.text:SetText(BOALevel(T.level, tonumber(strmatch(clink, "item:(%d+)"))))
+				local id = tonumber(strmatch(clink, "item:(%d+)"))
+				b.frame.text:SetText(BOALevel(T.level, id))
 			elseif b.itemlevel > 1 then
-				local warped = select(15, strsplit(":", clink))
-				local warforged = select(16, strsplit(":", clink))
-				b.itemlevel = timewarped[tonumber(warped)] or b.itemlevel
-				b.itemlevel = timewarped_warforged[tonumber(warforged)] or b.itemlevel
-				--BETA local upgrade = clink:match(":(%d+)\124h%[")
-				local upgrade = 0
-				if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
-				b.frame.text:SetText(b.itemlevel + upgrades[upgrade])
+				local tid = strmatch(clink, ".+:512:22.+:(%d+):100")
+				if timewarped[tid] then
+					b.itemlevel = timewarped[tid]
+				end
+
+				local uid = strmatch(clink, ".+:(%d+)")
+				if upgrades[uid] then
+					b.itemlevel = b.itemlevel + upgrades[uid]
+				end
+
+				b.frame.text:SetText(b.itemlevel)
 			end
 		end
 
