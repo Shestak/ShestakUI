@@ -31,6 +31,7 @@ local function LoadSkin()
 	PlayerTalentFrameTalentsBg:Hide()
 	PlayerTalentFrameTalents:DisableDrawLayer("BORDER")
 
+	PlayerTalentFramePortrait:Kill()
 	T.SkinCloseButton(PlayerTalentFrameCloseButton)
 
 	for i = 1, 6 do
@@ -42,15 +43,6 @@ local function LoadSkin()
 	for i = 1, 5 do
 		select(i, PlayerTalentFrameSpecializationSpellScrollFrameScrollChild:GetRegions()):Hide()
 	end
-
-	--BETA PlayerTalentFrameTalentsClearInfoFrame:SetTemplate("Default")
-
-	-- PlayerTalentFrameTalentsClearInfoFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	-- PlayerTalentFrameTalentsClearInfoFrameIcon:SetPoint("TOPLEFT", 2, -2)
-	-- PlayerTalentFrameTalentsClearInfoFrameIcon:SetPoint("BOTTOMRIGHT", -2, 2)
-
-	-- PlayerTalentFrameTalentsClearInfoFrameCount:SetFont(C.media.normal_font, 11, "OUTLINE")
-	-- PlayerTalentFrameTalentsClearInfoFrameCount:SetPoint("BOTTOMRIGHT", 2, 0)
 
 	PlayerTalentFrameSpecializationSpellScrollFrameScrollChild.Seperator:SetColorTexture(1, 1, 1)
 	PlayerTalentFrameSpecializationSpellScrollFrameScrollChild.Seperator:SetAlpha(0.2)
