@@ -19,7 +19,6 @@ end
 
 function button:PLAYER_LOGIN()
 	local spells, disenchanter, rogue = {}
-	local ARMOR_TYPE = T.client == "ruRU" and "Доспехи" or ARMOR
 
 	if IsSpellKnown(51005) then
 		milling = true
@@ -46,7 +45,7 @@ function button:PLAYER_LOGIN()
 				spell, r, g, b = GetSpellInfo(51005), 0.5, 1, 0.5
 			elseif not spell and disenchanter then
 				local _, _, itemRarity, _, _, itemType = GetItemInfo(item)
-				if not (itemType == ARMOR_TYPE or itemType == ENCHSLOT_WEAPON) or not (itemRarity and (itemRarity > 1 and itemRarity < 5)) then return end
+				if not (itemType == ARMOR or itemType == ENCHSLOT_WEAPON) or not (itemRarity and (itemRarity > 1 and itemRarity < 5)) then return end
 				spell, r, g, b = GetSpellInfo(13262), 0.5, 0.5, 1
 			elseif not spell and rogue then
 				for index = 1, self:NumLines() do
