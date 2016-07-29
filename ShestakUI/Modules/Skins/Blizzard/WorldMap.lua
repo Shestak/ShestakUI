@@ -55,11 +55,6 @@ local function LoadSkin()
 	QuestMapDetailsScrollFrame.backdrop:SetPoint("LEFT", WorldMapFrame.backdrop, "RIGHT", 2, 0)
 	T.SkinScrollBar(QuestMapDetailsScrollFrameScrollBar)
 
-	--BETA QuestScrollFrame.ViewAll:SkinButton()
-	-- QuestScrollFrame.ViewAll:ClearAllPoints()
-	-- QuestScrollFrame.ViewAll:SetPoint("LEFT", WorldMapFrame.Header, "RIGHT", 2, 0)
-	-- QuestScrollFrame.ViewAll:SetSize(284, 23)
-
 	QuestMapFrame.DetailsFrame.BackButton:SkinButton()
 	QuestMapFrame.DetailsFrame.BackButton:ClearAllPoints()
 	QuestMapFrame.DetailsFrame.BackButton:SetPoint("LEFT", WorldMapFrame.Header, "RIGHT", 2, 0)
