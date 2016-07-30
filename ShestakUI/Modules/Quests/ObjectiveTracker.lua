@@ -173,6 +173,7 @@ hooksecurefunc(BONUS_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(self, 
 		border:SetBackdropColor(0, 0, 0, 0)
 		bar.newIconBg = border
 
+		bar.AnimIn.Play = T.dummy
 		BonusObjectiveTrackerProgressBar_PlayFlareAnim = T.dummy
 		progressBar.styled = true
 	end
