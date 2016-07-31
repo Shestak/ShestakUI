@@ -77,7 +77,6 @@
 	<Script file="Modules\Misc\OneClickBuyOut.lua"/>
 	<Script file="Modules\Misc\OneClickDisenchanting.lua"/>
 	<Script file="Modules\Misc\OneClickEnchantScroll.lua"/>
-	<Script file="Modules\Misc\ProfessionsDatabase.lua"/>
 	<Script file="Modules\Misc\ProfessionTabs.lua"/>
 	<Script file="Modules\Misc\PvPQueueTimer.lua"/>
 	<Script file="Modules\Misc\RaidUtility.lua"/>
