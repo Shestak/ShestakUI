@@ -89,6 +89,7 @@ L_GUI_SKINS_CLCP = "Activer la personnalisation pour CLCProt"
 L_GUI_SKINS_COMBUSTION_HELPER = "Activer la personnalisation pour CombustionHelper"
 L_GUI_SKINS_BW = "Activer la personnalisation pour BigWigs"
 L_GUI_SKINS_DBM = "Activer la personnalisation pour DBM"
+L_GUI_SKINS_DBM_MOVABLE = "Allow to move DBM bars" -- Need review
 L_GUI_SKINS_DXE = "Activer la personnalisation pour DXE"
 L_GUI_SKINS_OMEN = "Activer la personnalisation pour Omen"
 L_GUI_SKINS_RECOUNT = "Activer la personnalisation pour Recount"

@@ -119,6 +119,7 @@ C["skins"] = {
 	["combustion_helper"] = false,				-- CombustionHelper skin
 	["bigwigs"] = false,						-- BigWigs skin
 	["dbm"] = false,							-- DBM skin
+	["dbm_movable"] = false,					-- Allow to move DBM bars
 	["dxe"] = false,							-- DXE skin
 	["omen"] = false,							-- Omen skin
 	["recount"] = false,						-- Recount skin

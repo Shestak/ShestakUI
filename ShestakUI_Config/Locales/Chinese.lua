@@ -89,6 +89,7 @@ L_GUI_SKINS_CLCP = "CLCProt"
 L_GUI_SKINS_COMBUSTION_HELPER = "CombustionHelper"
 L_GUI_SKINS_BW = "BigWigs"
 L_GUI_SKINS_DBM = "DBM"
+L_GUI_SKINS_DBM_MOVABLE = "Allow to move DBM bars" -- Need review
 L_GUI_SKINS_DXE = "DXE"
 L_GUI_SKINS_OMEN = "Omen"
 L_GUI_SKINS_RECOUNT = "Recount"

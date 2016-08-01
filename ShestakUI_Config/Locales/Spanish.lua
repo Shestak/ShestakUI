@@ -89,6 +89,7 @@ L_GUI_SKINS_CLCP = "Activar estilo del CLCProt"
 L_GUI_SKINS_COMBUSTION_HELPER = "Activar estilo del CombustionHelper"
 L_GUI_SKINS_BW = "Activar estilo del BigWigs"
 L_GUI_SKINS_DBM = "Activar estilo del DBM"
+L_GUI_SKINS_DBM_MOVABLE = "Allow to move DBM bars" -- Need review
 L_GUI_SKINS_DXE = "Activar estilo del DXE"
 L_GUI_SKINS_OMEN = "Activar estilo del Omen"
 L_GUI_SKINS_RECOUNT = "Activar estilo del Recount"
