@@ -8,8 +8,9 @@ local _, ns = ...
 local oUF = ns.oUF
 
 local trinketSpells = {
-	[42292] = 120,
-	[59752] = 120
+	[208683] = 120,
+	[195710] = 180,
+	[42292] = 120
 }
 
 local GetTrinketIcon = function(unit)
