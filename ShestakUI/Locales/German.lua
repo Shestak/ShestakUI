@@ -47,7 +47,7 @@ L_TOOLTIP_ACH_INCOMPLETE = "Dein Status: Noch nicht Ferig"
 L_TOOLTIP_SPELL_ID = "Zauber ID:"
 L_TOOLTIP_ITEM_ID = "Gegenstands ID:"
 L_TOOLTIP_WHO_TARGET = "Anvisiert von"
-L_TOOLTIP_ITEM_COUNT = "Gegenstandsstufe:"
+L_TOOLTIP_ITEM_COUNT = "Gegenstandsanzahl:" -- Need review
 L_TOOLTIP_INSPECT_OPEN = "Betrachtungsfenster offen"
 
 -- Misc
