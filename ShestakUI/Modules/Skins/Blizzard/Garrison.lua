@@ -81,6 +81,7 @@ local function LoadSkin()
 
 	-- Mission UI
 	GarrisonMissionFrame:StripTextures()
+	GarrisonMissionFrame.GarrCorners:StripTextures()
 	GarrisonMissionFrame.TitleText:Show()
 	GarrisonMissionFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(GarrisonMissionFrame.CloseButton)
@@ -244,6 +245,7 @@ local function LoadSkin()
 
 	-- ShipYard
 	GarrisonShipyardFrame:StripTextures(true)
+	GarrisonShipyardFrame.BorderFrame.GarrCorners:StripTextures()
 	GarrisonShipyardFrame.BorderFrame:StripTextures(true)
 	GarrisonShipyardFrame:CreateBackdrop("Transparent")
 	GarrisonShipyardFrame.BorderFrame.TitleText:SetPoint("TOP", -6, -1)
