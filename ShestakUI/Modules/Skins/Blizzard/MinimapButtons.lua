@@ -32,7 +32,7 @@ local function SkinButton(f)
 		if region:IsVisible() and region:GetObjectType() == "Texture" then
 			local tex = region:GetTexture()
 
-			if tex and (tex:find("Border") or tex:find("Background") or tex:find("AlphaMask")) then
+			if tex and type(tex) ~= "number" and (tex:find("Border") or tex:find("Background") or tex:find("AlphaMask")) then
 				region:SetTexture(nil)
 			else
 				region:ClearAllPoints()
