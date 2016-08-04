@@ -3050,8 +3050,10 @@ C["filger_spells"] = {
 			--BETA {spellID = 113860, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Soul: Instability
 			--BETA {spellID = 113858, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Soulburn
-			--BETA {spellID = 74434, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Soul Harvest
+			{spellID = 196098, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Mana Tap
+			{spellID = 196104, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Swap
 			{spellID = 86211, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kiljaeden's Cunning
@@ -3083,7 +3085,7 @@ C["filger_spells"] = {
 			--BETA {spellID = 122355, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Backdraft
 			{spellID = 117828, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Demonic Synergy
+			-- Grimore of Synergy
 			{spellID = 171982, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
@@ -3168,6 +3170,8 @@ C["filger_spells"] = {
 			BarWidth = 186,
 			Position = {"LEFT", T_DE_BUFF_BAR_Anchor},
 
+			-- Havoc
+			{spellID = 80240, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Doom
 			{spellID = 603, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Agony
@@ -3180,8 +3184,18 @@ C["filger_spells"] = {
 			{spellID = 348, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Unstable Affliction
 			{spellID = 30108, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
+			-- Siphon Life
+			{spellID = 63106, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Soul Effigy
+			{spellID = 205178, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Phantom Singularity
+			{spellID = 205179, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Haunt
 			{spellID = 48181, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Shadowflame
+			{spellID = 205181, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Eradication
+			{spellID = 196414, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -3219,20 +3233,21 @@ C["filger_spells"] = {
 			{spellID = 5484, filter = "CD"},
 			-- Mortal Coil
 			{spellID = 6789, filter = "CD"},
-			-- Sacrifice (Voidwalker)
-			{spellID = 7812, filter = "CD"},
-			-- Hand of Gul'dan
-			{spellID = 105174, filter = "CD"},
-			-- Demonic Circle: Teleport
-			{spellID = 48020, filter = "CD"},
+			-- Demonic Circle
+			{spellID = 48018, filter = "CD"},
 			-- Felstorm
 			{spellID = 89751, filter = "CD"},
 			-- Cataclysm
 			{spellID = 152108, filter = "CD"},
-			-- Soulburn
-			--BETA {spellID = 74434, filter = "CD"},
+			-- Soul Harvest
+			{spellID = 196098, filter = "CD"},
 			-- Grimoire of Service
 			{spellID = 108501, filter = "CD"},
+			-- Shadowflame
+			{spellID = 205181, filter = "CD"},
+			-- Summon Darkglare
+			{spellID = 205180, filter = "CD"},
+
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
