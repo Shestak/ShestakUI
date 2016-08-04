@@ -340,6 +340,8 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[30108] = 3		-- Unstable Affliction
 		T.aoespam[348] = 3			-- Immolate
 		T.aoespam[980] = 3			-- Agony
+		T.aoespam[63106] = 3		-- Siphon Life
+		T.aoespam[205246] = 3		-- Phantom Singularity
 		T.aoespam[80240] = 3		-- Havoc
 		T.aoespam[42223] = 3		-- Rain of Fire
 		T.aoespam[689] = 3			-- Drain Life
