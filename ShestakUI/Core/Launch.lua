@@ -6,7 +6,7 @@
 local function InstallUI()
 	-- Don't need to set CVar multiple time
 	SetCVar("screenshotQuality", 8)
-	SetCVar("cameraDistanceMaxFactor", 2)
+	SetCVar("cameraDistanceMaxFactor", 2.6)
 	SetCVar("showTutorials", 0)
 	SetCVar("gameTip", "0")
 	SetCVar("UberTooltips", 1)
