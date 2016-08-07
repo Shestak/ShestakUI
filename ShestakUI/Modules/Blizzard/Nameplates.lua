@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.nameplate.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -1412,7 +1412,9 @@ local function UpdateHealth(unitFrame)
 	local perc_text = string.format("%d%%", math.floor(perc * 100))
 
 	unitFrame.healthBar:SetValue(perc)
+	if C.nameplate.health_value == true then
 	unitFrame.healthBar.value:SetText(perc_text)
+	end
 
 	if UnitIsPlayer(unit) then
 		if perc <= 0.5 and perc >= 0.2 then
@@ -1580,9 +1582,13 @@ local function UpdateAll(unitFrame)
 
 		if UnitIsUnit("player", unitFrame.displayedUnit) then
 			unitFrame.castBar:UnregisterAllEvents()
-			unitFrame.healthBar.value:Hide()
+			if C.nameplate.health_value == true then
+				unitFrame.healthBar.value:Hide()
+			end
 		else
-			unitFrame.healthBar.value:Show()
+			if C.nameplate.health_value == true then
+				unitFrame.healthBar.value:Show()
+			end
 		end
 	end
 end
