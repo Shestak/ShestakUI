@@ -2615,6 +2615,8 @@ C["filger_spells"] = {
 			{spellID = 3409, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Wound Poison
 			{spellID = 8680, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Ghostly Strike
+			{spellID = 196937, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -2672,6 +2674,26 @@ C["filger_spells"] = {
 			{spellID = 1856, filter = "CD"},
 			-- Adrenaline Rush
 			{spellID = 13750, filter = "CD"},
+			-- Between the Eyes
+			{spellID = 199804, filter = "CD"},
+			-- Riposte
+			{spellID = 199754, filter = "CD"},
+			-- Cloak of Shadows
+			{spellID = 31224, filter = "CD"},
+			-- Grappling Hook
+			{spellID = 195457, filter = "CD"},
+			-- Crimson Vial
+			{spellID = 185311, filter = "CD"},
+			-- Cannonball Barrage
+			{spellID = 185767, filter = "CD"},
+			-- Garrote
+			{spellID = 703, filter = "CD"},
+			-- Exsanguinate
+			{spellID = 200806, filter = "CD"},
+			-- Shadowstep
+			{spellID = 36554, filter = "CD"},
+			-- Evasion
+			{spellID = 5277, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
