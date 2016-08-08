@@ -1516,7 +1516,7 @@ if stats.enabled then
 			local _, eff = UnitArmor(P)
 			string, percent = eff
 		elseif sub == "versatility" then
-			string = GetCombatRating(29)
+			string = GetCombatRatingBonus(CR_VERSATILITY_DAMAGE_DONE) + GetVersatilityBonus(CR_VERSATILITY_DAMAGE_DONE)
 		elseif sub == "leech" then
 			string = GetCombatRating(17)
 		else
