@@ -243,7 +243,9 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 		hooksecurefunc(DBM.BossHealth, "UpdateSettings", SkinBoss)
 
 		hooksecurefunc(DBM.RangeCheck, "Show", function()
-			DBMRangeCheck:SetTemplate("Transparent")
+			if DBMRangeCheck then
+				DBMRangeCheck:SetTemplate("Transparent")
+			end
 			if DBMRangeCheckRadar then
 				DBMRangeCheckRadar:SetTemplate("Transparent")
 			end
