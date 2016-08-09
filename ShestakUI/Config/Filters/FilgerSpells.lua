@@ -559,7 +559,7 @@ C["filger_spells"] = {
 			{spellID = 187827, filter = "CD"},
 			-- Darkness
 			{spellID = 196718, filter = "CD"},
-			
+
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
 			{spellID = 202719, filter = "CD"},

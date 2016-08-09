@@ -1413,7 +1413,7 @@ local function UpdateHealth(unitFrame)
 
 	unitFrame.healthBar:SetValue(perc)
 	if C.nameplate.health_value == true then
-	unitFrame.healthBar.value:SetText(perc_text)
+		unitFrame.healthBar.value:SetText(perc_text)
 	end
 
 	if UnitIsPlayer(unit) then
