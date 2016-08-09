@@ -1663,6 +1663,9 @@ local function HideBlizzard()
 		NamePlatePlayerResourceFrame:Hide()
 	end)
 
+	SetCVar("namePlateMinScale", 1)
+	SetCVar("namePlateMaxScale", 1)
+
 	local checkBox = InterfaceOptionsNamesPanelUnitNameplatesMakeLarger
 	function checkBox.setFunc(value)
 		if value == "1" then
