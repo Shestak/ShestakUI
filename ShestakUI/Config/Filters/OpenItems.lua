@@ -524,4 +524,6 @@ T.OpenItems = {
 	[123857] = true,	-- Runic Pouch
 	[123858] = true,	-- Follower Retraining Scroll Case
 	[123975] = true,	-- Greater Bounty Spoils
+	[139048] = true,	-- Small Legion Chest
+	[139049] = true,	-- Large Legion Chest
 }
