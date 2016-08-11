@@ -12,6 +12,7 @@ local GetTime = GetTime
 
 local spells = {
 	["DEATHKNIGHT"] = 48266,
+	["DEMONHUNTER"] = 204157,
 	["DRUID"] = 5176,
 	["HUNTER"] = 3044,
 	["MAGE"] = 44614,
