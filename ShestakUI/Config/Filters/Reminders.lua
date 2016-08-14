@@ -158,6 +158,7 @@ if C.reminder.solo_buffs_enable == true then
 			[2] = {	-- Non-Lethal Poisons group
 				["spells"] = {
 					3408,	-- Crippling Poison
+					108211,	-- Leeching Poison
 				},
 				["spec"] = 1,		-- Only Assassination have poisen now
 				["combat"] = true,
