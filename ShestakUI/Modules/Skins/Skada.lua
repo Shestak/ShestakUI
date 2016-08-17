@@ -70,6 +70,7 @@ frame:SetScript("OnEvent", function(self, event)
 		skada:SetTexture(C.media.texture)
 		skada:SetSpacing(7)
 		skada:SetBackdrop(nil)
+		skada.borderFrame:SetBackdrop(nil)
 	end
 
 	hooksecurefunc(Skada, "UpdateDisplay", function(self)
