@@ -1476,8 +1476,10 @@ local function UpdateRaidTarget(unitFrame)
 	local icon = unitFrame.RaidTargetFrame.RaidTargetIcon
 	local index = GetRaidTargetIndex(unitFrame.displayedUnit)
 	if index then
-		SetRaidTargetIconTexture(icon, index)
-		icon:Show()
+		if not UnitIsUnit(unitFrame.displayedUnit, "player") then
+			SetRaidTargetIconTexture(icon, index)
+			icon:Show()
+		end
 	else
 		icon:Hide()
 	end
