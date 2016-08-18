@@ -128,7 +128,7 @@
 	<Script file="Modules\Automation\SolveArtifact.lua"/>
 	<Script file="Modules\Automation\TabBinder.lua"/>
 
-	<!-- <Script file="Modules\Blizzard\AlertFrames.lua"/> -->
+	<Script file="Modules\Blizzard\AlertFrames.lua"/>
 	<Script file="Modules\Blizzard\AltPowerBar.lua"/>
 	<Script file="Modules\Blizzard\Bags.lua"/>
 	<Script file="Modules\Blizzard\CaptureBar.lua"/>
