@@ -122,9 +122,9 @@ SLASH_GROUPDISBAND2 = "/кв"
 ----------------------------------------------------------------------------------------
 SlashCmdList.PARTYTORAID = function()
 	if GetNumGroupMembers() > 0 then
-		if UnitInRaid("player") and IsGroupLeader() then
+		if UnitInRaid("player") and (UnitIsGroupLeader("player")) then
 			ConvertToParty()
-		elseif UnitInParty("player") and IsGroupLeader() then
+		elseif UnitInParty("player") and (UnitIsGroupLeader("player")) then
 			ConvertToRaid()
 		end
 	else
