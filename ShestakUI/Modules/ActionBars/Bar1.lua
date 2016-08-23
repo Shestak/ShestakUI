@@ -23,7 +23,7 @@ end
 local Page = {
 	["DRUID"] = "[bonusbar:1,nostealth] 7; [bonusbar:1,stealth] 8; [bonusbar:2] 8; [bonusbar:3] 9; [bonusbar:4] 10;",
 	["ROGUE"] = "[bonusbar:1] 7;",
-	["DEFAULT"] = "[vehicleui, mod:alt, mod:ctrl] 13; [vehicleui][possessbar] 12; [shapeshift] 13; [overridebar] 14; [bar:2] 2; [bar:3] 3; [bar:4] 4; [bar:5] 5; [bar:6] 6;",
+	["DEFAULT"] = "[vehicleui][possessbar] 12; [shapeshift] 13; [overridebar] 14; [bar:2] 2; [bar:3] 3; [bar:4] 4; [bar:5] 5; [bar:6] 6;",
 }
 
 local function GetBar()
@@ -38,14 +38,11 @@ local function GetBar()
 end
 
 bar:RegisterEvent("PLAYER_LOGIN")
-bar:RegisterEvent("KNOWN_CURRENCY_TYPES_UPDATE")
-bar:RegisterEvent("CURRENCY_DISPLAY_UPDATE")
-bar:RegisterEvent("BAG_UPDATE")
-bar:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 bar:RegisterEvent("UPDATE_VEHICLE_ACTIONBAR")
 bar:RegisterEvent("UPDATE_OVERRIDE_ACTIONBAR")
+bar:RegisterEvent("CURRENCY_DISPLAY_UPDATE")
 bar:SetScript("OnEvent", function(self, event, ...)
-	if event == "PLAYER_LOGIN" or event == "ACTIVE_TALENT_GROUP_CHANGED" then
+	if event == "PLAYER_LOGIN" then
 		for i = 1, NUM_ACTIONBAR_BUTTONS do
 			local button = _G["ActionButton"..i]
 			self:SetFrameRef("ActionButton"..i, button)
