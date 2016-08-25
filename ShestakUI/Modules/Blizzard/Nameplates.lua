@@ -1337,6 +1337,20 @@ local function UpdateName(unitFrame)
 				end
 			end
 		end
+
+		if UnitGUID("target") == nil then
+			unitFrame:SetAlpha(1)
+		else
+			if C_NamePlate.GetNamePlateForUnit("target") ~= nil then
+				unitFrame:SetAlpha(0.5)
+				C_NamePlate.GetNamePlateForUnit("target").UnitFrame:SetAlpha(1)
+				if C_NamePlate.GetNamePlateForUnit("player") ~= nil then
+					C_NamePlate.GetNamePlateForUnit("player").UnitFrame:SetAlpha(1)
+				end
+			else
+				unitFrame:SetAlpha(1)
+			end
+		end
 	end
 end
 
@@ -1352,7 +1366,7 @@ local function UpdateHealth(unitFrame)
 		if UnitIsUnit("player", unitFrame.displayedUnit) then
 			unitFrame.healthBar.value:SetText("")
 		else
-			unitFrame.healthBar.value:SetText(perc_text)
+			unitFrame.healthBar.value:SetText(T.ShortValue(minHealth).." - "..perc_text)
 		end
 	end
 
@@ -1591,6 +1605,9 @@ local function HideBlizzard()
 	SetCVar("namePlateMinScale", 1)
 	SetCVar("namePlateMaxScale", 1)
 
+	SetCVar("nameplateMaxAlpha", 1)
+	SetCVar("nameplateMinAlpha", 1)
+
 	local checkBox = InterfaceOptionsNamesPanelUnitNameplatesMakeLarger
 	function checkBox.setFunc(value)
 		if value == "1" then
@@ -1728,6 +1745,7 @@ local function OnNamePlateCreated(namePlate)
 	namePlate.UnitFrame.castBar:SetScript("OnEvent", CastingBarFrame_OnEvent)
 	namePlate.UnitFrame.castBar:SetScript("OnUpdate", CastingBarFrame_OnUpdate)
 	namePlate.UnitFrame.castBar:SetScript("OnShow", CastingBarFrame_OnShow)
+	namePlate.UnitFrame.castBar:SetScript("OnHide", function() namePlate.UnitFrame.castBar:Hide() end)
 	namePlate.UnitFrame.castBar:HookScript("OnValueChanged", function() NamePlates_UpdateCastBar(namePlate.UnitFrame.castBar) end)
 
 	namePlate.UnitFrame.RaidTargetFrame = CreateFrame("Frame", nil, namePlate.UnitFrame)
