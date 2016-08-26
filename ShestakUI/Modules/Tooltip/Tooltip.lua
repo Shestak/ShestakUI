@@ -57,9 +57,10 @@ PVP_ENABLED = ""
 -- Statusbar
 GameTooltipStatusBar:SetStatusBarTexture(C.media.texture)
 GameTooltipStatusBar:SetHeight(4)
+GameTooltipStatusBar:CreateBackdrop("Default")
 GameTooltipStatusBar:ClearAllPoints()
-GameTooltipStatusBar:SetPoint("TOPLEFT", GameTooltip, "BOTTOMLEFT", 2, 6)
-GameTooltipStatusBar:SetPoint("TOPRIGHT", GameTooltip, "BOTTOMRIGHT", -2, 6)
+GameTooltipStatusBar:SetPoint("BOTTOMLEFT", GameTooltip, "TOPLEFT", 2, 5)
+GameTooltipStatusBar:SetPoint("BOTTOMRIGHT", GameTooltip, "TOPRIGHT", -2, 5)
 
 -- Raid icon
 local ricon = GameTooltip:CreateTexture("GameTooltipRaidIcon", "OVERLAY")
