@@ -194,7 +194,7 @@ if C.tooltip.health_value == true then
 			min, max = UnitHealth(unit), UnitHealthMax(unit)
 			if not self.text then
 				self.text = self:CreateFontString(nil, "OVERLAY", "Tooltip_Med")
-				self.text:SetPoint("CENTER", GameTooltipStatusBar, 0, 1.5)
+				self.text:SetPoint("CENTER", GameTooltipStatusBar, 0, 0)
 			end
 			self.text:Show()
 			local hp = T.ShortValue(min).." / "..T.ShortValue(max)
