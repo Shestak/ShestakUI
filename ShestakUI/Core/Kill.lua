@@ -76,14 +76,4 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		SetSortBagsRightToLeft(true)
 		SetInsertItemsLeftToRight(false)
 	end
-
-	if C.combattext.enable then
-		if C.combattext.blizz_head_numbers ~= true then
-			--BETA SetCVar("CombatDamage", 0)
-			-- SetCVar("PetMeleeDamage", 0)
-			-- SetCVar("CombatHealing", 0)
-			-- SetCVar("CombatLogPeriodicSpells", 0)
-			-- SetCVar("CombatHealingAbsorbTarget", 0)
-		end
-	end
 end)

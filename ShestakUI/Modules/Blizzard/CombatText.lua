@@ -353,6 +353,11 @@ if C.combattext.damage_style then
 	DAMAGE_TEXT_FONT = C.font.combat_text_font
 end
 
+-- Hide blizzard combat text
+if C.combattext.blizz_head_numbers ~= true then
+	DAMAGE_TEXT_FONT = C.media.blank_font
+end
+
 -- Frames
 ct.locked = true
 ct.frames = {}
