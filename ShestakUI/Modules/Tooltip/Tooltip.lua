@@ -57,9 +57,10 @@ PVP_ENABLED = ""
 -- Statusbar
 GameTooltipStatusBar:SetStatusBarTexture(C.media.texture)
 GameTooltipStatusBar:SetHeight(4)
+GameTooltipStatusBar:CreateBackdrop("Default")
 GameTooltipStatusBar:ClearAllPoints()
-GameTooltipStatusBar:SetPoint("TOPLEFT", GameTooltip, "BOTTOMLEFT", 2, 6)
-GameTooltipStatusBar:SetPoint("TOPRIGHT", GameTooltip, "BOTTOMRIGHT", -2, 6)
+GameTooltipStatusBar:SetPoint("BOTTOMLEFT", GameTooltip, "TOPLEFT", 2, 5)
+GameTooltipStatusBar:SetPoint("BOTTOMRIGHT", GameTooltip, "TOPRIGHT", -2, 5)
 
 -- Raid icon
 local ricon = GameTooltip:CreateTexture("GameTooltipRaidIcon", "OVERLAY")
@@ -193,7 +194,7 @@ if C.tooltip.health_value == true then
 			min, max = UnitHealth(unit), UnitHealthMax(unit)
 			if not self.text then
 				self.text = self:CreateFontString(nil, "OVERLAY", "Tooltip_Med")
-				self.text:SetPoint("CENTER", GameTooltipStatusBar, 0, 1.5)
+				self.text:SetPoint("CENTER", GameTooltipStatusBar, 0, 0)
 			end
 			self.text:Show()
 			local hp = T.ShortValue(min).." / "..T.ShortValue(max)
