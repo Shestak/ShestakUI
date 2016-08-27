@@ -1418,8 +1418,6 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
-			-- Remove Curse
-			--BETA {spellID = 475, filter = "CD"},
 			-- Frostjaw
 			--BETA {spellID = 102051, filter = "CD"},
 			-- Counterspell
