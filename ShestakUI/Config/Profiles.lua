@@ -149,7 +149,7 @@ end
 --	Sw2rT1 Config
 ----------------------------------------------------------------------------------------
 if (T.name == "Чаккичак" or T.name == "Чаккноррис" or T.name == "Чакерс"
-or T.name == "Чакернаут" or T.name == "Чаккис" or T.name == "Эзэрвуд") and T.realm == "Подземье" then
+or T.name == "Чакернаут" or T.name == "Чаккис" or T.name == "Эзэрвуд" or T.name == "Какес") and T.realm == "Подземье" then
 	C["general"].welcome_message = false
 	C["misc"].shift_marking = false
 	C["misc"].raid_tools = false
