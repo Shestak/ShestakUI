@@ -28,6 +28,8 @@ local function LoadSkin()
 	QuestFrameCompleteQuestButton:SkinButton(true)
 	QuestFrameDetailPanel.IgnoreButton:SkinButton(true)
 	QuestFrameDetailPanel.UnignoreButton:SkinButton(true)
+	QuestFrameProgressPanel.IgnoreButton:SkinButton(true)
+	QuestFrameProgressPanel.UnignoreButton:SkinButton(true)
 
 	T.SkinCloseButton(QuestFrameCloseButton, QuestFrame.backdrop)
 	T.SkinScrollBar(QuestDetailScrollFrameScrollBar)
