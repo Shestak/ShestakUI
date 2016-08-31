@@ -1387,6 +1387,10 @@ C["filger_spells"] = {
 			--BETA {spellID = 111340, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Cone of Cold
 			{spellID = 120, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Flurry
+			{spellID = 228354, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Ice Nova
+			{spellID = 157997, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Slow
 			{spellID = 31589, unitID = "target", caster = "player", filter = "DEBUFF"},
 
@@ -3938,6 +3942,8 @@ C["filger_spells"] = {
 			{spellID = 122, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ice Ward
 			-- BETA {spellID = 111340, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Ice Nova
+			{spellID = 157997, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Freeze (Water Elemental)
 			{spellID = 33395, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Disable
@@ -3980,6 +3986,8 @@ C["filger_spells"] = {
 			{spellID = 157981, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Cone of Cold
 			{spellID = 120, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Flurry
+			{spellID = 228354, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Slow
 			{spellID = 31589, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frostbolt
