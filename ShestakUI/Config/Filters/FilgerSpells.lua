@@ -1299,6 +1299,8 @@ C["filger_spells"] = {
 			{spellID = 79683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pyroblast!
 			{spellID = 48108, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Chain Reaction (Ebonchill)
+			{spellID = 195418, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- 1.0: Darkmoon Cards
