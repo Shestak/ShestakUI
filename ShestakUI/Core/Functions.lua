@@ -468,8 +468,11 @@ end
 function T.HandleIcon(icon, parent)
 	parent = parent or icon:GetParent()
 
-	icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	parent:CreateBackdrop("Default")
+	parent.backdrop:SetPoint("TOPLEFT", icon, -2, 2)
+	parent.backdrop:SetPoint("BOTTOMRIGHT", icon, 2, -2)
+
+	icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	icon:SetParent(parent.backdrop)
 end
 
