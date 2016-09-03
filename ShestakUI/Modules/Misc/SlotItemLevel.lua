@@ -62,8 +62,8 @@ local tooltipLines = { --These are the lines we wish to scan
 local tooltip = CreateFrame("GameTooltip", "ShestakUI_ItemScanningTooltip", UIParent, "GameTooltipTemplate")
 tooltip:SetOwner(UIParent, "ANCHOR_NONE")
 
---Scan tooltip for item level information and cache the value
-local function GetItemLevel(itemLink)
+--Scan tooltip for item level information and cache the value (cache except artifact)
+local function GetItemLevel(itemLink, quality)
 	if not itemLink or not GetItemInfo(itemLink) then
 		return
 	end
@@ -79,8 +79,10 @@ local function GetItemLevel(itemLink)
 			if text then
 				itemLevel = tonumber(string.match(text, itemLevelPattern))
 
-				if itemLevel then
+				if itemLevel and quality ~= 6 then
 					itemLevelCache[itemLink] = itemLevel
+					return itemLevel
+				elseif itemLevel then
 					return itemLevel
 				end
 			end
@@ -140,7 +142,7 @@ local function UpdateButtonsText(frame)
 							level = level + upgrades[uid]
 						end
 
-						level = GetItemLevel(itemLink)
+						level = GetItemLevel(itemLink, quality)
 
 						text:SetText("|cFFFFFF00"..level)
 					end
