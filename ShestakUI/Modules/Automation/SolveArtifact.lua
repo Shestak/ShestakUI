@@ -14,21 +14,24 @@ StaticPopupDialogs.ARCHAEOLOGY_SOLVE = {
 }
 
 local fragment = {
-	["384"] = 1,	-- Dwarf
-	["385"] = 8,	-- Troll
-	["393"] = 3,	-- Fossil
-	["394"] = 4,	-- Night Elf
-	["397"] = 6,	-- Orc
-	["398"] = 2,	-- Draenei
-	["399"] = 9,	-- Vrykul
-	["400"] = 5,	-- Nerubian
-	["401"] = 7,	-- Tol'vir
-	["676"] = 11,	-- Pandaren
-	["677"] = 12,	-- Mogu
-	["754"] = 10,	-- Mantid
-	["821"] = 14,   -- Draenor Clans
-	["828"] = 15,   -- Ogre
-	["829"] = 13,   -- Arakkoa
+	["1174"] = 1,   -- Demonic
+	["1173"] = 2,   -- Highmountain
+	["1172"] = 3,   -- Highborne
+	["828"] = 4,   -- Ogre
+	["821"] = 5,   -- Draenor Clans
+	["829"] = 6,   -- Arakkoa
+	["677"] = 7,	-- Mogu
+	["676"] = 8,	-- Pandaren
+	["754"] = 9,	-- Mantid
+	["399"] = 10,	-- Vrykul
+	["385"] = 11,	-- Troll
+	["401"] = 12,	-- Tol'vir
+	["397"] = 13,	-- Orc
+	["400"] = 14,	-- Nerubian
+	["394"] = 15,	-- Night Elf
+	["393"] = 16,	-- Fossil
+	["398"] = 17,	-- Draenei
+	["384"] = 18,	-- Dwarf
 }
 
 local _CURRENCY = string.gsub(string.gsub(CURRENCY_GAINED_MULTIPLE, "%%s", "(.+)"), "%%d", "(.+)")
