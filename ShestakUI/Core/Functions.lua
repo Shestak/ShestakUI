@@ -473,7 +473,7 @@ function T.HandleIcon(icon, parent)
 	parent.backdrop:SetPoint("BOTTOMRIGHT", icon, 2, -2)
 
 	icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	icon:SetParent(parent.backdrop)
+	icon:SetParent(parent)
 end
 
 function T.SkinSlider(f)
