@@ -17,13 +17,13 @@ local upgrades = {
 	["466"] = 4, ["467"] = 8, ["469"] = 4, ["470"] = 8, ["471"] = 12, ["472"] = 16,
 	["477"] = 4, ["478"] = 8, ["480"] = 8, ["492"] = 4, ["493"] = 8, ["495"] = 4,
 	["496"] = 8, ["497"] = 12, ["498"] = 16, ["504"] = 12, ["505"] = 16, ["506"] = 20,
-	["507"] = 24, ["530"] = 5, ["531"] = 10
+	["507"] = 24, ["530"] = 5, ["531"] = 10, ["535"] = 15, ["536"] = 30, ["537"] = 45
 }
 
 local function BOALevel(level, id)
 	if level > 97 then
 		if id == 133585 or id == 133595 or id == 133596 or id == 133597 or id == 133598 then
-			level = 715
+			level = 815 - (110 - level) * 10
 		else
 			level = 605 - (100 - level) * 5
 		end
@@ -52,7 +52,6 @@ local timewarped = {
 	["656"] = 675, -- Warforged Dungeon drops
 }
 
-local itemLevelCache = {}
 local itemLevelPattern = gsub(ITEM_LEVEL, "%%d", "(%%d+)")
 local tooltipLines = { --These are the lines we wish to scan
 	"ShestakUI_ItemScanningTooltipTextLeft2",
@@ -68,26 +67,17 @@ local function GetItemLevel(itemLink, quality)
 		return
 	end
 
-	if not itemLevelCache[itemLink] then
-		tooltip:ClearLines()
-		tooltip:SetHyperlink(itemLink)
+	tooltip:ClearLines()
+	tooltip:SetHyperlink(itemLink)
 
-		local text, itemLevel
-		for index = 1, #tooltipLines do
-			text = _G[tooltipLines[index]]:GetText()
+	local text, itemLevel
+	for index = 1, #tooltipLines do
+		text = _G[tooltipLines[index]]:GetText()
 
-			if text then
-				itemLevel = tonumber(string.match(text, itemLevelPattern))
-
-				if itemLevel and quality ~= 6 then
-					itemLevelCache[itemLink] = itemLevel
-					return itemLevel
-				elseif itemLevel then
-					return itemLevel
-				end
-			end
+		if text then
+			itemLevel = tonumber(string.match(text, itemLevelPattern))
+			return itemLevel
 		end
-		itemLevelCache[itemLink] = 0 --Cache items that don't have an item level so we don't loop over them again and again
 	end
 
 	return itemLevelCache[itemLink]
