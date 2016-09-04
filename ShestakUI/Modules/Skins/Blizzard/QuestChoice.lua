@@ -4,7 +4,6 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Quest Choice skin
 ----------------------------------------------------------------------------------------
-
 local function LoadSkin()
 	QuestChoiceFrame:CreateBackdrop("Transparent")
 	T.SkinCloseButton(QuestChoiceFrame.CloseButton)
