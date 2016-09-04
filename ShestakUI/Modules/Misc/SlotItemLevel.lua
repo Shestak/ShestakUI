@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.misc.item_level ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -52,6 +52,37 @@ local timewarped = {
 	["656"] = 675, -- Warforged Dungeon drops
 }
 
+local itemLevelPattern = gsub(ITEM_LEVEL, "%%d", "(%%d+)")
+local tooltipLines = { --These are the lines we wish to scan
+	"ShestakUI_ItemScanningTooltipTextLeft2",
+	"ShestakUI_ItemScanningTooltipTextLeft3",
+	"ShestakUI_ItemScanningTooltipTextLeft4",
+}
+local tooltip = CreateFrame("GameTooltip", "ShestakUI_ItemScanningTooltip", UIParent, "GameTooltipTemplate")
+tooltip:SetOwner(UIParent, "ANCHOR_NONE")
+
+--Scan tooltip for item level information and cache the value (cache except artifact)
+local function GetItemLevel(itemLink, quality)
+	if not itemLink or not GetItemInfo(itemLink) then
+		return
+	end
+
+	tooltip:ClearLines()
+	tooltip:SetHyperlink(itemLink)
+
+	local text, itemLevel
+	for index = 1, #tooltipLines do
+		text = _G[tooltipLines[index]]:GetText()
+
+		if text then
+			itemLevel = tonumber(string.match(text, itemLevelPattern))
+			return itemLevel
+		end
+	end
+
+	return itemLevelCache[itemLink]
+end
+
 local function CreateButtonsText(frame)
 	for _, slot in pairs(slots) do
 		local button = _G[frame..slot]
@@ -100,6 +131,8 @@ local function UpdateButtonsText(frame)
 						if upgrades[uid] then
 							level = level + upgrades[uid]
 						end
+
+						level = GetItemLevel(itemLink, quality)
 
 						text:SetText("|cFFFFFF00"..level)
 					end
