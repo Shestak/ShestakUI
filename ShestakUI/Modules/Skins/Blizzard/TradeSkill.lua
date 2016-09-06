@@ -57,7 +57,7 @@ local function LoadSkin()
 	T.SkinCloseButton(TradeSkillFrameCloseButton)
 
 	-- T.SkinScrollBar(TradeSkillFrame.RecipeList.scrollBar)
-	-- T.SkinScrollBar(TradeSkillFrame.DetailsFrame.ScrollBar)
+	T.SkinScrollBar(TradeSkillFrame.DetailsFrame.ScrollBar)
 
 	hooksecurefunc(TradeSkillFrame.DetailsFrame, "RefreshDisplay", function()
 		local ResultIcon = TradeSkillFrame.DetailsFrame.Contents.ResultIcon
