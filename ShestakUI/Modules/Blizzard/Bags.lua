@@ -254,6 +254,42 @@ function Stuffing:SlotUpdate(b)
 					b.itemlevel = b.itemlevel + upgrades[uid]
 				end
 
+				local numBonusIDs = tonumber(strmatch(clink, ".+:%d+:512:%d*:(%d+):"))
+				if numBonusIDs then
+					if numBonusIDs == 1 then
+						local bid1, levelLootedAt = strmatch(clink, ".+:%d+:512:%d*:%d+:(%d+):(%d+):")
+						if legionUpgrades[bid1] == nil then
+							b.itemlevel = GetItemLevel(clink) or b.itemlevel
+							--print("|cffff0000WARNING: Unkhown item bonus ID: " .. bid1 .. ". Item: " .. clink)
+							--print(clink)
+							--local printable = gsub(clink, "\124", "\124\124");
+							--ChatFrame1:AddMessage("Itemlink: \"" .. printable .. "\"");
+						else
+							b.itemlevel = legionUpgrades[bid1] + (levelLootedAt - 100) * 10
+						end
+					elseif numBonusIDs == 2 then
+						local bid1, bid2, levelLootedAt = strmatch(clink, ".+:%d+:512:%d*:%d+:(%d+):(%d+):(%d+):")
+						if legionUpgrades[bid1] == nil then
+							b.itemlevel = GetItemLevel(clink) or b.itemlevel
+							--print("|cffff0000WARNING: Unkhown item bonus ID: " .. bid1 .. ". Item: " .. clink)
+						elseif legionUpgrades[bid2] == nil then
+							b.itemlevel = GetItemLevel(clink) or b.itemlevel
+							--print("|cffff0000WARNING: Unkhown item bonus ID: " .. bid2 .. ". Item: " .. clink)
+						else
+							if legionUpgrades[bid1] > legionUpgrades[bid2] then
+								b.itemlevel = legionUpgrades[bid1] + (levelLootedAt - 100) * 10
+							else
+								b.itemlevel = legionUpgrades[bid2] + (levelLootedAt - 100) * 10
+							end
+						end
+					end
+				end
+
+				local artifact = tonumber(strmatch(clink, ".+:(256):"))
+				if artifact then
+					b.itemlevel = GetItemLevel(clink) or b.itemlevel
+				end
+
 				b.frame.text:SetText(b.itemlevel)
 			end
 		end
