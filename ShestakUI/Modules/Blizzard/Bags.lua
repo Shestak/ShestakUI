@@ -147,13 +147,18 @@ local upgrades = {
 	["466"] = 4, ["467"] = 8, ["469"] = 4, ["470"] = 8, ["471"] = 12, ["472"] = 16,
 	["477"] = 4, ["478"] = 8, ["480"] = 8, ["492"] = 4, ["493"] = 8, ["495"] = 4,
 	["496"] = 8, ["497"] = 12, ["498"] = 16, ["504"] = 12, ["505"] = 16, ["506"] = 20,
-	["507"] = 24, ["530"] = 5, ["531"] = 10
+	["507"] = 24, ["530"] = 5, ["531"] = 10, ["535"] = 15, ["536"] = 30, ["537"] = 45
+}
+
+local legionUpgrades = {
+	["664"] = 689, ["767"] = 685, ["768"] = 693, ["1735"] = 705, ["1736"] = 709, ["1738"] = 709,
+	["1739"] = 703, ["1741"] = 713, ["1792"] = 699, ["1793"] = 703, ["1794"] = 695, ["1795"] = 700,
 }
 
 local function BOALevel(level, id)
 	if level > 97 then
 		if id == 133585 or id == 133595 or id == 133596 or id == 133597 or id == 133598 then
-			level = 715
+			level = 815 - (110 - level) * 10
 		else
 			level = 605 - (100 - level) * 5
 		end
@@ -181,6 +186,36 @@ local timewarped = {
 	["692"] = 675, -- Timewarped badge vendors
 	["656"] = 675, -- Warforged Dungeon drops
 }
+
+local itemLevelPattern = gsub(ITEM_LEVEL, "%%d", "(%%d+)")
+local tooltipLines = { --These are the lines we wish to scan
+	"ShestakUI_ItemScanningTooltipTextLeft2",
+	"ShestakUI_ItemScanningTooltipTextLeft3",
+	"ShestakUI_ItemScanningTooltipTextLeft4",
+}
+local tooltip = CreateFrame("GameTooltip", "ShestakUI_ItemScanningTooltip", UIParent, "GameTooltipTemplate")
+tooltip:SetOwner(UIParent, "ANCHOR_NONE")
+
+--Scan tooltip for item level information and cache the value (cache except artifact)
+local function GetItemLevel(itemLink)
+	if not itemLink or not GetItemInfo(itemLink) then
+		return
+	end
+
+	tooltip:ClearLines()
+	tooltip:SetHyperlink(itemLink)
+
+	local text, itemLevel
+	for index = 1, #tooltipLines do
+		text = _G[tooltipLines[index]]:GetText()
+
+		if text then
+			itemLevel = tonumber(string.match(text, itemLevelPattern))
+			return itemLevel
+		end
+	end
+
+end
 
 function Stuffing:SlotUpdate(b)
 	local texture, count, locked, quality = GetContainerItemInfo(b.bag, b.slot)
@@ -217,6 +252,42 @@ function Stuffing:SlotUpdate(b)
 				local uid = strmatch(clink, ".+:(%d+)")
 				if upgrades[uid] then
 					b.itemlevel = b.itemlevel + upgrades[uid]
+				end
+
+				local numBonusIDs = tonumber(strmatch(clink, ".+:%d+:512:%d*:(%d+):"))
+				if numBonusIDs then
+					if numBonusIDs == 1 then
+						local bid1, levelLootedAt = strmatch(clink, ".+:%d+:512:%d*:%d+:(%d+):(%d+):")
+						if legionUpgrades[bid1] == nil then
+							b.itemlevel = GetItemLevel(clink)
+							--print("|cffff0000WARNING: Unkhown item bonus ID: " .. bid1 .. ". Item: " .. clink)
+							--print(clink)
+							--local printable = gsub(clink, "\124", "\124\124");
+							--ChatFrame1:AddMessage("Itemlink: \"" .. printable .. "\"");
+						else
+							b.itemlevel = legionUpgrades[bid1] + (levelLootedAt - 100) * 10
+						end
+					elseif numBonusIDs == 2 then
+						local bid1, bid2, levelLootedAt = strmatch(clink, ".+:%d+:512:%d*:%d+:(%d+):(%d+):(%d+):")
+						if legionUpgrades[bid1] == nil then
+							b.itemlevel = GetItemLevel(clink)
+							--print("|cffff0000WARNING: Unkhown item bonus ID: " .. bid1 .. ". Item: " .. clink)
+						elseif legionUpgrades[bid2] == nil then
+							b.itemlevel = GetItemLevel(clink)
+							--print("|cffff0000WARNING: Unkhown item bonus ID: " .. bid2 .. ". Item: " .. clink)
+						else
+							if legionUpgrades[bid1] > legionUpgrades[bid2] then
+								b.itemlevel = legionUpgrades[bid1] + (levelLootedAt - 100) * 10
+							else
+								b.itemlevel = legionUpgrades[bid2] + (levelLootedAt - 100) * 10
+							end
+						end
+					end
+				end
+
+				local artifact = tonumber(strmatch(clink, ".+:(256):"))
+				if artifact then
+					b.itemlevel = GetItemLevel(clink) or b.itemlevel
 				end
 
 				b.frame.text:SetText(b.itemlevel)
@@ -867,7 +938,7 @@ function Stuffing:Layout(isBank)
 	end
 
 	f:SetClampedToScreen(1)
-	f:SetTemplate("Transparent")
+	f:SetTemplate("Transparent", "Shadow")
 
 	-- Bag frame stuff
 	local fb = f.bags_frame
@@ -982,21 +1053,21 @@ function Stuffing:Layout(isBank)
 					b.frame.lock = true
 				elseif bagType == ST_SPECIAL then
 					if specialType == 0x0008 then			-- Leatherworking
-						b.frame:SetBackdropBorderColor(0.8, 0.7, 0.3)
+					b.frame:SetBackdropBorderColor(0.8, 0.7, 0.3)
 					elseif specialType == 0x0010 then		-- Inscription
-						b.frame:SetBackdropBorderColor(0.3, 0.3, 0.8)
+					b.frame:SetBackdropBorderColor(0.3, 0.3, 0.8)
 					elseif specialType == 0x0020 then		-- Herbs
-						b.frame:SetBackdropBorderColor(0.3, 0.7, 0.3)
+					b.frame:SetBackdropBorderColor(0.3, 0.7, 0.3)
 					elseif specialType == 0x0040 then		-- Enchanting
-						b.frame:SetBackdropBorderColor(0.6, 0, 0.6)
+					b.frame:SetBackdropBorderColor(0.6, 0, 0.6)
 					elseif specialType == 0x0080 then		-- Engineering
-						b.frame:SetBackdropBorderColor(0.9, 0.4, 0.1)
+					b.frame:SetBackdropBorderColor(0.9, 0.4, 0.1)
 					elseif specialType == 0x0200 then		-- Gems
-						b.frame:SetBackdropBorderColor(0, 0.7, 0.8)
+					b.frame:SetBackdropBorderColor(0, 0.7, 0.8)
 					elseif specialType == 0x0400 then		-- Mining
-						b.frame:SetBackdropBorderColor(0.4, 0.3, 0.1)
+					b.frame:SetBackdropBorderColor(0.4, 0.3, 0.1)
 					elseif specialType == 0x10000 then		-- Cooking
-						b.frame:SetBackdropBorderColor(0.9, 0, 0.1)
+					b.frame:SetBackdropBorderColor(0.9, 0, 0.1)
 					end
 					b.frame.lock = true
 				end
@@ -1052,7 +1123,7 @@ function Stuffing:SetBagsForSorting(c)
 end
 
 function Stuffing:ADDON_LOADED(addon)
-	if addon ~= "ShestakUI" then return nil end
+	if addon ~= "DarkShestakUI" then return nil end
 
 	self:RegisterEvent("BAG_UPDATE")
 	self:RegisterEvent("ITEM_LOCK_CHANGED")
@@ -1349,8 +1420,8 @@ function Stuffing:SortBags()
 				else
 					gridSlot = gridSlot - GetContainerNumSlots(bagSlotNumber)
 				end
-	        end
-	    end
+			end
+		end
 	end
 
 	self:SetScript("OnUpdate", Stuffing.SortOnUpdate)
@@ -1502,7 +1573,7 @@ function Stuffing.Menu(self, level)
 	UIDropDownMenu_AddButton(info, level)
 end
 
- -- Kill Blizzard functions
- LootWonAlertFrame_OnClick = T.dummy
- LootUpgradeFrame_OnClick = T.dummy
- StorePurchaseAlertFrame_OnClick = T.dummy
+-- Kill Blizzard functions
+LootWonAlertFrame_OnClick = T.dummy
+LootUpgradeFrame_OnClick = T.dummy
+StorePurchaseAlertFrame_OnClick = T.dummy
