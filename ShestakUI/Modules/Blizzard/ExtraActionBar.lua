@@ -5,7 +5,11 @@ if C.actionbar.enable ~= true then return end
 --	Make ExtraActionBarFrame movable (use macro /click ExtraActionButton1)
 ------------------------------------------------------------------------------------------
 local anchor = CreateFrame("Frame", "ExtraButtonAnchor", UIParent)
-anchor:SetPoint(unpack(C.position.extra_button))
+if C.actionbar.split_bars then
+	anchor:SetPoint(C.position.extra_button[1], SplitBarLeft, C.position.extra_button[3], C.position.extra_button[4], C.position.extra_button[5])
+else
+	anchor:SetPoint(unpack(C.position.extra_button))
+end
 anchor:SetSize(53, 53)
 
 ExtraActionBarFrame:SetParent(UIParent)
