@@ -166,7 +166,7 @@ local function UpdateButtonsText(frame)
 
 						local artifact = tonumber(strmatch(itemLink, ".+:" .. ulvl .. ":%d+:(256):"))
 						if artifact then
-							level = GetItemLevel(itemLink)
+							level = GetItemLevel(itemLink) or level
 						end
 
 						text:SetText("|cFFFFFF00"..level)
