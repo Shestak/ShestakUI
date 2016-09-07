@@ -19,8 +19,11 @@ local function LoadSkin()
 	BarberShopFrameCancelButton:SkinButton(true)
 	BarberShopFrameResetButton:SkinButton(true)
 
-	--BETA T.SkinNextPrevButton(BarberShopFramePrev)
-	-- T.SkinNextPrevButton(BarberShopFrameNext)
+	for i = 1, #BarberShopFrame.Selector do
+		local prevBtn, nextBtn = BarberShopFrame.Selector[i]:GetChildren()
+		T.SkinNextPrevButton(prevBtn, true)
+		T.SkinNextPrevButton(nextBtn)
+	end
 
 	BarberShopBannerFrameBGTexture:Kill()
 	BarberShopBannerFrame:Kill()
