@@ -17,6 +17,7 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 	[10] = {132627,132626},		-- Vale of Eternal Blossoms
 	[11] = {176242,176244},		-- Warspear
 	[12] = {193759, 193759}, 	-- Hall of the Guardian (OrderHall)
+	[13] = {224869, 224871}, 	-- Dalaran, Broken Isles
 } or { -- Alliance
 	[1] = {3561,10059},			-- Stormwind
 	[2] = {3562,11416},			-- Ironforge
@@ -30,6 +31,7 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 	[10] = {132621,132620},		-- Vale of Eternal Blossoms
 	[11] = {176248,176246},		-- Stormshield
 	[12] = {193759, 193759}, 	-- Hall of the Guardian (OrderHall)
+	[13] = {224869, 224871}, 	-- Dalaran, Broken Isles
 }
 
 local frame = CreateFrame("Frame", "TeleportMenu", UIParent)
