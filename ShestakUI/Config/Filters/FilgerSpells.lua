@@ -2493,6 +2493,8 @@ C["filger_spells"] = {
 			{spellID = 212283, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadow Blades
 			{spellID = 121471, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Curse of the Dreadblades
+			{spellID = 208245, unitID = "player", caster = "player", filter = "DEBUFF"},
 			-- Alacrity
 			{spellID = 193539, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Master of Subtlety
