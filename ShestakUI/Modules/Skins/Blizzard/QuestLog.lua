@@ -44,8 +44,63 @@ local function LoadSkin()
 			end
 		end
 	end
-
 	hooksecurefunc("QuestMapFrame_ShowQuestDetails", QuestObjectiveText)
+
+	local function SkinReward(button)
+		if button.NameFrame then button.NameFrame:Hide() end
+		if button.CircleBackground then button.CircleBackground:Hide() end
+		if button.CircleBackgroundGlow then button.CircleBackgroundGlow:Hide() end
+		if button.ValueText then button.ValueText:SetPoint("BOTTOMRIGHT", button.Icon, 0, 0) end
+		button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		button:CreateBackdrop("Default")
+		button.backdrop:ClearAllPoints()
+		button.backdrop:SetPoint("TOPLEFT", button.Icon, -2, 2)
+		button.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, 2, -2)
+	end
+
+	local function SkinRewardSpell(button)
+		local name = button:GetName()
+		local icon = button.Icon
+
+		_G[name.."NameFrame"]:Hide()
+		_G[name.."SpellBorder"]:Hide()
+
+		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+		button:CreateBackdrop("Default")
+		button.backdrop:ClearAllPoints()
+		button.backdrop:SetPoint("TOPLEFT", icon, -2, 2)
+		button.backdrop:SetPoint("BOTTOMRIGHT", icon, 2, -2)
+	end
+
+	SkinRewardSpell(QuestInfoSpellObjectiveFrame)
+
+	for _, name in next, {"HonorFrame", "MoneyFrame", "SkillPointFrame", "XPFrame", "ArtifactXPFrame"} do
+		SkinReward(MapQuestInfoRewardsFrame[name])
+	end
+
+	for _, name in next, {"HonorFrame", "SkillPointFrame", "ArtifactXPFrame"} do
+		SkinReward(QuestInfoRewardsFrame[name])
+	end
+
+	SkinReward(QuestInfoSkillPointFrame)
+
+	hooksecurefunc("QuestInfo_GetRewardButton", function(rewardsFrame, index)
+		local button = rewardsFrame.RewardButtons[index]
+		if not button.restyled then
+			SkinReward(button)
+			button.restyled = true
+		end
+
+		local mapReward = MapQuestInfoRewardsFrame.RewardButtons[index]
+		if mapReward then
+			mapReward.Icon:SetSize(30, 30)
+			if GetNumQuestLogChoices() > 2 then
+				mapReward.Icon:SetSize(26, 26)
+			end
+		end
+	end)
+
 	hooksecurefunc("QuestInfo_Display", function(template, parentFrame, acceptButton, material)
 		-- Headers
 		QuestInfoTitleHeader:SetTextColor(1, 0.8, 0)
@@ -74,8 +129,6 @@ local function LoadSkin()
 		QuestInfoRewardsFrame.ItemChooseText:SetShadowOffset(1, -1)
 		QuestInfoRewardsFrame.ItemReceiveText:SetTextColor(1, 1, 1)
 		QuestInfoRewardsFrame.ItemReceiveText:SetShadowOffset(1, -1)
-		--BETA QuestInfoRewardsFrame.SpellLearnText:SetTextColor(1, 1, 1)
-		-- QuestInfoRewardsFrame.SpellLearnText:SetShadowOffset(1, -1)
 		QuestInfoRewardsFrame.XPFrame.ReceiveText:SetTextColor(1, 1, 1)
 		QuestInfoRewardsFrame.XPFrame.ReceiveText:SetShadowOffset(1, -1)
 		QuestInfoRewardsFrame.PlayerTitleText:SetTextColor(1, 1, 1)
@@ -83,6 +136,48 @@ local function LoadSkin()
 		MapQuestInfoRewardsFrameQuestInfoItem1.Count:SetFontObject(NumberFontNormal)
 
 		QuestObjectiveText()
+
+		if template.canHaveSealMaterial then
+			local questFrame = parentFrame:GetParent():GetParent()
+			questFrame.SealMaterialBG:Hide()
+		end
+
+		local rewardsFrame = QuestInfoFrame.rewardsFrame
+		local isQuestLog = QuestInfoFrame.questLog ~= nil
+		local isMapQuest = rewardsFrame == MapQuestInfoRewardsFrame
+
+		local numSpellRewards = isQuestLog and GetNumQuestLogRewardSpells() or GetNumRewardSpells()
+		if numSpellRewards > 0 then
+			-- Spell Headers
+			for spellHeader in rewardsFrame.spellHeaderPool:EnumerateActive() do
+				spellHeader:SetVertexColor(1, 1, 1)
+			end
+			-- Follower Rewards
+			for followerReward in rewardsFrame.followerRewardPool:EnumerateActive() do
+				if not followerReward.isSkinned then
+					followerReward:CreateBackdrop("Overlay")
+					followerReward.backdrop:SetAllPoints(followerReward.BG)
+					followerReward.backdrop:SetPoint("TOPLEFT", 30, -5)
+					followerReward.backdrop:SetPoint("BOTTOMRIGHT", 2, 5)
+					followerReward.BG:Hide()
+					followerReward.isSkinned = true
+				end
+			end
+			-- Spell Rewards
+			for spellReward in rewardsFrame.spellRewardPool:EnumerateActive() do
+				if not spellReward.isSkinned then
+					SkinReward(spellReward)
+					local border = select(4, spellReward:GetRegions())
+					border:Hide()
+					if not isMapQuest then
+						spellReward.Icon:SetPoint("TOPLEFT", 0, 0)
+						spellReward:SetHitRectInsets(0, 0, 0, 0)
+						spellReward:SetSize(147, 41)
+					end
+					spellReward.isSkinned = true
+				end
+			end
+		end
 	end)
 
 	hooksecurefunc(QuestInfoRequiredMoneyText, "SetTextColor", function(self, r, g, b)
@@ -133,10 +228,6 @@ local function LoadSkin()
 			questItem.Name:SetTextColor(1, 1, 1)
 		end
     end)
-
-	--BETA QuestInfoRewardsFrame.FollowerFrame:CreateBackdrop("Transparent")
-	-- QuestInfoRewardsFrame.FollowerFrame.backdrop:SetAllPoints(QuestInfoRewardsFrame.FollowerFrame.BG)
-	-- QuestInfoRewardsFrame.FollowerFrame.BG:Hide()
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
