@@ -15,6 +15,9 @@ WorldMapFrameAreaDescription:SetShadowOffset(2, -2)
 
 MapQuestInfoRewardsFrame.XPFrame.Name:SetFont(C.media.normal_font, 13)
 
+WorldMapFrame.UIElementsFrame.BountyBoard.BountyName:SetFont(C.media.normal_font, 16)
+WorldMapFrame.UIElementsFrame.BountyBoard.BountyName:SetShadowOffset(1, -1)
+
 ----------------------------------------------------------------------------------------
 --	Change position
 ----------------------------------------------------------------------------------------
