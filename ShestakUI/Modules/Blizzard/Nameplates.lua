@@ -1604,7 +1604,7 @@ local function HideBlizzard()
 
 	SetCVar("namePlateMinScale", 1)
 	SetCVar("namePlateMaxScale", 1)
-
+	SetCVar("nameplateLargerScale", 1)
 	SetCVar("nameplateMaxAlpha", 1)
 	SetCVar("nameplateMinAlpha", 1)
 
