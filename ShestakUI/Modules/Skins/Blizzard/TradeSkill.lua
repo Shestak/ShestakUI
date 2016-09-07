@@ -42,8 +42,8 @@ local function LoadSkin()
 	TradeSkillFrame.LinkToButton:SetPoint("BOTTOMRIGHT", TradeSkillFrame.FilterButton, "TOPRIGHT", -2, 4)
 
 	T.SkinEditBox(TradeSkillFrame.SearchBox, TradeSkillFrame.SearchBox:GetWidth() + 5, TradeSkillFrame.SearchBox:GetHeight() - 2)
-	-- TradeSkillFrame.SearchBox:ClearAllPoints()
-	-- TradeSkillFrame.SearchBox:SetPoint("TOPLEFT", TradeSkillFrame.RankFrame, "BOTTOMLEFT", 0, -7)
+	TradeSkillFrame.SearchBox:ClearAllPoints()
+	TradeSkillFrame.SearchBox:SetPoint("RIGHT", TradeSkillFrame.FilterButton, "LEFT", -5, 0)
 
 	T.SkinEditBox(TradeSkillFrame.DetailsFrame.CreateMultipleInputBox, nil, TradeSkillFrame.DetailsFrame.CreateMultipleInputBox:GetHeight() - 2)
 	TradeSkillFrame.DetailsFrame.CreateMultipleInputBox:DisableDrawLayer("BACKGROUND")
@@ -56,7 +56,7 @@ local function LoadSkin()
 
 	T.SkinCloseButton(TradeSkillFrameCloseButton)
 
-	-- T.SkinScrollBar(TradeSkillFrame.RecipeList.scrollBar)
+	T.SkinScrollBar(TradeSkillFrame.RecipeList.scrollBar, "TradeSkillFrame")
 	T.SkinScrollBar(TradeSkillFrame.DetailsFrame.ScrollBar)
 
 	hooksecurefunc(TradeSkillFrame.DetailsFrame, "RefreshDisplay", function()
