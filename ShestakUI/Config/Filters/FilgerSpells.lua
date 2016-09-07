@@ -2081,7 +2081,7 @@ C["filger_spells"] = {
 			-- Speed of Light
 			{spellID = 85499, filter = "CD"},
 			-- Divine Protection
-			{spellID = 498, filter = "CD"},
+			{spellID = 498, filter = "CD", absID = true},
 			-- Execution Sentence
 			--BETA {spellID = 114157, filter = "CD"},
 			-- Light's Hammer
@@ -2097,7 +2097,7 @@ C["filger_spells"] = {
 			-- Avenging Wrath
 			{spellID = 31884, filter = "CD"},
 			-- Ardent Defender
-			{spellID = 31850, filter = "CD"},
+			{spellID = 31850, filter = "CD", absID = true},
 			-- Blessing of Protection
 			{spellID = 1022, filter = "CD"},
 
