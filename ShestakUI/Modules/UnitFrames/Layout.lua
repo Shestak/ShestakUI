@@ -523,13 +523,15 @@ local function Shared(self, unit)
 			end
 		end
 
-		if T.class == "DRUID" then
-			-- Druid mana
+		-- Additional mana
+		if T.class == "DRUID" or T.class == "PRIEST" or T.class == "SHAMAN" then
 			CreateFrame("Frame"):SetScript("OnUpdate", function() T.UpdateClassMana(self) end)
 			self.ClassMana = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 			self.ClassMana:SetTextColor(1, 0.49, 0.04)
+		end
 
-			-- Mushroom bar
+		-- Mushroom bar
+		if T.class == "DRUID" then
 			if C.unitframe_class_bar.totem == true then
 				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
 				self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)

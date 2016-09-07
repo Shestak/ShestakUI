@@ -904,7 +904,7 @@ T.UpdateManaLevel = function(self, elapsed)
 			self.ManaLevel:SetText()
 			StopFlash(self)
 		end
-	elseif T.class ~= "DRUID" then
+	elseif T.class ~= "DRUID" and T.class ~= "PRIEST" and T.class ~= "SHAMAN" then
 		self.ManaLevel:SetText()
 		StopFlash(self)
 	end
