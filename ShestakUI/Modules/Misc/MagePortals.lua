@@ -61,6 +61,10 @@ for i, spell in pairs(spells) do
 		l:SetText(string.sub(teleport, string.find(teleport, ":") + 1))
 	end
 
+	l:SetPoint("LEFT", b, "LEFT", 2, 0)
+	l:SetPoint("RIGHT", b, "RIGHT", -2, 0)
+	l:SetHeight(C.media.pixel_font_size)
+
 	b:SetFontString(l)
 
 	b:RegisterForClicks("LeftButtonDown", "RightButtonDown")
