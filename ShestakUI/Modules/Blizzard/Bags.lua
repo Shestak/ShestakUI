@@ -147,13 +147,13 @@ local upgrades = {
 	["466"] = 4, ["467"] = 8, ["469"] = 4, ["470"] = 8, ["471"] = 12, ["472"] = 16,
 	["477"] = 4, ["478"] = 8, ["480"] = 8, ["492"] = 4, ["493"] = 8, ["495"] = 4,
 	["496"] = 8, ["497"] = 12, ["498"] = 16, ["504"] = 12, ["505"] = 16, ["506"] = 20,
-	["507"] = 24, ["530"] = 5, ["531"] = 10
+	["507"] = 24, ["530"] = 5, ["531"] = 10, ["535"] = 15, ["536"] = 30, ["537"] = 45
 }
 
 local function BOALevel(level, id)
 	if level > 97 then
 		if id == 133585 or id == 133595 or id == 133596 or id == 133597 or id == 133598 then
-			level = 715
+			level = 815 - (110 - level) * 10
 		else
 			level = 605 - (100 - level) * 5
 		end
@@ -1349,8 +1349,8 @@ function Stuffing:SortBags()
 				else
 					gridSlot = gridSlot - GetContainerNumSlots(bagSlotNumber)
 				end
-	        end
-	    end
+			end
+		end
 	end
 
 	self:SetScript("OnUpdate", Stuffing.SortOnUpdate)
@@ -1502,7 +1502,7 @@ function Stuffing.Menu(self, level)
 	UIDropDownMenu_AddButton(info, level)
 end
 
- -- Kill Blizzard functions
- LootWonAlertFrame_OnClick = T.dummy
- LootUpgradeFrame_OnClick = T.dummy
- StorePurchaseAlertFrame_OnClick = T.dummy
+-- Kill Blizzard functions
+LootWonAlertFrame_OnClick = T.dummy
+LootUpgradeFrame_OnClick = T.dummy
+StorePurchaseAlertFrame_OnClick = T.dummy

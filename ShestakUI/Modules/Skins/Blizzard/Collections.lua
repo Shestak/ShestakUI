@@ -416,9 +416,9 @@ local function LoadSkin()
 	hooksecurefunc("ToySpellButton_UpdateButton", function(self)
 		if PlayerHasToy(self.itemID) then
 			local quality = select(3, GetItemInfo(self.itemID))
-			local r, g, b = GetItemQualityColor(quality)
-			self.TextColor = {r, g, b}
-			self:SetBackdropBorderColor(r, g, b)
+			local color = ITEM_QUALITY_COLORS[quality-1]
+			self.TextColor = {color.r, color.g, color.b}
+			self:SetBackdropBorderColor(color.r, color.g, color.b)
 		else
 			self:SetBackdropBorderColor(unpack(C.media.border_color))
 			self.TextColor = {0.6, 0.6, 0.6}

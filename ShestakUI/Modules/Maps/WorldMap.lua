@@ -1,21 +1,6 @@
 local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Floors scroll
-----------------------------------------------------------------------------------------
-WorldMapButton:SetScript("OnMouseWheel", function(self, delta)
-	if IsModifierKeyDown() then
-		local level = GetCurrentMapDungeonLevel() - delta
-		if level >= 1 then
-			SetDungeonMapLevel(level)
-			PlaySound("UChatScrollButton")
-		end
-	else
-		WorldMapScrollFrame_OnMouseWheel(self, delta)
-	end
-end)
-
-----------------------------------------------------------------------------------------
 --	Font replacement
 ----------------------------------------------------------------------------------------
 WorldMapFrameAreaLabel:SetFont(C.media.normal_font, 30)

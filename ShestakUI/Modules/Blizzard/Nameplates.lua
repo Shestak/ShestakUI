@@ -1499,6 +1499,18 @@ local function UpdateRaidTarget(unitFrame)
 	end
 end
 
+local function UpdateNamePlateEvents(unitFrame)
+	-- These are events affected if unit is in a vehicle
+	local unit = unitFrame.unit
+	local displayedUnit
+	if unit ~= unitFrame.displayedUnit then
+		displayedUnit = unitFrame.displayedUnit
+	end
+	unitFrame:RegisterUnitEvent("UNIT_HEALTH_FREQUENT", unit, displayedUnit)
+	unitFrame:RegisterUnitEvent("UNIT_AURA", unit, displayedUnit)
+	unitFrame:RegisterUnitEvent("UNIT_THREAT_LIST_UPDATE", unit, displayedUnit)
+end
+
 local function UpdateInVehicle(unitFrame)
 	if UnitHasVehicleUI(unitFrame.unit) then
 		if not unitFrame.inVehicle then
@@ -1551,18 +1563,6 @@ local function NamePlate_OnEvent(self, event, ...)
 			UpdateAll(self)
 		end
 	end
-end
-
-local function UpdateNamePlateEvents(unitFrame)
-	-- These are events affected if unit is in a vehicle
-	local unit = unitFrame.unit
-	local displayedUnit
-	if ( unit ~= unitFrame.displayedUnit ) then
-		displayedUnit = unitFrame.displayedUnit
-	end
-	unitFrame:RegisterUnitEvent("UNIT_HEALTH_FREQUENT", unit, displayedUnit)
-	unitFrame:RegisterUnitEvent("UNIT_AURA", unit, displayedUnit)
-	unitFrame:RegisterUnitEvent("UNIT_THREAT_LIST_UPDATE", unit, displayedUnit)
 end
 
 local function RegisterNamePlateEvents(unitFrame)
@@ -1624,7 +1624,7 @@ end
 local function OnUnitFactionChanged(unit)
 	-- This would make more sense as a unitFrame:RegisterUnitEvent
 	local namePlate = C_NamePlate.GetNamePlateForUnit(unit)
-	if (namePlate) then
+	if namePlate then
 		UpdateName(namePlate.UnitFrame)
 		UpdateHealthColor(namePlate.UnitFrame)
 	end
