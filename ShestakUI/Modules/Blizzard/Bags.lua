@@ -211,7 +211,9 @@ local function GetItemLevel(itemLink)
 
 		if text then
 			itemLevel = tonumber(string.match(text, itemLevelPattern))
-			return itemLevel
+			if itemLevel then
+				return itemLevel
+			end
 		end
 	end
 
