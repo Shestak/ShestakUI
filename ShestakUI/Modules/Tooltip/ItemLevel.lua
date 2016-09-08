@@ -186,10 +186,13 @@ local function UnitGear(unit)
 								level = level + upgrades[uid]
 							end
 
-							local numBonusIDs = tonumber(strmatch(itemLink, ".+:%d+:512:%d*:(%d+):"))
+							local numBonusIDs = tonumber(strmatch(itemLink, ".+:%d+:512:%d*:(%d+).+"))
 							if numBonusIDs then
 								if numBonusIDs == 1 then
-									local bid1, levelLootedAt = strmatch(itemLink, ".+:%d+:512:%d*:%d+:(%d+):(%d+):")
+									local bid1, levelLootedAt = strmatch(itemLink, ".+:%d+:512:%d*:%d+:(%d+):(%d+).+")
+									if levelLootedAt == "110" then
+										levelLootedAt = levelLootedAt - 1
+									end
 									if legionUpgrades[bid1] == nil then
 										level = GetItemLevel(itemLink) or level
 										--print("|cffff0000WARNING: Unkhown item bonus ID: " .. bid1 .. ". Item: " .. itemLink)
@@ -200,7 +203,10 @@ local function UnitGear(unit)
 										level = legionUpgrades[bid1] + (levelLootedAt - 100) * 10
 									end
 								elseif numBonusIDs == 2 then
-									local bid1, bid2, levelLootedAt = strmatch(itemLink, ".+:%d+:512:%d*:%d+:(%d+):(%d+):(%d+):")
+									local bid1, bid2, levelLootedAt = strmatch(itemLink, ".+:%d+:512:%d*:%d+:(%d+):(%d+):(%d+).+")
+									if levelLootedAt == "110" then
+										levelLootedAt = levelLootedAt - 1
+									end
 									if legionUpgrades[bid1] == nil then
 										level = GetItemLevel(itemLink) or level
 										--print("|cffff0000WARNING: Unkhown item bonus ID: " .. bid1 .. ". Item: " .. itemLink)
