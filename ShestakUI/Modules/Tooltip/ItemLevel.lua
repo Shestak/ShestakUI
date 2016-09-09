@@ -223,8 +223,7 @@ local function UnitGear(unit)
 								end
 							end
 
-							local artifact = tonumber(strmatch(itemLink, ".+:" .. ulvl .. ":%d+:(256):"))
-							if artifact then
+							if quality == 6 then
 								level = GetItemLevel(itemLink) or level
 							end
 
