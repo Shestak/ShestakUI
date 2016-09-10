@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.bag.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -150,6 +150,11 @@ local upgrades = {
 	["507"] = 24, ["530"] = 5, ["531"] = 10, ["535"] = 15, ["536"] = 30, ["537"] = 45
 }
 
+local legionUpgrades = {
+	["664"] = 689, ["767"] = 685, ["768"] = 693, ["1735"] = 705, ["1736"] = 699, ["1738"] = 709,
+	["1739"] = 703, ["1741"] = 713, ["1792"] = 699, ["1793"] = 703, ["1794"] = 695, ["1795"] = 700,
+}
+
 local function BOALevel(level, id)
 	if level > 97 then
 		if id == 133585 or id == 133595 or id == 133596 or id == 133597 or id == 133598 then
@@ -181,6 +186,37 @@ local timewarped = {
 	["692"] = 675, -- Timewarped badge vendors
 	["656"] = 675, -- Warforged Dungeon drops
 }
+
+local itemLevelPattern = gsub(ITEM_LEVEL, "%%d", "(%%d+)")
+local tooltipLines = {
+	"ShestakUI_ItemScanningTooltipTextLeft2",
+	"ShestakUI_ItemScanningTooltipTextLeft3",
+	"ShestakUI_ItemScanningTooltipTextLeft4",
+}
+local tooltip = CreateFrame("GameTooltip", "ShestakUI_ItemScanningTooltip", UIParent, "GameTooltipTemplate")
+tooltip:SetOwner(UIParent, "ANCHOR_NONE")
+
+-- Scan tooltip for item level information
+local function GetItemLevel(itemLink)
+	if not itemLink or not GetItemInfo(itemLink) then
+		return
+	end
+
+	tooltip:ClearLines()
+	tooltip:SetHyperlink(itemLink)
+
+	local text, itemLevel
+	for index = 1, #tooltipLines do
+		text = _G[tooltipLines[index]]:GetText()
+
+		if text then
+			itemLevel = tonumber(string.match(text, itemLevelPattern))
+			if itemLevel then
+				return itemLevel
+			end
+		end
+	end
+end
 
 function Stuffing:SlotUpdate(b)
 	local texture, count, locked, quality = GetContainerItemInfo(b.bag, b.slot)
@@ -217,6 +253,48 @@ function Stuffing:SlotUpdate(b)
 				local uid = strmatch(clink, ".+:(%d+)")
 				if upgrades[uid] then
 					b.itemlevel = b.itemlevel + upgrades[uid]
+				end
+
+				local numBonusIDs = tonumber(strmatch(clink, ".+:%d+:512:%d*:(%d+).+"))
+				if numBonusIDs then
+					if numBonusIDs == 1 then
+						local bid1, levelLootedAt = strmatch(clink, ".+:%d+:512:%d*:%d+:(%d+):(%d+).+")
+						if levelLootedAt == "110" then
+							levelLootedAt = levelLootedAt - 1
+						end
+						if legionUpgrades[bid1] == nil then
+							b.itemlevel = GetItemLevel(clink) or b.itemlevel
+							--print("|cffff0000WARNING: Unkhown item bonus ID: " .. bid1 .. ". Item: " .. clink)
+							--print(clink)
+							--local printable = gsub(clink, "\124", "\124\124");
+							--ChatFrame1:AddMessage("Itemlink: \"" .. printable .. "\"");
+						else
+							b.itemlevel = legionUpgrades[bid1] + (levelLootedAt - 100) * 10
+						end
+					elseif numBonusIDs == 2 then
+						local bid1, bid2, levelLootedAt = strmatch(clink, ".+:%d+:512:%d*:%d+:(%d+):(%d+):(%d+).+")
+						if levelLootedAt == "110" then
+							levelLootedAt = levelLootedAt - 1
+						end
+						if legionUpgrades[bid1] == nil then
+							b.itemlevel = GetItemLevel(clink) or b.itemlevel
+							--print("|cffff0000WARNING: Unkhown item bonus ID: " .. bid1 .. ". Item: " .. clink)
+						elseif legionUpgrades[bid2] == nil then
+							b.itemlevel = GetItemLevel(clink) or b.itemlevel
+							--print("|cffff0000WARNING: Unkhown item bonus ID: " .. bid2 .. ". Item: " .. clink)
+						else
+							if legionUpgrades[bid1] > legionUpgrades[bid2] then
+								b.itemlevel = legionUpgrades[bid1] + (levelLootedAt - 100) * 10
+							else
+								b.itemlevel = legionUpgrades[bid2] + (levelLootedAt - 100) * 10
+							end
+						end
+					end
+				end
+
+				local artifact = tonumber(strmatch(clink, ".+:(256):"))
+				if artifact then
+					b.itemlevel = GetItemLevel(clink) or b.itemlevel
 				end
 
 				b.frame.text:SetText(b.itemlevel)

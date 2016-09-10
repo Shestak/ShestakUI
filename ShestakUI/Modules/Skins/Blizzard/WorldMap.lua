@@ -127,58 +127,6 @@ local function LoadSkin()
 
 	WorldMapFrameSizeUpButton:Kill()
 
-	local function SkinReward(button)
-		if button.NameFrame then button.NameFrame:Hide() end
-		if button.CircleBackground then button.CircleBackground:Hide() end
-		if button.CircleBackgroundGlow then button.CircleBackgroundGlow:Hide() end
-		if button.ValueText then button.ValueText:SetPoint("BOTTOMRIGHT", button.Icon, 0, 0) end
-		button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		button:CreateBackdrop("Default")
-		button.backdrop:ClearAllPoints()
-		button.backdrop:SetPoint("TOPLEFT", button.Icon, -2, 2)
-		button.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, 2, -2)
-	end
-
-	hooksecurefunc("QuestInfo_GetRewardButton", function(rewardsFrame, index)
-		local button = rewardsFrame.RewardButtons[index]
-		if not button.restyled then
-			SkinReward(button)
-			button.restyled = true
-		end
-
-		local mapReward = MapQuestInfoRewardsFrame.RewardButtons[index]
-		if mapReward then
-			mapReward.Icon:SetSize(30, 30)
-			if GetNumQuestLogChoices() > 2 then
-				mapReward.Icon:SetSize(26, 26)
-			end
-		end
-	end)
-
-	local function SkinRewardSpell(button)
-		local name = button:GetName()
-		local icon = button.Icon
-
-		_G[name.."NameFrame"]:Hide()
-		_G[name.."SpellBorder"]:Hide()
-
-		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
-		button:CreateBackdrop("Default")
-		button.backdrop:ClearAllPoints()
-		button.backdrop:SetPoint("TOPLEFT", icon, -2, 2)
-		button.backdrop:SetPoint("BOTTOMRIGHT", icon, 2, -2)
-	end
-
-	SkinReward(QuestInfoSkillPointFrame)
-	--BETA SkinReward(MapQuestInfoRewardsFrame.SpellFrame)
-	SkinReward(MapQuestInfoRewardsFrame.XPFrame)
-	SkinReward(MapQuestInfoRewardsFrame.MoneyFrame)
-	SkinReward(MapQuestInfoRewardsFrame.SkillPointFrame)
-
-	--BETA SkinRewardSpell(QuestInfoRewardSpell)
-	SkinRewardSpell(QuestInfoSpellObjectiveFrame)
-
 	T.SkinDropDownBox(WorldMapLevelDropDown)
 	WorldMapLevelDropDown:ClearAllPoints()
 	WorldMapLevelDropDown:SetPoint("TOPLEFT", -18, -2)

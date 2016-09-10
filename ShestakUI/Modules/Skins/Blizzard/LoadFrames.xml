@@ -21,6 +21,7 @@
 	<Script file="DeathRecap.lua"/>
 	<Script file="DressUp.lua"/>
 	<Script file="EncounterJournal.lua"/>
+	<Script file="FlightMap.lua"/>
 	<Script file="Friends.lua"/>
 	<Script file="Garrison.lua"/>
 	<Script file="GMSurvey.lua"/>

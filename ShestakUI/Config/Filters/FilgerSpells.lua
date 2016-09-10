@@ -2081,7 +2081,7 @@ C["filger_spells"] = {
 			-- Speed of Light
 			{spellID = 85499, filter = "CD"},
 			-- Divine Protection
-			{spellID = 498, filter = "CD"},
+			{spellID = 498, filter = "CD", absID = true},
 			-- Execution Sentence
 			--BETA {spellID = 114157, filter = "CD"},
 			-- Light's Hammer
@@ -2097,7 +2097,7 @@ C["filger_spells"] = {
 			-- Avenging Wrath
 			{spellID = 31884, filter = "CD"},
 			-- Ardent Defender
-			{spellID = 31850, filter = "CD"},
+			{spellID = 31850, filter = "CD", absID = true},
 			-- Blessing of Protection
 			{spellID = 1022, filter = "CD"},
 
@@ -2144,6 +2144,12 @@ C["filger_spells"] = {
 			{spellID = 47585, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Infusion
 			{spellID = 10060, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Apotheosis
+			{spellID = 200183, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Spirit of Redemption
+			{spellID = 20711, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Divinity
+			{spellID = 197030, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Archangel
 			--BETA {spellID = 81700, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vampiric Embrace
@@ -2357,12 +2363,16 @@ C["filger_spells"] = {
 			{spellID = 47540, filter = "CD"},
 			-- Mind Blast
 			{spellID = 8092, filter = "CD"},
+			-- Power Word: Shield
+			{spellID = 17, filter = "CD"},
 			-- Holy Fire
 			{spellID = 14914, filter = "CD"},
 			-- Shadow Word: Death
 			{spellID = 32379, filter = "CD"},
 			-- Circle of Healing
-			{spellID = 34861, filter = "CD"},
+			{spellID = 204883, filter = "CD"},
+			-- Angelic Feather
+			{spellID = 121536, filter = "CD"},
 			-- Prayer of Mending
 			{spellID = 33076, filter = "CD"},
 			-- Divine Star
@@ -2371,8 +2381,12 @@ C["filger_spells"] = {
 			--BETA {spellID = 121135, filter = "CD"},
 			-- Archangel
 			--BETA {spellID = 81700, filter = "CD"},
+			-- Holy Word: Sanctify
+			{spellID = 34861, filter = "CD"},
 			-- Holy Word: Chastise
 			{spellID = 88625, filter = "CD"},
+			-- Holy Word: Serenity
+			{spellID = 2050, filter = "CD"},
 			-- Spectral Guise
 			{spellID = 112833, filter = "CD"},
 			-- Fade
@@ -2395,12 +2409,20 @@ C["filger_spells"] = {
 			{spellID = 47585, filter = "CD"},
 			-- Desperate Prayer
 			{spellID = 19236, filter = "CD"},
+			-- Shining Force
+			{spellID = 204263, filter = "CD"},
 			-- Pain Suppression
 			{spellID = 33206, filter = "CD"},
 			-- Guardian Spirit
 			{spellID = 47788, filter = "CD"},
 			-- Power Word: Barrier
 			{spellID = 62618, filter = "CD"},
+			-- Apotheosis
+			{spellID = 200183, filter = "CD"},
+			-- Shadowfiend
+			{spellID = 34433, filter = "CD"},
+			-- Void Eruption
+			{spellID = 228260, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
@@ -2471,6 +2493,8 @@ C["filger_spells"] = {
 			{spellID = 212283, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadow Blades
 			{spellID = 121471, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Curse of the Dreadblades
+			{spellID = 208245, unitID = "player", caster = "player", filter = "DEBUFF"},
 			-- Alacrity
 			{spellID = 193539, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Master of Subtlety
@@ -3740,6 +3764,8 @@ C["filger_spells"] = {
 			{spellID = 97463, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Other
+			-- Symbol of Hope
+			{spellID = 64901, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Fear Ward
 			--BETA {spellID = 6346, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Grounding Totem

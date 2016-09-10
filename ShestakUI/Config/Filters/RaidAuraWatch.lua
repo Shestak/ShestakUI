@@ -32,7 +32,7 @@ T.RaidBuffs = {
 		{204018, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},		-- Blessing of Spellwarding
 	},
 	PRIEST = {
-		{6788, "TOPRIGHT", {1, 0, 0}, true},				-- Weakened Soul
+		{194384, "TOPRIGHT", {0.8, 0.4, 0.2}},				-- Atonement
 		{41635, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},			-- Prayer of Mending
 		{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}}, 				-- Renew
 		{17, "TOPLEFT", {0.81, 0.85, 0.1}, true},			-- Power Word: Shield
