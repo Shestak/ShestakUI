@@ -104,32 +104,22 @@ C["filger_spells"] = {
 			-- Gronntooth War Horn (Strength, Proc)
 			{spellID = 201405, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking
-			-- Battering Talisman (Haste, Proc)
-			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Blast Furnace Door (Mastery, Proc)
-			{spellID = 177056, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Evergaze Arcane Eidolon (Bonus Armor, Proc)
-			{spellID = 177053, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Formidable Relic of Blood (Haste, Proc)
-			{spellID = 176937, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kyb's Foolish Perseverance (Health, Use)
-			{spellID = 176460, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Pol's Blinded Eye (Mastery, Use)
-			{spellID = 176876, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stoneheart Idol (Crit, Proc)
-			{spellID = 176982, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tablet of Turnbuckle Teamwork (Bonus Armor, Use)
-			{spellID = 176873, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Anzu's Cursed Plume (Mastery, Proc)
-			{spellID = 183931, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Enforcer's Stun Grenade (Versatility, Use)
-			{spellID = 165534, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kyrak's Vileblood Serum (Mastery, Use)
-			{spellID = 165535, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tyrant's Decree (Stamina, Proc)
-			{spellID = 184770, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Xeri'tac's Unhatched Egg Sac (Mastery, Proc)
-			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Living Carapace (Damage Reduction, Use) [Animated Exoskeleton]
+			{spellID = 225033, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vampiric Aura (Leech, Use) [Fang of Tichcondrius]
+			{spellID = 225130, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Infernal Contract (Damage Reduction, Use) [Infernal Contract]
+			{spellID = 225140, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sands of Time (DoT, Proc) [Royal Dagger Haft]
+			{spellID = 225720, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Shadowy Reflection (Damage Reduction, Proc) [Phantasmal Echo]
+			{spellID = 222479, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nightmarish Ichor (Versatility, Proc) [Goblet of Nightmarish Ichor]
+			{spellID = 222027, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Wild God's Fury (Health, Use) [Unbridled Fury]
+			{spellID = 221695, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkening Soul (Damage Reduction, Proc) [Grotesque Statuette]
+			{spellID = 222209, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Strength]
 			-- Forgemaster's Insignia (Multistrike, Proc)
 			{spellID = 177096, unitID = "player", caster = "player", filter = "BUFF"},
@@ -371,30 +361,22 @@ C["filger_spells"] = {
 			-- Damage [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking
-			-- Battering Talisman (Haste, Proc)
-			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Blast Furnace Door (Mastery, Proc)
-			{spellID = 177056, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Evergaze Arcane Eidolon (Bonus Armor, Proc)
-			{spellID = 177053, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Formidable Relic of Blood (Haste, Proc)
-			{spellID = 176937, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kyb's Foolish Perseverance (Health, Use)
-			{spellID = 176460, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Pol's Blinded Eye (Mastery, Use)
-			{spellID = 176876, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stoneheart Idol (Crit, Proc)
-			{spellID = 176982, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tablet of Turnbuckle Teamwork (Bonus Armor, Use)
-			{spellID = 176873, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Anzu's Cursed Plume (Mastery, Proc)
-			{spellID = 183931, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Enforcer's Stun Grenade (Versatility, Use)
-			{spellID = 165534, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tyrant's Decree (Stamina, Proc)
-			{spellID = 184770, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Xeri'tac's Unhatched Egg Sac (Mastery, Proc)
-			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Living Carapace (Damage Reduction, Use) [Animated Exoskeleton]
+			{spellID = 225033, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vampiric Aura (Leech, Use) [Fang of Tichcondrius]
+			{spellID = 225130, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Infernal Contract (Damage Reduction, Use) [Infernal Contract]
+			{spellID = 225140, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sands of Time (DoT, Proc) [Royal Dagger Haft]
+			{spellID = 225720, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Shadowy Reflection (Damage Reduction, Proc) [Phantasmal Echo]
+			{spellID = 222479, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nightmarish Ichor (Versatility, Proc) [Goblet of Nightmarish Ichor]
+			{spellID = 222027, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Wild God's Fury (Health, Use) [Unbridled Fury]
+			{spellID = 221695, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkening Soul (Damage Reduction, Proc) [Grotesque Statuette]
+			{spellID = 222209, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Agility]
 			-- Beating Heart of the Mountain (Multistrike, Use)
 			{spellID = 176878, unitID = "player", caster = "player", filter = "BUFF"},
@@ -698,30 +680,22 @@ C["filger_spells"] = {
 			-- Damage [Agility] (Versatility, Proc)
 			{spellID = 182060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking
-			-- Battering Talisman (Haste, Proc)
-			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Blast Furnace Door (Mastery, Proc)
-			{spellID = 177056, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Evergaze Arcane Eidolon (Bonus Armor, Proc)
-			{spellID = 177053, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Formidable Relic of Blood (Haste, Proc)
-			{spellID = 176937, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kyb's Foolish Perseverance (Health, Use)
-			{spellID = 176460, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Pol's Blinded Eye (Mastery, Use)
-			{spellID = 176876, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stoneheart Idol (Crit, Proc)
-			{spellID = 176982, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tablet of Turnbuckle Teamwork (Bonus Armor, Use)
-			{spellID = 176873, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Anzu's Cursed Plume (Mastery, Proc)
-			{spellID = 183931, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Enforcer's Stun Grenade (Versatility, Use)
-			{spellID = 165534, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tyrant's Decree (Stamina, Proc)
-			{spellID = 184770, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Xeri'tac's Unhatched Egg Sac (Mastery, Proc)
-			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Living Carapace (Damage Reduction, Use) [Animated Exoskeleton]
+			{spellID = 225033, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vampiric Aura (Leech, Use) [Fang of Tichcondrius]
+			{spellID = 225130, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Infernal Contract (Damage Reduction, Use) [Infernal Contract]
+			{spellID = 225140, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sands of Time (DoT, Proc) [Royal Dagger Haft]
+			{spellID = 225720, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Shadowy Reflection (Damage Reduction, Proc) [Phantasmal Echo]
+			{spellID = 222479, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nightmarish Ichor (Versatility, Proc) [Goblet of Nightmarish Ichor]
+			{spellID = 222027, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Wild God's Fury (Health, Use) [Unbridled Fury]
+			{spellID = 221695, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkening Soul (Damage Reduction, Proc) [Grotesque Statuette]
+			{spellID = 222209, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Agility]
 			-- Beating Heart of the Mountain (Multistrike, Use)
 			{spellID = 176878, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1631,30 +1605,22 @@ C["filger_spells"] = {
 			-- Orb Of Voidsight (Haste, Proc)
 			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking
-			-- Battering Talisman (Haste, Proc)
-			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Blast Furnace Door (Mastery, Proc)
-			{spellID = 177056, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Evergaze Arcane Eidolon (Bonus Armor, Proc)
-			{spellID = 177053, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Formidable Relic of Blood (Haste, Proc)
-			{spellID = 176937, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kyb's Foolish Perseverance (Health, Use)
-			{spellID = 176460, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Pol's Blinded Eye (Mastery, Use)
-			{spellID = 176876, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stoneheart Idol (Crit, Proc)
-			{spellID = 176982, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tablet of Turnbuckle Teamwork (Bonus Armor, Use)
-			{spellID = 176873, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Anzu's Cursed Plume (Mastery, Proc)
-			{spellID = 183931, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Enforcer's Stun Grenade (Versatility, Use)
-			{spellID = 165534, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tyrant's Decree (Stamina, Proc)
-			{spellID = 184770, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Xeri'tac's Unhatched Egg Sac (Mastery, Proc)
-			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Living Carapace (Damage Reduction, Use) [Animated Exoskeleton]
+			{spellID = 225033, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vampiric Aura (Leech, Use) [Fang of Tichcondrius]
+			{spellID = 225130, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Infernal Contract (Damage Reduction, Use) [Infernal Contract]
+			{spellID = 225140, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sands of Time (DoT, Proc) [Royal Dagger Haft]
+			{spellID = 225720, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Shadowy Reflection (Damage Reduction, Proc) [Phantasmal Echo]
+			{spellID = 222479, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nightmarish Ichor (Versatility, Proc) [Goblet of Nightmarish Ichor]
+			{spellID = 222027, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Wild God's Fury (Health, Use) [Unbridled Fury]
+			{spellID = 221695, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkening Soul (Damage Reduction, Proc) [Grotesque Statuette]
+			{spellID = 222209, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Agility]
 			-- Beating Heart of the Mountain (Multistrike, Use)
 			{spellID = 176878, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1935,30 +1901,22 @@ C["filger_spells"] = {
 			-- Orb Of Voidsight (Haste, Proc)
 			{spellID = 201410, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking
-			-- Battering Talisman (Haste, Proc)
-			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Blast Furnace Door (Mastery, Proc)
-			{spellID = 177056, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Evergaze Arcane Eidolon (Bonus Armor, Proc)
-			{spellID = 177053, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Formidable Relic of Blood (Haste, Proc)
-			{spellID = 176937, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kyb's Foolish Perseverance (Health, Use)
-			{spellID = 176460, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Pol's Blinded Eye (Mastery, Use)
-			{spellID = 176876, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stoneheart Idol (Crit, Proc)
-			{spellID = 176982, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tablet of Turnbuckle Teamwork (Bonus Armor, Use)
-			{spellID = 176873, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Anzu's Cursed Plume (Mastery, Proc)
-			{spellID = 183931, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Enforcer's Stun Grenade (Versatility, Use)
-			{spellID = 165534, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tyrant's Decree (Stamina, Proc)
-			{spellID = 184770, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Xeri'tac's Unhatched Egg Sac (Mastery, Proc)
-			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Living Carapace (Damage Reduction, Use) [Animated Exoskeleton]
+			{spellID = 225033, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vampiric Aura (Leech, Use) [Fang of Tichcondrius]
+			{spellID = 225130, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Infernal Contract (Damage Reduction, Use) [Infernal Contract]
+			{spellID = 225140, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sands of Time (DoT, Proc) [Royal Dagger Haft]
+			{spellID = 225720, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Shadowy Reflection (Damage Reduction, Proc) [Phantasmal Echo]
+			{spellID = 222479, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nightmarish Ichor (Versatility, Proc) [Goblet of Nightmarish Ichor]
+			{spellID = 222027, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Wild God's Fury (Health, Use) [Unbridled Fury]
+			{spellID = 221695, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkening Soul (Damage Reduction, Proc) [Grotesque Statuette]
+			{spellID = 222209, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Strength]
 			-- Forgemaster's Insignia (Multistrike, Proc)
 			{spellID = 177096, unitID = "player", caster = "player", filter = "BUFF"},
@@ -3436,32 +3394,22 @@ C["filger_spells"] = {
 			-- Gronntooth War Horn (Strength, Proc)
 			{spellID = 201405, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking
-			-- Battering Talisman (Haste, Proc)
-			{spellID = 177102, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Blast Furnace Door (Mastery, Proc)
-			{spellID = 177056, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Evergaze Arcane Eidolon (Bonus Armor, Proc)
-			{spellID = 177053, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Formidable Relic of Blood (Haste, Proc)
-			{spellID = 176937, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kyb's Foolish Perseverance (Health, Use)
-			{spellID = 176460, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Pol's Blinded Eye (Mastery, Use)
-			{spellID = 176876, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Stoneheart Idol (Crit, Proc)
-			{spellID = 176982, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tablet of Turnbuckle Teamwork (Bonus Armor, Use)
-			{spellID = 176873, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Anzu's Cursed Plume (Mastery, Proc)
-			{spellID = 183931, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Enforcer's Stun Grenade (Versatility, Use)
-			{spellID = 165534, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kyrak's Vileblood Serum (Mastery, Use)
-			{spellID = 165535, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tyrant's Decree (Stamina, Proc)
-			{spellID = 184770, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Xeri'tac's Unhatched Egg Sac (Mastery, Proc)
-			{spellID = 165824, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Living Carapace (Damage Reduction, Use) [Animated Exoskeleton]
+			{spellID = 225033, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Vampiric Aura (Leech, Use) [Fang of Tichcondrius]
+			{spellID = 225130, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Infernal Contract (Damage Reduction, Use) [Infernal Contract]
+			{spellID = 225140, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sands of Time (DoT, Proc) [Royal Dagger Haft]
+			{spellID = 225720, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Shadowy Reflection (Damage Reduction, Proc) [Phantasmal Echo]
+			{spellID = 222479, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nightmarish Ichor (Versatility, Proc) [Goblet of Nightmarish Ichor]
+			{spellID = 222027, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Wild God's Fury (Health, Use) [Unbridled Fury]
+			{spellID = 221695, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkening Soul (Damage Reduction, Proc) [Grotesque Statuette]
+			{spellID = 222209, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Strength]
 			-- Forgemaster's Insignia (Multistrike, Proc)
 			{spellID = 177096, unitID = "player", caster = "player", filter = "BUFF"},
