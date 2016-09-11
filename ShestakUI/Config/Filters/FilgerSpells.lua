@@ -28,7 +28,7 @@ C["filger_spells"] = {
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Bone Shield
-			--BETA {spellID = 49222, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 195181, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vampiric Blood
 			{spellID = 55233, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Icebound Fortitude
