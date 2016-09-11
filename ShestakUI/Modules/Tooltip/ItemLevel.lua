@@ -224,7 +224,12 @@ local function UnitGear(unit)
 							end
 
 							if quality == 6 then
-								level = GetItemLevel(itemLink) or level
+								if i == 17 then
+									itemLink = GetInventoryItemLink("player", 16)
+									level = GetItemLevel(itemLink) or level
+								else
+									level = GetItemLevel(itemLink) or level
+								end
 							end
 
 							total = total + level
