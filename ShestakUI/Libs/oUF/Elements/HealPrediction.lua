@@ -1,26 +1,28 @@
 local _, ns = ...
 local oUF = ns.oUF
 
-local function UpdateFillBar(self, previousTexture, bar, amount)
+local function UpdateFillBar(frame, previousTexture, bar, amount, maxHealth)
 	if amount == 0 then
 		bar:Hide()
 		return previousTexture
 	end
 
-	local totalWidth, totalHeight = self.Health:GetSize()
-	local orientation = self.Health:GetOrientation()
-	bar:ClearAllPoints()
-	if orientation == "HORIZONTAL" then
-		bar:SetPoint("TOPLEFT", previousTexture, "TOPRIGHT")
-		bar:SetPoint("BOTTOMLEFT", previousTexture, "BOTTOMRIGHT")
-		bar:SetWidth(totalWidth)
-	else
-		bar:SetPoint("BOTTOMRIGHT", previousTexture, "TOPRIGHT")
-		bar:SetPoint("BOTTOMLEFT", previousTexture, "TOPLEFT")
-		bar:SetHeight(totalHeight)
-	end
+	local totalWidth, totalHeight = frame.Health:GetSize()
+	if frame.Health:GetOrientation() == "VERTICAL" then
+		bar:SetPoint("BOTTOM", previousTexture, "TOP", 0, 0)
 
-	return bar:GetStatusBarTexture()
+		local barSize = (amount / maxHealth) * totalHeight
+		bar:SetHeight(barSize)
+	else
+		bar:SetPoint('TOPLEFT', previousTexture, 'TOPRIGHT', 0, 0)
+		bar:SetPoint('BOTTOMLEFT', previousTexture, 'BOTTOMRIGHT', 0, 0)
+
+		local barSize = (amount / maxHealth) * totalWidth
+		bar:SetWidth(barSize)
+	end
+	bar:Show()
+
+	return bar
 end
 
 local function Update(self, event, unit)
@@ -32,77 +34,32 @@ local function Update(self, event, unit)
 	local myIncomingHeal = UnitGetIncomingHeals(unit, 'player') or 0
 	local allIncomingHeal = UnitGetIncomingHeals(unit) or 0
 	local totalAbsorb = UnitGetTotalAbsorbs(unit) or 0
-	local myCurrentHealAbsorb = UnitGetTotalHealAbsorbs(unit) or 0
+
 	local health, maxHealth = UnitHealth(unit), UnitHealthMax(unit)
 
-	local overHealAbsorb = false
-	if(health < myCurrentHealAbsorb) then
-		overHealAbsorb = true
-		myCurrentHealAbsorb = health
+	if(health + allIncomingHeal > maxHealth * hp.maxOverflow) then
+		allIncomingHeal = maxHealth * hp.maxOverflow - health
 	end
 
-	if(health - myCurrentHealAbsorb + allIncomingHeal > maxHealth * hp.maxOverflow) then
-		allIncomingHeal = maxHealth * hp.maxOverflow - health + myCurrentHealAbsorb
-	end
-
-	local otherIncomingHeal = 0
 	if(allIncomingHeal < myIncomingHeal) then
 		myIncomingHeal = allIncomingHeal
+		allIncomingHeal = 0
 	else
-		otherIncomingHeal = allIncomingHeal - myIncomingHeal
+		allIncomingHeal = allIncomingHeal - myIncomingHeal
 	end
 
-	local overAbsorb = false
-	if(health - myCurrentHealAbsorb + allIncomingHeal + totalAbsorb >= maxHealth or health + totalAbsorb >= maxHealth) then
-		if(totalAbsorb > 0) then
-			overAbsorb = true
-		end
-
-		if(allIncomingHeal > myCurrentHealAbsorb) then
-			totalAbsorb = max(0, maxHealth - (health - myCurrentHealAbsorb + allIncomingHeal))
-		else
-			totalAbsorb = max(0, maxHealth - health)
-		end
-	end
-
-	if(myCurrentHealAbsorb > allIncomingHeal) then
-		myCurrentHealAbsorb = myCurrentHealAbsorb - allIncomingHeal
-	else
-		myCurrentHealAbsorb = 0
-	end
-
-	if(hp.myBar) then
-		hp.myBar:SetMinMaxValues(0, maxHealth)
-		hp.myBar:SetValue(myIncomingHeal)
-		hp.myBar:Show()
-	end
-
-	if(hp.otherBar) then
-		hp.otherBar:SetMinMaxValues(0, maxHealth)
-		hp.otherBar:SetValue(otherIncomingHeal)
-		hp.otherBar:Show()
-	end
-
-	if(hp.absorbBar) then
-		hp.absorbBar:SetMinMaxValues(0, maxHealth)
-		hp.absorbBar:SetValue(totalAbsorb)
-		hp.absorbBar:Show()
-	end
-
-	if(hp.healAbsorbBar) then
-		hp.healAbsorbBar:SetMinMaxValues(0, maxHealth)
-		hp.healAbsorbBar:SetValue(myCurrentHealAbsorb)
-		hp.healAbsorbBar:Show()
+	if health + myIncomingHeal + allIncomingHeal + totalAbsorb >= maxHealth then
+		totalAbsorb = max(0, maxHealth - (health + myIncomingHeal + allIncomingHeal))
 	end
 
 	local previousTexture = self.Health:GetStatusBarTexture()
 
-	previousTexture = UpdateFillBar(self, previousTexture, hp.myBar, myIncomingHeal)
-	previousTexture = UpdateFillBar(self, previousTexture, hp.otherBar, allIncomingHeal)
-	previousTexture = UpdateFillBar(self, previousTexture, hp.absorbBar, totalAbsorb)
+	previousTexture = UpdateFillBar(self, previousTexture, hp.myBar, myIncomingHeal, maxHealth)
+	previousTexture = UpdateFillBar(self, previousTexture, hp.otherBar, allIncomingHeal, maxHealth)
+	previousTexture = UpdateFillBar(self, previousTexture, hp.absorbBar, totalAbsorb, maxHealth)
 
 	if(hp.PostUpdate) then
-		return hp:PostUpdate(unit, overAbsorb, overHealAbsorb)
+		return hp:PostUpdate(unit)
 	end
 end
 
