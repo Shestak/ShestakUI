@@ -1197,17 +1197,23 @@ local function Shared(self, unit)
 
 	-- Incoming heal text/bar
 	if C.raidframe.plugins_healcomm == true then
-		local mhpb = self.Health:CreateTexture(nil, "ARTWORK")
-		mhpb:SetTexture(C.media.texture)
-		mhpb:SetVertexColor(0, 1, 0.5, 0.2)
+		local mhpb = CreateFrame("StatusBar", nil, self.Health)
+		mhpb:SetStatusBarTexture(C.media.texture)
+		mhpb:SetStatusBarColor(0, 1, 0.5, 0.2)
+		mhpb:SetFrameLevel(3)
+		mhpb:Hide()
 
-		local ohpb = self.Health:CreateTexture(nil, "ARTWORK")
-		ohpb:SetTexture(C.media.texture)
-		ohpb:SetVertexColor(0, 1, 0, 0.2)
+		local ohpb = CreateFrame("StatusBar", nil, self.Health)
+		ohpb:SetStatusBarTexture(C.media.texture)
+		ohpb:SetStatusBarColor(0, 1, 0, 0.2)
+		ohpb:SetFrameLevel(3)
+		ohpb:Hide()
 
-		local ahpb = self.Health:CreateTexture(nil, "ARTWORK")
-		ahpb:SetTexture(C.media.texture)
-		ahpb:SetVertexColor(1, 1, 0, 0.2)
+		local ahpb = CreateFrame("StatusBar", nil, self.Health)
+		ahpb:SetStatusBarTexture(C.media.texture)
+		ahpb:SetStatusBarColor(1, 1, 0, 0.2)
+		ahpb:SetFrameLevel(3)
+		ahpb:Hide()
 
 		self.HealPrediction = {
 			myBar = mhpb,
