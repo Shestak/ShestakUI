@@ -529,6 +529,7 @@ T.OpenItems = {
 	[137565] = true,	-- Warden's Field Kit
 	[139048] = true,	-- Small Legion Chest
 	[139049] = true,	-- Large Legion Chest
+	[140591] = true,	-- Shattered Satchel of Cooperation
 	[140601] = true,	-- Sixtrigger Resource Crate
 	[141350] = true,	-- Kirin Tor Chest
 }
