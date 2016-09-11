@@ -6,11 +6,40 @@ local argcheck = Private.argcheck
 local error = Private.error
 local frame_metatable = Private.frame_metatable
 
--- Events
-Private.OnEvent = function(self, event, ...)
-	if(not self:IsShown()) then return end
-	if not self or not event or not self[event] then return end
-	return self[event](self, event, ...)
+-- Original event methods
+local RegisterEvent = frame_metatable.__index.RegisterEvent
+local RegisterUnitEvent = frame_metatable.__index.RegisterUnitEvent
+local UnregisterEvent = frame_metatable.__index.UnregisterEvent
+local IsEventRegistered = frame_metatable.__index.IsEventRegistered
+
+local unitEvents = {}
+
+Private.UpdateUnits = function(frame, unit, realUnit)
+	if unit == realUnit then
+		realUnit = nil
+	end
+	if frame.unit ~= unit or frame.realUnit ~= realUnit then
+		for event in next, unitEvents do
+			-- IsEventRegistered returns the units in case of an event
+			-- registered with RegisterUnitEvent
+			local registered, unit1 = IsEventRegistered(frame, event)
+			if registered and unit1 ~= unit then
+				-- RegisterUnitEvent erases previously registered units so
+				-- do not bother to unregister it
+				RegisterUnitEvent(frame, event, unit, realUnit)
+			end
+		end
+		frame.unit = unit
+		frame.realUnit = realUnit
+		frame.id = unit:match'^.-(%d+)'
+		return true
+	end
+end
+
+local OnEvent = function(self, event, ...)
+	if self:IsVisible() then
+		return self[event](self, event, ...)
+	end
 end
 
 local event_metatable = {
@@ -21,12 +50,19 @@ local event_metatable = {
 	end,
 }
 
-local RegisterEvent = frame_metatable.__index.RegisterEvent
-function frame_metatable.__index:RegisterEvent(event, func)
+function frame_metatable.__index:RegisterEvent(event, func, unitless)
+	-- Block OnUpdate polled frames from registering events.
+	if(self.__eventless) then return end
+
 	argcheck(event, 2, 'string')
 
 	if(type(func) == 'string' and type(self[func]) == 'function') then
 		func = self[func]
+	end
+
+	-- TODO: should warn the user.
+	if not unitless and not (unitEvents[event] or event:match'^UNIT_') then
+		unitless = true
 	end
 
 	local curev = self[event]
@@ -41,7 +77,7 @@ function frame_metatable.__index:RegisterEvent(event, func)
 
 			table.insert(curev, func)
 		end
-	elseif(self:IsEventRegistered(event)) then
+	elseif(IsEventRegistered(self, event)) then
 		return
 	else
 		if(type(func) == 'function') then
@@ -50,11 +86,19 @@ function frame_metatable.__index:RegisterEvent(event, func)
 			return error("Style [%s] attempted to register event [%s] on unit [%s] with a handler that doesn't exist.", self.style, event, self.unit or 'unknown')
 		end
 
-		RegisterEvent(self, event)
+		if not self:GetScript('OnEvent') then
+			self:SetScript('OnEvent', OnEvent)
+		end
+
+		if unitless then
+			RegisterEvent(self, event)
+		else
+			unitEvents[event] = true
+			RegisterUnitEvent(self, event, self.unit)
+		end
 	end
 end
 
-local UnregisterEvent = frame_metatable.__index.UnregisterEvent
 function frame_metatable.__index:UnregisterEvent(event, func)
 	argcheck(event, 2, 'string')
 
@@ -69,6 +113,7 @@ function frame_metatable.__index:UnregisterEvent(event, func)
 					local _, handler = next(curev)
 					self[event] = handler
 				elseif(n == 0) then
+					-- This should not happen
 					UnregisterEvent(self, event)
 				end
 
