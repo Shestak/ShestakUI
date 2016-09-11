@@ -1411,6 +1411,7 @@ end
 local function UpdateHealthColor(unitFrame)
 	local unit = unitFrame.displayedUnit
 	local r, g, b
+	local threat
 
 	if not UnitIsConnected(unit) then
 		r, g, b = 0.7, 0.7, 0.7
@@ -1432,6 +1433,7 @@ local function UpdateHealthColor(unitFrame)
 					SetVirtualBorder(unitFrame.healthBar, unpack(IsOnThreatList(unitFrame.displayedUnit)))
 				else
 					r, g, b = IsOnThreatList(unitFrame.displayedUnit)
+					threat = true
 				end
 			else
 				local reaction = T.oUF_colors.reaction[UnitReaction(unit, "player")]
@@ -1448,6 +1450,15 @@ local function UpdateHealthColor(unitFrame)
 		unitFrame.healthBar:SetStatusBarColor(r, g, b)
 		unitFrame.healthBar.Background:SetColorTexture(r, g, b, 0.2)
 		unitFrame.name:SetTextColor(r, g, b)
+		if threat then
+			local reaction = T.oUF_colors.reaction[UnitReaction(unit, "player")]
+			if reaction then
+				red, green, blue = reaction[1], reaction[2], reaction[3]
+			else
+				red, green, blue = UnitSelectionColor(unit, true)
+			end
+			unitFrame.name:SetTextColor(red, green, blue)
+		end
 		unitFrame.r, unitFrame.g, unitFrame.b = r, g, b
 	end
 end
