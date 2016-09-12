@@ -119,7 +119,7 @@ elseif T.class == "HUNTER" then
 	end
 elseif T.class == "MAGE" then
 	if C.combattext.merge_aoe_spam then
-		T.aoespam[44457] = 3		-- Living Bomb
+		T.aoespam[217694] = 3.5		-- Living Bomb
 		T.aoespam[44461] = 3		-- Living Bomb (AoE)
 		T.aoespam[2120] = 3			-- Flamestrike
 		T.aoespam[12654] = 3		-- Ignite
@@ -152,6 +152,9 @@ elseif T.class == "MAGE" then
 		T.aoespam[157979] = 0		-- Unstable Magic (Arcane)
 		T.aoespam[153564] = 3		-- Meteor
 		T.aoespam[155158] = 3		-- Meteor Burn
+		T.aoespam[224637] = 1.6		-- Phoenix's Flames
+		T.aoespam[205345] = 3		-- Conflagration
+		T.aoespam[198928] = 1.2		-- Cinderstorm
 		T.aoespam[88084] = 3		-- Arcane Blast (Mirror Image)
 		T.aoespam[59638] = 3		-- Frostbolt (Mirror Image)
 	end
