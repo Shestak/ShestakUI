@@ -34,8 +34,8 @@ local Enable = function(self)
 		leader.__owner = self
 		leader.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent("PARTY_LEADER_CHANGED", Path)
-		self:RegisterEvent("GROUP_ROSTER_UPDATE", Path)
+		self:RegisterEvent("PARTY_LEADER_CHANGED", Path, true)
+		self:RegisterEvent("GROUP_ROSTER_UPDATE", Path, true)
 
 		if(leader:IsObjectType"Texture" and not leader:GetTexture()) then
 			leader:SetTexture[[Interface\GroupFrame\UI-Group-LeaderIcon]]
@@ -48,6 +48,7 @@ end
 local Disable = function(self)
 	local leader = self.Leader
 	if(leader) then
+		leader:Hide()
 		self:UnregisterEvent("PARTY_LEADER_CHANGED", Path)
 		self:UnregisterEvent("GROUP_ROSTER_UPDATE", Path)
 	end

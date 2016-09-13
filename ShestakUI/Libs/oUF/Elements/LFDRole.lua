@@ -35,9 +35,9 @@ local Enable = function(self)
 		lfdrole.ForceUpdate = ForceUpdate
 
 		if(self.unit == "player") then
-			self:RegisterEvent("PLAYER_ROLES_ASSIGNED", Path)
+			self:RegisterEvent("PLAYER_ROLES_ASSIGNED", Path, true)
 		else
-			self:RegisterEvent("GROUP_ROSTER_UPDATE", Path)
+			self:RegisterEvent("GROUP_ROSTER_UPDATE", Path, true)
 		end
 
 		if(lfdrole:IsObjectType"Texture" and not lfdrole:GetTexture()) then
@@ -51,6 +51,7 @@ end
 local Disable = function(self)
 	local lfdrole = self.LFDRole
 	if(lfdrole) then
+		lfdrole:Hide()
 		self:UnregisterEvent("PLAYER_ROLES_ASSIGNED", Path)
 		self:UnregisterEvent("GROUP_ROSTER_UPDATE", Path)
 	end

@@ -174,9 +174,17 @@ local function UpdateButtonsText(frame)
 							end
 						end
 
-						local artifact = tonumber(strmatch(itemLink, ".+:" .. ulvl .. ":%d+:(256):"))
-						if artifact then
-							level = GetItemLevel(itemLink) or level
+						if quality == 6 then
+							if id == 17 then
+								if frame == "Inspect" then
+									itemLink = GetInventoryItemLink("target", 16)
+								else
+									itemLink = GetInventoryItemLink("player", 16)
+								end
+								level = GetItemLevel(itemLink) or level
+							else
+								level = GetItemLevel(itemLink) or level
+							end
 						end
 
 						text:SetText("|cFFFFFF00"..level)

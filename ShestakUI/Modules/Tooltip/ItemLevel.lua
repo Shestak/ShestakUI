@@ -223,9 +223,13 @@ local function UnitGear(unit)
 								end
 							end
 
-							local artifact = tonumber(strmatch(itemLink, ".+:" .. ulvl .. ":%d+:(256):"))
-							if artifact then
-								level = GetItemLevel(itemLink) or level
+							if quality == 6 then
+								if i == 17 then
+									itemLink = GetInventoryItemLink("player", 16)
+									level = GetItemLevel(itemLink) or level
+								else
+									level = GetItemLevel(itemLink) or level
+								end
 							end
 
 							total = total + level
