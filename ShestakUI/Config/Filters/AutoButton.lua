@@ -43,6 +43,22 @@ T.ABItems = {
 	47030,	-- Huge Seaforium Bombs
 	-- Other
 	45072,	-- Brightly Colored Egg (Noblegarden)
+	-- Legion
+	118330,	-- Pile of Weapons
+	122100,	-- Soul Gem
+	127030, -- Granny's Flare Grenades
+	127295, -- Blazing Torch
+	128651, -- Critter Hand Cannon
+	128772, -- Branch of the Runewood
+	129161, -- Stormforged Horn
+	131931, -- Khadgar's Wand
+	133882, -- Trap Rune
+	133897, -- Telemancy Beacon
+	133999, -- Inert Crystal
+	136605, -- Solendra's Compassion
+	137299, -- Nightborne Spellblad
+	138146, -- Rediant Ley Crystal
+	140916, -- Satchel of Locklimb Powder
 }
 
 T.ABEquipedItems = {
