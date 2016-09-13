@@ -143,16 +143,16 @@ function T.SkinScrollBar(frame, parent)
 		if _G[frame:GetName().."Middle"] then
 			_G[frame:GetName().."Middle"]:SetTexture(nil)
 		end
-	else
-		if frame.Background then frame.Background:SetTexture(nil) end
-		if frame.trackBG then frame.trackBG:SetTexture(nil) end
-		if frame.Middle then frame.Middle:SetTexture(nil) end
-		if frame.Top then frame.Top:SetTexture(nil) end
-		if frame.Bottom then frame.Bottom:SetTexture(nil) end
-		if frame.ScrollBarTop then frame.ScrollBarTop:SetTexture(nil) end
-		if frame.ScrollBarBottom then frame.ScrollBarBottom:SetTexture(nil) end
-		if frame.ScrollBarMiddle then frame.ScrollBarMiddle:SetTexture(nil) end
 	end
+
+	if frame.Background then frame.Background:SetTexture(nil) end
+	if frame.trackBG then frame.trackBG:SetTexture(nil) end
+	if frame.Middle then frame.Middle:SetTexture(nil) end
+	if frame.Top then frame.Top:SetTexture(nil) end
+	if frame.Bottom then frame.Bottom:SetTexture(nil) end
+	if frame.ScrollBarTop then frame.ScrollBarTop:SetTexture(nil) end
+	if frame.ScrollBarBottom then frame.ScrollBarBottom:SetTexture(nil) end
+	if frame.ScrollBarMiddle then frame.ScrollBarMiddle:SetTexture(nil) end
 
 	local UpButton = frame.ScrollUpButton or frame.UpButton or _G[(frame:GetName() or parent).."ScrollUpButton"]
 	local DownButton = frame.ScrollDownButton or frame.DownButton or _G[(frame:GetName() or parent).."ScrollDownButton"]
