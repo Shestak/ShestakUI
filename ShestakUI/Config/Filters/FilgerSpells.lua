@@ -1102,12 +1102,12 @@ C["filger_spells"] = {
 			{spellID = 12472, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Arcane Power
 			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combustion
+			{spellID = 190319, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Barrier
 			{spellID = 11426, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Heating Up
 			{spellID = 48107, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Incanter's Flow
-			{spellID = 1463, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Floes
 			{spellID = 108839, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Evanesce
@@ -1189,8 +1189,6 @@ C["filger_spells"] = {
 
 			-- Arcane Charge
 			{spellID = 36032, unitID = "player", caster = "player", filter = "DEBUFF"},
-			-- Ignite
-			{spellID = 12654, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Living Bomb
 			{spellID = 44457, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Nether Tempest
@@ -1250,6 +1248,8 @@ C["filger_spells"] = {
 			--BETA {spellID = 102051, filter = "CD"},
 			-- Counterspell
 			{spellID = 2139, filter = "CD"},
+			-- Living Bomb
+			{spellID = 44457, filter = "CD"},
 			-- Blink
 			{spellID = 1953, filter = "CD"},
 			-- Blazing Speed
@@ -1266,8 +1266,6 @@ C["filger_spells"] = {
 			{spellID = 11426, filter = "CD"},
 			-- Temporal Shield
 			{spellID = 115610, filter = "CD"},
-			-- Incanter's Ward
-			{spellID = 1463, filter = "CD"},
 			-- Fire Blast
 			--BETA {spellID = 2136, filter = "CD"},
 			-- Frost Bomb
@@ -1282,6 +1280,8 @@ C["filger_spells"] = {
 			{spellID = 153595, filter = "CD"},
 			-- Ice Floes
 			{spellID = 108839, filter = "CD"},
+			-- Flame On
+			{spellID = 205029, filter = "CD"},
 			-- Combustion
 			--BETA {spellID = 11129, filter = "CD"},
 			-- Frozen Orb
@@ -1296,10 +1296,10 @@ C["filger_spells"] = {
 			{spellID = 12051, filter = "CD"},
 			-- Icy Veins
 			{spellID = 12472, filter = "CD"},
-			-- Prismatic Crystal
-			{spellID = 152087, filter = "CD"},
 			-- Mirror Image
 			{spellID = 55342, filter = "CD"},
+			-- Combustion
+			{spellID = 190319, filter = "CD"},
 			-- Cold Snap
 			{spellID = 11958, filter = "CD"},
 			-- Ice Block
