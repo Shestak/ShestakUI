@@ -318,7 +318,7 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[77478] = 3		-- Earhquake
 		T.aoespam[51490] = 0		-- Thunderstorm
 		T.aoespam[8187] = 3			-- Magma Totem
-		--BETA T.aoespam[8050] = 3			-- Flame Shock
+		T.aoespam[188389] = 3			-- Flame Shock
 		T.aoespam[25504] = 3		-- Windfury Attack
 		T.aoespam[10444] = 3		-- Flametongue Attack
 		T.aoespam[3606] = 3			-- Searing Bolt

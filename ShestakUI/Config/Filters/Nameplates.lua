@@ -68,8 +68,8 @@ T.DebuffWhiteList = {
 	-- Shaman
 	[SpellName(51514)] = true,	-- Hex
 	[SpellName(3600)] = true,	-- Earthbind
-	--BETA [SpellName(8056)] = true,	-- Frost Shock
-	--BETA [SpellName(8050)] = true,	-- Flame Shock
+	[SpellName(196840)] = true,	-- Frost Shock
+	[SpellName(188389)] = true,	-- Flame Shock
 	--BETA [SpellName(63685)] = true,	-- Frozen Power
 	-- Warlock
 	[SpellName(710)] = true,	-- Banish

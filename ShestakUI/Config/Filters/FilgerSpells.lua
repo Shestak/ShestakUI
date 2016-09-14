@@ -2564,9 +2564,9 @@ C["filger_spells"] = {
 			-- Stormstrike
 			{spellID = 17364, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Flame Shock
-			--BETA {spellID = 8050, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 188389, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Shock
-			--BETA {spellID = 8056, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 196840, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Earthgrab
 			{spellID = 64695, unitID = "target", caster = "player", filter = "DEBUFF"},
 
@@ -3595,7 +3595,7 @@ C["filger_spells"] = {
 			-- Earthquake
 			{spellID = 77505, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Shock
-			--BETA {spellID = 8056, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 196840, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Thunderstorm
 			{spellID = 51490, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Cripple (Doomguard)
