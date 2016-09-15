@@ -9,9 +9,7 @@ local flaskbuffs = T.ReminderBuffs["Flask"]
 local battleelixirbuffs = T.ReminderBuffs["BattleElixir"]
 local guardianelixirbuffs = T.ReminderBuffs["GuardianElixir"]
 local foodbuffs = T.ReminderBuffs["Food"]
-local statbuffs = T.ReminderBuffs["Stat"]
-local staminabuffs = T.ReminderBuffs["Stamina"]
-local visible, flask, battleelixir, guardianelixir, food, stat, stamina, spell5, spell6
+local visible, flask, battleelixir, guardianelixir, food
 
 -- We need to check if you have two different elixirs if your not flasked, before we say your not flasked
 local function CheckElixir(unit)
@@ -57,13 +55,6 @@ end
 local function OnAuraChange(self, event, arg1, unit)
 	if event == "UNIT_AURA" and arg1 ~= "player" then return end
 
-	-- If We're a caster we may want to see different buffs
-	if T.Role == "Caster" or T.Role == "Healer" then
-		T.ReminderCasterBuffs()
-	else
-		T.ReminderPhysicalBuffs()
-	end
-
 	-- Start checking buffs to see if we can find a match from the list
 	if flaskbuffs and flaskbuffs[1] then
 		for i, flaskbuffs in pairs(flaskbuffs) do
@@ -98,71 +89,11 @@ local function OnAuraChange(self, event, arg1, unit)
 		end
 	end
 
-	for i, statbuffs in pairs(statbuffs) do
-		local name, _, icon = GetSpellInfo(statbuffs)
-		if i == 1 then
-			StatFrame.t:SetTexture(icon)
-		end
-		if UnitAura("player", name) then
-			StatFrame:SetAlpha(C.reminder.raid_buffs_alpha)
-			stat = true
-			break
-		else
-			StatFrame:SetAlpha(1)
-			stat = false
-		end
-	end
-
-	for i, staminabuffs in pairs(staminabuffs) do
-		local name, _, icon = GetSpellInfo(staminabuffs)
-		if i == 1 then
-			StaminaFrame.t:SetTexture(icon)
-		end
-		if UnitAura("player", name) then
-			StaminaFrame:SetAlpha(C.reminder.raid_buffs_alpha)
-			stamina = true
-			break
-		else
-			StaminaFrame:SetAlpha(1)
-			stamina = false
-		end
-	end
-
-	for i, Spell5Buff in pairs(Spell5Buff) do
-		local name, _, icon = GetSpellInfo(Spell5Buff)
-		if i == 1 then
-			Spell5Frame.t:SetTexture(icon)
-		end
-		if UnitAura("player", name) then
-			Spell5Frame:SetAlpha(C.reminder.raid_buffs_alpha)
-			spell5 = true
-			break
-		else
-			Spell5Frame:SetAlpha(1)
-			spell5 = false
-		end
-	end
-
-	for i, Spell6Buff in pairs(Spell6Buff) do
-		local name, _, icon = GetSpellInfo(Spell6Buff)
-		if i == 1 then
-			Spell6Frame.t:SetTexture(icon)
-		end
-		if UnitAura("player", name) then
-			Spell6Frame:SetAlpha(C.reminder.raid_buffs_alpha)
-			spell6 = true
-			break
-		else
-			Spell6Frame:SetAlpha(1)
-			spell6 = false
-		end
-	end
-
 	local _, instanceType = IsInInstance()
 	if (not IsInGroup() or instanceType ~= "raid") and C.reminder.raid_buffs_always == false then
 		RaidBuffReminder:SetAlpha(0)
 		visible = false
-	elseif flask == true and food == true and stat == true and stamina == true and spell5 == true and spell6 == true then
+	elseif flask == true and food == true then
 		if not visible then
 			RaidBuffReminder:SetAlpha(0)
 			visible = false
@@ -214,8 +145,4 @@ end
 do
 	CreateButton("FlaskFrame", RaidBuffReminder, true)
 	CreateButton("FoodFrame", FlaskFrame, false)
-	-- CreateButton("StatFrame", FoodFrame, false)
-	-- CreateButton("StaminaFrame", StatFrame, false)
-	-- CreateButton("Spell5Frame", StaminaFrame, false)
-	-- CreateButton("Spell6Frame", Spell5Frame, false)
 end
