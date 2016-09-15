@@ -3196,25 +3196,12 @@ C["filger_spells"] = {
 			-- Wand of Lightning Shield
 			{spellID = 171725, unitID = "player", caster = "all", filter = "BUFF"},
 
-			-- Potions: Draenor
-			-- Draenic Agility Potion
-			{spellID = 156423, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Draenic Intellect Potion
-			{spellID = 156426, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Draenic Strength Potion
-			{spellID = 156428, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Draenic Armor Potion
-			{spellID = 156430, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Potions: Pandaria
-			-- Virmen's Bite (Agility)
-			{spellID = 105697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Potion of Mogu Power (Strength)
-			{spellID = 105706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Potion of the Jade Serpent (Intellect)
-			{spellID = 105702, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kafa Press (Haste)
-			{spellID = 125282, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Potions: Legion
+			-- Unbending Potion
+			{spellID = 188029, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Potions: Miscellaneous
+			-- Skystep Potion
+			{spellID = 188024, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Invisibility Potion
 			{spellID = 11392, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Darkwater Potion
@@ -3223,11 +3210,7 @@ C["filger_spells"] = {
 			{spellID = 175833, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Draenic Swiftness Potion
 			{spellID = 175790, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Potion of Luck
-			{spellID = 135855, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Potion of Treasure Finding
-			{spellID = 80263, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Swiftness Potion
+			-- Speed [Swiftness Potion]
 			{spellID = 2379, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Potions: Brawler's Guild
 			-- Brawler's Draenic Agility Potion
