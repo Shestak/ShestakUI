@@ -325,7 +325,7 @@ L_GUI_AURA_CAST_BY = "提示Buff/DeBuff提供者"
 L_GUI_AURA_CLASSCOLOR_BORDER = "自身Buff圖示邊框按職業著色"
 
 -- Filger
-L_GUI_FILGER = "Filger"
+L_GUI_FILGER = "Timers (Filger)" -- Need review
 L_GUI_FILGER_ENABLE = "開啟Filger" -- Need review
 L_GUI_FILGER_TEST_MODE = "調試模式"
 L_GUI_FILGER_MAX_TEST_ICON = "調試模式圖示數量"
