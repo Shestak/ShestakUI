@@ -51,9 +51,12 @@ T.ABItems = {
 	128651, -- Critter Hand Cannon
 	128772, -- Branch of the Runewood
 	129161, -- Stormforged Horn
+	129725, -- Smoldering Torch
 	131931, -- Khadgar's Wand
+	133756, -- Fresh Mound of Flesh
 	133882, -- Trap Rune
 	133897, -- Telemancy Beacon
+	133925, -- Fel Lash
 	133999, -- Inert Crystal
 	136605, -- Solendra's Compassion
 	137299, -- Nightborne Spellblad
