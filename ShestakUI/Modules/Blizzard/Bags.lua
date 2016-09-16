@@ -245,9 +245,12 @@ function Stuffing:SlotUpdate(b)
 					b.itemlevel = timewarped[tid]
 				end
 
-				local uid = strmatch(clink, ".+:(%d+)")
-				if upgrades[uid] then
-					b.itemlevel = b.itemlevel + upgrades[uid]
+				local upgradeTypeID = select(12, strsplit(":", clink))
+				if upgradeTypeID and upgradeTypeID ~= "" then
+					local uid = clink:match("[-:%d]+:([-%d]+)")
+					if upgrades[uid] then
+						b.itemlevel = b.itemlevel + upgrades[uid]
+					end
 				end
 
 				local numBonusIDs = tonumber(strmatch(clink, ".+:%d+:512:%d*:(%d+).+"))

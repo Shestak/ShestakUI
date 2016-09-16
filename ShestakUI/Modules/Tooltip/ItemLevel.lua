@@ -176,9 +176,12 @@ local function UnitGear(unit)
 								level = timewarped[tid]
 							end
 
-							local uid = strmatch(itemLink, ".+:(%d+)")
-							if upgrades[uid] then
-								level = level + upgrades[uid]
+							local upgradeTypeID = select(12, strsplit(":", itemLink))
+							if upgradeTypeID and upgradeTypeID ~= "" then
+								local uid = itemLink:match("[-:%d]+:([-%d]+)")
+								if upgrades[uid] then
+									level = level + upgrades[uid]
+								end
 							end
 
 							local numBonusIDs = tonumber(strmatch(itemLink, ".+:%d+:512:%d*:(%d+).+"))
