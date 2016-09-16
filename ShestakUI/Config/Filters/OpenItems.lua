@@ -533,5 +533,5 @@ T.OpenItems = {
 	[139049] = true,	-- Large Legion Chest
 	[140591] = true,	-- Shattered Satchel of Cooperation
 	[140601] = true,	-- Sixtrigger Resource Crate
-	[141350] = true,	-- Kirin Tor Ches
+	[141350] = true,	-- Kirin Tor Chest
 }
