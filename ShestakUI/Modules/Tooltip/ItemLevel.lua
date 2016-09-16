@@ -159,9 +159,6 @@ local function UnitGear(unit)
 				else
 					local _, _, quality, level, _, _, _, _, slot = GetItemInfo(itemLink)
 
-					if level == nil then
-						level = 0
-					end
 					if (not quality) or (not level) then
 						delay = true
 					else
@@ -184,13 +181,13 @@ local function UnitGear(unit)
 								level = level + upgrades[uid]
 							end
 
-                            local numBonusIDs = tonumber(strmatch(itemLink, ".+:%d+:512:%d*:(%d+).+"))
-                            if numBonusIDs then
-                                if GetDetailedItemLevelInfo then
-                                    local effectiveLevel, previewLevel, origLevel = GetDetailedItemLevelInfo(itemLink)
-                                    level = effectiveLevel or level
-                                end
-                            end
+							local numBonusIDs = tonumber(strmatch(itemLink, ".+:%d+:512:%d*:(%d+).+"))
+							if numBonusIDs then
+								if GetDetailedItemLevelInfo then
+									local effectiveLevel, previewLevel, origLevel = GetDetailedItemLevelInfo(itemLink)
+									level = effectiveLevel or level
+								end
+							end
 
 							if quality == 6 then
 								if i == 17 then
