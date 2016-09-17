@@ -3329,6 +3329,10 @@ C["filger_spells"] = {
 			{spellID = 130, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Levitate
 			{spellID = 1706, unitID = "player", caster = "all", filter = "BUFF"},
+			
+			-- Trinkets
+			-- Moonlit Prism
+			{spellID = 215648, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
