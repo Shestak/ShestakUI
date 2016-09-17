@@ -123,12 +123,10 @@ elseif T.class == "MAGE" then
 		T.aoespam[44461] = 3		-- Living Bomb (AoE)
 		T.aoespam[2120] = 3			-- Flamestrike
 		T.aoespam[12654] = 3		-- Ignite
-		T.aoespam[11366] = 3		-- Pyroblast
 		T.aoespam[31661] = 0		-- Dragon's Breath
-		--BETA T.aoespam[42208] = 3		-- Blizzard
+		T.aoespam[190356] = 3		-- Blizzard
 		T.aoespam[122] = 0			-- Frost Nova
 		T.aoespam[1449] = 0			-- Arcane Explosion
-		--BETA T.aoespam[83853] = 3		-- Combustion
 		T.aoespam[120] = 0			-- Cone of Cold
 		T.aoespam[114923] = 3		-- Nether Tempest
 		T.aoespam[114954] = 3		-- Nether Tempest (AoE)
@@ -155,6 +153,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[224637] = 1.6		-- Phoenix's Flames
 		T.aoespam[205345] = 3		-- Conflagration
 		T.aoespam[198928] = 1.2		-- Cinderstorm
+		T.aoespam[194316] = 3		-- Cauterizing Blink
 		T.aoespam[88084] = 3		-- Arcane Blast (Mirror Image)
 		T.aoespam[59638] = 3		-- Frostbolt (Mirror Image)
 	end
@@ -318,7 +317,7 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[77478] = 3		-- Earhquake
 		T.aoespam[51490] = 0		-- Thunderstorm
 		T.aoespam[8187] = 3			-- Magma Totem
-		--BETA T.aoespam[8050] = 3			-- Flame Shock
+		T.aoespam[188389] = 3			-- Flame Shock
 		T.aoespam[25504] = 3		-- Windfury Attack
 		T.aoespam[10444] = 3		-- Flametongue Attack
 		T.aoespam[3606] = 3			-- Searing Bolt

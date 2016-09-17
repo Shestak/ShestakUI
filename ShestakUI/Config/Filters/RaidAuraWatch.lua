@@ -67,7 +67,7 @@ T.RaidBuffs = {
 }
 
 T.RaidBuffsIgnore = {
-	-- [65148] = true,		-- Sacred Shield (Proc)
+	--[spellID] = true,			-- Spell name
 }
 
 local function SpellName(id)
@@ -81,6 +81,47 @@ local function SpellName(id)
 end
 
 T.RaidDebuffs = {
+-----------------------------------------------------------------
+-- Legion
+-----------------------------------------------------------------
+-- The Emerald Nightmare
+	-- Nythendra
+	[SpellName(204463)] = 3,	-- Volatile Rot
+	-- Il'gynoth, Heart of Corruption
+	[SpellName(209469)] = 3,	-- Touch of Corruption
+	[SpellName(208929)] = 3,	-- Spew Corruption
+	-- Erethe Renferal
+	[SpellName(215300)] = 3,	-- Web of Pain
+	[SpellName(215582)] = 3,	-- Raking Talons
+	-- Ursoc
+	[SpellName(197943)] = 3,	-- Overwhelm
+	-- Dragons of Nightmare
+	-- Cenarius
+	[SpellName(210279)] = 3,	-- Creeping Nightmare
+	-- Xavius
+	[SpellName(206651)] = 3,	-- Darkening Soul
+	[SpellName(209158)] = 3,	-- Blackening Soul
+-- The Nighthold
+	-- Skorpyron
+	-- Chronomatic Anomaly
+	[SpellName(206609)] = 3,	-- Time Release
+	-- Trilliax
+	[SpellName(206788)] = 3,	-- Toxic Slice
+	-- Spellblade Aluriel
+	[SpellName(212492)] = 3,	-- Annihilate
+	[SpellName(212587)] = 3,	-- Mark of Frost
+	-- Tichondrius
+	[SpellName(206480)] = 3,	-- Carrion Plague
+	[SpellName(216040)] = 3,	-- Burning Soul
+	[SpellName(208230)] = 3,	-- Feast of Blood
+	-- Krosus
+	-- High Botanist Tel'arn
+	[SpellName(218304)] = 3,	-- Parasitic Fetter
+	-- Star Augur Etraeus
+	[SpellName(206936)] = 3,	-- Icy Ejection
+	-- Gul'dan
+	[SpellName(206222)] = 3,	-- Bonds of Fel
+	[SpellName(212568)] = 3,	-- Drain
 -----------------------------------------------------------------
 -- Draenor
 -----------------------------------------------------------------

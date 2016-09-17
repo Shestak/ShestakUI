@@ -1102,12 +1102,12 @@ C["filger_spells"] = {
 			{spellID = 12472, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Arcane Power
 			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Combustion
+			{spellID = 190319, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Barrier
 			{spellID = 11426, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Heating Up
 			{spellID = 48107, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Incanter's Flow
-			{spellID = 1463, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Floes
 			{spellID = 108839, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Evanesce
@@ -1118,8 +1118,6 @@ C["filger_spells"] = {
 			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rune of Power
 			{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Prismatic Crystal
-			{spellID = 152087, filter = "ICD", trigger = "NONE", duration = 12},
 			-- Mirror Image
 			{spellID = 55342, filter = "ICD", trigger = "NONE", duration = 40},
 		},
@@ -1189,8 +1187,6 @@ C["filger_spells"] = {
 
 			-- Arcane Charge
 			{spellID = 36032, unitID = "player", caster = "player", filter = "DEBUFF"},
-			-- Ignite
-			{spellID = 12654, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Living Bomb
 			{spellID = 44457, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Nether Tempest
@@ -1250,6 +1246,8 @@ C["filger_spells"] = {
 			--BETA {spellID = 102051, filter = "CD"},
 			-- Counterspell
 			{spellID = 2139, filter = "CD"},
+			-- Living Bomb
+			{spellID = 44457, filter = "CD"},
 			-- Blink
 			{spellID = 1953, filter = "CD"},
 			-- Blazing Speed
@@ -1266,8 +1264,6 @@ C["filger_spells"] = {
 			{spellID = 11426, filter = "CD"},
 			-- Temporal Shield
 			{spellID = 115610, filter = "CD"},
-			-- Incanter's Ward
-			{spellID = 1463, filter = "CD"},
 			-- Fire Blast
 			--BETA {spellID = 2136, filter = "CD"},
 			-- Frost Bomb
@@ -1282,6 +1278,8 @@ C["filger_spells"] = {
 			{spellID = 153595, filter = "CD"},
 			-- Ice Floes
 			{spellID = 108839, filter = "CD"},
+			-- Flame On
+			{spellID = 205029, filter = "CD"},
 			-- Combustion
 			--BETA {spellID = 11129, filter = "CD"},
 			-- Frozen Orb
@@ -1296,10 +1294,10 @@ C["filger_spells"] = {
 			{spellID = 12051, filter = "CD"},
 			-- Icy Veins
 			{spellID = 12472, filter = "CD"},
-			-- Prismatic Crystal
-			{spellID = 152087, filter = "CD"},
 			-- Mirror Image
 			{spellID = 55342, filter = "CD"},
+			-- Combustion
+			{spellID = 190319, filter = "CD"},
 			-- Cold Snap
 			{spellID = 11958, filter = "CD"},
 			-- Ice Block
@@ -2564,9 +2562,9 @@ C["filger_spells"] = {
 			-- Stormstrike
 			{spellID = 17364, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Flame Shock
-			--BETA {spellID = 8050, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 188389, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Shock
-			--BETA {spellID = 8056, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 196840, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Earthgrab
 			{spellID = 64695, unitID = "target", caster = "player", filter = "DEBUFF"},
 
@@ -3196,25 +3194,12 @@ C["filger_spells"] = {
 			-- Wand of Lightning Shield
 			{spellID = 171725, unitID = "player", caster = "all", filter = "BUFF"},
 
-			-- Potions: Draenor
-			-- Draenic Agility Potion
-			{spellID = 156423, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Draenic Intellect Potion
-			{spellID = 156426, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Draenic Strength Potion
-			{spellID = 156428, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Draenic Armor Potion
-			{spellID = 156430, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Potions: Pandaria
-			-- Virmen's Bite (Agility)
-			{spellID = 105697, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Potion of Mogu Power (Strength)
-			{spellID = 105706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Potion of the Jade Serpent (Intellect)
-			{spellID = 105702, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kafa Press (Haste)
-			{spellID = 125282, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Potions: Legion
+			-- Unbending Potion
+			{spellID = 188029, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Potions: Miscellaneous
+			-- Skystep Potion
+			{spellID = 188024, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Invisibility Potion
 			{spellID = 11392, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Darkwater Potion
@@ -3223,11 +3208,7 @@ C["filger_spells"] = {
 			{spellID = 175833, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Draenic Swiftness Potion
 			{spellID = 175790, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Potion of Luck
-			{spellID = 135855, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Potion of Treasure Finding
-			{spellID = 80263, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Swiftness Potion
+			-- Speed [Swiftness Potion]
 			{spellID = 2379, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Potions: Brawler's Guild
 			-- Brawler's Draenic Agility Potion
@@ -3595,7 +3576,7 @@ C["filger_spells"] = {
 			-- Earthquake
 			{spellID = 77505, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Shock
-			--BETA {spellID = 8056, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 196840, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Thunderstorm
 			{spellID = 51490, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Cripple (Doomguard)
@@ -3700,7 +3681,7 @@ C["filger_spells"] = {
 
 			-- Demon Hunter
 			-- Metamorphosis
-			{spellID = 162264, unitID = "target", caster = "all", filter = "BUFF"},
+			{spellID = 162264, unitID = "target", caster = "all", filter = "BUFF", absID = true},
 			-- Spectral Sight
 			{spellID = 188501, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Netherwalk

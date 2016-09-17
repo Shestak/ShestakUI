@@ -325,7 +325,7 @@ L_GUI_AURA_CAST_BY = "Zeige im Tooltip an von wem ein Buff- bzw. Debuff gewirkt 
 L_GUI_AURA_CLASSCOLOR_BORDER = "Aktiviere Klassenfarbe für Spielerbuffs"
 
 -- Filger
-L_GUI_FILGER = "Filger"
+L_GUI_FILGER = "Timers (Filger)" -- Need review
 L_GUI_FILGER_ENABLE = "Aktiviere Filger"
 L_GUI_FILGER_TEST_MODE = "Test Icon Mode"
 L_GUI_FILGER_MAX_TEST_ICON = "Anzahl der Icons im Test Mode"
