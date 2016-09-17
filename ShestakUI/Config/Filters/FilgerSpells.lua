@@ -3683,7 +3683,7 @@ C["filger_spells"] = {
 
 			-- Demon Hunter
 			-- Metamorphosis
-			{spellID = 162264, unitID = "target", caster = "all", filter = "BUFF"},
+			{spellID = 162264, unitID = "target", caster = "all", filter = "BUFF", absID = true},
 			-- Spectral Sight
 			{spellID = 188501, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Netherwalk
