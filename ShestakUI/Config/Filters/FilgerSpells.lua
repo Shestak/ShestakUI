@@ -1118,8 +1118,6 @@ C["filger_spells"] = {
 			{spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rune of Power
 			{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Prismatic Crystal
-			{spellID = 152087, filter = "ICD", trigger = "NONE", duration = 12},
 			-- Mirror Image
 			{spellID = 55342, filter = "ICD", trigger = "NONE", duration = 40},
 		},
