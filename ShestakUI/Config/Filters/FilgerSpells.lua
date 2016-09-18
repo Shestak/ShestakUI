@@ -119,6 +119,28 @@ C["filger_spells"] = {
 			-- Darkening Soul (Damage Reduction, Proc) [Grotesque Statuette]
 			{spellID = 222209, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Strength]
+			-- Fiery Enchant (Crit, Proc) [Entwined Elemental Foci]
+			{spellID = 225726, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frost Enchant (Mastery, Proc) [Entwined Elemental Foci]
+			{spellID = 225729, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Arcane Enchant (Haste, Proc) [Entwined Elemental Foci]
+			{spellID = 225730, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Ancient's Blessing (Crit, Proc) [Nature's Call]
+			{spellID = 222517, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Wisp's Blessing (Mastery, Proc) [Nature's Call]
+			{spellID = 222518, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Sister's Blessing (Haste, Proc) [Nature's Call]
+			{spellID = 222519, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Howl of Ingvar (Crit, Proc) [Memento of Angerboda]
+			{spellID = 214802, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Wail of Svala (Haste, Proc) [Memento of Angerboda]
+			{spellID = 214803, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dirge of Angerboda (Mastery, Proc) [Memento of Angerboda]
+			{spellID = 214807, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Down Draft (Haste, Proc) [Nightmare Egg Shell]
+			{spellID = 214342, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
+			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- Mark of Blackrock (Bonus Armor)
@@ -356,6 +378,28 @@ C["filger_spells"] = {
 			-- Damage [Agility]
 			-- Blood Frenzy (Haste, Proc) [Bloodthirsty Instinct]
 			{spellID = 221796, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fiery Enchant (Crit, Proc) [Entwined Elemental Foci]
+			{spellID = 225726, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frost Enchant (Mastery, Proc) [Entwined Elemental Foci]
+			{spellID = 225729, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Arcane Enchant (Haste, Proc) [Entwined Elemental Foci]
+			{spellID = 225730, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Ancient's Blessing (Crit, Proc) [Nature's Call]
+			{spellID = 222517, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Wisp's Blessing (Mastery, Proc) [Nature's Call]
+			{spellID = 222518, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Sister's Blessing (Haste, Proc) [Nature's Call]
+			{spellID = 222519, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Howl of Ingvar (Crit, Proc) [Memento of Angerboda]
+			{spellID = 214802, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Wail of Svala (Haste, Proc) [Memento of Angerboda]
+			{spellID = 214803, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dirge of Angerboda (Mastery, Proc) [Memento of Angerboda]
+			{spellID = 214807, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Down Draft (Haste, Proc) [Nightmare Egg Shell]
+			{spellID = 214342, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
+			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- Mark of Blackrock (Bonus Armor)
@@ -649,11 +693,33 @@ C["filger_spells"] = {
 			-- Damage [Agility]
 			-- Blood Frenzy (Haste, Proc) [Bloodthirsty Instinct]
 			{spellID = 221796, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fiery Enchant (Crit, Proc) [Entwined Elemental Foci]
+			{spellID = 225726, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frost Enchant (Mastery, Proc) [Entwined Elemental Foci]
+			{spellID = 225729, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Arcane Enchant (Haste, Proc) [Entwined Elemental Foci]
+			{spellID = 225730, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Ancient's Blessing (Crit, Proc) [Nature's Call]
+			{spellID = 222517, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Wisp's Blessing (Mastery, Proc) [Nature's Call]
+			{spellID = 222518, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Sister's Blessing (Haste, Proc) [Nature's Call]
+			{spellID = 222519, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Howl of Ingvar (Crit, Proc) [Memento of Angerboda]
+			{spellID = 214802, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Wail of Svala (Haste, Proc) [Memento of Angerboda]
+			{spellID = 214803, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dirge of Angerboda (Mastery, Proc) [Memento of Angerboda]
+			{spellID = 214807, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Down Draft (Haste, Proc) [Nightmare Egg Shell]
+			{spellID = 214342, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Intellect]
 			-- Accelerando (Haste, Proc) [Erratic Metronome]
 			{spellID = 225719, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nefarious Pact (Cast speed, Proc) [Whispers in the Dark]
 			{spellID = 225774, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
+			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing
 			-- Constellations (Mastery, Haste, or Critical Strike, Proc) [Etraeus' Celestial Map]
 			{spellID = 225136, unitID = "player", caster = "player", filter = "BUFF"},
@@ -911,6 +977,34 @@ C["filger_spells"] = {
 			-- Damage [Agility]
 			-- Blood Frenzy (Haste, Proc) [Bloodthirsty Instinct]
 			{spellID = 221796, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fiery Enchant (Crit, Proc) [Entwined Elemental Foci]
+			{spellID = 225726, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frost Enchant (Mastery, Proc) [Entwined Elemental Foci]
+			{spellID = 225729, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Arcane Enchant (Haste, Proc) [Entwined Elemental Foci]
+			{spellID = 225730, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Ancient's Blessing (Crit, Proc) [Nature's Call]
+			{spellID = 222517, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Wisp's Blessing (Mastery, Proc) [Nature's Call]
+			{spellID = 222518, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Sister's Blessing (Haste, Proc) [Nature's Call]
+			{spellID = 222519, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Howl of Ingvar (Crit, Proc) [Memento of Angerboda]
+			{spellID = 214802, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Wail of Svala (Haste, Proc) [Memento of Angerboda]
+			{spellID = 214803, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dirge of Angerboda (Mastery, Proc) [Memento of Angerboda]
+			{spellID = 214807, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Down Draft (Haste, Proc) [Nightmare Egg Shell]
+			{spellID = 214342, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Focused Lightning (Mastery, Proc) [Stormsinger Fulmination Charge]
+			{spellID = 215632, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Collapsing Shadow (Agility, Use) [Obelisk of the Void]
+			{spellID = 215476, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elune's Light (Agility, Use) [Moonlit Prism]
+			{spellID = 215648, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
+			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- Hemet's Heartseeker (Mastery)
@@ -1165,6 +1259,8 @@ C["filger_spells"] = {
 			{spellID = 225719, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nefarious Pact (Cast speed, Proc) [Whispers in the Dark]
 			{spellID = 225774, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
+			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- Mark of Bleeding Hollow (Mastery)
@@ -1470,6 +1566,28 @@ C["filger_spells"] = {
 			-- Damage [Agility]
 			-- Blood Frenzy (Haste, Proc) [Bloodthirsty Instinct]
 			{spellID = 221796, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fiery Enchant (Crit, Proc) [Entwined Elemental Foci]
+			{spellID = 225726, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frost Enchant (Mastery, Proc) [Entwined Elemental Foci]
+			{spellID = 225729, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Arcane Enchant (Haste, Proc) [Entwined Elemental Foci]
+			{spellID = 225730, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Ancient's Blessing (Crit, Proc) [Nature's Call]
+			{spellID = 222517, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Wisp's Blessing (Mastery, Proc) [Nature's Call]
+			{spellID = 222518, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Sister's Blessing (Haste, Proc) [Nature's Call]
+			{spellID = 222519, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Howl of Ingvar (Crit, Proc) [Memento of Angerboda]
+			{spellID = 214802, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Wail of Svala (Haste, Proc) [Memento of Angerboda]
+			{spellID = 214803, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dirge of Angerboda (Mastery, Proc) [Memento of Angerboda]
+			{spellID = 214807, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Down Draft (Haste, Proc) [Nightmare Egg Shell]
+			{spellID = 214342, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
+			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing
 			-- Constellations (Mastery, Haste, or Critical Strike, Proc) [Etraeus' Celestial Map]
 			{spellID = 225136, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1724,6 +1842,28 @@ C["filger_spells"] = {
 			-- Darkening Soul (Damage Reduction, Proc) [Grotesque Statuette]
 			{spellID = 222209, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Strength]
+			-- Fiery Enchant (Crit, Proc) [Entwined Elemental Foci]
+			{spellID = 225726, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frost Enchant (Mastery, Proc) [Entwined Elemental Foci]
+			{spellID = 225729, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Arcane Enchant (Haste, Proc) [Entwined Elemental Foci]
+			{spellID = 225730, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Ancient's Blessing (Crit, Proc) [Nature's Call]
+			{spellID = 222517, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Wisp's Blessing (Mastery, Proc) [Nature's Call]
+			{spellID = 222518, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Sister's Blessing (Haste, Proc) [Nature's Call]
+			{spellID = 222519, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Howl of Ingvar (Crit, Proc) [Memento of Angerboda]
+			{spellID = 214802, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Wail of Svala (Haste, Proc) [Memento of Angerboda]
+			{spellID = 214803, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dirge of Angerboda (Mastery, Proc) [Memento of Angerboda]
+			{spellID = 214807, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Down Draft (Haste, Proc) [Nightmare Egg Shell]
+			{spellID = 214342, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
+			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing
 			-- Constellations (Mastery, Haste, or Critical Strike, Proc) [Etraeus' Celestial Map]
 			{spellID = 225136, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1955,6 +2095,8 @@ C["filger_spells"] = {
 			{spellID = 225719, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nefarious Pact (Cast speed, Proc) [Whispers in the Dark]
 			{spellID = 225774, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
+			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing
 			-- Constellations (Mastery, Haste, or Critical Strike, Proc) [Etraeus' Celestial Map]
 			{spellID = 225136, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2275,6 +2417,28 @@ C["filger_spells"] = {
 			-- Damage [Agility]
 			-- Blood Frenzy (Haste, Proc) [Bloodthirsty Instinct]
 			{spellID = 221796, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fiery Enchant (Crit, Proc) [Entwined Elemental Foci]
+			{spellID = 225726, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frost Enchant (Mastery, Proc) [Entwined Elemental Foci]
+			{spellID = 225729, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Arcane Enchant (Haste, Proc) [Entwined Elemental Foci]
+			{spellID = 225730, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Ancient's Blessing (Crit, Proc) [Nature's Call]
+			{spellID = 222517, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Wisp's Blessing (Mastery, Proc) [Nature's Call]
+			{spellID = 222518, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Sister's Blessing (Haste, Proc) [Nature's Call]
+			{spellID = 222519, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Howl of Ingvar (Crit, Proc) [Memento of Angerboda]
+			{spellID = 214802, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Wail of Svala (Haste, Proc) [Memento of Angerboda]
+			{spellID = 214803, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dirge of Angerboda (Mastery, Proc) [Memento of Angerboda]
+			{spellID = 214807, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Down Draft (Haste, Proc) [Nightmare Egg Shell]
+			{spellID = 214342, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
+			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- Mark of Bleeding Hollow (Mastery)
@@ -2527,11 +2691,33 @@ C["filger_spells"] = {
 			-- Damage [Agility]
 			-- Blood Frenzy (Haste, Proc) [Bloodthirsty Instinct]
 			{spellID = 221796, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fiery Enchant (Crit, Proc) [Entwined Elemental Foci]
+			{spellID = 225726, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frost Enchant (Mastery, Proc) [Entwined Elemental Foci]
+			{spellID = 225729, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Arcane Enchant (Haste, Proc) [Entwined Elemental Foci]
+			{spellID = 225730, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Ancient's Blessing (Crit, Proc) [Nature's Call]
+			{spellID = 222517, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Wisp's Blessing (Mastery, Proc) [Nature's Call]
+			{spellID = 222518, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Sister's Blessing (Haste, Proc) [Nature's Call]
+			{spellID = 222519, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Howl of Ingvar (Crit, Proc) [Memento of Angerboda]
+			{spellID = 214802, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Wail of Svala (Haste, Proc) [Memento of Angerboda]
+			{spellID = 214803, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dirge of Angerboda (Mastery, Proc) [Memento of Angerboda]
+			{spellID = 214807, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Down Draft (Haste, Proc) [Nightmare Egg Shell]
+			{spellID = 214342, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Intellect]
 			-- Accelerando (Haste, Proc) [Erratic Metronome]
 			{spellID = 225719, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nefarious Pact (Cast speed, Proc) [Whispers in the Dark]
 			{spellID = 225774, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
+			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing
 			-- Constellations (Mastery, Haste, or Critical Strike, Proc) [Etraeus' Celestial Map]
 			{spellID = 225136, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2773,6 +2959,8 @@ C["filger_spells"] = {
 			{spellID = 225719, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nefarious Pact (Cast speed, Proc) [Whispers in the Dark]
 			{spellID = 225774, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
+			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- Mark of Bleeding Hollow (Mastery)
@@ -3039,6 +3227,28 @@ C["filger_spells"] = {
 			-- Darkening Soul (Damage Reduction, Proc) [Grotesque Statuette]
 			{spellID = 222209, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Strength]
+			-- Fiery Enchant (Crit, Proc) [Entwined Elemental Foci]
+			{spellID = 225726, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frost Enchant (Mastery, Proc) [Entwined Elemental Foci]
+			{spellID = 225729, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Arcane Enchant (Haste, Proc) [Entwined Elemental Foci]
+			{spellID = 225730, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Ancient's Blessing (Crit, Proc) [Nature's Call]
+			{spellID = 222517, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Wisp's Blessing (Mastery, Proc) [Nature's Call]
+			{spellID = 222518, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Cleansed Sister's Blessing (Haste, Proc) [Nature's Call]
+			{spellID = 222519, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Howl of Ingvar (Crit, Proc) [Memento of Angerboda]
+			{spellID = 214802, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Wail of Svala (Haste, Proc) [Memento of Angerboda]
+			{spellID = 214803, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dirge of Angerboda (Mastery, Proc) [Memento of Angerboda]
+			{spellID = 214807, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Down Draft (Haste, Proc) [Nightmare Egg Shell]
+			{spellID = 214342, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
+			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- Mark of Blackrock (Bonus Armor)
