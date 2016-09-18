@@ -33,10 +33,8 @@ local function LoadSkin()
 		frame.GuildBorder:Kill()
 
 		-- Text
-		frame.Name:SetTextColor(1, 0.8, 1)
-		frame.Name:SetFont(C.media.normal_font, 11)
 		frame.Unlocked:SetTextColor(1, 1, 1)
-		frame.Unlocked:SetFont(C.media.normal_font, 11)
+		frame.Name:SetTextColor(1, 0.8, 0)
 
 		-- Icon
 		frame.Icon.Texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -68,7 +66,7 @@ local function LoadSkin()
 		end
 
 		frame.Unlocked:SetTextColor(1, 1, 1)
-		frame.Name:SetTextColor(1, 1, 0)
+		frame.Name:SetTextColor(1, 0.8, 0)
 		frame.Background:Kill()
 		frame.glow:Kill()
 		frame.shine:Kill()
