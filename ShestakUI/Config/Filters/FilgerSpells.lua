@@ -93,6 +93,8 @@ C["filger_spells"] = {
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Victory (Strength, Proc)
 			{spellID = 190025, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rapid Adaptation (Versatility, Use)
+			{spellID = 170397, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking
 			-- Living Carapace (Damage Reduction, Use) [Animated Exoskeleton]
 			{spellID = 225033, unitID = "player", caster = "player", filter = "BUFF"},
@@ -110,6 +112,14 @@ C["filger_spells"] = {
 			{spellID = 221695, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkening Soul (Damage Reduction, Proc) [Grotesque Statuette]
 			{spellID = 222209, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Crystalline Body (Damage Reduction, Use) [Shard of Rokmora]
+			{spellID = 214366, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Stance of the Mountain (Damage Reduction, Use) [Talisman of the Cragshaper]
+			{spellID = 214423, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Warlord's Fortitude (Health and Mastery, Proc) [Parjesh's Medallion]
+			{spellID = 214622, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nerubian Chitin (Armor, Proc) [Impenetrable Nerubian Husk]
+			{spellID = 214494, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Strength]
 			-- Fiery Enchant (Crit, Proc) [Entwined Elemental Foci]
 			{spellID = 225726, unitID = "player", caster = "player", filter = "BUFF"},
@@ -135,16 +145,10 @@ C["filger_spells"] = {
 			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- Mark of Blackrock (Bonus Armor)
-			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Bleeding Hollow (Mastery)
-			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Frostwolf (Multistrike)
-			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Thunderlord (Crit)
-			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Warsong (Haste)
-			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Claw (Crit and Haste)
+			{spellID = 190909, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Heavy Hide (Armor)
+			{spellID = 228399, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -334,6 +338,8 @@ C["filger_spells"] = {
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Conquest (Agility, Proc)
 			{spellID = 190026, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rapid Adaptation (Versatility, Use)
+			{spellID = 170397, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking
 			-- Living Carapace (Damage Reduction, Use) [Animated Exoskeleton]
 			{spellID = 225033, unitID = "player", caster = "player", filter = "BUFF"},
@@ -378,18 +384,10 @@ C["filger_spells"] = {
 			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- Mark of Blackrock (Bonus Armor)
-			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Bleeding Hollow (Mastery)
-			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Shadowmoon (Spirit)
-			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Frostwolf (Multistrike)
-			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Thunderlord (Crit)
-			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Warsong (Haste)
-			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Claw (Crit and Haste)
+			{spellID = 190909, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Heavy Hide (Armor)
+			{spellID = 228399, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -637,6 +635,8 @@ C["filger_spells"] = {
 			{spellID = 190027, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Conquest (Agility, Proc)
 			{spellID = 190026, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rapid Adaptation (Versatility, Use)
+			{spellID = 170397, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking
 			-- Living Carapace (Damage Reduction, Use) [Animated Exoskeleton]
 			{spellID = 225033, unitID = "player", caster = "player", filter = "BUFF"},
@@ -654,6 +654,14 @@ C["filger_spells"] = {
 			{spellID = 221695, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkening Soul (Damage Reduction, Proc) [Grotesque Statuette]
 			{spellID = 222209, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Crystalline Body (Damage Reduction, Use) [Shard of Rokmora]
+			{spellID = 214366, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Stance of the Mountain (Damage Reduction, Use) [Talisman of the Cragshaper]
+			{spellID = 214423, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Warlord's Fortitude (Health and Mastery, Proc) [Parjesh's Medallion]
+			{spellID = 214622, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nerubian Chitin (Armor, Proc) [Impenetrable Nerubian Husk]
+			{spellID = 214494, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Agility]
 			-- Blood Frenzy (Haste, Proc) [Bloodthirsty Instinct]
 			{spellID = 221796, unitID = "player", caster = "player", filter = "BUFF"},
@@ -684,25 +692,29 @@ C["filger_spells"] = {
 			{spellID = 225774, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
 			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Focused Lightning (Mastery, Proc) [Stormsinger Fulmination Charge]
+			{spellID = 215632, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Collapsing Shadow (Agility, Use) [Obelisk of the Void]
+			{spellID = 215476, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elune's Light (Agility, Use) [Moonlit Prism]
+			{spellID = 215648, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Burning Intensity (Crit, Proc) [Infernal Writ]
+			{spellID = 215816, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing
 			-- Constellations (Mastery, Haste, or Critical Strike, Proc) [Etraeus' Celestial Map]
 			{spellID = 225136, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Heightened Senses (Haste and Intellect, Proc) [Heightened Senses]
 			{spellID = 221752, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Phased Webbing (Mastery, Proc) [Thrumming Gossamer]
+			{spellID = 215198, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Solemnity (Haste, Proc) [Flask of the Solemn Night]
+			{spellID = 224347, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- Mark of Blackrock (Bonus Armor)
-			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Bleeding Hollow (Mastery)
-			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Shadowmoon (Spirit)
-			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Frostwolf (Multistrike)
-			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Thunderlord (Crit)
-			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Warsong (Haste)
-			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Claw (Crit and Haste)
+			{spellID = 190909, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Heavy Hide (Armor)
+			{spellID = 228399, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -930,10 +942,10 @@ C["filger_spells"] = {
 			-- PvP Trinkets
 			-- Savage Fortitude (Health, Use) [Battlemaster]
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Damage [Agility] (Versatility, Use)
-			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Conquest (Agility, Proc)
 			{spellID = 190026, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rapid Adaptation (Versatility, Use)
+			{spellID = 170397, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Agility]
 			-- Blood Frenzy (Haste, Proc) [Bloodthirsty Instinct]
 			{spellID = 221796, unitID = "player", caster = "player", filter = "BUFF"},
@@ -967,12 +979,8 @@ C["filger_spells"] = {
 			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- Hemet's Heartseeker (Mastery)
-			{spellID = 173288, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Megawatt Filament (Crit)
-			{spellID = 156060, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Oglethorpe's Missile Splitter (Multistrike)
-			{spellID = 156055, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Claw (Crit and Haste)
+			{spellID = 190909, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1210,6 +1218,8 @@ C["filger_spells"] = {
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Dominance (Intellect, Proc)
 			{spellID = 190027, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rapid Adaptation (Versatility, Use)
+			{spellID = 170397, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Intellect]
 			-- Accelerando (Haste, Proc) [Erratic Metronome]
 			{spellID = 225719, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1217,16 +1227,18 @@ C["filger_spells"] = {
 			{spellID = 225774, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
 			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Focused Lightning (Mastery, Proc) [Stormsinger Fulmination Charge]
+			{spellID = 215632, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Collapsing Shadow (Agility, Use) [Obelisk of the Void]
+			{spellID = 215476, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elune's Light (Agility, Use) [Moonlit Prism]
+			{spellID = 215648, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Burning Intensity (Crit, Proc) [Infernal Writ]
+			{spellID = 215816, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- Mark of Bleeding Hollow (Mastery)
-			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Frostwolf (Multistrike)
-			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Thunderlord (Crit)
-			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Warsong (Haste)
-			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Claw (Crit and Haste)
+			{spellID = 190909, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1492,6 +1504,8 @@ C["filger_spells"] = {
 			{spellID = 190026, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Dominance (Intellect, Proc)
 			{spellID = 190027, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rapid Adaptation (Versatility, Use)
+			{spellID = 170397, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking
 			-- Living Carapace (Damage Reduction, Use) [Animated Exoskeleton]
 			{spellID = 225033, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1509,6 +1523,14 @@ C["filger_spells"] = {
 			{spellID = 221695, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkening Soul (Damage Reduction, Proc) [Grotesque Statuette]
 			{spellID = 222209, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Crystalline Body (Damage Reduction, Use) [Shard of Rokmora]
+			{spellID = 214366, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Stance of the Mountain (Damage Reduction, Use) [Talisman of the Cragshaper]
+			{spellID = 214423, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Warlord's Fortitude (Health and Mastery, Proc) [Parjesh's Medallion]
+			{spellID = 214622, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nerubian Chitin (Armor, Proc) [Impenetrable Nerubian Husk]
+			{spellID = 214494, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Agility]
 			-- Blood Frenzy (Haste, Proc) [Bloodthirsty Instinct]
 			{spellID = 221796, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1539,20 +1561,16 @@ C["filger_spells"] = {
 			{spellID = 225136, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Heightened Senses (Haste and Intellect, Proc) [Heightened Senses]
 			{spellID = 221752, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Phased Webbing (Mastery, Proc) [Thrumming Gossamer]
+			{spellID = 215198, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Solemnity (Haste, Proc) [Flask of the Solemn Night]
+			{spellID = 224347, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- Mark of Blackrock (Bonus Armor)
-			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Bleeding Hollow (Mastery)
-			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Shadowmoon (Spirit)
-			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Frostwolf (Multistrike)
-			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Thunderlord (Crit)
-			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Warsong (Haste)
-			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Claw (Crit and Haste)
+			{spellID = 190909, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Heavy Hide (Armor)
+			{spellID = 228399, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1760,6 +1778,8 @@ C["filger_spells"] = {
 			{spellID = 190025, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Dominance (Intellect, Proc)
 			{spellID = 190027, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rapid Adaptation (Versatility, Use)
+			{spellID = 170397, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking
 			-- Living Carapace (Damage Reduction, Use) [Animated Exoskeleton]
 			{spellID = 225033, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1777,6 +1797,14 @@ C["filger_spells"] = {
 			{spellID = 221695, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkening Soul (Damage Reduction, Proc) [Grotesque Statuette]
 			{spellID = 222209, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Crystalline Body (Damage Reduction, Use) [Shard of Rokmora]
+			{spellID = 214366, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Stance of the Mountain (Damage Reduction, Use) [Talisman of the Cragshaper]
+			{spellID = 214423, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Warlord's Fortitude (Health and Mastery, Proc) [Parjesh's Medallion]
+			{spellID = 214622, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nerubian Chitin (Armor, Proc) [Impenetrable Nerubian Husk]
+			{spellID = 214494, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Strength]
 			-- Fiery Enchant (Crit, Proc) [Entwined Elemental Foci]
 			{spellID = 225726, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1805,20 +1833,16 @@ C["filger_spells"] = {
 			{spellID = 225136, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Heightened Senses (Haste and Intellect, Proc) [Heightened Senses]
 			{spellID = 221752, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Phased Webbing (Mastery, Proc) [Thrumming Gossamer]
+			{spellID = 215198, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Solemnity (Haste, Proc) [Flask of the Solemn Night]
+			{spellID = 224347, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- Mark of Blackrock (Bonus Armor)
-			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Bleeding Hollow (Mastery)
-			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Shadowmoon (Spirit)
-			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Frostwolf (Multistrike)
-			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Thunderlord (Crit)
-			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Warsong (Haste)
-			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Claw (Crit and Haste)
+			{spellID = 190909, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Heavy Hide (Armor)
+			{spellID = 228399, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2020,6 +2044,8 @@ C["filger_spells"] = {
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Dominance (Intellect, Proc)
 			{spellID = 190027, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rapid Adaptation (Versatility, Use)
+			{spellID = 170397, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Intellect]
 			-- Accelerando (Haste, Proc) [Erratic Metronome]
 			{spellID = 225719, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2027,23 +2053,27 @@ C["filger_spells"] = {
 			{spellID = 225774, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
 			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Focused Lightning (Mastery, Proc) [Stormsinger Fulmination Charge]
+			{spellID = 215632, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Collapsing Shadow (Agility, Use) [Obelisk of the Void]
+			{spellID = 215476, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elune's Light (Agility, Use) [Moonlit Prism]
+			{spellID = 215648, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Burning Intensity (Crit, Proc) [Infernal Writ]
+			{spellID = 215816, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing
 			-- Constellations (Mastery, Haste, or Critical Strike, Proc) [Etraeus' Celestial Map]
 			{spellID = 225136, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Heightened Senses (Haste and Intellect, Proc) [Heightened Senses]
 			{spellID = 221752, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Phased Webbing (Mastery, Proc) [Thrumming Gossamer]
+			{spellID = 215198, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Solemnity (Haste, Proc) [Flask of the Solemn Night]
+			{spellID = 224347, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- Mark of Bleeding Hollow (Mastery)
-			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Shadowmoon (Spirit)
-			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Frostwolf (Multistrike)
-			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Thunderlord (Crit)
-			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Warsong (Haste)
-			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Claw (Crit and Haste)
+			{spellID = 190909, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2336,10 +2366,10 @@ C["filger_spells"] = {
 			-- PvP Trinkets
 			-- Savage Fortitude (Health, Use) [Battlemaster]
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Damage [Agility] (Versatility, Use)
-			{spellID = 182073, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Conquest (Agility, Proc)
 			{spellID = 190026, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rapid Adaptation (Versatility, Use)
+			{spellID = 170397, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Agility]
 			-- Blood Frenzy (Haste, Proc) [Bloodthirsty Instinct]
 			{spellID = 221796, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2367,14 +2397,8 @@ C["filger_spells"] = {
 			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- Mark of Bleeding Hollow (Mastery)
-			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Frostwolf (Multistrike)
-			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Thunderlord (Crit)
-			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Warsong (Haste)
-			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Claw (Crit and Haste)
+			{spellID = 190909, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2604,6 +2628,8 @@ C["filger_spells"] = {
 			{spellID = 190027, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Conquest (Agility, Proc)
 			{spellID = 190026, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rapid Adaptation (Versatility, Use)
+			{spellID = 170397, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Agility]
 			-- Blood Frenzy (Haste, Proc) [Bloodthirsty Instinct]
 			{spellID = 221796, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2634,23 +2660,27 @@ C["filger_spells"] = {
 			{spellID = 225774, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
 			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Focused Lightning (Mastery, Proc) [Stormsinger Fulmination Charge]
+			{spellID = 215632, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Collapsing Shadow (Agility, Use) [Obelisk of the Void]
+			{spellID = 215476, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elune's Light (Agility, Use) [Moonlit Prism]
+			{spellID = 215648, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Burning Intensity (Crit, Proc) [Infernal Writ]
+			{spellID = 215816, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing
 			-- Constellations (Mastery, Haste, or Critical Strike, Proc) [Etraeus' Celestial Map]
 			{spellID = 225136, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Heightened Senses (Haste and Intellect, Proc) [Heightened Senses]
 			{spellID = 221752, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Phased Webbing (Mastery, Proc) [Thrumming Gossamer]
+			{spellID = 215198, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Solemnity (Haste, Proc) [Flask of the Solemn Night]
+			{spellID = 224347, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- Mark of Bleeding Hollow (Mastery)
-			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Shadowmoon (Spirit)
-			{spellID = 159678, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Frostwolf (Multistrike)
-			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Thunderlord (Crit)
-			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Warsong (Haste)
-			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Claw (Crit and Haste)
+			{spellID = 190909, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2860,6 +2890,8 @@ C["filger_spells"] = {
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Dominance (Intellect, Proc)
 			{spellID = 190027, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rapid Adaptation (Versatility, Use)
+			{spellID = 170397, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Intellect]
 			-- Accelerando (Haste, Proc) [Erratic Metronome]
 			{spellID = 225719, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2867,16 +2899,18 @@ C["filger_spells"] = {
 			{spellID = 225774, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
 			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Focused Lightning (Mastery, Proc) [Stormsinger Fulmination Charge]
+			{spellID = 215632, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Collapsing Shadow (Agility, Use) [Obelisk of the Void]
+			{spellID = 215476, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elune's Light (Agility, Use) [Moonlit Prism]
+			{spellID = 215648, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Burning Intensity (Crit, Proc) [Infernal Writ]
+			{spellID = 215816, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- Mark of Bleeding Hollow (Mastery)
-			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Frostwolf (Multistrike)
-			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Thunderlord (Crit)
-			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Warsong (Haste)
-			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Claw (Crit and Haste)
+			{spellID = 190909, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -3108,6 +3142,8 @@ C["filger_spells"] = {
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Victory (Strength, Proc)
 			{spellID = 190025, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rapid Adaptation (Versatility, Use)
+			{spellID = 170397, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Tanking
 			-- Living Carapace (Damage Reduction, Use) [Animated Exoskeleton]
 			{spellID = 225033, unitID = "player", caster = "player", filter = "BUFF"},
@@ -3125,6 +3161,14 @@ C["filger_spells"] = {
 			{spellID = 221695, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkening Soul (Damage Reduction, Proc) [Grotesque Statuette]
 			{spellID = 222209, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Crystalline Body (Damage Reduction, Use) [Shard of Rokmora]
+			{spellID = 214366, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Stance of the Mountain (Damage Reduction, Use) [Talisman of the Cragshaper]
+			{spellID = 214423, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Warlord's Fortitude (Health and Mastery, Proc) [Parjesh's Medallion]
+			{spellID = 214622, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nerubian Chitin (Armor, Proc) [Impenetrable Nerubian Husk]
+			{spellID = 214494, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Strength]
 			-- Fiery Enchant (Crit, Proc) [Entwined Elemental Foci]
 			{spellID = 225726, unitID = "player", caster = "player", filter = "BUFF"},
@@ -3150,16 +3194,10 @@ C["filger_spells"] = {
 			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- Mark of Blackrock (Bonus Armor)
-			{spellID = 159679, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Bleeding Hollow (Mastery)
-			{spellID = 173322, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Frostwolf (Multistrike)
-			{spellID = 159676, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of the Thunderlord (Crit)
-			{spellID = 159234, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Mark of Warsong (Haste)
-			{spellID = 159675, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Claw (Crit and Haste)
+			{spellID = 190909, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mark of the Heavy Hide (Armor)
+			{spellID = 228399, unitID = "player", caster = "all", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
