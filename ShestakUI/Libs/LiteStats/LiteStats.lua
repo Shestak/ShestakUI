@@ -609,11 +609,11 @@ if gold.enabled then
 
 			if C.stats.currency_professions then
 				IsSubTitle = 3
+				Currency(910)	-- Secret of Draenor Alchemy
+				Currency(999)	-- Secret of Draenor Tailoring
 				Currency(1008)	-- Secret of Draenor Jewelcrafting
 				Currency(1017)	-- Secret of Draenor Leatherworking
 				Currency(1020)	-- Secret of Draenor Blacksmithing
-				Currency(910)	-- Secret of Draenor Alchemy
-				Currency(999)	-- Secret of Draenor Tailoring
 			end
 
 			if C.stats.currency_raid and T.level >= 110 then
@@ -629,8 +629,8 @@ if gold.enabled then
 
 			if C.stats.currency_misc then
 				IsSubTitle = 6
-				Currency(515)				-- Darkmoon Prize Ticket
-				Currency(1220, false, true)	-- Order Resources
+				Currency(515)	-- Darkmoon Prize Ticket
+				Currency(1220)	-- Order Resources
 			end
 
 			GameTooltip:AddLine(" ")
