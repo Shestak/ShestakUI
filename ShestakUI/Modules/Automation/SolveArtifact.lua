@@ -14,12 +14,12 @@ StaticPopupDialogs.ARCHAEOLOGY_SOLVE = {
 }
 
 local fragment = {
-	["1174"] = 1,   -- Demonic
-	["1173"] = 2,   -- Highmountain
-	["1172"] = 3,   -- Highborne
-	["828"] = 4,   -- Ogre
-	["821"] = 5,   -- Draenor Clans
-	["829"] = 6,   -- Arakkoa
+	["1174"] = 1,	-- Demonic
+	["1173"] = 2,	-- Highmountain
+	["1172"] = 3,	-- Highborne
+	["828"] = 4,	-- Ogre
+	["821"] = 5,	-- Draenor Clans
+	["829"] = 6,	-- Arakkoa
 	["677"] = 7,	-- Mogu
 	["676"] = 8,	-- Pandaren
 	["754"] = 9,	-- Mantid

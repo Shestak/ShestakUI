@@ -596,6 +596,9 @@ if gold.enabled then
 				Currency(821)	-- Draenor Clans Archaeology Fragment
 				Currency(828)	-- Ogre Archaeology Fragment
 				Currency(829)	-- Arakkoa Archaeology Fragment
+				Currency(1172)	-- Highborne Archaeology Fragment
+				Currency(1173)	-- Highmountain Tauren Archaeology Fragment
+				Currency(1174)	-- Demonic Archaeology Fragment
 			end
 
 			if cooking and C.stats.currency_cooking then
@@ -606,33 +609,28 @@ if gold.enabled then
 
 			if C.stats.currency_professions then
 				IsSubTitle = 3
+				Currency(910)	-- Secret of Draenor Alchemy
+				Currency(999)	-- Secret of Draenor Tailoring
 				Currency(1008)	-- Secret of Draenor Jewelcrafting
 				Currency(1017)	-- Secret of Draenor Leatherworking
 				Currency(1020)	-- Secret of Draenor Blacksmithing
-				Currency(910)	-- Secret of Draenor Alchemy
-				Currency(999)	-- Secret of Draenor Tailoring
 			end
 
-			if C.stats.currency_raid and T.level >= 100 then
+			if C.stats.currency_raid and T.level >= 110 then
 				IsSubTitle = 4
-				Currency(1129, false, true)	-- Seal of Inevitable Fate
-				Currency(994, false, true)	-- Seal of Tempered Fate
+				Currency(1273, false, true)	-- Seal of Broken Fate
 			end
 
 			if C.stats.currency_pvp then
 				IsSubTitle = 5
-				Currency(390, true)			-- Conquest Points
-				Currency(392, false, true)	-- Honor Points
+				-- Currency(390, true)			-- Conquest Points
+				-- Currency(392, false, true)	-- Honor Points
 			end
 
 			if C.stats.currency_misc then
 				IsSubTitle = 6
-				Currency(515)				-- Darkmoon Prize Ticket
-				Currency(944, false, true)	-- Artifact Fragment
-				Currency(980, false, true)	-- Dingy Iron Coins (Rogue)
-				Currency(824, false, true)	-- Garrison Resources
-				Currency(823)				-- Apexis Crystal
-				Currency(1101)				-- Oil
+				Currency(515)	-- Darkmoon Prize Ticket
+				Currency(1220)	-- Order Resources
 			end
 
 			GameTooltip:AddLine(" ")
@@ -795,17 +793,17 @@ if clock.enabled then
 					GameTooltip:AddDoubleLine(name, fmttime(reset), 1, 1, 1, 1, 1, 1)
 				end
 			end
-			if T.level >= 100 then
-				local c = 0
-				for _, q in ipairs({36054, 36055, 36056, 36057, 36058, 36060, 37453, 37452, 37454, 37455, 37456, 37457, 37458, 37459}) do
-					if IsQuestFlaggedCompleted(q) then
-						c = c + 1
-					end
-				end
-				GameTooltip:AddLine(" ")
-				GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
-				GameTooltip:AddDoubleLine(L_STATS_SEALS..": ", c, 1, 1, 1, 1, 1, 1)
-			end
+			--BETA if T.level >= 100 then
+				-- local c = 0
+				-- for _, q in ipairs({36054, 36055, 36056, 36057, 36058, 36060, 37453, 37452, 37454, 37455, 37456, 37457, 37458, 37459}) do
+					-- if IsQuestFlaggedCompleted(q) then
+						-- c = c + 1
+					-- end
+				-- end
+				-- GameTooltip:AddLine(" ")
+				-- GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
+				-- GameTooltip:AddDoubleLine(L_STATS_SEALS..": ", c, 1, 1, 1, 1, 1, 1)
+			-- end
 			GameTooltip:Show()
 		end,
 		OnClick = function(_, b) (b == "RightButton" and ToggleTimeManager or ToggleCalendar)() end
