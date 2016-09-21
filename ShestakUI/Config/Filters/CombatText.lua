@@ -28,6 +28,7 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[183950] = 3			-- Darklight Ray (Unblinking Gaze of Sethe)
 	T.aoespam[184256] = 3			-- Fel Burn (Empty Drinking Horn)
 	T.aoespam[184248] = 3			-- Fel Cleave (Discordant Chorus)
+	T.aoespam[195256] = 4			-- Stormlash
 end
 
 -- Class config
