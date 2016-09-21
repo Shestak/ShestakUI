@@ -152,7 +152,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[155158] = 3		-- Meteor Burn
 		T.aoespam[224637] = 1.6		-- Phoenix's Flames
 		T.aoespam[205345] = 3		-- Conflagration Flare Up
-		T.aoespam[226757] = 3		-- Conflagration
+		T.aoespam[226757] = 4		-- Conflagration
 		T.aoespam[198928] = 1.2		-- Cinderstorm
 		T.aoespam[194316] = 3		-- Cauterizing Blink
 		T.aoespam[88084] = 3		-- Arcane Blast (Mirror Image)
