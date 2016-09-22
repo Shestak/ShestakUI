@@ -28,6 +28,8 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[183950] = 3			-- Darklight Ray (Unblinking Gaze of Sethe)
 	T.aoespam[184256] = 3			-- Fel Burn (Empty Drinking Horn)
 	T.aoespam[184248] = 3			-- Fel Cleave (Discordant Chorus)
+	T.aoespam[195222] = 4			-- Stormlash
+	T.aoespam[195256] = 4			-- Stormlash
 end
 
 -- Class config
@@ -151,7 +153,8 @@ elseif T.class == "MAGE" then
 		T.aoespam[153564] = 3		-- Meteor
 		T.aoespam[155158] = 3		-- Meteor Burn
 		T.aoespam[224637] = 1.6		-- Phoenix's Flames
-		T.aoespam[205345] = 3		-- Conflagration
+		T.aoespam[205345] = 4		-- Conflagration Flare Up
+		T.aoespam[226757] = 4		-- Conflagration
 		T.aoespam[198928] = 1.2		-- Cinderstorm
 		T.aoespam[194316] = 3		-- Cauterizing Blink
 		T.aoespam[88084] = 3		-- Arcane Blast (Mirror Image)
