@@ -84,9 +84,9 @@ C["filger_spells"] = {
 			-- Strength
 			{spellID = 60229, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hallow's End
-			-- Brawler's Statue (Bonus Armor, Use)
+			-- Drunken Evasiveness (Bonus Armor, Use) [Brawler's Statue]
 			{spellID = 127967, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Coren's Cold Chromium (Attack Power, Proc)
+			-- Reflection of Torment (Attack Power, Proc) [Coren's Cold Chromium]
 			{spellID = 127928, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets
 			-- Savage Fortitude (Health, Use) [Battlemaster]
@@ -329,9 +329,9 @@ C["filger_spells"] = {
 			-- Agility
 			{spellID = 60233, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hallow's End
-			-- Brawler's Statue (Bonus Armor, Use)
+			-- Drunken Evasiveness (Bonus Armor, Use) [Brawler's Statue]
 			{spellID = 127967, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Coren's Cold Chromium (Attack Power, Proc)
+			-- Reflection of Torment (Attack Power, Proc) [Coren's Cold Chromium]
 			{spellID = 127928, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets
 			-- Savage Fortitude (Health, Use) [Battlemaster]
@@ -620,14 +620,14 @@ C["filger_spells"] = {
 			-- Intellect
 			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hallow's End
-			-- Brawler's Statue (Bonus Armor, Use)
+			-- Drunken Evasiveness (Bonus Armor, Use) [Brawler's Statue]
 			{spellID = 127967, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Coren's Cold Chromium (Attack Power, Proc)
+			-- Reflection of Torment (Attack Power, Proc) [Coren's Cold Chromium]
 			{spellID = 127928, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Mithril Wristwatch (Spell Power, Proc)
-			{spellID = 127924, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thousand-Year Pickled Egg (Haste, Proc)
-			{spellID = 127914, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Now is the time! (Spell Power, Proc) [Mithril Wristwatch]
+			{spellID = 127923, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Essence of Life (Haste, Proc) [Thousand-Year Pickled Egg]
+			{spellID = 127915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets
 			-- Savage Fortitude (Health, Use) [Battlemaster]
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -937,7 +937,7 @@ C["filger_spells"] = {
 			-- Agility
 			{spellID = 60233, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hallow's End
-			-- Coren's Cold Chromium (Attack Power, Proc)
+			-- Reflection of Torment (Attack Power, Proc) [Coren's Cold Chromium]
 			{spellID = 127928, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets
 			-- Savage Fortitude (Health, Use) [Battlemaster]
@@ -1211,8 +1211,8 @@ C["filger_spells"] = {
 			-- Intellect
 			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hallow's End
-			-- Mithril Wristwatch (Spell Power, Proc)
-			{spellID = 127924, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Now is the time! (Spell Power, Proc) [Mithril Wristwatch]
+			{spellID = 127923, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets
 			-- Savage Fortitude (Health, Use) [Battlemaster]
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1491,12 +1491,12 @@ C["filger_spells"] = {
 			-- Intellect
 			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hallow's End
-			-- Brawler's Statue (Bonus Armor, Use)
+			-- Drunken Evasiveness (Bonus Armor, Use) [Brawler's Statue]
 			{spellID = 127967, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Coren's Cold Chromium (Attack Power, Proc)
+			-- Reflection of Torment (Attack Power, Proc) [Coren's Cold Chromium]
 			{spellID = 127928, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thousand-Year Pickled Egg (Haste, Proc)
-			{spellID = 127914, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Essence of Life (Haste, Proc) [Thousand-Year Pickled Egg]
+			{spellID = 127915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets
 			-- Savage Fortitude (Health, Use) [Battlemaster]
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1765,12 +1765,12 @@ C["filger_spells"] = {
 			-- Intellect
 			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hallow's End
-			-- Brawler's Statue (Bonus Armor, Use)
+			-- Drunken Evasiveness (Bonus Armor, Use) [Brawler's Statue]
 			{spellID = 127967, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Coren's Cold Chromium (Attack Power, Proc)
+			-- Reflection of Torment (Attack Power, Proc) [Coren's Cold Chromium]
 			{spellID = 127928, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thousand-Year Pickled Egg (Haste, Proc)
-			{spellID = 127914, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Essence of Life (Haste, Proc) [Thousand-Year Pickled Egg]
+			{spellID = 127915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets
 			-- Savage Fortitude (Health, Use) [Battlemaster]
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2035,10 +2035,10 @@ C["filger_spells"] = {
 			-- Intellect
 			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hallow's End
-			-- Mithril Wristwatch (Spell Power, Proc)
-			{spellID = 127924, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thousand-Year Pickled Egg (Haste, Proc)
-			{spellID = 127914, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Now is the time! (Spell Power, Proc) [Mithril Wristwatch]
+			{spellID = 127923, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Essence of Life (Haste, Proc) [Thousand-Year Pickled Egg]
+			{spellID = 127915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets
 			-- Savage Fortitude (Health, Use) [Battlemaster]
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2361,7 +2361,7 @@ C["filger_spells"] = {
 			-- Agility
 			{spellID = 60233, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hallow's End
-			-- Coren's Cold Chromium (Attack Power, Proc)
+			-- Reflection of Torment (Attack Power, Proc) [Coren's Cold Chromium]
 			{spellID = 127928, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets
 			-- Savage Fortitude (Health, Use) [Battlemaster]
@@ -2615,12 +2615,12 @@ C["filger_spells"] = {
 			-- Intellect
 			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hallow's End
-			-- Coren's Cold Chromium (Attack Power, Proc)
+			-- Reflection of Torment (Attack Power, Proc) [Coren's Cold Chromium]
 			{spellID = 127928, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Mithril Wristwatch (Spell Power, Proc)
-			{spellID = 127924, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thousand-Year Pickled Egg (Haste, Proc)
-			{spellID = 127914, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Now is the time! (Spell Power, Proc) [Mithril Wristwatch]
+			{spellID = 127923, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Essence of Life (Haste, Proc) [Thousand-Year Pickled Egg]
+			{spellID = 127915, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets
 			-- Savage Fortitude (Health, Use) [Battlemaster]
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2883,8 +2883,8 @@ C["filger_spells"] = {
 			-- Intellect
 			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hallow's End
-			-- Mithril Wristwatch (Spell Power, Proc)
-			{spellID = 127924, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Now is the time! (Spell Power, Proc) [Mithril Wristwatch]
+			{spellID = 127923, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets
 			-- Savage Fortitude (Health, Use) [Battlemaster]
 			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
@@ -3133,9 +3133,9 @@ C["filger_spells"] = {
 			-- Strength
 			{spellID = 60229, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hallow's End
-			-- Brawler's Statue (Bonus Armor, Use)
+			-- Drunken Evasiveness (Bonus Armor, Use) [Brawler's Statue]
 			{spellID = 127967, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Coren's Cold Chromium (Attack Power, Proc)
+			-- Reflection of Torment (Attack Power, Proc) [Coren's Cold Chromium]
 			{spellID = 127928, unitID = "player", caster = "player", filter = "BUFF"},
 			-- PvP Trinkets
 			-- Savage Fortitude (Health, Use) [Battlemaster]
