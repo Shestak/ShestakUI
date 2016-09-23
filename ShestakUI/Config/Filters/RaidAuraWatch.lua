@@ -85,23 +85,6 @@ T.RaidDebuffs = {
 -----------------------------------------------------------------
 -- Legion
 -----------------------------------------------------------------
--- The Emerald Nightmare
-	-- Nythendra
-	[SpellName(204463)] = 3,	-- Volatile Rot
-	-- Il'gynoth, Heart of Corruption
-	[SpellName(209469)] = 3,	-- Touch of Corruption
-	[SpellName(208929)] = 3,	-- Spew Corruption
-	-- Erethe Renferal
-	[SpellName(215300)] = 3,	-- Web of Pain
-	[SpellName(215582)] = 3,	-- Raking Talons
-	-- Ursoc
-	[SpellName(197943)] = 3,	-- Overwhelm
-	-- Dragons of Nightmare
-	-- Cenarius
-	[SpellName(210279)] = 3,	-- Creeping Nightmare
-	-- Xavius
-	[SpellName(206651)] = 3,	-- Darkening Soul
-	[SpellName(209158)] = 3,	-- Blackening Soul
 -- The Nighthold
 	-- Skorpyron
 	-- Chronomatic Anomaly
@@ -123,6 +106,54 @@ T.RaidDebuffs = {
 	-- Gul'dan
 	[SpellName(206222)] = 3,	-- Bonds of Fel
 	[SpellName(212568)] = 3,	-- Drain
+-- The Emerald Nightmare
+    -- Nythendra
+    [SpellName(204504)] = 5,    -- Infested (dot, stacks)
+    [SpellName(203096)] = 3,    -- Rot (AoE people around you)
+    [SpellName(204463)] = 3,    -- Volatile Rot (exploding tank)
+    [SpellName(203646)] = 4,    -- Burst of Corruption
+    -- Il'gynoth, Heart of Corruption
+    [SpellName(215845)] = 3,    -- Dispersed Spores (dot)
+    [SpellName(210099)] = 6,    -- Fixate (fixate)
+    [SpellName(209469)] = 5,    -- Touch of Corruption (dot, stacks, magic)
+    [SpellName(210984)] = 3,    -- Eye of Fate (tank debuff, stacks)
+    [SpellName(208697)] = 4,    -- Mind Flay (dot)
+    [SpellName(208929)] = 3,    -- Spew Corruption (dot, drops pools)
+    [SpellName(215128)] = 3,    -- Cursed Blood (dot, weak bomb)
+    -- Erethe Renferal
+    [SpellName(215582)] = 4,    -- Raking Talons (tank debuff, stacks)
+    [SpellName(218519)] = 4,    -- Wind Burn (debuff, stacks)
+    [SpellName(215307)] = 4,    -- Web of Pain (linked with another player)
+    [SpellName(215449)] = 3,    -- Necrotic Venom (dot)
+    [SpellName(215460)] = 3,    -- Necrotic Venom (dot, drops pools)
+    [SpellName(210850)] = 4,    -- Twisting Shadows (dot, drops vortex)
+    -- Ursoc
+    [SpellName(197943)] = 3,    -- Overwhelm (tank debuff, stacks)
+    [SpellName(204859)] = 4,    -- Rend Flesh (tank debuff, dot)
+    [SpellName(198006)] = 3,    -- Focused Gaze (fixate)
+    [SpellName(198108)] = 3,    -- Momentum (debuff)
+    -- Dragons of Nightmare
+    [SpellName(207681)] = 4,    -- Nightmare Bloom (standing in, should be at least 1 player)
+    [SpellName(203770)] = 3,    -- Defiled Vines (root, magic)
+    [SpellName(203787)] = 3,    -- Volatile Infection (AoE dot)
+    [SpellName(204044)] = 3,    -- Shadow Burst (dot, stacks)
+    [SpellName(205341)] = 3,    -- Seeping Fog (dot, sleep, magic)
+    [SpellName(204078)] = 3,    -- Bellowing Roar (fear)
+    -- Cenarius
+    [SpellName(210315)] = 3,    -- Nightmare Brambles (dot, root, magic)
+    [SpellName(226821)] = 3,    -- Desiccating Stomp (melee split damage debuf, stacks)
+    [SpellName(211507)] = 3,    -- Nightmare Javelin (dot, magic)
+    [SpellName(211471)] = 3,    -- Scorned Touch (spreading dot, slow)
+    [SpellName(214529)] = 3,    -- Spear of Nightmares (tank debuff, stacks)
+	[SpellName(210279)] = 3,	-- Creeping Nightmare
+    -- Xavius
+    [SpellName(208431)] = 3,    -- Descent into Madness (buff before mind control)
+    [SpellName(206651)] = 3,    -- Darkening Soul (tank debuff, dot, stacks, magic, explosion on dispel)
+    [SpellName(209158)] = 3,    -- Blackening Soul (tank debuff, dot, stacks, magic, explosion on dispel)
+    [SpellName(211802)] = 3,    -- Nightmare Blades (fixate)
+    [SpellName(205771)] = 3,    -- Tormenting Fixation (ad fixate)
+    [SpellName(210451)] = 3,    -- Bonds of Terror (linked with another player)
+    [SpellName(224508)] = 3,    -- Corruption Meteor (split damage debuff)
 -----------------------------------------------------------------
 -- Draenor
 -----------------------------------------------------------------
