@@ -2,7 +2,7 @@ local T, C = unpack(ShestakUI)
 --if C.skins.opie ~= true or not IsAddOnLoaded("OPie") then return end
 
 ----------------------------------------------------------------------------------------
---	OPie skin
+--	OPie skin (OPie Masque)
 ----------------------------------------------------------------------------------------
 local SPECIAL_COLOR_ALPHA = 0
 -- 0 = invisible, 1 = fully visible, lower it if your skin is ugly
@@ -51,9 +51,6 @@ function prototype:SetDominantColor(r, g, b)
 	self.Border:SetShown(2.85 > (r + g + b)) -- don't override skin color if it's white
 	self.Border:SetVertexColor(r, g, b)
 	self.Border:SetAlpha(SPECIAL_COLOR_ALPHA)
-	for i = 1, #self.GlowTextures do
-		--self.GlowTextures[i]:SetVertexColor(r, g, b)
-	end
 end
 
 function prototype:SetOverlayIcon(texture, w, h, ...) -- not entirely sure what this is for
@@ -185,39 +182,38 @@ local function CreateIndicator(name, parent, size, ghost)
 		button[k] = v
 	end
 
-	-- Let Masque skin it
+	-- ShestakUI Skin
 
-		if not button.isSkinned then
-			button.NormalTexture:SetTexture(nil)
-			button:CreateBackdrop("Overlay")
-			button:StyleButton(nil, 4)
-			button:CreateBackdrop("Default")
-      button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			button.icon:SetDrawLayer("ARTWORK")
-			button.icon:SetParent(button.backdrop)
-      
-			button.icon:ClearAllPoints()
-      button.icon:SetSize(size, size)
-			button.icon:SetPoint("CENTER",0,0)
-
-      button.Cooldown:SetSize(size, size)
-      button.Cooldown:ClearAllPoints()
-      button.Cooldown:SetPoint("CENTER",0,0)
-      
-      button.Flash:SetSize(size, size)
-      button.Flash:ClearAllPoints()
-      button.Flash:SetPoint("CENTER",0,0)
-
-      button.hover:SetSize(size, size)
-      button.hover:ClearAllPoints()
-      button.hover:SetPoint("CENTER",0,0)
-      
-      button.checked:SetSize(size, size)
-      button.checked:ClearAllPoints()
-      button.checked:SetPoint("CENTER",0,0)
-			button.isSkinned = true
-		end
-
+	if not button.isSkinned then
+		button.NormalTexture:SetTexture(nil)
+		button:CreateBackdrop("Overlay")
+		button:StyleButton(nil, 4)
+		button:CreateBackdrop("Default")
+		
+		button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		button.icon:SetDrawLayer("ARTWORK")
+		button.icon:SetParent(button.backdrop)
+		button.icon:ClearAllPoints()
+		button.icon:SetSize(size, size)
+		button.icon:SetPoint("CENTER",0,0)
+		
+		button.Cooldown:SetSize(size, size)
+		button.Cooldown:ClearAllPoints()
+		button.Cooldown:SetPoint("CENTER",0,0)
+		
+		button.Flash:SetSize(size, size)
+		button.Flash:ClearAllPoints()
+		button.Flash:SetPoint("CENTER",0,0)
+		
+		button.hover:SetSize(size, size)
+		button.hover:ClearAllPoints()
+		button.hover:SetPoint("CENTER",0,0)
+		
+		button.checked:SetSize(size, size)
+		button.checked:ClearAllPoints()
+		button.checked:SetPoint("CENTER",0,0)
+		button.isSkinned = true
+	end
 	tinsert(buttons, button)
 	return button
 end
