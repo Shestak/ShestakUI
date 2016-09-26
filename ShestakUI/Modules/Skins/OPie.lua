@@ -1,13 +1,11 @@
 local T, C = unpack(ShestakUI)
---if C.skins.opie ~= true or not IsAddOnLoaded("OPie") then return end
+if C.skins.opie ~= true or not IsAddOnLoaded("OPie") then return end
 
 ----------------------------------------------------------------------------------------
 --	OPie skin (OPie Masque)
 ----------------------------------------------------------------------------------------
 local SPECIAL_COLOR_ALPHA = 0
 -- 0 = invisible, 1 = fully visible, lower it if your skin is ugly
-
-------------------------------------------------------------------------
 
 local id
 local group
@@ -189,26 +187,26 @@ local function CreateIndicator(name, parent, size, ghost)
 		button:CreateBackdrop("Overlay")
 		button:StyleButton(nil, 4)
 		button:CreateBackdrop("Default")
-		
+
 		button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		button.icon:SetDrawLayer("ARTWORK")
 		button.icon:SetParent(button.backdrop)
 		button.icon:ClearAllPoints()
 		button.icon:SetSize(size, size)
 		button.icon:SetPoint("CENTER",0,0)
-		
+
 		button.Cooldown:SetSize(size, size)
 		button.Cooldown:ClearAllPoints()
 		button.Cooldown:SetPoint("CENTER",0,0)
-		
+
 		button.Flash:SetSize(size, size)
 		button.Flash:ClearAllPoints()
 		button.Flash:SetPoint("CENTER",0,0)
-		
+
 		button.hover:SetSize(size, size)
 		button.hover:ClearAllPoints()
 		button.hover:SetPoint("CENTER",0,0)
-		
+
 		button.checked:SetSize(size, size)
 		button.checked:ClearAllPoints()
 		button.checked:SetPoint("CENTER",0,0)

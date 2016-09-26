@@ -1,11 +1,15 @@
 local T, C, L, _ = unpack(select(2, ...))
+if C.skins.rematch ~= true or not IsAddOnLoaded("Rematch") then return end
 
+----------------------------------------------------------------------------------------
+--	Rematch skin
+----------------------------------------------------------------------------------------
 local _,skin = ...
 Skin = skin
 
 skin.panels = {
 
-        Frame = function(self)
+	Frame = function(self)
 		self:StripTextures()
 		self:SetTemplate("Transparent")
 		self.TitleBar:StripTextures()
@@ -61,27 +65,27 @@ skin.panels = {
 
 	Toolbar = function(self)
 		for _,button in ipairs(self.Buttons) do
-                        button.IconBorder:SetTexture(nil)
+			button.IconBorder:SetTexture(nil)
 			button:CreateBackdrop("Overlay")
 			button:StyleButton(nil, 4)
-                        
-                        button:SetSize(26, 26)
+
+			button:SetSize(26, 26)
 			button:CreateBackdrop("Default")
-                        button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			button.Icon:SetDrawLayer("ARTWORK")
 			button.Icon:SetParent(button.backdrop)
-        
-                        button.hover:SetSize(26, 26)
-                        button.hover:ClearAllPoints()
-                        button.hover:SetPoint("CENTER",0,0)
 
-                        button.pushed:SetSize(26, 26)
-                        button.pushed:ClearAllPoints()
-                        button.pushed:SetPoint("CENTER",0,0)
+			button.hover:SetSize(26, 26)
+			button.hover:ClearAllPoints()
+			button.hover:SetPoint("CENTER",0,0)
 
-                        button.Cooldown:SetSize(26, 26)
-                        button.Cooldown:ClearAllPoints()
-                        button.Cooldown:SetPoint("CENTER",0,0)
+			button.pushed:SetSize(26, 26)
+			button.pushed:ClearAllPoints()
+			button.pushed:SetPoint("CENTER",0,0)
+
+			button.Cooldown:SetSize(26, 26)
+			button.Cooldown:ClearAllPoints()
+			button.Cooldown:SetPoint("CENTER",0,0)
 		end
 		self.PetCount:StripTextures()
 	end,
@@ -114,7 +118,6 @@ skin.panels = {
 		  end
 		end
 	end,
-
 
 	PetPanel = function(self)
 		self.List:StripTextures()
@@ -156,59 +159,59 @@ skin.panels = {
 					region:Hide()
 				end
 			end
-		  for _,region in ipairs({button:GetRegions()}) do
-		        if region:GetDrawLayer()=="HIGHLIGHT" then
-		                region:Hide()
-		        end
-		  end
-		  button.HasStuff:SetPoint("TOPLEFT",3,-18)
+			for _,region in ipairs({button:GetRegions()}) do
+				if region:GetDrawLayer()=="HIGHLIGHT" then
+					region:Hide()
+				end
+			end
+			button.HasStuff:SetPoint("TOPLEFT",3,-18)
 			button.HasStuff:SetAlpha(1)
 		end
 		for _,button in ipairs(self.Top.TypeBar.Buttons) do
-                        button.IconBorder:SetTexture(nil)
+			button.IconBorder:SetTexture(nil)
 			button:CreateBackdrop("Overlay")
 			button:StyleButton(nil, 4)
-                        button:SetSize(20, 20)
+			button:SetSize(20, 20)
 			button:CreateBackdrop("Default")
-         
-                        button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+			button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			button.Icon:SetDrawLayer("ARTWORK")
 			button.Icon:SetParent(button.backdrop)
-        
-                        button.hover:SetSize(20, 20)
-                        button.hover:ClearAllPoints()
-                        button.hover:SetPoint("CENTER",0,0)
-      
-                        button.checked:SetSize(20, 20)
-                        button.checked:ClearAllPoints()
-                        button.checked:SetPoint("CENTER",0,0)
-		end
-		for _,button in ipairs(self.List.ScrollFrame.buttons) do         
-                        if not button.isSkinned then
-                                button.Pet.IconBorder:SetAlpha(0)
-                                button.Faceplate:Hide()
-                                button.Backplate:Hide()
-                                       
-                                button:CreateBackdrop("Overlay")
-                                button.backdrop:SetPoint("TOPLEFT", 2, -2)
-                                button.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
-                                
-                                button:StyleButton(nil, 4)
-                                button.Pet:CreateBackdrop("Default")
-                                button.Pet.backdrop:SetPoint("TOPLEFT", -1, 1)
-                                button.Pet.backdrop:SetPoint("BOTTOMRIGHT", 1, -1)
-                                button.Pet:StyleButton(nil, 1)
 
-                                button.Pet.Favorite:SetParent(button.Pet.backdrop)
-                                button.Pet.Level.BG:SetAlpha(0)
-                                button.Pet.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-                                
-                                button.Pet.Icon:SetDrawLayer("ARTWORK")
-                                button.Pet.Icon:SetParent(button.Pet.backdrop)
-                                button.Pet.Icon:ClearAllPoints()
-                                button.Pet.Icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMLEFT", -3, 4)            
-                                button.isSkinned = true
-		        end
+			button.hover:SetSize(20, 20)
+			button.hover:ClearAllPoints()
+			button.hover:SetPoint("CENTER",0,0)
+
+			button.checked:SetSize(20, 20)
+			button.checked:ClearAllPoints()
+			button.checked:SetPoint("CENTER",0,0)
+		end
+		for _,button in ipairs(self.List.ScrollFrame.buttons) do
+			if not button.isSkinned then
+				button.Pet.IconBorder:SetAlpha(0)
+				button.Faceplate:Hide()
+				button.Backplate:Hide()
+
+				button:CreateBackdrop("Overlay")
+				button.backdrop:SetPoint("TOPLEFT", 2, -2)
+				button.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+
+				button:StyleButton(nil, 4)
+				button.Pet:CreateBackdrop("Default")
+				button.Pet.backdrop:SetPoint("TOPLEFT", -1, 1)
+				button.Pet.backdrop:SetPoint("BOTTOMRIGHT", 1, -1)
+				button.Pet:StyleButton(nil, 1)
+
+				button.Pet.Favorite:SetParent(button.Pet.backdrop)
+				button.Pet.Level.BG:SetAlpha(0)
+				button.Pet.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+				button.Pet.Icon:SetDrawLayer("ARTWORK")
+				button.Pet.Icon:SetParent(button.Pet.backdrop)
+				button.Pet.Icon:ClearAllPoints()
+				button.Pet.Icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMLEFT", -3, 4)
+				button.isSkinned = true
+			end
 		end
 		hooksecurefunc(self,"UpdateList",function() skin.ColorPetListBorders(self.List.ScrollFrame) end)
 		self.List.ScrollFrame:HookScript("OnVerticalScroll",skin.ColorPetListBorders)
@@ -216,70 +219,70 @@ skin.panels = {
 	end,
 
 	LoadoutPanel = function(self)
-	self:StripTextures()
-	self.Target:StripTextures()
-	self.Target:SetTemplate("Transparent")
-  
-        self.Target.Pet1:SkinButton()
-        self.Target.Pet1.IconBorder:SetAlpha(0)
-        self.Target.Pet2:SkinButton()
-        self.Target.Pet2.IconBorder:SetAlpha(0)
-        self.Target.Pet3:SkinButton()
-        self.Target.Pet3.IconBorder:SetAlpha(0)
-        self.Target.Model:SkinButton()
-        self.Target.ModelBorder:SetAlpha(0)
-    
-	for i=1,3 do
-	        self.Loadouts[i]:StripTextures()
-                self.Loadouts[i]:SetTemplate("Default")
-		
-                self.Loadouts[i].Pet.Pet.IconBorder:SetAlpha(0)
-                self.Loadouts[i].Pet.Pet:CreateBackdrop("Overlay")
-		self.Loadouts[i].Pet.Pet:StyleButton(nil, 4)
-                self.Loadouts[i].Pet.Pet:SetSize(40, 40)
-		self.Loadouts[i].Pet.Pet:CreateBackdrop("Default")
-                
-                self.Loadouts[i].Pet.Pet.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		self.Loadouts[i].Pet.Pet.Icon:SetDrawLayer("ARTWORK")
-		self.Loadouts[i].Pet.Pet.Icon:SetParent(self.Loadouts[i].Pet.Pet.backdrop)
-        
-                self.Loadouts[i].Pet.Pet.hover:SetSize(40, 40)
-                self.Loadouts[i].Pet.Pet.hover:ClearAllPoints()
-                self.Loadouts[i].Pet.Pet.hover:SetPoint("CENTER",0,0)
-                self.Loadouts[i].Pet.Pet.Level.BG:SetAlpha(0)
-      
-                self.Loadouts[i].Pet.Pet.Leveling:SetAlpha(0.2)
-                self.Loadouts[i].HP:StripTextures()
-                self.Loadouts[i].HP:CreateBackdrop("Overlay")
-                self.Loadouts[i].HP:SetStatusBarTexture(C.media.texture)
-                
-                self.Loadouts[i].XP:StripTextures()
-                self.Loadouts[i].XP:CreateBackdrop("Overlay")
-                self.Loadouts[i].XP:SetStatusBarTexture(C.media.texture)
- 	  end
+		self:StripTextures()
+		self.Target:StripTextures()
+		self.Target:SetTemplate("Transparent")
+
+		self.Target.Pet1:SkinButton()
+		self.Target.Pet1.IconBorder:SetAlpha(0)
+		self.Target.Pet2:SkinButton()
+		self.Target.Pet2.IconBorder:SetAlpha(0)
+		self.Target.Pet3:SkinButton()
+		self.Target.Pet3.IconBorder:SetAlpha(0)
+		self.Target.Model:SkinButton()
+		self.Target.ModelBorder:SetAlpha(0)
+
+		for i = 1, 3 do
+			self.Loadouts[i]:StripTextures()
+			self.Loadouts[i]:SetTemplate("Default")
+
+			self.Loadouts[i].Pet.Pet.IconBorder:SetAlpha(0)
+			self.Loadouts[i].Pet.Pet:CreateBackdrop("Overlay")
+			self.Loadouts[i].Pet.Pet:StyleButton(nil, 4)
+			self.Loadouts[i].Pet.Pet:SetSize(40, 40)
+			self.Loadouts[i].Pet.Pet:CreateBackdrop("Default")
+
+			self.Loadouts[i].Pet.Pet.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			self.Loadouts[i].Pet.Pet.Icon:SetDrawLayer("ARTWORK")
+			self.Loadouts[i].Pet.Pet.Icon:SetParent(self.Loadouts[i].Pet.Pet.backdrop)
+
+			self.Loadouts[i].Pet.Pet.hover:SetSize(40, 40)
+			self.Loadouts[i].Pet.Pet.hover:ClearAllPoints()
+			self.Loadouts[i].Pet.Pet.hover:SetPoint("CENTER",0,0)
+			self.Loadouts[i].Pet.Pet.Level.BG:SetAlpha(0)
+
+			self.Loadouts[i].Pet.Pet.Leveling:SetAlpha(0.2)
+			self.Loadouts[i].HP:StripTextures()
+			self.Loadouts[i].HP:CreateBackdrop("Overlay")
+			self.Loadouts[i].HP:SetStatusBarTexture(C.media.texture)
+
+			self.Loadouts[i].XP:StripTextures()
+			self.Loadouts[i].XP:CreateBackdrop("Overlay")
+			self.Loadouts[i].XP:SetStatusBarTexture(C.media.texture)
+		end
 		self.Target.TargetButton:SkinButton()
 		self.Target.LoadSaveButton:SkinButton()
-		for i=1,3 do
-		  for j=1,3 do
-		    self.Loadouts[i].Abilities[j].IconBorder:Hide()
-                        self.Loadouts[i].Abilities[j].IconBorder:SetTexture(nil)
-                        self.Loadouts[i].Abilities[j]:CreateBackdrop("Overlay")
-                        self.Loadouts[i].Abilities[j]:StyleButton(nil, 4)
-                        self.Loadouts[i].Abilities[j]:SetSize(30, 30)
-                        self.Loadouts[i].Abilities[j]:CreateBackdrop("Default")
-                        
-                        self.Loadouts[i].Abilities[j].Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			self.Loadouts[i].Abilities[j].Icon:SetDrawLayer("ARTWORK")
-			self.Loadouts[i].Abilities[j].Icon:SetParent(self.Loadouts[i].Abilities[j].backdrop)
+		for i = 1, 3 do
+			for j = 1, 3 do
+				self.Loadouts[i].Abilities[j].IconBorder:Hide()
+				self.Loadouts[i].Abilities[j].IconBorder:SetTexture(nil)
+				self.Loadouts[i].Abilities[j]:CreateBackdrop("Overlay")
+				self.Loadouts[i].Abilities[j]:StyleButton(nil, 4)
+				self.Loadouts[i].Abilities[j]:SetSize(30, 30)
+				self.Loadouts[i].Abilities[j]:CreateBackdrop("Default")
 
-                        self.Loadouts[i].Abilities[j].hover:SetSize(30, 30)
-                        self.Loadouts[i].Abilities[j].hover:ClearAllPoints()
-                        self.Loadouts[i].Abilities[j].hover:SetPoint("CENTER",0,0)
-      
-                        self.Loadouts[i].Abilities[j].checked:SetSize(30, 30)
-                        self.Loadouts[i].Abilities[j].checked:ClearAllPoints()
-                        self.Loadouts[i].Abilities[j].checked:SetPoint("CENTER",0,0)
-                  end
+				self.Loadouts[i].Abilities[j].Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				self.Loadouts[i].Abilities[j].Icon:SetDrawLayer("ARTWORK")
+				self.Loadouts[i].Abilities[j].Icon:SetParent(self.Loadouts[i].Abilities[j].backdrop)
+
+				self.Loadouts[i].Abilities[j].hover:SetSize(30, 30)
+				self.Loadouts[i].Abilities[j].hover:ClearAllPoints()
+				self.Loadouts[i].Abilities[j].hover:SetPoint("CENTER",0,0)
+
+				self.Loadouts[i].Abilities[j].checked:SetSize(30, 30)
+				self.Loadouts[i].Abilities[j].checked:ClearAllPoints()
+				self.Loadouts[i].Abilities[j].checked:SetPoint("CENTER",0,0)
+			end
 		end
 		self.Flyout:SetTemplate("Transparent")
 		for i=1,2 do
@@ -320,27 +323,27 @@ skin.panels = {
 			if not button.slim then
 				for i=1,3 do
 					local anchorPoint,relativeTo,relativePoint,x,y = button.Pets[i]:GetPoint()
-                                                button.Pets[i].IconBorder:SetAlpha(0)
-                                                button.Pets[i]:SetPoint(anchorPoint,relativeTo,relativePoint,x,0)
-                                                button.Pets[i]:CreateBackdrop("Overlay")
-                                                button.Pets[i]:StyleButton(nil, 4)
-                                                button.Pets[i]:SetWidth(24)
-                                                button.Pets[i]:CreateBackdrop("Default")
+					button.Pets[i].IconBorder:SetAlpha(0)
+					button.Pets[i]:SetPoint(anchorPoint,relativeTo,relativePoint,x,0)
+					button.Pets[i]:CreateBackdrop("Overlay")
+					button.Pets[i]:StyleButton(nil, 4)
+					button.Pets[i]:SetWidth(24)
+					button.Pets[i]:CreateBackdrop("Default")
 				end
 			end
 		end
 		self.Top.Team:SkinButton()
 		shiftpets(self.Top.Team)
 		for _,button in ipairs(self.List.ScrollFrame.buttons) do
-                        if not button.isSkinned then
-                                button.Faceplate:Hide()
-                                button.Backplate:Hide()
-                                button:CreateBackdrop("Overlay")
-                                button.backdrop:SetPoint("TOPLEFT", 2, -2)
-                                button.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
-                                button:StyleButton(nil, 4)           
-                                button.isSkinned = true
-                        end
+			if not button.isSkinned then
+				button.Faceplate:Hide()
+				button.Backplate:Hide()
+				button:CreateBackdrop("Overlay")
+				button.backdrop:SetPoint("TOPLEFT", 2, -2)
+				button.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+				button:StyleButton(nil, 4)
+				button.isSkinned = true
+			end
 			shiftpets(button)
 		end
 		local function blackborders()
@@ -359,18 +362,17 @@ skin.panels = {
 		self.Target:StripTextures()
 		self.Target:SetTemplate("Transparent")
 		self.Target.LoadButton:SkinButton()
-		for i=1,3 do
-		  for j=1,3 do
-		    self.Pets[i].Abilities[j]:SkinButton()
-		    self.Pets[i].Abilities[j].IconBorder:Hide()
-		  end
+		for i = 1, 3 do
+			for j = 1, 3 do
+				self.Pets[i].Abilities[j]:SkinButton()
+				self.Pets[i].Abilities[j].IconBorder:Hide()
+			end
 		end
 		self.Flyout:SetTemplate("Transparent")
-		for i=1,2 do
-                        self.Flyout.Abilities[i]:SkinButton()
+		for i = 1, 2 do
+			self.Flyout.Abilities[i]:SkinButton()
 			self.Flyout.Abilities[i].IconBorder:Hide()
 		end
-
 	end,
 
 	MiniQueue = function(self)
@@ -401,49 +403,49 @@ skin.panels = {
 		self.Top.QueueButton:SkinButton()
 		self.Top.Toggle:SkinButton()
 		self.Top.LevelingSlot:SkinButton()
-                
-                self.Top.LevelingSlot.Pet.IconBorder:SetAlpha(0)
-                self.Top.LevelingSlot.Pet:CreateBackdrop("Overlay")
+
+		self.Top.LevelingSlot.Pet.IconBorder:SetAlpha(0)
+		self.Top.LevelingSlot.Pet:CreateBackdrop("Overlay")
 		self.Top.LevelingSlot.Pet.backdrop:SetPoint("TOPLEFT", 2, -2)
 		self.Top.LevelingSlot.Pet.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
-                self.Top.LevelingSlot.Pet:StyleButton(nil, 4)
-    
+		self.Top.LevelingSlot.Pet:StyleButton(nil, 4)
+
 		self.Top.LevelingSlot.Pet.Level.BG:SetAlpha(0)
 
-                self.Top.LevelingSlot.Pet.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		self.Top.LevelingSlot.Pet.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		self.Top.LevelingSlot.Pet.Icon:SetDrawLayer("ARTWORK")
 		self.Top.LevelingSlot.Pet.Icon:SetParent(self.Top.LevelingSlot.Pet.backdrop)
 		self.Top.LevelingSlot.Pet.Icon:ClearAllPoints()
 		self.Top.LevelingSlot.Pet.Icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMLEFT", -3, 4)
-                self.Top.LevelingSlot.Pet:SetSize(48, 48)  
-    
+		self.Top.LevelingSlot.Pet:SetSize(48, 48)
+
 		self.Status:StripTextures()
 		self.Status:SetTemplate("Transparent")
 		for _,button in ipairs(self.List.ScrollFrame.buttons) do
-                        if not button.isSkinned then
-                                button.Pet.IconBorder:SetAlpha(0)
-                                button.Faceplate:Hide()
-                                button.Backplate:Hide()
-                                button:CreateBackdrop("Overlay")
-                                button.backdrop:SetPoint("TOPLEFT", 2, -2)
-                                button.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
-                                button:StyleButton(nil, 4)
+			if not button.isSkinned then
+				button.Pet.IconBorder:SetAlpha(0)
+				button.Faceplate:Hide()
+				button.Backplate:Hide()
+				button:CreateBackdrop("Overlay")
+				button.backdrop:SetPoint("TOPLEFT", 2, -2)
+				button.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+				button:StyleButton(nil, 4)
 
-                                button.Pet:CreateBackdrop("Default")
-                                button.Pet.backdrop:SetPoint("TOPLEFT", -1, 1)
-                                button.Pet.backdrop:SetPoint("BOTTOMRIGHT", 1, -1)
-                                button.Pet:StyleButton(nil, 1)
+				button.Pet:CreateBackdrop("Default")
+				button.Pet.backdrop:SetPoint("TOPLEFT", -1, 1)
+				button.Pet.backdrop:SetPoint("BOTTOMRIGHT", 1, -1)
+				button.Pet:StyleButton(nil, 1)
 
-                                button.Pet.Favorite:SetParent(button.Pet.backdrop)
-                                button.Pet.Level.BG:SetAlpha(0)
+				button.Pet.Favorite:SetParent(button.Pet.backdrop)
+				button.Pet.Level.BG:SetAlpha(0)
 
-                                button.Pet.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-                                button.Pet.Icon:SetDrawLayer("ARTWORK")
-                                button.Pet.Icon:SetParent(button.Pet.backdrop)
-                                button.Pet.Icon:ClearAllPoints()
-                                button.Pet.Icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMLEFT", -3, 4)            
-                                button.isSkinned = true
-                        end
+				button.Pet.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				button.Pet.Icon:SetDrawLayer("ARTWORK")
+				button.Pet.Icon:SetParent(button.Pet.backdrop)
+				button.Pet.Icon:ClearAllPoints()
+				button.Pet.Icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMLEFT", -3, 4)
+				button.isSkinned = true
+			end
 		end
 		hooksecurefunc(self,"UpdateList",function() skin.ColorPetListBorders(self.List.ScrollFrame) end)
 		self.List.ScrollFrame:HookScript("OnVerticalScroll",skin.ColorPetListBorders)
@@ -560,7 +562,6 @@ skin.panels = {
 
 }
 
-
 --[[ Stuff that needs to be done on login that has no panel goes here (menus, tooltips, etc) ]]
 skin.misc = {
 
@@ -604,7 +605,6 @@ skin.misc = {
 			self.Content[stat].Add.IconBorder:Hide()
 		end
 	end,
-
 }
 
 --[[ Helper functions ]]
@@ -631,68 +631,48 @@ function skin:SetButtonIcon(button,icon)
 end
 
 function skin:ColorPetListBorders()
-        for _,button in ipairs(self.buttons) do
-                if (button.index ~= nil) then   
-                        local petID, _, isOwned = C_PetJournal.GetPetInfoByIndex(button.index)
-                        if petID and isOwned then
-                                local _, _, _, _, rarity = C_PetJournal.GetPetStats(petID)
-                                if rarity then
-                                        local color = ITEM_QUALITY_COLORS[rarity-1]
-				        button.Name:SetTextColor(color.r, color.g, color.b)
-				        button.Pet.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
-			        else
-				        button.Name:SetTextColor(1, 1, 1)
-				        button.Pet.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-			        end
-		        else
-			        button.Name:SetTextColor(0.5, 0.5, 0.5)
-		        end
-	        end
-        end
+	for _,button in ipairs(self.buttons) do
+		if (button.index ~= nil) then
+			local petID, _, isOwned = C_PetJournal.GetPetInfoByIndex(button.index)
+			if petID and isOwned then
+				local _, _, _, _, rarity = C_PetJournal.GetPetStats(petID)
+				if rarity then
+					local color = ITEM_QUALITY_COLORS[rarity-1]
+					button.Name:SetTextColor(color.r, color.g, color.b)
+					button.Pet.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
+				else
+					button.Name:SetTextColor(1, 1, 1)
+					button.Pet.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+				end
+			else
+				button.Name:SetTextColor(0.5, 0.5, 0.5)
+			end
+		end
+	end
 end
- 
+
 function skin:HandlePanelTab(tab)
-        if not tab then return end
-        for _,texture in ipairs({tab:GetRegions()}) do
-                if texture:GetDrawLayer()=="BACKGROUND" then
-                        texture:SetTexture(nil)
-                end
-        end
-	
-        if tab.GetHighlightTexture and tab:GetHighlightTexture() then
-	        tab:GetHighlightTexture():SetTexture(nil)
+	if not tab then return end
+	for _,texture in ipairs({tab:GetRegions()}) do
+		if texture:GetDrawLayer()=="BACKGROUND" then
+				texture:SetTexture(nil)
+		end
+	end
+
+	if tab.GetHighlightTexture and tab:GetHighlightTexture() then
+		tab:GetHighlightTexture():SetTexture(nil)
 	else
-	        tab:StripTextures()
+		tab:StripTextures()
 	end
 	tab.backdrop = CreateFrame("Frame", nil, tab)
 	tab.backdrop:SetFrameLevel(tab:GetFrameLevel() - 1)
 	if bg then
-	        tab.backdrop:SetTemplate("Overlay")
+		tab.backdrop:SetTemplate("Overlay")
 		tab.backdrop:SetPoint("TOPLEFT", 3, -7)
 		tab.backdrop:SetPoint("BOTTOMRIGHT", -3, 2)
 	else
-	        tab.backdrop:SetTemplate("Transparent")
+		tab.backdrop:SetTemplate("Transparent")
 		tab.backdrop:SetPoint("TOPLEFT", 10, -3)
 		tab.backdrop:SetPoint("BOTTOMRIGHT", -10, 3)
 	end
 end
-
--- wait until the game starts rendering to go through and reskin everything
-
-C_Timer.After(0,function()
-	local majorVersion,minorVersion = (GetAddOnMetadata("Rematch","Version") or ""):match("^(%d+)%.(%d+)")
-	if majorVersion then
-		majorVersion,minorVersion = tonumber(majorVersion),tonumber(minorVersion)
-		if majorVersion<4 or majorVersion>4 or (majorVersion==4 and minorVersion<3) then
-			local dialog = Rematch:ShowDialog("CantElvUISkin",300,164,"Rematch Needs Updated",nil,nil,nil,OKAY)
-			dialog:ShowText(format("Rematch ElvUI Skin requires Rematch version 4.3 or greater.\n\nYour Rematch is version %d.%d",majorVersion,minorVersion),260,96,"TOP",0,-32)
-			return
-		end
-		for panel,func in pairs(skin.panels) do
-			func(Rematch[panel])
-		end
-		for _,func in pairs(skin.misc) do
-			func()
-		end
-	end
-end)

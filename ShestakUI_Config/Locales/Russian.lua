@@ -112,6 +112,10 @@ L_GUI_SKINS_VANASKOS = "Стилизация VanasKoS"
 L_GUI_SKINS_WEAK_AURAS = "Стилизация WeakAuras"
 L_GUI_SKINS_SKADA = "Стилизация Skada"
 L_GUI_SKINS_MY_ROLE_PLAY = "Стилизация MyRolePlay"
+L_GUI_SKINS_ARH = "Стилизация Archaeology Helper"
+L_GUI_SKINS_POSTAL = "Стилизация Postal"
+L_GUI_SKINS_OPIE = "Стилизация OPie"
+L_GUI_SKINS_REMATCH = "Стилизация Rematch"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Текст боя"
@@ -369,6 +373,7 @@ L_GUI_UF_PLUGINS_SWING = "Отображать индикатор автомат
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Включить индикатор репутации"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Включить индикатор опыта"
 L_GUI_UF_PLUGINS_FRIENDSHIP_BAR = "Включить индикатор дружелюбности"
+L_GUI_UF_PLUGINS_ARTIFACT_BAR = "Включить индикатор силы артефакта"
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Плавное изменение полос"
 L_GUI_UF_PLUGINS_ENEMY_SPEC = "Отображать специализацию врага"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Текст боя на рамках игрока и цели"

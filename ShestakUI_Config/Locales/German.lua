@@ -112,6 +112,10 @@ L_GUI_SKINS_VANASKOS = "VanasKoS Design aktivieren"
 L_GUI_SKINS_WEAK_AURAS = "WeakAuras Design aktivieren"
 L_GUI_SKINS_SKADA = "Skada Design aktivieren"
 L_GUI_SKINS_MY_ROLE_PLAY = "MyRolePlay Design aktivieren"
+L_GUI_SKINS_ARH = "Enable styling Archaeology Helper" -- Need review
+L_GUI_SKINS_POSTAL = "Enable styling Postal" -- Need review
+L_GUI_SKINS_OPIE = "Enable styling OPie" -- Need review
+L_GUI_SKINS_REMATCH = "Enable styling Rematch" -- Need review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Kampftext"
@@ -369,6 +373,7 @@ L_GUI_UF_PLUGINS_SWING = "Swingleiste"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Rufleiste"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Erfahrungsleiste"
 L_GUI_UF_PLUGINS_FRIENDSHIP_BAR = "Freundschaftsleiste"
+L_GUI_UF_PLUGINS_ARTIFACT_BAR = "Artefact Power bar" -- Need review
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Weichgezeichnete Leisten"
 L_GUI_UF_PLUGINS_ENEMY_SPEC = "Zeige gegnerische Talente"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Kampftexts auf Spieler/Zielfenster"

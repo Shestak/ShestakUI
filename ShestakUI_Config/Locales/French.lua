@@ -112,6 +112,10 @@ L_GUI_SKINS_VANASKOS = "Activer la personnalisation pour VanasKoS"
 L_GUI_SKINS_WEAK_AURAS = "Activer la personnalisation pour WeakAuras"
 L_GUI_SKINS_SKADA = "Activer la personnalisation pour Skada"
 L_GUI_SKINS_MY_ROLE_PLAY = "Activer la personnalisation pour MyRolePlay"
+L_GUI_SKINS_ARH = "Enable styling Archaeology Helper" -- Need review
+L_GUI_SKINS_POSTAL = "Enable styling Postal" -- Need review
+L_GUI_SKINS_OPIE = "Enable styling OPie" -- Need review
+L_GUI_SKINS_REMATCH = "Enable styling Rematch" -- Need review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"
@@ -369,6 +373,7 @@ L_GUI_UF_PLUGINS_SWING = "Barre d'attaque automatique / tir automatique"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Barre de réputation"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Barre d'expérience"
 L_GUI_UF_PLUGINS_FRIENDSHIP_BAR = "Barre de réputation/amitié"
+L_GUI_UF_PLUGINS_ARTIFACT_BAR = "Artefact Power bar" -- Need review
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Lissage des barres"
 L_GUI_UF_PLUGINS_ENEMY_SPEC = "Afficher les talent de l'ennemi"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texte de combat sur les barres du joueur et de la cible"
