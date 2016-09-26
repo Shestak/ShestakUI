@@ -236,7 +236,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 				count = count + 1
 			end
 		end
-		if DBM ~= nil then
+		if DBM then
 			hooksecurefunc(DBT, "CreateBar", SkinBars)
 			hooksecurefunc(DBM.BossHealth, "Show", SkinBossTitle)
 			hooksecurefunc(DBM.BossHealth, "AddBoss", SkinBoss)
