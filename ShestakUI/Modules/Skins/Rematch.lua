@@ -7,6 +7,9 @@ if C.skins.rematch ~= true or not IsAddOnLoaded("Rematch") then return end
 local _,skin = ...
 Skin = skin
 
+local rematch = Rematch
+local roster = rematch.Roster
+
 skin.panels = {
 
 	Frame = function(self)
@@ -213,9 +216,9 @@ skin.panels = {
 				button.isSkinned = true
 			end
 		end
-		hooksecurefunc(self,"UpdateList",function() skin.ColorPetListBorders(self.List.ScrollFrame) end)
-		self.List.ScrollFrame:HookScript("OnVerticalScroll",skin.ColorPetListBorders)
-		self.List.ScrollFrame:HookScript("OnMouseWheel",skin.ColorPetListBorders)
+		hooksecurefunc(self,"UpdateList",function() skin.ColorPetListBordersPet(self.List.ScrollFrame) end)
+		self.List.ScrollFrame:HookScript("OnVerticalScroll",skin.ColorPetListBordersPet)
+		self.List.ScrollFrame:HookScript("OnMouseWheel",skin.ColorPetListBordersPet)
 	end,
 
 	LoadoutPanel = function(self)
@@ -390,9 +393,9 @@ skin.panels = {
 				button:GetChildren():Hide()
 			end
 		end
-		hooksecurefunc(self,"UpdateList",function() skin.ColorPetListBorders(self.List.ScrollFrame) end)
-		self.List.ScrollFrame:HookScript("OnVerticalScroll",skin.ColorPetListBorders)
-		self.List.ScrollFrame:HookScript("OnMouseWheel",skin.ColorPetListBorders)
+		hooksecurefunc(self,"UpdateList",function() skin.ColorPetListBordersQueue(self.List.ScrollFrame) end)
+		self.List.ScrollFrame:HookScript("OnVerticalScroll",skin.ColorPetListBordersQueue)
+		self.List.ScrollFrame:HookScript("OnMouseWheel",skin.ColorPetListBordersQueue)
 	end,
 
 	QueuePanel = function(self)
@@ -447,9 +450,9 @@ skin.panels = {
 				button.isSkinned = true
 			end
 		end
-		hooksecurefunc(self,"UpdateList",function() skin.ColorPetListBorders(self.List.ScrollFrame) end)
-		self.List.ScrollFrame:HookScript("OnVerticalScroll",skin.ColorPetListBorders)
-		self.List.ScrollFrame:HookScript("OnMouseWheel",skin.ColorPetListBorders)
+		hooksecurefunc(self,"UpdateList",function() skin.ColorPetListBordersQueue(self.List.ScrollFrame) end)
+		self.List.ScrollFrame:HookScript("OnVerticalScroll",skin.ColorPetListBordersQueue)
+		self.List.ScrollFrame:HookScript("OnMouseWheel",skin.ColorPetListBordersQueue)
 	end,
 
 	OptionPanel = function(self)
@@ -630,19 +633,36 @@ function skin:SetButtonIcon(button,icon)
 	end
 end
 
-function skin:ColorPetListBorders()
+function skin:ColorPetListBordersPet()
 	for _,button in ipairs(self.buttons) do
 		if (button.index ~= nil) then
-			local petID, _, isOwned = C_PetJournal.GetPetInfoByIndex(button.index)
-			if petID and isOwned then
+			local petID = roster.petList[button.index]
+			if type(petID) == "string" then
 				local _, _, _, _, rarity = C_PetJournal.GetPetStats(petID)
 				if rarity then
 					local color = ITEM_QUALITY_COLORS[rarity-1]
 					button.Name:SetTextColor(color.r, color.g, color.b)
-					button.Pet.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
 				else
 					button.Name:SetTextColor(1, 1, 1)
-					button.Pet.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+				end
+			else
+				button.Name:SetTextColor(0.5, 0.5, 0.5)
+			end
+		end
+	end
+end
+
+function skin:ColorPetListBordersQueue()
+	for _,button in ipairs(self.buttons) do
+		if (button.index ~= nil) then
+			local petID = RematchSettings.LevelingQueue[button.index]
+			if type(petID) == "string" then
+				local _, _, _, _, rarity = C_PetJournal.GetPetStats(petID)
+				if rarity then
+					local color = ITEM_QUALITY_COLORS[rarity-1]
+					button.Name:SetTextColor(color.r, color.g, color.b)
+				else
+					button.Name:SetTextColor(1, 1, 1)
 				end
 			else
 				button.Name:SetTextColor(0.5, 0.5, 0.5)
@@ -676,3 +696,12 @@ function skin:HandlePanelTab(tab)
 		tab.backdrop:SetPoint("BOTTOMRIGHT", -10, 3)
 	end
 end
+
+C_Timer.After(0,function()
+	for panel,func in pairs(skin.panels) do
+		func(Rematch[panel])
+	end
+	for _,func in pairs(skin.misc) do
+		func()
+	end
+end)
