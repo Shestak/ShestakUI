@@ -648,7 +648,7 @@ local function Shared(self, unit)
 			self.Reputation.Tooltip = true
 		end
 
-		-- Artefact Power bar
+		-- Artifact Power bar
 		if C.unitframe.plugins_artifact_bar == true then
 			self.ArtifactPower = CreateFrame("StatusBar", self:GetName().."_ArtifactPower", self)
 			self.ArtifactPower:CreateBackdrop("Default")
