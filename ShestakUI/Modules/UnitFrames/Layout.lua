@@ -648,6 +648,58 @@ local function Shared(self, unit)
 			self.Reputation.Tooltip = true
 		end
 
+		-- Artifact Power bar
+		if C.unitframe.plugins_artifact_bar == true then
+			self.ArtifactPower = CreateFrame("StatusBar", self:GetName().."_ArtifactPower", self)
+			self.ArtifactPower:CreateBackdrop("Default")
+			self.ArtifactPower:EnableMouse(true)
+			if C.unitframe.portrait_enable == true then
+				if T.level == MAX_PLAYER_LEVEL then
+					if C.unitframe.plugins_reputation_bar == true then
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -38 - C.unitframe.portrait_width, 28)
+					else
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
+					end
+				else
+					if C.unitframe.plugins_reputation_bar == true then
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -52 - C.unitframe.portrait_width, 28)
+					else
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
+					end
+				end
+			else
+				if T.level == MAX_PLAYER_LEVEL then
+					if C.unitframe.plugins_reputation_bar == true then
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -31, 28)
+					else
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
+					end
+				else
+					if C.unitframe.plugins_reputation_bar == true then
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -45, 28)
+					else
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 28)
+					end
+				end
+			end
+			self.ArtifactPower:SetSize(7, 94)
+			self.ArtifactPower:SetOrientation("Vertical")
+			self.ArtifactPower:SetStatusBarTexture(C.media.texture)
+			self.ArtifactPower.offAlpha = 0
+
+			self.ArtifactPower.bg = self.ArtifactPower:CreateTexture(nil, "BORDER")
+			self.ArtifactPower.bg:SetAllPoints()
+			self.ArtifactPower.bg:SetTexture(C.media.texture)
+
+			self.ArtifactPower:HookScript("OnEnter", function(self) self.ArtifactPower.offAlpha = 1 end)
+			self.ArtifactPower:HookScript("OnLeave", function(self) self.ArtifactPower.offAlpha = 0 end)
+			self.ArtifactPower.PostUpdate = function(self, event, isShown)
+				self:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
+				self.bg:SetVertexColor(1, 0, 0, 0.2)
+			end
+			self.ArtifactPower.Tooltip = true
+		end
+
 		-- GCD spark
 		if C.unitframe.plugins_gcd == true then
 			self.GCD = CreateFrame("Frame", self:GetName().."_GCD", self)

@@ -139,6 +139,10 @@ local function Local(o)
 	if o == "UIConfigskinsweak_auras" then o = L_GUI_SKINS_WEAK_AURAS end
 	if o == "UIConfigskinsskada" then o = L_GUI_SKINS_SKADA end
 	if o == "UIConfigskinsmy_role_play" then o = L_GUI_SKINS_MY_ROLE_PLAY end
+	if o == "UIConfigskinsarh" then o = L_GUI_SKINS_ARH end
+	if o == "UIConfigskinspostal" then o = L_GUI_SKINS_POSTAL end
+	if o == "UIConfigskinsopie" then o = L_GUI_SKINS_OPIE end
+	if o == "UIConfigskinsrematch" then o = L_GUI_SKINS_REMATCH end
 
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end
@@ -405,6 +409,7 @@ local function Local(o)
 	if o == "UIConfigunitframeplugins_reputation_bar" then o = L_GUI_UF_PLUGINS_REPUTATION_BAR end
 	if o == "UIConfigunitframeplugins_experience_bar" then o = L_GUI_UF_PLUGINS_EXPERIENCE_BAR end
 	if o == "UIConfigunitframeplugins_friendship_bar" then o = L_GUI_UF_PLUGINS_FRIENDSHIP_BAR end
+	if o == "UIConfigunitframeplugins_artifact_bar" then o = L_GUI_UF_PLUGINS_ARTIFACT_BAR end
 	if o == "UIConfigunitframeplugins_smooth_bar" then o = L_GUI_UF_PLUGINS_SMOOTH_BAR end
 	if o == "UIConfigunitframeplugins_enemy_spec" then o = L_GUI_UF_PLUGINS_ENEMY_SPEC end
 	if o == "UIConfigunitframeplugins_combat_feedback" then o = L_GUI_UF_PLUGINS_COMBAT_FEEDBACK end

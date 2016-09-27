@@ -118,6 +118,8 @@ end
 local ignoreQuestNPC = {
 	[88570] = true,	-- Fate-Twister Tiklal
 	[87391] = true,	-- Fate-Twister Seress
+	[111243] = true, -- Archmage Lan'dalock
+	[108868] = true, -- Hunter's order hall
 }
 
 QuickQuest:Register("QUEST_GREETING", function()
@@ -177,8 +179,11 @@ local ignoreGossipNPC = {
 	[95201] = true,
 
 	-- Misc NPCs
-	[79740] = true,	-- Warmaster Zog (Horde)
-	[79953] = true,	-- Lieutenant Thorn (Alliance)
+	[79740] = true, -- Warmaster Zog (Horde)
+	[79953] = true, -- Lieutenant Thorn (Alliance)
+	[84268] = true, -- Lieutenant Thorn (Alliance)
+	[84511] = true, -- Lieutenant Thorn (Alliance)
+	[84684] = true, -- Lieutenant Thorn (Alliance)
 }
 
 QuickQuest:Register("GOSSIP_SHOW", function()
@@ -301,6 +306,13 @@ end)
 local cashRewards = {
 	[45724] = 1e5,	-- Champion's Purse
 	[64491] = 2e6,	-- Royal Reward
+	-- Items from the Sixtrigger brothers quest chain in Stormheim
+	[138127] = 15, -- Mysterious Coin, 15 copper
+	[138129] = 11, -- Swatch of Priceless Silk, 11 copper
+	[138131] = 24, -- Magical Sprouting Beans, 24 copper
+	[138123] = 15, -- Shiny Gold Nugget, 15 copper
+	[138125] = 16, -- Crystal Clear Gemstone, 16 copper
+	[138133] = 27, -- Elixir of Endless Wonder, 27 copper
 }
 
 QuickQuest:Register("QUEST_COMPLETE", function()

@@ -179,7 +179,6 @@ or T.name == "Чакернаут" or T.name == "Чаккис" or T.name == "Эз
 	C["bag"].ilvl = true
 	C["map"].fog_of_war = true
 	C["nameplate"].combat = true
-	C["aura"].focus_debuffs = true
 	C["unitframe"].enemy_health_color = false
 	C["unitframe"].castbar_latency = false
 	C["raidframe"].raid_groups = 6

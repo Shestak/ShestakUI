@@ -109,22 +109,24 @@ local function LoadSkin()
 		else
 			bonuses = SPEC_SPELLS_DISPLAY[id]
 		end
-		for i = 1, #bonuses, 2 do
-			local frame = scrollChild["abilityButton"..index]
-			local _, icon = GetSpellTexture(bonuses[i])
-			frame.icon:SetTexture(icon)
-			if not frame.reskinned then
-				frame.reskinned = true
-				frame.ring:Hide()
-				frame:CreateBackdrop("Default")
-				frame.backdrop:SetPoint("TOPLEFT", 2, -2)
-				frame.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
-				frame.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				frame.icon:SetParent(frame.backdrop)
-				frame.icon:SetPoint("TOPLEFT", 2, -2)
-				frame.icon:SetPoint("BOTTOMRIGHT", -2, 2)
+		if bonuses then
+			for i = 1, #bonuses, 2 do
+				local frame = scrollChild["abilityButton"..index]
+				local _, icon = GetSpellTexture(bonuses[i])
+				frame.icon:SetTexture(icon)
+				if not frame.reskinned then
+					frame.reskinned = true
+					frame.ring:Hide()
+					frame:CreateBackdrop("Default")
+					frame.backdrop:SetPoint("TOPLEFT", 2, -2)
+					frame.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+					frame.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+					frame.icon:SetParent(frame.backdrop)
+					frame.icon:SetPoint("TOPLEFT", 2, -2)
+					frame.icon:SetPoint("BOTTOMRIGHT", -2, 2)
+				end
+				index = index + 1
 			end
-			index = index + 1
 		end
 
 		for i = 1, GetNumSpecializations(nil, self.isPet) do
