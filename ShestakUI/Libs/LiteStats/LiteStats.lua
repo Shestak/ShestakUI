@@ -1547,6 +1547,7 @@ if experience.enabled then
 	local repname, repcolor, standingname, currep, minrep, maxrep, reppercent
 	local mobxp = gsub(COMBATLOG_XPGAIN_FIRSTPERSON, "%%[sd]", "(.*)")
 	local questxp = gsub(COMBATLOG_XPGAIN_FIRSTPERSON_UNNAMED, "%%[sd]", "(.*)")
+	local artifactXP, xpForNextPoint, numPointsAvailableToSpend, artifactTotalXP, artifactName, artifactPointsSpent = 0, 0, 0, 0
 	local function short(num, tt)
 		if short or tt then
 			num = tonumber(num)
@@ -1590,6 +1591,12 @@ if experience.enabled then
 			or sub == "repleft" and abs(maxrep - currep)
 			or sub == "maxrep" and abs(maxrep - minrep)
 			or sub == "rep%" and (currep ~= 0 and floor(abs(currep - minrep) / abs(maxrep - minrep) * 100) or 0)
+			-- artifact tags
+			or sub == "curart" and short(artifactXP, tt)
+			or sub == "curart%" and floor(artifactXP / xpForNextPoint * 100)
+			or sub == "totalart" and short(xpForNextPoint, tt)
+			or sub == "remainingart" and short(xpForNextPoint - artifactXP, tt)
+			or sub == "remainingart%" and 100 - floor(artifactXP / xpForNextPoint * 100)
 			or format("[%s]", sub)
 	end
 	Inject("Experience", {
@@ -1601,17 +1608,21 @@ if experience.enabled then
 					return gsub(experience.played_fmt, "%[([%w%%]-)%]", tags)
 				elseif conf.ExpMode == "xp" then
 					return gsub(experience[format("xp_%s_fmt", (GetXPExhaustion() or 0) > 0 and "rested" or "normal")], "%[([%w%%]-)%]", tags) or " "
+				elseif conf.ExpMode == "art" then
+					return self:GetText()
 				end
 			end
 		},
 		OnLoad = function(self)
-			RegEvents(self, "TIME_PLAYED_MSG PLAYER_LOGOUT PLAYER_LOGIN UPDATE_FACTION CHAT_MSG_COMBAT_XP_GAIN PLAYER_LEVEL_UP")
+			RegEvents(self, "TIME_PLAYED_MSG PLAYER_LOGOUT PLAYER_LOGIN UPDATE_FACTION CHAT_MSG_COMBAT_XP_GAIN PLAYER_LEVEL_UP ARTIFACT_XP_UPDATE UNIT_INVENTORY_CHANGED")
 			-- Filter first time played message
 			local ofunc = ChatFrame_DisplayTimePlayed
 			function ChatFrame_DisplayTimePlayed() ChatFrame_DisplayTimePlayed = ofunc end
 			RequestTimePlayed()
 			if not conf.ExpMode or conf.ExpMode == "xp" then
 				conf.ExpMode = UnitLevel(P) ~= MAX_PLAYER_LEVEL and "xp" or "played"
+			elseif conf.ExpMode == "art" then
+				conf.ExpMode = HasArtifactEquipped() and "art" or "played"
 			end
 		end,
 		OnEvent = function(self, event, ...)
@@ -1649,6 +1660,18 @@ if experience.enabled then
 				if not standingname then standingname = UNKNOWN end
 				repcolor = format("%02x%02x%02x", min(color.r * 255 + 40, 255), min(color.g * 255 + 40, 255), min(color.b * 255 + 40, 255))
 				self.text:SetText(gsub(experience.faction_fmt, "%[([%w%%]-)%]", tags))
+			elseif event == "ARTIFACT_XP_UPDATE" or event == "UNIT_INVENTORY_CHANGED" or event == "PLAYER_LOGIN" then
+				if HasArtifactEquipped() then
+					_, _, artifactName, _, artifactTotalXP, artifactPointsSpent = C_ArtifactUI.GetEquippedArtifactInfo()
+					numPointsAvailableToSpend, artifactXP, xpForNextPoint = MainMenuBar_GetNumArtifactTraitsPurchasableFromXP(artifactPointsSpent, artifactTotalXP)
+					if conf.ExpMode == "art" then
+						self.text:SetText(gsub(experience.artifact_fmt, "%[([%w%%]-)%]", tags))
+					end
+				else
+					if conf.ExpMode == "art" then
+						conf.ExpMode = "played"
+					end
+				end
 			end
 			if event == "PLAYER_LOGOUT" or event == "TIME_PLAYED_MSG" then
 				conf.Played = floor(playedtotal + GetTime() - playedmsg)
@@ -1711,13 +1734,25 @@ if experience.enabled then
 				GameTooltip:AddLine(" ")
 				GameTooltip:AddDoubleLine(format("%s%s", tags"repcolor", tags"standing"), war and format("|cffff5555%s", AT_WAR))
 				GameTooltip:AddDoubleLine(format("%s%% | %s/%s", tags"rep%", tags"currep", tags"maxrep"), -tags"repleft", ttsubh.r, ttsubh.g, ttsubh.b, 1, 0.33, 0.33)
+			elseif conf.ExpMode == "art" then
+				_, _, artifactName, _, artifactTotalXP, artifactPointsSpent = C_ArtifactUI.GetEquippedArtifactInfo()
+				numPointsAvailableToSpend, artifactXP, xpForNextPoint = MainMenuBar_GetNumArtifactTraitsPurchasableFromXP(artifactPointsSpent, artifactTotalXP)
+				GameTooltip:AddLine(ARTIFACT_POWER..": "..artifactName, tthead.r, tthead.g, tthead.b)
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddDoubleLine(L_STATS_CURRENT_XP, format("%s/%s (%s%%)", tags"curart", tags"totalart", tags"curart%"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_REMAINING_XP, format("%s (%s%%)", tags"remainingart", tags"remainingart%"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				if numPointsAvailableToSpend and numPointsAvailableToSpend > 0 then
+					GameTooltip:AddLine(ARTIFACT_POWER_TOOLTIP_BODY:format(numPointsAvailableToSpend), ttsubh.r, ttsubh.g, ttsubh.b, 1)
+				end
 			end
 			GameTooltip:Show()
 		end,
 		OnClick = function(self, button)
 			if button == "RightButton" then
 				conf.ExpMode = conf.ExpMode == "xp" and "played"
+					or (conf.ExpMode == "played" and HasArtifactEquipped()) and "art"
 					or conf.ExpMode == "played" and "rep"
+					or conf.ExpMode == "art" and "rep"
 					or (conf.ExpMode == "rep" and UnitLevel(P) ~= MAX_PLAYER_LEVEL) and "xp"
 					or conf.ExpMode == "rep" and "played"
 				if conf.ExpMode == "rep" then
@@ -1725,9 +1760,18 @@ if experience.enabled then
 				else
 					self:GetScript("OnUpdate")(self, 5)
 				end
+				if conf.ExpMode == "art" then
+					self:GetScript("OnEvent")(self,"UNIT_INVENTORY_CHANGED")
+				end
 				self:GetScript("OnEnter")(self)
 			elseif button == "LeftButton" and conf.ExpMode == "rep" then
 				ToggleCharacter("ReputationFrame")
+			elseif button == "LeftButton" and conf.ExpMode == "art" then
+				if not ArtifactFrame or not ArtifactFrame:IsShown() then
+					ShowUIPanel(SocketInventoryItem(16))
+				elseif ArtifactFrame and ArtifactFrame:IsShown() then
+					HideUIPanel(ArtifactFrame)
+				end
 			end
 		end
 	})
