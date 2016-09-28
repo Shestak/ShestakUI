@@ -900,16 +900,26 @@ C["filger_spells"] = {
 			{spellID = 19574, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Beast Cleave
 			{spellID = 118455, unitID = "pet", caster = "player", filter = "BUFF"},
+			-- Trueshot
+			{spellID = 193526, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Aspect of the Turtle
+			{spellID = 186265, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Aspect of the Cheetah
+			{spellID = 186257, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dire Beast
+			{spellID = 120694, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Focus Fire
 			--BETA {spellID = 82692, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sniper Training
-			--BETA {spellID = 168811, unitID = "player", caster = "player", filter = "BUFF"},
+			--{spellID = 199803, unitID = "player", caster = "player", filter = "DEBUFF"},
 			-- Camouflage
-			--BETA {spellID = 51755, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			{spellID = 199483, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Spirit Mend
 			{spellID = 90361, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Posthaste
 			{spellID = 118922, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Volley
+			{spellID = 194386, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -992,9 +1002,9 @@ C["filger_spells"] = {
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Black Arrow
-			--BETA {spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Explosive Shot
-			--BETA {spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 194599, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Vulnerable
+			{spellID = 187131, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Serpent Sting
 			{spellID = 87935, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Narrow Escape
@@ -1011,6 +1021,8 @@ C["filger_spells"] = {
 			{spellID = 54644, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Concussive Shot
 			{spellID = 5116, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- A Murder of Crows
+			{spellID = 131894, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Ice Trap
 			{spellID = 135299, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Poisoned Ammo
@@ -1042,6 +1054,16 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
+			-- Flare
+			{spellID = 1543, filter = "CD"},
+			-- Stampede
+			{spellID = 201430, filter = "CD"},
+			-- Aspect of the Cheetah
+			{spellID = 186257, filter = "CD"},
+			-- Aspect of the Turtle
+			{spellID = 186265, filter = "CD"},
+			-- Windburst
+			{spellID = 204147, filter = "CD"},
 			-- Concussive Shot
 			{spellID = 5116, filter = "CD"},
 			-- Counter Shot
@@ -1049,9 +1071,17 @@ C["filger_spells"] = {
 			-- Kill Command
 			{spellID = 34026, filter = "CD"},
 			-- Explosive Shot
-			--BETA {spellID = 53301, filter = "CD"},
+			{spellID = 212431, filter = "CD"},
 			-- Chimera Shot
 			{spellID = 53209, filter = "CD"},
+			-- Black Arrow
+			{spellID = 194599, filter = "CD"},
+			-- Sentinel
+			{spellID = 206817, filter = "CD"},
+			-- Camouflage
+			{spellID = 199483, filter = "CD"},
+			-- Bursting Shot
+			{spellID = 186387, filter = "CD"},
 			-- Kill Shot
 			--BETA {spellID = 53351, filter = "CD"},
 			-- Glaive Toss
@@ -1086,6 +1116,10 @@ C["filger_spells"] = {
 			{spellID = 19574, filter = "CD"},
 			-- A Murder of Crows
 			{spellID = 131894, filter = "CD"},
+			-- Sidewinders
+			{spellID = 214579, filter = "CD"},
+			-- Piercing Shot
+			{spellID = 198670, filter = "CD"},
 			-- Lynx Rush
 			--BETA {spellID = 120697, filter = "CD"},
 			-- Exhilaration
@@ -1098,6 +1132,8 @@ C["filger_spells"] = {
 			{spellID = 90361, filter = "CD"},
 			-- Honorable Medallion
 			{spellID = 195710, filter = "CD"},
+			-- Trueshot
+			{spellID = 193526, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
