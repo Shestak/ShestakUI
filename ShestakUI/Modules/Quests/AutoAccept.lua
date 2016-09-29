@@ -187,6 +187,12 @@ local ignoreGossipNPC = {
 	[84684] = true, -- Lieutenant Thorn (Alliance)
 }
 
+local rogueClassHallInsignia = {
+	[97004] = true, -- "Red" Jack Findle
+	[96782] = true, -- Lucian Trias
+	[93188] = true, -- Mongar
+}
+
 QuickQuest:Register("GOSSIP_SHOW", function()
 	local npcID = GetNPCID()
 	if ignoreQuestNPC[npcID] then return end
@@ -207,6 +213,10 @@ QuickQuest:Register("GOSSIP_SHOW", function()
 				SelectGossipAvailableQuest(index)
 			end
 		end
+	end
+
+	if(rogueClassHallInsignia[npcID]) then
+		return SelectGossipOption(1)
 	end
 
 	if available == 0 and active == 0 and GetNumGossipOptions() == 1 then
