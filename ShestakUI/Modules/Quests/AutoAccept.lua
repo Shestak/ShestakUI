@@ -120,6 +120,7 @@ local ignoreQuestNPC = {
 	[87391] = true,	-- Fate-Twister Seress
 	[111243] = true, -- Archmage Lan'dalock
 	[108868] = true, -- Hunter's order hall
+	[101462] = true, -- Engineering
 }
 
 QuickQuest:Register("QUEST_GREETING", function()
