@@ -199,7 +199,7 @@ local function LoadSkin()
 	LFGListApplicationDialog:SetTemplate("Transparent")
 	PVEFrame:CreateBackdrop("Transparent")
 	PVEFrame.backdrop:SetAllPoints()
-	PVEFrame.shadows:Hide()
+	PVEFrame.shadows:Kill()
 	ScenarioQueueFrame.Bg:Hide()
 
 	LFDQueueFrameNoLFDWhileLFR:CreateBackdrop("Overlay")
