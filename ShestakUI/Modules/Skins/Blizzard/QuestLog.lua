@@ -75,7 +75,7 @@ local function LoadSkin()
 
 	SkinRewardSpell(QuestInfoSpellObjectiveFrame)
 
-	for _, name in next, {"HonorFrame", "MoneyFrame", "SkillPointFrame", "XPFrame", "ArtifactXPFrame"} do
+	for _, name in next, {"HonorFrame", "MoneyFrame", "SkillPointFrame", "XPFrame", "ArtifactXPFrame", "TitleFrame"} do
 		SkinReward(MapQuestInfoRewardsFrame[name])
 	end
 
@@ -94,10 +94,7 @@ local function LoadSkin()
 
 		local mapReward = MapQuestInfoRewardsFrame.RewardButtons[index]
 		if mapReward then
-			mapReward.Icon:SetSize(30, 30)
-			if GetNumQuestLogChoices() > 2 then
-				mapReward.Icon:SetSize(26, 26)
-			end
+			mapReward.Icon:SetSize(26, 26)
 		end
 	end)
 
