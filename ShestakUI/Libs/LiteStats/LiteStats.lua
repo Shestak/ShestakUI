@@ -724,59 +724,28 @@ if clock.enabled then
 			GameTooltip:AddLine(" ")
 			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_LOCALTIME, ":", ""), zsub(GameTime_GetLocalTime(true), "%s*AM", "am", "%s*PM", "pm"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_REALMTIME, ":", ""), zsub(GameTime_GetGameTime(true), "%s*AM", "am", "%s*PM", "pm"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-			GameTooltip:AddLine(" ")
-			for i = 1, 2 do
-				local _, localizedName, isActive, _, startTime = GetWorldPVPAreaInfo(i)
-				local r, g, b = 1, 1, 1
-				if i == 1 then
-					SetMapByID(485)
-					for i = 1, GetNumMapLandmarks() do
-						local index = select(3, GetMapLandmarkInfo(i))
-						if index == 46 then
-							r, g, b = 0.4, 0.8, 0.94
-						elseif index == 48 then
-							r, g, b = 1, 0.2, 0.2
-						end
-					end
-					GameTooltip:AddDoubleLine(localizedName, isActive and WINTERGRASP_IN_PROGRESS or fmttime(startTime), ttsubh.r, ttsubh.g, ttsubh.b, r, g, b)
-				elseif i == 2 then
-					SetMapByID(708)
-					for i = 1, GetNumMapLandmarks() do
-						local index = select(3, GetMapLandmarkInfo(i))
-						if index == 46 then
-							r, g, b = 0.4, 0.8, 0.94
-						elseif index == 48 then
-							r, g, b = 1, 0.2, 0.2
-						end
-					end
-					GameTooltip:AddDoubleLine(localizedName, isActive and WINTERGRASP_IN_PROGRESS or fmttime(startTime), ttsubh.r, ttsubh.g, ttsubh.b, r, g, b)
-				end
-			end
 
-			local oneraid
-			local heroicDifficulty = {DUNGEON_DIFFICULTY2, DUNGEON_DIFFICULTY_5PLAYER_HEROIC, RAID_DIFFICULTY3, RAID_DIFFICULTY4, RAID_DIFFICULTY_10PLAYER_HEROIC, RAID_DIFFICULTY_25PLAYER_HEROIC}
+			local titleName
 			for i = 1, GetNumSavedInstances() do
 				local name, _, reset, difficulty, locked, extended, _, isRaid, maxPlayers, _, numEncounters, encounterProgress = GetSavedInstanceInfo(i)
 				if isRaid and (locked or extended) or maxPlayers == 5 and difficulty == 23 and (locked or extended) then
 					local tr, tg, tb, diff
-					if not oneraid then
+					if not titleName then
 						GameTooltip:AddLine(" ")
 						GameTooltip:AddLine(CALENDAR_FILTER_RAID_LOCKOUTS.." / "..DUNGEONS, ttsubh.r, ttsubh.g, ttsubh.b)
-						oneraid = true
+						titleName = true
 					end
 					if extended then tr, tg, tb = 0.3, 1, 0.3 else tr, tg, tb = 1, 1, 1 end
-					for _, value in pairs(heroicDifficulty) do
-						if value == difficulty then
-							diff = "H"
-							break
-						end
+
+					local _, _, isHeroic, _, displayHeroic, displayMythic = GetDifficultyInfo(difficulty)
+					if displayMythic then
+						diff = "M"
+					elseif isHeroic or displayHeroic then
+						diff = "H"
 					end
+
 					if (numEncounters and numEncounters > 0) and (encounterProgress and encounterProgress > 0) then
-						if maxPlayers == 5 and difficulty == 23 then
-							GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s] (%s/%s)", "M: "..name, maxPlayers, diff or "", encounterProgress, numEncounters), fmttime(reset), 1, 1, 1, tr, tg, tb)
-						else
-							GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s] (%s/%s)", name, maxPlayers, diff or "", encounterProgress, numEncounters), fmttime(reset), 1, 1, 1, tr, tg, tb)
-						end
+						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s] (%s/%s)", name, maxPlayers, diff or "", encounterProgress, numEncounters), fmttime(reset), 1, 1, 1, tr, tg, tb)
 					else
 						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s]", name, maxPlayers, diff or ""), fmttime(reset), 1, 1, 1, tr, tg, tb)
 					end
