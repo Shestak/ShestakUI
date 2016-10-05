@@ -1590,8 +1590,6 @@ if experience.enabled then
 			RequestTimePlayed()
 			if not conf.ExpMode or conf.ExpMode == "xp" then
 				conf.ExpMode = UnitLevel(P) ~= MAX_PLAYER_LEVEL and "xp" or "played"
-			elseif conf.ExpMode == "art" then
-				conf.ExpMode = HasArtifactEquipped() and "art" or "played"
 			end
 		end,
 		OnEvent = function(self, event, ...)
@@ -1629,21 +1627,26 @@ if experience.enabled then
 				if not standingname then standingname = UNKNOWN end
 				repcolor = format("%02x%02x%02x", min(color.r * 255 + 40, 255), min(color.g * 255 + 40, 255), min(color.b * 255 + 40, 255))
 				self.text:SetText(gsub(experience.faction_fmt, "%[([%w%%]-)%]", tags))
-			elseif event == "ARTIFACT_XP_UPDATE" or event == "UNIT_INVENTORY_CHANGED" or event == "PLAYER_LOGIN" then
-				if HasArtifactEquipped() then
-					_, _, artifactName, _, artifactTotalXP, artifactPointsSpent = C_ArtifactUI.GetEquippedArtifactInfo()
-					numPointsAvailableToSpend, artifactXP, xpForNextPoint = MainMenuBar_GetNumArtifactTraitsPurchasableFromXP(artifactPointsSpent, artifactTotalXP)
-					if conf.ExpMode == "art" then
-						self.text:SetText(gsub(experience.artifact_fmt, "%[([%w%%]-)%]", tags))
-					end
-				else
-					if conf.ExpMode == "art" then
-						conf.ExpMode = "played"
-					end
-				end
 			end
 			if event == "PLAYER_LOGOUT" or event == "TIME_PLAYED_MSG" then
 				conf.Played = floor(playedtotal + GetTime() - playedmsg)
+			end
+			if (event == "ARTIFACT_XP_UPDATE" or event == "UNIT_INVENTORY_CHANGED" or event == "PLAYER_LOGIN") and conf.ExpMode == "art" then
+				if event == "UNIT_INVENTORY_CHANGED" then
+					local unit = ...
+					if unit ~= "player" then
+						return
+					end
+				end
+				if HasArtifactEquipped() then
+					_, _, artifactName, _, artifactTotalXP, artifactPointsSpent = C_ArtifactUI.GetEquippedArtifactInfo()
+					numPointsAvailableToSpend, artifactXP, xpForNextPoint = MainMenuBar_GetNumArtifactTraitsPurchasableFromXP(artifactPointsSpent, artifactTotalXP)
+					self.text:SetText(gsub(experience.artifact_fmt, "%[([%w%%]-)%]", tags))
+				else
+					if event == "ARTIFACT_XP_UPDATE" or event == "UNIT_INVENTORY_CHANGED" then
+						conf.ExpMode = "played"
+					end
+				end
 			end
 		end,
 		OnEnter = function(self)
@@ -1726,11 +1729,10 @@ if experience.enabled then
 					or conf.ExpMode == "rep" and "played"
 				if conf.ExpMode == "rep" then
 					self:GetScript("OnEvent")(self,"UPDATE_FACTION")
+				elseif conf.ExpMode == "art" then
+					self:GetScript("OnEvent")(self,"ARTIFACT_XP_UPDATE")
 				else
 					self:GetScript("OnUpdate")(self, 5)
-				end
-				if conf.ExpMode == "art" then
-					self:GetScript("OnEvent")(self,"UNIT_INVENTORY_CHANGED")
 				end
 				self:GetScript("OnEnter")(self)
 			elseif button == "LeftButton" and conf.ExpMode == "rep" then
