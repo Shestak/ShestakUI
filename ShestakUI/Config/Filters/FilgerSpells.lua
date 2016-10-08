@@ -1273,6 +1273,8 @@ C["filger_spells"] = {
 			{spellID = 33395, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Water Jet (Pet)
 			{spellID = 135029, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Frostbite
+			{spellID = 198121, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Frost Nova
 			{spellID = 122, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Ice Ward
@@ -3660,6 +3662,8 @@ C["filger_spells"] = {
 			{spellID = 135373, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Narrow Escape
 			{spellID = 136634, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Frostbite
+			{spellID = 198121, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Nova
 			{spellID = 122, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ice Ward
@@ -3947,6 +3951,8 @@ C["filger_spells"] = {
 			{spellID = 339, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Hunter
+			-- Aspect of the Turtle
+			{spellID = 186265, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Deterrence
 			{spellID = 19263, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Feign Death
