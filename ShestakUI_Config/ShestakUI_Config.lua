@@ -143,6 +143,7 @@ local function Local(o)
 	if o == "UIConfigskinspostal" then o = L_GUI_SKINS_POSTAL end
 	if o == "UIConfigskinsopie" then o = L_GUI_SKINS_OPIE end
 	if o == "UIConfigskinsrematch" then o = L_GUI_SKINS_REMATCH end
+	if o == "UIConfigskinsls_toasts" then o = L_GUI_SKINS_LS_TOASTS end
 
 	-- Combat text options
 	if o == "UIConfigcombattext" then o = L_GUI_COMBATTEXT end

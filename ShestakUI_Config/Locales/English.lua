@@ -113,6 +113,7 @@ L_GUI_SKINS_ARH = "Enable styling Archaeology Helper"
 L_GUI_SKINS_POSTAL = "Enable styling Postal" -- Need review
 L_GUI_SKINS_OPIE = "Enable styling OPie" -- Need review
 L_GUI_SKINS_REMATCH = "Enable styling Rematch" -- Need review
+L_GUI_SKINS_LS_TOASTS = "Enable styling ls: Toasts" -- Need review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Combat Text"
