@@ -146,6 +146,7 @@ C["skins"] = {
 	["postal"] = false,							-- Postal skin
 	["opie"] = false,							-- OPie skin
 	["rematch"] = false,						-- Rematch skin
+	["ls_toasts"] = false,						-- Is: Toasts skin
 }
 
 ----------------------------------------------------------------------------------------
