@@ -116,6 +116,7 @@ L_GUI_SKINS_ARH = "Стилизация Archaeology Helper"
 L_GUI_SKINS_POSTAL = "Стилизация Postal"
 L_GUI_SKINS_OPIE = "Стилизация OPie"
 L_GUI_SKINS_REMATCH = "Стилизация Rematch"
+L_GUI_SKINS_LS_TOASTS = "Стилизация ls: Toasts"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Текст боя"
