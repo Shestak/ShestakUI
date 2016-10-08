@@ -116,7 +116,7 @@ L_GUI_SKINS_ARH = "Archaeology Helper"
 L_GUI_SKINS_POSTAL = "Postal"
 L_GUI_SKINS_OPIE = "OPie"
 L_GUI_SKINS_REMATCH = "Rematch"
-L_GUI_SKINS_IS_TOASTS = "Is: Toasts"
+L_GUI_SKINS_LS_TOASTS = "ls: Toasts"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "戰鬥文字"
