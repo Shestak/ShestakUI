@@ -232,7 +232,7 @@
 	<Script file="Modules\Skins\Arh.lua"/>
 	<Script file="Modules\Skins\Rematch.lua"/>
 	<Script file="Modules\Skins\Postal.lua"/>
-	<Script file="Modules\Skins\ls_Toasts.lua"/>
+	<Script file="Modules\Skins\lsToasts.lua"/>
 
 	<Script file="Modules\Tooltip\Tooltip.lua"/>
 	<Script file="Modules\Tooltip\HyperLink.lua"/>
