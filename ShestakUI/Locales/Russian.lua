@@ -173,12 +173,6 @@ L_BIND_BINDING = "Назначение"
 L_BIND_KEY = "Клавиша"
 L_BIND_NO_SET = "Не назначено"
 
--- Talent spec
-L_PLANNER_DRUID_4 = "Исцеление"
-L_PLANNER_MONK_2 = "Ткач туманов"
-L_PLANNER_PALADIN_1 = "Свет"
-L_PLANNER_PRIEST_1 = "Послушание"
-
 -- BG stats
 L_DATATEXT_BASESASSAULTED = "Штурмы баз:"
 L_DATATEXT_BASESDEFENDED = "Оборона баз:"

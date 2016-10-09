@@ -173,12 +173,6 @@ L_BIND_BINDING = "綁定"
 L_BIND_KEY = "按鍵"
 L_BIND_NO_SET = "沒有綁定快捷鍵"
 
--- Talent spec
-L_PLANNER_DRUID_4 = "恢復"
-L_PLANNER_MONK_2 = "織霧"
-L_PLANNER_PALADIN_1 = "神聖"
-L_PLANNER_PRIEST_1 = "戒律"
-
 -- BG stats
 L_DATATEXT_BASESASSAULTED = "基地突襲:"
 L_DATATEXT_BASESDEFENDED = "基地防禦:"

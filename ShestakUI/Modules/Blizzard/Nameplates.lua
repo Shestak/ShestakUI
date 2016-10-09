@@ -15,7 +15,7 @@ if C.nameplate.track_auras == true then
 	NamePlates:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 end
 
-local healList, exClass = {}, {}
+local healList, exClass, healerSpecs = {}, {}, {}
 local testing = false
 
 exClass.DEATHKNIGHT = true
@@ -29,12 +29,20 @@ if C.nameplate.healer_icon == true then
 		["Horde"] = 1,
 		["Alliance"] = 0,
 	}
-	t.healers = {
-		[L_PLANNER_DRUID_4] = true,
-		[L_PLANNER_MONK_2] = true,
-		[L_PLANNER_PALADIN_1] = true,
-		[L_PLANNER_PRIEST_1] = true,
+	local healerSpecIDs = {
+		105,	-- Druid Restoration
+		270,	-- Monk Mistweaver
+		65,		-- Paladin Holy
+		256,	-- Priest Discipline
+		257,	-- Priest Holy
+		264,	-- Shaman Restoration
 	}
+	for _, specID in pairs(healerSpecIDs) do
+		local _, name = GetSpecializationInfoByID(specID)
+		if name and not healerSpecs[name] then
+			healerSpecs[name] = true
+		end
+	end
 
 	local lastCheck = 20
 	local function CheckHealers(self, elapsed)
@@ -44,8 +52,8 @@ if C.nameplate.healer_icon == true then
 			healList = {}
 			for i = 1, GetNumBattlefieldScores() do
 				local name, _, _, _, _, faction, _, _, _, _, _, _, _, _, _, talentSpec = GetBattlefieldScore(i)
-				name = name:match("(.+)%-.+") or name
-				if name and t.healers[talentSpec] and t.factions[UnitFactionGroup("player")] == faction then
+				if name and healerSpecs[talentSpec] and t.factions[UnitFactionGroup("player")] == faction then
+					name = name:match("(.+)%-.+") or name
 					healList[name] = talentSpec
 				end
 			end
@@ -62,7 +70,7 @@ if C.nameplate.healer_icon == true then
 				if specID and specID > 0 then
 					local name = UnitName(format('arena%d', i))
 					local _, talentSpec = GetSpecializationInfoByID(specID)
-					if name and t.healers[talentSpec] then
+					if name and healerSpecs[talentSpec] then
 						healList[name] = talentSpec
 					end
 				end
