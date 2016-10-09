@@ -45,5 +45,9 @@ frame:SetScript("OnEvent", function(self, event, addon)
 				button:Hide()
 			end
 		end)
+
+		hooksecurefunc(TradeSkillFrame, "RefreshTitle", function()
+			button:Hide()
+		end)
 	end
 end)
