@@ -44,8 +44,8 @@ local function LoadSkin()
 
 	QuestScrollFrame:CreateBackdrop("Overlay")
 	QuestScrollFrame.backdrop:ClearAllPoints()
-	QuestScrollFrame.backdrop:SetSize(284, 468)
-	QuestScrollFrame.backdrop:SetPoint("LEFT", WorldMapFrame.backdrop, "RIGHT", 2, 0)
+	QuestScrollFrame.backdrop:SetSize(286, 468)
+	QuestScrollFrame.backdrop:SetPoint("LEFT", WorldMapFrame.backdrop, "RIGHT", 0, 0)
 	T.SkinScrollBar(QuestScrollFrameScrollBar)
 
 	QuestMapDetailsScrollFrame:CreateBackdrop("Overlay")
