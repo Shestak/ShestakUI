@@ -416,7 +416,7 @@ hooksecurefunc("GameTooltip_ShowCompareItem", function(self, shift)
 		shoppingTooltip2:SetOwner(self, "ANCHOR_NONE")
 		shoppingTooltip2:ClearAllPoints()
 		if side and side == "left" then
-			shoppingTooltip2:SetPoint("TOPRIGHT", WorldMapTooltip, "TOPLEFT", -3, -10)
+			shoppingTooltip2:SetPoint("TOPRIGHT", shift, "TOPLEFT", -3, -10)
 		else
 			shoppingTooltip2:SetPoint("TOPLEFT", self, "TOPRIGHT", 3, -10)
 		end
@@ -434,7 +434,7 @@ hooksecurefunc("GameTooltip_ShowCompareItem", function(self, shift)
 		shoppingTooltip1:ClearAllPoints()
 
 		if side and side == "left" then
-			shoppingTooltip1:SetPoint("TOPRIGHT", WorldMapTooltip, "TOPLEFT", -3, -10)
+			shoppingTooltip1:SetPoint("TOPRIGHT", shift, "TOPLEFT", -3, -10)
 		else
 			shoppingTooltip1:SetPoint("TOPLEFT", self, "TOPRIGHT", 3, -10)
 		end
