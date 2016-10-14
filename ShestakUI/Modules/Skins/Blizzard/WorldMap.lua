@@ -42,10 +42,13 @@ local function LoadSkin()
 	TrackingOptions.Background:SetAlpha(0)
 	TrackingOptions.IconOverlay:SetTexture("")
 
+	QuestScrollFrame:ClearAllPoints()
+	QuestScrollFrame:SetPoint("LEFT", WorldMapFrame.backdrop, "RIGHT", 4, 0)
 	QuestScrollFrame:CreateBackdrop("Overlay")
 	QuestScrollFrame.backdrop:ClearAllPoints()
 	QuestScrollFrame.backdrop:SetSize(284, 468)
 	QuestScrollFrame.backdrop:SetPoint("LEFT", WorldMapFrame.backdrop, "RIGHT", 2, 0)
+	QuestScrollFrameScrollBar:SetPoint("TOPLEFT", QuestScrollFrame, "TOPRIGHT", 4, -16)
 	T.SkinScrollBar(QuestScrollFrameScrollBar)
 
 	QuestMapDetailsScrollFrame:CreateBackdrop("Overlay")
