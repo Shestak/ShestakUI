@@ -366,66 +366,83 @@ end
 ----------------------------------------------------------------------------------------
 --	Fix compare tooltips(by Blizzard)(../FrameXML/GameTooltip.lua)
 ----------------------------------------------------------------------------------------
-hooksecurefunc("GameTooltip_ShowCompareItem", function(self, shift)
+hooksecurefunc("GameTooltip_ShowCompareItem", function(self, anchorFrame)
 	if not self then
 		self = GameTooltip
 	end
 
-	-- Find correct side
+	if not anchorFrame then
+		anchorFrame = self.overrideComparisonAnchorFrame or self
+	end
+
+	if self.needsReset then
+		self:ResetSecondaryCompareItem()
+		GameTooltip_AdvanceSecondaryCompareItem(self)
+		self.needsReset = false
+	end
+
 	local shoppingTooltip1, shoppingTooltip2 = unpack(self.shoppingTooltips)
 	local primaryItemShown, secondaryItemShown = shoppingTooltip1:SetCompareItem(shoppingTooltip2, self)
-	local side = "left"
-	local rightDist = 0
-	local leftPos = self:GetLeft()
-	local rightPos = self:GetRight()
+	local leftPos = anchorFrame:GetLeft()
+	local rightPos = anchorFrame:GetRight()
 
-	if not rightPos then
-		rightPos = 0
+	local side
+	local anchorType = self:GetAnchorType()
+	local totalWidth = 0
+	if primaryItemShown then
+		totalWidth = totalWidth + shoppingTooltip1:GetWidth()
 	end
-	if not leftPos then
-		leftPos = 0
+	if secondaryItemShown then
+		totalWidth = totalWidth + shoppingTooltip2:GetWidth()
 	end
-
-	rightDist = GetScreenWidth() - rightPos
-
-	if leftPos and (rightDist < leftPos) then
-		side = "left"
+	if self.overrideComparisonAnchorSide then
+		side = self.overrideComparisonAnchorSide
 	else
-		side = "right"
+		-- Find correct side
+		local rightDist = 0
+		if not rightPos then
+			rightPos = 0
+		end
+		if not leftPos then
+			leftPos = 0
+		end
+
+		rightDist = GetScreenWidth() - rightPos
+
+		if anchorType and totalWidth < leftPos and (anchorType == "ANCHOR_LEFT" or anchorType == "ANCHOR_TOPLEFT" or anchorType == "ANCHOR_BOTTOMLEFT") then
+			side = "left"
+		elseif anchorType and totalWidth < rightDist and (anchorType == "ANCHOR_RIGHT" or anchorType == "ANCHOR_TOPRIGHT" or anchorType == "ANCHOR_BOTTOMRIGHT") then
+			side = "right"
+		elseif rightDist < leftPos then
+			side = "left"
+		else
+			side = "right"
+		end
 	end
 
 	-- See if we should slide the tooltip
-	if self:GetAnchorType() and self:GetAnchorType() ~= "ANCHOR_PRESERVE" then
-		local totalWidth = 0
-		if primaryItemShown then
-			totalWidth = totalWidth + shoppingTooltip1:GetWidth()
-		end
-		if secondaryItemShown then
-			totalWidth = totalWidth + shoppingTooltip2:GetWidth()
-		end
-
-		if side == "left" and totalWidth > leftPos then
-			self:SetAnchorType(self:GetAnchorType(), totalWidth - leftPos, 0)
-		elseif side == "right" and (rightPos + totalWidth) > GetScreenWidth() then
-			self:SetAnchorType(self:GetAnchorType(), -((rightPos + totalWidth) - GetScreenWidth()), 0)
+	if anchorType and anchorType ~= "ANCHOR_PRESERVE" then
+		if (side == "left") and (totalWidth > leftPos) then
+			self:SetAnchorType(anchorType, (totalWidth - leftPos), 0)
+		elseif (side == "right") and (rightPos + totalWidth) >  GetScreenWidth() then
+			self:SetAnchorType(anchorType, -((rightPos + totalWidth) - GetScreenWidth()), 0)
 		end
 	end
 
-	-- Anchor the compare tooltips
 	if secondaryItemShown then
 		shoppingTooltip2:SetOwner(self, "ANCHOR_NONE")
 		shoppingTooltip2:ClearAllPoints()
-		if side and side == "left" then
-			shoppingTooltip2:SetPoint("TOPRIGHT", self, "TOPLEFT", -3, -10)
-		else
-			shoppingTooltip2:SetPoint("TOPLEFT", self, "TOPRIGHT", 3, -10)
-		end
-
 		shoppingTooltip1:SetOwner(self, "ANCHOR_NONE")
 		shoppingTooltip1:ClearAllPoints()
 
 		if side and side == "left" then
-			shoppingTooltip1:SetPoint("TOPRIGHT", shoppingTooltip2, "TOPLEFT", -3, 0)
+			shoppingTooltip1:SetPoint("TOPRIGHT", anchorFrame, "TOPLEFT", -3, -10)
+		else
+			shoppingTooltip2:SetPoint("TOPLEFT", anchorFrame, "TOPRIGHT", 3, -10)
+		end
+
+		if side and side == "left" then
+			shoppingTooltip2:SetPoint("TOPRIGHT", shoppingTooltip1, "TOPLEFT", -3, 0)
 		else
 			shoppingTooltip1:SetPoint("TOPLEFT", shoppingTooltip2, "TOPRIGHT", 3, 0)
 		end
@@ -434,14 +451,15 @@ hooksecurefunc("GameTooltip_ShowCompareItem", function(self, shift)
 		shoppingTooltip1:ClearAllPoints()
 
 		if side and side == "left" then
-			shoppingTooltip1:SetPoint("TOPRIGHT", self, "TOPLEFT", -3, -10)
+			shoppingTooltip1:SetPoint("TOPRIGHT", anchorFrame, "TOPLEFT", -3, -10)
 		else
-			shoppingTooltip1:SetPoint("TOPLEFT", self, "TOPRIGHT", 3, -10)
+			shoppingTooltip1:SetPoint("TOPLEFT", anchorFrame, "TOPRIGHT", 3, -10)
 		end
 
 		shoppingTooltip2:Hide()
 	end
 
+	-- We have to call this again because :SetOwner clears the tooltip.
 	shoppingTooltip1:SetCompareItem(shoppingTooltip2, self)
 	shoppingTooltip1:Show()
 end)
