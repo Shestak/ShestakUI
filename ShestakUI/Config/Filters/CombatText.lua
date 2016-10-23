@@ -31,6 +31,8 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[195222] = 4			-- Stormlash
 	T.aoespam[195256] = 4			-- Stormlash
 	T.aoespam[205729] = 3			-- Greater Blessing of Might
+	T.aoespam[222197] = 0			-- Unstable Horrorslime (Trinket)
+	T.aoespam[214350] = 3			-- Nightmare Essence (Trinket)
 end
 
 -- Class config
