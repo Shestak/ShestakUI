@@ -13,7 +13,7 @@ local function LoadSkin()
 	T.SkinNextPrevButton(ScriptErrorsFrame.next)
 	T.SkinScrollBar(ScriptErrorsFrameScrollFrameScrollBar)
 	T.SkinCloseButton(ScriptErrorsFrameClose)
-	ScriptErrorsFrameScrollFrame:CreateBackdrop("Overlay")
+	--BETA ScriptErrorsFrameScrollFrame:CreateBackdrop("Overlay")
 	ScriptErrorsFrameScrollFrame:SetHeight(ScriptErrorsFrame:GetHeight() - 71)
 
 	local texs = {

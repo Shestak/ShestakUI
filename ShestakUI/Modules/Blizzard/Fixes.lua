@@ -33,8 +33,8 @@ end)
 ----------------------------------------------------------------------------------------
 --	Disable tooltip for player arrow on map
 ----------------------------------------------------------------------------------------
-WorldMapPlayerUpper:EnableMouse(false)
-WorldMapPlayerLower:EnableMouse(false)
+--BETA WorldMapPlayerUpper:EnableMouse(false)
+--BETA WorldMapPlayerLower:EnableMouse(false)
 
 ----------------------------------------------------------------------------------------
 --	Fix World Map taints (by lightspark)

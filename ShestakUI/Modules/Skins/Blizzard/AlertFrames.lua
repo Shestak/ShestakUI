@@ -456,38 +456,38 @@ local function LoadSkin()
 	hooksecurefunc(NewRecipeLearnedAlertSystem, "setUpFunction", SkinNewRecipeLearnedAlert)
 
 	-- Scenario Legion Invasion Alert Frame
-	local frame = ScenarioLegionInvasionAlertFrame
-	frame:SetAlpha(1)
-	hooksecurefunc(frame, "SetAlpha", forceAlpha)
+	-- local frame = ScenarioLegionInvasionAlertFrame
+	--BETA frame:SetAlpha(1)
+	-- hooksecurefunc(frame, "SetAlpha", forceAlpha)
 
-	frame:CreateBackdrop("Transparent")
-	frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 19, -6)
-	frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -22, 6)
+	-- frame:CreateBackdrop("Transparent")
+	-- frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 19, -6)
+	-- frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -22, 6)
 
-	local region, icon = frame:GetRegions()
-	if region and region:GetObjectType() == "Texture"then
-		if region:GetAtlas() == "legioninvasion-Toast-Frame" then
-			region:Kill()
-		end
-	end
+	-- local region, icon = frame:GetRegions()
+	-- if region and region:GetObjectType() == "Texture"then
+		-- if region:GetAtlas() == "legioninvasion-Toast-Frame" then
+			-- region:Kill()
+		-- end
+	-- end
 
-	-- Icon border
-	if icon and icon:GetObjectType() == "Texture"then
-		if icon:GetTexture() == "Interface\\Icons\\Ability_Warlock_DemonicPower" then
-			icon.b = CreateFrame("Frame", nil, frame)
-			icon.b:SetTemplate("Default")
-			icon.b:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
-			icon.b:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
-			icon:SetParent(icon.b)
-			icon:SetDrawLayer("OVERLAY")
-			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			icon:ClearAllPoints()
-			icon:SetPoint("LEFT", frame.backdrop, 9, 0)
-		end
-	end
+	-- -- Icon border
+	-- if icon and icon:GetObjectType() == "Texture"then
+		-- if icon:GetTexture() == "Interface\\Icons\\Ability_Warlock_DemonicPower" then
+			-- icon.b = CreateFrame("Frame", nil, frame)
+			-- icon.b:SetTemplate("Default")
+			-- icon.b:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
+			-- icon.b:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+			-- icon:SetParent(icon.b)
+			-- icon:SetDrawLayer("OVERLAY")
+			-- icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			-- icon:ClearAllPoints()
+			-- icon:SetPoint("LEFT", frame.backdrop, 9, 0)
+		-- end
+	-- end
 
 	-- Bonus Roll Money
-	frame = BonusRollMoneyWonFrame
+	local frame = BonusRollMoneyWonFrame
 	frame:SetAlpha(1)
 	hooksecurefunc(frame, "SetAlpha", forceAlpha)
 	frame.Background:Kill()
@@ -525,174 +525,174 @@ local function LoadSkin()
 	frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 5, -6)
 
 	-- Garrison building alert
-	frame = GarrisonBuildingAlertFrame
-	frame.glow:Kill()
-	frame.shine:Kill()
-	frame:GetRegions():Hide()
-	-- Create Backdrop
-	frame:CreateBackdrop("Transparent")
-	frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, -6)
-	frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 6)
-	-- Icon
-	frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	frame.Icon:SetDrawLayer("ARTWORK")
-	frame.Icon:SetPoint("LEFT", frame.backdrop, 9, 0)
-	frame.Icon.b = CreateFrame("Frame", nil, frame)
-	frame.Icon.b:SetTemplate("Default")
-	frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
-	frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
-	frame.Icon:SetParent(frame.Icon.b)
+	--BETA frame = GarrisonBuildingAlertFrame
+	-- frame.glow:Kill()
+	-- frame.shine:Kill()
+	-- frame:GetRegions():Hide()
+	-- -- Create Backdrop
+	-- frame:CreateBackdrop("Transparent")
+	-- frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, -6)
+	-- frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 6)
+	-- -- Icon
+	-- frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	-- frame.Icon:SetDrawLayer("ARTWORK")
+	-- frame.Icon:SetPoint("LEFT", frame.backdrop, 9, 0)
+	-- frame.Icon.b = CreateFrame("Frame", nil, frame)
+	-- frame.Icon.b:SetTemplate("Default")
+	-- frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
+	-- frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
+	-- frame.Icon:SetParent(frame.Icon.b)
 
 	-- Garrison mission alert
-	frame = GarrisonMissionAlertFrame
-	frame.glow:Kill()
-	frame.shine:Kill()
-	frame.IconBG:Hide()
-	frame.Background:Kill()
-	-- Create Backdrop
-	frame:CreateBackdrop("Transparent")
-	frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, -6)
-	frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 6)
-	-- Icon
-	frame.MissionType:SetSize(50, 50)
-	frame.MissionType:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	frame.MissionType:SetDrawLayer("ARTWORK")
-	frame.MissionType:ClearAllPoints()
-	frame.MissionType:SetPoint("LEFT", frame.backdrop, 9, 0)
-	frame.MissionType.b = CreateFrame("Frame", nil, frame)
-	frame.MissionType.b:SetTemplate("Default")
-	frame.MissionType.b:SetPoint("TOPLEFT", frame.MissionType, "TOPLEFT", -2, 2)
-	frame.MissionType.b:SetPoint("BOTTOMRIGHT", frame.MissionType, "BOTTOMRIGHT", 2, -2)
-	frame.MissionType:SetParent(frame.MissionType.b)
+	--BETA frame = GarrisonMissionAlertFrame
+	-- frame.glow:Kill()
+	-- frame.shine:Kill()
+	-- frame.IconBG:Hide()
+	-- frame.Background:Kill()
+	-- -- Create Backdrop
+	-- frame:CreateBackdrop("Transparent")
+	-- frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, -6)
+	-- frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 6)
+	-- -- Icon
+	-- frame.MissionType:SetSize(50, 50)
+	-- frame.MissionType:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	-- frame.MissionType:SetDrawLayer("ARTWORK")
+	-- frame.MissionType:ClearAllPoints()
+	-- frame.MissionType:SetPoint("LEFT", frame.backdrop, 9, 0)
+	-- frame.MissionType.b = CreateFrame("Frame", nil, frame)
+	-- frame.MissionType.b:SetTemplate("Default")
+	-- frame.MissionType.b:SetPoint("TOPLEFT", frame.MissionType, "TOPLEFT", -2, 2)
+	-- frame.MissionType.b:SetPoint("BOTTOMRIGHT", frame.MissionType, "BOTTOMRIGHT", 2, -2)
+	-- frame.MissionType:SetParent(frame.MissionType.b)
 
 	-- Garrison ship mission alert
-	frame = GarrisonShipMissionAlertFrame
-	frame.Background:Kill()
-	frame.glow:Kill()
-	frame.shine:Kill()
-	-- Create Backdrop
-	frame:CreateBackdrop("Transparent")
-	frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, -6)
-	frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 6)
-	-- Icon
-	frame.MissionType:SetSize(50, 50)
-	frame.MissionType:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	frame.MissionType:SetDrawLayer("ARTWORK")
-	frame.MissionType:ClearAllPoints()
-	frame.MissionType:SetPoint("LEFT", frame.backdrop, 9, 0)
-	frame.MissionType.b = CreateFrame("Frame", nil, frame)
-	frame.MissionType.b:SetTemplate("Default")
-	frame.MissionType.b:SetPoint("TOPLEFT", frame.MissionType, "TOPLEFT", -2, 2)
-	frame.MissionType.b:SetPoint("BOTTOMRIGHT", frame.MissionType, "BOTTOMRIGHT", 2, -2)
-	frame.MissionType:SetParent(frame.MissionType.b)
+	--BETA frame = GarrisonShipMissionAlertFrame
+	-- frame.Background:Kill()
+	-- frame.glow:Kill()
+	-- frame.shine:Kill()
+	-- -- Create Backdrop
+	-- frame:CreateBackdrop("Transparent")
+	-- frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, -6)
+	-- frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 6)
+	-- -- Icon
+	-- frame.MissionType:SetSize(50, 50)
+	-- frame.MissionType:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	-- frame.MissionType:SetDrawLayer("ARTWORK")
+	-- frame.MissionType:ClearAllPoints()
+	-- frame.MissionType:SetPoint("LEFT", frame.backdrop, 9, 0)
+	-- frame.MissionType.b = CreateFrame("Frame", nil, frame)
+	-- frame.MissionType.b:SetTemplate("Default")
+	-- frame.MissionType.b:SetPoint("TOPLEFT", frame.MissionType, "TOPLEFT", -2, 2)
+	-- frame.MissionType.b:SetPoint("BOTTOMRIGHT", frame.MissionType, "BOTTOMRIGHT", 2, -2)
+	-- frame.MissionType:SetParent(frame.MissionType.b)
 
 	-- Garrison random mission alert
-	frame = GarrisonRandomMissionAlertFrame
-	frame.Background:Kill()
-	frame.Blank:Kill()
-	frame.IconBG:Kill()
-	frame.glow:Kill()
-	frame.shine:Kill()
-	-- Create Backdrop
-	frame:CreateBackdrop("Transparent")
-	frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, -6)
-	frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 6)
-	-- Icon
-	frame.MissionType:SetSize(50, 50)
-	frame.MissionType:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	frame.MissionType:SetDrawLayer("ARTWORK")
-	frame.MissionType:ClearAllPoints()
-	frame.MissionType:SetPoint("LEFT", frame.backdrop, 9, 0)
-	frame.MissionType.b = CreateFrame("Frame", nil, frame)
-	frame.MissionType.b:SetTemplate("Default")
-	frame.MissionType.b:SetPoint("TOPLEFT", frame.MissionType, "TOPLEFT", -2, 2)
-	frame.MissionType.b:SetPoint("BOTTOMRIGHT", frame.MissionType, "BOTTOMRIGHT", 2, -2)
-	frame.MissionType:SetParent(frame.MissionType.b)
+	--BETA frame = GarrisonRandomMissionAlertFrame
+	-- frame.Background:Kill()
+	-- frame.Blank:Kill()
+	-- frame.IconBG:Kill()
+	-- frame.glow:Kill()
+	-- frame.shine:Kill()
+	-- -- Create Backdrop
+	-- frame:CreateBackdrop("Transparent")
+	-- frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, -6)
+	-- frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 6)
+	-- -- Icon
+	-- frame.MissionType:SetSize(50, 50)
+	-- frame.MissionType:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	-- frame.MissionType:SetDrawLayer("ARTWORK")
+	-- frame.MissionType:ClearAllPoints()
+	-- frame.MissionType:SetPoint("LEFT", frame.backdrop, 9, 0)
+	-- frame.MissionType.b = CreateFrame("Frame", nil, frame)
+	-- frame.MissionType.b:SetTemplate("Default")
+	-- frame.MissionType.b:SetPoint("TOPLEFT", frame.MissionType, "TOPLEFT", -2, 2)
+	-- frame.MissionType.b:SetPoint("BOTTOMRIGHT", frame.MissionType, "BOTTOMRIGHT", 2, -2)
+	-- frame.MissionType:SetParent(frame.MissionType.b)
 
 	-- Garrison Ship follower alert
-	local frame = GarrisonShipFollowerAlertFrame
-	frame.glow:Kill()
-	frame.shine:Kill()
-	frame.Background:SetAlpha(0)
-	-- Create Backdrop
-	frame:CreateBackdrop("Transparent")
-	frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, -6)
-	frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 6)
+	-- local frame = GarrisonShipFollowerAlertFrame
+	-- frame.glow:Kill()
+	-- frame.shine:Kill()
+	-- frame.Background:SetAlpha(0)
+	-- -- Create Backdrop
+	-- frame:CreateBackdrop("Transparent")
+	-- frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 7, -6)
+	-- frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 6)
 
 	-- Garrison Talent alert
-	local frame = GarrisonTalentAlertFrame
-	frame.glow:Kill()
-	frame.shine:Kill()
-	frame:GetRegions():Hide()
-	-- Create Backdrop
-	frame:CreateBackdrop("Transparent")
-	frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 22, -6)
-	frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -25, 6)
-	-- Icon
-	frame.Icon:SetSize(50, 50)
-	frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	frame.Icon:SetDrawLayer("ARTWORK")
-	frame.Icon:ClearAllPoints()
-	frame.Icon:SetPoint("LEFT", frame.backdrop, 9, 0)
-	frame.Icon.b = CreateFrame("Frame", nil, frame)
-	frame.Icon.b:SetTemplate("Default")
-	frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
-	frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
-	frame.Icon:SetParent(frame.Icon.b)
+	-- local frame = GarrisonTalentAlertFrame
+	-- frame.glow:Kill()
+	-- frame.shine:Kill()
+	-- frame:GetRegions():Hide()
+	-- -- Create Backdrop
+	-- frame:CreateBackdrop("Transparent")
+	-- frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 22, -6)
+	-- frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -25, 6)
+	-- -- Icon
+	-- frame.Icon:SetSize(50, 50)
+	-- frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	-- frame.Icon:SetDrawLayer("ARTWORK")
+	-- frame.Icon:ClearAllPoints()
+	-- frame.Icon:SetPoint("LEFT", frame.backdrop, 9, 0)
+	-- frame.Icon.b = CreateFrame("Frame", nil, frame)
+	-- frame.Icon.b:SetTemplate("Default")
+	-- frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
+	-- frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
+	-- frame.Icon:SetParent(frame.Icon.b)
 
 	-- World Quest Complete Alert
-	frame = WorldQuestCompleteAlertFrame
-	frame:CreateBackdrop("Transparent")
-	frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 19, -6)
-	frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -22, 6)
+	-- frame = WorldQuestCompleteAlertFrame
+	-- frame:CreateBackdrop("Transparent")
+	-- frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 19, -6)
+	-- frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -22, 6)
 
-	frame.shine:Kill()
+	-- frame.shine:Kill()
 
-	-- Background
-	for i = 1, frame:GetNumRegions() do
-		local region = select(i, frame:GetRegions())
-		if region:GetObjectType() == "Texture" then
-			if region:GetTexture() == "Interface\\LFGFrame\\UI-LFG-DUNGEONTOAST" then
-				region:Kill()
-			end
-		end
-	end
-	-- Icon
-	frame.QuestTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	frame.QuestTexture:SetDrawLayer("ARTWORK")
-	frame.QuestTexture:SetPoint("LEFT", frame.backdrop, 9, 0)
-	frame.QuestTexture.b = CreateFrame("Frame", nil, frame)
-	frame.QuestTexture.b:SetTemplate("Default")
-	frame.QuestTexture.b:SetPoint("TOPLEFT", frame.QuestTexture, "TOPLEFT", -2, 2)
-	frame.QuestTexture.b:SetPoint("BOTTOMRIGHT", frame.QuestTexture, "BOTTOMRIGHT", 2, -2)
-	frame.QuestTexture:SetParent(frame.QuestTexture.b)
+	-- -- Background
+	-- for i = 1, frame:GetNumRegions() do
+		-- local region = select(i, frame:GetRegions())
+		-- if region:GetObjectType() == "Texture" then
+			-- if region:GetTexture() == "Interface\\LFGFrame\\UI-LFG-DUNGEONTOAST" then
+				-- region:Kill()
+			-- end
+		-- end
+	-- end
+	-- -- Icon
+	-- frame.QuestTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	-- frame.QuestTexture:SetDrawLayer("ARTWORK")
+	-- frame.QuestTexture:SetPoint("LEFT", frame.backdrop, 9, 0)
+	-- frame.QuestTexture.b = CreateFrame("Frame", nil, frame)
+	-- frame.QuestTexture.b:SetTemplate("Default")
+	-- frame.QuestTexture.b:SetPoint("TOPLEFT", frame.QuestTexture, "TOPLEFT", -2, 2)
+	-- frame.QuestTexture.b:SetPoint("BOTTOMRIGHT", frame.QuestTexture, "BOTTOMRIGHT", 2, -2)
+	-- frame.QuestTexture:SetParent(frame.QuestTexture.b)
 
 	-- Legendary Item Alert
-	frame = LegendaryItemAlertFrame
-	frame.Background:Kill()
-	frame.Background2:Kill()
-	frame.Background3:Kill()
-	frame.Ring1:Kill()
-	frame.Particles3:Kill()
-	frame.Particles2:Kill()
-	frame.Particles1:Kill()
-	frame.Starglow:Kill()
-	frame.glow:Kill()
-	frame.shine:Kill()
-	-- Create Backdrop
-	frame:CreateBackdrop("Transparent")
-	frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 14, -6)
-	frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -18, 6)
-	-- Icon
-	frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	frame.Icon:SetDrawLayer("ARTWORK")
-	frame.Icon:ClearAllPoints()
-	frame.Icon:SetPoint("LEFT", frame.backdrop, 9, 0)
-	frame.Icon.b = CreateFrame("Frame", nil, frame)
-	frame.Icon.b:SetTemplate("Default")
-	frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
-	frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
-	frame.Icon:SetParent(frame.Icon.b)
+	-- frame = LegendaryItemAlertFrame
+	-- frame.Background:Kill()
+	-- frame.Background2:Kill()
+	-- frame.Background3:Kill()
+	-- frame.Ring1:Kill()
+	-- frame.Particles3:Kill()
+	-- frame.Particles2:Kill()
+	-- frame.Particles1:Kill()
+	-- frame.Starglow:Kill()
+	-- frame.glow:Kill()
+	-- frame.shine:Kill()
+	-- -- Create Backdrop
+	-- frame:CreateBackdrop("Transparent")
+	-- frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 14, -6)
+	-- frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -18, 6)
+	-- -- Icon
+	-- frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	-- frame.Icon:SetDrawLayer("ARTWORK")
+	-- frame.Icon:ClearAllPoints()
+	-- frame.Icon:SetPoint("LEFT", frame.backdrop, 9, 0)
+	-- frame.Icon.b = CreateFrame("Frame", nil, frame)
+	-- frame.Icon.b:SetTemplate("Default")
+	-- frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
+	-- frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
+	-- frame.Icon:SetParent(frame.Icon.b)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

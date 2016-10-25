@@ -42,12 +42,12 @@ local function LoadSkin()
 	HelpFrameHeader:SetFrameLevel(HelpFrameHeader:GetFrameLevel() + 2)
 	HelpFrameKnowledgebaseErrorFrame:SetFrameLevel(HelpFrameKnowledgebaseErrorFrame:GetFrameLevel() + 2)
 
-	HelpFrameReportBugScrollFrame:StripTextures()
-	HelpFrameReportBugScrollFrame:CreateBackdrop("Overlay")
-	HelpFrameReportBugScrollFrame.backdrop:SetPoint("TOPLEFT", -4, 4)
-	HelpFrameReportBugScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 6, -4)
-	HelpFrameReportBugScrollFrame:ClearAllPoints()
-	HelpFrameReportBugScrollFrame:SetPoint("BOTTOM", HelpFrameReportBugSubmit, "TOP", 0, 10)
+	--BETA HelpFrameReportBugScrollFrame:StripTextures()
+	-- HelpFrameReportBugScrollFrame:CreateBackdrop("Overlay")
+	-- HelpFrameReportBugScrollFrame.backdrop:SetPoint("TOPLEFT", -4, 4)
+	-- HelpFrameReportBugScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 6, -4)
+	-- HelpFrameReportBugScrollFrame:ClearAllPoints()
+	-- HelpFrameReportBugScrollFrame:SetPoint("BOTTOM", HelpFrameReportBugSubmit, "TOP", 0, 10)
 
 	for i = 1, HelpFrameReportBug:GetNumChildren() do
 		local child = select(i, HelpFrameReportBug:GetChildren())
@@ -56,10 +56,10 @@ local function LoadSkin()
 		end
 	end
 
-	HelpFrameSubmitSuggestionScrollFrame:StripTextures()
-	HelpFrameSubmitSuggestionScrollFrame:CreateBackdrop("Overlay")
-	HelpFrameSubmitSuggestionScrollFrame.backdrop:SetPoint("TOPLEFT", -4, 4)
-	HelpFrameSubmitSuggestionScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 6, -4)
+	--BETA HelpFrameSubmitSuggestionScrollFrame:StripTextures()
+	--BETA HelpFrameSubmitSuggestionScrollFrame:CreateBackdrop("Overlay")
+	-- HelpFrameSubmitSuggestionScrollFrame.backdrop:SetPoint("TOPLEFT", -4, 4)
+	-- HelpFrameSubmitSuggestionScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 6, -4)
 
 	for i = 1, HelpFrameSubmitSuggestion:GetNumChildren() do
 		local child = select(i, HelpFrameSubmitSuggestion:GetChildren())

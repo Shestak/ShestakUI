@@ -376,8 +376,8 @@ elseif C.skins.blizzard_frames == true then
 	SpellBinder.OpenButton.backdrop:SetAllPoints()
 	SpellBinder.OpenButton:StyleButton(true)
 
-	SpellBinderScrollFrameSpellList:StripTextures()
-	SpellBinderScrollFrameSpellList:SetTemplate("Overlay")
+	--BETA SpellBinderScrollFrameSpellList:StripTextures()
+	-- SpellBinderScrollFrameSpellList:SetTemplate("Overlay")
 	T.SkinCloseButton(SpellBinderCloseButton)
 
 	T.SkinScrollBar(SpellBinderScrollFrameSpellListScrollBar)

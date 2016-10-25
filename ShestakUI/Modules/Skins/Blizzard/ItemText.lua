@@ -7,7 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	ItemTextFrame:StripTextures(true)
 	ItemTextFrameInset:StripTextures()
-	ItemTextScrollFrame:StripTextures()
+	--BETA ItemTextScrollFrame:StripTextures()
 	ItemTextFrame:CreateBackdrop("Transparent")
 	ItemTextFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
 	ItemTextFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
