@@ -59,6 +59,7 @@ local function LoadSkin()
 		"ChatConfigFrameDefaultButton",
 		"ChatConfigFrameOkayButton",
 		"ChatConfigFrameCancelButton",
+		"ChatConfigFrameRedockButton",
 		"ChatConfigCombatSettingsFiltersCopyFilterButton",
 		"ChatConfigCombatSettingsFiltersAddFilterButton",
 		"ChatConfigCombatSettingsFiltersDeleteButton",
