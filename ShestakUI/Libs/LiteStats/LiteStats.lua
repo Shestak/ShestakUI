@@ -90,7 +90,8 @@ if modules and ((coords and coords.enabled) or (location and location.enabled)) 
 		end
 	end)
 	WorldMapDetailFrame:HookScript("OnHide", SetMapToCurrentZone)
-	function Coords() return format(coords and coords.fmt or "%d, %d", coordX * 100, coordY * 100) end
+	--BETA function Coords() return format(coords and coords.fmt or "%d, %d", coordX * 100, coordY * 100) end
+	function Coords() return end
 end
 
 -- Set profile
