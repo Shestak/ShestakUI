@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.bag.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -147,13 +147,13 @@ local upgrades = {
 	["466"] = 4, ["467"] = 8, ["469"] = 4, ["470"] = 8, ["471"] = 12, ["472"] = 16,
 	["477"] = 4, ["478"] = 8, ["480"] = 8, ["492"] = 4, ["493"] = 8, ["495"] = 4,
 	["496"] = 8, ["497"] = 12, ["498"] = 16, ["504"] = 12, ["505"] = 16, ["506"] = 20,
-	["507"] = 24, ["530"] = 5, ["531"] = 10
+	["507"] = 24, ["530"] = 5, ["531"] = 10, ["535"] = 15, ["536"] = 30, ["537"] = 45
 }
 
 local function BOALevel(level, id)
 	if level > 97 then
 		if id == 133585 or id == 133595 or id == 133596 or id == 133597 or id == 133598 then
-			level = 715
+			level = 815 - (110 - level) * 10
 		else
 			level = 605 - (100 - level) * 5
 		end
@@ -166,7 +166,7 @@ local function BOALevel(level, id)
 	elseif level > 67 then
 		level = 187 - (80 - level) * 4
 	elseif level > 57 then
-		level = 105 - (67 - level) * 2.9
+		level = 105 - (67 - level) * 2.88
 	elseif level > 5 then
 		level = level + 5
 	else
@@ -181,6 +181,37 @@ local timewarped = {
 	["692"] = 675, -- Timewarped badge vendors
 	["656"] = 675, -- Warforged Dungeon drops
 }
+
+local itemLevelPattern = gsub(ITEM_LEVEL, "%%d", "(%%d+)")
+local tooltipLines = {
+	"ShestakUI_ItemScanningTooltipTextLeft2",
+	"ShestakUI_ItemScanningTooltipTextLeft3",
+	"ShestakUI_ItemScanningTooltipTextLeft4"
+}
+local tooltip = CreateFrame("GameTooltip", "ShestakUI_ItemScanningTooltip", UIParent, "GameTooltipTemplate")
+tooltip:SetOwner(UIParent, "ANCHOR_NONE")
+
+-- Scan tooltip for item level information
+local function GetItemLevelFromTooltip(itemLink)
+	if not itemLink or not GetItemInfo(itemLink) then
+		return
+	end
+
+	tooltip:ClearLines()
+	tooltip:SetHyperlink(itemLink)
+
+	local text, itemLevel
+	for index = 1, #tooltipLines do
+		text = _G[tooltipLines[index]]:GetText()
+
+		if text then
+			itemLevel = tonumber(string.match(text, itemLevelPattern))
+			if itemLevel then
+				return itemLevel
+			end
+		end
+	end
+end
 
 function Stuffing:SlotUpdate(b)
 	local texture, count, locked, quality = GetContainerItemInfo(b.bag, b.slot)
@@ -214,9 +245,24 @@ function Stuffing:SlotUpdate(b)
 					b.itemlevel = timewarped[tid]
 				end
 
-				local uid = strmatch(clink, ".+:(%d+)")
-				if upgrades[uid] then
-					b.itemlevel = b.itemlevel + upgrades[uid]
+				local upgradeTypeID = select(12, strsplit(":", clink))
+				if upgradeTypeID and upgradeTypeID ~= "" then
+					local uid = clink:match("[-:%d]+:([-%d]+)")
+					if upgrades[uid] then
+						b.itemlevel = b.itemlevel + upgrades[uid]
+					end
+				end
+
+				local numBonusIDs = tonumber(strmatch(clink, ".+:%d+:512:%d*:(%d+).+"))
+				if numBonusIDs then
+					if GetDetailedItemLevelInfo then
+						local effectiveLevel, previewLevel, origLevel = GetDetailedItemLevelInfo(clink)
+						b.itemlevel = effectiveLevel or b.itemlevel
+					end
+				end
+
+				if quality == 6 then
+					b.itemlevel = GetItemLevelFromTooltip(clink) or b.itemlevel
 				end
 
 				b.frame.text:SetText(b.itemlevel)
@@ -425,7 +471,18 @@ function Stuffing:BagFrameSlotNew(p, slot)
 		end
 	else
 		ret.frame = CreateFrame("CheckButton", "StuffingFBag"..slot.."Slot", p, "BagSlotButtonTemplate")
-		ret.frame:StripTextures()
+
+		hooksecurefunc(ret.frame.IconBorder, "SetVertexColor", function(self, r, g, b)
+			if r ~= 0.65882 and g ~= 0.65882 and b ~= 0.65882 then
+				self:GetParent():SetBackdropBorderColor(r, g, b)
+			end
+			self:SetTexture("")
+		end)
+
+		hooksecurefunc(ret.frame.IconBorder, "Hide", function(self)
+			self:GetParent():SetBackdropBorderColor(unpack(C.media.border_color))
+		end)
+
 		ret.slot = slot
 		table.insert(self.bagframe_buttons, ret)
 	end
@@ -1338,8 +1395,8 @@ function Stuffing:SortBags()
 				else
 					gridSlot = gridSlot - GetContainerNumSlots(bagSlotNumber)
 				end
-	        end
-	    end
+			end
+		end
 	end
 
 	self:SetScript("OnUpdate", Stuffing.SortOnUpdate)
@@ -1491,7 +1548,7 @@ function Stuffing.Menu(self, level)
 	UIDropDownMenu_AddButton(info, level)
 end
 
- -- Kill Blizzard functions
- LootWonAlertFrame_OnClick = T.dummy
- LootUpgradeFrame_OnClick = T.dummy
- StorePurchaseAlertFrame_OnClick = T.dummy
+-- Kill Blizzard functions
+LootWonAlertFrame_OnClick = T.dummy
+LootUpgradeFrame_OnClick = T.dummy
+StorePurchaseAlertFrame_OnClick = T.dummy

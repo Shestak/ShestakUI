@@ -70,13 +70,13 @@ local upgrades = {
 	["466"] = 4, ["467"] = 8, ["469"] = 4, ["470"] = 8, ["471"] = 12, ["472"] = 16,
 	["477"] = 4, ["478"] = 8, ["480"] = 8, ["492"] = 4, ["493"] = 8, ["495"] = 4,
 	["496"] = 8, ["497"] = 12, ["498"] = 16, ["504"] = 12, ["505"] = 16, ["506"] = 20,
-	["507"] = 24, ["530"] = 5, ["531"] = 10
+	["507"] = 24, ["530"] = 5, ["531"] = 10, ["535"] = 15, ["536"] = 30, ["537"] = 45
 }
 
 local function BOALevel(level, id)
 	if level > 97 then
 		if id == 133585 or id == 133595 or id == 133596 or id == 133597 or id == 133598 then
-			level = 715
+			level = 815 - (110 - level) * 10
 		else
 			level = 605 - (100 - level) * 5
 		end
@@ -89,14 +89,14 @@ local function BOALevel(level, id)
 	elseif level > 67 then
 		level = 187 - (80 - level) * 4
 	elseif level > 57 then
-		level = 105 - (67 - level) * 2.9
+		level = 105 - (67 - level) * 2.88
 	elseif level > 5 then
 		level = level + 5
 	else
 		level = 10
 	end
 
-	return level
+	return floor(level + 0.5)
 end
 
 local timewarped = {
@@ -104,6 +104,37 @@ local timewarped = {
 	["692"] = 675, -- Timewarped badge vendors
 	["656"] = 675, -- Warforged Dungeon drops
 }
+
+local itemLevelPattern = gsub(ITEM_LEVEL, "%%d", "(%%d+)")
+local tooltipLines = {
+	"ShestakUI_ItemScanningTooltipTextLeft2",
+	"ShestakUI_ItemScanningTooltipTextLeft3",
+	"ShestakUI_ItemScanningTooltipTextLeft4"
+}
+local tooltip = CreateFrame("GameTooltip", "ShestakUI_ItemScanningTooltip", UIParent, "GameTooltipTemplate")
+tooltip:SetOwner(UIParent, "ANCHOR_NONE")
+
+-- Scan tooltip for item level information
+local function GetItemLevelFromTooltip(itemLink)
+	if not itemLink or not GetItemInfo(itemLink) then
+		return
+	end
+
+	tooltip:ClearLines()
+	tooltip:SetHyperlink(itemLink)
+
+	local text, itemLevel
+	for index = 1, #tooltipLines do
+		text = _G[tooltipLines[index]]:GetText()
+
+		if text then
+			itemLevel = tonumber(string.match(text, itemLevelPattern))
+			if itemLevel then
+				return itemLevel
+			end
+		end
+	end
+end
 
 --- Unit Gear Info
 local function UnitGear(unit)
@@ -145,9 +176,29 @@ local function UnitGear(unit)
 								level = timewarped[tid]
 							end
 
-							local uid = strmatch(itemLink, ".+:(%d+)")
-							if upgrades[uid] then
-								level = level + upgrades[uid]
+							local upgradeTypeID = select(12, strsplit(":", itemLink))
+							if upgradeTypeID and upgradeTypeID ~= "" then
+								local uid = itemLink:match("[-:%d]+:([-%d]+)")
+								if upgrades[uid] then
+									level = level + upgrades[uid]
+								end
+							end
+
+							local numBonusIDs = tonumber(strmatch(itemLink, ".+:%d+:512:%d*:(%d+).+"))
+							if numBonusIDs then
+								if GetDetailedItemLevelInfo then
+									local effectiveLevel, previewLevel, origLevel = GetDetailedItemLevelInfo(itemLink)
+									level = effectiveLevel or level
+								end
+							end
+
+							if quality == 6 then
+								if i == 17 then
+									itemLink = GetInventoryItemLink("player", 16)
+									level = GetItemLevelFromTooltip(itemLink) or level
+								else
+									level = GetItemLevelFromTooltip(itemLink) or level
+								end
 							end
 
 							total = total + level

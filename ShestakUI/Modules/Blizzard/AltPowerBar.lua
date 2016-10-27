@@ -4,6 +4,7 @@ local T, C, L, _ = unpack(select(2, ...))
 --	Skin AltPowerBar(by Tukz)
 ----------------------------------------------------------------------------------------
 local blizzColors = {
+	["INTERFACE\\UNITPOWERBARALT\\XAVIUS_HORIZONTAL_FILL.BLP"] = {r = 0.4, g = 0.1, b = 0.6},
 	["INTERFACE\\UNITPOWERBARALT\\TWINOGRONDISTANCE_HORIZONTAL_FILL.BLP"] = {r = 0.5, g = 0.4, b = 0},
 	["INTERFACE\\UNITPOWERBARALT\\SHADOWPALADINBAR_HORIZONTAL_FILL.BLP"] = {r = 0.4, g = 0.05, b = 0.67},
 	["INTERFACE\\UNITPOWERBARALT\\NAARUCHARGE_HORIZONTAL_FILL.BLP"] = {r = 0.5, g = 0.4, b = 0},
@@ -75,8 +76,8 @@ end)
 
 -- Tooltip
 bar:SetScript("OnEnter", function(self)
-	local name = select(10, UnitAlternatePowerInfo("player"))
-	local tooltip = select(11, UnitAlternatePowerInfo("player"))
+	local name = select(11, UnitAlternatePowerInfo("player"))
+	local tooltip = select(12, UnitAlternatePowerInfo("player"))
 
 	GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, -5)
 	GameTooltip:AddLine(name, 1, 1, 1)

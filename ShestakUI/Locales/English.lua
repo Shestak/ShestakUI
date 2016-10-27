@@ -169,12 +169,6 @@ L_BIND_BINDING = "Binding"
 L_BIND_KEY = "Key"
 L_BIND_NO_SET = "No bindings set"
 
--- Talent spec
-L_PLANNER_DRUID_4 = "Restoration"
-L_PLANNER_MONK_2 = "Mistweaver"
-L_PLANNER_PALADIN_1 = "Holy"
-L_PLANNER_PRIEST_1 = "Discipline"
-
 -- BG stats
 L_DATATEXT_BASESASSAULTED = "Bases Assaulted:"
 L_DATATEXT_BASESDEFENDED = "Bases Defended:"

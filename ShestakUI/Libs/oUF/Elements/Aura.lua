@@ -20,14 +20,14 @@ local OnLeave = function()
 end
 
 local createAuraIcon = function(icons, index)
-	local button = CreateFrame("Button", icons:GetName() and icons:GetName().."Button"..index or "oUF_Aura", icons)
+	local button = CreateFrame("Button", icons:GetDebugName().."Button"..index, icons)
 	button:EnableMouse(true)
 	button:RegisterForClicks'RightButtonUp'
 
 	button:SetWidth(icons.size or 16)
 	button:SetHeight(icons.size or 16)
 
-	local cd = CreateFrame("Cooldown", nil, button, "CooldownFrameTemplate")
+	local cd = CreateFrame("Cooldown", "$parentCooldown", button, "CooldownFrameTemplate")
 	cd:SetAllPoints(button)
 	cd:SetDrawEdge(false)
 

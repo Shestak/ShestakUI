@@ -66,7 +66,7 @@ local function LoadSkin()
 				button.Name:SetTextColor(GetItemQualityColor(quality))
 			end
 
-			if index <= numItems then
+			if type(numItems) == "number" and index <= numItems then
 				local name, texture = C_BlackMarket.GetItemInfoByIndex(index)
 				if name then
 					button.Item.IconTexture:SetTexture(texture)

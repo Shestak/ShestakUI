@@ -524,6 +524,15 @@ T.OpenItems = {
 	[123857] = true,	-- Runic Pouch
 	[123858] = true,	-- Follower Retraining Scroll Case
 	[123975] = true,	-- Greater Bounty Spoils
+	[137560] = true,	-- Dreamweaver Provisions
+	[137561] = true,	-- Highmountain Tribute
+	[137562] = true,        -- Valarjar Cache
+	[137563] = true,	-- Farondis Lockbox
+	[137564] = true,	-- Nightfallen Hoard
+	[137565] = true,	-- Warden's Field Kit
 	[139048] = true,	-- Small Legion Chest
 	[139049] = true,	-- Large Legion Chest
+	[140591] = true,	-- Shattered Satchel of Cooperation
+	[140601] = true,	-- Sixtrigger Resource Crate
+	[141350] = true,	-- Kirin Tor Chest
 }

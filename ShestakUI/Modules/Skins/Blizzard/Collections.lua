@@ -413,18 +413,6 @@ local function LoadSkin()
 		uicon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 
-	hooksecurefunc("ToySpellButton_UpdateButton", function(self)
-		if PlayerHasToy(self.itemID) then
-			local quality = select(3, GetItemInfo(self.itemID))
-			local r, g, b = GetItemQualityColor(quality)
-			self.TextColor = {r, g, b}
-			self:SetBackdropBorderColor(r, g, b)
-		else
-			self:SetBackdropBorderColor(unpack(C.media.border_color))
-			self.TextColor = {0.6, 0.6, 0.6}
-		end
-	end)
-
 	-- Heirlooms
 	HeirloomsJournal.iconsFrame:StripTextures()
 	T.SkinEditBox(HeirloomsJournal.SearchBox, nil, 18)
@@ -435,7 +423,7 @@ local function LoadSkin()
 	HeirloomsJournal.progressBar:CreateBackdrop("Overlay")
 	HeirloomsJournal.progressBar:SetStatusBarTexture(C.media.texture)
 	HeirloomsJournal.progressBar:SetFrameLevel(HeirloomsJournal.progressBar:GetFrameLevel() + 2)
-	T.SkinDropDownBox(HeirloomsJournalClassDropDown)
+	T.SkinDropDownBox(HeirloomsJournalClassDropDown, 170)
 
 	hooksecurefunc(HeirloomsJournal, "LayoutCurrentPage", function()
 		for i = 1, #HeirloomsJournal.heirloomHeaderFrames do

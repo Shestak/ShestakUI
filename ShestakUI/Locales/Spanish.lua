@@ -173,12 +173,6 @@ L_BIND_BINDING = "Asignación"
 L_BIND_KEY = "Tecla"
 L_BIND_NO_SET = "No tiene asignación"
 
--- Talent spec
-L_PLANNER_DRUID_4 = "Restauración"
-L_PLANNER_MONK_2 = "Tejedor de niebla"
-L_PLANNER_PALADIN_1 = "Sagrado"
-L_PLANNER_PRIEST_1 = "Disciplina"
-
 -- BG stats
 L_DATATEXT_BASESASSAULTED = "Bases Asaltadas:"
 L_DATATEXT_BASESDEFENDED = "Bases Defendidas:"

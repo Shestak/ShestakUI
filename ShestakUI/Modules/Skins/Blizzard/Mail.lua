@@ -45,10 +45,10 @@ local function LoadSkin()
 	-- Send mail
 	SendMailFrame:StripTextures()
 
-	SendMailScrollFrame:StripTextures(true)
-	SendMailScrollFrame:CreateBackdrop("Overlay")
-	SendMailScrollFrame.backdrop:SetPoint("TOPLEFT", 12, 0)
-	SendMailScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 2, 0)
+	--BETA SendMailScrollFrame:StripTextures(true)
+	-- SendMailScrollFrame:CreateBackdrop("Overlay")
+	-- SendMailScrollFrame.backdrop:SetPoint("TOPLEFT", 12, 0)
+	-- SendMailScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 2, 0)
 
 	T.SkinScrollBar(SendMailScrollFrameScrollBar)
 
@@ -102,10 +102,10 @@ local function LoadSkin()
 	OpenMailDeleteButton:SkinButton()
 	OpenMailCancelButton:SkinButton()
 
-	OpenMailScrollFrame:StripTextures(true)
-	OpenMailScrollFrame:CreateBackdrop("Overlay")
-	OpenMailScrollFrame.backdrop:SetPoint("TOPLEFT", 5, 5)
-	OpenMailScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, -5)
+	--BETA OpenMailScrollFrame:StripTextures(true)
+	-- OpenMailScrollFrame:CreateBackdrop("Overlay")
+	-- OpenMailScrollFrame.backdrop:SetPoint("TOPLEFT", 5, 5)
+	-- OpenMailScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, -5)
 
 	T.SkinScrollBar(OpenMailScrollFrameScrollBar)
 

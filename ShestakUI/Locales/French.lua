@@ -173,12 +173,6 @@ L_BIND_BINDING = "Raccourcis"
 L_BIND_KEY = "Touche"
 L_BIND_NO_SET = "Pas encore de raccourcis"
 
--- Talent spec
-L_PLANNER_DRUID_4 = "Restauration"
-L_PLANNER_MONK_2 = "Tisse-brume"
-L_PLANNER_PALADIN_1 = "Sacré"
-L_PLANNER_PRIEST_1 = "Discipline"
-
 -- BG stats
 L_DATATEXT_BASESASSAULTED = "Bases Attaquées :"
 L_DATATEXT_BASESDEFENDED = "Bases Défendues :"

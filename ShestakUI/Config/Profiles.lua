@@ -149,7 +149,7 @@ end
 --	Sw2rT1 Config
 ----------------------------------------------------------------------------------------
 if (T.name == "Чаккичак" or T.name == "Чаккноррис" or T.name == "Чакерс"
-or T.name == "Чакернаут" or T.name == "Чаккис" or T.name == "Эзэрвуд") and T.realm == "Подземье" then
+or T.name == "Чакернаут" or T.name == "Чаккис" or T.name == "Эзэрвуд" or T.name == "Какес") and T.realm == "Подземье" then
 	C["general"].welcome_message = false
 	C["misc"].shift_marking = false
 	C["misc"].raid_tools = false
@@ -179,7 +179,6 @@ or T.name == "Чакернаут" or T.name == "Чаккис" or T.name == "Эз
 	C["bag"].ilvl = true
 	C["map"].fog_of_war = true
 	C["nameplate"].combat = true
-	C["aura"].focus_debuffs = true
 	C["unitframe"].enemy_health_color = false
 	C["unitframe"].castbar_latency = false
 	C["raidframe"].raid_groups = 6
@@ -262,6 +261,6 @@ if IsWetxius then
 	frame:RegisterEvent("PLAYER_LOGIN")
 	frame:SetScript("OnEvent", function()
 		SetCVar("lootUnderMouse", 1)
-		SetCVar("cameraDistanceMoveSpeed", 50)
+		--BETA SetCVar("cameraDistanceMoveSpeed", 50)
 	end)
 end

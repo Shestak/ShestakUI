@@ -43,7 +43,11 @@ _G.ERR_FRIEND_ONLINE_SS = "|Hplayer:%s|h[%s]|h "..L_CHAT_COME_ONLINE
 _G.ERR_FRIEND_OFFLINE_S = "[%s] "..L_CHAT_GONE_OFFLINE
 
 -- Hide friends micro button
-FriendsMicroButton:Kill()
+if select(4, GetBuildInfo()) >= 70100 then
+	QuickJoinToastButton:Kill()
+else
+	FriendsMicroButton:Kill()
+end
 
 -- Hide chat bubble menu button
 ChatFrameMenuButton:Kill()

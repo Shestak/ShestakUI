@@ -6,7 +6,11 @@
 local function InstallUI()
 	-- Don't need to set CVar multiple time
 	SetCVar("screenshotQuality", 8)
-	SetCVar("cameraDistanceMaxFactor", 2.6)
+	if select(4, GetBuildInfo()) >= 70100 then
+		SetCVar("cameraDistanceMaxZoomFactor", 2.6)
+	else
+		SetCVar("cameraDistanceMaxFactor", 2.6)
+	end
 	SetCVar("showTutorials", 0)
 	SetCVar("gameTip", "0")
 	SetCVar("UberTooltips", 1)

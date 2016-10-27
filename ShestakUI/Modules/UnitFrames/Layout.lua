@@ -523,13 +523,15 @@ local function Shared(self, unit)
 			end
 		end
 
-		if T.class == "DRUID" then
-			-- Druid mana
+		-- Additional mana
+		if T.class == "DRUID" or T.class == "PRIEST" or T.class == "SHAMAN" then
 			CreateFrame("Frame"):SetScript("OnUpdate", function() T.UpdateClassMana(self) end)
 			self.ClassMana = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 			self.ClassMana:SetTextColor(1, 0.49, 0.04)
+		end
 
-			-- Mushroom bar
+		-- Mushroom bar
+		if T.class == "DRUID" then
 			if C.unitframe_class_bar.totem == true then
 				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
 				self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
@@ -644,6 +646,58 @@ local function Shared(self, unit)
 			self.Reputation:HookScript("OnLeave", function(self) self:SetAlpha(0) end)
 			self.Reputation.PostUpdate = T.UpdateReputationColor
 			self.Reputation.Tooltip = true
+		end
+
+		-- Artifact Power bar
+		if C.unitframe.plugins_artifact_bar == true then
+			self.ArtifactPower = CreateFrame("StatusBar", self:GetName().."_ArtifactPower", self)
+			self.ArtifactPower:CreateBackdrop("Default")
+			self.ArtifactPower:EnableMouse(true)
+			if C.unitframe.portrait_enable == true then
+				if T.level == MAX_PLAYER_LEVEL then
+					if C.unitframe.plugins_reputation_bar == true then
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -38 - C.unitframe.portrait_width, 28)
+					else
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
+					end
+				else
+					if C.unitframe.plugins_reputation_bar == true then
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -52 - C.unitframe.portrait_width, 28)
+					else
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
+					end
+				end
+			else
+				if T.level == MAX_PLAYER_LEVEL then
+					if C.unitframe.plugins_reputation_bar == true then
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -31, 28)
+					else
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
+					end
+				else
+					if C.unitframe.plugins_reputation_bar == true then
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -45, 28)
+					else
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 28)
+					end
+				end
+			end
+			self.ArtifactPower:SetSize(7, 94)
+			self.ArtifactPower:SetOrientation("Vertical")
+			self.ArtifactPower:SetStatusBarTexture(C.media.texture)
+			self.ArtifactPower.offAlpha = 0
+
+			self.ArtifactPower.bg = self.ArtifactPower:CreateTexture(nil, "BORDER")
+			self.ArtifactPower.bg:SetAllPoints()
+			self.ArtifactPower.bg:SetTexture(C.media.texture)
+
+			self.ArtifactPower:HookScript("OnEnter", function(self) self.ArtifactPower.offAlpha = 1 end)
+			self.ArtifactPower:HookScript("OnLeave", function(self) self.ArtifactPower.offAlpha = 0 end)
+			self.ArtifactPower.PostUpdate = function(self, event, isShown)
+				self:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
+				self.bg:SetVertexColor(1, 0, 0, 0.2)
+			end
+			self.ArtifactPower.Tooltip = true
 		end
 
 		-- GCD spark
@@ -1036,7 +1090,7 @@ local function Shared(self, unit)
 				self.Castbar.Latency:SetPoint("TOPRIGHT", self.Castbar.Time, "BOTTOMRIGHT", 0, 0)
 				self.Castbar.Latency:SetJustifyH("RIGHT")
 
-				self:RegisterEvent("UNIT_SPELLCAST_SENT", function(self, event, caster)
+				self:RegisterEvent("CURRENT_SPELL_CAST_CHANGED", function(self, event, caster) -- BETA Event check
 					if (caster == "player" or caster == "vehicle") then
 						self.Castbar.castSent = GetTime()
 					end

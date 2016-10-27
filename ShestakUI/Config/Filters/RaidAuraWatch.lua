@@ -19,6 +19,7 @@ T.RaidBuffs = {
 		{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},				-- Renewing Mist
 		{124682, "BOTTOMLEFT", {0.4, 0.8, 0.2}},			-- Enveloping Mist
 		{115175, "BOTTOMRIGHT", {0.7, 0.4, 0}},				-- Soothing Mist
+		{191840, "TOPLEFT", {0.1, 0.4, 0.9}},				-- Essence Font
 		{116849, "LEFT", {0.81, 0.85, 0.1}, true},			-- Life Cocoon
 	},
 	PALADIN = {
@@ -32,7 +33,7 @@ T.RaidBuffs = {
 		{204018, "BOTTOMRIGHT", {0.4, 0.6, 0.8}, true},		-- Blessing of Spellwarding
 	},
 	PRIEST = {
-		{6788, "TOPRIGHT", {1, 0, 0}, true},				-- Weakened Soul
+		{194384, "TOPRIGHT", {0.8, 0.4, 0.2}},				-- Atonement
 		{41635, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},			-- Prayer of Mending
 		{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}}, 				-- Renew
 		{17, "TOPLEFT", {0.81, 0.85, 0.1}, true},			-- Power Word: Shield
@@ -67,7 +68,7 @@ T.RaidBuffs = {
 }
 
 T.RaidBuffsIgnore = {
-	-- [65148] = true,		-- Sacred Shield (Proc)
+	--[spellID] = true,			-- Spell name
 }
 
 local function SpellName(id)
@@ -81,6 +82,78 @@ local function SpellName(id)
 end
 
 T.RaidDebuffs = {
+-----------------------------------------------------------------
+-- Legion
+-----------------------------------------------------------------
+-- The Nighthold
+	-- Skorpyron
+	-- Chronomatic Anomaly
+	[SpellName(206609)] = 3,	-- Time Release
+	-- Trilliax
+	[SpellName(206788)] = 3,	-- Toxic Slice
+	-- Spellblade Aluriel
+	[SpellName(212492)] = 3,	-- Annihilate
+	[SpellName(212587)] = 3,	-- Mark of Frost
+	-- Tichondrius
+	[SpellName(206480)] = 3,	-- Carrion Plague
+	[SpellName(216040)] = 3,	-- Burning Soul
+	[SpellName(208230)] = 3,	-- Feast of Blood
+	-- Krosus
+	-- High Botanist Tel'arn
+	[SpellName(218304)] = 3,	-- Parasitic Fetter
+	-- Star Augur Etraeus
+	[SpellName(206936)] = 3,	-- Icy Ejection
+	-- Gul'dan
+	[SpellName(206222)] = 3,	-- Bonds of Fel
+	[SpellName(212568)] = 3,	-- Drain
+-- The Emerald Nightmare
+    -- Nythendra
+    [SpellName(204504)] = 5,    -- Infested (dot, stacks)
+    [SpellName(203096)] = 3,    -- Rot (AoE people around you)
+    [SpellName(204463)] = 3,    -- Volatile Rot (exploding tank)
+    [SpellName(203646)] = 4,    -- Burst of Corruption
+    -- Il'gynoth, Heart of Corruption
+    [SpellName(215845)] = 3,    -- Dispersed Spores (dot)
+    [SpellName(210099)] = 6,    -- Fixate (fixate)
+    [SpellName(209469)] = 5,    -- Touch of Corruption (dot, stacks, magic)
+    [SpellName(210984)] = 3,    -- Eye of Fate (tank debuff, stacks)
+    [SpellName(208697)] = 4,    -- Mind Flay (dot)
+    [SpellName(208929)] = 3,    -- Spew Corruption (dot, drops pools)
+    [SpellName(215128)] = 3,    -- Cursed Blood (dot, weak bomb)
+    -- Erethe Renferal
+    [SpellName(215582)] = 4,    -- Raking Talons (tank debuff, stacks)
+    [SpellName(218519)] = 4,    -- Wind Burn (debuff, stacks)
+    [SpellName(215307)] = 4,    -- Web of Pain (linked with another player)
+    [SpellName(215449)] = 3,    -- Necrotic Venom (dot)
+    [SpellName(215460)] = 3,    -- Necrotic Venom (dot, drops pools)
+    [SpellName(210850)] = 4,    -- Twisting Shadows (dot, drops vortex)
+    -- Ursoc
+    [SpellName(197943)] = 3,    -- Overwhelm (tank debuff, stacks)
+    [SpellName(204859)] = 4,    -- Rend Flesh (tank debuff, dot)
+    [SpellName(198006)] = 3,    -- Focused Gaze (fixate)
+    [SpellName(198108)] = 3,    -- Momentum (debuff)
+    -- Dragons of Nightmare
+    [SpellName(207681)] = 4,    -- Nightmare Bloom (standing in, should be at least 1 player)
+    [SpellName(203770)] = 3,    -- Defiled Vines (root, magic)
+    [SpellName(203787)] = 3,    -- Volatile Infection (AoE dot)
+    [SpellName(204044)] = 3,    -- Shadow Burst (dot, stacks)
+    [SpellName(205341)] = 3,    -- Seeping Fog (dot, sleep, magic)
+    [SpellName(204078)] = 3,    -- Bellowing Roar (fear)
+    -- Cenarius
+    [SpellName(210315)] = 3,    -- Nightmare Brambles (dot, root, magic)
+    [SpellName(226821)] = 3,    -- Desiccating Stomp (melee split damage debuf, stacks)
+    [SpellName(211507)] = 3,    -- Nightmare Javelin (dot, magic)
+    [SpellName(211471)] = 3,    -- Scorned Touch (spreading dot, slow)
+    [SpellName(214529)] = 3,    -- Spear of Nightmares (tank debuff, stacks)
+	[SpellName(210279)] = 3,	-- Creeping Nightmare
+    -- Xavius
+    [SpellName(208431)] = 3,    -- Descent into Madness (buff before mind control)
+    [SpellName(206651)] = 3,    -- Darkening Soul (tank debuff, dot, stacks, magic, explosion on dispel)
+    [SpellName(209158)] = 3,    -- Blackening Soul (tank debuff, dot, stacks, magic, explosion on dispel)
+    [SpellName(211802)] = 3,    -- Nightmare Blades (fixate)
+    [SpellName(205771)] = 3,    -- Tormenting Fixation (ad fixate)
+    [SpellName(210451)] = 3,    -- Bonds of Terror (linked with another player)
+    [SpellName(224508)] = 3,    -- Corruption Meteor (split damage debuff)
 -----------------------------------------------------------------
 -- Draenor
 -----------------------------------------------------------------

@@ -86,10 +86,17 @@ if modules and ((coords and coords.enabled) or (location and location.enabled)) 
 		self.elapsed = (self.elapsed or 0) + elapsed
 		if self.elapsed >= 0.2 then
 			coordX, coordY = GetPlayerMapPosition(P)
+			
+			if not GetPlayerMapPosition(P) then
+				coordX = 0
+				coordY = 0
+			end
+			
 			self.elapsed = 0
 		end
 	end)
 	WorldMapDetailFrame:HookScript("OnHide", SetMapToCurrentZone)
+
 	function Coords() return format(coords and coords.fmt or "%d, %d", coordX * 100, coordY * 100) end
 end
 
@@ -596,6 +603,9 @@ if gold.enabled then
 				Currency(821)	-- Draenor Clans Archaeology Fragment
 				Currency(828)	-- Ogre Archaeology Fragment
 				Currency(829)	-- Arakkoa Archaeology Fragment
+				Currency(1172)	-- Highborne Archaeology Fragment
+				Currency(1173)	-- Highmountain Tauren Archaeology Fragment
+				Currency(1174)	-- Demonic Archaeology Fragment
 			end
 
 			if cooking and C.stats.currency_cooking then
@@ -606,33 +616,29 @@ if gold.enabled then
 
 			if C.stats.currency_professions then
 				IsSubTitle = 3
+				Currency(910)	-- Secret of Draenor Alchemy
+				Currency(999)	-- Secret of Draenor Tailoring
 				Currency(1008)	-- Secret of Draenor Jewelcrafting
 				Currency(1017)	-- Secret of Draenor Leatherworking
 				Currency(1020)	-- Secret of Draenor Blacksmithing
-				Currency(910)	-- Secret of Draenor Alchemy
-				Currency(999)	-- Secret of Draenor Tailoring
 			end
 
-			if C.stats.currency_raid and T.level >= 100 then
+			if C.stats.currency_raid and T.level >= 110 then
 				IsSubTitle = 4
-				Currency(1129, false, true)	-- Seal of Inevitable Fate
-				Currency(994, false, true)	-- Seal of Tempered Fate
+				Currency(1273, false, true)	-- Seal of Broken Fate
 			end
 
 			if C.stats.currency_pvp then
 				IsSubTitle = 5
-				Currency(390, true)			-- Conquest Points
-				Currency(392, false, true)	-- Honor Points
+				-- Currency(390, true)		-- Conquest Points
+				-- Currency(392, false, true)	-- Honor Points
 			end
 
 			if C.stats.currency_misc then
 				IsSubTitle = 6
-				Currency(515)				-- Darkmoon Prize Ticket
-				Currency(944, false, true)	-- Artifact Fragment
-				Currency(980, false, true)	-- Dingy Iron Coins (Rogue)
-				Currency(824, false, true)	-- Garrison Resources
-				Currency(823)				-- Apexis Crystal
-				Currency(1101)				-- Oil
+				Currency(515)			-- Darkmoon Prize Ticket
+				Currency(1155, false, true)	-- Ancient Mana
+				Currency(1220)			-- Order Resources
 			end
 
 			GameTooltip:AddLine(" ")
@@ -725,59 +731,28 @@ if clock.enabled then
 			GameTooltip:AddLine(" ")
 			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_LOCALTIME, ":", ""), zsub(GameTime_GetLocalTime(true), "%s*AM", "am", "%s*PM", "pm"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_REALMTIME, ":", ""), zsub(GameTime_GetGameTime(true), "%s*AM", "am", "%s*PM", "pm"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-			GameTooltip:AddLine(" ")
-			for i = 1, 2 do
-				local _, localizedName, isActive, _, startTime = GetWorldPVPAreaInfo(i)
-				local r, g, b = 1, 1, 1
-				if i == 1 then
-					SetMapByID(485)
-					for i = 1, GetNumMapLandmarks() do
-						local index = select(3, GetMapLandmarkInfo(i))
-						if index == 46 then
-							r, g, b = 0.4, 0.8, 0.94
-						elseif index == 48 then
-							r, g, b = 1, 0.2, 0.2
-						end
-					end
-					GameTooltip:AddDoubleLine(localizedName, isActive and WINTERGRASP_IN_PROGRESS or fmttime(startTime), ttsubh.r, ttsubh.g, ttsubh.b, r, g, b)
-				elseif i == 2 then
-					SetMapByID(708)
-					for i = 1, GetNumMapLandmarks() do
-						local index = select(3, GetMapLandmarkInfo(i))
-						if index == 46 then
-							r, g, b = 0.4, 0.8, 0.94
-						elseif index == 48 then
-							r, g, b = 1, 0.2, 0.2
-						end
-					end
-					GameTooltip:AddDoubleLine(localizedName, isActive and WINTERGRASP_IN_PROGRESS or fmttime(startTime), ttsubh.r, ttsubh.g, ttsubh.b, r, g, b)
-				end
-			end
 
-			local oneraid
-			local heroicDifficulty = {DUNGEON_DIFFICULTY2, DUNGEON_DIFFICULTY_5PLAYER_HEROIC, RAID_DIFFICULTY3, RAID_DIFFICULTY4, RAID_DIFFICULTY_10PLAYER_HEROIC, RAID_DIFFICULTY_25PLAYER_HEROIC}
+			local titleName
 			for i = 1, GetNumSavedInstances() do
 				local name, _, reset, difficulty, locked, extended, _, isRaid, maxPlayers, _, numEncounters, encounterProgress = GetSavedInstanceInfo(i)
 				if isRaid and (locked or extended) or maxPlayers == 5 and difficulty == 23 and (locked or extended) then
 					local tr, tg, tb, diff
-					if not oneraid then
+					if not titleName then
 						GameTooltip:AddLine(" ")
 						GameTooltip:AddLine(CALENDAR_FILTER_RAID_LOCKOUTS.." / "..DUNGEONS, ttsubh.r, ttsubh.g, ttsubh.b)
-						oneraid = true
+						titleName = true
 					end
 					if extended then tr, tg, tb = 0.3, 1, 0.3 else tr, tg, tb = 1, 1, 1 end
-					for _, value in pairs(heroicDifficulty) do
-						if value == difficulty then
-							diff = "H"
-							break
-						end
+
+					local _, _, isHeroic, _, displayHeroic, displayMythic = GetDifficultyInfo(difficulty)
+					if displayMythic then
+						diff = "M"
+					elseif isHeroic or displayHeroic then
+						diff = "H"
 					end
+
 					if (numEncounters and numEncounters > 0) and (encounterProgress and encounterProgress > 0) then
-						if maxPlayers == 5 and difficulty == 23 then
-							GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s] (%s/%s)", "M: "..name, maxPlayers, diff or "", encounterProgress, numEncounters), fmttime(reset), 1, 1, 1, tr, tg, tb)
-						else
-							GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s] (%s/%s)", name, maxPlayers, diff or "", encounterProgress, numEncounters), fmttime(reset), 1, 1, 1, tr, tg, tb)
-						end
+						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s] (%s/%s)", name, maxPlayers, diff or "", encounterProgress, numEncounters), fmttime(reset), 1, 1, 1, tr, tg, tb)
 					else
 						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s]", name, maxPlayers, diff or ""), fmttime(reset), 1, 1, 1, tr, tg, tb)
 					end
@@ -795,17 +770,17 @@ if clock.enabled then
 					GameTooltip:AddDoubleLine(name, fmttime(reset), 1, 1, 1, 1, 1, 1)
 				end
 			end
-			if T.level >= 100 then
-				local c = 0
-				for _, q in ipairs({36054, 36055, 36056, 36057, 36058, 36060, 37453, 37452, 37454, 37455, 37456, 37457, 37458, 37459}) do
-					if IsQuestFlaggedCompleted(q) then
-						c = c + 1
-					end
-				end
-				GameTooltip:AddLine(" ")
-				GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
-				GameTooltip:AddDoubleLine(L_STATS_SEALS..": ", c, 1, 1, 1, 1, 1, 1)
-			end
+			--BETA if T.level >= 100 then
+				-- local c = 0
+				-- for _, q in ipairs({36054, 36055, 36056, 36057, 36058, 36060, 37453, 37452, 37454, 37455, 37456, 37457, 37458, 37459}) do
+					-- if IsQuestFlaggedCompleted(q) then
+						-- c = c + 1
+					-- end
+				-- end
+				-- GameTooltip:AddLine(" ")
+				-- GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
+				-- GameTooltip:AddDoubleLine(L_STATS_SEALS..": ", c, 1, 1, 1, 1, 1, 1)
+			-- end
 			GameTooltip:Show()
 		end,
 		OnClick = function(_, b) (b == "RightButton" and ToggleTimeManager or ToggleCalendar)() end
@@ -1548,6 +1523,7 @@ if experience.enabled then
 	local repname, repcolor, standingname, currep, minrep, maxrep, reppercent
 	local mobxp = gsub(COMBATLOG_XPGAIN_FIRSTPERSON, "%%[sd]", "(.*)")
 	local questxp = gsub(COMBATLOG_XPGAIN_FIRSTPERSON_UNNAMED, "%%[sd]", "(.*)")
+	local artifactXP, xpForNextPoint, numPointsAvailableToSpend, artifactTotalXP, artifactName, artifactPointsSpent = 0, 0, 0, 0
 	local function short(num, tt)
 		if short or tt then
 			num = tonumber(num)
@@ -1591,6 +1567,12 @@ if experience.enabled then
 			or sub == "repleft" and abs(maxrep - currep)
 			or sub == "maxrep" and abs(maxrep - minrep)
 			or sub == "rep%" and (currep ~= 0 and floor(abs(currep - minrep) / abs(maxrep - minrep) * 100) or 0)
+			-- artifact tags
+			or sub == "curart" and short(artifactXP, tt)
+			or sub == "curart%" and floor(artifactXP / xpForNextPoint * 100)
+			or sub == "totalart" and short(xpForNextPoint, tt)
+			or sub == "remainingart" and short(xpForNextPoint - artifactXP, tt)
+			or sub == "remainingart%" and 100 - floor(artifactXP / xpForNextPoint * 100)
 			or format("[%s]", sub)
 	end
 	Inject("Experience", {
@@ -1602,11 +1584,13 @@ if experience.enabled then
 					return gsub(experience.played_fmt, "%[([%w%%]-)%]", tags)
 				elseif conf.ExpMode == "xp" then
 					return gsub(experience[format("xp_%s_fmt", (GetXPExhaustion() or 0) > 0 and "rested" or "normal")], "%[([%w%%]-)%]", tags) or " "
+				elseif conf.ExpMode == "art" then
+					return self:GetText()
 				end
 			end
 		},
 		OnLoad = function(self)
-			RegEvents(self, "TIME_PLAYED_MSG PLAYER_LOGOUT PLAYER_LOGIN UPDATE_FACTION CHAT_MSG_COMBAT_XP_GAIN PLAYER_LEVEL_UP")
+			RegEvents(self, "TIME_PLAYED_MSG PLAYER_LOGOUT PLAYER_LOGIN UPDATE_FACTION CHAT_MSG_COMBAT_XP_GAIN PLAYER_LEVEL_UP ARTIFACT_XP_UPDATE UNIT_INVENTORY_CHANGED")
 			-- Filter first time played message
 			local ofunc = ChatFrame_DisplayTimePlayed
 			function ChatFrame_DisplayTimePlayed() ChatFrame_DisplayTimePlayed = ofunc end
@@ -1653,6 +1637,23 @@ if experience.enabled then
 			end
 			if event == "PLAYER_LOGOUT" or event == "TIME_PLAYED_MSG" then
 				conf.Played = floor(playedtotal + GetTime() - playedmsg)
+			end
+			if (event == "ARTIFACT_XP_UPDATE" or event == "UNIT_INVENTORY_CHANGED" or event == "PLAYER_LOGIN") and conf.ExpMode == "art" then
+				if event == "UNIT_INVENTORY_CHANGED" then
+					local unit = ...
+					if unit ~= "player" then
+						return
+					end
+				end
+				if HasArtifactEquipped() then
+					_, _, artifactName, _, artifactTotalXP, artifactPointsSpent = C_ArtifactUI.GetEquippedArtifactInfo()
+					numPointsAvailableToSpend, artifactXP, xpForNextPoint = MainMenuBar_GetNumArtifactTraitsPurchasableFromXP(artifactPointsSpent, artifactTotalXP)
+					self.text:SetText(gsub(experience.artifact_fmt, "%[([%w%%]-)%]", tags))
+				else
+					if event == "ARTIFACT_XP_UPDATE" or event == "UNIT_INVENTORY_CHANGED" then
+						conf.ExpMode = "played"
+					end
+				end
 			end
 		end,
 		OnEnter = function(self)
@@ -1712,23 +1713,43 @@ if experience.enabled then
 				GameTooltip:AddLine(" ")
 				GameTooltip:AddDoubleLine(format("%s%s", tags"repcolor", tags"standing"), war and format("|cffff5555%s", AT_WAR))
 				GameTooltip:AddDoubleLine(format("%s%% | %s/%s", tags"rep%", tags"currep", tags"maxrep"), -tags"repleft", ttsubh.r, ttsubh.g, ttsubh.b, 1, 0.33, 0.33)
+			elseif conf.ExpMode == "art" then
+				_, _, artifactName, _, artifactTotalXP, artifactPointsSpent = C_ArtifactUI.GetEquippedArtifactInfo()
+				numPointsAvailableToSpend, artifactXP, xpForNextPoint = MainMenuBar_GetNumArtifactTraitsPurchasableFromXP(artifactPointsSpent, artifactTotalXP)
+				GameTooltip:AddLine(ARTIFACT_POWER..": "..artifactName, tthead.r, tthead.g, tthead.b)
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddDoubleLine(L_STATS_CURRENT_XP, format("%s/%s (%s%%)", tags"curart", tags"totalart", tags"curart%"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_REMAINING_XP, format("%s (%s%%)", tags"remainingart", tags"remainingart%"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				if numPointsAvailableToSpend and numPointsAvailableToSpend > 0 then
+					GameTooltip:AddLine(ARTIFACT_POWER_TOOLTIP_BODY:format(numPointsAvailableToSpend), ttsubh.r, ttsubh.g, ttsubh.b, 1)
+				end
 			end
 			GameTooltip:Show()
 		end,
 		OnClick = function(self, button)
 			if button == "RightButton" then
 				conf.ExpMode = conf.ExpMode == "xp" and "played"
+					or (conf.ExpMode == "played" and HasArtifactEquipped()) and "art"
 					or conf.ExpMode == "played" and "rep"
+					or conf.ExpMode == "art" and "rep"
 					or (conf.ExpMode == "rep" and UnitLevel(P) ~= MAX_PLAYER_LEVEL) and "xp"
 					or conf.ExpMode == "rep" and "played"
 				if conf.ExpMode == "rep" then
 					self:GetScript("OnEvent")(self,"UPDATE_FACTION")
+				elseif conf.ExpMode == "art" then
+					self:GetScript("OnEvent")(self,"ARTIFACT_XP_UPDATE")
 				else
 					self:GetScript("OnUpdate")(self, 5)
 				end
 				self:GetScript("OnEnter")(self)
 			elseif button == "LeftButton" and conf.ExpMode == "rep" then
 				ToggleCharacter("ReputationFrame")
+			elseif button == "LeftButton" and conf.ExpMode == "art" then
+				if not ArtifactFrame or not ArtifactFrame:IsShown() then
+					ShowUIPanel(SocketInventoryItem(16))
+				elseif ArtifactFrame and ArtifactFrame:IsShown() then
+					HideUIPanel(ArtifactFrame)
+				end
 			end
 		end
 	})

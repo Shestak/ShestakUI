@@ -353,6 +353,24 @@ if C.combattext.damage_style then
 	DAMAGE_TEXT_FONT = C.font.combat_text_font
 end
 
+-- Hide blizzard combat text
+if C.combattext.blizz_head_numbers ~= true then
+	SetCVar("floatingCombatTextCombatHealing", 0)
+	SetCVar("floatingCombatTextCombatDamage", 0)
+else
+	SetCVar("floatingCombatTextCombatHealing", 1)
+	SetCVar("floatingCombatTextCombatDamage", 1)
+end
+
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGOUT")
+frame:SetScript("OnEvent", function(self, event)
+	if event == "PLAYER_LOGOUT" then
+		SetCVar("floatingCombatTextCombatHealing", 1)
+		SetCVar("floatingCombatTextCombatDamage", 1)
+	end
+end)
+
 -- Frames
 ct.locked = true
 ct.frames = {}

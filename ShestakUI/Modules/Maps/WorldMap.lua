@@ -1,21 +1,6 @@
 local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Floors scroll
-----------------------------------------------------------------------------------------
-WorldMapButton:SetScript("OnMouseWheel", function(self, delta)
-	if IsModifierKeyDown() then
-		local level = GetCurrentMapDungeonLevel() - delta
-		if level >= 1 then
-			SetDungeonMapLevel(level)
-			PlaySound("UChatScrollButton")
-		end
-	else
-		WorldMapScrollFrame_OnMouseWheel(self, delta)
-	end
-end)
-
-----------------------------------------------------------------------------------------
 --	Font replacement
 ----------------------------------------------------------------------------------------
 WorldMapFrameAreaLabel:SetFont(C.media.normal_font, 30)
@@ -29,6 +14,9 @@ WorldMapFrameAreaDescription:SetFont(C.media.normal_font, 30)
 WorldMapFrameAreaDescription:SetShadowOffset(2, -2)
 
 MapQuestInfoRewardsFrame.XPFrame.Name:SetFont(C.media.normal_font, 13)
+
+WorldMapFrame.UIElementsFrame.BountyBoard.BountyName:SetFont(C.media.normal_font, 16)
+WorldMapFrame.UIElementsFrame.BountyBoard.BountyName:SetShadowOffset(1, -1)
 
 ----------------------------------------------------------------------------------------
 --	Change position
@@ -58,6 +46,12 @@ WorldMapFrame:HookScript("OnUpdate", function(self, elapsed)
 	int = int + 1
 	if int >= 3 then
 		local x, y = GetPlayerMapPosition("player")
+
+		if not GetPlayerMapPosition("player") then
+			x = 0
+			y = 0
+		end
+
 		x = math.floor(100 * x)
 		y = math.floor(100 * y)
 		if x ~= 0 and y ~= 0 then

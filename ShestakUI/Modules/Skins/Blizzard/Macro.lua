@@ -23,7 +23,7 @@ local function LoadSkin()
 	end
 
 	for i = 1, 2 do
-		tab = _G[format("MacroFrameTab%s", i)]
+		local tab = _G[format("MacroFrameTab%s", i)]
 		tab:SetHeight(22)
 	end
 	MacroFrameTab1:SetPoint("TOPLEFT", MacroFrame, "TOPLEFT", 10, -39)

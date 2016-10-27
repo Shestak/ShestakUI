@@ -77,12 +77,12 @@ if C.enemycooldown.enable == true then
 		[8122] = 30,	-- Psychic Scream
 		[30283] = 30,	-- Shadowfury
 		[107570] = 30,	-- Storm Bolt
+		[51514] = 30,	-- Hex
 		[5484] = 40,	-- Howl of Terror
 		[19386] = 45,	-- Wyvern Sting
 		[113724] = 45,	-- Ring of Frost
 		[119381] = 45,	-- Leg Sweep
 		[64044] = 45,	-- Psychic Horror
-		[51514] = 45,	-- Hex
 		[6789] = 45,	-- Mortal Coil
 		[853] = 60,		-- Hammer of Justice
 		--BETA [108200] = 60,	-- Remorseless Winter

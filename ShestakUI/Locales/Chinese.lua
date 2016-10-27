@@ -130,7 +130,7 @@ L_ERRORFRAME_L = "点击查看错误"
 L_BAG_SHOW_BAGS = "显示背包"
 L_BAG_RIGHT_CLICK_SEARCH = "右键点击搜寻物品"
 L_BAG_STACK_MENU = "堆叠"
-L_BAG_RIGHT_CLICK_CLOSE = "Right-click to open menu" -- Need review
+L_BAG_RIGHT_CLICK_CLOSE = "右键点击打开菜单"
 
 -- Grab mail
 L_MAIL_STOPPED = "无法拾取,背包已满."
@@ -172,12 +172,6 @@ L_BIND_CLEARED = "已清除所有快捷键设置."
 L_BIND_BINDING = "绑定"
 L_BIND_KEY = "按键"
 L_BIND_NO_SET = "没有绑定快捷键"
-
--- Talent spec
-L_PLANNER_DRUID_4 = "恢复"
-L_PLANNER_MONK_2 = "织雾"
-L_PLANNER_PALADIN_1 = "神圣"
-L_PLANNER_PRIEST_1 = "戒律"
 
 -- BG stats
 L_DATATEXT_BASESASSAULTED = "基地突袭:"

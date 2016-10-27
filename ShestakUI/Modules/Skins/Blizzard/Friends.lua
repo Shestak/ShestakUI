@@ -47,7 +47,7 @@ local function LoadSkin()
 	}
 
 	for _, object in pairs(StripAllTextures) do
-		_G[object]:StripTextures()
+		--BETA _G[object]:StripTextures()
 	end
 
 	local KillTextures = {
@@ -97,7 +97,7 @@ local function LoadSkin()
 	}
 
 	for _, button in pairs(buttons) do
-		_G[button]:SkinButton()
+		--BETA _G[button]:SkinButton()
 	end
 
 	local scrollbars = {
@@ -136,11 +136,11 @@ local function LoadSkin()
 	AddFriendFrame:SetTemplate("Transparent")
 	FriendsFriendsFrame:SetTemplate("Transparent")
 	FriendsFriendsList:SetTemplate("Overlay")
-	PendingListInfoFrame:SetTemplate("Overlay")
+	--BETA PendingListInfoFrame:SetTemplate("Overlay")
 
 	-- Who Frame
 	local function UpdateWhoSkins()
-		WhoListScrollFrame:StripTextures()
+		--BETA WhoListScrollFrame:StripTextures()
 	end
 
 	WhoFrame:HookScript("OnShow", UpdateWhoSkins)
@@ -151,7 +151,7 @@ local function LoadSkin()
 
 	-- Channel Frame
 	local function UpdateChannel()
-		ChannelRosterScrollFrame:StripTextures()
+		--BETA ChannelRosterScrollFrame:StripTextures()
 	end
 
 	ChannelFrame:HookScript("OnShow", UpdateChannel)
@@ -178,8 +178,8 @@ local function LoadSkin()
 	FriendsFrameBattlenetFrame.BroadcastFrame.backdrop:SetPoint("TOPLEFT", 1, 1)
 	FriendsFrameBattlenetFrame.BroadcastFrame.backdrop:SetPoint("BOTTOMRIGHT", 1, 1)
 
-	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame:StripTextures()
-	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame:SetTemplate("Overlay")
+	--BETA FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame:StripTextures()
+	-- FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame:SetTemplate("Overlay")
 	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame.CancelButton:SkinButton()
 	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame.UpdateButton:SkinButton()
 

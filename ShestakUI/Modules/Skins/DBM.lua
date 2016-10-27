@@ -236,25 +236,25 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 				count = count + 1
 			end
 		end
-
-		hooksecurefunc(DBT, "CreateBar", SkinBars)
-		hooksecurefunc(DBM.BossHealth, "Show", SkinBossTitle)
-		hooksecurefunc(DBM.BossHealth, "AddBoss", SkinBoss)
-		hooksecurefunc(DBM.BossHealth, "UpdateSettings", SkinBoss)
-
-		hooksecurefunc(DBM.RangeCheck, "Show", function()
-			if DBMRangeCheck then
-				DBMRangeCheck:SetTemplate("Transparent")
-			end
-			if DBMRangeCheckRadar then
-				DBMRangeCheckRadar:SetTemplate("Transparent")
-			end
-		end)
-
-		hooksecurefunc(DBM.InfoFrame, "Show", function()
-			DBMInfoFrame:SetTemplate("Transparent")
-		end)
-
+		if DBM then
+			hooksecurefunc(DBT, "CreateBar", SkinBars)
+			hooksecurefunc(DBM.BossHealth, "Show", SkinBossTitle)
+			hooksecurefunc(DBM.BossHealth, "AddBoss", SkinBoss)
+			hooksecurefunc(DBM.BossHealth, "UpdateSettings", SkinBoss)
+		
+			hooksecurefunc(DBM.RangeCheck, "Show", function()
+				if DBMRangeCheck then
+					DBMRangeCheck:SetTemplate("Transparent")
+				end
+				if DBMRangeCheckRadar then
+					DBMRangeCheckRadar:SetTemplate("Transparent")
+				end
+			end)
+		
+			hooksecurefunc(DBM.InfoFrame, "Show", function()
+				DBMInfoFrame:SetTemplate("Transparent")
+			end)
+		end
 		local replace = string.gsub
 		local old = RaidNotice_AddMessage
 		RaidNotice_AddMessage = function(noticeFrame, textString, colorInfo)

@@ -4,25 +4,40 @@ local oUF = ns.oUF
 oUF.colors.power = {}
 for power, color in next, PowerBarColor do
 	if (type(power) == "string") then
-		oUF.colors.power[power] = {color.r, color.g, color.b}
+		if(type(select(2, next(color))) == 'table') then
+			oUF.colors.power[power] = {}
+
+			for index, color in next, color do
+				oUF.colors.power[power][index] = {color.r, color.g, color.b}
+			end
+		else
+			oUF.colors.power[power] = {color.r, color.g, color.b}
+		end
 	end
 end
 
-oUF.colors.power[0] = oUF.colors.power["MANA"]
-oUF.colors.power[1] = oUF.colors.power["RAGE"]
-oUF.colors.power[2] = oUF.colors.power["FOCUS"]
-oUF.colors.power[3] = oUF.colors.power["ENERGY"]
-oUF.colors.power[4] = oUF.colors.power["CHI"]
-oUF.colors.power[5] = oUF.colors.power["RUNES"]
-oUF.colors.power[6] = oUF.colors.power["RUNIC_POWER"]
-oUF.colors.power[7] = oUF.colors.power["SOUL_SHARDS"]
-oUF.colors.power[8] = oUF.colors.power["ECLIPSE"]
-oUF.colors.power[9] = oUF.colors.power["HOLY_POWER"]
+-- sourced from FrameXML/Constants.lua
+oUF.colors.power[0] = oUF.colors.power.MANA
+oUF.colors.power[1] = oUF.colors.power.RAGE
+oUF.colors.power[2] = oUF.colors.power.FOCUS
+oUF.colors.power[3] = oUF.colors.power.ENERGY
+oUF.colors.power[4] = oUF.colors.power.COMBO_POINTS
+oUF.colors.power[5] = oUF.colors.power.RUNES
+oUF.colors.power[6] = oUF.colors.power.RUNIC_POWER
+oUF.colors.power[7] = oUF.colors.power.SOUL_SHARDS
+oUF.colors.power[8] = oUF.colors.power.LUNAR_POWER
+oUF.colors.power[9] = oUF.colors.power.HOLY_POWER
+oUF.colors.power[11] = oUF.colors.power.MAELSTROM
+oUF.colors.power[12] = oUF.colors.power.CHI
+oUF.colors.power[13] = oUF.colors.power.INSANITY
+oUF.colors.power[16] = oUF.colors.power.ARCANE_CHARGES
+oUF.colors.power[17] = oUF.colors.power.FURY
+oUF.colors.power[18] = oUF.colors.power.PAIN
 
 local GetDisplayPower = function(unit)
-	local _, _, _, _, _, _, showOnRaid = UnitAlternatePowerInfo(unit)
+	local _, min, _, _, _, _, showOnRaid = UnitAlternatePowerInfo(unit)
 	if(showOnRaid) then
-		return ALTERNATE_POWER_INDEX
+		return ALTERNATE_POWER_INDEX, min
 	end
 end
 
@@ -32,24 +47,30 @@ local Update = function(self, event, unit)
 
 	if(power.PreUpdate) then power:PreUpdate(unit) end
 
-	local displayType = power.displayAltPower and GetDisplayPower(unit)
-	local min, max = UnitPower(unit, displayType), UnitPowerMax(unit, displayType)
+	local displayType, min
+	if power.displayAltPower then
+		displayType, min = GetDisplayPower(unit)
+	end
+	local cur, max = UnitPower(unit, displayType), UnitPowerMax(unit, displayType)
 	local disconnected = not UnitIsConnected(unit)
-	power:SetMinMaxValues(0, max)
+	power:SetMinMaxValues(min or 0, max)
 
 	if(disconnected) then
 		power:SetValue(max)
 	else
-		power:SetValue(min)
+		power:SetValue(cur)
 	end
 
 	power.disconnected = disconnected
 
 	local r, g, b, t
+
 	if(power.colorTapping and not UnitPlayerControlled(unit) and UnitIsTapDenied(unit)) then
 		t = self.colors.tapped
 	elseif(power.colorDisconnected and disconnected) then
 		t = self.colors.disconnected
+	elseif(displayType == ALTERNATE_POWER_INDEX and power.altPowerColor) then
+		t = power.altPowerColor
 	elseif(power.colorPower) then
 		local ptype, ptoken, altR, altG, altB = UnitPowerType(unit)
 
@@ -58,7 +79,12 @@ local Update = function(self, event, unit)
 			if(power.GetAlternativeColor) then
 				r, g, b = power:GetAlternativeColor(unit, ptype, ptoken, altR, altG, altB)
 			elseif(altR) then
-				r, g, b = altR, altG, altB
+				-- As of 7.0.3, altR, altG, altB may be in 0-1 or 0-255 range.
+				if(altR > 1) or (altG > 1) or (altB > 1) then
+					r, g, b = altR / 255, altG / 255, altB / 255
+				else
+					r, g, b = altR, altG, altB
+				end
 			else
 				t = self.colors.power[ptype]
 			end
@@ -71,7 +97,8 @@ local Update = function(self, event, unit)
 	elseif(power.colorReaction and UnitReaction(unit, 'player')) then
 		t = self.colors.reaction[UnitReaction(unit, "player")]
 	elseif(power.colorSmooth) then
-		r, g, b = self.ColorGradient(min, max, unpack(power.smoothGradient or self.colors.smooth))
+        local adjust = 0 - (min or 0)
+		r, g, b = self.ColorGradient(cur + adjust, max + adjust, unpack(power.smoothGradient or self.colors.smooth))
 	end
 
 	if(t) then
@@ -89,7 +116,7 @@ local Update = function(self, event, unit)
 	end
 
 	if(power.PostUpdate) then
-		return power:PostUpdate(unit, min, max)
+		return power:PostUpdate(unit, cur, max, min)
 	end
 end
 
@@ -121,6 +148,10 @@ local Enable = function(self, unit)
 
 		-- For tapping.
 		self:RegisterEvent('UNIT_FACTION', Path)
+
+		if(power:IsObjectType'StatusBar' and not power:GetStatusBarTexture()) then
+			power:SetStatusBarTexture[[Interface\TargetingFrame\UI-StatusBar]]
+		end
 
 		return true
 	end

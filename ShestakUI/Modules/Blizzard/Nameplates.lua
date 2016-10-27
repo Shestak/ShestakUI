@@ -15,7 +15,7 @@ if C.nameplate.track_auras == true then
 	NamePlates:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 end
 
-local healList, exClass = {}, {}
+local healList, exClass, healerSpecs = {}, {}, {}
 local testing = false
 
 exClass.DEATHKNIGHT = true
@@ -29,12 +29,20 @@ if C.nameplate.healer_icon == true then
 		["Horde"] = 1,
 		["Alliance"] = 0,
 	}
-	t.healers = {
-		[L_PLANNER_DRUID_4] = true,
-		[L_PLANNER_MONK_2] = true,
-		[L_PLANNER_PALADIN_1] = true,
-		[L_PLANNER_PRIEST_1] = true,
+	local healerSpecIDs = {
+		105,	-- Druid Restoration
+		270,	-- Monk Mistweaver
+		65,		-- Paladin Holy
+		256,	-- Priest Discipline
+		257,	-- Priest Holy
+		264,	-- Shaman Restoration
 	}
+	for _, specID in pairs(healerSpecIDs) do
+		local _, name = GetSpecializationInfoByID(specID)
+		if name and not healerSpecs[name] then
+			healerSpecs[name] = true
+		end
+	end
 
 	local lastCheck = 20
 	local function CheckHealers(self, elapsed)
@@ -44,8 +52,8 @@ if C.nameplate.healer_icon == true then
 			healList = {}
 			for i = 1, GetNumBattlefieldScores() do
 				local name, _, _, _, _, faction, _, _, _, _, _, _, _, _, _, talentSpec = GetBattlefieldScore(i)
-				name = name:match("(.+)%-.+") or name
-				if name and t.healers[talentSpec] and t.factions[UnitFactionGroup("player")] == faction then
+				if name and healerSpecs[talentSpec] and t.factions[UnitFactionGroup("player")] == faction then
+					name = name:match("(.+)%-.+") or name
 					healList[name] = talentSpec
 				end
 			end
@@ -62,7 +70,7 @@ if C.nameplate.healer_icon == true then
 				if specID and specID > 0 then
 					local name = UnitName(format('arena%d', i))
 					local _, talentSpec = GetSpecializationInfoByID(specID)
-					if name and t.healers[talentSpec] then
+					if name and healerSpecs[talentSpec] then
 						healList[name] = talentSpec
 					end
 				end
@@ -1337,6 +1345,20 @@ local function UpdateName(unitFrame)
 				end
 			end
 		end
+
+		if UnitGUID("target") == nil then
+			unitFrame:SetAlpha(1)
+		else
+			if C_NamePlate.GetNamePlateForUnit("target") ~= nil then
+				unitFrame:SetAlpha(0.5)
+				C_NamePlate.GetNamePlateForUnit("target").UnitFrame:SetAlpha(1)
+				if C_NamePlate.GetNamePlateForUnit("player") ~= nil then
+					C_NamePlate.GetNamePlateForUnit("player").UnitFrame:SetAlpha(1)
+				end
+			else
+				unitFrame:SetAlpha(1)
+			end
+		end
 	end
 end
 
@@ -1352,7 +1374,7 @@ local function UpdateHealth(unitFrame)
 		if UnitIsUnit("player", unitFrame.displayedUnit) then
 			unitFrame.healthBar.value:SetText("")
 		else
-			unitFrame.healthBar.value:SetText(perc_text)
+			unitFrame.healthBar.value:SetText(T.ShortValue(minHealth).." - "..perc_text)
 		end
 	end
 
@@ -1397,6 +1419,7 @@ end
 local function UpdateHealthColor(unitFrame)
 	local unit = unitFrame.displayedUnit
 	local r, g, b
+	local threat
 
 	if not UnitIsConnected(unit) then
 		r, g, b = 0.7, 0.7, 0.7
@@ -1418,6 +1441,7 @@ local function UpdateHealthColor(unitFrame)
 					SetVirtualBorder(unitFrame.healthBar, unpack(IsOnThreatList(unitFrame.displayedUnit)))
 				else
 					r, g, b = IsOnThreatList(unitFrame.displayedUnit)
+					threat = true
 				end
 			else
 				local reaction = T.oUF_colors.reaction[UnitReaction(unit, "player")]
@@ -1434,6 +1458,15 @@ local function UpdateHealthColor(unitFrame)
 		unitFrame.healthBar:SetStatusBarColor(r, g, b)
 		unitFrame.healthBar.Background:SetColorTexture(r, g, b, 0.2)
 		unitFrame.name:SetTextColor(r, g, b)
+		if threat then
+			local reaction = T.oUF_colors.reaction[UnitReaction(unit, "player")]
+			if reaction then
+				red, green, blue = reaction[1], reaction[2], reaction[3]
+			else
+				red, green, blue = UnitSelectionColor(unit, true)
+			end
+			unitFrame.name:SetTextColor(red, green, blue)
+		end
 		unitFrame.r, unitFrame.g, unitFrame.b = r, g, b
 	end
 end
@@ -1476,11 +1509,25 @@ local function UpdateRaidTarget(unitFrame)
 	local icon = unitFrame.RaidTargetFrame.RaidTargetIcon
 	local index = GetRaidTargetIndex(unitFrame.displayedUnit)
 	if index then
-		SetRaidTargetIconTexture(icon, index)
-		icon:Show()
+		if not UnitIsUnit(unitFrame.displayedUnit, "player") then
+			SetRaidTargetIconTexture(icon, index)
+			icon:Show()
+		end
 	else
 		icon:Hide()
 	end
+end
+
+local function UpdateNamePlateEvents(unitFrame)
+	-- These are events affected if unit is in a vehicle
+	local unit = unitFrame.unit
+	local displayedUnit
+	if unit ~= unitFrame.displayedUnit then
+		displayedUnit = unitFrame.displayedUnit
+	end
+	unitFrame:RegisterUnitEvent("UNIT_HEALTH_FREQUENT", unit, displayedUnit)
+	unitFrame:RegisterUnitEvent("UNIT_AURA", unit, displayedUnit)
+	unitFrame:RegisterUnitEvent("UNIT_THREAT_LIST_UPDATE", unit, displayedUnit)
 end
 
 local function UpdateInVehicle(unitFrame)
@@ -1537,18 +1584,6 @@ local function NamePlate_OnEvent(self, event, ...)
 	end
 end
 
-local function UpdateNamePlateEvents(unitFrame)
-	-- These are events affected if unit is in a vehicle
-	local unit = unitFrame.unit
-	local displayedUnit
-	if ( unit ~= unitFrame.displayedUnit ) then
-		displayedUnit = unitFrame.displayedUnit
-	end
-	unitFrame:RegisterUnitEvent("UNIT_HEALTH_FREQUENT", unit, displayedUnit)
-	unitFrame:RegisterUnitEvent("UNIT_AURA", unit, displayedUnit)
-	unitFrame:RegisterUnitEvent("UNIT_THREAT_LIST_UPDATE", unit, displayedUnit)
-end
-
 local function RegisterNamePlateEvents(unitFrame)
 	unitFrame:RegisterEvent("UNIT_NAME_UPDATE")
 	unitFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -1588,6 +1623,9 @@ local function HideBlizzard()
 
 	SetCVar("namePlateMinScale", 1)
 	SetCVar("namePlateMaxScale", 1)
+	SetCVar("nameplateLargerScale", 1)
+	SetCVar("nameplateMaxAlpha", 1)
+	SetCVar("nameplateMinAlpha", 1)
 
 	local checkBox = InterfaceOptionsNamesPanelUnitNameplatesMakeLarger
 	function checkBox.setFunc(value)
@@ -1605,7 +1643,7 @@ end
 local function OnUnitFactionChanged(unit)
 	-- This would make more sense as a unitFrame:RegisterUnitEvent
 	local namePlate = C_NamePlate.GetNamePlateForUnit(unit)
-	if (namePlate) then
+	if namePlate then
 		UpdateName(namePlate.UnitFrame)
 		UpdateHealthColor(namePlate.UnitFrame)
 	end
@@ -1622,7 +1660,13 @@ function NamePlates_UpdateNamePlateOptions()
 	local baseNamePlateWidth = C.nameplate.width * T.noscalemult
 	local baseNamePlateHeight = 45
 	local horizontalScale = tonumber(GetCVar("NamePlateHorizontalScale"))
-	C_NamePlate.SetNamePlateOtherSize(baseNamePlateWidth * horizontalScale, baseNamePlateHeight)
+	if select(4, GetBuildInfo()) >= 70100 then
+		C_NamePlate.SetNamePlateFriendlySize(baseNamePlateWidth * horizontalScale, baseNamePlateHeight)
+		C_NamePlate.SetNamePlateEnemySize(baseNamePlateWidth * horizontalScale, baseNamePlateHeight)
+	else
+		C_NamePlate.SetNamePlateOtherSize(baseNamePlateWidth * horizontalScale, baseNamePlateHeight)
+	end
+
 	C_NamePlate.SetNamePlateSelfSize(baseNamePlateWidth, baseNamePlateHeight)
 
 	for i, namePlate in ipairs(C_NamePlate.GetNamePlates()) do
@@ -1726,6 +1770,7 @@ local function OnNamePlateCreated(namePlate)
 	namePlate.UnitFrame.castBar:SetScript("OnEvent", CastingBarFrame_OnEvent)
 	namePlate.UnitFrame.castBar:SetScript("OnUpdate", CastingBarFrame_OnUpdate)
 	namePlate.UnitFrame.castBar:SetScript("OnShow", CastingBarFrame_OnShow)
+	namePlate.UnitFrame.castBar:SetScript("OnHide", function() namePlate.UnitFrame.castBar:Hide() end)
 	namePlate.UnitFrame.castBar:HookScript("OnValueChanged", function() NamePlates_UpdateCastBar(namePlate.UnitFrame.castBar) end)
 
 	namePlate.UnitFrame.RaidTargetFrame = CreateFrame("Frame", nil, namePlate.UnitFrame)

@@ -6,7 +6,7 @@ local T, C, L, _ = unpack(select(2, ...))
 hooksecurefunc("QuestLogQuests_Update", function()
 	for i, button in pairs(QuestMapFrame.QuestsFrame.Contents.Titles) do
 		if button:IsShown() then
-			local level = strmatch(GetQuestLink(button.questLogIndex), "quest:%d+:(%d+)")
+			local level = strmatch(GetQuestLink(button.questID), "quest:%d+:(%d+)")
 			if level then
 				local height = button.Text:GetHeight()
 				button.Text:SetFormattedText("[%d] %s", level, button.Text:GetText())
@@ -20,32 +20,27 @@ end)
 ----------------------------------------------------------------------------------------
 --	Ctrl+Click to abandon a quest or Alt+Click to share a quest(by Suicidal Katt)
 ----------------------------------------------------------------------------------------
-hooksecurefunc("QuestMapLogTitleButton_OnClick", function(self, button)
-	if IsModifiedClick() then
-		if IsControlKeyDown() then
-			QuestMapQuestOptions_AbandonQuest(self.questID)
-			AbandonQuest()
-			if QuestLogPopupDetailFrame:IsShown() then
-				HideUIPanel(QuestLogPopupDetailFrame)
-			end
-			for i = 1, STATICPOPUP_NUMDIALOGS do
-				local frame = _G["StaticPopup"..i]
-				if (frame.which == "ABANDON_QUEST" or frame.which == "ABANDON_QUEST_WITH_ITEMS") and frame:IsVisible() then StaticPopup_OnClick(frame, 1) end
-			end
-		elseif IsAltKeyDown() then
-			if GetQuestLogPushable() then
-				QuestMapQuestOptions_ShareQuest(self.questID)
-			end
-		end
+hooksecurefunc("QuestMapLogTitleButton_OnClick", function(self)
+	local questLogIndex = GetQuestLogIndexByID(self.questID)
+	if IsControlKeyDown() then
+		QuestMapQuestOptions_AbandonQuest(self.questID)
+	elseif IsAltKeyDown() and GetQuestLogPushable(questLogIndex) then
+		QuestMapQuestOptions_ShareQuest(self.questID)
 	end
 end)
 
-hooksecurefunc(QUEST_TRACKER_MODULE, "OnBlockHeaderClick", function(_, block)
-	if IsModifiedClick() then
-		if IsControlKeyDown() then
-			AbandonQuest()
-		elseif IsAltKeyDown() then
-			QuestObjectiveTracker_ShareQuest(_, block.questLogIndex)
+hooksecurefunc(QUEST_TRACKER_MODULE, "OnBlockHeaderClick", function(block)
+	local questLogIndex = block.questLogIndex
+	if IsControlKeyDown() then
+		local items = GetAbandonQuestItems()
+		if items then
+			StaticPopup_Hide("ABANDON_QUEST")
+			StaticPopup_Show("ABANDON_QUEST_WITH_ITEMS", GetAbandonQuestName(), items)
+		else
+			StaticPopup_Hide("ABANDON_QUEST_WITH_ITEMS")
+			StaticPopup_Show("ABANDON_QUEST", GetAbandonQuestName())
 		end
+	elseif IsAltKeyDown() and GetQuestLogPushable(questLogIndex) then
+		QuestLogPushQuest(questLogIndex)
 	end
 end)

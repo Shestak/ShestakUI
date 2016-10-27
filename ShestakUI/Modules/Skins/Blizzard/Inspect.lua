@@ -56,6 +56,10 @@ local function LoadSkin()
 		slot:SetFrameLevel(slot:GetFrameLevel() + 2)
 		slot:CreateBackdrop("Default")
 		slot.backdrop:SetAllPoints()
+
+		hooksecurefunc(slot.IconBorder, "SetVertexColor", function(self, r, g, b)
+			self:SetTexture("")
+		end)
 	end
 
 	InspectGuildFrameBG:Kill()

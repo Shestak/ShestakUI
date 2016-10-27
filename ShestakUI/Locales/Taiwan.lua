@@ -130,7 +130,7 @@ L_ERRORFRAME_L = "點擊查看錯誤"
 L_BAG_SHOW_BAGS = "顯示背包"
 L_BAG_RIGHT_CLICK_SEARCH = "點擊右鍵以搜尋物品"
 L_BAG_STACK_MENU = "堆疊"
-L_BAG_RIGHT_CLICK_CLOSE = "Right-click to open menu" -- Need review
+L_BAG_RIGHT_CLICK_CLOSE = "右鍵點擊打開菜單"
 
 -- Grab mail
 L_MAIL_STOPPED = "無法拾取, 背囊已滿."
@@ -172,12 +172,6 @@ L_BIND_CLEARED = "已經清除所有的快捷鍵設置"
 L_BIND_BINDING = "綁定"
 L_BIND_KEY = "按鍵"
 L_BIND_NO_SET = "沒有綁定快捷鍵"
-
--- Talent spec
-L_PLANNER_DRUID_4 = "恢復"
-L_PLANNER_MONK_2 = "織霧"
-L_PLANNER_PALADIN_1 = "神聖"
-L_PLANNER_PRIEST_1 = "戒律"
 
 -- BG stats
 L_DATATEXT_BASESASSAULTED = "基地突襲:"

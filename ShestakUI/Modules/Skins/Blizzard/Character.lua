@@ -58,7 +58,7 @@ local function LoadSkin()
 		"CharacterStatsPane",
 		"CharacterFrameInsetRight",
 		"PaperDollSidebarTabs",
-		"PaperDollEquipmentManagerPane"
+		--BETA "PaperDollEquipmentManagerPane"
 	}
 
 	EquipmentFlyoutFrameHighlight:Kill()

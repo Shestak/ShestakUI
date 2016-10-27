@@ -173,12 +173,6 @@ L_BIND_BINDING = "Belegung"
 L_BIND_KEY = "Taste"
 L_BIND_NO_SET = "Keine Tastaturbelegung festgelegt"
 
--- Talent spec
-L_PLANNER_DRUID_4 = "Wiederherstellung"
-L_PLANNER_MONK_2 = "Nebelwirker"
-L_PLANNER_PALADIN_1 = "Heilig"
-L_PLANNER_PRIEST_1 = "Disziplin"
-
 -- BG stats
 L_DATATEXT_BASESASSAULTED = "Basen angegriffen:"
 L_DATATEXT_BASESDEFENDED = "Basen verteidigt:"

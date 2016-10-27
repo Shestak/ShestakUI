@@ -6,21 +6,14 @@ local STAGGER_YELLOW_TRANSITION = STAGGER_YELLOW_TRANSITION
 local STAGGER_RED_TRANSITION = STAGGER_RED_TRANSITION
 
 -- table indices of bar colors
-local STAGGER_GREEN_INDEX = STAGGER_GREEN_INDEX
-local STAGGER_YELLOW_INDEX = STAGGER_YELLOW_INDEX
-local STAGGER_RED_INDEX = STAGGER_RED_INDEX
+local STAGGER_GREEN_INDEX = STAGGER_GREEN_INDEX or 1
+local STAGGER_YELLOW_INDEX = STAGGER_YELLOW_INDEX or 2
+local STAGGER_RED_INDEX = STAGGER_RED_INDEX or 3
 
 local UnitHealthMax = UnitHealthMax
 local UnitStagger = UnitStagger
 
 local _, playerClass = UnitClass("player")
-
--- TODO: fix color in the power element
-oUF.colors.power[BREWMASTER_POWER_BAR_NAME] = {
-	{0.52, 1.0, 0.52},
-	{1.0, 0.98, 0.72},
-	{1.0, 0.42, 0.42},
-}
 local color
 
 local Update = function(self, event, unit)
