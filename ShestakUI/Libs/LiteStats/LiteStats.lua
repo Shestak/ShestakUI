@@ -86,12 +86,18 @@ if modules and ((coords and coords.enabled) or (location and location.enabled)) 
 		self.elapsed = (self.elapsed or 0) + elapsed
 		if self.elapsed >= 0.2 then
 			coordX, coordY = GetPlayerMapPosition(P)
+			
+			if not GetPlayerMapPosition(P) then
+				coordX = 0
+				coordY = 0
+			end
+			
 			self.elapsed = 0
 		end
 	end)
 	WorldMapDetailFrame:HookScript("OnHide", SetMapToCurrentZone)
-	--BETA function Coords() return format(coords and coords.fmt or "%d, %d", coordX * 100, coordY * 100) end
-	function Coords() return end
+
+	function Coords() return format(coords and coords.fmt or "%d, %d", coordX * 100, coordY * 100) end
 end
 
 -- Set profile
