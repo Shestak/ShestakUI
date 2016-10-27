@@ -46,6 +46,12 @@ WorldMapFrame:HookScript("OnUpdate", function(self, elapsed)
 	int = int + 1
 	if int >= 3 then
 		local x, y = GetPlayerMapPosition("player")
+
+		if not GetPlayerMapPosition("player") then
+			x = 0
+			y = 0
+		end
+
 		x = math.floor(100 * x)
 		y = math.floor(100 * y)
 		if x ~= 0 and y ~= 0 then
