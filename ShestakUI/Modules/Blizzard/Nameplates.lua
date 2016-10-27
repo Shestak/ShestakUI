@@ -150,8 +150,7 @@ end
 
 function Plates:CreateAuraIcon(self)
 	local button = CreateFrame("Frame", nil, self.Health)
-	button:SetWidth(C.nameplate.auras_size)
-	button:SetHeight(C.nameplate.auras_size)
+	button:SetSize(C.nameplate.auras_size, C.nameplate.auras_size * 16/25)
 
 	button.bg = button:CreateTexture(nil, "BACKGROUND")
 	button.bg:SetColorTexture(unpack(C.media.backdrop_color))
@@ -873,8 +872,7 @@ end
 
 local function CreateAuraIcon(parent)
 	local button = CreateFrame("Frame", nil, parent)
-	button:SetWidth(C.nameplate.auras_size)
-	button:SetHeight(C.nameplate.auras_size)
+	button:SetSize(C.nameplate.auras_size, C.nameplate.auras_size * 16/25)
 
 	button.bg = button:CreateTexture(nil, "BACKGROUND")
 	button.bg:SetColorTexture(unpack(C.media.backdrop_color))
