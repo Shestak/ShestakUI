@@ -237,7 +237,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 
 	-- Welcome message
 	if C.general.welcome_message == true then
-		print("|cffffff00"..L_WELCOME_LINE_1..T.version.." "..T.client..", "..T.name..".|r")
+		print("|cffffff00"..L_WELCOME_LINE_1..T.version.." "..T.client..", "..format("|cff%02x%02x%02x%s|r", T.color.r * 255, T.color.g * 255, T.color.b * 255, T.name)..".|r")
 		print("|cffffff00"..L_WELCOME_LINE_2_1.." |cffffff00"..L_WELCOME_LINE_2_2.."|r")
 	end
 end)
