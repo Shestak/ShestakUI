@@ -375,7 +375,7 @@ function Plates:OnShow()
 		Level = Level.."+"
 	end
 
-	if C.nameplate.name_abbrev == true and C.nameplate.track_auras ~= true then
+	if C.nameplate.name_abbrev == true then
 		self.NewPlate.Name:SetText(Abbrev(Name))
 	else
 		self.NewPlate.Name:SetText(Name)
@@ -1321,7 +1321,7 @@ local function UpdateName(unitFrame)
 		if UnitIsUnit(unitFrame.displayedUnit, "player") then
 			unitFrame.name:SetText("")
 		else
-			if C.nameplate.name_abbrev == true and C.nameplate.track_auras ~= true then
+			if C.nameplate.name_abbrev == true then
 				unitFrame.name:SetText(Abbrev(name))
 			else
 				unitFrame.name:SetText(name)
