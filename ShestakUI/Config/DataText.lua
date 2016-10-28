@@ -145,22 +145,10 @@ LPSTAT_CONFIG = {
 		anchor_frame = "Stats", anchor_to = "topleft", anchor_from = "bottomleft",
 		x_off = 0, y_off = -5,
 	},
-	--BETA Helm = {
-		-- enabled = C.toppanel.enable,
-		-- fmt = class"H: ".."%s",
-		-- anchor_frame = "Bags", anchor_to = "left", anchor_from = "right",
-		-- x_off = 3, y_off = 0,
-	-- },
-	-- Cloak = {
-		-- enabled = C.toppanel.enable,
-		-- fmt = class"C: ".."%s",
-		-- anchor_frame = "Helm", anchor_to = "left", anchor_from = "right",
-		-- x_off = 3, y_off = 0,
-	-- },
 	Loot = {
 		enabled = C.toppanel.enable,
 		fmt = class"L: ".."%s",
-		anchor_frame = "Cloak", anchor_to = "left", anchor_from = "right",
+		anchor_frame = "Bags", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Nameplates = {

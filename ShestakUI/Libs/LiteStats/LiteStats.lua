@@ -1799,92 +1799,6 @@ if loot.enabled then
 end
 
 ----------------------------------------------------------------------------------------
---	Helm
-----------------------------------------------------------------------------------------
---BETA if helm.enabled then
-	-- Inject("Helm", {
-		-- OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN CVAR_UPDATE") end,
-		-- OnEvent = function(self)
-			-- if ShowingHelm() then
-				-- self.text:SetText(format(helm.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
-			-- else
-				-- self.text:SetText(format(helm.fmt, "|cffff5555"..strupper(OFF).."|r"))
-			-- end
-		-- end,
-		-- OnClick = function(self, button)
-			-- if button == "RightButton" or button == "LeftButton" then
-				-- if ShowingHelm() then
-					-- ShowHelm(false)
-					-- self.text:SetText(format(helm.fmt, "|cffff5555"..strupper(OFF).."|r"))
-				-- else
-					-- ShowHelm(true)
-					-- self.text:SetText(format(helm.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
-				-- end
-			-- end
-		-- end,
-		-- OnEnter = function(self)
-			-- GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT", -3, 26)
-			-- GameTooltip:ClearLines()
-			-- GameTooltip:AddLine(SHOW_HELM, tthead.r, tthead.g, tthead.b)
-			-- GameTooltip:AddLine(" ")
-			-- GameTooltip:AddLine(OPTION_TOOLTIP_SHOW_HELM, 1, 1, 1)
-			-- GameTooltip:Show()
-			-- if C.toppanel.enable == true and C.toppanel.mouseover == true then
-				-- TopPanel:SetAlpha(1)
-			-- end
-		-- end,
-		-- OnLeave = function()
-			-- if C.toppanel.enable == true and C.toppanel.mouseover == true then
-				-- TopPanel:SetAlpha(0)
-			-- end
-		-- end,
-	-- })
--- end
-
-----------------------------------------------------------------------------------------
---	Cloak
-----------------------------------------------------------------------------------------
---BETA if cloak.enabled then
-	-- Inject("Cloak", {
-		-- OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN CVAR_UPDATE") end,
-		-- OnEvent = function(self)
-			-- if ShowingCloak() then
-				-- self.text:SetText(format(cloak.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
-			-- else
-				-- self.text:SetText(format(cloak.fmt, "|cffff5555"..strupper(OFF).."|r"))
-			-- end
-		-- end,
-		-- OnClick = function(self, button)
-			-- if button == "RightButton" or button == "LeftButton" then
-				-- if ShowingCloak() then
-					-- ShowCloak(false)
-					-- self.text:SetText(format(cloak.fmt, "|cffff5555"..strupper(OFF).."|r"))
-				-- else
-					-- ShowCloak(true)
-					-- self.text:SetText(format(cloak.fmt, "|cff55ff55"..L_STATS_ON.."|r"))
-				-- end
-			-- end
-		-- end,
-		-- OnEnter = function(self)
-			-- GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT", -3, 26)
-			-- GameTooltip:ClearLines()
-			-- GameTooltip:AddLine(SHOW_CLOAK, tthead.r, tthead.g, tthead.b)
-			-- GameTooltip:AddLine(" ")
-			-- GameTooltip:AddLine(OPTION_TOOLTIP_SHOW_CLOAK, 1, 1, 1)
-			-- GameTooltip:Show()
-			-- if C.toppanel.enable == true and C.toppanel.mouseover == true then
-				-- TopPanel:SetAlpha(1)
-			-- end
-		-- end,
-		-- OnLeave = function()
-			-- if C.toppanel.enable == true and C.toppanel.mouseover == true then
-				-- TopPanel:SetAlpha(0)
-			-- end
-		-- end,
-	-- })
--- end
-
-----------------------------------------------------------------------------------------
 --	Nameplates
 ----------------------------------------------------------------------------------------
 if nameplates.enabled then
@@ -1900,7 +1814,7 @@ if nameplates.enabled then
 		OnClick = function(self, button)
 			if button == "RightButton" or button == "LeftButton" then
 				if GetCVar("nameplateMotion") == "0" then
-					SetCVar("nameplateMotion", "2")
+					SetCVar("nameplateMotion", "1")
 					self.text:SetText(format(nameplates.fmt, "|cffff5555"..strupper(OFF).."|r"))
 				else
 					SetCVar("nameplateMotion", "0")
