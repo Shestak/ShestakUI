@@ -182,37 +182,6 @@ local timewarped = {
 	["656"] = 675, -- Warforged Dungeon drops
 }
 
-local itemLevelPattern = gsub(ITEM_LEVEL, "%%d", "(%%d+)")
-local tooltipLines = {
-	"ShestakUI_ItemScanningTooltipTextLeft2",
-	"ShestakUI_ItemScanningTooltipTextLeft3",
-	"ShestakUI_ItemScanningTooltipTextLeft4"
-}
-local tooltip = CreateFrame("GameTooltip", "ShestakUI_ItemScanningTooltip", UIParent, "GameTooltipTemplate")
-tooltip:SetOwner(UIParent, "ANCHOR_NONE")
-
--- Scan tooltip for item level information
-local function GetItemLevelFromTooltip(itemLink)
-	if not itemLink or not GetItemInfo(itemLink) then
-		return
-	end
-
-	tooltip:ClearLines()
-	tooltip:SetHyperlink(itemLink)
-
-	local text, itemLevel
-	for index = 1, #tooltipLines do
-		text = _G[tooltipLines[index]]:GetText()
-
-		if text then
-			itemLevel = tonumber(string.match(text, itemLevelPattern))
-			if itemLevel then
-				return itemLevel
-			end
-		end
-	end
-end
-
 function Stuffing:SlotUpdate(b)
 	local texture, count, locked, quality = GetContainerItemInfo(b.bag, b.slot)
 	local clink = GetContainerItemLink(b.bag, b.slot)
@@ -262,7 +231,7 @@ function Stuffing:SlotUpdate(b)
 				end
 
 				if quality == 6 then
-					b.itemlevel = GetItemLevelFromTooltip(clink) or b.itemlevel
+					b.itemlevel = GetDetailedItemLevelInfo(clink) or b.itemlevel
 				end
 
 				b.frame.text:SetText(b.itemlevel)
