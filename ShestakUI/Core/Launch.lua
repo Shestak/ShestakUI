@@ -6,11 +6,7 @@
 local function InstallUI()
 	-- Don't need to set CVar multiple time
 	SetCVar("screenshotQuality", 8)
-	if select(4, GetBuildInfo()) >= 70100 then
-		SetCVar("cameraDistanceMaxZoomFactor", 2.6)
-	else
-		SetCVar("cameraDistanceMaxFactor", 2.6)
-	end
+	SetCVar("cameraDistanceMaxZoomFactor", 2.6)
 	SetCVar("showTutorials", 0)
 	SetCVar("gameTip", "0")
 	SetCVar("UberTooltips", 1)
@@ -26,7 +22,6 @@ local function InstallUI()
 	SetCVar("scriptErrors", 1)
 	SetCVar("taintLog", 0)
 	SetCVar("buffDurations", 1)
-	--BETA SetCVar("enableCombatText", 1)
 	SetCVar("autoOpenLootHistory", 0)
 	SetCVar("lossOfControl", 0)
 	SetCVar("nameplateShowSelf", 0)
