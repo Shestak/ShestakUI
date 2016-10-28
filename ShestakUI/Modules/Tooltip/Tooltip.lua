@@ -12,7 +12,7 @@ local tooltips = {
 	ItemRefTooltip,
 	ShoppingTooltip1,
 	ShoppingTooltip2,
-	WorldMapTooltip.BackdropFrame,
+	WorldMapTooltip,
 	WorldMapCompareTooltip1,
 	WorldMapCompareTooltip2,
 	FriendsTooltip,
