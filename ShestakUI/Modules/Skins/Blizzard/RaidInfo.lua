@@ -6,7 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	local StripAllTextures = {
-		--BETA "RaidInfoScrollFrame",
+		"RaidInfoScrollFrame",
 		"RaidInfoFrame",
 		"RaidInfoInstanceLabel",
 		"RaidInfoIDLabel"

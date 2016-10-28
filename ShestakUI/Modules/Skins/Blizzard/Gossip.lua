@@ -45,7 +45,7 @@ local function LoadSkin()
 
 	T.SkinCloseButton(GossipFrameCloseButton, GossipFrame.backdrop)
 
-	--BETA GossipGreetingScrollFrame:StripTextures()
+	GossipGreetingScrollFrame:StripTextures()
 	T.SkinScrollBar(GossipGreetingScrollFrameScrollBar)
 
 	NPCFriendshipStatusBar:StripTextures()

@@ -16,17 +16,12 @@ local function LoadSkin()
 		"WhoFrameColumnHeader4",
 		"ChannelListScrollFrame",
 		"ChannelRoster",
-		"FriendsFramePendingButton1",
-		"FriendsFramePendingButton2",
-		"FriendsFramePendingButton3",
-		"FriendsFramePendingButton4",
 		"ChannelFrameDaughterFrame",
 		"AddFriendFrame",
 		"AddFriendNoteFrame",
 		"FriendsFriendsFrame",
 		"FriendsFriendsList",
 		"IgnoreListFrame",
-		"PendingListFrame",
 		"FriendsFrameInset",
 		"WhoFrameListInset",
 		"WhoFrameEditBoxInset",
@@ -43,11 +38,12 @@ local function LoadSkin()
 		"BattleTagInviteFrame",
 		"BNetReportFrame",
 		"BNetReportFrameComment",
-		"RecruitAFriendNoteFrame"
+		"RecruitAFriendNoteFrame",
+		"QuickJoinScrollFrame"
 	}
 
 	for _, object in pairs(StripAllTextures) do
-		--BETA _G[object]:StripTextures()
+		_G[object]:StripTextures()
 	end
 
 	local KillTextures = {
@@ -71,14 +67,6 @@ local function LoadSkin()
 		"FriendsFrameIgnorePlayerButton",
 		"FriendsFrameMutePlayerButton",
 		"FriendsFrameUnsquelchButton",
-		"FriendsFramePendingButton1AcceptButton",
-		"FriendsFramePendingButton1DeclineButton",
-		"FriendsFramePendingButton2AcceptButton",
-		"FriendsFramePendingButton2DeclineButton",
-		"FriendsFramePendingButton3AcceptButton",
-		"FriendsFramePendingButton3DeclineButton",
-		"FriendsFramePendingButton4AcceptButton",
-		"FriendsFramePendingButton4DeclineButton",
 		"ChannelFrameDaughterFrameOkayButton",
 		"ChannelFrameDaughterFrameCancelButton",
 		"AddFriendEntryFrameAcceptButton",
@@ -90,14 +78,13 @@ local function LoadSkin()
 		"ScrollOfResurrectionSelectionFrameCancelButton",
 		"ScrollOfResurrectionFrameAcceptButton",
 		"ScrollOfResurrectionFrameCancelButton",
-		"PendingListInfoFrameContinueButton",
 		"BNetReportFrameReportButton",
 		"BNetReportFrameCancelButton",
 		"RecruitAFriendFrameSendButton"
 	}
 
 	for _, button in pairs(buttons) do
-		--BETA _G[button]:SkinButton()
+		_G[button]:SkinButton()
 	end
 
 	local scrollbars = {
@@ -105,7 +92,8 @@ local function LoadSkin()
 		"FriendsFrameIgnoreScrollFrameScrollBar",
 		"FriendsFriendsScrollFrameScrollBar",
 		"WhoListScrollFrameScrollBar",
-		"ChannelRosterScrollFrameScrollBar"
+		"ChannelRosterScrollFrameScrollBar",
+		"QuickJoinScrollFrameScrollBar"
 	}
 
 	for _, scrollbar in pairs(scrollbars) do
@@ -136,11 +124,12 @@ local function LoadSkin()
 	AddFriendFrame:SetTemplate("Transparent")
 	FriendsFriendsFrame:SetTemplate("Transparent")
 	FriendsFriendsList:SetTemplate("Overlay")
-	--BETA PendingListInfoFrame:SetTemplate("Overlay")
+	
+	QuickJoinFrame.JoinQueueButton:SkinButton()
 
 	-- Who Frame
 	local function UpdateWhoSkins()
-		--BETA WhoListScrollFrame:StripTextures()
+		WhoListScrollFrame:StripTextures()
 	end
 
 	WhoFrame:HookScript("OnShow", UpdateWhoSkins)
@@ -151,7 +140,7 @@ local function LoadSkin()
 
 	-- Channel Frame
 	local function UpdateChannel()
-		--BETA ChannelRosterScrollFrame:StripTextures()
+		ChannelRosterScrollFrame:StripTextures()
 	end
 
 	ChannelFrame:HookScript("OnShow", UpdateChannel)
@@ -178,8 +167,8 @@ local function LoadSkin()
 	FriendsFrameBattlenetFrame.BroadcastFrame.backdrop:SetPoint("TOPLEFT", 1, 1)
 	FriendsFrameBattlenetFrame.BroadcastFrame.backdrop:SetPoint("BOTTOMRIGHT", 1, 1)
 
-	--BETA FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame:StripTextures()
-	-- FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame:SetTemplate("Overlay")
+	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame:StripTextures()
+	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame:SetTemplate("Overlay")
 	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame.CancelButton:SkinButton()
 	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame.UpdateButton:SkinButton()
 

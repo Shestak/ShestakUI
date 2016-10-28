@@ -5,7 +5,7 @@ if C.skins.blizzard_frames ~= true then return end
 --	WorldStateScore skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	--BETA WorldStateScoreScrollFrame:StripTextures()
+	WorldStateScoreScrollFrame:StripTextures()
 	WorldStateScoreFrame:StripTextures()
 	WorldStateScoreFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(WorldStateScoreFrameCloseButton)
