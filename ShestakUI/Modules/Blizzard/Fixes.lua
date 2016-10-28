@@ -31,12 +31,6 @@ FixTooltipBags:SetScript("OnEvent", function()
 end)
 
 ----------------------------------------------------------------------------------------
---	Disable tooltip for player arrow on map
-----------------------------------------------------------------------------------------
---BETA WorldMapPlayerUpper:EnableMouse(false)
---BETA WorldMapPlayerLower:EnableMouse(false)
-
-----------------------------------------------------------------------------------------
 --	Fix World Map taints (by lightspark)
 ----------------------------------------------------------------------------------------
 local old_ResetZoom = _G.WorldMapScrollFrame_ResetZoom
