@@ -286,7 +286,7 @@ L_GUI_NAMEPLATE_NAME_ABBREV = "Afficher les noms abrégés"
 L_GUI_NAMEPLATE_GOOD_COLOR = "Bonne couleur de menace, dépend de si vous êtes un tank ou dps/heal"
 L_GUI_NAMEPLATE_NEAR_COLOR = "Perte/Gain de couleur de menace"
 L_GUI_NAMEPLATE_BAD_COLOR = "Mauvaise couleur de menace, dépend de si vous êtes un tank ou dps/heal"
-L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Affiche les affaiblissements (Les noms abrégés doivent être désactivés)"
+L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Affiche les affaiblissements"
 L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Taille des affaiblissements"
 L_GUI_NAMEPLATE_HEALER_ICON = "Affiche une icône de soigneur sur toutes les barres de vie des soigneurs ennemis dans les champs de bataille"
 

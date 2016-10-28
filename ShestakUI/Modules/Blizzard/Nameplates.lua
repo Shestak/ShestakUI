@@ -150,8 +150,7 @@ end
 
 function Plates:CreateAuraIcon(self)
 	local button = CreateFrame("Frame", nil, self.Health)
-	button:SetWidth(C.nameplate.auras_size)
-	button:SetHeight(C.nameplate.auras_size)
+	button:SetSize(C.nameplate.auras_size, C.nameplate.auras_size * 16/25)
 
 	button.bg = button:CreateTexture(nil, "BACKGROUND")
 	button.bg:SetColorTexture(unpack(C.media.backdrop_color))
@@ -375,7 +374,7 @@ function Plates:OnShow()
 		Level = Level.."+"
 	end
 
-	if C.nameplate.name_abbrev == true and C.nameplate.track_auras ~= true then
+	if C.nameplate.name_abbrev == true then
 		self.NewPlate.Name:SetText(Abbrev(Name))
 	else
 		self.NewPlate.Name:SetText(Name)
@@ -873,8 +872,7 @@ end
 
 local function CreateAuraIcon(parent)
 	local button = CreateFrame("Frame", nil, parent)
-	button:SetWidth(C.nameplate.auras_size)
-	button:SetHeight(C.nameplate.auras_size)
+	button:SetSize(C.nameplate.auras_size, C.nameplate.auras_size * 16/25)
 
 	button.bg = button:CreateTexture(nil, "BACKGROUND")
 	button.bg:SetColorTexture(unpack(C.media.backdrop_color))
@@ -1321,7 +1319,7 @@ local function UpdateName(unitFrame)
 		if UnitIsUnit(unitFrame.displayedUnit, "player") then
 			unitFrame.name:SetText("")
 		else
-			if C.nameplate.name_abbrev == true and C.nameplate.track_auras ~= true then
+			if C.nameplate.name_abbrev == true then
 				unitFrame.name:SetText(Abbrev(name))
 			else
 				unitFrame.name:SetText(name)
