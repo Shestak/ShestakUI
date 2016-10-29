@@ -1277,8 +1277,6 @@ C["filger_spells"] = {
 			{spellID = 198121, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Frost Nova
 			{spellID = 122, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Ice Ward
-			--BETA {spellID = 111340, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Cone of Cold
 			{spellID = 120, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Flurry
@@ -1330,8 +1328,6 @@ C["filger_spells"] = {
 			--BETA {spellID = 44572, filter = "CD"},
 			-- Frost Nova
 			{spellID = 122, filter = "CD"},
-			-- Ice Ward
-			--BETA {spellID = 111264, filter = "CD"},
 			-- Ring of Frost
 			{spellID = 113724, filter = "CD"},
 			-- Ice Barrier
@@ -3478,12 +3474,10 @@ C["filger_spells"] = {
 			{spellID = 77764, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Blessing of Freedom
 			{spellID = 1044, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Ice Ward
-			--BETA {spellID = 111264, unitID = "player", caster = "all", filter = "BUFF"},
 			--BETA Lightwell Renew
 			-- {spellID = 7001, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
-			--BETA {spellID = 57933, unitID = "player", caster = "all", filter = "BUFF"},
+			{spellID = 57934, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Slow Fall
 			{spellID = 130, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Levitate
@@ -3666,8 +3660,6 @@ C["filger_spells"] = {
 			{spellID = 198121, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Nova
 			{spellID = 122, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Ice Ward
-			-- BETA {spellID = 111340, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ice Nova
 			{spellID = 157997, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Freeze (Water Elemental)
@@ -3931,7 +3923,6 @@ C["filger_spells"] = {
 			{spellID = 117679, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Berserk
 			--BETA {spellID = 50334, unitID = "target", caster = "all", filter = "BUFF"},
-
 			-- Debuffs
 			-- Cyclone
 			{spellID = 33786, unitID = "target", caster = "all", filter = "DEBUFF"},
@@ -3984,9 +3975,6 @@ C["filger_spells"] = {
 			{spellID = 157913, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Evocation
 			{spellID = 12051, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Ice Ward
-			--BETA {spellID = 111264, unitID = "target", caster = "all", filter = "BUFF"},
-
 			-- Debuffs
 			-- Cauterize
 			{spellID = 87023, unitID = "target", caster = "target", filter = "DEBUFF"},
@@ -4041,7 +4029,6 @@ C["filger_spells"] = {
 			{spellID = 6940, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Blessing of Freedom
 			{spellID = 1044, unitID = "target", caster = "all", filter = "BUFF"},
-
 			-- Debuffs
 			-- Repentance
 			{spellID = 20066, unitID = "target", caster = "all", filter = "DEBUFF"},
@@ -4171,7 +4158,6 @@ C["filger_spells"] = {
 			{spellID = 12975, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Berserker Rage
 			{spellID = 18499, unitID = "target", caster = "all", filter = "BUFF"},
-
 			-- Debuffs
 			-- Intimidating Shout
 			{spellID = 5246, unitID = "target", caster = "all", filter = "DEBUFF"},

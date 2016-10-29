@@ -45,7 +45,6 @@ T.DiminishingSpells = {
 	[45334] = {"root"},				-- Immobilized
 	[122] = {"root"},				-- Frost Nova
 	[33395] = {"root"},				-- Freeze (Water Elemental)
-	--BETA [111340] = {"root"},			-- Ice Ward
 	[116706] = {"root"},			-- Disable
 	[114404] = {"root"},			-- Void Tendril's Grasp
 	--BETA [87194] = {"root"},				-- Glyph of Mind Blast

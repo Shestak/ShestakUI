@@ -101,7 +101,6 @@ T.ArenaControl = {
 	[SpellName(136634)] = 3,	-- Narrow Escape
 	[SpellName(122)] = 3,		-- Frost Nova
 	[SpellName(33395)] = 3,		-- Freeze (Water Elemental)
-	--BETA [SpellName(111340)] = 3,	-- Ice Ward
 	[SpellName(116706)] = 3,	-- Disable
 	--BETA [SpellName(87194)] = 3,	-- Glyph of Mind Blast
 	[SpellName(114404)] = 3,	-- Void Tendril's Grasp
