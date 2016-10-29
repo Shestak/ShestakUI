@@ -981,10 +981,10 @@ local function UpdateBuffs(unitFrame)
 
 	for index = 1, 40 do
 		if i > C.nameplate.width / C.nameplate.auras_size then return end
-		local dname, _, _, _, _, dduration, _, dcaster, _, _, dspellid, _, _, _, nameplateShowAll = UnitAura(unit, index, "HARMFUL")
+		local dname, _, _, _, _, dduration, _, dcaster, _, nameplateShowPersonal, dspellid, _, _, _, nameplateShowAll = UnitAura(unit, index, "HARMFUL")
 		-- local matchdebuff = AuraFilter(dcaster, dname)
 
-		if dname and dcaster == "player" and ((nameplateShowAll and not T.DebuffBlackList[dname]) or T.DebuffWhiteList[dname]) then
+		if dname and dcaster == "player" and (((nameplateShowAll or nameplateShowPersonal) and not T.DebuffBlackList[dname]) or T.DebuffWhiteList[dname]) then
 			if not unitFrame.icons[i] then
 				unitFrame.icons[i] = CreateAuraIcon(unitFrame)
 			end
