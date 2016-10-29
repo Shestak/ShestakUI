@@ -204,7 +204,7 @@ end
 
 local OnTooltipSetUnit = function(self)
 	local lines = self:NumLines()
-	local unit = (select(2, self:GetUnit())) or (GetMouseFocus() and GetMouseFocus():GetAttribute("unit")) or (UnitExists("mouseover") and "mouseover") or nil
+	local unit = (select(2, self:GetUnit())) or (GetMouseFocus() and GetMouseFocus().GetAttribute and GetMouseFocus():GetAttribute("unit")) or (UnitExists("mouseover") and "mouseover") or nil
 
 	if not unit then return end
 
