@@ -624,7 +624,6 @@ T.RaidDebuffs = {
 if C.raidframe.plugins_pvp_debuffs == true then
 	T.PvPDebuffs = {
 		-- Death Knight
-		--BETA [SpellName(115001)] = 3,	-- Remorseless Winter
 		[SpellName(108194)] = 3,	-- Asphyxiate
 		[SpellName(91797)] = 3,		-- Monstrous Blow (Mutated Ghoul)
 		[SpellName(91800)] = 3,		-- Gnaw (Ghoul)
@@ -652,7 +651,6 @@ if C.raidframe.plugins_pvp_debuffs == true then
 		-- Paladin
 		[SpellName(20066)] = 3,		-- Repentance
 		[SpellName(853)] = 3,		-- Hammer of Justice
-		--BETA [SpellName(105593)] = 3,	-- Fist of Justice
 		[SpellName(105421)] = 3,	-- Blinding Light
 		-- Priest
 		[SpellName(605)] = 3,		-- Dominate Mind

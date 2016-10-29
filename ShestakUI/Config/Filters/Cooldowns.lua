@@ -69,11 +69,9 @@ if C.enemycooldown.enable == true then
 		-- Crowd Controls
 		[115078] = 15,	-- Paralysis
 		[20066] = 15,	-- Repentance
-		--BETA [10326] = 15,	-- Turn Evil
 		[108194] = 30,	-- Asphyxiate
 		--BETA [1499] = 30,	-- Freezing Trap
 		--BETA [44572] = 30,	-- Deep Freeze
-		--BETA [105593] = 30,	-- Fist of Justice
 		[8122] = 30,	-- Psychic Scream
 		[30283] = 30,	-- Shadowfury
 		[107570] = 30,	-- Storm Bolt
@@ -85,7 +83,6 @@ if C.enemycooldown.enable == true then
 		[64044] = 45,	-- Psychic Horror
 		[6789] = 45,	-- Mortal Coil
 		[853] = 60,		-- Hammer of Justice
-		--BETA [108200] = 60,	-- Remorseless Winter
 		-- Defense abilities
 		[48707] = 45,	-- Anti-Magic Shell
 		[31224] = 60,	-- Cloak of Shadows

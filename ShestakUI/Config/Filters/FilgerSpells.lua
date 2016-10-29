@@ -187,7 +187,7 @@ C["filger_spells"] = {
 			-- Gnaw (Ghoul)
 			{spellID = 47481, filter = "CD"},
 			-- Remorseless Winter
-			--BETA {spellID = 108200, filter = "CD"},
+			{spellID = 196770, filter = "CD"},
 			-- Dark Simulacrum
 			{spellID = 77606, filter = "CD"},
 			-- Soul Reaper
@@ -1890,8 +1890,6 @@ C["filger_spells"] = {
 			{spellID = 96231, filter = "CD"},
 			-- Repentance
 			{spellID = 20066, filter = "CD"},
-			-- Turn Evil
-			--BETA {spellID = 10326, filter = "CD"},
 			-- Hammer of Justice
 			{spellID = 853, filter = "CD"},
 			-- Judgment
@@ -3494,8 +3492,6 @@ C["filger_spells"] = {
 
 			-- Crowd Controls
 			-- Death Knight
-			-- Remorseless Winter
-			--BETA {spellID = 115001, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Asphyxiate
 			{spellID = 108194, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Monstrous Blow (Mutated Ghoul)
@@ -3548,10 +3544,6 @@ C["filger_spells"] = {
 			-- Paladin
 			-- Repentance
 			{spellID = 20066, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Turn Evil
-			--BETA {spellID = 10326, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Fist of Justice
-			--BETA {spellID = 105593, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Hammer of Justice
 			{spellID = 853, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Blinding Light
@@ -3885,8 +3877,6 @@ C["filger_spells"] = {
 			-- Death's Advance
 			--BETA {spellID = 96268, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
-			-- Remorseless Winter
-			--BETA {spellID = 115001, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
 			-- Asphyxiate
 			{spellID = 108194, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Gnaw (Ghoul)
@@ -4032,12 +4022,8 @@ C["filger_spells"] = {
 			-- Debuffs
 			-- Repentance
 			{spellID = 20066, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Fist of Justice
-			--BETA {spellID = 105593, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Hammer of Justice
 			{spellID = 853, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Turn Evil
-			--BETA {spellID = 10326, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Blinding Light
 			{spellID = 105421, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Avenger's Shield

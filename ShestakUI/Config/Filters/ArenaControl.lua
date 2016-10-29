@@ -22,7 +22,6 @@ T.ArenaControl = {
 	[SpellName(91800)] = 5,		-- Gnaw (Ghoul)
 	[SpellName(91797)] = 5,		-- Monstrous Blow (Mutated Ghoul)
 	[SpellName(108194)] = 5,	-- Asphyxiate
-	--BETA [SpellName(115001)] = 5,	-- Remorseless Winter
 	-- Druid
 	[SpellName(33786)] = 5,		-- Cyclone
 	[SpellName(5211)] = 5,		-- Mighty Bash
@@ -45,10 +44,8 @@ T.ArenaControl = {
 	-- BETA [SpellName(119392)] = 5,	-- Charging Ox Wave
 	-- Paladin
 	[SpellName(853)] = 5,		-- Hammer of Justice
-	-- BETA [SpellName(105593)] = 5,	-- Fist of Justice
 	[SpellName(20066)] = 5,		-- Repentance
 	[SpellName(105421)] = 5,	-- Blinding Light
-	[SpellName(145067)] = 5,	-- Turn Evil
 	-- Priest
 	[SpellName(605)] = 5,		-- Dominate Mind
 	[SpellName(8122)] = 5,		-- Psychic Scream
