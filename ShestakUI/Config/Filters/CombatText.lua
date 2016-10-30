@@ -31,8 +31,9 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[195222] = 4			-- Stormlash
 	T.aoespam[195256] = 4			-- Stormlash
 	T.aoespam[205729] = 3			-- Greater Blessing of Might
-	T.aoespam[222197] = 0			-- Unstable Horrorslime (Trinket)
-	T.aoespam[214350] = 3			-- Nightmare Essence (Trinket)
+	T.aoespam[222197] = 0			-- Volatile Ichor (Unstable Horrorslime Trinket)
+	T.aoespam[214350] = 3			-- Nightmare Essence (Oakheart's Gnarled Root Trinket)
+	T.aoespam[230261] = 0			-- Flame Wreath (Aran's Relaxing Ruby Trinket)
 end
 
 -- Class config
@@ -127,6 +128,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[217694] = 3.5		-- Living Bomb
 		T.aoespam[44461] = 3		-- Living Bomb (AoE)
 		T.aoespam[2120] = 0			-- Flamestrike
+		T.aoespam[194432] = 0		-- Aftershocks
 		T.aoespam[12654] = 3		-- Ignite
 		T.aoespam[31661] = 0		-- Dragon's Breath
 		T.aoespam[190356] = 3		-- Blizzard
