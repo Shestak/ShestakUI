@@ -3348,6 +3348,16 @@ C["filger_spells"] = {
 			{spellID = 171725, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Potions: Legion
+			-- Potion of Prolonged Power
+			{spellID = 229206, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Potion of the Old War
+			{spellID = 188028, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Potion of Deadly Grace
+			{spellID = 188027, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Leytorrent Potion
+			{spellID = 188030, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Skaggldrynk
+			{spellID = 188023, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unbending Potion
 			{spellID = 188029, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Potions: Miscellaneous
