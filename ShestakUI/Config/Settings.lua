@@ -90,7 +90,6 @@ C["automation"] = {
 	["release"] = true,							-- Auto release the spirit in battlegrounds
 	["screenshot"] = false,						-- Take screenshot when player get achievement
 	["solve_artifact"] = true,					-- Auto popup for solve artifact
-	["chefs_hat"] = true,						-- Auto equip Chef's Hat
 	["accept_invite"] = false,					-- Auto accept invite
 	["decline_duel"] = true,					-- Auto decline duel (/disduel to temporarily disable)
 	["accept_quest"] = false,					-- Auto accept quests (disabled if hold Shift)

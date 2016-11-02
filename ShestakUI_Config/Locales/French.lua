@@ -63,7 +63,6 @@ L_GUI_AUTOMATION = "Automatisation"
 L_GUI_AUTOMATION_RELEASE = "Autorésurrection en champ de bataille" -- Need review
 L_GUI_AUTOMATION_SCREENSHOT = "Prend une capture d'écran quand un haut-fait est accomplie"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Affiche automatiquement une fenêtre pour la résolution d'un artéfact"
-L_GUI_AUTOMATION_CHEFS_HAT = "Equipe automatiquement le Chapeau de cuisine"
 L_GUI_AUTOMATION_ACCEPT_INVITE = "Accepter automatiquement les invitations"
 L_GUI_AUTOMATION_DECLINE_DUEL = "Décliner les duels automatiquement"
 L_GUI_AUTOMATION_ACCEPT_QUEST = "Accepter les quêtes automatiquement"
