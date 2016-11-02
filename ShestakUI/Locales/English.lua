@@ -1,13 +1,6 @@
 ----------------------------------------------------------------------------------------
 --	Localization for enUS and enGB client
 ----------------------------------------------------------------------------------------
--- Announce your Lightwell
-L_ANNOUNCE_LA_USE = " used my lightwell. "
-L_ANNOUNCE_LA_CHARGE = " charge(s))"
-L_ANNOUNCE_LA_USELESS = " used my lightwell, uselessly. "
-L_ANNOUNCE_LA_PLACED = "Lightwell placed. "
-L_ANNOUNCE_LA_CHARGES = " charges."
-
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "No Food: "
 L_ANNOUNCE_FF_NOFLASK = "No Flask: "

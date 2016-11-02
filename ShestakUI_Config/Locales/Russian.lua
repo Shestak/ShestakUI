@@ -47,7 +47,6 @@ L_GUI_ANNOUNCEMENTS_DRINKING = "Сообщать в чат, когда враг 
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Сообщать в чат о вашем прерывании заклинания"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Сообщать в чат, когда вы применили заклинание (из списка)"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Проверка заклинаний от всех участников группы/рейда"
-L_GUI_ANNOUNCEMENTS_LIGHTWELL = "Сообщать в чат о вашем Колодце Света"
 L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "Сообщать в чат о применении назойливых игрушек"
 L_GUI_ANNOUNCEMENTS_SAYS_THANKS = "Благодарить за полезные заклинания"
 L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Команда для отсчета времени до атаки (/pc #)"

@@ -5,13 +5,6 @@ if T.client ~= "zhCN" then return end
 --	Localization for zhCN client
 --	Translation: Ianchan, Mania, Nanjiqq, Tat2dawn
 ----------------------------------------------------------------------------------------
--- Announce your Lightwell
-L_ANNOUNCE_LA_USE = " 使用了光束泉!"
-L_ANNOUNCE_LA_CHARGE = " 次剩余)"
-L_ANNOUNCE_LA_USELESS = " 使用了光束泉,无效!"
-L_ANNOUNCE_LA_PLACED = "光束泉已放置!"
-L_ANNOUNCE_LA_CHARGES = " 次剩余."
-
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "缺少食物Buff: "
 L_ANNOUNCE_FF_NOFLASK = "缺少合剂: "

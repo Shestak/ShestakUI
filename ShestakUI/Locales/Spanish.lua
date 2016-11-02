@@ -5,13 +5,6 @@ if T.client ~= "esES" and T.client ~= "esMX" then return end
 --	Localization for esES and esMX client
 --	Translation: eXecrate, Seal
 ----------------------------------------------------------------------------------------
--- Announce your Lightwell
-L_ANNOUNCE_LA_USE = " usó mi Pozo de Luz. "
-L_ANNOUNCE_LA_CHARGE = " carga(s))"
-L_ANNOUNCE_LA_USELESS = " usó mi Pozo de Luz inútilmente. "
-L_ANNOUNCE_LA_PLACED = "Pozo de Luz colocado. "
-L_ANNOUNCE_LA_CHARGES = " cargas."
-
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "No Food: " -- Needs review
 L_ANNOUNCE_FF_NOFLASK = "No Flask: " -- Needs review

@@ -5,13 +5,6 @@ if T.client ~= "itIT" then return end
 --	Localization for itIT client
 --	Translation: Oz
 ----------------------------------------------------------------------------------------
--- Announce your Lightwell
-L_ANNOUNCE_LA_USE = " ha usato il mio Pozzo di Luce. "
-L_ANNOUNCE_LA_CHARGE = " carica (cariche)"
-L_ANNOUNCE_LA_USELESS = " ha usato il mio Pozzo di Luce inutilmente! "
-L_ANNOUNCE_LA_PLACED = "Pozzo di Luce posizionato. "
-L_ANNOUNCE_LA_CHARGES = " cariche."
-
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "Senza beneficio da cibo: "
 L_ANNOUNCE_FF_NOFLASK = "Senza beneficio da tonico: "

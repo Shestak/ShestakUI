@@ -71,7 +71,6 @@ C["announcements"] = {
 	["interrupts"] = false,						-- Announce when you interrupt
 	["spells"] = false,							-- Announce when you cast some spell
 	["spells_from_all"] = false,				-- Check spells cast from all members
-	["lightwell"] = false,						-- Announce your Lightwell
 	["toys"] = false,							-- Announce some annoying toys
 	["says_thanks"] = false,					-- Says thanks for some spells
 	["pull_countdown"] = true,					-- Pull countdown announce(/pc #)

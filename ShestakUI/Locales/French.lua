@@ -5,13 +5,6 @@ if T.client ~= "frFR" then return end
 --	Localization for frFR client
 --	Translation: Cranan, Puree
 ----------------------------------------------------------------------------------------
--- Announce your Lightwell
-L_ANNOUNCE_LA_USE = " a utilisé mon Puits de lumière."
-L_ANNOUNCE_LA_CHARGE = " charge(s))"
-L_ANNOUNCE_LA_USELESS = " a utilisé mon Puits de lumière, pour rien."
-L_ANNOUNCE_LA_PLACED = "Puits de lumière placé."
-L_ANNOUNCE_LA_CHARGES = " charges."
-
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "Sans nourriture: "
 L_ANNOUNCE_FF_NOFLASK = "Sans flacon: "

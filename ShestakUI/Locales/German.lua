@@ -5,13 +5,6 @@ if T.client ~= "deDE" then return end
 --	Localization for deDE client
 --	Translation: Alwa, Baine, Chubidu, F5Hellbound, Sinaris, Vienchen
 ----------------------------------------------------------------------------------------
--- Announce your Lightwell
-L_ANNOUNCE_LA_USE = " benutzte meinen Lichtbrunnen. "
-L_ANNOUNCE_LA_CHARGE = " aufladung(en)"
-L_ANNOUNCE_LA_USELESS = " benutzte meinen Lichtbrunnen, nutzlos. "
-L_ANNOUNCE_LA_PLACED = "Lichtbrunnen gesetzt. "
-L_ANNOUNCE_LA_CHARGES = " aufladungen."
-
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "Kein Essen: "
 L_ANNOUNCE_FF_NOFLASK = "Kein Fläschchen: "

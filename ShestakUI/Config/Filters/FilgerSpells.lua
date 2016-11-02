@@ -3482,8 +3482,6 @@ C["filger_spells"] = {
 			{spellID = 77764, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Blessing of Freedom
 			{spellID = 1044, unitID = "player", caster = "all", filter = "BUFF"},
-			--BETA Lightwell Renew
-			-- {spellID = 7001, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
 			{spellID = 57934, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Slow Fall

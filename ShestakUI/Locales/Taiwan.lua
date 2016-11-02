@@ -5,13 +5,6 @@ if T.client ~= "zhTW" then return end
 --	Localization for zhTW client
 --	Translation: Aelb, Ianchan, Leg883, Mania, Nanjiqq, Spacedragon, Tat2dawn, Tibles
 ----------------------------------------------------------------------------------------
--- Announce your Lightwell
-L_ANNOUNCE_LA_USE = " 使用了光束泉！"
-L_ANNOUNCE_LA_CHARGE = "次剩餘)"
-L_ANNOUNCE_LA_USELESS = " 使用了光束泉，無效！"
-L_ANNOUNCE_LA_PLACED = "光束泉已放置！"
-L_ANNOUNCE_LA_CHARGES = "次剩餘."
-
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "缺少食物Buff: "
 L_ANNOUNCE_FF_NOFLASK = "缺少精煉藥劑: "
