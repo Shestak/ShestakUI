@@ -110,7 +110,7 @@ local function LoadSkin()
 	TradeSkillFrame.DetailsFrame.GuildFrame.Container:SetTemplate("Transparent")
 	TradeSkillFrame.DetailsFrame.ViewGuildCraftersButton:SkinButton(true)
 	T.SkinCloseButton(TradeSkillFrame.DetailsFrame.GuildFrame.CloseButton)
-	--BETA T.SkinScrollBar(TradeSkillFrame.DetailsFrame.GuildFrame.Container.ScrollFrame.scrollBar)
+	T.SkinScrollBar(TradeSkillFrameScrollFrame.scrollBar, "TradeSkillFrameScrollFrame")
 
 	if Auctionator_Search then
 		Auctionator_Search:SkinButton(true)

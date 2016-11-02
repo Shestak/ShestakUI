@@ -65,17 +65,18 @@ local function LoadSkin()
 	HonorFrame.BonusFrame.ShadowOverlay:StripTextures()
 	HonorFrame.XPBar:StripTextures()
 
-	--BETA HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1:SetTemplate("Default")
-	-- HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetAllPoints()
-	-- HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetPoint("TOPLEFT", 2, -2)
-	-- HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
-	-- HonorFrame.BonusFrame.DefaultBattlegroundReward.Reward1.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	HonorFrame.BonusFrame.RandomBGButton.Reward:StripTextures()
+	HonorFrame.BonusFrame.RandomBGButton.Reward:SetTemplate("Default")
+	HonorFrame.BonusFrame.RandomBGButton.Reward.Icon:SetAllPoints()
+	HonorFrame.BonusFrame.RandomBGButton.Reward.Icon:SetPoint("TOPLEFT", 2, -2)
+	HonorFrame.BonusFrame.RandomBGButton.Reward.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
+	HonorFrame.BonusFrame.RandomBGButton.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-	-- HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1:SetTemplate("Default")
-	-- HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1.Icon:SetAllPoints()
-	-- HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1.Icon:SetPoint("TOPLEFT", 2, -2)
-	-- HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
-	-- HonorFrame.BonusFrame.ArenaSkirmishReward.Reward1.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	HonorFrame.BonusFrame.Arena1Button.Reward:SetTemplate("Default")
+	HonorFrame.BonusFrame.Arena1Button.Reward.Icon:SetAllPoints()
+	HonorFrame.BonusFrame.Arena1Button.Reward.Icon:SetPoint("TOPLEFT", 2, -2)
+	HonorFrame.BonusFrame.Arena1Button.Reward.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
+	HonorFrame.BonusFrame.Arena1Button.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	for _, i in pairs({"RandomBGButton", "Arena1Button", "AshranButton"}) do
 		local button = HonorFrame.BonusFrame[i]
