@@ -161,39 +161,9 @@ local function LoadSkin()
 			object.icon:SetSize(36, 36)
 			object.icon.SetSize = T.dummy
 		end
-		GearManagerDialogPopup:StripTextures()
-		GearManagerDialogPopup:SetTemplate("Transparent")
-		GearManagerDialogPopup:SetPoint("TOPLEFT", PaperDollFrame, "TOPRIGHT", 3, 0)
-		GearManagerDialogPopupScrollFrame:StripTextures()
-		GearManagerDialogPopupEditBox:StripTextures(true)
-		GearManagerDialogPopupEditBox:SetTemplate("Overlay")
-		GearManagerDialogPopupEditBox:SetTextInsets(3, 0, 0, 0)
-		GearManagerDialogPopupOkay:SkinButton()
-		GearManagerDialogPopupCancel:SkinButton()
-		GearManagerDialogPopupScrollFrame:SetPoint("TOPRIGHT", -34, -64)
-
-		for i = 1, NUM_GEARSET_ICONS_SHOWN do
-			local button = _G["GearManagerDialogPopupButton"..i]
-			local icon = button.icon
-
-			if button then
-				button:StripTextures()
-				button:StyleButton(true)
-
-				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				_G["GearManagerDialogPopupButton"..i.."Icon"]:SetTexture(nil)
-
-				icon:ClearAllPoints()
-				icon:SetPoint("TOPLEFT", 2, -2)
-				icon:SetPoint("BOTTOMRIGHT", -2, 2)
-				button:SetFrameLevel(button:GetFrameLevel() + 2)
-				if not button.backdrop then
-					button:CreateBackdrop("Default")
-					button.backdrop:SetAllPoints()
-				end
-			end
-		end
 	end)
+
+	T.SkinIconSelectionFrame(GearManagerDialogPopup, NUM_GEARSET_ICONS_SHOWN, "GearManagerDialogPopupButton", frameNameOverride)
 
 	-- Handle Tabs at bottom of character frame
 	for i = 1, 4 do

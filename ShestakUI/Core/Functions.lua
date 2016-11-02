@@ -509,6 +509,49 @@ function T.SkinSlider(f)
 	slider:SetBlendMode("ADD")
 end
 
+function T.SkinIconSelectionFrame(frame, numIcons, buttonNameTemplate, frameNameOverride)
+	local frameName = frameNameOverride or frame:GetName()
+	local scrollFrame = _G[frameName.."ScrollFrame"]
+	local editBox = _G[frameName.."EditBox"]
+	local okayButton = _G[frameName.."OkayButton"] or _G[frameName.."Okay"]
+	local cancelButton = _G[frameName.."CancelButton"] or _G[frameName.."Cancel"]
+
+	frame:StripTextures()
+	frame.BorderBox:StripTextures()
+	scrollFrame:StripTextures()
+	scrollFrame:CreateBackdrop("Overlay")
+	scrollFrame.backdrop:SetPoint("TOPLEFT", 15, 4)
+	scrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 28, -8)
+	editBox:DisableDrawLayer("BACKGROUND")
+
+	frame:SetTemplate("Transparent")
+	frame:SetHeight(frame:GetHeight() + 10)
+	scrollFrame:SetHeight(scrollFrame:GetHeight() + 10)
+
+	okayButton:SkinButton()
+	cancelButton:SkinButton()
+	T.SkinEditBox(editBox)
+
+	cancelButton:ClearAllPoints()
+	cancelButton:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -5, 5)
+
+	if buttonNameTemplate then
+		for i = 1, numIcons do
+			local button = _G[buttonNameTemplate..i]
+			local icon = _G[button:GetName().."Icon"]
+
+			button:StripTextures()
+			button:StyleButton(true)
+			button:SetTemplate("Default")
+
+			icon:ClearAllPoints()
+			icon:SetPoint("TOPLEFT", 2, -2)
+			icon:SetPoint("BOTTOMRIGHT", -2, 2)
+			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		end
+	end
+end
+
 local LoadBlizzardSkin = CreateFrame("Frame")
 LoadBlizzardSkin:RegisterEvent("ADDON_LOADED")
 LoadBlizzardSkin:SetScript("OnEvent", function(self, event, addon)
