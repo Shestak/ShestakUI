@@ -261,6 +261,5 @@ if IsWetxius then
 	frame:RegisterEvent("PLAYER_LOGIN")
 	frame:SetScript("OnEvent", function()
 		SetCVar("lootUnderMouse", 1)
-		--BETA SetCVar("cameraDistanceMoveSpeed", 50)
 	end)
 end
