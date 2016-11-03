@@ -86,12 +86,12 @@ if modules and ((coords and coords.enabled) or (location and location.enabled)) 
 		self.elapsed = (self.elapsed or 0) + elapsed
 		if self.elapsed >= 0.2 then
 			coordX, coordY = GetPlayerMapPosition(P)
-			
+
 			if not GetPlayerMapPosition(P) then
 				coordX = 0
 				coordY = 0
 			end
-			
+
 			self.elapsed = 0
 		end
 	end)
@@ -770,17 +770,17 @@ if clock.enabled then
 					GameTooltip:AddDoubleLine(name, fmttime(reset), 1, 1, 1, 1, 1, 1)
 				end
 			end
-			--BETA if T.level >= 100 then
-				-- local c = 0
-				-- for _, q in ipairs({36054, 36055, 36056, 36057, 36058, 36060, 37453, 37452, 37454, 37455, 37456, 37457, 37458, 37459}) do
-					-- if IsQuestFlaggedCompleted(q) then
-						-- c = c + 1
-					-- end
-				-- end
-				-- GameTooltip:AddLine(" ")
-				-- GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
-				-- GameTooltip:AddDoubleLine(L_STATS_SEALS..": ", c, 1, 1, 1, 1, 1, 1)
-			-- end
+			if T.level >= 110 then
+				local c = 0
+				for _, q in ipairs({43892, 43893, 43894, 43895, 43896, 43897}) do
+					if IsQuestFlaggedCompleted(q) then
+						c = c + 1
+					end
+				end
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
+				GameTooltip:AddDoubleLine(L_STATS_SEALS..": ", c, 1, 1, 1, 1, 1, 1)
+			end
 			GameTooltip:Show()
 		end,
 		OnClick = function(_, b) (b == "RightButton" and ToggleTimeManager or ToggleCalendar)() end
