@@ -87,6 +87,7 @@ if C.reminder.solo_buffs_enable == true then
 				["spells"] = {
 					2823,	-- Deadly Poison
 					8679,	-- Wound Poison
+					200802,	-- Agonizing Poison
 				},
 				["spec"] = 1,		-- Only Assassination have poisen now
 				["combat"] = true,
