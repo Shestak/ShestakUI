@@ -8,7 +8,11 @@ local spacing = 7
 
 local ThreatMeterAnchor = CreateFrame("Frame", "ThreatMeterAnchor", UIParent)
 ThreatMeterAnchor:SetSize(C.threat.width + 4, (C.threat.height * C.threat.bar_rows) + (spacing * (C.threat.bar_rows - 1)) + 4)
-ThreatMeterAnchor:SetPoint(unpack(C.position.threat_meter))
+if C.actionbar.split_bars then
+	ThreatMeterAnchor:SetPoint(C.position.threat_meter[1], SplitBarRight, C.position.threat_meter[3], C.position.threat_meter[4], C.position.threat_meter[5])
+else
+	ThreatMeterAnchor:SetPoint(unpack(C.position.threat_meter))
+end
 
 local bar, tList, barList = {}, {}, {}
 local max = math.max
