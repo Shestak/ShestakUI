@@ -3798,14 +3798,20 @@ C["filger_spells"] = {
 			-- Momentum (debuff)
 			{spellID = 198108, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Dragons of Nightmare
+			-- Mark of Ysondre
+			{spellID = 203102, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Mark of Taerar
+			{spellID = 203121, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Mark of Emeriss
+			{spellID = 203125, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Mark of Lethon
+			{spellID = 203124, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Nightmare Bloom (standing in, should be at least 1 player)
 			{spellID = 207681, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Defiled Vines (root, magic)
 			{spellID = 203770, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Volatile Infection (AoE dot)
 			{spellID = 203787, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Shadow Burst (dot, stacks)
-			{spellID = 204044, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Cenarius
 			-- Creeping Nightmares (dot, stacks)
 			{spellID = 210279, unitID = "player", caster = "all", filter = "DEBUFF"},
