@@ -411,7 +411,7 @@ local function Shared(self, unit)
 			self.HolyPower:SetSize(217, 7)
 
 			for i = 1, 5 do
-				self.HolyPower[i] = CreateFrame("StatusBar", self:GetName().."_HolyPowerBar", self.HolyPower)
+				self.HolyPower[i] = CreateFrame("StatusBar", self:GetName().."_HolyPower"..i, self.HolyPower)
 				self.HolyPower[i]:SetSize(213 / 5, 7)
 				if i == 1 then
 					self.HolyPower[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -425,11 +425,7 @@ local function Shared(self, unit)
 				self.HolyPower[i].bg:SetAllPoints()
 				self.HolyPower[i].bg:SetTexture(C.media.texture)
 				self.HolyPower[i].bg:SetVertexColor(0.89, 0.88, 0.1, 0.2)
-
-				self.HolyPower[i].width = self.HolyPower[i]:GetWidth()
 			end
-
-			self.HolyPower.Override = T.UpdateHoly
 		end
 
 		-- Soul Shards bar
