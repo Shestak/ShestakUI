@@ -294,18 +294,18 @@ local function LoadSkin()
 
 	LFGListFrame.EntryCreation:StripTextures()
 	LFGListFrame.EntryCreation.Inset:StripTextures()
-	--BETA LFGListFrame.EntryCreation.Description:StripTextures()
-	--BETA LFGListApplicationDialogDescription:StripTextures()
+	LFGListFrame.EntryCreation.Description:StripTextures()
+	LFGListApplicationDialogDescription:StripTextures()
 	LFGListInviteDialog:SetTemplate("Transparent")
 	LFGListInviteDialog.AcknowledgeButton:SkinButton()
 	LFGListInviteDialog.AcceptButton:SkinButton()
 	LFGListInviteDialog.DeclineButton:SkinButton()
 
-	--BETA T.SkinEditBox(LFGListApplicationDialogDescription)
+	T.SkinEditBox(LFGListApplicationDialogDescription)
 	T.SkinEditBox(LFGListFrame.EntryCreation.Name, nil, 17)
 	T.SkinEditBox(LFGListFrame.EntryCreation.ItemLevel.EditBox, nil, 17)
 	T.SkinEditBox(LFGListFrame.EntryCreation.VoiceChat.EditBox, nil, 17)
-	--BETA T.SkinEditBox(LFGListFrame.EntryCreation.Description)
+	T.SkinEditBox(LFGListFrame.EntryCreation.Description)
 	T.SkinDropDownBox(LFGListFrame.EntryCreation.CategoryDropDown, 320)
 	T.SkinDropDownBox(LFGListFrame.EntryCreation.GroupDropDown)
 	T.SkinDropDownBox(LFGListFrame.EntryCreation.ActivityDropDown)
@@ -348,33 +348,9 @@ tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
 local function LoadSecondarySkin()
 	ChallengesFrameInset:StripTextures()
 	ChallengesFrameInsetBg:Hide()
-	--BETA ChallengesFrameDetails.bg:Hide()
-	-- select(2, ChallengesFrameDetails:GetRegions()):Hide()
-	-- select(9, ChallengesFrameDetails:GetRegions()):Hide()
-	-- select(10, ChallengesFrameDetails:GetRegions()):Hide()
-	-- select(11, ChallengesFrameDetails:GetRegions()):Hide()
-	-- ChallengesFrameDungeonButton1:SetPoint("TOPLEFT", ChallengesFrame, "TOPLEFT", 8, -83)
 
-	-- ChallengesFrameLeaderboard:SkinButton(true)
-
-	-- for i = 1, 8 do
-		-- local button = ChallengesFrame["button"..i]
-		-- button:SetTemplate("Overlay")
-		-- button:StyleButton()
-		-- button.selectedTex:SetDrawLayer("ARTWORK")
-		-- button.selectedTex:SetColorTexture(1, 0.82, 0, 0.3)
-		-- button.selectedTex:SetPoint("TOPLEFT", 2, -2)
-		-- button.selectedTex:SetPoint("BOTTOMRIGHT", -2, 2)
-	-- end
-
-	-- for i = 1, 3 do
-		-- local rewardsRow = ChallengesFrame["RewardRow"..i]
-		-- for j = 1, 2 do
-			-- local button = rewardsRow["Reward"..j]
-			-- button:CreateBackdrop("Default")
-			-- button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		-- end
-	-- end
+	T.SkinCloseButton(ChallengesKeystoneFrame.CloseButton)
+	ChallengesKeystoneFrame.StartButton:SkinButton(true)
 end
 
 T.SkinFuncs["Blizzard_ChallengesUI"] = LoadSecondarySkin
