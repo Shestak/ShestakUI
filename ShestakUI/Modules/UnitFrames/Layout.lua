@@ -285,14 +285,14 @@ local function Shared(self, unit)
 		if T.class == "MAGE" then
 			-- Arcane Charge bar
 			if C.unitframe_class_bar.arcane == true then
-				self.ArcaneCharge = CreateFrame("Frame", self:GetName().."ArcaneCharge", self)
+				self.ArcaneCharge = CreateFrame("Frame", self:GetName().."_ArcaneCharge", self)
 				self.ArcaneCharge:CreateBackdrop("Default")
 				self.ArcaneCharge:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.ArcaneCharge:SetSize(217, 7)
 
 				for i = 1, 4 do
-					self.ArcaneCharge[i] = CreateFrame("StatusBar", self:GetName().."ArcaneCharge"..i, self.ArcaneCharge)
-					self.ArcaneCharge[i]:SetSize(213 / 4, 7)
+					self.ArcaneCharge[i] = CreateFrame("StatusBar", self:GetName().."_ArcaneCharge"..i, self.ArcaneCharge)
+					self.ArcaneCharge[i]:SetSize(214 / 4, 7)
 					if i == 1 then
 						self.ArcaneCharge[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 					else
