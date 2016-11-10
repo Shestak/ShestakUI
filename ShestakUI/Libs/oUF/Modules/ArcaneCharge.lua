@@ -9,12 +9,16 @@ local Update = function(self, event, unit, powerType)
 	if(self.unit ~= unit or (powerType and powerType ~= 'ARCANE_CHARGES')) then return end
 
 	local ac = self.ArcaneCharge
-	if(ac.PreUpdate) then ac:PreUpdate() end
 
+	if(ac.PreUpdate) then
+		ac:PreUpdate(unit)
+	end
+
+	local cur = UnitPower('player', SPELL_POWER_ARCANE_CHARGES)
 	local max = UnitPowerMax('player', SPELL_POWER_ARCANE_CHARGES)
-	local num = UnitPower('player', SPELL_POWER_ARCANE_CHARGES)
+
 	for i = 1, max do
-		if(i <= num) then
+		if(i <= cur) then
 			ac[i]:SetAlpha(1)
 		else
 			ac[i]:SetAlpha(0.2)
@@ -22,7 +26,7 @@ local Update = function(self, event, unit, powerType)
 	end
 
 	if(ac.PostUpdate) then
-		return ac:PostUpdate(num)
+		return ac:PostUpdate(cur)
 	end
 end
 

@@ -14,19 +14,19 @@ local function Update(self, event, unit, powerType)
 		ss:PreUpdate(unit)
 	end
 
-	local num = UnitPower('player', SPELL_POWER_SOUL_SHARDS)
+	local cur = UnitPower('player', SPELL_POWER_SOUL_SHARDS)
 	local max = UnitPowerMax("player", SPELL_POWER_SOUL_SHARDS)
 
 	for i = 1, max do
-		if i <= num then
+		if i <= cur then
 			ss[i]:SetAlpha(1)
 		else
-			ss[i]:SetAlpha(.2)
+			ss[i]:SetAlpha(0.2)
 		end
 	end
 
 	if(ss.PostUpdate) then
-		return ss:PostUpdate(num)
+		return ss:PostUpdate(cur)
 	end
 end
 

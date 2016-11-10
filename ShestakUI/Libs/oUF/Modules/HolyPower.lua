@@ -9,15 +9,19 @@ local Update = function(self, event, unit, powerType)
 	if(self.unit ~= unit or (powerType and powerType ~= 'HOLY_POWER')) then return end
 
 	local hp = self.HolyPower
-	if(hp.PreUpdate) then hp:PreUpdate() end
 
-	local maxHolyPower = UnitPowerMax('player', SPELL_POWER_HOLY_POWER)
+	if(hp.PreUpdate) then
+		hp:PreUpdate(unit)
+	end
+
 	local num = UnitPower('player', SPELL_POWER_HOLY_POWER)
-	for i = 1, maxHolyPower do
+	local max = UnitPowerMax('player', SPELL_POWER_HOLY_POWER)
+
+	for i = 1, max do
 		if(i <= num) then
-			hp[i]:Show()
+			hp[i]:SetAlpha(1)
 		else
-			hp[i]:Hide()
+			hp[i]:SetAlpha(0.2)
 		end
 	end
 
