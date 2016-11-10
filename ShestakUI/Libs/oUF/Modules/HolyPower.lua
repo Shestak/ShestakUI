@@ -14,11 +14,11 @@ local Update = function(self, event, unit, powerType)
 		hp:PreUpdate(unit)
 	end
 
-	local num = UnitPower('player', SPELL_POWER_HOLY_POWER)
+	local cur = UnitPower('player', SPELL_POWER_HOLY_POWER)
 	local max = UnitPowerMax('player', SPELL_POWER_HOLY_POWER)
 
 	for i = 1, max do
-		if(i <= num) then
+		if(i <= cur) then
 			hp[i]:SetAlpha(1)
 		else
 			hp[i]:SetAlpha(0.2)
@@ -26,7 +26,7 @@ local Update = function(self, event, unit, powerType)
 	end
 
 	if(hp.PostUpdate) then
-		return hp:PostUpdate(num)
+		return hp:PostUpdate(cur)
 	end
 end
 
