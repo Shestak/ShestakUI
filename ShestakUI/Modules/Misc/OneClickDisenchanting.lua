@@ -44,8 +44,8 @@ function button:PLAYER_LOGIN()
 			if not spell and milling and (GetItemCount(tonumber(string.match(link, 'item:(%d+):'))) >= 5) then
 				spell, r, g, b = GetSpellInfo(51005), 0.5, 1, 0.5
 			elseif not spell and disenchanter then
-				local _, _, itemRarity, _, _, itemType = GetItemInfo(item)
-				if not (itemType == ARMOR or itemType == ENCHSLOT_WEAPON) or not (itemRarity and (itemRarity > 1 and itemRarity < 5)) then return end
+				local _, _, itemRarity, _, _, itemType, _, _, _, _, _, class = GetItemInfo(item)
+				if not (itemType == ARMOR or itemType == ENCHSLOT_WEAPON or class == 3) or not (itemRarity and (itemRarity > 1 and (itemRarity < 5 or itemRarity == 6))) then return end
 				spell, r, g, b = GetSpellInfo(13262), 0.5, 0.5, 1
 			elseif not spell and rogue then
 				for index = 1, self:NumLines() do
