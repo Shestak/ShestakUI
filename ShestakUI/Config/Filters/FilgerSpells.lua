@@ -700,6 +700,8 @@ C["filger_spells"] = {
 			{spellID = 215648, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Burning Intensity (Crit, Proc) [Infernal Writ]
 			{spellID = 215816, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Maddening Whispers (Damage, Proc) [Wriggling Sinew]
+			{spellID = 222046, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing
 			-- Constellations (Mastery, Haste, or Critical Strike, Proc) [Etraeus' Celestial Map]
 			{spellID = 225136, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1243,6 +1245,8 @@ C["filger_spells"] = {
 			{spellID = 215648, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Burning Intensity (Crit, Proc) [Infernal Writ]
 			{spellID = 215816, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Maddening Whispers (Damage, Proc) [Wriggling Sinew]
+			{spellID = 222046, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- Mark of the Claw (Crit and Haste)
@@ -2065,6 +2069,8 @@ C["filger_spells"] = {
 			{spellID = 215648, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Burning Intensity (Crit, Proc) [Infernal Writ]
 			{spellID = 215816, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Maddening Whispers (Damage, Proc) [Wriggling Sinew]
+			{spellID = 222046, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing
 			-- Constellations (Mastery, Haste, or Critical Strike, Proc) [Etraeus' Celestial Map]
 			{spellID = 225136, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2672,6 +2678,8 @@ C["filger_spells"] = {
 			{spellID = 215648, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Burning Intensity (Crit, Proc) [Infernal Writ]
 			{spellID = 215816, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Maddening Whispers (Damage, Proc) [Wriggling Sinew]
+			{spellID = 222046, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healing
 			-- Constellations (Mastery, Haste, or Critical Strike, Proc) [Etraeus' Celestial Map]
 			{spellID = 225136, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2911,6 +2919,8 @@ C["filger_spells"] = {
 			{spellID = 215648, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Burning Intensity (Crit, Proc) [Infernal Writ]
 			{spellID = 215816, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Maddening Whispers (Damage, Proc) [Wriggling Sinew]
+			{spellID = 222046, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- Mark of the Claw (Crit and Haste)
