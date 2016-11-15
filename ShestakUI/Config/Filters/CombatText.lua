@@ -183,11 +183,6 @@ elseif T.class == "MONK" then
 		--BETA T.aoespam[124101] = 3		-- Zen Sphere: Detonate
 		T.aoespam[116670] = 0		-- Uplift
 		--BETA T.aoespam[157590] = 3		-- Breath of the Serpent
-		--BETA T.aoespam[159620] = 3		-- Chi Explosion
-		-- T.merge[157681] = 159620	-- Chi Explosion
-		-- T.merge[173438] = 159620	-- Chi Explosion
-		-- T.merge[182078] = 159620	-- Chi Explosion
-		-- T.merge[173439] = 159620	-- Chi Explosion
 		T.aoespam[178173] = 3		-- Gift of the Ox
 		-- Damaging spells
 		T.aoespam[117952] = 3		-- Crackling Jade Lightning
@@ -203,9 +198,6 @@ elseif T.class == "MONK" then
 		--BETA T.aoespam[124098] = 3		-- Zen Sphere
 		--BETA T.aoespam[125033] = 3		-- Zen Sphere: Detonate
 		T.aoespam[158221] = 3		-- Hurricane Strike
-		--BETA T.aoespam[152174] = 3		-- Chi Explosion
-		-- T.merge[157680] = 152174	-- Chi Explosion
-		--BETA T.aoespam[157676] = 1		-- Chi Explosion
 	end
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
@@ -224,7 +216,6 @@ elseif T.class == "PALADIN" then
 		--BETA T.aoespam[159375] = 3		-- Shining Protector
 		-- Damaging spells
 		T.aoespam[81297] = 3		-- Consecration
-		--BETA T.aoespam[119072] = .5		-- Holy Wrath
 		T.aoespam[53385] = 0		-- Divine Storm
 		--BETA T.aoespam[122032] = 0		-- Exorcism (Glyph)
 		--BETA T.aoespam[31803] = 3		-- Censure

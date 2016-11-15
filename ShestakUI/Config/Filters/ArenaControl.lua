@@ -34,14 +34,12 @@ T.ArenaControl = {
 	[SpellName(24394)] = 5,		-- Intimidation
 	-- Mage
 	[SpellName(118)] = 5,		-- Polymorph
-	--BETA [SpellName(44572)] = 5,	-- Deep Freeze
 	[SpellName(82691)] = 5,		-- Ring of Frost
 	[SpellName(31661)] = 5,		-- Dragon's Breath
 	-- Monk
 	[SpellName(115078)] = 5,	-- Paralysis
 	[SpellName(119381)] = 5,	-- Leg Sweep
 	[SpellName(120086)] = 5,	-- Fists of Fury
-	-- BETA [SpellName(119392)] = 5,	-- Charging Ox Wave
 	-- Paladin
 	[SpellName(853)] = 5,		-- Hammer of Justice
 	[SpellName(20066)] = 5,		-- Repentance
@@ -64,7 +62,6 @@ T.ArenaControl = {
 	-- Warlock
 	[SpellName(118699)] = 5,	-- Fear
 	[SpellName(30283)] = 5,		-- Shadowfury
-	-- BETA [SpellName(137143)] = 5,	-- Blood Horror
 	[SpellName(89766)] = 5,		-- Axe Toss (Felguard)
 	[SpellName(5484)] = 5,		-- Howl of Terror
 	[SpellName(6789)] = 5,		-- Mortal Coil
@@ -83,7 +80,6 @@ T.ArenaControl = {
 	[SpellName(47476)] = 4,		-- Strangulate
 	[SpellName(81261)] = 4,		-- Solar Beam
 	--BETA [SpellName(114238)] = 4,	-- Fae Silence
-	-- BETA [SpellName(102051)] = 4,	-- Frostjaw
 	[SpellName(31935)] = 4,		-- Avenger's Shield
 	[SpellName(15487)] = 4,		-- Silence
 	[SpellName(1330)] = 4,		-- Garrote - Silence

@@ -57,7 +57,6 @@ if C.enemycooldown.enable == true then
 		[96231] = 15,	-- Rebuke
 		[1766] = 15,	-- Kick
 		[6552] = 15,	-- Pummel
-		--BETA [102051] = 20,	-- Frostjaw
 		[147362] = 24,	-- Counter Shot
 		[2139] = 24,	-- Counterspell
 		[19647] = 24,	-- Spell Lock
@@ -71,7 +70,6 @@ if C.enemycooldown.enable == true then
 		[20066] = 15,	-- Repentance
 		[108194] = 30,	-- Asphyxiate
 		--BETA [1499] = 30,	-- Freezing Trap
-		--BETA [44572] = 30,	-- Deep Freeze
 		[8122] = 30,	-- Psychic Scream
 		[30283] = 30,	-- Shadowfury
 		[107570] = 30,	-- Storm Bolt

@@ -799,9 +799,7 @@ if C.raidframe.plugins_pvp_debuffs == true then
 		-- Mage
 		[SpellName(61305)] = 3,		-- Polymorph
 		[SpellName(82691)] = 3,		-- Ring of Frost
-		--BETA [SpellName(44572)] = 3,		-- Deep Freeze
 		[SpellName(31661)] = 3,		-- Dragon's Breath
-		--BETA [SpellName(102051)] = 3,	-- Frostjaw
 		[SpellName(122)] = 2,		-- Frost Nova
 		-- Monk
 		[SpellName(115078)] = 3,	-- Paralysis
