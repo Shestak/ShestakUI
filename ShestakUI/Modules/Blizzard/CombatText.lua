@@ -506,10 +506,20 @@ local StartConfigmode = function()
 			f.d:SetColorTexture(0.5, 0.5, 0.5)
 			f.d:SetAlpha(0.3)
 
-			f.tr = f:CreateTitleRegion()
-			f.tr:SetPoint("TOPLEFT", f, "TOPLEFT", 0, 0)
-			f.tr:SetPoint("TOPRIGHT", f, "TOPRIGHT", 0, 0)
-			f.tr:SetHeight(20)
+			if not f.tr then
+				f.tr = CreateFrame("Frame", nil, f)
+				f.tr:SetScript("OnDragStart", function(self, button)
+					self:GetParent():StartMoving()
+				end)
+				f.tr:SetScript("OnDragStop", function(self)
+					self:GetParent():StopMovingOrSizing()
+				end)
+				f.tr:EnableMouse(true)
+				f.tr:RegisterForDrag("LeftButton")
+				f.tr:SetPoint("TOPLEFT", f, "TOPLEFT", 0, 0)
+				f.tr:SetPoint("TOPRIGHT", f, "TOPRIGHT", 0, 0)
+				f.tr:SetHeight(20)
+			end
 
 			f:EnableMouse(true)
 			f:RegisterForDrag("LeftButton")
@@ -717,10 +727,10 @@ end
 if C.combattext.damage then
 	local unpack, select, time = unpack, select, time
 	local gflags = bit.bor(COMBATLOG_OBJECT_AFFILIATION_MINE,
- 		COMBATLOG_OBJECT_REACTION_FRIENDLY,
- 		COMBATLOG_OBJECT_CONTROL_PLAYER,
- 		COMBATLOG_OBJECT_TYPE_GUARDIAN
- 	)
+		COMBATLOG_OBJECT_REACTION_FRIENDLY,
+		COMBATLOG_OBJECT_CONTROL_PLAYER,
+		COMBATLOG_OBJECT_TYPE_GUARDIAN
+	)
 	local xCTd = CreateFrame("Frame")
 	if C.combattext.damage_color then
 		ct.dmgcolor = {}
