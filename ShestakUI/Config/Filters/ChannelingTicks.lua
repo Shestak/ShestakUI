@@ -19,26 +19,21 @@ end
 T.CastBarTicks = {
 	-- Druid
 	[SpellName(740)] = 4,		-- Tranquility
-	--BETA [SpellName(16914)] = 10,	-- Hurricane
-	--BETA [SpellName(106996)] = 10,	-- Astral Storm
 	-- Mage
 	[SpellName(5143)] = 5,		-- Arcane Missiles
-	--BETA [SpellName(10)] = 8,		-- Blizzard
 	[SpellName(12051)] = 4,		-- Evocation
 	-- Monk
 	[SpellName(115175)] = 9,	-- Soothing Mist
 	[SpellName(117952)] = 6,	-- Crackling Jade Lightning
 	[SpellName(113656)] = 4,	-- Fists of Fury
 	-- Priest
-	[SpellName(15407)] = 3,		-- Mind Flay
+	[SpellName(15407)] = 4,		-- Mind Flay
 	[SpellName(48045)] = 5,		-- Mind Sear
-	[SpellName(47540)] = 2,		-- Penance
+	[SpellName(47540)] = 3,		-- Penance
 	[SpellName(64843)] = 4,		-- Divine Hymn
-	--BETA [SpellName(129197)] = 3,	-- Insanity
+	[SpellName(179338)] = 5,	-- Searing Insanity
 	-- Warlock
 	[SpellName(689)] = 6,		-- Drain Life
-	--BETA [SpellName(103103)] = 3,	-- Drain Soul
+	[SpellName(198590)] = 6,	-- Drain Soul
 	[SpellName(755)] = 6,		-- Health Funnel
-	--BETA [SpellName(1949)] = 15,		-- Hellfire
-	[SpellName(8690)] = 4,		-- Rain of Fire
 }

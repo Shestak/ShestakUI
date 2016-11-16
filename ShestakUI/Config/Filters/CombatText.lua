@@ -349,7 +349,7 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[689] = 3			-- Drain Life
 		--BETA T.aoespam[5857] = 3			-- Hellfire
 		--BETA T.aoespam[129476] = 3		-- Immolation Aura
-		--BETA T.aoespam[103103] = 3		-- Drain Soul
+		T.aoespam[198590] = 3		-- Drain Soul
 		T.aoespam[86040] = 3		-- Hand of Gul'dan
 		--BETA T.aoespam[124915] = 3		-- Chaos Wave
 		--BETA T.aoespam[47960] = 3		-- Shadowflame
@@ -370,9 +370,6 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[3716] = 3			-- Torment (Voidwalker)
 		T.merge[157736] = 348		-- Immolate
 		--BETA T.merge[108686] = 348		-- Immolate
-		--BETA T.merge[131737] = 980		-- Agony (Drain Soul)
-		--BETA T.merge[131740] = 146739	-- Corruption (Drain Soul)
-		--BETA T.merge[131736] = 30108		-- Unstable Affliction (Drain Soul)
 	end
 	if C.combattext.healing then
 		T.healfilter[63106] = true	-- Siphon Life
