@@ -1295,7 +1295,7 @@ local function UpdateName(unitFrame)
 			level = "??"
 			r, g, b = 0.8, 0.05, 0
 		else
-			local color = GetQuestDifficultyColor(level)
+			local color = GetCreatureDifficultyColor(level)
 			r, g, b = color.r, color.g, color.b
 		end
 
