@@ -130,7 +130,6 @@ local function LoadSkin()
 		QuestInfoRewardsFrame.XPFrame.ReceiveText:SetShadowOffset(1, -1)
 		QuestInfoRewardsFrame.PlayerTitleText:SetTextColor(1, 1, 1)
 		QuestInfoRewardsFrame.PlayerTitleText:SetShadowOffset(1, -1)
-		MapQuestInfoRewardsFrameQuestInfoItem1.Count:SetFontObject(NumberFontNormal)
 
 		QuestObjectiveText()
 
@@ -224,7 +223,7 @@ local function LoadSkin()
 
 			questItem.Name:SetTextColor(1, 1, 1)
 		end
-    end)
+	end)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
