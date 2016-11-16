@@ -82,6 +82,28 @@ T.RaidDebuffs = {
 -----------------------------------------------------------------
 -- Legion
 -----------------------------------------------------------------
+-- Trial of Valor
+	-- Odyn
+	[SpellName(198088)] = 3,    -- Glowing Fragment
+	[SpellName(228915)] = 3,    -- Stormforged Spear
+	[SpellName(227959)] = 3,    -- Storm of Justice
+	[SpellName(227475)] = 3,    -- Cleansing Flame
+	-- Guarm
+	[SpellName(227570)] = 3,    -- Dark Discharge
+	[SpellName(227566)] = 3,    -- Salty Spittle
+	[SpellName(227539)] = 3,    -- Fiery Phlegm
+	[SpellName(228250)] = 4,    -- Shadow Lick
+	[SpellName(228246)] = 4,    -- Frost Lick
+	[SpellName(228226)] = 4,    -- Flame Lick
+	-- Helya
+	[SpellName(228054)] = 3,    -- Taint of the Sea
+	[SpellName(227982)] = 3,    -- Bilewater Redox
+	[SpellName(193367)] = 3,    -- Fetid Rot
+	[SpellName(227903)] = 3,    -- Orb of Corruption
+	[SpellName(228058)] = 3,    -- Orb of Corrosion
+	[SpellName(228519)] = 3,    -- Anchor Slam
+	[SpellName(202476)] = 3,    -- Rabid
+	[SpellName(232450)] = 3,    -- Corrupted Axion
 -- The Nighthold
 	-- Skorpyron
 	-- Chronomatic Anomaly
@@ -111,7 +133,7 @@ T.RaidDebuffs = {
 	[SpellName(203646)] = 4,    -- Burst of Corruption
 	-- Il'gynoth, Heart of Corruption
 	[SpellName(215845)] = 3,    -- Dispersed Spores (dot)
-	[SpellName(210099)] = 6,    -- Fixate (fixate)
+	[SpellName(210099)] = 6,    -- Fixate
 	[SpellName(209469)] = 5,    -- Touch of Corruption (dot, stacks, magic)
 	[SpellName(210984)] = 3,    -- Eye of Fate (tank debuff, stacks)
 	[SpellName(208697)] = 4,    -- Mind Flay (dot)
