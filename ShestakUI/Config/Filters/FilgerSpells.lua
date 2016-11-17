@@ -1447,7 +1447,7 @@ C["filger_spells"] = {
 			-- Dampen Harm
 			{spellID = 122278, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nimble Brew
-			--BETA {spellID = 137562, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 213664, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Serenity
 			{spellID = 152173, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Energizing Brew
@@ -1640,8 +1640,6 @@ C["filger_spells"] = {
 			{spellID = 115288, filter = "CD"},
 			-- Diffuse Magic
 			{spellID = 122783, filter = "CD"},
-			-- Breath of the Serpent
-			--BETA {spellID = 157535, filter = "CD"},
 			-- Serenity
 			{spellID = 152173, filter = "CD"},
 			-- Touch of Karma
@@ -1649,7 +1647,7 @@ C["filger_spells"] = {
 			-- Touch of Death
 			{spellID = 115080, filter = "CD"},
 			-- Nimble Brew
-			--BETA {spellID = 137562, filter = "CD"},
+			{spellID = 213664, filter = "CD"},
 			-- Life Cocoon
 			{spellID = 116849, filter = "CD"},
 			-- Invoke Xuen, the White Tiger
@@ -2770,8 +2768,6 @@ C["filger_spells"] = {
 			{spellID = 51490, filter = "CD"},
 			-- Earthbind Totem
 			{spellID = 2484, filter = "CD"},
-			-- Tremor Totem
-			--BETA {spellID = 8143, filter = "CD"},
 			-- Shamanistic Rage
 			--BETA {spellID = 30823, filter = "CD"},
 			-- Stone Bulwark Totem
@@ -2834,16 +2830,8 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
-			-- Dark Bargain
-			--BETA {spellID = 110913, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unending Resolve
 			{spellID = 104773, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dark Soul: Knowledge
-			--BETA {spellID = 113861, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dark Soul: Misery
-			--BETA {spellID = 113860, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dark Soul: Instability
-			--BETA {spellID = 113858, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Harvest
 			{spellID = 196098, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mana Tap
@@ -2854,8 +2842,6 @@ C["filger_spells"] = {
 			--BETA {spellID = 137587, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Regeneration
 			{spellID = 108359, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fire and Brimstone
-			--BETA {spellID = 108683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Burning Rush
 			{spellID = 111400, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sacrificial Pact
@@ -3622,8 +3608,6 @@ C["filger_spells"] = {
 			{spellID = 47476, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Solar Beam
 			{spellID = 78675, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Fae Silence
-			--BETA {spellID = 114238, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Avenger's Shield
 			{spellID = 31935, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Silence
@@ -3662,8 +3646,6 @@ C["filger_spells"] = {
 			--BETA {spellID = 87194, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Void Tendril's Grasp
 			{spellID = 114404, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Frozen Power
-			--BETA {spellID = 63685, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Earthgrab
 			{spellID = 64695, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Debilitate (Terrorguard)
@@ -3678,8 +3660,6 @@ C["filger_spells"] = {
 			{spellID = 58180, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Typhoon
 			{spellID = 61391, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Freezing Trap (Glyph)
-			--BETA {spellID = 61394, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Concussive Shot
 			{spellID = 5116, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Breath (Chimaera)
@@ -3932,8 +3912,6 @@ C["filger_spells"] = {
 			{spellID = 99, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Solar Beam
 			{spellID = 78675, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Fae Silence
-			--BETA {spellID = 114238, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Entangling Roots
 			{spellID = 339, unitID = "target", caster = "all", filter = "DEBUFF"},
 
@@ -3991,7 +3969,7 @@ C["filger_spells"] = {
 			-- Dampen Harm
 			{spellID = 122278, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Nimble Brew
-			--BETA {spellID = 137562, unitID = "target", caster = "all", filter = "BUFF"},
+			{spellID = 213664, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Paralysis
 			{spellID = 115078, unitID = "target", caster = "all", filter = "DEBUFF"},
@@ -4095,8 +4073,6 @@ C["filger_spells"] = {
 			{spellID = 118345, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Warlock
-			-- Dark Bargain
-			--BETA {spellID = 110913, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Soulstone
 			{spellID = 20707, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Unending Resolve
@@ -4147,8 +4123,6 @@ C["filger_spells"] = {
 			{spellID = 132169, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
 			-- Shockwave
 			{spellID = 132168, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Gag Order
-			--BETA {spellID = 18498, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Racial
 			-- Arcane Torrent

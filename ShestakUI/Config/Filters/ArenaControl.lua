@@ -79,7 +79,6 @@ T.ArenaControl = {
 	-- Silences
 	[SpellName(47476)] = 4,		-- Strangulate
 	[SpellName(81261)] = 4,		-- Solar Beam
-	--BETA [SpellName(114238)] = 4,	-- Fae Silence
 	[SpellName(31935)] = 4,		-- Avenger's Shield
 	[SpellName(15487)] = 4,		-- Silence
 	[SpellName(1330)] = 4,		-- Garrote - Silence
@@ -95,9 +94,7 @@ T.ArenaControl = {
 	[SpellName(122)] = 3,		-- Frost Nova
 	[SpellName(33395)] = 3,		-- Freeze (Water Elemental)
 	[SpellName(116706)] = 3,	-- Disable
-	--BETA [SpellName(87194)] = 3,	-- Glyph of Mind Blast
 	[SpellName(114404)] = 3,	-- Void Tendril's Grasp
-	--BETA [SpellName(63685)] = 3,	-- Frozen Power
 	[SpellName(64695)] = 3,		-- Earthgrab
 	[SpellName(170996)] = 3,	-- Debilitate (Terrorguard)
 	[SpellName(107566)] = 3,	-- Staggering Shout

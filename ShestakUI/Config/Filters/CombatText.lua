@@ -182,7 +182,6 @@ elseif T.class == "MONK" then
 		T.aoespam[124081] = 3		-- Zen Sphere
 		--BETA T.aoespam[124101] = 3		-- Zen Sphere: Detonate
 		T.aoespam[116670] = 0		-- Uplift
-		--BETA T.aoespam[157590] = 3		-- Breath of the Serpent
 		T.aoespam[178173] = 3		-- Gift of the Ox
 		-- Damaging spells
 		T.aoespam[117952] = 3		-- Crackling Jade Lightning
