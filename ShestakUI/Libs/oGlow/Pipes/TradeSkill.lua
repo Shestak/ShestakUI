@@ -1,16 +1,17 @@
 local _E
 local hook
---[[BETA
-local pipe = function(id)
-	local itemLink = GetTradeSkillItemLink(id)
+
+local pipe = function(_, id)
+	if not id then return end
+	local itemLink = C_TradeSkillUI.GetRecipeItemLink(id)
 
 	if itemLink then
-		oGlow:CallFilters("tradeskill", TradeSkillSkillIcon, _E and itemLink)
+		oGlow:CallFilters("tradeskill", TradeSkillFrame.DetailsFrame.Contents.ResultIcon, _E and itemLink)
 	end
 
-	for i = 1, GetTradeSkillNumReagents(id) do
-		local reagentFrame = _G["TradeSkillReagent"..i.."IconTexture"]
-		local reagentLink = GetTradeSkillReagentItemLink(id, i)
+	for i = 1, C_TradeSkillUI.GetRecipeNumReagents(id) do
+		local reagentFrame = TradeSkillFrame.DetailsFrame.Contents.Reagents[i].Icon
+		local reagentLink = C_TradeSkillUI.GetRecipeReagentItemLink(id, i)
 
 		oGlow:CallFilters("tradeskill", reagentFrame, _E and reagentLink)
 	end
@@ -22,7 +23,7 @@ local doHook = function()
 			if _E then return pipe(...) end
 		end
 
-		hooksecurefunc("TradeSkillFrame_SetSelection", hook)
+		hooksecurefunc(TradeSkillFrame.RecipeList, "SetSelectedRecipeID", hook)
 	end
 end
 
@@ -56,4 +57,4 @@ local disable = function(self)
 	self:UnregisterEvent("ADDON_LOADED", ADDON_LOADED)
 end
 
-oGlow:RegisterPipe("tradeskill", enable, disable, update, "Profession frame")]]
+oGlow:RegisterPipe("tradeskill", enable, disable, update, "Profession frame")
