@@ -69,7 +69,7 @@ C["misc"] = {
 C["announcements"] = {
 	["drinking"] = false,						-- Announce when arena enemy is drinking
 	["interrupts"] = false,						-- Announce when you interrupt
-	["spells"] = false,							-- Announce when you cast some spell
+	["spells"] = false,							-- Announce when you cast some spell (from the list)
 	["spells_from_all"] = false,				-- Check spells cast from all members
 	["toys"] = false,							-- Announce some annoying toys
 	["says_thanks"] = false,					-- Says thanks for some spells
@@ -529,7 +529,7 @@ C["raidframe"] = {
 	["icons_leader"] = true,					-- Leader icon, assistant icon, master loot icon on frames
 	-- Plugins
 	["plugins_debuffhighlight_icon"] = false,	-- Debuff highlight texture + icon
-	["plugins_aura_watch"] = true,				-- Raid debuff icons
+	["plugins_aura_watch"] = true,				-- Raid debuff icons (from the list)
 	["plugins_aura_watch_timer"] = false,		-- Timer on raid debuff icons
 	["plugins_pvp_debuffs"] = false,			-- Show also PvP debuff icons (from the list)
 	["plugins_healcomm"] = true,				-- Incoming heal bar on raid frame
