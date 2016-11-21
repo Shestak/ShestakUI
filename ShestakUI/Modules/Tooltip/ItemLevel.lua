@@ -154,20 +154,8 @@ local function UnitGear(unit)
 							end
 
 							local numBonusIDs = tonumber(strmatch(itemLink, ".+:%d+:512:%d*:(%d+).+"))
-							if numBonusIDs then
-								if GetDetailedItemLevelInfo then
-									local effectiveLevel, previewLevel, origLevel = GetDetailedItemLevelInfo(itemLink)
-									level = effectiveLevel or level
-								end
-							end
-
-							if quality == 6 then
-								if i == 17 then
-									itemLink = GetInventoryItemLink("player", 16)
-									level = GetDetailedItemLevelInfo(itemLink) or level
-								else
-									level = GetDetailedItemLevelInfo(itemLink) or level
-								end
+							if numBonusIDs or quality == 6 then
+								level = GetDetailedItemLevelInfo(itemLink) or level
 							end
 
 							total = total + level

@@ -223,14 +223,7 @@ function Stuffing:SlotUpdate(b)
 				end
 
 				local numBonusIDs = tonumber(strmatch(clink, ".+:%d+:512:%d*:(%d+).+"))
-				if numBonusIDs then
-					if GetDetailedItemLevelInfo then
-						local effectiveLevel, previewLevel, origLevel = GetDetailedItemLevelInfo(clink)
-						b.itemlevel = effectiveLevel or b.itemlevel
-					end
-				end
-
-				if quality == 6 then
+				if numBonusIDs or quality == 6 then
 					b.itemlevel = GetDetailedItemLevelInfo(clink) or b.itemlevel
 				end
 
