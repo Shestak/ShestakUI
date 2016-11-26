@@ -895,27 +895,33 @@ C["filger_spells"] = {
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Deterrence
-			{spellID = 19263, unitID = "player", caster = "player", filter = "BUFF"},
+			--removed {spellID = 19263, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rapid Fire
-			{spellID = 3045, unitID = "player", caster = "player", filter = "BUFF"},
+			--removed {spellID = 3045, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bestial Wrath
 			{spellID = 19574, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Aspect of the Wild
+			{spellID = 193530, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Beast Cleave
 			{spellID = 118455, unitID = "pet", caster = "player", filter = "BUFF"},
+			-- Titan's Thunder
+			{spellID = 207094, unitID = "pet", caster = "player", filter = "BUFF"},
+			-- Dire Beast
+			{spellID = 120694, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Spirit Mend
+			{spellID = 90361, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Trueshot
 			{spellID = 193526, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Aspect of the Turtle
 			{spellID = 186265, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Aspect of the Cheetah
 			{spellID = 186257, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dire Beast
-			{spellID = 120694, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Camouflage
-			{spellID = 199483, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Spirit Mend
-			{spellID = 90361, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Aspect of the Eagle
+			{spellID = 186289, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Posthaste
 			{spellID = 118922, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Camouflage
+			{spellID = 199483, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Volley
 			{spellID = 194386, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -930,13 +936,21 @@ C["filger_spells"] = {
 
 			-- Buffs
 			-- Steady Focus
-			--BETA {spellID = 177668, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 193533, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lock and Load
-			--BETA {spellID = 168980, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 194595, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thrill of the Hunt
-			--BETA {spellID = 34720, unitID = "player", caster = "player", filter = "BUFF"},
+			--removed {spellID = 34720, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Frenzy
 			{spellID = 19615, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Mongoose Fury
+			{spellID = 190931, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Bullseye
+			{spellID = 204090, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Survivalist
+			{spellID = 164857, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Mok'Nathal Tactics
+			{spellID = 201081, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mend Pet
 			{spellID = 136, unitID = "pet", caster = "player", filter = "BUFF"},
 
@@ -1000,7 +1014,7 @@ C["filger_spells"] = {
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Black Arrow
-			--BETA {spellID = 3674, unitID = "target", caster = "player", filter = "DEBUFF"},
+			{spellID = 194599, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Explosive Shot
 			--BETA {spellID = 53301, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Serpent Sting
@@ -1027,6 +1041,14 @@ C["filger_spells"] = {
 			{spellID = 162546, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- True Aim
 			{spellID = 199803, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Vulnerable
+			{spellID = 187131, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Lacerate
+			{spellID = 185855, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Dragonsfire Grenade
+			{spellID = 194858, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Explosive Trap
+			{spellID = 13812, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -1437,23 +1459,27 @@ C["filger_spells"] = {
 			-- Fortifying Brew
 			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Elusive Brew
-			{spellID = 115308, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			{spellID = 215479, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Tigereye Brew
-			{spellID = 116740, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Touch of Karma
-			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
+			--removed {spellID = 116740, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Diffuse Magic
 			{spellID = 122783, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dampen Harm
 			{spellID = 122278, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nimble Brew
 			{spellID = 213664, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Touch of Karma
+			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Storm, Earth, and Fire
+			{spellID = 137639, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Serenity
 			{spellID = 152173, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Energizing Brew
-			{spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
+			--removed {spellID = 115288, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thunder Focus Tea
 			{spellID = 116680, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Mana Tea
+			{spellID = 197908, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Momentum
 			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -1468,15 +1494,19 @@ C["filger_spells"] = {
 
 			-- Buffs
 			-- Elusive Brew
-			{spellID = 128939, unitID = "player", caster = "player", filter = "BUFF", absID = true, count = 12},
+			--removed {spellID = 128939, unitID = "player", caster = "player", filter = "BUFF", absID = true, count = 12},
+			-- Brew-Stache
+			{spellID = 214373, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mana Tea
-			--BETA {spellID = 115867, unitID = "player", caster = "player", filter = "BUFF", absID = true, count = 18},
+			--removed {spellID = 131561, unitID = "player", caster = "player", filter = "BUFF", absID = true, count = 18},
 			-- Tigereye Brew
 			--BETA {spellID = 125195, unitID = "player", caster = "player", filter = "BUFF", absID = true, count = 10},
 			-- Tiger Power
 			--BETA {spellID = 125359, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combo Breaker: Blackout Kick
 			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
+			-- The Mists of Sheilun
+			{spellID = 199888, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combo Breaker: Tiger Palm
 			--BETA {spellID = 118864, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shuffle
@@ -1569,6 +1599,8 @@ C["filger_spells"] = {
 			{spellID = 215198, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Solemnity (Haste, Proc) [Flask of the Solemn Night]
 			{spellID = 224347, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Spirit Fragment (Damage Reduction) [Vial of Nightmare Fog]
+			{spellID = 221878, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- Mark of the Claw (Crit and Haste)
@@ -1585,12 +1617,22 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
+			--buffs
+			-- Hit Combo
+			{spellID = 196741, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Life Cocoon
+			{spellID = 116849, unitID = "target", caster = "player", filter = "BUFF"},
+
 			-- Heavy Stagger
-			{spellID = 124273, unitID = "player", caster = "player", filter = "DEBUFF"},
+			{spellID = 124273, unitID = "player", caster = "player", filter = "DEBUFF", absID = true},
 			-- Dizzying Haze
 			--BETA {spellID = 116330, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Breath of Fire
 			{spellID = 123725, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Keg Smash
+			{spellID = 121253, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Exploding Keg
+			{spellID = 214326, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Rising Sun Kick
 			--BETA {spellID = 130320, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
