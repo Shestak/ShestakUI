@@ -21,7 +21,7 @@ oUF.Tags.Methods["DiffColor"] = function(unit)
 	if level < 1 then
 		r, g, b = 0.69, 0.31, 0.31
 	else
-		local DiffColor = UnitLevel("target") - UnitLevel("player")
+		local DiffColor = UnitLevel(unit) - UnitLevel("player")
 		if DiffColor >= 5 then
 			r, g, b = 0.69, 0.31, 0.31
 		elseif DiffColor >= 3 then
@@ -81,6 +81,13 @@ oUF.Tags.Methods["NameLong"] = function(unit)
 end
 oUF.Tags.Events["NameLong"] = "UNIT_NAME_UPDATE"
 
+oUF.Tags.Methods["NameLongAbbrev"] = function(unit)
+	local name = UnitName(unit)
+	local newname = (string.len(name) > 18) and string.gsub(name, "%s?(.[\128-\191]*)%S+%s", "%1. ") or name
+	return T.UTF(newname, 18, false)
+end
+oUF.Tags.Events["NameLong"] = "UNIT_NAME_UPDATE"
+
 oUF.Tags.Methods["LFD"] = function(unit)
 	local role = UnitGroupRolesAssigned(unit)
 	if role == "TANK" then
@@ -111,3 +118,28 @@ oUF.Tags.Methods["IncHeal"] = function(unit)
 	end
 end
 oUF.Tags.Events["IncHeal"] = "UNIT_HEAL_PREDICTION"
+
+oUF.Tags.Methods["shortcurhp"] = function(unit)
+	local hp = UnitHealth(unit)
+	if hp == 0 then
+		return 0
+	else
+		return T.ShortValue(hp)
+	end
+end
+oUF.Tags.Events["shortcurhp"] = "UNIT_HEALTH"
+
+oUF.Tags.Methods["nlevel"] = function(unit)
+	local level = UnitLevel(unit)
+	if UnitIsWildBattlePet(unit) or UnitIsBattlePetCompanion(unit) then
+		level = UnitBattlePetLevel(unit)
+	end
+
+	if level == T.level then return end
+	if level > 0 then
+		return level
+	else
+		return '??'
+	end
+end
+oUF.Tags.Events["nlevel"] = "UNIT_LEVEL PLAYER_LEVEL_UP"
