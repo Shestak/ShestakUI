@@ -131,15 +131,16 @@ oUF.Tags.Events["shortcurhp"] = "UNIT_HEALTH"
 
 oUF.Tags.Methods["nlevel"] = function(unit)
 	local level = UnitLevel(unit)
+	local c = UnitClassification(unit)
 	if UnitIsWildBattlePet(unit) or UnitIsBattlePetCompanion(unit) then
 		level = UnitBattlePetLevel(unit)
 	end
 
-	if level == T.level then return end
+	if level == T.level and c == "normal" then return end
 	if level > 0 then
 		return level
 	else
-		return '??'
+		return "??"
 	end
 end
 oUF.Tags.Events["nlevel"] = "UNIT_LEVEL PLAYER_LEVEL_UP"
