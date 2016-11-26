@@ -100,7 +100,7 @@ T.ArenaControl = {
 	[SpellName(107566)] = 3,	-- Staggering Shout
 
 	-- Immunities
-	[SpellName(19263)] = 2,		-- Deterrence
+	[SpellName(186265)] = 2,		-- Aspect of the Turtle
 	[SpellName(45438)] = 2,		-- Ice Block
 	[SpellName(642)] = 2,		-- Divine Shield
 	[SpellName(46924)] = 2,		-- Bladestorm

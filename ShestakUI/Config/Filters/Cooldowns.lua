@@ -89,7 +89,7 @@ if C.enemycooldown.enable == true then
 		[47585] = 120,	-- Dispersion
 		[1856] = 120,	-- Vanish
 		[7744] = 120,	-- Will of the Forsaken (Racial)
-		[19263] = 180,	-- Deterrence
+		[186265] = 180,	-- Aspect of the Turtle
 		[33206] = 180,	-- Pain Suppression
 	}
 end
