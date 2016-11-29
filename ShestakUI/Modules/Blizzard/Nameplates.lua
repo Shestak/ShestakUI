@@ -7,37 +7,23 @@ if C.nameplate.enable ~= true then return end
 local _, ns = ...
 local oUF = ns.oUF
 
--- SetCVar("nameplateShowAll", 1)
--- SetCVar("nameplateMaxAlpha", 0.5)
--- SetCVar("nameplateMaxDistance", 50)
-
-SetCVar("namePlateMinScale", 1)
-SetCVar("namePlateMaxScale", 1)
-SetCVar("nameplateLargerScale", 1)
-SetCVar("nameplateMinAlpha", 1)
-SetCVar("nameplateMaxAlpha", 1)
-
--- SetCVar("nameplateOtherTopInset", -1)	-- Default 0.08
--- SetCVar("nameplateOtherBottomInset", -1)	-- Default 0.1
-
--- Only show nameplates when in combat
-local NamePlates = CreateFrame("Frame", nil, UIParent)
-NamePlates:SetScript("OnEvent", function(self, event, ...) self[event](self, ...) end)
+local frame = CreateFrame("Frame")
+frame:SetScript("OnEvent", function(self, event, ...) self[event](self, ...) end)
 if C.nameplate.combat == true then
-	NamePlates:RegisterEvent("PLAYER_REGEN_ENABLED")
-	NamePlates:RegisterEvent("PLAYER_REGEN_DISABLED")
+	frame:RegisterEvent("PLAYER_REGEN_ENABLED")
+	frame:RegisterEvent("PLAYER_REGEN_DISABLED")
 
-	function NamePlates:PLAYER_REGEN_ENABLED()
+	function frame:PLAYER_REGEN_ENABLED()
 		SetCVar("nameplateShowEnemies", 0)
 	end
 
-	function NamePlates:PLAYER_REGEN_DISABLED()
+	function frame:PLAYER_REGEN_DISABLED()
 		SetCVar("nameplateShowEnemies", 1)
 	end
 end
 
-NamePlates:RegisterEvent("PLAYER_ENTERING_WORLD")
-function NamePlates:PLAYER_ENTERING_WORLD()
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+function frame:PLAYER_ENTERING_WORLD()
 	if C.nameplate.combat == true then
 		if InCombatLockdown() then
 			SetCVar("nameplateShowEnemies", 1)
@@ -48,6 +34,15 @@ function NamePlates:PLAYER_ENTERING_WORLD()
 	if C.nameplate.enhance_threat == true then
 		SetCVar("threatWarning", 3)
 	end
+	SetCVar("namePlateMinScale", 1)
+	SetCVar("namePlateMaxScale", 1)
+	SetCVar("nameplateLargerScale", 1)
+	SetCVar("nameplateMinAlpha", 1)
+	SetCVar("nameplateMaxAlpha", 1)
+
+	SetCVar("nameplateOtherTopInset", C.nameplate.clamp and 0.08 or -1)
+	SetCVar("nameplateOtherBottomInset", C.nameplate.clamp and 0.1 or -1)
+	SetCVar("nameplateMaxDistance", C.nameplate.distance or 40)
 end
 
 local healList, exClass, healerSpecs = {}, {}, {}
@@ -330,6 +325,16 @@ local function UpdateName(self)
 	end
 end
 
+local function castColor(self, unit, name, castid)
+	if self.interrupt then
+		self:SetStatusBarColor(0.78, 0.25, 0.25)
+		self.bg:SetColorTexture(0.78, 0.25, 0.25, 0.2)
+	else
+		self:SetStatusBarColor(1, 0.8, 0)
+		self.bg:SetColorTexture(1, 0.8, 0, 0.2)
+	end
+end
+
 local function callback(event, nameplate, unit)
 	local unit = unit or "target"
 	local nameplate = C_NamePlate.GetNamePlateForUnit(unit)
@@ -339,10 +344,8 @@ local function callback(event, nameplate, unit)
 	local name = UnitName(unit)
 	if name and T.PlateBlacklist[name] then
 		self:Hide()
-		-- self:SetAlpha(0)
 	else
 		self:Show()
-		-- self:SetAlpha(1)
 	end
 
 	if UnitIsUnit(unit, "player") then
@@ -451,15 +454,10 @@ local function style(self, unit)
 	self.Castbar.bg:SetTexture(C.media.texture)
 	self.Castbar.bg:SetColorTexture(1, 0.8, 0, 0.2)
 
-	self.Castbar.PostCastStart = function(self, unit, name, castid)
-		if self.interrupt then
-			self:SetStatusBarColor(0.78, 0.25, 0.25)
-			self.bg:SetColorTexture(0.78, 0.25, 0.25, 0.2)
-		else
-			self:SetStatusBarColor(1, 0.8, 0)
-			self.bg:SetColorTexture(1, 0.8, 0, 0.2)
-		end
-	end
+	self.Castbar.PostCastStart = castColor
+	self.Castbar.PostChannelStart = castColor
+	self.Castbar.PostCastNotInterruptible = castColor
+	self.Castbar.PostCastInterruptible = castColor
 
 	-- Create Cast Time Text
 	self.Castbar.Time = self.Castbar:CreateFontString(nil, "ARTWORK")
@@ -603,7 +601,10 @@ local function style(self, unit)
 	end)
 
 	self.Health.PostUpdate = function(self, unit, min, max)
-		local perc = min / max
+		local perc = 0
+		if max and max > 0 then
+			perc = min / max
+		end
 
 		if not UnitIsTapDenied(unit) and not UnitIsPlayer(unit) then
 			local r, g, b
