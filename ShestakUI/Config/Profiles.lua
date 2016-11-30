@@ -168,7 +168,6 @@ or T.name == "Чакернаут" or T.name == "Чаккис" or T.name == "Эз
 	C["raidcooldown"].enable = false
 	C["threat"].enable = false
 	C["tooltip"].item_icon = true
-	C["tooltip"].hide_combat = true
 	C["tooltip"].title = true
 	C["tooltip"].raid_icon = true
 	C["tooltip"].average_lvl = true
