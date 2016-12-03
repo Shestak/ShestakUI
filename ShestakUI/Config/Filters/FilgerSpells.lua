@@ -3746,8 +3746,6 @@ C["filger_spells"] = {
 			{spellID = 215307, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Necrotic Venom (dot)
 			{spellID = 215449, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Necrotic Venom (dot, drops pools)
-			{spellID = 215460, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Twisting Shadows (dot)
 			{spellID = 210850, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Shimmering Feather (buff)
