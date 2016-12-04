@@ -39,8 +39,6 @@ end
 -- Class config
 if T.class == "DEATHKNIGHT" then
 	if C.combattext.merge_aoe_spam then
-		--BETA T.aoespam[168828] = 3		-- Necrosis
-		--BETA T.aoespam[155159] = 3		-- Necrotic Plague
 		T.aoespam[55095] = 3		-- Frost Fever
 		T.aoespam[55078] = 3		-- Blood Plague
 		T.aoespam[50842] = 0		-- Blood Boil
@@ -50,20 +48,22 @@ if T.class == "DEATHKNIGHT" then
 		T.aoespam[91776] = 3		-- Claw (Ghoul)
 		T.aoespam[49020] = 0		-- Obliterate
 		T.aoespam[49143] = 0		-- Frost Strike
-		--BETA T.aoespam[45462] = 0		-- Plague Strike
 		T.aoespam[49998] = 0		-- Death Strike
 		T.aoespam[156000] = 3		-- Defile
 		T.aoespam[155166] = 3		-- Mark of Sindragosa
 		T.aoespam[55090] = 0		-- Scourge Strike
 		T.merge[66198] = 49020		-- Obliterate Off-Hand
 		T.merge[66196] = 49143		-- Frost Strike Off-Hand
-		--BETA T.merge[66216] = 45462		-- Plague Strike Off-Hand
 		T.merge[66188] = 49998		-- Death Strike Off-Hand
 		T.merge[70890] = 55090		-- Scourge Strike (Shadow damage)
 	end
 	if C.combattext.healing then
 		T.healfilter[53365] = true	-- Unholy Strength
 		T.healfilter[119980] = true	-- Conversion
+	end
+elseif T.class == "DEMONHUNTER" then
+	if C.combattext.merge_aoe_spam then
+		-- T.aoespam[spellID] = 3		-- Spell Name
 	end
 elseif T.class == "DRUID" then
 	if C.combattext.merge_aoe_spam then
@@ -75,15 +75,12 @@ elseif T.class == "DRUID" then
 		T.aoespam[157982] = 3		-- Tranquility
 		T.aoespam[81269] = 3		-- Wild Mushroom
 		T.aoespam[124988] = 3		-- Nature's Vigil
-		--BETA T.aoespam[162359] = 3		-- Genesis
 		T.aoespam[144876] = 3		-- Spark of Life (T16)
 		T.aoespam[155777] = 3		-- Rejuvenation (Germination)
 		-- Damaging spells
 		T.aoespam[164812] = 3		-- Moonfire
 		T.aoespam[164815] = 3		-- Sunfire
-		--BETA T.aoespam[42231] = 3		-- Hurricane
-		--BETA T.aoespam[106998] = 3		-- Astral Storm
-		--BETA T.aoespam[50288] = 3		-- Starfall
+		T.aoespam[191037] = 3		-- Starfall
 		T.aoespam[61391] = 0		-- Typhoon
 		T.aoespam[155722] = 3		-- Rake
 		T.aoespam[33917] = 0		-- Mangle
@@ -92,32 +89,29 @@ elseif T.class == "DRUID" then
 		T.aoespam[106830] = 3		-- Thrash (Cat Form)
 		T.aoespam[1079] = 3			-- Rip
 		T.aoespam[124991] = 3		-- Nature's Vigil
-		--BETA T.aoespam[152221] = 3		-- Stellar Flare
+		T.aoespam[202347] = 3		-- Stellar Flare
 		T.aoespam[155625] = 3		-- Moonfire (Cat Form)
 	end
 	if C.combattext.healing then
 		T.healfilter[145109] = true	-- Ysera's Gift (Self)
 		T.healfilter[145110] = true	-- Ysera's Gift
-		--BETA T.healfilter[68285] = true	-- Leader of the Pack
+		T.healfilter[202636] = true	-- Leader of the Pack
 	end
 elseif T.class == "HUNTER" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[2643] = 0			-- Multi-Shot
 		T.aoespam[118253] = 3		-- Serpent Sting
 		T.aoespam[13812] = 3		-- Explosive Trap
-		--BETA T.aoespam[53301] = 3		-- Explosive Shot
+		T.aoespam[212680] = 3		-- Explosive Shot
 		T.aoespam[118459] = 3		-- Beast Cleave
 		T.aoespam[120361] = 3		-- Barrage
 		T.aoespam[131900] = 3		-- A Murder of Crows
-		--BETA T.aoespam[3674] = 3			-- Black Arrow
+		T.aoespam[194599] = 3		-- Black Arrow
 		T.aoespam[162543] = 3		-- Poisoned Ammo
 		T.aoespam[162541] = 3		-- Incendiary Ammo
 		T.aoespam[34655] = 3		-- Deadly Poison (Trap)
 		T.aoespam[93433] = 3		-- Burrow Attack (Worm)
 		T.aoespam[92380] = 3		-- Froststorm Breath (Chimaera)
-	end
-	if C.combattext.healing then
-		--BETA T.healfilter[51753] = true	-- Camouflage
 	end
 elseif T.class == "MAGE" then
 	if C.combattext.merge_aoe_spam then
@@ -166,23 +160,17 @@ elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
 		T.aoespam[119611] = 3		-- Renewing Mist
-		--BETA T.aoespam[132120] = 3		-- Enveloping Mist
+		T.aoespam[124682] = 3		-- Enveloping Mist
 		T.aoespam[115175] = 3		-- Soothing Mist
-		--BETA T.aoespam[125953] = 3		-- Soothing Mist (Statue)
-		--BETA T.aoespam[126890] = 3		-- Eminence
-		-- T.merge[159621] = 126890	-- Eminence
-		-- T.merge[117895] = 126890	-- Eminence (Statue)
-		--BETA T.aoespam[117640] = 3		-- Spinning Crane Kick
+		T.aoespam[107270] = 3		-- Spinning Crane Kick
 		T.aoespam[132463] = 3		-- Chi Wave
 		T.aoespam[130654] = 3		-- Chi Burst
-		T.aoespam[124081] = 3		-- Zen Sphere
-		--BETA T.aoespam[124101] = 3		-- Zen Sphere: Detonate
+		T.aoespam[124081] = 3		-- Zen Pulse
 		T.aoespam[116670] = 0		-- Uplift
 		T.aoespam[178173] = 3		-- Gift of the Ox
 		-- Damaging spells
 		T.aoespam[117952] = 3		-- Crackling Jade Lightning
 		T.aoespam[117418] = 3		-- Fists of Fury
-		--BETA T.aoespam[128531] = 3		-- Blackout Kick (DoT)
 		T.aoespam[121253] = 0		-- Keg Smash
 		T.aoespam[115181] = 0		-- Breath of Fire
 		T.aoespam[123725] = 3		-- Breath of Fire (DoT)
@@ -190,28 +178,21 @@ elseif T.class == "MONK" then
 		T.aoespam[123586] = 3		-- Flying Serpent Kick
 		T.aoespam[132467] = 3		-- Chi Wave
 		T.aoespam[148135] = 3		-- Chi Burst
-		--BETA T.aoespam[124098] = 3		-- Zen Sphere
-		--BETA T.aoespam[125033] = 3		-- Zen Sphere: Detonate
 		T.aoespam[158221] = 3		-- Hurricane Strike
 	end
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
-		--BETA T.aoespam[123530] = 3		-- Battle Insight
 		T.aoespam[53652] = 3		-- Beacon of Light
 		T.aoespam[85222] = 0		-- Light of Dawn
-		--BETA T.aoespam[82327] = 0		-- Holy Radiance
 		T.aoespam[114163] = 3		-- Eternal Flame
 		T.aoespam[114852] = 0		-- Holy Prism
 		T.aoespam[119952] = 3		-- Arcing Light
-		--BETA T.aoespam[114917] = 3		-- Stay of Execution
 		T.aoespam[144581] = 3		-- Blessing of the Guardians (T16)
-		--BETA T.aoespam[159375] = 3		-- Shining Protector
 		-- Damaging spells
 		T.aoespam[81297] = 3		-- Consecration
 		T.aoespam[53385] = 0		-- Divine Storm
 		T.aoespam[88263] = 0		-- Hammer of the Righteous
-		--BETA T.aoespam[96172] = 3		-- Hand of Light (Mastery)
 		T.aoespam[31935] = .5		-- Avenger's Shield
 		T.aoespam[114871] = 0		-- Holy Prism
 		T.aoespam[114919] = 3		-- Arcing Light
@@ -220,22 +201,18 @@ elseif T.class == "PALADIN" then
 		T.aoespam[157122] = 3		-- Holy Shield
 		T.merge[53595] = 88263		-- Hammer of the Righteous
 	end
-	if C.combattext.healing then
-		--BETA T.healfilter[115547] = true	-- Glyph of Avenging Wrath
-	end
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
 		T.aoespam[47750] = 3		-- Penance
-		--BETA T.aoespam[23455] = 0		-- Holy Nova
+		T.aoespam[132157] = 0		-- Holy Nova
 		T.aoespam[139] = 3			-- Renew
 		T.aoespam[596] = 0			-- Prayer of Healing
 		T.aoespam[64844] = 3		-- Divine Hymn
 		T.aoespam[32546] = 3		-- Binding Heal
 		T.aoespam[77489] = 3		-- Echo of Light
-		T.aoespam[34861] = 0		-- Circle of Healing
 		T.aoespam[33110] = 3		-- Prayer of Mending
-		--BETA T.aoespam[88686] = 3		-- Holy Word: Sanctuary
+		T.aoespam[34861] = 3		-- Holy Word: Sanctify
 		T.aoespam[81751] = 3		-- Atonement
 		T.aoespam[120692] = 3		-- Halo
 		T.aoespam[110745] = 3		-- Divine Star
@@ -246,43 +223,34 @@ elseif T.class == "PRIEST" then
 		T.aoespam[132157] = 0		-- Holy Nova
 		T.aoespam[589] = 3			-- Shadow Word: Pain
 		T.aoespam[34914] = 3		-- Vampiric Touch
-		--BETA T.aoespam[2944] = 3			-- Devouring Plague
 		T.aoespam[15407] = 3		-- Mind Flay
 		T.aoespam[49821] = 3		-- Mind Sear
 		T.aoespam[14914] = 3		-- Holy Fire
 		T.aoespam[129250] = 3		-- Power Word: Solace
 		T.aoespam[120696] = 3		-- Halo
 		T.aoespam[122128] = 3		-- Divine Star
-		--BETA T.aoespam[129197] = 3		-- Insanity
 		T.aoespam[148859] = 3		-- Shadowy Apparition
-		--BETA T.merge[158831] = 2944		-- Devouring Plague
 	end
 	if C.combattext.healing then
-		--BETA T.healfilter[127626] = true	-- Devouring Plague
 		T.healfilter[15290] = true	-- Vampiric Embrace
 	end
 elseif T.class == "ROGUE" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[51723] = 0		-- Fan of Knives
-		--BETA T.aoespam[122233] = 3		-- Crimson Tempest (DoT)
 		T.aoespam[2818] = 3			-- Deadly Poison
 		T.aoespam[8680] = 3			-- Wound Poison
 		T.aoespam[22482] = 3		-- Blade Flurry
 		T.aoespam[16511] = 3		-- Hemorrhage
 		T.aoespam[5374] = 0			-- Mutilate
 		T.aoespam[86392] = 3		-- Main Gauche
-		--BETA T.aoespam[157607] = 3		-- Instant Poison
 		T.aoespam[57841] = 3		-- Killing Spree
 		T.aoespam[1943] = 3			-- Rupture
 		T.aoespam[152150] = 3		-- Death from Above
 		T.aoespam[114014] = 3		-- Shuriken Toss
-		--BETA T.aoespam[137584] = 3		-- Shuriken Toss
+		T.aoespam[114014] = 3		-- Shuriken Toss
 		T.merge[27576] = 5374		-- Mutilate Off-Hand
 		T.merge[113780] = 2818		-- Deadly Poison
-		--BETA T.merge[168908] = 16511		-- Hemorrhage
-		--BETA T.merge[121411] = 122233	-- Crimson Tempest
 		T.merge[57842] = 57841		-- Killing Spree Off-Hand
-		--BETA T.merge[137585] = 137584	-- Shuriken Toss Off-hand
 	end
 elseif T.class == "SHAMAN" then
 	if C.combattext.merge_aoe_spam then
@@ -295,29 +263,27 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[114911] = 3		-- Ancestral Guidance
 		T.aoespam[114942] = 3		-- Healing Tide
 		T.aoespam[114083] = 3		-- Restorative Mists
-		--BETA T.aoespam[157333] = 3		-- Soothing Winds
 		T.aoespam[157503] = 1		-- Cloudburst
 		-- Damaging spells
 		T.aoespam[421] = 1			-- Chain Lightning
-		--BETA T.merge[168477] = 421		-- Chain Lightning (Multi)
+		T.merge[45297] = 421		-- Chain Lightning Overload
 		T.aoespam[8349] = 0			-- Fire Nova
 		T.aoespam[77478] = 3		-- Earhquake
 		T.aoespam[51490] = 0		-- Thunderstorm
 		T.aoespam[8187] = 3			-- Magma Totem
-		T.aoespam[188389] = 3			-- Flame Shock
+		T.aoespam[188389] = 3		-- Flame Shock
 		T.aoespam[25504] = 3		-- Windfury Attack
 		T.aoespam[10444] = 3		-- Flametongue Attack
 		T.aoespam[3606] = 3			-- Searing Bolt
 		T.aoespam[170379] = 3		-- Molten Earth
 		T.aoespam[114074] = 1		-- Lava Beam
-		--BETA T.merge[168489] = 114074	-- Lava Beam (Multi)
 		T.aoespam[32175] = 0		-- Stormstrike
 		T.merge[32176] = 32175		-- Stormstrike Off-Hand
 		T.aoespam[114089] = 3		-- Windlash
 		T.merge[114093] = 114089	-- Windlash Off-Hand
 		T.aoespam[115357] = 0		-- Windstrike
 		T.merge[115360] = 115357	-- Windstrike Off-Hand
-		--BETA T.aoespam[177601] = 3		-- Liquid Magma
+		T.aoespam[192231] = 3		-- Liquid Magma
 		T.aoespam[157331] = 3		-- Wind Gust
 	end
 elseif T.class == "WARLOCK" then
@@ -334,8 +300,6 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[80240] = 3		-- Havoc
 		T.aoespam[42223] = 3		-- Rain of Fire
 		T.aoespam[689] = 3			-- Drain Life
-		--BETA T.aoespam[5857] = 3			-- Hellfire
-		--BETA T.aoespam[129476] = 3		-- Immolation Aura
 		T.aoespam[198590] = 3		-- Drain Soul
 		T.aoespam[86040] = 3		-- Hand of Gul'dan
 		--BETA T.aoespam[124915] = 3		-- Chaos Wave
@@ -372,7 +336,7 @@ elseif T.class == "WARRIOR" then
 		T.aoespam[50622] = 3		-- Bladestorm
 		T.aoespam[52174] = 0		-- Heroic Leap
 		T.aoespam[118000] = 0		-- Dragon Roar
-		--BETA T.aoespam[76858] = 3		-- Opportunity Strike
+		T.aoespam[203178] = 3		-- Opportunity Strike
 		T.aoespam[113344] = 3		-- Bloodbath
 		T.aoespam[96103] = 0		-- Raging Blow
 		T.aoespam[6572] = 0			-- Revenge
@@ -383,7 +347,6 @@ elseif T.class == "WARRIOR" then
 		T.merge[85384] = 96103		-- Raging Blow Off-Hand
 		T.merge[95738] = 50622		-- Bladestorm Off-Hand
 		T.merge[163558] = 5308		-- Execute Off-Hand
-		--BETA T.merge[94009] = 772		-- Rend
 	end
 	if C.combattext.healing then
 		T.healfilter[117313] = true	-- Bloodthirst Heal

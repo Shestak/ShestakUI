@@ -979,8 +979,6 @@ C["filger_spells"] = {
 			{spellID = 136634, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Entrapment
 			{spellID = 135373, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Frozen Wake
-			--BETA {spellID = 61394, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Warp Time (Warp Stalker)
 			{spellID = 35346, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Ankle Crack (Crocolisk)
@@ -1168,10 +1166,10 @@ C["filger_spells"] = {
 			-- Fingers of Frost
 			{spellID = 44544, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brain Freeze
-			--BETA {spellID = 57761, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 190447, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Arcane Missiles!
 			{spellID = 79683, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Pyroblast!
+			-- Hot Streak!
 			{spellID = 48108, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Chain Reaction (Ebonchill)
 			{spellID = 195418, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1423,20 +1421,8 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
-			-- Tiger Power
-			--BETA {spellID = 125359, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Combo Breaker: Blackout Kick
+			-- Blackout Kick!
 			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Combo Breaker: Tiger Palm
-			--BETA {spellID = 118864, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shuffle
-			--BETA {spellID = 115307, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Vital Mists
-			--BETA {spellID = 118674, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Serpent's Zeal
-			--BETA {spellID = 127722, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tiger Strikes
-			--BETA {spellID = 120273, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- Alchemy Stones
@@ -1931,28 +1917,14 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
-			-- Divine Insight
-			--BETA {spellID = 123267, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadowy Insight
 			{spellID = 124430, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Light
 			{spellID = 114255, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Darkness
 			{spellID = 87160, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Serendipity
-			--BETA {spellID = 63735, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Mending
-			--BETA {spellID = 155363, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Mind Spike (Glyph)
-			--BETA {spellID = 81292, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Borrowed Time
-			--BETA {spellID = 59889, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Twist of Fate
 			{spellID = 123254, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Evangelism
-			--BETA {spellID = 81661, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shadow Word: Insanity
-			--BETA {spellID = 132573, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- Alchemy Stones
@@ -2039,8 +2011,6 @@ C["filger_spells"] = {
 			{spellID = 34914, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Shadow Word: Pain
 			{spellID = 589, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Devouring Plague
-			--BETA {spellID = 2944, unitID = "target", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -2243,17 +2213,6 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
-			-- Anticipation
-			--BETA {spellID = 115189, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Shallow Insight
-			--BETA {spellID = 84745, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Moderate Insight
-			--BETA {spellID = 84746, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Deep Insight
-			--BETA {spellID = 84747, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Blindside
-			--BETA {spellID = 121153, unitID = "player", caster = "player", filter = "BUFF"},
-
 			-- Jolly Roger
 			{spellID = 199603, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grand Melee
@@ -2735,8 +2694,6 @@ C["filger_spells"] = {
 			{spellID = 196104, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Swap
 			{spellID = 86211, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kiljaeden's Cunning
-			--BETA {spellID = 137587, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Regeneration
 			{spellID = 108359, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Burning Rush
@@ -2756,8 +2713,6 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
-			-- Molten Core
-			--BETA {spellID = 122355, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Backdraft
 			{spellID = 117828, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grimore of Synergy
@@ -2994,10 +2949,6 @@ C["filger_spells"] = {
 			{spellID = 52437, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Raging Blow!
 			{spellID = 131116, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Bloodsurge
-			--BETA {spellID = 46916, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Sword and Board
-			--BETA {spellID = 50227, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ultimatum
 			{spellID = 122510, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Meat Cleaver
