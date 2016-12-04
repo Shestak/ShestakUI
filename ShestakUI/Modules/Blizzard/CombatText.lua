@@ -316,17 +316,17 @@ local function OnEvent(self, event, subevent, ...)
 			xCT3:AddMessage("-"..LEAVING_COMBAT, 0.1, 1, 0.1)
 	elseif event == "PLAYER_REGEN_DISABLED" and COMBAT_TEXT_SHOW_COMBAT_STATE == "1" then
 			xCT3:AddMessage("+"..ENTERING_COMBAT, 1, 0.1, 0.1)
-	--BETA elseif event == "UNIT_COMBO_POINTS" and COMBAT_TEXT_SHOW_COMBO_POINTS == "1" then
-		-- if subevent == ct.unit then
-			-- local cp = GetComboPoints(ct.unit, "target")
-			-- if cp > 0 then
-				-- r, g, b = 1, 0.82, 0
-				-- if cp == MAX_COMBO_POINTS then
-					-- r, g, b = 0, 0.82, 1
-				-- end
-				-- xCT3:AddMessage(format(COMBAT_TEXT_COMBO_POINTS, cp), r, g, b)
-			-- end
-		-- end
+	elseif event == "UNIT_COMBO_POINTS" and COMBAT_TEXT_SHOW_COMBO_POINTS == "1" then
+		if subevent == ct.unit then
+			local cp = GetComboPoints(ct.unit, "target")
+			if cp > 0 then
+				r, g, b = 1, 0.82, 0
+				if cp == MAX_COMBO_POINTS then
+					r, g, b = 0, 0.82, 1
+				end
+				xCT3:AddMessage(format(COMBAT_TEXT_COMBO_POINTS, cp), r, g, b)
+			end
+		end
 	elseif event == "RUNE_POWER_UPDATE" then
 		local arg1 = subevent
 		if GetRuneCooldown(arg1) ~= 0 then return end
@@ -440,7 +440,7 @@ xCT:RegisterEvent("UNIT_HEALTH")
 xCT:RegisterEvent("UNIT_MANA")
 xCT:RegisterEvent("PLAYER_REGEN_DISABLED")
 xCT:RegisterEvent("PLAYER_REGEN_ENABLED")
---BETA xCT:RegisterEvent("UNIT_COMBO_POINTS")
+xCT:RegisterEvent("UNIT_COMBO_POINTS")
 if C.combattext.dk_runes and T.class == "DEATHKNIGHT" then
 	xCT:RegisterEvent("RUNE_POWER_UPDATE")
 end
