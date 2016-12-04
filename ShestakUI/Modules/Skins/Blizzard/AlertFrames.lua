@@ -528,6 +528,7 @@ local function LoadSkin()
 			frame.SpecIcon.b:SetTemplate("Default")
 			frame.SpecIcon.b:SetPoint("TOPLEFT", frame.SpecIcon, "TOPLEFT", -2, 2)
 			frame.SpecIcon.b:SetPoint("BOTTOMRIGHT", frame.SpecIcon, "BOTTOMRIGHT", 2, -2)
+			frame.SpecIcon:SetParent(frame.SpecIcon.b)
 		end
 		frame.SpecIcon.b:SetShown(frame.SpecIcon:IsShown() and frame.SpecIcon:GetTexture() ~= nil)
 	end
