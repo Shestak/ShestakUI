@@ -88,7 +88,6 @@ elseif T.class == "DRUID" then
 		T.aoespam[155722] = 3		-- Rake
 		T.aoespam[33917] = 0		-- Mangle
 		T.aoespam[106785] = 0		-- Swipe
-		--BETA T.aoespam[33745] = 3		-- Lacerate
 		T.aoespam[77758] = 3		-- Thrash (Bear Form)
 		T.aoespam[106830] = 3		-- Thrash (Cat Form)
 		T.aoespam[1079] = 3			-- Rip
@@ -108,17 +107,14 @@ elseif T.class == "HUNTER" then
 		T.aoespam[13812] = 3		-- Explosive Trap
 		--BETA T.aoespam[53301] = 3		-- Explosive Shot
 		T.aoespam[118459] = 3		-- Beast Cleave
-		T.aoespam[120699] = 3		-- Lynx Rush
 		T.aoespam[120361] = 3		-- Barrage
 		T.aoespam[131900] = 3		-- A Murder of Crows
 		--BETA T.aoespam[3674] = 3			-- Black Arrow
-		T.aoespam[121414] = 3		-- Glaive Toss
 		T.aoespam[162543] = 3		-- Poisoned Ammo
 		T.aoespam[162541] = 3		-- Incendiary Ammo
 		T.aoespam[34655] = 3		-- Deadly Poison (Trap)
 		T.aoespam[93433] = 3		-- Burrow Attack (Worm)
 		T.aoespam[92380] = 3		-- Froststorm Breath (Chimaera)
-		T.merge[120761] = 121414	-- Glaive Toss
 	end
 	if C.combattext.healing then
 		--BETA T.healfilter[51753] = true	-- Camouflage
@@ -201,12 +197,10 @@ elseif T.class == "MONK" then
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
-		--BETA T.aoespam[20167] = 3		-- Seal of Insight
 		--BETA T.aoespam[123530] = 3		-- Battle Insight
 		T.aoespam[53652] = 3		-- Beacon of Light
 		T.aoespam[85222] = 0		-- Light of Dawn
 		--BETA T.aoespam[82327] = 0		-- Holy Radiance
-		--BETA T.aoespam[121129] = 0		-- Daybreak
 		T.aoespam[114163] = 3		-- Eternal Flame
 		T.aoespam[114852] = 0		-- Holy Prism
 		T.aoespam[119952] = 3		-- Arcing Light
@@ -216,16 +210,12 @@ elseif T.class == "PALADIN" then
 		-- Damaging spells
 		T.aoespam[81297] = 3		-- Consecration
 		T.aoespam[53385] = 0		-- Divine Storm
-		--BETA T.aoespam[122032] = 0		-- Exorcism (Glyph)
-		--BETA T.aoespam[31803] = 3		-- Censure
-		--BETA T.aoespam[42463] = 3		-- Seal of Truth
-		--BETA T.aoespam[101423] = 3		-- Seal of Righteousness
 		T.aoespam[88263] = 0		-- Hammer of the Righteous
 		--BETA T.aoespam[96172] = 3		-- Hand of Light (Mastery)
 		T.aoespam[31935] = .5		-- Avenger's Shield
 		T.aoespam[114871] = 0		-- Holy Prism
 		T.aoespam[114919] = 3		-- Arcing Light
-		--BETA T.aoespam[114916] = 3		-- Execution Sentence
+		T.aoespam[213757] = 3		-- Execution Sentence
 		T.aoespam[86704] = 0		-- Ancient Fury
 		T.aoespam[157122] = 3		-- Holy Shield
 		T.merge[53595] = 88263		-- Hammer of the Righteous
@@ -248,7 +238,6 @@ elseif T.class == "PRIEST" then
 		--BETA T.aoespam[88686] = 3		-- Holy Word: Sanctuary
 		T.aoespam[81751] = 3		-- Atonement
 		T.aoespam[120692] = 3		-- Halo
-		--BETA T.aoespam[121148] = 3		-- Cascade
 		T.aoespam[110745] = 3		-- Divine Star
 		T.merge[94472] = 81751		-- Atonement
 		-- Damaging spells
@@ -263,7 +252,6 @@ elseif T.class == "PRIEST" then
 		T.aoespam[14914] = 3		-- Holy Fire
 		T.aoespam[129250] = 3		-- Power Word: Solace
 		T.aoespam[120696] = 3		-- Halo
-		--BETA T.aoespam[127628] = 3		-- Cascade
 		T.aoespam[122128] = 3		-- Divine Star
 		--BETA T.aoespam[129197] = 3		-- Insanity
 		T.aoespam[148859] = 3		-- Shadowy Apparition
@@ -399,7 +387,6 @@ elseif T.class == "WARRIOR" then
 	end
 	if C.combattext.healing then
 		T.healfilter[117313] = true	-- Bloodthirst Heal
-		--BETA T.healfilter[55694] = true	-- Enraged Regeneration
 		--BETA T.healfilter[159363] = true	-- Blood Craze
 	end
 end
