@@ -3562,34 +3562,34 @@ C["filger_spells"] = {
 			-- Raids: Legion
 			-- The Emerald Nightmare
 			-- Nythendra
-			-- Infested (dot, stacks)
+			-- Infested
 			{spellID = 204504, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Rot (AoE people around you)
+			-- Rot
 			{spellID = 203096, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Il'gynoth, Heart of Corruption
-			-- Fixate (fixate)
+			-- Fixate
 			{spellID = 210099, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Spew Corruption (dot, drops pools)
+			-- Spew Corruption
 			{spellID = 208929, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Cursed Blood (dot, weak bomb)
+			-- Cursed Blood
 			{spellID = 215128, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Erethe Renferal
-			-- Raking Talons (tank debuff, stacks)
+			-- Raking Talons
 			{spellID = 215582, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Wind Burn (debuff, stacks)
+			-- Wind Burn
 			{spellID = 218519, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Web of Pain (linked with another player)
+			-- Web of Pain
 			{spellID = 215307, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Necrotic Venom (dot)
+			-- Necrotic Venom
 			{spellID = 215449, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Twisting Shadows (dot)
+			-- Twisting Shadows
 			{spellID = 210850, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Shimmering Feather (buff)
+			-- Shimmering Feather
 			{spellID = 212993, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ursoc
-			-- Focused Gaze (fixate)
+			-- Focused Gaze
 			{spellID = 198006, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Momentum (debuff)
+			-- Momentum
 			{spellID = 198108, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Dragons of Nightmare
 			-- Mark of Ysondre
@@ -3600,67 +3600,36 @@ C["filger_spells"] = {
 			{spellID = 203125, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mark of Lethon
 			{spellID = 203124, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Nightmare Bloom (standing in, should be at least 1 player)
+			-- Nightmare Bloom
 			{spellID = 207681, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Defiled Vines (root, magic)
+			-- Defiled Vines
 			{spellID = 203770, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Volatile Infection (AoE dot)
+			-- Volatile Infection
 			{spellID = 203787, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Cenarius
-			-- Creeping Nightmares (dot, stacks)
+			-- Creeping Nightmares
 			{spellID = 210279, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Nightmare Javelin (dot)
+			-- Nightmare Javelin
 			{spellID = 211507, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Nightmare Brambles (dot, root, magic)
+			-- Nightmare Brambles
 			{spellID = 210315, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Scorned Touch (spreading dot, slow)
+			-- Scorned Touch
 			{spellID = 211471, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Replenishing Roots
 			{spellID = 211612, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Xavius
-			-- Nightmare Blades (fixate)
+			-- Nightmare Blades
 			{spellID = 211802, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Dream Simulacrum (buff)
+			-- Dream Simulacrum
 			{spellID = 206005, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Tormenting Fixation
 			{spellID = 205771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Corruption Meteor
 			{spellID = 224508, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Bonds of Terror (linked with another player)
+			-- Bonds of Terror
 			{spellID = 210451, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Corruption: Descent into Madness (buff before mind control)
+			-- Corruption: Descent into Madness 
 			{spellID = 208431, unitID = "player", caster = "all", filter = "DEBUFF"},
-
-			-- Raids: Pandaria
-			-- Heart of Fear
-			-- Corrosive Resin (Wind Lord Mel'jarak)
-			{spellID = 122064, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Kor'thik Strike (Wind Lord Mel'jarak)
-			{spellID = 123963, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Unseen Strike (Blade Lord Ta'yak)
-			{spellID = 123017, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Mogu'shan Vaults
-			-- Arcane Resonance (Feng the Accursed)
-			{spellID = 116417, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Voodoo Doll (Gara'jal the Spiritbinder)
-			{spellID = 122151, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Wildfire Spark (Feng the Accursed)
-			{spellID = 116784, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Throne of Thunder
-			-- Biting Cold (Council of Elders)
-			{spellID = 136992, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
-			-- Cinder (Megaera)
-			{spellID = 134391, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Focused Lightning (Jin'rokh the Breaker)
-			{spellID = 137422, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Frostbite (Council of Elders)
-			{spellID = 136922, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Marked Soul (Council of Elders)
-			{spellID = 137359, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Static Shock (Lei Shen)
-			{spellID = 135695, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Torrent of Ice (Megaera)
-			{spellID = 139857, unitID = "player", caster = "all", filter = "DEBUFF"},
 		},
 		{
 			Name = "T_BUFF",

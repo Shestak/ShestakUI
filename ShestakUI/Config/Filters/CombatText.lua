@@ -17,10 +17,6 @@ if C.combattext.merge_aoe_spam then
 	T.merge = {}
 	T.aoespam = {}
 	T.aoespam[6603] = 3				-- Auto Attack
-	T.aoespam[148008] = 3			-- Essence of Yu'lon (Legedary Cloak)
-	T.aoespam[148009] = 3			-- Spirit of Chi-Ji (Legedary Cloak)
-	T.aoespam[149276] = 3			-- Flurry of Xuen (Legedary Cloak)
-	T.aoespam[147891] = 3			-- Flurry of Xuen (Legedary Cloak)
 	T.aoespam[187626] = 1			-- Maalus (Legedary Ring)
 	T.aoespam[187625] = 1			-- Nithramus (Legedary Ring)
 	T.aoespam[187624] = 1			-- Thorasus (Legedary Ring)
@@ -290,7 +286,6 @@ elseif T.class == "WARLOCK" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[27243] = 3		-- Seed of Corruption
 		T.aoespam[27285] = 3		-- Seed of Corruption (AoE)
-		--BETA T.aoespam[87385] = 3		-- Seed of Corruption (Soulburn)
 		T.aoespam[146739] = 3		-- Corruption
 		T.aoespam[30108] = 3		-- Unstable Affliction
 		T.aoespam[348] = 3			-- Immolate
@@ -302,13 +297,10 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[689] = 3			-- Drain Life
 		T.aoespam[198590] = 3		-- Drain Soul
 		T.aoespam[86040] = 3		-- Hand of Gul'dan
-		--BETA T.aoespam[124915] = 3		-- Chaos Wave
-		--BETA T.aoespam[47960] = 3		-- Shadowflame
+		T.aoespam[205181] = 3		-- Shadowflame
 		T.aoespam[30213] = 3		-- Legion Strike (Felguard)
 		T.aoespam[89753] = 3		-- Felstorm (Felguard)
 		T.aoespam[20153] = 3		-- Immolation (Infrenal)
-		--BETA T.aoespam[114654] = 0		-- Incinerate
-		--BETA T.aoespam[108685] = 0		-- Conflagrate
 		T.aoespam[22703] = 0		-- Infernal Awakening
 		T.aoespam[171017] = 0		-- Meteor Strike (Infrenal)
 		T.aoespam[104318] = 3		-- Fel Firebolt
@@ -319,12 +311,11 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[54049] = 3		-- Shadow Bite (Felhunter)
 		T.aoespam[6262] = 3			-- Healthstone
 		T.aoespam[3716] = 3			-- Torment (Voidwalker)
-		T.merge[157736] = 348		-- Immolate
-		--BETA T.merge[108686] = 348		-- Immolate
+		T.merge[157736] = 348		-- Immolate (DoT)
 	end
 	if C.combattext.healing then
 		T.healfilter[63106] = true	-- Siphon Life
-		--BETA T.healfilter[89653] = true	-- Drain Life
+		T.healfilter[689] = true	-- Drain Life
 		T.healfilter[108359] = true	-- Dark Regeneration
 	end
 elseif T.class == "WARRIOR" then
