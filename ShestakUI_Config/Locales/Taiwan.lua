@@ -286,9 +286,11 @@ L_GUI_NAMEPLATE_CLAMP = "Clamp nameplates to the top of the screen when outside 
 L_GUI_NAMEPLATE_GOOD_COLOR = "安全仇恨顏色"
 L_GUI_NAMEPLATE_NEAR_COLOR = "臨界仇恨顏色"
 L_GUI_NAMEPLATE_BAD_COLOR = "危險仇恨顏色"
+L_GUI_NAMEPLATE_OFFTANK_COLOR = "Offtank threat color" -- Need review
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "DeBuff圖示(需要關閉'名字縮寫')"
 L_GUI_NAMEPLATE_DEBUFFS_SIZE = "DeBuff大小"
 L_GUI_NAMEPLATE_HEALER_ICON = "戰場中顯示治療職業圖示"
+L_GUI_NAMEPLATE_TOTEM_ICONS = "Show icon above enemy totems nameplate" -- Need review
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "開啟快捷列增強"

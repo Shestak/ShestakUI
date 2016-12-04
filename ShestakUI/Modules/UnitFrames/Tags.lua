@@ -119,17 +119,7 @@ oUF.Tags.Methods["IncHeal"] = function(unit)
 end
 oUF.Tags.Events["IncHeal"] = "UNIT_HEAL_PREDICTION"
 
-oUF.Tags.Methods["shortcurhp"] = function(unit)
-	local hp = UnitHealth(unit)
-	if hp == 0 then
-		return 0
-	else
-		return T.ShortValue(hp)
-	end
-end
-oUF.Tags.Events["shortcurhp"] = "UNIT_HEALTH"
-
-oUF.Tags.Methods["nlevel"] = function(unit)
+oUF.Tags.Methods["NameplateLevel"] = function(unit)
 	local level = UnitLevel(unit)
 	local c = UnitClassification(unit)
 	if UnitIsWildBattlePet(unit) or UnitIsBattlePetCompanion(unit) then
@@ -143,4 +133,32 @@ oUF.Tags.Methods["nlevel"] = function(unit)
 		return "??"
 	end
 end
-oUF.Tags.Events["nlevel"] = "UNIT_LEVEL PLAYER_LEVEL_UP"
+oUF.Tags.Events["NameplateLevel"] = "UNIT_LEVEL PLAYER_LEVEL_UP"
+
+oUF.Tags.Methods["NameplateNameColor"] = function(unit)
+	local reaction = UnitReaction(unit, "player")
+	if not UnitIsUnit("player", unit) and UnitIsPlayer(unit) and reaction >= 5 then
+		local c = T.oUF_colors.power["MANA"]
+		return string.format("|cff%02x%02x%02x", c[1] * 255, c[2] * 255, c[3] * 255)
+	elseif UnitIsPlayer(unit) then
+		return _TAGS["raidcolor"](unit)
+	elseif reaction then
+		local c = T.oUF_colors.reaction[reaction]
+		return string.format("|cff%02x%02x%02x", c[1] * 255, c[2] * 255, c[3] * 255)
+	else
+		r, g, b = 0.33, 0.59, 0.33
+		return string.format("|cff%02x%02x%02x", r * 255, g * 255, b * 255)
+	end
+end
+oUF.Tags.Events["NameplateNameColor"] = "UNIT_POWER UNIT_FLAGS"
+
+oUF.Tags.Methods["NameplateHealth"] = function(unit)
+	local hp = UnitHealth(unit)
+	local maxhp = UnitHealthMax(unit)
+	if maxhp == 0 then
+		return 0
+	else
+		return ("%s - %d%%"):format(T.ShortValue(hp), hp / maxhp * 100 + 0.5)
+	end
+end
+oUF.Tags.Events["NameplateHealth"] = "UNIT_HEALTH_FREQUENT UNIT_MAXHEALTH NAME_PLATE_UNIT_ADDED"

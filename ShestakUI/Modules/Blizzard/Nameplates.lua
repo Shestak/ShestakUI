@@ -99,7 +99,7 @@ if C.nameplate.healer_icon == true then
 			for i = 1, 5 do
 				local specID = GetArenaOpponentSpec(i)
 				if specID and specID > 0 then
-					local name = UnitName(format('arena%d', i))
+					local name = UnitName(format("arena%d", i))
 					local _, talentSpec = GetSpecializationInfoByID(specID)
 					if name and healerSpecs[talentSpec] then
 						healList[name] = talentSpec
@@ -127,6 +127,33 @@ if C.nameplate.healer_icon == true then
 	t:RegisterEvent("PLAYER_ENTERING_BATTLEGROUND")
 	t:SetScript("OnEvent", CheckLoc)
 end
+
+local totemData = {
+	[GetSpellInfo(192058)] = "Interface\\Icons\\spell_nature_brilliance",          -- Lightning Surge Totem
+	[GetSpellInfo(98008)]  = "Interface\\Icons\\spell_shaman_spiritlink",          -- Spirit Link Totem
+	[GetSpellInfo(192077)] = "Interface\\Icons\\ability_shaman_windwalktotem",     -- Wind Rush Totem
+	[GetSpellInfo(204331)] = "Interface\\Icons\\spell_nature_wrathofair_totem",    -- Counterstrike Totem
+	[GetSpellInfo(204332)] = "Interface\\Icons\\spell_nature_windfury",            -- Windfury Totem
+	[GetSpellInfo(204336)] = "Interface\\Icons\\spell_nature_groundingtotem",      -- Grounding Totem
+	-- Water
+	[GetSpellInfo(157153)] = "Interface\\Icons\\ability_shaman_condensationtotem", -- Cloudburst Totem
+	[GetSpellInfo(5394)]   = "Interface\\Icons\\INV_Spear_04",                     -- Healing Stream Totem
+	[GetSpellInfo(108280)] = "Interface\\Icons\\ability_shaman_healingtide",       -- Healing Tide Totem
+	-- Earth
+	[GetSpellInfo(207399)] = "Interface\\Icons\\spell_nature_reincarnation",       -- Ancestral Protection Totem
+	[GetSpellInfo(198838)] = "Interface\\Icons\\spell_nature_stoneskintotem",      -- Earthen Shield Totem
+	[GetSpellInfo(51485)]  = "Interface\\Icons\\spell_nature_stranglevines",       -- Earthgrab Totem
+	[GetSpellInfo(61882)]  = "Interface\\Icons\\spell_shaman_earthquake",          -- Earthquake Totem
+	[GetSpellInfo(196932)] = "Interface\\Icons\\spell_totem_wardofdraining",       -- Voodoo Totem
+	-- Fire
+	[GetSpellInfo(192222)] = "Interface\\Icons\\spell_shaman_spewlava",            -- Liquid Magma Totem
+	[GetSpellInfo(204330)] = "Interface\\Icons\\spell_fire_totemofwrath",          -- Skyfury Totem
+	-- Totem Mastery
+	[GetSpellInfo(202188)] = "Interface\\Icons\\spell_nature_stoneskintotem",      -- Resonance Totem
+	[GetSpellInfo(210651)] = "Interface\\Icons\\spell_shaman_stormtotem",          -- Storm Totem
+	[GetSpellInfo(210657)] = "Interface\\Icons\\spell_fire_searingtotem",          -- Ember Totem
+	[GetSpellInfo(210660)] = "Interface\\Icons\\spell_nature_invisibilitytotem",   -- Tailwind Totem
+}
 
 local function CreateVirtualFrame(frame, point)
 	if point == nil then point = frame end
@@ -213,51 +240,57 @@ end
 
 local function threatColor(self, forced)
 	if UnitIsPlayer(self.unit) then return end
-	local healthbar = self.Health
 	local combat = UnitAffectingCombat("player")
 	local _, threatStatus = UnitDetailedThreatSituation("player", self.unit)
 
+	if C.nameplate.enhance_threat ~= true then
+		SetVirtualBorder(self, unpack(C.media.border_color))
+	end
 	if UnitIsTapDenied(self.unit) then
-		healthbar:SetStatusBarColor(0.6, 0.6, 0.6)
+		self.Health:SetStatusBarColor(0.6, 0.6, 0.6)
 	elseif combat then
 		if threatStatus == 3 then  -- securely tanking, highest threat
 			if T.Role == "Tank" then
 				if C.nameplate.enhance_threat == true then
-					healthbar:SetStatusBarColor(unpack(C.nameplate.good_color))
+					self.Health:SetStatusBarColor(unpack(C.nameplate.good_color))
 				else
-					SetVirtualBorder(healthbar, unpack(C.nameplate.good_color))
+					SetVirtualBorder(self.Health, unpack(C.nameplate.bad_color))
 				end
 			else
 				if C.nameplate.enhance_threat == true then
-					healthbar:SetStatusBarColor(unpack(C.nameplate.bad_color))
+					self.Health:SetStatusBarColor(unpack(C.nameplate.bad_color))
 				else
-					SetVirtualBorder(healthbar, unpack(C.nameplate.bad_color))
+					SetVirtualBorder(self.Health, unpack(C.nameplate.bad_color))
 				end
 			end
 		elseif threatStatus == 2 then  -- insecurely tanking, another unit have higher threat but not tanking
 			if C.nameplate.enhance_threat == true then
-				healthbar:SetStatusBarColor(unpack(C.nameplate.near_color))
+				self.Health:SetStatusBarColor(unpack(C.nameplate.near_color))
 			else
-				SetVirtualBorder(healthbar, unpack(C.nameplate.near_color))
+				SetVirtualBorder(self.Health, unpack(C.nameplate.near_color))
 			end
 		elseif threatStatus == 1 then  -- not tanking, higher threat than tank
 			if C.nameplate.enhance_threat == true then
-				healthbar:SetStatusBarColor(unpack(C.nameplate.near_color))
+				self.Health:SetStatusBarColor(unpack(C.nameplate.near_color))
 			else
-				SetVirtualBorder(healthbar, unpack(C.nameplate.near_color))
+				SetVirtualBorder(self.Health, unpack(C.nameplate.near_color))
 			end
 		elseif threatStatus == 0 then  -- not tanking, lower threat than tank
-			if T.Role == "Tank" then
-				if C.nameplate.enhance_threat == true then
-					healthbar:SetStatusBarColor(unpack(C.nameplate.bad_color))
+			if C.nameplate.enhance_threat == true then
+				if T.Role == "Tank" then
+					self.Health:SetStatusBarColor(unpack(C.nameplate.bad_color))
+					if IsInGroup() or IsInRaid() then
+						for i = 1, GetNumGroupMembers() do
+							if UnitExists("raid"..i) and not UnitIsUnit("raid"..i, "player") then
+								local isTanking = UnitDetailedThreatSituation("raid"..i, self.unit)
+								if isTanking and UnitGroupRolesAssigned("raid"..i) == "TANK" then
+									self.Health:SetStatusBarColor(unpack(C.nameplate.offtank_color))
+								end
+							end
+						end
+					end
 				else
-					SetVirtualBorder(healthbar, unpack(C.nameplate.bad_color))
-				end
-			else
-				if C.nameplate.enhance_threat == true then
-					healthbar:SetStatusBarColor(unpack(C.nameplate.good_color))
-				else
-					SetVirtualBorder(healthbar, unpack(C.nameplate.good_color))
+					self.Health:SetStatusBarColor(unpack(C.nameplate.good_color))
 				end
 			end
 		end
@@ -321,6 +354,19 @@ local function UpdateName(self)
 			self.Class.Icon:SetTexCoord(0, 0, 0, 0)
 			self.Class:Hide()
 			self.Level:SetPoint("RIGHT", self.Health, "LEFT", -2, 0)
+		end
+	end
+
+	if C.nameplate.totem_icons == true then
+		local name = UnitName(self.unit)
+		if name then
+			if totemData[name] then
+				self.Totem.Icon:SetTexture(totemData[name])
+				self.Totem.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				self.Totem:Show()
+			else
+				self.Totem:Hide()
+			end
 		end
 	end
 end
@@ -402,7 +448,7 @@ local function style(self, unit)
 		self.Health.value:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * T.noscalemult, C.font.nameplates_font_style)
 		self.Health.value:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 		self.Health.value:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
-		self:Tag(self.Health.value, "[shortcurhp] - [perhp]%")
+		self:Tag(self.Health.value, "[NameplateHealth]")
 	end
 
 	-- Create Player Power bar
@@ -428,9 +474,9 @@ local function style(self, unit)
 	self.Name:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 3, 4)
 
 	if C.nameplate.name_abbrev == true then
-		self:Tag(self.Name, "[GetNameColor][NameLongAbbrev]")
+		self:Tag(self.Name, "[NameplateNameColor][NameLongAbbrev]")
 	else
-		self:Tag(self.Name, "[GetNameColor][NameLong]")
+		self:Tag(self.Name, "[NameplateNameColor][NameLong]")
 	end
 
 	-- Create Level
@@ -438,7 +484,7 @@ local function style(self, unit)
 	self.Level:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * T.noscalemult, C.font.nameplates_font_style)
 	self.Level:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 	self.Level:SetPoint("RIGHT", self.Health, "LEFT", -2, 0)
-	self:Tag(self.Level, "[DiffColor][nlevel][shortclassification]")
+	self:Tag(self.Level, "[DiffColor][NameplateLevel][shortclassification]")
 
 	-- Create Cast Bar
 	self.Castbar = CreateFrame("StatusBar", nil, self)
@@ -504,6 +550,15 @@ local function style(self, unit)
 		CreateVirtualFrame(self.Class, self.Class.Icon)
 	end
 
+	-- Create Totem Icon
+	if C.nameplate.totem_icons == true then
+		self.Totem = CreateFrame("Frame", nil, self)
+		self.Totem.Icon = self.Totem:CreateTexture(nil, "OVERLAY")
+		self.Totem.Icon:SetSize((C.nameplate.height * 2 * T.noscalemult) + 8, (C.nameplate.height * 2 * T.noscalemult) + 8)
+		self.Totem.Icon:SetPoint("BOTTOM", self.Health, "TOP", 0, 16)
+		CreateVirtualFrame(self.Totem, self.Totem.Icon)
+	end
+
 	-- Create Healer Icon
 	if C.nameplate.healer_icon == true then
 		self.HPHeal = self.Health:CreateFontString(nil, "OVERLAY")
@@ -517,8 +572,8 @@ local function style(self, unit)
 		self.Auras = CreateFrame("Frame", nil, self)
 		self.Auras:SetPoint("BOTTOMRIGHT", self.Health, "TOPRIGHT", 2 * T.noscalemult, C.font.nameplates_font_size + 7)
 		self.Auras.initialAnchor = "BOTTOMRIGHT"
-		self.Auras['growth-y'] = "UP"
-		self.Auras['growth-x'] = "LEFT"
+		self.Auras["growth-y"] = "UP"
+		self.Auras["growth-x"] = "LEFT"
 		self.Auras.numDebuffs = 6
 		self.Auras.numBuffs = 0
 		self.Auras:SetSize(20 + C.nameplate.width, C.nameplate.auras_size)
@@ -606,8 +661,13 @@ local function style(self, unit)
 			perc = min / max
 		end
 
-		if not UnitIsTapDenied(unit) and not UnitIsPlayer(unit) then
-			local r, g, b
+		local r, g, b
+		local mu = self.bg.multiplier
+		if not UnitIsUnit("player", unit) and UnitIsPlayer(unit) and UnitReaction(unit, "player") >= 5 then
+			r, g, b = unpack(T.oUF_colors.power["MANA"])
+			self:SetStatusBarColor(r, g, b)
+			self.bg:SetVertexColor(r * mu, g * mu, b * mu)
+		elseif not UnitIsTapDenied(unit) and not UnitIsPlayer(unit) then
 			local reaction = T.oUF_colors.reaction[UnitReaction(unit, "player")]
 			if reaction then
 				r, g, b = reaction[1], reaction[2], reaction[3]
@@ -616,7 +676,6 @@ local function style(self, unit)
 			end
 
 			self:SetStatusBarColor(r, g, b)
-			local mu = self.bg.multiplier
 			self.bg:SetVertexColor(r * mu, g * mu, b * mu)
 		end
 

@@ -286,9 +286,11 @@ L_GUI_NAMEPLATE_CLAMP = "Прикреплять к верху экрана, ко
 L_GUI_NAMEPLATE_GOOD_COLOR = "Цвет наименьшей угрозы (зависит от вашей роли)"
 L_GUI_NAMEPLATE_NEAR_COLOR = "Цвет получения/сброса угрозы (зависит от вашей роли)"
 L_GUI_NAMEPLATE_BAD_COLOR = "Цвет наивысшей угрозы (зависит от вашей роли)"
+L_GUI_NAMEPLATE_OFFTANK_COLOR = "Цвет угрозы для оффтанка"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Отображать отрицательные эффекты (из списка)"
 L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Размер отрицательных эффектов"
 L_GUI_NAMEPLATE_HEALER_ICON = "Отображать иконку над вражескими целителями на полях боя"
+L_GUI_NAMEPLATE_TOTEM_ICONS = "Отображать иконку над вражескими тотемами"
 
 -- ActionBar options
 L_GUI_ACTIONBAR_ENABLE = "Включить панели команд"
