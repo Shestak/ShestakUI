@@ -1173,6 +1173,8 @@ C["filger_spells"] = {
 			{spellID = 48108, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Chain Reaction (Ebonchill)
 			{spellID = 195418, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Kael'thas's Ultimate Ability
+			{spellID = 209455, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- Alchemy Stones
