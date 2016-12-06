@@ -244,7 +244,7 @@ local function threatColor(self, forced)
 	local _, threatStatus = UnitDetailedThreatSituation("player", self.unit)
 
 	if C.nameplate.enhance_threat ~= true then
-		SetVirtualBorder(self, unpack(C.media.border_color))
+		SetVirtualBorder(self.Health, unpack(C.media.border_color))
 	end
 	if UnitIsTapDenied(self.unit) then
 		self.Health:SetStatusBarColor(0.6, 0.6, 0.6)
