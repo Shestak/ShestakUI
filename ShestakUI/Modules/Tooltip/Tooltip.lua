@@ -47,6 +47,33 @@ for _, tt in pairs(tooltips) do
 	end
 end
 
+-- Extra tooltip's skin
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function(self, event, addon)
+	if not IsAddOnLoaded("Auc-Advanced") then return end
+
+	local LT = LibStub("LibExtraTip-1")
+	for _, Tooltip in pairs({GameTooltip, ItemRefTooltip}) do
+		Tooltip:HookScript("OnUpdate", function(self)
+			if not LT then return end
+			local ExtraTip = LT:GetExtraTip(self)
+			if ExtraTip then
+				if not ExtraTip.IsDone then
+					ExtraTip:StripTextures()
+					ExtraTip:CreateBackdrop("Transparent")
+					ExtraTip.backdrop:SetPoint("TOPLEFT", 0, -3)
+					ExtraTip.backdrop:SetPoint("BOTTOMRIGHT", 0, 2)
+					ExtraTip:HookScript("OnShow", function(tt)
+						ExtraTip.backdrop:SetFrameLevel(0)
+					end)
+					ExtraTip.IsDone = true
+				end
+			end
+		end)
+	end
+end)
+
 local anchor = CreateFrame("Frame", "TooltipAnchor", UIParent)
 anchor:SetSize(200, 40)
 anchor:SetPoint(unpack(C.position.tooltip))

@@ -258,31 +258,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["ChannelPullout"]:ClearAllPoints()
 		_G["ChannelPullout"]:SetPoint("TOP", _G["ChannelPulloutTab"], "BOTTOM", 0, -3)
 
-		-- Extra tooltip's
-		-- local LT = LibStub("LibExtraTip-1", true)
-
-		-- for _, Tooltip in pairs({ GameTooltip, ItemRefTooltip }) do
-			-- Tooltip:HookScript("OnUpdate", function(self)
-				-- if not LT then return end
-
-				-- local ExtraTip = LT:GetExtraTip(self)
-				
-				-- if ExtraTip then
-					-- if not ExtraTip.IsDone then
-						-- ExtraTip:HookScript("OnShow", function(tt)
-							-- tt:SetTemplate("Transparent")
-							-- local a, b, c, d, e = tt:GetPoint()
-							-- tt:SetPoint(a, b, c, d, e - 2)
-						-- end)
-
-						-- ExtraTip.IsDone = true
-					-- end
-
-					-- ExtraTip:SetBackdropBorderColor(Tooltip:GetBackdropBorderColor())
-				-- end
-			-- end)
-		-- end
-
 		-- Others
 		for i = 1, 10 do
 			select(i, GuildInviteFrame:GetRegions()):Hide()
