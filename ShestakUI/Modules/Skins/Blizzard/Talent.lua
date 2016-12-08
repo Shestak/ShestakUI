@@ -322,6 +322,32 @@ local function LoadSkin()
 			end
 		end
 	end)
+
+	-- Presige texture
+	local portrait = PlayerTalentFramePVPTalents:CreateTexture(nil, "OVERLAY")
+	portrait:SetSize(55, 55)
+	portrait:SetPoint("CENTER", PlayerTalentFramePVPTalents.PortraitBackground, "CENTER", 0, 0)
+	PlayerTalentFramePVPTalents.PortraitBackground:Kill()
+	PlayerTalentFramePVPTalents.PortraitBackground:ClearAllPoints()
+	PlayerTalentFramePVPTalents.PortraitBackground:SetPoint("TOPLEFT", PlayerTalentFrame, "TOPLEFT", 10, -5)
+	PlayerTalentFramePVPTalents.SmallWreath:ClearAllPoints()
+	PlayerTalentFramePVPTalents.SmallWreath:SetPoint("TOPLEFT", PlayerTalentFrame, "TOPLEFT", 3, -25)
+	hooksecurefunc("PlayerTalentFramePVPTalents_SetUp", function()
+		local prestigeLevel = UnitPrestige("player")
+		if prestigeLevel > 0 then
+			portrait:SetTexture(GetPrestigeInfo(prestigeLevel))
+		end
+	end)
+
+	-- Prestige Level Dialog
+	PVPTalentPrestigeLevelDialog:StripTextures()
+	PVPTalentPrestigeLevelDialog:CreateBackdrop("Transparent")
+	PVPTalentPrestigeLevelDialog.Laurel:SetAtlas("honorsystem-prestige-laurel", true)
+	PVPTalentPrestigeLevelDialog.TopDivider:SetAtlas("honorsystem-prestige-rewardline", true)
+	PVPTalentPrestigeLevelDialog.BottomDivider:SetAtlas("honorsystem-prestige-rewardline", true)
+	PVPTalentPrestigeLevelDialog.Accept:SkinButton()
+	PVPTalentPrestigeLevelDialog.Cancel:SkinButton()
+	T.SkinCloseButton(PVPTalentPrestigeLevelDialog.CloseButton)
 end
 
 T.SkinFuncs["Blizzard_TalentUI"] = LoadSkin
