@@ -3630,7 +3630,7 @@ C["filger_spells"] = {
 			{spellID = 224508, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Bonds of Terror
 			{spellID = 210451, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Corruption: Descent into Madness 
+			-- Corruption: Descent into Madness
 			{spellID = 208431, unitID = "player", caster = "all", filter = "DEBUFF"},
 		},
 		{
