@@ -23,6 +23,7 @@ for _, headerName in pairs({"QuestHeader", "AchievementHeader", "ScenarioHeader"
 	ObjectiveTrackerFrame.BlocksFrame[headerName].Background:Hide()
 end
 BONUS_OBJECTIVE_TRACKER_MODULE.Header.Background:Hide()
+WORLD_QUEST_TRACKER_MODULE.Header.Background:Hide()
 
 ObjectiveTrackerFrame.HeaderMenu.Title:SetAlpha(0)
 OBJECTIVE_TRACKER_DOUBLE_LINE_HEIGHT = 30
