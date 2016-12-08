@@ -253,11 +253,75 @@ local function LoadSkin()
 		PlayerSpecTab2:SetPoint("TOP", PlayerSpecTab1, "BOTTOM")
 	end)
 
-	-- PVPTalents
+	-- PvP Talents
+	PlayerTalentFramePVPTalents.XPBar:StripTextures()
+	PlayerTalentFramePVPTalents.XPBar.Bar:CreateBackdrop("Default")
 	PlayerTalentFramePVPTalents.XPBar.PrestigeReward.Accept:SkinButton()
+
+	PlayerTalentFramePVPTalents.XPBar.NextAvailable:ClearAllPoints()
+	PlayerTalentFramePVPTalents.XPBar.NextAvailable:SetPoint("LEFT", PlayerTalentFramePVPTalents.XPBar.Bar, "RIGHT", 3, -2)
+
+	PlayerTalentFramePVPTalents.XPBar.NextAvailable:StripTextures()
+	PlayerTalentFramePVPTalents.XPBar.NextAvailable:CreateBackdrop("Default")
+	PlayerTalentFramePVPTalents.XPBar.NextAvailable.backdrop:SetPoint("TOPLEFT", PlayerTalentFramePVPTalents.XPBar.NextAvailable.Icon, -2, 2)
+	PlayerTalentFramePVPTalents.XPBar.NextAvailable.backdrop:SetPoint("BOTTOMRIGHT", PlayerTalentFramePVPTalents.XPBar.NextAvailable.Icon, 2, -2)
+
+	PlayerTalentFramePVPTalents.XPBar.NextAvailable.Icon:SetDrawLayer("ARTWORK")
+	hooksecurefunc(PlayerTalentFramePVPTalents.XPBar.NextAvailable.Icon, "SetTexCoord", function(self)
+		self:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	end)
 
 	PlayerTalentFramePVPTalentsBg:Hide()
 	PlayerTalentFramePVPTalents.Talents:DisableDrawLayer("BORDER")
+
+	for i = 1, MAX_PVP_TALENT_TIERS do
+		local row = PlayerTalentFramePVPTalents.Talents["Tier"..i]
+		row.Bg:Hide()
+		row:DisableDrawLayer("BORDER")
+
+		row.TopLine:SetAlpha(0)
+		row.BottomLine:SetAlpha(0)
+		row.GlowFrame:SetAlpha(0)
+
+		for j = 1, MAX_PVP_TALENT_COLUMNS do
+			local bu = row["Talent"..j]
+			local ic = bu.Icon
+
+			bu:StripTextures()
+			bu:SetFrameLevel(bu:GetFrameLevel() + 2)
+			bu:CreateBackdrop("Default")
+			bu.backdrop:SetPoint("TOPLEFT", ic, -2, 2)
+			bu.backdrop:SetPoint("BOTTOMRIGHT", ic, 2, -2)
+
+			ic:SetDrawLayer("ARTWORK")
+			ic:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+			bu.bg = CreateFrame("Frame", nil, bu)
+			bu.bg:CreateBackdrop("Overlay")
+			bu.bg:SetFrameLevel(bu:GetFrameLevel() - 1)
+			bu.bg:SetPoint("TOPLEFT", 15, -1)
+			bu.bg:SetPoint("BOTTOMRIGHT", -10, 1)
+		end
+	end
+
+	hooksecurefunc("PVPTalentFrame_Update", function(self)
+		for i = 1, MAX_PVP_TALENT_TIERS do
+			for j = 1, MAX_PVP_TALENT_COLUMNS do
+				local bu = self.Talents["Tier"..i]["Talent"..j]
+				if bu.knownSelection then
+					if bu.knownSelection:IsShown() then
+						bu.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b, 1)
+						bu.bg.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b, 1)
+						bu.bg.backdrop.overlay:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.3)
+					else
+						bu.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+						bu.bg.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+						bu.bg.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
+					end
+				end
+			end
+		end
+	end)
 end
 
 T.SkinFuncs["Blizzard_TalentUI"] = LoadSkin
