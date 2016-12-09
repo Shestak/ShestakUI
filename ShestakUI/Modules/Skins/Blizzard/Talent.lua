@@ -267,9 +267,8 @@ local function LoadSkin()
 	PlayerTalentFramePVPTalents.XPBar.NextAvailable.backdrop:SetPoint("BOTTOMRIGHT", PlayerTalentFramePVPTalents.XPBar.NextAvailable.Icon, 2, -2)
 
 	PlayerTalentFramePVPTalents.XPBar.NextAvailable.Icon:SetDrawLayer("ARTWORK")
-	hooksecurefunc(PlayerTalentFramePVPTalents.XPBar.NextAvailable.Icon, "SetTexCoord", function(self)
-		self:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	end)
+	PlayerTalentFramePVPTalents.XPBar.NextAvailable.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	PlayerTalentFramePVPTalents.XPBar.NextAvailable.Icon.SetTexCoord = T.dummy
 
 	PlayerTalentFramePVPTalentsBg:Hide()
 	PlayerTalentFramePVPTalents.Talents:DisableDrawLayer("BORDER")
