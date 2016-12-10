@@ -1138,6 +1138,8 @@ C["filger_spells"] = {
 			{spellID = 190319, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rune of Power
 			{spellID = 116014, filter = "ICD", trigger = "NONE", duration = 10},
+			-- Pyretic Incantation
+			{spellID = 194329, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Barrier
 			{spellID = 11426, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Heating Up
