@@ -575,6 +575,7 @@ function oUF:SpawnNamePlates(styleName,namePrefix,nameplateCallback,nameplateCVa
 	NamePlateDriverFrame:UnregisterAllEvents()
 	NamePlateDriverFrame:Hide()
 	NamePlateDriverFrame.UpdateNamePlateOptions = UpdateNamePlateOptions
+	NamePlateDriverFrame.SetupClassNameplateBars = function() end
 	-- nameplate event handler
 	local NPEH = CreateFrame("Frame")
 	local C_NamePlate = C_NamePlate
