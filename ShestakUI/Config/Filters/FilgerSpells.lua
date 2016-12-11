@@ -1890,6 +1890,8 @@ C["filger_spells"] = {
 			{spellID = 10060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Apotheosis
 			{spellID = 200183, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blessing of T'uure
+			{spellID = 196644, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spirit of Redemption
 			{spellID = 20711, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Divinity
@@ -2100,6 +2102,10 @@ C["filger_spells"] = {
 			{spellID = 47788, filter = "CD"},
 			-- Power Word: Barrier
 			{spellID = 62618, filter = "CD"},
+			-- Divine Hymn
+			{spellID = 64843, filter = "CD"},
+			-- Symbol of Hope
+			{spellID = 64901, filter = "CD"},
 			-- Apotheosis
 			{spellID = 200183, filter = "CD"},
 			-- Shadowfiend
@@ -3296,6 +3302,8 @@ C["filger_spells"] = {
 			-- Other
 			-- Symbol of Hope
 			{spellID = 64901, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Innervate
+			{spellID = 29166, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Grounding Totem
 			{spellID = 8178, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mass Spell Reflection
