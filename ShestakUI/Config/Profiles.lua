@@ -155,6 +155,7 @@ or T.name == "Чакернаут" or T.name == "Чаккис" or T.name == "Эз
 	C["misc"].raid_tools = false
 	C["misc"].hide_bg_spam = true
 	C["misc"].disenchanting = true
+	C["misc"].hide_talking_head = true
 	C["announcements"].pull_countdown = false
 	C["automation"].accept_invite = true
 	C["automation"].accept_quest = true
