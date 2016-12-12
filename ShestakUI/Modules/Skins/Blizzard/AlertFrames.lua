@@ -504,8 +504,9 @@ local function LoadSkin()
 		frame.PvPBackground:Kill()
 
 		frame.SpecRing:SetTexture("")
-		frame.SpecIcon:SetPoint("TOPLEFT", frame, "TOPLEFT", 10, -12)
+		frame.SpecIcon:SetPoint("TOPLEFT", frame, "TOPLEFT", 10, -15)
 		frame.SpecIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		-- frame.SpecIcon:SetTexture("Interface\\Icons\\spell_nature_brilliance")
 
 		-- Icon
 		frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
