@@ -40,6 +40,8 @@ L_GUI_MISC_CHARS_CURRENCY = "Zeige deine Währungstoken über diverse Karaktere"
 L_GUI_MISC_ARMORY_LINK = "Add Armory Link im Spieler PopupMenus (Deaktiviert das Focusziel)"
 L_GUI_MISC_MERCHANT_ITEMLEVEL = "Zeige Itemlevel für Waffen & Rüstung bei Händler"
 L_GUI_MISC_MINIMIZE_MOUSEOVER = "Mouseover für Quest minimieren Taste"
+L_GUI_MISC_HIDE_BANNER = "Autoverstecken des Boss Loot Frame"
+L_GUI_MISC_HIDE_TALKING_HEAD = "Hide Talking Head Frame" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigeungen"
@@ -76,7 +78,6 @@ L_GUI_AUTOMATION_LOGGING_COMBAT = "Automatisch Kampflog in Raids als Textdatei m
 L_GUI_AUTOMATION_CURRENCY_CAP = "Auto Popup beim Marken Limit"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Wirke Stärkungszauber mit Mausrad"
 L_GUI_AUTOMATION_OPEN_ITEMS = "Öffnet Automatisch Items in der Tasche"
-L_GUI_AUTOMATION_BANNER_HIDE = "Autoverstecken des Boss Loot Frame"
 
 -- Skins options
 L_GUI_SKINS = "Design/Skins"

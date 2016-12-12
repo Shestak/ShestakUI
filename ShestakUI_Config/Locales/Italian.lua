@@ -40,6 +40,8 @@ L_GUI_MISC_CHARS_CURRENCY = "Traccia la valuta complessiva posseduta dai tuoi pe
 L_GUI_MISC_ARMORY_LINK = "Aggiungi un collegamento all’Armeria nei menu a comparsa delle unità (ciò disattiva alcune voci nei menu)"
 L_GUI_MISC_MERCHANT_ITEMLEVEL = "Show item level for weapons and armor in merchant" -- Need review
 L_GUI_MISC_MINIMIZE_MOUSEOVER = "Mouseover for quest minimize button" -- Need review
+L_GUI_MISC_HIDE_BANNER = "Hide Boss Banner Loot Frame" -- Need review
+L_GUI_MISC_HIDE_TALKING_HEAD = "Hide Talking Head Frame" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"
@@ -76,7 +78,6 @@ L_GUI_AUTOMATION_LOGGING_COMBAT = "In instances da incursione, 'auto-attiva' la 
 L_GUI_AUTOMATION_CURRENCY_CAP = "Popup automatico valuta massima raggiunta"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Lancia benefici con la rotellina del mouse"
 L_GUI_AUTOMATION_OPEN_ITEMS = "Apertura automatica degli oggetti nelle sacche"
-L_GUI_AUTOMATION_BANNER_HIDE = "Auto hiding Boss Banner Loot Frame" -- Need review
 
 -- Skins options
 L_GUI_SKINS = "Restyling"

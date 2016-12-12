@@ -40,6 +40,8 @@ L_GUI_MISC_CHARS_CURRENCY = "Отслеживать валюту на други
 L_GUI_MISC_ARMORY_LINK = "Добавить пункт 'Оружейная' в меню (исчезнет установка фокуса)"
 L_GUI_MISC_MERCHANT_ITEMLEVEL = "Отображать уровень предметов для оружия и брони в окне торговца"
 L_GUI_MISC_MINIMIZE_MOUSEOVER = "Кнопка сворачивания квестов по наведению курсора"
+L_GUI_MISC_HIDE_BANNER = "Скрыть подсказку добычи после победы над боссом"
+L_GUI_MISC_HIDE_TALKING_HEAD = "Скрыть рамку говорящей головы"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Объявления"
@@ -76,7 +78,6 @@ L_GUI_AUTOMATION_LOGGING_COMBAT = "Включать запись журнала 
 L_GUI_AUTOMATION_CURRENCY_CAP = "Напоминание, если достигнут лимит валюты (Доблесть/Честь)"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Накладывать эффекты прокруткой колеса мыши (из списка)"
 L_GUI_AUTOMATION_OPEN_ITEMS = "Открывать сундуки, ящики и т.д"
-L_GUI_AUTOMATION_BANNER_HIDE = "Скрыть подсказку добычи после победы над боссом"
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"

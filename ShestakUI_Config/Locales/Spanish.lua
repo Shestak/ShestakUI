@@ -40,6 +40,8 @@ L_GUI_MISC_CHARS_CURRENCY = "Tracks your currency tokens across multiple charact
 L_GUI_MISC_ARMORY_LINK = "Add Armory link in UnitPopupMenus (It breaks set focus)" -- Needs review
 L_GUI_MISC_MERCHANT_ITEMLEVEL = "Show item level for weapons and armor in merchant" -- Need review
 L_GUI_MISC_MINIMIZE_MOUSEOVER = "Mouseover for quest minimize button" -- Need review
+L_GUI_MISC_HIDE_BANNER = "Hide Boss Banner Loot Frame" -- Need review
+L_GUI_MISC_HIDE_TALKING_HEAD = "Hide Talking Head Frame" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Anuncios"
@@ -76,7 +78,6 @@ L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid ins
 L_GUI_AUTOMATION_CURRENCY_CAP = "Auto popup for currency cap" -- Needs review
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Cast buff on mouse scroll" -- Needs review
 L_GUI_AUTOMATION_OPEN_ITEMS = "Auto opening of items in bag" -- Needs review
-L_GUI_AUTOMATION_BANNER_HIDE = "Auto hiding Boss Banner Loot Frame" -- Need review
 
 -- Skins options
 L_GUI_SKINS = "Estilización"

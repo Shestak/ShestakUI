@@ -61,6 +61,8 @@ C["misc"] = {
 	["armory_link"] = false,					-- Add Armory link in UnitPopupMenus (It breaks set focus)
 	["merchant_itemlevel"] = false,				-- Show item level for weapons and armor in merchant
 	["minimize_mouseover"] = false,				-- Mouseover for quest minimize button
+	["hide_banner"] = true,						-- Hide Boss Banner Loot Frame
+	["hide_talking_head"] = false,				-- Hide Talking Head Frame
 }
 
 ----------------------------------------------------------------------------------------
@@ -103,7 +105,6 @@ C["automation"] = {
 	["currency_cap"] = false,					-- Auto popup for currency cap
 	["buff_on_scroll"] = false,					-- Cast buff on mouse scroll (from the list)
 	["open_items"] = false,						-- Auto opening of items in bag
-	["banner_hide"] = true,						-- Auto hiding Boss Banner Loot Frame
 }
 
 ----------------------------------------------------------------------------------------

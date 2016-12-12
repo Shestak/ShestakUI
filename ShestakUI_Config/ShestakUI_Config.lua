@@ -67,6 +67,8 @@ local function Local(o)
 	if o == "UIConfigmiscarmory_link" then o = L_GUI_MISC_ARMORY_LINK end
 	if o == "UIConfigmiscmerchant_itemlevel" then o = L_GUI_MISC_MERCHANT_ITEMLEVEL end
 	if o == "UIConfigmiscminimize_mouseover" then o = L_GUI_MISC_MINIMIZE_MOUSEOVER end
+	if o == "UIConfigmischide_banner" then o = L_GUI_MISC_HIDE_BANNER end
+	if o == "UIConfigmischide_talking_head" then o = L_GUI_MISC_HIDE_TALKING_HEAD end
 
 	-- Announcements options
 	if o == "UIConfigannouncements" then o = L_GUI_ANNOUNCEMENTS end
@@ -103,7 +105,6 @@ local function Local(o)
 	if o == "UIConfigautomationcurrency_cap" then o = L_GUI_AUTOMATION_CURRENCY_CAP end
 	if o == "UIConfigautomationbuff_on_scroll" then o = L_GUI_AUTOMATION_BUFF_ON_SCROLL end
 	if o == "UIConfigautomationopen_items" then o = L_GUI_AUTOMATION_OPEN_ITEMS end
-	if o == "UIConfigautomationbanner_hide" then o = L_GUI_AUTOMATION_BANNER_HIDE end
 
 	-- Skins options
 	if o == "UIConfigskins" then o = L_GUI_SKINS end

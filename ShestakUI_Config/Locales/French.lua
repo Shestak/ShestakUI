@@ -40,6 +40,8 @@ L_GUI_MISC_CHARS_CURRENCY = "Affiche les jetons et autres monnaies de vos diffé
 L_GUI_MISC_ARMORY_LINK = "Ajouter un lien d'armurerie dans une fenêtre UnitPopupMenus (Cela casse les UnitPopupMenus)"
 L_GUI_MISC_MERCHANT_ITEMLEVEL = "Show item level for weapons and armor in merchant" -- Need review
 L_GUI_MISC_MINIMIZE_MOUSEOVER = "Mouseover for quest minimize button" -- Need review
+L_GUI_MISC_HIDE_BANNER = "Cacher la fenêtre/bannière de loot des Boss"
+L_GUI_MISC_HIDE_TALKING_HEAD = "Hide Talking Head Frame" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"
@@ -76,7 +78,6 @@ L_GUI_AUTOMATION_LOGGING_COMBAT = "Active automatiquement l'enregistrement du jo
 L_GUI_AUTOMATION_CURRENCY_CAP = "Active automatiquement une fenêtre d'alerte quand une monnaie/jeton atteint sa valeur maximale"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Lancement de sort via la molette souris"
 L_GUI_AUTOMATION_OPEN_ITEMS = "Ouverture automatique des objets dans les sacs"
-L_GUI_AUTOMATION_BANNER_HIDE = "Cacher la fenêtre/bannière de loot des Boss"
 
 -- Skins options
 L_GUI_SKINS = "Personnalisation d'addon"

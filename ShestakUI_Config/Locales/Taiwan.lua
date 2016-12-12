@@ -40,6 +40,8 @@ L_GUI_MISC_CHARS_CURRENCY = "追蹤所有角色金錢信息"
 L_GUI_MISC_ARMORY_LINK = "頭像菜單增加英雄榜鏈接"
 L_GUI_MISC_MERCHANT_ITEMLEVEL = "Show item level for weapons and armor in merchant" -- Need review
 L_GUI_MISC_MINIMIZE_MOUSEOVER = "Mouseover for quest minimize button" -- Need review
+L_GUI_MISC_HIDE_BANNER = "自動隱藏Boss額外拾取提示"
+L_GUI_MISC_HIDE_TALKING_HEAD = "Hide Talking Head Frame" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告提醒"
@@ -76,7 +78,6 @@ L_GUI_AUTOMATION_LOGGING_COMBAT = "團隊副本時自動開啟戰鬥記錄"
 L_GUI_AUTOMATION_CURRENCY_CAP = "自動彈出貨幣提示框"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "使用滑鼠滾輪施放Buff"
 L_GUI_AUTOMATION_OPEN_ITEMS = "自動打開背包中的封裝物品"
-L_GUI_AUTOMATION_BANNER_HIDE = "自動隱藏Boss額外拾取提示"
 
 -- Skins options
 L_GUI_SKINS = "介面樣式增強"
