@@ -41,6 +41,15 @@ local ReplaceAnchors do
 			alertFrame:SetPoint(POSITION, relativeAlert, ANCHOR_POINT, 0, YOFFSET)
 			relativeAlert = alertFrame
 		end
+
+		if C.loot.rolllootframe then
+			GroupLootContainer:ClearAllPoints()
+			GroupLootContainer:SetPoint(POSITION, relativeAlert, ANCHOR_POINT, 0, YOFFSET)
+		else
+			GroupLootContainer:ClearAllPoints()
+			GroupLootContainer:SetPoint(POSITION, AchievementAnchor, POSITION, 2, FIRST_YOFFSET)
+		end
+
 		return relativeAlert
 	end
 
