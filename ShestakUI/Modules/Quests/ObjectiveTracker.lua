@@ -56,6 +56,31 @@ hooksecurefunc(QUEST_TRACKER_MODULE, "SetBlockHeader", function(_, block)
 	end
 end)
 
+hooksecurefunc(WORLD_QUEST_TRACKER_MODULE, "AddObjective", function(_, block)
+	local item = block.itemButton
+
+	if item and not item.skinned then
+		item:SetSize(C.actionbar.button_size, C.actionbar.button_size)
+		item:SetTemplate("Default")
+		item:StyleButton()
+
+		item:SetNormalTexture(nil)
+
+		item.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		item.icon:SetPoint("TOPLEFT", item, 2, -2)
+		item.icon:SetPoint("BOTTOMRIGHT", item, -2, 2)
+
+		item.Cooldown:SetAllPoints(item.icon)
+
+		item.Count:ClearAllPoints()
+		item.Count:SetPoint("TOPLEFT", 1, -1)
+		item.Count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+		item.Count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+
+		item.skinned = true
+	end
+end)
+
 ----------------------------------------------------------------------------------------
 --	Difficulty color for ObjectiveTrackerFrame lines
 ----------------------------------------------------------------------------------------
@@ -143,16 +168,15 @@ if C.misc.minimize_mouseover then
 end
 
 ----------------------------------------------------------------------------------------
---	Skin bonus objective progress bar
+--	Skin bonus/world quest objective progress bar
 ----------------------------------------------------------------------------------------
-hooksecurefunc(BONUS_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(self, block, line)
+local function SkinBar(line)
 	local progressBar = line.ProgressBar
 	local bar = progressBar.Bar
 	local icon = bar.Icon
+	local label = bar.Label
 
 	if not progressBar.styled then
-		local label = bar.Label
-
 		bar.BarFrame:Hide()
 		bar.BarGlow:Kill()
 		bar.IconBG:Kill()
@@ -180,6 +204,14 @@ hooksecurefunc(BONUS_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(self, 
 	end
 
 	bar.newIconBg:SetShown(icon:IsShown())
+end
+
+hooksecurefunc(BONUS_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(_, _, line)
+	SkinBar(line)
+end)
+
+hooksecurefunc(WORLD_QUEST_TRACKER_MODULE, "AddProgressBar", function(_, _, line)
+	SkinBar(line)
 end)
 
 ----------------------------------------------------------------------------------------
