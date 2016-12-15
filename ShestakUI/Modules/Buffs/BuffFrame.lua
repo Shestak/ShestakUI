@@ -49,6 +49,8 @@ for i = 1, NUM_TEMP_ENCHANT_FRAMES do
 	duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 	duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
+	TemporaryEnchantFrame:SetPoint(unpack(C.position.player_buffs))
+
 	_G["TempEnchant2"]:ClearAllPoints()
 	_G["TempEnchant2"]:SetPoint("RIGHT", _G["TempEnchant1"], "LEFT", -3, 0)
 end
@@ -113,7 +115,7 @@ local function UpdateBuffAnchors()
 	local numBuffs = 0
 	local numAuraRows = 0
 	local slack = BuffFrame.numEnchants
-	local mainhand, _, _, offhand = GetWeaponEnchantInfo()
+	local mainhand, _, _, _, offhand = GetWeaponEnchantInfo()
 
 	for index = 1, BUFF_ACTUAL_DISPLAY do
 		StyleBuffs(buttonName, index)
