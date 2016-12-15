@@ -344,7 +344,8 @@ local function UpdateName(self)
 	end
 
 	if C.nameplate.class_icons == true then
-		if UnitIsPlayer(self.unit) and UnitReaction(self.unit, "player") <= 4 then
+		local reaction = UnitReaction(self.unit, "player")
+		if UnitIsPlayer(self.unit) and (reaction and reaction <= 4) then
 			local _, class = UnitClass(self.unit)
 			local texcoord = CLASS_ICON_TCOORDS[class]
 			self.Class.Icon:SetTexCoord(texcoord[1] + 0.015, texcoord[2] - 0.02, texcoord[3] + 0.018, texcoord[4] - 0.02)
@@ -663,12 +664,13 @@ local function style(self, unit)
 
 		local r, g, b
 		local mu = self.bg.multiplier
-		if not UnitIsUnit("player", unit) and UnitIsPlayer(unit) and UnitReaction(unit, "player") >= 5 then
+		local unitReaction = UnitReaction(unit, "player")
+		if not UnitIsUnit("player", unit) and UnitIsPlayer(unit) and (unitReaction and unitReaction >= 5) then
 			r, g, b = unpack(T.oUF_colors.power["MANA"])
 			self:SetStatusBarColor(r, g, b)
 			self.bg:SetVertexColor(r * mu, g * mu, b * mu)
 		elseif not UnitIsTapDenied(unit) and not UnitIsPlayer(unit) then
-			local reaction = T.oUF_colors.reaction[UnitReaction(unit, "player")]
+			local reaction = T.oUF_colors.reaction[unitReaction]
 			if reaction then
 				r, g, b = reaction[1], reaction[2], reaction[3]
 			else
