@@ -124,8 +124,17 @@ local function LoadSkin()
 	AddFriendFrame:SetTemplate("Transparent")
 	FriendsFriendsFrame:SetTemplate("Transparent")
 	FriendsFriendsList:SetTemplate("Overlay")
-	
+
+	-- Quick Join Frame
 	QuickJoinFrame.JoinQueueButton:SkinButton()
+	QuickJoinRoleSelectionFrame:StripTextures()
+	QuickJoinRoleSelectionFrame:SetTemplate("Transparent")
+	QuickJoinRoleSelectionFrame.AcceptButton:SkinButton()
+	QuickJoinRoleSelectionFrame.CancelButton:SkinButton()
+	T.SkinCloseButton(QuickJoinRoleSelectionFrame.CloseButton)
+	T.SkinCheckBox(QuickJoinRoleSelectionFrame.RoleButtonTank.CheckButton)
+	T.SkinCheckBox(QuickJoinRoleSelectionFrame.RoleButtonHealer.CheckButton)
+	T.SkinCheckBox(QuickJoinRoleSelectionFrame.RoleButtonDPS.CheckButton)
 
 	-- Who Frame
 	local function UpdateWhoSkins()
