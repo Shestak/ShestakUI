@@ -78,6 +78,21 @@ hooksecurefunc("AchievementObjectiveTracker_OnOpenDropDown", function(self)
 	UIDropDownMenu_AddButton(info, UIDROPDOWN_MENU_LEVEL)
 end)
 
+hooksecurefunc("BonusObjectiveTracker_OnOpenDropDown", function(self)
+	local block = self.activeFrame
+	local questID = block.TrackedQuest.questID
+	info = UIDropDownMenu_CreateInfo()
+	info.text = L_WATCH_WOWHEAD_LINK
+	info.func = function()
+		local inputBox = StaticPopup_Show("WATCHFRAME_URL")
+		inputBox.editBox:SetText(linkQuest:format(questID))
+		inputBox.editBox:HighlightText()
+	end
+	info.arg1 = questID
+	info.notCheckable = true
+	UIDropDownMenu_AddButton(info, UIDROPDOWN_MENU_LEVEL)
+end)
+
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")
 frame:SetScript("OnEvent", function(self, event, addon)
