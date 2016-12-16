@@ -699,6 +699,7 @@ SlashCmdList.XCT = function(input)
 		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_UNLOCK.."|r")
 		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_LOCK.."|r")
 		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_TEST.."|r")
+		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_RESET.."|r")
 	end
 end
 SLASH_XCT1 = "/xct"

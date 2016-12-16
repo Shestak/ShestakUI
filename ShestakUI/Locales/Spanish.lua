@@ -224,6 +224,7 @@ L_COMBATTEXT_TEST_ENABLED = "Modo Texto de combate habilitado."
 L_COMBATTEXT_TEST_USE_UNLOCK = "Escribe /xct unlock para mover y cambiar el tamaño del marco de texto de combate."
 L_COMBATTEXT_TEST_USE_LOCK = "Escribe /xct lock para bloquear el marco de texto de combate."
 L_COMBATTEXT_TEST_USE_TEST = "Escribe /xct test para probar el modo Texto de combate."
+L_COMBATTEXT_TEST_USE_RESET = "Type /xct reset to restore default positions." -- Need review
 L_COMBATTEXT_POPUP = "Para guardar la posición de la ventana de texto de combate necesitas recargar tu UI."
 L_COMBATTEXT_UNSAVED = "La posición de la ventana de texto de combate no está guardada, no olvides recargar la UI."
 L_COMBATTEXT_UNLOCKED = "Texto de combate desbloqueado."

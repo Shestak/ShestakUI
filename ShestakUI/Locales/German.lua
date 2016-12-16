@@ -224,6 +224,7 @@ L_COMBATTEXT_TEST_ENABLED = "Kampftext Testmodus aktiviert."
 L_COMBATTEXT_TEST_USE_UNLOCK = "Gib '/xct' ein um die Kampftext Fenster freizugeben um sie verschieben und verändern zu können."
 L_COMBATTEXT_TEST_USE_LOCK = "Gib '/xct' ein um den Kampftext Testmodus zu sperren."
 L_COMBATTEXT_TEST_USE_TEST = "Gib '/xct' ein um den Kampftext Testmodus zu aktivieren."
+L_COMBATTEXT_TEST_USE_RESET = "Type /xct reset to restore default positions." -- Need review
 L_COMBATTEXT_POPUP = "Um die Kampftext Fensterpositionen zu sichern muss das Interface neu geladen werden."
 L_COMBATTEXT_UNSAVED = "Kampftext Fensterpositionen nicht gespeichert, vergiss nicht das Interface neu zu laden."
 L_COMBATTEXT_UNLOCKED = "Kampftext freigegeben."

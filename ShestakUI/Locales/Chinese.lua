@@ -224,6 +224,7 @@ L_COMBATTEXT_TEST_ENABLED = "战斗信息测试模式已启用."
 L_COMBATTEXT_TEST_USE_UNLOCK = "输入 /xct unlock 移动/调整战斗信息框架大小."
 L_COMBATTEXT_TEST_USE_LOCK = "输入 /xct lock 锁定战斗信息框架."
 L_COMBATTEXT_TEST_USE_TEST = "输入 /xct test 启用/禁用战斗信息测试模式."
+L_COMBATTEXT_TEST_USE_RESET = "Type /xct reset to restore default positions." -- Need review
 L_COMBATTEXT_POPUP = "保存战斗信息窗口的位置须重载插件."
 L_COMBATTEXT_UNSAVED = "战斗信息窗口位置尚未保存,不要忘记重新载入插件."
 L_COMBATTEXT_UNLOCKED = "战斗信息已解锁."

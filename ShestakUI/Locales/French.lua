@@ -224,6 +224,7 @@ L_COMBATTEXT_TEST_ENABLED = "Mode test de la fenêtre des textes de combat activ
 L_COMBATTEXT_TEST_USE_UNLOCK = "Tapez /xct unlock pour bouger et redimensionner la fenêtre des textes de combat."
 L_COMBATTEXT_TEST_USE_LOCK = "Tapez /xct lock pour verrouiller la fenêtre des textes de combat."
 L_COMBATTEXT_TEST_USE_TEST = "Tapez /xct test pour activer le mode test de la fenêtre des textes de combat."
+L_COMBATTEXT_TEST_USE_RESET = "Type /xct reset to restore default positions." -- Need review
 L_COMBATTEXT_POPUP = "Pour sauvegardez vos modifications vous devez recharger l'interface."
 L_COMBATTEXT_UNSAVED = "Position de la fenêtre des textes de combat non saugardez, n'oubliez pas de recharger l'interface."
 L_COMBATTEXT_UNLOCKED = "Fenêtre des textes de combat déverrouillée."
