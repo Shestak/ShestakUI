@@ -34,7 +34,11 @@ end
 local function LimitLines()
 	for i = 1, #ct.frames do
 		f = ct.frames[i]
-		f:SetMaxLines(f:GetHeight() / C.font.combat_text_font_size)
+		if i == 4 and C.combattext.icons then
+			f:SetMaxLines(math.floor(f:GetHeight() / (C.combattext.icon_size * 1.5)))
+		else
+			f:SetMaxLines(math.floor(f:GetHeight() / C.font.combat_text_font_size - 1))
+		end
 	end
 end
 
@@ -525,10 +529,17 @@ local StartConfigmode = function()
 			f:RegisterForDrag("LeftButton")
 			f:SetScript("OnDragStart", f.StartSizing)
 			if not C.combattext.scrollable then
-				f:SetScript("OnSizeChanged", function(self)
-					self:SetMaxLines(self:GetHeight() / C.font.combat_text_font_size)
-					self:Clear()
-				end)
+				if i == 4 and C.combattext.icons then
+					f:SetScript("OnSizeChanged", function(self)
+						self:SetMaxLines(math.floor(self:GetHeight() / (C.combattext.icon_size * 1.5)))
+						self:Clear()
+					end)
+				else
+					f:SetScript("OnSizeChanged", function(self)
+						self:SetMaxLines(math.floor(self:GetHeight() / C.font.combat_text_font_size - 1))
+						self:Clear()
+					end)
+				end
 			end
 
 			f:SetScript("OnDragStop", f.StopMovingOrSizing)
@@ -597,6 +608,9 @@ local function StartTestMode()
 					msg = random(40000)
 					if C.combattext.icons then
 						_, _, icon = GetSpellInfo(msg)
+						if not icon then
+							icon = GetSpellTexture(6603)
+						end
 					end
 					if icon then
 						msg = msg.." \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
@@ -644,6 +658,13 @@ StaticPopupDialogs.XCT_LOCK = {
 	preferredIndex = 5,
 }
 
+local placed = {
+	"xCT1",
+	"xCT2",
+	"xCT3",
+	"xCT4"
+}
+
 -- Slash commands
 SlashCmdList.XCT = function(input)
 	input = string.lower(input)
@@ -667,6 +688,13 @@ SlashCmdList.XCT = function(input)
 			StartTestMode()
 			pr("|cffffff00"..L_COMBATTEXT_TEST_ENABLED.."|r")
 		end
+	elseif input == "reset" then
+		for i, v in pairs(placed) do
+			if _G[v] then
+				_G[v]:SetUserPlaced(false)
+			end
+		end
+		ReloadUI()
 	else
 		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_UNLOCK.."|r")
 		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_LOCK.."|r")
@@ -993,7 +1021,7 @@ if C.combattext.healing then
 						if icon then
 							msg = " \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
 						elseif C.combattext.icons then
-							msg=" \124T"..ct.blank..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
+							msg = " \124T"..ct.blank..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
 						end
 						if C.combattext.merge_aoe_spam then
 							spellId = T.merge[spellId] or spellId
