@@ -17,19 +17,13 @@ if C.combattext.merge_aoe_spam then
 	T.merge = {}
 	T.aoespam = {}
 	T.aoespam[6603] = 3				-- Auto Attack
-	T.aoespam[187626] = 1			-- Maalus (Legedary Ring)
-	T.aoespam[187625] = 1			-- Nithramus (Legedary Ring)
-	T.aoespam[187624] = 1			-- Thorasus (Legedary Ring)
-	T.aoespam[184075] = 3			-- Doom Nova (Prophecy of Fear)
-	T.aoespam[183950] = 3			-- Darklight Ray (Unblinking Gaze of Sethe)
-	T.aoespam[184256] = 3			-- Fel Burn (Empty Drinking Horn)
-	T.aoespam[184248] = 3			-- Fel Cleave (Discordant Chorus)
 	T.aoespam[195222] = 4			-- Stormlash
 	T.aoespam[195256] = 4			-- Stormlash
 	T.aoespam[205729] = 3			-- Greater Blessing of Might
 	T.aoespam[222197] = 0			-- Volatile Ichor (Unstable Horrorslime Trinket)
 	T.aoespam[214350] = 3			-- Nightmare Essence (Oakheart's Gnarled Root Trinket)
 	T.aoespam[230261] = 0			-- Flame Wreath (Aran's Relaxing Ruby Trinket)
+	T.aoespam[221812] = 10			-- Plague Swarm (Swarming Plaguehive Trinket)
 end
 
 -- Class config
@@ -127,9 +121,12 @@ elseif T.class == "MAGE" then
 		T.aoespam[113092] = 0		-- Frost Bomb
 		T.aoespam[44425] = 0		-- Arcane Barrage
 		T.aoespam[84721] = 3		-- Frozen Orb
+		T.aoespam[228354] = 1.5		-- Flurry
+		T.aoespam[228600] = 0		-- Glacial Spike
+		T.aoespam[205021] = 2		-- Ray of Frost
 		T.aoespam[148022] = 3		-- Icicle (Mastery)
 		T.aoespam[31707] = 3		-- Waterbolt (Pet)
-		T.aoespam[30455] = 0		-- Ice Lance
+		T.aoespam[228598] = 0.5		-- Ice Lance
 		T.aoespam[115611] = 6		-- Temporal Ripples
 		T.aoespam[157981] = 1		-- Blast Wave
 		T.aoespam[157997] = 1		-- Ice Nova
