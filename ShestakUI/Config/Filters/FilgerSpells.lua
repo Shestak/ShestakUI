@@ -1169,6 +1169,8 @@ C["filger_spells"] = {
 			{spellID = 44544, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brain Freeze
 			{spellID = 190447, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Glacial Spike!
+			{spellID = 199844, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Arcane Missiles!
 			{spellID = 79683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hot Streak!
