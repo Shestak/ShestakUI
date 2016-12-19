@@ -37,7 +37,10 @@ local function LoadSkin()
 	BonusRollFrame.SpecIcon.b:SetPoint("TOPLEFT", BonusRollFrame.SpecIcon, "TOPLEFT", -2, 2)
 	BonusRollFrame.SpecIcon.b:SetPoint("BOTTOMRIGHT", BonusRollFrame.SpecIcon, "BOTTOMRIGHT", 2, -2)
 	BonusRollFrame.SpecIcon:SetParent(BonusRollFrame.SpecIcon.b)
-	BonusRollFrame.SpecIcon.b:SetShown(BonusRollFrame.SpecIcon:IsShown() and BonusRollFrame.SpecIcon:GetTexture() ~= nil)
+
+	hooksecurefunc("BonusRollFrame_StartBonusRoll", function()
+		BonusRollFrame.SpecIcon.b:SetShown(BonusRollFrame.SpecIcon:IsShown() and BonusRollFrame.SpecIcon:GetTexture() ~= nil)
+	end)
 
 	BonusRollMoneyWonFrame:StripTextures()
 	BonusRollMoneyWonFrame:CreateBackdrop("Transparent")
