@@ -63,6 +63,8 @@ local function GatherTalents(mouseover)
 	if cacheSize > 0 then
 		cache[#cache + 1] = CopyTable(current)
 	end
+
+	GameTooltip:Show()
 end
 
 ----------------------------------------------------------------------------------------
