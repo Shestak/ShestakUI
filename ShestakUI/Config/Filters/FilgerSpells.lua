@@ -563,6 +563,14 @@ C["filger_spells"] = {
 			{spellID = 194223, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature's Vigil
 			{spellID = 124974, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rage of the Sleeper
+			{spellID = 200851, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ironfur
+			{spellID = 192081, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Mark of Ursol
+			{spellID = 192083, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Pulverize
+			{spellID = 158792, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lunar Empowerment
 			{spellID = 164547, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Solar Empowerment
@@ -592,6 +600,8 @@ C["filger_spells"] = {
 			{spellID = 114108, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Predatory Swiftness
 			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Guardian of Elune
+			{spellID = 213680, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- Alchemy Stones
