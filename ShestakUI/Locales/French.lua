@@ -56,6 +56,7 @@ L_MISC_BINDER_OPEN = "Assignations des boutons de la souris"
 L_MISC_GROCERY_BUY = "Achat"
 L_MISC_GROCERY_DESC = "Achat automatique de sacs d'épicerie"
 L_MISC_SCROLL = "Parchemin"
+L_MISC_COLLAPSE = "The Collapse" -- Need review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Dissoudre le raid"

@@ -52,6 +52,7 @@ L_MISC_BINDER_OPEN = "Mouse Bindings"
 L_MISC_GROCERY_BUY = "Buy"
 L_MISC_GROCERY_DESC = "Automatically buy grocery bags"
 L_MISC_SCROLL = "Scroll"
+L_MISC_COLLAPSE = "The Collapse"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Disband Group"

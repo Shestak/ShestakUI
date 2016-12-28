@@ -56,6 +56,7 @@ L_MISC_BINDER_OPEN = "鼠标绑定"
 L_MISC_GROCERY_BUY = "购买"
 L_MISC_GROCERY_DESC = "杂货商自动购买"
 L_MISC_SCROLL = "附魔卷轴"
+L_MISC_COLLAPSE = "The Collapse" -- Need review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散团队"
