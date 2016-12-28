@@ -212,6 +212,16 @@ local rogueClassHallInsignia = {
 	[93188] = true, -- Mongar
 }
 
+local function GetActiveGossipQuestInfo(index)
+	local name, level, isTrivial, isComplete, isLegendary, isIgnored = select(((index * 6) - 6) + 1, GetGossipActiveQuests())
+	return name, level, isTrivial, isIgnored, isComplete, isLegendary
+end
+
+local function GetAvailableGossipQuestInfo(index)
+	local name, level, isTrivial, frequency, isRepeatable, isLegendary, isIgnored = select(((index * 7) - 7) + 1, GetGossipAvailableQuests())
+	return name, level, isTrivial, isIgnored, isRepeatable, frequency == 2, frequency == 3, isLegendary
+end
+
 QuickQuest:Register("GOSSIP_SHOW", function()
 	local npcID = GetNPCID()
 	if(ignoreQuestNPC[npcID]) then
