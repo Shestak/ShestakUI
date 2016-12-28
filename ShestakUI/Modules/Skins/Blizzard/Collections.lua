@@ -515,7 +515,7 @@ local function LoadSkin()
 	T.SkinEditBox(WardrobeCollectionFrameSearchBox, nil, 18)
 	WardrobeCollectionFrame.FilterButton:SkinButton()
 	WardrobeCollectionFrame.FilterButton:SetPoint("TOPLEFT", WardrobeCollectionFrameSearchBox, "TOPRIGHT", 5, 2)
-	T.SkinDropDownBox(WardrobeCollectionFrameWeaponDropDown)
+	T.SkinDropDownBox(WardrobeCollectionFrameWeaponDropDown, 170)
 	T.SkinNextPrevButton(WardrobeCollectionFrame.NavigationFrame.PrevPageButton, true)
 	T.SkinNextPrevButton(WardrobeCollectionFrame.NavigationFrame.NextPageButton)
 end
