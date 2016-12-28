@@ -12,7 +12,9 @@ TabBinder:RegisterEvent("DUEL_REQUESTED")
 TabBinder:RegisterEvent("DUEL_FINISHED")
 TabBinder:RegisterEvent("CHAT_MSG_SYSTEM")
 
-local RTB_Fail, RTB_DefaultKey, RTB_LastTargetKey, RTB_TargetKey, RTB_CurrentBind, RTB_Success = false, true
+local RTB_Fail, RTB_DefaultKey, LastTargetKey, TargetKey, CurrentBind, Success = false, true
+
+SetCVar("TargetNearestUseOld", 1)
 
 TabBinder:SetScript("OnEvent", function(self, event, ...)
 	if event == "CHAT_MSG_SYSTEM" then
@@ -21,59 +23,63 @@ TabBinder:SetScript("OnEvent", function(self, event, ...)
 			event = "DUEL_REQUESTED"
 		end
 	elseif event == "ZONE_CHANGED_NEW_AREA" or event == "PLAYER_ENTERING_WORLD" or (event == "PLAYER_REGEN_ENABLED" and RTB_Fail) or event == "DUEL_REQUESTED" or event == "DUEL_FINISHED" then
-		local RTB_BindSet = GetCurrentBindingSet()
-		local RTB_PVPType = GetZonePVPInfo()
-		local _, RTB_ZoneType = IsInInstance()
-
-		RTB_TargetKey = GetBindingKey("TARGETNEARESTENEMYPLAYER")
-		if RTB_TargetKey == nil then
-			RTB_TargetKey = GetBindingKey("TARGETNEARESTENEMY")
-		end
-		if RTB_TargetKey == nil and RTB_DefaultKey == true then
-			RTB_TargetKey = "TAB"
+		local BindSet = GetCurrentBindingSet()
+		if InCombatLockdown() or (BindSet ~= 1 and BindSet ~= 2) then
+			return
 		end
 
-		RTB_LastTargetKey = GetBindingKey("TARGETPREVIOUSENEMYPLAYER")
-		if RTB_LastTargetKey == nil then
-			RTB_LastTargetKey = GetBindingKey("TARGETPREVIOUSENEMY")
+		local PVPType = GetZonePVPInfo()
+		local _, ZoneType = IsInInstance()
+
+		TargetKey = GetBindingKey("TARGETNEARESTENEMYPLAYER")
+		if TargetKey == nil then
+			TargetKey = GetBindingKey("TARGETNEARESTENEMY")
 		end
-		if RTB_LastTargetKey == nil and RTB_DefaultKey == true then
-			RTB_LastTargetKey = "SHIFT-TAB"
+		if TargetKey == nil and RTB_DefaultKey then
+			TargetKey = "TAB"
 		end
 
-		if RTB_TargetKey ~= nil then
-			RTB_CurrentBind = GetBindingAction(RTB_TargetKey)
+		LastTargetKey = GetBindingKey("TARGETPREVIOUSENEMYPLAYER")
+		if LastTargetKey == nil then
+			LastTargetKey = GetBindingKey("TARGETPREVIOUSENEMY")
+		end
+		if LastTargetKey == nil and RTB_DefaultKey then
+			LastTargetKey = "SHIFT-TAB"
 		end
 
-		if RTB_ZoneType == "arena" or RTB_PVPType == "combat" or RTB_ZoneType == "pvp" or event == "DUEL_REQUESTED" then
-			if RTB_CurrentBind ~= "TARGETNEARESTENEMYPLAYER" then
-				if RTB_TargetKey == nil then
-					RTB_Success = 1
+		if TargetKey then
+			CurrentBind = GetBindingAction(TargetKey)
+		end
+
+		if ZoneType == "arena" or PVPType == "combat" or ZoneType == "pvp" or event == "DUEL_REQUESTED" then
+			if CurrentBind ~= "TARGETNEARESTENEMYPLAYER" then
+				if TargetKey == nil then
+					Success = true
 				else
-					RTB_Success = SetBinding(RTB_TargetKey, "TARGETNEARESTENEMYPLAYER")
+					Success = SetBinding(TargetKey, "TARGETNEARESTENEMYPLAYER")
 				end
-				if RTB_LastTargetKey ~= nil then
-					SetBinding(RTB_LastTargetKey, "TARGETPREVIOUSENEMYPLAYER")
+				if LastTargetKey then
+					SetBinding(LastTargetKey, "TARGETPREVIOUSENEMYPLAYER")
 				end
-				if RTB_Success == 1 then
-					SaveBindings(RTB_BindSet)
+				if Success then
+					SaveBindings(BindSet)
 					RTB_Fail = false
 				else
 					RTB_Fail = true
 				end
 			end
 		else
-			if RTB_CurrentBind ~= "TARGETNEARESTENEMY" then
-				if RTB_TargetKey == nil then
-					RTB_Success = 1
+			if CurrentBind ~= "TARGETNEARESTENEMY" then
+				if TargetKey == nil then
+					Success = true
 				else
-					RTB_Success = SetBinding(RTB_TargetKey, "TARGETNEARESTENEMY")
+					Success = SetBinding(TargetKey, "TARGETNEARESTENEMY")
 				end
-				if RTB_LastTargetKey ~= nil then
-					SetBinding(RTB_LastTargetKey, "TARGETPREVIOUSENEMY")
+				if LastTargetKey then
+					SetBinding(LastTargetKey, "TARGETPREVIOUSENEMY")
 				end
-				if RTB_Success == 1 then
-					SaveBindings(RTB_BindSet)
+				if Success then
+					SaveBindings(BindSet)
 					RTB_Fail = false
 				else
 					RTB_Fail = true
