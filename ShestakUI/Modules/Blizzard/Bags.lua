@@ -161,7 +161,7 @@ local function _getRealItemLevel(link)
 
 			if realItemLevel then
 				ItemDB[link] = tonumber(realItemLevel)
-				return realItemLevel
+				return tonumber(realItemLevel)
 			end
 		end
 	end

@@ -29,7 +29,7 @@ local function _getRealItemLevel(slotId, unit)
 			realItemLevel = realItemLevel or strmatch(text, S_ITEM_LEVEL)
 
 			if realItemLevel then
-				return realItemLevel
+				return tonumber(realItemLevel)
 			end
 		end
 	end
@@ -70,7 +70,7 @@ local function _updateItems(unit, frame)
 
 			local realItemLevel = _getRealItemLevel(i, unit)
 			realItemLevel = realItemLevel or ""
-			if tonumber(realItemLevel) and tonumber(realItemLevel) == 1 then
+			if realItemLevel and realItemLevel == 1 then
 				realItemLevel = ""
 			end
 			frame[i]:SetText("|cFFFFFF00"..realItemLevel)

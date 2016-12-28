@@ -81,7 +81,7 @@ local function _getRealItemLevel(slotId, unit, link, forced)
 
 			if realItemLevel then
 				ItemDB[link] = tonumber(realItemLevel)
-				return realItemLevel
+				return tonumber(realItemLevel)
 			end
 		end
 	end
