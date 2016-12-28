@@ -70,7 +70,7 @@ scantip:SetOwner(UIParent, "ANCHOR_NONE")
 local function _getRealItemLevel(slotId, unit, link, forced)
 	if (not forced) and ItemDB[link] then return ItemDB[link] end
 
-	local realItemLevel, currentUpgradeLevel, maxUpgradeLevel
+	local realItemLevel
 	local hasItem = scantip:SetInventoryItem(unit, slotId)
 	if not hasItem then return nil end -- With this we don't get ilvl for offhand if we equip 2h weapon
 
