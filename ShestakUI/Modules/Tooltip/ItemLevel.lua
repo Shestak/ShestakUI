@@ -125,12 +125,12 @@ local function UnitGear(unit)
 									break
 								end
 							end
-							level = _getRealItemLevel(i, unit, itemLink, true)
+							level = _getRealItemLevel(i, unit, itemLink, true) or level
 						elseif quality == 7 then
-							level = _getRealItemLevel(i, unit, itemLink)
+							level = _getRealItemLevel(i, unit, itemLink) or level
 							boa = boa + 1
 						else
-							level = _getRealItemLevel(i, unit, itemLink)
+							level = _getRealItemLevel(i, unit, itemLink) or level
 							if IsPVPItem(itemLink) then
 								pvp = pvp + 1
 							end
