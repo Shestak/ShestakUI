@@ -24,6 +24,7 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[214350] = 3			-- Nightmare Essence (Oakheart's Gnarled Root Trinket)
 	T.aoespam[230261] = 0			-- Flame Wreath (Aran's Relaxing Ruby Trinket)
 	T.aoespam[221812] = 10			-- Plague Swarm (Swarming Plaguehive Trinket)
+	T.aoespam[188091] = 4			-- Deadly Grace (Potion of Deadly Grace)
 end
 
 -- Class config
