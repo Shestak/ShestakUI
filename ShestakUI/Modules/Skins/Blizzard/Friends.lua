@@ -136,6 +136,21 @@ local function LoadSkin()
 	T.SkinCheckBox(QuickJoinRoleSelectionFrame.RoleButtonHealer.CheckButton)
 	T.SkinCheckBox(QuickJoinRoleSelectionFrame.RoleButtonDPS.CheckButton)
 
+	-- Pending invites
+	FriendsFrameFriendsScrollFrame.PendingInvitesHeaderButton:SkinButton()
+	local function SkinFriendRequest(frame)
+		if not frame.isSkinned then
+			frame.DeclineButton:SkinButton()
+			frame.AcceptButton:SkinButton()
+			frame.isSkinned = true
+		end
+	end
+	hooksecurefunc(FriendsFrameFriendsScrollFrame.invitePool, "Acquire", function()
+		for object in pairs(FriendsFrameFriendsScrollFrame.invitePool.activeObjects) do
+			SkinFriendRequest(object)
+		end
+	end)
+
 	-- Who Frame
 	local function UpdateWhoSkins()
 		WhoListScrollFrame:StripTextures()
