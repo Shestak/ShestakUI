@@ -351,6 +351,9 @@ local function LoadSecondarySkin()
 
 	T.SkinCloseButton(ChallengesKeystoneFrame.CloseButton)
 	ChallengesKeystoneFrame.StartButton:SkinButton(true)
+
+	ChallengesKeystoneFrame:DisableDrawLayer("BACKGROUND")
+	ChallengesKeystoneFrame:CreateBackdrop("Transparent")
 end
 
 T.SkinFuncs["Blizzard_ChallengesUI"] = LoadSecondarySkin
