@@ -33,7 +33,7 @@ T.CastBarTicks = {
 	[SpellName(64843)] = 4,		-- Divine Hymn
 	--BETA [SpellName(179338)] = 5,	-- Searing Insanity
 	-- Warlock
-	[SpellName(689)] = 6,		-- Drain Life
+	--BETA [SpellName(689)] = 6,		-- Drain Life
 	[SpellName(198590)] = 6,	-- Drain Soul
 	[SpellName(755)] = 6,		-- Health Funnel
 }

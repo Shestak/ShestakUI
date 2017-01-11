@@ -290,7 +290,7 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[205246] = 3		-- Phantom Singularity
 		T.aoespam[80240] = 3		-- Havoc
 		T.aoespam[42223] = 3		-- Rain of Fire
-		T.aoespam[689] = 3			-- Drain Life
+		--BETA T.aoespam[689] = 3			-- Drain Life
 		T.aoespam[198590] = 3		-- Drain Soul
 		T.aoespam[86040] = 3		-- Hand of Gul'dan
 		T.aoespam[205181] = 3		-- Shadowflame
@@ -311,7 +311,7 @@ elseif T.class == "WARLOCK" then
 	end
 	if C.combattext.healing then
 		T.healfilter[63106] = true	-- Siphon Life
-		T.healfilter[689] = true	-- Drain Life
+		--BETA T.healfilter[689] = true	-- Drain Life
 		T.healfilter[108359] = true	-- Dark Regeneration
 	end
 elseif T.class == "WARRIOR" then
