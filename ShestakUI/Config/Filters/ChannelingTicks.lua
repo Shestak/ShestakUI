@@ -28,10 +28,10 @@ T.CastBarTicks = {
 	[SpellName(113656)] = 4,	-- Fists of Fury
 	-- Priest
 	[SpellName(15407)] = 4,		-- Mind Flay
-	[SpellName(48045)] = 5,		-- Mind Sear
+	--BETA [SpellName(48045)] = 5,		-- Mind Sear
 	[SpellName(47540)] = 3,		-- Penance
 	[SpellName(64843)] = 4,		-- Divine Hymn
-	[SpellName(179338)] = 5,	-- Searing Insanity
+	--BETA [SpellName(179338)] = 5,	-- Searing Insanity
 	-- Warlock
 	[SpellName(689)] = 6,		-- Drain Life
 	[SpellName(198590)] = 6,	-- Drain Soul
