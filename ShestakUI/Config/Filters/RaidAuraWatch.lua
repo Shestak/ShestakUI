@@ -113,74 +113,74 @@ T.RaidDebuffs = {
 	[SpellName(206875)] = 3,	-- Fel Obelisk
 -- Trial of Valor
 	-- Odyn
-	[SpellName(198088)] = 3,    -- Glowing Fragment
-	[SpellName(228915)] = 3,    -- Stormforged Spear
-	[SpellName(227959)] = 3,    -- Storm of Justice
-	[SpellName(227475)] = 3,    -- Cleansing Flame
+	[SpellName(198088)] = 3,	-- Glowing Fragment
+	[SpellName(228915)] = 3,	-- Stormforged Spear
+	[SpellName(227959)] = 3,	-- Storm of Justice
+	[SpellName(227475)] = 3,	-- Cleansing Flame
 	-- Guarm
-	[SpellName(227570)] = 3,    -- Dark Discharge
-	[SpellName(227566)] = 3,    -- Salty Spittle
-	[SpellName(227539)] = 3,    -- Fiery Phlegm
-	[SpellName(228250)] = 4,    -- Shadow Lick
-	[SpellName(228246)] = 4,    -- Frost Lick
-	[SpellName(228226)] = 4,    -- Flame Lick
+	[SpellName(227570)] = 3,	-- Dark Discharge
+	[SpellName(227566)] = 3,	-- Salty Spittle
+	[SpellName(227539)] = 3,	-- Fiery Phlegm
+	[SpellName(228250)] = 4,	-- Shadow Lick
+	[SpellName(228246)] = 4,	-- Frost Lick
+	[SpellName(228226)] = 4,	-- Flame Lick
 	-- Helya
-	[SpellName(228054)] = 3,    -- Taint of the Sea
-	[SpellName(227982)] = 3,    -- Bilewater Redox
-	[SpellName(193367)] = 3,    -- Fetid Rot
-	[SpellName(227903)] = 3,    -- Orb of Corruption
-	[SpellName(228058)] = 3,    -- Orb of Corrosion
-	[SpellName(228519)] = 3,    -- Anchor Slam
-	[SpellName(202476)] = 3,    -- Rabid
-	[SpellName(232450)] = 3,    -- Corrupted Axion
+	[SpellName(228054)] = 3,	-- Taint of the Sea
+	[SpellName(227982)] = 3,	-- Bilewater Redox
+	[SpellName(193367)] = 3,	-- Fetid Rot
+	[SpellName(227903)] = 3,	-- Orb of Corruption
+	[SpellName(228058)] = 3,	-- Orb of Corrosion
+	[SpellName(228519)] = 3,	-- Anchor Slam
+	[SpellName(202476)] = 3,	-- Rabid
+	[SpellName(232450)] = 3,	-- Corrupted Axion
 -- The Emerald Nightmare
 	-- Nythendra
-	[SpellName(204504)] = 5,    -- Infested
-	[SpellName(203096)] = 3,    -- Rot
-	[SpellName(204463)] = 3,    -- Volatile Rot
-	[SpellName(203646)] = 4,    -- Burst of Corruption
+	[SpellName(204504)] = 5,	-- Infested
+	[SpellName(203096)] = 3,	-- Rot
+	[SpellName(204463)] = 3,	-- Volatile Rot
+	[SpellName(203646)] = 4,	-- Burst of Corruption
 	-- Il'gynoth, Heart of Corruption
-	[SpellName(215845)] = 3,    -- Dispersed Spores
-	[SpellName(210099)] = 6,    -- Fixate
-	[SpellName(209469)] = 5,    -- Touch of Corruption
-	[SpellName(210984)] = 3,    -- Eye of Fate
-	[SpellName(208697)] = 4,    -- Mind Flay
-	[SpellName(208929)] = 3,    -- Spew Corruption
-	[SpellName(215128)] = 3,    -- Cursed Blood
+	[SpellName(215845)] = 3,	-- Dispersed Spores
+	[SpellName(210099)] = 6,	-- Fixate
+	[SpellName(209469)] = 5,	-- Touch of Corruption
+	[SpellName(210984)] = 3,	-- Eye of Fate
+	[SpellName(208697)] = 4,	-- Mind Flay
+	[SpellName(208929)] = 3,	-- Spew Corruption
+	[SpellName(215128)] = 3,	-- Cursed Blood
 	-- Erethe Renferal
-	[SpellName(215582)] = 4,    -- Raking Talons
-	[SpellName(218519)] = 4,    -- Wind Burn
-	[SpellName(215307)] = 4,    -- Web of Pain
-	[SpellName(215449)] = 3,    -- Necrotic Venom
-	[SpellName(215460)] = 3,    -- Necrotic Venom
-	[SpellName(210850)] = 4,    -- Twisting Shadows
+	[SpellName(215582)] = 4,	-- Raking Talons
+	[SpellName(218519)] = 4,	-- Wind Burn
+	[SpellName(215307)] = 4,	-- Web of Pain
+	[SpellName(215449)] = 3,	-- Necrotic Venom
+	[SpellName(215460)] = 3,	-- Necrotic Venom
+	[SpellName(210850)] = 4,	-- Twisting Shadows
 	-- Ursoc
-	[SpellName(197943)] = 3,    -- Overwhelm
-	[SpellName(204859)] = 4,    -- Rend Flesh
-	[SpellName(198006)] = 3,    -- Focused Gaze
-	[SpellName(198108)] = 3,    -- Momentum
+	[SpellName(197943)] = 3,	-- Overwhelm
+	[SpellName(204859)] = 4,	-- Rend Flesh
+	[SpellName(198006)] = 3,	-- Focused Gaze
+	[SpellName(198108)] = 3,	-- Momentum
 	-- Dragons of Nightmare
-	[SpellName(207681)] = 4,    -- Nightmare Bloom
-	[SpellName(203770)] = 3,    -- Defiled Vines
-	[SpellName(203787)] = 3,    -- Volatile Infection
-	[SpellName(204044)] = 3,    -- Shadow Burst
-	[SpellName(205341)] = 3,    -- Seeping Fog
-	[SpellName(204078)] = 3,    -- Bellowing Roar
+	[SpellName(207681)] = 4,	-- Nightmare Bloom
+	[SpellName(203770)] = 3,	-- Defiled Vines
+	[SpellName(203787)] = 3,	-- Volatile Infection
+	[SpellName(204044)] = 3,	-- Shadow Burst
+	[SpellName(205341)] = 3,	-- Seeping Fog
+	[SpellName(204078)] = 3,	-- Bellowing Roar
 	-- Cenarius
-	[SpellName(210315)] = 3,    -- Nightmare Brambles
-	[SpellName(226821)] = 3,    -- Desiccating Stomp
-	[SpellName(211507)] = 3,    -- Nightmare Javelin
-	[SpellName(211471)] = 3,    -- Scorned Touch
-	[SpellName(214529)] = 3,    -- Spear of Nightmares
+	[SpellName(210315)] = 3,	-- Nightmare Brambles
+	[SpellName(226821)] = 3,	-- Desiccating Stomp
+	[SpellName(211507)] = 3,	-- Nightmare Javelin
+	[SpellName(211471)] = 3,	-- Scorned Touch
+	[SpellName(214529)] = 3,	-- Spear of Nightmares
 	[SpellName(210279)] = 3,	-- Creeping Nightmare
 	-- Xavius
-	[SpellName(208431)] = 3,    -- Descent into Madness
-	[SpellName(206651)] = 3,    -- Darkening Soul
-	[SpellName(209158)] = 3,    -- Blackening Soul
-	[SpellName(211802)] = 3,    -- Nightmare Blades
-	[SpellName(205771)] = 3,    -- Tormenting Fixation
-	[SpellName(210451)] = 3,    -- Bonds of Terror
-	[SpellName(224508)] = 3,    -- Corruption Meteor
+	[SpellName(208431)] = 3,	-- Descent into Madness
+	[SpellName(206651)] = 3,	-- Darkening Soul
+	[SpellName(209158)] = 3,	-- Blackening Soul
+	[SpellName(211802)] = 3,	-- Nightmare Blades
+	[SpellName(205771)] = 3,	-- Tormenting Fixation
+	[SpellName(210451)] = 3,	-- Bonds of Terror
+	[SpellName(224508)] = 3,	-- Corruption Meteor
 -----------------------------------------------------------------
 -- Legion Dungeon
 -----------------------------------------------------------------
