@@ -19,7 +19,6 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[6603] = 3				-- Auto Attack
 	T.aoespam[195222] = 4			-- Stormlash
 	T.aoespam[195256] = 4			-- Stormlash
-	T.aoespam[205729] = 3			-- Greater Blessing of Might
 	T.aoespam[222197] = 0			-- Volatile Ichor (Unstable Horrorslime Trinket)
 	T.aoespam[214350] = 3			-- Nightmare Essence (Oakheart's Gnarled Root Trinket)
 	T.aoespam[230261] = 0			-- Flame Wreath (Aran's Relaxing Ruby Trinket)
@@ -128,7 +127,6 @@ elseif T.class == "MAGE" then
 		T.aoespam[148022] = 3		-- Icicle (Mastery)
 		T.aoespam[31707] = 3		-- Waterbolt (Pet)
 		T.aoespam[228598] = 0.5		-- Ice Lance
-		T.aoespam[115611] = 6		-- Temporal Ripples
 		T.aoespam[157981] = 1		-- Blast Wave
 		T.aoespam[157997] = 1		-- Ice Nova
 		T.aoespam[157980] = 1		-- Supernova
