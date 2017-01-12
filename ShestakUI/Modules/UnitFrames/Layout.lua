@@ -1420,7 +1420,7 @@ if C.unitframe.show_arena == true then
 						local _, spec, class = nil, "UNKNOWN", "UNKNOWN"
 
 						if s and s > 0 then
-							_, spec, _, _, _, _, class = GetSpecializationInfoByID(s)
+							_, spec, _, _, _, class = GetSpecializationInfoByID(s)
 						end
 
 						if class and spec then
