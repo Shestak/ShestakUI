@@ -63,16 +63,7 @@ if C.reminder.solo_buffs_enable == true then
 				["instance"] = true,
 				["pvp"] = true,
 			},
-			[2] = {	-- Greater Blessing of Might
-				["spells"] = {
-					203528,	-- Greater Blessing of Might
-				},
-				["spec"] = 3,		-- Only Ret paladin can buff
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-			[3] = {	-- Greater Blessing of Wisdom
+			[2] = {	-- Greater Blessing of Wisdom
 				["spells"] = {
 					203539,	-- Greater Blessing of Wisdom
 				},
