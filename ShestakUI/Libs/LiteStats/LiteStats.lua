@@ -1594,7 +1594,7 @@ if experience.enabled then
 			end
 		},
 		OnLoad = function(self)
-			RegEvents(self, "TIME_PLAYED_MSG PLAYER_LOGOUT PLAYER_LOGIN UPDATE_FACTION CHAT_MSG_COMBAT_XP_GAIN PLAYER_LEVEL_UP ARTIFACT_XP_UPDATE UNIT_INVENTORY_CHANGED")
+			RegEvents(self, "TIME_PLAYED_MSG PLAYER_LOGOUT PLAYER_LOGIN UPDATE_FACTION CHAT_MSG_COMBAT_XP_GAIN PLAYER_LEVEL_UP ARTIFACT_XP_UPDATE PLAYER_EQUIPMENT_CHANGED")
 			-- Filter first time played message
 			local ofunc = ChatFrame_DisplayTimePlayed
 			function ChatFrame_DisplayTimePlayed() ChatFrame_DisplayTimePlayed = ofunc end
@@ -1642,10 +1642,10 @@ if experience.enabled then
 			if event == "PLAYER_LOGOUT" or event == "TIME_PLAYED_MSG" then
 				conf.Played = floor(playedtotal + GetTime() - playedmsg)
 			end
-			if (event == "ARTIFACT_XP_UPDATE" or event == "UNIT_INVENTORY_CHANGED" or event == "PLAYER_LOGIN") and conf.ExpMode == "art" then
-				if event == "UNIT_INVENTORY_CHANGED" then
-					local unit = ...
-					if unit ~= "player" then
+			if (event == "ARTIFACT_XP_UPDATE" or event == "PLAYER_EQUIPMENT_CHANGED" or event == "PLAYER_LOGIN") and conf.ExpMode == "art" then
+				if event == "PLAYER_EQUIPMENT_CHANGED" then
+					local slot = ...
+					if slot ~= INVSLOT_MAINHAND then
 						return
 					end
 				end
@@ -1654,7 +1654,7 @@ if experience.enabled then
 					numPointsAvailableToSpend, artifactXP, xpForNextPoint = MainMenuBar_GetNumArtifactTraitsPurchasableFromXP(artifactPointsSpent, artifactTotalXP)
 					self.text:SetText(gsub(experience.artifact_fmt, "%[([%w%%]-)%]", tags))
 				else
-					if event == "ARTIFACT_XP_UPDATE" or event == "UNIT_INVENTORY_CHANGED" then
+					if event == "PLAYER_EQUIPMENT_CHANGED" then
 						conf.ExpMode = "played"
 					end
 				end
