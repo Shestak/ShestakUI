@@ -1161,7 +1161,7 @@ C["filger_spells"] = {
 			-- Alter Time
 			{spellID = 110909, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Temporal Shield
-			--BETA {spellID = 115610, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 198111, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror Image
 			{spellID = 55342, filter = "ICD", trigger = "NONE", duration = 40},
 		},
@@ -1305,7 +1305,7 @@ C["filger_spells"] = {
 			-- Ice Barrier
 			{spellID = 11426, filter = "CD"},
 			-- Temporal Shield
-			--BETA {spellID = 115610, filter = "CD"},
+			{spellID = 198111, filter = "CD"},
 			-- Fire Blast
 			{spellID = 108853, filter = "CD"},
 			-- Frost Bomb
@@ -1339,7 +1339,7 @@ C["filger_spells"] = {
 			-- Combustion
 			{spellID = 190319, filter = "CD"},
 			-- Cold Snap
-			--BETA {spellID = 11958, filter = "CD"},
+			{spellID = 235219, filter = "CD"},
 			-- Ice Block
 			{spellID = 45438, filter = "CD"},
 			-- Invisibility
@@ -2712,8 +2712,8 @@ C["filger_spells"] = {
 			{spellID = 104773, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Harvest
 			{spellID = 196098, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Mana Tap
-			{spellID = 196104, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Empowered Life Tap
+			{spellID = 235156, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Swap
 			{spellID = 86211, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Regeneration
@@ -3542,8 +3542,6 @@ C["filger_spells"] = {
 			{spellID = 116, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frostfire Bolt
 			{spellID = 44614, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Chilled
-			--BETA {spellID = 7321, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mind Flay
 			{spellID = 15407, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Deadly Throw
@@ -3753,7 +3751,7 @@ C["filger_spells"] = {
 			-- Greater Invisibility
 			{spellID = 113862, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Temporal Shield
-			--BETA {spellID = 115610, unitID = "target", caster = "all", filter = "BUFF"},
+			{spellID = 198111, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Alter Time
 			{spellID = 110909, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Evanesce

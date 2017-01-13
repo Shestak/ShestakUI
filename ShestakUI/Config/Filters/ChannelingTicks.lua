@@ -3,7 +3,7 @@ if C.unitframe.enable ~= true or C.unitframe.castbar_ticks ~= true then return e
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
---	Example: Drain Life -> http://www.wowhead.com/spell=689
+--	Example: Tranquility -> http://www.wowhead.com/spell=740
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 local function SpellName(id)
@@ -28,12 +28,9 @@ T.CastBarTicks = {
 	[SpellName(113656)] = 4,	-- Fists of Fury
 	-- Priest
 	[SpellName(15407)] = 4,		-- Mind Flay
-	--BETA [SpellName(48045)] = 5,		-- Mind Sear
 	[SpellName(47540)] = 3,		-- Penance
 	[SpellName(64843)] = 4,		-- Divine Hymn
-	--BETA [SpellName(179338)] = 5,	-- Searing Insanity
 	-- Warlock
-	--BETA [SpellName(689)] = 6,		-- Drain Life
 	[SpellName(198590)] = 6,	-- Drain Soul
 	[SpellName(755)] = 6,		-- Health Funnel
 }

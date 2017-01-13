@@ -216,7 +216,6 @@ elseif T.class == "PRIEST" then
 		T.aoespam[589] = 3			-- Shadow Word: Pain
 		T.aoespam[34914] = 3		-- Vampiric Touch
 		T.aoespam[15407] = 3		-- Mind Flay
-		T.aoespam[49821] = 3		-- Mind Sear
 		T.aoespam[14914] = 3		-- Holy Fire
 		T.aoespam[129250] = 3		-- Power Word: Solace
 		T.aoespam[120696] = 3		-- Halo
@@ -290,7 +289,6 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[205246] = 3		-- Phantom Singularity
 		T.aoespam[80240] = 3		-- Havoc
 		T.aoespam[42223] = 3		-- Rain of Fire
-		--BETA T.aoespam[689] = 3			-- Drain Life
 		T.aoespam[198590] = 3		-- Drain Soul
 		T.aoespam[86040] = 3		-- Hand of Gul'dan
 		T.aoespam[205181] = 3		-- Shadowflame
@@ -311,7 +309,6 @@ elseif T.class == "WARLOCK" then
 	end
 	if C.combattext.healing then
 		T.healfilter[63106] = true	-- Siphon Life
-		--BETA T.healfilter[689] = true	-- Drain Life
 		T.healfilter[108359] = true	-- Dark Regeneration
 	end
 elseif T.class == "WARRIOR" then
@@ -337,6 +334,5 @@ elseif T.class == "WARRIOR" then
 	end
 	if C.combattext.healing then
 		T.healfilter[117313] = true	-- Bloodthirst Heal
-		--BETA T.healfilter[159363] = true	-- Blood Craze
 	end
 end
