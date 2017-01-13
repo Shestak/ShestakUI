@@ -26,14 +26,6 @@ local function Update(self, event, unit)
 	if (unit and unit ~= self.unit) then return end
 
 	local element = self.ArtifactPower
-	--[[ :PreUpdate(event)
-	 Called before the element has been updated.
-
-	 Arguments
-
-	 self  - the ArtifactPower element.
-	 event - the event that triggered the update.
-	]]
 	if (element.PreUpdate) then element:PreUpdate(event) end
 
 	local show = HasArtifactEquipped() and not UnitHasVehicleUI("player")
@@ -63,32 +55,11 @@ local function Update(self, event, unit)
 		element:Hide()
 	end
 
-	--[[ :PostUpdate(event, show)
-
-	 Called after the element has been updated.
-
-	 Arguments
-
-	 self  - the ArtifactPower element.
-	 event - the event that triggered the update.
-	 show  - true if the element is shown, false else.
-	]]
 	if (element.PostUpdate) then
 		return element:PostUpdate(event, show)
 	end
 end
 
---[[ Hooks
- Override(self, ...) - Used to completely override the internal update function.
-                       Removing the table key entry will make the element fall-back
-                       to its internal function again.
-
- Arguments
-
- self - the parent of the ArtifactPower widget
- ...  - the event that triggered the update and the unit that the
-        event was fired for
-]]
 local function Path(self, ...)
 	return (self.ArtifactPower.Override or Update)(self, ...)
 end
@@ -113,24 +84,12 @@ local function Enable(self, unit)
 		element.onAlpha = element.onAlpha or 1
 		element.offAlpha = element.offAlpha or 1
 		element:SetAlpha(element.offAlpha)
-		--[[ OnEnter(self)
-
-		 The OnEnter script handler when the element is mouse enabled.
-
-		 Arguments
-
-		 self - the ArtifactPower element.
-		]]
-		element:SetScript("OnEnter", element.OnEnter or ShowTooltip)
-		--[[ OnLeave(self)
-
-		 The OnLeave script handler when the element is mouse enabled.
-
-		 Arguments
-
-		 self - the ArtifactPower element.
-		]]
-		element:SetScript("OnLeave", element.OnLeave or HideTooltip)
+		if (not element:GetScript("OnEnter")) then
+			element:SetScript("OnEnter", element.OnEnter or ShowTooltip)
+		end
+		if (not element:GetScript("OnLeave")) then
+			element:SetScript("OnLeave", element.OnLeave or HideTooltip)
+		end
 	end
 
 	self:RegisterEvent("ARTIFACT_XP_UPDATE", Path, true)
