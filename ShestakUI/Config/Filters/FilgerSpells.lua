@@ -1150,6 +1150,10 @@ C["filger_spells"] = {
 			{spellID = 116014, filter = "ICD", trigger = "NONE", duration = 10},
 			-- Pyretic Incantation
 			{spellID = 194329, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blazing Barrier
+			{spellID = 235313, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Prismatic Barrier
+			{spellID = 235450, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Barrier
 			{spellID = 11426, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Heating Up
