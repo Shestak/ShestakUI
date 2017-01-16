@@ -39,7 +39,8 @@ local function LoadSkin()
 		"BNetReportFrame",
 		"BNetReportFrameComment",
 		"RecruitAFriendNoteFrame",
-		"QuickJoinScrollFrame"
+		"QuickJoinScrollFrame",
+		"QuickJoinRoleSelectionFrame"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -127,7 +128,6 @@ local function LoadSkin()
 
 	-- Quick Join Frame
 	QuickJoinFrame.JoinQueueButton:SkinButton()
-	QuickJoinRoleSelectionFrame:StripTextures()
 	QuickJoinRoleSelectionFrame:SetTemplate("Transparent")
 	QuickJoinRoleSelectionFrame.AcceptButton:SkinButton()
 	QuickJoinRoleSelectionFrame.CancelButton:SkinButton()
@@ -140,6 +140,7 @@ local function LoadSkin()
 	FriendsFrameFriendsScrollFrame.PendingInvitesHeaderButton:SkinButton()
 	local function SkinFriendRequest(frame)
 		if not frame.isSkinned then
+			frame.DeclineButton:SetPoint("RIGHT", frame, "RIGHT", -2, 1)
 			frame.DeclineButton:SkinButton()
 			frame.AcceptButton:SkinButton()
 			frame.isSkinned = true
@@ -238,6 +239,9 @@ local function LoadSkin()
 
 	FriendsTabHeaderRecruitAFriendButton:SetTemplate("Default")
 	FriendsTabHeaderRecruitAFriendButton:StyleButton()
+	FriendsTabHeaderRecruitAFriendButton:SetSize(23, 23)
+	FriendsTabHeaderRecruitAFriendButton:ClearAllPoints()
+	FriendsTabHeaderRecruitAFriendButton:SetPoint("TOPRIGHT", FriendsFrame, -9, -58)
 	FriendsTabHeaderRecruitAFriendButtonIcon:SetDrawLayer("OVERLAY")
 	FriendsTabHeaderRecruitAFriendButtonIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	FriendsTabHeaderRecruitAFriendButtonIcon:ClearAllPoints()
