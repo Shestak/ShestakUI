@@ -24,6 +24,8 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[230261] = 0			-- Flame Wreath (Aran's Relaxing Ruby Trinket)
 	T.aoespam[221812] = 5			-- Plague Swarm (Swarming Plaguehive Trinket)
 	T.aoespam[222711] = 4			-- Poisoned Dreams (Bough of Corruption Trinket)
+	T.aoespam[229737] = 0			-- Solar Collapse (Fury of the Burning Sky Trinket)
+	T.aoespam[229700] = 0			-- Orb of Destruction (Pharamere's Forbidden Grimoire Trinket)
 	T.aoespam[188091] = 4			-- Deadly Grace (Potion of Deadly Grace)
 end
 
