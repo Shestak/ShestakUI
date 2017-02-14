@@ -7,6 +7,7 @@ if C.chat.enable ~= true then return end
 local lines = {}
 local frame = nil
 local editBox = nil
+local font = nil
 local isf = nil
 local sizes = {
 	":14:14",
@@ -57,6 +58,9 @@ local function CreatCopyFrame()
 	scrollArea:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -27, 8)
 	T.SkinScrollBar(CopyScrollScrollBar)
 
+	font = frame:CreateFontString(nil, nil, "GameFontNormal")
+	font:Hide()
+
 	isf = true
 end
 
@@ -65,13 +69,17 @@ local scrollDown = function()
 end
 
 local function Copy(cf)
+	if not isf then CreatCopyFrame() end
 	local text = ""
 	for i = 1, cf:GetNumMessages() do
-		text = text..cf:GetMessageInfo(i).."\n"
+		local line = cf:GetMessageInfo(i)
+		font:SetFormattedText("%s\n", line)
+		local cleanLine = font:GetText() or ""
+		text = text..cleanLine
 	end
-	text = text:gsub("|[Tt]Interface\\TargetingFrame\\UI%-RaidTargetingIcon_(%d):0|[Tt]", "{rt%1}")
-	text = text:gsub("|[Tt][^|]+|[Tt]", "")
-	if not isf then CreatCopyFrame() end
+	text = text:gsub("|T[^\\]+\\[^\\]+\\[Uu][Ii]%-[Rr][Aa][Ii][Dd][Tt][Aa][Rr][Gg][Ee][Tt][Ii][Nn][Gg][Ii][Cc][Oo][Nn]_(%d)[^|]+|t", "{rt%1}")
+	text = text:gsub("|T13700([1-8])[^|]+|t", "{rt%1}")
+	text = text:gsub("|T[^|]+|t", "")
 	if frame:IsShown() then frame:Hide() return end
 	frame:Show()
 	editBox:SetText(text)
