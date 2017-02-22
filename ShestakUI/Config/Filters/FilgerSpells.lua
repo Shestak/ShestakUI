@@ -676,8 +676,6 @@ C["filger_spells"] = {
 			-- Down Draft (Haste, Proc) [Nightmare Egg Shell]
 			{spellID = 214342, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Intellect]
-			-- Accelerando (Haste, Proc) [Erratic Metronome]
-			{spellID = 225719, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nefarious Pact (Cast speed, Proc) [Whispers in the Dark]
 			{spellID = 225774, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
@@ -1209,8 +1207,6 @@ C["filger_spells"] = {
 			-- Rapid Adaptation (Versatility, Use)
 			{spellID = 170397, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Intellect]
-			-- Accelerando (Haste, Proc) [Erratic Metronome]
-			{spellID = 225719, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nefarious Pact (Cast speed, Proc) [Whispers in the Dark]
 			{spellID = 225774, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
@@ -1965,8 +1961,6 @@ C["filger_spells"] = {
 			-- Rapid Adaptation (Versatility, Use)
 			{spellID = 170397, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Intellect]
-			-- Accelerando (Haste, Proc) [Erratic Metronome]
-			{spellID = 225719, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nefarious Pact (Cast speed, Proc) [Whispers in the Dark]
 			{spellID = 225774, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
@@ -2540,8 +2534,6 @@ C["filger_spells"] = {
 			-- Down Draft (Haste, Proc) [Nightmare Egg Shell]
 			{spellID = 214342, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Intellect]
-			-- Accelerando (Haste, Proc) [Erratic Metronome]
-			{spellID = 225719, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nefarious Pact (Cast speed, Proc) [Whispers in the Dark]
 			{spellID = 225774, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
@@ -2759,8 +2751,6 @@ C["filger_spells"] = {
 			-- Rapid Adaptation (Versatility, Use)
 			{spellID = 170397, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Damage [Intellect]
-			-- Accelerando (Haste, Proc) [Erratic Metronome]
-			{spellID = 225719, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nefarious Pact (Cast speed, Proc) [Whispers in the Dark]
 			{spellID = 225774, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
@@ -3249,15 +3239,9 @@ C["filger_spells"] = {
 			-- Time Warp
 			{spellID = 80353, unitID = "player", caster = "all", filter = "BUFF"},
 
-			-- Legendary Rings
-			-- Maalus, the Blood Drinker
-			{spellID = 187806, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Nithramus, the All-Seer
-			{spellID = 187616, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Sanctus, Sigil of the Unbroken
-			{spellID = 187617, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Thorasus, the Stone Heart of Draenor
-			{spellID = 187619, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Legendary Items
+			-- Norgannon's Foresight feet
+			{spellID = 236380, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Professions
 			-- Goblin Glider [Goblin Glider Kit]
