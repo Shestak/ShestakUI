@@ -50,7 +50,7 @@ if IsAddOnLoaded("Grid") or IsAddOnLoaded("Grid2") or IsAddOnLoaded("HealBot") o
 	C.raidframe.show_raid = false
 end
 
-if IsAddOnLoaded("TidyPlates") or IsAddOnLoaded("Aloft") or IsAddOnLoaded("Kui_Nameplates") or IsAddOnLoaded("rNamePlates") then
+if IsAddOnLoaded("TidyPlates") or IsAddOnLoaded("Aloft") or IsAddOnLoaded("Kui_Nameplates") or IsAddOnLoaded("rNamePlates") or IsAddOnLoaded("EKplates") or IsAddOnLoaded("bdNameplates") then
 	C.nameplate.enable = false
 end
 
