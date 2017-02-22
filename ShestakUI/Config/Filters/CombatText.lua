@@ -122,7 +122,6 @@ elseif T.class == "MAGE" then
 		T.aoespam[114954] = 3		-- Nether Tempest (AoE)
 		T.aoespam[7268] = 1.6		-- Arcane Missiles
 		T.aoespam[113092] = 0		-- Frost Bomb
-		T.aoespam[44425] = 0		-- Arcane Barrage
 		T.aoespam[84721] = 3		-- Frozen Orb
 		T.aoespam[228354] = 1.5		-- Flurry
 		T.aoespam[228600] = 0		-- Glacial Spike
@@ -152,6 +151,10 @@ elseif T.class == "MAGE" then
 		T.aoespam[205472] = 4		-- Flame Patch
 		T.aoespam[88084] = 3		-- Arcane Blast (Mirror Image)
 		T.aoespam[59638] = 3		-- Frostbolt (Mirror Image)
+		T.merge[211088] = 211076	-- Mark of Aluneth
+		T.aoespam[211076] = 3		-- Mark of Aluneth
+		T.merge[210817] = 44425		-- Arcane Rebound
+		T.aoespam[44425] = 0		-- Arcane Barrage
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
