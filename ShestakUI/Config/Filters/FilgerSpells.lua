@@ -917,6 +917,14 @@ C["filger_spells"] = {
 			{spellID = 193533, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lock and Load
 			{spellID = 194594, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Mok'Nathal Tactics
+			{spellID = 201081, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Mongoose Fury
+			{spellID = 190931, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Beast Cleave
+			{spellID = 118455, unitID = "pet", caster = "player", filter = "BUFF"},
+			-- Marking Targets
+			{spellID = 223138, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Frenzy
 			{spellID = 19615, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Mend Pet
@@ -985,10 +993,20 @@ C["filger_spells"] = {
 			{spellID = 194599, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Serpent Sting
 			{spellID = 87935, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Lacerate
+			{spellID = 185855, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- A Murder of Crows
+			{spellID = 131894, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Vulnerable
+			{spellID = 187131, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Hunter's Mark
+			{spellID = 185365, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Narrow Escape
 			{spellID = 136634, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Entrapment
 			{spellID = 135373, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Caltrops
+			{spellID = 194279, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Warp Time (Warp Stalker)
 			{spellID = 35346, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Ankle Crack (Crocolisk)
@@ -1036,6 +1054,8 @@ C["filger_spells"] = {
 			{spellID = 147362, filter = "CD"},
 			-- Kill Command
 			{spellID = 34026, filter = "CD"},
+			-- Sidewinders
+			{spellID = 214579, filter = "CD"},
 			-- Explosive Shot
 			{spellID = 212431, filter = "CD"},
 			-- Chimera Shot
@@ -1070,8 +1090,12 @@ C["filger_spells"] = {
 			{spellID = 131894, filter = "CD"},
 			-- Exhilaration
 			{spellID = 109304, filter = "CD"},
+			-- Aspect of the Wild
+			{spellID = 193530, filter = "CD"},
 			-- Aspect of the Turtle
 			{spellID = 186265, filter = "CD"},
+			-- Aspect of the Cheetah
+			{spellID = 186257, filter = "CD"},
 			-- Spirit Mend (Pet)
 			{spellID = 90361, filter = "CD"},
 			-- Honorable Medallion
@@ -3518,6 +3542,8 @@ C["filger_spells"] = {
 			{spellID = 135299, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frozen Ammo
 			{spellID = 162546, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Caltrops
+			{spellID = 194279, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Warp Time (Warp Stalker)
 			{spellID = 35346, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Ankle Crack (Crocolisk)

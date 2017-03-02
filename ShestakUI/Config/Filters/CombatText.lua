@@ -105,6 +105,31 @@ elseif T.class == "HUNTER" then
 		T.aoespam[34655] = 3		-- Deadly Poison (Trap)
 		T.aoespam[93433] = 3		-- Burrow Attack (Worm)
 		T.aoespam[92380] = 3		-- Froststorm Breath (Chimaera)
+		T.aoespam[212436] = 0.5		-- Butchery
+		T.aoespam[194859] = 9		-- Dragonsfire Conflagration
+		T.aoespam[194858] = 9		-- Dragonsfire Grenade
+		T.aoespam[162487] = 6		-- Steel Trap
+		T.aoespam[200167] = 1.5		-- Throwing Axes
+		T.aoespam[187708] = 0.5		-- Carve
+		T.aoespam[203413] = 5		-- Fury of the Eagle
+		T.aoespam[203525] = 2		-- Talon Strike
+		T.aoespam[17253] = 6		-- Bite
+		T.aoespam[185855] = 6		-- Lacerate
+		T.aoespam[194279] = 6		-- Caltrops
+		T.aoespam[19434] = 1		-- Trick Shot (Aimed Shot)
+		T.aoespam[191070] = 1		-- Call of the Hunter (Marked Shot)
+		T.aoespam[191043] = 1		-- Legacy of the Windrunners (Aimed Shot)
+		T.aoespam[198670] = 1		-- Piercing Shot
+		T.aoespam[201594] = 4		-- Stampede
+		T.aoespam[194392] = 1		-- Volley
+		T.aoespam[214581] = 2		-- Sidewinders
+		T.aoespam[212621] = 2		-- Marked Shot
+		T.aoespam[191413] = 6		-- Bestial Ferocity
+		T.aoespam[16827] = 6		-- Claw
+		T.aoespam[201754] = 1		-- Stomp
+		T.aoespam[63900] = 1		-- Thunderstomp
+		T.aoespam[197465] = 1		-- Surge of the Stormgod
+		T.aoespam[207097] = 4		-- Titan's Thunder
 	end
 elseif T.class == "MAGE" then
 	if C.combattext.merge_aoe_spam then
