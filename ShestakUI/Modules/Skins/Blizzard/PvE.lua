@@ -246,16 +246,46 @@ local function LoadSkin()
 
 	LFGListFrame.CategorySelection.FindGroupButton:SkinButton()
 	LFGListFrame.CategorySelection.StartGroupButton:SkinButton()
-	LFGListFrame.SearchPanel.RefreshButton:SkinButton()
-	LFGListFrame.SearchPanel.FilterButton:SkinButton()
 	LFGListFrame.SearchPanel.BackButton:SkinButton()
 	LFGListFrame.SearchPanel.SignUpButton:SkinButton()
 	LFGListFrame.SearchPanel.ScrollFrame.StartGroupButton:SkinButton()
-
+	LFGListFrame.SearchPanel.RefreshButton:SkinButton()
 	LFGListFrame.SearchPanel.RefreshButton:SetSize(24, 24)
 	LFGListFrame.SearchPanel.RefreshButton.Icon:SetPoint("CENTER")
-
+	LFGListFrame.SearchPanel.FilterButton:SkinButton()
 	LFGListFrame.SearchPanel.FilterButton:SetPoint("LEFT", LFGListFrame.SearchPanel.SearchBox, "RIGHT", 5, 0)
+
+	hooksecurefunc("LFGListSearchPanel_UpdateAutoComplete", function(self)
+		for i = 1, LFGListFrame.SearchPanel.AutoCompleteFrame:GetNumChildren() do
+			local child = select(i, LFGListFrame.SearchPanel.AutoCompleteFrame:GetChildren())
+			if child and not child.isSkinned and child:GetObjectType() == "Button" then
+				child:SkinButton()
+				child.isSkinned = true
+			end
+		end
+
+		local text = self.SearchBox:GetText()
+		local matchingActivities = C_LFGList.GetAvailableActivities(self.categoryID, nil, self.filters, text)
+		local numResults = math.min(#matchingActivities, MAX_LFG_LIST_SEARCH_AUTOCOMPLETE_ENTRIES)
+
+		for i = 2, numResults do
+			local button = self.AutoCompleteFrame.Results[i]
+			if button and not button.moved then
+				button:SetPoint("TOPLEFT", self.AutoCompleteFrame.Results[i-1], "BOTTOMLEFT", 0, -2)
+				button:SetPoint("TOPRIGHT", self.AutoCompleteFrame.Results[i-1], "BOTTOMRIGHT", 0, -2)
+				button.moved = true
+			end
+		end
+		self.AutoCompleteFrame:SetHeight(numResults * (self.AutoCompleteFrame.Results[1]:GetHeight() + 3.5) + 8)
+	end)
+
+	LFGListFrame.SearchPanel.AutoCompleteFrame:StripTextures()
+	LFGListFrame.SearchPanel.AutoCompleteFrame:CreateBackdrop("Transparent")
+	LFGListFrame.SearchPanel.AutoCompleteFrame.backdrop:SetPoint("TOPLEFT", LFGListFrame.SearchPanel.AutoCompleteFrame, "TOPLEFT", 0, 3)
+	LFGListFrame.SearchPanel.AutoCompleteFrame.backdrop:SetPoint("BOTTOMRIGHT", LFGListFrame.SearchPanel.AutoCompleteFrame, "BOTTOMRIGHT", 6, 3)
+
+	LFGListFrame.SearchPanel.AutoCompleteFrame:SetPoint("TOPLEFT", LFGListFrame.SearchPanel.SearchBox, "BOTTOMLEFT", -2, -8)
+	LFGListFrame.SearchPanel.AutoCompleteFrame:SetPoint("TOPRIGHT", LFGListFrame.SearchPanel.SearchBox, "BOTTOMRIGHT", -4, -8)
 
 	T.SkinEditBox(LFGListFrame.SearchPanel.SearchBox)
 
