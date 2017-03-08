@@ -26,6 +26,7 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[222711] = 4			-- Poisoned Dreams (Bough of Corruption Trinket)
 	T.aoespam[229737] = 0			-- Solar Collapse (Fury of the Burning Sky Trinket)
 	T.aoespam[229700] = 0			-- Orb of Destruction (Pharamere's Forbidden Grimoire Trinket)
+	T.aoespam[225764] = 1			-- Nether Meteor (Star Gate Trinket)
 	T.aoespam[188091] = 4			-- Deadly Grace (Potion of Deadly Grace)
 end
 
@@ -179,7 +180,7 @@ elseif T.class == "MAGE" then
 		T.merge[211088] = 211076	-- Mark of Aluneth
 		T.aoespam[211076] = 3		-- Mark of Aluneth
 		T.merge[210817] = 44425		-- Arcane Rebound
-		T.aoespam[44425] = 0		-- Arcane Barrage
+		T.aoespam[44425] = 1.2		-- Arcane Barrage
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
