@@ -57,7 +57,48 @@ if T.class == "DEATHKNIGHT" then
 	end
 elseif T.class == "DEMONHUNTER" then
 	if C.combattext.merge_aoe_spam then
-		-- T.aoespam[spellID] = 3		-- Spell Name
+		T.aoespam[187727] = 0		-- Immolation Aura
+		T.aoespam[178741] = 6		-- Immolation Aura Tick
+		T.aoespam[189112] = 0		-- Infernal Strike
+		T.aoespam[228478] = 0		-- Soul Cleave
+		T.aoespam[204598] = 7		-- Sigil of Flame
+		T.aoespam[207771] = 7		-- Fiery Brand
+		T.aoespam[207407] = 4		-- Soul Carver
+		T.aoespam[204157] = 1		-- Throw Glaive Vengeance
+		T.aoespam[218677] = 1		-- Spirit Bomb (Damage)
+		T.aoespam[227255] = 4		-- Spirit Bomb (Heal)
+		T.aoespam[212105] = 3		-- Fel Devastation (Damage)
+		T.aoespam[212106] = 3		-- Fel Devastation (Heal)
+		T.aoespam[213011] = 4		-- Charred Warblades (Heal)
+		T.aoespam[225919] = 1		-- Fracture
+		T.merge[225921] = 225919	-- Fracture Off-Hand
+		T.aoespam[207693] = 6		-- Feast of Souls
+		T.aoespam[217070] = 0.5		-- Rage of the Illidari
+		T.aoespam[202388] = 1		-- Inner Demons
+		T.aoespam[222031] = 1.5		-- Chaos Strike
+		T.merge[199547] = 222031	-- Chaos Strike Off-Hand
+		T.aoespam[199552] = 2		-- Blade Dance (AOE, Multi)
+		T.merge[200685] = 199552	-- Blade Dance
+		T.aoespam[201789] = 4		-- Fury of the Illidari
+		T.merge[201628] = 201789	-- Fury of the Illidari	Off-Hand
+		T.aoespam[203796] = 4		-- Demon Blades
+		T.aoespam[192611] = 1		-- Fel Rush
+		T.aoespam[198030] = 3		-- Eye Beam
+		T.aoespam[198813] = 0		-- Vengeful Retreat
+		T.aoespam[200166] = 0		-- Metamorphosis
+		T.aoespam[179057] = 0		-- Chaos Nova
+		T.aoespam[185123] = 1		-- Throw Glaive Havoc
+		T.aoespam[207690] = 10		-- Bloodlet
+		T.aoespam[202446] = 1		-- Anguish
+		T.aoespam[211796] = 4		-- Chaos Blades
+		T.merge[211797] = 211796	-- Chaos Blades	Off-Hand
+		T.aoespam[227518] = 1.5		-- Annihilation
+		T.merge[201428] = 227518	-- Annihilation	Off-Hand
+		T.aoespam[210153] = 2		-- Death Sweep
+		T.merge[210155] = 210153	-- Death Sweep	Off-Hand
+		T.aoespam[236237] = 2		-- Chaos Cleave
+		T.aoespam[211052] = 2		-- Fel Barrage
+		T.aoespam[203794] = 2		-- Consume Soul
 	end
 elseif T.class == "DRUID" then
 	if C.combattext.merge_aoe_spam then
@@ -215,6 +256,9 @@ elseif T.class == "PALADIN" then
 		T.aoespam[114852] = 0		-- Holy Prism
 		T.aoespam[119952] = 3		-- Arcing Light
 		T.aoespam[144581] = 3		-- Blessing of the Guardians (T16)
+		T.aoespam[210291] = 6		-- Aura of Mercy
+		T.aoespam[183811] = 6		-- Judgment of Light
+		T.aoespam[225311] = 1		-- Light of Dawn
 		-- Damaging spells
 		T.aoespam[81297] = 3		-- Consecration
 		T.aoespam[53385] = 0		-- Divine Storm
@@ -226,6 +270,14 @@ elseif T.class == "PALADIN" then
 		T.aoespam[86704] = 0		-- Ancient Fury
 		T.aoespam[157122] = 3		-- Holy Shield
 		T.merge[53595] = 88263		-- Hammer of the Righteous
+		T.aoespam[209478] = 1		-- Tyr's Enforcer
+		T.aoespam[209202] = 1		-- Eye of Tyr
+		T.aoespam[105421] = 1		-- Blinding Light
+		T.aoespam[204301] = 8		-- Blessed Hammer
+		T.aoespam[224239] = 1		-- Divine Storm
+		T.aoespam[20271] = 1		-- Judgment
+		T.merge[228288] = 20271		-- Judgment Retribution
+		T.aoespam[217020] = 1		-- Zeal
 	end
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
@@ -289,6 +341,9 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[114942] = 3		-- Healing Tide
 		T.aoespam[114083] = 3		-- Restorative Mists
 		T.aoespam[157503] = 1		-- Cloudburst
+		T.aoespam[209069] = 6		-- Tidal Totem
+		T.aoespam[208899] = 6		-- Queen's Decree
+		T.aoespam[207778] = 1		-- Gift of the Queen
 		-- Damaging spells
 		T.aoespam[421] = 1			-- Chain Lightning
 		T.merge[45297] = 421		-- Chain Lightning Overload
@@ -310,6 +365,11 @@ elseif T.class == "SHAMAN" then
 		T.merge[115360] = 115357	-- Windstrike Off-Hand
 		T.aoespam[192231] = 3		-- Liquid Magma
 		T.aoespam[157331] = 3		-- Wind Gust
+		T.aoespam[197385] = 6		-- Fury of Air
+		T.aoespam[210801] = 6		-- Crashing Storm
+		T.aoespam[210854] = 4		-- Hailstorm
+		T.aoespam[187874] = 1		-- Crash Lightning
+		T.aoespam[195592] = 1		-- Crash Lightning
 	end
 elseif T.class == "WARLOCK" then
 	if C.combattext.merge_aoe_spam then
