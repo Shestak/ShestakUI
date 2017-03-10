@@ -2528,6 +2528,10 @@ C["filger_spells"] = {
 			{spellID = 108281, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Astral Shift
 			{spellID = 108271, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fury of Air
+			{spellID = 197211, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Windsong
+			{spellID = 201898, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2647,6 +2651,8 @@ C["filger_spells"] = {
 			{spellID = 196840, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Earthgrab
 			{spellID = 64695, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Earthen Spike
+			{spellID = 188089, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
 			-- Mark of Doom [Prophecy of Fear]
@@ -2726,6 +2732,18 @@ C["filger_spells"] = {
 			{spellID = 108281, filter = "CD"},
 			-- Ascendance
 			{spellID = 114049, filter = "CD"},
+			-- Feral Lunge
+			{spellID = 196884, filter = "CD"},
+			-- Flametongue
+			{spellID = 193796, filter = "CD"},
+			-- Lightning Surge Totem
+			{spellID = 192058, filter = "CD"},
+			-- Crash Lightning
+			{spellID = 187874, filter = "CD"},
+			-- Doom Winds
+			{spellID = 204945, filter = "CD"},
+			-- Windsong
+			{spellID = 201898, filter = "CD"},
 			-- Honorable Medallion
 			{spellID = 195710, filter = "CD"},
 
