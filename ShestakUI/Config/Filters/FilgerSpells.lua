@@ -892,8 +892,6 @@ C["filger_spells"] = {
 			{spellID = 186265, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bestial Wrath
 			{spellID = 19574, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Beast Cleave
-			{spellID = 118455, unitID = "pet", caster = "player", filter = "BUFF"},
 			-- Trueshot
 			{spellID = 193526, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Aspect of the Wild
@@ -2553,6 +2551,10 @@ C["filger_spells"] = {
 			{spellID = 201846, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Crash Lightning
 			{spellID = 187878, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frostbrand
+			{spellID = 196834, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Flametongue
+			{spellID = 194084, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- Alchemy Stones
