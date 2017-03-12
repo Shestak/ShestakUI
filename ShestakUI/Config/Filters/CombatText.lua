@@ -181,7 +181,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[194432] = 0		-- Aftershocks
 		T.aoespam[12654] = 3		-- Ignite
 		T.aoespam[31661] = 0		-- Dragon's Breath
-		T.aoespam[190356] = 3		-- Blizzard
+		T.aoespam[190357] = 3		-- Blizzard
 		T.aoespam[122] = 0			-- Frost Nova
 		T.aoespam[1449] = 0			-- Arcane Explosion
 		T.aoespam[120] = 0			-- Cone of Cold
