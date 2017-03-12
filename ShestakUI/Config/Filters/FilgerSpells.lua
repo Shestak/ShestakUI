@@ -1221,8 +1221,6 @@ C["filger_spells"] = {
 			{spellID = 79683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hot Streak!
 			{spellID = 48108, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Chain Reaction (Ebonchill)
-			{spellID = 195418, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kael'thas's Ultimate Ability
 			{spellID = 209455, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -1330,22 +1328,22 @@ C["filger_spells"] = {
 			{spellID = 44457, filter = "CD"},
 			-- Blink
 			{spellID = 1953, filter = "CD"},
-			-- Blazing Speed
-			{spellID = 108843, filter = "CD"},
 			-- Frost Nova
 			{spellID = 122, filter = "CD"},
+			-- Ice Nova
+			{spellID = 157997, filter = "CD"},
 			-- Ring of Frost
 			{spellID = 113724, filter = "CD"},
+			-- Blazing Barrier
+			{spellID = 235313, filter = "CD"},
+			-- Prismatic Barrier
+			{spellID = 235450, filter = "CD"},
 			-- Ice Barrier
 			{spellID = 11426, filter = "CD"},
 			-- Temporal Shield
 			{spellID = 198111, filter = "CD"},
 			-- Fire Blast
 			{spellID = 108853, filter = "CD"},
-			-- Frost Bomb
-			{spellID = 112948, filter = "CD"},
-			-- Flamestrike
-			{spellID = 2120, filter = "CD"},
 			-- Cone of Cold
 			{spellID = 120, filter = "CD"},
 			-- Water Jet (Pet)
@@ -1354,16 +1352,30 @@ C["filger_spells"] = {
 			{spellID = 153595, filter = "CD"},
 			-- Ice Floes
 			{spellID = 108839, filter = "CD"},
-			-- Flame On
-			{spellID = 205029, filter = "CD"},
+			-- Ebonbolt
+			{spellID = 214634, filter = "CD"},
+			-- Phoenix's Flames
+			{spellID = 194466, filter = "CD"},
+			-- Mark of Aluneth
+			{spellID = 224968, filter = "CD"},
 			-- Frozen Orb
 			{spellID = 84714, filter = "CD"},
+			-- Meteor
+			{spellID = 153561, filter = "CD"},
+			-- Dragon's Breath
+			{spellID = 31661, filter = "CD"},
 			-- Arcane Power
 			{spellID = 12042, filter = "CD"},
+			-- Rune of Power
+			{spellID = 116011, filter = "CD"},
 			-- Presence of Mind
 			{spellID = 205025, filter = "CD"},
-			-- Alter Time
-			{spellID = 108978, filter = "CD"},
+			-- Displacement
+			{spellID = 195676, filter = "CD"},
+			-- Charged Up
+			{spellID = 205032, filter = "CD"},
+			-- Supernova
+			{spellID = 157980, filter = "CD"},
 			-- Evocation
 			{spellID = 12051, filter = "CD"},
 			-- Icy Veins
