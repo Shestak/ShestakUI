@@ -3340,6 +3340,8 @@ C["filger_spells"] = {
 			-- Legendaries
 			-- Norgannon's Foresight [Boots]
 			{spellID = 236380, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Zann'esu Journey [Waist]
+			{spellID = 226852, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Professions
 			-- Goblin Glider [Goblin Glider Kit]
