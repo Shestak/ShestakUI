@@ -67,6 +67,8 @@ local function LoadSkin()
 	HonorFrame.XPBar:StripTextures()
 	HonorFrame.XPBar.Bar:CreateBackdrop("Default")
 
+	HonorFrame.XPBar.Bar.Spark:SetAlpha(0)
+
 	HonorFrame.XPBar.NextAvailable:ClearAllPoints()
 	HonorFrame.XPBar.NextAvailable:SetPoint("LEFT", HonorFrame.XPBar.Bar, "RIGHT", -2, -2)
 
@@ -137,6 +139,8 @@ local function LoadSkin()
 
 	ConquestFrame.XPBar:StripTextures()
 	ConquestFrame.XPBar.Bar:CreateBackdrop("Default")
+
+	ConquestFrame.XPBar.Bar.Spark:SetAlpha(0)
 
 	ConquestFrame.XPBar.NextAvailable:ClearAllPoints()
 	ConquestFrame.XPBar.NextAvailable:SetPoint("LEFT", ConquestFrame.XPBar.Bar, "RIGHT", -2, -2)

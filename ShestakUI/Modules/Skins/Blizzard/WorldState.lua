@@ -12,6 +12,8 @@ local function LoadSkin()
 	WorldStateScoreFrame.XPBar:StripTextures()
 	WorldStateScoreFrame.XPBar.Bar:CreateBackdrop("Default")
 
+	WorldStateScoreFrame.XPBar.Bar.Spark:SetAlpha(0)
+
 	WorldStateScoreFrame.XPBar.NextAvailable:ClearAllPoints()
 	WorldStateScoreFrame.XPBar.NextAvailable:SetPoint("LEFT", WorldStateScoreFrame.XPBar.Bar, "RIGHT", -2, -2)
 
