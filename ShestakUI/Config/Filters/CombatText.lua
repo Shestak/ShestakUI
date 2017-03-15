@@ -218,6 +218,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[205472] = 4		-- Flame Patch
 		T.aoespam[88084] = 3		-- Arcane Blast (Mirror Image)
 		T.aoespam[59638] = 3		-- Frostbolt (Mirror Image)
+		T.aoespam[88082] = 3		-- Fireball (Mirror Image)
 		T.merge[211088] = 211076	-- Mark of Aluneth
 		T.aoespam[211076] = 3		-- Mark of Aluneth
 		T.merge[210817] = 44425		-- Arcane Rebound
