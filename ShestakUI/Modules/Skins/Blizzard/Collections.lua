@@ -71,8 +71,8 @@ local function LoadSkin()
 
 	T.SkinEditBox(MountJournalSearchBox, nil, 18)
 	T.SkinScrollBar(MountJournalListScrollFrameScrollBar)
-	T.SkinRotateButton(MountJournal.MountDisplay.ModelFrame.RotateLeftButton)
-	T.SkinRotateButton(MountJournal.MountDisplay.ModelFrame.RotateRightButton)
+	T.SkinRotateButton(MountJournal.MountDisplay.ModelScene.RotateLeftButton)
+	T.SkinRotateButton(MountJournal.MountDisplay.ModelScene.RotateRightButton)
 
 	MountJournalFilterButton:SetPoint("TOPLEFT", MountJournalSearchBox, "TOPRIGHT", 5, 2)
 
@@ -385,8 +385,8 @@ local function LoadSkin()
 	-- ToyBox
 	ToyBox.iconsFrame:StripTextures()
 	T.SkinEditBox(ToyBox.searchBox, nil, 18)
-	T.SkinNextPrevButton(ToyBox.navigationFrame.prevPageButton, true)
-	T.SkinNextPrevButton(ToyBox.navigationFrame.nextPageButton)
+	T.SkinNextPrevButton(ToyBox.PagingFrame.PrevPageButton)
+	T.SkinNextPrevButton(ToyBox.PagingFrame.NextPageButton)
 	ToyBoxFilterButton:SetPoint("TOPLEFT", ToyBox.searchBox, "TOPRIGHT", 5, 2)
 	ToyBox.progressBar:StripTextures()
 	ToyBox.progressBar:CreateBackdrop("Overlay")
@@ -416,8 +416,8 @@ local function LoadSkin()
 	-- Heirlooms
 	HeirloomsJournal.iconsFrame:StripTextures()
 	T.SkinEditBox(HeirloomsJournal.SearchBox, nil, 18)
-	T.SkinNextPrevButton(HeirloomsJournal.navigationFrame.prevPageButton, true)
-	T.SkinNextPrevButton(HeirloomsJournal.navigationFrame.nextPageButton)
+	T.SkinNextPrevButton(HeirloomsJournal.PagingFrame.PrevPageButton)
+	T.SkinNextPrevButton(HeirloomsJournal.PagingFrame.NextPageButton)
 	HeirloomsJournalFilterButton:SetPoint("TOPLEFT", HeirloomsJournal.SearchBox, "TOPRIGHT", 5, 2)
 	HeirloomsJournal.progressBar:StripTextures()
 	HeirloomsJournal.progressBar:CreateBackdrop("Overlay")
@@ -507,7 +507,7 @@ local function LoadSkin()
 		end
 	end
 
-	WardrobeCollectionFrame.ModelsFrame:StripTextures()
+	WardrobeCollectionFrame.ItemsCollectionFrame:StripTextures()
 	WardrobeCollectionFrame.progressBar:StripTextures()
 	WardrobeCollectionFrame.progressBar:CreateBackdrop("Overlay")
 	WardrobeCollectionFrame.progressBar:SetStatusBarTexture(C.media.texture)
@@ -516,8 +516,8 @@ local function LoadSkin()
 	WardrobeCollectionFrame.FilterButton:SkinButton()
 	WardrobeCollectionFrame.FilterButton:SetPoint("TOPLEFT", WardrobeCollectionFrameSearchBox, "TOPRIGHT", 5, 2)
 	T.SkinDropDownBox(WardrobeCollectionFrameWeaponDropDown, 170)
-	T.SkinNextPrevButton(WardrobeCollectionFrame.NavigationFrame.PrevPageButton, true)
-	T.SkinNextPrevButton(WardrobeCollectionFrame.NavigationFrame.NextPageButton)
+	T.SkinNextPrevButton(WardrobeCollectionFrame.ItemsCollectionFrame.PagingFrame.PrevPageButton)
+	T.SkinNextPrevButton(WardrobeCollectionFrame.ItemsCollectionFrame.PagingFrame.NextPageButton)
 end
 
 T.SkinFuncs["Blizzard_Collections"] = LoadSkin
