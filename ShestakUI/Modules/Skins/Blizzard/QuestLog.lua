@@ -51,6 +51,7 @@ local function LoadSkin()
 		if button.CircleBackground then button.CircleBackground:Hide() end
 		if button.CircleBackgroundGlow then button.CircleBackgroundGlow:Hide() end
 		if button.ValueText then button.ValueText:SetPoint("BOTTOMRIGHT", button.Icon, 0, 0) end
+		if button.IconBorder then button.IconBorder:SetAlpha(0) end
 		button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		button:CreateBackdrop("Default")
 		button.backdrop:ClearAllPoints()
