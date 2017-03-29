@@ -1650,7 +1650,7 @@ if experience.enabled then
 					end
 				end
 				if HasArtifactEquipped() then
-					_, _, artifactName, _, artifactTotalXP, artifactPointsSpent, artifactTier = C_ArtifactUI.GetEquippedArtifactInfo()
+					_, _, artifactName, _, artifactTotalXP, artifactPointsSpent, _, _, _, _, _, _, artifactTier = C_ArtifactUI.GetEquippedArtifactInfo()
 					numPointsAvailableToSpend, artifactXP, xpForNextPoint = MainMenuBar_GetNumArtifactTraitsPurchasableFromXP(artifactPointsSpent, artifactTotalXP, artifactTier)
 					self.text:SetText(gsub(experience.artifact_fmt, "%[([%w%%]-)%]", tags))
 				else
@@ -1718,7 +1718,7 @@ if experience.enabled then
 				GameTooltip:AddDoubleLine(format("%s%s", tags"repcolor", tags"standing"), war and format("|cffff5555%s", AT_WAR))
 				GameTooltip:AddDoubleLine(format("%s%% | %s/%s", tags"rep%", tags"currep", tags"maxrep"), -tags"repleft", ttsubh.r, ttsubh.g, ttsubh.b, 1, 0.33, 0.33)
 			elseif conf.ExpMode == "art" then
-				_, _, artifactName, _, artifactTotalXP, artifactPointsSpent, artifactTier = C_ArtifactUI.GetEquippedArtifactInfo()
+				_, _, artifactName, _, artifactTotalXP, artifactPointsSpent, _, _, _, _, _, _, artifactTier = C_ArtifactUI.GetEquippedArtifactInfo()
 				numPointsAvailableToSpend, artifactXP, xpForNextPoint = MainMenuBar_GetNumArtifactTraitsPurchasableFromXP(artifactPointsSpent, artifactTotalXP, artifactTier)
 				GameTooltip:AddLine(ARTIFACT_POWER..": "..artifactName, tthead.r, tthead.g, tthead.b)
 				GameTooltip:AddLine(" ")
