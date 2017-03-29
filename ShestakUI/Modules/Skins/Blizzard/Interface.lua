@@ -77,6 +77,7 @@ local function LoadSkin()
 		"SocialPanelOnlineFriends",
 		"SocialPanelOfflineFriends",
 		"SocialPanelBroadcasts",
+		"SocialPanelAutoAcceptQuickJoinRequests",
 		"SocialPanelFriendRequests",
 		"SocialPanelShowToastWindow",
 		"SocialPanelEnableTwitter",
@@ -203,7 +204,7 @@ local function LoadSkin()
 
 	local sliders = {
 		"InterfaceOptionsCombatPanelSpellAlertOpacitySlider",
-		"InterfaceOptionsCombatPanelMaxSpellStartRecoveryOffset",
+		--BETA "InterfaceOptionsCombatPanelMaxSpellStartRecoveryOffset",
 		"CompactUnitFrameProfilesGeneralOptionsFrameHeightSlider",
 		"CompactUnitFrameProfilesGeneralOptionsFrameWidthSlider",
 		"InterfaceOptionsBattlenetPanelToastDurationSlider",
