@@ -63,7 +63,6 @@ local function LoadSkin()
 
 	hooksecurefunc(TradeSkillFrame.DetailsFrame, "RefreshDisplay", function()
 		local ResultIcon = TradeSkillFrame.DetailsFrame.Contents.ResultIcon
-		ResultIcon:StyleButton(true)
 		ResultIcon:SetTemplate("Default")
 		if ResultIcon:GetNormalTexture() then
 			ResultIcon:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -71,7 +70,8 @@ local function LoadSkin()
 			ResultIcon:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
 			ResultIcon:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 		end
-		ResultIcon.Background:SetTexture(nil)
+		ResultIcon.ResultBorder:SetTexture(nil)
+		ResultIcon.IconBorder:SetTexture(nil)
 
 		for i = 1, #TradeSkillFrame.DetailsFrame.Contents.Reagents do
 			local button = TradeSkillFrame.DetailsFrame.Contents.Reagents[i]
