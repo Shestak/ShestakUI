@@ -312,9 +312,9 @@ QuickQuest:Register("QUEST_DETAIL", function(questStartItemID)
 	if(QuestGetAutoAccept() or (questStartItemID ~= nil and questStartItemID ~= 0)) then
 		AcknowledgeAutoAcceptQuest()
 	else
-		if(IsQuestIgnored() and not IsTrackingHidden()) then
-			return
-		end
+		--BETA if(IsQuestIgnored() and not IsTrackingHidden()) then
+			-- return
+		-- end
 
 		-- XXX: no way to tell if the quest is trivial
 		AcceptQuest()
