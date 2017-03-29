@@ -133,3 +133,5 @@ if C.skins.blizzard_frames == true then
 	OpenAllButton:SkinButton()
 	OpenAllButton2:SkinButton()
 end
+
+OpenAllMail:Hide() -- 7.2 new button
