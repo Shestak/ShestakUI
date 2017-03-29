@@ -21,7 +21,8 @@ local tooltips = {
 	AtlasLootTooltip,
 	QuestHelperTooltip,
 	QuestGuru_QuestWatchTooltip,
-	StoryTooltip
+	StoryTooltip,
+	ReputationParagonTooltip
 }
 
 local backdrop = {
