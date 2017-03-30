@@ -513,11 +513,82 @@ local function LoadSkin()
 	WardrobeCollectionFrame.progressBar:SetStatusBarTexture(C.media.texture)
 	WardrobeCollectionFrame.progressBar:SetFrameLevel(WardrobeCollectionFrame.progressBar:GetFrameLevel() + 2)
 	T.SkinEditBox(WardrobeCollectionFrameSearchBox, nil, 18)
+	WardrobeCollectionFrameSearchBox:SetFrameLevel(WardrobeCollectionFrameSearchBox:GetFrameLevel() + 2)
 	WardrobeCollectionFrame.FilterButton:SkinButton()
 	WardrobeCollectionFrame.FilterButton:SetPoint("TOPLEFT", WardrobeCollectionFrameSearchBox, "TOPRIGHT", 5, 2)
 	T.SkinDropDownBox(WardrobeCollectionFrameWeaponDropDown, 170)
 	T.SkinNextPrevButton(WardrobeCollectionFrame.ItemsCollectionFrame.PagingFrame.PrevPageButton)
 	T.SkinNextPrevButton(WardrobeCollectionFrame.ItemsCollectionFrame.PagingFrame.NextPageButton)
+
+	WardrobeCollectionFrame.SetsCollectionFrame.LeftInset:StripTextures()
+	WardrobeCollectionFrame.SetsCollectionFrame.RightInset:StripTextures()
+	WardrobeCollectionFrame.SetsCollectionFrame.DetailsFrame:StripTextures()
+	WardrobeCollectionFrame.SetsCollectionFrame.DetailsFrame:CreateBackdrop("Overlay")
+	WardrobeCollectionFrame.SetsCollectionFrame.DetailsFrame.backdrop:SetPoint("TOPLEFT", 4, -4)
+	WardrobeCollectionFrame.SetsCollectionFrame.DetailsFrame.backdrop:SetPoint("BOTTOMRIGHT", 1, 4)
+	WardrobeSetsCollectionVariantSetsButton:SkinButton()
+	T.SkinScrollBar(WardrobeCollectionFrameScrollFrameScrollBar)
+	WardrobeCollectionFrameScrollFrameScrollBar:SetPoint("TOPLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame, "TOPRIGHT", 4, 15)
+	WardrobeCollectionFrameScrollFrameScrollBar:SetPoint("BOTTOMLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame, "BOTTOMRIGHT", 4, 14)
+
+	for i = 1, 2 do
+		T.SkinTab(_G["WardrobeCollectionFrameTab"..i], true)
+	end
+
+	for i = 1, #WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame.buttons do
+		local button = _G["WardrobeCollectionFrameScrollFrameButton"..i]
+		local name = _G["WardrobeCollectionFrameScrollFrameButton"..i.."Name"]
+
+		if not button.isSkinned then
+			button:GetRegions():Hide()
+			button:CreateBackdrop("Overlay")
+			button.backdrop:SetPoint("TOPLEFT", 2, -2)
+			button.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+			button:StyleButton(nil, 4)
+
+			button.HighlightTexture:SetTexture(nil)
+			button.SelectedTexture:SetTexture(nil)
+
+			button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+			button.border = CreateFrame("Frame", nil, button)
+			button.border:CreateBackdrop("Default")
+			button.border.backdrop:SetPoint("TOPLEFT", button.Icon, -2, 2)
+			button.border.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, 2, -2)
+
+			button.isSkinned = true
+		end
+	end
+
+	local function ColorSelectedSet()
+		for i = 1, #WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame.buttons do
+			local button = _G["WardrobeCollectionFrameScrollFrameButton"..i]
+
+			if button.SelectedTexture:IsShown() then
+				button.backdrop:SetBackdropBorderColor(1, 1, 0)
+				button.border.backdrop:SetBackdropBorderColor(1, 1, 0)
+			else
+				button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+				button.border.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+			end
+		end
+	end
+	hooksecurefunc(WardrobeCollectionFrame.SetsCollectionFrame, "SelectSet", ColorSelectedSet)
+	hooksecurefunc(WardrobeCollectionFrameScrollFrame, "update", ColorSelectedSet)
+
+	hooksecurefunc(WardrobeCollectionFrame.SetsCollectionFrame, "DisplaySet", function()
+		for i, child in ipairs({WardrobeCollectionFrame.SetsCollectionFrame.DetailsFrame:GetChildren()}) do
+			if child.Icon and not child.isSkinned then
+				child.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+				child:CreateBackdrop("Default")
+				child.backdrop:SetPoint("TOPLEFT", child.Icon, -2, 2)
+				child.backdrop:SetPoint("BOTTOMRIGHT", child.Icon, 2, -2)
+
+				child.isSkinned = true
+			end
+		end
+	end)
 end
 
 T.SkinFuncs["Blizzard_Collections"] = LoadSkin
