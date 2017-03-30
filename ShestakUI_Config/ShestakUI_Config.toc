@@ -1,14 +1,14 @@
-## Interface: 70100
+## Interface: 70200
 ## Title: ShestakUI Config
 ## Notes: In-game configuration for ShestakUI
 ## Author: Tohveli
-## Version: 6.11
+## Version: 6.12
 ## Credits: Elv22, Fernir, Tukz
 ## Thanks: Tryllemann, Wetxius
 ## RequiredDeps: ShestakUI
 ## SavedVariables: GUIConfigAll, GUIConfigSettings
 ## SavedVariablesPerCharacter: GUIConfig
-## X-Curse-Packaged-Version: 6.11
+## X-Curse-Packaged-Version: 6.12
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## X-WoWI-ID: 19033
