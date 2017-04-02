@@ -34,6 +34,8 @@ if C.announcements.feasts == true then
 		[67826] = true,		-- Jeeves
 		[126459] = true,	-- Blingtron 4000
 		[161414] = true,	-- Blingtron 5000
+		[199109] = true,	-- Auto-Hammer
+		[226241] = true,	-- Codex of the Tranquil Mind
 	}
 end
 
