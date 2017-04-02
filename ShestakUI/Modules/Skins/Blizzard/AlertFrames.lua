@@ -605,6 +605,41 @@ local function LoadSkin()
 	end
 	hooksecurefunc(MoneyWonAlertSystem, "setUpFunction", SkinMoneyWonAlert)
 
+	local function SkinHonorAwardedAlert(frame)
+		frame:SetAlpha(1)
+		if not frame.hooked then
+			hooksecurefunc(frame, "SetAlpha", forceAlpha)
+			frame.hooked = true
+		end
+
+		if not frame.backdrop then
+			frame:CreateBackdrop("Transparent")
+			frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -12, -6)
+			frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 9, 6)
+		end
+
+		frame.Background:Kill()
+		frame.IconBorder:Kill()
+		frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		frame.Icon:SetPoint("LEFT", frame.backdrop, 9, 0)
+
+		frame.Label:ClearAllPoints()
+		frame.Label:SetPoint("CENTER", frame.backdrop, 0, 10)
+
+		frame.Amount:ClearAllPoints()
+		frame.Amount:SetPoint("CENTER", frame.backdrop, 0, -10)
+
+		-- Icon border
+		if not frame.Icon.b then
+			frame.Icon.b = CreateFrame("Frame", nil, frame)
+			frame.Icon.b:SetTemplate("Default")
+			frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
+			frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
+			frame.Icon:SetParent(frame.Icon.b)
+		end
+	end
+	hooksecurefunc(HonorAwardedAlertSystem, "setUpFunction", SkinHonorAwardedAlert)
+
 	local function SkinStorePurchaseAlert(frame)
 		frame:SetAlpha(1)
 		if not frame.hooked then
