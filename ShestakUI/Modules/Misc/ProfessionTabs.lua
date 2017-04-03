@@ -97,13 +97,9 @@ local function UpdateTab(object, name, rank, texture, hat)
 		tab:SetNormalTexture(texture)
 	end
 
-	tab:SetAttribute("type", "spell")
-	tab:SetAttribute("spell", name)
-	tab:Show()
-
 	if hat then
-		tab:SetAttribute("type", "macro")
-		tab:SetAttribute("macrotext", "/use "..GetItemInfo("item:134020"))
+		tab:SetAttribute("type", "toy")
+		tab:SetAttribute("toy", 134020)
 	else
 		tab:SetAttribute("type", "spell")
 		tab:SetAttribute("spell", name)
