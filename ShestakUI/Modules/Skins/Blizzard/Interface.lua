@@ -204,7 +204,6 @@ local function LoadSkin()
 
 	local sliders = {
 		"InterfaceOptionsCombatPanelSpellAlertOpacitySlider",
-		--BETA "InterfaceOptionsCombatPanelMaxSpellStartRecoveryOffset",
 		"CompactUnitFrameProfilesGeneralOptionsFrameHeightSlider",
 		"CompactUnitFrameProfilesGeneralOptionsFrameWidthSlider",
 		"InterfaceOptionsBattlenetPanelToastDurationSlider",

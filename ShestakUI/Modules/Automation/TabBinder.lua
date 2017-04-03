@@ -14,8 +14,6 @@ TabBinder:RegisterEvent("CHAT_MSG_SYSTEM")
 
 local RTB_Fail, RTB_DefaultKey, LastTargetKey, TargetKey, CurrentBind, Success = false, true
 
---BETA SetCVar("TargetNearestUseOld", 1)
-
 TabBinder:SetScript("OnEvent", function(self, event, ...)
 	if event == "CHAT_MSG_SYSTEM" then
 		local RTBChatMessage = ...
