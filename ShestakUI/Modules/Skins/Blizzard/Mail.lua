@@ -33,6 +33,8 @@ local function LoadSkin()
 		t:ClearAllPoints()
 		t:SetPoint("TOPLEFT", 2, -2)
 		t:SetPoint("BOTTOMRIGHT", -2, 2)
+
+		_G["MailItem"..i.."ButtonIconBorder"]:SetAlpha(0)
 	end
 
 	T.SkinCloseButton(MailFrameCloseButton, MailFrame.backdrop)

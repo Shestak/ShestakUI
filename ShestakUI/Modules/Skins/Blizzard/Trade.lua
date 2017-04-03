@@ -42,6 +42,9 @@ local function LoadSkin()
 			player_button:StripTextures()
 			recipient_button:StripTextures()
 
+			player_button.IconBorder:SetAlpha(0)
+			recipient_button.IconBorder:SetAlpha(0)
+
 			player_button_icon:ClearAllPoints()
 			player_button_icon:SetPoint("TOPLEFT", player_button, "TOPLEFT", 2, -2)
 			player_button_icon:SetPoint("BOTTOMRIGHT", player_button, "BOTTOMRIGHT", -2, 2)
