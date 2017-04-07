@@ -45,6 +45,7 @@ T.DebuffWhiteList = {
 	-- Paladin
 	[SpellName(20066)] = true,	-- Repentance
 	[SpellName(853)] = true,	-- Hammer of Justice
+	[SpellName(183218)] = true,	-- Hand of Hindrance
 	-- Priest
 	[SpellName(9484)] = true,	-- Shackle Undead
 	[SpellName(8122)] = true,	-- Psychic Scream

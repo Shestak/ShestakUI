@@ -1849,6 +1849,8 @@ C["filger_spells"] = {
 			{spellID = 25771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Judgment
 			{spellID = 197277, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Hand of Hindrance
+			{spellID = 183218, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
 			-- Fel Burn [Empty Drinking Horn]
@@ -3636,6 +3638,8 @@ C["filger_spells"] = {
 			{spellID = 44614, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mind Flay
 			{spellID = 15407, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Hand of Hindrance
+			{spellID = 183218, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Deadly Throw
 			{spellID = 26679, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Crippling Poison
