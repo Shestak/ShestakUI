@@ -173,7 +173,7 @@ LPSTAT_CONFIG = {
 -- Bags block
 	Gold = {
 		enabled = true,
-		style = 1, -- Display styles: [1] 55g 21s 11c [2] 8829.4g [3] 823.55.94
+		style = 1, -- Display styles: [1] 55g 21s 11c [2] 8829.4g [3] 823.55.94 [4] with texture
 		anchor_frame = cBN and "NivayacBniv_Bag" or C.bag.enable and "StuffingFrameBags" or "Location",
 		anchor_to = "right", anchor_from = cBN and "bottom" or C.bag.enable and "topright" or "left",
 		x_off = cBN and 15 or C.bag.enable and -25 or -3,
