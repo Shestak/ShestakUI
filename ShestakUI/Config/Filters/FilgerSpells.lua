@@ -1223,6 +1223,8 @@ C["filger_spells"] = {
 			{spellID = 48108, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kael'thas's Ultimate Ability
 			{spellID = 209455, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Freezing Rain
+			{spellID = 240555, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- Alchemy Stones
@@ -3344,6 +3346,8 @@ C["filger_spells"] = {
 			{spellID = 236380, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Zann'esu Journey [Waist]
 			{spellID = 226852, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Belo'vir's Final Stand [Chest]
+			{spellID = 207283, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Professions
 			-- Goblin Glider [Goblin Glider Kit]
