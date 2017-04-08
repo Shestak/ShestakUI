@@ -85,7 +85,8 @@ local function LoadSkin()
 
 	EncounterJournalEncounterFrameInfoOverviewTab:SetPoint("TOPLEFT", EncounterJournalEncounterFrameInfo, "TOPRIGHT", 8, -40)
 	EncounterJournalEncounterFrameInfoOverviewTab.SetPoint = T.dummy
-
+	
+	T.SkinScrollBar(EncounterJournalScrollBar)
 	T.SkinScrollBar(EncounterJournalInstanceSelectScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoDetailsScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoLootScrollFrameScrollBar)
