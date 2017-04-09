@@ -191,6 +191,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[113092] = 0		-- Frost Bomb
 		T.aoespam[84721] = 3		-- Frozen Orb
 		T.aoespam[228354] = 1.5		-- Flurry
+		T.aoespam[242851] = 1.5		-- Glacial Eruption
 		T.aoespam[228600] = 0		-- Glacial Spike
 		T.aoespam[205021] = 2		-- Ray of Frost
 		T.aoespam[148022] = 3		-- Icicle (Mastery)
