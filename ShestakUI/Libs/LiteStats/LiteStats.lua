@@ -646,15 +646,17 @@ if gold.enabled then
 
 			if C.stats.currency_pvp then
 				IsSubTitle = 5
-				-- Currency(390, true)		-- Conquest Points
+				-- Currency(390, true)			-- Conquest Points
 				-- Currency(392, false, true)	-- Honor Points
 			end
 
 			if C.stats.currency_misc then
 				IsSubTitle = 6
-				Currency(515)			-- Darkmoon Prize Ticket
-				Currency(1155, false, true)	-- Ancient Mana
-				Currency(1220)			-- Order Resources
+				Currency(515)					-- Darkmoon Prize Ticket
+				Currency(1155, false, true)		-- Ancient Mana
+				Currency(1220)					-- Order Resources
+				Currency(1226)					-- Nethershard
+				Currency(1342, false, true)		-- Legionfall War Supplies
 			end
 
 			GameTooltip:AddLine(" ")
