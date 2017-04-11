@@ -518,3 +518,36 @@ end
 
 GameTooltip:HookScript("OnTooltipSetItem", FixFont)
 ItemRefTooltip:HookScript("OnTooltipSetItem", FixFont)
+
+----------------------------------------------------------------------------------------
+--	Skin tooltip status bar
+----------------------------------------------------------------------------------------
+local function SkinWorldMapTooltip()
+	local bar = WorldMapTaskTooltipStatusBar.Bar
+	local label = bar.Label
+	if bar then
+		bar:StripTextures()
+		bar:SetStatusBarTexture(C.media.texture)
+		bar:SetTemplate("Transparent")
+		label:ClearAllPoints()
+		label:SetPoint("CENTER", bar, 0, 0)
+		label:SetDrawLayer("OVERLAY")
+		label:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+	end
+end
+hooksecurefunc("TaskPOI_OnEnter", SkinWorldMapTooltip)
+
+local function SkinReputationTooltip()
+	local bar = ReputationParagonTooltipStatusBar.Bar
+	local label = bar.Label
+	if bar then
+		bar:StripTextures()
+		bar:SetStatusBarTexture(C.media.texture)
+		bar:SetTemplate("Transparent")
+		label:ClearAllPoints()
+		label:SetPoint("CENTER", bar, 0, 0)
+		label:SetDrawLayer("OVERLAY")
+		label:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+	end
+end
+hooksecurefunc("ReputationParagonFrame_SetupParagonTooltip", SkinReputationTooltip)
