@@ -35,9 +35,9 @@ local WIMtooltip = function(tooltip)
 
 	local rndench = link:match("item:[^:]+:[^:]+:[^:]+:[^:]+:[^:]+:[^:]+:([^:]+):")
 	GetItemInfo(itemID)
-	local _, _, quality, _, _, itemType, subType, _, slot = GetItemInfo(itemID)
+	local _, _, quality, _, _, _, _, _, slot, _, _, class, subClass = GetItemInfo(itemID)
 	-- No weapon or armor, or misc 'weapon', or invalid slot
-	if not itemType or not (itemType == ARMOR or itemType == ENCHSLOT_WEAPON) or (subType == MISCELLANEOUS and (itemType == ENCHSLOT_WEAPON or slot == "INVTYPE_CLOAK")) or not locs[slot] then return end
+	if not class or not (class == LE_ITEM_CLASS_WEAPON or class == LE_ITEM_CLASS_ARMOR) or (subClass == LE_ITEM_CLASS_MISCELLANEOUS and (class == LE_ITEM_CLASS_WEAPON or slot == "INVTYPE_CLOAK")) or not locs[slot] then return end
 	local canBeChanged, noChangeReason, canBeSource, noSourceReason = C_Transmog.GetItemInfo(itemID)
 
 	if rndench and rndench ~= "0" and noSourceReason == "NO_STATS" then
@@ -45,13 +45,13 @@ local WIMtooltip = function(tooltip)
 		canBeSource = true
 	end
 
-	if (quality < 2 or subType == MISCELLANEOUS) and not (canBeChanged or canBeSource) then return end
+	if (quality < 2 or subClass == LE_ITEM_CLASS_MISCELLANEOUS) and not (canBeChanged or canBeSource) then return end
 
 	if noChangeReason or noSourceReason then
 		GameTooltip:AddLine(" ")
 	end
 
-	if subType == MISCELLANEOUS and itemType ~= "INVTYPE_HOLDABLE" then
+	if subClass == LE_ITEM_CLASS_MISCELLANEOUS and class ~= "INVTYPE_HOLDABLE" then
 		tooltip:AddLine("|cffff0000"..ERR_TRANSMOGRIFY_INVALID_ITEM_TYPE.."|r", nil, nil, nil, true)
 	end
 
