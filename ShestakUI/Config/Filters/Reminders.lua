@@ -53,26 +53,6 @@ end
 ]]--------------------------------------------------------------------------------------
 if C.reminder.solo_buffs_enable == true then
 	T.ReminderSelfBuffs = {
-		PALADIN = {
-			[1] = {	-- Greater Blessing of Kings
-				["spells"] = {
-					203538,	-- Greater Blessing of Kings
-				},
-				["spec"] = 3,		-- Only Ret paladin can buff
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-			[2] = {	-- Greater Blessing of Wisdom
-				["spells"] = {
-					203539,	-- Greater Blessing of Wisdom
-				},
-				["spec"] = 3,		-- Only Ret paladin can buff
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-		},
 		ROGUE = {
 			[1] = {	-- Lethal Poisons group
 				["spells"] = {
