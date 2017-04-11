@@ -6,10 +6,10 @@ if C.misc.already_known ~= true then return end
 ----------------------------------------------------------------------------------------
 local color = {r = 0.1, g = 1, b = 0.1}
 local knowns, lines = {}, {}
-local glyph = AUCTION_CATEGORY_GLYPHS
-local recipe = AUCTION_CATEGORY_RECIPES
-local pet = GetItemSubClassInfo(LE_ITEM_CLASS_MISCELLANEOUS, 2)
-local mount = GetItemSubClassInfo(LE_ITEM_CLASS_MISCELLANEOUS, 5)
+local glyph = LE_ITEM_CLASS_GLYPH
+local recipe = LE_ITEM_CLASS_RECIPE
+local pet = LE_ITEM_MISCELLANEOUS_COMPANION_PET
+local mount = LE_ITEM_MISCELLANEOUS_MOUNT
 local knowables = {[glyph] = true, [recipe] = true, [pet] = true, [mount] = true}
 
 local pattern = ITEM_PET_KNOWN:gsub("%(", "%%(")
@@ -44,14 +44,14 @@ local function IsKnown(itemLink)
 
 	if PlayerHasToy(itemID) then return true end
 
-	local _, _, _, _, _, itemType, itemSubType = GetItemInfo(itemID)
-	if not (knowables[itemType] or knowables[itemSubType]) then return end
+	local _, _, _, _, _, _, _, _, _, _, _, class, subClass = GetItemInfo(itemID)
+	if not (knowables[class] or knowables[subClass]) then return end
 
 	tooltip:ClearLines()
 	tooltip:SetHyperlink(itemLink)
 	if not Scan(2, tooltip:NumLines()) then return end
 
-	if itemSubType ~= pet then knowns[itemID] = true end
+	if subClass ~= pet then knowns[itemID] = true end
 	return true
 end
 
