@@ -111,6 +111,13 @@ local function LoadSkin()
 	T.SkinScrollBar(EncounterJournalEncounterFrameInstanceFrameLoreScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoOverviewScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoBossesScrollFrameScrollBar)
+	
+	EncounterJournalSuggestFrame.Suggestion1.reward:StripTextures()
+	EncounterJournalSuggestFrame.Suggestion1.reward:SetTemplate("Transparent")
+	EncounterJournalSuggestFrame.Suggestion1.reward:SetSize(35, 35)
+	EncounterJournalSuggestFrame.Suggestion1.reward.icon:SetAllPoints()
+	EncounterJournalSuggestFrame.Suggestion1.reward.icon:SetPoint("TOPLEFT", 2, -2)
+	EncounterJournalSuggestFrame.Suggestion1.reward.icon:SetPoint("BOTTOMRIGHT", -2, 2)
 
 	for i = 1, AJ_MAX_NUM_SUGGESTIONS do
 		local suggestion = EncounterJournal.suggestFrame["Suggestion"..i]
