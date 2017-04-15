@@ -56,6 +56,7 @@ local function LoadSkin()
 	EncounterJournalEncounterFrameInfoDifficulty:SkinButton(true)
 	EncounterJournal.LootJournal.LegendariesFrame.ClassButton:SkinButton(true)
 	EncounterJournal.LootJournal.LegendariesFrame.SlotButton:SkinButton(true)
+	EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:SkinButton(true)
 
 	T.SkinEditBox(EncounterJournalSearchBox)
 	T.SkinCloseButton(EncounterJournalCloseButton)
@@ -65,6 +66,13 @@ local function LoadSkin()
 	T.SkinTab(EncounterJournalInstanceSelectDungeonTab, true)
 	T.SkinTab(EncounterJournalInstanceSelectRaidTab, true)
 	T.SkinTab(EncounterJournalInstanceSelectLootJournalTab, true)
+
+	EncounterJournalInstanceSelectDungeonTab:ClearAllPoints()
+	EncounterJournalInstanceSelectDungeonTab:SetPoint("BOTTOMLEFT", EncounterJournalInstanceSelectSuggestTab, "BOTTOMRIGHT", 10, 0)
+	EncounterJournalInstanceSelectRaidTab:ClearAllPoints()
+	EncounterJournalInstanceSelectRaidTab:SetPoint("BOTTOMLEFT", EncounterJournalInstanceSelectDungeonTab, "BOTTOMRIGHT", 10, 0)
+	EncounterJournalInstanceSelectLootJournalTab:ClearAllPoints()
+	EncounterJournalInstanceSelectLootJournalTab:SetPoint("BOTTOMLEFT", EncounterJournalInstanceSelectRaidTab, "BOTTOMRIGHT", 10, 0)
 
 	EncounterJournalInset:StripTextures(true)
 	EncounterJournal:HookScript("OnShow", function()
@@ -95,7 +103,7 @@ local function LoadSkin()
 
 	EncounterJournalEncounterFrameInfoOverviewTab:SetPoint("TOPLEFT", EncounterJournalEncounterFrameInfo, "TOPRIGHT", 8, -40)
 	EncounterJournalEncounterFrameInfoOverviewTab.SetPoint = T.dummy
-	
+
 	T.SkinScrollBar(EncounterJournalScrollBar)
 	T.SkinScrollBar(EncounterJournalInstanceSelectScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoDetailsScrollFrameScrollBar)
@@ -105,7 +113,7 @@ local function LoadSkin()
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoBossesScrollFrameScrollBar)
 
 	for i = 1, AJ_MAX_NUM_SUGGESTIONS do
-		local suggestion = EncounterJournal.suggestFrame["Suggestion"..i];
+		local suggestion = EncounterJournal.suggestFrame["Suggestion"..i]
 		if i == 1 then
 			suggestion.button:SkinButton()
 			T.SkinNextPrevButton(suggestion.prevButton)
