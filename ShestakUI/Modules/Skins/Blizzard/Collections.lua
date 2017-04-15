@@ -53,9 +53,11 @@ local function LoadSkin()
 		_G[buttons[i]]:SkinButton()
 	end
 
-	T.SkinTab(PetJournalParentTab1)
-	T.SkinTab(PetJournalParentTab2)
-	T.SkinTab(PetJournalParentTab3)
+
+	for i = 1, 3 do
+		T.SkinTab(_G["PetJournalParentTab"..i])
+	end
+
 	T.SkinCloseButton(CollectionsJournalCloseButton)
 
 	-- MountJournal
@@ -589,6 +591,44 @@ local function LoadSkin()
 			end
 		end
 	end)
+
+	for i = 1, 3 do
+		for j = 1, 6 do
+			WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j]:StripTextures()
+			WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j]:SetFrameLevel(WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j]:GetFrameLevel() + 2)
+			WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j]:CreateBackdrop("Overlay")
+			WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j].Border:Kill()
+		end
+	end
+
+	hooksecurefunc(WardrobeCollectionFrame.ItemsCollectionFrame, "UpdateItems", function(self)
+		local indexOffset = (self.PagingFrame:GetCurrentPage() - 1) * self.PAGE_SIZE
+		for i = 1, self.PAGE_SIZE do
+			local model = self.Models[i]
+			local index = i + indexOffset
+			local visualInfo = self.filteredVisualsList[index]
+			if visualInfo then
+				local color
+				if not visualInfo.isCollected then
+					color = {0.3, 0.3, 1}
+				elseif not visualInfo.isUsable then
+					color = {0.8, 0, 0}
+				else
+					color = C.media.border_color
+				end
+				if model.backdrop then
+					model.backdrop:SetBackdropBorderColor(unpack(color))
+				end
+			end
+		end
+	end)
+
+	for i = 1, 2 do
+		for j = 1, 4 do
+			WardrobeCollectionFrame.SetsTransmogFrame["ModelR"..i.."C"..j]:StripTextures()
+			WardrobeCollectionFrame.SetsTransmogFrame["ModelR"..i.."C"..j]:CreateBackdrop("Overlay")
+		end
+	end
 end
 
 T.SkinFuncs["Blizzard_Collections"] = LoadSkin
