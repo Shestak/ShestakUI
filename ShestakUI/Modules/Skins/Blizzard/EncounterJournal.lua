@@ -32,8 +32,8 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
 		item1.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		item2.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-		item1.IconBorder:SetTexture(nil)
-		item2.IconBorder:SetTexture(nil)
+		item1.IconBorder:SetAlpha(0)
+		item2.IconBorder:SetAlpha(0)
 	end
 end)
 
