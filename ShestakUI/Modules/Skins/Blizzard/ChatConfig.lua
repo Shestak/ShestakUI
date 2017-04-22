@@ -192,8 +192,8 @@ local function LoadSkin()
 		ReskinColourSwatch(CombatConfigColorsColorizeSpellNamesColorSwatch)
 		ReskinColourSwatch(CombatConfigColorsColorizeDamageNumberColorSwatch)
 
-		for i = 1, 4 do
-			for j = 1, 4 do
+		for i = 1, 3 do
+			for j = 1, 3 do
 				if _G["CombatConfigMessageTypesLeftCheckBox"..i] and _G["CombatConfigMessageTypesLeftCheckBox"..i.."_"..j] then
 					T.SkinCheckBox(_G["CombatConfigMessageTypesLeftCheckBox"..i])
 					T.SkinCheckBox(_G["CombatConfigMessageTypesLeftCheckBox"..i.."_"..j])
