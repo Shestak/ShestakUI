@@ -179,6 +179,7 @@ local function SkinBar(line)
 	if not progressBar.styled then
 		bar.BarFrame:Hide()
 		bar.BarGlow:Kill()
+		bar.Sheen:Hide()
 		bar.IconBG:Kill()
 		bar:SetSize(200, 20)
 		bar:SetStatusBarTexture(C.media.texture)
