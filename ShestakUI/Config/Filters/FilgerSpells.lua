@@ -3808,7 +3808,7 @@ C["filger_spells"] = {
 					{spellID = 221606, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Trial of Valor
 				-- Odyn
-					--正义风暴
+					-- Storm of Justice
 					{spellID = 227807, unitID = "player", caster = "all", filter = "DEBUFF"},
 				-- Guarm
 				-- Helya
