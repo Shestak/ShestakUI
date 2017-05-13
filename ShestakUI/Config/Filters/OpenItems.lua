@@ -532,7 +532,16 @@ T.OpenItems = {
 	[137565] = true,	-- Warden's Field Kit
 	[139048] = true,	-- Small Legion Chest
 	[139049] = true,	-- Large Legion Chest
+	[140225] = true,	-- Salvaged Armor
 	[140591] = true,	-- Shattered Satchel of Cooperation
 	[140601] = true,	-- Sixtrigger Resource Crate
+	[141183] = true,	-- Bag of Confiscated Materials
 	[141350] = true,	-- Kirin Tor Chest
+	[146747] = true,	-- Dreamweaver Provisions
+	[146748] = true,	-- Highmountain Tribute
+	[146749] = true,	-- Valarjar Cache
+	[146750] = true,	-- Farondis Lockbox
+	[146751] = true,	-- Nightfallen Hoard
+	[146752] = true,	-- Warden's Field Kit
+	[146753] = true,	-- Kirin Tor Chest
 }
