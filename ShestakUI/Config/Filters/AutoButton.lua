@@ -61,7 +61,13 @@ T.ABItems = {
 	136605, -- Solendra's Compassion
 	137299, -- Nightborne Spellblad
 	138146, -- Rediant Ley Crystal
+	138965, -- Wand of Siphoning
 	140916, -- Satchel of Locklimb Powder
+	142509, -- Withered Targeting Orb
+	128329, -- Depleted Leyflame Burner
+	130260, -- Thaedris' Elixir
+	140257, -- Advanced Telemancy Beacon
+	142401, -- Telemancy Orbs
 }
 
 T.ABEquipedItems = {
