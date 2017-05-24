@@ -210,6 +210,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[153564] = 0		-- Meteor
 		T.aoespam[155158] = 4		-- Meteor Burn
 		T.aoespam[224637] = 1.6		-- Phoenix's Flames
+		T.aoespam[194466] = 1.6		-- Phoenix's Flames
 		T.aoespam[205345] = 4		-- Conflagration Flare Up
 		T.aoespam[226757] = 4		-- Conflagration
 		T.aoespam[198928] = 1.2		-- Cinderstorm
