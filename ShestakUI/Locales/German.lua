@@ -150,8 +150,8 @@ L_PANELS_AFK_LCLICK = "Links-Klick um zurück zu gehen."
 
 -- Cooldowns
 L_COOLDOWNS = "Abklingzeit: "
-L_COOLDOWNS_COMBATRESS = "BattelRes"
-L_COOLDOWNS_COMBATRESS_REMAINDER = "BattelRes übrig: "
+L_COOLDOWNS_COMBATRESS = "Battlerezz"
+L_COOLDOWNS_COMBATRESS_REMAINDER = "Battlerezz übrig: "
 L_COOLDOWNS_NEXTTIME = "Nächste möglichkeit: "
 
 -- Autoinvite
