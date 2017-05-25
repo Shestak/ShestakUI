@@ -888,12 +888,16 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
-			-- Aspect of the Turtle
-			{spellID = 186265, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Misdirection
+			{spellID = 35079, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Survivalist
+			{spellID = 164857, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bestial Wrath
 			{spellID = 19574, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Trueshot
 			{spellID = 193526, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Aspect of the Turtle
+			{spellID = 186265, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Aspect of the Wild
 			{spellID = 193530, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Aspect of the Eagle
@@ -910,18 +914,20 @@ C["filger_spells"] = {
 			{spellID = 118922, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Volley
 			{spellID = 194386, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Misdirection
-			{spellID = 35079, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Survivalist
-			{spellID = 164857, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Volley
-			{spellID = 194386, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Trick Shot
 			{spellID = 227272, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bombardment
 			{spellID = 82921, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Steady Focus
+			{spellID = 193533, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spitting Cobra
 			{spellID = 194407, unitID = "player", caster = "player", filter = "BUFF"},
+			-- The Shadow Hunter's Regeneration
+			{spellID = 208888, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Gyroscopic Stabilization
+			{spellID = 235712, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sentinel's Sight
+			{spellID = 208913, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -933,22 +939,19 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
-			-- Steady Focus
-			{spellID = 193533, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lock and Load
-			{spellID = 194594, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mok'Nathal Tactics
 			{spellID = 201081, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mongoose Fury
 			{spellID = 190931, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Beast Cleave
 			{spellID = 118455, unitID = "pet", caster = "player", filter = "BUFF"},
-			-- Marking Targets
-			{spellID = 223138, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Frenzy
-			{spellID = 19615, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Titan's Thunder
+			{spellID = 207094, unitID = "pet", caster = "player", filter = "BUFF"},
 			-- Mend Pet
 			{spellID = 136, unitID = "pet", caster = "player", filter = "BUFF"},
+			-- Frenzy
+			{spellID = 19615, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			
 
 			-- Trinkets
 			-- Alchemy Stones
@@ -999,12 +1002,6 @@ C["filger_spells"] = {
 			-- Enchants
 			-- Mark of the Claw (Crit and Haste)
 			{spellID = 190909, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Gyroscopic Stabilization
-			{spellID = 235712, unitID = "player", caster = "player", filter = "BUFF"},
-			-- The Shadow Hunter's Regeneration
-			{spellID = 208888, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Sentinel's Sight
-			{spellID = 208913, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1017,6 +1014,8 @@ C["filger_spells"] = {
 
 			-- Black Arrow
 			{spellID = 194599, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Explosive Trap
+			{spellID = 13812, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Serpent Sting
 			{spellID = 87935, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Lacerate
@@ -1027,32 +1026,31 @@ C["filger_spells"] = {
 			{spellID = 187131, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hunter's Mark
 			{spellID = 185365, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Narrow Escape
-			{spellID = 136634, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Entrapment
-			{spellID = 135373, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Caltrops
 			{spellID = 194279, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Concussive Shot
+			{spellID = 5116, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Tar Trap
+			{spellID = 135299, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Steel Trap
+			{spellID = 162487, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
+			-- True Aim
+			{spellID = 199803, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Warp Time (Warp Stalker)
 			{spellID = 35346, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Ankle Crack (Crocolisk)
 			{spellID = 50433, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Breath (Chimaera)
 			{spellID = 54644, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Concussive Shot
-			{spellID = 5116, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Tar Trap
-			{spellID = 135299, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Poisoned Ammo
 			{spellID = 162543, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frozen Ammo
 			{spellID = 162546, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- True Aim
-			{spellID = 199803, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Explosive Trap
-			{spellID = 13812, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Steel Trap
-			{spellID = 162487, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
+			-- Narrow Escape
+			{spellID = 136634, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Entrapment
+			{spellID = 135373, unitID = "target", caster = "player", filter = "DEBUFF"},
+			
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -1474,42 +1472,35 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
-			-- Fortifying Brew
-			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ironskin Brew
-			{spellID = 215479, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Touch of Karma
-			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Diffuse Magic
 			{spellID = 122783, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dampen Harm
 			{spellID = 122278, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Nimble Brew
-			{spellID = 213664, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Serenity
-			{spellID = 152173, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Storm, Earth, and Fire
-			{spellID = 137639, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Mana Tea
-			{spellID = 197908, unitID = "player", caster = "player", filter = "BUFF"},
-			-- The Mists of Sheilun
-			{spellID = 199888, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thunder Focus Tea
-			{spellID = 116680, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Momentum
+			-- Chi Torpedo
 			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combo Master (Tier 19 4/4)
 			{spellID = 211432, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fortifying Brew
 			{spellID = 243435, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ironskin Brew
+			{spellID = 215479, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brew-Stache
 			{spellID = 214373, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lifecycles (Vivify)
+			-- The Mists of Sheilun
+			{spellID = 199888, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lifecycles
 			{spellID = 197916, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lifecycles (Enveloping Mist)
 			{spellID = 197919, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Mana Tea
+			{spellID = 197908, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Thunder Focus Tea
+			{spellID = 116680, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Teachings of the Monastery
 			{spellID = 202090, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Touch of Karma
+			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Serenity
+			{spellID = 152173, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Storm, Earth, and Fire
 			{spellID = 137639, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Transfer the Power
@@ -1518,6 +1509,8 @@ C["filger_spells"] = {
 			{spellID = 129914, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hit Combo
 			{spellID = 196741, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nimble Brew
+			{spellID = 213664, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1531,6 +1524,7 @@ C["filger_spells"] = {
 			-- Buffs
 			-- Blackout Kick!
 			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
+
 
 			-- Trinkets
 			-- Alchemy Stones
@@ -2026,6 +2020,8 @@ C["filger_spells"] = {
 			{spellID = 47585, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Infusion
 			{spellID = 10060, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Power of the Dark Side
+			{spellID = 198069, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Apotheosis
 			{spellID = 200183, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blessing of T'uure
@@ -2050,8 +2046,6 @@ C["filger_spells"] = {
 			{spellID = 17, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Renew
 			{spellID = 139, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Power of the Dark Side
-			{spellID = 198069, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2188,6 +2182,10 @@ C["filger_spells"] = {
 			-- Self
 			-- Purify
 			{spellID = 527, filter = "CD"},
+			-- Light of T'uure
+			{spellID = 208065, filter = "CD"},
+			-- Light's Wrath
+			{spellID = 207946, filter = "CD"},
 			-- Mass Dispel
 			{spellID = 32375, filter = "CD"},
 			-- Penance
@@ -2256,10 +2254,6 @@ C["filger_spells"] = {
 			{spellID = 228260, filter = "CD"},
 			-- Honorable Medallion
 			{spellID = 195710, filter = "CD"},
-			-- Light of T'uure
-			{spellID = 208065, filter = "CD"},
-			-- Light's Wrath
-			{spellID = 207946, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
@@ -3754,7 +3748,7 @@ C["filger_spells"] = {
 			{spellID = 76577, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Rocket Fuel Leak
 			{spellID = 94794, unitID = "player", caster = "player", filter = "DEBUFF"},
-
+  
 			-- Raids: Legion
 			-- BETA:The Nighthold
 			-- Skorpyron
@@ -3795,13 +3789,10 @@ C["filger_spells"] = {
 			-- Call of Night
 			{spellID = 218809, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Star Augur Etraeus
-			-- Star Sign: Wolf
+			-- Star Sign:
 			{spellID = 205445, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Star Sign: Crab
 			{spellID = 205429, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Star Sign: Hunter
 			{spellID = 216345, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Star Sign: Dragon
 			{spellID = 216344, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Icy Ejection
 			{spellID = 206936, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -3824,7 +3815,7 @@ C["filger_spells"] = {
 			{spellID = 227807, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Guarm
 			-- Helya
-
+			
 			-- The Emerald Nightmare
 			-- Unstable Decay
 			{spellID = 221028, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -4213,10 +4204,6 @@ C["filger_spells"] = {
 			{spellID = 80167, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Mage Food
 			{spellID = 167152, unitID = "target", caster = "all", filter = "BUFF"},
-
-			-- Mythic
-			--Sanguine Ichor
-			{spellID = 226510, unitID = "target", caster = "all", filter = "BUFF"},
 		},
 	},
 }
