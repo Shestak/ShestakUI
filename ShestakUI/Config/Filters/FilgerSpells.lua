@@ -888,28 +888,46 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
-			-- Aspect of the Turtle
+			-- 误导
+			{spellID = 35079, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 生存专家
+			{spellID = 164857, unitID = "player", filter = "BUFF"},
+			-- 狂野怒火
+			{spellID = 19574, unitID = "player", filter = "BUFF"},
+			-- 百发百中
+			{spellID = 193526, unitID = "player", filter = "BUFF"},
+			-- 灵龟守护
 			{spellID = 186265, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Bestial Wrath
-			{spellID = 19574, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Trueshot
-			{spellID = 193526, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Aspect of the Wild
+			-- 野性守护
 			{spellID = 193530, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Aspect of the Eagle
+			-- 雄鹰守护
 			{spellID = 186289, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Aspect of the Cheetah
+			-- 猎豹守护
 			{spellID = 186257, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dire Beast
+			-- 凶暴野兽
 			{spellID = 120694, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Camouflage
+			-- 伪装
 			{spellID = 199483, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Spirit Mend
+			-- 灵魂治愈
 			{spellID = 90361, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Posthaste
+			-- 迅疾如风
 			{spellID = 118922, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Volley
+			-- 乱射
 			{spellID = 194386, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 灵巧打击
+			{spellID = 227272, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 狂轰滥炸
+			{spellID = 82921, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 稳固集中
+			{spellID = 193533, unitID = "player", caster = "player", filter = "BUFF"},
+			--喷毒眼镜蛇
+			{spellID = 194407, unitID = "player", caster = "player", filter = "BUFF"},
+			--暗影猎手的回复，橙装头
+			{spellID = 208888, unitID = "player", caster = "player", filter = "BUFF"},
+			--回转稳定，橙手
+			{spellID = 235712, unitID = "player", caster = "player", filter = "BUFF"},
+			--哨兵视野，橙腰
+			{spellID = 208913, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -921,22 +939,19 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
-			-- Steady Focus
-			{spellID = 193533, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Lock and Load
-			{spellID = 194594, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Mok'Nathal Tactics
+			-- 莫克纳萨战术
 			{spellID = 201081, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Mongoose Fury
+			-- 猫鼬之怒
 			{spellID = 190931, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Beast Cleave
+			-- 宠物顺劈
 			{spellID = 118455, unitID = "pet", caster = "player", filter = "BUFF"},
-			-- Marking Targets
-			{spellID = 223138, unitID = "player", caster = "player", filter = "BUFF"},
+			-- 泰坦之雷
+			{spellID = 207094, unitID = "pet", caster = "player", filter = "BUFF"},
+			-- 治疗宠物
+			{spellID = 136, unitID = "pet", caster = "player", filter = "BUFF"},
 			-- Frenzy
 			{spellID = 19615, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Mend Pet
-			{spellID = 136, unitID = "pet", caster = "player", filter = "BUFF"},
+			
 
 			-- Trinkets
 			-- Alchemy Stones
@@ -997,40 +1012,45 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
-			-- Black Arrow
+			-- 黑箭
 			{spellID = 194599, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Serpent Sting
+			-- 爆炸陷阱
+			{spellID = 13812, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- 毒蛇钉刺
 			{spellID = 87935, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Lacerate
+			-- 裂痕
 			{spellID = 185855, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- A Murder of Crows
+			--夺命黑鸦
 			{spellID = 131894, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Vulnerable
+			--易伤
 			{spellID = 187131, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Hunter's Mark
+			--猎人印记
 			{spellID = 185365, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Narrow Escape
-			{spellID = 136634, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Entrapment
-			{spellID = 135373, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Caltrops
+			--铁蒺藜
 			{spellID = 194279, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--震荡射击
+			{spellID = 5116, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- 焦油陷阱
+			{spellID = 135299, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- 精钢陷阱
+			{spellID = 162487, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
+			--精确瞄准
+			{spellID = 199803, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Warp Time (Warp Stalker)
 			{spellID = 35346, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Ankle Crack (Crocolisk)
 			{spellID = 50433, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Breath (Chimaera)
 			{spellID = 54644, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Concussive Shot
-			{spellID = 5116, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Ice Trap
-			{spellID = 135299, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Poisoned Ammo
 			{spellID = 162543, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frozen Ammo
 			{spellID = 162546, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- True Aim
-			{spellID = 199803, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Narrow Escape
+			{spellID = 136634, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Entrapment
+			{spellID = 135373, unitID = "target", caster = "player", filter = "DEBUFF"},
+			
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -1045,6 +1065,8 @@ C["filger_spells"] = {
 
 			-- Wyvern Sting
 			{spellID = 19386, unitID = "focus", caster = "player", filter = "DEBUFF"},
+			-- Freezing Trap
+			{spellID = 3355, unitID = "focus", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "COOLDOWN",
@@ -1450,30 +1472,47 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
-			-- Fortifying Brew
-			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Ironskin Brew
-			{spellID = 215479, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Touch of Karma
-			{spellID = 125174, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Diffuse Magic
-			{spellID = 122783, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Dampen Harm
-			{spellID = 122278, unitID = "player", caster = "player", filter = "BUFF"},
+			--散魔功
+			{spellID = 122783, unitID = "player", filter = "BUFF"},
+			--躯不坏
+			{spellID = 122278, unitID = "player", filter = "BUFF"},
+			--幻灭连击
+			{spellID = 228563, unitID = "player", filter = "BUFF"},
+			--真气突
+			{spellID = 119085, unitID = "player", filter = "BUFF"},
+			--T19四件套
+			{spellID = 211432, unitID = "player", filter = "BUFF"},
+			--壮胆酒
+			{spellID = 243435, unitID = "player", filter = "BUFF"},
+			--铁骨酒
+			{spellID = 215479, unitID = "player", filter = "BUFF"},
+			--酒有余香
+			{spellID = 214373, unitID = "player", filter = "BUFF"},
+			--神龙之雾
+			{spellID = 199888, unitID = "player", filter = "BUFF"},
+			--生生不息
+			{spellID = 197916, unitID = "player", filter = "BUFF"},
+			{spellID = 197919, unitID = "player", filter = "BUFF"},
+			--法力茶
+			{spellID = 197908, unitID = "player", filter = "BUFF"},
+			--雷光茶
+			{spellID = 116680, unitID = "player", filter = "BUFF"},
+			--禅院教诲
+			{spellID = 202090, unitID = "player", filter = "BUFF"},
+			--业报之触
+			{spellID = 125174, unitID = "player", filter = "BUFF"},
+			--屏气凝神
+			{spellID = 152173, unitID = "player", filter = "BUFF"},
+			--风火雷电
+			{spellID = 137639, unitID = "player", filter = "BUFF"},
+			--转化力量
+			{spellID = 195321, unitID = "player", filter = "BUFF"},
+			--力贯千钧
+			{spellID = 129914, unitID = "player", filter = "BUFF"},
+			--连击
+			{spellID = 196741, unitID = "player", filter = "BUFF"},
 			-- Nimble Brew
-			{spellID = 213664, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Serenity
-			{spellID = 152173, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Storm, Earth, and Fire
-			{spellID = 137639, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Mana Tea
-			{spellID = 197908, unitID = "player", caster = "player", filter = "BUFF"},
-			-- The Mists of Sheilun
-			{spellID = 199888, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Thunder Focus Tea
-			{spellID = 116680, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Momentum
-			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 213664, unitID = "player", filter = "BUFF"},	
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1485,8 +1524,9 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
-			-- Blackout Kick!
+			-- Blackout Kick! --幻灭踢
 			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
+
 
 			-- Trinkets
 			-- Alchemy Stones
@@ -1585,12 +1625,28 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
-			-- Heavy Stagger
+			-- 红酒池
 			{spellID = 124273, unitID = "player", caster = "player", filter = "DEBUFF"},
-			-- Keg Smash
+			-- 醉酿投
 			{spellID = 121253, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Breath of Fire
+			-- 火焰之息
 			{spellID = 123725, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- 爆炸酒桶
+			{spellID = 214326, unitID = "target", caster = "player", filter = "DEBUFF"},
+		},
+		{
+			Name = "PVE/PVP_CC",
+			Direction = "DOWN",
+			IconSide = "LEFT",
+			Mode = "BAR",
+			Interval = 3,
+			Alpha = 1,
+			IconSize = 25,
+			BarWidth = 189,
+			Position = {"LEFT", PVE_PVP_CC_Anchor},
+
+			-- Paralysis
+			{spellID = 115078, unitID = "focus", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "COOLDOWN",
@@ -1966,6 +2022,8 @@ C["filger_spells"] = {
 			{spellID = 47585, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Infusion
 			{spellID = 10060, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Power of the Dark Side
+			{spellID = 198069, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Apotheosis
 			{spellID = 200183, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blessing of T'uure
@@ -2093,6 +2151,10 @@ C["filger_spells"] = {
 			{spellID = 34914, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Shadow Word: Pain
 			{spellID = 589, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Purge the Wicked
+			{spellID = 204197, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Light of T'uure
+			{spellID = 208065, unitID = "target", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -2122,6 +2184,10 @@ C["filger_spells"] = {
 			-- Self
 			-- Purify
 			{spellID = 527, filter = "CD"},
+			-- Light of T'uure
+			{spellID = 208065, filter = "CD"},
+			-- Light's Wrath
+			{spellID = 207946, filter = "CD"},
 			-- Mass Dispel
 			{spellID = 32375, filter = "CD"},
 			-- Penance
@@ -3684,78 +3750,144 @@ C["filger_spells"] = {
 			{spellID = 76577, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Rocket Fuel Leak
 			{spellID = 94794, unitID = "player", caster = "player", filter = "DEBUFF"},
-
+  
 			-- Raids: Legion
+			--BETA: The Nighthold
+				-- 斯可匹隆
+					--聚焦冲击
+					{spellID = 204284, unitID = "player", caster = "all", filter = "DEBUFF"},
+				-- 时空畸体
+					--时间炸弹
+					{spellID = 206617, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--崔利艾克斯
+					--多汁盛宴
+					{spellID = 206838, unitID = "player", caster = "all", filter = "BUFF"},
+					--饱餐一顿
+					{spellID = 214573, unitID = "player", caster = "all", filter = "DEBUFF"},
+					--吸取活力
+					{spellID = 208499, unitID = "player", caster = "all", filter = "DEBUFF"},
+					--弧光连接
+					{spellID = 208910, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--魔剑士奥鲁瑞尔
+					--冰霜印记
+					{spellID = 212531, unitID = "player", caster = "all", filter = "DEBUFF"},
+					--灼热烙印
+					{spellID = 213148, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--提克迪奥斯
+					--腐肉瘟疫
+					{spellID = 206480, unitID = "player", caster = "all", filter = "DEBUFF"},
+					--阿古斯的烙印
+					{spellID = 212794, unitID = "player", caster = "all", filter = "DEBUFF"},
+					--夜之精华
+					{spellID = 206466, unitID = "player", caster = "all", filter = "DEBUFF"},
+					--燃烧的灵魂
+					{spellID = 216040, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--克洛苏斯
+					--毁灭之球
+					{spellID = 205344, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--高级植物学家特尔安
+					--寄生凝视
+					{spellID = 218342, unitID = "player", caster = "all", filter = "DEBUFF"},
+					--黑夜的召唤
+					{spellID = 218809, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--占星师艾塔乌斯
+					--星座配对
+					{spellID = 205445, unitID = "player", caster = "all", filter = "DEBUFF"},
+					{spellID = 205429, unitID = "player", caster = "all", filter = "DEBUFF"},
+					{spellID = 216345, unitID = "player", caster = "all", filter = "DEBUFF"},
+					{spellID = 216344, unitID = "player", caster = "all", filter = "DEBUFF"},
+					--寒冰喷射
+					{spellID = 206936, unitID = "player", caster = "all", filter = "DEBUFF"},
+					--邪能喷射
+					{spellID = 205649, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--大魔导师艾利桑德
+					--时间加速
+					{spellID = 209166, unitID = "player", caster = "all", filter = "DEBUFF"},
+					--减缓时间
+					{spellID = 209165, unitID = "player", caster = "all", filter = "DEBUFF"},
+					--聚合爆破
+					{spellID = 209598, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--古尔丹
+					--萨格拉斯之焰
+					{spellID = 221606, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- BETA:勇气试练
+				--奥丁
+					--正义风暴
+					{spellID = 227807, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--高姆
+				--海拉
 			-- The Emerald Nightmare
-			-- Nythendra
-			-- Infested
-			{spellID = 204504, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Rot
-			{spellID = 203096, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Il'gynoth, Heart of Corruption
-			-- Fixate
-			{spellID = 210099, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Spew Corruption
-			{spellID = 208929, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Cursed Blood
-			{spellID = 215128, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Erethe Renferal
-			-- Raking Talons
-			{spellID = 215582, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Wind Burn
-			{spellID = 218519, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Web of Pain
-			{spellID = 215307, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Necrotic Venom
-			{spellID = 215449, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Twisting Shadows
-			{spellID = 210850, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Shimmering Feather
-			{spellID = 212993, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Ursoc
-			-- Focused Gaze
-			{spellID = 198006, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Momentum
-			{spellID = 198108, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Dragons of Nightmare
-			-- Mark of Ysondre
-			{spellID = 203102, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Mark of Taerar
-			{spellID = 203121, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Mark of Emeriss
-			{spellID = 203125, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Mark of Lethon
-			{spellID = 203124, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Nightmare Bloom
-			{spellID = 207681, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Defiled Vines
-			{spellID = 203770, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Volatile Infection
-			{spellID = 203787, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Cenarius
-			-- Creeping Nightmares
-			{spellID = 210279, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Nightmare Javelin
-			{spellID = 211507, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Nightmare Brambles
-			{spellID = 210315, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Scorned Touch
-			{spellID = 211471, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Replenishing Roots
-			{spellID = 211612, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Xavius
-			-- Nightmare Blades
-			{spellID = 211802, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Dream Simulacrum
-			{spellID = 206005, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Tormenting Fixation
-			{spellID = 205771, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Corruption Meteor
-			{spellID = 224508, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Bonds of Terror
-			{spellID = 210451, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Corruption: Descent into Madness
-			{spellID = 208431, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Unstable Decay
+					{spellID = 221028, unitID = "player", caster = "all", filter = "DEBUFF"},
+				-- Nythendra
+					-- Infested
+					{spellID = 204504, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Rot
+					{spellID = 203096, unitID = "player", caster = "all", filter = "DEBUFF"},
+				-- Il'gynoth, Heart of Corruption
+					-- Fixate
+					{spellID = 210099, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Spew Corruption
+					{spellID = 208929, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Cursed Blood
+					{spellID = 215128, unitID = "player", caster = "all", filter = "DEBUFF"},
+				-- Erethe Renferal
+					-- Raking Talons
+					{spellID = 215582, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Wind Burn
+					{spellID = 218519, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Web of Pain
+					{spellID = 215307, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Necrotic Venom
+					{spellID = 215449, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Twisting Shadows
+					{spellID = 210850, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Shimmering Feather
+					{spellID = 212993, unitID = "player", caster = "all", filter = "DEBUFF"},
+				-- Ursoc
+					-- Focused Gaze
+					{spellID = 198006, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Momentum
+					{spellID = 198108, unitID = "player", caster = "all", filter = "DEBUFF"},
+				-- Dragons of Nightmare
+					-- Mark of Ysondre
+					{spellID = 203102, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Mark of Taerar
+					{spellID = 203121, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Mark of Emeriss
+					{spellID = 203125, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Mark of Lethon
+					{spellID = 203124, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Nightmare Bloom
+					{spellID = 207681, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Defiled Vines
+					{spellID = 203770, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Volatile Infection
+					{spellID = 203787, unitID = "player", caster = "all", filter = "DEBUFF"},
+				-- Cenarius
+					-- Creeping Nightmares
+					{spellID = 210279, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Nightmare Javelin
+					{spellID = 211507, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Nightmare Brambles
+					{spellID = 210315, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Scorned Touch
+					{spellID = 211471, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Replenishing Roots
+					{spellID = 211612, unitID = "player", caster = "all", filter = "DEBUFF"},
+				-- Xavius
+					-- Nightmare Blades
+					{spellID = 211802, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Dream Simulacrum
+					{spellID = 206005, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Tormenting Fixation
+					{spellID = 205771, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Corruption Meteor
+					{spellID = 224508, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Bonds of Terror
+					{spellID = 210451, unitID = "player", caster = "all", filter = "DEBUFF"},
+					-- Corruption: Descent into Madness
+					{spellID = 208431, unitID = "player", caster = "all", filter = "DEBUFF"},
 		},
 		{
 			Name = "T_BUFF",
