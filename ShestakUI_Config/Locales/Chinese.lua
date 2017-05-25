@@ -391,7 +391,6 @@ L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS = "总是显示德鲁伊连击点"
 L_GUI_UF_PLUGINS_COMBO_BAR_OLD = "目标框架显示连击点"
 L_GUI_UF_PLUGINS_ARCANE_BAR = "Enable Arcane Charge bar" -- Need review
 L_GUI_UF_PLUGINS_CHI_BAR = "真气"
-
 L_GUI_UF_PLUGINS_STAGGER_BAR = "醉拳条（酒仙武僧）"
 L_GUI_UF_PLUGINS_HOLY_BAR = "圣光能量"
 L_GUI_UF_PLUGINS_SHARD_BAR = "灵魂碎片"
