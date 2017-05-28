@@ -184,6 +184,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[190357] = 3		-- Blizzard
 		T.aoespam[122] = 0			-- Frost Nova
 		T.aoespam[1449] = 0			-- Arcane Explosion
+		T.aoespam[240689] = 0		-- Time and Space
 		T.aoespam[120] = 0			-- Cone of Cold
 		T.aoespam[114923] = 3		-- Nether Tempest
 		T.aoespam[114954] = 3		-- Nether Tempest (AoE)
