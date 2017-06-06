@@ -28,6 +28,7 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[229700] = 0			-- Orb of Destruction (Pharamere's Forbidden Grimoire Trinket)
 	T.aoespam[225764] = 1			-- Nether Meteor (Star Gate Trinket)
 	T.aoespam[188091] = 4			-- Deadly Grace (Potion of Deadly Grace)
+	T.aoespam[210380] = 4			-- Aura of Sacrifice
 end
 
 -- Class config
