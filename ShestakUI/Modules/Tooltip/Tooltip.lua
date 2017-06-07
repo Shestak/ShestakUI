@@ -354,6 +354,44 @@ end
 GameTooltip:HookScript("OnTooltipSetUnit", OnTooltipSetUnit)
 
 ----------------------------------------------------------------------------------------
+--	World Quests Progress Bar
+----------------------------------------------------------------------------------------
+
+local function HandleTooltipStatusBar()
+        local bar = _G["WorldMapTaskTooltipStatusBar"].Bar
+        local label = bar.Label
+        if bar then
+            bar:StripTextures()
+            bar:SetStatusBarTexture(C.media.texture)
+            bar:SetTemplate("Transparent")
+            label:ClearAllPoints()
+            label:SetPoint("CENTER", bar, 0, 0)
+            label:SetDrawLayer("OVERLAY")
+            label:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+        end
+    end
+    hooksecurefunc("TaskPOI_OnEnter", HandleTooltipStatusBar)
+
+----------------------------------------------------------------------------------------
+--	Reputation Progress Bar
+----------------------------------------------------------------------------------------
+
+local function ReputationTooltipStatusBar()
+    local bar = ReputationParagonTooltipStatusBar.Bar
+    local label = bar.Label
+    if bar then
+        bar:StripTextures()
+        bar:SetStatusBarTexture(C.media.texture)
+        bar:SetTemplate("Transparent")
+        label:ClearAllPoints()
+        label:SetPoint("CENTER", bar, 0, 0)
+        label:SetDrawLayer("OVERLAY")
+        label:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+    end
+end
+hooksecurefunc("ReputationParagonFrame_SetupParagonTooltip", ReputationTooltipStatusBar)
+
+----------------------------------------------------------------------------------------
 --	Adds guild rank to tooltips(GuildRank by Meurtcriss)
 ----------------------------------------------------------------------------------------
 if C.tooltip.rank == true then
