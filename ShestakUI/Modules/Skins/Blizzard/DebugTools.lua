@@ -7,14 +7,14 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	ScriptErrorsFrame:SetParent(UIParent)
 	ScriptErrorsFrame:SetTemplate("Transparent")
-	ScriptErrorsFrame.reload:SkinButton()
-	ScriptErrorsFrame.close:SkinButton()
-	T.SkinNextPrevButton(ScriptErrorsFrame.previous, true)
-	T.SkinNextPrevButton(ScriptErrorsFrame.next)
-	T.SkinScrollBar(ScriptErrorsFrameScrollFrameScrollBar)
+	ScriptErrorsFrame.Reload:SkinButton()
+	ScriptErrorsFrame.Close:SkinButton()
+	T.SkinNextPrevButton(ScriptErrorsFrame.PreviousError, true)
+	T.SkinNextPrevButton(ScriptErrorsFrame.NextError)
+	T.SkinScrollBar(ScriptErrorsFrameScrollBar)
 	T.SkinCloseButton(ScriptErrorsFrameClose)
-	ScriptErrorsFrameScrollFrame:CreateBackdrop("Overlay")
-	ScriptErrorsFrameScrollFrame:SetHeight(ScriptErrorsFrame:GetHeight() - 71)
+	ScriptErrorsFrame.ScrollFrame:CreateBackdrop("Overlay")
+	ScriptErrorsFrame.ScrollFrame:SetHeight(ScriptErrorsFrame:GetHeight() - 71)
 
 	local texs = {
 		"TopLeft",
