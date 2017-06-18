@@ -97,7 +97,7 @@ local function LoadSkin()
 	HonorFrame.BonusFrame.Arena1Button.Reward.Icon:SetPoint("TOPLEFT", 2, -2)
 	HonorFrame.BonusFrame.Arena1Button.Reward.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
 	HonorFrame.BonusFrame.Arena1Button.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	
+
 	HonorFrame.BonusFrame.BrawlButton.Reward:StripTextures()
 	HonorFrame.BonusFrame.BrawlButton.Reward:SetTemplate("Default")
 	HonorFrame.BonusFrame.BrawlButton.Reward:SetSize(40, 40)
