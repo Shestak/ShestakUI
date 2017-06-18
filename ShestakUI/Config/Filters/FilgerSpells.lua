@@ -1218,8 +1218,6 @@ C["filger_spells"] = {
 			{spellID = 108839, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Evanesce
 			{spellID = 157913, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Alter Time
-			{spellID = 110909, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 198111, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror Image
@@ -3997,8 +3995,6 @@ C["filger_spells"] = {
 			{spellID = 113862, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 198111, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Alter Time
-			{spellID = 110909, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Evanesce
 			{spellID = 157913, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Evocation
