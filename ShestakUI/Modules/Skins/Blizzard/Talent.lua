@@ -203,6 +203,8 @@ local function LoadSkin()
 			bu.backdrop:SetPoint("TOPLEFT", ic, -2, 2)
 			bu.backdrop:SetPoint("BOTTOMRIGHT", ic, 2, -2)
 
+			bu.knownSelection:SetAlpha(0)
+
 			ic:SetDrawLayer("ARTWORK")
 			ic:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
