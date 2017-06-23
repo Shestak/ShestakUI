@@ -27,6 +27,7 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[229737] = 0			-- Solar Collapse (Fury of the Burning Sky Trinket)
 	T.aoespam[229700] = 0			-- Orb of Destruction (Pharamere's Forbidden Grimoire Trinket)
 	T.aoespam[225764] = 1			-- Nether Meteor (Star Gate Trinket)
+	T.aoespam[242525] = 0.5			-- Terror From Below (Terror From Below Trinket)
 	T.aoespam[188091] = 4			-- Deadly Grace (Potion of Deadly Grace)
 	T.aoespam[210380] = 4			-- Aura of Sacrifice
 end
