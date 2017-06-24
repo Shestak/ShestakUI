@@ -1708,6 +1708,10 @@ C["filger_spells"] = {
 			{spellID = 123904, filter = "CD"},
 			-- Honorable Medallion
 			{spellID = 195710, filter = "CD"},
+			-- Essence Font
+			{spellID = 191837, filter = "CD"},
+			-- Refreshing Jade Wind
+			{spellID = 162530, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
