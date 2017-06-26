@@ -82,6 +82,61 @@ T.RaidDebuffs = {
 -----------------------------------------------------------------
 -- Legion Raid
 -----------------------------------------------------------------
+-- Tomb of Sargeras
+	-- Goroth
+	[SpellName(231363)] = 3,	-- Burning Armor
+	[SpellName(233279)] = 3,	-- Shattering Star
+	[SpellName(230345)] = 3,	-- Crashing Comet
+	[SpellName(234346)] = 4,	-- Fel Eruption
+	-- Demonic Inquisition
+	[SpellName(233983)] = 3,	-- Echoing Anguish
+	[SpellName(233895)] = 3,	-- Suffocating Dark
+	-- Harjatan
+	[SpellName(231998)] = 3,	-- Jagged Abrasion
+	[SpellName(231770)] = 4,	-- Drenched
+	[SpellName(231729)] = 3,	-- Aqueous Burst
+	[SpellName(231768)] = 3,	-- Drenching Waters
+	-- Sisters of the Moon
+	[SpellName(234996)] = 4,	-- Umbra Suffusion
+	[SpellName(234995)] = 4,	-- Lunar Suffusion
+	[SpellName(236516)] = 3,	-- Twilight Volley
+	[SpellName(236519)] = 3,	-- Moon Burn
+	[SpellName(239264)] = 3,	-- Lunar Fire
+	[SpellName(236712)] = 3,	-- Lunar Beacon
+	-- Mistress Sassz'ine
+	[SpellName(230201)] = 3,	-- Burden of Pain
+	[SpellName(230139)] = 3,	-- Hydra Shot
+	[SpellName(230358)] = 3,	-- Thundering Shock
+	[SpellName(232913)] = 3,	-- Befouling Ink
+	-- The Desolate Host
+	[SpellName(235907)] = 3,	-- Collapsing Fissure
+	[SpellName(235989)] = 3,	-- Tormented Cries
+	[SpellName(235933)] = 3,	-- Spear of Anguish
+	[SpellName(235968)] = 3,	-- Grasping Darkness
+	[SpellName(236340)] = 3,	-- Crush Mind
+	[SpellName(236449)] = 3,	-- Soulbind
+	[SpellName(236515)] = 3,	-- Shattering Scream
+	[SpellName(236241)] = 3,	-- Soul Rot
+	-- Maiden of Vigilance
+	[SpellName(235213)] = 4,	-- Light Infusion
+	[SpellName(235240)] = 4,	-- Fel Infusion
+	[SpellName(240209)] = 3,	-- Unstable Soul
+	-- Fallen Avatar
+	[SpellName(236494)] = 3,	-- Desolate
+	[SpellName(236604)] = 3,	-- Shadowy Blades
+	[SpellName(234059)] = 3,	-- Unbound Chaos
+	[SpellName(239058)] = 3,	-- Touch of Sargeras
+	[SpellName(239739)] = 3,	-- Dark Mark
+	[SpellName(242017)] = 3,	-- Black Winds
+	-- Kil'Jaeden
+	[SpellName(236710)] = 3,	-- Shadow Reflection: Erupting
+	[SpellName(236378)] = 3,	-- Shadow Reflection: Wailing
+	[SpellName(238429)] = 3,	-- Bursting Dreadflame
+	[SpellName(238505)] = 3,	-- Focused Dreadflame
+	[SpellName(239155)] = 3,	-- Gravity Squeeze
+	[SpellName(239253)] = 3,	-- Flaming Orb
+	[SpellName(239130)] = 3,	-- Tear Rift
+	[SpellName(238505)] = 3,	-- Focused Dreadflame
 -- The Nighthold
 	-- Skorpyron
 	[SpellName(211659)] = 3,	-- Arcane Tether
