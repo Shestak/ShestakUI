@@ -912,8 +912,6 @@ C["filger_spells"] = {
 			{spellID = 35079, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Survivalist
 			{spellID = 164857, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Volley
-			{spellID = 194386, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Trick Shot
 			{spellID = 227272, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bombardment
