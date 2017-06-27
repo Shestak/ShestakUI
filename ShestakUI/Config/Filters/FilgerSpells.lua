@@ -3852,8 +3852,6 @@ C["filger_spells"] = {
 			{spellID = 239253, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Focused Dreadflame
 			{spellID = 238505, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Deceiver's Veil
-			{spellID = 236555, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Illidan's Sightless Gaze
 			{spellID = 241721, unitID = "player", caster = "all", filter = "DEBUFF"},
 
