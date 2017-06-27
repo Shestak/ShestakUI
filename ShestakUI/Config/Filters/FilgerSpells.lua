@@ -3774,6 +3774,10 @@ C["filger_spells"] = {
 			{spellID = 234128, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Dripping Wet
 			{spellID = 241573, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Drenched
+			{spellID = 231770, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Sickly Fixate
+			{spellID = 241600, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Mistress Sassz'ine
 			-- Hydra Shot
 			{spellID = 230139, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -3794,7 +3798,7 @@ C["filger_spells"] = {
 			{spellID = 236712, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Rapid Shot
 			{spellID = 236596, unitID = "player", caster = "all", filter = "DEBUFF"},
-				-- The Desolate Host
+			-- The Desolate Host
 			-- Spear of Anguish
 			{spellID = 235933, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Tormented Cries
@@ -3808,8 +3812,36 @@ C["filger_spells"] = {
 			-- Tormented Cries
 			{spellID = 235989, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Maiden of Vigilance
+			-- Unstable Soul
+			{spellID = 240209, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Light Infusion
+			{spellID = 235213, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Fel Infusion
+			{spellID = 235240, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Creator's Grace
+			{spellID = 235534, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Demon's Vigor
+			{spellID = 235538, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Fallen Avatar
+			-- Dark Mark
+			{spellID = 239739, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Shadowy Blades
+			{spellID = 236604, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Kil'jaeden
+			-- Bursting Dreadflame
+			{spellID = 238429, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Shadow Reflection: Erupting
+			{spellID = 236710, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Shadow Reflection: Wailing
+			{spellID = 236378, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Flaming Orb
+			{spellID = 239253, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Focused Dreadflame
+			{spellID = 238505, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Deceiver's Veil
+			{spellID = 236555, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Illidan's Sightless Gaze
+			{spellID = 241721, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- The Nighthold
 			-- Skorpyron
