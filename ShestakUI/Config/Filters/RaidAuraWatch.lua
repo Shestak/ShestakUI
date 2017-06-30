@@ -97,8 +97,6 @@ T.RaidDebuffs = {
 	[SpellName(231729)] = 3,	-- Aqueous Burst
 	[SpellName(231768)] = 3,	-- Drenching Waters
 	-- Sisters of the Moon
-	[SpellName(234996)] = 4,	-- Umbra Suffusion
-	[SpellName(234995)] = 4,	-- Lunar Suffusion
 	[SpellName(236516)] = 3,	-- Twilight Volley
 	[SpellName(236519)] = 3,	-- Moon Burn
 	[SpellName(239264)] = 3,	-- Lunar Fire
@@ -136,7 +134,6 @@ T.RaidDebuffs = {
 	[SpellName(239155)] = 3,	-- Gravity Squeeze
 	[SpellName(239253)] = 3,	-- Flaming Orb
 	[SpellName(239130)] = 3,	-- Tear Rift
-	[SpellName(238505)] = 3,	-- Focused Dreadflame
 -- The Nighthold
 	-- Skorpyron
 	[SpellName(211659)] = 3,	-- Arcane Tether
