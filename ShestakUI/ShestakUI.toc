@@ -12,7 +12,7 @@
 ## X-oUF: oUFShestakUI
 ## X-Curse-Packaged-Version: 6.14
 ## X-Curse-Project-Name: ShestakUI
-## X-Curse-Project-ID: shestakui
+## X-Curse-Project-ID: 27854
 ## X-WoWI-ID: 19033
 ## Website: http://shestak.org
 
