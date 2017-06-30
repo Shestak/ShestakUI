@@ -1492,30 +1492,18 @@ C["filger_spells"] = {
 			{spellID = 137639, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mana Tea
 			{spellID = 197908, unitID = "player", caster = "player", filter = "BUFF"},
-			-- The Mists of Sheilun
-			{spellID = 199888, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Thunder Focus Tea
 			{spellID = 116680, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Momentum
-			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Combo Master (Tier 19 4/4)
-			{spellID = 211432, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brew-Stache
-			{spellID = 214373, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 214372, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lifecycles (Vivify)
 			{spellID = 197916, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lifecycles (Enveloping Mist)
 			{spellID = 197919, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Teachings of the Monastery
-			{spellID = 202090, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Storm, Earth, and Fire
-			{spellID = 137639, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Transfer the Power
-			{spellID = 195321, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Power Strikes
-			{spellID = 129914, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Hit Combo
-			{spellID = 196741, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fortification
+			{spellID = 213341, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Chi Torpedo
+			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1529,6 +1517,22 @@ C["filger_spells"] = {
 			-- Buffs
 			-- Blackout Kick!
 			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
+			-- The Mists of Sheilun
+			{spellID = 199888, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Surge of Mists
+			{spellID = 246328, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Power Strikes
+			{spellID = 129914, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Teachings of the Monastery
+			{spellID = 202090, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Transfer the Power
+			{spellID = 195321, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Hit Combo
+			{spellID = 196741, unitID = "player", caster = "player", filter = "BUFF"},
+			
+			-- Item Sets
+			-- Combo Master (T19)
+			{spellID = 211432, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- Alchemy Stones
@@ -1716,6 +1720,8 @@ C["filger_spells"] = {
 			{spellID = 191837, filter = "CD"},
 			-- Refreshing Jade Wind
 			{spellID = 162530, filter = "CD"},
+			-- Fortifying Brew
+			{spellID = 115203, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
@@ -3762,7 +3768,7 @@ C["filger_spells"] = {
 			{spellID = 94794, unitID = "player", caster = "player", filter = "DEBUFF"},
 
 			-- Raids: Legion
-			-- BETA:Tomb of Sargeras
+			-- BETA: Tomb of Sargeras
 			-- Goroth
 			-- Shattering Star
 			{spellID = 233279, unitID = "player", caster = "all", filter = "DEBUFF"},
