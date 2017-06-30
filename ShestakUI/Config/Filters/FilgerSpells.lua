@@ -3951,8 +3951,6 @@ C["filger_spells"] = {
 			-- Odyn
 			-- Storm of Justice
 			{spellID = 227807, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Guarm
-			-- Helya
 
 			-- The Emerald Nightmare
 			-- Unstable Decay
