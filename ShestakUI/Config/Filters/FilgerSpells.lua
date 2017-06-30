@@ -1475,7 +1475,7 @@ C["filger_spells"] = {
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Fortifying Brew
-			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Ironskin Brew
 			{spellID = 215479, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Touch of Karma
@@ -1501,7 +1501,7 @@ C["filger_spells"] = {
 			-- Combo Master (Tier 19 4/4)
 			{spellID = 211432, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fortifying Brew
-			{spellID = 243435, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 243435, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Brew-Stache
 			{spellID = 214373, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lifecycles (Vivify)
@@ -1518,6 +1518,8 @@ C["filger_spells"] = {
 			{spellID = 129914, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hit Combo
 			{spellID = 196741, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Surge of Mists (Tier 20 2/4)
+			{spellID = 246328, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1718,6 +1720,10 @@ C["filger_spells"] = {
 			{spellID = 191837, filter = "CD"},
 			-- Refreshing Jade Wind
 			{spellID = 162530, filter = "CD"},
+			-- Fortifying Brew
+			{spellID = 243435, filter = "CD", absID = true},
+			-- Fortifying Brew
+			{spellID = 115203, filter = "CD", absID = true},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
