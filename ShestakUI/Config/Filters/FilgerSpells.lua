@@ -1500,8 +1500,6 @@ C["filger_spells"] = {
 			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combo Master (Tier 19 4/4)
 			{spellID = 211432, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fortifying Brew
-			{spellID = 243435, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brew-Stache
 			{spellID = 214373, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lifecycles (Vivify)
@@ -1518,6 +1516,8 @@ C["filger_spells"] = {
 			{spellID = 129914, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hit Combo
 			{spellID = 196741, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Surge of Mists (Tier 20 2/4)
+			{spellID = 246328, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1718,6 +1718,10 @@ C["filger_spells"] = {
 			{spellID = 191837, filter = "CD"},
 			-- Refreshing Jade Wind
 			{spellID = 162530, filter = "CD"},
+			-- Fortifying Brew(healer)
+			{spellID = 243435, filter = "CD"},
+			-- Fortifying Brew(tank)
+			{spellID = 115203, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
