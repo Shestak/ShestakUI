@@ -228,6 +228,8 @@ C["filger_spells"] = {
 			{spellID = 48792, filter = "CD"},
 			-- Summon Gargoyle
 			{spellID = 49206, filter = "CD"},
+
+			-- PvP
 			-- Honorable Medallion
 			{spellID = 195710, filter = "CD"},
 
@@ -519,6 +521,8 @@ C["filger_spells"] = {
 			{spellID = 187827, filter = "CD"},
 			-- Darkness
 			{spellID = 196718, filter = "CD"},
+
+			-- PvP
 			-- Honorable Medallion
 			{spellID = 195710, filter = "CD"},
 
@@ -614,6 +618,8 @@ C["filger_spells"] = {
 			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Guardian of Elune
 			{spellID = 213680, unitID = "player", caster = "player", filter = "BUFF"},
+
+			-- Item Sets
 			-- Natural Defenses (T19)
 			{spellID = 211160, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -852,6 +858,8 @@ C["filger_spells"] = {
 			{spellID = 102558, filter = "CD"},
 			-- Incarnation: Tree of Life
 			{spellID = 33891, filter = "CD"},
+
+			-- PvP
 			-- Honorable Medallion
 			{spellID = 195710, filter = "CD"},
 
@@ -1132,6 +1140,8 @@ C["filger_spells"] = {
 			{spellID = 186257, filter = "CD"},
 			-- Spirit Mend (Pet)
 			{spellID = 90361, filter = "CD"},
+
+			-- PvP
 			-- Honorable Medallion
 			{spellID = 195710, filter = "CD"},
 
@@ -1416,6 +1426,8 @@ C["filger_spells"] = {
 			{spellID = 45438, filter = "CD"},
 			-- Invisibility
 			{spellID = 66, filter = "CD"},
+
+			-- PvP
 			-- Honorable Medallion
 			{spellID = 195710, filter = "CD"},
 
@@ -1529,7 +1541,7 @@ C["filger_spells"] = {
 			{spellID = 195321, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hit Combo
 			{spellID = 196741, unitID = "player", caster = "player", filter = "BUFF"},
-			
+
 			-- Item Sets
 			-- Combo Master (T19)
 			{spellID = 211432, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1714,14 +1726,16 @@ C["filger_spells"] = {
 			{spellID = 116849, filter = "CD"},
 			-- Invoke Xuen, the White Tiger
 			{spellID = 123904, filter = "CD"},
-			-- Honorable Medallion
-			{spellID = 195710, filter = "CD"},
 			-- Essence Font
 			{spellID = 191837, filter = "CD"},
 			-- Refreshing Jade Wind
 			{spellID = 162530, filter = "CD"},
 			-- Fortifying Brew
 			{spellID = 115203, filter = "CD"},
+
+			-- PvP
+			-- Honorable Medallion
+			{spellID = 195710, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
@@ -1992,6 +2006,8 @@ C["filger_spells"] = {
 			{spellID = 86659, filter = "CD"},
 			-- Blessing of Protection
 			{spellID = 1022, filter = "CD"},
+
+			-- PvP
 			-- Honorable Medallion
 			{spellID = 195710, filter = "CD"},
 
@@ -2266,12 +2282,14 @@ C["filger_spells"] = {
 			{spellID = 34433, filter = "CD"},
 			-- Void Eruption
 			{spellID = 228260, filter = "CD"},
-			-- Honorable Medallion
-			{spellID = 195710, filter = "CD"},
 			-- Light of T'uure
 			{spellID = 208065, filter = "CD"},
 			-- Light's Wrath
 			{spellID = 207946, filter = "CD"},
+
+			-- PvP
+			-- Honorable Medallion
+			{spellID = 195710, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
@@ -2548,6 +2566,8 @@ C["filger_spells"] = {
 			{spellID = 36554, filter = "CD"},
 			-- Evasion
 			{spellID = 5277, filter = "CD"},
+
+			-- PvP
 			-- Honorable Medallion
 			{spellID = 195710, filter = "CD"},
 
@@ -2840,6 +2860,8 @@ C["filger_spells"] = {
 			{spellID = 204945, filter = "CD"},
 			-- Windsong
 			{spellID = 201898, filter = "CD"},
+
+			-- PvP
 			-- Honorable Medallion
 			{spellID = 195710, filter = "CD"},
 
@@ -3057,6 +3079,8 @@ C["filger_spells"] = {
 			{spellID = 205181, filter = "CD"},
 			-- Summon Darkglare
 			{spellID = 205180, filter = "CD"},
+
+			-- PvP
 			-- Honorable Medallion
 			{spellID = 195710, filter = "CD"},
 
@@ -3299,6 +3323,8 @@ C["filger_spells"] = {
 			{spellID = 97462, filter = "CD"},
 			-- Shield Wall
 			{spellID = 871, filter = "CD"},
+
+			-- PvP
 			-- Honorable Medallion
 			{spellID = 195710, filter = "CD"},
 
