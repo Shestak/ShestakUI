@@ -1500,8 +1500,6 @@ C["filger_spells"] = {
 			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combo Master (Tier 19 4/4)
 			{spellID = 211432, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fortifying Brew
-			{spellID = 243435, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brew-Stache
 			{spellID = 214373, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lifecycles (Vivify)
