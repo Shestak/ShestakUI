@@ -1475,7 +1475,7 @@ C["filger_spells"] = {
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Fortifying Brew
-			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			{spellID = 120954, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ironskin Brew
 			{spellID = 215479, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Touch of Karma
@@ -1500,8 +1500,6 @@ C["filger_spells"] = {
 			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combo Master (Tier 19 4/4)
 			{spellID = 211432, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Fortifying Brew
-			{spellID = 243435, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Brew-Stache
 			{spellID = 214373, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lifecycles (Vivify)
@@ -1720,10 +1718,10 @@ C["filger_spells"] = {
 			{spellID = 191837, filter = "CD"},
 			-- Refreshing Jade Wind
 			{spellID = 162530, filter = "CD"},
-			-- Fortifying Brew
-			{spellID = 243435, filter = "CD", absID = true},
-			-- Fortifying Brew
-			{spellID = 115203, filter = "CD", absID = true},
+			-- Fortifying Brew(healer)
+			{spellID = 243435, filter = "CD"},
+			-- Fortifying Brew(tank)
+			{spellID = 115203, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
