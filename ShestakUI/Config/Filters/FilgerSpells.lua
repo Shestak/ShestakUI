@@ -1498,7 +1498,7 @@ C["filger_spells"] = {
 			{spellID = 116680, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Momentum
 			{spellID = 119085, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Combo Master (Tier 19 4/4)
+			-- Combo Master (dpser Tier 19 4/4)
 			{spellID = 211432, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brew-Stache
 			{spellID = 214373, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1516,6 +1516,10 @@ C["filger_spells"] = {
 			{spellID = 129914, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hit Combo
 			{spellID = 196741, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Surge of Mists (healer Tier 20 2/4)
+			{spellID = 246328, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fortification
+			{spellID = 213341, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1716,6 +1720,8 @@ C["filger_spells"] = {
 			{spellID = 191837, filter = "CD"},
 			-- Refreshing Jade Wind
 			{spellID = 162530, filter = "CD"},
+			-- Fortifying Brew
+			{spellID = 115203, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
