@@ -241,7 +241,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 			hooksecurefunc(DBM.BossHealth, "Show", SkinBossTitle)
 			hooksecurefunc(DBM.BossHealth, "AddBoss", SkinBoss)
 			hooksecurefunc(DBM.BossHealth, "UpdateSettings", SkinBoss)
-		
+
 			hooksecurefunc(DBM.RangeCheck, "Show", function()
 				if DBMRangeCheck then
 					DBMRangeCheck:SetTemplate("Transparent")
@@ -250,9 +250,11 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 					DBMRangeCheckRadar:SetTemplate("Transparent")
 				end
 			end)
-		
+
 			hooksecurefunc(DBM.InfoFrame, "Show", function()
-				DBMInfoFrame:SetTemplate("Transparent")
+				if DBMInfoFrame then
+					DBMInfoFrame:SetTemplate("Transparent")
+				end
 			end)
 		end
 		local replace = string.gsub
