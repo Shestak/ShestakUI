@@ -157,6 +157,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 		end
 
 		local SkinBossTitle = function()
+			if not DBMBossHealthDropdown then return end
 			local anchor = DBMBossHealthDropdown:GetParent()
 			if not anchor.styled then
 				local header = {anchor:GetRegions()}
