@@ -237,10 +237,9 @@ skin.panels = {
 
 		for i = 1, 3 do
 			self.Loadouts[i]:StripTextures()
-			self.Loadouts[i]:SetTemplate("Default")
+			self.Loadouts[i]:SetTemplate("Overlay")
 
 			self.Loadouts[i].Pet.Pet.IconBorder:SetAlpha(0)
-			self.Loadouts[i].Pet.Pet:CreateBackdrop("Overlay")
 			self.Loadouts[i].Pet.Pet:StyleButton(nil, 4)
 			self.Loadouts[i].Pet.Pet:SetSize(40, 40)
 			self.Loadouts[i].Pet.Pet:CreateBackdrop("Default")
@@ -254,7 +253,6 @@ skin.panels = {
 			self.Loadouts[i].Pet.Pet.hover:SetPoint("CENTER",0,0)
 			self.Loadouts[i].Pet.Pet.Level.BG:SetAlpha(0)
 
-			self.Loadouts[i].Pet.Pet.Leveling:SetAlpha(0.2)
 			self.Loadouts[i].HP:StripTextures()
 			self.Loadouts[i].HP:CreateBackdrop("Overlay")
 			self.Loadouts[i].HP:SetStatusBarTexture(C.media.texture)
