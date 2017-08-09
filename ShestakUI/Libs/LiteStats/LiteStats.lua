@@ -49,8 +49,6 @@ local talents = modules.Talents
 local stats = modules.Stats
 local experience = modules.Experience
 local loot = modules.Loot
-local cloak = modules.Cloak
-local helm = modules.Helm
 local nameplates = modules.Nameplates
 
 -- Events Reg
@@ -1377,6 +1375,13 @@ end
 --	Talents
 ----------------------------------------------------------------------------------------
 if talents.enabled then
+	local specList = {
+		{text = SPECIALIZATION, isTitle = true, notCheckable = true},
+		{notCheckable = true},
+		{notCheckable = true},
+		{notCheckable = true},
+		{notCheckable = true}
+	}
 	Inject("Talents", {
 		OnLoad = function(self)
 			RegEvents(self, "PLAYER_LOGIN PLAYER_TALENT_UPDATE PLAYER_ENTERING_WORLD PLAYER_LEAVING_WORLD")
@@ -1386,27 +1391,18 @@ if talents.enabled then
 				self:RegisterEvent("PLAYER_TALENT_UPDATE")
 			elseif event == "PLAYER_LEAVING_WORLD" then
 				self:UnregisterEvent("PLAYER_TALENT_UPDATE")
-			elseif event == "UNIT_SPELLCAST_START" then
-				local unit, spell = ...
-				if unit == P and (spell == GetSpellInfo(63645) or spell == GetSpellInfo(63644)) then timer = GetTime() end
 			else
 				if UnitLevel(P) < 10 then
 					self.text:SetText(format("%s %s", NO, SPECIALIZATION))
 				else
-					local active = GetActiveSpecGroup()
-					if GetSpecialization(false, false, active) then
-						self.text:SetText(select(2, GetSpecializationInfo(GetSpecialization(false, false, active))))
+					local active = GetSpecialization()
+					if active then
+						self.text:SetText(select(2, GetSpecializationInfo(active)))
 					else
 						self.text:SetText(format("%s %s", NO, SPECIALIZATION))
 					end
 					if self.hovered then self:GetScript("OnEnter")(self) end
 				end
-			end
-		end,
-		OnUpdate = function(self)
-			if GetNumSpecGroups() > 1 then
-				self:SetScript("OnUpdate", nil)
-				self:GetScript("OnEvent")(self)
 			end
 		end,
 		OnEnter = function(self)
@@ -1416,11 +1412,7 @@ if talents.enabled then
 				GameTooltip:ClearLines()
 				GameTooltip:AddLine(SPECIALIZATION, tthead.r, tthead.g, tthead.b)
 				GameTooltip:AddLine(" ")
-				for i = 1, GetNumSpecGroups() do
-					if GetSpecialization(false, false, i) then
-						GameTooltip:AddLine(string.join(" ", string.format("", select(2, GetSpecializationInfo(GetSpecialization(false, false, i)))), (i == GetActiveSpecGroup() and string.join("", "|cff00FF00" , TALENT_ACTIVE_SPEC_STATUS, "|r") or string.join("", "|cffFF0000", FACTION_INACTIVE, "|r"))), 1, 1, 1)
-					end
-				end
+				GameTooltip:AddLine(CHOOSE_SPECIALIZATION_NOW, 1, 1, 1, 1)
 				GameTooltip:Show()
 			end
 			if C.toppanel.enable == true and C.toppanel.mouseover == true then
@@ -1434,14 +1426,20 @@ if talents.enabled then
 			end
 		end,
 		OnClick = function(_, b)
-			if b == "RightButton" and GetNumSpecGroups() > 1 then
-				SetActiveSpecGroup(3 - GetActiveSpecGroup())
+			if b == "RightButton" and GetSpecialization() then
+				for index = 1, 4 do
+					local id, name, _, texture = GetSpecializationInfo(index)
+					if id then
+						specList[index + 1].text = format('|T%s:14:14:0:0:64:64:4:60:4:60|t  %s', texture, name)
+						specList[index + 1].func = function() SetSpecialization(index) end
+					else
+						specList[index + 1] = nil
+					end
+				end
+				EasyMenu(specList, menuFrame, "cursor", -15, -7, "MENU", 2)
 			elseif b == "LeftButton" then
 				if not PlayerTalentFrame then
 					LoadAddOn("Blizzard_TalentUI")
-				end
-				if not GlyphFrame then
-					LoadAddOn("Blizzard_GlyphUI")
 				end
 				if T.level >= SHOW_TALENT_LEVEL then
 					PlayerTalentFrame_Toggle()
