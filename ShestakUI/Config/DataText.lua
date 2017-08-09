@@ -137,7 +137,7 @@ LPSTAT_CONFIG = {
 		spec3fmt = class"Power: ".."[power]"..class"  Crit: ".."[crit]%"..class"  Haste: ".."[haste]%", -- Spec #3 string
 		spec4fmt = class"Power: ".."[power]"..class"  Crit: ".."[crit]%"..class"  Haste: ".."[haste]%", -- Spec #4 string
 		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",
-		x_off = -20, y_off = 6,
+		x_off = 0, y_off = 6,
 	},
 	Bags = {
 		enabled = C.toppanel.enable,
@@ -159,7 +159,7 @@ LPSTAT_CONFIG = {
 	},
 	Talents = {
 		enabled = C.toppanel.enable,
-		anchor_frame = "Stats", anchor_to = "left", anchor_from = "right",
+		anchor_frame = "Nameplates", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = -3, tip_y = 13
 	},
 -- MiniMap block
