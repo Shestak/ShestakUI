@@ -81,7 +81,6 @@ T.OpenItems = {
 	[21363] = true,		-- Festive Gift
 	[21640] = true,		-- Lunar Festival Fireworks Pack
 	[21746] = true,		-- Lucky Red Envelope
-	[49909] = true,		-- Box of Chocolates
 	[22746] = true,		-- Buccaneer's Uniform
 	[23022] = true,		-- Curmudgeon's Payoff
 	[23846] = true,		-- Nolkai's Box
