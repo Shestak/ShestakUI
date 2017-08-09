@@ -115,7 +115,7 @@ skin.panels = {
 		  for _,region in ipairs({frame:GetRegions()}) do
 		    local anchorPoint,relativeTo = region:GetPoint()
 		    if region:GetObjectType()=="Texture" and region:GetDrawLayer()=="ARTWORK" and anchorPoint=="LEFT" and relativeTo==frame then
-		      region:SetTexture(r,g,b)
+		      region:SetColorTexture(r, g, b)
 		      region:SetHeight(4)
 		    end
 		  end
@@ -154,7 +154,7 @@ skin.panels = {
 		  button.Selected:SetPoint("TOPLEFT",2,-2)
 		  button.Selected:SetPoint("BOTTOMRIGHT",-2,2)
 		  for _,texture in ipairs({"LeftSelected","RightSelected","MidSelected"}) do
-		        button.Selected[texture]:SetTexture(1,1,1,0.25)
+		        button.Selected[texture]:SetColorTexture(1, 1, 1, 0.25)
 		        button.Selected[texture]:SetHeight(20)
 		  end
 			for _,region in ipairs({button.Selected:GetRegions()}) do
@@ -461,7 +461,7 @@ skin.panels = {
 			button:StripTextures()
 			for _,region in ipairs({button.Header:GetRegions()}) do
 				if region:GetDrawLayer()=="BACKGROUND" then
-					region:SetTexture(0.15,0.15,0.15)
+					region:SetColorTexture(0.15, 0.15, 0.15)
 				end
 			end
 			T.SkinCheckBox(button.CheckButton)
