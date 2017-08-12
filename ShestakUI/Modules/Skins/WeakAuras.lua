@@ -26,17 +26,29 @@ frame:SetScript("OnEvent", function(self, event)
 		end
 
 		if frame.stacks then
-			frame.stacks:SetFont(C.font.filger_font, select(2, frame.stacks:GetFont()), C.font.filger_font_style)
+			if select(2, frame.stacks:GetFont()) > 0 then
+				frame.stacks:SetFont(C.font.filger_font, select(2, frame.stacks:GetFont()), C.font.filger_font_style)
+			else
+				frame.stacks:SetFont(C.font.filger_font, 16, C.font.filger_font_style)
+			end
 			frame.stacks:SetShadowOffset(C.media.filger_font_shadow and 1 or 0, C.media.filger_font_shadow and -1 or 0)
 		end
 
 		if frame.timer then
-			frame.timer:SetFont(C.font.filger_font, select(2, frame.timer:GetFont()), C.font.filger_font_style)
+			if select(2, frame.stacks:GetFont()) > 0 then
+				frame.timer:SetFont(C.font.filger_font, select(2, frame.timer:GetFont()), C.font.filger_font_style)
+			else
+				frame.timer:SetFont(C.font.filger_font, 16, C.font.filger_font_style)
+			end
 			frame.timer:SetShadowOffset(C.font.filger_font_shadow and 1 or 0, C.font.filger_font_shadow and -1 or 0)
 		end
 
 		if frame.text then
-			frame.text:SetFont(C.font.filger_font, select(2, frame.text:GetFont()), C.font.filger_font_style)
+			if select(2, frame.stacks:GetFont()) > 0 then
+				frame.text:SetFont(C.font.filger_font, select(2, frame.text:GetFont()), C.font.filger_font_style)
+			else
+				frame.text:SetFont(C.font.filger_font, 16, C.font.filger_font_style)
+			end
 			frame.text:SetShadowOffset(C.font.filger_font_shadow and 1 or 0, C.font.filger_font_shadow and -1 or 0)
 		end
 	end
