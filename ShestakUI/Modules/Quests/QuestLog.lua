@@ -32,8 +32,9 @@ hooksecurefunc("QuestMapLogTitleButton_OnClick", function(self)
 	end
 end)
 
-hooksecurefunc(QUEST_TRACKER_MODULE, "OnBlockHeaderClick", function(block)
-	local questLogIndex = block.questLogIndex
+hooksecurefunc(QUEST_TRACKER_MODULE, "OnBlockHeaderClick", function(self, block)
+	local questLogIndex = block.id
+	SetAbandonQuest()
 	if IsControlKeyDown() then
 		local items = GetAbandonQuestItems()
 		if items then
