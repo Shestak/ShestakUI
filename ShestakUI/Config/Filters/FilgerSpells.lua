@@ -3855,8 +3855,6 @@ C["filger_spells"] = {
 			{spellID = 236449, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Shattering Scream
 			{spellID = 236515, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Tormented Cries
-			{spellID = 235989, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Maiden of Vigilance
 			-- Unstable Soul
 			{spellID = 240209, unitID = "player", caster = "all", filter = "DEBUFF"},
