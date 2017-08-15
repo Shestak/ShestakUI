@@ -312,7 +312,7 @@ local function LoadSkin()
 			_G[frame].bg4:SetPoint("BOTTOMRIGHT", -T.mult, T.mult)
 
 			if compare == "Friend" then
-				_G[frame.."Shield"]:SetPoint("TOPRIGHT", _G["AchievementFrameComparisonContainerButton"..i.."Friend"], "TOPRIGHT", -20, -9)
+				_G[frame.."Shield"]:SetPoint("TOPRIGHT", _G["AchievementFrameComparisonContainerButton"..i.."Friend"], "TOPRIGHT", -20, -2)
 			end
 
 			_G[frame.."IconBling"]:Kill()
