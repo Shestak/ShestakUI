@@ -532,6 +532,24 @@ local function LoadSkin()
 	T.SkinScrollBar(WardrobeCollectionFrameScrollFrameScrollBar)
 	WardrobeCollectionFrameScrollFrameScrollBar:SetPoint("TOPLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame, "TOPRIGHT", 4, 15)
 	WardrobeCollectionFrameScrollFrameScrollBar:SetPoint("BOTTOMLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame, "BOTTOMRIGHT", 4, 14)
+	
+	local function SetItemQuality(self, itemFrame)
+		if (itemFrame.backdrop) then
+			local _, _, quality = GetItemInfo(itemFrame.itemID);
+			local alpha = 1
+			if (not itemFrame.collected) then
+				alpha = 0.4
+			end
+			
+			if (not quality or quality < 2) then --Not collected or item is white or grey
+				itemFrame.backdrop:SetBackdropBorderColor(0, 0, 0)
+			else
+				itemFrame.backdrop:SetBackdropBorderColor(ITEM_QUALITY_COLORS[quality].r, ITEM_QUALITY_COLORS[quality].g, ITEM_QUALITY_COLORS[quality].b, alpha)
+			end
+		end
+	end
+	hooksecurefunc(WardrobeCollectionFrame.SetsCollectionFrame, "SetItemFrameQuality", SetItemQuality)
+	
 
 	for i = 1, 2 do
 		T.SkinTab(_G["WardrobeCollectionFrameTab"..i], true)
@@ -629,6 +647,14 @@ local function LoadSkin()
 			WardrobeCollectionFrame.SetsTransmogFrame["ModelR"..i.."C"..j]:CreateBackdrop("Overlay")
 		end
 	end
+	
+	local function SkinSetItemButtons(self)
+		for itemFrame in self.DetailsFrame.itemFramesPool:EnumerateActive() do
+			itemFrame.IconBorder:SetAlpha(0)
+			SetItemQuality(self, itemFrame)
+		end
+	end
+	hooksecurefunc(WardrobeCollectionFrame.SetsCollectionFrame, "DisplaySet", SkinSetItemButtons)
 end
 
 T.SkinFuncs["Blizzard_Collections"] = LoadSkin
