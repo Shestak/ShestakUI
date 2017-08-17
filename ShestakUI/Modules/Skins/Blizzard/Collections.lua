@@ -510,6 +510,7 @@ local function LoadSkin()
 	end
 
 	WardrobeCollectionFrame.ItemsCollectionFrame:StripTextures()
+	WardrobeCollectionFrame.SetsTransmogFrame:StripTextures()
 	WardrobeCollectionFrame.progressBar:StripTextures()
 	WardrobeCollectionFrame.progressBar:CreateBackdrop("Overlay")
 	WardrobeCollectionFrame.progressBar:SetStatusBarTexture(C.media.texture)
@@ -521,6 +522,8 @@ local function LoadSkin()
 	T.SkinDropDownBox(WardrobeCollectionFrameWeaponDropDown, 170)
 	T.SkinNextPrevButton(WardrobeCollectionFrame.ItemsCollectionFrame.PagingFrame.PrevPageButton)
 	T.SkinNextPrevButton(WardrobeCollectionFrame.ItemsCollectionFrame.PagingFrame.NextPageButton)
+	T.SkinNextPrevButton(WardrobeCollectionFrame.SetsTransmogFrame.PagingFrame.PrevPageButton)
+	T.SkinNextPrevButton(WardrobeCollectionFrame.SetsTransmogFrame.PagingFrame.NextPageButton)
 
 	WardrobeCollectionFrame.SetsCollectionFrame.LeftInset:StripTextures()
 	WardrobeCollectionFrame.SetsCollectionFrame.RightInset:StripTextures()
