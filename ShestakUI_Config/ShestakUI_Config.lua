@@ -764,7 +764,7 @@ function CreateUIConfig()
 	local function sortMyTable(a, b)
 		return ALLOWED_GROUPS[a] < ALLOWED_GROUPS[b]
 	end
-	local function pairsByKey(t, f)
+	local function pairsByKey(t)
 		local a = {}
 		for n in pairs(t) do table.insert(a, n) end
 		table.sort(a, sortMyTable)
@@ -966,8 +966,6 @@ function CreateUIConfig()
 				colortext:SetJustifyH("CENTER")
 				colorbutton:SetWidth(colortext:GetWidth() + 5)
 
-				local oldvalue = value
-
 				local function round(number, decimal)
 					return (("%%.%df"):format(decimal)):format(number)
 				end
@@ -1088,7 +1086,7 @@ function CreateUIConfig()
 end
 
 do
-	function SlashCmdList.CONFIG(msg, editbox)
+	function SlashCmdList.CONFIG()
 		if not UIConfigMain or not UIConfigMain:IsShown() then
 			PlaySound("igMainMenuOption")
 			CreateUIConfig()
