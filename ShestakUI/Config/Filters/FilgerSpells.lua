@@ -3015,7 +3015,15 @@ C["filger_spells"] = {
 			-- Immolate
 			{spellID = 348, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Unstable Affliction
-			{spellID = 30108, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
+			{spellID = 233490, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
+			-- Unstable Affliction 2nd
+			{spellID = 233496, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
+			-- Unstable Affliction 3rd
+			{spellID = 233497, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
+			-- Unstable Affliction 4th
+			{spellID = 233498, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
+			-- Unstable Affliction 5th
+			{spellID = 233499, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
 			-- Siphon Life
 			{spellID = 63106, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Soul Effigy
