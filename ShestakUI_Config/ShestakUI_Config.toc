@@ -12,7 +12,7 @@
 ## X-Curse-Project-Name: ShestakUI
 ## X-Curse-Project-ID: shestakui
 ## X-WoWI-ID: 19033
-## Website: http://shestak.org
+## X-Website: http://shestak.org
 
 Locales\English.lua
 Locales\Chinese.lua
