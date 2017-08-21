@@ -65,7 +65,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 					ExtraTip:CreateBackdrop("Transparent")
 					ExtraTip.backdrop:SetPoint("TOPLEFT", 0, -3)
 					ExtraTip.backdrop:SetPoint("BOTTOMRIGHT", 0, 2)
-					ExtraTip:HookScript("OnShow", function(tt)
+					ExtraTip:HookScript("OnShow", function()
 						ExtraTip.backdrop:SetFrameLevel(0)
 					end)
 					ExtraTip.IsDone = true
@@ -244,7 +244,6 @@ local OnTooltipSetUnit = function(self)
 	local creatureType = UnitCreatureType(unit)
 	local _, faction = UnitFactionGroup(unit)
 	local _, playerFaction = UnitFactionGroup("player")
-	local relationship = UnitRealmRelationship(unit)
 	local UnitPVPName = UnitPVPName
 
 	if level and level == -1 then

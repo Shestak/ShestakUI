@@ -93,7 +93,6 @@ end
 local function UnitGear(unit)
 	if (not unit) or (UnitGUID(unit) ~= currentGUID) then return end
 
-	local ulvl = UnitLevel(unit)
 	local class = select(2, UnitClass(unit))
 
 	local ilvl, boa, pvp = 0, 0, 0

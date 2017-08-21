@@ -1023,7 +1023,7 @@ if guild.enabled then
 				local name, rank, level, zone, note, officernote, connected, status, class, isMobile, zone_r, zone_g, zone_b, classc, levelc, grouped
 				local total, _, online = GetNumGuildMembers()
 				local gmotd = GetGuildRosterMOTD()
-				local _, _, standingID, barMin, barMax, barValue = GetGuildFactionInfo()
+				local _, _, _, barMin, barMax, barValue = GetGuildFactionInfo()
 				local col = T.RGBToHex(ttsubh.r, ttsubh.g, ttsubh.b)
 
 				GameTooltip:SetOwner(self, "ANCHOR_NONE")
@@ -1258,7 +1258,7 @@ if friends.enabled then
 			local name, level, class, zone, connected, status, note, classc, levelc, zone_r, zone_g, zone_b, grouped
 			for i = 0, total do if select(5, GetFriendInfo(i)) then online = online + 1 end end
 			local BNonline, BNtotal = 0, BNGetNumFriends()
-			local presenceID, presenceName, toonName, toonID, client, isOnline
+			local presenceName, toonName, toonID, client, isOnline
 			if BNtotal > 0 then
 				for i = 1, BNtotal do if select(8, BNGetFriendInfo(i)) then BNonline = BNonline + 1 end end
 			end
