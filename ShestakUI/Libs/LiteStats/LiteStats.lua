@@ -190,15 +190,6 @@ local function AltUpdate(self)
 	elseif not IsAltKeyDown() and self.altdown then self.altdown = false self:GetScript("OnEnter")(self) end
 end
 
-local function GetTableIndex(table, fieldIndex, value)
-	for k, v in ipairs(table) do
-		if (v[fieldIndex] == value) then
-			return k
-		end
-	end
-	return -1
-end
-
 local menuFrame = CreateFrame("Frame", "ContactDropDownMenu", UIParent, "UIDropDownMenuTemplate")
 local menuList = {
 	{text = OPTIONS_MENU, isTitle = true, notCheckable = true},
@@ -1023,8 +1014,6 @@ if guild.enabled then
 				local name, rank, level, zone, note, officernote, connected, status, class, isMobile, zone_r, zone_g, zone_b, classc, levelc, grouped
 				local total, _, online = GetNumGuildMembers()
 				local gmotd = GetGuildRosterMOTD()
-				local _, _, _, barMin, barMax, barValue = GetGuildFactionInfo()
-				local col = T.RGBToHex(ttsubh.r, ttsubh.g, ttsubh.b)
 
 				GameTooltip:SetOwner(self, "ANCHOR_NONE")
 				GameTooltip:ClearAllPoints()
@@ -1536,7 +1525,7 @@ end
 ----------------------------------------------------------------------------------------
 if experience.enabled then
 	local logintime, playedtotal, playedlevel, playedmsg, gained, lastkill, lastquest = GetTime(), 0, 0, 0, 0
-	local repname, repcolor, standingname, currep, minrep, maxrep, reppercent
+	local repname, repcolor, standingname, currep, minrep, maxrep
 	local mobxp = gsub(COMBATLOG_XPGAIN_FIRSTPERSON, "%%[sd]", "(.*)")
 	local questxp = gsub(COMBATLOG_XPGAIN_FIRSTPERSON_UNNAMED, "%%[sd]", "(.*)")
 	local artifactXP, xpForNextPoint, numPointsAvailableToSpend, artifactTotalXP, artifactName, artifactPointsSpent, artifactTier = 0, 0, 0, 0

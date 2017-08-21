@@ -123,7 +123,7 @@ Scanner:SetScript("OnEvent", function()
 
 	-- Scan inventory for Equipment matches
 	for w = 1, 19 do
-		for e, EquipedItems in pairs(EquipedItems) do
+		for _, EquipedItems in pairs(EquipedItems) do
 			if GetInventoryItemID("player", w) == EquipedItems then
 				local itemName = GetItemInfo(EquipedItems)
 				local itemIcon = GetInventoryItemTexture("player", w)

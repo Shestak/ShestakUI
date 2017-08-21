@@ -221,7 +221,6 @@ end)
 local function IsFramePositionedLeft(frame)
 	local x = frame:GetCenter()
 	local screenWidth = GetScreenWidth()
-	local screenHeight = GetScreenHeight()
 	local positionedLeft = false
 
 	if x and x < (screenWidth / 2) then
@@ -243,7 +242,7 @@ end)
 ----------------------------------------------------------------------------------------
 ObjectiveTrackerScenarioRewardsFrame.Show = T.dummy
 
-hooksecurefunc("BonusObjectiveTracker_AnimateReward", function(block)
+hooksecurefunc("BonusObjectiveTracker_AnimateReward", function()
 	ObjectiveTrackerBonusRewardsFrame:ClearAllPoints()
 	ObjectiveTrackerBonusRewardsFrame:SetPoint("BOTTOM", UIParent, "TOP", 0, 90)
 end)

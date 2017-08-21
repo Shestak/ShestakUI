@@ -192,7 +192,7 @@ hooksecurefunc("WorldMapFrame_Update", function()
 	end
 
 	-- Get current map
-	local filename, texheight, void, void, sub = GetMapInfo()
+	local filename, _, _, _, sub = GetMapInfo()
 	if sub then return end
 	if not filename then return end
 
@@ -200,7 +200,7 @@ hooksecurefunc("WorldMapFrame_Update", function()
 	local zone = zones[filename] or {}
 
 	-- Create new textures for current map
-	for travnum, num in next, zone do
+	for _, num in next, zone do
 		local tname, texwidth, texheight, offsetx, offsety = strsplit(":", num)
 		local texturename = texpath..tname
 		local numtexwide, numtextall = math.ceil(texwidth / 256), math.ceil(texheight / 256)
