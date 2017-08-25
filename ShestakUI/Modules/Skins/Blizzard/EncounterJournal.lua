@@ -236,9 +236,14 @@ local function LoadSkin()
 			
 			item.Icon:SetPoint("TOPLEFT", 1, -1)
 
-			T.HandleIcon(item.Icon)
 			item.Icon:SetTexCoord(.08, .92, .08, .92)
 			item.Icon:SetDrawLayer("OVERLAY")
+			item.IconBackdrop = CreateFrame("Frame", nil, item)
+			item.IconBackdrop:SetFrameLevel(item:GetFrameLevel() - 1)
+			item.IconBackdrop:SetPoint("TOPLEFT", item.Icon, -2, 2)
+			item.IconBackdrop:SetPoint("BOTTOMRIGHT", item.Icon, 2, -2)
+			item.IconBackdrop:SetTemplate("Default")
+			item.IconBackdrop:SetBackdropBorderColor(GetItemQualityColor(5))
 			
 			item:CreateBackdrop("Transparent")
 			item.backdrop:SetPoint("TOPLEFT", -4, 4)
@@ -276,10 +281,15 @@ local function LoadSkin()
 				local item = items[j]
 				
 				item.Border:Hide()
-				T.HandleIcon(item.Icon)
 				item.Icon:SetPoint("TOPLEFT", 1, -1)
 				item.Icon:SetTexCoord(.08, .92, .08, .92)
 				item.Icon:SetDrawLayer("OVERLAY")
+				item.IconBackdrop = CreateFrame("Frame", nil, item)
+				item.IconBackdrop:SetFrameLevel(item:GetFrameLevel() - 1)
+				item.IconBackdrop:SetPoint("TOPLEFT", item.Icon, -2, 2)
+				item.IconBackdrop:SetPoint("BOTTOMRIGHT", item.Icon, 2, -2)
+				item.IconBackdrop:SetTemplate("Default")
+				item.IconBackdrop:SetBackdropBorderColor(itemSet.SetName:GetTextColor())
 			end
 		end
 	end)
