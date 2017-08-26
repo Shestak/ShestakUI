@@ -94,19 +94,6 @@ local function LoadSkin()
 	EncounterJournalInstanceSelectLootJournalTab:ClearAllPoints()
 	EncounterJournalInstanceSelectLootJournalTab:SetPoint("BOTTOMLEFT", EncounterJournalInstanceSelectRaidTab, "BOTTOMRIGHT", 10, 0)
 
-	--[[ --// Do we still whant this?
-	EncounterJournalInset:StripTextures(true)
-	EncounterJournal:HookScript("OnShow", function()
-		if not EncounterJournalInstanceSelect.backdrop then
-			EncounterJournalInstanceSelect:CreateBackdrop("Default")
-		end
-
-		if not EncounterJournalEncounterFrameInfo.backdrop then
-			EncounterJournalEncounterFrameInfo:CreateBackdrop("Default")
-		end
-	end)
-	]]--
-
 	local tabs = {
 		EncounterJournalEncounterFrameInfoOverviewTab,
 		EncounterJournalEncounterFrameInfoLootTab,
@@ -230,12 +217,9 @@ local function LoadSkin()
 	for _, items in ipairs({itemsLeftSide, itemsRightSide}) do
 		for i = 1, #items do
 			local item = items[i]
-
 			item.ItemType:SetTextColor(1, 1, 1)
 			item.Background:Hide()
-			
 			item.Icon:SetPoint("TOPLEFT", 1, -1)
-
 			item.Icon:SetTexCoord(.08, .92, .08, .92)
 			item.Icon:SetDrawLayer("OVERLAY")
 			item.IconBackdrop = CreateFrame("Frame", nil, item)
@@ -243,8 +227,7 @@ local function LoadSkin()
 			item.IconBackdrop:SetPoint("TOPLEFT", item.Icon, -2, 2)
 			item.IconBackdrop:SetPoint("BOTTOMRIGHT", item.Icon, 2, -2)
 			item.IconBackdrop:SetTemplate("Default")
-			item.IconBackdrop:SetBackdropBorderColor(GetItemQualityColor(5))
-			
+			item.IconBackdrop:SetBackdropBorderColor(GetItemQualityColor(5))	
 			item:CreateBackdrop("Transparent")
 			item.backdrop:SetPoint("TOPLEFT", -4, 4)
 			item.backdrop:SetPoint("BOTTOMRIGHT", 4, -3)
@@ -263,9 +246,9 @@ local function LoadSkin()
 
 	hooksecurefunc(EncounterJournal.LootJournal.ItemSetsFrame, "UpdateList", function()
 		local itemSets = EncounterJournal.LootJournal.ItemSetsFrame.buttons
+		
 		for i = 1, #itemSets do
 			local itemSet = itemSets[i]
-
 			itemSet.ItemLevel:SetTextColor(1, 1, 1)
 			itemSet.Background:Hide()
 
@@ -279,7 +262,6 @@ local function LoadSkin()
 			local items = itemSet.ItemButtons
 			for j = 1, #items do
 				local item = items[j]
-				
 				item.Border:Hide()
 				item.Icon:SetPoint("TOPLEFT", 1, -1)
 				item.Icon:SetTexCoord(.08, .92, .08, .92)
@@ -297,29 +279,33 @@ local function LoadSkin()
 	local items = EncounterJournal.encounter.info.lootScroll.buttons
 	for i = 1, #items do
 		local item = items[i]
+		hooksecurefunc(item.IconBorder, "SetVertexColor", function(self, r, g, b)
+			self:GetParent().IconBackdrop:SetBackdropBorderColor(r, g, b)
+			self:SetTexture("")
+		end)
 
 		item.boss:SetTextColor(1, 1, 1)
 		item.boss:ClearAllPoints()
-		item.boss:SetPoint("BOTTOMLEFT", 4, 7)
+		item.boss:SetPoint("BOTTOMLEFT", 4, 4)
 		item.slot:SetTextColor(1, 1, 1)
 		item.armorType:SetTextColor(1, 1, 1)
 		item.armorType:ClearAllPoints()
 		item.armorType:SetPoint("BOTTOMRIGHT", item.name, "TOPLEFT", 264, -25)
-
 		item.bossTexture:SetAlpha(0)
 		item.bosslessTexture:SetAlpha(0)
-
 		item.icon:SetSize(36, 36)
-		item.icon:SetPoint("TOPLEFT", 2, -7)
-
-		T.HandleIcon(item.icon)
+		item.icon:SetPoint("TOPLEFT", T.mult*6, -(T.mult*10))
 		item.icon:SetTexCoord(.08, .92, .08, .92)
 		item.icon:SetDrawLayer("OVERLAY")
-
 		item:CreateBackdrop("Transparent")
 		item.backdrop:SetPoint("TOPLEFT", 0, -4)
 		item.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
-	end
+		item.IconBackdrop = CreateFrame("Frame", nil, item)
+		item.IconBackdrop:SetFrameLevel(item:GetFrameLevel() - 1)
+		item.IconBackdrop:SetPoint("TOPLEFT", item.icon, -2, 2)
+		item.IconBackdrop:SetPoint("BOTTOMRIGHT", item.icon, 2, -2)
+		item.IconBackdrop:SetTemplate("Default")
+		end
 
 	local function SkinOverviewInfo(self, role, index)
 		local header = self.overviews[index]
@@ -332,7 +318,6 @@ local function LoadSkin()
 			end
 
 			header.button:SkinButton()
-
 			header.button.title:SetTextColor(1, 1, 0)
 			header.button.title.SetTextColor = T.dummy
 			header.button.expandedIcon:SetTextColor(1, 1, 1)
@@ -375,9 +360,7 @@ local function LoadSkin()
 				header.button.title.SetTextColor = T.dummy
 				header.button.expandedIcon:SetTextColor(1, 1, 1)
 				header.button.expandedIcon.SetTextColor = T.dummy
-
 				header.button:SkinButton(true)
-
 				header.button.bg = CreateFrame("Frame", nil, header.button)
 				header.button.bg:SetTemplate("Default")
 				header.button.bg:SetFrameLevel(header.button.bg:GetFrameLevel() - 1)
@@ -409,6 +392,9 @@ local function LoadSkin()
 	EncounterJournalSuggestFrame.Suggestion1.reward.text:SetTextColor(.9, .9, .9)
 	EncounterJournalSuggestFrame.Suggestion1.reward.iconRing:Hide()
 	EncounterJournalSuggestFrame.Suggestion1.reward.iconRingHighlight:SetTexture("")
+	EncounterJournalSuggestFrame.Suggestion1:CreateBackdrop("Default")
+	EncounterJournalSuggestFrame.Suggestion1.backdrop:SetPoint("TOPLEFT", EncounterJournalSuggestFrame.Suggestion1.icon, -2, 2)
+	EncounterJournalSuggestFrame.Suggestion1.backdrop:SetPoint("BOTTOMRIGHT", EncounterJournalSuggestFrame.Suggestion1.icon, 2, -2)
 
 	for i = 2, 3 do
 		EncounterJournalSuggestFrame["Suggestion"..i].bg:Hide()
@@ -419,6 +405,13 @@ local function LoadSkin()
 		EncounterJournalSuggestFrame["Suggestion"..i].centerDisplay.description.text:SetTextColor(.9, .9, .9)
 		EncounterJournalSuggestFrame["Suggestion"..i].reward.iconRing:Hide()
 		EncounterJournalSuggestFrame["Suggestion"..i].reward.iconRingHighlight:SetTexture("")
+		EncounterJournalSuggestFrame["Suggestion"..i]:CreateBackdrop("Default")
+		EncounterJournalSuggestFrame["Suggestion"..i].backdrop:SetPoint("TOPLEFT", EncounterJournalSuggestFrame["Suggestion"..i].icon, -2, 2)
+		EncounterJournalSuggestFrame["Suggestion"..i].backdrop:SetPoint("BOTTOMRIGHT", EncounterJournalSuggestFrame["Suggestion"..i].icon, 2, -2)
+		EncounterJournalSuggestFrame["Suggestion"..i].reward:CreateBackdrop("Default")
+		EncounterJournalSuggestFrame["Suggestion"..i].reward.backdrop:SetFrameLevel(EncounterJournalSuggestFrame["Suggestion"..i].reward:GetFrameLevel())
+		EncounterJournalSuggestFrame["Suggestion"..i].reward.backdrop:SetPoint("TOPLEFT", EncounterJournalSuggestFrame["Suggestion"..i].reward.icon, -2, 2)
+		EncounterJournalSuggestFrame["Suggestion"..i].reward.backdrop:SetPoint("BOTTOMRIGHT", EncounterJournalSuggestFrame["Suggestion"..i].reward.icon, 2, -2)
 	end
 
 	hooksecurefunc("EJSuggestFrame_RefreshDisplay", function()
