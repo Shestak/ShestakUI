@@ -348,13 +348,23 @@ local function LoadSkin()
 	CapacitiveDisplay.ShipmentIconFrame:SetTemplate("Default")
 	CapacitiveDisplay.ShipmentIconFrame.Icon:SetPoint("TOPLEFT", -2, 2)
 	CapacitiveDisplay.ShipmentIconFrame.Icon:SetPoint("BOTTOMRIGHT", 2, -2)
-	T.HandleIcon(CapacitiveDisplay.ShipmentIconFrame.Icon)
+	
+	hooksecurefunc(CapacitiveDisplay.ShipmentIconFrame.Follower.PortraitRingQuality, "SetVertexColor", function(self, r, g, b)
+	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop:SetBackdropBorderColor(r, g, b)
+	self:SetTexture("")
+	end)
+	
 	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait:SetAllPoints()
 	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait:SetTexCoord(0.2, 0.85, 0.2, 0.85)
 	CapacitiveDisplay.ShipmentIconFrame.Follower.PortraitRing:Kill()
 	CapacitiveDisplay.ShipmentIconFrame.Follower.PortraitRingQuality:Kill()
 	CapacitiveDisplay.ShipmentIconFrame.Follower:SetPoint("TOPLEFT", -2, 2)
 	CapacitiveDisplay.ShipmentIconFrame.Follower:SetPoint("BOTTOMRIGHT", 2, -2)
+	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop = CreateFrame("Frame", nil, CapacitiveDisplay.ShipmentIconFrame.Follower)
+	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop:SetFrameLevel(CapacitiveDisplay.ShipmentIconFrame.Follower:GetFrameLevel() - 1)
+	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop:SetPoint("TOPLEFT", CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait, -2, 2)
+	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop:SetPoint("BOTTOMRIGHT", CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait, 2, -2)
+	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop:SetTemplate("Default")
 
 	do
 		local reagentIndex = 1
