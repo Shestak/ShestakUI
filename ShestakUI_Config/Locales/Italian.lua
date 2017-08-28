@@ -246,6 +246,7 @@ L_GUI_BAGS_BUTTON_SIZE = "Dimensioni degli scomparti"
 L_GUI_BAGS_BUTTON_SPACE = "Spazio tra gli scomparti"
 L_GUI_BAGS_BANK = "Numero di colonne in banca"
 L_GUI_BAGS_BAG = "Numero di colonne nella sacca principale"
+L_GUI_BAGS_BUTTONS = "Show sort/deposit/Artifact buttons" -- Need review
 
 -- Minimap options
 L_GUI_MINIMAP_ENABLE = "Attiva la minimappa"

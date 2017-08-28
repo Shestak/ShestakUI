@@ -121,6 +121,9 @@ L_BAG_SHOW_BAGS = "Show Bags"
 L_BAG_RIGHT_CLICK_SEARCH = "Right-click to search"
 L_BAG_STACK_MENU = "Stack"
 L_BAG_RIGHT_CLICK_CLOSE = "Right-click to open menu"
+L_BAG_BUTTONS_DEPOSIT = "Deposit Reagents"
+L_BAG_BUTTONS_SORT = "LM:Cleanup / RM:Blizzard"
+L_BAG_BUTTONS_ARTIFACT = "Right click to use Artifact Power item in bag"
 
 -- Grab mail
 L_MAIL_STOPPED = "Stopped, inventory is full."

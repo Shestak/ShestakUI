@@ -275,6 +275,7 @@ local function Local(o)
 	if o == "UIConfigbagbutton_space" then o = L_GUI_BAGS_BUTTON_SPACE end
 	if o == "UIConfigbagbank_columns" then o = L_GUI_BAGS_BANK end
 	if o == "UIConfigbagbag_columns" then o = L_GUI_BAGS_BAG end
+	if o == "UIConfigbagbag_buttons" then o = L_GUI_BAGS_BUTTONS end
 
 	-- Minimap options
 	if o == "UIConfigminimap" then o = MINIMAP_LABEL end

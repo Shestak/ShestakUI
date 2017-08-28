@@ -246,6 +246,7 @@ L_GUI_BAGS_BUTTON_SIZE = "Tamaño de los huecos"
 L_GUI_BAGS_BUTTON_SPACE = "Espacio entre huecos"
 L_GUI_BAGS_BANK = "Número de columnas en el banco"
 L_GUI_BAGS_BAG = "Número de columnas en la bolsa principal"
+L_GUI_BAGS_BUTTONS = "Show sort/deposit/Artifact buttons" -- Need review
 
 -- Minimap options
 L_GUI_MINIMAP_ENABLE = "Activar minimapa"

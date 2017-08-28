@@ -246,6 +246,7 @@ L_GUI_BAGS_BUTTON_SIZE = "Buttongröße"
 L_GUI_BAGS_BUTTON_SPACE = "Buttonabstand"
 L_GUI_BAGS_BANK = "Anzahl der Spalten in der Bank"
 L_GUI_BAGS_BAG = "Anzahl der Spalten in der Tasche"
+L_GUI_BAGS_BUTTONS = "Show sort/deposit/Artifact buttons" -- Need review
 
 -- Minimap options
 L_GUI_MINIMAP_ENABLE = "Minimap aktivieren"
