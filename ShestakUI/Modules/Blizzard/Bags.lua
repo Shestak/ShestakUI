@@ -779,6 +779,7 @@ function Stuffing:InitBags()
 	button:EnableMouse(true)
 	button:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 	button:SetAllPoints(detail)
+	button.ttText = L_BAG_RIGHT_CLICK_SEARCH
 	button:SetScript("OnClick", function(self, btn)
 		if btn == "RightButton" then
 			self:GetParent().detail:Hide()
@@ -801,12 +802,93 @@ function Stuffing:InitBags()
 	local tooltip_show = function(self)
 		GameTooltip:SetOwner(self, "ANCHOR_TOPLEFT", -12, 11)
 		GameTooltip:ClearLines()
-		GameTooltip:SetText(L_BAG_RIGHT_CLICK_SEARCH)
+		GameTooltip:SetText(self.ttText)
 	end
 
 	button:SetScript("OnEnter", tooltip_show)
 	button:SetScript("OnLeave", tooltip_hide)
 
+	--Deposit Button
+	f.depositButton = CreateFrame("Button", nil, f);
+	f.depositButton:SetSize(16, 16)
+	f.depositButton:SetTemplate()
+	f.depositButton:SetPoint("TOPRIGHT", f, -25, -4)
+	f.depositButton:SetHeight(18)
+	f.depositButton:SetWidth(18)
+	f.depositButton:SetNormalTexture("Interface\\ICONS\\misc_arrowdown")
+	f.depositButton:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	f.depositButton:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
+	f.depositButton:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
+	f.depositButton:SetPushedTexture("Interface\\ICONS\\misc_arrowdown")
+	f.depositButton:GetPushedTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	f.depositButton:GetPushedTexture():SetPoint("TOPLEFT", 2, -2)
+	f.depositButton:GetPushedTexture():SetPoint("BOTTOMRIGHT", -2, 2)
+	f.depositButton:StyleButton()
+	f.depositButton.ttText = "Deposit Reagents"
+	f.depositButton:SetScript("OnEnter", tooltip_show)
+	f.depositButton:SetScript("OnLeave", tooltip_hide)
+	f.depositButton:SetScript('OnClick',function(self, btn)
+
+			PlaySound("igMainMenuOption");
+			DepositReagentBank()
+	end)
+	
+	--Sort Button
+	f.sortButton = CreateFrame("Button", nil, f);
+	f.sortButton:SetSize(16, 16)
+	f.sortButton:SetTemplate()
+	f.sortButton:SetPoint("TOPRIGHT", f.depositButton, -25, 0)
+	f.sortButton:SetHeight(18)
+	f.sortButton:SetWidth(18)
+	f.sortButton:SetNormalTexture("Interface\\ICONS\\INV_Pet_Broom")
+	f.sortButton:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	f.sortButton:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
+	f.sortButton:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
+	f.sortButton:SetPushedTexture("Interface\\ICONS\\INV_Pet_Broom")
+	f.sortButton:GetPushedTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	f.sortButton:GetPushedTexture():SetPoint("TOPLEFT", 2, -2)
+	f.sortButton:GetPushedTexture():SetPoint("BOTTOMRIGHT", -2, 2)
+	f.sortButton:StyleButton()
+	f.sortButton.ttText = "LM:Cleanup / RM:Blizzard"
+	f.sortButton:SetScript("OnEnter", tooltip_show)
+	f.sortButton:SetScript("OnLeave", tooltip_hide)
+	f.sortButton:SetScript("OnMouseUp", function(self, btn)
+		if btn == "RightButton" then
+		SetSortBagsRightToLeft(true)
+		SortBags()
+		else
+		Stuffing:SetBagsForSorting("d")
+		Stuffing:SortBags()
+		end
+	end)
+	
+	--Artifact Button
+	f.ArtifactButton = CreateFrame("Button", nil, f, "BankItemButtonGenericTemplate");
+	f.ArtifactButton:SetSize(16, 16)
+	f.ArtifactButton:SetTemplate()
+	f.ArtifactButton:SetPoint("TOPRIGHT", f.sortButton, -25, 0)
+	f.ArtifactButton:SetHeight(18)
+	f.ArtifactButton:SetWidth(18)
+	f.ArtifactButton:SetNormalTexture("Interface\\Icons\\Achievement_doublejeopardy")
+	f.ArtifactButton:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	f.ArtifactButton:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
+	f.ArtifactButton:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
+	f.ArtifactButton:StyleButton()
+	f.ArtifactButton:RegisterForClicks("RightButtonUp")
+	f.ArtifactButton.ttText = "Right click to use Artifact Power item in bag"
+	f.ArtifactButton:SetScript("OnEnter", tooltip_show)
+	f.ArtifactButton:SetScript("OnLeave", tooltip_hide)
+	f.ArtifactButton:SetScript('PreClick',function(self, btn, down)
+		for bag=0, 4 do
+			for slot=1, GetContainerNumSlots(bag) do
+				if IsArtifactPowerItem(GetContainerItemID(bag, slot)) then 
+					self:GetParent():SetID(bag)
+					self:SetID(slot)
+					return
+				end
+			end 
+		end
+	end)
 	f.editbox = editbox
 	f.detail = detail
 	f.button = button
