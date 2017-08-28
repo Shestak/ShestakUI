@@ -348,6 +348,13 @@ local function LoadSkin()
 	CapacitiveDisplay.ShipmentIconFrame:SetTemplate("Default")
 	CapacitiveDisplay.ShipmentIconFrame.Icon:SetPoint("TOPLEFT", -2, 2)
 	CapacitiveDisplay.ShipmentIconFrame.Icon:SetPoint("BOTTOMRIGHT", 2, -2)
+	T.HandleIcon(CapacitiveDisplay.ShipmentIconFrame.Icon)
+	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait:SetAllPoints()
+	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait:SetTexCoord(0.2, 0.85, 0.2, 0.85)
+	CapacitiveDisplay.ShipmentIconFrame.Follower.PortraitRing:Kill()
+	CapacitiveDisplay.ShipmentIconFrame.Follower.PortraitRingQuality:Kill()
+	CapacitiveDisplay.ShipmentIconFrame.Follower:SetPoint("TOPLEFT", -2, 2)
+	CapacitiveDisplay.ShipmentIconFrame.Follower:SetPoint("BOTTOMRIGHT", 2, -2)
 
 	do
 		local reagentIndex = 1
