@@ -67,7 +67,7 @@ local function LoadSkin()
 	T.SkinTab(EncounterJournalInstanceSelectDungeonTab, true)
 	T.SkinTab(EncounterJournalInstanceSelectRaidTab, true)
 	T.SkinTab(EncounterJournalInstanceSelectLootJournalTab, true)
-	
+
 	EncounterJournalInstanceSelect.bg:Kill()
 	EncounterJournalEncounterFrameInfoBG:Kill()
 	EncounterJournal.encounter.info.leftShadow:Kill()
@@ -86,7 +86,7 @@ local function LoadSkin()
 	EncounterJournal.encounter.info.reset:SkinButton()
 	EncounterJournalEncounterFrameInfoResetButtonTexture:SetTexture("Interface\\EncounterJournal\\UI-EncounterJournalTextures")
 	EncounterJournalEncounterFrameInfoResetButtonTexture:SetTexCoord(0.90625000, 0.94726563, 0.00097656, 0.02050781)
-	
+
 	EncounterJournalInstanceSelectDungeonTab:ClearAllPoints()
 	EncounterJournalInstanceSelectDungeonTab:SetPoint("BOTTOMLEFT", EncounterJournalInstanceSelectSuggestTab, "BOTTOMRIGHT", 10, 0)
 	EncounterJournalInstanceSelectRaidTab:ClearAllPoints()
@@ -102,8 +102,8 @@ local function LoadSkin()
 	}
 	for _, tab in pairs(tabs) do
 		tab:CreateBackdrop("Overlay")
-		tab.backdrop:SetPoint('TOPLEFT', 3, -3)
-		tab.backdrop:SetPoint('BOTTOMRIGHT', 0, 2)
+		tab.backdrop:SetPoint("TOPLEFT", 3, -3)
+		tab.backdrop:SetPoint("BOTTOMRIGHT", 0, 2)
 		tab:SetNormalTexture("")
 		tab:SetPushedTexture("")
 		tab:SetDisabledTexture("")
@@ -131,7 +131,7 @@ local function LoadSkin()
 			suggestion.centerDisplay.button:SkinButton()
 		end
 	end
-	
+
 	EncounterJournal.encounter.instance:CreateBackdrop("Transparent")
 	EncounterJournal.encounter.instance:SetHeight(EncounterJournal.encounter.info.bossesScroll:GetHeight()-8)
 	EncounterJournal.encounter.instance:ClearAllPoints()
@@ -143,13 +143,13 @@ local function LoadSkin()
 	EncounterJournal.encounter.instance.mapButton:SetPoint("BOTTOMLEFT", EncounterJournal.encounter.instance.loreBG, "BOTTOMLEFT", 25, 35)
 	T.SkinScrollBar(EncounterJournal.encounter.instance.loreScroll.ScrollBar,4)
 	EncounterJournal.encounter.instance.loreScroll.child.lore:SetTextColor(1, 1, 1)
-	
+
 	local function SkinDungeons()
 		local b1 = EncounterJournalInstanceSelectScrollFrameScrollChildInstanceButton1
 		if b1 and not b1.isSkinned then
 			b1:SkinButton()
-			b1.bgImage:SetPoint('TOPLEFT', 2, -2)
-			b1.bgImage:SetPoint('BOTTOMRIGHT', -2, 2)
+			b1.bgImage:SetPoint("TOPLEFT", 2, -2)
+			b1.bgImage:SetPoint("BOTTOMRIGHT", -2, 2)
 			b1.bgImage:SetTexCoord(.08, .6, .08, .6)
 			b1.bgImage:SetDrawLayer("ARTWORK")
 			b1.isSkinned = true
@@ -159,8 +159,8 @@ local function LoadSkin()
 			local b = _G["EncounterJournalInstanceSelectScrollFrameinstance"..i]
 			if b and not b.isSkinned then
 				b:SkinButton()
-				b.bgImage:SetPoint('TOPLEFT', 2, -2)
-				b.bgImage:SetPoint('BOTTOMRIGHT', -2, 2)
+				b.bgImage:SetPoint("TOPLEFT", 2, -2)
+				b.bgImage:SetPoint("BOTTOMRIGHT", -2, 2)
 				b.bgImage:SetTexCoord(0.08,.6,0.08,.6)
 				b.bgImage:SetDrawLayer("ARTWORK")
 				b.isSkinned = true
@@ -169,21 +169,21 @@ local function LoadSkin()
 	end
 	hooksecurefunc("EncounterJournal_ListInstances", SkinDungeons)
 	EncounterJournal_ListInstances()
-	
+
 	local function SkinBosses()
-		local bossIndex = 1;
-		local name, description, bossID, _, link = EJ_GetEncounterInfoByIndex(bossIndex);
-		local bossButton;
+		local bossIndex = 1
+		local name, description, bossID, _, link = EJ_GetEncounterInfoByIndex(bossIndex)
+		local bossButton
 
 		while bossID do
-			bossButton = _G["EncounterJournalBossButton"..bossIndex];
+			bossButton = _G["EncounterJournalBossButton"..bossIndex]
 			if bossButton and not bossButton.isSkinned then
 				bossButton:SkinButton()
 				bossButton.isSkinned = true
 			end
 
-			bossIndex = bossIndex + 1;
-			name, description, bossID, _, link = EJ_GetEncounterInfoByIndex(bossIndex);
+			bossIndex = bossIndex + 1
+			name, description, bossID, _, link = EJ_GetEncounterInfoByIndex(bossIndex)
 		end
 	end
 	hooksecurefunc("EncounterJournal_DisplayInstance", SkinBosses)
@@ -220,20 +220,20 @@ local function LoadSkin()
 			item.ItemType:SetTextColor(1, 1, 1)
 			item.Background:Hide()
 			item.Icon:SetPoint("TOPLEFT", 1, -1)
-			item.Icon:SetTexCoord(.08, .92, .08, .92)
+			item.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			item.Icon:SetDrawLayer("OVERLAY")
 			item.IconBackdrop = CreateFrame("Frame", nil, item)
 			item.IconBackdrop:SetFrameLevel(item:GetFrameLevel() - 1)
 			item.IconBackdrop:SetPoint("TOPLEFT", item.Icon, -2, 2)
 			item.IconBackdrop:SetPoint("BOTTOMRIGHT", item.Icon, 2, -2)
 			item.IconBackdrop:SetTemplate("Default")
-			item.IconBackdrop:SetBackdropBorderColor(GetItemQualityColor(5))	
+			item.IconBackdrop:SetBackdropBorderColor(GetItemQualityColor(5))
 			item:CreateBackdrop("Transparent")
 			item.backdrop:SetPoint("TOPLEFT", -4, 4)
 			item.backdrop:SetPoint("BOTTOMRIGHT", 4, -3)
 		end
 	end
-	
+
 	EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:GetFontString():SetTextColor(1, 1, 1)
 	select(5, EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:GetRegions()):Hide()
 	select(6, EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:GetRegions()):Hide()
@@ -246,7 +246,7 @@ local function LoadSkin()
 
 	hooksecurefunc(EncounterJournal.LootJournal.ItemSetsFrame, "UpdateList", function()
 		local itemSets = EncounterJournal.LootJournal.ItemSetsFrame.buttons
-		
+
 		for i = 1, #itemSets do
 			local itemSet = itemSets[i]
 			itemSet.ItemLevel:SetTextColor(1, 1, 1)
@@ -264,7 +264,7 @@ local function LoadSkin()
 				local item = items[j]
 				item.Border:Hide()
 				item.Icon:SetPoint("TOPLEFT", 1, -1)
-				item.Icon:SetTexCoord(.08, .92, .08, .92)
+				item.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				item.Icon:SetDrawLayer("OVERLAY")
 				item.IconBackdrop = CreateFrame("Frame", nil, item)
 				item.IconBackdrop:SetFrameLevel(item:GetFrameLevel() - 1)
@@ -295,7 +295,7 @@ local function LoadSkin()
 		item.bosslessTexture:SetAlpha(0)
 		item.icon:SetSize(36, 36)
 		item.icon:SetPoint("TOPLEFT", T.mult*6, -(T.mult*10))
-		item.icon:SetTexCoord(.08, .92, .08, .92)
+		item.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		item.icon:SetDrawLayer("OVERLAY")
 		item:CreateBackdrop("Transparent")
 		item.backdrop:SetPoint("TOPLEFT", 0, -4)
@@ -341,7 +341,7 @@ local function LoadSkin()
 		end
 	end
 	hooksecurefunc("EncounterJournal_SetBullets", SkinOverviewInfoBullets)
-	
+
 	local function SkinAbilitiesInfo()
 		local index = 1
 		local header = _G["EncounterJournalInfoHeader"..index]
@@ -364,7 +364,7 @@ local function LoadSkin()
 				header.button.bg = CreateFrame("Frame", nil, header.button)
 				header.button.bg:SetTemplate("Default")
 				header.button.bg:SetFrameLevel(header.button.bg:GetFrameLevel() - 1)
-				header.button.abilityIcon:SetTexCoord(.08, .92, .08, .92)
+				header.button.abilityIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				if header.button.abilityIcon:IsShown() then
 					header.button.bg:Show()
 				else
@@ -426,7 +426,7 @@ local function LoadSkin()
 			if data.iconPath then
 				suggestion.icon:SetMask("")
 				suggestion.icon:SetTexture(data.iconPath)
-				suggestion.icon:SetTexCoord(.08, .92, .08, .92)
+				suggestion.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			end
 		end
 
@@ -442,7 +442,7 @@ local function LoadSkin()
 				if data.iconPath then
 					suggestion.icon:SetMask("")
 					suggestion.icon:SetTexture(data.iconPath)
-					suggestion.icon:SetTexCoord(.08, .92, .08, .92)
+					suggestion.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				end
 			end
 		end
@@ -454,7 +454,7 @@ local function LoadSkin()
 			local texture = rewardData.itemIcon or rewardData.currencyIcon or [[Interface\Icons\achievement_guildperk_mobilebanking]]
 			suggestion.reward.icon:SetMask("")
 			suggestion.reward.icon:SetTexture(texture)
-			suggestion.reward.icon:SetTexCoord(.08, .92, .08, .92)
+			suggestion.reward.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		end
 	end)
 end
