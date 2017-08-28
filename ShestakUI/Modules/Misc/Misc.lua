@@ -5,7 +5,7 @@
 ----------------------------------------------------------------------------------------
 local ShowReadyCheckHook = function(self, initiator)
 	if initiator ~= "player" then
-		PlaySound("ReadyCheck", "Master")
+		PlaySound(PlaySoundKitID and "ReadyCheck" or SOUNDKIT.READY_CHECK, "Master")
 	end
 end
 hooksecurefunc("ShowReadyCheck", ShowReadyCheckHook)
@@ -30,11 +30,11 @@ ForceWarning:SetScript("OnEvent", function(self, event)
 			i = i + 1
 		end
 	elseif event == "BATTLEFIELD_MGR_ENTRY_INVITE" then
-		PlaySound("PVPTHROUGHQUEUE", "Master")
+		PlaySound(PlaySoundKitID and "PVPTHROUGHQUEUE" or SOUNDKIT.PVP_THROUGH_QUEUE, "Master")
 	elseif event == "PET_BATTLE_QUEUE_PROPOSE_MATCH" then
-		PlaySound("PVPTHROUGHQUEUE", "Master")
+		PlaySound(PlaySoundKitID and "PVPTHROUGHQUEUE" or SOUNDKIT.PVP_THROUGH_QUEUE, "Master")
 	elseif event == "LFG_PROPOSAL_SHOW" then
-		PlaySound("ReadyCheck", "Master")
+		PlaySound(PlaySoundKitID and "ReadyCheck" or SOUNDKIT.READY_CHECK, "Master")
 	elseif event == "RESURRECT_REQUEST" then
 		PlaySoundFile("Sound\\Spells\\Resurrection.wav", "Master")
 	end
