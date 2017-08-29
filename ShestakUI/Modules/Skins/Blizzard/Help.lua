@@ -9,9 +9,7 @@ local function LoadSkin()
 		"HelpFrameLeftInset",
 		"HelpFrameMainInset",
 		"HelpFrameKnowledgebase",
-		"HelpFrameKnowledgebaseErrorFrame",
-		"ReportPlayerNameDialogCommentFrame",
-		"ReportCheatingDialogCommentFrame"
+		"HelpFrameKnowledgebaseErrorFrame"
 	}
 
 	local buttons = {
@@ -23,11 +21,7 @@ local function LoadSkin()
 		"HelpFrameGM_ResponseCancel",
 		"HelpFrameSubmitSuggestionSubmit",
 		"HelpFrameReportBugSubmit",
-		"HelpFrameButton16",
-		"ReportCheatingDialogCancelButton",
-		"ReportCheatingDialogReportButton",
-		"ReportPlayerNameDialogReportButton",
-		"ReportPlayerNameDialogCancelButton"
+		"HelpFrameButton16"
 	}
 
 	HelpFrameKnowledgebaseNavBarHomeButton:StripTextures(false)
@@ -156,12 +150,6 @@ local function LoadSkin()
 	HelpFrameCharacterStuckHearthstone.IconTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 	HelpFrameCharacterStuckHearthstone.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	HelpFrameCharacterStuckHearthstone.SetHighlightTexture = T.dummy
-
-	-- Report frames
-	ReportPlayerNameDialog:StripTextures()
-	ReportPlayerNameDialog:CreateBackdrop("Transparent")
-	ReportCheatingDialog:StripTextures()
-	ReportCheatingDialog:CreateBackdrop("Transparent")
 
 	for i = 1, HelpFrameGM_Response:GetNumChildren() do
 		local child = select(i, HelpFrameGM_Response:GetChildren())

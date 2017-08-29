@@ -259,6 +259,16 @@ local function LoadSkin()
 	PetJournalHealPetButton.texture:ClearAllPoints()
 	PetJournalHealPetButton.texture:SetPoint("TOPLEFT", 2, -2)
 	PetJournalHealPetButton.texture:SetPoint("BOTTOMRIGHT", -2, 2)
+	if T.wowbuild >= 24904 then
+	PetJournalSummonRandomFavoritePetButton:CreateBackdrop("Default")
+	PetJournalSummonRandomFavoritePetButton.backdrop:SetAllPoints()
+	PetJournalSummonRandomFavoritePetButton:StyleButton()
+	PetJournalSummonRandomFavoritePetButtonBorder:Hide()
+	PetJournalSummonRandomFavoritePetButton.texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	PetJournalSummonRandomFavoritePetButton.texture:ClearAllPoints()
+	PetJournalSummonRandomFavoritePetButton.texture:SetPoint("TOPLEFT", 2, -2)
+	PetJournalSummonRandomFavoritePetButton.texture:SetPoint("BOTTOMRIGHT", -2, 2)
+	end
 
 	for i = 1, 3 do
 		local button = _G["PetJournalLoadoutPet"..i]

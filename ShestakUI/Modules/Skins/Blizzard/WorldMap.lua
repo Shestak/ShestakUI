@@ -128,8 +128,13 @@ local function LoadSkin()
 	WorldMapFrameCloseButton:ClearAllPoints()
 	WorldMapFrameCloseButton:SetPoint("RIGHT", WorldMapFrame.Header, "RIGHT", -4, 0)
 	WorldMapFrameCloseButton:SetSize(15, 15)
-
-	WorldMapFrameSizeUpButton:Kill()
+	
+	if T.wowbuild >= 24904 then
+		WorldMapFrame.BorderFrame.MaximizeMinimizeFrame.MaximizeButton:Kill()
+		WorldMapFrame.BorderFrame.MaximizeMinimizeFrame.MinimizeButton:Kill()
+	else
+		WorldMapFrameSizeUpButton:Kill()
+	end
 
 	T.SkinDropDownBox(WorldMapLevelDropDown)
 	WorldMapLevelDropDown:ClearAllPoints()
