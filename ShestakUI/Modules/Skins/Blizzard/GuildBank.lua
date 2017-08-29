@@ -26,6 +26,7 @@ local function LoadSkin()
 
 	GuildBankInfoScrollFrame:StripTextures()
 	GuildBankTransactionsScrollFrame:StripTextures()
+	T.SkinScrollBar(GuildBankPopupScrollFrameScrollBar)
 	T.SkinScrollBar(GuildBankInfoScrollFrameScrollBar)
 	T.SkinScrollBar(GuildBankTransactionsScrollFrameScrollBar)
 	GuildBankInfoScrollFrame:SetHeight(GuildBankInfoScrollFrame:GetHeight() - 5)
