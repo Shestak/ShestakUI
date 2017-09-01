@@ -695,11 +695,20 @@ function skin:HandlePanelTab(tab)
 	end
 end
 
-C_Timer.After(0,function()
-	for panel,func in pairs(skin.panels) do
-		func(Rematch[panel])
-	end
-	for _,func in pairs(skin.misc) do
-		func()
-	end
+local f = CreateFrame("Frame")
+f:SetScript("OnEvent",function(self,event,...)
+	C_Timer.After(0,function()
+		if Rematch.isLoaded and not self.skinDone then
+			for panel,func in pairs(skin.panels) do
+				func(Rematch[panel])
+			end
+			for _,func in pairs(skin.misc) do
+				func()
+			end
+			self.skinDone = true
+			self:UnregisterAllEvents()
+		end
+	end)
 end)
+f:RegisterEvent("PLAYER_LOGIN")
+f:RegisterEvent("PET_JOURNAL_LIST_UPDATE")
