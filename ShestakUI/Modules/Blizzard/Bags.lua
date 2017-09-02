@@ -99,7 +99,7 @@ local function Stuffing_OnShow()
 
 	Stuffing:Layout()
 	Stuffing:SearchReset()
-	PlaySound(PlaySoundKitID and "igBackPackOpen" or SOUNDKIT.IG_BACKPACK_OPEN)
+	PlaySound(SOUNDKIT.IG_BACKPACK_OPEN)
 	collectgarbage("collect")
 end
 
@@ -108,14 +108,14 @@ local function StuffingBank_OnHide()
 	if Stuffing.frame:IsShown() then
 		Stuffing.frame:Hide()
 	end
-	PlaySound(PlaySoundKitID and "igBackPackClose" or SOUNDKIT.IG_BACKPACK_CLOSE)
+	PlaySound(SOUNDKIT.IG_BACKPACK_CLOSE)
 end
 
 local function Stuffing_OnHide()
 	if Stuffing.bankFrame and Stuffing.bankFrame:IsShown() then
 		Stuffing.bankFrame:Hide()
 	end
-	PlaySound(PlaySoundKitID and "igBackPackClose" or SOUNDKIT.IG_BACKPACK_CLOSE)
+	PlaySound(SOUNDKIT.IG_BACKPACK_CLOSE)
 end
 
 local function Stuffing_Open()
@@ -267,7 +267,7 @@ function CreateReagentContainer()
 		_G["StuffingFrameBank"]:Show()
 		_G["StuffingFrameBank"]:SetAlpha(1)
 		BankFrame_ShowPanel(BANK_PANELS[1].name)
-		PlaySound(PlaySoundKitID and "igBackPackOpen" or SOUNDKIT.IG_BACKPACK_OPEN)
+		PlaySound(SOUNDKIT.IG_BACKPACK_OPEN)
 	end)
 
 	Deposit:SetParent(Reagent)
@@ -645,7 +645,7 @@ function Stuffing:CreateBagFrame(w)
 		f.b_reagent:SkinButton()
 		f.b_reagent:SetScript("OnClick", function()
 			BankFrame_ShowPanel(BANK_PANELS[2].name)
-			PlaySound(PlaySoundKitID and "igBackPackOpen" or SOUNDKIT.IG_BACKPACK_OPEN)
+			PlaySound(SOUNDKIT.IG_BACKPACK_OPEN)
 			if not ReagentBankFrame.isMade then
 				CreateReagentContainer()
 				ReagentBankFrame.isMade = true
@@ -823,7 +823,7 @@ function Stuffing:InitBags()
 		f.depositButton:SetScript("OnEnter", tooltip_show)
 		f.depositButton:SetScript("OnLeave", tooltip_hide)
 		f.depositButton:SetScript("OnClick", function(self, btn)
-			PlaySound(PlaySoundKitID and "igMainMenuOption" or SOUNDKIT.IG_MAINMENU_OPTION)
+			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION)
 			DepositReagentBank()
 		end)
 

@@ -360,7 +360,7 @@ if memory.enabled then
 				if AddonList:IsShown() then
 					AddonList_OnCancel()
 				else
-					PlaySound(PlaySoundKitID and "igMainMenuOption" or SOUNDKIT.IG_MAINMENU_OPTION)
+					PlaySound(SOUNDKIT.IG_MAINMENU_OPTION)
 					ShowUIPanel(AddonList)
 				end
 			end

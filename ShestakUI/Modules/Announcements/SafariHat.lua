@@ -17,7 +17,7 @@ frame:SetScript("OnEvent", function()
 			end
 		end
 		if maxlevel then return end
-		PlaySound("RaidWarning", "master")
+		PlaySound(SOUNDKIT.RAID_WARNING, "master")
 		RaidNotice_AddMessage(RaidWarningFrame, RESISTANCE_NONE.." "..GetSpellLink(158486).."!", ChatTypeInfo["RAID_WARNING"])
 		print("|cffff3300"..RESISTANCE_NONE.." "..GetSpellLink(158486).."|cffff3300!|r")
 	end

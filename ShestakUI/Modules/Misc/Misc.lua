@@ -5,7 +5,7 @@
 ----------------------------------------------------------------------------------------
 local ShowReadyCheckHook = function(self, initiator)
 	if initiator ~= "player" then
-		PlaySound(PlaySoundKitID and "ReadyCheck" or SOUNDKIT.READY_CHECK, "Master")
+		PlaySound(SOUNDKIT.READY_CHECK, "Master")
 	end
 end
 hooksecurefunc("ShowReadyCheck", ShowReadyCheckHook)
@@ -24,17 +24,17 @@ ForceWarning:SetScript("OnEvent", function(self, event)
 		for i = 1, GetMaxBattlefieldID() do
 			local status = GetBattlefieldStatus(i)
 			if status == "confirm" then
-				PlaySound("PVPTHROUGHQUEUE", "Master")
+				PlaySound(SOUNDKIT.PVP_THROUGH_QUEUE, "Master")
 				break
 			end
 			i = i + 1
 		end
 	elseif event == "BATTLEFIELD_MGR_ENTRY_INVITE" then
-		PlaySound(PlaySoundKitID and "PVPTHROUGHQUEUE" or SOUNDKIT.PVP_THROUGH_QUEUE, "Master")
+		PlaySound(SOUNDKIT.PVP_THROUGH_QUEUE, "Master")
 	elseif event == "PET_BATTLE_QUEUE_PROPOSE_MATCH" then
-		PlaySound(PlaySoundKitID and "PVPTHROUGHQUEUE" or SOUNDKIT.PVP_THROUGH_QUEUE, "Master")
+		PlaySound(SOUNDKIT.PVP_THROUGH_QUEUE, "Master")
 	elseif event == "LFG_PROPOSAL_SHOW" then
-		PlaySound(PlaySoundKitID and "ReadyCheck" or SOUNDKIT.READY_CHECK, "Master")
+		PlaySound(SOUNDKIT.READY_CHECK, "Master")
 	elseif event == "RESURRECT_REQUEST" then
 		PlaySoundFile("Sound\\Spells\\Resurrection.wav", "Master")
 	end
@@ -166,7 +166,7 @@ strip:SetScript("OnClick", function(self, button)
 	else
 		self.model:Undress()
 	end
-	PlaySound("gsTitleOptionOK")
+	PlaySound(SOUNDKIT.GS_TITLE_OPTION_OK)
 end)
 strip.model = DressUpModel
 

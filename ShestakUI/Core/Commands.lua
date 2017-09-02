@@ -284,7 +284,7 @@ SLASH_CLEAR_CHAT2 = "/сдуфк"
 --	Test Blizzard Alerts
 ----------------------------------------------------------------------------------------
 SlashCmdList.TEST_ACHIEVEMENT = function()
-	PlaySound(PlaySoundKitID and "LFG_Rewards" or SOUNDKIT.LFG_REWARDS)
+	PlaySound(SOUNDKIT.LFG_REWARDS)
 	if not AchievementFrame then
 		AchievementFrame_LoadUI()
 	end

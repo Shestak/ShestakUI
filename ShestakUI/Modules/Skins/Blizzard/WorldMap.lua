@@ -10,7 +10,7 @@ local function LoadSkin()
 	local SmallerMap = GetCVarBool("miniWorldMap")
 	if not SmallerMap then
 		ToggleWorldMap()
-		WorldMapFrameSizeUpButton:Click()
+		WorldMapFrame.BorderFrame.MaximizeMinimizeFrame.MinimizeButton:Click()
 		ToggleWorldMap()
 	end
 
@@ -129,12 +129,8 @@ local function LoadSkin()
 	WorldMapFrameCloseButton:SetPoint("RIGHT", WorldMapFrame.Header, "RIGHT", -4, 0)
 	WorldMapFrameCloseButton:SetSize(15, 15)
 	
-	if T.wowbuild >= 24904 then
-		WorldMapFrame.BorderFrame.MaximizeMinimizeFrame.MaximizeButton:Kill()
-		WorldMapFrame.BorderFrame.MaximizeMinimizeFrame.MinimizeButton:Kill()
-	else
-		WorldMapFrameSizeUpButton:Kill()
-	end
+	WorldMapFrame.BorderFrame.MaximizeMinimizeFrame.MaximizeButton:Kill()
+	WorldMapFrame.BorderFrame.MaximizeMinimizeFrame.MinimizeButton:Kill()
 
 	T.SkinDropDownBox(WorldMapLevelDropDown)
 	WorldMapLevelDropDown:ClearAllPoints()
