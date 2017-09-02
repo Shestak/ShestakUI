@@ -246,7 +246,6 @@ L_GUI_BAGS_BUTTON_SIZE = "Размер ячеек"
 L_GUI_BAGS_BUTTON_SPACE = "Расстояние между ячейками"
 L_GUI_BAGS_BANK = "Количество столбцов в банке"
 L_GUI_BAGS_BAG = "Количество столбцов в сумках"
-L_GUI_BAGS_BUTTONS = "Show sort/deposit/Artifact buttons" -- Need review
 
 -- Minimap options
 L_GUI_MINIMAP_ENABLE = "Включить миникарту"

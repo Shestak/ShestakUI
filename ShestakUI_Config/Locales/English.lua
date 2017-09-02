@@ -243,7 +243,6 @@ L_GUI_BAGS_BUTTON_SIZE = "Buttons size"
 L_GUI_BAGS_BUTTON_SPACE = "Buttons space"
 L_GUI_BAGS_BANK = "Number of columns in bank"
 L_GUI_BAGS_BAG = "Number of columns in main bag"
-L_GUI_BAGS_BUTTONS = "Show sort/deposit/Artifact buttons"
 
 -- Minimap options
 L_GUI_MINIMAP_ENABLE = "Enable minimap"

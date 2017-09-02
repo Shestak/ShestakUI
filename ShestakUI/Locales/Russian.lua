@@ -125,9 +125,6 @@ L_BAG_SHOW_BAGS = "Показать сумки"
 L_BAG_RIGHT_CLICK_SEARCH = "ПКМ для поиска"
 L_BAG_STACK_MENU = "Сложить"
 L_BAG_RIGHT_CLICK_CLOSE = "ПКМ, чтобы открыть меню"
-L_BAG_BUTTONS_DEPOSIT = "Deposit Reagents" -- Need review
-L_BAG_BUTTONS_SORT = "LM:Cleanup / RM:Blizzard" -- Need review
-L_BAG_BUTTONS_ARTIFACT = "Right click to use Artifact Power item in bag" -- Need review
 
 -- Grab mail
 L_MAIL_STOPPED = "Сбор почты приостановлен. Нет места в сумках."

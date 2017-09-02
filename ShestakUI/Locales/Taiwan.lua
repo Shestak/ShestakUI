@@ -125,9 +125,6 @@ L_BAG_SHOW_BAGS = "顯示背包"
 L_BAG_RIGHT_CLICK_SEARCH = "點擊右鍵以搜尋物品"
 L_BAG_STACK_MENU = "堆疊"
 L_BAG_RIGHT_CLICK_CLOSE = "右鍵點擊打開菜單"
-L_BAG_BUTTONS_DEPOSIT = "Deposit Reagents" -- Need review
-L_BAG_BUTTONS_SORT = "LM:Cleanup / RM:Blizzard" -- Need review
-L_BAG_BUTTONS_ARTIFACT = "Right click to use Artifact Power item in bag" -- Need review
 
 -- Grab mail
 L_MAIL_STOPPED = "無法拾取, 背囊已滿."
