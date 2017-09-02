@@ -14,6 +14,7 @@ local function LoadSkin()
 
 	local buttons = {
 		"HelpFrameAccountSecurityOpenTicket",
+		"HelpFrameOpenTicketHelpOpenTicket",
 		"HelpFrameKnowledgebaseSearchButton",
 		"HelpFrameKnowledgebaseNavBarHomeButton",
 		"HelpFrameCharacterStuckStuck",
@@ -21,7 +22,8 @@ local function LoadSkin()
 		"HelpFrameGM_ResponseCancel",
 		"HelpFrameSubmitSuggestionSubmit",
 		"HelpFrameReportBugSubmit",
-		"HelpFrameButton16"
+		"HelpFrameButton16",
+		"GMChatOpenLog"
 	}
 
 	HelpFrameKnowledgebaseNavBarHomeButton:StripTextures(false)
