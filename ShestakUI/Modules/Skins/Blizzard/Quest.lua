@@ -32,6 +32,7 @@ local function LoadSkin()
 	T.SkinScrollBar(QuestProgressScrollFrameScrollBar)
 	T.SkinScrollBar(QuestRewardScrollFrameScrollBar)
 	T.SkinScrollBar(QuestGreetingScrollFrameScrollBar)
+	T.SkinScrollBar(QuestNPCModelTextScrollFrameScrollBar)
 
 	for i = 1, 6 do
 		local button = _G["QuestProgressItem"..i]
