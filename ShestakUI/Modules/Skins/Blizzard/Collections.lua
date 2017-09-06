@@ -272,8 +272,6 @@ local function LoadSkin()
 
 	for i = 1, 3 do
 		local button = _G["PetJournalLoadoutPet"..i]
-		local icon = _G["PetJournalLoadoutPet"..i.."Icon"]
-		local level = _G["PetJournalLoadoutPet"..i.."Level"]
 
 		button:CreateBackdrop("Overlay")
 		button.backdrop:SetPoint("TOPLEFT", -2, 0)
@@ -284,53 +282,52 @@ local function LoadSkin()
 		button.dragButton.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 		button.dragButton:StyleButton()
 
-		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		icon:SetSize(36, 36)
+		button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		button.icon:SetSize(36, 36)
 
-		level:SetParent(button.dragButton.backdrop)
-		level:SetFontObject("SystemFont_Outline_Small")
-		level:ClearAllPoints()
-		level:SetPoint("BOTTOMRIGHT", -2, 3)
+		button.level:SetParent(button.dragButton.backdrop)
+		button.level:SetFontObject("SystemFont_Outline_Small")
+		button.level:ClearAllPoints()
+		button.level:SetPoint("BOTTOMRIGHT", -2, 3)
 
 		for j = 1, 3 do
-			local button = _G["PetJournalLoadoutPet"..i.."Spell"..j]
-			local icon = _G["PetJournalLoadoutPet"..i.."Spell"..j.."Icon"]
+			local spell = button["spell"..j]
 
-			button:StyleButton()
-			button:SetTemplate("Default")
+			spell:StyleButton()
+			spell:SetTemplate("Default")
 
-			button.BlackCover:SetPoint("TOPLEFT", 2, -2)
-			button.BlackCover:SetPoint("BOTTOMRIGHT", -2, 2)
+			spell.BlackCover:SetPoint("TOPLEFT", 2, -2)
+			spell.BlackCover:SetPoint("BOTTOMRIGHT", -2, 2)
 
-			button.FlyoutArrow:SetTexture("Interface\\Buttons\\ActionBarFlyoutButton")
+			spell.FlyoutArrow:SetTexture("Interface\\Buttons\\ActionBarFlyoutButton")
 
-			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			icon:ClearAllPoints()
-			icon:SetPoint("TOPLEFT", 2, -2)
-			icon:SetPoint("BOTTOMRIGHT", -2, 2)
+			spell.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			spell.icon:ClearAllPoints()
+			spell.icon:SetPoint("TOPLEFT", 2, -2)
+			spell.icon:SetPoint("BOTTOMRIGHT", -2, 2)
 
 			_G["PetJournalLoadoutPet"..i.."Spell"..j.."Background"]:SetTexture(nil)
 			_G["PetJournalLoadoutPet"..i.."Spell"..j.."Selected"]:SetTexture(nil)
 		end
 
-		_G["PetJournalLoadoutPet"..i.."HelpFrame"]:StripTextures()
-		_G["PetJournalLoadoutPet"..i.."BG"]:SetTexture(nil)
-		_G["PetJournalLoadoutPet"..i.."Shadows"]:SetTexture(nil)
-		_G["PetJournalLoadoutPet"..i.."IconBorder"]:SetTexture(nil)
-		_G["PetJournalLoadoutPet"..i.."LevelBG"]:SetTexture(nil)
-		_G["PetJournalLoadoutPet"..i.."QualityBorder"]:SetTexture(nil)
+		button.iconBorder:SetAlpha(0)
+		button.qualityBorder:SetTexture("")
+		button.levelBG:SetAlpha(0)
+		button.helpFrame:StripTextures()
 
-		_G["PetJournalLoadoutPet"..i.."PetTypeIcon"]:ClearAllPoints()
-		_G["PetJournalLoadoutPet"..i.."PetTypeIcon"]:SetPoint("BOTTOMLEFT", button.backdrop, 2, 2)
+		 _G["PetJournalLoadoutPet"..i.."BG"]:Hide()
 
-		_G["PetJournalLoadoutPet"..i.."HealthFrame"].healthBar:StripTextures()
-		_G["PetJournalLoadoutPet"..i.."HealthFrame"].healthBar:CreateBackdrop("Overlay")
-		_G["PetJournalLoadoutPet"..i.."HealthFrame"].healthBar:SetStatusBarTexture(C.media.texture)
+		button.petTypeIcon:ClearAllPoints()
+		button.petTypeIcon:SetPoint("BOTTOMLEFT", button.backdrop, 2, 2)
 
-		_G["PetJournalLoadoutPet"..i.."XPBar"]:StripTextures()
-		_G["PetJournalLoadoutPet"..i.."XPBar"]:CreateBackdrop("Overlay")
-		_G["PetJournalLoadoutPet"..i.."XPBar"]:SetStatusBarTexture(C.media.texture)
-		_G["PetJournalLoadoutPet"..i.."XPBar"]:SetFrameLevel(_G["PetJournalLoadoutPet"..i.."XPBar"]:GetFrameLevel() + 2)
+		button.healthFrame.healthBar:StripTextures()
+		button.healthFrame.healthBar:CreateBackdrop("Overlay")
+		button.healthFrame.healthBar:SetStatusBarTexture(C.media.texture)
+
+		button.xpBar:StripTextures()
+		button.xpBar:CreateBackdrop("Overlay")
+		button.xpBar:SetStatusBarTexture(C.media.texture)
+		button.xpBar:SetFrameLevel(button.xpBar:GetFrameLevel() + 2)
 	end
 
 	PetJournal.SpellSelect.BgEnd:Hide()
@@ -437,46 +434,41 @@ local function LoadSkin()
 	HeirloomsJournal.progressBar:SetFrameLevel(HeirloomsJournal.progressBar:GetFrameLevel() + 2)
 	T.SkinDropDownBox(HeirloomsJournalClassDropDown, 170)
 
-	hooksecurefunc(HeirloomsJournal, "LayoutCurrentPage", function()
-		for i = 1, #HeirloomsJournal.heirloomHeaderFrames do
-			local header = HeirloomsJournal.heirloomHeaderFrames[i]
-			header.text:SetTextColor(0.9, 0.8, 0.5)
-		end
-
-		for i = 1, #HeirloomsJournal.heirloomEntryFrames do
-			local button = HeirloomsJournal.heirloomEntryFrames[i]
-			if not button.skinned then
-				button:StyleButton(nil, 0)
-				button:CreateBackdrop("Default")
-				button.levelBackground:SetAlpha(0)
-				button.level:SetFontObject("SystemFont_Outline_Small")
-				button.level.SetFontObject = T.dummy
-				button.level:SetTextColor(1, 1, 1)
-				button.iconTextureUncollected:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				button.iconTextureUncollected:SetTexture(button.iconTexture:GetTexture())
-				HeirloomsJournal:UpdateButton(button)
-				button.skinned = true
-			end
-
-			if C_Heirloom.PlayerHasHeirloom(button.itemID) then
-				button.name:SetTextColor(0.9, 0.8, 0.5)
-			else
-				button.name:SetTextColor(0.6, 0.6, 0.6)
+	hooksecurefunc(HeirloomsJournal, "LayoutCurrentPage", function(self)
+		for i = 1, #self.heirloomHeaderFrames do
+			local header = self.heirloomHeaderFrames[i]
+			if not header.styled then
+				header.text:SetTextColor(0.9, 0.8, 0.5)
+				header.styled = true
 			end
 		end
 	end)
 
 	hooksecurefunc(HeirloomsJournal, "UpdateButton", function(self, button)
-		button.slotFrameCollected:SetTexture("")
-		button.slotFrameUncollected:SetTexture("")
-		button.iconTextureUncollected:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		button.iconTexture:SetPoint("TOPLEFT")
-		button.iconTexture:SetPoint("BOTTOMRIGHT")
-		button.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		button.iconTextureUncollected:SetPoint("TOPLEFT")
-		button.iconTextureUncollected:SetPoint("BOTTOMRIGHT")
-		button.iconTextureUncollected:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		button.styled = true
+		if not button.styled then
+			button:StyleButton(nil, 0)
+			button:CreateBackdrop("Default")
+
+			button.level:SetFontObject("SystemFont_Outline_Small")
+			button.level.SetFontObject = T.dummy
+			button.level:SetTextColor(1, 1, 1)
+
+			button.levelBackground:SetAlpha(0)
+
+			button.slotFrameCollected:SetTexture("")
+			button.slotFrameUncollected:SetTexture("")
+
+			button.iconTexture:SetPoint("TOPLEFT")
+			button.iconTexture:SetPoint("BOTTOMRIGHT")
+			button.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+			button.iconTextureUncollected:SetPoint("TOPLEFT")
+			button.iconTextureUncollected:SetPoint("BOTTOMRIGHT")
+			button.iconTextureUncollected:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+			button.styled = true
+		end
+
 		if C_Heirloom.PlayerHasHeirloom(button.itemID) then
 			button.name:SetTextColor(0.9, 0.8, 0.5)
 		else
@@ -554,7 +546,7 @@ local function LoadSkin()
 				alpha = 0.4
 			end
 
-			if (not quality or quality < 2) then --Not collected or item is white or grey
+			if (not quality or quality < 2) then -- Not collected or item is white or grey
 				itemFrame.backdrop:SetBackdropBorderColor(0, 0, 0)
 			else
 				itemFrame.backdrop:SetBackdropBorderColor(ITEM_QUALITY_COLORS[quality].r, ITEM_QUALITY_COLORS[quality].g, ITEM_QUALITY_COLORS[quality].b, alpha)
