@@ -399,10 +399,12 @@ elseif T.class == "ROGUE" then
 elseif T.class == "SHAMAN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
-		T.aoespam[73921] = 3		-- Healing Rain
-		T.aoespam[52042] = 3		-- Healing Stream Totem
+		T.aoespam[215871] = 6		-- Rainfall
+		
+		T.aoespam[73921] = 5		-- Healing Rain
+		T.aoespam[52042] = 5		-- Healing Stream Totem
 		T.aoespam[1064] = 3			-- Chain Heal
-		T.aoespam[61295] = 3		-- Riptide
+		T.aoespam[61295] = 6		-- Riptide
 		T.aoespam[98021] = 3		-- Spirit Link
 		T.aoespam[114911] = 3		-- Ancestral Guidance
 		T.aoespam[114942] = 3		-- Healing Tide
@@ -412,13 +414,22 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[208899] = 6		-- Queen's Decree
 		T.aoespam[207778] = 1		-- Gift of the Queen
 		-- Damaging spells
+		T.aoespam[191726] = 4		-- Lightning Blast
+		T.aoespam[197568] = 4		-- Lightning Rod
+		T.aoespam[197568] = 4		-- Lightning Rod
+		T.aoespam[205533] = 7		-- Volcanic Inferno
+		T.aoespam[198485] = 3		-- Thunder Bite
+		T.aoespam[198483] = 1		-- Snowstorm
+		T.aoespam[224125] = 4		-- Fiery Jaws
+		T.aoespam[198480] = 1		-- Fire Nova
+		T.aoespam[199116] = 4		-- Doom Vortex
 		T.aoespam[421] = 1			-- Chain Lightning
 		T.merge[45297] = 421		-- Chain Lightning Overload
 		T.aoespam[8349] = 0			-- Fire Nova
 		T.aoespam[77478] = 3		-- Earhquake
 		T.aoespam[51490] = 0		-- Thunderstorm
 		T.aoespam[8187] = 3			-- Magma Totem
-		T.aoespam[188389] = 3		-- Flame Shock
+		T.aoespam[188389] = 4		-- Flame Shock
 		T.aoespam[25504] = 3		-- Windfury Attack
 		T.aoespam[10444] = 3		-- Flametongue Attack
 		T.aoespam[3606] = 3			-- Searing Bolt
