@@ -496,6 +496,14 @@ elseif T.class == "WARLOCK" then
 	end
 elseif T.class == "WARRIOR" then
 	if C.combattext.merge_aoe_spam then
+		T.aoespam[218617] = 2		-- Rampage
+		T.merge[184707] = 218617	-- Rampage 2nd
+		T.merge[184709] = 218617	-- Rampage 3rd
+		T.merge[201364] = 218617	-- Rampage 4th
+		T.merge[201363] = 218617	-- Rampage 5th
+		
+		T.aoespam[199667] = 1		-- Whirlwind
+		T.merge[44949] = 199667		-- Whirlwind Off-Hand
 		T.aoespam[46968] = 0		-- Shockwave
 		T.aoespam[6343] = 0			-- Thunder Clap
 		T.aoespam[1680] = 0			-- Whirlwind
@@ -505,12 +513,11 @@ elseif T.class == "WARRIOR" then
 		T.aoespam[118000] = 0		-- Dragon Roar
 		T.aoespam[203178] = 3		-- Opportunity Strike
 		T.aoespam[113344] = 3		-- Bloodbath
-		T.aoespam[96103] = 0		-- Raging Blow
+		T.aoespam[96103] = 0.5		-- Raging Blow
 		T.aoespam[6572] = 0			-- Revenge
 		T.aoespam[5308] = 0			-- Execute
 		T.aoespam[772] = 3			-- Rend
 		T.aoespam[156287] = 3		-- Ravager
-		T.merge[44949] = 1680		-- Whirlwind Off-Hand
 		T.merge[85384] = 96103		-- Raging Blow Off-Hand
 		T.merge[95738] = 50622		-- Bladestorm Off-Hand
 		T.merge[163558] = 5308		-- Execute Off-Hand
