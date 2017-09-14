@@ -126,6 +126,7 @@ local ignoreQuestNPC = {
 	[108868] = true,	-- Hunter's order hall
 	[101462] = true,	-- Engineering
 	[103792] = true,	-- Griftah (one of his quests is a scam)
+	[119388] = true,	-- Chieftain Hatuun (he will eat your resources)
 }
 
 local function GetQuestLogQuests(onlyComplete)
