@@ -31,9 +31,9 @@ T.DebuffWhiteList = {
 	[SpellName(155722)] = true,	-- Rake
 	[SpellName(1079)] = true,	-- Rip
 	-- Hunter
-	[SpellName(3355)] = true,	-- Freezing Trap	
+	[SpellName(3355)] = true,	-- Freezing Trap
 	[SpellName(194279)] = true,	-- Caltrops
-	[SpellName(13812)] = true,	-- Explosive Trap	
+	[SpellName(13812)] = true,	-- Explosive Trap
 	-- Mage
 	[SpellName(118)] = true,	-- Polymorph
 	[SpellName(31661)] = true,	-- Dragon's Breath

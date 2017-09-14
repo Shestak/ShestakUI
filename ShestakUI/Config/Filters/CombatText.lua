@@ -10,10 +10,10 @@ if C.combattext.enable ~= true then return end
 if C.combattext.healing then
 	T.healfilter = {}
 	T.healfilter[143924] = true		-- Leech
-	T.healfilter[127802] = true		-- Touch of the Grave	
-	T.healfilter[207694] = true		-- Symbiote Strike													
-	T.healfilter[242597] = true		-- Rethu's Incessant Courage	
-	T.healfilter[241835] = true		-- Starlight of Celumbra		
+	T.healfilter[127802] = true		-- Touch of the Grave
+	T.healfilter[207694] = true		-- Symbiote Strike
+	T.healfilter[242597] = true		-- Rethu's Incessant Courage
+	T.healfilter[241835] = true		-- Starlight of Celumbra
 end
 
 -- General merge outgoing damage
@@ -198,8 +198,8 @@ elseif T.class == "HUNTER" then
 		T.aoespam[201754] = 1		-- Stomp
 		T.aoespam[63900] = 1		-- Thunderstomp
 		T.aoespam[197465] = 1		-- Surge of the Stormgod
-		T.aoespam[207097] = 4		-- Titan's Thunder		
-		--Healing spells
+		T.aoespam[207097] = 4		-- Titan's Thunder
+		-- Healing spells
 		T.aoespam[136] = 9			-- Mend Pet
 		T.merge[214303] = 136		-- Mend Pet (Hati)
 		T.aoespam[197161] = 8		-- Mimiron's Shell Heal
@@ -324,7 +324,7 @@ elseif T.class == "PALADIN" then
 	end
 	if C.combattext.healing then
 		T.healfilter[204241] = true	-- Consecration
-	end	
+	end
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
@@ -346,7 +346,7 @@ elseif T.class == "PRIEST" then
 		-- Damaging spells
 		T.aoespam[205065] = 5		-- Void Torrent
 		T.aoespam[228361] = 1		-- Void Eruption
-		T.merge[228360] = 228361	-- Void Eruption		
+		T.merge[228360] = 228361	-- Void Eruption
 		T.aoespam[193473] = 3		-- Mind Flay (Call to the Void)
 		T.aoespam[237388] = 3		-- Mind Flay (AoE)
 		T.aoespam[186723] = 3		-- Penance
@@ -385,7 +385,6 @@ elseif T.class == "ROGUE" then
 		T.merge[222062] = 192760	-- Kingsbane Off-Hand
 		T.aoespam[192759] = 5		-- Kingsbane DoT
 		T.aoespam[703] = 5			-- Garrote
-		
 		T.aoespam[8680] = 3			-- Wound Poison
 		T.aoespam[22482] = 3		-- Blade Flurry
 		T.aoespam[16511] = 3		-- Hemorrhage
@@ -404,7 +403,6 @@ elseif T.class == "SHAMAN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
 		T.aoespam[215871] = 6		-- Rainfall
-		
 		T.aoespam[73921] = 5		-- Healing Rain
 		T.aoespam[52042] = 5		-- Healing Stream Totem
 		T.aoespam[1064] = 3			-- Chain Heal
@@ -455,7 +453,7 @@ elseif T.class == "SHAMAN" then
 	end
 elseif T.class == "WARLOCK" then
 	if C.combattext.merge_aoe_spam then
-				T.aoespam[243050] = 1		-- Searing Bolt
+		T.aoespam[243050] = 1		-- Searing Bolt
 		T.aoespam[196100] = 1		-- Demonic Power
 		T.aoespam[196448] = 3		-- Channel Demonfire
 		T.aoespam[199581] = 1		-- Soul Flame
@@ -505,7 +503,6 @@ elseif T.class == "WARRIOR" then
 		T.merge[184709] = 218617	-- Rampage 3rd
 		T.merge[201364] = 218617	-- Rampage 4th
 		T.merge[201363] = 218617	-- Rampage 5th
-		
 		T.aoespam[199667] = 1		-- Whirlwind
 		T.merge[44949] = 199667		-- Whirlwind Off-Hand
 		T.aoespam[46968] = 0		-- Shockwave
