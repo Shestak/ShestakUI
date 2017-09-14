@@ -363,13 +363,32 @@ elseif T.class == "ROGUE" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[51723] = 0		-- Fan of Knives
 		T.aoespam[2818] = 3			-- Deadly Poison
+		T.aoespam[185311] = 3		-- Crimson Vial
+		T.aoespam[192380] = 1		-- Poison Knives
+		T.aoespam[192434] = 5		-- From the Shadows
+		T.aoespam[192660] = 3.5		-- Poison Bomb
+		T.aoespam[121473] = 4		-- Shadow Blade
+		T.merge[121474] = 121473	-- Shadow Blade Off-Hand
+		T.aoespam[197800] = 1		-- Shadow Nova
+		T.aoespam[197611] = 1		-- Second Shuriken
+		T.aoespam[197835] = 1		-- Shuriken Storm
+		T.aoespam[195452] = 3		-- Nightblade
+		T.aoespam[209783] = 0.5		-- Goremaw's Bite
+		T.merge[209784] = 209783	-- Goremaw's Bite Off-Hand
+		T.aoespam[192760] = 0.5		-- Kingsbane
+		T.merge[222062] = 192760	-- Kingsbane Off-Hand
+		T.aoespam[192759] = 5		-- Kingsbane DoT
+		T.aoespam[703] = 5			-- Garrote
+		
+		T.aoespam[51723] = 1		-- Fan of Knives
+		T.aoespam[2818] = 5			-- Deadly Poison
 		T.aoespam[8680] = 3			-- Wound Poison
 		T.aoespam[22482] = 3		-- Blade Flurry
 		T.aoespam[16511] = 3		-- Hemorrhage
 		T.aoespam[5374] = 0			-- Mutilate
 		T.aoespam[86392] = 3		-- Main Gauche
 		T.aoespam[57841] = 3		-- Killing Spree
-		T.aoespam[1943] = 3			-- Rupture
+		T.aoespam[1943] = 5			-- Rupture
 		T.aoespam[152150] = 3		-- Death from Above
 		T.aoespam[114014] = 3		-- Shuriken Toss
 		T.aoespam[114014] = 3		-- Shuriken Toss
