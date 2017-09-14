@@ -322,6 +322,8 @@ elseif T.class == "PALADIN" then
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
+		T.aoespam[204883] = 1		-- Circle of Healing
+		T.aoespam[15290] = 4		-- Vampiric Embrace
 		T.aoespam[47750] = 3		-- Penance
 		T.aoespam[132157] = 0		-- Holy Nova
 		T.aoespam[139] = 3			-- Renew
@@ -336,11 +338,16 @@ elseif T.class == "PRIEST" then
 		T.aoespam[110745] = 3		-- Divine Star
 		T.merge[94472] = 81751		-- Atonement
 		-- Damaging spells
+		T.aoespam[205065] = 5		-- Void Torrent
+		T.aoespam[228361] = 1		-- Void Eruption
+		T.merge[228360] = 228361	-- Void Eruption		
+		T.aoespam[193473] = 3		-- Mind Flay (Call to the Void)
+		T.aoespam[237388] = 3		-- Mind Flay (AoE)
 		T.aoespam[186723] = 3		-- Penance
 		T.merge[47666] = 186723		-- Penance
 		T.aoespam[132157] = 0		-- Holy Nova
-		T.aoespam[589] = 3			-- Shadow Word: Pain
-		T.aoespam[34914] = 3		-- Vampiric Touch
+		T.aoespam[589] = 4			-- Shadow Word: Pain
+		T.aoespam[34914] = 4		-- Vampiric Touch
 		T.aoespam[15407] = 3		-- Mind Flay
 		T.aoespam[14914] = 3		-- Holy Fire
 		T.aoespam[129250] = 3		-- Power Word: Solace
@@ -349,7 +356,8 @@ elseif T.class == "PRIEST" then
 		T.aoespam[148859] = 3		-- Shadowy Apparition
 	end
 	if C.combattext.healing then
-		T.healfilter[15290] = true	-- Vampiric Embrace
+		T.healfilter[34914] = true	-- Vampiric Touch
+		T.healfilter[15290] = false	-- Vampiric Embrace
 	end
 elseif T.class == "ROGUE" then
 	if C.combattext.merge_aoe_spam then
