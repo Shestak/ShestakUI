@@ -37,25 +37,38 @@ end
 -- Class config
 if T.class == "DEATHKNIGHT" then
 	if C.combattext.merge_aoe_spam then
+		T.aoespam[196545] = 3		-- Bonestorm Heal
+		T.aoespam[196528] = 3		-- Bonestorm
+		T.aoespam[219711] = 0		-- Blood Feast
+		T.aoespam[196771] = 3		-- Remorseless Winter
+		T.aoespam[205164] = 0		-- Crystalline Swords
+		T.merge[205165] = 205164	-- Crystalline Swords Off-Hand
+		T.merge[237680] = 49184		-- Howling Blast
+		T.aoespam[205224] = 0.5		-- Consumption Heal
+		T.aoespam[205223] = 0.5		-- Consumption
+		T.aoespam[191587] = 4		-- Virulent Plague
+		T.aoespam[191685] = 4		-- Virulent Eruption
+		T.aoespam[206930] = 0.5		-- Heart Strike
 		T.aoespam[55095] = 3		-- Frost Fever
 		T.aoespam[55078] = 3		-- Blood Plague
 		T.aoespam[50842] = 0		-- Blood Boil
-		T.aoespam[49184] = 0		-- Howling Blast
+		T.aoespam[49184] = 0.5		-- Howling Blast
 		T.aoespam[52212] = 3		-- Death and Decay
-		T.aoespam[50401] = 3		-- Razorice
+		T.aoespam[50401] = 4		-- Razorice
 		T.aoespam[91776] = 3		-- Claw (Ghoul)
-		T.aoespam[49020] = 0		-- Obliterate
-		T.aoespam[49143] = 0		-- Frost Strike
-		T.aoespam[49998] = 0		-- Death Strike
+		T.aoespam[222024] = 0		-- Obliterate
+		T.aoespam[222026] = 0		-- Frost Strike
+		T.aoespam[49998] = 0.5		-- Death Strike
 		T.aoespam[156000] = 3		-- Defile
 		T.aoespam[155166] = 3		-- Mark of Sindragosa
 		T.aoespam[55090] = 0		-- Scourge Strike
-		T.merge[66198] = 49020		-- Obliterate Off-Hand
-		T.merge[66196] = 49143		-- Frost Strike Off-Hand
+		T.merge[66198] = 222024		-- Obliterate Off-Hand
+		T.merge[66196] = 222026		-- Frost Strike Off-Hand
 		T.merge[66188] = 49998		-- Death Strike Off-Hand
 		T.merge[70890] = 55090		-- Scourge Strike (Shadow damage)
 	end
 	if C.combattext.healing then
+		T.healfilter[55078] = true	-- Blood Plague
 		T.healfilter[53365] = true	-- Unholy Strength
 		T.healfilter[119980] = true	-- Conversion
 	end
