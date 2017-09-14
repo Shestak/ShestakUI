@@ -10,6 +10,10 @@ if C.combattext.enable ~= true then return end
 if C.combattext.healing then
 	T.healfilter = {}
 	T.healfilter[143924] = true		-- Leech
+	T.healfilter[127802] = true		-- Touch of the Grave	
+	T.healfilter[207694] = true		-- Symbiote Strike													
+	T.healfilter[242597] = true		-- Rethu's Incessant Courage	
+	T.healfilter[241835] = true		-- Starlight of Celumbra		
 end
 
 -- General merge outgoing damage
@@ -31,6 +35,8 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[242571] = 4			-- Spectral Bolt (Tarnished Sentinel Medallion Trinket)
 	T.aoespam[246442] = 4			-- Spectral Blast (Tarnished Sentinel Medallion Trinket)
 	T.aoespam[188091] = 4			-- Deadly Grace (Potion of Deadly Grace)
+	T.aoespam[235999] = 1			-- Kil'jaeden's Burning Wish (Trinket)
+	T.aoespam[207694] = 3			-- Symbiote Strike
 	T.aoespam[210380] = 4			-- Aura of Sacrifice
 end
 
