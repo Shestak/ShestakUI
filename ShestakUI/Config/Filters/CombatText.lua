@@ -192,7 +192,14 @@ elseif T.class == "HUNTER" then
 		T.aoespam[201754] = 1		-- Stomp
 		T.aoespam[63900] = 1		-- Thunderstomp
 		T.aoespam[197465] = 1		-- Surge of the Stormgod
-		T.aoespam[207097] = 4		-- Titan's Thunder
+		T.aoespam[207097] = 4		-- Titan's Thunder		
+		--Healing spells
+		T.aoespam[136] = 9			-- Mend Pet
+		T.merge[214303] = 136		-- Mend Pet (Hati)
+		T.aoespam[197161] = 8		-- Mimiron's Shell Heal
+	end
+	 C.combattext.healing then
+		T.healfilter[197205] = true	-- Spirit Bond
 	end
 elseif T.class == "MAGE" then
 	if C.combattext.merge_aoe_spam then
