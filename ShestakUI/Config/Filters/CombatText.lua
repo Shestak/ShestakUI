@@ -204,7 +204,7 @@ elseif T.class == "HUNTER" then
 		T.merge[214303] = 136		-- Mend Pet (Hati)
 		T.aoespam[197161] = 8		-- Mimiron's Shell Heal
 	end
-	 C.combattext.healing then
+	if C.combattext.healing then
 		T.healfilter[197205] = true	-- Spirit Bond
 	end
 elseif T.class == "MAGE" then
@@ -292,7 +292,7 @@ elseif T.class == "PALADIN" then
 		-- Healing spells
 		T.aoespam[209540] = 8		-- Light of the Titans
 		T.aoespam[53652] = 3		-- Beacon of Light
-		T.aoespam[85222] = 0		-- Light of Dawn
+		T.aoespam[85222] = 1		-- Light of Dawn
 		T.aoespam[114163] = 3		-- Eternal Flame
 		T.aoespam[114852] = 0		-- Holy Prism
 		T.aoespam[119952] = 3		-- Arcing Light
@@ -305,7 +305,7 @@ elseif T.class == "PALADIN" then
 		T.aoespam[198137] = 5		-- Divine Hammer
 		T.aoespam[81297] = 3		-- Consecration
 		T.aoespam[53385] = 0		-- Divine Storm
-		T.aoespam[88263] = 0		-- Hammer of the Righteous
+		T.aoespam[88263] = 1		-- Hammer of the Righteous
 		T.aoespam[31935] = .5		-- Avenger's Shield
 		T.aoespam[114871] = 0		-- Holy Prism
 		T.aoespam[114919] = 3		-- Arcing Light
@@ -367,8 +367,8 @@ elseif T.class == "PRIEST" then
 	end
 elseif T.class == "ROGUE" then
 	if C.combattext.merge_aoe_spam then
-		T.aoespam[51723] = 0		-- Fan of Knives
-		T.aoespam[2818] = 3			-- Deadly Poison
+		T.aoespam[51723] = 1		-- Fan of Knives
+		T.aoespam[2818] = 5			-- Deadly Poison
 		T.aoespam[185311] = 3		-- Crimson Vial
 		T.aoespam[192380] = 1		-- Poison Knives
 		T.aoespam[192434] = 5		-- From the Shadows
@@ -386,8 +386,6 @@ elseif T.class == "ROGUE" then
 		T.aoespam[192759] = 5		-- Kingsbane DoT
 		T.aoespam[703] = 5			-- Garrote
 		
-		T.aoespam[51723] = 1		-- Fan of Knives
-		T.aoespam[2818] = 5			-- Deadly Poison
 		T.aoespam[8680] = 3			-- Wound Poison
 		T.aoespam[22482] = 3		-- Blade Flurry
 		T.aoespam[16511] = 3		-- Hemorrhage
