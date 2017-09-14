@@ -729,16 +729,28 @@ local function LoadSkin()
 	end
 	hooksecurefunc(NewRecipeLearnedAlertSystem, "setUpFunction", SkinNewRecipeLearnedAlert)
 
-		local function SkinNewPetAlert(frame)
+	local function SkinNewPetMountAlert(frame)
 		frame:SetAlpha(1)
-		if not frame.hooked then hooksecurefunc(frame, "SetAlpha", forceAlpha);frame.hooked = true end
+		if not frame.hooked then
+			hooksecurefunc(frame, "SetAlpha", forceAlpha)
+			frame.hooked = true
+		end
+
+		if not frame.backdrop then
+			frame:CreateBackdrop("Transparent")
+			frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 1, -6)
+			frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -5, 6)
+		end
 
 		frame.Background:Kill()
 		frame.IconBorder:Kill()
+		frame.glow:Kill()
+		frame.shine:Kill()
 
 		frame.Icon:SetMask("")
 		frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		frame.Icon:SetDrawLayer("BORDER", 5)
+		frame.Icon:SetPoint("LEFT", frame.backdrop, 9, 0)
 
 		-- Icon border
 		if not frame.Icon.b then
@@ -748,16 +760,10 @@ local function LoadSkin()
 			frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
 			frame.Icon:SetParent(frame.Icon.b)
 		end
-
-		if not frame.backdrop then
-			frame:CreateBackdrop("Transparent")
-			frame.backdrop:SetPoint('TOPLEFT', frame.Icon.b, 'TOPLEFT', -8, 8)
-			frame.backdrop:SetPoint('BOTTOMRIGHT', frame.Icon.b, 'BOTTOMRIGHT', 180, -8)
-		end
 	end
-	hooksecurefunc(NewPetAlertSystem, "setUpFunction", SkinNewPetAlert)
-	hooksecurefunc(NewMountAlertSystem, "setUpFunction", SkinNewPetAlert)
-	
+	hooksecurefunc(NewPetAlertSystem, "setUpFunction", SkinNewPetMountAlert)
+	hooksecurefunc(NewMountAlertSystem, "setUpFunction", SkinNewPetMountAlert)
+
 	-- Bonus Roll Money
 	local frame = BonusRollMoneyWonFrame
 	frame:SetAlpha(1)
