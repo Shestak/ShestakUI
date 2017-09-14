@@ -74,6 +74,8 @@ if T.class == "DEATHKNIGHT" then
 	end
 elseif T.class == "DEMONHUNTER" then
 	if C.combattext.merge_aoe_spam then
+		T.aoespam[247455] = 1		-- Spirit Bomb
+		T.aoespam[243160] = 0		-- Erupting Souls
 		T.aoespam[187727] = 0		-- Immolation Aura
 		T.aoespam[178741] = 6		-- Immolation Aura Tick
 		T.aoespam[189112] = 0		-- Infernal Strike
