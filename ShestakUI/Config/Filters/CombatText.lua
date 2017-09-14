@@ -284,6 +284,7 @@ elseif T.class == "MONK" then
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
+		T.aoespam[209540] = 8		-- Light of the Titans
 		T.aoespam[53652] = 3		-- Beacon of Light
 		T.aoespam[85222] = 0		-- Light of Dawn
 		T.aoespam[114163] = 3		-- Eternal Flame
@@ -294,6 +295,8 @@ elseif T.class == "PALADIN" then
 		T.aoespam[183811] = 6		-- Judgment of Light
 		T.aoespam[225311] = 1		-- Light of Dawn
 		-- Damaging spells
+		T.aoespam[205273] = 1		-- Wake of Ashes
+		T.aoespam[198137] = 5		-- Divine Hammer
 		T.aoespam[81297] = 3		-- Consecration
 		T.aoespam[53385] = 0		-- Divine Storm
 		T.aoespam[88263] = 0		-- Hammer of the Righteous
@@ -313,6 +316,9 @@ elseif T.class == "PALADIN" then
 		T.merge[228288] = 20271		-- Judgment Retribution
 		T.aoespam[217020] = 1		-- Zeal
 	end
+	if C.combattext.healing then
+		T.healfilter[204241] = true	-- Consecration
+	end	
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
