@@ -451,6 +451,11 @@ elseif T.class == "SHAMAN" then
 	end
 elseif T.class == "WARLOCK" then
 	if C.combattext.merge_aoe_spam then
+				T.aoespam[243050] = 1		-- Searing Bolt
+		T.aoespam[196100] = 1		-- Demonic Power
+		T.aoespam[196448] = 3		-- Channel Demonfire
+		T.aoespam[199581] = 1		-- Soul Flame
+		T.aoespam[29722] = 1		-- Incinirate (Fire and Brimstone)
 		T.aoespam[27243] = 3		-- Seed of Corruption
 		T.aoespam[27285] = 3		-- Seed of Corruption (AoE)
 		T.aoespam[146739] = 3		-- Corruption
@@ -484,6 +489,8 @@ elseif T.class == "WARLOCK" then
 		T.merge[157736] = 348		-- Immolate (DoT)
 	end
 	if C.combattext.healing then
+		T.healfilter[198590] = true	-- Drain Soul
+		T.healfilter[205246] = true	-- Phantom Singularity
 		T.healfilter[63106] = true	-- Siphon Life
 		T.healfilter[108359] = true	-- Dark Regeneration
 	end
