@@ -93,6 +93,7 @@ L_MINIMAP_CALENDAR = "Calendar"
 L_MINIMAP_HEAL_LAYOUT = "Left-Click - Heal Layout"
 L_MINIMAP_DPS_LAYOUT = "Right-Click - DPS Layout"
 L_MINIMAP_BLIZZ_LAYOUT = "Middle-Click - Blizzard Layout"
+L_MINIMAP_ARTIFACT = "Right click to use"
 
 -- Chat
 L_CHAT_WHISPER = "From"

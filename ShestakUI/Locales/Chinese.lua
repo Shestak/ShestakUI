@@ -97,6 +97,7 @@ L_MINIMAP_CALENDAR = "日历"
 L_MINIMAP_HEAL_LAYOUT = "左鍵 - 治疗 布局"
 L_MINIMAP_DPS_LAYOUT = "右键 - 攻击 布局"
 L_MINIMAP_BLIZZ_LAYOUT = "中键 - 默认布局"
+L_MINIMAP_ARTIFACT = "Right click to use" -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "From"

@@ -97,6 +97,7 @@ L_MINIMAP_CALENDAR = "Calendrier"
 L_MINIMAP_HEAL_LAYOUT = "Clic-Gauche - Interface Heal"
 L_MINIMAP_DPS_LAYOUT = "Clic-Droit - Interface DPS"
 L_MINIMAP_BLIZZ_LAYOUT = "Clic-Centre - Interface Blizzard"
+L_MINIMAP_ARTIFACT = "Right click to use" -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "De"
