@@ -115,6 +115,8 @@ end)
 ----------------------------------------------------------------------------------------
 --	Artifact mouseover button
 ----------------------------------------------------------------------------------------
+if T.level < 99 then return end
+
 local artifact = CreateFrame("Button", "ArtifactButton", UIParent, "BankItemButtonGenericTemplate")
 artifact:StripTextures()
 artifact:SetTemplate("ClassColor")
