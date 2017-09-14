@@ -122,16 +122,18 @@ elseif T.class == "DEMONHUNTER" then
 elseif T.class == "DRUID" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
-		T.aoespam[774] = 3			-- Rejuvenation
-		T.aoespam[48438] = 3		-- Wild Growth
-		T.aoespam[8936] = 3			-- Regrowth
-		T.aoespam[33763] = 3		-- Lifebloom
+		T.aoespam[774] = 4			-- Rejuvenation
+		T.aoespam[48438] = 7		-- Wild Growth
+		T.aoespam[8936] = 4			-- Regrowth
+		T.aoespam[33763] = 4		-- Lifebloom
 		T.aoespam[157982] = 3		-- Tranquility
-		T.aoespam[81269] = 3		-- Wild Mushroom
+		T.aoespam[81269] = 4		-- Wild Mushroom
 		T.aoespam[124988] = 3		-- Nature's Vigil
 		T.aoespam[144876] = 3		-- Spark of Life (T16)
-		T.aoespam[155777] = 3		-- Rejuvenation (Germination)
+		T.aoespam[155777] = 4		-- Rejuvenation (Germination)
 		-- Damaging spells
+		T.aoespam[213771] = 0		-- Swipe
+		T.aoespam[192090] = 3		-- Thrash DoT
 		T.aoespam[164812] = 3		-- Moonfire
 		T.aoespam[164815] = 3		-- Sunfire
 		T.aoespam[191037] = 3		-- Starfall
@@ -139,7 +141,7 @@ elseif T.class == "DRUID" then
 		T.aoespam[155722] = 3		-- Rake
 		T.aoespam[33917] = 0		-- Mangle
 		T.aoespam[106785] = 0		-- Swipe
-		T.aoespam[77758] = 3		-- Thrash (Bear Form)
+		T.aoespam[77758] = 1		-- Thrash (Bear Form)
 		T.aoespam[106830] = 3		-- Thrash (Cat Form)
 		T.aoespam[1079] = 3			-- Rip
 		T.aoespam[124991] = 3		-- Nature's Vigil
