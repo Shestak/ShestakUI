@@ -646,6 +646,7 @@ if gold.enabled then
 				Currency(1220)					-- Order Resources
 				Currency(1226)					-- Nethershard
 				Currency(1342, false, true)		-- Legionfall War Supplies
+				Currency(1508, false, true)		-- Veiled Argunite
 			end
 
 			GameTooltip:AddLine(" ")
