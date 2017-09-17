@@ -120,7 +120,11 @@ if T.level < 99 then return end
 local artifact = CreateFrame("Button", "ArtifactButton", UIParent, "BankItemButtonGenericTemplate")
 artifact:StripTextures()
 artifact:SetTemplate("ClassColor")
-artifact:SetPoint("TOP", farm, "BOTTOM", 0, -1)
+if SwitchArch then
+	artifact:SetPoint("TOP", SwitchArch, "BOTTOM", 0, -1)
+else
+	artifact:SetPoint("TOP", farm, "BOTTOM", 0, -1)
+end
 artifact:SetSize(19, 19)
 artifact:SetAlpha(0)
 
