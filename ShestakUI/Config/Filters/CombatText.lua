@@ -453,7 +453,10 @@ elseif T.class == "SHAMAN" then
 	end
 elseif T.class == "WARLOCK" then
 	if C.combattext.merge_aoe_spam then
-		T.aoespam[243050] = 1		-- Searing Bolt
+		T.aoespam[234153] = 5		-- Drain Life
+		T.aoespam[196657] = 5		-- Shadow Bolt (Dimensional Rift)
+		T.aoespam[187394] = 5		-- Chaos Barrage (Dimensional Rift)
+		T.aoespam[243050] = 5		-- Searing Bolt (Dimensional Rift)
 		T.aoespam[196100] = 1		-- Demonic Power
 		T.aoespam[196448] = 3		-- Channel Demonfire
 		T.aoespam[199581] = 1		-- Soul Flame

@@ -26,7 +26,11 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
-
+			
+			-- Remorseless Winter
+			{spellID = 196770, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Hungering Rune Weapon
+			{spellID = 207127, unitID = "player", caster = "player", filter = "BUFF"},			
 			-- Bone Shield
 			{spellID = 195181, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vampiric Blood
@@ -146,6 +150,17 @@ C["filger_spells"] = {
 			-- Mark of the Heavy Hide (Armor)
 			{spellID = 228399, unitID = "player", caster = "all", filter = "BUFF"},
 		},
+		-- {
+			-- Name = "T_DEBUFF_ICON",
+			-- Direction = "RIGHT",
+			-- Mode = "ICON",
+			-- Interval = 3,
+			-- Alpha = 1,
+			-- IconSize = C.filger.buffs_size,
+			-- Position = {"TOP", T_DEBUFF_ICON_Anchor},
+
+
+		-- },
 		{
 			Name = "T_DE/BUFF_BAR",
 			Direction = "UP",
@@ -157,6 +172,10 @@ C["filger_spells"] = {
 			BarWidth = 186,
 			Position = {"LEFT", T_DE_BUFF_BAR_Anchor},
 
+			-- Festering Wound
+			{spellID = 194310, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Virulent Plague
+			{spellID = 191587, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Blood Plague
 			{spellID = 55078, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Fever
@@ -176,6 +195,20 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
+			-- Apocalypse
+			{spellID = 220143, filter = "CD"},
+			-- Sindragosa's Fury
+			{spellID = 190778, filter = "CD"},
+			-- Consumption
+			{spellID = 205223, filter = "CD"},
+			-- Bonestorm
+			{spellID = 194844, filter = "CD"},
+			-- Asphyxiate
+			{spellID = 221562, filter = "CD"},
+			-- Blinding Sleet
+			{spellID = 207167, filter = "CD"},
+			-- Hungering Rune Weapon
+			{spellID = 207127, filter = "CD"},
 			-- Mind Freeze
 			{spellID = 47528, filter = "CD"},
 			-- Strangulate
@@ -1790,6 +1823,12 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
+			-- Shield of Vengeance
+			{spellID = 184662, unitID = "player", caster = "player", filter = "BUFF"},			
+			-- Eye for an Eye
+			{spellID = 205191, unitID = "player", caster = "player", filter = "BUFF"},			
+			-- Crusade
+			{spellID = 231895, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Shield
 			{spellID = 642, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Guardian of Ancient Kings
@@ -1933,6 +1972,8 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
+			-- Eye of Tyr
+			{spellID = 209202, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Forbearance
 			{spellID = 25771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Judgment
@@ -1954,6 +1995,8 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
+			-- Eye of Tyr
+			{spellID = 209202, filter = "CD"},
 			-- Cleanse
 			{spellID = 4987, filter = "CD"},
 			-- Rebuke
@@ -2050,6 +2093,8 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
+			-- Voidform
+			{spellID = 194249, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dispersion
 			{spellID = 47585, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Infusion
@@ -2091,6 +2136,8 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
+			-- Lingering Insanity
+			{spellID = 197937, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadowy Insight
 			{spellID = 124430, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Light
@@ -2911,7 +2958,9 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
-
+			
+			-- Deadwind Harvester
+			{spellID = 216708, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unending Resolve
 			{spellID = 104773, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Harvest
