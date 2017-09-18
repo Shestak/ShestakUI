@@ -2961,7 +2961,9 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
-
+			
+			-- Deadwind Harvester
+			{spellID = 216708, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unending Resolve
 			{spellID = 104773, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Harvest
