@@ -150,24 +150,17 @@ C["filger_spells"] = {
 			-- Mark of the Heavy Hide (Armor)
 			{spellID = 228399, unitID = "player", caster = "all", filter = "BUFF"},
 		},
-		{
-			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
-			Mode = "ICON",
-			Interval = 3,
-			Alpha = 1,
-			IconSize = C.filger.buffs_size,
-			Position = {"TOP", T_DEBUFF_ICON_Anchor},
+		-- {
+			-- Name = "T_DEBUFF_ICON",
+			-- Direction = "RIGHT",
+			-- Mode = "ICON",
+			-- Interval = 3,
+			-- Alpha = 1,
+			-- IconSize = C.filger.buffs_size,
+			-- Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
-			-- Festering Wound
-			{spellID = 194310, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Virulent Plague
-			{spellID = 191587, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Blood Plague
-			{spellID = 55078, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Frost Fever
-			{spellID = 55095, unitID = "target", caster = "player", filter = "DEBUFF"},
-		},
+
+		-- },
 		{
 			Name = "T_DE/BUFF_BAR",
 			Direction = "UP",
@@ -179,6 +172,10 @@ C["filger_spells"] = {
 			BarWidth = 186,
 			Position = {"LEFT", T_DE_BUFF_BAR_Anchor},
 
+			-- Festering Wound
+			{spellID = 194310, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Virulent Plague
+			{spellID = 191587, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Blood Plague
 			{spellID = 55078, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Fever
