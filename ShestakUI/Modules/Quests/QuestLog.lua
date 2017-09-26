@@ -9,9 +9,10 @@ hooksecurefunc("QuestLogQuests_Update", function()
 			local link = GetQuestLink(button.questID)
 			if link then
 				local level = strmatch(link, "quest:%d+:(%d+)")
-				if level then
+				local title = button.Text:GetText()
+				if level and title then
 					local height = button.Text:GetHeight()
-					button.Text:SetFormattedText("[%d] %s", level, button.Text:GetText())
+					button.Text:SetFormattedText("[%d] %s", level, title)
 					button.Check:SetPoint("LEFT", button.Text, button.Text:GetWrappedWidth() + 2, 0)
 					button:SetHeight(button:GetHeight() - height + button.Text:GetHeight())
 				end
