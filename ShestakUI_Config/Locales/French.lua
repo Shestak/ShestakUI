@@ -376,7 +376,6 @@ L_GUI_UF_PLUGINS_GCD = "Scintillement du GCD"
 L_GUI_UF_PLUGINS_SWING = "Barre d'attaque automatique / tir automatique"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Barre de réputation"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Barre d'expérience"
-L_GUI_UF_PLUGINS_FRIENDSHIP_BAR = "Barre de réputation/amitié"
 L_GUI_UF_PLUGINS_ARTIFACT_BAR = "Artifact Power bar" -- Need review
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Lissage des barres"
 L_GUI_UF_PLUGINS_ENEMY_SPEC = "Afficher les talent de l'ennemi"

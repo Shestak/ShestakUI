@@ -46,7 +46,6 @@
 	<Script file="Modules\Experience.lua"/>
 	<Script file="Modules\FactionIcon.lua"/>
 	<Script file="Modules\Fader.lua"/>
-	<Script file="Modules\Friendship.lua"/>
 	<Script file="Modules\GCD.lua"/>
 	<Script file="Modules\HarmonyOrbs.lua"/>
 	<Script file="Modules\HolyPower.lua"/>

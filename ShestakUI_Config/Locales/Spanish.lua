@@ -376,7 +376,6 @@ L_GUI_UF_PLUGINS_GCD = "Brillo de tiempo de reutilización global"
 L_GUI_UF_PLUGINS_SWING = "Activar barra de oscilación"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Activar barra de reputación"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Activar barra de experiencia"
-L_GUI_UF_PLUGINS_FRIENDSHIP_BAR = "Friendship bar" -- Needs review
 L_GUI_UF_PLUGINS_ARTIFACT_BAR = "Artifact Power bar" -- Need review
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Activar barra de suavizado"
 L_GUI_UF_PLUGINS_ENEMY_SPEC = "Mostrar configuración de los talentos del enemigo"

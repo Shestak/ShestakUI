@@ -412,7 +412,6 @@ local function Local(o)
 	if o == "UIConfigunitframeplugins_swing" then o = L_GUI_UF_PLUGINS_SWING end
 	if o == "UIConfigunitframeplugins_reputation_bar" then o = L_GUI_UF_PLUGINS_REPUTATION_BAR end
 	if o == "UIConfigunitframeplugins_experience_bar" then o = L_GUI_UF_PLUGINS_EXPERIENCE_BAR end
-	if o == "UIConfigunitframeplugins_friendship_bar" then o = L_GUI_UF_PLUGINS_FRIENDSHIP_BAR end
 	if o == "UIConfigunitframeplugins_artifact_bar" then o = L_GUI_UF_PLUGINS_ARTIFACT_BAR end
 	if o == "UIConfigunitframeplugins_smooth_bar" then o = L_GUI_UF_PLUGINS_SMOOTH_BAR end
 	if o == "UIConfigunitframeplugins_enemy_spec" then o = L_GUI_UF_PLUGINS_ENEMY_SPEC end

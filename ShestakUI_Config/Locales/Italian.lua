@@ -376,7 +376,6 @@ L_GUI_UF_PLUGINS_GCD = "Scintilla del recupero globale"
 L_GUI_UF_PLUGINS_SWING = "Attiva la barra dei fendenti"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Attiva la barra reputazioni"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Attiva la barra esperienza"
-L_GUI_UF_PLUGINS_FRIENDSHIP_BAR = "Attiva la barra amicizia sul bersaglio"
 L_GUI_UF_PLUGINS_ARTIFACT_BAR = "Artifact Power bar" -- Need review
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Barra a cambiamento graduale"
 L_GUI_UF_PLUGINS_ENEMY_SPEC = "Mostra la specializzazione dei talenti del nemico"
