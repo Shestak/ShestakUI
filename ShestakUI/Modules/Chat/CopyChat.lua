@@ -4,7 +4,6 @@ if C.chat.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Copy Chat
 ----------------------------------------------------------------------------------------
-local lines = {}
 local frame = nil
 local editBox = nil
 local font = nil
@@ -27,10 +26,6 @@ local function CreatCopyFrame()
 	tinsert(UISpecialFrames, "CopyFrame")
 	frame:Hide()
 
-	local scrollArea = CreateFrame("ScrollFrame", "CopyScroll", frame, "UIPanelScrollFrameTemplate")
-	scrollArea:SetPoint("TOPLEFT", frame, "TOPLEFT", 8, -30)
-	scrollArea:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -30, 8)
-
 	editBox = CreateFrame("EditBox", "CopyBox", frame)
 	editBox:SetMultiLine(true)
 	editBox:SetMaxLetters(99999)
@@ -40,8 +35,6 @@ local function CreatCopyFrame()
 	editBox:SetWidth(500)
 	editBox:SetHeight(300)
 	editBox:SetScript("OnEscapePressed", function() frame:Hide() end)
-
-	scrollArea:SetScrollChild(editBox)
 
 	editBox:SetScript("OnTextSet", function(self)
 		local text = self:GetText()
@@ -53,10 +46,14 @@ local function CreatCopyFrame()
 		end
 	end)
 
+	local scrollArea = CreateFrame("ScrollFrame", "CopyScroll", frame, "UIPanelScrollFrameTemplate")
+	scrollArea:SetPoint("TOPLEFT", frame, "TOPLEFT", 8, -30)
+	scrollArea:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -27, 8)
+	scrollArea:SetScrollChild(editBox)
+	T.SkinScrollBar(CopyScrollScrollBar)
+
 	local close = CreateFrame("Button", "CopyCloseButton", frame, "UIPanelCloseButton")
 	T.SkinCloseButton(close)
-	scrollArea:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -27, 8)
-	T.SkinScrollBar(CopyScrollScrollBar)
 
 	font = frame:CreateFontString(nil, nil, "GameFontNormal")
 	font:Hide()
@@ -95,10 +92,10 @@ for i = 1, NUM_CHAT_WINDOWS do
 	button:SetTemplate("Transparent")
 	button:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 
-	local buttontexture = button:CreateTexture(nil, "BORDER")
-	buttontexture:SetPoint("CENTER")
-	buttontexture:SetTexture("Interface\\BUTTONS\\UI-GuildButton-PublicNote-Up")
-	buttontexture:SetSize(16, 16)
+	local icon = button:CreateTexture(nil, "BORDER")
+	icon:SetPoint("CENTER")
+	icon:SetTexture("Interface\\BUTTONS\\UI-GuildButton-PublicNote-Up")
+	icon:SetSize(16, 16)
 
 	button:SetScript("OnMouseUp", function(self, btn)
 		if btn == "RightButton" then
