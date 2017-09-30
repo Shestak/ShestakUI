@@ -50,7 +50,7 @@ if IsAddOnLoaded("Grid") or IsAddOnLoaded("Grid2") or IsAddOnLoaded("HealBot") o
 	C.raidframe.show_raid = false
 end
 
-if IsAddOnLoaded("TidyPlates") or IsAddOnLoaded("Aloft") or IsAddOnLoaded("Kui_Nameplates") or IsAddOnLoaded("rNamePlates") or IsAddOnLoaded("EKplates") or IsAddOnLoaded("bdNameplates") then
+if IsAddOnLoaded("TidyPlates") or IsAddOnLoaded("nPlates") or IsAddOnLoaded("Kui_Nameplates") or IsAddOnLoaded("rNamePlates") or IsAddOnLoaded("EKplates") or IsAddOnLoaded("bdNameplates") then
 	C.nameplate.enable = false
 end
 
@@ -69,13 +69,13 @@ if IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter") or IsAddOnLoaded("Basic
 	C.chat.enable = false
 end
 
-if IsAddOnLoaded("Quartz") or IsAddOnLoaded("AzCastBar") or IsAddOnLoaded("eCastingBar") then
+if IsAddOnLoaded("Quartz") or IsAddOnLoaded("AzCastBar") then
 	C.unitframe.unit_castbar = false
 	C.unitframe.plugins_swing = false
 	C.unitframe.plugins_gcd = false
 end
 
-if IsAddOnLoaded("Afflicted3") or IsAddOnLoaded("InterruptBar") or IsAddOnLoaded("alEnemyCD") then
+if IsAddOnLoaded("Afflicted3") or IsAddOnLoaded("InterruptBar") then
 	C.enemycooldown.enable = false
 end
 
@@ -87,11 +87,11 @@ if IsAddOnLoaded("Gladius") or IsAddOnLoaded("GladiusEx") then
 	C.unitframe.show_arena = false
 end
 
-if IsAddOnLoaded("Omen") or IsAddOnLoaded("sThreatMeter2") or IsAddOnLoaded("rThreat") then
+if IsAddOnLoaded("Omen") or IsAddOnLoaded("rThreat") then
 	C.threat.enable = false
 end
 
-if IsAddOnLoaded("DBM-SpellTimers") or IsAddOnLoaded("alRaidCD") then
+if IsAddOnLoaded("DBM-SpellTimers") then
 	C.raidcooldown.enable = false
 end
 
