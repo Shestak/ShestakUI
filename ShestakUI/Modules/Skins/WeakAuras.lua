@@ -25,40 +25,24 @@ frame:SetScript("OnEvent", function(self, event)
 			frame.bar.bg:SetTexture(C.media.texture)
 		end
 
-		if frame.stacks then -- Text 1 region
-			if select(2, frame.stacks:GetFont()) > 0 then
-				frame.stacks:SetFont(C.font.cooldown_timers_font, select(2, frame.stacks:GetFont()), C.font.cooldown_timers_font_style)
-			else
-				frame.stacks:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
-			end
+		if frame.stacks then
+			frame.stacks:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
 			frame.stacks:SetShadowOffset(C.media.cooldown_timers_font_shadow and 1 or 0, C.media.cooldown_timers_font_shadow and -1 or 0)
 		end
 
-		if frame.text2 then -- Text 2 region
-			if select(2, frame.text2:GetFont()) > 0 then
-				frame.text2:SetFont(C.font.cooldown_timers_font, select(2, frame.text2:GetFont()), C.font.cooldown_timers_font_style)
-			else
-				frame.text2:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
-			end
+		if frame.text then
+			frame.text:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
+			frame.text:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
+		end
+
+		if frame.text2 then
+			frame.text2:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
 			frame.text2:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
 		end
 
 		if frame.timer then
-			if select(2, frame.timer:GetFont()) > 0 then
-				frame.timer:SetFont(C.font.cooldown_timers_font, select(2, frame.timer:GetFont()), C.font.cooldown_timers_font_style)
-			else
-				frame.timer:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
-			end
+			frame.timer:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
 			frame.timer:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
-		end
-
-		if frame.text then
-			if select(2, frame.text:GetFont()) > 0 then
-				frame.text:SetFont(C.font.cooldown_timers_font, select(2, frame.text:GetFont()), C.font.cooldown_timers_font_style)
-			else
-				frame.text:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
-			end
-			frame.text:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
 		end
 	end
 
