@@ -274,6 +274,7 @@ C["tooltip"] = {
 	["unit_role"] = false,						-- Unit role in tooltip
 	["instance_lock"] = false,					-- Your instance lock status in tooltip
 	["item_transmogrify"] = false,				-- Displays items can not be transmogrified
+        ["overflow_fix"] = false,                               -- Disables the blank tooltip fix to stop C Stack Overflow errors
 }
 
 ----------------------------------------------------------------------------------------

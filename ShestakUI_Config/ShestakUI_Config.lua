@@ -247,6 +247,7 @@ local function Local(o)
 	if o == "UIConfigtooltipunit_role" then o = L_GUI_TOOLTIP_UNIT_ROLE end
 	if o == "UIConfigtooltipinstance_lock" then o = L_GUI_TOOLTIP_INSTANCE_LOCK end
 	if o == "UIConfigtooltipitem_transmogrify" then o = L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY end
+	if o == "UIConfigtooltipoverflow_fix" then o = L_GUI_TOOLTIP_OVERFLOW_FIX end
 
 	-- Chat options
 	if o == "UIConfigchat" then o = SOCIALS end

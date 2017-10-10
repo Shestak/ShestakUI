@@ -3,33 +3,34 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Fix blank tooltip
 ----------------------------------------------------------------------------------------
-local FixTooltip = CreateFrame("Frame")
-FixTooltip:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
-FixTooltip:RegisterEvent("ACTIONBAR_PAGE_CHANGED")
-FixTooltip:SetScript("OnEvent", function()
-	local done
-	GameTooltip:HookScript("OnTooltipCleared", function(self)
-		if not done and self:NumLines() == 0 then
-			self:Hide()
-			done = true
-		end
-	end)
-end)
-
-local FixTooltipBags = CreateFrame("Frame")
-FixTooltipBags:RegisterEvent("BAG_UPDATE_DELAYED")
-FixTooltipBags:SetScript("OnEvent", function()
-	local done
-	if StuffingFrameBags and StuffingFrameBags:IsShown() then
+if C.tooltip.overflow_fix == false then
+	local FixTooltip = CreateFrame("Frame")
+	FixTooltip:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
+	FixTooltip:RegisterEvent("ACTIONBAR_PAGE_CHANGED")
+	FixTooltip:SetScript("OnEvent", function()
+		local done
 		GameTooltip:HookScript("OnTooltipCleared", function(self)
 			if not done and self:NumLines() == 0 then
 				self:Hide()
 				done = true
 			end
 		end)
-	end
-end)
+	end)
 
+	local FixTooltipBags = CreateFrame("Frame")
+	FixTooltipBags:RegisterEvent("BAG_UPDATE_DELAYED")
+	FixTooltipBags:SetScript("OnEvent", function()
+		local done
+		if StuffingFrameBags and StuffingFrameBags:IsShown() then
+			GameTooltip:HookScript("OnTooltipCleared", function(self)
+				if not done and self:NumLines() == 0 then
+					self:Hide()
+					done = true
+				end
+			end)
+		end
+	end)
+end
 ----------------------------------------------------------------------------------------
 --	Fix RemoveTalent() taint
 ----------------------------------------------------------------------------------------
