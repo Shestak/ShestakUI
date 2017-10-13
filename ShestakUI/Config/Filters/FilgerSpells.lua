@@ -776,6 +776,8 @@ C["filger_spells"] = {
 			{spellID = 164815, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Stellar Flare
 			{spellID = 202347, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Ashmane's Frenzy
+			{spellID = 210722, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Rake
 			{spellID = 155722, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
 			-- Rip
@@ -883,6 +885,8 @@ C["filger_spells"] = {
 			{spellID = 124974, filter = "CD"},
 			-- Berserk
 			{spellID = 106951, filter = "CD", absID = true},
+			-- Ashmane's Frenzy
+			{spellID = 210722, filter = "CD"},
 			-- Incarnation: Chosen of Elune
 			{spellID = 102560, filter = "CD"},
 			-- Incarnation: King of the Jungle
