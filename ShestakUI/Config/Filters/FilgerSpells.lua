@@ -3388,6 +3388,12 @@ C["filger_spells"] = {
 			{spellID = 97462, filter = "CD"},
 			-- Shield Wall
 			{spellID = 871, filter = "CD"},
+			-- Odyn's Fury
+			{spellID = 205545, filter = "CD"},
+			-- Battle Cry
+			{spellID = 1719, filter = "CD"},
+			-- Avatar
+			{spellID = 107574, filter = "CD"},
 
 			-- PvP
 			-- Honorable Medallion
