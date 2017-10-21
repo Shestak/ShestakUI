@@ -4413,6 +4413,9 @@ C["filger_spells"] = {
 			-- Mythic
 			--Sanguine Ichor
 			{spellID = 226510, unitID = "target", caster = "all", filter = "BUFF"},
+			-- trinket
+			--Sea Star of the Depthmother
+			{spellID = 242467, unitID = "target", caster = "all", filter = "BUFF"},
 		},
 	},
 }
