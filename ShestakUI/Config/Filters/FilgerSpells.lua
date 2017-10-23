@@ -26,11 +26,11 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
-			
+
 			-- Remorseless Winter
 			{spellID = 196770, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hungering Rune Weapon
-			{spellID = 207127, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 207127, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bone Shield
 			{spellID = 195181, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vampiric Blood
@@ -754,6 +754,8 @@ C["filger_spells"] = {
 			{spellID = 215198, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Solemnity (Haste, Proc) [Flask of the Solemn Night]
 			{spellID = 224347, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ocean's Embrace (Healing, Proc) [Sea Star of the Depthmother]
+			{spellID = 242467, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- Mark of the Claw (Crit and Haste)
@@ -1666,6 +1668,8 @@ C["filger_spells"] = {
 			{spellID = 215198, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Solemnity (Haste, Proc) [Flask of the Solemn Night]
 			{spellID = 224347, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ocean's Embrace (Healing, Proc) [Sea Star of the Depthmother]
+			{spellID = 242467, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- Mark of the Claw (Crit and Haste)
@@ -1828,9 +1832,9 @@ C["filger_spells"] = {
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Shield of Vengeance
-			{spellID = 184662, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 184662, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Eye for an Eye
-			{spellID = 205191, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 205191, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Crusade
 			{spellID = 231895, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Shield
@@ -1960,6 +1964,8 @@ C["filger_spells"] = {
 			{spellID = 215198, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Solemnity (Haste, Proc) [Flask of the Solemn Night]
 			{spellID = 224347, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ocean's Embrace (Healing, Proc) [Sea Star of the Depthmother]
+			{spellID = 242467, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- Mark of the Claw (Crit and Haste)
@@ -2191,6 +2197,8 @@ C["filger_spells"] = {
 			{spellID = 215198, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Solemnity (Haste, Proc) [Flask of the Solemn Night]
 			{spellID = 224347, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Ocean's Embrace (Healing, Proc) [Sea Star of the Depthmother]
+			{spellID = 242467, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- Mark of the Claw (Crit and Haste)
@@ -2727,6 +2735,12 @@ C["filger_spells"] = {
 			-- Flametongue
 			{spellID = 194084, unitID = "player", caster = "player", filter = "BUFF"},
 
+			-- Item Sets
+			-- Tidal Force (T20 2p Proc)
+			{spellID = 246729, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Spirit Rain (T20 4p Proc)
+			{spellID = 246771, unitID = "player", caster = "player", filter = "BUFF"},
+
 			-- Trinkets
 			-- Alchemy Stones
 			-- Agility
@@ -2796,10 +2810,6 @@ C["filger_spells"] = {
 			{spellID = 215198, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Solemnity (Haste, Proc) [Flask of the Solemn Night]
 			{spellID = 224347, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Tidal Force (T20 2p Proc)
-			{spellID = 246729, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Spirit Rain (T20 4p Proc)
-			{spellID = 246771, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
 			-- Mark of the Claw (Crit and Haste)
@@ -2962,7 +2972,7 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
-			
+
 			-- Deadwind Harvester
 			{spellID = 216708, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unending Resolve
@@ -4411,7 +4421,7 @@ C["filger_spells"] = {
 			{spellID = 167152, unitID = "target", caster = "all", filter = "BUFF"},
 
 			-- Mythic
-			--Sanguine Ichor
+			-- Sanguine Ichor
 			{spellID = 226510, unitID = "target", caster = "all", filter = "BUFF"},
 		},
 	},
