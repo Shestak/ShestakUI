@@ -3481,7 +3481,9 @@ C["filger_spells"] = {
 			{spellID = 161495, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Wand of Lightning Shield
 			{spellID = 171725, unitID = "player", caster = "all", filter = "BUFF"},
-
+			-- trinket
+			--Sea Star of the Depthmother
+			{spellID = 242467, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Potions: Legion
 			-- Potion of Prolonged Power
 			{spellID = 229206, unitID = "player", caster = "player", filter = "BUFF"},
