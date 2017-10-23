@@ -116,8 +116,8 @@ T.RaidDebuffs = {
 	[SpellName(236515)] = 3,	-- Shattering Scream
 	[SpellName(236241)] = 3,	-- Soul Rot
 	-- Maiden of Vigilance
-	[SpellName(235213)] = 4,	-- Light Infusion
-	[SpellName(235240)] = 4,	-- Fel Infusion
+	-- [SpellName(235213)] = 4,	-- Light Infusion
+	-- [SpellName(235240)] = 4,	-- Fel Infusion
 	[SpellName(240209)] = 3,	-- Unstable Soul
 	-- Fallen Avatar
 	[SpellName(236494)] = 3,	-- Desolate
