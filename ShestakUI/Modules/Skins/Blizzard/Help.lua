@@ -9,26 +9,21 @@ local function LoadSkin()
 		"HelpFrameLeftInset",
 		"HelpFrameMainInset",
 		"HelpFrameKnowledgebase",
-		"HelpFrameKnowledgebaseErrorFrame",
-		"ReportPlayerNameDialogCommentFrame",
-		"ReportCheatingDialogCommentFrame"
+		"HelpFrameKnowledgebaseErrorFrame"
 	}
 
 	local buttons = {
 		"HelpFrameAccountSecurityOpenTicket",
+		"HelpFrameOpenTicketHelpOpenTicket",
 		"HelpFrameKnowledgebaseSearchButton",
 		"HelpFrameKnowledgebaseNavBarHomeButton",
 		"HelpFrameCharacterStuckStuck",
-		--"GMChatOpenLog",
 		"HelpFrameGM_ResponseNeedMoreHelp",
 		"HelpFrameGM_ResponseCancel",
 		"HelpFrameSubmitSuggestionSubmit",
 		"HelpFrameReportBugSubmit",
 		"HelpFrameButton16",
-		"ReportCheatingDialogCancelButton",
-		"ReportCheatingDialogReportButton",
-		"ReportPlayerNameDialogReportButton",
-		"ReportPlayerNameDialogCancelButton"
+		"GMChatOpenLog"
 	}
 
 	HelpFrameKnowledgebaseNavBarHomeButton:StripTextures(false)
@@ -85,7 +80,7 @@ local function LoadSkin()
 		end
 
 		if t then
-			t:SetTexture(T.color.r, T.color.g, T.color.b, 0.3)
+			t:SetColorTexture(T.color.r, T.color.g, T.color.b, 0.3)
 			t:SetPoint("TOPLEFT", b, 2, -2)
 			t:SetPoint("BOTTOMRIGHT", b, -2, 2)
 		end
@@ -100,7 +95,7 @@ local function LoadSkin()
 		b.text:SetFont(C.media.normal_font, 13)
 
 		if t then
-			t:SetTexture(T.color.r, T.color.g, T.color.b, 0.3)
+			t:SetColorTexture(T.color.r, T.color.g, T.color.b, 0.3)
 			t:SetPoint("TOPLEFT", b, 2, -2)
 			t:SetPoint("BOTTOMRIGHT", b, -2, 2)
 		end
@@ -157,12 +152,6 @@ local function LoadSkin()
 	HelpFrameCharacterStuckHearthstone.IconTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 	HelpFrameCharacterStuckHearthstone.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	HelpFrameCharacterStuckHearthstone.SetHighlightTexture = T.dummy
-
-	-- Report frames
-	ReportPlayerNameDialog:StripTextures()
-	ReportPlayerNameDialog:CreateBackdrop("Transparent")
-	ReportCheatingDialog:StripTextures()
-	ReportCheatingDialog:CreateBackdrop("Transparent")
 
 	for i = 1, HelpFrameGM_Response:GetNumChildren() do
 		local child = select(i, HelpFrameGM_Response:GetChildren())

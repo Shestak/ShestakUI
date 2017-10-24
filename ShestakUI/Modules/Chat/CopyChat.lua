@@ -4,9 +4,9 @@ if C.chat.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Copy Chat
 ----------------------------------------------------------------------------------------
-local lines = {}
 local frame = nil
 local editBox = nil
+local font = nil
 local isf = nil
 local sizes = {
 	":14:14",
@@ -26,10 +26,6 @@ local function CreatCopyFrame()
 	tinsert(UISpecialFrames, "CopyFrame")
 	frame:Hide()
 
-	local scrollArea = CreateFrame("ScrollFrame", "CopyScroll", frame, "UIPanelScrollFrameTemplate")
-	scrollArea:SetPoint("TOPLEFT", frame, "TOPLEFT", 8, -30)
-	scrollArea:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -30, 8)
-
 	editBox = CreateFrame("EditBox", "CopyBox", frame)
 	editBox:SetMultiLine(true)
 	editBox:SetMaxLetters(99999)
@@ -39,8 +35,6 @@ local function CreatCopyFrame()
 	editBox:SetWidth(500)
 	editBox:SetHeight(300)
 	editBox:SetScript("OnEscapePressed", function() frame:Hide() end)
-
-	scrollArea:SetScrollChild(editBox)
 
 	editBox:SetScript("OnTextSet", function(self)
 		local text = self:GetText()
@@ -52,10 +46,17 @@ local function CreatCopyFrame()
 		end
 	end)
 
+	local scrollArea = CreateFrame("ScrollFrame", "CopyScroll", frame, "UIPanelScrollFrameTemplate")
+	scrollArea:SetPoint("TOPLEFT", frame, "TOPLEFT", 8, -30)
+	scrollArea:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -27, 8)
+	scrollArea:SetScrollChild(editBox)
+	T.SkinScrollBar(CopyScrollScrollBar)
+
 	local close = CreateFrame("Button", "CopyCloseButton", frame, "UIPanelCloseButton")
 	T.SkinCloseButton(close)
-	scrollArea:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -27, 8)
-	T.SkinScrollBar(CopyScrollScrollBar)
+
+	font = frame:CreateFontString(nil, nil, "GameFontNormal")
+	font:Hide()
 
 	isf = true
 end
@@ -65,13 +66,17 @@ local scrollDown = function()
 end
 
 local function Copy(cf)
+	if not isf then CreatCopyFrame() end
 	local text = ""
 	for i = 1, cf:GetNumMessages() do
-		text = text..cf:GetMessageInfo(i).."\n"
+		local line = cf:GetMessageInfo(i)
+		font:SetFormattedText("%s\n", line)
+		local cleanLine = font:GetText() or ""
+		text = text..cleanLine
 	end
-	text = text:gsub("|[Tt]Interface\\TargetingFrame\\UI%-RaidTargetingIcon_(%d):0|[Tt]", "{rt%1}")
-	text = text:gsub("|[Tt][^|]+|[Tt]", "")
-	if not isf then CreatCopyFrame() end
+	text = text:gsub("|T[^\\]+\\[^\\]+\\[Uu][Ii]%-[Rr][Aa][Ii][Dd][Tt][Aa][Rr][Gg][Ee][Tt][Ii][Nn][Gg][Ii][Cc][Oo][Nn]_(%d)[^|]+|t", "{rt%1}")
+	text = text:gsub("|T13700([1-8])[^|]+|t", "{rt%1}")
+	text = text:gsub("|T[^|]+|t", "")
 	if frame:IsShown() then frame:Hide() return end
 	frame:Show()
 	editBox:SetText(text)
@@ -87,10 +92,10 @@ for i = 1, NUM_CHAT_WINDOWS do
 	button:SetTemplate("Transparent")
 	button:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 
-	local buttontexture = button:CreateTexture(nil, "BORDER")
-	buttontexture:SetPoint("CENTER")
-	buttontexture:SetTexture("Interface\\BUTTONS\\UI-GuildButton-PublicNote-Up")
-	buttontexture:SetSize(16, 16)
+	local icon = button:CreateTexture(nil, "BORDER")
+	icon:SetPoint("CENTER")
+	icon:SetTexture("Interface\\BUTTONS\\UI-GuildButton-PublicNote-Up")
+	icon:SetSize(16, 16)
 
 	button:SetScript("OnMouseUp", function(self, btn)
 		if btn == "RightButton" then

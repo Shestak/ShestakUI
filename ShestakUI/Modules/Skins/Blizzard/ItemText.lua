@@ -14,6 +14,7 @@ local function LoadSkin()
 	T.SkinCloseButton(ItemTextFrameCloseButton, ItemTextFrame.backdrop)
 	T.SkinNextPrevButton(ItemTextPrevPageButton)
 	T.SkinNextPrevButton(ItemTextNextPageButton)
+	T.SkinScrollBar(ItemTextScrollFrameScrollBar)
 	ItemTextPageText:SetTextColor(1, 1, 1)
 	ItemTextPageText.SetTextColor = T.dummy
 end

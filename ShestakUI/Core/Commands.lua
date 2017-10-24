@@ -24,16 +24,6 @@ SlashCmdList.ROLECHECK = function() InitiateRolePoll() end
 SLASH_ROLECHECK1 = "/role"
 SLASH_ROLECHECK2 = "/кщду"
 
-SlashCmdList.SHOWCLOAK = function() if ShowingCloak() then ShowCloak(false) else ShowCloak() end end
-SLASH_SHOWCLOAK1 = "/showcloak"
-SLASH_SHOWCLOAK2 = "/sc"
-SLASH_SHOWCLOAK3 = "/ыс"
-
-SlashCmdList.SHOWHELM = function() if ShowingHelm() then ShowHelm(false) else ShowHelm() end end
-SLASH_SHOWHELM1 = "/showhelm"
-SLASH_SHOWHELM2 = "/sh"
-SLASH_SHOWHELM3 = "/ыр"
-
 SlashCmdList.CLEARCOMBAT = function() CombatLogClearEntries() end
 SLASH_CLEARCOMBAT1 = "/clc"
 SLASH_CLEARCOMBAT2 = "/сдс"
@@ -122,9 +112,9 @@ SLASH_GROUPDISBAND2 = "/кв"
 ----------------------------------------------------------------------------------------
 SlashCmdList.PARTYTORAID = function()
 	if GetNumGroupMembers() > 0 then
-		if UnitInRaid("player") and IsGroupLeader() then
+		if UnitInRaid("player") and (UnitIsGroupLeader("player")) then
 			ConvertToParty()
-		elseif UnitInParty("player") and IsGroupLeader() then
+		elseif UnitInParty("player") and (UnitIsGroupLeader("player")) then
 			ConvertToRaid()
 		end
 	else
@@ -153,10 +143,11 @@ SLASH_INSTTELEPORT2 = "/еудузщке"
 ----------------------------------------------------------------------------------------
 --	Spec switching(by Monolit)
 ----------------------------------------------------------------------------------------
-SlashCmdList.SPEC = function()
+SlashCmdList.SPEC = function(spec)
 	if T.level >= SHOW_TALENT_LEVEL then
-		local spec = GetActiveSpecGroup()
-		if spec == 1 then SetActiveSpecGroup(2) elseif spec == 2 then SetActiveSpecGroup(1) end
+		if GetSpecialization() ~= tonumber(spec) then
+			SetSpecialization(spec)
+		end
 	else
 		print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")
 	end
@@ -293,24 +284,25 @@ SLASH_CLEAR_CHAT2 = "/сдуфк"
 --	Test Blizzard Alerts
 ----------------------------------------------------------------------------------------
 SlashCmdList.TEST_ACHIEVEMENT = function()
-	PlaySound("LFG_Rewards")
+	PlaySound(SOUNDKIT.LFG_REWARDS)
 	if not AchievementFrame then
 		AchievementFrame_LoadUI()
 	end
-	AchievementAlertFrame_ShowAlert(4912)
-	AchievementAlertFrame_ShowAlert(6193)
-	GuildChallengeAlertFrame_ShowAlert(3, 2, 5)
-	CriteriaAlertFrame_ShowAlert(6301, 29918)
-	MoneyWonAlertFrame_ShowAlert(9999999)
-	LootWonAlertFrame_ShowAlert(select(2, GetItemInfo(6948)) or GetInventoryItemLink("player", 5), -1, 1, 100, 70)
-	ChallengeModeAlertFrame_ShowAlert()
-	AlertFrame_AnimateIn(ScenarioAlertFrame1)
-	AlertFrame_AnimateIn(GarrisonMissionAlertFrame)
-	StorePurchaseAlertFrame_ShowAlert(select(3, GetSpellInfo(2060)), GetSpellInfo(2060), 2060)
-	LootUpgradeFrame_ShowAlert(select(2, GetItemInfo(6948)) or GetInventoryItemLink("player", 5), 1, 1, 1)
-	GarrisonBuildingAlertFrame_ShowAlert(T.name)
-	-- AlertFrame_AnimateIn(GarrisonFollowerAlertFrame)
-	AlertFrame_FixAnchors()
+	AchievementAlertSystem:AddAlert(112)
+	CriteriaAlertSystem:AddAlert(9023, "Doing great!")
+	GuildChallengeAlertSystem:AddAlert(3, 2, 5)
+	InvasionAlertSystem:AddAlert(678, "Legion", true, 1, 1)
+	-- WorldQuestCompleteAlertSystem:AddAlert(112)
+	-- GarrisonFollowerAlertSystem:AddAlert(204, "Ben Stone", 90, 3, false)
+	GarrisonShipFollowerAlertSystem:AddAlert(592, "Ship", "Transport", "GarrBuilding_Barracks_1_H", 3, 2, 1)
+	GarrisonBuildingAlertSystem:AddAlert("Barracks")
+	LegendaryItemAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832:0:0:0:0:0:0:0:0:0:0\124h[Brutality Blade]\124h\124r")
+	LootAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832::::::::::\124h[Brutality Blade]\124h\124r", 1, 1, 100, 2, false, false, 0, false, false)
+	LootUpgradeAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832::::::::::\124h[Brutality Blade]\124h\124r", 1, 1, 1, nil, nil, false)
+	MoneyWonAlertSystem:AddAlert(815)
+	StorePurchaseAlertSystem:AddAlert("\124cffa335ee\124Hitem:180545::::::::::\124h[Mystic Runesaber]\124h\124r", "", "", 214)
+	DigsiteCompleteAlertSystem:AddAlert(1)
+	NewRecipeLearnedAlertSystem:AddAlert(204)
 end
 SLASH_TEST_ACHIEVEMENT1 = "/tach"
 SLASH_TEST_ACHIEVEMENT2 = "/ефср"
@@ -350,9 +342,9 @@ SlashCmdList.GRIDONSCREEN = function()
 		for i = 0, 128 do
 			local texture = grid:CreateTexture(nil, "BACKGROUND")
 			if i == 64 then
-				texture:SetTexture(1, 0, 0, 0.8)
+				texture:SetColorTexture(1, 0, 0, 0.8)
 			else
-				texture:SetTexture(0, 0, 0, 0.8)
+				texture:SetColorTexture(0, 0, 0, 0.8)
 			end
 			texture:SetPoint("TOPLEFT", grid, "TOPLEFT", i * width - 1, 0)
 			texture:SetPoint("BOTTOMRIGHT", grid, "BOTTOMLEFT", i * width, 0)
@@ -360,9 +352,9 @@ SlashCmdList.GRIDONSCREEN = function()
 		for i = 0, 72 do
 			local texture = grid:CreateTexture(nil, "BACKGROUND")
 			if i == 36 then
-				texture:SetTexture(1, 0, 0, 0.8)
+				texture:SetColorTexture(1, 0, 0, 0.8)
 			else
-				texture:SetTexture(0, 0, 0, 0.8)
+				texture:SetColorTexture(0, 0, 0, 0.8)
 			end
 			texture:SetPoint("TOPLEFT", grid, "TOPLEFT", 0, -i * height)
 			texture:SetPoint("BOTTOMRIGHT", grid, "TOPRIGHT", 0, -i * height - 1)

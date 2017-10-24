@@ -193,7 +193,7 @@ local defaultframelevel = 0
 local function updateTextures(button, checkable)
 	if checkable then
 		local texture = button:CreateTexture(nil, nil, self)
-		texture:SetTexture(1, 1, 1, 0.3)
+		texture:SetColorTexture(1, 1, 1, 0.3)
 		texture:SetPoint("TOPLEFT", button, 2, -2)
 		texture:SetPoint("BOTTOMRIGHT", button, -2, 2)
 		button:SetCheckedTexture(texture)

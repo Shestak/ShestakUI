@@ -2,7 +2,7 @@
 if C.misc.armory_link ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)
+--	Add Armory link in UnitPopupMenus (It breaks set focus)
 ----------------------------------------------------------------------------------------
 -- Find the Realm and Local
 local realmName = string.lower(GetRealmName())

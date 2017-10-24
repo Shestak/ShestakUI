@@ -129,7 +129,7 @@ end
 local function StripTextures(object, kill)
 	for i = 1, object:GetNumRegions() do
 		local region = select(i, object:GetRegions())
-		if region:GetObjectType() == "Texture" then
+		if region and region:GetObjectType() == "Texture" then
 			if kill then
 				region:Kill()
 			else
@@ -161,7 +161,7 @@ local function StyleButton(button, t, size)
 	if not size then size = 2 end
 	if button.SetHighlightTexture and not button.hover then
 		local hover = button:CreateTexture(nil, nil, self)
-		hover:SetTexture(1, 1, 1, 0.3)
+		hover:SetColorTexture(1, 1, 1, 0.3)
 		hover:SetPoint("TOPLEFT", button, size, -size)
 		hover:SetPoint("BOTTOMRIGHT", button, -size, size)
 		button.hover = hover
@@ -170,7 +170,7 @@ local function StyleButton(button, t, size)
 
 	if not t and button.SetPushedTexture and not button.pushed then
 		local pushed = button:CreateTexture(nil, nil, self)
-		pushed:SetTexture(0.9, 0.8, 0.1, 0.3)
+		pushed:SetColorTexture(0.9, 0.8, 0.1, 0.3)
 		pushed:SetPoint("TOPLEFT", button, size, -size)
 		pushed:SetPoint("BOTTOMRIGHT", button, -size, size)
 		button.pushed = pushed
@@ -179,7 +179,7 @@ local function StyleButton(button, t, size)
 
 	if button.SetCheckedTexture and not button.checked then
 		local checked = button:CreateTexture(nil, nil, self)
-		checked:SetTexture(0, 1, 0, 0.3)
+		checked:SetColorTexture(0, 1, 0, 0.3)
 		checked:SetPoint("TOPLEFT", button, size, -size)
 		checked:SetPoint("BOTTOMRIGHT", button, -size, size)
 		button.checked = checked
@@ -299,10 +299,14 @@ addapi(object:CreateFontString())
 
 object = EnumerateFrames()
 while object do
-	if not handled[object:GetObjectType()] then
+	if not object:IsForbidden() and not handled[object:GetObjectType()] then
 		addapi(object)
 		handled[object:GetObjectType()] = true
 	end
 
 	object = EnumerateFrames(object)
 end
+
+-- Hacky fix for issue on 7.1 PTR where scroll frames no longer seem to inherit the methods from the "Frame" widget
+local scrollFrame = CreateFrame("ScrollFrame")
+addapi(scrollFrame)

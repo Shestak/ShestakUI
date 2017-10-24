@@ -134,14 +134,4 @@ if C.skins.blizzard_frames == true then
 	OpenAllButton2:SkinButton()
 end
 
-----------------------------------------------------------------------------------------
---	Inbox scroll
-----------------------------------------------------------------------------------------
-MailFrame:EnableMouseWheel(true)
-MailFrame:SetScript("OnMouseWheel", function(self, d)
-	if d > 0 then
-		InboxPrevPageButton:Click()
-	elseif d < 0 then
-		InboxNextPageButton:Click()
-	end
-end)
+OpenAllMail:Hide() -- 7.2 new button

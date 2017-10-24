@@ -32,7 +32,7 @@ end
 local Enable = function(self)
 	local assistant = self.Assistant
 	if(assistant) then
-		self:RegisterEvent("GROUP_ROSTER_UPDATE", Path)
+		self:RegisterEvent("GROUP_ROSTER_UPDATE", Path, true)
 
 		if(assistant:IsObjectType"Texture" and not assistant:GetTexture()) then
 			assistant:SetTexture[[Interface\GroupFrame\UI-Group-AssistantIcon]]
@@ -49,6 +49,7 @@ local Disable = function(self)
 	local assistant = self.Assistant
 	if(assistant) then
 		self:UnregisterEvent("GROUP_ROSTER_UPDATE", Path)
+		assistant:Hide()
 	end
 end
 

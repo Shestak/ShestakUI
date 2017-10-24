@@ -6,7 +6,7 @@
 local function InstallUI()
 	-- Don't need to set CVar multiple time
 	SetCVar("screenshotQuality", 8)
-	SetCVar("cameraDistanceMax", 50)
+	SetCVar("cameraDistanceMaxZoomFactor", 2.6)
 	SetCVar("showTutorials", 0)
 	SetCVar("gameTip", "0")
 	SetCVar("UberTooltips", 1)
@@ -14,19 +14,17 @@ local function InstallUI()
 	SetCVar("removeChatDelay", 1)
 	SetCVar("WholeChatWindowClickable", 0)
 	SetCVar("WhisperMode", "inline")
-	SetCVar("BnWhisperMode", "inline")
 	SetCVar("colorblindMode", 0)
 	SetCVar("lootUnderMouse", 0)
 	SetCVar("autoLootDefault", 1)
 	SetCVar("RotateMinimap", 0)
-	SetCVar("ConsolidateBuffs", 0)
 	SetCVar("autoQuestProgress", 1)
-	SetCVar("scriptErrors", 0)
+	SetCVar("scriptErrors", 1)
 	SetCVar("taintLog", 0)
 	SetCVar("buffDurations", 1)
-	SetCVar("enableCombatText", 1)
 	SetCVar("autoOpenLootHistory", 0)
 	SetCVar("lossOfControl", 0)
+	SetCVar("nameplateShowSelf", 0)
 
 	-- Setting chat frames
 	if C.chat.enable == true and not (IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter")) then
@@ -215,7 +213,7 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		SetCVar("uiScale", C.general.uiscale)
 
 		-- Hack for 4K and WQHD Resolution
-		local customScale = min(2, max(0.32, 768 / string.match(GetCVar("gxResolution"), "%d+x(%d+)")))
+		local customScale = min(2, max(0.32, 768 / string.match(T.resolution, "%d+x(%d+)")))
 		if C.general.auto_scale == true and customScale < 0.64 then
 			UIParent:SetScale(customScale)
 		elseif customScale < 0.64 then

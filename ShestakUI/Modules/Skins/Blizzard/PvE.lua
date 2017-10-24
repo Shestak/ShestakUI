@@ -150,7 +150,6 @@ local function LoadSkin()
 			item.border.backdrop:SetPoint("TOPLEFT", item.Icon, "TOPLEFT", -2, 2)
 			item.border.backdrop:SetPoint("BOTTOMRIGHT", item.Icon, "BOTTOMRIGHT", 2, -2)
 
-			item.Icon:SetPoint("TOPLEFT", 2, -2)
 			item.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			item.Icon:SetDrawLayer("OVERLAY")
 			item.Icon:SetParent(item.border)
@@ -175,7 +174,6 @@ local function LoadSkin()
 		_G[button].border.backdrop:SetPoint("TOPLEFT", _G[button.."IconTexture"], "TOPLEFT", -2, 2)
 		_G[button].border.backdrop:SetPoint("BOTTOMRIGHT", _G[button.."IconTexture"], "BOTTOMRIGHT", 2, -2)
 
-		_G[button.."IconTexture"]:SetPoint("TOPLEFT", 2, -2)
 		_G[button.."IconTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		_G[button.."IconTexture"]:SetDrawLayer("OVERLAY")
 		_G[button.."IconTexture"]:SetParent(_G[button].border)
@@ -201,7 +199,7 @@ local function LoadSkin()
 	LFGListApplicationDialog:SetTemplate("Transparent")
 	PVEFrame:CreateBackdrop("Transparent")
 	PVEFrame.backdrop:SetAllPoints()
-	PVEFrame.shadows:Hide()
+	PVEFrame.shadows:Kill()
 	ScenarioQueueFrame.Bg:Hide()
 
 	LFDQueueFrameNoLFDWhileLFR:CreateBackdrop("Overlay")
@@ -248,16 +246,46 @@ local function LoadSkin()
 
 	LFGListFrame.CategorySelection.FindGroupButton:SkinButton()
 	LFGListFrame.CategorySelection.StartGroupButton:SkinButton()
-	LFGListFrame.SearchPanel.RefreshButton:SkinButton()
-	LFGListFrame.SearchPanel.FilterButton:SkinButton()
 	LFGListFrame.SearchPanel.BackButton:SkinButton()
 	LFGListFrame.SearchPanel.SignUpButton:SkinButton()
 	LFGListFrame.SearchPanel.ScrollFrame.StartGroupButton:SkinButton()
-
+	LFGListFrame.SearchPanel.RefreshButton:SkinButton()
 	LFGListFrame.SearchPanel.RefreshButton:SetSize(24, 24)
 	LFGListFrame.SearchPanel.RefreshButton.Icon:SetPoint("CENTER")
-
+	LFGListFrame.SearchPanel.FilterButton:SkinButton()
 	LFGListFrame.SearchPanel.FilterButton:SetPoint("LEFT", LFGListFrame.SearchPanel.SearchBox, "RIGHT", 5, 0)
+
+	hooksecurefunc("LFGListSearchPanel_UpdateAutoComplete", function(self)
+		for i = 1, LFGListFrame.SearchPanel.AutoCompleteFrame:GetNumChildren() do
+			local child = select(i, LFGListFrame.SearchPanel.AutoCompleteFrame:GetChildren())
+			if child and not child.isSkinned and child:GetObjectType() == "Button" then
+				child:SkinButton()
+				child.isSkinned = true
+			end
+		end
+
+		local text = self.SearchBox:GetText()
+		local matchingActivities = C_LFGList.GetAvailableActivities(self.categoryID, nil, self.filters, text)
+		local numResults = math.min(#matchingActivities, MAX_LFG_LIST_SEARCH_AUTOCOMPLETE_ENTRIES)
+
+		for i = 2, numResults do
+			local button = self.AutoCompleteFrame.Results[i]
+			if button and not button.moved then
+				button:SetPoint("TOPLEFT", self.AutoCompleteFrame.Results[i-1], "BOTTOMLEFT", 0, -2)
+				button:SetPoint("TOPRIGHT", self.AutoCompleteFrame.Results[i-1], "BOTTOMRIGHT", 0, -2)
+				button.moved = true
+			end
+		end
+		self.AutoCompleteFrame:SetHeight(numResults * (self.AutoCompleteFrame.Results[1]:GetHeight() + 3.5) + 8)
+	end)
+
+	LFGListFrame.SearchPanel.AutoCompleteFrame:StripTextures()
+	LFGListFrame.SearchPanel.AutoCompleteFrame:CreateBackdrop("Transparent")
+	LFGListFrame.SearchPanel.AutoCompleteFrame.backdrop:SetPoint("TOPLEFT", LFGListFrame.SearchPanel.AutoCompleteFrame, "TOPLEFT", 0, 3)
+	LFGListFrame.SearchPanel.AutoCompleteFrame.backdrop:SetPoint("BOTTOMRIGHT", LFGListFrame.SearchPanel.AutoCompleteFrame, "BOTTOMRIGHT", 6, 3)
+
+	LFGListFrame.SearchPanel.AutoCompleteFrame:SetPoint("TOPLEFT", LFGListFrame.SearchPanel.SearchBox, "BOTTOMLEFT", -2, -8)
+	LFGListFrame.SearchPanel.AutoCompleteFrame:SetPoint("TOPRIGHT", LFGListFrame.SearchPanel.SearchBox, "BOTTOMRIGHT", -4, -8)
 
 	T.SkinEditBox(LFGListFrame.SearchPanel.SearchBox)
 
@@ -287,7 +315,7 @@ local function LoadSkin()
 			button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			button.Icon:SetPoint("TOPLEFT", 2, -2)
 			button.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
-			button.SelectedTexture:SetTexture(1, 0.82, 0, 0.3)
+			button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
 			button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
 			button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 			button.styled = true
@@ -307,12 +335,15 @@ local function LoadSkin()
 	T.SkinEditBox(LFGListFrame.EntryCreation.Name, nil, 17)
 	T.SkinEditBox(LFGListFrame.EntryCreation.ItemLevel.EditBox, nil, 17)
 	T.SkinEditBox(LFGListFrame.EntryCreation.VoiceChat.EditBox, nil, 17)
+	T.SkinEditBox(LFGListFrame.EntryCreation.HonorLevel.EditBox, nil, 17)
 	T.SkinEditBox(LFGListFrame.EntryCreation.Description)
 	T.SkinDropDownBox(LFGListFrame.EntryCreation.CategoryDropDown, 320)
 	T.SkinDropDownBox(LFGListFrame.EntryCreation.GroupDropDown)
 	T.SkinDropDownBox(LFGListFrame.EntryCreation.ActivityDropDown)
 	T.SkinCheckBox(LFGListFrame.EntryCreation.VoiceChat.CheckButton)
 	T.SkinCheckBox(LFGListFrame.EntryCreation.ItemLevel.CheckButton)
+	T.SkinCheckBox(LFGListFrame.EntryCreation.HonorLevel.CheckButton)
+	T.SkinCheckBox(LFGListFrame.EntryCreation.PrivateGroup.CheckButton)
 	LFGListFrame.EntryCreation.ListGroupButton:SkinButton()
 	LFGListFrame.EntryCreation.CancelButton:SkinButton()
 
@@ -350,33 +381,12 @@ tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
 local function LoadSecondarySkin()
 	ChallengesFrameInset:StripTextures()
 	ChallengesFrameInsetBg:Hide()
-	ChallengesFrameDetails.bg:Hide()
-	select(2, ChallengesFrameDetails:GetRegions()):Hide()
-	select(9, ChallengesFrameDetails:GetRegions()):Hide()
-	select(10, ChallengesFrameDetails:GetRegions()):Hide()
-	select(11, ChallengesFrameDetails:GetRegions()):Hide()
-	ChallengesFrameDungeonButton1:SetPoint("TOPLEFT", ChallengesFrame, "TOPLEFT", 8, -83)
 
-	ChallengesFrameLeaderboard:SkinButton(true)
+	T.SkinCloseButton(ChallengesKeystoneFrame.CloseButton)
+	ChallengesKeystoneFrame.StartButton:SkinButton(true)
 
-	for i = 1, 8 do
-		local button = ChallengesFrame["button"..i]
-		button:SetTemplate("Overlay")
-		button:StyleButton()
-		button.selectedTex:SetDrawLayer("ARTWORK")
-		button.selectedTex:SetTexture(1, 0.82, 0, 0.3)
-		button.selectedTex:SetPoint("TOPLEFT", 2, -2)
-		button.selectedTex:SetPoint("BOTTOMRIGHT", -2, 2)
-	end
-
-	for i = 1, 3 do
-		local rewardsRow = ChallengesFrame["RewardRow"..i]
-		for j = 1, 2 do
-			local button = rewardsRow["Reward"..j]
-			button:CreateBackdrop("Default")
-			button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		end
-	end
+	ChallengesKeystoneFrame:DisableDrawLayer("BACKGROUND")
+	ChallengesKeystoneFrame:CreateBackdrop("Transparent")
 end
 
 T.SkinFuncs["Blizzard_ChallengesUI"] = LoadSecondarySkin

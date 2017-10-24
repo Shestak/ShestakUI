@@ -212,7 +212,7 @@ local function Shared(self, unit)
 	if unit == "player" then
 		self.FlashInfo = CreateFrame("Frame", "FlashInfo", self)
 		self.FlashInfo:SetScript("OnUpdate", T.UpdateManaLevel)
-		self.FlashInfo:SetToplevel(true)
+		self.FlashInfo:SetFrameLevel(self.Health:GetFrameLevel() + 1)
 		self.FlashInfo:SetAllPoints(self.Health)
 
 		self.FlashInfo.ManaLevel = T.SetFontString(self.FlashInfo, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
@@ -273,11 +273,66 @@ local function Shared(self, unit)
 					self.Runes[i]:SetPoint("TOPLEFT", self.Runes[i-1], "TOPRIGHT", 1, 0)
 				end
 				self.Runes[i]:SetStatusBarTexture(C.media.texture)
+				self.Runes[i]:SetStatusBarColor(0.69, 0.31, 0.31)
 
 				self.Runes[i].bg = self.Runes[i]:CreateTexture(nil, "BORDER")
 				self.Runes[i].bg:SetAllPoints()
 				self.Runes[i].bg:SetTexture(C.media.texture)
-				self.Runes[i].bg.multiplier = 0.2
+				self.Runes[i].bg:SetVertexColor(0.69, 0.31, 0.31, 0.2)
+			end
+		end
+
+		if T.class == "MAGE" then
+			-- Arcane Charge bar
+			if C.unitframe_class_bar.arcane == true then
+				self.ArcaneCharge = CreateFrame("Frame", self:GetName().."_ArcaneCharge", self)
+				self.ArcaneCharge:CreateBackdrop("Default")
+				self.ArcaneCharge:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				self.ArcaneCharge:SetSize(217, 7)
+
+				for i = 1, 4 do
+					self.ArcaneCharge[i] = CreateFrame("StatusBar", self:GetName().."_ArcaneCharge"..i, self.ArcaneCharge)
+					self.ArcaneCharge[i]:SetSize(214 / 4, 7)
+					if i == 1 then
+						self.ArcaneCharge[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+					else
+						self.ArcaneCharge[i]:SetPoint("TOPLEFT", self.ArcaneCharge[i-1], "TOPRIGHT", 1, 0)
+					end
+					self.ArcaneCharge[i]:SetStatusBarTexture(C.media.texture)
+					self.ArcaneCharge[i]:SetStatusBarColor(0.4, 0.8, 1)
+
+					self.ArcaneCharge[i].bg = self.ArcaneCharge[i]:CreateTexture(nil, "BORDER")
+					self.ArcaneCharge[i].bg:SetAllPoints()
+					self.ArcaneCharge[i].bg:SetTexture(C.media.texture)
+					self.ArcaneCharge[i].bg:SetVertexColor(0.4, 0.8, 1, 0.2)
+				end
+			end
+
+			-- Rune of Power bar
+			if C.unitframe_class_bar.totem == true then
+				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
+				self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
+				self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
+				self.TotemBar:SetSize(108, 7)
+				self.TotemBar.Destroy = true
+
+				for i = 1, 2 do
+					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
+					self.TotemBar[i]:SetSize(108 / 2, 7)
+					if i == 1 then
+						self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
+					else
+						self.TotemBar[i]:SetPoint("TOPLEFT", self.TotemBar[i-1], "TOPRIGHT", 0, 0)
+					end
+					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
+					self.TotemBar[i]:SetMinMaxValues(0, 1)
+					self.TotemBar[i]:CreateBorder(false, true)
+
+					self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
+					self.TotemBar[i].bg:SetAllPoints()
+					self.TotemBar[i].bg:SetTexture(C.media.texture)
+					self.TotemBar[i].bg.multiplier = 0.2
+				end
 			end
 		end
 
@@ -329,35 +384,23 @@ local function Shared(self, unit)
 					self.TotemBar[i].bg.multiplier = 0.2
 				end
 			end
-		end
 
-		-- Shadow Orbs bar
-		if C.unitframe_class_bar.shadow == true and T.class == "PRIEST" then
-			self.ShadowOrbsBar = CreateFrame("Frame", self:GetName().."_ShadowOrbsBar", self)
-			self.ShadowOrbsBar:CreateBackdrop("Default")
-			self.ShadowOrbsBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.ShadowOrbsBar:SetSize(217, 7)
+			-- Stagger bar
+			if C.unitframe_class_bar.stagger == true then
+				self.Stagger = CreateFrame("StatusBar", self:GetName().."_Stagger", self)
+				self.Stagger:CreateBackdrop("Default")
+				self.Stagger:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+				self.Stagger:SetSize(217, 7)
+				self.Stagger:SetStatusBarTexture(C.media.texture)
 
-			for i = 1, 5 do
-				self.ShadowOrbsBar[i] = CreateFrame("StatusBar", self:GetName().."_ShadowOrbsBar", self.ShadowOrbsBar)
-				self.ShadowOrbsBar[i]:SetSize(215 / 5, 7)
-				if i == 1 then
-					self.ShadowOrbsBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				else
-					self.ShadowOrbsBar[i]:SetPoint("TOPLEFT", self.ShadowOrbsBar[i-1], "TOPRIGHT", 1, 0)
-				end
-				self.ShadowOrbsBar[i]:SetStatusBarTexture(C.media.texture)
-				self.ShadowOrbsBar[i]:SetStatusBarColor(0.70, 0.32, 0.75)
+				self.Stagger.bg = self.Stagger:CreateTexture(nil, "BORDER")
+				self.Stagger.bg:SetAllPoints()
+				self.Stagger.bg:SetTexture(C.media.texture)
+				self.Stagger.bg.multiplier = 0.2
 
-				self.ShadowOrbsBar[i].bg = self.ShadowOrbsBar[i]:CreateTexture(nil, "BORDER")
-				self.ShadowOrbsBar[i].bg:SetAllPoints()
-				self.ShadowOrbsBar[i].bg:SetTexture(C.media.texture)
-				self.ShadowOrbsBar[i].bg:SetVertexColor(0.70, 0.32, 0.75, 0.2)
-
-				self.ShadowOrbsBar[i].width = self.ShadowOrbsBar[i]:GetWidth()
+				self.Stagger.Text = T.SetFontString(self.Stagger, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+				self.Stagger.Text:SetPoint("CENTER", self.Stagger, "CENTER", 0, 0)
 			end
-
-			self.ShadowOrbsBar.Override = T.UpdateShadowOrb
 		end
 
 		-- Holy Power bar
@@ -368,7 +411,7 @@ local function Shared(self, unit)
 			self.HolyPower:SetSize(217, 7)
 
 			for i = 1, 5 do
-				self.HolyPower[i] = CreateFrame("StatusBar", self:GetName().."_HolyPowerBar", self.HolyPower)
+				self.HolyPower[i] = CreateFrame("StatusBar", self:GetName().."_HolyPower"..i, self.HolyPower)
 				self.HolyPower[i]:SetSize(213 / 5, 7)
 				if i == 1 then
 					self.HolyPower[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -382,40 +425,32 @@ local function Shared(self, unit)
 				self.HolyPower[i].bg:SetAllPoints()
 				self.HolyPower[i].bg:SetTexture(C.media.texture)
 				self.HolyPower[i].bg:SetVertexColor(0.89, 0.88, 0.1, 0.2)
-
-				self.HolyPower[i].width = self.HolyPower[i]:GetWidth()
 			end
-
-			self.HolyPower.Override = T.UpdateHoly
 		end
 
-		-- Shard/Burning bar
+		-- Soul Shards bar
 		if C.unitframe_class_bar.shard == true and T.class == "WARLOCK" then
-			self.WarlockSpecBars = CreateFrame("Frame", self:GetName().."_WarlockSpecBar", self)
-			self.WarlockSpecBars:CreateBackdrop("Default")
-			self.WarlockSpecBars:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.WarlockSpecBars:SetSize(217, 7)
+			self.SoulShards = CreateFrame("Frame", self:GetName().."SoulShards", self)
+			self.SoulShards:CreateBackdrop("Default")
+			self.SoulShards:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			self.SoulShards:SetSize(217, 7)
 
-			for i = 1, 4 do
-				self.WarlockSpecBars[i] = CreateFrame("StatusBar", self:GetName().."WarlockSpecBar"..i, self.WarlockSpecBars)
-				self.WarlockSpecBars[i]:SetSize(214 / 4, 7)
+			for i = 1, 5 do
+				self.SoulShards[i] = CreateFrame("StatusBar", self:GetName().."SoulShards"..i, self.SoulShards)
+				self.SoulShards[i]:SetSize(213 / 5, 7)
 				if i == 1 then
-					self.WarlockSpecBars[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+					self.SoulShards[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				else
-					self.WarlockSpecBars[i]:SetPoint("TOPLEFT", self.WarlockSpecBars[i-1], "TOPRIGHT", 1, 0)
+					self.SoulShards[i]:SetPoint("TOPLEFT", self.SoulShards[i-1], "TOPRIGHT", 1, 0)
 				end
-				self.WarlockSpecBars[i]:SetStatusBarTexture(C.media.texture)
-				self.WarlockSpecBars[i]:SetStatusBarColor(0.9, 0.37, 0.37)
+				self.SoulShards[i]:SetStatusBarTexture(C.media.texture)
+				self.SoulShards[i]:SetStatusBarColor(0.9, 0.37, 0.37)
 
-				self.WarlockSpecBars[i].bg = self.WarlockSpecBars[i]:CreateTexture(nil, "BORDER")
-				self.WarlockSpecBars[i].bg:SetAllPoints()
-				self.WarlockSpecBars[i].bg:SetTexture(C.media.texture)
-				self.WarlockSpecBars[i].bg:SetVertexColor(0.9, 0.37, 0.37, 0.2)
+				self.SoulShards[i].bg = self.SoulShards[i]:CreateTexture(nil, "BORDER")
+				self.SoulShards[i].bg:SetAllPoints()
+				self.SoulShards[i].bg:SetTexture(C.media.texture)
+				self.SoulShards[i].bg:SetVertexColor(0.9, 0.37, 0.37, 0.2)
 			end
-
-			self.WarlockSpecBars.text = T.SetFontString(self.WarlockSpecBars[1], C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.WarlockSpecBars.text:SetPoint("CENTER", self.WarlockSpecBars, "CENTER", 0, 0)
-			self:Tag(self.WarlockSpecBars.text, "[DemonicFury]")
 		end
 
 		-- Rogue/Druid Combo bar
@@ -425,9 +460,9 @@ local function Shared(self, unit)
 			self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.CPoints:SetSize(217, 7)
 
-			for i = 1, 5 do
+			for i = 1, 10 do
 				self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar", self.CPoints)
-				self.CPoints[i]:SetSize(213 / 5, 7)
+				self.CPoints[i]:SetSize(213 / 10, 7)
 				if i == 1 then
 					self.CPoints[i]:SetPoint("LEFT", self.CPoints)
 				else
@@ -441,34 +476,17 @@ local function Shared(self, unit)
 			self.CPoints[3]:SetStatusBarColor(0.9, 0.9, 0.1)
 			self.CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
 			self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
+			self.CPoints[6]:SetStatusBarColor(0.3, 0.3, 0.8)
+			self.CPoints[7]:SetStatusBarColor(0.3, 0.3, 0.8)
+			self.CPoints[8]:SetStatusBarColor(0.3, 0.3, 0.8)
+			self.CPoints[9]:SetStatusBarColor(0.3, 0.3, 0.8)
+			self.CPoints[10]:SetStatusBarColor(0.3, 0.3, 0.8)
+
+			if T.class == "DRUID" and C.unitframe_class_bar.combo_always ~= true then
+				self:RegisterEvent("UPDATE_SHAPESHIFT_FORM", T.UpdateComboPoint)
+			end
 
 			self.CPoints.Override = T.UpdateComboPoint
-
-			-- Anticipation bar
-			if T.class == "ROGUE" then
-				self.Anticipation = CreateFrame("Frame", self:GetName().."_Anticipation", self)
-				self.Anticipation:SetFrameLevel(self.Health:GetFrameLevel() + 2)
-				self.Anticipation:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.Anticipation:SetSize(217, 7)
-
-				for i = 1, 5 do
-					self.Anticipation[i] = CreateFrame("StatusBar", self:GetName().."_Anticipation"..i, self.Anticipation)
-					self.Anticipation[i]:SetSize(213 / 5, 7)
-
-					if i == 1 then
-						self.Anticipation[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-					else
-						self.Anticipation[i]:SetPoint("LEFT", self.Anticipation[i-1], "RIGHT", 1, 0)
-					end
-					self.Anticipation[i]:SetStatusBarTexture(C.media.texture)
-					self.Anticipation[i]:SetStatusBarColor(0.3, 0.3, 0.8)
-
-					self.Anticipation[i].bg = self.Anticipation[i]:CreateTexture(nil, "BORDER")
-					self.Anticipation[i].bg:SetAllPoints()
-					self.Anticipation[i].bg:SetTexture(C.media.texture)
-					self.Anticipation[i].bg:SetVertexColor(0.3 * 0.2, 0.3 * 0.2, 0.8 * 0.2)
-				end
-			end
 		end
 
 		-- Totem bar
@@ -503,45 +521,15 @@ local function Shared(self, unit)
 			end
 		end
 
-		if T.class == "DRUID" then
-			-- Druid mana
+		-- Additional mana
+		if T.class == "DRUID" or T.class == "PRIEST" or T.class == "SHAMAN" then
 			CreateFrame("Frame"):SetScript("OnUpdate", function() T.UpdateClassMana(self) end)
 			self.ClassMana = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 			self.ClassMana:SetTextColor(1, 0.49, 0.04)
+		end
 
-			-- Eclipse bar
-			if C.unitframe_class_bar.eclipse == true then
-				self.EclipseBar = CreateFrame("Frame", self:GetName().."_EclipseBar", self)
-				self.EclipseBar:CreateBackdrop("Default")
-				self.EclipseBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.EclipseBar:SetSize(217, 7)
-
-				self.EclipseBar.LunarBar = CreateFrame("StatusBar", nil, self.EclipseBar)
-				self.EclipseBar.LunarBar:SetPoint("LEFT", self.EclipseBar, "LEFT", 0, 0)
-				self.EclipseBar.LunarBar:SetSize(self.EclipseBar:GetWidth(), self.EclipseBar:GetHeight())
-				self.EclipseBar.LunarBar:SetStatusBarTexture(C.media.texture)
-				self.EclipseBar.LunarBar:SetStatusBarColor(0.80, 0.80, 0.20)
-
-				self.EclipseBar.SolarBar = CreateFrame("StatusBar", nil, self.EclipseBar)
-				self.EclipseBar.SolarBar:SetPoint("LEFT", self.EclipseBar.LunarBar:GetStatusBarTexture(), "RIGHT", 0, 0)
-				self.EclipseBar.SolarBar:SetSize(self.EclipseBar:GetWidth(), self.EclipseBar:GetHeight())
-				self.EclipseBar.SolarBar:SetStatusBarTexture(C.media.texture)
-				self.EclipseBar.SolarBar:SetStatusBarColor(0.30, 0.30, 0.80)
-
-				self.EclipseBar.Text = T.SetFontString(self.EclipseBar.SolarBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-				self.EclipseBar.Text:SetPoint("CENTER", self.EclipseBar, "CENTER", -6, 0)
-
-				self.EclipseBar.Pers = T.SetFontString(self.EclipseBar.SolarBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-				self.EclipseBar.Pers:SetPoint("LEFT", self.EclipseBar.Text, "RIGHT", 2, 0)
-				self:Tag(self.EclipseBar.Pers, "[pereclipse]%")
-
-				self.EclipseBar:SetScript("OnShow", function() T.UpdateEclipse(self, false) end)
-				self.EclipseBar:SetScript("OnUpdate", function() T.UpdateEclipse(self, true) end)
-				self.EclipseBar:SetScript("OnHide", function() T.UpdateEclipse(self, false) end)
-				self.EclipseBar.PostUpdatePower = T.EclipseDirection
-			end
-
-			-- Mushroom bar
+		-- Mushroom bar
+		if T.class == "DRUID" then
 			if C.unitframe_class_bar.totem == true then
 				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
 				self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
@@ -594,65 +582,11 @@ local function Shared(self, unit)
 			end
 		end
 
-		-- Rune of Power bar
-		if C.unitframe_class_bar.totem == true and T.class == "MAGE" then
-			self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
-			self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
-			self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
-			self.TotemBar:SetSize(108, 7)
-			self.TotemBar.Destroy = true
-
-			for i = 1, 2 do
-				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
-				self.TotemBar[i]:SetSize(108 / 2, 7)
-				if i == 1 then
-					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
-				else
-					self.TotemBar[i]:SetPoint("TOPLEFT", self.TotemBar[i-1], "TOPRIGHT", 0, 0)
-				end
-				self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
-				self.TotemBar[i]:SetMinMaxValues(0, 1)
-				self.TotemBar[i]:CreateBorder(false, true)
-
-				self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
-				self.TotemBar[i].bg:SetAllPoints()
-				self.TotemBar[i].bg:SetTexture(C.media.texture)
-				self.TotemBar[i].bg.multiplier = 0.2
-			end
-		end
-
-		-- Resolve bar
-		if C.unitframe_class_bar.resolve == true then
-			self.ResolveBar = CreateFrame("Frame", self:GetName().."_ResolveBar", self)
-			self.ResolveBar:CreateBackdrop("Default")
-			if (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
-			or (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true)
-			or (T.class == "MONK" and C.unitframe_class_bar.chi == true) then
-				self.ResolveBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
-			else
-				self.ResolveBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			end
-			self.ResolveBar:SetSize(217, 7)
-
-			self.ResolveBar.Bar = CreateFrame("StatusBar", nil, self.ResolveBar)
-			self.ResolveBar.Bar:SetPoint("LEFT", self.ResolveBar, "LEFT", 0, 0)
-			self.ResolveBar.Bar:SetSize(217, 7)
-			self.ResolveBar.Bar:SetStatusBarTexture(C.media.texture)
-			self.ResolveBar.Bar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
-
-			self.ResolveBar.bg = self.ResolveBar.Bar:CreateTexture(nil, "BORDER")
-			self.ResolveBar.bg:SetAllPoints()
-			self.ResolveBar.bg:SetTexture(C.media.texture)
-			self.ResolveBar.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
-
-			self.ResolveBar.Text = T.SetFontString(self.ResolveBar.Bar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			self.ResolveBar.Text:SetPoint("CENTER", self.ResolveBar.Bar, "CENTER", 0, 0)
-		end
-
 		-- Experience bar
-		if T.level ~= MAX_PLAYER_LEVEL and C.unitframe.plugins_experience_bar == true then
+		if C.unitframe.plugins_experience_bar == true then
 			self.Experience = CreateFrame("StatusBar", self:GetName().."_Experience", self)
 			self.Experience:CreateBackdrop("Default")
+			self.Experience:EnableMouse(true)
 			if C.unitframe.portrait_enable == true then
 				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
 			else
@@ -661,8 +595,6 @@ local function Shared(self, unit)
 			self.Experience:SetSize(7, 94)
 			self.Experience:SetOrientation("Vertical")
 			self.Experience:SetStatusBarTexture(C.media.texture)
-			self.Experience:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
-			self.Experience:SetAlpha(0)
 
 			self.Experience.bg = self.Experience:CreateTexture(nil, "BORDER")
 			self.Experience.bg:SetAllPoints()
@@ -674,43 +606,92 @@ local function Shared(self, unit)
 			self.Experience.Rested:SetOrientation("Vertical")
 			self.Experience.Rested:SetAllPoints()
 			self.Experience.Rested:SetStatusBarTexture(C.media.texture)
-			self.Experience.Rested:SetStatusBarColor(0, 0.5, 1, 0.5)
 
-			self.Experience:HookScript("OnEnter", function(self) self:SetAlpha(1) end)
-			self.Experience:HookScript("OnLeave", function(self) self:SetAlpha(0) end)
-			self.Experience.Tooltip = true
+			self.Experience.inAlpha = 1
+			self.Experience.outAlpha = 0
 		end
 
 		-- Reputation bar
 		if C.unitframe.plugins_reputation_bar == true then
 			self.Reputation = CreateFrame("StatusBar", self:GetName().."_Reputation", self)
 			self.Reputation:CreateBackdrop("Default")
+			self.Reputation:EnableMouse(true)
 			if C.unitframe.portrait_enable == true then
-				if T.level == MAX_PLAYER_LEVEL then
-					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
-				else
+				if self.Experience and self.Experience:IsShown() then
 					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
+				else
+					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
 				end
 			else
-				if T.level == MAX_PLAYER_LEVEL then
-					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
-				else
+				if self.Experience and self.Experience:IsShown() then
 					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 28)
+				else
+					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
 				end
 			end
 			self.Reputation:SetSize(7, 94)
 			self.Reputation:SetOrientation("Vertical")
 			self.Reputation:SetStatusBarTexture(C.media.texture)
-			self.Reputation:SetAlpha(0)
 
 			self.Reputation.bg = self.Reputation:CreateTexture(nil, "BORDER")
 			self.Reputation.bg:SetAllPoints()
 			self.Reputation.bg:SetTexture(C.media.texture)
 
-			self.Reputation:HookScript("OnEnter", function(self) self:SetAlpha(1) end)
-			self.Reputation:HookScript("OnLeave", function(self) self:SetAlpha(0) end)
-			self.Reputation.PostUpdate = T.UpdateReputationColor
-			self.Reputation.Tooltip = true
+			self.Reputation.inAlpha = 1
+			self.Reputation.outAlpha = 0
+			self.Reputation.colorStanding = true
+		end
+
+		-- Artifact Power bar
+		if C.unitframe.plugins_artifact_bar == true then
+			self.ArtifactPower = CreateFrame("StatusBar", self:GetName().."_ArtifactPower", self)
+			self.ArtifactPower:CreateBackdrop("Default")
+			self.ArtifactPower:EnableMouse(true)
+			if C.unitframe.portrait_enable == true then
+				if T.level == MAX_PLAYER_LEVEL then
+					if C.unitframe.plugins_reputation_bar == true then
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -38 - C.unitframe.portrait_width, 28)
+					else
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
+					end
+				else
+					if C.unitframe.plugins_reputation_bar == true then
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -52 - C.unitframe.portrait_width, 28)
+					else
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
+					end
+				end
+			else
+				if T.level == MAX_PLAYER_LEVEL then
+					if C.unitframe.plugins_reputation_bar == true then
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -31, 28)
+					else
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
+					end
+				else
+					if C.unitframe.plugins_reputation_bar == true then
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -45, 28)
+					else
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 28)
+					end
+				end
+			end
+			self.ArtifactPower:SetSize(7, 94)
+			self.ArtifactPower:SetOrientation("Vertical")
+			self.ArtifactPower:SetStatusBarTexture(C.media.texture)
+			self.ArtifactPower.offAlpha = 0
+
+			self.ArtifactPower.bg = self.ArtifactPower:CreateTexture(nil, "BORDER")
+			self.ArtifactPower.bg:SetAllPoints()
+			self.ArtifactPower.bg:SetTexture(C.media.texture)
+
+			self.ArtifactPower:HookScript("OnEnter", function(self) self.ArtifactPower.offAlpha = 1 end)
+			self.ArtifactPower:HookScript("OnLeave", function(self) self.ArtifactPower.offAlpha = 0 end)
+			self.ArtifactPower.PostUpdate = function(self, event, isShown)
+				self:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
+				self.bg:SetVertexColor(1, 0, 0, 0.2)
+			end
+			self.ArtifactPower.Tooltip = true
 		end
 
 		-- GCD spark
@@ -823,10 +804,7 @@ local function Shared(self, unit)
 			self.Debuffs["growth-y"] = "UP"
 			self.Debuffs["growth-x"] = "LEFT"
 			if (T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune == true)
-			or (T.class == "DRUID" and C.unitframe_class_bar.eclipse == true)
 			or ((T.class == "DRUID" or T.class == "ROGUE") and C.unitframe_class_bar.combo == true and C.unitframe_class_bar.combo_old ~= true)
-			or (T.class == "MONK" and C.unitframe_class_bar.chi == true)
-			or (T.class == "PALADIN" and C.unitframe_class_bar.holy == true)
 			or (T.class == "SHAMAN" and C.unitframe_class_bar.totem == true)
 			or (T.class == "WARLOCK" and C.unitframe_class_bar.shard == true) then
 				self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19)
@@ -855,15 +833,15 @@ local function Shared(self, unit)
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
 
 			-- Rogue/Druid Combo bar
-			if C.unitframe_class_bar.combo == true and C.unitframe_class_bar.combo_old == true and (T.class == "ROGUE" or T.class == "DRUID") then
+			if C.unitframe_class_bar.combo == true and (C.unitframe_class_bar.combo_old == true or (T.class ~= "DRUID" and T.class ~= "ROGUE")) then
 				self.CPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)
 				self.CPoints:CreateBackdrop("Default")
 				self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.CPoints:SetSize(217, 7)
 
-				for i = 1, 5 do
+				for i = 1, 10 do
 					self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar", self.CPoints)
-					self.CPoints[i]:SetSize(213 / 5, 7)
+					self.CPoints[i]:SetSize(213 / 10, 7)
 					if i == 1 then
 						self.CPoints[i]:SetPoint("LEFT", self.CPoints)
 					else
@@ -877,6 +855,11 @@ local function Shared(self, unit)
 				self.CPoints[3]:SetStatusBarColor(0.9, 0.9, 0.1)
 				self.CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
 				self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
+				self.CPoints[6]:SetStatusBarColor(0.3, 0.3, 0.8)
+				self.CPoints[7]:SetStatusBarColor(0.3, 0.3, 0.8)
+				self.CPoints[8]:SetStatusBarColor(0.3, 0.3, 0.8)
+				self.CPoints[9]:SetStatusBarColor(0.3, 0.3, 0.8)
+				self.CPoints[10]:SetStatusBarColor(0.3, 0.3, 0.8)
 
 				self.CPoints.Override = T.UpdateComboPointOld
 			end
@@ -905,30 +888,8 @@ local function Shared(self, unit)
 			self.QuestIcon = self.Health:CreateTexture(nil, "OVERLAY")
 			self.QuestIcon:SetSize(20, 20)
 			self.QuestIcon:SetPoint("RIGHT", self.Info, "LEFT", -10, 0)
-
-			-- Friendship bar
-			if C.unitframe.plugins_friendship_bar == true then
-				self.Friendship = CreateFrame("StatusBar", self:GetName().."_Friendship", self)
-				self.Friendship:CreateBackdrop("Default")
-				self.Friendship:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.Friendship:SetSize(217, 7)
-				self.Friendship:SetStatusBarTexture(C.media.texture)
-				self.Friendship:SetStatusBarColor(1, 0, 0)
-
-				self.Friendship.bg = self.Friendship:CreateTexture(nil, "BORDER")
-				self.Friendship.bg:SetAllPoints()
-				self.Friendship.bg:SetTexture(C.media.texture)
-				self.Friendship.bg:SetVertexColor(1, 0, 0, 0.2)
-
-				self.Friendship.Tooltip = true
-
-				self.Friendship.Value = T.SetFontString(self.Friendship, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-				self.Friendship.Value:SetPoint("CENTER")
-				self.Friendship.Value:SetTextColor(1, 1, 1)
-				self:Tag(self.Friendship.Value, "[friendshipstanding] - [curfriendship]/[maxfriendship]")
-			end
 		end
-
+		
 		if C.unitframe.plugins_combat_feedback == true then
 			self.CombatFeedbackText = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size * 2, C.font.unit_frames_font_style)
 			if C.unitframe.portrait_enable == true then
@@ -1103,7 +1064,7 @@ local function Shared(self, unit)
 				self.Castbar.Latency:SetPoint("TOPRIGHT", self.Castbar.Time, "BOTTOMRIGHT", 0, 0)
 				self.Castbar.Latency:SetJustifyH("RIGHT")
 
-				self:RegisterEvent("UNIT_SPELLCAST_SENT", function(self, event, caster)
+				self:RegisterEvent("CURRENT_SPELL_CAST_CHANGED", function(self, event, caster) -- BETA Event check
 					if (caster == "player" or caster == "vehicle") then
 						self.Castbar.castSent = GetTime()
 					end
@@ -1262,35 +1223,24 @@ local function Shared(self, unit)
 
 	-- Incoming heal text/bar
 	if C.raidframe.plugins_healcomm == true then
-		local mhpb = CreateFrame("StatusBar", nil, self.Health)
-		mhpb:SetPoint("TOPLEFT", self.Health:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
-		mhpb:SetPoint("BOTTOMLEFT", self.Health:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
-		if unit == "player" or unit == "target" then
-			mhpb:SetWidth(217)
-		elseif unit == "pet" or unit == "focus" or unit == "focustarget" or unit == "targettarget" then
-			mhpb:SetWidth(105)
-		elseif unit == "arenatarget" then
-			mhpb:SetWidth(30)
-		else
-			mhpb:SetWidth(150)
-		end
-		mhpb:SetStatusBarTexture(C.media.texture)
-		mhpb:SetStatusBarColor(0, 1, 0.5, 0.2)
+		local mhpb = self.Health:CreateTexture(nil, "ARTWORK")
+		mhpb:SetTexture(C.media.texture)
+		mhpb:SetVertexColor(0, 1, 0.5, 0.2)
 
-		local ohpb = CreateFrame("StatusBar", nil, self.Health)
-		ohpb:SetPoint("TOPLEFT", mhpb:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
-		ohpb:SetPoint("BOTTOMLEFT", mhpb:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
-		ohpb:SetWidth(mhpb:GetWidth())
-		ohpb:SetStatusBarTexture(C.media.texture)
-		ohpb:SetStatusBarColor(0, 1, 0, 0.2)
+		local ohpb = self.Health:CreateTexture(nil, "ARTWORK")
+		ohpb:SetTexture(C.media.texture)
+		ohpb:SetVertexColor(0, 1, 0, 0.2)
+
+		local ahpb = self.Health:CreateTexture(nil, "ARTWORK")
+		ahpb:SetTexture(C.media.texture)
+		ahpb:SetVertexColor(1, 1, 0, 0.2)
 
 		self.HealPrediction = {
 			myBar = mhpb,
 			otherBar = ohpb,
-			PostUpdate = function(frame)
-				if frame.myBar:GetValue() == 0 then frame.myBar:SetAlpha(0) else frame.myBar:SetAlpha(1) end
-				if frame.otherBar:GetValue() == 0 then frame.otherBar:SetAlpha(0) else frame.otherBar:SetAlpha(1) end
-			end
+			absorbBar = ahpb,
+			maxOverflow = 1,
+			frequentUpdates = true
 		}
 	end
 
@@ -1444,7 +1394,7 @@ if C.unitframe.show_arena == true then
 						local _, spec, class = nil, "UNKNOWN", "UNKNOWN"
 
 						if s and s > 0 then
-							_, spec, _, _, _, _, class = GetSpecializationInfoByID(s)
+							_, spec, _, _, _, class = GetSpecializationInfoByID(s)
 						end
 
 						if class and spec then
@@ -1587,7 +1537,7 @@ end
 --	Auto reposition heal raid frame
 ----------------------------------------------------------------------------------------
 local function Reposition()
-	if SavedOptions.RaidLayout == "HEAL" and not C.raidframe.raid_groups_vertical then
+	if SavedOptions and SavedOptions.RaidLayout == "HEAL" and not C.raidframe.raid_groups_vertical then
 		if C.raidframe.raid_groups < 6 then return end
 
 		if C.unitframe.castbar_icon == true then

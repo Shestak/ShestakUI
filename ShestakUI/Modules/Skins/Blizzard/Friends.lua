@@ -16,17 +16,12 @@ local function LoadSkin()
 		"WhoFrameColumnHeader4",
 		"ChannelListScrollFrame",
 		"ChannelRoster",
-		"FriendsFramePendingButton1",
-		"FriendsFramePendingButton2",
-		"FriendsFramePendingButton3",
-		"FriendsFramePendingButton4",
 		"ChannelFrameDaughterFrame",
 		"AddFriendFrame",
 		"AddFriendNoteFrame",
 		"FriendsFriendsFrame",
 		"FriendsFriendsList",
 		"IgnoreListFrame",
-		"PendingListFrame",
 		"FriendsFrameInset",
 		"WhoFrameListInset",
 		"WhoFrameEditBoxInset",
@@ -43,7 +38,9 @@ local function LoadSkin()
 		"BattleTagInviteFrame",
 		"BNetReportFrame",
 		"BNetReportFrameComment",
-		"RecruitAFriendNoteFrame"
+		"RecruitAFriendNoteFrame",
+		"QuickJoinScrollFrame",
+		"QuickJoinRoleSelectionFrame"
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -71,14 +68,6 @@ local function LoadSkin()
 		"FriendsFrameIgnorePlayerButton",
 		"FriendsFrameMutePlayerButton",
 		"FriendsFrameUnsquelchButton",
-		"FriendsFramePendingButton1AcceptButton",
-		"FriendsFramePendingButton1DeclineButton",
-		"FriendsFramePendingButton2AcceptButton",
-		"FriendsFramePendingButton2DeclineButton",
-		"FriendsFramePendingButton3AcceptButton",
-		"FriendsFramePendingButton3DeclineButton",
-		"FriendsFramePendingButton4AcceptButton",
-		"FriendsFramePendingButton4DeclineButton",
 		"ChannelFrameDaughterFrameOkayButton",
 		"ChannelFrameDaughterFrameCancelButton",
 		"AddFriendEntryFrameAcceptButton",
@@ -90,7 +79,6 @@ local function LoadSkin()
 		"ScrollOfResurrectionSelectionFrameCancelButton",
 		"ScrollOfResurrectionFrameAcceptButton",
 		"ScrollOfResurrectionFrameCancelButton",
-		"PendingListInfoFrameContinueButton",
 		"BNetReportFrameReportButton",
 		"BNetReportFrameCancelButton",
 		"RecruitAFriendFrameSendButton"
@@ -103,8 +91,10 @@ local function LoadSkin()
 	local scrollbars = {
 		"FriendsFrameFriendsScrollFrameScrollBar",
 		"FriendsFrameIgnoreScrollFrameScrollBar",
+		"FriendsFriendsScrollFrameScrollBar",
 		"WhoListScrollFrameScrollBar",
-		"ChannelRosterScrollFrameScrollBar"
+		"ChannelRosterScrollFrameScrollBar",
+		"QuickJoinScrollFrameScrollBar"
 	}
 
 	for _, scrollbar in pairs(scrollbars) do
@@ -135,7 +125,32 @@ local function LoadSkin()
 	AddFriendFrame:SetTemplate("Transparent")
 	FriendsFriendsFrame:SetTemplate("Transparent")
 	FriendsFriendsList:SetTemplate("Overlay")
-	PendingListInfoFrame:SetTemplate("Overlay")
+
+	-- Quick Join Frame
+	QuickJoinFrame.JoinQueueButton:SkinButton()
+	QuickJoinRoleSelectionFrame:SetTemplate("Transparent")
+	QuickJoinRoleSelectionFrame.AcceptButton:SkinButton()
+	QuickJoinRoleSelectionFrame.CancelButton:SkinButton()
+	T.SkinCloseButton(QuickJoinRoleSelectionFrame.CloseButton)
+	T.SkinCheckBox(QuickJoinRoleSelectionFrame.RoleButtonTank.CheckButton)
+	T.SkinCheckBox(QuickJoinRoleSelectionFrame.RoleButtonHealer.CheckButton)
+	T.SkinCheckBox(QuickJoinRoleSelectionFrame.RoleButtonDPS.CheckButton)
+
+	-- Pending invites
+	FriendsFrameFriendsScrollFrame.PendingInvitesHeaderButton:SkinButton()
+	local function SkinFriendRequest(frame)
+		if not frame.isSkinned then
+			frame.DeclineButton:SetPoint("RIGHT", frame, "RIGHT", -2, 1)
+			frame.DeclineButton:SkinButton()
+			frame.AcceptButton:SkinButton()
+			frame.isSkinned = true
+		end
+	end
+	hooksecurefunc(FriendsFrameFriendsScrollFrame.invitePool, "Acquire", function()
+		for object in pairs(FriendsFrameFriendsScrollFrame.invitePool.activeObjects) do
+			SkinFriendRequest(object)
+		end
+	end)
 
 	-- Who Frame
 	local function UpdateWhoSkins()
@@ -182,6 +197,11 @@ local function LoadSkin()
 	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame.CancelButton:SkinButton()
 	FriendsFrameBattlenetFrame.BroadcastFrame.ScrollFrame.UpdateButton:SkinButton()
 
+	FriendsFrameBattlenetFrame.UnavailableInfoFrame:StripTextures()
+	FriendsFrameBattlenetFrame.UnavailableInfoFrame:CreateBackdrop("Transparent")
+	FriendsFrameBattlenetFrame.UnavailableInfoFrame.backdrop:SetPoint("TOPLEFT", 4, -4)
+	FriendsFrameBattlenetFrame.UnavailableInfoFrame.backdrop:SetPoint("BOTTOMRIGHT", -4, 4)
+
 	BattleTagInviteFrame:SetTemplate("Transparent")
 	for i = 1, BattleTagInviteFrame:GetNumChildren() do
 		local child = select(i, BattleTagInviteFrame:GetChildren())
@@ -219,6 +239,9 @@ local function LoadSkin()
 
 	FriendsTabHeaderRecruitAFriendButton:SetTemplate("Default")
 	FriendsTabHeaderRecruitAFriendButton:StyleButton()
+	FriendsTabHeaderRecruitAFriendButton:SetSize(23, 23)
+	FriendsTabHeaderRecruitAFriendButton:ClearAllPoints()
+	FriendsTabHeaderRecruitAFriendButton:SetPoint("TOPRIGHT", FriendsFrame, -9, -58)
 	FriendsTabHeaderRecruitAFriendButtonIcon:SetDrawLayer("OVERLAY")
 	FriendsTabHeaderRecruitAFriendButtonIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	FriendsTabHeaderRecruitAFriendButtonIcon:ClearAllPoints()

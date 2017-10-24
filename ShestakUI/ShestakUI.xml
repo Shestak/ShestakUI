@@ -1,4 +1,4 @@
-﻿<Ui xmlns="http://www.blizzard.com/wow/ui/">
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
 	<Script file="Core\Init.lua"/>
 	<Script file="Core\Constants.lua"/>
 
@@ -77,7 +77,6 @@
 	<Script file="Modules\Misc\OneClickBuyOut.lua"/>
 	<Script file="Modules\Misc\OneClickDisenchanting.lua"/>
 	<Script file="Modules\Misc\OneClickEnchantScroll.lua"/>
-	<Script file="Modules\Misc\ProfessionsDatabase.lua"/>
 	<Script file="Modules\Misc\ProfessionTabs.lua"/>
 	<Script file="Modules\Misc\PvPQueueTimer.lua"/>
 	<Script file="Modules\Misc\RaidUtility.lua"/>
@@ -108,13 +107,11 @@
 	<Script file="Modules\Announcements\FeastsAndPortals.lua"/>
 	<Script file="Modules\Announcements\FlaskAndFood.lua"/>
 	<Script file="Modules\Announcements\Interrupts.lua"/>
-	<Script file="Modules\Announcements\Lightwell.lua"/>
 	<Script file="Modules\Announcements\PullCountdown.lua"/>
 	<Script file="Modules\Announcements\SafariHat.lua"/>
 	<Script file="Modules\Announcements\SayThanks.lua"/>
 	<Script file="Modules\Announcements\Spells.lua"/>
 
-	<Script file="Modules\Automation\AutoChefsHat.lua"/>
 	<Script file="Modules\Automation\AutoInvite.lua"/>
 	<Script file="Modules\Automation\AutoOpens.lua"/>
 	<Script file="Modules\Automation\AutoRelease.lua"/>
@@ -129,7 +126,7 @@
 	<Script file="Modules\Automation\SolveArtifact.lua"/>
 	<Script file="Modules\Automation\TabBinder.lua"/>
 
-	<Script file="Modules\Blizzard\Achievements.lua"/>
+	<Script file="Modules\Blizzard\AlertFrames.lua"/>
 	<Script file="Modules\Blizzard\AltPowerBar.lua"/>
 	<Script file="Modules\Blizzard\Bags.lua"/>
 	<Script file="Modules\Blizzard\CaptureBar.lua"/>
@@ -147,12 +144,12 @@
 	<Script file="Modules\Blizzard\Nameplates.lua"/>
 	<Script file="Modules\Blizzard\PetBattle.lua"/>
 	<Script file="Modules\Blizzard\ShiftMark.lua"/>
+	<Script file="Modules\Blizzard\TalkingHead.lua"/>
 	<Script file="Modules\Blizzard\TimerTracker.lua"/>
 	<Script file="Modules\Blizzard\Vehicle.lua"/>
 
 	<Script file="Modules\Buffs\AuraSource.lua"/>
 	<Script file="Modules\Buffs\BuffFrame.lua"/>
-	<Script file="Modules\Buffs\ConsolidatedBuffs.lua"/>
 	<Script file="Modules\Buffs\SelfBuffsReminder.lua"/>
 	<Script file="Modules\Buffs\RaidBuffsReminder.lua"/>
 
@@ -229,6 +226,11 @@
 	<Script file="Modules\Skins\TinyDPS.lua"/>
 	<Script file="Modules\Skins\VanasKoS.lua"/>
 	<Script file="Modules\Skins\WeakAuras.lua"/>
+	<Script file="Modules\Skins\oPie.lua"/>
+	<Script file="Modules\Skins\Arh.lua"/>
+	<Script file="Modules\Skins\Rematch.lua"/>
+	<Script file="Modules\Skins\Postal.lua"/>
+	<Script file="Modules\Skins\lsToasts.lua"/>
 
 	<Script file="Modules\Tooltip\Tooltip.lua"/>
 	<Script file="Modules\Tooltip\HyperLink.lua"/>

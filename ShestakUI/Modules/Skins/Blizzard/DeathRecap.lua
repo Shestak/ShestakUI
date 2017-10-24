@@ -6,23 +6,17 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	DeathRecapFrame:StripTextures()
-	T.SkinCloseButton(DeathRecapFrame.CloseXButton)
 	DeathRecapFrame:SetTemplate("Transparent")
+	DeathRecapFrame.CloseButton:SkinButton(true)
+	T.SkinCloseButton(DeathRecapFrame.CloseXButton)
 
-	for i = 1, 5 do
-		local iconBorder = DeathRecapFrame["Recap"..i].SpellInfo.IconBorder
-		local icon = DeathRecapFrame["Recap"..i].SpellInfo.Icon
-		iconBorder:SetAlpha(0)
-		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		DeathRecapFrame["Recap"..i].SpellInfo:CreateBackdrop("Default")
-		icon:SetParent(DeathRecapFrame["Recap"..i].SpellInfo.backdrop)
-	end
-
-	for i = 1, DeathRecapFrame:GetNumChildren() do
-		local child = select(i, DeathRecapFrame:GetChildren())
-		if child:GetObjectType() == "Button" and child.GetText and child:GetText() == CLOSE then
-			child:SkinButton(true)
-		end
+	for i = 1, NUM_DEATH_RECAP_EVENTS do
+		local recap = DeathRecapFrame["Recap"..i].SpellInfo
+		recap.IconBorder:Hide()
+		recap.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		recap:CreateBackdrop("Default")
+		recap.backdrop:SetPoint("TOPLEFT", recap.Icon, "TOPLEFT", -2, 2)
+		recap.backdrop:SetPoint("BOTTOMRIGHT", recap.Icon, "BOTTOMRIGHT", 2, -2)
 	end
 end
 

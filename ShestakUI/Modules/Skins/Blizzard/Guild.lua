@@ -155,8 +155,9 @@ local function LoadSkin()
 	GuildNewsFiltersFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(GuildNewsFiltersFrameCloseButton)
 
-	for i = 1, 6 do
-		T.SkinCheckBox(_G["GuildNewsFilterButton"..i])
+	for i = 1, #GuildNewsFiltersFrame.GuildNewsFilterButtons do
+		local checkbox = GuildNewsFiltersFrame.GuildNewsFilterButtons[i]
+		T.SkinCheckBox(checkbox)
 	end
 
 	GuildNewsFiltersFrame:SetPoint("TOPLEFT", GuildFrame, "TOPRIGHT", 3, 0)
@@ -190,8 +191,18 @@ local function LoadSkin()
 
 	GuildRecruitmentCommentInputFrame:SetTemplate("Overlay")
 
-	for _, button in next, GuildInfoFrameApplicantsContainer.buttons do
-		button:SetBackdrop(nil)
+	for i = 1, #GuildInfoFrameApplicantsContainer.buttons do
+		local button = GuildInfoFrameApplicantsContainer.buttons[i]
+		button:SetTemplate("Overlay")
+		button:StyleButton()
+		button.selectedTex:SetDrawLayer("ARTWORK")
+		button.selectedTex:SetColorTexture(1, 0.82, 0, 0.3)
+		button.selectedTex:SetPoint("TOPLEFT", 2, -2)
+		button.selectedTex:SetPoint("BOTTOMRIGHT", -2, 2)
+
+		if i ~= 1 then
+			button:SetPoint("TOPLEFT", GuildInfoFrameApplicantsContainer.buttons[i-1], "BOTTOMLEFT", 0, -2)
+		end
 	end
 
 	-- Text Edit Frame

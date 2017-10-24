@@ -5,13 +5,6 @@ if T.client ~= "zhTW" then return end
 --	Localization for zhTW client
 --	Translation: Aelb, Ianchan, Leg883, Mania, Nanjiqq, Spacedragon, Tat2dawn, Tibles
 ----------------------------------------------------------------------------------------
--- Announce your Lightwell
-L_ANNOUNCE_LA_USE = " 使用了光束泉！"
-L_ANNOUNCE_LA_CHARGE = "次剩餘)"
-L_ANNOUNCE_LA_USELESS = " 使用了光束泉，無效！"
-L_ANNOUNCE_LA_PLACED = "光束泉已放置！"
-L_ANNOUNCE_LA_CHARGES = "次剩餘."
-
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "缺少食物Buff: "
 L_ANNOUNCE_FF_NOFLASK = "缺少精煉藥劑: "
@@ -63,6 +56,7 @@ L_MISC_BINDER_OPEN = "鼠標綁定"
 L_MISC_GROCERY_BUY = "購買"
 L_MISC_GROCERY_DESC = "雜貨商自動購買"
 L_MISC_SCROLL = "附魔卷軸"
+L_MISC_COLLAPSE = "The Collapse" -- Need review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散團隊"
@@ -103,6 +97,7 @@ L_MINIMAP_CALENDAR = "日曆"
 L_MINIMAP_HEAL_LAYOUT = "左鍵 - HPS 佈局"
 L_MINIMAP_DPS_LAYOUT = "右鍵 - DPS 佈局"
 L_MINIMAP_BLIZZ_LAYOUT = "中鍵 - 默認 佈局"
+L_MINIMAP_ARTIFACT = "Right click to use" -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "From"
@@ -130,6 +125,7 @@ L_ERRORFRAME_L = "點擊查看錯誤"
 L_BAG_SHOW_BAGS = "顯示背包"
 L_BAG_RIGHT_CLICK_SEARCH = "點擊右鍵以搜尋物品"
 L_BAG_STACK_MENU = "堆疊"
+L_BAG_RIGHT_CLICK_CLOSE = "右鍵點擊打開菜單"
 
 -- Grab mail
 L_MAIL_STOPPED = "無法拾取, 背囊已滿."
@@ -171,12 +167,6 @@ L_BIND_CLEARED = "已經清除所有的快捷鍵設置"
 L_BIND_BINDING = "綁定"
 L_BIND_KEY = "按鍵"
 L_BIND_NO_SET = "沒有綁定快捷鍵"
-
--- Talent spec
-L_PLANNER_DRUID_4 = "恢復"
-L_PLANNER_MONK_2 = "織霧"
-L_PLANNER_PALADIN_1 = "神聖"
-L_PLANNER_PRIEST_1 = "戒律"
 
 -- BG stats
 L_DATATEXT_BASESASSAULTED = "基地突襲:"
@@ -236,6 +226,7 @@ L_COMBATTEXT_TEST_ENABLED = "戰鬥信息測試模式已啟用."
 L_COMBATTEXT_TEST_USE_UNLOCK = "輸入 /xct unlock 來移動或調整戰鬥信息框架大小."
 L_COMBATTEXT_TEST_USE_LOCK = "輸入 /xct lock 來鎖定戰鬥信息框架."
 L_COMBATTEXT_TEST_USE_TEST = "輸入 /xct test 來啟用或禁用戰鬥信息測試模式."
+L_COMBATTEXT_TEST_USE_RESET = "Type /xct reset to restore default positions." -- Need review
 L_COMBATTEXT_POPUP = "要保存戰鬥信息窗口的位置你需要重新載入插件."
 L_COMBATTEXT_UNSAVED = "戰鬥信息窗口位置尚未保存,不要忘記重新載入插件."
 L_COMBATTEXT_UNLOCKED = "戰鬥信息已解鎖."
@@ -251,7 +242,7 @@ L_STATS_BANDWIDTH = "寬頻:"
 L_STATS_DOWNLOAD = "下載:"
 L_STATS_CLEARED_JUNK = "清除自動販售例外名單列表"
 L_STATS_CLEAR_EXCEPTIONS = "清除例外名單列表"
-L_STATS_CURRENCY_RAID_T = "Raid Seals" -- Needs review
+L_STATS_CURRENCY_RAID = "Raid Seals" -- Needs review
 L_STATS_WORLD_MAP = "點擊開啟世界地圖"
 L_STATS_CURRENT_XP = "目前/升級所需 經驗值"
 L_STATS_MEMORY_USAGE = "插件資源佔用:"

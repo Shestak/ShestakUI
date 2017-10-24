@@ -36,6 +36,8 @@ local function LoadSkin()
 		b:SetTemplate("Default")
 		b:SetPoint("TOPLEFT", item_bar, "TOPLEFT", 4, -4)
 
+		b.IconBorder:SetAlpha(0)
+
 		t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		t:ClearAllPoints()
 		t:SetPoint("TOPLEFT", 2, -2)
@@ -59,6 +61,7 @@ local function LoadSkin()
 	MerchantBuyBackItemItemButtonIconTexture:ClearAllPoints()
 	MerchantBuyBackItemItemButtonIconTexture:SetPoint("TOPLEFT", 2, -2)
 	MerchantBuyBackItemItemButtonIconTexture:SetPoint("BOTTOMRIGHT", -2, 2)
+	MerchantBuyBackItemItemButton.IconBorder:SetAlpha(0)
 
 	MerchantRepairItemButton:StyleButton()
 	MerchantRepairItemButton:SetTemplate("Default")

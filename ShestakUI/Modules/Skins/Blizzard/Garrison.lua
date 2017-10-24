@@ -81,6 +81,7 @@ local function LoadSkin()
 
 	-- Mission UI
 	GarrisonMissionFrame:StripTextures()
+	GarrisonMissionFrame.GarrCorners:StripTextures()
 	GarrisonMissionFrame.TitleText:Show()
 	GarrisonMissionFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(GarrisonMissionFrame.CloseButton)
@@ -114,10 +115,10 @@ local function LoadSkin()
 
 	for _, item in pairs({GarrisonMissionFrame.FollowerTab.ItemWeapon, GarrisonMissionFrame.FollowerTab.ItemArmor}) do
 		item.Border:Hide()
-		item.Icon:SetTexCoord(.08, .92, .08, .92)
+		item.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		item:CreateBackdrop("Default")
-		item.backdrop:SetPoint("TOPLEFT", item.Icon,"TOPLEFT", -2, 2)
-		item.backdrop:SetPoint("BOTTOMRIGHT", item.Icon,"BOTTOMRIGHT", 2, -2)
+		item.backdrop:SetPoint("TOPLEFT", item.Icon, "TOPLEFT", -2, 2)
+		item.backdrop:SetPoint("BOTTOMRIGHT", item.Icon, "BOTTOMRIGHT", 2, -2)
 		item.backdrop:SetFrameLevel(item:GetFrameLevel())
 	end
 
@@ -135,8 +136,8 @@ local function LoadSkin()
 			if not reward.backdrop then
 				reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				reward:CreateBackdrop("Default")
-				reward.backdrop:SetPoint("TOPLEFT", reward.Icon,"TOPLEFT", -2, 2)
-				reward.backdrop:SetPoint("BOTTOMRIGHT", reward.Icon,"BOTTOMRIGHT", 2, -2)
+				reward.backdrop:SetPoint("TOPLEFT", reward.Icon, "TOPLEFT", -2, 2)
+				reward.backdrop:SetPoint("BOTTOMRIGHT", reward.Icon, "BOTTOMRIGHT", 2, -2)
 				reward.backdrop:SetFrameLevel(reward:GetFrameLevel())
 			end
 		end
@@ -147,8 +148,8 @@ local function LoadSkin()
 		if not frame.backdrop then
 			frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			frame:CreateBackdrop("Default")
-			frame.backdrop:SetPoint("TOPLEFT", frame.Icon,"TOPLEFT", -2, 2)
-			frame.backdrop:SetPoint("BOTTOMRIGHT", frame.Icon,"BOTTOMRIGHT", 2, -2)
+			frame.backdrop:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
+			frame.backdrop:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
 		end
 	end)
 
@@ -205,6 +206,22 @@ local function LoadSkin()
 		self.backdrop.overlay:SetVertexColor(1, 0.82, 0, 0.3)
 	end)
 
+	for i = 1, #GarrisonLandingPage.Report.List.listScroll.buttons do
+		local button = GarrisonLandingPage.Report.List.listScroll.buttons[i]
+		for _, reward in pairs(button.Rewards) do
+			reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			if not reward.backdrop then
+				reward:CreateBackdrop("Default")
+				reward.backdrop:SetPoint("TOPLEFT", reward.Icon, "TOPLEFT", -2, 2)
+				reward.backdrop:SetPoint("BOTTOMRIGHT", reward.Icon, "BOTTOMRIGHT", 2, -2)
+				reward.backdrop:SetFrameLevel(reward:GetFrameLevel())
+
+				reward.Quantity:SetParent(reward.backdrop)
+				reward.IconBorder:SetAlpha(0)
+			end
+		end
+	end
+
 	for _, xpBar in pairs({GarrisonLandingPage.FollowerTab.XPBar, GarrisonLandingPage.ShipFollowerTab.XPBar, GarrisonMissionFrame.FollowerTab.XPBar}) do
 		xpBar:StripTextures()
 		xpBar:CreateBackdrop("Default")
@@ -228,7 +245,7 @@ local function LoadSkin()
 		while ability do
 			local icon = ability.IconButton.Icon
 
-			icon:SetTexCoord(.08, .92, .08, .92)
+			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			icon:SetDrawLayer("BACKGROUND", 1)
 			ability.IconButton:CreateBackdrop("Default")
 
@@ -244,6 +261,7 @@ local function LoadSkin()
 
 	-- ShipYard
 	GarrisonShipyardFrame:StripTextures(true)
+	GarrisonShipyardFrame.BorderFrame.GarrCorners:StripTextures()
 	GarrisonShipyardFrame.BorderFrame:StripTextures(true)
 	GarrisonShipyardFrame:CreateBackdrop("Transparent")
 	GarrisonShipyardFrame.BorderFrame.TitleText:SetPoint("TOP", -6, -1)
@@ -330,6 +348,23 @@ local function LoadSkin()
 	CapacitiveDisplay.ShipmentIconFrame:SetTemplate("Default")
 	CapacitiveDisplay.ShipmentIconFrame.Icon:SetPoint("TOPLEFT", -2, 2)
 	CapacitiveDisplay.ShipmentIconFrame.Icon:SetPoint("BOTTOMRIGHT", 2, -2)
+
+	hooksecurefunc(CapacitiveDisplay.ShipmentIconFrame.Follower.PortraitRingQuality, "SetVertexColor", function(self, r, g, b)
+		CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop:SetBackdropBorderColor(r, g, b)
+		self:SetTexture("")
+	end)
+
+	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait:SetAllPoints()
+	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait:SetTexCoord(0.2, 0.85, 0.2, 0.85)
+	CapacitiveDisplay.ShipmentIconFrame.Follower.PortraitRing:Kill()
+	CapacitiveDisplay.ShipmentIconFrame.Follower.PortraitRingQuality:Kill()
+	CapacitiveDisplay.ShipmentIconFrame.Follower:SetPoint("TOPLEFT", -2, 2)
+	CapacitiveDisplay.ShipmentIconFrame.Follower:SetPoint("BOTTOMRIGHT", 2, -2)
+	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop = CreateFrame("Frame", nil, CapacitiveDisplay.ShipmentIconFrame.Follower)
+	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop:SetFrameLevel(CapacitiveDisplay.ShipmentIconFrame.Follower:GetFrameLevel() - 1)
+	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop:SetPoint("TOPLEFT", CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait, -2, 2)
+	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop:SetPoint("BOTTOMRIGHT", CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait, 2, -2)
+	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop:SetTemplate("Default")
 
 	do
 		local reagentIndex = 1

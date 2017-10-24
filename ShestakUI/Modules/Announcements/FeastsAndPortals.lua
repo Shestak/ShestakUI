@@ -24,6 +24,12 @@ frame:SetScript("OnEvent", function(self, event, _, subEvent, _, _, srcName, _, 
 			SendChatMessage(string.format(L_ANNOUNCE_FP_STAT, srcName, GetSpellLink(spellID), SPELL_STAT5_NAME), T.CheckChat(true))
 		elseif C.announcements.feasts and (spellID == 104958 or spellID == 105193 or spellID == 126503 or spellID == 126504 or spellID == 145166 or spellID == 145169 or spellID == 145196) then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_PRE, srcName, GetSpellLink(spellID)), T.CheckChat(true))
+		-- Spirit Cauldron
+		elseif C.announcements.feasts and spellID == 188036 then
+			SendChatMessage(string.format(L_ANNOUNCE_FP_PRE, srcName, GetSpellLink(spellID)), T.CheckChat(true))
+		-- Lavish Suramar Feast
+		elseif C.announcements.feasts and spellID == 201352 then
+			SendChatMessage(string.format(L_ANNOUNCE_FP_PRE, srcName, GetSpellLink(spellID)), T.CheckChat(true))
 		-- Refreshment Table
 		elseif C.announcements.feasts and spellID == 43987 then
 			SendChatMessage(string.format(L_ANNOUNCE_FP_PRE, srcName, GetSpellLink(spellID)), T.CheckChat(true))

@@ -34,7 +34,7 @@ local tagStrings = {
 	["difficulty"] = [[function(u)
 		if UnitCanAttack("player", u) then
 			local l = UnitLevel(u)
-			return Hex(GetQuestDifficultyColor((l > 0) and l or 99))
+			return Hex(GetCreatureDifficultyColor((l > 0) and l or 199))
 		end
 	end]],
 
@@ -53,8 +53,10 @@ local tagStrings = {
 	["level"] = [[function(u)
 		local l = UnitLevel(u)
 		if(UnitIsWildBattlePet(u) or UnitIsBattlePetCompanion(u)) then
-			return UnitBattlePetLevel(u)
-		elseif(l > 0) then
+			l = UnitBattlePetLevel(u)
+		end
+
+		if(l > 0) then
 			return l
 		else
 			return '??'
@@ -261,15 +263,6 @@ local tagStrings = {
 		end
 	end]],
 
-	['pereclipse'] = [[function(u)
-		local m = UnitPowerMax('player', SPELL_POWER_ECLIPSE)
-		if(m == 0) then
-			return 0
-		else
-			return math.abs(UnitPower('player', SPELL_POWER_ECLIPSE)/m*100)
-		end
-	end]],
-
 	['curmana'] = [[function(unit)
 		return UnitPower(unit, SPELL_POWER_MANA)
 	end]],
@@ -286,23 +279,29 @@ local tagStrings = {
 	end]],
 
 	['holypower'] = [[function()
-		local num = UnitPower('player', SPELL_POWER_HOLY_POWER)
-		if(num > 0) then
-			return num
+		if(GetSpecialization() == SPEC_PALADIN_RETRIBUTION) then
+			local num = UnitPower('player', SPELL_POWER_HOLY_POWER)
+			if(num > 0) then
+				return num
+			end
 		end
 	end]],
 
 	['chi'] = [[function()
-		local num = UnitPower('player', SPELL_POWER_CHI)
-		if(num > 0) then
-			return num
+		if(GetSpecialization() == SPEC_MONK_WINDWALKER) then
+			local num = UnitPower('player', SPELL_POWER_CHI)
+			if(num > 0) then
+				return num
+			end
 		end
 	end]],
 
-	['shadoworbs'] = [[function()
-		local num = UnitPower('player', SPELL_POWER_SHADOW_ORBS)
-		if(num > 0) then
-			return num
+	['arcanecharges'] = [[function()
+		if(GetSpecialization() == SPEC_MAGE_ARCANE) then
+			local num = UnitPower('player', SPELL_POWER_ARCANE_CHARGES)
+			if(num > 0) then
+				return num
+			end
 		end
 	end]],
 
@@ -375,7 +374,7 @@ local tagEvents = {
 	["smartlevel"]			= "UNIT_LEVEL PLAYER_LEVEL_UP UNIT_CLASSIFICATION_CHANGED",
 	["threat"]				= "UNIT_THREAT_SITUATION_UPDATE",
 	["threatcolor"]			= "UNIT_THREAT_SITUATION_UPDATE",
-	['cpoints']				= 'UNIT_COMBO_POINTS PLAYER_TARGET_CHANGED',
+	['cpoints']				= 'UNIT_POWER_FREQUENT PLAYER_TARGET_CHANGED',
 	['affix']				= 'UNIT_CLASSIFICATION_CHANGED',
 	['plus']				= 'UNIT_CLASSIFICATION_CHANGED',
 	['rare']				= 'UNIT_CLASSIFICATION_CHANGED',
@@ -388,13 +387,12 @@ local tagEvents = {
 	["perpp"]				= 'UNIT_MAXPOWER UNIT_POWER',
 	["offline"]				= "UNIT_HEALTH UNIT_CONNECTION",
 	["status"]				= "UNIT_HEALTH PLAYER_UPDATE_RESTING UNIT_CONNECTION",
-	["pereclipse"]			= 'UNIT_POWER_FREQUENT',
 	['curmana']				= 'UNIT_POWER UNIT_MAXPOWER',
 	['maxmana']				= 'UNIT_POWER UNIT_MAXPOWER',
 	['soulshards']			= 'UNIT_POWER',
-	['holypower']			= 'UNIT_POWER',
-	['chi']					= 'UNIT_POWER',
-	['shadoworbs']			= 'UNIT_POWER',
+	['holypower']			= 'UNIT_POWER SPELLS_CHANGED',
+	['chi']					= 'UNIT_POWER SPELLS_CHANGED',
+	['arcanecharges']		= 'UNIT_POWER SPELLS_CHANGED',
 }
 
 local unitlessEvents = {
@@ -405,8 +403,6 @@ local unitlessEvents = {
 	PARTY_LEADER_CHANGED = true,
 
 	GROUP_ROSTER_UPDATE = true,
-
-	UNIT_COMBO_POINTS = true
 }
 
 local events = {}
@@ -649,7 +645,7 @@ local Tag = function(self, fs, tagstr)
 	fs.UpdateTag = func
 
 	local unit = self.unit
-	if((unit and unit:match'%w+target') or fs.frequentUpdates) then
+	if(self.__eventless or fs.frequentUpdates) then
 		local timer
 		if(type(fs.frequentUpdates) == 'number') then
 			timer = fs.frequentUpdates
@@ -689,9 +685,11 @@ local Untag = function(self, fs)
 	fs.UpdateTag = nil
 end
 
-oUF.Tags = tags
-oUF.TagEvents = tagEvents
-oUF.UnitlessTagEvents = unitlessEvents
+oUF.Tags = {
+	Methods = tags,
+	Events = tagEvents,
+	SharedEvents = unitlessEvents
+}
 
 oUF:RegisterMetaFunction('Tag', Tag)
 oUF:RegisterMetaFunction('Untag', Untag)

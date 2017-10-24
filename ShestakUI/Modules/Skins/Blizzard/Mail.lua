@@ -33,6 +33,8 @@ local function LoadSkin()
 		t:ClearAllPoints()
 		t:SetPoint("TOPLEFT", 2, -2)
 		t:SetPoint("BOTTOMRIGHT", -2, 2)
+
+		_G["MailItem"..i.."ButtonIconBorder"]:SetAlpha(0)
 	end
 
 	T.SkinCloseButton(MailFrameCloseButton, MailFrame.backdrop)
@@ -71,6 +73,7 @@ local function LoadSkin()
 				b:StripTextures()
 				b:SetTemplate("Default")
 				b:StyleButton()
+				b.IconBorder:SetAlpha(0)
 				b.skinned = true
 			end
 
@@ -137,6 +140,7 @@ local function LoadSkin()
 		b:StripTextures()
 		b:SetTemplate("Default")
 		b:StyleButton()
+		b.IconBorder:SetAlpha(0)
 
 		if t then
 			t:SetTexCoord(0.1, 0.9, 0.1, 0.9)

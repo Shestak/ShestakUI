@@ -14,6 +14,11 @@ local function LoadSkin()
 	AuctionsScrollFrame:StripTextures()
 	BidScrollFrame:StripTextures()
 
+	T.SkinScrollBar(BrowseFilterScrollFrameScrollBar)
+	T.SkinScrollBar(BrowseScrollFrameScrollBar)
+	T.SkinScrollBar(AuctionsScrollFrameScrollBar)
+	T.SkinScrollBar(BidScrollFrameScrollBar)
+
 	T.SkinDropDownBox(BrowseDropDown)
 	T.SkinDropDownBox(PriceDropDown)
 	T.SkinDropDownBox(DurationDropDown, 80)
@@ -51,19 +56,13 @@ local function LoadSkin()
 	WowTokenGameTimeTutorialLeftBorder:SetAlpha(0)
 	WowTokenGameTimeTutorialRightBorder:SetAlpha(0)
 
-	do
-		local Token = BrowseWowTokenResults.Token
-		local icon = Token.Icon
-
-		Token.ItemBorder:Hide()
-		Token.IconBorder:Hide()
-
-		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
-		Token:CreateBackdrop("Default")
-		Token.backdrop:SetPoint("TOPLEFT", Token.IconBorder, -2, 2)
-		Token.backdrop:SetPoint("BOTTOMRIGHT", Token.IconBorder, 2, -2)
-	end
+	local Token = BrowseWowTokenResultsToken
+	Token.ItemBorder:Hide()
+	Token.IconBorder:Hide()
+	Token.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	Token:CreateBackdrop("Default")
+	Token.backdrop:SetPoint("TOPLEFT", Token.IconBorder, -2, 2)
+	Token.backdrop:SetPoint("BOTTOMRIGHT", Token.IconBorder, 2, -2)
 
 	-- Progress Frame
 	AuctionProgressFrame:StripTextures()
@@ -78,16 +77,16 @@ local function LoadSkin()
 	AuctionProgressFrameCancelButton:SetSize(28, 28)
 	AuctionProgressFrameCancelButton:SetPoint("LEFT", AuctionProgressBar, "RIGHT", 8, 0)
 
-	AuctionProgressBarIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	AuctionProgressBar.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-	local backdrop = CreateFrame("Frame", nil, AuctionProgressBarIcon:GetParent())
-	backdrop:SetPoint("TOPLEFT", AuctionProgressBarIcon, "TOPLEFT", -2, 2)
-	backdrop:SetPoint("BOTTOMRIGHT", AuctionProgressBarIcon, "BOTTOMRIGHT", 2, -2)
+	local backdrop = CreateFrame("Frame", nil, AuctionProgressBar.Icon:GetParent())
+	backdrop:SetPoint("TOPLEFT", AuctionProgressBar.Icon, "TOPLEFT", -2, 2)
+	backdrop:SetPoint("BOTTOMRIGHT", AuctionProgressBar.Icon, "BOTTOMRIGHT", 2, -2)
 	backdrop:SetTemplate("Default")
-	AuctionProgressBarIcon:SetParent(backdrop)
+	AuctionProgressBar.Icon:SetParent(backdrop)
 
-	AuctionProgressBarText:ClearAllPoints()
-	AuctionProgressBarText:SetPoint("CENTER")
+	AuctionProgressBar.Text:ClearAllPoints()
+	AuctionProgressBar.Text:SetPoint("CENTER")
 
 	AuctionProgressBar:StripTextures()
 	AuctionProgressBar:CreateBackdrop("Default")
@@ -134,15 +133,16 @@ local function LoadSkin()
 	BrowseResetButton:SetWidth(80)
 
 	AuctionsItemButton:StripTextures()
-	AuctionsItemButton:StyleButton()
+	AuctionsItemButton:StyleButton(true)
 	AuctionsItemButton:SetTemplate("Default")
+	AuctionsItemButton.IconBorder:Kill()
 
-	AuctionsItemButton:SetScript("OnUpdate", function()
-		if AuctionsItemButton:GetNormalTexture() then
-			AuctionsItemButton:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			AuctionsItemButton:GetNormalTexture():ClearAllPoints()
-			AuctionsItemButton:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
-			AuctionsItemButton:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
+	AuctionsItemButton:HookScript("OnEvent", function(self, event, ...)
+		if event == "NEW_AUCTION_UPDATE" and self:GetNormalTexture() then
+			self:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			self:GetNormalTexture():ClearAllPoints()
+			self:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
+			self:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 		end
 	end)
 
@@ -177,12 +177,9 @@ local function LoadSkin()
 	for i = 1, NUM_FILTERS_TO_DISPLAY do
 		local tab = _G["AuctionFilterButton"..i]
 		tab:StyleButton()
+		_G["AuctionFilterButton"..i.."NormalTexture"]:SetAlpha(0)
+		_G["AuctionFilterButton"..i.."NormalTexture"].SetAlpha = T.dummy
 	end
-
-	hooksecurefunc("FilterButton_SetType", function(button)
-		local tex = button:GetNormalTexture();
-		tex:SetAlpha(0)
-	end)
 
 	local editboxs = {
 		"BrowseName",
@@ -229,6 +226,7 @@ local function LoadSkin()
 			icon:StyleButton()
 			icon:CreateBackdrop("Default")
 			icon.backdrop:SetAllPoints()
+			icon.IconBorder:Kill()
 		end
 
 		if button then
@@ -255,6 +253,7 @@ local function LoadSkin()
 		icon:StyleButton()
 		icon:CreateBackdrop("Default")
 		icon.backdrop:SetAllPoints()
+		icon.IconBorder:Kill()
 
 		button:StripTextures()
 		button:StyleButton()
@@ -278,6 +277,7 @@ local function LoadSkin()
 		icon:StyleButton()
 		icon:CreateBackdrop("Default")
 		icon.backdrop:SetAllPoints()
+		icon.IconBorder:Kill()
 
 		button:StripTextures()
 		button:StyleButton()
@@ -423,8 +423,7 @@ local function LoadSkin()
 		"Atr_ShpList_Options_Frame",
 		"AuctionatorResetsFrame",
 		"Atr_ScanningOptionsFrame",
-		"AuctionatorDescriptionFrame",
-		"Atr_LUA_Error"
+		"AuctionatorDescriptionFrame"
 	}
 
 	for i = 1, getn(frames) do
@@ -457,7 +456,6 @@ local function LoadSkin()
 	Atr_Buy_Confirm_Frame:SetTemplate("Default")
 	Atr_CheckActives_Frame:SetTemplate("Transparent")
 	Atr_Error_Frame:SetTemplate("Transparent")
-	Atr_LUA_Error:SetTemplate("Transparent")
 
 	Atr_HeadingsBar:CreateBackdrop("Overlay")
 	Atr_HeadingsBar.backdrop:SetPoint("TOPLEFT", 0, -25)
@@ -517,15 +515,6 @@ local function LoadSkin()
 			Atr_SellControls_Tex:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 		end
 	end)
-
-	T.SkinCloseButton(Atr_LUA_ErrorClose)
-
-	for i = 1, Atr_LUA_Error:GetNumChildren() do
-		local child = select(i, Atr_LUA_Error:GetChildren())
-		if child:GetObjectType() == "Button" and child:GetText() then
-			child:SkinButton()
-		end
-	end
 end
 
 T.SkinFuncs["Blizzard_AuctionUI"] = LoadSkin

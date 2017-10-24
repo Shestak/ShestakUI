@@ -52,21 +52,23 @@ local function OnUpdate(_, update)
 	if elapsed > 0.05 then
 		for i, v in pairs(watching) do
 			if GetTime() >= v[1] + 0.5 + threshold then
-				if T.pulse_ignored_spells[i] then
+				local start, duration, enabled, texture, isPet
+				if v[2] == "spell" then
+					name = GetSpellInfo(v[3])
+					texture = GetSpellTexture(v[3])
+					start, duration, enabled = GetSpellCooldown(v[3])
+				elseif v[2] == "item" then
+					name = GetItemInfo(i)
+					texture = v[3]
+					start, duration, enabled = GetItemCooldown(i)
+				elseif v[2] == "pet" then
+					name, _, texture = GetPetActionInfo(v[3])
+					start, duration, enabled = GetPetActionCooldown(v[3])
+					isPet = true
+				end
+				if T.pulse_ignored_spells[name] then
 					watching[i] = nil
 				else
-					local start, duration, enabled, texture, isPet
-					if v[2] == "spell" then
-						texture = GetSpellTexture(v[3])
-						start, duration, enabled = GetSpellCooldown(v[3])
-					elseif v[2] == "item" then
-						texture = v[3]
-						start, duration, enabled = GetItemCooldown(i)
-					elseif v[2] == "pet" then
-						texture = select(3, GetPetActionInfo(v[3]))
-						start, duration, enabled = GetPetActionCooldown(v[3])
-						isPet = true
-					end
 					if enabled ~= 0 then
 						if duration and duration > threshold and texture then
 							cooldowns[i] = {start, duration, texture, isPet}
@@ -135,7 +137,7 @@ frame:RegisterEvent("ADDON_LOADED")
 
 function frame:UNIT_SPELLCAST_SUCCEEDED(unit, spell, _, _, spellID)
 	if unit == "player" then
-		watching[spell] = {GetTime(), "spell", spellID}
+		watching[spellID] = {GetTime(), "spell", spellID}
 		self:SetScript("OnUpdate", OnUpdate)
 	end
 end
@@ -148,9 +150,9 @@ function frame:COMBAT_LOG_EVENT_UNFILTERED(...)
 			local name = GetSpellInfo(spellID)
 			local index = GetPetActionIndexByName(name)
 			if index and not select(7, GetPetActionInfo(index)) then
-				watching[name] = {GetTime(), "pet", index}
-			elseif not index and name then
-				watching[name] = {GetTime(), "spell", spellID}
+				watching[spellID] = {GetTime(), "pet", index}
+			elseif not index and spellID then
+				watching[spellID] = {GetTime(), "spell", spellID}
 			else
 				return
 			end

@@ -5,13 +5,6 @@ if T.client ~= "itIT" then return end
 --	Localization for itIT client
 --	Translation: Oz
 ----------------------------------------------------------------------------------------
--- Announce your Lightwell
-L_ANNOUNCE_LA_USE = " ha usato il mio Pozzo di Luce. "
-L_ANNOUNCE_LA_CHARGE = " carica (cariche)"
-L_ANNOUNCE_LA_USELESS = " ha usato il mio Pozzo di Luce inutilmente! "
-L_ANNOUNCE_LA_PLACED = "Pozzo di Luce posizionato. "
-L_ANNOUNCE_LA_CHARGES = " cariche."
-
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "Senza beneficio da cibo: "
 L_ANNOUNCE_FF_NOFLASK = "Senza beneficio da tonico: "
@@ -63,6 +56,7 @@ L_MISC_BINDER_OPEN = "Assegnazione pulsanti mouse"
 L_MISC_GROCERY_BUY = "Compra"
 L_MISC_GROCERY_DESC = "Compra automaticamente i sacchetti di alimenti"
 L_MISC_SCROLL = "Pergamena"
+L_MISC_COLLAPSE = "The Collapse" -- Need review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Sciogli il gruppo"
@@ -103,6 +97,7 @@ L_MINIMAP_CALENDAR = "Calendario"
 L_MINIMAP_HEAL_LAYOUT = "Click-Sinistro - Disposizione da Guaritore"
 L_MINIMAP_DPS_LAYOUT = "Click-Destro - Disposizione d'Assaltatore"
 L_MINIMAP_BLIZZ_LAYOUT = "Click-Centrale - Disposizione Blizzard"
+L_MINIMAP_ARTIFACT = "Right click to use" -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "Da"
@@ -130,6 +125,7 @@ L_ERRORFRAME_L = "Clicca per vedere gli errori."
 L_BAG_SHOW_BAGS = "Mostra le sacche"
 L_BAG_RIGHT_CLICK_SEARCH = "Clicca col destro per cercare"
 L_BAG_STACK_MENU = "Impila oggetti identici"
+L_BAG_RIGHT_CLICK_CLOSE = "Right-click to open menu" -- Need review
 
 -- Grab mail
 L_MAIL_STOPPED = "Interrotto, l'inventario è pieno."
@@ -171,12 +167,6 @@ L_BIND_CLEARED = "Tutte le assegnazioni tasti sono state cancellate per"
 L_BIND_BINDING = "Assegnazione"
 L_BIND_KEY = "Tasto"
 L_BIND_NO_SET = "Nessuna assegnazione impostata"
-
--- Talent spec
-L_PLANNER_DRUID_4 = "Rigenerazione"
-L_PLANNER_MONK_2 = "Misticismo"
-L_PLANNER_PALADIN_1 = "Sacro"
-L_PLANNER_PRIEST_1 = "Disciplina"
 
 -- BG stats
 L_DATATEXT_BASESASSAULTED = "Basi assaltate:"
@@ -236,6 +226,7 @@ L_COMBATTEXT_TEST_ENABLED = "Modalità 'prova' del testo di combattimento abilit
 L_COMBATTEXT_TEST_USE_UNLOCK = "Digita /xct per sbloccare e quindi poter muovere e ridimensionare i riquadri del testo di combattimento."
 L_COMBATTEXT_TEST_USE_LOCK = "Digita /xct per bloccare i riquadri del testo di combattimento."
 L_COMBATTEXT_TEST_USE_TEST = "Digita /xct test per attivare la modalità 'prova' per il testo di combattimento."
+L_COMBATTEXT_TEST_USE_RESET = "Type /xct reset to restore default positions." -- Need review
 L_COMBATTEXT_POPUP = "Per poter salvare la posizione delle finestre del testo di combattimento è necessario riavviare la tua interfaccia utente."
 L_COMBATTEXT_UNSAVED = "La posizione delle finestre del testo di combattimento non è ancora stata salvata: non dimenticare di riavviare l'interfaccia utente."
 L_COMBATTEXT_UNLOCKED = "Testo di combattimento sbloccato."
@@ -251,7 +242,7 @@ L_STATS_BANDWIDTH = "Larghezza banda:"
 L_STATS_DOWNLOAD = "Download:"
 L_STATS_CLEARED_JUNK = "Lista eccezioni dell'elenco cianfrusaglie cancellata."
 L_STATS_CLEAR_EXCEPTIONS = "Cancella la lista eccezioni."
-L_STATS_CURRENCY_RAID_T = "Raid Seals" -- Needs review
+L_STATS_CURRENCY_RAID = "Raid Seals" -- Needs review
 L_STATS_WORLD_MAP = "Clicca per aprire la mappa del mondo."
 L_STATS_CURRENT_XP = "PE attuali/massimi"
 L_STATS_MEMORY_USAGE = "Utilizzo memoria interfaccia Blizzard:"

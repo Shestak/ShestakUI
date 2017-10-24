@@ -10,7 +10,7 @@ if not tab then return end
 local function OnEvent(self, event, arg1, arg2)
 	local group = tab[self.id]
 	if not group.spells then return end
-	if not GetActiveSpecGroup() then return end
+	if not GetSpecialization() then return end
 	if event == "UNIT_AURA" and arg1 ~= "player" then return end
 	if group.level and T.level < group.level then return end
 

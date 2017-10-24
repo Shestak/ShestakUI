@@ -118,6 +118,7 @@ if StreamingIcon then
 	StreamingIcon:ClearAllPoints()
 	StreamingIcon:SetPoint("BOTTOM", Minimap, "BOTTOM", 0, -10)
 	StreamingIcon:SetScale(0.8)
+	StreamingIcon:SetFrameStrata("BACKGROUND")
 end
 
 -- Ticket icon
@@ -187,7 +188,11 @@ local micromenu = {
 		if T.level >= SHOW_TALENT_LEVEL then
 			ShowUIPanel(PlayerTalentFrame)
 		else
-			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")
+			if C.error.white == false then
+				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL), 1, 0.1, 0.1)
+			else
+				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")
+			end
 		end
 	end},
 	{text = ACHIEVEMENT_BUTTON, notCheckable = 1, func = function()
@@ -228,7 +233,15 @@ local micromenu = {
 		end
 	end},
 	{text = ADVENTURE_JOURNAL, notCheckable = 1, func = function()
-		ToggleEncounterJournal()
+		if C_AdventureJournal.CanBeShown() then
+			ToggleEncounterJournal()
+		else
+			if C.error.white == false then
+				UIErrorsFrame:AddMessage(FEATURE_NOT_YET_AVAILABLE, 1, 0.1, 0.1)
+			else
+				print("|cffffff00"..FEATURE_NOT_YET_AVAILABLE.."|r")
+			end
+		end
 	end},
 	{text = COLLECTIONS, notCheckable = 1, func = function()
 		if InCombatLockdown() then
@@ -254,7 +267,9 @@ if not IsTrialAccount() and not C_StorePublic.IsDisabledByParentalControls() the
 	tinsert(micromenu, {text = BLIZZARD_STORE, notCheckable = 1, func = function() StoreMicroButton:Click() end})
 end
 
-if T.level > 89 then
+if T.level > 99 then
+	tinsert(micromenu, {text = ORDER_HALL_LANDING_PAGE_TITLE, notCheckable = 1, func = function() GarrisonLandingPage_Toggle() end})
+elseif T.level > 89 then
 	tinsert(micromenu, {text = GARRISON_LANDING_PAGE_TITLE, notCheckable = 1, func = function() GarrisonLandingPage_Toggle() end})
 end
 
@@ -304,22 +319,18 @@ end
 --	Tracking icon
 ----------------------------------------------------------------------------------------
 if C.minimap.tracking_icon then
-	local trackborder = CreateFrame("Frame", nil, UIParent)
-	trackborder:SetFrameLevel(4)
-	trackborder:SetFrameStrata("BACKGROUND")
-	trackborder:SetHeight(20)
-	trackborder:SetWidth(20)
-	trackborder:SetPoint("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 2, 2)
-	trackborder:SetTemplate("ClassColor")
-
 	MiniMapTrackingBackground:Hide()
 	MiniMapTracking:ClearAllPoints()
-	MiniMapTracking:SetPoint("CENTER", trackborder, 2, -2)
+	MiniMapTracking:SetPoint("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 0, -5)
 	MiniMapTrackingButton:SetHighlightTexture(nil)
 	MiniMapTrackingButtonBorder:Hide()
 	MiniMapTrackingIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	MiniMapTrackingIcon:SetWidth(16)
-	MiniMapTrackingIcon:SetHeight(16)
+	MiniMapTrackingIcon:SetSize(16, 16)
+	MiniMapTrackingIcon.SetPoint = T.dummy
+
+	MiniMapTracking:CreateBackdrop("ClassColor")
+	MiniMapTracking.backdrop:SetPoint("TOPLEFT", MiniMapTrackingIcon, -2, 2)
+	MiniMapTracking.backdrop:SetPoint("BOTTOMRIGHT", MiniMapTrackingIcon, 2, -2)
 else
 	MiniMapTracking:Hide()
 end

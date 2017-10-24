@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.bag.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
@@ -13,41 +13,55 @@ local bag_bars = 0
 local unusable
 
 if T.class == "DEATHKNIGHT" then
-	unusable = {{3, 4, 10, 11, 13, 14, 15, 16}, {6}}
+	unusable = {{LE_ITEM_WEAPON_BOWS, LE_ITEM_WEAPON_GUNS, LE_ITEM_WEAPON_WARGLAIVE, LE_ITEM_WEAPON_STAFF, LE_ITEM_WEAPON_UNARMED, LE_ITEM_WEAPON_DAGGER, LE_ITEM_WEAPON_THROWN, LE_ITEM_WEAPON_CROSSBOW, LE_ITEM_WEAPON_WAND}, {LE_ITEM_ARMOR_SHIELD}} -- weapons, armor, dual wield
+elseif T.class == "DEMONHUNTER" then
+	unusable = {{LE_ITEM_WEAPON_AXE2H, LE_ITEM_WEAPON_BOWS, LE_ITEM_WEAPON_GUNS, LE_ITEM_WEAPON_MACE2H, LE_ITEM_WEAPON_POLEARM, LE_ITEM_WEAPON_SWORD2H, LE_ITEM_WEAPON_STAFF, LE_ITEM_WEAPON_THROWN, LE_ITEM_WEAPON_CROSSBOW, LE_ITEM_WEAPON_WAND}, {LE_ITEM_ARMOR_MAIL, LE_ITEM_ARMOR_PLATE, LE_ITEM_ARMOR_SHIELD}}
 elseif T.class == "DRUID" then
-	unusable = {{1, 2, 3, 4, 8, 9, 14, 15, 16}, {4, 5, 6}, true}
+	unusable = {{LE_ITEM_WEAPON_AXE1H, LE_ITEM_WEAPON_AXE2H, LE_ITEM_WEAPON_BOWS, LE_ITEM_WEAPON_GUNS, LE_ITEM_WEAPON_SWORD1H, LE_ITEM_WEAPON_SWORD2H, LE_ITEM_WEAPON_WARGLAIVE, LE_ITEM_WEAPON_THROWN, LE_ITEM_WEAPON_CROSSBOW, LE_ITEM_WEAPON_WAND}, {LE_ITEM_ARMOR_MAIL, LE_ITEM_ARMOR_PLATE, LE_ITEM_ARMOR_SHIELD}, true}
 elseif T.class == "HUNTER" then
-	unusable = {{5, 6, 16}, {5, 6}}
+	unusable = {{LE_ITEM_WEAPON_MACE1H, LE_ITEM_WEAPON_MACE2H, LE_ITEM_WEAPON_WARGLAIVE, LE_ITEM_WEAPON_THROWN, LE_ITEM_WEAPON_WAND}, {LE_ITEM_ARMOR_PLATE, LE_ITEM_ARMOR_SHIELD}}
 elseif T.class == "MAGE" then
-	unusable = {{1, 2, 3, 4, 5, 6, 7, 9, 11, 14, 15}, {3, 4, 5, 6}, true}
+	unusable = {{LE_ITEM_WEAPON_AXE1H, LE_ITEM_WEAPON_AXE2H, LE_ITEM_WEAPON_BOWS, LE_ITEM_WEAPON_GUNS, LE_ITEM_WEAPON_MACE1H, LE_ITEM_WEAPON_MACE2H, LE_ITEM_WEAPON_POLEARM, LE_ITEM_WEAPON_SWORD2H, LE_ITEM_WEAPON_WARGLAIVE, LE_ITEM_WEAPON_UNARMED, LE_ITEM_WEAPON_THROWN, LE_ITEM_WEAPON_CROSSBOW}, {LE_ITEM_ARMOR_LEATHER, LE_ITEM_ARMOR_MAIL, LE_ITEM_ARMOR_PLATE, LE_ITEM_ARMOR_SHIELD,}, true}
 elseif T.class == "MONK" then
-	unusable = {{2, 3, 4, 6, 9, 13, 14, 15, 16}, {4, 5, 6}}
+	unusable = {{LE_ITEM_WEAPON_AXE2H, LE_ITEM_WEAPON_BOWS, LE_ITEM_WEAPON_GUNS, LE_ITEM_WEAPON_MACE2H, LE_ITEM_WEAPON_SWORD2H, LE_ITEM_WEAPON_WARGLAIVE, LE_ITEM_WEAPON_DAGGER, LE_ITEM_WEAPON_THROWN, LE_ITEM_WEAPON_CROSSBOW, LE_ITEM_WEAPON_WAND}, {LE_ITEM_ARMOR_MAIL, LE_ITEM_ARMOR_PLATE, LE_ITEM_ARMOR_SHIELD}}
 elseif T.class == "PALADIN" then
-	unusable = {{3, 4, 10, 11, 13, 14, 15, 16}, {}, true}
+	unusable = {{LE_ITEM_WEAPON_BOWS, LE_ITEM_WEAPON_GUNS, LE_ITEM_WEAPON_WARGLAIVE, LE_ITEM_WEAPON_STAFF, LE_ITEM_WEAPON_UNARMED, LE_ITEM_WEAPON_DAGGER, LE_ITEM_WEAPON_THROWN, LE_ITEM_WEAPON_CROSSBOW, LE_ITEM_WEAPON_WAND}, {}, true}
 elseif T.class == "PRIEST" then
-	unusable = {{1, 2, 3, 4, 6, 7, 8, 9, 11, 14, 15}, {3, 4, 5, 6}, true}
+	unusable = {{LE_ITEM_WEAPON_AXE1H, LE_ITEM_WEAPON_AXE2H, LE_ITEM_WEAPON_BOWS, LE_ITEM_WEAPON_GUNS, LE_ITEM_WEAPON_MACE2H, LE_ITEM_WEAPON_POLEARM, LE_ITEM_WEAPON_SWORD1H, LE_ITEM_WEAPON_SWORD2H, LE_ITEM_WEAPON_WARGLAIVE, LE_ITEM_WEAPON_UNARMED, LE_ITEM_WEAPON_THROWN, LE_ITEM_WEAPON_CROSSBOW}, {LE_ITEM_ARMOR_LEATHER, LE_ITEM_ARMOR_MAIL, LE_ITEM_ARMOR_PLATE, LE_ITEM_ARMOR_SHIELD}, true}
 elseif T.class == "ROGUE" then
-	unusable = {{2, 6, 7, 9, 10, 16}, {4, 5, 6}}
+	unusable = {{LE_ITEM_WEAPON_AXE2H, LE_ITEM_WEAPON_MACE2H, LE_ITEM_WEAPON_POLEARM, LE_ITEM_WEAPON_SWORD2H, LE_ITEM_WEAPON_WARGLAIVE, LE_ITEM_WEAPON_STAFF, LE_ITEM_WEAPON_WAND}, {LE_ITEM_ARMOR_MAIL, LE_ITEM_ARMOR_PLATE, LE_ITEM_ARMOR_SHIELD}}
 elseif T.class == "SHAMAN" then
-	unusable = {{3, 4, 7, 8, 9, 14, 15, 16}, {5}}
+	unusable = {{LE_ITEM_WEAPON_BOWS, LE_ITEM_WEAPON_GUNS, LE_ITEM_WEAPON_POLEARM, LE_ITEM_WEAPON_SWORD1H, LE_ITEM_WEAPON_SWORD2H, LE_ITEM_WEAPON_WARGLAIVE, LE_ITEM_WEAPON_THROWN, LE_ITEM_WEAPON_CROSSBOW, LE_ITEM_WEAPON_WAND}, {LE_ITEM_ARMOR_PLATEM}}
 elseif T.class == "WARLOCK" then
-	unusable = {{1, 2, 3, 4, 5, 6, 7, 9, 11, 14, 15}, {3, 4, 5, 6}, true}
+	unusable = {{LE_ITEM_WEAPON_AXE1H, LE_ITEM_WEAPON_AXE2H, LE_ITEM_WEAPON_BOWS, LE_ITEM_WEAPON_GUNS, LE_ITEM_WEAPON_MACE1H, LE_ITEM_WEAPON_MACE2H, LE_ITEM_WEAPON_POLEARM, LE_ITEM_WEAPON_SWORD2H, LE_ITEM_WEAPON_WARGLAIVE, LE_ITEM_WEAPON_UNARMED, LE_ITEM_WEAPON_THROWN, LE_ITEM_WEAPON_CROSSBOW}, {LE_ITEM_ARMOR_LEATHER, LE_ITEM_ARMOR_MAIL, LE_ITEM_ARMOR_PLATE, LE_ITEM_ARMOR_SHIELD}, true}
 elseif T.class == "WARRIOR" then
-	unusable = {{16}, {}}
+	unusable = {{LE_ITEM_WEAPON_WARGLAIVE, LE_ITEM_WEAPON_WAND}, {}}
+else
+	unusable = {{}, {}}
 end
 
-for class = 1, 2 do
-	local subs = {GetAuctionItemSubClasses(class)}
-	for i, subclass in ipairs(unusable[class]) do
-		unusable[subs[subclass]] = true
-	end
-	unusable[class] = nil
-	subs = nil
+local subs = {}
+for k = 0, 20 do
+	subs[k + 1] = GetItemSubClassInfo(LE_ITEM_CLASS_WEAPON, k)
 end
+
+for i, subclass in ipairs(unusable[1]) do
+	unusable[subs[subclass+1]] = true
+end
+
+subs = {}
+for k = 0, 11 do
+	subs[k + 1] = GetItemSubClassInfo(LE_ITEM_CLASS_ARMOR, k)
+end
+
+for i, subclass in ipairs(unusable[2]) do
+	unusable[subs[subclass + 1]] = true
+end
+
 
 local function IsClassUnusable(subclass, slot)
 	if subclass then
-		return unusable[subclass] or slot == "INVTYPE_WEAPONOFFHAND" and unusable[3]
+		return slot ~= "" and unusable[subclass] or slot == "INVTYPE_WEAPONOFFHAND" and unusable[3]
 	end
 end
 
@@ -57,9 +71,6 @@ local function IsItemUnusable(...)
 		return IsClassUnusable(subclass, slot)
 	end
 end
-
--- Hide bags options in default interface
-InterfaceOptionsDisplayPanelShowFreeBagSpace:Hide()
 
 Stuffing = CreateFrame("Frame", nil, UIParent)
 Stuffing:RegisterEvent("ADDON_LOADED")
@@ -88,7 +99,7 @@ local function Stuffing_OnShow()
 
 	Stuffing:Layout()
 	Stuffing:SearchReset()
-	PlaySound("igBackPackOpen")
+	PlaySound(SOUNDKIT.IG_BACKPACK_OPEN)
 	collectgarbage("collect")
 end
 
@@ -97,14 +108,14 @@ local function StuffingBank_OnHide()
 	if Stuffing.frame:IsShown() then
 		Stuffing.frame:Hide()
 	end
-	PlaySound("igBackPackClose")
+	PlaySound(SOUNDKIT.IG_BACKPACK_CLOSE)
 end
 
 local function Stuffing_OnHide()
 	if Stuffing.bankFrame and Stuffing.bankFrame:IsShown() then
 		Stuffing.bankFrame:Hide()
 	end
-	PlaySound("igBackPackClose")
+	PlaySound(SOUNDKIT.IG_BACKPACK_CLOSE)
 end
 
 local function Stuffing_Open()
@@ -129,17 +140,34 @@ end
 local trashButton = {}
 local trashBag = {}
 
-local upgrades = {
-	["1"] = 8, ["373"] = 4, ["374"] = 8, ["375"] = 4, ["376"] = 4, ["377"] = 4,
-	["379"] = 4, ["380"] = 4, ["446"] = 4, ["447"] = 8, ["452"] = 8, ["454"] = 4,
-	["455"] = 8, ["457"] = 8, ["459"] = 4, ["460"] = 8, ["461"] = 12, ["462"] = 16,
-	["466"] = 4, ["467"] = 8, ["469"] = 4, ["470"] = 8, ["471"] = 12, ["472"] = 16,
-	["477"] = 4, ["478"] = 8, ["480"] = 8, ["492"] = 4, ["493"] = 8, ["495"] = 4,
-	["496"] = 8, ["497"] = 12, ["498"] = 16, ["504"] = 12, ["505"] = 16, ["506"] = 20,
-	["507"] = 24, ["530"] = 5, ["531"] = 10
-}
+local ItemDB = {}
 
-local weapon, armor = GetAuctionItemClasses()
+-- Tooltip and scanning by Phanx @ http://www.wowinterface.com/forums/showthread.php?p=271406
+local S_ITEM_LEVEL = "^" .. gsub(ITEM_LEVEL, "%%d", "(%%d+)")
+
+local scantip = CreateFrame("GameTooltip", "iLvlScanningTooltip", nil, "GameTooltipTemplate")
+scantip:SetOwner(UIParent, "ANCHOR_NONE")
+
+local function _getRealItemLevel(link)
+	if ItemDB[link] then return ItemDB[link] end
+
+	local realItemLevel
+	scantip:SetHyperlink(link)
+
+	for i = 2, scantip:NumLines() do -- Line 1 is always the name so you can skip it.
+		local text = _G["iLvlScanningTooltipTextLeft"..i]:GetText()
+		if text and text ~= "" then
+			realItemLevel = realItemLevel or strmatch(text, S_ITEM_LEVEL)
+
+			if realItemLevel then
+				ItemDB[link] = tonumber(realItemLevel)
+				return tonumber(realItemLevel)
+			end
+		end
+	end
+
+	return realItemLevel
+end
 
 function Stuffing:SlotUpdate(b)
 	local texture, count, locked, quality = GetContainerItemInfo(b.bag, b.slot)
@@ -151,22 +179,21 @@ function Stuffing:SlotUpdate(b)
 		b.frame:SetBackdropBorderColor(unpack(C.media.border_color))
 	end
 
+	if b.cooldown and StuffingFrameBags and StuffingFrameBags:IsShown() then
+		local start, duration, enable = GetContainerItemCooldown(b.bag, b.slot)
+		CooldownFrame_Set(b.cooldown, start, duration, enable)
+	end
+
 	if C.bag.ilvl == true then
 		b.frame.text:SetText("")
 	end
 
-	if b.cooldown and StuffingFrameBags and StuffingFrameBags:IsShown() then
-		local start, duration, enable = GetContainerItemCooldown(b.bag, b.slot)
-		CooldownFrame_SetTimer(b.cooldown, start, duration, enable)
-	end
-
 	if clink then
-		b.name, _, _, b.itemlevel, b.level, b.itemType = GetItemInfo(clink)
+		b.name, _, _, b.itemlevel, b.level, _, _, _, _, _, _, b.itemClassID, b.itemSubClassID = GetItemInfo(clink)
 
-		if C.bag.ilvl == true and b.itemlevel and b.itemlevel > 1 and quality > 1 and (b.itemType == weapon or b.itemType == armor) then
-			local upgrade = clink:match(":(%d+)\124h%[")
-			if upgrades[upgrade] == nil then upgrades[upgrade] = 0 end
-			b.frame.text:SetText(b.itemlevel + upgrades[upgrade])
+		if C.bag.ilvl == true and b.itemlevel and quality > 1 and (b.itemClassID == 2 or b.itemClassID == 4 or (b.itemClassID == 3 and b.itemSubClassID == 11)) then
+			b.itemlevel = _getRealItemLevel(clink) or b.itemlevel
+			b.frame.text:SetText(b.itemlevel)
 		end
 
 		if (IsItemUnusable(clink) or b.level and b.level > T.level) and not locked then
@@ -201,6 +228,13 @@ function Stuffing:BagSlotUpdate(bag)
 		if v.bag == bag then
 			self:SlotUpdate(v)
 		end
+	end
+end
+
+function Stuffing:UpdateCooldowns(b)
+	if b.cooldown and StuffingFrameBags and StuffingFrameBags:IsShown() then
+		local start, duration, enable = GetContainerItemCooldown(b.bag, b.slot)
+		CooldownFrame_Set(b.cooldown, start, duration, enable)
 	end
 end
 
@@ -240,7 +274,7 @@ function CreateReagentContainer()
 		_G["StuffingFrameBank"]:Show()
 		_G["StuffingFrameBank"]:SetAlpha(1)
 		BankFrame_ShowPanel(BANK_PANELS[1].name)
-		PlaySound("igBackPackOpen")
+		PlaySound(SOUNDKIT.IG_BACKPACK_OPEN)
 	end)
 
 	Deposit:SetParent(Reagent)
@@ -271,6 +305,19 @@ function CreateReagentContainer()
 			StuffingBank_OnHide()
 		end
 	end)
+
+	local tooltip_hide = function()
+		GameTooltip:Hide()
+	end
+
+	local tooltip_show = function(self)
+		GameTooltip:SetOwner(self, "ANCHOR_LEFT", 19, 7)
+		GameTooltip:ClearLines()
+		GameTooltip:SetText(L_BAG_RIGHT_CLICK_CLOSE)
+	end
+
+	Close:HookScript("OnEnter", tooltip_show)
+	Close:HookScript("OnLeave", tooltip_hide)
 
 	for i = 1, 98 do
 		local button = _G["ReagentBankFrameItem" .. i]
@@ -358,7 +405,18 @@ function Stuffing:BagFrameSlotNew(p, slot)
 		end
 	else
 		ret.frame = CreateFrame("CheckButton", "StuffingFBag"..slot.."Slot", p, "BagSlotButtonTemplate")
-		ret.frame:StripTextures()
+
+		hooksecurefunc(ret.frame.IconBorder, "SetVertexColor", function(self, r, g, b)
+			if r ~= 0.65882 and g ~= 0.65882 and b ~= 0.65882 then
+				self:GetParent():SetBackdropBorderColor(r, g, b)
+			end
+			self:SetTexture("")
+		end)
+
+		hooksecurefunc(ret.frame.IconBorder, "Hide", function(self)
+			self:GetParent():SetBackdropBorderColor(unpack(C.media.border_color))
+		end)
+
 		ret.slot = slot
 		table.insert(self.bagframe_buttons, ret)
 	end
@@ -547,6 +605,19 @@ function Stuffing:SearchReset()
 	end
 end
 
+local function DragFunction(self, mode)
+	for index = 1, select("#", self:GetChildren()) do
+		local frame = select(index, self:GetChildren())
+		if frame:GetName() and frame:GetName():match("StuffingBag") then
+			if mode then
+				frame:Hide()
+			else
+				frame:Show()
+			end
+		end
+	end
+end
+
 function Stuffing:CreateBagFrame(w)
 	local n = "StuffingFrame"..w
 	local f = CreateFrame("Frame", n, UIParent)
@@ -554,12 +625,17 @@ function Stuffing:CreateBagFrame(w)
 	f:SetMovable(true)
 	f:SetFrameStrata("MEDIUM")
 	f:SetFrameLevel(5)
-	f:SetScript("OnMouseDown", function(self, button)
-		if IsShiftKeyDown() and button == "LeftButton" then
+	f:RegisterForDrag("LeftButton")
+	f:SetScript("OnDragStart", function(self)
+		if IsShiftKeyDown() then
 			self:StartMoving()
+			DragFunction(self, true)
 		end
 	end)
-	f:SetScript("OnMouseUp", f.StopMovingOrSizing)
+	f:SetScript("OnDragStop", function(self)
+		self:StopMovingOrSizing()
+		DragFunction(self, false)
+	end)
 
 	if w == "Bank" then
 		f:SetPoint(unpack(C.position.bank))
@@ -576,7 +652,7 @@ function Stuffing:CreateBagFrame(w)
 		f.b_reagent:SkinButton()
 		f.b_reagent:SetScript("OnClick", function()
 			BankFrame_ShowPanel(BANK_PANELS[2].name)
-			PlaySound("igBackPackOpen")
+			PlaySound(SOUNDKIT.IG_BACKPACK_OPEN)
 			if not ReagentBankFrame.isMade then
 				CreateReagentContainer()
 				ReagentBankFrame.isMade = true
@@ -625,6 +701,19 @@ function Stuffing:CreateBagFrame(w)
 		end
 		self:GetParent():Hide()
 	end)
+
+	local tooltip_hide = function()
+		GameTooltip:Hide()
+	end
+
+	local tooltip_show = function(self)
+		GameTooltip:SetOwner(self, "ANCHOR_LEFT", 19, 7)
+		GameTooltip:ClearLines()
+		GameTooltip:SetText(L_BAG_RIGHT_CLICK_CLOSE)
+	end
+
+	f.b_close:HookScript("OnEnter", tooltip_show)
+	f.b_close:HookScript("OnLeave", tooltip_hide)
 
 	-- Create the bags frame
 	local fb = CreateFrame("Frame", n.."BagsFrame", f)
@@ -697,6 +786,7 @@ function Stuffing:InitBags()
 	button:EnableMouse(true)
 	button:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 	button:SetAllPoints(detail)
+	button.ttText = L_BAG_RIGHT_CLICK_SEARCH
 	button:SetScript("OnClick", function(self, btn)
 		if btn == "RightButton" then
 			self:GetParent().detail:Hide()
@@ -717,9 +807,9 @@ function Stuffing:InitBags()
 	end
 
 	local tooltip_show = function(self)
-		GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
+		GameTooltip:SetOwner(self, "ANCHOR_TOPLEFT", -12, 11)
 		GameTooltip:ClearLines()
-		GameTooltip:SetText(L_BAG_RIGHT_CLICK_SEARCH)
+		GameTooltip:SetText(self.ttText)
 	end
 
 	button:SetScript("OnEnter", tooltip_show)
@@ -1096,7 +1186,7 @@ end
 
 function Stuffing:BAG_UPDATE_COOLDOWN()
 	for i, v in pairs(self.buttons) do
-		self:SlotUpdate(v)
+		self:UpdateCooldowns(v)
 	end
 end
 
@@ -1201,8 +1291,10 @@ function Stuffing:SortBags()
 					local newItem = {}
 
 					local n, _, q, iL, rL, c1, c2, _, Sl = GetItemInfo(itemLink)
-					if n == GetItemInfo(6948) then c1 = "1" end	-- Hearthstone
-					if n == GetItemInfo(110560) then c1 = "12" end	-- Garrison Hearthstone
+					-- Hearthstone
+					if n == GetItemInfo(6948) or n == GetItemInfo(110560) then
+						q = 9
+					end
 					-- Fix for battle pets
 					if not n then
 						n = itemLink
@@ -1239,8 +1331,8 @@ function Stuffing:SortBags()
 				else
 					gridSlot = gridSlot - GetContainerNumSlots(bagSlotNumber)
 				end
-	        end
-	    end
+			end
+		end
 	end
 
 	self:SetScript("OnUpdate", Stuffing.SortOnUpdate)
@@ -1391,3 +1483,8 @@ function Stuffing.Menu(self, level)
 	info.tooltipTitle = CLOSE
 	UIDropDownMenu_AddButton(info, level)
 end
+
+-- Kill Blizzard functions
+LootWonAlertFrame_OnClick = T.dummy
+LootUpgradeFrame_OnClick = T.dummy
+StorePurchaseAlertFrame_OnClick = T.dummy

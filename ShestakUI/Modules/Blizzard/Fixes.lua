@@ -3,15 +3,13 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Fix blank tooltip
 ----------------------------------------------------------------------------------------
+local bug = nil
 local FixTooltip = CreateFrame("Frame")
 FixTooltip:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
 FixTooltip:RegisterEvent("ACTIONBAR_PAGE_CHANGED")
 FixTooltip:SetScript("OnEvent", function()
-	for i = 1, 12 do
-		local button = _G["ActionButton" .. i]
-		if GameTooltip:GetOwner() == button then
-			GameTooltip:Hide()
-		end
+	if GameTooltip:IsShown() then
+		bug = true
 	end
 end)
 
@@ -19,15 +17,19 @@ local FixTooltipBags = CreateFrame("Frame")
 FixTooltipBags:RegisterEvent("BAG_UPDATE_DELAYED")
 FixTooltipBags:SetScript("OnEvent", function()
 	if StuffingFrameBags and StuffingFrameBags:IsShown() then
-		GameTooltip:Hide()
+		if GameTooltip:IsShown() then
+			bug = true
+		end
 	end
 end)
 
-----------------------------------------------------------------------------------------
---	Disable tooltip for player arrow on map
-----------------------------------------------------------------------------------------
-WorldMapPlayerUpper:EnableMouse(false)
-WorldMapPlayerLower:EnableMouse(false)
+GameTooltip:HookScript("OnTooltipCleared", function(self)
+	if self:IsForbidden() then return end
+	if bug and self:NumLines() == 0 then
+		self:Hide()
+		bug = false
+	end
+end)
 
 ----------------------------------------------------------------------------------------
 --	Fix RemoveTalent() taint

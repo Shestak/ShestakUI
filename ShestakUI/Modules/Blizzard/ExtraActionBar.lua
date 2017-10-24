@@ -5,10 +5,15 @@ if C.actionbar.enable ~= true then return end
 --	Make ExtraActionBarFrame movable (use macro /click ExtraActionButton1)
 ------------------------------------------------------------------------------------------
 local anchor = CreateFrame("Frame", "ExtraButtonAnchor", UIParent)
-anchor:SetPoint(unpack(C.position.extra_button))
+if C.actionbar.split_bars then
+	anchor:SetPoint(C.position.extra_button[1], SplitBarLeft, C.position.extra_button[3], C.position.extra_button[4], C.position.extra_button[5])
+else
+	anchor:SetPoint(unpack(C.position.extra_button))
+end
 anchor:SetSize(53, 53)
+anchor:SetFrameStrata("LOW")
 
-ExtraActionBarFrame:SetParent(UIParent)
+ExtraActionBarFrame:SetParent(ExtraButtonAnchor)
 ExtraActionBarFrame:ClearAllPoints()
 ExtraActionBarFrame:SetPoint("CENTER", anchor, "CENTER")
 ExtraActionBarFrame:SetSize(53, 53)
@@ -16,11 +21,11 @@ ExtraActionBarFrame.ignoreFramePositionManager = true
 
 RegisterStateDriver(anchor, "visibility", "[petbattle] hide; show")
 
-DraenorZoneAbilityFrame:SetParent(UIParent)
-DraenorZoneAbilityFrame:ClearAllPoints()
-DraenorZoneAbilityFrame:SetPoint("CENTER", anchor, "CENTER")
-DraenorZoneAbilityFrame:SetSize(53, 53)
-DraenorZoneAbilityFrame.ignoreFramePositionManager = true
+ZoneAbilityFrame:SetParent(ExtraButtonAnchor)
+ZoneAbilityFrame:ClearAllPoints()
+ZoneAbilityFrame:SetPoint("CENTER", anchor, "CENTER")
+ZoneAbilityFrame:SetSize(53, 53)
+ZoneAbilityFrame.ignoreFramePositionManager = true
 
 ------------------------------------------------------------------------------------------
 --	Skin ExtraActionBarFrame(by Zork)
@@ -39,9 +44,9 @@ button:StyleButton()
 button:SetSize(53, 53)
 
 ------------------------------------------------------------------------------------------
---	Skin DraenorZoneAbilityFrame
+--	Skin ZoneAbilityFrame
 ------------------------------------------------------------------------------------------
-local button = DraenorZoneAbilityFrame.SpellButton
+local button = ZoneAbilityFrame.SpellButton
 local texture = button.Style
 local disableTexture = function(style, texture)
 	if texture then

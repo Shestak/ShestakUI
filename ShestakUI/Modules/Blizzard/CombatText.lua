@@ -34,7 +34,11 @@ end
 local function LimitLines()
 	for i = 1, #ct.frames do
 		f = ct.frames[i]
-		f:SetMaxLines(f:GetHeight() / C.font.combat_text_font_size)
+		if i == 4 and C.combattext.icons then
+			f:SetMaxLines(math.floor(f:GetHeight() / (C.combattext.icon_size * 1.5)))
+		else
+			f:SetMaxLines(math.floor(f:GetHeight() / C.font.combat_text_font_size - 1))
+		end
 	end
 end
 
@@ -330,20 +334,7 @@ local function OnEvent(self, event, subevent, ...)
 	elseif event == "RUNE_POWER_UPDATE" then
 		local arg1 = subevent
 		if GetRuneCooldown(arg1) ~= 0 then return end
-		local rune = GetRuneType(arg1)
-		local msg = COMBAT_TEXT_RUNE[rune]
-		if rune == 1 then
-			r, g, b = 0.75, 0, 0
-		elseif rune == 2 then
-			r, g, b = 0.75, 1, 0
-		elseif rune == 3 then
-			r, g, b = 0, 1, 1
-		elseif rune == 4 then
-			r, g, b = 0.8, 0.7, 0.6
-		end
-		if rune then
-			xCT3:AddMessage("+"..msg, r, g, b)
-		end
+		xCT3:AddMessage("+"..COMBAT_TEXT_RUNE_DEATH, 0.75, 0, 0)
 	elseif event == "UNIT_ENTERED_VEHICLE" or event == "UNIT_EXITING_VEHICLE" then
 		if arg1 == "player" then
 			SetUnit()
@@ -365,6 +356,24 @@ end
 if C.combattext.damage_style then
 	DAMAGE_TEXT_FONT = C.font.combat_text_font
 end
+
+-- Hide blizzard combat text
+if C.combattext.blizz_head_numbers ~= true then
+	SetCVar("floatingCombatTextCombatHealing", 0)
+	SetCVar("floatingCombatTextCombatDamage", 0)
+else
+	SetCVar("floatingCombatTextCombatHealing", 1)
+	SetCVar("floatingCombatTextCombatDamage", 1)
+end
+
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGOUT")
+frame:SetScript("OnEvent", function(self, event)
+	if event == "PLAYER_LOGOUT" then
+		SetCVar("floatingCombatTextCombatHealing", 1)
+		SetCVar("floatingCombatTextCombatDamage", 1)
+	end
+end)
 
 -- Frames
 ct.locked = true
@@ -491,29 +500,46 @@ local StartConfigmode = function()
 			f.t:SetPoint("TOPLEFT", f, "TOPLEFT", 1, -1)
 			f.t:SetPoint("TOPRIGHT", f, "TOPRIGHT", -1, -19)
 			f.t:SetHeight(20)
-			f.t:SetTexture(0.5, 0.5, 0.5)
+			f.t:SetColorTexture(0.5, 0.5, 0.5)
 			f.t:SetAlpha(0.3)
 
 			f.d = f:CreateTexture("ARTWORK")
 			f.d:SetHeight(16)
 			f.d:SetWidth(16)
 			f.d:SetPoint("BOTTOMRIGHT", f, "BOTTOMRIGHT", -1, 1)
-			f.d:SetTexture(0.5, 0.5, 0.5)
+			f.d:SetColorTexture(0.5, 0.5, 0.5)
 			f.d:SetAlpha(0.3)
 
-			f.tr = f:CreateTitleRegion()
-			f.tr:SetPoint("TOPLEFT", f, "TOPLEFT", 0, 0)
-			f.tr:SetPoint("TOPRIGHT", f, "TOPRIGHT", 0, 0)
-			f.tr:SetHeight(20)
+			if not f.tr then
+				f.tr = CreateFrame("Frame", nil, f)
+				f.tr:SetScript("OnDragStart", function(self, button)
+					self:GetParent():StartMoving()
+				end)
+				f.tr:SetScript("OnDragStop", function(self)
+					self:GetParent():StopMovingOrSizing()
+				end)
+				f.tr:EnableMouse(true)
+				f.tr:RegisterForDrag("LeftButton")
+				f.tr:SetPoint("TOPLEFT", f, "TOPLEFT", 0, 0)
+				f.tr:SetPoint("TOPRIGHT", f, "TOPRIGHT", 0, 0)
+				f.tr:SetHeight(20)
+			end
 
 			f:EnableMouse(true)
 			f:RegisterForDrag("LeftButton")
 			f:SetScript("OnDragStart", f.StartSizing)
 			if not C.combattext.scrollable then
-				f:SetScript("OnSizeChanged", function(self)
-					self:SetMaxLines(self:GetHeight() / C.font.combat_text_font_size)
-					self:Clear()
-				end)
+				if i == 4 and C.combattext.icons then
+					f:SetScript("OnSizeChanged", function(self)
+						self:SetMaxLines(math.floor(self:GetHeight() / (C.combattext.icon_size * 1.5)))
+						self:Clear()
+					end)
+				else
+					f:SetScript("OnSizeChanged", function(self)
+						self:SetMaxLines(math.floor(self:GetHeight() / C.font.combat_text_font_size - 1))
+						self:Clear()
+					end)
+				end
 			end
 
 			f:SetScript("OnDragStop", f.StopMovingOrSizing)
@@ -582,6 +608,9 @@ local function StartTestMode()
 					msg = random(40000)
 					if C.combattext.icons then
 						_, _, icon = GetSpellInfo(msg)
+						if not icon then
+							icon = GetSpellTexture(6603)
+						end
 					end
 					if icon then
 						msg = msg.." \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
@@ -629,6 +658,13 @@ StaticPopupDialogs.XCT_LOCK = {
 	preferredIndex = 5,
 }
 
+local placed = {
+	"xCT1",
+	"xCT2",
+	"xCT3",
+	"xCT4"
+}
+
 -- Slash commands
 SlashCmdList.XCT = function(input)
 	input = string.lower(input)
@@ -652,10 +688,18 @@ SlashCmdList.XCT = function(input)
 			StartTestMode()
 			pr("|cffffff00"..L_COMBATTEXT_TEST_ENABLED.."|r")
 		end
+	elseif input == "reset" then
+		for i, v in pairs(placed) do
+			if _G[v] then
+				_G[v]:SetUserPlaced(false)
+			end
+		end
+		ReloadUI()
 	else
 		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_UNLOCK.."|r")
 		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_LOCK.."|r")
 		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_TEST.."|r")
+		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_RESET.."|r")
 	end
 end
 SLASH_XCT1 = "/xct"
@@ -712,10 +756,10 @@ end
 if C.combattext.damage then
 	local unpack, select, time = unpack, select, time
 	local gflags = bit.bor(COMBATLOG_OBJECT_AFFILIATION_MINE,
- 		COMBATLOG_OBJECT_REACTION_FRIENDLY,
- 		COMBATLOG_OBJECT_CONTROL_PLAYER,
- 		COMBATLOG_OBJECT_TYPE_GUARDIAN
- 	)
+		COMBATLOG_OBJECT_REACTION_FRIENDLY,
+		COMBATLOG_OBJECT_CONTROL_PLAYER,
+		COMBATLOG_OBJECT_TYPE_GUARDIAN
+	)
 	local xCTd = CreateFrame("Frame")
 	if C.combattext.damage_color then
 		ct.dmgcolor = {}
@@ -831,7 +875,7 @@ if C.combattext.damage then
 					end
 					if C.combattext.merge_aoe_spam then
 						spellId = T.merge[spellId] or spellId
-						if sourceFlags == gflags then
+						if bit.band(sourceFlags, COMBATLOG_OBJECT_AFFILIATION_MINE) ~= COMBATLOG_OBJECT_AFFILIATION_MINE then
 							spellId = 6603
 						end
 						if T.aoespam[spellId] then
@@ -978,7 +1022,7 @@ if C.combattext.healing then
 						if icon then
 							msg = " \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
 						elseif C.combattext.icons then
-							msg=" \124T"..ct.blank..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
+							msg = " \124T"..ct.blank..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
 						end
 						if C.combattext.merge_aoe_spam then
 							spellId = T.merge[spellId] or spellId

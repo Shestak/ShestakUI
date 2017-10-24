@@ -33,8 +33,8 @@ local Enable = function(self, unit)
 		combat.__owner = self
 		combat.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent("PLAYER_REGEN_DISABLED", Path)
-		self:RegisterEvent("PLAYER_REGEN_ENABLED", Path)
+		self:RegisterEvent("PLAYER_REGEN_DISABLED", Path, true)
+		self:RegisterEvent("PLAYER_REGEN_ENABLED", Path, true)
 
 		if(combat:IsObjectType"Texture" and not combat:GetTexture()) then
 			combat:SetTexture[[Interface\CharacterFrame\UI-StateIcon]]
@@ -47,6 +47,7 @@ end
 
 local Disable = function(self)
 	if(self.Combat) then
+		self.Combat:Hide()
 		self:UnregisterEvent("PLAYER_REGEN_DISABLED", Path)
 		self:UnregisterEvent("PLAYER_REGEN_ENABLED", Path)
 	end

@@ -8,12 +8,16 @@ if C.nameplate.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 local function SpellName(id)
 	local name = GetSpellInfo(id)
-	return name
+	if name then
+		return name
+	else
+		print("|cffff0000WARNING: spell ID ["..tostring(id).."] no longer exists! Report this to Shestak.|r")
+		return "Empty"
+	end
 end
 
 T.DebuffWhiteList = {
 	-- Death Knight
-	[SpellName(115001)] = true,	-- Remorseless Winter
 	[SpellName(108194)] = true,	-- Asphyxiate
 	[SpellName(47476)] = true,	-- Strangulate
 	[SpellName(55078)] = true,	-- Blood Plague
@@ -24,31 +28,26 @@ T.DebuffWhiteList = {
 	[SpellName(164812)] = true,	-- Moonfire
 	[SpellName(164815)] = true,	-- Sunfire
 	[SpellName(58180)] = true,	-- Infected Wounds
-	[SpellName(33745)] = true,	-- Lacerate
 	[SpellName(155722)] = true,	-- Rake
 	[SpellName(1079)] = true,	-- Rip
 	-- Hunter
 	[SpellName(3355)] = true,	-- Freezing Trap
+	[SpellName(194279)] = true,	-- Caltrops
+	[SpellName(13812)] = true,	-- Explosive Trap
 	-- Mage
 	[SpellName(118)] = true,	-- Polymorph
 	[SpellName(31661)] = true,	-- Dragon's Breath
 	[SpellName(122)] = true,	-- Frost Nova
-	[SpellName(111340)] = true,	-- Ice Ward
 	[SpellName(44457)] = true,	-- Living Bomb
 	[SpellName(114923)] = true,	-- Nether Tempest
 	[SpellName(112948)] = true,	-- Frost Bomb
-	[SpellName(83853)] = true,	-- Combustion
-	[SpellName(44572)] = true,	-- Deep Freeze
 	[SpellName(120)] = true,	-- Cone of Cold
-	[SpellName(102051)] = true,	-- Frostjaw
 	-- Monk
 	[SpellName(115078)] = true,	-- Paralysis
 	-- Paladin
 	[SpellName(20066)] = true,	-- Repentance
-	[SpellName(10326)] = true,	-- Turn Evil
 	[SpellName(853)] = true,	-- Hammer of Justice
-	[SpellName(105593)] = true,	-- Fist of Justice
-	[SpellName(31803)] = true,	-- Censure
+	[SpellName(183218)] = true,	-- Hand of Hindrance
 	-- Priest
 	[SpellName(9484)] = true,	-- Shackle Undead
 	[SpellName(8122)] = true,	-- Psychic Scream
@@ -63,9 +62,9 @@ T.DebuffWhiteList = {
 	-- Shaman
 	[SpellName(51514)] = true,	-- Hex
 	[SpellName(3600)] = true,	-- Earthbind
-	[SpellName(8056)] = true,	-- Frost Shock
-	[SpellName(8050)] = true,	-- Flame Shock
-	[SpellName(63685)] = true,	-- Frozen Power
+	[SpellName(196840)] = true,	-- Frost Shock
+	[SpellName(188389)] = true,	-- Flame Shock
+	[SpellName(197209)] = true,	-- Lightning Rod
 	-- Warlock
 	[SpellName(710)] = true,	-- Banish
 	[SpellName(6789)] = true,	-- Mortal Coil
@@ -87,6 +86,10 @@ T.DebuffWhiteList = {
 	[SpellName(25046)] = true,	-- Arcane Torrent
 	[SpellName(20549)] = true,	-- War Stomp
 	[SpellName(107079)] = true,	-- Quaking Palm
+}
+
+T.DebuffBlackList = {
+	-- [SpellName(spellID)] = true,	-- Spell Name
 }
 
 T.PlateBlacklist = {

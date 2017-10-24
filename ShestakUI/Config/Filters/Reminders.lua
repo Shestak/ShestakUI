@@ -2,92 +2,27 @@ local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.
---	Example: Flask of the Earth -> http://www.wowhead.com/spell=105694
+--	Example: Well Fed -> http://www.wowhead.com/spell=104280
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 if C.reminder.raid_buffs_enable == true then
-	-- General buffs
 	T.ReminderBuffs = {
 		Flask = {
-			156071,	-- Draenic Strength Flask
-			156077,	-- Draenic Stamina Flask
-			156070,	-- Draenic Intellect Flask
-			156073,	-- Draenic Agility Flask
-			156080,	-- Greater Draenic Strength Flask
-			156064,	-- Greater Draenic Agility Flask
-			156084,	-- Greater Draenic Stamina Flask
-			156079,	-- Greater Draenic Intellect Flask
+			188033,	-- Flask of the Seventh Demon (Agility)
+			188034,	-- Flask of the Countless Armies (Strenght)
+			188035,	-- Flask of Ten Thousand Scars (Stamina)
+			188031,	-- Flask of the Whispered Pact (Intellect)
 		},
 		BattleElixir = {
-			105686,	-- Elixir of Perfection
-			105688,	-- Monk's Elixir
-			105685,	-- Elixir of Peace
-			105682,	-- Mad Hozen Elixir
-			105683,	-- Elixir of Weaponry
-			105684,	-- Elixir of the Rapids
+			--spellID,	-- Spell name
+
 		},
 		GuardianElixir = {
-			105687,	-- Elixir of Mirrors
-			105681,	-- Mantid Elixir
+			--spellID,	-- Spell name
 		},
 		Food = {
 			104280,	-- Well Fed
 		},
-		Stat = {
-			1126,	-- Mark of the Wild
-			160206,	-- Lone Wolf: Power of the Primates
-			159988,	-- Bark of the Wild (Dog)
-			160017,	-- Blessing of Kongs (Gorilla)
-			90363,	-- Embrace of the Shale Spider
-			160077,	-- Strength of the Earth (Worm)
-			115921,	-- Legacy of the Emperor
-			116781,	-- Legacy of the White Tiger
-			20217,	-- Blessing of Kings
-		},
-		Stamina = {
-			21562,	-- Power Word: Fortitude
-			160199,	-- Lone Wolf: Fortitude of the Bear
-			50256,	-- Invigorating Roar (Bear)
-			90364,	-- Qiraji Fortitude (Silithid)
-			160003,	-- Savage Vigor (Rylak)
-			160014,	-- Sturdiness (Goat)
-			166928,	-- Blood Pact
-			469,	-- Commanding Shout
-			111922,	-- Runescroll of Fortitude III
-		}
-	}
-
-	-- Caster buffs
-	function T.ReminderCasterBuffs()
-		Spell5Buff = {	-- Spell Power
-			1459,	-- Arcane Brilliance
-			61316,	-- Dalaran Brilliance
-			160205,	-- Lone Wolf: Wisdom of the Serpent
-			126309,	-- Still Water (Water Strider)
-			128433,	-- Serpent's Cunning (Serpent)
-			90364,	-- Qiraji Fortitude (Silithid)
-			109773,	-- Dark Intent
-		}
-	end
-
-	-- Physical buffs
-	function T.ReminderPhysicalBuffs()
-		Spell5Buff = {	-- Attack Power
-			57330,	-- Horn of Winter
-			19506,	-- Trueshot Aura
-			6673,	-- Battle Shout
-		}
-	end
-
-	Spell6Buff = {	-- Haste
-		116956,	-- Grace of Air
-		55610,	-- Unholy Aura
-		160203,	-- Lone Wolf: Haste of the Hyena
-		128432,	-- Cackling Howl (Hyena)
-		135678,	-- Energizing Spores (Sporebat)
-		160003,	-- Savage Vigor (Rylak)
-		49868,	-- Mind Quickening
-		113742,	-- Swiftblade's Cunning
 	}
 end
 
@@ -118,183 +53,13 @@ end
 ]]--------------------------------------------------------------------------------------
 if C.reminder.solo_buffs_enable == true then
 	T.ReminderSelfBuffs = {
-		DEATHKNIGHT = {
-			[1] = {	-- Horn of Winter group
-				["spells"] = {
-					57330,	-- Horn of Winter
-				},
-				["negate_spells"] = {
-					6673,	-- Battle Shout
-					19506,	-- Trueshot Aura
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-			[2] = {	-- Blood Presence group
-				["spells"] = {
-					48263,	-- Blood Presence
-				},
-				["role"] = "Tank",
-				["instance"] = true,
-				["reversecheck"] = true,
-			},
-		},
-		DRUID = {
-			[1] = {	-- Mark of the Wild group
-				["spells"] = {
-					1126,	-- Mark of the Wild
-				},
-				["negate_spells"] = {
-					160206,	-- Lone Wolf: Power of the Primates
-					159988,	-- Bark of the Wild (Dog)
-					160017,	-- Blessing of Kongs (Gorilla)
-					90363,	-- Embrace of the Shale Spider
-					160077,	-- Strength of the Earth (Worm)
-					115921,	-- Legacy of the Emperor
-					116781,	-- Legacy of the White Tiger
-					20217,	-- Blessing of Kings
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-		},
-		MAGE = {
-			[1] = {	-- Brilliance group
-				["spells"] = {
-					1459,	-- Arcane Brilliance
-					61316,	-- Dalaran Brilliance
-				},
-				["negate_spells"] = {
-					160205,	-- Lone Wolf: Wisdom of the Serpent
-					126309,	-- Still Water (Water Strider)
-					128433,	-- Serpent's Cunning (Serpent)
-					90364,	-- Qiraji Fortitude (Silithid)
-					109773,	-- Dark Intent
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-		},
-		MONK = {
-			[1] = {	-- Legacy of the Emperor group
-				["spells"] = {
-					115921,	-- Legacy of the Emperor
-				},
-				["negate_spells"] = {
-					1126,	-- Mark of the Wild
-					160206,	-- Lone Wolf: Power of the Primates
-					159988,	-- Bark of the Wild (Dog)
-					160017,	-- Blessing of Kongs (Gorilla)
-					90363,	-- Embrace of the Shale Spider
-					160077,	-- Strength of the Earth (Worm)
-					116781,	-- Legacy of the White Tiger
-					20217,	-- Blessing of Kings
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-			[2] = {	-- Legacy of the White Tiger group
-				["spells"] = {
-					116781,	-- Legacy of the White Tiger
-				},
-				["negate_spells"] = {
-					91126,	-- Mark of the Wild
-					160206,	-- Lone Wolf: Power of the Primates
-					159988,	-- Bark of the Wild (Dog)
-					160017,	-- Blessing of Kongs (Gorilla)
-					90363,	-- Embrace of the Shale Spider
-					160077,	-- Strength of the Earth (Worm)
-					115921,	-- Legacy of the Emperor
-					20217,	-- Blessing of Kings
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-		},
-		PALADIN = {
-			[1] = {	-- Righteous Fury group
-				["spells"] = {
-					25780,	-- Righteous Fury
-				},
-				["role"] = "Tank",
-				["instance"] = true,
-				["reversecheck"] = true,
-				["negate_reversecheck"] = 1,	-- Holy paladins use RF sometimes
-			},
-			[2] = {	-- Blessing of Kings group
-				["spells"] = {
-					20217,	-- Blessing of Kings
-				},
-				["negate_spells"] = {
-					1126,	-- Mark of the Wild
-					160206,	-- Lone Wolf: Power of the Primates
-					159988,	-- Bark of the Wild (Dog)
-					160017,	-- Blessing of Kongs (Gorilla)
-					90363,	-- Embrace of the Shale Spider
-					160077,	-- Strength of the Earth (Worm)
-					115921,	-- Legacy of the Emperor
-					116781,	-- Legacy of the White Tiger
-				},
-				["personal"] = {
-					19740,	-- Blessing of Might
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-			[3] = {	-- Blessing of Might group
-				["spells"] = {
-					19740,	-- Blessing of Might
-				},
-				["negate_spells"] = {
-					155522,	-- Power of the Grave
-					24907,	-- Moonkin Aura
-					160198,	-- Lone Wolf: Grace of the Cat
-					93435,	-- Roar of Courage (Cat)
-					160039,	-- Keen Senses (Hydra)
-					160073,	-- Plainswalking (Tallstrider)
-					128997,	-- Spirit Beast Blessing
-					116956,	-- Grace of Air
-				},
-				["personal"] = {
-					20217,	-- Blessing of Kings
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-		},
-		PRIEST = {
-			[1] = {	-- Stamina group
-				["spells"] = {
-					21562,	-- Power Word: Fortitude
-				},
-				["negate_spells"] = {
-					160199,	-- Lone Wolf: Fortitude of the Bear
-					50256,	-- Invigorating Roar (Bear)
-					90364,	-- Qiraji Fortitude (Silithid)
-					160003,	-- Savage Vigor (Rylak)
-					160014,	-- Sturdiness (Goat)
-					166928,	-- Blood Pact
-					469,	-- Commanding Shout
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true
-			},
-		},
 		ROGUE = {
 			[1] = {	-- Lethal Poisons group
 				["spells"] = {
 					2823,	-- Deadly Poison
 					8679,	-- Wound Poison
-					157584,	-- Instant Poison
 				},
+				["spec"] = 1,		-- Only Assassination have poisen now
 				["combat"] = true,
 				["instance"] = true,
 				["pvp"] = true,
@@ -304,73 +69,7 @@ if C.reminder.solo_buffs_enable == true then
 					3408,	-- Crippling Poison
 					108211,	-- Leeching Poison
 				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-		},
-		SHAMAN = {
-			[1] = {	-- Shields group
-				["spells"] = {
-					52127,	-- Water Shield
-					324,	-- Lightning Shield
-					974,	-- Earth Shield
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-		},
-		WARLOCK = {
-			[1] = {	-- Dark Intent group
-				["spells"] = {
-					109773,	-- Dark Intent
-				},
-				["negate_spells"] = {
-					160205,	-- Lone Wolf: Wisdom of the Serpent
-					126309,	-- Still Water (Water Strider)
-					128433,	-- Serpent's Cunning (Serpent)
-					90364,	-- Qiraji Fortitude (Silithid)
-					1459,	-- Arcane Brilliance
-					61316,	-- Dalaran Brilliance
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-		},
-		WARRIOR = {
-			[1] = {	-- Commanding Shout group
-				["spells"] = {
-					469,	-- Commanding Shout
-				},
-				["negate_spells"] = {
-					160199,	-- Lone Wolf: Fortitude of the Bear
-					50256,	-- Invigorating Roar (Bear)
-					90364,	-- Qiraji Fortitude (Silithid)
-					160003,	-- Savage Vigor (Rylak)
-					160014,	-- Sturdiness (Goat)
-					21562,	-- Power Word: Fortitude
-					166928,	-- Blood Pact
-				},
-				["personal"] = {
-					6673,	-- Battle Shout
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-			},
-			[2] = {	-- Battle Shout group
-				["spells"] = {
-					6673,	-- Battle Shout
-				},
-				["negate_spells"] = {
-					19506,	-- Trueshot Aura
-					57330,	-- Horn of Winter
-				},
-				["personal"] = {
-					469,	-- Commanding Shout
-				},
+				["spec"] = 1,		-- Only Assassination have poisen now
 				["combat"] = true,
 				["instance"] = true,
 				["pvp"] = true,

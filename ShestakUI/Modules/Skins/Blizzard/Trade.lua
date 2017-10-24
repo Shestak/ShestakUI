@@ -42,6 +42,9 @@ local function LoadSkin()
 			player_button:StripTextures()
 			recipient_button:StripTextures()
 
+			player_button.IconBorder:SetAlpha(0)
+			recipient_button.IconBorder:SetAlpha(0)
+
 			player_button_icon:ClearAllPoints()
 			player_button_icon:SetPoint("TOPLEFT", player_button, "TOPLEFT", 2, -2)
 			player_button_icon:SetPoint("BOTTOMRIGHT", player_button, "BOTTOMRIGHT", -2, 2)
@@ -78,26 +81,26 @@ local function LoadSkin()
 		end
 	end
 
-	TradeHighlightPlayerTop:SetTexture(0, 1, 0, 0.2)
-	TradeHighlightPlayerBottom:SetTexture(0, 1, 0, 0.2)
-	TradeHighlightPlayerMiddle:SetTexture(0, 1, 0, 0.2)
+	TradeHighlightPlayerTop:SetColorTexture(0, 1, 0, 0.2)
+	TradeHighlightPlayerBottom:SetColorTexture(0, 1, 0, 0.2)
+	TradeHighlightPlayerMiddle:SetColorTexture(0, 1, 0, 0.2)
 	TradeHighlightPlayer:SetFrameStrata("HIGH")
 	TradeHighlightPlayer:SetPoint("TOPLEFT", TradeFrame, "TOPLEFT", 11, -86)
 
-	TradeHighlightPlayerEnchantTop:SetTexture(0, 1, 0, 0.2)
-	TradeHighlightPlayerEnchantBottom:SetTexture(0, 1, 0, 0.2)
-	TradeHighlightPlayerEnchantMiddle:SetTexture(0, 1, 0, 0.2)
+	TradeHighlightPlayerEnchantTop:SetColorTexture(0, 1, 0, 0.2)
+	TradeHighlightPlayerEnchantBottom:SetColorTexture(0, 1, 0, 0.2)
+	TradeHighlightPlayerEnchantMiddle:SetColorTexture(0, 1, 0, 0.2)
 	TradeHighlightPlayerEnchant:SetFrameStrata("HIGH")
 
-	TradeHighlightRecipientTop:SetTexture(0, 1, 0, 0.2)
-	TradeHighlightRecipientBottom:SetTexture(0, 1, 0, 0.2)
-	TradeHighlightRecipientMiddle:SetTexture(0, 1, 0, 0.2)
+	TradeHighlightRecipientTop:SetColorTexture(0, 1, 0, 0.2)
+	TradeHighlightRecipientBottom:SetColorTexture(0, 1, 0, 0.2)
+	TradeHighlightRecipientMiddle:SetColorTexture(0, 1, 0, 0.2)
 	TradeHighlightRecipient:SetFrameStrata("HIGH")
 	TradeHighlightRecipient:SetPoint("TOPLEFT", TradeFrame, "TOPLEFT", 179, -86)
 
-	TradeHighlightRecipientEnchantTop:SetTexture(0, 1, 0, 0.2)
-	TradeHighlightRecipientEnchantBottom:SetTexture(0, 1, 0, 0.2)
-	TradeHighlightRecipientEnchantMiddle:SetTexture(0, 1, 0, 0.2)
+	TradeHighlightRecipientEnchantTop:SetColorTexture(0, 1, 0, 0.2)
+	TradeHighlightRecipientEnchantBottom:SetColorTexture(0, 1, 0, 0.2)
+	TradeHighlightRecipientEnchantMiddle:SetColorTexture(0, 1, 0, 0.2)
 	TradeHighlightRecipientEnchant:SetFrameStrata("HIGH")
 end
 

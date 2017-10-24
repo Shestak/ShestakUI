@@ -5,14 +5,14 @@ if C.skins.blizzard_frames ~= true then return end
 --	QuestGreeting skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	QuestFrameGreetingPanel:HookScript("OnShow", function()
+	local function UpdateGreetingPanel()
 		QuestFrameGreetingPanel:StripTextures()
 		QuestGreetingScrollFrame:StripTextures()
 		QuestFrameGreetingGoodbyeButton:SkinButton()
 		GreetingText:SetTextColor(1, 1, 1)
 		CurrentQuestsText:SetTextColor(1, 0.8, 0)
-		QuestGreetingFrameHorizontalBreak:Kill()
 		AvailableQuestsText:SetTextColor(1, 0.8, 0)
+		QuestGreetingFrameHorizontalBreak:Kill()
 
 		for i = 1, MAX_NUM_QUESTS do
 			local button = _G["QuestTitleButton"..i]
@@ -23,7 +23,10 @@ local function LoadSkin()
 				end
 			end
 		end
-	end)
+	end
+
+	QuestFrameGreetingPanel:HookScript("OnShow", UpdateGreetingPanel)
+	hooksecurefunc("QuestFrameGreetingPanel_OnShow", UpdateGreetingPanel)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

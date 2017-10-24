@@ -5,7 +5,7 @@
 ----------------------------------------------------------------------------------------
 local ShowReadyCheckHook = function(self, initiator)
 	if initiator ~= "player" then
-		PlaySound("ReadyCheck", "Master")
+		PlaySound(SOUNDKIT.READY_CHECK, "Master")
 	end
 end
 hooksecurefunc("ShowReadyCheck", ShowReadyCheckHook)
@@ -24,17 +24,17 @@ ForceWarning:SetScript("OnEvent", function(self, event)
 		for i = 1, GetMaxBattlefieldID() do
 			local status = GetBattlefieldStatus(i)
 			if status == "confirm" then
-				PlaySound("PVPTHROUGHQUEUE", "Master")
+				PlaySound(SOUNDKIT.PVP_THROUGH_QUEUE, "Master")
 				break
 			end
 			i = i + 1
 		end
 	elseif event == "BATTLEFIELD_MGR_ENTRY_INVITE" then
-		PlaySound("PVPTHROUGHQUEUE", "Master")
+		PlaySound(SOUNDKIT.PVP_THROUGH_QUEUE, "Master")
 	elseif event == "PET_BATTLE_QUEUE_PROPOSE_MATCH" then
-		PlaySound("PVPTHROUGHQUEUE", "Master")
+		PlaySound(SOUNDKIT.PVP_THROUGH_QUEUE, "Master")
 	elseif event == "LFG_PROPOSAL_SHOW" then
-		PlaySound("ReadyCheck", "Master")
+		PlaySound(SOUNDKIT.READY_CHECK, "Master")
 	elseif event == "RESURRECT_REQUEST" then
 		PlaySoundFile("Sound\\Spells\\Resurrection.wav", "Master")
 	end
@@ -46,7 +46,6 @@ end)
 StaticPopupDialogs.RESURRECT.hideOnEscape = nil
 StaticPopupDialogs.AREA_SPIRIT_HEAL.hideOnEscape = nil
 StaticPopupDialogs.PARTY_INVITE.hideOnEscape = nil
-StaticPopupDialogs.PARTY_INVITE_XREALM.hideOnEscape = nil
 StaticPopupDialogs.CONFIRM_SUMMON.hideOnEscape = nil
 StaticPopupDialogs.ADDON_ACTION_FORBIDDEN.button1 = nil
 StaticPopupDialogs.TOO_MANY_LUA_ERRORS.button1 = nil
@@ -97,18 +96,14 @@ end
 --	Custom Lag Tolerance(by Elv22)
 ----------------------------------------------------------------------------------------
 if C.general.custom_lagtolerance == true then
-	InterfaceOptionsCombatPanelMaxSpellStartRecoveryOffset:Hide()
-	InterfaceOptionsCombatPanelReducedLagTolerance:Hide()
-
 	local customlag = CreateFrame("Frame")
 	local int = 5
 	local _, _, _, lag = GetNetStats()
 	local LatencyUpdate = function(self, elapsed)
 		int = int - elapsed
 		if int < 0 then
-			if GetCVar("reducedLagTolerance") ~= tostring(1) then SetCVar("reducedLagTolerance", tostring(1)) end
 			if lag ~= 0 and lag <= 400 then
-				SetCVar("maxSpellStartRecoveryOffset", tostring(lag))
+				SetCVar("SpellQueueWindow", tostring(lag))
 			end
 			int = 5
 		end
@@ -171,7 +166,7 @@ strip:SetScript("OnClick", function(self, button)
 	else
 		self.model:Undress()
 	end
-	PlaySound("gsTitleOptionOK")
+	PlaySound(SOUNDKIT.GS_TITLE_OPTION_OK)
 end)
 strip.model = DressUpModel
 
@@ -248,8 +243,24 @@ end)
 ----------------------------------------------------------------------------------------
 --	Boss Banner Hider
 ----------------------------------------------------------------------------------------
-if C.automation.bannerhide == true then
+if C.misc.hide_banner == true then
 	BossBanner.PlayBanner = function() end
+end
+
+----------------------------------------------------------------------------------------
+--	Hide TalkingHeadFrame
+----------------------------------------------------------------------------------------
+if C.misc.hide_talking_head == true then
+	local frame = CreateFrame("Frame")
+	frame:RegisterEvent("ADDON_LOADED")
+	frame:SetScript("OnEvent", function(self, event, addon)
+		if addon == "Blizzard_TalkingHeadUI" then
+			hooksecurefunc("TalkingHeadFrame_PlayCurrent", function()
+				TalkingHeadFrame:Hide()
+			end)
+			self:UnregisterEvent(event)
+		end
+	end)
 end
 
 ----------------------------------------------------------------------------------------

@@ -101,7 +101,6 @@ local function XLM_UD()
 
 	local name = UpdateMapHighlight(adjustedX, adjustedY)
 	if name ~= nil then
-		local w, h = GameTooltip:GetSize()
 		GameTooltip:SetOwner(UIParent, "ANCHOR_NONE")
 		GameTooltip:ClearAllPoints()
 		local x, y = GetCursorPosition()

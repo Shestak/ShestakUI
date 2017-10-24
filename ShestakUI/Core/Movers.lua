@@ -4,11 +4,12 @@
 --	Movement function(by Allez)
 ----------------------------------------------------------------------------------------
 T.MoverFrames = {
+	VehicleButtonAnchor,
+	ExtraButtonAnchor,
 	ActionBarAnchor,
 	RightActionBarAnchor,
 	PetActionBarAnchor,
 	ShiftHolder,
-	VehicleButtonAnchor,
 	MicroAnchor,
 	VehicleAnchor,
 	AchievementAnchor,
@@ -29,7 +30,6 @@ T.MoverFrames = {
 	oUF_Target_Castbar,
 	oUF_Player_Portrait,
 	oUF_Target_Portrait,
-	ExtraButtonAnchor,
 	P_BUFF_ICON_Anchor,
 	P_PROC_ICON_Anchor,
 	SPECIAL_P_BUFF_ICON_Anchor,

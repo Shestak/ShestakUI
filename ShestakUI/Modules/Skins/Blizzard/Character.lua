@@ -61,9 +61,6 @@ local function LoadSkin()
 		"PaperDollEquipmentManagerPane"
 	}
 
-	CharacterFrameExpandButton:SetSize(CharacterFrameExpandButton:GetWidth() - 7, CharacterFrameExpandButton:GetHeight() - 7)
-	T.SkinNextPrevButton(CharacterFrameExpandButton)
-
 	EquipmentFlyoutFrameHighlight:Kill()
 	local function SkinItemFlyouts()
 		EquipmentFlyoutFrameButtons:StripTextures()
@@ -103,7 +100,6 @@ local function LoadSkin()
 	local scrollbars = {
 		"PaperDollTitlesPaneScrollBar",
 		"PaperDollEquipmentManagerPaneScrollBar",
-		"CharacterStatsPaneScrollBar",
 		"TokenFrameContainerScrollBar",
 		"ReputationListScrollFrameScrollBar",
 		"GearManagerDialogPopupScrollFrameScrollBar"
@@ -116,6 +112,13 @@ local function LoadSkin()
 	for _, object in pairs(charframe) do
 		_G[object]:StripTextures()
 	end
+
+	CharacterStatsPane.ItemLevelCategory:StripTextures()
+	CharacterStatsPane.ItemLevelCategory:SetTemplate("Overlay")
+	CharacterStatsPane.AttributesCategory:StripTextures()
+	CharacterStatsPane.AttributesCategory:SetTemplate("Overlay")
+	CharacterStatsPane.EnhancementsCategory:StripTextures()
+	CharacterStatsPane.EnhancementsCategory:SetTemplate("Overlay")
 
 	-- Titles
 	PaperDollTitlesPane:HookScript("OnShow", function(self)
@@ -158,39 +161,9 @@ local function LoadSkin()
 			object.icon:SetSize(36, 36)
 			object.icon.SetSize = T.dummy
 		end
-		GearManagerDialogPopup:StripTextures()
-		GearManagerDialogPopup:SetTemplate("Transparent")
-		GearManagerDialogPopup:SetPoint("TOPLEFT", PaperDollFrame, "TOPRIGHT", 3, 0)
-		GearManagerDialogPopupScrollFrame:StripTextures()
-		GearManagerDialogPopupEditBox:StripTextures(true)
-		GearManagerDialogPopupEditBox:SetTemplate("Overlay")
-		GearManagerDialogPopupEditBox:SetTextInsets(3, 0, 0, 0)
-		GearManagerDialogPopupOkay:SkinButton()
-		GearManagerDialogPopupCancel:SkinButton()
-		GearManagerDialogPopupScrollFrame:SetPoint("TOPRIGHT", -34, -64)
-
-		for i = 1, NUM_GEARSET_ICONS_SHOWN do
-			local button = _G["GearManagerDialogPopupButton"..i]
-			local icon = button.icon
-
-			if button then
-				button:StripTextures()
-				button:StyleButton(true)
-
-				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				_G["GearManagerDialogPopupButton"..i.."Icon"]:SetTexture(nil)
-
-				icon:ClearAllPoints()
-				icon:SetPoint("TOPLEFT", 2, -2)
-				icon:SetPoint("BOTTOMRIGHT", -2, 2)
-				button:SetFrameLevel(button:GetFrameLevel() + 2)
-				if not button.backdrop then
-					button:CreateBackdrop("Default")
-					button.backdrop:SetAllPoints()
-				end
-			end
-		end
 	end)
+
+	T.SkinIconSelectionFrame(GearManagerDialogPopup, NUM_GEARSET_ICONS_SHOWN, "GearManagerDialogPopupButton", frameNameOverride)
 
 	-- Handle Tabs at bottom of character frame
 	for i = 1, 4 do
@@ -202,10 +175,10 @@ local function LoadSkin()
 		for i = 1, #PAPERDOLL_SIDEBARS do
 			local tab = _G["PaperDollSidebarTab"..i]
 			if tab then
-				tab.Highlight:SetTexture(1, 1, 1, 0.3)
+				tab.Highlight:SetColorTexture(1, 1, 1, 0.3)
 				tab.Highlight:SetPoint("TOPLEFT", 3, -4)
 				tab.Highlight:SetPoint("BOTTOMRIGHT", -1, 0)
-				tab.Hider:SetTexture(0.4, 0.4, 0.4, 0.4)
+				tab.Hider:SetColorTexture(0.4, 0.4, 0.4, 0.4)
 				tab.Hider:SetPoint("TOPLEFT", 3, -4)
 				tab.Hider:SetPoint("BOTTOMRIGHT", -1, 0)
 				tab.TabBg:Kill()
@@ -224,16 +197,6 @@ local function LoadSkin()
 		end
 	end
 	hooksecurefunc("PaperDollFrame_UpdateSidebarTabs", FixSidebarTabCoords)
-
-	hooksecurefunc("PaperDollFrame_CollapseStatCategory", function(categoryFrame)
-		categoryFrame.BgMinimized:Hide()
-	end)
-
-	hooksecurefunc("PaperDollFrame_ExpandStatCategory", function(categoryFrame)
-		categoryFrame.BgTop:Hide()
-		categoryFrame.BgMiddle:Hide()
-		categoryFrame.BgBottom:Hide()
-	end)
 
 	-- Reputation
 	local function UpdateFactionSkins()
@@ -294,22 +257,6 @@ local function LoadSkin()
 		T.SkinCheckBox(TokenFramePopupBackpackCheckBox)
 		T.SkinCheckBox(TokenFramePopupInactiveCheckBox)
 	end)
-
-	-- Pet
-	PetModelFrame:CreateBackdrop("Default")
-	PetModelFrame.backdrop:SetPoint("TOPLEFT", -2, 2)
-	PetModelFrame.backdrop:SetPoint("BOTTOMRIGHT", 1, -2)
-	T.SkinRotateButton(PetModelFrameRotateRightButton)
-	T.SkinRotateButton(PetModelFrameRotateLeftButton)
-	PetModelFrameRotateLeftButton:ClearAllPoints()
-	PetModelFrameRotateLeftButton:SetPoint("TOPLEFT", PetModelFrame.backdrop, "TOPLEFT", 6, -6)
-	PetModelFrameRotateRightButton:ClearAllPoints()
-	PetModelFrameRotateRightButton:SetPoint("LEFT", PetModelFrameRotateLeftButton, "RIGHT", 4, 0)
-
-	local xtex = PetPaperDollPetInfo:GetRegions()
-	xtex:SetTexCoord(0.12, 0.63, 0.15, 0.55)
-	PetPaperDollPetInfo:CreateBackdrop("Default")
-	PetPaperDollPetInfo:SetSize(24, 24)
 
 	CharacterFrame:SetTemplate("Transparent")
 

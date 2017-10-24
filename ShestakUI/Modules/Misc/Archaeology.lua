@@ -71,7 +71,7 @@ function stArch:OnLoad(self)
 			if GetNumArtifactsByRace(i) > 0 then
 				SetSelectedArtifact(i)
 				local artifactName, artifactDescription, artifactRarity, _, _, keystoneCount = GetSelectedArtifactInfo()
-				local numFragmentsCollected, numFragmentsAdded, numFragmentsRequired = GetArtifactProgress()
+				local numFragmentsCollected, _, numFragmentsRequired = GetArtifactProgress()
 				local r, g, b
 				if artifactRarity == 1 then
 					artifactRarity = ITEM_QUALITY3_DESC

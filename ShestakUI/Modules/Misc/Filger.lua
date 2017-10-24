@@ -267,7 +267,7 @@ function Filger:DisplayActives()
 		end
 		if value.duration and value.duration > 0 then
 			if self.Mode == "ICON" then
-				CooldownFrame_SetTimer(bar.cooldown, value.start, value.duration, 1)
+				CooldownFrame_Set(bar.cooldown, value.start, value.duration, 1)
 				if value.data.filter == "CD" or value.data.filter == "ICD" then
 					bar.value = value
 					bar.activeIndex = activeIndex
@@ -327,30 +327,36 @@ function Filger:OnEvent(event, unit, _, _, _, spellID)
 			if data.filter == "BUFF" and (not data.spec or data.spec == ptt) then
 				local caster, spn, expirationTime
 				spn, _, _ = GetSpellInfo(data.spellID)
-				name, _, icon, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitBuff(data.unitID, data.spellID, spn, data.absID)
-				if name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) then
-					if not data.count or count >= data.count then
-						start = expirationTime - duration
-						found = true
+				if spn then
+					name, _, icon, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitBuff(data.unitID, data.spellID, spn, data.absID)
+					if name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) then
+						if not data.count or count >= data.count then
+							start = expirationTime - duration
+							found = true
+						end
 					end
 				end
 			elseif data.filter == "DEBUFF" and (not data.spec or data.spec == ptt) then
 				local caster, spn, expirationTime
 				spn, _, _ = GetSpellInfo(data.spellID)
-				name, _, icon, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitDebuff(data.unitID, data.spellID, spn, data.absID)
-				if name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) then
-					start = expirationTime - duration
-					found = true
+				if spn then
+					name, _, icon, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitDebuff(data.unitID, data.spellID, spn, data.absID)
+					if name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) then
+						start = expirationTime - duration
+						found = true
+					end
 				end
 			elseif data.filter == "CD" and (not data.spec or data.spec == ptt) then
 				if data.spellID then
 					name, _, icon = GetSpellInfo(data.spellID)
-					if data.absID then
-						start, duration = GetSpellCooldown(data.spellID)
-					else
-						start, duration = GetSpellCooldown(name)
+					if name then
+						if data.absID then
+							start, duration = GetSpellCooldown(data.spellID)
+						else
+							start, duration = GetSpellCooldown(name)
+						end
+						spid = data.spellID
 					end
-					spid = data.spellID
 				elseif data.slotID then
 					spid = data.slotID
 					local slotLink = GetInventoryItemLink("player", data.slotID)
@@ -366,11 +372,15 @@ function Filger:OnEvent(event, unit, _, _, _, spellID)
 				if data.trigger == "BUFF" then
 					local spn
 					spn, _, icon = GetSpellInfo(data.spellID)
-					name, _, _, _, _, _, _, _, _, _, spid = Filger:UnitBuff("player", data.spellID, spn, data.absID)
+					if spn then
+						name, _, _, _, _, _, _, _, _, _, spid = Filger:UnitBuff("player", data.spellID, spn, data.absID)
+					end
 				elseif data.trigger == "DEBUFF" then
 					local spn
 					spn, _, icon = GetSpellInfo(data.spellID)
-					name, _, _, _, _, _, _, _, _, _, spid = Filger:UnitDebuff("player", data.spellID, spn, data.absID)
+					if spn then
+						name, _, _, _, _, _, _, _, _, _, spid = Filger:UnitDebuff("player", data.spellID, spn, data.absID)
+					end
 				elseif data.trigger == "NONE" and event == "UNIT_SPELLCAST_SUCCEEDED" then
 					if spellID == data.spellID then
 						name, _, icon = GetSpellInfo(data.spellID)
@@ -442,6 +452,20 @@ if C["filger_spells"] and C["filger_spells"]["ALL"] then
 		else
 			for j = 1, #spellListAll, 1 do
 				table.insert(spellListClass, spellListAll[j])
+			end
+		end
+	end
+end
+
+if T.CustomFilgerSpell then
+	for _, data in pairs(T.CustomFilgerSpell) do
+		for class, _ in pairs(C["filger_spells"]) do
+			if class == T.class then
+				for i = 1, #C["filger_spells"][class], 1 do
+					if C["filger_spells"][class][i]["Name"] == data[1] then
+						table.insert(C["filger_spells"][class][i], data[2])
+					end
+				end
 			end
 		end
 	end

@@ -9,7 +9,13 @@ T.Round = function(number, decimals)
 end
 
 T.ShortValue = function(value)
-	if value >= 1e8 then
+	if value >= 1e11 then
+		return ("%.0fb"):format(value / 1e9)
+	elseif value >= 1e10 then
+		return ("%.1fb"):format(value / 1e9):gsub("%.?0+([km])$", "%1")
+	elseif value >= 1e9 then
+		return ("%.2fb"):format(value / 1e9):gsub("%.?0+([km])$", "%1")
+	elseif value >= 1e8 then
 		return ("%.0fm"):format(value / 1e6)
 	elseif value >= 1e7 then
 		return ("%.1fm"):format(value / 1e6):gsub("%.?0+([km])$", "%1")
@@ -50,17 +56,11 @@ T.CheckChat = function(warning)
 end
 
 ----------------------------------------------------------------------------------------
---	Player's Role and Specialization check
+--	Player's role check
 ----------------------------------------------------------------------------------------
-T.CheckSpec = function(spec)
-	local activeGroup = GetActiveSpecGroup()
-	if activeGroup and GetSpecialization(false, false, activeGroup) then
-		return spec == GetSpecialization(false, false, activeGroup)
-	end
-end
-
 local isCaster = {
 	DEATHKNIGHT = {nil, nil, nil},
+	DEMONHUNTER = {nil, nil},
 	DRUID = {true},					-- Balance
 	HUNTER = {nil, nil, nil},
 	MAGE = {true, true, true},
@@ -132,48 +132,56 @@ end
 T.SkinFuncs = {}
 T.SkinFuncs["ShestakUI"] = {}
 
-function T.SkinScrollBar(frame)
-	if _G[frame:GetName().."BG"] then
-		_G[frame:GetName().."BG"]:SetTexture(nil)
-	end
-	if _G[frame:GetName().."Track"] then
-		_G[frame:GetName().."Track"]:SetTexture(nil)
-	end
-	if _G[frame:GetName().."Top"] then
-		_G[frame:GetName().."Top"]:SetTexture(nil)
-	end
-	if _G[frame:GetName().."Bottom"] then
-		_G[frame:GetName().."Bottom"]:SetTexture(nil)
-	end
-	if _G[frame:GetName().."Middle"] then
-		_G[frame:GetName().."Middle"]:SetTexture(nil)
+function T.SkinScrollBar(frame, parent)
+	if frame:GetName() then
+		if _G[frame:GetName().."BG"] then
+			_G[frame:GetName().."BG"]:SetTexture(nil)
+		end
+		if _G[frame:GetName().."Track"] then
+			_G[frame:GetName().."Track"]:SetTexture(nil)
+		end
+		if _G[frame:GetName().."Top"] then
+			_G[frame:GetName().."Top"]:SetTexture(nil)
+		end
+		if _G[frame:GetName().."Bottom"] then
+			_G[frame:GetName().."Bottom"]:SetTexture(nil)
+		end
+		if _G[frame:GetName().."Middle"] then
+			_G[frame:GetName().."Middle"]:SetTexture(nil)
+		end
 	end
 
-	if _G[frame:GetName().."ScrollUpButton"] and _G[frame:GetName().."ScrollDownButton"] then
-		_G[frame:GetName().."ScrollUpButton"]:StripTextures()
-		if not _G[frame:GetName().."ScrollUpButton"].icon then
-			T.SkinNextPrevButton(_G[frame:GetName().."ScrollUpButton"])
-			_G[frame:GetName().."ScrollUpButton"]:SetSize(_G[frame:GetName().."ScrollUpButton"]:GetWidth() + 7, _G[frame:GetName().."ScrollUpButton"]:GetHeight() + 7)
-			scrolldn = false
+	if frame.Background then frame.Background:SetTexture(nil) end
+	if frame.trackBG then frame.trackBG:SetTexture(nil) end
+	if frame.Middle then frame.Middle:SetTexture(nil) end
+	if frame.Top then frame.Top:SetTexture(nil) end
+	if frame.Bottom then frame.Bottom:SetTexture(nil) end
+	if frame.ScrollBarTop then frame.ScrollBarTop:SetTexture(nil) end
+	if frame.ScrollBarBottom then frame.ScrollBarBottom:SetTexture(nil) end
+	if frame.ScrollBarMiddle then frame.ScrollBarMiddle:SetTexture(nil) end
+
+	local UpButton = frame.ScrollUpButton or frame.UpButton or _G[(frame:GetName() or parent).."ScrollUpButton"]
+	local DownButton = frame.ScrollDownButton or frame.DownButton or _G[(frame:GetName() or parent).."ScrollDownButton"]
+	local ThumbTexture = frame.ThumbTexture or frame.thumbTexture or _G[frame:GetName().."ThumbTexture"]
+
+	if UpButton and DownButton then
+		if not UpButton.icon then
+			T.SkinNextPrevButton(UpButton, nil, "Up")
+			UpButton:SetSize(UpButton:GetWidth() + 7, UpButton:GetHeight() + 7)
 		end
 
-		_G[frame:GetName().."ScrollDownButton"]:StripTextures()
-		if not _G[frame:GetName().."ScrollDownButton"].icon then
-			T.SkinNextPrevButton(_G[frame:GetName().."ScrollDownButton"])
-			_G[frame:GetName().."ScrollDownButton"]:SetSize(_G[frame:GetName().."ScrollDownButton"]:GetWidth() + 7, _G[frame:GetName().."ScrollDownButton"]:GetHeight() + 7)
-			scrolldn = true
+		if not DownButton.icon then
+			T.SkinNextPrevButton(DownButton, nil, "Down")
+			DownButton:SetSize(DownButton:GetWidth() + 7, DownButton:GetHeight() + 7)
 		end
 
-		if frame:GetThumbTexture() then
-			frame:GetThumbTexture():SetTexture(nil)
+		if ThumbTexture then
+			ThumbTexture:SetTexture(nil)
 			if not frame.thumbbg then
 				frame.thumbbg = CreateFrame("Frame", nil, frame)
-				frame.thumbbg:SetPoint("TOPLEFT", frame:GetThumbTexture(), "TOPLEFT", 0, -3)
-				frame.thumbbg:SetPoint("BOTTOMRIGHT", frame:GetThumbTexture(), "BOTTOMRIGHT", 0, 3)
+				frame.thumbbg:SetPoint("TOPLEFT", ThumbTexture, "TOPLEFT", 0, -3)
+				frame.thumbbg:SetPoint("BOTTOMRIGHT", ThumbTexture, "BOTTOMRIGHT", 0, 3)
 				frame.thumbbg:SetTemplate("Overlay")
-				if frame.trackbg then
-					frame.thumbbg:SetFrameLevel(frame.trackbg:GetFrameLevel())
-				end
 
 				frame:HookScript("OnShow", function()
 					local _, maxValue = frame:GetMinMaxValues()
@@ -243,11 +251,11 @@ function T.SkinTab(tab, bg)
 	end
 end
 
-function T.SkinNextPrevButton(btn, left)
+function T.SkinNextPrevButton(btn, left, scroll)
 	local normal, pushed, disabled
 	local isPrevButton = btn:GetName() and (string.find(btn:GetName(), "Left") or string.find(btn:GetName(), "Prev") or string.find(btn:GetName(), "Decrement") or string.find(btn:GetName(), "Back")) or left
-	local isScrollUpButton = btn:GetName() and string.find(btn:GetName(), "ScrollUp")
-	local isScrollDownButton = btn:GetName() and string.find(btn:GetName(), "ScrollDown")
+	local isScrollUpButton = btn:GetName() and string.find(btn:GetName(), "ScrollUp") or scroll == "Up"
+	local isScrollDownButton = btn:GetName() and string.find(btn:GetName(), "ScrollDown") or scroll == "Down"
 
 	if btn:GetNormalTexture() then
 		normal = btn:GetNormalTexture():GetTexture()
@@ -262,6 +270,12 @@ function T.SkinNextPrevButton(btn, left)
 	end
 
 	btn:StripTextures()
+
+	if scroll == "Up" or scroll == "Down" then
+		normal = nil
+		pushed = nil
+		disabled = nil
+	end
 
 	if not normal then
 		if isPrevButton then
@@ -324,7 +338,7 @@ function T.SkinNextPrevButton(btn, left)
 		if btn:GetPushedTexture() then
 			btn:GetPushedTexture():SetAllPoints(btn:GetNormalTexture())
 		end
-		btn:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
+		btn:GetHighlightTexture():SetColorTexture(1, 1, 1, 0.3)
 		btn:GetHighlightTexture():SetAllPoints(btn:GetNormalTexture())
 	end
 end
@@ -336,7 +350,7 @@ function T.SkinRotateButton(btn)
 	btn:GetNormalTexture():SetTexCoord(0.3, 0.29, 0.3, 0.65, 0.69, 0.29, 0.69, 0.65)
 	btn:GetPushedTexture():SetTexCoord(0.3, 0.29, 0.3, 0.65, 0.69, 0.29, 0.69, 0.65)
 
-	btn:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
+	btn:GetHighlightTexture():SetColorTexture(1, 1, 1, 0.3)
 
 	btn:GetNormalTexture():ClearAllPoints()
 	btn:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
@@ -356,6 +370,10 @@ function T.SkinEditBox(frame, width, height)
 	if frame.Left then frame.Left:Kill() end
 	if frame.Right then frame.Right:Kill() end
 	if frame.Middle then frame.Middle:Kill() end
+
+	if frame.LeftTexture then frame.LeftTexture:Kill() end
+	if frame.RightTexture then frame.RightTexture:Kill() end
+	if frame.MiddleTexture then frame.MiddleTexture:Kill() end
 
 	frame:CreateBackdrop("Overlay")
 
@@ -407,27 +425,24 @@ function T.SkinCheckBox(frame, default)
 
 	if frame.SetHighlightTexture then
 		local highligh = frame:CreateTexture(nil, nil, self)
-		highligh:SetTexture(1, 1, 1, 0.3)
+		highligh:SetColorTexture(1, 1, 1, 0.3)
 		highligh:SetPoint("TOPLEFT", frame, 6, -6)
 		highligh:SetPoint("BOTTOMRIGHT", frame, -6, 6)
 		frame:SetHighlightTexture(highligh)
 	end
 
 	if frame.SetCheckedTexture then
-		if default then
-			frame:SetCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check")
-		else
-			local checked = frame:CreateTexture(nil, nil, self)
-			checked:SetTexture(1, 0.82, 0, 0.8)
-			checked:SetPoint("TOPLEFT", frame, 6, -6)
-			checked:SetPoint("BOTTOMRIGHT", frame, -6, 6)
-			frame:SetCheckedTexture(checked)
-		end
+		if default then return end
+		local checked = frame:CreateTexture(nil, nil, self)
+		checked:SetColorTexture(1, 0.82, 0, 0.8)
+		checked:SetPoint("TOPLEFT", frame, 6, -6)
+		checked:SetPoint("BOTTOMRIGHT", frame, -6, 6)
+		frame:SetCheckedTexture(checked)
 	end
 
 	if frame.SetDisabledCheckedTexture then
 		local disabled = frame:CreateTexture(nil, nil, self)
-		disabled:SetTexture(0.6, 0.6, 0.6, 0.75)
+		disabled:SetColorTexture(0.6, 0.6, 0.6, 0.75)
 		disabled:SetPoint("TOPLEFT", frame, 6, -6)
 		disabled:SetPoint("BOTTOMRIGHT", frame, -6, 6)
 		frame:SetDisabledCheckedTexture(disabled)
@@ -473,9 +488,12 @@ end
 function T.HandleIcon(icon, parent)
 	parent = parent or icon:GetParent()
 
-	icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	parent:CreateBackdrop("Default")
-	icon:SetParent(parent.backdrop)
+	parent.backdrop:SetPoint("TOPLEFT", icon, -2, 2)
+	parent.backdrop:SetPoint("BOTTOMRIGHT", icon, 2, -2)
+
+	icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	icon:SetParent(parent)
 end
 
 function T.SkinSlider(f)
@@ -495,6 +513,49 @@ function T.SkinSlider(f)
 	local slider = select(4, f:GetRegions())
 	slider:SetTexture("Interface\\CastingBar\\UI-CastingBar-Spark")
 	slider:SetBlendMode("ADD")
+end
+
+function T.SkinIconSelectionFrame(frame, numIcons, buttonNameTemplate, frameNameOverride)
+	local frameName = frameNameOverride or frame:GetName()
+	local scrollFrame = _G[frameName.."ScrollFrame"]
+	local editBox = _G[frameName.."EditBox"]
+	local okayButton = _G[frameName.."OkayButton"] or _G[frameName.."Okay"]
+	local cancelButton = _G[frameName.."CancelButton"] or _G[frameName.."Cancel"]
+
+	frame:StripTextures()
+	frame.BorderBox:StripTextures()
+	scrollFrame:StripTextures()
+	scrollFrame:CreateBackdrop("Overlay")
+	scrollFrame.backdrop:SetPoint("TOPLEFT", 15, 4)
+	scrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 28, -8)
+	editBox:DisableDrawLayer("BACKGROUND")
+
+	frame:SetTemplate("Transparent")
+	frame:SetHeight(frame:GetHeight() + 10)
+	scrollFrame:SetHeight(scrollFrame:GetHeight() + 10)
+
+	okayButton:SkinButton()
+	cancelButton:SkinButton()
+	T.SkinEditBox(editBox)
+
+	cancelButton:ClearAllPoints()
+	cancelButton:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -5, 5)
+
+	if buttonNameTemplate then
+		for i = 1, numIcons do
+			local button = _G[buttonNameTemplate..i]
+			local icon = _G[button:GetName().."Icon"]
+
+			button:StripTextures()
+			button:StyleButton(true)
+			button:SetTemplate("Default")
+
+			icon:ClearAllPoints()
+			icon:SetPoint("TOPLEFT", 2, -2)
+			icon:SetPoint("BOTTOMRIGHT", -2, 2)
+			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		end
+	end
 end
 
 local LoadBlizzardSkin = CreateFrame("Frame")
@@ -538,24 +599,21 @@ T.UpdateAllElements = function(frame)
 end
 
 local SetUpAnimGroup = function(self)
-	self.anim = self:CreateAnimationGroup("Flash")
-	self.anim.fadein = self.anim:CreateAnimation("ALPHA", "FadeIn")
-	self.anim.fadein:SetChange(1)
-	self.anim.fadein:SetOrder(2)
-
-	self.anim.fadeout = self.anim:CreateAnimation("ALPHA", "FadeOut")
-	self.anim.fadeout:SetChange(-1)
-	self.anim.fadeout:SetOrder(1)
+	self.anim = self:CreateAnimationGroup()
+	self.anim:SetLooping("BOUNCE")
+	self.anim.fade = self.anim:CreateAnimation("Alpha")
+	self.anim.fade:SetFromAlpha(1)
+	self.anim.fade:SetToAlpha(0)
+	self.anim.fade:SetDuration(0.6)
+	self.anim.fade:SetSmoothing("IN_OUT")
 end
 
-local Flash = function(self, duration)
+local Flash = function(self)
 	if not self.anim then
 		SetUpAnimGroup(self)
 	end
 
-	if not self.anim:IsPlaying() or duration ~= self.anim.fadein:GetDuration() then
-		self.anim.fadein:SetDuration(duration)
-		self.anim.fadeout:SetDuration(duration)
+	if not self.anim:IsPlaying() then
 		self.anim:Play()
 	end
 end
@@ -612,7 +670,7 @@ T.PostUpdateHealth = function(health, unit, min, max)
 				end
 			end
 		end
-		if C.unitframe.bar_color_value == true and not (UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit)) then
+		if C.unitframe.bar_color_value == true and not UnitIsTapDenied(unit) then
 			if C.unitframe.own_color == true then
 				r, g, b = C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3]
 			else
@@ -711,7 +769,7 @@ T.PostUpdateRaidHealth = function(health, unit, min, max)
 				health.bg:SetVertexColor(r * mu, g * mu, b * mu)
 			end
 		end
-		if C.unitframe.bar_color_value == true and not (UnitIsTapped(unit) and not UnitIsTappedByPlayer(unit)) then
+		if C.unitframe.bar_color_value == true and not UnitIsTapDenied(unit) then
 			if C.unitframe.own_color == true then
 				r, g, b = C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3]
 			else
@@ -886,19 +944,16 @@ T.UpdateManaLevel = function(self, elapsed)
 	if self.elapsed < 0.2 then return end
 	self.elapsed = 0
 
-	if UnitPowerType("player") ~= 0 then
-		if T.class == "MONK" then
+	if UnitPowerType("player") == 0 then
+		local percMana = UnitMana("player") / UnitManaMax("player") * 100
+		if percMana <= 20 and not UnitIsDeadOrGhost("player") then
+			self.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
+			Flash(self)
+		else
 			self.ManaLevel:SetText()
+			StopFlash(self)
 		end
-		return
-	end
-
-	local percMana = UnitMana("player") / UnitManaMax("player") * 100
-
-	if percMana <= 20 and not UnitIsDeadOrGhost("player") then
-		self.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
-		Flash(self, 0.3)
-	else
+	elseif T.class ~= "DRUID" and T.class ~= "PRIEST" and T.class ~= "SHAMAN" then
 		self.ManaLevel:SetText()
 		StopFlash(self)
 	end
@@ -914,7 +969,7 @@ T.UpdateClassMana = function(self)
 		local percMana = min / max * 100
 		if percMana <= 20 and not UnitIsDeadOrGhost("player") then
 			self.FlashInfo.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
-			Flash(self.FlashInfo, 0.3)
+			Flash(self.FlashInfo)
 		else
 			self.FlashInfo.ManaLevel:SetText()
 			StopFlash(self.FlashInfo)
@@ -970,124 +1025,63 @@ T.UpdatePvPStatus = function(self, elapsed)
 	end
 end
 
-T.UpdateShadowOrb = function(self, event, unit, powerType)
-	if self.unit ~= unit or (powerType and powerType ~= "SHADOW_ORBS") then return end
-	local num = UnitPower(unit, SPELL_POWER_SHADOW_ORBS)
-	local numMax = UnitPowerMax("player", SPELL_POWER_SHADOW_ORBS)
-	local barWidth = self.ShadowOrbsBar:GetWidth()
-	local spacing = select(4, self.ShadowOrbsBar[4]:GetPoint())
-	local lastBar = 0
-
-	if numMax ~= self.ShadowOrbsBar.maxPower then
-		if numMax == 3 then
-			self.ShadowOrbsBar[4]:Hide()
-			self.ShadowOrbsBar[5]:Hide()
-			for i = 1, 3 do
-				if i ~= 3 then
-					self.ShadowOrbsBar[i]:SetWidth(barWidth / 3)
-					lastBar = lastBar + (barWidth / 3 + spacing)
-				else
-					self.ShadowOrbsBar[i]:SetWidth(barWidth - lastBar)
-				end
-			end
-		else
-			self.ShadowOrbsBar[4]:Show()
-			self.ShadowOrbsBar[5]:Show()
-			for i = 1, 5 do
-				self.ShadowOrbsBar[i]:SetWidth(self.ShadowOrbsBar[i].width)
-			end
-		end
-		self.ShadowOrbsBar.maxPower = numMax
-	end
-
-	for i = 1, 5 do
-		if i <= num then
-			self.ShadowOrbsBar[i]:SetAlpha(1)
-		else
-			self.ShadowOrbsBar[i]:SetAlpha(0.2)
-		end
-	end
-end
-
-T.UpdateHoly = function(self, event, unit, powerType)
-	if self.unit ~= unit or (powerType and powerType ~= "HOLY_POWER") then return end
-	local num = UnitPower(unit, SPELL_POWER_HOLY_POWER)
-	local numMax = UnitPowerMax("player", SPELL_POWER_HOLY_POWER)
-	local barWidth = self.HolyPower:GetWidth()
-	local spacing = select(4, self.HolyPower[4]:GetPoint())
-	local lastBar = 0
-
-	if numMax ~= self.HolyPower.maxPower then
-		if numMax == 3 then
-			self.HolyPower[4]:Hide()
-			self.HolyPower[5]:Hide()
-			for i = 1, 3 do
-				if i ~= 3 then
-					self.HolyPower[i]:SetWidth(barWidth / 3)
-					lastBar = lastBar + (barWidth / 3 + spacing)
-				else
-					self.HolyPower[i]:SetWidth(barWidth - lastBar)
-				end
-			end
-		else
-			self.HolyPower[4]:Show()
-			self.HolyPower[5]:Show()
-			for i = 1, 5 do
-				self.HolyPower[i]:SetWidth(self.HolyPower[i].width)
-			end
-		end
-		self.HolyPower.maxPower = numMax
-	end
-
-	for i = 1, 5 do
-		if i <= num then
-			self.HolyPower[i]:SetAlpha(1)
-		else
-			self.HolyPower[i]:SetAlpha(0.2)
-		end
-	end
-end
-
-T.EclipseDirection = function(self)
-	if GetEclipseDirection() == "sun" then
-		self.Text:SetText("|cff4478BC>>|r")
-	elseif GetEclipseDirection() == "moon" then
-		self.Text:SetText("|cffE5994C<<|r")
-	else
-		self.Text:SetText("")
-	end
-end
-
-T.UpdateEclipse = function(self, login)
-	local eb = self.EclipseBar
-	local txt = self.EclipseBar.Text
-
-	if login then
-		eb:SetScript("OnUpdate", nil)
-	end
-
-	if eb:IsShown() or (T.class == "DRUID" and C.unitframe_class_bar.combo == true) then
-		txt:Show()
-		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
-	else
-		txt:Hide()
-		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
-	end
-end
-
-T.UpdateReputationColor = function(self, event, unit, bar)
-	local name, id = GetWatchedFactionInfo()
-	bar:SetStatusBarColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b)
-	bar.bg:SetVertexColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b, 0.2)
-end
-
 T.UpdateComboPoint = function(self, event, unit)
+	if powerType and powerType ~= 'COMBO_POINTS' then return end
 	if unit == "pet" then return end
 
 	local cpoints = self.CPoints
 	local cp = (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and UnitPower("vehicle", 4) or UnitPower("player", 4)
+	local cpOld = (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and GetComboPoints("vehicle", "target") or GetComboPoints("player", "target")
+	if cpOld and cp and (cpOld > cp) then cp = cpOld end
 
-	for i = 1, MAX_COMBO_POINTS do
+	local numMax
+	if (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) then
+		numMax = MAX_COMBO_POINTS
+	else
+		numMax = UnitPowerMax("player", SPELL_POWER_COMBO_POINTS)
+		if numMax == 0 then
+			numMax = MAX_COMBO_POINTS
+		end
+	end
+
+	local spacing = select(4, cpoints[5]:GetPoint())
+	local w = cpoints:GetWidth()
+	local s = 0
+
+	if cpoints.numMax ~= numMax then
+		if numMax == 10 then
+			cpoints[6]:Show()
+			cpoints[7]:Show()
+			cpoints[8]:Show()
+			cpoints[9]:Show()
+			cpoints[10]:Show()
+		elseif numMax == 6 then
+			cpoints[6]:Show()
+			cpoints[7]:Hide()
+			cpoints[8]:Hide()
+			cpoints[9]:Hide()
+			cpoints[10]:Hide()
+		else
+			cpoints[6]:Hide()
+			cpoints[7]:Hide()
+			cpoints[8]:Hide()
+			cpoints[9]:Hide()
+			cpoints[10]:Hide()
+		end
+
+		for i = 1, numMax do
+			if i ~= numMax then
+				cpoints[i]:SetWidth(w / numMax - spacing)
+				s = s + (w / numMax)
+			else
+				cpoints[i]:SetWidth(w - s)
+			end
+		end
+
+		cpoints.numMax = numMax
+	end
+
+	for i = 1, numMax do
 		if i <= cp then
 			cpoints[i]:SetAlpha(1)
 		else
@@ -1095,38 +1089,76 @@ T.UpdateComboPoint = function(self, event, unit)
 		end
 	end
 
-	if T.class == "DRUID" and C.unitframe_class_bar.comboalways ~= true then
-		local function CatForm(self, event, unit)
-			local unit = self.unit or "player"
-			local name = UnitBuff(unit, GetSpellInfo(768)) or UnitBuff(unit, GetSpellInfo(171745))
-			if name then
-				cpoints:Show()
-				if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
-			else
-				cpoints:Hide()
-				if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
-			end
-		end
+	if T.class == "DRUID" and C.unitframe_class_bar.combo_always ~= true then
+		local form = GetShapeshiftFormID()
 
-		local frame = CreateFrame("Frame")
-		frame:RegisterEvent("UNIT_AURA")
-		frame:SetScript("OnEvent", CatForm)
-		CatForm(self, event, unit)
+		if form == CAT_FORM or ((UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and cp > 0) then
+			cpoints:Show()
+			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
+		else
+			cpoints:Hide()
+			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
+		end
 	end
 end
 
 T.UpdateComboPointOld = function(self, event, unit)
+	if powerType and powerType ~= 'COMBO_POINTS' then return end
 	if unit == "pet" then return end
 
 	local cpoints = self.CPoints
 	local cp
+	local numMax
+
 	if UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle") then
 		cp = GetComboPoints("vehicle", "target")
+		numMax = MAX_COMBO_POINTS
 	else
 		cp = GetComboPoints("player", "target")
+		numMax = UnitPowerMax("player", SPELL_POWER_COMBO_POINTS)
+		if numMax == 0 then
+			numMax = MAX_COMBO_POINTS
+		end
 	end
 
-	for i = 1, MAX_COMBO_POINTS do
+	local spacing = select(4, cpoints[5]:GetPoint())
+	local w = cpoints:GetWidth()
+	local s = 0
+
+	if cpoints.numMax ~= numMax then
+		if numMax == 10 then
+			cpoints[6]:Show()
+			cpoints[7]:Show()
+			cpoints[8]:Show()
+			cpoints[9]:Show()
+			cpoints[10]:Show()
+		elseif numMax == 6 then
+			cpoints[6]:Show()
+			cpoints[7]:Hide()
+			cpoints[8]:Hide()
+			cpoints[9]:Hide()
+			cpoints[10]:Hide()
+		else
+			cpoints[6]:Hide()
+			cpoints[7]:Hide()
+			cpoints[8]:Hide()
+			cpoints[9]:Hide()
+			cpoints[10]:Hide()
+		end
+
+		for i = 1, numMax do
+			if i ~= numMax then
+				cpoints[i]:SetWidth(w / numMax - spacing)
+				s = s + (w / numMax)
+			else
+				cpoints[i]:SetWidth(w - s)
+			end
+		end
+
+		cpoints.numMax = numMax
+	end
+
+	for i = 1, numMax do
 		if i <= cp then
 			cpoints[i]:SetAlpha(1)
 		else
@@ -1135,12 +1167,12 @@ T.UpdateComboPointOld = function(self, event, unit)
 	end
 
 	if cpoints[1]:GetAlpha() == 1 then
-		for i = 1, MAX_COMBO_POINTS do
+		for i = 1, numMax do
 			cpoints:Show()
 			cpoints[i]:Show()
 		end
 	else
-		for i = 1, MAX_COMBO_POINTS do
+		for i = 1, numMax do
 			cpoints:Hide()
 			cpoints[i]:Hide()
 		end
@@ -1206,6 +1238,7 @@ T.PostCastStart = function(Castbar, unit, name, castid)
 		Castbar.SafeZone:ClearAllPoints()
 		Castbar.SafeZone:SetPoint("TOPRIGHT")
 		Castbar.SafeZone:SetPoint("BOTTOMRIGHT")
+		Castbar.castSent = nil
 	end
 
 	if unit == "player" and C.unitframe.castbar_ticks == true then
@@ -1279,6 +1312,7 @@ T.PostChannelStart = function(Castbar, unit, name)
 		Castbar.SafeZone:ClearAllPoints()
 		Castbar.SafeZone:SetPoint("TOPLEFT")
 		Castbar.SafeZone:SetPoint("BOTTOMLEFT")
+		Castbar.castSent = nil
 	end
 
 	if unit == "player" and C.unitframe.castbar_ticks == true then

@@ -61,7 +61,7 @@ local function ResetTabs(object)
 	tabs[object].index = 0
 end
 
-local function UpdateTab(object, name, rank, texture)
+local function UpdateTab(object, name, rank, texture, hat)
 	local index = tabs[object].index + 1
 	local tab = tabs[object][index] or CreateFrame("CheckButton", "ProTabs"..tabs[object].index, object, "SpellBookSkillLineTabTemplate SecureActionButtonTemplate")
 
@@ -76,7 +76,7 @@ local function UpdateTab(object, name, rank, texture)
 
 		local F, C = unpack(Aurora)
 		tab:SetCheckedTexture(C.media.checked)
-		tab:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
+		tab:GetHighlightTexture():SetColorTexture(1, 1, 1, 0.3)
 		tab:GetHighlightTexture():SetAllPoints(tab:GetNormalTexture())
 		F.CreateBG(tab)
 	elseif C.skins.blizzard_frames == true then
@@ -97,8 +97,14 @@ local function UpdateTab(object, name, rank, texture)
 		tab:SetNormalTexture(texture)
 	end
 
-	tab:SetAttribute("type", "spell")
-	tab:SetAttribute("spell", name)
+	if hat then
+		tab:SetAttribute("type", "toy")
+		tab:SetAttribute("toy", 134020)
+	else
+		tab:SetAttribute("type", "spell")
+		tab:SetAttribute("spell", name)
+	end
+
 	tab:Show()
 
 	tab.name = name
@@ -122,7 +128,7 @@ local function GetProfessionRank(currentSkill)
 	end
 end
 
-local function HandleProfession(object, professionID)
+local function HandleProfession(object, professionID, hat)
 	if professionID then
 		local _, _, currentSkill, _, numAbilities, offset, skillID = GetProfessionInfo(professionID)
 
@@ -138,6 +144,10 @@ local function HandleProfession(object, professionID)
 					end
 				end
 			end
+		end
+
+		if hat and PlayerHasToy(134020) then
+			UpdateTab(object, GetSpellInfo(67556), nil, 236571, true)
 		end
 	end
 end
@@ -156,7 +166,7 @@ local function HandleTabs(object)
 		HandleProfession(object, secondProfession)
 		HandleProfession(object, archaeology)
 		HandleProfession(object, fishing)
-		HandleProfession(object, cooking)
+		HandleProfession(object, cooking, true)
 		HandleProfession(object, firstAid)
 
 		for index = 1, #spells do

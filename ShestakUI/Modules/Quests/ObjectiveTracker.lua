@@ -23,13 +23,10 @@ for _, headerName in pairs({"QuestHeader", "AchievementHeader", "ScenarioHeader"
 	ObjectiveTrackerFrame.BlocksFrame[headerName].Background:Hide()
 end
 BONUS_OBJECTIVE_TRACKER_MODULE.Header.Background:Hide()
+WORLD_QUEST_TRACKER_MODULE.Header.Background:Hide()
 
 ObjectiveTrackerFrame.HeaderMenu.Title:SetAlpha(0)
 OBJECTIVE_TRACKER_DOUBLE_LINE_HEIGHT = 30
-
--- Kill reward animation when finished dungeon or bonus objectives
-ObjectiveTrackerScenarioRewardsFrame.Show = T.dummy
-ObjectiveTrackerBonusRewardsFrame.Show = T.dummy
 
 ----------------------------------------------------------------------------------------
 --	Skin ObjectiveTrackerFrame item buttons
@@ -50,10 +47,30 @@ hooksecurefunc(QUEST_TRACKER_MODULE, "SetBlockHeader", function(_, block)
 
 		item.Cooldown:SetAllPoints(item.icon)
 
-		item.HotKey:ClearAllPoints()
-		item.HotKey:SetPoint("BOTTOMRIGHT", 0, 2)
-		item.HotKey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
-		item.HotKey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+		item.Count:ClearAllPoints()
+		item.Count:SetPoint("TOPLEFT", 1, -1)
+		item.Count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+		item.Count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+
+		item.skinned = true
+	end
+end)
+
+hooksecurefunc(WORLD_QUEST_TRACKER_MODULE, "AddObjective", function(_, block)
+	local item = block.itemButton
+
+	if item and not item.skinned then
+		item:SetSize(C.actionbar.button_size, C.actionbar.button_size)
+		item:SetTemplate("Default")
+		item:StyleButton()
+
+		item:SetNormalTexture(nil)
+
+		item.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		item.icon:SetPoint("TOPLEFT", item, 2, -2)
+		item.icon:SetPoint("BOTTOMRIGHT", item, -2, 2)
+
+		item.Cooldown:SetAllPoints(item.icon)
 
 		item.Count:ClearAllPoints()
 		item.Count:SetPoint("TOPLEFT", 1, -1)
@@ -76,8 +93,17 @@ hooksecurefunc(QUEST_TRACKER_MODULE, "Update", function()
 		local _, level = GetQuestLogTitle(questIndex)
 		local col = GetQuestDifficultyColor(level)
 		local block = QUEST_TRACKER_MODULE:GetExistingBlock(questID)
-		block.HeaderText:SetTextColor(col.r, col.g, col.b)
-		block.HeaderText.col = col
+		if block then
+			block.HeaderText:SetTextColor(col.r, col.g, col.b)
+			block.HeaderText.col = col
+		end
+	end
+end)
+
+hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "AddObjective", function(self, block)
+	if block.module == ACHIEVEMENT_TRACKER_MODULE then
+		block.HeaderText:SetTextColor(0.75, 0.61, 0)
+		block.HeaderText.col = nil
 	end
 end)
 
@@ -142,18 +168,18 @@ if C.misc.minimize_mouseover then
 end
 
 ----------------------------------------------------------------------------------------
---	Skin bonus objective progress bar
+--	Skin bonus/world quest objective progress bar
 ----------------------------------------------------------------------------------------
-hooksecurefunc(BONUS_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(self, block, line)
+local function SkinBar(line)
 	local progressBar = line.ProgressBar
 	local bar = progressBar.Bar
 	local icon = bar.Icon
+	local label = bar.Label
 
 	if not progressBar.styled then
-		local label = bar.Label
-
 		bar.BarFrame:Hide()
 		bar.BarGlow:Kill()
+		bar.Sheen:Hide()
 		bar.IconBG:Kill()
 		bar:SetSize(200, 20)
 		bar:SetStatusBarTexture(C.media.texture)
@@ -173,9 +199,74 @@ hooksecurefunc(BONUS_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(self, 
 		border:SetBackdropColor(0, 0, 0, 0)
 		bar.newIconBg = border
 
+		bar.AnimIn.Play = T.dummy
 		BonusObjectiveTrackerProgressBar_PlayFlareAnim = T.dummy
 		progressBar.styled = true
 	end
 
 	bar.newIconBg:SetShown(icon:IsShown())
+end
+
+hooksecurefunc(BONUS_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(_, _, line)
+	SkinBar(line)
+end)
+
+hooksecurefunc(WORLD_QUEST_TRACKER_MODULE, "AddProgressBar", function(_, _, line)
+	SkinBar(line)
+end)
+
+----------------------------------------------------------------------------------------
+--	Skin default quest objective progress bar
+----------------------------------------------------------------------------------------
+hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(self, block, line)
+	local progressBar = self.usedProgressBars[block] and self.usedProgressBars[block][line]
+	local bar = progressBar.Bar
+	local label = bar.Label
+
+	if not progressBar.styled then
+		bar:SetSize(200, 20)
+		bar:SetStatusBarTexture(C.media.texture)
+		bar:SetTemplate("Transparent")
+		bar:SetBackdropColor(0, 0, 0, 0)
+		bar:DisableDrawLayer("ARTWORK")
+
+		label:ClearAllPoints()
+		label:SetPoint("CENTER", 0, -1)
+		label:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+		label:SetDrawLayer("OVERLAY")
+
+		progressBar.styled = true
+	end
+end)
+
+----------------------------------------------------------------------------------------
+--	Set tooltip depending on position
+----------------------------------------------------------------------------------------
+local function IsFramePositionedLeft(frame)
+	local x = frame:GetCenter()
+	local screenWidth = GetScreenWidth()
+	local positionedLeft = false
+
+	if x and x < (screenWidth / 2) then
+		positionedLeft = true
+	end
+
+	return positionedLeft
+end
+
+hooksecurefunc("BonusObjectiveTracker_ShowRewardsTooltip", function(block)
+	if IsFramePositionedLeft(ObjectiveTrackerFrame) then
+		GameTooltip:ClearAllPoints()
+		GameTooltip:SetPoint("TOPLEFT", block, "TOPRIGHT", 0, 0)
+	end
+end)
+
+----------------------------------------------------------------------------------------
+--	Kill reward animation when finished dungeon or bonus objectives
+----------------------------------------------------------------------------------------
+ObjectiveTrackerScenarioRewardsFrame.Show = T.dummy
+
+hooksecurefunc("BonusObjectiveTracker_AnimateReward", function()
+	ObjectiveTrackerBonusRewardsFrame:ClearAllPoints()
+	ObjectiveTrackerBonusRewardsFrame:SetPoint("BOTTOM", UIParent, "TOP", 0, 90)
 end)

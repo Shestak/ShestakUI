@@ -133,7 +133,7 @@ local function LoadSkin()
 		icon:SetPoint("BOTTOMRIGHT", -2, 2)
 
 		if highlight and not highlight.skinned then
-			highlight:SetTexture(1, 1, 1, 0.3)
+			highlight:SetColorTexture(1, 1, 1, 0.3)
 			highlight.SetTexture = T.dummy
 			highlight:ClearAllPoints()
 			highlight:SetPoint("TOPLEFT", 2, -2)

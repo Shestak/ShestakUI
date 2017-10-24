@@ -14,6 +14,9 @@
 --		C["position"].tooltip = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5}
 --		C["position"].bottom_bars = {"BOTTOM", UIParent, "BOTTOM", 2, 8}
 --		C["position"].unitframes.tank = {"BOTTOMLEFT", UIParent, "BOTTOM", 176, 68}
+--		T.CustomFilgerSpell = {
+--			{"T_DEBUFF_ICON", {spellID = 115767, unitID = "target", caster = "player", filter = "DEBUFF"}},
+--		}
 -- end
 ----------------------------------------------------------------------------------------
 
@@ -146,14 +149,14 @@ end
 --	Sw2rT1 Config
 ----------------------------------------------------------------------------------------
 if (T.name == "Чаккичак" or T.name == "Чаккноррис" or T.name == "Чакерс"
-or T.name == "Чакернаут" or T.name == "Чаккис" or T.name == "Эзэрвуд") and T.realm == "Подземье" then
+or T.name == "Чакернаут" or T.name == "Чаккис" or T.name == "Эзэрвуд" or T.name == "Какес") and T.realm == "Подземье" then
 	C["general"].welcome_message = false
 	C["misc"].shift_marking = false
 	C["misc"].raid_tools = false
 	C["misc"].hide_bg_spam = true
 	C["misc"].disenchanting = true
+	C["misc"].hide_talking_head = true
 	C["announcements"].pull_countdown = false
-	C["announcements"].portals = true
 	C["automation"].accept_invite = true
 	C["automation"].accept_quest = true
 	C["automation"].auto_collapse = true
@@ -166,7 +169,6 @@ or T.name == "Чакернаут" or T.name == "Чаккис" or T.name == "Эз
 	C["raidcooldown"].enable = false
 	C["threat"].enable = false
 	C["tooltip"].item_icon = true
-	C["tooltip"].hide_combat = true
 	C["tooltip"].title = true
 	C["tooltip"].raid_icon = true
 	C["tooltip"].average_lvl = true
@@ -177,8 +179,8 @@ or T.name == "Чакернаут" or T.name == "Чаккис" or T.name == "Эз
 	C["bag"].ilvl = true
 	C["map"].fog_of_war = true
 	C["nameplate"].combat = true
-	C["aura"].focus_debuffs = true
 	C["unitframe"].enemy_health_color = false
+	C["unitframe"].castbar_latency = false
 	C["raidframe"].raid_groups = 6
 	C["raidframe"].icons_role = true
 	C["toppanel"].enable = false
@@ -222,6 +224,7 @@ if IsWetxius then
 	C["chat"].chat_bar_mouseover = true
 	C["chat"].combatlog = false
 	C["minimap"].toggle_menu = false
+	C["map"].fog_of_war = true
 	C["nameplate"].health_value = true
 	C["nameplate"].healer_icon = true
 	C["actionbar"].toggle_mode = false
@@ -258,6 +261,5 @@ if IsWetxius then
 	frame:RegisterEvent("PLAYER_LOGIN")
 	frame:SetScript("OnEvent", function()
 		SetCVar("lootUnderMouse", 1)
-		SetCVar("cameraDistanceMoveSpeed", 50)
 	end)
 end

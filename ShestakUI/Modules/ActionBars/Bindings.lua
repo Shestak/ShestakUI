@@ -18,7 +18,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 		bind.texture = bind:CreateTexture()
 		bind.texture:SetPoint("TOPLEFT", bind, 2, -2)
 		bind.texture:SetPoint("BOTTOMRIGHT", bind, -2, 2)
-		bind.texture:SetTexture(1, 1, 1, 0.3)
+		bind.texture:SetColorTexture(1, 1, 1, 0.3)
 		bind:Hide()
 
 		local elapsed = 0
@@ -340,7 +340,11 @@ end
 SLASH_MOUSEOVERBIND1 = "/bindkey"
 SLASH_MOUSEOVERBIND2 = "/hoverbind"
 SLASH_MOUSEOVERBIND3 = "/bk"
-SLASH_MOUSEOVERBIND4 = "/kb"
+
+if not IsAddOnLoaded("Bartender4") and not IsAddOnLoaded("Dominos") then
+	SLASH_MOUSEOVERBIND4 = "/kb"
+end
+
 if not IsAddOnLoaded("HealBot") then
 	SLASH_MOUSEOVERBIND5 = "/hb"
 end

@@ -10,7 +10,7 @@ if C.announcements.spells == true then
 		61999,	-- Raise Ally
 		20484,	-- Rebirth
 		20707,	-- Soulstone
-		31821,	-- Devotion Aura
+		31821,	-- Aura Mastery
 		633,	-- Lay on Hands
 		34477,	-- Misdirection
 		57934,	-- Tricks of the Trade
@@ -34,6 +34,8 @@ if C.announcements.feasts == true then
 		[67826] = true,		-- Jeeves
 		[126459] = true,	-- Blingtron 4000
 		[161414] = true,	-- Blingtron 5000
+		[199109] = true,	-- Auto-Hammer
+		[226241] = true,	-- Codex of the Tranquil Mind
 	}
 end
 

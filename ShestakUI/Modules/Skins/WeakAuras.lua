@@ -6,6 +6,7 @@ if C.skins.weak_auras ~= true then return end
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:SetScript("OnEvent", function(self, event)
 	if not IsAddOnLoaded("WeakAuras") then return end
 
@@ -25,18 +26,23 @@ frame:SetScript("OnEvent", function(self, event)
 		end
 
 		if frame.stacks then
-			frame.stacks:SetFont(C.font.filger_font, select(2, frame.stacks:GetFont()), C.font.filger_font_style)
-			frame.stacks:SetShadowOffset(C.media.filger_font_shadow and 1 or 0, C.media.filger_font_shadow and -1 or 0)
-		end
-
-		if frame.timer then
-			frame.timer:SetFont(C.font.filger_font, select(2, frame.timer:GetFont()), C.font.filger_font_style)
-			frame.timer:SetShadowOffset(C.font.filger_font_shadow and 1 or 0, C.font.filger_font_shadow and -1 or 0)
+			frame.stacks:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
+			frame.stacks:SetShadowOffset(C.media.cooldown_timers_font_shadow and 1 or 0, C.media.cooldown_timers_font_shadow and -1 or 0)
 		end
 
 		if frame.text then
-			frame.text:SetFont(C.font.filger_font, select(2, frame.text:GetFont()), C.font.filger_font_style)
-			frame.text:SetShadowOffset(C.font.filger_font_shadow and 1 or 0, C.font.filger_font_shadow and -1 or 0)
+			frame.text:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
+			frame.text:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
+		end
+
+		if frame.text2 then
+			frame.text2:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
+			frame.text2:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
+		end
+
+		if frame.timer then
+			frame.timer:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
+			frame.timer:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
 		end
 	end
 

@@ -58,9 +58,11 @@ C["misc"] = {
 	["enchantment_scroll"] = false,				-- Enchantment scroll on TradeSkill frame
 	["archaeology"] = false,					-- Archaeology artifacts and cooldown
 	["chars_currency"] = false,					-- Tracks your currency tokens across multiple characters
-	["armory_link"] = false,					-- Add Armory link in UnitPopupMenus (It breaks UnitPopupMenus)
+	["armory_link"] = false,					-- Add Armory link in UnitPopupMenus (It breaks set focus)
 	["merchant_itemlevel"] = false,				-- Show item level for weapons and armor in merchant
 	["minimize_mouseover"] = false,				-- Mouseover for quest minimize button
+	["hide_banner"] = true,						-- Hide Boss Banner Loot Frame
+	["hide_talking_head"] = false,				-- Hide Talking Head Frame
 }
 
 ----------------------------------------------------------------------------------------
@@ -69,10 +71,9 @@ C["misc"] = {
 C["announcements"] = {
 	["drinking"] = false,						-- Announce when arena enemy is drinking
 	["interrupts"] = false,						-- Announce when you interrupt
-	["spells"] = false,							-- Announce when you cast some spell
+	["spells"] = false,							-- Announce when you cast some spell (from the list)
 	["spells_from_all"] = false,				-- Check spells cast from all members
-	["lightwell"] = false,						-- Announce your Lightwell
-	["toys"] = false,							-- Announce some toys
+	["toys"] = false,							-- Announce some annoying toys
 	["says_thanks"] = false,					-- Says thanks for some spells
 	["pull_countdown"] = true,					-- Pull countdown announce(/pc #)
 	["flask_food"] = false,						-- Announce the usage of flasks and food
@@ -91,7 +92,6 @@ C["automation"] = {
 	["release"] = true,							-- Auto release the spirit in battlegrounds
 	["screenshot"] = false,						-- Take screenshot when player get achievement
 	["solve_artifact"] = true,					-- Auto popup for solve artifact
-	["chefs_hat"] = true,						-- Auto equip Chef's Hat
 	["accept_invite"] = false,					-- Auto accept invite
 	["decline_duel"] = true,					-- Auto decline duel (/disduel to temporarily disable)
 	["accept_quest"] = false,					-- Auto accept quests (disabled if hold Shift)
@@ -105,7 +105,6 @@ C["automation"] = {
 	["currency_cap"] = false,					-- Auto popup for currency cap
 	["buff_on_scroll"] = false,					-- Cast buff on mouse scroll (from the list)
 	["open_items"] = false,						-- Auto opening of items in bag
-	["bannerhide"] = true,						-- Auto hiding Boss Banner Loot Frame
 }
 
 ----------------------------------------------------------------------------------------
@@ -119,6 +118,7 @@ C["skins"] = {
 	["combustion_helper"] = false,				-- CombustionHelper skin
 	["bigwigs"] = false,						-- BigWigs skin
 	["dbm"] = false,							-- DBM skin
+	["dbm_movable"] = false,					-- Allow to move DBM bars
 	["dxe"] = false,							-- DXE skin
 	["omen"] = false,							-- Omen skin
 	["recount"] = false,						-- Recount skin
@@ -141,6 +141,11 @@ C["skins"] = {
 	["weak_auras"] = false,						-- WeakAuras skin
 	["skada"] = false,							-- Skada skin
 	["my_role_play"] = false,					-- MyRolePlay skin
+	["arh"] = false,							-- Archaeology Helper skin
+	["postal"] = false,							-- Postal skin
+	["opie"] = false,							-- OPie skin
+	["rematch"] = false,						-- Rematch skin
+	["ls_toasts"] = false,						-- Is: Toasts skin
 }
 
 ----------------------------------------------------------------------------------------
@@ -346,6 +351,7 @@ C["nameplate"] = {
 	["enable"] = true, 							-- Enable nameplate
 	["height"] = 9,								-- Nameplate height
 	["width"] = 120,							-- Nameplate width
+	["distance"] = 40,							-- Show nameplates for units within this range
 	["ad_height"] = 0,							-- Additional height for selected nameplate
 	["ad_width"] = 0,							-- Additional width for selected nameplate
 	["combat"] = false,							-- Automatically show nameplate in combat
@@ -353,13 +359,16 @@ C["nameplate"] = {
 	["show_castbar_name"] = false,				-- Show castbar name
 	["enhance_threat"] = true,					-- If tank good aggro = green, bad = red
 	["class_icons"] = false,					-- Icons by class in PvP
-	["name_abbrev"] = false,					-- Display abbreviated names (show debuffs must be turned off)
+	["name_abbrev"] = false,					-- Display abbreviated names
+	["clamp"] = false,							-- Clamp nameplates to the top of the screen when outside of view
 	["good_color"] = {0.2, 0.8, 0.2},			-- Good threat color
 	["near_color"] = {1, 1, 0},					-- Near threat color
 	["bad_color"] = {1, 0, 0},					-- Bad threat color
+	["offtank_color"] = {0, 0.5, 1},			-- Offtank threat color
 	["track_auras"] = false,					-- Show debuffs (from the list)
-	["auras_size"] = 22,						-- Debuffs size
+	["auras_size"] = 25,						-- Debuffs size
 	["healer_icon"] = false,					-- Show icon above enemy healers nameplate in battlegrounds
+	["totem_icons"] = false,					-- Show icon above enemy totems nameplate
 }
 
 ----------------------------------------------------------------------------------------
@@ -467,11 +476,11 @@ C["unitframe"] = {
 	["portrait_height"] = 92,					-- Portrait height
 	["portrait_width"] = 67,					-- Portrait width
 	-- Plugins
-	["plugins_gcd"] = false,					-- Global cooldown spark
+	["plugins_gcd"] = false,					-- Global cooldown spark on player frame
 	["plugins_swing"] = false,					-- Swing bar
 	["plugins_reputation_bar"] = false,			-- Reputation bar
 	["plugins_experience_bar"] = false,			-- Experience bar
-	["plugins_friendship_bar"] = false,			-- Friendship bar
+	["plugins_artifact_bar"] = false,			-- Artifact Power bar
 	["plugins_smooth_bar"] = false,				-- Smooth bar
 	["plugins_enemy_spec"] = false,				-- Enemy specialization
 	["plugins_combat_feedback"] = false,		-- Combat text on player/target frame
@@ -484,12 +493,11 @@ C["unitframe"] = {
 ----------------------------------------------------------------------------------------
 C["unitframe_class_bar"] = {
 	["combo"] = true,							-- Rogue/Druid Combo bar
-	["comboalways"] = false,					-- Always show Combo bar for Druid
+	["combo_always"] = false,					-- Always show Combo bar for Druid
 	["combo_old"] = false,						-- Show combo point on the target
-	["shadow"] = true,							-- Shadow Orbs bar
+	["arcane"] = true,							-- Arcane Charge bar
 	["chi"] = true,								-- Chi bar
-	["resolve"] = true,							-- Resolve bar (for Tanks)
-	["eclipse"] = true,							-- Eclipse bar
+	["stagger"] = true,							-- Stagger bar (for Monk Tanks)
 	["holy"] = true,							-- Holy Power bar
 	["shard"] = true,							-- Shard/Burning bar
 	["rune"] = true,							-- Rune bar
@@ -525,7 +533,7 @@ C["raidframe"] = {
 	["icons_leader"] = true,					-- Leader icon, assistant icon, master loot icon on frames
 	-- Plugins
 	["plugins_debuffhighlight_icon"] = false,	-- Debuff highlight texture + icon
-	["plugins_aura_watch"] = true,				-- Raid debuff icons
+	["plugins_aura_watch"] = true,				-- Raid debuff icons (from the list)
 	["plugins_aura_watch_timer"] = false,		-- Timer on raid debuff icons
 	["plugins_pvp_debuffs"] = false,			-- Show also PvP debuff icons (from the list)
 	["plugins_healcomm"] = true,				-- Incoming heal bar on raid frame
@@ -557,13 +565,12 @@ C["stats"] = {
 	["experience"] = true,						-- Experience
 	["coords"] = true,							-- Coords
 	["location"] = true,						-- Location
-	["currency_archaeology"] = false,			-- Show Archaeology under currency tab
-	["currency_cooking"] = true,				-- Show Coocking under currency tab
-	["currency_professions"] = true,			-- Show Professions under currency tab
+	["currency_archaeology"] = false,			-- Show Archaeology Fragments under currency tab
+	["currency_cooking"] = true,				-- Show Cooking Awards under currency tab
+	["currency_professions"] = true,			-- Show Profession Tokens under currency tab
 	["currency_raid"] = true,					-- Show Seals under currency tab
-	["currency_pvp"] = true,					-- Show PvP under currency tab
-	["currency_misc"] = true,					-- Show Miscellaneous under currency tab
-
+	["currency_pvp"] = true,					-- Show PvP Currency under currency tab
+	["currency_misc"] = true,					-- Show Miscellaneous Currency under currency tab
 }
 
 ----------------------------------------------------------------------------------------

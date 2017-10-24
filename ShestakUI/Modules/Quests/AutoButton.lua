@@ -104,7 +104,7 @@ Scanner:SetScript("OnEvent", function()
 
 					AutoButton:SetScript("OnUpdate", function(self, elapsed)
 						local cd_start, cd_finish, cd_enable = GetContainerItemCooldown(b, s)
-						CooldownFrame_SetTimer(AutoButton.cd, cd_start, cd_finish, cd_enable)
+						CooldownFrame_Set(AutoButton.cd, cd_start, cd_finish, cd_enable)
 					end)
 
 					AutoButton:SetScript("OnEnter", function(self)
@@ -123,7 +123,7 @@ Scanner:SetScript("OnEvent", function()
 
 	-- Scan inventory for Equipment matches
 	for w = 1, 19 do
-		for e, EquipedItems in pairs(EquipedItems) do
+		for _, EquipedItems in pairs(EquipedItems) do
 			if GetInventoryItemID("player", w) == EquipedItems then
 				local itemName = GetItemInfo(EquipedItems)
 				local itemIcon = GetInventoryItemTexture("player", w)
@@ -134,7 +134,7 @@ Scanner:SetScript("OnEvent", function()
 
 				AutoButton:SetScript("OnUpdate", function(self, elapsed)
 					local cd_start, cd_finish, cd_enable = GetInventoryItemCooldown("player", w)
-					CooldownFrame_SetTimer(AutoButton.cd, cd_start, cd_finish, cd_enable)
+					CooldownFrame_Set(AutoButton.cd, cd_start, cd_finish, cd_enable)
 				end)
 
 				AutoButton:SetScript("OnEnter", function(self)

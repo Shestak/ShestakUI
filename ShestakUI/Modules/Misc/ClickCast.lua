@@ -350,7 +350,7 @@ if IsAddOnLoaded("Aurora") then
 	SpellBinder.OpenButton:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	SpellBinder.OpenButton:SetCheckedTexture(C.media.checked)
-	SpellBinder.OpenButton:GetHighlightTexture():SetTexture(1, 1, 1, 0.3)
+	SpellBinder.OpenButton:GetHighlightTexture():SetColorTexture(1, 1, 1, 0.3)
 	SpellBinder.OpenButton:GetHighlightTexture():SetAllPoints(SpellBinder.OpenButton:GetNormalTexture())
 
 	F.CreateBG(SpellBinder.OpenButton)
@@ -377,8 +377,12 @@ elseif C.skins.blizzard_frames == true then
 	SpellBinder.OpenButton:StyleButton(true)
 
 	SpellBinderScrollFrameSpellList:StripTextures()
-	SpellBinderScrollFrameSpellList:SetTemplate("Overlay")
+	SpellBinderScrollFrameSpellList:CreateBackdrop("Overlay")
+	SpellBinderScrollFrameSpellList.backdrop:SetPoint("TOPLEFT", 2, 3)
+	SpellBinderScrollFrameSpellList.backdrop:SetPoint("BOTTOMRIGHT", 2, -3)
 	T.SkinCloseButton(SpellBinderCloseButton)
 
+	SpellBinderScrollFrameSpellListScrollBar:SetPoint("TOPLEFT", SpellBinderScrollFrameSpellList, "TOPRIGHT", 6, -13)
+	SpellBinderScrollFrameSpellListScrollBar:SetPoint("BOTTOMLEFT", SpellBinderScrollFrameSpellList, "BOTTOMRIGHT", 6, 13)
 	T.SkinScrollBar(SpellBinderScrollFrameSpellListScrollBar)
 end

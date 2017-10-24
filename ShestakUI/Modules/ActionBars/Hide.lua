@@ -162,6 +162,18 @@ EventSpiral:SetScript("OnEvent", function()
 	end
 end)
 
+if (C.actionbar.rightbars_mouseover == true and C.actionbar.petbar_horizontal == false and C.actionbar.petbar_hide == false) or (C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true and C.actionbar.petbar_hide == false) then
+	local EventPetSpiral = CreateFrame("Frame")
+	EventPetSpiral:RegisterEvent("PET_BAR_UPDATE_COOLDOWN")
+	EventPetSpiral:SetScript("OnEvent", function()
+		for i = 1, NUM_PET_ACTION_SLOTS do
+			local f = _G["PetActionButton"..i.."Cooldown"]
+			T.HideSpiral(f, 0)
+		end
+		EventPetSpiral:UnregisterEvent("PET_BAR_UPDATE_COOLDOWN")
+	end)
+end
+
 do
 	if C.actionbar.rightbars_mouseover == true then
 		RightActionBarAnchor:SetAlpha(0)

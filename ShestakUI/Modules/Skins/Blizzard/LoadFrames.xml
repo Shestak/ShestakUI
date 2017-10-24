@@ -2,8 +2,10 @@
 	<Script file="Others.lua"/>
 	<Script file="Achievement.lua"/>
 	<Script file="AddonList.lua"/>
+	<Script file="AdventureMap.lua"/>
 	<Script file="AlertFrames.lua"/>
 	<Script file="Archeology.lua"/>
+	<Script file="Artifact.lua"/>
 	<Script file="Auction.lua"/>
 	<Script file="BarberShop.lua"/>
 	<Script file="Binding.lua"/>
@@ -15,14 +17,14 @@
 	<Script file="ChatConfig.lua"/>
 	<Script file="Collections.lua"/>
 	<Script file="Container.lua"/>
+	<Script file="Contribution.lua"/>
 	<Script file="DebugTools.lua"/>
 	<Script file="DeathRecap.lua"/>
 	<Script file="DressUp.lua"/>
 	<Script file="EncounterJournal.lua"/>
-	<Script file="FrameStack.lua"/>
+	<Script file="FlightMap.lua"/>
 	<Script file="Friends.lua"/>
 	<Script file="Garrison.lua"/>
-	<Script file="Glyph.lua"/>
 	<Script file="GMSurvey.lua"/>
 	<Script file="Gossip.lua"/>
 	<Script file="Greeting.lua"/>
@@ -34,7 +36,6 @@
 	<Script file="Help.lua"/>
 	<Script file="Inspect.lua"/>
 	<Script file="Interface.lua"/>
-	<Script file="ItemAlteration.lua"/>
 	<Script file="ItemSocketing.lua"/>
 	<Script file="ItemText.lua"/>
 	<Script file="ItemUpgrade.lua"/>
@@ -45,8 +46,9 @@
 	<Script file="Mail.lua"/>
 	<Script file="Merchant.lua"/>
 	<Script file="MinimapButtons.lua"/>
-	<Script file="MissingLoot.lua"/>
+	<Script file="Obliterum.lua"/>
 	<Script file="Options.lua"/>
+	<Script file="OrderHall.lua"/>
 	<Script file="Petition.lua"/>
 	<Script file="PetStable.lua"/>
 	<Script file="ProductChoice.lua"/>
@@ -60,6 +62,7 @@
 	<Script file="SpellBook.lua"/>
 	<Script file="Tabard.lua"/>
 	<Script file="Talent.lua"/>
+	<Script file="TalkingHead.lua"/>
 	<Script file="Taxi.lua"/>
 	<Script file="TimeManager.lua"/>
 	<Script file="Trade.lua"/>

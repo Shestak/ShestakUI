@@ -5,13 +5,6 @@ if T.client ~= "deDE" then return end
 --	Localization for deDE client
 --	Translation: Alwa, Baine, Chubidu, F5Hellbound, Sinaris, Vienchen
 ----------------------------------------------------------------------------------------
--- Announce your Lightwell
-L_ANNOUNCE_LA_USE = " benutzte meinen Lichtbrunnen. "
-L_ANNOUNCE_LA_CHARGE = " aufladung(en)"
-L_ANNOUNCE_LA_USELESS = " benutzte meinen Lichtbrunnen, nutzlos. "
-L_ANNOUNCE_LA_PLACED = "Lichtbrunnen gesetzt. "
-L_ANNOUNCE_LA_CHARGES = " aufladungen."
-
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "Kein Essen: "
 L_ANNOUNCE_FF_NOFLASK = "Kein Fläschchen: "
@@ -47,7 +40,7 @@ L_TOOLTIP_ACH_INCOMPLETE = "Dein Status: Noch nicht Ferig"
 L_TOOLTIP_SPELL_ID = "Zauber ID:"
 L_TOOLTIP_ITEM_ID = "Gegenstands ID:"
 L_TOOLTIP_WHO_TARGET = "Anvisiert von"
-L_TOOLTIP_ITEM_COUNT = "Gegenstandsstufe:"
+L_TOOLTIP_ITEM_COUNT = "Gegenstandsanzahl:" -- Need review
 L_TOOLTIP_INSPECT_OPEN = "Betrachtungsfenster offen"
 
 -- Misc
@@ -63,6 +56,7 @@ L_MISC_BINDER_OPEN = "Maus gebunden"
 L_MISC_GROCERY_BUY = "Kaufen"
 L_MISC_GROCERY_DESC = "Kaufe Lebensmittelaschen automatisch"
 L_MISC_SCROLL = "Rolle"
+L_MISC_COLLAPSE = "The Collapse" -- Need review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Gruppe auflösen"
@@ -103,6 +97,7 @@ L_MINIMAP_CALENDAR = "Kalender"
 L_MINIMAP_HEAL_LAYOUT = "Links-Klick - Heiler Layout"
 L_MINIMAP_DPS_LAYOUT = "Rechts-Klick - DPS Layout"
 L_MINIMAP_BLIZZ_LAYOUT = "Mittel-Klick - Blizzard Layout"
+L_MINIMAP_ARTIFACT = "Right click to use" -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "Von"
@@ -130,6 +125,7 @@ L_ERRORFRAME_L = "Klick um Fehler anzuzeigen."
 L_BAG_SHOW_BAGS = "Zeige Taschen"
 L_BAG_RIGHT_CLICK_SEARCH = "Rechtsklick um zu suchen"
 L_BAG_STACK_MENU = "Stapeln"
+L_BAG_RIGHT_CLICK_CLOSE = "Rechtsklick öffnet Menü"
 
 -- Grab mail
 L_MAIL_STOPPED = "Angehalten, Inventar ist voll."
@@ -155,9 +151,9 @@ L_PANELS_AFK_LCLICK = "Links-Klick um zurück zu gehen."
 
 -- Cooldowns
 L_COOLDOWNS = "Abklingzeit: "
-L_COOLDOWNS_COMBATRESS = "CombatRess" -- Needs review
-L_COOLDOWNS_COMBATRESS_REMAINDER = "Combat resurrect: " -- Needs review
-L_COOLDOWNS_NEXTTIME = "Next time: " -- Needs review
+L_COOLDOWNS_COMBATRESS = "Battlerezz"
+L_COOLDOWNS_COMBATRESS_REMAINDER = "Battlerezz übrig: "
+L_COOLDOWNS_NEXTTIME = "Nächste möglichkeit: "
 
 -- Autoinvite
 L_INVITE_ENABLE = "Autoinvite AN: "
@@ -171,12 +167,6 @@ L_BIND_CLEARED = "Alle Tastaturbelegungen gelöscht für"
 L_BIND_BINDING = "Belegung"
 L_BIND_KEY = "Taste"
 L_BIND_NO_SET = "Keine Tastaturbelegung festgelegt"
-
--- Talent spec
-L_PLANNER_DRUID_4 = "Wiederherstellung"
-L_PLANNER_MONK_2 = "Nebelwirker"
-L_PLANNER_PALADIN_1 = "Heilig"
-L_PLANNER_PRIEST_1 = "Disziplin"
 
 -- BG stats
 L_DATATEXT_BASESASSAULTED = "Basen angegriffen:"
@@ -236,6 +226,7 @@ L_COMBATTEXT_TEST_ENABLED = "Kampftext Testmodus aktiviert."
 L_COMBATTEXT_TEST_USE_UNLOCK = "Gib '/xct' ein um die Kampftext Fenster freizugeben um sie verschieben und verändern zu können."
 L_COMBATTEXT_TEST_USE_LOCK = "Gib '/xct' ein um den Kampftext Testmodus zu sperren."
 L_COMBATTEXT_TEST_USE_TEST = "Gib '/xct' ein um den Kampftext Testmodus zu aktivieren."
+L_COMBATTEXT_TEST_USE_RESET = "Type /xct reset to restore default positions." -- Need review
 L_COMBATTEXT_POPUP = "Um die Kampftext Fensterpositionen zu sichern muss das Interface neu geladen werden."
 L_COMBATTEXT_UNSAVED = "Kampftext Fensterpositionen nicht gespeichert, vergiss nicht das Interface neu zu laden."
 L_COMBATTEXT_UNLOCKED = "Kampftext freigegeben."
@@ -251,7 +242,7 @@ L_STATS_BANDWIDTH = "Bandbreite:"
 L_STATS_DOWNLOAD = "Download:"
 L_STATS_CLEARED_JUNK = "Junk-Ausnahmeliste gelöscht."
 L_STATS_CLEAR_EXCEPTIONS = "Ausnahmenliste löschen."
-L_STATS_CURRENCY_RAID_T = "Raid Seals" -- Needs review
+L_STATS_CURRENCY_RAID = "Schlachtzugs Siegel"
 L_STATS_WORLD_MAP = "Klicken, zum Öffnen der World-Map."
 L_STATS_CURRENT_XP = "Aktuell/Max XP"
 L_STATS_MEMORY_USAGE = "Blizzard UI Speicher Auslastung:"
@@ -305,7 +296,7 @@ L_STATS_WATCH_CURRENCY = "Bereits gesehene Gegenstände aus dem Abzeichen-Fenste
 L_STATS_WATCH_FACTIONS = "Überwache Fraktionen aus dem Ruffenster."
 L_STATS_TOOLTIP_TIME_PLAYED = "Wenn das max. Level erreicht ist, wird das Tooltip die gespielte Zeit für den Account anzeigen."
 L_STATS_TOOLTIP_EXPERIENCE = "Wenn unter dem max. Level, wird ein Tooltip mit weiteren Details angezeigt."
-L_STATS_SEALS = "Seals this week" -- Needs review
+L_STATS_SEALS = "Angebot der Woche"
 
 -- Slash commands
 L_SLASHCMD_HELP = {
@@ -317,7 +308,7 @@ L_SLASHCMD_HELP = {
 	"/en ADDON_NAME - Aktiviere Addon.",
 	"/rd - Gruppe oder Schlachtzug auflösen.",
 	"/toraid - In Gruppe oder Schlachtzug umwandeln.",
-	"/teleport - Teleportation from random dungeon.", -- Needs review
+	"/teleport - Teleport vom beliebigen Dungeon.",
 	"/spec, /ss - Zwischen den Talenten wechseln.",
 	"/heal - Zum Heiler Layout wechseln.",
 	"/dps - Zum DPS Layout wechseln.",

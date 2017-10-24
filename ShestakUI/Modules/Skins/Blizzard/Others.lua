@@ -86,6 +86,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			_G["StaticPopup"..i.."ItemFrame"]:GetNormalTexture():Kill()
 			_G["StaticPopup"..i.."ItemFrame"]:SetTemplate("Default")
 			_G["StaticPopup"..i.."ItemFrame"]:StyleButton()
+			_G["StaticPopup"..i.."ItemFrame"].IconBorder:SetAlpha(0)
 			_G["StaticPopup"..i.."ItemFrameIconTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			_G["StaticPopup"..i.."ItemFrameIconTexture"]:ClearAllPoints()
 			_G["StaticPopup"..i.."ItemFrameIconTexture"]:SetPoint("TOPLEFT", 2, -2)
@@ -115,6 +116,13 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["PetBattleQueueReadyFrame"]:SetTemplate("Transparent")
 		_G["PetBattleQueueReadyFrame"].AcceptButton:SkinButton()
 		_G["PetBattleQueueReadyFrame"].DeclineButton:SkinButton()
+
+		-- Wardrobe Outfit
+		WardrobeOutfitEditFrame:SetTemplate("Transparent")
+		WardrobeOutfitEditFrame.AcceptButton:SkinButton()
+		WardrobeOutfitEditFrame.CancelButton:SkinButton()
+		WardrobeOutfitEditFrame.DeleteButton:SkinButton()
+		T.SkinEditBox(WardrobeOutfitEditFrame.EditBox, 250, 25)
 
 		-- Reskin Dropdown menu
 		hooksecurefunc("UIDropDownMenu_InitializeHelper", function(frame)
@@ -225,7 +233,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		}
 
 		for _, scrollbar in pairs(scrollbars) do
-			local bars = _G[_G[scrollbar]]
+			local bars = _G[scrollbar]
 			if bars then
 				T.SkinScrollBar(bars)
 			end
@@ -283,8 +291,9 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			SplashFrame.BottomCloseButton:SkinButton()
 			T.SkinCloseButton(SplashFrame.TopCloseButton)
 
-			-- NavBar Buttons (Used in WorldMapFrame, EncounterJournal and HelpFrame)
+			-- NavBar Buttons (Used in EncounterJournal and HelpFrame)
 			local function SkinNavBarButtons(self)
+				if self:GetParent():GetName() == "WorldMapFrame" then return end
 				local navButton = self.navList[#self.navList]
 				if navButton and not navButton.isSkinned then
 					navButton:SkinButton(true)
@@ -300,6 +309,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			hooksecurefunc("NavBar_AddButton", SkinNavBarButtons)
 
 			local function SetHomeButtonOffsetX(self)
+				if self:GetParent():GetName() == "WorldMapFrame" then return end
 				if self.homeButton then
 					self.homeButton.xoffset = 1
 				end
@@ -328,6 +338,27 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 				CliqueSpellTab.backdrop:SetAllPoints()
 				CliqueSpellTab:StyleButton()
 			end
+
+			local function SkinIconArray(baseName, rowSize, numRows)
+				for i = 1, rowSize * numRows do
+					local button = _G[baseName..i]
+					local texture = _G[baseName..i.."Icon"]
+
+					button:StripTextures()
+					button:StyleButton(true)
+					button:SetTemplate("Default")
+
+					texture:ClearAllPoints()
+					texture:SetPoint("TOPLEFT", 2, -2)
+					texture:SetPoint("BOTTOMRIGHT", -2, 2)
+					texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				end
+			end
+
+			-- This is used to create icons for the GuildBankPopupFrame, MacroPopupFrame, and GearManagerDialogPopup
+			hooksecurefunc("BuildIconArray", function(parent, baseName, template, rowSize, numRows, onButtonCreated)
+				SkinIconArray(baseName, rowSize, numRows)
+			end)
 		end
 	end
 

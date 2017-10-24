@@ -135,7 +135,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 					end
 					bar:ApplyStyle()
 					bar.ApplyPosition = function()
-						if C.unitframe.enable ~= true then return end
+						if C.unitframe.enable ~= true or C.skins.dbm_movable == true then return end
 						self.mainAnchor:ClearAllPoints()
 						if C.unitframe.portrait_enable == true then
 							if bar.owner.options.IconRight then
@@ -157,6 +157,7 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 		end
 
 		local SkinBossTitle = function()
+			if not DBMBossHealthDropdown then return end
 			local anchor = DBMBossHealthDropdown:GetParent()
 			if not anchor.styled then
 				local header = {anchor:GetRegions()}
@@ -236,23 +237,27 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 				count = count + 1
 			end
 		end
+		if DBM then
+			hooksecurefunc(DBT, "CreateBar", SkinBars)
+			hooksecurefunc(DBM.BossHealth, "Show", SkinBossTitle)
+			hooksecurefunc(DBM.BossHealth, "AddBoss", SkinBoss)
+			hooksecurefunc(DBM.BossHealth, "UpdateSettings", SkinBoss)
 
-		hooksecurefunc(DBT, "CreateBar", SkinBars)
-		hooksecurefunc(DBM.BossHealth, "Show", SkinBossTitle)
-		hooksecurefunc(DBM.BossHealth, "AddBoss", SkinBoss)
-		hooksecurefunc(DBM.BossHealth, "UpdateSettings", SkinBoss)
+			hooksecurefunc(DBM.RangeCheck, "Show", function()
+				if DBMRangeCheck then
+					DBMRangeCheck:SetTemplate("Transparent")
+				end
+				if DBMRangeCheckRadar then
+					DBMRangeCheckRadar:SetTemplate("Transparent")
+				end
+			end)
 
-		hooksecurefunc(DBM.RangeCheck, "Show", function()
-			DBMRangeCheck:SetTemplate("Transparent")
-			if DBMRangeCheckRadar then
-				DBMRangeCheckRadar:SetTemplate("Transparent")
-			end
-		end)
-
-		hooksecurefunc(DBM.InfoFrame, "Show", function()
-			DBMInfoFrame:SetTemplate("Transparent")
-		end)
-
+			hooksecurefunc(DBM.InfoFrame, "Show", function()
+				if DBMInfoFrame then
+					DBMInfoFrame:SetTemplate("Transparent")
+				end
+			end)
+		end
 		local replace = string.gsub
 		local old = RaidNotice_AddMessage
 		RaidNotice_AddMessage = function(noticeFrame, textString, colorInfo)

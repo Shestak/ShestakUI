@@ -24,10 +24,9 @@ local function OnHyperlinkEnter(frame, link, ...)
 end
 
 local function OnHyperlinkLeave(frame, link, ...)
-	local linktype = link:match("^([^:]+)")
-	if linktype and linktype == "battlepet" then
+	if BattlePetTooltip:IsShown() then
 		BattlePetTooltip:Hide()
-	elseif linktype and linktypes[linktype] then
+	else
 		GameTooltip:Hide()
 	end
 
