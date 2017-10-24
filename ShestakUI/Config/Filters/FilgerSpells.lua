@@ -2117,6 +2117,8 @@ C["filger_spells"] = {
 			{spellID = 20711, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Divinity
 			{spellID = 197030, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Power of the Naaru
+			{spellID = 196490, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Archangel
 			{spellID = 197862, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vampiric Embrace
