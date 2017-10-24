@@ -9,7 +9,6 @@ local function LoadSkin()
 	OrderHallCommandBar:SetTemplate("Transparent")
 	OrderHallCommandBar:ClearAllPoints()
 	OrderHallCommandBar:SetPoint("TOP", UIParent, 0, -1)
-	OrderHallCommandBar:SetWidth(600)
 	OrderHallCommandBar.ClassIcon:SetTexture("Interface\\TargetingFrame\\UI-Classes-Circles")
 	OrderHallCommandBar.ClassIcon:SetSize(46, 20)
 	OrderHallCommandBar.CurrencyIcon:SetAtlas("legionmission-icon-currency", false)
@@ -96,6 +95,18 @@ local function LoadSkin()
 	ClassHallTalentInset:StripTextures()
 	OrderHallTalentFrame.Currency:SetFont(C["media"].normal_font, 16)
 	OrderHallTalentFrame.CurrencyIcon:SetAtlas("legionmission-icon-currency", false)
+
+	hooksecurefunc(OrderHallCommandBar, "RefreshCategories", function(self)
+		local index = 0
+		C_Timer.After(0.5, function()
+			for i, child in ipairs({self:GetChildren()}) do
+				if child.Icon and child.Count and child.TroopPortraitCover then
+					index = index + 1
+				end
+			end
+			self:SetWidth(270 + index * 112)
+		end)
+	end)
 end
 
 T.SkinFuncs["Blizzard_OrderHallUI"] = LoadSkin
