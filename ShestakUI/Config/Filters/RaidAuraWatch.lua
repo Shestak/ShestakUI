@@ -92,6 +92,7 @@ T.RaidDebuffs = {
 	-- Demonic Inquisition
 	[SpellName(233983)] = 3,	-- Echoing Anguish
 	[SpellName(233895)] = 3,	-- Suffocating Dark
+	[SpellName(233430)] = 3,	-- Unbearable Torment
 	-- Harjatan
 	[SpellName(231998)] = 3,	-- Jagged Abrasion
 	[SpellName(231770)] = 4,	-- Drenched
@@ -102,11 +103,17 @@ T.RaidDebuffs = {
 	[SpellName(236519)] = 3,	-- Moon Burn
 	[SpellName(239264)] = 3,	-- Lunar Fire
 	[SpellName(236712)] = 3,	-- Lunar Beacon
+	[SpellName(236550)] = 3,	-- Discorporate
+	[SpellName(237561)] = 4,	-- Twilight Glaive
+	[SpellName(233263)] = 4,	-- Embrace of the Eclipse
+	[SpellName(236596)] = 5,	-- Rapid Shot
 	-- Mistress Sassz'ine
 	[SpellName(230201)] = 3,	-- Burden of Pain
 	[SpellName(230139)] = 3,	-- Hydra Shot
 	[SpellName(230358)] = 3,	-- Thundering Shock
 	[SpellName(232913)] = 3,	-- Befouling Ink
+	[SpellName(230920)] = 3,	-- Consuming Hunger
+	[SpellName(232732)] = 3,	-- Slicing Tornado
 	-- The Desolate Host
 	[SpellName(235907)] = 3,	-- Collapsing Fissure
 	[SpellName(235989)] = 3,	-- Tormented Cries
@@ -127,6 +134,7 @@ T.RaidDebuffs = {
 	[SpellName(239058)] = 3,	-- Touch of Sargeras
 	[SpellName(239739)] = 3,	-- Dark Mark
 	[SpellName(242017)] = 3,	-- Black Winds
+	[SpellName(240728)] = 3,	-- Tainted Essence
 	-- Kil'Jaeden
 	[SpellName(236710)] = 3,	-- Shadow Reflection: Erupting
 	[SpellName(236378)] = 3,	-- Shadow Reflection: Wailing
