@@ -20,6 +20,7 @@ local function LoadSkin()
 
 	BlackMarketFrame.HotDeal:StripTextures()
 	BlackMarketFrame.HotDeal.Item.IconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	BlackMarketFrame.HotDeal.Item.IconBorder:SetAlpha(0)
 	BlackMarketFrame.HotDeal.Item:CreateBackdrop("Default")
 	BlackMarketFrame.HotDeal.Item:StyleButton()
 	BlackMarketFrame.HotDeal.Item.hover:SetAllPoints()
@@ -54,6 +55,8 @@ local function LoadSkin()
 				button.Item.IconTexture:ClearAllPoints()
 				button.Item.IconTexture:SetPoint("TOPLEFT", 2, -2)
 				button.Item.IconTexture:SetPoint("BOTTOMRIGHT", -2, 2)
+
+				button.Item.IconBorder:SetAlpha(0)
 
 				button:SetHighlightTexture(C.media.texture)
 				button:GetHighlightTexture():SetVertexColor(0.243, 0.570, 1, 0.2)
