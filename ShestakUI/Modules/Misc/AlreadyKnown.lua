@@ -319,13 +319,13 @@ local function BlackMarketScrollFrame_Update()
 
 	for i = 1, #buttons do
 		local index = offset + i
-		if index > numItems then return end
-
-		local texture = buttons[i].Item.IconTexture
-		if texture and texture:IsShown() then
-			local name, _, _, _, usable, _, _, _, _, _, _, _, _, _, link = C_BlackMarket.GetItemInfoByIndex(index)
-			if name and usable and IsKnown(link) then
-				texture:SetVertexColor(color.r, color.g, color.b)
+		if type(numItems) == "number" and index <= numItems then
+			local texture = buttons[i].Item.IconTexture
+			if texture and texture:IsShown() then
+				local name, _, _, _, usable, _, _, _, _, _, _, _, _, _, link = C_BlackMarket.GetItemInfoByIndex(index)
+				if name and usable and IsKnown(link) then
+					texture:SetVertexColor(color.r, color.g, color.b)
+				end
 			end
 		end
 	end
