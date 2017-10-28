@@ -135,10 +135,23 @@ local function LoadSkin()
 			reward:GetRegions():Hide()
 			if not reward.backdrop then
 				reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				reward.IconBorder:SetAlpha(0)
 				reward:CreateBackdrop("Default")
 				reward.backdrop:SetPoint("TOPLEFT", reward.Icon, "TOPLEFT", -2, 2)
 				reward.backdrop:SetPoint("BOTTOMRIGHT", reward.Icon, "BOTTOMRIGHT", 2, -2)
 				reward.backdrop:SetFrameLevel(reward:GetFrameLevel())
+			end
+		end
+
+		for _, reward in pairs(self.Rewards) do
+			if reward.backdrop then
+				local r, g, b
+				if reward.IconBorder:IsShown() then
+					r, g, b = reward.IconBorder:GetVertexColor()
+				else
+					r, g, b = unpack(C.media.border_color)
+				end
+				reward.backdrop:SetBackdropBorderColor(r, g, b)
 			end
 		end
 	end)
@@ -147,6 +160,7 @@ local function LoadSkin()
 		frame.BG:Hide()
 		if not frame.backdrop then
 			frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			frame.IconBorder:SetAlpha(0)
 			frame:CreateBackdrop("Default")
 			frame.backdrop:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
 			frame.backdrop:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
