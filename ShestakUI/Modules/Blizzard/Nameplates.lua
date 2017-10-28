@@ -569,14 +569,14 @@ local function style(self, unit)
 	end
 
 	-- Aura tracking
-	if C.nameplate.track_auras == true then
+	if C.nameplate.track_auras == true or C.nameplate.track_buffs == true then
 		self.Auras = CreateFrame("Frame", nil, self)
 		self.Auras:SetPoint("BOTTOMRIGHT", self.Health, "TOPRIGHT", 2 * T.noscalemult, C.font.nameplates_font_size + 7)
 		self.Auras.initialAnchor = "BOTTOMRIGHT"
 		self.Auras["growth-y"] = "UP"
 		self.Auras["growth-x"] = "LEFT"
-		self.Auras.numDebuffs = 6
-		self.Auras.numBuffs = 0
+		self.Auras.numDebuffs = C.nameplate.track_auras and 6 or 0
+		self.Auras.numBuffs = C.nameplate.track_buffs and 4 or 0
 		self.Auras:SetSize(20 + C.nameplate.width, C.nameplate.auras_size)
 		self.Auras.spacing = 2
 		self.Auras.size = C.nameplate.auras_size
@@ -585,10 +585,18 @@ local function style(self, unit)
 			local allow = false
 
 			if caster == "player" then
-				if ((nameplateShowAll or nameplateShowSelf) and not T.DebuffBlackList[name]) then
-					allow = true
-				elseif T.DebuffWhiteList[name] then
-					allow = true
+				if UnitIsUnit(unit, "player") then
+					if ((nameplateShowAll or nameplateShowSelf) and not T.BuffBlackList[name]) then
+						allow = true
+					elseif T.BuffWhiteList[name] then
+						allow = true
+					end
+				else
+					if ((nameplateShowAll or nameplateShowSelf) and not T.DebuffBlackList[name]) then
+						allow = true
+					elseif T.DebuffWhiteList[name] then
+						allow = true
+					end
 				end
 			end
 
