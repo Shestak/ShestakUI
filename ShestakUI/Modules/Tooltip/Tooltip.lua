@@ -536,7 +536,7 @@ local function SkinWorldMapTooltip()
 end
 hooksecurefunc("TaskPOI_OnEnter", SkinWorldMapTooltip)
 
---World Quest Reward Icon
+-- World Quest Reward Icon
 WorldMapTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 hooksecurefunc(WorldMapTooltip.ItemTooltip.IconBorder, "SetVertexColor", function(self, r, g, b)
 	self:GetParent().backdrop:SetBackdropBorderColor(r, g, b)
