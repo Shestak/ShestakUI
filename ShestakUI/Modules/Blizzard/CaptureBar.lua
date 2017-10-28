@@ -17,14 +17,14 @@ local function CaptureUpdate()
 				bar:SetPoint("TOPLEFT", _G["WorldStateCaptureBar"..i-1], "BOTTOMLEFT", 0, -7)
 			end
 			if not bar.skinned then
-				local left = _G[barname.."LeftBar"]
-				local right = _G[barname.."RightBar"]
-				local middle = _G[barname.."MiddleBar"]
+				local left = bar.LeftBar
+				local right = bar.RightBar
+				local middle = bar.MiddleBar
 				select(4, bar:GetRegions()):Hide()
-				_G[barname.."LeftLine"]:SetAlpha(0)
-				_G[barname.."RightLine"]:SetAlpha(0)
-				_G[barname.."LeftIconHighlight"]:SetAlpha(0)
-				_G[barname.."RightIconHighlight"]:SetAlpha(0)
+				bar.LeftLine:SetAlpha(0)
+				bar.RightLine:SetAlpha(0)
+				bar.LeftIconHighlight:SetAlpha(0)
+				bar.RightIconHighlight:SetAlpha(0)
 
 				left:SetTexture(C.media.texture)
 				right:SetTexture(C.media.texture)
