@@ -20,7 +20,9 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
 			GarrisonFollowerTooltip,
 			GarrisonFollowerAbilityTooltip,
 			GarrisonShipyardFollowerTooltip,
-			GarrisonShipyardMapMissionTooltip
+			GarrisonShipyardMapMissionTooltip,
+			GarrisonFollowerMissionAbilityWithoutCountersTooltip,
+			GarrisonFollowerAbilityWithoutCountersTooltip
 		}
 
 		for _, tt in pairs(Tooltips) do
@@ -272,6 +274,9 @@ local function LoadSkin()
 
 	hooksecurefunc(GarrisonMissionFrame.FollowerList, "ShowFollower", onShowFollower)
 	hooksecurefunc(GarrisonLandingPageFollowerList, "ShowFollower", onShowFollower)
+
+	GarrisonLandingPage.FollowerTab.AbilitiesFrame.CombatAllySpell1.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	GarrisonLandingPage.FollowerTab.AbilitiesFrame.CombatAllySpell1:CreateBackdrop("Default")
 
 	-- ShipYard
 	GarrisonShipyardFrame:StripTextures(true)
