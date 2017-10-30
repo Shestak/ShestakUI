@@ -45,10 +45,11 @@ local function LoadSkin()
 	MinimizeButton:HookScript("OnLeave", T.SetOriginalBackdrop)
 
 	DressUpFrameCancelButton:SkinButton()
+	SideDressUpModelResetButton:SkinButton()
 	DressUpFrameResetButton:SkinButton()
 	DressUpFrameResetButton:SetPoint("RIGHT", DressUpFrameCancelButton, "LEFT", -2, 0)
 	DressUpFrameUndressButton:SkinButton()
-
+		
 	T.SkinDropDownBox(DressUpFrameOutfitDropDown)
 	DressUpFrameOutfitDropDown:SetSize(195, 34)
 	DressUpFrameOutfitDropDown.SaveButton:SkinButton()
@@ -56,11 +57,17 @@ local function LoadSkin()
 	DressUpFrameOutfitDropDown.SaveButton:SetPoint("RIGHT", DressUpFrameOutfitDropDown, 86, 4)
 
 	T.SkinCloseButton(DressUpFrameCloseButton, DressUpFrame.backdrop)
+	T.SkinCloseButton(SideDressUpModelCloseButton)
+	
+	SideDressUpModelCloseButton:SetPoint("TOPRIGHT", SideDressUpFrame, "TOPRIGHT", -4, -4)
 
 	WardrobeOutfitFrame:StripTextures(true)
 	WardrobeOutfitFrame:CreateBackdrop("Transparent")
 	WardrobeOutfitFrame.backdrop:SetPoint("TOPLEFT", WardrobeOutfitFrame, "TOPLEFT", 6, -6)
 	WardrobeOutfitFrame.backdrop:SetPoint("BOTTOMRIGHT", WardrobeOutfitFrame, "BOTTOMRIGHT", -6, 6)
+	
+	SideDressUpFrame:StripTextures(true)
+	SideDressUpFrame:SetTemplate("Transparent")
 
 	WardrobeOutfitEditFrame:StripTextures(true)
 	WardrobeOutfitEditFrame:SetTemplate("Transparent")
