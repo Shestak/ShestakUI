@@ -6,7 +6,7 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	DressUpFrame:StripTextures()
-	DressUpFrame:CreateBackdrop("Transparent")
+	DressUpFrame:SetTemplate("Transparent")
 	DressUpFramePortrait:Hide()
 	DressUpFramePortraitFrame:Hide()
 	DressUpFrameInset:Hide()
@@ -56,6 +56,11 @@ local function LoadSkin()
 	DressUpFrameOutfitDropDown.SaveButton:SetPoint("RIGHT", DressUpFrameOutfitDropDown, 86, 4)
 
 	T.SkinCloseButton(DressUpFrameCloseButton, DressUpFrame.backdrop)
+
+	SideDressUpFrame:StripTextures()
+	SideDressUpFrame:SetTemplate("Transparent")
+	SideDressUpModelResetButton:SkinButton()
+	T.SkinCloseButton(SideDressUpModelCloseButton, SideDressUpFrame)
 
 	WardrobeOutfitFrame:StripTextures(true)
 	WardrobeOutfitFrame:CreateBackdrop("Transparent")
