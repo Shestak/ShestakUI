@@ -14,6 +14,11 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
 	if addon == "Blizzard_PVPUI" then
 		ConquestTooltip:SetTemplate("Transparent")
 		PVPRewardTooltip:SetTemplate("Transparent")
+		PVPRewardTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		PVPRewardTooltip.ItemTooltip.IconBorder:SetAlpha(0)
+		PVPRewardTooltip.ItemTooltip:CreateBackdrop("Default")
+		PVPRewardTooltip.ItemTooltip.backdrop:SetPoint("TOPLEFT", PVPRewardTooltip.ItemTooltip.Icon, "TOPLEFT", -2, 2)
+		PVPRewardTooltip.ItemTooltip.backdrop:SetPoint("BOTTOMRIGHT", PVPRewardTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 2, -2)
 	end
 end)
 
