@@ -20,7 +20,6 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
 			GarrisonFollowerTooltip,
 			GarrisonFollowerAbilityTooltip,
 			GarrisonShipyardFollowerTooltip,
-			GarrisonShipyardMapMissionTooltip,
 			GarrisonFollowerMissionAbilityWithoutCountersTooltip,
 			GarrisonFollowerAbilityWithoutCountersTooltip
 		}
@@ -44,6 +43,8 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
 	end
 
 	if addon == "Blizzard_GarrisonUI" then
+		GarrisonShipyardMapMissionTooltip:StripTextures()
+		GarrisonShipyardMapMissionTooltip:SetTemplate("Transparent")
 		GarrisonBuildingFrame.BuildingLevelTooltip:StripTextures()
 		GarrisonBuildingFrame.BuildingLevelTooltip:SetTemplate("Transparent")
 
@@ -103,6 +104,25 @@ local function LoadSkin()
 	GarrisonMissionFrame.MissionComplete.NextMissionButton:SkinButton()
 	GarrisonMissionFrameHelpBoxButton:SkinButton()
 
+	for i = 1, 2 do
+		_G["GarrisonMissionFrameMissionsTab" .. i]:StripTextures()
+		_G["GarrisonMissionFrameMissionsTab" .. i]:SkinButton()
+		_G["GarrisonMissionFrameMissionsTab" .. i]:SetHeight(_G["GarrisonMissionFrameMissionsTab" .. i]:GetHeight() - 10)
+	end
+
+	GarrisonMissionFrameMissionsTab1:SetPoint("BOTTOMLEFT", GarrisonMissionFrameMissions, "TOPLEFT", 18, 0)
+
+	for i = 1, #GarrisonMissionFrame.MissionTab.MissionList.listScroll.buttons do
+		local button = GarrisonMissionFrame.MissionTab.MissionList.listScroll.buttons[i]
+		if not button.backdrop then
+			button:StripTextures()
+			button:CreateBackdrop("Overlay")
+			button.backdrop:SetPoint("TOPLEFT", 0, 0)
+			button.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
+			button:StyleButton(nil, 2)
+		end
+	end
+
 	GarrisonMissionFrameFollowers:StripTextures()
 	GarrisonMissionFrameFollowers:SetTemplate("Transparent")
 	T.SkinEditBox(GarrisonMissionFrameFollowers.SearchBox)
@@ -151,6 +171,9 @@ local function LoadSkin()
 				if reward.IconBorder:IsShown() then
 					r, g, b = reward.IconBorder:GetVertexColor()
 				else
+					r, g, b = unpack(C.media.border_color)
+				end
+				if r == 0.65882 and g == 0.65882 and b == 0.65882 then
 					r, g, b = unpack(C.media.border_color)
 				end
 				reward.backdrop:SetBackdropBorderColor(r, g, b)
@@ -234,6 +257,9 @@ local function LoadSkin()
 
 				reward.Quantity:SetParent(reward.backdrop)
 				reward.IconBorder:SetAlpha(0)
+				hooksecurefunc(reward.IconBorder, "SetVertexColor", function(self, r, g, b)
+					self:GetParent().backdrop:SetBackdropBorderColor(r, g, b)
+				end)
 			end
 		end
 	end
@@ -280,9 +306,9 @@ local function LoadSkin()
 
 	-- ShipYard
 	GarrisonShipyardFrame:StripTextures(true)
+	GarrisonShipyardFrame:SetTemplate("Transparent")
 	GarrisonShipyardFrame.BorderFrame.GarrCorners:StripTextures()
 	GarrisonShipyardFrame.BorderFrame:StripTextures(true)
-	GarrisonShipyardFrame:CreateBackdrop("Transparent")
 	GarrisonShipyardFrame.BorderFrame.TitleText:SetPoint("TOP", -6, -1)
 	T.SkinCloseButton(GarrisonShipyardFrame.BorderFrame.CloseButton2)
 	T.SkinTab(GarrisonShipyardFrameTab1)
@@ -291,7 +317,6 @@ local function LoadSkin()
 	-- ShipYard: Naval Map
 	local MissionTab = GarrisonShipyardFrame.MissionTab
 	local MissionList = MissionTab.MissionList
-	MissionList:CreateBackdrop("Transparent")
 
 	-- ShipYard: Mission
 	local MissionPage = MissionTab.MissionPage
