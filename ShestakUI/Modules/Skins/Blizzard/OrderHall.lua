@@ -49,7 +49,7 @@ local function LoadSkin()
 
 	for i = 1, 2 do
 		_G["OrderHallMissionFrameMissionsTab" .. i]:StripTextures()
-		_G["OrderHallMissionFrameMissionsTab" .. i]:SkinButton()
+		_G["OrderHallMissionFrameMissionsTab" .. i]:StyleButton()
 		_G["OrderHallMissionFrameMissionsTab" .. i]:SetHeight(_G["OrderHallMissionFrameMissionsTab" .. i]:GetHeight() - 10)
 	end
 

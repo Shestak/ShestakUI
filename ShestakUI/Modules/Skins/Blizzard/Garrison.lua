@@ -43,10 +43,16 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
 	end
 
 	if addon == "Blizzard_GarrisonUI" then
-		GarrisonShipyardMapMissionTooltip:StripTextures()
-		GarrisonShipyardMapMissionTooltip:SetTemplate("Transparent")
 		GarrisonBuildingFrame.BuildingLevelTooltip:StripTextures()
 		GarrisonBuildingFrame.BuildingLevelTooltip:SetTemplate("Transparent")
+
+		GarrisonShipyardMapMissionTooltip:StripTextures()
+		GarrisonShipyardMapMissionTooltip:SetTemplate("Transparent")
+		GarrisonShipyardMapMissionTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		GarrisonShipyardMapMissionTooltip.ItemTooltip.IconBorder:SetAlpha(0)
+		GarrisonShipyardMapMissionTooltip.ItemTooltip:CreateBackdrop("Default")
+		GarrisonShipyardMapMissionTooltip.ItemTooltip.backdrop:SetPoint("TOPLEFT", GarrisonShipyardMapMissionTooltip.ItemTooltip.Icon, "TOPLEFT", -2, 2)
+		GarrisonShipyardMapMissionTooltip.ItemTooltip.backdrop:SetPoint("BOTTOMRIGHT", GarrisonShipyardMapMissionTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 2, -2)
 
 		GarrisonMissionMechanicFollowerCounterTooltip:HookScript("OnShow", function(self)
 			self:SetTemplate("Transparent")
@@ -106,11 +112,25 @@ local function LoadSkin()
 
 	for i = 1, 2 do
 		_G["GarrisonMissionFrameMissionsTab" .. i]:StripTextures()
-		_G["GarrisonMissionFrameMissionsTab" .. i]:SkinButton()
+		_G["GarrisonMissionFrameMissionsTab" .. i]:StyleButton()
 		_G["GarrisonMissionFrameMissionsTab" .. i]:SetHeight(_G["GarrisonMissionFrameMissionsTab" .. i]:GetHeight() - 10)
 	end
 
 	GarrisonMissionFrameMissionsTab1:SetPoint("BOTTOMLEFT", GarrisonMissionFrameMissions, "TOPLEFT", 18, 0)
+
+	hooksecurefunc("GarrisonMissonListTab_SetSelected", function(tab, isSelected)
+		if not tab.backdrop then
+			tab:CreateBackdrop("Overlay")
+			tab.backdrop:SetAllPoints()
+		end
+		if isSelected then
+			tab.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
+			tab.backdrop.overlay:SetVertexColor(1, 0.82, 0, 0.3)
+		else
+			tab.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+			tab.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
+		end
+	end)
 
 	for i = 1, #GarrisonMissionFrame.MissionTab.MissionList.listScroll.buttons do
 		local button = GarrisonMissionFrame.MissionTab.MissionList.listScroll.buttons[i]
@@ -181,7 +201,7 @@ local function LoadSkin()
 		end
 	end)
 
-	hooksecurefunc("GarrisonMissionPage_SetReward", function(frame, reward)
+	hooksecurefunc("GarrisonMissionPage_SetReward", function(frame)
 		frame.BG:Hide()
 		if not frame.backdrop then
 			frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
