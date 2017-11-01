@@ -247,7 +247,7 @@ local function LoadSkin()
 
 		tab.Text:ClearAllPoints()
 		tab.Text:SetPoint("CENTER")
-		-- tab.Text:SetFont(C.media.normal_font, 15)
+		tab.Text:SetFont(C.media.normal_font, 15)
 	end
 
 	hooksecurefunc("GarrisonLandingPageReport_SetTab", function(self)
