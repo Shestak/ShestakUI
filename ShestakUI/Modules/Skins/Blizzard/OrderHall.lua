@@ -124,17 +124,21 @@ local function LoadSkin()
 		local btn
 		for i = 1, #ft.AbilitiesFrame.Abilities do
 			btn = ft.AbilitiesFrame.Abilities[i]
-			btn.IconButton.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			btn.IconButton.Icon:SetDrawLayer("BACKGROUND", 1)
-			btn.IconButton:CreateBackdrop("Default")
-			btn.IconButton.Border:SetTexture(nil)
+			if not btn.IconButton.backdrop then
+				btn.IconButton.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				btn.IconButton.Icon:SetDrawLayer("BACKGROUND", 1)
+				btn.IconButton:CreateBackdrop("Default")
+				btn.IconButton.Border:SetTexture(nil)
+			end
 		end
 
 		-- CombatAllySpell buttons
 		for i = 1, #ft.AbilitiesFrame.CombatAllySpell do
 			btn = ft.AbilitiesFrame.CombatAllySpell[i]
-			btn.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			btn:CreateBackdrop("Default")
+			if not btn.backdrop then
+				btn.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				btn:CreateBackdrop("Default")
+			end
 		end
 
 		-- Equipment
@@ -145,9 +149,11 @@ local function LoadSkin()
 				btn.BG:SetTexture(nil)
 				btn.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				btn:SetScale(1)
-				btn:CreateBackdrop("Default")
-				btn.backdrop:SetPoint("TOPLEFT", btn.Icon, "TOPLEFT", -2, 2)
-				btn.backdrop:SetPoint("BOTTOMRIGHT", btn.Icon, "BOTTOMRIGHT", 2, -2)
+				if not btn.backdrop then
+					btn:CreateBackdrop("Default")
+					btn.backdrop:SetPoint("TOPLEFT", btn.Icon, "TOPLEFT", -2, 2)
+					btn.backdrop:SetPoint("BOTTOMRIGHT", btn.Icon, "BOTTOMRIGHT", 2, -2)
+				end
 			end
 		end
 		ft, btn = nil

@@ -299,17 +299,21 @@ local function LoadSkin()
 		local btn
 		for i = 1, #ft.AbilitiesFrame.Abilities do
 			btn = ft.AbilitiesFrame.Abilities[i]
-			btn.IconButton.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			btn.IconButton.Icon:SetDrawLayer("BACKGROUND", 1)
-			btn.IconButton:CreateBackdrop("Default")
-			btn.IconButton.Border:SetTexture(nil)
+			if not btn.IconButton.backdrop then
+				btn.IconButton.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				btn.IconButton.Icon:SetDrawLayer("BACKGROUND", 1)
+				btn.IconButton:CreateBackdrop("Default")
+				btn.IconButton.Border:SetTexture(nil)
+			end
 		end
 
 		-- CombatAllySpell buttons
 		for i = 1, #ft.AbilitiesFrame.CombatAllySpell do
 			btn = ft.AbilitiesFrame.CombatAllySpell[i]
-			btn.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			btn:CreateBackdrop("Default")
+			if not btn.backdrop then
+				btn.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				btn:CreateBackdrop("Default")
+			end
 		end
 
 		-- Equipment
@@ -320,9 +324,11 @@ local function LoadSkin()
 				btn.BG:SetTexture(nil)
 				btn.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				btn:SetScale(1)
-				btn:CreateBackdrop("Default")
-				btn.backdrop:SetPoint("TOPLEFT", btn.Icon, "TOPLEFT", -2, 2)
-				btn.backdrop:SetPoint("BOTTOMRIGHT", btn.Icon, "BOTTOMRIGHT", 2, -2)
+				if not btn.backdrop then
+					btn:CreateBackdrop("Default")
+					btn.backdrop:SetPoint("TOPLEFT", btn.Icon, "TOPLEFT", -2, 2)
+					btn.backdrop:SetPoint("BOTTOMRIGHT", btn.Icon, "BOTTOMRIGHT", 2, -2)
+				end
 			end
 		end
 		ft, btn = nil
@@ -366,6 +372,42 @@ local function LoadSkin()
 	GarrisonShipyardFrame.FollowerTab:StripTextures()
 	GarrisonShipyardFrame.FollowerTab:SetTemplate("Overlay")
 	T.SkinScrollBar(GarrisonShipyardFrameFollowersListScrollFrameScrollBar)
+
+	local function skinFollowerTraitsAndEquipment(obj)
+		local btn
+		for i = 1, #obj.Traits do
+			btn = obj.Traits[i]
+			if not btn.backdrop then
+				btn.Border:SetTexture(nil)
+				btn.Portrait:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				btn:CreateBackdrop("Default")
+				btn.backdrop:SetPoint("TOPLEFT", btn.Portrait, "TOPLEFT", -2, 2)
+				btn.backdrop:SetPoint("BOTTOMRIGHT", btn.Portrait, "BOTTOMRIGHT", 2, -2)
+				btn.backdrop:SetFrameLevel(2)
+			end
+		end
+		for i = 1, #obj.EquipmentFrame.Equipment do
+			btn = obj.EquipmentFrame.Equipment[i]
+			if not btn.backdrop then
+				btn:DisableDrawLayer("BACKGROUND")
+				btn.Border:SetTexture(nil)
+				btn.Counter.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				btn.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				btn:CreateBackdrop("Default")
+				btn.backdrop:SetPoint("TOPLEFT", btn.Icon, "TOPLEFT", -2, 2)
+				btn.backdrop:SetPoint("BOTTOMRIGHT", btn.Icon, "BOTTOMRIGHT", 2, -2)
+
+				btn.Counter.Border:SetAlpha(0)
+				btn.Counter.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				btn.Counter:CreateBackdrop("Default")
+				btn.Counter.backdrop:SetPoint("TOPLEFT", btn.Counter.Icon, "TOPLEFT", -2, 2)
+				btn.Counter.backdrop:SetPoint("BOTTOMRIGHT", btn.Counter.Icon, "BOTTOMRIGHT", 2, -2)
+			end
+		end
+		btn = nil
+	end
+	skinFollowerTraitsAndEquipment(GarrisonLandingPage.ShipFollowerTab)
+	skinFollowerTraitsAndEquipment(GarrisonShipyardFrame.FollowerTab)
 
 	-- Recruiter frame
 	GarrisonRecruiterFrame:StripTextures(true)
