@@ -205,7 +205,7 @@ local function LoadSkin()
 		frame.BG:Hide()
 		if not frame.backdrop then
 			frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			frame.IconBorder:SetAlpha(0)
+			frame.IconBorder:SetTexture("")
 			frame:CreateBackdrop("Default")
 			frame.backdrop:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
 			frame.backdrop:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
@@ -292,38 +292,44 @@ local function LoadSkin()
 		xpBar:SetStatusBarTexture(C.media.texture)
 	end
 
-	local function onShowFollower(self, followerId)
-		local followerList = self
-		local self = self.followerTab
+	local function onShowFollower(frame)
+		local ft = frame:GetParent().FollowerTab
 
-		local abilities = self.AbilitiesFrame.Abilities
-
-		if self.numAbilitiesStyled == nil then
-			self.numAbilitiesStyled = 1
+		-- Ability buttons
+		local btn
+		for i = 1, #ft.AbilitiesFrame.Abilities do
+			btn = ft.AbilitiesFrame.Abilities[i]
+			btn.IconButton.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			btn.IconButton.Icon:SetDrawLayer("BACKGROUND", 1)
+			btn.IconButton:CreateBackdrop("Default")
+			btn.IconButton.Border:SetTexture(nil)
 		end
 
-		local numAbilitiesStyled = self.numAbilitiesStyled
-
-		local ability = abilities[numAbilitiesStyled]
-		while ability do
-			local icon = ability.IconButton.Icon
-
-			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			icon:SetDrawLayer("BACKGROUND", 1)
-			ability.IconButton:CreateBackdrop("Default")
-
-			numAbilitiesStyled = numAbilitiesStyled + 1
-			ability = abilities[numAbilitiesStyled]
+		-- CombatAllySpell buttons
+		for i = 1, #ft.AbilitiesFrame.CombatAllySpell do
+			btn = ft.AbilitiesFrame.CombatAllySpell[i]
+			btn.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			btn:CreateBackdrop("Default")
 		end
 
-		self.numAbilitiesStyled = numAbilitiesStyled
+		-- Equipment
+		if ft.AbilitiesFrame.Equipment then
+			for i = 1, #ft.AbilitiesFrame.Equipment do
+				btn = ft.AbilitiesFrame.Equipment[i]
+				btn.Border:SetTexture(nil)
+				btn.BG:SetTexture(nil)
+				btn.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				btn:SetScale(1)
+				btn:CreateBackdrop("Default")
+				btn.backdrop:SetPoint("TOPLEFT", btn.Icon, "TOPLEFT", -2, 2)
+				btn.backdrop:SetPoint("BOTTOMRIGHT", btn.Icon, "BOTTOMRIGHT", 2, -2)
+			end
+		end
+		ft, btn = nil
 	end
 
 	hooksecurefunc(GarrisonMissionFrame.FollowerList, "ShowFollower", onShowFollower)
 	hooksecurefunc(GarrisonLandingPageFollowerList, "ShowFollower", onShowFollower)
-
-	GarrisonLandingPage.FollowerTab.AbilitiesFrame.CombatAllySpell1.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	GarrisonLandingPage.FollowerTab.AbilitiesFrame.CombatAllySpell1:CreateBackdrop("Default")
 
 	-- ShipYard
 	GarrisonShipyardFrame:StripTextures(true)

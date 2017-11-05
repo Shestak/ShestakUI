@@ -17,16 +17,47 @@ local function LoadSkin()
 	OrderHallCommandBar.AreaName:SetVertexColor(T.color.r, T.color.g, T.color.b)
 	OrderHallCommandBar.WorldMapButton:Kill()
 
-	OrderHallMissionFrame.ClassHallIcon:Kill()
+	hooksecurefunc(OrderHallCommandBar, "RefreshCategories", function(self)
+		local index = 0
+		C_Timer.After(0.5, function()
+			for i, child in ipairs({self:GetChildren()}) do
+				if child.Icon and child.Count and child.TroopPortraitCover then
+					index = index + 1
+					child.TroopPortraitCover:Hide()
+					child.Icon:SetSize(38, 21)
+				end
+			end
+			self:SetWidth(270 + index * 112)
+		end)
+	end)
+
+	-- MissionFrame
 	OrderHallMissionFrame:StripTextures()
 	OrderHallMissionFrame:SetTemplate("Transparent")
+	OrderHallMissionFrame.GarrCorners:StripTextures()
+	OrderHallMissionFrame.ClassHallIcon:Kill()
 	T.SkinCloseButton(OrderHallMissionFrame.CloseButton)
+	T.SkinCloseButton(OrderHallMissionTutorialFrame.GlowBox.CloseButton)
 
 	for i = 1, 3 do
 		T.SkinTab(_G["OrderHallMissionFrameTab" .. i])
 	end
 
-	OrderHallMissionFrame.GarrCorners:StripTextures()
+	OrderHallMissionFrameMissions.CompleteDialog.BorderFrame:StripTextures()
+	OrderHallMissionFrameMissions.CompleteDialog.BorderFrame:SetTemplate("Overlay")
+	OrderHallMissionFrameMissions.CompleteDialog.BorderFrame.Stage:StripTextures()
+
+	OrderHallMissionFrame.MissionComplete:StripTextures()
+	OrderHallMissionFrame.MissionComplete:CreateBackdrop("Overlay")
+	OrderHallMissionFrame.MissionComplete.backdrop:SetPoint("TOPLEFT", 3, 2)
+	OrderHallMissionFrame.MissionComplete.backdrop:SetPoint("BOTTOMRIGHT", -3, -12)
+
+	OrderHallMissionFrame.MissionComplete.Stage.MissionInfo:StripTextures()
+	OrderHallMissionFrame.MissionComplete.Stage.MissionInfo:CreateOverlay()
+	OrderHallMissionFrame.MissionComplete.Stage.MissionInfo.overlay:SetPoint("TOPLEFT", 5, 0)
+	OrderHallMissionFrame.MissionComplete.Stage.MissionInfo.overlay:SetPoint("BOTTOMRIGHT", -5, 210)
+	OrderHallMissionFrame.MissionComplete.Stage.MissionInfo.overlay:SetVertexColor(0, 0, 0, 0.7)
+
 	OrderHallMissionFrameMissions:StripTextures()
 	OrderHallMissionFrameMissionsListScrollFrame:StripTextures()
 	T.SkinScrollBar(OrderHallMissionFrameMissionsListScrollFrameScrollBar)
@@ -66,6 +97,7 @@ local function LoadSkin()
 		end
 	end
 
+	-- Followers
 	local Follower = OrderHallMissionFrameFollowers
 	Follower:StripTextures()
 	Follower:SetTemplate("Transparent")
@@ -77,72 +109,64 @@ local function LoadSkin()
 	T.SkinCloseButton(OrderHallMissionFrame.MissionTab.MissionPage.CloseButton)
 	OrderHallMissionFrame.MissionTab.MissionPage.StartMissionButton:SkinButton()
 
-	local FollowerList = OrderHallMissionFrame.FollowerTab
-	FollowerList:StripTextures()
-	FollowerList.ModelCluster:StripTextures()
-	FollowerList.Class:SetSize(50, 43)
-	FollowerList.XPBar:StripTextures()
-	FollowerList.XPBar:SetStatusBarTexture(C["media"].texture)
-	FollowerList.XPBar:CreateBackdrop()
+	local FollowerTab = OrderHallMissionFrame.FollowerTab
+	FollowerTab:StripTextures()
+	FollowerTab.ModelCluster:StripTextures()
+	FollowerTab.Class:SetSize(50, 43)
+	FollowerTab.XPBar:StripTextures()
+	FollowerTab.XPBar:SetStatusBarTexture(C["media"].texture)
+	FollowerTab.XPBar:CreateBackdrop()
 
-	local function onShowFollower(self, followerId)
-		local followerList = self
-		local self = self.followerTab
+	local function onShowFollower(frame)
+		local ft = frame:GetParent().FollowerTab
 
-		local abilities = self.AbilitiesFrame.Abilities
-
-		if self.numAbilitiesStyled == nil then
-			self.numAbilitiesStyled = 1
+		-- Ability buttons
+		local btn
+		for i = 1, #ft.AbilitiesFrame.Abilities do
+			btn = ft.AbilitiesFrame.Abilities[i]
+			btn.IconButton.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			btn.IconButton.Icon:SetDrawLayer("BACKGROUND", 1)
+			btn.IconButton:CreateBackdrop("Default")
+			btn.IconButton.Border:SetTexture(nil)
 		end
 
-		local numAbilitiesStyled = self.numAbilitiesStyled
-
-		local ability = abilities[numAbilitiesStyled]
-		while ability do
-			local icon = ability.IconButton.Icon
-
-			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			icon:SetDrawLayer("BACKGROUND", 1)
-			ability.IconButton:CreateBackdrop("Default")
-
-			numAbilitiesStyled = numAbilitiesStyled + 1
-			ability = abilities[numAbilitiesStyled]
+		-- CombatAllySpell buttons
+		for i = 1, #ft.AbilitiesFrame.CombatAllySpell do
+			btn = ft.AbilitiesFrame.CombatAllySpell[i]
+			btn.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			btn:CreateBackdrop("Default")
 		end
 
-		self.numAbilitiesStyled = numAbilitiesStyled
+		-- Equipment
+		if ft.AbilitiesFrame.Equipment then
+			for i = 1, #ft.AbilitiesFrame.Equipment do
+				btn = ft.AbilitiesFrame.Equipment[i]
+				btn.Border:SetTexture(nil)
+				btn.BG:SetTexture(nil)
+				btn.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				btn:SetScale(1)
+				btn:CreateBackdrop("Default")
+				btn.backdrop:SetPoint("TOPLEFT", btn.Icon, "TOPLEFT", -2, 2)
+				btn.backdrop:SetPoint("BOTTOMRIGHT", btn.Icon, "BOTTOMRIGHT", 2, -2)
+			end
+		end
+		ft, btn = nil
 	end
 
 	hooksecurefunc(OrderHallMissionFrame.FollowerList, "ShowFollower", onShowFollower)
 
-	OrderHallMissionFrame.FollowerTab.AbilitiesFrame.CombatAllySpell1.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	OrderHallMissionFrame.FollowerTab.AbilitiesFrame.CombatAllySpell1:CreateBackdrop("Default")
-
+	-- Missions
 	local Mission = OrderHallMissionFrameMissions
-	Mission.CompleteDialog:StripTextures()
-	Mission.CompleteDialog:SetTemplate("Transparent")
 	Mission.CompleteDialog.BorderFrame.ViewButton:SkinButton()
 	OrderHallMissionFrame.MissionComplete.NextMissionButton:SkinButton()
 
+	-- TalentFrame
 	OrderHallTalentFrame:StripTextures()
 	OrderHallTalentFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(OrderHallTalentFrameCloseButton)
 	ClassHallTalentInset:StripTextures()
 	OrderHallTalentFrame.Currency:SetFont(C["media"].normal_font, 16)
 	OrderHallTalentFrame.CurrencyIcon:SetAtlas("legionmission-icon-currency", false)
-
-	hooksecurefunc(OrderHallCommandBar, "RefreshCategories", function(self)
-		local index = 0
-		C_Timer.After(0.5, function()
-			for i, child in ipairs({self:GetChildren()}) do
-				if child.Icon and child.Count and child.TroopPortraitCover then
-					index = index + 1
-					child.TroopPortraitCover:Hide()
-					child.Icon:SetSize(38, 21)
-				end
-			end
-			self:SetWidth(270 + index * 112)
-		end)
-	end)
 end
 
 T.SkinFuncs["Blizzard_OrderHallUI"] = LoadSkin
