@@ -18,7 +18,6 @@ local function LoadSkin()
 	T.SkinScrollBar(BrowseScrollFrameScrollBar)
 	T.SkinScrollBar(AuctionsScrollFrameScrollBar)
 	T.SkinScrollBar(BidScrollFrameScrollBar)
-	T.SkinScrollBar(Atr_Hlist_ScrollFrameScrollBar)
 
 	T.SkinDropDownBox(BrowseDropDown)
 	T.SkinDropDownBox(PriceDropDown)
@@ -436,6 +435,8 @@ local function LoadSkin()
 
 	T.SkinCheckBox(Atr_Exact_Search_Button)
 	T.SkinCheckBox(Atr_Adv_Search_Button)
+
+	T.SkinScrollBar(Atr_Hlist_ScrollFrameScrollBar)
 
 	Atr_Mask:ClearAllPoints()
 	Atr_Mask:SetPoint("TOPLEFT", AuctionFrame, "TOPLEFT", 0, 0)
