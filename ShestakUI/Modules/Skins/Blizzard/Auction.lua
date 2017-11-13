@@ -436,6 +436,8 @@ local function LoadSkin()
 	T.SkinCheckBox(Atr_Exact_Search_Button)
 	T.SkinCheckBox(Atr_Adv_Search_Button)
 
+	Atr_Hlist_ScrollFrameScrollBar:SetPoint("TOPLEFT", Atr_Hlist_ScrollFrame, "TOPRIGHT", 4, -13)
+	Atr_Hlist_ScrollFrameScrollBar:SetPoint("BOTTOMLEFT", Atr_Hlist_ScrollFrame, "BOTTOMRIGHT", 4, 31)
 	T.SkinScrollBar(Atr_Hlist_ScrollFrameScrollBar)
 
 	Atr_Mask:ClearAllPoints()
@@ -461,16 +463,41 @@ local function LoadSkin()
 
 	Atr_HeadingsBar:CreateBackdrop("Overlay")
 	Atr_HeadingsBar.backdrop:SetPoint("TOPLEFT", 0, -25)
-	Atr_HeadingsBar.backdrop:SetPoint("BOTTOMRIGHT", 3, -182)
+	Atr_HeadingsBar.backdrop:SetPoint("BOTTOMRIGHT", 3, -183)
 
 	Atr_SellControls:CreateBackdrop("Overlay")
 	Atr_SellControls.backdrop:SetPoint("TOPLEFT", -2, 0)
-	Atr_SellControls.backdrop:SetPoint("BOTTOMRIGHT", 24, 1)
+	Atr_SellControls.backdrop:SetPoint("BOTTOMRIGHT", 25, 0)
 
-	Atr_Hlist:SetTemplate("Overlay")
-	Atr_Hlist:SetWidth(196)
-	Atr_Hlist:ClearAllPoints()
-	Atr_Hlist:SetPoint("TOPLEFT", -195, -75)
+	Atr_DropDownSL:SetPoint("TOPLEFT", Atr_Main_Panel, "TOPLEFT", -190, -41)
+
+	Atr_Hlist:CreateBackdrop("Overlay")
+	Atr_Hlist.backdrop:SetPoint("TOPLEFT", -2, 0)
+	Atr_Hlist.backdrop:SetPoint("BOTTOMRIGHT", 0, 2)
+	Atr_Hlist:SetWidth(195)
+
+	hooksecurefunc("AuctionFrameTab_OnClick", function(self, button, down, index)
+		local index = self:GetID()
+		if index == 4 then
+			Atr_Hlist:SetPoint("TOPLEFT", -193, -67)
+		else
+			Atr_Hlist:SetHeight (337)
+			Atr_Hlist_ScrollFrame:SetHeight (337)
+			Atr_Hlist:SetPoint("TOPLEFT", -193, -75)
+		end
+	end)
+
+	Atr_AddToSListButton:SetWidth(97)
+	Atr_RemFromSListButton:SetWidth(97)
+	Atr_SrchSListButton:SetWidth(197)
+	Atr_MngSListsButton:SetWidth(197)
+	Atr_NewSListButton:SetWidth(197)
+
+	Atr_AddToSListButton:SetPoint("TOPLEFT", Atr_Main_Panel, "TOPLEFT", -195, -321)
+	Atr_RemFromSListButton:SetPoint("TOPLEFT", Atr_Main_Panel, "TOPLEFT", -95, -321)
+	Atr_SrchSListButton:SetPoint("TOPLEFT", Atr_Main_Panel, "TOPLEFT", -195, -344)
+	Atr_MngSListsButton:SetPoint("TOPLEFT", Atr_Main_Panel, "TOPLEFT", -195, -367)
+	Atr_NewSListButton:SetPoint("TOPLEFT", Atr_Main_Panel, "TOPLEFT", -195, -390)
 
 	Atr_Hilite1:CreateBackdrop("Overlay")
 	Atr_Hilite1.backdrop:SetPoint("TOPLEFT", 1, -3)
