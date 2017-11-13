@@ -436,10 +436,6 @@ local function LoadSkin()
 	T.SkinCheckBox(Atr_Exact_Search_Button)
 	T.SkinCheckBox(Atr_Adv_Search_Button)
 
-	Atr_Hlist_ScrollFrameScrollBar:SetPoint("TOPLEFT", Atr_Hlist_ScrollFrame, "TOPRIGHT", 4, -13)
-	Atr_Hlist_ScrollFrameScrollBar:SetPoint("BOTTOMLEFT", Atr_Hlist_ScrollFrame, "BOTTOMRIGHT", 4, 31)
-	T.SkinScrollBar(Atr_Hlist_ScrollFrameScrollBar)
-
 	Atr_Mask:ClearAllPoints()
 	Atr_Mask:SetPoint("TOPLEFT", AuctionFrame, "TOPLEFT", 0, 0)
 	Atr_Mask:SetPoint("BOTTOMRIGHT", AuctionFrame, "BOTTOMRIGHT", 0, 0)
@@ -476,13 +472,18 @@ local function LoadSkin()
 	Atr_Hlist.backdrop:SetPoint("BOTTOMRIGHT", 0, 2)
 	Atr_Hlist:SetWidth(195)
 
+	Atr_Hlist_ScrollFrameScrollBar:ClearAllPoints()
+	Atr_Hlist_ScrollFrameScrollBar:SetPoint("TOPRIGHT", Atr_Hlist, "TOPRIGHT", -5, -20)
+	Atr_Hlist_ScrollFrameScrollBar:SetPoint("BOTTOMRIGHT", Atr_Hlist, "BOTTOMRIGHT", -5, 22)
+	T.SkinScrollBar(Atr_Hlist_ScrollFrameScrollBar)
+
 	hooksecurefunc("AuctionFrameTab_OnClick", function(self, button, down, index)
 		local index = self:GetID()
 		if index == 4 then
 			Atr_Hlist:SetPoint("TOPLEFT", -193, -67)
 		else
-			Atr_Hlist:SetHeight (337)
-			Atr_Hlist_ScrollFrame:SetHeight (337)
+			Atr_Hlist:SetHeight(337)
+			Atr_Hlist_ScrollFrame:SetHeight(337)
 			Atr_Hlist:SetPoint("TOPLEFT", -193, -75)
 		end
 	end)
