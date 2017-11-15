@@ -502,13 +502,22 @@ elseif T.class == "WARLOCK" then
 	end
 elseif T.class == "WARRIOR" then
 	if C.combattext.merge_aoe_spam then
+		T.aoespam[209577] = 1		-- Warbreaker (Arms Artifact)
+		T.aoespam[215537] = 4		-- Trauma (Arms Talent)
+		T.aoespam[209933] = 1		-- Touch of Zakajz (Arms Artifact)
+		T.merge[224253] = 163201	-- Execute (for Arms Talent Sweeping Strikes)
+		T.aoespam[163201] = 0.5		-- Execute (for Arms Talent Sweeping Strikes)
+		T.aoespam[12294] = 0.5		-- Mortal Strike (for Arms Talent Sweeping Strikes)
+		T.merge[199658] = 199850	-- Whirlwind Arms ?
+		T.aoespam[199850] = 1.5		-- Whirlwind Arms
+		T.aoespam[203526] = 3		-- Neltharion's Fury
 		T.aoespam[218617] = 2		-- Rampage
 		T.merge[184707] = 218617	-- Rampage 2nd
 		T.merge[184709] = 218617	-- Rampage 3rd
 		T.merge[201364] = 218617	-- Rampage 4th
 		T.merge[201363] = 218617	-- Rampage 5th
-		T.aoespam[199667] = 1		-- Whirlwind
-		T.merge[44949] = 199667		-- Whirlwind Off-Hand
+		T.aoespam[199667] = 1.5		-- Whirlwind Fury
+		T.merge[44949] = 199667		-- Whirlwind Fury Off-Hand
 		T.aoespam[46968] = 0		-- Shockwave
 		T.aoespam[6343] = 0			-- Thunder Clap
 		T.aoespam[1680] = 0			-- Whirlwind
