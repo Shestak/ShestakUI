@@ -382,46 +382,33 @@ local function castColor(self, unit, name, castid)
 	end
 end
 
-local function callback(event, nameplate, unit)
-	local unit = unit or "target"
-	local nameplate = C_NamePlate.GetNamePlateForUnit(unit)
-	if not nameplate then return end
-	local self = nameplate.ouf
+local function callback(self, event, unit)
+	if unit then
+		local name = UnitName(unit)
+		if name and T.PlateBlacklist[name] then
+			self:Hide()
+		else
+			self:Show()
+		end
 
-	local name = UnitName(unit)
-	if name and T.PlateBlacklist[name] then
-		self:Hide()
-	else
-		self:Show()
-	end
-
-	if UnitIsUnit(unit, "player") then
-		self.Power:Show()
-		self.Name:Hide()
-		self.Castbar:SetAlpha(0)
-		self.RaidIcon:SetAlpha(0)
-	else
-		self.Power:Hide()
-		self.Name:Show()
-		self.Castbar:SetAlpha(1)
-		self.RaidIcon:SetAlpha(1)
+		if UnitIsUnit(unit, "player") then
+			self.Power:Show()
+			self.Name:Hide()
+			self.Castbar:SetAlpha(0)
+			self.RaidIcon:SetAlpha(0)
+		else
+			self.Power:Hide()
+			self.Name:Show()
+			self.Castbar:SetAlpha(1)
+			self.RaidIcon:SetAlpha(1)
+		end
 	end
 end
 
 local function style(self, unit)
 	local nameplate = C_NamePlate.GetNamePlateForUnit(unit)
 	local main = self
-	nameplate.ouf = self
 	self.unit = unit
-	self:SetScript("OnEnter", function()
-		ShowUIPanel(GameTooltip)
-		GameTooltip:SetOwner(self, "ANCHOR_NONE")
-		GameTooltip:SetUnit(self.unit)
-		GameTooltip:Show()
-	end)
-	self:SetScript("OnLeave", function()
-		GameTooltip:Hide()
-	end)
 
 	self:SetPoint("CENTER", nameplate, "CENTER")
 	self:SetSize(C.nameplate.width * T.noscalemult, C.nameplate.height * T.noscalemult)
@@ -460,6 +447,7 @@ local function style(self, unit)
 	self.Power:SetPoint("BOTTOMRIGHT", self.Health, "BOTTOMRIGHT", 0, -6-(C.nameplate.height * T.noscalemult / 2))
 	self.Power.frequentUpdates = true
 	self.Power.colorPower = true
+	self.Power.PostUpdate = T.PreUpdatePower
 	CreateVirtualFrame(self.Power)
 
 	self.Power.bg = self.Power:CreateTexture(nil, "BORDER")
@@ -712,5 +700,6 @@ local function style(self, unit)
 	self:RegisterEvent("PLAYER_TARGET_CHANGED", UpdateTarget)
 end
 
-oUF:RegisterStyle("ShestakUINameplate", style)
-oUF:SpawnNamePlates("ShestakUINameplate", "ShestakUI", callback)
+oUF:RegisterStyle("ShestakNameplates", style)
+oUF:SetActiveStyle("ShestakNameplates")
+oUF:SpawnNamePlates("ShestakNameplates", callback)
