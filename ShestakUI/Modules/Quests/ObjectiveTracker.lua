@@ -139,10 +139,20 @@ if C.skins.blizzard_frames == true then
 	button.plus:Hide()
 	hooksecurefunc("ObjectiveTracker_Collapse", function()
 		button.plus:Show()
+		if C.misc.minimize_mouseover then
+			button:SetAlpha(0)
+			button:HookScript("OnEnter", function() button:SetAlpha(1) end)
+			button:HookScript("OnLeave", function() button:SetAlpha(0) end)
+		end
 	end)
 
 	hooksecurefunc("ObjectiveTracker_Expand", function()
 		button.plus:Hide()
+		if C.misc.minimize_mouseover then
+			button:SetAlpha(1)
+			button:HookScript("OnEnter", function() button:SetAlpha(1) end)
+			button:HookScript("OnLeave", function() button:SetAlpha(1) end)
+		end
 	end)
 end
 
@@ -155,16 +165,6 @@ if C.automation.auto_collapse_reload then
 	collapse:SetScript("OnEvent", function(self, event)
 		ObjectiveTracker_Collapse()
 	end)
-end
-
-----------------------------------------------------------------------------------------
---	Mouseover for ObjectiveTrackerFrame.HeaderMenu.MinimizeButton
-----------------------------------------------------------------------------------------
-if C.misc.minimize_mouseover then
-	local MinimizeButton = ObjectiveTrackerFrame.HeaderMenu.MinimizeButton
-	MinimizeButton:SetAlpha(0)
-	MinimizeButton:HookScript("OnEnter", function() MinimizeButton:SetAlpha(1) end)
-	MinimizeButton:HookScript("OnLeave", function() MinimizeButton:SetAlpha(0) end)
 end
 
 ----------------------------------------------------------------------------------------
