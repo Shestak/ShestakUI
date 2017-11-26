@@ -1488,3 +1488,4 @@ end
 LootWonAlertFrame_OnClick = T.dummy
 LootUpgradeFrame_OnClick = T.dummy
 StorePurchaseAlertFrame_OnClick = T.dummy
+LegendaryItemAlertFrame_OnClick = T.dummy
