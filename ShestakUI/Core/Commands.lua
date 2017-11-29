@@ -236,9 +236,9 @@ SlashCmdList["FRAMELIST"] = function(msg)
 	local isPreviouslyShown = FrameStackTooltip:IsShown()
 	if not isPreviouslyShown then
 		if msg == tostring(true) then
-			FrameStackTooltip_Toggle(true)
+			FrameStackTooltip_Toggle(true, true, true)
 		else
-			FrameStackTooltip_Toggle()
+			FrameStackTooltip_Toggle(false, true, true)
 		end
 	end
 
