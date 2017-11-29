@@ -519,7 +519,7 @@ GameTooltip:HookScript("OnTooltipSetItem", FixFont)
 ItemRefTooltip:HookScript("OnTooltipSetItem", FixFont)
 
 ----------------------------------------------------------------------------------------
---	Skin tooltip status bar
+--	Skin WorldMapTooltip and ReputationParagonTooltip
 ----------------------------------------------------------------------------------------
 local function SkinWorldMapTooltip()
 	local bar = WorldMapTaskTooltipStatusBar.Bar
@@ -536,7 +536,6 @@ local function SkinWorldMapTooltip()
 end
 hooksecurefunc("TaskPOI_OnEnter", SkinWorldMapTooltip)
 
--- World Quest Reward Icon
 WorldMapTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 hooksecurefunc(WorldMapTooltip.ItemTooltip.IconBorder, "SetVertexColor", function(self, r, g, b)
 	self:GetParent().backdrop:SetBackdropBorderColor(r, g, b)
@@ -548,11 +547,6 @@ WorldMapTooltip.ItemTooltip.backdrop:SetPoint("TOPLEFT", WorldMapTooltip.ItemToo
 WorldMapTooltip.ItemTooltip.backdrop:SetPoint("BOTTOMRIGHT", WorldMapTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 2, -2)
 WorldMapTooltip.ItemTooltip.Count:ClearAllPoints()
 WorldMapTooltip.ItemTooltip.Count:SetPoint("BOTTOMRIGHT", WorldMapTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 1, 0)
-
-ReputationParagonTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-ReputationParagonTooltip.ItemTooltip:CreateBackdrop("Default")
-ReputationParagonTooltip.ItemTooltip.backdrop:SetPoint("TOPLEFT", ReputationParagonTooltip.ItemTooltip.Icon, "TOPLEFT", -2, 2)
-ReputationParagonTooltip.ItemTooltip.backdrop:SetPoint("BOTTOMRIGHT", ReputationParagonTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 2, -2)
 
 local function SkinReputationTooltip()
 	local bar = ReputationParagonTooltipStatusBar.Bar
@@ -568,3 +562,13 @@ local function SkinReputationTooltip()
 	end
 end
 hooksecurefunc("ReputationParagonFrame_SetupParagonTooltip", SkinReputationTooltip)
+
+ReputationParagonTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+hooksecurefunc(ReputationParagonTooltip.ItemTooltip.IconBorder, "SetVertexColor", function(self, r, g, b)
+	self:GetParent().backdrop:SetBackdropBorderColor(r, g, b)
+	self:SetTexture("")
+end)
+
+ReputationParagonTooltip.ItemTooltip:CreateBackdrop("Default")
+ReputationParagonTooltip.ItemTooltip.backdrop:SetPoint("TOPLEFT", ReputationParagonTooltip.ItemTooltip.Icon, "TOPLEFT", -2, 2)
+ReputationParagonTooltip.ItemTooltip.backdrop:SetPoint("BOTTOMRIGHT", ReputationParagonTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 2, -2)
