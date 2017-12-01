@@ -9,6 +9,7 @@ stArch["archSkill"] = {}	-- Archaeology skill level
 stArch["progressBars"] = {}	-- Status bars for artifacts
 stArch["artifactInfo"] = {}	-- Information to update bars
 
+local numRaces = 18
 local Loaded = false
 
 function stArch:OnLoad(self)
@@ -41,7 +42,7 @@ function stArch:OnLoad(self)
 	progressBars["frame"]:SetWidth(self:GetWidth() - 8)
 	progressBars["frame"]:SetPoint("TOP", stArch["title"], "BOTTOM", 0, 0)
 	progressBars["frame"]:SetTemplate("Overlay")
-	for i = 1, 15 do
+	for i = 1, numRaces do
 		-- Fill Table
 		progressBars[i] = {}
 		progressBars[i]["border"] = CreateFrame("Frame", "ArchBar"..i.."Border", progressBars["frame"])
@@ -147,7 +148,7 @@ function stArch:OnLoad(self)
 	progressBars["solveFrame"]:SetPoint("TOP", progressBars["frame"], "TOP", 0, 0)
 	progressBars["solveFrame"]:SetTemplate("Transparent")
 	progressBars["solveFrame"]:Hide()
-	for i = 1, 15 do progressBars[i]["solve"]:Hide() end
+	for i = 1, numRaces do progressBars[i]["solve"]:Hide() end
 
 	-- Solve Toggle
 	progressBars["solveToggle"] = CreateFrame("Frame", "ArchSolveToggle", self)
@@ -178,14 +179,14 @@ function stArch:OnLoad(self)
 	progressBars["solveToggle"]:SetScript("OnMouseUp", function()
 		if progressBars["solveFrame"]:IsShown() then
 			progressBars["solveFrame"]:Hide()
-			for i = 1, 15 do progressBars[i]["solve"]:Hide() end
+			for i = 1, numRaces do progressBars[i]["solve"]:Hide() end
 			progressBars["solveToggle"]["text"]:SetText(progressBars["solveToggle"]["openDirection"])
 			progressBars["solveToggle"]:ClearAllPoints()
 			progressBars["solveToggle"]:SetPoint(unpack(progressBars["solveToggle"]["openPoint1"]))
 			progressBars["solveToggle"]:SetPoint(unpack(progressBars["solveToggle"]["openPoint2"]))
 		else
 			progressBars["solveFrame"]:Show()
-			for i = 1, 15 do progressBars[i]["solve"]:Show() end
+			for i = 1, numRaces do progressBars[i]["solve"]:Show() end
 			progressBars["solveToggle"]["text"]:SetText(progressBars["solveToggle"]["closeDirection"])
 			progressBars["solveToggle"]:ClearAllPoints()
 			progressBars["solveToggle"]:SetPoint(unpack(progressBars["solveToggle"]["closePoint"]))
@@ -193,7 +194,7 @@ function stArch:OnLoad(self)
 	end)
 
 	local solveFrame = stArch["progressBars"]
-	for i = 1, 15 do
+	for i = 1, numRaces do
 		-- Button
 		solveFrame[i]["solve"]:SetHeight(progressBars[i]["border"]:GetHeight())
 		solveFrame[i]["solve"]:SetWidth(progressBars["solveFrame"]:GetWidth() - 10)
@@ -210,7 +211,7 @@ function stArch:OnLoad(self)
 
 	-------------------------------------------------------------
 	-- Construct artifact info table
-	for i = 1, 15 do
+	for i = 1, numRaces do
 		stArch["artifactInfo"][i] = {}
 	end
 
@@ -219,11 +220,11 @@ end
 
 function stArch:UpdateFrameHeight(self)
 	-- Update frame Sizes to fit correctly
-	stArch["progressBars"]["frame"]:SetHeight(stArch["progressBars"][1]["border"]:GetHeight() * 15 + 82)
+	stArch["progressBars"]["frame"]:SetHeight(stArch["progressBars"][1]["border"]:GetHeight() * (numRaces + 6))
 	stArch["progressBars"]["solveFrame"]:SetHeight(stArch["progressBars"]["frame"]:GetHeight())
 	stArch["progressBars"]["solveToggle"]:SetHeight(stArch["progressBars"]["frame"]:GetHeight())
 	if stArch["archSkill"]["frame"]:IsShown() then
-		self:SetHeight(stArch["title"]:GetHeight() + stArch["progressBars"]["frame"]:GetHeight()+stArch["archSkill"]["frame"]:GetHeight() + 7)
+		self:SetHeight(stArch["title"]:GetHeight() + stArch["progressBars"]["frame"]:GetHeight() + stArch["archSkill"]["frame"]:GetHeight() + 7)
 	else
 		self:SetHeight(stArch["title"]:GetHeight() + stArch["progressBars"]["frame"]:GetHeight() + 5)
 	end
@@ -299,7 +300,7 @@ function stArch:updateArtifact(index)
 					if artifact["numKeystones"] < artifact["numKeysockets"] then
 						artifact["numKeystones"] = artifact["numKeystones"] + count
 					end
-					if min(artifact["numKeystones"], artifact["numKeysockets"]) * 15 + artifact["progress"] >= artifact["total"] then
+					if min(artifact["numKeystones"], artifact["numKeysockets"]) * numRaces + artifact["progress"] >= artifact["total"] then
 						artifact["canSolve"] = true
 					end
 				end
@@ -318,7 +319,7 @@ function stArch:updateArtifactBar(index)
 		local keystoneBonus = 0
 
 		if artifact["numKeysockets"] then
-			keystoneBonus = min(artifact["numKeystones"], artifact["numKeysockets"]) * 15
+			keystoneBonus = min(artifact["numKeystones"], artifact["numKeysockets"]) * numRaces
 		end
 
 		bar["bar"]:SetMinMaxValues(0, artifact["total"])
@@ -406,10 +407,10 @@ function stArch:DisableSolve(button)
 end
 
 function stArch:OnEvent()
-	for i = 1, 15 do
+	for i = 1, numRaces do
 		stArch:updateArtifact(i)
 	end
-	for i = 1, 15 do
+	for i = 1, numRaces do
 		stArch:updateArtifactBar(i)
 	end
 	stArch:updateSkillLevel()
