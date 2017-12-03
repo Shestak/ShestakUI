@@ -110,6 +110,11 @@ local function LoadSkin()
 	HonorFrame.BonusFrame.BrawlButton.Reward.Icon:SetPoint("TOPLEFT", 2, -2)
 	HonorFrame.BonusFrame.BrawlButton.Reward.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
 	HonorFrame.BonusFrame.BrawlButton.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	
+	T.SkinCloseButton(PremadeGroupsPvPTutorialAlert.CloseButton)
+	PremadeGroupsPvPTutorialAlert.Arrow:Hide()
+	PremadeGroupsPvPTutorialAlert:StripTextures()
+	PremadeGroupsPvPTutorialAlert:CreateBackdrop("Transparent")
 
 	for _, i in pairs({"RandomBGButton", "Arena1Button", "AshranButton", "BrawlButton"}) do
 		local button = HonorFrame.BonusFrame[i]
