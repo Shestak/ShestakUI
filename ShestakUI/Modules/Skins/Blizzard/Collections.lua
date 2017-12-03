@@ -401,6 +401,10 @@ local function LoadSkin()
 	ToyBox.progressBar:CreateBackdrop("Overlay")
 	ToyBox.progressBar:SetStatusBarTexture(C.media.texture)
 	ToyBox.progressBar:SetFrameLevel(ToyBox.progressBar:GetFrameLevel() + 2)
+	
+	T.SkinCloseButton(ToyBox.favoriteHelpBox.CloseButton)
+	ToyBox.favoriteHelpBox:StripTextures()
+	ToyBox.favoriteHelpBox:CreateBackdrop("Transparent")
 
 	for i = 1, 18 do
 		ToyBox.iconsFrame["spellButton"..i].slotFrameCollected:SetTexture("")
@@ -537,6 +541,11 @@ local function LoadSkin()
 	T.SkinScrollBar(WardrobeCollectionFrameScrollFrameScrollBar)
 	WardrobeCollectionFrameScrollFrameScrollBar:SetPoint("TOPLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame, "TOPRIGHT", 4, 15)
 	WardrobeCollectionFrameScrollFrameScrollBar:SetPoint("BOTTOMLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame, "BOTTOMRIGHT", 4, 14)
+	
+	T.SkinCloseButton(WardrobeCollectionFrame.ItemsCollectionFrame.HelpBox.CloseButton)
+	WardrobeCollectionFrame.ItemsCollectionFrame.HelpBox.Arrow:Hide()
+	WardrobeCollectionFrame.ItemsCollectionFrame.HelpBox:StripTextures()
+	WardrobeCollectionFrame.ItemsCollectionFrame.HelpBox:CreateBackdrop("Transparent")
 
 	local function SetItemQuality(self, itemFrame)
 		if (itemFrame.backdrop) then
