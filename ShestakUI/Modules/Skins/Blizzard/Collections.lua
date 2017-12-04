@@ -546,6 +546,20 @@ local function LoadSkin()
 	WardrobeCollectionFrame.ItemsCollectionFrame.HelpBox.Arrow:Hide()
 	WardrobeCollectionFrame.ItemsCollectionFrame.HelpBox:StripTextures()
 	WardrobeCollectionFrame.ItemsCollectionFrame.HelpBox:CreateBackdrop("Transparent")
+	
+	T.SkinCloseButton(WardrobeCollectionFrame.SetsTabHelpBox.CloseButton)
+	WardrobeCollectionFrame.SetsTabHelpBox:StripTextures()
+	WardrobeCollectionFrame.SetsTabHelpBox:CreateBackdrop("Transparent")
+	
+	T.SkinCloseButton(WardrobeTransmogFrame.SpecHelpBox.CloseButton)
+	WardrobeTransmogFrame.SpecHelpBox.Arrow:Hide()
+	WardrobeTransmogFrame.SpecHelpBox:StripTextures()
+	WardrobeTransmogFrame.SpecHelpBox:CreateBackdrop("Transparent")
+	
+	T.SkinCloseButton(WardrobeTransmogFrame.OutfitHelpBox.CloseButton)
+	WardrobeTransmogFrame.OutfitHelpBox.Arrow:Hide()
+	WardrobeTransmogFrame.OutfitHelpBox:StripTextures()
+	WardrobeTransmogFrame.OutfitHelpBox:CreateBackdrop("Transparent")
 
 	local function SetItemQuality(self, itemFrame)
 		if (itemFrame.backdrop) then
