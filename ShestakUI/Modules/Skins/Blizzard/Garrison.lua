@@ -97,6 +97,9 @@ local function LoadSkin()
 	GarrisonMissionFrameTab1:SetPoint("BOTTOMLEFT", GarrisonMissionFrame, "BOTTOMLEFT", 11, -40)
 	T.SkinTab(GarrisonMissionFrameTab1)
 	T.SkinTab(GarrisonMissionFrameTab2)
+	
+	GarrisonMissionFrameHelpBox:StripTextures()
+	GarrisonMissionFrameHelpBox:CreateBackdrop("Transparent")
 
 	-- Mission list
 	local MissionTab = GarrisonMissionFrame.MissionTab
