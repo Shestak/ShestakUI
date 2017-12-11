@@ -135,6 +135,11 @@ local function LoadSkin()
 	T.SkinDropDownBox(WorldMapLevelDropDown)
 	WorldMapLevelDropDown:ClearAllPoints()
 	WorldMapLevelDropDown:SetPoint("TOPLEFT", -18, -2)
+	
+	T.SkinCloseButton(WorldMapFrame.UIElementsFrame.BountyBoard.TutorialBox.CloseButton)
+	WorldMapFrame.UIElementsFrame.BountyBoard.TutorialBox:StripTextures()
+	WorldMapFrame.UIElementsFrame.BountyBoard.TutorialBox.Arrow:Hide()
+	WorldMapFrame.UIElementsFrame.BountyBoard.TutorialBox:CreateBackdrop("Transparent")
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
