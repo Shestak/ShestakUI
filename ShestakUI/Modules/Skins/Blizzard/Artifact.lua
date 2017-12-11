@@ -10,6 +10,7 @@ local function LoadSkin()
 	ArtifactFrame:CreateBackdrop()
 	T.SkinCloseButton(ArtifactFrame.CloseButton)
 	T.SkinCloseButton(ArtifactFrame.PerksTab.RelicTalentAlert.CloseButton)
+	T.SkinCloseButton(ArtifactFrame.KnowledgeLevelHelpBox.CloseButton)
 
 	ArtifactFrame.BorderFrame:StripTextures()
 
@@ -27,6 +28,10 @@ local function LoadSkin()
 	ArtifactFrame.PerksTab.RelicTalentAlert:StripTextures()
 	ArtifactFrame.PerksTab.RelicTalentAlert:CreateBackdrop("Transparent")
 	ArtifactFrame.PerksTab.RelicTalentAlert:SetPoint("TOPRIGHT", ArtifactFrame, "TOPRIGHT", -20, 0)
+	
+	ArtifactFrame.KnowledgeLevelHelpBox:StripTextures()
+	ArtifactFrame.KnowledgeLevelHelpBox.Arrow:Hide()
+	ArtifactFrame.KnowledgeLevelHelpBox:CreateBackdrop("Transparent")
 end
 
 T.SkinFuncs["Blizzard_ArtifactUI"] = LoadSkin
