@@ -274,6 +274,11 @@ local function LoadSkin()
 
 	PlayerTalentFramePVPTalentsBg:Hide()
 	PlayerTalentFramePVPTalents.Talents:DisableDrawLayer("BORDER")
+	
+	T.SkinCloseButton(PlayerTalentFramePVPTalents.TutorialBox.CloseButton)
+	PlayerTalentFramePVPTalents.TutorialBox.Arrow:Hide()
+	PlayerTalentFramePVPTalents.TutorialBox:StripTextures()
+	PlayerTalentFramePVPTalents.TutorialBox:CreateBackdrop("Transparent")
 
 	for i = 1, MAX_PVP_TALENT_TIERS do
 		local row = PlayerTalentFramePVPTalents.Talents["Tier"..i]
