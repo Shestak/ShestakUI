@@ -39,6 +39,8 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[207694] = 3			-- Symbiote Strike
 	T.aoespam[210380] = 4			-- Aura of Sacrifice
 	T.aoespam[252907] = 5			-- Torment the Weak
+	T.aoespam[252896] = 0.5			-- Chaotic Darkness
+	T.aoespam[253022] = 0.5			-- Sorrow
 end
 
 -- Class config
