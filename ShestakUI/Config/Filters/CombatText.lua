@@ -213,7 +213,8 @@ elseif T.class == "HUNTER" then
 elseif T.class == "MAGE" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[217694] = 3.5		-- Living Bomb
-		T.aoespam[44461] = 3		-- Living Bomb (AoE)
+		T.aoespam[244813] = 3.5		-- Living Bomb
+		T.aoespam[44461] = 3.5		-- Living Bomb (AoE)
 		T.aoespam[2120] = 0			-- Flamestrike
 		T.aoespam[194432] = 0		-- Aftershocks
 		T.aoespam[12654] = 3		-- Ignite
