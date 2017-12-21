@@ -9,6 +9,7 @@ local function LoadSkin()
 	ArtifactFrame:SetTemplate("Transparent")
 	ArtifactFrame:CreateBackdrop()
 	T.SkinCloseButton(ArtifactFrame.CloseButton)
+	T.SkinCloseButton(ArtifactRelicForgeFrameCloseButton)
 	T.SkinCloseButton(ArtifactFrame.PerksTab.RelicTalentAlert.CloseButton)
 	T.SkinCloseButton(ArtifactFrame.KnowledgeLevelHelpBox.CloseButton)
 
