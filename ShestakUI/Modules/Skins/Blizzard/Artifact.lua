@@ -32,6 +32,10 @@ local function LoadSkin()
 	ArtifactFrame.KnowledgeLevelHelpBox:StripTextures()
 	ArtifactFrame.KnowledgeLevelHelpBox.Arrow:Hide()
 	ArtifactFrame.KnowledgeLevelHelpBox:CreateBackdrop("Transparent")
+	
+	ArtifactRelicForgeFrame.TutorialFrame.GlowBox:StripTextures()
+	ArtifactRelicForgeFrame.TutorialFrame.GlowBox:CreateBackdrop("Transparent")
+	ArtifactRelicForgeFrame.TutorialFrame.GlowBox.Button:SkinButton()
 end
 
 T.SkinFuncs["Blizzard_ArtifactUI"] = LoadSkin
