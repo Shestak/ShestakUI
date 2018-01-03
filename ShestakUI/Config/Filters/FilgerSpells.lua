@@ -808,6 +808,8 @@ C["filger_spells"] = {
 			{spellID = 33763, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Rejuvenation
 			{spellID = 774, unitID = "target", caster = "player", filter = "BUFF"},
+			-- Rejuvenation (Germination)
+			{spellID = 155777, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Regrowth
 			{spellID = 8936, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Wild Growth
