@@ -653,8 +653,8 @@ C["filger_spells"] = {
 			{spellID = 213680, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Item Sets
-			-- Natural Defenses (T19)
-			{spellID = 211160, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Apex Predator (T21)
+			{spellID = 252752, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- Alchemy Stones
