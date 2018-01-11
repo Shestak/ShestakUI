@@ -169,6 +169,10 @@ local function LoadSkin()
 	for i = 1, 4 do
 		T.SkinTab(_G["CharacterFrameTab"..i])
 	end
+	
+	T.SkinCloseButton(CharacterFrame.ReputationTabHelpBox.CloseButton)
+	CharacterFrame.ReputationTabHelpBox:StripTextures()
+	CharacterFrame.ReputationTabHelpBox:CreateBackdrop("Transparent")
 
 	-- Buttons used to toggle between equipment manager, titles, and character stats
 	local function FixSidebarTabCoords()
