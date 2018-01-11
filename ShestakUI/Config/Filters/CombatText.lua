@@ -535,6 +535,10 @@ elseif T.class == "WARRIOR" then
 		T.aoespam[5308] = 0			-- Execute
 		T.aoespam[772] = 3			-- Rend
 		T.aoespam[156287] = 3		-- Ravager
+		T.aoespam[23881] = 0		-- Bloodthirst
+		T.aoespam[205546] = 2		-- Odyn's Fury
+		T.aoespam[243228] = 2		-- Odyn's Fury
+		T.merge[205547] = 205546	-- Odyn's Fury
 		T.merge[85384] = 96103		-- Raging Blow Off-Hand
 		T.merge[95738] = 50622		-- Bladestorm Off-Hand
 		T.merge[163558] = 5308		-- Execute Off-Hand
