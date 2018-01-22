@@ -133,6 +133,7 @@ local function LoadSkin()
 
 	T.SkinScrollBar(CalendarTexturePickerScrollBar)
 	T.SkinScrollBar(CalendarViewEventInviteListScrollFrameScrollBar)
+	T.SkinScrollBar(CalendarCreateEventDescriptionScrollFrameScrollBar)
 	CalendarTexturePickerAcceptButton:SkinButton(true)
 	CalendarTexturePickerCancelButton:SkinButton(true)
 	CalendarCreateEventRaidInviteButton:SkinButton(true)
