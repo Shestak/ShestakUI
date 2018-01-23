@@ -36,6 +36,7 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[246442] = 4			-- Spectral Blast (Tarnished Sentinel Medallion Trinket)
 	T.aoespam[188091] = 4			-- Deadly Grace (Potion of Deadly Grace)
 	T.aoespam[235999] = 1			-- Kil'jaeden's Burning Wish (Trinket)
+	T.aoespam[257244] = 4			-- Worldforger's Flame (Khaz'goroth's Courage Trinket)
 	T.aoespam[207694] = 3			-- Symbiote Strike
 	T.aoespam[210380] = 4			-- Aura of Sacrifice
 	T.aoespam[252907] = 5			-- Torment the Weak
