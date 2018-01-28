@@ -521,7 +521,7 @@ ItemRefTooltip:HookScript("OnTooltipSetItem", FixFont)
 ----------------------------------------------------------------------------------------
 --	Skin WorldMapTooltip and ReputationParagonTooltip
 ----------------------------------------------------------------------------------------
-local function SkinWorldMapTooltip()
+do
 	local bar = WorldMapTaskTooltipStatusBar.Bar
 	local label = bar.Label
 	if bar then
@@ -534,7 +534,6 @@ local function SkinWorldMapTooltip()
 		label:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 	end
 end
-hooksecurefunc("TaskPOI_OnEnter", SkinWorldMapTooltip)
 
 WorldMapTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 hooksecurefunc(WorldMapTooltip.ItemTooltip.IconBorder, "SetVertexColor", function(self, r, g, b)
@@ -548,7 +547,7 @@ WorldMapTooltip.ItemTooltip.backdrop:SetPoint("BOTTOMRIGHT", WorldMapTooltip.Ite
 WorldMapTooltip.ItemTooltip.Count:ClearAllPoints()
 WorldMapTooltip.ItemTooltip.Count:SetPoint("BOTTOMRIGHT", WorldMapTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 1, 0)
 
-local function SkinReputationTooltip()
+do
 	local bar = ReputationParagonTooltipStatusBar.Bar
 	local label = bar.Label
 	if bar then
@@ -561,7 +560,6 @@ local function SkinReputationTooltip()
 		label:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 	end
 end
-hooksecurefunc("ReputationParagonFrame_SetupParagonTooltip", SkinReputationTooltip)
 
 ReputationParagonTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 hooksecurefunc(ReputationParagonTooltip.ItemTooltip.IconBorder, "SetVertexColor", function(self, r, g, b)
