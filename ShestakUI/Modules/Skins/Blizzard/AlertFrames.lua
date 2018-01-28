@@ -328,9 +328,17 @@ local function LoadSkin()
 	hooksecurefunc(GarrisonShipFollowerAlertSystem, "setUpFunction", SkinGarrisonShipFollowerAlert)
 
 	local function SkinGarrisonTalentAlert(frame)
+		-- Create Backdrop
+		if not frame.backdrop then
+			frame:CreateBackdrop("Transparent")
+			frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 22, -6)
+			frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -25, 6)
+		end
+
 		frame:GetRegions():Hide()
 		frame.glow:Kill()
 		frame.shine:Kill()
+
 		-- Icon
 		frame.Icon:SetSize(50, 50)
 		frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -341,13 +349,6 @@ local function LoadSkin()
 		frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
 		frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
 		frame.Icon:SetParent(frame.Icon.b)
-
-		-- Create Backdrop
-		if not frame.backdrop then
-			frame:CreateBackdrop("Transparent")
-			frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 22, -6)
-			frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -25, 6)
-		end
 	end
 	hooksecurefunc(GarrisonTalentAlertSystem, "setUpFunction", SkinGarrisonTalentAlert)
 
