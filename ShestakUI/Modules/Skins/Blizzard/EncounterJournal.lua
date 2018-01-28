@@ -237,7 +237,7 @@ local function LoadSkin()
 			item.IconBackdrop:SetPoint("BOTTOMRIGHT", item.Icon, 2, -2)
 			item.IconBackdrop:SetTemplate("Default")
 			item.IconBackdrop:SetBackdropBorderColor(GetItemQualityColor(5))
-			item:CreateBackdrop("Transparent")
+			item:CreateBackdrop("Overlay")
 			item.backdrop:SetPoint("TOPLEFT", -4, 4)
 			item.backdrop:SetPoint("BOTTOMRIGHT", 4, -3)
 		end
@@ -262,7 +262,7 @@ local function LoadSkin()
 			itemSet.Background:Hide()
 
 			if not itemSet.bg then
-				itemSet:CreateBackdrop("Transparent")
+				itemSet:CreateBackdrop("Overlay")
 				itemSet.backdrop:SetPoint("TOPLEFT", -4, 4)
 				itemSet.backdrop:SetPoint("BOTTOMRIGHT", 4, -3)
 				itemSet.bg = bg
@@ -406,6 +406,9 @@ local function LoadSkin()
 	EncounterJournalSuggestFrame.Suggestion1:CreateBackdrop("Default")
 	EncounterJournalSuggestFrame.Suggestion1.backdrop:SetPoint("TOPLEFT", EncounterJournalSuggestFrame.Suggestion1.icon, -2, 2)
 	EncounterJournalSuggestFrame.Suggestion1.backdrop:SetPoint("BOTTOMRIGHT", EncounterJournalSuggestFrame.Suggestion1.icon, 2, -2)
+	EncounterJournalSuggestFrame.Suggestion1.reward:CreateBackdrop("Default")
+	EncounterJournalSuggestFrame.Suggestion1.reward.backdrop:SetPoint("TOPLEFT", EncounterJournalSuggestFrame.Suggestion1.reward.icon, -2, 2)
+	EncounterJournalSuggestFrame.Suggestion1.reward.backdrop:SetPoint("BOTTOMRIGHT", EncounterJournalSuggestFrame.Suggestion1.reward.icon, 2, -2)
 
 	for i = 2, 3 do
 		EncounterJournalSuggestFrame["Suggestion"..i].bg:Hide()
