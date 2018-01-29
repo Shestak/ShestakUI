@@ -50,18 +50,14 @@ local function LoadSkin()
 		end
 	end)
 
-	hooksecurefunc(ContributionMixin, "AddReward", function(self, _, rewardID)
-		local reward = self:FindOrAcquireReward(rewardID)
-		if reward then
-			reward.Border:SetAlpha(0)
-			if not reward.backdrop then
-				reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				reward:SetFrameLevel(5)
-				reward.Border:SetAlpha(0)
-				reward:CreateBackdrop("Default")
-				reward.backdrop:SetPoint("TOPLEFT", reward.Icon, "TOPLEFT", -2, 2)
-				reward.backdrop:SetPoint("BOTTOMRIGHT", reward.Icon, "BOTTOMRIGHT", 2, -2)
-			end
+	hooksecurefunc(ContributionRewardMixin, "Setup", function(self)
+		if not self.backdrop then
+			self.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			self:SetFrameLevel(5)
+			self.Border:SetAlpha(0)
+			self:CreateBackdrop("Default")
+			self.backdrop:SetPoint("TOPLEFT", self.Icon, "TOPLEFT", -2, 2)
+			self.backdrop:SetPoint("BOTTOMRIGHT", self.Icon, "BOTTOMRIGHT", 2, -2)
 		end
 	end)
 end
