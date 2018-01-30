@@ -256,10 +256,4 @@ if IsWetxius then
 		C["combattext"].heal_treshold = 1000
 		C["stats"].experience = false
 	end
-
-	local frame = CreateFrame("Frame")
-	frame:RegisterEvent("PLAYER_LOGIN")
-	frame:SetScript("OnEvent", function()
-		SetCVar("lootUnderMouse", 1)
-	end)
 end
