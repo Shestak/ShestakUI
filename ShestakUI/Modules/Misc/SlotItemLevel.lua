@@ -40,7 +40,7 @@ end
 local function _updateItems(unit, frame)
 	for i = 1, 17 do -- Only check changed player items or items without ilvl text, skip the shirt (4) and always update Inspects
 		local itemLink = GetInventoryItemLink(unit, i)
-		if i ~= 4 and ((frame == f and (equiped[i] ~= itemLink or frame[i]:GetText() == nil)) or frame == g) then
+		if i ~= 4 and ((frame == f and (equiped[i] ~= itemLink or frame[i]:GetText() == nil or itemLink == nil and frame[i]:GetText() ~= "")) or frame == g) then
 			if frame == f then
 				equiped[i] = itemLink
 			end
