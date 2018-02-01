@@ -155,93 +155,8 @@ DBMSkin:SetScript("OnEvent", function(self, event, addon)
 				end
 			end
 		end
-
-		local SkinBossTitle = function()
-			if not DBMBossHealthDropdown then return end
-			local anchor = DBMBossHealthDropdown:GetParent()
-			if not anchor.styled then
-				local header = {anchor:GetRegions()}
-				if header[1]:IsObjectType("FontString") then
-					header[1]:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
-					header[1]:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
-					header[1]:SetTextColor(1, 1, 1, 1)
-					anchor.styled = true
-				end
-				header = nil
-			end
-			anchor = nil
-		end
-
-		local SkinBoss = function()
-			local count = 1
-			while (_G[format("DBM_BossHealth_Bar_%d", count)]) do
-				local bar = _G[format("DBM_BossHealth_Bar_%d", count)]
-				local background = _G[bar:GetName().."BarBorder"]
-				local progress = _G[bar:GetName().."Bar"]
-				local name = _G[bar:GetName().."BarName"]
-				local timer = _G[bar:GetName().."BarTimer"]
-				local prev = _G[format("DBM_BossHealth_Bar_%d", count-1)]
-
-				if count == 1 then
-					local _, anch = bar:GetPoint()
-					bar:ClearAllPoints()
-					if DBM_AllSavedOptions["Default"].HealthFrameGrowUp then
-						bar:SetPoint("BOTTOM", anch, "TOP", 0, 3)
-					else
-						bar:SetPoint("TOP", anch, "BOTTOM", 0, -3)
-					end
-				else
-					bar:ClearAllPoints()
-					if DBM_AllSavedOptions["Default"].HealthFrameGrowUp then
-						bar:SetPoint("BOTTOMLEFT", prev, "TOPLEFT", 0, 3)
-					else
-						bar:SetPoint("TOPLEFT", prev, "BOTTOMLEFT", 0, -3)
-					end
-				end
-
-				if not bar.styled then
-					bar:SetScale(1)
-					bar:SetHeight(19)
-					bar:SetTemplate("Default")
-					background:SetNormalTexture(nil)
-					bar.styled = true
-				end
-
-				if not progress.styled then
-					progress:SetStatusBarTexture(C.media.texture)
-					progress:SetBackdrop(backdrop)
-					progress:SetBackdropColor(T.color.r, T.color.g, T.color.b, 0.2)
-					progress.styled = true
-				end
-				progress:ClearAllPoints()
-				progress:SetPoint("TOPLEFT", bar, "TOPLEFT", 2, -2)
-				progress:SetPoint("BOTTOMRIGHT", bar, "BOTTOMRIGHT", -2, 2)
-
-				if not name.styled then
-					name:ClearAllPoints()
-					name:SetPoint("LEFT", bar, "LEFT", 4, 0)
-					name:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
-					name:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
-					name:SetJustifyH("LEFT")
-					name.styled = true
-				end
-
-				if not timer.styled then
-					timer:ClearAllPoints()
-					timer:SetPoint("RIGHT", bar, "RIGHT", -1, 0)
-					timer:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
-					timer:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
-					timer:SetJustifyH("RIGHT")
-					timer.styled = true
-				end
-				count = count + 1
-			end
-		end
 		if DBM then
 			hooksecurefunc(DBT, "CreateBar", SkinBars)
-			hooksecurefunc(DBM.BossHealth, "Show", SkinBossTitle)
-			hooksecurefunc(DBM.BossHealth, "AddBoss", SkinBoss)
-			hooksecurefunc(DBM.BossHealth, "UpdateSettings", SkinBoss)
 
 			hooksecurefunc(DBM.RangeCheck, "Show", function()
 				if DBMRangeCheck then
@@ -315,10 +230,6 @@ function T.UploadDBM()
 			{["b"] = T.color.b, ["g"] = T.color.g, ["r"] = T.color.r,},
 			{["b"] = T.color.b, ["g"] = T.color.g, ["r"] = T.color.r,},
 		}
-		DBM_AllSavedOptions["Default"].HealthFrameGrowUp = false
-		DBM_AllSavedOptions["Default"].HealthFrameWidth = 218
-		DBM_AllSavedOptions["Default"].HPFrameX = 100
-		DBM_AllSavedOptions["Default"].HPFramePoint = "LEFT"
 		DBM_AllSavedOptions["Default"].RangeFrameX = 244
 		DBM_AllSavedOptions["Default"].RangeFramePoint = "LEFT"
 		DBM_AllSavedOptions["Default"].ShowSpecialWarnings = true
@@ -355,17 +266,14 @@ function T.UploadDBM()
 		DBT_AllPersistentOptions["Default"]["DBM"].HugeBarYOffset = 7
 
 		if C.actionbar.bottombars == 1 then
-			DBM_AllSavedOptions["Default"].HPFrameY = 126
 			DBM_AllSavedOptions["Default"].RangeFrameY = 101
 			DBT_AllPersistentOptions["Default"]["DBM"].TimerY = 139
 			DBT_AllPersistentOptions["Default"]["DBM"].HugeTimerY = -136
 		elseif C.actionbar.bottombars == 2 then
-			DBM_AllSavedOptions["Default"].HPFrameY = 154
 			DBM_AllSavedOptions["Default"].RangeFrameY = 129
 			DBT_AllPersistentOptions["Default"]["DBM"].TimerY = 167
 			DBT_AllPersistentOptions["Default"]["DBM"].HugeTimerY = -108
 		elseif C.actionbar.bottombars == 3 then
-			DBM_AllSavedOptions["Default"].HPFrameY = 182
 			DBM_AllSavedOptions["Default"].RangeFrameY = 157
 			DBT_AllPersistentOptions["Default"]["DBM"].TimerY = 195
 			DBT_AllPersistentOptions["Default"]["DBM"].HugeTimerY = -80
