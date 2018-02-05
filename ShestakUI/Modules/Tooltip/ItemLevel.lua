@@ -125,6 +125,9 @@ local function UnitGear(unit)
 								end
 							end
 							level = _getRealItemLevel(i, unit, itemLink, true) or level
+							if level >= 900 and ScannedGUID ~= UnitGUID('player') then
+								level = level + 15
+							end	
 						elseif quality == 7 then
 							level = _getRealItemLevel(i, unit, itemLink) or level
 							boa = boa + 1
