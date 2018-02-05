@@ -87,35 +87,34 @@ local function LoadSkin()
 	HonorFrame.XPBar.NextAvailable.Icon.SetTexCoord = T.dummy
 	HonorFrame.XPBar.NextAvailable.Icon:SetSize(18, 18)
 
-	HonorFrame.BonusFrame.RandomBGButton.Reward:StripTextures()
-	HonorFrame.BonusFrame.RandomBGButton.Reward:SetTemplate("Default")
-	HonorFrame.BonusFrame.RandomBGButton.Reward:SetSize(40, 40)
-	HonorFrame.BonusFrame.RandomBGButton.Reward.Icon:SetAllPoints()
-	HonorFrame.BonusFrame.RandomBGButton.Reward.Icon:SetPoint("TOPLEFT", 2, -2)
-	HonorFrame.BonusFrame.RandomBGButton.Reward.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
-	HonorFrame.BonusFrame.RandomBGButton.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	for _, button in pairs({HonorFrame.BonusFrame.RandomBGButton, HonorFrame.BonusFrame.Arena1Button, HonorFrame.BonusFrame.BrawlButton}) do
+		button.Reward:StripTextures()
+		button.Reward:SetTemplate("Default")
+		button.Reward:SetSize(40, 40)
+		button.Reward:SetPoint("RIGHT", button, "RIGHT", -8, 0)
 
-	HonorFrame.BonusFrame.Arena1Button.Reward:StripTextures()
-	HonorFrame.BonusFrame.Arena1Button.Reward:SetTemplate("Default")
-	HonorFrame.BonusFrame.Arena1Button.Reward:SetSize(40, 40)
-	HonorFrame.BonusFrame.Arena1Button.Reward.Icon:SetAllPoints()
-	HonorFrame.BonusFrame.Arena1Button.Reward.Icon:SetPoint("TOPLEFT", 2, -2)
-	HonorFrame.BonusFrame.Arena1Button.Reward.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
-	HonorFrame.BonusFrame.Arena1Button.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		button.Reward.Icon:SetAllPoints()
+		button.Reward.Icon:SetPoint("TOPLEFT", 2, -2)
+		button.Reward.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
+		button.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-	HonorFrame.BonusFrame.BrawlButton.Reward:StripTextures()
-	HonorFrame.BonusFrame.BrawlButton.Reward:SetTemplate("Default")
-	HonorFrame.BonusFrame.BrawlButton.Reward:SetSize(40, 40)
-	HonorFrame.BonusFrame.BrawlButton.Reward.Icon:SetAllPoints()
-	HonorFrame.BonusFrame.BrawlButton.Reward.Icon:SetPoint("TOPLEFT", 2, -2)
-	HonorFrame.BonusFrame.BrawlButton.Reward.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
-	HonorFrame.BonusFrame.BrawlButton.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	
+		button.Reward.EnlistmentBonus:StripTextures()
+		button.Reward.EnlistmentBonus:SetTemplate("Default")
+		button.Reward.EnlistmentBonus:SetSize(20, 20)
+		button.Reward.EnlistmentBonus:SetPoint("TOPRIGHT", 2, 2)
+
+		local EnlistmentBonusIcon = button.Reward.EnlistmentBonus:CreateTexture(nil, nil, self)
+		EnlistmentBonusIcon:SetPoint("TOPLEFT", button.Reward.EnlistmentBonus, "TOPLEFT", 2, -2)
+		EnlistmentBonusIcon:SetPoint("BOTTOMRIGHT", button.Reward.EnlistmentBonus, "BOTTOMRIGHT", -2, 2)
+		EnlistmentBonusIcon:SetTexture("Interface\\Icons\\achievement_guildperk_honorablemention_rank2")
+		EnlistmentBonusIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	end
+
 	T.SkinCloseButton(PremadeGroupsPvPTutorialAlert.CloseButton)
 	PremadeGroupsPvPTutorialAlert.Arrow:Hide()
 	PremadeGroupsPvPTutorialAlert:StripTextures()
 	PremadeGroupsPvPTutorialAlert:CreateBackdrop("Transparent")
-	
+
 	T.SkinCloseButton(HonorFrame.BonusFrame.BrawlHelpBox.CloseButton)
 	HonorFrame.BonusFrame.BrawlHelpBox:StripTextures()
 	HonorFrame.BonusFrame.BrawlHelpBox:CreateBackdrop("Transparent")
@@ -161,12 +160,10 @@ local function LoadSkin()
 
 	ConquestFrame.XPBar:StripTextures()
 	ConquestFrame.XPBar.Bar:CreateBackdrop("Default")
-
 	ConquestFrame.XPBar.Bar.Spark:SetAlpha(0)
 
 	ConquestFrame.XPBar.NextAvailable:ClearAllPoints()
 	ConquestFrame.XPBar.NextAvailable:SetPoint("LEFT", ConquestFrame.XPBar.Bar, "RIGHT", -2, -2)
-
 	ConquestFrame.XPBar.NextAvailable:StripTextures()
 	ConquestFrame.XPBar.NextAvailable:CreateBackdrop("Default")
 	ConquestFrame.XPBar.NextAvailable.backdrop:SetPoint("TOPLEFT", ConquestFrame.XPBar.NextAvailable.Icon, -2, 2)
@@ -192,6 +189,27 @@ local function LoadSkin()
 		button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
 		button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 		button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
+
+		button.Reward:StripTextures()
+		button.Reward:SetTemplate("Default")
+		button.Reward:SetSize(35, 35)
+		button.Reward:SetPoint("RIGHT", button, "RIGHT", -7, -1)
+
+		button.Reward.Icon:SetAllPoints()
+		button.Reward.Icon:SetPoint("TOPLEFT", 2, -2)
+		button.Reward.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
+		button.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+		button.Reward.WeeklyBonus:StripTextures()
+		button.Reward.WeeklyBonus:SetTemplate("Default")
+		button.Reward.WeeklyBonus:SetSize(20, 20)
+		button.Reward.WeeklyBonus:SetPoint("TOPRIGHT", 2, 2)
+
+		local WeeklyBonusIcon = button.Reward.WeeklyBonus:CreateTexture(nil, nil, self)
+		WeeklyBonusIcon:SetPoint("TOPLEFT", button.Reward.WeeklyBonus, "TOPLEFT", 2, -2)
+		WeeklyBonusIcon:SetPoint("BOTTOMRIGHT", button.Reward.WeeklyBonus, "BOTTOMRIGHT", -2, 2)
+		WeeklyBonusIcon:SetTexture("Interface\\Icons\\ability_skyreach_flash_bang")
+		WeeklyBonusIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 
 	ConquestFrame.Arena3v3:SetPoint("TOP", ConquestFrame.Arena2v2, "BOTTOM", 0, -3)
