@@ -90,7 +90,7 @@ LPSTAT_CONFIG = {
 		xp_normal_fmt = "[curxp]([cur%]%)"..class"XP", -- XP string used when not rested
 		xp_rested_fmt = "[curxp]([cur%]%)"..class"XP ".." [restxp]([rest%]%)"..class"R", -- XP string used when rested
 		played_fmt = class"Online: ".."|r".."[playedsession]", -- Played time format
-		short = true, thousand = "k", million = "m", -- Short numbers ("4.5m" "355.3k")
+		short = true, thousand = "k", million = "m", billion = "b", -- Short numbers ("4.5m" "355.3k")
 			-- Faction tags:
 			--	Faction name [repname]
 			--	Standing Color Code [repcolor]	Standing Name [standing]

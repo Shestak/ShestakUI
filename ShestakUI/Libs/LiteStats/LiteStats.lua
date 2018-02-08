@@ -1531,7 +1531,13 @@ if experience.enabled then
 	local function short(num, tt)
 		if short or tt then
 			num = tonumber(num)
-			if num >= 1e8 then
+			if num >= 1e11 then
+				return ("%.0f%s"):format(num / 1e9, experience.billion or "b")
+			elseif num >= 1e10 then
+				return ("%.1f%s"):format(num / 1e9, experience.billion or "b"):gsub("%.?0+([km])$", "%1")
+			elseif num >= 1e9 then
+				return ("%.2f%s"):format(num / 1e9, experience.billion or "b"):gsub("%.?0+([km])$", "%1")
+			elseif num >= 1e8 then
 				return ("%.0f%s"):format(num / 1e6, experience.million or "m")
 			elseif num >= 1e7 then
 				return ("%.1f%s"):format(num / 1e6, experience.million or "m"):gsub("%.?0+([km])$", "%1")
