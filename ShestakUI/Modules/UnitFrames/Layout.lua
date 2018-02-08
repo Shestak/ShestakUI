@@ -679,19 +679,14 @@ local function Shared(self, unit)
 			self.ArtifactPower:SetSize(7, 94)
 			self.ArtifactPower:SetOrientation("Vertical")
 			self.ArtifactPower:SetStatusBarTexture(C.media.texture)
-			self.ArtifactPower.offAlpha = 0
 
 			self.ArtifactPower.bg = self.ArtifactPower:CreateTexture(nil, "BORDER")
 			self.ArtifactPower.bg:SetAllPoints()
 			self.ArtifactPower.bg:SetTexture(C.media.texture)
+			self.ArtifactPower.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
 
-			self.ArtifactPower:HookScript("OnEnter", function(self) self.ArtifactPower.offAlpha = 1 end)
-			self.ArtifactPower:HookScript("OnLeave", function(self) self.ArtifactPower.offAlpha = 0 end)
-			self.ArtifactPower.PostUpdate = function(self, event, isShown)
-				self:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
-				self.bg:SetVertexColor(1, 0, 0, 0.2)
-			end
-			self.ArtifactPower.Tooltip = true
+			self.ArtifactPower.color = {T.color.r, T.color.g, T.color.b}
+			self.ArtifactPower.offAlpha = 0
 		end
 
 		-- GCD spark
@@ -889,7 +884,7 @@ local function Shared(self, unit)
 			self.QuestIcon:SetSize(20, 20)
 			self.QuestIcon:SetPoint("RIGHT", self.Info, "LEFT", -10, 0)
 		end
-		
+
 		if C.unitframe.plugins_combat_feedback == true then
 			self.CombatFeedbackText = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size * 2, C.font.unit_frames_font_style)
 			if C.unitframe.portrait_enable == true then
