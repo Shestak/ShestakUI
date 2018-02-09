@@ -272,7 +272,6 @@ C["tooltip"] = {
 	["item_count"] = false,						-- Item count in tooltip
 	["unit_role"] = false,						-- Unit role in tooltip
 	["instance_lock"] = false,					-- Your instance lock status in tooltip
-	["item_transmogrify"] = false,				-- Displays items can not be transmogrified
 }
 
 ----------------------------------------------------------------------------------------

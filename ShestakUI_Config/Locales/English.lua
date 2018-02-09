@@ -214,7 +214,6 @@ L_GUI_TOOLTIP_WHO_TARGETTING = "Display who is targetting the unit that is in yo
 L_GUI_TOOLTIP_ITEM_COUNT = "Item count"
 L_GUI_TOOLTIP_UNIT_ROLE = "Unit role"
 L_GUI_TOOLTIP_INSTANCE_LOCK = "Your instance lock status in tooltip"
-L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Displays items can not be transmogrified"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Enable chat"

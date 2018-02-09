@@ -217,7 +217,6 @@ L_GUI_TOOLTIP_WHO_TARGETTING = "隊伍/團隊時,顯示關注成員(誰以目標
 L_GUI_TOOLTIP_ITEM_COUNT = "叠堆數量"
 L_GUI_TOOLTIP_UNIT_ROLE = "角色類型"
 L_GUI_TOOLTIP_INSTANCE_LOCK = "自身信息提示"
-L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "非幻化裝備提示"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "開啟聊天框增強"

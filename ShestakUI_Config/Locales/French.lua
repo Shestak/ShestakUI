@@ -217,7 +217,6 @@ L_GUI_TOOLTIP_WHO_TARGETTING = "Afficher qui cible actuellement l'unité qui est
 L_GUI_TOOLTIP_ITEM_COUNT = "Afficher le nombre d'objets possédés"
 L_GUI_TOOLTIP_UNIT_ROLE = "Afficher les rôles"
 L_GUI_TOOLTIP_INSTANCE_LOCK = "Afficher le verrouillage de votre instance"
-L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Affiche les objets qui ne peuvent pas être transmogrifés"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Activer la fenêtre de dialogue"

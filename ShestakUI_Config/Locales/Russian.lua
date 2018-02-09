@@ -217,7 +217,6 @@ L_GUI_TOOLTIP_WHO_TARGETTING = "Показать, кто выбрал целью
 L_GUI_TOOLTIP_ITEM_COUNT = "Количество предметов"
 L_GUI_TOOLTIP_UNIT_ROLE = "Роль игрока"
 L_GUI_TOOLTIP_INSTANCE_LOCK = "Ваш статус прохождения подземелий в подсказке"
-L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Отображать, если предмет нельзя трансмогрифицировать"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Включить чат"

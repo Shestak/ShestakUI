@@ -217,7 +217,6 @@ L_GUI_TOOLTIP_WHO_TARGETTING = "Visualizza chi ha in bersaglio l'unità che è n
 L_GUI_TOOLTIP_ITEM_COUNT = "Conteggio oggetti"
 L_GUI_TOOLTIP_UNIT_ROLE = "Ruolo dell'unità"
 L_GUI_TOOLTIP_INSTANCE_LOCK = "Info incursione nei suggerimenti"
-L_GUI_TOOLTIP_ITEM_TRANSMOGRIFY = "Mostra gli oggetti che non possono essere transmogrifati"
 
 -- Chat options
 L_GUI_CHAT_ENABLE = "Attiva chat"
