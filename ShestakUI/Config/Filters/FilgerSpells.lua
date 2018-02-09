@@ -3545,12 +3545,6 @@ C["filger_spells"] = {
 			{spellID = 236380, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Zann'esu Journey [Waist]
 			{spellID = 226852, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Belo'vir's Final Stand [Chest]
-			{spellID = 207283, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Magtheridon's Banished Bracers [Wrists]
-			{spellID = 214404, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Shattered Fragments of Sindragosa [Head]
-			{spellID = 248176, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Professions
 			-- Goblin Glider [Goblin Glider Kit]
