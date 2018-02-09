@@ -126,7 +126,6 @@ local function Local(o)
 	if o == "UIConfigskinsovale" then o = L_GUI_SKINS_OVALE end
 	if o == "UIConfigskinsclique" then o = L_GUI_SKINS_CLIQUE end
 	if o == "UIConfigskinsace3" then o = L_GUI_SKINS_ACE3 end
-	if o == "UIConfigskinspallypower" then o = L_GUI_SKINS_PP end
 	if o == "UIConfigskinscapping" then o = L_GUI_SKINS_CAPPING end
 	if o == "UIConfigskinscool_line" then o = L_GUI_SKINS_COOL_LINE end
 	if o == "UIConfigskinsatlasloot" then o = L_GUI_SKINS_ATLASLOOT end

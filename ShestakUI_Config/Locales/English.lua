@@ -96,7 +96,6 @@ L_GUI_SKINS_NUG_RUNNING = "Enable styling NugRunning"
 L_GUI_SKINS_OVALE = "Enable styling OvaleSpellPriority"
 L_GUI_SKINS_CLIQUE = "Enable styling Clique"
 L_GUI_SKINS_ACE3 = "Ace3 options elements skin"
-L_GUI_SKINS_PP = "Enable styling PallyPower"
 L_GUI_SKINS_CAPPING = "Enable styling Capping"
 L_GUI_SKINS_COOL_LINE = "Enable styling CoolLine"
 L_GUI_SKINS_ATLASLOOT = "Enable styling AtlasLoot"
@@ -109,10 +108,10 @@ L_GUI_SKINS_WEAK_AURAS = "Enable styling WeakAuras"
 L_GUI_SKINS_SKADA = "Enable styling Skada"
 L_GUI_SKINS_MY_ROLE_PLAY = "Enable styling MyRolePlay"
 L_GUI_SKINS_ARH = "Enable styling Archaeology Helper"
-L_GUI_SKINS_POSTAL = "Enable styling Postal" -- Need review
-L_GUI_SKINS_OPIE = "Enable styling OPie" -- Need review
-L_GUI_SKINS_REMATCH = "Enable styling Rematch" -- Need review
-L_GUI_SKINS_LS_TOASTS = "Enable styling ls: Toasts" -- Need review
+L_GUI_SKINS_POSTAL = "Enable styling Postal"
+L_GUI_SKINS_OPIE = "Enable styling OPie"
+L_GUI_SKINS_REMATCH = "Enable styling Rematch"
+L_GUI_SKINS_LS_TOASTS = "Enable styling ls: Toasts"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Combat Text"

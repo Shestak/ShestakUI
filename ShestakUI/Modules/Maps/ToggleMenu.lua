@@ -146,9 +146,6 @@ C["toggleaddons"] = {
 	["Panda"] = function()
 		ToggleFrame(PandaPanel)
 	end,
-	["PallyPower"] = function()
-		ToggleFrame(PallyPowerFrame)
-	end,
 	["ACP"] = function()
 		ToggleFrame(ACP_AddonList)
 	end,

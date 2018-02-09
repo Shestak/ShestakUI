@@ -99,7 +99,6 @@ L_GUI_SKINS_NUG_RUNNING = "Activar estilo del NugRunning"
 L_GUI_SKINS_OVALE = "Activar estilo del OvaleSpellPriority"
 L_GUI_SKINS_CLIQUE = "Activar estilo del Clique"
 L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
-L_GUI_SKINS_PP = "Activar estilo del PallyPower"
 L_GUI_SKINS_CAPPING = "Activar estilo del Capping"
 L_GUI_SKINS_COOL_LINE = "Activar estilo del CoolLine"
 L_GUI_SKINS_ATLASLOOT = "Activar estilo del AtlasLoot"

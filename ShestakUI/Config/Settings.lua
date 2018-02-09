@@ -129,7 +129,6 @@ C["skins"] = {
 	["ovale"] = false,							-- OvaleSpellPriority skin
 	["clique"] = false,							-- Clique skin
 	["ace3"] = false,							-- Ace3 options elements skin
-	["pallypower"] = false,						-- PallyPower skin
 	["capping"] = false,						-- Capping skin
 	["cool_line"] = false,						-- CoolLine skin
 	["atlasloot"] = false,						-- AtlasLoot skin
