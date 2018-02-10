@@ -256,7 +256,12 @@ local function LoadSkin()
 
 	T.SkinCheckBox(ChannelFrameAutoJoinBattleground)
 	T.SkinCheckBox(ChannelFrameAutoJoinParty)
-
+	
+	T.SkinCloseButton(FriendsTabHeader.FriendsFrameQuickJoinHelpTip.CloseButton)
+	FriendsTabHeader.FriendsFrameQuickJoinHelpTip.Arrow:Hide()
+	FriendsTabHeader.FriendsFrameQuickJoinHelpTip:StripTextures()
+	FriendsTabHeader.FriendsFrameQuickJoinHelpTip:CreateBackdrop("Transparent")
+	
 	-- Bottom Tabs
 	for i = 1, 5 do
 		T.SkinTab(_G["FriendsFrameTab"..i])
