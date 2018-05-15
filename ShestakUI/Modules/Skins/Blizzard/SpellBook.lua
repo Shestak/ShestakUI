@@ -152,29 +152,29 @@ local function LoadSkin()
 		"SecondaryProfession4"
 	}
 
-	for _, header in pairs(professionheaders) do
-		_G[header.."Missing"]:SetTextColor(1, 0.8, 0)
-		_G[header.."Missing"]:SetShadowColor(0, 0, 0)
-		_G[header.."Missing"]:SetShadowOffset(1, -1)
-		_G[header].missingText:SetTextColor(0.6, 0.6, 0.6)
-	end
+	--for _, header in pairs(professionheaders) do
+		--_G[header.."Missing"]:SetTextColor(1, 0.8, 0)
+		--_G[header.."Missing"]:SetShadowColor(0, 0, 0)
+		--_G[header.."Missing"]:SetShadowOffset(1, -1)
+		--_G[header].missingText:SetTextColor(0.6, 0.6, 0.6)
+	--end
 
 	for _, button in pairs(professionbuttons) do
 		local icon = _G[button.."IconTexture"]
 		local rank = _G[button.."SubSpellName"]
 		local button = _G[button]
-		button:StripTextures()
+		--button:StripTextures()
 
 		if rank then
 			rank:SetTextColor(1, 1, 1)
 		end
 
-		button:GetCheckedTexture():SetColorTexture(0, 1, 0, 0.3)
-		button:GetCheckedTexture():SetPoint("TOPLEFT", button, 4, -4)
-		button:GetCheckedTexture():SetPoint("BOTTOMRIGHT", button, -4, 4)
+		--button:GetCheckedTexture():SetColorTexture(0, 1, 0, 0.3)
+		--button:GetCheckedTexture():SetPoint("TOPLEFT", button, 4, -4)
+		--button:GetCheckedTexture():SetPoint("BOTTOMRIGHT", button, -4, 4)
 
-		button.cooldown:SetPoint("TOPLEFT", button, 4, -4)
-		button.cooldown:SetPoint("BOTTOMRIGHT", button, -4, 4)
+		--button.cooldown:SetPoint("TOPLEFT", button, 4, -4)
+		--button.cooldown:SetPoint("BOTTOMRIGHT", button, -4, 4)
 
 		if icon then
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -209,16 +209,16 @@ local function LoadSkin()
 		"SecondaryProfession4StatusBar"
 	}
 
-	for _, statusbar in pairs(professionstatusbars) do
-		local statusbar = _G[statusbar]
-		statusbar:StripTextures()
-		statusbar:SetStatusBarTexture(C.media.texture)
-		statusbar:SetStatusBarColor(0, 0.8, 0)
-		statusbar:CreateBackdrop("Overlay")
+	--for _, statusbar in pairs(professionstatusbars) do
+		--local statusbar = _G[statusbar]
+		--statusbar:StripTextures()
+		--statusbar:SetStatusBarTexture(C.media.texture)
+		--statusbar:SetStatusBarColor(0, 0.8, 0)
+		--statusbar:CreateBackdrop("Overlay")
 
-		statusbar.rankText:ClearAllPoints()
-		statusbar.rankText:SetPoint("CENTER")
-	end
+		--statusbar.rankText:ClearAllPoints()
+		--statusbar.rankText:SetPoint("CENTER")
+	--end
 
 	-- Bottom Tabs
 	for i = 1, 5 do
@@ -227,5 +227,4 @@ local function LoadSkin()
 	_G["SpellBookFrameTabButton1"]:ClearAllPoints()
 	_G["SpellBookFrameTabButton1"]:SetPoint("TOPLEFT", _G["SpellBookFrame"], "BOTTOMLEFT", -5, 1)
 end
-
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

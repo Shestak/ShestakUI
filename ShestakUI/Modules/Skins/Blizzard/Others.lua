@@ -9,7 +9,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 	if IsAddOnLoaded("Skinner") or IsAddOnLoaded("Aurora") then return end
 
 	-- Stuff not in Blizzard load-on-demand
-	if addon == "ShestakUI" then
+	if addon == "ViksUI" then
 		-- Skin checkButtons
 		local checkButtons = {
 			"LFDRoleCheckPopupRoleButtonTank",
@@ -253,11 +253,11 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["ReadyCheckFrameText"]:SetParent(_G["ReadyCheckFrame"])
 		_G["ReadyCheckFrameText"]:ClearAllPoints()
 		_G["ReadyCheckFrameText"]:SetPoint("TOP", 0, -12)
-		_G["ChannelPulloutTabText"]:ClearAllPoints()
-		_G["ChannelPulloutTabText"]:SetPoint("TOP", _G["ChannelPulloutTab"], "TOP", 0, -6)
-		_G["ChannelPulloutTab"]:SetHeight(20)
-		_G["ChannelPullout"]:ClearAllPoints()
-		_G["ChannelPullout"]:SetPoint("TOP", _G["ChannelPulloutTab"], "BOTTOM", 0, -3)
+		--_G["ChannelPulloutTabText"]:ClearAllPoints()
+		--_G["ChannelPulloutTabText"]:SetPoint("TOP", _G["ChannelPulloutTab"], "TOP", 0, -6)
+		--_G["ChannelPulloutTab"]:SetHeight(20)
+		--_G["ChannelPullout"]:ClearAllPoints()
+		--_G["ChannelPullout"]:SetPoint("TOP", _G["ChannelPulloutTab"], "BOTTOM", 0, -3)
 
 		-- Others
 		for i = 1, 10 do
@@ -268,17 +268,17 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["ReadyCheckFrame"]:HookScript("OnShow", function(self) if UnitIsUnit("player", self.initiator) then self:Hide() end end)
 		_G["StackSplitFrame"]:GetRegions():Hide()
 		_G["StackSplitFrame"]:SetFrameStrata("TOOLTIP")
-		_G["ChannelPulloutTabLeft"]:SetTexture(nil)
-		_G["ChannelPulloutTabMiddle"]:SetTexture(nil)
-		_G["ChannelPulloutTabRight"]:SetTexture(nil)
+		--_G["ChannelPulloutTabLeft"]:SetTexture(nil)
+		--_G["ChannelPulloutTabMiddle"]:SetTexture(nil)
+		--_G["ChannelPulloutTabRight"]:SetTexture(nil)
 		_G["StaticPopup1CloseButton"]:HookScript("OnShow", function(self)
 			self:StripTextures(true)
 			T.SkinCloseButton(self, nil, "-")
 		end)
-		T.SkinCloseButton(_G["ChannelPulloutCloseButton"])
+		--T.SkinCloseButton(_G["ChannelPulloutCloseButton"])
 		T.SkinCloseButton(_G["RolePollPopupCloseButton"])
 		T.SkinCloseButton(_G["ItemRefCloseButton"])
-		T.SkinCloseButton(_G["BNToastFrameCloseButton"])
+		--T.SkinCloseButton(_G["BNToastFrameCloseButton"])
 		if C.skins.blizzard_frames == true then
 			-- Social Browser frame
 			SocialBrowserFrame:StripTextures()

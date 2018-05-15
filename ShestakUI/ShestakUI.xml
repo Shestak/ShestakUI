@@ -24,7 +24,7 @@
 	<Script file="Libs\LitePanels\LitePanels.lua"/>
 	<Script file="Libs\LitePanels\Layout.lua"/>
 	<Script file="Config\DataText.lua"/>
-	<Script file="Libs\LiteStats\LiteStats.lua"/>
+	<!--BETA Script file="Libs\LiteStats\LiteStats.lua"/-->
 	<Script file="Modules\UnitFrames\Colors.lua"/>
 
 	<Script file="Config\Filters\Announcements.lua"/>
@@ -170,7 +170,7 @@
 	<Script file="Modules\Cooldowns\DiminishingCD.lua"/>
 	<Script file="Modules\Cooldowns\EnemyCD.lua"/>
 	<Script file="Modules\Cooldowns\PulseCD.lua"/>
-	<Script file="Modules\Cooldowns\RaidCD.lua"/>
+	<!-- BETA Script file="Modules\Cooldowns\RaidCD.lua"/-->
 
 	<Script file="Modules\DataText\Battleground.lua"/>
 
@@ -243,7 +243,6 @@
 	<Script file="Modules\Tooltip\SpellID.lua"/>
 	<Script file="Modules\Tooltip\ItemCount.lua"/>
 	<Script file="Modules\Tooltip\UnitRole.lua"/>
-	<Script file="Modules\Tooltip\CheckItemTransmogrify.lua"/>
 	<Script file="Modules\Tooltip\InstanceLockCompare.lua"/>
 
 	<Script file="Core\Movers.lua"/>

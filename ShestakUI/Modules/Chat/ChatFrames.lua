@@ -91,10 +91,10 @@ local function SetChatStyle(frame)
 
 	-- Kills off the new method of handling the Chat Frame scroll buttons as well as the resize button
 	-- Note: This also needs to include the actual frame textures for the ButtonFrame onHover
-	_G[format("ChatFrame%sButtonFrameUpButton", id)]:Kill()
-	_G[format("ChatFrame%sButtonFrameDownButton", id)]:Kill()
-	_G[format("ChatFrame%sButtonFrameBottomButton", id)]:Kill()
-	_G[format("ChatFrame%sButtonFrameMinimizeButton", id)]:Kill()
+	--BETA _G[format("ChatFrame%sButtonFrameUpButton", id)]:Kill()
+	--BETA _G[format("ChatFrame%sButtonFrameDownButton", id)]:Kill()
+	--BETA _G[format("ChatFrame%sButtonFrameBottomButton", id)]:Kill()
+	--BETA _G[format("ChatFrame%sButtonFrameMinimizeButton", id)]:Kill()
 	_G[format("ChatFrame%sButtonFrame", id)]:Kill()
 
 	-- Kills off the retarded new circle around the editbox

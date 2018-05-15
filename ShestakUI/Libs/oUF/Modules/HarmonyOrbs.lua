@@ -3,7 +3,7 @@ if select(2, UnitClass('player')) ~= 'MONK' then return end
 local parent, ns = ...
 local oUF = ns.oUF
 
-local SPELL_POWER_CHI = SPELL_POWER_CHI
+local SPELL_POWER_CHI = Enum.PowerType.Chi or 12
 
 local function Update(self, event, unit, powerType)
 	if(self.unit ~= unit and (powerType and (powerType ~= 'CHI' and powerType ~= 'DARK_FORCE'))) then return end
@@ -14,33 +14,33 @@ local function Update(self, event, unit, powerType)
 		hb:PreUpdate(unit)
 	end
 
-	local cur = UnitPower("player", SPELL_POWER_CHI)
-	local max = UnitPowerMax("player", SPELL_POWER_CHI)
+	local light = UnitPower("player", SPELL_POWER_CHI)
+	local maxChi = UnitPowerMax("player", SPELL_POWER_CHI)
 	local spacing = select(4, hb[5]:GetPoint())
-	local barWidth = hb:GetWidth()
-	local lastBar = 0
+	local w = hb:GetWidth()
+	local s = 0
 
-	if hb.max ~= max then
-		if max == 5 then
+	if hb.maxChi ~= maxChi then
+		if maxChi == 5 then
 			hb[6]:Hide()
 		else
 			hb[6]:Show()
 		end
 
-		for i = 1, max do
-			if i ~= max then
-				hb[i]:SetWidth(barWidth / max - spacing)
-				lastBar = lastBar + (barWidth / max)
+		for i = 1, maxChi do
+			if i ~= maxChi then
+				hb[i]:SetWidth(w / maxChi - spacing)
+				s = s + (w / maxChi)
 			else
-				hb[i]:SetWidth(barWidth - lastBar)
+				hb[i]:SetWidth(w - s)
 			end
 		end
 
-		hb.max = max
+		hb.maxChi = maxChi
 	end
 
-	for i = 1, max do
-		if i <= cur then
+	for i = 1, maxChi do
+		if i <= light then
 			hb[i]:SetAlpha(1)
 		else
 			hb[i]:SetAlpha(0.2)
@@ -48,7 +48,7 @@ local function Update(self, event, unit, powerType)
 	end
 
 	if(hb.PostUpdate) then
-		return hb:PostUpdate(cur)
+		return hb:PostUpdate(light)
 	end
 end
 
@@ -80,7 +80,7 @@ local function Enable(self, unit)
 		hb.__owner = self
 		hb.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent("UNIT_POWER", Path)
+		self:RegisterEvent("UNIT_POWER_UPDATE", Path)
 		self:RegisterEvent("UNIT_DISPLAYPOWER", Path)
 		self:RegisterEvent("UNIT_MAXPOWER", Path)
 
@@ -98,7 +98,7 @@ end
 local function Disable(self)
 	local hb = self.HarmonyBar
 	if(hb) then
-		self:UnregisterEvent("UNIT_POWER", Path)
+		self:UnregisterEvent("UNIT_POWER_UPDATE", Path)
 		self:UnregisterEvent("UNIT_DISPLAYPOWER", Path)
 		self:UnregisterEvent("UNIT_MAXPOWER", Path)
 		hb.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")

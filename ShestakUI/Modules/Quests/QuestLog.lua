@@ -3,6 +3,7 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Quest level
 ----------------------------------------------------------------------------------------
+--[[ BETA
 hooksecurefunc("QuestLogQuests_Update", function()
 	for i, button in pairs(QuestMapFrame.QuestsFrame.Contents.Titles) do
 		if button:IsShown() then
@@ -20,7 +21,7 @@ hooksecurefunc("QuestLogQuests_Update", function()
 		end
 	end
 end)
-
+]]--
 ----------------------------------------------------------------------------------------
 --	Ctrl+Click to abandon a quest or Alt+Click to share a quest(by Suicidal Katt)
 ----------------------------------------------------------------------------------------
