@@ -502,11 +502,11 @@ if C["filger_spells"] and C["filger_spells"][T.class] then
 		for _, v in ipairs(jdx) do
 			table.remove(data, v)
 		end
-
-		if #data == 0 then
-			print("|cffff0000WARNING: section ["..data.Name.."] is empty! Report this to Shestak.|r")
-			table.insert(idx, i)
-		end
+		-- BETA Disable this to stop spam due to empty spell list
+		--BETA if #data == 0 then
+			--BETA print("|cffff0000WARNING: section ["..data.Name.."] is empty! Report this to Shestak.|r")
+			--BETA table.insert(idx, i)
+		--BETA end
 	end
 
 	for _, v in ipairs(idx) do

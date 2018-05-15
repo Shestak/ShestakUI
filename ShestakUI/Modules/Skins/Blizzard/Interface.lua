@@ -203,15 +203,15 @@ local function LoadSkin()
 	end
 
 	local sliders = {
-		"InterfaceOptionsCombatPanelSpellAlertOpacitySlider",
-		"CompactUnitFrameProfilesGeneralOptionsFrameHeightSlider",
-		"CompactUnitFrameProfilesGeneralOptionsFrameWidthSlider",
+		--"InterfaceOptionsCombatPanelSpellAlertOpacitySlider",
+		--"CompactUnitFrameProfilesGeneralOptionsFrameHeightSlider",
+		--"CompactUnitFrameProfilesGeneralOptionsFrameWidthSlider",
 		"InterfaceOptionsBattlenetPanelToastDurationSlider",
 		"InterfaceOptionsCameraPanelMaxDistanceSlider",
-		"InterfaceOptionsCameraPanelFollowSpeedSlider",
-		"InterfaceOptionsMousePanelMouseSensitivitySlider",
-		"InterfaceOptionsMousePanelMouseLookSpeedSlider",
-		"InterfaceOptionsAccessibilityPanelColorblindStrengthSlider",
+		--"InterfaceOptionsCameraPanelFollowSpeedSlider",
+		--"InterfaceOptionsMousePanelMouseSensitivitySlider",
+		--"InterfaceOptionsMousePanelMouseLookSpeedSlider",
+		--"InterfaceOptionsAccessibilityPanelColorblindStrengthSlider",
 		"OpacityFrameSlider"
 	}
 

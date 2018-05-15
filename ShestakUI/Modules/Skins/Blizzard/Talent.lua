@@ -5,6 +5,7 @@ if C.skins.blizzard_frames ~= true then return end
 --	TalentUI skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
+	local C_SpecializationInfo_GetSpellsDisplay = C_SpecializationInfo.GetSpellsDisplay -- Temp fix?
 	local buttons = {
 		"PlayerTalentFramePetSpecializationLearnButton",
 		"PlayerTalentFrameSpecializationLearnButton"
@@ -96,6 +97,7 @@ local function LoadSkin()
 	hooksecurefunc("PlayerTalentFrame_UpdateSpecFrame", function(self, spec)
 		local playerTalentSpec = GetSpecialization(nil, self.isPet, PlayerSpecTab2:GetChecked() and 2 or 1)
 		local shownSpec = spec or playerTalentSpec or 1
+		local numSpecs = GetNumSpecializations(nil, self.isPet);
 
 		local id, _, _, icon = GetSpecializationInfo(shownSpec, nil, self.isPet)
 		local scrollChild = self.spellsScroll.child
@@ -103,11 +105,13 @@ local function LoadSkin()
 		scrollChild.specIcon:SetTexture(icon)
 
 		local index = 1
+		local bonusesIncrement = 1;
 		local bonuses
 		if self.isPet then
-			bonuses = {GetSpecializationSpells(shownSpec, nil, self.isPet)}
+			bonuses = {GetSpecializationSpells(shownSpec, nil, self.isPet, true)}
+			bonusesIncrement = 2;
 		else
-			bonuses = SPEC_SPELLS_DISPLAY[id]
+			bonuses = C_SpecializationInfo_GetSpellsDisplay(id)
 		end
 		if bonuses then
 			for i = 1, #bonuses, 2 do
@@ -256,6 +260,7 @@ local function LoadSkin()
 	end)
 
 	-- PvP Talents
+	--[[ BETA  // REMOVE?
 	PlayerTalentFramePVPTalents.XPBar:StripTextures()
 	PlayerTalentFramePVPTalents.XPBar.Bar:CreateBackdrop("Default")
 	PlayerTalentFramePVPTalents.XPBar.PrestigeReward.Accept:SkinButton()
@@ -354,6 +359,7 @@ local function LoadSkin()
 	PVPTalentPrestigeLevelDialog.Accept:SkinButton()
 	PVPTalentPrestigeLevelDialog.Cancel:SkinButton()
 	T.SkinCloseButton(PVPTalentPrestigeLevelDialog.CloseButton)
+	]]-- 
 end
 
 T.SkinFuncs["Blizzard_TalentUI"] = LoadSkin

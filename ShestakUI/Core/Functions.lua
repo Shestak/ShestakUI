@@ -945,7 +945,10 @@ T.UpdateManaLevel = function(self, elapsed)
 	self.elapsed = 0
 
 	if UnitPowerType("player") == 0 then
-		local percMana = UnitMana("player") / UnitManaMax("player") * 100
+		local pType = UnitPowerType("player")
+		local min = UnitPower("player", pType)
+		local UnitPowerMax = UnitPowerMax
+		local percMana = min / UnitPowerMax("player", pType) * 100
 		if percMana <= 20 and not UnitIsDeadOrGhost("player") then
 			self.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
 			Flash(self)
@@ -1025,82 +1028,7 @@ T.UpdatePvPStatus = function(self, elapsed)
 	end
 end
 
-T.UpdateComboPoint = function(self, event, unit)
-	if powerType and powerType ~= 'COMBO_POINTS' then return end
-	if unit == "pet" then return end
 
-	local cpoints = self.CPoints
-	local cp = (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and UnitPower("vehicle", 4) or UnitPower("player", 4)
-	local cpOld = (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and GetComboPoints("vehicle", "target") or GetComboPoints("player", "target")
-	if cpOld and cp and (cpOld > cp) then cp = cpOld end
-
-	local numMax
-	if (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) then
-		numMax = MAX_COMBO_POINTS
-	else
-		numMax = UnitPowerMax("player", SPELL_POWER_COMBO_POINTS)
-		if numMax == 0 then
-			numMax = MAX_COMBO_POINTS
-		end
-	end
-
-	local spacing = select(4, cpoints[5]:GetPoint())
-	local w = cpoints:GetWidth()
-	local s = 0
-
-	if cpoints.numMax ~= numMax then
-		if numMax == 10 then
-			cpoints[6]:Show()
-			cpoints[7]:Show()
-			cpoints[8]:Show()
-			cpoints[9]:Show()
-			cpoints[10]:Show()
-		elseif numMax == 6 then
-			cpoints[6]:Show()
-			cpoints[7]:Hide()
-			cpoints[8]:Hide()
-			cpoints[9]:Hide()
-			cpoints[10]:Hide()
-		else
-			cpoints[6]:Hide()
-			cpoints[7]:Hide()
-			cpoints[8]:Hide()
-			cpoints[9]:Hide()
-			cpoints[10]:Hide()
-		end
-
-		for i = 1, numMax do
-			if i ~= numMax then
-				cpoints[i]:SetWidth(w / numMax - spacing)
-				s = s + (w / numMax)
-			else
-				cpoints[i]:SetWidth(w - s)
-			end
-		end
-
-		cpoints.numMax = numMax
-	end
-
-	for i = 1, numMax do
-		if i <= cp then
-			cpoints[i]:SetAlpha(1)
-		else
-			cpoints[i]:SetAlpha(0.2)
-		end
-	end
-
-	if T.class == "DRUID" and C.unitframe_class_bar.combo_always ~= true then
-		local form = GetShapeshiftFormID()
-
-		if form == CAT_FORM or ((UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and cp > 0) then
-			cpoints:Show()
-			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
-		else
-			cpoints:Hide()
-			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
-		end
-	end
-end
 
 T.UpdateComboPointOld = function(self, event, unit)
 	if powerType and powerType ~= 'COMBO_POINTS' then return end
@@ -1396,6 +1324,7 @@ local FormatTime = function(s)
 	return format("%.1f", s), (s * 100 - floor(s * 100)) / 100
 end
 
+--[[ BETA
 local CreateAuraTimer = function(self, elapsed)
 	if self.timeLeft then
 		self.elapsed = (self.elapsed or 0) + elapsed
@@ -1418,6 +1347,7 @@ local CreateAuraTimer = function(self, elapsed)
 		end
 	end
 end
+]]--
 
 T.AuraTrackerTime = function(self, elapsed)
 	if self.active then

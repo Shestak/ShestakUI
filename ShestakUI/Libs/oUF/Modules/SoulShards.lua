@@ -44,7 +44,7 @@ local function Enable(self, unit)
 		ss.__owner = self
 		ss.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent('UNIT_POWER', Path)
+		self:RegisterEvent('UNIT_POWER_UPDATE', Path)
 		self:RegisterEvent('UNIT_DISPLAYPOWER', Path)
 
 		return true
@@ -54,7 +54,7 @@ end
 local function Disable(self)
 	local ss = self.SoulShards
 	if(ss) then
-		self:UnregisterEvent('UNIT_POWER', Path)
+		self:UnregisterEvent('UNIT_POWER_UPDATE', Path)
 		self:UnregisterEvent('UNIT_DISPLAYPOWER', Path)
 	end
 end

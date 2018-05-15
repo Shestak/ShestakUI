@@ -704,6 +704,7 @@ local function Shared(self, unit)
 	end
 
 	-- Counter bar
+	--[[ BETA
 	if unit == "player" or unit == "pet" then
 		self.CounterBar = CreateFrame("StatusBar", self:GetName().."_CounterBar", self)
 		self.CounterBar:CreateBackdrop("Default")
@@ -730,6 +731,7 @@ local function Shared(self, unit)
 			self.CounterBar.Text:SetText(floor(value))
 		end)
 	end
+	]]--
 
 	if unit == "pet" or unit == "targettarget" or unit == "focus" or unit == "focustarget" then
 		self.Debuffs = CreateFrame("Frame", self:GetName().."Debuffs", self)
@@ -828,7 +830,7 @@ local function Shared(self, unit)
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
 
 			-- Rogue/Druid Combo bar
-			if C.unitframe_class_bar.combo == true and (C.unitframe_class_bar.combo_old == true or (T.class ~= "DRUID" and T.class ~= "ROGUE")) then
+			if C.unitframe_class_bar.combo == true and (C.unitframe_class_bar.combo_old == true and (T.class ~= "DRUID" and T.class ~= "ROGUE")) then
 				self.CPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)
 				self.CPoints:CreateBackdrop("Default")
 				self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)

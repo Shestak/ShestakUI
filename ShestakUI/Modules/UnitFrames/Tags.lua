@@ -41,7 +41,7 @@ oUF.Tags.Events["DiffColor"] = "UNIT_LEVEL"
 oUF.Tags.Methods["PetNameColor"] = function(unit)
 	return string.format("|cff%02x%02x%02x", T.color.r * 255, T.color.g * 255, T.color.b * 255)
 end
-oUF.Tags.Events["PetNameColor"] = "UNIT_POWER"
+oUF.Tags.Events["PetNameColor"] = "UNIT_POWER_UPDATE"
 
 oUF.Tags.Methods["GetNameColor"] = function(unit)
 	local reaction = UnitReaction(unit, "player")
@@ -55,7 +55,7 @@ oUF.Tags.Methods["GetNameColor"] = function(unit)
 		return string.format("|cff%02x%02x%02x", r * 255, g * 255, b * 255)
 	end
 end
-oUF.Tags.Events["GetNameColor"] = "UNIT_POWER UNIT_FLAGS"
+oUF.Tags.Events["GetNameColor"] = "UNIT_POWER_UPDATE UNIT_FLAGS"
 
 oUF.Tags.Methods["NameArena"] = function(unit)
 	local name = UnitName(unit)
@@ -107,7 +107,7 @@ oUF.Tags.Methods["AltPower"] = function(unit)
 		return ("%s%%"):format(math.floor(min / max * 100 + 0.5))
 	end
 end
-oUF.Tags.Events["AltPower"] = "UNIT_POWER"
+oUF.Tags.Events["AltPower"] = "UNIT_POWER_UPDATE"
 
 oUF.Tags.Methods["IncHeal"] = function(unit)
 	local incheal = UnitGetIncomingHeals(unit) or 0
@@ -150,7 +150,7 @@ oUF.Tags.Methods["NameplateNameColor"] = function(unit)
 		return string.format("|cff%02x%02x%02x", r * 255, g * 255, b * 255)
 	end
 end
-oUF.Tags.Events["NameplateNameColor"] = "UNIT_POWER UNIT_FLAGS"
+oUF.Tags.Events["NameplateNameColor"] = "UNIT_POWER_UPDATE UNIT_FLAGS"
 
 oUF.Tags.Methods["NameplateHealth"] = function(unit)
 	local hp = UnitHealth(unit)

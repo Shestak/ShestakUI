@@ -320,7 +320,7 @@ local function OnEvent(self, event, subevent, ...)
 			xCT3:AddMessage("-"..LEAVING_COMBAT, 0.1, 1, 0.1)
 	elseif event == "PLAYER_REGEN_DISABLED" and COMBAT_TEXT_SHOW_COMBAT_STATE == "1" then
 			xCT3:AddMessage("+"..ENTERING_COMBAT, 1, 0.1, 0.1)
-	elseif event == "UNIT_COMBO_POINTS" and COMBAT_TEXT_SHOW_COMBO_POINTS == "1" then
+	elseif event == "UNIT_POWER_FREQUENT" and COMBAT_TEXT_SHOW_COMBO_POINTS == "1" then
 		if subevent == ct.unit then
 			local cp = GetComboPoints(ct.unit, "target")
 			if cp > 0 then
@@ -444,7 +444,7 @@ xCT:RegisterEvent("UNIT_HEALTH")
 xCT:RegisterEvent("UNIT_MANA")
 xCT:RegisterEvent("PLAYER_REGEN_DISABLED")
 xCT:RegisterEvent("PLAYER_REGEN_ENABLED")
-xCT:RegisterEvent("UNIT_COMBO_POINTS")
+xCT:RegisterEvent("UNIT_POWER_FREQUENT")
 if C.combattext.dk_runes and T.class == "DEATHKNIGHT" then
 	xCT:RegisterEvent("RUNE_POWER_UPDATE")
 end

@@ -166,30 +166,30 @@ local function LoadSkin()
 	end
 
 	local sliders = {
-		"Graphics_Quality",
-		"Graphics_ViewDistanceSlider",
-		"Graphics_EnvironmentalDetailSlider",
-		"Graphics_GroundClutterSlider",
-		"Advanced_UIScaleSlider",
-		"Advanced_MaxFPSSlider",
-		"Advanced_MaxFPSBKSlider",
-		"Advanced_GammaSlider",
-		"Advanced_RenderScaleSlider",
-		"AudioOptionsSoundPanelSoundQuality",
-		"AudioOptionsSoundPanelMasterVolume",
-		"AudioOptionsSoundPanelSoundVolume",
-		"AudioOptionsSoundPanelMusicVolume",
-		"AudioOptionsSoundPanelAmbienceVolume",
-		"AudioOptionsVoicePanelMicrophoneVolume",
-		"AudioOptionsVoicePanelSpeakerVolume",
-		"AudioOptionsVoicePanelSoundFade",
-		"AudioOptionsVoicePanelMusicFade",
-		"AudioOptionsVoicePanelAmbienceFade",
-		"AudioOptionsSoundPanelDialogVolume",
-		"RaidGraphics_Quality",
-		"RaidGraphics_ViewDistanceSlider",
-		"RaidGraphics_EnvironmentalDetailSlider",
-		"RaidGraphics_GroundClutterSlider"
+		--"Graphics_Quality",
+		--"Graphics_ViewDistanceSlider",
+		--"Graphics_EnvironmentalDetailSlider",
+		--"Graphics_GroundClutterSlider",
+		--"Advanced_UIScaleSlider",
+		--"Advanced_MaxFPSSlider",
+		--"Advanced_MaxFPSBKSlider",
+		--"Advanced_GammaSlider",
+		--"Advanced_RenderScaleSlider",
+		--"AudioOptionsSoundPanelSoundQuality",
+		--"AudioOptionsSoundPanelMasterVolume",
+		--"AudioOptionsSoundPanelSoundVolume",
+		--"AudioOptionsSoundPanelMusicVolume",
+		--"AudioOptionsSoundPanelAmbienceVolume",
+		--"AudioOptionsVoicePanelMicrophoneVolume",
+		--"AudioOptionsVoicePanelSpeakerVolume",
+		--"AudioOptionsVoicePanelSoundFade",
+		--"AudioOptionsVoicePanelMusicFade",
+		--"AudioOptionsVoicePanelAmbienceFade",
+		--"AudioOptionsSoundPanelDialogVolume",
+		--"RaidGraphics_Quality",
+		--"RaidGraphics_ViewDistanceSlider",
+		--"RaidGraphics_EnvironmentalDetailSlider",
+		--"RaidGraphics_GroundClutterSlider"
 	}
 
 	for i = 1, getn(sliders) do
@@ -203,10 +203,10 @@ local function LoadSkin()
 	_G["Graphics_Quality"].SetBackdrop = T.dummy
 	_G["RaidGraphics_Quality"].SetBackdrop = T.dummy
 
-	LoopbackVUMeter:CreateBackdrop("Overlay")
-	LoopbackVUMeter:SetFrameLevel(LoopbackVUMeter:GetFrameLevel() + 1)
-	LoopbackVUMeter.backdrop:SetPoint("TOPLEFT", -4, 4)
-	LoopbackVUMeter.backdrop:SetPoint("BOTTOMRIGHT", 4, -4)
+	--LoopbackVUMeter:CreateBackdrop("Overlay")
+	--LoopbackVUMeter:SetFrameLevel(LoopbackVUMeter:GetFrameLevel() + 1)
+	--LoopbackVUMeter.backdrop:SetPoint("TOPLEFT", -4, 4)
+	--LoopbackVUMeter.backdrop:SetPoint("BOTTOMRIGHT", 4, -4)
 
 	_G["VideoOptionsFrameDefaults"]:ClearAllPoints()
 	_G["VideoOptionsFrameDefaults"]:SetPoint("TOPLEFT", _G["VideoOptionsFrameCategoryFrame"], "BOTTOMLEFT", 0, -14)
@@ -216,10 +216,10 @@ local function LoadSkin()
 	_G["VideoOptionsFrameOkay"]:SetPoint("RIGHT", _G["VideoOptionsFrameCancel"], "LEFT", -4, 0)
 	_G["VideoOptionsFrameApply"]:ClearAllPoints()
 	_G["VideoOptionsFrameApply"]:SetPoint("RIGHT", _G["VideoOptionsFrameOkay"], "LEFT", -4, 0)
-	_G["AudioOptionsVoicePanelPushToTalkSound"]:ClearAllPoints()
-	_G["AudioOptionsVoicePanelPushToTalkSound"]:SetPoint("BOTTOMLEFT", _G["AudioOptionsVoicePanelBinding"], "BOTTOMLEFT", 0, 0)
-	_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:ClearAllPoints()
-	_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:SetPoint("CENTER", _G["AudioOptionsVoicePanelBinding"], "CENTER", 0, -10)
+	--_G["AudioOptionsVoicePanelPushToTalkSound"]:ClearAllPoints()
+	--_G["AudioOptionsVoicePanelPushToTalkSound"]:SetPoint("BOTTOMLEFT", _G["AudioOptionsVoicePanelBinding"], "BOTTOMLEFT", 0, 0)
+	--_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:ClearAllPoints()
+	--_G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:SetPoint("CENTER", _G["AudioOptionsVoicePanelBinding"], "CENTER", 0, -10)
 
 	GraphicsButton:SetPoint("BOTTOMLEFT", "Graphics_", "TOPLEFT", 0, 3)
 	GraphicsButton:SkinButton(true)
@@ -228,5 +228,6 @@ local function LoadSkin()
 	T.SkinDropDownBox(InterfaceOptionsLanguagesPanelAudioLocaleDropDown, 250)
 	T.SkinDropDownBox(InterfaceOptionsLanguagesPanelLocaleDropDown, 250)
 end
+
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

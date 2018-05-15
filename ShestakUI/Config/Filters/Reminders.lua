@@ -8,10 +8,10 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.reminder.raid_buffs_enable == true then
 	T.ReminderBuffs = {
 		Flask = {
-			188033,	-- Flask of the Seventh Demon (Agility)
-			188034,	-- Flask of the Countless Armies (Strenght)
-			188035,	-- Flask of Ten Thousand Scars (Stamina)
-			188031,	-- Flask of the Whispered Pact (Intellect)
+			--BETA 188033,	-- Flask of the Seventh Demon (Agility)
+			--BETA 188034,	-- Flask of the Countless Armies (Strenght)
+			--BETA 188035,	-- Flask of Ten Thousand Scars (Stamina)
+			--BETA 188031,	-- Flask of the Whispered Pact (Intellect)
 		},
 		BattleElixir = {
 			--spellID,	-- Spell name
@@ -21,7 +21,7 @@ if C.reminder.raid_buffs_enable == true then
 			--spellID,	-- Spell name
 		},
 		Food = {
-			104280,	-- Well Fed
+			--BETA 104280,	-- Well Fed
 		},
 	}
 end
@@ -56,8 +56,8 @@ if C.reminder.solo_buffs_enable == true then
 		ROGUE = {
 			[1] = {	-- Lethal Poisons group
 				["spells"] = {
-					2823,	-- Deadly Poison
-					8679,	-- Wound Poison
+					--BETA 2823,	-- Deadly Poison
+					--BETA 8679,	-- Wound Poison
 				},
 				["spec"] = 1,		-- Only Assassination have poisen now
 				["combat"] = true,
@@ -66,8 +66,8 @@ if C.reminder.solo_buffs_enable == true then
 			},
 			[2] = {	-- Non-Lethal Poisons group
 				["spells"] = {
-					3408,	-- Crippling Poison
-					108211,	-- Leeching Poison
+					--BETA 3408,	-- Crippling Poison
+					--BETA 108211,	-- Leeching Poison
 				},
 				["spec"] = 1,		-- Only Assassination have poisen now
 				["combat"] = true,
