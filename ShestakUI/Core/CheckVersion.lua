@@ -28,7 +28,7 @@ frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:RegisterEvent("GROUP_ROSTER_UPDATE")
 frame:RegisterEvent("CHAT_MSG_ADDON")
 frame:SetScript("OnEvent", check)
-RegisterAddonMessagePrefix("ShestakUIVersion")
+C_ChatInfo.RegisterAddonMessagePrefix("ShestakUIVersion")
 
 ----------------------------------------------------------------------------------------
 --	Whisper UI version
