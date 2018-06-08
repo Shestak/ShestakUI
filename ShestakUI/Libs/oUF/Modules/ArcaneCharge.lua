@@ -57,7 +57,7 @@ local function Enable(self)
 		ac.__owner = self
 		ac.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent('UNIT_POWER', Path)
+		self:RegisterEvent('UNIT_POWER_UPDATE', Path)
 
 		ac.Visibility = CreateFrame("Frame", nil, ac)
 		ac.Visibility:RegisterEvent("PLAYER_TALENT_UPDATE")
@@ -71,7 +71,7 @@ end
 local function Disable(self)
 	local ac = self.ArcaneCharge
 	if(ac) then
-		self:UnregisterEvent('UNIT_POWER', Path)
+		self:UnregisterEvent('UNIT_POWER_UPDATE', Path)
 		ac.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")
 		ac.Visibility:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	end
