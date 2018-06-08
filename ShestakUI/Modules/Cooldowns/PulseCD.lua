@@ -135,7 +135,7 @@ function frame:ADDON_LOADED(addon)
 end
 frame:RegisterEvent("ADDON_LOADED")
 
-function frame:UNIT_SPELLCAST_SUCCEEDED(unit, spell, _, _, spellID)
+function frame:UNIT_SPELLCAST_SUCCEEDED(unit, spell, spellID)
 	if unit == "player" then
 		watching[spellID] = {GetTime(), "spell", spellID}
 		self:SetScript("OnUpdate", OnUpdate)
