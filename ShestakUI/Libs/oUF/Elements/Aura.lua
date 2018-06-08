@@ -66,7 +66,7 @@ local createAuraIcon = function(icons, index)
 	return button
 end
 
-local customFilter = function(icons, unit, icon, name, rank, texture, count, dtype, duration, timeLeft, caster)
+local customFilter = function(icons, unit, icon, name, texture, count, dtype, duration, timeLeft, caster)
 	local isPlayer
 
 	if(caster == 'player' or caster == 'vehicle') then
@@ -81,7 +81,7 @@ local customFilter = function(icons, unit, icon, name, rank, texture, count, dty
 end
 
 local updateIcon = function(unit, icons, index, offset, filter, isDebuff, visible)
-	local name, rank, texture, count, dispelType, duration, expiration, caster, isStealable,
+	local name, texture, count, dispelType, duration, expiration, caster, isStealable,
 		nameplateShowSelf, spellID, canApply, isBossDebuff, casterIsPlayer, nameplateShowAll,
 		timeMod, effect1, effect2, effect3 = UnitAura(unit, index, filter)
 
@@ -93,7 +93,7 @@ local updateIcon = function(unit, icons, index, offset, filter, isDebuff, visibl
 			icon = (icons.CreateIcon or createAuraIcon) (icons, n)
 		end
 
-		local show = (icons.CustomFilter or customFilter) (icons, unit, icon, name, rank, texture,
+		local show = (icons.CustomFilter or customFilter) (icons, unit, icon, name, texture,
 			count, dispelType, duration, expiration, caster, isStealable, nameplateShowSelf, spellID,
 			canApply, isBossDebuff, casterIsPlayer, nameplateShowAll,timeMod, effect1, effect2, effect3)
 

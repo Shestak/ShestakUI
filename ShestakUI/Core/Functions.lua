@@ -945,7 +945,7 @@ T.UpdateManaLevel = function(self, elapsed)
 	self.elapsed = 0
 
 	if UnitPowerType("player") == 0 then
-		local percMana = UnitMana("player") / UnitManaMax("player") * 100
+		local percMana = UnitPower("player", SPELL_POWER_MANA) / UnitPowerMax("player", SPELL_POWER_MANA) * 100
 		if percMana <= 20 and not UnitIsDeadOrGhost("player") then
 			self.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
 			Flash(self)
@@ -1103,100 +1103,100 @@ T.UpdateComboPoint = function(self, event, unit)
 end
 
 T.UpdateComboPointOld = function(self, event, unit)
-	if powerType and powerType ~= 'COMBO_POINTS' then return end
-	if unit == "pet" then return end
+	--BETA if powerType and powerType ~= 'COMBO_POINTS' then return end
+	-- if unit == "pet" then return end
 
-	local cpoints = self.CPoints
-	local cp
-	local numMax
+	-- local cpoints = self.CPoints
+	-- local cp
+	-- local numMax
 
-	if UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle") then
-		cp = GetComboPoints("vehicle", "target")
-		numMax = MAX_COMBO_POINTS
-	else
-		cp = GetComboPoints("player", "target")
-		numMax = UnitPowerMax("player", SPELL_POWER_COMBO_POINTS)
-		if numMax == 0 then
-			numMax = MAX_COMBO_POINTS
-		end
-	end
+	-- if UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle") then
+		-- cp = GetComboPoints("vehicle", "target")
+		-- numMax = MAX_COMBO_POINTS
+	-- else
+		-- cp = GetComboPoints("player", "target")
+		-- numMax = UnitPowerMax("player", SPELL_POWER_COMBO_POINTS)
+		-- if numMax == 0 then
+			-- numMax = MAX_COMBO_POINTS
+		-- end
+	-- end
 
-	local spacing = select(4, cpoints[5]:GetPoint())
-	local w = cpoints:GetWidth()
-	local s = 0
+	-- local spacing = select(4, cpoints[5]:GetPoint())
+	-- local w = cpoints:GetWidth()
+	-- local s = 0
 
-	if cpoints.numMax ~= numMax then
-		if numMax == 10 then
-			cpoints[6]:Show()
-			cpoints[7]:Show()
-			cpoints[8]:Show()
-			cpoints[9]:Show()
-			cpoints[10]:Show()
-		elseif numMax == 6 then
-			cpoints[6]:Show()
-			cpoints[7]:Hide()
-			cpoints[8]:Hide()
-			cpoints[9]:Hide()
-			cpoints[10]:Hide()
-		else
-			cpoints[6]:Hide()
-			cpoints[7]:Hide()
-			cpoints[8]:Hide()
-			cpoints[9]:Hide()
-			cpoints[10]:Hide()
-		end
+	-- if cpoints.numMax ~= numMax then
+		-- if numMax == 10 then
+			-- cpoints[6]:Show()
+			-- cpoints[7]:Show()
+			-- cpoints[8]:Show()
+			-- cpoints[9]:Show()
+			-- cpoints[10]:Show()
+		-- elseif numMax == 6 then
+			-- cpoints[6]:Show()
+			-- cpoints[7]:Hide()
+			-- cpoints[8]:Hide()
+			-- cpoints[9]:Hide()
+			-- cpoints[10]:Hide()
+		-- else
+			-- cpoints[6]:Hide()
+			-- cpoints[7]:Hide()
+			-- cpoints[8]:Hide()
+			-- cpoints[9]:Hide()
+			-- cpoints[10]:Hide()
+		-- end
 
-		for i = 1, numMax do
-			if i ~= numMax then
-				cpoints[i]:SetWidth(w / numMax - spacing)
-				s = s + (w / numMax)
-			else
-				cpoints[i]:SetWidth(w - s)
-			end
-		end
+		-- for i = 1, numMax do
+			-- if i ~= numMax then
+				-- cpoints[i]:SetWidth(w / numMax - spacing)
+				-- s = s + (w / numMax)
+			-- else
+				-- cpoints[i]:SetWidth(w - s)
+			-- end
+		-- end
 
-		cpoints.numMax = numMax
-	end
+		-- cpoints.numMax = numMax
+	-- end
 
-	for i = 1, numMax do
-		if i <= cp then
-			cpoints[i]:SetAlpha(1)
-		else
-			cpoints[i]:SetAlpha(0.2)
-		end
-	end
+	-- for i = 1, numMax do
+		-- if i <= cp then
+			-- cpoints[i]:SetAlpha(1)
+		-- else
+			-- cpoints[i]:SetAlpha(0.2)
+		-- end
+	-- end
 
-	if cpoints[1]:GetAlpha() == 1 then
-		for i = 1, numMax do
-			cpoints:Show()
-			cpoints[i]:Show()
-		end
-	else
-		for i = 1, numMax do
-			cpoints:Hide()
-			cpoints[i]:Hide()
-		end
-	end
+	-- if cpoints[1]:GetAlpha() == 1 then
+		-- for i = 1, numMax do
+			-- cpoints:Show()
+			-- cpoints[i]:Show()
+		-- end
+	-- else
+		-- for i = 1, numMax do
+			-- cpoints:Hide()
+			-- cpoints[i]:Hide()
+		-- end
+	-- end
 
-	if self.RangeBar then
-		if cpoints[1]:IsShown() and self.RangeBar:IsShown() then
-			cpoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 33) end
-		elseif cpoints[1]:IsShown() or self.RangeBar:IsShown() then
-			cpoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
-		elseif self.Friendship and self.Friendship:IsShown() then
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
-		else
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
-		end
-	else
-		if cpoints[1]:IsShown() or (self.Friendship and self.Friendship:IsShown()) then
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
-		else
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
-		end
-	end
+	-- if self.RangeBar then
+		-- if cpoints[1]:IsShown() and self.RangeBar:IsShown() then
+			-- cpoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
+			-- if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 33) end
+		-- elseif cpoints[1]:IsShown() or self.RangeBar:IsShown() then
+			-- cpoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			-- if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
+		-- elseif self.Friendship and self.Friendship:IsShown() then
+			-- if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
+		-- else
+			-- if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
+		-- end
+	-- else
+		-- if cpoints[1]:IsShown() or (self.Friendship and self.Friendship:IsShown()) then
+			-- if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
+		-- else
+			-- if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
+		-- end
+	-- end
 end
 
 local ticks = {}
@@ -1486,7 +1486,7 @@ T.PostCreateAura = function(element, button)
 end
 
 T.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, duration, timeLeft)
-	local _, _, _, _, dtype, duration, expirationTime, _, isStealable = UnitAura(unit, index, icon.filter)
+	local _, _, _, dtype, duration, expirationTime, _, isStealable = UnitAura(unit, index, icon.filter)
 
 	local playerUnits = {
 		player = true,
