@@ -65,7 +65,7 @@
 	<Script file="Modules\Misc\ArmoryLink.lua"/>
 	<Script file="Modules\Misc\CharsCurrency.lua"/>
 	<Script file="Modules\Misc\ClickCast.lua"/>
-	<Script file="Modules\Misc\Filger.lua"/>
+	<!-- <Script file="Modules\Misc\Filger.lua"/> -->
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
 	<Script file="Modules\Misc\LFGQueueTimer.lua"/>
 	<Script file="Modules\Misc\MagePortals.lua"/>
@@ -151,7 +151,7 @@
 	<Script file="Modules\Buffs\AuraSource.lua"/>
 	<Script file="Modules\Buffs\BuffFrame.lua"/>
 	<Script file="Modules\Buffs\SelfBuffsReminder.lua"/>
-	<Script file="Modules\Buffs\RaidBuffsReminder.lua"/>
+	<!-- <Script file="Modules\Buffs\RaidBuffsReminder.lua"/> -->
 
 	<Script file="Modules\Chat\ChatFrames.lua"/>
 	<Script file="Modules\Chat\ChatTabs.lua"/>
@@ -170,7 +170,7 @@
 	<Script file="Modules\Cooldowns\DiminishingCD.lua"/>
 	<Script file="Modules\Cooldowns\EnemyCD.lua"/>
 	<Script file="Modules\Cooldowns\PulseCD.lua"/>
-	<Script file="Modules\Cooldowns\RaidCD.lua"/>
+	<!-- <Script file="Modules\Cooldowns\RaidCD.lua"/> -->
 
 	<Script file="Modules\DataText\Battleground.lua"/>
 
@@ -183,12 +183,12 @@
 	<Script file="Modules\Maps\BattlefieldMap.lua"/>
 	<Script file="Modules\Maps\ButtonCollect.lua"/>
 	<Script file="Modules\Maps\ExploreMap.lua"/>
-	<Script file="Modules\Maps\FogOfWar.lua"/>
+	<!-- <Script file="Modules\Maps\FogOfWar.lua"/> -->
 	<Script file="Modules\Maps\MapBossCount.lua"/>
 	<Script file="Modules\Maps\MiniMap.lua"/>
 	<Script file="Modules\Maps\MiniMapButtons.lua"/>
 	<Script file="Modules\Maps\ToggleMenu.lua"/>
-	<Script file="Modules\Maps\WorldMap.lua"/>
+	<!-- <Script file="Modules\Maps\WorldMap.lua"/> -->
 
 	<Script file="Modules\Quests\AutoAccept.lua"/>
 	<Script file="Modules\Quests\AutoButton.lua"/>
@@ -197,7 +197,7 @@
 	<Script file="Modules\Quests\QuestLog.lua"/>
 	<Script file="Modules\Quests\WowheadLink.lua"/>
 
-	<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>
+	<!-- <Include file="Modules\Skins\Blizzard\LoadFrames.xml"/> -->
 	<Script file="Modules\Skins\Ace3.lua"/>
 	<Script file="Modules\Skins\AtlasLoot.lua"/>
 	<Script file="Modules\Skins\Aurora.lua"/>
