@@ -3,7 +3,7 @@ if(select(2, UnitClass('player')) ~= 'MAGE') then return end
 local parent, ns = ...
 local oUF = ns.oUF
 
-local SPELL_POWER_ARCANE_CHARGES = SPELL_POWER_ARCANE_CHARGES
+local SPELL_POWER_ARCANE_CHARGES = Enum.PowerType.ArcaneCharges or 16
 
 local Update = function(self, event, unit, powerType)
 	if(self.unit ~= unit or (powerType and powerType ~= 'ARCANE_CHARGES')) then return end

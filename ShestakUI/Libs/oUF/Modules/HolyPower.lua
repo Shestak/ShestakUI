@@ -3,7 +3,7 @@ if(select(2, UnitClass('player')) ~= 'PALADIN') then return end
 local parent, ns = ...
 local oUF = ns.oUF
 
-local SPELL_POWER_HOLY_POWER = 9
+local SPELL_POWER_HOLY_POWER = Enum.PowerType.HolyPower or 9
 
 local Update = function(self, event, unit, powerType)
 	if(self.unit ~= unit or (powerType and powerType ~= 'HOLY_POWER')) then return end

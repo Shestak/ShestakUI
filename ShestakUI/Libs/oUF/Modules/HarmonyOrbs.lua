@@ -3,7 +3,7 @@ if select(2, UnitClass('player')) ~= 'MONK' then return end
 local parent, ns = ...
 local oUF = ns.oUF
 
-local SPELL_POWER_CHI = SPELL_POWER_CHI
+local SPELL_POWER_CHI = Enum.PowerType.Chi or 12
 
 local function Update(self, event, unit, powerType)
 	if(self.unit ~= unit and (powerType and (powerType ~= 'CHI' and powerType ~= 'DARK_FORCE'))) then return end
