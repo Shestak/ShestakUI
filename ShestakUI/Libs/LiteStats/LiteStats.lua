@@ -78,25 +78,25 @@ end)
 -- Config missing?
 if not modules then return end
 
-if modules and ((coords and coords.enabled) or (location and location.enabled)) then
-	ls:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-	ls:SetScript("OnUpdate", function(self, elapsed)
-		self.elapsed = (self.elapsed or 0) + elapsed
-		if self.elapsed >= 0.2 then
-			coordX, coordY = GetPlayerMapPosition(P)
+--BETA if modules and ((coords and coords.enabled) or (location and location.enabled)) then
+	-- ls:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+	-- ls:SetScript("OnUpdate", function(self, elapsed)
+		-- self.elapsed = (self.elapsed or 0) + elapsed
+		-- if self.elapsed >= 0.2 then
+			-- coordX, coordY = GetPlayerMapPosition(P)
 
-			if not GetPlayerMapPosition(P) then
-				coordX = 0
-				coordY = 0
-			end
+			-- if not GetPlayerMapPosition(P) then
+				-- coordX = 0
+				-- coordY = 0
+			-- end
 
-			self.elapsed = 0
-		end
-	end)
-	WorldMapDetailFrame:HookScript("OnHide", SetMapToCurrentZone)
+			-- self.elapsed = 0
+		-- end
+	-- end)
+	-- WorldMapDetailFrame:HookScript("OnHide", SetMapToCurrentZone)
 
-	function Coords() return format(coords and coords.fmt or "%d, %d", coordX * 100, coordY * 100) end
-end
+	-- function Coords() return format(coords and coords.fmt or "%d, %d", coordX * 100, coordY * 100) end
+-- end
 
 -- Set profile
 if profiles then for _, p in ipairs{class,format("%s - %s", char, realm)} do
@@ -1124,7 +1124,7 @@ if friends.enabled then
 		end)
 	end
 	Inject("Friends", {
-		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN PLAYER_ENTERING_WORLD GROUP_ROSTER_UPDATE FRIENDLIST_UPDATE BN_FRIEND_LIST_SIZE_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED BN_FRIEND_TOON_ONLINE BN_FRIEND_TOON_OFFLINE BN_TOON_NAME_UPDATED") end,
+		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN PLAYER_ENTERING_WORLD GROUP_ROSTER_UPDATE FRIENDLIST_UPDATE BN_FRIEND_LIST_SIZE_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED") end,
 		OnEvent = function(self, event)
 			if event ~= "GROUP_ROSTER_UPDATE" then
 				local numBNetTotal, numBNetOnline = BNGetNumFriends()
