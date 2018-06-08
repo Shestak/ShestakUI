@@ -26,7 +26,7 @@ GameTooltip:HookScript("OnTooltipSetSpell", function(self)
 end)
 
 hooksecurefunc(GameTooltip, "SetUnitAura", function(self, ...)
-	local id = select(11, UnitAura(...))
+	local id = select(10, UnitAura(...))
 	if id then addLine(self, id) end
 	if debuginfo == true and id and IsModifierKeyDown() then print(UnitAura(...)..": "..id) end
 end)

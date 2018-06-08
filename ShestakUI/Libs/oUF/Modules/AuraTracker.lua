@@ -25,7 +25,7 @@ local function Update(object, event, unit)
 
 	-- Buffs
 	while true do
-		local name, _, icon, _, _, _, expirationTime = UnitAura(unit, index, "HELPFUL")
+		local name, icon, _, _, _, expirationTime = UnitAura(unit, index, "HELPFUL")
 		if not name then break end
 
 		if auraList[name] and auraList[name] >= priority then
@@ -42,7 +42,7 @@ local function Update(object, event, unit)
 
 	-- Debuffs
 	while true do
-		local name, _, icon, _, _, _, expirationTime = UnitAura(unit, index, "HARMFUL")
+		local name, icon, _, _, _, expirationTime = UnitAura(unit, index, "HARMFUL")
 		if not name then break end
 
 		if auraList[name] and auraList[name] >= priority then
