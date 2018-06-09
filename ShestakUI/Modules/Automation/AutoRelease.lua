@@ -12,11 +12,11 @@ frame:SetScript("OnEvent", function(self, event)
 		local status = GetBattlefieldStatus(i)
 		if status == "active" then inBattlefield = true end
 	end
-	if not (HasSoulstone() and CanUseSoulstone()) then
+	--BETA if not (HasSoulstone() and CanUseSoulstone()) then
 		SetMapToCurrentZone()
-		local areaID = GetCurrentMapAreaID() or 0
+		local areaID = C_Map.GetBestMapForUnit("player") or 0
 		if areaID == 501 or areaID == 708 or areaID == 978 or areaID == 1009 or areaID == 1011 or inBattlefield == true then
 			RepopMe()
 		end
-	end
+	-- end
 end)
