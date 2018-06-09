@@ -42,7 +42,7 @@ C["filger_spells"] = {
 			-- Dancing Rune Weapon
 			{spellID = 81256, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lichborne
-			{spellID = 49039, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 49039, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rune Tap
 			{spellID = 194679, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pillar of Frost
@@ -250,7 +250,7 @@ C["filger_spells"] = {
 			-- Breath of Sindragosa
 			{spellID = 152279, filter = "CD"},
 			-- Lichborne
-			{spellID = 49039, filter = "CD"},
+			--BETA {spellID = 49039, filter = "CD"},
 			-- Desecrated Ground
 			{spellID = 108201, filter = "CD"},
 			-- Death Pact
@@ -324,7 +324,7 @@ C["filger_spells"] = {
 			-- Metamorphosis
 			{spellID = 187827, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Empower Wards
-			{spellID = 218256, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 218256, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Darkness
 			{spellID = 196718, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Immolation Aura
@@ -521,7 +521,7 @@ C["filger_spells"] = {
 			-- Sigil of Misery
 			{spellID = 207684, filter = "CD"},
 			-- Empower Wards
-			{spellID = 218256, filter = "CD"},
+			--BETA {spellID = 218256, filter = "CD"},
 			-- Spectral Sight
 			{spellID = 188501, filter = "CD"},
 			-- Fiery Brand
@@ -1351,7 +1351,7 @@ C["filger_spells"] = {
 			-- Nether Tempest
 			{spellID = 114923, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frost Bomb
-			{spellID = 112948, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--BETA {spellID = 112948, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Pyroblast
 			{spellID = 11366, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Freeze (Pet)
@@ -1860,7 +1860,7 @@ C["filger_spells"] = {
 			-- Speed of Light
 			{spellID = 85499, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Eternal Flame
-			{spellID = 114163, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 114163, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -3804,7 +3804,7 @@ C["filger_spells"] = {
 			-- Debilitate (Terrorguard)
 			{spellID = 170996, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Staggering Shout
-			{spellID = 107566, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--BETA {spellID = 107566, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Slows
 			-- Infected Wounds
@@ -4125,7 +4125,7 @@ C["filger_spells"] = {
 			-- Desecrated Ground
 			{spellID = 115018, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Lichborne
-			{spellID = 49039, unitID = "target", caster = "all", filter = "BUFF"},
+			--BETA {spellID = 49039, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Icebound Fortitude
 			{spellID = 48792, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Pillar of Frost

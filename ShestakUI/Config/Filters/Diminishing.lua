@@ -44,7 +44,7 @@ T.DiminishingSpells = {
 	[114404] = {"root"},			-- Void Tendril's Grasp
 	[64695] = {"root"},				-- Earthgrab
 	[170996] = {"root"},			-- Debilitate (Terrorguard)
-	[107566] = {"root"},			-- Staggering Shout
+	--BETA [107566] = {"root"},			-- Staggering Shout
 
 	-- Incapacitates
 	[99] = {"incapacitate"},		-- Incapacitating Roar

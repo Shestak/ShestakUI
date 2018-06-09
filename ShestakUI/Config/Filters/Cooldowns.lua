@@ -83,7 +83,7 @@ if C.enemycooldown.enable == true then
 		[48707] = 60,	-- Anti-Magic Shell
 		[31224] = 90,	-- Cloak of Shadows
 		[46924] = 90,	-- Bladestorm
-		[49039] = 120,	-- Lichborne
+		--BETA [49039] = 120,	-- Lichborne
 		[213664] = 120,	-- Nimble Brew
 		[47585] = 120,	-- Dispersion
 		[1856] = 120,	-- Vanish

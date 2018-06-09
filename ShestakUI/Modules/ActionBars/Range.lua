@@ -55,7 +55,7 @@ local isHolyPowerAbility
 do
 	local HOLY_POWER_SPELLS = {
 		[85673] = GetSpellInfo(85673),		-- Word of Glory
-		[114163] = GetSpellInfo(114163),	-- Eternal Flame
+		--BETA [114163] = GetSpellInfo(114163),	-- Eternal Flame
 	}
 
 	isHolyPowerAbility = function(actionId)
