@@ -27,7 +27,7 @@ bgframe:SetScript("OnEnter", function(self)
 	for i = 1, numScores do
 		local name, _, honorableKills, deaths, _, _, _, _, _, damageDone, healingDone = GetBattlefieldScore(i)
 		if name and name == T.name then
-			local curmapid = GetCurrentMapAreaID()
+			local curmapid = C_Map.GetBestMapForUnit("player")
 			SetMapToCurrentZone()
 			GameTooltip:SetOwner(self, "ANCHOR_TOPLEFT", 0, T.Scale(4))
 			GameTooltip:ClearLines()
