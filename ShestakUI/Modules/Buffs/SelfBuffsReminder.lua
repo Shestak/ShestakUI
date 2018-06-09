@@ -27,7 +27,7 @@ local function OnEvent(self, event, arg1, arg2)
 	if group.personal then
 		for _, buff in pairs(group.personal) do
 			local name = GetSpellInfo(buff)
-			local _, _, _, _, _, _, _, unitCaster = UnitBuff("player", name)
+			local _, _, _, _, _, _, unitCaster = UnitBuff("player", name)
 			if name and unitCaster == "player" then
 				return
 			end
@@ -106,7 +106,7 @@ local function OnEvent(self, event, arg1, arg2)
 	specpass == true and rolepass == true and not UnitInVehicle("player") then
 		for _, buff in pairs(group.spells) do
 			local name = GetSpellInfo(buff)
-			local _, _, icon = UnitBuff("player", name)
+			local _, icon = UnitBuff("player", name)
 			if name and icon then
 				self:Hide()
 				return
@@ -119,7 +119,7 @@ local function OnEvent(self, event, arg1, arg2)
 		if negate_reversecheck and negate_reversecheck == GetSpecialization() then self:Hide() return end
 		for _, buff in pairs(group.spells) do
 			local name = GetSpellInfo(buff)
-			local _, _, icon, _, _, _, _, unitCaster = UnitBuff("player", name)
+			local _, icon, _, _, _, _, unitCaster = UnitBuff("player", name)
 			if name and icon and unitCaster == "player" then
 				self:Show()
 				if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end

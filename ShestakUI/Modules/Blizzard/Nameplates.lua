@@ -628,7 +628,7 @@ local function style(self, unit)
 		end
 
 		self.Auras.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, duration, timeLeft)
-			local _, _, _, _, dtype, duration, expirationTime, _, isStealable = UnitAura(unit, index, icon.filter)
+			local _, _, _, dtype, duration, expirationTime, _, isStealable = UnitAura(unit, index, icon.filter)
 
 			if duration and duration > 0 and C.aura.show_timer == true then
 				icon.remaining:Show()
