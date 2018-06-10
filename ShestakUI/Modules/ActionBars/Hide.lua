@@ -11,6 +11,8 @@ do
 	OverrideActionBar:EnableMouse(false)
 	PetActionBarFrame:EnableMouse(false)
 	StanceBarFrame:EnableMouse(false)
+	MicroButtonAndBagsBar:SetScale(0.00001)
+	MicroButtonAndBagsBar:EnableMouse(false)
 
 	local elements = {
 		MainMenuBar, OverrideActionBar, PossessBarFrame, PetActionBarFrame, StanceBarFrame
