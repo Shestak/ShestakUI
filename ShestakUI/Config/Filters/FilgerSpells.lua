@@ -336,7 +336,7 @@ C["filger_spells"] = {
 			-- Blur
 			{spellID = 212800, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Chaos Blades
-			{spellID = 211048, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 211048, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Netherwalk
 			{spellID = 196555, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nether Bond
@@ -547,7 +547,7 @@ C["filger_spells"] = {
 			-- Netherwalk
 			{spellID = 196555, filter = "CD"},
 			-- Chaos Blades
-			{spellID = 211048, filter = "CD"},
+			--BETA {spellID = 211048, filter = "CD"},
 			-- Nemesis
 			{spellID = 206491, filter = "CD"},
 			-- Metamorphosis
@@ -995,7 +995,7 @@ C["filger_spells"] = {
 			-- Beast Cleave
 			{spellID = 118455, unitID = "pet", caster = "player", filter = "BUFF"},
 			-- Marking Targets
-			{spellID = 223138, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 223138, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Frenzy
 			{spellID = 19615, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 			-- Mend Pet
@@ -1075,9 +1075,9 @@ C["filger_spells"] = {
 			-- A Murder of Crows
 			{spellID = 131894, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Vulnerable
-			{spellID = 187131, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--BETA {spellID = 187131, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hunter's Mark
-			{spellID = 185365, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--BETA {spellID = 185365, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Narrow Escape
 			{spellID = 136634, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Entrapment
@@ -1293,7 +1293,7 @@ C["filger_spells"] = {
 			-- Glacial Spike!
 			{spellID = 199844, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Arcane Missiles!
-			{spellID = 79683, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 79683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hot Streak!
 			{spellID = 48108, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Kael'thas's Ultimate Ability
@@ -1357,7 +1357,7 @@ C["filger_spells"] = {
 			-- Freeze (Pet)
 			{spellID = 33395, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Water Jet (Pet)
-			{spellID = 135029, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--BETA {spellID = 135029, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frostbite
 			{spellID = 198121, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Frost Nova
@@ -1424,7 +1424,7 @@ C["filger_spells"] = {
 			-- Cone of Cold
 			{spellID = 120, filter = "CD"},
 			-- Water Jet (Pet)
-			{spellID = 135029, filter = "CD"},
+			--BETA {spellID = 135029, filter = "CD"},
 			-- Comet Storm
 			{spellID = 153595, filter = "CD"},
 			-- Ice Floes
@@ -2040,7 +2040,7 @@ C["filger_spells"] = {
 			-- Divine Protection
 			{spellID = 498, filter = "CD", absID = true},
 			-- Execution Sentence
-			{spellID = 213757, filter = "CD"},
+			--BETA {spellID = 213757, filter = "CD"},
 			-- Light's Hammer
 			{spellID = 114158, filter = "CD"},
 			-- Blinding Light
@@ -2241,7 +2241,7 @@ C["filger_spells"] = {
 			-- Pain Suppression
 			{spellID = 33206, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Void Entropy
-			{spellID = 155361, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--BETA {spellID = 155361, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Vampiric Touch
 			{spellID = 34914, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Shadow Word: Pain
@@ -2620,7 +2620,7 @@ C["filger_spells"] = {
 			-- Crimson Vial
 			{spellID = 185311, filter = "CD"},
 			-- Cannonball Barrage
-			{spellID = 185767, filter = "CD"},
+			--BETA {spellID = 185767, filter = "CD"},
 			-- Garrote
 			{spellID = 703, filter = "CD"},
 			-- Exsanguinate

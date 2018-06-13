@@ -196,7 +196,7 @@ elseif T.class == "HUNTER" then
 		T.aoespam[201594] = 4		-- Stampede
 		T.aoespam[194392] = 1		-- Volley
 		T.aoespam[214581] = 2		-- Sidewinders
-		T.aoespam[212621] = 2		-- Marked Shot
+		--BETA T.aoespam[212621] = 2		-- Marked Shot
 		T.aoespam[191413] = 6		-- Bestial Ferocity
 		T.aoespam[16827] = 6		-- Claw
 		T.aoespam[201754] = 1		-- Stomp
@@ -228,7 +228,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[114923] = 3		-- Nether Tempest
 		T.aoespam[114954] = 3		-- Nether Tempest (AoE)
 		T.aoespam[7268] = 1.6		-- Arcane Missiles
-		T.aoespam[113092] = 0		-- Frost Bomb
+		--BETA T.aoespam[113092] = 0		-- Frost Bomb
 		T.aoespam[84721] = 3		-- Frozen Orb
 		T.aoespam[228354] = 1.5		-- Flurry
 		T.aoespam[242851] = 1.5		-- Glacial Eruption
@@ -240,8 +240,8 @@ elseif T.class == "MAGE" then
 		T.aoespam[157981] = 0		-- Blast Wave
 		T.aoespam[157997] = 1		-- Ice Nova
 		T.aoespam[157980] = 1		-- Supernova
-		T.aoespam[135029] = 3		-- Water Jet (Pet)
-		T.aoespam[155152] = 3		-- Prismatic Crystal
+		--BETA T.aoespam[135029] = 3		-- Water Jet (Pet)
+		--BETA T.aoespam[155152] = 3		-- Prismatic Crystal
 		T.aoespam[153596] = 3		-- Comet Storm
 		T.aoespam[153640] = 3		-- Arcane Orb
 		T.aoespam[157977] = 0		-- Unstable Magic (Fire)
@@ -314,7 +314,7 @@ elseif T.class == "PALADIN" then
 		T.aoespam[31935] = .5		-- Avenger's Shield
 		T.aoespam[114871] = 0		-- Holy Prism
 		T.aoespam[114919] = 3		-- Arcing Light
-		T.aoespam[213757] = 3		-- Execution Sentence
+		--BETA T.aoespam[213757] = 3		-- Execution Sentence
 		T.aoespam[86704] = 0		-- Ancient Fury
 		T.aoespam[157122] = 3		-- Holy Shield
 		T.merge[53595] = 88263		-- Hammer of the Righteous
@@ -328,7 +328,7 @@ elseif T.class == "PALADIN" then
 		T.aoespam[217020] = 1		-- Zeal
 	end
 	if C.combattext.healing then
-		T.healfilter[204241] = true	-- Consecration
+		--BETA T.healfilter[204241] = true	-- Consecration
 	end
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
@@ -509,7 +509,7 @@ elseif T.class == "WARRIOR" then
 		T.aoespam[209577] = 1		-- Warbreaker (Arms Artifact)
 		T.aoespam[215537] = 4		-- Trauma (Arms Talent)
 		T.aoespam[209933] = 1		-- Touch of Zakajz (Arms Artifact)
-		T.merge[224253] = 163201	-- Execute (for Arms Talent Sweeping Strikes)
+		--BETA T.merge[224253] = 163201	-- Execute (for Arms Talent Sweeping Strikes)
 		T.aoespam[163201] = 0.5		-- Execute (for Arms Talent Sweeping Strikes)
 		T.aoespam[12294] = 0.5		-- Mortal Strike (for Arms Talent Sweeping Strikes)
 		T.merge[199658] = 199850	-- Whirlwind Arms ?
