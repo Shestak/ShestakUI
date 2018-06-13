@@ -56,7 +56,7 @@ T.RaidBuffs = {
 	},
 	WARRIOR = {
 		{114030, "TOPLEFT", {0.2, 0.2, 1}},					-- Vigilance
-		{3411, "TOPRIGHT", {0.89, 0.1, 0.1}},				-- Intervene
+		--BETA {3411, "TOPRIGHT", {0.89, 0.1, 0.1}},				-- Intervene
 	},
 	ALL = {
 		{23333, "LEFT", {1, 0, 0}, true}, 					-- Warsong flag, Horde

@@ -3257,11 +3257,11 @@ C["filger_spells"] = {
 			-- Raging Blow!
 			{spellID = 131116, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ultimatum
-			{spellID = 122510, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 122510, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Meat Cleaver
 			{spellID = 85739, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unyielding Strikes
-			{spellID = 169686, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 169686, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enrage
 			{spellID = 184362, unitID = "player", caster = "player", filter = "BUFF"},
 
@@ -3389,7 +3389,7 @@ C["filger_spells"] = {
 			-- Spell Reflection
 			{spellID = 23920, filter = "CD"},
 			-- Intervene
-			{spellID = 3411, filter = "CD"},
+			--BETA {spellID = 3411, filter = "CD"},
 			-- Berserker Rage
 			{spellID = 18499, filter = "CD"},
 			-- Heroic Leap
@@ -3612,7 +3612,7 @@ C["filger_spells"] = {
 			-- Grounding Totem
 			{spellID = 8178, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mass Spell Reflection
-			{spellID = 114028, unitID = "player", caster = "all", filter = "BUFF"},
+			--BETA {spellID = 114028, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tiger's Lust
 			{spellID = 116841, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Body and Soul
@@ -4367,7 +4367,7 @@ C["filger_spells"] = {
 			-- Spell Reflection
 			{spellID = 23920, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Mass Spell Reflection
-			{spellID = 114028, unitID = "target", caster = "all", filter = "BUFF"},
+			--BETA {spellID = 114028, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Shield Wall
 			{spellID = 871, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Die by the Sword

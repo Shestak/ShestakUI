@@ -407,7 +407,7 @@ elseif T.class == "ROGUE" then
 elseif T.class == "SHAMAN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
-		T.aoespam[215871] = 6		-- Rainfall
+		--BETA T.aoespam[215871] = 6		-- Rainfall
 		T.aoespam[73921] = 5		-- Healing Rain
 		T.aoespam[52042] = 5		-- Healing Stream Totem
 		T.aoespam[1064] = 3			-- Chain Heal
