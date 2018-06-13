@@ -65,7 +65,7 @@
 	<Script file="Modules\Misc\ArmoryLink.lua"/>
 	<Script file="Modules\Misc\CharsCurrency.lua"/>
 	<Script file="Modules\Misc\ClickCast.lua"/>
-	<!-- <Script file="Modules\Misc\Filger.lua"/> -->
+	<Script file="Modules\Misc\Filger.lua"/>
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
 	<Script file="Modules\Misc\LFGQueueTimer.lua"/>
 	<Script file="Modules\Misc\MagePortals.lua"/>
@@ -151,7 +151,7 @@
 	<Script file="Modules\Buffs\AuraSource.lua"/>
 	<Script file="Modules\Buffs\BuffFrame.lua"/>
 	<Script file="Modules\Buffs\SelfBuffsReminder.lua"/>
-	<!-- <Script file="Modules\Buffs\RaidBuffsReminder.lua"/> -->
+	<Script file="Modules\Buffs\RaidBuffsReminder.lua"/>
 
 	<Script file="Modules\Chat\ChatFrames.lua"/>
 	<Script file="Modules\Chat\ChatTabs.lua"/>
@@ -170,7 +170,7 @@
 	<Script file="Modules\Cooldowns\DiminishingCD.lua"/>
 	<Script file="Modules\Cooldowns\EnemyCD.lua"/>
 	<Script file="Modules\Cooldowns\PulseCD.lua"/>
-	<!-- <Script file="Modules\Cooldowns\RaidCD.lua"/> -->
+	<Script file="Modules\Cooldowns\RaidCD.lua"/>
 
 	<Script file="Modules\DataText\Battleground.lua"/>
 
