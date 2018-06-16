@@ -13,22 +13,27 @@ frame:SetScript("OnEvent", function(self, event)
 		SetCVar("alwaysShowActionBars", 1)
 		for i = 1, 12 do
 			local button = _G[format("ActionButton%d", i)]
+			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
 			ActionButton_ShowGrid(button)
 
 			button = _G[format("MultiBarRightButton%d", i)]
+			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
 			ActionButton_ShowGrid(button)
 
 			button = _G[format("MultiBarBottomRightButton%d", i)]
+			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
 			ActionButton_ShowGrid(button)
 
 			button = _G[format("MultiBarLeftButton%d", i)]
+			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
 			ActionButton_ShowGrid(button)
 
 			button = _G[format("MultiBarBottomLeftButton%d", i)]
+			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
 			ActionButton_ShowGrid(button)
 		end
