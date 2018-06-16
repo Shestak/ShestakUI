@@ -65,7 +65,6 @@
 	<Script file="Modules\Misc\ArmoryLink.lua"/>
 	<Script file="Modules\Misc\CharsCurrency.lua"/>
 	<Script file="Modules\Misc\ClickCast.lua"/>
-	<Script file="Modules\Misc\Filger.lua"/>
 	<Script file="Modules\Misc\GuildFinderSort.lua"/>
 	<Script file="Modules\Misc\LFGQueueTimer.lua"/>
 	<Script file="Modules\Misc\MagePortals.lua"/>
@@ -112,6 +111,12 @@
 	<Script file="Modules\Announcements\SayThanks.lua"/>
 	<Script file="Modules\Announcements\Spells.lua"/>
 
+	<Script file="Modules\Auras\AuraSource.lua"/>
+	<Script file="Modules\Auras\BuffFrame.lua"/>
+	<Script file="Modules\Auras\Filger.lua"/>
+	<Script file="Modules\Auras\SelfBuffsReminder.lua"/>
+	<Script file="Modules\Auras\RaidBuffsReminder.lua"/>
+
 	<Script file="Modules\Automation\AutoInvite.lua"/>
 	<Script file="Modules\Automation\AutoOpens.lua"/>
 	<Script file="Modules\Automation\AutoRelease.lua"/>
@@ -147,11 +152,6 @@
 	<Script file="Modules\Blizzard\TalkingHead.lua"/>
 	<Script file="Modules\Blizzard\TimerTracker.lua"/>
 	<Script file="Modules\Blizzard\Vehicle.lua"/>
-
-	<Script file="Modules\Buffs\AuraSource.lua"/>
-	<Script file="Modules\Buffs\BuffFrame.lua"/>
-	<Script file="Modules\Buffs\SelfBuffsReminder.lua"/>
-	<Script file="Modules\Buffs\RaidBuffsReminder.lua"/>
 
 	<Script file="Modules\Chat\ChatFrames.lua"/>
 	<Script file="Modules\Chat\ChatTabs.lua"/>

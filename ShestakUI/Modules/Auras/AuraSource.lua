@@ -5,7 +5,7 @@ if C.aura.cast_by ~= true then return end
 --	Tells you who cast a buff or debuff in its tooltip(prButler by Renstrom)
 ----------------------------------------------------------------------------------------
 local function addAuraSource(self, func, unit, index, filter)
-	local srcUnit = select(8, func(unit, index, filter))
+	local srcUnit = select(7, func(unit, index, filter))
 	if srcUnit then
 		local src = GetUnitName(srcUnit, true)
 		if srcUnit == "pet" or srcUnit == "vehicle" then
