@@ -6,14 +6,14 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 T.ShiftBarUpdate = function()
 	local numForms = GetNumShapeshiftForms()
-	local texture, name, isActive, isCastable
+	local texture, isActive, isCastable
 	local button, icon, cooldown
 	local start, duration, enable
 	for i = 1, NUM_STANCE_SLOTS do
 		button = _G["StanceButton"..i]
 		icon = _G["StanceButton"..i.."Icon"]
 		if i <= numForms then
-			texture, name, isActive, isCastable = GetShapeshiftFormInfo(i)
+			texture, isActive, isCastable = GetShapeshiftFormInfo(i)
 			icon:SetTexture(texture)
 
 			cooldown = _G["StanceButton"..i.."Cooldown"]
@@ -50,7 +50,7 @@ T.PetBarUpdate = function(self, event)
 		petActionIcon = _G[buttonName.."Icon"]
 		petAutoCastableTexture = _G[buttonName.."AutoCastable"]
 		petAutoCastShine = _G[buttonName.."Shine"]
-		local name, subtext, texture, isToken, isActive, autoCastAllowed, autoCastEnabled = GetPetActionInfo(i)
+		local name, texture, isToken, isActive, autoCastAllowed, autoCastEnabled = GetPetActionInfo(i)
 
 		if not isToken then
 			petActionIcon:SetTexture(texture)
@@ -61,7 +61,6 @@ T.PetBarUpdate = function(self, event)
 		end
 
 		petActionButton.isToken = isToken
-		petActionButton.tooltipSubtext = subtext
 
 		if isActive and name ~= "PET_ACTION_FOLLOW" then
 			petActionButton:SetChecked(true)
