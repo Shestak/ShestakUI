@@ -89,11 +89,6 @@ local function SetChatStyle(frame)
 	_G[format("ChatFrame%sTabSelectedMiddle", id)]:Kill()
 	_G[format("ChatFrame%sTabSelectedRight", id)]:Kill()
 
-	-- Kills off the new method of handling the Chat Frame scroll buttons as well as the resize button
-	-- Note: This also needs to include the actual frame textures for the ButtonFrame onHover
-	--BETA _G[format("ChatFrame%sButtonFrameUpButton", id)]:Kill()
-	-- _G[format("ChatFrame%sButtonFrameDownButton", id)]:Kill()
-	-- _G[format("ChatFrame%sButtonFrameBottomButton", id)]:Kill()
 	_G[format("ChatFrame%sButtonFrameMinimizeButton", id)]:Kill()
 	_G[format("ChatFrame%sButtonFrame", id)]:Kill()
 
@@ -103,6 +98,15 @@ local function SetChatStyle(frame)
 	_G[format("ChatFrame%sEditBoxRight", id)]:Kill()
 
 	_G[format("ChatFrame%sTabGlow", id)]:Kill()
+
+	-- Kill scroll bar
+	frame.ScrollBar:Kill()
+	frame.ScrollToBottomButton:Kill()
+
+	-- Kill channel and voice buttons
+	ChatFrameChannelButton:Kill()
+	ChatFrameToggleVoiceDeafenButton:Kill()
+	ChatFrameToggleVoiceMuteButton:Kill()
 
 	-- Kill off editbox artwork
 	local a, b, c = select(6, _G[chat.."EditBox"]:GetRegions()) a:Kill() b:Kill() c:Kill()
