@@ -256,7 +256,7 @@ local micromenu = {
 		ToggleCalendar()
 	end},
 	{text = BATTLEFIELD_MINIMAP, notCheckable = 1, func = function()
-		ToggleBattlefieldMinimap()
+		ToggleBattlefieldMap()
 	end},
 	{text = LOOT_ROLLS, notCheckable = 1, func = function()
 		ToggleFrame(LootHistoryFrame)
