@@ -1049,24 +1049,10 @@ T.UpdateComboPoint = function(self, event, unit)
 	local s = 0
 
 	if cpoints.numMax ~= numMax then
-		if numMax == 10 then
+		if numMax == 6 then
 			cpoints[6]:Show()
-			cpoints[7]:Show()
-			cpoints[8]:Show()
-			cpoints[9]:Show()
-			cpoints[10]:Show()
-		elseif numMax == 6 then
-			cpoints[6]:Show()
-			cpoints[7]:Hide()
-			cpoints[8]:Hide()
-			cpoints[9]:Hide()
-			cpoints[10]:Hide()
 		else
 			cpoints[6]:Hide()
-			cpoints[7]:Hide()
-			cpoints[8]:Hide()
-			cpoints[9]:Hide()
-			cpoints[10]:Hide()
 		end
 
 		for i = 1, numMax do
@@ -1102,7 +1088,7 @@ T.UpdateComboPoint = function(self, event, unit)
 	end
 end
 
-T.UpdateComboPointOld = function(self, event, unit)
+T.UpdateComboPointTarget = function(self, event, unit)
 	if powerType and powerType ~= 'COMBO_POINTS' then return end
 	if unit == "pet" then return end
 
@@ -1126,24 +1112,10 @@ T.UpdateComboPointOld = function(self, event, unit)
 	local s = 0
 
 	if cpoints.numMax ~= numMax then
-		if numMax == 10 then
+		if numMax == 6 then
 			cpoints[6]:Show()
-			cpoints[7]:Show()
-			cpoints[8]:Show()
-			cpoints[9]:Show()
-			cpoints[10]:Show()
-		elseif numMax == 6 then
-			cpoints[6]:Show()
-			cpoints[7]:Hide()
-			cpoints[8]:Hide()
-			cpoints[9]:Hide()
-			cpoints[10]:Hide()
 		else
 			cpoints[6]:Hide()
-			cpoints[7]:Hide()
-			cpoints[8]:Hide()
-			cpoints[9]:Hide()
-			cpoints[10]:Hide()
 		end
 
 		for i = 1, numMax do
