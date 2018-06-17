@@ -70,33 +70,36 @@ ls:SetScript("OnEvent", function(_, event, addon)
 		if conf.AutoRepair == nil then conf.AutoRepair = true end
 		if conf.AutoGuildRepair == nil then conf.AutoGuildRepair = true end
 	end
-	if event == "ZONE_CHANGED_NEW_AREA" and not WorldMapFrame:IsShown() then
-		SetMapToCurrentZone()
-	end
+	-- if event == "ZONE_CHANGED_NEW_AREA" and not WorldMapFrame:IsShown() then
+		-- SetMapToCurrentZone()
+	-- end
 end)
 
 -- Config missing?
 if not modules then return end
 
---BETA if modules and ((coords and coords.enabled) or (location and location.enabled)) then
-	-- ls:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-	-- ls:SetScript("OnUpdate", function(self, elapsed)
-		-- self.elapsed = (self.elapsed or 0) + elapsed
-		-- if self.elapsed >= 0.2 then
-			-- coordX, coordY = GetPlayerMapPosition(P)
+if modules and ((coords and coords.enabled) or (location and location.enabled)) then
+	--BETA ls:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+	ls:SetScript("OnUpdate", function(self, elapsed)
+		self.elapsed = (self.elapsed or 0) + elapsed
+		if self.elapsed >= 0.2 then
+			local unitMap = C_Map.GetBestMapForUnit("player")
 
-			-- if not GetPlayerMapPosition(P) then
-				-- coordX = 0
-				-- coordY = 0
-			-- end
+			if unitMap then
+				local GetPlayerMapPosition = C_Map.GetPlayerMapPosition(C_Map.GetBestMapForUnit("player"), "player")
 
-			-- self.elapsed = 0
-		-- end
-	-- end)
-	-- WorldMapDetailFrame:HookScript("OnHide", SetMapToCurrentZone)
+				if GetPlayerMapPosition then
+					coordX, coordY = C_Map.GetPlayerMapPosition(C_Map.GetBestMapForUnit("player"), "player"):GetXY()
+				end
+			end
 
-	-- function Coords() return format(coords and coords.fmt or "%d, %d", coordX * 100, coordY * 100) end
--- end
+			self.elapsed = 0
+		end
+	end)
+	-- WorldMapFrame:HookScript("OnHide", SetMapToCurrentZone)
+
+	function Coords() return format(coords and coords.fmt or "%d, %d", coordX * 100, coordY * 100) end
+end
 
 -- Set profile
 if profiles then for _, p in ipairs{class,format("%s - %s", char, realm)} do
