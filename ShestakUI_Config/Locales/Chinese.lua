@@ -293,6 +293,7 @@ L_GUI_NAMEPLATE_HEALER_ICON = "战场中显示治疗职业图标"
 L_GUI_NAMEPLATE_TOTEM_ICONS = "Show icon above enemy totems nameplate" -- Need review
 
 -- ActionBar options
+L_GUI_ACTIONBAR = "Action Bars" -- Need review
 L_GUI_ACTIONBAR_ENABLE = "开启动作条增强"
 L_GUI_ACTIONBAR_HOTKEY = "快捷键文字"
 L_GUI_ACTIONBAR_MACRO = "宏名称"
@@ -306,12 +307,12 @@ L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "关闭动作条技能特效高亮"
 L_GUI_ACTIONBAR_BOTTOMBARS = "底部动作条数目(1, 2, or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "右侧动作条数目(0, 1, 2, or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "鼠标悬停显示右侧动作条"
-L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "鼠标悬停显示宠物动作条"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "隐藏宠物动作条"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "宠物动作条横向排列"
-L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "鼠标悬停显示变身/姿态/图腾动作条"
+L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "鼠标悬停显示宠物动作条"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "隐藏变身/姿态/图腾动作条"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "变身/姿态动作条横向排列"
+L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "鼠标悬停显示变身/姿态/图腾动作条" -- Need review
 L_GUI_ACTIONBAR_MICROMENU = "微型菜单"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "鼠标悬停显示微型菜单"
 

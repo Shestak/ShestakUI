@@ -290,6 +290,7 @@ L_GUI_NAMEPLATE_HEALER_ICON = "Show icon above enemy healers nameplate in battle
 L_GUI_NAMEPLATE_TOTEM_ICONS = "Show icon above enemy totems nameplate"
 
 -- ActionBar options
+L_GUI_ACTIONBAR = "Action Bars"
 L_GUI_ACTIONBAR_ENABLE = "Enable action bars"
 L_GUI_ACTIONBAR_HOTKEY = "Show hotkey on buttons"
 L_GUI_ACTIONBAR_MACRO = "Show macro name on buttons"
@@ -303,12 +304,12 @@ L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Hide proc highlight"
 L_GUI_ACTIONBAR_BOTTOMBARS = "Number of action bars on the bottom (1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "Number of action bars on right (0, 1, 2 or 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Right bars on mouseover"
-L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Petbar on mouseover (only for horizontal petbar)"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "Hide pet bar"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Enable horizontal pet bar"
-L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Stance bar on mouseover"
+L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Petbar on mouseover (only for horizontal petbar)"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Hide stance bar"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Enable horizontal stance bar"
+L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Stance bar on mouseover (only for horizontal stance bar)"
 L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover"
 
