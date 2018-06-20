@@ -61,6 +61,9 @@ end)
 
 -- Mouseover bar
 if C.actionbar.rightbars_mouseover == true and C.actionbar.petbar_horizontal == false then
+	PetActionBarAnchor:SetAlpha(0)
+	PetActionBarAnchor:SetScript("OnEnter", function() if PetHolder:IsShown() then RightBarMouseOver(1) end end)
+	PetActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
 	for i = 1, NUM_PET_ACTION_SLOTS do
 		local b = _G["PetActionButton"..i]
 		b:SetAlpha(0)
@@ -69,6 +72,9 @@ if C.actionbar.rightbars_mouseover == true and C.actionbar.petbar_horizontal == 
 	end
 end
 if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
+	PetActionBarAnchor:SetAlpha(0)
+	PetActionBarAnchor:SetScript("OnEnter", function() PetBarMouseOver(1) end)
+	PetActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then PetBarMouseOver(0) end end)
 	for i = 1, NUM_PET_ACTION_SLOTS do
 		local b = _G["PetActionButton"..i]
 		b:SetAlpha(0)

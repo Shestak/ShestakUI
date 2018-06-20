@@ -142,6 +142,12 @@ function PetBarMouseOver(alpha)
 	PetHolder:SetAlpha(alpha)
 end
 
+if C.actionbar.rightbars_mouseover == true then
+	RightActionBarAnchor:SetAlpha(0)
+	RightActionBarAnchor:SetScript("OnEnter", function() RightBarMouseOver(1) end)
+	RightActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
+end
+
 -- Fix cooldown spiral alpha (WoD bug)
 function T.HideSpiral(f, alpha)
 	f:SetSwipeColor(0, 0, 0, alpha * 0.8)
@@ -174,27 +180,4 @@ if (C.actionbar.rightbars_mouseover == true and C.actionbar.petbar_horizontal ==
 		end
 		EventPetSpiral:UnregisterEvent("PET_BAR_UPDATE_COOLDOWN")
 	end)
-end
-
-do
-	if C.actionbar.rightbars_mouseover == true then
-		RightActionBarAnchor:SetAlpha(0)
-		RightActionBarAnchor:SetScript("OnEnter", function() RightBarMouseOver(1) end)
-		RightActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
-		if C.actionbar.petbar_horizontal == false then
-			PetActionBarAnchor:SetAlpha(0)
-			PetActionBarAnchor:SetScript("OnEnter", function() if PetHolder:IsShown() then RightBarMouseOver(1) end end)
-			PetActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
-		end
-		if C.actionbar.stancebar_horizontal == false and C.actionbar.stancebar_hide == false then
-			ShapeShiftBarAnchor:SetAlpha(0)
-			ShapeShiftBarAnchor:SetScript("OnEnter", function() RightBarMouseOver(1) end)
-			ShapeShiftBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
-		end
-	end
-	if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
-		PetActionBarAnchor:SetAlpha(0)
-		PetActionBarAnchor:SetScript("OnEnter", function() PetBarMouseOver(1) end)
-		PetActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then PetBarMouseOver(0) end end)
-	end
 end
