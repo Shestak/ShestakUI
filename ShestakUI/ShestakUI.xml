@@ -99,6 +99,7 @@
 	<Script file="Modules\ActionBars\Range.lua"/>
 	<Script file="Modules\ActionBars\Others.lua"/>
 	<Script file="Modules\ActionBars\Cooldowns.lua"/>
+	<Script file="Modules\ActionBars\ExtraBar.lua"/>
 	<Script file="Modules\ActionBars\MicroMenu.lua"/>
 
 	<Script file="Modules\Announcements\BadGear.lua"/>
@@ -139,7 +140,6 @@
 	<Script file="Modules\Blizzard\CombatText.lua"/>
 	<Script file="Modules\Blizzard\Durability.lua"/>
 	<Script file="Modules\Blizzard\Errors.lua"/>
-	<Script file="Modules\Blizzard\ExtraActionBar.lua"/>
 	<Script file="Modules\Blizzard\Fixes.lua"/>
 	<Script file="Modules\Blizzard\Fonts.lua"/>
 	<Script file="Modules\Blizzard\FriendList.lua"/>
