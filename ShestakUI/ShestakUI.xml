@@ -84,9 +84,8 @@
 	<Script file="Modules\Misc\Threat.lua"/>
 	<Script file="Modules\Misc\TrainAll.lua"/>
 
-	<Script file="Modules\ActionBars\Functions.lua"/>
+	<Script file="Modules\ActionBars\Core.lua"/>
 	<Script file="Modules\ActionBars\Bindings.lua"/>
-	<Script file="Modules\ActionBars\Hide.lua"/>
 	<Script file="Modules\ActionBars\Bar1.lua"/>
 	<Script file="Modules\ActionBars\Bar2.lua"/>
 	<Script file="Modules\ActionBars\Bar3.lua"/>
@@ -97,7 +96,7 @@
 	<Script file="Modules\ActionBars\Toggle.lua"/>
 	<Script file="Modules\ActionBars\Style.lua"/>
 	<Script file="Modules\ActionBars\Range.lua"/>
-	<Script file="Modules\ActionBars\Others.lua"/>
+	<Script file="Modules\ActionBars\VehicleExit.lua"/>
 	<Script file="Modules\ActionBars\Cooldowns.lua"/>
 	<Script file="Modules\ActionBars\ExtraBar.lua"/>
 	<Script file="Modules\ActionBars\MicroMenu.lua"/>
