@@ -4,32 +4,17 @@ if C.actionbar.enable ~= true or C.actionbar.micromenu ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Micro menu(by Elv22)
 ----------------------------------------------------------------------------------------
-local microbuttons = {
-	"CharacterMicroButton",
-	"SpellbookMicroButton",
-	"TalentMicroButton",
-	"AchievementMicroButton",
-	"QuestLogMicroButton",
-	"GuildMicroButton",
-	"LFDMicroButton",
-	"CollectionsMicroButton",
-	"EJMicroButton",
-	"StoreMicroButton",
-	"MainMenuMicroButton"
-}
-
 local frame = CreateFrame("Frame", "MicroAnchor", oUF_PetBattleFrameHider)
 frame:SetPoint(unpack(C.position.micro_menu))
-frame:SetWidth(((CharacterMicroButton:GetWidth() + 4) * 9) + 12)
-frame:SetHeight(CharacterMicroButton:GetHeight() - 28)
+frame:SetSize(284, 30)
 frame.shown = false
-if C.actionbar.micromenu_mouseover == true then frame:SetAlpha(0) end
 
 UpdateMicroButtonsParent(frame)
+if C.actionbar.micromenu_mouseover == true then frame:SetAlpha(0) end
 
 local function CheckFade(self, elapsed)
 	local mouseactive
-	for i, button in pairs(microbuttons) do
+	for i, button in pairs(MICRO_BUTTONS) do
 		local b = _G[button]
 		if b.mouseover == true then
 			mouseactive = true
@@ -59,7 +44,7 @@ local function CheckFade(self, elapsed)
 end
 frame:SetScript("OnUpdate", CheckFade)
 
-for i, button in pairs(microbuttons) do
+for i, button in pairs(MICRO_BUTTONS) do
 	local m = _G[button]
 	local pushed = m:GetPushedTexture()
 	local normal = m:GetNormalTexture()
@@ -75,22 +60,22 @@ for i, button in pairs(microbuttons) do
 	f:SetFrameLevel(1)
 	f:SetFrameStrata("BACKGROUND")
 	f:SetPoint("BOTTOMLEFT", m, "BOTTOMLEFT", 2, 0)
-	f:SetPoint("TOPRIGHT", m, "TOPRIGHT", -2, -28)
+	f:SetPoint("TOPRIGHT", m, "TOPRIGHT", -2, -6)
 	f:SetTemplate("Default")
 	m.frame = f
 
-	pushed:SetTexCoord(0.17, 0.87, 0.5, 0.908)
+	pushed:SetTexCoord(0.22, 0.81, 0.26, 0.82)
 	pushed:ClearAllPoints()
 	pushed:SetPoint("TOPLEFT", m.frame, "TOPLEFT", 2, -2)
 	pushed:SetPoint("BOTTOMRIGHT", m.frame, "BOTTOMRIGHT", -2, 2)
 
-	normal:SetTexCoord(0.17, 0.87, 0.5, 0.908)
+	normal:SetTexCoord(0.22, 0.81, 0.26, 0.82)
 	normal:ClearAllPoints()
 	normal:SetPoint("TOPLEFT", m.frame, "TOPLEFT", 2, -2)
 	normal:SetPoint("BOTTOMRIGHT", m.frame, "BOTTOMRIGHT", -2, 2)
 
 	if disabled then
-		disabled:SetTexCoord(0.17, 0.87, 0.5, 0.908)
+		disabled:SetTexCoord(0.22, 0.81, 0.26, 0.82)
 		disabled:ClearAllPoints()
 		disabled:SetPoint("TOPLEFT", m.frame, "TOPLEFT", 2, -2)
 		disabled:SetPoint("BOTTOMRIGHT", m.frame, "BOTTOMRIGHT", -2, 2)
