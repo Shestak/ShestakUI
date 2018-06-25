@@ -510,9 +510,8 @@ function T.SkinSlider(f)
 	end
 	bd:SetFrameLevel(f:GetFrameLevel() - 1)
 
-	local slider = select(4, f:GetRegions())
-	slider:SetTexture("Interface\\CastingBar\\UI-CastingBar-Spark")
-	slider:SetBlendMode("ADD")
+	f:SetThumbTexture("Interface\\CastingBar\\UI-CastingBar-Spark")
+	f:GetThumbTexture():SetBlendMode("ADD")
 end
 
 function T.SkinIconSelectionFrame(frame, numIcons, buttonNameTemplate, frameNameOverride)
