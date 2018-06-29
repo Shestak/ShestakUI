@@ -1050,12 +1050,6 @@ local function Shared(self, unit)
 				self.Castbar.Latency:SetTextColor(1, 1, 1)
 				self.Castbar.Latency:SetPoint("TOPRIGHT", self.Castbar.Time, "BOTTOMRIGHT", 0, 0)
 				self.Castbar.Latency:SetJustifyH("RIGHT")
-
-				self:RegisterEvent("CURRENT_SPELL_CAST_CHANGED", function(self, event, caster) -- BETA Event check
-					if (caster == "player" or caster == "vehicle") then
-						self.Castbar.castSent = GetTime()
-					end
-				end)
 			end
 		end
 	end

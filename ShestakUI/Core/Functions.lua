@@ -1200,16 +1200,10 @@ T.PostCastStart = function(Castbar, unit, name, castid)
 	if unit == "vehicle" then unit = "player" end
 
 	if unit == "player" and C.unitframe.castbar_latency == true and Castbar.Latency then
-		local _, _, _, lag = GetNetStats()
-		local latency = GetTime() - (Castbar.castSent or 0)
-		lag = lag / 1e3 > Castbar.max and Castbar.max or lag / 1e3
-		latency = latency > Castbar.max and lag or latency
-		Castbar.Latency:SetText(("%dms"):format(latency * 1e3))
-		Castbar.SafeZone:SetWidth(Castbar:GetWidth() * latency / Castbar.max)
-		Castbar.SafeZone:ClearAllPoints()
-		Castbar.SafeZone:SetPoint("TOPRIGHT")
-		Castbar.SafeZone:SetPoint("BOTTOMRIGHT")
-		Castbar.castSent = nil
+		local _, _, _, ms = GetNetStats()
+		Castbar.Latency:SetText(("%dms"):format(ms))
+		Castbar.SafeZone:SetDrawLayer("BORDER")
+		Castbar.SafeZone:SetVertexColor(0.85, 0.27, 0.27)
 	end
 
 	if unit == "player" and C.unitframe.castbar_ticks == true then
@@ -1274,16 +1268,10 @@ T.PostChannelStart = function(Castbar, unit, name)
 	if unit == "vehicle" then unit = "player" end
 
 	if unit == "player" and C.unitframe.castbar_latency == true and Castbar.Latency then
-		local _, _, _, lag = GetNetStats()
-		local latency = GetTime() - (Castbar.castSent or 0)
-		lag = lag / 1e3 > Castbar.max and Castbar.max or lag / 1e3
-		latency = latency > Castbar.max and lag or latency
-		Castbar.Latency:SetText(("%dms"):format(latency * 1e3))
-		Castbar.SafeZone:SetWidth(Castbar:GetWidth() * latency / Castbar.max)
-		Castbar.SafeZone:ClearAllPoints()
-		Castbar.SafeZone:SetPoint("TOPLEFT")
-		Castbar.SafeZone:SetPoint("BOTTOMLEFT")
-		Castbar.castSent = nil
+		local _, _, _, ms = GetNetStats()
+		Castbar.Latency:SetText(("%dms"):format(ms))
+		Castbar.SafeZone:SetDrawLayer("ARTWORK")
+		Castbar.SafeZone:SetVertexColor(0.85, 0.27, 0.27, 0.75)
 	end
 
 	if unit == "player" and C.unitframe.castbar_ticks == true then
