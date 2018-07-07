@@ -168,21 +168,6 @@ L_BIND_BINDING = "Raccourcis"
 L_BIND_KEY = "Touche"
 L_BIND_NO_SET = "Pas encore de raccourcis"
 
--- BG stats
-L_DATATEXT_BASESASSAULTED = "Bases Attaquées :"
-L_DATATEXT_BASESDEFENDED = "Bases Défendues :"
-L_DATATEXT_TOWERSASSAULTED = "Tours prises d'assaut :"
-L_DATATEXT_TOWERSDEFENDED = "Tours Défendues :"
-L_DATATEXT_FLAGSCAPTURED = "Drapeaux Capturés :"
-L_DATATEXT_FLAGSRETURNED = "Drapeaux Récupérés :"
-L_DATATEXT_GRAVEYARDSASSAULTED = "Cimetières Attaqués :"
-L_DATATEXT_GRAVEYARDSDEFENDED = "Cimetières Défendus :"
-L_DATATEXT_DEMOLISHERSDESTROYED = "Démolisseurs Détruits :"
-L_DATATEXT_GATESDESTROYED = "Portes Détruites :"
-L_DATATEXT_ORB_POSSESSIONS = "Orbes en possession :"
-L_DATATEXT_VICTORY_POINTS = "Points de Victoire :"
-L_DATATEXT_CARTS_CONTROLLED = "Chariots contrôlée :"
-
 -- Info text
 L_INFO_ERRORS = "Pas d'erreur pour le moment."
 L_INFO_INVITE = "Invitation acceptée par "
