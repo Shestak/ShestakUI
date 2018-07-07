@@ -27,8 +27,7 @@ bgframe:SetScript("OnEnter", function(self)
 	for i = 1, numScores do
 		local name, _, honorableKills, deaths, _, _, _, _, _, damageDone, healingDone = GetBattlefieldScore(i)
 		if name and name == T.name then
-			local curmapid = C_Map.GetBestMapForUnit("player")
-			SetMapToCurrentZone()
+			local areaID = C_Map.GetBestMapForUnit("player") or 0
 			GameTooltip:SetOwner(self, "ANCHOR_TOPLEFT", 0, T.Scale(4))
 			GameTooltip:ClearLines()
 			GameTooltip:SetPoint("BOTTOM", self, "TOP", 0, 1)
@@ -40,28 +39,28 @@ bgframe:SetScript("OnEnter", function(self)
 			GameTooltip:AddDoubleLine(DAMAGE..":", damageDone, 1, 1, 1)
 			GameTooltip:AddDoubleLine(SHOW_COMBAT_HEALING..":", healingDone, 1, 1, 1)
 			-- Add extra statistics depending on what BG you are
-			if curmapid == IOC or curmapid == TBFG or curmapid == AB then
+			if areaID == IOC or areaID == TBFG or areaID == AB then
 				GameTooltip:AddDoubleLine(L_DATATEXT_BASESASSAULTED, GetBattlefieldStatData(i, 1), 1, 1, 1)
 				GameTooltip:AddDoubleLine(L_DATATEXT_BASESDEFENDED, GetBattlefieldStatData(i, 2), 1, 1, 1)
-			elseif curmapid == WSG or curmapid == TP then
+			elseif areaID == WSG or areaID == TP then
 				GameTooltip:AddDoubleLine(L_DATATEXT_FLAGSCAPTURED, GetBattlefieldStatData(i, 1), 1, 1, 1)
 				GameTooltip:AddDoubleLine(L_DATATEXT_FLAGSRETURNED, GetBattlefieldStatData(i, 2), 1, 1, 1)
-			elseif curmapid == EOTS then
+			elseif areaID == EOTS then
 				GameTooltip:AddDoubleLine(L_DATATEXT_FLAGSCAPTURED, GetBattlefieldStatData(i, 1), 1, 1, 1)
-			elseif curmapid == AV then
+			elseif areaID == AV then
 				GameTooltip:AddDoubleLine(L_DATATEXT_GRAVEYARDSASSAULTED, GetBattlefieldStatData(i, 1), 1, 1, 1)
 				GameTooltip:AddDoubleLine(L_DATATEXT_GRAVEYARDSDEFENDED, GetBattlefieldStatData(i, 2), 1, 1, 1)
 				GameTooltip:AddDoubleLine(L_DATATEXT_TOWERSASSAULTED, GetBattlefieldStatData(i, 3), 1, 1, 1)
 				GameTooltip:AddDoubleLine(L_DATATEXT_TOWERSDEFENDED, GetBattlefieldStatData(i, 4), 1, 1, 1)
-			elseif curmapid == SOTA then
+			elseif areaID == SOTA then
 				GameTooltip:AddDoubleLine(L_DATATEXT_DEMOLISHERSDESTROYED, GetBattlefieldStatData(i, 1), 1, 1, 1)
 				GameTooltip:AddDoubleLine(L_DATATEXT_GATESDESTROYED, GetBattlefieldStatData(i, 2), 1, 1, 1)
-			elseif curmapid == TOK then
+			elseif areaID == TOK then
 				GameTooltip:AddDoubleLine(L_DATATEXT_ORB_POSSESSIONS, GetBattlefieldStatData(i, 1), 1, 1, 1)
 				GameTooltip:AddDoubleLine(L_DATATEXT_VICTORY_POINTS, GetBattlefieldStatData(i, 2), 1, 1, 1)
-			elseif curmapid == SSM then
+			elseif areaID == SSM then
 				GameTooltip:AddDoubleLine(L_DATATEXT_CARTS_CONTROLLED, GetBattlefieldStatData(i, 1), 1, 1, 1)
-			elseif curmapid == DG then
+			elseif areaID == DG then
 				GameTooltip:AddDoubleLine(L_DATATEXT_CARTS_CONTROLLED, GetBattlefieldStatData(i, 1), 1, 1, 1)
 				GameTooltip:AddDoubleLine(L_DATATEXT_BASESASSAULTED, GetBattlefieldStatData(i, 3), 1, 1, 1)
 				GameTooltip:AddDoubleLine(L_DATATEXT_BASESDEFENDED, GetBattlefieldStatData(i, 4), 1, 1, 1)
