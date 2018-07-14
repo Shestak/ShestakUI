@@ -17,6 +17,7 @@ local function LoadSkin()
 	T.SkinScrollBar(BrowseFilterScrollFrameScrollBar)
 	T.SkinScrollBar(BrowseScrollFrameScrollBar)
 	T.SkinScrollBar(AuctionsScrollFrameScrollBar)
+	T.SkinScrollBar(AuctionatorScrollFrameScrollBar)
 	T.SkinScrollBar(BidScrollFrameScrollBar)
 
 	T.SkinDropDownBox(BrowseDropDown)
