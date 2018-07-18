@@ -25,30 +25,45 @@ local function LoadSkin()
 	WorldMapFrame.Header:SetTemplate("Overlay")
 
 	WorldMapFrame.BorderFrame:StripTextures()
-	WorldMapFrame.BorderFrame.Inset:StripTextures()
+	--BETA WorldMapFrame.BorderFrame.Inset:StripTextures()
 	QuestMapFrame.DetailsFrame:StripTextures()
 	QuestMapFrame.DetailsFrame.RewardsFrame:StripTextures()
-	QuestScrollFrame.Contents.StoryHeader.HighlightTexture:Hide()
-	QuestScrollFrame.Contents.StoryHeader.Background:Hide()
-	QuestScrollFrame.Contents.StoryHeader.Shadow:Hide()
+	--BETA QuestScrollFrame.Contents.StoryHeader.Shadow:Hide()
 	QuestMapFrame:StripTextures()
 
-	QuestScrollFrame.Background:SetAlpha(0)
-
-	WorldMapFrameTutorialButton:Kill()
-
-	local TrackingOptions = WorldMapFrame.UIElementsFrame.TrackingOptionsButton
-	TrackingOptions.Button:SetAlpha(0)
-	TrackingOptions.Background:SetAlpha(0)
-	TrackingOptions.IconOverlay:SetTexture("")
-
-	QuestScrollFrame:ClearAllPoints()
-	QuestScrollFrame:SetPoint("LEFT", WorldMapFrame.backdrop, "RIGHT", 4, 0)
 	QuestMapFrame:CreateBackdrop("Overlay")
 	QuestMapFrame.backdrop:ClearAllPoints()
 	QuestMapFrame.backdrop:SetSize(284, 468)
 	QuestMapFrame.backdrop:SetPoint("LEFT", WorldMapFrame.backdrop, "RIGHT", 2, 0)
+
+	WorldMapFrame.BorderFrame.Tutorial:Kill()
+
+	-- local TrackingOptions = WorldMapFrame.UIElementsFrame.TrackingOptionsButton
+	-- TrackingOptions.Button:SetAlpha(0)
+	-- TrackingOptions.Background:SetAlpha(0)
+	-- TrackingOptions.IconOverlay:SetTexture("")
+
+	QuestScrollFrame:ClearAllPoints()
+	QuestScrollFrame:SetPoint("LEFT", WorldMapFrame.backdrop, "RIGHT", 4, 0)
+	QuestScrollFrame.DetailFrame:StripTextures()
+	QuestScrollFrame.Background:SetAlpha(0)
+	QuestScrollFrame.Contents.Separator.Divider:Hide()
+	QuestScrollFrame:SetSize(259, 463)
+
+	QuestScrollFrame.Contents.WarCampaignHeader:CreateBackdrop("Overlay")
+	QuestScrollFrame.Contents.WarCampaignHeader.backdrop:SetPoint("TOPLEFT", 2, -2)
+	QuestScrollFrame.Contents.WarCampaignHeader.backdrop:SetPoint("BOTTOMRIGHT", -6, 2)
+	QuestScrollFrame.Contents.WarCampaignHeader.HighlightTexture:Hide()
+	QuestScrollFrame.Contents.WarCampaignHeader.Background:Hide()
+
+	QuestScrollFrame.Contents.StoryHeader:CreateBackdrop("Overlay")
+	QuestScrollFrame.Contents.StoryHeader.backdrop:SetPoint("TOPLEFT", 2, -2)
+	QuestScrollFrame.Contents.StoryHeader.backdrop:SetPoint("BOTTOMRIGHT", -6, 2)
+	QuestScrollFrame.Contents.StoryHeader.HighlightTexture:Hide()
+	QuestScrollFrame.Contents.StoryHeader.Background:Hide()
+
 	QuestScrollFrameScrollBar:SetPoint("TOPLEFT", QuestScrollFrame, "TOPRIGHT", 4, -16)
+	QuestScrollFrameScrollBar:SetPoint("BOTTOMLEFT", QuestScrollFrame, "BOTTOMRIGHT", 4, 15)
 	T.SkinScrollBar(QuestScrollFrameScrollBar)
 
 	local QuestScrollFrameTopBorder = CreateFrame("Frame", "$parentBorder", QuestScrollFrame)
@@ -57,6 +72,7 @@ local function LoadSkin()
 	QuestScrollFrameTopBorder.backdrop:SetSize(284, 23)
 	QuestScrollFrameTopBorder.backdrop:SetPoint("LEFT", WorldMapFrame.Header, "RIGHT", 2, 0)
 
+	QuestMapDetailsScrollFrameScrollBar:SetPoint("TOPLEFT", QuestMapDetailsScrollFrame, "TOPRIGHT", 0, -18)
 	T.SkinScrollBar(QuestMapDetailsScrollFrameScrollBar)
 
 	QuestMapFrame.DetailsFrame.BackButton:SkinButton()
@@ -99,28 +115,28 @@ local function LoadSkin()
 	end)
 
 	-- Quests Buttons
-	for i = 1, 2 do
-		local button = i == 1 and WorldMapFrame.UIElementsFrame.OpenQuestPanelButton or WorldMapFrame.UIElementsFrame.CloseQuestPanelButton
-		local texture = i == 1 and "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up" or "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Up"
+	--BETA for i = 1, 2 do
+		-- local button = i == 1 and WorldMapFrame.UIElementsFrame.OpenQuestPanelButton or WorldMapFrame.UIElementsFrame.CloseQuestPanelButton
+		-- local texture = i == 1 and "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up" or "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Up"
 
-		button:ClearAllPoints()
-		button:SetPoint("BOTTOMRIGHT", -2, 2)
-		button:SetSize(20, 20)
-		button:StripTextures()
-		button:SetTemplate("Default")
-		button:StyleButton()
+		-- button:ClearAllPoints()
+		-- button:SetPoint("BOTTOMRIGHT", -2, 2)
+		-- button:SetSize(20, 20)
+		-- button:StripTextures()
+		-- button:SetTemplate("Default")
+		-- button:StyleButton()
 
-		button.icon = button:CreateTexture(nil, "BORDER")
-		button.icon:SetTexture(texture)
-		button.icon:SetTexCoord(0.3, 0.29, 0.3, 0.79, 0.65, 0.29, 0.65, 0.79)
-		button.icon:ClearAllPoints()
-		button.icon:SetPoint("TOPLEFT", 2, -2)
-		button.icon:SetPoint("BOTTOMRIGHT", -2, 2)
-	end
+		-- button.icon = button:CreateTexture(nil, "BORDER")
+		-- button.icon:SetTexture(texture)
+		-- button.icon:SetTexCoord(0.3, 0.29, 0.3, 0.79, 0.65, 0.29, 0.65, 0.79)
+		-- button.icon:ClearAllPoints()
+		-- button.icon:SetPoint("TOPLEFT", 2, -2)
+		-- button.icon:SetPoint("BOTTOMRIGHT", -2, 2)
+	-- end
 
-	WorldMapFrameNavBar:Hide()
-	WorldMapTitleButton:ClearAllPoints()
-	WorldMapTitleButton:SetAllPoints(WorldMapFrame.Header)
+	WorldMapFrame.NavBar:Hide()
+	-- WorldMapTitleButton:ClearAllPoints()
+	-- WorldMapTitleButton:SetAllPoints(WorldMapFrame.Header)
 	WorldMapFrame.BorderFrame.TitleText:ClearAllPoints()
 	WorldMapFrame.BorderFrame.TitleText:SetPoint("CENTER", WorldMapFrame.Header)
 
@@ -128,18 +144,18 @@ local function LoadSkin()
 	WorldMapFrameCloseButton:ClearAllPoints()
 	WorldMapFrameCloseButton:SetPoint("RIGHT", WorldMapFrame.Header, "RIGHT", -4, 0)
 	WorldMapFrameCloseButton:SetSize(15, 15)
-	
+
 	WorldMapFrame.BorderFrame.MaximizeMinimizeFrame.MaximizeButton:Kill()
 	WorldMapFrame.BorderFrame.MaximizeMinimizeFrame.MinimizeButton:Kill()
 
-	T.SkinDropDownBox(WorldMapLevelDropDown)
-	WorldMapLevelDropDown:ClearAllPoints()
-	WorldMapLevelDropDown:SetPoint("TOPLEFT", -18, -2)
-	
-	T.SkinCloseButton(WorldMapFrame.UIElementsFrame.BountyBoard.TutorialBox.CloseButton)
-	WorldMapFrame.UIElementsFrame.BountyBoard.TutorialBox:StripTextures()
-	WorldMapFrame.UIElementsFrame.BountyBoard.TutorialBox.Arrow:Hide()
-	WorldMapFrame.UIElementsFrame.BountyBoard.TutorialBox:CreateBackdrop("Transparent")
+	--BETA T.SkinDropDownBox(WorldMapLevelDropDown)
+	-- WorldMapLevelDropDown:ClearAllPoints()
+	-- WorldMapLevelDropDown:SetPoint("TOPLEFT", -18, -2)
+
+	-- T.SkinCloseButton(WorldMapFrame.UIElementsFrame.BountyBoard.TutorialBox.CloseButton)
+	-- WorldMapFrame.UIElementsFrame.BountyBoard.TutorialBox:StripTextures()
+	-- WorldMapFrame.UIElementsFrame.BountyBoard.TutorialBox.Arrow:Hide()
+	-- WorldMapFrame.UIElementsFrame.BountyBoard.TutorialBox:CreateBackdrop("Transparent")
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

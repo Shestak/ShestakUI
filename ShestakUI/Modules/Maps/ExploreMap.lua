@@ -129,7 +129,7 @@ local ExpLoreMasterFrame = CreateFrame("Frame")
 ExpLoreMasterFrame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 ExpLoreMasterFrame:SetScript("OnUpdate", function(event)
 	if event == "ZONE_CHANGED_NEW_AREA" then
-		SetMapToCurrentZone()
+		--BETA SetMapToCurrentZone()
 	end
 	if WorldMapFrame:IsShown() and WorldMapButton:IsMouseOver() then
 		XLM_UD()

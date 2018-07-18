@@ -28,7 +28,7 @@ for tag, func in next, {
 	end,
 } do
 	oUF.Tags.Methods[tag] = func
-	oUF.Tags.Events[tag] = 'PLAYER_XP_UPDATE PLAYER_LEVEL_UP UPDATE_EXHAUSTION HONOR_XP_UPDATE HONOR_LEVEL_UPDATE HONOR_PRESTIGE_UPDATE'
+	oUF.Tags.Events[tag] = 'PLAYER_XP_UPDATE PLAYER_LEVEL_UP UPDATE_EXHAUSTION HONOR_XP_UPDATE'
 end
 
 oUF.Tags.SharedEvents.PLAYER_LEVEL_UP = true
@@ -126,8 +126,7 @@ end
 local function ElementEnable(self)
 	local element = self.Experience
 	self:RegisterEvent('PLAYER_XP_UPDATE', Path)
-	self:RegisterEvent('HONOR_LEVEL_UPDATE', Path)
-	self:RegisterEvent('HONOR_PRESTIGE_UPDATE', Path)
+	self:RegisterEvent('HONOR_XP_UPDATE', Path)
 
 	if(element.Rested) then
 		self:RegisterEvent('UPDATE_EXHAUSTION', Path)
@@ -141,8 +140,7 @@ end
 
 local function ElementDisable(self)
 	self:UnregisterEvent('PLAYER_XP_UPDATE', Path)
-	self:UnregisterEvent('HONOR_LEVEL_UPDATE', Path)
-	self:UnregisterEvent('HONOR_PRESTIGE_UPDATE', Path)
+	self:UnregisterEvent('HONOR_XP_UPDATE', Path)
 
 	if(self.Experience.Rested) then
 		self:UnregisterEvent('UPDATE_EXHAUSTION', Path)

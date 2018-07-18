@@ -15,8 +15,8 @@ local visible, flask, battleelixir, guardianelixir, food
 local function CheckElixir(unit)
 	if battleelixirbuffs and battleelixirbuffs[1] then
 		for i, battleelixirbuffs in pairs(battleelixirbuffs) do
-			local name, _, icon = GetSpellInfo(battleelixirbuffs)
-			if UnitAura("player", name) then
+			local name, _, icon, _, _, _, spellId = GetSpellInfo(battleelixirbuffs)
+			if UnitAura("player", spellId) then
 				FlaskFrame.t:SetTexture(icon)
 				battleelixir = true
 				break
@@ -28,8 +28,8 @@ local function CheckElixir(unit)
 
 	if guardianelixirbuffs and guardianelixirbuffs[1] then
 		for i, guardianelixirbuffs in pairs(guardianelixirbuffs) do
-			local name, _, icon = GetSpellInfo(guardianelixirbuffs)
-			if UnitAura("player", name) then
+			local name, _, icon, _, _, _, spellId = GetSpellInfo(guardianelixirbuffs)
+			if UnitAura("player", spellId) then
 				guardianelixir = true
 				if not battleelixir then
 					FlaskFrame.t:SetTexture(icon)
@@ -58,11 +58,11 @@ local function OnAuraChange(self, event, arg1, unit)
 	-- Start checking buffs to see if we can find a match from the list
 	if flaskbuffs and flaskbuffs[1] then
 		for i, flaskbuffs in pairs(flaskbuffs) do
-			local name, _, icon = GetSpellInfo(flaskbuffs)
+			local name, _, icon, _, _, _, spellId = GetSpellInfo(flaskbuffs)
 			if i == 1 then
 				FlaskFrame.t:SetTexture(icon)
 			end
-			if UnitAura("player", name) then
+			if UnitAura("player", spellId) then
 				FlaskFrame:SetAlpha(C.reminder.raid_buffs_alpha)
 				flask = true
 				break
@@ -74,11 +74,11 @@ local function OnAuraChange(self, event, arg1, unit)
 
 	if foodbuffs and foodbuffs[1] then
 		for i, foodbuffs in pairs(foodbuffs) do
-			local name, _, icon = GetSpellInfo(foodbuffs)
+			local name, _, icon, _, _, _, spellId = GetSpellInfo(foodbuffs)
 			if i == 1 then
 				FoodFrame.t:SetTexture(icon)
 			end
-			if UnitAura("player", name) then
+			if UnitAura("player", spellId) then
 				FoodFrame:SetAlpha(C.reminder.raid_buffs_alpha)
 				food = true
 				break

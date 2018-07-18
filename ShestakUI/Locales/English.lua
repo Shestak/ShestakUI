@@ -164,21 +164,6 @@ L_BIND_BINDING = "Binding"
 L_BIND_KEY = "Key"
 L_BIND_NO_SET = "No bindings set"
 
--- BG stats
-L_DATATEXT_BASESASSAULTED = "Bases Assaulted:"
-L_DATATEXT_BASESDEFENDED = "Bases Defended:"
-L_DATATEXT_TOWERSASSAULTED = "Towers Assaulted:"
-L_DATATEXT_TOWERSDEFENDED = "Towers Defended:"
-L_DATATEXT_FLAGSCAPTURED = "Flags Captured:"
-L_DATATEXT_FLAGSRETURNED = "Flags Returned:"
-L_DATATEXT_GRAVEYARDSASSAULTED = "Graveyards Assaulted:"
-L_DATATEXT_GRAVEYARDSDEFENDED = "Graveyards Defended:"
-L_DATATEXT_DEMOLISHERSDESTROYED = "Demolishers Destroyed:"
-L_DATATEXT_GATESDESTROYED = "Gates Destroyed:"
-L_DATATEXT_ORB_POSSESSIONS = "Orb Possessions:"
-L_DATATEXT_VICTORY_POINTS = "Victory Points:"
-L_DATATEXT_CARTS_CONTROLLED = "Carts Controlled:"
-
 -- Info text
 L_INFO_ERRORS = "No error yet."
 L_INFO_INVITE = "Accepted invite from "

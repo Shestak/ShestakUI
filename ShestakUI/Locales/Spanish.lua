@@ -168,21 +168,6 @@ L_BIND_BINDING = "Asignación"
 L_BIND_KEY = "Tecla"
 L_BIND_NO_SET = "No tiene asignación"
 
--- BG stats
-L_DATATEXT_BASESASSAULTED = "Bases Asaltadas:"
-L_DATATEXT_BASESDEFENDED = "Bases Defendidas:"
-L_DATATEXT_TOWERSASSAULTED = "Torres Asaltadas:"
-L_DATATEXT_TOWERSDEFENDED = "Torres Defendidas:"
-L_DATATEXT_FLAGSCAPTURED = "Banderas Capturadas:"
-L_DATATEXT_FLAGSRETURNED = "Banderas Devueltas:"
-L_DATATEXT_GRAVEYARDSASSAULTED = "Cementerios Asaltados:"
-L_DATATEXT_GRAVEYARDSDEFENDED = "Cementerios Defendidos:"
-L_DATATEXT_DEMOLISHERSDESTROYED = "Catapultas Destruidas:"
-L_DATATEXT_GATESDESTROYED = "Puertas Destruidas:"
-L_DATATEXT_ORB_POSSESSIONS = "Orbes en Posesión:"
-L_DATATEXT_VICTORY_POINTS = "Puntos de Victoria:"
-L_DATATEXT_CARTS_CONTROLLED = "Vagonetas Controladas:"
-
 -- Info text
 L_INFO_ERRORS = "Ningún error aun."
 L_INFO_INVITE = "Invitación aceptada de "

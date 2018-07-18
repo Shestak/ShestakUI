@@ -271,7 +271,7 @@ local function FadeOut(f)
 	UIFrameFadeOut(f, 0.8, f:GetAlpha(), 0)
 end
 
-local function addapi(object)
+local function addAPI(object)
 	local mt = getmetatable(object).__index
 	if not object.Size then mt.Size = Size end
 	if not object.Width then mt.Width = Width end
@@ -293,14 +293,14 @@ end
 
 local handled = {["Frame"] = true}
 local object = CreateFrame("Frame")
-addapi(object)
-addapi(object:CreateTexture())
-addapi(object:CreateFontString())
+addAPI(object)
+addAPI(object:CreateTexture())
+addAPI(object:CreateFontString())
 
 object = EnumerateFrames()
 while object do
 	if not object:IsForbidden() and not handled[object:GetObjectType()] then
-		addapi(object)
+		addAPI(object)
 		handled[object:GetObjectType()] = true
 	end
 
@@ -309,4 +309,4 @@ end
 
 -- Hacky fix for issue on 7.1 PTR where scroll frames no longer seem to inherit the methods from the "Frame" widget
 local scrollFrame = CreateFrame("ScrollFrame")
-addapi(scrollFrame)
+addAPI(scrollFrame)

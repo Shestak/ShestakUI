@@ -3,7 +3,7 @@ if select(2, UnitClass('player')) ~= 'MONK' then return end
 local parent, ns = ...
 local oUF = ns.oUF
 
-local SPELL_POWER_CHI = SPELL_POWER_CHI
+local SPELL_POWER_CHI = Enum.PowerType.Chi or 12
 
 local function Update(self, event, unit, powerType)
 	if(self.unit ~= unit and (powerType and (powerType ~= 'CHI' and powerType ~= 'DARK_FORCE'))) then return end
@@ -80,7 +80,7 @@ local function Enable(self, unit)
 		hb.__owner = self
 		hb.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent("UNIT_POWER", Path)
+		self:RegisterEvent("UNIT_POWER_UPDATE", Path)
 		self:RegisterEvent("UNIT_DISPLAYPOWER", Path)
 		self:RegisterEvent("UNIT_MAXPOWER", Path)
 
@@ -98,7 +98,7 @@ end
 local function Disable(self)
 	local hb = self.HarmonyBar
 	if(hb) then
-		self:UnregisterEvent("UNIT_POWER", Path)
+		self:UnregisterEvent("UNIT_POWER_UPDATE", Path)
 		self:UnregisterEvent("UNIT_DISPLAYPOWER", Path)
 		self:UnregisterEvent("UNIT_MAXPOWER", Path)
 		hb.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")

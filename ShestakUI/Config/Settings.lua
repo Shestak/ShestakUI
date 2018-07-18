@@ -391,13 +391,13 @@ C["actionbar"] = {
 	["rightbars"] = 3,							-- Number of action bars on right (0, 1, 2 or 3)
 	["rightbars_mouseover"] = true,				-- Right bars on mouseover
 	-- Pet bar
-	["petbar_mouseover"] = false,				-- Pet bar on mouseover(only for horizontal pet bar)
 	["petbar_hide"] = false,					-- Hide pet bar
 	["petbar_horizontal"] = false,				-- Enable horizontal pet bar
+	["petbar_mouseover"] = false,				-- Pet bar on mouseover(only for horizontal pet bar)
 	-- Stance bar
-	["stancebar_mouseover"] = true,				-- Stance bar on mouseover
 	["stancebar_hide"] = false,					-- Hide stance bar
 	["stancebar_horizontal"] = true,			-- Enable horizontal stance bar
+	["stancebar_mouseover"] = true,				-- Stance bar on mouseover(only for horizontal stance bar)
 	-- MicroMenu
 	["micromenu"] = false,						-- Enable micro menu
 	["micromenu_mouseover"] = false,			-- Micro menu on mouseover

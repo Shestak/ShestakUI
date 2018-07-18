@@ -3,7 +3,7 @@ if(select(2, UnitClass('player')) ~= 'WARLOCK') then return end
 local parent, ns = ...
 local oUF = ns.oUF
 
-local SPELL_POWER_SOUL_SHARDS = SPELL_POWER_SOUL_SHARDS
+local SPELL_POWER_SOUL_SHARDS = Enum.PowerType.SoulShards or 7
 
 local function Update(self, event, unit, powerType)
 	if(self.unit ~= unit or (powerType and powerType ~= 'SOUL_SHARDS')) then return end
@@ -44,7 +44,7 @@ local function Enable(self, unit)
 		ss.__owner = self
 		ss.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent('UNIT_POWER', Path)
+		self:RegisterEvent('UNIT_POWER_UPDATE', Path)
 		self:RegisterEvent('UNIT_DISPLAYPOWER', Path)
 
 		return true
@@ -54,7 +54,7 @@ end
 local function Disable(self)
 	local ss = self.SoulShards
 	if(ss) then
-		self:UnregisterEvent('UNIT_POWER', Path)
+		self:UnregisterEvent('UNIT_POWER_UPDATE', Path)
 		self:UnregisterEvent('UNIT_DISPLAYPOWER', Path)
 	end
 end

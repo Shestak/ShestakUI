@@ -38,9 +38,9 @@ Minimap:SetArchBlobRingScalar(0)
 Minimap:SetQuestBlobRingScalar(0)
 
 -- Hide Voice Chat Frame
-MiniMapVoiceChatFrame:Kill()
-VoiceChatTalkers:Kill()
-ChannelFrameAutoJoin:Kill()
+--BETA MiniMapVoiceChatFrame:Kill()
+-- VoiceChatTalkers:Kill()
+-- ChannelFrameAutoJoin:Kill()
 
 -- Hide North texture at top
 MinimapNorthTag:SetTexture(nil)
@@ -256,7 +256,7 @@ local micromenu = {
 		ToggleCalendar()
 	end},
 	{text = BATTLEFIELD_MINIMAP, notCheckable = 1, func = function()
-		ToggleBattlefieldMinimap()
+		ToggleBattlefieldMap()
 	end},
 	{text = LOOT_ROLLS, notCheckable = 1, func = function()
 		ToggleFrame(LootHistoryFrame)

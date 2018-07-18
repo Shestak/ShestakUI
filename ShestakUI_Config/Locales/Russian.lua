@@ -293,6 +293,7 @@ L_GUI_NAMEPLATE_HEALER_ICON = "Отображать иконку над враж
 L_GUI_NAMEPLATE_TOTEM_ICONS = "Отображать иконку над вражескими тотемами"
 
 -- ActionBar options
+L_GUI_ACTIONBAR = "Панели команд"
 L_GUI_ACTIONBAR_ENABLE = "Включить панели команд"
 L_GUI_ACTIONBAR_HOTKEY = "Отображать назначения клавиш"
 L_GUI_ACTIONBAR_MACRO = "Отображать имена макросов"
@@ -306,12 +307,12 @@ L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Скрывать подсветку кнопо
 L_GUI_ACTIONBAR_BOTTOMBARS = "Количество нижних панелей (1, 2 или 3)"
 L_GUI_ACTIONBAR_RIGHTBARS = "Количество правых панелей (0, 1, 2 или 3)"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Правые панели команд по наведению курсора"
-L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Горизонтальная панель питомца по наведению курсора"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "Скрыть панель питомца"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Переключиться на горизонтальную панель питомца"
-L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Панель стоек по наведению курсора"
+L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Горизонтальная панель питомца по наведению курсора"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Скрыть панель стоек"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Переключиться на горизонтальную панель стоек"
+L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Горизонтальная панель стоек по наведению курсора"
 L_GUI_ACTIONBAR_MICROMENU = "Включить микроменю"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Микроменю по наведению курсора"
 

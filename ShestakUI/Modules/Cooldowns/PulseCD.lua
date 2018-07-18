@@ -135,7 +135,7 @@ function frame:ADDON_LOADED(addon)
 end
 frame:RegisterEvent("ADDON_LOADED")
 
-function frame:UNIT_SPELLCAST_SUCCEEDED(unit, spell, _, _, spellID)
+function frame:UNIT_SPELLCAST_SUCCEEDED(unit, spell, spellID)
 	if unit == "player" then
 		watching[spellID] = {GetTime(), "spell", spellID}
 		self:SetScript("OnUpdate", OnUpdate)
@@ -144,7 +144,7 @@ end
 frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 
 function frame:COMBAT_LOG_EVENT_UNFILTERED(...)
-	local _, eventType, _, _, _, sourceFlags, _, _, _, _, _, spellID = ...
+	local _, eventType, _, _, _, sourceFlags, _, _, _, _, _, spellID = CombatLogGetCurrentEventInfo()
 	if eventType == "SPELL_CAST_SUCCESS" then
 		if (bit.band(sourceFlags, COMBATLOG_OBJECT_TYPE_PET) == COMBATLOG_OBJECT_TYPE_PET and bit.band(sourceFlags, COMBATLOG_OBJECT_AFFILIATION_MINE) == COMBATLOG_OBJECT_AFFILIATION_MINE) then
 			local name = GetSpellInfo(spellID)

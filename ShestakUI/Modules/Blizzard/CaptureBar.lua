@@ -64,4 +64,4 @@ local function StateUpdate()
 		end
 	end
 end
-hooksecurefunc("WorldStateAlwaysUpFrame_Update", StateUpdate)
+--BETA hooksecurefunc("WorldStateAlwaysUpFrame_Update", StateUpdate)

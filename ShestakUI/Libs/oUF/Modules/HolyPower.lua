@@ -3,7 +3,7 @@ if(select(2, UnitClass('player')) ~= 'PALADIN') then return end
 local parent, ns = ...
 local oUF = ns.oUF
 
-local SPELL_POWER_HOLY_POWER = SPELL_POWER_HOLY_POWER
+local SPELL_POWER_HOLY_POWER = Enum.PowerType.HolyPower or 9
 
 local Update = function(self, event, unit, powerType)
 	if(self.unit ~= unit or (powerType and powerType ~= 'HOLY_POWER')) then return end
@@ -57,7 +57,7 @@ local function Enable(self)
 		hp.__owner = self
 		hp.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent('UNIT_POWER', Path)
+		self:RegisterEvent('UNIT_POWER_UPDATE', Path)
 
 		hp.Visibility = CreateFrame("Frame", nil, hp)
 		hp.Visibility:RegisterEvent("PLAYER_TALENT_UPDATE")
@@ -71,7 +71,7 @@ end
 local function Disable(self)
 	local hp = self.HolyPower
 	if(hp) then
-		self:UnregisterEvent('UNIT_POWER', Path)
+		self:UnregisterEvent('UNIT_POWER_UPDATE', Path)
 		hp.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")
 		hp.Visibility:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	end

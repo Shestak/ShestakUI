@@ -8,7 +8,7 @@ if C.actionbar.enable ~= true then return end
 local _G = _G
 local UPDATE_DELAY = 0.15
 local ATTACK_BUTTON_FLASH_TIME = ATTACK_BUTTON_FLASH_TIME
-local SPELL_POWER_HOLY_POWER = SPELL_POWER_HOLY_POWER
+local SPELL_POWER_HOLY_POWER = Enum.PowerType.HolyPower or 9
 local ActionButton_GetPagedID = ActionButton_GetPagedID
 local ActionButton_IsFlashing = ActionButton_IsFlashing
 local ActionHasRange = ActionHasRange
@@ -55,7 +55,7 @@ local isHolyPowerAbility
 do
 	local HOLY_POWER_SPELLS = {
 		[85673] = GetSpellInfo(85673),		-- Word of Glory
-		[114163] = GetSpellInfo(114163),	-- Eternal Flame
+		--BETA [114163] = GetSpellInfo(114163),	-- Eternal Flame
 	}
 
 	isHolyPowerAbility = function(actionId)

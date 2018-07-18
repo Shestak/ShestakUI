@@ -46,7 +46,7 @@ local function LoadSkin()
 	EncounterJournal.backdrop:SetPoint("BOTTOMRIGHT", 0, -2)
 
 	EncounterJournalNavBar:StripTextures(true)
-	EncounterJournalNavBarOverlay:StripTextures(true)
+	EncounterJournalNavBar.overlay:StripTextures(true)
 
 	EncounterJournalNavBar:CreateBackdrop("Transparent")
 	EncounterJournalNavBar.backdrop:SetPoint("TOPLEFT", -3, 1)
@@ -64,14 +64,14 @@ local function LoadSkin()
 		end
 	end)
 
-	EncounterJournal.LootJournal.LegendariesFrame.ClassButton:SkinButton(true)
-	EncounterJournal.LootJournal.LegendariesFrame.SlotButton:SkinButton(true)
+	--BETA EncounterJournal.LootJournal.LegendariesFrame.ClassButton:SkinButton(true)
+	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton:SkinButton(true)
 	EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:SkinButton(true)
 
 	T.SkinEditBox(EncounterJournalSearchBox)
 	T.SkinCloseButton(EncounterJournalCloseButton)
 	T.SkinDropDownBox(EncounterJournalInstanceSelectTierDropDown)
-	T.SkinDropDownBox(LootJournalViewDropDown)
+	--BETA T.SkinDropDownBox(LootJournalViewDropDown)
 	T.SkinTab(EncounterJournalInstanceSelectSuggestTab, true)
 	T.SkinTab(EncounterJournalInstanceSelectDungeonTab, true)
 	T.SkinTab(EncounterJournalInstanceSelectRaidTab, true)
@@ -132,11 +132,31 @@ local function LoadSkin()
 
 	for i = 1, AJ_MAX_NUM_SUGGESTIONS do
 		local suggestion = EncounterJournal.suggestFrame["Suggestion"..i]
+		suggestion.bg:Hide()
+		suggestion.centerDisplay.title.text:SetTextColor(1, 1, 1)
+		suggestion.centerDisplay.description.text:SetTextColor(1, 1, 1)
+		suggestion.reward.iconRing:Hide()
+		suggestion.reward.iconRingHighlight:SetTexture("")
+		suggestion:CreateBackdrop("Default")
+		suggestion.backdrop:SetPoint("TOPLEFT", suggestion.icon, -2, 2)
+		suggestion.backdrop:SetPoint("BOTTOMRIGHT", suggestion.icon, 2, -2)
+		suggestion.reward:CreateBackdrop("Default")
+		suggestion.reward.backdrop:SetFrameLevel(suggestion.reward:GetFrameLevel())
+		suggestion.reward.backdrop:SetPoint("TOPLEFT", suggestion.reward.icon, -2, 2)
+		suggestion.reward.backdrop:SetPoint("BOTTOMRIGHT", suggestion.reward.icon, 2, -2)
+		suggestion:CreateBackdrop("Overlay")
+		suggestion.backdrop:SetFrameLevel(0)
+
 		if i == 1 then
+			suggestion.icon:SetPoint("TOPLEFT", 135, -15)
 			suggestion.button:SkinButton()
+			suggestion.reward.text:SetTextColor(1, 1, 1)
+			suggestion.backdrop:SetPoint("TOPLEFT", -2, -2)
 			T.SkinNextPrevButton(suggestion.prevButton)
 			T.SkinNextPrevButton(suggestion.nextButton)
 		else
+			suggestion.icon:SetPoint("TOPLEFT", 10, -10)
+			suggestion.centerDisplay:SetPoint("TOPLEFT", 85, -10)
 			suggestion.centerDisplay.button:SkinButton()
 		end
 	end
@@ -197,51 +217,51 @@ local function LoadSkin()
 	end
 	hooksecurefunc("EncounterJournal_DisplayInstance", SkinBosses)
 
-	EncounterJournal.LootJournal.LegendariesFrame.ClassButton:SkinButton()
-	EncounterJournal.LootJournal.LegendariesFrame.ClassButton:GetFontString():SetTextColor(1, 1, 1)
-	select(5, EncounterJournal.LootJournal.LegendariesFrame.ClassButton:GetRegions()):Hide()
-	select(6, EncounterJournal.LootJournal.LegendariesFrame.ClassButton:GetRegions()):Hide()
-	EncounterJournal.LootJournal.LegendariesFrame.ClassButton.UpLeft:SetAlpha(0)
-	EncounterJournal.LootJournal.LegendariesFrame.ClassButton.UpRight:SetAlpha(0)
-	EncounterJournal.LootJournal.LegendariesFrame.ClassButton.HighLeft:SetAlpha(0)
-	EncounterJournal.LootJournal.LegendariesFrame.ClassButton.HighRight:SetAlpha(0)
-	EncounterJournal.LootJournal.LegendariesFrame.ClassButton.DownLeft:SetAlpha(0)
-	EncounterJournal.LootJournal.LegendariesFrame.ClassButton.DownRight:SetAlpha(0)
+	--BETA EncounterJournal.LootJournal.LegendariesFrame.ClassButton:SkinButton()
+	-- EncounterJournal.LootJournal.LegendariesFrame.ClassButton:GetFontString():SetTextColor(1, 1, 1)
+	-- select(5, EncounterJournal.LootJournal.LegendariesFrame.ClassButton:GetRegions()):Hide()
+	-- select(6, EncounterJournal.LootJournal.LegendariesFrame.ClassButton:GetRegions()):Hide()
+	-- EncounterJournal.LootJournal.LegendariesFrame.ClassButton.UpLeft:SetAlpha(0)
+	-- EncounterJournal.LootJournal.LegendariesFrame.ClassButton.UpRight:SetAlpha(0)
+	-- EncounterJournal.LootJournal.LegendariesFrame.ClassButton.HighLeft:SetAlpha(0)
+	-- EncounterJournal.LootJournal.LegendariesFrame.ClassButton.HighRight:SetAlpha(0)
+	-- EncounterJournal.LootJournal.LegendariesFrame.ClassButton.DownLeft:SetAlpha(0)
+	-- EncounterJournal.LootJournal.LegendariesFrame.ClassButton.DownRight:SetAlpha(0)
 
-	EncounterJournal.LootJournal.LegendariesFrame.SlotButton:SkinButton()
-	EncounterJournal.LootJournal.LegendariesFrame.SlotButton:GetFontString():SetTextColor(1, 1, 1)
-	select(5, EncounterJournal.LootJournal.LegendariesFrame.SlotButton:GetRegions()):Hide()
-	select(6, EncounterJournal.LootJournal.LegendariesFrame.SlotButton:GetRegions()):Hide()
-	EncounterJournal.LootJournal.LegendariesFrame.SlotButton.UpLeft:SetAlpha(0)
-	EncounterJournal.LootJournal.LegendariesFrame.SlotButton.UpRight:SetAlpha(0)
-	EncounterJournal.LootJournal.LegendariesFrame.SlotButton.HighLeft:SetAlpha(0)
-	EncounterJournal.LootJournal.LegendariesFrame.SlotButton.HighRight:SetAlpha(0)
-	EncounterJournal.LootJournal.LegendariesFrame.SlotButton.DownLeft:SetAlpha(0)
-	EncounterJournal.LootJournal.LegendariesFrame.SlotButton.DownRight:SetAlpha(0)
+	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton:SkinButton()
+	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton:GetFontString():SetTextColor(1, 1, 1)
+	-- select(5, EncounterJournal.LootJournal.LegendariesFrame.SlotButton:GetRegions()):Hide()
+	-- select(6, EncounterJournal.LootJournal.LegendariesFrame.SlotButton:GetRegions()):Hide()
+	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton.UpLeft:SetAlpha(0)
+	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton.UpRight:SetAlpha(0)
+	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton.HighLeft:SetAlpha(0)
+	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton.HighRight:SetAlpha(0)
+	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton.DownLeft:SetAlpha(0)
+	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton.DownRight:SetAlpha(0)
 
 	EncounterJournal.LootJournal:DisableDrawLayer("BACKGROUND")
 
-	local itemsLeftSide = EncounterJournal.LootJournal.LegendariesFrame.buttons
-	local itemsRightSide = EncounterJournal.LootJournal.LegendariesFrame.rightSideButtons
-	for _, items in ipairs({itemsLeftSide, itemsRightSide}) do
-		for i = 1, #items do
-			local item = items[i]
-			item.ItemType:SetTextColor(1, 1, 1)
-			item.Background:Hide()
-			item.Icon:SetPoint("TOPLEFT", 1, -1)
-			item.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			item.Icon:SetDrawLayer("OVERLAY")
-			item.IconBackdrop = CreateFrame("Frame", nil, item)
-			item.IconBackdrop:SetFrameLevel(item:GetFrameLevel())
-			item.IconBackdrop:SetPoint("TOPLEFT", item.Icon, -2, 2)
-			item.IconBackdrop:SetPoint("BOTTOMRIGHT", item.Icon, 2, -2)
-			item.IconBackdrop:SetTemplate("Default")
-			item.IconBackdrop:SetBackdropBorderColor(GetItemQualityColor(5))
-			item:CreateBackdrop("Overlay")
-			item.backdrop:SetPoint("TOPLEFT", -4, 4)
-			item.backdrop:SetPoint("BOTTOMRIGHT", 4, -3)
-		end
-	end
+	-- local itemsLeftSide = EncounterJournal.LootJournal.LegendariesFrame.buttons
+	-- local itemsRightSide = EncounterJournal.LootJournal.LegendariesFrame.rightSideButtons
+	-- for _, items in ipairs({itemsLeftSide, itemsRightSide}) do
+		-- for i = 1, #items do
+			-- local item = items[i]
+			-- item.ItemType:SetTextColor(1, 1, 1)
+			-- item.Background:Hide()
+			-- item.Icon:SetPoint("TOPLEFT", 1, -1)
+			-- item.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			-- item.Icon:SetDrawLayer("OVERLAY")
+			-- item.IconBackdrop = CreateFrame("Frame", nil, item)
+			-- item.IconBackdrop:SetFrameLevel(item:GetFrameLevel())
+			-- item.IconBackdrop:SetPoint("TOPLEFT", item.Icon, -2, 2)
+			-- item.IconBackdrop:SetPoint("BOTTOMRIGHT", item.Icon, 2, -2)
+			-- item.IconBackdrop:SetTemplate("Default")
+			-- item.IconBackdrop:SetBackdropBorderColor(GetItemQualityColor(5))
+			-- item:CreateBackdrop("Overlay")
+			-- item.backdrop:SetPoint("TOPLEFT", -4, 4)
+			-- item.backdrop:SetPoint("BOTTOMRIGHT", 4, -3)
+		-- end
+	-- end
 
 	EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:GetFontString():SetTextColor(1, 1, 1)
 	select(5, EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:GetRegions()):Hide()
@@ -395,38 +415,6 @@ local function LoadSkin()
 		end
 	end
 	hooksecurefunc("EncounterJournal_ToggleHeaders", SkinAbilitiesInfo)
-
-	EncounterJournalSuggestFrame.Suggestion1.bg:Hide()
-	EncounterJournalSuggestFrame.Suggestion1.icon:SetPoint("TOPLEFT", 135, -15)
-	EncounterJournalSuggestFrame.Suggestion1.centerDisplay.title.text:SetTextColor(1, 1, 1)
-	EncounterJournalSuggestFrame.Suggestion1.centerDisplay.description.text:SetTextColor(.9, .9, .9)
-	EncounterJournalSuggestFrame.Suggestion1.reward.text:SetTextColor(.9, .9, .9)
-	EncounterJournalSuggestFrame.Suggestion1.reward.iconRing:Hide()
-	EncounterJournalSuggestFrame.Suggestion1.reward.iconRingHighlight:SetTexture("")
-	EncounterJournalSuggestFrame.Suggestion1:CreateBackdrop("Default")
-	EncounterJournalSuggestFrame.Suggestion1.backdrop:SetPoint("TOPLEFT", EncounterJournalSuggestFrame.Suggestion1.icon, -2, 2)
-	EncounterJournalSuggestFrame.Suggestion1.backdrop:SetPoint("BOTTOMRIGHT", EncounterJournalSuggestFrame.Suggestion1.icon, 2, -2)
-	EncounterJournalSuggestFrame.Suggestion1.reward:CreateBackdrop("Default")
-	EncounterJournalSuggestFrame.Suggestion1.reward.backdrop:SetPoint("TOPLEFT", EncounterJournalSuggestFrame.Suggestion1.reward.icon, -2, 2)
-	EncounterJournalSuggestFrame.Suggestion1.reward.backdrop:SetPoint("BOTTOMRIGHT", EncounterJournalSuggestFrame.Suggestion1.reward.icon, 2, -2)
-
-	for i = 2, 3 do
-		EncounterJournalSuggestFrame["Suggestion"..i].bg:Hide()
-		EncounterJournalSuggestFrame["Suggestion"..i].icon:SetPoint("TOPLEFT", 10, -10)
-		EncounterJournalSuggestFrame["Suggestion"..i].centerDisplay:ClearAllPoints()
-		EncounterJournalSuggestFrame["Suggestion"..i].centerDisplay:SetPoint("TOPLEFT", 85, -10)
-		EncounterJournalSuggestFrame["Suggestion"..i].centerDisplay.title.text:SetTextColor(1, 1, 1)
-		EncounterJournalSuggestFrame["Suggestion"..i].centerDisplay.description.text:SetTextColor(.9, .9, .9)
-		EncounterJournalSuggestFrame["Suggestion"..i].reward.iconRing:Hide()
-		EncounterJournalSuggestFrame["Suggestion"..i].reward.iconRingHighlight:SetTexture("")
-		EncounterJournalSuggestFrame["Suggestion"..i]:CreateBackdrop("Default")
-		EncounterJournalSuggestFrame["Suggestion"..i].backdrop:SetPoint("TOPLEFT", EncounterJournalSuggestFrame["Suggestion"..i].icon, -2, 2)
-		EncounterJournalSuggestFrame["Suggestion"..i].backdrop:SetPoint("BOTTOMRIGHT", EncounterJournalSuggestFrame["Suggestion"..i].icon, 2, -2)
-		EncounterJournalSuggestFrame["Suggestion"..i].reward:CreateBackdrop("Default")
-		EncounterJournalSuggestFrame["Suggestion"..i].reward.backdrop:SetFrameLevel(EncounterJournalSuggestFrame["Suggestion"..i].reward:GetFrameLevel())
-		EncounterJournalSuggestFrame["Suggestion"..i].reward.backdrop:SetPoint("TOPLEFT", EncounterJournalSuggestFrame["Suggestion"..i].reward.icon, -2, 2)
-		EncounterJournalSuggestFrame["Suggestion"..i].reward.backdrop:SetPoint("BOTTOMRIGHT", EncounterJournalSuggestFrame["Suggestion"..i].reward.icon, 2, -2)
-	end
 
 	hooksecurefunc("EJSuggestFrame_RefreshDisplay", function()
 		local self = EncounterJournal.suggestFrame

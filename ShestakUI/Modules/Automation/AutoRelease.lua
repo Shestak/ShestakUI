@@ -12,11 +12,9 @@ frame:SetScript("OnEvent", function(self, event)
 		local status = GetBattlefieldStatus(i)
 		if status == "active" then inBattlefield = true end
 	end
-	if not (HasSoulstone() and CanUseSoulstone()) then
-		SetMapToCurrentZone()
-		local areaID = GetCurrentMapAreaID() or 0
-		if areaID == 501 or areaID == 708 or areaID == 978 or areaID == 1009 or areaID == 1011 or inBattlefield == true then
-			RepopMe()
-		end
+	if C_DeathInfo.GetSelfResurrectOptions() and #C_DeathInfo.GetSelfResurrectOptions() > 0 then return end
+	local areaID = C_Map.GetBestMapForUnit("player") or 0
+	if areaID == 123 or areaID == 244 or areaID == 588 or areaID == 622 or areaID == 624 or inBattlefield == true then
+		RepopMe()
 	end
 end)

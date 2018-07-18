@@ -18,16 +18,6 @@ local function LoadSkin()
 	TradeSkillFrame.RankFrame:CreateBackdrop("Overlay")
 	TradeSkillFrame.RankFrame:SetStatusBarTexture(C.media.texture)
 
-	--BETA for i = 1, TRADE_SKILLS_DISPLAYED do
-		-- local bar = _G["TradeSkillSkill"..i.."SubSkillRankBar"]
-		-- if bar then
-			-- bar:StripTextures()
-			-- bar:CreateBackdrop("Overlay")
-			-- bar:SetStatusBarTexture(C.media.texture)
-			-- bar:SetHeight(9)
-		-- end
-	-- end
-
 	TradeSkillFrame.FilterButton:StripTextures(true)
 	TradeSkillFrame.FilterButton:SkinButton(true)
 	TradeSkillFrame.DetailsFrame.CreateButton:SkinButton(true)
@@ -98,6 +88,27 @@ local function LoadSkin()
 			count:SetDrawLayer("OVERLAY")
 
 			button.NameFrame:Kill()
+		end
+	end)
+
+	local function SkinSkillRankBar(self, _, tradeSkillInfo)
+		if tradeSkillInfo.hasProgressBar then
+			local bar = self.SubSkillRankBar
+			if not bar.backdrop then
+				bar:StripTextures()
+				bar:CreateBackdrop("Overlay")
+				bar:SetStatusBarTexture(C.media.texture)
+				bar:SetHeight(9)
+			end
+		end
+	end
+
+	hooksecurefunc(TradeSkillFrame.RecipeList, "Refresh", function()
+		for _, button in ipairs(TradeSkillFrame.RecipeList.buttons) do
+			if not button.skin then
+				hooksecurefunc(button, "SetUpHeader", SkinSkillRankBar)
+				button.skin = true
+			end
 		end
 	end)
 

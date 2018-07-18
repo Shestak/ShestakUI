@@ -159,7 +159,7 @@ frame:SetScript("OnClick", function()
 	if frame:GetChecked() == true then
 		SavedOptionsPerChar.FogOfWar = true
 		if WorldMapFrame:IsShown() then
-			local futuremap = GetCurrentMapAreaID()
+			local futuremap = C_Map.GetBestMapForUnit("player")
 			RefreshWorldMap()
 			SetMapByID(futuremap)
 		end

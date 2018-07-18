@@ -11,7 +11,7 @@ if C.raidcooldown.enable == true then
 		[20484] = 600,	-- Rebirth
 		[61999] = 600,	-- Raise Ally
 		[20707] = 600,	-- Soulstone
-		[126393] = 600,	-- Eternal Guardian (Quilen)
+		--BETA [126393] = 600,	-- Eternal Guardian (Quilen)
 		[159956] = 600,	-- Dust of Life (Moth)
 		[159931] = 600,	-- Gift of Chi-Ji (Crane)
 		-- Heroism
@@ -83,7 +83,7 @@ if C.enemycooldown.enable == true then
 		[48707] = 60,	-- Anti-Magic Shell
 		[31224] = 90,	-- Cloak of Shadows
 		[46924] = 90,	-- Bladestorm
-		[49039] = 120,	-- Lichborne
+		--BETA [49039] = 120,	-- Lichborne
 		[213664] = 120,	-- Nimble Brew
 		[47585] = 120,	-- Dispersion
 		[1856] = 120,	-- Vanish

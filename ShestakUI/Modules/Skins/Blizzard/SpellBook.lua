@@ -138,9 +138,7 @@ local function LoadSkin()
 		"SecondaryProfession2SpellButtonLeft",
 		"SecondaryProfession2SpellButtonRight",
 		"SecondaryProfession3SpellButtonLeft",
-		"SecondaryProfession3SpellButtonRight",
-		"SecondaryProfession4SpellButtonLeft",
-		"SecondaryProfession4SpellButtonRight"
+		"SecondaryProfession3SpellButtonRight"
 	}
 
 	local professionheaders = {
@@ -148,8 +146,7 @@ local function LoadSkin()
 		"PrimaryProfession2",
 		"SecondaryProfession1",
 		"SecondaryProfession2",
-		"SecondaryProfession3",
-		"SecondaryProfession4"
+		"SecondaryProfession3"
 	}
 
 	for _, header in pairs(professionheaders) do
@@ -205,8 +202,7 @@ local function LoadSkin()
 		"PrimaryProfession2StatusBar",
 		"SecondaryProfession1StatusBar",
 		"SecondaryProfession2StatusBar",
-		"SecondaryProfession3StatusBar",
-		"SecondaryProfession4StatusBar"
+		"SecondaryProfession3StatusBar"
 	}
 
 	for _, statusbar in pairs(professionstatusbars) do

@@ -3,7 +3,7 @@ if(select(2, UnitClass('player')) ~= 'MAGE') then return end
 local parent, ns = ...
 local oUF = ns.oUF
 
-local SPELL_POWER_ARCANE_CHARGES = SPELL_POWER_ARCANE_CHARGES
+local SPELL_POWER_ARCANE_CHARGES = Enum.PowerType.ArcaneCharges or 16
 
 local Update = function(self, event, unit, powerType)
 	if(self.unit ~= unit or (powerType and powerType ~= 'ARCANE_CHARGES')) then return end
@@ -57,7 +57,7 @@ local function Enable(self)
 		ac.__owner = self
 		ac.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent('UNIT_POWER', Path)
+		self:RegisterEvent('UNIT_POWER_UPDATE', Path)
 
 		ac.Visibility = CreateFrame("Frame", nil, ac)
 		ac.Visibility:RegisterEvent("PLAYER_TALENT_UPDATE")
@@ -71,7 +71,7 @@ end
 local function Disable(self)
 	local ac = self.ArcaneCharge
 	if(ac) then
-		self:UnregisterEvent('UNIT_POWER', Path)
+		self:UnregisterEvent('UNIT_POWER_UPDATE', Path)
 		ac.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")
 		ac.Visibility:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	end

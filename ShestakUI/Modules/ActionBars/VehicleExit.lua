@@ -2,47 +2,12 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.actionbar.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	Manage others stuff for ActionBars(by Tukz)
+--	Vehicle exit button(by Tukz)
 ----------------------------------------------------------------------------------------
-local frame = CreateFrame("Frame")
-frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-frame:SetScript("OnEvent", function(self, event)
-	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
-	SetActionBarToggles(1, 1, 1, 1, 0)
-	if C.actionbar.show_grid == true then
-		SetCVar("alwaysShowActionBars", 1)
-		for i = 1, 12 do
-			local button = _G[format("ActionButton%d", i)]
-			button:SetAttribute("showgrid", 1)
-			ActionButton_ShowGrid(button)
-
-			button = _G[format("MultiBarRightButton%d", i)]
-			button:SetAttribute("showgrid", 1)
-			ActionButton_ShowGrid(button)
-
-			button = _G[format("MultiBarBottomRightButton%d", i)]
-			button:SetAttribute("showgrid", 1)
-			ActionButton_ShowGrid(button)
-
-			button = _G[format("MultiBarLeftButton%d", i)]
-			button:SetAttribute("showgrid", 1)
-			ActionButton_ShowGrid(button)
-
-			button = _G[format("MultiBarBottomLeftButton%d", i)]
-			button:SetAttribute("showgrid", 1)
-			ActionButton_ShowGrid(button)
-		end
-	else
-		SetCVar("alwaysShowActionBars", 0)
-	end
-end)
-
--- Vehicle button anchor
 local anchor = CreateFrame("Frame", "VehicleButtonAnchor", UIParent)
 anchor:SetPoint(unpack(C.position.vehicle_bar))
 anchor:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 
--- Vehicle button
 local vehicle = CreateFrame("Button", "VehicleButton", UIParent)
 vehicle:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 vehicle:SetPoint("BOTTOMLEFT", anchor, "BOTTOMLEFT")

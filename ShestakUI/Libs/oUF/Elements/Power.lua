@@ -137,7 +137,7 @@ local Enable = function(self, unit)
 		if(power.frequentUpdates and (unit == 'player' or unit == 'pet')) then
 			self:RegisterEvent('UNIT_POWER_FREQUENT', Path)
 		else
-			self:RegisterEvent('UNIT_POWER', Path)
+			self:RegisterEvent('UNIT_POWER_UPDATE', Path)
 		end
 
 		self:RegisterEvent('UNIT_POWER_BAR_SHOW', Path)
@@ -161,7 +161,7 @@ local Disable = function(self)
 	local power = self.Power
 	if(power) then
 		self:UnregisterEvent('UNIT_POWER_FREQUENT', Path)
-		self:UnregisterEvent('UNIT_POWER', Path)
+		self:UnregisterEvent('UNIT_POWER_UPDATE', Path)
 		self:UnregisterEvent('UNIT_POWER_BAR_SHOW', Path)
 		self:UnregisterEvent('UNIT_POWER_BAR_HIDE', Path)
 		self:UnregisterEvent('UNIT_DISPLAYPOWER', Path)

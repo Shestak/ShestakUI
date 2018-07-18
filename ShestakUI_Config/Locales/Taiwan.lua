@@ -293,6 +293,7 @@ L_GUI_NAMEPLATE_HEALER_ICON = "戰場中顯示治療職業圖示"
 L_GUI_NAMEPLATE_TOTEM_ICONS = "Show icon above enemy totems nameplate" -- Need review
 
 -- ActionBar options
+L_GUI_ACTIONBAR = "Action Bars" -- Need review
 L_GUI_ACTIONBAR_ENABLE = "開啟快捷列增強"
 L_GUI_ACTIONBAR_HOTKEY = "熱鍵文字"
 L_GUI_ACTIONBAR_MACRO = "巨集名字"
@@ -309,9 +310,9 @@ L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "滑鼠懸停顯示右側快捷列"
 L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "滑鼠懸停顯示寵物快捷列"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "隱藏寵物快捷列"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "寵物快捷列橫向排列"
-L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "滑鼠懸停顯示變身/姿態/圖騰快捷列"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "隱藏變身/姿態/圖騰快捷列"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "變身/姿態快捷列橫向排列"
+L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "滑鼠懸停顯示變身/姿態/圖騰快捷列" -- Need review
 L_GUI_ACTIONBAR_MICROMENU = "微型菜單"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "滑鼠懸停顯示微型菜單"
 

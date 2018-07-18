@@ -26,7 +26,7 @@ T.RaidBuffs = {
 		{53563, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Light
 		{156910, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Faith
 		{200025, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Virtue
-		{114163, "BOTTOMLEFT", {0.9, 0.6, 0.4}},			-- Eternal Flame
+		--BETA {114163, "BOTTOMLEFT", {0.9, 0.6, 0.4}},			-- Eternal Flame
 		{1022, "BOTTOMRIGHT", {0.2, 0.2, 1}, true},			-- Blessing of Protection
 		{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},		-- Blessing of Freedom
 		{204013, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},		-- Blessing of Salvation
@@ -56,7 +56,7 @@ T.RaidBuffs = {
 	},
 	WARRIOR = {
 		{114030, "TOPLEFT", {0.2, 0.2, 1}},					-- Vigilance
-		{3411, "TOPRIGHT", {0.89, 0.1, 0.1}},				-- Intervene
+		--BETA {3411, "TOPRIGHT", {0.89, 0.1, 0.1}},				-- Intervene
 	},
 	ALL = {
 		{23333, "LEFT", {1, 0, 0}, true}, 					-- Warsong flag, Horde

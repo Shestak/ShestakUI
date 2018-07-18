@@ -510,36 +510,36 @@ function T.SkinSlider(f)
 	end
 	bd:SetFrameLevel(f:GetFrameLevel() - 1)
 
-	local slider = select(4, f:GetRegions())
-	slider:SetTexture("Interface\\CastingBar\\UI-CastingBar-Spark")
-	slider:SetBlendMode("ADD")
+	f:SetThumbTexture("Interface\\CastingBar\\UI-CastingBar-Spark")
+	f:GetThumbTexture():SetBlendMode("ADD")
 end
 
 function T.SkinIconSelectionFrame(frame, numIcons, buttonNameTemplate, frameNameOverride)
 	local frameName = frameNameOverride or frame:GetName()
 	local scrollFrame = _G[frameName.."ScrollFrame"]
 	local editBox = _G[frameName.."EditBox"]
-	local okayButton = _G[frameName.."OkayButton"] or _G[frameName.."Okay"]
-	local cancelButton = _G[frameName.."CancelButton"] or _G[frameName.."Cancel"]
+	local okayButton = _G[frameName.."OkayButton"] or _G[frameName.."Okay"] or frame.BorderBox.OkayButton
+	local cancelButton = _G[frameName.."CancelButton"] or _G[frameName.."Cancel"] or frame.BorderBox.CancelButton
 
 	frame:StripTextures()
 	frame.BorderBox:StripTextures()
+	frame:CreateBackdrop("Transparent")
+	frame.backdrop:SetPoint("TOPLEFT", 3, 1)
+	frame:SetHeight(frame:GetHeight() + 13)
+
 	scrollFrame:StripTextures()
 	scrollFrame:CreateBackdrop("Overlay")
-	scrollFrame.backdrop:SetPoint("TOPLEFT", 15, 4)
-	scrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 28, -8)
-	editBox:DisableDrawLayer("BACKGROUND")
-
-	frame:SetTemplate("Transparent")
-	frame:SetHeight(frame:GetHeight() + 10)
-	scrollFrame:SetHeight(scrollFrame:GetHeight() + 10)
+	scrollFrame.backdrop:SetPoint("TOPLEFT", 15, 5)
+	scrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 31, -8)
+	scrollFrame:SetHeight(scrollFrame:GetHeight() + 12)
 
 	okayButton:SkinButton()
 	cancelButton:SkinButton()
-	T.SkinEditBox(editBox)
-
 	cancelButton:ClearAllPoints()
 	cancelButton:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -5, 5)
+
+	editBox:DisableDrawLayer("BACKGROUND")
+	T.SkinEditBox(editBox)
 
 	if buttonNameTemplate then
 		for i = 1, numIcons do
@@ -945,7 +945,7 @@ T.UpdateManaLevel = function(self, elapsed)
 	self.elapsed = 0
 
 	if UnitPowerType("player") == 0 then
-		local percMana = UnitMana("player") / UnitManaMax("player") * 100
+		local percMana = UnitPower("player", Enum.PowerType.Mana) / UnitPowerMax("player", Enum.PowerType.Mana) * 100
 		if percMana <= 20 and not UnitIsDeadOrGhost("player") then
 			self.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
 			Flash(self)
@@ -1038,7 +1038,7 @@ T.UpdateComboPoint = function(self, event, unit)
 	if (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) then
 		numMax = MAX_COMBO_POINTS
 	else
-		numMax = UnitPowerMax("player", SPELL_POWER_COMBO_POINTS)
+		numMax = UnitPowerMax("player", Enum.PowerType.ComboPoints)
 		if numMax == 0 then
 			numMax = MAX_COMBO_POINTS
 		end
@@ -1049,24 +1049,10 @@ T.UpdateComboPoint = function(self, event, unit)
 	local s = 0
 
 	if cpoints.numMax ~= numMax then
-		if numMax == 10 then
+		if numMax == 6 then
 			cpoints[6]:Show()
-			cpoints[7]:Show()
-			cpoints[8]:Show()
-			cpoints[9]:Show()
-			cpoints[10]:Show()
-		elseif numMax == 6 then
-			cpoints[6]:Show()
-			cpoints[7]:Hide()
-			cpoints[8]:Hide()
-			cpoints[9]:Hide()
-			cpoints[10]:Hide()
 		else
 			cpoints[6]:Hide()
-			cpoints[7]:Hide()
-			cpoints[8]:Hide()
-			cpoints[9]:Hide()
-			cpoints[10]:Hide()
 		end
 
 		for i = 1, numMax do
@@ -1102,7 +1088,7 @@ T.UpdateComboPoint = function(self, event, unit)
 	end
 end
 
-T.UpdateComboPointOld = function(self, event, unit)
+T.UpdateComboPointTarget = function(self, event, unit)
 	if powerType and powerType ~= 'COMBO_POINTS' then return end
 	if unit == "pet" then return end
 
@@ -1115,7 +1101,7 @@ T.UpdateComboPointOld = function(self, event, unit)
 		numMax = MAX_COMBO_POINTS
 	else
 		cp = GetComboPoints("player", "target")
-		numMax = UnitPowerMax("player", SPELL_POWER_COMBO_POINTS)
+		numMax = UnitPowerMax("player", Enum.PowerType.ComboPoints)
 		if numMax == 0 then
 			numMax = MAX_COMBO_POINTS
 		end
@@ -1126,24 +1112,10 @@ T.UpdateComboPointOld = function(self, event, unit)
 	local s = 0
 
 	if cpoints.numMax ~= numMax then
-		if numMax == 10 then
+		if numMax == 6 then
 			cpoints[6]:Show()
-			cpoints[7]:Show()
-			cpoints[8]:Show()
-			cpoints[9]:Show()
-			cpoints[10]:Show()
-		elseif numMax == 6 then
-			cpoints[6]:Show()
-			cpoints[7]:Hide()
-			cpoints[8]:Hide()
-			cpoints[9]:Hide()
-			cpoints[10]:Hide()
 		else
 			cpoints[6]:Hide()
-			cpoints[7]:Hide()
-			cpoints[8]:Hide()
-			cpoints[9]:Hide()
-			cpoints[10]:Hide()
 		end
 
 		for i = 1, numMax do
@@ -1229,16 +1201,10 @@ T.PostCastStart = function(Castbar, unit, name, castid)
 	if unit == "vehicle" then unit = "player" end
 
 	if unit == "player" and C.unitframe.castbar_latency == true and Castbar.Latency then
-		local _, _, _, lag = GetNetStats()
-		local latency = GetTime() - (Castbar.castSent or 0)
-		lag = lag / 1e3 > Castbar.max and Castbar.max or lag / 1e3
-		latency = latency > Castbar.max and lag or latency
-		Castbar.Latency:SetText(("%dms"):format(latency * 1e3))
-		Castbar.SafeZone:SetWidth(Castbar:GetWidth() * latency / Castbar.max)
-		Castbar.SafeZone:ClearAllPoints()
-		Castbar.SafeZone:SetPoint("TOPRIGHT")
-		Castbar.SafeZone:SetPoint("BOTTOMRIGHT")
-		Castbar.castSent = nil
+		local _, _, _, ms = GetNetStats()
+		Castbar.Latency:SetText(("%dms"):format(ms))
+		Castbar.SafeZone:SetDrawLayer("BORDER")
+		Castbar.SafeZone:SetVertexColor(0.85, 0.27, 0.27)
 	end
 
 	if unit == "player" and C.unitframe.castbar_ticks == true then
@@ -1303,16 +1269,10 @@ T.PostChannelStart = function(Castbar, unit, name)
 	if unit == "vehicle" then unit = "player" end
 
 	if unit == "player" and C.unitframe.castbar_latency == true and Castbar.Latency then
-		local _, _, _, lag = GetNetStats()
-		local latency = GetTime() - (Castbar.castSent or 0)
-		lag = lag / 1e3 > Castbar.max and Castbar.max or lag / 1e3
-		latency = latency > Castbar.max and lag or latency
-		Castbar.Latency:SetText(("%dms"):format(latency * 1e3))
-		Castbar.SafeZone:SetWidth(Castbar:GetWidth() * latency / Castbar.max)
-		Castbar.SafeZone:ClearAllPoints()
-		Castbar.SafeZone:SetPoint("TOPLEFT")
-		Castbar.SafeZone:SetPoint("BOTTOMLEFT")
-		Castbar.castSent = nil
+		local _, _, _, ms = GetNetStats()
+		Castbar.Latency:SetText(("%dms"):format(ms))
+		Castbar.SafeZone:SetDrawLayer("ARTWORK")
+		Castbar.SafeZone:SetVertexColor(0.85, 0.27, 0.27, 0.75)
 	end
 
 	if unit == "player" and C.unitframe.castbar_ticks == true then
@@ -1486,7 +1446,7 @@ T.PostCreateAura = function(element, button)
 end
 
 T.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, duration, timeLeft)
-	local _, _, _, _, dtype, duration, expirationTime, _, isStealable = UnitAura(unit, index, icon.filter)
+	local _, _, _, dtype, duration, expirationTime, _, isStealable = UnitAura(unit, index, icon.filter)
 
 	local playerUnits = {
 		player = true,

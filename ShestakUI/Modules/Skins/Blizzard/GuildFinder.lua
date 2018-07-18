@@ -4,16 +4,16 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 --	LookingForGuildUI skin
 ----------------------------------------------------------------------------------------
-local function LoadSkin()
+local function SkinLFGuild()
 	-- Checkboxes
 	local checkbox = {
-		"LookingForGuildPvPButton",
-		"LookingForGuildWeekendsButton",
-		"LookingForGuildWeekdaysButton",
-		"LookingForGuildRPButton",
-		"LookingForGuildRaidButton",
 		"LookingForGuildQuestButton",
-		"LookingForGuildDungeonButton"
+		"LookingForGuildDungeonButton",
+		"LookingForGuildRaidButton",
+		"LookingForGuildPvPButton",
+		"LookingForGuildRPButton",
+		"LookingForGuildWeekdaysButton",
+		"LookingForGuildWeekendsButton"
 	}
 
 	for _, v in pairs(checkbox) do
@@ -77,6 +77,16 @@ local function LoadSkin()
 	-- Tabs
 	for i = 1, 3 do
 		T.SkinTab(_G["LookingForGuildFrameTab"..i], true)
+	end
+end
+
+local function LoadSkin()
+	if LookingForGuildFrame then
+		-- Frame already created
+		SkinLFGuild()
+	else
+		-- Frame not created yet, wait until it is
+		hooksecurefunc("LookingForGuildFrame_CreateUIElements", SkinLFGuild)
 	end
 end
 

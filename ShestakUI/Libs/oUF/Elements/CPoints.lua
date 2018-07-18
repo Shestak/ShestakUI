@@ -43,7 +43,7 @@ local Enable = function(self)
 		cpoints.__owner = self
 		cpoints.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent('UNIT_POWER', Path, true)
+		self:RegisterEvent('UNIT_POWER_UPDATE', Path, true)
 		self:RegisterEvent('UNIT_MAXPOWER', Path, true)
 		self:RegisterEvent('PLAYER_TARGET_CHANGED', Path)
 
@@ -62,7 +62,7 @@ end
 local Disable = function(self)
 	local cpoints = self.CPoints
 	if(cpoints) then
-		self:UnregisterEvent('UNIT_POWER', Path)
+		self:UnregisterEvent('UNIT_POWER_UPDATE', Path)
 		self:UnregisterEvent('UNIT_MAXPOWER', Path)
 		self:UnregisterEvent('PLAYER_TARGET_CHANGED', Path)
 	end

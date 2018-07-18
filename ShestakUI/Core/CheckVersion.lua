@@ -12,13 +12,13 @@ local check = function(self, event, prefix, message, channel, sender)
 		end
 	else
 		if IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then
-			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "INSTANCE_CHAT")
+			C_ChatInfo.SendAddonMessage("ShestakUIVersion", tonumber(T.version), "INSTANCE_CHAT")
 		elseif IsInRaid(LE_PARTY_CATEGORY_HOME) then
-			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "RAID")
+			C_ChatInfo.SendAddonMessage("ShestakUIVersion", tonumber(T.version), "RAID")
 		elseif IsInGroup(LE_PARTY_CATEGORY_HOME) then
-			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "PARTY")
+			C_ChatInfo.SendAddonMessage("ShestakUIVersion", tonumber(T.version), "PARTY")
 		elseif IsInGuild() then
-			SendAddonMessage("ShestakUIVersion", tonumber(T.version), "GUILD")
+			C_ChatInfo.SendAddonMessage("ShestakUIVersion", tonumber(T.version), "GUILD")
 		end
 	end
 end
@@ -28,7 +28,7 @@ frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:RegisterEvent("GROUP_ROSTER_UPDATE")
 frame:RegisterEvent("CHAT_MSG_ADDON")
 frame:SetScript("OnEvent", check)
-RegisterAddonMessagePrefix("ShestakUIVersion")
+C_ChatInfo.RegisterAddonMessagePrefix("ShestakUIVersion")
 
 ----------------------------------------------------------------------------------------
 --	Whisper UI version
