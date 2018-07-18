@@ -15,7 +15,7 @@ do
 	MicroButtonAndBagsBar:EnableMouse(false)
 
 	local elements = {
-		MainMenuBar, OverrideActionBar, PossessBarFrame, PetActionBarFrame, StanceBarFrame
+		MainMenuBar, OverrideActionBar, PossessBarFrame, PetActionBarFrame, StanceBarFrame, IconIntroTracker
 	}
 	for _, element in pairs(elements) do
 		if element:GetObjectType() == "Frame" then
@@ -28,9 +28,6 @@ do
 		element:SetAlpha(0)
 	end
 	elements = nil
-
-	IconIntroTracker:UnregisterAllEvents()
-	IconIntroTracker:Hide()
 
 	MainMenuBar.slideOut.IsPlaying = function() return true end
 
