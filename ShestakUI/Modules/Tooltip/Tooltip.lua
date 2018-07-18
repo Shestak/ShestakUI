@@ -22,7 +22,8 @@ local tooltips = {
 	QuestHelperTooltip,
 	QuestGuru_QuestWatchTooltip,
 	StoryTooltip,
-	ReputationParagonTooltip
+	ReputationParagonTooltip,
+	EmbeddedItemTooltip
 }
 
 local backdrop = {
