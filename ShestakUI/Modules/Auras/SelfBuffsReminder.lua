@@ -7,6 +7,17 @@ if C.reminder.solo_buffs_enable ~= true then return end
 local tab = T.ReminderSelfBuffs[T.class]
 if not tab then return end
 
+local function CheckUnitBuff(IsSpellId)
+	for i = 1, 40, 1 do
+		local name, icon, _, _, _, _, unitCaster, _, _, spellID = UnitBuff("player", i)
+		if not name then break end
+		if IsSpellId == spellID then
+			return icon, unitCaster
+		end
+	end
+	return nil
+end
+
 local function OnEvent(self, event, arg1, arg2)
 	local group = tab[self.id]
 	if not group.spells then return end
@@ -17,8 +28,9 @@ local function OnEvent(self, event, arg1, arg2)
 	self:Hide()
 	if group.negate_spells then
 		for _, buff in pairs(group.negate_spells) do
-			local name = GetSpellInfo(buff)
-			if (name and UnitBuff("player", name)) then
+			local name, _, _, _, _, _, IsSpellId = GetSpellInfo(buff)
+			local icon = CheckUnitBuff(IsSpellId)
+			if name and icon then
 				return
 			end
 		end
@@ -26,9 +38,9 @@ local function OnEvent(self, event, arg1, arg2)
 
 	if group.personal then
 		for _, buff in pairs(group.personal) do
-			local name = GetSpellInfo(buff)
-			local _, _, _, _, _, _, unitCaster = UnitBuff("player", name)
-			if name and unitCaster == "player" then
+			local name, _, _, _, _, _, IsSpellId = GetSpellInfo(buff)
+			local icon, unitCaster = CheckUnitBuff(IsSpellId)
+			if name and icon and unitCaster == "player" then
 				return
 			end
 		end
@@ -105,8 +117,8 @@ local function OnEvent(self, event, arg1, arg2)
 	if ((combat and UnitAffectingCombat("player")) or (instance and difficultyID ~= 0) or (pvp and (instanceType == "arena" or instanceType == "pvp"))) and
 	specpass == true and rolepass == true and not UnitInVehicle("player") then
 		for _, buff in pairs(group.spells) do
-			local name = GetSpellInfo(buff)
-			local _, icon = UnitBuff("player", name)
+			local name, _, _, _, _, _, IsSpellId = GetSpellInfo(buff)
+			local icon = CheckUnitBuff(IsSpellId)
 			if name and icon then
 				self:Hide()
 				return
@@ -118,8 +130,8 @@ local function OnEvent(self, event, arg1, arg2)
 	reversecheck == true and not UnitInVehicle("player") then
 		if negate_reversecheck and negate_reversecheck == GetSpecialization() then self:Hide() return end
 		for _, buff in pairs(group.spells) do
-			local name = GetSpellInfo(buff)
-			local _, icon, _, _, _, _, unitCaster = UnitBuff("player", name)
+			local name, _, _, _, _, _, IsSpellId = GetSpellInfo(buff)
+			local icon, unitCaster = CheckUnitBuff(IsSpellId)
 			if name and icon and unitCaster == "player" then
 				self:Show()
 				if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end
