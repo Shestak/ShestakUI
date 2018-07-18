@@ -569,7 +569,7 @@ local function style(self, unit)
 		self.Auras.spacing = 2
 		self.Auras.size = C.nameplate.auras_size
 
-		self.Auras.CustomFilter = function(icons, unit, icon, name, rank, texture, count, dispelType, duration, expiration, caster, isStealable, nameplateShowSelf, spellID, canApply, isBossDebuff, casterIsPlayer, nameplateShowAll)
+		self.Auras.CustomFilter = function(icons, unit, icon, name, texture, count, dispelType, duration, expiration, caster, isStealable, nameplateShowSelf, spellID, canApply, isBossDebuff, casterIsPlayer, nameplateShowAll)
 			local allow = false
 
 			if caster == "player" then
