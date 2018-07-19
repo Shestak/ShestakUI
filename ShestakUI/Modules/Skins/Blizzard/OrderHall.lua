@@ -40,4 +40,4 @@ local function LoadSkin()
 	OrderHallTalentFrame.CurrencyIcon:SetAtlas("legionmission-icon-currency", false)
 end
 
-T.SkinFuncs["Blizzard_OrderHallUI"] = LoadSkinCommandBar
+T.SkinFuncs["Blizzard_OrderHallUI"] = LoadSkin
