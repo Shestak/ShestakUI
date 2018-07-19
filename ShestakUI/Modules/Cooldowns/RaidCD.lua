@@ -269,7 +269,7 @@ local StartTimer = function(name, spellId)
 	UpdatePositions()
 end
 
-local OnEvent = function(self, event, ...)
+local OnEvent = function(self, event)
 	if event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
 		if select(2, IsInInstance()) == "raid" and IsInGroup() then
 			self:RegisterEvent("SPELL_UPDATE_CHARGES")
@@ -300,7 +300,7 @@ local OnEvent = function(self, event, ...)
 		local _, eventType, _, _, sourceName, sourceFlags = CombatLogGetCurrentEventInfo()
 		if band(sourceFlags, filter) == 0 then return end
 		if eventType == "SPELL_RESURRECT" or eventType == "SPELL_CAST_SUCCESS" or eventType == "SPELL_AURA_APPLIED" then
-			local spellId = select(12, ...)
+			local spellId = select(12, CombatLogGetCurrentEventInfo())
 			if sourceName then
 				sourceName = sourceName:gsub("-.+", "")
 			else

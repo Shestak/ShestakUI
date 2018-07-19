@@ -114,7 +114,7 @@ local eventRegistered = {
 	["SPELL_AURA_REMOVED"] = true
 }
 
-local function CombatLogCheck(self, ...)
+local function CombatLogCheck(self)
 	local _, instanceType = IsInInstance()
 	if instanceType ~= "arena" then return end
 	local _, _, eventType, _, _, _, _, _, destGUID, _, _, _, spellID, _, _, auraType, _ = CombatLogGetCurrentEventInfo()
