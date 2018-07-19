@@ -464,9 +464,9 @@ function stArch:updateFramePosition(self)
 end
 
 local stArchFrame = CreateFrame("Frame", "stArchaeologyFrame", UIParent)
-stArchFrame:RegisterEvent("ARTIFACT_HISTORY_READY")
-stArchFrame:RegisterEvent("ARTIFACT_COMPLETE")
-stArchFrame:RegisterEvent("ARTIFACT_DIG_SITE_UPDATED")
+stArchFrame:RegisterEvent("RESEARCH_ARTIFACT_HISTORY_READY")
+stArchFrame:RegisterEvent("RESEARCH_ARTIFACT_COMPLETE")
+stArchFrame:RegisterEvent("RESEARCH_ARTIFACT_DIG_SITE_UPDATED")
 stArchFrame:RegisterEvent("CURRENCY_DISPLAY_UPDATE")
 stArchFrame:RegisterEvent("SKILL_LINES_CHANGED")
 stArchFrame:RegisterEvent("BAG_UPDATE")
