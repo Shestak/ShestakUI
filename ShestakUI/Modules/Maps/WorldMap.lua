@@ -45,10 +45,18 @@ local int = 0
 WorldMapFrame:HookScript("OnUpdate", function(self, elapsed)
 	int = int + 1
 	if int >= 3 then
-		local x, y = C_Map.GetPlayerMapPosition(C_Map.GetBestMapForUnit("player"), "player"):GetXY()
+		local UnitMap = C_Map.GetBestMapForUnit("player")
+		local x, y = 0, 0
 
-		x = math.floor(100 * x) or 0
-		y = math.floor(100 * y) or 0
+		if UnitMap then
+			local GetPlayerMapPosition = C_Map.GetPlayerMapPosition(UnitMap, "player")
+			if GetPlayerMapPosition then
+				x, y = GetPlayerMapPosition:GetXY()
+			end
+		end
+
+		x = math.floor(100 * x)
+		y = math.floor(100 * y)
 		if x ~= 0 and y ~= 0 then
 			coords.PlayerText:SetText(UnitName("player")..": "..x..","..y)
 		else
