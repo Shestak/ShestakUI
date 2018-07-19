@@ -26,7 +26,7 @@ local PopulateEncounterInfo = function()
 end
 
 local frame = CreateFrame("Frame")
-frame:RegisterEvent("WORLD_MAP_UPDATE")
+--BETA frame:RegisterEvent("WORLD_MAP_UPDATE")
 frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 frame:SetScript("OnEvent", function(self, event)
 	if WorldMapFrame:IsShown() then
