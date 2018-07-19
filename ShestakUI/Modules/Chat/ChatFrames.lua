@@ -144,6 +144,7 @@ local function SetChatStyle(frame)
 		-- Update border color according where we talk
 		hooksecurefunc("ChatEdit_UpdateHeader", function()
 			local type = _G[chat.."EditBox"]:GetAttribute("chatType")
+			if not type then return end
 			if type == "CHANNEL" then
 				local id = GetChannelName(_G[chat.."EditBox"]:GetAttribute("channelTarget"))
 				if id == 0 then
