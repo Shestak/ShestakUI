@@ -4,11 +4,21 @@ if C.announcements.safari_hat ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Check Safari Hat
 ----------------------------------------------------------------------------------------
+local function CheckUnitBuff(IsSpellId)
+	for i = 1, 40, 1 do
+		local name, icon, _, _, _, _, _, _, _, spellID = UnitBuff("player", i)
+		if not name then break end
+		if IsSpellId == spellID then
+			return i
+		end
+	end
+	return nil
+end
+
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PET_BATTLE_OPENING_DONE")
 frame:SetScript("OnEvent", function()
-	local name = GetSpellInfo(158486)
-	if PlayerHasToy(92738) and not UnitAura("player", name) then
+	if PlayerHasToy(92738) and not CheckUnitBuff(158486) then
 		local maxlevel = true
 		for i = 1, 3 do
 			local level = C_PetBattles.GetLevel(1, i)
