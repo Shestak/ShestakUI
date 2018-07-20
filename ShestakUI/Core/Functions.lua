@@ -1228,7 +1228,7 @@ T.PostCastStart = function(Castbar, unit, name, castid)
 		r, g, b = color[1], color[2], color[3]
 	end
 
-	if Castbar.interrupt and UnitCanAttack("player", unit) then
+	if Castbar.notInterruptible and UnitCanAttack("player", unit) then
 		Castbar:SetStatusBarColor(0.8, 0, 0)
 		Castbar.bg:SetVertexColor(0.8, 0, 0, 0.2)
 		Castbar.Overlay:SetBackdropBorderColor(0.8, 0, 0)
@@ -1298,7 +1298,7 @@ T.PostChannelStart = function(Castbar, unit, name)
 		r, g, b = color[1], color[2], color[3]
 	end
 
-	if Castbar.interrupt and UnitCanAttack("player", unit) then
+	if Castbar.notInterruptible and UnitCanAttack("player", unit) then
 		Castbar:SetStatusBarColor(0.8, 0, 0)
 		Castbar.bg:SetVertexColor(0.8, 0, 0, 0.2)
 		Castbar.Overlay:SetBackdropBorderColor(0.8, 0, 0)
