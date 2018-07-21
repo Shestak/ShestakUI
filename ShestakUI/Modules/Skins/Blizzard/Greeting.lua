@@ -14,7 +14,7 @@ local function LoadSkin()
 		AvailableQuestsText:SetTextColor(1, 0.8, 0)
 		QuestGreetingFrameHorizontalBreak:Kill()
 
-		for i = 1, MAX_NUM_QUESTS do
+		for i = 1, GetNumActiveQuests() do
 			local button = _G["QuestTitleButton"..i]
 
 			if button:GetFontString() then
