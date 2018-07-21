@@ -36,8 +36,11 @@ local function LoadSkin()
 	OrderHallTalentFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(OrderHallTalentFrameCloseButton)
 	ClassHallTalentInset:StripTextures()
-	OrderHallTalentFrame.Currency:SetFont(C["media"].normal_font, 16)
-	OrderHallTalentFrame.CurrencyIcon:SetAtlas("legionmission-icon-currency", false)
+
+	OrderHallTalentFrame:HookScript("OnShow", function(self)
+		OrderHallTalentFramePortrait:Hide()
+		OrderHallTalentFrame.Currency.Icon:SetAtlas("legionmission-icon-currency", false)
+	end)
 end
 
 T.SkinFuncs["Blizzard_OrderHallUI"] = LoadSkin
