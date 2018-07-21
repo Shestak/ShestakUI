@@ -78,30 +78,24 @@ local function LoadSkin()
 	InspectPVPFrame.PortraitBackground:SetPoint("TOPLEFT", 10, -5)
 	InspectPVPFrame.SmallWreath:ClearAllPoints()
 	InspectPVPFrame.SmallWreath:SetPoint("TOPLEFT", 3, -25)
-	hooksecurefunc("InspectPVPFrame_Update", function()
-		portrait:SetTexture("")
-		local level = UnitLevel(INSPECTED_UNIT)
-		if level and level >= MAX_PLAYER_LEVEL_TABLE[LE_EXPANSION_LEVEL_CURRENT] then
-			local prestigeLevel = UnitPrestige(INSPECTED_UNIT)
-			if prestigeLevel > 0 then
-				portrait:SetTexture(GetPrestigeInfo(prestigeLevel))
-			end
-		end
-	end)
 
-	for i = 1, 6 do
-		for j = 1, 3 do
-			local button = _G["InspectPVPFrameTalentRow"..i.."Talent"..j]
-			local icon = _G["InspectPVPFrameTalentRow"..i.."Talent"..j.."IconTexture"]
+	local function SkinPvpTalents(slot)
+		local icon = slot.Texture
+		slot:StripTextures()
+		slot:CreateBackdrop("Default")
+		slot.backdrop:SetPoint("TOPLEFT", icon, -2, 2)
+		slot.backdrop:SetPoint("BOTTOMRIGHT", icon, 2, -2)
 
-			button:StripTextures()
-			button:CreateBackdrop("Default")
-			button.backdrop:SetPoint("TOPLEFT", icon, -2, 2)
-			button.backdrop:SetPoint("BOTTOMRIGHT", icon, 2, -2)
+		slot.Border:Hide()
 
-			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		end
+		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
+
+	for i = 1, 3 do
+		SkinPvpTalents(InspectPVPFrame["TalentSlot"..i])
+	end
+
+	SkinPvpTalents(InspectPVPFrame.TrinketSlot)
 
 	InspectPVPFrame.BG:Kill()
 
