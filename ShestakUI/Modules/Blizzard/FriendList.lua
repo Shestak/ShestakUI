@@ -151,7 +151,7 @@ hooksecurefunc("WorldStateScoreFrame_Update", function()
 	local inArena = IsActiveBattlefieldArena()
 	local offset = FauxScrollFrame_GetOffset(WorldStateScoreScrollFrame)
 
-	for i = 1, MAX_WORLDSTATE_SCORE_BUTTONS do
+	for i = 1, GetNumBattlefieldScores() do
 		local index = offset + i
 		local name, _, _, _, _, faction, _, _, class = GetBattlefieldScore(index)
 		if name then
