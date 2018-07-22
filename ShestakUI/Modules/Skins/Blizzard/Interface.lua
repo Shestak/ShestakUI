@@ -87,6 +87,7 @@ local function LoadSkin()
 		"ActionBarsPanelRight",
 		"ActionBarsPanelRightTwo",
 		"ActionBarsPanelAlwaysShowActionBars",
+		"ActionBarsPanelStackRightBars",
 		"ActionBarsPanelLockActionBars",
 		"ActionBarsPanelCountdownCooldowns",
 		-- Names
@@ -112,6 +113,7 @@ local function LoadSkin()
 		"MousePanelInvertMouse",
 		"MousePanelClickToMove",
 		"MousePanelEnableMouseSpeed",
+		"MousePanelLockCursorToScreen",
 		-- Assessability
 		"AccessibilityPanelMovePad",
 		"AccessibilityPanelCinematicSubtitles",

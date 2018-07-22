@@ -58,8 +58,7 @@ local function LoadSkin()
 		"VideoOptionsFrameDefaults",
 		"VideoOptionsFrameApply",
 		"RecordLoopbackSoundButton",
-		"PlayLoopbackSoundButton",
-		"AudioOptionsVoicePanelChatMode1KeyBindingButton"
+		"PlayLoopbackSoundButton"
 	}
 
 	for i = 1, getn(buttons) do
@@ -86,9 +85,6 @@ local function LoadSkin()
 		"AudioOptionsSoundPanelHRTF",
 		"AudioOptionsSoundPanelEnableDSPs",
 		"AudioOptionsSoundPanelPetBattleMusic",
-		"AudioOptionsVoicePanelEnableVoice",
-		"AudioOptionsVoicePanelEnableMicrophone",
-		"AudioOptionsVoicePanelPushToTalkSound",
 		"AudioOptionsSoundPanelDialogSounds",
 		"NetworkOptionsPanelOptimizeSpeed",
 		"NetworkOptionsPanelUseIPv6",
@@ -133,12 +129,16 @@ local function LoadSkin()
 		"Advanced_MultisampleAlphaTest",
 		"Advanced_PostProcessAntiAliasingDropDown",
 		"Advanced_ResampleQualityDropDown",
+		"Advanced_AdapterDropDown",
 		"AudioOptionsSoundPanelHardwareDropDown",
 		"AudioOptionsSoundPanelSoundChannelsDropDown",
 		"AudioOptionsSoundPanelSoundCacheSizeDropDown",
 		"AudioOptionsVoicePanelInputDeviceDropDown",
 		"AudioOptionsVoicePanelChatModeDropDown",
 		"AudioOptionsVoicePanelOutputDeviceDropDown",
+		"AudioOptionsVoicePanelMicDeviceDropdown",
+		"AudioOptionsVoicePanelOutputDeviceDropdown",
+		"AudioOptionsVoicePanelChatModeDropdown",
 		"Graphics_SSAODropDown",
 		"Graphics_RefractionDropDown",
 		"RaidGraphics_TextureResolutionDropDown",
@@ -175,6 +175,8 @@ local function LoadSkin()
 		"Advanced_MaxFPSBKSlider",
 		"Advanced_GammaSlider",
 		"Advanced_RenderScaleSlider",
+		"Advanced_ContrastSlider",
+		"Advanced_BrightnessSlider",
 		"AudioOptionsSoundPanelSoundQuality",
 		"AudioOptionsSoundPanelMasterVolume",
 		"AudioOptionsSoundPanelSoundVolume",
@@ -186,10 +188,14 @@ local function LoadSkin()
 		"AudioOptionsVoicePanelMusicFade",
 		"AudioOptionsVoicePanelAmbienceFade",
 		"AudioOptionsSoundPanelDialogVolume",
+		"AudioOptionsVoicePanelVoiceChatMicVolume",
+		"AudioOptionsVoicePanelVoiceChatMicSensitivity",
+		"AudioOptionsVoicePanelVoiceChatVolume",
 		"RaidGraphics_Quality",
 		"RaidGraphics_ViewDistanceSlider",
 		"RaidGraphics_EnvironmentalDetailSlider",
-		"RaidGraphics_GroundClutterSlider"
+		"RaidGraphics_GroundClutterSlider",
+		"Display_RenderScaleSlider"
 	}
 
 	for i = 1, getn(sliders) do
@@ -203,10 +209,11 @@ local function LoadSkin()
 	_G["Graphics_Quality"].SetBackdrop = T.dummy
 	_G["RaidGraphics_Quality"].SetBackdrop = T.dummy
 
-	--BETA LoopbackVUMeter:CreateBackdrop("Overlay")
-	-- LoopbackVUMeter:SetFrameLevel(LoopbackVUMeter:GetFrameLevel() + 1)
-	-- LoopbackVUMeter.backdrop:SetPoint("TOPLEFT", -4, 4)
-	-- LoopbackVUMeter.backdrop:SetPoint("BOTTOMRIGHT", 4, -4)
+	--BETA local VUMeter = AudioOptionsVoicePanelTestInputDevice.VUMeter
+	-- VUMeter:CreateBackdrop("Overlay")
+	-- VUMeter:SetFrameLevel(VUMeter:GetFrameLevel() + 1)
+	-- VUMeter.backdrop:SetPoint("TOPLEFT", -4, 4)
+	-- VUMeter.backdrop:SetPoint("BOTTOMRIGHT", 4, -4)
 
 	_G["VideoOptionsFrameDefaults"]:ClearAllPoints()
 	_G["VideoOptionsFrameDefaults"]:SetPoint("TOPLEFT", _G["VideoOptionsFrameCategoryFrame"], "BOTTOMLEFT", 0, -14)
@@ -216,14 +223,17 @@ local function LoadSkin()
 	_G["VideoOptionsFrameOkay"]:SetPoint("RIGHT", _G["VideoOptionsFrameCancel"], "LEFT", -4, 0)
 	_G["VideoOptionsFrameApply"]:ClearAllPoints()
 	_G["VideoOptionsFrameApply"]:SetPoint("RIGHT", _G["VideoOptionsFrameOkay"], "LEFT", -4, 0)
-	--BETA _G["AudioOptionsVoicePanelPushToTalkSound"]:ClearAllPoints()
-	-- _G["AudioOptionsVoicePanelPushToTalkSound"]:SetPoint("BOTTOMLEFT", _G["AudioOptionsVoicePanelBinding"], "BOTTOMLEFT", 0, 0)
-	-- _G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:ClearAllPoints()
-	-- _G["AudioOptionsVoicePanelChatMode1KeyBindingButton"]:SetPoint("CENTER", _G["AudioOptionsVoicePanelBinding"], "CENTER", 0, -10)
 
 	GraphicsButton:SetPoint("BOTTOMLEFT", "Graphics_", "TOPLEFT", 0, 3)
 	GraphicsButton:SkinButton(true)
 	RaidButton:SkinButton(true)
+
+	AudioOptionsVoicePanelTestInputDevice.ToggleTest:SkinButton()
+
+	local function InitializeCommunicationMode(self)
+		self.PushToTalkKeybindButton:SkinButton()
+	end
+	hooksecurefunc("AudioOptionsVoicePanel_InitializeCommunicationModeUI", InitializeCommunicationMode)
 
 	T.SkinDropDownBox(InterfaceOptionsLanguagesPanelAudioLocaleDropDown, 250)
 	T.SkinDropDownBox(InterfaceOptionsLanguagesPanelLocaleDropDown, 250)
