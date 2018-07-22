@@ -7,6 +7,8 @@ if C.tooltip.enable ~= true then return end
 local StoryTooltip = QuestScrollFrame.StoryTooltip
 StoryTooltip:SetFrameLevel(4)
 
+local WarCampaignTooltip = QuestScrollFrame.WarCampaignTooltip
+
 local tooltips = {
 	GameTooltip,
 	ItemRefTooltip,
@@ -23,6 +25,7 @@ local tooltips = {
 	QuestGuru_QuestWatchTooltip,
 	StoryTooltip,
 	ReputationParagonTooltip,
+	WarCampaignTooltip,
 	EmbeddedItemTooltip
 }
 
