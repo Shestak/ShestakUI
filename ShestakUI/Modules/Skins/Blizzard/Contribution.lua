@@ -19,14 +19,6 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
 		ContributionBuffTooltip.backdrop:SetFrameLevel(ContributionBuffTooltip:GetFrameLevel())
 		ContributionBuffTooltip.backdrop:SetPoint("TOPLEFT", ContributionBuffTooltip.Icon, "TOPLEFT", -2, 2)
 		ContributionBuffTooltip.backdrop:SetPoint("BOTTOMRIGHT", ContributionBuffTooltip.Icon, "BOTTOMRIGHT", 2, -2)
-
-		ContributionTooltip:StripTextures()
-		ContributionTooltip:CreateBackdrop("Transparent")
-		ContributionTooltip.ItemTooltip.IconBorder:SetAlpha(0)
-		ContributionTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		ContributionTooltip.ItemTooltip:CreateBackdrop("Default")
-		ContributionTooltip.ItemTooltip.backdrop:SetPoint("TOPLEFT", ContributionTooltip.ItemTooltip.Icon, "TOPLEFT", -2, 2)
-		ContributionTooltip.ItemTooltip.backdrop:SetPoint("BOTTOMRIGHT", ContributionTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 2, -2)
 	end
 end)
 
