@@ -26,6 +26,7 @@ local function LoadSkin()
 		option.Header.Text.SetTextColor = T.dummy
 		option.OptionText:SetTextColor(1, 1, 1)
 		option.OptionText.SetTextColor = T.dummy
+		option.OptionText:SetFont(C.media.normal_font, 13)
 		option.ArtworkBorder:SetAlpha(0)
 		option.ArtBackdrop = CreateFrame("Frame", nil, option)
 		option.ArtBackdrop:SetFrameLevel(option:GetFrameLevel())
