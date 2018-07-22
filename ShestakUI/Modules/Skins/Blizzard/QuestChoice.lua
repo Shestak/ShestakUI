@@ -11,16 +11,22 @@ local function LoadSkin()
 	for i = 1, 4 do
 		local option = QuestChoiceFrame["Option"..i]
 		local rewards = option.Rewards
-		local icon = rewards.Item.Icon
+		local item = rewards.Item
+		local icon = item.Icon
 		local currencies = rewards.Currencies
+		local container = option.OptionButtonsContainer
 
-		option.OptionButton:SkinButton()
-		rewards.Item.IconBorder:SetAlpha(0)
+		item.IconBorder:SetAlpha(0)
 		T.HandleIcon(icon)
 
 		for j = 1, 3 do
 			local cu = currencies["Currency"..j]
 			T.HandleIcon(cu.Icon)
+		end
+
+		for j = 1, 2 do
+			local button = container["OptionButton"..j]
+			button:SkinButton()
 		end
 	end
 end
