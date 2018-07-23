@@ -210,6 +210,9 @@ local micromenu = {
 	{text = SOCIAL_BUTTON, notCheckable = 1, func = function()
 		ToggleFriendsFrame()
 	end},
+	{text = CHAT_CHANNELS, notCheckable = 1, func = function()
+		ToggleChannelFrame()
+	end},
 	{text = PLAYER_V_PLAYER, notCheckable = 1, func = function()
 		if T.level >= SHOW_PVP_LEVEL then
 			TogglePVPUI()
