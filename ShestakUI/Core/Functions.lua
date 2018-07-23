@@ -1196,7 +1196,7 @@ local setBarTicks = function(Castbar, ticknum)
 	end
 end
 
-T.PostCastStart = function(Castbar, unit, name, castid)
+T.PostCastStart = function(Castbar, unit, name)
 	Castbar.channeling = false
 	if unit == "vehicle" then unit = "player" end
 
