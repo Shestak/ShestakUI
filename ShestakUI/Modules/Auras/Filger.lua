@@ -32,8 +32,11 @@ T_DE_BUFF_BAR_Anchor:SetPoint(unpack(C.position.filger.target_bar))
 T_DE_BUFF_BAR_Anchor:SetSize(218, 25)
 
 SpellActivationOverlayFrame:SetFrameStrata("BACKGROUND")
+
 local Filger = {}
 local MyUnits = {player = true, vehicle = true, pet = true}
+
+-- _G.Filger = Filger -- Check cpu
 
 function Filger:TooltipOnEnter()
 	if self.spellID > 20 then
@@ -318,7 +321,7 @@ function Filger:OnEvent(event, unit, _, _, _, spellID)
 
 			if data.filter == "BUFF" and (not data.spec or data.spec == ptt) then
 				local caster, spn, expirationTime
-				spn, _, _ = GetSpellInfo(data.spellID)
+				spn = GetSpellInfo(data.spellID)
 				if spn then
 					name, icon, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitBuff(data.unitID, data.spellID)
 					if name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) then
@@ -330,7 +333,7 @@ function Filger:OnEvent(event, unit, _, _, _, spellID)
 				end
 			elseif data.filter == "DEBUFF" and (not data.spec or data.spec == ptt) then
 				local caster, spn, expirationTime
-				spn, _, _ = GetSpellInfo(data.spellID)
+				spn = GetSpellInfo(data.spellID)
 				if spn then
 					name, icon, count, _, duration, expirationTime, caster, _, _, spid = Filger:UnitDebuff(data.unitID, data.spellID)
 					if name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) then
