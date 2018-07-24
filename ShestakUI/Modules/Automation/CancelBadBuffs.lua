@@ -4,17 +4,6 @@ if C.automation.cancel_bad_buffs ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Auto cancel various buffs(by Unknown)
 ----------------------------------------------------------------------------------------
-local function CheckUnitBuff(IsSpellId)
-	for i = 1, 40, 1 do
-		local name, icon, _, _, _, _, _, _, _, spellID = UnitBuff("player", i)
-		if not name then break end
-		if IsSpellId == spellID then
-			return i
-		end
-	end
-	return nil
-end
-
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("UNIT_AURA")
 frame:SetScript("OnEvent", function(self, event, unit)
@@ -22,8 +11,9 @@ frame:SetScript("OnEvent", function(self, event, unit)
 
 	if event == "UNIT_AURA" and not InCombatLockdown() then
 		for buff, enabled in next, T.BadBuffs do
-			if CheckUnitBuff(buff) and enabled then
-				CancelUnitBuff(unit, CheckUnitBuff(buff))
+			local icon = T.CheckPlayerBuff(buff)
+			if icon and enabled then
+				CancelUnitBuff(unit, icon)
 				print("|cffffff00"..ACTION_SPELL_AURA_REMOVED.."|r "..(GetSpellLink(buff) or ("|cffffff00["..buff.."]|r")).."|cffffff00.|r")
 			end
 		end

@@ -11,23 +11,12 @@ local guardianelixirbuffs = T.ReminderBuffs["GuardianElixir"]
 local foodbuffs = T.ReminderBuffs["Food"]
 local visible, flask, battleelixir, guardianelixir, food
 
-local function CheckUnitBuff(IsSpellId)
-	for i = 1, 40, 1 do
-		local name, icon, _, _, _, _, _, _, _, spellID = UnitBuff("player", i)
-		if not name then break end
-		if IsSpellId == spellID then
-			return icon
-		end
-	end
-	return nil
-end
-
 -- We need to check if you have two different elixirs if your not flasked, before we say your not flasked
 local function CheckElixir(unit)
 	if battleelixirbuffs and battleelixirbuffs[1] then
 		for i, battleelixirbuffs in pairs(battleelixirbuffs) do
-			local name, _, icon, _, _, _, spellId = GetSpellInfo(battleelixirbuffs)
-			if CheckUnitBuff(spellId) then
+			local name, _, icon = GetSpellInfo(battleelixirbuffs)
+			if T.CheckPlayerBuff(name) then
 				FlaskFrame.t:SetTexture(icon)
 				battleelixir = true
 				break
@@ -39,8 +28,8 @@ local function CheckElixir(unit)
 
 	if guardianelixirbuffs and guardianelixirbuffs[1] then
 		for i, guardianelixirbuffs in pairs(guardianelixirbuffs) do
-			local name, _, icon, _, _, _, spellId = GetSpellInfo(guardianelixirbuffs)
-			if CheckUnitBuff(spellId) then
+			local name, _, icon = GetSpellInfo(guardianelixirbuffs)
+			if T.CheckPlayerBuff(name) then
 				guardianelixir = true
 				if not battleelixir then
 					FlaskFrame.t:SetTexture(icon)
@@ -69,11 +58,11 @@ local function OnAuraChange(self, event, arg1, unit)
 	-- Start checking buffs to see if we can find a match from the list
 	if flaskbuffs and flaskbuffs[1] then
 		for i, flaskbuffs in pairs(flaskbuffs) do
-			local name, _, icon, _, _, _, spellId = GetSpellInfo(flaskbuffs)
+			local name, _, icon = GetSpellInfo(flaskbuffs)
 			if i == 1 then
 				FlaskFrame.t:SetTexture(icon)
 			end
-			if CheckUnitBuff(spellId) then
+			if T.CheckPlayerBuff(name) then
 				FlaskFrame:SetAlpha(C.reminder.raid_buffs_alpha)
 				flask = true
 				break
@@ -85,11 +74,11 @@ local function OnAuraChange(self, event, arg1, unit)
 
 	if foodbuffs and foodbuffs[1] then
 		for i, foodbuffs in pairs(foodbuffs) do
-			local name, _, icon, _, _, _, spellId = GetSpellInfo(foodbuffs)
+			local name, _, icon = GetSpellInfo(foodbuffs)
 			if i == 1 then
 				FoodFrame.t:SetTexture(icon)
 			end
-			if CheckUnitBuff(spellId) then
+			if T.CheckPlayerBuff(name) then
 				FoodFrame:SetAlpha(C.reminder.raid_buffs_alpha)
 				food = true
 				break

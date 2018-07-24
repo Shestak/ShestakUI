@@ -1172,7 +1172,6 @@ T.UpdateComboPointTarget = function(self, event, unit)
 end
 
 local ticks = {}
-local channelingTicks = T.CastBarTicks
 
 local setBarTicks = function(Castbar, ticknum)
 	for k, v in pairs(ticks) do
@@ -1263,6 +1262,8 @@ T.PostCastStart = function(Castbar, unit, name)
 		end
 	end
 end
+
+local channelingTicks = T.CastBarTicks
 
 T.PostChannelStart = function(Castbar, unit, name)
 	Castbar.channeling = true
@@ -1580,4 +1581,15 @@ T.CreateAuraWatch = function(self, unit)
 	end
 
 	self.AuraWatch = auras
+end
+
+T.CheckPlayerBuff = function(spell)
+	for i = 1, 40 do
+		local name, _, _, _, _, _, unitCaster = UnitBuff("player", i)
+		if not name then break end
+		if name == spell then
+			return i, unitCaster
+		end
+	end
+	return nil
 end

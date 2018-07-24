@@ -91,17 +91,6 @@ local function WaitForGC(self, elapsed)
 	end
 end
 
-local function CheckUnitBuff(IsSpellId)
-	for i = 1, 40, 1 do
-		local name, icon, _, _, _, _, _, _, _, spellID = UnitBuff("player", i)
-		if not name then break end
-		if IsSpellId == spellID then
-			return i
-		end
-	end
-	return nil
-end
-
 -- Create Secure Action Button for better control
 local btn = CreateFrame("Button", "AutoBuffButton", UIParent, "SecureActionButtonTemplate")
 btn:SetAttribute("type", "action")
@@ -116,8 +105,8 @@ function CheckBuffs()
 	ClearOverrideBindings(btn)
 	btn:SetAttribute("spell", nil)
 	for i, v in pairs(_G[T.class..spec]) do
-		local name, _, _, _, _, _, IsSpellId = GetSpellInfo(v)
-		if name and not CheckUnitBuff(IsSpellId) then
+		local name = GetSpellInfo(v)
+		if name and not T.CheckPlayerBuff(name) then
 			if GetSpellCooldown(name) == 0 then
 				btn:SetAttribute("spell", name)
 				SetOverrideBindingClick(btn, true, "MOUSEWHEELUP", "AutoBuffButton")
