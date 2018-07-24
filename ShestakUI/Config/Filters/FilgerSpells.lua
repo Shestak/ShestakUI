@@ -1289,7 +1289,7 @@ C["filger_spells"] = {
 			-- Fingers of Frost
 			{spellID = 44544, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Brain Freeze
-			{spellID = 190447, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 190446, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Glacial Spike!
 			{spellID = 199844, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Arcane Missiles!
@@ -1300,6 +1300,10 @@ C["filger_spells"] = {
 			{spellID = 209455, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Freezing Rain
 			{spellID = 240555, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Pyroclasm
+			{spellID = 269651, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Clearcasting
+			{spellID = 79684, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 			-- Alchemy Stones
