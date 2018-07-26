@@ -1,5 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if C.misc.click_cast ~= true then return end
+-- if C.misc.click_cast ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Simple click2cast spell binder(sBinder by Fernir)
@@ -42,8 +42,21 @@ for i, v in pairs({
 	if _G[v] then ClickCastFrames[_G[v]] = true end
 end
 
-hooksecurefunc("CreateFrame", function(ftype, name, parent, template) if template and template:find("SecureUnitButtonTemplate") then ClickCastFrames[_G[name]] = true end end)
-hooksecurefunc("CompactUnitFrame_SetUpFrame", function(frame, ...) ClickCastFrames[frame] = true end)
+hooksecurefunc("CreateFrame", function(ftype, name, parent, template)
+	if template and template:find("SecureUnitButtonTemplate") then
+		ClickCastFrames[_G[name]] = true
+	end
+end)
+
+hooksecurefunc("CompactUnitFrame_SetUpFrame", function(frame, ...)
+	if frame.IsForbidden and frame:IsForbidden() then
+		return
+	end
+	if frame and frame.GetName and frame:GetName():match("^NamePlate") then
+		return
+	end
+	ClickCastFrames[frame] = true
+end)
 
 local ScrollSpells = CreateFrame("ScrollFrame", "SpellBinderScrollFrameSpellList", _G["SpellBinderInset"], "UIPanelScrollFrameTemplate")
 ScrollSpells.child = CreateFrame("Frame", "SpellBinderScrollFrameSpellListChild", ScrollSpells)
