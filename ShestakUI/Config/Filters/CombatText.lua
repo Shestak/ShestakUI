@@ -165,8 +165,28 @@ elseif T.class == "DRUID" then
 	end
 elseif T.class == "HUNTER" then
 	if C.combattext.merge_aoe_spam then
-		T.aoespam[2643] = 0			-- Multi-Shot
-		T.aoespam[118253] = 3		-- Serpent Sting
+		T.aoespam[217200] = 4		-- Barbed Shot
+		T.aoespam[270329] = 0.5		-- Pheromone Bomb
+		T.aoespam[270332] = 2		-- Pheromone Bomb Tick
+		T.aoespam[260231] = 0.5		-- Violent Reaction (Pheromone Bomb Effect)
+		T.aoespam[271048] = 0.5		-- Volatile Bomb 
+		T.aoespam[271049] = 2		-- Volatile Bomb Tick
+		T.aoespam[270338] = 0.5		-- Shrapnel Bomb
+		T.aoespam[270339] = 2		-- Shrapnel Bomb Tick
+		T.aoespam[270343] = 4		-- Internal Bleeding (Shrapnel Bomb Effect)
+		T.aoespam[259396] = 2		-- Chakrams
+		T.merge[259398] = 259396	-- Flanking Strike
+		T.merge[267666] = 259396	-- Flanking Strike
+		T.aoespam[259516] = 0.5		-- Flanking Strike
+		T.merge[269752] = 259516	-- Flanking Strike	
+		T.aoespam[265157] = 0.5		-- Wildfire Bomb
+		T.aoespam[269747] = 6		-- Wildfire Bomb Tick
+		T.aoespam[271788] = 3		-- Serpent Sting (Marksmanship Talent)
+		T.aoespam[186387] = 0		-- Bursting Shot
+		T.aoespam[257045] = 3.5		-- Rapid Fire
+		T.aoespam[257620] = 0		-- Multi-Shot (Marksmanship)
+		T.aoespam[2643] = 0			-- Multi-Shot (Beast Mastery)
+		T.aoespam[259491] = 3		-- Serpent Sting (Survival)
 		T.aoespam[13812] = 3		-- Explosive Trap
 		T.aoespam[212680] = 3		-- Explosive Shot
 		T.aoespam[118459] = 3		-- Beast Cleave
@@ -194,7 +214,7 @@ elseif T.class == "HUNTER" then
 		T.aoespam[191043] = 1		-- Legacy of the Windrunners (Aimed Shot)
 		T.aoespam[198670] = 1		-- Piercing Shot
 		T.aoespam[201594] = 4		-- Stampede
-		T.aoespam[194392] = 1		-- Volley
+		T.aoespam[260247] = 1		-- Volley
 		T.aoespam[214581] = 2		-- Sidewinders
 		--BETA T.aoespam[212621] = 2		-- Marked Shot
 		T.aoespam[191413] = 6		-- Bestial Ferocity

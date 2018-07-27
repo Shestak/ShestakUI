@@ -52,7 +52,7 @@ C["filger_spells"] = {
 			-- Unholy Blight
 			{spellID = 115989, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Summon Gargoyle
-			{spellID = 49206, filter = "ICD", trigger = "NONE", duration = 30},
+			{spellID = 49206, filter = "ICD", trigger = "NONE", duration = 40},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -941,6 +941,8 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
+			-- Coordinated Assault
+			{spellID = 266779, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Aspect of the Turtle
 			{spellID = 186265, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bestial Wrath
@@ -984,6 +986,16 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
+			-- Viper's Venom
+			{spellID = 268552, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Trick Shots
+			{spellID = 257622, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lethal Shots
+			{spellID = 260395, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Precise Shots
+			{spellID = 260242, unitID = "player", caster = "player", filter = "BUFF"},			
+			-- Frenzy
+			{spellID = 272790, unitID = "pet", caster = "player", filter = "BUFF"},			
 			-- Steady Focus
 			{spellID = 193533, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lock and Load
@@ -993,7 +1005,7 @@ C["filger_spells"] = {
 			-- Mongoose Fury
 			{spellID = 190931, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Beast Cleave
-			{spellID = 118455, unitID = "pet", caster = "player", filter = "BUFF"},
+			{spellID = 118455, unitID = "pet", caster = "player", filter = "BUFF"},			
 			-- Marking Targets
 			--BETA {spellID = 223138, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Frenzy
@@ -1074,6 +1086,8 @@ C["filger_spells"] = {
 			{spellID = 185855, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- A Murder of Crows
 			{spellID = 131894, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Hunter's Mark
+			{spellID = 257284, unitID = "target", caster = "player", filter = "DEBUFF"},			
 			-- Vulnerable
 			--BETA {spellID = 187131, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hunter's Mark
@@ -1255,6 +1269,8 @@ C["filger_spells"] = {
 			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combustion
 			{spellID = 190319, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rune of Power
+			{spellID = 116014, filter = "ICD", trigger = "NONE", duration = 10},
 			-- Pyretic Incantation
 			{spellID = 194329, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blazing Barrier
@@ -2697,6 +2713,8 @@ C["filger_spells"] = {
 			{spellID = 79206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unleash Life
 			{spellID = 73685, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Healing Stream Totem
+			{spellID = 5394, filter = "ICD", trigger = "NONE", duration = 15},
 			-- Doom Winds
 			{spellID = 204945, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Landslide
