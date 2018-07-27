@@ -52,7 +52,7 @@ C["filger_spells"] = {
 			-- Unholy Blight
 			{spellID = 115989, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Summon Gargoyle
-			{spellID = 49206, filter = "ICD", trigger = "NONE", duration = 40},
+			{spellID = 49206, filter = "ICD", trigger = "NONE", duration = 30},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1255,8 +1255,6 @@ C["filger_spells"] = {
 			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combustion
 			{spellID = 190319, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Rune of Power
-			{spellID = 116014, filter = "ICD", trigger = "NONE", duration = 10},
 			-- Pyretic Incantation
 			{spellID = 194329, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blazing Barrier
@@ -2699,8 +2697,6 @@ C["filger_spells"] = {
 			{spellID = 79206, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unleash Life
 			{spellID = 73685, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Healing Stream Totem
-			{spellID = 5394, filter = "ICD", trigger = "NONE", duration = 15},
 			-- Doom Winds
 			{spellID = 204945, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Landslide
