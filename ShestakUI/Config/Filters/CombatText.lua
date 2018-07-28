@@ -84,6 +84,10 @@ if T.class == "DEATHKNIGHT" then
 	end
 elseif T.class == "DEMONHUNTER" then
 	if C.combattext.merge_aoe_spam then
+		T.aoespam[258926] = 3.5		-- Fel Barrage
+		T.aoespam[258921] = 0.5		-- Immolation Aura (Havoc Talent)
+		T.aoespam[258922] = 4		-- Immolation Aura Tick (Havoc Talent)
+		T.aoespam[258883] = 4		-- Trail of Ruin
 		T.aoespam[247455] = 1		-- Spirit Bomb
 		T.aoespam[243160] = 0		-- Erupting Souls
 		T.aoespam[187727] = 0		-- Immolation Aura
@@ -126,7 +130,6 @@ elseif T.class == "DEMONHUNTER" then
 		T.aoespam[210153] = 2		-- Death Sweep
 		T.merge[210155] = 210153	-- Death Sweep	Off-Hand
 		T.aoespam[236237] = 2		-- Chaos Cleave
-		T.aoespam[211052] = 2		-- Fel Barrage
 		T.aoespam[203794] = 2		-- Consume Soul
 	end
 elseif T.class == "DRUID" then
@@ -165,8 +168,28 @@ elseif T.class == "DRUID" then
 	end
 elseif T.class == "HUNTER" then
 	if C.combattext.merge_aoe_spam then
-		T.aoespam[2643] = 0			-- Multi-Shot
-		T.aoespam[118253] = 3		-- Serpent Sting
+		T.aoespam[217200] = 4		-- Barbed Shot
+		T.aoespam[270329] = 0.5		-- Pheromone Bomb
+		T.aoespam[270332] = 2		-- Pheromone Bomb Tick
+		T.aoespam[260231] = 0.5		-- Violent Reaction (Pheromone Bomb Effect)
+		T.aoespam[271048] = 0.5		-- Volatile Bomb 
+		T.aoespam[271049] = 2		-- Volatile Bomb Tick
+		T.aoespam[270338] = 0.5		-- Shrapnel Bomb
+		T.aoespam[270339] = 2		-- Shrapnel Bomb Tick
+		T.aoespam[270343] = 4		-- Internal Bleeding (Shrapnel Bomb Effect)
+		T.aoespam[259396] = 2		-- Chakrams
+		T.merge[259398] = 259396	-- Flanking Strike
+		T.merge[267666] = 259396	-- Flanking Strike
+		T.aoespam[259516] = 0.5		-- Flanking Strike
+		T.merge[269752] = 259516	-- Flanking Strike	
+		T.aoespam[265157] = 0.5		-- Wildfire Bomb
+		T.aoespam[269747] = 6		-- Wildfire Bomb Tick
+		T.aoespam[271788] = 3		-- Serpent Sting (Marksmanship Talent)
+		T.aoespam[186387] = 0		-- Bursting Shot
+		T.aoespam[257045] = 3.5		-- Rapid Fire
+		T.aoespam[257620] = 0		-- Multi-Shot (Marksmanship)
+		T.aoespam[2643] = 0			-- Multi-Shot (Beast Mastery)
+		T.aoespam[259491] = 3		-- Serpent Sting (Survival)
 		T.aoespam[13812] = 3		-- Explosive Trap
 		T.aoespam[212680] = 3		-- Explosive Shot
 		T.aoespam[118459] = 3		-- Beast Cleave
@@ -194,7 +217,7 @@ elseif T.class == "HUNTER" then
 		T.aoespam[191043] = 1		-- Legacy of the Windrunners (Aimed Shot)
 		T.aoespam[198670] = 1		-- Piercing Shot
 		T.aoespam[201594] = 4		-- Stampede
-		T.aoespam[194392] = 1		-- Volley
+		T.aoespam[260247] = 1		-- Volley
 		T.aoespam[214581] = 2		-- Sidewinders
 		--BETA T.aoespam[212621] = 2		-- Marked Shot
 		T.aoespam[191413] = 6		-- Bestial Ferocity
@@ -281,8 +304,13 @@ elseif T.class == "MONK" then
 		T.aoespam[191840] = 3		-- Essence Font
 		T.aoespam[162530] = 3		-- Refreshing Jade Wind
 		-- Damaging spells
+		T.aoespam[228649] = 1		-- Blackout Kick (x3)
+		T.aoespam[148187] = 4		-- Rushing Jade Wind
+		T.aoespam[123996] = 4		-- Crackling Tiger Lightning
+		T.aoespam[124280] = 4		-- Touch of Karma
+		T.aoespam[196608] = 4		-- Eye of the Tiger
 		T.aoespam[117952] = 3		-- Crackling Jade Lightning
-		T.aoespam[117418] = 3		-- Fists of Fury
+		T.aoespam[117418] = 3.5		-- Fists of Fury
 		T.aoespam[121253] = 0		-- Keg Smash
 		T.aoespam[115181] = 0		-- Breath of Fire
 		T.aoespam[123725] = 3		-- Breath of Fire (DoT)
@@ -290,11 +318,15 @@ elseif T.class == "MONK" then
 		T.aoespam[123586] = 3		-- Flying Serpent Kick
 		T.aoespam[132467] = 3		-- Chi Wave
 		T.aoespam[148135] = 3		-- Chi Burst
-		T.aoespam[158221] = 3		-- Hurricane Strike
+		T.aoespam[158221] = 1		-- Hurricane Strike
 	end
+	if C.combattext.healing then
+		T.healfilter[196608] = true	-- Eye of the Tiger
+	end	
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
+		T.aoespam[216371] = 4		-- Avenging Crusader
 		T.aoespam[209540] = 8		-- Light of the Titans
 		T.aoespam[53652] = 3		-- Beacon of Light
 		T.aoespam[85222] = 1		-- Light of Dawn
@@ -306,7 +338,10 @@ elseif T.class == "PALADIN" then
 		T.aoespam[183811] = 6		-- Judgment of Light
 		T.aoespam[225311] = 1		-- Light of Dawn
 		-- Damaging spells
-		T.aoespam[205273] = 1		-- Wake of Ashes
+		T.aoespam[53600] = 0.5		-- Shield of the Righteous
+		T.aoespam[184689] = 1		-- Shield of Vengeance
+		T.aoespam[205202] = 1		-- Eye for an Eye
+		T.aoespam[255937] = 1		-- Wake of Ashes
 		T.aoespam[198137] = 5		-- Divine Hammer
 		T.aoespam[81297] = 3		-- Consecration
 		T.aoespam[53385] = 0		-- Divine Storm
@@ -333,10 +368,14 @@ elseif T.class == "PALADIN" then
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
+		T.aoespam[204065] = 0		-- Shadow Covenant
+		T.aoespam[270501] = 2.5		-- Contrition
+		T.merge[281469] = 270501	-- Contrition
+		T.aoespam[194509] = 0.5		-- Power Word: Radiance
 		T.aoespam[204883] = 1		-- Circle of Healing
 		T.aoespam[15290] = 4		-- Vampiric Embrace
-		T.aoespam[47750] = 3		-- Penance
-		T.aoespam[132157] = 0		-- Holy Nova
+		T.aoespam[47750] = 2.5		-- Penance
+		T.aoespam[281265] = 0		-- Holy Nova
 		T.aoespam[139] = 3			-- Renew
 		T.aoespam[596] = 0			-- Prayer of Healing
 		T.aoespam[64844] = 3		-- Divine Hymn
@@ -349,19 +388,21 @@ elseif T.class == "PRIEST" then
 		T.aoespam[110745] = 3		-- Divine Star
 		T.merge[94472] = 81751		-- Atonement
 		-- Damaging spells
-		T.aoespam[205065] = 5		-- Void Torrent
+		T.aoespam[204213] = 4		-- Purge the Wicked
+		T.aoespam[205386] = 0.5		-- Shadow Crash
+		T.aoespam[263346] = 0.5		-- Dark Void
+		T.aoespam[49821] = 3		-- Mind Sear
+		T.aoespam[263165] = 5		-- Void Torrent
 		T.aoespam[228361] = 1		-- Void Eruption
 		T.merge[228360] = 228361	-- Void Eruption
 		T.aoespam[193473] = 3		-- Mind Flay (Call to the Void)
-		T.aoespam[237388] = 3		-- Mind Flay (AoE)
-		T.aoespam[186723] = 3		-- Penance
+		T.aoespam[186723] = 2.5		-- Penance
 		T.merge[47666] = 186723		-- Penance
 		T.aoespam[132157] = 0		-- Holy Nova
 		T.aoespam[589] = 4			-- Shadow Word: Pain
 		T.aoespam[34914] = 4		-- Vampiric Touch
 		T.aoespam[15407] = 3		-- Mind Flay
 		T.aoespam[14914] = 3		-- Holy Fire
-		T.aoespam[129250] = 3		-- Power Word: Solace
 		T.aoespam[120696] = 3		-- Halo
 		T.aoespam[122128] = 3		-- Divine Star
 		T.aoespam[148859] = 3		-- Shadowy Apparition
@@ -372,12 +413,16 @@ elseif T.class == "PRIEST" then
 	end
 elseif T.class == "ROGUE" then
 	if C.combattext.merge_aoe_spam then
+		T.aoespam[121411] = 2.5		-- Crimson Tempest
+		T.aoespam[271881] = 0.5		-- Blade Rush
+		T.aoespam[280720] = 2		-- Secret Technique
+		T.merge[282449] = 280720	-- Secret Technique
 		T.aoespam[51723] = 1		-- Fan of Knives
 		T.aoespam[2818] = 5			-- Deadly Poison
 		T.aoespam[185311] = 3		-- Crimson Vial
 		T.aoespam[192380] = 1		-- Poison Knives
 		T.aoespam[192434] = 5		-- From the Shadows
-		T.aoespam[192660] = 3.5		-- Poison Bomb
+		T.aoespam[255546] = 3.5		-- Poison Bomb
 		T.aoespam[121473] = 4		-- Shadow Blade
 		T.merge[121474] = 121473	-- Shadow Blade Off-Hand
 		T.aoespam[197800] = 1		-- Shadow Nova
@@ -408,6 +453,7 @@ elseif T.class == "SHAMAN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
 		--BETA T.aoespam[215871] = 6		-- Rainfall
+		T.aoespam[197997] = 1		-- Wellspring
 		T.aoespam[73921] = 5		-- Healing Rain
 		T.aoespam[52042] = 5		-- Healing Stream Totem
 		T.aoespam[1064] = 3			-- Chain Heal
@@ -421,9 +467,9 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[208899] = 6		-- Queen's Decree
 		T.aoespam[207778] = 1		-- Gift of the Queen
 		-- Damaging spells
+		T.aoespam[197214] = 1		-- Sundering
+		T.aoespam[268429] = 4.5		-- Searing Assault
 		T.aoespam[191726] = 4		-- Lightning Blast
-		T.aoespam[197568] = 4		-- Lightning Rod
-		T.aoespam[197568] = 4		-- Lightning Rod
 		T.aoespam[205533] = 7		-- Volcanic Inferno
 		T.aoespam[198485] = 3		-- Thunder Bite
 		T.aoespam[198483] = 1		-- Snowstorm

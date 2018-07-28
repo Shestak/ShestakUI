@@ -435,6 +435,8 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
+			-- Dark Slash
+			{spellID = 258860, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Nemesis
 			{spellID = 206491, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Sigil of Flame
@@ -941,6 +943,8 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
+			-- Coordinated Assault
+			{spellID = 266779, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Aspect of the Turtle
 			{spellID = 186265, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bestial Wrath
@@ -984,6 +988,16 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
+			-- Viper's Venom
+			{spellID = 268552, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Trick Shots
+			{spellID = 257622, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Lethal Shots
+			{spellID = 260395, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Precise Shots
+			{spellID = 260242, unitID = "player", caster = "player", filter = "BUFF"},			
+			-- Frenzy
+			{spellID = 272790, unitID = "pet", caster = "player", filter = "BUFF"},			
 			-- Steady Focus
 			{spellID = 193533, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lock and Load
@@ -1074,6 +1088,8 @@ C["filger_spells"] = {
 			{spellID = 185855, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- A Murder of Crows
 			{spellID = 131894, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Hunter's Mark
+			{spellID = 257284, unitID = "target", caster = "player", filter = "DEBUFF"},			
 			-- Vulnerable
 			--BETA {spellID = 187131, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hunter's Mark
@@ -1690,6 +1706,8 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
+			-- Touch of Death
+			{spellID = 115080, unitID = "target", caster = "player", filter = "DEBUFF"},			
 			-- Heavy Stagger
 			{spellID = 124273, unitID = "player", caster = "player", filter = "DEBUFF"},
 			-- Keg Smash
@@ -1835,6 +1853,8 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
+			-- Inquisition
+			{spellID = 84963, unitID = "player", caster = "player", filter = "BUFF"},			
 			-- Shield of Vengeance
 			{spellID = 184662, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Eye for an Eye
@@ -1874,6 +1894,8 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
+			-- Righteous Verdict
+			{spellID = 267611, unitID = "player", caster = "player", filter = "BUFF"},			
 			-- Infusion of Light
 			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
@@ -1986,6 +2008,8 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
+			-- Execution Sentence
+			{spellID = 267799, unitID = "target", caster = "player", filter = "DEBUFF"},			
 			-- Eye of Tyr
 			{spellID = 209202, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Forbearance
@@ -2219,6 +2243,9 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
+			-- Schism
+			{spellID = 214621, unitID = "target", caster = "player", filter = "DEBUFF"},			
+			
 			-- Trinket Effects
 			-- Mark of Doom [Prophecy of Fear]
 			{spellID = 184073, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -2464,6 +2491,8 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
+			-- Shuriken Combo
+			{spellID = 245640, unitID = "player", caster = "player", filter = "BUFF"},			
 			-- Jolly Roger
 			{spellID = 199603, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grand Melee
