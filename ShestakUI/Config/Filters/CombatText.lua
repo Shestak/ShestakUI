@@ -47,6 +47,17 @@ end
 -- Class config
 if T.class == "DEATHKNIGHT" then
 	if C.combattext.merge_aoe_spam then
+		T.aoespam[206931] = 2.5		-- Blooddrinker
+		T.aoespam[279303] = 1		-- Frost Breath
+		T.aoespam[195975] = 1		-- Glacial Advance
+		T.aoespam[195750] = 3		-- Frozen Pulse
+		T.aoespam[207150] = 0.5		-- Avalanche
+		T.aoespam[207230] = 0.5		-- Frostscythe
+		T.aoespam[194311] = 0.5		-- Festering Wound
+		T.aoespam[199373] = 4		-- Claw (Addition Ghouls)
+		T.aoespam[207267] = 0.5		-- Bursting Sores
+		T.aoespam[215969] = 0.5		-- Epidemic
+		T.merge[212739] = 215969	-- Epidemic
 		T.aoespam[196545] = 3		-- Bonestorm Heal
 		T.aoespam[196528] = 3		-- Bonestorm
 		T.aoespam[219711] = 0		-- Blood Feast
@@ -59,7 +70,7 @@ if T.class == "DEATHKNIGHT" then
 		T.aoespam[191587] = 4		-- Virulent Plague
 		T.aoespam[191685] = 4		-- Virulent Eruption
 		T.aoespam[206930] = 0.5		-- Heart Strike
-		T.aoespam[55095] = 3		-- Frost Fever
+		T.aoespam[55095] = 3.5		-- Frost Fever
 		T.aoespam[55078] = 3		-- Blood Plague
 		T.aoespam[50842] = 0		-- Blood Boil
 		T.aoespam[49184] = 0.5		-- Howling Blast
@@ -78,6 +89,7 @@ if T.class == "DEATHKNIGHT" then
 		T.merge[70890] = 55090		-- Scourge Strike (Shadow damage)
 	end
 	if C.combattext.healing then
+		T.healfilter[206931] = true	-- Blooddrinker	
 		T.healfilter[55078] = true	-- Blood Plague
 		T.healfilter[53365] = true	-- Unholy Strength
 		T.healfilter[119980] = true	-- Conversion
@@ -504,6 +516,9 @@ elseif T.class == "SHAMAN" then
 	end
 elseif T.class == "WARLOCK" then
 	if C.combattext.merge_aoe_spam then
+		T.aoespam[278350] = 4		-- Vile Taint
+		T.aoespam[196278] = 1		-- Implosion
+		T.aoespam[265931] = 5		-- Conflagrate DoT
 		T.aoespam[234153] = 5		-- Drain Life
 		T.aoespam[196657] = 5		-- Shadow Bolt (Dimensional Rift)
 		T.aoespam[187394] = 5		-- Chaos Barrage (Dimensional Rift)
@@ -524,6 +539,7 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[980] = 3			-- Agony
 		T.aoespam[63106] = 3		-- Siphon Life
 		T.aoespam[205246] = 3		-- Phantom Singularity
+		T.merge[205179] = 205246	-- Phantom Singularity
 		T.aoespam[80240] = 3		-- Havoc
 		T.aoespam[42223] = 3		-- Rain of Fire
 		T.aoespam[198590] = 3		-- Drain Soul
@@ -547,6 +563,7 @@ elseif T.class == "WARLOCK" then
 	if C.combattext.healing then
 		T.healfilter[198590] = true	-- Drain Soul
 		T.healfilter[205246] = true	-- Phantom Singularity
+		T.healfilter[205179] = true	-- Phantom Singularity
 		T.healfilter[63106] = true	-- Siphon Life
 		T.healfilter[108359] = true	-- Dark Regeneration
 	end
