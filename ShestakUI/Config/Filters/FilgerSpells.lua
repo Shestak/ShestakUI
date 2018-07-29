@@ -64,6 +64,8 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
+			-- Icy Talons
+			{spellID = 194879, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Crimson Scourge
 			{spellID = 81141, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Freezing Fog
@@ -3008,6 +3010,10 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
+			-- Dark Soul: Misery
+			{spellID = 113860, unitID = "player", caster = "player", filter = "BUFF"},			
+			-- Dark Soul: Instability
+			{spellID = 113858, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Deadwind Harvester
 			{spellID = 216708, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Unending Resolve
