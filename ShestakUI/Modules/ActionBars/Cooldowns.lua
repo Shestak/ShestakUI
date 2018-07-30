@@ -6,7 +6,6 @@ if IsAddOnLoaded("OmniCC") or IsAddOnLoaded("ncCooldown") or IsAddOnLoaded("tull
 ----------------------------------------------------------------------------------------
 local format = string.format
 local floor = math.floor
-local min = math.min
 
 local function GetFormattedTime(s)
 	local day, hour, minute = 86400, 3600, 60
@@ -138,8 +137,8 @@ end
 local function cooldown_Update(self)
 	local button = self:GetParent()
 	local action = button.action
-	local start, duration, enable = GetActionCooldown(action)
-	local charges, maxCharges, chargeStart, chargeDuration = GetActionCharges(action)
+	local start, duration = GetActionCooldown(action)
+	local charges, maxCharges = GetActionCharges(action)
 
 	if cooldown_ShouldUpdateTimer(self, start, duration, charges, maxCharges) then
 		Timer_Start(self, start, duration, charges, maxCharges)
@@ -165,7 +164,7 @@ local function actionButton_Register(frame)
 end
 
 if _G["ActionBarButtonEventsFrame"].frames then
-	for i, frame in pairs(_G["ActionBarButtonEventsFrame"].frames) do
+	for _, frame in pairs(_G["ActionBarButtonEventsFrame"].frames) do
 		actionButton_Register(frame)
 	end
 end
