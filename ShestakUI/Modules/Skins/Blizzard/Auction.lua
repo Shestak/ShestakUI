@@ -17,7 +17,6 @@ local function LoadSkin()
 	T.SkinScrollBar(BrowseFilterScrollFrameScrollBar)
 	T.SkinScrollBar(BrowseScrollFrameScrollBar)
 	T.SkinScrollBar(AuctionsScrollFrameScrollBar)
-	T.SkinScrollBar(AuctionatorScrollFrameScrollBar)
 	T.SkinScrollBar(BidScrollFrameScrollBar)
 
 	T.SkinDropDownBox(BrowseDropDown)
@@ -477,6 +476,8 @@ local function LoadSkin()
 	Atr_Hlist_ScrollFrameScrollBar:SetPoint("TOPRIGHT", Atr_Hlist, "TOPRIGHT", -5, -20)
 	Atr_Hlist_ScrollFrameScrollBar:SetPoint("BOTTOMRIGHT", Atr_Hlist, "BOTTOMRIGHT", -5, 22)
 	T.SkinScrollBar(Atr_Hlist_ScrollFrameScrollBar)
+
+	T.SkinScrollBar(AuctionatorScrollFrameScrollBar)
 
 	hooksecurefunc("AuctionFrameTab_OnClick", function(self, button, down, index)
 		local index = self:GetID()
