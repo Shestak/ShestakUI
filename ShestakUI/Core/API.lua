@@ -4,6 +4,35 @@ local backdropr, backdropg, backdropb, backdropa = unpack(C.media.backdrop_color
 local borderr, borderg, borderb, bordera = unpack(C.media.border_color)
 
 ----------------------------------------------------------------------------------------
+--	Position functions
+----------------------------------------------------------------------------------------
+local function SetOutside(obj, anchor, xOffset, yOffset)
+	xOffset = xOffset or 2
+	yOffset = yOffset or 2
+	anchor = anchor or obj:GetParent()
+
+	if obj:GetPoint() then
+		obj:ClearAllPoints()
+	end
+
+	obj:SetPoint("TOPLEFT", anchor, "TOPLEFT", -xOffset, yOffset)
+	obj:SetPoint("BOTTOMRIGHT", anchor, "BOTTOMRIGHT", xOffset, -yOffset)
+end
+
+local function SetInside(obj, anchor, xOffset, yOffset)
+	xOffset = xOffset or 2
+	yOffset = yOffset or 2
+	anchor = anchor or obj:GetParent()
+
+	if obj:GetPoint() then
+		obj:ClearAllPoints()
+	end
+
+	obj:SetPoint("TOPLEFT", anchor, "TOPLEFT", xOffset, -yOffset)
+	obj:SetPoint("BOTTOMRIGHT", anchor, "BOTTOMRIGHT", -xOffset, yOffset)
+end
+
+----------------------------------------------------------------------------------------
 --	Template functions
 ----------------------------------------------------------------------------------------
 local function CreateOverlay(f)
@@ -277,6 +306,8 @@ local function addAPI(object)
 	if not object.Width then mt.Width = Width end
 	if not object.Height then mt.Height = Height end
 	if not object.Point then mt.Point = Point end
+	if not object.SetOutside then mt.SetOutside = SetOutside end
+	if not object.SetInside then mt.SetInside = SetInside end
 	if not object.CreateOverlay then mt.CreateOverlay = CreateOverlay end
 	if not object.CreateBorder then mt.CreateBorder = CreateBorder end
 	if not object.SetTemplate then mt.SetTemplate = SetTemplate end
