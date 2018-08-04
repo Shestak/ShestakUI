@@ -494,6 +494,7 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[208899] = 6		-- Queen's Decree
 		T.aoespam[207778] = 1		-- Gift of the Queen
 		-- Damaging spells
+		T.aoespam[273324] = 5		-- Lightning Shield
 		T.aoespam[197214] = 1		-- Sundering
 		T.aoespam[268429] = 4.5		-- Searing Assault
 		T.aoespam[191726] = 4		-- Lightning Blast
