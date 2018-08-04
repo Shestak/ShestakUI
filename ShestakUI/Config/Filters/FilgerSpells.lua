@@ -645,6 +645,8 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
+			-- Starlord
+			{spellID = 279709, unitID = "player", caster = "player", filter = "BUFF"},			
 			-- Bloodtalons
 			{spellID = 145152, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Clearcasting
@@ -3249,6 +3251,12 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
+			-- In For The Kill
+			{spellID = 248622, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Deadly Calm
+			{spellID = 262228, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Sweeping Strikes
+			{spellID = 260708, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ignore Pain
 			{spellID = 190456, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shield Wall
@@ -3285,6 +3293,12 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
+			-- Overpower
+			{spellID = 7384, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Frothing Berserker
+			{spellID = 215572, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Furious Slash
+			{spellID = 202539, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Vengeance: Ignore Pain
 			{spellID = 202574, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Sudden Death
@@ -3382,6 +3396,8 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
+			-- Siegebreaker
+			{spellID = 280773, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Rend
 			{spellID = 772, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Colossus Smash
