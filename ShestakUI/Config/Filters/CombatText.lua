@@ -147,6 +147,11 @@ elseif T.class == "DEMONHUNTER" then
 elseif T.class == "DRUID" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
+		T.aoespam[207386] = 4		-- Spring Blossoms
+		T.aoespam[102352] = 4		-- Cenarion Ward
+		T.aoespam[200389] = 4		-- Cultivation
+		T.aoespam[227034] = 4		-- Lunar Beam Heal
+		T.aoespam[22842] = 3.5		-- Frenzied Regeneration
 		T.aoespam[774] = 4			-- Rejuvenation
 		T.aoespam[48438] = 7		-- Wild Growth
 		T.aoespam[8936] = 4			-- Regrowth
@@ -157,6 +162,15 @@ elseif T.class == "DRUID" then
 		T.aoespam[144876] = 3		-- Spark of Life (T16)
 		T.aoespam[155777] = 4		-- Rejuvenation (Germination)
 		-- Damaging spells
+		T.aoespam[274838] = 2		-- Feral Frenzy
+		T.aoespam[202028] = 0		-- Brutal Slash
+		T.aoespam[211545] = 4		-- Fury of Elune
+		T.merge[279729] = 190984	-- Solar Wrath
+		T.aoespam[190984] = 0		-- Solar Wrath
+		T.aoespam[194153] = 0		-- Lunar Strike
+		T.aoespam[274283] = 0		-- Full Moon
+		T.aoespam[204069] = 4		-- Lunar Beam
+		T.aoespam[213709] = 5		-- Brambles
 		T.aoespam[213771] = 0		-- Swipe
 		T.aoespam[192090] = 3		-- Thrash DoT
 		T.aoespam[164812] = 3		-- Moonfire
@@ -338,6 +352,7 @@ elseif T.class == "MONK" then
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
+		T.aoespam[203539] = 10		-- Greater Blessing of Wisdom
 		T.aoespam[216371] = 4		-- Avenging Crusader
 		T.aoespam[209540] = 8		-- Light of the Titans
 		T.aoespam[53652] = 3		-- Beacon of Light
@@ -569,15 +584,19 @@ elseif T.class == "WARLOCK" then
 	end
 elseif T.class == "WARRIOR" then
 	if C.combattext.merge_aoe_spam then
-		T.aoespam[209577] = 1		-- Warbreaker (Arms Artifact)
-		T.aoespam[215537] = 4		-- Trauma (Arms Talent)
-		T.aoespam[209933] = 1		-- Touch of Zakajz (Arms Artifact)
-		--BETA T.merge[224253] = 163201	-- Execute (for Arms Talent Sweeping Strikes)
-		T.aoespam[163201] = 0.5		-- Execute (for Arms Talent Sweeping Strikes)
-		T.aoespam[12294] = 0.5		-- Mortal Strike (for Arms Talent Sweeping Strikes)
-		T.merge[199658] = 199850	-- Whirlwind Arms ?
+		T.aoespam[845] = 0.5		-- Cleave (Arms)
+		T.aoespam[202147] = 5		-- Second Wind (Arms Talent Heal)
+		T.aoespam[260643] = 0.5		-- Skullsplitter (Arms Talent Sweeping Strikes)
+		T.aoespam[167105] = 0.5		-- Colossus Smash (Arms Talent Sweeping Strikes)
+		T.aoespam[260798] = 0.5		-- Execute Arms (Arms Talent Sweeping Strikes)
+		T.aoespam[7384] = 0.5		-- Overpower (Arms Talent Sweeping Strikes)
+		T.aoespam[1464] = 0.5		-- Slam (Arms Talent Sweeping Strikes)
+		T.aoespam[12294] = 0.5		-- Mortal Strike (Arms Talent Sweeping Strikes)
+		T.aoespam[262115] = 3		-- Deep Wounds (Arms Mastery DoT)
+		T.aoespam[262161] = 1		-- Warbreaker (Arms Talent)
 		T.aoespam[199850] = 1.5		-- Whirlwind Arms
-		T.aoespam[203526] = 3		-- Neltharion's Fury
+		T.merge[199658] = 199850	-- Whirlwind Arms ?	
+		T.aoespam[280772] = 1		-- Siegebreaker (Fury Talent)		
 		T.aoespam[218617] = 2		-- Rampage
 		T.merge[184707] = 218617	-- Rampage 2nd
 		T.merge[184709] = 218617	-- Rampage 3rd
@@ -587,22 +606,16 @@ elseif T.class == "WARRIOR" then
 		T.merge[44949] = 199667		-- Whirlwind Fury Off-Hand
 		T.aoespam[46968] = 0		-- Shockwave
 		T.aoespam[6343] = 0			-- Thunder Clap
-		T.aoespam[1680] = 0			-- Whirlwind
 		T.aoespam[115767] = 3		-- Deep Wounds
 		T.aoespam[50622] = 3		-- Bladestorm
 		T.aoespam[52174] = 0		-- Heroic Leap
 		T.aoespam[118000] = 0		-- Dragon Roar
-		T.aoespam[203178] = 3		-- Opportunity Strike
-		T.aoespam[113344] = 3		-- Bloodbath
 		T.aoespam[96103] = 0.5		-- Raging Blow
 		T.aoespam[6572] = 0			-- Revenge
 		T.aoespam[5308] = 0			-- Execute
 		T.aoespam[772] = 3			-- Rend
 		T.aoespam[156287] = 3		-- Ravager
 		T.aoespam[23881] = 0		-- Bloodthirst
-		T.aoespam[205546] = 2		-- Odyn's Fury
-		T.aoespam[243228] = 2		-- Odyn's Fury
-		T.merge[205547] = 205546	-- Odyn's Fury
 		T.merge[85384] = 96103		-- Raging Blow Off-Hand
 		T.merge[95738] = 50622		-- Bladestorm Off-Hand
 		T.merge[163558] = 5308		-- Execute Off-Hand
