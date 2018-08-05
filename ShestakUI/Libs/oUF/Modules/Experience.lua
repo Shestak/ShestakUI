@@ -5,48 +5,90 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_experience_bar ~= true then
 --	Based on oUF_Experience(by p3lim)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF
+local oUF = ns.oUF or oUF
+assert(oUF, 'oUF Experience was unable to locate oUF install')
+
+local HONOR = HONOR or 'Honor'
+local EXPERIENCE = COMBAT_XP_GAIN or 'Experience'
+local RESTED = TUTORIAL_TITLE26 or 'Rested'
+
+local math_floor = math.floor
+
+oUF.colors.experience = {
+	{0.58, 0, 0.55}, -- Normal
+	{0, 0.39, 0.88}, -- Rested
+}
+
+oUF.colors.honor = {
+	{1, 0.71, 0}, -- Normal
+	{1, 0.71, 0}, -- Rested
+}
+
+local function WatchingHonor()
+	return UnitLevel('player') >= MAX_PLAYER_LEVEL and
+		(IsWatchingHonorAsXP() or InActiveBattlefield() or IsInActiveWorldPVP())
+end
 
 for tag, func in next, {
 	['experience:cur'] = function(unit)
-		return (IsWatchingHonorAsXP() and UnitHonor or UnitXP) ('player')
+		return (WatchingHonor() and UnitHonor or UnitXP) ('player')
 	end,
 	['experience:max'] = function(unit)
-		return (IsWatchingHonorAsXP() and UnitHonorMax or UnitXPMax) ('player')
+		return (WatchingHonor() and UnitHonorMax or UnitXPMax) ('player')
 	end,
 	['experience:per'] = function(unit)
-		return math.floor(_TAGS['experience:cur'](unit) / _TAGS['experience:max'](unit) * 100 + 0.5)
+		return math_floor(_TAGS['experience:cur'](unit) / _TAGS['experience:max'](unit) * 100 + 0.5)
 	end,
 	['experience:currested'] = function()
-		return (IsWatchingHonorAsXP() and GetHonorExhaustion or GetXPExhaustion) ()
+		if(not WatchingHonor()) then
+			return GetXPExhaustion()
+		else
+			return GetHonorExhaustion and GetHonorExhaustion()
+		end
 	end,
 	['experience:perrested'] = function(unit)
 		local rested = _TAGS['experience:currested']()
 		if(rested and rested > 0) then
-			return math.floor(rested / _TAGS['experience:max'](unit) * 100 + 0.5)
+			return math_floor(rested / _TAGS['experience:max'](unit) * 100 + 0.5)
 		end
 	end,
 } do
 	oUF.Tags.Methods[tag] = func
-	oUF.Tags.Events[tag] = 'PLAYER_XP_UPDATE PLAYER_LEVEL_UP UPDATE_EXHAUSTION HONOR_XP_UPDATE'
+	oUF.Tags.Events[tag] = 'PLAYER_XP_UPDATE UPDATE_EXHAUSTION HONOR_XP_UPDATE ZONE_CHANGED ZONE_CHANGED_NEW_AREA'
 end
 
-oUF.Tags.SharedEvents.PLAYER_LEVEL_UP = true
-
-local function UpdateTooltip(element)
-	local isHonor = IsWatchingHonorAsXP()
+local function GetValues()
+	local isHonor = WatchingHonor()
 	local cur = (isHonor and UnitHonor or UnitXP)('player')
 	local max = (isHonor and UnitHonorMax or UnitXPMax)('player')
-	local per = math.floor(cur / max * 100 + 0.5)
-	local bar = isHonor and 5 or 20
-	local rested = (isHonor and GetHonorExhaustion or GetXPExhaustion)() or 0
+	local level = (isHonor and UnitHonorLevel or UnitLevel)('player')
+
+	local rested
+	if(not isHonor) then
+		rested = GetXPExhaustion() or 0
+	else
+		rested = GetHonorExhaustion and GetHonorExhaustion() or 0
+	end
+
+	local perc = math_floor(cur / max * 100 + 0.5)
+	local restedPerc = math_floor(rested / max * 100 + 0.5)
+
+	return cur, max, perc, rested, restedPerc, level, isHonor
+end
+
+-- Changed tooltip for ShestakUI
+local function UpdateTooltip(element)
+	local cur, max, perc, rested, restedPerc, _, isHonor = GetValues()
 
 	GameTooltip:SetOwner(element, "ANCHOR_BOTTOM", 0, -5)
-	GameTooltip:AddLine(COMBAT_XP_GAIN.." "..format(LEVEL_GAINED, T.level))
+	GameTooltip:SetText(isHonor and HONOR or COMBAT_XP_GAIN.." "..format(LEVEL_GAINED, T.level), 0.40, 0.78, 1)
 	GameTooltip:AddLine(" ")
-	GameTooltip:AddLine(string.format(L_STATS_CURRENT_XP..": %d / %d (%d%% - %d/%d)", cur, max, per, bar - (bar * (max - cur) / max), bar))
-	GameTooltip:AddLine(string.format(L_STATS_REMAINING_XP..": %d (%d%% - %d/%d)", max - cur, (max - cur) / max * 100, 1 + bar * (max - cur) / max, bar))
-	GameTooltip:AddLine(string.format("|cff0090ff"..L_STATS_RESTED_XP..": +%d (%d%%)", rested, rested / max * 100))
+	GameTooltip:AddLine(format(L_STATS_CURRENT_XP..": %s / %s (%d%%)", BreakUpLargeNumbers(cur), BreakUpLargeNumbers(max), perc), 0.75, 0.9, 1)
+	GameTooltip:AddLine(string.format(L_STATS_REMAINING_XP..": %s (%d%%)", BreakUpLargeNumbers(max - cur), (max - cur) / max * 100 + 0.5), 0.75, 0.9, 1)
+
+	if(rested > 0) then
+		GameTooltip:AddLine(format('%s: %s (%d%%)', L_STATS_RESTED_XP, BreakUpLargeNumbers(rested), restedPerc), 0.75, 0.9, 1)
+	end
 
 	GameTooltip:Show()
 end
@@ -62,23 +104,23 @@ local function OnLeave(element)
 	element:SetAlpha(element.outAlpha)
 end
 
-local function UpdateColor(element, showHonor)
-	if showHonor then
-		element:SetStatusBarColor(1, 0.25, 0)
-		if element.SetAnimatedTextureColors then
-			element:SetAnimatedTextureColors(1, 0.25, 0)
-		end
-		if element.Rested then
-			element.Rested:SetStatusBarColor(1, 0.75, 0, 0.5)
-		end
+local function UpdateColor(element, isHonor, isRested)
+	local colors = element.__owner.colors
+	if(isHonor) then
+		colors = colors.honor
 	else
-		element:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
-		if element.SetAnimatedTextureColors then
-			element:SetAnimatedTextureColors(T.color.r, T.color.g, T.color.b)
-		end
-		if element.Rested then
-			element.Rested:SetStatusBarColor(0, 0.5, 1, 0.5)
-		end
+		colors = colors.experience
+	end
+
+	local r, g, b = unpack(colors[isRested and 2 or 1])
+	element:SetStatusBarColor(r, g, b)
+	element.bg:SetVertexColor(r, g, b, 0.2) -- ShestakUI
+	if(element.SetAnimatedTextureColors) then
+		element:SetAnimatedTextureColors(r, g, b)
+	end
+
+	if(element.Rested) then
+		element.Rested:SetStatusBarColor(r, g, b, element.restedAlpha)
 	end
 end
 
@@ -88,12 +130,8 @@ local function Update(self, event, unit)
 	local element = self.Experience
 	if(element.PreUpdate) then element:PreUpdate(unit) end
 
-	local showHonor = IsWatchingHonorAsXP()
-	local level = (showHonor and UnitHonorLevel or UnitLevel)(unit)
-	local cur = (showHonor and UnitHonor or UnitXP)(unit)
-	local max = (showHonor and UnitHonorMax or UnitXPMax)(unit)
-
-	if(showHonor and level == GetMaxPlayerHonorLevel()) then
+	local cur, max, _, rested, _, level, isHonor = GetValues()
+	if(isHonor and GetMaxPlayerHonorLevel and level == GetMaxPlayerHonorLevel()) then
 		cur, max = 1, 1
 	end
 
@@ -104,18 +142,15 @@ local function Update(self, event, unit)
 		element:SetValue(cur)
 	end
 
-	local exhaustion
 	if(element.Rested) then
-		exhaustion = (showHonor and GetHonorExhaustion or GetXPExhaustion)() or 0
-
 		element.Rested:SetMinMaxValues(0, max)
-		element.Rested:SetValue(math.min(cur + exhaustion, max))
+		element.Rested:SetValue(math.min(cur + rested, max))
 	end
 
-	(element.OverrideUpdateColor or UpdateColor)(element, showHonor)
+	(element.OverrideUpdateColor or UpdateColor)(element, isHonor, rested > 0)
 
 	if(element.PostUpdate) then
-		return element:PostUpdate(unit, cur, max, exhaustion, level, showHonor)
+		return element:PostUpdate(unit, cur, max, rested, level, isHonor)
 	end
 end
 
@@ -127,6 +162,8 @@ local function ElementEnable(self)
 	local element = self.Experience
 	self:RegisterEvent('PLAYER_XP_UPDATE', Path)
 	self:RegisterEvent('HONOR_XP_UPDATE', Path)
+	self:RegisterEvent('ZONE_CHANGED', Path)
+	self:RegisterEvent('ZONE_CHANGED_NEW_AREA', Path)
 
 	if(element.Rested) then
 		self:RegisterEvent('UPDATE_EXHAUSTION', Path)
@@ -141,6 +178,8 @@ end
 local function ElementDisable(self)
 	self:UnregisterEvent('PLAYER_XP_UPDATE', Path)
 	self:UnregisterEvent('HONOR_XP_UPDATE', Path)
+	self:UnregisterEvent('ZONE_CHANGED', Path)
+	self:UnregisterEvent('ZONE_CHANGED_NEW_AREA', Path)
 
 	if(self.Experience.Rested) then
 		self:UnregisterEvent('UPDATE_EXHAUSTION', Path)
@@ -158,7 +197,7 @@ local function Visibility(self, event, unit)
 	if(not UnitHasVehicleUI('player') and not IsXPUserDisabled()) then
 		if(UnitLevel('player') ~= element.__accountMaxLevel) then
 			shouldEnable = true
-		elseif(IsWatchingHonorAsXP() and element.__accountMaxLevel == MAX_PLAYER_LEVEL) then
+		elseif(WatchingHonor()) then
 			shouldEnable = true
 		end
 	end
@@ -191,6 +230,7 @@ local function Enable(self, unit)
 		end
 
 		element.ForceUpdate = ForceUpdate
+		element.restedAlpha = element.restedAlpha or 0.15
 
 		self:RegisterEvent('PLAYER_LEVEL_UP', VisibilityPath, true)
 		self:RegisterEvent('HONOR_LEVEL_UPDATE', VisibilityPath)
