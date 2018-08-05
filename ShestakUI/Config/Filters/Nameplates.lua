@@ -49,6 +49,7 @@ T.DebuffWhiteList = {
 	[SpellName(853)] = true,	-- Hammer of Justice
 	[SpellName(183218)] = true,	-- Hand of Hindrance
 	-- Priest
+	[SpellName(204213)] = true,	-- Purge the Wicked	
 	[SpellName(9484)] = true,	-- Shackle Undead
 	[SpellName(8122)] = true,	-- Psychic Scream
 	[SpellName(64044)] = true,	-- Psychic Horror
