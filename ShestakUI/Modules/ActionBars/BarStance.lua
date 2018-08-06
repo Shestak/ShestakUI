@@ -4,7 +4,7 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	StanceBar(by Tukz)
 ----------------------------------------------------------------------------------------
-local ShiftHolder = CreateFrame("Frame", "ShiftHolder", oUF_PetBattleFrameHider)
+local ShiftHolder = CreateFrame("Frame", "ShiftHolder", T_PetBattleFrameHider)
 if C.actionbar.stancebar_horizontal == true then
 	ShiftHolder:SetPoint(unpack(C.position.stance_bar))
 	ShiftHolder:SetWidth((C.actionbar.button_size * 7) + (C.actionbar.button_space * 6))

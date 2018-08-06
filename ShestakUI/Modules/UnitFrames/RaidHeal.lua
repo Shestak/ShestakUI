@@ -128,49 +128,44 @@ local function Shared(self, unit)
 
 	-- Raid marks
 	if C.raidframe.icons_raid_mark == true then
-		self.RaidIcon = self.Health:CreateTexture(nil, "OVERLAY")
-		self.RaidIcon:SetSize(12, 12)
-		self.RaidIcon:SetPoint("BOTTOMLEFT", self.Health, -2, -5)
+		self.RaidTargetIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+		self.RaidTargetIndicator:SetSize(12, 12)
+		self.RaidTargetIndicator:SetPoint("BOTTOMLEFT", self.Health, -2, -5)
 	end
 
 	-- LFD role icons
 	if C.raidframe.icons_role == true and not (self:GetAttribute("unitsuffix") == "target") then
-		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
-		self.LFDRole:SetSize(12, 12)
-		self.LFDRole:SetPoint("TOP", self.Health, 0, 8)
+		self.GroupRoleIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+		self.GroupRoleIndicator:SetSize(12, 12)
+		self.GroupRoleIndicator:SetPoint("TOP", self.Health, 0, 8)
 	end
 
 	-- Ready check icons
 	if C.raidframe.icons_ready_check == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
-		self.ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
-		self.ReadyCheck:SetSize(12, 12)
-		self.ReadyCheck:SetPoint("BOTTOMRIGHT", self.Health, 2, 1)
+		self.ReadyCheckIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+		self.ReadyCheckIndicator:SetSize(12, 12)
+		self.ReadyCheckIndicator:SetPoint("BOTTOMRIGHT", self.Health, 2, 1)
 	end
 
-	-- Leader/Assistant/ML icons
+	-- Leader/Assistant icons
 	if C.raidframe.icons_leader == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
 		-- Leader icon
-		self.Leader = self.Health:CreateTexture(nil, "OVERLAY")
-		self.Leader:SetSize(12, 12)
-		self.Leader:SetPoint("TOPLEFT", self.Health, -3, 8)
+		self.LeaderIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+		self.LeaderIndicator:SetSize(12, 12)
+		self.LeaderIndicator:SetPoint("TOPLEFT", self.Health, -3, 8)
 
 		-- Assistant icon
-		self.Assistant = self.Health:CreateTexture(nil, "OVERLAY")
-		self.Assistant:SetSize(12, 12)
-		self.Assistant:SetPoint("TOPLEFT", self.Health, -3, 8)
-
-		-- Master looter icon
-		self.MasterLooter = self.Health:CreateTexture(nil, "OVERLAY")
-		self.MasterLooter:SetSize(12, 12)
-		self.MasterLooter:SetPoint("TOPRIGHT", self.Health, 3, 8)
+		self.AssistantIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+		self.AssistantIndicator:SetSize(12, 12)
+		self.AssistantIndicator:SetPoint("TOPLEFT", self.Health, -3, 8)
 	end
 
 	-- Resurrect icon
-	self.ResurrectIcon = self.Health:CreateTexture(nil, "OVERLAY")
-	--self.ResurrectIcon:SetTexture("Interface\\Icons\\Spell_Holy_Resurrection")
-	--self.ResurrectIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	self.ResurrectIcon:SetSize(13, 13)
-	self.ResurrectIcon:SetPoint("BOTTOMRIGHT", self.Health, 2, -7)
+	self.ResurrectIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+	--self.ResurrectIndicator:SetTexture("Interface\\Icons\\Spell_Holy_Resurrection")
+	--self.ResurrectIndicator:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	self.ResurrectIndicator:SetSize(13, 13)
+	self.ResurrectIndicator:SetPoint("BOTTOMRIGHT", self.Health, 2, -7)
 
 	-- Debuff highlight
 	if not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
@@ -444,4 +439,5 @@ oUF:Factory(function(self)
 			end
 		end
 	end
+	print(oUF_MainTank:Show())
 end)

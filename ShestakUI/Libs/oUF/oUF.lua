@@ -19,6 +19,11 @@ local callback, objects, headers = {}, {}, {}
 local elements = {}
 local activeElements = {}
 
+local PetBattleFrameHider = CreateFrame('Frame', (global or parent) .. '_PetBattleFrameHider', UIParent, 'SecureHandlerStateTemplate')
+PetBattleFrameHider:SetAllPoints()
+PetBattleFrameHider:SetFrameStrata('LOW')
+RegisterStateDriver(PetBattleFrameHider, 'visibility', '[petbattle] hide; show')
+
 -- updating of "invalid" units.
 local function enableTargetUpdate(object)
 	object.onUpdateFrequency = object.onUpdateFrequency or .5
@@ -179,7 +184,13 @@ for k, v in next, {
 		UnregisterUnitWatch(self)
 		self:Hide()
 	end,
+	--[[ frame:IsEnabled()
+	Used to check if a unit frame is registered with the unit existence monitor. This is a reference to
+	`UnitWatchRegistered`.
 
+	* self - unit frame
+	--]]
+	IsEnabled = UnitWatchRegistered,
 	--[[ frame:UpdateAllElements(event)
 	Used to update all enabled elements on the given frame.
 
@@ -309,7 +320,7 @@ local function initObject(unit, style, styleFunc, header, ...)
 
 		styleFunc(object, objectUnit, not header)
 
-		object:SetScript('OnAttributeChanged', onAttributeChanged)
+		object:HookScript('OnAttributeChanged', onAttributeChanged)
 		object:SetScript('OnShow', onShow)
 
 		activeElements[object] = {}
@@ -339,7 +350,7 @@ local function walkObject(object, unit)
 	-- Check if we should leave the main frame blank.
 	if(object:GetAttribute('oUF-onlyProcessChildren')) then
 		object.hasChildren = true
-		object:SetScript('OnAttributeChanged', onAttributeChanged)
+		object:HookScript('OnAttributeChanged', onAttributeChanged)
 		return initObject(unit, style, styleFunc, header, object:GetChildren())
 	end
 
@@ -450,13 +461,15 @@ end
 local function generateName(unit, ...)
 	local name = 'oUF_' .. style:gsub('^oUF_?', ''):gsub('[^%a%d_]+', '')
 
-	local raid, party, groupFilter
+	local raid, party, groupFilter, unitsuffix
 	for i = 1, select('#', ...), 2 do
 		local att, val = select(i, ...)
-		if(att == 'showRaid') then
-			raid = true
+		if(att == 'oUF-initialConfigFunction') then
+			unitsuffix = val:match('unitsuffix[%p%s]+(%a+)')
+		elseif(att == 'showRaid') then
+			raid = val ~= false and val ~= nil
 		elseif(att == 'showParty') then
-			party = true
+			party = val ~= false and val ~= nil
 		elseif(att == 'groupFilter') then
 			groupFilter = val
 		end
@@ -466,10 +479,10 @@ local function generateName(unit, ...)
 	if(raid) then
 		if(groupFilter) then
 			if(type(groupFilter) == 'number' and groupFilter > 0) then
-				append = groupFilter
-			elseif(groupFilter:match('TANK')) then
+				append = 'Raid' .. groupFilter
+			elseif(groupFilter:match('MAINTANK')) then
 				append = 'MainTank'
-			elseif(groupFilter:match('ASSIST')) then
+			elseif(groupFilter:match('MAINASSIST')) then
 				append = 'MainAssist'
 			else
 				local _, count = groupFilter:gsub(',', '')
@@ -489,13 +502,15 @@ local function generateName(unit, ...)
 	end
 
 	if(append) then
-		name = name .. append
+		name = name .. append .. (unitsuffix or '')
 	end
 
 	-- Change oUF_LilyRaidRaid into oUF_LilyRaid
 	name = name:gsub('(%u%l+)([%u%l]*)%1', '%1')
 	-- Change oUF_LilyTargettarget into oUF_LilyTargetTarget
 	name = name:gsub('t(arget)', 'T%1')
+	name = name:gsub('p(et)', 'P%1')
+	name = name:gsub('f(ocus)', 'F%1')
 
 	local base = name
 	local i = 2
@@ -513,7 +528,7 @@ do
 	end
 
 	-- There has to be an easier way to do this.
-	local initialConfigFunctionTemp = [[
+	local initialConfigFunction = [[
 		local header = self:GetParent()
 		local frames = table.new()
 		table.insert(frames, self)
@@ -555,7 +570,6 @@ do
 
 				frame:SetAttribute('*type1', 'target')
 				frame:SetAttribute('*type2', 'togglemenu')
-				frame:SetAttribute('toggleForVehicle', %d == 1) -- See issue #404
 				frame:SetAttribute('oUF-guessUnit', unit)
 			end
 
@@ -574,9 +588,6 @@ do
 		end
 	]]
 
-	-- Necessary for a vehicle support hack (see issue #404)
-	local initialConfigFunction = initialConfigFunctionTemp:format(1)
-
 	--[[ oUF:SpawnHeader(overrideName, template, visibility, ...)
 	Used to create a group header and apply the currently active style to it.
 
@@ -586,7 +597,7 @@ do
 	* template     - name of a template to be used for creating the header. Defaults to `'SecureGroupHeaderTemplate'`
 	                 (string?)
 	* visibility   - macro conditional(s) which define when to display the header (string).
-	* ...          - further argument pairs. Consult [Group Headers](http://wowprogramming.com/docs/secure_template/Group_Headers)
+	* ...          - further argument pairs. Consult [Group Headers](http://wowprogramming.com/docs/secure_template/Group_Headers.html)
 	                 for possible values.
 
 	In addition to the standard group headers, oUF implements some of its own attributes. These can be supplied by the
@@ -603,7 +614,7 @@ do
 
 		local isPetHeader = template:match('PetHeader')
 		local name = overrideName or generateName(nil, ...)
-		local header = CreateFrame('Frame', name, oUF_PetBattleFrameHider, template)
+		local header = CreateFrame('Frame', name, PetBattleFrameHider, template)
 
 		header:SetAttribute('template', 'oUF_ClickCastUnitTemplate')
 		for i = 1, select('#', ...), 2 do
@@ -645,71 +656,6 @@ do
 
 		return header
 	end
-
-	-- The remainder of this scope is a temporary fix for issue #404,
-	-- regarding vehicle support on headers for the Antorus raid instance.
-	-- Track changes to SecureButton_GetModifiedUnit, this hack should be
-	-- removed when UnitTargetsVehicleInRaidUI is added to it. Supposedly,
-	-- it should happen in 8.x.
-	local isHacked = false
-	local shouldHack
-
-	local function toggleHeaders(flag)
-		for _, header in next, headers do
-			header:SetAttribute('initialConfigFunction', initialConfigFunction)
-
-			for _, child in next, {header:GetChildren()} do
-				child:SetAttribute('toggleForVehicle', flag)
-			end
-		end
-
-		isHacked = not flag
-		shouldHack = nil
-	end
-
-	local eventHandler = CreateFrame('Frame')
-	eventHandler:RegisterEvent('ZONE_CHANGED_NEW_AREA')
-	eventHandler:RegisterEvent('PLAYER_ENTERING_WORLD')
-	eventHandler:RegisterEvent('PLAYER_REGEN_ENABLED')
-	eventHandler:SetScript('OnEvent', function(_, event)
-		if(event == 'ZONE_CHANGED_NEW_AREA') then
-			local _, _, _, _, _, _, _, id = GetInstanceInfo()
-			if(id == 1712 and not isHacked) then
-				initialConfigFunction = initialConfigFunctionTemp:format(0)
-
-				if(not InCombatLockdown()) then
-					toggleHeaders(false)
-				else
-					shouldHack = true
-				end
-			elseif(id ~= 1712 and isHacked) then
-				initialConfigFunction = initialConfigFunctionTemp:format(1)
-
-				if(not InCombatLockdown()) then
-					toggleHeaders(true)
-				else
-					shouldHack = false
-				end
-			end
-		elseif(event == 'PLAYER_ENTERING_WORLD') then
-			local _, _, _, _, _, _, _, id = GetInstanceInfo()
-			if(id == 1712 and not isHacked) then
-				initialConfigFunction = initialConfigFunctionTemp:format(0)
-
-				toggleHeaders(false)
-			elseif(id ~= 1712 and isHacked) then
-				initialConfigFunction = initialConfigFunctionTemp:format(1)
-
-				toggleHeaders(true)
-			end
-		elseif(event == 'PLAYER_REGEN_ENABLED') then
-			if(isHacked and shouldHack == false) then
-				toggleHeaders(true)
-			elseif(not isHacked and shouldHack) then
-				toggleHeaders(false)
-			end
-		end
-	end)
 end
 
 --[[ oUF:Spawn(unit, overrideName)
@@ -727,7 +673,7 @@ function oUF:Spawn(unit, overrideName)
 	unit = unit:lower()
 
 	local name = overrideName or generateName(unit)
-	local object = CreateFrame('Button', name, oUF_PetBattleFrameHider, 'SecureUnitButtonTemplate')
+	local object = CreateFrame('Button', name, PetBattleFrameHider, 'SecureUnitButtonTemplate')
 	Private.UpdateUnits(object, unit)
 
 	self:DisableBlizzard(unit)
@@ -870,7 +816,9 @@ oUF.headers = headers
 
 if(global) then
 	if(parent ~= 'oUF' and global == 'oUF') then
-		error('%s is doing it wrong and setting its global to oUF.', parent)
+		error('%s is doing it wrong and setting its global to "oUF".', parent)
+	elseif(_G[global]) then
+		error('%s is setting its global to an existing name "%s".', parent, global)
 	else
 		_G[global] = oUF
 	end

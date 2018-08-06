@@ -220,41 +220,36 @@ local function Shared(self, unit)
 
 		-- Combat icon
 		if C.unitframe.icons_combat == true then
-			self.Combat = self.Health:CreateTexture(nil, "OVERLAY")
-			self.Combat:SetSize(18, 18)
-			self.Combat:SetPoint("TOPRIGHT", 4, 8)
+			self.CombatIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+			self.CombatIndicator:SetSize(18, 18)
+			self.CombatIndicator:SetPoint("TOPRIGHT", 4, 8)
 		end
 
 		-- Resting icon
 		if C.unitframe.icons_resting == true and T.level ~= MAX_PLAYER_LEVEL then
-			self.Resting = self.Power:CreateTexture(nil, "OVERLAY")
-			self.Resting:SetSize(18, 18)
-			self.Resting:SetPoint("BOTTOMLEFT", -8, -8)
+			self.RestingIndicator = self.Power:CreateTexture(nil, "OVERLAY")
+			self.RestingIndicator:SetSize(18, 18)
+			self.RestingIndicator:SetPoint("BOTTOMLEFT", -8, -8)
 		end
 
-		-- Leader/Assistant/ML icons
+		-- Leader/Assistant icons
 		if C.raidframe.icons_leader == true then
 			-- Leader icon
-			self.Leader = self.Health:CreateTexture(nil, "OVERLAY")
-			self.Leader:SetSize(14, 14)
-			self.Leader:SetPoint("TOPLEFT", -3, 9)
+			self.LeaderIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+			self.LeaderIndicator:SetSize(14, 14)
+			self.LeaderIndicator:SetPoint("TOPLEFT", -3, 9)
 
 			-- Assistant icon
-			self.Assistant = self.Health:CreateTexture(nil, "OVERLAY")
-			self.Assistant:SetSize(12, 12)
-			self.Assistant:SetPoint("TOPLEFT", -3, 8)
-
-			-- Master looter icon
-			self.MasterLooter = self.Health:CreateTexture(nil, "OVERLAY")
-			self.MasterLooter:SetSize(12, 12)
-			self.MasterLooter:SetPoint("TOPRIGHT", 3, 8)
+			self.AssistantIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+			self.AssistantIndicator:SetSize(12, 12)
+			self.AssistantIndicator:SetPoint("TOPLEFT", -3, 8)
 		end
 
 		-- LFD role icons
 		if C.raidframe.icons_role == true then
-			self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
-			self.LFDRole:SetSize(12, 12)
-			self.LFDRole:SetPoint("TOPLEFT", 10, 8)
+			self.GroupRoleIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+			self.GroupRoleIndicator:SetSize(12, 12)
+			self.GroupRoleIndicator:SetPoint("TOPLEFT", 10, 8)
 		end
 
 		-- Rune bar
@@ -870,9 +865,9 @@ local function Shared(self, unit)
 			end
 
 			-- Quest icon
-			self.QuestIcon = self.Health:CreateTexture(nil, "OVERLAY")
-			self.QuestIcon:SetSize(20, 20)
-			self.QuestIcon:SetPoint("RIGHT", self.Info, "LEFT", -10, 0)
+			self.QuestIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+			self.QuestIndicator:SetSize(20, 20)
+			self.QuestIndicator:SetPoint("RIGHT", self.Info, "LEFT", -10, 0)
 		end
 
 		if C.unitframe.plugins_combat_feedback == true then
@@ -1127,26 +1122,26 @@ local function Shared(self, unit)
 	end
 
 	if C.unitframe.show_boss and unit == "boss" then
-		self.AltPowerBar = CreateFrame("StatusBar", nil, self.Health)
-		self.AltPowerBar:SetFrameLevel(self.Health:GetFrameLevel() + 1)
-		self.AltPowerBar:SetHeight(4)
-		self.AltPowerBar:SetStatusBarTexture(C.media.texture)
-		self.AltPowerBar:SetStatusBarColor(1, 0, 0)
-		self.AltPowerBar:SetPoint("LEFT")
-		self.AltPowerBar:SetPoint("RIGHT")
-		self.AltPowerBar:SetPoint("TOP", self.Health, "TOP")
-		self.AltPowerBar:SetBackdrop({
+		self.AlternativePower = CreateFrame("StatusBar", nil, self.Health)
+		self.AlternativePower:SetFrameLevel(self.Health:GetFrameLevel() + 1)
+		self.AlternativePower:SetHeight(4)
+		self.AlternativePower:SetStatusBarTexture(C.media.texture)
+		self.AlternativePower:SetStatusBarColor(1, 0, 0)
+		self.AlternativePower:SetPoint("LEFT")
+		self.AlternativePower:SetPoint("RIGHT")
+		self.AlternativePower:SetPoint("TOP", self.Health, "TOP")
+		self.AlternativePower:SetBackdrop({
 			bgFile = C.media.blank,
 			edgeFile = C.media.blank,
 			tile = false, tileSize = 0, edgeSize = T.Scale(1),
 			insets = {left = 0, right = 0, top = 0, bottom = T.Scale(-1)}
 		})
-		self.AltPowerBar:SetBackdropColor(0, 0, 0)
-		self.AltPowerBar:SetBackdropBorderColor(0, 0, 0)
+		self.AlternativePower:SetBackdropColor(0, 0, 0)
+		self.AlternativePower:SetBackdropBorderColor(0, 0, 0)
 
-		self.AltPowerBar.text = T.SetFontString(self.AltPowerBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-		self.AltPowerBar.text:SetPoint("CENTER", self.AltPowerBar, "CENTER", 0, 0)
-		self:Tag(self.AltPowerBar.text, "[AltPower]")
+		self.AlternativePower.text = T.SetFontString(self.AlternativePower, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+		self.AlternativePower.text:SetPoint("CENTER", self.AlternativePower, "CENTER", 0, 0)
+		self:Tag(self.AlternativePower.text, "[AltPower]")
 
 		if C.aura.boss_buffs == true then
 			self.Auras = CreateFrame("Frame", self:GetName().."_AuraBossBuff", self)
@@ -1183,10 +1178,10 @@ local function Shared(self, unit)
 
 	-- Raid marks
 	if C.raidframe.icons_raid_mark == true then
-		self.RaidIcon = self:CreateTexture(nil, "OVERLAY")
-		self.RaidIcon:SetParent(self.Health)
-		self.RaidIcon:SetSize((unit == "player" or unit == "target") and 15 or 12, (unit == "player" or unit == "target") and 15 or 12)
-		self.RaidIcon:SetPoint("TOP", self.Health, 0, 0)
+		self.RaidTargetIndicator = self:CreateTexture(nil, "OVERLAY")
+		self.RaidTargetIndicator:SetParent(self.Health)
+		self.RaidTargetIndicator:SetSize((unit == "player" or unit == "target") and 15 or 12, (unit == "player" or unit == "target") and 15 or 12)
+		self.RaidTargetIndicator:SetPoint("TOP", self.Health, 0, 0)
 	end
 
 	-- Debuff highlight

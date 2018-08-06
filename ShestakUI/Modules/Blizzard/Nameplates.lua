@@ -395,12 +395,12 @@ local function callback(self, event, unit)
 			self.Power:Show()
 			self.Name:Hide()
 			self.Castbar:SetAlpha(0)
-			self.RaidIcon:SetAlpha(0)
+			self.RaidTargetIndicator:SetAlpha(0)
 		else
 			self.Power:Hide()
 			self.Name:Show()
 			self.Castbar:SetAlpha(1)
-			self.RaidIcon:SetAlpha(1)
+			self.RaidTargetIndicator:SetAlpha(1)
 		end
 	end
 end
@@ -524,9 +524,9 @@ local function style(self, unit)
 	CreateVirtualFrame(self.Castbar, self.Castbar.Icon)
 
 	-- Raid Icon
-	self.RaidIcon = self:CreateTexture(nil, "OVERLAY", nil, 7)
-	self.RaidIcon:SetSize((C.nameplate.height * 2 * T.noscalemult) + 8, (C.nameplate.height * 2 * T.noscalemult) + 8)
-	self.RaidIcon:SetPoint("BOTTOM", self.Health, "TOP", 0, C.nameplate.track_auras == true and 38 or 16)
+	self.RaidTargetIndicator = self:CreateTexture(nil, "OVERLAY", nil, 7)
+	self.RaidTargetIndicator:SetSize((C.nameplate.height * 2 * T.noscalemult) + 8, (C.nameplate.height * 2 * T.noscalemult) + 8)
+	self.RaidTargetIndicator:SetPoint("BOTTOM", self.Health, "TOP", 0, C.nameplate.track_auras == true and 38 or 16)
 
 	-- Create Class Icon
 	if C.nameplate.class_icons == true then

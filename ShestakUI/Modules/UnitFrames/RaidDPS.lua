@@ -149,27 +149,22 @@ local function Shared(self, unit)
 
 	-- LFD role icons
 	if C.raidframe.icons_role == true and not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
-		self.LFDRole = self.Health:CreateTexture(nil, "OVERLAY")
-		self.LFDRole:SetSize(12, 12)
-		self.LFDRole:SetPoint("TOPRIGHT", self.Health, 2, 5)
+		self.GroupRoleIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+		self.GroupRoleIndicator:SetSize(12, 12)
+		self.GroupRoleIndicator:SetPoint("TOPRIGHT", self.Health, 2, 5)
 	end
 
-	-- Leader/Assistant/ML icons
+	-- Leader/Assistant icons
 	if C.raidframe.icons_leader == true and not (self:GetAttribute("unitsuffix") == "target") then
 		-- Leader icon
-		self.Leader = self.Health:CreateTexture(nil, "OVERLAY")
-		self.Leader:SetSize(12, 12)
-		self.Leader:SetPoint("TOPLEFT", self.Health, -3, 8)
+		self.LeaderIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+		self.LeaderIndicator:SetSize(12, 12)
+		self.LeaderIndicator:SetPoint("TOPLEFT", self.Health, -3, 8)
 
 		-- Assistant icon
-		self.Assistant = self.Health:CreateTexture(nil, "OVERLAY")
-		self.Assistant:SetSize(12, 12)
-		self.Assistant:SetPoint("TOPLEFT", self.Health, -3, 8)
-
-		-- Master looter
-		self.MasterLooter = self.Health:CreateTexture(nil, "OVERLAY")
-		self.MasterLooter:SetSize(12, 12)
-		self.MasterLooter:SetPoint("BOTTOMLEFT", self.Health, -3, -8)
+		self.AssistantIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+		self.AssistantIndicator:SetSize(12, 12)
+		self.AssistantIndicator:SetPoint("TOPLEFT", self.Health, -3, 8)
 	end
 
 	-- Agro border
@@ -182,16 +177,16 @@ local function Shared(self, unit)
 
 	-- Raid marks
 	if C.raidframe.icons_raid_mark == true then
-		self.RaidIcon = self.Health:CreateTexture(nil, "OVERLAY")
-		self.RaidIcon:SetSize(12, 12)
-		self.RaidIcon:SetPoint("CENTER", self.Health, "TOP")
+		self.RaidTargetIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+		self.RaidTargetIndicator:SetSize(12, 12)
+		self.RaidTargetIndicator:SetPoint("CENTER", self.Health, "TOP")
 	end
 
 	-- Ready check icons
 	if C.raidframe.icons_ready_check == true then
-		self.ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
-		self.ReadyCheck:SetSize(12, 12)
-		self.ReadyCheck:SetPoint("BOTTOMRIGHT", self.Health, 2, -1)
+		self.ReadyCheckIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+		self.ReadyCheckIndicator:SetSize(12, 12)
+		self.ReadyCheckIndicator:SetPoint("BOTTOMRIGHT", self.Health, 2, -1)
 	end
 
 	if unit == "party" and (not (self:GetAttribute("unitsuffix") == "target")) and (not (self:GetAttribute("unitsuffix") == "pet")) then

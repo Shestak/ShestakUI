@@ -505,7 +505,7 @@ if C["filger_spells"] and C["filger_spells"][T.class] then
 
 	for i = 1, #C["filger_spells"][T.class], 1 do
 		local data = C["filger_spells"][T.class][i]
-		local frame = CreateFrame("Frame", "FilgerFrame"..i.."_"..data.Name, oUF_PetBattleFrameHider)
+		local frame = CreateFrame("Frame", "FilgerFrame"..i.."_"..data.Name, T_PetBattleFrameHider)
 		frame.Id = i
 		frame.Name = data.Name
 		frame.Direction = data.Direction or "DOWN"

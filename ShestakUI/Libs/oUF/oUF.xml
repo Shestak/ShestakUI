@@ -12,26 +12,22 @@
 	<Script file="Elements\Power.lua"/>
 	<Script file="Elements\Aura.lua"/>
 	<Script file="Elements\Health.lua"/>
-	<Script file="Elements\CPoints.lua"/>
-	<Script file="Elements\RIcons.lua"/>
-	<Script file="Elements\Leader.lua"/>
-	<Script file="Elements\Combat.lua"/>
-	<Script file="Elements\Resting.lua"/>
-	<Script file="Elements\PvP.lua"/>
+	<Script file="Elements\RaidTargetIndicator.lua"/>
+	<Script file="Elements\LeaderIndicator.lua"/>
+	<Script file="Elements\CombatIndicator.lua"/>
+	<Script file="Elements\RestingIndicator.lua"/>
 	<Script file="Elements\Portraits.lua"/>
 	<Script file="Elements\Range.lua"/>
 	<Script file="Elements\CastBar.lua"/>
-	<Script file="Elements\Threat.lua"/>
 	<Script file="Elements\Tags.lua"/>
-	<Script file="Elements\MasterLooter.lua"/>
-	<Script file="Elements\Assistant.lua"/>
-	<Script file="Elements\RuneBar.lua"/>
-	<Script file="Elements\LFDRole.lua"/>
+	<Script file="Elements\AssistantIndicator.lua"/>
+	<Script file="Elements\Runes.lua"/>
+	<Script file="Elements\GroupRoleIndicator.lua"/>
 	<Script file="Elements\HealPrediction.lua"/>
-	<Script file="Elements\ReadyCheck.lua"/>
-	<Script file="Elements\QIcon.lua"/>
-	<Script file="Elements\AltPowerBar.lua"/>
-	<Script file="Elements\Resurrect.lua"/>
+	<Script file="Elements\ReadyCheckIndicator.lua"/>
+	<Script file="Elements\QuestIndicator.lua"/>
+	<Script file="Elements\AlternativePower.lua"/>
+	<Script file="Elements\ResurrectIndicator.lua"/>
 	<Script file="Elements\Stagger.lua"/>
 
 	<Script file="Modules\ArcaneCharge.lua"/>
@@ -41,6 +37,7 @@
 	<Script file="Modules\AutoResurrect.lua"/>
 	<Script file="Modules\CombatFeedback.lua"/>
 	<Script file="Modules\CounterBar.lua"/>
+	<Script file="Modules\CPoints.lua"/>
 	<Script file="Modules\DebuffHighlight.lua"/>
 	<Script file="Modules\EnemySpec.lua"/>
 	<Script file="Modules\Experience.lua"/>
@@ -59,22 +56,15 @@
 	<Script file="Modules\TotemBar.lua"/>
 	<Script file="Modules\Trinkets.lua"/>
 
-	<!-- Clique Support -->
-	<Button name="oUF_ClickCastUnitTemplate" virtual="true" inherits="SecureUnitButtonTemplate,SecureHandlerEnterLeaveTemplate">
+	<!-- Clique support -->
+	<Button name="oUF_ClickCastUnitTemplate" virtual="true" inherits="SecureUnitButtonTemplate, SecureHandlerStateTemplate, SecureHandlerEnterLeaveTemplate">
 		<Attributes>
 			<Attribute name="_onenter" type="string" value="local snippet = self:GetAttribute('clickcast_onenter'); if snippet then self:Run(snippet) end"/>
 			<Attribute name="_onleave" type="string" value="local snippet = self:GetAttribute('clickcast_onleave'); if snippet then self:Run(snippet) end"/>
+			<Attribute name="refreshUnitChange" type="string" value="local unit = self:GetAttribute('unit'); if unit then RegisterStateDriver(self, 'vehicleui', ('[@%s,unithasvehicleui]vehicle; novehicle'):format(unit)) else UnregisterStateDriver(self, 'vehicleui') end"/>
+			<Attribute name="_onstate-vehicleui" type="string" value="local unit = self:GetAttribute('unit'); if unit and newstate == 'vehicle' and UnitPlayerOrPetInRaid(unit) and not UnitTargetsVehicleInRaidUI(unit) then self:SetAttribute('toggleForVehicle', false) else self:SetAttribute('toggleForVehicle', true) end"/>
 		</Attributes>
 	</Button>
-
-	<!-- Pet Battle Hider Frame -->
-	<Frame name="oUF_PetBattleFrameHider" inherits="SecureHandlerStateTemplate" parent="UIParent">
-		<Scripts>
-			<OnLoad>
-				RegisterStateDriver(self, "visibility", "[petbattle] hide; show")
-			</OnLoad>
-		</Scripts>
-	</Frame>
 
 	<!-- MT/MTT/MTTT Template -->
 	<Button name="oUF_MainTank" inherits="SecureUnitButtonTemplate" virtual="true">

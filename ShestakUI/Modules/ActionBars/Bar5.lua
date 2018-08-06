@@ -4,7 +4,7 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	MultiBarBottomRight(by Tukz)
 ----------------------------------------------------------------------------------------
-local bar = CreateFrame("Frame", "Bar5Holder", oUF_PetBattleFrameHider)
+local bar = CreateFrame("Frame", "Bar5Holder", T_PetBattleFrameHider)
 if C.actionbar.rightbars < 3 then
 	if C.actionbar.split_bars == true then
 		bar:SetAllPoints(SplitBarLeft)

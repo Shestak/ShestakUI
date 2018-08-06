@@ -529,7 +529,7 @@ C["raidframe"] = {
 	["icons_role"] = false,						-- Role icon on frames
 	["icons_raid_mark"] = true,					-- Raid mark icons on frames
 	["icons_ready_check"] = true,				-- Ready check icons on frames
-	["icons_leader"] = true,					-- Leader icon, assistant icon, master loot icon on frames
+	["icons_leader"] = true,					-- Leader icon and assistant icon on frames
 	-- Plugins
 	["plugins_debuffhighlight_icon"] = false,	-- Debuff highlight texture + icon
 	["plugins_aura_watch"] = true,				-- Raid debuff icons (from the list)

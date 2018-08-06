@@ -1,101 +1,145 @@
-local parent, ns = ...
+local _, ns = ...
 local oUF = ns.oUF
 
-oUF.colors.health = {49/255, 207/255, 37/255}
-
-local Update = function(self, event, unit)
-	if(not unit or self.unit ~= unit) then return end
-	local health = self.Health
-
-	if(health.PreUpdate) then health:PreUpdate(unit) end
-
-	local min, max = UnitHealth(unit), UnitHealthMax(unit)
-	local disconnected = not UnitIsConnected(unit)
-	health:SetMinMaxValues(0, max)
-
-	if(disconnected) then
-		health:SetValue(max)
-	else
-		health:SetValue(min)
-	end
-
-	health.disconnected = disconnected
+local function UpdateColor(element, unit, cur, max)
+	local parent = element.__owner
 
 	local r, g, b, t
-	if(health.colorTapping and not UnitPlayerControlled(unit) and UnitIsTapDenied(unit)) then
-		t = self.colors.tapped
-	elseif(health.colorDisconnected and not UnitIsConnected(unit)) then
-		t = self.colors.disconnected
-	elseif(health.colorClass and UnitIsPlayer(unit)) or
-		(health.colorClassNPC and not UnitIsPlayer(unit)) or
-		(health.colorClassPet and UnitPlayerControlled(unit) and not UnitIsPlayer(unit)) then
+	if(element.colorTapping and not UnitPlayerControlled(unit) and UnitIsTapDenied(unit)) then
+		t = parent.colors.tapped
+	elseif(element.colorDisconnected and element.disconnected) then
+		t = parent.colors.disconnected
+	elseif(element.colorClass and UnitIsPlayer(unit)) or
+		(element.colorClassNPC and not UnitIsPlayer(unit)) or
+		(element.colorClassPet and UnitPlayerControlled(unit) and not UnitIsPlayer(unit)) then
 		local _, class = UnitClass(unit)
-		t = self.colors.class[class]
-	elseif(health.colorReaction) then
-		t = self.colors.reaction[UnitReaction(unit, "player") or 5]
-	elseif(health.colorSmooth) then
-		r, g, b = self.ColorGradient(min, max, unpack(health.smoothGradient or self.colors.smooth))
-	elseif(health.colorHealth) then
-		t = self.colors.health
+		t = parent.colors.class[class]
+	elseif(element.colorReaction and UnitReaction(unit, 'player')) then
+		t = parent.colors.reaction[UnitReaction(unit, 'player')]
+	elseif(element.colorSmooth) then
+		r, g, b = parent.ColorGradient(cur, max, unpack(element.smoothGradient or parent.colors.smooth))
+	elseif(element.colorHealth) then
+		t = parent.colors.health
 	end
 
 	if(t) then
 		r, g, b = t[1], t[2], t[3]
 	end
 
-	if(b) then
-		health:SetStatusBarColor(r, g, b)
+	if(r or g or b) then
+		element:SetStatusBarColor(r, g, b)
 
-		local bg = health.bg
-		if(bg) then local mu = bg.multiplier or 1
+		local bg = element.bg
+		if(bg) then
+			local mu = bg.multiplier or 1
 			bg:SetVertexColor(r * mu, g * mu, b * mu)
 		end
 	end
+end
 
-	if(health.PostUpdate) then
-		return health:PostUpdate(unit, min, max)
+local function Update(self, event, unit)
+	if(not unit or self.unit ~= unit) then return end
+	local element = self.Health
+
+	--[[ Callback: Health:PreUpdate(unit)
+	Called before the element has been updated.
+
+	* self - the Health element
+	* unit - the unit for which the update has been triggered (string)
+	--]]
+	if(element.PreUpdate) then
+		element:PreUpdate(unit)
+	end
+
+	local cur, max = UnitHealth(unit), UnitHealthMax(unit)
+	local disconnected = not UnitIsConnected(unit)
+	element:SetMinMaxValues(0, max)
+
+	if(disconnected) then
+		element:SetValue(max)
+	else
+		element:SetValue(cur)
+	end
+
+	element.disconnected = disconnected
+
+	--[[ Override: Health:UpdateColor(unit, cur, max)
+	Used to completely override the internal function for updating the widgets' colors.
+
+	* self - the Health element
+	* unit - the unit for which the update has been triggered (string)
+	* cur  - the unit's current health value (number)
+	* max  - the unit's maximum possible health value (number)
+	--]]
+	element:UpdateColor(unit, cur, max)
+
+	--[[ Callback: Health:PostUpdate(unit, cur, max)
+	Called after the element has been updated.
+
+	* self - the Health element
+	* unit - the unit for which the update has been triggered (string)
+	* cur  - the unit's current health value (number)
+	* max  - the unit's maximum possible health value (number)
+	--]]
+	if(element.PostUpdate) then
+		return element:PostUpdate(unit, cur, max)
 	end
 end
 
-local Path = function(self, ...)
+local function Path(self, ...)
+	--[[ Override: Health.Override(self, event, unit)
+	Used to completely override the internal update function.
+
+	* self  - the parent object
+	* event - the event triggering the update (string)
+	* unit  - the unit accompanying the event (string)
+	--]]
 	return (self.Health.Override or Update) (self, ...)
 end
 
-local ForceUpdate = function(element)
+local function ForceUpdate(element)
 	return Path(element.__owner, 'ForceUpdate', element.__owner.unit)
 end
 
-local Enable = function(self, unit)
-	local health = self.Health
-	if(health) then
-		health.__owner = self
-		health.ForceUpdate = ForceUpdate
+local function Enable(self, unit)
+	local element = self.Health
+	if(element) then
+		element.__owner = self
+		element.ForceUpdate = ForceUpdate
 
-		if(health.frequentUpdates) then
+		if(element.frequentUpdates) then
 			self:RegisterEvent('UNIT_HEALTH_FREQUENT', Path)
 		else
 			self:RegisterEvent('UNIT_HEALTH', Path)
 		end
 
-		self:RegisterEvent("UNIT_MAXHEALTH", Path)
+		self:RegisterEvent('UNIT_MAXHEALTH', Path)
 		self:RegisterEvent('UNIT_CONNECTION', Path)
+		self:RegisterEvent('UNIT_FACTION', Path) -- For tapping
 
-		-- For tapping.
-		self:RegisterEvent('UNIT_FACTION', Path)
+		if(element:IsObjectType('StatusBar') and not element:GetStatusBarTexture()) then
+			element:SetStatusBarTexture([[Interface\TargetingFrame\UI-StatusBar]])
+		end
+
+		if(not element.UpdateColor) then
+			element.UpdateColor = UpdateColor
+		end
+
+		element:Show()
 
 		return true
 	end
 end
 
-local Disable = function(self)
-	local health = self.Health
-	if(health) then
-		health:Hide()
+local function Disable(self)
+	local element = self.Health
+	if(element) then
+		element:Hide()
+
 		self:UnregisterEvent('UNIT_HEALTH_FREQUENT', Path)
 		self:UnregisterEvent('UNIT_HEALTH', Path)
 		self:UnregisterEvent('UNIT_MAXHEALTH', Path)
 		self:UnregisterEvent('UNIT_CONNECTION', Path)
-
 		self:UnregisterEvent('UNIT_FACTION', Path)
 	end
 end

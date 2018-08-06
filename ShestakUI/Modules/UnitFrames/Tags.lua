@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.unitframe.enable ~= true then return end
+if C.unitframe.enable ~= true and C.nameplate.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Tags
