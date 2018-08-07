@@ -439,5 +439,4 @@ oUF:Factory(function(self)
 			end
 		end
 	end
-	print(oUF_MainTank:Show())
 end)
