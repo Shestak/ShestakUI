@@ -4,7 +4,7 @@ local oUF = ns.oUF
 local GetComboPoints = GetComboPoints
 local MAX_COMBO_POINTS = MAX_COMBO_POINTS
 
-local Update = function(self, event, unit)
+local Update = function(self, event, unit, powerType)
 	if powerType and powerType ~= 'COMBO_POINTS' then return end
 	if(unit == 'pet') then return end
 

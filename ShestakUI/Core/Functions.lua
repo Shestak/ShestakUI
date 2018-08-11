@@ -1047,7 +1047,7 @@ T.UpdatePvPStatus = function(self, elapsed)
 	end
 end
 
-T.UpdateComboPoint = function(self, event, unit)
+T.UpdateComboPoint = function(self, event, unit, powerType)
 	if powerType and powerType ~= 'COMBO_POINTS' then return end
 	if unit == "pet" then return end
 
@@ -1110,7 +1110,7 @@ T.UpdateComboPoint = function(self, event, unit)
 	end
 end
 
-T.UpdateComboPointTarget = function(self, event, unit)
+T.UpdateComboPointTarget = function(self, event, unit, powerType)
 	if powerType and powerType ~= 'COMBO_POINTS' then return end
 	if unit == "pet" then return end
 
