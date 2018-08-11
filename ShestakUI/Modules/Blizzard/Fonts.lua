@@ -86,14 +86,9 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	SetFont(BossEmoteNormalHuge, NORMAL, 27, "THICKOUTLINE")
 	SetFont(ErrorFont, NORMAL, 16)
 	SetFont(QuestFontNormalSmall, NORMAL, 13, nil, nil, nil, nil, 0.54, 0.4, 0.1)
-	SetFont(WorldMapTextFont, NORMAL, 31, "THICKOUTLINE", nil, nil, nil, 0, 0, 0, 1, -1)
+	SetFont(WorldMapTextFont, NORMAL, 32, "OUTLINE")
+	SetFont(SubZoneTextFont, NORMAL, 30, "OUTLINE")
 	SetFont(HelpFrameKnowledgebaseNavBarHomeButtonText, NORMAL, 13, nil, nil, nil, nil, 0, 0, 0, 1, -1)
-
-	-- Channel list
-	--BETA for i = 1, MAX_CHANNEL_BUTTONS do
-		-- local f = _G["ChannelButton"..i.."Text"]
-		-- f:SetFontObject(GameFontNormalSmallLeft)
-	-- end
 
 	-- Player title
 	for _, butt in pairs(PaperDollTitlesPane.buttons) do butt.text:SetFontObject(GameFontHighlightSmallLeft) end
