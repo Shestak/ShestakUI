@@ -414,15 +414,16 @@ function T.SkinEditBox(frame, width, height)
 end
 
 function T.SkinDropDownBox(frame, width)
-	local button = _G[frame:GetName().."Button"] or _G[frame:GetName().."_Button"]
+	local button = _G[frame:GetName()] and (_G[frame:GetName().."Button"] or _G[frame:GetName().."_Button"]) or frame.Button
+	local text = _G[frame:GetName()] and _G[frame:GetName().."Text"] or frame.Text
 	if not width then width = 155 end
 
 	frame:StripTextures()
 	frame:SetWidth(width)
 
-	if _G[frame:GetName().."Text"] then
-		_G[frame:GetName().."Text"]:ClearAllPoints()
-		_G[frame:GetName().."Text"]:SetPoint("RIGHT", button, "LEFT", -2, 0)
+	if text then
+		text:ClearAllPoints()
+		text:SetPoint("RIGHT", button, "LEFT", -2, 0)
 	end
 
 	button:ClearAllPoints()

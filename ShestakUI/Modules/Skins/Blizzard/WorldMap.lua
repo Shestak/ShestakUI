@@ -38,11 +38,6 @@ local function LoadSkin()
 
 	WorldMapFrame.BorderFrame.Tutorial:Kill()
 
-	-- local TrackingOptions = WorldMapFrame.UIElementsFrame.TrackingOptionsButton
-	-- TrackingOptions.Button:SetAlpha(0)
-	-- TrackingOptions.Background:SetAlpha(0)
-	-- TrackingOptions.IconOverlay:SetTexture("")
-
 	QuestScrollFrame:ClearAllPoints()
 	QuestScrollFrame:SetPoint("LEFT", WorldMapFrame.backdrop, "RIGHT", 4, 0)
 	QuestScrollFrame.DetailFrame:StripTextures()
@@ -115,28 +110,26 @@ local function LoadSkin()
 	end)
 
 	-- Quests Buttons
-	--BETA for i = 1, 2 do
-		-- local button = i == 1 and WorldMapFrame.UIElementsFrame.OpenQuestPanelButton or WorldMapFrame.UIElementsFrame.CloseQuestPanelButton
-		-- local texture = i == 1 and "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up" or "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Up"
+	for i = 1, 2 do
+		local button = i == 1 and WorldMapFrame.SidePanelToggle.CloseButton or WorldMapFrame.SidePanelToggle.OpenButton
+		local texture = i == 1 and "Interface\\Buttons\\UI-SpellbookIcon-PrevPage-Up" or "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up"
 
-		-- button:ClearAllPoints()
-		-- button:SetPoint("BOTTOMRIGHT", -2, 2)
-		-- button:SetSize(20, 20)
-		-- button:StripTextures()
-		-- button:SetTemplate("Default")
-		-- button:StyleButton()
+		button:ClearAllPoints()
+		button:SetPoint("BOTTOMRIGHT", -2, 2)
+		button:SetSize(20, 20)
+		button:StripTextures()
+		button:SetTemplate("Default")
+		button:StyleButton()
 
-		-- button.icon = button:CreateTexture(nil, "BORDER")
-		-- button.icon:SetTexture(texture)
-		-- button.icon:SetTexCoord(0.3, 0.29, 0.3, 0.79, 0.65, 0.29, 0.65, 0.79)
-		-- button.icon:ClearAllPoints()
-		-- button.icon:SetPoint("TOPLEFT", 2, -2)
-		-- button.icon:SetPoint("BOTTOMRIGHT", -2, 2)
-	-- end
+		button.icon = button:CreateTexture(nil, "BORDER")
+		button.icon:SetTexture(texture)
+		button.icon:SetTexCoord(0.3, 0.29, 0.3, 0.79, 0.65, 0.29, 0.65, 0.79)
+		button.icon:ClearAllPoints()
+		button.icon:SetPoint("TOPLEFT", 2, -2)
+		button.icon:SetPoint("BOTTOMRIGHT", -2, 2)
+	end
 
 	WorldMapFrame.NavBar:Hide()
-	-- WorldMapTitleButton:ClearAllPoints()
-	-- WorldMapTitleButton:SetAllPoints(WorldMapFrame.Header)
 	WorldMapFrame.BorderFrame.TitleText:ClearAllPoints()
 	WorldMapFrame.BorderFrame.TitleText:SetPoint("CENTER", WorldMapFrame.Header)
 
@@ -148,14 +141,41 @@ local function LoadSkin()
 	WorldMapFrame.BorderFrame.MaximizeMinimizeFrame.MaximizeButton:Kill()
 	WorldMapFrame.BorderFrame.MaximizeMinimizeFrame.MinimizeButton:Kill()
 
-	--BETA T.SkinDropDownBox(WorldMapLevelDropDown)
-	-- WorldMapLevelDropDown:ClearAllPoints()
-	-- WorldMapLevelDropDown:SetPoint("TOPLEFT", -18, -2)
+	-- Floor Dropdown
+	local function WorldMapFloorNavigationDropDown(frame)
+		T.SkinDropDownBox(frame)
+		frame:SetPoint("TOPLEFT", -15, -67)
+	end
 
-	-- T.SkinCloseButton(WorldMapFrame.UIElementsFrame.BountyBoard.TutorialBox.CloseButton)
-	-- WorldMapFrame.UIElementsFrame.BountyBoard.TutorialBox:StripTextures()
-	-- WorldMapFrame.UIElementsFrame.BountyBoard.TutorialBox.Arrow:Hide()
-	-- WorldMapFrame.UIElementsFrame.BountyBoard.TutorialBox:CreateBackdrop("Transparent")
+	-- Tracking Button
+	local function WorldMapTrackingOptionsButton(button)
+		local shadow = button:GetRegions()
+		shadow:Hide()
+
+		button.Background:Hide()
+		button.IconOverlay:SetAlpha(0)
+		button.Border:Hide()
+
+		local tex = button:GetHighlightTexture()
+		tex:SetTexture([[Interface\Minimap\Tracking\None]], "ADD")
+		tex:SetAllPoints(button.Icon)
+	end
+
+	-- Bounty Board
+	local function WorldMapBountyBoard(frame)
+		frame.BountyName:SetFont(C.media.normal_font, 16)
+		frame.BountyName:SetShadowOffset(1, -1)
+
+		T.SkinCloseButton(frame.TutorialBox.CloseButton)
+		frame.TutorialBox:StripTextures()
+		frame.TutorialBox.Arrow:Hide()
+		frame.TutorialBox:CreateBackdrop("Transparent")
+	end
+
+	-- Elements
+	WorldMapFloorNavigationDropDown(WorldMapFrame.overlayFrames[1])
+	WorldMapTrackingOptionsButton(WorldMapFrame.overlayFrames[2])
+	WorldMapBountyBoard(WorldMapFrame.overlayFrames[3])
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
