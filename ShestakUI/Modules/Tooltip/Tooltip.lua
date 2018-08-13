@@ -37,9 +37,7 @@ local backdrop = {
 for _, tt in pairs(tooltips) do
 	if not IsAddOnLoaded("Aurora") then
 		tt:SetBackdrop(nil)
-		hooksecurefunc("GameTooltip_SetBackdropStyle", function(self)
-			self:SetBackdrop(nil)
-		end)
+		tt.SetBackdrop = T.dummy
 		if tt.BackdropFrame then
 			tt.BackdropFrame:SetBackdrop(nil)
 		end
