@@ -645,9 +645,7 @@ if gold.enabled then
 
 			if C.stats.currency_misc then
 				IsSubTitle = 6
-				Currency(1220)					-- Order Resources
-				Currency(1508, false, true)		-- Veiled Argunite
-				Currency(1342, false, true)		-- Legionfall War Supplies
+				Currency(1560)					-- War Resources
 				Currency(515)					-- Darkmoon Prize Ticket
 			end
 

@@ -253,6 +253,7 @@ elseif T.class == "HUNTER" then
 		T.aoespam[197465] = 1		-- Surge of the Stormgod
 		T.aoespam[207097] = 4		-- Titan's Thunder
 		-- Healing spells
+		T.aoespam[199483] = 9		-- Camouflage
 		T.aoespam[136] = 9			-- Mend Pet
 		T.merge[214303] = 136		-- Mend Pet (Hati)
 		T.aoespam[197161] = 8		-- Mimiron's Shell Heal
