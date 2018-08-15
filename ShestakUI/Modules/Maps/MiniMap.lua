@@ -204,6 +204,10 @@ local micromenu = {
 	{text = guildText, notCheckable = 1, func = function()
 		ToggleGuildFrame()
 		if IsInGuild() then
+			if not GuildFrame then
+				GuildFrame_LoadUI()
+			end
+			GuildFrame_Toggle()
 			GuildFrame_TabClicked(GuildFrameTab2)
 		end
 	end},

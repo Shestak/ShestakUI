@@ -971,6 +971,10 @@ if guild.enabled then
 			if b == "LeftButton" then
 				ToggleGuildFrame()
 				if IsInGuild() then
+					if not GuildFrame then
+						LoadAddOn("Blizzard_GuildUI")
+					end
+					GuildFrame_Toggle()
 					GuildFrame_TabClicked(GuildFrameTab2)
 				end
 			elseif b == "MiddleButton" and IsInGuild() then
