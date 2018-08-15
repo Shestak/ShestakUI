@@ -191,7 +191,7 @@ local function LoadSkin()
 		for _, reward in pairs(self.Rewards) do
 			if reward.backdrop then
 				local r, g, b = unpack(C.media.border_color)
-				if reward.IconBorder:IsShown() then
+				if reward.IconBorder:IsShown() and reward.itemID then
 					local _, _, itemRarity = GetItemInfo(reward.itemID)
 					if itemRarity and itemRarity > 1 then
 						r, g, b = reward.IconBorder:GetVertexColor()
