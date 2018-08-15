@@ -7,6 +7,27 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	T.SkinCloseButton(CharacterFrameCloseButton)
 
+	-- Azerite Items
+	local function UpdateAzeriteItem(self)
+		if not self.styled then
+			self.AzeriteTexture:SetAlpha(0)
+			self.RankFrame.Texture:SetTexture("")
+			self.RankFrame.Label:SetFontObject("SystemFont_Outline_Small")
+			self.RankFrame.Label:SetPoint("CENTER", self.RankFrame.Texture, 0, 3)
+
+			self.styled = true
+		end
+		self:GetHighlightTexture():SetColorTexture(1, 1, 1, 0.3)
+		self:GetHighlightTexture():SetAllPoints()
+	end
+
+	local function UpdateAzeriteEmpoweredItem(self)
+		self.AzeriteTexture:SetAtlas("AzeriteIconFrame")
+		self.AzeriteTexture:SetPoint("TOPLEFT", 2, -2)
+		self.AzeriteTexture:SetPoint("BOTTOMRIGHT", -2, 2)
+		self.AzeriteTexture:SetDrawLayer("BORDER", 1)
+	end
+
 	local slots = {
 		"HeadSlot",
 		"NeckSlot",
@@ -28,8 +49,8 @@ local function LoadSkin()
 		"SecondaryHandSlot"
 	}
 
-	select(11, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
-	select(11, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
+	select(13, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
+	select(13, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
 
 	for _, i in pairs(slots) do
 		_G["Character"..i.."Frame"]:Hide()
@@ -48,6 +69,9 @@ local function LoadSkin()
 		icon:ClearAllPoints()
 		icon:SetPoint("TOPLEFT", 2, -2)
 		icon:SetPoint("BOTTOMRIGHT", -2, 2)
+
+		hooksecurefunc(slot, "DisplayAsAzeriteItem", UpdateAzeriteItem)
+		hooksecurefunc(slot, "DisplayAsAzeriteEmpoweredItem", UpdateAzeriteEmpoweredItem)
 	end
 
 	-- Strip Textures
@@ -169,7 +193,7 @@ local function LoadSkin()
 	for i = 1, 4 do
 		T.SkinTab(_G["CharacterFrameTab"..i])
 	end
-	
+
 	T.SkinCloseButton(CharacterFrame.ReputationTabHelpBox.CloseButton)
 	CharacterFrame.ReputationTabHelpBox:StripTextures()
 	CharacterFrame.ReputationTabHelpBox:CreateBackdrop("Transparent")
