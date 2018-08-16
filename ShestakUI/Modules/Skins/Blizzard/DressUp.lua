@@ -11,6 +11,11 @@ local function LoadSkin()
 	DressUpFramePortraitFrame:Hide()
 	DressUpFrameInset:Hide()
 
+	DressUpModel:CreateBackdrop("Default")
+	DressUpModel.backdrop:SetPoint("TOPLEFT", -3, 4)
+	DressUpModel.backdrop:SetPoint("BOTTOMRIGHT", 2, 1)
+	DressUpFrame.ModelBackground:SetDrawLayer("BACKGROUND", 3)
+
 	MaximizeMinimizeFrame:StripTextures()
 	MaximizeMinimizeFrame:SetSize(18, 18)
 	MaximizeMinimizeFrame:SetPoint("RIGHT", DressUpFrameCloseButton, "LEFT", -2, 0)
@@ -18,6 +23,7 @@ local function LoadSkin()
 	local MaximizeButton = MaximizeMinimizeFrame.MaximizeButton
 	MaximizeButton:StripTextures()
 	MaximizeButton:SetTemplate("Overlay")
+	MaximizeButton:SetHitRectInsets(1, 1, 1, 1)
 
 	MaximizeButton.minus = MaximizeButton:CreateTexture(nil, "OVERLAY")
 	MaximizeButton.minus:SetSize(7, 1)
@@ -35,6 +41,7 @@ local function LoadSkin()
 	local MinimizeButton = MaximizeMinimizeFrame.MinimizeButton
 	MinimizeButton:StripTextures()
 	MinimizeButton:SetTemplate("Overlay")
+	MinimizeButton:SetHitRectInsets(1, 1, 1, 1)
 
 	MinimizeButton.minus = MinimizeButton:CreateTexture(nil, "OVERLAY")
 	MinimizeButton.minus:SetSize(7, 1)
