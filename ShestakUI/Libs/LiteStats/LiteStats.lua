@@ -646,6 +646,7 @@ if gold.enabled then
 			if C.stats.currency_misc then
 				IsSubTitle = 6
 				Currency(1560)					-- War Resources
+				Currency(1710)					-- Seafarer's Dubloon
 				Currency(515)					-- Darkmoon Prize Ticket
 			end
 
