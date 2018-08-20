@@ -9,6 +9,7 @@ if C.combattext.enable ~= true then return end
 -- General filter outgoing healing
 if C.combattext.healing then
 	T.healfilter = {}
+	T.healfilter[270661] = true		-- Self Reliance
 	T.healfilter[143924] = true		-- Leech
 	T.healfilter[127802] = true		-- Touch of the Grave
 	T.healfilter[207694] = true		-- Symbiote Strike
@@ -47,6 +48,7 @@ end
 -- Class config
 if T.class == "DEATHKNIGHT" then
 	if C.combattext.merge_aoe_spam then
+		T.aoespam[115994] = 4		-- Unholy Blight
 		T.aoespam[206931] = 2.5		-- Blooddrinker
 		T.aoespam[279303] = 1		-- Frost Breath
 		T.aoespam[195975] = 1		-- Glacial Advance
