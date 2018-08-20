@@ -1287,17 +1287,17 @@ T.PostCastStart = function(Castbar, unit, name)
 
 	if Castbar.Time and Castbar.Text then
 		local timeWidth = Castbar.Time:GetStringWidth()
-		local textWidth = Castbar:GetWidth() - timeWidth - 10
-		local textStringWidth = Castbar.Text:GetStringWidth()
+		local textWidth = Castbar:GetWidth() - timeWidth - 5
 
-		if timeWidth == 0 or textStringWidth == 0 then
+		if timeWidth == 0 then
 			C_Timer.After(0.05, function()
-				textWidth = Castbar:GetWidth() - Castbar.Time:GetStringWidth() - 10
-				textStringWidth = Castbar.Text:GetStringWidth()
-				if textWidth > 0 then Castbar.Text:SetWidth(min(textWidth, textStringWidth)) end
+				textWidth = Castbar:GetWidth() - Castbar.Time:GetStringWidth() - 5
+				if textWidth > 0 then
+					Castbar.Text:SetWidth(textWidth)
+				end
 			end)
 		else
-			Castbar.Text:SetWidth(min(textWidth, textStringWidth))
+			Castbar.Text:SetWidth(textWidth)
 		end
 	end
 end
@@ -1375,17 +1375,17 @@ T.PostChannelStart = function(Castbar, unit, name)
 
 	if Castbar.Time and Castbar.Text then
 		local timeWidth = Castbar.Time:GetStringWidth()
-		local textWidth = Castbar:GetWidth() - timeWidth - 10
-		local textStringWidth = Castbar.Text:GetStringWidth()
+		local textWidth = Castbar:GetWidth() - timeWidth - 5
 
-		if timeWidth == 0 or textStringWidth == 0 then
+		if timeWidth == 0 then
 			C_Timer.After(0.05, function()
-				textWidth = Castbar:GetWidth() - Castbar.Time:GetStringWidth() - 10
-				textStringWidth = Castbar.Text:GetStringWidth()
-				if textWidth > 0 then Castbar.Text:SetWidth(min(textWidth, textStringWidth)) end
+				textWidth = Castbar:GetWidth() - Castbar.Time:GetStringWidth() - 5
+				if textWidth > 0 then
+					Castbar.Text:SetWidth(textWidth)
+				end
 			end)
 		else
-			Castbar.Text:SetWidth(min(textWidth, textStringWidth))
+			Castbar.Text:SetWidth(textWidth)
 		end
 	end
 end
