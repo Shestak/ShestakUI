@@ -1284,6 +1284,22 @@ T.PostCastStart = function(Castbar, unit, name)
 			Castbar.Button:SetBackdropBorderColor(unpack(C.media.border_color))
 		end
 	end
+
+	if Castbar.Time and Castbar.Text then
+		local timeWidth = Castbar.Time:GetStringWidth()
+		local textWidth = Castbar:GetWidth() - timeWidth - 10
+		local textStringWidth = Castbar.Text:GetStringWidth()
+
+		if timeWidth == 0 or textStringWidth == 0 then
+			C_Timer.After(0.05, function()
+				textWidth = Castbar:GetWidth() - Castbar.Time:GetStringWidth() - 10
+				textStringWidth = Castbar.Text:GetStringWidth()
+				if textWidth > 0 then Castbar.Text:SetWidth(min(textWidth, textStringWidth)) end
+			end)
+		else
+			Castbar.Text:SetWidth(min(textWidth, textStringWidth))
+		end
+	end
 end
 
 local channelingTicks = T.CastBarTicks
@@ -1354,6 +1370,22 @@ T.PostChannelStart = function(Castbar, unit, name)
 		Castbar.Overlay:SetBackdropBorderColor(unpack(C.media.border_color))
 		if C.unitframe.castbar_icon == true and (unit == "target" or unit == "focus") then
 			Castbar.Button:SetBackdropBorderColor(unpack(C.media.border_color))
+		end
+	end
+
+	if Castbar.Time and Castbar.Text then
+		local timeWidth = Castbar.Time:GetStringWidth()
+		local textWidth = Castbar:GetWidth() - timeWidth - 10
+		local textStringWidth = Castbar.Text:GetStringWidth()
+
+		if timeWidth == 0 or textStringWidth == 0 then
+			C_Timer.After(0.05, function()
+				textWidth = Castbar:GetWidth() - Castbar.Time:GetStringWidth() - 10
+				textStringWidth = Castbar.Text:GetStringWidth()
+				if textWidth > 0 then Castbar.Text:SetWidth(min(textWidth, textStringWidth)) end
+			end)
+		else
+			Castbar.Text:SetWidth(min(textWidth, textStringWidth))
 		end
 	end
 end

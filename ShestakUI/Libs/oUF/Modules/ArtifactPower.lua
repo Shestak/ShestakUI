@@ -32,7 +32,7 @@ for tag, func in next, {
 			if (azeriteItemLocation) then
 				local link = GetInventoryItemLink('player', azeriteItemLocation.equipmentSlotIndex)
 				return link and link:match('%[(.+)%]')
-			elseif (HasArtifactEquipped()) then
+			elseif (HasArtifactEquipped() and not C_ArtifactUI.IsEquippedArtifactDisabled()) then
 				local _, _, _, _, unspentPower, numTraitsLearned, _, _, _, _, _, _, tier = C_ArtifactUI.GetEquippedArtifactInfo()
 				local _, power = GetNumTraitsLearnable(numTraitsLearned, unspentPower, tier)
 				return power
@@ -45,7 +45,7 @@ for tag, func in next, {
 			if (azeriteItemLocation) then
 				local power = C_AzeriteItem.GetAzeriteItemXPInfo(azeriteItemLocation)
 				return power
-			elseif (HasArtifactEquipped()) then
+			elseif (HasArtifactEquipped() and not C_ArtifactUI.IsEquippedArtifactDisabled()) then
 				local _, _, _, _, unspentPower, numTraitsLearned, _, _, _, _, _, _, tier = C_ArtifactUI.GetEquippedArtifactInfo()
 				local _, power = GetNumTraitsLearnable(numTraitsLearned, unspentPower, tier)
 				return power
@@ -58,7 +58,7 @@ for tag, func in next, {
 			if (azeriteItemLocation) then
 				local power, max = C_AzeriteItem.GetAzeriteItemXPInfo(azeriteItemLocation)
 				return max - power
-			elseif (HasArtifactEquipped()) then
+			elseif (HasArtifactEquipped() and not C_ArtifactUI.IsEquippedArtifactDisabled()) then
 				local _, _, _, _, unspentPower, numTraitsLearned, _, _, _, _, _, _, tier = C_ArtifactUI.GetEquippedArtifactInfo()
 				local _, power, powerForNextTrait = GetNumTraitsLearnable(numTraitsLearned, unspentPower, tier)
 				return powerForNextTrait - power
@@ -71,7 +71,7 @@ for tag, func in next, {
 			if (azeriteItemLocation) then
 				local power, max = C_AzeriteItem.GetAzeriteItemXPInfo(azeriteItemLocation)
 				return math.floor(power / max * 100 + 0.5)
-			elseif (HasArtifactEquipped()) then
+			elseif (HasArtifactEquipped() and not C_ArtifactUI.IsEquippedArtifactDisabled()) then
 				local _, _, _, _, unspentPower, numTraitsLearned, _, _, _, _, _, _, tier = C_ArtifactUI.GetEquippedArtifactInfo()
 				local _, power, powerForNextTrait = GetNumTraitsLearnable(numTraitsLearned, unspentPower, tier)
 				return math.floor(power / powerForNextTrait * 100 + 0.5)
@@ -84,7 +84,7 @@ for tag, func in next, {
 			if (azeriteItemLocation) then
 				local _, max = C_AzeriteItem.GetAzeriteItemXPInfo(azeriteItemLocation)
 				return max
-			elseif (HasArtifactEquipped()) then
+			elseif (HasArtifactEquipped() and not C_ArtifactUI.IsEquippedArtifactDisabled()) then
 				local _, _, _, _, unspentPower, numTraitsLearned, _, _, _, _, _, _, tier = C_ArtifactUI.GetEquippedArtifactInfo()
 				local _, _, powerForNextTrait = GetNumTraitsLearnable(numTraitsLearned, unspentPower, tier)
 				return powerForNextTrait
@@ -92,23 +92,23 @@ for tag, func in next, {
 		end
 	end,
 	['artifactpower:unspent_power'] = function() -- was total
-		if (not HasArtifactEquipped() or UnitHasVehicleUI('player')) then return end
+		if (not HasArtifactEquipped() or UnitHasVehicleUI('player') or C_ArtifactUI.IsEquippedArtifactDisabled()) then return end
 		local _, _, _, _, unspentPower = C_ArtifactUI.GetEquippedArtifactInfo()
 		return unspentPower
 	end,
 	['artifactpower:traits_learnable'] = function()
-		if (not HasArtifactEquipped() or UnitHasVehicleUI('player')) then return end
+		if (not HasArtifactEquipped() or UnitHasVehicleUI('player') or C_ArtifactUI.IsEquippedArtifactDisabled()) then return end
 		local _, _, _, _, unspentPower, numTraitsLearned, _, _, _, _, _, _, tier = C_ArtifactUI.GetEquippedArtifactInfo()
 		local numTraitsLearnable = GetNumTraitsLearnable(numTraitsLearned, unspentPower, tier)
 		return numTraitsLearnable
 	end,
 	['artifactpower:traits_learned'] = function()
-		if (not HasArtifactEquipped() or UnitHasVehicleUI('player')) then return end
+		if (not HasArtifactEquipped() or UnitHasVehicleUI('player') or C_ArtifactUI.IsEquippedArtifactDisabled()) then return end
 		local _, _, _, _, _, numTraitsLearned = C_ArtifactUI.GetEquippedArtifactInfo()
 		return numTraitsLearned
 	end,
 	['artifactpower:tier'] = function()
-		if (not HasArtifactEquipped() or UnitHasVehicleUI('player')) then return end
+		if (not HasArtifactEquipped() or UnitHasVehicleUI('player') or C_ArtifactUI.IsEquippedArtifactDisabled()) then return end
 		local _, _, _, _, _, _, _, _, _, _, _, _, tier = C_ArtifactUI.GetEquippedArtifactInfo()
 		return tier
 	end,
@@ -117,7 +117,7 @@ for tag, func in next, {
 			local azeriteItemLocation = C_AzeriteItem and C_AzeriteItem.FindActiveAzeriteItem()
 			if (azeriteItemLocation) then
 				return C_AzeriteItem.GetPowerLevel(azeriteItemLocation)
-			elseif (HasArtifactEquipped()) then
+			elseif (HasArtifactEquipped() and not C_ArtifactUI.IsEquippedArtifactDisabled()) then
 				local _, _, _, _, unspentPower, numTraitsLearned, _, _, _, _, _, _, tier = C_ArtifactUI.GetEquippedArtifactInfo()
 				local numTraitsLearnable = GetNumTraitsLearnable(numTraitsLearned, unspentPower, tier)
 				return numTraitsLearnable + numTraitsLearned
@@ -142,14 +142,14 @@ local function OnEnter(element)
 	if (azeriteItemLocation) then
 		local azeriteItem = Item:CreateFromItemLocation(azeriteItemLocation)
 		ItemDataLoadedCancelFunc = azeriteItem:ContinueWithCancelOnItemLoad(function()
-			GameTooltip:SetOwner(element, element.tooltipAnchor)
+			GameTooltip:SetOwner(element, "ANCHOR_BOTTOM", 0, -5)	-- ShestakUI
 			GameTooltip:SetText(AZERITE_POWER_TOOLTIP_TITLE:format(element.level, element.max - element.current), HIGHLIGHT_FONT_COLOR:GetRGB())
 			GameTooltip:AddLine(AZERITE_POWER_TOOLTIP_BODY:format(azeriteItem:GetItemName()))
 			GameTooltip:Show()
 		end)
 	elseif (HasArtifactEquipped()) then
 		local _, _, name = C_ArtifactUI.GetEquippedArtifactInfo()
-		GameTooltip:SetOwner(element, element.tooltipAnchor)
+		GameTooltip:SetOwner(element, "ANCHOR_BOTTOM", 0, -5)	-- ShestakUI
 		GameTooltip:SetText(name, HIGHLIGHT_FONT_COLOR:GetRGB())
 		GameTooltip:AddLine(
 			ARTIFACT_POWER_TOOLTIP_TITLE:format(
@@ -224,7 +224,7 @@ local function Update(self, event, arg)
 			current, max = C_AzeriteItem.GetAzeriteItemXPInfo(azeriteItemLocation)
 			level = C_AzeriteItem.GetPowerLevel(azeriteItemLocation)
 			show = true
-		elseif (HasArtifactEquipped()) then
+		elseif (HasArtifactEquipped() and not C_ArtifactUI.IsEquippedArtifactDisabled()) then
 			local _, _, _, _, unspentPower, numTraitsLearned, _, _, _, _, _, _, tier = C_ArtifactUI.GetEquippedArtifactInfo()
 			local numTraitsLearnable, power, powerForNextTrait = GetNumTraitsLearnable(numTraitsLearned, unspentPower, tier)
 			current = power

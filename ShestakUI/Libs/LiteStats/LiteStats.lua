@@ -970,9 +970,6 @@ if guild.enabled then
 		OnClick = function(self, b)
 			if b == "LeftButton" then
 				ToggleGuildFrame()
-				if IsInGuild() then
-					GuildFrame_TabClicked(GuildFrameTab2)
-				end
 			elseif b == "MiddleButton" and IsInGuild() then
 				local s = CURRENT_GUILD_SORTING
 				SortGuildRoster(IsShiftKeyDown() and s or (IsAltKeyDown() and (s == "rank" and "note" or "rank") or s == "class" and "name" or s == "name" and "level" or s == "level" and "zone" or "class"))
@@ -1544,7 +1541,7 @@ if experience.enabled then
 	local repname, repcolor, standingname, currep, minrep, maxrep
 	local mobxp = gsub(COMBATLOG_XPGAIN_FIRSTPERSON, "%%[sd]", "(.*)")
 	local questxp = gsub(COMBATLOG_XPGAIN_FIRSTPERSON_UNNAMED, "%%[sd]", "(.*)")
-	local artifactXP, xpForNextPoint, numPointsAvailableToSpend, artifactTotalXP, artifactName, artifactPointsSpent, artifactTier = 0, 0, 0, 0
+	local AzeritXP, AzeritTotalLevelXP, AzeritLevel = 0, 0, 0
 	local function short(num, tt)
 		if short or tt then
 			num = tonumber(num)
@@ -1599,11 +1596,11 @@ if experience.enabled then
 			or sub == "maxrep" and abs(maxrep - minrep)
 			or sub == "rep%" and (currep ~= 0 and floor(abs(currep - minrep) / abs(maxrep - minrep) * 100) or 0)
 			-- artifact tags
-			or sub == "curart" and short(artifactXP, tt)
-			or sub == "curart%" and floor(artifactXP / xpForNextPoint * 100)
-			or sub == "totalart" and short(xpForNextPoint, tt)
-			or sub == "remainingart" and short(xpForNextPoint - artifactXP, tt)
-			or sub == "remainingart%" and 100 - floor(artifactXP / xpForNextPoint * 100)
+			or sub == "curart" and short(AzeritXP, tt)
+			or sub == "curart%" and floor(AzeritXP / AzeritTotalLevelXP * 100)
+			or sub == "totalart" and short(AzeritTotalLevelXP, tt)
+			or sub == "remainingart" and short(AzeritTotalLevelXP - AzeritXP, tt)
+			or sub == "remainingart%" and 100 - floor(AzeritXP / AzeritTotalLevelXP * 100)
 			or format("[%s]", sub)
 	end
 	Inject("Experience", {
@@ -1621,12 +1618,12 @@ if experience.enabled then
 			end
 		},
 		OnLoad = function(self)
-			RegEvents(self, "TIME_PLAYED_MSG PLAYER_LOGOUT PLAYER_LOGIN UPDATE_FACTION CHAT_MSG_COMBAT_XP_GAIN PLAYER_LEVEL_UP ARTIFACT_XP_UPDATE PLAYER_EQUIPMENT_CHANGED")
+			RegEvents(self, "TIME_PLAYED_MSG PLAYER_LOGOUT PLAYER_LOGIN UPDATE_FACTION CHAT_MSG_COMBAT_XP_GAIN PLAYER_LEVEL_UP AZERITE_ITEM_EXPERIENCE_CHANGED PLAYER_EQUIPMENT_CHANGED")
 			-- Filter first time played message
 			local ofunc = ChatFrame_DisplayTimePlayed
 			function ChatFrame_DisplayTimePlayed() ChatFrame_DisplayTimePlayed = ofunc end
 			RequestTimePlayed()
-			if not conf.ExpMode or conf.ExpMode == "xp" or conf.ExpMode == "art" then -- BETA Remove art after release.
+			if not conf.ExpMode or conf.ExpMode == "xp" or conf.ExpMode == "art" then
 				conf.ExpMode = UnitLevel(P) ~= MAX_PLAYER_LEVEL and "xp" or "played"
 			end
 		end,
@@ -1669,16 +1666,17 @@ if experience.enabled then
 			if event == "PLAYER_LOGOUT" or event == "TIME_PLAYED_MSG" then
 				conf.Played = floor(playedtotal + GetTime() - playedmsg)
 			end
-			if (event == "ARTIFACT_XP_UPDATE" or event == "PLAYER_EQUIPMENT_CHANGED" or event == "PLAYER_LOGIN") and conf.ExpMode == "art" then
+			if (event == "AZERITE_ITEM_EXPERIENCE_CHANGED" or event == "PLAYER_EQUIPMENT_CHANGED" or event == "PLAYER_LOGIN") and conf.ExpMode == "art" then
 				if event == "PLAYER_EQUIPMENT_CHANGED" then
 					local slot = ...
 					if slot ~= INVSLOT_MAINHAND then
 						return
 					end
 				end
-				if HasArtifactEquipped() then
-					_, _, artifactName, _, artifactTotalXP, artifactPointsSpent, _, _, _, _, _, _, artifactTier = C_ArtifactUI.GetEquippedArtifactInfo()
-					numPointsAvailableToSpend, artifactXP, xpForNextPoint = ArtifactBarGetNumArtifactTraitsPurchasableFromXP(artifactPointsSpent, artifactTotalXP, artifactTier)
+				local azeriteItemLocation = C_AzeriteItem and C_AzeriteItem.FindActiveAzeriteItem()
+				if azeriteItemLocation then
+					AzeritXP, AzeritTotalLevelXP = C_AzeriteItem.GetAzeriteItemXPInfo(azeriteItemLocation)
+					AzeritLevel = C_AzeriteItem.GetPowerLevel(azeriteItemLocation)
 					self.text:SetText(gsub(experience.artifact_fmt, "%[([%w%%]-)%]", tags))
 				else
 					if event == "PLAYER_EQUIPMENT_CHANGED" then
@@ -1745,14 +1743,14 @@ if experience.enabled then
 				GameTooltip:AddDoubleLine(format("%s%s", tags"repcolor", tags"standing"), war and format("|cffff5555%s", AT_WAR))
 				GameTooltip:AddDoubleLine(format("%s%% | %s/%s", tags"rep%", tags"currep", tags"maxrep"), -tags"repleft", ttsubh.r, ttsubh.g, ttsubh.b, 1, 0.33, 0.33)
 			elseif conf.ExpMode == "art" then
-				_, _, artifactName, _, artifactTotalXP, artifactPointsSpent, _, _, _, _, _, _, artifactTier = C_ArtifactUI.GetEquippedArtifactInfo()
-				numPointsAvailableToSpend, artifactXP, xpForNextPoint = ArtifactBarGetNumArtifactTraitsPurchasableFromXP(artifactPointsSpent, artifactTotalXP, artifactTier)
-				GameTooltip:AddLine(ARTIFACT_POWER..": "..artifactName, tthead.r, tthead.g, tthead.b)
-				GameTooltip:AddLine(" ")
-				GameTooltip:AddDoubleLine(L_STATS_CURRENT_XP, format("%s/%s (%s%%)", tags"curart", tags"totalart", tags"curart%"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-				GameTooltip:AddDoubleLine(L_STATS_REMAINING_XP, format("%s (%s%%)", tags"remainingart", tags"remainingart%"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-				if numPointsAvailableToSpend and numPointsAvailableToSpend > 0 then
-					GameTooltip:AddLine(ARTIFACT_POWER_TOOLTIP_BODY:format(numPointsAvailableToSpend), ttsubh.r, ttsubh.g, ttsubh.b, 1)
+				local azeriteItemLocation = C_AzeriteItem and C_AzeriteItem.FindActiveAzeriteItem()
+				if azeriteItemLocation then
+					AzeritXP, AzeritTotalLevelXP = C_AzeriteItem.GetAzeriteItemXPInfo(azeriteItemLocation)
+					AzeritLevel = C_AzeriteItem.GetPowerLevel(azeriteItemLocation)
+					local azeriteName = Item:CreateFromItemLocation(azeriteItemLocation):GetItemName()
+					GameTooltip:AddDoubleLine(azeriteName, format(LEVEL_GAINED, AzeritLevel), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
+					GameTooltip:AddDoubleLine(L_STATS_CURRENT_XP, format("%s/%s (%s%%)", tags"curart", tags"totalart", tags"curart%"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+					GameTooltip:AddDoubleLine(L_STATS_REMAINING_XP, format("%s (%s%%)", tags"remainingart", tags"remainingart%"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 				end
 			end
 			GameTooltip:Show()
@@ -1760,7 +1758,7 @@ if experience.enabled then
 		OnClick = function(self, button)
 			if button == "RightButton" then
 				conf.ExpMode = conf.ExpMode == "xp" and "played"
-					or (conf.ExpMode == "played" and HasArtifactEquipped()) and "art"
+					or (conf.ExpMode == "played" and C_AzeriteItem and C_AzeriteItem.FindActiveAzeriteItem()) and "art"
 					or conf.ExpMode == "played" and "rep"
 					or conf.ExpMode == "art" and "rep"
 					or (conf.ExpMode == "rep" and UnitLevel(P) ~= MAX_PLAYER_LEVEL) and "xp"
@@ -1768,19 +1766,13 @@ if experience.enabled then
 				if conf.ExpMode == "rep" then
 					self:GetScript("OnEvent")(self,"UPDATE_FACTION")
 				elseif conf.ExpMode == "art" then
-					self:GetScript("OnEvent")(self,"ARTIFACT_XP_UPDATE")
+					self:GetScript("OnEvent")(self,"AZERITE_ITEM_EXPERIENCE_CHANGED")
 				else
 					self:GetScript("OnUpdate")(self, 5)
 				end
 				self:GetScript("OnEnter")(self)
 			elseif button == "LeftButton" and conf.ExpMode == "rep" then
 				ToggleCharacter("ReputationFrame")
-			elseif button == "LeftButton" and conf.ExpMode == "art" then
-				if not ArtifactFrame or not ArtifactFrame:IsShown() then
-					ShowUIPanel(SocketInventoryItem(16))
-				elseif ArtifactFrame and ArtifactFrame:IsShown() then
-					HideUIPanel(ArtifactFrame)
-				end
 			end
 		end
 	})

@@ -18,6 +18,7 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 	[11] = {176242,176244},		-- Warspear
 	[12] = {193759, 193759}, 	-- Hall of the Guardian (OrderHall)
 	[13] = {224869, 224871}, 	-- Dalaran, Broken Isles
+	[14] = {281404, 281402}, 	-- Dazar'alor
 } or { -- Alliance
 	[1] = {3561,10059},			-- Stormwind
 	[2] = {3562,11416},			-- Ironforge
@@ -32,6 +33,7 @@ local spells = (UnitFactionGroup("player") == "Horde") and {
 	[11] = {176248,176246},		-- Stormshield
 	[12] = {193759, 193759}, 	-- Hall of the Guardian (OrderHall)
 	[13] = {224869, 224871}, 	-- Dalaran, Broken Isles
+	[14] = {281403, 281400}, 	-- Boralus
 }
 
 local frame = CreateFrame("Frame", "TeleportMenu", UIParent)

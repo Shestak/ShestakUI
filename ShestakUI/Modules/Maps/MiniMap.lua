@@ -203,9 +203,6 @@ local micromenu = {
 	end},
 	{text = guildText, notCheckable = 1, func = function()
 		ToggleGuildFrame()
-		if IsInGuild() then
-			GuildFrame_TabClicked(GuildFrameTab2)
-		end
 	end},
 	{text = SOCIAL_BUTTON, notCheckable = 1, func = function()
 		ToggleFriendsFrame()

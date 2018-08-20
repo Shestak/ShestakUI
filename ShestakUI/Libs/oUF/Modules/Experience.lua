@@ -80,11 +80,10 @@ end
 local function UpdateTooltip(element)
 	local cur, max, perc, rested, restedPerc, _, isHonor = GetValues()
 
-	GameTooltip:SetOwner(element, "ANCHOR_BOTTOM", 0, -5)
 	GameTooltip:SetText(isHonor and HONOR or COMBAT_XP_GAIN.." "..format(LEVEL_GAINED, T.level), 0.40, 0.78, 1)
 	GameTooltip:AddLine(" ")
 	GameTooltip:AddLine(format(L_STATS_CURRENT_XP..": %s / %s (%d%%)", BreakUpLargeNumbers(cur), BreakUpLargeNumbers(max), perc), 0.75, 0.9, 1)
-	GameTooltip:AddLine(string.format(L_STATS_REMAINING_XP..": %s (%d%%)", BreakUpLargeNumbers(max - cur), (max - cur) / max * 100 + 0.5), 0.75, 0.9, 1)
+	GameTooltip:AddLine(format(L_STATS_REMAINING_XP..": %s (%d%%)", BreakUpLargeNumbers(max - cur), (max - cur) / max * 100 + 0.5), 0.75, 0.9, 1)
 
 	if(rested > 0) then
 		GameTooltip:AddLine(format('%s: %s (%d%%)', L_STATS_RESTED_XP, BreakUpLargeNumbers(rested), restedPerc), 0.75, 0.9, 1)
@@ -95,7 +94,7 @@ end
 
 local function OnEnter(element)
 	element:SetAlpha(element.inAlpha)
-	GameTooltip:SetOwner(element, element.tooltipAnchor)
+	GameTooltip:SetOwner(element, "ANCHOR_BOTTOM", 0, -5)	-- ShestakUI
 	element:UpdateTooltip()
 end
 

@@ -102,8 +102,6 @@ local function LoadSkin()
 		if parentFrame == QuestLogPopupDetailFrame or parentFrame == QuestFrame then
 			x = x + 8
 			y = y + 40
-		elseif parentFrame == QuestFrame then
-			x = x + 3
 		end
 		QuestNPCModel:ClearAllPoints()
 		QuestNPCModel:SetPoint("TOPLEFT", parentFrame, "TOPRIGHT", x, y)

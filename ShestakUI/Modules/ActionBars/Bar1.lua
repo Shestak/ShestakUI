@@ -40,7 +40,6 @@ end
 bar:RegisterEvent("PLAYER_LOGIN")
 bar:RegisterEvent("UPDATE_VEHICLE_ACTIONBAR")
 bar:RegisterEvent("UPDATE_OVERRIDE_ACTIONBAR")
-bar:RegisterEvent("CURRENCY_DISPLAY_UPDATE")
 bar:SetScript("OnEvent", function(self, event, ...)
 	if event == "PLAYER_LOGIN" then
 		for i = 1, NUM_ACTIONBAR_BUTTONS do
@@ -69,7 +68,5 @@ bar:SetScript("OnEvent", function(self, event, ...)
 				ActionButton_Update(button)
 			end
 		end
-	else
-		MainMenuBarMixin:OnEvent(event, ...)
 	end
 end)

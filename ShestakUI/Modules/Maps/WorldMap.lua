@@ -9,9 +9,12 @@ MapQuestInfoRewardsFrame.XPFrame.Name:SetFont(C.media.normal_font, 13)
 --	Change position
 ----------------------------------------------------------------------------------------
 hooksecurefunc(WorldMapFrame, "SynchronizeDisplayState", function()
-	WorldMapFrame:ClearAllPoints()
-	WorldMapFrame:SetPoint(unpack(C.position.map))
+	if not WorldMapFrame:IsMaximized() then
+		WorldMapFrame:ClearAllPoints()
+		WorldMapFrame:SetPoint(unpack(C.position.map))
+	end
 end)
+WorldMapFrame:SetClampedToScreen(true)
 
 ----------------------------------------------------------------------------------------
 --	Creating coordinate

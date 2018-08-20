@@ -4,7 +4,9 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Hide Blizzard ActionBars stuff(by Tukz)
 ----------------------------------------------------------------------------------------
-do
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function()
 	MainMenuBar:SetScale(0.00001)
 	MainMenuBar:EnableMouse(false)
 	OverrideActionBar:SetScale(0.00001)
@@ -39,7 +41,7 @@ do
 	hooksecurefunc("TalentFrame_LoadUI", function()
 		PlayerTalentFrame:UnregisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 	end)
-end
+end)
 
 do
 	local uiManagedFrames = {

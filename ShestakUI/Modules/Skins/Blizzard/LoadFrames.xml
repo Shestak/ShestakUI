@@ -7,6 +7,7 @@
 	<Script file="Archeology.lua"/>
 	<Script file="Artifact.lua"/>
 	<Script file="Auction.lua"/>
+	<Script file="Azerite.lua"/>
 	<Script file="BarberShop.lua"/>
 	<Script file="Binding.lua"/>
 	<Script file="BlackMarket.lua"/>
@@ -16,6 +17,7 @@
 	<Script file="Character.lua"/>
 	<Script file="ChatConfig.lua"/>
 	<Script file="Collections.lua"/>
+	<Script file="Communities.lua"/>
 	<Script file="Container.lua"/>
 	<Script file="Contribution.lua"/>
 	<Script file="DebugTools.lua"/>

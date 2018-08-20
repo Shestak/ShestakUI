@@ -258,6 +258,7 @@ local function Shared(self, unit)
 			self.Runes:CreateBackdrop("Default")
 			self.Runes:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.Runes:SetSize(217, 7)
+			self.Runes.colorSpec = true
 
 			for i = 1, 6 do
 				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_RuneBar", self.Runes)
@@ -268,12 +269,11 @@ local function Shared(self, unit)
 					self.Runes[i]:SetPoint("TOPLEFT", self.Runes[i-1], "TOPRIGHT", 1, 0)
 				end
 				self.Runes[i]:SetStatusBarTexture(C.media.texture)
-				self.Runes[i]:SetStatusBarColor(0.69, 0.31, 0.31)
 
 				self.Runes[i].bg = self.Runes[i]:CreateTexture(nil, "BORDER")
 				self.Runes[i].bg:SetAllPoints()
 				self.Runes[i].bg:SetTexture(C.media.texture)
-				self.Runes[i].bg:SetVertexColor(0.69, 0.31, 0.31, 0.2)
+				self.Runes[i].bg.multiplier = 0.2
 			end
 		end
 
@@ -990,10 +990,10 @@ local function Shared(self, unit)
 
 			self.Castbar.Text = T.SetFontString(self.Castbar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 			self.Castbar.Text:SetPoint("LEFT", self.Castbar, "LEFT", 2, 0)
-			self.Castbar.Text:SetPoint("RIGHT", self.Castbar.Time, "LEFT", -1, 0)
 			self.Castbar.Text:SetTextColor(1, 1, 1)
 			self.Castbar.Text:SetJustifyH("LEFT")
 			self.Castbar.Text:SetHeight(C.font.unit_frames_font_size)
+			self.Castbar.Text:SetWidth(self.Castbar:GetWidth() - 50)
 
 			if C.unitframe.castbar_icon == true and unit ~= "arena" then
 				self.Castbar.Button = CreateFrame("Frame", nil, self.Castbar)
