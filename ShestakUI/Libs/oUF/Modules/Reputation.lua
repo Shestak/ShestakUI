@@ -5,7 +5,8 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_reputation_bar ~= true then
 --	Based on oUF_Reputation(by p3lim)
 ----------------------------------------------------------------------------------------
 local _, ns = ...
-local oUF = ns.oUF
+local oUF = ns.oUF or oUF
+assert(oUF, 'oUF Reputation was unable to locate oUF install')
 
 local function GetReputation()
 	local pendingReward
@@ -68,21 +69,23 @@ end
 oUF.Tags.SharedEvents.UPDATE_FACTION = true
 oUF.colors.reaction[MAX_REPUTATION_REACTION + 1] = {0, 0.5, 0.9} -- paragon color
 
+-- Changed tooltip for ShestakUI
 local function UpdateTooltip(element)
 	local cur, max, name, factionID, standingID, standingText, pendingReward = GetReputation()
+	local rewardAtlas = pendingReward and "|A:ParagonReputation_Bag:0:0:0:0|a" or ""
+	local _, desc = GetFactionInfoByID(factionID)
+	local color = element.__owner.colors.reaction[standingID]
 
-	GameTooltip:SetOwner(element, "ANCHOR_BOTTOM", 0, -5)
-	GameTooltip:AddLine(string.format("%s (%s)", name, standingText))
+	GameTooltip:SetText(format("%s (%s)", name, standingText), color[1], color[2], color[3])
 	if(cur ~= max) then
-		GameTooltip:AddLine(string.format("%d / %d (%d%%)", cur, max, (cur) / (max) * 100))
+		GameTooltip:AddLine(format("%s / %s (%d%%) %s", BreakUpLargeNumbers(cur), BreakUpLargeNumbers(max), (cur) / (max) * 100, rewardAtlas), 0.75, 0.9, 1)
 	end
-
 	GameTooltip:Show()
 end
 
 local function OnEnter(element)
 	element:SetAlpha(element.inAlpha)
-	GameTooltip:SetOwner(element, element.tooltipAnchor)
+	GameTooltip:SetOwner(element, "ANCHOR_BOTTOM", 0, -5)	-- ShestakUI
 	element:UpdateTooltip()
 end
 
@@ -105,9 +108,9 @@ local function Update(self, event, unit)
 		element:SetValue(cur)
 
 		if(element.colorStanding) then
-			local _, id = GetWatchedFactionInfo()
-			element:SetStatusBarColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b)
-			element.bg:SetVertexColor(FACTION_BAR_COLORS[id].r, FACTION_BAR_COLORS[id].g, FACTION_BAR_COLORS[id].b, 0.2)
+			local colors = self.colors.reaction[standingID]
+			element:SetStatusBarColor(colors[1], colors[2], colors[3])
+			element.bg:SetVertexColor(colors[1], colors[2], colors[3], 0.2)	-- ShestakUI
 		end
 
 		if(element.Reward) then
