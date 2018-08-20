@@ -142,14 +142,14 @@ local function OnEnter(element)
 	if (azeriteItemLocation) then
 		local azeriteItem = Item:CreateFromItemLocation(azeriteItemLocation)
 		ItemDataLoadedCancelFunc = azeriteItem:ContinueWithCancelOnItemLoad(function()
-			GameTooltip:SetOwner(element, element.tooltipAnchor)
+			GameTooltip:SetOwner(element, "ANCHOR_BOTTOM", 0, -5)	-- ShestakUI
 			GameTooltip:SetText(AZERITE_POWER_TOOLTIP_TITLE:format(element.level, element.max - element.current), HIGHLIGHT_FONT_COLOR:GetRGB())
 			GameTooltip:AddLine(AZERITE_POWER_TOOLTIP_BODY:format(azeriteItem:GetItemName()))
 			GameTooltip:Show()
 		end)
 	elseif (HasArtifactEquipped()) then
 		local _, _, name = C_ArtifactUI.GetEquippedArtifactInfo()
-		GameTooltip:SetOwner(element, element.tooltipAnchor)
+		GameTooltip:SetOwner(element, "ANCHOR_BOTTOM", 0, -5)	-- ShestakUI
 		GameTooltip:SetText(name, HIGHLIGHT_FONT_COLOR:GetRGB())
 		GameTooltip:AddLine(
 			ARTIFACT_POWER_TOOLTIP_TITLE:format(
