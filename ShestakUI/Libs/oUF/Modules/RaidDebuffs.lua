@@ -40,6 +40,9 @@ do
 			["Curse"] = true,
 			["Poison"] = true,
 		},
+		["MAGE"] = {
+			["Curse"] = true,
+		},
 		["MONK"] = {
 			["Magic"] = false,
 			["Poison"] = true,

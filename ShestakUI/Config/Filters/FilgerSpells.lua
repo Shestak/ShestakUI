@@ -1005,9 +1005,9 @@ C["filger_spells"] = {
 			-- Lethal Shots
 			{spellID = 260395, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Precise Shots
-			{spellID = 260242, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 260242, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Frenzy
-			{spellID = 272790, unitID = "pet", caster = "player", filter = "BUFF"},			
+			{spellID = 272790, unitID = "pet", caster = "player", filter = "BUFF"},
 			-- Steady Focus
 			{spellID = 193533, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lock and Load
@@ -1099,7 +1099,7 @@ C["filger_spells"] = {
 			-- A Murder of Crows
 			{spellID = 131894, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hunter's Mark
-			{spellID = 257284, unitID = "target", caster = "player", filter = "DEBUFF"},			
+			{spellID = 257284, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Vulnerable
 			--BETA {spellID = 187131, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hunter's Mark
@@ -1427,6 +1427,8 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
+			-- Remove Curse
+			{spellID = 475, filter = "CD"},
 			-- Counterspell
 			{spellID = 2139, filter = "CD"},
 			-- Living Bomb
@@ -1717,7 +1719,7 @@ C["filger_spells"] = {
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Touch of Death
-			{spellID = 115080, unitID = "target", caster = "player", filter = "DEBUFF"},			
+			{spellID = 115080, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Heavy Stagger
 			{spellID = 124273, unitID = "player", caster = "player", filter = "DEBUFF"},
 			-- Keg Smash
@@ -1864,7 +1866,7 @@ C["filger_spells"] = {
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Inquisition
-			{spellID = 84963, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 84963, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shield of Vengeance
 			{spellID = 184662, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Eye for an Eye
@@ -1905,7 +1907,7 @@ C["filger_spells"] = {
 
 			-- Buffs
 			-- Righteous Verdict
-			{spellID = 267611, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 267611, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Infusion of Light
 			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
@@ -2019,7 +2021,7 @@ C["filger_spells"] = {
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Execution Sentence
-			{spellID = 267799, unitID = "target", caster = "player", filter = "DEBUFF"},			
+			{spellID = 267799, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Eye of Tyr
 			{spellID = 209202, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Forbearance
@@ -2258,8 +2260,8 @@ C["filger_spells"] = {
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Schism
-			{spellID = 214621, unitID = "target", caster = "player", filter = "DEBUFF"},			
-			
+			{spellID = 214621, unitID = "target", caster = "player", filter = "DEBUFF"},
+
 			-- Trinket Effects
 			-- Mark of Doom [Prophecy of Fear]
 			{spellID = 184073, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -2506,7 +2508,7 @@ C["filger_spells"] = {
 
 			-- Buffs
 			-- Shuriken Combo
-			{spellID = 245640, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 245640, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Jolly Roger
 			{spellID = 199603, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grand Melee
@@ -3023,7 +3025,7 @@ C["filger_spells"] = {
 			Position = {"TOP", P_BUFF_ICON_Anchor},
 
 			-- Dark Soul: Misery
-			{spellID = 113860, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 113860, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dark Soul: Instability
 			{spellID = 113858, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Deadwind Harvester
