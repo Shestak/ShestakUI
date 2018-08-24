@@ -93,6 +93,9 @@ local function LoadSkin()
 	specspell2.specIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	specspell2.specIcon:SetParent(specspell2.backdrop)
 
+	T.SkinScrollBar(PlayerTalentFrameSpecializationSpellScrollFrameScrollBar)
+	PlayerTalentFrameSpecializationSpellScrollFrameScrollBar:SetPoint("TOPLEFT", PlayerTalentFrameSpecializationSpellScrollFrame, "TOPRIGHT", -16, -16)
+
 	hooksecurefunc("PlayerTalentFrame_UpdateSpecFrame", function(self, spec)
 		local playerTalentSpec = GetSpecialization(nil, self.isPet, PlayerSpecTab2:GetChecked() and 2 or 1)
 		local shownSpec = spec or playerTalentSpec or 1
