@@ -204,6 +204,8 @@ function Stuffing:SlotUpdate(b)
 		b.frame.text:SetText("")
 	end
 
+	b.frame.Azerite:Hide()
+
 	if b.frame.UpgradeIcon then
 		b.frame.UpgradeIcon:SetPoint("TOPLEFT", C.bag.button_size/2.7, -C.bag.button_size/2.7)
 		b.frame.UpgradeIcon:SetSize(C.bag.button_size/1.7, C.bag.button_size/1.7)
@@ -221,6 +223,10 @@ function Stuffing:SlotUpdate(b)
 		if C.bag.ilvl == true and b.itemlevel and quality > 1 and (b.itemClassID == 2 or b.itemClassID == 4 or (b.itemClassID == 3 and b.itemSubClassID == 11)) then
 			b.itemlevel = _getRealItemLevel(clink, self, b.bag, b.slot) or b.itemlevel
 			b.frame.text:SetText(b.itemlevel)
+		end
+
+		if b.frame.Azerite and C_AzeriteEmpoweredItem.IsAzeriteEmpoweredItemByID(clink) then
+			b.frame.Azerite:Show()
 		end
 
 		if (IsItemUnusable(clink) or b.level and b.level > T.level) and not locked then
@@ -532,6 +538,13 @@ function Stuffing:SlotNew(bag, slot)
 			ret.frame.text:SetPoint("TOPLEFT", 1, -1)
 			ret.frame.text:SetTextColor(1, 1, 0)
 		end
+
+		ret.frame.Azerite = ret.frame:CreateTexture(nil, "OVERLAY")
+		ret.frame.Azerite:SetAtlas("AzeriteIconFrame")
+		ret.frame.Azerite:SetTexCoord(0, 1, 0, 1)
+		ret.frame.Azerite:SetPoint("TOPLEFT", ret.frame, 1, -1)
+		ret.frame.Azerite:SetPoint("BOTTOMRIGHT", ret.frame, -1, 1)
+		ret.frame.Azerite:Hide()
 
 		local Battlepay = _G[ret.frame:GetName()].BattlepayItemTexture
 		if Battlepay then
