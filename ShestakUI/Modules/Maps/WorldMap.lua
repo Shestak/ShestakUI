@@ -20,7 +20,8 @@ WorldMapFrame:SetClampedToScreen(true)
 --	Creating coordinate
 ----------------------------------------------------------------------------------------
 local coords = CreateFrame("Frame", "CoordsFrame", WorldMapFrame)
-coords:SetFrameLevel(90)
+coords:SetFrameLevel(WorldMapFrame.BorderFrame:GetFrameLevel() + 2)
+coords:SetFrameStrata(WorldMapFrame.BorderFrame:GetFrameStrata())
 coords.PlayerText = coords:CreateFontString(nil, "ARTWORK", "GameFontNormal")
 coords.PlayerText:SetPoint("BOTTOMLEFT", WorldMapFrame.ScrollContainer, "BOTTOMLEFT", 5, 5)
 coords.PlayerText:SetJustifyH("LEFT")
