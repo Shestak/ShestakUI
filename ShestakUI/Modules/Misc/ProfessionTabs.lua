@@ -153,6 +153,7 @@ local function HandleProfession(object, professionID, hat)
 end
 
 local function HandleTabs(object)
+	if not object then return end
 	tabs[object] = tabs[object] or {}
 
 	if InCombatLockdown() then
@@ -183,7 +184,7 @@ end
 function handler:TRADE_SKILL_SHOW(event)
 	local owner = ATSWFrame or MRTSkillFrame or SkilletFrame or TradeSkillFrame
 
-	if IsAddOnLoaded("TradeSkillDW") and owner == TradeSkillFrame then
+	if (IsAddOnLoaded("TradeSkillDW") or IsAddOnLoaded("TradeSkillMaster")) and owner == TradeSkillFrame then
 		self:UnregisterEvent(event)
 	else
 		HandleTabs(owner)
