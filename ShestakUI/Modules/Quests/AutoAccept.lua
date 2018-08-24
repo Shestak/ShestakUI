@@ -213,14 +213,25 @@ local rogueClassHallInsignia = {
 	[93188] = true, -- Mongar
 }
 
-local function GetActiveGossipQuestInfo(index)
-	local name, level, isTrivial, isComplete, isLegendary, isIgnored = select(((index * 6) - 6) + 1, GetGossipActiveQuests())
-	return name, level, isTrivial, isIgnored, isComplete, isLegendary
-end
+local darkmoonDailyNPCs = {
+	[54601] = true, -- Mola
+	[15303] = true, -- Maxima Blastenheimer
+	[14841] = true, -- Rinling
+	[54605] = true, -- Finlay Coolshot
+	[85546] = true, -- Ziggie Sparks
+	[54485] = true, -- Jessica Rogers
+	[85519] = true, -- Christoph VonFeasel
+	[67370] = true, -- Jeremy Feasel
+}
 
 local function GetAvailableGossipQuestInfo(index)
 	local name, level, isTrivial, frequency, isRepeatable, isLegendary, isIgnored = select(((index * 7) - 7) + 1, GetGossipAvailableQuests())
 	return name, level, isTrivial, isIgnored, isRepeatable, frequency == 2, frequency == 3, isLegendary
+end
+
+local function GetActiveGossipQuestInfo(index)
+	local name, level, isTrivial, isComplete, isLegendary, isIgnored = select(((index * 6) - 6) + 1, GetGossipActiveQuests())
+	return name, level, isTrivial, isIgnored, isComplete, isLegendary
 end
 
 QuickQuest:Register("GOSSIP_SHOW", function()
@@ -264,6 +275,16 @@ QuickQuest:Register("GOSSIP_SHOW", function()
 		return SelectGossipOption(1)
 	end
 
+	if(darkmoonDailyNPCs[npcID] and active == 1 and not select(5, GetActiveGossipQuestInfo(1))) then
+		-- auto-start the daily interaction
+		for index = 1, GetNumGossipOptions() do
+			if(string.find((select((index * 2) - 1, GetGossipOptions())), 'FF0008E8')) then
+				-- matching by the blue text color is sufficient
+				return SelectGossipOption(index)
+			end
+		end
+	end
+
 	if(available == 0 and active == 0 and GetNumGossipOptions() == 1) then
 		if(string.match((GetGossipOptions()), TRACKER_HEADER_PROVINGGROUNDS)) then
 			-- ignore proving grounds queue
@@ -277,7 +298,9 @@ QuickQuest:Register("GOSSIP_SHOW", function()
 		end
 
 		if(QuickQuestDB.gossip) then
-			local _, instance = GetInstanceInfo()
+			local _, instance, _, _, _, _, _, mapID = GetInstanceInfo()
+			if(QuickQuestDB.withered and instance == "scenario" and mapID == 1626) then return end
+
 			if(instance == "raid" and QuickQuestDB.gossipraid > 0) then
 				if(GetNumGroupMembers() > 1 and QuickQuestDB.gossipraid < 2) then
 					return
@@ -438,12 +461,3 @@ QuickQuest:Register("MODIFIER_STATE_CHANGED", function(key, state)
 		modifier = state == 1
 	end
 end, true)
-
-local function CheckScenario()
-	if(QuickQuestDB.withered) then
-		local name = C_Scenario.IsInScenario() and C_Scenario.GetInfo()
-		DISABLED = name == L_MISC_COLLAPSE
-	end
-end
-
-QuickQuest:Register("PLAYER_ENTERING_WORLD", CheckScenario, true)
