@@ -45,14 +45,34 @@ end
 		level - the minimum level you must be (most of the time we don't need to use this because it will register the spell learned event if you don't know the spell, but in some cases it may be useful)
 
 	Additional Checks: (Note we always run a check when gaining/losing an aura)
+		combat - check when entering combat
 		instance - check when entering a party/raid instance
 		pvp - check when entering a bg/arena
-		combat - check when entering combat
 
 	For every group created a new frame is created, it's a lot easier this way.
 ]]--------------------------------------------------------------------------------------
 if C.reminder.solo_buffs_enable == true then
 	T.ReminderSelfBuffs = {
+		MAGE = {
+			[1] = {	-- Intellect group
+				["spells"] = {
+					1459,	-- Arcane Intellect
+				},
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
+			},
+		},
+		PRIEST = {
+			[1] = {	-- Stamina group
+				["spells"] = {
+					21562,	-- Power Word: Fortitude
+				},
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true
+			},
+		},
 		ROGUE = {
 			[1] = {	-- Lethal Poisons group
 				["spells"] = {
@@ -70,6 +90,16 @@ if C.reminder.solo_buffs_enable == true then
 					108211,	-- Leeching Poison
 				},
 				["spec"] = 1,		-- Only Assassination have poisen now
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
+			},
+		},
+		WARRIOR = {
+			[1] = {	-- Battle Shout group
+				["spells"] = {
+					6673,	-- Battle Shout
+				},
 				["combat"] = true,
 				["instance"] = true,
 				["pvp"] = true,
