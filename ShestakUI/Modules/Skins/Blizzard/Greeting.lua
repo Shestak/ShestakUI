@@ -15,13 +15,25 @@ local function LoadSkin()
 		QuestGreetingFrameHorizontalBreak:Kill()
 
 		local numActiveQuests = GetNumActiveQuests()
-		if numActiveQuests == 0 then return end
-		for i = 1, numActiveQuests do
-			local button = _G["QuestTitleButton"..i]
+		if numActiveQuests > 0 then
+			for i = 1, numActiveQuests do
+				local button = _G["QuestTitleButton"..i]
+				if button:GetFontString() then
+					if button:GetFontString():GetText() and button:GetFontString():GetText():find("|cff000000") then
+						button:GetFontString():SetText(string.gsub(button:GetFontString():GetText(), "|cff000000", "|cffFFFF00"))
+					end
+				end
+			end
+		end
 
-			if button:GetFontString() then
-				if button:GetFontString():GetText() and button:GetFontString():GetText():find("|cff000000") then
-					button:GetFontString():SetText(string.gsub(button:GetFontString():GetText(), "|cff000000", "|cffFFFF00"))
+		local numAvailableQuests = GetNumAvailableQuests()
+		if numAvailableQuests > 0 then
+			for i = numActiveQuests + 1, numActiveQuests + numAvailableQuests do
+				local button = _G["QuestTitleButton"..i]
+				if button:GetFontString() then
+					if button:GetFontString():GetText() and button:GetFontString():GetText():find("|cff000000") then
+						button:GetFontString():SetText(string.gsub(button:GetFontString():GetText(), "|cff000000", "|cffFFFF00"))
+					end
 				end
 			end
 		end
