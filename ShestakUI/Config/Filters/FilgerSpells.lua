@@ -1299,6 +1299,8 @@ C["filger_spells"] = {
 			{spellID = 198111, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror Image
 			{spellID = 55342, filter = "ICD", trigger = "NONE", duration = 40},
+			-- Icicles
+			{spellID = 205473, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -3602,12 +3604,6 @@ C["filger_spells"] = {
 			{spellID = 32182, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Time Warp
 			{spellID = 80353, unitID = "player", caster = "all", filter = "BUFF"},
-
-			-- Legendaries
-			-- Norgannon's Foresight [Boots]
-			{spellID = 236380, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Zann'esu Journey [Waist]
-			{spellID = 226852, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Professions
 			-- Goblin Glider [Goblin Glider Kit]
