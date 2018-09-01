@@ -95,7 +95,7 @@ local updateIcon = function(unit, icons, index, offset, filter, isDebuff, visibl
 
 		local show = (icons.CustomFilter or customFilter) (icons, unit, icon, name, texture,
 			count, dispelType, duration, expiration, caster, isStealable, nameplateShowSelf, spellID,
-			canApply, isBossDebuff, casterIsPlayer, nameplateShowAll,timeMod, effect1, effect2, effect3)
+			canApply, isBossDebuff, casterIsPlayer, nameplateShowAll, timeMod, effect1, effect2, effect3)
 
 		if(show) then
 			-- We might want to consider delaying the creation of an actual cooldown
