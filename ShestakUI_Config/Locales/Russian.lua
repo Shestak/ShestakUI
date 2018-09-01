@@ -264,7 +264,7 @@ L_GUI_LOOT_ENABLE = "Включить окно добычи"
 L_GUI_LOOT_ROLL_ENABLE = "Включить групповое окно добычи"
 L_GUI_LOOT_ICON_SIZE = "Размер иконки"
 L_GUI_LOOT_WIDTH = "Ширина окна добычи"
-L_GUI_LOOT_AUTOGREED = "Автоматический распыл/не откажусь для зеленых предметов на макс. уровне"
+L_GUI_LOOT_AUTOGREED = "Авто не откажусь/распылить для зеленых предметов на макс. уровне"
 L_GUI_LOOT_AUTODE = "Убрать запрос о распылении предмета"
 
 -- Nameplate options
