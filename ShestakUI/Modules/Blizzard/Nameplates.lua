@@ -559,15 +559,15 @@ local function style(self, unit)
 	-- Aura tracking
 	if C.nameplate.track_auras == true or C.nameplate.track_buffs == true then
 		self.Auras = CreateFrame("Frame", nil, self)
-		self.Auras:SetPoint("BOTTOMRIGHT", self.Health, "TOPRIGHT", 2 * T.noscalemult, C.font.nameplates_font_size + 7)
+		self.Auras:SetPoint("BOTTOMRIGHT", self.Health, "TOPRIGHT", 0, C.font.nameplates_font_size + 7)
 		self.Auras.initialAnchor = "BOTTOMRIGHT"
 		self.Auras["growth-y"] = "UP"
 		self.Auras["growth-x"] = "LEFT"
 		self.Auras.numDebuffs = C.nameplate.track_auras and 6 or 0
 		self.Auras.numBuffs = C.nameplate.track_buffs and 4 or 0
 		self.Auras:SetSize(20 + C.nameplate.width, C.nameplate.auras_size)
-		self.Auras.spacing = 2
-		self.Auras.size = C.nameplate.auras_size
+		self.Auras.spacing = 5* T.noscalemult
+		self.Auras.size = C.nameplate.auras_size * T.noscalemult - 3
 
 		self.Auras.CustomFilter = function(icons, unit, icon, name, texture, count, dispelType, duration, expiration, caster, isStealable, nameplateShowSelf, spellID, canApply, isBossDebuff, casterIsPlayer, nameplateShowAll)
 			local allow = false
@@ -592,20 +592,17 @@ local function style(self, unit)
 		end
 
 		self.Auras.PostCreateIcon = function(element, button)
-			button:SetScale(T.noscalemult)
-			button:SetTemplate("Default")
+			CreateVirtualFrame(button)
 			button:EnableMouse(false)
 
-			button.remaining = T.SetFontString(button, C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
+			button.remaining = T.SetFontString(button, C.font.auras_font, C.font.auras_font_size * T.noscalemult, C.font.auras_font_style)
 			button.remaining:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
-			button.remaining:SetPoint("CENTER", button, "CENTER", 1, 1)
+			button.remaining:SetPoint("CENTER", button, "CENTER", 1, 0)
 			button.remaining:SetJustifyH("CENTER")
 
 			button.cd.noOCC = true
 			button.cd.noCooldownCount = true
 
-			button.icon:SetPoint("TOPLEFT", 2, -2)
-			button.icon:SetPoint("BOTTOMRIGHT", -2, 2)
 			button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 			button.count:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 1, 0)
@@ -616,8 +613,6 @@ local function style(self, unit)
 			if C.aura.show_spiral == true then
 				element.disableCooldown = false
 				button.cd:SetReverse(true)
-				button.cd:SetPoint("TOPLEFT", button, "TOPLEFT", 2, -2)
-				button.cd:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
 				button.parent = CreateFrame("Frame", nil, button)
 				button.parent:SetFrameLevel(button.cd:GetFrameLevel() + 1)
 				button.count:SetParent(button.parent)
