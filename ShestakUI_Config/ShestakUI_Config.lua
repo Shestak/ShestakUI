@@ -696,6 +696,7 @@ function CreateUIConfig()
 	end
 	UIConfigMain:SetFrameStrata("DIALOG")
 	UIConfigMain:SetFrameLevel(20)
+	UIConfigMain:SetClampedToScreen(true)
 	tinsert(UISpecialFrames, "UIConfigMain")
 
 	-- Version Title
