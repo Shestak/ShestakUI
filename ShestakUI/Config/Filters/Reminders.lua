@@ -8,10 +8,10 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.reminder.raid_buffs_enable == true or C.announcements.flask_food == true then
 	T.ReminderBuffs = {
 		Flask = {
-			188033,	-- Flask of the Seventh Demon (Agility)
-			188034,	-- Flask of the Countless Armies (Strenght)
-			188035,	-- Flask of Ten Thousand Scars (Stamina)
-			188031,	-- Flask of the Whispered Pact (Intellect)
+			251836,	-- Flask of the Currents (Agility)
+			251839,	-- Flask of the Undertow (Strenght)
+			251838,	-- Flask of the Vast Horizon (Stamina)
+			251837,	-- Flask of Endless Fathoms (Intellect)
 		},
 		BattleElixir = {
 			--spellID,	-- Spell name
