@@ -42,11 +42,13 @@ _G.CHAT_FLAG_GM = "|cff4154F5"..L_CHAT_GM.."|r "
 _G.ERR_FRIEND_ONLINE_SS = "|Hplayer:%s|h[%s]|h "..L_CHAT_COME_ONLINE
 _G.ERR_FRIEND_OFFLINE_S = "[%s] "..L_CHAT_GONE_OFFLINE
 
--- Hide Quick Join button
-QuickJoinToastButton:Kill()
-
 -- Hide chat bubble menu button
 ChatFrameMenuButton:Kill()
+
+-- Kill channel and voice buttons
+ChatFrameChannelButton:Kill()
+ChatFrameToggleVoiceDeafenButton:Kill()
+ChatFrameToggleVoiceMuteButton:Kill()
 
 -- Set chat style
 local function SetChatStyle(frame)
@@ -102,11 +104,6 @@ local function SetChatStyle(frame)
 	-- Kill scroll bar
 	frame.ScrollBar:Kill()
 	frame.ScrollToBottomButton:Kill()
-
-	-- Kill channel and voice buttons
-	ChatFrameChannelButton:Kill()
-	ChatFrameToggleVoiceDeafenButton:Kill()
-	ChatFrameToggleVoiceMuteButton:Kill()
 
 	-- Kill off editbox artwork
 	local a, b, c = select(6, _G[chat.."EditBox"]:GetRegions()) a:Kill() b:Kill() c:Kill()
@@ -165,7 +162,7 @@ local function SetChatStyle(frame)
 		CombatLogQuickButtonFrame_Custom:StripTextures()
 		CombatLogQuickButtonFrame_Custom:CreateBackdrop("Transparent")
 		CombatLogQuickButtonFrame_Custom.backdrop:SetPoint("TOPLEFT", 1, -4)
-		CombatLogQuickButtonFrame_Custom.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
+		CombatLogQuickButtonFrame_Custom.backdrop:SetPoint("BOTTOMRIGHT", -22, 0)
 		T.SkinCloseButton(CombatLogQuickButtonFrame_CustomAdditionalFilterButton, CombatLogQuickButtonFrame_Custom.backdrop, " ", true)
 		CombatLogQuickButtonFrame_CustomAdditionalFilterButton:SetSize(12, 12)
 		CombatLogQuickButtonFrame_CustomAdditionalFilterButton:SetHitRectInsets (0, 0, 0, 0)
@@ -253,16 +250,26 @@ local function SetupChatPosAndFont(self)
 				ChatFrame2TabText:Hide()
 				ChatFrame2Tab:SetWidth(0.001)
 				ChatFrame2Tab.SetWidth = T.dummy
+				FCF_DockUpdate()
 			end
 		end
 	end
 
-	-- Reposition battle.net popup over chat #1
-	BNToastFrame:HookScript("OnShow", function(self)
-		self:ClearAllPoints()
-		self:SetPoint(unpack(C.position.bn_popup))
-	end)
+	-- Reposition Quick Join Toast and battle.net popup
+	QuickJoinToastButton:ClearAllPoints()
+	QuickJoinToastButton:SetPoint(unpack(C.position.bn_popup))
+	QuickJoinToastButton:EnableMouse(false)
+	QuickJoinToastButton.ClearAllPoints = T.dummy
+	QuickJoinToastButton.SetPoint = T.dummy
+	QuickJoinToastButton:SetAlpha(0)
 end
+
+GeneralDockManagerOverflowButton:SetPoint("BOTTOMRIGHT", ChatFrame1, "TOPRIGHT", 0, 5)
+hooksecurefunc(GeneralDockManagerScrollFrame, "SetPoint", function(self, point, anchor, attachTo, x, y)
+	if anchor == GeneralDockManagerOverflowButton and x == 0 and y == 0 then
+		self:SetPoint(point, anchor, attachTo, 0, -4)
+	end
+end)
 
 local UIChat = CreateFrame("Frame")
 UIChat:RegisterEvent("ADDON_LOADED")
