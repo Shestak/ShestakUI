@@ -1281,8 +1281,6 @@ C["filger_spells"] = {
 			{spellID = 12042, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Combustion
 			{spellID = 190319, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Pyretic Incantation
-			{spellID = 194329, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blazing Barrier
 			{spellID = 235313, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Prismatic Barrier
@@ -1293,8 +1291,6 @@ C["filger_spells"] = {
 			{spellID = 48107, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Floes
 			{spellID = 108839, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Evanesce
-			{spellID = 157913, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 198111, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror Image
@@ -1322,48 +1318,15 @@ C["filger_spells"] = {
 			--BETA {spellID = 79683, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hot Streak!
 			{spellID = 48108, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Kael'thas's Ultimate Ability
-			{spellID = 209455, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Freezing Rain
-			{spellID = 240555, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pyroclasm
 			{spellID = 269651, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Clearcasting
-			{spellID = 79684, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 263725, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			-- Alchemy Stones
-			-- Intellect
-			{spellID = 60234, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Hallow's End
-			-- Now is the time! (Spell Power, Proc) [Mithril Wristwatch]
-			{spellID = 127923, unitID = "player", caster = "player", filter = "BUFF"},
-			-- PvP Trinkets
-			-- Savage Fortitude (Health, Use) [Battlemaster]
-			{spellID = 181706, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Surge of Dominance (Intellect, Proc)
-			{spellID = 190027, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Rapid Adaptation (Versatility, Use)
-			{spellID = 170397, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Damage [Intellect]
-			-- Nefarious Pact (Cast speed, Proc) [Whispers in the Dark]
-			{spellID = 225774, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Valarjar's Path (Primary stat, Use) [Horn of Valor]
-			{spellID = 215956, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Focused Lightning (Mastery, Proc) [Stormsinger Fulmination Charge]
-			{spellID = 215632, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Collapsing Shadow (Agility, Use) [Obelisk of the Void]
-			{spellID = 215476, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Elune's Light (Agility, Use) [Moonlit Prism]
-			{spellID = 215648, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Burning Intensity (Crit, Proc) [Infernal Writ]
-			{spellID = 215816, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Maddening Whispers (Damage, Proc) [Wriggling Sinew]
-			{spellID = 222046, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Enchants
-			-- Mark of the Claw (Crit and Haste)
-			{spellID = 190909, unitID = "player", caster = "all", filter = "BUFF"},
+			
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1380,14 +1343,8 @@ C["filger_spells"] = {
 			{spellID = 44457, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Nether Tempest
 			{spellID = 114923, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Frost Bomb
-			--BETA {spellID = 112948, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Pyroblast
-			{spellID = 11366, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Freeze (Pet)
 			{spellID = 33395, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Water Jet (Pet)
-			--BETA {spellID = 135029, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Frostbite
 			{spellID = 198121, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Frost Nova
@@ -1402,8 +1359,7 @@ C["filger_spells"] = {
 			{spellID = 31589, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			-- Mark of Doom [Prophecy of Fear]
-			{spellID = 184073, unitID = "target", caster = "player", filter = "DEBUFF"},
+			
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -1455,8 +1411,6 @@ C["filger_spells"] = {
 			{spellID = 108853, filter = "CD"},
 			-- Cone of Cold
 			{spellID = 120, filter = "CD"},
-			-- Water Jet (Pet)
-			--BETA {spellID = 135029, filter = "CD"},
 			-- Comet Storm
 			{spellID = 153595, filter = "CD"},
 			-- Ice Floes
