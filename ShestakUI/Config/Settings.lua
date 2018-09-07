@@ -427,7 +427,7 @@ C["aura"] = {
 --	Filger options
 ----------------------------------------------------------------------------------------
 C["filger"] = {
-	["enable"] = true,							-- Enable Filger
+	["enable"] = false,							-- Enable Filger (fps isssue)
 	["test_mode"] = false,						-- Test icon mode
 	["max_test_icon"] = 5,						-- The number of icons to the test
 	["show_tooltip"] = false,					-- Show tooltip
