@@ -373,7 +373,7 @@ local function UpdateName(self)
 end
 
 local function castColor(self, unit, name, castid)
-	if self.interrupt then
+	if self.notInterruptible then
 		self:SetStatusBarColor(0.78, 0.25, 0.25)
 		self.bg:SetColorTexture(0.78, 0.25, 0.25, 0.2)
 	else
