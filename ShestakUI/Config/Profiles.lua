@@ -156,7 +156,7 @@ if Sw2rT1 then
 	C["misc"].hide_talking_head = true
 	C["announcements"].pull_countdown = false
 	C["automation"].accept_invite = true
-	C["automation"].accept_quest = true
+	--C["automation"].accept_quest = true
 	C["automation"].auto_collapse = true
 	C["automation"].currency_cap = true
 	C["skins"].blizzard_frames = true
@@ -176,7 +176,6 @@ if Sw2rT1 then
 	C["chat"].damage_meter_spam = true
 	C["bag"].ilvl = true
 	C["map"].fog_of_war = true
-	C["nameplate"].combat = true
 	C["unitframe"].enemy_health_color = false
 	C["unitframe"].castbar_latency = false
 	C["raidframe"].raid_groups = 6
