@@ -549,6 +549,10 @@ local function LoadSkin()
 	OrderHallMissionFrame.GarrCorners:StripTextures()
 	OrderHallMissionFrame.ClassHallIcon:Kill()
 	T.SkinCloseButton(OrderHallMissionFrame.CloseButton)
+	
+	OrderHallMissionTutorialFrame.GlowBox.ArrowGlowUp:Hide()
+	OrderHallMissionTutorialFrame.GlowBox:StripTextures()
+	OrderHallMissionTutorialFrame.GlowBox:SetTemplate("Transparent")
 	T.SkinCloseButton(OrderHallMissionTutorialFrame.GlowBox.CloseButton)
 
 	for i = 1, 3 do
