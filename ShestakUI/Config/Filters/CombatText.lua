@@ -15,6 +15,8 @@ if C.combattext.healing then
 	T.healfilter[207694] = true		-- Symbiote Strike
 	T.healfilter[242597] = true		-- Rethu's Incessant Courage
 	T.healfilter[241835] = true		-- Starlight of Celumbra
+	T.healfilter[273836] = true		-- Filthy Transfusion [Azerite trait]
+	T.healfilter[280707] = true		-- Laser Matrix [Azerite trait]
 end
 
 -- General merge outgoing damage
@@ -30,6 +32,8 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[252907] = 5			-- Torment the Weak
 	T.aoespam[252896] = 0.5			-- Chaotic Darkness
 	T.aoespam[253022] = 0.5			-- Sorrow
+	T.aoespam[273836] = 3			-- Filthy Transfusion [Azerite trait]
+	T.aoespam[280705] = 3			-- Laser Matrix [Azerite trait]
 end
 
 -- Class config
