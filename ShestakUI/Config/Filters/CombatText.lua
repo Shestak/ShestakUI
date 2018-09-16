@@ -40,6 +40,8 @@ end
 -- Class config
 if T.class == "DEATHKNIGHT" then
 	if C.combattext.merge_aoe_spam then
+		T.aoespam[91778] = 0		-- Sweeping Claws
+		T.aoespam[207311] = 0		-- Clawing Shadows
 		T.aoespam[115994] = 4		-- Unholy Blight
 		T.aoespam[206931] = 2.5		-- Blooddrinker
 		T.aoespam[279303] = 1		-- Frost Breath
