@@ -1673,8 +1673,7 @@ C["filger_spells"] = {
 			{spellID = 17, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Renew
 			{spellID = 139, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Power of the Dark Side
-			{spellID = 198069, unitID = "player", caster = "player", filter = "BUFF"},
+
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -1686,6 +1685,8 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
+			-- Power of the Dark Side
+			{spellID = 198069, unitID = "player", caster = "player", filter = "BUFF"},			
 			-- Lingering Insanity
 			{spellID = 197937, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadowy Insight

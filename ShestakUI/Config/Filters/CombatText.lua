@@ -34,11 +34,14 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[253022] = 0.5			-- Sorrow
 	T.aoespam[273836] = 3			-- Filthy Transfusion [Azerite trait]
 	T.aoespam[280705] = 3			-- Laser Matrix [Azerite trait]
+	T.aoespam[282724] = 5			-- Battlefield Focus [Azerite trait]
 end
 
 -- Class config
 if T.class == "DEATHKNIGHT" then
 	if C.combattext.merge_aoe_spam then
+		T.aoespam[91778] = 0		-- Sweeping Claws
+		T.aoespam[207311] = 0		-- Clawing Shadows
 		T.aoespam[115994] = 4		-- Unholy Blight
 		T.aoespam[206931] = 2.5		-- Blooddrinker
 		T.aoespam[279303] = 1		-- Frost Breath
