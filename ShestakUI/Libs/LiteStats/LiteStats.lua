@@ -634,7 +634,7 @@ if gold.enabled then
 
 			if C.stats.currency_raid and T.level >= 110 then
 				IsSubTitle = 4
-				Currency(1273, false, true)	-- Seal of Broken Fate
+				Currency(1580, false, true)	-- Seal of Wartorn Fate
 			end
 
 			if C.stats.currency_pvp then
