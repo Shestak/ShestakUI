@@ -607,7 +607,7 @@ local function style(self, unit)
 
 			button.count:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 1, 0)
 			button.count:SetJustifyH("RIGHT")
-			button.count:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
+			button.count:SetFont(C.font.auras_font, C.font.auras_font_size * T.noscalemult, C.font.auras_font_style)
 			button.count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
 			if C.aura.show_spiral == true then
