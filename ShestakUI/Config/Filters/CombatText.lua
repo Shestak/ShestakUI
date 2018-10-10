@@ -35,6 +35,7 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[273836] = 3			-- Filthy Transfusion [Azerite trait]
 	T.aoespam[280705] = 3			-- Laser Matrix [Azerite trait]
 	T.aoespam[282724] = 5			-- Battlefield Focus [Azerite trait]
+	T.aoespam[255586] = 3.5			-- Lightning Arc [Azerite trait]	
 end
 
 -- Class config
