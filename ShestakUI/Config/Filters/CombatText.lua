@@ -35,7 +35,10 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[273836] = 3			-- Filthy Transfusion [Azerite trait]
 	T.aoespam[280705] = 3			-- Laser Matrix [Azerite trait]
 	T.aoespam[282724] = 5			-- Battlefield Focus [Azerite trait]
-	T.aoespam[255586] = 3.5			-- Lightning Arc [Azerite trait]	
+	T.aoespam[255586] = 3.5			-- Lightning Arc [Azerite trait]
+	T.aoespam[279856] = 2			-- Glacial Assault [Azerite trait]
+	T.aoespam[271686] = 1			-- Heed My Call [Azerite trait]
+	T.merge[271685] = 271686		-- Heed My Call [Azerite trait]
 end
 
 -- Class config
@@ -279,7 +282,8 @@ elseif T.class == "MAGE" then
 		T.aoespam[84721] = 3		-- Frozen Orb
 		T.aoespam[228354] = 1.5		-- Flurry
 		T.aoespam[242851] = 1.5		-- Glacial Eruption
-		T.aoespam[228600] = 0		-- Glacial Spike
+		T.aoespam[228600] = 1		-- Glacial Spike
+		T.aoespam[257538] = 1		-- Ebonbolt
 		T.aoespam[205021] = 2		-- Ray of Frost
 		T.aoespam[148022] = 3		-- Icicle (Mastery)
 		T.aoespam[31707] = 3		-- Waterbolt (Pet)
