@@ -8,9 +8,6 @@ local function LoadSkin()
 	if not IsAddOnLoaded("Clique") then return end
 	CliqueConfig:StripTextures()
 	CliqueConfig:SetTemplate("Transparent")
-	CliqueConfig:ClearAllPoints()
-	CliqueConfig:SetPoint("TOPLEFT", SpellBookFrame.backdrop, "TOPRIGHT", 42, 0)
-	CliqueConfig.SetPoint = T.dummy
 
 	CliqueConfigPage1Column1:StripTextures()
 	CliqueConfigPage1Column2:StripTextures()
