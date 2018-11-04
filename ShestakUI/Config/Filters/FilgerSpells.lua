@@ -2687,8 +2687,6 @@ C["filger_spells"] = {
 			{spellID = 100, filter = "CD"},
 			-- Spell Reflection
 			{spellID = 23920, filter = "CD"},
-			-- Intervene
-			--BETA {spellID = 3411, filter = "CD"},
 			-- Berserker Rage
 			{spellID = 18499, filter = "CD"},
 			-- Heroic Leap
