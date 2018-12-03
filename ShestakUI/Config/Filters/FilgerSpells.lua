@@ -84,9 +84,9 @@ C["filger_spells"] = {
 			{spellID = 63560, unitID = "pet", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			
+
 			-- Enchants
-			
+
 		},
 		-- {
 			-- Name = "T_DEBUFF_ICON",
@@ -120,7 +120,7 @@ C["filger_spells"] = {
 			{spellID = 55095, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			
+
 		},
 		{
 			Name = "COOLDOWN",
@@ -297,9 +297,9 @@ C["filger_spells"] = {
 			{spellID = 208628, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			
+
 			-- Enchants
-			
+
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -534,11 +534,11 @@ C["filger_spells"] = {
 			{spellID = 213680, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Item Sets
-			
+
 			-- Trinkets
-			
+
 			-- Enchants
-			
+
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -567,7 +567,7 @@ C["filger_spells"] = {
 			{spellID = 45334, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			
+
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -790,9 +790,9 @@ C["filger_spells"] = {
 			{spellID = 136, unitID = "pet", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			
+
 			-- Enchants
-			
+
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1037,9 +1037,9 @@ C["filger_spells"] = {
 			{spellID = 263725, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			
+
 			-- Enchants
-			
+
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1072,7 +1072,7 @@ C["filger_spells"] = {
 			{spellID = 31589, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			
+
 		},
 		{
 			Name = "PVE/PVP_CC",
@@ -1283,11 +1283,11 @@ C["filger_spells"] = {
 			{spellID = 196741, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Item Sets
-			
+
 			-- Trinkets
-			
+
 			-- Enchants
-			
+
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1502,9 +1502,9 @@ C["filger_spells"] = {
 			{spellID = 209785, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			
+
 			-- Enchants
-			
+
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1527,7 +1527,7 @@ C["filger_spells"] = {
 			{spellID = 183218, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			
+
 		},
 		{
 			Name = "COOLDOWN",
@@ -1686,7 +1686,7 @@ C["filger_spells"] = {
 
 			-- Buffs
 			-- Power of the Dark Side
-			{spellID = 198069, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 198069, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lingering Insanity
 			{spellID = 197937, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadowy Insight
@@ -1699,9 +1699,9 @@ C["filger_spells"] = {
 			{spellID = 123254, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			
+
 			-- Enchants
-			
+
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -1716,7 +1716,7 @@ C["filger_spells"] = {
 			{spellID = 214621, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			
+
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -1975,11 +1975,11 @@ C["filger_spells"] = {
 			{spellID = 193357, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Item Sets
-			
+
 			-- Trinkets
-			
+
 			-- Enchants
-			
+
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2196,11 +2196,11 @@ C["filger_spells"] = {
 			{spellID = 194084, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Item Sets
-			
+
 			-- Trinkets
-			
+
 			-- Enchants
-			
+
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2223,7 +2223,7 @@ C["filger_spells"] = {
 			{spellID = 188089, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			
+
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -2398,9 +2398,9 @@ C["filger_spells"] = {
 			{spellID = 171982, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			
+
 			-- Enchants
-			
+
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2416,7 +2416,7 @@ C["filger_spells"] = {
 			{spellID = 1098, unitID = "target", caster = "player", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			
+
 		},
 		{
 			Name = "T_DE/BUFF_BAR",
@@ -2632,9 +2632,9 @@ C["filger_spells"] = {
 			{spellID = 184362, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
-			
+
 			-- Enchants
-			
+
 		},
 		{
 			Name = "T_DEBUFF_ICON",
@@ -2657,7 +2657,7 @@ C["filger_spells"] = {
 			{spellID = 1160, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Trinket Effects
-			
+
 		},
 		{
 			Name = "COOLDOWN",
@@ -2774,36 +2774,38 @@ C["filger_spells"] = {
 			Position = {"TOP", SPECIAL_P_BUFF_ICON_Anchor},
 
 			-- Potions: Miscellaneous
-			-- Skaggldrynk [Legion invisibility potion]
-			{spellID = 188023, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Invisibility Potion
+			-- Invisibility [Invisibility Potion]
 			{spellID = 11392, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Darkwater Potion
-			{spellID = 105707, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Draenic Invisibility Potion
+			-- Invisibility [Draenic Invisibility Potion]
 			{spellID = 175833, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			-- Spirit Realm [Skaggldrynk]
+			{spellID = 188023, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Draenic Swiftness Potion
-			{spellID = 175790, unitID = "player", caster = "player", filter = "BUFF", absID = true},
+			{spellID = 175790, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Darkwater Potion
+			{spellID = 105707, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Speed [Swiftness Potion]
 			{spellID = 2379, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 
 			-- Raid Amplifiers
-			-- Ancient Hysteria
-			{spellID = 90355, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Netherwinds
-			{spellID = 160452, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Drums of Fury
-			{spellID = 178207, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Drums of Rage
-			{spellID = 146555, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Bloodlust
 			{spellID = 2825, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Heroism
 			{spellID = 32182, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Ancient Hysteria
+			{spellID = 90355, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Netherwinds
+			{spellID = 160452, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Time Warp
 			{spellID = 80353, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Drums of Fury
+			{spellID = 178207, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Drums of Rage
+			{spellID = 146555, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Drums of the Maelstrom
+			{spellID = 256740, unitID = "player", caster = "all", filter = "BUFF"},
 
-			-- Professions
+			-- Engineering
 			-- Goblin Glider [Goblin Glider Kit]
 			{spellID = 126389, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Nitro Boosts
@@ -3136,7 +3138,7 @@ C["filger_spells"] = {
 			{spellID = 94794, unitID = "player", caster = "player", filter = "DEBUFF"},
 
 			-- Raids: Battle for Azeroth
-			
+
 		},
 		{
 			Name = "T_BUFF",
