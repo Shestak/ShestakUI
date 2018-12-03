@@ -23,7 +23,30 @@ if C.reminder.raid_buffs_enable == true or C.announcements.flask_food == true th
 		Food = {
 			104280,	-- Well Fed
 		},
+		Stamina = {
+			21562,	-- Power Word: Fortitude
+			264764,	-- War-Scroll of Fortitude
+		},
+		Custom = {
+			-- spellID,	-- Spell name
+		}
 	}
+
+	-- Caster buffs
+	function T.ReminderCasterBuffs()
+		Spell4Buff = {	-- Intellect
+			1459,	-- Arcane Intellect
+			264760,	-- War-Scroll of Intellect
+		}
+	end
+
+	-- Physical buffs
+	function T.ReminderPhysicalBuffs()
+		Spell4Buff = {	-- Attack Power
+			6673,	-- Battle Shout
+			264761,	-- War-Scroll of Battle Shout
+		}
+	end
 end
 
 ----------------------------------------------------------------------------------------
