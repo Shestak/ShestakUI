@@ -197,30 +197,31 @@ frame:SetScript("OnEvent", function(self, event)
 	if C.actionbar.show_grid == true then
 		SetCVar("alwaysShowActionBars", 1)
 		for i = 1, 12 do
+			local reason = ACTION_BUTTON_SHOW_GRID_REASON_EVENT
 			local button = _G[format("ActionButton%d", i)]
 			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
-			ActionButton_ShowGrid(button)
+			ActionButton_ShowGrid(button, reason)
 
 			button = _G[format("MultiBarRightButton%d", i)]
 			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
-			ActionButton_ShowGrid(button)
+			ActionButton_ShowGrid(button, reason)
 
 			button = _G[format("MultiBarBottomRightButton%d", i)]
 			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
-			ActionButton_ShowGrid(button)
+			ActionButton_ShowGrid(button, reason)
 
 			button = _G[format("MultiBarLeftButton%d", i)]
 			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
-			ActionButton_ShowGrid(button)
+			ActionButton_ShowGrid(button, reason)
 
 			button = _G[format("MultiBarBottomLeftButton%d", i)]
 			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
-			ActionButton_ShowGrid(button)
+			ActionButton_ShowGrid(button, reason)
 		end
 	else
 		SetCVar("alwaysShowActionBars", 0)
