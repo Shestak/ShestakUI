@@ -235,13 +235,13 @@ local function LoadSkin()
 	ScenarioQueueFrameTypeDropDown:SetPoint("RIGHT", -10, 0)
 
 	LFGListFrame.CategorySelection.Inset.Bg:Hide()
-	select(10, LFGListFrame.CategorySelection.Inset:GetRegions()):Hide()
+	--BETA select(10, LFGListFrame.CategorySelection.Inset:GetRegions()):Hide()
 	LFGListFrame.CategorySelection.Inset:DisableDrawLayer("BORDER")
 	LFGListFrame.SearchPanel.ResultsInset.Bg:Hide()
 	LFGListFrame.SearchPanel.ResultsInset:DisableDrawLayer("BORDER")
 
 	LFGListFrame.NothingAvailable.Inset.Bg:Hide()
-	select(10, LFGListFrame.NothingAvailable.Inset:GetRegions()):Hide()
+	--BETA select(10, LFGListFrame.NothingAvailable.Inset:GetRegions()):Hide()
 	LFGListFrame.NothingAvailable.Inset:DisableDrawLayer("BORDER")
 
 	LFGListFrame.CategorySelection.FindGroupButton:SkinButton()
