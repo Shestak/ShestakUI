@@ -25,6 +25,7 @@ local function LoadSkin()
 	WorldMapFrame.Header:SetTemplate("Overlay")
 
 	WorldMapFrame.BorderFrame:StripTextures()
+	WorldMapFrame.BorderFrame.NineSlice:Hide()
 	--BETA WorldMapFrame.BorderFrame.Inset:StripTextures()
 	QuestMapFrame.DetailsFrame:StripTextures()
 	QuestMapFrame.DetailsFrame.RewardsFrame:StripTextures()
