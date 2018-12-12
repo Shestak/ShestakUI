@@ -269,7 +269,7 @@ C["filger_spells"] = {
 			-- Demon Spikes
 			{spellID = 203720, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Barrier
-			{spellID = 227225, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 227225, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blur
 			{spellID = 212800, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Chaos Blades
@@ -384,7 +384,7 @@ C["filger_spells"] = {
 			-- Throw Glaive
 			{spellID = 185123, filter = "CD"},
 			-- Soul Barrier
-			{spellID = 227225, filter = "CD"},
+			--BETA {spellID = 227225, filter = "CD"},
 			-- Blade Dance
 			{spellID = 188499, filter = "CD"},
 			-- Fel Barrage
@@ -3180,7 +3180,7 @@ C["filger_spells"] = {
 			-- Nether Bond
 			{spellID = 207810, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Soul Barrier
-			{spellID = 227225, unitID = "target", caster = "all", filter = "BUFF"},
+			--BETA {spellID = 227225, unitID = "target", caster = "all", filter = "BUFF"},
 
 			-- Druid
 			-- Survival Instincts
