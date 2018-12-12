@@ -49,8 +49,8 @@ local function LoadSkin()
 		"SecondaryHandSlot"
 	}
 
-	select(13, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
-	select(13, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
+	select(14, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
+	select(14, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
 
 	for _, i in pairs(slots) do
 		_G["Character"..i.."Frame"]:Hide()
@@ -136,6 +136,10 @@ local function LoadSkin()
 	for _, object in pairs(charframe) do
 		_G[object]:StripTextures()
 	end
+
+	CharacterFrame.NineSlice:Hide()
+	CharacterFrameInset.NineSlice:Hide()
+	CharacterFrameInsetRight.NineSlice:Hide()
 
 	CharacterStatsPane.ItemLevelCategory:StripTextures()
 	CharacterStatsPane.ItemLevelCategory:SetTemplate("Overlay")
