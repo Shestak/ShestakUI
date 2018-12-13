@@ -137,10 +137,6 @@ local function LoadSkin()
 		_G[object]:StripTextures()
 	end
 
-	CharacterFrame.NineSlice:Hide()
-	CharacterFrameInset.NineSlice:Hide()
-	CharacterFrameInsetRight.NineSlice:Hide()
-
 	CharacterStatsPane.ItemLevelCategory:StripTextures()
 	CharacterStatsPane.ItemLevelCategory:SetTemplate("Overlay")
 	CharacterStatsPane.AttributesCategory:StripTextures()
