@@ -57,9 +57,7 @@ local function LoadSkin()
 		end
 	end)
 
-	for i = 1, PVPQueueFrame.HonorInset:GetNumRegions()  do
-		select(i, PVPQueueFrame.HonorInset:GetRegions()):Hide()
-	end
+	PVPQueueFrame.HonorInset:StripTextures()
 
 	-- HonorFrame
 	HonorFrame.Inset:StripTextures()

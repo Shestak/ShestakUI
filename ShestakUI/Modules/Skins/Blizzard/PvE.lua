@@ -240,9 +240,7 @@ local function LoadSkin()
 	LFGListFrame.SearchPanel.ResultsInset.Bg:Hide()
 	LFGListFrame.SearchPanel.ResultsInset:DisableDrawLayer("BORDER")
 
-	LFGListFrame.NothingAvailable.Inset.Bg:Hide()
-	--BETA select(10, LFGListFrame.NothingAvailable.Inset:GetRegions()):Hide()
-	LFGListFrame.NothingAvailable.Inset:DisableDrawLayer("BORDER")
+	LFGListFrame.NothingAvailable:StripTextures()
 
 	LFGListFrame.CategorySelection.FindGroupButton:SkinButton()
 	LFGListFrame.CategorySelection.StartGroupButton:SkinButton()
