@@ -15,7 +15,6 @@ hooksecurefunc("ShowReadyCheck", ShowReadyCheckHook)
 ----------------------------------------------------------------------------------------
 local ForceWarning = CreateFrame("Frame")
 ForceWarning:RegisterEvent("UPDATE_BATTLEFIELD_STATUS")
---BETA ForceWarning:RegisterEvent("BATTLEFIELD_MGR_ENTRY_INVITE")
 ForceWarning:RegisterEvent("PET_BATTLE_QUEUE_PROPOSE_MATCH")
 ForceWarning:RegisterEvent("LFG_PROPOSAL_SHOW")
 ForceWarning:RegisterEvent("RESURRECT_REQUEST")
@@ -29,8 +28,6 @@ ForceWarning:SetScript("OnEvent", function(self, event)
 			end
 			i = i + 1
 		end
-	elseif event == "BATTLEFIELD_MGR_ENTRY_INVITE" then
-		PlaySound(SOUNDKIT.PVP_THROUGH_QUEUE, "Master")
 	elseif event == "PET_BATTLE_QUEUE_PROPOSE_MATCH" then
 		PlaySound(SOUNDKIT.PVP_THROUGH_QUEUE, "Master")
 	elseif event == "LFG_PROPOSAL_SHOW" then

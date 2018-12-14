@@ -26,10 +26,8 @@ local function LoadSkin()
 
 	WorldMapFrame.BorderFrame:StripTextures()
 	WorldMapFrame.BorderFrame.NineSlice:Hide()
-	--BETA WorldMapFrame.BorderFrame.Inset:StripTextures()
 	QuestMapFrame.DetailsFrame:StripTextures()
 	QuestMapFrame.DetailsFrame.RewardsFrame:StripTextures()
-	--BETA QuestScrollFrame.Contents.StoryHeader.Shadow:Hide()
 	QuestMapFrame:StripTextures()
 
 	QuestMapFrame:CreateBackdrop("Overlay")

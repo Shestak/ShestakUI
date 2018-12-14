@@ -37,11 +37,6 @@ MinimapZoomOut:Hide()
 Minimap:SetArchBlobRingScalar(0)
 Minimap:SetQuestBlobRingScalar(0)
 
--- Hide Voice Chat Frame
---BETA MiniMapVoiceChatFrame:Kill()
--- VoiceChatTalkers:Kill()
--- ChannelFrameAutoJoin:Kill()
-
 -- Hide North texture at top
 MinimapNorthTag:SetTexture(nil)
 

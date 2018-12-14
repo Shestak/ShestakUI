@@ -208,7 +208,6 @@ local function LoadSkin()
 		"InterfaceOptionsCombatPanelSpellAlertOpacitySlider",
 		"CompactUnitFrameProfilesGeneralOptionsFrameHeightSlider",
 		"CompactUnitFrameProfilesGeneralOptionsFrameWidthSlider",
-		--BETA "InterfaceOptionsBattlenetPanelToastDurationSlider",
 		"InterfaceOptionsCameraPanelMaxDistanceSlider",
 		"InterfaceOptionsCameraPanelFollowSpeedSlider",
 		"InterfaceOptionsMousePanelMouseSensitivitySlider",
@@ -240,9 +239,6 @@ local function LoadSkin()
 	_G["InterfaceOptionsFrameTab2"]:SetPoint("TOPLEFT", _G["InterfaceOptionsFrameTab1"], "TOPRIGHT", 3, 0)
 	_G["InterfaceOptionsFrameTab2"]:SetWidth(112)
 	_G["InterfaceOptionsFrameTab2"].SetWidth = T.dummy
-	--BETA _G["InterfaceOptionsFrameTab1TabSpacer"]:Kill()
-	-- _G["InterfaceOptionsFrameTab2TabSpacer1"]:Kill()
-	-- _G["InterfaceOptionsFrameTab2TabSpacer2"]:Kill()
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

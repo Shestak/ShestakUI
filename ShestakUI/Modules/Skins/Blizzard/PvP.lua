@@ -13,12 +13,6 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
 
 	if addon == "Blizzard_PVPUI" then
 		ConquestTooltip:SetTemplate("Transparent")
-		--BETA PVPRewardTooltip:SetTemplate("Transparent")
-		-- PVPRewardTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		-- PVPRewardTooltip.ItemTooltip.IconBorder:SetAlpha(0)
-		-- PVPRewardTooltip.ItemTooltip:CreateBackdrop("Default")
-		-- PVPRewardTooltip.ItemTooltip.backdrop:SetPoint("TOPLEFT", PVPRewardTooltip.ItemTooltip.Icon, "TOPLEFT", -2, 2)
-		-- PVPRewardTooltip.ItemTooltip.backdrop:SetPoint("BOTTOMRIGHT", PVPRewardTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 2, -2)
 	end
 end)
 
@@ -61,14 +55,12 @@ local function LoadSkin()
 
 	-- HonorFrame
 	HonorFrame.Inset:StripTextures()
-	-- HonorFrame.RoleInset:StripTextures()
 	T.SkinDropDownBox(HonorFrameTypeDropDown, 165)
 	T.SkinScrollBar(HonorFrameSpecificFrameScrollBar)
 	HonorFrameSpecificFrameScrollBar:SetPoint("TOPLEFT", HonorFrameSpecificFrame, "TOPRIGHT", 0, -15)
 	HonorFrameSpecificFrameScrollBar:SetPoint("BOTTOMLEFT", HonorFrameSpecificFrame, "BOTTOMRIGHT", 0, 15)
 	HonorFrameQueueButton:SkinButton(true)
 	HonorFrame.BonusFrame:StripTextures()
-	--BETA HonorFrame.BonusFrame.DiceButton:SkinButton()
 	HonorFrame.BonusFrame.ShadowOverlay:StripTextures()
 
 	HonorFrame.ConquestBar:StripTextures()
@@ -178,7 +170,6 @@ local function LoadSkin()
 	ConquestFrame.ConquestBar.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	ConquestFrame.ConquestBar.Reward.Icon:SetSize(20, 20)
 
-	-- ConquestFrame.RoleInset:StripTextures()
 	for _, button in pairs{ConquestFrame.TankIcon, ConquestFrame.HealerIcon, ConquestFrame.DPSIcon} do
 		T.SkinCheckBox(button.checkButton)
 	end
@@ -203,49 +194,11 @@ local function LoadSkin()
 		button.Reward.Icon:SetPoint("TOPLEFT", 2, -2)
 		button.Reward.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
 		button.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
-		--BETA button.Reward.WeeklyBonus:StripTextures()
-		-- button.Reward.WeeklyBonus:SetTemplate("Default")
-		-- button.Reward.WeeklyBonus:SetSize(20, 20)
-		-- button.Reward.WeeklyBonus:SetPoint("TOPRIGHT", 2, 2)
-
-		-- local WeeklyBonusIcon = button.Reward.WeeklyBonus:CreateTexture(nil, nil, self)
-		-- WeeklyBonusIcon:SetPoint("TOPLEFT", button.Reward.WeeklyBonus, "TOPLEFT", 2, -2)
-		-- WeeklyBonusIcon:SetPoint("BOTTOMRIGHT", button.Reward.WeeklyBonus, "BOTTOMRIGHT", -2, 2)
-		-- WeeklyBonusIcon:SetTexture("Interface\\Icons\\ability_skyreach_flash_bang")
-		-- WeeklyBonusIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 
 	ConquestFrame.Arena3v3:SetPoint("TOP", ConquestFrame.Arena2v2, "BOTTOM", 0, -3)
 
 	ConquestJoinButton:SkinButton(true)
-
-	-- WarGamesFrame
-	--BETA WarGamesFrame:StripTextures()
-	-- WarGamesFrame.RightInset:StripTextures()
-	-- WarGameStartButton:SkinButton(true)
-	-- T.SkinScrollBar(WarGamesFrameScrollFrameScrollBar)
-	-- T.SkinScrollBar(WarGamesFrameInfoScrollFrameScrollBar)
-	-- WarGamesFrameScrollFrameScrollBar:SetPoint("TOPLEFT", WarGamesFrameScrollFrame, "TOPRIGHT", 0, -15)
-	-- WarGamesFrameScrollFrameScrollBar:SetPoint("BOTTOMLEFT", WarGamesFrameScrollFrame, "BOTTOMRIGHT", 0, 15)
-	-- WarGamesFrameInfoScrollFrameScrollBar:StripTextures()
-	-- WarGamesFrame.HorizontalBar:StripTextures()
-	-- WarGamesFrameDescription:SetTextColor(1, 1, 1)
-	-- WarGamesFrameDescription:SetFont(C.media.normal_font, 13)
-	-- WarGamesFrameDescription:SetShadowOffset(1, -1)
-	-- T.SkinCheckBox(WarGameTournamentModeCheckButton)
-
-	-- for _, i in pairs(WarGamesFrame.scrollFrame.buttons) do
-		-- local button = i.Entry
-		-- button:SetSize(306, 38)
-		-- button:StripTextures()
-		-- button:SetTemplate("Overlay")
-		-- button:StyleButton()
-		-- button.SelectedTexture:SetDrawLayer("ARTWORK")
-		-- button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
-		-- button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
-		-- button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
-	-- end
 end
 
 T.SkinFuncs["Blizzard_PVPUI"] = LoadSkin

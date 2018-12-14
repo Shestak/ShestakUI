@@ -96,7 +96,6 @@ T.ArenaControl = {
 	[SpellName(114404)] = 3,	-- Void Tendril's Grasp
 	[SpellName(64695)] = 3,		-- Earthgrab
 	[SpellName(170996)] = 3,	-- Debilitate (Terrorguard)
-	--BETA [SpellName(107566)] = 3,	-- Staggering Shout
 
 	-- Immunities
 	[SpellName(186265)] = 2,		-- Aspect of the Turtle

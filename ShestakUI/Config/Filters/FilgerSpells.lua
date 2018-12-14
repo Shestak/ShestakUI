@@ -3074,8 +3074,6 @@ C["filger_spells"] = {
 			{spellID = 64695, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Debilitate (Terrorguard)
 			{spellID = 170996, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Staggering Shout
-			--BETA {spellID = 107566, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Slows
 			-- Infected Wounds
