@@ -40,7 +40,6 @@ T.DebuffWhiteList = {
 	[SpellName(122)] = true,	-- Frost Nova
 	[SpellName(44457)] = true,	-- Living Bomb
 	[SpellName(114923)] = true,	-- Nether Tempest
-	--BETA [SpellName(112948)] = true,	-- Frost Bomb
 	[SpellName(120)] = true,	-- Cone of Cold
 	-- Monk
 	[SpellName(115078)] = true,	-- Paralysis
@@ -49,7 +48,7 @@ T.DebuffWhiteList = {
 	[SpellName(853)] = true,	-- Hammer of Justice
 	[SpellName(183218)] = true,	-- Hand of Hindrance
 	-- Priest
-	[SpellName(204213)] = true,	-- Purge the Wicked	
+	[SpellName(204213)] = true,	-- Purge the Wicked
 	[SpellName(9484)] = true,	-- Shackle Undead
 	[SpellName(8122)] = true,	-- Psychic Scream
 	[SpellName(64044)] = true,	-- Psychic Horror
@@ -94,7 +93,6 @@ T.DebuffBlackList = {
 
 T.BuffWhiteList = {
 	-- Demon Hunter
-	--BETA [SpellName(218256)] = true,	-- Empower Wards
 	[SpellName(203819)] = true,	-- Demon Spikes
 	[SpellName(187827)] = true,	-- Metamorphosis (Vengeance)
 	[SpellName(212800)] = true,	-- Blur
@@ -149,7 +147,6 @@ T.BuffWhiteList = {
 	[SpellName(191840)] = true,	-- Essence Font
 	-- Paladin
 	[SpellName(184662)] = true,	-- Shield of Vengeance
-	--BETA [SpellName(114163)] = true,	-- Eternal Flame
 	[SpellName(53563)] = true,	-- Beacon of Light
 	[SpellName(156910)] = true,	-- Beacon of Faith
 	[SpellName(6940)] = true,	-- Blessing of Sacrifice

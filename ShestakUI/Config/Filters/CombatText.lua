@@ -89,7 +89,7 @@ if T.class == "DEATHKNIGHT" then
 		T.merge[70890] = 55090		-- Scourge Strike (Shadow damage)
 	end
 	if C.combattext.healing then
-		T.healfilter[206931] = true	-- Blooddrinker	
+		T.healfilter[206931] = true	-- Blooddrinker
 		T.healfilter[55078] = true	-- Blood Plague
 		T.healfilter[53365] = true	-- Unholy Strength
 		T.healfilter[119980] = true	-- Conversion
@@ -198,7 +198,7 @@ elseif T.class == "HUNTER" then
 		T.aoespam[270329] = 0.5		-- Pheromone Bomb
 		T.aoespam[270332] = 2		-- Pheromone Bomb Tick
 		T.aoespam[260231] = 0.5		-- Violent Reaction (Pheromone Bomb Effect)
-		T.aoespam[271048] = 0.5		-- Volatile Bomb 
+		T.aoespam[271048] = 0.5		-- Volatile Bomb
 		T.aoespam[271049] = 2		-- Volatile Bomb Tick
 		T.aoespam[270338] = 0.5		-- Shrapnel Bomb
 		T.aoespam[270339] = 2		-- Shrapnel Bomb Tick
@@ -207,7 +207,7 @@ elseif T.class == "HUNTER" then
 		T.merge[259398] = 259396	-- Flanking Strike
 		T.merge[267666] = 259396	-- Flanking Strike
 		T.aoespam[259516] = 0.5		-- Flanking Strike
-		T.merge[269752] = 259516	-- Flanking Strike	
+		T.merge[269752] = 259516	-- Flanking Strike
 		T.aoespam[265157] = 0.5		-- Wildfire Bomb
 		T.aoespam[269747] = 6		-- Wildfire Bomb Tick
 		T.aoespam[271788] = 3		-- Serpent Sting (Marksmanship Talent)
@@ -245,7 +245,6 @@ elseif T.class == "HUNTER" then
 		T.aoespam[201594] = 4		-- Stampede
 		T.aoespam[260247] = 1		-- Volley
 		T.aoespam[214581] = 2		-- Sidewinders
-		--BETA T.aoespam[212621] = 2		-- Marked Shot
 		T.aoespam[191413] = 6		-- Bestial Ferocity
 		T.aoespam[16827] = 6		-- Claw
 		T.aoespam[201754] = 1		-- Stomp
@@ -278,7 +277,6 @@ elseif T.class == "MAGE" then
 		T.aoespam[114923] = 3		-- Nether Tempest
 		T.aoespam[114954] = 3		-- Nether Tempest (AoE)
 		T.aoespam[7268] = 1.6		-- Arcane Missiles
-		--BETA T.aoespam[113092] = 0		-- Frost Bomb
 		T.aoespam[84721] = 3		-- Frozen Orb
 		T.aoespam[228354] = 1.5		-- Flurry
 		T.aoespam[242851] = 1.5		-- Glacial Eruption
@@ -291,8 +289,6 @@ elseif T.class == "MAGE" then
 		T.aoespam[157981] = 0		-- Blast Wave
 		T.aoespam[157997] = 1		-- Ice Nova
 		T.aoespam[157980] = 1		-- Supernova
-		--BETA T.aoespam[135029] = 3		-- Water Jet (Pet)
-		--BETA T.aoespam[155152] = 3		-- Prismatic Crystal
 		T.aoespam[153596] = 3		-- Comet Storm
 		T.aoespam[153640] = 3		-- Arcane Orb
 		T.aoespam[157977] = 0		-- Unstable Magic (Fire)
@@ -350,7 +346,7 @@ elseif T.class == "MONK" then
 	end
 	if C.combattext.healing then
 		T.healfilter[196608] = true	-- Eye of the Tiger
-	end	
+	end
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
@@ -359,7 +355,6 @@ elseif T.class == "PALADIN" then
 		T.aoespam[209540] = 8		-- Light of the Titans
 		T.aoespam[53652] = 3		-- Beacon of Light
 		T.aoespam[85222] = 1		-- Light of Dawn
-		--BETA T.aoespam[114163] = 3		-- Eternal Flame
 		T.aoespam[114852] = 0		-- Holy Prism
 		T.aoespam[119952] = 3		-- Arcing Light
 		T.aoespam[144581] = 3		-- Blessing of the Guardians (T16)
@@ -390,9 +385,6 @@ elseif T.class == "PALADIN" then
 		T.aoespam[20271] = 1		-- Judgment
 		T.merge[228288] = 20271		-- Judgment Retribution
 		T.aoespam[217020] = 1		-- Zeal
-	end
-	if C.combattext.healing then
-		--BETA T.healfilter[204241] = true	-- Consecration
 	end
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
@@ -481,7 +473,6 @@ elseif T.class == "ROGUE" then
 elseif T.class == "SHAMAN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
-		--BETA T.aoespam[215871] = 6		-- Rainfall
 		T.aoespam[197997] = 1		-- Wellspring
 		T.aoespam[73921] = 5		-- Healing Rain
 		T.aoespam[52042] = 5		-- Healing Stream Totem
@@ -597,16 +588,16 @@ elseif T.class == "WARRIOR" then
 		T.aoespam[12294] = 0.5		-- Mortal Strike (Arms Talent Sweeping Strikes)
 		T.aoespam[262115] = 3		-- Deep Wounds (Arms Mastery DoT)
 		T.aoespam[262161] = 1		-- Warbreaker (Arms Talent)
-		T.aoespam[199850] = 1.5		-- Whirlwind Arms
-		T.merge[199658] = 199850	-- Whirlwind Arms ?	
-		T.aoespam[280772] = 1		-- Siegebreaker (Fury Talent)		
+		T.aoespam[199850] = 1.5		-- Whirlwind (Arms)
+		T.merge[199658] = 199850	-- Whirlwind (Arms)
+		T.aoespam[280772] = 1		-- Siegebreaker (Fury Talent)
 		T.aoespam[218617] = 2		-- Rampage
 		T.merge[184707] = 218617	-- Rampage 2nd
 		T.merge[184709] = 218617	-- Rampage 3rd
 		T.merge[201364] = 218617	-- Rampage 4th
 		T.merge[201363] = 218617	-- Rampage 5th
-		T.aoespam[199667] = 1.5		-- Whirlwind Fury
-		T.merge[44949] = 199667		-- Whirlwind Fury Off-Hand
+		T.aoespam[199667] = 1.5		-- Whirlwind (Fury)
+		T.merge[44949] = 199667		-- Whirlwind Off-Hand (Fury)
 		T.aoespam[46968] = 0		-- Shockwave
 		T.aoespam[6343] = 0			-- Thunder Clap
 		T.aoespam[115767] = 3		-- Deep Wounds

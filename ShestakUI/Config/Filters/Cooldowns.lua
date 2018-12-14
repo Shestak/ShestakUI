@@ -11,15 +11,11 @@ if C.raidcooldown.enable == true then
 		[20484] = 600,	-- Rebirth
 		[61999] = 600,	-- Raise Ally
 		[20707] = 600,	-- Soulstone
-		--BETA [126393] = 600,	-- Eternal Guardian (Quilen)
-		[159956] = 600,	-- Dust of Life (Moth)
-		[159931] = 600,	-- Gift of Chi-Ji (Crane)
 		-- Heroism
 		[32182] = 300,	-- Heroism
 		[2825] = 300,	-- Bloodlust
 		[80353] = 300,	-- Time Warp
-		[90355] = 300,	-- Ancient Hysteria (Core Hound)
-		[160452] = 300,	-- Netherwinds (Nether Ray)
+		[264667] = 300,	-- Primal Rage [Hunter's pet]
 		-- Healing
 		[633] = 600,	-- Lay on Hands
 		[740] = 180,	-- Tranquility
@@ -83,7 +79,7 @@ if C.enemycooldown.enable == true then
 		[48707] = 60,	-- Anti-Magic Shell
 		[31224] = 90,	-- Cloak of Shadows
 		[46924] = 90,	-- Bladestorm
-		--BETA [49039] = 120,	-- Lichborne
+		[287081] = 60,	-- Lichborne
 		[213664] = 120,	-- Nimble Brew
 		[47585] = 120,	-- Dispersion
 		[1856] = 120,	-- Vanish
