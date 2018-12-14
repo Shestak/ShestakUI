@@ -60,7 +60,7 @@ for i, spell in pairs(spells) do
 	if i == 9 then
 		l:SetText(L_ZONE_ANCIENTDALARAN)
 	else
-		l:SetText(string.sub(teleport, string.find(teleport, ":") + 1))
+		l:SetText(string.sub(teleport, (string.find(teleport, ":") and string.find(teleport, ":") + 1) or 0))
 	end
 
 	l:SetPoint("LEFT", b, "LEFT", 2, 0)
