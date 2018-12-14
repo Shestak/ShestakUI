@@ -265,88 +265,49 @@ local function LoadSkin()
 	PlayerTalentFrameTalentsPvpTalentButton:SetSize(20, 20)
 	PlayerTalentFrameTalentsPvpTalentButton:SkinButton()
 	PlayerTalentFrameTalentsPvpTalentButtonIcon:SetTexCoord(0.3, 0.29, 0.3, 0.79, 0.65, 0.29, 0.65, 0.79)
-	--BETA PlayerTalentFramePVPTalentsBg:Hide()
-	-- PlayerTalentFramePVPTalents.Talents:DisableDrawLayer("BORDER")
 
-	-- T.SkinCloseButton(PlayerTalentFramePVPTalents.TutorialBox.CloseButton)
-	-- PlayerTalentFramePVPTalents.TutorialBox.Arrow:Hide()
-	-- PlayerTalentFramePVPTalents.TutorialBox:StripTextures()
-	-- PlayerTalentFramePVPTalents.TutorialBox:CreateBackdrop("Transparent")
+	PlayerTalentFrameTalents.PvpTalentFrame:StripTextures()
+	PlayerTalentFrameTalentsPvpTalentFrameTalentList:StripTextures()
+	PlayerTalentFrameTalentsPvpTalentFrameTalentList:CreateBackdrop("Transparent")
+	T.SkinScrollBar(PlayerTalentFrameTalentsPvpTalentFrameTalentListScrollFrameScrollBar)
 
-	-- for i = 1, MAX_PVP_TALENT_TIERS do
-		-- local row = PlayerTalentFramePVPTalents.Talents["Tier"..i]
-		-- row.Bg:Hide()
-		-- row:DisableDrawLayer("BORDER")
+	local TalentList_CloseButton = select(4, PlayerTalentFrameTalents.PvpTalentFrame.TalentList:GetChildren())
+	if TalentList_CloseButton and TalentList_CloseButton:HasScript("OnClick") then
+		TalentList_CloseButton:SkinButton()
+	end
 
-		-- row.TopLine:SetAlpha(0)
-		-- row.BottomLine:SetAlpha(0)
-		-- row.GlowFrame:SetAlpha(0)
+	for _, button in pairs(PlayerTalentFrameTalents.PvpTalentFrame.TalentList.ScrollFrame.buttons) do
+		button:DisableDrawLayer("BACKGROUND")
+		button:StyleButton()
+		button:CreateBackdrop("Overlay")
+		button.Selected:SetTexture("")
+		button.backdrop:SetAllPoints()
 
-		-- for j = 1, MAX_PVP_TALENT_COLUMNS do
-			-- local bu = row["Talent"..j]
-			-- local ic = bu.Icon
+		button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		button.Icon:SetSize(28, 28)
+		button.Icon:SetPoint("LEFT", button, "LEFT", 6, 0)
 
-			-- bu:StripTextures()
-			-- bu:SetFrameLevel(bu:GetFrameLevel() + 2)
-			-- bu:CreateBackdrop("Default")
-			-- bu.backdrop:SetPoint("TOPLEFT", ic, -2, 2)
-			-- bu.backdrop:SetPoint("BOTTOMRIGHT", ic, 2, -2)
+		button.border = CreateFrame("Frame", nil, button)
+		button.border:CreateBackdrop("Default")
+		button.border.backdrop:SetPoint("TOPLEFT", button.Icon, -2, 2)
+		button.border.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, 2, -2)
 
-			-- ic:SetDrawLayer("ARTWORK")
-			-- ic:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		button.selectedTexture = button:CreateTexture(nil, 'ARTWORK')
+		button.selectedTexture:SetInside(button)
+		button.selectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
+		button.selectedTexture:SetShown(button.Selected:IsShown())
+	end
 
-			-- bu.bg = CreateFrame("Frame", nil, bu)
-			-- bu.bg:CreateBackdrop("Overlay")
-			-- bu.bg:SetFrameLevel(bu:GetFrameLevel() - 1)
-			-- bu.bg:SetPoint("TOPLEFT", 15, -1)
-			-- bu.bg:SetPoint("BOTTOMRIGHT", -10, 1)
-		-- end
-	-- end
-
-	-- hooksecurefunc("PVPTalentFrame_Update", function(self)
-		-- for i = 1, MAX_PVP_TALENT_TIERS do
-			-- for j = 1, MAX_PVP_TALENT_COLUMNS do
-				-- local bu = self.Talents["Tier"..i]["Talent"..j]
-				-- if bu.knownSelection then
-					-- if bu.knownSelection:IsShown() then
-						-- bu.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b, 1)
-						-- bu.bg.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b, 1)
-						-- bu.bg.backdrop.overlay:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.3)
-					-- else
-						-- bu.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-						-- bu.bg.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-						-- bu.bg.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
-					-- end
-				-- end
-			-- end
-		-- end
-	-- end)
-
-	-- Presige texture
-	-- local portrait = PlayerTalentFramePVPTalents:CreateTexture(nil, "OVERLAY")
-	-- portrait:SetSize(55, 55)
-	-- portrait:SetPoint("CENTER", PlayerTalentFramePVPTalents.PortraitBackground, "CENTER", 0, 0)
-	-- PlayerTalentFramePVPTalents.PortraitBackground:Kill()
-	-- PlayerTalentFramePVPTalents.PortraitBackground:ClearAllPoints()
-	-- PlayerTalentFramePVPTalents.PortraitBackground:SetPoint("TOPLEFT", PlayerTalentFrame, "TOPLEFT", 10, -5)
-	-- PlayerTalentFramePVPTalents.SmallWreath:ClearAllPoints()
-	-- PlayerTalentFramePVPTalents.SmallWreath:SetPoint("TOPLEFT", PlayerTalentFrame, "TOPLEFT", 3, -25)
-	-- hooksecurefunc("PlayerTalentFramePVPTalents_SetUp", function()
-		-- local prestigeLevel = UnitPrestige("player")
-		-- if prestigeLevel > 0 then
-			-- portrait:SetTexture(GetPrestigeInfo(prestigeLevel))
-		-- end
-	-- end)
-
-	-- -- Prestige Level Dialog
-	-- PVPTalentPrestigeLevelDialog:StripTextures()
-	-- PVPTalentPrestigeLevelDialog:CreateBackdrop("Transparent")
-	-- PVPTalentPrestigeLevelDialog.Laurel:SetAtlas("honorsystem-prestige-laurel", true)
-	-- PVPTalentPrestigeLevelDialog.TopDivider:SetAtlas("honorsystem-prestige-rewardline", true)
-	-- PVPTalentPrestigeLevelDialog.BottomDivider:SetAtlas("honorsystem-prestige-rewardline", true)
-	-- PVPTalentPrestigeLevelDialog.Accept:SkinButton()
-	-- PVPTalentPrestigeLevelDialog.Cancel:SkinButton()
-	-- T.SkinCloseButton(PVPTalentPrestigeLevelDialog.CloseButton)
+	hooksecurefunc(PlayerTalentFrameTalents.PvpTalentFrame.TalentList, "Update", function(self)
+		for _, Button in pairs(PlayerTalentFrameTalents.PvpTalentFrame.TalentList.ScrollFrame.buttons) do
+			if not Button.selectedTexture then return end
+			if Button.Selected:IsShown() then
+				Button.selectedTexture:SetShown(true)
+			else
+				Button.selectedTexture:Hide()
+			end
+		end
+	end)
 end
 
 T.SkinFuncs["Blizzard_TalentUI"] = LoadSkin
