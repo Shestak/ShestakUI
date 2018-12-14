@@ -401,7 +401,7 @@ local function LoadSkin()
 	ToyBox.progressBar:CreateBackdrop("Overlay")
 	ToyBox.progressBar:SetStatusBarTexture(C.media.texture)
 	ToyBox.progressBar:SetFrameLevel(ToyBox.progressBar:GetFrameLevel() + 2)
-	
+
 	T.SkinCloseButton(ToyBox.favoriteHelpBox.CloseButton)
 	ToyBox.favoriteHelpBox:StripTextures()
 	ToyBox.favoriteHelpBox:CreateBackdrop("Transparent")
@@ -541,25 +541,30 @@ local function LoadSkin()
 	T.SkinScrollBar(WardrobeCollectionFrameScrollFrameScrollBar)
 	WardrobeCollectionFrameScrollFrameScrollBar:SetPoint("TOPLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame, "TOPRIGHT", 4, 15)
 	WardrobeCollectionFrameScrollFrameScrollBar:SetPoint("BOTTOMLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame, "BOTTOMRIGHT", 4, 14)
-	
+
 	T.SkinCloseButton(WardrobeCollectionFrame.ItemsCollectionFrame.HelpBox.CloseButton)
 	WardrobeCollectionFrame.ItemsCollectionFrame.HelpBox.Arrow:Hide()
 	WardrobeCollectionFrame.ItemsCollectionFrame.HelpBox:StripTextures()
 	WardrobeCollectionFrame.ItemsCollectionFrame.HelpBox:CreateBackdrop("Transparent")
-	
+
 	T.SkinCloseButton(WardrobeCollectionFrame.SetsTabHelpBox.CloseButton)
 	WardrobeCollectionFrame.SetsTabHelpBox:StripTextures()
 	WardrobeCollectionFrame.SetsTabHelpBox:CreateBackdrop("Transparent")
-	
+
 	T.SkinCloseButton(WardrobeTransmogFrame.SpecHelpBox.CloseButton)
 	WardrobeTransmogFrame.SpecHelpBox.Arrow:Hide()
 	WardrobeTransmogFrame.SpecHelpBox:StripTextures()
 	WardrobeTransmogFrame.SpecHelpBox:CreateBackdrop("Transparent")
-	
+
 	T.SkinCloseButton(WardrobeTransmogFrame.OutfitHelpBox.CloseButton)
 	WardrobeTransmogFrame.OutfitHelpBox.Arrow:Hide()
 	WardrobeTransmogFrame.OutfitHelpBox:StripTextures()
 	WardrobeTransmogFrame.OutfitHelpBox:CreateBackdrop("Transparent")
+
+	T.SkinCloseButton(HeirloomsJournal.UpgradeLevelHelpBox.CloseButton)
+	HeirloomsJournal.UpgradeLevelHelpBox.Arrow:Hide()
+	HeirloomsJournal.UpgradeLevelHelpBox:StripTextures()
+	HeirloomsJournal.UpgradeLevelHelpBox:CreateBackdrop("Transparent")
 
 	local function SetItemQuality(self, itemFrame)
 		if (itemFrame.backdrop) then
