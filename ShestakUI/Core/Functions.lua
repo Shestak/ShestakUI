@@ -154,7 +154,7 @@ end
 T.SkinFuncs = {}
 T.SkinFuncs["ShestakUI"] = {}
 
-function T.SkinScrollBar(frame, parent)
+function T.SkinScrollBar(frame)
 	if frame:GetName() then
 		if _G[frame:GetName().."BG"] then
 			_G[frame:GetName().."BG"]:SetTexture(nil)
@@ -182,9 +182,9 @@ function T.SkinScrollBar(frame, parent)
 	if frame.ScrollBarBottom then frame.ScrollBarBottom:SetTexture(nil) end
 	if frame.ScrollBarMiddle then frame.ScrollBarMiddle:SetTexture(nil) end
 
-	local UpButton = frame.ScrollUpButton or frame.UpButton or _G[(frame:GetName() or parent).."ScrollUpButton"]
-	local DownButton = frame.ScrollDownButton or frame.DownButton or _G[(frame:GetName() or parent).."ScrollDownButton"]
-	local ThumbTexture = frame.ThumbTexture or frame.thumbTexture or _G[frame:GetName().."ThumbTexture"]
+	local UpButton = frame.ScrollUpButton or frame.UpButton or _G[frame:GetName() and frame:GetName().."ScrollUpButton"] or frame:GetParent().scrollUp
+	local DownButton = frame.ScrollDownButton or frame.DownButton or _G[frame:GetName() and frame:GetName().."ScrollDownButton"] or frame:GetParent().scrollDown
+	local ThumbTexture = frame.ThumbTexture or frame.thumbTexture or _G[frame:GetName() and frame:GetName().."ThumbTexture"]
 
 	if UpButton and DownButton then
 		if not UpButton.icon then
