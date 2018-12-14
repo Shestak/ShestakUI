@@ -1,7 +1,7 @@
 local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Garrison skin
+--	Garrison, OrderHall and BFA Mission skin
 ----------------------------------------------------------------------------------------
 local LoadTootlipSkin = CreateFrame("Frame")
 LoadTootlipSkin:RegisterEvent("ADDON_LOADED")
@@ -66,7 +66,7 @@ end)
 if C.skins.blizzard_frames ~= true then return end
 
 local function LoadSkin()
-	-- Building frame
+	-- Garrison Building frame
 	GarrisonBuildingFrame:StripTextures()
 	GarrisonBuildingFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(GarrisonBuildingFrame.CloseButton)
@@ -218,9 +218,11 @@ local function LoadSkin()
 	GarrisonLandingPage:SetTemplate("Transparent")
 	T.SkinCloseButton(GarrisonLandingPage.CloseButton)
 	GarrisonLandingPageTab1:SetPoint("TOPLEFT", GarrisonLandingPage, "BOTTOMLEFT", 70, 2)
-	T.SkinTab(GarrisonLandingPageTab1)
-	T.SkinTab(GarrisonLandingPageTab2)
-	T.SkinTab(GarrisonLandingPageTab3)
+
+	for i = 1, 3 do
+		T.SkinTab(_G["GarrisonLandingPageTab" .. i])
+	end
+
 	T.SkinScrollBar(GarrisonLandingPageReportListListScrollFrameScrollBar)
 
 	GarrisonLandingPage.FollowerList:StripTextures()
@@ -501,7 +503,9 @@ local function LoadSkin()
 		end)
 	end
 
-	-- Handle MasterPlan AddOn
+	----------------------------------------------------------------------------------------
+	--	MasterPlan AddOn skin
+	----------------------------------------------------------------------------------------
 	do
 		local function skinMasterPlan()
 			T.SkinTab(GarrisonLandingPageTab4)
@@ -541,7 +545,9 @@ local function LoadSkin()
 		end
 	end
 
-	-- Order Hall skin
+	----------------------------------------------------------------------------------------
+	--	Order Hall skin
+	----------------------------------------------------------------------------------------
 	OrderHallMissionFrame:StripTextures()
 	OrderHallMissionFrame:CreateBackdrop("Transparent")
 	OrderHallMissionFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
@@ -549,7 +555,7 @@ local function LoadSkin()
 	OrderHallMissionFrame.GarrCorners:StripTextures()
 	OrderHallMissionFrame.ClassHallIcon:Kill()
 	T.SkinCloseButton(OrderHallMissionFrame.CloseButton)
-	
+
 	OrderHallMissionTutorialFrame.GlowBox.ArrowGlowUp:Hide()
 	OrderHallMissionTutorialFrame.GlowBox:StripTextures()
 	OrderHallMissionTutorialFrame.GlowBox:SetTemplate("Transparent")
@@ -681,6 +687,30 @@ local function LoadSkin()
 	local Mission = OrderHallMissionFrameMissions
 	Mission.CompleteDialog.BorderFrame.ViewButton:SkinButton()
 	OrderHallMissionFrame.MissionComplete.NextMissionButton:SkinButton()
+
+	----------------------------------------------------------------------------------------
+	--	BFA Mission skin
+	----------------------------------------------------------------------------------------
+	BFAMissionFrame:StripTextures()
+	BFAMissionFrame:CreateBackdrop("Transparent")
+	BFAMissionFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
+	BFAMissionFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
+	BFAMissionFrame.OverlayElements:Hide()
+	BFAMissionFrame.TitleScroll:Hide()
+
+	BFAMissionFrameMissions.CompleteDialog.BorderFrame:StripTextures()
+	BFAMissionFrameMissions.CompleteDialog.BorderFrame:SetTemplate("Transparent")
+	BFAMissionFrameMissions.CompleteDialog.BorderFrame.ViewButton:SkinButton()
+
+	BFAMissionFrameMissions.CompleteDialog.BorderFrame.Stage:StripTextures()
+
+	BFAMissionFrame.MissionComplete.NextMissionButton:SkinButton()
+
+	for i = 1, 3 do
+		T.SkinTab(_G["BFAMissionFrameTab" .. i])
+	end
+
+	T.SkinCloseButton(BFAMissionFrame.CloseButton)
 end
 
 T.SkinFuncs["Blizzard_GarrisonUI"] = LoadSkin
