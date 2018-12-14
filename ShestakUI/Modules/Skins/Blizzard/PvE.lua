@@ -234,13 +234,9 @@ local function LoadSkin()
 	ScenarioQueueFrameRandomScrollFrameChildFrame.bonusRepFrame.ChooseButton:SkinButton()
 	ScenarioQueueFrameTypeDropDown:SetPoint("RIGHT", -10, 0)
 
-	LFGListFrame.CategorySelection.Inset.Bg:Hide()
-	--BETA select(10, LFGListFrame.CategorySelection.Inset:GetRegions()):Hide()
-	LFGListFrame.CategorySelection.Inset:DisableDrawLayer("BORDER")
-	LFGListFrame.SearchPanel.ResultsInset.Bg:Hide()
-	LFGListFrame.SearchPanel.ResultsInset:DisableDrawLayer("BORDER")
-
+	LFGListFrame.SearchPanel.ResultsInset:StripTextures()
 	LFGListFrame.NothingAvailable:StripTextures()
+	LFGListFrame.CategorySelection:StripTextures()
 
 	LFGListFrame.CategorySelection.FindGroupButton:SkinButton()
 	LFGListFrame.CategorySelection.StartGroupButton:SkinButton()
@@ -378,7 +374,53 @@ tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
 
 local function LoadSecondarySkin()
 	ChallengesFrameInset:StripTextures()
-	ChallengesFrameInsetBg:Hide()
+	ChallengesFrame:DisableDrawLayer("BACKGROUND")
+
+	hooksecurefunc("ChallengesFrame_Update", function(self)
+		for _, frame in ipairs(self.DungeonIcons) do
+			if not frame.backdrop then
+				frame:CreateBackdrop("Transparent")
+				frame.backdrop:SetAllPoints()
+				frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				frame.Icon:SetInside()
+				frame.HighestLevel:SetFont(C.media.normal_font, 18, "OUTLINE")
+			end
+		end
+	end)
+
+	local function HandleAffixIcons(self)
+		for _, frame in ipairs(self.Affixes) do
+			frame.Border:SetTexture(nil)
+			frame.Portrait:SetTexture(nil)
+
+			if frame.info then
+				frame.Portrait:SetTexture(CHALLENGE_MODE_EXTRA_AFFIX_INFO[frame.info.key].texture)
+			elseif frame.affixID then
+				local _, _, filedataid = C_ChallengeMode.GetAffixInfo(frame.affixID)
+				frame.Portrait:SetTexture(filedataid)
+			end
+			frame.Portrait:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			if not frame.backdrop then
+				frame:CreateBackdrop("Default")
+				frame.backdrop:SetPoint("TOPLEFT", frame.Portrait, "TOPLEFT", -2, 2)
+				frame.backdrop:SetPoint("BOTTOMRIGHT", frame.Portrait, "BOTTOMRIGHT", 2, -2)
+			end
+		end
+	end
+
+	hooksecurefunc(ChallengesFrame.WeeklyInfo, "SetUp", function(self)
+		local affixes = C_MythicPlus.GetCurrentAffixes()
+		if affixes then
+			HandleAffixIcons(self.Child)
+		end
+	end)
+
+	hooksecurefunc(ChallengesKeystoneFrame, "Reset", function(self)
+		self:GetRegions():SetAlpha(0)
+		self.InstructionBackground:SetAlpha(0)
+	end)
+
+	hooksecurefunc(ChallengesKeystoneFrame, "OnKeystoneSlotted", HandleAffixIcons)
 
 	T.SkinCloseButton(ChallengesKeystoneFrame.CloseButton)
 	ChallengesKeystoneFrame.StartButton:SkinButton(true)
