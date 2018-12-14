@@ -23,8 +23,8 @@ local function LoadSkin()
 	CreateChannelPopup.CancelButton:SkinButton()
 
 	CreateChannelPopup.OKButton:SetPoint("BOTTOMLEFT", 5, 5)
-    CreateChannelPopup.CancelButton:ClearAllPoints()
-    CreateChannelPopup.CancelButton:SetPoint("BOTTOMRIGHT", -5, 5)
+	CreateChannelPopup.CancelButton:ClearAllPoints()
+	CreateChannelPopup.CancelButton:SetPoint("BOTTOMRIGHT", -5, 5)
 
 	T.SkinEditBox(CreateChannelPopup.Name)
 	T.SkinEditBox(CreateChannelPopup.Password)
