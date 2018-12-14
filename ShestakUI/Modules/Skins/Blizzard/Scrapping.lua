@@ -4,25 +4,25 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 --	ScrappingMachine skin
 ----------------------------------------------------------------------------------------
-local function LoadSkin()	
+local function LoadSkin()
+	ScrappingMachineFrame:StripTextures()
 	ScrappingMachineFrame:SetTemplate("Transparent")
 
-	ScrappingMachineFrameInset:Hide()
-	ScrappingMachineFramePortrait:Hide()
-	ScrappingMachineFramePortraitFrame:Hide()
-	ScrappingMachineFrameTitleBg:Hide()
-	ScrappingMachineFrameBg:Hide()
-	ScrappingMachineFrame.Background:Hide()
-	ScrappingMachineFrameTopBorder:Hide()
-	ScrappingMachineFrameTopRightCorner:Hide()
-	ScrappingMachineFrameRightBorder:Hide()
-	ScrappingMachineFrameLeftBorder:Hide()
-	ScrappingMachineFrameBtnCornerRight:Hide()
-	ScrappingMachineFrameBotRightCorner:Hide()
-	ScrappingMachineFrameBtnCornerLeft:Hide()
-	ScrappingMachineFrameBotLeftCorner:Hide()
-	ScrappingMachineFrameButtonBottomBorder:Hide()
-	ScrappingMachineFrameBottomBorder:Hide()
+	local ItemSlots = ScrappingMachineFrame.ItemSlots
+	ItemSlots:StripTextures()
+
+	for button in pairs(ItemSlots.scrapButtons.activeObjects) do
+		if not button.styled then
+			button:StripTextures()
+			button:SetTemplate()
+			button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			button.IconBorder:SetAlpha(0)
+			hooksecurefunc(button.IconBorder, 'SetVertexColor', function(self, r, g, b) button:SetBackdropBorderColor(r, g, b) end)
+			hooksecurefunc(button.IconBorder, 'Hide', function() button:SetBackdropBorderColor(unpack(C.media.border_color)) end)
+
+			button.styled = true
+		end
+	end
 
 	ScrappingMachineFrame.ScrapButton:SkinButton()
 	T.SkinCloseButton(ScrappingMachineFrameCloseButton)
