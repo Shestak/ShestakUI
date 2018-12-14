@@ -84,9 +84,8 @@ T.DebuffWhiteList = {
 	[SpellName(132168)] = true,	-- Shockwave
 	[SpellName(115767)] = true,	-- Deep Wounds
 	-- Racial
-	[SpellName(25046)] = true,	-- Arcane Torrent
-	[SpellName(20549)] = true,	-- War Stomp
-	[SpellName(107079)] = true,	-- Quaking Palm
+	[SpellName(20549)] = true,	-- War Stomp (Tauren)
+	[SpellName(107079)] = true,	-- Quaking Palm (Pandaren)
 }
 
 T.DebuffBlackList = {

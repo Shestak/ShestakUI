@@ -73,8 +73,8 @@ T.ArenaControl = {
 	[SpellName(132168)] = 5,	-- Shockwave
 	[SpellName(5246)] = 5,		-- Intimidating Shout
 	-- Racial
-	[SpellName(107079)] = 5,	-- Quaking Palm
-	[SpellName(20549)] = 5,		-- War Stomp
+	[SpellName(107079)] = 5,	-- Quaking Palm (Pandaren)
+	[SpellName(20549)] = 5,		-- War Stomp (Tauren)
 
 	-- Silences
 	[SpellName(47476)] = 4,		-- Strangulate
@@ -82,7 +82,6 @@ T.ArenaControl = {
 	[SpellName(31935)] = 4,		-- Avenger's Shield
 	[SpellName(15487)] = 4,		-- Silence
 	[SpellName(1330)] = 4,		-- Garrote - Silence
-	[SpellName(28730)] = 4,		-- Arcane Torrent
 
 	-- Roots
 	[SpellName(96294)] = 3,		-- Chains of Ice

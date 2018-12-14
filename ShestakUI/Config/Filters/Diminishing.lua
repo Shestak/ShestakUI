@@ -28,7 +28,7 @@ T.DiminishingSpells = {
 	[22703] = {"stun"},				-- Infernal Awakening
 	[132168] = {"stun"},			-- Shockwave
 	[132169] = {"stun"},			-- Storm Bolt
-	[20549] = {"stun"},				-- War Stomp (Racial)
+	[20549] = {"stun"},				-- War Stomp (Tauren)
 
 	-- Roots
 	[96294] = {"root"},				-- Chains of Ice
@@ -74,7 +74,7 @@ T.DiminishingSpells = {
 	[6770] = {"incapacitate"},		-- Sap
 	[51514] = {"incapacitate"},		-- Hex
 	[6789] = {"incapacitate"},		-- Mortal Coil
-	[107079] = {"incapacitate"},	-- Quaking Palm (Racial)
+	[107079] = {"incapacitate"},	-- Quaking Palm (Pandaren)
 
 	-- Disorients
 	[33786] = {"disorient"},		-- Cyclone
@@ -95,13 +95,6 @@ T.DiminishingSpells = {
 	[31935] = {"silence"},			-- Avenger's Shield
 	[15487] = {"silence"},			-- Silence
 	[1330] = {"silence"},			-- Garrote
-	[25046] = {"silence"},			-- Arcane Torrent (Energy)
-	[28730] = {"silence"},			-- Arcane Torrent (Mana)
-	[50613] = {"silence"},			-- Arcane Torrent (Runic Power)
-	[69179] = {"silence"},			-- Arcane Torrent (Rage)
-	[80483] = {"silence"},			-- Arcane Torrent (Focus)
-	[129597] = {"silence"},			-- Arcane Torrent (Chi)
-	[155145] = {"silence"},			-- Arcane Torrent (Holy Power)
 }
 
 local function GetIcon(id)

@@ -3010,9 +3010,9 @@ C["filger_spells"] = {
 			{spellID = 132168, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Racial
-			-- Quaking Palm
+			-- Quaking Palm (Pandaren)
 			{spellID = 107079, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- War Stomp
+			-- War Stomp (Tauren)
 			{spellID = 20549, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Silences
@@ -3028,8 +3028,6 @@ C["filger_spells"] = {
 			{spellID = 1330, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Unstable Affliction
 			{spellID = 31117, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
-			-- Arcane Torrent
-			{spellID = 28730, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Roots
 			-- Chains of Ice
@@ -3415,11 +3413,9 @@ C["filger_spells"] = {
 			{spellID = 132168, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Racial
-			-- Arcane Torrent
-			{spellID = 28730, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Quaking Palm
+			-- Quaking Palm (Pandaren)
 			{spellID = 107079, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- War Stomp
+			-- War Stomp (Tauren)
 			{spellID = 20549, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Professions
