@@ -3339,7 +3339,7 @@ C["filger_spells"] = {
 			-- Greater Fade
 			{spellID = 213602, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Holy Ward
-			{spellID = 213610, unitID = "target", caster = "all", filter = "BUFF"}
+			{spellID = 213610, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Dominate Mind
 			{spellID = 605, unitID = "target", caster = "all", filter = "DEBUFF"},
