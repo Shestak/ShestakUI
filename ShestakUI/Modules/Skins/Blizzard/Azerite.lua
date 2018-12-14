@@ -11,8 +11,6 @@ local function LoadSkin()
 	AzeriteEmpoweredItemUI.BorderFrame:StripTextures()
 
 	AzeriteEmpoweredItemUIPortrait:Hide()
-	AzeriteEmpoweredItemUIPortraitFrame:Hide()
-	AzeriteEmpoweredItemUITopBorder:Hide()
 	AzeriteEmpoweredItemUI.ClipFrame.BackgroundFrame.Bg:Hide()
 
 	T.SkinCloseButton(AzeriteEmpoweredItemUICloseButton)
