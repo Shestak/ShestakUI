@@ -113,8 +113,16 @@ hooksecurefunc("WhoList_Update", function()
 		local classText = _G["WhoFrameButton"..i.."Class"]
 		local variableText = _G["WhoFrameButton"..i.."Variable"]
 
-		local name, guild, level, race, class, zone, classFileName = C_FriendList.GetWhoInfo(index)
-		if name then
+		local info = C_FriendList.GetWhoInfo(index)
+		if info then
+			name = info.fullName
+			guild = info.fullGuildName
+			level = info.level
+			race = info.raceStr
+			class = info.classStr
+			zone = info.area
+			classFileName = info.filename
+
 			if zone == playerZone then
 				zone = "|cff00ff00"..zone
 			end
