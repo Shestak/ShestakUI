@@ -33,29 +33,16 @@ local function LoadSkin()
 		SideDressUpFrame:SetPoint("TOPLEFT", AuctionFrame, "TOPRIGHT", 3, 0)
 	end)
 
-	-- WoW Token Tutorial Frame
+	-- WoW Token
+	WowTokenGameTimeTutorial.NineSlice:Hide()
+	WowTokenGameTimeTutorial.TitleBg:Hide()
 	WowTokenGameTimeTutorial:CreateBackdrop("Transparent")
+	WowTokenGameTimeTutorialInset.NineSlice:Hide()
+	WowTokenGameTimeTutorialBg:Hide()
+	StoreButton:SkinButton()
 	T.SkinCloseButton(WowTokenGameTimeTutorial.CloseButton)
-	WowTokenGameTimeTutorial.Inset.InsetBorderBottom:SetAlpha(0)
-	WowTokenGameTimeTutorial.Inset.InsetBorderRight:SetAlpha(0)
-	WowTokenGameTimeTutorial.Inset.InsetBorderBottomLeft:SetAlpha(0)
-	WowTokenGameTimeTutorial.Inset.InsetBorderBottomRight:SetAlpha(0)
-	WowTokenGameTimeTutorial.Inset.InsetBorderTopLeft:SetAlpha(0)
-	WowTokenGameTimeTutorial.Inset.InsetBorderLeft:SetAlpha(0)
-	WowTokenGameTimeTutorial.Inset.InsetBorderTopRight:SetAlpha(0)
-	WowTokenGameTimeTutorial.Inset.InsetBorderTop:SetAlpha(0)
-	WowTokenGameTimeTutorial.Inset.Bg:SetAlpha(0)
-	WowTokenGameTimeTutorialTitleBg:SetAlpha(0)
-	WowTokenGameTimeTutorialBg:SetAlpha(0)
-	WowTokenGameTimeTutorialTopRightCorner:SetAlpha(0)
-	WowTokenGameTimeTutorialTopLeftCorner:SetAlpha(0)
-	WowTokenGameTimeTutorialTopBorder:SetAlpha(0)
-	WowTokenGameTimeTutorialBotLeftCorner:SetAlpha(0)
-	WowTokenGameTimeTutorialBotRightCorner:SetAlpha(0)
-	WowTokenGameTimeTutorialBottomBorder:SetAlpha(0)
-	WowTokenGameTimeTutorialLeftBorder:SetAlpha(0)
-	WowTokenGameTimeTutorialRightBorder:SetAlpha(0)
 
+	BrowseWowTokenResults.Buyout:SkinButton(true)
 	local Token = BrowseWowTokenResultsToken
 	Token.ItemBorder:Hide()
 	Token.IconBorder:Hide()
@@ -115,8 +102,6 @@ local function LoadSkin()
 	for _, button in pairs(buttons) do
 		_G[button]:SkinButton(true)
 	end
-	BrowseWowTokenResults.Buyout:SkinButton(true)
-	StoreButton:SkinButton()
 
 	-- Fix Button Positions
 	AuctionsCloseButton:SetPoint("BOTTOMRIGHT", AuctionFrameAuctions, "BOTTOMRIGHT", 66, 10)
