@@ -190,7 +190,9 @@ hooksecurefunc("WorldStateScoreFrame_Update", function()
 			end
 
 			local button = _G["WorldStateScoreButton"..i]
-			button.name.text:SetText(n)
+			if button then
+				button.name.text:SetText(n)
+			end
 		end
 	end
 end)
