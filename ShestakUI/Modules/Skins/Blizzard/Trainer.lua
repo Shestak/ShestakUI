@@ -82,12 +82,6 @@ local function LoadSkin()
 	ClassTrainerStatusBar:SetPoint("RIGHT", ClassTrainerFrameFilterDropDown, "LEFT", 10, 3)
 	ClassTrainerStatusBar.rankText:ClearAllPoints()
 	ClassTrainerStatusBar.rankText:SetPoint("CENTER", ClassTrainerStatusBar, "CENTER")
-
-	ClassTrainerFrameBottomInset:ClearAllPoints()
-	ClassTrainerFrameBottomInset:SetPoint("TOPLEFT", ClassTrainerFrameSkillStepButton.backdrop, "BOTTOMLEFT", -9, 0)
-
-	ClassTrainerFrameInset:ClearAllPoints()
-	ClassTrainerFrameInset:SetPoint("TOPLEFT", ClassTrainerFrame.backdrop, "TOPLEFT", 4, -55)
 end
 
 T.SkinFuncs["Blizzard_TrainerUI"] = LoadSkin
