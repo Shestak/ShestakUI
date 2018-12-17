@@ -26,7 +26,6 @@ T.RaidBuffs = {
 		{53563, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Light
 		{156910, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Faith
 		{200025, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Beacon of Virtue
-		--BETA {114163, "BOTTOMLEFT", {0.9, 0.6, 0.4}},			-- Eternal Flame
 		{1022, "BOTTOMRIGHT", {0.2, 0.2, 1}, true},			-- Blessing of Protection
 		{1044, "BOTTOMRIGHT", {0.89, 0.45, 0}, true},		-- Blessing of Freedom
 		{204013, "BOTTOMRIGHT", {0.93, 0.75, 0}, true},		-- Blessing of Salvation
@@ -37,6 +36,7 @@ T.RaidBuffs = {
 		{194384, "TOPRIGHT", {0.8, 0.4, 0.2}},				-- Atonement
 		{41635, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},			-- Prayer of Mending
 		{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}}, 				-- Renew
+		{6788, "BOTTOMLEFT", {1, 0, 0}, true}, 				-- Weakened Soul
 		{17, "TOPLEFT", {0.81, 0.85, 0.1}, true},			-- Power Word: Shield
 		{33206, "LEFT", {0.89, 0.1, 0.1}, true},			-- Pain Suppression
 		{47788, "LEFT", {0.86, 0.52, 0}, true},				-- Guardian Spirit
