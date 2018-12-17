@@ -566,6 +566,11 @@ local function LoadSkin()
 	HeirloomsJournal.UpgradeLevelHelpBox:StripTextures()
 	HeirloomsJournal.UpgradeLevelHelpBox:CreateBackdrop("Transparent")
 
+	T.SkinCloseButton(CollectionsJournal.WardrobeTabHelpBox.CloseButton)
+	CollectionsJournal.WardrobeTabHelpBox.Arrow:Hide()
+	CollectionsJournal.WardrobeTabHelpBox:StripTextures()
+	CollectionsJournal.WardrobeTabHelpBox:CreateBackdrop("Transparent")
+
 	local function SetItemQuality(self, itemFrame)
 		if (itemFrame.backdrop) then
 			local _, _, quality = GetItemInfo(itemFrame.itemID);
