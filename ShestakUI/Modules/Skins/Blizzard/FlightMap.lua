@@ -8,6 +8,10 @@ local function LoadSkin()
 	FlightMapFrame:CreateBackdrop("Transparent")
 	FlightMapFrame.BorderFrame:StripTextures()
 
+	FlightMapFrame.ScrollContainer:ClearAllPoints()
+	FlightMapFrame.ScrollContainer:SetPoint("TOPLEFT")
+	FlightMapFrame.ScrollContainer:SetPoint("BOTTOMRIGHT")
+
 	T.SkinCloseButton(FlightMapFrameCloseButton)
 end
 
