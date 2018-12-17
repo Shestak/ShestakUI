@@ -711,6 +711,42 @@ local function LoadSkin()
 	end
 
 	T.SkinCloseButton(BFAMissionFrame.CloseButton)
+
+	for i = 1, 2 do
+		_G["BFAMissionFrameMissionsTab" .. i]:StripTextures()
+		_G["BFAMissionFrameMissionsTab" .. i]:CreateBackdrop("Overlay")
+		_G["BFAMissionFrameMissionsTab" .. i].backdrop:SetPoint("TOPLEFT", 0, 0)
+		_G["BFAMissionFrameMissionsTab" .. i].backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
+		_G["BFAMissionFrameMissionsTab" .. i]:StyleButton()
+		_G["BFAMissionFrameMissionsTab" .. i]:SetHeight(_G["BFAMissionFrameMissionsTab" .. i]:GetHeight() - 10)
+	end
+
+	BFAMissionFrameMissionsTab1.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
+	BFAMissionFrameMissionsTab1.backdrop.overlay:SetVertexColor(1, 0.82, 0, 0.3)
+
+	BFAMissionFrameMissionsTab1:SetPoint("BOTTOMLEFT", BFAMissionFrameMissions, "TOPLEFT", 18, 0)
+
+	BFAMissionFrameMissions:StripTextures()
+	BFAMissionFrameMissionsListScrollFrame:StripTextures()
+	T.SkinScrollBar(BFAMissionFrameMissionsListScrollFrameScrollBar)
+
+	BFAMissionFrameMissions.MaterialFrame:GetRegions():Hide()
+	BFAMissionFrameMissions.MaterialFrame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+	for i = 1, #BFAMissionFrame.MissionTab.MissionList.listScroll.buttons do
+		local button = BFAMissionFrame.MissionTab.MissionList.listScroll.buttons[i]
+		if not button.backdrop then
+			button:StripTextures()
+			button:CreateBackdrop("Overlay")
+			button.backdrop:SetPoint("TOPLEFT", 0, 0)
+			button.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
+			button:StyleButton(nil, 2)
+		end
+	end
+
+	BFAMissionFrame.MapTab.ScrollContainer:ClearAllPoints()
+	BFAMissionFrame.MapTab.ScrollContainer:SetPoint("TOPLEFT")
+	BFAMissionFrame.MapTab.ScrollContainer:SetPoint("BOTTOMRIGHT")
 end
 
 T.SkinFuncs["Blizzard_GarrisonUI"] = LoadSkin
