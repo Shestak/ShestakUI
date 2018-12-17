@@ -64,14 +64,11 @@ local function LoadSkin()
 		end
 	end)
 
-	--BETA EncounterJournal.LootJournal.LegendariesFrame.ClassButton:SkinButton(true)
-	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton:SkinButton(true)
 	EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:SkinButton(true)
 
 	T.SkinEditBox(EncounterJournalSearchBox)
 	T.SkinCloseButton(EncounterJournalCloseButton)
 	T.SkinDropDownBox(EncounterJournalInstanceSelectTierDropDown)
-	--BETA T.SkinDropDownBox(LootJournalViewDropDown)
 	T.SkinTab(EncounterJournalInstanceSelectSuggestTab, true)
 	T.SkinTab(EncounterJournalInstanceSelectDungeonTab, true)
 	T.SkinTab(EncounterJournalInstanceSelectRaidTab, true)
@@ -217,51 +214,7 @@ local function LoadSkin()
 	end
 	hooksecurefunc("EncounterJournal_DisplayInstance", SkinBosses)
 
-	--BETA EncounterJournal.LootJournal.LegendariesFrame.ClassButton:SkinButton()
-	-- EncounterJournal.LootJournal.LegendariesFrame.ClassButton:GetFontString():SetTextColor(1, 1, 1)
-	-- select(5, EncounterJournal.LootJournal.LegendariesFrame.ClassButton:GetRegions()):Hide()
-	-- select(6, EncounterJournal.LootJournal.LegendariesFrame.ClassButton:GetRegions()):Hide()
-	-- EncounterJournal.LootJournal.LegendariesFrame.ClassButton.UpLeft:SetAlpha(0)
-	-- EncounterJournal.LootJournal.LegendariesFrame.ClassButton.UpRight:SetAlpha(0)
-	-- EncounterJournal.LootJournal.LegendariesFrame.ClassButton.HighLeft:SetAlpha(0)
-	-- EncounterJournal.LootJournal.LegendariesFrame.ClassButton.HighRight:SetAlpha(0)
-	-- EncounterJournal.LootJournal.LegendariesFrame.ClassButton.DownLeft:SetAlpha(0)
-	-- EncounterJournal.LootJournal.LegendariesFrame.ClassButton.DownRight:SetAlpha(0)
-
-	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton:SkinButton()
-	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton:GetFontString():SetTextColor(1, 1, 1)
-	-- select(5, EncounterJournal.LootJournal.LegendariesFrame.SlotButton:GetRegions()):Hide()
-	-- select(6, EncounterJournal.LootJournal.LegendariesFrame.SlotButton:GetRegions()):Hide()
-	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton.UpLeft:SetAlpha(0)
-	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton.UpRight:SetAlpha(0)
-	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton.HighLeft:SetAlpha(0)
-	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton.HighRight:SetAlpha(0)
-	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton.DownLeft:SetAlpha(0)
-	-- EncounterJournal.LootJournal.LegendariesFrame.SlotButton.DownRight:SetAlpha(0)
-
 	EncounterJournal.LootJournal:DisableDrawLayer("BACKGROUND")
-
-	-- local itemsLeftSide = EncounterJournal.LootJournal.LegendariesFrame.buttons
-	-- local itemsRightSide = EncounterJournal.LootJournal.LegendariesFrame.rightSideButtons
-	-- for _, items in ipairs({itemsLeftSide, itemsRightSide}) do
-		-- for i = 1, #items do
-			-- local item = items[i]
-			-- item.ItemType:SetTextColor(1, 1, 1)
-			-- item.Background:Hide()
-			-- item.Icon:SetPoint("TOPLEFT", 1, -1)
-			-- item.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			-- item.Icon:SetDrawLayer("OVERLAY")
-			-- item.IconBackdrop = CreateFrame("Frame", nil, item)
-			-- item.IconBackdrop:SetFrameLevel(item:GetFrameLevel())
-			-- item.IconBackdrop:SetPoint("TOPLEFT", item.Icon, -2, 2)
-			-- item.IconBackdrop:SetPoint("BOTTOMRIGHT", item.Icon, 2, -2)
-			-- item.IconBackdrop:SetTemplate("Default")
-			-- item.IconBackdrop:SetBackdropBorderColor(GetItemQualityColor(5))
-			-- item:CreateBackdrop("Overlay")
-			-- item.backdrop:SetPoint("TOPLEFT", -4, 4)
-			-- item.backdrop:SetPoint("BOTTOMRIGHT", 4, -3)
-		-- end
-	-- end
 
 	EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:GetFontString():SetTextColor(1, 1, 1)
 	select(5, EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:GetRegions()):Hide()
