@@ -2359,6 +2359,8 @@ C["filger_spells"] = {
 			{spellID = 108416, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Healthstone
 			{spellID = 6262, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Nether Ward
+			{spellID = 212295, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -3046,6 +3048,8 @@ C["filger_spells"] = {
 			{spellID = 64695, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Debilitate (Terrorguard)
 			{spellID = 170996, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Entrenched in Flame
+			{spellID = 233582, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Slows
 			-- Infected Wounds
@@ -3379,6 +3383,8 @@ C["filger_spells"] = {
 			{spellID = 20707, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Unending Resolve
 			{spellID = 104773, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Nether Ward
+			{spellID = 212295, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Banish
 			{spellID = 710, unitID = "target", caster = "all", filter = "DEBUFF"},
