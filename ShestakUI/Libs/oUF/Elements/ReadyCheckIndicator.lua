@@ -1,5 +1,8 @@
 local _, ns = ...
 local oUF = ns.oUF
+local Private = oUF.Private
+
+local UnitExists = Private.UnitExists
 
 local function OnFinished(self)
 	local element = self:GetParent()

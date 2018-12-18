@@ -713,7 +713,7 @@ local function Shared(self, unit)
 
 		self.CounterBar:SetScript("OnValueChanged", function(_, value)
 			_, max = self.CounterBar:GetMinMaxValues()
-			r, g, b = oUF.ColorGradient(value, max, 1, 0, 0, 1, 1, 0, 0, 1, 0)
+			r, g, b = oUF:ColorGradient(value, max, 1, 0, 0, 1, 1, 0, 0, 1, 0)
 			self.CounterBar:SetStatusBarColor(r, g, b)
 			self.CounterBar.bg:SetVertexColor(r, g, b, 0.2)
 			self.CounterBar.Text:SetText(floor(value))

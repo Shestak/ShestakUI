@@ -9,9 +9,9 @@ local oUF = ns.oUF
 local Private = oUF.Private
 
 local argcheck = Private.argcheck
-
-local print = Private.print
 local error = Private.error
+local print = Private.print
+local UnitExists = Private.UnitExists
 
 local styles, style = {}
 local callback, objects, headers = {}, {}, {}
@@ -141,12 +141,6 @@ for k, v in next, {
 
 		activeElements[self][name] = nil
 
-		-- We need to run a new update cycle in-case we knocked ourself out of sync.
-		-- The main reason we do this is to make sure the full update is completed
-		-- if an element for some reason removes itself _during_ the update
-		-- progress.
-		self:UpdateAllElements('DisableElement')
-
 		return elements[name].disable(self)
 	end,
 
@@ -204,6 +198,12 @@ for k, v in next, {
 		assert(type(event) == 'string', "Invalid argument 'event' in UpdateAllElements.")
 
 		if(self.PreUpdate) then
+			--[[ Callback: frame:PreUpdate(event)
+			Fired before the frame is updated.
+
+			* self  - the unit frame
+			* event - the event triggering the update (string)
+			--]]
 			self:PreUpdate(event)
 		end
 
@@ -212,6 +212,12 @@ for k, v in next, {
 		end
 
 		if(self.PostUpdate) then
+			--[[ Callback: frame:PostUpdate(event)
+			Fired after the frame is updated.
+
+			* self  - the unit frame
+			* event - the event triggering the update (string)
+			--]]
 			self:PostUpdate(event)
 		end
 	end,
@@ -285,12 +291,7 @@ local function initObject(unit, style, styleFunc, header, ...)
 
 			-- No need to enable this for *target frames.
 			if(not (unit:match('target') or suffix == 'target')) then
-				if(unit:match('raid') or unit:match('party')) then
-					-- See issue #404
-					object:SetAttribute('toggleForVehicle', false)
-				else
-					object:SetAttribute('toggleForVehicle', true)
-				end
+				object:SetAttribute('toggleForVehicle', true)
 			end
 
 			-- Other boss and target units are handled by :HandleUnit().
@@ -665,6 +666,10 @@ Used to create a single unit frame and apply the currently active style to it.
 * unit         - the frame's unit (string)
 * overrideName - unique global name to use for the unit frame. Defaults to an auto-generated name based on the unit
                  (string?)
+
+oUF implements some of its own attributes. These can be supplied by the layout, but are optional.
+
+* oUF-enableArenaPrep - can be used to toggle arena prep support. Defaults to true (boolean)
 --]]
 function oUF:Spawn(unit, overrideName)
 	argcheck(unit, 2, 'string')
@@ -691,7 +696,8 @@ Used to create nameplates and apply the currently active style to them.
 * self      - the global oUF object
 * prefix    - prefix for the global name of the nameplate. Defaults to an auto-generated prefix (string?)
 * callback  - function to be called after a nameplate unit or the player's target has changed. The arguments passed to
-              the callback are the updated nameplate, the event that triggered the update and the new unit (function?)
+              the callback are the updated nameplate, if any, the event that triggered the update, and the new unit
+              (function?)
 * variables - list of console variable-value pairs to be set when the player logs in (table?)
 --]]
 function oUF:SpawnNamePlates(namePrefix, nameplateCallback, nameplateCVars)
@@ -736,12 +742,12 @@ function oUF:SpawnNamePlates(namePrefix, nameplateCallback, nameplateCVars)
 			end
 		elseif(event == 'PLAYER_TARGET_CHANGED') then
 			local nameplate = C_NamePlate.GetNamePlateForUnit('target')
-			if(not nameplate) then return end
-
-			nameplate.unitFrame:UpdateAllElements(event)
+			if(nameplate) then
+				nameplate.unitFrame:UpdateAllElements(event)
+			end
 
 			if(nameplateCallback) then
-				nameplateCallback(nameplate.unitFrame, event, 'target')
+				nameplateCallback(nameplate and nameplate.unitFrame, event, 'target')
 			end
 		elseif(event == 'NAME_PLATE_UNIT_ADDED' and unit) then
 			local nameplate = C_NamePlate.GetNamePlateForUnit(unit)

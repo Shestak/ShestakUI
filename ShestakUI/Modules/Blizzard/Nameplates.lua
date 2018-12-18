@@ -383,6 +383,7 @@ local function castColor(self, unit, name, castid)
 end
 
 local function callback(self, event, unit)
+	if not self then return end
 	if unit then
 		local name = UnitName(unit)
 		if name and T.PlateBlacklist[name] then

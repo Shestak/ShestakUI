@@ -47,7 +47,7 @@ local function UpdateColor(element, unit, cur, min, max, displayType)
 		t = parent.colors.reaction[UnitReaction(unit, 'player')]
 	elseif(element.colorSmooth) then
 		local adjust = 0 - (min or 0)
-		r, g, b = parent.ColorGradient(cur + adjust, max + adjust, unpack(element.smoothGradient or parent.colors.smooth))
+		r, g, b = parent:ColorGradient(cur + adjust, max + adjust, unpack(element.smoothGradient or parent.colors.smooth))
 	end
 
 	if(t) then
@@ -159,13 +159,13 @@ local function ForceUpdate(element)
 	return Path(element.__owner, 'ForceUpdate', element.__owner.unit)
 end
 
-local function Enable(self, unit)
+local function Enable(self)
 	local element = self.Power
 	if(element) then
 		element.__owner = self
 		element.ForceUpdate = ForceUpdate
 
-		if(element.frequentUpdates and (unit == 'player' or unit == 'pet')) then
+		if(element.frequentUpdates) then
 			self:RegisterEvent('UNIT_POWER_FREQUENT', Path)
 		else
 			self:RegisterEvent('UNIT_POWER_UPDATE', Path)
