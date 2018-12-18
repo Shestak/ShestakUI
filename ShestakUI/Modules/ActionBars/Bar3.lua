@@ -7,8 +7,12 @@ if C.actionbar.enable ~= true then return end
 local bar = CreateFrame("Frame", "Bar3Holder", RightActionBarAnchor)
 bar:SetAllPoints(RightActionBarAnchor)
 MultiBarLeft:SetParent(bar)
-MultiBarLeft:SetScale(1)
-MultiBarLeft.SetScale = T.dummy
+
+hooksecurefunc(MultiBarLeft, "SetScale", function(self, scale)
+	if scale ~= 1 then
+		self:SetScale(1)
+	end
+end)
 
 for i = 1, 12 do
 	local b = _G["MultiBarLeftButton"..i]
