@@ -35,19 +35,32 @@ local function LoadSkin()
 	KeyBindingFrameScrollFrame:StripTextures()
 	T.SkinScrollBar(KeyBindingFrameScrollFrameScrollBar)
 
+	KeyBindingFrame.defaultsButton:ClearAllPoints()
+	KeyBindingFrame.defaultsButton:SetPoint("TOPLEFT", KeyBindingFrameCategoryList, "BOTTOMLEFT", 0, -14)
+	KeyBindingFrame.unbindButton:ClearAllPoints()
+	KeyBindingFrame.unbindButton:SetPoint("TOPRIGHT", KeyBindingFrame.bindingsContainer, "BOTTOMRIGHT", 0, -14)
+	KeyBindingFrame.okayButton:ClearAllPoints()
+	KeyBindingFrame.okayButton:SetPoint("RIGHT", KeyBindingFrame.unbindButton, "LEFT", -4, 0)
+	KeyBindingFrame.cancelButton:ClearAllPoints()
+	KeyBindingFrame.cancelButton:SetPoint("RIGHT", KeyBindingFrame.okayButton, "LEFT", -4, 0)
+
 	for i = 1, KEY_BINDINGS_DISPLAYED do
 		local button1 = _G["KeyBindingFrameKeyBinding"..i.."Key1Button"]
 		local button2 = _G["KeyBindingFrameKeyBinding"..i.."Key2Button"]
 
-		button1:StripTextures(true)
-		button1:StyleButton()
-		button1:SetTemplate("Overlay")
-
-		button2:StripTextures(true)
-		button2:StyleButton()
-		button2:SetTemplate("Overlay")
-		button2:SetPoint("LEFT", button1, "RIGHT", 1, 0)
+		button2:SetPoint("LEFT", button1, "RIGHT", 2, 0)
 	end
+
+	hooksecurefunc("BindingButtonTemplate_SetupBindingButton", function(_, button)
+		if not button.IsSkinned then
+			button:SetHeight(button:GetHeight() - 1)
+			button:StripTextures(true)
+			button:StyleButton()
+			button:SetTemplate("Overlay")
+
+			button.IsSkinned = true
+		end
+	end)
 end
 
 T.SkinFuncs["Blizzard_BindingUI"] = LoadSkin
