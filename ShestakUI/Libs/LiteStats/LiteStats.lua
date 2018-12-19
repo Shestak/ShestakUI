@@ -647,6 +647,7 @@ if gold.enabled then
 				IsSubTitle = 6
 				Currency(1716)					-- Honorbound Service Medal
 				Currency(1717)					-- 7th Legion Service Medal
+				Currency(1718)					-- Titan Residuum
 				Currency(1560)					-- War Resources
 				Currency(1710)					-- Seafarer's Dubloon
 				Currency(515)					-- Darkmoon Prize Ticket
