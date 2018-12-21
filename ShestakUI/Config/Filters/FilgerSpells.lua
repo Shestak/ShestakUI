@@ -995,7 +995,7 @@ C["filger_spells"] = {
 			-- Mirror Image
 			{spellID = 55342, filter = "ICD", trigger = "NONE", duration = 40},
 			-- Icicles
-			{spellID = 205473, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 205473, unitID = "player", caster = "player", filter = "BUFF", talentID = 21634},
 		},
 		{
 			Name = "P_PROC_ICON",
