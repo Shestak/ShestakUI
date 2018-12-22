@@ -451,10 +451,11 @@ local function Local(o)
 	if o == "UIConfigraidframeraid_tanks_tt" then o = L_GUI_UF_SHOW_TANK_TT end
 	if o == "UIConfigraidframeraid_groups" then o = L_GUI_UF_RAID_GROUP end
 	if o == "UIConfigraidframeraid_groups_vertical" then o = L_GUI_UF_RAID_VERTICAL_GROUP end
-	if o == "UIConfigraidframeicons_leader" then o = L_GUI_UF_ICONS_LEADER end
 	if o == "UIConfigraidframeicons_role" then o = L_GUI_UF_ICONS_ROLE end
 	if o == "UIConfigraidframeicons_raid_mark" then o = L_GUI_UF_ICONS_RAID_MARK end
 	if o == "UIConfigraidframeicons_ready_check" then o = L_GUI_UF_ICONS_READY_CHECK end
+	if o == "UIConfigraidframeicons_leader" then o = L_GUI_UF_ICONS_LEADER end
+	if o == "UIConfigraidframeicons_sumon" then o = L_GUI_UF_ICONS_SUMON end
 	if o == "UIConfigraidframeplugins_debuffhighlight_icon" then o = L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON end
 	if o == "UIConfigraidframeplugins_aura_watch" then o = L_GUI_UF_PLUGINS_AURA_WATCH end
 	if o == "UIConfigraidframeplugins_aura_watch_timer" then o = L_GUI_UF_PLUGINS_AURA_WATCH_TIMER end

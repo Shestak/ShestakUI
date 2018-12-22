@@ -147,6 +147,13 @@ local function Shared(self, unit)
 		self.ReadyCheckIndicator:SetPoint("BOTTOMRIGHT", self.Health, 2, 1)
 	end
 
+	-- Summon icons
+	if C.raidframe.icons_sumon == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
+		self.SummonIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+		self.SummonIndicator:SetSize(24, 24)
+		self.SummonIndicator:SetPoint("BOTTOMRIGHT", self.Health, 7, -11)
+	end
+
 	-- Leader/Assistant icons
 	if C.raidframe.icons_leader == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
 		-- Leader icon
@@ -161,11 +168,11 @@ local function Shared(self, unit)
 	end
 
 	-- Resurrect icon
-	self.ResurrectIndicator = self.Health:CreateTexture(nil, "OVERLAY")
-	--self.ResurrectIndicator:SetTexture("Interface\\Icons\\Spell_Holy_Resurrection")
-	--self.ResurrectIndicator:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	self.ResurrectIndicator:SetSize(13, 13)
-	self.ResurrectIndicator:SetPoint("BOTTOMRIGHT", self.Health, 2, -7)
+	if not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
+		self.ResurrectIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+		self.ResurrectIndicator:SetSize(13, 13)
+		self.ResurrectIndicator:SetPoint("BOTTOMRIGHT", self.Health, 2, -7)
+	end
 
 	-- Debuff highlight
 	if not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then

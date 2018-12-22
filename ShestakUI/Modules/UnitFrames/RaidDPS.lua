@@ -183,10 +183,17 @@ local function Shared(self, unit)
 	end
 
 	-- Ready check icons
-	if C.raidframe.icons_ready_check == true then
+	if C.raidframe.icons_ready_check == true and not (self:GetAttribute("unitsuffix") == "target") then
 		self.ReadyCheckIndicator = self.Health:CreateTexture(nil, "OVERLAY")
 		self.ReadyCheckIndicator:SetSize(12, 12)
 		self.ReadyCheckIndicator:SetPoint("BOTTOMRIGHT", self.Health, 2, -1)
+	end
+
+	-- Summon icons
+	if C.raidframe.icons_sumon == true  and not (self:GetAttribute("unitsuffix") == "target") then
+		self.SummonIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+		self.SummonIndicator:SetSize(24, 24)
+		self.SummonIndicator:SetPoint("BOTTOMRIGHT", self.Health, 6, -5)
 	end
 
 	if unit == "party" and (not (self:GetAttribute("unitsuffix") == "target")) and (not (self:GetAttribute("unitsuffix") == "pet")) then
