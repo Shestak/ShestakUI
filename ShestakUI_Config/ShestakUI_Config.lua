@@ -418,6 +418,7 @@ local function Local(o)
 	if o == "UIConfigunitframeplugins_combat_feedback" then o = L_GUI_UF_PLUGINS_COMBAT_FEEDBACK end
 	if o == "UIConfigunitframeplugins_fader" then o = L_GUI_UF_PLUGINS_FADER end
 	if o == "UIConfigunitframeplugins_diminishing" then o = L_GUI_UF_PLUGINS_DIMINISHING end
+	if o == "UIConfigunitframeplugins_power_prediction" then o = L_GUI_UF_PLUGINS_POWER_PREDICTION end
 
 	-- Unit Frames Class bar options
 	if o == "UIConfigunitframe_class_bar" then o = L_GUI_UF_PLUGINS_CLASS_BAR end

@@ -1218,6 +1218,22 @@ local function Shared(self, unit)
 		}
 	end
 
+	-- Power Prediction bar
+	if C.unitframe.plugins_power_prediction == true and unit == "player" then
+		local mainBar = CreateFrame("StatusBar", self:GetName().."_PowerPrediction", self.Power)
+		mainBar:SetReverseFill(true)
+		mainBar:SetPoint("TOP")
+		mainBar:SetPoint("BOTTOM")
+		mainBar:SetPoint("RIGHT", self.Power:GetStatusBarTexture(), "RIGHT")
+		mainBar:SetStatusBarTexture(C.media.texture)
+		mainBar:SetStatusBarColor(1, 1, 1, 0.5)
+		mainBar:SetWidth(217)
+
+		self.PowerPrediction = {
+			mainBar = mainBar
+		}
+	end
+
 	-- Fader
 	if C.unitframe.plugins_fader == true then
 		if unit ~= "arena" or unit ~= "arenatarget" or unit ~= "boss" then

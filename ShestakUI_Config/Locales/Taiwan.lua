@@ -382,6 +382,7 @@ L_GUI_UF_PLUGINS_ENEMY_SPEC = "敵對玩家天賦"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "玩家/目標框架顯示戰鬥文字"
 L_GUI_UF_PLUGINS_FADER = "自動隱藏玩家框架"
 L_GUI_UF_PLUGINS_DIMINISHING = "競技場框架顯示技能遞減"
+L_GUI_UF_PLUGINS_POWER_PREDICTION = "Power cost prediction bar on player frame" -- Need review
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "職業欄"

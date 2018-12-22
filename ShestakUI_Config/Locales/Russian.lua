@@ -382,6 +382,7 @@ L_GUI_UF_PLUGINS_ENEMY_SPEC = "Отображать специализацию �
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Текст боя на рамках игрока и цели"
 L_GUI_UF_PLUGINS_FADER = "Скрывать рамки вне боя"
 L_GUI_UF_PLUGINS_DIMINISHING = "Иконка диминишинга на рамках арены"
+L_GUI_UF_PLUGINS_POWER_PREDICTION = "Полоса прогноза использования маны/энергии"
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Классовые панели"

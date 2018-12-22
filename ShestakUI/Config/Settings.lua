@@ -485,6 +485,7 @@ C["unitframe"] = {
 	["plugins_combat_feedback"] = false,		-- Combat text on player/target frame
 	["plugins_fader"] = false,					-- Fade unit frames
 	["plugins_diminishing"] = false,			-- Diminishing Returns icons on arena frames
+	["plugins_power_prediction"] = false,		-- Power cost prediction bar on player frame
 }
 
 ----------------------------------------------------------------------------------------

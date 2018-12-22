@@ -19,6 +19,7 @@
 	<Script file="Elements\LeaderIndicator.lua"/>
 	<Script file="Elements\Portraits.lua"/>
 	<Script file="Elements\Power.lua"/>
+	<Script file="Elements\PowerPrediction.lua"/>
 	<Script file="Elements\QuestIndicator.lua"/>
 	<Script file="Elements\RaidTargetIndicator.lua"/>
 	<Script file="Elements\Range.lua"/>
