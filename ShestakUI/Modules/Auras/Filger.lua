@@ -345,7 +345,7 @@ local function GUIDRoles(uid)
 	return nil
 end
 
-function Filger:OnEvent(event, unit, _, spellID)
+function Filger:OnEvent(event, unit, _, castID)
 	if event == "COMBAT_LOG_EVENT_UNFILTERED" then
 		local _, eventType, _, srcGUID, _, _, _, dstGUID = CombatLogGetCurrentEventInfo()
 		if LogEvents[eventType] then
@@ -389,6 +389,10 @@ function Filger:OnEvent(event, unit, _, spellID)
 	or event == "PLAYER_TARGET_CHANGED" or event == "PLAYER_FOCUS_CHANGED"
 	or event == "UNIT_AURA" and (unit == "player" or unit == "target" or unit == "pet" or unit == "focus")
 	or (event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player") then
+		for spid in pairs(self.actives) do
+			self.actives[spid] = nil
+		end
+
 		local ptt = GetSpecialization()
 		local needUpdate = false
 		local id = self.Id
@@ -460,7 +464,7 @@ function Filger:OnEvent(event, unit, _, spellID)
 							name, spid = Filger:UnitAura("player", data.spellID, spell, "HARMFUL", data.absID)
 						end
 					elseif data.trigger == "NONE" and event == "UNIT_SPELLCAST_SUCCEEDED" then
-						if spellID == data.spellID then
+						if castID == data.spellID then
 							name, _, icon = GetSpellInfo(data.spellID)
 							spid = data.spellID
 						end
@@ -501,7 +505,7 @@ function Filger:OnEvent(event, unit, _, spellID)
 			end
 		end
 
-		if needUpdate and self.actives then
+		if self.actives then
 			Filger.DisplayActives(self)
 		end
 	end
