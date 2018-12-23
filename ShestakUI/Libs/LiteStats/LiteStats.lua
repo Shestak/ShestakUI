@@ -1232,15 +1232,19 @@ if friends.enabled then
 								notCheckable = true,
 								func = function(self, arg1)
 									menuFrame:Hide()
-									ChatFrame_SendSmartTell(arg1)
+									ChatFrame_SendBNetTell(arg1)
 								end
 							}
 
 							if BNTable[i][6] == BNET_CLIENT_WOW and UnitFactionGroup("player") == BNTable[i][12] then
 								if not (UnitInParty(BNTable[i][4]) or UnitInRaid(BNTable[i][4])) then
+									classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[BNTable[i][14]], GetQuestDifficultyColor(BNTable[i][16])
+									if classc == nil then
+										classc = GetQuestDifficultyColor(BNTable[i][16])
+									end
 									menuCountInvites = menuCountInvites + 1
 									menuList[2].menuList[menuCountInvites] = {
-										text = BNTable[i][2],
+										text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, BNTable[i][16], classc.r * 255, classc.g * 255, classc.b * 255, BNTable[i][4]),
 										arg1 = BNTable[i][5],
 										notCheckable = true,
 										func = function(self, arg1)
