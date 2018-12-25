@@ -139,14 +139,13 @@ local function LoadSkin()
 	CalendarCreateEventRaidInviteButton:SkinButton(true)
 
 	-- Mass Invite Frame
-	CalendarMassInviteFrame:SetTemplate("Overlay")
-
+	CalendarMassInviteFrame:CreateBackdrop("Overlay")
+	T.SkinDropDownBox(CalendarMassInviteCommunityDropDown, 190)
+	T.SkinDropDownBox(CalendarMassInviteRankMenu)
+	T.SkinEditBox(CalendarMassInviteMinLevelEdit)
+	T.SkinEditBox(CalendarMassInviteMaxLevelEdit)
+	CalendarMassInviteAcceptButton:SkinButton()
 	T.SkinCloseButton(CalendarMassInviteCloseButton)
-	--BETA CalendarMassInviteGuildAcceptButton:SkinButton()
-	-- T.SkinDropDownBox(CalendarMassInviteGuildRankMenu, 130)
-
-	-- T.SkinEditBox(CalendarMassInviteGuildMinLevelEdit)
-	-- T.SkinEditBox(CalendarMassInviteGuildMaxLevelEdit)
 
 	-- Raid View
 	CalendarViewRaidFrame:SetTemplate("Transparent")
