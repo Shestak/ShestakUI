@@ -170,3 +170,10 @@ if _G["ActionBarButtonEventsFrame"].frames then
 end
 
 hooksecurefunc("ActionBarButtonEventsFrame_RegisterFrame", actionButton_Register)
+
+hooksecurefunc("CooldownFrame_SetDisplayAsPercentage", function(self)
+	local timer = self.timer
+	if timer then
+		Timer_Stop(timer)
+	end
+end)
