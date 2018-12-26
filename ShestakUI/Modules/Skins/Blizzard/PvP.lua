@@ -53,6 +53,15 @@ local function LoadSkin()
 
 	PVPQueueFrame.HonorInset:StripTextures()
 
+	local SeasonRewardFrame = PVPQueueFrame.HonorInset.RatedPanel.SeasonRewardFrame
+	SeasonRewardFrame.Ring:Hide()
+	SeasonRewardFrame.CircleMask:Hide()
+	SeasonRewardFrame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	SeasonRewardFrame.border = CreateFrame("Frame", nil, SeasonRewardFrame)
+	SeasonRewardFrame.border:CreateBackdrop("Default")
+	SeasonRewardFrame.border.backdrop:SetPoint("TOPLEFT", SeasonRewardFrame.Icon, -2, 2)
+	SeasonRewardFrame.border.backdrop:SetPoint("BOTTOMRIGHT", SeasonRewardFrame.Icon, 2, -2)
+
 	-- HonorFrame
 	HonorFrame.Inset:StripTextures()
 	T.SkinDropDownBox(HonorFrameTypeDropDown, 165)
