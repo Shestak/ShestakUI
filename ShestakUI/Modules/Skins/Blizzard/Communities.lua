@@ -127,43 +127,7 @@ local function LoadSkin()
 
 	T.SkinCloseButton(CommunitiesFrameCloseButton)
 
-	CommunitiesFrame.MaximizeMinimizeFrame:StripTextures()
-	CommunitiesFrame.MaximizeMinimizeFrame:SetSize(18, 18)
-	CommunitiesFrame.MaximizeMinimizeFrame:SetPoint("RIGHT", CommunitiesFrameCloseButton, "LEFT", -2, 0)
-
-	local MaximizeButton = CommunitiesFrame.MaximizeMinimizeFrame.MaximizeButton
-	MaximizeButton:StripTextures()
-	MaximizeButton:SetTemplate("Overlay")
-	MaximizeButton:SetHitRectInsets(1, 1, 1, 1)
-
-	MaximizeButton.minus = MaximizeButton:CreateTexture(nil, "OVERLAY")
-	MaximizeButton.minus:SetSize(7, 1)
-	MaximizeButton.minus:SetPoint("CENTER")
-	MaximizeButton.minus:SetTexture(C.media.blank)
-
-	MaximizeButton.plus = MaximizeButton:CreateTexture(nil, "OVERLAY")
-	MaximizeButton.plus:SetSize(1, 7)
-	MaximizeButton.plus:SetPoint("CENTER")
-	MaximizeButton.plus:SetTexture(C.media.blank)
-
-	MaximizeButton:HookScript("OnEnter", T.SetModifiedBackdrop)
-	MaximizeButton:HookScript("OnLeave", T.SetOriginalBackdrop)
-
-	local MinimizeButton = CommunitiesFrame.MaximizeMinimizeFrame.MinimizeButton
-	MinimizeButton:StripTextures()
-	MinimizeButton:SetTemplate("Overlay")
-	MinimizeButton:SetHitRectInsets(1, 1, 1, 1)
-
-	MinimizeButton.minus = MinimizeButton:CreateTexture(nil, "OVERLAY")
-	MinimizeButton.minus:SetSize(7, 1)
-	MinimizeButton.minus:SetPoint("CENTER")
-	MinimizeButton.minus:SetTexture(C.media.blank)
-
-	MinimizeButton:HookScript("OnEnter", T.SetModifiedBackdrop)
-	MinimizeButton:HookScript("OnLeave", T.SetOriginalBackdrop)
-
-	T.SkinDropDownBox(CommunitiesFrame.StreamDropDownMenu)
-	T.SkinDropDownBox(CommunitiesFrame.CommunitiesListDropDownMenu)
+	T.SkinMaxMinFrame(CommunitiesFrame.MaximizeMinimizeFrame, CommunitiesFrameCloseButton)
 
 	CommunitiesFrame.InviteButton:SkinButton()
 end

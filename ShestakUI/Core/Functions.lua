@@ -583,6 +583,39 @@ function T.SkinIconSelectionFrame(frame, numIcons, buttonNameTemplate, frameName
 	end
 end
 
+function T.SkinMaxMinFrame(frame, point)
+	frame:SetSize(18, 18)
+
+	if point then
+		frame:SetPoint("RIGHT", point, "LEFT", -2, 0)
+	end
+
+	for name, direction in pairs({ ["MaximizeButton"] = "up", ["MinimizeButton"] = "down"}) do
+		local button = frame[name]
+		if button then
+			button:StripTextures()
+			button:SetTemplate("Overlay")
+			button:SetPoint("CENTER")
+			button:SetHitRectInsets(1, 1, 1, 1)
+
+			button.minus = button:CreateTexture(nil, "OVERLAY")
+			button.minus:SetSize(7, 1)
+			button.minus:SetPoint("CENTER")
+			button.minus:SetTexture(C.media.blank)
+
+			if direction == "up" then
+				button.plus = button:CreateTexture(nil, "OVERLAY")
+				button.plus:SetSize(1, 7)
+				button.plus:SetPoint("CENTER")
+				button.plus:SetTexture(C.media.blank)
+			end
+
+			button:HookScript("OnEnter", T.SetModifiedBackdrop)
+			button:HookScript("OnLeave", T.SetOriginalBackdrop)
+		end
+	end
+end
+
 local LoadBlizzardSkin = CreateFrame("Frame")
 LoadBlizzardSkin:RegisterEvent("ADDON_LOADED")
 LoadBlizzardSkin:SetScript("OnEvent", function(self, event, addon)
