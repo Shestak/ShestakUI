@@ -8,10 +8,6 @@ local _, ns = ...
 local oUF = ns.oUF or oUF
 assert(oUF, 'oUF Experience was unable to locate oUF install')
 
-local HONOR = HONOR or 'Honor'
-local EXPERIENCE = COMBAT_XP_GAIN or 'Experience'
-local RESTED = TUTORIAL_TITLE26 or 'Rested'
-
 local math_floor = math.floor
 
 oUF.colors.experience = {
