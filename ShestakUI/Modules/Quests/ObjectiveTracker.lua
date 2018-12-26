@@ -31,7 +31,7 @@ hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "SetStringText", function(_, fo
 	local _, fontHeight = SystemFont_Shadow_Med1:GetFont()
 	local stringHeight = fontString:GetHeight()
 	if stringHeight > OBJECTIVE_TRACKER_DOUBLE_LINE_HEIGHT * 2 - (fontHeight * 2) and not useFullHeight then
-		fontString:SetHeight(fontHeight * 3)
+		fontString:SetHeight(fontHeight * 2.1)
 	end
 end)
 
