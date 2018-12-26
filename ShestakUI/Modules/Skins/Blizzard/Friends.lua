@@ -229,7 +229,7 @@ local function LoadSkin()
 	FriendsTabHeader.FriendsFrameQuickJoinHelpTip:CreateBackdrop("Transparent")
 
 	-- Bottom Tabs
-	for i = 1, 5 do
+	for i = 1, 4 do
 		T.SkinTab(_G["FriendsFrameTab"..i])
 	end
 
