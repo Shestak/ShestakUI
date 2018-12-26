@@ -86,12 +86,12 @@ local metatable = {
 	end
 }
 
-local modifier, DISABLED = false
+local modifier = false
 function QuickQuest:Register(event, method, override)
 	local newmethod
 	if not override then
 		newmethod = function(...)
-			if QuickQuestDB.reverse == modifier and not DISABLED then
+			if QuickQuestDB.reverse == modifier then
 				method(...)
 			end
 		end
