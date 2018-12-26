@@ -34,7 +34,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"GuildInviteFrame",
 			"RolePollPopup",
 			"BaudErrorFrame",
-			"StackSplitFrame",
 			"OpacityFrame",
 			"GeneralDockManagerOverflowButtonList",
 			"QueueStatusFrame",
@@ -197,8 +196,6 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			"LFDRoleCheckPopupDeclineButton",
 			"LFDRoleCheckPopupAcceptButton",
 			"LFDReadyCheckPopupAcceptButton",
-			"StackSplitOkayButton",
-			"StackSplitCancelButton",
 			"RaidUtilityConvertButton",
 			"RaidUtilityMainTankButton",
 			"RaidUtilityMainAssistButton",
@@ -259,8 +256,16 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["GeneralDockManagerOverflowButtonList"]:SetFrameStrata("HIGH")
 		_G["ReadyCheckListenerFrame"]:SetAlpha(0)
 		_G["ReadyCheckFrame"]:HookScript("OnShow", function(self) if UnitIsUnit("player", self.initiator) then self:Hide() end end)
-		_G["StackSplitFrame"]:GetRegions():Hide()
-		_G["StackSplitFrame"]:SetFrameStrata("TOOLTIP")
+
+		-- StackSplit
+		StackSplitFrame:SetFrameStrata("TOOLTIP")
+		StackSplitFrame:StripTextures()
+		StackSplitFrame:CreateBackdrop("Transparent")
+		StackSplitFrame.backdrop:SetPoint("TOPLEFT", 5, -5)
+		StackSplitFrame.backdrop:SetPoint("BOTTOMRIGHT", -5, 10)
+		StackSplitFrame.OkayButton:SkinButton()
+		StackSplitFrame.CancelButton:SkinButton()
+
 		_G["StaticPopup1CloseButton"]:HookScript("OnShow", function(self)
 			self:StripTextures(true)
 			T.SkinCloseButton(self, nil, "-")
