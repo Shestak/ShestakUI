@@ -91,13 +91,13 @@ L_UF_MANA = "Poco mana"
 L_MAP_CURSOR = "Cursore: "
 L_MAP_BOUNDS = "Fuori i confini!"
 L_MAP_FOG = "Nebbia della guerra"
+L_MAP_COORDS = "Coordinates" -- Needs review
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendario"
 L_MINIMAP_HEAL_LAYOUT = "Click-Sinistro - Disposizione da Guaritore"
 L_MINIMAP_DPS_LAYOUT = "Click-Destro - Disposizione d'Assaltatore"
 L_MINIMAP_BLIZZ_LAYOUT = "Click-Centrale - Disposizione Blizzard"
-L_MINIMAP_ARTIFACT = "Right click to use" -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "Da"

@@ -91,13 +91,13 @@ L_UF_MANA = "Mana faible"
 L_MAP_CURSOR = "Curseur : "
 L_MAP_BOUNDS = "En dehors de la carte !"
 L_MAP_FOG = "Zone non découverte"
+L_MAP_COORDS = "Coordinates" -- Needs review
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendrier"
 L_MINIMAP_HEAL_LAYOUT = "Clic-Gauche - Interface Heal"
 L_MINIMAP_DPS_LAYOUT = "Clic-Droit - Interface DPS"
 L_MINIMAP_BLIZZ_LAYOUT = "Clic-Centre - Interface Blizzard"
-L_MINIMAP_ARTIFACT = "Right click to use" -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "De"

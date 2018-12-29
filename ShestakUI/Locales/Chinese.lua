@@ -91,13 +91,13 @@ L_UF_MANA = "低法力值"
 L_MAP_CURSOR = "指针: "
 L_MAP_BOUNDS = "超出范围!"
 L_MAP_FOG = "地图全亮"
+L_MAP_COORDS = "Coordinates" -- Needs review
 
 -- Minimap
 L_MINIMAP_CALENDAR = "日历"
 L_MINIMAP_HEAL_LAYOUT = "左鍵 - 治疗 布局"
 L_MINIMAP_DPS_LAYOUT = "右键 - 攻击 布局"
 L_MINIMAP_BLIZZ_LAYOUT = "中键 - 默认布局"
-L_MINIMAP_ARTIFACT = "Right click to use" -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "From"

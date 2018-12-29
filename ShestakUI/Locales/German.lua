@@ -91,13 +91,13 @@ L_UF_MANA = "Niedriges Mana"
 L_MAP_CURSOR = "Mauszeiger: "
 L_MAP_BOUNDS = "Außerhalb der Begrenzung!"
 L_MAP_FOG = "Nebel des Krieges"
+L_MAP_COORDS = "Coordinates" -- Needs review
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Kalender"
 L_MINIMAP_HEAL_LAYOUT = "Links-Klick - Heiler Layout"
 L_MINIMAP_DPS_LAYOUT = "Rechts-Klick - DPS Layout"
 L_MINIMAP_BLIZZ_LAYOUT = "Mittel-Klick - Blizzard Layout"
-L_MINIMAP_ARTIFACT = "Right click to use" -- Needs review
 
 -- Chat
 L_CHAT_WHISPER = "Von"
