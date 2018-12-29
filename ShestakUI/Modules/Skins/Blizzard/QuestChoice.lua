@@ -17,11 +17,11 @@ local function LoadSkin()
 		local container = option.OptionButtonsContainer
 
 		item.IconBorder:SetAlpha(0)
-		T.HandleIcon(icon)
+		icon:SkinIcon()
 
 		for j = 1, 3 do
 			local cu = currencies["Currency"..j]
-			T.HandleIcon(cu.Icon)
+			cu.Icon:SkinIcon()
 		end
 
 		for j = 1, 2 do

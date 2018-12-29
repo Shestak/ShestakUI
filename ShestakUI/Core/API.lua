@@ -298,6 +298,20 @@ local function SkinButton(f, strip)
 end
 
 ----------------------------------------------------------------------------------------
+--	Style icon function
+----------------------------------------------------------------------------------------
+local function SkinIcon(icon, parent)
+	parent = parent or icon:GetParent()
+
+	parent:CreateBackdrop("Default")
+	parent.backdrop:SetPoint("TOPLEFT", icon, -2, 2)
+	parent.backdrop:SetPoint("BOTTOMRIGHT", icon, 2, -2)
+
+	icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	icon:SetParent(parent)
+end
+
+----------------------------------------------------------------------------------------
 --	Font function
 ----------------------------------------------------------------------------------------
 local function FontString(parent, name, fontName, fontHeight, fontStyle)
@@ -342,6 +356,7 @@ local function addAPI(object)
 	if not object.Kill then mt.Kill = Kill end
 	if not object.StyleButton then mt.StyleButton = StyleButton end
 	if not object.SkinButton then mt.SkinButton = SkinButton end
+	if not object.SkinIcon then mt.SkinIcon = SkinIcon end
 	if not object.FontString then mt.FontString = FontString end
 	if not object.FadeIn then mt.FadeIn = FadeIn end
 	if not object.FadeOut then mt.FadeOut = FadeOut end
