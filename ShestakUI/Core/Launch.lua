@@ -209,16 +209,14 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	else
 		SetCVar("useUiScale", 1)
 		if C.general.uiscale > 1.28 then C.general.uiscale = 1.28 end
-		if C.general.uiscale < 0.64 then C.general.uiscale = 0.64 end
 
 		-- Set our uiscale
-		SetCVar("uiScale", C.general.uiscale)
+		if (format("%.2f", GetCVar("uiScale")) ~= format("%.2f", C.general.uiscale)) then
+			SetCVar("uiScale", C.general.uiscale)
+		end
 
 		-- Hack for 4K and WQHD Resolution
-		local customScale = min(2, max(0.32, 768 / string.match(T.resolution, "%d+x(%d+)")))
-		if C.general.auto_scale == true and customScale < 0.64 then
-			UIParent:SetScale(customScale)
-		elseif customScale < 0.64 then
+		if C.general.uiscale < 0.64 then
 			UIParent:SetScale(C.general.uiscale)
 		end
 
