@@ -332,8 +332,8 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 				CliqueSpellTab:StyleButton()
 			end
 
-			local function SkinIconArray(baseName, rowSize, numRows)
-				for i = 1, rowSize * numRows do
+			local function SkinIconArray(baseName, numIcons)
+				for i = 1, numIcons do
 					local button = _G[baseName..i]
 					local texture = _G[baseName..i.."Icon"]
 
@@ -349,8 +349,9 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			end
 
 			-- This is used to create icons for the GuildBankPopupFrame, MacroPopupFrame, and GearManagerDialogPopup
-			hooksecurefunc("BuildIconArray", function(parent, baseName, template, rowSize, numRows, onButtonCreated)
-				SkinIconArray(baseName, rowSize, numRows)
+			hooksecurefunc("BuildIconArray", function(_, baseName, _, rowSize, numRows)
+				local numIcons = rowSize * numRows
+				SkinIconArray(baseName, numIcons)
 			end)
 		end
 	end
