@@ -24,6 +24,15 @@ local function LoadSkin()
 
 	T.SkinEditBox(CommunitiesFrame.ChatEditBox, nil, 18)
 
+	T.SkinDropDownBox(CommunitiesFrame.StreamDropDownMenu)
+	T.SkinDropDownBox(CommunitiesFrame.CommunitiesListDropDownMenu)
+
+	CommunitiesFrame.AddToChatButton:ClearAllPoints()
+	CommunitiesFrame.AddToChatButton:SetPoint("BOTTOM", CommunitiesFrame.ChatEditBox, "BOTTOMRIGHT", -5, -30)
+	CommunitiesFrame.AddToChatButton:SkinButton()
+
+	CommunitiesFrame.CommunitiesControlFrame.CommunitiesSettingsButton:SkinButton()
+
 	hooksecurefunc(CommunitiesListEntryMixin, "SetClubInfo", function(self, clubInfo)
 		if clubInfo then
 			self:SetSize(166, 67)
@@ -83,8 +92,108 @@ local function LoadSkin()
 
 	CommunitiesFrame.MemberList.ShowOfflineButton:SetSize(25, 25)
 
+	CommunitiesFrame.MemberList:StripTextures()
+
+	CommunitiesFrame.MemberList.ColumnDisplay:StripTextures()
+
 	T.SkinCheckBox(CommunitiesFrame.MemberList.ShowOfflineButton)
 	T.SkinDropDownBox(CommunitiesFrame.GuildMemberListDropDownMenu)
+
+	hooksecurefunc(CommunitiesFrame.MemberList, "RefreshListDisplay", function(self)
+		for i = 1, self.ColumnDisplay:GetNumChildren() do
+			local child = select(i, self.ColumnDisplay:GetChildren())
+			if not child.IsSkinned then
+				child:StripTextures()
+				child:CreateBackdrop("Overlay")
+				child.backdrop:SetPoint("TOPLEFT", 2, -2)
+				child.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+
+				child.IsSkinned = true
+			end
+		end
+
+		for _, button in ipairs(self.ListScrollFrame.buttons or {}) do
+			if button and not button.hooked then
+				hooksecurefunc(button, "RefreshExpandedColumns", function(self)
+					if not self.expanded then return end
+
+					local memberInfo = self:GetMemberInfo()
+					if memberInfo and memberInfo.classID then
+						local classInfo = C_CreatureInfo.GetClassInfo(memberInfo.classID)
+						if classInfo then
+							local texcoord = CLASS_ICON_TCOORDS[classInfo.classFile]
+							self.Class:SetTexCoord(texcoord[1] + 0.015, texcoord[2] - 0.02, texcoord[3] + 0.018, texcoord[4] - 0.02)
+						end
+					end
+				end)
+				if button.ProfessionHeader then
+					local header = button.ProfessionHeader
+					for i = 1, 3 do
+						select(i, header:GetRegions()):Hide()
+					end
+					header:CreateBackdrop("Overlay")
+					header.backdrop:SetPoint("TOPLEFT", 1, -1)
+					header.backdrop:SetPoint("BOTTOMRIGHT", -1, 1)
+				end
+
+				button.hooked = true
+			end
+			if button and button.bg then
+				button.bg:SetShown(button.Class:IsShown())
+			end
+		end
+	end)
+
+	CommunitiesFrame.GuildBenefitsFrame:StripTextures()
+	CommunitiesFrame.GuildBenefitsFrame.Perks:StripTextures()
+	CommunitiesFrame.GuildBenefitsFrame.Perks:CreateBackdrop("Overlay")
+	CommunitiesFrame.GuildBenefitsFrame.Perks.backdrop:SetPoint("TOPLEFT", 4, -2)
+	CommunitiesFrame.GuildBenefitsFrame.Perks.backdrop:SetPoint("BOTTOMRIGHT", -2, -2)
+
+	local GuildFactionBar = CommunitiesFrame.GuildBenefitsFrame.FactionFrame.Bar
+	GuildFactionBar:StripTextures()
+	GuildFactionBar.Progress:SetTexture(C.media.texture)
+	GuildFactionBar:CreateBackdrop("Overlay")
+	GuildFactionBar.backdrop:SetPoint("TOPLEFT", GuildFactionBar.Progress, "TOPLEFT", -2, 2)
+	GuildFactionBar.backdrop:SetPoint("BOTTOMRIGHT", GuildFactionBar, "BOTTOMRIGHT", 0, 0)
+
+	-- Guild Perk buttons list
+	for i = 1, 5 do
+		local button = _G["CommunitiesFrameContainerButton"..i]
+
+		button:StripTextures()
+
+		if button.Icon then
+			button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			button.Icon:ClearAllPoints()
+			button.Icon:SetPoint("TOPLEFT", 2, -3)
+			button:CreateBackdrop("Default")
+			button.backdrop:SetPoint("TOPLEFT", button.Icon, "TOPLEFT", -2, 2)
+			button.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, "BOTTOMRIGHT", 2, -2)
+			button.Icon:SetParent(button.backdrop)
+		end
+	end
+
+	CommunitiesFrame.GuildBenefitsFrame.Rewards:StripTextures()
+	CommunitiesFrame.GuildBenefitsFrame.Rewards:CreateBackdrop("Overlay")
+	CommunitiesFrame.GuildBenefitsFrame.Rewards.backdrop:SetPoint("TOPLEFT", 2, -2)
+	CommunitiesFrame.GuildBenefitsFrame.Rewards.backdrop:SetPoint("BOTTOMRIGHT", -2, -2)
+
+	for _, button in pairs(CommunitiesFrame.GuildBenefitsFrame.Rewards.RewardsContainer.buttons) do
+		button:StripTextures()
+
+		if button.Icon then
+			button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			button.Icon:ClearAllPoints()
+			button.Icon:SetPoint("TOPLEFT", 2, -3)
+			button:CreateBackdrop("Default")
+			button.backdrop:SetPoint("TOPLEFT", button.Icon, "TOPLEFT", -2, 2)
+			button.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, "BOTTOMRIGHT", 2, -2)
+			button.Icon:SetParent(button.backdrop)
+			button.Lock:SetTexture("Interface\\GuildFrame\\GuildFrame")
+			button.Lock:SetParent(button.backdrop)
+		end
+	end
 
 	CommunitiesFrame.CommunitiesControlFrame.GuildRecruitmentButton:SkinButton()
 	CommunitiesFrame.GuildLogButton:SkinButton()
