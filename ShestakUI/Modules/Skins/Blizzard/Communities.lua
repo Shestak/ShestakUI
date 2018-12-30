@@ -22,6 +22,16 @@ local function LoadSkin()
 	T.SkinScrollBar(CommunitiesFrame.Chat.MessageFrame.ScrollBar)
 	T.SkinScrollBar(CommunitiesFrame.MemberList.ListScrollFrame.scrollBar)
 
+	hooksecurefunc(CommunitiesFrame.Chat.MessageFrame.ScrollBar, "SetPoint", function(self, point, anchor, attachTo, x, y)
+		if anchor == CommunitiesFrame.Chat.MessageFrame and x == 10 and y == -11 then
+			self:SetPoint(point, anchor, attachTo, 11, -7)
+		elseif anchor == CommunitiesFrame.Chat.MessageFrame and x == 10 and y == -17 then
+			self:SetPoint(point, anchor, attachTo, 11, -14)
+		end
+	end)
+
+	CommunitiesFrame.MemberList.ListScrollFrame.scrollBar:SetPoint("BOTTOMLEFT", CommunitiesFrame.MemberList.ListScrollFrame, "BOTTOMRIGHT", 0, 14)
+
 	T.SkinEditBox(CommunitiesFrame.ChatEditBox, nil, 18)
 
 	T.SkinDropDownBox(CommunitiesFrame.StreamDropDownMenu)
@@ -197,14 +207,72 @@ local function LoadSkin()
 
 	CommunitiesFrame.CommunitiesControlFrame.GuildRecruitmentButton:SkinButton()
 	CommunitiesFrame.GuildLogButton:SkinButton()
+	CommunitiesFrame.GuildLogButton:SetPoint("BOTTOMLEFT", CommunitiesFrame, "BOTTOMLEFT", 196, 5)
+
 	T.SkinScrollBar(CommunitiesFrameRewards.scrollBar)
 	T.SkinScrollBar(CommunitiesFrameGuildDetailsFrameNewsContainer.ScrollBar)
+
+	hooksecurefunc(CommunitiesFrameGuildDetailsFrameNewsContainer.ScrollBar, "SetPoint", function(self, point, anchor, attachTo, x, y)
+		if anchor == CommunitiesFrameGuildDetailsFrameNewsContainer and x == 1 and y == 5 then
+			self:SetPoint(point, anchor, attachTo, x, 8)
+		end
+	end)
+
+	CommunitiesFrameGuildDetailsFrame:StripTextures()
+	CommunitiesFrameGuildDetailsFrameInfo:StripTextures()
+	CommunitiesFrameGuildDetailsFrameNews:StripTextures()
+
+	hooksecurefunc("CommunitiesGuildNewsButton_SetNews", function(button)
+		if button.header:IsShown() then
+			button.header:SetAlpha(0)
+		end
+	end)
+
+	CommunitiesFrameGuildDetailsFrameNews.SetFiltersButton:GetRegions():SetFont(C.media.normal_font, 10)
+
+	local backdrop1 = CreateFrame("Frame", nil, CommunitiesFrameGuildDetailsFrameInfo)
+	backdrop1:SetTemplate("Overlay")
+	backdrop1:SetFrameLevel(CommunitiesFrameGuildDetailsFrameInfo:GetFrameLevel() - 1)
+	backdrop1:SetPoint("TOPLEFT", CommunitiesFrameGuildDetailsFrameInfo, "TOPLEFT", 2, -22)
+	backdrop1:SetPoint("BOTTOMRIGHT", CommunitiesFrameGuildDetailsFrameInfo, "BOTTOMRIGHT", 0, 200)
+
+	local backdrop2 = CreateFrame("Frame", nil, CommunitiesFrameGuildDetailsFrameInfo)
+	backdrop2:SetTemplate("Overlay")
+	backdrop2:SetFrameLevel(CommunitiesFrameGuildDetailsFrameInfo:GetFrameLevel() - 1)
+	backdrop2:SetPoint("TOPLEFT", CommunitiesFrameGuildDetailsFrameInfo, "TOPLEFT", 2, -158)
+	backdrop2:SetPoint("BOTTOMRIGHT", CommunitiesFrameGuildDetailsFrameInfo, "BOTTOMRIGHT", 0, 118)
+
+	local backdrop3 = CreateFrame("Frame", nil, CommunitiesFrameGuildDetailsFrameInfo)
+	backdrop3:SetTemplate("Overlay")
+	backdrop3:SetFrameLevel(CommunitiesFrameGuildDetailsFrameInfo:GetFrameLevel() - 1)
+	backdrop3:SetPoint("TOPLEFT", CommunitiesFrameGuildDetailsFrameInfo, "TOPLEFT", 2, -236)
+	backdrop3:SetPoint("BOTTOMRIGHT", CommunitiesFrameGuildDetailsFrameInfo, "BOTTOMRIGHT", 0, -1)
+
+	local backdrop4 = CreateFrame("Frame", nil, CommunitiesFrameGuildDetailsFrameInfo)
+	backdrop4:SetTemplate("Overlay")
+	backdrop4:SetFrameLevel(CommunitiesFrameGuildDetailsFrameInfo:GetFrameLevel() - 1)
+	backdrop4:SetPoint("TOPLEFT", CommunitiesFrameGuildDetailsFrameInfo, "TOPLEFT", 591, -22)
+	backdrop4:SetPoint("BOTTOMRIGHT", CommunitiesFrameGuildDetailsFrameInfo, "BOTTOMRIGHT", 15, -1)
 
 	-- Notification Settings Dialog
 	local NotificationSettings = CommunitiesFrame.NotificationSettingsDialog
 	NotificationSettings:StripTextures()
 	NotificationSettings:CreateBackdrop("Transparent")
 	NotificationSettings.backdrop:SetAllPoints()
+
+	T.SkinDropDownBox(CommunitiesFrame.NotificationSettingsDialog.CommunitiesListDropDownMenu, 190)
+	CommunitiesFrame.NotificationSettingsDialog.ScrollFrame.Child.QuickJoinButton:SetSize(25, 25)
+	T.SkinCheckBox(CommunitiesFrame.NotificationSettingsDialog.ScrollFrame.Child.QuickJoinButton)
+	CommunitiesFrame.NotificationSettingsDialog.ScrollFrame.Child.AllButton:SkinButton()
+	CommunitiesFrame.NotificationSettingsDialog.ScrollFrame.Child.NoneButton:SkinButton()
+	CommunitiesFrame.NotificationSettingsDialog.OkayButton:SkinButton()
+	CommunitiesFrame.NotificationSettingsDialog.CancelButton:SkinButton()
+	T.SkinScrollBar(CommunitiesFrame.NotificationSettingsDialog.ScrollFrame.ScrollBar)
+
+	hooksecurefunc(CommunitiesNotificationSettingsStreamEntryMixin, "SetFilter", function(self)
+		T.SkinCheckBox(self.ShowNotificationsButton)
+		T.SkinCheckBox(self.HideNotificationsButton)
+	end)
 
 	CommunitiesFrameCommunitiesList:StripTextures()
 	CommunitiesFrameCommunitiesListListScrollFrame:StripTextures()
