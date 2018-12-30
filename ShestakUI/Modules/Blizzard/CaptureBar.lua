@@ -65,3 +65,10 @@ local function StateUpdate()
 	end
 end
 --BETA hooksecurefunc("WorldStateAlwaysUpFrame_Update", StateUpdate)
+
+-- do
+	-- local f = _G["UIWidgetTopCenterContainerFrame"]
+	-- f:ClearAllPoints()
+	-- f:SetFrameStrata("BACKGROUND")
+	-- f:SetPoint(unpack(C.position.attempt))
+-- end
