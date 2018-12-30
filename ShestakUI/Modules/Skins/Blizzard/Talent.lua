@@ -267,6 +267,30 @@ local function LoadSkin()
 	PlayerTalentFrameTalentsPvpTalentButton:SkinButton()
 	PlayerTalentFrameTalentsPvpTalentButtonIcon:SetTexCoord(0.3, 0.29, 0.3, 0.79, 0.65, 0.29, 0.65, 0.79)
 
+	for _, button in pairs(PlayerTalentFrameTalents.PvpTalentFrame.Slots) do
+		button:CreateBackdrop()
+		button.backdrop:SetOutside(button.Texture)
+
+		button.Arrow:SetAlpha(0)
+		button.Border:Hide()
+
+		hooksecurefunc(button, "Update", function(self)
+			local selectedTalentID = self.predictedSetting:Get()
+			if selectedTalentID then
+				local _, _, texture = GetPvpTalentInfoByID(selectedTalentID)
+				self.Texture:SetTexture(texture)
+				self.Texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			else
+				self.Texture:SetTexCoord(.15, .85, .15, .85)
+			end
+		end)
+	end
+
+	PlayerTalentFrameTalents.PvpTalentFrame.Swords:SetSize(72, 67)
+	PlayerTalentFrameTalents.PvpTalentFrame.Orb:Hide()
+	PlayerTalentFrameTalents.PvpTalentFrame.Ring:Hide()
+	PlayerTalentFrameTalents.PvpTalentFrame.OrbModelScene:SetAlpha(0)
+
 	PlayerTalentFrameTalents.PvpTalentFrame:StripTextures()
 	PlayerTalentFrameTalentsPvpTalentFrameTalentList:StripTextures()
 	PlayerTalentFrameTalentsPvpTalentFrameTalentList:CreateBackdrop("Transparent")
@@ -279,33 +303,34 @@ local function LoadSkin()
 
 	for _, button in pairs(PlayerTalentFrameTalents.PvpTalentFrame.TalentList.ScrollFrame.buttons) do
 		button:DisableDrawLayer("BACKGROUND")
-		button:StyleButton()
-		button:CreateBackdrop("Overlay")
 		button.Selected:SetTexture("")
-		button.backdrop:SetAllPoints()
+		button:StyleButton()
+
+		button:CreateBackdrop("Default")
+		button.backdrop:SetPoint("TOPLEFT", button.Icon, -2, 2)
+		button.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, 2, -2)
 
 		button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		button.Icon:SetSize(28, 28)
 		button.Icon:SetPoint("LEFT", button, "LEFT", 6, 0)
 
-		button.border = CreateFrame("Frame", nil, button)
-		button.border:CreateBackdrop("Default")
-		button.border.backdrop:SetPoint("TOPLEFT", button.Icon, -2, 2)
-		button.border.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, 2, -2)
-
-		button.selectedTexture = button:CreateTexture(nil, 'ARTWORK')
-		button.selectedTexture:SetInside(button)
-		button.selectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
-		button.selectedTexture:SetShown(button.Selected:IsShown())
+		button.bg = CreateFrame("Frame", nil, button)
+		button.bg:CreateBackdrop("Overlay")
+		button.bg:SetFrameLevel(button:GetFrameLevel() - 1)
+		button.bg:SetPoint("TOPLEFT", 2, -3)
+		button.bg:SetPoint("BOTTOMRIGHT", -2, 3)
 	end
 
 	hooksecurefunc(PlayerTalentFrameTalents.PvpTalentFrame.TalentList, "Update", function(self)
-		for _, Button in pairs(PlayerTalentFrameTalents.PvpTalentFrame.TalentList.ScrollFrame.buttons) do
-			if not Button.selectedTexture then return end
-			if Button.Selected:IsShown() then
-				Button.selectedTexture:SetShown(true)
+		for _, button in pairs(PlayerTalentFrameTalents.PvpTalentFrame.TalentList.ScrollFrame.buttons) do
+			if button.Selected:IsShown() then
+				button.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b, 1)
+				button.bg.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b, 1)
+				button.bg.backdrop.overlay:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.3)
 			else
-				Button.selectedTexture:Hide()
+				button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+				button.bg.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+				button.bg.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
 			end
 		end
 	end)
