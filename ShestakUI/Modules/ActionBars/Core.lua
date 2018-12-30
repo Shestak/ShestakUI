@@ -17,8 +17,13 @@ frame:SetScript("OnEvent", function()
 	MicroButtonAndBagsBar:EnableMouse(false)
 
 	local elements = {
-		MainMenuBar, OverrideActionBar, PossessBarFrame, PetActionBarFrame, StanceBarFrame, IconIntroTracker
+		MainMenuBar, OverrideActionBar, PossessBarFrame, PetActionBarFrame, StanceBarFrame
 	}
+
+	if not C_ClassTrial.IsClassTrialCharacter() then
+		tinsert(elements, IconIntroTracker)
+	end
+
 	for _, element in pairs(elements) do
 		if element:GetObjectType() == "Frame" then
 			element:UnregisterAllEvents()
