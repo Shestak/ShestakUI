@@ -58,6 +58,7 @@ local function Enable(self)
 		hp.ForceUpdate = ForceUpdate
 
 		self:RegisterEvent('UNIT_POWER_UPDATE', Path)
+		self:RegisterEvent('UNIT_MAXPOWER', Path)
 
 		hp.Visibility = CreateFrame("Frame", nil, hp)
 		hp.Visibility:RegisterEvent("PLAYER_TALENT_UPDATE")
@@ -72,6 +73,7 @@ local function Disable(self)
 	local hp = self.HolyPower
 	if(hp) then
 		self:UnregisterEvent('UNIT_POWER_UPDATE', Path)
+		self:UnregisterEvent('UNIT_MAXPOWER', Path)
 		hp.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")
 		hp.Visibility:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	end
