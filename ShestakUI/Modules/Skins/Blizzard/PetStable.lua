@@ -18,8 +18,8 @@ local function LoadSkin()
 	PetStableModelRotateRightButton:ClearAllPoints()
 	PetStableModelRotateRightButton:SetPoint("LEFT", PetStableModelRotateLeftButton, "RIGHT", 3, 0)
 
-	T.SkinNextPrevButton(PetStablePrevPageButton)
-	T.SkinNextPrevButton(PetStableNextPageButton)
+	T.SkinNextPrevButton(PetStablePrevPageButton, nil, "Any")
+	T.SkinNextPrevButton(PetStableNextPageButton, nil, "Any")
 
 	T.SkinCloseButton(PetStableFrameCloseButton)
 
@@ -51,8 +51,14 @@ local function LoadSkin()
 		icon:SetPoint("BOTTOMRIGHT", -2, 2)
 	end
 
-	PetStableSelectedPetIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	--PetStableDietTexture:SetTexCoord(0.08593750, 0.13476563, 0.73437500, 0.77929688)
+	PetStableSelectedPetIcon:SkinIcon()
+
+	PetStableDiet:StripTextures()
+	PetStableDiet:SetSize(20, 20)
+	PetStableDiet:SetPoint("TOPRIGHT", -9, -2)
+
+	PetStableDietTexture:SetTexture("Interface\\Icons\\ability_hunter_beasttraining")
+	PetStableDietTexture:SkinIcon()
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
