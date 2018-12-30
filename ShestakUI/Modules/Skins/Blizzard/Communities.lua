@@ -45,7 +45,7 @@ local function LoadSkin()
 
 	hooksecurefunc(CommunitiesListEntryMixin, "SetClubInfo", function(self, clubInfo)
 		if clubInfo then
-			self:SetSize(166, 67)
+			self:SetSize(166, 65)
 			self.Background:Hide()
 			self:SetFrameLevel(self:GetFrameLevel() + 5)
 
@@ -78,7 +78,7 @@ local function LoadSkin()
 	end)
 
 	hooksecurefunc(CommunitiesListEntryMixin, "SetAddCommunity", function(self)
-		self:SetSize(166, 67)
+		self:SetSize(166, 65)
 		self.Background:Hide()
 		self:SetFrameLevel(self:GetFrameLevel() + 5)
 		self.CircleMask:Hide()
@@ -99,6 +99,35 @@ local function LoadSkin()
 		highlight:SetColorTexture(1, 1, 1, 0.3)
 		highlight:SetInside(self.bg, 0, 0)
 	end)
+
+	hooksecurefunc(CommunitiesListEntryMixin, "SetGuildFinder", function(self)
+		self:SetSize(166, 65)
+		self.Background:Hide()
+		self:SetFrameLevel(self:GetFrameLevel() + 5)
+		self.CircleMask:Hide()
+
+		self.Icon:SetDrawLayer("OVERLAY", 1)
+		self.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		self.IconRing:Hide()
+
+		if not self.bg then
+			self.bg = CreateFrame("Frame", nil, self)
+			self.bg:CreateBackdrop("Overlay")
+			self.bg:SetFrameLevel(self:GetFrameLevel() - 2)
+			self.bg:SetPoint("TOPLEFT", 4, -3)
+			self.bg:SetPoint("BOTTOMRIGHT", -1, 3)
+		end
+
+		self.Selection:SetInside(self.bg, 0, 0)
+		self.Selection:SetColorTexture(GREEN_FONT_COLOR.r, GREEN_FONT_COLOR.g, GREEN_FONT_COLOR.b, 0.2)
+
+		local highlight = self:GetHighlightTexture()
+		highlight:SetColorTexture(1, 1, 1, 0.3)
+		highlight:SetInside(self.bg, 0, 0)
+	end)
+
+	CommunitiesFrame.GuildFinderFrame:StripTextures()
+	CommunitiesFrame.GuildFinderFrame.FindAGuildButton:SkinButton()
 
 	CommunitiesFrame.MemberList.ShowOfflineButton:SetSize(25, 25)
 
