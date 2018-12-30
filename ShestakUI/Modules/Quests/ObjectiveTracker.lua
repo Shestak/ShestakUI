@@ -231,9 +231,9 @@ hooksecurefunc(WORLD_QUEST_TRACKER_MODULE, "AddProgressBar", function(_, _, line
 end)
 
 ----------------------------------------------------------------------------------------
---	Skin default quest objective progress bar
+--	Skin default/scenario quest objective progress bar
 ----------------------------------------------------------------------------------------
-hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(self, block, line)
+local function SkinSimpleBar(self, block, line)
 	local progressBar = self.usedProgressBars[block] and self.usedProgressBars[block][line]
 	local bar = progressBar.Bar
 	local label = bar.Label
@@ -252,6 +252,14 @@ hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(self
 
 		progressBar.styled = true
 	end
+end
+
+hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(self, block, line)
+	SkinSimpleBar(self, block, line)
+end)
+
+hooksecurefunc(SCENARIO_TRACKER_MODULE, "AddProgressBar", function(self, block, line)
+	SkinSimpleBar(self, block, line)
 end)
 
 ----------------------------------------------------------------------------------------
