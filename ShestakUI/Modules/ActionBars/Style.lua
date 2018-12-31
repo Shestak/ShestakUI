@@ -206,19 +206,24 @@ end
 local buttons = 0
 local function SetupFlyoutButton()
 	for i = 1, buttons do
-		if _G["SpellFlyoutButton"..i] then
-			StyleNormalButton(_G["SpellFlyoutButton"..i])
-			_G["SpellFlyoutButton"..i]:StyleButton()
+		local button = _G["SpellFlyoutButton"..i]
+		if button then
+			StyleNormalButton(button)
+			button:StyleButton()
 
-			if _G["SpellFlyoutButton"..i]:GetChecked() then
-				_G["SpellFlyoutButton"..i]:SetChecked(false)
+			if button:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() then
+				button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
+			end
+
+			if button:GetChecked() then
+				button:SetChecked(false)
 			end
 
 			if C.actionbar.rightbars_mouseover == true then
 				SpellFlyout:HookScript("OnEnter", function(self) RightBarMouseOver(1) end)
 				SpellFlyout:HookScript("OnLeave", function(self) RightBarMouseOver(0) end)
-				_G["SpellFlyoutButton"..i]:HookScript("OnEnter", function(self) RightBarMouseOver(1) end)
-				_G["SpellFlyoutButton"..i]:HookScript("OnLeave", function(self) RightBarMouseOver(0) end)
+				button:HookScript("OnEnter", function(self) RightBarMouseOver(1) end)
+				button:HookScript("OnLeave", function(self) RightBarMouseOver(0) end)
 			end
 		end
 	end
