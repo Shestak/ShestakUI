@@ -382,22 +382,7 @@ function T.SkinRotateButton(btn)
 end
 
 function T.SkinEditBox(frame, width, height)
-	if _G[frame:GetName()] then
-		if _G[frame:GetName().."Left"] then _G[frame:GetName().."Left"]:Kill() end
-		if _G[frame:GetName().."Middle"] then _G[frame:GetName().."Middle"]:Kill() end
-		if _G[frame:GetName().."Right"] then _G[frame:GetName().."Right"]:Kill() end
-		if _G[frame:GetName().."Mid"] then _G[frame:GetName().."Mid"]:Kill() end
-	end
-
-	if frame.Left then frame.Left:Kill() end
-	if frame.Right then frame.Right:Kill() end
-	if frame.Middle then frame.Middle:Kill() end
-
-	if frame.LeftTexture then frame.LeftTexture:Kill() end
-	if frame.RightTexture then frame.RightTexture:Kill() end
-	if frame.MiddleTexture then frame.MiddleTexture:Kill() end
-
-	if frame.Mid then frame.Mid:Kill() end
+	frame:DisableDrawLayer("BACKGROUND")
 
 	frame:CreateBackdrop("Overlay")
 
