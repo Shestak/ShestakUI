@@ -742,14 +742,15 @@ if clock.enabled then
 		OnEvent = function(self) if self.hovered then self:GetScript("OnEnter")(self) end end,
 		OnEnter = function(self)
 			if not self.hovered then RequestRaidInfo() self.hovered = true end
-			local monthInfo = C_Calendar.GetMonthInfo()
-			local weekday = CALENDAR_WEEKDAY_NAMES[monthInfo.firstWeekday]
-			local month = CALENDAR_MONTH_NAMES[monthInfo.month]
+			local currentCalendarTime = C_DateAndTime.GetCurrentCalendarTime()
+			local weekday = CALENDAR_WEEKDAY_NAMES[currentCalendarTime.weekday]
+			local month = CALENDAR_MONTH_NAMES[currentCalendarTime.month]
+			local fullDate = format(FULLDATE, weekday, month, currentCalendarTime.monthDay, currentCalendarTime.year, currentCalendarTime.month)
 			GameTooltip:SetOwner(self, "ANCHOR_NONE")
 			GameTooltip:ClearAllPoints()
 			GameTooltip:SetPoint(clock.tip_anchor, clock.tip_frame, clock.tip_x, clock.tip_y)
 			GameTooltip:ClearLines()
-			GameTooltip:AddLine(format("%s, %s %s", weekday, month, date"%d %Y"), tthead.r, tthead.g, tthead.b)
+			GameTooltip:AddLine(fullDate, tthead.r, tthead.g, tthead.b)
 			GameTooltip:AddLine(" ")
 			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_LOCALTIME, ":", ""), zsub(GameTime_GetLocalTime(true), "%s*AM", "am", "%s*PM", "pm"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_REALMTIME, ":", ""), zsub(GameTime_GetGameTime(true), "%s*AM", "am", "%s*PM", "pm"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
