@@ -46,7 +46,7 @@ local function LoadSkin()
 	AchievementFrameHeaderTitle:ClearAllPoints()
 	AchievementFrameHeaderTitle:SetPoint("TOPLEFT", AchievementFrame.backdrop, "TOPLEFT", -22, -8)
 	AchievementFrameHeaderPoints:ClearAllPoints()
-	AchievementFrameHeaderPoints:SetPoint("LEFT", AchievementFrameHeaderTitle, "RIGHT", 2, 0)
+	AchievementFrameHeaderPoints:SetPoint("LEFT", AchievementFrameHeaderTitle, "RIGHT", -2, 0)
 
 	-- Backdrops
 	AchievementFrameCategoriesContainer:CreateBackdrop("Overlay")
@@ -347,6 +347,11 @@ local function LoadSkin()
 			friend.bg3:SetColorTexture(ACHIEVEMENTUI_BLUEBORDER_R, ACHIEVEMENTUI_BLUEBORDER_G, ACHIEVEMENTUI_BLUEBORDER_B)
 		else
 			friend.bg3:SetColorTexture(unpack(C.media.border_color))
+		end
+
+		if not AchievementFrame.searchBox.moved then
+			AchievementFrame.searchBox:SetPoint("TOPRIGHT", AchievementFrameComparisonHeader, "TOPRIGHT", -172, -19)
+			AchievementFrame.searchBox.moved = true
 		end
 	end)
 
