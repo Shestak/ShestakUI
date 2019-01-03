@@ -94,6 +94,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			_G["StaticPopup"..i.."CloseButton"].SetPushedTexture = T.dummy
 			T.SkinCloseButton(_G["StaticPopup"..i.."CloseButton"])
 		end
+		_G["StaticPopup1ExtraButton"]:SkinButton()
 
 		-- Cinematic popup
 		_G["CinematicFrameCloseDialog"]:SetScale(C.general.uiscale)
