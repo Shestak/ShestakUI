@@ -5,22 +5,36 @@ if C.skins.blizzard_frames ~= true then return end
 --	Communities skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
+	local scrollbars = {
+		CommunitiesFrameCommunitiesListListScrollFrame.ScrollBar,
+		CommunitiesFrame.Chat.MessageFrame.ScrollBar,
+		CommunitiesFrame.MemberList.ListScrollFrame.scrollBar,
+		CommunitiesFrameRewards.scrollBar,
+		CommunitiesFrameGuildDetailsFrameNewsContainer.ScrollBar,
+		CommunitiesFrame.NotificationSettingsDialog.ScrollFrame.ScrollBar,
+		CommunitiesAvatarPickerDialogScrollBar,
+		CommunitiesGuildTextEditFrameScrollBar,
+		CommunitiesGuildLogFrameScrollBar
+	}
+
+	for i = 1, #scrollbars do
+		T.SkinScrollBar(scrollbars[i])
+	end
+
 	CommunitiesFrame:StripTextures()
 	CommunitiesFrame:CreateBackdrop("Transparent")
 	CommunitiesFrame.NineSlice:Hide()
 	CommunitiesFrame.PortraitOverlay:Kill()
-	CommunitiesFrame.PortraitOverlay.Portrait:Hide()
-	CommunitiesFrameCommunitiesList.FilligreeOverlay:Hide()
+	CommunitiesFrameCommunitiesList:StripTextures()
 
-	CommunitiesFrame.MemberList.InsetFrame.NineSlice:Hide()
-	CommunitiesFrame.MemberList:SetPoint("BOTTOMRIGHT", CommunitiesFrame, "BOTTOMRIGHT", -26, 31)
+	T.SkinMaxMinFrame(CommunitiesFrame.MaximizeMinimizeFrame, CommunitiesFrameCloseButton)
+	T.SkinCloseButton(CommunitiesFrameCloseButton)
+
+	CommunitiesFrame.InviteButton:SkinButton()
 
 	CommunitiesFrame.Chat.InsetFrame.NineSlice:Hide()
 	CommunitiesFrame.Chat.InsetFrame:SetTemplate("Overlay")
-
-	T.SkinScrollBar(CommunitiesFrameCommunitiesListListScrollFrame.ScrollBar)
-	T.SkinScrollBar(CommunitiesFrame.Chat.MessageFrame.ScrollBar)
-	T.SkinScrollBar(CommunitiesFrame.MemberList.ListScrollFrame.scrollBar)
+	CommunitiesFrame.ChatTab:SetPoint("TOPLEFT", CommunitiesFrame, "TOPRIGHT", 5, -36)
 
 	hooksecurefunc(CommunitiesFrame.Chat.MessageFrame.ScrollBar, "SetPoint", function(self, point, anchor, attachTo, x, y)
 		if anchor == CommunitiesFrame.Chat.MessageFrame and x == 10 and y == -11 then
@@ -31,6 +45,7 @@ local function LoadSkin()
 	end)
 
 	CommunitiesFrame.MemberList.ListScrollFrame.scrollBar:SetPoint("BOTTOMLEFT", CommunitiesFrame.MemberList.ListScrollFrame, "BOTTOMRIGHT", 0, 14)
+	CommunitiesFrame.MemberList:SetPoint("BOTTOMRIGHT", CommunitiesFrame, "BOTTOMRIGHT", -26, 31)
 
 	T.SkinEditBox(CommunitiesFrame.ChatEditBox, nil, 18)
 
@@ -129,11 +144,83 @@ local function LoadSkin()
 	CommunitiesFrame.GuildFinderFrame:StripTextures()
 	CommunitiesFrame.GuildFinderFrame.FindAGuildButton:SkinButton()
 
+	-- Notification Settings
+	local NotificationSettings = CommunitiesFrame.NotificationSettingsDialog
+	NotificationSettings:StripTextures()
+	NotificationSettings:SetTemplate("Transparent")
+
+	T.SkinDropDownBox(CommunitiesFrame.NotificationSettingsDialog.CommunitiesListDropDownMenu, 190)
+	CommunitiesFrame.NotificationSettingsDialog.ScrollFrame.Child.QuickJoinButton:SetSize(25, 25)
+	T.SkinCheckBox(CommunitiesFrame.NotificationSettingsDialog.ScrollFrame.Child.QuickJoinButton)
+	CommunitiesFrame.NotificationSettingsDialog.ScrollFrame.Child.AllButton:SkinButton()
+	CommunitiesFrame.NotificationSettingsDialog.ScrollFrame.Child.NoneButton:SkinButton()
+	CommunitiesFrame.NotificationSettingsDialog.OkayButton:SkinButton()
+	CommunitiesFrame.NotificationSettingsDialog.CancelButton:SkinButton()
+
+	hooksecurefunc(CommunitiesNotificationSettingsStreamEntryMixin, "SetFilter", function(self)
+		T.SkinCheckBox(self.ShowNotificationsButton)
+		T.SkinCheckBox(self.HideNotificationsButton)
+	end)
+
+	-- Communities Settings
+	local Settings = CommunitiesSettingsDialog
+	Settings:StripTextures()
+	Settings:SetTemplate("Transparent")
+
+	Settings.IconPreview:RemoveMaskTexture(Settings.CircleMask)
+	Settings.IconPreviewRing:Hide()
+	Settings.IconPreview:SkinIcon()
+
+	T.SkinEditBox(Settings.NameEdit)
+	T.SkinEditBox(Settings.ShortNameEdit)
+	T.SkinEditBox(Settings.Description)
+	T.SkinEditBox(Settings.MessageOfTheDay)
+
+	Settings.ChangeAvatarButton:SkinButton()
+	Settings.Accept:SkinButton()
+	Settings.Delete:SkinButton()
+	Settings.Cancel:SkinButton()
+
+	-- Avatar Picker
+	local Avatar = CommunitiesAvatarPickerDialog
+	Avatar:StripTextures()
+	Avatar:SetTemplate("Transparent")
+
+	Avatar.ScrollFrame:StripTextures()
+
+	Avatar.OkayButton:SkinButton()
+	Avatar.CancelButton:SkinButton()
+
+	-- Tab
+	local function SkinTab(tab)
+		for i = 1, tab:GetNumRegions() do
+			local region = select(i, tab:GetRegions())
+			if region:GetObjectType() == "Texture" then
+				if region:GetTexture() == "Interface\\SpellBook\\SpellBook-SkillLineTab" then
+					region:Kill()
+				end
+			end
+		end
+
+		tab:CreateBackdrop("Default")
+		tab.backdrop:SetAllPoints()
+		tab:StyleButton()
+		tab.Icon:SetPoint("TOPLEFT", 2, -2)
+		tab.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
+		tab.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	end
+
+	SkinTab(CommunitiesFrame.ChatTab)
+	SkinTab(CommunitiesFrame.RosterTab)
+	SkinTab(CommunitiesFrame.GuildBenefitsTab)
+	SkinTab(CommunitiesFrame.GuildInfoTab)
+
+	-- Member list
+	CommunitiesFrame.MemberList:StripTextures()
+	CommunitiesFrame.MemberList.ColumnDisplay:StripTextures()
 	CommunitiesFrame.MemberList.ShowOfflineButton:SetSize(25, 25)
 
-	CommunitiesFrame.MemberList:StripTextures()
-
-	CommunitiesFrame.MemberList.ColumnDisplay:StripTextures()
+	CommunitiesFrame.CommunitiesControlFrame.GuildRecruitmentButton:SkinButton()
 
 	T.SkinCheckBox(CommunitiesFrame.MemberList.ShowOfflineButton)
 	T.SkinDropDownBox(CommunitiesFrame.GuildMemberListDropDownMenu)
@@ -183,6 +270,20 @@ local function LoadSkin()
 		end
 	end)
 
+	-- Recruitment
+	CommunitiesGuildRecruitmentFrame:StripTextures()
+	CommunitiesGuildRecruitmentFrame:CreateBackdrop("Transparent")
+	T.SkinCloseButton(CommunitiesGuildRecruitmentFrameCloseButton)
+
+	for i = 1, 2 do
+		T.SkinTab(_G["CommunitiesGuildRecruitmentFrameTab"..i], true)
+	end
+
+	CommunitiesGuildRecruitmentFrameApplicants.InviteButton:SkinButton()
+	CommunitiesGuildRecruitmentFrameApplicants.MessageButton:SkinButton()
+	CommunitiesGuildRecruitmentFrameApplicants.DeclineButton:SkinButton()
+
+	-- Guild Perk
 	CommunitiesFrame.GuildBenefitsFrame:StripTextures()
 	CommunitiesFrame.GuildBenefitsFrame.Perks:StripTextures()
 	CommunitiesFrame.GuildBenefitsFrame.Perks:CreateBackdrop("Overlay")
@@ -196,7 +297,6 @@ local function LoadSkin()
 	GuildFactionBar.backdrop:SetPoint("TOPLEFT", GuildFactionBar.Progress, "TOPLEFT", -2, 2)
 	GuildFactionBar.backdrop:SetPoint("BOTTOMRIGHT", GuildFactionBar, "BOTTOMRIGHT", 0, 0)
 
-	-- Guild Perk buttons list
 	for i = 1, 5 do
 		local button = _G["CommunitiesFrameContainerButton"..i]
 
@@ -234,22 +334,16 @@ local function LoadSkin()
 		end
 	end
 
-	CommunitiesFrame.CommunitiesControlFrame.GuildRecruitmentButton:SkinButton()
-	CommunitiesFrame.GuildLogButton:SkinButton()
-	CommunitiesFrame.GuildLogButton:SetPoint("BOTTOMLEFT", CommunitiesFrame, "BOTTOMLEFT", 196, 5)
-
-	T.SkinScrollBar(CommunitiesFrameRewards.scrollBar)
-	T.SkinScrollBar(CommunitiesFrameGuildDetailsFrameNewsContainer.ScrollBar)
+	-- Guild Info
+	CommunitiesFrameGuildDetailsFrame:StripTextures()
+	CommunitiesFrameGuildDetailsFrameInfo:StripTextures()
+	CommunitiesFrameGuildDetailsFrameNews:StripTextures()
 
 	hooksecurefunc(CommunitiesFrameGuildDetailsFrameNewsContainer.ScrollBar, "SetPoint", function(self, point, anchor, attachTo, x, y)
 		if anchor == CommunitiesFrameGuildDetailsFrameNewsContainer and x == 1 and y == 5 then
 			self:SetPoint(point, anchor, attachTo, x, 8)
 		end
 	end)
-
-	CommunitiesFrameGuildDetailsFrame:StripTextures()
-	CommunitiesFrameGuildDetailsFrameInfo:StripTextures()
-	CommunitiesFrameGuildDetailsFrameNews:StripTextures()
 
 	hooksecurefunc("CommunitiesGuildNewsButton_SetNews", function(button)
 		if button.header:IsShown() then
@@ -283,59 +377,33 @@ local function LoadSkin()
 	backdrop4:SetPoint("TOPLEFT", CommunitiesFrameGuildDetailsFrameInfo, "TOPLEFT", 591, -22)
 	backdrop4:SetPoint("BOTTOMRIGHT", CommunitiesFrameGuildDetailsFrameInfo, "BOTTOMRIGHT", 15, -1)
 
-	-- Notification Settings Dialog
-	local NotificationSettings = CommunitiesFrame.NotificationSettingsDialog
-	NotificationSettings:StripTextures()
-	NotificationSettings:CreateBackdrop("Transparent")
-	NotificationSettings.backdrop:SetAllPoints()
+	-- Guild Message EditBox
+	CommunitiesGuildTextEditFrame:StripTextures()
+	CommunitiesGuildTextEditFrame:SetTemplate("Transparent")
+	CommunitiesGuildTextEditFrame.Container:SetTemplate("Overlay")
+	CommunitiesGuildTextEditFrameAcceptButton:SkinButton()
+	select(4, CommunitiesGuildTextEditFrame:GetChildren()):SkinButton()
+	T.SkinCloseButton(CommunitiesGuildTextEditFrameCloseButton)
 
-	T.SkinDropDownBox(CommunitiesFrame.NotificationSettingsDialog.CommunitiesListDropDownMenu, 190)
-	CommunitiesFrame.NotificationSettingsDialog.ScrollFrame.Child.QuickJoinButton:SetSize(25, 25)
-	T.SkinCheckBox(CommunitiesFrame.NotificationSettingsDialog.ScrollFrame.Child.QuickJoinButton)
-	CommunitiesFrame.NotificationSettingsDialog.ScrollFrame.Child.AllButton:SkinButton()
-	CommunitiesFrame.NotificationSettingsDialog.ScrollFrame.Child.NoneButton:SkinButton()
-	CommunitiesFrame.NotificationSettingsDialog.OkayButton:SkinButton()
-	CommunitiesFrame.NotificationSettingsDialog.CancelButton:SkinButton()
-	T.SkinScrollBar(CommunitiesFrame.NotificationSettingsDialog.ScrollFrame.ScrollBar)
+	-- Guild Log
+	CommunitiesGuildLogFrame:StripTextures()
+	CommunitiesGuildLogFrame.Container:StripTextures()
+	CommunitiesGuildLogFrame.Container:SetTemplate("Overlay")
+	CommunitiesGuildLogFrame:SetTemplate("Transparent")
+	select(3, CommunitiesGuildLogFrame:GetChildren()):SkinButton()
+	T.SkinCloseButton(CommunitiesGuildLogFrameCloseButton)
+	CommunitiesFrame.GuildLogButton:SkinButton()
+	CommunitiesFrame.GuildLogButton:SetPoint("BOTTOMLEFT", CommunitiesFrame, "BOTTOMLEFT", 196, 5)
 
-	hooksecurefunc(CommunitiesNotificationSettingsStreamEntryMixin, "SetFilter", function(self)
-		T.SkinCheckBox(self.ShowNotificationsButton)
-		T.SkinCheckBox(self.HideNotificationsButton)
-	end)
+	-- Filters Frame
+	CommunitiesGuildNewsFiltersFrame:StripTextures()
+	CommunitiesGuildNewsFiltersFrame:SetTemplate("Transparent")
+	T.SkinCloseButton(CommunitiesGuildNewsFiltersFrame.CloseButton)
 
-	CommunitiesFrameCommunitiesList:StripTextures()
-	CommunitiesFrameCommunitiesListListScrollFrame:StripTextures()
-
-	local function SkinTab(tab)
-		for i = 1, tab:GetNumRegions() do
-			local region = select(i, tab:GetRegions())
-			if region:GetObjectType() == "Texture" then
-				if region:GetTexture() == "Interface\\SpellBook\\SpellBook-SkillLineTab" then
-					region:Kill()
-				end
-			end
-		end
-
-		tab:CreateBackdrop("Default")
-		tab.backdrop:SetAllPoints()
-		tab:StyleButton()
-		tab.Icon:SetPoint("TOPLEFT", 2, -2)
-		tab.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
-		tab.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	for i = 1, #CommunitiesGuildNewsFiltersFrame.GuildNewsFilterButtons do
+		local checkbox = CommunitiesGuildNewsFiltersFrame.GuildNewsFilterButtons[i]
+		T.SkinCheckBox(checkbox)
 	end
-
-	SkinTab(CommunitiesFrame.ChatTab)
-	SkinTab(CommunitiesFrame.RosterTab)
-	SkinTab(CommunitiesFrame.GuildBenefitsTab)
-	SkinTab(CommunitiesFrame.GuildInfoTab)
-
-	CommunitiesFrame.ChatTab:SetPoint("TOPLEFT", CommunitiesFrame, "TOPRIGHT", 5, -36)
-
-	T.SkinCloseButton(CommunitiesFrameCloseButton)
-
-	T.SkinMaxMinFrame(CommunitiesFrame.MaximizeMinimizeFrame, CommunitiesFrameCloseButton)
-
-	CommunitiesFrame.InviteButton:SkinButton()
 end
 
 T.SkinFuncs["Blizzard_Communities"] = LoadSkin
