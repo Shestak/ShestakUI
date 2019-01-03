@@ -215,13 +215,12 @@ local function LoadSkin()
 	SkinTab(CommunitiesFrame.GuildBenefitsTab)
 	SkinTab(CommunitiesFrame.GuildInfoTab)
 
-	-- Member list
+	-- Member List
 	CommunitiesFrame.MemberList:StripTextures()
 	CommunitiesFrame.MemberList.ColumnDisplay:StripTextures()
 	CommunitiesFrame.MemberList.ShowOfflineButton:SetSize(25, 25)
-
+	CommunitiesFrame.MemberList.ShowOfflineButton:SetPoint("BOTTOMLEFT", CommunitiesFrame.MemberList, "TOPLEFT", -3, 26)
 	CommunitiesFrame.CommunitiesControlFrame.GuildRecruitmentButton:SkinButton()
-
 	T.SkinCheckBox(CommunitiesFrame.MemberList.ShowOfflineButton)
 	T.SkinDropDownBox(CommunitiesFrame.GuildMemberListDropDownMenu)
 
@@ -269,6 +268,20 @@ local function LoadSkin()
 			end
 		end
 	end)
+
+	-- Member Detail Frame
+	CommunitiesFrame.GuildMemberDetailFrame:StripTextures()
+	CommunitiesFrame.GuildMemberDetailFrame:SetTemplate("Transparent")
+	CommunitiesFrame.GuildMemberDetailFrame:ClearAllPoints()
+	CommunitiesFrame.GuildMemberDetailFrame:SetPoint("TOPLEFT", CommunitiesFrame, "TOPRIGHT", 5, 2)
+	CommunitiesFrame.GuildMemberDetailFrame.NoteBackground:SetTemplate("Overlay")
+	CommunitiesFrame.GuildMemberDetailFrame.OfficerNoteBackground:SetTemplate("Overlay")
+	T.SkinDropDownBox(CommunitiesFrame.GuildMemberDetailFrame.RankDropdown, 160)
+	T.SkinCloseButton(CommunitiesFrame.GuildMemberDetailFrame.CloseButton)
+	CommunitiesFrame.GuildMemberDetailFrame.RemoveButton:SkinButton()
+	CommunitiesFrame.GuildMemberDetailFrame.GroupInviteButton:SkinButton()
+	CommunitiesFrame.GuildMemberDetailFrame.RemoveButton:ClearAllPoints()
+	CommunitiesFrame.GuildMemberDetailFrame.RemoveButton:SetPoint("BOTTOMLEFT", CommunitiesFrame.GuildMemberDetailFrame, "BOTTOMLEFT", 9, 4)
 
 	-- Recruitment
 	CommunitiesGuildRecruitmentFrame:StripTextures()
