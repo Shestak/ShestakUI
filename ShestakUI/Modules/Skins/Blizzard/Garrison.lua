@@ -282,7 +282,11 @@ local function LoadSkin()
 			if firstRegion then firstRegion:Hide() end
 
 			reward:ClearAllPoints()
-			reward:SetPoint("TOPRIGHT", -T.mult + (index * -65), -T.mult)
+			if IsAddOnLoaded("GarrisonMissionManager") then
+				reward:SetPoint("TOPRIGHT", -T.mult * 65 + (index * -65), -T.mult)
+			else
+				reward:SetPoint("TOPRIGHT", -T.mult + (index * -65), -T.mult)
+			end
 
 			if reward.IconBorder then
 				reward.IconBorder:SetTexture(nil)
@@ -831,6 +835,8 @@ local function LoadSkin()
 			button.backdrop:SetPoint("TOPLEFT", 0, 0)
 			button.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 			button:StyleButton(nil, 2)
+			button.LocBG:SetHeight(75)
+			button.LocBG:SetPoint("RIGHT", 0, -1)
 		end
 	end
 
