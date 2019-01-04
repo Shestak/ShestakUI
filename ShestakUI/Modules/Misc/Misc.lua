@@ -258,6 +258,70 @@ if C.misc.hide_talking_head == true then
 end
 
 ----------------------------------------------------------------------------------------
+--	Hide button for oUF_RaidDPS 
+----------------------------------------------------------------------------------------
+if C.misc.hide_raid_button == true then
+	local show = false
+	SlashCmdList.HideRaidMODE = function()
+		if show == false then
+			if oUF_RaidDPS1 then
+				for i = 1, C.raidframe.raid_groups do
+					_G["oUF_RaidDPS"..i]:SetAlpha(0)
+				end
+				oUF_MainTank:SetAlpha(0)
+			end
+			show = true
+		else
+			if oUF_RaidDPS1 then
+				for i = 1, C.raidframe.raid_groups do
+					_G["oUF_RaidDPS"..i]:SetAlpha(1)
+				end
+				oUF_MainTank:SetAlpha(1)
+			end
+			show = false
+		end
+
+	end
+	SLASH_HIDERAIDMODE1 = "/hideraid"
+
+	local HideRaid = CreateFrame("Button", "HideRaidMode", UIParent)
+	HideRaid:SetTemplate("ClassColor")
+	HideRaid:SetPoint("TOPLEFT", UIParent, "TOPLEFT", 0, 0)
+	HideRaid:SetSize(19, 19)
+	HideRaid:SetAlpha(0)
+	HideRaid:Hide()
+
+	HideRaid.t = HideRaid:CreateTexture(nil, "OVERLAY")
+	HideRaid.t:SetTexture("Interface\\Icons\\inv_misc_spyglass_03")
+	HideRaid.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	HideRaid.t:SetPoint("TOPLEFT", HideRaid, 2, -2)
+	HideRaid.t:SetPoint("BOTTOMRIGHT", HideRaid, -2, 2)
+
+	HideRaid:SetScript("OnClick", function()
+		if oUF_RaidDPS1 and oUF_RaidDPS1:IsShown() then
+			SlashCmdList.HideRaidMODE()
+		end
+	end)
+
+	HideRaid:SetScript("OnEnter", function()
+		if oUF_RaidDPS1 and oUF_RaidDPS1:IsShown() then
+			HideRaid:FadeIn()
+		end
+	end)
+
+	HideRaid:SetScript("OnLeave", function()
+		HideRaid:FadeOut()
+	end)
+
+	HideRaid:RegisterEvent("PLAYER_LOGIN")
+	HideRaid:SetScript("OnEvent", function(self)
+		if C.unitframe.enable == true and SavedOptions and SavedOptions.RaidLayout == "DPS" then
+			self:Show()
+		end
+	end)
+end
+
+----------------------------------------------------------------------------------------
 --	Change UIErrorsFrame strata
 ----------------------------------------------------------------------------------------
 UIErrorsFrame:SetFrameLevel(0)

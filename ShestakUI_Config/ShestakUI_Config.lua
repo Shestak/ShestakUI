@@ -70,6 +70,7 @@ local function Local(o)
 	if o == "UIConfigmiscminimize_mouseover" then o = L_GUI_MISC_MINIMIZE_MOUSEOVER end
 	if o == "UIConfigmischide_banner" then o = L_GUI_MISC_HIDE_BANNER end
 	if o == "UIConfigmischide_talking_head" then o = L_GUI_MISC_HIDE_TALKING_HEAD end
+	if o == "UIConfigmischide_raid_button" then o = L_GUI_MISC_HIDE_RAID_BUTTON end
 
 	-- Announcements options
 	if o == "UIConfigannouncements" then o = L_GUI_ANNOUNCEMENTS end

@@ -42,6 +42,7 @@ L_GUI_MISC_MERCHANT_ITEMLEVEL = "Show item level for weapons and armor in mercha
 L_GUI_MISC_MINIMIZE_MOUSEOVER = "Mouseover for quest minimize button" -- Need review
 L_GUI_MISC_HIDE_BANNER = "Hide Boss Banner Loot Frame" -- Need review
 L_GUI_MISC_HIDE_TALKING_HEAD = "Hide Talking Head Frame" -- Need review
+L_GUI_MISC_HIDE_RAID_BUTTON = "Hide button for oUF_RaidDPS" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Anuncios"

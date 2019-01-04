@@ -42,6 +42,7 @@ L_GUI_MISC_MERCHANT_ITEMLEVEL = "Zeige Itemlevel für Waffen & Rüstung bei Hän
 L_GUI_MISC_MINIMIZE_MOUSEOVER = "Mouseover für Quest minimieren Taste"
 L_GUI_MISC_HIDE_BANNER = "Autoverstecken des Boss Loot Frame"
 L_GUI_MISC_HIDE_TALKING_HEAD = "Hide Talking Head Frame" -- Need review
+L_GUI_MISC_HIDE_RAID_BUTTON = "Hide button for oUF_RaidDPS" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigeungen"

@@ -42,6 +42,7 @@ L_GUI_MISC_MERCHANT_ITEMLEVEL = "在商人界面显示物品等级"
 L_GUI_MISC_MINIMIZE_MOUSEOVER = "鼠标悬停显示任务最小化按钮"
 L_GUI_MISC_HIDE_BANNER = "自动隐藏Boss额外拾取提示"
 L_GUI_MISC_HIDE_TALKING_HEAD = "Hide Talking Head Frame" -- Need review
+L_GUI_MISC_HIDE_RAID_BUTTON = "Hide button for oUF_RaidDPS" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"

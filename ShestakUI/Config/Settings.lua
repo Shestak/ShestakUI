@@ -63,6 +63,7 @@ C["misc"] = {
 	["minimize_mouseover"] = false,				-- Mouseover for quest minimize button
 	["hide_banner"] = true,						-- Hide Boss Banner Loot Frame
 	["hide_talking_head"] = false,				-- Hide Talking Head Frame
+	["hide_raid_button"] = false,				-- Hide button for oUF_RaidDPS (top left mouseover)
 }
 
 ----------------------------------------------------------------------------------------
