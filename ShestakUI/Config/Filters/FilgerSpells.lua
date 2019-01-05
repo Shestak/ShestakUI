@@ -2689,6 +2689,15 @@ C["filger_spells"] = {
 			{spellID = 1719, filter = "CD"},
 			-- Avatar
 			{spellID = 107574, filter = "CD"},
+			-- Siegebreaker
+			{spellID = 280772, filter = "CD"},
+			-- Heroic Throw
+			{spellID = 57755, filter = "CD"},
+			-- Dragon Roar
+			{spellID = 118000, filter = "CD"},
+			-- Execute (Fury)
+			{spellID = 5308, filter = "CD"},
+
 
 			-- PvP
 			-- Honorable Medallion
