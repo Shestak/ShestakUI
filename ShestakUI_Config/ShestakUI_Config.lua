@@ -288,8 +288,6 @@ local function Local(o)
 	-- Map options
 	if o == "UIConfigmap" then o = WORLD_MAP end
 	if o == "UIConfigmapbg_map_stylization" then o = L_GUI_MAP_BG_STYLIZATION end
-	if o == "UIConfigmapmap_boss_count" then o = L_GUI_MAP_BOSS_COUNT end
-	if o == "UIConfigmapexplore_map" then o = L_GUI_MAP_EXPLORE end
 	if o == "UIConfigmapfog_of_war" then o = L_GUI_MAP_FOG_OF_WAR end
 
 	-- Loot options

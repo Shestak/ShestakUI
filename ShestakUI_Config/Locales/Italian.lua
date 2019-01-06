@@ -256,8 +256,6 @@ L_GUI_MINIMAP_TOGGLE_MENU = "Mostra il menu a scomparsa"
 
 -- Map options
 L_GUI_MAP_BG_STYLIZATION = "Restyling della mappa dei Campi di Battaglia"
-L_GUI_MAP_BOSS_COUNT = "Mostra il conteggio dei bosses sulla mappa del mondo"
-L_GUI_MAP_EXPLORE = "Traccia le imprese Esploratore mondiale e Storico sulla mappa del mondo"
 L_GUI_MAP_FOG_OF_WAR = "Nebbia della guerra sulla mappa del mondo"
 
 -- Loot options

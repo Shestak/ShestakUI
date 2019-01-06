@@ -256,8 +256,6 @@ L_GUI_MINIMAP_TOGGLE_MENU = "Zeige Toggle Menü"
 
 -- Map options
 L_GUI_MAP_BG_STYLIZATION = "Schlachtfeldkarte Aussehn"
-L_GUI_MAP_BOSS_COUNT = "Zeige BossCount in der Weltkarte"
-L_GUI_MAP_EXPLORE = "Tracking Explorer und Meister der Lehren Achievement in World Map"
 L_GUI_MAP_FOG_OF_WAR = "Nebel des Krieges auf der Weltkarte"
 
 -- Loot options

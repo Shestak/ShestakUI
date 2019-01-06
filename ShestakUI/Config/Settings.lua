@@ -326,8 +326,6 @@ C["minimap"] = {
 ----------------------------------------------------------------------------------------
 C["map"] = {
 	["bg_map_stylization"] = true,				-- BG map stylization
-	["map_boss_count"] = false,					-- Show boss count in World Map
-	["explore_map"] = false,					-- Tracking Explorer and Lore Master achievements in World Map
 	["fog_of_war"] = false,						-- Remove fog of war on World Map
 }
 

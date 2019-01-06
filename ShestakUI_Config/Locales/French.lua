@@ -256,8 +256,6 @@ L_GUI_MINIMAP_TOGGLE_MENU = "Montre le menu déroulant"
 
 -- Map options
 L_GUI_MAP_BG_STYLIZATION = "Personnalisation de l'arrière plan de la carte"
-L_GUI_MAP_BOSS_COUNT = "Affiche les Boss sur la carte du monde"
-L_GUI_MAP_EXPLORE = "Suivi des explorations et matre des traditions sur la carte du monde"
 L_GUI_MAP_FOG_OF_WAR = "Retire le brouillard des zones non explorées sur la carte du monde"
 
 -- Loot options
