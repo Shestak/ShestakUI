@@ -48,27 +48,9 @@ hooksecurefunc("UIParent_ManageFramePositions", CaptureUpdate)
 ----------------------------------------------------------------------------------------
 --	Battlefield score frame
 ----------------------------------------------------------------------------------------
-local function StateUpdate()
-	if not NUM_ALWAYS_UP_UI_FRAMES then return end
-	for i = 1, NUM_ALWAYS_UP_UI_FRAMES do
-		local f = _G["AlwaysUpFrame"..i]
-
-		if f then
-			f:ClearAllPoints()
-			f:SetFrameStrata("BACKGROUND")
-			if i == 1 then
-				f:SetPoint(unpack(C.position.attempt))
-			else
-				f:SetPoint("TOPLEFT", _G["AlwaysUpFrame"..i-1], "BOTTOMLEFT", 0, 0)
-			end
-		end
-	end
+do
+	local f = _G["UIWidgetTopCenterContainerFrame"]
+	f:ClearAllPoints()
+	f:SetFrameStrata("BACKGROUND")
+	f:SetPoint(unpack(C.position.attempt))
 end
---BETA hooksecurefunc("WorldStateAlwaysUpFrame_Update", StateUpdate)
-
--- do
-	-- local f = _G["UIWidgetTopCenterContainerFrame"]
-	-- f:ClearAllPoints()
-	-- f:SetFrameStrata("BACKGROUND")
-	-- f:SetPoint(unpack(C.position.attempt))
--- end
