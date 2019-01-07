@@ -5,11 +5,11 @@ local oUF = ns.oUF
 
 local MAX_COMBO_POINTS = MAX_COMBO_POINTS
 
-local Update = function(self, event, unit, powerType)
+local function Update(self, event, unit, powerType)
 	if powerType and powerType ~= "COMBO_POINTS" then return end
 	if unit == "pet" then return end
 
-	local cpoints = self.CPoints
+	local element = self.CPoints
 	local cur, max
 
 	if UnitHasVehicleUI("player") then
@@ -24,62 +24,62 @@ local Update = function(self, event, unit, powerType)
 		max = MAX_COMBO_POINTS
 	end
 
-	local spacing = select(4, cpoints[5]:GetPoint())
-	local w = cpoints:GetWidth()
+	local spacing = select(4, element[5]:GetPoint())
+	local w = element:GetWidth()
 	local s = 0
 
-	if cpoints.max ~= max then
+	if element.max ~= max then
 		if max == 6 then
-			cpoints[6]:Show()
+			element[6]:Show()
 		else
-			cpoints[6]:Hide()
+			element[6]:Hide()
 		end
 
 		for i = 1, max do
 			if i ~= max then
-				cpoints[i]:SetWidth(w / max - spacing)
+				element[i]:SetWidth(w / max - spacing)
 				s = s + (w / max)
 			else
-				cpoints[i]:SetWidth(w - s)
+				element[i]:SetWidth(w - s)
 			end
 		end
 
-		cpoints.max = max
+		element.max = max
 	end
 
 	for i = 1, max do
 		if i <= cur then
-			cpoints[i]:SetAlpha(1)
+			element[i]:SetAlpha(1)
 		else
-			cpoints[i]:SetAlpha(0.2)
+			element[i]:SetAlpha(0.2)
 		end
 	end
 
 	if C.unitframe_class_bar.combo_old == true or (T.class ~= "DRUID" and T.class ~= "ROGUE") then
-		if cpoints[1]:GetAlpha() == 1 then
+		if element[1]:GetAlpha() == 1 then
 			for i = 1, max do
-				cpoints:Show()
-				cpoints[i]:Show()
+				element:Show()
+				element[i]:Show()
 			end
 		else
 			for i = 1, max do
-				cpoints:Hide()
-				cpoints[i]:Hide()
+				element:Hide()
+				element[i]:Hide()
 			end
 		end
 
 		if self.RangeBar then
-			if cpoints[1]:IsShown() and self.RangeBar:IsShown() then
-				cpoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
+			if element[1]:IsShown() and self.RangeBar:IsShown() then
+				element:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
 				if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 33) end
-			elseif cpoints[1]:IsShown() or self.RangeBar:IsShown() then
-				cpoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			elseif element[1]:IsShown() or self.RangeBar:IsShown() then
+				element:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
 			else
 				if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
 			end
 		else
-			if cpoints[1]:IsShown() then
+			if element[1]:IsShown() then
 				if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
 			else
 				if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
@@ -88,47 +88,43 @@ local Update = function(self, event, unit, powerType)
 	end
 end
 
-local Path = function(self, ...)
+local function Path(self, ...)
 	return (self.CPoints.Override or Update) (self, ...)
 end
 
-local function Visibility(self, event, unit)
-	local cpoints = self.CPoints
+local function Visibility(self)
+	local element = self.CPoints
 	local form = GetShapeshiftFormID()
 
 	if form == CAT_FORM or (UnitHasVehicleUI("player") and UnitPower("vehicle", 4) > 0) then
-		cpoints:Show()
+		element:Show()
 		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
 	else
-		cpoints:Hide()
+		element:Hide()
 		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
 	end
 end
 
-local function VisibilityPath(self, ...)
-	return (self.CPoints.OverrideVisibility or Visibility) (self, ...)
-end
-
-local ForceUpdate = function(element)
-	return Path(element.__owner, "ForceUpdate", element.__owner.unit)
+local function ForceUpdate(element)
+	return Path(element.__owner, "ForceUpdate", element.__owner.unit, "COMBO_POINTS")
 end
 
 local Enable = function(self)
-	local cpoints = self.CPoints
-	if(cpoints) then
-		cpoints.__owner = self
-		cpoints.ForceUpdate = ForceUpdate
+	local element = self.CPoints
+	if(element) then
+		element.__owner = self
+		element.ForceUpdate = ForceUpdate
 
 		self:RegisterEvent("UNIT_POWER_UPDATE", Path, true)
 		self:RegisterEvent("UNIT_MAXPOWER", Path, true)
 		self:RegisterEvent("PLAYER_TARGET_CHANGED", Path)
 
 		if T.class == "DRUID" and C.unitframe_class_bar.combo_always ~= true and C.unitframe_class_bar.combo_old ~= true then
-			self:RegisterEvent("UPDATE_SHAPESHIFT_FORM", VisibilityPath)
+			self:RegisterEvent("UPDATE_SHAPESHIFT_FORM", Visibility)
 		end
 
 		for index = 1, MAX_COMBO_POINTS do
-			local cpoint = cpoints[index]
+			local cpoint = element[index]
 			if(cpoint:IsObjectType"Texture" and not cpoint:GetTexture()) then
 				cpoint:SetTexture[[Interface\ComboFrame\ComboPoint]]
 				cpoint:SetTexCoord(0, 0.375, 0, 1)
@@ -140,12 +136,12 @@ local Enable = function(self)
 end
 
 local Disable = function(self)
-	local cpoints = self.CPoints
-	if(cpoints) then
+	local element = self.CPoints
+	if(element) then
 		self:UnregisterEvent("UNIT_POWER_UPDATE", Path)
 		self:UnregisterEvent("UNIT_MAXPOWER", Path)
 		self:UnregisterEvent("PLAYER_TARGET_CHANGED", Path)
-		self:UnregisterEvent("UPDATE_SHAPESHIFT_FORM", VisibilityPath)
+		self:UnregisterEvent("UPDATE_SHAPESHIFT_FORM", Visibility)
 	end
 end
 
