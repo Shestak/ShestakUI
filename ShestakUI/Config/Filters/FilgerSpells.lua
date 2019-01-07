@@ -2496,10 +2496,21 @@ C["filger_spells"] = {
 			{spellID = 205181, filter = "CD"},
 			-- Summon Darkglare
 			{spellID = 205180, filter = "CD"},
+			{spellID = 205180, filter = "CD"},
+			-- Deathbolt
+			{spellID = 264106, filter = "CD"},
+			-- Phantom Singularity
+			{spellID = 205179, filter = "CD"},
+			-- Unending Resolve
+			{spellID = 104773, filter = "CD"},
+			-- Dark Pact
+			{spellID = 108416, filter = "CD"},
 
 			-- PvP
 			-- Honorable Medallion
 			{spellID = 195710, filter = "CD"},
+			--Nether Ward
+			{spellID = 212295, filter = "CD"},
 
 			-- Racial
 			-- Arcane Torrent (Blood Elf)
