@@ -472,12 +472,6 @@ local function Shared(self, unit)
 			self.CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
 			self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
 			self.CPoints[6]:SetStatusBarColor(0.1, 0.9, 0.1)
-
-			if T.class == "DRUID" and C.unitframe_class_bar.combo_always ~= true then
-				self:RegisterEvent("UPDATE_SHAPESHIFT_FORM", T.UpdateComboPoint)
-			end
-
-			self.CPoints.Override = T.UpdateComboPoint
 		end
 
 		-- Totem bar
@@ -840,8 +834,6 @@ local function Shared(self, unit)
 				self.CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
 				self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
 				self.CPoints[6]:SetStatusBarColor(0.1, 0.9, 0.1)
-
-				self.CPoints.Override = T.UpdateComboPointTarget
 			end
 
 			-- Priest Range bar
