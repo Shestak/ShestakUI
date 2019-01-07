@@ -113,14 +113,14 @@ local function LoadSkin()
 		EnlistmentBonusIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 
-	T.SkinCloseButton(PremadeGroupsPvPTutorialAlert.CloseButton)
-	PremadeGroupsPvPTutorialAlert.Arrow:Hide()
 	PremadeGroupsPvPTutorialAlert:StripTextures()
-	PremadeGroupsPvPTutorialAlert:CreateBackdrop("Transparent")
+	PremadeGroupsPvPTutorialAlert:SetTemplate("Transparent")
+	PremadeGroupsPvPTutorialAlert.Arrow:Hide()
+	T.SkinCloseButton(PremadeGroupsPvPTutorialAlert.CloseButton)
 
-	T.SkinCloseButton(HonorFrame.BonusFrame.BrawlHelpBox.CloseButton)
 	HonorFrame.BonusFrame.BrawlHelpBox:StripTextures()
-	HonorFrame.BonusFrame.BrawlHelpBox:CreateBackdrop("Transparent")
+	HonorFrame.BonusFrame.BrawlHelpBox:SetTemplate("Transparent")
+	T.SkinCloseButton(HonorFrame.BonusFrame.BrawlHelpBox.CloseButton)
 
 	for _, i in pairs({"RandomBGButton", "RandomEpicBGButton", "Arena1Button", "BrawlButton"}) do
 		local button = HonorFrame.BonusFrame[i]

@@ -98,9 +98,6 @@ local function LoadSkin()
 	T.SkinTab(GarrisonMissionFrameTab1)
 	T.SkinTab(GarrisonMissionFrameTab2)
 
-	GarrisonMissionFrameHelpBox:StripTextures()
-	GarrisonMissionFrameHelpBox:CreateBackdrop("Transparent")
-
 	-- Mission list
 	local MissionTab = GarrisonMissionFrame.MissionTab
 	local MissionList = MissionTab.MissionList
@@ -111,7 +108,10 @@ local function LoadSkin()
 	MissionPage.CloseButton:SetFrameLevel(MissionPage:GetFrameLevel() + 2)
 	MissionList.CompleteDialog.BorderFrame.ViewButton:SkinButton()
 	GarrisonMissionFrame.MissionComplete.NextMissionButton:SkinButton()
+
 	GarrisonMissionFrameHelpBoxButton:SkinButton()
+	GarrisonMissionFrameHelpBox:StripTextures()
+	GarrisonMissionFrameHelpBox:SetTemplate("Transparent")
 
 	for i = 1, 2 do
 		_G["GarrisonMissionFrameMissionsTab"..i]:StripTextures()
