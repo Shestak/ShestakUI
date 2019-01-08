@@ -48,7 +48,7 @@ local function LoadSkin()
 	for i = 1, #questHeader do
 		local frame = questHeader[i]
 		frame:CreateBackdrop("Overlay")
-		frame.backdrop:SetPoint("TOPLEFT", 2, -2)
+		frame.backdrop:SetPoint("TOPLEFT", 6, -2)
 		frame.backdrop:SetPoint("BOTTOMRIGHT", -6, 2)
 		frame.HighlightTexture:Hide()
 		frame.Background:Hide()
