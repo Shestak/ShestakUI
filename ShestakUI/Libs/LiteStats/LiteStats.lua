@@ -1137,6 +1137,16 @@ if friends.enabled then
 			end
 		end)
 	end
+	local clientTags = {
+		[BNET_CLIENT_D3] = "Diablo 3",
+		[BNET_CLIENT_WTCG] = "Hearthstone",
+		[BNET_CLIENT_HEROES] = "Heroes of the Storm",
+		[BNET_CLIENT_OVERWATCH] = "Overwatch",
+		[BNET_CLIENT_SC] = "StarCraft",
+		[BNET_CLIENT_SC2] = "StarCraft 2",
+		[BNET_CLIENT_DESTINY2] = "Destiny 2",
+		[BNET_CLIENT_COD] = "Call of Duty: Black Ops 4"
+	}
 	Inject("Friends", {
 		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN PLAYER_ENTERING_WORLD GROUP_ROSTER_UPDATE FRIENDLIST_UPDATE BN_FRIEND_LIST_SIZE_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED") end,
 		OnEvent = function(self, event)
@@ -1324,7 +1334,22 @@ if friends.enabled then
 								GameTooltip:AddDoubleLine("  "..zoneName, realmName, zone_r, zone_g, zone_b, realm_r, realm_g, realm_b)
 							end
 						else
-							GameTooltip:AddDoubleLine("|cffeeeeee"..client.." ("..toonName..")|r", "|cffeeeeee"..presenceName.."|r")
+							local _, _, _, _, _, _, _, _, _, _, _, gameText, _, _, _, _, _, isGameAFK, isGameBusy = BNGetGameAccountInfo(toonID)
+							if client == "BSAp" or client == "App" then
+								client = gameText
+							else
+								client = clientTags[client]
+							end
+							if isGameAFK then
+								status = "|cffE7E716"..L_CHAT_AFK.."|r"
+							else
+								if isGameBusy then
+									status = "|cffff0000"..L_CHAT_DND.."|r"
+								else
+									status = ""
+								end
+							end
+							GameTooltip:AddDoubleLine("|cffeeeeee "..presenceName.."|r".." "..status, "|cffeeeeee"..client.."|r")
 						end
 					end
 				end
