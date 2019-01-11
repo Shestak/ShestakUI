@@ -590,6 +590,60 @@ function T.SkinMaxMinFrame(frame, point)
 	end
 end
 
+function T.SkinExpandOrCollapse(f)
+	f:SetHighlightTexture("")
+	f:SetPushedTexture("")
+
+	local bg = CreateFrame("Frame", nil, f)
+	bg:SetSize(13, 13)
+	bg:SetPoint("TOPLEFT", f:GetNormalTexture(), 0, -1)
+	bg:SetTemplate("Overlay")
+	f.bg = bg
+
+	bg.minus = bg:CreateTexture(nil, "OVERLAY")
+	bg.minus:SetSize(5, 1)
+	bg.minus:SetPoint("CENTER")
+	bg.minus:SetTexture(C.media.blank)
+
+	bg.plus = bg:CreateTexture(nil, "OVERLAY")
+	bg.plus:SetSize(1, 5)
+	bg.plus:SetPoint("CENTER")
+	bg.plus:SetTexture(C.media.blank)
+	bg.plus:Hide()
+
+	hooksecurefunc(f, "SetNormalTexture", function(self, texture)
+		if self.settingTexture then return end
+		self.settingTexture = true
+		self:SetNormalTexture("")
+
+		if texture and texture ~= "" then
+			if texture:find("Plus") then
+				self.bg.plus:Show()
+			elseif texture:find("Minus") then
+				self.bg.plus:Hide()
+			end
+			self.bg:Show()
+		else
+			self.bg:Hide()
+		end
+		self.settingTexture = nil
+	end)
+
+	f:HookScript("OnEnter", function(self)
+		self.bg:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		if self.bg.overlay then
+			self.bg.overlay:SetVertexColor(T.color.r * 0.3, T.color.g * 0.3, T.color.b * 0.3, 1)
+		end
+	end)
+
+	f:HookScript("OnLeave", function(self)
+		self.bg:SetBackdropBorderColor(unpack(C.media.border_color))
+		if self.bg.overlay then
+			self.bg.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
+		end
+	end)
+end
+
 local LoadBlizzardSkin = CreateFrame("Frame")
 LoadBlizzardSkin:RegisterEvent("ADDON_LOADED")
 LoadBlizzardSkin:SetScript("OnEvent", function(self, event, addon)

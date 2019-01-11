@@ -188,8 +188,13 @@ local function LoadSkin()
 	SkinMoney("ScenarioQueueFrameRandomScrollFrameChildFrameMoneyReward")
 
 	hooksecurefunc("LFGDungeonListButton_SetDungeon", function(button)
-		T.SkinCheckBox(button.enableButton)
-		button.enableButton:SetFrameLevel(button.enableButton:GetFrameLevel() - 2)
+		if not button.expandOrCollapseButton.isSkinned then
+			T.SkinCheckBox(button.enableButton)
+			button.enableButton:SetFrameLevel(button.enableButton:GetFrameLevel() - 2)
+			button.enableButton.SetCheckedTexture = T.dummy -- Blizzard changes checked texture, prevent it
+			T.SkinExpandOrCollapse(button.expandOrCollapseButton)
+			button.expandOrCollapseButton.isSkinned = true
+		end
 	end)
 
 	for i = 1, 3 do

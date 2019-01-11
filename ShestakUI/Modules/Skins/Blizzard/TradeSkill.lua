@@ -114,6 +114,17 @@ local function LoadSkin()
 		end
 	end)
 
+	hooksecurefunc(TradeSkillFrame.RecipeList, "RefreshDisplay", function(self)
+		for i = 1, #self.buttons do
+			local tradeSkillButton = self.buttons[i]
+			if not tradeSkillButton._auroraSkinned then
+				T.SkinExpandOrCollapse(tradeSkillButton)
+				tradeSkillButton._auroraSkinned = true
+			end
+			tradeSkillButton:SetHighlightTexture("")
+		end
+	end)
+
 	-- Guild Crafters
 	TradeSkillFrame.DetailsFrame.GuildFrame:StripTextures()
 	TradeSkillFrame.DetailsFrame.GuildFrame:SetTemplate("Transparent")
