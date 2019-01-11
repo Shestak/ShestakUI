@@ -550,7 +550,6 @@ local function LoadSkin()
 	-- Recruiter frame
 	GarrisonRecruiterFrame:StripTextures(true)
 	GarrisonRecruiterFrame:SetTemplate("Transparent")
-	GarrisonRecruiterFrame.Inset:StripTextures()
 	T.SkinCloseButton(GarrisonRecruiterFrame.CloseButton)
 	GarrisonRecruiterFrame.UnavailableFrame:GetChildren():SkinButton()
 	GarrisonRecruiterFrame.Pick.ChooseRecruits:SkinButton()
@@ -561,6 +560,7 @@ local function LoadSkin()
 	-- Recruiter select frame
 	GarrisonRecruitSelectFrame:StripTextures()
 	GarrisonRecruitSelectFrame:SetTemplate("Transparent")
+	GarrisonRecruitSelectFrame.GarrCorners:StripTextures()
 	T.SkinCloseButton(GarrisonRecruitSelectFrame.CloseButton)
 
 	GarrisonRecruitSelectFrame.FollowerList:StripTextures()
@@ -579,7 +579,6 @@ local function LoadSkin()
 
 	-- Capacitive display frame
 	GarrisonCapacitiveDisplayFrame:StripTextures(true)
-	GarrisonCapacitiveDisplayFrame.Inset:StripTextures()
 	GarrisonCapacitiveDisplayFrame:SetTemplate("Transparent")
 	GarrisonCapacitiveDisplayFrame:SetFrameLevel(5)
 
@@ -615,7 +614,7 @@ local function LoadSkin()
 		self:SetTexture("")
 	end)
 
-	hooksecurefunc('GarrisonCapacitiveDisplayFrame_Update', function(self)
+	hooksecurefunc("GarrisonCapacitiveDisplayFrame_Update", function(self)
 		for _, reagent in ipairs(self.CapacitiveDisplay.Reagents) do
 			reagent.NameFrame:SetAlpha(0)
 			if not reagent.backdrop then
