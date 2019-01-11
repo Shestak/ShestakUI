@@ -219,6 +219,9 @@ function Stuffing:SlotUpdate(b)
 
 	if clink then
 		b.name, _, _, b.itemlevel, b.level, _, _, _, _, _, _, b.itemClassID, b.itemSubClassID = GetItemInfo(clink)
+		if not b.name then	-- Keystone bug
+			b.name = clink:match('%[(.-)%]') or ""
+		end
 
 		if C.bag.ilvl == true and b.itemlevel and quality > 1 and (b.itemClassID == 2 or b.itemClassID == 4 or (b.itemClassID == 3 and b.itemSubClassID == 11)) then
 			b.itemlevel = _getRealItemLevel(clink, self, b.bag, b.slot) or b.itemlevel
@@ -628,7 +631,10 @@ function Stuffing:SearchUpdate(str)
 			local ilink = GetContainerItemLink(b.bag, b.slot)
 			local class, subclass, _, equipSlot = select(6, GetItemInfo(ilink))
 			local minLevel = select(5, GetItemInfo(ilink))
+			class = _G[class] or ""
+			subclass = _G[subclass] or ""
 			equipSlot = _G[equipSlot] or ""
+			minLevel = _G[minLevel] or 1
 			if not string.find(string.lower(b.name), str) and not string.find(string.lower(setName), str) and not string.find(string.lower(class), str) and not string.find(string.lower(subclass), str) and not string.find(string.lower(equipSlot), str) then
 				if IsItemUnusable(b.name) or minLevel > T.level then
 					_G[b.frame:GetName().."IconTexture"]:SetVertexColor(0.5, 0.5, 0.5)
