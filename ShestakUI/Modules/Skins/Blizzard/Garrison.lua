@@ -595,48 +595,34 @@ local function LoadSkin()
 	GarrisonCapacitiveDisplayFrame.CreateAllWorkOrdersButton:SkinButton()
 	local CapacitiveDisplay = GarrisonCapacitiveDisplayFrame.CapacitiveDisplay
 	CapacitiveDisplay.IconBG:SetTexture()
-	CapacitiveDisplay.ShipmentIconFrame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	CapacitiveDisplay.ShipmentIconFrame:SetTemplate("Default")
-	CapacitiveDisplay.ShipmentIconFrame.Icon:SetPoint("TOPLEFT", -2, 2)
-	CapacitiveDisplay.ShipmentIconFrame.Icon:SetPoint("BOTTOMRIGHT", 2, -2)
+	CapacitiveDisplay.ShipmentIconFrame.Icon:SkinIcon()
 
-	hooksecurefunc(CapacitiveDisplay.ShipmentIconFrame.Follower.PortraitRingQuality, "SetVertexColor", function(self, r, g, b)
-		CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop:SetBackdropBorderColor(r, g, b)
+	local CapacitiveFollower = CapacitiveDisplay.ShipmentIconFrame.Follower
+	CapacitiveFollower.Portrait:SetAllPoints()
+	CapacitiveFollower.Portrait:SetTexCoord(0.2, 0.85, 0.2, 0.85)
+	CapacitiveFollower.PortraitRing:Kill()
+	CapacitiveFollower.PortraitRingQuality:Kill()
+	CapacitiveFollower:SetPoint("TOPLEFT", -2, 2)
+	CapacitiveFollower:SetPoint("BOTTOMRIGHT", 2, -2)
+	CapacitiveFollower.Portrait.IconBackdrop = CreateFrame("Frame", nil, CapacitiveFollower)
+	CapacitiveFollower.Portrait.IconBackdrop:SetFrameLevel(CapacitiveFollower:GetFrameLevel() - 1)
+	CapacitiveFollower.Portrait.IconBackdrop:SetPoint("TOPLEFT", CapacitiveFollower.Portrait, -2, 2)
+	CapacitiveFollower.Portrait.IconBackdrop:SetPoint("BOTTOMRIGHT", CapacitiveFollower.Portrait, 2, -2)
+	CapacitiveFollower.Portrait.IconBackdrop:SetTemplate("Default")
+
+	hooksecurefunc(CapacitiveFollower.PortraitRingQuality, "SetVertexColor", function(self, r, g, b)
+		CapacitiveFollower.Portrait.IconBackdrop:SetBackdropBorderColor(r, g, b)
 		self:SetTexture("")
 	end)
 
-	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait:SetAllPoints()
-	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait:SetTexCoord(0.2, 0.85, 0.2, 0.85)
-	CapacitiveDisplay.ShipmentIconFrame.Follower.PortraitRing:Kill()
-	CapacitiveDisplay.ShipmentIconFrame.Follower.PortraitRingQuality:Kill()
-	CapacitiveDisplay.ShipmentIconFrame.Follower:SetPoint("TOPLEFT", -2, 2)
-	CapacitiveDisplay.ShipmentIconFrame.Follower:SetPoint("BOTTOMRIGHT", 2, -2)
-	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop = CreateFrame("Frame", nil, CapacitiveDisplay.ShipmentIconFrame.Follower)
-	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop:SetFrameLevel(CapacitiveDisplay.ShipmentIconFrame.Follower:GetFrameLevel() - 1)
-	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop:SetPoint("TOPLEFT", CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait, -2, 2)
-	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop:SetPoint("BOTTOMRIGHT", CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait, 2, -2)
-	CapacitiveDisplay.ShipmentIconFrame.Follower.Portrait.IconBackdrop:SetTemplate("Default")
-
-	do
-		local reagentIndex = 1
-		hooksecurefunc("GarrisonCapacitiveDisplayFrame_Update", function(self)
-			local reagents = CapacitiveDisplay.Reagents
-			local reagent = reagents[reagentIndex]
-			while reagent do
-				reagent.NameFrame:SetAlpha(0)
-				reagent.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
-				if not reagent.backdrop then
-					reagent:CreateBackdrop("Default")
-					reagent.backdrop:SetPoint("TOPLEFT", reagent.Icon, -2, 2)
-					reagent.backdrop:SetPoint("BOTTOMRIGHT", reagent.Icon, 2, -2)
-				end
-
-				reagentIndex = reagentIndex + 1
-				reagent = reagents[reagentIndex]
+	hooksecurefunc('GarrisonCapacitiveDisplayFrame_Update', function(self)
+		for _, reagent in ipairs(self.CapacitiveDisplay.Reagents) do
+			reagent.NameFrame:SetAlpha(0)
+			if not reagent.backdrop then
+				reagent.Icon:SkinIcon()
 			end
-		end)
-	end
+		end
+	end)
 
 	----------------------------------------------------------------------------------------
 	--	MasterPlan AddOn skin
