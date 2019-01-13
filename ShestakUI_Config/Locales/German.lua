@@ -41,8 +41,8 @@ L_GUI_MISC_ARMORY_LINK = "Add Armory Link im Spieler PopupMenus (Deaktiviert das
 L_GUI_MISC_MERCHANT_ITEMLEVEL = "Zeige Itemlevel für Waffen & Rüstung bei Händler"
 L_GUI_MISC_MINIMIZE_MOUSEOVER = "Mouseover für Quest minimieren Taste"
 L_GUI_MISC_HIDE_BANNER = "Autoverstecken des Boss Loot Frame"
-L_GUI_MISC_HIDE_TALKING_HEAD = "Hide Talking Head Frame" -- Need review
-L_GUI_MISC_HIDE_RAID_BUTTON = "Hide button for oUF_RaidDPS" -- Need review
+L_GUI_MISC_HIDE_TALKING_HEAD = "Verstecke Talking Head Frame"
+L_GUI_MISC_HIDE_RAID_BUTTON = "Verstecke oUF_RaidDPS Knopf"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigeungen"
@@ -111,11 +111,11 @@ L_GUI_SKINS_VANASKOS = "VanasKoS Design aktivieren"
 L_GUI_SKINS_WEAK_AURAS = "WeakAuras Design aktivieren"
 L_GUI_SKINS_SKADA = "Skada Design aktivieren"
 L_GUI_SKINS_MY_ROLE_PLAY = "MyRolePlay Design aktivieren"
-L_GUI_SKINS_ARH = "Enable styling Archaeology Helper" -- Need review
-L_GUI_SKINS_POSTAL = "Enable styling Postal" -- Need review
-L_GUI_SKINS_OPIE = "Enable styling OPie" -- Need review
-L_GUI_SKINS_REMATCH = "Enable styling Rematch" -- Need review
-L_GUI_SKINS_LS_TOASTS = "Enable styling ls: Toasts" -- Need review
+L_GUI_SKINS_ARH = "Archaeology Helper Design aktivieren"
+L_GUI_SKINS_POSTAL = "Postal Design aktivieren"
+L_GUI_SKINS_OPIE = "OPie Design aktivieren"
+L_GUI_SKINS_REMATCH = "Rematch Design aktivieren"
+L_GUI_SKINS_LS_TOASTS = "ls:Toasts Design aktivieren"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Kampftext"
@@ -141,7 +141,7 @@ L_GUI_COMBATTEXT_TIME_VISIBLE = "Zeit(Sekunden) wielange eine einzelne Nachricht
 L_GUI_COMBATTEXT_DK_RUNES = "Zeige Runenaufladung vom Todesritter"
 L_GUI_COMBATTEXT_KILLINGBLOW = "Teilt dir mit ob du den Todesstoß bei einer Kreatur/einem Spieler hattest"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Vereint mehrfachen Flächenschaden in eine einzige Nachricht"
-L_GUI_COMBATTEXT_MERGE_MELEE = "Merges multiple auto attack damage spam" -- Needs review
+L_GUI_COMBATTEXT_MERGE_MELEE = "Fügt mehrfachen automatischen Angriffsschaden-Spam zusammen"
 L_GUI_COMBATTEXT_DISPEL = "Informiert dich über deine Bannungen"
 L_GUI_COMBATTEXT_INTERRUPT = "Informiert dich über deine Unterbrechungen"
 L_GUI_COMBATTEXT_DIRECTION = "Bildlaufrichtung 'top'(hoch) oder 'bottom'(runter)"
@@ -292,7 +292,7 @@ L_GUI_NAMEPLATE_HEALER_ICON = "Zeige Heilersymbol auf allen gegnerischen Heiler-
 L_GUI_NAMEPLATE_TOTEM_ICONS = "Show icon above enemy totems nameplate" -- Need review
 
 -- ActionBar options
-L_GUI_ACTIONBAR = "Action Bars" -- Need review
+L_GUI_ACTIONBAR = "Aktionsleisten"
 L_GUI_ACTIONBAR_ENABLE = "Aktionsleisten aktivieren"
 L_GUI_ACTIONBAR_HOTKEY = "Zeige Hotkey-Text an"
 L_GUI_ACTIONBAR_MACRO = "Zeige Makronamen auf den Buttons"
@@ -311,7 +311,7 @@ L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Aktiviere horizontale Begleiterleiste"
 L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Zeige die Begleiterleiste nur bei Mouseover(nur für horizontale Begleiterleiste)"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Gestaltenleiste verstecken"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Horizontale Haltungsleiste aktivieren"
-L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Zeige Haltungsleiste/Gestaltenleiste nur bei Mouseover" -- Need review
+L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Zeige Haltungsleiste/Gestaltenleiste nur bei Mouseover"
 L_GUI_ACTIONBAR_MICROMENU = "Zeige Micromenü"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micromenü bei MouseOver"
 
@@ -332,7 +332,7 @@ L_GUI_AURA_CAST_BY = "Zeige im Tooltip an von wem ein Buff- bzw. Debuff gewirkt 
 L_GUI_AURA_CLASSCOLOR_BORDER = "Aktiviere Klassenfarbe für Spielerbuffs"
 
 -- Filger
-L_GUI_FILGER = "Timers (Filger)" -- Need review
+L_GUI_FILGER = "Timers (Filger)"
 L_GUI_FILGER_ENABLE = "Aktiviere Filger"
 L_GUI_FILGER_TEST_MODE = "Test Icon Mode"
 L_GUI_FILGER_MAX_TEST_ICON = "Anzahl der Icons im Test Mode"
@@ -375,7 +375,7 @@ L_GUI_UF_PLUGINS_GCD = "Blitz für globalen Cooldown"
 L_GUI_UF_PLUGINS_SWING = "Swingleiste"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Rufleiste"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Erfahrungsleiste"
-L_GUI_UF_PLUGINS_ARTIFACT_BAR = "Artifact Power bar" -- Need review
+L_GUI_UF_PLUGINS_ARTIFACT_BAR = "Artifact Power Leiste"
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Weichgezeichnete Leisten"
 L_GUI_UF_PLUGINS_ENEMY_SPEC = "Zeige gegnerische Talente"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Kampftexts auf Spieler/Zielfenster"
