@@ -40,7 +40,7 @@ L_TOOLTIP_ACH_INCOMPLETE = "Dein Status: Noch nicht Ferig"
 L_TOOLTIP_SPELL_ID = "Zauber ID:"
 L_TOOLTIP_ITEM_ID = "Gegenstands ID:"
 L_TOOLTIP_WHO_TARGET = "Anvisiert von"
-L_TOOLTIP_ITEM_COUNT = "Gegenstandsanzahl:" -- Need review
+L_TOOLTIP_ITEM_COUNT = "Gegenstandsanzahl:"
 L_TOOLTIP_INSPECT_OPEN = "Betrachtungsfenster offen"
 
 -- Misc
@@ -91,7 +91,7 @@ L_UF_MANA = "Niedriges Mana"
 L_MAP_CURSOR = "Mauszeiger: "
 L_MAP_BOUNDS = "Außerhalb der Begrenzung!"
 L_MAP_FOG = "Nebel des Krieges"
-L_MAP_COORDS = "Coordinates" -- Needs review
+L_MAP_COORDS = "Koordinaten"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Kalender"
@@ -211,7 +211,7 @@ L_COMBATTEXT_TEST_ENABLED = "Kampftext Testmodus aktiviert."
 L_COMBATTEXT_TEST_USE_UNLOCK = "Gib '/xct' ein um die Kampftext Fenster freizugeben um sie verschieben und verändern zu können."
 L_COMBATTEXT_TEST_USE_LOCK = "Gib '/xct' ein um den Kampftext Testmodus zu sperren."
 L_COMBATTEXT_TEST_USE_TEST = "Gib '/xct' ein um den Kampftext Testmodus zu aktivieren."
-L_COMBATTEXT_TEST_USE_RESET = "Type /xct reset to restore default positions." -- Need review
+L_COMBATTEXT_TEST_USE_RESET = "Gib /xct reset ein, um die Standardpositionen wiederherzustellen."
 L_COMBATTEXT_POPUP = "Um die Kampftext Fensterpositionen zu sichern muss das Interface neu geladen werden."
 L_COMBATTEXT_UNSAVED = "Kampftext Fensterpositionen nicht gespeichert, vergiss nicht das Interface neu zu laden."
 L_COMBATTEXT_UNLOCKED = "Kampftext freigegeben."
