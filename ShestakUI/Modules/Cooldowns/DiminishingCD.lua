@@ -215,7 +215,7 @@ end
 local function tdr()
 	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
 
-	local testlist = {"fear", "disorient", "ctrlroot"}
+	local testlist = {"stun", "root", "silence"}
 
 	for frame, target in pairs(framelist) do
 		self = _G[frame].DrTracker
