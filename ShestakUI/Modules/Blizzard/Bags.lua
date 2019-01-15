@@ -205,6 +205,7 @@ function Stuffing:SlotUpdate(b)
 	end
 
 	b.frame.Azerite:Hide()
+	b.frame:UpdateItemContextMatching() -- Update Scrap items
 
 	if b.frame.UpgradeIcon then
 		b.frame.UpgradeIcon:SetPoint("TOPLEFT", C.bag.button_size/2.7, -C.bag.button_size/2.7)
@@ -1103,7 +1104,7 @@ function Stuffing:ADDON_LOADED(addon)
 	self:RegisterEvent("PLAYERREAGENTBANKSLOTS_CHANGED")
 	self:RegisterEvent("BAG_CLOSED")
 	self:RegisterEvent("BAG_UPDATE_COOLDOWN")
-	--self:RegisterEvent("REAGENTBANK_UPDATE")
+	self:RegisterEvent("SCRAPPING_MACHINE_SHOW")
 
 	self:InitBags()
 
@@ -1244,6 +1245,12 @@ end
 function Stuffing:BAG_UPDATE_COOLDOWN()
 	for i, v in pairs(self.buttons) do
 		self:UpdateCooldowns(v)
+	end
+end
+
+function Stuffing:SCRAPPING_MACHINE_SHOW()
+	for i = 0, #BAGS_BACKPACK - 1 do
+		Stuffing:BAG_UPDATE(i)
 	end
 end
 
