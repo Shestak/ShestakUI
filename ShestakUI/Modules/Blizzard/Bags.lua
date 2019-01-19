@@ -456,6 +456,12 @@ function Stuffing:BagFrameSlotNew(p, slot)
 		if not ret.frame.tooltipText then
 			ret.frame.tooltipText = ""
 		end
+
+		if slot > GetNumBankSlots() then
+			SetItemButtonTextureVertexColor(ret.frame, 1.0, 0.1, 0.1)
+		else
+			SetItemButtonTextureVertexColor(ret.frame, 1.0, 1.0, 1.0)
+		end
 	else
 		ret.frame = CreateFrame("CheckButton", "StuffingFBag"..slot.."Slot", p, "BagSlotButtonTemplate")
 
@@ -1472,11 +1478,23 @@ end
 
 function Stuffing:PLAYERBANKBAGSLOTS_CHANGED()
 	if not StuffingPurchaseButtonBank then return end
-	local _, full = GetNumBankSlots()
+	local numSlots, full = GetNumBankSlots()
 	if full then
 		StuffingPurchaseButtonBank:Hide()
 	else
 		StuffingPurchaseButtonBank:Show()
+	end
+
+	local button
+	for i = 1, NUM_BANKBAGSLOTS, 1 do
+		button = _G["StuffingBBag"..i.."Slot"]
+		if button then
+			if i <= numSlots then
+				SetItemButtonTextureVertexColor(button, 1.0, 1.0, 1.0)
+			else
+				SetItemButtonTextureVertexColor(button, 1.0, 0.1, 0.1)
+			end
+		end
 	end
 end
 
