@@ -1245,6 +1245,7 @@ function Stuffing:BAG_CLOSED(id)
 			break
 		end
 	end
+	Stuffing_Close()
 end
 
 function Stuffing:BAG_UPDATE_COOLDOWN()
