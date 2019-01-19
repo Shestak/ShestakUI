@@ -56,7 +56,7 @@ L_MISC_BINDER_OPEN = "Assegnazione pulsanti mouse"
 L_MISC_GROCERY_BUY = "Compra"
 L_MISC_GROCERY_DESC = "Compra automaticamente i sacchetti di alimenti"
 L_MISC_SCROLL = "Pergamena"
-L_MISC_COLLAPSE = "The Collapse" -- Need review
+L_MISC_COLLAPSE = "Il Crollo"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Sciogli il gruppo"
@@ -69,7 +69,7 @@ L_ZONE_GILNEAS = "Battaglia per Gilneas"
 L_ZONE_ANCIENTDALARAN = "Cratere di Dalaran"
 
 -- WatchFrame Wowhead link
-L_WATCH_WOWHEAD_LINK = "Link a Wowhead"
+L_WATCH_WOWHEAD_LINK = "Collegamento a Wowhead"
 
 -- Toggle Menu
 L_TOGGLE_ADDON = "AddOn "
@@ -91,7 +91,7 @@ L_UF_MANA = "Poco mana"
 L_MAP_CURSOR = "Cursore: "
 L_MAP_BOUNDS = "Fuori i confini!"
 L_MAP_FOG = "Nebbia della guerra"
-L_MAP_COORDS = "Coordinates" -- Needs review
+L_MAP_COORDS = "Coordinate"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendario"
@@ -125,7 +125,7 @@ L_ERRORFRAME_L = "Clicca per vedere gli errori."
 L_BAG_SHOW_BAGS = "Mostra le sacche"
 L_BAG_RIGHT_CLICK_SEARCH = "Clicca col destro per cercare"
 L_BAG_STACK_MENU = "Impila oggetti identici"
-L_BAG_RIGHT_CLICK_CLOSE = "Right-click to open menu" -- Need review
+L_BAG_RIGHT_CLICK_CLOSE = "Clicca col destro per aprire il menu"
 
 -- Grab mail
 L_MAIL_STOPPED = "Interrotto, l'inventario è pieno."
@@ -151,9 +151,9 @@ L_PANELS_AFK_LCLICK = "Click sinistro = non più assente."
 
 -- Cooldowns
 L_COOLDOWNS = "RC: "
-L_COOLDOWNS_COMBATRESS = "CombatRess" -- Needs review
-L_COOLDOWNS_COMBATRESS_REMAINDER = "Combat resurrect: " -- Needs review
-L_COOLDOWNS_NEXTTIME = "Next time: " -- Needs review
+L_COOLDOWNS_COMBATRESS = "Resurrezione in Combattimento"
+L_COOLDOWNS_COMBATRESS_REMAINDER = "Resurrezione in combattimento: "
+L_COOLDOWNS_NEXTTIME = "Tempi di ricarica: "
 
 -- Autoinvite
 L_INVITE_ENABLE = "Invito automatico attivato: "
@@ -211,7 +211,7 @@ L_COMBATTEXT_TEST_ENABLED = "Modalità 'prova' del testo di combattimento abilit
 L_COMBATTEXT_TEST_USE_UNLOCK = "Digita /xct per sbloccare e quindi poter muovere e ridimensionare i riquadri del testo di combattimento."
 L_COMBATTEXT_TEST_USE_LOCK = "Digita /xct per bloccare i riquadri del testo di combattimento."
 L_COMBATTEXT_TEST_USE_TEST = "Digita /xct test per attivare la modalità 'prova' per il testo di combattimento."
-L_COMBATTEXT_TEST_USE_RESET = "Type /xct reset to restore default positions." -- Need review
+L_COMBATTEXT_TEST_USE_RESET = "Digita /xct reset to ripristinare le posizioni predefinite."
 L_COMBATTEXT_POPUP = "Per poter salvare la posizione delle finestre del testo di combattimento è necessario riavviare la tua interfaccia utente."
 L_COMBATTEXT_UNSAVED = "La posizione delle finestre del testo di combattimento non è ancora stata salvata: non dimenticare di riavviare l'interfaccia utente."
 L_COMBATTEXT_UNLOCKED = "Testo di combattimento sbloccato."
@@ -227,7 +227,7 @@ L_STATS_BANDWIDTH = "Larghezza banda:"
 L_STATS_DOWNLOAD = "Download:"
 L_STATS_CLEARED_JUNK = "Lista eccezioni dell'elenco cianfrusaglie cancellata."
 L_STATS_CLEAR_EXCEPTIONS = "Cancella la lista eccezioni."
-L_STATS_CURRENCY_RAID = "Raid Seals" -- Needs review
+L_STATS_CURRENCY_RAID = "Sigilli d’incursione"
 L_STATS_WORLD_MAP = "Clicca per aprire la mappa del mondo."
 L_STATS_CURRENT_XP = "PE attuali/massimi"
 L_STATS_MEMORY_USAGE = "Utilizzo memoria interfaccia Blizzard:"
@@ -238,7 +238,7 @@ L_STATS_VIEW_NOTES = "Tieni premuto il tasto Alt per visualizzare ranghi, note e
 L_STATS_HR = "o"
 L_STATS_INF = "inf"
 L_STATS_ALREADY_EXCEPTIONS = "è già nell'elenco delle eccezioni."
-L_STATS_ITEMLINK = "Link all'oggetto"
+L_STATS_ITEMLINK = "Collegamento all'oggetto"
 L_STATS_JUNK_EXCEPTIONS = "Eccezioni elenco cianfrusaglie"
 L_STATS_JUNK_LIST = "Elenco cianfrusaglie"
 L_STATS_JUNK_PROFIT = "Profitto vendita cianfrusaglie"
@@ -281,7 +281,7 @@ L_STATS_WATCH_CURRENCY = "Gli oggetti attualmente osservati nel pannello Valuta 
 L_STATS_WATCH_FACTIONS = "Fazioni sotto osservazione dal pannello delle fazioni del personaggio."
 L_STATS_TOOLTIP_TIME_PLAYED = "A livello massimo, un suggerimento mostrerà i dettagli su quanto tempo hai giocato con questo account."
 L_STATS_TOOLTIP_EXPERIENCE = "A livelli inferiori a quello massimo, un suggerimento mostrerà dettagli sull'esperienza."
-L_STATS_SEALS = "Seals this week" -- Needs review
+L_STATS_SEALS = "Sigilli in questa settimana"
 
 -- Slash commands
 L_SLASHCMD_HELP = {
@@ -318,7 +318,7 @@ L_SLASHCMD_HELP = {
 }
 
 -- ExploreMap
-L_EXTRA_EXPLORED = "Esplorato/a: "
+L_EXTRA_EXPLORED = "Esplorato/a/i/e: "
 L_EXTRA_ZONEACHID = {
 	-- http://www.wowhead.com/achievement=*
 	-- e(X)plore achievement id, (Q)uest achievement id
