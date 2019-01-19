@@ -218,6 +218,11 @@ function Stuffing:SlotUpdate(b)
 		end
 	end
 
+	if IsAddOnLoaded("CanIMogIt") then
+		CIMI_AddToFrame(b.frame, ContainerFrameItemButton_CIMIUpdateIcon)
+		ContainerFrameItemButton_CIMIUpdateIcon(b.frame.CanIMogItOverlay)
+	end
+
 	if clink then
 		b.name, _, _, b.itemlevel, b.level, _, _, _, _, _, _, b.itemClassID, b.itemSubClassID = GetItemInfo(clink)
 		if not b.name then	-- Keystone bug
