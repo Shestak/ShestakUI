@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if T.client ~= "frFR" then return end
 
 ----------------------------------------------------------------------------------------
@@ -6,9 +6,9 @@ if T.client ~= "frFR" then return end
 --	Translation: Cranan, Puree
 ----------------------------------------------------------------------------------------
 -- Announce flasks and food
-L_ANNOUNCE_FF_NOFOOD = "Sans nourriture: "
-L_ANNOUNCE_FF_NOFLASK = "Sans flacon: "
-L_ANNOUNCE_FF_ALLBUFFED = "Tout le monde possède sa nourriture et son flacon!"
+L_ANNOUNCE_FF_NOFOOD = "Sans nourriture : "
+L_ANNOUNCE_FF_NOFLASK = "Sans flacon : "
+L_ANNOUNCE_FF_ALLBUFFED = "Tout le monde possède sa nourriture et son flacon !"
 L_ANNOUNCE_FF_CHECK_BUTTON = "Vérifier nourriture et flacon"
 
 -- Says thanks for some spells
@@ -16,16 +16,16 @@ L_ANNOUNCE_SS_THANKS = "Merci pour "
 L_ANNOUNCE_SS_RECEIVED = " reçu de "
 
 -- Pull countdown announce
-L_ANNOUNCE_PC_GO = "Départ!"
+L_ANNOUNCE_PC_GO = "Départ !"
 L_ANNOUNCE_PC_MSG = "Pull %s dans %s.."
-L_ANNOUNCE_PC_ABORTED = "Pull ABANDONNE!"
+L_ANNOUNCE_PC_ABORTED = "Pull ABANDONNE !"
 
 -- Announce feasts and portals
 L_ANNOUNCE_FP_STAT = "%s a préparé un %s - [%s]."
 L_ANNOUNCE_FP_PRE = "%s a préparé un %s."
 L_ANNOUNCE_FP_PUT = "%s a déposé au sol un %s."
 L_ANNOUNCE_FP_CAST = "%s lance le sort %s."
-L_ANNOUNCE_FP_CLICK = "%s invoque %s. Click!"
+L_ANNOUNCE_FP_CLICK = "%s invoque %s. Cliquez !"
 L_ANNOUNCE_FP_USE = "%s a utilisé : %s."
 
 -- Announce your interrupts
@@ -91,7 +91,7 @@ L_UF_MANA = "Mana faible"
 L_MAP_CURSOR = "Curseur : "
 L_MAP_BOUNDS = "En dehors de la carte !"
 L_MAP_FOG = "Zone non découverte"
-L_MAP_COORDS = "Coordinates" -- Needs review
+L_MAP_COORDS = "Coordonnées"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendrier"
@@ -125,7 +125,7 @@ L_ERRORFRAME_L = "Clic gauche pour afficher les erreurs."
 L_BAG_SHOW_BAGS = "Montrer les sacs"
 L_BAG_RIGHT_CLICK_SEARCH = "Clic droit pour rechercher"
 L_BAG_STACK_MENU = "Empiler"
-L_BAG_RIGHT_CLICK_CLOSE = "Right-click to open menu" -- Need review
+L_BAG_RIGHT_CLICK_CLOSE = "Clic droit pour ouvrir le menu"
 
 -- Grab mail
 L_MAIL_STOPPED = "Inventaire plein."
@@ -152,8 +152,8 @@ L_PANELS_AFK_LCLICK = "Clic gauche pour revenir."
 -- Cooldowns
 L_COOLDOWNS = "Temps de recharge : "
 L_COOLDOWNS_COMBATRESS = "Résurrection en combat"
-L_COOLDOWNS_COMBATRESS_REMAINDER = "Résurrection en combat: "
-L_COOLDOWNS_NEXTTIME = "Suivant: "
+L_COOLDOWNS_COMBATRESS_REMAINDER = "Résurrection en combat : "
+L_COOLDOWNS_NEXTTIME = "Suivant : "
 
 -- Autoinvite
 L_INVITE_ENABLE = "Invitation automatique activée : "
@@ -211,7 +211,7 @@ L_COMBATTEXT_TEST_ENABLED = "Mode test de la fenêtre des textes de combat activ
 L_COMBATTEXT_TEST_USE_UNLOCK = "Tapez /xct unlock pour bouger et redimensionner la fenêtre des textes de combat."
 L_COMBATTEXT_TEST_USE_LOCK = "Tapez /xct lock pour verrouiller la fenêtre des textes de combat."
 L_COMBATTEXT_TEST_USE_TEST = "Tapez /xct test pour activer le mode test de la fenêtre des textes de combat."
-L_COMBATTEXT_TEST_USE_RESET = "Type /xct reset to restore default positions." -- Need review
+L_COMBATTEXT_TEST_USE_RESET = "Type /xct reset pour réstaurer les positions par défaut."
 L_COMBATTEXT_POPUP = "Pour sauvegardez vos modifications vous devez recharger l'interface."
 L_COMBATTEXT_UNSAVED = "Position de la fenêtre des textes de combat non saugardez, n'oubliez pas de recharger l'interface."
 L_COMBATTEXT_UNLOCKED = "Fenêtre des textes de combat déverrouillée."
@@ -223,16 +223,16 @@ L_STATS_REMOVE_EXCEPTION = "Ajouter / supprimer exception."
 L_STATS_AUTO_REPAIR = "Réparation automatique"
 L_STATS_GUILD_REPAIR = "Réparation automatique avec la banque de guilde"
 L_STATS_AUTO_SELL = "Vente automatique d'objet "
-L_STATS_BANDWIDTH = "Bande passante:"
-L_STATS_DOWNLOAD = "Téléchargement:"
+L_STATS_BANDWIDTH = "Bande passante :"
+L_STATS_DOWNLOAD = "Téléchargement :"
 L_STATS_CLEARED_JUNK = "Liste d'exceptions d'objet effacée."
 L_STATS_CLEAR_EXCEPTIONS = "Effacer la liste d'exceptions."
 L_STATS_CURRENCY_RAID = "Sceaux de raid"
 L_STATS_WORLD_MAP = "Clic ouvre la carte du monde."
 L_STATS_CURRENT_XP = "XP courant/max"
-L_STATS_MEMORY_USAGE = "Usage mémoire pour l'interface Blizzard:"
+L_STATS_MEMORY_USAGE = "Usage mémoire pour l'interface Blizzard :"
 L_STATS_GARBAGE_COLLECTED = "Déchets ramassés"
-L_STATS_CHANGE_SORTING = "[Guild] Clic-Droit pour inviter et chuchoter, Clic-Centre pour changer le type de tri, Maj-Clic-Centre pour inverser l'ordre."
+L_STATS_CHANGE_SORTING = "[Guild] Clic-Droit pour inviter et chuchoter, Clic-Milieu pour changer le type de tri, Maj-Clic-Centre pour inverser l'ordre."
 L_STATS_HIDDEN = "Caché"
 L_STATS_VIEW_NOTES = "Maintenez enfoncé la touche Alt pour voir les grades, notes et notes d'officiers."
 L_STATS_HR = "Par heure"
@@ -274,14 +274,14 @@ L_STATS_SESSION_XP = "XP session taux"
 L_STATS_INSERTS_COORDS = "Maj-clic sur l'emplacement ou coords insère le module de vos coords au chat"
 L_STATS_EQUIPMENT_CHANGER = "Maj-clic ou clic-milieu sur le gestionnaire équipement."
 L_STATS_SORTING_BY = "Tri par"
-L_STATS_TIPS = "Conseils:"
-L_STATS_TOTAL_MEMORY_USAGE = "Utilisation de la mémoire totale:"
+L_STATS_TIPS = "Conseils :"
+L_STATS_TOTAL_MEMORY_USAGE = "Utilisation de la mémoire totale :"
 L_STATS_NOT_TO_SELL = "Tapez /junk pour configurer les items à ne pas vendre."
 L_STATS_WATCH_CURRENCY = "Consulté onglet monnaie articles se reflétera dans l'info bulle."
 L_STATS_WATCH_FACTIONS = "Superviser les factions de l'onglet de Réputation."
 L_STATS_TOOLTIP_TIME_PLAYED = "Quand vous êtes au niveau maximum, la bulle d'aide affichera les détails du temps de jeu pour ce compte."
 L_STATS_TOOLTIP_EXPERIENCE = "Quand vous êtes en dessous du niveau maximum, une bulle d'aide affichera les détails concernant votre expérience."
-L_STATS_SEALS = "Seals this week" -- Needs review
+L_STATS_SEALS = "Sceau cette semaine"
 
 -- Slash commands
 L_SLASHCMD_HELP = {
