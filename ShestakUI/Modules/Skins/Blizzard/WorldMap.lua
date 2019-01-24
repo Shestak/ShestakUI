@@ -16,8 +16,8 @@ local function LoadSkin()
 	WorldMapFrame:StripTextures()
 	WorldMapFrame:CreateBackdrop("Default")
 	WorldMapFrame.backdrop:ClearAllPoints()
-	WorldMapFrame.backdrop:SetSize(700, 468)
 	WorldMapFrame.backdrop:SetPoint("TOPLEFT", 1, -66)
+	WorldMapFrame.backdrop:SetSize(700, 468)
 	WorldMapFrame.Header = CreateFrame("Frame", nil, WorldMapFrame)
 	WorldMapFrame.Header:SetSize(WorldMapFrame.backdrop:GetWidth(), 23)
 	WorldMapFrame.Header:SetPoint("BOTTOMLEFT", WorldMapFrame.backdrop, "TOPLEFT", 0, 2)
@@ -25,16 +25,13 @@ local function LoadSkin()
 
 	WorldMapFrame.BorderFrame:StripTextures()
 	WorldMapFrame.BorderFrame.NineSlice:Hide()
-	QuestMapFrame.DetailsFrame:StripTextures()
-	QuestMapFrame.DetailsFrame.RewardsFrame:StripTextures()
-	QuestMapFrame:StripTextures()
+	WorldMapFrame.BorderFrame.Tutorial:Kill()
 
+	QuestMapFrame:StripTextures()
 	QuestMapFrame:CreateBackdrop("Overlay")
 	QuestMapFrame.backdrop:ClearAllPoints()
-	QuestMapFrame.backdrop:SetSize(284, 468)
 	QuestMapFrame.backdrop:SetPoint("LEFT", WorldMapFrame.backdrop, "RIGHT", 2, 0)
-
-	WorldMapFrame.BorderFrame.Tutorial:Kill()
+	QuestMapFrame.backdrop:SetSize(284, 468)
 
 	QuestScrollFrame:ClearAllPoints()
 	QuestScrollFrame:SetPoint("LEFT", WorldMapFrame.backdrop, "RIGHT", 4, 0)
@@ -43,17 +40,28 @@ local function LoadSkin()
 	QuestScrollFrame.Contents.Separator.Divider:Hide()
 	QuestScrollFrame:SetSize(259, 463)
 
-	QuestScrollFrame.Contents.WarCampaignHeader:CreateBackdrop("Overlay")
-	QuestScrollFrame.Contents.WarCampaignHeader.backdrop:SetPoint("TOPLEFT", 2, -2)
-	QuestScrollFrame.Contents.WarCampaignHeader.backdrop:SetPoint("BOTTOMRIGHT", -6, 2)
-	QuestScrollFrame.Contents.WarCampaignHeader.HighlightTexture:Hide()
-	QuestScrollFrame.Contents.WarCampaignHeader.Background:Hide()
+	local questHeader = {
+		QuestScrollFrame.Contents.WarCampaignHeader,
+		QuestScrollFrame.Contents.StoryHeader
+	}
 
-	QuestScrollFrame.Contents.StoryHeader:CreateBackdrop("Overlay")
-	QuestScrollFrame.Contents.StoryHeader.backdrop:SetPoint("TOPLEFT", 2, -2)
-	QuestScrollFrame.Contents.StoryHeader.backdrop:SetPoint("BOTTOMRIGHT", -6, 2)
-	QuestScrollFrame.Contents.StoryHeader.HighlightTexture:Hide()
-	QuestScrollFrame.Contents.StoryHeader.Background:Hide()
+	for i = 1, #questHeader do
+		local frame = questHeader[i]
+		frame:CreateBackdrop("Overlay")
+		frame.backdrop:SetPoint("TOPLEFT", 6, -2)
+		frame.backdrop:SetPoint("BOTTOMRIGHT", -6, 2)
+		frame.HighlightTexture:Hide()
+		frame.Background:Hide()
+		if i == 1 then -- WarCampaignHeader
+			if UnitFactionGroup("player") == "Horde" then
+				frame.backdrop.overlay:SetVertexColor(0.2, 0.1, 0.1)
+			else
+				frame.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.2)
+			end
+		else -- StoryHeader
+			frame.backdrop.overlay:SetVertexColor(1, 1, 1, 0.2)
+		end
+	end
 
 	QuestScrollFrameScrollBar:SetPoint("TOPLEFT", QuestScrollFrame, "TOPRIGHT", 4, -16)
 	QuestScrollFrameScrollBar:SetPoint("BOTTOMLEFT", QuestScrollFrame, "BOTTOMRIGHT", 4, 15)
@@ -68,24 +76,30 @@ local function LoadSkin()
 	QuestMapDetailsScrollFrameScrollBar:SetPoint("TOPLEFT", QuestMapDetailsScrollFrame, "TOPRIGHT", 0, -18)
 	T.SkinScrollBar(QuestMapDetailsScrollFrameScrollBar)
 
+	QuestMapFrame.DetailsFrame:StripTextures()
+	QuestMapFrame.DetailsFrame.RewardsFrame:StripTextures()
+
 	QuestMapFrame.DetailsFrame.BackButton:SkinButton()
 	QuestMapFrame.DetailsFrame.BackButton:ClearAllPoints()
 	QuestMapFrame.DetailsFrame.BackButton:SetPoint("LEFT", WorldMapFrame.Header, "RIGHT", 2, 0)
 	QuestMapFrame.DetailsFrame.BackButton:SetSize(284, 23)
 
-	QuestMapFrame.DetailsFrame.AbandonButton:SkinButton()
-	QuestMapFrame.DetailsFrame.AbandonButton:ClearAllPoints()
-	QuestMapFrame.DetailsFrame.AbandonButton:SetPoint("BOTTOMLEFT", QuestMapFrame.backdrop, "BOTTOMLEFT", 4, 4)
+	local AbandonButton = QuestMapFrame.DetailsFrame.AbandonButton
+	AbandonButton:SkinButton()
+	AbandonButton:ClearAllPoints()
+	AbandonButton:SetPoint("BOTTOMLEFT", QuestMapFrame.backdrop, "BOTTOMLEFT", 4, 4)
 
-	QuestMapFrame.DetailsFrame.TrackButton:SkinButton()
-	QuestMapFrame.DetailsFrame.TrackButton:SetSize(90, 22)
-	QuestMapFrame.DetailsFrame.TrackButton:ClearAllPoints()
-	QuestMapFrame.DetailsFrame.TrackButton:SetPoint("BOTTOMRIGHT", QuestMapFrame.backdrop, "BOTTOMRIGHT", -4, 4)
+	local TrackButton = QuestMapFrame.DetailsFrame.TrackButton
+	TrackButton:SkinButton()
+	TrackButton:SetSize(90, 22)
+	TrackButton:ClearAllPoints()
+	TrackButton:SetPoint("BOTTOMRIGHT", QuestMapFrame.backdrop, "BOTTOMRIGHT", -4, 4)
 
-	QuestMapFrame.DetailsFrame.ShareButton:SkinButton(true)
-	QuestMapFrame.DetailsFrame.ShareButton:ClearAllPoints()
-	QuestMapFrame.DetailsFrame.ShareButton:SetPoint("LEFT", QuestMapFrame.DetailsFrame.AbandonButton, "RIGHT", 3, 0)
-	QuestMapFrame.DetailsFrame.ShareButton:SetPoint("RIGHT", QuestMapFrame.DetailsFrame.TrackButton, "LEFT", -3, 0)
+	local ShareButton = QuestMapFrame.DetailsFrame.ShareButton
+	ShareButton:SkinButton(true)
+	ShareButton:ClearAllPoints()
+	ShareButton:SetPoint("LEFT", AbandonButton, "RIGHT", 3, 0)
+	ShareButton:SetPoint("RIGHT", TrackButton, "LEFT", -3, 0)
 
 	QuestMapFrame.DetailsFrame.CompleteQuestFrame:StripTextures()
 	QuestMapFrame.DetailsFrame.CompleteQuestFrame.CompleteButton:SkinButton(true)

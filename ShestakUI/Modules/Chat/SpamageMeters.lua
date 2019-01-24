@@ -52,7 +52,6 @@ local events = {
 }
 
 local function FilterLine(event, source, message, ...)
-	local spam = false
 	for k, v in ipairs(nextLines) do
 		if message:match(v) then
 			local curTime = time()

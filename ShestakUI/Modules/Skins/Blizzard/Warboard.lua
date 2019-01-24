@@ -37,6 +37,12 @@ local function LoadSkin()
 	end
 
 	T.SkinCloseButton(WarboardQuestChoiceFrame.CloseButton, WarboardQuestChoiceFrame.backdrop)
+
+	WarboardQuestChoiceFrame:HookScript("OnShow", function(self)
+		if self.CloseButton.Border then
+			self.CloseButton.Border:Hide()
+		end
+	end)
 end
 
 T.SkinFuncs["Blizzard_WarboardUI"] = LoadSkin

@@ -253,8 +253,6 @@ L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu"
 
 -- Map options
 L_GUI_MAP_BG_STYLIZATION = "BG map stylization"
-L_GUI_MAP_BOSS_COUNT = "Show boss count in World Map"
-L_GUI_MAP_EXPLORE = "Tracking Explorer and Lore Master achievements in World Map"
 L_GUI_MAP_FOG_OF_WAR = "Remove fog of war on World Map"
 
 -- Loot options

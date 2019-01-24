@@ -1,80 +1,80 @@
-if(select(2, UnitClass('player')) ~= 'MAGE') then return end
+if(select(2, UnitClass("player")) ~= "MAGE") then return end
 
-local parent, ns = ...
+local _, ns = ...
 local oUF = ns.oUF
 
 local SPELL_POWER_ARCANE_CHARGES = Enum.PowerType.ArcaneCharges or 16
 
-local Update = function(self, event, unit, powerType)
-	if(self.unit ~= unit or (powerType and powerType ~= 'ARCANE_CHARGES')) then return end
+local function Update(self, event, unit, powerType)
+	if(self.unit ~= unit or (powerType and powerType ~= "ARCANE_CHARGES")) then return end
 
-	local ac = self.ArcaneCharge
+	local element = self.ArcaneCharge
 
-	if(ac.PreUpdate) then
-		ac:PreUpdate(unit)
+	if(element.PreUpdate) then
+		element:PreUpdate(unit)
 	end
 
-	local cur = UnitPower('player', SPELL_POWER_ARCANE_CHARGES)
-	local max = UnitPowerMax('player', SPELL_POWER_ARCANE_CHARGES)
+	local cur = UnitPower("player", SPELL_POWER_ARCANE_CHARGES)
+	local max = UnitPowerMax("player", SPELL_POWER_ARCANE_CHARGES)
 
 	for i = 1, max do
 		if(i <= cur) then
-			ac[i]:SetAlpha(1)
+			element[i]:SetAlpha(1)
 		else
-			ac[i]:SetAlpha(0.2)
+			element[i]:SetAlpha(0.2)
 		end
 	end
 
-	if(ac.PostUpdate) then
-		return ac:PostUpdate(cur)
+	if(element.PostUpdate) then
+		return element:PostUpdate(cur)
 	end
 end
 
-local Path = function(self, ...)
+local function Path(self, ...)
 	return (self.ArcaneCharge.Override or Update) (self, ...)
 end
 
-local ForceUpdate = function(element)
-	return Path(element.__owner, 'ForceUpdate', element.__owner.unit, 'ARCANE_CHARGES')
+local function ForceUpdate(element)
+	return Path(element.__owner, "ForceUpdate", element.__owner.unit, "ARCANE_CHARGES")
 end
 
-local function Visibility(self, event, unit)
-	local ac = self.ArcaneCharge
+local function Visibility(self)
+	local element = self.ArcaneCharge
 	local spec = GetSpecialization()
 
 	if spec == SPEC_MAGE_ARCANE then
-		ac:Show()
+		element:Show()
 		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
 	else
-		ac:Hide()
+		element:Hide()
 		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
 	end
 end
 
 local function Enable(self)
-	local ac = self.ArcaneCharge
-	if(ac) then
-		ac.__owner = self
-		ac.ForceUpdate = ForceUpdate
+	local element = self.ArcaneCharge
+	if(element) then
+		element.__owner = self
+		element.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent('UNIT_POWER_UPDATE', Path)
+		self:RegisterEvent("UNIT_POWER_UPDATE", Path)
 
-		ac.Visibility = CreateFrame("Frame", nil, ac)
-		ac.Visibility:RegisterEvent("PLAYER_TALENT_UPDATE")
-		ac.Visibility:RegisterEvent("PLAYER_ENTERING_WORLD")
-		ac.Visibility:SetScript("OnEvent", function(frame, event, unit) Visibility(self, event, unit) end)
+		element.hadler = CreateFrame("Frame", nil, element)
+		element.hadler:RegisterEvent("PLAYER_TALENT_UPDATE")
+		element.hadler:RegisterEvent("PLAYER_ENTERING_WORLD")
+		element.hadler:SetScript("OnEvent", function(frame) Visibility(self) end)
 
 		return true
 	end
 end
 
 local function Disable(self)
-	local ac = self.ArcaneCharge
-	if(ac) then
-		self:UnregisterEvent('UNIT_POWER_UPDATE', Path)
-		ac.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")
-		ac.Visibility:UnregisterEvent("PLAYER_ENTERING_WORLD")
+	local element = self.ArcaneCharge
+	if(element) then
+		self:UnregisterEvent("UNIT_POWER_UPDATE", Path)
+		element.hadler:UnregisterEvent("PLAYER_TALENT_UPDATE")
+		element.hadler:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	end
 end
 
-oUF:AddElement('ArcaneCharge', Path, Enable, Disable)
+oUF:AddElement("ArcaneCharge", Path, Enable, Disable)

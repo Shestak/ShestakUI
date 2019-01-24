@@ -1,82 +1,80 @@
-if(select(2, UnitClass('player')) ~= 'PALADIN') then return end
+if(select(2, UnitClass("player")) ~= "PALADIN") then return end
 
-local parent, ns = ...
+local _, ns = ...
 local oUF = ns.oUF
 
 local SPELL_POWER_HOLY_POWER = Enum.PowerType.HolyPower or 9
 
-local Update = function(self, event, unit, powerType)
-	if(self.unit ~= unit or (powerType and powerType ~= 'HOLY_POWER')) then return end
+local function Update(self, event, unit, powerType)
+	if(self.unit ~= unit or (powerType and powerType ~= "HOLY_POWER")) then return end
 
-	local hp = self.HolyPower
+	local element = self.HolyPower
 
-	if(hp.PreUpdate) then
-		hp:PreUpdate(unit)
+	if(element.PreUpdate) then
+		element:PreUpdate(unit)
 	end
 
-	local cur = UnitPower('player', SPELL_POWER_HOLY_POWER)
-	local max = UnitPowerMax('player', SPELL_POWER_HOLY_POWER)
+	local cur = UnitPower("player", SPELL_POWER_HOLY_POWER)
+	local max = 5 -- Cause we don't use :Factory to spawn frames it return sometimes "3"
 
 	for i = 1, max do
 		if(i <= cur) then
-			hp[i]:SetAlpha(1)
+			element[i]:SetAlpha(1)
 		else
-			hp[i]:SetAlpha(0.2)
+			element[i]:SetAlpha(0.2)
 		end
 	end
 
-	if(hp.PostUpdate) then
-		return hp:PostUpdate(cur)
+	if(element.PostUpdate) then
+		return element:PostUpdate(cur)
 	end
 end
 
-local Path = function(self, ...)
+local function Path(self, ...)
 	return (self.HolyPower.Override or Update) (self, ...)
 end
 
-local ForceUpdate = function(element)
-	return Path(element.__owner, 'ForceUpdate', element.__owner.unit, 'HOLY_POWER')
+local function ForceUpdate(element)
+	return Path(element.__owner, "ForceUpdate", element.__owner.unit, "HOLY_POWER")
 end
 
-local function Visibility(self, event, unit)
-	local hp = self.HolyPower
+local function Visibility(self)
+	local element = self.HolyPower
 	local spec = GetSpecialization()
 
 	if spec == SPEC_PALADIN_RETRIBUTION then
-		hp:Show()
+		element:Show()
 		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
 	else
-		hp:Hide()
+		element:Hide()
 		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
 	end
 end
 
 local function Enable(self)
-	local hp = self.HolyPower
-	if(hp) then
-		hp.__owner = self
-		hp.ForceUpdate = ForceUpdate
+	local element = self.HolyPower
+	if(element) then
+		element.__owner = self
+		element.ForceUpdate = ForceUpdate
 
 		self:RegisterEvent('UNIT_POWER_UPDATE', Path)
-		self:RegisterEvent('UNIT_MAXPOWER', Path)
 
-		hp.Visibility = CreateFrame("Frame", nil, hp)
-		hp.Visibility:RegisterEvent("PLAYER_TALENT_UPDATE")
-		hp.Visibility:RegisterEvent("PLAYER_ENTERING_WORLD")
-		hp.Visibility:SetScript("OnEvent", function(frame, event, unit) Visibility(self, event, unit) end)
+		element.hadler = CreateFrame("Frame", nil, element)
+		element.hadler:RegisterEvent("PLAYER_TALENT_UPDATE")
+		element.hadler:RegisterEvent("PLAYER_ENTERING_WORLD")
+		element.hadler:SetScript("OnEvent", function(frame) Visibility(self) end)
 
 		return true
 	end
 end
 
 local function Disable(self)
-	local hp = self.HolyPower
-	if(hp) then
+	local element = self.HolyPower
+	if(element) then
 		self:UnregisterEvent('UNIT_POWER_UPDATE', Path)
-		self:UnregisterEvent('UNIT_MAXPOWER', Path)
-		hp.Visibility:UnregisterEvent("PLAYER_TALENT_UPDATE")
-		hp.Visibility:UnregisterEvent("PLAYER_ENTERING_WORLD")
+		element.hadler:UnregisterEvent("PLAYER_TALENT_UPDATE")
+		element.hadler:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	end
 end
 
-oUF:AddElement('HolyPower', Path, Enable, Disable)
+oUF:AddElement("HolyPower", Path, Enable, Disable)

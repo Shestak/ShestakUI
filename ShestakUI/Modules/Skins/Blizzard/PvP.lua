@@ -65,6 +65,7 @@ local function LoadSkin()
 	-- HonorFrame
 	HonorFrame.Inset:StripTextures()
 	T.SkinDropDownBox(HonorFrameTypeDropDown, 165)
+	HonorFrameTypeDropDown:SetPoint("BOTTOMRIGHT", HonorFrame.Inset, "TOPRIGHT", -6, -1)
 	T.SkinScrollBar(HonorFrameSpecificFrameScrollBar)
 	HonorFrameSpecificFrameScrollBar:SetPoint("TOPLEFT", HonorFrameSpecificFrame, "TOPRIGHT", 0, -15)
 	HonorFrameSpecificFrameScrollBar:SetPoint("BOTTOMLEFT", HonorFrameSpecificFrame, "BOTTOMRIGHT", 0, 15)
@@ -113,14 +114,14 @@ local function LoadSkin()
 		EnlistmentBonusIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 
-	T.SkinCloseButton(PremadeGroupsPvPTutorialAlert.CloseButton)
-	PremadeGroupsPvPTutorialAlert.Arrow:Hide()
 	PremadeGroupsPvPTutorialAlert:StripTextures()
-	PremadeGroupsPvPTutorialAlert:CreateBackdrop("Transparent")
+	PremadeGroupsPvPTutorialAlert:SetTemplate("Transparent")
+	PremadeGroupsPvPTutorialAlert.Arrow:Hide()
+	T.SkinCloseButton(PremadeGroupsPvPTutorialAlert.CloseButton)
 
-	T.SkinCloseButton(HonorFrame.BonusFrame.BrawlHelpBox.CloseButton)
 	HonorFrame.BonusFrame.BrawlHelpBox:StripTextures()
-	HonorFrame.BonusFrame.BrawlHelpBox:CreateBackdrop("Transparent")
+	HonorFrame.BonusFrame.BrawlHelpBox:SetTemplate("Transparent")
+	T.SkinCloseButton(HonorFrame.BonusFrame.BrawlHelpBox.CloseButton)
 
 	for _, i in pairs({"RandomBGButton", "RandomEpicBGButton", "Arena1Button", "BrawlButton"}) do
 		local button = HonorFrame.BonusFrame[i]
@@ -153,6 +154,7 @@ local function LoadSkin()
 	end
 
 	for _, button in pairs{HonorFrame.TankIcon, HonorFrame.HealerIcon, HonorFrame.DPSIcon} do
+		button.checkButton:SetSize(22, 22)
 		T.SkinCheckBox(button.checkButton)
 	end
 

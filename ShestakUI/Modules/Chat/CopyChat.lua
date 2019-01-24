@@ -65,14 +65,20 @@ local scrollDown = function()
 	CopyScroll:SetVerticalScroll((CopyScroll:GetVerticalScrollRange()) or 0)
 end
 
+local function MessageIsProtected(message)
+	return strmatch(message, '[^|]-|K[vq]%d-[^|]-|k')
+end
+
 local function Copy(cf)
 	if not isf then CreatCopyFrame() end
 	local text = ""
 	for i = 1, cf:GetNumMessages() do
 		local line = cf:GetMessageInfo(i)
-		font:SetFormattedText("%s\n", line)
-		local cleanLine = font:GetText() or ""
-		text = text..cleanLine
+		if not MessageIsProtected(line) then
+			font:SetFormattedText("%s\n", line)
+			local cleanLine = font:GetText() or ""
+			text = text..cleanLine
+		end
 	end
 	text = text:gsub("|T[^\\]+\\[^\\]+\\[Uu][Ii]%-[Rr][Aa][Ii][Dd][Tt][Aa][Rr][Gg][Ee][Tt][Ii][Nn][Gg][Ii][Cc][Oo][Nn]_(%d)[^|]+|t", "{rt%1}")
 	text = text:gsub("|T13700([1-8])[^|]+|t", "{rt%1}")

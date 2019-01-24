@@ -256,8 +256,6 @@ L_GUI_MINIMAP_TOGGLE_MENU = "Отображать меню над миникар
 
 -- Map options
 L_GUI_MAP_BG_STYLIZATION = "Стилизация карты полей боя"
-L_GUI_MAP_BOSS_COUNT = "Отображать номера боссов на карте"
-L_GUI_MAP_EXPLORE = "Отслеживать на карте 'Первооткрыватель' и 'Хранитель мудрости'"
 L_GUI_MAP_FOG_OF_WAR = "Убрать туман войны с карты"
 
 -- Loot options

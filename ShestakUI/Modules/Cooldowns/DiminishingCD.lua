@@ -117,7 +117,7 @@ local eventRegistered = {
 local function CombatLogCheck(self)
 	local _, instanceType = IsInInstance()
 	if instanceType ~= "arena" then return end
-	local _, _, eventType, _, _, _, _, _, destGUID, _, _, _, spellID, _, _, auraType, _ = CombatLogGetCurrentEventInfo()
+	local _, _, eventType, _, _, _, _, _, destGUID, _, _, _, spellID, _, _, auraType = CombatLogGetCurrentEventInfo()
 	if not eventRegistered[eventType] then return end
 	if destGUID ~= UnitGUID(self.target) then return end
 
@@ -215,7 +215,7 @@ end
 local function tdr()
 	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
 
-	local testlist = {"fear", "disorient", "ctrlroot"}
+	local testlist = {"stun", "root", "silence"}
 
 	for frame, target in pairs(framelist) do
 		self = _G[frame].DrTracker

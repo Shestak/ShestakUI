@@ -15,6 +15,7 @@ local function StyleNormalButton(self)
 	local btname = _G[name.."Name"]
 	local normal = _G[name.."NormalTexture"]
 	local float = _G[name.."FloatingBG"]
+	local highlight = button.SpellHighlightTexture
 
 	flash:SetTexture("")
 	button:SetNormalTexture("")
@@ -83,6 +84,12 @@ local function StyleNormalButton(self)
 		normal:ClearAllPoints()
 		normal:SetPoint("TOPLEFT")
 		normal:SetPoint("BOTTOMRIGHT")
+	end
+
+	if highlight then
+		highlight:ClearAllPoints()
+		highlight:SetPoint("TOPLEFT", -4, 4)
+		highlight:SetPoint("BOTTOMRIGHT", 4, -4)
 	end
 end
 

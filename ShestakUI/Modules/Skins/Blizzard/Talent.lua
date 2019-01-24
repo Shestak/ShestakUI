@@ -77,24 +77,19 @@ local function LoadSkin()
 		T.SkinTab(_G["PlayerTalentFrameTab"..i])
 	end
 
-	local pspecspell = _G["PlayerTalentFrameSpecializationSpellScrollFrameScrollChild"]
-	pspecspell.ring:Hide()
-	pspecspell:CreateBackdrop("Default")
-	pspecspell.backdrop:SetPoint("TOPLEFT", pspecspell.specIcon, -2, 2)
-	pspecspell.backdrop:SetPoint("BOTTOMRIGHT", pspecspell.specIcon, 2, -2)
-	pspecspell.specIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	pspecspell.specIcon:SetParent(pspecspell.backdrop)
+	local PlayerSpec = _G["PlayerTalentFrameSpecializationSpellScrollFrameScrollChild"]
+	PlayerSpec.ring:Hide()
+	PlayerSpec.specIcon:SetPoint("TOPLEFT", PlayerSpec, 22, -25)
+	PlayerSpec.specIcon:SkinIcon()
 
-	local specspell2 = _G["PlayerTalentFramePetSpecializationSpellScrollFrameScrollChild"]
-	specspell2.ring:Hide()
-	specspell2:CreateBackdrop("Default")
-	specspell2.backdrop:SetPoint("TOPLEFT", specspell2.specIcon, -2, 2)
-	specspell2.backdrop:SetPoint("BOTTOMRIGHT", specspell2.specIcon, 2, -2)
-	specspell2.specIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	specspell2.specIcon:SetParent(specspell2.backdrop)
+	local PetSpec = _G["PlayerTalentFramePetSpecializationSpellScrollFrameScrollChild"]
+	PetSpec.ring:Hide()
+	PetSpec.specIcon:SetPoint("TOPLEFT", PetSpec, 22, -25)
+	PetSpec.specIcon:SkinIcon()
 
 	T.SkinScrollBar(PlayerTalentFrameSpecializationSpellScrollFrameScrollBar)
 	PlayerTalentFrameSpecializationSpellScrollFrameScrollBar:SetPoint("TOPLEFT", PlayerTalentFrameSpecializationSpellScrollFrame, "TOPRIGHT", -16, -16)
+	PlayerTalentFrameSpecializationSpellScrollFrame:SetHeight(PlayerTalentFrameSpecializationSpellScrollFrame:GetHeight() + 5)
 
 	hooksecurefunc("PlayerTalentFrame_UpdateSpecFrame", function(self, spec)
 		local playerTalentSpec = GetSpecialization(nil, self.isPet, PlayerSpecTab2:GetChecked() and 2 or 1)
@@ -334,6 +329,26 @@ local function LoadSkin()
 			end
 		end
 	end)
+
+	PlayerTalentFrameLockInfo:StripTextures()
+	PlayerTalentFrameLockInfo:SetTemplate("Transparent")
+	PlayerTalentFrameLockInfo:SetFrameLevel(PlayerTalentFrameLockInfo:GetFrameLevel() + 1)
+
+	-- Help box
+	local HelpBox = {
+		PlayerTalentFrameTalentsPvpTalentFrame.TrinketSlot.HelpBox,
+		PlayerTalentFrameTalentsPvpTalentFrame.WarmodeTutorialBox
+	}
+
+	for i = 1, #HelpBox do
+		local frame = HelpBox[i]
+		frame:StripTextures()
+		frame:SetTemplate("Transparent")
+		T.SkinCloseButton(frame.CloseButton)
+		if frame.Arrow then
+			frame.Arrow:Hide()
+		end
+	end
 end
 
 T.SkinFuncs["Blizzard_TalentUI"] = LoadSkin

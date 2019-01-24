@@ -590,6 +590,60 @@ function T.SkinMaxMinFrame(frame, point)
 	end
 end
 
+function T.SkinExpandOrCollapse(f)
+	f:SetHighlightTexture("")
+	f:SetPushedTexture("")
+
+	local bg = CreateFrame("Frame", nil, f)
+	bg:SetSize(13, 13)
+	bg:SetPoint("TOPLEFT", f:GetNormalTexture(), 0, -1)
+	bg:SetTemplate("Overlay")
+	f.bg = bg
+
+	bg.minus = bg:CreateTexture(nil, "OVERLAY")
+	bg.minus:SetSize(5, 1)
+	bg.minus:SetPoint("CENTER")
+	bg.minus:SetTexture(C.media.blank)
+
+	bg.plus = bg:CreateTexture(nil, "OVERLAY")
+	bg.plus:SetSize(1, 5)
+	bg.plus:SetPoint("CENTER")
+	bg.plus:SetTexture(C.media.blank)
+	bg.plus:Hide()
+
+	hooksecurefunc(f, "SetNormalTexture", function(self, texture)
+		if self.settingTexture then return end
+		self.settingTexture = true
+		self:SetNormalTexture("")
+
+		if texture and texture ~= "" then
+			if texture:find("Plus") then
+				self.bg.plus:Show()
+			elseif texture:find("Minus") then
+				self.bg.plus:Hide()
+			end
+			self.bg:Show()
+		else
+			self.bg:Hide()
+		end
+		self.settingTexture = nil
+	end)
+
+	f:HookScript("OnEnter", function(self)
+		self.bg:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		if self.bg.overlay then
+			self.bg.overlay:SetVertexColor(T.color.r * 0.3, T.color.g * 0.3, T.color.b * 0.3, 1)
+		end
+	end)
+
+	f:HookScript("OnLeave", function(self)
+		self.bg:SetBackdropBorderColor(unpack(C.media.border_color))
+		if self.bg.overlay then
+			self.bg.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
+		end
+	end)
+end
+
 local LoadBlizzardSkin = CreateFrame("Frame")
 LoadBlizzardSkin:RegisterEvent("ADDON_LOADED")
 LoadBlizzardSkin:SetScript("OnEvent", function(self, event, addon)
@@ -1054,152 +1108,6 @@ T.UpdatePvPStatus = function(self, elapsed)
 		self.elapsed = 0
 	else
 		self.elapsed = (self.elapsed or 0) + elapsed
-	end
-end
-
-T.UpdateComboPoint = function(self, event, unit, powerType)
-	if powerType and powerType ~= 'COMBO_POINTS' then return end
-	if unit == "pet" then return end
-
-	local cpoints = self.CPoints
-	local cp = (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and UnitPower("vehicle", 4) or UnitPower("player", 4)
-	local cpOld = (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and GetComboPoints("vehicle", "target") or GetComboPoints("player", "target")
-	if cpOld and cp and (cpOld > cp) then cp = cpOld end
-
-	local numMax
-	if (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) then
-		numMax = MAX_COMBO_POINTS
-	else
-		numMax = UnitPowerMax("player", Enum.PowerType.ComboPoints)
-		if numMax == 0 then
-			numMax = MAX_COMBO_POINTS
-		end
-	end
-
-	local spacing = select(4, cpoints[5]:GetPoint())
-	local w = cpoints:GetWidth()
-	local s = 0
-
-	if cpoints.numMax ~= numMax then
-		if numMax == 6 then
-			cpoints[6]:Show()
-		else
-			cpoints[6]:Hide()
-		end
-
-		for i = 1, numMax do
-			if i ~= numMax then
-				cpoints[i]:SetWidth(w / numMax - spacing)
-				s = s + (w / numMax)
-			else
-				cpoints[i]:SetWidth(w - s)
-			end
-		end
-
-		cpoints.numMax = numMax
-	end
-
-	for i = 1, numMax do
-		if i <= cp then
-			cpoints[i]:SetAlpha(1)
-		else
-			cpoints[i]:SetAlpha(0.2)
-		end
-	end
-
-	if T.class == "DRUID" and C.unitframe_class_bar.combo_always ~= true then
-		local form = GetShapeshiftFormID()
-
-		if form == CAT_FORM or ((UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and cp > 0) then
-			cpoints:Show()
-			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
-		else
-			cpoints:Hide()
-			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
-		end
-	end
-end
-
-T.UpdateComboPointTarget = function(self, event, unit, powerType)
-	if powerType and powerType ~= 'COMBO_POINTS' then return end
-	if unit == "pet" then return end
-
-	local cpoints = self.CPoints
-	local cp
-	local numMax
-
-	if UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle") then
-		cp = GetComboPoints("vehicle", "target")
-		numMax = MAX_COMBO_POINTS
-	else
-		cp = GetComboPoints("player", "target")
-		numMax = UnitPowerMax("player", Enum.PowerType.ComboPoints)
-		if numMax == 0 then
-			numMax = MAX_COMBO_POINTS
-		end
-	end
-
-	local spacing = select(4, cpoints[5]:GetPoint())
-	local w = cpoints:GetWidth()
-	local s = 0
-
-	if cpoints.numMax ~= numMax then
-		if numMax == 6 then
-			cpoints[6]:Show()
-		else
-			cpoints[6]:Hide()
-		end
-
-		for i = 1, numMax do
-			if i ~= numMax then
-				cpoints[i]:SetWidth(w / numMax - spacing)
-				s = s + (w / numMax)
-			else
-				cpoints[i]:SetWidth(w - s)
-			end
-		end
-
-		cpoints.numMax = numMax
-	end
-
-	for i = 1, numMax do
-		if i <= cp then
-			cpoints[i]:SetAlpha(1)
-		else
-			cpoints[i]:SetAlpha(0.2)
-		end
-	end
-
-	if cpoints[1]:GetAlpha() == 1 then
-		for i = 1, numMax do
-			cpoints:Show()
-			cpoints[i]:Show()
-		end
-	else
-		for i = 1, numMax do
-			cpoints:Hide()
-			cpoints[i]:Hide()
-		end
-	end
-
-	if self.RangeBar then
-		if cpoints[1]:IsShown() and self.RangeBar:IsShown() then
-			cpoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 33) end
-		elseif cpoints[1]:IsShown() or self.RangeBar:IsShown() then
-			cpoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
-		elseif self.Friendship and self.Friendship:IsShown() then
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
-		else
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
-		end
-	else
-		if cpoints[1]:IsShown() or (self.Friendship and self.Friendship:IsShown()) then
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
-		else
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
-		end
 	end
 end
 

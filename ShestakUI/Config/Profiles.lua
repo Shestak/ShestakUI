@@ -130,7 +130,6 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["unitframe"].plugins_gcd = true
 	C["unitframe"].plugins_reputation_bar = true
 	C["unitframe"].plugins_experience_bar = true
-	C["unitframe"].plugins_friendship_bar = true
 	C["unitframe"].plugins_smooth_bar = true
 	C["unitframe"].plugins_enemy_spec = true
 	C["unitframe"].plugins_fader = true
@@ -153,7 +152,9 @@ if Sw2rT1 then
 	C["misc"].raid_tools = false
 	C["misc"].hide_bg_spam = true
 	C["misc"].disenchanting = true
+	C["misc"].hide_banner = false
 	C["misc"].hide_talking_head = true
+	C["misc"].hide_raid_button = true
 	C["announcements"].pull_countdown = false
 	C["automation"].accept_invite = true
 	--C["automation"].accept_quest = true
@@ -177,6 +178,7 @@ if Sw2rT1 then
 	C["chat"].damage_meter_spam = true
 	C["bag"].ilvl = true
 	C["map"].fog_of_war = true
+	C["filger"].enable = false
 	C["unitframe"].enemy_health_color = false
 	C["unitframe"].castbar_latency = false
 	C["raidframe"].raid_groups = 6

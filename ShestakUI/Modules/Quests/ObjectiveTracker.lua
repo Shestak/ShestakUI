@@ -131,12 +131,12 @@ if C.skins.blizzard_frames == true then
 	button:SetTemplate("Overlay")
 
 	button.minus = button:CreateTexture(nil, "OVERLAY")
-	button.minus:SetSize(5, 1)
+	button.minus:SetSize(7, 1)
 	button.minus:SetPoint("CENTER")
 	button.minus:SetTexture(C.media.blank)
 
 	button.plus = button:CreateTexture(nil, "OVERLAY")
-	button.plus:SetSize(1, 5)
+	button.plus:SetSize(1, 7)
 	button.plus:SetPoint("CENTER")
 	button.plus:SetTexture(C.media.blank)
 

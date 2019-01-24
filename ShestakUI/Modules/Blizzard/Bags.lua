@@ -205,6 +205,7 @@ function Stuffing:SlotUpdate(b)
 	end
 
 	b.frame.Azerite:Hide()
+	b.frame:UpdateItemContextMatching() -- Update Scrap items
 
 	if b.frame.UpgradeIcon then
 		b.frame.UpgradeIcon:SetPoint("TOPLEFT", C.bag.button_size/2.7, -C.bag.button_size/2.7)
@@ -217,8 +218,16 @@ function Stuffing:SlotUpdate(b)
 		end
 	end
 
+	if IsAddOnLoaded("CanIMogIt") then
+		CIMI_AddToFrame(b.frame, ContainerFrameItemButton_CIMIUpdateIcon)
+		ContainerFrameItemButton_CIMIUpdateIcon(b.frame.CanIMogItOverlay)
+	end
+
 	if clink then
 		b.name, _, _, b.itemlevel, b.level, _, _, _, _, _, _, b.itemClassID, b.itemSubClassID = GetItemInfo(clink)
+		if not b.name then	-- Keystone bug
+			b.name = clink:match('%[(.-)%]') or ""
+		end
 
 		if C.bag.ilvl == true and b.itemlevel and quality > 1 and (b.itemClassID == 2 or b.itemClassID == 4 or (b.itemClassID == 3 and b.itemSubClassID == 11)) then
 			b.itemlevel = _getRealItemLevel(clink, self, b.bag, b.slot) or b.itemlevel
@@ -447,6 +456,12 @@ function Stuffing:BagFrameSlotNew(p, slot)
 		if not ret.frame.tooltipText then
 			ret.frame.tooltipText = ""
 		end
+
+		if slot > GetNumBankSlots() then
+			SetItemButtonTextureVertexColor(ret.frame, 1.0, 0.1, 0.1)
+		else
+			SetItemButtonTextureVertexColor(ret.frame, 1.0, 1.0, 1.0)
+		end
 	else
 		ret.frame = CreateFrame("CheckButton", "StuffingFBag"..slot.."Slot", p, "BagSlotButtonTemplate")
 
@@ -628,7 +643,10 @@ function Stuffing:SearchUpdate(str)
 			local ilink = GetContainerItemLink(b.bag, b.slot)
 			local class, subclass, _, equipSlot = select(6, GetItemInfo(ilink))
 			local minLevel = select(5, GetItemInfo(ilink))
+			class = _G[class] or ""
+			subclass = _G[subclass] or ""
 			equipSlot = _G[equipSlot] or ""
+			minLevel = minLevel or 1
 			if not string.find(string.lower(b.name), str) and not string.find(string.lower(setName), str) and not string.find(string.lower(class), str) and not string.find(string.lower(subclass), str) and not string.find(string.lower(equipSlot), str) then
 				if IsItemUnusable(b.name) or minLevel > T.level then
 					_G[b.frame:GetName().."IconTexture"]:SetVertexColor(0.5, 0.5, 0.5)
@@ -1097,7 +1115,7 @@ function Stuffing:ADDON_LOADED(addon)
 	self:RegisterEvent("PLAYERREAGENTBANKSLOTS_CHANGED")
 	self:RegisterEvent("BAG_CLOSED")
 	self:RegisterEvent("BAG_UPDATE_COOLDOWN")
-	--self:RegisterEvent("REAGENTBANK_UPDATE")
+	self:RegisterEvent("SCRAPPING_MACHINE_SHOW")
 
 	self:InitBags()
 
@@ -1233,11 +1251,18 @@ function Stuffing:BAG_CLOSED(id)
 			break
 		end
 	end
+	Stuffing_Close()
 end
 
 function Stuffing:BAG_UPDATE_COOLDOWN()
 	for i, v in pairs(self.buttons) do
 		self:UpdateCooldowns(v)
+	end
+end
+
+function Stuffing:SCRAPPING_MACHINE_SHOW()
+	for i = 0, #BAGS_BACKPACK - 1 do
+		Stuffing:BAG_UPDATE(i)
 	end
 end
 
@@ -1453,11 +1478,23 @@ end
 
 function Stuffing:PLAYERBANKBAGSLOTS_CHANGED()
 	if not StuffingPurchaseButtonBank then return end
-	local _, full = GetNumBankSlots()
+	local numSlots, full = GetNumBankSlots()
 	if full then
 		StuffingPurchaseButtonBank:Hide()
 	else
 		StuffingPurchaseButtonBank:Show()
+	end
+
+	local button
+	for i = 1, NUM_BANKBAGSLOTS, 1 do
+		button = _G["StuffingBBag"..i.."Slot"]
+		if button then
+			if i <= numSlots then
+				SetItemButtonTextureVertexColor(button, 1.0, 1.0, 1.0)
+			else
+				SetItemButtonTextureVertexColor(button, 1.0, 0.1, 0.1)
+			end
+		end
 	end
 end
 

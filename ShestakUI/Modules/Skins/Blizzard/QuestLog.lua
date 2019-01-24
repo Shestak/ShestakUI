@@ -225,6 +225,18 @@ local function LoadSkin()
 			questItem.Name:SetTextColor(1, 1, 1)
 		end
 	end)
+
+	hooksecurefunc("QuestLogQuests_Update", function()
+		for i = 6, QuestMapFrame.QuestsFrame.Contents:GetNumChildren() do
+			local child = select(i, QuestMapFrame.QuestsFrame.Contents:GetChildren())
+			if child and child.ButtonText and not child.Text then
+				if not child.isSkinned then
+					T.SkinExpandOrCollapse(child)
+					child.isSkinned = true
+				end
+			end
+		end
+	end)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

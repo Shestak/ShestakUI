@@ -21,8 +21,8 @@ local function LoadSkin()
 	ArtifactFrame.ForgeBadgeFrame.ForgeLevelBackground:SetPoint("TOPLEFT", ArtifactFrame)
 
 	ArtifactFrame.KnowledgeLevelHelpBox:StripTextures()
+	ArtifactFrame.KnowledgeLevelHelpBox:SetTemplate("Transparent")
 	ArtifactFrame.KnowledgeLevelHelpBox.Arrow:Hide()
-	ArtifactFrame.KnowledgeLevelHelpBox:CreateBackdrop("Transparent")
 
 	T.SkinCloseButton(ArtifactFrame.CloseButton)
 	T.SkinCloseButton(ArtifactFrame.KnowledgeLevelHelpBox.CloseButton)

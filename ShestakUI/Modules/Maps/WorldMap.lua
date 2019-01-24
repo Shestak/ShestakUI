@@ -76,7 +76,7 @@ end)
 coords:RegisterEvent("PLAYER_ENTERING_WORLD")
 coords:SetScript("OnEvent", function(self, event)
 	self:UnregisterEvent(event)
-	if SavedOptionsPerChar.Coords ~= true then
+	if SavedOptionsPerChar and SavedOptionsPerChar.Coords ~= true then
 		coords:SetAlpha(0)
 	end
 end)

@@ -256,8 +256,6 @@ L_GUI_MINIMAP_TOGGLE_MENU = "小地图顶部快捷菜单"
 
 -- Map options
 L_GUI_MAP_BG_STYLIZATION = "开启战场地图增强"
-L_GUI_MAP_BOSS_COUNT = "世界地图显示Boss数据"
-L_GUI_MAP_EXPLORE = "追踪世界探索者/博学者成就"
 L_GUI_MAP_FOG_OF_WAR = "世界地图全亮选项"
 
 -- Loot options
