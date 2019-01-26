@@ -8,13 +8,16 @@ if C.unitframe.enable ~= true or C.unitframe.show_arena ~= true or C.unitframe.p
 ----------------------------------------------------------------------------------------
 T.DiminishingSpells = {
 	-- Stuns
-	[108194] = {"stun"},			-- Asphyxiate
+	[210141] = {"stun"},			-- Zombie Explosion
+	[108194] = {"stun"},			-- Asphyxiate (Unholy)
+	[221562] = {"stun"},			-- Asphyxiate (Blood)
 	[91800] = {"stun"},				-- Gnaw (Ghoul)
 	[91797] = {"stun"},				-- Monstrous Blow (Mutated Ghoul)
+	[212332] = {"stun"},			-- Smash (Abomination)
 	[22570] = {"stun"},				-- Maim
-	[163505] = {"stun"},			-- Rake
+	[163505] = {"stun"},			-- Rake (Prowl)
 	[5211] = {"stun"},				-- Mighty Bash
-	[19577] = {"stun"},				-- Intimidation
+	[24394] = {"stun"},				-- Intimidation
 	[117526] = {"stun"},			-- Binding Shot
 	[119381] = {"stun"},			-- Leg Sweep
 	[120086] = {"stun"},			-- Fists of Fury
@@ -62,11 +65,9 @@ T.DiminishingSpells = {
 	[161372] = {"incapacitate"},	-- Polymorph (Peacock)
 	[82691] = {"incapacitate"},		-- Ring of Frost
 	[115078] = {"incapacitate"},	-- Paralysis
-	[202272] = {"incapacitate"},	-- Incendiary Brew
 	[20066] = {"incapacitate"},		-- Repentance
 	[9484] = {"incapacitate"},		-- Shackle Undead
 	[88625] = {"incapacitate"},		-- Holy Word: Chastise
-	[605] = {"incapacitate"},		-- Dominate Mind
 	[64044] = {"incapacitate"},		-- Psychic Horror
 	[87204] = {"incapacitate"},		-- Sin and Punishment
 	[1776] = {"incapacitate"},		-- Gouge
@@ -76,13 +77,20 @@ T.DiminishingSpells = {
 	[107079] = {"incapacitate"},	-- Quaking Palm (Pandaren)
 
 	-- Disorients
+	[207167] = {"disorient"},		-- Blinding Sleet
+	[198909] = {"disorient"},		-- Song of Chi-ji
+	[207685] = {"disorient"},		-- Sigil of Misery
+	[202274] = {"disorient"},		-- Incendiary Brew
 	[33786] = {"disorient"},		-- Cyclone
+	[209753] = {"disorient"},		-- Cyclone (Honor talent)
+	[236748] = {"disorient"},		-- Intimidating Roar
 	[31661] = {"disorient"},		-- Dragon's Breath
 	[105421] = {"disorient"},		-- Blinding Light
 	[8122] = {"disorient"},			-- Psychic Scream
+	[605] = {"disorient"},			-- Mind Control
+	[226943] = {"disorient"},		-- Mind Bomb
 	[2094] = {"disorient"},			-- Blind
 	[118699] = {"disorient"},		-- Fear
-	[130616] = {"disorient"},		-- Fear (Glyph)
 	[5484] = {"disorient"},			-- Howl of Terror
 	[6358] = {"disorient"},			-- Seduction (Succubus)
 	[115268] = {"disorient"},		-- Mesmerize (Shivarra)
@@ -90,10 +98,16 @@ T.DiminishingSpells = {
 
 	-- Silences
 	[47476] = {"silence"},			-- Strangulate
+	[204490] = {"silence"},			-- Sigil of Silence
 	[81261] = {"silence"},			-- Solar Beam
-	[31935] = {"silence"},			-- Avenger's Shield
+	[202933] = {"silence"},			-- Spider Sting
+	[233022] = {"silence"},			-- Spider Sting 2
+	[217824] = {"silence"},			-- Shield of Virtue
+	[199683] = {"silence"},			-- Last Word
 	[15487] = {"silence"},			-- Silence
 	[1330] = {"silence"},			-- Garrote
+	[43523] = {"silence"},			-- Unstable Affliction Silence Effect
+	[196364] = {"silence"},			-- Unstable Affliction Silence Effect 2
 }
 
 local function GetIcon(id)
