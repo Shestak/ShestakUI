@@ -449,6 +449,24 @@ local function LoadSecondarySkin()
 
 	ChallengesKeystoneFrame:DisableDrawLayer("BACKGROUND")
 	ChallengesKeystoneFrame:CreateBackdrop("Transparent")
+
+	local NoticeFrame = ChallengesFrame.SeasonChangeNoticeFrame
+	NoticeFrame:StripTextures()
+	NoticeFrame:CreateBackdrop("Overlay")
+	NoticeFrame:SetFrameLevel(5)
+	NoticeFrame.NewSeason:SetTextColor(1, 0.8, 0)
+	NoticeFrame.NewSeason:SetShadowOffset(1, -1)
+	NoticeFrame.SeasonDescription:SetTextColor(1, 1, 1)
+	NoticeFrame.SeasonDescription:SetShadowOffset(1, -1)
+	NoticeFrame.SeasonDescription2:SetTextColor(1, 1, 1)
+	NoticeFrame.SeasonDescription2:SetShadowOffset(1, -1)
+	NoticeFrame.SeasonDescription3:SetTextColor(1, 0.8, 0)
+	NoticeFrame.SeasonDescription3:SetShadowOffset(1, -1)
+
+	NoticeFrame.Affix:StripTextures()
+	NoticeFrame.Affix.Portrait:SkinIcon()
+
+	NoticeFrame.Leave:SkinButton()
 end
 
 T.SkinFuncs["Blizzard_ChallengesUI"] = LoadSecondarySkin
