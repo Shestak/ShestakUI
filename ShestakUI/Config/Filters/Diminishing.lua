@@ -44,7 +44,7 @@ T.DiminishingSpells = {
 	[199085] = {"stun"},			-- Warpath
 	[20549] = {"stun"},				-- War Stomp (Tauren)
 	[255723] = {"stun"},			-- Bull Rush (Highmountain Tauren)
-	[287712] = {"stun"},			-- Haymaker (Kul Tiran)
+	--PTR [287712] = {"stun"},			-- Haymaker (Kul Tiran)
 
 	-- Roots
 	[204085] = {"root"},			-- Deathchill (Chains of Ice)
