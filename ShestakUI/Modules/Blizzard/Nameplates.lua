@@ -37,6 +37,7 @@ function frame:PLAYER_ENTERING_WORLD()
 	SetCVar("namePlateMinScale", 1)
 	SetCVar("namePlateMaxScale", 1)
 	SetCVar("nameplateLargerScale", 1)
+	SetCVar("nameplateSelectedScale", 1)
 	SetCVar("nameplateMinAlpha", 1)
 	SetCVar("nameplateMaxAlpha", 1)
 
