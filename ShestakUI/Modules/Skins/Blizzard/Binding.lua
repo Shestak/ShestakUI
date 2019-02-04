@@ -58,6 +58,11 @@ local function LoadSkin()
 			button:StyleButton()
 			button:SetTemplate("Overlay")
 
+			local selected = button.selectedHighlight
+			selected:SetPoint("TOPLEFT", 2, -2)
+			selected:SetPoint("BOTTOMRIGHT", -2, 2)
+			selected:SetColorTexture(1, 0.82, 0, 0.3)
+
 			button.IsSkinned = true
 		end
 	end)
