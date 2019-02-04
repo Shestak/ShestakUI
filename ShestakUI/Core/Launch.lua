@@ -210,8 +210,8 @@ OnLogon:SetScript("OnEvent", function(self, event)
 		SetCVar("useUiScale", 1)
 		if C.general.uiscale > 1.28 then C.general.uiscale = 1.28 end
 
-		-- Set our uiscale
-		if (format("%.2f", GetCVar("uiScale")) ~= format("%.2f", C.general.uiscale)) then
+		-- Set our uiScale
+		if tonumber(GetCVar("uiScale")) ~= tonumber(C.general.uiscale) then
 			SetCVar("uiScale", C.general.uiscale)
 		end
 
