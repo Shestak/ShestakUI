@@ -694,6 +694,9 @@ local function style(self, unit)
 
 	table.insert(self.__elements, UpdateTarget)
 	self:RegisterEvent("PLAYER_TARGET_CHANGED", UpdateTarget)
+
+	-- Disable movement via /moveui
+	self.disableMovement = true
 end
 
 oUF:RegisterStyle("ShestakNameplates", style)
