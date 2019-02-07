@@ -98,9 +98,9 @@ local function LoadSkin()
 			local bar = self.SubSkillRankBar
 			if not bar.backdrop then
 				bar:StripTextures()
-				bar:SetTemplate("Transparent")
-				bar:SetBackdropColor(0, 0, 0, 0)
+				bar:CreateBackdrop("Overlay")
 				bar:SetStatusBarTexture(C.media.texture)
+				bar:SetHeight(10)
 			end
 		end
 	end
