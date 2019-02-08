@@ -85,6 +85,10 @@ local function LoadSkin()
 		"PaperDollEquipmentManagerPane"
 	}
 
+	for _, object in pairs(charframe) do
+		_G[object]:StripTextures()
+	end
+
 	EquipmentFlyoutFrameHighlight:Kill()
 	local function SkinItemFlyouts()
 		EquipmentFlyoutFrameButtons:StripTextures()
@@ -117,6 +121,7 @@ local function LoadSkin()
 
 	-- Icon in upper right corner of character frame
 	CharacterFramePortrait:Kill()
+	CharacterModelFrameBackgroundOverlay:SetColorTexture(0, 0, 0)
 	CharacterModelFrame:CreateBackdrop("Default")
 	CharacterModelFrame.backdrop:SetPoint("TOPLEFT", -3, 4)
 	CharacterModelFrame.backdrop:SetPoint("BOTTOMRIGHT", 4, 0)
@@ -133,16 +138,34 @@ local function LoadSkin()
 		T.SkinScrollBar(_G[scrollbar])
 	end
 
-	for _, object in pairs(charframe) do
-		_G[object]:StripTextures()
+	local function SkinStatsPane(frame)
+		frame:StripTextures()
+
+		local bg = frame.Background
+		bg:SetTexture(C.media.blank)
+		bg:ClearAllPoints()
+		bg:SetPoint("CENTER", 0, -15)
+		bg:SetSize(165, 1)
+		bg:SetVertexColor(unpack(C.media.border_color))
+
+		local border = CreateFrame("Frame", "$parentOuterBorder", frame)
+		border:SetPoint("TOPLEFT", bg, "TOPLEFT", -T.mult, T.mult)
+		border:SetPoint("BOTTOMRIGHT", bg, "BOTTOMRIGHT", T.mult, -T.mult)
+		border:SetFrameLevel(frame:GetFrameLevel() + 1)
+		border:SetBackdrop({
+			edgeFile = C.media.blank, edgeSize = T.mult,
+			insets = {left = T.mult, right = T.mult, top = T.mult, bottom = T.mult}
+		})
+		border:SetBackdropBorderColor(unpack(C.media.backdrop_color))
 	end
 
-	CharacterStatsPane.ItemLevelCategory:StripTextures()
-	CharacterStatsPane.ItemLevelCategory:SetTemplate("Overlay")
-	CharacterStatsPane.AttributesCategory:StripTextures()
-	CharacterStatsPane.AttributesCategory:SetTemplate("Overlay")
-	CharacterStatsPane.EnhancementsCategory:StripTextures()
-	CharacterStatsPane.EnhancementsCategory:SetTemplate("Overlay")
+	CharacterStatsPane.ItemLevelFrame.Value:SetFont(C.media.normal_font, 18)
+	CharacterStatsPane.ItemLevelFrame.Value:SetShadowOffset(1, -1)
+	CharacterStatsPane.ItemLevelFrame.Background:Hide()
+
+	SkinStatsPane(CharacterStatsPane.ItemLevelCategory)
+	SkinStatsPane(CharacterStatsPane.AttributesCategory)
+	SkinStatsPane(CharacterStatsPane.EnhancementsCategory)
 
 	-- Titles
 	PaperDollTitlesPane:HookScript("OnShow", function(self)
