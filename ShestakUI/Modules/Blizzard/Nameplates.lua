@@ -567,10 +567,10 @@ local function style(self, unit)
 		self.Auras.numDebuffs = C.nameplate.track_auras and 6 or 0
 		self.Auras.numBuffs = C.nameplate.track_buffs and 4 or 0
 		self.Auras:SetSize(20 + C.nameplate.width, C.nameplate.auras_size)
-		self.Auras.spacing = 5* T.noscalemult
+		self.Auras.spacing = 5 * T.noscalemult
 		self.Auras.size = C.nameplate.auras_size * T.noscalemult - 3
 
-		self.Auras.CustomFilter = function(icons, unit, icon, name, texture, count, dispelType, duration, expiration, caster, isStealable, nameplateShowSelf, spellID, canApply, isBossDebuff, casterIsPlayer, nameplateShowAll)
+		self.Auras.CustomFilter = function(_, unit, _, name, _, _, _, _, _, caster, _, nameplateShowSelf, _, _, _, _, nameplateShowAll)
 			local allow = false
 
 			if caster == "player" then
