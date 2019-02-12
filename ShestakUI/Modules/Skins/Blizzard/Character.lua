@@ -59,9 +59,10 @@ local function LoadSkin()
 		local border = _G["Character"..i].IconBorder
 
 		border:Kill()
-
 		slot:StyleButton()
 		slot:SetNormalTexture("")
+		slot.SetHighlightTexture = T.dummy
+		slot:GetHighlightTexture().SetAllPoints = T.dummy
 		slot:SetFrameLevel(slot:GetFrameLevel() + 2)
 		slot:SetTemplate("Default")
 
