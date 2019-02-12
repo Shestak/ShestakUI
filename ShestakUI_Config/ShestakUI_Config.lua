@@ -480,6 +480,7 @@ local function Local(o)
 	if o == "UIConfigstatsguild" then o = GUILD end
 	if o == "UIConfigstatsdurability" then o = DURABILITY end
 	if o == "UIConfigstatsexperience" then o = L_GUI_STATS_EXPERIENCE end
+	if o == "UIConfigstatstalents" then o = SPECIALIZATION end
 	if o == "UIConfigstatscoords" then o = L_GUI_STATS_COORDS end
 	if o == "UIConfigstatslocation" then o = L_GUI_STATS_LOCATION end
 	if o == "UIConfigstatscurrency_archaeology" then o = L_GUI_STATS_CURRENCY_ARCHAEOLOGY end

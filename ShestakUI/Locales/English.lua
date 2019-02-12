@@ -272,12 +272,14 @@ L_STATS_EQUIPMENT_CHANGER = "Shift-Click or Middle-Click for equipment set chang
 L_STATS_SORTING_BY = "Sorting by"
 L_STATS_TIPS = "tips:"
 L_STATS_TOTAL_MEMORY_USAGE = "Total Memory Usage:"
+L_STATS_TOTAL_CPU_USAGE = "Total CPU Usage:"
 L_STATS_NOT_TO_SELL = "Use /junk to configure which items need to sell."
 L_STATS_WATCH_CURRENCY = "Watched currency tab items will reflect onto the tooltip."
 L_STATS_WATCH_FACTIONS = "Watch factions from the character faction UI."
 L_STATS_TOOLTIP_TIME_PLAYED = "When at max level, the tooltip will show time played details for the account."
 L_STATS_TOOLTIP_EXPERIENCE = "When below max level, a tooltip will be displayed with experience details."
 L_STATS_SEALS = "Seals this week"
+L_STATS_SPEC = "Spec"
 
 -- Slash commands
 L_SLASHCMD_HELP = {

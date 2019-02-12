@@ -276,12 +276,14 @@ L_STATS_EQUIPMENT_CHANGER = "左鍵或中鍵開啟裝備管理員"
 L_STATS_SORTING_BY = "排列方式："
 L_STATS_TIPS = "提示:"
 L_STATS_TOTAL_MEMORY_USAGE = "全部資源耗用:"
+L_STATS_TOTAL_CPU_USAGE = "Total CPU Usage:" -- Need review
 L_STATS_NOT_TO_SELL = "輸入/junk設定自動販售例外名單"
 L_STATS_WATCH_CURRENCY = "從tooltip中顯示貨幣"
 L_STATS_WATCH_FACTIONS = "從角色人物介面觀看資訊"
 L_STATS_TOOLTIP_TIME_PLAYED = "達到最高等級後,提示將顯示角色上線時間紀錄"
 L_STATS_TOOLTIP_EXPERIENCE = "未達最高等級時,提示將顯示經驗值訊息"
 L_STATS_SEALS = "Seals this week" -- Needs review
+L_STATS_SPEC = "專精" -- Need review
 
 -- Slash commands
 L_SLASHCMD_HELP = {

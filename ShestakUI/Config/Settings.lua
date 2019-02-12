@@ -563,6 +563,7 @@ C["stats"] = {
 	["guild"] = true,							-- Guild
 	["durability"] = true,						-- Durability
 	["experience"] = true,						-- Experience
+	["talents"] = true,							-- Specialization
 	["coords"] = true,							-- Coords
 	["location"] = true,						-- Location
 	["currency_archaeology"] = false,			-- Show Archaeology Fragments under currency tab

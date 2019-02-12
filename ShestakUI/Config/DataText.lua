@@ -47,14 +47,14 @@ LPSTAT_CONFIG = {
 	FPS = {
 		enabled = C.stats.fps,
 		fmt = "%d"..class"fps", -- "42fps"
-		anchor_frame = C.stats.memory and "Memory" or "Latency", anchor_to = "left", anchor_from = "right",
+		anchor_frame = C.stats.memory and "Memory" or C.stats.latency and "Latency" or "Clock", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
 	},
 	Friends = {
 		enabled = C.stats.friend,
 		fmt = "%d/%d"..class"f", -- "3/40F"
 		maxfriends = nil, -- Set max friends listed, nil means no limit
-		anchor_frame = C.stats.fps and "FPS" or "Memory", anchor_to = "left", anchor_from = "right",
+		anchor_frame = C.stats.fps and "FPS" or C.stats.memory and "Memory" or C.stats.latency and "Latency" or "Clock", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Guild = {
@@ -64,7 +64,7 @@ LPSTAT_CONFIG = {
 		threshold = 1, -- Minimum level displayed (1-90)
 		show_xp = true, -- Show guild experience
 		sorting = "class", -- Default roster sorting: name, level, class, zone, rank, note
-		anchor_frame = "Friends", anchor_to = "left", anchor_from = "right",
+		anchor_frame = C.stats.friend and "Friends" or C.stats.fps and "FPS" or C.stats.memory and "Memory" or C.stats.latency and "Latency" or "Clock", anchor_to = "left", anchor_from = "right",
 		x_off = C.stats.friend and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Durability = {
@@ -73,7 +73,7 @@ LPSTAT_CONFIG = {
 		man = true, -- Hide bliz durability man
 		ignore_inventory = false, -- Ignore inventory gear when auto-repairing
 		gear_icons = false, -- Show your gear icons in the tooltip
-		anchor_frame = "Guild", anchor_to = "left", anchor_from = "right",
+		anchor_frame = C.stats.guild and "Guild" or C.stats.friend and "Friends" or C.stats.fps and "FPS" or C.stats.memory and "Memory" or C.stats.latency and "Latency" or "Clock", anchor_to = "left", anchor_from = "right",
 		x_off = C.stats.guild and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Experience = {
@@ -106,8 +106,13 @@ LPSTAT_CONFIG = {
 			["Гидраксианские Повелители Вод"] = "Повелители Вод",
 		},
 		artifact_fmt = "[curart]([curart%]%)"..class"AP", -- Artifact power format
-		anchor_frame = "Durability", anchor_to = "left", anchor_from = "right",
+		anchor_frame = C.stats.durability and "Durability" or C.stats.guild and "Guild" or C.stats.friend and "Friends" or C.stats.fps and "FPS" or C.stats.memory and "Memory" or C.stats.latency and "Latency" or "Clock", anchor_to = "left", anchor_from = "right",
 		x_off = C.stats.durability and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
+	},
+	Talents = {
+		enabled = C.stats.talents,
+		anchor_frame = C.stats.experience and "Experience" or C.stats.durability and "Durability" or C.stats.guild and "Guild" or C.stats.friend and "Friends" or C.stats.fps and "FPS" or C.stats.memory and "Memory" or C.stats.latency and "Latency" or "Clock", anchor_to = "left", anchor_from = "right",
+		x_off = C.stats.experience and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 -- Bottomright block
 	Coords = {
@@ -143,7 +148,7 @@ LPSTAT_CONFIG = {
 		enabled = C.toppanel.enable,
 		fmt = class"B: ".."%d/%d",
 		anchor_frame = "Stats", anchor_to = "topleft", anchor_from = "bottomleft",
-		x_off = 0, y_off = -5,
+		x_off = 20, y_off = -5,
 	},
 	Loot = {
 		enabled = C.toppanel.enable,
@@ -156,11 +161,6 @@ LPSTAT_CONFIG = {
 		fmt = class"N: ".."%s",
 		anchor_frame = "Loot", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
-	},
-	Talents = {
-		enabled = C.toppanel.enable,
-		anchor_frame = "Nameplates", anchor_to = "left", anchor_from = "right",
-		x_off = 3, y_off = 0, tip_anchor = "ANCHOR_BOTTOMLEFT", tip_x = -3, tip_y = 13
 	},
 -- MiniMap block
 	Ping = {

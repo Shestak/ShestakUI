@@ -276,12 +276,14 @@ L_STATS_EQUIPMENT_CHANGER = "Shift-Click o Click-Central para el cambiador de eq
 L_STATS_SORTING_BY = "Ordenado por"
 L_STATS_TIPS = "consejos:"
 L_STATS_TOTAL_MEMORY_USAGE = "Uso total de la memoria:"
+L_STATS_TOTAL_CPU_USAGE = "Total CPU Usage:" -- Need review
 L_STATS_NOT_TO_SELL = "Usa /junk para configurar que objetos no se venderan."
 L_STATS_WATCH_CURRENCY = "Elementos vistos en la pestana de dinero se reflejaran en la descripcion."
 L_STATS_WATCH_FACTIONS = "Mirar facciones desde la herramienta de facciones."
 L_STATS_TOOLTIP_TIME_PLAYED = "Cuando estes a nivel max, la descripcion mostrara detalles del tiempo jugado de la cuenta."
 L_STATS_TOOLTIP_EXPERIENCE = "Cuando no estes a nivel max, la descripcion mostrara detalles de la experiencia."
 L_STATS_SEALS = "Seals this week" -- Needs review
+L_STATS_SPEC = "Spec" -- Need review
 
 -- Slash commands
 L_SLASHCMD_HELP = {
