@@ -1696,9 +1696,9 @@ if experience.enabled then
 			or sub == "repname" and (t.faction_subs[repname] or repname)
 			or sub == "repcolor" and "|cff"..repcolor
 			or sub == "standing" and standingname
-			or sub == "currep" and abs(currep - minrep)
+			or sub == "currep" and (currep ~= maxrep and abs(currep - minrep) or currep > 0 and 1 or 0)
 			or sub == "repleft" and abs(maxrep - currep)
-			or sub == "maxrep" and abs(maxrep - minrep)
+			or sub == "maxrep" and (currep ~= maxrep and  abs(maxrep - minrep) or maxrep > 0 and 1 or 0)
 			or sub == "rep%" and (currep ~= 0 and floor(abs(currep - minrep) / abs(maxrep - minrep) * 100) or 0)
 			-- artifact tags
 			or sub == "curart" and short(AzeritXP, tt)
@@ -1750,8 +1750,23 @@ if experience.enabled then
 				playedtotal, playedlevel = ...
 				playedmsg = GetTime()
 			elseif (event == "UPDATE_FACTION" or event == "PLAYER_LOGIN") and conf.ExpMode == "rep" then
-				local standing
-				repname, standing, minrep, maxrep, currep = GetWatchedFactionInfo()
+				local standing, factionID
+				repname, standing, minrep, maxrep, currep, factionID = GetWatchedFactionInfo()
+				local friendID, _, _, _, _, _, standingText, _, nextThreshold = GetFriendshipReputation(factionID)
+				if friendID then
+					if not nextThreshold then
+						minrep, maxrep, currep = 0, 1, 1
+					end
+					standing = 5
+				else
+					local value, nextThreshold, _, hasRewardPending = C_Reputation.GetFactionParagonInfo(factionID)
+					if value then
+						currep = value % nextThreshold
+						minrep = 0
+						maxrep = nextThreshold
+						standing = 8
+					end
+				end
 				if not repname then repname = NONE end
 				local color = {}
 				if standing == 0 then
@@ -1763,7 +1778,7 @@ if experience.enabled then
 				else
 					color = FACTION_BAR_COLORS[standing]
 				end
-				standingname = _G[format("FACTION_STANDING_LABEL%s%s", standing, UnitSex(P) == 3 and "_FEMALE" or "")]
+				standingname = standingText or _G[format("FACTION_STANDING_LABEL%s%s", standing, UnitSex(P) == 3 and "_FEMALE" or "")]
 				if not standingname then standingname = UNKNOWN end
 				repcolor = format("%02x%02x%02x", min(color.r * 255 + 40, 255), min(color.g * 255 + 40, 255), min(color.b * 255 + 40, 255))
 				self.text:SetText(gsub(experience.faction_fmt, "%[([%w%%]-)%]", tags))
@@ -1837,6 +1852,7 @@ if experience.enabled then
 				GameTooltip:AddDoubleLine(L_STATS_PLAYED_LEVEL, tags"playedlevel", ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 				GameTooltip:AddDoubleLine(L_STATS_PLAYED_TOTAL, tags"playedtotal", ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			elseif conf.ExpMode == "rep" then
+				if repname == NONE then GameTooltip:Hide() return end
 				local desc, war, watched
 				for i = 1, GetNumFactions() do
 					_, desc, _, _, _, _, war, _, _, _, _, watched = GetFactionInfo(i)
@@ -1846,7 +1862,9 @@ if experience.enabled then
 				GameTooltip:AddLine(desc, ttsubh.r, ttsubh.g, ttsubh.b, 1)
 				GameTooltip:AddLine(" ")
 				GameTooltip:AddDoubleLine(format("%s%s", tags"repcolor", tags"standing"), war and format("|cffff5555%s", AT_WAR))
-				GameTooltip:AddDoubleLine(format("%s%% | %s/%s", tags"rep%", tags"currep", tags"maxrep"), -tags"repleft", ttsubh.r, ttsubh.g, ttsubh.b, 1, 0.33, 0.33)
+				if currep ~= maxrep then
+					GameTooltip:AddDoubleLine(format("%s%% | %s/%s", tags"rep%", tags"currep", tags"maxrep"), -tags"repleft", ttsubh.r, ttsubh.g, ttsubh.b, 1, 0.33, 0.33)
+				end
 			elseif conf.ExpMode == "art" then
 				local azeriteItemLocation = C_AzeriteItem and C_AzeriteItem.FindActiveAzeriteItem()
 				if azeriteItemLocation then
