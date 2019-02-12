@@ -1301,7 +1301,7 @@ function Stuffing:SortOnUpdate(elapsed)
 
 	for bagIndex in pairs(BS_itemSwapGrid) do
 		for slotIndex in pairs(BS_itemSwapGrid[bagIndex]) do
-			local destinationBag  = BS_itemSwapGrid[bagIndex][slotIndex].destinationBag
+			local destinationBag = BS_itemSwapGrid[bagIndex][slotIndex].destinationBag
 			local destinationSlot = BS_itemSwapGrid[bagIndex][slotIndex].destinationSlot
 
 			local _, _, locked1 = GetContainerItemInfo(bagIndex, slotIndex)

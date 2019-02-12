@@ -126,12 +126,12 @@ local function WorldMapMenu(self, level)
 		info.func = function()
 			if SavedOptionsPerChar.FogOfWar == true then
 				SavedOptionsPerChar.FogOfWar = false
-				for i = 1, #T.overlayTextures  do
+				for i = 1, #T.overlayTextures do
 					T.overlayTextures[i]:Hide()
 				end
 			else
 				SavedOptionsPerChar.FogOfWar = true
-				for i = 1, #T.overlayTextures  do
+				for i = 1, #T.overlayTextures do
 					T.overlayTextures[i]:Show()
 				end
 			end

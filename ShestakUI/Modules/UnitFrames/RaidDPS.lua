@@ -190,7 +190,7 @@ local function Shared(self, unit)
 	end
 
 	-- Summon icons
-	if C.raidframe.icons_sumon == true  and not (self:GetAttribute("unitsuffix") == "target") then
+	if C.raidframe.icons_sumon == true and not (self:GetAttribute("unitsuffix") == "target") then
 		self.SummonIndicator = self.Health:CreateTexture(nil, "OVERLAY")
 		self.SummonIndicator:SetSize(24, 24)
 		self.SummonIndicator:SetPoint("BOTTOMRIGHT", self.Health, 6, -5)

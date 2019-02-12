@@ -1115,7 +1115,7 @@ if friends.enabled then
 	local totalFriendsOnline = 0
 	local totalBattleNetOnline = 0
 	local BNTable = {}
-	local friendTable  = {}
+	local friendTable = {}
 	local function BuildFriendTable(total)
 		totalFriendsOnline = 0
 		wipe(friendTable)
@@ -1698,7 +1698,7 @@ if experience.enabled then
 			or sub == "standing" and standingname
 			or sub == "currep" and (currep ~= maxrep and abs(currep - minrep) or currep > 0 and 1 or 0)
 			or sub == "repleft" and abs(maxrep - currep)
-			or sub == "maxrep" and (currep ~= maxrep and  abs(maxrep - minrep) or maxrep > 0 and 1 or 0)
+			or sub == "maxrep" and (currep ~= maxrep and abs(maxrep - minrep) or maxrep > 0 and 1 or 0)
 			or sub == "rep%" and (currep ~= 0 and floor(abs(currep - minrep) / abs(maxrep - minrep) * 100) or 0)
 			-- artifact tags
 			or sub == "curart" and short(AzeritXP, tt)

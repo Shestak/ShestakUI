@@ -298,7 +298,7 @@ local function RefreshList(self)
 			local memberInfo = memberList[displayIndex]
 			if memberInfo.presence == Enum.ClubMemberPresence.Offline then return end
 
-			if memberInfo.zone and memberInfo.zone == playerArea  then
+			if memberInfo.zone and memberInfo.zone == playerArea then
 				button.Zone:SetText("|cff4cff4c"..memberInfo.zone)
 			end
 

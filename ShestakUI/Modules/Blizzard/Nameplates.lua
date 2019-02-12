@@ -130,30 +130,29 @@ if C.nameplate.healer_icon == true then
 end
 
 local totemData = {
-	[GetSpellInfo(192058)] = "Interface\\Icons\\spell_nature_brilliance",          -- Lightning Surge Totem
-	[GetSpellInfo(98008)]  = "Interface\\Icons\\spell_shaman_spiritlink",          -- Spirit Link Totem
-	[GetSpellInfo(192077)] = "Interface\\Icons\\ability_shaman_windwalktotem",     -- Wind Rush Totem
-	[GetSpellInfo(204331)] = "Interface\\Icons\\spell_nature_wrathofair_totem",    -- Counterstrike Totem
-	[GetSpellInfo(204332)] = "Interface\\Icons\\spell_nature_windfury",            -- Windfury Totem
-	[GetSpellInfo(204336)] = "Interface\\Icons\\spell_nature_groundingtotem",      -- Grounding Totem
+	[GetSpellInfo(192058)] = "Interface\\Icons\\spell_nature_brilliance",			-- Capacitor Totem
+	[GetSpellInfo(98008)]  = "Interface\\Icons\\spell_shaman_spiritlink",			-- Spirit Link Totem
+	[GetSpellInfo(192077)] = "Interface\\Icons\\ability_shaman_windwalktotem",		-- Wind Rush Totem
+	[GetSpellInfo(204331)] = "Interface\\Icons\\spell_nature_wrathofair_totem",		-- Counterstrike Totem
+	[GetSpellInfo(204332)] = "Interface\\Icons\\spell_nature_windfury",				-- Windfury Totem
+	[GetSpellInfo(204336)] = "Interface\\Icons\\spell_nature_groundingtotem",		-- Grounding Totem
 	-- Water
-	[GetSpellInfo(157153)] = "Interface\\Icons\\ability_shaman_condensationtotem", -- Cloudburst Totem
-	[GetSpellInfo(5394)]   = "Interface\\Icons\\INV_Spear_04",                     -- Healing Stream Totem
-	[GetSpellInfo(108280)] = "Interface\\Icons\\ability_shaman_healingtide",       -- Healing Tide Totem
+	[GetSpellInfo(157153)] = "Interface\\Icons\\ability_shaman_condensationtotem",	-- Cloudburst Totem
+	[GetSpellInfo(5394)]   = "Interface\\Icons\\INV_Spear_04",						-- Healing Stream Totem
+	[GetSpellInfo(108280)] = "Interface\\Icons\\ability_shaman_healingtide",		-- Healing Tide Totem
 	-- Earth
-	[GetSpellInfo(207399)] = "Interface\\Icons\\spell_nature_reincarnation",       -- Ancestral Protection Totem
-	[GetSpellInfo(198838)] = "Interface\\Icons\\spell_nature_stoneskintotem",      -- Earthen Shield Totem
-	[GetSpellInfo(51485)]  = "Interface\\Icons\\spell_nature_stranglevines",       -- Earthgrab Totem
-	[GetSpellInfo(61882)]  = "Interface\\Icons\\spell_shaman_earthquake",          -- Earthquake Totem
-	[GetSpellInfo(196932)] = "Interface\\Icons\\spell_totem_wardofdraining",       -- Voodoo Totem
+	[GetSpellInfo(207399)] = "Interface\\Icons\\spell_nature_reincarnation",		-- Ancestral Protection Totem
+	[GetSpellInfo(198838)] = "Interface\\Icons\\spell_nature_stoneskintotem",		-- Earthen Wall Totem
+	[GetSpellInfo(51485)]  = "Interface\\Icons\\spell_nature_stranglevines",		-- Earthgrab Totem
+	[GetSpellInfo(196932)] = "Interface\\Icons\\spell_totem_wardofdraining",		-- Voodoo Totem
 	-- Fire
-	[GetSpellInfo(192222)] = "Interface\\Icons\\spell_shaman_spewlava",            -- Liquid Magma Totem
-	[GetSpellInfo(204330)] = "Interface\\Icons\\spell_fire_totemofwrath",          -- Skyfury Totem
+	[GetSpellInfo(192222)] = "Interface\\Icons\\spell_shaman_spewlava",				-- Liquid Magma Totem
+	[GetSpellInfo(204330)] = "Interface\\Icons\\spell_fire_totemofwrath",			-- Skyfury Totem
 	-- Totem Mastery
-	[GetSpellInfo(202188)] = "Interface\\Icons\\spell_nature_stoneskintotem",      -- Resonance Totem
-	[GetSpellInfo(210651)] = "Interface\\Icons\\spell_shaman_stormtotem",          -- Storm Totem
-	[GetSpellInfo(210657)] = "Interface\\Icons\\spell_fire_searingtotem",          -- Ember Totem
-	[GetSpellInfo(210660)] = "Interface\\Icons\\spell_nature_invisibilitytotem",   -- Tailwind Totem
+	[GetSpellInfo(202188)] = "Interface\\Icons\\spell_nature_stoneskintotem",		-- Resonance Totem
+	[GetSpellInfo(210651)] = "Interface\\Icons\\spell_shaman_stormtotem",			-- Storm Totem
+	[GetSpellInfo(210657)] = "Interface\\Icons\\spell_fire_searingtotem",			-- Ember Totem
+	[GetSpellInfo(210660)] = "Interface\\Icons\\spell_nature_invisibilitytotem",	-- Tailwind Totem
 }
 
 local function CreateVirtualFrame(frame, point)
@@ -250,7 +249,7 @@ local function threatColor(self, forced)
 	if UnitIsTapDenied(self.unit) then
 		self.Health:SetStatusBarColor(0.6, 0.6, 0.6)
 	elseif combat then
-		if threatStatus == 3 then  -- securely tanking, highest threat
+		if threatStatus == 3 then	-- securely tanking, highest threat
 			if T.Role == "Tank" then
 				if C.nameplate.enhance_threat == true then
 					self.Health:SetStatusBarColor(unpack(C.nameplate.good_color))
@@ -264,19 +263,19 @@ local function threatColor(self, forced)
 					SetVirtualBorder(self.Health, unpack(C.nameplate.bad_color))
 				end
 			end
-		elseif threatStatus == 2 then  -- insecurely tanking, another unit have higher threat but not tanking
+		elseif threatStatus == 2 then	-- insecurely tanking, another unit have higher threat but not tanking
 			if C.nameplate.enhance_threat == true then
 				self.Health:SetStatusBarColor(unpack(C.nameplate.near_color))
 			else
 				SetVirtualBorder(self.Health, unpack(C.nameplate.near_color))
 			end
-		elseif threatStatus == 1 then  -- not tanking, higher threat than tank
+		elseif threatStatus == 1 then	-- not tanking, higher threat than tank
 			if C.nameplate.enhance_threat == true then
 				self.Health:SetStatusBarColor(unpack(C.nameplate.near_color))
 			else
 				SetVirtualBorder(self.Health, unpack(C.nameplate.near_color))
 			end
-		elseif threatStatus == 0 then  -- not tanking, lower threat than tank
+		elseif threatStatus == 0 then	-- not tanking, lower threat than tank
 			if C.nameplate.enhance_threat == true then
 				if T.Role == "Tank" then
 					self.Health:SetStatusBarColor(unpack(C.nameplate.bad_color))
