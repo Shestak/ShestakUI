@@ -127,10 +127,8 @@ local function OnUpdate(self, elapsed)
 	end
 end
 
-local UpdateDebuffFrame = function(rd)
+local UpdateDebuffFrame = function(rd, icon, count, debuffType, duration, expirationTime, spellId)
 	if rd.index and rd.type and rd.filter then
-		local name, icon, count, debuffType, duration, expirationTime, _, _, _, spellId, _, isBossDebuff = UnitAura(rd.__owner.unit, rd.index, rd.filter)
-
 		if rd.icon then
 			rd.icon:SetTexture(icon)
 			rd.icon:Show()
@@ -192,6 +190,7 @@ local Update = function(self, event, unit)
 	if unit ~= self.unit then return end
 	local rd = self.RaidDebuffs
 	rd.priority = invalidPrio
+	local _icon, _count, _debuffType, _duration, _expirationTime, _spellId
 
 	for filter in next, (rd.Filters or auraFilters) do
 		local i = 0
@@ -207,6 +206,7 @@ local Update = function(self, event, unit)
 					rd.index = i
 					rd.type = "Boss"
 					rd.filter = filter
+					_icon, _count, _debuffType, _duration, _expirationTime, _spellId = icon, count, debuffType, duration, expirationTime, spellId
 				end
 			end
 
@@ -221,11 +221,12 @@ local Update = function(self, event, unit)
 					prio = disPrio[debuffType]
 				end
 
-				if prio and (prio > rd.priority) then
+				if prio and prio > rd.priority then
 					rd.priority = prio
 					rd.index = i
 					rd.type = "Dispel"
 					rd.filter = filter
+					_icon, _count, _debuffType, _duration, _expirationTime, _spellId = icon, count, debuffType, duration, expirationTime, spellId
 				end
 			end
 
@@ -243,6 +244,7 @@ local Update = function(self, event, unit)
 				rd.index = i
 				rd.type = "Custom"
 				rd.filter = filter
+				_icon, _count, _debuffType, _duration, _expirationTime, _spellId = icon, count, debuffType, duration, expirationTime, spellId
 			end
 		end
 	end
@@ -253,7 +255,7 @@ local Update = function(self, event, unit)
 		rd.type = nil
 	end
 
-	return UpdateDebuffFrame(rd)
+	return UpdateDebuffFrame(rd, _icon, _count, _debuffType, _duration, _expirationTime, _spellId)
 end
 
 local Path = function(self, ...)
