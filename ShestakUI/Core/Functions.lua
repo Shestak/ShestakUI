@@ -1384,7 +1384,7 @@ T.HideAuraFrame = function(self)
 	end
 end
 
-T.PostCreateAura = function(element, button)
+T.PostCreateIcon = function(element, button)
 	button:SetTemplate("Default")
 
 	button.remaining = T.SetFontString(button, C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
@@ -1418,9 +1418,7 @@ T.PostCreateAura = function(element, button)
 	end
 end
 
-T.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, duration, timeLeft)
-	local _, _, _, dtype, duration, expirationTime, _, isStealable = UnitAura(unit, index, icon.filter)
-
+T.PostUpdateIcon = function(_, unit, icon, _, _, duration, expiration, debuffType, isStealable)
 	local playerUnits = {
 		player = true,
 		pet = true,
@@ -1437,7 +1435,7 @@ T.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, 
 			end
 		else
 			if C.aura.debuff_color_type == true then
-				local color = DebuffTypeColor[dtype] or DebuffTypeColor.none
+				local color = DebuffTypeColor[debuffType] or DebuffTypeColor.none
 				icon:SetBackdropBorderColor(color.r, color.g, color.b)
 				icon.icon:SetDesaturated(false)
 			else
@@ -1445,7 +1443,7 @@ T.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, 
 			end
 		end
 	else
-		if (isStealable or ((T.class == "MAGE" or T.class == "PRIEST" or T.class == "SHAMAN" or T.class == "HUNTER") and dtype == "Magic")) and not UnitIsFriend("player", unit) then
+		if (isStealable or ((T.class == "MAGE" or T.class == "PRIEST" or T.class == "SHAMAN" or T.class == "HUNTER") and debuffType == "Magic")) and not UnitIsFriend("player", unit) then
 			icon:SetBackdropBorderColor(1, 0.85, 0)
 		else
 			icon:SetBackdropBorderColor(unpack(C.media.border_color))
@@ -1455,7 +1453,7 @@ T.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, 
 
 	if duration and duration > 0 and C.aura.show_timer == true then
 		icon.remaining:Show()
-		icon.timeLeft = expirationTime
+		icon.timeLeft = expiration
 		icon:SetScript("OnUpdate", CreateAuraTimer)
 	else
 		icon.remaining:Hide()

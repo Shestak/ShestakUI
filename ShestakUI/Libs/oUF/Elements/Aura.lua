@@ -81,7 +81,7 @@ local customFilter = function(icons, unit, icon, name, texture, count, dtype, du
 end
 
 local updateIcon = function(unit, icons, index, offset, filter, isDebuff, visible)
-	local name, texture, count, dispelType, duration, expiration, caster, isStealable,
+	local name, texture, count, debuffType, duration, expiration, caster, isStealable,
 		nameplateShowSelf, spellID, canApply, isBossDebuff, casterIsPlayer, nameplateShowAll,
 		timeMod, effect1, effect2, effect3 = UnitAura(unit, index, filter)
 
@@ -94,7 +94,7 @@ local updateIcon = function(unit, icons, index, offset, filter, isDebuff, visibl
 		end
 
 		local show = (icons.CustomFilter or customFilter) (icons, unit, icon, name, texture,
-			count, dispelType, duration, expiration, caster, isStealable, nameplateShowSelf, spellID,
+			count, debuffType, duration, expiration, caster, isStealable, nameplateShowSelf, spellID,
 			canApply, isBossDebuff, casterIsPlayer, nameplateShowAll, timeMod, effect1, effect2, effect3)
 
 		if(show) then
@@ -112,7 +112,7 @@ local updateIcon = function(unit, icons, index, offset, filter, isDebuff, visibl
 			end
 
 			if((isDebuff and icons.showDebuffType) or (not isDebuff and icons.showBuffType) or icons.showType) then
-				local color = DebuffTypeColor[dispelType] or DebuffTypeColor.none
+				local color = DebuffTypeColor[debuffType] or DebuffTypeColor.none
 
 				icon.overlay:SetVertexColor(color.r, color.g, color.b)
 				icon.overlay:Show()
@@ -137,7 +137,7 @@ local updateIcon = function(unit, icons, index, offset, filter, isDebuff, visibl
 			icon:Show()
 
 			if(icons.PostUpdateIcon) then
-				icons:PostUpdateIcon(unit, icon, index, offset)
+				icons:PostUpdateIcon(unit, icon, index, offset, duration, expiration, debuffType, isStealable)
 			end
 
 			return VISIBLE

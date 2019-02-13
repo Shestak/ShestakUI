@@ -372,7 +372,7 @@ local function UpdateName(self)
 	end
 end
 
-local function castColor(self, unit, name, castid)
+local function castColor(self)
 	if self.notInterruptible then
 		self:SetStatusBarColor(0.78, 0.25, 0.25)
 		self.bg:SetColorTexture(0.78, 0.25, 0.25, 0.2)
@@ -623,12 +623,10 @@ local function style(self, unit)
 			end
 		end
 
-		self.Auras.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, duration, timeLeft)
-			local _, _, _, dtype, duration, expirationTime, _, isStealable = UnitAura(unit, index, icon.filter)
-
+		self.Auras.PostUpdateIcon = function(_, _, icon, _, _, duration, expiration)
 			if duration and duration > 0 and C.aura.show_timer == true then
 				icon.remaining:Show()
-				icon.timeLeft = expirationTime
+				icon.timeLeft = expiration
 				icon:SetScript("OnUpdate", CreateAuraTimer)
 			else
 				icon.remaining:Hide()

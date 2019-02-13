@@ -28,7 +28,6 @@ local pairs = pairs
 local ipairs = ipairs
 local floor = math.floor
 local select = select
-local max = max
 local gsub = gsub
 
 -- Config
@@ -402,7 +401,7 @@ if durability.enabled then
 			if durability.man then DurabilityFrame.Show = DurabilityFrame.Hide end
 			RegEvents(self, "UPDATE_INVENTORY_DURABILITY MERCHANT_SHOW PLAYER_LOGIN")
 		end,
-		OnEvent = function(self, event, ...)
+		OnEvent = function(self, event)
 			if event == "UPDATE_INVENTORY_DURABILITY" or event == "PLAYER_LOGIN" then
 				local dmin = 100
 				for id = 1, 18 do
@@ -880,7 +879,7 @@ if location.enabled then
 			GameTooltip:ClearAllPoints()
 			GameTooltip:SetPoint(modules.Location.tip_anchor, modules.Location.tip_frame, modules.Location.tip_x, modules.Location.tip_y)
 		end,
-		OnClick = function(self,button)
+		OnClick = function(self)
 			if IsShiftKeyDown() then
 				ChatEdit_ActivateChat(ChatEdit_ChooseBoxForSend())
 				ChatEdit_ChooseBoxForSend():Insert(format(" (%s: %s)", self.zone, Coords()))
@@ -923,7 +922,7 @@ if ping.enabled then
 			self.anim:SetDuration(2.8)
 			self.anim:SetStartDelay(5)
 			end,
-		OnEvent = function(self, event, unit)
+		OnEvent = function(self, _, unit)
 			if unit == P and ping.hide_self then return end
 				local class = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(unit))]
 				self.text:SetText(format(ping.fmt, UnitName(unit)))
@@ -974,7 +973,7 @@ if guild.enabled then
 			self:RegisterEvent("GROUP_ROSTER_UPDATE")
 			self:RegisterEvent("GUILD_ROSTER_UPDATE")
 		end,
-		OnEvent = function(self, event)
+		OnEvent = function(self)
 			if self.hovered then
 				self:GetScript("OnEnter")(self)
 			end
@@ -1002,7 +1001,7 @@ if guild.enabled then
 			elseif b == "RightButton" and IsInGuild() then
 				HideTT(self)
 
-				local classc, levelc, grouped
+				local grouped
 				local menuCountWhispers = 0
 				local menuCountInvites = 0
 
@@ -1759,7 +1758,7 @@ if experience.enabled then
 					end
 					standing = 5
 				else
-					local value, nextThreshold, _, hasRewardPending = C_Reputation.GetFactionParagonInfo(factionID)
+					local value, nextThreshold = C_Reputation.GetFactionParagonInfo(factionID)
 					if value then
 						currep = value % nextThreshold
 						minrep = 0

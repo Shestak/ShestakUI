@@ -731,7 +731,7 @@ local function Shared(self, unit)
 			self.Debuffs.initialAnchor = "TOPLEFT"
 			self.Debuffs["growth-x"] = "RIGHT"
 		end
-		self.Debuffs.PostCreateIcon = T.PostCreateAura
+		self.Debuffs.PostCreateIcon = T.PostCreateIcon
 		self.Debuffs.PostUpdateIcon = T.PostUpdateIcon
 
 		if unit == "pet" then
@@ -790,7 +790,7 @@ local function Shared(self, unit)
 				self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5)
 			end
 
-			self.Debuffs.PostCreateIcon = T.PostCreateAura
+			self.Debuffs.PostCreateIcon = T.PostCreateIcon
 			self.Debuffs.PostUpdateIcon = T.PostUpdateIcon
 		end
 
@@ -807,7 +807,7 @@ local function Shared(self, unit)
 			self.Auras.spacing = T.Scale(3)
 			self.Auras.size = T.Scale(25)
 			self.Auras.gap = true
-			self.Auras.PostCreateIcon = T.PostCreateAura
+			self.Auras.PostCreateIcon = T.PostCreateIcon
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
 
 			-- Rogue/Druid Combo bar
@@ -1153,7 +1153,7 @@ local function Shared(self, unit)
 			self.Auras.spacing = T.Scale(3)
 			self.Auras.size = T.Scale(31)
 			self.Auras.gap = true
-			self.Auras.PostCreateIcon = T.PostCreateAura
+			self.Auras.PostCreateIcon = T.PostCreateIcon
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
 		end
 
