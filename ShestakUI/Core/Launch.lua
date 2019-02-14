@@ -31,7 +31,6 @@ local function InstallUI()
 		for i = 1, NUM_CHAT_WINDOWS do
 			local frame = _G[format("ChatFrame%s", i)]
 			local chatFrameId = frame:GetID()
-			local chatName = FCF_GetChatWindowInfo(chatFrameId)
 
 			frame:SetSize(C.chat.width, C.chat.height)
 

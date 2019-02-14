@@ -39,7 +39,7 @@ local IsAddOnLoaded = IsAddOnLoaded
 local hooksecurefunc = hooksecurefunc
 
 local r, is = function(n, dec) return floor(n * (10 ^ (dec or 0)) + 0.5) end, function(v, t) return type(v) == t end
-local dummy, d = function() end, lpanels.defaults
+local d = lpanels.defaults
 
 local class = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[strupper(lpanels.cinfo.c)]
 local function setcolor(color)
@@ -271,7 +271,7 @@ function lpanels:Init()
 end
 
 function lpanels:Exit()
-	r, is, class, setcolor, dummy = nil
+	r, is, class, setcolor = nil
 	for k in pairs(self) do self[k] = nil end
 	self.reset = 1 self.reset = nil
 end

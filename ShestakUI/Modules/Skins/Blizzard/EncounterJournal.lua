@@ -200,7 +200,7 @@ local function LoadSkin()
 
 	local function SkinBosses()
 		local bossIndex = 1
-		local name, description, bossID, _, link = EJ_GetEncounterInfoByIndex(bossIndex)
+		local _, _, bossID = EJ_GetEncounterInfoByIndex(bossIndex)
 		local bossButton
 
 		while bossID do
@@ -211,7 +211,7 @@ local function LoadSkin()
 			end
 
 			bossIndex = bossIndex + 1
-			name, description, bossID, _, link = EJ_GetEncounterInfoByIndex(bossIndex)
+			_, _, bossID = EJ_GetEncounterInfoByIndex(bossIndex)
 		end
 	end
 	hooksecurefunc("EncounterJournal_DisplayInstance", SkinBosses)
