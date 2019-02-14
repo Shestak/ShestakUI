@@ -101,7 +101,7 @@ local function UnitGear(unit)
 
 	for i = 1, 17 do
 		if i ~= 4 then
-			local id = GetInventoryItemID(unit, i)
+			local id = GetInventoryItemTexture(unit, i)
 
 			if id then
 				local itemLink = GetInventoryItemLink(unit, i)
