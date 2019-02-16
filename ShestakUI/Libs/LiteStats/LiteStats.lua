@@ -786,7 +786,7 @@ if clock.enabled then
 					local tr, tg, tb, diff
 					if not titleName then
 						GameTooltip:AddLine(" ")
-						GameTooltip:AddLine(CALENDAR_FILTER_RAID_LOCKOUTS.." / "..DUNGEONS, ttsubh.r, ttsubh.g, ttsubh.b)
+						GameTooltip:AddLine(GROUP_FINDER, ttsubh.r, ttsubh.g, ttsubh.b)
 						titleName = true
 					end
 					if extended then tr, tg, tb = 0.3, 1, 0.3 else tr, tg, tb = 1, 1, 1 end
