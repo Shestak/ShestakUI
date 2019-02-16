@@ -65,7 +65,7 @@ LPSTAT_CONFIG = {
 		show_xp = true, -- Show guild experience
 		sorting = "class", -- Default roster sorting: name, level, class, zone, rank, note
 		anchor_frame = C.stats.friend and "Friends" or C.stats.fps and "FPS" or C.stats.memory and "Memory" or C.stats.latency and "Latency" or "Clock", anchor_to = "left", anchor_from = "right",
-		x_off = C.stats.friend and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
+		x_off = 3, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Durability = {
 		enabled = C.stats.durability,
@@ -74,7 +74,7 @@ LPSTAT_CONFIG = {
 		ignore_inventory = false, -- Ignore inventory gear when auto-repairing
 		gear_icons = false, -- Show your gear icons in the tooltip
 		anchor_frame = C.stats.guild and "Guild" or C.stats.friend and "Friends" or C.stats.fps and "FPS" or C.stats.memory and "Memory" or C.stats.latency and "Latency" or "Clock", anchor_to = "left", anchor_from = "right",
-		x_off = C.stats.guild and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
+		x_off = 3, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Experience = {
 		enabled = C.stats.experience,
@@ -107,12 +107,12 @@ LPSTAT_CONFIG = {
 		},
 		artifact_fmt = "[curart]([curart%]%)"..class"AP", -- Artifact power format
 		anchor_frame = C.stats.durability and "Durability" or C.stats.guild and "Guild" or C.stats.friend and "Friends" or C.stats.fps and "FPS" or C.stats.memory and "Memory" or C.stats.latency and "Latency" or "Clock", anchor_to = "left", anchor_from = "right",
-		x_off = C.stats.durability and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
+		x_off = 3, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 	Talents = {
 		enabled = C.stats.talents,
 		anchor_frame = C.stats.experience and "Experience" or C.stats.durability and "Durability" or C.stats.guild and "Guild" or C.stats.friend and "Friends" or C.stats.fps and "FPS" or C.stats.memory and "Memory" or C.stats.latency and "Latency" or "Clock", anchor_to = "left", anchor_from = "right",
-		x_off = C.stats.experience and 3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
+		x_off = 3, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
 -- Bottomright block
 	Coords = {
