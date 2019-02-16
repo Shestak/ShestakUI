@@ -674,12 +674,7 @@ local function LoadSkin()
 
 	for i = 1, #HelpBox do
 		local frame = HelpBox[i]
-		frame:StripTextures()
-		frame:SetTemplate("Transparent")
-		T.SkinCloseButton(frame.CloseButton)
-		if frame.Arrow then
-			frame.Arrow:Hide()
-		end
+		T.SkinHelpBox(frame)
 	end
 end
 

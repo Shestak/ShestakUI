@@ -644,6 +644,17 @@ function T.SkinExpandOrCollapse(f)
 	end)
 end
 
+function T.SkinHelpBox(frame)
+	frame:StripTextures()
+	frame:SetTemplate("Transparent")
+	if frame.CloseButton then
+		T.SkinCloseButton(frame.CloseButton)
+	end
+	if frame.Arrow then
+		frame.Arrow:Hide()
+	end
+end
+
 local LoadBlizzardSkin = CreateFrame("Frame")
 LoadBlizzardSkin:RegisterEvent("ADDON_LOADED")
 LoadBlizzardSkin:SetScript("OnEvent", function(self, event, addon)

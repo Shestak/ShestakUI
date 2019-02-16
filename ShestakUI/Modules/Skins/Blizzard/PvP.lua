@@ -119,9 +119,7 @@ local function LoadSkin()
 	PremadeGroupsPvPTutorialAlert.Arrow:Hide()
 	T.SkinCloseButton(PremadeGroupsPvPTutorialAlert.CloseButton)
 
-	HonorFrame.BonusFrame.BrawlHelpBox:StripTextures()
-	HonorFrame.BonusFrame.BrawlHelpBox:SetTemplate("Transparent")
-	T.SkinCloseButton(HonorFrame.BonusFrame.BrawlHelpBox.CloseButton)
+	T.SkinHelpBox(HonorFrame.BonusFrame.BrawlHelpBox)
 
 	for _, i in pairs({"RandomBGButton", "RandomEpicBGButton", "Arena1Button", "BrawlButton"}) do
 		local button = HonorFrame.BonusFrame[i]

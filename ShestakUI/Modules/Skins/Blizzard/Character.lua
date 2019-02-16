@@ -218,10 +218,6 @@ local function LoadSkin()
 		T.SkinTab(_G["CharacterFrameTab"..i])
 	end
 
-	CharacterFrame.ReputationTabHelpBox:StripTextures()
-	CharacterFrame.ReputationTabHelpBox:SetTemplate("Transparent")
-	T.SkinCloseButton(CharacterFrame.ReputationTabHelpBox.CloseButton)
-
 	-- Buttons used to toggle between equipment manager, titles, and character stats
 	local function FixSidebarTabCoords()
 		for i = 1, #PAPERDOLL_SIDEBARS do
@@ -327,6 +323,12 @@ local function LoadSkin()
 	end)
 
 	CharacterFrame:SetTemplate("Transparent")
+
+	-- Help box
+	T.SkinHelpBox(CharacterFrame.ReputationTabHelpBox)
+	T.SkinHelpBox(PaperDollItemsFrame.UnspentAzeriteHelpBox)
+	PaperDollItemsFrame.UnspentAzeriteHelpBox.CloseButton:SetPoint("TOPRIGHT", PaperDollItemsFrame.UnspentAzeriteHelpBox, "TOPRIGHT", -4, -4)
+	PaperDollItemsFrame.UnspentAzeriteHelpBox.CloseButton.SetPoint = T.dummy
 
 	-- Unit Background Texture
 	CharacterModelFrameBackgroundTopLeft:SetPoint("TOPLEFT", CharacterModelFrame.backdrop, "TOPLEFT", 2, -2)
