@@ -88,7 +88,7 @@ local function LoadSkin()
 
 		slot.Border:Hide()
 
-		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		icon:SetTexCoord(.15, .85, .15, .85)
 	end
 
 	for i = 1, 3 do
@@ -99,6 +99,9 @@ local function LoadSkin()
 
 	InspectPVPFrame.BG:Kill()
 
+	SpecializationRing:Hide()
+	SpecializationSpecIcon:SkinIcon()
+	SpecializationSpecIcon:SetTexCoord(.15, .85, .15, .85)
 	SpecializationSpecName:SetFont(C.media.normal_font, 20)
 	InspectTalentFrame:DisableDrawLayer("BACKGROUND")
 	InspectTalentFrame:DisableDrawLayer("BORDER")
