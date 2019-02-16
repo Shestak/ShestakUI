@@ -222,6 +222,13 @@ local function LoadSkin()
 	CharacterFrame.ReputationTabHelpBox:SetTemplate("Transparent")
 	T.SkinCloseButton(CharacterFrame.ReputationTabHelpBox.CloseButton)
 
+	PaperDollItemsFrame.UnspentAzeriteHelpBox:StripTextures()
+	PaperDollItemsFrame.UnspentAzeriteHelpBox:SetTemplate("Transparent")
+	T.SkinCloseButton(PaperDollItemsFrame.UnspentAzeriteHelpBox.CloseButton)
+	PaperDollItemsFrame.UnspentAzeriteHelpBox.Arrow:Hide()
+	PaperDollItemsFrame.UnspentAzeriteHelpBox.CloseButton:SetPoint("TOPRIGHT", PaperDollItemsFrame.UnspentAzeriteHelpBox, "TOPRIGHT", -3, -3)
+	PaperDollItemsFrame.UnspentAzeriteHelpBox.CloseButton.SetPoint = T.dummy
+
 	-- Buttons used to toggle between equipment manager, titles, and character stats
 	local function FixSidebarTabCoords()
 		for i = 1, #PAPERDOLL_SIDEBARS do
