@@ -7,6 +7,7 @@ SlashCmdList.RELOADUI = function() ReloadUI() end
 SLASH_RELOADUI1 = "/rl"
 SLASH_RELOADUI2 = "/кд"
 SLASH_RELOADUI3 = "//"
+SLASH_RELOADUI4 = "/."
 
 SlashCmdList.RCSLASH = function() DoReadyCheck() end
 SLASH_RCSLASH1 = "/rc"
