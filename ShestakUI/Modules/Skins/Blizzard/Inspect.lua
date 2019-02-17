@@ -20,6 +20,7 @@ local function LoadSkin()
 	InspectModelFrame:CreateBackdrop("Default")
 	InspectModelFrame.backdrop:SetPoint("TOPLEFT", -3, 4)
 	InspectModelFrame.backdrop:SetPoint("BOTTOMRIGHT", 4, 0)
+	InspectModelFrame.BackgroundOverlay:SetColorTexture(0, 0, 0)
 
 	-- Unit Background Texture
 	InspectModelFrameBackgroundTopLeft:SetPoint("TOPLEFT", InspectModelFrame.backdrop, "TOPLEFT", 2, -2)
