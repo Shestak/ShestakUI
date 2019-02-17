@@ -20,6 +20,7 @@ local function LoadSkin()
 
 	AzeriteRespecFrame.ButtonFrame:StripTextures()
 	AzeriteRespecFrame.ButtonFrame.AzeriteRespecButton:SkinButton()
+	AzeriteRespecFrame.ButtonFrame.AzeriteRespecButton:SetPoint("BOTTOMRIGHT", -4, 5)
 	T.SkinCloseButton(AzeriteRespecFrameCloseButton)
 	T.SkinHelpBox(AzeriteRespecFrame.HelpBox)
 end
