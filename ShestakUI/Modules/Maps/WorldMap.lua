@@ -82,6 +82,9 @@ coords:SetScript("OnEvent", function(self, event)
 	end
 end)
 
+----------------------------------------------------------------------------------------
+--	Dropdown menu for close button
+----------------------------------------------------------------------------------------
 local WorldMap_DDMenu = CreateFrame("Frame", "WorldMapDropDownMenu")
 WorldMap_DDMenu.displayMode = "MENU"
 WorldMap_DDMenu.info = {}
