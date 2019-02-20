@@ -11,7 +11,7 @@ local tthead = {r = 0.40, g = 0.78, b = 1}	-- Headers
 local ttsubh = {r = 0.75, g = 0.90, b = 1}	-- Subheaders
 
 -- Strata/Level for text objects
-local strata, level = "DIALOG", 20
+local strata, level = "MEDIUM", 20
 
 -- Globals
 local profiles = LPSTAT_PROFILES
