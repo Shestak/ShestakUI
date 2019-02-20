@@ -155,9 +155,7 @@ skin.panels = {
 	end,
 
 	PetPanel = function(self)
-		self.List:StripTextures()
-		--self.List:SetTemplate("Transparent")
-		--T.SkinScrollBar(self.List.ScrollFrame.ScrollBar)
+		skin:HandleAutoScrollFrame(self.List)
 		-- top
 		self.Top:StripTextures()
 		self.Top.TypeBar:StripTextures()
@@ -336,14 +334,10 @@ skin.panels = {
 	end,
 
 	TeamPanel = function(self)
+		skin:HandleAutoScrollFrame(self.List)
 		self:StripTextures()
-		--self.List:StripTextures()
-		--self.List:SetTemplate("Transparent")
-		--T.SkinScrollBar(self.List.ScrollFrame.ScrollBar)
-
 		self.Top:StripTextures()
 		self.Top.Teams:SkinButton()
-		--self.Top.Toggle:SkinButton()
 		T.SkinEditBox(self.Top.SearchBox)
 		self.Top.SearchBox:SetBackdrop({})
 		for _,region in ipairs({self.Top.SearchBox:GetRegions()}) do
@@ -413,6 +407,7 @@ skin.panels = {
 	end,
 
 	MiniQueue = function(self)
+		skin:HandleAutoScrollFrame(self.List)
 		self.Top:StripTextures()
 		self.Top:SetTemplate("Transparent")
 		self.Top.QueueButton:SkinButton()
@@ -433,9 +428,7 @@ skin.panels = {
 	end,
 
 	QueuePanel = function(self)
-		self.List:StripTextures()
-		self.List:SetTemplate("Transparent")
-		T.SkinScrollBar(self.List.ScrollFrame.ScrollBar)
+		skin:HandleAutoScrollFrame(self.List)
 		self.Top:StripTextures()
 		self.Top.QueueButton:SkinButton()
 		--self.Top.Toggle:SkinButton()
@@ -491,20 +484,7 @@ skin.panels = {
 	end,
 
 	OptionPanel = function(self)
-		self.List:StripTextures()
-		self.List:SetTemplate("Transparent")
-		T.SkinScrollBar(self.List.ScrollFrame.ScrollBar)
-		-- for _,button in ipairs(self.List.ScrollFrame.buttons) do
-			-- button:StripTextures()
-			-- for _,region in ipairs({button.Header:GetRegions()}) do
-				-- if region:GetDrawLayer()=="BACKGROUND" then
-					-- region:SetColorTexture(0.15, 0.15, 0.15)
-				-- end
-			-- end
-			-- T.SkinCheckBox(button.CheckButton)
-		-- end
-		-- self.CustomScale.ScaleButton:SkinButton()
-		-- T.SkinCheckBox(self.CustomScale.CheckButton)
+		skin:HandleAutoScrollFrame(self.List)
 	end,
 
 	TeamTabs = function(self)
@@ -730,6 +710,32 @@ function skin:HandlePanelTab(tab)
 		tab.backdrop:SetPoint("TOPLEFT", 10, -3)
 		tab.backdrop:SetPoint("BOTTOMRIGHT", -10, 3)
 	end
+end
+
+function skin:HandleAutoScrollFrame(listFrame)
+	if not listFrame then
+		return
+	end
+	listFrame:StripTextures()
+	listFrame.Background:StripTextures()
+
+	listFrame.ScrollFrame:StripTextures()
+	listFrame.ScrollFrame.ScrollBar:StripTextures()
+
+	local upButton = listFrame.ScrollFrame.ScrollBar.UpButton
+	T.SkinNextPrevButton(upButton, nil, "Up")
+	upButton:SetSize(upButton:GetWidth() + 7,upButton:GetHeight() + 7)
+
+	local downButton = listFrame.ScrollFrame.ScrollBar.DownButton
+	T.SkinNextPrevButton(downButton, nil, "Down")
+	downButton:SetSize(downButton:GetWidth() + 7,downButton:GetHeight() + 7)
+
+	local scrollBar = listFrame.ScrollFrame.ScrollBar
+	scrollBar:GetThumbTexture():SetTexture(nil)
+	scrollBar.thumbbg = CreateFrame("Frame", nil, scrollBar)
+	scrollBar.thumbbg:SetPoint("TOPLEFT", scrollBar:GetThumbTexture(), "TOPLEFT", 0, -3)
+	scrollBar.thumbbg:SetPoint("BOTTOMRIGHT", scrollBar:GetThumbTexture(), "BOTTOMRIGHT", 0, 3)
+	scrollBar.thumbbg:SetTemplate("Overlay")
 end
 
 local f = CreateFrame("Frame")
