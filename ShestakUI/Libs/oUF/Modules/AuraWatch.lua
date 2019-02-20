@@ -77,7 +77,7 @@ local function Update(frame, event, unit)
 	if frame.unit ~= unit then return end
 	local watch = frame.AuraWatch
 	local index, icons = 1, watch.watched
-	local _, name, texture, count, duration, remaining, caster, key, icon, spellID
+	local _, name, count, duration, remaining, caster, key, icon, spellID
 	local filter = "HELPFUL"
 	local guid = UnitGUID(unit)
 	if not guid then return end
@@ -88,7 +88,7 @@ local function Update(frame, event, unit)
 	end
 
 	while true do
-		name, texture, count, _, duration, remaining, caster, _, _, spellID = UnitAura(unit, index, filter)
+		name, _, count, _, duration, remaining, caster, _, _, spellID = UnitAura(unit, index, filter)
 		if not name then
 			if filter == "HELPFUL" then
 				filter = "HARMFUL"

@@ -419,7 +419,7 @@ function E:INSPECT_READY(guid)
 	ActiveGUID = nil
 	local unitID, name = GetUnitIDFromGUID(guid)
 	if unitID then
-		local classDisplayName, class = UnitClass(unitID)
+		local _, class = UnitClass(unitID)
 		local colors = class and RAID_CLASS_COLORS[class]
 		local specID = GetInspectSpecialization(unitID)
 		local specName
@@ -463,7 +463,7 @@ function E:ADDON_LOADED(addon)
 	end
 end
 
-function E:ItemScanComplete(guid, cache)
+function E:ItemScanComplete(guid)
 	DecorateTooltip(guid)
 end
 

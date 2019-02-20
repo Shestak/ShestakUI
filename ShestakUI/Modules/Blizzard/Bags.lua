@@ -285,7 +285,6 @@ function CreateReagentContainer()
 
 	local Reagent = CreateFrame("Frame", "StuffingFrameReagent", UIParent)
 	local SwitchBankButton = CreateFrame("Button", nil, Reagent)
-	local NumButtons = ReagentBankFrame.size
 	local NumRows, LastRowButton, NumButtons, LastButton = 0, ReagentBankFrameItem1, 1, ReagentBankFrameItem1
 	local Deposit = ReagentBankFrame.DespositButton
 

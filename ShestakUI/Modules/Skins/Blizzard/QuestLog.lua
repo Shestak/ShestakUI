@@ -97,7 +97,7 @@ local function LoadSkin()
 		end
 	end)
 
-	hooksecurefunc("QuestInfo_Display", function(template, parentFrame, acceptButton, material)
+	hooksecurefunc("QuestInfo_Display", function(template, parentFrame)
 		-- Headers
 		QuestInfoTitleHeader:SetTextColor(1, 0.8, 0)
 		QuestInfoTitleHeader:SetShadowColor(0, 0, 0)
@@ -206,7 +206,7 @@ local function LoadSkin()
 		end
 	end)
 
-	hooksecurefunc("QuestInfo_Display", function(template, parentFrame)
+	hooksecurefunc("QuestInfo_Display", function()
 		for i = 1, #QuestInfoRewardsFrame.RewardButtons do
 			local questItem = QuestInfoRewardsFrame.RewardButtons[i]
 			if not questItem:IsShown() then break end

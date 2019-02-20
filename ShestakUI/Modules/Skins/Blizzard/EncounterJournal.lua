@@ -293,7 +293,7 @@ local function LoadSkin()
 		item.armorType:SetPoint("BOTTOMRIGHT", item.name, "TOPLEFT", 264, -25)
 	end
 
-	local function SkinOverviewInfo(self, role, index)
+	local function SkinOverviewInfo(self, _, index)
 		local header = self.overviews[index]
 		if not header.isSkinned then
 
@@ -314,7 +314,7 @@ local function LoadSkin()
 	end
 	hooksecurefunc("EncounterJournal_SetUpOverview", SkinOverviewInfo)
 
-	local function SkinOverviewInfoBullets(object, description)
+	local function SkinOverviewInfoBullets(object)
 		local parent = object:GetParent()
 
 		if parent.Bullets then

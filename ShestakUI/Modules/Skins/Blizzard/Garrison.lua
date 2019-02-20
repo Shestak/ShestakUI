@@ -265,7 +265,7 @@ local function LoadSkin()
 		end
 	end
 
-	hooksecurefunc("GarrisonFollowerButton_AddAbility", function(self, index, ability)
+	hooksecurefunc("GarrisonFollowerButton_AddAbility", function(self, index)
 		local ability = self.Abilities[index]
 		if not ability.skinned then
 			ability.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)

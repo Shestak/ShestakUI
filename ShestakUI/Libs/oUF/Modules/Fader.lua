@@ -55,7 +55,7 @@ local conditions = setmetatable({
 	Combat = InCombatLockdown,
 	PlayerNotMaxHealth = function(obj, unit) return unit and UnitHealth("player") ~= UnitHealthMax("player") end,
 	PlayerNotMaxMana = function(obj, unit)
-		local powerType, powerTypeString = UnitPowerType("player")
+		local _, powerTypeString = UnitPowerType("player")
 		if powerTypeString ~= "RAGE" and powerTypeString ~= "RUNIC_POWER" then
 			return unit and UnitPower("player") ~= UnitPowerMax("player")
 		end
