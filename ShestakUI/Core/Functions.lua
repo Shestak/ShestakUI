@@ -400,7 +400,7 @@ function T.SkinEditBox(frame, width, height)
 	if height then frame:SetHeight(height) end
 end
 
-function T.SkinDropDownBox(frame, width)
+function T.SkinDropDownBox(frame, width, pos)
 	local button = _G[frame:GetName()] and (_G[frame:GetName().."Button"] or _G[frame:GetName().."_Button"]) or frame.Button
 	local text = _G[frame:GetName()] and _G[frame:GetName().."Text"] or frame.Text
 	if not width then width = 155 end
@@ -414,7 +414,11 @@ function T.SkinDropDownBox(frame, width)
 	end
 
 	button:ClearAllPoints()
-	button:SetPoint("RIGHT", frame, "RIGHT", -10, 3)
+	if pos then
+		button:SetPoint("TOPRIGHT", frame.Right, -20, -21)
+	else
+		button:SetPoint("RIGHT", frame, "RIGHT", -10, 3)
+	end
 	button.SetPoint = T.dummy
 	scrolldn = false
 	T.SkinNextPrevButton(button)
