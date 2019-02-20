@@ -110,18 +110,16 @@ hooksecurefunc("WhoList_Update", function()
 		local index = whoOffset + i
 		local nameText = _G["WhoFrameButton"..i.."Name"]
 		local levelText = _G["WhoFrameButton"..i.."Level"]
-		local classText = _G["WhoFrameButton"..i.."Class"]
 		local variableText = _G["WhoFrameButton"..i.."Variable"]
 
 		local info = C_FriendList.GetWhoInfo(index)
 		if info then
-			name = info.fullName
-			guild = info.fullGuildName
-			level = info.level
-			race = info.raceStr
-			class = info.classStr
-			zone = info.area
-			classFileName = info.filename
+			local name = info.fullName
+			local guild = info.fullGuildName
+			local level = info.level
+			local race = info.raceStr
+			local zone = info.area
+			local classFileName = info.filename
 
 			if zone == playerZone then
 				zone = "|cff00ff00"..zone
@@ -209,7 +207,7 @@ local function update()
 	local playerArea = GetRealZoneText()
 	local buttons = GuildRosterContainer.buttons
 
-	for i, button in ipairs(buttons) do
+	for _, button in ipairs(buttons) do
 		if button:IsShown() and button.online and button.guildIndex then
 			if _VIEW == "tradeskill" then
 				local _, _, _, headerName, _, _, _, playerName, _, _, _, zone, _, classFileName, isMobile = GetGuildTradeSkillInfo(button.guildIndex)
@@ -324,7 +322,6 @@ hooksecurefunc("Communities_LoadUI", function()
 end)
 
 -- FriendsList
-local WHITE = {r = 1, g = 1, b = 1}
 local FRIENDS_LEVEL_TEMPLATE = FRIENDS_LEVEL_TEMPLATE:gsub("%%d", "%%s")
 FRIENDS_LEVEL_TEMPLATE = FRIENDS_LEVEL_TEMPLATE:gsub("%$d", "%$s")
 local function friendsFrame()
@@ -348,7 +345,7 @@ local function friendsFrame()
 					end
 				end
 			elseif button.buttonType == FRIENDS_BUTTON_TYPE_BNET then
-				local _, presenceName, _, _, toonName, toonID, client, isOnline = BNGetFriendInfo(button.id)
+				local _, presenceName, _, _, _, toonID, client, isOnline = BNGetFriendInfo(button.id)
 				if isOnline and client == BNET_CLIENT_WOW then
 					local _, toonName, _, _, _, _, _, class, _, zoneName = BNGetGameAccountInfo(toonID)
 					if presenceName and toonName and class then
