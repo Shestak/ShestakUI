@@ -1250,7 +1250,7 @@ C["filger_spells"] = {
 
 			-- Buffs
 			-- Rushing Jade Wind
-			{spellID = 116847, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 116847, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blackout Kick!
 			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
 			-- The Mists of Sheilun
@@ -2589,7 +2589,7 @@ C["filger_spells"] = {
 			Alpha = 1,
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_PROC_ICON_Anchor},
-			
+
 			-- Victorious
 			{spellID = 32216, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Overpower
