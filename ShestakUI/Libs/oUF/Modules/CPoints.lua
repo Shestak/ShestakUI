@@ -123,7 +123,7 @@ local Enable = function(self)
 			element.hadler = CreateFrame("Frame", nil, element)
 			element.hadler:RegisterEvent("UPDATE_SHAPESHIFT_FORM")
 			element.hadler:RegisterEvent("PLAYER_ENTERING_WORLD")
-			element.hadler:SetScript("OnEvent", function(frame) Visibility(self) end)
+			element.hadler:SetScript("OnEvent", function() Visibility(self) end)
 		end
 
 		for index = 1, MAX_COMBO_POINTS do

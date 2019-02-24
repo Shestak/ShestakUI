@@ -217,7 +217,7 @@ local function tdr()
 
 	local testlist = {"stun", "root", "silence"}
 
-	for frame, target in pairs(framelist) do
+	for frame in pairs(framelist) do
 		self = _G[frame].DrTracker
 		if not self.actives then self.actives = {} end
 		local dr = 1

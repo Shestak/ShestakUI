@@ -86,7 +86,7 @@ local function Enable(self, unit)
 		element.hadler = CreateFrame("Frame", nil, element)
 		element.hadler:RegisterEvent("PLAYER_TALENT_UPDATE")
 		element.hadler:RegisterEvent("PLAYER_ENTERING_WORLD")
-		element.hadler:SetScript("OnEvent", function(frame) Visibility(self) end)
+		element.hadler:SetScript("OnEvent", function() Visibility(self) end)
 
 		element.maxChi = 0
 

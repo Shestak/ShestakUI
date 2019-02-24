@@ -956,7 +956,7 @@ function Stuffing:Layout(isBank)
 				local bag
 				if isBank then bag = v else bag = v + 1 end
 
-				for ind, val in ipairs(btns) do
+				for _, val in ipairs(btns) do
 					if val.bag == bag then
 						val.frame:SetAlpha(1)
 					else

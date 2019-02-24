@@ -275,7 +275,7 @@ for i, slot in pairs(InventorySlots) do
 			GuidCache[guid].timestamp = GetTime()
 
 			wipe(GuidCache[guid].legos)
-			for slot, link in pairs(ItemCache) do
+			for _, link in pairs(ItemCache) do
 				if IsLegendary(link) then
 					tinsert(GuidCache[guid].legos, link)
 				end

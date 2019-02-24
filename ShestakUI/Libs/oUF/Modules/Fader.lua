@@ -40,28 +40,28 @@ end})
 -- Conditions
 local conditions = setmetatable({
 	PlayerHostileTarget = function() return UnitCanAttack("player", "target") end,
-	UnitHostileTarget = function(obj, unit) return unit and UnitCanAttack(unit, unit.."target") end,
+	UnitHostileTarget = function(_, unit) return unit and UnitCanAttack(unit, unit.."target") end,
 	PlayerTarget = function() return UnitExists("target") end,
-	UnitTarget = function(obj, unit) return unit and UnitExists(unit.."target") end,
+	UnitTarget = function(_, unit) return unit and UnitExists(unit.."target") end,
 	PlayerTaxi = function() return UnitOnTaxi("player") end,
-	UnitTaxi = function(obj, unit) return unit and UnitOnTaxi(unit) end,
-	UnitMaxHealth = function(obj, unit) return unit and not UnitIsDeadOrGhost(unit) and UnitHealth(unit) == UnitHealthMax(unit) end,
+	UnitTaxi = function(_, unit) return unit and UnitOnTaxi(unit) end,
+	UnitMaxHealth = function(_, unit) return unit and not UnitIsDeadOrGhost(unit) and UnitHealth(unit) == UnitHealthMax(unit) end,
 	PlayerMaxHealth = function() return unit and not UnitIsDeadOrGhost("player") and UnitHealth("player") == UnitHealthMax("player") end,
-	UnitMaxMana = function(obj, unit) return unit and not UnitIsDeadOrGhost(unit) and UnitPower(unit) == UnitPowerMax(unit) end,
+	UnitMaxMana = function(_, unit) return unit and not UnitIsDeadOrGhost(unit) and UnitPower(unit) == UnitPowerMax(unit) end,
 	PlayerMaxMana = function() return unit and not UnitIsDeadOrGhost("player") and UnitPower("player") == UnitPowerMax("player") end,
 	Stealth = IsStealthed,
 	Flying = IsFlying,
 	Resting = IsResting,
 	Combat = InCombatLockdown,
-	PlayerNotMaxHealth = function(obj, unit) return unit and UnitHealth("player") ~= UnitHealthMax("player") end,
-	PlayerNotMaxMana = function(obj, unit)
+	PlayerNotMaxHealth = function(_, unit) return unit and UnitHealth("player") ~= UnitHealthMax("player") end,
+	PlayerNotMaxMana = function(_, unit)
 		local _, powerTypeString = UnitPowerType("player")
 		if powerTypeString ~= "RAGE" and powerTypeString ~= "RUNIC_POWER" then
 			return unit and UnitPower("player") ~= UnitPowerMax("player")
 		end
 	end,
-	Arena = function(obj, unit) return unit and GetZonePVPInfo() == "arena" end,
-	Instance = function(obj, unit) return unit and IsInInstance() == true end,
+	Arena = function(_, unit) return unit and GetZonePVPInfo() == "arena" end,
+	Instance = function(_, unit) return unit and IsInInstance() == true end,
 }, {__index = function(t, k)
 	local cond = strmatch(k, "not(.+)")
 	assert(rawget(t, cond), format("Missing condition %s", k))
@@ -83,7 +83,7 @@ end
 -- Update the Alpha or obj
 local function UpdateAlpha(obj)
 	local alpha
-	for priority, tbl in ipairs(obj.Fader) do
+	for _, tbl in ipairs(obj.Fader) do
 		for cond, condalpha in pairs(tbl) do
 			if conditions[cond](obj, obj.unit) then
 				alpha = not alpha and condalpha or condalpha > alpha and condalpha or alpha
@@ -110,7 +110,7 @@ local function OnUpdate(addon, el) -- I do this because it's easier than passing
 	t = t + el
 	if t > 0.1 then
 		t = 0
-		for i, v in ipairs(objects) do
+		for _, v in ipairs(objects) do
 			UpdateAlpha(v)
 		end
 		addon:Hide()

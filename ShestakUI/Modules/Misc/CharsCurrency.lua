@@ -17,7 +17,7 @@ local function UpdateData()
 	end
 	local i, limit = 1, GetCurrencyListSize()
 	while i <= limit do
-		local name, isHeader, isExpanded, isUnused, isWatched, count, icon = GetCurrencyListInfo(i)
+		local name, isHeader, isExpanded, _, _, count, icon = GetCurrencyListInfo(i)
 		if isHeader then
 			if not isExpanded then
 				collapsed[name] = true
@@ -37,7 +37,7 @@ local function UpdateData()
 		i = i + 1
 	end
 	while i > 0 do
-		local name, isHeader, isExpanded, isUnused, isWatched, count, icon = GetCurrencyListInfo(i)
+		local name, isHeader, isExpanded = GetCurrencyListInfo(i)
 		if isHeader and isExpanded and collapsed[name] then
 			ExpandCurrencyList(i, 0)
 		end
@@ -165,7 +165,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		if not SavedCurrency[T.realm][faction] then SavedCurrency[T.realm][faction] = {} end
 		if not SavedCurrency[T.realm][faction][T.name] then SavedCurrency[T.realm][faction][T.name] = {} end
 
-		for k, v in pairs(SavedCurrency[T.realm]) do
+		for k in pairs(SavedCurrency[T.realm]) do
 			if k ~= "Alliance" and k ~= "Horde" then
 				SavedCurrency[T.realm][k] = nil
 			end

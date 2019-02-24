@@ -43,7 +43,7 @@ do
 	end
 end
 
-local function resetIcon(icon, frame, count, duration, remaining)
+local function resetIcon(icon, count, duration, remaining)
 	icon:Show()
 	if icon.cd then
 		if duration and duration > 0 then
@@ -62,7 +62,7 @@ local function resetIcon(icon, frame, count, duration, remaining)
 	icon:SetAlpha(1)
 end
 
-local function expireIcon(icon, frame)
+local function expireIcon(icon)
 	if icon.cd then icon.cd:Hide() end
 	if icon.count then icon.count:SetText() end
 	icon:SetAlpha(0)
@@ -83,7 +83,7 @@ local function Update(frame, event, unit)
 	if not guid then return end
 	if not GUIDs[guid] then setupGUID(guid) end
 
-	for key, icon in pairs(icons) do
+	for _, icon in pairs(icons) do
 		icon:Hide()
 	end
 
@@ -104,7 +104,7 @@ local function Update(frame, event, unit)
 			end
 			icon = icons[key]
 			if icon and not T.RaidBuffsIgnore[spellID] and (icon.anyUnit or (caster and icon.fromUnits and icon.fromUnits[caster])) then
-				resetIcon(icon, watch, count, duration, remaining)
+				resetIcon(icon, count, duration, remaining)
 				GUIDs[guid][key] = true
 				found[key] = true
 			end
@@ -114,7 +114,7 @@ local function Update(frame, event, unit)
 
 	for key in pairs(GUIDs[guid]) do
 		if icons[key] and not found[key] then
-			expireIcon(icons[key], watch)
+			expireIcon(icons[key])
 		end
 	end
 
