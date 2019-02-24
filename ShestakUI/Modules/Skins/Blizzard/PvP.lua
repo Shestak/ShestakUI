@@ -145,29 +145,29 @@ local function LoadSkin()
 		T.SkinCheckBox(button)
 	end
 
-	for _, frame in pairs({HonorFrame, ConquestFrame}) do
-		frame.ConquestBar:StripTextures()
-		frame.ConquestBar:CreateBackdrop("Overlay")
-		frame.ConquestBar:SetStatusBarTexture(C.media.texture)
-		frame.ConquestBar:SetFrameLevel(frame.ConquestBar:GetFrameLevel() + 2)
+	for _, bar in pairs({HonorFrame.ConquestBar, ConquestFrame.ConquestBar}) do
+		bar:StripTextures()
+		bar:CreateBackdrop("Overlay")
+		bar:SetStatusBarTexture(C.media.texture)
+		bar:SetFrameLevel(bar:GetFrameLevel() + 2)
 
-		frame.ConquestBar.Reward:ClearAllPoints()
-		frame.ConquestBar.Reward:SetPoint("LEFT", frame.ConquestBar, "RIGHT", -1, 0)
+		bar.Reward:ClearAllPoints()
+		bar.Reward:SetPoint("LEFT", bar, "RIGHT", -1, 0)
 
-		frame.ConquestBar.Reward.Ring:Hide()
-		frame.ConquestBar.Reward.CircleMask:Hide()
+		bar.Reward.Ring:Hide()
+		bar.Reward.CircleMask:Hide()
 
-		frame.ConquestBar.Reward:StripTextures()
-		frame.ConquestBar.Reward.Icon:SkinIcon()
-		frame.ConquestBar.Reward.Icon:SetSize(20, 20)
+		bar.Reward:StripTextures()
+		bar.Reward.Icon:SkinIcon()
+		bar.Reward.Icon:SetSize(20, 20)
 
 		local faction = UnitFactionGroup("player") == "Horde" and [[Interface\Icons\UI_Horde_HonorboundMedal]] or [[Interface\Icons\UI_Alliance_7LegionMedal]]
-		hooksecurefunc(frame.ConquestBar.Reward, "SetTexture", function(self, texture)
+		hooksecurefunc(bar.Reward, "SetTexture", function(self, texture)
 			if not texture then
 				self.Icon:SetTexture(faction)
 			end
 		end)
-		frame.ConquestBar:SetStatusBarColor(unpack(UnitFactionGroup("player") == "Horde" and {0.8, 0.2, 0.2} or {0.2, 0.2, 0.7}))
+		bar:SetStatusBarColor(unpack(UnitFactionGroup("player") == "Horde" and {0.8, 0.2, 0.2} or {0.2, 0.2, 0.8}))
 	end
 
 	-- ConquestFrame
