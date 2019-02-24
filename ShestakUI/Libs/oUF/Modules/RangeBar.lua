@@ -4,7 +4,7 @@ if C.unitframe.enable ~= true or C.unitframe_class_bar.range ~= true or T.class 
 ----------------------------------------------------------------------------------------
 --	RangeBar for Priest(by m2jest1c)
 ----------------------------------------------------------------------------------------
-local parent, ns = ...
+local _, ns = ...
 local oUF = ns.oUF
 
 local Items = {
