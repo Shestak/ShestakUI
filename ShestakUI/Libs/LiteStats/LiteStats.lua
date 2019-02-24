@@ -1466,8 +1466,8 @@ if talents.enabled then
 			local lootSpec = GetLootSpecialization()
 			local spec = GetSpecialization()
 
-			lootSpecName = lootSpec and select(2, GetSpecializationInfoByID(lootSpec))
-			specName = spec and select(2, GetSpecializationInfo(spec))
+			lootSpecName = lootSpec and select(2, GetSpecializationInfoByID(lootSpec)) or NO
+			specName = spec and select(2, GetSpecializationInfo(spec)) or NO
 
 			local specIcon, lootIcon = "", ""
 			local lootText = LOOT
