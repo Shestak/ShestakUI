@@ -51,45 +51,17 @@ local function LoadSkin()
 		end
 	end)
 
-	PVPQueueFrame.HonorInset:StripTextures()
-
-	local SeasonRewardFrame = PVPQueueFrame.HonorInset.RatedPanel.SeasonRewardFrame
-	SeasonRewardFrame.Ring:Hide()
-	SeasonRewardFrame.CircleMask:Hide()
-	SeasonRewardFrame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	SeasonRewardFrame.border = CreateFrame("Frame", nil, SeasonRewardFrame)
-	SeasonRewardFrame.border:CreateBackdrop("Default")
-	SeasonRewardFrame.border.backdrop:SetPoint("TOPLEFT", SeasonRewardFrame.Icon, -2, 2)
-	SeasonRewardFrame.border.backdrop:SetPoint("BOTTOMRIGHT", SeasonRewardFrame.Icon, 2, -2)
-
 	-- HonorFrame
 	HonorFrame.Inset:StripTextures()
+	HonorFrame.BonusFrame:StripTextures()
+	HonorFrame.BonusFrame.ShadowOverlay:StripTextures()
+
 	T.SkinDropDownBox(HonorFrameTypeDropDown, 165)
 	HonorFrameTypeDropDown:SetPoint("BOTTOMRIGHT", HonorFrame.Inset, "TOPRIGHT", -6, -1)
 	T.SkinScrollBar(HonorFrameSpecificFrameScrollBar)
 	HonorFrameSpecificFrameScrollBar:SetPoint("TOPLEFT", HonorFrameSpecificFrame, "TOPRIGHT", 0, -15)
 	HonorFrameSpecificFrameScrollBar:SetPoint("BOTTOMLEFT", HonorFrameSpecificFrame, "BOTTOMRIGHT", 0, 15)
 	HonorFrameQueueButton:SkinButton(true)
-	HonorFrame.BonusFrame:StripTextures()
-	HonorFrame.BonusFrame.ShadowOverlay:StripTextures()
-
-	HonorFrame.ConquestBar:StripTextures()
-	HonorFrame.ConquestBar:CreateBackdrop("Default")
-	HonorFrame.ConquestBar:SetStatusBarTexture(C.media.texture)
-	HonorFrame.ConquestBar:SetFrameLevel(HonorFrame.ConquestBar:GetFrameLevel() + 2)
-
-	HonorFrame.ConquestBar.Reward:ClearAllPoints()
-	HonorFrame.ConquestBar.Reward:SetPoint("LEFT", HonorFrame.ConquestBar, "RIGHT", -1, 0)
-
-	HonorFrame.ConquestBar.Reward:StripTextures()
-	HonorFrame.ConquestBar.Reward:CreateBackdrop("Default")
-	HonorFrame.ConquestBar.Reward.backdrop:SetPoint("TOPLEFT", HonorFrame.ConquestBar.Reward.Icon, -2, 2)
-	HonorFrame.ConquestBar.Reward.backdrop:SetPoint("BOTTOMRIGHT", HonorFrame.ConquestBar.Reward.Icon, 2, -2)
-
-	HonorFrame.ConquestBar.Reward.Ring:Hide()
-	HonorFrame.ConquestBar.Reward.CircleMask:Hide()
-	HonorFrame.ConquestBar.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	HonorFrame.ConquestBar.Reward.Icon:SetSize(20, 20)
 
 	PremadeGroupsPvPTutorialAlert:StripTextures()
 	PremadeGroupsPvPTutorialAlert:SetTemplate("Transparent")
@@ -97,6 +69,14 @@ local function LoadSkin()
 	T.SkinCloseButton(PremadeGroupsPvPTutorialAlert.CloseButton)
 
 	T.SkinHelpBox(HonorFrame.BonusFrame.BrawlHelpBox)
+
+	PVPQueueFrame.HonorInset:StripTextures()
+	PVPQueueFrame.HonorInset.RatedPanel.Label:SetWidth(160)
+
+	local RewardFrameSeason = PVPQueueFrame.HonorInset.RatedPanel.SeasonRewardFrame
+	RewardFrameSeason.Ring:Hide()
+	RewardFrameSeason.CircleMask:Hide()
+	RewardFrameSeason.Icon:SkinIcon()
 
 	for _, i in pairs({"RandomBGButton", "RandomEpicBGButton", "Arena1Button", "BrawlButton"}) do
 		local button = HonorFrame.BonusFrame[i]
@@ -165,28 +145,35 @@ local function LoadSkin()
 		T.SkinCheckBox(button)
 	end
 
+	for _, frame in pairs({HonorFrame, ConquestFrame}) do
+		frame.ConquestBar:StripTextures()
+		frame.ConquestBar:CreateBackdrop("Overlay")
+		frame.ConquestBar:SetStatusBarTexture(C.media.texture)
+		frame.ConquestBar:SetFrameLevel(frame.ConquestBar:GetFrameLevel() + 2)
+
+		frame.ConquestBar.Reward:ClearAllPoints()
+		frame.ConquestBar.Reward:SetPoint("LEFT", frame.ConquestBar, "RIGHT", -1, 0)
+
+		frame.ConquestBar.Reward.Ring:Hide()
+		frame.ConquestBar.Reward.CircleMask:Hide()
+
+		frame.ConquestBar.Reward:StripTextures()
+		frame.ConquestBar.Reward.Icon:SkinIcon()
+		frame.ConquestBar.Reward.Icon:SetSize(20, 20)
+
+		local faction = UnitFactionGroup("player") == "Horde" and [[Interface\Icons\UI_Horde_HonorboundMedal]] or [[Interface\Icons\UI_Alliance_7LegionMedal]]
+		hooksecurefunc(frame.ConquestBar.Reward, "SetTexture", function(self, texture)
+			if not texture then
+				self.Icon:SetTexture(faction)
+			end
+		end)
+		frame.ConquestBar:SetStatusBarColor(unpack(UnitFactionGroup("player") == "Horde" and {0.8, 0.2, 0.2} or {0.2, 0.2, 0.7}))
+	end
+
 	-- ConquestFrame
 	ConquestFrame:StripTextures()
 	ConquestFrame.Inset:StripTextures()
 	ConquestFrame.ShadowOverlay:StripTextures()
-
-	ConquestFrame.ConquestBar:StripTextures()
-	ConquestFrame.ConquestBar:CreateBackdrop("Default")
-	ConquestFrame.ConquestBar:SetStatusBarTexture(C.media.texture)
-	ConquestFrame.ConquestBar:SetFrameLevel(ConquestFrame.ConquestBar:GetFrameLevel() + 2)
-
-	ConquestFrame.ConquestBar.Reward:ClearAllPoints()
-	ConquestFrame.ConquestBar.Reward:SetPoint("LEFT", ConquestFrame.ConquestBar, "RIGHT", -1, 0)
-
-	ConquestFrame.ConquestBar.Reward:StripTextures()
-	ConquestFrame.ConquestBar.Reward:CreateBackdrop("Default")
-	ConquestFrame.ConquestBar.Reward.backdrop:SetPoint("TOPLEFT", ConquestFrame.ConquestBar.Reward.Icon, -2, 2)
-	ConquestFrame.ConquestBar.Reward.backdrop:SetPoint("BOTTOMRIGHT", ConquestFrame.ConquestBar.Reward.Icon, 2, -2)
-
-	ConquestFrame.ConquestBar.Reward.Ring:Hide()
-	ConquestFrame.ConquestBar.Reward.CircleMask:Hide()
-	ConquestFrame.ConquestBar.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	ConquestFrame.ConquestBar.Reward.Icon:SetSize(20, 20)
 
 	for _, button in pairs({ConquestFrame.Arena2v2, ConquestFrame.Arena3v3, ConquestFrame.RatedBG}) do
 		button:StripTextures()
@@ -213,6 +200,28 @@ local function LoadSkin()
 	ConquestFrame.Arena3v3:SetPoint("TOP", ConquestFrame.Arena2v2, "BOTTOM", 0, -3)
 
 	ConquestJoinButton:SkinButton(true)
+
+	local NewSeasonPopup = PVPQueueFrame.NewSeasonPopup
+	NewSeasonPopup:StripTextures()
+	NewSeasonPopup:CreateBackdrop("Overlay")
+	NewSeasonPopup.backdrop:SetPoint("TOPLEFT", 10, -10)
+	NewSeasonPopup.backdrop:SetPoint("BOTTOMRIGHT", -10, 10)
+	NewSeasonPopup:SetFrameLevel(5)
+	NewSeasonPopup.NewSeason:SetTextColor(1, 0.8, 0)
+	NewSeasonPopup.NewSeason:SetShadowOffset(1, -1)
+	NewSeasonPopup.SeasonDescription:SetTextColor(1, 1, 1)
+	NewSeasonPopup.SeasonDescription:SetShadowOffset(1, -1)
+	NewSeasonPopup.SeasonDescription2:SetTextColor(1, 1, 1)
+	NewSeasonPopup.SeasonDescription2:SetShadowOffset(1, -1)
+
+	local RewardFrame = SeasonRewardFrame
+	RewardFrame.Ring:Hide()
+	RewardFrame.CircleMask:Hide()
+	RewardFrame.Icon:SkinIcon()
+	select(3, RewardFrame:GetRegions()):SetTextColor(1, 1, 1)
+	select(3, RewardFrame:GetRegions()):SetShadowOffset(1, -1)
+
+	NewSeasonPopup.Leave:SkinButton()
 end
 
 T.SkinFuncs["Blizzard_PVPUI"] = LoadSkin
