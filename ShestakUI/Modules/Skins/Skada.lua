@@ -6,7 +6,7 @@ if C.skins.skada ~= true then return end
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
-frame:SetScript("OnEvent", function(self, event)
+frame:SetScript("OnEvent", function()
 	if not IsAddOnLoaded("Skada") then return end
 
 	local barmod = Skada.displays["bar"]
@@ -31,7 +31,7 @@ frame:SetScript("OnEvent", function(self, event)
 		StripOptions(options)
 	end
 
-	for k, options in pairs(Skada.options.args.windows.args) do
+	for _, options in pairs(Skada.options.args.windows.args) do
 		if options.type == "group" then
 			StripOptions(options.args)
 		end
@@ -75,7 +75,7 @@ frame:SetScript("OnEvent", function(self, event)
 
 	hooksecurefunc(Skada, "UpdateDisplay", function(self)
 		for _, win in ipairs(self:GetWindows()) do
-			for i, v in pairs(win.bargroup:GetBars()) do
+			for _, v in pairs(win.bargroup:GetBars()) do
 				if not v.BarStyled then
 					if not v.backdrop then
 						v:CreateBackdrop("Transparent")
