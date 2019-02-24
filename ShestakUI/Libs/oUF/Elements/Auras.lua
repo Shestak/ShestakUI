@@ -53,8 +53,8 @@ local function createAuraIcon(icons, index)
 	button.stealable = stealable
 
 	button.UpdateTooltip = UpdateTooltip
-	button:SetScript("OnEnter", OnEnter)
-	button:SetScript("OnLeave", OnLeave)
+	button:SetScript("OnEnter", onEnter)
+	button:SetScript("OnLeave", onLeave)
 
 	table.insert(icons, button)
 
