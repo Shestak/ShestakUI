@@ -91,29 +91,6 @@ local function LoadSkin()
 	HonorFrame.ConquestBar.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	HonorFrame.ConquestBar.Reward.Icon:SetSize(20, 20)
 
-	for _, button in pairs({HonorFrame.BonusFrame.RandomBGButton, HonorFrame.BonusFrame.RandomEpicBGButton, HonorFrame.BonusFrame.Arena1Button, HonorFrame.BonusFrame.BrawlButton}) do
-		button.Reward:StripTextures()
-		button.Reward:SetTemplate("Default")
-		button.Reward:SetSize(40, 40)
-		button.Reward:SetPoint("RIGHT", button, "RIGHT", -8, 0)
-
-		button.Reward.Icon:SetAllPoints()
-		button.Reward.Icon:SetPoint("TOPLEFT", 2, -2)
-		button.Reward.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
-		button.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
-		button.Reward.EnlistmentBonus:StripTextures()
-		button.Reward.EnlistmentBonus:SetTemplate("Default")
-		button.Reward.EnlistmentBonus:SetSize(20, 20)
-		button.Reward.EnlistmentBonus:SetPoint("TOPRIGHT", 2, 2)
-
-		local EnlistmentBonusIcon = button.Reward.EnlistmentBonus:CreateTexture(nil, nil, self)
-		EnlistmentBonusIcon:SetPoint("TOPLEFT", button.Reward.EnlistmentBonus, "TOPLEFT", 2, -2)
-		EnlistmentBonusIcon:SetPoint("BOTTOMRIGHT", button.Reward.EnlistmentBonus, "BOTTOMRIGHT", -2, 2)
-		EnlistmentBonusIcon:SetTexture("Interface\\Icons\\achievement_guildperk_honorablemention_rank2")
-		EnlistmentBonusIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	end
-
 	PremadeGroupsPvPTutorialAlert:StripTextures()
 	PremadeGroupsPvPTutorialAlert:SetTemplate("Transparent")
 	PremadeGroupsPvPTutorialAlert.Arrow:Hide()
@@ -132,6 +109,28 @@ local function LoadSkin()
 		button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
 		button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 		button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
+
+		local reward = button.Reward
+		reward:StripTextures()
+		reward:SetTemplate("Default")
+		reward:SetSize(40, 40)
+		reward:SetPoint("RIGHT", button, "RIGHT", -8, 0)
+
+		reward.Icon:SetAllPoints()
+		reward.Icon:SetPoint("TOPLEFT", 2, -2)
+		reward.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
+		reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+		reward.EnlistmentBonus:StripTextures()
+		reward.EnlistmentBonus:SetTemplate("Default")
+		reward.EnlistmentBonus:SetSize(20, 20)
+		reward.EnlistmentBonus:SetPoint("TOPRIGHT", 2, 2)
+
+		local EnlistmentBonusIcon = reward.EnlistmentBonus:CreateTexture(nil, nil, self)
+		EnlistmentBonusIcon:SetPoint("TOPLEFT", reward.EnlistmentBonus, "TOPLEFT", 2, -2)
+		EnlistmentBonusIcon:SetPoint("BOTTOMRIGHT", reward.EnlistmentBonus, "BOTTOMRIGHT", -2, 2)
+		EnlistmentBonusIcon:SetTexture("Interface\\Icons\\achievement_guildperk_honorablemention_rank2")
+		EnlistmentBonusIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 
 	for i = 1, #HonorFrame.SpecificFrame.buttons do
@@ -151,9 +150,19 @@ local function LoadSkin()
 		end
 	end
 
-	for _, button in pairs{HonorFrame.TankIcon, HonorFrame.HealerIcon, HonorFrame.DPSIcon} do
-		button.checkButton:SetSize(22, 22)
-		T.SkinCheckBox(button.checkButton)
+	local checkButtons = {
+		HonorFrame.TankIcon,
+		HonorFrame.HealerIcon,
+		HonorFrame.DPSIcon,
+		ConquestFrame.TankIcon,
+		ConquestFrame.HealerIcon,
+		ConquestFrame.DPSIcon
+	}
+
+	for i = 1, #checkButtons do
+		local button = checkButtons[i].checkButton
+		button:SetSize(22, 22)
+		T.SkinCheckBox(button)
 	end
 
 	-- ConquestFrame
@@ -178,10 +187,6 @@ local function LoadSkin()
 	ConquestFrame.ConquestBar.Reward.CircleMask:Hide()
 	ConquestFrame.ConquestBar.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	ConquestFrame.ConquestBar.Reward.Icon:SetSize(20, 20)
-
-	for _, button in pairs{ConquestFrame.TankIcon, ConquestFrame.HealerIcon, ConquestFrame.DPSIcon} do
-		T.SkinCheckBox(button.checkButton)
-	end
 
 	for _, button in pairs({ConquestFrame.Arena2v2, ConquestFrame.Arena3v3, ConquestFrame.RatedBG}) do
 		button:StripTextures()
