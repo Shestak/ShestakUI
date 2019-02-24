@@ -1433,50 +1433,50 @@ T.PostCreateIcon = function(element, button)
 	end
 end
 
-T.PostUpdateIcon = function(_, unit, icon, _, _, duration, expiration, debuffType, isStealable)
+T.PostUpdateIcon = function(_, unit, button, _, _, duration, expiration, debuffType, isStealable)
 	local playerUnits = {
 		player = true,
 		pet = true,
 		vehicle = true,
 	}
 
-	if icon.debuff then
-		if not UnitIsFriend("player", unit) and not playerUnits[icon.owner] then
+	if button.isDebuff then
+		if not UnitIsFriend("player", unit) and not playerUnits[button.caster] then
 			if C.aura.player_aura_only then
-				icon:Hide()
+				button:Hide()
 			else
-				icon:SetBackdropBorderColor(unpack(C.media.border_color))
-				icon.icon:SetDesaturated(true)
+				button:SetBackdropBorderColor(unpack(C.media.border_color))
+				button.icon:SetDesaturated(true)
 			end
 		else
 			if C.aura.debuff_color_type == true then
 				local color = DebuffTypeColor[debuffType] or DebuffTypeColor.none
-				icon:SetBackdropBorderColor(color.r, color.g, color.b)
-				icon.icon:SetDesaturated(false)
+				button:SetBackdropBorderColor(color.r, color.g, color.b)
+				button.icon:SetDesaturated(false)
 			else
-				icon:SetBackdropBorderColor(1, 0, 0)
+				button:SetBackdropBorderColor(1, 0, 0)
 			end
 		end
 	else
 		if (isStealable or ((T.class == "MAGE" or T.class == "PRIEST" or T.class == "SHAMAN" or T.class == "HUNTER") and debuffType == "Magic")) and not UnitIsFriend("player", unit) then
-			icon:SetBackdropBorderColor(1, 0.85, 0)
+			button:SetBackdropBorderColor(1, 0.85, 0)
 		else
-			icon:SetBackdropBorderColor(unpack(C.media.border_color))
+			button:SetBackdropBorderColor(unpack(C.media.border_color))
 		end
-		icon.icon:SetDesaturated(false)
+		button.icon:SetDesaturated(false)
 	end
 
 	if duration and duration > 0 and C.aura.show_timer == true then
-		icon.remaining:Show()
-		icon.timeLeft = expiration
-		icon:SetScript("OnUpdate", CreateAuraTimer)
+		button.remaining:Show()
+		button.timeLeft = expiration
+		button:SetScript("OnUpdate", CreateAuraTimer)
 	else
-		icon.remaining:Hide()
-		icon.timeLeft = math.huge
-		icon:SetScript("OnUpdate", nil)
+		button.remaining:Hide()
+		button.timeLeft = math.huge
+		button:SetScript("OnUpdate", nil)
 	end
 
-	icon.first = true
+	button.first = true
 end
 
 T.UpdateThreat = function(self, event, unit)

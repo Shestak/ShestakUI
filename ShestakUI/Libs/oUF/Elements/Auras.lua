@@ -1,25 +1,27 @@
-local parent, ns = ...
+-- ShestakUI use old version of Auras. Do not update if you are not sure what you are doing.
+
+local _, ns = ...
 local oUF = ns.oUF
 
 local VISIBLE = 1
 local HIDDEN = 0
 
-local UpdateTooltip = function(self)
+local function UpdateTooltip(self)
 	GameTooltip:SetUnitAura(self:GetParent().__owner.unit, self:GetID(), self.filter)
 end
 
-local OnEnter = function(self)
+local function onEnter(self)
 	if(not self:IsVisible()) then return end
 
 	GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT")
 	self:UpdateTooltip()
 end
 
-local OnLeave = function()
+local function onLeave()
 	GameTooltip:Hide()
 end
 
-local createAuraIcon = function(icons, index)
+local function createAuraIcon(icons, index)
 	local button = CreateFrame("Button", icons:GetDebugName().."Button"..index, icons)
 	button:EnableMouse(true)
 	button:RegisterForClicks'RightButtonUp'
@@ -34,21 +36,20 @@ local createAuraIcon = function(icons, index)
 	local icon = button:CreateTexture(nil, "BORDER")
 	icon:SetAllPoints(button)
 
-	local count = button:CreateFontString(nil, "OVERLAY")
-	count:SetFontObject(NumberFontNormal)
+	local count = button:CreateFontString(nil, "OVERLAY", 'NumberFontNormal')
 	count:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -1, 0)
 
 	local overlay = button:CreateTexture(nil, "OVERLAY")
-	overlay:SetTexture"Interface\\Buttons\\UI-Debuff-Overlays"
+	overlay:SetTexture([[Interface\Buttons\UI-Debuff-Overlays]])
 	overlay:SetAllPoints(button)
 	overlay:SetTexCoord(.296875, .5703125, 0, .515625)
 	button.overlay = overlay
 
 	local stealable = button:CreateTexture(nil, 'OVERLAY')
-	stealable:SetTexture[[Interface\TargetingFrame\UI-TargetingFrame-Stealable]]
+	stealable:SetTexture([[Interface\TargetingFrame\UI-TargetingFrame-Stealable]])
 	stealable:SetPoint('TOPLEFT', -3, 3)
 	stealable:SetPoint('BOTTOMRIGHT', 3, -3)
-	stealable:SetBlendMode'ADD'
+	stealable:SetBlendMode('ADD')
 	button.stealable = stealable
 
 	button.UpdateTooltip = UpdateTooltip
@@ -66,21 +67,13 @@ local createAuraIcon = function(icons, index)
 	return button
 end
 
-local customFilter = function(icons, unit, icon, name, texture, count, dtype, duration, timeLeft, caster)
-	local isPlayer
-
-	if(caster == 'player' or caster == 'vehicle') then
-		isPlayer = true
-	end
-
-	if((icons.onlyShowPlayer and isPlayer) or (not icons.onlyShowPlayer and name)) then
-		icon.isPlayer = isPlayer
-		icon.owner = caster
+local function customFilter(element, unit, button, name)
+	if((element.onlyShowPlayer and button.isPlayer) or (not element.onlyShowPlayer and name)) then
 		return true
 	end
 end
 
-local updateIcon = function(unit, icons, index, offset, filter, isDebuff, visible)
+local function updateIcon(unit, icons, index, offset, filter, isDebuff, visible)
 	local name, texture, count, debuffType, duration, expiration, caster, isStealable,
 		nameplateShowSelf, spellID, canApply, isBossDebuff, casterIsPlayer, nameplateShowAll,
 		timeMod, effect1, effect2, effect3 = UnitAura(unit, index, filter)
@@ -130,8 +123,10 @@ local updateIcon = function(unit, icons, index, offset, filter, isDebuff, visibl
 			icon.icon:SetTexture(texture)
 			icon.count:SetText((count > 1 and count))
 
+			icon.caster = caster
 			icon.filter = filter
-			icon.debuff = isDebuff
+			icon.isDebuff = isDebuff
+			icon.isPlayer = caster == 'player' or caster == 'vehicle'
 
 			icon:SetID(index)
 			icon:Show()
@@ -147,7 +142,7 @@ local updateIcon = function(unit, icons, index, offset, filter, isDebuff, visibl
 	end
 end
 
-local SetPosition = function(icons, x)
+local function SetPosition(icons, x)
 	if(icons and x > 0) then
 		local col = 0
 		local row = 0
@@ -163,7 +158,7 @@ local SetPosition = function(icons, x)
 		for i = 1, #icons do
 			local button = icons[i]
 			if(button and button:IsShown()) then
-				if(gap and button.debuff) then
+				if(gap and button.isDebuff) then
 					if(col > 0) then
 						col = col + 1
 					end
@@ -186,7 +181,7 @@ local SetPosition = function(icons, x)
 	end
 end
 
-local filterIcons = function(unit, icons, filter, limit, isDebuff, offset, dontHide)
+local function filterIcons(unit, icons, filter, limit, isDebuff, offset, dontHide)
 	if(not offset) then offset = 0 end
 	local index = 1
 	local visible = 0
@@ -213,7 +208,7 @@ local filterIcons = function(unit, icons, filter, limit, isDebuff, offset, dontH
 	return visible, hidden
 end
 
-local Update = function(self, event, unit)
+local function Update(self, event, unit)
 	if(self.unit ~= unit) then return end
 
 	local auras = self.Auras
@@ -294,11 +289,11 @@ local Update = function(self, event, unit)
 	end
 end
 
-local ForceUpdate = function(element)
+local function ForceUpdate(element)
 	return Update(element.__owner, 'ForceUpdate', element.__owner.unit)
 end
 
-local Enable = function(self)
+local function Enable(self)
 	if(self.Buffs or self.Debuffs or self.Auras) then
 		self:RegisterEvent("UNIT_AURA", Update)
 
@@ -333,10 +328,10 @@ local Enable = function(self)
 	end
 end
 
-local Disable = function(self)
+local function Disable(self)
 	if(self.Buffs or self.Debuffs or self.Auras) then
 		self:UnregisterEvent("UNIT_AURA", Update)
 	end
 end
 
-oUF:AddElement('Aura', Update, Enable, Disable)
+oUF:AddElement('Auras', Update, Enable, Disable)
