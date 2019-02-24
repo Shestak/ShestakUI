@@ -2,7 +2,7 @@ if GetLocale() ~= "frFR" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for frFR client
---	Translation: Cranan, Puree
+--	Translation: Cranan, Puree, AlbertDuval
 ----------------------------------------------------------------------------------------
 L_GUI_BUTTON_RESET = "Réinitialisation totale de l'UI"
 L_GUI_SET_SAVED_SETTTINGS = "Sauvegarder la configuration par personnage"
