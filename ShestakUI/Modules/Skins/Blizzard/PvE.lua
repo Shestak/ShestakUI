@@ -89,14 +89,6 @@ local function LoadSkin()
 	T.SkinCheckBox(LFGListApplicationDialog.HealerButton.CheckButton)
 	T.SkinCheckBox(LFGListApplicationDialog.DamagerButton.CheckButton)
 
-	--BETA LFDQueueFrameRoleButtonTank:DisableDrawLayer("ARTWORK")
-	LFDQueueFrameRoleButtonTank.cover:Kill()
-	-- LFDQueueFrameRoleButtonTank:DisableDrawLayer("OVERLAY")
-	-- LFDQueueFrameRoleButtonHealer:DisableDrawLayer("ARTWORK")
-	-- LFDQueueFrameRoleButtonHealer:DisableDrawLayer("OVERLAY")
-	-- LFDQueueFrameRoleButtonDPS:DisableDrawLayer("ARTWORK")
-	-- LFDQueueFrameRoleButtonDPS:DisableDrawLayer("OVERLAY")
-
 	local scrollbars = {
 		"ScenarioQueueFrameSpecificScrollFrameScrollBar",
 		"LFGListApplicationViewerScrollFrameScrollBar",
