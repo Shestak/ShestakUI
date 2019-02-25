@@ -122,15 +122,6 @@ skin.panels = {
 		end
 	end,
 
-	LoadedTeamPanel = function(self)
-		self:StripTextures()
-		self:SetTemplate("Transparent")
-		self.Footnotes:StripTextures()
-		self.Footnotes:SetTemplate("Transparent")
-		T.SkinCloseButton(self.Footnotes.Close)
-		T.SkinCloseButton(self.Footnotes.Maximize,nil,"-")
-	end,
-
 	PetPanel = function(self)
 		skin:HandleAutoScrollFrame(self.List)
 		-- top
