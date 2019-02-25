@@ -8,7 +8,6 @@ if not LibStub then return end
 local clcprot = LibStub("AceAddon-3.0"):GetAddon("clcprot")
 
 function clcprot:CreateButton(name, size, point, parent, pointParent, offsetx, offsety, bfGroup, isChecked)
-	local db = self.db.profile
 	clcprotFrame:SetScale(1)
 	clcprotFrame.SetScale = T.dummy
 

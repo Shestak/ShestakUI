@@ -8,7 +8,6 @@ if not LibStub then return end
 local clcret = LibStub("AceAddon-3.0"):GetAddon("clcret")
 
 function clcret:CreateButton(name, size, point, parent, pointParent, offsetx, offsety, bfGroup, isChecked)
-	local db = self.db.profile
 	clcretFrame:SetScale(1)
 	clcretFrame.SetScale = T.dummy
 

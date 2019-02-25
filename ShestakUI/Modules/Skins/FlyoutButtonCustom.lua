@@ -20,7 +20,6 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		local name = self:GetName()
 		local button = self
 		local icon = _G[btn:GetName().."Icon"]
-		local cooldown = _G[btn:GetName().."Cooldown"]
 		local border = _G[btn:GetName().."Border"]
 		local count = _G[btn:GetName().."Count"]
 		local btname = _G[btn:GetName().."Name"]

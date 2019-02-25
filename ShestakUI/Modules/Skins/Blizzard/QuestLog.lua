@@ -211,7 +211,7 @@ local function LoadSkin()
 			local questItem = QuestInfoRewardsFrame.RewardButtons[i]
 			if not questItem:IsShown() then break end
 
-			local point, relativeTo, relativePoint, x, y = questItem:GetPoint()
+			local point, relativeTo, relativePoint, _, y = questItem:GetPoint()
 			if point and relativeTo and relativePoint then
 				if i == 1 then
 					questItem:SetPoint(point, relativeTo, relativePoint, 0, y)
