@@ -492,7 +492,6 @@ if C["filger_spells"] and C["filger_spells"][T.class] then
 
 		for j = 1, #data, 1 do
 			local name
-			local id
 			if data[j].spellID then
 				name = GetSpellInfo(data[j].spellID)
 			else

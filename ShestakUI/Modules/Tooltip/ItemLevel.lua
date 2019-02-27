@@ -139,7 +139,7 @@ local function IsArtifact(itemLink)
 	return itemLink:find("|cffe6cc80") -- this is probably a horrible way to find whether it"s an artifact
 end
 
-local function IsLegendary(itemLink)
+local function IsLegendary()
 	return false
 end
 

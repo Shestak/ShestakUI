@@ -177,7 +177,7 @@ function T.StylePet()
 	end
 end
 
-local function UpdateHotkey(self, actionButtonType)
+local function UpdateHotkey(self)
 	local hotkey = _G[self:GetName().."HotKey"]
 	local text = hotkey:GetText()
 

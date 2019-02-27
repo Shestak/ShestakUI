@@ -138,7 +138,6 @@ end
 local function registerStyle()
 	if not BigWigs then return end
 	local bars = BigWigs:GetPlugin("Bars", true)
-	local prox = BigWigs:GetPlugin("Proximity", true)
 	if bars then
 		bars:RegisterBarStyle("ShestakUI", {
 			apiVersion = 1,
