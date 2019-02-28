@@ -295,19 +295,18 @@ SlashCmdList.TEST_ACHIEVEMENT = function()
 	AchievementAlertSystem:AddAlert(112)
 	CriteriaAlertSystem:AddAlert(9023, "Doing great!")
 	GuildChallengeAlertSystem:AddAlert(3, 2, 5)
-	InvasionAlertSystem:AddAlert(678, "Legion", true, 1, 1)
-	-- WorldQuestCompleteAlertSystem:AddAlert(42114)
-	local follower = _G.C_Garrison.GetFollowers(LE_FOLLOWER_TYPE_GARRISON_7_0)[1]
-	GarrisonFollowerAlertSystem:AddAlert(follower.followerID, follower.name, follower.level, follower.quality, isUpgraded, follower)
-	GarrisonShipFollowerAlertSystem:AddAlert(592, "Ship", "Transport", "GarrBuilding_Barracks_1_H", 3, 2, 1)
-	GarrisonBuildingAlertSystem:AddAlert("Barracks")
+	InvasionAlertSystem:AddAlert(678, DUNGEON_FLOOR_THENEXUS1, true, 1, 1)
+	WorldQuestCompleteAlertSystem:AddAlert(AlertFrameMixin:BuildQuestData(42114))
+	-- GarrisonFollowerAlertSystem:AddAlert(32, "Dagg", 90, 2, true, C_Garrison.GetFollowerInfo(32)) -- error when mouseover
+	-- GarrisonShipFollowerAlertSystem:AddAlert(592, "Ship", "Transport", "GarrBuilding_Barracks_1_H", 3, 2, 1) -- error when mouseover
+	GarrisonBuildingAlertSystem:AddAlert(GARRISON_CACHE)
 	GarrisonTalentAlertSystem:AddAlert(3, _G.C_Garrison.GetTalent(370))
 	LegendaryItemAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832:0:0:0:0:0:0:0:0:0:0\124h[Brutality Blade]\124h\124r")
 	LootAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832::::::::::\124h[Brutality Blade]\124h\124r", 1, 1, 100, 2, false, false, 0, false, false)
 	LootUpgradeAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832::::::::::\124h[Brutality Blade]\124h\124r", 1, 1, 1, nil, nil, false)
-	MoneyWonAlertSystem:AddAlert(815)
-	StorePurchaseAlertSystem:AddAlert("\124cffa335ee\124Hitem:180545::::::::::\124h[Mystic Runesaber]\124h\124r", "", "", 214)
-	DigsiteCompleteAlertSystem:AddAlert(1)
+	MoneyWonAlertSystem:AddAlert(81500)
+	StorePurchaseAlertSystem:AddAlert("", "Interface\\Icons\\Ability_pvp_gladiatormedallion", TRINKET0SLOT, 214)
+	DigsiteCompleteAlertSystem:AddAlert("Human")
 	NewRecipeLearnedAlertSystem:AddAlert(204)
 end
 SLASH_TEST_ACHIEVEMENT1 = "/tach"
