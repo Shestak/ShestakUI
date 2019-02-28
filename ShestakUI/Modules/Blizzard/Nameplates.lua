@@ -601,7 +601,6 @@ local function style(self, unit)
 			button.remaining:SetPoint("CENTER", button, "CENTER", 1, 0)
 			button.remaining:SetJustifyH("CENTER")
 
-			button.cd.noOCC = true
 			button.cd.noCooldownCount = true
 
 			button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)

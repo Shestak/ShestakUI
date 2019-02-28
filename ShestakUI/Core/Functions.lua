@@ -1407,7 +1407,6 @@ T.PostCreateIcon = function(element, button)
 	button.remaining:SetPoint("CENTER", button, "CENTER", 1, 1)
 	button.remaining:SetJustifyH("CENTER")
 
-	button.cd.noOCC = true
 	button.cd.noCooldownCount = true
 
 	button.icon:SetPoint("TOPLEFT", 2, -2)
