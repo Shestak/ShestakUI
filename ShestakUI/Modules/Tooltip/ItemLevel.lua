@@ -480,3 +480,24 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 		end
 	end
 end)
+
+----------------------------------------------------------------------------------------
+--	Character Info Sheet
+----------------------------------------------------------------------------------------
+MIN_PLAYER_LEVEL_FOR_ITEM_LEVEL_DISPLAY = 1
+hooksecurefunc("PaperDollFrame_SetItemLevel", function(self, unit)
+	if unit ~= "player" then return end
+
+	local total, equip = GetAverageItemLevel()
+	if total > 0 then total = string.format("%.1f", total) end
+	if equip > 0 then equip = string.format("%.1f", equip) end
+
+	local ilvl = equip
+	if equip ~= total then
+		ilvl = equip.." / "..total
+	end
+
+	self.Value:SetText(ilvl)
+
+	self.tooltip = "|cffffffff"..STAT_AVERAGE_ITEM_LEVEL..": "..ilvl
+end)
