@@ -21,7 +21,6 @@ end
 
 local function Timer_Stop(self)
 	self.enabled = nil
-	self.text:SetText("")
 	self:Hide()
 end
 
