@@ -86,7 +86,6 @@ L_GUI_SKINS_BLIZZARD = "Activar estilizado de marcos de Blizzard"
 L_GUI_SKINS_MINIMAP_BUTTONS = "Activar estilizado de los iconos de los addons en el minimapa"
 L_GUI_SKINS_CLCR = "Activar estilo del CLCRet"
 L_GUI_SKINS_CLCP = "Activar estilo del CLCProt"
-L_GUI_SKINS_COMBUSTION_HELPER = "Activar estilo del CombustionHelper"
 L_GUI_SKINS_BW = "Activar estilo del BigWigs"
 L_GUI_SKINS_DBM = "Activar estilo del DBM"
 L_GUI_SKINS_DBM_MOVABLE = "Allow to move DBM bars" -- Need review
@@ -144,7 +143,7 @@ L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Unir el spam de daño de area en un solo mens
 L_GUI_COMBATTEXT_MERGE_MELEE = "Merges multiple auto attack damage spam" -- Needs review
 L_GUI_COMBATTEXT_DISPEL = "Mostrar tus disipaciones"
 L_GUI_COMBATTEXT_INTERRUPT = "Mostrar tus interrupciones"
-L_GUI_COMBATTEXT_DIRECTION = "Scrolling Direction('top'(goes down) or 'bottom'(goes up))" -- Needs review
+L_GUI_COMBATTEXT_DIRECTION = "Change scrolling direction from bottom to top" -- Need review
 L_GUI_COMBATTEXT_SHORT_NUMBERS = "Use short numbers ('25.3k' instead of '25342')" -- Need review
 
 -- Buffs reminder options
@@ -270,7 +269,6 @@ L_GUI_LOOT_AUTODE = "Auto confirmar desencantar"
 L_GUI_NAMEPLATE_ENABLE = "Activar placas de nombre"
 L_GUI_NAMEPLATE_COMBAT = "Mostrar automáticamente placa de nombre en combate"
 L_GUI_NAMEPLATE_HEALTH = "Valor de la vida en números"
-L_GUI_NAMEPLATE_CASTBAR = "Mostrar barra de lanzamiento en la placa de nombre"
 L_GUI_NAMEPLATE_HEIGHT = "Altura de la placa de nombre"
 L_GUI_NAMEPLATE_WIDTH = "Anchura de la placa de nombre"
 L_GUI_NAMEPLATE_DISTANCE = "Show nameplates for units within this range" -- Need review

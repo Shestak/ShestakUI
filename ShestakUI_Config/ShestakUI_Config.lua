@@ -114,7 +114,6 @@ local function Local(o)
 	if o == "UIConfigskinsminimap_buttons" then o = L_GUI_SKINS_MINIMAP_BUTTONS end
 	if o == "UIConfigskinsclcret" then o = L_GUI_SKINS_CLCR end
 	if o == "UIConfigskinsclcprot" then o = L_GUI_SKINS_CLCP end
-	if o == "UIConfigskinscombustion_helper" then o = L_GUI_SKINS_COMBUSTION_HELPER end
 	if o == "UIConfigskinsbigwigs" then o = L_GUI_SKINS_BW end
 	if o == "UIConfigskinsdbm" then o = L_GUI_SKINS_DBM end
 	if o == "UIConfigskinsdbm_movable" then o = L_GUI_SKINS_DBM_MOVABLE end
@@ -309,7 +308,6 @@ local function Local(o)
 	if o == "UIConfignameplatead_width" then o = L_GUI_NAMEPLATE_AD_WIDTH end
 	if o == "UIConfignameplatecombat" then o = L_GUI_NAMEPLATE_COMBAT end
 	if o == "UIConfignameplatehealth_value" then o = L_GUI_NAMEPLATE_HEALTH end
-	if o == "UIConfignameplateshow_castbar" then o = L_GUI_NAMEPLATE_CASTBAR end
 	if o == "UIConfignameplateshow_castbar_name" then o = L_GUI_NAMEPLATE_CASTBAR_NAME end
 	if o == "UIConfignameplateenhance_threat" then o = L_GUI_NAMEPLATE_THREAT end
 	if o == "UIConfignameplateclass_icons" then o = L_GUI_NAMEPLATE_CLASS_ICON end

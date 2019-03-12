@@ -86,7 +86,6 @@ L_GUI_SKINS_BLIZZARD = "Aktiviere Styles für Blizzardfenster"
 L_GUI_SKINS_MINIMAP_BUTTONS = "Aktiviere styling Addonincons an der Minimap"
 L_GUI_SKINS_CLCR = "CLCRet Design aktivieren"
 L_GUI_SKINS_CLCP = "CLCProt Design aktivieren"
-L_GUI_SKINS_COMBUSTION_HELPER = "CombustionHelper Design aktivieren"
 L_GUI_SKINS_BW = "BigWigs Design aktivieren"
 L_GUI_SKINS_DBM = "DBM Design aktivieren"
 L_GUI_SKINS_DBM_MOVABLE = "Erlaube das bewegen der DBM Leisten"
@@ -144,7 +143,7 @@ L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Vereint mehrfachen Flächenschaden in eine ei
 L_GUI_COMBATTEXT_MERGE_MELEE = "Fügt mehrfachen automatischen Angriffsschaden-Spam zusammen"
 L_GUI_COMBATTEXT_DISPEL = "Informiert dich über deine Bannungen"
 L_GUI_COMBATTEXT_INTERRUPT = "Informiert dich über deine Unterbrechungen"
-L_GUI_COMBATTEXT_DIRECTION = "Bildlaufrichtung 'top'(hoch) oder 'bottom'(runter)"
+L_GUI_COMBATTEXT_DIRECTION = "Change scrolling direction from bottom to top" -- Need review
 L_GUI_COMBATTEXT_SHORT_NUMBERS = "Zeige kurze Zahlen an ('25.3k' statt '25342')"
 
 -- Buffs reminder options
@@ -270,7 +269,6 @@ L_GUI_LOOT_AUTODE = "Entzauberung automatisch bestätigen"
 L_GUI_NAMEPLATE_ENABLE = "Namensplaketten aktivieren"
 L_GUI_NAMEPLATE_COMBAT = "Namensplaketten automatisch im Kampf anzeigen"
 L_GUI_NAMEPLATE_HEALTH = "Numerischer Wert der Lebenspunkte"
-L_GUI_NAMEPLATE_CASTBAR = "Zeige Zauberleiste an der Namensplakette"
 L_GUI_NAMEPLATE_HEIGHT = "Höhe der Namensplakette"
 L_GUI_NAMEPLATE_WIDTH = "Breite der Namensplakette"
 L_GUI_NAMEPLATE_DISTANCE = "Show nameplates for units within this range" -- Need review

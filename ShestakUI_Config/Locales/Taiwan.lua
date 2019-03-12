@@ -86,7 +86,6 @@ L_GUI_SKINS_BLIZZARD = "暴雪默認介面"
 L_GUI_SKINS_MINIMAP_BUTTONS = "小地圖插件圖示"
 L_GUI_SKINS_CLCR = "CLCRet"
 L_GUI_SKINS_CLCP = "CLCProt"
-L_GUI_SKINS_COMBUSTION_HELPER = "CombustionHelper"
 L_GUI_SKINS_BW = "BigWigs"
 L_GUI_SKINS_DBM = "DBM"
 L_GUI_SKINS_DBM_MOVABLE = "Allow to move DBM bars" -- Need review
@@ -144,7 +143,7 @@ L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "將AOE傷害合併為一條信息"
 L_GUI_COMBATTEXT_MERGE_MELEE = "將多個自動攻擊傷害合併為一條信息"
 L_GUI_COMBATTEXT_DISPEL = "當你驅散成功時提示"
 L_GUI_COMBATTEXT_INTERRUPT = "當你斷法成功時提示"
-L_GUI_COMBATTEXT_DIRECTION = "滾動方向('top'(向上) or 'bottom'(向下))"
+L_GUI_COMBATTEXT_DIRECTION = "Change scrolling direction from bottom to top" -- Need review
 L_GUI_COMBATTEXT_SHORT_NUMBERS = "數值以K為單位顯示"
 
 -- Buffs reminder options
@@ -270,7 +269,6 @@ L_GUI_LOOT_AUTODE = "自動選擇分解"
 L_GUI_NAMEPLATE_ENABLE = "開啟單位名條增強"
 L_GUI_NAMEPLATE_COMBAT = "戰鬥中自動顯示單位名條"
 L_GUI_NAMEPLATE_HEALTH = "生命值以百分比顯示"
-L_GUI_NAMEPLATE_CASTBAR = "施法條"
 L_GUI_NAMEPLATE_HEIGHT = "單位名條高度"
 L_GUI_NAMEPLATE_WIDTH = "單位名條寬度"
 L_GUI_NAMEPLATE_DISTANCE = "Show nameplates for units within this range" -- Need review
