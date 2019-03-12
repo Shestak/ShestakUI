@@ -76,7 +76,6 @@ L_GUI_AUTOMATION_AUTO_ROLE = "Выбор вашей роли (в группе/р
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Снимать 'плохие' баффы"
 L_GUI_AUTOMATION_TAB_BINDER = "Клавиша 'Tab' выбирает вражеских игроков"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "Включать запись журнала боя в рейде"
-L_GUI_AUTOMATION_CURRENCY_CAP = "Напоминание, если достигнут лимит валюты (Доблесть/Честь)"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Накладывать эффекты прокруткой колеса мыши (из списка)"
 L_GUI_AUTOMATION_OPEN_ITEMS = "Открывать сундуки, ящики и т.д"
 

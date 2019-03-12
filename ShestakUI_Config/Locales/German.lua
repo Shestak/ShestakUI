@@ -76,7 +76,6 @@ L_GUI_AUTOMATION_AUTO_ROLE = "Automatisch die eigene Rolle wählen"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Automatisch einige Buffs abbrechen"
 L_GUI_AUTOMATION_TAB_BINDER = "Automatisch nur feindliche Spieler mit der TAB Taste anvisieren"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "Automatisch Kampflog in Raids als Textdatei mitschreiben"
-L_GUI_AUTOMATION_CURRENCY_CAP = "Auto Popup beim Marken Limit"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Wirke Stärkungszauber mit Mausrad"
 L_GUI_AUTOMATION_OPEN_ITEMS = "Öffnet Automatisch Items in der Tasche"
 

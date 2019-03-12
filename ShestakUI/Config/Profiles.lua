@@ -159,7 +159,6 @@ if Sw2rT1 then
 	C["automation"].accept_invite = true
 	--C["automation"].accept_quest = true
 	C["automation"].auto_collapse = true
-	C["automation"].currency_cap = true
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
 	C["skins"].dbm = true

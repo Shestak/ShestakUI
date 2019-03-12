@@ -195,7 +195,6 @@ L_POPUP_SETTINGS_DBM = "需要改变DBM锚点及样式元素."
 L_POPUP_SETTINGS_DXE = "需要改变DXE锚点及样式元素."
 L_POPUP_SETTINGS_BW = "需要改变BigWigs锚点及样式元素."
 L_POPUP_ARMORY = "英雄榜"
-L_POPUP_CURRENCY_CAP = "你拥有的最高级货币为"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "欢迎使用ShestakUI "

@@ -76,7 +76,6 @@ L_GUI_AUTOMATION_AUTO_ROLE = "Active automatiquement l'affichage de votre rôle"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Annule automatiquement certains buffs"
 L_GUI_AUTOMATION_TAB_BINDER = "Active la touche Tab pour ne cibler que les personnages joueurs ennemis"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "Active automatiquement l'enregistrement du journal de combat en raid"
-L_GUI_AUTOMATION_CURRENCY_CAP = "Active automatiquement une fenêtre d'alerte quand une monnaie/jeton atteint sa valeur maximale"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Lancement de sort via la molette souris"
 L_GUI_AUTOMATION_OPEN_ITEMS = "Ouverture automatique des objets dans les sacs"
 

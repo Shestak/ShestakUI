@@ -195,7 +195,6 @@ L_POPUP_SETTINGS_DBM = "È necessario cambiare la posizione degli elementi di DB
 L_POPUP_SETTINGS_DXE = "È necessario cambiare la posizione degli elementi di DXE."
 L_POPUP_SETTINGS_BW = "È necessario cambiare la posizione degli elementi di BigWigs."
 L_POPUP_ARMORY = "Armeria"
-L_POPUP_CURRENCY_CAP = "Hai raggiunto il valore massimo di"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Benvenuto/a in ShestakUI "
