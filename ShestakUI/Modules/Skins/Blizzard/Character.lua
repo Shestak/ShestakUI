@@ -188,7 +188,7 @@ local function LoadSkin()
 	-- FIXME
 	if T.wowbuild < 29634 then
 		PaperDollEquipmentManagerPaneEquipSet.ButtonBackground:SetTexture(nil)
-	end	
+	end
 	PaperDollEquipmentManagerPane:HookScript("OnShow", function(self)
 		for x, object in pairs(PaperDollEquipmentManagerPane.buttons) do
 			object.BgTop:SetTexture(nil)
@@ -303,9 +303,11 @@ local function LoadSkin()
 
 	-- Currency
 	TokenFrame:HookScript("OnShow", function()
-		for i = 1, GetCurrencyListSize() do
-			local button = _G["TokenFrameContainerButton"..i]
+		local buttons = TokenFrameContainer.buttons
+		local numButtons = #buttons
 
+		for i = 1, numButtons do
+			local button = buttons[i]
 			if button then
 				button.highlight:Kill()
 				button.categoryMiddle:Kill()
