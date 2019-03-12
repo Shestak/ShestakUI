@@ -383,7 +383,7 @@ for i = 1, numf do
 	f:SetMaxResize(768, 768)
 	f:SetClampedToScreen(true)
 	f:SetClampRectInsets(0, 0, C.font.combat_text_font_size, 0)
-	f:SetInsertMode(C.combattext.direction or "bottom")
+	f:SetInsertMode(C.combattext.direction and 2 or 1)
 	if i == 1 then
 		f:SetJustifyH(ct.justify_1)
 		if C.unitframe.enable == true and _G.oUF_Player then

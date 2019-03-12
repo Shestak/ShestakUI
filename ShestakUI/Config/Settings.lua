@@ -176,7 +176,7 @@ C["combattext"] = {
 	["merge_melee"] = true,						-- Merges multiple auto attack damage spam
 	["dispel"] = true,							-- Tells you about your dispels(works only with ["damage"] = true)
 	["interrupt"] = true,						-- Tells you about your interrupts(works only with ["damage"] = true)
-	["direction"] = "bottom",					-- Scrolling Direction("top"(goes down) or "bottom"(goes up))
+	["direction"] = true,						-- Change scrolling direction from bottom to top
 	["short_numbers"] = true,					-- Use short numbers ("25.3k" instead of "25342")
 }
 
