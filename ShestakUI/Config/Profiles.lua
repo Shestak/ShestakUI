@@ -241,7 +241,6 @@ if IsWetxius then
 	C["stats"].currency_cooking = false
 	C["stats"].currency_professions = false
 	C["stats"].currency_raid = false
-	C["stats"].currency_pvp = false
 	C["stats"].currency_misc = false
 	C["font"].stats_font = C.media.normal_font
 	C["font"].stats_font_style = "OUTLINE"

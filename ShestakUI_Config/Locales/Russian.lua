@@ -445,7 +445,6 @@ L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Отображать фрагменты ар
 L_GUI_STATS_CURRENCY_COOKING = "Отображать кулинарные награды на вкладке валюты"
 L_GUI_STATS_CURRENCY_PROFESSIONS = "Отображать жетоны профессий на вкладке валюты"
 L_GUI_STATS_CURRENCY_RAID = "Отображать рейдовые печати на вкладке валюты"
-L_GUI_STATS_CURRENCY_PVP = "Отображать очки PvP на вкладке валюты"
 L_GUI_STATS_CURRENCY_MISCELLANEOUS = "Отображать прочие вещи на вкладке валюты"
 
 -- Error options

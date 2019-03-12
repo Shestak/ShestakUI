@@ -570,7 +570,6 @@ C["stats"] = {
 	["currency_cooking"] = true,				-- Show Cooking Awards under currency tab
 	["currency_professions"] = true,			-- Show Profession Tokens under currency tab
 	["currency_raid"] = true,					-- Show Seals under currency tab
-	["currency_pvp"] = true,					-- Show PvP Currency under currency tab
 	["currency_misc"] = true,					-- Show Miscellaneous Currency under currency tab
 }
 

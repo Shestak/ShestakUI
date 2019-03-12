@@ -656,14 +656,8 @@ if gold.enabled then
 				Currency(1580, false, true)	-- Seal of Wartorn Fate
 			end
 
-			if C.stats.currency_pvp then
-				IsSubTitle = 5
-				-- Currency(390, true)			-- Conquest Points
-				-- Currency(392, false, true)	-- Honor Points
-			end
-
 			if C.stats.currency_misc then
-				IsSubTitle = 6
+				IsSubTitle = 5
 				Currency(1716)					-- Honorbound Service Medal
 				Currency(1717)					-- 7th Legion Service Medal
 				Currency(1718)					-- Titan Residuum
