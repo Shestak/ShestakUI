@@ -443,7 +443,6 @@ local function style(self, unit)
 	-- Create Player Power bar
 	self.Power = CreateFrame("StatusBar", nil, self)
 	self.Power:SetStatusBarTexture(C.media.texture)
-	self.Power:ClearAllPoints()
 	self.Power:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -6)
 	self.Power:SetPoint("BOTTOMRIGHT", self.Health, "BOTTOMRIGHT", 0, -6-(C.nameplate.height * T.noscalemult / 2))
 	self.Power.frequentUpdates = true
@@ -455,6 +454,25 @@ local function style(self, unit)
 	self.Power.bg:SetAllPoints()
 	self.Power.bg:SetTexture(C.media.texture)
 	self.Power.bg.multiplier = 0.2
+
+
+	-- Hide Blizzard Power Bar and changed position for Class Bar
+	hooksecurefunc(_G.NamePlateDriverFrame, "SetupClassNameplateBars", function(frame)
+		if frame.classNamePlateMechanicFrame then
+			local point, relativeTo, relativePoint, xOfs, yOfs = frame.classNamePlateMechanicFrame:GetPoint()
+			if point then
+				if point == "TOP" and C_NamePlate.GetNamePlateForUnit("player") then
+					frame.classNamePlateMechanicFrame:SetPoint(point, C_NamePlate.GetNamePlateForUnit("player"), relativePoint, xOfs, 53)
+				else
+					frame.classNamePlateMechanicFrame:SetPoint(point, C_NamePlate.GetNamePlateForUnit("target"), relativePoint, xOfs, -5)
+				end
+			end
+		end
+		if frame.classNamePlatePowerBar then
+			frame.classNamePlatePowerBar:Hide()
+			frame.classNamePlatePowerBar:UnregisterAllEvents()
+		end
+	end)
 
 	-- Create Name Text
 	self.Name = self:CreateFontString(nil, "OVERLAY")
