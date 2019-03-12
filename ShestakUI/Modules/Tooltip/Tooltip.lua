@@ -9,6 +9,18 @@ StoryTooltip:SetFrameLevel(4)
 
 local WarCampaignTooltip = QuestScrollFrame.WarCampaignTooltip
 
+-- FIXME
+local WorldMapTooltip, WorldMapCompareTooltip1, ItemRefShoppingTooltip2
+if T.wowbuild >= 29634 then
+	WorldMapTooltip = GameTooltip
+	WorldMapCompareTooltip1 = nil
+	ItemRefShoppingTooltip2 = nil
+else
+	WorldMapTooltip = _G.WorldMapTooltip
+	WorldMapCompareTooltip1 = _G.WorldMapCompareTooltip1
+	ItemRefShoppingTooltip2 = _G.ItemRefShoppingTooltip2
+end
+
 local tooltips = {
 	GameTooltip,
 	ItemRefTooltip,
