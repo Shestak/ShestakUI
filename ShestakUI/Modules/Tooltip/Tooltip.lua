@@ -9,26 +9,11 @@ StoryTooltip:SetFrameLevel(4)
 
 local WarCampaignTooltip = QuestScrollFrame.WarCampaignTooltip
 
--- FIXME
-local WorldMapTooltip, WorldMapCompareTooltip1, ItemRefShoppingTooltip2
-if T.wowbuild >= 29634 then
-	WorldMapTooltip = GameTooltip
-	WorldMapCompareTooltip1 = nil
-	ItemRefShoppingTooltip2 = nil
-else
-	WorldMapTooltip = _G.WorldMapTooltip
-	WorldMapCompareTooltip1 = _G.WorldMapCompareTooltip1
-	ItemRefShoppingTooltip2 = _G.ItemRefShoppingTooltip2
-end
-
 local tooltips = {
 	GameTooltip,
 	ItemRefTooltip,
 	ShoppingTooltip1,
 	ShoppingTooltip2,
-	WorldMapTooltip,
-	WorldMapCompareTooltip1,
-	WorldMapCompareTooltip2,
 	FriendsTooltip,
 	ItemRefShoppingTooltip1,
 	ItemRefShoppingTooltip2,
@@ -536,23 +521,23 @@ GameTooltip:HookScript("OnTooltipSetItem", FixFont)
 ItemRefTooltip:HookScript("OnTooltipSetItem", FixFont)
 
 ----------------------------------------------------------------------------------------
---	Skin WorldMapTooltip and EmbeddedItemTooltip
+--	Skin GameTooltip.ItemTooltip and EmbeddedItemTooltip
 ----------------------------------------------------------------------------------------
-WorldMapTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-hooksecurefunc(WorldMapTooltip.ItemTooltip.IconBorder, "SetVertexColor", function(self, r, g, b)
+GameTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+hooksecurefunc(GameTooltip.ItemTooltip.IconBorder, "SetVertexColor", function(self, r, g, b)
 	self:GetParent().backdrop:SetBackdropBorderColor(r, g, b)
 	self:SetTexture("")
 end)
 
-hooksecurefunc(WorldMapTooltip.ItemTooltip.IconBorder, "Hide", function(self)
+hooksecurefunc(GameTooltip.ItemTooltip.IconBorder, "Hide", function(self)
 	self:GetParent().backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 end)
 
-WorldMapTooltip.ItemTooltip:CreateBackdrop("Default")
-WorldMapTooltip.ItemTooltip.backdrop:SetPoint("TOPLEFT", WorldMapTooltip.ItemTooltip.Icon, "TOPLEFT", -2, 2)
-WorldMapTooltip.ItemTooltip.backdrop:SetPoint("BOTTOMRIGHT", WorldMapTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 2, -2)
-WorldMapTooltip.ItemTooltip.Count:ClearAllPoints()
-WorldMapTooltip.ItemTooltip.Count:SetPoint("BOTTOMRIGHT", WorldMapTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 1, 0)
+GameTooltip.ItemTooltip:CreateBackdrop("Default")
+GameTooltip.ItemTooltip.backdrop:SetPoint("TOPLEFT", GameTooltip.ItemTooltip.Icon, "TOPLEFT", -2, 2)
+GameTooltip.ItemTooltip.backdrop:SetPoint("BOTTOMRIGHT", GameTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 2, -2)
+GameTooltip.ItemTooltip.Count:ClearAllPoints()
+GameTooltip.ItemTooltip.Count:SetPoint("BOTTOMRIGHT", GameTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 1, 0)
 
 local reward = EmbeddedItemTooltip.ItemTooltip
 local icon = reward.Icon
