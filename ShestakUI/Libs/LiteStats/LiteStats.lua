@@ -518,9 +518,6 @@ if gold.enabled then
 			GameTooltip:AddLine(L_STATS_CURRENCY_RAID, ttsubh.r, ttsubh.g, ttsubh.b)
 		elseif IsSubTitle == 5 then
 			GameTooltip:AddLine(" ")
-			GameTooltip:AddLine(PVP_FLAG, ttsubh.r, ttsubh.g, ttsubh.b)
-		elseif IsSubTitle == 6 then
-			GameTooltip:AddLine(" ")
 			GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
 		end
 		IsSubTitle = 0
@@ -658,12 +655,12 @@ if gold.enabled then
 
 			if C.stats.currency_misc then
 				IsSubTitle = 5
-				Currency(1716)					-- Honorbound Service Medal
-				Currency(1717)					-- 7th Legion Service Medal
-				Currency(1718)					-- Titan Residuum
-				Currency(1560)					-- War Resources
-				Currency(1710)					-- Seafarer's Dubloon
-				Currency(515)					-- Darkmoon Prize Ticket
+				Currency(1716)	-- Honorbound Service Medal
+				Currency(1717)	-- 7th Legion Service Medal
+				Currency(1718)	-- Titan Residuum
+				Currency(1560)	-- War Resources
+				Currency(1710)	-- Seafarer's Dubloon
+				Currency(515)	-- Darkmoon Prize Ticket
 			end
 
 			GameTooltip:AddLine(" ")
