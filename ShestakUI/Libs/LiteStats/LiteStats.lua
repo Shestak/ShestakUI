@@ -161,7 +161,7 @@ local function Inject(name, stat)
 		anchor_to = m.anchor_to, anchor_from = m.anchor_from,
 		x_off = m.x_off, y_off = m.y_off,
 		height = m.height, width = m.width,
-		strata = strata, level = level
+		strata = m.strata or strata, level = level
 	} do if not stat[k] then stat[k] = v end end
 	if not stat.text then stat.text = {} end
 
