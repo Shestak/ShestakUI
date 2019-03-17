@@ -31,7 +31,6 @@
 	<Script file="Garrison.lua"/>
 	<Script file="GMSurvey.lua"/>
 	<Script file="Gossip.lua"/>
-	<Script file="Greeting.lua"/>
 	<Script file="Guild.lua"/>
 	<Script file="GuildBank.lua"/>
 	<Script file="GuildControl.lua"/>
