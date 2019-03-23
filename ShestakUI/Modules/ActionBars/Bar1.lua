@@ -23,7 +23,7 @@ end
 local Page = {
 	["DRUID"] = "[bonusbar:1,nostealth] 7; [bonusbar:1,stealth] 8; [bonusbar:2] 8; [bonusbar:3] 9; [bonusbar:4] 10;",
 	["ROGUE"] = "[bonusbar:1] 7;",
-	["DEFAULT"] = "[vehicleui][possessbar] 12; [shapeshift] 13; [overridebar] 14; [bar:2] 2; [bar:3] 3; [bar:4] 4; [bar:5] 5; [bar:6] 6;",
+	["DEFAULT"] = "[possessbar] 12; [shapeshift] 13; [overridebar] 14; [vehicleui] 12; [bar:2] 2; [bar:3] 3; [bar:4] 4; [bar:5] 5; [bar:6] 6;",
 }
 
 local function GetBar()
