@@ -67,27 +67,10 @@ local function LoadSkin()
 		AvailableQuestsText:SetTextColor(1, 0.8, 0)
 		QuestGreetingFrameHorizontalBreak:Kill()
 
-		local numActiveQuests = GetNumActiveQuests()
-		if numActiveQuests > 0 then
-			for i = 1, numActiveQuests do
-				local button = _G["QuestTitleButton"..i]
-				if button and button:GetFontString() then
-					if button:GetFontString():GetText() and button:GetFontString():GetText():find("|cff000000") then
-						button:GetFontString():SetText(string.gsub(button:GetFontString():GetText(), "|cff000000", "|cffFFFF00"))
-					end
-				end
-			end
-		end
-
-		local numAvailableQuests = GetNumAvailableQuests()
-		if numAvailableQuests > 0 then
-			for i = numActiveQuests + 1, numActiveQuests + numAvailableQuests do
-				local button = _G["QuestTitleButton"..i]
-				if button and button:GetFontString() then
-					if button:GetFontString():GetText() and button:GetFontString():GetText():find("|cff000000") then
-						button:GetFontString():SetText(string.gsub(button:GetFontString():GetText(), "|cff000000", "|cffFFFF00"))
-					end
-				end
+		for button in QuestFrameGreetingPanel.titleButtonPool:EnumerateActive() do
+			local text = button:GetFontString():GetText()
+			if text and strfind(text, "|cff000000") then
+				button:GetFontString():SetText(gsub(text, "|cff000000", "|cffFFFF00"))
 			end
 		end
 	end
