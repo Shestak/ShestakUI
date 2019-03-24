@@ -53,17 +53,12 @@ L_MISC_ONECLICK_CANCEL = "Shift+右鍵,不彈出確認窗口直接取消選擇�
 L_MISC_UI_OUTDATED = "ShestakUI 版本已過期，請至 www.shestak.org 下載最新版"
 L_MISC_HEADER_MARK = "鼠標懸停顯示團隊圖標"
 L_MISC_BINDER_OPEN = "鼠標綁定"
-L_MISC_GROCERY_BUY = "購買"
-L_MISC_GROCERY_DESC = "雜貨商自動購買"
 L_MISC_SCROLL = "附魔卷軸"
-L_MISC_COLLAPSE = "The Collapse" -- Need review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散團隊"
 
 -- Zone name
-L_ZONE_TOLBARAD = "托巴拉德"
-L_ZONE_TOLBARADPEN = "托巴拉德半島"
 L_ZONE_ARATHIBASIN = "阿拉希盆地"
 L_ZONE_GILNEAS = "吉爾尼斯之戰"
 L_ZONE_ANCIENTDALARAN = "達拉然陷坑"

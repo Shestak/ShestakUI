@@ -53,17 +53,12 @@ L_MISC_ONECLICK_CANCEL = "Зажмите Shift и щелкните правой 
 L_MISC_UI_OUTDATED = "Ваша версия ShestakUI устарела. Вы можете скачать последнюю версию с www.shestak.org"
 L_MISC_HEADER_MARK = "Метки по наведению курсора"
 L_MISC_BINDER_OPEN = "Назначения мыши"
-L_MISC_GROCERY_BUY = "Купить"
-L_MISC_GROCERY_DESC = "Автоматически купить пустые контейнеры"
 L_MISC_SCROLL = "Свиток"
-L_MISC_COLLAPSE = "Обрушение"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Распустить группу"
 
 -- Zone name
-L_ZONE_TOLBARAD = "Тол Барад"
-L_ZONE_TOLBARADPEN = "Полуостров Тол Барад"
 L_ZONE_ARATHIBASIN = "Низина Арати"
 L_ZONE_GILNEAS = "Битва за Гилнеас"
 L_ZONE_ANCIENTDALARAN = "Даларанский кратер"
