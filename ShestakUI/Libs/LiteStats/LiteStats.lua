@@ -202,29 +202,29 @@ local function slprint(...)
 end
 function SlashCmdList.LSTATS()
 	print("Lite|cff66C6FFStats|r "..L_STATS_TIPS)
-	if memory.enabled then
-		slprint(L_STATS_MEMORY, L_STATS_RC_COLLECTS_GARBAGE)
-	end
-	if gold.enabled then
-		slprint(strtrim(gsub(MONEY, "%%d", "")), L_STATS_OPEN_CURRENCY, L_STATS_RC_AUTO_SELLING, L_STATS_NOT_TO_SELL, L_STATS_WATCH_CURRENCY)
-	end
-	if durability.enabled then
-		slprint(DURABILITY, L_STATS_OPEN_CHARACTER, L_STATS_RC_AUTO_REPAIRING, L_STATS_EQUIPMENT_CHANGER)
-	end
-	if location.enabled or coords.enabled then
-		slprint(L_STATS_LOCATION, L_STATS_WORLD_MAP, L_STATS_INSERTS_COORDS)
-	end
 	if clock.enabled then
 		slprint(TIMEMANAGER_TITLE, L_STATS_OPEN_CALENDAR, L_STATS_RC_TIME_MANAGER, L_STATS_TOGGLE_TIME)
+	end
+	if memory.enabled then
+		slprint(L_STATS_MEMORY, L_STATS_RC_COLLECTS_GARBAGE)
 	end
 	if friends.enabled or guild.enabled then
 		slprint(format("%s/%s", FRIENDS,GUILD), L_STATS_VIEW_NOTES, L_STATS_CHANGE_SORTING)
 	end
+	if durability.enabled then
+		slprint(DURABILITY, L_STATS_OPEN_CHARACTER, L_STATS_RC_AUTO_REPAIRING, L_STATS_EQUIPMENT_CHANGER)
+	end
+	if experience.enabled then
+		slprint(format("%s/%s/%s", COMBAT_XP_GAIN, TIME_PLAYED_MSG, FACTION), L_STATS_RC_EXPERIENCE, L_STATS_WATCH_FACTIONS, L_STATS_TOOLTIP_EXPERIENCE, L_STATS_TOOLTIP_TIME_PLAYED)
+	end
 	if talents.enabled then
 		slprint(TALENTS, L_STATS_OPEN_TALENT, L_STATS_RC_TALENT)
 	end
-	if experience.enabled then
-		slprint(format("%s/%s/%s", COMBAT_XP_GAIN, TIME_PLAYED_MSG, FACTION), L_STATS_RC_EXPERIENCE, L_STATS_WATCH_FACTIONS)
+	if location.enabled or coords.enabled then
+		slprint(L_STATS_LOCATION, L_STATS_WORLD_MAP, L_STATS_INSERTS_COORDS)
+	end
+	if gold.enabled then
+		slprint(strtrim(gsub(MONEY, "%%d", "")), L_STATS_OPEN_CURRENCY, L_STATS_RC_AUTO_SELLING, L_STATS_NOT_TO_SELL, L_STATS_WATCH_CURRENCY)
 	end
 	print("|cffBCEE68", format(L_STATS_OTHER_OPTIONS, "|cff66C6FFShestakUI\\Config\\DataText.lua").."|r")
 end
