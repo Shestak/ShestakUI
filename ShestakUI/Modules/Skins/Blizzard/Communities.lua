@@ -166,6 +166,8 @@ local function LoadSkin()
 	CommunitiesFrame.NotificationSettingsDialog.CancelButton:SkinButton()
 
 	hooksecurefunc(CommunitiesNotificationSettingsStreamEntryMixin, "SetFilter", function(self)
+		self.ShowNotificationsButton:SetSize(18, 18)
+		self.HideNotificationsButton:SetSize(18, 18)
 		T.SkinCheckBox(self.ShowNotificationsButton)
 		T.SkinCheckBox(self.HideNotificationsButton)
 	end)
