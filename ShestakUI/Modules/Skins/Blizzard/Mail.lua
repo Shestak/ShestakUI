@@ -92,6 +92,11 @@ local function LoadSkin()
 	SendMailMailButton:SkinButton()
 	SendMailCancelButton:SkinButton()
 
+	SendMailSendMoneyButton:SetSize(18, 18)
+	SendMailCODButton:SetSize(18, 18)
+	T.SkinCheckBox(SendMailSendMoneyButton)
+	T.SkinCheckBox(SendMailCODButton)
+
 	-- Open mail (cod)
 	OpenMailFrame:StripTextures(true)
 	OpenMailFrame:CreateBackdrop("Transparent")
