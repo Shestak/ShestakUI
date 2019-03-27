@@ -199,8 +199,6 @@
 	<Script file="Modules\Skins\BigWigs.lua"/>
 	<Script file="Modules\Skins\BloodShieldTracker.lua"/>
 	<Script file="Modules\Skins\Capping.lua"/>
-	<Script file="Modules\Skins\CLCProt.lua"/>
-	<Script file="Modules\Skins\CLCRet.lua"/>
 	<Script file="Modules\Skins\Clique.lua"/>
 	<Script file="Modules\Skins\CoolLine.lua"/>
 	<Script file="Modules\Skins\DBM.lua"/>
