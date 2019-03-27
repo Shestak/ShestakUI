@@ -206,7 +206,6 @@
 	<Script file="Modules\Skins\DBM.lua"/>
 	<Script file="Modules\Skins\Dominos.lua"/>
 	<Script file="Modules\Skins\DXE.lua"/>
-	<Script file="Modules\Skins\FaceShooter.lua"/>
 	<Script file="Modules\Skins\FlyoutButtonCustom.lua"/>
 	<Script file="Modules\Skins\MageNuggets.lua"/>
 	<Script file="Modules\Skins\MyRolePlay.lua"/>
@@ -220,7 +219,6 @@
 	<Script file="Modules\Skins\VanasKoS.lua"/>
 	<Script file="Modules\Skins\WeakAuras.lua"/>
 	<Script file="Modules\Skins\oPie.lua"/>
-	<Script file="Modules\Skins\Arh.lua"/>
 	<Script file="Modules\Skins\Rematch.lua"/>
 	<Script file="Modules\Skins\Postal.lua"/>
 	<Script file="Modules\Skins\lsToasts.lua"/>

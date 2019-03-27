@@ -130,14 +130,12 @@ local function Local(o)
 	if o == "UIConfigskinscool_line" then o = L_GUI_SKINS_COOL_LINE end
 	if o == "UIConfigskinsatlasloot" then o = L_GUI_SKINS_ATLASLOOT end
 	if o == "UIConfigskinstiny_dps" then o = L_GUI_SKINS_TINY_DPS end
-	if o == "UIConfigskinsface_shooter" then o = L_GUI_SKINS_FACE_SHOOTER end
 	if o == "UIConfigskinsmage_nuggets" then o = L_GUI_SKINS_MAGE_NUGGETS end
 	if o == "UIConfigskinsnpcscan" then o = L_GUI_SKINS_NPCSCAN end
 	if o == "UIConfigskinsvanaskos" then o = L_GUI_SKINS_VANASKOS end
 	if o == "UIConfigskinsweak_auras" then o = L_GUI_SKINS_WEAK_AURAS end
 	if o == "UIConfigskinsskada" then o = L_GUI_SKINS_SKADA end
 	if o == "UIConfigskinsmy_role_play" then o = L_GUI_SKINS_MY_ROLE_PLAY end
-	if o == "UIConfigskinsarh" then o = L_GUI_SKINS_ARH end
 	if o == "UIConfigskinspostal" then o = L_GUI_SKINS_POSTAL end
 	if o == "UIConfigskinsopie" then o = L_GUI_SKINS_OPIE end
 	if o == "UIConfigskinsrematch" then o = L_GUI_SKINS_REMATCH end
