@@ -86,7 +86,6 @@ L_GUI_SKINS_MINIMAP_BUTTONS = "Attiva il restyling dei pulsanti delle AddOns sul
 L_GUI_SKINS_BW = "Attiva il restyling di BigWigs"
 L_GUI_SKINS_DBM = "Attiva il restyling di DBM"
 L_GUI_SKINS_DBM_MOVABLE = "Consenti di poter spostare le barre di DBM"
-L_GUI_SKINS_DXE = "Attiva il restyling di DXE"
 L_GUI_SKINS_OMEN = "Attiva il restyling di Omen"
 L_GUI_SKINS_RECOUNT = "Attiva il restyling di Recount"
 L_GUI_SKINS_BLOOD_SHIELD_TRACKER = "Attiva il restyling di BloodShieldTracker"

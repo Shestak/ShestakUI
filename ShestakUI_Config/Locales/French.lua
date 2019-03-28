@@ -86,7 +86,6 @@ L_GUI_SKINS_MINIMAP_BUTTONS = "Activer la personnalisation des icônes de la min
 L_GUI_SKINS_BW = "Activer la personnalisation pour BigWigs"
 L_GUI_SKINS_DBM = "Activer la personnalisation pour DBM"
 L_GUI_SKINS_DBM_MOVABLE = "Autoriser le déplacement des barres DBM"
-L_GUI_SKINS_DXE = "Activer la personnalisation pour DXE"
 L_GUI_SKINS_OMEN = "Activer la personnalisation pour Omen"
 L_GUI_SKINS_RECOUNT = "Activer la personnalisation pour Recount"
 L_GUI_SKINS_BLOOD_SHIELD_TRACKER = "Activer la personnalisation pour BloodShieldTracker"

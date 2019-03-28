@@ -86,7 +86,6 @@ L_GUI_SKINS_MINIMAP_BUTTONS = "Activar estilizado de los iconos de los addons en
 L_GUI_SKINS_BW = "Activar estilo del BigWigs"
 L_GUI_SKINS_DBM = "Activar estilo del DBM"
 L_GUI_SKINS_DBM_MOVABLE = "Allow to move DBM bars" -- Need review
-L_GUI_SKINS_DXE = "Activar estilo del DXE"
 L_GUI_SKINS_OMEN = "Activar estilo del Omen"
 L_GUI_SKINS_RECOUNT = "Activar estilo del Recount"
 L_GUI_SKINS_BLOOD_SHIELD_TRACKER = "Activar estilo del BloodShieldTracker"

@@ -187,7 +187,6 @@ L_POPUP_DISBAND_RAID = "你確定要解散團隊?"
 L_POPUP_DISABLEUI = "ShestakUI並不支援此解析度, 你想要停用ShestakUI嗎? (若果您想要嘗試其他解析度, 請按取消)"
 L_POPUP_SETTINGS_ALL = "應用所有的UI設置(DBM, BigWigs, Skada, MSBT)?"
 L_POPUP_SETTINGS_DBM = "需要改變DBM描點及風格化元素."
-L_POPUP_SETTINGS_DXE = "需要改變DXE描點及風格化元素."
 L_POPUP_SETTINGS_BW = "需要改變BigWigs描點及風格化元素."
 L_POPUP_ARMORY = "查看英雄榜"
 

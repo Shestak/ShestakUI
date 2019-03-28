@@ -187,7 +187,6 @@ L_POPUP_DISBAND_RAID = "Vuoi davvero sciogliere il gruppo?"
 L_POPUP_DISABLEUI = "A questa risoluzione la ShestakUI non funziona correttamente, vuoi disabilitare l'AddOn (clicca 'Cancella' se vuoi provare con un'altra risoluzione)?"
 L_POPUP_SETTINGS_ALL = "Applica le impostazioni per tutte le AddOns (DBM, BigWigs, Skada e MSBT)?"
 L_POPUP_SETTINGS_DBM = "È necessario cambiare la posizione degli elementi di DBM."
-L_POPUP_SETTINGS_DXE = "È necessario cambiare la posizione degli elementi di DXE."
 L_POPUP_SETTINGS_BW = "È necessario cambiare la posizione degli elementi di BigWigs."
 L_POPUP_ARMORY = "Armeria"
 

@@ -86,7 +86,6 @@ L_GUI_SKINS_MINIMAP_BUTTONS = "Стилизация кнопок модифик�
 L_GUI_SKINS_BW = "Стилизация BigWigs"
 L_GUI_SKINS_DBM = "Стилизация DBM"
 L_GUI_SKINS_DBM_MOVABLE = "Позволить перемещать таймеры DBM"
-L_GUI_SKINS_DXE = "Стилизация DXE"
 L_GUI_SKINS_OMEN = "Стилизация Omen"
 L_GUI_SKINS_RECOUNT = "Стилизация Recount"
 L_GUI_SKINS_BLOOD_SHIELD_TRACKER = "Стилизация BloodShieldTracker"

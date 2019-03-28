@@ -86,7 +86,6 @@ L_GUI_SKINS_MINIMAP_BUTTONS = "小地圖插件圖示"
 L_GUI_SKINS_BW = "BigWigs"
 L_GUI_SKINS_DBM = "DBM"
 L_GUI_SKINS_DBM_MOVABLE = "Allow to move DBM bars" -- Need review
-L_GUI_SKINS_DXE = "DXE"
 L_GUI_SKINS_OMEN = "Omen"
 L_GUI_SKINS_RECOUNT = "Recount"
 L_GUI_SKINS_BLOOD_SHIELD_TRACKER = "BloodShieldTracker"

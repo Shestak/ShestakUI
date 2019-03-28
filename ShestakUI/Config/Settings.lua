@@ -123,7 +123,6 @@ C["skins"] = {
 	["dbm"] = false,							-- DBM skin
 	["dbm_movable"] = false,					-- Allow to move DBM bars
 	["dominos"] = false,						-- Dominos skin
-	["dxe"] = false,							-- DXE skin
 	["flyout_button"] = false,					-- FlyoutButtonCustom skin
 	["ls_toasts"] = false,						-- Is: Toasts skin
 	["mage_nuggets"] = false,					-- MageNuggets skin

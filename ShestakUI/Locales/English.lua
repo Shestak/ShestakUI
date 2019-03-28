@@ -183,7 +183,6 @@ L_POPUP_DISBAND_RAID = "Are you sure you want to disband the group?"
 L_POPUP_DISABLEUI = "ShestakUI doesn't work for this resolution, do you want to disable ShestakUI? (Cancel if you want to try another resolution)"
 L_POPUP_SETTINGS_ALL = "Apply settings for all modifications? (DBM, BigWigs, Skada and MSBT)"
 L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."
-L_POPUP_SETTINGS_DXE = "Need to change the position of elements DXE."
 L_POPUP_SETTINGS_BW = "Need to change the position of elements BigWigs."
 L_POPUP_ARMORY = "Armory"
 
