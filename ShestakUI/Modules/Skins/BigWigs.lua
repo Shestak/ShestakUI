@@ -138,17 +138,15 @@ end
 local function registerStyle()
 	if not BigWigs then return end
 	local bars = BigWigs:GetPlugin("Bars", true)
-	if bars then
-		bars:RegisterBarStyle("ShestakUI", {
-			apiVersion = 1,
-			version = 1,
-			GetSpacing = function(bar) return T.Scale(13) end,
-			ApplyStyle = applystyle,
-			BarStopped = freestyle,
-			GetStyleName = function() return "ShestakUI" end,
-		})
-	end
-	bars.defaultDB.barStyle = "ShestakUI"
+	if not bars then return end
+	bars:RegisterBarStyle("ShestakUI", {
+		apiVersion = 1,
+		version = 1,
+		GetSpacing = function(bar) return T.Scale(13) end,
+		ApplyStyle = applystyle,
+		BarStopped = freestyle,
+		GetStyleName = function() return "ShestakUI" end,
+	})
 	if BigWigsLoader and bars.defaultDB.barStyle == "ShestakUI" then
 		BigWigsLoader.RegisterMessage("BigWigs_Plugins", "BigWigs_FrameCreated", function()
 			BigWigsProximityAnchor:SetTemplate("Transparent")
@@ -162,7 +160,7 @@ f:SetScript("OnEvent", function(self, event, addon)
 	if event == "ADDON_LOADED" then
 		if addon == "BigWigs_Plugins" then
 			if not BigWigs3DB.namespaces.BigWigs_Plugins_Bars or BigWigs3DB.namespaces.BigWigs_Plugins_Bars.profiles.Default.InstalledBars ~= C.actionbar.bottombars then
-				StaticPopup_Show("BW_TEST")
+				StaticPopup_Show("SETTINGS_BIGWIGS")
 			end
 			registerStyle()
 			f:UnregisterEvent("ADDON_LOADED")
@@ -170,56 +168,59 @@ f:SetScript("OnEvent", function(self, event, addon)
 	end
 end)
 
-StaticPopupDialogs.BW_TEST = {
+function T.UploadBW()
+	if not BigWigs then return end
+	local bars = BigWigs:GetPlugin("Bars", true)
+	if bars then
+		bars.db.profile.barStyle = "ShestakUI"
+		bars.db.profile.font = C.font.stylization_font
+		bars.db.profile.BigWigsAnchor_width = 185
+		bars.db.profile.BigWigsAnchor_x = 38
+		bars.db.profile.BigWigsEmphasizeAnchor_width = 185
+		bars.db.profile.BigWigsEmphasizeAnchor_x = 420
+		bars.db.profile.BigWigsEmphasizeAnchor_y = 248
+		bars.db.profile.emphasizeGrowup = true
+		bars.db.profile.InstalledBars = C.actionbar.bottombars
+		if C.actionbar.bottombars == 1 then
+			bars.db.profile.BigWigsAnchor_y = 116
+		elseif C.actionbar.bottombars == 2 then
+			bars.db.profile.BigWigsAnchor_y = 138
+		elseif C.actionbar.bottombars == 3 then
+			bars.db.profile.BigWigsAnchor_y = 159
+		end
+	end
+	local mess = BigWigs:GetPlugin("Messages")
+	if mess then
+		mess.db.profile.font = "Calibri"
+		mess.db.profile.fontSize = 20
+		mess.db.profile.BWMessageAnchor_x = 415
+		mess.db.profile.BWMessageAnchor_y = 320
+		mess.db.profile.BWEmphasizeMessageAnchor_x = 415
+		mess.db.profile.BWEmphasizeMessageAnchor_y = 335
+		mess.db.profile.BWEmphasizeCountdownMessageAnchor_x = 465
+		mess.db.profile.BWEmphasizeCountdownMessageAnchor_y = 370
+	end
+	local prox = BigWigs:GetPlugin("Proximity")
+	if prox then
+		prox.db.profile.font = "Calibri"
+		prox.db.profile.objects.ability = false
+	end
+	BigWigsIconDB.hide = true
+	BigWigs:GetPlugin("Super Emphasize").db.profile.font = "Calibri"
+	BigWigs:GetPlugin("Alt Power").db.profile.font = "Calibri"
+	if InCombatLockdown() then
+		print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r")
+		print("|cffffff00Reload your UI to apply skin.|r")
+	else
+		ReloadUI()
+	end
+end
+
+StaticPopupDialogs.SETTINGS_BIGWIGS = {
 	text = L_POPUP_SETTINGS_BW,
 	button1 = ACCEPT,
 	button2 = CANCEL,
-	OnAccept = function()
-		local bars = BigWigs and BigWigs:GetPlugin("Bars")
-		if bars then
-			bars.db.profile.barStyle = "ShestakUI"
-			bars.db.profile.font = C.font.stylization_font
-			bars.db.profile.BigWigsAnchor_width = 185
-			bars.db.profile.BigWigsAnchor_x = 38
-			bars.db.profile.BigWigsEmphasizeAnchor_width = 185
-			bars.db.profile.BigWigsEmphasizeAnchor_x = 420
-			bars.db.profile.BigWigsEmphasizeAnchor_y = 248
-			bars.db.profile.emphasizeGrowup = true
-			bars.db.profile.InstalledBars = C.actionbar.bottombars
-			if C.actionbar.bottombars == 1 then
-				bars.db.profile.BigWigsAnchor_y = 116
-			elseif C.actionbar.bottombars == 2 then
-				bars.db.profile.BigWigsAnchor_y = 138
-			elseif C.actionbar.bottombars == 3 then
-				bars.db.profile.BigWigsAnchor_y = 159
-			end
-		end
-		local mess = BigWigs and BigWigs:GetPlugin("Messages")
-		if mess then
-			mess.db.profile.font = "Calibri"
-			mess.db.profile.fontSize = 20
-			mess.db.profile.BWMessageAnchor_x = 415
-			mess.db.profile.BWMessageAnchor_y = 320
-			mess.db.profile.BWEmphasizeMessageAnchor_x = 415
-			mess.db.profile.BWEmphasizeMessageAnchor_y = 335
-			mess.db.profile.BWEmphasizeCountdownMessageAnchor_x = 465
-			mess.db.profile.BWEmphasizeCountdownMessageAnchor_y = 370
-		end
-		local prox = BigWigs and BigWigs:GetPlugin("Proximity")
-		if prox then
-			prox.db.profile.font = "Calibri"
-			prox.db.profile.objects.ability = false
-		end
-		BigWigs3IconDB.hide = true
-		BigWigs:GetPlugin("Super Emphasize").db.profile.font = "Calibri"
-		BigWigs:GetPlugin("Alt Power").db.profile.font = "Calibri"
-		if InCombatLockdown() then
-			print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r")
-			print("|cffffff00Reload your UI to apply skin.|r")
-		else
-			ReloadUI()
-		end
-	end,
+	OnAccept = function() T.UploadBW() end,
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = true,
@@ -230,7 +231,7 @@ SlashCmdList.BWTEST = function(msg)
 	if msg == "apply" then
 		SlashCmdList["BigWigs"]()
 		HideUIPanel(InterfaceOptionsFrame)
-		StaticPopup_Show("BW_TEST")
+		StaticPopup_Show("SETTINGS_BIGWIGS")
 	elseif msg == "test" then
 		SlashCmdList["BigWigs"]()
 		BigWigs:GetPlugin("Proximity").Test(BigWigs:GetPlugin("Proximity"))
