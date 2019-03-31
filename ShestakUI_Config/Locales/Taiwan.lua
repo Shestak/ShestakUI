@@ -4,20 +4,22 @@ if GetLocale() ~= "zhTW" then return end
 --	Localization for zhTW client
 --	Translation: Leg883, Mania, Tat2dawn, Tibles, Sakaras
 ----------------------------------------------------------------------------------------
-L_GUI_BUTTON_RESET = "重載UI"
 L_GUI_SET_SAVED_SETTTINGS = "為每個角色分別保存設定"
+L_GUI_SET_SAVED_SETTTINGS_DESC = "Switch between a profile that applies to all characters and one that is unique to this character." -- Need review
 L_GUI_RESET_CHAR = "確定要重置你所有角色的'ShestakUI'設定?"
 L_GUI_RESET_ALL = "確定要重置全部'ShestakUI'設定?"
 L_GUI_PER_CHAR = "確定要設定/取消'每個角色單獨設定'模式?"
-L_GUI_MAKE_SELECTION = "繼續調整設定前必須選擇一個選項"
+L_GUI_NEED_RELOAD = "|cffff2735You need to reload the UI to apply your changes.|r" -- Need review
 
 -- General options
+L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface settings. Type in chat '/uihelp' for help." -- Need review
 L_GUI_GENERAL_AUTOSCALE = "自動UI縮放"
 L_GUI_GENERAL_UISCALE = "UI縮放(當'自動UI縮放'關閉時)"
 L_GUI_GENERAL_WELCOME_MESSAGE = "歡迎信息"
 L_GUI_GENERAL_LAG_TOLERANCE = "自動更新自訂延遲容許值"
 
 -- Miscellaneous options
+L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review
 L_GUI_MISC_MARKING = "點擊Shift顯示團隊標記菜單"
 L_GUI_MISC_INVKEYWORD = "自動邀請關鍵字(/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "AFK時旋轉鏡頭"
@@ -46,6 +48,7 @@ L_GUI_MISC_HIDE_RAID_BUTTON = "Hide button for oUF_RaidDPS" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告提醒"
+L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
 L_GUI_ANNOUNCEMENTS_DRINKING = "當敵人進食時,在聊天窗口進行通告"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "當你斷法成功時,在隊伍/團隊中進行通告"
 L_GUI_ANNOUNCEMENTS_SPELLS = "當你施放相同法術時,在隊伍/團隊中進行通告"
@@ -63,6 +66,7 @@ L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "檢查'狩旅團之帽'使用情況"
 
 -- Automation options
 L_GUI_AUTOMATION = "自動設定"
+L_GUI_AUTOMATION_SUBTEXT = "This block contains settings that facilitate the routine." -- Need review
 L_GUI_AUTOMATION_RELEASE = "戰場中自動釋放靈魂" -- Need review
 L_GUI_AUTOMATION_SCREENSHOT = "獲得成就時自動截屏"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "自動彈出幫助框架"
@@ -81,34 +85,36 @@ L_GUI_AUTOMATION_OPEN_ITEMS = "自動打開背包中的封裝物品"
 
 -- Skins options
 L_GUI_SKINS = "介面樣式增強"
+L_GUI_SKINS_SUBTEXT = "Change the appearance of the standard interface." -- Need review
 L_GUI_SKINS_BLIZZARD = "暴雪默認介面"
 L_GUI_SKINS_MINIMAP_BUTTONS = "小地圖插件圖示"
+L_GUI_SKINS_SUBHEADER = "Stylization of addons" -- Need review
+L_GUI_SKINS_ACE3 = "Ace3"
+L_GUI_SKINS_ATLASLOOT = "AtlasLoot"
+L_GUI_SKINS_BLOOD_SHIELD_TRACKER = "BloodShieldTracker"
 L_GUI_SKINS_BW = "BigWigs"
+L_GUI_SKINS_CAPPING = "Capping"
+L_GUI_SKINS_CLIQUE = "Clique"
+L_GUI_SKINS_COOL_LINE = "CoolLine"
 L_GUI_SKINS_DBM = "DBM"
 L_GUI_SKINS_DBM_MOVABLE = "Allow to move DBM bars" -- Need review
-L_GUI_SKINS_OMEN = "Omen"
-L_GUI_SKINS_RECOUNT = "Recount"
-L_GUI_SKINS_BLOOD_SHIELD_TRACKER = "BloodShieldTracker"
 L_GUI_SKINS_DOMINOS = "Dominos"
 L_GUI_SKINS_FLYOUT_BUTTON = "FlyoutButtonCustom"
-L_GUI_SKINS_NUG_RUNNING = "NugRunning"
-L_GUI_SKINS_OVALE = "OvaleSpellPriority"
-L_GUI_SKINS_CLIQUE = "Clique"
-L_GUI_SKINS_ACE3 = "Ace3"
-L_GUI_SKINS_CAPPING = "Capping"
-L_GUI_SKINS_COOL_LINE = "CoolLine"
-L_GUI_SKINS_ATLASLOOT = "AtlasLoot"
-L_GUI_SKINS_TINY_DPS = "TinyDPS"
+L_GUI_SKINS_LS_TOASTS = "ls: Toasts"
 L_GUI_SKINS_MAGE_NUGGETS = "MageNuggets"
+L_GUI_SKINS_MY_ROLE_PLAY = "MyRolePlay"
 L_GUI_SKINS_NPCSCAN = "NPCScan"
+L_GUI_SKINS_NUG_RUNNING = "NugRunning"
+L_GUI_SKINS_OMEN = "Omen"
+L_GUI_SKINS_OPIE = "OPie"
+L_GUI_SKINS_OVALE = "OvaleSpellPriority"
+L_GUI_SKINS_POSTAL = "Postal"
+L_GUI_SKINS_RECOUNT = "Recount"
+L_GUI_SKINS_REMATCH = "Rematch"
+L_GUI_SKINS_SKADA = "Skada"
+L_GUI_SKINS_TINY_DPS = "TinyDPS"
 L_GUI_SKINS_VANASKOS = "VanasKoS"
 L_GUI_SKINS_WEAK_AURAS = "WeakAuras"
-L_GUI_SKINS_SKADA = "Skada"
-L_GUI_SKINS_MY_ROLE_PLAY = "MyRolePlay"
-L_GUI_SKINS_POSTAL = "Postal"
-L_GUI_SKINS_OPIE = "OPie"
-L_GUI_SKINS_REMATCH = "Rematch"
-L_GUI_SKINS_LS_TOASTS = "ls: Toasts"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "戰鬥文字"
@@ -125,12 +131,15 @@ L_GUI_COMBATTEXT_DAMAGE_COLOR = "傷害文字按法術類型著色"
 L_GUI_COMBATTEXT_CRIT_PREFIX = "暴擊時文本左側修飾符號"
 L_GUI_COMBATTEXT_CRIT_POSTFIX = "暴擊時文本右側修飾符號"
 L_GUI_COMBATTEXT_ICONS = "傷害輸出技能圖示"
-L_GUI_COMBATTEXT_ICON_SIZE = "傷害輸出圖示大小"
+L_GUI_COMBATTEXT_ICON_SIZE = "Icon size" -- Need review
+L_GUI_COMBATTEXT_ICON_SIZE_DESC = "傷害輸出圖示大小"
 L_GUI_COMBATTEXT_TRESHOLD = "傷害輸出最小閥值"
 L_GUI_COMBATTEXT_HEAL_TRESHOLD = "承受/輸出治療最小閾值"
 L_GUI_COMBATTEXT_SCROLLABLE = "允許滑鼠調整滾動區域"
-L_GUI_COMBATTEXT_MAX_LINES = "滾動區域顯示最大行數"
-L_GUI_COMBATTEXT_TIME_VISIBLE = "信息保留時間(秒)"
+L_GUI_COMBATTEXT_MAX_LINES = "Max lines" -- Need review
+L_GUI_COMBATTEXT_MAX_LINES_DESC = "滾動區域顯示最大行數"
+L_GUI_COMBATTEXT_TIME_VISIBLE = "Time" -- Need review
+L_GUI_COMBATTEXT_TIME_VISIBLE_DESC = "信息保留時間(秒)"
 L_GUI_COMBATTEXT_DK_RUNES = "死亡騎士符文恢復"
 L_GUI_COMBATTEXT_KILLINGBLOW = "擊殺信息"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "將AOE傷害合併為一條信息"
@@ -142,19 +151,25 @@ L_GUI_COMBATTEXT_SHORT_NUMBERS = "數值以K為單位顯示"
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Buff提示"
+L_GUI_REMINDER_SUBTEXT = "Display of missed auras." -- Need review
 L_GUI_REMINDER_SOLO_ENABLE = "自身Buff缺失,圖示提示"
 L_GUI_REMINDER_SOLO_SOUND = "自身Buff缺失,聲音提示"
-L_GUI_REMINDER_SOLO_SIZE = "自身Buff提示圖示大小"
+L_GUI_REMINDER_SOLO_SIZE = "Icon size" -- Need review
+L_GUI_REMINDER_SOLO_SIZE_DESC = "自身Buff提示圖示大小"
+L_GUI_REMINDER_SUBHEADER = "Raid buffs" -- Need review
 L_GUI_REMINDER_RAID_ENABLE = "團隊Buff缺失,圖示提示"
 L_GUI_REMINDER_RAID_ALWAYS = "總是顯示Buff提示"
-L_GUI_REMINDER_RAID_SIZE = "團隊Buff提示圖示大小"
-L_GUI_REMINDER_RAID_ALPHA = "當團隊Buff存在時圖示透明度"
+L_GUI_REMINDER_RAID_SIZE = "Icon size" -- Need review
+L_GUI_REMINDER_RAID_SIZE_DESC = "團隊Buff提示圖示大小"
+L_GUI_REMINDER_RAID_ALPHA = "Transparent" -- Need review
+L_GUI_REMINDER_RAID_ALPHA_DESC = "當團隊Buff存在時圖示透明度"
 
 -- Raid cooldowns options
 L_GUI_COOLDOWN_RAID = "團隊技能冷卻"
+L_GUI_COOLDOWN_RAID_SUBTEXT = "Tracking raid abilities in the upper left corner." -- Need review
 L_GUI_COOLDOWN_RAID_ENABLE = "開啟團隊技能冷卻"
-L_GUI_COOLDOWN_RAID_HEIGHT = "團隊技能冷卻框架高度"
-L_GUI_COOLDOWN_RAID_WIDTH = "團隊技能冷卻框架寬度"
+L_GUI_COOLDOWN_RAID_HEIGHT = "Bars height" -- Need review
+L_GUI_COOLDOWN_RAID_WIDTH = "Bars width" -- Need review
 L_GUI_COOLDOWN_RAID_SORT = "團隊技能冷卻向上延伸"
 L_GUI_COOLDOWN_RAID_EXPIRATION = "按冷卻時間排序"
 L_GUI_COOLDOWN_RAID_SHOW_SELF = "自身團隊技能"
@@ -165,24 +180,28 @@ L_GUI_COOLDOWN_RAID_IN_ARENA = "競技場中顯示團隊技能冷卻"
 
 -- Enemy cooldowns options
 L_GUI_COOLDOWN_ENEMY = "敵對技能冷卻"
+L_GUI_COOLDOWN_ENEMY_SUBTEXT = "Tracking enemy abilities as icons above your spell casting bar." -- Need review
 L_GUI_COOLDOWN_ENEMY_ENABLE = "開啟敵對技能冷卻"
 L_GUI_COOLDOWN_ENEMY_SIZE = "敵對技能冷卻圖示大小"
-L_GUI_COOLDOWN_ENEMY_DIRECTION = "敵對技能冷卻圖示方向(RIGHT/LEFT/UP/DOWN)"
+L_GUI_COOLDOWN_ENEMY_DIRECTION = "敵對技能冷卻圖示方向"
 L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "始終顯示敵對技能冷卻"
 L_GUI_COOLDOWN_ENEMY_IN_BG = "戰場中顯示敵對技能冷卻"
 L_GUI_COOLDOWN_ENEMY_IN_ARENA = "競技場中顯示敵對技能冷卻"
 
 -- Pulse cooldowns options
 L_GUI_COOLDOWN_PULSE = "技能冷卻閃爍"
+L_GUI_COOLDOWN_PULSE_SUBTEXT = "Track your cd using a pulse icon in the center of the screen." -- Need review
 L_GUI_COOLDOWN_PULSE_ENABLE = "開啟冷卻閃爍提示"
 L_GUI_COOLDOWN_PULSE_SIZE = "冷卻閃爍提示大小"
 L_GUI_COOLDOWN_PULSE_SOUND = "播放聲音提醒"
 L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "動畫縮放"
 L_GUI_COOLDOWN_PULSE_HOLD_TIME = "提示持續時間"
-L_GUI_COOLDOWN_PULSE_THRESHOLD = "持續時間最小閾值"
+L_GUI_COOLDOWN_PULSE_THRESHOLD = "Threshold time" -- Need review
+L_GUI_COOLDOWN_PULSE_THRESHOLD_DESC = "持續時間最小閾值"
 
 -- Threat options
 L_GUI_THREAT = "仇恨欄"
+L_GUI_THREAT_SUBTEXT = "Display of the threat list (a simple analogue of Omen)." -- Need review
 L_GUI_THREAT_ENABLE = "開啟仇恨欄"
 L_GUI_THREAT_HEIGHT = "仇恨欄高度"
 L_GUI_THREAT_WIDTH = "仇恨欄寬度"
@@ -191,6 +210,7 @@ L_GUI_THREAT_HIDE_SOLO = "僅在隊伍/團隊中開啟"
 
 -- Tooltip options
 L_GUI_TOOLTIP = "提示資訊"
+L_GUI_TOOLTIP_SUBTEXT = "In this block, you can change the standard tips when mouseovering." -- Need review
 L_GUI_TOOLTIP_ENABLE = "開啟提示資訊增強"
 L_GUI_TOOLTIP_SHIFT = "按下Shift時顯示提示資訊"
 L_GUI_TOOLTIP_CURSOR = "提示資訊跟隨滑鼠"
@@ -198,6 +218,7 @@ L_GUI_TOOLTIP_ICON = "提示資訊中顯示物品圖示"
 L_GUI_TOOLTIP_HEALTH = "生命值以百分比顯示"
 L_GUI_TOOLTIP_HIDE = "隱藏快捷列的提示資訊"
 L_GUI_TOOLTIP_HIDE_COMBAT = "戰鬥中隱藏提示資訊"
+L_GUI_TOOLTIP_SUBHEADER_PLUGINS = "Plugins" -- Need review
 L_GUI_TOOLTIP_TALENTS = "天賦"
 L_GUI_TOOLTIP_ACHIEVEMENTS = "成就比較"
 L_GUI_TOOLTIP_TARGET = "目標的目標"
@@ -206,6 +227,7 @@ L_GUI_TOOLTIP_REALM = "目標所在伺服器名"
 L_GUI_TOOLTIP_RANK = "公會階級"
 L_GUI_TOOLTIP_ARENA_EXPERIENCE = "競技場等級"
 L_GUI_TOOLTIP_SPELL_ID = "法術ID"
+L_GUI_TOOLTIP_AVERAGE_LVL_DESC = "The average item level" -- Need review
 L_GUI_TOOLTIP_RAID_ICON = "團隊標記"
 L_GUI_TOOLTIP_WHO_TARGETTING = "隊伍/團隊時,顯示關注成員(誰以目標為目標)"
 L_GUI_TOOLTIP_ITEM_COUNT = "叠堆數量"
@@ -213,6 +235,7 @@ L_GUI_TOOLTIP_UNIT_ROLE = "角色類型"
 L_GUI_TOOLTIP_INSTANCE_LOCK = "自身信息提示"
 
 -- Chat options
+L_GUI_CHAT_SUBTEXT = "Here you can change the settings of the chat window." -- Need review
 L_GUI_CHAT_ENABLE = "開啟聊天框增強"
 L_GUI_CHAT_BACKGROUND = "聊天框背景"
 L_GUI_CHAT_BACKGROUND_ALPHA = "聊天背景透明度"
@@ -232,6 +255,7 @@ L_GUI_CHAT_DAMAGE_METER_SPAM = "在鏈接中合併垃圾郵件"
 
 -- Bag options
 L_GUI_BAGS = "背包"
+L_GUI_BAGS_SUBTEXT = "Changing the built-in bags." -- Need review
 L_GUI_BAGS_ENABLE = "開啟背包增強"
 L_GUI_BAGS_ILVL = "Show item level for weapons and armor" -- Need review
 L_GUI_BAGS_BUTTON_SIZE = "格子大小"
@@ -240,6 +264,7 @@ L_GUI_BAGS_BANK = "銀行每行格數"
 L_GUI_BAGS_BAG = "背包每行格數"
 
 -- Minimap options
+L_GUI_MINIMAP_SUBTEXT = "Minimap settings." -- Need review
 L_GUI_MINIMAP_ENABLE = "開啟迷你地圖增強"
 L_GUI_MINIMAP_ICON = "追蹤菜單"
 L_GUI_GARRISON_ICON = "Garrison icon" -- Need review
@@ -252,6 +277,7 @@ L_GUI_MAP_BG_STYLIZATION = "開啟戰場地圖增強"
 L_GUI_MAP_FOG_OF_WAR = "世界地圖全亮選項"
 
 -- Loot options
+L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review
 L_GUI_LOOT_ENABLE = "開啟拾取增強"
 L_GUI_LOOT_ROLL_ENABLE = "團隊拾取框架增強"
 L_GUI_LOOT_ICON_SIZE = "拾取框架圖示大小"
@@ -260,14 +286,15 @@ L_GUI_LOOT_AUTOGREED = "滿級后自動貪婪綠色物品"
 L_GUI_LOOT_AUTODE = "自動選擇分解"
 
 -- Nameplate options
+L_GUI_NAMEPLATE_SUBTEXT = "Nameplates settings" -- Need review
 L_GUI_NAMEPLATE_ENABLE = "開啟單位名條增強"
 L_GUI_NAMEPLATE_COMBAT = "戰鬥中自動顯示單位名條"
 L_GUI_NAMEPLATE_HEALTH = "生命值以百分比顯示"
 L_GUI_NAMEPLATE_HEIGHT = "單位名條高度"
 L_GUI_NAMEPLATE_WIDTH = "單位名條寬度"
-L_GUI_NAMEPLATE_DISTANCE = "Show nameplates for units within this range" -- Need review
-L_GUI_NAMEPLATE_AD_HEIGHT = "目標的單位名條額外高度"
-L_GUI_NAMEPLATE_AD_WIDTH = "目標的單位名條額外寬度"
+L_GUI_NAMEPLATE_DISTANCE = "Display range" -- Need review
+L_GUI_NAMEPLATE_AD_HEIGHT = "Additional height" -- Need review
+L_GUI_NAMEPLATE_AD_WIDTH = "Additional width" -- Need review
 L_GUI_NAMEPLATE_CASTBAR_NAME = "法術名稱"
 L_GUI_NAMEPLATE_THREAT = "仇恨情況"
 L_GUI_NAMEPLATE_CLASS_ICON = "PvP時顯示職業圖示"
@@ -295,8 +322,8 @@ L_GUI_ACTIONBAR_SPLIT_BARS = "#5 快捷列分段(2*6; 該選項開啟后將激�
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "快捷列按鈕邊框按職業著色"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "快捷列自由折疊(可隨時調節快捷列顯示數目)"
 L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "關閉快捷列技能特效高亮"
-L_GUI_ACTIONBAR_BOTTOMBARS = "底部快捷列數目(1, 2, or 3)"
-L_GUI_ACTIONBAR_RIGHTBARS = "右側快捷列數目(0, 1, 2, or 3)"
+L_GUI_ACTIONBAR_BOTTOMBARS = "底部快捷列數目"
+L_GUI_ACTIONBAR_RIGHTBARS = "右側快捷列數目"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "滑鼠懸停顯示右側快捷列"
 L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "滑鼠懸停顯示寵物快捷列"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "隱藏寵物快捷列"
@@ -308,7 +335,8 @@ L_GUI_ACTIONBAR_MICROMENU = "微型菜單"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "滑鼠懸停顯示微型菜單"
 
 -- Auras/Buffs/Debuffs
-L_GUI_AURA_PLAYER_BUFF_SIZE = "玩家Buff圖示大小"
+L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size" -- Need review
+L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "玩家Buff圖示大小"
 L_GUI_AURA_SHOW_SPIRAL = "漩渦冷卻樣式"
 L_GUI_AURA_SHOW_TIMER = "層數堆疊"
 L_GUI_AURA_PLAYER_AURAS = "玩家顯示法術效果"
@@ -325,6 +353,7 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "自身Buff圖示邊框按職業著色"
 
 -- Filger
 L_GUI_FILGER = "Timers (Filger)" -- Need review
+L_GUI_FILGER_SUBTEXT = "Filger - analogue WeakAuras, but more simple and easy. Allows you to display in the form of icons and bars your auras and timers." -- Need review
 L_GUI_FILGER_ENABLE = "開啟Filger" -- Need review
 L_GUI_FILGER_TEST_MODE = "調試模式"
 L_GUI_FILGER_MAX_TEST_ICON = "調試模式圖示數量"
@@ -337,6 +366,7 @@ L_GUI_FILGER_COOLDOWN_SIZE = "技能冷卻圖示大小"
 L_GUI_FILGER_PVP_SIZE = "PvP debuffs圖示大小"
 
 -- Unit Frames options
+L_GUI_UF_SUBTEXT = "Customize player, target frames and etc." -- Need review
 L_GUI_UF_ENABLE = "開啟單位框架增強"
 L_GUI_UF_OWN_COLOR = "自定義顏色"
 L_GUI_UF_UF_COLOR = "生命條顏色(如果啟用‘自定義顏色’)"
@@ -345,10 +375,12 @@ L_GUI_UF_TOTAL_VALUE = "玩家/目標框架顯示詳細的文字變化"
 L_GUI_UF_COLOR_VALUE = "生命值/魔法值按職業著色"
 L_GUI_UF_BAR_COLOR_VALUE = "生命值按剩餘血量著色"
 L_GUI_UF_LINES = "Show Player and Target lines" -- Need review
+L_GUI_UF_SUBHEADER_CAST = "Castbars" -- Need review
 L_GUI_UF_UNIT_CASTBAR = "施法條"
 L_GUI_UF_CASTBAR_ICON = "施法條圖示"
 L_GUI_UF_CASTBAR_LATENCY = "施法延遲"
 L_GUI_UF_CASTBAR_TICKS = "施法條跳數"
+L_GUI_UF_SUBHEADER_FRAMES = "Frames" -- Need review
 L_GUI_UF_SHOW_PET = "寵物框架"
 L_GUI_UF_SHOW_FOCUS = "焦點框架"
 L_GUI_UF_SHOW_TOT = "目標的目標框架"
@@ -356,20 +388,24 @@ L_GUI_UF_SHOW_BOSS = "Boss框架"
 L_GUI_UF_BOSS_RIGHT = "右側顯示Boss框架"
 L_GUI_UF_SHOW_ARENA = "競技場框架"
 L_GUI_UF_ARENA_RIGHT = "右側顯示競技場框架"
-L_GUI_UF_BOSS_DEBUFFS = "BOSS框架Debuffs數量"
-L_GUI_UF_BOSS_BUFFS = "Boss框架Buffs數量"
+L_GUI_UF_BOSS_DEBUFFS = "Number of debuffs" -- Need review
+L_GUI_UF_BOSS_DEBUFFS_DESC = "BOSS框架Debuffs數量"
+L_GUI_UF_BOSS_BUFFS = "Number of buffs" -- Need review
+L_GUI_UF_BOSS_BUFFS_DESC = "Boss框架Buffs數量"
 L_GUI_UF_ICONS_PVP = "滑鼠懸停玩家/目標時,顯示PvP狀態"
 L_GUI_UF_ICONS_COMBAT = "戰鬥標記"
 L_GUI_UF_ICONS_RESTING = "休息標記"
+L_GUI_UF_SUBHEADER_PORTRAIT = "Portraits" -- Need review
 L_GUI_UF_PORTRAIT_ENABLE = "玩家/目標頭像"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "頭像邊框按職業著色"
 L_GUI_UF_PORTRAIT_HEIGHT = "頭像高度"
 L_GUI_UF_PORTRAIT_WIDTH = "頭像寬度"
+L_GUI_UF_SUBHEADER_PLUGINS = "Plugins" -- Need review
 L_GUI_UF_PLUGINS_GCD = "公共CD計時條"
 L_GUI_UF_PLUGINS_SWING = "普通攻擊計時條"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "聲望條"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "經驗條"
-L_GUI_UF_PLUGINS_ARTIFACT_BAR = "Artifact Power bar" -- Need review
+L_GUI_UF_PLUGINS_ARTIFACT_BAR = "Azerite Power bar" -- Need review
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "平滑條"
 L_GUI_UF_PLUGINS_ENEMY_SPEC = "敵對玩家天賦"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "玩家/目標框架顯示戰鬥文字"
@@ -379,6 +415,7 @@ L_GUI_UF_PLUGINS_POWER_PREDICTION = "Power cost prediction bar on player frame" 
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "職業欄"
+L_GUI_UF_PLUGINS_CLASS_BAR_SUBTEXT = "Control of special class resources." -- Need review
 L_GUI_UF_PLUGINS_COMBO_BAR = "連擊點"
 L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS = "總是顯示德魯伊連擊點"
 L_GUI_UF_PLUGINS_COMBO_BAR_OLD = "目標框架顯示連擊點數"
@@ -392,6 +429,7 @@ L_GUI_UF_PLUGINS_TOTEM_BAR = "圖騰"
 L_GUI_UF_PLUGINS_RANGE_BAR = "距離顯示(僅牧師)"
 
 -- Raid Frames options
+L_GUI_UF_RAIDFRAMES_SUBTEXT = "Customize the appearance of the raid frames." -- Need review
 L_GUI_UF_BY_ROLE = "按職責排序"
 L_GUI_UF_AGGRO_BORDER = "邊框按仇恨值著色"
 L_GUI_UF_DEFICIT_HEALTH = "團隊生命值虧減模式"
@@ -400,13 +438,16 @@ L_GUI_UF_SHOW_RAID = "團隊框架"
 L_GUI_UF_VERTICAL_HEALTH = "垂直顯示團隊框架生命值"
 L_GUI_UF_ALPHA_HEALTH = "滿血時淡化單位框架"
 L_GUI_UF_SHOW_RANGE = "單位框架按距離變化設定透明度"
-L_GUI_UF_RANGE_ALPHA = "單位框架超出距離的透明度"
+L_GUI_UF_RANGE_ALPHA = "Alpha" -- Need review
+L_GUI_UF_RANGE_ALPHA_DESC = "單位框架超出距離的透明度"
+L_GUI_UF_SUBHEADER_RAIDFRAMES = "Frames" -- Need review
 L_GUI_UF_SOLO_MODE = "總是顯示玩家框架"
 L_GUI_UF_PLAYER_PARTY = "在小隊中顯示玩家框架"
 L_GUI_UF_SHOW_TANK = "團隊主坦克框架"
 L_GUI_UF_SHOW_TANK_TT = "坦克目標的目標"
 L_GUI_UF_RAID_GROUP = "小隊數目"
 L_GUI_UF_RAID_VERTICAL_GROUP = "竪向排列團隊隊伍(僅在治療佈局中啟用)"
+L_GUI_UF_SUBHEADER_ICONS = "Icons" -- Need review
 L_GUI_UF_ICONS_ROLE = "團隊中顯示角色類型"
 L_GUI_UF_ICONS_RAID_MARK = "團隊標記"
 L_GUI_UF_ICONS_READY_CHECK = "就緒確認標記"
@@ -421,6 +462,7 @@ L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "滑鼠中鍵點擊已死亡的角色時,�
 
 -- Panel options
 L_GUI_TOP_PANEL = "頂部信息面板"
+L_GUI_TOP_PANEL_SUBTEXT = "Manage built-in top panel with information." -- Need review
 L_GUI_TOP_PANEL_ENABLE = "開啟頂部信息面板"
 L_GUI_TOP_PANEL_MOUSE = "滑鼠懸停時顯示頂部信息面板"
 L_GUI_TOP_PANEL_WIDTH = "信息面板寬度"
@@ -428,14 +470,17 @@ L_GUI_TOP_PANEL_HEIGHT = "信息面板高度"
 
 -- Stats options
 L_GUI_STATS = "統計面板"
+L_GUI_STATS_SUBTEXT = "Statistics blocks located at the bottom of the screen. Type in the chat '/ls' for info." -- Need review
 L_GUI_STATS_BG = "戰場分數"
 L_GUI_STATS_CLOCK = "時鐘"
 L_GUI_STATS_LATENCY = "延遲"
 L_GUI_STATS_MEMORY = "記憶體佔用"
 L_GUI_STATS_FPS = "幀數"
 L_GUI_STATS_EXPERIENCE = "經驗"
+L_GUI_STATS_TALENTS_DESC = "Date-text allows you to change the spec and loot on click" -- Need review
 L_GUI_STATS_COORDS = "座標"
 L_GUI_STATS_LOCATION = "位置"
+L_GUI_STATS_SUBHEADER_CURRENCY = "Currency (displayed in gold data text)" -- Need review
 L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "考古學"
 L_GUI_STATS_CURRENCY_COOKING = "烹飪"
 L_GUI_STATS_CURRENCY_PROFESSIONS = "專業技能"
@@ -444,6 +489,7 @@ L_GUI_STATS_CURRENCY_MISCELLANEOUS = "其他"
 
 -- Error options
 L_GUI_ERROR = "錯誤收集"
+L_GUI_ERROR_SUBTEXT = "Filtering standard text at the top of the screen from Blizzard." -- Need review
 L_GUI_ERROR_BLACK = "隱藏黑名單錯誤"
 L_GUI_ERROR_WHITE = "顯示白名單錯誤"
 L_GUI_ERROR_HIDE_COMBAT = "戰鬥中隱藏所有錯誤提示"

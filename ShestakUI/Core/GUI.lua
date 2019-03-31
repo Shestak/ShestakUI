@@ -4,49 +4,50 @@ if not IsAddOnLoaded("ShestakUI_Config") then return end
 ----------------------------------------------------------------------------------------
 --	This Module loads new user settings if ShestakUI_Config is loaded
 ----------------------------------------------------------------------------------------
-if not GUIConfigAll then GUIConfigAll = {} end
-if GUIConfigAll[T.realm] == nil then GUIConfigAll[T.realm] = {} end
-if GUIConfigAll[T.realm][T.name] == nil then GUIConfigAll[T.realm][T.name] = false end
+-- Сreate the profile boolean
+if not ShestakUIOptionsGlobal then ShestakUIOptionsGlobal = {} end
+if ShestakUIOptionsGlobal[T.realm] == nil then ShestakUIOptionsGlobal[T.realm] = {} end
+if ShestakUIOptionsGlobal[T.realm][T.name] == nil then ShestakUIOptionsGlobal[T.realm][T.name] = false end
 
-if GUIConfigAll[T.realm][T.name] == true and not GUIConfig then return end
-if GUIConfigAll[T.realm][T.name] == false and not GUIConfigSettings then return end
+-- Сreate the main options table
+if ShestakUIOptions == nil then ShestakUIOptions = {} end
 
-if GUIConfigAll[T.realm][T.name] == true then
-	for group, options in pairs(GUIConfig) do
-		if C[group] then
-			local count = 0
-			for option, value in pairs(options) do
-				if C[group][option] ~= nil then
-					if C[group][option] == value then
-						GUIConfig[group][option] = nil
-					else
-						count = count + 1
-						C[group][option] = value
-					end
-				end
-			end
-			if count == 0 then GUIConfig[group] = nil end
-		else
-			GUIConfig[group] = nil
-		end
+-- TODO: Remove Backward compatible for old GUI after while
+if GUIConfigSettings then
+	ShestakUIOptions = GUIConfigSettings
+end
+
+if GUIConfigAll and GUIConfigAll[T.realm][T.name] == true then
+	ShestakUIOptionsGlobal[T.realm][T.name] = true
+	ShestakUIOptionsPerChar = GUIConfig
+end
+
+-- Determine which settings to use
+local profile
+if ShestakUIOptionsGlobal[T.realm][T.name] == true then
+	if ShestakUIOptionsPerChar == nil then
+		ShestakUIOptionsPerChar = {}
 	end
+	profile = ShestakUIOptionsPerChar
 else
-	for group, options in pairs(GUIConfigSettings) do
-		if C[group] then
-			local count = 0
-			for option, value in pairs(options) do
-				if C[group][option] ~= nil then
-					if C[group][option] == value then
-						GUIConfigSettings[group][option] = nil
-					else
-						count = count + 1
-						C[group][option] = value
-					end
-				end
+	profile = ShestakUIOptions
+end
+
+-- Apply or remove saved settings as needed
+for group, options in pairs(profile) do
+	if C[group] then
+		for option, value in pairs(options) do
+			if C[group][option] == nil or C[group][option] == value then
+				-- remove saved vars if they do not exist in lua config anymore, or are the same as the lua config
+				profile[group][option] = nil
+			else
+				C[group][option] = value
 			end
-			if count == 0 then GUIConfigSettings[group] = nil end
-		else
-			GUIConfigSettings[group] = nil
 		end
+	else
+		profile[group] = nil
 	end
 end
+
+-- Add global options variable
+C.options = profile
