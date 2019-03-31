@@ -1,3 +1,4 @@
+local _, L = ...
 ----------------------------------------------------------------------------------------
 --	Localization for enUS and enGB client
 ----------------------------------------------------------------------------------------
@@ -25,6 +26,7 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Quest/item auto button (from the list)"
 L_GUI_MISC_RAID_TOOLS = "Raid tools"
 L_GUI_MISC_PROFESSION_TABS = "Professions tabs on tradeskill/trade frames"
 L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG"
+L.misc_hide_bg_spam_desc = "Remove Boss Emote spam about capture/losing node during BG Arathi and Gilneas" -- Need review
 L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons"
 L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets/toys that is already known"
 L_GUI_MISC_DISENCHANTING = "Milling, Prospecting and Disenchanting by Alt + click"

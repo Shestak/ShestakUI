@@ -15,8 +15,6 @@ mult = fixedHeight / scale
 -- [[ Variables ]]
 
 ns.localization = {}
-
-ns.categories = {}
 ns.buttons = {}
 
 local checkboxes = {}
@@ -150,11 +148,13 @@ ns.CreateCheckBox = function(parent, option, text, tooltipText)
 	if text then
 		f.Text:SetText(text)
 	else
-		f.Text:SetText(ns.localization[parent.tag..option])
+		f.Text:SetText(ns[parent.tag.."_"..option])
 	end
 
 	if tooltipText then
 		f.tooltipText = tooltipText
+	elseif ns[parent.tag.."_"..option.."_desc"] then
+		f.tooltipText = ns[parent.tag.."_"..option.."_desc"]
 	else
 		f.tooltipText = text
 	end

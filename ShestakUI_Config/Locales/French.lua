@@ -1,3 +1,4 @@
+local _, L = ...
 if GetLocale() ~= "frFR" then return end
 
 ----------------------------------------------------------------------------------------
@@ -28,6 +29,7 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Accepte les quêtes automatiquement"
 L_GUI_MISC_RAID_TOOLS = "Outils de raid"
 L_GUI_MISC_PROFESSION_TABS = "Onglet des professions sur les fenêtres de métiers et de craft"
 L_GUI_MISC_HIDE_BG_SPAM = "Désactive les annonces durant les champs de bataille"
+L.misc_hide_bg_spam_desc = "Remove Boss Emote spam about capture/losing node during BG Arathi and Gilneas" -- Need review
 L_GUI_MISC_ITEM_LEVEL = "Affiche le niveau d'objet sur bouton d'équipement dans la fiche de personnage"
 L_GUI_MISC_ALREADY_KNOWN = "Colorisation des recettes/montures/familiers que vous connaissez déjà"
 L_GUI_MISC_DISENCHANTING = "Mouture, Prospection et Désenchantement avec Alt + click"

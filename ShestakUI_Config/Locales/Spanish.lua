@@ -1,3 +1,4 @@
+local _, L = ...
 if GetLocale() ~= "esES" and GetLocale() ~= "esMX" then return end
 
 ----------------------------------------------------------------------------------------
@@ -28,6 +29,7 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Auto botón misión/objeto"
 L_GUI_MISC_RAID_TOOLS = "Herramientas de Raid"
 L_GUI_MISC_PROFESSION_TABS = "Pestanas de profesiones de artesania y marcos de comercio"
 L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG" -- Needs review
+L.misc_hide_bg_spam_desc = "Remove Boss Emote spam about capture/losing node during BG Arathi and Gilneas" -- Need review
 L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
 L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets/toys that is already known" -- Needs review
 L_GUI_MISC_DISENCHANTING = "Milling, Prospecting and Disenchanting by Alt + click" -- Needs review

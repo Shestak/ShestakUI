@@ -1,3 +1,4 @@
+local _, L = ...
 if GetLocale() ~= "itIT" then return end
 
 ----------------------------------------------------------------------------------------
@@ -28,6 +29,7 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Pulsante automatico missione/oggetto"
 L_GUI_MISC_RAID_TOOLS = "Strumenti per le incursioni"
 L_GUI_MISC_PROFESSION_TABS = "Visualizza la linguetta delle professioni sul riquadro abilità di commercio/commercio"
 L_GUI_MISC_HIDE_BG_SPAM = "Rimuovi lo spam delle emotes dei bosses durante i Campi di Battaglia"
+L.misc_hide_bg_spam_desc = "Remove Boss Emote spam about capture/losing node during BG Arathi and Gilneas" -- Need review
 L_GUI_MISC_ITEM_LEVEL = "Livello oggetto sugli scomparti della schermata Personaggio"
 L_GUI_MISC_ALREADY_KNOWN = "Colora ricette/cavalcature/mascottes possedute"
 L_GUI_MISC_DISENCHANTING = "Disincantamento, Pestatura e Prospezione in un solo click"

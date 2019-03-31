@@ -1,3 +1,4 @@
+local _, L = ...
 if GetLocale() ~= "zhTW" then return end
 
 ----------------------------------------------------------------------------------------
@@ -28,6 +29,7 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "任務/道具自動按鈕"
 L_GUI_MISC_RAID_TOOLS = "團隊工具"
 L_GUI_MISC_PROFESSION_TABS = "專業/商業框架顯示專業技能按鈕"
 L_GUI_MISC_HIDE_BG_SPAM = "戰場内移除Boss表情信息"
+L.misc_hide_bg_spam_desc = "Remove Boss Emote spam about capture/losing node during BG Arathi and Gilneas" -- Need review
 L_GUI_MISC_ITEM_LEVEL = "人物介面顯示裝備的物品等級"
 L_GUI_MISC_ALREADY_KNOWN = "彩色顯示已學會的食譜/坐騎/寵物"
 L_GUI_MISC_DISENCHANTING = "快捷研磨/選礦/分解(Alt+左鍵)"
