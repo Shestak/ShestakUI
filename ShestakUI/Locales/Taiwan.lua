@@ -53,17 +53,12 @@ L_MISC_ONECLICK_CANCEL = "Shift+右鍵,不彈出確認窗口直接取消選擇�
 L_MISC_UI_OUTDATED = "ShestakUI 版本已過期，請至 www.shestak.org 下載最新版"
 L_MISC_HEADER_MARK = "鼠標懸停顯示團隊圖標"
 L_MISC_BINDER_OPEN = "鼠標綁定"
-L_MISC_GROCERY_BUY = "購買"
-L_MISC_GROCERY_DESC = "雜貨商自動購買"
 L_MISC_SCROLL = "附魔卷軸"
-L_MISC_COLLAPSE = "The Collapse" -- Need review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散團隊"
 
 -- Zone name
-L_ZONE_TOLBARAD = "托巴拉德"
-L_ZONE_TOLBARADPEN = "托巴拉德半島"
 L_ZONE_ARATHIBASIN = "阿拉希盆地"
 L_ZONE_GILNEAS = "吉爾尼斯之戰"
 L_ZONE_ANCIENTDALARAN = "達拉然陷坑"
@@ -175,7 +170,7 @@ L_INFO_DUEL = "拒絕決鬥請求 "
 L_INFO_PET_DUEL = "拒絕寵物對戰請求 "
 L_INFO_DISBAND = "解散隊伍"
 L_INFO_SETTINGS_DBM = "鍵入 /settings dbm, 載入 DBM 的設定"
-L_INFO_SETTINGS_DXE = "鍵入 /settings dxe, 載入 DXE 的設定"
+L_INFO_SETTINGS_BIGWIGS = "鍵入 /settings bw, 載入 BigWigs 的設定"
 L_INFO_SETTINGS_MSBT = "鍵入 /settings msbt, 載入 MSBT 的設定"
 L_INFO_SETTINGS_SKADA = "鍵入 /settings skada, 載入 Skada 的設定"
 L_INFO_SETTINGS_ALL = "鍵入 /settings all, 載入所有UI設定"
@@ -190,12 +185,10 @@ L_POPUP_RESETSTATS = "你確定要重置本次遊戲時間和金幣收益統計�
 L_POPUP_SWITCH_RAID = "選擇團隊佈局."
 L_POPUP_DISBAND_RAID = "你確定要解散團隊?"
 L_POPUP_DISABLEUI = "ShestakUI並不支援此解析度, 你想要停用ShestakUI嗎? (若果您想要嘗試其他解析度, 請按取消)"
-L_POPUP_SETTINGS_ALL = "應用所有的UI設置(DBM/DXE, Skada and MSBT)?"
+L_POPUP_SETTINGS_ALL = "應用所有的UI設置(DBM, BigWigs, Skada, MSBT)?"
 L_POPUP_SETTINGS_DBM = "需要改變DBM描點及風格化元素."
-L_POPUP_SETTINGS_DXE = "需要改變DXE描點及風格化元素."
 L_POPUP_SETTINGS_BW = "需要改變BigWigs描點及風格化元素."
 L_POPUP_ARMORY = "查看英雄榜"
-L_POPUP_CURRENCY_CAP = "您擁有的最高級貨幣為"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "歡迎使用ShestakUI "
@@ -276,12 +269,14 @@ L_STATS_EQUIPMENT_CHANGER = "左鍵或中鍵開啟裝備管理員"
 L_STATS_SORTING_BY = "排列方式："
 L_STATS_TIPS = "提示:"
 L_STATS_TOTAL_MEMORY_USAGE = "全部資源耗用:"
+L_STATS_TOTAL_CPU_USAGE = "Total CPU Usage:" -- Need review
 L_STATS_NOT_TO_SELL = "輸入/junk設定自動販售例外名單"
 L_STATS_WATCH_CURRENCY = "從tooltip中顯示貨幣"
 L_STATS_WATCH_FACTIONS = "從角色人物介面觀看資訊"
 L_STATS_TOOLTIP_TIME_PLAYED = "達到最高等級後,提示將顯示角色上線時間紀錄"
 L_STATS_TOOLTIP_EXPERIENCE = "未達最高等級時,提示將顯示經驗值訊息"
 L_STATS_SEALS = "Seals this week" -- Needs review
+L_STATS_SPEC = "專精" -- Need review
 
 -- Slash commands
 L_SLASHCMD_HELP = {

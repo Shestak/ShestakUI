@@ -73,7 +73,7 @@ local function GetValues()
 end
 
 -- Changed tooltip for ShestakUI
-local function UpdateTooltip(element)
+local function UpdateTooltip()
 	local cur, max, perc, rested, restedPerc, _, isHonor = GetValues()
 
 	GameTooltip:SetText(isHonor and HONOR or COMBAT_XP_GAIN.." "..format(LEVEL_GAINED, T.level), 0.40, 0.78, 1)

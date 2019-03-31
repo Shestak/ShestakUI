@@ -3,7 +3,7 @@ if T.client ~= "frFR" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for frFR client
---	Translation: Cranan, Puree
+--	Translation: Cranan, Puree, AlbertDuval
 ----------------------------------------------------------------------------------------
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "Sans nourriture : "
@@ -53,17 +53,12 @@ L_MISC_ONECLICK_CANCEL = "Maj-Clic-Droit pour annuler l'objet sélectionné sans
 L_MISC_UI_OUTDATED = "Une version plus récente de ShestakUI est disponible. Vous pouvez la télécharger sur www.shestak.org"
 L_MISC_HEADER_MARK = "Icône de raid au survol de la souris"
 L_MISC_BINDER_OPEN = "Assignations des boutons de la souris"
-L_MISC_GROCERY_BUY = "Achat"
-L_MISC_GROCERY_DESC = "Achat automatique de sacs d'épicerie"
 L_MISC_SCROLL = "Parchemin"
-L_MISC_COLLAPSE = "The Collapse" -- Need review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Dissoudre le raid"
 
 -- Zone name
-L_ZONE_TOLBARAD = "Tol Barad"
-L_ZONE_TOLBARADPEN = "Péninsule de Tol Barad"
 L_ZONE_ARATHIBASIN = "Bassin d'Arathi"
 L_ZONE_GILNEAS = "La bataille de Gilnéas"
 L_ZONE_ANCIENTDALARAN = "Cratère de Dalaran"
@@ -175,7 +170,7 @@ L_INFO_DUEL = "Duel rejetée par "
 L_INFO_PET_DUEL = "Duel de familier décliné par "
 L_INFO_DISBAND = "Groupe dissous..."
 L_INFO_SETTINGS_DBM = "Taper /settings dbm, pour configurer DBM automatiquement."
-L_INFO_SETTINGS_DXE = "Taper /settings dxe, pour configurer DXE automatiquement."
+L_INFO_SETTINGS_BIGWIGS = "Taper /settings bw, pour configurer BigWigs automatiquement."
 L_INFO_SETTINGS_MSBT = "Taper /settings msbt, pour configurer msbt automatiquement."
 L_INFO_SETTINGS_SKADA = "Taper /settings skada, pour configurer skada automatiquement."
 L_INFO_SETTINGS_ALL = "Taper /settings all, pour tout configurer automatiquement."
@@ -190,12 +185,10 @@ L_POPUP_RESETSTATS = "Réinitialiser les statistiques pour le temps passé dans 
 L_POPUP_SWITCH_RAID = "Sélectionner une interface raid."
 L_POPUP_DISBAND_RAID = "Etes-vous sûr de vouloir dissoudre le groupe ?"
 L_POPUP_DISABLEUI = "ShestakUI ne fonctionne pas avec cette résolution, voulez-vous désactiver ShestakUI ? (Annuler si vous souhaitez essayer une autre résolution)"
-L_POPUP_SETTINGS_ALL = "Voulez-vous appliquer les modifications pour tout ? (DBM/DXE, Skada et MSBT)"
+L_POPUP_SETTINGS_ALL = "Voulez-vous appliquer les modifications pour tout ? (DBM, BigWigs, Skada et MSBT)"
 L_POPUP_SETTINGS_DBM = "La position des éléments de DBM doit être changée."
-L_POPUP_SETTINGS_DXE = "La position des éléments de DXE doit être changée."
 L_POPUP_SETTINGS_BW = "La position des éléments de BigWigs doit être changée."
 L_POPUP_ARMORY = "Armurerie"
-L_POPUP_CURRENCY_CAP = "Vous avez atteint un maximum de "
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Bienvenue sur ShestakUI "
@@ -276,12 +269,14 @@ L_STATS_EQUIPMENT_CHANGER = "Maj-clic ou clic-milieu sur le gestionnaire équipe
 L_STATS_SORTING_BY = "Tri par"
 L_STATS_TIPS = "Conseils :"
 L_STATS_TOTAL_MEMORY_USAGE = "Utilisation de la mémoire totale :"
+L_STATS_TOTAL_CPU_USAGE = "Total CPU Usage:" -- Need review
 L_STATS_NOT_TO_SELL = "Tapez /junk pour configurer les items à ne pas vendre."
 L_STATS_WATCH_CURRENCY = "Consulté onglet monnaie articles se reflétera dans l'info bulle."
 L_STATS_WATCH_FACTIONS = "Superviser les factions de l'onglet de Réputation."
 L_STATS_TOOLTIP_TIME_PLAYED = "Quand vous êtes au niveau maximum, la bulle d'aide affichera les détails du temps de jeu pour ce compte."
 L_STATS_TOOLTIP_EXPERIENCE = "Quand vous êtes en dessous du niveau maximum, une bulle d'aide affichera les détails concernant votre expérience."
 L_STATS_SEALS = "Sceau cette semaine"
+L_STATS_SPEC = "Spec" -- Need review
 
 -- Slash commands
 L_SLASHCMD_HELP = {

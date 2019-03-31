@@ -51,77 +51,32 @@ local function LoadSkin()
 		end
 	end)
 
-	PVPQueueFrame.HonorInset:StripTextures()
-
-	local SeasonRewardFrame = PVPQueueFrame.HonorInset.RatedPanel.SeasonRewardFrame
-	SeasonRewardFrame.Ring:Hide()
-	SeasonRewardFrame.CircleMask:Hide()
-	SeasonRewardFrame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	SeasonRewardFrame.border = CreateFrame("Frame", nil, SeasonRewardFrame)
-	SeasonRewardFrame.border:CreateBackdrop("Default")
-	SeasonRewardFrame.border.backdrop:SetPoint("TOPLEFT", SeasonRewardFrame.Icon, -2, 2)
-	SeasonRewardFrame.border.backdrop:SetPoint("BOTTOMRIGHT", SeasonRewardFrame.Icon, 2, -2)
-
 	-- HonorFrame
 	HonorFrame.Inset:StripTextures()
+	HonorFrame.BonusFrame:StripTextures()
+	HonorFrame.BonusFrame.ShadowOverlay:StripTextures()
+
 	T.SkinDropDownBox(HonorFrameTypeDropDown, 165)
 	HonorFrameTypeDropDown:SetPoint("BOTTOMRIGHT", HonorFrame.Inset, "TOPRIGHT", -6, -1)
 	T.SkinScrollBar(HonorFrameSpecificFrameScrollBar)
 	HonorFrameSpecificFrameScrollBar:SetPoint("TOPLEFT", HonorFrameSpecificFrame, "TOPRIGHT", 0, -15)
 	HonorFrameSpecificFrameScrollBar:SetPoint("BOTTOMLEFT", HonorFrameSpecificFrame, "BOTTOMRIGHT", 0, 15)
 	HonorFrameQueueButton:SkinButton(true)
-	HonorFrame.BonusFrame:StripTextures()
-	HonorFrame.BonusFrame.ShadowOverlay:StripTextures()
-
-	HonorFrame.ConquestBar:StripTextures()
-	HonorFrame.ConquestBar:CreateBackdrop("Default")
-	HonorFrame.ConquestBar:SetStatusBarTexture(C.media.texture)
-	HonorFrame.ConquestBar:SetFrameLevel(HonorFrame.ConquestBar:GetFrameLevel() + 2)
-
-	HonorFrame.ConquestBar.Reward:ClearAllPoints()
-	HonorFrame.ConquestBar.Reward:SetPoint("LEFT", HonorFrame.ConquestBar, "RIGHT", -1, 0)
-
-	HonorFrame.ConquestBar.Reward:StripTextures()
-	HonorFrame.ConquestBar.Reward:CreateBackdrop("Default")
-	HonorFrame.ConquestBar.Reward.backdrop:SetPoint("TOPLEFT", HonorFrame.ConquestBar.Reward.Icon, -2, 2)
-	HonorFrame.ConquestBar.Reward.backdrop:SetPoint("BOTTOMRIGHT", HonorFrame.ConquestBar.Reward.Icon, 2, -2)
-
-	HonorFrame.ConquestBar.Reward.Ring:Hide()
-	HonorFrame.ConquestBar.Reward.CircleMask:Hide()
-	HonorFrame.ConquestBar.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	HonorFrame.ConquestBar.Reward.Icon:SetSize(20, 20)
-
-	for _, button in pairs({HonorFrame.BonusFrame.RandomBGButton, HonorFrame.BonusFrame.RandomEpicBGButton, HonorFrame.BonusFrame.Arena1Button, HonorFrame.BonusFrame.BrawlButton}) do
-		button.Reward:StripTextures()
-		button.Reward:SetTemplate("Default")
-		button.Reward:SetSize(40, 40)
-		button.Reward:SetPoint("RIGHT", button, "RIGHT", -8, 0)
-
-		button.Reward.Icon:SetAllPoints()
-		button.Reward.Icon:SetPoint("TOPLEFT", 2, -2)
-		button.Reward.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
-		button.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
-		button.Reward.EnlistmentBonus:StripTextures()
-		button.Reward.EnlistmentBonus:SetTemplate("Default")
-		button.Reward.EnlistmentBonus:SetSize(20, 20)
-		button.Reward.EnlistmentBonus:SetPoint("TOPRIGHT", 2, 2)
-
-		local EnlistmentBonusIcon = button.Reward.EnlistmentBonus:CreateTexture(nil, nil, self)
-		EnlistmentBonusIcon:SetPoint("TOPLEFT", button.Reward.EnlistmentBonus, "TOPLEFT", 2, -2)
-		EnlistmentBonusIcon:SetPoint("BOTTOMRIGHT", button.Reward.EnlistmentBonus, "BOTTOMRIGHT", -2, 2)
-		EnlistmentBonusIcon:SetTexture("Interface\\Icons\\achievement_guildperk_honorablemention_rank2")
-		EnlistmentBonusIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	end
 
 	PremadeGroupsPvPTutorialAlert:StripTextures()
 	PremadeGroupsPvPTutorialAlert:SetTemplate("Transparent")
 	PremadeGroupsPvPTutorialAlert.Arrow:Hide()
 	T.SkinCloseButton(PremadeGroupsPvPTutorialAlert.CloseButton)
 
-	HonorFrame.BonusFrame.BrawlHelpBox:StripTextures()
-	HonorFrame.BonusFrame.BrawlHelpBox:SetTemplate("Transparent")
-	T.SkinCloseButton(HonorFrame.BonusFrame.BrawlHelpBox.CloseButton)
+	T.SkinHelpBox(HonorFrame.BonusFrame.BrawlHelpBox)
+
+	PVPQueueFrame.HonorInset:StripTextures()
+	PVPQueueFrame.HonorInset.RatedPanel.Label:SetWidth(160)
+
+	local RewardFrameSeason = PVPQueueFrame.HonorInset.RatedPanel.SeasonRewardFrame
+	RewardFrameSeason.Ring:Hide()
+	RewardFrameSeason.CircleMask:Hide()
+	RewardFrameSeason.Icon:SkinIcon()
 
 	for _, i in pairs({"RandomBGButton", "RandomEpicBGButton", "Arena1Button", "BrawlButton"}) do
 		local button = HonorFrame.BonusFrame[i]
@@ -134,6 +89,28 @@ local function LoadSkin()
 		button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
 		button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 		button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
+
+		local reward = button.Reward
+		reward:StripTextures()
+		reward:SetTemplate("Default")
+		reward:SetSize(40, 40)
+		reward:SetPoint("RIGHT", button, "RIGHT", -8, 0)
+
+		reward.Icon:SetAllPoints()
+		reward.Icon:SetPoint("TOPLEFT", 2, -2)
+		reward.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
+		reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+		reward.EnlistmentBonus:StripTextures()
+		reward.EnlistmentBonus:SetTemplate("Default")
+		reward.EnlistmentBonus:SetSize(20, 20)
+		reward.EnlistmentBonus:SetPoint("TOPRIGHT", 2, 2)
+
+		local EnlistmentBonusIcon = reward.EnlistmentBonus:CreateTexture(nil, nil, self)
+		EnlistmentBonusIcon:SetPoint("TOPLEFT", reward.EnlistmentBonus, "TOPLEFT", 2, -2)
+		EnlistmentBonusIcon:SetPoint("BOTTOMRIGHT", reward.EnlistmentBonus, "BOTTOMRIGHT", -2, 2)
+		EnlistmentBonusIcon:SetTexture("Interface\\Icons\\achievement_guildperk_honorablemention_rank2")
+		EnlistmentBonusIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 
 	for i = 1, #HonorFrame.SpecificFrame.buttons do
@@ -153,37 +130,50 @@ local function LoadSkin()
 		end
 	end
 
-	for _, button in pairs{HonorFrame.TankIcon, HonorFrame.HealerIcon, HonorFrame.DPSIcon} do
-		button.checkButton:SetSize(22, 22)
-		T.SkinCheckBox(button.checkButton)
+	local checkButtons = {
+		HonorFrame.TankIcon,
+		HonorFrame.HealerIcon,
+		HonorFrame.DPSIcon,
+		ConquestFrame.TankIcon,
+		ConquestFrame.HealerIcon,
+		ConquestFrame.DPSIcon
+	}
+
+	for i = 1, #checkButtons do
+		local button = checkButtons[i].checkButton
+		button:SetSize(22, 22)
+		T.SkinCheckBox(button)
+	end
+
+	for _, bar in pairs({HonorFrame.ConquestBar, ConquestFrame.ConquestBar}) do
+		bar:StripTextures()
+		bar:CreateBackdrop("Overlay")
+		bar:SetStatusBarTexture(C.media.texture)
+		bar:SetFrameLevel(bar:GetFrameLevel() + 2)
+
+		bar.Reward:ClearAllPoints()
+		bar.Reward:SetPoint("LEFT", bar, "RIGHT", -1, 0)
+
+		bar.Reward.Ring:Hide()
+		bar.Reward.CircleMask:Hide()
+
+		bar.Reward:StripTextures()
+		bar.Reward.Icon:SkinIcon()
+		bar.Reward.Icon:SetSize(20, 20)
+
+		local faction = UnitFactionGroup("player") == "Horde" and [[Interface\Icons\UI_Horde_HonorboundMedal]] or [[Interface\Icons\UI_Alliance_7LegionMedal]]
+		hooksecurefunc(bar.Reward, "SetTexture", function(self, texture)
+			if not texture then
+				self.Icon:SetTexture(faction)
+			end
+		end)
+		bar:SetStatusBarColor(unpack(UnitFactionGroup("player") == "Horde" and {0.8, 0.2, 0.2} or {0.2, 0.2, 0.8}))
 	end
 
 	-- ConquestFrame
 	ConquestFrame:StripTextures()
 	ConquestFrame.Inset:StripTextures()
 	ConquestFrame.ShadowOverlay:StripTextures()
-
-	ConquestFrame.ConquestBar:StripTextures()
-	ConquestFrame.ConquestBar:CreateBackdrop("Default")
-	ConquestFrame.ConquestBar:SetStatusBarTexture(C.media.texture)
-	ConquestFrame.ConquestBar:SetFrameLevel(ConquestFrame.ConquestBar:GetFrameLevel() + 2)
-
-	ConquestFrame.ConquestBar.Reward:ClearAllPoints()
-	ConquestFrame.ConquestBar.Reward:SetPoint("LEFT", ConquestFrame.ConquestBar, "RIGHT", -1, 0)
-
-	ConquestFrame.ConquestBar.Reward:StripTextures()
-	ConquestFrame.ConquestBar.Reward:CreateBackdrop("Default")
-	ConquestFrame.ConquestBar.Reward.backdrop:SetPoint("TOPLEFT", ConquestFrame.ConquestBar.Reward.Icon, -2, 2)
-	ConquestFrame.ConquestBar.Reward.backdrop:SetPoint("BOTTOMRIGHT", ConquestFrame.ConquestBar.Reward.Icon, 2, -2)
-
-	ConquestFrame.ConquestBar.Reward.Ring:Hide()
-	ConquestFrame.ConquestBar.Reward.CircleMask:Hide()
-	ConquestFrame.ConquestBar.Reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	ConquestFrame.ConquestBar.Reward.Icon:SetSize(20, 20)
-
-	for _, button in pairs{ConquestFrame.TankIcon, ConquestFrame.HealerIcon, ConquestFrame.DPSIcon} do
-		T.SkinCheckBox(button.checkButton)
-	end
 
 	for _, button in pairs({ConquestFrame.Arena2v2, ConquestFrame.Arena3v3, ConquestFrame.RatedBG}) do
 		button:StripTextures()
@@ -210,6 +200,28 @@ local function LoadSkin()
 	ConquestFrame.Arena3v3:SetPoint("TOP", ConquestFrame.Arena2v2, "BOTTOM", 0, -3)
 
 	ConquestJoinButton:SkinButton(true)
+
+	local NewSeasonPopup = PVPQueueFrame.NewSeasonPopup
+	NewSeasonPopup:StripTextures()
+	NewSeasonPopup:CreateBackdrop("Overlay")
+	NewSeasonPopup.backdrop:SetPoint("TOPLEFT", 10, -10)
+	NewSeasonPopup.backdrop:SetPoint("BOTTOMRIGHT", -10, 10)
+	NewSeasonPopup:SetFrameLevel(5)
+	NewSeasonPopup.NewSeason:SetTextColor(1, 0.8, 0)
+	NewSeasonPopup.NewSeason:SetShadowOffset(1, -1)
+	NewSeasonPopup.SeasonDescription:SetTextColor(1, 1, 1)
+	NewSeasonPopup.SeasonDescription:SetShadowOffset(1, -1)
+	NewSeasonPopup.SeasonDescription2:SetTextColor(1, 1, 1)
+	NewSeasonPopup.SeasonDescription2:SetShadowOffset(1, -1)
+
+	local RewardFrame = SeasonRewardFrame
+	RewardFrame.Ring:Hide()
+	RewardFrame.CircleMask:Hide()
+	RewardFrame.Icon:SkinIcon()
+	select(3, RewardFrame:GetRegions()):SetTextColor(1, 1, 1)
+	select(3, RewardFrame:GetRegions()):SetShadowOffset(1, -1)
+
+	NewSeasonPopup.Leave:SkinButton()
 end
 
 T.SkinFuncs["Blizzard_PVPUI"] = LoadSkin

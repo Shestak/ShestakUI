@@ -61,10 +61,6 @@ local function CreatCopyFrame()
 	isf = true
 end
 
-local scrollDown = function()
-	CopyScroll:SetVerticalScroll((CopyScroll:GetVerticalScrollRange()) or 0)
-end
-
 local function MessageIsProtected(message)
 	return strmatch(message, '[^|]-|K[vq]%d-[^|]-|k')
 end
@@ -86,7 +82,14 @@ local function Copy(cf)
 	if frame:IsShown() then frame:Hide() return end
 	frame:Show()
 	editBox:SetText(text)
-	C_Timer.After(0.25, scrollDown)
+
+	editBox:SetScript("OnTextChanged", function(_, userInput)
+		if userInput then return end
+		local _, max = CopyScrollScrollBar:GetMinMaxValues()
+		for _ = 1, max do
+			ScrollFrameTemplate_OnMouseWheel(CopyScroll, -1)
+		end
+	end)
 end
 
 for i = 1, NUM_CHAT_WINDOWS do

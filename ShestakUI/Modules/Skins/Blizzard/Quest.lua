@@ -57,6 +57,26 @@ local function LoadSkin()
 		QuestProgressRequiredItemsText:SetShadowColor(0, 0, 0)
 		QuestProgressRequiredMoneyText:SetTextColor(1, 0.8, 0)
 	end)
+
+	-- QuestGreeting
+	local function UpdateGreetingPanel()
+		QuestFrameGreetingPanel:StripTextures()
+		QuestFrameGreetingGoodbyeButton:SkinButton()
+		GreetingText:SetTextColor(1, 1, 1)
+		CurrentQuestsText:SetTextColor(1, 0.8, 0)
+		AvailableQuestsText:SetTextColor(1, 0.8, 0)
+		QuestGreetingFrameHorizontalBreak:Kill()
+
+		for button in QuestFrameGreetingPanel.titleButtonPool:EnumerateActive() do
+			local text = button:GetFontString():GetText()
+			if text and strfind(text, "|cff000000") then
+				button:GetFontString():SetText(gsub(text, "|cff000000", "|cffFFFF00"))
+			end
+		end
+	end
+
+	QuestFrameGreetingPanel:HookScript("OnShow", UpdateGreetingPanel)
+	hooksecurefunc("QuestFrameGreetingPanel_OnShow", UpdateGreetingPanel)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

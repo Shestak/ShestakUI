@@ -95,85 +95,46 @@ local function Timer_Create(self)
 	return timer
 end
 
-local function Timer_Start(self, start, duration, charges, maxCharges)
-	local remainingCharges = charges or 0
+local Cooldown_MT = getmetatable(_G.ActionButton1Cooldown).__index
+local hideNumbers = {}
 
-	if self:GetName() and string.find(self:GetName(), "ChargeCooldown") then return end
-	if start > 0 and duration > 2 and remainingCharges < 2 and (not self.noOCC) then
-		local timer = self.timer or Timer_Create(self)
+local function deactivateDisplay(cooldown)
+	local timer = cooldown.timer
+	if timer then
+		Timer_Stop(timer)
+	end
+end
+
+local function setHideCooldownNumbers(cooldown, hide)
+	if hide then
+		hideNumbers[cooldown] = true
+		deactivateDisplay(cooldown)
+	else
+		hideNumbers[cooldown] = nil
+	end
+end
+
+hooksecurefunc(Cooldown_MT, "SetCooldown", function(cooldown, start, duration, modRate)
+	if cooldown.noCooldownCount or cooldown:IsForbidden() or hideNumbers[cooldown] then return end
+
+	local show = (start and start > 0) and (duration and duration > 2) and (modRate == nil or modRate > 0)
+
+	if show then
+		local timer = cooldown.timer or Timer_Create(cooldown)
 		timer.start = start
 		timer.duration = duration
 		timer.enabled = true
 		timer.nextUpdate = 0
 		if timer.fontScale >= 0.5 then timer:Show() end
 	else
-		local timer = self.timer
-		if timer then
-			Timer_Stop(timer)
-		end
-	end
-end
-
-hooksecurefunc(getmetatable(_G["ActionButton1Cooldown"]).__index, "SetCooldown", Timer_Start)
-
-if not _G["ActionBarButtonEventsFrame"] then return end
-
-local active = {}
-local hooked = {}
-
-local function cooldown_OnShow(self)
-	active[self] = true
-end
-
-local function cooldown_OnHide(self)
-	active[self] = nil
-end
-
-local function cooldown_ShouldUpdateTimer(self, start, duration, charges, maxCharges)
-	local timer = self.timer
-	return not(timer and timer.start == start and timer.duration == duration and timer.charges == charges and timer.maxCharges == maxCharges)
-end
-
-local function cooldown_Update(self)
-	local button = self:GetParent()
-	local action = button.action
-	local start, duration = GetActionCooldown(action)
-	local charges, maxCharges = GetActionCharges(action)
-
-	if cooldown_ShouldUpdateTimer(self, start, duration, charges, maxCharges) then
-		Timer_Start(self, start, duration, charges, maxCharges)
-	end
-end
-
-local EventWatcher = CreateFrame("Frame")
-EventWatcher:Hide()
-EventWatcher:SetScript("OnEvent", function(self, event)
-	for cooldown in pairs(active) do
-		cooldown_Update(cooldown)
+		deactivateDisplay(cooldown)
 	end
 end)
-EventWatcher:RegisterEvent("ACTIONBAR_UPDATE_COOLDOWN")
 
-local function actionButton_Register(frame)
-	local cooldown = frame.cooldown
-	if not hooked[cooldown] then
-		cooldown:HookScript("OnShow", cooldown_OnShow)
-		cooldown:HookScript("OnHide", cooldown_OnHide)
-		hooked[cooldown] = true
-	end
-end
+hooksecurefunc(Cooldown_MT, "Clear", deactivateDisplay)
 
-if _G["ActionBarButtonEventsFrame"].frames then
-	for _, frame in pairs(_G["ActionBarButtonEventsFrame"].frames) do
-		actionButton_Register(frame)
-	end
-end
+hooksecurefunc(Cooldown_MT, "SetHideCountdownNumbers", setHideCooldownNumbers)
 
-hooksecurefunc("ActionBarButtonEventsFrame_RegisterFrame", actionButton_Register)
-
-hooksecurefunc("CooldownFrame_SetDisplayAsPercentage", function(self)
-	local timer = self.timer
-	if timer then
-		Timer_Stop(timer)
-	end
+hooksecurefunc("CooldownFrame_SetDisplayAsPercentage", function(cooldown)
+	setHideCooldownNumbers(cooldown, true)
 end)

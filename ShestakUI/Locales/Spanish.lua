@@ -53,17 +53,12 @@ L_MISC_ONECLICK_CANCEL = "Shift-Right-Click to cancel on the selected item witho
 L_MISC_UI_OUTDATED = "Tu versión de ShestakUI no está actualizada. Puedes descargar la última versión de www.shestak.org"
 L_MISC_HEADER_MARK = "Mouseover Raid Icons" -- Needs review
 L_MISC_BINDER_OPEN = "Mouse Bindings" -- Needs review
-L_MISC_GROCERY_BUY = "Buy" -- Needs review
-L_MISC_GROCERY_DESC = "Automatically buy grocery bags" -- Needs review
 L_MISC_SCROLL = "Pergamino"
-L_MISC_COLLAPSE = "The Collapse" -- Need review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Disolver grupo"
 
 -- Zone name
-L_ZONE_TOLBARAD = "Tol Barad"
-L_ZONE_TOLBARADPEN = "Península de Tol Barad"
 L_ZONE_ARATHIBASIN = "Cuenca de Arathi"
 L_ZONE_GILNEAS = "La Batalla por Gilneas"
 L_ZONE_ANCIENTDALARAN = "Cráter de Dalaran"
@@ -175,7 +170,7 @@ L_INFO_DUEL = "Duelo rechazado de "
 L_INFO_PET_DUEL = "Declined pet duel request from " -- Needs review
 L_INFO_DISBAND = "Deshaciendo banda..."
 L_INFO_SETTINGS_DBM = "Escribe /settings dbm, para aplicar las preferencias del DBM."
-L_INFO_SETTINGS_DXE = "Escribe /settings dxe, para aplicar las preferencias del DXE."
+L_INFO_SETTINGS_BIGWIGS = "Escribe /settings bw, para aplicar las preferencias del BigWigs."
 L_INFO_SETTINGS_MSBT = "Escribe /settings msbt, para aplicar las preferencias del MSBT."
 L_INFO_SETTINGS_SKADA = "Escribe /settings skada, para aplicar las preferencias del Skada."
 L_INFO_SETTINGS_ALL = "Escribe /settings all, para aplicar todas las modificaciones."
@@ -190,12 +185,10 @@ L_POPUP_RESETSTATS = "¿Estás seguro de que quieres reiniciar las estadísticas
 L_POPUP_SWITCH_RAID = "Select Raid layout." -- Needs review
 L_POPUP_DISBAND_RAID = "¿Estás seguro de que quieres disolver el grupo?"
 L_POPUP_DISABLEUI = "ShestakUI no funciona con esta resolución, ¿Quieres desactivar ShestakUI? (Pulsa cancelar si quieres probar otra resolución)"
-L_POPUP_SETTINGS_ALL = "¿Aplicar modificaciones para todos los addons? (DBM/DXE, Skada o MSBT)"
+L_POPUP_SETTINGS_ALL = "¿Aplicar modificaciones para todos los addons? (DBM, BigWigs, Skada o MSBT)"
 L_POPUP_SETTINGS_DBM = "Necesito cambiar la posición de los elementos del DBM."
-L_POPUP_SETTINGS_DXE = "Necesito cambiar la posición de los elementos del DXE."
 L_POPUP_SETTINGS_BW = "Necesito cambiar la posición de los elementos del BigWigs."
 L_POPUP_ARMORY = "Arsenal"
-L_POPUP_CURRENCY_CAP = "You get maximum value of" -- Needs review
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Bienvenido a ShestakUI "
@@ -276,12 +269,14 @@ L_STATS_EQUIPMENT_CHANGER = "Shift-Click o Click-Central para el cambiador de eq
 L_STATS_SORTING_BY = "Ordenado por"
 L_STATS_TIPS = "consejos:"
 L_STATS_TOTAL_MEMORY_USAGE = "Uso total de la memoria:"
+L_STATS_TOTAL_CPU_USAGE = "Total CPU Usage:" -- Need review
 L_STATS_NOT_TO_SELL = "Usa /junk para configurar que objetos no se venderan."
 L_STATS_WATCH_CURRENCY = "Elementos vistos en la pestana de dinero se reflejaran en la descripcion."
 L_STATS_WATCH_FACTIONS = "Mirar facciones desde la herramienta de facciones."
 L_STATS_TOOLTIP_TIME_PLAYED = "Cuando estes a nivel max, la descripcion mostrara detalles del tiempo jugado de la cuenta."
 L_STATS_TOOLTIP_EXPERIENCE = "Cuando no estes a nivel max, la descripcion mostrara detalles de la experiencia."
 L_STATS_SEALS = "Seals this week" -- Needs review
+L_STATS_SPEC = "Spec" -- Need review
 
 -- Slash commands
 L_SLASHCMD_HELP = {

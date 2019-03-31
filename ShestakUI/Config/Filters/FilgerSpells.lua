@@ -497,8 +497,6 @@ C["filger_spells"] = {
 			{spellID = 170856, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dash
 			{spellID = 1850, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Cenarion Ward
-			{spellID = 102351, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -615,6 +613,8 @@ C["filger_spells"] = {
 			{spellID = 88423, filter = "CD"},
 			-- Remove Corruption
 			{spellID = 2782, filter = "CD"},
+			-- Soothe
+			{spellID = 2908, filter = "CD"},
 			-- Skull Bash
 			{spellID = 106839, filter = "CD"},
 			-- Mangle
@@ -635,6 +635,10 @@ C["filger_spells"] = {
 			{spellID = 205636, filter = "CD"},
 			-- Tiger's Fury
 			{spellID = 5217, filter = "CD"},
+			-- Cenarion Ward
+			{spellID = 102351, filter = "CD"},
+			-- Frenzied Regeneration
+			{spellID = 22842, filter = "CD"},
 			-- Incapacitating Roar
 			{spellID = 99, filter = "CD"},
 			-- Bristling Fur
@@ -655,6 +659,10 @@ C["filger_spells"] = {
 			{spellID = 102793, filter = "CD"},
 			-- Nature's Vigil
 			{spellID = 124974, filter = "CD"},
+			-- Flourish
+			{spellID = 197721, filter = "CD"},
+			-- Renewal
+			{spellID = 108238, filter = "CD"},
 			-- Berserk
 			{spellID = 106951, filter = "CD", absID = true},
 			-- Ashmane's Frenzy
@@ -1250,7 +1258,7 @@ C["filger_spells"] = {
 
 			-- Buffs
 			-- Rushing Jade Wind
-			{spellID = 116847, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 116847, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blackout Kick!
 			{spellID = 116768, unitID = "player", caster = "player", filter = "BUFF"},
 			-- The Mists of Sheilun
@@ -2591,8 +2599,6 @@ C["filger_spells"] = {
 			{spellID = 12292, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Recklesness
 			{spellID = 1719, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Victorious
-			{spellID = 32216, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -2603,6 +2609,8 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
+			-- Victorious
+			{spellID = 32216, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Overpower
 			{spellID = 7384, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Frothing Berserker
@@ -2791,7 +2799,7 @@ C["filger_spells"] = {
 			-- Heroism
 			{spellID = 32182, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Primal Rage [Hunter's pet]
-			{spellID = 264667, unitID = "player", caster = "all", filter = "BUFF"},
+			{spellID = 264667, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Time Warp
 			{spellID = 80353, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Drums of Fury

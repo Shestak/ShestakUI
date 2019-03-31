@@ -159,7 +159,6 @@ if Sw2rT1 then
 	C["automation"].accept_invite = true
 	--C["automation"].accept_quest = true
 	C["automation"].auto_collapse = true
-	C["automation"].currency_cap = true
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
 	C["skins"].dbm = true
@@ -242,7 +241,6 @@ if IsWetxius then
 	C["stats"].currency_cooking = false
 	C["stats"].currency_professions = false
 	C["stats"].currency_raid = false
-	C["stats"].currency_pvp = false
 	C["stats"].currency_misc = false
 	C["font"].stats_font = C.media.normal_font
 	C["font"].stats_font_style = "OUTLINE"

@@ -53,17 +53,12 @@ L_MISC_ONECLICK_CANCEL = "Shift+右键,不弹出确认框体直接取消选择�
 L_MISC_UI_OUTDATED = "ShestakUI 版本已过期，请至 www.shestak.org 下载最新版"
 L_MISC_HEADER_MARK = "鼠标悬停显示团队图标"
 L_MISC_BINDER_OPEN = "鼠标绑定"
-L_MISC_GROCERY_BUY = "购买"
-L_MISC_GROCERY_DESC = "杂货商自动购买"
 L_MISC_SCROLL = "附魔卷轴"
-L_MISC_COLLAPSE = "The Collapse" -- Need review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散团队"
 
 -- Zone name
-L_ZONE_TOLBARAD = "托尔巴拉德"
-L_ZONE_TOLBARADPEN = "托尔巴拉德半岛"
 L_ZONE_ARATHIBASIN = "阿拉希盆地"
 L_ZONE_GILNEAS = "吉尔尼斯之战"
 L_ZONE_ANCIENTDALARAN = "达拉然巨坑"
@@ -175,7 +170,7 @@ L_INFO_DUEL = "拒绝决斗 "
 L_INFO_PET_DUEL = "拒绝宠物对战 "
 L_INFO_DISBAND = "解散团队..."
 L_INFO_SETTINGS_DBM = "键入 /settings dbm, 载入 DBM 设定."
-L_INFO_SETTINGS_DXE = "键入 /settings dxe, 载入 DXE 设定."
+L_INFO_SETTINGS_BIGWIGS = "键入 /settings bw, 载入 BigWigs 设定."
 L_INFO_SETTINGS_MSBT = "键入 /settings msbt, 载入 MSBT 设定."
 L_INFO_SETTINGS_SKADA = "键入 /settings skada, 载入 Skada 设定."
 L_INFO_SETTINGS_ALL = "键入 /settings all, 载入所有UI设定."
@@ -190,12 +185,10 @@ L_POPUP_RESETSTATS = "你确定要重置本次游戏时间和金币收益统计�
 L_POPUP_SWITCH_RAID = "选择团队布局."
 L_POPUP_DISBAND_RAID = "你确定要解散团队?"
 L_POPUP_DISABLEUI = "ShestakUI不支持此分辨率, 是否停用ShestakUI? (若调整其他分辨率,请按取消)"
-L_POPUP_SETTINGS_ALL = "套用所有插件设置? (DBM/DXE/Skada/MSBT)"
+L_POPUP_SETTINGS_ALL = "套用所有插件设置? (DBM/BigWigs/Skada/MSBT)"
 L_POPUP_SETTINGS_DBM = "需要改变DBM锚点及样式元素."
-L_POPUP_SETTINGS_DXE = "需要改变DXE锚点及样式元素."
 L_POPUP_SETTINGS_BW = "需要改变BigWigs锚点及样式元素."
 L_POPUP_ARMORY = "英雄榜"
-L_POPUP_CURRENCY_CAP = "你拥有的最高级货币为"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "欢迎使用ShestakUI "
@@ -276,12 +269,14 @@ L_STATS_EQUIPMENT_CHANGER = "左键/中键开启装备管理员"
 L_STATS_SORTING_BY = "排列方式:"
 L_STATS_TIPS = "提示:"
 L_STATS_TOTAL_MEMORY_USAGE = "总内存:"
+L_STATS_TOTAL_CPU_USAGE = "Total CPU Usage:" -- Need review
 L_STATS_NOT_TO_SELL = "输入/junk设定自动出售例外名单"
 L_STATS_WATCH_CURRENCY = "在货币面板选定的项目将在鼠标提示中显示."
 L_STATS_WATCH_FACTIONS = "从角色面板查看"
 L_STATS_TOOLTIP_TIME_PLAYED = "达到最高等级后,提示将显示角色上线时间纪录"
 L_STATS_TOOLTIP_EXPERIENCE = "未达最高等级时,提示将显示经验值信息"
 L_STATS_SEALS = "本周已领徽记"
+L_STATS_SPEC = "专精" -- Need review
 
 -- Slash commands
 L_SLASHCMD_HELP = {

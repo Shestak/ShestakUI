@@ -80,15 +80,98 @@ end
 
 T.RaidDebuffs = {
 -----------------------------------------------------------------
--- Uldir Raid
+-- Battle of Dazar'alor
 -----------------------------------------------------------------
--- Taloc
+	-- Champion of the Light
+	[SpellName(283573)] = 3, -- Sacred Blade
+	[SpellName(283617)] = 3, -- Wave of Light
+	[SpellName(283651)] = 3, -- Blinding Faith
+	[SpellName(284595)] = 3, -- Penance
+	[SpellName(283582)] = 3, -- Consecration
+
+	-- Grong
+	[SpellName(285998)] = 3, -- Ferocious Roar
+	[SpellName(283069)] = 3, -- Megatomic Fire
+	[SpellName(285671)] = 3, -- Crushed
+	[SpellName(285875)] = 3, -- Rending Bite
+
+	-- Jadefire Masters
+	[SpellName(282037)] = 3, -- Rising Flames
+	[SpellName(284374)] = 3, -- Magma Trap
+	[SpellName(285632)] = 3, -- Stalking
+	[SpellName(288151)] = 3, -- Tested
+	[SpellName(284089)] = 3, -- Successful Defense
+	[SpellName(286988)] = 3, -- Searing Embers
+
+	-- Opulence
+	[SpellName(286501)] = 3, -- Creeping Blaze
+	[SpellName(283610)] = 3, -- Crush
+	[SpellName(289383)] = 3, -- Chaotic Displacement
+	[SpellName(285479)] = 3, -- Flame Jet
+	[SpellName(283063)] = 3, -- Flames of Punishment
+	[SpellName(283507)] = 3, -- Volatile Charge
+
+	-- Conclave of the Chosen
+	[SpellName(284663)] = 3, -- Bwonsamdi's Wrath
+	[SpellName(282444)] = 3, -- Lacerating Claws
+	[SpellName(282592)] = 3, -- Bleeding Wounds
+	[SpellName(282209)] = 3, -- Mark of Prey
+	[SpellName(285879)] = 3, -- Mind Wipe
+	[SpellName(282135)] = 3, -- Crawling Hex
+	[SpellName(286060)] = 3, -- Cry of the Fallen
+	[SpellName(282447)] = 3, -- Kimbul's Wrath
+	[SpellName(282834)] = 3, -- Kimbul's Wrath
+	[SpellName(286811)] = 3, -- Akunda's Wrath
+	[SpellName(286838)] = 3, -- Static Orb
+
+	-- King Rastakhan
+	[SpellName(284995)] = 3, -- Zombie Dust
+	[SpellName(285349)] = 3, -- Plague of Fire
+	[SpellName(285044)] = 3, -- Toad Toxin
+	[SpellName(284831)] = 3, -- Scorching Detonation
+	[SpellName(289858)] = 3, -- Crushed
+	[SpellName(284662)] = 3, -- Seal of Purification
+	[SpellName(285178)] = 3, -- Serpent's Breath
+	[SpellName(285010)] = 3, -- Poison Toad Slime
+
+	-- Mekkatorque
+	[SpellName(288806)] = 3, -- Gigavolt Blast
+	[SpellName(289023)] = 3, -- Enormous
+	[SpellName(286646)] = 3, -- Gigavolt Charge
+	[SpellName(288939)] = 3, -- Gigavolt Radiation
+	[SpellName(284168)] = 3, -- Shrunk
+	[SpellName(286516)] = 3, -- Anti-Tampering Shock
+	[SpellName(284214)] = 3, -- Trample
+
+	-- Stormwall Blockade
+	[SpellName(284369)] = 3, -- Sea Storm
+	[SpellName(284410)] = 3, -- Tempting Song
+	[SpellName(284405)] = 3, -- Tempting Song
+	[SpellName(284121)] = 3, -- Thunderous Boom
+	[SpellName(286680)] = 3, -- Roiling Tides
+	[SpellName(285000)] = 5, -- Kelp-Wrapped
+
+	-- Jaina
+	[SpellName(285253)] = 3, -- Ice Shard
+	[SpellName(287993)] = 3, -- Chilling Touch
+	[SpellName(287365)] = 3, -- Searing Pitch
+	[SpellName(288038)] = 3, -- Marked Target
+	[SpellName(285254)] = 3, -- Avalanche
+	[SpellName(287626)] = 3, -- Grasp of Frost
+	[SpellName(287490)] = 3, -- Frozen Solid
+	[SpellName(287199)] = 3, -- Ring of Ice
+	[SpellName(288392)] = 3, -- Vengeful Seas
+
+-----------------------------------------------------------------
+-- Uldir
+-----------------------------------------------------------------
+	-- Taloc
 	[SpellName(270290)] = 5,	-- Blood Storm
 	[SpellName(271296)] = 5,	-- Cudgel of Gore
 	[SpellName(275270)] = 5,	-- Fixate
 	[SpellName(271225)] = 4,	-- Plasma Discharge
 
--- MOTHER
+	-- MOTHER
 	[SpellName(268277)] = 3,	-- Purifying Flame
 	[SpellName(268253)] = 3,	-- Surgical Beam
 	[SpellName(268095)] = 3,	-- Cleansing Purge
@@ -97,38 +180,38 @@ T.RaidDebuffs = {
 	[SpellName(267821)] = 3,	-- Defense Grid
 	[SpellName(267787)] = 5,	-- Sanitizing Strike
 
--- Fetid Devourer
+	-- Fetid Devourer
 	[SpellName(262313)] = 5,	-- Malodorous Miasma
 	[SpellName(262292)] = 4,	-- Rotting Regurgitation
 	[SpellName(262314)] = 3,	-- Putrid Paroxysm
 
--- Zek'voz, Herald of N'zoth
+	-- Zek'voz, Herald of N'zoth
 	[SpellName(265237)] = 6,	-- Shatter
 	[SpellName(265264)] = 5,	-- Void Lash
 	[SpellName(265360)] = 5,	-- Roiling Deceit
 	[SpellName(265662)] = 4,	-- Corruptor's Pact
 	[SpellName(265646)] = 5,	-- Will of the Corruptor
 
--- Vectis
+	-- Vectis
 	[SpellName(265127)] = 4,	-- Lingering Infection
 	[SpellName(265178)] = 3,	-- Evolving Affliction
 	[SpellName(265206)] = 5,	-- Immunosuppression
 	[SpellName(265212)] = 5,	-- Gestate
 	[SpellName(265129)] = 4,	-- Omega Vector
 
--- Zul, Reborn
+	-- Zul, Reborn
 	[SpellName(273365)] = 4,	-- Dark Revelation
 	[SpellName(273434)] = 5,	-- Pit of Despair
 	[SpellName(274195)] = 3,	-- Corrupted Blood
 	[SpellName(272018)] = 4,	-- Absorbed in Darkness
 
--- Mythrax
+	-- Mythrax
 	[SpellName(272336)] = 3,	-- Annihilation
 	[SpellName(272536)] = 5,	-- Imminent Ruin
 	[SpellName(274693)] = 4,	-- Essence Shear
 	[SpellName(272407)] = 3,	-- Oblivion Sphere
 
--- G'huun
+	-- G'huun
 	[SpellName(263436)] = 5,	-- Imperfect Physiology
 	[SpellName(263227)] = 5,	-- Putrid Blood
 	[SpellName(263372)] = 4,	-- Power Matrix
@@ -139,15 +222,15 @@ T.RaidDebuffs = {
 	[SpellName(270287)] = 3,	-- Blighted Ground
 
 -----------------------------------------------------------------
--- BfA Dungeon
+-- Dungeons
 -----------------------------------------------------------------
--- Mythic+ Affixes (Legion, unsure if changes in BFA)
+	-- Mythic+ Affixes
 	[SpellName(226489)] = 5,	-- Sanguine Ichor
-	[SpellName(209858)] = 5,	-- Necrotic Rot
+	[SpellName(209858)] = 5,	-- Necrotic Wound
 	[SpellName(240559)] = 5,	-- Grievous Wound
 	[SpellName(240443)] = 5,	-- Burst
 
--- Freehold
+	-- Freehold
 	[SpellName(258323)] = 3,	-- Infected Wound
 	[SpellName(257775)] = 3,	-- Plague Step
 	[SpellName(257908)] = 4,	-- Oiled Blade
@@ -157,7 +240,7 @@ T.RaidDebuffs = {
 	[SpellName(258875)] = 4,	-- Blackout Barrel
 	[SpellName(256363)] = 3,	-- Ripper Punch
 
--- Shrine of the Storm
+	-- Shrine of the Storm
 	[SpellName(264560)] = 3,	-- Choking Brine
 	[SpellName(268233)] = 4,	-- Electrifying Shock
 	[SpellName(268322)] = 3,	-- Touch of the Drowned
@@ -176,7 +259,7 @@ T.RaidDebuffs = {
 	[SpellName(274720)] = 3,	-- Abyssal Strike
 	[SpellName(269131)] = 4,	-- Ancient Mindbender
 
--- Siege of Boralus
+	-- Siege of Boralus
 	[SpellName(257168)] = 4,	-- Cursed Slash
 	[SpellName(272588)] = 4,	-- Rotting Wounds
 	[SpellName(272571)] = 4,	-- Choking Waters
@@ -192,7 +275,7 @@ T.RaidDebuffs = {
 	[SpellName(257169)] = 4,	-- Terrifying Roar
 	[SpellName(272713)] = 3,	-- Crushing Slam
 
--- Tol Dagor
+	-- Tol Dagor
 	[SpellName(258128)] = 4,	-- Debilitating Shout
 	[SpellName(265889)] = 3,	-- Torch Strike
 	[SpellName(257791)] = 4,	-- Howling Fear
@@ -212,7 +295,7 @@ T.RaidDebuffs = {
 	[SpellName(256044)] = 6,	-- Deadeye
 	[SpellName(256474)] = 4,	-- Heartstopper Venom
 
--- Waycrest Manor
+	-- Waycrest Manor
 	[SpellName(260703)] = 3,	-- Unstable Runic Mark
 	[SpellName(263905)] = 3,	-- Marking Cleave
 	[SpellName(265880)] = 4,	-- Dread Mark
@@ -235,7 +318,7 @@ T.RaidDebuffs = {
 	[SpellName(268202)] = 5,	-- Death Lens
 	[SpellName(278456)] = 4,	-- Infest
 
--- Atal'Dazar
+	-- Atal'Dazar
 	[SpellName(252781)] = 5,	-- Unstable Hex
 	[SpellName(250096)] = 5,	-- Wracking Pain
 	[SpellName(250371)] = 5,	-- Lingering Nausea
@@ -250,7 +333,7 @@ T.RaidDebuffs = {
 	[SpellName(255434)] = 4,	-- Serrated Teeth
 	[SpellName(256577)] = 5,	-- Soulfeast
 
--- King's Rest
+	-- King's Rest
 	[SpellName(270492)] = 4,	-- Hex
 	[SpellName(267763)] = 4,	-- Wretched Discharge
 	[SpellName(276031)] = 4,	-- Pit of Despair
@@ -272,7 +355,7 @@ T.RaidDebuffs = {
 	[SpellName(271640)] = 4,	-- Dark Revelation
 	[SpellName(268796)] = 5,	-- Impaling Spear
 
--- Motherlode
+	-- Motherlode
 	[SpellName(263074)] = 4,	-- Festering Bite
 	[SpellName(280605)] = 4,	-- Brain Freeze
 	[SpellName(257337)] = 4,	-- Shocking Claw
@@ -289,7 +372,7 @@ T.RaidDebuffs = {
 	[SpellName(260838)] = 5,	-- Homing Missle
 	[SpellName(263637)] = 4,	-- Clothesline
 
--- Temple of Sethraliss
+	-- Temple of Sethraliss
 	[SpellName(269686)] = 4,	-- Plague
 	[SpellName(268013)] = 3,	-- Flame Shock
 	[SpellName(268008)] = 4,	-- Snake Charm
@@ -304,7 +387,7 @@ T.RaidDebuffs = {
 	[SpellName(266923)] = 4,	-- Galvanize
 	[SpellName(268007)] = 4,	-- Heart Attack
 
--- Underrot
+	-- Underrot
 	[SpellName(265468)] = 4,	-- Withering Curse
 	[SpellName(278961)] = 4,	-- Decaying Mind
 	[SpellName(259714)] = 4,	-- Decaying Spores

@@ -17,7 +17,7 @@ local function LoadSkin()
 	for i = 1, 4 do
 		local option = WarboardQuestChoiceFrame["Option"..i]
 		option:CreateBackdrop("Overlay")
-		option.backdrop:SetPoint("TOPLEFT", -2, 8)
+		option.backdrop:SetPoint("TOPLEFT", -2, 20)
 		for i = 1, #option.OptionButtonsContainer.Buttons do
 			option.OptionButtonsContainer.Buttons[i]:SkinButton()
 		end

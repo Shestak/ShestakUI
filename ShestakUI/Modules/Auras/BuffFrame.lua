@@ -93,8 +93,7 @@ local function StyleBuffs(buttonName, index)
 	end
 end
 
-local function UpdateFlash(self, elapsed)
-	local index = self:GetID()
+local function UpdateFlash(self)
 	self:SetAlpha(1)
 end
 
@@ -111,7 +110,7 @@ end
 
 local function UpdateBuffAnchors()
 	local buttonName = "BuffButton"
-	local buff, previousBuff, aboveBuff
+	local previousBuff, aboveBuff
 	local numBuffs = 0
 	local numAuraRows = 0
 	local slack = BuffFrame.numEnchants

@@ -41,7 +41,7 @@ local function MasterLoot_GiveLoot(frame)
 end
 
 local function init()
-	local candidate, lclass, className, cand
+	local candidate, lclass, className
 	local slot = LootFrame.selectedSlot or 0
 	local info = UIDropDownMenu_CreateInfo()
 

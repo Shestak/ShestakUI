@@ -308,7 +308,7 @@ local lastMainAddonID = 0
 if not addonInfo then
 	addonInfo = {{}}
 	for i = 1, GetNumAddOns() do
-		local name, title, _, enabled = GetAddOnInfo(i)
+		local name, _, _, enabled = GetAddOnInfo(i)
 		if name and enabled then
 			addonInfo[i] = {["enabled"] = true, ["is_main"] = false, collapsed = true, ["parent"] = i}
 		else

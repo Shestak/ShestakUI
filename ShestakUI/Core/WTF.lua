@@ -378,7 +378,7 @@ StaticPopupDialogs.SETTINGS_ALL = {
 	button2 = CANCEL,
 	OnAccept = function()
 		if IsAddOnLoaded("DBM-Core") and C.skins.dbm then T.UploadDBM() end
-		if IsAddOnLoaded("DXE") and C.skins.dxe then T.UploadDXE() end
+		if IsAddOnLoaded("BigWigs") and C.skins.bigwigs then T.UploadBW() end
 		if IsAddOnLoaded("MikScrollingBattleText") then UploadMSBT() end
 		if IsAddOnLoaded("Skada") then UploadSkada() end
 		ReloadUI()
@@ -400,15 +400,15 @@ SlashCmdList.SETTINGS = function(msg)
 		else
 			print("|cffffff00DBM"..L_INFO_NOT_INSTALLED.."|r")
 		end
-	elseif msg == "dxe" then
-		if IsAddOnLoaded("DXE") then
-			if C.skins.dxe == true then
-				StaticPopup_Show("SETTINGS_DXE")
+	elseif msg == "bw" then
+		if IsAddOnLoaded("BigWigs") then
+			if C.skins.bigwigs == true then
+				StaticPopup_Show("SETTINGS_BIGWIGS")
 			else
-				print("|cffffff00"..L_INFO_SKIN_DISABLED1.."DXE"..L_INFO_SKIN_DISABLED2.."|r")
+				print("|cffffff00"..L_INFO_SKIN_DISABLED1.."BigWigs"..L_INFO_SKIN_DISABLED2.."|r")
 			end
 		else
-			print("|cffffff00DXE"..L_INFO_NOT_INSTALLED.."|r")
+			print("|cffffff00BigWigs"..L_INFO_NOT_INSTALLED.."|r")
 		end
 	elseif msg == "msbt" then
 		if IsAddOnLoaded("MikScrollingBattleText") then
@@ -428,7 +428,7 @@ SlashCmdList.SETTINGS = function(msg)
 		StaticPopup_Show("SETTINGS_ALL")
 	else
 		print("|cffffff00"..L_INFO_SETTINGS_DBM.."|r")
-		print("|cffffff00"..L_INFO_SETTINGS_DXE.."|r")
+		print("|cffffff00"..L_INFO_SETTINGS_BIGWIGS.."|r")
 		print("|cffffff00"..L_INFO_SETTINGS_MSBT.."|r")
 		print("|cffffff00"..L_INFO_SETTINGS_SKADA.."|r")
 		print("|cffffff00"..L_INFO_SETTINGS_ALL.."|r")

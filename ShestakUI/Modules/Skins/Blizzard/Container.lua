@@ -34,6 +34,13 @@ local function LoadSkin()
 		frame.backdrop:SetPoint("TOPLEFT", 4, -2)
 		frame.backdrop:SetPoint("BOTTOMRIGHT", 0, 2)
 
+		frame.PortraitButton.Highlight:SetAlpha(0)
+		frame.PortraitButtonTexture = frame.PortraitButton:CreateTexture(nil, "OVERLAY")
+		frame.PortraitButtonTexture:SetSize(30, 30)
+		frame.PortraitButtonTexture:SetPoint("CENTER", 0, 0)
+		frame.PortraitButtonTexture:SetTexture("Interface\\Icons\\inv_misc_bag_08")
+		frame.PortraitButtonTexture:SkinIcon()
+
 		T.SkinCloseButton(close, frame.backdrop)
 
 		for j = 1, MAX_CONTAINER_ITEMS do
@@ -44,7 +51,7 @@ local function LoadSkin()
 
 			border:Kill()
 
-			item:SetNormalTexture(nil)
+			item:SetNormalTexture("")
 			item:StyleButton()
 			item:SetTemplate("Default")
 
@@ -121,7 +128,8 @@ local function LoadSkin()
 	for i = 1, 7 do
 		local bag = BankSlotsFrame["Bag"..i]
 		local icon = bag.icon
-		local highlight = bag.HighlightFrame.HighlightTexture
+
+		bag.IconBorder:Kill()
 
 		bag:StripTextures()
 		bag:StyleButton()
@@ -131,15 +139,6 @@ local function LoadSkin()
 		icon:ClearAllPoints()
 		icon:SetPoint("TOPLEFT", 2, -2)
 		icon:SetPoint("BOTTOMRIGHT", -2, 2)
-
-		if highlight and not highlight.skinned then
-			highlight:SetColorTexture(1, 1, 1, 0.3)
-			highlight.SetTexture = T.dummy
-			highlight:ClearAllPoints()
-			highlight:SetPoint("TOPLEFT", 2, -2)
-			highlight:SetPoint("BOTTOMRIGHT", -2, 2)
-			highlight.skinned = true
-		end
 	end
 
 	-- Tabs
@@ -153,7 +152,10 @@ local function LoadSkin()
 	ReagentBankFrame:DisableDrawLayer("ARTWORK")
 
 	ReagentBankFrameUnlockInfo:StripTextures()
-	ReagentBankFrameUnlockInfo:SetTemplate("Overlay")
+	ReagentBankFrameUnlockInfo:CreateBackdrop("Overlay")
+	ReagentBankFrameUnlockInfo.backdrop:SetPoint("TOPLEFT", 4, -2)
+	ReagentBankFrameUnlockInfo.backdrop:SetPoint("BOTTOMRIGHT", -4, 2)
+	ReagentBankFrameUnlockInfo.backdrop:SetFrameLevel(ReagentBankFrameUnlockInfo.backdrop:GetFrameLevel() + 1)
 
 	ReagentBankFrameUnlockInfoPurchaseButton:SkinButton()
 	ReagentBankFrameUnlockInfoPurchaseButton:SetFrameLevel(ReagentBankFrameUnlockInfo:GetFrameLevel() + 3)

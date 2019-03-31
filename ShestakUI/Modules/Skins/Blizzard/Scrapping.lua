@@ -13,12 +13,11 @@ local function LoadSkin()
 
 	for button in pairs(ItemSlots.scrapButtons.activeObjects) do
 		if not button.styled then
-			button:StripTextures()
-			button:SetTemplate()
-			button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			button:SetHighlightTexture("")
+			button.Icon:SkinIcon()
 			button.IconBorder:SetAlpha(0)
-			hooksecurefunc(button.IconBorder, 'SetVertexColor', function(self, r, g, b) button:SetBackdropBorderColor(r, g, b) end)
-			hooksecurefunc(button.IconBorder, 'Hide', function() button:SetBackdropBorderColor(unpack(C.media.border_color)) end)
+			hooksecurefunc(button.IconBorder, "SetVertexColor", function(_, r, g, b) button.backdrop:SetBackdropBorderColor(r, g, b) end)
+			hooksecurefunc(button.IconBorder, "Hide", function() button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color)) end)
 
 			button.styled = true
 		end

@@ -8,6 +8,7 @@
 	<Script file="Artifact.lua"/>
 	<Script file="Auction.lua"/>
 	<Script file="Azerite.lua"/>
+	<Script file="AzeriteRespec.lua"/>
 	<Script file="BarberShop.lua"/>
 	<Script file="Binding.lua"/>
 	<Script file="BlackMarket.lua"/>
@@ -30,7 +31,6 @@
 	<Script file="Garrison.lua"/>
 	<Script file="GMSurvey.lua"/>
 	<Script file="Gossip.lua"/>
-	<Script file="Greeting.lua"/>
 	<Script file="Guild.lua"/>
 	<Script file="GuildBank.lua"/>
 	<Script file="GuildControl.lua"/>

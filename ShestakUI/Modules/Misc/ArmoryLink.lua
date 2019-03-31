@@ -105,13 +105,14 @@ hooksecurefunc("UnitPopup_OnClick", function(self)
 end)
 
 UnitPopupButtons["ARMORYLINK"] = {text = L_POPUP_ARMORY, dist = 0, func = UnitPopup_OnClick}
+UnitPopupButtons["ARMORYLINK"].dist = nil
 tinsert(UnitPopupMenus["FRIEND"], #UnitPopupMenus["FRIEND"] - 1, "ARMORYLINK")
 tinsert(UnitPopupMenus["PARTY"], #UnitPopupMenus["PARTY"] - 1, "ARMORYLINK")
 tinsert(UnitPopupMenus["RAID"], #UnitPopupMenus["RAID"] - 1, "ARMORYLINK")
 tinsert(UnitPopupMenus["PLAYER"], #UnitPopupMenus["PLAYER"] - 1, "ARMORYLINK")
 
 ----------------------------------------------------------------------------------------
---	Delete some lines from unit dropdown menu (Broke some line)
+--	Delete some lines from unit dropdown menu (It breaks set focus)
 ----------------------------------------------------------------------------------------
 for _, menu in pairs(UnitPopupMenus) do
 	for index = #menu, 1, -1 do

@@ -1,23 +1,26 @@
+local _, L = ...
 if GetLocale() ~= "esES" and GetLocale() ~= "esMX" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for esES and esMX client
 --	Translation: eXecrate
 ----------------------------------------------------------------------------------------
-L_GUI_BUTTON_RESET = "Reinicio total de la UI"
 L_GUI_SET_SAVED_SETTTINGS = "Cambios aplicables sólo a este PJ"
+L_GUI_SET_SAVED_SETTTINGS_DESC = "Switch between a profile that applies to all characters and one that is unique to this character." -- Need review
 L_GUI_RESET_CHAR = "¿Estás seguro de que quieres reiniciar tus preferencias de ShestakUI para este PJ?"
 L_GUI_RESET_ALL = "¿Estás seguro de que quieres reiniciar tus preferencias de ShestakUI para todos los PJs?"
 L_GUI_PER_CHAR = "¿Estás segudo de que quieres cambiar a o desde 'Cambios sólo a este PJ'?"
-L_GUI_MAKE_SELECTION = "Debes hacer una selección antes de continuar la configuración."
+L_GUI_NEED_RELOAD = "|cffff2735You need to reload the UI to apply your changes.|r" -- Need review
 
 -- General options
+L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface settings. Type in chat '/uihelp' for help." -- Need review
 L_GUI_GENERAL_AUTOSCALE = "Auto escalado de la UI"
 L_GUI_GENERAL_UISCALE = "Escalado de la UI (si auto escalado está desactivado)"
 L_GUI_GENERAL_WELCOME_MESSAGE = "Mensaje de bienvenida en el chat"
 L_GUI_GENERAL_LAG_TOLERANCE = "Actualizar automaticamente la opción de Tolerancia al Lag Personalizada de Blizzard a tu latencia"
 
 -- Miscellaneous options
+L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review
 L_GUI_MISC_MARKING = "Marca el objetivo cuando pulsas Shift"
 L_GUI_MISC_INVKEYWORD = "Acrónimo para invitaciones (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Rotar cámara mientras estás ausente"
@@ -26,6 +29,7 @@ L_GUI_MISC_QUEST_AUTOBUTTON = "Auto botón misión/objeto"
 L_GUI_MISC_RAID_TOOLS = "Herramientas de Raid"
 L_GUI_MISC_PROFESSION_TABS = "Pestanas de profesiones de artesania y marcos de comercio"
 L_GUI_MISC_HIDE_BG_SPAM = "Remove Boss Emote spam during BG" -- Needs review
+L.misc_hide_bg_spam_desc = "Remove Boss Emote spam about capture/losing node during BG Arathi and Gilneas" -- Need review
 L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
 L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets/toys that is already known" -- Needs review
 L_GUI_MISC_DISENCHANTING = "Milling, Prospecting and Disenchanting by Alt + click" -- Needs review
@@ -46,6 +50,7 @@ L_GUI_MISC_HIDE_RAID_BUTTON = "Hide button for oUF_RaidDPS" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Anuncios"
+L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
 L_GUI_ANNOUNCEMENTS_DRINKING = "Anunciar en el chat cuando un enemigo en la arena beba"
 L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Anunciar en el grupo/banda cuando interrumpes"
 L_GUI_ANNOUNCEMENTS_SPELLS = "Anunciar en grupo/banda cuando lanzas el mismo hechizo que otro"
@@ -63,6 +68,7 @@ L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Check Safari Hat" -- Needs review
 
 -- Automation options
 L_GUI_AUTOMATION = "Automation" -- Needs review
+L_GUI_AUTOMATION_SUBTEXT = "This block contains settings that facilitate the routine." -- Need review
 L_GUI_AUTOMATION_RELEASE = "Auto resurrección en los Campos de Batalla" -- Need review
 L_GUI_AUTOMATION_SCREENSHOT = "Tomar una captura de pantalla cuando consigas un logro"
 L_GUI_AUTOMATION_SOLVE_ARTIFACT = "Auto popup for solve artifact" -- Needs review
@@ -76,46 +82,41 @@ L_GUI_AUTOMATION_AUTO_ROLE = "Auto set your role" -- Needs review
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "Auto cancel various buffs" -- Needs review
 L_GUI_AUTOMATION_TAB_BINDER = "Auto change Tab key to only target enemy players" -- Needs review
 L_GUI_AUTOMATION_LOGGING_COMBAT = "Auto enables combat log text file in raid instances" -- Needs review
-L_GUI_AUTOMATION_CURRENCY_CAP = "Auto popup for currency cap" -- Needs review
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Cast buff on mouse scroll" -- Needs review
 L_GUI_AUTOMATION_OPEN_ITEMS = "Auto opening of items in bag" -- Needs review
 
 -- Skins options
 L_GUI_SKINS = "Estilización"
+L_GUI_SKINS_SUBTEXT = "Change the appearance of the standard interface." -- Need review
 L_GUI_SKINS_BLIZZARD = "Activar estilizado de marcos de Blizzard"
 L_GUI_SKINS_MINIMAP_BUTTONS = "Activar estilizado de los iconos de los addons en el minimapa"
-L_GUI_SKINS_CLCR = "Activar estilo del CLCRet"
-L_GUI_SKINS_CLCP = "Activar estilo del CLCProt"
-L_GUI_SKINS_COMBUSTION_HELPER = "Activar estilo del CombustionHelper"
-L_GUI_SKINS_BW = "Activar estilo del BigWigs"
-L_GUI_SKINS_DBM = "Activar estilo del DBM"
+L_GUI_SKINS_SUBHEADER = "Stylization of addons" -- Need review
+L_GUI_SKINS_ACE3 = "Ace3"
+L_GUI_SKINS_ATLASLOOT = "AtlasLoot"
+L_GUI_SKINS_BLOOD_SHIELD_TRACKER = "BloodShieldTracker"
+L_GUI_SKINS_BW = "BigWigs"
+L_GUI_SKINS_CAPPING = "Capping"
+L_GUI_SKINS_CLIQUE = "Clique"
+L_GUI_SKINS_COOL_LINE = "CoolLine"
+L_GUI_SKINS_DBM = "DBM"
 L_GUI_SKINS_DBM_MOVABLE = "Allow to move DBM bars" -- Need review
-L_GUI_SKINS_DXE = "Activar estilo del DXE"
-L_GUI_SKINS_OMEN = "Activar estilo del Omen"
-L_GUI_SKINS_RECOUNT = "Activar estilo del Recount"
-L_GUI_SKINS_BLOOD_SHIELD_TRACKER = "Activar estilo del BloodShieldTracker"
-L_GUI_SKINS_DOMINOS = "Activar estilo del Dominos"
-L_GUI_SKINS_FLYOUT_BUTTON = "Activar estilo del FlyoutButtonCustom"
-L_GUI_SKINS_NUG_RUNNING = "Activar estilo del NugRunning"
-L_GUI_SKINS_OVALE = "Activar estilo del OvaleSpellPriority"
-L_GUI_SKINS_CLIQUE = "Activar estilo del Clique"
-L_GUI_SKINS_ACE3 = "Ace3 options elements skin" -- Needs review
-L_GUI_SKINS_CAPPING = "Activar estilo del Capping"
-L_GUI_SKINS_COOL_LINE = "Activar estilo del CoolLine"
-L_GUI_SKINS_ATLASLOOT = "Activar estilo del AtlasLoot"
-L_GUI_SKINS_TINY_DPS = "Activar estilo del TinyDPS"
-L_GUI_SKINS_FACE_SHOOTER = "Activar estilo del FaceShooter"
-L_GUI_SKINS_MAGE_NUGGETS = "Activar estilo del MageNuggets"
-L_GUI_SKINS_NPCSCAN = "Activar estilo del NPCScan"
-L_GUI_SKINS_VANASKOS = "Activar estilo del VanasKoS"
-L_GUI_SKINS_WEAK_AURAS = "Activar estilo del WeakAuras"
-L_GUI_SKINS_SKADA = "Activar estilo del Skada"
-L_GUI_SKINS_MY_ROLE_PLAY = "Activar estilo del MyRolePlay"
-L_GUI_SKINS_ARH = "Enable styling Archaeology Helper" -- Need review
-L_GUI_SKINS_POSTAL = "Enable styling Postal" -- Need review
-L_GUI_SKINS_OPIE = "Enable styling OPie" -- Need review
-L_GUI_SKINS_REMATCH = "Enable styling Rematch" -- Need review
-L_GUI_SKINS_LS_TOASTS = "Enable styling ls: Toasts" -- Need review
+L_GUI_SKINS_DOMINOS = "Dominos"
+L_GUI_SKINS_FLYOUT_BUTTON = "FlyoutButtonCustom"
+L_GUI_SKINS_LS_TOASTS = "ls: Toasts"
+L_GUI_SKINS_MAGE_NUGGETS = "MageNuggets"
+L_GUI_SKINS_MY_ROLE_PLAY = "MyRolePlay"
+L_GUI_SKINS_NPCSCAN = "NPCScan"
+L_GUI_SKINS_NUG_RUNNING = "NugRunning"
+L_GUI_SKINS_OMEN = "Omen"
+L_GUI_SKINS_OPIE = "OPie"
+L_GUI_SKINS_OVALE = "OvaleSpellPriority"
+L_GUI_SKINS_POSTAL = "Postal"
+L_GUI_SKINS_RECOUNT = "Recount"
+L_GUI_SKINS_REMATCH = "Rematch"
+L_GUI_SKINS_SKADA = "Skada"
+L_GUI_SKINS_TINY_DPS = "TinyDPS"
+L_GUI_SKINS_VANASKOS = "VanasKoS"
+L_GUI_SKINS_WEAK_AURAS = "WeakAuras"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texto de Combate"
@@ -132,36 +133,45 @@ L_GUI_COMBATTEXT_DAMAGE_COLOR = "Mostrar números de daño dependiendo de la esc
 L_GUI_COMBATTEXT_CRIT_PREFIX = "Símbolo que se añadirá antes de un crítico"
 L_GUI_COMBATTEXT_CRIT_POSTFIX = "Símbolo que se añadirá después de un crítico"
 L_GUI_COMBATTEXT_ICONS = "Mostrar iconos de daño saliente"
-L_GUI_COMBATTEXT_ICON_SIZE = "Tamaño de los iconos de los hechizos en el marco de daño saliente, también tiene efecto sobre el tamaño de la fuente de daño"
+L_GUI_COMBATTEXT_ICON_SIZE = "Icon size" -- Need review
+L_GUI_COMBATTEXT_ICON_SIZE_DESC = "Tamaño de los iconos de los hechizos en el marco de daño saliente, también tiene efecto sobre el tamaño de la fuente de daño"
 L_GUI_COMBATTEXT_TRESHOLD = "Daño mínimo que se mostrar en el marco de daño"
 L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Sanación mínima que se mostrar en los mensajes de sanación entrante/saliente"
 L_GUI_COMBATTEXT_SCROLLABLE = "Permitir usar la rueda del ratón para desplazar las líneas de los marcos"
-L_GUI_COMBATTEXT_MAX_LINES = "Máx de líneas para mantener desplazables (a más lineas, más memoria requerida)"
-L_GUI_COMBATTEXT_TIME_VISIBLE = "Tiempo (segundos) en que un mensaje es visible"
+L_GUI_COMBATTEXT_MAX_LINES = "Max lines" -- Need review
+L_GUI_COMBATTEXT_MAX_LINES_DESC = "Máx de líneas para mantener desplazables (a más lineas, más memoria requerida)"
+L_GUI_COMBATTEXT_TIME_VISIBLE = "Time" -- Need review
+L_GUI_COMBATTEXT_TIME_VISIBLE_DESC = "Tiempo (segundos) en que un mensaje es visible"
 L_GUI_COMBATTEXT_DK_RUNES = "Mostrar recarga de runas de los Caballeros de la Muerte"
 L_GUI_COMBATTEXT_KILLINGBLOW = "Mostrar tus golpes de gracia"
 L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Unir el spam de daño de area en un solo mensaje"
 L_GUI_COMBATTEXT_MERGE_MELEE = "Merges multiple auto attack damage spam" -- Needs review
 L_GUI_COMBATTEXT_DISPEL = "Mostrar tus disipaciones"
 L_GUI_COMBATTEXT_INTERRUPT = "Mostrar tus interrupciones"
-L_GUI_COMBATTEXT_DIRECTION = "Scrolling Direction('top'(goes down) or 'bottom'(goes up))" -- Needs review
+L_GUI_COMBATTEXT_DIRECTION = "Change scrolling direction from bottom to top" -- Need review
 L_GUI_COMBATTEXT_SHORT_NUMBERS = "Use short numbers ('25.3k' instead of '25342')" -- Need review
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Recordatorio de Ventajas"
+L_GUI_REMINDER_SUBTEXT = "Display of missed auras." -- Need review
 L_GUI_REMINDER_SOLO_ENABLE = "Mostrar ventajas propias que faltan"
 L_GUI_REMINDER_SOLO_SOUND = "Alerta sonora para avisar de ventajas propias"
-L_GUI_REMINDER_SOLO_SIZE = "Tamaño de los iconos de las ventajas propias"
+L_GUI_REMINDER_SOLO_SIZE = "Icon size" -- Need review
+L_GUI_REMINDER_SOLO_SIZE_DESC = "Tamaño de los iconos de las ventajas propias"
+L_GUI_REMINDER_SUBHEADER = "Raid buffs" -- Need review
 L_GUI_REMINDER_RAID_ENABLE = "Mostrar ventajas que faltan en la Banda"
 L_GUI_REMINDER_RAID_ALWAYS = "Mostrar Recordatorio de Ventajas siempre"
-L_GUI_REMINDER_RAID_SIZE = "Tamaño de los iconos de las ventajas de la Banda"
-L_GUI_REMINDER_RAID_ALPHA = "Icono transparente cuando la ventaja está presente"
+L_GUI_REMINDER_RAID_SIZE = "Icon size" -- Need review
+L_GUI_REMINDER_RAID_SIZE_DESC = "Tamaño de los iconos de las ventajas de la Banda"
+L_GUI_REMINDER_RAID_ALPHA = "Transparent" -- Need review
+L_GUI_REMINDER_RAID_ALPHA_DESC = "Icono transparente cuando la ventaja está presente"
 
 -- Raid cooldowns options
 L_GUI_COOLDOWN_RAID = "Tiempos de reutilización de la Banda"
+L_GUI_COOLDOWN_RAID_SUBTEXT = "Tracking raid abilities in the upper left corner." -- Need review
 L_GUI_COOLDOWN_RAID_ENABLE = "Mostrar tiempos de reutilización de la Banda"
-L_GUI_COOLDOWN_RAID_HEIGHT = "Altura de las barras de tiempo de reutilización de la Banda"
-L_GUI_COOLDOWN_RAID_WIDTH = "Anchura de las barras de tiempo de reutilización de la Banda (Si el icono estб activado, anchura+28)"
+L_GUI_COOLDOWN_RAID_HEIGHT = "Bars height" -- Need review
+L_GUI_COOLDOWN_RAID_WIDTH = "Bars width" -- Need review
 L_GUI_COOLDOWN_RAID_SORT = "Barras de tiempos de reutilización de la Banda ordenadas hacia arriba"
 L_GUI_COOLDOWN_RAID_EXPIRATION = "Sort by expiration time" -- Needs review
 L_GUI_COOLDOWN_RAID_SHOW_SELF = "Show self cooldowns" -- Needs review
@@ -172,24 +182,28 @@ L_GUI_COOLDOWN_RAID_IN_ARENA = "Mostrar tiempos de reutilización de la Banda en
 
 -- Enemy cooldowns options
 L_GUI_COOLDOWN_ENEMY = "Tiempos de reutilización del enemigo"
+L_GUI_COOLDOWN_ENEMY_SUBTEXT = "Tracking enemy abilities as icons above your spell casting bar." -- Need review
 L_GUI_COOLDOWN_ENEMY_ENABLE = "Activar tiempos de reutilización del enemigo"
 L_GUI_COOLDOWN_ENEMY_SIZE = "Tamaño del icono de tiempos de reutilización del enemigo"
-L_GUI_COOLDOWN_ENEMY_DIRECTION = "Icono de dirección de tiempos de reutilización del enemigo (RIGHT|LEFT|UP|DOWN)"
+L_GUI_COOLDOWN_ENEMY_DIRECTION = "Icono de dirección de tiempos de reutilización del enemigo"
 L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "Mostrar tiempos de reutilización del enemigo siempre"
 L_GUI_COOLDOWN_ENEMY_IN_BG = "Mostrar tiempos de reutilización del enemigo en zona de CB"
 L_GUI_COOLDOWN_ENEMY_IN_ARENA = "Mostrar tiempos de reutilización del enemigo en zona de Arena"
 
 -- Pulse cooldowns options
 L_GUI_COOLDOWN_PULSE = "Cuenta atrás de tiempos de reutilización"
+L_GUI_COOLDOWN_PULSE_SUBTEXT = "Track your cd using a pulse icon in the center of the screen." -- Need review
 L_GUI_COOLDOWN_PULSE_ENABLE = "Mostrar cuentas atrás de tiempos de reutilización"
 L_GUI_COOLDOWN_PULSE_SIZE = "Tamaño de los icono de las cuentas atras de tiempos de reutilización"
 L_GUI_COOLDOWN_PULSE_SOUND = "Aviso sonoro"
 L_GUI_COOLDOWN_PULSE_ANIM_SCALE = "Escalado animado"
 L_GUI_COOLDOWN_PULSE_HOLD_TIME = "Opacidad máxima del tiempo de espera"
-L_GUI_COOLDOWN_PULSE_THRESHOLD = "Umbral de tiempo mínimo"
+L_GUI_COOLDOWN_PULSE_THRESHOLD = "Threshold time" -- Need review
+L_GUI_COOLDOWN_PULSE_THRESHOLD_DESC = "Umbral de tiempo mínimo"
 
 -- Threat options
 L_GUI_THREAT = "Barras de Amenaza"
+L_GUI_THREAT_SUBTEXT = "Display of the threat list (a simple analogue of Omen)." -- Need review
 L_GUI_THREAT_ENABLE = "Activar Barras de Amenaza"
 L_GUI_THREAT_HEIGHT = "Altura de las barras de amenaza"
 L_GUI_THREAT_WIDTH = "Anchura de las barras de amenaza"
@@ -198,6 +212,7 @@ L_GUI_THREAT_HIDE_SOLO = "Mostrar solo en grupo/raid"
 
 -- Tooltip options
 L_GUI_TOOLTIP = "Descripciones"
+L_GUI_TOOLTIP_SUBTEXT = "In this block, you can change the standard tips when mouseovering." -- Need review
 L_GUI_TOOLTIP_ENABLE = "Activar descripciones"
 L_GUI_TOOLTIP_SHIFT = "Mostrar descripción mientras Shift está pulsado"
 L_GUI_TOOLTIP_CURSOR = "Descripción bajo el cursos"
@@ -205,6 +220,7 @@ L_GUI_TOOLTIP_ICON = "Icono del objeto en la descripción"
 L_GUI_TOOLTIP_HEALTH = "Valor de la vida en números"
 L_GUI_TOOLTIP_HIDE = "Ocultar descripciones de las barras de acción"
 L_GUI_TOOLTIP_HIDE_COMBAT = "Ocultar descripción en combate"
+L_GUI_TOOLTIP_SUBHEADER_PLUGINS = "Plugins" -- Need review
 L_GUI_TOOLTIP_TALENTS = "Mostrar descripción de los talentos"
 L_GUI_TOOLTIP_ACHIEVEMENTS = "Comparar logros en la descripción"
 L_GUI_TOOLTIP_TARGET = "Jugador objetivo en la descripción"
@@ -213,6 +229,7 @@ L_GUI_TOOLTIP_REALM = "Player realm name in tooltip" -- Need review
 L_GUI_TOOLTIP_RANK = "Rango del jugador en la hermandad en la descripción"
 L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Experiencia JcJ del jugador en Arenas en la descripción"
 L_GUI_TOOLTIP_SPELL_ID = "ID del hechizo"
+L_GUI_TOOLTIP_AVERAGE_LVL_DESC = "The average item level" -- Need review
 L_GUI_TOOLTIP_RAID_ICON = "Icono de banda"
 L_GUI_TOOLTIP_WHO_TARGETTING = "Muestra quien está marcando la unidad que está en tu grupo/banda"
 L_GUI_TOOLTIP_ITEM_COUNT = "Contador del objeto"
@@ -220,6 +237,7 @@ L_GUI_TOOLTIP_UNIT_ROLE = "Unit role" -- Needs review
 L_GUI_TOOLTIP_INSTANCE_LOCK = "Your instance lock status in tooltip" -- Needs review
 
 -- Chat options
+L_GUI_CHAT_SUBTEXT = "Here you can change the settings of the chat window." -- Need review
 L_GUI_CHAT_ENABLE = "Activar chat"
 L_GUI_CHAT_BACKGROUND = "Activar fondo del chat"
 L_GUI_CHAT_BACKGROUND_ALPHA = "Opacidad del fondo del chat"
@@ -239,6 +257,7 @@ L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link" -- Nee
 
 -- Bag options
 L_GUI_BAGS = "Bolsas"
+L_GUI_BAGS_SUBTEXT = "Changing the built-in bags." -- Need review
 L_GUI_BAGS_ENABLE = "Activar bolsas"
 L_GUI_BAGS_ILVL = "Show item level for weapons and armor" -- Need review
 L_GUI_BAGS_BUTTON_SIZE = "Tamaño de los huecos"
@@ -247,6 +266,7 @@ L_GUI_BAGS_BANK = "Número de columnas en el banco"
 L_GUI_BAGS_BAG = "Número de columnas en la bolsa principal"
 
 -- Minimap options
+L_GUI_MINIMAP_SUBTEXT = "Minimap settings." -- Need review
 L_GUI_MINIMAP_ENABLE = "Activar minimapa"
 L_GUI_MINIMAP_ICON = "Icono de seguimiento"
 L_GUI_GARRISON_ICON = "Garrison icon" -- Need review
@@ -259,6 +279,7 @@ L_GUI_MAP_BG_STYLIZATION = "Estilizado del mapa de CB"
 L_GUI_MAP_FOG_OF_WAR = "Remove fog of war on World Map" -- Needs review
 
 -- Loot options
+L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review
 L_GUI_LOOT_ENABLE = "Activar el marco de botín"
 L_GUI_LOOT_ROLL_ENABLE = "Activar el marco de botín de grupo"
 L_GUI_LOOT_ICON_SIZE = "Tamaño de los iconos"
@@ -267,15 +288,15 @@ L_GUI_LOOT_AUTOGREED = "Activar auto-codicia para objetos verdes cuando eres niv
 L_GUI_LOOT_AUTODE = "Auto confirmar desencantar"
 
 -- Nameplate options
+L_GUI_NAMEPLATE_SUBTEXT = "Nameplates settings" -- Need review
 L_GUI_NAMEPLATE_ENABLE = "Activar placas de nombre"
 L_GUI_NAMEPLATE_COMBAT = "Mostrar automáticamente placa de nombre en combate"
 L_GUI_NAMEPLATE_HEALTH = "Valor de la vida en números"
-L_GUI_NAMEPLATE_CASTBAR = "Mostrar barra de lanzamiento en la placa de nombre"
 L_GUI_NAMEPLATE_HEIGHT = "Altura de la placa de nombre"
 L_GUI_NAMEPLATE_WIDTH = "Anchura de la placa de nombre"
-L_GUI_NAMEPLATE_DISTANCE = "Show nameplates for units within this range" -- Need review
-L_GUI_NAMEPLATE_AD_HEIGHT = "Altura adicional para la placa de nombre seleccionada"
-L_GUI_NAMEPLATE_AD_WIDTH = "Anchura adicional para la placa de nombre seleccionada"
+L_GUI_NAMEPLATE_DISTANCE = "Display range" -- Need review
+L_GUI_NAMEPLATE_AD_HEIGHT = "Additional height" -- Need review
+L_GUI_NAMEPLATE_AD_WIDTH = "Additional width" -- Need review
 L_GUI_NAMEPLATE_CASTBAR_NAME = "Mostrar nombre del hechizo en la barra de lanzamiento"
 L_GUI_NAMEPLATE_THREAT = "Activar visor de amenaza, cambia automáticamente según tu rol"
 L_GUI_NAMEPLATE_CLASS_ICON = "Iconos de clase en JcJ"
@@ -303,8 +324,8 @@ L_GUI_ACTIONBAR_SPLIT_BARS = "Dividir la quinta barra en dos de 6 botones cada u
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Activar borde por color de clase para los botones"
 L_GUI_ACTIONBAR_TOGGLE_MODE = "Activar modo cambiar"
 L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Hide proc highlight" -- Needs review
-L_GUI_ACTIONBAR_BOTTOMBARS = "Número de barras de acción abajo (1, 2 o 3)"
-L_GUI_ACTIONBAR_RIGHTBARS = "Número de barras de acción en la derecha (0, 1, 2 o 3)"
+L_GUI_ACTIONBAR_BOTTOMBARS = "Número de barras de acción abajo"
+L_GUI_ACTIONBAR_RIGHTBARS = "Número de barras de acción en la derecha"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barras de la derecha se muestran al pasar el ratón"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "Ocultar barra de mascota"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Activar barra de mascota horizontal"
@@ -316,7 +337,8 @@ L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review
 
 -- Auras/Buffs/Debuffs
-L_GUI_AURA_PLAYER_BUFF_SIZE = "Tamaño de las beneficios del jugador"
+L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size" -- Need review
+L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "Tamaño de las beneficios del jugador"
 L_GUI_AURA_SHOW_SPIRAL = "Espiral en los iconos de las auras"
 L_GUI_AURA_SHOW_TIMER = "Mostrar tiempo de reutilización en los iconos de las auras"
 L_GUI_AURA_PLAYER_AURAS = "Auras en el marco del jugador"
@@ -333,16 +355,20 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Activar borde por color de clase para los benefi
 
 -- Filger
 L_GUI_FILGER = "Timers (Filger)" -- Need review
+L_GUI_FILGER_SUBTEXT = "Filger - analogue WeakAuras, but more simple and easy. Allows you to display in the form of icons and bars your auras and timers." -- Need review
 L_GUI_FILGER_ENABLE = "Enable Filger" -- Need review
 L_GUI_FILGER_TEST_MODE = "Test icon mode" -- Need review
 L_GUI_FILGER_MAX_TEST_ICON = "The number of icons to the test" -- Need review
 L_GUI_FILGER_SHOW_TOOLTIP = "Show tooltip" -- Need review
 L_GUI_FILGER_DISABLE_CD = "Disable cooldowns" -- Need review
+L_GUI_FILGER_DISABLE_PVP = "Disable PvP debuffs on Player and Target" -- Need review
+L_GUI_FILGER_EXPIRATION = "Sort cooldowns by expiration time" -- Need review
 L_GUI_FILGER_BUFFS_SIZE = "Buffs size" -- Need review
 L_GUI_FILGER_COOLDOWN_SIZE = "Cooldowns size" -- Need review
 L_GUI_FILGER_PVP_SIZE = "PvP debuffs size" -- Need review
 
 -- Unit Frames options
+L_GUI_UF_SUBTEXT = "Customize player, target frames and etc." -- Need review
 L_GUI_UF_ENABLE = "Activar marcos de unidades"
 L_GUI_UF_OWN_COLOR = "Color para las barras de vida"
 L_GUI_UF_UF_COLOR = "Color de las Barras de vida (si color para las barras de vida está activo)"
@@ -351,10 +377,12 @@ L_GUI_UF_TOTAL_VALUE = "Mostrar vida restante en jugador y objetivo con XXXX/Tot
 L_GUI_UF_COLOR_VALUE = "Colorear valor de Vida/Maná"
 L_GUI_UF_BAR_COLOR_VALUE = "Color de la barra de vida dependiendo de la vida restante"
 L_GUI_UF_LINES = "Show Player and Target lines" -- Need review
+L_GUI_UF_SUBHEADER_CAST = "Castbars" -- Need review
 L_GUI_UF_UNIT_CASTBAR = "Mostrar barras de lanzamiento"
 L_GUI_UF_CASTBAR_ICON = "Mostrar iconos en las barras de lanzamiento"
 L_GUI_UF_CASTBAR_LATENCY = "Latencia en la barra de lanzamiento"
 L_GUI_UF_CASTBAR_TICKS = "Castbar ticks" -- Needs review
+L_GUI_UF_SUBHEADER_FRAMES = "Frames" -- Need review
 L_GUI_UF_SHOW_PET = "Mostrar marco de la mascota"
 L_GUI_UF_SHOW_FOCUS = "Mostrar marco del foco"
 L_GUI_UF_SHOW_TOT = "Mostrar marco del objetivo del objetivo"
@@ -362,20 +390,24 @@ L_GUI_UF_SHOW_BOSS = "Mostrar marco del jefe"
 L_GUI_UF_BOSS_RIGHT = "Marco/Marcos del/de los jefe/jefes en la derecha"
 L_GUI_UF_SHOW_ARENA = "Mostrar marcos de arena"
 L_GUI_UF_ARENA_RIGHT = "Marcos de arena en la derecha"
-L_GUI_UF_BOSS_DEBUFFS = "Number of debuffs on the boss frames" -- Need review
-L_GUI_UF_BOSS_BUFFS = "Number of buffs on the boss frames" -- Need review
+L_GUI_UF_BOSS_DEBUFFS = "Number of debuffs" -- Need review
+L_GUI_UF_BOSS_DEBUFFS_DESC = "Number of debuffs on the boss frames" -- Need review
+L_GUI_UF_BOSS_BUFFS = "Number of buffs" -- Need review
+L_GUI_UF_BOSS_BUFFS_DESC = "Number of buffs on the boss frames" -- Need review
 L_GUI_UF_ICONS_PVP = "Texto JcJ (iconos no) al pasar el ratón sobre los marcos del jugador y objetivo"
 L_GUI_UF_ICONS_COMBAT = "Icono de combate"
 L_GUI_UF_ICONS_RESTING = "Icono de descansado para pjs con nivel bajo"
+L_GUI_UF_SUBHEADER_PORTRAIT = "Portraits" -- Need review
 L_GUI_UF_PORTRAIT_ENABLE = "Activar retratos del jugador/objetivo"
 L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER = "Borde de color de clase para los retratos"
 L_GUI_UF_PORTRAIT_HEIGHT = "Altura del retrato"
 L_GUI_UF_PORTRAIT_WIDTH = "Anchura del retrato"
+L_GUI_UF_SUBHEADER_PLUGINS = "Plugins" -- Need review
 L_GUI_UF_PLUGINS_GCD = "Brillo de tiempo de reutilización global"
 L_GUI_UF_PLUGINS_SWING = "Activar barra de oscilación"
 L_GUI_UF_PLUGINS_REPUTATION_BAR = "Activar barra de reputación"
 L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Activar barra de experiencia"
-L_GUI_UF_PLUGINS_ARTIFACT_BAR = "Artifact Power bar" -- Need review
+L_GUI_UF_PLUGINS_ARTIFACT_BAR = "Azerite Power bar" -- Need review
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Activar barra de suavizado"
 L_GUI_UF_PLUGINS_ENEMY_SPEC = "Mostrar configuración de los talentos del enemigo"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texto de combate en el marco del jugador/objetivo"
@@ -385,6 +417,7 @@ L_GUI_UF_PLUGINS_POWER_PREDICTION = "Power cost prediction bar on player frame" 
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Unit Frames Class bars" -- Needs review
+L_GUI_UF_PLUGINS_CLASS_BAR_SUBTEXT = "Control of special class resources." -- Need review
 L_GUI_UF_PLUGINS_COMBO_BAR = "Iconos de puntos de combo de Pícaros/Druidas"
 L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS = "Always show Combo bar for Druid" -- Need review
 L_GUI_UF_PLUGINS_COMBO_BAR_OLD = "Show combo point on the target" -- Need review
@@ -398,6 +431,7 @@ L_GUI_UF_PLUGINS_TOTEM_BAR = "Activar barra de totems"
 L_GUI_UF_PLUGINS_RANGE_BAR = "Enable Range bar (for Priest)" -- Needs review
 
 -- Raid Frames options
+L_GUI_UF_RAIDFRAMES_SUBTEXT = "Customize the appearance of the raid frames." -- Need review
 L_GUI_UF_BY_ROLE = "Sorting players in group by role" -- Needs review
 L_GUI_UF_AGGRO_BORDER = "Borde de aggro"
 L_GUI_UF_DEFICIT_HEALTH = "Déficit de vida de la banda"
@@ -406,13 +440,16 @@ L_GUI_UF_SHOW_RAID = "Mostrar marcos de banda"
 L_GUI_UF_VERTICAL_HEALTH = "Orientación vertical de la vida"
 L_GUI_UF_ALPHA_HEALTH = "Opacidad de las barras de vida cuando están al 100%"
 L_GUI_UF_SHOW_RANGE = "Mostrar rango de opacidad para los marcos de banda"
-L_GUI_UF_RANGE_ALPHA = "Opacidad de los marcos de unidades cuando están fuera de rango"
+L_GUI_UF_RANGE_ALPHA = "Alpha" -- Need review
+L_GUI_UF_RANGE_ALPHA_DESC = "Opacidad de los marcos de unidades cuando están fuera de rango"
+L_GUI_UF_SUBHEADER_RAIDFRAMES = "Frames" -- Need review
 L_GUI_UF_SOLO_MODE = "Mostrar marco del jugador siempre"
 L_GUI_UF_PLAYER_PARTY = "Mostrar marco del jugador en grupo"
 L_GUI_UF_SHOW_TANK = "Mostrar tanques de la banda"
 L_GUI_UF_SHOW_TANK_TT = "Mostrar el objetivo del objetivo de los tanques de la banda"
 L_GUI_UF_RAID_GROUP = "Número de grupos en la banda"
 L_GUI_UF_RAID_VERTICAL_GROUP = "Grupos de la banda en vertical (only for heal layout)" -- Needs review
+L_GUI_UF_SUBHEADER_ICONS = "Icons" -- Need review
 L_GUI_UF_ICONS_ROLE = "Role icon on frames" -- Needs review
 L_GUI_UF_ICONS_RAID_MARK = "Marcas de banda"
 L_GUI_UF_ICONS_READY_CHECK = "Iconos de comprobación"
@@ -427,6 +464,7 @@ L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto lanzar resurreción con click central
 
 -- Panel options
 L_GUI_TOP_PANEL = "Panel superior"
+L_GUI_TOP_PANEL_SUBTEXT = "Manage built-in top panel with information." -- Need review
 L_GUI_TOP_PANEL_ENABLE = "Activar panel superior"
 L_GUI_TOP_PANEL_MOUSE = "Panel superior al pasar el ratón"
 L_GUI_TOP_PANEL_WIDTH = "Anchura del panel"
@@ -434,23 +472,26 @@ L_GUI_TOP_PANEL_HEIGHT = "Altura del panel"
 
 -- Stats options
 L_GUI_STATS = "Estadísticas"
+L_GUI_STATS_SUBTEXT = "Statistics blocks located at the bottom of the screen. Type in the chat '/ls' for info." -- Need review
 L_GUI_STATS_BG = "Campo de Batalla"
 L_GUI_STATS_CLOCK = "Reloj"
 L_GUI_STATS_LATENCY = "Latencia"
 L_GUI_STATS_MEMORY = "Memoria"
 L_GUI_STATS_FPS = "FPS (Marcos por segundo)"
 L_GUI_STATS_EXPERIENCE = "Experiencia"
+L_GUI_STATS_TALENTS_DESC = "Date-text allows you to change the spec and loot on click" -- Need review
 L_GUI_STATS_COORDS = "Coordenadas"
 L_GUI_STATS_LOCATION = "Localización"
-L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Show Archaeology Fragments under currency tab" -- Needs review
-L_GUI_STATS_CURRENCY_COOKING = "Show Cooking Awards under currency tab" -- Needs review
-L_GUI_STATS_CURRENCY_PROFESSIONS = "Show Profession Tokens under currency tab" -- Needs review
-L_GUI_STATS_CURRENCY_RAID = "Show Raid Seals under currency tab" -- Needs review
-L_GUI_STATS_CURRENCY_PVP = "Show PvP Currency under currency tab" -- Needs review
-L_GUI_STATS_CURRENCY_MISCELLANEOUS = "Show Miscellaneous Currency under currency tab" -- Needs review
+L_GUI_STATS_SUBHEADER_CURRENCY = "Currency (displayed in gold data text)" -- Need review
+L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Show Archaeology Fragments" -- Needs review
+L_GUI_STATS_CURRENCY_COOKING = "Show Cooking Awards" -- Needs review
+L_GUI_STATS_CURRENCY_PROFESSIONS = "Show Profession Tokens" -- Needs review
+L_GUI_STATS_CURRENCY_RAID = "Show Raid Seals" -- Needs review
+L_GUI_STATS_CURRENCY_MISCELLANEOUS = "Show Miscellaneous Currency" -- Needs review
 
 -- Error options
 L_GUI_ERROR = "Errores"
+L_GUI_ERROR_SUBTEXT = "Filtering standard text at the top of the screen from Blizzard." -- Need review
 L_GUI_ERROR_BLACK = "Ocultar errores de la lista negra"
 L_GUI_ERROR_WHITE = "Mostrar errores de la lista blanca"
 L_GUI_ERROR_HIDE_COMBAT = "Hide all errors in combat" -- Needs review

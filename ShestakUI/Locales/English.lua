@@ -49,17 +49,12 @@ L_MISC_ONECLICK_CANCEL = "Shift-Right-Click to cancel on the selected item witho
 L_MISC_UI_OUTDATED = "Your version of ShestakUI is out of date. You can download the latest version from www.shestak.org"
 L_MISC_HEADER_MARK = "Mouseover Raid Icons"
 L_MISC_BINDER_OPEN = "Mouse Bindings"
-L_MISC_GROCERY_BUY = "Buy"
-L_MISC_GROCERY_DESC = "Automatically buy grocery bags"
 L_MISC_SCROLL = "Scroll"
-L_MISC_COLLAPSE = "The Collapse"
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Disband Group"
 
 -- Zone name
-L_ZONE_TOLBARAD = "Tol Barad"
-L_ZONE_TOLBARADPEN = "Tol Barad Peninsula"
 L_ZONE_ARATHIBASIN = "Arathi Basin"
 L_ZONE_GILNEAS = "The Battle for Gilneas"
 L_ZONE_ANCIENTDALARAN = "Dalaran Crater"
@@ -171,7 +166,7 @@ L_INFO_DUEL = "Declined duel request from "
 L_INFO_PET_DUEL = "Declined pet duel request from "
 L_INFO_DISBAND = "Disbanding group..."
 L_INFO_SETTINGS_DBM = "Type /settings dbm, to apply the settings DBM."
-L_INFO_SETTINGS_DXE = "Type /settings dxe, to apply the settings DXE."
+L_INFO_SETTINGS_BIGWIGS = "Type /settings bw, to apply the settings BigWigs."
 L_INFO_SETTINGS_MSBT = "Type /settings msbt, to apply the settings MSBT."
 L_INFO_SETTINGS_SKADA = "Type /settings skada, to apply the settings Skada."
 L_INFO_SETTINGS_ALL = "Type /settings all, to apply the settings for all modifications."
@@ -186,12 +181,10 @@ L_POPUP_RESETSTATS = "Are you sure you want to reset statistics for time spent i
 L_POPUP_SWITCH_RAID = "Select Raid layout."
 L_POPUP_DISBAND_RAID = "Are you sure you want to disband the group?"
 L_POPUP_DISABLEUI = "ShestakUI doesn't work for this resolution, do you want to disable ShestakUI? (Cancel if you want to try another resolution)"
-L_POPUP_SETTINGS_ALL = "Apply settings for all modifications? (DBM/DXE, Skada and MSBT)"
+L_POPUP_SETTINGS_ALL = "Apply settings for all modifications? (DBM, BigWigs, Skada and MSBT)"
 L_POPUP_SETTINGS_DBM = "Need to change the position of elements DBM."
-L_POPUP_SETTINGS_DXE = "Need to change the position of elements DXE."
 L_POPUP_SETTINGS_BW = "Need to change the position of elements BigWigs."
 L_POPUP_ARMORY = "Armory"
-L_POPUP_CURRENCY_CAP = "You get maximum value of"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Welcome to ShestakUI "
@@ -272,12 +265,14 @@ L_STATS_EQUIPMENT_CHANGER = "Shift-Click or Middle-Click for equipment set chang
 L_STATS_SORTING_BY = "Sorting by"
 L_STATS_TIPS = "tips:"
 L_STATS_TOTAL_MEMORY_USAGE = "Total Memory Usage:"
+L_STATS_TOTAL_CPU_USAGE = "Total CPU Usage:"
 L_STATS_NOT_TO_SELL = "Use /junk to configure which items need to sell."
 L_STATS_WATCH_CURRENCY = "Watched currency tab items will reflect onto the tooltip."
 L_STATS_WATCH_FACTIONS = "Watch factions from the character faction UI."
 L_STATS_TOOLTIP_TIME_PLAYED = "When at max level, the tooltip will show time played details for the account."
 L_STATS_TOOLTIP_EXPERIENCE = "When below max level, a tooltip will be displayed with experience details."
 L_STATS_SEALS = "Seals this week"
+L_STATS_SPEC = "Spec"
 
 -- Slash commands
 L_SLASHCMD_HELP = {

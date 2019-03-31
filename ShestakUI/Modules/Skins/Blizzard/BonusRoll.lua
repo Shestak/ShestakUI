@@ -52,10 +52,7 @@ local function LoadSkin()
 	BonusRollLootWonFrame.backdrop:SetPoint("TOPLEFT", BonusRollLootWonFrame, "TOPLEFT", -9, 6)
 	BonusRollLootWonFrame.backdrop:SetPoint("BOTTOMRIGHT", BonusRollLootWonFrame, "BOTTOMRIGHT", 5, -6)
 	
-	T.SkinCloseButton(BonusRollFrame.PromptFrame.EncounterJournalLinkButtonHelp.CloseButton)
-	BonusRollFrame.PromptFrame.EncounterJournalLinkButtonHelp:StripTextures()
-	BonusRollFrame.PromptFrame.EncounterJournalLinkButtonHelp.Arrow:Hide()
-	BonusRollFrame.PromptFrame.EncounterJournalLinkButtonHelp:CreateBackdrop("Transparent")
+	T.SkinHelpBox(BonusRollFrame.PromptFrame.EncounterJournalLinkButtonHelp)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

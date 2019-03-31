@@ -285,7 +285,6 @@ function CreateReagentContainer()
 
 	local Reagent = CreateFrame("Frame", "StuffingFrameReagent", UIParent)
 	local SwitchBankButton = CreateFrame("Button", nil, Reagent)
-	local NumButtons = ReagentBankFrame.size
 	local NumRows, LastRowButton, NumButtons, LastButton = 0, ReagentBankFrameItem1, 1, ReagentBankFrameItem1
 	local Deposit = ReagentBankFrame.DespositButton
 
@@ -434,7 +433,7 @@ function Stuffing:BagFrameSlotNew(p, slot)
 	if slot > 3 then
 		ret.slot = slot
 		slot = slot - 4
-		ret.frame = CreateFrame("CheckButton", "StuffingBBag"..slot.."Slot", p, "BankItemButtonBagTemplate")
+		ret.frame = CreateFrame("ItemButton", "StuffingBBag"..slot.."Slot", p, "BankItemButtonBagTemplate")
 		ret.frame:StripTextures()
 		ret.frame:SetID(slot)
 		hooksecurefunc(ret.frame.IconBorder, "SetVertexColor", function(self, r, g, b)
@@ -463,7 +462,7 @@ function Stuffing:BagFrameSlotNew(p, slot)
 			SetItemButtonTextureVertexColor(ret.frame, 1.0, 1.0, 1.0)
 		end
 	else
-		ret.frame = CreateFrame("CheckButton", "StuffingFBag"..slot.."Slot", p, "BagSlotButtonTemplate")
+		ret.frame = CreateFrame("ItemButton", "StuffingFBag"..slot.."Slot", p, "BagSlotButtonTemplate")
 
 		hooksecurefunc(ret.frame.IconBorder, "SetVertexColor", function(self, r, g, b)
 			if r ~= 0.65882 and g ~= 0.65882 and b ~= 0.65882 then
@@ -483,7 +482,6 @@ function Stuffing:BagFrameSlotNew(p, slot)
 	ret.frame:StyleButton()
 	ret.frame:SetTemplate("Default")
 	ret.frame:SetNormalTexture(nil)
-	ret.frame:SetCheckedTexture(nil)
 
 	ret.icon = _G[ret.frame:GetName().."IconTexture"]
 	ret.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -533,7 +531,7 @@ function Stuffing:SlotNew(bag, slot)
 	end
 
 	if not ret.frame then
-		ret.frame = CreateFrame("Button", "StuffingBag"..bag.."_"..slot, self.bags[bag], tpl)
+		ret.frame = CreateFrame("ItemButton", "StuffingBag"..bag.."_"..slot, self.bags[bag], tpl)
 		ret.frame:StyleButton()
 		ret.frame:SetTemplate("Default")
 		ret.frame:SetNormalTexture(nil)
@@ -957,7 +955,7 @@ function Stuffing:Layout(isBank)
 				local bag
 				if isBank then bag = v else bag = v + 1 end
 
-				for ind, val in ipairs(btns) do
+				for _, val in ipairs(btns) do
 					if val.bag == bag then
 						val.frame:SetAlpha(1)
 					else
@@ -1301,7 +1299,7 @@ function Stuffing:SortOnUpdate(elapsed)
 
 	for bagIndex in pairs(BS_itemSwapGrid) do
 		for slotIndex in pairs(BS_itemSwapGrid[bagIndex]) do
-			local destinationBag  = BS_itemSwapGrid[bagIndex][slotIndex].destinationBag
+			local destinationBag = BS_itemSwapGrid[bagIndex][slotIndex].destinationBag
 			local destinationSlot = BS_itemSwapGrid[bagIndex][slotIndex].destinationSlot
 
 			local _, _, locked1 = GetContainerItemInfo(bagIndex, slotIndex)

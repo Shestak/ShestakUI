@@ -9,6 +9,7 @@ MapQuestInfoRewardsFrame.XPFrame.Name:SetFont(C.media.normal_font, 13)
 --	Change position
 ----------------------------------------------------------------------------------------
 hooksecurefunc(WorldMapFrame, "SynchronizeDisplayState", function()
+	if CharacterFrame:IsShown() or SpellBookFrame:IsShown() or (PlayerTalentFrame and PlayerTalentFrame:IsShown()) or (ChannelFrame and ChannelFrame:IsShown()) or PVEFrame:IsShown() then return end
 	if not WorldMapFrame:IsMaximized() then
 		WorldMapFrame:ClearAllPoints()
 		WorldMapFrame:SetPoint(unpack(C.position.map))
@@ -81,6 +82,9 @@ coords:SetScript("OnEvent", function(self, event)
 	end
 end)
 
+----------------------------------------------------------------------------------------
+--	Dropdown menu for close button
+----------------------------------------------------------------------------------------
 local WorldMap_DDMenu = CreateFrame("Frame", "WorldMapDropDownMenu")
 WorldMap_DDMenu.displayMode = "MENU"
 WorldMap_DDMenu.info = {}
@@ -126,12 +130,12 @@ local function WorldMapMenu(self, level)
 		info.func = function()
 			if SavedOptionsPerChar.FogOfWar == true then
 				SavedOptionsPerChar.FogOfWar = false
-				for i = 1, #T.overlayTextures  do
+				for i = 1, #T.overlayTextures do
 					T.overlayTextures[i]:Hide()
 				end
 			else
 				SavedOptionsPerChar.FogOfWar = true
-				for i = 1, #T.overlayTextures  do
+				for i = 1, #T.overlayTextures do
 					T.overlayTextures[i]:Show()
 				end
 			end

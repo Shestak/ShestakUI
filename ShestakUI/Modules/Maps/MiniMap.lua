@@ -180,13 +180,13 @@ local micromenu = {
 		if not PlayerTalentFrame then
 			TalentFrame_LoadUI()
 		end
-		if T.level >= SHOW_TALENT_LEVEL then
+		if T.level >= SHOW_SPEC_LEVEL then
 			ShowUIPanel(PlayerTalentFrame)
 		else
 			if C.error.white == false then
-				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL), 1, 0.1, 0.1)
+				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_SPEC_LEVEL), 1, 0.1, 0.1)
 			else
-				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")
+				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_SPEC_LEVEL).."|r")
 			end
 		end
 	end},

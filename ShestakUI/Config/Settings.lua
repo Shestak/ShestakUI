@@ -103,7 +103,6 @@ C["automation"] = {
 	["cancel_bad_buffs"] = false,				-- Auto cancel various buffs
 	["tab_binder"] = false,						-- Auto change Tab key to only target enemy players
 	["logging_combat"] = false,					-- Auto enables combat log text file in raid instances
-	["currency_cap"] = false,					-- Auto popup for currency cap
 	["buff_on_scroll"] = false,					-- Cast buff on mouse scroll (from the list)
 	["open_items"] = false,						-- Auto opening of items in bag
 }
@@ -114,38 +113,32 @@ C["automation"] = {
 C["skins"] = {
 	["blizzard_frames"] = false,				-- Blizzard frames skin
 	["minimap_buttons"] = false,				-- Skin addons icons on minimap
-	["clcprot"] = false,						-- CLCProt skin
-	["clcret"] = false,							-- CLCRet skin
-	["combustion_helper"] = false,				-- CombustionHelper skin
+	["ace3"] = false,							-- Ace3 options elements skin
+	["atlasloot"] = false,						-- AtlasLoot skin
 	["bigwigs"] = false,						-- BigWigs skin
+	["blood_shield_tracker"] = false,			-- BloodShieldTracker skin
+	["capping"] = false,						-- Capping skin
+	["clique"] = false,							-- Clique skin
+	["cool_line"] = false,						-- CoolLine skin
 	["dbm"] = false,							-- DBM skin
 	["dbm_movable"] = false,					-- Allow to move DBM bars
-	["dxe"] = false,							-- DXE skin
-	["omen"] = false,							-- Omen skin
-	["recount"] = false,						-- Recount skin
-	["blood_shield_tracker"] = false,			-- BloodShieldTracker skin
 	["dominos"] = false,						-- Dominos skin
 	["flyout_button"] = false,					-- FlyoutButtonCustom skin
-	["nug_running"] = false,					-- NugRunning skin
-	["ovale"] = false,							-- OvaleSpellPriority skin
-	["clique"] = false,							-- Clique skin
-	["ace3"] = false,							-- Ace3 options elements skin
-	["capping"] = false,						-- Capping skin
-	["cool_line"] = false,						-- CoolLine skin
-	["atlasloot"] = false,						-- AtlasLoot skin
-	["tiny_dps"] = false,						-- TinyDPS skin
-	["face_shooter"] = false,					-- FaceShooter skin
+	["ls_toasts"] = false,						-- Is: Toasts skin
 	["mage_nuggets"] = false,					-- MageNuggets skin
+	["my_role_play"] = false,					-- MyRolePlay skin
 	["npcscan"] = false,						-- NPCScan skin
+	["nug_running"] = false,					-- NugRunning skin
+	["omen"] = false,							-- Omen skin
+	["opie"] = false,							-- OPie skin
+	["ovale"] = false,							-- OvaleSpellPriority skin
+	["postal"] = false,							-- Postal skin
+	["recount"] = false,						-- Recount skin
+	["rematch"] = false,						-- Rematch skin
+	["skada"] = false,							-- Skada skin
+	["tiny_dps"] = false,						-- TinyDPS skin
 	["vanaskos"] = false,						-- VanasKoS skin
 	["weak_auras"] = false,						-- WeakAuras skin
-	["skada"] = false,							-- Skada skin
-	["my_role_play"] = false,					-- MyRolePlay skin
-	["arh"] = false,							-- Archaeology Helper skin
-	["postal"] = false,							-- Postal skin
-	["opie"] = false,							-- OPie skin
-	["rematch"] = false,						-- Rematch skin
-	["ls_toasts"] = false,						-- Is: Toasts skin
 }
 
 ----------------------------------------------------------------------------------------
@@ -177,7 +170,7 @@ C["combattext"] = {
 	["merge_melee"] = true,						-- Merges multiple auto attack damage spam
 	["dispel"] = true,							-- Tells you about your dispels(works only with ["damage"] = true)
 	["interrupt"] = true,						-- Tells you about your interrupts(works only with ["damage"] = true)
-	["direction"] = "bottom",					-- Scrolling Direction("top"(goes down) or "bottom"(goes up))
+	["direction"] = true,						-- Change scrolling direction from bottom to top
 	["short_numbers"] = true,					-- Use short numbers ("25.3k" instead of "25342")
 }
 
@@ -431,6 +424,8 @@ C["filger"] = {
 	["max_test_icon"] = 5,						-- The number of icons to the test
 	["show_tooltip"] = false,					-- Show tooltip
 	["disable_cd"] = false,						-- Disable cooldowns
+	["disable_pvp"] = false,					-- Disable PvP debuffs on Player and Target
+	["expiration"] = false,						-- Sort cooldowns by expiration time
 	["buffs_size"] = 37,						-- Buffs size
 	["cooldown_size"] = 30,						-- Cooldowns size
 	["pvp_size"] = 60,							-- PvP debuffs size
@@ -563,13 +558,13 @@ C["stats"] = {
 	["guild"] = true,							-- Guild
 	["durability"] = true,						-- Durability
 	["experience"] = true,						-- Experience
+	["talents"] = true,							-- Specialization
 	["coords"] = true,							-- Coords
 	["location"] = true,						-- Location
 	["currency_archaeology"] = false,			-- Show Archaeology Fragments under currency tab
 	["currency_cooking"] = true,				-- Show Cooking Awards under currency tab
 	["currency_professions"] = true,			-- Show Profession Tokens under currency tab
 	["currency_raid"] = true,					-- Show Seals under currency tab
-	["currency_pvp"] = true,					-- Show PvP Currency under currency tab
 	["currency_misc"] = true,					-- Show Miscellaneous Currency under currency tab
 }
 

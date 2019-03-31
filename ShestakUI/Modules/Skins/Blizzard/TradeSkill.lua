@@ -100,7 +100,7 @@ local function LoadSkin()
 				bar:StripTextures()
 				bar:CreateBackdrop("Overlay")
 				bar:SetStatusBarTexture(C.media.texture)
-				bar:SetHeight(9)
+				bar:SetHeight(10)
 			end
 		end
 	end

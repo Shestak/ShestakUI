@@ -31,7 +31,6 @@ local function InstallUI()
 		for i = 1, NUM_CHAT_WINDOWS do
 			local frame = _G[format("ChatFrame%s", i)]
 			local chatFrameId = frame:GetID()
-			local chatName = FCF_GetChatWindowInfo(chatFrameId)
 
 			frame:SetSize(C.chat.width, C.chat.height)
 
@@ -203,15 +202,15 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	if SavedOptionsPerChar.RightBars == nil then SavedOptionsPerChar.RightBars = C.actionbar.rightbars end
 	if SavedOptionsPerChar.BottomBars == nil then SavedOptionsPerChar.BottomBars = C.actionbar.bottombars end
 
-	if T.getscreenwidth < 1024 and GetCVar("gxMonitor") == "0" then
+	if T.screenWidth < 1024 and GetCVar("gxMonitor") == "0" then
 		SetCVar("useUiScale", 0)
 		StaticPopup_Show("DISABLE_UI")
 	else
 		SetCVar("useUiScale", 1)
 		if C.general.uiscale > 1.28 then C.general.uiscale = 1.28 end
 
-		-- Set our uiscale
-		if (format("%.2f", GetCVar("uiScale")) ~= format("%.2f", C.general.uiscale)) then
+		-- Set our uiScale
+		if tonumber(GetCVar("uiScale")) ~= tonumber(C.general.uiscale) then
 			SetCVar("uiScale", C.general.uiscale)
 		end
 

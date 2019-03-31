@@ -79,7 +79,6 @@ end
 local function StatusUpdate(frame)
 	if not frame.parent.rollID then return end
 	local t = GetLootRollTimeLeft(frame.parent.rollID)
-	local perc = t / frame.parent.time
 	frame:SetValue(t)
 end
 
@@ -195,7 +194,7 @@ end
 local typemap = {[0] = "pass", "need", "greed", "disenchant"}
 local function UpdateRoll(i, rolltype)
 	local num = 0
-	local rollID, itemLink, numPlayers, isDone = C_LootHistory.GetItem(i)
+	local rollID, _, numPlayers, isDone = C_LootHistory.GetItem(i)
 
 	if isDone or not numPlayers then return end
 
@@ -203,7 +202,7 @@ local function UpdateRoll(i, rolltype)
 	if not f then return end
 
 	for j = 1, numPlayers do
-		local name, class, thisrolltype = C_LootHistory.GetPlayerInfo(i, j)
+		local name, _, thisrolltype = C_LootHistory.GetPlayerInfo(i, j)
 		f.rolls[name] = typemap[thisrolltype]
 		if rolltype == thisrolltype then num = num + 1 end
 	end
