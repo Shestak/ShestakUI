@@ -497,8 +497,6 @@ C["filger_spells"] = {
 			{spellID = 170856, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dash
 			{spellID = 1850, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Cenarion Ward
-			{spellID = 102351, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -615,6 +613,8 @@ C["filger_spells"] = {
 			{spellID = 88423, filter = "CD"},
 			-- Remove Corruption
 			{spellID = 2782, filter = "CD"},
+			-- Soothe
+			{spellID = 2908, filter = "CD"},
 			-- Skull Bash
 			{spellID = 106839, filter = "CD"},
 			-- Mangle
@@ -635,6 +635,10 @@ C["filger_spells"] = {
 			{spellID = 205636, filter = "CD"},
 			-- Tiger's Fury
 			{spellID = 5217, filter = "CD"},
+			-- Cenarion Ward
+			{spellID = 102351, filter = "CD"},
+			-- Frenzied Regeneration
+			{spellID = 22842, filter = "CD"},
 			-- Incapacitating Roar
 			{spellID = 99, filter = "CD"},
 			-- Bristling Fur
@@ -655,6 +659,10 @@ C["filger_spells"] = {
 			{spellID = 102793, filter = "CD"},
 			-- Nature's Vigil
 			{spellID = 124974, filter = "CD"},
+			-- Flourish
+			{spellID = 197721, filter = "CD"},
+			-- Renewal
+			{spellID = 108238, filter = "CD"},
 			-- Berserk
 			{spellID = 106951, filter = "CD", absID = true},
 			-- Ashmane's Frenzy
