@@ -226,7 +226,7 @@ local function Shared(self, unit)
 		end
 
 		-- Resting icon
-		if C.unitframe.icons_resting == true and T.level ~= MAX_PLAYER_LEVEL then
+		if C.unitframe.icons_resting == true then
 			self.RestingIndicator = self.Power:CreateTexture(nil, "OVERLAY")
 			self.RestingIndicator:SetSize(18, 18)
 			self.RestingIndicator:SetPoint("BOTTOMLEFT", -8, -8)
