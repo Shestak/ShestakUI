@@ -455,7 +455,6 @@ local function style(self, unit)
 	self.Power.bg:SetTexture(C.media.texture)
 	self.Power.bg.multiplier = 0.2
 
-
 	-- Hide Blizzard Power Bar and changed position for Class Bar
 	hooksecurefunc(_G.NamePlateDriverFrame, "SetupClassNameplateBars", function(frame)
 		if frame.classNamePlateMechanicFrame then
