@@ -75,14 +75,14 @@ C["announcements"] = {
 	["spells"] = false,							-- Announce when you cast some spell (from the list)
 	["spells_from_all"] = false,				-- Check spells cast from all members
 	["toys"] = false,							-- Announce some annoying toys
-	["says_thanks"] = false,					-- Says thanks for some spells
+	["says_thanks"] = false,					-- Says thanks for some spells (resurrection, from the list)
 	["pull_countdown"] = true,					-- Pull countdown announce(/pc #)
 	["flask_food"] = false,						-- Announce the usage of flasks and food
 	["flask_food_auto"] = false,				-- Auto announce when ReadyCheck(if enable, announce to raid channel)
 	["flask_food_raid"] = false,				-- Announce to raid channel
 	["feasts"] = false,							-- Announce Feasts/Souls/Repair Bots cast
 	["portals"] = false,						-- Announce Portals/Ritual of Summoning cast
-	["bad_gear"] = false,						-- Check bad gear in instance
+	["bad_gear"] = false,						-- Check bad gear in instance (fishing pole, from the list)
 	["safari_hat"] = true,						-- Check Safari Hat
 }
 
@@ -100,7 +100,7 @@ C["automation"] = {
 	["auto_collapse_reload"] = false,			-- Auto collapse ObjectiveTrackerFrame after reload
 	["skip_cinematic"] = false,					-- Auto skip cinematics/movies (disabled if hold Ctrl)
 	["auto_role"] = false,						-- Auto set your role
-	["cancel_bad_buffs"] = false,				-- Auto cancel various buffs
+	["cancel_bad_buffs"] = false,				-- Auto cancel various buffs (from the list)
 	["tab_binder"] = false,						-- Auto change Tab key to only target enemy players
 	["logging_combat"] = false,					-- Auto enables combat log text file in raid instances
 	["buff_on_scroll"] = false,					-- Cast buff on mouse scroll (from the list)
