@@ -1338,6 +1338,9 @@ do
 
 	local plugins_healcomm = ns.CreateCheckBox(parent, "plugins_healcomm", L_GUI_UF_PLUGINS_HEALCOMM)
 	plugins_healcomm:SetPoint("TOPLEFT", plugins_pvp_debuffs, "BOTTOMLEFT", 0, 0)
+
+	local plugins_auto_resurrection = ns.CreateCheckBox(parent, "plugins_auto_resurrection")
+	plugins_auto_resurrection:SetPoint("TOPLEFT", plugins_healcomm, "BOTTOMLEFT", 0, 0)
 end
 
 -- Top Panel

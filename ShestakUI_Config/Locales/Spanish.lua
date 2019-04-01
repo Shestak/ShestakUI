@@ -460,7 +460,8 @@ L_GUI_UF_PLUGINS_AURA_WATCH = "'BANDA' Ver las auras"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Temporizador en los iconos de perjuicios de la banda"
 L_GUI_UF_PLUGINS_PVP_DEBUFFS = "Show also PvP debuff icons (from the list)" -- Need review
 L_GUI_UF_PLUGINS_HEALCOMM = "Barra de sanación entrante"
-L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto lanzar resurreción con click central cuando la unidad este muerta (no funciona cuando Clique está activado)"
+L.raidframe_plugins_auto_resurrection = "Auto cast resurrection" -- Need review
+L.raidframe_plugins_auto_resurrection_desc = "Auto lanzar resurreción con click central cuando la unidad este muerta (no funciona cuando Clique está activado)"
 
 -- Panel options
 L_GUI_TOP_PANEL = "Panel superior"

@@ -460,7 +460,8 @@ L_GUI_UF_PLUGINS_AURA_WATCH = "Icone delle penalità d'incursione"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer sulle icone delle penalità d'incursione"
 L_GUI_UF_PLUGINS_PVP_DEBUFFS = "Mostra anche un’icona per le penalità PvP (dall’elenco)"
 L_GUI_UF_PLUGINS_HEALCOMM = "Mostra le cure in arrivo sul riquadro"
-L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "'Auto-lancia' resurrezione col tasto centrale quando l'unità è morta (non funziona con Clique attiva)"
+L.raidframe_plugins_auto_resurrection = "Auto cast resurrection" -- Need review
+L.raidframe_plugins_auto_resurrection_desc = "'Auto-lancia' resurrezione col tasto centrale quando l'unità è morta (non funziona con Clique attiva)"
 
 -- Panel options
 L_GUI_TOP_PANEL = "Pannello superiore"

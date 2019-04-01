@@ -460,7 +460,8 @@ L_GUI_UF_PLUGINS_AURA_WATCH = "'RAID' Buffüberwachung"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer auf Schlachtzugsdebuff Icons"
 L_GUI_UF_PLUGINS_PVP_DEBUFFS = "Zeige ebenfalls PvP Debuff Symbol (aus der Liste)"
 L_GUI_UF_PLUGINS_HEALCOMM = "Leiste für Eingehende Heilung"
-L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Mittel-Klick um automatisch Auferstehung zu zauber wenn das Ziel tot ist (funktioniert nicht wenn Clique installiert ist)"
+L.raidframe_plugins_auto_resurrection = "Auto cast resurrection" -- Need review
+L.raidframe_plugins_auto_resurrection_desc = "Mittel-Klick um automatisch Auferstehung zu zauber wenn das Ziel tot ist (funktioniert nicht wenn Clique installiert ist)"
 
 -- Panel options
 L_GUI_TOP_PANEL = "Oberes Panel"

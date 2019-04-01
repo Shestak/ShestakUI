@@ -460,7 +460,8 @@ L_GUI_UF_PLUGINS_AURA_WATCH = "團隊法術監視"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "團隊減益時間"
 L_GUI_UF_PLUGINS_PVP_DEBUFFS = "PVP Debuffs圖示" -- Need review
 L_GUI_UF_PLUGINS_HEALCOMM = "即將受到的治療"
-L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "滑鼠中鍵點擊已死亡的角色時,自動施放復活技能(Clique啟用時無效)"
+L.raidframe_plugins_auto_resurrection = "Auto cast resurrection" -- Need review
+L.raidframe_plugins_auto_resurrection_desc = "滑鼠中鍵點擊已死亡的角色時,自動施放復活技能(Clique啟用時無效)"
 
 -- Panel options
 L_GUI_TOP_PANEL = "頂部信息面板"

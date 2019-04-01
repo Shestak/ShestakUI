@@ -457,7 +457,8 @@ L_GUI_UF_PLUGINS_AURA_WATCH = "Raid debuff icons (from the list)"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer on raid debuff icons"
 L_GUI_UF_PLUGINS_PVP_DEBUFFS = "Show also PvP debuff icons (from the list)"
 L_GUI_UF_PLUGINS_HEALCOMM = "Show incoming heal on frame"
-L_GUI_UF_PLUGINS_AUTO_RESURRECTION = "Auto cast resurrection on middle-click (doesn't work with Clique)"
+L.raidframe_plugins_auto_resurrection = "Auto cast resurrection"
+L.raidframe_plugins_auto_resurrection_desc = "Auto cast resurrection on middle-click (doesn't work with Clique)"
 
 -- Panel options
 L_GUI_TOP_PANEL = "Top Panel"
