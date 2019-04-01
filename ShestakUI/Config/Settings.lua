@@ -561,11 +561,12 @@ C["stats"] = {
 	["talents"] = true,							-- Specialization
 	["coords"] = true,							-- Coords
 	["location"] = true,						-- Location
-	["currency_archaeology"] = false,			-- Show Archaeology Fragments under currency tab
-	["currency_cooking"] = true,				-- Show Cooking Awards under currency tab
-	["currency_professions"] = true,			-- Show Profession Tokens under currency tab
-	["currency_raid"] = true,					-- Show Seals under currency tab
-	["currency_misc"] = true,					-- Show Miscellaneous Currency under currency tab
+	-- Currency (displayed in gold stats)
+	["currency_archaeology"] = false,			-- Archaeology Fragments
+	["currency_cooking"] = true,				-- Cooking Awards
+	["currency_professions"] = true,			-- Profession Tokens
+	["currency_raid"] = true,					-- Raid Seals
+	["currency_misc"] = true,					-- Miscellaneous Currency
 }
 
 ----------------------------------------------------------------------------------------

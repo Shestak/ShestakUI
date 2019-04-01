@@ -480,11 +480,11 @@ L_GUI_STATS_TALENTS_DESC = "Date-text allows you to change the spec and loot on 
 L_GUI_STATS_COORDS = "Coords"
 L_GUI_STATS_LOCATION = "Location"
 L_GUI_STATS_SUBHEADER_CURRENCY = "Currency (displayed in gold data text)"
-L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Show Archaeology Fragments"
-L_GUI_STATS_CURRENCY_COOKING = "Show Cooking"
-L_GUI_STATS_CURRENCY_PROFESSIONS = "Show Profession Tokens"
-L_GUI_STATS_CURRENCY_RAID = "Show Raid Seals"
-L_GUI_STATS_CURRENCY_MISCELLANEOUS = "Show Miscellaneous Currency"
+L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Archaeology Fragments"
+L_GUI_STATS_CURRENCY_COOKING = "Cooking Awards"
+L_GUI_STATS_CURRENCY_PROFESSIONS = "Profession Tokens"
+L_GUI_STATS_CURRENCY_RAID = "Raid Seals"
+L_GUI_STATS_CURRENCY_MISCELLANEOUS = "Miscellaneous Currency"
 
 -- Error options
 L_GUI_ERROR = "Errors"
