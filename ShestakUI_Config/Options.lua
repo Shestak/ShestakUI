@@ -209,7 +209,7 @@ do
 	local chars_currency = ns.CreateCheckBox(parent, "chars_currency", L_GUI_MISC_CHARS_CURRENCY)
 	chars_currency:SetPoint("TOPLEFT", archaeology, "BOTTOMLEFT", 0, 0)
 
-	local armory_link = ns.CreateCheckBox(parent, "armory_link", L_GUI_MISC_ARMORY_LINK)
+	local armory_link = ns.CreateCheckBox(parent, "armory_link")
 	armory_link:SetPoint("TOPLEFT", chars_currency, "BOTTOMLEFT", 0, 0)
 
 	local merchant_itemlevel = ns.CreateCheckBox(parent, "merchant_itemlevel", L_GUI_MISC_MERCHANT_ITEMLEVEL)
@@ -428,10 +428,10 @@ do
 	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_COMBATTEXT_ENABLE)
 	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local blizz_head_numbers = ns.CreateCheckBox(parent, "blizz_head_numbers", L_GUI_COMBATTEXT_BLIZZ_HEAD_NUMBERS)
+	local blizz_head_numbers = ns.CreateCheckBox(parent, "blizz_head_numbers")
 	blizz_head_numbers:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
 
-	local damage_style = ns.CreateCheckBox(parent, "damage_style", L_GUI_COMBATTEXT_DAMAGE_STYLE)
+	local damage_style = ns.CreateCheckBox(parent, "damage_style")
 	damage_style:SetPoint("TOPLEFT", blizz_head_numbers, "BOTTOMLEFT", 20, 0)
 
 	local damage = ns.CreateCheckBox(parent, "damage", L_GUI_COMBATTEXT_DAMAGE)
