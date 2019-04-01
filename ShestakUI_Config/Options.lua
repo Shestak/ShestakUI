@@ -130,11 +130,8 @@ do
 	local welcome_message = ns.CreateCheckBox(parent, "welcome_message", L_GUI_GENERAL_WELCOME_MESSAGE)
 	welcome_message:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local custom_lagtolerance = ns.CreateCheckBox(parent, "custom_lagtolerance", L_GUI_GENERAL_LAG_TOLERANCE)
-	custom_lagtolerance:SetPoint("TOPLEFT", welcome_message, "BOTTOMLEFT", 0, 0)
-
 	local auto_scale = ns.CreateCheckBox(parent, "auto_scale", L_GUI_GENERAL_AUTOSCALE)
-	auto_scale:SetPoint("TOPLEFT", custom_lagtolerance, "BOTTOMLEFT", 0, 0)
+	auto_scale:SetPoint("TOPLEFT", welcome_message, "BOTTOMLEFT", 0, 0)
 
 	local uiscale = ns.CreateNumberSlider(parent, "uiscale", nil, nil, 0.4, 1.1, 0.01, true, L_GUI_GENERAL_UISCALE)
 	uiscale:SetPoint("TOPLEFT", auto_scale, "BOTTOMLEFT", 0, -20)
@@ -229,6 +226,9 @@ do
 
 	local hide_raid_button = ns.CreateCheckBox(parent, "hide_raid_button", L_GUI_MISC_HIDE_RAID_BUTTON)
 	hide_raid_button:SetPoint("TOPLEFT", hide_talking_head, "BOTTOMLEFT", 0, 0)
+
+	local custom_lagtolerance = ns.CreateCheckBox(parent, "custom_lagtolerance", L_GUI_MISC_LAG_TOLERANCE)
+	custom_lagtolerance:SetPoint("TOPLEFT", hide_raid_button, "BOTTOMLEFT", 0, 0)
 end
 
 -- Announcements
@@ -1183,13 +1183,13 @@ do
 	local plugins_swing = ns.CreateCheckBox(parent, "plugins_swing", L_GUI_UF_PLUGINS_SWING)
 	plugins_swing:SetPoint("TOPLEFT", plugins_gcd, "BOTTOMLEFT", 0, 0)
 
-	local plugins_reputation_bar = ns.CreateCheckBox(parent, "plugins_reputation_bar", L_GUI_UF_PLUGINS_REPUTATION_BAR)
+	local plugins_reputation_bar = ns.CreateCheckBox(parent, "plugins_reputation_bar")
 	plugins_reputation_bar:SetPoint("TOPLEFT", plugins_swing, "BOTTOMLEFT", 0, 0)
 
-	local plugins_experience_bar = ns.CreateCheckBox(parent, "plugins_experience_bar", L_GUI_UF_PLUGINS_EXPERIENCE_BAR)
+	local plugins_experience_bar = ns.CreateCheckBox(parent, "plugins_experience_bar")
 	plugins_experience_bar:SetPoint("TOPLEFT", plugins_reputation_bar, "BOTTOMLEFT", 0, 0)
 
-	local plugins_artifact_bar = ns.CreateCheckBox(parent, "plugins_artifact_bar", L_GUI_UF_PLUGINS_ARTIFACT_BAR)
+	local plugins_artifact_bar = ns.CreateCheckBox(parent, "plugins_artifact_bar")
 	plugins_artifact_bar:SetPoint("TOPLEFT", plugins_experience_bar, "BOTTOMLEFT", 0, 0)
 
 	local plugins_smooth_bar = ns.CreateCheckBox(parent, "plugins_smooth_bar", L_GUI_UF_PLUGINS_SMOOTH_BAR)

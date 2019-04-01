@@ -89,7 +89,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Custom Lag Tolerance(by Elv22)
 ----------------------------------------------------------------------------------------
-if C.general.custom_lagtolerance == true then
+if C.misc.custom_lagtolerance == true then
 	local customlag = CreateFrame("Frame")
 	local int = 5
 	local _, _, _, lag = GetNetStats()

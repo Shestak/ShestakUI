@@ -11,10 +11,9 @@ L_GUI_NEED_RELOAD = "|cffff2735You need to reload the UI to apply your changes.|
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface settings. Type in chat '/uihelp' for help."
+L_GUI_GENERAL_WELCOME_MESSAGE = "Welcome message in chat"
 L_GUI_GENERAL_AUTOSCALE = "Auto UI Scale"
 L_GUI_GENERAL_UISCALE = "UI Scale (if auto-scale is disabled)"
-L_GUI_GENERAL_WELCOME_MESSAGE = "Welcome message in chat"
-L_GUI_GENERAL_LAG_TOLERANCE = "Automatically update the Blizzard Custom Lag Tolerance option to your latency"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features."
@@ -45,6 +44,7 @@ L_GUI_MISC_MINIMIZE_MOUSEOVER = "Mouseover for quest minimize button"
 L_GUI_MISC_HIDE_BANNER = "Hide Boss Banner Loot Frame"
 L_GUI_MISC_HIDE_TALKING_HEAD = "Hide Talking Head Frame"
 L_GUI_MISC_HIDE_RAID_BUTTON = "Hide button for oUF_RaidDPS (top left corner)"
+L_GUI_MISC_LAG_TOLERANCE = "Automatically update the Blizzard Custom Lag Tolerance option to your latency"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Announcements"
@@ -405,9 +405,12 @@ L_GUI_UF_PORTRAIT_WIDTH = "Portrait width"
 L_GUI_UF_SUBHEADER_PLUGINS = "Plugins"
 L_GUI_UF_PLUGINS_GCD = "Global cooldown spark on player frame"
 L_GUI_UF_PLUGINS_SWING = "Enable swing bar"
-L_GUI_UF_PLUGINS_REPUTATION_BAR = "Enable Reputation bar (left from player frame by mouseover)"
-L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Enable Experience bar (left from player frame by mouseover)"
-L_GUI_UF_PLUGINS_ARTIFACT_BAR = "Azerite Power bar (left from player frame by mouseover)"
+L.unitframe_plugins_reputation_bar = "Reputation bar"
+L.unitframe_plugins_reputation_bar_desc = "Enable Reputation bar (left from player frame by mouseover)"
+L.unitframe_plugins_experience_bar = "Experience bar"
+L.unitframe_plugins_experience_bar_desc = "Enable Experience bar (left from player frame by mouseover)"
+L.unitframe_plugins_artifact_bar = "Azerite Power bar"
+L.unitframe_plugins_artifact_bar_desc = "Enable Azerite Power bar (left from player frame by mouseover)"
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Smooth bar"
 L_GUI_UF_PLUGINS_ENEMY_SPEC = "Show enemy talent spec in BG and Arena"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Combat text on player/target frame"

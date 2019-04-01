@@ -14,10 +14,9 @@ L_GUI_NEED_RELOAD = "|cffff2735You need to reload the UI to apply your changes.|
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface settings. Type in chat '/uihelp' for help." -- Need review
+L_GUI_GENERAL_WELCOME_MESSAGE = "Welcome message in chat"
 L_GUI_GENERAL_AUTOSCALE = "Automatisch UI skalieren"
 L_GUI_GENERAL_UISCALE = "UI Skalierung (falls automatische Skalierung deaktiviert)"
-L_GUI_GENERAL_WELCOME_MESSAGE = "Welcome message in chat"
-L_GUI_GENERAL_LAG_TOLERANCE = "Automatische Anpassung der Blizzard Custom Lag Toleranz an deine Latenz"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review
@@ -48,6 +47,7 @@ L_GUI_MISC_MINIMIZE_MOUSEOVER = "Mouseover für Quest minimieren Taste"
 L_GUI_MISC_HIDE_BANNER = "Autoverstecken des Boss Loot Frame"
 L_GUI_MISC_HIDE_TALKING_HEAD = "Verstecke Talking Head Frame"
 L_GUI_MISC_HIDE_RAID_BUTTON = "Verstecke oUF_RaidDPS Knopf"
+L_GUI_MISC_LAG_TOLERANCE = "Automatische Anpassung der Blizzard Custom Lag Toleranz an deine Latenz"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigeungen"
@@ -408,9 +408,12 @@ L_GUI_UF_PORTRAIT_WIDTH = "Portraitbreite"
 L_GUI_UF_SUBHEADER_PLUGINS = "Plugins" -- Need review
 L_GUI_UF_PLUGINS_GCD = "Blitz für globalen Cooldown"
 L_GUI_UF_PLUGINS_SWING = "Swingleiste"
-L_GUI_UF_PLUGINS_REPUTATION_BAR = "Rufleiste"
-L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Erfahrungsleiste"
-L_GUI_UF_PLUGINS_ARTIFACT_BAR = "Artifact Power Leiste"
+L.unitframe_plugins_reputation_bar = "Reputation bar" -- Need review
+L.unitframe_plugins_reputation_bar_desc = "Rufleiste"
+L.unitframe_plugins_experience_bar = "Experience bar" -- Need review
+L.unitframe_plugins_experience_bar_desc = "Erfahrungsleiste"
+L.unitframe_plugins_artifact_bar = "Azerite Power bar" -- Need review
+L.unitframe_plugins_artifact_bar_desc = "Artifact Power Leiste"
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Weichgezeichnete Leisten"
 L_GUI_UF_PLUGINS_ENEMY_SPEC = "Zeige gegnerische Talente"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Kampftexts auf Spieler/Zielfenster"

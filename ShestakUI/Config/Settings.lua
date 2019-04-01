@@ -29,10 +29,9 @@ C["media"] = {
 --	General options
 ----------------------------------------------------------------------------------------
 C["general"] = {
-	["auto_scale"] = true,						-- Autoscale
-	["uiscale"] = 0.96,							-- Your value(between 0.64 and 1) if "auto_scale" is disable
 	["welcome_message"] = true,					-- Enable welcome message in chat
-	["custom_lagtolerance"] = false,			-- Custom lag tolerance to your latency
+	["auto_scale"] = true,						-- Autoscale
+	["uiscale"] = 0.96,							-- Your value(between 0.2 and 1) if "auto_scale" is disable
 }
 
 ----------------------------------------------------------------------------------------
@@ -64,6 +63,7 @@ C["misc"] = {
 	["hide_banner"] = true,						-- Hide Boss Banner Loot Frame
 	["hide_talking_head"] = false,				-- Hide Talking Head Frame
 	["hide_raid_button"] = false,				-- Hide button for oUF_RaidDPS (top left mouseover)
+	["custom_lagtolerance"] = false,			-- Custom lag tolerance to your latency
 }
 
 ----------------------------------------------------------------------------------------

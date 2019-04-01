@@ -14,10 +14,9 @@ L_GUI_NEED_RELOAD = "|cffff2735You need to reload the UI to apply your changes.|
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface settings. Type in chat '/uihelp' for help." -- Need review
+L_GUI_GENERAL_WELCOME_MESSAGE = "Messaggio di benvenuto in chat"
 L_GUI_GENERAL_AUTOSCALE = "Ridimensionamento automatico dell'interfaccia"
 L_GUI_GENERAL_UISCALE = "Scala dell'interfaccia (se il ridimensionamento automatico è disabilitato)"
-L_GUI_GENERAL_WELCOME_MESSAGE = "Messaggio di benvenuto in chat"
-L_GUI_GENERAL_LAG_TOLERANCE = "Allinea automaticamente la tolleranza automatica lag della Blizzard alla tua latenza"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review
@@ -48,6 +47,7 @@ L_GUI_MISC_MINIMIZE_MOUSEOVER = "Pulsante per minimizzare le missioni al passagg
 L_GUI_MISC_HIDE_BANNER = "Nascondi il Boss Banner Loot Frame"
 L_GUI_MISC_HIDE_TALKING_HEAD = "Nascondi il Talking Head Frame"
 L_GUI_MISC_HIDE_RAID_BUTTON = "Nascondi il pulsante di oUF_RaidDPS"
+L_GUI_MISC_LAG_TOLERANCE = "Allinea automaticamente la tolleranza automatica lag della Blizzard alla tua latenza"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"
@@ -408,9 +408,12 @@ L_GUI_UF_PORTRAIT_WIDTH = "Larghezza del ritratto"
 L_GUI_UF_SUBHEADER_PLUGINS = "Plugins" -- Need review
 L_GUI_UF_PLUGINS_GCD = "Scintilla del recupero globale"
 L_GUI_UF_PLUGINS_SWING = "Attiva la barra dei fendenti"
-L_GUI_UF_PLUGINS_REPUTATION_BAR = "Attiva la barra reputazioni"
-L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Attiva la barra esperienza"
-L_GUI_UF_PLUGINS_ARTIFACT_BAR = "Barra potenza artefatto"
+L.unitframe_plugins_reputation_bar = "Reputation bar" -- Need review
+L.unitframe_plugins_reputation_bar_desc = "Attiva la barra reputazioni"
+L.unitframe_plugins_experience_bar = "Experience bar" -- Need review
+L.unitframe_plugins_experience_bar_desc = "Attiva la barra esperienza"
+L.unitframe_plugins_artifact_bar = "Azerite Power bar" -- Need review
+L.unitframe_plugins_artifact_bar_desc = "Barra potenza artefatto"
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Barra a cambiamento graduale"
 L_GUI_UF_PLUGINS_ENEMY_SPEC = "Mostra la specializzazione dei talenti del nemico"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Testo di combattimento sul riquadro del giocatore/bersaglio"

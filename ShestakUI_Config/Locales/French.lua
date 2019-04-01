@@ -14,10 +14,9 @@ L_GUI_NEED_RELOAD = "|cffff2735You need to reload the UI to apply your changes.|
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface settings. Type in chat '/uihelp' for help." -- Need review
+L_GUI_GENERAL_WELCOME_MESSAGE = "Message de bienvenue dans la fenêtre de dialogue"
 L_GUI_GENERAL_AUTOSCALE = "Mise à l'échelle automatique"
 L_GUI_GENERAL_UISCALE = "Mettre l'interface à l'échelle (si 'Mise à l'échelle automatique' est désactivée)"
-L_GUI_GENERAL_WELCOME_MESSAGE = "Message de bienvenue dans la fenêtre de dialogue"
-L_GUI_GENERAL_LAG_TOLERANCE = "Ajuste automatiquement la barre de latence Blizzard avec votre propre latence"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review
@@ -48,6 +47,7 @@ L_GUI_MISC_MINIMIZE_MOUSEOVER = "Survol par la souris pour réduire les quêtes"
 L_GUI_MISC_HIDE_BANNER = "Masquer la fenêtre/bannière de loot des Boss"
 L_GUI_MISC_HIDE_TALKING_HEAD = "Masquer la fenêtre de discussion principale"
 L_GUI_MISC_HIDE_RAID_BUTTON = "Masquer le button pour activer oUF_RaidDPS"
+L_GUI_MISC_LAG_TOLERANCE = "Ajuste automatiquement la barre de latence Blizzard avec votre propre latence"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"
@@ -408,9 +408,12 @@ L_GUI_UF_PORTRAIT_WIDTH = "Largeur des portraits"
 L_GUI_UF_SUBHEADER_PLUGINS = "Plugins" -- Need review
 L_GUI_UF_PLUGINS_GCD = "Scintillement du GCD"
 L_GUI_UF_PLUGINS_SWING = "Barre d'attaque automatique / tir automatique"
-L_GUI_UF_PLUGINS_REPUTATION_BAR = "Barre de réputation"
-L_GUI_UF_PLUGINS_EXPERIENCE_BAR = "Barre d'expérience"
-L_GUI_UF_PLUGINS_ARTIFACT_BAR = "Barre de puissance d'Artefact"
+L.unitframe_plugins_reputation_bar = "Reputation bar" -- Need review
+L.unitframe_plugins_reputation_bar_desc = "Barre de réputation"
+L.unitframe_plugins_experience_bar = "Experience bar" -- Need review
+L.unitframe_plugins_experience_bar_desc = "Barre d'expérience"
+L.unitframe_plugins_artifact_bar = "Azerite Power bar" -- Need review
+L.unitframe_plugins_artifact_bar_desc = "Barre de puissance d'Artefact"
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "Lissage des barres"
 L_GUI_UF_PLUGINS_ENEMY_SPEC = "Afficher les talent de l'ennemi"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texte de combat sur les barres du joueur et de la cible"
