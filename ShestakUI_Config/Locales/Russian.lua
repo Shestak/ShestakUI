@@ -17,6 +17,17 @@ L_GUI_GENERAL_SUBTEXT = "Эти настройки контролируют об
 L_GUI_GENERAL_WELCOME_MESSAGE = "Приветственное сообщение в чате"
 L_GUI_GENERAL_AUTOSCALE = "Автоматически масштабировать интерфейс"
 L_GUI_GENERAL_UISCALE = "Масштаб интерфейса"
+L.media_border_color = "Цвет для окантовки"
+L.media_backdrop_color = "Цвет для фона"
+L.media_backdrop_alpha = "Прозрачность фона"
+
+-- Font options
+L.font = "Шрифты"
+L.font_subtext = "Настройка отдельных шрифтов для элементов."
+L.font_stats_font = "Выбор шрифта"
+L.font_stats_font_style = "Стиль шрифта"
+L.font_stats_font_shadow = "Тень для шрифта"
+L.font_subheader_stats = "Шрифт статистики"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Прочие настройки, которые добавляют интересные возможности."
@@ -276,10 +287,9 @@ L_GUI_GARRISON_ICON = "Иконка гарнизона"
 L_GUI_MINIMAP_SIZE = "Размер миникарты"
 L_GUI_MINIMAP_HIDE_COMBAT = "Скрыть миникарту в бою"
 L_GUI_MINIMAP_TOGGLE_MENU = "Отображать меню над миникартой"
-
--- Map options
-L_GUI_MAP_BG_STYLIZATION = "Стилизация карты полей боя"
-L_GUI_MAP_FOG_OF_WAR = "Убрать туман войны с карты"
+L.minimap_bg_map_stylization = "Стилизация карты полей боя"
+L.minimap_fog_of_war = "Убрать туман войны с глобальной карты"
+L.minimap_fog_of_war_desc = "Нажмите правой кнопкой по кнопке закрытия карты, чтобы активировать опцию скрытия тумана"
 
 -- Loot options
 L_GUI_LOOT_SUBTEXT = "Настройка окна добычи."

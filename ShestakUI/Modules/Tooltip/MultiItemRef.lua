@@ -34,7 +34,7 @@ local CreateTip = function(link)
 	tip:SetScript("OnDragStart", function(self) self:StartMoving() end)
 	tip:SetScript("OnDragStop", function(self) self:StopMovingOrSizing() end)
 	tip:HookScript("OnShow", function(self)
-		self:SetBackdropColor(unpack(C.media.overlay_color))
+		self:SetBackdropColor(C.media.backdrop_color[1], C.media.backdrop_color[2], C.media.backdrop_color[3], C.media.backdrop_alpha)
 		self:SetBackdropBorderColor(unpack(C.media.border_color))
 	end)
 

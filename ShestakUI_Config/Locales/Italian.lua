@@ -17,6 +17,17 @@ L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface setti
 L_GUI_GENERAL_WELCOME_MESSAGE = "Messaggio di benvenuto in chat"
 L_GUI_GENERAL_AUTOSCALE = "Ridimensionamento automatico dell'interfaccia"
 L_GUI_GENERAL_UISCALE = "Scala dell'interfaccia (se il ridimensionamento automatico è disabilitato)"
+L.media_border_color = "Color for borders" -- Need review
+L.media_backdrop_color = "Color for borders backdrop" -- Need review
+L.media_backdrop_alpha = "Alpha for transparent backdrop" -- Need review
+
+-- Font options
+L.font = "Fonts" -- Need review
+L.font_subtext = "Customize individual fonts for elements." -- Need review
+L.font_stats_font = "Select font" -- Need review
+L.font_stats_font_style = "Font flag" -- Need review
+L.font_stats_font_shadow = "Font shadow" -- Need review
+L.font_subheader_stats = "Stats font" -- Need review
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review
@@ -276,10 +287,9 @@ L_GUI_GARRISON_ICON = "Icona della guarnigione"
 L_GUI_MINIMAP_SIZE = "Dimensioni della minimappa"
 L_GUI_MINIMAP_HIDE_COMBAT = "Nascondi la minimappa in combattimento"
 L_GUI_MINIMAP_TOGGLE_MENU = "Mostra il menu a scomparsa"
-
--- Map options
-L_GUI_MAP_BG_STYLIZATION = "Restyling della mappa dei Campi di Battaglia"
-L_GUI_MAP_FOG_OF_WAR = "Nebbia della guerra sulla mappa del mondo"
+L.minimap_bg_map_stylization = "Restyling della mappa dei Campi di Battaglia"
+L.minimap_fog_of_war = "Nebbia della guerra sulla mappa del mondo"
+L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war" -- Need review
 
 -- Loot options
 L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review

@@ -95,7 +95,7 @@ local function SetTemplate(f, t)
 	})
 
 	if t == "Transparent" then
-		backdropa = C.media.overlay_color[4]
+		backdropa = C.media.backdrop_alpha
 		f:CreateBorder(true, true)
 	elseif t == "Overlay" then
 		backdropa = 1
@@ -122,7 +122,7 @@ local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 	})
 
 	if t == "Transparent" then
-		backdropa = C.media.overlay_color[4]
+		backdropa = C.media.backdrop_alpha
 		f:CreateBorder(true, true)
 	elseif t == "Overlay" then
 		backdropa = 1

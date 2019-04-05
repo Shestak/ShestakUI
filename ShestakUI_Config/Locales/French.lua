@@ -17,6 +17,17 @@ L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface setti
 L_GUI_GENERAL_WELCOME_MESSAGE = "Message de bienvenue dans la fenêtre de dialogue"
 L_GUI_GENERAL_AUTOSCALE = "Mise à l'échelle automatique"
 L_GUI_GENERAL_UISCALE = "Mettre l'interface à l'échelle (si 'Mise à l'échelle automatique' est désactivée)"
+L.media_border_color = "Color for borders" -- Need review
+L.media_backdrop_color = "Color for borders backdrop" -- Need review
+L.media_backdrop_alpha = "Alpha for transparent backdrop" -- Need review
+
+-- Font options
+L.font = "Fonts" -- Need review
+L.font_subtext = "Customize individual fonts for elements." -- Need review
+L.font_stats_font = "Select font" -- Need review
+L.font_stats_font_style = "Font flag" -- Need review
+L.font_stats_font_shadow = "Font shadow" -- Need review
+L.font_subheader_stats = "Stats font" -- Need review
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review
@@ -276,10 +287,9 @@ L_GUI_GARRISON_ICON = "Icone de la Garnison"
 L_GUI_MINIMAP_SIZE = "Taille de la minicarte"
 L_GUI_MINIMAP_HIDE_COMBAT = "Cacher la minimap en combat"
 L_GUI_MINIMAP_TOGGLE_MENU = "Montre le menu déroulant"
-
--- Map options
-L_GUI_MAP_BG_STYLIZATION = "Personnalisation de l'arrière plan de la carte"
-L_GUI_MAP_FOG_OF_WAR = "Retire le brouillard des zones non explorées sur la carte du monde"
+L.minimap_bg_map_stylization = "Personnalisation de l'arrière plan de la carte"
+L.minimap_fog_of_war = "Retire le brouillard des zones non explorées sur la carte du monde"
+L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war" -- Need review
 
 -- Loot options
 L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review

@@ -120,7 +120,7 @@ local function WorldMapMenu(self, level)
 	end
 	UIDropDownMenu_AddButton(info, level)
 
-	if C.map.fog_of_war == true then
+	if C.minimap.fog_of_war == true then
 		wipe(info)
 		info.text = L_MAP_FOG
 		info.checked = function()

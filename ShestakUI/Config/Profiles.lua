@@ -176,7 +176,7 @@ if Sw2rT1 then
 	C["chat"].combatlog = false
 	C["chat"].damage_meter_spam = true
 	C["bag"].ilvl = true
-	C["map"].fog_of_war = true
+	C["minimap"].fog_of_war = true
 	C["filger"].enable = false
 	C["unitframe"].enemy_health_color = false
 	C["unitframe"].castbar_latency = false
@@ -223,7 +223,7 @@ if IsWetxius then
 	C["chat"].chat_bar_mouseover = true
 	C["chat"].combatlog = false
 	C["minimap"].toggle_menu = false
-	C["map"].fog_of_war = true
+	C["minimap"].fog_of_war = true
 	C["nameplate"].health_value = true
 	C["nameplate"].healer_icon = true
 	C["actionbar"].toggle_mode = false

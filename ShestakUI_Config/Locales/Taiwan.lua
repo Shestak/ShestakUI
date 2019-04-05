@@ -17,6 +17,17 @@ L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface setti
 L_GUI_GENERAL_WELCOME_MESSAGE = "歡迎信息"
 L_GUI_GENERAL_AUTOSCALE = "自動UI縮放"
 L_GUI_GENERAL_UISCALE = "UI縮放(當'自動UI縮放'關閉時)"
+L.media_border_color = "Color for borders" -- Need review
+L.media_backdrop_color = "Color for borders backdrop" -- Need review
+L.media_backdrop_alpha = "Alpha for transparent backdrop" -- Need review
+
+-- Font options
+L.font = "Fonts" -- Need review
+L.font_subtext = "Customize individual fonts for elements." -- Need review
+L.font_stats_font = "Select font" -- Need review
+L.font_stats_font_style = "Font flag" -- Need review
+L.font_stats_font_shadow = "Font shadow" -- Need review
+L.font_subheader_stats = "Stats font" -- Need review
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review
@@ -276,10 +287,9 @@ L_GUI_GARRISON_ICON = "Garrison icon" -- Need review
 L_GUI_MINIMAP_SIZE = "迷你地圖大小"
 L_GUI_MINIMAP_HIDE_COMBAT = "戰鬥中隱藏迷你地圖"
 L_GUI_MINIMAP_TOGGLE_MENU = "小地圖頂部快捷菜單"
-
--- Map options
-L_GUI_MAP_BG_STYLIZATION = "開啟戰場地圖增強"
-L_GUI_MAP_FOG_OF_WAR = "世界地圖全亮選項"
+L.minimap_bg_map_stylization = "開啟戰場地圖增強"
+L.minimap_fog_of_war = "世界地圖全亮選項"
+L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war" -- Need review
 
 -- Loot options
 L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review

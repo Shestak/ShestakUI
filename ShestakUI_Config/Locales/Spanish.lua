@@ -17,6 +17,17 @@ L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface setti
 L_GUI_GENERAL_WELCOME_MESSAGE = "Mensaje de bienvenida en el chat"
 L_GUI_GENERAL_AUTOSCALE = "Auto escalado de la UI"
 L_GUI_GENERAL_UISCALE = "Escalado de la UI (si auto escalado está desactivado)"
+L.media_border_color = "Color for borders" -- Need review
+L.media_backdrop_color = "Color for borders backdrop" -- Need review
+L.media_backdrop_alpha = "Alpha for transparent backdrop" -- Need review
+
+-- Font options
+L.font = "Fonts" -- Need review
+L.font_subtext = "Customize individual fonts for elements." -- Need review
+L.font_stats_font = "Select font" -- Need review
+L.font_stats_font_style = "Font flag" -- Need review
+L.font_stats_font_shadow = "Font shadow" -- Need review
+L.font_subheader_stats = "Stats font" -- Need review
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review
@@ -276,10 +287,9 @@ L_GUI_GARRISON_ICON = "Garrison icon" -- Need review
 L_GUI_MINIMAP_SIZE = "Tamaño del minimapa"
 L_GUI_MINIMAP_HIDE_COMBAT = "Ocultar minimapa en combate"
 L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu" -- Needs review
-
--- Map options
-L_GUI_MAP_BG_STYLIZATION = "Estilizado del mapa de CB"
-L_GUI_MAP_FOG_OF_WAR = "Remove fog of war on World Map" -- Needs review
+L.minimap_bg_map_stylization = "Estilizado del mapa de CB"
+L.minimap_fog_of_war = "Remove fog of war on World Map" -- Needs review
+L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war" -- Need review
 
 -- Loot options
 L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review

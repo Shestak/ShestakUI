@@ -20,7 +20,7 @@ local function styleBubble(frame)
 		bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = T.noscalemult,
 		insets = {left = -T.noscalemult, right = -T.noscalemult, top = -T.noscalemult, bottom = -T.noscalemult}
 	})
-	frame:SetBackdropColor(unpack(C.media.overlay_color))
+	frame:SetBackdropColor(C.media.backdrop_color[1], C.media.backdrop_color[2], C.media.backdrop_color[3], C.media.backdrop_alpha)
 	frame:SetBackdropBorderColor(unpack(C.media.border_color))
 	frame:SetClampedToScreen(false)
 	frame:SetFrameStrata("BACKGROUND")

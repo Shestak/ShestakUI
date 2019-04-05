@@ -22,7 +22,7 @@ C["media"] = {
 	["proc_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Proc.ogg]],			-- Sound for procs
 	["border_color"] = {0.37, 0.3, 0.3, 1},		-- Color for borders
 	["backdrop_color"] = {0, 0, 0, 1},			-- Color for borders backdrop
-	["overlay_color"] = {0, 0, 0, 0.7},			-- Color for action bars overlay
+	["backdrop_alpha"] = 0.7,					-- Alpha for transparent backdrop
 }
 
 ----------------------------------------------------------------------------------------
@@ -312,12 +312,7 @@ C["minimap"] = {
 	["size"] = 130,								-- Minimap size
 	["hide_combat"] = false,					-- Hide minimap in combat
 	["toggle_menu"] = true,						-- Show toggle menu
-}
-
-----------------------------------------------------------------------------------------
---	Map options
-----------------------------------------------------------------------------------------
-C["map"] = {
+	-- Other
 	["bg_map_stylization"] = true,				-- BG map stylization
 	["fog_of_war"] = false,						-- Remove fog of war on World Map
 }

@@ -1,4 +1,5 @@
 local _, ns = ...
+local L = ns
 ----------------------------------------------------------------------------------------
 --	GUI for ShestakUI(by Haleth, Solor)
 ----------------------------------------------------------------------------------------
@@ -95,7 +96,9 @@ end)
 tinsert(ns.buttons, ResetButton)
 
 -- Category
-ns.addCategory("general", GENERAL_LABEL, L_GUI_GENERAL_SUBTEXT)
+ns.addCategory("general", GENERAL_LABEL, L_GUI_GENERAL_SUBTEXT, true)
+ns.addCategory("font", L.font, L.font_subtext, true)
+ns.addCategory("skins", L_GUI_SKINS, L_GUI_SKINS_SUBTEXT)
 ns.addCategory("unitframe", UNITFRAME_LABEL, L_GUI_UF_SUBTEXT, true)
 ns.addCategory("unitframe_class_bar", L_GUI_UF_PLUGINS_CLASS_BAR, L_GUI_UF_PLUGINS_CLASS_BAR_SUBTEXT)
 ns.addCategory("raidframe", RAID_FRAMES_LABEL, L_GUI_UF_RAIDFRAMES_SUBTEXT, true)
@@ -107,9 +110,7 @@ ns.addCategory("combattext", L_GUI_COMBATTEXT, COMBATTEXT_SUBTEXT, true)
 ns.addCategory("aura", BUFFOPTIONS_LABEL, BUFFOPTIONS_SUBTEXT)
 ns.addCategory("bag", L_GUI_BAGS, L_GUI_BAGS_SUBTEXT)
 ns.addCategory("minimap", MINIMAP_LABEL, L_GUI_MINIMAP_SUBTEXT)
-ns.addCategory("map", WORLD_MAP, "")
 ns.addCategory("loot", LOOT, L_GUI_LOOT_SUBTEXT)
-ns.addCategory("skins", L_GUI_SKINS, L_GUI_SKINS_SUBTEXT)
 ns.addCategory("filger", L_GUI_FILGER, L_GUI_FILGER_SUBTEXT)
 ns.addCategory("announcements", L_GUI_ANNOUNCEMENTS, L_GUI_ANNOUNCEMENTS_SUBTEXT)
 ns.addCategory("automation", L_GUI_AUTOMATION, L_GUI_AUTOMATION_SUBTEXT)
@@ -143,6 +144,44 @@ do
 
 	auto_scale:HookScript("OnClick", toggleUIScaleOptions)
 	uiscale:HookScript("OnShow", toggleUIScaleOptions)
+
+	-- Panel 2
+	local parent = ShestakUIOptionsPanel.general2
+
+	local border_color = ns.CreateColourPicker(parent, "border_color", true)
+	border_color:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 4, 0)
+
+	local backdrop_color = ns.CreateColourPicker(parent, "backdrop_color", true)
+	backdrop_color:SetPoint("TOPLEFT", border_color, "BOTTOMLEFT", 0, -10)
+
+	local backdrop_alpha = ns.CreateNumberSlider(parent, "backdrop_alpha", nil, nil, 0, 1, 0.05, true, nil, nil, true)
+	backdrop_alpha:SetPoint("TOPLEFT", backdrop_color, "BOTTOMLEFT", 0, -28)
+end
+
+-- Font
+FontTable = {
+	"Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Normal.ttf",
+	"Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Pixel.ttf",
+	STANDARD_TEXT_FONT
+}
+
+do
+	local parent = ShestakUIOptionsPanel.font
+
+	local subheader = ns.addSubCategory(parent, L.font_subheader_stats)
+	subheader:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local stats_font = ns.CreateDropDown(parent, "stats_font", true, nil, FontTable)
+	stats_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
+
+	local stats_font_style = ns.CreateDropDown(parent, "stats_font_style", true, nil, {"OUTLINEMONOCHROME", "OUTLINE"})
+	stats_font_style:SetPoint("LEFT", stats_font, "RIGHT", 150, 0)
+
+	local stats_font_size = ns.CreateNumberSlider(parent, "stats_font_size", nil, nil, 0, 30, 1, true, FONT_SIZE)
+	stats_font_size:SetPoint("TOPLEFT", stats_font, "BOTTOMLEFT", 16, -16)
+
+	local stats_font_shadow = ns.CreateCheckBox(parent, "stats_font_shadow")
+	stats_font_shadow:SetPoint("LEFT", stats_font_size, "RIGHT", 160, 0)
 end
 
 -- Miscellaneous
@@ -810,16 +849,15 @@ do
 
 	local toggle_menu = ns.CreateCheckBox(parent, "toggle_menu", L_GUI_MINIMAP_TOGGLE_MENU)
 	toggle_menu:SetPoint("TOPLEFT", hide_combat, "BOTTOMLEFT", 0, 0)
-end
 
--- Map
-do
-	local parent = ShestakUIOptionsPanel.map
+	-- Other
+	local subheader = ns.addSubCategory(parent, OTHER)
+	subheader:SetPoint("TOPLEFT", toggle_menu, "BOTTOMLEFT", 0, -16)
 
-	local bg_map_stylization = ns.CreateCheckBox(parent, "bg_map_stylization", L_GUI_MAP_BG_STYLIZATION)
-	bg_map_stylization:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+	local bg_map_stylization = ns.CreateCheckBox(parent, "bg_map_stylization")
+	bg_map_stylization:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
 
-	local fog_of_war = ns.CreateCheckBox(parent, "fog_of_war", L_GUI_MAP_FOG_OF_WAR)
+	local fog_of_war = ns.CreateCheckBox(parent, "fog_of_war")
 	fog_of_war:SetPoint("TOPLEFT", bg_map_stylization, "BOTTOMLEFT", 0, 0)
 end
 

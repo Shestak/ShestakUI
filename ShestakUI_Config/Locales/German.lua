@@ -17,6 +17,17 @@ L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface setti
 L_GUI_GENERAL_WELCOME_MESSAGE = "Welcome message in chat"
 L_GUI_GENERAL_AUTOSCALE = "Automatisch UI skalieren"
 L_GUI_GENERAL_UISCALE = "UI Skalierung (falls automatische Skalierung deaktiviert)"
+L.media_border_color = "Color for borders" -- Need review
+L.media_backdrop_color = "Color for borders backdrop" -- Need review
+L.media_backdrop_alpha = "Alpha for transparent backdrop" -- Need review
+
+-- Font options
+L.font = "Fonts" -- Need review
+L.font_subtext = "Customize individual fonts for elements." -- Need review
+L.font_stats_font = "Select font" -- Need review
+L.font_stats_font_style = "Font flag" -- Need review
+L.font_stats_font_shadow = "Font shadow" -- Need review
+L.font_subheader_stats = "Stats font" -- Need review
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review
@@ -276,10 +287,9 @@ L_GUI_GARRISON_ICON = "Garrisons Symbol"
 L_GUI_MINIMAP_SIZE = "Kartengröße"
 L_GUI_MINIMAP_HIDE_COMBAT = "Minimap im Kampf verstecken"
 L_GUI_MINIMAP_TOGGLE_MENU = "Zeige Toggle Menü"
-
--- Map options
-L_GUI_MAP_BG_STYLIZATION = "Schlachtfeldkarte Aussehn"
-L_GUI_MAP_FOG_OF_WAR = "Nebel des Krieges auf der Weltkarte"
+L.minimap_bg_map_stylization = "Schlachtfeldkarte Aussehn"
+L.minimap_fog_of_war = "Nebel des Krieges auf der Weltkarte"
+L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war" -- Need review
 
 -- Loot options
 L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review
