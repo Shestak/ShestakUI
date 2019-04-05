@@ -28,6 +28,9 @@ L.font_stats_font = "Select font" -- Need review
 L.font_stats_font_style = "Font flag" -- Need review
 L.font_stats_font_shadow = "Font shadow" -- Need review
 L.font_subheader_stats = "Stats font" -- Need review
+L.font_subheader_combat = "Combat text font" -- Need review
+L.font_subheader_chat = "Chat font" -- Need review
+L.font_subheader_chat_tabs = "Chat tabs font" -- Need review
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review

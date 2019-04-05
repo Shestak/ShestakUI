@@ -28,6 +28,9 @@ L.font_stats_font = "Выбор шрифта"
 L.font_stats_font_style = "Стиль шрифта"
 L.font_stats_font_shadow = "Тень для шрифта"
 L.font_subheader_stats = "Шрифт статистики"
+L.font_subheader_combat = "Шрифт текста боя"
+L.font_subheader_chat = "Шрифт чата"
+L.font_subheader_chat_tabs = "Шрифт вкладок чата"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Прочие настройки, которые добавляют интересные возможности."

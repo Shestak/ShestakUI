@@ -25,6 +25,9 @@ L.font_stats_font = "Select font"
 L.font_stats_font_style = "Font flag"
 L.font_stats_font_shadow = "Font shadow"
 L.font_subheader_stats = "Stats font"
+L.font_subheader_combat = "Combat text font"
+L.font_subheader_chat = "Chat font"
+L.font_subheader_chat_tabs = "Chat tabs font"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features."

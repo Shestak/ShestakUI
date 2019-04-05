@@ -165,6 +165,12 @@ FontTable = {
 	STANDARD_TEXT_FONT
 }
 
+FlagsTable = {
+	"OUTLINE",
+	"OUTLINEMONOCHROME",
+	""
+}
+
 do
 	local parent = ShestakUIOptionsPanel.font
 
@@ -174,14 +180,56 @@ do
 	local stats_font = ns.CreateDropDown(parent, "stats_font", true, nil, FontTable)
 	stats_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
-	local stats_font_style = ns.CreateDropDown(parent, "stats_font_style", true, nil, {"OUTLINEMONOCHROME", "OUTLINE"})
+	local stats_font_style = ns.CreateDropDown(parent, "stats_font_style", true, nil, FlagsTable)
 	stats_font_style:SetPoint("LEFT", stats_font, "RIGHT", 150, 0)
 
-	local stats_font_size = ns.CreateNumberSlider(parent, "stats_font_size", nil, nil, 0, 30, 1, true, FONT_SIZE)
+	local stats_font_size = ns.CreateNumberSlider(parent, "stats_font_size", nil, nil, 0, 32, 1, true, FONT_SIZE)
 	stats_font_size:SetPoint("TOPLEFT", stats_font, "BOTTOMLEFT", 16, -16)
 
 	local stats_font_shadow = ns.CreateCheckBox(parent, "stats_font_shadow")
 	stats_font_shadow:SetPoint("LEFT", stats_font_size, "RIGHT", 160, 0)
+
+	local subheader = ns.addSubCategory(parent, L.font_subheader_combat)
+	subheader:SetPoint("TOPLEFT", stats_font_size, "BOTTOMLEFT", 0, -10)
+
+	local combat_text_font = ns.CreateDropDown(parent, "combat_text_font", true, L.font_stats_font, FontTable)
+	combat_text_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
+
+	local combat_text_font_style = ns.CreateDropDown(parent, "combat_text_font_style", true, L.font_stats_font_style, FlagsTable)
+	combat_text_font_style:SetPoint("LEFT", combat_text_font, "RIGHT", 150, 0)
+
+	local combat_text_font_size = ns.CreateNumberSlider(parent, "combat_text_font_size", nil, nil, 0, 32, 1, true, FONT_SIZE)
+	combat_text_font_size:SetPoint("TOPLEFT", combat_text_font, "BOTTOMLEFT", 16, -16)
+
+	local combat_text_font_shadow = ns.CreateCheckBox(parent, "combat_text_font_shadow", L.font_stats_font_shadow)
+	combat_text_font_shadow:SetPoint("LEFT", combat_text_font_size, "RIGHT", 160, 0)
+
+	local subheader = ns.addSubCategory(parent, L.font_subheader_chat)
+	subheader:SetPoint("TOPLEFT", combat_text_font_size, "BOTTOMLEFT", 0, -10)
+
+	local chat_font = ns.CreateDropDown(parent, "chat_font", true, L.font_stats_font, FontTable)
+	chat_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
+
+	local chat_font_style = ns.CreateDropDown(parent, "chat_font_style", true, L.font_stats_font_style, FlagsTable)
+	chat_font_style:SetPoint("LEFT", chat_font, "RIGHT", 150, 0)
+
+	local chat_font_shadow = ns.CreateCheckBox(parent, "chat_font_shadow", L.font_stats_font_shadow)
+	chat_font_shadow:SetPoint("TOPLEFT", chat_font, "BOTTOMLEFT", 16, -8)
+
+	local subheader = ns.addSubCategory(parent, L.font_subheader_chat_tabs)
+	subheader:SetPoint("TOPLEFT", chat_font_shadow, "BOTTOMLEFT", 0, -10)
+
+	local chat_tabs_font = ns.CreateDropDown(parent, "chat_tabs_font", true, L.font_stats_font, FontTable)
+	chat_tabs_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
+
+	local chat_tabs_font_style = ns.CreateDropDown(parent, "chat_tabs_font_style", true, L.font_stats_font_style, FlagsTable)
+	chat_tabs_font_style:SetPoint("LEFT", chat_tabs_font, "RIGHT", 150, 0)
+
+	local chat_tabs_font_size = ns.CreateNumberSlider(parent, "chat_tabs_font_size", nil, nil, 0, 32, 1, true, FONT_SIZE)
+	chat_tabs_font_size:SetPoint("TOPLEFT", chat_tabs_font, "BOTTOMLEFT", 16, -16)
+
+	local chat_tabs_font_shadow = ns.CreateCheckBox(parent, "chat_tabs_font_shadow", L.font_stats_font_shadow)
+	chat_tabs_font_shadow:SetPoint("LEFT", chat_tabs_font_size, "RIGHT", 160, 0)
 end
 
 -- Miscellaneous
