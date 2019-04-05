@@ -125,6 +125,30 @@ local function toggle(self)
 	else
 		PlaySound("857")
 	end
+	if self.group == "error" then
+		if self.option == "white" and checked then
+			local black = ShestakUIOptionsPanelerror.black
+			if black:GetChecked() then
+				black:SetChecked(false)
+				SaveValue(black, false)
+				if old[black] == nil then
+					old[black] = not black:GetChecked()
+				end
+			end
+		end
+
+		if self.option == "black" and checked then
+			local white = ShestakUIOptionsPanelerror.white
+			if white:GetChecked() then
+				white:SetChecked(false)
+				SaveValue(white, false)
+				
+				if old[white] == nil then
+					old[white] = not white:GetChecked()
+				end
+			end
+		end
+	end
 
 	SaveValue(self, checked)
 	if self.children then toggleChildren(self, checked) end

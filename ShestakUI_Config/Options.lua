@@ -456,6 +456,8 @@ do
 	local dbm_movable = ns.CreateCheckBox(parent, "dbm_movable", L_GUI_SKINS_DBM_MOVABLE)
 	dbm_movable:SetPoint("TOPLEFT", dbm, "BOTTOMLEFT", 20, 0)
 
+	dbm.children = {dbm_movable}
+
 	local dominos = ns.CreateCheckBox(parent, "dominos", L_GUI_SKINS_DOMINOS)
 	dominos:SetPoint("TOPLEFT", dbm_movable, "BOTTOMLEFT", -20, 0)
 
@@ -1309,6 +1311,8 @@ do
 
 	local combo_old = ns.CreateCheckBox(parent, "combo_old", L_GUI_UF_PLUGINS_COMBO_BAR_OLD)
 	combo_old:SetPoint("TOPLEFT", combo_always, "BOTTOMLEFT", 0, 0)
+
+	combo.children = {combo_always, combo_old}
 
 	local arcane = ns.CreateCheckBox(parent, "arcane", L_GUI_UF_PLUGINS_ARCANE_BAR)
 	arcane:SetPoint("TOPLEFT", combo_old, "BOTTOMLEFT", -20, 0)
