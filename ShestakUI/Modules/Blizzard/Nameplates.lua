@@ -458,7 +458,7 @@ local function style(self, unit)
 	-- Hide Blizzard Power Bar and changed position for Class Bar
 	hooksecurefunc(_G.NamePlateDriverFrame, "SetupClassNameplateBars", function(frame)
 		if frame.classNamePlateMechanicFrame then
-			local point, relativeTo, relativePoint, xOfs, yOfs = frame.classNamePlateMechanicFrame:GetPoint()
+			local point, _, relativePoint, xOfs = frame.classNamePlateMechanicFrame:GetPoint()
 			if point then
 				if point == "TOP" and C_NamePlate.GetNamePlateForUnit("player") then
 					frame.classNamePlateMechanicFrame:SetPoint(point, C_NamePlate.GetNamePlateForUnit("player"), relativePoint, xOfs, 53)
