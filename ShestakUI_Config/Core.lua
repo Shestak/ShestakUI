@@ -121,9 +121,9 @@ local function toggle(self)
 	local checked = self:GetChecked()
 
 	if checked then
-		PlaySound("856")
+		PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON)
 	else
-		PlaySound("857")
+		PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF)
 	end
 	if self.group == "error" then
 		if self.option == "white" and checked then
@@ -215,7 +215,7 @@ local function toggleRadio(self)
 	self:SetChecked(true) -- don't allow deselecting
 	self.isChecked = true
 
-	PlaySound("856")
+	PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON)
 
 	SaveValue(self, self.index)
 
