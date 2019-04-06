@@ -154,7 +154,7 @@ do
 	local backdrop_color = ns.CreateColourPicker(parent, "backdrop_color", true)
 	backdrop_color:SetPoint("TOPLEFT", border_color, "BOTTOMLEFT", 0, -10)
 
-	local backdrop_alpha = ns.CreateNumberSlider(parent, "backdrop_alpha", nil, nil, 0, 1, 0.05, true, nil, nil, true)
+	local backdrop_alpha = ns.CreateNumberSlider(parent, "backdrop_alpha", nil, nil, 0, 1, 0.05, true)
 	backdrop_alpha:SetPoint("TOPLEFT", backdrop_color, "BOTTOMLEFT", 0, -28)
 end
 
@@ -625,7 +625,7 @@ do
 	local raid_buffs_size = ns.CreateNumberSlider(parent, "raid_buffs_size", nil, nil, 0, 30, 1, true, L_GUI_REMINDER_RAID_SIZE, L_GUI_REMINDER_RAID_SIZE_DESC)
 	raid_buffs_size:SetPoint("TOPLEFT", raid_buffs_always, "BOTTOMLEFT", 0, -20)
 
-	local raid_buffs_alpha = ns.CreateNumberSlider(parent, "raid_buffs_alpha", nil, nil, 0, 1, 0.5, true, L_GUI_REMINDER_RAID_ALPHA, L_GUI_REMINDER_RAID_ALPHA_DESC, true)
+	local raid_buffs_alpha = ns.CreateNumberSlider(parent, "raid_buffs_alpha", nil, nil, 0, 1, 0.05, true, L_GUI_REMINDER_RAID_ALPHA, L_GUI_REMINDER_RAID_ALPHA_DESC)
 	raid_buffs_alpha:SetPoint("TOPLEFT", raid_buffs_size, "BOTTOMLEFT", 0, -20)
 end
 
@@ -700,7 +700,7 @@ do
 	local sound = ns.CreateCheckBox(parent, "sound", L_GUI_COOLDOWN_PULSE_SOUND)
 	sound:SetPoint("TOPLEFT", size, "BOTTOMLEFT", 0, -10)
 
-	local anim_scale = ns.CreateNumberSlider(parent, "anim_scale", nil, nil, 0, 3, 0.01, true, L_GUI_COOLDOWN_PULSE_ANIM_SCALE, nil, true)
+	local anim_scale = ns.CreateNumberSlider(parent, "anim_scale", nil, nil, 0, 3, 0.05, true, L_GUI_COOLDOWN_PULSE_ANIM_SCALE)
 	anim_scale:SetPoint("TOPLEFT", sound, "BOTTOMLEFT", 0, -20)
 
 	local hold_time = ns.CreateNumberSlider(parent, "hold_time", nil, nil, 0, 5, 1, true, L_GUI_COOLDOWN_PULSE_HOLD_TIME)
@@ -812,7 +812,7 @@ do
 	local background = ns.CreateCheckBox(parent, "background", L_GUI_CHAT_BACKGROUND)
 	background:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
 
-	local background_alpha = ns.CreateNumberSlider(parent, "background_alpha", nil, nil, 0, 1, 0.05, true, L_GUI_CHAT_BACKGROUND_ALPHA, nil, true)
+	local background_alpha = ns.CreateNumberSlider(parent, "background_alpha", nil, nil, 0, 1, 0.05, true, L_GUI_CHAT_BACKGROUND_ALPHA)
 	background_alpha:SetPoint("TOPLEFT", background, "BOTTOMLEFT", 0, -20)
 
 	local filter = ns.CreateCheckBox(parent, "filter", L_GUI_CHAT_SPAM)
@@ -821,10 +821,10 @@ do
 	local spam = ns.CreateCheckBox(parent, "spam", L_GUI_CHAT_GOLD)
 	spam:SetPoint("TOPLEFT", filter, "BOTTOMLEFT", 0, 0)
 
-	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 500, 1, true, L_GUI_CHAT_WIDTH, nil)
+	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 500, 1, true, L_GUI_CHAT_WIDTH)
 	width:SetPoint("TOPLEFT", spam, "BOTTOMLEFT", 0, -20)
 
-	local height = ns.CreateNumberSlider(parent, "height", nil, nil, 0, 200, 1, true, L_GUI_CHAT_HEIGHT, nil)
+	local height = ns.CreateNumberSlider(parent, "height", nil, nil, 0, 200, 1, true, L_GUI_CHAT_HEIGHT)
 	height:SetPoint("TOPLEFT", width, "BOTTOMLEFT", 0, -20)
 
 	local chat_bar = ns.CreateCheckBox(parent, "chat_bar", L_GUI_CHAT_BAR)
@@ -1361,7 +1361,7 @@ do
 	local show_range = ns.CreateCheckBox(parent, "show_range", L_GUI_UF_SHOW_RANGE)
 	show_range:SetPoint("TOPLEFT", alpha_health, "BOTTOMLEFT", 0, 0)
 
-	local range_alpha = ns.CreateNumberSlider(parent, "range_alpha", nil, nil, 0, 1, 0.05, true, L_GUI_UF_RANGE_ALPHA, L_GUI_UF_RANGE_ALPHA_DESC, true)
+	local range_alpha = ns.CreateNumberSlider(parent, "range_alpha", nil, nil, 0, 1, 0.05, true, L_GUI_UF_RANGE_ALPHA, L_GUI_UF_RANGE_ALPHA_DESC)
 	range_alpha:SetPoint("TOPLEFT", show_range, "BOTTOMLEFT", 0, -20)
 
 	-- Frames

@@ -50,7 +50,7 @@ local function setReloadNeeded(isNeeded)
 end
 
 -- check if a reload is needed
-local function checkIsReloadNeeded(sliderValue)
+local function checkIsReloadNeeded()
 	-- if not overrideReload then -- can't check sliders for old value, always flag for reload when they change
 		for frame, value in pairs(old) do
 			if C[frame.group][frame.option] ~= value then
@@ -142,7 +142,7 @@ local function toggle(self)
 			if white:GetChecked() then
 				white:SetChecked(false)
 				SaveValue(white, false)
-				
+
 				if old[white] == nil then
 					old[white] = not white:GetChecked()
 				end
@@ -298,7 +298,7 @@ end
 -- Sliders
 
 local function onValueChanged(self, value)
-	if self.option == "uiscale" or self.decimal then
+	if self.step < 1 then
 		value = string.format("%.2f", value)
 	else
 		value = floor(value + 0.5)
@@ -313,6 +313,9 @@ local function onValueChanged(self, value)
 
 		if self.needsReload then
 			-- if not true, don't set to false - something else might have changed it
+			if self.step < 1 then
+				self.oldValue = string.format("%.2f", self.oldValue)
+			end
 			old[self] = self.oldValue
 			checkIsReloadNeeded()
 			-- setReloadNeeded(true)
@@ -322,7 +325,7 @@ local function onValueChanged(self, value)
 	end
 end
 
-local function createSlider(parent, option, lowText, highText, low, high, step, needsReload, text, textDesc, decimal)
+local function createSlider(parent, option, lowText, highText, low, high, step, needsReload, text, textDesc)
 	local sliderName = parent:GetName()..option
 	local f = CreateFrame("Slider", sliderName, parent, "OptionsSliderTemplate")
 
@@ -344,6 +347,7 @@ local function createSlider(parent, option, lowText, highText, low, high, step, 
 	_G[sliderName.."High"]:SetText(highText)
 
 	f:SetMinMaxValues(low, high)
+	f:SetObeyStepOnDrag(true)
 	f:SetValueStep(step)
 
 	if textDesc then
@@ -355,7 +359,7 @@ local function createSlider(parent, option, lowText, highText, low, high, step, 
 	end
 
 	f.needsReload = needsReload
-	f.decimal = decimal
+	f.step = step
 
 	f:SetScript("OnValueChanged", onValueChanged)
 	parent[option] = f
@@ -383,8 +387,8 @@ local function onSliderEnterPressed(self)
 	self:ClearFocus()
 end
 
-ns.CreateNumberSlider = function(parent, option, lowText, highText, low, high, step, needsReload, text, textDesc, decimal)
-	local slider = createSlider(parent, option, lowText, highText, low, high, step, needsReload, text, textDesc, decimal)
+ns.CreateNumberSlider = function(parent, option, lowText, highText, low, high, step, needsReload, text, textDesc)
+	local slider = createSlider(parent, option, lowText, highText, low, high, step, needsReload, text, textDesc)
 
 	local f = CreateFrame("EditBox", parent:GetName()..option.."TextInput", slider, "InputBoxTemplate")
 	f:SetAutoFocus(false)
