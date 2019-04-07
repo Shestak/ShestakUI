@@ -7,6 +7,7 @@ SlashCmdList.RELOADUI = function() ReloadUI() end
 SLASH_RELOADUI1 = "/rl"
 SLASH_RELOADUI2 = "/кд"
 SLASH_RELOADUI3 = "//"
+SLASH_RELOADUI4 = "/."
 
 SlashCmdList.RCSLASH = function() DoReadyCheck() end
 SLASH_RCSLASH1 = "/rc"
@@ -145,12 +146,12 @@ SLASH_INSTTELEPORT2 = "/еудузщке"
 --	Spec switching(by Monolit)
 ----------------------------------------------------------------------------------------
 SlashCmdList.SPEC = function(spec)
-	if T.level >= SHOW_TALENT_LEVEL then
+	if T.level >= SHOW_SPEC_LEVEL then
 		if GetSpecialization() ~= tonumber(spec) then
 			SetSpecialization(spec)
 		end
 	else
-		print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_TALENT_LEVEL).."|r")
+		print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_SPEC_LEVEL).."|r")
 	end
 end
 SLASH_SPEC1 = "/ss"
@@ -247,7 +248,9 @@ SlashCmdList["FRAMELIST"] = function(msg)
 	for i = 2, FrameStackTooltip:NumLines() do
 		local text = _G["FrameStackTooltipTextLeft"..i]:GetText()
 		if text and text ~= "" then
-			print("|cffFFD100"..text)
+			local r, g, b = _G["FrameStackTooltipTextLeft"..i]:GetTextColor()
+			text = format("|cff%02x%02x%02x%s|r", r * 255, g * 255, b * 255, text)
+			print(text)
 		end
 	end
 	print("|cffCC0000--------------------------------------------------------------------|r")
@@ -292,19 +295,18 @@ SlashCmdList.TEST_ACHIEVEMENT = function()
 	AchievementAlertSystem:AddAlert(112)
 	CriteriaAlertSystem:AddAlert(9023, "Doing great!")
 	GuildChallengeAlertSystem:AddAlert(3, 2, 5)
-	InvasionAlertSystem:AddAlert(678, "Legion", true, 1, 1)
-	-- WorldQuestCompleteAlertSystem:AddAlert(42114)
-	local follower = _G.C_Garrison.GetFollowers(LE_FOLLOWER_TYPE_GARRISON_7_0)[1]
-	GarrisonFollowerAlertSystem:AddAlert(follower.followerID, follower.name, follower.level, follower.quality, isUpgraded, follower)
-	GarrisonShipFollowerAlertSystem:AddAlert(592, "Ship", "Transport", "GarrBuilding_Barracks_1_H", 3, 2, 1)
-	GarrisonBuildingAlertSystem:AddAlert("Barracks")
+	InvasionAlertSystem:AddAlert(678, DUNGEON_FLOOR_THENEXUS1, true, 1, 1)
+	WorldQuestCompleteAlertSystem:AddAlert(AlertFrameMixin:BuildQuestData(42114))
+	-- GarrisonFollowerAlertSystem:AddAlert(32, "Dagg", 90, 2, true, C_Garrison.GetFollowerInfo(32)) -- error when mouseover
+	-- GarrisonShipFollowerAlertSystem:AddAlert(592, "Ship", "Transport", "GarrBuilding_Barracks_1_H", 3, 2, 1) -- error when mouseover
+	GarrisonBuildingAlertSystem:AddAlert(GARRISON_CACHE)
 	GarrisonTalentAlertSystem:AddAlert(3, _G.C_Garrison.GetTalent(370))
 	LegendaryItemAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832:0:0:0:0:0:0:0:0:0:0\124h[Brutality Blade]\124h\124r")
 	LootAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832::::::::::\124h[Brutality Blade]\124h\124r", 1, 1, 100, 2, false, false, 0, false, false)
 	LootUpgradeAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832::::::::::\124h[Brutality Blade]\124h\124r", 1, 1, 1, nil, nil, false)
-	MoneyWonAlertSystem:AddAlert(815)
-	StorePurchaseAlertSystem:AddAlert("\124cffa335ee\124Hitem:180545::::::::::\124h[Mystic Runesaber]\124h\124r", "", "", 214)
-	DigsiteCompleteAlertSystem:AddAlert(1)
+	MoneyWonAlertSystem:AddAlert(81500)
+	StorePurchaseAlertSystem:AddAlert("", "Interface\\Icons\\Ability_pvp_gladiatormedallion", TRINKET0SLOT, 214)
+	DigsiteCompleteAlertSystem:AddAlert("Human")
 	NewRecipeLearnedAlertSystem:AddAlert(204)
 end
 SLASH_TEST_ACHIEVEMENT1 = "/tach"

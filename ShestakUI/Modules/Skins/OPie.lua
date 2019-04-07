@@ -7,8 +7,6 @@ if C.skins.opie ~= true or not IsAddOnLoaded("OPie") then return end
 local SPECIAL_COLOR_ALPHA = 0
 -- 0 = invisible, 1 = fully visible, lower it if your skin is ugly
 
-local id
-local group
 local buttons = {}
 local prototype = {}
 local STATE_USABLE, STATE_NOMANA, STATE_NORANGE, STATE_UNUSABLE = 0, 1, 2, 3
@@ -30,7 +28,7 @@ function prototype:SetIconVertexColor(r, g, b)
 	end
 end
 
-function prototype:SetUsable(usable, usableCharge, cd, nomana, norange)
+function prototype:SetUsable(usable, _, cd, nomana, norange)
 	local state = usable and STATE_USABLE or (norange and STATE_NORANGE or (nomana and STATE_NOMANA or STATE_UNUSABLE))
 	if state == self.ustate then return end
 	self.ustate = state
@@ -94,7 +92,6 @@ end
 function prototype:SetCooldown(remain, duration, usable)
 	if duration and remain and duration > 0 and remain > 0 then
 		local start = GetTime() + remain - duration
-		-- TODO: detect and show loss of control ?
 		if usable then
 			-- show recharge time
 			self.Cooldown:SetDrawEdge(true)
@@ -112,7 +109,7 @@ function prototype:SetCooldown(remain, duration, usable)
 	end
 end
 
-function prototype:SetCooldownFormattedText(pattern, ...)
+function prototype:SetCooldownFormattedText()
 	-- do nothing
 end
 
@@ -148,7 +145,7 @@ end
 
 local id = 0
 
-local function CreateIndicator(name, parent, size, ghost)
+local function CreateIndicator(name, parent, size)
 	id = id + 1
 	name = name or "OPieSliceButton"..id
 	parent = parent or UIParent
@@ -172,9 +169,6 @@ local function CreateIndicator(name, parent, size, ghost)
 
 	-- Outer glow (doesn't seem to do anything?)
 	button.GlowTextures = {}
-	for i = 1, 4 do
-		local glow = button:CreateTexture(nil, "BACKGROUND", nil, -8)
-	end
 
 	for k, v in pairs(prototype) do
 		button[k] = v

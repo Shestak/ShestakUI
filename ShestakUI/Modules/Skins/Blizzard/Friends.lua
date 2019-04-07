@@ -223,10 +223,7 @@ local function LoadSkin()
 	T.SkinDropDownBox(FriendsFrameStatusDropDown, 70)
 	T.SkinDropDownBox(FriendsFriendsFrameDropDown)
 
-	T.SkinCloseButton(FriendsTabHeader.FriendsFrameQuickJoinHelpTip.CloseButton)
-	FriendsTabHeader.FriendsFrameQuickJoinHelpTip.Arrow:Hide()
-	FriendsTabHeader.FriendsFrameQuickJoinHelpTip:StripTextures()
-	FriendsTabHeader.FriendsFrameQuickJoinHelpTip:CreateBackdrop("Transparent")
+	T.SkinHelpBox(FriendsTabHeader.FriendsFrameQuickJoinHelpTip)
 
 	-- Bottom Tabs
 	for i = 1, 4 do

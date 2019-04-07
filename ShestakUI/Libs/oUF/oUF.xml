@@ -10,7 +10,7 @@
 
 	<Script file="Elements\AlternativePower.lua"/>
 	<Script file="Elements\AssistantIndicator.lua"/>
-	<Script file="Elements\Aura.lua"/>
+	<Script file="Elements\Auras.lua"/>
 	<Script file="Elements\CastBar.lua"/>
 	<Script file="Elements\CombatIndicator.lua"/>
 	<Script file="Elements\GroupRoleIndicator.lua"/>

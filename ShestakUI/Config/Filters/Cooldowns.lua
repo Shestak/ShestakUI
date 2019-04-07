@@ -91,7 +91,6 @@ end
 
 if C.pulsecooldown.enable == true then
 	T.pulse_ignored_spells = {
-		--GetSpellInfo(6807),	-- Maul
-		--GetSpellInfo(35395),	-- Crusader Strike
+		--GetSpellInfo(spellID),	-- Spell name
 	}
 end

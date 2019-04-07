@@ -47,9 +47,17 @@ local function LoadSkin()
 	CommunitiesFrame.MemberList.ListScrollFrame.scrollBar:SetPoint("BOTTOMLEFT", CommunitiesFrame.MemberList.ListScrollFrame, "BOTTOMRIGHT", 0, 14)
 	CommunitiesFrame.MemberList:SetPoint("BOTTOMRIGHT", CommunitiesFrame, "BOTTOMRIGHT", -26, 31)
 
+	hooksecurefunc(CommunitiesFrame.ChatEditBox, "SetPoint", function(self, point, anchor, attachTo, x, y)
+		if point == "BOTTOMLEFT" and x == 10 and y == 0 then
+			self:SetPoint(point, anchor, attachTo, 12, 5)
+		elseif point == "BOTTOMRIGHT" and x == -12 and y == 0 then
+			self:SetPoint(point, anchor, attachTo, -10, 5)
+		end
+	end)
+
 	T.SkinEditBox(CommunitiesFrame.ChatEditBox, nil, 18)
 
-	T.SkinDropDownBox(CommunitiesFrame.StreamDropDownMenu)
+	T.SkinDropDownBox(CommunitiesFrame.StreamDropDownMenu, nil, true)
 	T.SkinDropDownBox(CommunitiesFrame.CommunitiesListDropDownMenu)
 
 	CommunitiesFrame.AddToChatButton:ClearAllPoints()
@@ -158,6 +166,8 @@ local function LoadSkin()
 	CommunitiesFrame.NotificationSettingsDialog.CancelButton:SkinButton()
 
 	hooksecurefunc(CommunitiesNotificationSettingsStreamEntryMixin, "SetFilter", function(self)
+		self.ShowNotificationsButton:SetSize(18, 18)
+		self.HideNotificationsButton:SetSize(18, 18)
 		T.SkinCheckBox(self.ShowNotificationsButton)
 		T.SkinCheckBox(self.HideNotificationsButton)
 	end)

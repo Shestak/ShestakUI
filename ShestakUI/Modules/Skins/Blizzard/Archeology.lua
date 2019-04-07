@@ -6,7 +6,6 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	ArchaeologyFrame:StripTextures(true)
-	ArchaeologyFrameInset:StripTextures(true)
 	ArchaeologyFrame:SetTemplate("Transparent")
 
 	ArchaeologyFrameArtifactPageSolveFrameSolveButton:SkinButton(true)
@@ -90,11 +89,11 @@ local function LoadSkin()
 
 	ArchaeologyFrameArtifactPageHistoryScrollChildText:SetTextColor(1, 1, 1)
 	T.SkinCloseButton(ArchaeologyFrameCloseButton)
-	T.SkinNextPrevButton(ArchaeologyFrameCompletedPageNextPageButton)
-	T.SkinNextPrevButton(ArchaeologyFrameCompletedPagePrevPageButton)
-	T.SkinNextPrevButton(ArchaeologyFrameSummaryPageNextPageButton)
-	T.SkinNextPrevButton(ArchaeologyFrameSummaryPagePrevPageButton)
-	
+	T.SkinNextPrevButton(ArchaeologyFrameCompletedPageNextPageButton, nil, "Any")
+	T.SkinNextPrevButton(ArchaeologyFrameCompletedPagePrevPageButton, nil, "Any")
+	T.SkinNextPrevButton(ArchaeologyFrameSummaryPageNextPageButton, nil, "Any")
+	T.SkinNextPrevButton(ArchaeologyFrameSummaryPagePrevPageButton, nil, "Any")
+
 	T.SkinScrollBar(ArchaeologyFrameArtifactPageHistoryScrollScrollBar)
 
 	ArchaeologyFrameInfoButton:SetPoint("TOPLEFT", ArchaeologyFrame, 4, -4)

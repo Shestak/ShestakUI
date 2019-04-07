@@ -51,8 +51,8 @@ local function LoadSkin()
 			backdrop:SetBackdropBorderColor(1, 1, 0) --[border = yellow, no shadow]
 			child.darkOverlay:Hide()
 		elseif atlas == "orderhalltalents-spellborder" then
-			backdrop:SetBackdropBorderColor(unpack(C.media.backdrop_color))
-			child.darkOverlay:SetColorTexture(0, 0, 0, 0.75) --[border will be default, shadow x3]
+			backdrop:SetBackdropBorderColor(0.2, 0.2, 0.2) --[border = dark grey, shadow x3]
+			child.darkOverlay:SetColorTexture(0, 0, 0, 0.75)
 			child.darkOverlay:Show()
 		end
 	end
@@ -66,10 +66,16 @@ local function LoadSkin()
 		if self.CloseButton.Border then
 			self.CloseButton.Border:Hide()
 		end
+		if self.portrait then
+			self.portrait:Hide()
+		end
 		if self.skinned then return end
-		OrderHallTalentFramePortrait:Hide()
-		self.Currency.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		self.Currency.Icon:SkinIcon()
+		self.Background:ClearAllPoints()
+		self.Background:SetPoint("TOPLEFT")
+		self.Background:SetPoint("BOTTOMRIGHT")
 		self.Background:SetDrawLayer("BACKGROUND", 2)
+		self.BackButton:SkinButton()
 
 		for i = 1, self:GetNumChildren() do
 			local child = select(i, self:GetChildren())
@@ -104,7 +110,7 @@ local function LoadSkin()
 
 			for i = 1, frame:GetNumChildren() do
 				local child = select(i, frame:GetChildren())
-				if child and child.Icon and child.backdrop then
+				if child and child.Icon and child.Border and child.backdrop then
 					colorBorder(child, child.backdrop, child.Border:GetAtlas())
 				end
 			end

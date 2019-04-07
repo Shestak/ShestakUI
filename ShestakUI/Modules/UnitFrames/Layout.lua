@@ -472,12 +472,6 @@ local function Shared(self, unit)
 			self.CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
 			self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
 			self.CPoints[6]:SetStatusBarColor(0.1, 0.9, 0.1)
-
-			if T.class == "DRUID" and C.unitframe_class_bar.combo_always ~= true then
-				self:RegisterEvent("UPDATE_SHAPESHIFT_FORM", T.UpdateComboPoint)
-			end
-
-			self.CPoints.Override = T.UpdateComboPoint
 		end
 
 		-- Totem bar
@@ -737,7 +731,7 @@ local function Shared(self, unit)
 			self.Debuffs.initialAnchor = "TOPLEFT"
 			self.Debuffs["growth-x"] = "RIGHT"
 		end
-		self.Debuffs.PostCreateIcon = T.PostCreateAura
+		self.Debuffs.PostCreateIcon = T.PostCreateIcon
 		self.Debuffs.PostUpdateIcon = T.PostUpdateIcon
 
 		if unit == "pet" then
@@ -796,7 +790,7 @@ local function Shared(self, unit)
 				self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5)
 			end
 
-			self.Debuffs.PostCreateIcon = T.PostCreateAura
+			self.Debuffs.PostCreateIcon = T.PostCreateIcon
 			self.Debuffs.PostUpdateIcon = T.PostUpdateIcon
 		end
 
@@ -813,7 +807,7 @@ local function Shared(self, unit)
 			self.Auras.spacing = T.Scale(3)
 			self.Auras.size = T.Scale(25)
 			self.Auras.gap = true
-			self.Auras.PostCreateIcon = T.PostCreateAura
+			self.Auras.PostCreateIcon = T.PostCreateIcon
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
 
 			-- Rogue/Druid Combo bar
@@ -840,8 +834,6 @@ local function Shared(self, unit)
 				self.CPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
 				self.CPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
 				self.CPoints[6]:SetStatusBarColor(0.1, 0.9, 0.1)
-
-				self.CPoints.Override = T.UpdateComboPointTarget
 			end
 
 			-- Priest Range bar
@@ -1161,7 +1153,7 @@ local function Shared(self, unit)
 			self.Auras.spacing = T.Scale(3)
 			self.Auras.size = T.Scale(31)
 			self.Auras.gap = true
-			self.Auras.PostCreateIcon = T.PostCreateAura
+			self.Auras.PostCreateIcon = T.PostCreateIcon
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
 		end
 

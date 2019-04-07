@@ -100,7 +100,7 @@ local function LoadSkin()
 				bar:StripTextures()
 				bar:CreateBackdrop("Overlay")
 				bar:SetStatusBarTexture(C.media.texture)
-				bar:SetHeight(9)
+				bar:SetHeight(10)
 			end
 		end
 	end
@@ -111,6 +111,17 @@ local function LoadSkin()
 				hooksecurefunc(button, "SetUpHeader", SkinSkillRankBar)
 				button.skin = true
 			end
+		end
+	end)
+
+	hooksecurefunc(TradeSkillFrame.RecipeList, "RefreshDisplay", function(self)
+		for i = 1, #self.buttons do
+			local tradeSkillButton = self.buttons[i]
+			if not tradeSkillButton._auroraSkinned then
+				T.SkinExpandOrCollapse(tradeSkillButton)
+				tradeSkillButton._auroraSkinned = true
+			end
+			tradeSkillButton:SetHighlightTexture("")
 		end
 	end)
 

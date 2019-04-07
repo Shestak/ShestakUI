@@ -1,18 +1,16 @@
 ## Interface: 80100
 ## Title: ShestakUI Config
 ## Notes: In-game configuration for ShestakUI
-## Author: Tohveli
-## Version: 7.05
-## Credits: Elv22, Fernir, Tukz
-## Thanks: Tryllemann, Wetxius
+## Author: Haleth, Solor
+## Version: 7.09
 ## RequiredDeps: ShestakUI
-## SavedVariables: GUIConfigAll, GUIConfigSettings
-## SavedVariablesPerCharacter: GUIConfig
-## X-Curse-Packaged-Version: 7.05
-## X-Curse-Project-Name: ShestakUI
-## X-Curse-Project-ID: shestakui
-## X-WoWI-ID: 19033
+## SavedVariables: ShestakUIOptionsGlobal, ShestakUIOptions
+## SavedVariablesPerCharacter: ShestakUIOptionsPerChar
+
 ## X-Website: http://shestak.org
+## X-Thanks: Tryllemann, Wetxius
+
+Core.lua
 
 Locales\English.lua
 Locales\Chinese.lua
@@ -23,4 +21,4 @@ Locales\Russian.lua
 Locales\Spanish.lua
 Locales\Taiwan.lua
 
-ShestakUI_Config.lua
+Options.lua

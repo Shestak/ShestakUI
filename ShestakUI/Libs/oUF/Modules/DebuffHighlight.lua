@@ -19,7 +19,6 @@ local CanDispel = {
 local dispellist = CanDispel[T.class] or {}
 local origColors = {}
 local origBorderColors = {}
-local origPostUpdateAura = {}
 
 local function GetDebuffType(unit, filter)
 	if not UnitCanAssist("player", unit) then return nil end

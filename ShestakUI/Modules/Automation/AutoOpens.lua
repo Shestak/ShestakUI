@@ -4,7 +4,7 @@ if C.automation.open_items ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Auto opening of items in bag (kAutoOpen by Kellett)
 ----------------------------------------------------------------------------------------
-local frame, atBank, atMail, atMerchant, isLooting = CreateFrame("Frame")
+local frame, atBank, atMail, atMerchant = CreateFrame("Frame")
 frame:SetScript("OnEvent", function(self, event, ...) self[event](...) end)
 
 function frame:Register(event, func)

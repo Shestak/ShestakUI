@@ -52,7 +52,7 @@ local function print(text)
 end
 
 -- The Main function to run a check
-local function run(autoreport)
+local function run()
 	local checkType
 	local output
 
@@ -117,7 +117,7 @@ local frame = CreateFrame("Frame")
 frame:RegisterEvent("READY_CHECK")
 frame:SetScript("OnEvent", function(self, event, ...)
 	if C.announcements.flask_food_auto then
-		run(true)
+		run()
 	end
 end)
 

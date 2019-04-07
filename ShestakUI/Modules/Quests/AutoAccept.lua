@@ -107,7 +107,7 @@ function QuickQuest:Register(event, method, override)
 end
 
 local function GetNPCID()
-	return tonumber(string.match(UnitGUID("npc") or "", "Creature%-.-%-.-%-.-%-.-%-(.-)%-"))
+	return tonumber(string.match(UnitGUID('npc') or '', '%w+%-.-%-.-%-.-%-.-%-(.-)%-'))
 end
 
 local function IsTrackingHidden()
@@ -130,6 +130,8 @@ local ignoreQuestNPC = {
 	[124312] = true,	-- High Exarch Turalyon (repeatable resource quest)
 	[126954] = true,	-- High Exarch Turalyon (repeatable resource quest)
 	[127037] = true,	-- Nabiru (repeatable resource quest)
+	[141584] = true,	-- Zurvan (Seal of Wartorn Fate, Horde)
+	[142063] = true,	-- Tezran (Seal of Wartorn Fate, Alliance)
 }
 
 local function GetQuestLogQuests(onlyComplete)
@@ -205,6 +207,7 @@ local ignoreGossipNPC = {
 
 	-- Misc NPCs
 	[117871] = true, -- War Councilor Victoria (Class Challenges @ Broken Shore)
+	[143925] = true, -- Dark Iron Mole Machine (Dark Iron Dwarf racial)
 }
 
 local rogueClassHallInsignia = {

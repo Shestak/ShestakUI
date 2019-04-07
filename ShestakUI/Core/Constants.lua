@@ -11,6 +11,5 @@ T.client = GetLocale()
 T.realm = GetRealmName()
 T.color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[T.class]
 T.version = GetAddOnMetadata("ShestakUI", "Version")
-T.resolution = ({GetScreenResolutions()})[GetCurrentResolution()] or GetCVar("gxWindowedResolution")
-T.getscreenwidth, T.getscreenheight = DecodeResolution(T.resolution)
-T.wowbuild = select(2, GetBuildInfo()); T.wowbuild = tonumber(T.wowbuild)
+T.screenWidth, T.screenHeight = GetPhysicalScreenSize()
+T.wowBuild = select(2, GetBuildInfo()); T.wowBuild = tonumber(T.wowBuild)

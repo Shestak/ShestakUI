@@ -27,8 +27,12 @@ local function LoadSkin()
 	select(2, VoidStorageFrame:GetRegions()):Kill()
 
 	VoidStoragePurchaseButton:SkinButton()
-	VoidStorageHelpBoxButton:SkinButton()
 	VoidStorageTransferButton:SkinButton()
+
+	VoidStorageHelpBox:StripTextures()
+	VoidStorageHelpBox:SetTemplate("Transparent")
+	VoidStorageHelpBoxArrow:Hide()
+	VoidStorageHelpBoxButton:SkinButton()
 
 	T.SkinCloseButton(VoidStorageBorderFrame.CloseButton)
 	VoidItemSearchBox:CreateBackdrop("Overlay")

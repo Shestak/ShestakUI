@@ -47,7 +47,7 @@ StaticPopupDialogs.WATCHFRAME_URL = {
 }
 
 hooksecurefunc("QuestObjectiveTracker_OnOpenDropDown", function(self)
-	local _, b, i, info, questID
+	local _, b, info, questID
 	b = self.activeFrame
 	questID = b.id
 	info = UIDropDownMenu_CreateInfo()

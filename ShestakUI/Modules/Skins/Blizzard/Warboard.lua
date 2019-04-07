@@ -17,7 +17,7 @@ local function LoadSkin()
 	for i = 1, 4 do
 		local option = WarboardQuestChoiceFrame["Option"..i]
 		option:CreateBackdrop("Overlay")
-		option.backdrop:SetPoint("TOPLEFT", -2, 8)
+		option.backdrop:SetPoint("TOPLEFT", -2, 20)
 		for i = 1, #option.OptionButtonsContainer.Buttons do
 			option.OptionButtonsContainer.Buttons[i]:SkinButton()
 		end
@@ -37,6 +37,12 @@ local function LoadSkin()
 	end
 
 	T.SkinCloseButton(WarboardQuestChoiceFrame.CloseButton, WarboardQuestChoiceFrame.backdrop)
+
+	WarboardQuestChoiceFrame:HookScript("OnShow", function(self)
+		if self.CloseButton.Border then
+			self.CloseButton.Border:Hide()
+		end
+	end)
 end
 
 T.SkinFuncs["Blizzard_WarboardUI"] = LoadSkin

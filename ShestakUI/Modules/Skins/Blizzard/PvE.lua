@@ -94,7 +94,8 @@ local function LoadSkin()
 		"LFGListApplicationViewerScrollFrameScrollBar",
 		"LFDQueueFrameSpecificListScrollFrameScrollBar",
 		"LFDQueueFrameRandomScrollFrameScrollBar",
-		"RaidFinderQueueFrameScrollFrameScrollBar"
+		"RaidFinderQueueFrameScrollFrameScrollBar",
+		"LFGListEntryCreationSearchScrollFrameScrollBar"
 	}
 
 	for _, scrollbar in pairs(scrollbars) do
@@ -188,8 +189,13 @@ local function LoadSkin()
 	SkinMoney("ScenarioQueueFrameRandomScrollFrameChildFrameMoneyReward")
 
 	hooksecurefunc("LFGDungeonListButton_SetDungeon", function(button)
-		T.SkinCheckBox(button.enableButton)
-		button.enableButton:SetFrameLevel(button.enableButton:GetFrameLevel() - 2)
+		if not button.expandOrCollapseButton.isSkinned then
+			T.SkinCheckBox(button.enableButton)
+			button.enableButton:SetFrameLevel(button.enableButton:GetFrameLevel() - 2)
+			button.enableButton.SetCheckedTexture = T.dummy -- Blizzard changes checked texture, prevent it
+			T.SkinExpandOrCollapse(button.expandOrCollapseButton)
+			button.expandOrCollapseButton.isSkinned = true
+		end
 	end)
 
 	for i = 1, 3 do
@@ -317,7 +323,6 @@ local function LoadSkin()
 	end)
 
 	LFGListFrame.EntryCreation:StripTextures()
-	LFGListFrame.EntryCreation.Inset:StripTextures()
 	LFGListFrame.EntryCreation.Description:StripTextures()
 	LFGListApplicationDialogDescription:StripTextures()
 	LFGListInviteDialog:SetTemplate("Transparent")
@@ -340,6 +345,15 @@ local function LoadSkin()
 	T.SkinCheckBox(LFGListFrame.EntryCreation.PrivateGroup.CheckButton)
 	LFGListFrame.EntryCreation.ListGroupButton:SkinButton()
 	LFGListFrame.EntryCreation.CancelButton:SkinButton()
+
+	LFGListFrame.EntryCreation.ActivityFinder.Background:Kill()
+	LFGListFrame.EntryCreation.ActivityFinder.Dialog:StripTextures()
+	LFGListFrame.EntryCreation.ActivityFinder.Dialog:SetTemplate("Transparent")
+	LFGListFrame.EntryCreation.ActivityFinder.Dialog.BorderFrame:StripTextures()
+	LFGListFrame.EntryCreation.ActivityFinder.Dialog.BorderFrame:SetTemplate("Transparent")
+	T.SkinEditBox(LFGListFrame.EntryCreation.ActivityFinder.Dialog.EntryBox, 276, 17)
+	LFGListFrame.EntryCreation.ActivityFinder.Dialog.SelectButton:SkinButton()
+	LFGListFrame.EntryCreation.ActivityFinder.Dialog.CancelButton:SkinButton()
 
 	-- ApplicationViewer (Custom Groups)
 	LFGListFrame.ApplicationViewer.InfoBackground:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -427,6 +441,24 @@ local function LoadSecondarySkin()
 
 	ChallengesKeystoneFrame:DisableDrawLayer("BACKGROUND")
 	ChallengesKeystoneFrame:CreateBackdrop("Transparent")
+
+	local NoticeFrame = ChallengesFrame.SeasonChangeNoticeFrame
+	NoticeFrame:StripTextures()
+	NoticeFrame:CreateBackdrop("Overlay")
+	NoticeFrame:SetFrameLevel(5)
+	NoticeFrame.NewSeason:SetTextColor(1, 0.8, 0)
+	NoticeFrame.NewSeason:SetShadowOffset(1, -1)
+	NoticeFrame.SeasonDescription:SetTextColor(1, 1, 1)
+	NoticeFrame.SeasonDescription:SetShadowOffset(1, -1)
+	NoticeFrame.SeasonDescription2:SetTextColor(1, 1, 1)
+	NoticeFrame.SeasonDescription2:SetShadowOffset(1, -1)
+	NoticeFrame.SeasonDescription3:SetTextColor(1, 0.8, 0)
+	NoticeFrame.SeasonDescription3:SetShadowOffset(1, -1)
+
+	NoticeFrame.Affix:StripTextures()
+	NoticeFrame.Affix.Portrait:SkinIcon()
+
+	NoticeFrame.Leave:SkinButton()
 end
 
 T.SkinFuncs["Blizzard_ChallengesUI"] = LoadSecondarySkin

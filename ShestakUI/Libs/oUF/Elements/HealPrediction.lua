@@ -1,3 +1,5 @@
+-- ShestakUI use old version of HealPrediction. Do not update if you are not sure what you are doing.
+
 local _, ns = ...
 local oUF = ns.oUF
 

@@ -39,7 +39,7 @@ local truncate = function(value)
 end
 
 local AddUnit = function(unit)
-	local threatpct, rawpct, threatval = select(3, UnitDetailedThreatSituation(unit, "target"))
+	local threatpct, _, threatval = select(3, UnitDetailedThreatSituation(unit, "target"))
 	if threatval and threatval < 0 then
 		threatval = threatval + 410065408
 	end

@@ -134,11 +134,8 @@ local function LoadSkin()
 		"AudioOptionsSoundPanelSoundChannelsDropDown",
 		"AudioOptionsSoundPanelSoundCacheSizeDropDown",
 		"AudioOptionsVoicePanelInputDeviceDropDown",
-		"AudioOptionsVoicePanelChatModeDropDown",
-		"AudioOptionsVoicePanelOutputDeviceDropDown",
 		"AudioOptionsVoicePanelMicDeviceDropdown",
 		"AudioOptionsVoicePanelOutputDeviceDropdown",
-		"AudioOptionsVoicePanelChatModeDropdown",
 		"Graphics_SSAODropDown",
 		"Graphics_RefractionDropDown",
 		"RaidGraphics_TextureResolutionDropDown",
@@ -209,11 +206,9 @@ local function LoadSkin()
 	_G["Graphics_Quality"].SetBackdrop = T.dummy
 	_G["RaidGraphics_Quality"].SetBackdrop = T.dummy
 
-	--BETA local VUMeter = AudioOptionsVoicePanelTestInputDevice.VUMeter
-	-- VUMeter:CreateBackdrop("Overlay")
-	-- VUMeter:SetFrameLevel(VUMeter:GetFrameLevel() + 1)
-	-- VUMeter.backdrop:SetPoint("TOPLEFT", -4, 4)
-	-- VUMeter.backdrop:SetPoint("BOTTOMRIGHT", 4, -4)
+	local VUMeter = AudioOptionsVoicePanelTestInputDevice.VUMeter
+	VUMeter:SetBackdrop(nil)
+	VUMeter.Status:CreateBackdrop("Overlay")
 
 	_G["VideoOptionsFrameDefaults"]:ClearAllPoints()
 	_G["VideoOptionsFrameDefaults"]:SetPoint("TOPLEFT", _G["VideoOptionsFrameCategoryFrame"], "BOTTOMLEFT", 0, -14)
@@ -237,6 +232,7 @@ local function LoadSkin()
 
 	T.SkinDropDownBox(InterfaceOptionsLanguagesPanelAudioLocaleDropDown, 250)
 	T.SkinDropDownBox(InterfaceOptionsLanguagesPanelLocaleDropDown, 250)
+	T.SkinDropDownBox(AudioOptionsVoicePanelChatModeDropdown, 183)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

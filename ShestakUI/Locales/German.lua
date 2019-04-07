@@ -40,7 +40,7 @@ L_TOOLTIP_ACH_INCOMPLETE = "Dein Status: Noch nicht Ferig"
 L_TOOLTIP_SPELL_ID = "Zauber ID:"
 L_TOOLTIP_ITEM_ID = "Gegenstands ID:"
 L_TOOLTIP_WHO_TARGET = "Anvisiert von"
-L_TOOLTIP_ITEM_COUNT = "Gegenstandsanzahl:" -- Need review
+L_TOOLTIP_ITEM_COUNT = "Gegenstandsanzahl:"
 L_TOOLTIP_INSPECT_OPEN = "Betrachtungsfenster offen"
 
 -- Misc
@@ -53,17 +53,12 @@ L_MISC_ONECLICK_CANCEL = "Shift-Right-Click um den ausgewählten Gegenstand ohne
 L_MISC_UI_OUTDATED = "Deine Version von ShestakUI ist veraltet. Du kannst die aktuelle Version von www.shestak.org laden"
 L_MISC_HEADER_MARK = "Mausdrüber Raid Icon"
 L_MISC_BINDER_OPEN = "Maus gebunden"
-L_MISC_GROCERY_BUY = "Kaufen"
-L_MISC_GROCERY_DESC = "Kaufe Lebensmittelaschen automatisch"
 L_MISC_SCROLL = "Rolle"
-L_MISC_COLLAPSE = "The Collapse" -- Need review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Gruppe auflösen"
 
 -- Zone name
-L_ZONE_TOLBARAD = "Tol Barad"
-L_ZONE_TOLBARADPEN = "Halbinsel von Tol Barad"
 L_ZONE_ARATHIBASIN = "Arathibecken"
 L_ZONE_GILNEAS = "Die Schlacht um Gilneas"
 L_ZONE_ANCIENTDALARAN = "Dalarankrater"
@@ -91,7 +86,7 @@ L_UF_MANA = "Niedriges Mana"
 L_MAP_CURSOR = "Mauszeiger: "
 L_MAP_BOUNDS = "Außerhalb der Begrenzung!"
 L_MAP_FOG = "Nebel des Krieges"
-L_MAP_COORDS = "Coordinates" -- Needs review
+L_MAP_COORDS = "Koordinaten"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Kalender"
@@ -175,7 +170,7 @@ L_INFO_DUEL = "Duellanfrage Ignoriert von "
 L_INFO_PET_DUEL = "Haustier Duellanfrage Ignoriert von "
 L_INFO_DISBAND = "Löse Gruppe auf..."
 L_INFO_SETTINGS_DBM = "Gebe /settings dbm ein, um DBM Einstellungen zu laden."
-L_INFO_SETTINGS_DXE = "Gebe /settings dxe ein, um DXE Einstellungen zu laden."
+L_INFO_SETTINGS_BIGWIGS = "Gebe /settings bw ein, um BigWigs Einstellungen zu laden."
 L_INFO_SETTINGS_MSBT = "Gebe /settings msbt ein, um die MSBT Einstellungen zu laden."
 L_INFO_SETTINGS_SKADA = "Gebe /settings skada ein, um die Skada Einstellungen zu laden."
 L_INFO_SETTINGS_ALL = "Gebe /settings all ein, um die Einstellungen für alle unterstützten AddOns zu laden."
@@ -190,12 +185,10 @@ L_POPUP_RESETSTATS = "Bist du sicher das du die Gold und verbrachte Zeit Statist
 L_POPUP_SWITCH_RAID = "Wähle Raid Layout."
 L_POPUP_DISBAND_RAID = "Bist du dir sicher, dass du die Gruppe auflösen möchtest?"
 L_POPUP_DISABLEUI = "ShestakUI funktioniert nicht mit deiner Auflösung, möchtest du ShestakUI ausschalten? (Drücke Abbrechen, falls du eine andere Auflösung testen willst)"
-L_POPUP_SETTINGS_ALL = "Einstellungen für alle AddOns übernehmen? (DBM/DXE, Skada und MSBT)"
+L_POPUP_SETTINGS_ALL = "Einstellungen für alle AddOns übernehmen? (DBM, BigWigs, Skada und MSBT)"
 L_POPUP_SETTINGS_DBM = "Die Position der DBM Elemente muss verändert werden."
-L_POPUP_SETTINGS_DXE = "Die Position der DXE Elemente muss verändert werden."
 L_POPUP_SETTINGS_BW = "Die Position der BigWigs Elemente muss verändert werden."
 L_POPUP_ARMORY = "Waffenkammer"
-L_POPUP_CURRENCY_CAP = "Maximalwert erreicht"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "Willkommen bei ShestakUI "
@@ -211,7 +204,7 @@ L_COMBATTEXT_TEST_ENABLED = "Kampftext Testmodus aktiviert."
 L_COMBATTEXT_TEST_USE_UNLOCK = "Gib '/xct' ein um die Kampftext Fenster freizugeben um sie verschieben und verändern zu können."
 L_COMBATTEXT_TEST_USE_LOCK = "Gib '/xct' ein um den Kampftext Testmodus zu sperren."
 L_COMBATTEXT_TEST_USE_TEST = "Gib '/xct' ein um den Kampftext Testmodus zu aktivieren."
-L_COMBATTEXT_TEST_USE_RESET = "Type /xct reset to restore default positions." -- Need review
+L_COMBATTEXT_TEST_USE_RESET = "Gib /xct reset ein, um die Standardpositionen wiederherzustellen."
 L_COMBATTEXT_POPUP = "Um die Kampftext Fensterpositionen zu sichern muss das Interface neu geladen werden."
 L_COMBATTEXT_UNSAVED = "Kampftext Fensterpositionen nicht gespeichert, vergiss nicht das Interface neu zu laden."
 L_COMBATTEXT_UNLOCKED = "Kampftext freigegeben."
@@ -276,12 +269,14 @@ L_STATS_EQUIPMENT_CHANGER = "Umschalt-Klick oder Mittel-Klick für den Ausrüstu
 L_STATS_SORTING_BY = "Sortieren nach"
 L_STATS_TIPS = "Tipps:"
 L_STATS_TOTAL_MEMORY_USAGE = "Gesamte Speicherausnutzung:"
+L_STATS_TOTAL_CPU_USAGE = "Total CPU Usage:" -- Need review
 L_STATS_NOT_TO_SELL = "Verwende /junk zum Konfigurieren der Gegenstände, die nicht verkauft werden sollen."
 L_STATS_WATCH_CURRENCY = "Bereits gesehene Gegenstände aus dem Abzeichen-Fenster werden im Tooltip angezeigt."
 L_STATS_WATCH_FACTIONS = "Überwache Fraktionen aus dem Ruffenster."
 L_STATS_TOOLTIP_TIME_PLAYED = "Wenn das max. Level erreicht ist, wird das Tooltip die gespielte Zeit für den Account anzeigen."
 L_STATS_TOOLTIP_EXPERIENCE = "Wenn unter dem max. Level, wird ein Tooltip mit weiteren Details angezeigt."
 L_STATS_SEALS = "Angebot der Woche"
+L_STATS_SPEC = "Spec" -- Need review
 
 -- Slash commands
 L_SLASHCMD_HELP = {
@@ -315,101 +310,4 @@ L_SLASHCMD_HELP = {
 	"/ainv - Automatisches Einladen aktivieren.",
 	"/testuf - Einheitenfenster testen.",
 	"/cfg - Interface Einstellungen öffnen.",
-}
-
--- ExploreMap
-L_EXTRA_EXPLORED = "Erforscht: "
-L_EXTRA_ZONEACHID = {
-	-- http://www.wowhead.com/achievement=*
-	-- e(X)plore achievement id, (Q)uest achievement id
-	["Östliche Königreiche"]			= {X =   42, A =    0, H =    0},
-	["Kalimdor"]						= {X =   43, A =    0, H =    0},
-	["Scherbenwelt"]					= {X =   44, A =    0, H =    0},
-	["Nordend"]							= {X =   45, A =    0, H =    0},
-	["Pandaria"]						= {X = 6974, A =    0, H =    0},
-	["Weltkarte"]						= {X =  nil, A =    0, H =    0},
-	-- Eastern Kingdoms
-	["Arathihochland"]					= {X =  761, A = 4896, H = 4896},
-	["Ödland"]							= {X =  765, A = 4900, H = 4900},
-	["Verwüstete Lande"]				= {X =  766, A = 4909, H = 4909},
-	["Brennende Steppe"]				= {X =  775, A = 4901, H = 4901},
-	["Gebirgspass der Totenwinde"]		= {X =  777, A =    0, H =    0},
-	["Dun Morogh"]						= {X =  627, A =    0, H =    0},
-	["Dämmerwald"]						= {X =  778, A = 4903, H =    0},
-	["Östliche Pestländer"]				= {X =  771, A = 4892, H = 4892},
-	["Wald von Elwynn"]					= {X =  776, A =    0, H =    0},
-	["Immersangwald"]					= {X =  859, A =    0, H =    0},
-	["Geisterlande"]					= {X =  858, A =    0, H = 4908},
-	["Vorgebirge des Hügellands"]		= {X =  772, A =    0, H = 4895},
-	["Loch Modan"]						= {X =  779, A = 4899, H =    0},
-	["Nördliches Schlingendorntal"]		= {X =  781, A = 4906, H = 4906},
-	["Rotkammgebirge"]					= {X =  780, A = 4902, H =    0},
-	["Sengende Schlucht"]				= {X =  774, A = 4910, H = 4910},
-	["Silberwald"]						= {X =  769, A =    0, H = 4894},
-	["Sümpfe des Elends"]				= {X =  782, A = 4904, H = 4904},
-	["Das Schlingendornkap"]			= {X = 4995, A = 4905, H = 4905},
-	["Hinterland"]						= {X =  773, A = 4897, H = 4897},
-	["Tirisfal"]						= {X =  768, A =    0, H =    0},
-	["Westliche Pestländer"]			= {X =  770, A = 4893, H = 4893},
-	["Westfall"]						= {X =  802, A = 4903, H =    0},
-	["Sumpfland"]						= {X =  841, A = 4899, H =    0},
-	-- Kalimdor
-	["Eschental"]						= {X =  845, A = 4925, H = 4976},
-	["Azshara"]							= {X =  852, A =    0, H = 4927},
-	["Azurmythosinsel"]					= {X =  860, A =    0, H =    0},
-	["Blutmythosinsel"]					= {X =  861, A = 4926, H = 4926},
-	["Dunkelküste"]						= {X =  844, A = 4928, H = 4928},
-	["Desolace"]						= {X =  848, A = 4930, H = 4930},
-	["Durotar"]							= {X =  728, A =    0, H =    0},
-	["Düstermarschen"]					= {X =  850, A = 4929, H = 4978},
-	["Teufelswald"]						= {X =  853, A = 4931, H = 4931},
-	["Feralas"]							= {X =  849, A = 4932, H = 4979},
-	["Mondlichtung"]					= {X =  855, A =    0, H =    0},
-	["Mulgore"]							= {X =  736, A =    0, H =    0},
-	["Nördliches Brachland"]			= {X =  750, A =    0, H = 4933},
-	["Silithus"]						= {X =  856, A = 4934, H = 4934},
-	["Südliches Brachland"]				= {X = 4996, A = 4937, H = 4981},
-	["Steinkrallengebirge"]				= {X =  847, A = 4936, H = 4980},
-	["Tanaris"]							= {X =  851, A = 4935, H = 4935},
-	["Teldrassil"]						= {X =  842, A =    0, H =    0},
-	["Tausend Nadeln"]					= {X =  846, A = 4938, H = 4938},
-	["Krater von Un'Goro"]				= {X =  854, A = 4939, H = 4939},
-	["Winterquell"]						= {X =  857, A = 4940, H = 4940},
-	-- Outland
-	["Schergrat"]						= {X =  865, A = 1193, H = 1193},
-	["Höllenfeuerhalbinsel"]			= {X =  862, A = 1189, H = 1271},
-	["Nagrand"]							= {X =  866, A = 1192, H = 1273},
-	["Nethersturm"]						= {X =  843, A = 1194, H = 1194},
-	["Schattenmondtal"]					= {X =  864, A = 1195, H = 1195},
-	["Wälder von Terokkar"]				= {X =  867, A = 1191, H = 1272},
-	["Zangarmarschen"]					= {X =  863, A = 1190, H = 1190},
-	-- Northrend
-	["Boreanische Tundra"]				= {X = 1264, A =   33, H = 1358},
-	["Kristallsangwald"]				= {X = 1457, A =    0, H =    0},
-	["Drachenöde"]						= {X = 1265, A =   35, H = 1356},
-	["Grizzlyhügel"]					= {X = 1266, A =   37, H = 1357},
-	["Der Heulende Fjord"]				= {X = 1263, A =   34, H = 1356},
-	["Eiskrone"]						= {X = 1270, A =   40, H =   40},
-	["Sholazarbecken"]					= {X = 1268, A =   39, H =   39},
-	["Die Sturmgipfel"]					= {X = 1269, A =   38, H =   38},
-	["Zul'Drak"]						= {X = 1267, A =   36, H =   36},
-	-- Cataclysm
-	["Tiefenheim"]						= {X = 4864, A = 4871, H = 4871},
-	["Hyjal"]							= {X = 4863, A = 4870, H = 4870},
-	["Schattenhochland"]				= {X = 4866, A = 4873, H = 5501},
-	["Uldum"]							= {X = 4865, A = 4872, H = 4872},
-	["Vashj'ir"]						= {X = 4825, A = 4869, H = 4982},
-	["Tol Barad"]						= {X =    0, A = 4874, H = 4874},
-	["Halbinsel von Tol Barad"]			= {X =    0, A = 4874, H = 4874},
-	-- Pandaria
-	["Der Jadewald"]					= {X = 6351, A = 6300, H = 6534},
-	["Tal der Vier Winde"]				= {X = 6969, A = 6301, H = 6301},
-	["Kun-Lai-Gipfel"]					= {X = 6976, A = 6537, H = 6538},
-	["Tonlongsteppe"]					= {X = 6977, A = 6539, H = 6539},
-	["Schreckensöde"]					= {X = 6978, A = 6540, H = 6540},
-	["Tal der Ewigen Blüten"]			= {X = 6979, A =    0, H =    0},
-	-- Boolean Explores
-	["Insel von Quel'Danas"]			= {X =  868, A =    0, H =    0},
-	["Ahn'Qiraj: Das Gefallene Königreich"] = {X = 0, A =    0, H =    0},
-	["Tausendwintersee"]				= {X =    0, A =    0, H =    0},
 }

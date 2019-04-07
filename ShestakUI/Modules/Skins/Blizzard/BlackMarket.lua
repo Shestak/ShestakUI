@@ -6,7 +6,6 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	BlackMarketFrame:StripTextures()
-	BlackMarketFrame.Inset:StripTextures()
 	BlackMarketFrame:SetTemplate("Transparent")
 
 	T.SkinScrollBar(BlackMarketScrollFrameScrollBar)

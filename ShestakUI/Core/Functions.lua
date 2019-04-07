@@ -400,7 +400,7 @@ function T.SkinEditBox(frame, width, height)
 	if height then frame:SetHeight(height) end
 end
 
-function T.SkinDropDownBox(frame, width)
+function T.SkinDropDownBox(frame, width, pos)
 	local button = _G[frame:GetName()] and (_G[frame:GetName().."Button"] or _G[frame:GetName().."_Button"]) or frame.Button
 	local text = _G[frame:GetName()] and _G[frame:GetName().."Text"] or frame.Text
 	if not width then width = 155 end
@@ -414,7 +414,11 @@ function T.SkinDropDownBox(frame, width)
 	end
 
 	button:ClearAllPoints()
-	button:SetPoint("RIGHT", frame, "RIGHT", -10, 3)
+	if pos then
+		button:SetPoint("TOPRIGHT", frame.Right, -20, -21)
+	else
+		button:SetPoint("RIGHT", frame, "RIGHT", -10, 3)
+	end
 	button.SetPoint = T.dummy
 	scrolldn = false
 	T.SkinNextPrevButton(button)
@@ -587,6 +591,71 @@ function T.SkinMaxMinFrame(frame, point)
 			button:HookScript("OnEnter", T.SetModifiedBackdrop)
 			button:HookScript("OnLeave", T.SetOriginalBackdrop)
 		end
+	end
+end
+
+function T.SkinExpandOrCollapse(f)
+	f:SetHighlightTexture("")
+	f:SetPushedTexture("")
+
+	local bg = CreateFrame("Frame", nil, f)
+	bg:SetSize(13, 13)
+	bg:SetPoint("TOPLEFT", f:GetNormalTexture(), 0, -1)
+	bg:SetTemplate("Overlay")
+	f.bg = bg
+
+	bg.minus = bg:CreateTexture(nil, "OVERLAY")
+	bg.minus:SetSize(5, 1)
+	bg.minus:SetPoint("CENTER")
+	bg.minus:SetTexture(C.media.blank)
+
+	bg.plus = bg:CreateTexture(nil, "OVERLAY")
+	bg.plus:SetSize(1, 5)
+	bg.plus:SetPoint("CENTER")
+	bg.plus:SetTexture(C.media.blank)
+	bg.plus:Hide()
+
+	hooksecurefunc(f, "SetNormalTexture", function(self, texture)
+		if self.settingTexture then return end
+		self.settingTexture = true
+		self:SetNormalTexture("")
+
+		if texture and texture ~= "" then
+			if texture:find("Plus") then
+				self.bg.plus:Show()
+			elseif texture:find("Minus") then
+				self.bg.plus:Hide()
+			end
+			self.bg:Show()
+		else
+			self.bg:Hide()
+		end
+		self.settingTexture = nil
+	end)
+
+	f:HookScript("OnEnter", function(self)
+		self.bg:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		if self.bg.overlay then
+			self.bg.overlay:SetVertexColor(T.color.r * 0.3, T.color.g * 0.3, T.color.b * 0.3, 1)
+		end
+	end)
+
+	f:HookScript("OnLeave", function(self)
+		self.bg:SetBackdropBorderColor(unpack(C.media.border_color))
+		if self.bg.overlay then
+			self.bg.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
+		end
+	end)
+end
+
+function T.SkinHelpBox(frame)
+	frame:StripTextures()
+	frame:SetTemplate("Transparent")
+	if frame.CloseButton then
+		T.SkinCloseButton(frame.CloseButton)
+	end
+	if frame.Arrow then
+		frame.Arrow:Hide()
 	end
 end
 
@@ -1057,152 +1126,6 @@ T.UpdatePvPStatus = function(self, elapsed)
 	end
 end
 
-T.UpdateComboPoint = function(self, event, unit, powerType)
-	if powerType and powerType ~= 'COMBO_POINTS' then return end
-	if unit == "pet" then return end
-
-	local cpoints = self.CPoints
-	local cp = (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and UnitPower("vehicle", 4) or UnitPower("player", 4)
-	local cpOld = (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and GetComboPoints("vehicle", "target") or GetComboPoints("player", "target")
-	if cpOld and cp and (cpOld > cp) then cp = cpOld end
-
-	local numMax
-	if (UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) then
-		numMax = MAX_COMBO_POINTS
-	else
-		numMax = UnitPowerMax("player", Enum.PowerType.ComboPoints)
-		if numMax == 0 then
-			numMax = MAX_COMBO_POINTS
-		end
-	end
-
-	local spacing = select(4, cpoints[5]:GetPoint())
-	local w = cpoints:GetWidth()
-	local s = 0
-
-	if cpoints.numMax ~= numMax then
-		if numMax == 6 then
-			cpoints[6]:Show()
-		else
-			cpoints[6]:Hide()
-		end
-
-		for i = 1, numMax do
-			if i ~= numMax then
-				cpoints[i]:SetWidth(w / numMax - spacing)
-				s = s + (w / numMax)
-			else
-				cpoints[i]:SetWidth(w - s)
-			end
-		end
-
-		cpoints.numMax = numMax
-	end
-
-	for i = 1, numMax do
-		if i <= cp then
-			cpoints[i]:SetAlpha(1)
-		else
-			cpoints[i]:SetAlpha(0.2)
-		end
-	end
-
-	if T.class == "DRUID" and C.unitframe_class_bar.combo_always ~= true then
-		local form = GetShapeshiftFormID()
-
-		if form == CAT_FORM or ((UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle")) and cp > 0) then
-			cpoints:Show()
-			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
-		else
-			cpoints:Hide()
-			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
-		end
-	end
-end
-
-T.UpdateComboPointTarget = function(self, event, unit, powerType)
-	if powerType and powerType ~= 'COMBO_POINTS' then return end
-	if unit == "pet" then return end
-
-	local cpoints = self.CPoints
-	local cp
-	local numMax
-
-	if UnitHasVehicleUI("player") or UnitHasVehicleUI("vehicle") then
-		cp = GetComboPoints("vehicle", "target")
-		numMax = MAX_COMBO_POINTS
-	else
-		cp = GetComboPoints("player", "target")
-		numMax = UnitPowerMax("player", Enum.PowerType.ComboPoints)
-		if numMax == 0 then
-			numMax = MAX_COMBO_POINTS
-		end
-	end
-
-	local spacing = select(4, cpoints[5]:GetPoint())
-	local w = cpoints:GetWidth()
-	local s = 0
-
-	if cpoints.numMax ~= numMax then
-		if numMax == 6 then
-			cpoints[6]:Show()
-		else
-			cpoints[6]:Hide()
-		end
-
-		for i = 1, numMax do
-			if i ~= numMax then
-				cpoints[i]:SetWidth(w / numMax - spacing)
-				s = s + (w / numMax)
-			else
-				cpoints[i]:SetWidth(w - s)
-			end
-		end
-
-		cpoints.numMax = numMax
-	end
-
-	for i = 1, numMax do
-		if i <= cp then
-			cpoints[i]:SetAlpha(1)
-		else
-			cpoints[i]:SetAlpha(0.2)
-		end
-	end
-
-	if cpoints[1]:GetAlpha() == 1 then
-		for i = 1, numMax do
-			cpoints:Show()
-			cpoints[i]:Show()
-		end
-	else
-		for i = 1, numMax do
-			cpoints:Hide()
-			cpoints[i]:Hide()
-		end
-	end
-
-	if self.RangeBar then
-		if cpoints[1]:IsShown() and self.RangeBar:IsShown() then
-			cpoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 33) end
-		elseif cpoints[1]:IsShown() or self.RangeBar:IsShown() then
-			cpoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
-		elseif self.Friendship and self.Friendship:IsShown() then
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
-		else
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
-		end
-	else
-		if cpoints[1]:IsShown() or (self.Friendship and self.Friendship:IsShown()) then
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
-		else
-			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
-		end
-	end
-end
-
 local ticks = {}
 
 local setBarTicks = function(Castbar, ticknum)
@@ -1476,7 +1399,7 @@ T.HideAuraFrame = function(self)
 	end
 end
 
-T.PostCreateAura = function(element, button)
+T.PostCreateIcon = function(element, button)
 	button:SetTemplate("Default")
 
 	button.remaining = T.SetFontString(button, C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
@@ -1484,7 +1407,6 @@ T.PostCreateAura = function(element, button)
 	button.remaining:SetPoint("CENTER", button, "CENTER", 1, 1)
 	button.remaining:SetJustifyH("CENTER")
 
-	button.cd.noOCC = true
 	button.cd.noCooldownCount = true
 
 	button.icon:SetPoint("TOPLEFT", 2, -2)
@@ -1510,52 +1432,50 @@ T.PostCreateAura = function(element, button)
 	end
 end
 
-T.PostUpdateIcon = function(icons, unit, icon, index, offset, filter, isDebuff, duration, timeLeft)
-	local _, _, _, dtype, duration, expirationTime, _, isStealable = UnitAura(unit, index, icon.filter)
-
+T.PostUpdateIcon = function(_, unit, button, _, _, duration, expiration, debuffType, isStealable)
 	local playerUnits = {
 		player = true,
 		pet = true,
 		vehicle = true,
 	}
 
-	if icon.debuff then
-		if not UnitIsFriend("player", unit) and not playerUnits[icon.owner] then
+	if button.isDebuff then
+		if not UnitIsFriend("player", unit) and not playerUnits[button.caster] then
 			if C.aura.player_aura_only then
-				icon:Hide()
+				button:Hide()
 			else
-				icon:SetBackdropBorderColor(unpack(C.media.border_color))
-				icon.icon:SetDesaturated(true)
+				button:SetBackdropBorderColor(unpack(C.media.border_color))
+				button.icon:SetDesaturated(true)
 			end
 		else
 			if C.aura.debuff_color_type == true then
-				local color = DebuffTypeColor[dtype] or DebuffTypeColor.none
-				icon:SetBackdropBorderColor(color.r, color.g, color.b)
-				icon.icon:SetDesaturated(false)
+				local color = DebuffTypeColor[debuffType] or DebuffTypeColor.none
+				button:SetBackdropBorderColor(color.r, color.g, color.b)
+				button.icon:SetDesaturated(false)
 			else
-				icon:SetBackdropBorderColor(1, 0, 0)
+				button:SetBackdropBorderColor(1, 0, 0)
 			end
 		end
 	else
-		if (isStealable or ((T.class == "MAGE" or T.class == "PRIEST" or T.class == "SHAMAN" or T.class == "HUNTER") and dtype == "Magic")) and not UnitIsFriend("player", unit) then
-			icon:SetBackdropBorderColor(1, 0.85, 0)
+		if (isStealable or ((T.class == "MAGE" or T.class == "PRIEST" or T.class == "SHAMAN" or T.class == "HUNTER") and debuffType == "Magic")) and not UnitIsFriend("player", unit) then
+			button:SetBackdropBorderColor(1, 0.85, 0)
 		else
-			icon:SetBackdropBorderColor(unpack(C.media.border_color))
+			button:SetBackdropBorderColor(unpack(C.media.border_color))
 		end
-		icon.icon:SetDesaturated(false)
+		button.icon:SetDesaturated(false)
 	end
 
 	if duration and duration > 0 and C.aura.show_timer == true then
-		icon.remaining:Show()
-		icon.timeLeft = expirationTime
-		icon:SetScript("OnUpdate", CreateAuraTimer)
+		button.remaining:Show()
+		button.timeLeft = expiration
+		button:SetScript("OnUpdate", CreateAuraTimer)
 	else
-		icon.remaining:Hide()
-		icon.timeLeft = math.huge
-		icon:SetScript("OnUpdate", nil)
+		button.remaining:Hide()
+		button.timeLeft = math.huge
+		button:SetScript("OnUpdate", nil)
 	end
 
-	icon.first = true
+	button.first = true
 end
 
 T.UpdateThreat = function(self, event, unit)

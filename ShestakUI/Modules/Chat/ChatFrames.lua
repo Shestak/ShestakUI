@@ -106,7 +106,8 @@ local function SetChatStyle(frame)
 	frame.ScrollToBottomButton:Kill()
 
 	-- Kill off editbox artwork
-	local a, b, c = select(6, _G[chat.."EditBox"]:GetRegions()) a:Kill() b:Kill() c:Kill()
+	local a, b, c = select(6, _G[chat.."EditBox"]:GetRegions())
+	a:Kill() b:Kill() c:Kill()
 
 	-- Kill bubble tex/glow
 	if _G[chat.."Tab"].conversationIcon then _G[chat.."Tab"].conversationIcon:Kill() end

@@ -45,7 +45,7 @@ for tag, func in next, {
 	['reputation:cur'] = function()
 		return (GetReputation())
 	end,
-	['reputation:max'] = function(unit, runit)
+	['reputation:max'] = function()
 		local _, max = GetReputation()
 		return max
 	end,

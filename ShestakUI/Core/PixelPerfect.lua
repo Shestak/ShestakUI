@@ -4,20 +4,20 @@
 --	Pixel perfect script of custom ui Scale
 ----------------------------------------------------------------------------------------
 T.UIScale = function()
-	if T.getscreenwidth <= 1440 then
+	if T.screenWidth <= 1440 then
 		T.low_resolution = true
 	else
 		T.low_resolution = false
 	end
 
 	if C.general.auto_scale == true then
-		C.general.uiscale = min(2, max(0.20, 768 / string.match(T.resolution, "%d+x(%d+)")))
+		C.general.uiscale = min(2, max(0.20, 768 / T.screenHeight))
 		C.general.uiscale = tonumber(string.sub(C.general.uiscale, 0, 5)) -- 8.1 Fix scale bug
 	end
 end
 T.UIScale()
 
-local mult = 768 / string.match(T.resolution, "%d+x(%d+)") / C.general.uiscale
+local mult = 768 / T.screenHeight / C.general.uiscale
 local Scale = function(x)
 	return mult * math.floor(x / mult + 0.5)
 end
@@ -29,7 +29,7 @@ T.noscalemult = T.mult * C.general.uiscale
 ----------------------------------------------------------------------------------------
 --	Pixel perfect fonts function
 ----------------------------------------------------------------------------------------
-if T.getscreenheight <= 1200 then return end
+if T.screenHeight <= 1200 then return end
 C.media.pixel_font_size = C.media.pixel_font_size * mult
 C.font.chat_tabs_font_size = C.font.chat_tabs_font_size * mult
 C.font.action_bars_font_size = C.font.action_bars_font_size * mult

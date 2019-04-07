@@ -39,6 +39,10 @@ local function LoadSkin()
 	SpellBookFrameTutorialButton.Ring:Hide()
 	SpellBookFrameTutorialButton:SetPoint("TOPLEFT", SpellBookFrame, "TOPLEFT", -5, 10)
 
+	SpellLockedTooltip:StripTextures()
+	SpellLockedTooltip:SetTemplate("Transparent")
+	T.SkinCloseButton(SpellLockedTooltip.CloseButton)
+
 	-- Skin SpellButtons
 	local function SpellButtons(self, first)
 		for i = 1, SPELLS_PER_PAGE do
@@ -102,7 +106,7 @@ local function LoadSkin()
 			tab.backdrop:SetAllPoints()
 			tab:StyleButton(true)
 
-			local point, relatedTo, point2, x, y = tab:GetPoint()
+			local point, relatedTo, point2 = tab:GetPoint()
 			tab:SetPoint(point, relatedTo, point2, 16, -1)
 		end
 	end

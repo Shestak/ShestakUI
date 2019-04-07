@@ -383,7 +383,7 @@ for i = 1, numf do
 	f:SetMaxResize(768, 768)
 	f:SetClampedToScreen(true)
 	f:SetClampRectInsets(0, 0, C.font.combat_text_font_size, 0)
-	f:SetInsertMode(C.combattext.direction or "bottom")
+	f:SetInsertMode(C.combattext.direction and 2 or 1)
 	if i == 1 then
 		f:SetJustifyH(ct.justify_1)
 		if C.unitframe.enable == true and _G.oUF_Player then
@@ -448,7 +448,7 @@ CombatText:SetScript("OnEvent", nil)
 CombatText:SetScript("OnUpdate", nil)
 
 -- Steal external messages sent by other addons using CombatText_AddMessage
-hooksecurefunc("CombatText_AddMessage", function(message, scrollFunction, r, g, b, displayType, isStaggered)
+hooksecurefunc("CombatText_AddMessage", function(message, _, r, g, b)
 	local lastEntry = COMBAT_TEXT_TO_ANIMATE[#COMBAT_TEXT_TO_ANIMATE]
 	CombatText_RemoveMessage(lastEntry)
 	xCT3:AddMessage(message, r, g, b)

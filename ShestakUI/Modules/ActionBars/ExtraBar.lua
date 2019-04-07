@@ -75,3 +75,8 @@ button.Count:SetPoint("BOTTOMRIGHT", 1, -2)
 button.Count:SetJustifyH("RIGHT")
 
 button.Cooldown:SetAllPoints(button.Icon)
+
+ZoneAbilityButtonAlert:StripTextures()
+ZoneAbilityButtonAlert:SetTemplate("Transparent")
+T.SkinCloseButton(ZoneAbilityButtonAlert.CloseButton)
+ZoneAbilityButtonAlert.Arrow:Hide()

@@ -155,7 +155,7 @@ local function LoadSkin()
 			frame.styled = true
 		end)
 
-	hooksecurefunc("ChatConfig_CreateColorSwatches", function(frame, swatchTable, swatchTemplate)
+	hooksecurefunc("ChatConfig_CreateColorSwatches", function(frame, swatchTable)
 		if frame.styled then return end
 
 		local nameString = frame:GetName().."Swatch"

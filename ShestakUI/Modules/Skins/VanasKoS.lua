@@ -6,7 +6,7 @@ if C.skins.vanaskos ~= true then return end
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
-frame:SetScript("OnEvent", function(self, event)
+frame:SetScript("OnEvent", function()
 	if not IsAddOnLoaded("VanasKoS") then return end
 
 	table.insert(UISpecialFrames, "VanasKoSFrame")

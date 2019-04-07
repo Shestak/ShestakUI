@@ -53,17 +53,12 @@ L_MISC_ONECLICK_CANCEL = "Shift+右键,不弹出确认框体直接取消选择�
 L_MISC_UI_OUTDATED = "ShestakUI 版本已过期，请至 www.shestak.org 下载最新版"
 L_MISC_HEADER_MARK = "鼠标悬停显示团队图标"
 L_MISC_BINDER_OPEN = "鼠标绑定"
-L_MISC_GROCERY_BUY = "购买"
-L_MISC_GROCERY_DESC = "杂货商自动购买"
 L_MISC_SCROLL = "附魔卷轴"
-L_MISC_COLLAPSE = "The Collapse" -- Need review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "解散团队"
 
 -- Zone name
-L_ZONE_TOLBARAD = "托尔巴拉德"
-L_ZONE_TOLBARADPEN = "托尔巴拉德半岛"
 L_ZONE_ARATHIBASIN = "阿拉希盆地"
 L_ZONE_GILNEAS = "吉尔尼斯之战"
 L_ZONE_ANCIENTDALARAN = "达拉然巨坑"
@@ -175,7 +170,7 @@ L_INFO_DUEL = "拒绝决斗 "
 L_INFO_PET_DUEL = "拒绝宠物对战 "
 L_INFO_DISBAND = "解散团队..."
 L_INFO_SETTINGS_DBM = "键入 /settings dbm, 载入 DBM 设定."
-L_INFO_SETTINGS_DXE = "键入 /settings dxe, 载入 DXE 设定."
+L_INFO_SETTINGS_BIGWIGS = "键入 /settings bw, 载入 BigWigs 设定."
 L_INFO_SETTINGS_MSBT = "键入 /settings msbt, 载入 MSBT 设定."
 L_INFO_SETTINGS_SKADA = "键入 /settings skada, 载入 Skada 设定."
 L_INFO_SETTINGS_ALL = "键入 /settings all, 载入所有UI设定."
@@ -190,12 +185,10 @@ L_POPUP_RESETSTATS = "你确定要重置本次游戏时间和金币收益统计�
 L_POPUP_SWITCH_RAID = "选择团队布局."
 L_POPUP_DISBAND_RAID = "你确定要解散团队?"
 L_POPUP_DISABLEUI = "ShestakUI不支持此分辨率, 是否停用ShestakUI? (若调整其他分辨率,请按取消)"
-L_POPUP_SETTINGS_ALL = "套用所有插件设置? (DBM/DXE/Skada/MSBT)"
+L_POPUP_SETTINGS_ALL = "套用所有插件设置? (DBM/BigWigs/Skada/MSBT)"
 L_POPUP_SETTINGS_DBM = "需要改变DBM锚点及样式元素."
-L_POPUP_SETTINGS_DXE = "需要改变DXE锚点及样式元素."
 L_POPUP_SETTINGS_BW = "需要改变BigWigs锚点及样式元素."
 L_POPUP_ARMORY = "英雄榜"
-L_POPUP_CURRENCY_CAP = "你拥有的最高级货币为"
 
 -- Welcome message
 L_WELCOME_LINE_1 = "欢迎使用ShestakUI "
@@ -276,12 +269,14 @@ L_STATS_EQUIPMENT_CHANGER = "左键/中键开启装备管理员"
 L_STATS_SORTING_BY = "排列方式:"
 L_STATS_TIPS = "提示:"
 L_STATS_TOTAL_MEMORY_USAGE = "总内存:"
+L_STATS_TOTAL_CPU_USAGE = "Total CPU Usage:" -- Need review
 L_STATS_NOT_TO_SELL = "输入/junk设定自动出售例外名单"
 L_STATS_WATCH_CURRENCY = "在货币面板选定的项目将在鼠标提示中显示."
 L_STATS_WATCH_FACTIONS = "从角色面板查看"
 L_STATS_TOOLTIP_TIME_PLAYED = "达到最高等级后,提示将显示角色上线时间纪录"
 L_STATS_TOOLTIP_EXPERIENCE = "未达最高等级时,提示将显示经验值信息"
 L_STATS_SEALS = "本周已领徽记"
+L_STATS_SPEC = "专精" -- Need review
 
 -- Slash commands
 L_SLASHCMD_HELP = {
@@ -315,101 +310,4 @@ L_SLASHCMD_HELP = {
 	"/ainv - 开启/关闭 自动接受公会/好友组队邀请",
 	"/testuf - 头像框架测试模式",
 	"/cfg - 开启shestakui设置界面",
-}
-
--- ExploreMap
-L_EXTRA_EXPLORED = "探索: "
-L_EXTRA_ZONEACHID = {
-	-- http://www.wowhead.com/achievement=*
-	-- e(X)plore achievement id, (Q)uest achievement id
-	["东部王国"]							= {X =   42, A =    0, H =    0},
-	["卡利姆多"]							= {X =   43, A =    0, H =    0},
-	["外域"]							= {X =   44, A =    0, H =    0},
-	["诺森德"]							= {X =   45, A =    0, H =    0},
-	["世界地图"]							= {X =  nil, A =    0, H =    0},
-	["潘达利亚"]							= {X = 6974, A =    0, H =    0},
-	-- Eastern Kingdoms
-	["阿拉希高地"]						= {X =  761, A = 4896, H = 4896},
-	["荒芜之地"]							= {X =  765, A = 4900, H = 4900},
-	["诅咒之地"]							= {X =  766, A = 4909, H = 4909},
-	["燃烧平原"]							= {X =  775, A = 4901, H = 4901},
-	["逆风小径"]							= {X =  777, A =    0, H =    0},
-	["丹莫罗"]							= {X =  627, A =    0, H =    0},
-	["暮色森林"]							= {X =  778, A = 4903, H =    0},
-	["东瘟疫之地"]						= {X =  771, A = 4892, H = 4892},
-	["艾尔文森林"]						= {X =  776, A =    0, H =    0},
-	["永歌森林"]							= {X =  859, A =    0, H =    0},
-	["幽魂之地"]							= {X =  858, A =    0, H = 4908},
-	["希尔斯布莱德丘陵"]					= {X =  772, A =    0, H = 4895},
-	["洛克莫丹"]							= {X =  779, A = 4899, H =    0},
-	["北荆棘谷"]							= {X =  781, A = 4906, H = 4906},
-	["赤脊山"]							= {X =  780, A = 4902, H =    0},
-	["灼热峡谷"]							= {X =  774, A = 4910, H = 4910},
-	["银松森林"]							= {X =  769, A =    0, H = 4894},
-	["悲伤沼泽"]							= {X =  782, A = 4904, H = 4904},
-	["荆棘谷海角"]						= {X = 4995, A = 4905, H = 4905},
-	["辛特兰"]							= {X =  773, A = 4897, H = 4897},
-	["提瑞斯法林地"]						= {X =  768, A =    0, H =    0},
-	["西瘟疫之地"]						= {X =  770, A = 4893, H = 4893},
-	["西部荒野"]							= {X =  802, A = 4903, H =    0},
-	["湿地"]							= {X =  841, A = 4899, H =    0},
-	-- Kalimdor
-	["灰谷"]							= {X =  845, A = 4925, H = 4976},
-	["艾萨拉"]							= {X =  852, A =    0, H = 4927},
-	["秘蓝岛"]							= {X =  860, A =    0, H =    0},
-	["秘血岛"]							= {X =  861, A = 4926, H = 4926},
-	["黑海岸"]							= {X =  844, A = 4928, H = 4928},
-	["凄凉之地"]							= {X =  848, A = 4930, H = 4930},
-	["杜隆塔尔"]							= {X =  728, A =    0, H =    0},
-	["尘泥沼泽"]							= {X =  850, A = 4929, H = 4978},
-	["费伍德森林"]						= {X =  853, A = 4931, H = 4931},
-	["菲拉斯"]							= {X =  849, A = 4932, H = 4979},
-	["月光林地"]							= {X =  855, A =    0, H =    0},
-	["莫高雷"]							= {X =  736, A =    0, H =    0},
-	["北贫瘠之地"]						= {X =  750, A =    0, H = 4933},
-	["希利苏斯"]							= {X =  856, A = 4934, H = 4934},
-	["南贫瘠之地"]						= {X = 4996, A = 4937, H = 4981},
-	["石爪山脉"]							= {X =  847, A = 4936, H = 4980},
-	["塔纳利斯"]							= {X =  851, A = 4935, H = 4935},
-	["泰达希尔"]							= {X =  842, A =    0, H =    0},
-	["千针石林"]							= {X =  846, A = 4938, H = 4938},
-	["安戈洛环形山"]						= {X =  854, A = 4939, H = 4939},
-	["冬泉谷"]							= {X =  857, A = 4940, H = 4940},
-	-- Outland
-	["刀锋山"]							= {X =  865, A = 1193, H = 1193},
-	["地狱火半岛"]						= {X =  862, A = 1189, H = 1271},
-	["纳格兰"]							= {X =  866, A = 1192, H = 1273},
-	["虚空风暴"]							= {X =  843, A = 1194, H = 1194},
-	["影月谷"]							= {X =  864, A = 1195, H = 1195},
-	["泰罗卡森林"]						= {X =  867, A = 1191, H = 1272},
-	["赞加沼泽"]							= {X =  863, A = 1190, H = 1190},
-	-- Northrend
-	["北风苔原"]							= {X = 1264, A =   33, H = 1358},
-	["晶歌森林"]							= {X = 1457, A =    0, H =    0},
-	["龙骨荒野"]							= {X = 1265, A =   35, H = 1356},
-	["灰熊丘陵"]							= {X = 1266, A =   37, H = 1357},
-	["嚎风峡湾"]							= {X = 1263, A =   34, H = 1356},
-	["冰冠冰川"]					 		= {X = 1270, A =   40, H =   40},
-	["索拉查盆地"]						= {X = 1268, A =   39, H =   39},
-	["风暴峭壁"]							= {X = 1269, A =   38, H =   38},
-	["祖达克"]							= {X = 1267, A =   36, H =   36},
-	-- Cataclysm
-	["深岩之洲"]							= {X = 4864, A = 4871, H = 4871},
-	["海加尔"]							= {X = 4863, A = 4870, H = 4870},
-	["暮光高地"]							= {X = 4866, A = 4873, H = 5501},
-	["奥丹姆"]							= {X = 4865, A = 4872, H = 4872},
-	["瓦丝琪尔"]							= {X = 4825, A = 4869, H = 4982},
-	["托尔巴拉德"]						= {X =    0, A = 4874, H = 4874},
-	["托尔巴拉德半岛"]					= {X =    0, A = 4874, H = 4874},
-	-- Pandaria
-	["翡翠林"]							= {X = 6351, A = 6300, H = 6534},
-	["四风谷"]							= {X = 6969, A = 6301, H = 6301},
-	["昆莱山"]							= {X = 6976, A = 6537, H = 6538},
-	["螳螂高原"]							= {X = 6977, A = 6539, H = 6539},
-	["恐惧废土"]							= {X = 6978, A = 6540, H = 6540},
-	["锦绣谷"]							= {X = 6979, A =    0, H =    0},
-	-- Boolean Explores
-	["奎尔丹纳斯岛"]						= {X =  868, A =    0, H =    0},
-	["安其拉：堕落王国"]					= {X =    0, A =    0, H =    0},
-	["冬拥湖"]							= {X =    0, A =    0, H =    0},
 }

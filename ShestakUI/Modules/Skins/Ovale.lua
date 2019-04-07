@@ -24,7 +24,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 			local button = _G["Icon"..i.."n"..j]
 
 			if button and not button.isSkinned then
-				button.cd.noOCC = true
+				button.cd.noCooldownCount = true
 				button:StyleButton()
 				button:SetNormalTexture("")
 				button:CreateBackdrop("Transparent")

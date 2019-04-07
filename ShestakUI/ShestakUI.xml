@@ -122,7 +122,6 @@
 	<Script file="Modules\Automation\AutoRelease.lua"/>
 	<Script file="Modules\Automation\BuffOnScroll.lua"/>
 	<Script file="Modules\Automation\CancelBadBuffs.lua"/>
-	<Script file="Modules\Automation\CurrencyCap.lua"/>
 	<Script file="Modules\Automation\DeclineDuel.lua"/>
 	<Script file="Modules\Automation\LoggingCombat.lua"/>
 	<Script file="Modules\Automation\Screenshots.lua"/>
@@ -181,9 +180,7 @@
 
 	<Script file="Modules\Maps\BattlefieldMap.lua"/>
 	<Script file="Modules\Maps\ButtonCollect.lua"/>
-	<Script file="Modules\Maps\ExploreMap.lua"/>
 	<Script file="Modules\Maps\FogOfWar.lua"/>
-	<Script file="Modules\Maps\MapBossCount.lua"/>
 	<Script file="Modules\Maps\MiniMap.lua"/>
 	<Script file="Modules\Maps\MiniMapButtons.lua"/>
 	<Script file="Modules\Maps\ToggleMenu.lua"/>
@@ -202,15 +199,10 @@
 	<Script file="Modules\Skins\BigWigs.lua"/>
 	<Script file="Modules\Skins\BloodShieldTracker.lua"/>
 	<Script file="Modules\Skins\Capping.lua"/>
-	<Script file="Modules\Skins\CLCProt.lua"/>
-	<Script file="Modules\Skins\CLCRet.lua"/>
 	<Script file="Modules\Skins\Clique.lua"/>
-	<Script file="Modules\Skins\CombustionHelper.lua"/>
 	<Script file="Modules\Skins\CoolLine.lua"/>
 	<Script file="Modules\Skins\DBM.lua"/>
 	<Script file="Modules\Skins\Dominos.lua"/>
-	<Script file="Modules\Skins\DXE.lua"/>
-	<Script file="Modules\Skins\FaceShooter.lua"/>
 	<Script file="Modules\Skins\FlyoutButtonCustom.lua"/>
 	<Script file="Modules\Skins\MageNuggets.lua"/>
 	<Script file="Modules\Skins\MyRolePlay.lua"/>
@@ -224,7 +216,6 @@
 	<Script file="Modules\Skins\VanasKoS.lua"/>
 	<Script file="Modules\Skins\WeakAuras.lua"/>
 	<Script file="Modules\Skins\oPie.lua"/>
-	<Script file="Modules\Skins\Arh.lua"/>
 	<Script file="Modules\Skins\Rematch.lua"/>
 	<Script file="Modules\Skins\Postal.lua"/>
 	<Script file="Modules\Skins\lsToasts.lua"/>
