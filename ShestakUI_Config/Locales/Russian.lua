@@ -31,6 +31,8 @@ L.font_subheader_stats = "Шрифт статистики"
 L.font_subheader_combat = "Шрифт текста боя"
 L.font_subheader_chat = "Шрифт чата"
 L.font_subheader_chat_tabs = "Шрифт вкладок чата"
+L.font_subheader_action = "Шрифт панелей команд"
+L.font_subheader_threat = "Шрифт списка угрозы"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Прочие настройки, которые добавляют интересные возможности."

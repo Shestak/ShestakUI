@@ -28,6 +28,8 @@ L.font_subheader_stats = "Stats font"
 L.font_subheader_combat = "Combat text font"
 L.font_subheader_chat = "Chat font"
 L.font_subheader_chat_tabs = "Chat tabs font"
+L.font_subheader_action = "Action bars font"
+L.font_subheader_threat = "Threat meter font"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features."
