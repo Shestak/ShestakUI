@@ -30,6 +30,10 @@ L.font_subheader_chat = "Chat font"
 L.font_subheader_chat_tabs = "Chat tabs font"
 L.font_subheader_action = "Action bars font"
 L.font_subheader_threat = "Threat meter font"
+L.font_subheader_raidcd = "Raid cooldowns font"
+L.font_subheader_cooldown = "Cooldowns timer font"
+L.font_subheader_loot = "Loot font"
+L.font_subheader_nameplates = "Nameplates font"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features."
