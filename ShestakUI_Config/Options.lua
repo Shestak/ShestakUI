@@ -449,6 +449,8 @@ do
 	local click_cast_filter = ns.CreateCheckBox(parent, "click_cast_filter", L_GUI_MISC_CLICK_CAST_FILTER)
 	click_cast_filter:SetPoint("TOPLEFT", click_cast, "BOTTOMLEFT", 20, 0)
 
+	click_cast.children = {click_cast_filter}
+
 	local move_blizzard = ns.CreateCheckBox(parent, "move_blizzard", L_GUI_MISC_MOVE_BLIZZARD)
 	move_blizzard:SetPoint("TOPLEFT", click_cast_filter, "BOTTOMLEFT", -20, 0)
 
@@ -505,6 +507,8 @@ do
 	local spells_from_all = ns.CreateCheckBox(parent, "spells_from_all", L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL)
 	spells_from_all:SetPoint("TOPLEFT", spells, "BOTTOMLEFT", 20, 0)
 
+	spells.children = {spells_from_all}
+
 	local toys = ns.CreateCheckBox(parent, "toys", L_GUI_ANNOUNCEMENTS_TOY_TRAIN)
 	toys:SetPoint("TOPLEFT", spells_from_all, "BOTTOMLEFT", -20, 0)
 
@@ -522,6 +526,8 @@ do
 
 	local flask_food_raid = ns.CreateCheckBox(parent, "flask_food_raid", L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID)
 	flask_food_raid:SetPoint("TOPLEFT", flask_food_auto, "BOTTOMLEFT", 0, 0)
+
+	flask_food.children = {flask_food_auto, flask_food_raid}
 
 	local feasts = ns.CreateCheckBox(parent, "feasts", L_GUI_ANNOUNCEMENTS_FEASTS)
 	feasts:SetPoint("TOPLEFT", flask_food_raid, "BOTTOMLEFT", -20, 0)
@@ -563,6 +569,8 @@ do
 
 	local auto_collapse_reload = ns.CreateCheckBox(parent, "auto_collapse_reload", L_GUI_AUTOMATION_AUTO_COLLAPSE_RELOAD)
 	auto_collapse_reload:SetPoint("TOPLEFT", auto_collapse, "BOTTOMLEFT", 20, 0)
+
+	auto_collapse.children = {auto_collapse_reload}
 
 	local skip_cinematic = ns.CreateCheckBox(parent, "skip_cinematic", L_GUI_AUTOMATION_SKIP_CINEMATIC)
 	skip_cinematic:SetPoint("TOPLEFT", auto_collapse_reload, "BOTTOMLEFT", -20, 0)
@@ -693,6 +701,8 @@ do
 
 	local damage_style = ns.CreateCheckBox(parent, "damage_style")
 	damage_style:SetPoint("TOPLEFT", blizz_head_numbers, "BOTTOMLEFT", 20, 0)
+
+	blizz_head_numbers.children = {damage_style}
 
 	local damage = ns.CreateCheckBox(parent, "damage", L_GUI_COMBATTEXT_DAMAGE)
 	damage:SetPoint("TOPLEFT", damage_style, "BOTTOMLEFT", -20, 0)
@@ -1004,6 +1014,8 @@ do
 	local chat_bar_mouseover = ns.CreateCheckBox(parent, "chat_bar_mouseover", L_GUI_CHAT_BAR_MOUSEOVER)
 	chat_bar_mouseover:SetPoint("TOPLEFT", chat_bar, "BOTTOMLEFT", 20, 0)
 
+	chat_bar.children = {chat_bar_mouseover}
+
 	local time_color = ns.CreateColourPicker(parent, "time_color", true, L_GUI_CHAT_TIMESTAMP)
 	time_color:SetPoint("TOPLEFT", chat_bar_mouseover, "BOTTOMLEFT", -16, -10)
 
@@ -1231,6 +1243,8 @@ do
 	local petbar_mouseover = ns.CreateCheckBox(parent, "petbar_mouseover", L_GUI_ACTIONBAR_PETBAR_MOUSEOVER)
 	petbar_mouseover:SetPoint("TOPLEFT", petbar_horizontal, "BOTTOMLEFT", 20, 0)
 
+	petbar_horizontal.children = {petbar_mouseover}
+
 	local stancebar_hide = ns.CreateCheckBox(parent, "stancebar_hide", L_GUI_ACTIONBAR_STANCEBAR_HIDE)
 	stancebar_hide:SetPoint("TOPLEFT", petbar_mouseover, "BOTTOMLEFT", -20, 0)
 
@@ -1240,11 +1254,15 @@ do
 	local stancebar_mouseover = ns.CreateCheckBox(parent, "stancebar_mouseover", L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER)
 	stancebar_mouseover:SetPoint("TOPLEFT", stancebar_horizontal, "BOTTOMLEFT", 20, 0)
 
+	stancebar_horizontal.children = {stancebar_mouseover}
+
 	local micromenu = ns.CreateCheckBox(parent, "micromenu", L_GUI_ACTIONBAR_MICROMENU)
 	micromenu:SetPoint("TOPLEFT", stancebar_mouseover, "BOTTOMLEFT", -20, 0)
 
 	local micromenu_mouseover = ns.CreateCheckBox(parent, "micromenu_mouseover", L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER)
 	micromenu_mouseover:SetPoint("TOPLEFT", micromenu, "BOTTOMLEFT", 20, 0)
+
+	micromenu.children = {micromenu_mouseover}
 end
 
 -- Auras/Buffs/Debuffs
@@ -1593,6 +1611,8 @@ do
 
 	local plugins_aura_watch_timer = ns.CreateCheckBox(parent, "plugins_aura_watch_timer", L_GUI_UF_PLUGINS_AURA_WATCH_TIMER)
 	plugins_aura_watch_timer:SetPoint("TOPLEFT", plugins_aura_watch, "BOTTOMLEFT", 20, 0)
+
+	plugins_aura_watch.children = {plugins_aura_watch_timer}
 
 	local plugins_pvp_debuffs = ns.CreateCheckBox(parent, "plugins_pvp_debuffs", L_GUI_UF_PLUGINS_PVP_DEBUFFS)
 	plugins_pvp_debuffs:SetPoint("TOPLEFT", plugins_aura_watch_timer, "BOTTOMLEFT", -20, 0)
