@@ -1583,6 +1583,24 @@ C["filger_spells"] = {
 			{spellID = 86659, filter = "CD"},
 			-- Blessing of Protection
 			{spellID = 1022, filter = "CD"},
+			-- Light of the Protector
+			{spellID = 184092, filter = "CD"},
+			-- Divine Shield
+			{spellID = 642, filter = "CD"},
+			-- Hand of Reckoning
+			{spellID = 62124, filter = "CD"},
+			-- Blade of Justice
+			{spellID = 184575, filter = "CD"},
+			-- Crusader Strike
+			{spellID = 35395, filter = "CD"},
+			-- Wake of Ashes
+			{spellID = 255937, filter = "CD"},
+			-- Hand of Hindrance
+			{spellID = 183218, filter = "CD"},
+			-- Shield of Vengeance
+			{spellID = 184662, filter = "CD"},
+			-- Holy Shock
+			{spellID = 20473, filter = "CD"}
 
 			-- PvP
 			-- Honorable Medallion
@@ -1836,6 +1854,20 @@ C["filger_spells"] = {
 			{spellID = 208065, filter = "CD"},
 			-- Light's Wrath
 			{spellID = 207946, filter = "CD"},
+			-- Vampiric Embrace
+			{spellID = 15286, filter = "CD"},
+			-- Dark Ascension
+			{spellID = 280711, filter = "CD"},
+			-- Power Word: Solace
+			{spellID = 129250, filter = "CD"},
+			-- Power Word: Radiance
+			{spellID = 194509, filter = "CD"},
+			-- Schism
+			{spellID = 214621, filter = "CD"},
+			-- Rapture
+			{spellID = 47536, filter = "CD"},
+			-- Shadow Covenant
+			{spellID = 204065, filter = "CD"},
 
 			-- PvP
 			-- Honorable Medallion
@@ -2503,7 +2535,6 @@ C["filger_spells"] = {
 			-- Shadowflame
 			{spellID = 205181, filter = "CD"},
 			-- Summon Darkglare
-			{spellID = 205180, filter = "CD"},
 			{spellID = 205180, filter = "CD"},
 			-- Deathbolt
 			{spellID = 264106, filter = "CD"},
