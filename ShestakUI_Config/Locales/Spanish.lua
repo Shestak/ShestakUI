@@ -37,6 +37,11 @@ L.font_subheader_raidcd = "Raid cooldowns font" -- Need review
 L.font_subheader_cooldown = "Cooldowns timer font" -- Need review
 L.font_subheader_loot = "Loot font" -- Need review
 L.font_subheader_nameplates = "Nameplates font" -- Need review
+L.font_subheader_unit = "Unit frames font" -- Need review
+L.font_subheader_aura = "Auras font" -- Need review
+L.font_subheader_filger = "Filger font" -- Need review
+L.font_subheader_style = "Stylization font" -- Need review
+L.font_subheader_bag = "Bags font" -- Need review
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review

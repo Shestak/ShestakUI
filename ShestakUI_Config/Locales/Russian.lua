@@ -37,6 +37,11 @@ L.font_subheader_raidcd = "Шрифт рейдовых перезарядок"
 L.font_subheader_cooldown = "Шрифт перезарядок на панелях команд"
 L.font_subheader_loot = "Шрифт добычи"
 L.font_subheader_nameplates = "Шрифт индикаторов здоровья"
+L.font_subheader_unit = "Шрифт рамок портретов"
+L.font_subheader_aura = "Шрифт аур"
+L.font_subheader_filger = "Шрифт Filger"
+L.font_subheader_style = "Шрифт стилизаций"
+L.font_subheader_bag = "Шрифт сумок"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Прочие настройки, которые добавляют интересные возможности."

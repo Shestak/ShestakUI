@@ -721,7 +721,6 @@ ns.addCategory = function(name, text, subText, second, third)
 			end
 		end)
 
-		panel_2:EnableMouseWheel(true)
 		panel_2:SetScript("OnMouseWheel", function(self, delta)
 			if delta > 0 then
 				general:Click()
@@ -807,6 +806,26 @@ ns.addCategory = function(name, text, subText, second, third)
 			panel_3.subText:SetJustifyV("TOP")
 			panel_3.subText:SetSize(570 * mult, 30 * mult)
 			panel_3.subText:SetText(subText)
+
+			panel:SetScript("OnMouseWheel", function(self, delta)
+				if delta < 0 then
+					optional:Click()
+				end
+			end)
+
+			panel_2:SetScript("OnMouseWheel", function(self, delta)
+				if delta > 0 then
+					general:Click()
+				elseif delta < 0 then
+					more:Click()
+				end
+			end)
+
+			panel_3:SetScript("OnMouseWheel", function(self, delta)
+				if delta > 0 then
+					optional:Click()
+				end
+			end)
 		end
 	end
 

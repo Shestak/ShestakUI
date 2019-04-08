@@ -97,7 +97,7 @@ tinsert(ns.buttons, ResetButton)
 
 -- Category
 ns.addCategory("general", GENERAL_LABEL, L_GUI_GENERAL_SUBTEXT, true)
-ns.addCategory("font", L.font, L.font_subtext, true)
+ns.addCategory("font", L.font, L.font_subtext, true, true)
 ns.addCategory("skins", L_GUI_SKINS, L_GUI_SKINS_SUBTEXT)
 ns.addCategory("unitframe", UNITFRAME_LABEL, L_GUI_UF_SUBTEXT, true)
 ns.addCategory("unitframe_class_bar", L_GUI_UF_PLUGINS_CLASS_BAR, L_GUI_UF_PLUGINS_CLASS_BAR_SUBTEXT)
@@ -323,6 +323,84 @@ do
 
 	local nameplates_font_shadow = ns.CreateCheckBox(parent, "nameplates_font_shadow", L.font_stats_font_shadow)
 	nameplates_font_shadow:SetPoint("LEFT", nameplates_font_size, "RIGHT", 160, 0)
+
+	-- Panel 3
+	local parent = ShestakUIOptionsPanel.font3
+
+	local subheader = ns.addSubCategory(parent, L.font_subheader_unit)
+	subheader:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local unit_frames_font = ns.CreateDropDown(parent, "unit_frames_font", true, L.font_stats_font, FontTable)
+	unit_frames_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
+
+	local unit_frames_font_style = ns.CreateDropDown(parent, "unit_frames_font_style", true, L.font_stats_font_style, FlagsTable)
+	unit_frames_font_style:SetPoint("LEFT", unit_frames_font, "RIGHT", 150, 0)
+
+	local unit_frames_font_size = ns.CreateNumberSlider(parent, "unit_frames_font_size", nil, nil, 0, 32, 1, true, FONT_SIZE)
+	unit_frames_font_size:SetPoint("TOPLEFT", unit_frames_font, "BOTTOMLEFT", 16, -16)
+
+	local unit_frames_font_shadow = ns.CreateCheckBox(parent, "unit_frames_font_shadow", L.font_stats_font_shadow)
+	unit_frames_font_shadow:SetPoint("LEFT", unit_frames_font_size, "RIGHT", 160, 0)
+
+	local subheader = ns.addSubCategory(parent, L.font_subheader_aura)
+	subheader:SetPoint("TOPLEFT", unit_frames_font_size, "BOTTOMLEFT", 0, -10)
+
+	local auras_font = ns.CreateDropDown(parent, "auras_font", true, L.font_stats_font, FontTable)
+	auras_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
+
+	local auras_font_style = ns.CreateDropDown(parent, "auras_font_style", true, L.font_stats_font_style, FlagsTable)
+	auras_font_style:SetPoint("LEFT", auras_font, "RIGHT", 150, 0)
+
+	local auras_font_size = ns.CreateNumberSlider(parent, "auras_font_size", nil, nil, 0, 32, 1, true, FONT_SIZE)
+	auras_font_size:SetPoint("TOPLEFT", auras_font, "BOTTOMLEFT", 16, -16)
+
+	local auras_font_shadow = ns.CreateCheckBox(parent, "auras_font_shadow", L.font_stats_font_shadow)
+	auras_font_shadow:SetPoint("LEFT", auras_font_size, "RIGHT", 160, 0)
+
+	local subheader = ns.addSubCategory(parent, L.font_subheader_filger)
+	subheader:SetPoint("TOPLEFT", auras_font_size, "BOTTOMLEFT", 0, -10)
+
+	local filger_font = ns.CreateDropDown(parent, "filger_font", true, L.font_stats_font, FontTable)
+	filger_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
+
+	local filger_font_style = ns.CreateDropDown(parent, "filger_font_style", true, L.font_stats_font_style, FlagsTable)
+	filger_font_style:SetPoint("LEFT", filger_font, "RIGHT", 150, 0)
+
+	local filger_font_size = ns.CreateNumberSlider(parent, "filger_font_size", nil, nil, 0, 32, 1, true, FONT_SIZE)
+	filger_font_size:SetPoint("TOPLEFT", filger_font, "BOTTOMLEFT", 16, -16)
+
+	local filger_font_shadow = ns.CreateCheckBox(parent, "filger_font_shadow", L.font_stats_font_shadow)
+	filger_font_shadow:SetPoint("LEFT", filger_font_size, "RIGHT", 160, 0)
+
+	local subheader = ns.addSubCategory(parent, L.font_subheader_style)
+	subheader:SetPoint("TOPLEFT", filger_font_size, "BOTTOMLEFT", 0, -10)
+
+	local stylization_font = ns.CreateDropDown(parent, "stylization_font", true, L.font_stats_font, FontTable)
+	stylization_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
+
+	local stylization_font_style = ns.CreateDropDown(parent, "stylization_font_style", true, L.font_stats_font_style, FlagsTable)
+	stylization_font_style:SetPoint("LEFT", stylization_font, "RIGHT", 150, 0)
+
+	local stylization_font_size = ns.CreateNumberSlider(parent, "stylization_font_size", nil, nil, 0, 32, 1, true, FONT_SIZE)
+	stylization_font_size:SetPoint("TOPLEFT", stylization_font, "BOTTOMLEFT", 16, -16)
+
+	local stylization_font_shadow = ns.CreateCheckBox(parent, "stylization_font_shadow", L.font_stats_font_shadow)
+	stylization_font_shadow:SetPoint("LEFT", stylization_font_size, "RIGHT", 160, 0)
+
+	local subheader = ns.addSubCategory(parent, L.font_subheader_bag)
+	subheader:SetPoint("TOPLEFT", stylization_font_size, "BOTTOMLEFT", 0, -10)
+
+	local bags_font = ns.CreateDropDown(parent, "bags_font", true, L.font_stats_font, FontTable)
+	bags_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
+
+	local bags_font_style = ns.CreateDropDown(parent, "bags_font_style", true, L.font_stats_font_style, FlagsTable)
+	bags_font_style:SetPoint("LEFT", bags_font, "RIGHT", 150, 0)
+
+	local bags_font_size = ns.CreateNumberSlider(parent, "bags_font_size", nil, nil, 0, 32, 1, true, FONT_SIZE)
+	bags_font_size:SetPoint("TOPLEFT", bags_font, "BOTTOMLEFT", 16, -16)
+
+	local bags_font_shadow = ns.CreateCheckBox(parent, "bags_font_shadow", L.font_stats_font_shadow)
+	bags_font_shadow:SetPoint("LEFT", bags_font_size, "RIGHT", 160, 0)
 end
 
 -- Miscellaneous
