@@ -261,7 +261,7 @@ L_STATS_RC_EXPERIENCE = "Rechts-Klick, zum Wechseln zwischen Erfahrung, gespielt
 L_STATS_RC_AUTO_REPAIRING1 = "Rechts-Klick, zum Ein- oder Ausschalten des automatischen Reparieren."
 L_STATS_RC_AUTO_REPAIRING2 = "Middle-Click toggles Guild AutoRepairing." -- Need review
 L_STATS_RC_AUTO_SELLING = "Rechts-Klick, zum Ein- oder Ausschalten des automatischen Verkaufen."
-L_STATS_RC_TALENT = "Right-Click toggles your loot specialization." -- Need review
+L_STATS_RC_TALENT = "Rechts-Klick schaltet die Beutespezialisierung um."
 L_STATS_SERVER_GOLD = "Server Gold"
 L_STATS_SESSION_GAIN = "Sitzung - Gewinn/Verlust"
 L_STATS_SESSION_XP = "Sitzung - XP Rate"
@@ -270,14 +270,14 @@ L_STATS_EQUIPMENT_CHANGER = "Umschalt-Klick oder Alt-Klick für den Ausrüstungs
 L_STATS_SORTING_BY = "Sortieren nach"
 L_STATS_TIPS = "Tipps:"
 L_STATS_TOTAL_MEMORY_USAGE = "Gesamte Speicherausnutzung:"
-L_STATS_TOTAL_CPU_USAGE = "Total CPU Usage:" -- Need review
+L_STATS_TOTAL_CPU_USAGE = "Gesamte CPU-Auslastung:"
 L_STATS_NOT_TO_SELL = "Verwende /junk zum Konfigurieren der Gegenstände, die nicht verkauft werden sollen."
 L_STATS_WATCH_CURRENCY = "Bereits gesehene Gegenstände aus dem Abzeichen-Fenster werden im Tooltip angezeigt."
 L_STATS_WATCH_FACTIONS = "Überwache Fraktionen aus dem Ruffenster."
 L_STATS_TOOLTIP_TIME_PLAYED = "Wenn das max. Level erreicht ist, wird das Tooltip die gespielte Zeit für den Account anzeigen."
 L_STATS_TOOLTIP_EXPERIENCE = "Wenn unter dem max. Level, wird ein Tooltip mit weiteren Details angezeigt."
 L_STATS_SEALS = "Angebot der Woche"
-L_STATS_SPEC = "Spec" -- Need review
+L_STATS_SPEC = "Spec"
 
 -- Slash commands
 L_SLASHCMD_HELP = {
