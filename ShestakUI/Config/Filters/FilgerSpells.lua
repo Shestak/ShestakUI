@@ -1854,6 +1854,20 @@ C["filger_spells"] = {
 			{spellID = 208065, filter = "CD"},
 			-- Light's Wrath
 			{spellID = 207946, filter = "CD"},
+			-- Vampiric Embrace
+			{spellID = 15286, filter = "CD"},
+			-- Dark Ascension
+			{spellID = 280711, filter = "CD"},
+			-- Power Word: Solace
+			{spellID = 129250, filter = "CD"},
+			-- Power Word: Radiance
+			{spellID = 194509, filter = "CD"},
+			-- Schism
+			{spellID = 214621, filter = "CD"},
+			-- Rapture
+			{spellID = 47536, filter = "CD"},
+			-- Shadow Covenant
+			{spellID = 204065, filter = "CD"},
 
 			-- PvP
 			-- Honorable Medallion
