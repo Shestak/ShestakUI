@@ -1600,7 +1600,7 @@ C["filger_spells"] = {
 			-- Shield of Vengeance
 			{spellID = 184662, filter = "CD"},
 			-- Holy Shock
-			{spellID = 20473, filter = "CD"}
+			{spellID = 20473, filter = "CD"},
 
 			-- PvP
 			-- Honorable Medallion
