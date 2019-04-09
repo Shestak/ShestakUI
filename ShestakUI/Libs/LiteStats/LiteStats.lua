@@ -687,7 +687,7 @@ if gold.enabled then
 			end
 		elseif action == "clear" then
 			SavedStats.JunkIgnore = {}
-			print("|cff66C6FF"..L_STATS_CLEARED_JUNK.."|r")
+			print("|cff66C6FF"..L_STATS_JUNK_CLEARED.."|r")
 		elseif action == "add" or strfind(action, "^del") or strfind(action, "^rem") then
 			local _, mouselink = GameTooltip:GetItem()
 			for id in s:gmatch("|Hitem:(%d-):") do
@@ -696,13 +696,13 @@ if gold.enabled then
 				if action == "add" then
 					if not tContains(SavedStats.JunkIgnore,id) then
 						tinsert(SavedStats.JunkIgnore, id)
-						print(format("|cff66C6FF%s:|r %s", L_STATS_ADDED_JUNK, link))
+						print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_ADDED, link))
 					else
-						print(format("%s |cff66C6FF%s|r", link, L_STATS_ALREADY_ADDITIONS))
+						print(format("%s |cff66C6FF%s|r", link, L_STATS_JUNK_ALREADY_ADDITIONS))
 					end
 				elseif strfind(action, "^del") or strfind(action, "^rem") then
 					tDeleteItem(SavedStats.JunkIgnore, id)
-					print(format("|cff66C6FF%s:|r %s", L_STATS_REMOVED_JUNK, link))
+					print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_REMOVED, link))
 				end
 			end
 			if mouselink then
@@ -710,21 +710,21 @@ if gold.enabled then
 					if action == "add" then
 						if not tContains(SavedStats.JunkIgnore,id) then
 							tinsert(SavedStats.JunkIgnore, id)
-							print(format("|cff66C6FF%s:|r %s", L_STATS_ADDED_JUNK, mouselink))
+							print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_ADDED, mouselink))
 						else
-							print(format("%s |cff66C6FF%s|r", mouselink, L_STATS_ALREADY_ADDITIONS))
+							print(format("%s |cff66C6FF%s|r", mouselink, L_STATS_JUNK_ALREADY_ADDITIONS))
 						end
 					elseif strfind(action, "^del") or strfind(action, "^rem") then
 						tDeleteItem(SavedStats.JunkIgnore, id)
-						print(format("|cff66C6FF%s:|r %s", L_STATS_REMOVED_JUNK, mouselink))
+						print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_REMOVED, mouselink))
 					end
 				end
 			end
 		else
 			print("Lite|cff66C6FFStats|r: "..L_STATS_JUNK_LIST)
-			print(format("/junk <add||rem(ove)> [%s] - %s", L_STATS_ITEMLINK, L_STATS_REMOVE_EXCEPTION))
-			print("/junk list - "..L_STATS_IGNORED_ITEMS)
-			print("/junk clear - "..L_STATS_CLEAR_ADDITIONS)
+			print(format("/junk <add||rem(ove)> [%s] - %s", L_STATS_JUNK_ITEMLINK, L_STATS_JUNK_ADD_ITEM))
+			print("/junk list - "..L_STATS_JUNK_ITEMS_LIST)
+			print("/junk clear - "..L_STATS_JUNK_CLEAR_ADDITIONS)
 		end
 	end
 end
