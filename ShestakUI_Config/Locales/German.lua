@@ -20,6 +20,7 @@ L_GUI_GENERAL_UISCALE = "UI Skalierung (falls automatische Skalierung deaktivier
 L.media_border_color = "Farbe für Rahmen"
 L.media_backdrop_color = "Farbe für Rahmen-Hintergrund"
 L.media_backdrop_alpha = "Alpha für transparenten Hintergrund"
+L.media_subheader_pixel = "Change Pixel font" -- Need review
 
 -- Font options
 L.font = "Schriftart"

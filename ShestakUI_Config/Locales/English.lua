@@ -17,6 +17,7 @@ L_GUI_GENERAL_UISCALE = "UI Scale (if auto-scale is disabled)"
 L.media_border_color = "Color for borders"
 L.media_backdrop_color = "Color for borders backdrop"
 L.media_backdrop_alpha = "Alpha for transparent backdrop"
+L.media_subheader_pixel = "Change Pixel font"
 
 -- Font options
 L.font = "Fonts"

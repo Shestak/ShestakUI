@@ -20,6 +20,7 @@ L_GUI_GENERAL_UISCALE = "Escalado de la UI (si auto escalado está desactivado)"
 L.media_border_color = "Color for borders" -- Need review
 L.media_backdrop_color = "Color for borders backdrop" -- Need review
 L.media_backdrop_alpha = "Alpha for transparent backdrop" -- Need review
+L.media_subheader_pixel = "Change Pixel font" -- Need review
 
 -- Font options
 L.font = "Fonts" -- Need review

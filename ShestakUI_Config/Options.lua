@@ -95,6 +95,19 @@ ResetButton:SetScript("OnClick", function()
 end)
 tinsert(ns.buttons, ResetButton)
 
+-- Font
+FontTable = {
+	"Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Normal.ttf",
+	"Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Pixel.ttf",
+	STANDARD_TEXT_FONT
+}
+
+FlagsTable = {
+	"OUTLINE",
+	"OUTLINEMONOCHROME",
+	""
+}
+
 -- Category
 ns.addCategory("general", GENERAL_LABEL, L_GUI_GENERAL_SUBTEXT, true)
 ns.addCategory("font", L.font, L.font_subtext, true, true)
@@ -156,20 +169,19 @@ do
 
 	local backdrop_alpha = ns.CreateNumberSlider(parent, "backdrop_alpha", nil, nil, 0, 1, 0.05, true)
 	backdrop_alpha:SetPoint("TOPLEFT", backdrop_color, "BOTTOMLEFT", 0, -28)
+
+	local subheader = ns.addSubCategory(parent, L.media_subheader_pixel)
+	subheader:SetPoint("TOPLEFT", backdrop_alpha, "BOTTOMLEFT", 0, -10)
+
+	local pixel_font = ns.CreateDropDown(parent, "pixel_font", true, L.font_stats_font, FontTable)
+	pixel_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
+
+	local pixel_font_style = ns.CreateDropDown(parent, "pixel_font_style", true, L.font_stats_font_style, FlagsTable)
+	pixel_font_style:SetPoint("LEFT", pixel_font, "RIGHT", 150, 0)
+
+	local pixel_font_size = ns.CreateNumberSlider(parent, "pixel_font_size", nil, nil, 0, 32, 1, true, FONT_SIZE)
+	pixel_font_size:SetPoint("TOPLEFT", pixel_font, "BOTTOMLEFT", 16, -16)
 end
-
--- Font
-FontTable = {
-	"Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Normal.ttf",
-	"Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Pixel.ttf",
-	STANDARD_TEXT_FONT
-}
-
-FlagsTable = {
-	"OUTLINE",
-	"OUTLINEMONOCHROME",
-	""
-}
 
 do
 	local parent = ShestakUIOptionsPanel.font

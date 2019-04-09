@@ -20,6 +20,7 @@ L_GUI_GENERAL_UISCALE = "Масштаб интерфейса"
 L.media_border_color = "Цвет для окантовки"
 L.media_backdrop_color = "Цвет для фона"
 L.media_backdrop_alpha = "Прозрачность фона"
+L.media_subheader_pixel = "Изменение пиксельного шрифта"
 
 -- Font options
 L.font = "Шрифты"
