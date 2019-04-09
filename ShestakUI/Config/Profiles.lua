@@ -110,7 +110,7 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["loot"].auto_greed = false
 	C["nameplate"].show_castbar_name = true
 	C["nameplate"].class_icons = true
-	C["nameplate"].track_auras = true
+	C["nameplate"].track_debuffs = true
 	C["nameplate"].healer_icon = true
 	C["actionbar"].hotkey = false
 	C["actionbar"].bottombars = 1

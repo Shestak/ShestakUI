@@ -544,7 +544,7 @@ local function style(self, unit)
 	-- Raid Icon
 	self.RaidTargetIndicator = self:CreateTexture(nil, "OVERLAY", nil, 7)
 	self.RaidTargetIndicator:SetSize((C.nameplate.height * 2 * T.noscalemult) + 8, (C.nameplate.height * 2 * T.noscalemult) + 8)
-	self.RaidTargetIndicator:SetPoint("BOTTOM", self.Health, "TOP", 0, C.nameplate.track_auras == true and 38 or 16)
+	self.RaidTargetIndicator:SetPoint("BOTTOM", self.Health, "TOP", 0, C.nameplate.track_debuffs == true and 38 or 16)
 
 	-- Create Class Icon
 	if C.nameplate.class_icons == true then
@@ -571,17 +571,17 @@ local function style(self, unit)
 		self.HPHeal = self.Health:CreateFontString(nil, "OVERLAY")
 		self.HPHeal:SetFont(C.font.nameplates_font, 32, C.font.nameplates_font_style)
 		self.HPHeal:SetText("|cFFD53333+|r")
-		self.HPHeal:SetPoint("BOTTOM", self.Name, "TOP", 0, C.nameplate.track_auras == true and 13 or 0)
+		self.HPHeal:SetPoint("BOTTOM", self.Name, "TOP", 0, C.nameplate.track_debuffs == true and 13 or 0)
 	end
 
 	-- Aura tracking
-	if C.nameplate.track_auras == true or C.nameplate.track_buffs == true then
+	if C.nameplate.track_debuffs == true or C.nameplate.track_buffs == true then
 		self.Auras = CreateFrame("Frame", nil, self)
 		self.Auras:SetPoint("BOTTOMRIGHT", self.Health, "TOPRIGHT", 0, C.font.nameplates_font_size + 7)
 		self.Auras.initialAnchor = "BOTTOMRIGHT"
 		self.Auras["growth-y"] = "UP"
 		self.Auras["growth-x"] = "LEFT"
-		self.Auras.numDebuffs = C.nameplate.track_auras and 6 or 0
+		self.Auras.numDebuffs = C.nameplate.track_debuffs and 6 or 0
 		self.Auras.numBuffs = C.nameplate.track_buffs and 4 or 0
 		self.Auras:SetSize(20 + C.nameplate.width, C.nameplate.auras_size)
 		self.Auras.spacing = 5 * T.noscalemult
