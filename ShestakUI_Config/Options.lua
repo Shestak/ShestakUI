@@ -1657,11 +1657,8 @@ end
 do
 	local parent = ShestakUIOptionsPanel.stats
 
-	local battleground = ns.CreateCheckBox(parent, "battleground", L_GUI_STATS_BG)
-	battleground:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
 	local clock = ns.CreateCheckBox(parent, "clock", L_GUI_STATS_CLOCK)
-	clock:SetPoint("TOPLEFT", battleground, "BOTTOMLEFT", 0, 0)
+	clock:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
 	local latency = ns.CreateCheckBox(parent, "latency", L_GUI_STATS_LATENCY)
 	latency:SetPoint("TOPLEFT", clock, "BOTTOMLEFT", 0, 0)
@@ -1693,9 +1690,12 @@ do
 	local location = ns.CreateCheckBox(parent, "location", L_GUI_STATS_LOCATION)
 	location:SetPoint("TOPLEFT", coords, "BOTTOMLEFT", 0, 0)
 
+	local battleground = ns.CreateCheckBox(parent, "battleground", L_GUI_STATS_BG)
+	battleground:SetPoint("TOPLEFT", location, "BOTTOMLEFT", 0, 0)
+
 	-- Currency
 	local currency = ns.addSubCategory(parent, L_GUI_STATS_SUBHEADER_CURRENCY)
-	currency:SetPoint("TOPLEFT", location, "BOTTOMLEFT", 0, -16)
+	currency:SetPoint("TOPLEFT", battleground, "BOTTOMLEFT", 0, -16)
 
 	local currency_archaeology = ns.CreateCheckBox(parent, "currency_archaeology", L_GUI_STATS_CURRENCY_ARCHAEOLOGY)
 	currency_archaeology:SetPoint("TOPLEFT", currency, "BOTTOMLEFT", 0, -8)

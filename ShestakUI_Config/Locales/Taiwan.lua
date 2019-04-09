@@ -505,7 +505,6 @@ L_GUI_TOP_PANEL_HEIGHT = "信息面板高度"
 -- Stats options
 L_GUI_STATS = "統計面板"
 L_GUI_STATS_SUBTEXT = "Statistics blocks located at the bottom of the screen. Type in the chat '/ls' for info." -- Need review
-L_GUI_STATS_BG = "戰場分數"
 L_GUI_STATS_CLOCK = "時鐘"
 L_GUI_STATS_LATENCY = "延遲"
 L_GUI_STATS_MEMORY = "記憶體佔用"
@@ -514,6 +513,7 @@ L_GUI_STATS_EXPERIENCE = "經驗"
 L_GUI_STATS_TALENTS_DESC = "Date-text allows you to change the spec and loot on click" -- Need review
 L_GUI_STATS_COORDS = "座標"
 L_GUI_STATS_LOCATION = "位置"
+L_GUI_STATS_BG = "戰場分數"
 L_GUI_STATS_SUBHEADER_CURRENCY = "Currency (displayed in gold data text)" -- Need review
 L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "考古學"
 L_GUI_STATS_CURRENCY_COOKING = "烹飪"

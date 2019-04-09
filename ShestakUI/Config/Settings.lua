@@ -544,7 +544,6 @@ C["toppanel"] = {
 --	Stats options
 ----------------------------------------------------------------------------------------
 C["stats"] = {
-	["battleground"] = false,					-- BG Score
 	["clock"] = true,							-- Clock
 	["latency"] = true,							-- Latency
 	["memory"] = true,							-- Memory
@@ -556,6 +555,7 @@ C["stats"] = {
 	["talents"] = true,							-- Specialization
 	["coords"] = true,							-- Coords
 	["location"] = true,						-- Location
+	["battleground"] = false,					-- BG Score
 	-- Currency (displayed in gold stats)
 	["currency_archaeology"] = false,			-- Archaeology Fragments
 	["currency_cooking"] = true,				-- Cooking Awards

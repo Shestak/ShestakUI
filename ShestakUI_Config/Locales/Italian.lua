@@ -505,7 +505,6 @@ L_GUI_TOP_PANEL_HEIGHT = "Altezza pannello"
 -- Stats options
 L_GUI_STATS = "Stats"
 L_GUI_STATS_SUBTEXT = "Statistics blocks located at the bottom of the screen. Type in the chat '/ls' for info." -- Need review
-L_GUI_STATS_BG = "Campi di Battaglia"
 L_GUI_STATS_CLOCK = "Orologio"
 L_GUI_STATS_LATENCY = "Latenza"
 L_GUI_STATS_MEMORY = "Memoria"
@@ -514,6 +513,7 @@ L_GUI_STATS_EXPERIENCE = "Esperienza"
 L_GUI_STATS_TALENTS_DESC = "Date-text allows you to change the spec and loot on click" -- Need review
 L_GUI_STATS_COORDS = "Coordinate"
 L_GUI_STATS_LOCATION = "Località"
+L_GUI_STATS_BG = "Campi di Battaglia"
 L_GUI_STATS_SUBHEADER_CURRENCY = "Currency (displayed in gold data text)" -- Need review
 L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Mostra i frammenti di archeologia sotto la linguetta della valuta"
 L_GUI_STATS_CURRENCY_COOKING = "Mostra le ricompense di cucina sotto la linguetta della valuta"
