@@ -225,9 +225,7 @@ L_STATS_WORLD_MAP = "點擊開啟世界地圖"
 L_STATS_CURRENT_XP = "目前/升級所需 經驗值"
 L_STATS_MEMORY_USAGE = "插件資源佔用:"
 L_STATS_GARBAGE_COLLECTED = "垃圾資源清除"
-L_STATS_CHANGE_SORTING = "[公會]右鍵更改排列方式,Shift+右鍵反轉排列方式"
 L_STATS_HIDDEN = "隱藏"
-L_STATS_VIEW_NOTES = "按住Alt鍵檢視公會成員階級/註記/幹部註記"
 L_STATS_HR = "小時"
 L_STATS_INF = "無限"
 L_STATS_ALREADY_EXCEPTIONS = "物品已在例外名單列表"
@@ -278,6 +276,8 @@ L_STATS_RC_TIME_MANAGER = "右鍵開啟時間管理器"
 L_STATS_TOGGLE_TIME = "當地/伺服器 及24小時制可顯示於時間管理器"
 L_STATS_MEMORY = "記憶體"
 L_STATS_RC_COLLECTS_GARBAGE = "右鍵點擊清除插件垃圾資源"
+L_STATS_VIEW_NOTES = "按住Alt鍵檢視公會成員階級/註記/幹部註記"
+L_STATS_CHANGE_SORTING = "[公會]右鍵更改排列方式,Shift+右鍵反轉排列方式"
 
 -- Slash commands
 L_SLASHCMD_HELP = {

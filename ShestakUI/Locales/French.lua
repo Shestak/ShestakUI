@@ -225,9 +225,7 @@ L_STATS_WORLD_MAP = "Clic ouvre la carte du monde."
 L_STATS_CURRENT_XP = "XP courant/max"
 L_STATS_MEMORY_USAGE = "Usage mémoire pour l'interface Blizzard :"
 L_STATS_GARBAGE_COLLECTED = "Déchets ramassés"
-L_STATS_CHANGE_SORTING = "[Guild] Clic-Droit pour inviter et chuchoter, Clic-Milieu pour changer le type de tri, Maj-Clic-Centre pour inverser l'ordre."
 L_STATS_HIDDEN = "Caché"
-L_STATS_VIEW_NOTES = "Maintenez enfoncé la touche Alt pour voir les grades, notes et notes d'officiers."
 L_STATS_HR = "Par heure"
 L_STATS_INF = "infini"
 L_STATS_ALREADY_EXCEPTIONS = "est déjà dans la liste d'exceptions."
@@ -278,6 +276,8 @@ L_STATS_RC_TIME_MANAGER = "Clic-Droit pour ouvrir la fenêtre de gestion du temp
 L_STATS_TOGGLE_TIME = "Local/Royaume & mode 24 heures le temps peut être changé, dans la gestion des fenêtres de temps."
 L_STATS_MEMORY = "Mémoire"
 L_STATS_RC_COLLECTS_GARBAGE = "Cliquez-droit sur Lua recueille les déchets."
+L_STATS_VIEW_NOTES = "Maintenez enfoncé la touche Alt pour voir les grades, notes et notes d'officiers."
+L_STATS_CHANGE_SORTING = "[Guild] Clic-Droit pour inviter et chuchoter, Clic-Milieu pour changer le type de tri, Maj-Clic-Centre pour inverser l'ordre."
 
 -- Slash commands
 L_SLASHCMD_HELP = {

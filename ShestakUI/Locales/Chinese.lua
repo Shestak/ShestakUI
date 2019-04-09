@@ -225,9 +225,7 @@ L_STATS_WORLD_MAP = "点击开启世界地图"
 L_STATS_CURRENT_XP = "当前/升级所需经验值"
 L_STATS_MEMORY_USAGE = "插件内存占用:"
 L_STATS_GARBAGE_COLLECTED = "整理内存"
-L_STATS_CHANGE_SORTING = "[公会]右键更改排列方式,Shift+右键反向排列"
 L_STATS_HIDDEN = "隐藏"
-L_STATS_VIEW_NOTES = "按住Alt键检视公会成员会阶/注记/干部注记"
 L_STATS_HR = "小时"
 L_STATS_INF = "无限"
 L_STATS_ALREADY_EXCEPTIONS = "物品已在例外名单列表"
@@ -278,6 +276,8 @@ L_STATS_RC_TIME_MANAGER = "右键开启计时器"
 L_STATS_TOGGLE_TIME = "本地/服务器及24小时制可显示于时间管理器"
 L_STATS_MEMORY = "内存"
 L_STATS_RC_COLLECTS_GARBAGE = "右键点击整理内存"
+L_STATS_VIEW_NOTES = "按住Alt键检视公会成员会阶/注记/干部注记"
+L_STATS_CHANGE_SORTING = "[公会]右键更改排列方式,Shift+右键反向排列"
 
 -- Slash commands
 L_SLASHCMD_HELP = {

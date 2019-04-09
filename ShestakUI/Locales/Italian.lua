@@ -225,9 +225,7 @@ L_STATS_WORLD_MAP = "Clicca per aprire la mappa del mondo."
 L_STATS_CURRENT_XP = "PE attuali/massimi"
 L_STATS_MEMORY_USAGE = "Utilizzo memoria interfaccia Blizzard:"
 L_STATS_GARBAGE_COLLECTED = "Spazzatura raccolta"
-L_STATS_CHANGE_SORTING = "[Gilda] Clicca col destro per invitare e sussurrare, clicca col tasto centrale per cambiare l'ordine, clicca Shift + tasto centrale per invertirlo."
 L_STATS_HIDDEN = "Nascosto/a"
-L_STATS_VIEW_NOTES = "Tieni premuto il tasto Alt per visualizzare ranghi, note e note degli ufficiali."
 L_STATS_HR = "o"
 L_STATS_INF = "inf"
 L_STATS_ALREADY_EXCEPTIONS = "è già nell'elenco delle eccezioni."
@@ -278,6 +276,8 @@ L_STATS_RC_TIME_MANAGER = "Clicca col destro per aprire le impostazionni orologi
 L_STATS_TOGGLE_TIME = "L'orario 'locale/reame' e quello '24 ore' possono essere attivati con le impostazioni orologio."
 L_STATS_MEMORY = "Memoria"
 L_STATS_RC_COLLECTS_GARBAGE = "Clicca col destro per raccogliere la 'spazzatura Lua'."
+L_STATS_VIEW_NOTES = "Tieni premuto il tasto Alt per visualizzare ranghi, note e note degli ufficiali."
+L_STATS_CHANGE_SORTING = "[Gilda] Clicca col destro per invitare e sussurrare, clicca col tasto centrale per cambiare l'ordine, clicca Shift + tasto centrale per invertirlo."
 
 -- Slash commands
 L_SLASHCMD_HELP = {

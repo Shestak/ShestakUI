@@ -225,9 +225,7 @@ L_STATS_WORLD_MAP = "Нажатие открывает карту."
 L_STATS_CURRENT_XP = "Текущий/Макс. опыт"
 L_STATS_MEMORY_USAGE = "Использование памяти Blizzard:"
 L_STATS_GARBAGE_COLLECTED = "Память очищена"
-L_STATS_CHANGE_SORTING = "[Гильдия] ПКМ приглашения и шепот, СКМ изменяет сортировку, Shift+СКМ изменяет порядок сортировки."
 L_STATS_HIDDEN = "Скрытые"
-L_STATS_VIEW_NOTES = "Зажмите Alt для просмотра званий, обычных заметок и офицерских."
 L_STATS_HR = "ч"
 L_STATS_INF = "бесконечный"
 L_STATS_ALREADY_EXCEPTIONS = "Уже в списке автопродажи."
@@ -278,6 +276,8 @@ L_STATS_RC_TIME_MANAGER = "ПКМ открывает часы."
 L_STATS_TOGGLE_TIME = "Местное/Серверное и 24-ч. показ времени изменяются через меню часов."
 L_STATS_MEMORY = "Память"
 L_STATS_RC_COLLECTS_GARBAGE = "ПКМ очищает память от lua мусора."
+L_STATS_VIEW_NOTES = "Зажмите Alt для просмотра званий, обычных заметок и офицерских."
+L_STATS_CHANGE_SORTING = "[Гильдия] ПКМ приглашения и шепот, СКМ изменяет сортировку, Shift+СКМ изменяет порядок сортировки."
 
 -- Slash commands
 L_SLASHCMD_HELP = {

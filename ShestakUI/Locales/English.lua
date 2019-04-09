@@ -221,9 +221,7 @@ L_STATS_WORLD_MAP = "Clicking opens world map."
 L_STATS_CURRENT_XP = "Current/Max XP"
 L_STATS_MEMORY_USAGE = "Blizzard UI Memory Usage:"
 L_STATS_GARBAGE_COLLECTED = "Garbage collected"
-L_STATS_CHANGE_SORTING = "[Guild] Right-Click to invite and whisper, Middle-Click to change the sorting, Shift-Middle-Click to reverse order."
 L_STATS_HIDDEN = "Hidden"
-L_STATS_VIEW_NOTES = "Hold alt key to view ranks, notes and officer notes."
 L_STATS_HR = "hr"
 L_STATS_INF = "inf"
 L_STATS_ALREADY_EXCEPTIONS = "is already in exceptions list."
@@ -274,6 +272,8 @@ L_STATS_RC_TIME_MANAGER = "Right-Click opens time manager frame."
 L_STATS_TOGGLE_TIME = "Local/realm & 24hr time can be toggled from the time manager."
 L_STATS_MEMORY = "Memory"
 L_STATS_RC_COLLECTS_GARBAGE = "Right-Click collects Lua garbage."
+L_STATS_VIEW_NOTES = "Hold alt key to view ranks, notes and officer notes."
+L_STATS_CHANGE_SORTING = "[Guild] Right-Click to invite and whisper, Middle-Click to change the sorting, Shift-Middle-Click to reverse order."
 
 -- Slash commands
 L_SLASHCMD_HELP = {

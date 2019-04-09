@@ -209,7 +209,7 @@ function SlashCmdList.LSTATS()
 		slprint(L_STATS_MEMORY, L_STATS_RC_COLLECTS_GARBAGE)
 	end
 	if friends.enabled or guild.enabled then
-		slprint(format("%s/%s", FRIENDS,GUILD), L_STATS_VIEW_NOTES, L_STATS_CHANGE_SORTING)
+		slprint(format("%s/%s", FRIENDS, GUILD), L_STATS_VIEW_NOTES, L_STATS_CHANGE_SORTING)
 	end
 	if durability.enabled then
 		slprint(DURABILITY, L_STATS_OPEN_CHARACTER, L_STATS_RC_AUTO_REPAIRING1, L_STATS_RC_AUTO_REPAIRING2, L_STATS_EQUIPMENT_CHANGER)

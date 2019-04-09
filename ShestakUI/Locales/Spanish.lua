@@ -225,9 +225,7 @@ L_STATS_WORLD_MAP = "Clickeando abres el Mapa del Mundo."
 L_STATS_CURRENT_XP = "Actual/Max EXP"
 L_STATS_MEMORY_USAGE = "Blizzard UI Memory Usage:" -- Needs review
 L_STATS_GARBAGE_COLLECTED = "Basura recogida"
-L_STATS_CHANGE_SORTING = "[Hermandad] Click-Derecho para cambiar la clasificacion, Shift-Click-Derecho para invertir el orden."
 L_STATS_HIDDEN = "Oculto"
-L_STATS_VIEW_NOTES = "Manten pulsada la tecla Alt para ver rangos, notas y notas de oficiales."
 L_STATS_HR = "hr"
 L_STATS_INF = "inf"
 L_STATS_ALREADY_EXCEPTIONS = "ya esta en la lista de excepciones."
@@ -278,6 +276,8 @@ L_STATS_RC_TIME_MANAGER = "Click-Derecho abre el administrador de tiempo."
 L_STATS_TOGGLE_TIME = "Hora Local/Reino y el reloj de 24hr se pueden activar desde el administrador de tiempo."
 L_STATS_MEMORY = "Memoria"
 L_STATS_RC_COLLECTS_GARBAGE = "Click-Derecho recolecta basura de Lua."
+L_STATS_VIEW_NOTES = "Manten pulsada la tecla Alt para ver rangos, notas y notas de oficiales."
+L_STATS_CHANGE_SORTING = "[Hermandad] Click-Derecho para cambiar la clasificacion, Shift-Click-Derecho para invertir el orden."
 
 -- Slash commands
 L_SLASHCMD_HELP = {

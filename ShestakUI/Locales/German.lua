@@ -225,9 +225,7 @@ L_STATS_WORLD_MAP = "Klicken, zum Öffnen der World-Map."
 L_STATS_CURRENT_XP = "Aktuell/Max XP"
 L_STATS_MEMORY_USAGE = "Blizzard UI Speicher Auslastung:"
 L_STATS_GARBAGE_COLLECTED = "Abfall zusammengefasst"
-L_STATS_CHANGE_SORTING = "[Gilde] Rechts-Klick, zum Ändern der Sortierung und Umschalt-Rechts-Klick zum Umkehren der Reihenfolge."
 L_STATS_HIDDEN = "Versteckt"
-L_STATS_VIEW_NOTES = "Halte die Alt-Taste gedrückt, zum Anzeigen der Ränge, Notizen und Offizier Notizen."
 L_STATS_HR = "std"
 L_STATS_INF = "unend"
 L_STATS_ALREADY_EXCEPTIONS = "ist bereits in der Ausnahmeliste."
@@ -278,6 +276,8 @@ L_STATS_RC_TIME_MANAGER = "Rechts-Klick, um die Einstellungen der Uhr anzuzeigen
 L_STATS_TOGGLE_TIME = "Lokal/Realm & 24-Stunden-Modus können in den Einstellungen der Uhr gewechselt werden."
 L_STATS_MEMORY = "Speicher"
 L_STATS_RC_COLLECTS_GARBAGE = "Rechts-Klick sammelt Lua-Abfall."
+L_STATS_VIEW_NOTES = "Halte die Alt-Taste gedrückt, zum Anzeigen der Ränge, Notizen und Offizier Notizen."
+L_STATS_CHANGE_SORTING = "[Gilde] Rechts-Klick, zum Ändern der Sortierung und Umschalt-Rechts-Klick zum Umkehren der Reihenfolge."
 
 -- Slash commands
 L_SLASHCMD_HELP = {
