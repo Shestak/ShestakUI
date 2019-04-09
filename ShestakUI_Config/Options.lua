@@ -1644,7 +1644,7 @@ end
 do
 	local parent = ShestakUIOptionsPanel.misc
 
-	local shift_marking = ns.CreateCheckBox(parent, "shift_marking", L_GUI_MISC_MARKING)
+	local shift_marking = ns.CreateCheckBox(parent, "shift_marking")
 	shift_marking:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
 	local invite_keyword = ns.CreateEditBox(parent, "invite_keyword", true, L_GUI_MISC_INVKEYWORD)

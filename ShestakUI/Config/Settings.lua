@@ -545,7 +545,7 @@ C["error"] = {
 --	Miscellaneous options
 ----------------------------------------------------------------------------------------
 C["misc"] = {
-	["shift_marking"] = true,					-- Marks target when you push Shift
+	["shift_marking"] = true,					-- Marks mouseover target when you push Shift (only in group)
 	["invite_keyword"] = "invite",				-- Short keyword for invite(for enable - in game type /ainv)
 	["afk_spin_camera"] = false,				-- Spin camera while afk
 	["vehicle_mouseover"] = false,				-- Vehicle frame on mouseover

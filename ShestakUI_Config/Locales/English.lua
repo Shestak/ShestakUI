@@ -497,7 +497,8 @@ L_GUI_ERROR_HIDE_COMBAT = "Hide all errors in combat"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features."
-L_GUI_MISC_MARKING = "Marks target when you push Shift"
+L.misc_shift_marking = "Marks mouseover target"
+L.misc_shift_marking_desc = "Marks mouseover target when you push Shift (only in group)"
 L_GUI_MISC_INVKEYWORD = "Short keyword for invite (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Spin camera while afk"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Vehicle frame on mouseover"

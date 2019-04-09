@@ -475,7 +475,8 @@ L_GUI_ERROR_HIDE_COMBAT = "Cacher toutes les erreurs en combat"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review
-L_GUI_MISC_MARKING = "Marque la cible quand vous appuyez sur MAJ"
+L.misc_shift_marking = "Marks mouseover target" -- Need review
+L.misc_shift_marking_desc = "Marks mouseover target when you push Shift (only in group)" -- Need review
 L_GUI_MISC_INVKEYWORD = "Mot clé pour l'invitation automatique (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Faire tourner la caméra quand absent"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Fenêtre de véhicule en mouseover"

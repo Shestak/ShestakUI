@@ -475,7 +475,8 @@ L_GUI_ERROR_HIDE_COMBAT = "Verberge alle Fehlermeldungen im Kampf"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Andere Einstellungen, die interessante Funktionen hinzufügen."
-L_GUI_MISC_MARKING = "Ziele markieren wenn 'Umschalttaste' gedürckt wird"
+L.misc_shift_marking = "Marks mouseover target" -- Need review
+L.misc_shift_marking_desc = "Marks mouseover target when you push Shift (only in group)" -- Need review
 L_GUI_MISC_INVKEYWORD = "Kurzes Schlüsselwort für Einladungen (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Kamera drehen während du AFK bist"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Fahrzeugfenster bei mouseover anzeigen"

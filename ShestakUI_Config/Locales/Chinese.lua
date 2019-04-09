@@ -475,7 +475,8 @@ L_GUI_ERROR_HIDE_COMBAT = "战斗中隐藏所有错误提示"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review
-L_GUI_MISC_MARKING = "点击Shift显示团队标记菜单"
+L.misc_shift_marking = "Marks mouseover target" -- Need review
+L.misc_shift_marking_desc = "Marks mouseover target when you push Shift (only in group)" -- Need review
 L_GUI_MISC_INVKEYWORD = "自动邀请关键字(/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "AFK时旋转镜头"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "驾驶框架解锁"
