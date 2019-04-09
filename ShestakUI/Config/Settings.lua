@@ -35,35 +35,37 @@ C["general"] = {
 }
 
 ----------------------------------------------------------------------------------------
---	Miscellaneous options
+--	Skins options
 ----------------------------------------------------------------------------------------
-C["misc"] = {
-	["shift_marking"] = true,					-- Marks target when you push Shift
-	["invite_keyword"] = "invite",				-- Short keyword for invite(for enable - in game type /ainv)
-	["afk_spin_camera"] = false,				-- Spin camera while afk
-	["vehicle_mouseover"] = false,				-- Vehicle frame on mouseover
-	["quest_auto_button"] = false,				-- Quest/item auto button (from the list)
-	["raid_tools"] = true,						-- Raid tools
-	["profession_tabs"] = true,					-- Professions tabs on TradeSkill frames
-	["hide_bg_spam"] = false,					-- Remove Boss Emote spam during BG("Arathi Basin" and "The Battle for Gilneas")
-	["item_level"] = true,						-- Item level on character slot buttons
-	["already_known"] = true,					-- Colorizes recipes/mounts/pets/toys that is already known
-	["disenchanting"] = false,					-- Milling, Prospecting and Disenchanting by Alt + click
-	["sum_buyouts"] = false,					-- Sum up all current auctions
-	["click_cast"] = false,						-- Simple click2cast spell binder
-	["click_cast_filter"] = false,				-- Ignore Player and Target frames for click2cast
-	["move_blizzard"] = false,					-- Move some Blizzard frames
-	["color_picker"] = false,					-- Improved ColorPicker
-	["enchantment_scroll"] = false,				-- Enchantment scroll on TradeSkill frame
-	["archaeology"] = false,					-- Archaeology artifacts and cooldown
-	["chars_currency"] = false,					-- Tracks your currency tokens across multiple characters
-	["armory_link"] = false,					-- Add Armory link in UnitPopupMenus (It breaks set focus)
-	["merchant_itemlevel"] = false,				-- Show item level for weapons and armor in merchant
-	["minimize_mouseover"] = false,				-- Mouseover for quest minimize button
-	["hide_banner"] = true,						-- Hide Boss Banner Loot Frame
-	["hide_talking_head"] = false,				-- Hide Talking Head Frame
-	["hide_raid_button"] = false,				-- Hide button for oUF_RaidDPS (top left mouseover)
-	["custom_lagtolerance"] = false,			-- Custom lag tolerance to your latency
+C["skins"] = {
+	["blizzard_frames"] = false,				-- Blizzard frames skin
+	["minimap_buttons"] = false,				-- Skin addons icons on minimap
+	["ace3"] = false,							-- Ace3 options elements skin
+	["atlasloot"] = false,						-- AtlasLoot skin
+	["bigwigs"] = false,						-- BigWigs skin
+	["blood_shield_tracker"] = false,			-- BloodShieldTracker skin
+	["capping"] = false,						-- Capping skin
+	["clique"] = false,							-- Clique skin
+	["cool_line"] = false,						-- CoolLine skin
+	["dbm"] = false,							-- DBM skin
+	["dbm_movable"] = false,					-- Allow to move DBM bars
+	["dominos"] = false,						-- Dominos skin
+	["flyout_button"] = false,					-- FlyoutButtonCustom skin
+	["ls_toasts"] = false,						-- Is: Toasts skin
+	["mage_nuggets"] = false,					-- MageNuggets skin
+	["my_role_play"] = false,					-- MyRolePlay skin
+	["npcscan"] = false,						-- NPCScan skin
+	["nug_running"] = false,					-- NugRunning skin
+	["omen"] = false,							-- Omen skin
+	["opie"] = false,							-- OPie skin
+	["ovale"] = false,							-- OvaleSpellPriority skin
+	["postal"] = false,							-- Postal skin
+	["recount"] = false,						-- Recount skin
+	["rematch"] = false,						-- Rematch skin
+	["skada"] = false,							-- Skada skin
+	["tiny_dps"] = false,						-- TinyDPS skin
+	["vanaskos"] = false,						-- VanasKoS skin
+	["weak_auras"] = false,						-- WeakAuras skin
 }
 
 ----------------------------------------------------------------------------------------
@@ -105,40 +107,6 @@ C["automation"] = {
 	["logging_combat"] = false,					-- Auto enables combat log text file in raid instances
 	["buff_on_scroll"] = false,					-- Cast buff on mouse scroll (from the list)
 	["open_items"] = false,						-- Auto opening of items in bag
-}
-
-----------------------------------------------------------------------------------------
---	Skins options
-----------------------------------------------------------------------------------------
-C["skins"] = {
-	["blizzard_frames"] = false,				-- Blizzard frames skin
-	["minimap_buttons"] = false,				-- Skin addons icons on minimap
-	["ace3"] = false,							-- Ace3 options elements skin
-	["atlasloot"] = false,						-- AtlasLoot skin
-	["bigwigs"] = false,						-- BigWigs skin
-	["blood_shield_tracker"] = false,			-- BloodShieldTracker skin
-	["capping"] = false,						-- Capping skin
-	["clique"] = false,							-- Clique skin
-	["cool_line"] = false,						-- CoolLine skin
-	["dbm"] = false,							-- DBM skin
-	["dbm_movable"] = false,					-- Allow to move DBM bars
-	["dominos"] = false,						-- Dominos skin
-	["flyout_button"] = false,					-- FlyoutButtonCustom skin
-	["ls_toasts"] = false,						-- Is: Toasts skin
-	["mage_nuggets"] = false,					-- MageNuggets skin
-	["my_role_play"] = false,					-- MyRolePlay skin
-	["npcscan"] = false,						-- NPCScan skin
-	["nug_running"] = false,					-- NugRunning skin
-	["omen"] = false,							-- Omen skin
-	["opie"] = false,							-- OPie skin
-	["ovale"] = false,							-- OvaleSpellPriority skin
-	["postal"] = false,							-- Postal skin
-	["recount"] = false,						-- Recount skin
-	["rematch"] = false,						-- Rematch skin
-	["skada"] = false,							-- Skada skin
-	["tiny_dps"] = false,						-- TinyDPS skin
-	["vanaskos"] = false,						-- VanasKoS skin
-	["weak_auras"] = false,						-- WeakAuras skin
 }
 
 ----------------------------------------------------------------------------------------
@@ -571,4 +539,36 @@ C["error"] = {
 	["black"] = true,							-- Hide errors from black list
 	["white"] = false,							-- Show errors from white list
 	["combat"] = false,							-- Hide all errors in combat
+}
+
+----------------------------------------------------------------------------------------
+--	Miscellaneous options
+----------------------------------------------------------------------------------------
+C["misc"] = {
+	["shift_marking"] = true,					-- Marks target when you push Shift
+	["invite_keyword"] = "invite",				-- Short keyword for invite(for enable - in game type /ainv)
+	["afk_spin_camera"] = false,				-- Spin camera while afk
+	["vehicle_mouseover"] = false,				-- Vehicle frame on mouseover
+	["quest_auto_button"] = false,				-- Quest/item auto button (from the list)
+	["raid_tools"] = true,						-- Raid tools
+	["profession_tabs"] = true,					-- Professions tabs on TradeSkill frames
+	["hide_bg_spam"] = false,					-- Remove Boss Emote spam during BG("Arathi Basin" and "The Battle for Gilneas")
+	["item_level"] = true,						-- Item level on character slot buttons
+	["already_known"] = true,					-- Colorizes recipes/mounts/pets/toys that is already known
+	["disenchanting"] = false,					-- Milling, Prospecting and Disenchanting by Alt + click
+	["sum_buyouts"] = false,					-- Sum up all current auctions
+	["click_cast"] = false,						-- Simple click2cast spell binder
+	["click_cast_filter"] = false,				-- Ignore Player and Target frames for click2cast
+	["move_blizzard"] = false,					-- Move some Blizzard frames
+	["color_picker"] = false,					-- Improved ColorPicker
+	["enchantment_scroll"] = false,				-- Enchantment scroll on TradeSkill frame
+	["archaeology"] = false,					-- Archaeology artifacts and cooldown
+	["chars_currency"] = false,					-- Tracks your currency tokens across multiple characters
+	["armory_link"] = false,					-- Add Armory link in UnitPopupMenus (It breaks set focus)
+	["merchant_itemlevel"] = false,				-- Show item level for weapons and armor in merchant
+	["minimize_mouseover"] = false,				-- Mouseover for quest minimize button
+	["hide_banner"] = true,						-- Hide Boss Banner Loot Frame
+	["hide_talking_head"] = false,				-- Hide Talking Head Frame
+	["hide_raid_button"] = false,				-- Hide button for oUF_RaidDPS (top left mouseover)
+	["custom_lagtolerance"] = false,			-- Custom lag tolerance to your latency
 }

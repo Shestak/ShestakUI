@@ -183,6 +183,7 @@ do
 	pixel_font_size:SetPoint("TOPLEFT", pixel_font, "BOTTOMLEFT", 16, -16)
 end
 
+-- Font
 do
 	local parent = ShestakUIOptionsPanel.font
 
@@ -415,92 +416,99 @@ do
 	bags_font_shadow:SetPoint("LEFT", bags_font_size, "RIGHT", 160, 0)
 end
 
--- Miscellaneous
+-- Skins
 do
-	local parent = ShestakUIOptionsPanel.misc
+	local parent = ShestakUIOptionsPanel.skins
 
-	local shift_marking = ns.CreateCheckBox(parent, "shift_marking", L_GUI_MISC_MARKING)
-	shift_marking:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+	local blizzard_frames = ns.CreateCheckBox(parent, "blizzard_frames", L_GUI_SKINS_BLIZZARD)
+	blizzard_frames:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local invite_keyword = ns.CreateEditBox(parent, "invite_keyword", true, L_GUI_MISC_INVKEYWORD)
-	invite_keyword:SetPoint("TOPLEFT", shift_marking, "BOTTOMLEFT", 6, -10)
+	local minimap_buttons = ns.CreateCheckBox(parent, "minimap_buttons", L_GUI_SKINS_MINIMAP_BUTTONS)
+	minimap_buttons:SetPoint("TOPLEFT", blizzard_frames, "BOTTOMLEFT", 0, 0)
 
-	local afk_spin_camera = ns.CreateCheckBox(parent, "afk_spin_camera", L_GUI_MISC_SPIN_CAMERA)
-	afk_spin_camera:SetPoint("TOPLEFT", invite_keyword, "BOTTOMLEFT", -6, -10)
+	-- Addons
+	local subheader = ns.addSubCategory(parent, L_GUI_SKINS_SUBHEADER)
+	subheader:SetPoint("TOPLEFT", minimap_buttons, "BOTTOMLEFT", 0, -16)
 
-	local vehicle_mouseover = ns.CreateCheckBox(parent, "vehicle_mouseover", L_GUI_MISC_VEHICLE_MOUSEOVER)
-	vehicle_mouseover:SetPoint("TOPLEFT", afk_spin_camera, "BOTTOMLEFT", 0, 0)
+	local ace3 = ns.CreateCheckBox(parent, "ace3", L_GUI_SKINS_ACE3)
+	ace3:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
 
-	local quest_auto_button = ns.CreateCheckBox(parent, "quest_auto_button", L_GUI_MISC_QUEST_AUTOBUTTON)
-	quest_auto_button:SetPoint("TOPLEFT", vehicle_mouseover, "BOTTOMLEFT", 0, 0)
+	local atlasloot = ns.CreateCheckBox(parent, "atlasloot", L_GUI_SKINS_ATLASLOOT)
+	atlasloot:SetPoint("TOPLEFT", ace3, "BOTTOMLEFT", 0, 0)
 
-	local raid_tools = ns.CreateCheckBox(parent, "raid_tools", L_GUI_MISC_RAID_TOOLS)
-	raid_tools:SetPoint("TOPLEFT", quest_auto_button, "BOTTOMLEFT", 0, 0)
+	local bigwigs = ns.CreateCheckBox(parent, "bigwigs", L_GUI_SKINS_BW)
+	bigwigs:SetPoint("LEFT", atlasloot, "RIGHT", 320, 0)
 
-	local profession_tabs = ns.CreateCheckBox(parent, "profession_tabs", L_GUI_MISC_PROFESSION_TABS)
-	profession_tabs:SetPoint("TOPLEFT", raid_tools, "BOTTOMLEFT", 0, 0)
+	local blood_shield_tracker = ns.CreateCheckBox(parent, "blood_shield_tracker", L_GUI_SKINS_BLOOD_SHIELD_TRACKER)
+	blood_shield_tracker:SetPoint("TOPLEFT", atlasloot, "BOTTOMLEFT", 0, 0)
 
-	local hide_bg_spam = ns.CreateCheckBox(parent, "hide_bg_spam", L_GUI_MISC_HIDE_BG_SPAM)
-	hide_bg_spam:SetPoint("TOPLEFT", profession_tabs, "BOTTOMLEFT", 0, 0)
+	local capping = ns.CreateCheckBox(parent, "capping", L_GUI_SKINS_CAPPING)
+	capping:SetPoint("LEFT", blood_shield_tracker, "RIGHT", 320, 0)
 
-	local item_level = ns.CreateCheckBox(parent, "item_level", L_GUI_MISC_ITEM_LEVEL)
-	item_level:SetPoint("TOPLEFT", hide_bg_spam, "BOTTOMLEFT", 0, 0)
+	local clique = ns.CreateCheckBox(parent, "clique", L_GUI_SKINS_CLIQUE)
+	clique:SetPoint("TOPLEFT", blood_shield_tracker, "BOTTOMLEFT", 0, 0)
 
-	local already_known = ns.CreateCheckBox(parent, "already_known", L_GUI_MISC_ALREADY_KNOWN)
-	already_known:SetPoint("TOPLEFT", item_level, "BOTTOMLEFT", 0, 0)
+	local cool_line = ns.CreateCheckBox(parent, "cool_line", L_GUI_SKINS_COOL_LINE)
+	cool_line:SetPoint("LEFT", clique, "RIGHT", 320, 0)
 
-	local disenchanting = ns.CreateCheckBox(parent, "disenchanting", L_GUI_MISC_DISENCHANTING)
-	disenchanting:SetPoint("TOPLEFT", already_known, "BOTTOMLEFT", 0, 0)
+	local dbm = ns.CreateCheckBox(parent, "dbm", L_GUI_SKINS_DBM)
+	dbm:SetPoint("TOPLEFT", clique, "BOTTOMLEFT", 0, 0)
 
-	local sum_buyouts = ns.CreateCheckBox(parent, "sum_buyouts", L_GUI_MISC_SUM_BUYOUTS)
-	sum_buyouts:SetPoint("TOPLEFT", disenchanting, "BOTTOMLEFT", 0, 0)
+	local dbm_movable = ns.CreateCheckBox(parent, "dbm_movable", L_GUI_SKINS_DBM_MOVABLE)
+	dbm_movable:SetPoint("TOPLEFT", dbm, "BOTTOMLEFT", 20, 0)
 
-	local click_cast = ns.CreateCheckBox(parent, "click_cast", L_GUI_MISC_CLICK_CAST)
-	click_cast:SetPoint("TOPLEFT", sum_buyouts, "BOTTOMLEFT", 0, 0)
+	dbm.children = {dbm_movable}
 
-	local click_cast_filter = ns.CreateCheckBox(parent, "click_cast_filter", L_GUI_MISC_CLICK_CAST_FILTER)
-	click_cast_filter:SetPoint("TOPLEFT", click_cast, "BOTTOMLEFT", 20, 0)
+	local dominos = ns.CreateCheckBox(parent, "dominos", L_GUI_SKINS_DOMINOS)
+	dominos:SetPoint("TOPLEFT", dbm_movable, "BOTTOMLEFT", -20, 0)
 
-	click_cast.children = {click_cast_filter}
+	local flyout_button = ns.CreateCheckBox(parent, "flyout_button", L_GUI_SKINS_FLYOUT_BUTTON)
+	flyout_button:SetPoint("TOPLEFT", dominos, "BOTTOMLEFT", 0, 0)
 
-	local move_blizzard = ns.CreateCheckBox(parent, "move_blizzard", L_GUI_MISC_MOVE_BLIZZARD)
-	move_blizzard:SetPoint("TOPLEFT", click_cast_filter, "BOTTOMLEFT", -20, 0)
+	local ls_toasts = ns.CreateCheckBox(parent, "ls_toasts", L_GUI_SKINS_LS_TOASTS)
+	ls_toasts:SetPoint("LEFT", flyout_button, "RIGHT", 320, 0)
 
-	local color_picker = ns.CreateCheckBox(parent, "color_picker", L_GUI_MISC_COLOR_PICKER)
-	color_picker:SetPoint("TOPLEFT", move_blizzard, "BOTTOMLEFT", 0, 0)
+	local mage_nuggets = ns.CreateCheckBox(parent, "mage_nuggets", L_GUI_SKINS_MAGE_NUGGETS)
+	mage_nuggets:SetPoint("TOPLEFT", flyout_button, "BOTTOMLEFT", 0, 0)
 
-	local enchantment_scroll = ns.CreateCheckBox(parent, "enchantment_scroll", L_GUI_MISC_ENCHANTMENT_SCROLL)
-	enchantment_scroll:SetPoint("TOPLEFT", color_picker, "BOTTOMLEFT", 0, 0)
+	local my_role_play = ns.CreateCheckBox(parent, "my_role_play", L_GUI_SKINS_MY_ROLE_PLAY)
+	my_role_play:SetPoint("LEFT", mage_nuggets, "RIGHT", 320, 0)
 
-	local archaeology = ns.CreateCheckBox(parent, "archaeology", L_GUI_MISC_ARCHAEOLOGY)
-	archaeology:SetPoint("TOPLEFT", enchantment_scroll, "BOTTOMLEFT", 0, 0)
+	local npcscan = ns.CreateCheckBox(parent, "npcscan", L_GUI_SKINS_NPCSCAN)
+	npcscan:SetPoint("TOPLEFT", mage_nuggets, "BOTTOMLEFT", 0, 0)
 
-	local chars_currency = ns.CreateCheckBox(parent, "chars_currency", L_GUI_MISC_CHARS_CURRENCY)
-	chars_currency:SetPoint("TOPLEFT", archaeology, "BOTTOMLEFT", 0, 0)
+	local nug_running = ns.CreateCheckBox(parent, "nug_running", L_GUI_SKINS_NUG_RUNNING)
+	nug_running:SetPoint("LEFT", npcscan, "RIGHT", 320, 0)
 
-	local armory_link = ns.CreateCheckBox(parent, "armory_link")
-	armory_link:SetPoint("TOPLEFT", chars_currency, "BOTTOMLEFT", 0, 0)
+	local omen = ns.CreateCheckBox(parent, "omen", L_GUI_SKINS_OMEN)
+	omen:SetPoint("TOPLEFT", npcscan, "BOTTOMLEFT", 0, 0)
 
-	local merchant_itemlevel = ns.CreateCheckBox(parent, "merchant_itemlevel", L_GUI_MISC_MERCHANT_ITEMLEVEL)
-	merchant_itemlevel:SetPoint("TOPLEFT", armory_link, "BOTTOMLEFT", 0, 0)
+	local opie = ns.CreateCheckBox(parent, "opie", L_GUI_SKINS_OPIE)
+	opie:SetPoint("LEFT", omen, "RIGHT", 320, 0)
 
-	-- Panel 2
-	local parent = ShestakUIOptionsPanel.misc2
+	local ovale = ns.CreateCheckBox(parent, "ovale", L_GUI_SKINS_OVALE)
+	ovale:SetPoint("TOPLEFT", omen, "BOTTOMLEFT", 0, 0)
 
-	local minimize_mouseover = ns.CreateCheckBox(parent, "minimize_mouseover", L_GUI_MISC_MINIMIZE_MOUSEOVER)
-	minimize_mouseover:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+	local postal = ns.CreateCheckBox(parent, "postal", L_GUI_SKINS_POSTAL)
+	postal:SetPoint("LEFT", ovale, "RIGHT", 320, 0)
 
-	local hide_banner = ns.CreateCheckBox(parent, "hide_banner", L_GUI_MISC_HIDE_BANNER)
-	hide_banner:SetPoint("TOPLEFT", minimize_mouseover, "BOTTOMLEFT", 0, 0)
+	local recount = ns.CreateCheckBox(parent, "recount", L_GUI_SKINS_RECOUNT)
+	recount:SetPoint("TOPLEFT", ovale, "BOTTOMLEFT", 0, 0)
 
-	local hide_talking_head = ns.CreateCheckBox(parent, "hide_talking_head", L_GUI_MISC_HIDE_TALKING_HEAD)
-	hide_talking_head:SetPoint("TOPLEFT", hide_banner, "BOTTOMLEFT", 0, 0)
+	local rematch = ns.CreateCheckBox(parent, "rematch", L_GUI_SKINS_REMATCH)
+	rematch:SetPoint("LEFT", recount, "RIGHT", 320, 0)
 
-	local hide_raid_button = ns.CreateCheckBox(parent, "hide_raid_button", L_GUI_MISC_HIDE_RAID_BUTTON)
-	hide_raid_button:SetPoint("TOPLEFT", hide_talking_head, "BOTTOMLEFT", 0, 0)
+	local skada = ns.CreateCheckBox(parent, "skada", L_GUI_SKINS_SKADA)
+	skada:SetPoint("TOPLEFT", recount, "BOTTOMLEFT", 0, 0)
 
-	local custom_lagtolerance = ns.CreateCheckBox(parent, "custom_lagtolerance", L_GUI_MISC_LAG_TOLERANCE)
-	custom_lagtolerance:SetPoint("TOPLEFT", hide_raid_button, "BOTTOMLEFT", 0, 0)
+	local tiny_dps = ns.CreateCheckBox(parent, "tiny_dps", L_GUI_SKINS_TINY_DPS)
+	tiny_dps:SetPoint("LEFT", skada, "RIGHT", 320, 0)
+
+	local vanaskos = ns.CreateCheckBox(parent, "vanaskos", L_GUI_SKINS_VANASKOS)
+	vanaskos:SetPoint("TOPLEFT", skada, "BOTTOMLEFT", 0, 0)
+
+	local weak_auras = ns.CreateCheckBox(parent, "weak_auras", L_GUI_SKINS_WEAK_AURAS)
+	weak_auras:SetPoint("LEFT", vanaskos, "RIGHT", 320, 0)
 end
 
 -- Announcements
@@ -604,101 +612,6 @@ do
 
 	local open_items = ns.CreateCheckBox(parent, "open_items", L_GUI_AUTOMATION_OPEN_ITEMS)
 	open_items:SetPoint("TOPLEFT", buff_on_scroll, "BOTTOMLEFT", 0, 0)
-end
-
--- Skins
-do
-	local parent = ShestakUIOptionsPanel.skins
-
-	local blizzard_frames = ns.CreateCheckBox(parent, "blizzard_frames", L_GUI_SKINS_BLIZZARD)
-	blizzard_frames:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
-	local minimap_buttons = ns.CreateCheckBox(parent, "minimap_buttons", L_GUI_SKINS_MINIMAP_BUTTONS)
-	minimap_buttons:SetPoint("TOPLEFT", blizzard_frames, "BOTTOMLEFT", 0, 0)
-
-	-- Addons
-	local subheader = ns.addSubCategory(parent, L_GUI_SKINS_SUBHEADER)
-	subheader:SetPoint("TOPLEFT", minimap_buttons, "BOTTOMLEFT", 0, -16)
-
-	local ace3 = ns.CreateCheckBox(parent, "ace3", L_GUI_SKINS_ACE3)
-	ace3:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
-
-	local atlasloot = ns.CreateCheckBox(parent, "atlasloot", L_GUI_SKINS_ATLASLOOT)
-	atlasloot:SetPoint("TOPLEFT", ace3, "BOTTOMLEFT", 0, 0)
-
-	local bigwigs = ns.CreateCheckBox(parent, "bigwigs", L_GUI_SKINS_BW)
-	bigwigs:SetPoint("LEFT", atlasloot, "RIGHT", 320, 0)
-
-	local blood_shield_tracker = ns.CreateCheckBox(parent, "blood_shield_tracker", L_GUI_SKINS_BLOOD_SHIELD_TRACKER)
-	blood_shield_tracker:SetPoint("TOPLEFT", atlasloot, "BOTTOMLEFT", 0, 0)
-
-	local capping = ns.CreateCheckBox(parent, "capping", L_GUI_SKINS_CAPPING)
-	capping:SetPoint("LEFT", blood_shield_tracker, "RIGHT", 320, 0)
-
-	local clique = ns.CreateCheckBox(parent, "clique", L_GUI_SKINS_CLIQUE)
-	clique:SetPoint("TOPLEFT", blood_shield_tracker, "BOTTOMLEFT", 0, 0)
-
-	local cool_line = ns.CreateCheckBox(parent, "cool_line", L_GUI_SKINS_COOL_LINE)
-	cool_line:SetPoint("LEFT", clique, "RIGHT", 320, 0)
-
-	local dbm = ns.CreateCheckBox(parent, "dbm", L_GUI_SKINS_DBM)
-	dbm:SetPoint("TOPLEFT", clique, "BOTTOMLEFT", 0, 0)
-
-	local dbm_movable = ns.CreateCheckBox(parent, "dbm_movable", L_GUI_SKINS_DBM_MOVABLE)
-	dbm_movable:SetPoint("TOPLEFT", dbm, "BOTTOMLEFT", 20, 0)
-
-	dbm.children = {dbm_movable}
-
-	local dominos = ns.CreateCheckBox(parent, "dominos", L_GUI_SKINS_DOMINOS)
-	dominos:SetPoint("TOPLEFT", dbm_movable, "BOTTOMLEFT", -20, 0)
-
-	local flyout_button = ns.CreateCheckBox(parent, "flyout_button", L_GUI_SKINS_FLYOUT_BUTTON)
-	flyout_button:SetPoint("TOPLEFT", dominos, "BOTTOMLEFT", 0, 0)
-
-	local ls_toasts = ns.CreateCheckBox(parent, "ls_toasts", L_GUI_SKINS_LS_TOASTS)
-	ls_toasts:SetPoint("LEFT", flyout_button, "RIGHT", 320, 0)
-
-	local mage_nuggets = ns.CreateCheckBox(parent, "mage_nuggets", L_GUI_SKINS_MAGE_NUGGETS)
-	mage_nuggets:SetPoint("TOPLEFT", flyout_button, "BOTTOMLEFT", 0, 0)
-
-	local my_role_play = ns.CreateCheckBox(parent, "my_role_play", L_GUI_SKINS_MY_ROLE_PLAY)
-	my_role_play:SetPoint("LEFT", mage_nuggets, "RIGHT", 320, 0)
-
-	local npcscan = ns.CreateCheckBox(parent, "npcscan", L_GUI_SKINS_NPCSCAN)
-	npcscan:SetPoint("TOPLEFT", mage_nuggets, "BOTTOMLEFT", 0, 0)
-
-	local nug_running = ns.CreateCheckBox(parent, "nug_running", L_GUI_SKINS_NUG_RUNNING)
-	nug_running:SetPoint("LEFT", npcscan, "RIGHT", 320, 0)
-
-	local omen = ns.CreateCheckBox(parent, "omen", L_GUI_SKINS_OMEN)
-	omen:SetPoint("TOPLEFT", npcscan, "BOTTOMLEFT", 0, 0)
-
-	local opie = ns.CreateCheckBox(parent, "opie", L_GUI_SKINS_OPIE)
-	opie:SetPoint("LEFT", omen, "RIGHT", 320, 0)
-
-	local ovale = ns.CreateCheckBox(parent, "ovale", L_GUI_SKINS_OVALE)
-	ovale:SetPoint("TOPLEFT", omen, "BOTTOMLEFT", 0, 0)
-
-	local postal = ns.CreateCheckBox(parent, "postal", L_GUI_SKINS_POSTAL)
-	postal:SetPoint("LEFT", ovale, "RIGHT", 320, 0)
-
-	local recount = ns.CreateCheckBox(parent, "recount", L_GUI_SKINS_RECOUNT)
-	recount:SetPoint("TOPLEFT", ovale, "BOTTOMLEFT", 0, 0)
-
-	local rematch = ns.CreateCheckBox(parent, "rematch", L_GUI_SKINS_REMATCH)
-	rematch:SetPoint("LEFT", recount, "RIGHT", 320, 0)
-
-	local skada = ns.CreateCheckBox(parent, "skada", L_GUI_SKINS_SKADA)
-	skada:SetPoint("TOPLEFT", recount, "BOTTOMLEFT", 0, 0)
-
-	local tiny_dps = ns.CreateCheckBox(parent, "tiny_dps", L_GUI_SKINS_TINY_DPS)
-	tiny_dps:SetPoint("LEFT", skada, "RIGHT", 320, 0)
-
-	local vanaskos = ns.CreateCheckBox(parent, "vanaskos", L_GUI_SKINS_VANASKOS)
-	vanaskos:SetPoint("TOPLEFT", skada, "BOTTOMLEFT", 0, 0)
-
-	local weak_auras = ns.CreateCheckBox(parent, "weak_auras", L_GUI_SKINS_WEAK_AURAS)
-	weak_auras:SetPoint("LEFT", vanaskos, "RIGHT", 320, 0)
 end
 
 -- Combat text
@@ -1725,6 +1638,94 @@ do
 
 	local combat = ns.CreateCheckBox(parent, "combat", L_GUI_ERROR_HIDE_COMBAT)
 	combat:SetPoint("TOPLEFT", white, "BOTTOMLEFT", 0, 0)
+end
+
+-- Miscellaneous
+do
+	local parent = ShestakUIOptionsPanel.misc
+
+	local shift_marking = ns.CreateCheckBox(parent, "shift_marking", L_GUI_MISC_MARKING)
+	shift_marking:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local invite_keyword = ns.CreateEditBox(parent, "invite_keyword", true, L_GUI_MISC_INVKEYWORD)
+	invite_keyword:SetPoint("TOPLEFT", shift_marking, "BOTTOMLEFT", 6, -10)
+
+	local afk_spin_camera = ns.CreateCheckBox(parent, "afk_spin_camera", L_GUI_MISC_SPIN_CAMERA)
+	afk_spin_camera:SetPoint("TOPLEFT", invite_keyword, "BOTTOMLEFT", -6, -10)
+
+	local vehicle_mouseover = ns.CreateCheckBox(parent, "vehicle_mouseover", L_GUI_MISC_VEHICLE_MOUSEOVER)
+	vehicle_mouseover:SetPoint("TOPLEFT", afk_spin_camera, "BOTTOMLEFT", 0, 0)
+
+	local quest_auto_button = ns.CreateCheckBox(parent, "quest_auto_button", L_GUI_MISC_QUEST_AUTOBUTTON)
+	quest_auto_button:SetPoint("TOPLEFT", vehicle_mouseover, "BOTTOMLEFT", 0, 0)
+
+	local raid_tools = ns.CreateCheckBox(parent, "raid_tools", L_GUI_MISC_RAID_TOOLS)
+	raid_tools:SetPoint("TOPLEFT", quest_auto_button, "BOTTOMLEFT", 0, 0)
+
+	local profession_tabs = ns.CreateCheckBox(parent, "profession_tabs", L_GUI_MISC_PROFESSION_TABS)
+	profession_tabs:SetPoint("TOPLEFT", raid_tools, "BOTTOMLEFT", 0, 0)
+
+	local hide_bg_spam = ns.CreateCheckBox(parent, "hide_bg_spam", L_GUI_MISC_HIDE_BG_SPAM)
+	hide_bg_spam:SetPoint("TOPLEFT", profession_tabs, "BOTTOMLEFT", 0, 0)
+
+	local item_level = ns.CreateCheckBox(parent, "item_level", L_GUI_MISC_ITEM_LEVEL)
+	item_level:SetPoint("TOPLEFT", hide_bg_spam, "BOTTOMLEFT", 0, 0)
+
+	local already_known = ns.CreateCheckBox(parent, "already_known", L_GUI_MISC_ALREADY_KNOWN)
+	already_known:SetPoint("TOPLEFT", item_level, "BOTTOMLEFT", 0, 0)
+
+	local disenchanting = ns.CreateCheckBox(parent, "disenchanting", L_GUI_MISC_DISENCHANTING)
+	disenchanting:SetPoint("TOPLEFT", already_known, "BOTTOMLEFT", 0, 0)
+
+	local sum_buyouts = ns.CreateCheckBox(parent, "sum_buyouts", L_GUI_MISC_SUM_BUYOUTS)
+	sum_buyouts:SetPoint("TOPLEFT", disenchanting, "BOTTOMLEFT", 0, 0)
+
+	local click_cast = ns.CreateCheckBox(parent, "click_cast", L_GUI_MISC_CLICK_CAST)
+	click_cast:SetPoint("TOPLEFT", sum_buyouts, "BOTTOMLEFT", 0, 0)
+
+	local click_cast_filter = ns.CreateCheckBox(parent, "click_cast_filter", L_GUI_MISC_CLICK_CAST_FILTER)
+	click_cast_filter:SetPoint("TOPLEFT", click_cast, "BOTTOMLEFT", 20, 0)
+
+	click_cast.children = {click_cast_filter}
+
+	local move_blizzard = ns.CreateCheckBox(parent, "move_blizzard", L_GUI_MISC_MOVE_BLIZZARD)
+	move_blizzard:SetPoint("TOPLEFT", click_cast_filter, "BOTTOMLEFT", -20, 0)
+
+	local color_picker = ns.CreateCheckBox(parent, "color_picker", L_GUI_MISC_COLOR_PICKER)
+	color_picker:SetPoint("TOPLEFT", move_blizzard, "BOTTOMLEFT", 0, 0)
+
+	local enchantment_scroll = ns.CreateCheckBox(parent, "enchantment_scroll", L_GUI_MISC_ENCHANTMENT_SCROLL)
+	enchantment_scroll:SetPoint("TOPLEFT", color_picker, "BOTTOMLEFT", 0, 0)
+
+	local archaeology = ns.CreateCheckBox(parent, "archaeology", L_GUI_MISC_ARCHAEOLOGY)
+	archaeology:SetPoint("TOPLEFT", enchantment_scroll, "BOTTOMLEFT", 0, 0)
+
+	local chars_currency = ns.CreateCheckBox(parent, "chars_currency", L_GUI_MISC_CHARS_CURRENCY)
+	chars_currency:SetPoint("TOPLEFT", archaeology, "BOTTOMLEFT", 0, 0)
+
+	local armory_link = ns.CreateCheckBox(parent, "armory_link")
+	armory_link:SetPoint("TOPLEFT", chars_currency, "BOTTOMLEFT", 0, 0)
+
+	local merchant_itemlevel = ns.CreateCheckBox(parent, "merchant_itemlevel", L_GUI_MISC_MERCHANT_ITEMLEVEL)
+	merchant_itemlevel:SetPoint("TOPLEFT", armory_link, "BOTTOMLEFT", 0, 0)
+
+	-- Panel 2
+	local parent = ShestakUIOptionsPanel.misc2
+
+	local minimize_mouseover = ns.CreateCheckBox(parent, "minimize_mouseover", L_GUI_MISC_MINIMIZE_MOUSEOVER)
+	minimize_mouseover:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local hide_banner = ns.CreateCheckBox(parent, "hide_banner", L_GUI_MISC_HIDE_BANNER)
+	hide_banner:SetPoint("TOPLEFT", minimize_mouseover, "BOTTOMLEFT", 0, 0)
+
+	local hide_talking_head = ns.CreateCheckBox(parent, "hide_talking_head", L_GUI_MISC_HIDE_TALKING_HEAD)
+	hide_talking_head:SetPoint("TOPLEFT", hide_banner, "BOTTOMLEFT", 0, 0)
+
+	local hide_raid_button = ns.CreateCheckBox(parent, "hide_raid_button", L_GUI_MISC_HIDE_RAID_BUTTON)
+	hide_raid_button:SetPoint("TOPLEFT", hide_talking_head, "BOTTOMLEFT", 0, 0)
+
+	local custom_lagtolerance = ns.CreateCheckBox(parent, "custom_lagtolerance", L_GUI_MISC_LAG_TOLERANCE)
+	custom_lagtolerance:SetPoint("TOPLEFT", hide_raid_button, "BOTTOMLEFT", 0, 0)
 end
 
 ----------------------------------------------------------------------------------------
