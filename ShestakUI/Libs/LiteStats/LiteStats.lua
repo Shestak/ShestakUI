@@ -698,7 +698,7 @@ if gold.enabled then
 						tinsert(SavedStats.JunkIgnore, id)
 						print(format("|cff66C6FF%s:|r %s", L_STATS_ADDED_JUNK, link))
 					else
-						print(format("%s |cff66C6FF%s|r", link, L_STATS_ALREADY_EXCEPTIONS))
+						print(format("%s |cff66C6FF%s|r", link, L_STATS_ALREADY_ADDITIONS))
 					end
 				elseif strfind(action, "^del") or strfind(action, "^rem") then
 					tDeleteItem(SavedStats.JunkIgnore, id)
@@ -712,7 +712,7 @@ if gold.enabled then
 							tinsert(SavedStats.JunkIgnore, id)
 							print(format("|cff66C6FF%s:|r %s", L_STATS_ADDED_JUNK, mouselink))
 						else
-							print(format("%s |cff66C6FF%s|r", mouselink, L_STATS_ALREADY_EXCEPTIONS))
+							print(format("%s |cff66C6FF%s|r", mouselink, L_STATS_ALREADY_ADDITIONS))
 						end
 					elseif strfind(action, "^del") or strfind(action, "^rem") then
 						tDeleteItem(SavedStats.JunkIgnore, id)
