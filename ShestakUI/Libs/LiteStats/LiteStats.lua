@@ -224,7 +224,7 @@ function SlashCmdList.LSTATS()
 		slprint(L_STATS_LOCATION, L_STATS_WORLD_MAP, L_STATS_INSERTS_COORDS)
 	end
 	if gold.enabled then
-		slprint(strtrim(gsub(MONEY, "%%d", "")), L_STATS_OPEN_CURRENCY, L_STATS_RC_AUTO_SELLING, L_STATS_NOT_TO_SELL, L_STATS_WATCH_CURRENCY)
+		slprint(strtrim(gsub(MONEY, "%%d", "")), L_STATS_OPEN_CURRENCY, L_STATS_RC_AUTO_SELLING, L_STATS_NEED_TO_SELL, L_STATS_WATCH_CURRENCY)
 	end
 	print("|cffBCEE68", format(L_STATS_OTHER_OPTIONS, "|cff66C6FFShestakUI\\Config\\DataText.lua").."|r")
 end
@@ -680,7 +680,7 @@ if gold.enabled then
 	function SlashCmdList.KJUNK(s)
 		local action = strsplit(" ", s)
 		if action == "list" then
-			print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_EXCEPTIONS, (#SavedStats.JunkIgnore == 0 and NONE or "")))
+			print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_ADDITIONS, (#SavedStats.JunkIgnore == 0 and NONE or "")))
 			for i, id in pairs(SavedStats.JunkIgnore) do
 				local _, link = GetItemInfo(id)
 				print("- ["..i.."]", link)
