@@ -69,6 +69,110 @@ C["skins"] = {
 }
 
 ----------------------------------------------------------------------------------------
+--	Unit Frames options
+----------------------------------------------------------------------------------------
+C["unitframe"] = {
+	-- Main
+	["enable"] = true,							-- Enable unit frames
+	["own_color"] = false,						-- Set your color for health bars
+	["uf_color"] = {0.4, 0.4, 0.4},				-- Color for UF if ["own_color"] = true
+	["enemy_health_color"] = true,				-- If enable, enemy target color is red
+	["show_total_value"] = false,				-- Display of info text on player and target with XXXX/Total
+	["color_value"] = false,					-- Health/mana value is colored
+	["bar_color_value"] = false,				-- Health bar color by current health remaining
+	["lines"] = true,							-- Show Player and Target lines
+	-- Cast bars
+	["unit_castbar"] = true,					-- Show castbars
+	["castbar_icon"] = false,					-- Show castbar icons
+	["castbar_latency"] = true,					-- Castbar latency
+	["castbar_ticks"] = false,					-- Castbar ticks
+	-- Frames
+	["show_pet"] = true,						-- Show pet frame
+	["show_focus"] = true,						-- Show focus frame
+	["show_target_target"] = true,				-- Show target target frame
+	["show_boss"] = true,						-- Show boss frames
+	["boss_on_right"] = true,					-- Boss frames on the right
+	["show_arena"] = true,						-- Show arena frames
+	["arena_on_right"] = true,					-- Arena frames on the right
+	["boss_debuffs"] = 0,						-- Number of debuffs on the boss frames
+	["boss_buffs"] = 3,							-- Number of buffs on the boss frames
+	-- Icons
+	["icons_pvp"] = false,						-- Mouseover PvP text(not icons) on player and target frames
+	["icons_combat"] = true,					-- Combat icon
+	["icons_resting"] = true,					-- Resting icon for low lvl chars
+	-- Portraits
+	["portrait_enable"] = false,				-- Enable player/target portraits
+	["portrait_classcolor_border"] = true,		-- Enable classcolor border
+	["portrait_height"] = 92,					-- Portrait height
+	["portrait_width"] = 67,					-- Portrait width
+	-- Plugins
+	["plugins_gcd"] = false,					-- Global cooldown spark on player frame
+	["plugins_swing"] = false,					-- Swing bar
+	["plugins_reputation_bar"] = false,			-- Reputation bar (left from player frame by mouseover)
+	["plugins_experience_bar"] = false,			-- Experience bar (left from player frame by mouseover)
+	["plugins_artifact_bar"] = false,			-- Artifact Power bar (left from player frame by mouseover)
+	["plugins_smooth_bar"] = false,				-- Smooth bar
+	["plugins_enemy_spec"] = false,				-- Enemy specialization in BG and Arena
+	["plugins_combat_feedback"] = false,		-- Combat text on player/target frame
+	["plugins_fader"] = false,					-- Fade unit frames
+	["plugins_diminishing"] = false,			-- Diminishing Returns icons on arena frames
+	["plugins_power_prediction"] = false,		-- Power cost prediction bar on player frame
+}
+
+----------------------------------------------------------------------------------------
+--	Unit Frames Class bar options
+----------------------------------------------------------------------------------------
+C["unitframe_class_bar"] = {
+	["combo"] = true,							-- Rogue/Druid Combo bar
+	["combo_always"] = false,					-- Always show Combo bar for Druid
+	["combo_old"] = false,						-- Show combo point on the target
+	["arcane"] = true,							-- Arcane Charge bar
+	["chi"] = true,								-- Chi bar
+	["stagger"] = true,							-- Stagger bar (for Monk Tanks)
+	["holy"] = true,							-- Holy Power bar
+	["shard"] = true,							-- Shard/Burning bar
+	["rune"] = true,							-- Rune bar
+	["totem"] = true,							-- Totem bar
+	["range"] = false,							-- Range bar (only for Priest)
+}
+
+----------------------------------------------------------------------------------------
+--	Raid Frames options
+----------------------------------------------------------------------------------------
+C["raidframe"] = {
+	-- Main
+	["by_role"] = true,							-- Sorting players in group by role
+	["aggro_border"] = true,					-- Aggro border
+	["deficit_health"] = false,					-- Raid deficit health
+	["vertical_health"] = false,				-- Vertical orientation of health
+	["alpha_health"] = false,					-- Alpha of healthbars when 100%hp
+	["show_range"] = true,						-- Show range opacity for raidframes
+	["range_alpha"] = 0.5,						-- Alpha of unitframes when unit is out of range
+	-- Frames
+	["show_party"] = true,						-- Show party frames
+	["show_raid"] = true,						-- Show raid frames
+	["solo_mode"] = false,						-- Show player frame always
+	["player_in_party"] = true,					-- Show player frame in party
+	["raid_tanks"] = true,						-- Show raid tanks
+	["raid_tanks_tt"] = false,					-- Show raid tanks target target
+	["raid_groups"] = 5,						-- Number of groups in raid
+	["raid_groups_vertical"] = false,			-- Vertical raid groups(only for heal layout)
+	-- Icons
+	["icons_role"] = false,						-- Role icon on frames
+	["icons_raid_mark"] = true,					-- Raid mark icons on frames
+	["icons_ready_check"] = true,				-- Ready check icons on frames
+	["icons_leader"] = true,					-- Leader icon and assistant icon on frames
+	["icons_sumon"] = true,						-- Sumon icons on frames
+	-- Plugins
+	["plugins_debuffhighlight_icon"] = false,	-- Debuff highlight texture + icon
+	["plugins_aura_watch"] = true,				-- Raid debuff icons (from the list)
+	["plugins_aura_watch_timer"] = false,		-- Timer on raid debuff icons
+	["plugins_pvp_debuffs"] = false,			-- Show also PvP debuff icons (from the list)
+	["plugins_healcomm"] = true,				-- Incoming heal bar on raid frame
+	["plugins_auto_resurrection"] = false,		-- Auto cast resurrection on middle-click(doesn't work with Clique)
+}
+
+----------------------------------------------------------------------------------------
 --	Announcements options
 ----------------------------------------------------------------------------------------
 C["announcements"] = {
@@ -392,110 +496,6 @@ C["filger"] = {
 	["buffs_size"] = 37,						-- Buffs size
 	["cooldown_size"] = 30,						-- Cooldowns size
 	["pvp_size"] = 60,							-- PvP debuffs size
-}
-
-----------------------------------------------------------------------------------------
---	Unit Frames options
-----------------------------------------------------------------------------------------
-C["unitframe"] = {
-	-- Main
-	["enable"] = true,							-- Enable unit frames
-	["own_color"] = false,						-- Set your color for health bars
-	["uf_color"] = {0.4, 0.4, 0.4},				-- Color for UF if ["own_color"] = true
-	["enemy_health_color"] = true,				-- If enable, enemy target color is red
-	["show_total_value"] = false,				-- Display of info text on player and target with XXXX/Total
-	["color_value"] = false,					-- Health/mana value is colored
-	["bar_color_value"] = false,				-- Health bar color by current health remaining
-	["lines"] = true,							-- Show Player and Target lines
-	-- Cast bars
-	["unit_castbar"] = true,					-- Show castbars
-	["castbar_icon"] = false,					-- Show castbar icons
-	["castbar_latency"] = true,					-- Castbar latency
-	["castbar_ticks"] = false,					-- Castbar ticks
-	-- Frames
-	["show_pet"] = true,						-- Show pet frame
-	["show_focus"] = true,						-- Show focus frame
-	["show_target_target"] = true,				-- Show target target frame
-	["show_boss"] = true,						-- Show boss frames
-	["boss_on_right"] = true,					-- Boss frames on the right
-	["show_arena"] = true,						-- Show arena frames
-	["arena_on_right"] = true,					-- Arena frames on the right
-	["boss_debuffs"] = 0,						-- Number of debuffs on the boss frames
-	["boss_buffs"] = 3,							-- Number of buffs on the boss frames
-	-- Icons
-	["icons_pvp"] = false,						-- Mouseover PvP text(not icons) on player and target frames
-	["icons_combat"] = true,					-- Combat icon
-	["icons_resting"] = true,					-- Resting icon for low lvl chars
-	-- Portraits
-	["portrait_enable"] = false,				-- Enable player/target portraits
-	["portrait_classcolor_border"] = true,		-- Enable classcolor border
-	["portrait_height"] = 92,					-- Portrait height
-	["portrait_width"] = 67,					-- Portrait width
-	-- Plugins
-	["plugins_gcd"] = false,					-- Global cooldown spark on player frame
-	["plugins_swing"] = false,					-- Swing bar
-	["plugins_reputation_bar"] = false,			-- Reputation bar (left from player frame by mouseover)
-	["plugins_experience_bar"] = false,			-- Experience bar (left from player frame by mouseover)
-	["plugins_artifact_bar"] = false,			-- Artifact Power bar (left from player frame by mouseover)
-	["plugins_smooth_bar"] = false,				-- Smooth bar
-	["plugins_enemy_spec"] = false,				-- Enemy specialization in BG and Arena
-	["plugins_combat_feedback"] = false,		-- Combat text on player/target frame
-	["plugins_fader"] = false,					-- Fade unit frames
-	["plugins_diminishing"] = false,			-- Diminishing Returns icons on arena frames
-	["plugins_power_prediction"] = false,		-- Power cost prediction bar on player frame
-}
-
-----------------------------------------------------------------------------------------
---	Unit Frames Class bar options
-----------------------------------------------------------------------------------------
-C["unitframe_class_bar"] = {
-	["combo"] = true,							-- Rogue/Druid Combo bar
-	["combo_always"] = false,					-- Always show Combo bar for Druid
-	["combo_old"] = false,						-- Show combo point on the target
-	["arcane"] = true,							-- Arcane Charge bar
-	["chi"] = true,								-- Chi bar
-	["stagger"] = true,							-- Stagger bar (for Monk Tanks)
-	["holy"] = true,							-- Holy Power bar
-	["shard"] = true,							-- Shard/Burning bar
-	["rune"] = true,							-- Rune bar
-	["totem"] = true,							-- Totem bar
-	["range"] = false,							-- Range bar (only for Priest)
-}
-
-----------------------------------------------------------------------------------------
---	Raid Frames options
-----------------------------------------------------------------------------------------
-C["raidframe"] = {
-	-- Main
-	["by_role"] = true,							-- Sorting players in group by role
-	["aggro_border"] = true,					-- Aggro border
-	["deficit_health"] = false,					-- Raid deficit health
-	["vertical_health"] = false,				-- Vertical orientation of health
-	["alpha_health"] = false,					-- Alpha of healthbars when 100%hp
-	["show_range"] = true,						-- Show range opacity for raidframes
-	["range_alpha"] = 0.5,						-- Alpha of unitframes when unit is out of range
-	-- Frames
-	["show_party"] = true,						-- Show party frames
-	["show_raid"] = true,						-- Show raid frames
-	["solo_mode"] = false,						-- Show player frame always
-	["player_in_party"] = true,					-- Show player frame in party
-	["raid_tanks"] = true,						-- Show raid tanks
-	["raid_tanks_tt"] = false,					-- Show raid tanks target target
-	["raid_groups"] = 5,						-- Number of groups in raid
-	["raid_groups_vertical"] = false,			-- Vertical raid groups(only for heal layout)
-	-- Icons
-	["icons_role"] = false,						-- Role icon on frames
-	["icons_raid_mark"] = true,					-- Raid mark icons on frames
-	["icons_ready_check"] = true,				-- Ready check icons on frames
-	["icons_leader"] = true,					-- Leader icon and assistant icon on frames
-	["icons_sumon"] = true,						-- Sumon icons on frames
-	-- Plugins
-	["plugins_debuffhighlight_icon"] = false,	-- Debuff highlight texture + icon
-	["plugins_aura_watch"] = true,				-- Raid debuff icons (from the list)
-	["plugins_aura_watch_timer"] = false,		-- Timer on raid debuff icons
-	["plugins_pvp_debuffs"] = false,			-- Show also PvP debuff icons (from the list)
-	["plugins_healcomm"] = true,				-- Incoming heal bar on raid frame
-	["plugins_auto_resurrection"] = false,		-- Auto cast resurrection on middle-click(doesn't work with Clique)
 }
 
 ----------------------------------------------------------------------------------------

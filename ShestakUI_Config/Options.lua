@@ -511,6 +511,283 @@ do
 	weak_auras:SetPoint("LEFT", vanaskos, "RIGHT", 320, 0)
 end
 
+-- Unit Frames
+do
+	local parent = ShestakUIOptionsPanel.unitframe
+
+	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_UF_ENABLE)
+	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local own_color = ns.CreateCheckBox(parent, "own_color", L_GUI_UF_OWN_COLOR)
+	own_color:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
+
+	local uf_color = ns.CreateColourPicker(parent, "uf_color", true, L_GUI_UF_UF_COLOR)
+	uf_color:SetPoint("TOPLEFT", own_color, "BOTTOMLEFT", 15, -10)
+
+	local enemy_health_color = ns.CreateCheckBox(parent, "enemy_health_color", L_GUI_UF_ENEMY_HEALTH_COLOR)
+	enemy_health_color:SetPoint("TOPLEFT", uf_color, "BOTTOMLEFT", -15, -10)
+
+	local show_total_value = ns.CreateCheckBox(parent, "show_total_value", L_GUI_UF_TOTAL_VALUE)
+	show_total_value:SetPoint("TOPLEFT", enemy_health_color, "BOTTOMLEFT", 0, 0)
+
+	local color_value = ns.CreateCheckBox(parent, "color_value", L_GUI_UF_COLOR_VALUE)
+	color_value:SetPoint("TOPLEFT", show_total_value, "BOTTOMLEFT", 0, 0)
+
+	local bar_color_value = ns.CreateCheckBox(parent, "bar_color_value", L_GUI_UF_BAR_COLOR_VALUE)
+	bar_color_value:SetPoint("TOPLEFT", color_value, "BOTTOMLEFT", 0, 0)
+
+	local lines = ns.CreateCheckBox(parent, "lines", L_GUI_UF_LINES)
+	lines:SetPoint("TOPLEFT", bar_color_value, "BOTTOMLEFT", 0, 0)
+
+	-- Cast bars
+	local subheader = ns.addSubCategory(parent, L_GUI_UF_SUBHEADER_CAST)
+	subheader:SetPoint("TOPLEFT", lines, "BOTTOMLEFT", 0, -16)
+
+	local unit_castbar = ns.CreateCheckBox(parent, "unit_castbar", L_GUI_UF_UNIT_CASTBAR)
+	unit_castbar:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
+
+	local castbar_icon = ns.CreateCheckBox(parent, "castbar_icon", L_GUI_UF_CASTBAR_ICON)
+	castbar_icon:SetPoint("TOPLEFT", unit_castbar, "BOTTOMLEFT", 0, 0)
+
+	local castbar_latency = ns.CreateCheckBox(parent, "castbar_latency", L_GUI_UF_CASTBAR_LATENCY)
+	castbar_latency:SetPoint("TOPLEFT", castbar_icon, "BOTTOMLEFT", 0, 0)
+
+	local castbar_ticks = ns.CreateCheckBox(parent, "castbar_ticks", L_GUI_UF_CASTBAR_TICKS)
+	castbar_ticks:SetPoint("TOPLEFT", castbar_latency, "BOTTOMLEFT", 0, 0)
+
+	-- Frames
+	local subheader = ns.addSubCategory(parent, L_GUI_UF_SUBHEADER_FRAMES)
+	subheader:SetPoint("TOPLEFT", castbar_ticks, "BOTTOMLEFT", 0, -16)
+
+	local show_pet = ns.CreateCheckBox(parent, "show_pet", L_GUI_UF_SHOW_PET)
+	show_pet:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
+
+	local show_focus = ns.CreateCheckBox(parent, "show_focus", L_GUI_UF_SHOW_FOCUS)
+	show_focus:SetPoint("LEFT", show_pet, "RIGHT", 170, 0)
+
+	local show_target_target = ns.CreateCheckBox(parent, "show_target_target", L_GUI_UF_SHOW_TOT)
+	show_target_target:SetPoint("LEFT", show_focus, "RIGHT", 170, 0)
+
+	local show_boss = ns.CreateCheckBox(parent, "show_boss", L_GUI_UF_SHOW_BOSS)
+	show_boss:SetPoint("TOPLEFT", show_pet, "BOTTOMLEFT", 0, 0)
+
+	local boss_on_right = ns.CreateCheckBox(parent, "boss_on_right", L_GUI_UF_BOSS_RIGHT)
+	boss_on_right:SetPoint("LEFT", show_boss, "RIGHT", 170, 0)
+
+	local show_arena = ns.CreateCheckBox(parent, "show_arena", L_GUI_UF_SHOW_ARENA)
+	show_arena:SetPoint("TOPLEFT", show_boss, "BOTTOMLEFT", 0, 0)
+
+	local arena_on_right = ns.CreateCheckBox(parent, "arena_on_right", L_GUI_UF_ARENA_RIGHT)
+	arena_on_right:SetPoint("LEFT", show_arena, "RIGHT", 170, 0)
+
+	local boss_debuffs = ns.CreateNumberSlider(parent, "boss_debuffs", nil, nil, 0, 3, 1, true, L_GUI_UF_BOSS_DEBUFFS, L_GUI_UF_BOSS_DEBUFFS_DESC)
+	boss_debuffs:SetPoint("TOPLEFT", show_arena, "BOTTOMLEFT", 0, -20)
+
+	local boss_buffs = ns.CreateNumberSlider(parent, "boss_buffs", nil, nil, 0, 3, 1, true, L_GUI_UF_BOSS_BUFFS, L_GUI_UF_BOSS_BUFFS_DESC)
+	boss_buffs:SetPoint("LEFT", boss_debuffs, "RIGHT", 120, 0)
+
+	-- Panel 2
+	local parent = ShestakUIOptionsPanel.unitframe2
+
+	local icons_pvp = ns.CreateCheckBox(parent, "icons_pvp", L_GUI_UF_ICONS_PVP)
+	icons_pvp:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local icons_combat = ns.CreateCheckBox(parent, "icons_combat", L_GUI_UF_ICONS_COMBAT)
+	icons_combat:SetPoint("TOPLEFT", icons_pvp, "BOTTOMLEFT", 0, 0)
+
+	local icons_resting = ns.CreateCheckBox(parent, "icons_resting", L_GUI_UF_ICONS_RESTING)
+	icons_resting:SetPoint("TOPLEFT", icons_combat, "BOTTOMLEFT", 0, 0)
+
+	-- Portraits
+	local subheader = ns.addSubCategory(parent, L_GUI_UF_SUBHEADER_PORTRAIT)
+	subheader:SetPoint("TOPLEFT", icons_resting, "BOTTOMLEFT", 0, -16)
+
+	local portrait_enable = ns.CreateCheckBox(parent, "portrait_enable", L_GUI_UF_PORTRAIT_ENABLE)
+	portrait_enable:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
+
+	local portrait_classcolor_border = ns.CreateCheckBox(parent, "portrait_classcolor_border", L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER)
+	portrait_classcolor_border:SetPoint("TOPLEFT", portrait_enable, "BOTTOMLEFT", 0, 0)
+
+	local portrait_height = ns.CreateNumberSlider(parent, "portrait_height", nil, nil, 0, 120, 1, true, L_GUI_UF_PORTRAIT_HEIGHT)
+	portrait_height:SetPoint("TOPLEFT", portrait_classcolor_border, "BOTTOMLEFT", 0, -20)
+
+	local portrait_width = ns.CreateNumberSlider(parent, "portrait_width", nil, nil, 0, 120, 1, true, L_GUI_UF_PORTRAIT_WIDTH)
+	portrait_width:SetPoint("LEFT", portrait_height, "RIGHT", 120, 0)
+
+	-- Plugins
+	local subheader = ns.addSubCategory(parent, L_GUI_UF_SUBHEADER_PLUGINS)
+	subheader:SetPoint("TOPLEFT", portrait_height, "BOTTOMLEFT", 0, -16)
+
+	local plugins_gcd = ns.CreateCheckBox(parent, "plugins_gcd", L_GUI_UF_PLUGINS_GCD)
+	plugins_gcd:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
+
+	local plugins_swing = ns.CreateCheckBox(parent, "plugins_swing", L_GUI_UF_PLUGINS_SWING)
+	plugins_swing:SetPoint("TOPLEFT", plugins_gcd, "BOTTOMLEFT", 0, 0)
+
+	local plugins_reputation_bar = ns.CreateCheckBox(parent, "plugins_reputation_bar")
+	plugins_reputation_bar:SetPoint("TOPLEFT", plugins_swing, "BOTTOMLEFT", 0, 0)
+
+	local plugins_experience_bar = ns.CreateCheckBox(parent, "plugins_experience_bar")
+	plugins_experience_bar:SetPoint("TOPLEFT", plugins_reputation_bar, "BOTTOMLEFT", 0, 0)
+
+	local plugins_artifact_bar = ns.CreateCheckBox(parent, "plugins_artifact_bar")
+	plugins_artifact_bar:SetPoint("TOPLEFT", plugins_experience_bar, "BOTTOMLEFT", 0, 0)
+
+	local plugins_smooth_bar = ns.CreateCheckBox(parent, "plugins_smooth_bar", L_GUI_UF_PLUGINS_SMOOTH_BAR)
+	plugins_smooth_bar:SetPoint("TOPLEFT", plugins_artifact_bar, "BOTTOMLEFT", 0, 0)
+
+	local plugins_enemy_spec = ns.CreateCheckBox(parent, "plugins_enemy_spec", L_GUI_UF_PLUGINS_ENEMY_SPEC)
+	plugins_enemy_spec:SetPoint("TOPLEFT", plugins_smooth_bar, "BOTTOMLEFT", 0, 0)
+
+	local plugins_combat_feedback = ns.CreateCheckBox(parent, "plugins_combat_feedback", L_GUI_UF_PLUGINS_COMBAT_FEEDBACK)
+	plugins_combat_feedback:SetPoint("TOPLEFT", plugins_enemy_spec, "BOTTOMLEFT", 0, 0)
+
+	local plugins_fader = ns.CreateCheckBox(parent, "plugins_fader", L_GUI_UF_PLUGINS_FADER)
+	plugins_fader:SetPoint("TOPLEFT", plugins_combat_feedback, "BOTTOMLEFT", 0, 0)
+
+	local plugins_diminishing = ns.CreateCheckBox(parent, "plugins_diminishing", L_GUI_UF_PLUGINS_DIMINISHING)
+	plugins_diminishing:SetPoint("TOPLEFT", plugins_fader, "BOTTOMLEFT", 0, 0)
+
+	local plugins_power_prediction = ns.CreateCheckBox(parent, "plugins_power_prediction", L_GUI_UF_PLUGINS_POWER_PREDICTION)
+	plugins_power_prediction:SetPoint("TOPLEFT", plugins_diminishing, "BOTTOMLEFT", 0, 0)
+end
+
+-- Unit Frames Class bar
+do
+	local parent = ShestakUIOptionsPanel.unitframe_class_bar
+
+	local combo = ns.CreateCheckBox(parent, "combo", L_GUI_UF_PLUGINS_COMBO_BAR)
+	combo:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local combo_always = ns.CreateCheckBox(parent, "combo_always", L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS)
+	combo_always:SetPoint("TOPLEFT", combo, "BOTTOMLEFT", 20, 0)
+
+	local combo_old = ns.CreateCheckBox(parent, "combo_old", L_GUI_UF_PLUGINS_COMBO_BAR_OLD)
+	combo_old:SetPoint("TOPLEFT", combo_always, "BOTTOMLEFT", 0, 0)
+
+	combo.children = {combo_always, combo_old}
+
+	local arcane = ns.CreateCheckBox(parent, "arcane", L_GUI_UF_PLUGINS_ARCANE_BAR)
+	arcane:SetPoint("TOPLEFT", combo_old, "BOTTOMLEFT", -20, 0)
+
+	local chi = ns.CreateCheckBox(parent, "chi", L_GUI_UF_PLUGINS_CHI_BAR)
+	chi:SetPoint("TOPLEFT", arcane, "BOTTOMLEFT", 0, 0)
+
+	local stagger = ns.CreateCheckBox(parent, "stagger", L_GUI_UF_PLUGINS_STAGGER_BAR)
+	stagger:SetPoint("TOPLEFT", chi, "BOTTOMLEFT", 0, 0)
+
+	local holy = ns.CreateCheckBox(parent, "holy", L_GUI_UF_PLUGINS_HOLY_BAR)
+	holy:SetPoint("TOPLEFT", stagger, "BOTTOMLEFT", 0, 0)
+
+	local shard = ns.CreateCheckBox(parent, "shard", L_GUI_UF_PLUGINS_SHARD_BAR)
+	shard:SetPoint("TOPLEFT", holy, "BOTTOMLEFT", 0, 0)
+
+	local rune = ns.CreateCheckBox(parent, "rune", L_GUI_UF_PLUGINS_RUNE_BAR)
+	rune:SetPoint("TOPLEFT", shard, "BOTTOMLEFT", 0, 0)
+
+	local totem = ns.CreateCheckBox(parent, "totem", L_GUI_UF_PLUGINS_TOTEM_BAR)
+	totem:SetPoint("TOPLEFT", rune, "BOTTOMLEFT", 0, 0)
+
+	local range = ns.CreateCheckBox(parent, "range", L_GUI_UF_PLUGINS_RANGE_BAR)
+	range:SetPoint("TOPLEFT", totem, "BOTTOMLEFT", 0, 0)
+end
+
+-- Raid Frames
+do
+	local parent = ShestakUIOptionsPanel.raidframe
+
+	local by_role = ns.CreateCheckBox(parent, "by_role", L_GUI_UF_BY_ROLE)
+	by_role:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local aggro_border = ns.CreateCheckBox(parent, "aggro_border", L_GUI_UF_AGGRO_BORDER)
+	aggro_border:SetPoint("TOPLEFT", by_role, "BOTTOMLEFT", 0, 0)
+
+	local deficit_health = ns.CreateCheckBox(parent, "deficit_health", L_GUI_UF_DEFICIT_HEALTH)
+	deficit_health:SetPoint("TOPLEFT", aggro_border, "BOTTOMLEFT", 0, 0)
+
+	local vertical_health = ns.CreateCheckBox(parent, "vertical_health", L_GUI_UF_VERTICAL_HEALTH)
+	vertical_health:SetPoint("TOPLEFT", deficit_health, "BOTTOMLEFT", 0, 0)
+
+	local alpha_health = ns.CreateCheckBox(parent, "alpha_health", L_GUI_UF_ALPHA_HEALTH)
+	alpha_health:SetPoint("TOPLEFT", vertical_health, "BOTTOMLEFT", 0, 0)
+
+	local show_range = ns.CreateCheckBox(parent, "show_range", L_GUI_UF_SHOW_RANGE)
+	show_range:SetPoint("TOPLEFT", alpha_health, "BOTTOMLEFT", 0, 0)
+
+	local range_alpha = ns.CreateNumberSlider(parent, "range_alpha", nil, nil, 0, 1, 0.05, true, L_GUI_UF_RANGE_ALPHA, L_GUI_UF_RANGE_ALPHA_DESC)
+	range_alpha:SetPoint("TOPLEFT", show_range, "BOTTOMLEFT", 0, -20)
+
+	-- Frames
+	local subheader = ns.addSubCategory(parent, L_GUI_UF_SUBHEADER_RAIDFRAMES)
+	subheader:SetPoint("TOPLEFT", range_alpha, "BOTTOMLEFT", 0, -16)
+
+	local show_party = ns.CreateCheckBox(parent, "show_party", L_GUI_UF_SHOW_PARTY)
+	show_party:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
+
+	local show_raid = ns.CreateCheckBox(parent, "show_raid", L_GUI_UF_SHOW_RAID)
+	show_raid:SetPoint("LEFT", show_party, "RIGHT", 320, 0)
+
+	local solo_mode = ns.CreateCheckBox(parent, "solo_mode", L_GUI_UF_SOLO_MODE)
+	solo_mode:SetPoint("TOPLEFT", show_party, "BOTTOMLEFT", 0, 0)
+
+	local player_in_party = ns.CreateCheckBox(parent, "player_in_party", L_GUI_UF_PLAYER_PARTY)
+	player_in_party:SetPoint("TOPLEFT", solo_mode, "BOTTOMLEFT", 0, 0)
+
+	local raid_tanks = ns.CreateCheckBox(parent, "raid_tanks", L_GUI_UF_SHOW_TANK)
+	raid_tanks:SetPoint("TOPLEFT", player_in_party, "BOTTOMLEFT", 0, 0)
+
+	local raid_tanks_tt = ns.CreateCheckBox(parent, "raid_tanks_tt", L_GUI_UF_SHOW_TANK_TT)
+	raid_tanks_tt:SetPoint("TOPLEFT", raid_tanks, "BOTTOMLEFT", 0, 0)
+
+	local raid_groups = ns.CreateNumberSlider(parent, "raid_groups", nil, nil, 0, 8, 1, true, L_GUI_UF_RAID_GROUP)
+	raid_groups:SetPoint("TOPLEFT", raid_tanks_tt, "BOTTOMLEFT", 0, -20)
+
+	local raid_groups_vertical = ns.CreateCheckBox(parent, "raid_groups_vertical", L_GUI_UF_RAID_VERTICAL_GROUP)
+	raid_groups_vertical:SetPoint("TOPLEFT", raid_groups, "BOTTOMLEFT", 0, -10)
+
+	-- Icons
+	local subheader = ns.addSubCategory(parent, L_GUI_UF_SUBHEADER_ICONS)
+	subheader:SetPoint("TOPLEFT", raid_groups_vertical, "BOTTOMLEFT", 0, -16)
+
+	local icons_role = ns.CreateCheckBox(parent, "icons_role", L_GUI_UF_ICONS_ROLE)
+	icons_role:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
+
+	local icons_raid_mark = ns.CreateCheckBox(parent, "icons_raid_mark", L_GUI_UF_ICONS_RAID_MARK)
+	icons_raid_mark:SetPoint("LEFT", icons_role, "RIGHT", 170, 0)
+
+	local icons_ready_check = ns.CreateCheckBox(parent, "icons_ready_check", L_GUI_UF_ICONS_READY_CHECK)
+	icons_ready_check:SetPoint("LEFT", icons_raid_mark, "RIGHT", 170, 0)
+
+	local icons_leader = ns.CreateCheckBox(parent, "icons_leader", L_GUI_UF_ICONS_LEADER)
+	icons_leader:SetPoint("TOPLEFT", icons_role, "BOTTOMLEFT", 0, 0)
+
+	local icons_sumon = ns.CreateCheckBox(parent, "icons_sumon", L_GUI_UF_ICONS_SUMON)
+	icons_sumon:SetPoint("LEFT", icons_leader, "RIGHT", 170, 0)
+
+	-- Panel 2
+	local parent = ShestakUIOptionsPanel.raidframe2
+
+	local plugins_debuffhighlight_icon = ns.CreateCheckBox(parent, "plugins_debuffhighlight_icon", L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON)
+	plugins_debuffhighlight_icon:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local plugins_aura_watch = ns.CreateCheckBox(parent, "plugins_aura_watch", L_GUI_UF_PLUGINS_AURA_WATCH)
+	plugins_aura_watch:SetPoint("TOPLEFT", plugins_debuffhighlight_icon, "BOTTOMLEFT", 0, 0)
+
+	local plugins_aura_watch_timer = ns.CreateCheckBox(parent, "plugins_aura_watch_timer", L_GUI_UF_PLUGINS_AURA_WATCH_TIMER)
+	plugins_aura_watch_timer:SetPoint("TOPLEFT", plugins_aura_watch, "BOTTOMLEFT", 20, 0)
+
+	plugins_aura_watch.children = {plugins_aura_watch_timer}
+
+	local plugins_pvp_debuffs = ns.CreateCheckBox(parent, "plugins_pvp_debuffs", L_GUI_UF_PLUGINS_PVP_DEBUFFS)
+	plugins_pvp_debuffs:SetPoint("TOPLEFT", plugins_aura_watch_timer, "BOTTOMLEFT", -20, 0)
+
+	local plugins_healcomm = ns.CreateCheckBox(parent, "plugins_healcomm", L_GUI_UF_PLUGINS_HEALCOMM)
+	plugins_healcomm:SetPoint("TOPLEFT", plugins_pvp_debuffs, "BOTTOMLEFT", 0, 0)
+
+	local plugins_auto_resurrection = ns.CreateCheckBox(parent, "plugins_auto_resurrection")
+	plugins_auto_resurrection:SetPoint("TOPLEFT", plugins_healcomm, "BOTTOMLEFT", 0, 0)
+end
+
 -- Announcements
 do
 	local parent = ShestakUIOptionsPanel.announcements
@@ -1270,283 +1547,6 @@ do
 
 	local pvp_size = ns.CreateNumberSlider(parent, "pvp_size", nil, nil, 0, 80, 1, true, L_GUI_FILGER_PVP_SIZE)
 	pvp_size:SetPoint("TOPLEFT", cooldown_size, "BOTTOMLEFT", 0, -20)
-end
-
--- Unit Frames
-do
-	local parent = ShestakUIOptionsPanel.unitframe
-
-	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_UF_ENABLE)
-	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
-	local own_color = ns.CreateCheckBox(parent, "own_color", L_GUI_UF_OWN_COLOR)
-	own_color:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
-
-	local uf_color = ns.CreateColourPicker(parent, "uf_color", true, L_GUI_UF_UF_COLOR)
-	uf_color:SetPoint("TOPLEFT", own_color, "BOTTOMLEFT", 15, -10)
-
-	local enemy_health_color = ns.CreateCheckBox(parent, "enemy_health_color", L_GUI_UF_ENEMY_HEALTH_COLOR)
-	enemy_health_color:SetPoint("TOPLEFT", uf_color, "BOTTOMLEFT", -15, -10)
-
-	local show_total_value = ns.CreateCheckBox(parent, "show_total_value", L_GUI_UF_TOTAL_VALUE)
-	show_total_value:SetPoint("TOPLEFT", enemy_health_color, "BOTTOMLEFT", 0, 0)
-
-	local color_value = ns.CreateCheckBox(parent, "color_value", L_GUI_UF_COLOR_VALUE)
-	color_value:SetPoint("TOPLEFT", show_total_value, "BOTTOMLEFT", 0, 0)
-
-	local bar_color_value = ns.CreateCheckBox(parent, "bar_color_value", L_GUI_UF_BAR_COLOR_VALUE)
-	bar_color_value:SetPoint("TOPLEFT", color_value, "BOTTOMLEFT", 0, 0)
-
-	local lines = ns.CreateCheckBox(parent, "lines", L_GUI_UF_LINES)
-	lines:SetPoint("TOPLEFT", bar_color_value, "BOTTOMLEFT", 0, 0)
-
-	-- Cast bars
-	local subheader = ns.addSubCategory(parent, L_GUI_UF_SUBHEADER_CAST)
-	subheader:SetPoint("TOPLEFT", lines, "BOTTOMLEFT", 0, -16)
-
-	local unit_castbar = ns.CreateCheckBox(parent, "unit_castbar", L_GUI_UF_UNIT_CASTBAR)
-	unit_castbar:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
-
-	local castbar_icon = ns.CreateCheckBox(parent, "castbar_icon", L_GUI_UF_CASTBAR_ICON)
-	castbar_icon:SetPoint("TOPLEFT", unit_castbar, "BOTTOMLEFT", 0, 0)
-
-	local castbar_latency = ns.CreateCheckBox(parent, "castbar_latency", L_GUI_UF_CASTBAR_LATENCY)
-	castbar_latency:SetPoint("TOPLEFT", castbar_icon, "BOTTOMLEFT", 0, 0)
-
-	local castbar_ticks = ns.CreateCheckBox(parent, "castbar_ticks", L_GUI_UF_CASTBAR_TICKS)
-	castbar_ticks:SetPoint("TOPLEFT", castbar_latency, "BOTTOMLEFT", 0, 0)
-
-	-- Frames
-	local subheader = ns.addSubCategory(parent, L_GUI_UF_SUBHEADER_FRAMES)
-	subheader:SetPoint("TOPLEFT", castbar_ticks, "BOTTOMLEFT", 0, -16)
-
-	local show_pet = ns.CreateCheckBox(parent, "show_pet", L_GUI_UF_SHOW_PET)
-	show_pet:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
-
-	local show_focus = ns.CreateCheckBox(parent, "show_focus", L_GUI_UF_SHOW_FOCUS)
-	show_focus:SetPoint("LEFT", show_pet, "RIGHT", 170, 0)
-
-	local show_target_target = ns.CreateCheckBox(parent, "show_target_target", L_GUI_UF_SHOW_TOT)
-	show_target_target:SetPoint("LEFT", show_focus, "RIGHT", 170, 0)
-
-	local show_boss = ns.CreateCheckBox(parent, "show_boss", L_GUI_UF_SHOW_BOSS)
-	show_boss:SetPoint("TOPLEFT", show_pet, "BOTTOMLEFT", 0, 0)
-
-	local boss_on_right = ns.CreateCheckBox(parent, "boss_on_right", L_GUI_UF_BOSS_RIGHT)
-	boss_on_right:SetPoint("LEFT", show_boss, "RIGHT", 170, 0)
-
-	local show_arena = ns.CreateCheckBox(parent, "show_arena", L_GUI_UF_SHOW_ARENA)
-	show_arena:SetPoint("TOPLEFT", show_boss, "BOTTOMLEFT", 0, 0)
-
-	local arena_on_right = ns.CreateCheckBox(parent, "arena_on_right", L_GUI_UF_ARENA_RIGHT)
-	arena_on_right:SetPoint("LEFT", show_arena, "RIGHT", 170, 0)
-
-	local boss_debuffs = ns.CreateNumberSlider(parent, "boss_debuffs", nil, nil, 0, 3, 1, true, L_GUI_UF_BOSS_DEBUFFS, L_GUI_UF_BOSS_DEBUFFS_DESC)
-	boss_debuffs:SetPoint("TOPLEFT", show_arena, "BOTTOMLEFT", 0, -20)
-
-	local boss_buffs = ns.CreateNumberSlider(parent, "boss_buffs", nil, nil, 0, 3, 1, true, L_GUI_UF_BOSS_BUFFS, L_GUI_UF_BOSS_BUFFS_DESC)
-	boss_buffs:SetPoint("LEFT", boss_debuffs, "RIGHT", 120, 0)
-
-	-- Panel 2
-	local parent = ShestakUIOptionsPanel.unitframe2
-
-	local icons_pvp = ns.CreateCheckBox(parent, "icons_pvp", L_GUI_UF_ICONS_PVP)
-	icons_pvp:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
-	local icons_combat = ns.CreateCheckBox(parent, "icons_combat", L_GUI_UF_ICONS_COMBAT)
-	icons_combat:SetPoint("TOPLEFT", icons_pvp, "BOTTOMLEFT", 0, 0)
-
-	local icons_resting = ns.CreateCheckBox(parent, "icons_resting", L_GUI_UF_ICONS_RESTING)
-	icons_resting:SetPoint("TOPLEFT", icons_combat, "BOTTOMLEFT", 0, 0)
-
-	-- Portraits
-	local subheader = ns.addSubCategory(parent, L_GUI_UF_SUBHEADER_PORTRAIT)
-	subheader:SetPoint("TOPLEFT", icons_resting, "BOTTOMLEFT", 0, -16)
-
-	local portrait_enable = ns.CreateCheckBox(parent, "portrait_enable", L_GUI_UF_PORTRAIT_ENABLE)
-	portrait_enable:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
-
-	local portrait_classcolor_border = ns.CreateCheckBox(parent, "portrait_classcolor_border", L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER)
-	portrait_classcolor_border:SetPoint("TOPLEFT", portrait_enable, "BOTTOMLEFT", 0, 0)
-
-	local portrait_height = ns.CreateNumberSlider(parent, "portrait_height", nil, nil, 0, 120, 1, true, L_GUI_UF_PORTRAIT_HEIGHT)
-	portrait_height:SetPoint("TOPLEFT", portrait_classcolor_border, "BOTTOMLEFT", 0, -20)
-
-	local portrait_width = ns.CreateNumberSlider(parent, "portrait_width", nil, nil, 0, 120, 1, true, L_GUI_UF_PORTRAIT_WIDTH)
-	portrait_width:SetPoint("LEFT", portrait_height, "RIGHT", 120, 0)
-
-	-- Plugins
-	local subheader = ns.addSubCategory(parent, L_GUI_UF_SUBHEADER_PLUGINS)
-	subheader:SetPoint("TOPLEFT", portrait_height, "BOTTOMLEFT", 0, -16)
-
-	local plugins_gcd = ns.CreateCheckBox(parent, "plugins_gcd", L_GUI_UF_PLUGINS_GCD)
-	plugins_gcd:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
-
-	local plugins_swing = ns.CreateCheckBox(parent, "plugins_swing", L_GUI_UF_PLUGINS_SWING)
-	plugins_swing:SetPoint("TOPLEFT", plugins_gcd, "BOTTOMLEFT", 0, 0)
-
-	local plugins_reputation_bar = ns.CreateCheckBox(parent, "plugins_reputation_bar")
-	plugins_reputation_bar:SetPoint("TOPLEFT", plugins_swing, "BOTTOMLEFT", 0, 0)
-
-	local plugins_experience_bar = ns.CreateCheckBox(parent, "plugins_experience_bar")
-	plugins_experience_bar:SetPoint("TOPLEFT", plugins_reputation_bar, "BOTTOMLEFT", 0, 0)
-
-	local plugins_artifact_bar = ns.CreateCheckBox(parent, "plugins_artifact_bar")
-	plugins_artifact_bar:SetPoint("TOPLEFT", plugins_experience_bar, "BOTTOMLEFT", 0, 0)
-
-	local plugins_smooth_bar = ns.CreateCheckBox(parent, "plugins_smooth_bar", L_GUI_UF_PLUGINS_SMOOTH_BAR)
-	plugins_smooth_bar:SetPoint("TOPLEFT", plugins_artifact_bar, "BOTTOMLEFT", 0, 0)
-
-	local plugins_enemy_spec = ns.CreateCheckBox(parent, "plugins_enemy_spec", L_GUI_UF_PLUGINS_ENEMY_SPEC)
-	plugins_enemy_spec:SetPoint("TOPLEFT", plugins_smooth_bar, "BOTTOMLEFT", 0, 0)
-
-	local plugins_combat_feedback = ns.CreateCheckBox(parent, "plugins_combat_feedback", L_GUI_UF_PLUGINS_COMBAT_FEEDBACK)
-	plugins_combat_feedback:SetPoint("TOPLEFT", plugins_enemy_spec, "BOTTOMLEFT", 0, 0)
-
-	local plugins_fader = ns.CreateCheckBox(parent, "plugins_fader", L_GUI_UF_PLUGINS_FADER)
-	plugins_fader:SetPoint("TOPLEFT", plugins_combat_feedback, "BOTTOMLEFT", 0, 0)
-
-	local plugins_diminishing = ns.CreateCheckBox(parent, "plugins_diminishing", L_GUI_UF_PLUGINS_DIMINISHING)
-	plugins_diminishing:SetPoint("TOPLEFT", plugins_fader, "BOTTOMLEFT", 0, 0)
-
-	local plugins_power_prediction = ns.CreateCheckBox(parent, "plugins_power_prediction", L_GUI_UF_PLUGINS_POWER_PREDICTION)
-	plugins_power_prediction:SetPoint("TOPLEFT", plugins_diminishing, "BOTTOMLEFT", 0, 0)
-end
-
--- Unit Frames Class bar
-do
-	local parent = ShestakUIOptionsPanel.unitframe_class_bar
-
-	local combo = ns.CreateCheckBox(parent, "combo", L_GUI_UF_PLUGINS_COMBO_BAR)
-	combo:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
-	local combo_always = ns.CreateCheckBox(parent, "combo_always", L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS)
-	combo_always:SetPoint("TOPLEFT", combo, "BOTTOMLEFT", 20, 0)
-
-	local combo_old = ns.CreateCheckBox(parent, "combo_old", L_GUI_UF_PLUGINS_COMBO_BAR_OLD)
-	combo_old:SetPoint("TOPLEFT", combo_always, "BOTTOMLEFT", 0, 0)
-
-	combo.children = {combo_always, combo_old}
-
-	local arcane = ns.CreateCheckBox(parent, "arcane", L_GUI_UF_PLUGINS_ARCANE_BAR)
-	arcane:SetPoint("TOPLEFT", combo_old, "BOTTOMLEFT", -20, 0)
-
-	local chi = ns.CreateCheckBox(parent, "chi", L_GUI_UF_PLUGINS_CHI_BAR)
-	chi:SetPoint("TOPLEFT", arcane, "BOTTOMLEFT", 0, 0)
-
-	local stagger = ns.CreateCheckBox(parent, "stagger", L_GUI_UF_PLUGINS_STAGGER_BAR)
-	stagger:SetPoint("TOPLEFT", chi, "BOTTOMLEFT", 0, 0)
-
-	local holy = ns.CreateCheckBox(parent, "holy", L_GUI_UF_PLUGINS_HOLY_BAR)
-	holy:SetPoint("TOPLEFT", stagger, "BOTTOMLEFT", 0, 0)
-
-	local shard = ns.CreateCheckBox(parent, "shard", L_GUI_UF_PLUGINS_SHARD_BAR)
-	shard:SetPoint("TOPLEFT", holy, "BOTTOMLEFT", 0, 0)
-
-	local rune = ns.CreateCheckBox(parent, "rune", L_GUI_UF_PLUGINS_RUNE_BAR)
-	rune:SetPoint("TOPLEFT", shard, "BOTTOMLEFT", 0, 0)
-
-	local totem = ns.CreateCheckBox(parent, "totem", L_GUI_UF_PLUGINS_TOTEM_BAR)
-	totem:SetPoint("TOPLEFT", rune, "BOTTOMLEFT", 0, 0)
-
-	local range = ns.CreateCheckBox(parent, "range", L_GUI_UF_PLUGINS_RANGE_BAR)
-	range:SetPoint("TOPLEFT", totem, "BOTTOMLEFT", 0, 0)
-end
-
--- Raid Frames
-do
-	local parent = ShestakUIOptionsPanel.raidframe
-
-	local by_role = ns.CreateCheckBox(parent, "by_role", L_GUI_UF_BY_ROLE)
-	by_role:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
-	local aggro_border = ns.CreateCheckBox(parent, "aggro_border", L_GUI_UF_AGGRO_BORDER)
-	aggro_border:SetPoint("TOPLEFT", by_role, "BOTTOMLEFT", 0, 0)
-
-	local deficit_health = ns.CreateCheckBox(parent, "deficit_health", L_GUI_UF_DEFICIT_HEALTH)
-	deficit_health:SetPoint("TOPLEFT", aggro_border, "BOTTOMLEFT", 0, 0)
-
-	local vertical_health = ns.CreateCheckBox(parent, "vertical_health", L_GUI_UF_VERTICAL_HEALTH)
-	vertical_health:SetPoint("TOPLEFT", deficit_health, "BOTTOMLEFT", 0, 0)
-
-	local alpha_health = ns.CreateCheckBox(parent, "alpha_health", L_GUI_UF_ALPHA_HEALTH)
-	alpha_health:SetPoint("TOPLEFT", vertical_health, "BOTTOMLEFT", 0, 0)
-
-	local show_range = ns.CreateCheckBox(parent, "show_range", L_GUI_UF_SHOW_RANGE)
-	show_range:SetPoint("TOPLEFT", alpha_health, "BOTTOMLEFT", 0, 0)
-
-	local range_alpha = ns.CreateNumberSlider(parent, "range_alpha", nil, nil, 0, 1, 0.05, true, L_GUI_UF_RANGE_ALPHA, L_GUI_UF_RANGE_ALPHA_DESC)
-	range_alpha:SetPoint("TOPLEFT", show_range, "BOTTOMLEFT", 0, -20)
-
-	-- Frames
-	local subheader = ns.addSubCategory(parent, L_GUI_UF_SUBHEADER_RAIDFRAMES)
-	subheader:SetPoint("TOPLEFT", range_alpha, "BOTTOMLEFT", 0, -16)
-
-	local show_party = ns.CreateCheckBox(parent, "show_party", L_GUI_UF_SHOW_PARTY)
-	show_party:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
-
-	local show_raid = ns.CreateCheckBox(parent, "show_raid", L_GUI_UF_SHOW_RAID)
-	show_raid:SetPoint("LEFT", show_party, "RIGHT", 320, 0)
-
-	local solo_mode = ns.CreateCheckBox(parent, "solo_mode", L_GUI_UF_SOLO_MODE)
-	solo_mode:SetPoint("TOPLEFT", show_party, "BOTTOMLEFT", 0, 0)
-
-	local player_in_party = ns.CreateCheckBox(parent, "player_in_party", L_GUI_UF_PLAYER_PARTY)
-	player_in_party:SetPoint("TOPLEFT", solo_mode, "BOTTOMLEFT", 0, 0)
-
-	local raid_tanks = ns.CreateCheckBox(parent, "raid_tanks", L_GUI_UF_SHOW_TANK)
-	raid_tanks:SetPoint("TOPLEFT", player_in_party, "BOTTOMLEFT", 0, 0)
-
-	local raid_tanks_tt = ns.CreateCheckBox(parent, "raid_tanks_tt", L_GUI_UF_SHOW_TANK_TT)
-	raid_tanks_tt:SetPoint("TOPLEFT", raid_tanks, "BOTTOMLEFT", 0, 0)
-
-	local raid_groups = ns.CreateNumberSlider(parent, "raid_groups", nil, nil, 0, 8, 1, true, L_GUI_UF_RAID_GROUP)
-	raid_groups:SetPoint("TOPLEFT", raid_tanks_tt, "BOTTOMLEFT", 0, -20)
-
-	local raid_groups_vertical = ns.CreateCheckBox(parent, "raid_groups_vertical", L_GUI_UF_RAID_VERTICAL_GROUP)
-	raid_groups_vertical:SetPoint("TOPLEFT", raid_groups, "BOTTOMLEFT", 0, -10)
-
-	-- Icons
-	local subheader = ns.addSubCategory(parent, L_GUI_UF_SUBHEADER_ICONS)
-	subheader:SetPoint("TOPLEFT", raid_groups_vertical, "BOTTOMLEFT", 0, -16)
-
-	local icons_role = ns.CreateCheckBox(parent, "icons_role", L_GUI_UF_ICONS_ROLE)
-	icons_role:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
-
-	local icons_raid_mark = ns.CreateCheckBox(parent, "icons_raid_mark", L_GUI_UF_ICONS_RAID_MARK)
-	icons_raid_mark:SetPoint("LEFT", icons_role, "RIGHT", 170, 0)
-
-	local icons_ready_check = ns.CreateCheckBox(parent, "icons_ready_check", L_GUI_UF_ICONS_READY_CHECK)
-	icons_ready_check:SetPoint("LEFT", icons_raid_mark, "RIGHT", 170, 0)
-
-	local icons_leader = ns.CreateCheckBox(parent, "icons_leader", L_GUI_UF_ICONS_LEADER)
-	icons_leader:SetPoint("TOPLEFT", icons_role, "BOTTOMLEFT", 0, 0)
-
-	local icons_sumon = ns.CreateCheckBox(parent, "icons_sumon", L_GUI_UF_ICONS_SUMON)
-	icons_sumon:SetPoint("LEFT", icons_leader, "RIGHT", 170, 0)
-
-	-- Panel 2
-	local parent = ShestakUIOptionsPanel.raidframe2
-
-	local plugins_debuffhighlight_icon = ns.CreateCheckBox(parent, "plugins_debuffhighlight_icon", L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON)
-	plugins_debuffhighlight_icon:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
-	local plugins_aura_watch = ns.CreateCheckBox(parent, "plugins_aura_watch", L_GUI_UF_PLUGINS_AURA_WATCH)
-	plugins_aura_watch:SetPoint("TOPLEFT", plugins_debuffhighlight_icon, "BOTTOMLEFT", 0, 0)
-
-	local plugins_aura_watch_timer = ns.CreateCheckBox(parent, "plugins_aura_watch_timer", L_GUI_UF_PLUGINS_AURA_WATCH_TIMER)
-	plugins_aura_watch_timer:SetPoint("TOPLEFT", plugins_aura_watch, "BOTTOMLEFT", 20, 0)
-
-	plugins_aura_watch.children = {plugins_aura_watch_timer}
-
-	local plugins_pvp_debuffs = ns.CreateCheckBox(parent, "plugins_pvp_debuffs", L_GUI_UF_PLUGINS_PVP_DEBUFFS)
-	plugins_pvp_debuffs:SetPoint("TOPLEFT", plugins_aura_watch_timer, "BOTTOMLEFT", -20, 0)
-
-	local plugins_healcomm = ns.CreateCheckBox(parent, "plugins_healcomm", L_GUI_UF_PLUGINS_HEALCOMM)
-	plugins_healcomm:SetPoint("TOPLEFT", plugins_pvp_debuffs, "BOTTOMLEFT", 0, 0)
-
-	local plugins_auto_resurrection = ns.CreateCheckBox(parent, "plugins_auto_resurrection")
-	plugins_auto_resurrection:SetPoint("TOPLEFT", plugins_healcomm, "BOTTOMLEFT", 0, 0)
 end
 
 -- Top Panel
