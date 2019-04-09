@@ -1659,7 +1659,7 @@ do
 	local quest_auto_button = ns.CreateCheckBox(parent, "quest_auto_button", L_GUI_MISC_QUEST_AUTOBUTTON)
 	quest_auto_button:SetPoint("TOPLEFT", vehicle_mouseover, "BOTTOMLEFT", 0, 0)
 
-	local raid_tools = ns.CreateCheckBox(parent, "raid_tools", L_GUI_MISC_RAID_TOOLS)
+	local raid_tools = ns.CreateCheckBox(parent, "raid_tools")
 	raid_tools:SetPoint("TOPLEFT", quest_auto_button, "BOTTOMLEFT", 0, 0)
 
 	local profession_tabs = ns.CreateCheckBox(parent, "profession_tabs", L_GUI_MISC_PROFESSION_TABS)
