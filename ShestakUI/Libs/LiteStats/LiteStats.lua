@@ -721,10 +721,10 @@ if gold.enabled then
 				end
 			end
 		else
-			print("|Lite|cff66C6FFStats|r: "..L_STATS_JUNK_LIST)
+			print("Lite|cff66C6FFStats|r: "..L_STATS_JUNK_LIST)
 			print(format("/junk <add||rem(ove)> [%s] - %s", L_STATS_ITEMLINK, L_STATS_REMOVE_EXCEPTION))
 			print("/junk list - "..L_STATS_IGNORED_ITEMS)
-			print("/junk clear - "..L_STATS_CLEAR_EXCEPTIONS)
+			print("/junk clear - "..L_STATS_CLEAR_ADDITIONS)
 		end
 	end
 end
@@ -894,12 +894,12 @@ end
 if coords.enabled then
 	Inject("Coords", {
 		text = {string = Coords},
-		OnClick = function(_, button)
-			if button == "LeftButton" then
-				ToggleFrame(WorldMapFrame)
-			else
+		OnClick = function()
+			if IsShiftKeyDown() then
 				ChatEdit_ActivateChat(ChatEdit_ChooseBoxForSend())
 				ChatEdit_ChooseBoxForSend():Insert(format(" (%s: %s)", GetZoneText(), Coords()))
+			else
+				ToggleFrame(WorldMapFrame)
 			end
 		end
 	})
