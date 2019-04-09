@@ -147,6 +147,7 @@ L_GUI_SKINS_WEAK_AURAS = "WeakAuras"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texto de Combate"
+L_GUI_COMBATTEXT_SUBTEXT = "For moving type in the chat '/xct'" -- Need review
 L_GUI_COMBATTEXT_ENABLE = "Activar Texto de Combate"
 L.combattext_blizz_head_numbers = "Enable Blizzard combat text" -- Need review
 L.combattext_blizz_head_numbers_desc = "Usar la salida de daño/curación de Blizzard (sobre la cabeza del monstruo/jugador)"

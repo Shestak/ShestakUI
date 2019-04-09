@@ -144,6 +144,7 @@ L_GUI_SKINS_WEAK_AURAS = "WeakAuras"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Combat Text"
+L_GUI_COMBATTEXT_SUBTEXT = "For moving type in the chat '/xct'"
 L_GUI_COMBATTEXT_ENABLE = "Enable Combat Text"
 L.combattext_blizz_head_numbers = "Enable Blizzard combat text"
 L.combattext_blizz_head_numbers_desc = "Use Blizzard damage/healing output (above mob/player head)"

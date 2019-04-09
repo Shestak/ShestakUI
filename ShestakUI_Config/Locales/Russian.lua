@@ -147,6 +147,7 @@ L_GUI_SKINS_WEAK_AURAS = "WeakAuras"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Текст боя"
+L_GUI_COMBATTEXT_SUBTEXT = "Для перемещения набрать в чате '/xct'"
 L_GUI_COMBATTEXT_ENABLE = "Включить текст боя"
 L.combattext_blizz_head_numbers = "Задействовать текст боя Blizzard"
 L.combattext_blizz_head_numbers_desc = "Включить исходящий текст боя Blizzard (над головами)"

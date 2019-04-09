@@ -147,6 +147,7 @@ L_GUI_SKINS_WEAK_AURAS = "WeakAuras"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "战斗文字"
+L_GUI_COMBATTEXT_SUBTEXT = "For moving type in the chat '/xct'" -- Need review
 L_GUI_COMBATTEXT_ENABLE = "启用xCT战斗信息"
 L.combattext_blizz_head_numbers = "Enable Blizzard combat text" -- Need review
 L.combattext_blizz_head_numbers_desc = "启用暴雪默认伤害/治疗模式(需关闭xCT战斗信息)"
