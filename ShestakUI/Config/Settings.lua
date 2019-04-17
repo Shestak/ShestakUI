@@ -12,7 +12,7 @@ C["media"] = {
 	["normal_font"] = [[Interface\AddOns\ShestakUI\Media\Fonts\Normal.ttf]],		-- Normal font
 	["blank_font"] = [[Interface\AddOns\ShestakUI\Media\Fonts\Blank.ttf]],			-- Blank font
 	["pixel_font"] = [[Interface\AddOns\ShestakUI\Media\Fonts\Pixel.ttf]],			-- Pixel font
-	["pixel_font_style"] = "OUTLINEMONOCHROME",										-- Pixel font style("OUTLINEMONOCHROME" or "OUTLINE")
+	["pixel_font_style"] = "OUTLINEMONOCHROME",										-- Pixel font style ("OUTLINEMONOCHROME" or "OUTLINE")
 	["pixel_font_size"] = 8,														-- Pixel font size for those places where it is not specified
 	["blank"] = [[Interface\AddOns\ShestakUI\Media\Textures\White.tga]],			-- Texture for borders
 	["texture"] = [[Interface\AddOns\ShestakUI\Media\Textures\Texture.tga]],		-- Texture for status bars
@@ -31,7 +31,7 @@ C["media"] = {
 C["general"] = {
 	["welcome_message"] = true,					-- Enable welcome message in chat
 	["auto_scale"] = true,						-- Autoscale
-	["uiscale"] = 0.96,							-- Your value(between 0.2 and 1) if "auto_scale" is disable
+	["uiscale"] = 0.96,							-- Your value (between 0.2 and 1) if "auto_scale" is disable
 }
 
 ----------------------------------------------------------------------------------------
@@ -97,7 +97,7 @@ C["unitframe"] = {
 	["boss_debuffs"] = 0,						-- Number of debuffs on the boss frames
 	["boss_buffs"] = 3,							-- Number of buffs on the boss frames
 	-- Icons
-	["icons_pvp"] = false,						-- Mouseover PvP text(not icons) on player and target frames
+	["icons_pvp"] = false,						-- Mouseover PvP text (not icons) on player and target frames
 	["icons_combat"] = true,					-- Combat icon
 	["icons_resting"] = true,					-- Resting icon for low lvl chars
 	-- Portraits
@@ -156,7 +156,7 @@ C["raidframe"] = {
 	["raid_tanks"] = true,						-- Show raid tanks
 	["raid_tanks_tt"] = false,					-- Show raid tanks target target
 	["raid_groups"] = 5,						-- Number of groups in raid
-	["raid_groups_vertical"] = false,			-- Vertical raid groups(only for heal layout)
+	["raid_groups_vertical"] = false,			-- Vertical raid groups (only for heal layout)
 	-- Icons
 	["icons_role"] = false,						-- Role icon on frames
 	["icons_raid_mark"] = true,					-- Raid mark icons on frames
@@ -169,7 +169,7 @@ C["raidframe"] = {
 	["plugins_aura_watch_timer"] = false,		-- Timer on raid debuff icons
 	["plugins_pvp_debuffs"] = false,			-- Show also PvP debuff icons (from the list)
 	["plugins_healcomm"] = true,				-- Incoming heal bar on raid frame
-	["plugins_auto_resurrection"] = false,		-- Auto cast resurrection on middle-click(doesn't work with Clique)
+	["plugins_auto_resurrection"] = false,		-- Auto cast resurrection on middle-click (doesn't work with Clique)
 }
 
 ----------------------------------------------------------------------------------------
@@ -182,9 +182,9 @@ C["announcements"] = {
 	["spells_from_all"] = false,				-- Check spells cast from all members
 	["toys"] = false,							-- Announce some annoying toys
 	["says_thanks"] = false,					-- Says thanks for some spells (resurrection, from the list)
-	["pull_countdown"] = true,					-- Pull countdown announce(/pc #)
+	["pull_countdown"] = true,					-- Pull countdown announce (/pc #)
 	["flask_food"] = false,						-- Announce the usage of flasks and food
-	["flask_food_auto"] = false,				-- Auto announce when ReadyCheck(if enable, announce to raid channel)
+	["flask_food_auto"] = false,				-- Auto announce when ReadyCheck (if enable, announce to raid channel)
 	["flask_food_raid"] = false,				-- Announce to raid channel
 	["feasts"] = false,							-- Announce Feasts/Souls/Repair Bots cast
 	["portals"] = false,						-- Announce Portals/Ritual of Summoning cast
@@ -211,7 +211,7 @@ C["automation"] = {
 	["logging_combat"] = false,					-- Auto enables combat log text file in raid instances
 	["buff_on_scroll"] = false,					-- Cast buff on mouse scroll (from the list)
 	["open_items"] = false,						-- Auto opening of items in bag
-	["invite_keyword"] = "inv",					-- Short keyword for invite(for enable - in game type /ainv)
+	["invite_keyword"] = "inv",					-- Short keyword for invite (for enable - in game type /ainv)
 }
 
 ----------------------------------------------------------------------------------------
@@ -219,8 +219,8 @@ C["automation"] = {
 ----------------------------------------------------------------------------------------
 C["combattext"] = {
 	["enable"] = true,							-- Global enable combat text
-	["blizz_head_numbers"] = false,				-- Use blizzard damage/healing output(above mob/player head)
-	["damage_style"] = true,					-- Change default damage/healing font above mobs/player heads(you need to restart WoW to see changes)
+	["blizz_head_numbers"] = false,				-- Use blizzard damage/healing output (above mob/player head)
+	["damage_style"] = true,					-- Change default damage/healing font above mobs/player heads (you need to restart WoW to see changes)
 	["damage"] = true,							-- Show outgoing damage in it's own frame
 	["healing"] = true,							-- Show outgoing healing in it's own frame
 	["show_hots"] = true,						-- Show periodic healing effects in healing frame
@@ -235,14 +235,14 @@ C["combattext"] = {
 	["treshold"] = 1,							-- Minimum damage to show in damage frame
 	["heal_treshold"] = 1,						-- Minimum healing to show in incoming/outgoing healing messages
 	["scrollable"] = false,						-- Allows you to scroll frame lines with mousewheel
-	["max_lines"] = 15,							-- Max lines to keep in scrollable mode(more lines = more memory)
-	["time_visible"] = 3,						-- Time(seconds) a single message will be visible
+	["max_lines"] = 15,							-- Max lines to keep in scrollable mode (more lines = more memory)
+	["time_visible"] = 3,						-- Time (seconds) a single message will be visible
 	["dk_runes"] = true,						-- Show deathknight rune recharge
 	["killingblow"] = false,					-- Tells you about your killingblows
 	["merge_aoe_spam"] = true,					-- Merges multiple aoe damage spam into single message
 	["merge_melee"] = true,						-- Merges multiple auto attack damage spam
-	["dispel"] = true,							-- Tells you about your dispels(works only with ["damage"] = true)
-	["interrupt"] = true,						-- Tells you about your interrupts(works only with ["damage"] = true)
+	["dispel"] = true,							-- Tells you about your dispels (works only with ["damage"] = true)
+	["interrupt"] = true,						-- Tells you about your interrupts (works only with ["damage"] = true)
 	["direction"] = true,						-- Change scrolling direction from bottom to top
 	["short_numbers"] = true,					-- Use short numbers ("25.3k" instead of "25342")
 }
@@ -268,7 +268,7 @@ C["reminder"] = {
 C["raidcooldown"] = {
 	["enable"] = true,							-- Enable raid cooldowns
 	["height"] = 15,							-- Bars height
-	["width"] = 186,							-- Bars width(if show_icon = false, bar width+28)
+	["width"] = 186,							-- Bars width (if show_icon = false, bar width+28)
 	["upwards"] = false,						-- Sort upwards bars
 	["expiration"] = false,						-- Sort by expiration time
 	["show_self"] = true,						-- Show self cooldowns
@@ -335,7 +335,7 @@ C["tooltip"] = {
 	["spell_id"] = false,						-- Id number spells (/si to print buff info in chat)
 	["average_lvl"] = false,					-- Average items level
 	["raid_icon"] = false,						-- Raid icon
-	["who_targetting"] = false,					-- Show who is targetting the unit(in raid or party)
+	["who_targetting"] = false,					-- Show who is targetting the unit (in raid or party)
 	["item_count"] = false,						-- Item count in tooltip
 	["unit_role"] = false,						-- Unit role in tooltip
 	["instance_lock"] = false,					-- Your instance lock status in tooltip
@@ -348,13 +348,13 @@ C["chat"] = {
 	["enable"] = true,							-- Enable chat
 	["background"] = false,						-- Enable background for chat
 	["background_alpha"] = 0.7,					-- Background alpha
-	["filter"] = true,							-- Removing some systems spam("Player1" won duel "Player2")
-	["spam"] = false,							-- Removing some players spam(gold/portals/etc)
+	["filter"] = true,							-- Removing some systems spam ("Player1" won duel "Player2")
+	["spam"] = false,							-- Removing some players spam (gold/portals/etc)
 	["width"] = 350,							-- Chat width
 	["height"] = 112,							-- Chat height
 	["chat_bar"] = false,						-- Lite Button Bar for switch chat channel
 	["chat_bar_mouseover"] = false,				-- Lite Button Bar on mouseover
-	["time_color"] = {1, 1, 0},					-- Timestamp coloring(http://www.december.com/html/spec/colorcodescompact.html)
+	["time_color"] = {1, 1, 0},					-- Timestamp coloring (http://www.december.com/html/spec/colorcodescompact.html)
 	["whisp_sound"] = true,						-- Sound when whisper
 	["bubbles"] = true,							-- Skin Blizzard chat bubbles
 	["combatlog"] = true,						-- Show CombatLog tab
@@ -453,11 +453,11 @@ C["actionbar"] = {
 	-- Pet bar
 	["petbar_hide"] = false,					-- Hide pet bar
 	["petbar_horizontal"] = false,				-- Enable horizontal pet bar
-	["petbar_mouseover"] = false,				-- Pet bar on mouseover(only for horizontal pet bar)
+	["petbar_mouseover"] = false,				-- Pet bar on mouseover (only for horizontal pet bar)
 	-- Stance bar
 	["stancebar_hide"] = false,					-- Hide stance bar
 	["stancebar_horizontal"] = true,			-- Enable horizontal stance bar
-	["stancebar_mouseover"] = true,				-- Stance bar on mouseover(only for horizontal stance bar)
+	["stancebar_mouseover"] = true,				-- Stance bar on mouseover (only for horizontal stance bar)
 	-- MicroMenu
 	["micromenu"] = false,						-- Enable micro menu
 	["micromenu_mouseover"] = false,			-- Micro menu on mouseover
@@ -552,7 +552,7 @@ C["misc"] = {
 	["quest_auto_button"] = false,				-- Quest/item auto button (from the list)
 	["raid_tools"] = true,						-- Raid tools
 	["profession_tabs"] = true,					-- Professions tabs on TradeSkill frames
-	["hide_bg_spam"] = false,					-- Remove Boss Emote spam during BG("Arathi Basin" and "The Battle for Gilneas")
+	["hide_bg_spam"] = false,					-- Remove Boss Emote spam during BG ("Arathi Basin" and "The Battle for Gilneas")
 	["item_level"] = true,						-- Item level on character slot buttons
 	["already_known"] = true,					-- Colorizes recipes/mounts/pets/toys that is already known
 	["disenchanting"] = false,					-- Milling, Prospecting and Disenchanting by Alt + click
