@@ -43,7 +43,6 @@ bar:RegisterEvent("PLAYER_ENTERING_WORLD")
 bar:RegisterEvent("UPDATE_SHAPESHIFT_FORMS")
 bar:RegisterEvent("UPDATE_SHAPESHIFT_USABLE")
 bar:RegisterEvent("UPDATE_SHAPESHIFT_COOLDOWN")
-bar:RegisterEvent("UPDATE_SHAPESHIFT_FORM")
 bar:RegisterEvent("ACTIONBAR_PAGE_CHANGED")
 bar:SetScript("OnEvent", function(self, event, ...)
 	if event == "PLAYER_LOGIN" then
@@ -65,15 +64,15 @@ bar:SetScript("OnEvent", function(self, event, ...)
 					button:SetPoint("TOP", previous, "BOTTOM", 0, -C.actionbar.button_space)
 				end
 			end
-			local _, name = GetShapeshiftFormInfo(i)
-			if name then
+			local icon = GetShapeshiftFormInfo(i)
+			if icon then
 				button:Show()
 			else
 				button:Hide()
 			end
 		end
 		RegisterStateDriver(self, "visibility", States[T.class] or "hide")
-		local function movestance()
+		local function moveStance()
 			if not InCombatLockdown() then
 				if C.actionbar.stancebar_horizontal == true then
 					StanceButton1:SetPoint("BOTTOMLEFT", ShiftHolder, "BOTTOMLEFT", 0, 0)
@@ -82,13 +81,13 @@ bar:SetScript("OnEvent", function(self, event, ...)
 				end
 			end
 		end
-		hooksecurefunc("StanceBar_Update", movestance)
+		hooksecurefunc("StanceBar_Update", moveStance)
 	elseif event == "UPDATE_SHAPESHIFT_FORMS" then
 		if InCombatLockdown() then return end
 		for i = 1, NUM_STANCE_SLOTS do
 			local button = _G["StanceButton"..i]
-			local _, name = GetShapeshiftFormInfo(i)
-			if name then
+			local icon = GetShapeshiftFormInfo(i)
+			if icon then
 				button:Show()
 			else
 				button:Hide()
