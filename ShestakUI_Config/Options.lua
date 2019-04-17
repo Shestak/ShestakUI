@@ -1064,7 +1064,7 @@ do
 	direction:SetPoint("TOPLEFT", size, "BOTTOMLEFT", -16, -10)
 
 	local show_always = ns.CreateCheckBox(parent, "show_always", L_GUI_COOLDOWN_ENEMY_EVERYWHERE)
-	show_always:SetPoint("TOPLEFT", direction, "BOTTOMLEFT", 16, -10)
+	show_always:SetPoint("TOPLEFT", direction, "BOTTOMLEFT", 16, 0)
 
 	local show_inpvp = ns.CreateCheckBox(parent, "show_inpvp", L_GUI_COOLDOWN_ENEMY_IN_BG)
 	show_inpvp:SetPoint("TOPLEFT", show_always, "BOTTOMLEFT", 0, 0)
@@ -1651,7 +1651,7 @@ do
 	shift_marking:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
 	local afk_spin_camera = ns.CreateCheckBox(parent, "afk_spin_camera", L_GUI_MISC_SPIN_CAMERA)
-	afk_spin_camera:SetPoint("TOPLEFT", shift_marking, "BOTTOMLEFT", -6, -10)
+	afk_spin_camera:SetPoint("TOPLEFT", shift_marking, "BOTTOMLEFT", 0, 0)
 
 	local vehicle_mouseover = ns.CreateCheckBox(parent, "vehicle_mouseover", L_GUI_MISC_VEHICLE_MOUSEOVER)
 	vehicle_mouseover:SetPoint("TOPLEFT", afk_spin_camera, "BOTTOMLEFT", 0, 0)
