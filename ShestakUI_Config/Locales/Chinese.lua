@@ -187,6 +187,8 @@ L_GUI_AUTOMATION_TAB_BINDER = "Tab只选定玩家"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "团队副本时自动开启战斗记录"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "使用鼠标滚轮施放Buffs"
 L_GUI_AUTOMATION_OPEN_ITEMS = "自动打开背包中的封装物品"
+L.automation_invite_keyword = "自动邀请关键字"
+L.automation_invite_keyword_desc = "When player whisper you keyword he will be invited in your group. \nFor enable - type '/ainv'. Also after the command, you can write your word '/ainv inv'" -- Need review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "战斗文字"
@@ -477,7 +479,6 @@ L_GUI_ERROR_HIDE_COMBAT = "战斗中隐藏所有错误提示"
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review
 L.misc_shift_marking = "Marks mouseover target" -- Need review
 L.misc_shift_marking_desc = "Marks mouseover target when you push Shift (only in group)" -- Need review
-L_GUI_MISC_INVKEYWORD = "自动邀请关键字(/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "AFK时旋转镜头"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "驾驶框架解锁"
 L_GUI_MISC_QUEST_AUTOBUTTON = "任务/道具自动按钮"

@@ -187,6 +187,8 @@ L_GUI_AUTOMATION_TAB_BINDER = "Usando il tasto TAB, consente di prendere come be
 L_GUI_AUTOMATION_LOGGING_COMBAT = "In instances da incursione, 'auto-attiva' la registrazione del Registro di combattimento in un file di testo"
 L_GUI_AUTOMATION_BUFF_ON_SCROLL = "Lancia benefici con la rotellina del mouse"
 L_GUI_AUTOMATION_OPEN_ITEMS = "Apertura automatica degli oggetti nelle sacche"
+L.automation_invite_keyword = "Parola chiave per invitare"
+L.automation_invite_keyword_desc = "When player whisper you keyword he will be invited in your group. \nFor enable - type '/ainv'. Also after the command, you can write your word '/ainv inv'" -- Need review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Testo di combattimento"
@@ -477,7 +479,6 @@ L_GUI_ERROR_HIDE_COMBAT = "In combattimento, nascondi tutti gli errori"
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review
 L.misc_shift_marking = "Marks mouseover target" -- Need review
 L.misc_shift_marking_desc = "Marks mouseover target when you push Shift (only in group)" -- Need review
-L_GUI_MISC_INVKEYWORD = "Parola chiave per invitare (/ainv)"
 L_GUI_MISC_SPIN_CAMERA = "Ruota la camera mentre sei assente"
 L_GUI_MISC_VEHICLE_MOUSEOVER = "Riquadro veicolo al passaggio del mouse"
 L_GUI_MISC_QUEST_AUTOBUTTON = "Pulsante automatico missione/oggetto"

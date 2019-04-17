@@ -889,6 +889,9 @@ do
 
 	local open_items = ns.CreateCheckBox(parent, "open_items", L_GUI_AUTOMATION_OPEN_ITEMS)
 	open_items:SetPoint("TOPLEFT", buff_on_scroll, "BOTTOMLEFT", 0, 0)
+
+	local invite_keyword = ns.CreateEditBox(parent, "invite_keyword", true)
+	invite_keyword:SetPoint("TOPLEFT", open_items, "BOTTOMLEFT", 6, -8)
 end
 
 -- Combat text
@@ -1647,11 +1650,8 @@ do
 	local shift_marking = ns.CreateCheckBox(parent, "shift_marking")
 	shift_marking:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local invite_keyword = ns.CreateEditBox(parent, "invite_keyword", true, L_GUI_MISC_INVKEYWORD)
-	invite_keyword:SetPoint("TOPLEFT", shift_marking, "BOTTOMLEFT", 6, -10)
-
 	local afk_spin_camera = ns.CreateCheckBox(parent, "afk_spin_camera", L_GUI_MISC_SPIN_CAMERA)
-	afk_spin_camera:SetPoint("TOPLEFT", invite_keyword, "BOTTOMLEFT", -6, -10)
+	afk_spin_camera:SetPoint("TOPLEFT", shift_marking, "BOTTOMLEFT", -6, -10)
 
 	local vehicle_mouseover = ns.CreateCheckBox(parent, "vehicle_mouseover", L_GUI_MISC_VEHICLE_MOUSEOVER)
 	vehicle_mouseover:SetPoint("TOPLEFT", afk_spin_camera, "BOTTOMLEFT", 0, 0)

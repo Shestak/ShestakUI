@@ -57,11 +57,15 @@ end
 ----------------------------------------------------------------------------------------
 --	Auto invite by whisper(by Tukz)
 ----------------------------------------------------------------------------------------
+if T.client == "ruRU" then
+	C.automation.invite_keyword = "инв"
+end
+
 local autoinvite = CreateFrame("Frame")
 autoinvite:RegisterEvent("CHAT_MSG_WHISPER")
 autoinvite:RegisterEvent("CHAT_MSG_BN_WHISPER")
 autoinvite:SetScript("OnEvent", function(self, event, arg1, arg2, ...)
-	if ((not UnitExists("party1") or UnitIsGroupLeader("player") or UnitIsGroupAssistant("player")) and arg1:lower():match(C.misc.invite_keyword)) and SavedOptionsPerChar.AutoInvite == true and not QueueStatusMinimapButton:IsShown() then
+	if ((not UnitExists("party1") or UnitIsGroupLeader("player") or UnitIsGroupAssistant("player")) and arg1:lower():match(C.automation.invite_keyword)) and SavedOptionsPerChar.AutoInvite == true and not QueueStatusMinimapButton:IsShown() then
 		if event == "CHAT_MSG_WHISPER" then
 			InviteUnit(arg2)
 		elseif event == "CHAT_MSG_BN_WHISPER" then
@@ -73,17 +77,19 @@ autoinvite:SetScript("OnEvent", function(self, event, arg1, arg2, ...)
 end)
 
 SlashCmdList.AUTOINVITE = function(msg)
-	if msg == "off" then
-		SavedOptionsPerChar.AutoInvite = false
-		print("|cffffff00"..L_INVITE_DISABLE..".|r")
-	elseif msg == "" then
-		SavedOptionsPerChar.AutoInvite = true
-		print("|cffffff00"..L_INVITE_ENABLE..C.misc.invite_keyword..".|r")
-		C.misc.invite_keyword = C.misc.invite_keyword
+	if msg == "" then
+		if SavedOptionsPerChar.AutoInvite == true then
+			SavedOptionsPerChar.AutoInvite = false
+			print("|cffffff00"..L_INVITE_DISABLE..".|r")
+		else
+			SavedOptionsPerChar.AutoInvite = true
+			print("|cffffff00"..L_INVITE_ENABLE..C.automation.invite_keyword..".|r")
+			C.automation.invite_keyword = C.automation.invite_keyword
+		end
 	else
 		SavedOptionsPerChar.AutoInvite = true
 		print("|cffffff00"..L_INVITE_ENABLE..msg..".|r")
-		C.misc.invite_keyword = msg
+		C.automation.invite_keyword = msg
 	end
 end
 SLASH_AUTOINVITE1 = "/ainv"

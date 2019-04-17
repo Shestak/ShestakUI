@@ -422,7 +422,7 @@ end
 ns.CreateEditBox = function(parent, option, needsReload, text, number)
 	local f = CreateFrame("EditBox", parent:GetName()..option.."TextInput", parent, "InputBoxTemplate")
 	f:SetAutoFocus(false)
-	f:SetWidth(60)
+	f:SetWidth(55)
 	f:SetHeight(20)
 	f:SetMaxLetters(8)
 	f:SetFontObject(GameFontHighlight)
@@ -439,11 +439,31 @@ ns.CreateEditBox = function(parent, option, needsReload, text, number)
 	f:SetScript("OnEditFocusLost", onEnterPressed)
 
 	local label = f:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-	label:SetText(text)
 	label:SetWidth(440)
 	label:SetHeight(20)
 	label:SetJustifyH("LEFT")
-	label:SetPoint("LEFT", 70, 0)
+	label:SetPoint("LEFT", f, "RIGHT", 10, 0)
+
+	if text then
+		label:SetText(text)
+	else
+		label:SetText(ns[parent.tag.."_"..option])
+	end
+
+	if ns[parent.tag.."_"..option.."_desc"] then
+		f.tooltipText = ns[parent.tag.."_"..option.."_desc"]
+	else
+		f.tooltipText = text
+	end
+
+	f:SetScript("OnEnter", function()
+		GameTooltip:SetOwner(f, "ANCHOR_RIGHT", 5, 5)
+		GameTooltip:SetText(f.tooltipText, nil, nil, nil, nil, true)
+	end)
+
+	f:SetScript("OnLeave", function()
+		GameTooltip:Hide()
+	end)
 
 	f.group = parent.tag
 	f.option = option
