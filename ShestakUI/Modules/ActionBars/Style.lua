@@ -63,15 +63,15 @@ local function StyleNormalButton(self)
 		if self:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() and not name:match("ExtraAction") then
 			self:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		end
-		button:CreateBackdrop("Transparent")
-		button.backdrop:SetAllPoints()
+		button:SetTemplate("Transparent")
 		if C.actionbar.classcolor_border == true then
-			button.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+			button:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 		end
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:SetPoint("TOPLEFT", button, 2, -2)
 		icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
+		icon:SetDrawLayer("BACKGROUND", 7)
 
 		button.isSkinned = true
 	end
@@ -119,16 +119,16 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 
 	if not button.isSkinned then
 		button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
-		button:CreateBackdrop("Transparent")
-		button.backdrop:SetAllPoints()
+		button:SetTemplate("Transparent")
 		if C.actionbar.classcolor_border == true then
-			button.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+			button:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 		end
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		icon:ClearAllPoints()
 		icon:SetPoint("TOPLEFT", button, 2, -2)
 		icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
+		icon:SetDrawLayer("BACKGROUND", 7)
 
 		if pet then
 			local autocast = _G[name.."AutoCastable"]
