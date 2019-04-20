@@ -17,7 +17,7 @@ frame:SetScript("OnEvent", function()
 	MicroButtonAndBagsBar:EnableMouse(false)
 
 	local elements = {
-		MainMenuBar, OverrideActionBar, PossessBarFrame, PetActionBarFrame, StanceBarFrame
+		MainMenuBar, MainMenuBarArtFrame, OverrideActionBar, PossessBarFrame, PetActionBarFrame, StanceBarFrame
 	}
 
 	if not C_ClassTrial.IsClassTrialCharacter() then
