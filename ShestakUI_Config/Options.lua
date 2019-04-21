@@ -878,7 +878,7 @@ do
 	local cancel_bad_buffs = ns.CreateCheckBox(parent, "cancel_bad_buffs", L_GUI_AUTOMATION_CANCEL_BAD_BUFFS)
 	cancel_bad_buffs:SetPoint("TOPLEFT", auto_role, "BOTTOMLEFT", 0, 0)
 
-	local tab_binder = ns.CreateCheckBox(parent, "tab_binder", L_GUI_AUTOMATION_TAB_BINDER)
+	local tab_binder = ns.CreateCheckBox(parent, "tab_binder")
 	tab_binder:SetPoint("TOPLEFT", cancel_bad_buffs, "BOTTOMLEFT", 0, 0)
 
 	local logging_combat = ns.CreateCheckBox(parent, "logging_combat", L_GUI_AUTOMATION_LOGGING_COMBAT)
