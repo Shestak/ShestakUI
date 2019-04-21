@@ -4,82 +4,28 @@ if C.automation.buff_on_scroll ~= true or T.level ~= MAX_PLAYER_LEVEL then retur
 ----------------------------------------------------------------------------------------
 --	Cast buff on mouse scroll(by Gsuz)
 ----------------------------------------------------------------------------------------
-local frame = CreateFrame("Frame", "AutomatorFrame")
-
-DEATHKNIGHT1 = {
-	3714,	-- Path of Frost
+MAGE1 = {
+	1459,	-- Arcane Intellect
 }
 
-DEATHKNIGHT2 = {
-	3714,	-- Path of Frost
+MAGE2 = MAGE1
+MAGE3 = MAGE1
+
+PRIEST1 = {
+	21562,	-- Power Word: Fortitude
 }
 
-DEATHKNIGHT3 = {
-	3714,	-- Path of Frost
+PRIEST2 = PRIEST1
+PRIEST3 = PRIEST1
+
+WARRIOR1 = {
+	6673,	-- Battle Shout
 }
 
-DRUID1 = {}
+WARRIOR2 = WARRIOR1
+WARRIOR3 = WARRIOR1
 
-DRUID2 = {}
-
-DRUID3 = {}
-
-DRUID4 = {}
-
-HUNTER1 = {}
-
-HUNTER2 = {}
-
-HUNTER3 = {}
-
-MAGE1 = {}
-
-MAGE2 = {}
-
-MAGE3 = {}
-
-MONK1 = {}
-
-MONK2 = {}
-
-MONK3 = {}
-
-PALADIN1 = {}
-
-PALADIN2 = {}
-
-PALADIN3 = {}
-
-PRIEST1 = {}
-
-PRIEST2 = {}
-
-PRIEST3 = {}
-
-ROGUE1 = {}
-
-ROGUE2 = {}
-
-ROGUE3 = {}
-
-SHAMAN1 = {}
-
-SHAMAN2 = {}
-
-SHAMAN3 = {}
-
-WARLOCK1 = {}
-
-WARLOCK2 = {}
-
-WARLOCK3 = {}
-
-WARRIOR1 = {}
-
-WARRIOR2 = {}
-
-WARRIOR3 = {}
-
+local frame = CreateFrame("Frame")
 -- Function for waiting through the global cooldown
 local GcTimer = 0
 local function WaitForGC(self, elapsed)
