@@ -201,6 +201,25 @@ L_GUI_TOOLTIP_ITEM_COUNT = "叠堆數量"
 L_GUI_TOOLTIP_UNIT_ROLE = "角色類型"
 L_GUI_TOOLTIP_INSTANCE_LOCK = "自身信息提示"
 
+-- Chat options
+L_GUI_CHAT_SUBTEXT = "Here you can change the settings of the chat window." -- Need review
+L_GUI_CHAT_ENABLE = "開啟聊天框增強"
+L_GUI_CHAT_BACKGROUND = "聊天框背景"
+L_GUI_CHAT_BACKGROUND_ALPHA = "聊天背景透明度"
+L_GUI_CHAT_SPAM = "屏蔽無用系統信息('玩家1' 在決鬥中戰勝了 '玩家2')"
+L_GUI_CHAT_GOLD = "屏蔽玩家垃圾信息"
+L_GUI_CHAT_WIDTH = "聊天框寬度"
+L_GUI_CHAT_HEIGHT = "聊天框高度"
+L_GUI_CHAT_BAR = "聊天頻道快捷鍵"
+L_GUI_CHAT_BAR_MOUSEOVER = "滑鼠懸停顯示聊天頻道快捷鍵"
+L_GUI_CHAT_TIMESTAMP = "時間標簽顏色"
+L_GUI_CHAT_WHISP = "接受密語時聲音提示"
+L_GUI_CHAT_SKIN_BUBBLE = "聊天泡泡樣式增強"
+L_GUI_CHAT_CL_TAB = "戰鬥記錄標簽"
+L_GUI_CHAT_TABS_MOUSEOVER = "滑鼠懸停顯示頻道標簽"
+L_GUI_CHAT_STICKY = "記住上一次使用的頻道"
+L_GUI_CHAT_DAMAGE_METER_SPAM = "在鏈接中合併垃圾郵件"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告提醒"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -337,25 +356,6 @@ L_GUI_THREAT_HEIGHT = "仇恨欄高度"
 L_GUI_THREAT_WIDTH = "仇恨欄寬度"
 L_GUI_THREAT_ROWS = "仇恨欄數目"
 L_GUI_THREAT_HIDE_SOLO = "僅在隊伍/團隊中開啟"
-
--- Chat options
-L_GUI_CHAT_SUBTEXT = "Here you can change the settings of the chat window." -- Need review
-L_GUI_CHAT_ENABLE = "開啟聊天框增強"
-L_GUI_CHAT_BACKGROUND = "聊天框背景"
-L_GUI_CHAT_BACKGROUND_ALPHA = "聊天背景透明度"
-L_GUI_CHAT_SPAM = "屏蔽無用系統信息('玩家1' 在決鬥中戰勝了 '玩家2')"
-L_GUI_CHAT_GOLD = "屏蔽玩家垃圾信息"
-L_GUI_CHAT_WIDTH = "聊天框寬度"
-L_GUI_CHAT_HEIGHT = "聊天框高度"
-L_GUI_CHAT_BAR = "聊天頻道快捷鍵"
-L_GUI_CHAT_BAR_MOUSEOVER = "滑鼠懸停顯示聊天頻道快捷鍵"
-L_GUI_CHAT_TIMESTAMP = "時間標簽顏色"
-L_GUI_CHAT_WHISP = "接受密語時聲音提示"
-L_GUI_CHAT_SKIN_BUBBLE = "聊天泡泡樣式增強"
-L_GUI_CHAT_CL_TAB = "戰鬥記錄標簽"
-L_GUI_CHAT_TABS_MOUSEOVER = "滑鼠懸停顯示頻道標簽"
-L_GUI_CHAT_STICKY = "記住上一次使用的頻道"
-L_GUI_CHAT_DAMAGE_METER_SPAM = "在鏈接中合併垃圾郵件"
 
 -- Bag options
 L_GUI_BAGS = "背包"

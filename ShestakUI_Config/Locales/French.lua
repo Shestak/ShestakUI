@@ -201,6 +201,25 @@ L_GUI_TOOLTIP_ITEM_COUNT = "Afficher le nombre d'objets possédés"
 L_GUI_TOOLTIP_UNIT_ROLE = "Afficher les rôles"
 L_GUI_TOOLTIP_INSTANCE_LOCK = "Afficher le verrouillage de votre instance"
 
+-- Chat options
+L_GUI_CHAT_SUBTEXT = "Here you can change the settings of the chat window." -- Need review
+L_GUI_CHAT_ENABLE = "Activer la fenêtre de dialogue"
+L_GUI_CHAT_BACKGROUND = "Activer l'arrière plan"
+L_GUI_CHAT_BACKGROUND_ALPHA = "Transparence de l'arrière"
+L_GUI_CHAT_SPAM = "Supprime certains spam(Player1 gagne contre Player2)"
+L_GUI_CHAT_GOLD = "Supprime tous les spams joueur"
+L_GUI_CHAT_WIDTH = "Largeur de la fenêtre"
+L_GUI_CHAT_HEIGHT = "Hauteur de la fenêtre"
+L_GUI_CHAT_BAR = "Bouton pour changer de canal"
+L_GUI_CHAT_BAR_MOUSEOVER = "Affiche les boutons de canaux au survol de la souris"
+L_GUI_CHAT_TIMESTAMP = "Coloration du temps"
+L_GUI_CHAT_WHISP = "Alerte sonore quand murmure"
+L_GUI_CHAT_SKIN_BUBBLE = "Skin des bulles de discussions"
+L_GUI_CHAT_CL_TAB = "Afficher l'onglet du journal de combat"
+L_GUI_CHAT_TABS_MOUSEOVER = "Affiche les onglets de discussion au survol de la souris"
+L_GUI_CHAT_STICKY = "Active le dernier canal utilisé(canal persistant)"
+L_GUI_CHAT_DAMAGE_METER_SPAM = "Rassemble les lignes de statistiques de dégâts en un seul lien/ligne"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -337,25 +356,6 @@ L_GUI_THREAT_HEIGHT = "Hauteur des barres de menace"
 L_GUI_THREAT_WIDTH = "Largeur des barres de menace"
 L_GUI_THREAT_ROWS = "Nombre de barres de menace"
 L_GUI_THREAT_HIDE_SOLO = "Afficher la menace seulement en groupe/raid"
-
--- Chat options
-L_GUI_CHAT_SUBTEXT = "Here you can change the settings of the chat window." -- Need review
-L_GUI_CHAT_ENABLE = "Activer la fenêtre de dialogue"
-L_GUI_CHAT_BACKGROUND = "Activer l'arrière plan"
-L_GUI_CHAT_BACKGROUND_ALPHA = "Transparence de l'arrière"
-L_GUI_CHAT_SPAM = "Supprime certains spam(Player1 gagne contre Player2)"
-L_GUI_CHAT_GOLD = "Supprime tous les spams joueur"
-L_GUI_CHAT_WIDTH = "Largeur de la fenêtre"
-L_GUI_CHAT_HEIGHT = "Hauteur de la fenêtre"
-L_GUI_CHAT_BAR = "Bouton pour changer de canal"
-L_GUI_CHAT_BAR_MOUSEOVER = "Affiche les boutons de canaux au survol de la souris"
-L_GUI_CHAT_TIMESTAMP = "Coloration du temps"
-L_GUI_CHAT_WHISP = "Alerte sonore quand murmure"
-L_GUI_CHAT_SKIN_BUBBLE = "Skin des bulles de discussions"
-L_GUI_CHAT_CL_TAB = "Afficher l'onglet du journal de combat"
-L_GUI_CHAT_TABS_MOUSEOVER = "Affiche les onglets de discussion au survol de la souris"
-L_GUI_CHAT_STICKY = "Active le dernier canal utilisé(canal persistant)"
-L_GUI_CHAT_DAMAGE_METER_SPAM = "Rassemble les lignes de statistiques de dégâts en un seul lien/ligne"
 
 -- Bag options
 L_GUI_BAGS = "Sacs"

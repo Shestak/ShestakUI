@@ -934,6 +934,61 @@ do
 	instance_lock:SetPoint("TOPLEFT", unit_role, "BOTTOMLEFT", 0, 0)
 end
 
+-- Chat
+do
+	local parent = ShestakUIOptionsPanel.chat
+
+	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_CHAT_ENABLE)
+	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local background = ns.CreateCheckBox(parent, "background", L_GUI_CHAT_BACKGROUND)
+	background:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
+
+	local background_alpha = ns.CreateNumberSlider(parent, "background_alpha", nil, nil, 0, 1, 0.05, true, L_GUI_CHAT_BACKGROUND_ALPHA)
+	background_alpha:SetPoint("TOPLEFT", background, "BOTTOMLEFT", 0, -20)
+
+	local filter = ns.CreateCheckBox(parent, "filter", L_GUI_CHAT_SPAM)
+	filter:SetPoint("TOPLEFT", background_alpha, "BOTTOMLEFT", 0, -10)
+
+	local spam = ns.CreateCheckBox(parent, "spam", L_GUI_CHAT_GOLD)
+	spam:SetPoint("TOPLEFT", filter, "BOTTOMLEFT", 0, 0)
+
+	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 500, 1, true, L_GUI_CHAT_WIDTH)
+	width:SetPoint("TOPLEFT", spam, "BOTTOMLEFT", 0, -20)
+
+	local height = ns.CreateNumberSlider(parent, "height", nil, nil, 0, 200, 1, true, L_GUI_CHAT_HEIGHT)
+	height:SetPoint("TOPLEFT", width, "BOTTOMLEFT", 0, -20)
+
+	local chat_bar = ns.CreateCheckBox(parent, "chat_bar", L_GUI_CHAT_BAR)
+	chat_bar:SetPoint("TOPLEFT", height, "BOTTOMLEFT", 0, -10)
+
+	local chat_bar_mouseover = ns.CreateCheckBox(parent, "chat_bar_mouseover", L_GUI_CHAT_BAR_MOUSEOVER)
+	chat_bar_mouseover:SetPoint("TOPLEFT", chat_bar, "BOTTOMLEFT", 20, 0)
+
+	chat_bar.children = {chat_bar_mouseover}
+
+	local time_color = ns.CreateColourPicker(parent, "time_color", true, L_GUI_CHAT_TIMESTAMP)
+	time_color:SetPoint("TOPLEFT", chat_bar_mouseover, "BOTTOMLEFT", -16, -10)
+
+	local whisp_sound = ns.CreateCheckBox(parent, "whisp_sound", L_GUI_CHAT_WHISP)
+	whisp_sound:SetPoint("TOPLEFT", time_color, "BOTTOMLEFT", -4, -10)
+
+	local bubbles = ns.CreateCheckBox(parent, "bubbles", L_GUI_CHAT_SKIN_BUBBLE)
+	bubbles:SetPoint("TOPLEFT", whisp_sound, "BOTTOMLEFT", 0, 0)
+
+	local combatlog = ns.CreateCheckBox(parent, "combatlog", L_GUI_CHAT_CL_TAB)
+	combatlog:SetPoint("TOPLEFT", bubbles, "BOTTOMLEFT", 0, 0)
+
+	local tabs_mouseover = ns.CreateCheckBox(parent, "tabs_mouseover", L_GUI_CHAT_TABS_MOUSEOVER)
+	tabs_mouseover:SetPoint("TOPLEFT", combatlog, "BOTTOMLEFT", 0, 0)
+
+	local sticky = ns.CreateCheckBox(parent, "sticky", L_GUI_CHAT_STICKY)
+	sticky:SetPoint("TOPLEFT", tabs_mouseover, "BOTTOMLEFT", 0, 0)
+
+	local damage_meter_spam = ns.CreateCheckBox(parent, "damage_meter_spam", L_GUI_CHAT_DAMAGE_METER_SPAM)
+	damage_meter_spam:SetPoint("TOPLEFT", sticky, "BOTTOMLEFT", 0, 0)
+end
+
 -- Announcements
 do
 	local parent = ShestakUIOptionsPanel.announcements
@@ -1260,61 +1315,6 @@ do
 
 	local hide_solo = ns.CreateCheckBox(parent, "hide_solo", L_GUI_THREAT_HIDE_SOLO)
 	hide_solo:SetPoint("TOPLEFT", bar_rows, "BOTTOMLEFT", 0, -20)
-end
-
--- Chat
-do
-	local parent = ShestakUIOptionsPanel.chat
-
-	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_CHAT_ENABLE)
-	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
-	local background = ns.CreateCheckBox(parent, "background", L_GUI_CHAT_BACKGROUND)
-	background:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
-
-	local background_alpha = ns.CreateNumberSlider(parent, "background_alpha", nil, nil, 0, 1, 0.05, true, L_GUI_CHAT_BACKGROUND_ALPHA)
-	background_alpha:SetPoint("TOPLEFT", background, "BOTTOMLEFT", 0, -20)
-
-	local filter = ns.CreateCheckBox(parent, "filter", L_GUI_CHAT_SPAM)
-	filter:SetPoint("TOPLEFT", background_alpha, "BOTTOMLEFT", 0, -10)
-
-	local spam = ns.CreateCheckBox(parent, "spam", L_GUI_CHAT_GOLD)
-	spam:SetPoint("TOPLEFT", filter, "BOTTOMLEFT", 0, 0)
-
-	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 500, 1, true, L_GUI_CHAT_WIDTH)
-	width:SetPoint("TOPLEFT", spam, "BOTTOMLEFT", 0, -20)
-
-	local height = ns.CreateNumberSlider(parent, "height", nil, nil, 0, 200, 1, true, L_GUI_CHAT_HEIGHT)
-	height:SetPoint("TOPLEFT", width, "BOTTOMLEFT", 0, -20)
-
-	local chat_bar = ns.CreateCheckBox(parent, "chat_bar", L_GUI_CHAT_BAR)
-	chat_bar:SetPoint("TOPLEFT", height, "BOTTOMLEFT", 0, -10)
-
-	local chat_bar_mouseover = ns.CreateCheckBox(parent, "chat_bar_mouseover", L_GUI_CHAT_BAR_MOUSEOVER)
-	chat_bar_mouseover:SetPoint("TOPLEFT", chat_bar, "BOTTOMLEFT", 20, 0)
-
-	chat_bar.children = {chat_bar_mouseover}
-
-	local time_color = ns.CreateColourPicker(parent, "time_color", true, L_GUI_CHAT_TIMESTAMP)
-	time_color:SetPoint("TOPLEFT", chat_bar_mouseover, "BOTTOMLEFT", -16, -10)
-
-	local whisp_sound = ns.CreateCheckBox(parent, "whisp_sound", L_GUI_CHAT_WHISP)
-	whisp_sound:SetPoint("TOPLEFT", time_color, "BOTTOMLEFT", -4, -10)
-
-	local bubbles = ns.CreateCheckBox(parent, "bubbles", L_GUI_CHAT_SKIN_BUBBLE)
-	bubbles:SetPoint("TOPLEFT", whisp_sound, "BOTTOMLEFT", 0, 0)
-
-	local combatlog = ns.CreateCheckBox(parent, "combatlog", L_GUI_CHAT_CL_TAB)
-	combatlog:SetPoint("TOPLEFT", bubbles, "BOTTOMLEFT", 0, 0)
-
-	local tabs_mouseover = ns.CreateCheckBox(parent, "tabs_mouseover", L_GUI_CHAT_TABS_MOUSEOVER)
-	tabs_mouseover:SetPoint("TOPLEFT", combatlog, "BOTTOMLEFT", 0, 0)
-
-	local sticky = ns.CreateCheckBox(parent, "sticky", L_GUI_CHAT_STICKY)
-	sticky:SetPoint("TOPLEFT", tabs_mouseover, "BOTTOMLEFT", 0, 0)
-
-	local damage_meter_spam = ns.CreateCheckBox(parent, "damage_meter_spam", L_GUI_CHAT_DAMAGE_METER_SPAM)
-	damage_meter_spam:SetPoint("TOPLEFT", sticky, "BOTTOMLEFT", 0, 0)
 end
 
 -- Bag

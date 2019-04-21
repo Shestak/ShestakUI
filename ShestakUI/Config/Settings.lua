@@ -234,6 +234,28 @@ C["tooltip"] = {
 }
 
 ----------------------------------------------------------------------------------------
+--	Chat options
+----------------------------------------------------------------------------------------
+C["chat"] = {
+	["enable"] = true,							-- Enable chat
+	["background"] = false,						-- Enable background for chat
+	["background_alpha"] = 0.7,					-- Background alpha
+	["filter"] = true,							-- Removing some systems spam ("Player1" won duel "Player2")
+	["spam"] = false,							-- Removing some players spam (gold/portals/etc)
+	["width"] = 350,							-- Chat width
+	["height"] = 112,							-- Chat height
+	["chat_bar"] = false,						-- Lite Button Bar for switch chat channel
+	["chat_bar_mouseover"] = false,				-- Lite Button Bar on mouseover
+	["time_color"] = {1, 1, 0},					-- Timestamp coloring (http://www.december.com/html/spec/colorcodescompact.html)
+	["whisp_sound"] = true,						-- Sound when whisper
+	["bubbles"] = true,							-- Skin Blizzard chat bubbles
+	["combatlog"] = true,						-- Show CombatLog tab
+	["tabs_mouseover"] = false,					-- Chat tabs on mouseover
+	["sticky"] = true,							-- Remember last channel
+	["damage_meter_spam"] = false,				-- Merge damage meter spam in one line-link
+}
+
+----------------------------------------------------------------------------------------
 --	Announcements options
 ----------------------------------------------------------------------------------------
 C["announcements"] = {
@@ -372,28 +394,6 @@ C["threat"] = {
 	["width"] = 217,							-- Bars width
 	["bar_rows"] = 7,							-- Number of bars
 	["hide_solo"] = false,						-- Show only in party/raid
-}
-
-----------------------------------------------------------------------------------------
---	Chat options
-----------------------------------------------------------------------------------------
-C["chat"] = {
-	["enable"] = true,							-- Enable chat
-	["background"] = false,						-- Enable background for chat
-	["background_alpha"] = 0.7,					-- Background alpha
-	["filter"] = true,							-- Removing some systems spam ("Player1" won duel "Player2")
-	["spam"] = false,							-- Removing some players spam (gold/portals/etc)
-	["width"] = 350,							-- Chat width
-	["height"] = 112,							-- Chat height
-	["chat_bar"] = false,						-- Lite Button Bar for switch chat channel
-	["chat_bar_mouseover"] = false,				-- Lite Button Bar on mouseover
-	["time_color"] = {1, 1, 0},					-- Timestamp coloring (http://www.december.com/html/spec/colorcodescompact.html)
-	["whisp_sound"] = true,						-- Sound when whisper
-	["bubbles"] = true,							-- Skin Blizzard chat bubbles
-	["combatlog"] = true,						-- Show CombatLog tab
-	["tabs_mouseover"] = false,					-- Chat tabs on mouseover
-	["sticky"] = true,							-- Remember last channel
-	["damage_meter_spam"] = false,				-- Merge damage meter spam in one line-link
 }
 
 ----------------------------------------------------------------------------------------

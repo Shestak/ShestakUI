@@ -201,6 +201,25 @@ L_GUI_TOOLTIP_ITEM_COUNT = "Contador del objeto"
 L_GUI_TOOLTIP_UNIT_ROLE = "Unit role" -- Needs review
 L_GUI_TOOLTIP_INSTANCE_LOCK = "Your instance lock status in tooltip" -- Needs review
 
+-- Chat options
+L_GUI_CHAT_SUBTEXT = "Here you can change the settings of the chat window." -- Need review
+L_GUI_CHAT_ENABLE = "Activar chat"
+L_GUI_CHAT_BACKGROUND = "Activar fondo del chat"
+L_GUI_CHAT_BACKGROUND_ALPHA = "Opacidad del fondo del chat"
+L_GUI_CHAT_SPAM = "Remover ciertos mensajes de spam ('Jugador1' ha ganado un duelo a 'Jugador2')"
+L_GUI_CHAT_GOLD = "Remover spam del algunos jugadores (Vendedores de oro)"
+L_GUI_CHAT_WIDTH = "Anchura del chat"
+L_GUI_CHAT_HEIGHT = "Altura del chat"
+L_GUI_CHAT_BAR = "Pequeña barra de botones para cambiar de canal en el chat"
+L_GUI_CHAT_BAR_MOUSEOVER = "Lite Button Bar on mouseover" -- Needs review
+L_GUI_CHAT_TIMESTAMP = "Color de la marca de tiempo"
+L_GUI_CHAT_WHISP = "Sonido cuando te susurran"
+L_GUI_CHAT_SKIN_BUBBLE = "Estilizar las burbujas de chat"
+L_GUI_CHAT_CL_TAB = "Mostrar la pestaña del Registro de Combate"
+L_GUI_CHAT_TABS_MOUSEOVER = "Chat tabs on mouseover" -- Needs review
+L_GUI_CHAT_STICKY = "Recordar último canal"
+L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link" -- Needs review
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Anuncios"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -337,25 +356,6 @@ L_GUI_THREAT_HEIGHT = "Altura de las barras de amenaza"
 L_GUI_THREAT_WIDTH = "Anchura de las barras de amenaza"
 L_GUI_THREAT_ROWS = "Número de barras de amenaza"
 L_GUI_THREAT_HIDE_SOLO = "Mostrar solo en grupo/raid"
-
--- Chat options
-L_GUI_CHAT_SUBTEXT = "Here you can change the settings of the chat window." -- Need review
-L_GUI_CHAT_ENABLE = "Activar chat"
-L_GUI_CHAT_BACKGROUND = "Activar fondo del chat"
-L_GUI_CHAT_BACKGROUND_ALPHA = "Opacidad del fondo del chat"
-L_GUI_CHAT_SPAM = "Remover ciertos mensajes de spam ('Jugador1' ha ganado un duelo a 'Jugador2')"
-L_GUI_CHAT_GOLD = "Remover spam del algunos jugadores (Vendedores de oro)"
-L_GUI_CHAT_WIDTH = "Anchura del chat"
-L_GUI_CHAT_HEIGHT = "Altura del chat"
-L_GUI_CHAT_BAR = "Pequeña barra de botones para cambiar de canal en el chat"
-L_GUI_CHAT_BAR_MOUSEOVER = "Lite Button Bar on mouseover" -- Needs review
-L_GUI_CHAT_TIMESTAMP = "Color de la marca de tiempo"
-L_GUI_CHAT_WHISP = "Sonido cuando te susurran"
-L_GUI_CHAT_SKIN_BUBBLE = "Estilizar las burbujas de chat"
-L_GUI_CHAT_CL_TAB = "Mostrar la pestaña del Registro de Combate"
-L_GUI_CHAT_TABS_MOUSEOVER = "Chat tabs on mouseover" -- Needs review
-L_GUI_CHAT_STICKY = "Recordar último canal"
-L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link" -- Needs review
 
 -- Bag options
 L_GUI_BAGS = "Bolsas"
