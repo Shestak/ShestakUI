@@ -517,6 +517,7 @@ L_GUI_MISC_DISENCHANTING = "Milling, Prospecting and Disenchanting by Alt + clic
 L.misc_sum_buyouts = "Sum up all current auctions"
 L.misc_sum_buyouts_desc = "At auctions tab shows sum up all current auctions"
 L.misc_click_cast = "Simple click2cast spell binder"
+L.misc_click_cast_desc = "Allows you to assign spells (analog Clique) to the mouse buttons. Setup through the side bookmark in the spell book"
 L.misc_click_cast_filter = "Ignore Player and Target frames"
 L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames"
 L_GUI_MISC_COLOR_PICKER = "Improved ColorPicker"

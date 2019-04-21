@@ -495,6 +495,7 @@ L_GUI_MISC_DISENCHANTING = "快捷研磨/选矿/分解(Alt+左键)"
 L.misc_sum_buyouts = "总结拍卖物品的总金额"
 L.misc_sum_buyouts_desc = "At auctions tab shows sum up all current auctions" -- Need review
 L.misc_click_cast = "简单的点击施法绑定"
+L.misc_click_cast_desc = "Allows you to assign spells (analog Clique) to the mouse buttons. Setup through the side bookmark in the spell book" -- Need review
 L.misc_click_cast_filter = "忽略玩家/目标框架点击施法"
 L_GUI_MISC_MOVE_BLIZZARD = "移动暴雪界面框架"
 L_GUI_MISC_COLOR_PICKER = "改进型颜色选择器"
