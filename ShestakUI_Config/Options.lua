@@ -884,7 +884,7 @@ do
 	local logging_combat = ns.CreateCheckBox(parent, "logging_combat", L_GUI_AUTOMATION_LOGGING_COMBAT)
 	logging_combat:SetPoint("TOPLEFT", tab_binder, "BOTTOMLEFT", 0, 0)
 
-	local buff_on_scroll = ns.CreateCheckBox(parent, "buff_on_scroll", L_GUI_AUTOMATION_BUFF_ON_SCROLL)
+	local buff_on_scroll = ns.CreateCheckBox(parent, "buff_on_scroll")
 	buff_on_scroll:SetPoint("TOPLEFT", logging_combat, "BOTTOMLEFT", 0, 0)
 
 	local open_items = ns.CreateCheckBox(parent, "open_items", L_GUI_AUTOMATION_OPEN_ITEMS)
