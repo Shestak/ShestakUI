@@ -151,6 +151,30 @@ L_GUI_UF_PLUGINS_HEALCOMM = "即將受到的治療"
 L.raidframe_plugins_auto_resurrection = "Auto cast resurrection" -- Need review
 L.raidframe_plugins_auto_resurrection_desc = "滑鼠中鍵點擊已死亡的角色時,自動施放復活技能(Clique啟用時無效)"
 
+-- ActionBar options
+L_GUI_ACTIONBAR = "Action Bars" -- Need review
+L_GUI_ACTIONBAR_ENABLE = "開啟快捷列增強"
+L_GUI_ACTIONBAR_HOTKEY = "熱鍵文字"
+L_GUI_ACTIONBAR_MACRO = "巨集名字"
+L_GUI_ACTIONBAR_GRID = "快捷列空按鈕"
+L_GUI_ACTIONBAR_BUTTON_SIZE = "按鈕大小"
+L_GUI_ACTIONBAR_BUTTON_SPACE = "按鈕間隔"
+L_GUI_ACTIONBAR_SPLIT_BARS = "#5 快捷列分段(2*6; 該選項開啟后將激活下側和右側所有快捷列)"
+L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "快捷列按鈕邊框按職業著色"
+L_GUI_ACTIONBAR_TOGGLE_MODE = "快捷列自由折疊(可隨時調節快捷列顯示數目)"
+L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "關閉快捷列技能特效高亮"
+L_GUI_ACTIONBAR_BOTTOMBARS = "底部快捷列數目"
+L_GUI_ACTIONBAR_RIGHTBARS = "右側快捷列數目"
+L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "滑鼠懸停顯示右側快捷列"
+L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "滑鼠懸停顯示寵物快捷列"
+L_GUI_ACTIONBAR_PETBAR_HIDE = "隱藏寵物快捷列"
+L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "寵物快捷列橫向排列"
+L_GUI_ACTIONBAR_STANCEBAR_HIDE = "隱藏變身/姿態/圖騰快捷列"
+L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "變身/姿態快捷列橫向排列"
+L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "滑鼠懸停顯示變身/姿態/圖騰快捷列" -- Need review
+L_GUI_ACTIONBAR_MICROMENU = "微型菜單"
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "滑鼠懸停顯示微型菜單"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告提醒"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -388,30 +412,6 @@ L_GUI_NAMEPLATE_GOOD_COLOR = "安全仇恨顏色"
 L_GUI_NAMEPLATE_NEAR_COLOR = "臨界仇恨顏色"
 L_GUI_NAMEPLATE_BAD_COLOR = "危險仇恨顏色"
 L_GUI_NAMEPLATE_OFFTANK_COLOR = "Offtank threat color" -- Need review
-
--- ActionBar options
-L_GUI_ACTIONBAR = "Action Bars" -- Need review
-L_GUI_ACTIONBAR_ENABLE = "開啟快捷列增強"
-L_GUI_ACTIONBAR_HOTKEY = "熱鍵文字"
-L_GUI_ACTIONBAR_MACRO = "巨集名字"
-L_GUI_ACTIONBAR_GRID = "快捷列空按鈕"
-L_GUI_ACTIONBAR_BUTTON_SIZE = "按鈕大小"
-L_GUI_ACTIONBAR_BUTTON_SPACE = "按鈕間隔"
-L_GUI_ACTIONBAR_SPLIT_BARS = "#5 快捷列分段(2*6; 該選項開啟后將激活下側和右側所有快捷列)"
-L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "快捷列按鈕邊框按職業著色"
-L_GUI_ACTIONBAR_TOGGLE_MODE = "快捷列自由折疊(可隨時調節快捷列顯示數目)"
-L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "關閉快捷列技能特效高亮"
-L_GUI_ACTIONBAR_BOTTOMBARS = "底部快捷列數目"
-L_GUI_ACTIONBAR_RIGHTBARS = "右側快捷列數目"
-L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "滑鼠懸停顯示右側快捷列"
-L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "滑鼠懸停顯示寵物快捷列"
-L_GUI_ACTIONBAR_PETBAR_HIDE = "隱藏寵物快捷列"
-L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "寵物快捷列橫向排列"
-L_GUI_ACTIONBAR_STANCEBAR_HIDE = "隱藏變身/姿態/圖騰快捷列"
-L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "變身/姿態快捷列橫向排列"
-L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "滑鼠懸停顯示變身/姿態/圖騰快捷列" -- Need review
-L_GUI_ACTIONBAR_MICROMENU = "微型菜單"
-L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "滑鼠懸停顯示微型菜單"
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size" -- Need review

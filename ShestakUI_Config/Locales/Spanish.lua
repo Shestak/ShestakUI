@@ -151,6 +151,30 @@ L_GUI_UF_PLUGINS_HEALCOMM = "Barra de sanación entrante"
 L.raidframe_plugins_auto_resurrection = "Auto cast resurrection" -- Need review
 L.raidframe_plugins_auto_resurrection_desc = "Auto lanzar resurreción con click central cuando la unidad este muerta (no funciona cuando Clique está activado)"
 
+-- ActionBar options
+L_GUI_ACTIONBAR = "Action Bars" -- Need review
+L_GUI_ACTIONBAR_ENABLE = "Activar barras de acción"
+L_GUI_ACTIONBAR_HOTKEY = "Mostrar texto los atajos de teclado"
+L_GUI_ACTIONBAR_MACRO = "Mostrar nombre de la macro en los botones"
+L_GUI_ACTIONBAR_GRID = "Mostrar botones de la barra de acción vacíos"
+L_GUI_ACTIONBAR_BUTTON_SIZE = "Tamaño de los botones"
+L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacio entre botones"
+L_GUI_ACTIONBAR_SPLIT_BARS = "Dividir la quinta barra en dos de 6 botones cada una"
+L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Activar borde por color de clase para los botones"
+L_GUI_ACTIONBAR_TOGGLE_MODE = "Activar modo cambiar"
+L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Hide proc highlight" -- Needs review
+L_GUI_ACTIONBAR_BOTTOMBARS = "Número de barras de acción abajo"
+L_GUI_ACTIONBAR_RIGHTBARS = "Número de barras de acción en la derecha"
+L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barras de la derecha se muestran al pasar el ratón"
+L_GUI_ACTIONBAR_PETBAR_HIDE = "Ocultar barra de mascota"
+L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Activar barra de mascota horizontal"
+L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Barra de mascota al pasar el ratón (sólo para la barra de mascota horizontal)"
+L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Ocultar cambio de forma"
+L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Activar barra de estancia horizontal"
+L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Barras de Cambios de forma/Estancias al pasar el ratón" -- Needs review
+L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Anuncios"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -388,30 +412,6 @@ L_GUI_NAMEPLATE_GOOD_COLOR = "Color de alta amenaza, varía dependiendo si eres 
 L_GUI_NAMEPLATE_NEAR_COLOR = "Color de perdiendo/ganando amenaza"
 L_GUI_NAMEPLATE_BAD_COLOR = "Color de baja amenaza, varía dependiendo si eres tanque o dps/sanador"
 L_GUI_NAMEPLATE_OFFTANK_COLOR = "Offtank threat color" -- Need review
-
--- ActionBar options
-L_GUI_ACTIONBAR = "Action Bars" -- Need review
-L_GUI_ACTIONBAR_ENABLE = "Activar barras de acción"
-L_GUI_ACTIONBAR_HOTKEY = "Mostrar texto los atajos de teclado"
-L_GUI_ACTIONBAR_MACRO = "Mostrar nombre de la macro en los botones"
-L_GUI_ACTIONBAR_GRID = "Mostrar botones de la barra de acción vacíos"
-L_GUI_ACTIONBAR_BUTTON_SIZE = "Tamaño de los botones"
-L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacio entre botones"
-L_GUI_ACTIONBAR_SPLIT_BARS = "Dividir la quinta barra en dos de 6 botones cada una"
-L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Activar borde por color de clase para los botones"
-L_GUI_ACTIONBAR_TOGGLE_MODE = "Activar modo cambiar"
-L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Hide proc highlight" -- Needs review
-L_GUI_ACTIONBAR_BOTTOMBARS = "Número de barras de acción abajo"
-L_GUI_ACTIONBAR_RIGHTBARS = "Número de barras de acción en la derecha"
-L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barras de la derecha se muestran al pasar el ratón"
-L_GUI_ACTIONBAR_PETBAR_HIDE = "Ocultar barra de mascota"
-L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Activar barra de mascota horizontal"
-L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Barra de mascota al pasar el ratón (sólo para la barra de mascota horizontal)"
-L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Ocultar cambio de forma"
-L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Activar barra de estancia horizontal"
-L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Barras de Cambios de forma/Estancias al pasar el ratón" -- Needs review
-L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
-L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size" -- Need review

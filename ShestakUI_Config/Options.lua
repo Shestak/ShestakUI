@@ -788,6 +788,80 @@ do
 	plugins_auto_resurrection:SetPoint("TOPLEFT", plugins_healcomm, "BOTTOMLEFT", 0, 0)
 end
 
+-- ActionBar
+do
+	local parent = ShestakUIOptionsPanel.actionbar
+
+	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_ACTIONBAR_ENABLE)
+	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local hotkey = ns.CreateCheckBox(parent, "hotkey", L_GUI_ACTIONBAR_HOTKEY)
+	hotkey:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
+
+	local macro = ns.CreateCheckBox(parent, "macro", L_GUI_ACTIONBAR_MACRO)
+	macro:SetPoint("TOPLEFT", hotkey, "BOTTOMLEFT", 0, 0)
+
+	local show_grid = ns.CreateCheckBox(parent, "show_grid", L_GUI_ACTIONBAR_GRID)
+	show_grid:SetPoint("TOPLEFT", macro, "BOTTOMLEFT", 0, 0)
+
+	local button_size = ns.CreateNumberSlider(parent, "button_size", nil, nil, 0, 35, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	button_size:SetPoint("TOPLEFT", show_grid, "BOTTOMLEFT", 0, -20)
+
+	local button_space = ns.CreateNumberSlider(parent, "button_space", nil, nil, 0, 7, 1, true, L_GUI_ACTIONBAR_BUTTON_SPACE)
+	button_space:SetPoint("LEFT", button_size, "RIGHT", 120, 0)
+
+	local split_bars = ns.CreateCheckBox(parent, "split_bars", L_GUI_ACTIONBAR_SPLIT_BARS)
+	split_bars:SetPoint("TOPLEFT", button_size, "BOTTOMLEFT", 0, -10)
+
+	local classcolor_border = ns.CreateCheckBox(parent, "classcolor_border", L_GUI_ACTIONBAR_CLASSCOLOR_BORDER)
+	classcolor_border:SetPoint("TOPLEFT", split_bars, "BOTTOMLEFT", 0, 0)
+
+	local toggle_mode = ns.CreateCheckBox(parent, "toggle_mode", L_GUI_ACTIONBAR_TOGGLE_MODE)
+	toggle_mode:SetPoint("TOPLEFT", classcolor_border, "BOTTOMLEFT", 0, 0)
+
+	local hide_highlight = ns.CreateCheckBox(parent, "hide_highlight", L_GUI_ACTIONBAR_HIDE_HIGHLIGHT)
+	hide_highlight:SetPoint("TOPLEFT", toggle_mode, "BOTTOMLEFT", 0, 0)
+
+	local bottombars = ns.CreateNumberSlider(parent, "bottombars", nil, nil, 1, 3, 1, true, L_GUI_ACTIONBAR_BOTTOMBARS)
+	bottombars:SetPoint("TOPLEFT", hide_highlight, "BOTTOMLEFT", 0, -20)
+
+	local rightbars = ns.CreateNumberSlider(parent, "rightbars", nil, nil, 0, 3, 1, true, L_GUI_ACTIONBAR_RIGHTBARS)
+	rightbars:SetPoint("LEFT", bottombars, "RIGHT", 120, 0)
+
+	local rightbars_mouseover = ns.CreateCheckBox(parent, "rightbars_mouseover", L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER)
+	rightbars_mouseover:SetPoint("TOPLEFT", bottombars, "BOTTOMLEFT", 0, -10)
+
+	local petbar_hide = ns.CreateCheckBox(parent, "petbar_hide", L_GUI_ACTIONBAR_PETBAR_HIDE)
+	petbar_hide:SetPoint("TOPLEFT", rightbars_mouseover, "BOTTOMLEFT", 0, 0)
+
+	local petbar_horizontal = ns.CreateCheckBox(parent, "petbar_horizontal", L_GUI_ACTIONBAR_PETBAR_HORIZONTAL)
+	petbar_horizontal:SetPoint("TOPLEFT", petbar_hide, "BOTTOMLEFT", 0, 0)
+
+	local petbar_mouseover = ns.CreateCheckBox(parent, "petbar_mouseover", L_GUI_ACTIONBAR_PETBAR_MOUSEOVER)
+	petbar_mouseover:SetPoint("TOPLEFT", petbar_horizontal, "BOTTOMLEFT", 20, 0)
+
+	petbar_horizontal.children = {petbar_mouseover}
+
+	local stancebar_hide = ns.CreateCheckBox(parent, "stancebar_hide", L_GUI_ACTIONBAR_STANCEBAR_HIDE)
+	stancebar_hide:SetPoint("TOPLEFT", petbar_mouseover, "BOTTOMLEFT", -20, 0)
+
+	local stancebar_horizontal = ns.CreateCheckBox(parent, "stancebar_horizontal", L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL)
+	stancebar_horizontal:SetPoint("TOPLEFT", stancebar_hide, "BOTTOMLEFT", 0, 0)
+
+	local stancebar_mouseover = ns.CreateCheckBox(parent, "stancebar_mouseover", L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER)
+	stancebar_mouseover:SetPoint("TOPLEFT", stancebar_horizontal, "BOTTOMLEFT", 20, 0)
+
+	stancebar_horizontal.children = {stancebar_mouseover}
+
+	local micromenu = ns.CreateCheckBox(parent, "micromenu", L_GUI_ACTIONBAR_MICROMENU)
+	micromenu:SetPoint("TOPLEFT", stancebar_mouseover, "BOTTOMLEFT", -20, 0)
+
+	local micromenu_mouseover = ns.CreateCheckBox(parent, "micromenu_mouseover", L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER)
+	micromenu_mouseover:SetPoint("TOPLEFT", micromenu, "BOTTOMLEFT", 20, 0)
+
+	micromenu.children = {micromenu_mouseover}
+end
+
 -- Announcements
 do
 	local parent = ShestakUIOptionsPanel.announcements
@@ -1394,80 +1468,6 @@ do
 
 	local offtank_color = ns.CreateColourPicker(parent, "offtank_color", true, L_GUI_NAMEPLATE_OFFTANK_COLOR)
 	offtank_color:SetPoint("TOPLEFT", bad_color, "BOTTOMLEFT", 0, -10)
-end
-
--- ActionBar
-do
-	local parent = ShestakUIOptionsPanel.actionbar
-
-	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_ACTIONBAR_ENABLE)
-	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
-	local hotkey = ns.CreateCheckBox(parent, "hotkey", L_GUI_ACTIONBAR_HOTKEY)
-	hotkey:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
-
-	local macro = ns.CreateCheckBox(parent, "macro", L_GUI_ACTIONBAR_MACRO)
-	macro:SetPoint("TOPLEFT", hotkey, "BOTTOMLEFT", 0, 0)
-
-	local show_grid = ns.CreateCheckBox(parent, "show_grid", L_GUI_ACTIONBAR_GRID)
-	show_grid:SetPoint("TOPLEFT", macro, "BOTTOMLEFT", 0, 0)
-
-	local button_size = ns.CreateNumberSlider(parent, "button_size", nil, nil, 0, 35, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
-	button_size:SetPoint("TOPLEFT", show_grid, "BOTTOMLEFT", 0, -20)
-
-	local button_space = ns.CreateNumberSlider(parent, "button_space", nil, nil, 0, 7, 1, true, L_GUI_ACTIONBAR_BUTTON_SPACE)
-	button_space:SetPoint("LEFT", button_size, "RIGHT", 120, 0)
-
-	local split_bars = ns.CreateCheckBox(parent, "split_bars", L_GUI_ACTIONBAR_SPLIT_BARS)
-	split_bars:SetPoint("TOPLEFT", button_size, "BOTTOMLEFT", 0, -10)
-
-	local classcolor_border = ns.CreateCheckBox(parent, "classcolor_border", L_GUI_ACTIONBAR_CLASSCOLOR_BORDER)
-	classcolor_border:SetPoint("TOPLEFT", split_bars, "BOTTOMLEFT", 0, 0)
-
-	local toggle_mode = ns.CreateCheckBox(parent, "toggle_mode", L_GUI_ACTIONBAR_TOGGLE_MODE)
-	toggle_mode:SetPoint("TOPLEFT", classcolor_border, "BOTTOMLEFT", 0, 0)
-
-	local hide_highlight = ns.CreateCheckBox(parent, "hide_highlight", L_GUI_ACTIONBAR_HIDE_HIGHLIGHT)
-	hide_highlight:SetPoint("TOPLEFT", toggle_mode, "BOTTOMLEFT", 0, 0)
-
-	local bottombars = ns.CreateNumberSlider(parent, "bottombars", nil, nil, 1, 3, 1, true, L_GUI_ACTIONBAR_BOTTOMBARS)
-	bottombars:SetPoint("TOPLEFT", hide_highlight, "BOTTOMLEFT", 0, -20)
-
-	local rightbars = ns.CreateNumberSlider(parent, "rightbars", nil, nil, 0, 3, 1, true, L_GUI_ACTIONBAR_RIGHTBARS)
-	rightbars:SetPoint("LEFT", bottombars, "RIGHT", 120, 0)
-
-	local rightbars_mouseover = ns.CreateCheckBox(parent, "rightbars_mouseover", L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER)
-	rightbars_mouseover:SetPoint("TOPLEFT", bottombars, "BOTTOMLEFT", 0, -10)
-
-	local petbar_hide = ns.CreateCheckBox(parent, "petbar_hide", L_GUI_ACTIONBAR_PETBAR_HIDE)
-	petbar_hide:SetPoint("TOPLEFT", rightbars_mouseover, "BOTTOMLEFT", 0, 0)
-
-	local petbar_horizontal = ns.CreateCheckBox(parent, "petbar_horizontal", L_GUI_ACTIONBAR_PETBAR_HORIZONTAL)
-	petbar_horizontal:SetPoint("TOPLEFT", petbar_hide, "BOTTOMLEFT", 0, 0)
-
-	local petbar_mouseover = ns.CreateCheckBox(parent, "petbar_mouseover", L_GUI_ACTIONBAR_PETBAR_MOUSEOVER)
-	petbar_mouseover:SetPoint("TOPLEFT", petbar_horizontal, "BOTTOMLEFT", 20, 0)
-
-	petbar_horizontal.children = {petbar_mouseover}
-
-	local stancebar_hide = ns.CreateCheckBox(parent, "stancebar_hide", L_GUI_ACTIONBAR_STANCEBAR_HIDE)
-	stancebar_hide:SetPoint("TOPLEFT", petbar_mouseover, "BOTTOMLEFT", -20, 0)
-
-	local stancebar_horizontal = ns.CreateCheckBox(parent, "stancebar_horizontal", L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL)
-	stancebar_horizontal:SetPoint("TOPLEFT", stancebar_hide, "BOTTOMLEFT", 0, 0)
-
-	local stancebar_mouseover = ns.CreateCheckBox(parent, "stancebar_mouseover", L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER)
-	stancebar_mouseover:SetPoint("TOPLEFT", stancebar_horizontal, "BOTTOMLEFT", 20, 0)
-
-	stancebar_horizontal.children = {stancebar_mouseover}
-
-	local micromenu = ns.CreateCheckBox(parent, "micromenu", L_GUI_ACTIONBAR_MICROMENU)
-	micromenu:SetPoint("TOPLEFT", stancebar_mouseover, "BOTTOMLEFT", -20, 0)
-
-	local micromenu_mouseover = ns.CreateCheckBox(parent, "micromenu_mouseover", L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER)
-	micromenu_mouseover:SetPoint("TOPLEFT", micromenu, "BOTTOMLEFT", 20, 0)
-
-	micromenu.children = {micromenu_mouseover}
 end
 
 -- Auras/Buffs/Debuffs

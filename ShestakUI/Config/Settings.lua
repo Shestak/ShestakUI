@@ -173,6 +173,40 @@ C["raidframe"] = {
 }
 
 ----------------------------------------------------------------------------------------
+--	ActionBar options
+----------------------------------------------------------------------------------------
+C["actionbar"] = {
+	-- Main
+	["enable"] = true,							-- Enable actionbars
+	["hotkey"] = true,							-- Show hotkey on buttons
+	["macro"] = false,							-- Show macro name on buttons
+	["show_grid"] = true,						-- Show empty action bar buttons
+	["button_size"] = 25,						-- Buttons size
+	["button_space"] = 3,						-- Buttons space
+	["split_bars"] = false,						-- Split the fifth bar on two bars on 6 buttons
+	["classcolor_border"] = false,				-- Enable classcolor border
+	["toggle_mode"] = true,						-- Enable toggle mode
+	["hide_highlight"] = false,					-- Hide proc highlight
+	-- Bottom bars
+	["bottombars"] = 2,							-- Number of action bars on the bottom (1, 2 or 3)
+	-- Right bars
+	["rightbars"] = 3,							-- Number of action bars on right (0, 1, 2 or 3)
+	["rightbars_mouseover"] = true,				-- Right bars on mouseover
+	-- Pet bar
+	["petbar_hide"] = false,					-- Hide pet bar
+	["petbar_horizontal"] = false,				-- Enable horizontal pet bar
+	["petbar_mouseover"] = false,				-- Pet bar on mouseover (only for horizontal pet bar)
+	-- Stance bar
+	["stancebar_hide"] = false,					-- Hide stance bar
+	["stancebar_horizontal"] = true,			-- Enable horizontal stance bar
+	["stancebar_mouseover"] = true,				-- Stance bar on mouseover (only for horizontal stance bar)
+	-- MicroMenu
+	["micromenu"] = false,						-- Enable micro menu
+	["micromenu_mouseover"] = false,			-- Micro menu on mouseover
+}
+
+
+----------------------------------------------------------------------------------------
 --	Announcements options
 ----------------------------------------------------------------------------------------
 C["announcements"] = {
@@ -428,39 +462,6 @@ C["nameplate"] = {
 	["near_color"] = {1, 1, 0},					-- Near threat color
 	["bad_color"] = {1, 0, 0},					-- Bad threat color
 	["offtank_color"] = {0, 0.5, 1},			-- Offtank threat color
-}
-
-----------------------------------------------------------------------------------------
---	ActionBar options
-----------------------------------------------------------------------------------------
-C["actionbar"] = {
-	-- Main
-	["enable"] = true,							-- Enable actionbars
-	["hotkey"] = true,							-- Show hotkey on buttons
-	["macro"] = false,							-- Show macro name on buttons
-	["show_grid"] = true,						-- Show empty action bar buttons
-	["button_size"] = 25,						-- Buttons size
-	["button_space"] = 3,						-- Buttons space
-	["split_bars"] = false,						-- Split the fifth bar on two bars on 6 buttons
-	["classcolor_border"] = false,				-- Enable classcolor border
-	["toggle_mode"] = true,						-- Enable toggle mode
-	["hide_highlight"] = false,					-- Hide proc highlight
-	-- Bottom bars
-	["bottombars"] = 2,							-- Number of action bars on the bottom (1, 2 or 3)
-	-- Right bars
-	["rightbars"] = 3,							-- Number of action bars on right (0, 1, 2 or 3)
-	["rightbars_mouseover"] = true,				-- Right bars on mouseover
-	-- Pet bar
-	["petbar_hide"] = false,					-- Hide pet bar
-	["petbar_horizontal"] = false,				-- Enable horizontal pet bar
-	["petbar_mouseover"] = false,				-- Pet bar on mouseover (only for horizontal pet bar)
-	-- Stance bar
-	["stancebar_hide"] = false,					-- Hide stance bar
-	["stancebar_horizontal"] = true,			-- Enable horizontal stance bar
-	["stancebar_mouseover"] = true,				-- Stance bar on mouseover (only for horizontal stance bar)
-	-- MicroMenu
-	["micromenu"] = false,						-- Enable micro menu
-	["micromenu_mouseover"] = false,			-- Micro menu on mouseover
 }
 
 ----------------------------------------------------------------------------------------

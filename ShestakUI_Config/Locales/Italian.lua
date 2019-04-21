@@ -151,6 +151,30 @@ L_GUI_UF_PLUGINS_HEALCOMM = "Mostra le cure in arrivo sul riquadro"
 L.raidframe_plugins_auto_resurrection = "Auto cast resurrection" -- Need review
 L.raidframe_plugins_auto_resurrection_desc = "'Auto-lancia' resurrezione col tasto centrale quando l'unità è morta (non funziona con Clique attiva)"
 
+-- ActionBar options
+L_GUI_ACTIONBAR = "Barre delle azioni"
+L_GUI_ACTIONBAR_ENABLE = "Attiva le barre delle azioni"
+L_GUI_ACTIONBAR_HOTKEY = "Mostra i nomi dei tasti di scelta rapida sugli scomparti"
+L_GUI_ACTIONBAR_MACRO = "Mostra i nomi delle macro sugli scomparti"
+L_GUI_ACTIONBAR_GRID = "Mostra lo sfondo degli scomparti vuoti sulle barre delle azioni"
+L_GUI_ACTIONBAR_BUTTON_SIZE = "Dimensioni degli scomparti"
+L_GUI_ACTIONBAR_BUTTON_SPACE = "Spazio tra gli scomparti"
+L_GUI_ACTIONBAR_SPLIT_BARS = "Dividi la quinta barra in 2 barre da 6 scomparti ciascuna"
+L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Colora i bordi degli scomparti con i colori delle classi"
+L_GUI_ACTIONBAR_TOGGLE_MODE = "Attiva la modalità a scomparsa"
+L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Nascondi il lumeggiare (highlight) di un proc."
+L_GUI_ACTIONBAR_BOTTOMBARS = "Numero delle barre delle azioni in basso"
+L_GUI_ACTIONBAR_RIGHTBARS = "Numero di barre delle azioni sulla destra"
+L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barre sulla destra al passaggio del mouse"
+L_GUI_ACTIONBAR_PETBAR_HIDE = "Nascondi la barra famiglio"
+L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Rendi orizzontale la barra famiglio"
+L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Barra famiglio al passaggio del mouse (solo con la barra famiglio orizzontale)"
+L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Nascondi barra postura"
+L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Rendi orizzontale la barra postura"
+L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Barra postura al passaggio del mouse"
+L_GUI_ACTIONBAR_MICROMENU = "Attiva il micromenu"
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micromenu al passaggio del mouse"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -388,30 +412,6 @@ L_GUI_NAMEPLATE_GOOD_COLOR = "Colore se il PG è minacciato (in base a difensore
 L_GUI_NAMEPLATE_NEAR_COLOR = "Colore per perdita/guadagno minaccia"
 L_GUI_NAMEPLATE_BAD_COLOR = "Colore se il PG non è minacciato (se difensore o assaltatore/guaritore)"
 L_GUI_NAMEPLATE_OFFTANK_COLOR = "Colore della minaccia per il difensore secondario"
-
--- ActionBar options
-L_GUI_ACTIONBAR = "Barre delle azioni"
-L_GUI_ACTIONBAR_ENABLE = "Attiva le barre delle azioni"
-L_GUI_ACTIONBAR_HOTKEY = "Mostra i nomi dei tasti di scelta rapida sugli scomparti"
-L_GUI_ACTIONBAR_MACRO = "Mostra i nomi delle macro sugli scomparti"
-L_GUI_ACTIONBAR_GRID = "Mostra lo sfondo degli scomparti vuoti sulle barre delle azioni"
-L_GUI_ACTIONBAR_BUTTON_SIZE = "Dimensioni degli scomparti"
-L_GUI_ACTIONBAR_BUTTON_SPACE = "Spazio tra gli scomparti"
-L_GUI_ACTIONBAR_SPLIT_BARS = "Dividi la quinta barra in 2 barre da 6 scomparti ciascuna"
-L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Colora i bordi degli scomparti con i colori delle classi"
-L_GUI_ACTIONBAR_TOGGLE_MODE = "Attiva la modalità a scomparsa"
-L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Nascondi il lumeggiare (highlight) di un proc."
-L_GUI_ACTIONBAR_BOTTOMBARS = "Numero delle barre delle azioni in basso"
-L_GUI_ACTIONBAR_RIGHTBARS = "Numero di barre delle azioni sulla destra"
-L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barre sulla destra al passaggio del mouse"
-L_GUI_ACTIONBAR_PETBAR_HIDE = "Nascondi la barra famiglio"
-L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Rendi orizzontale la barra famiglio"
-L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Barra famiglio al passaggio del mouse (solo con la barra famiglio orizzontale)"
-L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Nascondi barra postura"
-L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Rendi orizzontale la barra postura"
-L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Barra postura al passaggio del mouse"
-L_GUI_ACTIONBAR_MICROMENU = "Attiva il micromenu"
-L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micromenu al passaggio del mouse"
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size" -- Need review

@@ -151,6 +151,30 @@ L_GUI_UF_PLUGINS_HEALCOMM = "Leiste für Eingehende Heilung"
 L.raidframe_plugins_auto_resurrection = "Auto cast resurrection" -- Need review
 L.raidframe_plugins_auto_resurrection_desc = "Mittel-Klick um automatisch Auferstehung zu zauber wenn das Ziel tot ist (funktioniert nicht wenn Clique installiert ist)"
 
+-- ActionBar options
+L_GUI_ACTIONBAR = "Aktionsleisten"
+L_GUI_ACTIONBAR_ENABLE = "Aktionsleisten aktivieren"
+L_GUI_ACTIONBAR_HOTKEY = "Zeige Hotkey-Text an"
+L_GUI_ACTIONBAR_MACRO = "Zeige Makronamen auf den Buttons"
+L_GUI_ACTIONBAR_GRID = "Zeige die leeren Knöpfe der Aktionsleisten an"
+L_GUI_ACTIONBAR_BUTTON_SIZE = "Knopfgröße"
+L_GUI_ACTIONBAR_BUTTON_SPACE = "Buttonabstand"
+L_GUI_ACTIONBAR_SPLIT_BARS = "Splitte die Fünfte Aktionsleiste im zwei 6 Knöpfe Leisten"
+L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Aktiviere Klassenfarbe für Aktionsleisten"
+L_GUI_ACTIONBAR_TOGGLE_MODE = "Aktiviere 'toggle mode'"
+L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "hebe keine Procs hervor"
+L_GUI_ACTIONBAR_BOTTOMBARS = "Anzahl der Aktionsleisten an der unteren Seite"
+L_GUI_ACTIONBAR_RIGHTBARS = "Anzahl der Aktionsleisten an der rechten Seite"
+L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Zeige die rechten Leisten nur bei Mouseover"
+L_GUI_ACTIONBAR_PETBAR_HIDE = "Verstecke Begleiterleiste"
+L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Aktiviere horizontale Begleiterleiste"
+L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Zeige die Begleiterleiste nur bei Mouseover(nur für horizontale Begleiterleiste)"
+L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Gestaltenleiste verstecken"
+L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Horizontale Haltungsleiste aktivieren"
+L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Zeige Haltungsleiste/Gestaltenleiste nur bei Mouseover"
+L_GUI_ACTIONBAR_MICROMENU = "Zeige Micromenü"
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micromenü bei MouseOver"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigungen"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -388,30 +412,6 @@ L_GUI_NAMEPLATE_GOOD_COLOR = "Positive Bedrohungsfarbe. Variiert abhängig ob Ta
 L_GUI_NAMEPLATE_NEAR_COLOR = "Verlust oder Zuwachs der Bedrohung farbig kennzeichen"
 L_GUI_NAMEPLATE_BAD_COLOR = "Negative Bedrohungsfarbe. Variiert abhängig ob Tank oder dps/heal"
 L_GUI_NAMEPLATE_OFFTANK_COLOR = "Offtank threat color" -- Need review
-
--- ActionBar options
-L_GUI_ACTIONBAR = "Aktionsleisten"
-L_GUI_ACTIONBAR_ENABLE = "Aktionsleisten aktivieren"
-L_GUI_ACTIONBAR_HOTKEY = "Zeige Hotkey-Text an"
-L_GUI_ACTIONBAR_MACRO = "Zeige Makronamen auf den Buttons"
-L_GUI_ACTIONBAR_GRID = "Zeige die leeren Knöpfe der Aktionsleisten an"
-L_GUI_ACTIONBAR_BUTTON_SIZE = "Knopfgröße"
-L_GUI_ACTIONBAR_BUTTON_SPACE = "Buttonabstand"
-L_GUI_ACTIONBAR_SPLIT_BARS = "Splitte die Fünfte Aktionsleiste im zwei 6 Knöpfe Leisten"
-L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Aktiviere Klassenfarbe für Aktionsleisten"
-L_GUI_ACTIONBAR_TOGGLE_MODE = "Aktiviere 'toggle mode'"
-L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "hebe keine Procs hervor"
-L_GUI_ACTIONBAR_BOTTOMBARS = "Anzahl der Aktionsleisten an der unteren Seite"
-L_GUI_ACTIONBAR_RIGHTBARS = "Anzahl der Aktionsleisten an der rechten Seite"
-L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Zeige die rechten Leisten nur bei Mouseover"
-L_GUI_ACTIONBAR_PETBAR_HIDE = "Verstecke Begleiterleiste"
-L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Aktiviere horizontale Begleiterleiste"
-L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Zeige die Begleiterleiste nur bei Mouseover(nur für horizontale Begleiterleiste)"
-L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Gestaltenleiste verstecken"
-L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Horizontale Haltungsleiste aktivieren"
-L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Zeige Haltungsleiste/Gestaltenleiste nur bei Mouseover"
-L_GUI_ACTIONBAR_MICROMENU = "Zeige Micromenü"
-L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micromenü bei MouseOver"
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs größe"

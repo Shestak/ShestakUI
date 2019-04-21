@@ -151,6 +151,30 @@ L_GUI_UF_PLUGINS_HEALCOMM = "Barre de soin entrant (incoming)"
 L.raidframe_plugins_auto_resurrection = "Auto cast resurrection" -- Need review
 L.raidframe_plugins_auto_resurrection_desc = "Lance automatiquement le sort de résurrection de masse avec un clic central souris sur une cible morte (ne fonctionne pas avec l'addon Clique activé)"
 
+-- ActionBar options
+L_GUI_ACTIONBAR = "Barres d'action"
+L_GUI_ACTIONBAR_ENABLE = "Activer les barres d'action"
+L_GUI_ACTIONBAR_HOTKEY = "Afficher le texte des macros"
+L_GUI_ACTIONBAR_MACRO = "Afficher le nom des macros sur les touches"
+L_GUI_ACTIONBAR_GRID = "Afficher les boutons vides"
+L_GUI_ACTIONBAR_BUTTON_SIZE = "Taille des boutons"
+L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacement des boutons"
+L_GUI_ACTIONBAR_SPLIT_BARS = "Séparation de la 5ème barre en 2 barres de 6 boutons de chaque côté"
+L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Active la couleur de votre classe pour la bordure de boutons"
+L_GUI_ACTIONBAR_TOGGLE_MODE = "Active le mode pour bloquer les combinaisons des barres d'action"
+L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Cache la surbrillance des effets à déclenchement"
+L_GUI_ACTIONBAR_BOTTOMBARS = "Nombre de barres d'action en bas"
+L_GUI_ACTIONBAR_RIGHTBARS = "Nombre de barres d'action à droite"
+L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barres de droite en 'mouseover'"
+L_GUI_ACTIONBAR_PETBAR_HIDE = "Cacher la barre du familier"
+L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Activer la barre du familier horizontale"
+L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Barre du familier en 'mouseover'(uniquement pour la barre horizontale)"
+L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Cacher changeforme"
+L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Activer la barre de posture horizontale"
+L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Changeforme/Posture/barre de totems en 'mouseover'" -- Need review
+L_GUI_ACTIONBAR_MICROMENU = "Active le Micro menu"
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Affiche le Micro menu au survol de la souris"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -388,30 +412,6 @@ L_GUI_NAMEPLATE_GOOD_COLOR = "Bonne couleur de menace, dépend de si vous êtes 
 L_GUI_NAMEPLATE_NEAR_COLOR = "Perte/Gain de couleur de menace"
 L_GUI_NAMEPLATE_BAD_COLOR = "Mauvaise couleur de menace, dépend de si vous êtes un tank ou dps/heal"
 L_GUI_NAMEPLATE_OFFTANK_COLOR = "Coloration de la menace du tank secondaire"
-
--- ActionBar options
-L_GUI_ACTIONBAR = "Barres d'action"
-L_GUI_ACTIONBAR_ENABLE = "Activer les barres d'action"
-L_GUI_ACTIONBAR_HOTKEY = "Afficher le texte des macros"
-L_GUI_ACTIONBAR_MACRO = "Afficher le nom des macros sur les touches"
-L_GUI_ACTIONBAR_GRID = "Afficher les boutons vides"
-L_GUI_ACTIONBAR_BUTTON_SIZE = "Taille des boutons"
-L_GUI_ACTIONBAR_BUTTON_SPACE = "Espacement des boutons"
-L_GUI_ACTIONBAR_SPLIT_BARS = "Séparation de la 5ème barre en 2 barres de 6 boutons de chaque côté"
-L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Active la couleur de votre classe pour la bordure de boutons"
-L_GUI_ACTIONBAR_TOGGLE_MODE = "Active le mode pour bloquer les combinaisons des barres d'action"
-L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Cache la surbrillance des effets à déclenchement"
-L_GUI_ACTIONBAR_BOTTOMBARS = "Nombre de barres d'action en bas"
-L_GUI_ACTIONBAR_RIGHTBARS = "Nombre de barres d'action à droite"
-L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barres de droite en 'mouseover'"
-L_GUI_ACTIONBAR_PETBAR_HIDE = "Cacher la barre du familier"
-L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Activer la barre du familier horizontale"
-L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Barre du familier en 'mouseover'(uniquement pour la barre horizontale)"
-L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Cacher changeforme"
-L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Activer la barre de posture horizontale"
-L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Changeforme/Posture/barre de totems en 'mouseover'" -- Need review
-L_GUI_ACTIONBAR_MICROMENU = "Active le Micro menu"
-L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Affiche le Micro menu au survol de la souris"
 
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size" -- Need review
