@@ -849,7 +849,7 @@ do
 	local screenshot = ns.CreateCheckBox(parent, "screenshot", L_GUI_AUTOMATION_SCREENSHOT)
 	screenshot:SetPoint("TOPLEFT", release, "BOTTOMLEFT", 0, 0)
 
-	local solve_artifact = ns.CreateCheckBox(parent, "solve_artifact", L_GUI_AUTOMATION_SOLVE_ARTIFACT)
+	local solve_artifact = ns.CreateCheckBox(parent, "solve_artifact")
 	solve_artifact:SetPoint("TOPLEFT", screenshot, "BOTTOMLEFT", 0, 0)
 
 	local accept_invite = ns.CreateCheckBox(parent, "accept_invite", L_GUI_AUTOMATION_ACCEPT_INVITE)
