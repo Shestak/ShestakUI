@@ -862,6 +862,78 @@ do
 	micromenu.children = {micromenu_mouseover}
 end
 
+-- Tooltip
+do
+	local parent = ShestakUIOptionsPanel.tooltip
+
+	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_TOOLTIP_ENABLE)
+	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local shift_modifer = ns.CreateCheckBox(parent, "shift_modifer", L_GUI_TOOLTIP_SHIFT)
+	shift_modifer:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
+
+	local cursor = ns.CreateCheckBox(parent, "cursor", L_GUI_TOOLTIP_CURSOR)
+	cursor:SetPoint("TOPLEFT", shift_modifer, "BOTTOMLEFT", 0, 0)
+
+	local item_icon = ns.CreateCheckBox(parent, "item_icon", L_GUI_TOOLTIP_ICON)
+	item_icon:SetPoint("TOPLEFT", cursor, "BOTTOMLEFT", 0, 0)
+
+	local health_value = ns.CreateCheckBox(parent, "health_value", L_GUI_TOOLTIP_HEALTH)
+	health_value:SetPoint("TOPLEFT", item_icon, "BOTTOMLEFT", 0, 0)
+
+	local hidebuttons = ns.CreateCheckBox(parent, "hidebuttons", L_GUI_TOOLTIP_HIDE)
+	hidebuttons:SetPoint("TOPLEFT", health_value, "BOTTOMLEFT", 0, 0)
+
+	local hide_combat = ns.CreateCheckBox(parent, "hide_combat", L_GUI_TOOLTIP_HIDE_COMBAT)
+	hide_combat:SetPoint("TOPLEFT", hidebuttons, "BOTTOMLEFT", 0, 0)
+
+	-- Plugins
+	local subheader = ns.addSubCategory(parent, L_GUI_TOOLTIP_SUBHEADER_PLUGINS)
+	subheader:SetPoint("TOPLEFT", hide_combat, "BOTTOMLEFT", 0, -16)
+
+	local talents = ns.CreateCheckBox(parent, "talents", L_GUI_TOOLTIP_TALENTS)
+	talents:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
+
+	local achievements = ns.CreateCheckBox(parent, "achievements", L_GUI_TOOLTIP_ACHIEVEMENTS)
+	achievements:SetPoint("TOPLEFT", talents, "BOTTOMLEFT", 0, 0)
+
+	local target = ns.CreateCheckBox(parent, "target", L_GUI_TOOLTIP_TARGET)
+	target:SetPoint("TOPLEFT", achievements, "BOTTOMLEFT", 0, 0)
+
+	local title = ns.CreateCheckBox(parent, "title", L_GUI_TOOLTIP_TITLE)
+	title:SetPoint("TOPLEFT", target, "BOTTOMLEFT", 0, 0)
+
+	local realm = ns.CreateCheckBox(parent, "realm", L_GUI_TOOLTIP_REALM)
+	realm:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, 0)
+
+	local rank = ns.CreateCheckBox(parent, "rank", L_GUI_TOOLTIP_RANK)
+	rank:SetPoint("TOPLEFT", realm, "BOTTOMLEFT", 0, 0)
+
+	local arena_experience = ns.CreateCheckBox(parent, "arena_experience", L_GUI_TOOLTIP_ARENA_EXPERIENCE)
+	arena_experience:SetPoint("TOPLEFT", rank, "BOTTOMLEFT", 0, 0)
+
+	local spell_id = ns.CreateCheckBox(parent, "spell_id", L_GUI_TOOLTIP_SPELL_ID)
+	spell_id:SetPoint("TOPLEFT", arena_experience, "BOTTOMLEFT", 0, 0)
+
+	local average_lvl = ns.CreateCheckBox(parent, "average_lvl", STAT_AVERAGE_ITEM_LEVEL, L_GUI_TOOLTIP_AVERAGE_LVL_DESC)
+	average_lvl:SetPoint("TOPLEFT", spell_id, "BOTTOMLEFT", 0, 0)
+
+	local raid_icon = ns.CreateCheckBox(parent, "raid_icon", L_GUI_TOOLTIP_RAID_ICON)
+	raid_icon:SetPoint("TOPLEFT", average_lvl, "BOTTOMLEFT", 0, 0)
+
+	local who_targetting = ns.CreateCheckBox(parent, "who_targetting", L_GUI_TOOLTIP_WHO_TARGETTING)
+	who_targetting:SetPoint("TOPLEFT", raid_icon, "BOTTOMLEFT", 0, 0)
+
+	local item_count = ns.CreateCheckBox(parent, "item_count", L_GUI_TOOLTIP_ITEM_COUNT)
+	item_count:SetPoint("TOPLEFT", who_targetting, "BOTTOMLEFT", 0, 0)
+
+	local unit_role = ns.CreateCheckBox(parent, "unit_role", L_GUI_TOOLTIP_UNIT_ROLE)
+	unit_role:SetPoint("TOPLEFT", item_count, "BOTTOMLEFT", 0, 0)
+
+	local instance_lock = ns.CreateCheckBox(parent, "instance_lock", L_GUI_TOOLTIP_INSTANCE_LOCK)
+	instance_lock:SetPoint("TOPLEFT", unit_role, "BOTTOMLEFT", 0, 0)
+end
+
 -- Announcements
 do
 	local parent = ShestakUIOptionsPanel.announcements
@@ -1188,78 +1260,6 @@ do
 
 	local hide_solo = ns.CreateCheckBox(parent, "hide_solo", L_GUI_THREAT_HIDE_SOLO)
 	hide_solo:SetPoint("TOPLEFT", bar_rows, "BOTTOMLEFT", 0, -20)
-end
-
--- Tooltip
-do
-	local parent = ShestakUIOptionsPanel.tooltip
-
-	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_TOOLTIP_ENABLE)
-	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
-	local shift_modifer = ns.CreateCheckBox(parent, "shift_modifer", L_GUI_TOOLTIP_SHIFT)
-	shift_modifer:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
-
-	local cursor = ns.CreateCheckBox(parent, "cursor", L_GUI_TOOLTIP_CURSOR)
-	cursor:SetPoint("TOPLEFT", shift_modifer, "BOTTOMLEFT", 0, 0)
-
-	local item_icon = ns.CreateCheckBox(parent, "item_icon", L_GUI_TOOLTIP_ICON)
-	item_icon:SetPoint("TOPLEFT", cursor, "BOTTOMLEFT", 0, 0)
-
-	local health_value = ns.CreateCheckBox(parent, "health_value", L_GUI_TOOLTIP_HEALTH)
-	health_value:SetPoint("TOPLEFT", item_icon, "BOTTOMLEFT", 0, 0)
-
-	local hidebuttons = ns.CreateCheckBox(parent, "hidebuttons", L_GUI_TOOLTIP_HIDE)
-	hidebuttons:SetPoint("TOPLEFT", health_value, "BOTTOMLEFT", 0, 0)
-
-	local hide_combat = ns.CreateCheckBox(parent, "hide_combat", L_GUI_TOOLTIP_HIDE_COMBAT)
-	hide_combat:SetPoint("TOPLEFT", hidebuttons, "BOTTOMLEFT", 0, 0)
-
-	-- Plugins
-	local subheader = ns.addSubCategory(parent, L_GUI_TOOLTIP_SUBHEADER_PLUGINS)
-	subheader:SetPoint("TOPLEFT", hide_combat, "BOTTOMLEFT", 0, -16)
-
-	local talents = ns.CreateCheckBox(parent, "talents", L_GUI_TOOLTIP_TALENTS)
-	talents:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
-
-	local achievements = ns.CreateCheckBox(parent, "achievements", L_GUI_TOOLTIP_ACHIEVEMENTS)
-	achievements:SetPoint("TOPLEFT", talents, "BOTTOMLEFT", 0, 0)
-
-	local target = ns.CreateCheckBox(parent, "target", L_GUI_TOOLTIP_TARGET)
-	target:SetPoint("TOPLEFT", achievements, "BOTTOMLEFT", 0, 0)
-
-	local title = ns.CreateCheckBox(parent, "title", L_GUI_TOOLTIP_TITLE)
-	title:SetPoint("TOPLEFT", target, "BOTTOMLEFT", 0, 0)
-
-	local realm = ns.CreateCheckBox(parent, "realm", L_GUI_TOOLTIP_REALM)
-	realm:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, 0)
-
-	local rank = ns.CreateCheckBox(parent, "rank", L_GUI_TOOLTIP_RANK)
-	rank:SetPoint("TOPLEFT", realm, "BOTTOMLEFT", 0, 0)
-
-	local arena_experience = ns.CreateCheckBox(parent, "arena_experience", L_GUI_TOOLTIP_ARENA_EXPERIENCE)
-	arena_experience:SetPoint("TOPLEFT", rank, "BOTTOMLEFT", 0, 0)
-
-	local spell_id = ns.CreateCheckBox(parent, "spell_id", L_GUI_TOOLTIP_SPELL_ID)
-	spell_id:SetPoint("TOPLEFT", arena_experience, "BOTTOMLEFT", 0, 0)
-
-	local average_lvl = ns.CreateCheckBox(parent, "average_lvl", STAT_AVERAGE_ITEM_LEVEL, L_GUI_TOOLTIP_AVERAGE_LVL_DESC)
-	average_lvl:SetPoint("TOPLEFT", spell_id, "BOTTOMLEFT", 0, 0)
-
-	local raid_icon = ns.CreateCheckBox(parent, "raid_icon", L_GUI_TOOLTIP_RAID_ICON)
-	raid_icon:SetPoint("TOPLEFT", average_lvl, "BOTTOMLEFT", 0, 0)
-
-	local who_targetting = ns.CreateCheckBox(parent, "who_targetting", L_GUI_TOOLTIP_WHO_TARGETTING)
-	who_targetting:SetPoint("TOPLEFT", raid_icon, "BOTTOMLEFT", 0, 0)
-
-	local item_count = ns.CreateCheckBox(parent, "item_count", L_GUI_TOOLTIP_ITEM_COUNT)
-	item_count:SetPoint("TOPLEFT", who_targetting, "BOTTOMLEFT", 0, 0)
-
-	local unit_role = ns.CreateCheckBox(parent, "unit_role", L_GUI_TOOLTIP_UNIT_ROLE)
-	unit_role:SetPoint("TOPLEFT", item_count, "BOTTOMLEFT", 0, 0)
-
-	local instance_lock = ns.CreateCheckBox(parent, "instance_lock", L_GUI_TOOLTIP_INSTANCE_LOCK)
-	instance_lock:SetPoint("TOPLEFT", unit_role, "BOTTOMLEFT", 0, 0)
 end
 
 -- Chat

@@ -175,6 +175,32 @@ L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "鼠标悬停显示姿态动作条(仅横�
 L_GUI_ACTIONBAR_MICROMENU = "微型菜单"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "鼠标悬停显示微型菜单"
 
+-- Tooltip options
+L_GUI_TOOLTIP = "鼠标提示"
+L_GUI_TOOLTIP_SUBTEXT = "In this block, you can change the standard tips when mouseovering." -- Need review
+L_GUI_TOOLTIP_ENABLE = "开启鼠标提示增强"
+L_GUI_TOOLTIP_SHIFT = "按下Shift时显示提示"
+L_GUI_TOOLTIP_CURSOR = "提示跟随鼠标"
+L_GUI_TOOLTIP_ICON = "提示中显示物品图标"
+L_GUI_TOOLTIP_HEALTH = "生命值以百分比显示"
+L_GUI_TOOLTIP_HIDE = "隐藏动作条提示"
+L_GUI_TOOLTIP_HIDE_COMBAT = "战斗中隐藏提示"
+L_GUI_TOOLTIP_SUBHEADER_PLUGINS = "Plugins" -- Need review
+L_GUI_TOOLTIP_TALENTS = "天赋"
+L_GUI_TOOLTIP_ACHIEVEMENTS = "成就比较"
+L_GUI_TOOLTIP_TARGET = "目标的目标"
+L_GUI_TOOLTIP_TITLE = "目标头衔"
+L_GUI_TOOLTIP_REALM = "目标所在服务器名"
+L_GUI_TOOLTIP_RANK = "公会会阶"
+L_GUI_TOOLTIP_ARENA_EXPERIENCE = "竞技场等级"
+L_GUI_TOOLTIP_SPELL_ID = "法术ID"
+L_GUI_TOOLTIP_AVERAGE_LVL_DESC = "The average item level" -- Need review
+L_GUI_TOOLTIP_RAID_ICON = "团队标记"
+L_GUI_TOOLTIP_WHO_TARGETTING = "队伍/团队时,显示关注成员(谁以目标為目标)"
+L_GUI_TOOLTIP_ITEM_COUNT = "叠堆数量"
+L_GUI_TOOLTIP_UNIT_ROLE = "角色类型"
+L_GUI_TOOLTIP_INSTANCE_LOCK = "自身信息提示"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -311,32 +337,6 @@ L_GUI_THREAT_HEIGHT = "仇恨栏高度"
 L_GUI_THREAT_WIDTH = "仇恨栏宽度"
 L_GUI_THREAT_ROWS = "仇恨栏数目"
 L_GUI_THREAT_HIDE_SOLO = "仅在队伍/团队中开启"
-
--- Tooltip options
-L_GUI_TOOLTIP = "鼠标提示"
-L_GUI_TOOLTIP_SUBTEXT = "In this block, you can change the standard tips when mouseovering." -- Need review
-L_GUI_TOOLTIP_ENABLE = "开启鼠标提示增强"
-L_GUI_TOOLTIP_SHIFT = "按下Shift时显示提示"
-L_GUI_TOOLTIP_CURSOR = "提示跟随鼠标"
-L_GUI_TOOLTIP_ICON = "提示中显示物品图标"
-L_GUI_TOOLTIP_HEALTH = "生命值以百分比显示"
-L_GUI_TOOLTIP_HIDE = "隐藏动作条提示"
-L_GUI_TOOLTIP_HIDE_COMBAT = "战斗中隐藏提示"
-L_GUI_TOOLTIP_SUBHEADER_PLUGINS = "Plugins" -- Need review
-L_GUI_TOOLTIP_TALENTS = "天赋"
-L_GUI_TOOLTIP_ACHIEVEMENTS = "成就比较"
-L_GUI_TOOLTIP_TARGET = "目标的目标"
-L_GUI_TOOLTIP_TITLE = "目标头衔"
-L_GUI_TOOLTIP_REALM = "目标所在服务器名"
-L_GUI_TOOLTIP_RANK = "公会会阶"
-L_GUI_TOOLTIP_ARENA_EXPERIENCE = "竞技场等级"
-L_GUI_TOOLTIP_SPELL_ID = "法术ID"
-L_GUI_TOOLTIP_AVERAGE_LVL_DESC = "The average item level" -- Need review
-L_GUI_TOOLTIP_RAID_ICON = "团队标记"
-L_GUI_TOOLTIP_WHO_TARGETTING = "队伍/团队时,显示关注成员(谁以目标為目标)"
-L_GUI_TOOLTIP_ITEM_COUNT = "叠堆数量"
-L_GUI_TOOLTIP_UNIT_ROLE = "角色类型"
-L_GUI_TOOLTIP_INSTANCE_LOCK = "自身信息提示"
 
 -- Chat options
 L_GUI_CHAT_SUBTEXT = "Here you can change the settings of the chat window." -- Need review

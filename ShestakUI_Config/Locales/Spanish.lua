@@ -175,6 +175,32 @@ L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Barras de Cambios de forma/Estancias al p
 L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review
 
+-- Tooltip options
+L_GUI_TOOLTIP = "Descripciones"
+L_GUI_TOOLTIP_SUBTEXT = "In this block, you can change the standard tips when mouseovering." -- Need review
+L_GUI_TOOLTIP_ENABLE = "Activar descripciones"
+L_GUI_TOOLTIP_SHIFT = "Mostrar descripción mientras Shift está pulsado"
+L_GUI_TOOLTIP_CURSOR = "Descripción bajo el cursos"
+L_GUI_TOOLTIP_ICON = "Icono del objeto en la descripción"
+L_GUI_TOOLTIP_HEALTH = "Valor de la vida en números"
+L_GUI_TOOLTIP_HIDE = "Ocultar descripciones de las barras de acción"
+L_GUI_TOOLTIP_HIDE_COMBAT = "Ocultar descripción en combate"
+L_GUI_TOOLTIP_SUBHEADER_PLUGINS = "Plugins" -- Need review
+L_GUI_TOOLTIP_TALENTS = "Mostrar descripción de los talentos"
+L_GUI_TOOLTIP_ACHIEVEMENTS = "Comparar logros en la descripción"
+L_GUI_TOOLTIP_TARGET = "Jugador objetivo en la descripción"
+L_GUI_TOOLTIP_TITLE = "Player title in tooltip" -- Need review
+L_GUI_TOOLTIP_REALM = "Player realm name in tooltip" -- Need review
+L_GUI_TOOLTIP_RANK = "Rango del jugador en la hermandad en la descripción"
+L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Experiencia JcJ del jugador en Arenas en la descripción"
+L_GUI_TOOLTIP_SPELL_ID = "ID del hechizo"
+L_GUI_TOOLTIP_AVERAGE_LVL_DESC = "The average item level" -- Need review
+L_GUI_TOOLTIP_RAID_ICON = "Icono de banda"
+L_GUI_TOOLTIP_WHO_TARGETTING = "Muestra quien está marcando la unidad que está en tu grupo/banda"
+L_GUI_TOOLTIP_ITEM_COUNT = "Contador del objeto"
+L_GUI_TOOLTIP_UNIT_ROLE = "Unit role" -- Needs review
+L_GUI_TOOLTIP_INSTANCE_LOCK = "Your instance lock status in tooltip" -- Needs review
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Anuncios"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -311,32 +337,6 @@ L_GUI_THREAT_HEIGHT = "Altura de las barras de amenaza"
 L_GUI_THREAT_WIDTH = "Anchura de las barras de amenaza"
 L_GUI_THREAT_ROWS = "Número de barras de amenaza"
 L_GUI_THREAT_HIDE_SOLO = "Mostrar solo en grupo/raid"
-
--- Tooltip options
-L_GUI_TOOLTIP = "Descripciones"
-L_GUI_TOOLTIP_SUBTEXT = "In this block, you can change the standard tips when mouseovering." -- Need review
-L_GUI_TOOLTIP_ENABLE = "Activar descripciones"
-L_GUI_TOOLTIP_SHIFT = "Mostrar descripción mientras Shift está pulsado"
-L_GUI_TOOLTIP_CURSOR = "Descripción bajo el cursos"
-L_GUI_TOOLTIP_ICON = "Icono del objeto en la descripción"
-L_GUI_TOOLTIP_HEALTH = "Valor de la vida en números"
-L_GUI_TOOLTIP_HIDE = "Ocultar descripciones de las barras de acción"
-L_GUI_TOOLTIP_HIDE_COMBAT = "Ocultar descripción en combate"
-L_GUI_TOOLTIP_SUBHEADER_PLUGINS = "Plugins" -- Need review
-L_GUI_TOOLTIP_TALENTS = "Mostrar descripción de los talentos"
-L_GUI_TOOLTIP_ACHIEVEMENTS = "Comparar logros en la descripción"
-L_GUI_TOOLTIP_TARGET = "Jugador objetivo en la descripción"
-L_GUI_TOOLTIP_TITLE = "Player title in tooltip" -- Need review
-L_GUI_TOOLTIP_REALM = "Player realm name in tooltip" -- Need review
-L_GUI_TOOLTIP_RANK = "Rango del jugador en la hermandad en la descripción"
-L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Experiencia JcJ del jugador en Arenas en la descripción"
-L_GUI_TOOLTIP_SPELL_ID = "ID del hechizo"
-L_GUI_TOOLTIP_AVERAGE_LVL_DESC = "The average item level" -- Need review
-L_GUI_TOOLTIP_RAID_ICON = "Icono de banda"
-L_GUI_TOOLTIP_WHO_TARGETTING = "Muestra quien está marcando la unidad que está en tu grupo/banda"
-L_GUI_TOOLTIP_ITEM_COUNT = "Contador del objeto"
-L_GUI_TOOLTIP_UNIT_ROLE = "Unit role" -- Needs review
-L_GUI_TOOLTIP_INSTANCE_LOCK = "Your instance lock status in tooltip" -- Needs review
 
 -- Chat options
 L_GUI_CHAT_SUBTEXT = "Here you can change the settings of the chat window." -- Need review

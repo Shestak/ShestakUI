@@ -205,6 +205,33 @@ C["actionbar"] = {
 	["micromenu_mouseover"] = false,			-- Micro menu on mouseover
 }
 
+----------------------------------------------------------------------------------------
+--	Tooltip options
+----------------------------------------------------------------------------------------
+C["tooltip"] = {
+	["enable"] = true,							-- Enable tooltip
+	["shift_modifer"] = false,					-- Show tooltip when Shift is pushed
+	["cursor"] = false,							-- Tooltip above cursor
+	["item_icon"] = false,						-- Item icon in tooltip
+	["health_value"] = false,					-- Numeral health value
+	["hidebuttons"] = false,					-- Hide tooltip for actions bars
+	["hide_combat"] = false,					-- Hide tooltip in combat
+	-- Plugins
+	["talents"] = false,						-- Show tooltip talents
+	["achievements"] = true,					-- Comparing achievements in tooltip
+	["target"] = true,							-- Target player in tooltip
+	["title"] = false,							-- Player title in tooltip
+	["realm"] = true,							-- Player realm name in tooltip
+	["rank"] = true,							-- Player guild-rank in tooltip
+	["arena_experience"] = false,				-- Player PvP experience in arena
+	["spell_id"] = false,						-- Id number spells (/si to print buff info in chat)
+	["average_lvl"] = false,					-- Average items level
+	["raid_icon"] = false,						-- Raid icon
+	["who_targetting"] = false,					-- Show who is targetting the unit (in raid or party)
+	["item_count"] = false,						-- Item stack count in tooltip
+	["unit_role"] = false,						-- Unit role in tooltip
+	["instance_lock"] = false,					-- Your instance lock status in tooltip
+}
 
 ----------------------------------------------------------------------------------------
 --	Announcements options
@@ -345,34 +372,6 @@ C["threat"] = {
 	["width"] = 217,							-- Bars width
 	["bar_rows"] = 7,							-- Number of bars
 	["hide_solo"] = false,						-- Show only in party/raid
-}
-
-----------------------------------------------------------------------------------------
---	Tooltip options
-----------------------------------------------------------------------------------------
-C["tooltip"] = {
-	["enable"] = true,							-- Enable tooltip
-	["shift_modifer"] = false,					-- Show tooltip when Shift is pushed
-	["cursor"] = false,							-- Tooltip above cursor
-	["item_icon"] = false,						-- Item icon in tooltip
-	["health_value"] = false,					-- Numeral health value
-	["hidebuttons"] = false,					-- Hide tooltip for actions bars
-	["hide_combat"] = false,					-- Hide tooltip in combat
-	-- Plugins
-	["talents"] = false,						-- Show tooltip talents
-	["achievements"] = true,					-- Comparing achievements in tooltip
-	["target"] = true,							-- Target player in tooltip
-	["title"] = false,							-- Player title in tooltip
-	["realm"] = true,							-- Player realm name in tooltip
-	["rank"] = true,							-- Player guild-rank in tooltip
-	["arena_experience"] = false,				-- Player PvP experience in arena
-	["spell_id"] = false,						-- Id number spells (/si to print buff info in chat)
-	["average_lvl"] = false,					-- Average items level
-	["raid_icon"] = false,						-- Raid icon
-	["who_targetting"] = false,					-- Show who is targetting the unit (in raid or party)
-	["item_count"] = false,						-- Item stack count in tooltip
-	["unit_role"] = false,						-- Unit role in tooltip
-	["instance_lock"] = false,					-- Your instance lock status in tooltip
 }
 
 ----------------------------------------------------------------------------------------

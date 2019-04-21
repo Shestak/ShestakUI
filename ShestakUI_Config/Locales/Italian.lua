@@ -175,6 +175,32 @@ L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Barra postura al passaggio del mouse"
 L_GUI_ACTIONBAR_MICROMENU = "Attiva il micromenu"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micromenu al passaggio del mouse"
 
+-- Tooltip options
+L_GUI_TOOLTIP = "Suggerimenti"
+L_GUI_TOOLTIP_SUBTEXT = "In this block, you can change the standard tips when mouseovering." -- Need review
+L_GUI_TOOLTIP_ENABLE = "Attiva i suggerimenti"
+L_GUI_TOOLTIP_SHIFT = "Mostra i suggerimenti quando è premuto il tasto Shift"
+L_GUI_TOOLTIP_CURSOR = "Suggerimenti sopra il cursore"
+L_GUI_TOOLTIP_ICON = "Icone degli oggetti nei suggerimenti"
+L_GUI_TOOLTIP_HEALTH = "Valore numerico della salute"
+L_GUI_TOOLTIP_HIDE = "Nascondi i suggerimenti relativi alle barre delle azioni"
+L_GUI_TOOLTIP_HIDE_COMBAT = "Nascondi i suggerimenti in combattimento"
+L_GUI_TOOLTIP_SUBHEADER_PLUGINS = "Plugins" -- Need review
+L_GUI_TOOLTIP_TALENTS = "Mostra i talenti nei suggerimenti"
+L_GUI_TOOLTIP_ACHIEVEMENTS = "Mostra il paragone delle imprese nei suggerimenti"
+L_GUI_TOOLTIP_TARGET = "Mostra nei suggerimenti chi ha il giocatore come bersaglio"
+L_GUI_TOOLTIP_TITLE = "Titolo del giocatore nei suggerimenti"
+L_GUI_TOOLTIP_REALM = "Reame del giocatore nei suggerimenti"
+L_GUI_TOOLTIP_RANK = "Rango in gilda nei suggerimenti"
+L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Esperienza PvP del giocatore in arena"
+L_GUI_TOOLTIP_SPELL_ID = "ID Incantesimo/Abilità"
+L_GUI_TOOLTIP_AVERAGE_LVL_DESC = "The average item level" -- Need review
+L_GUI_TOOLTIP_RAID_ICON = "Visualizza i marchi d'incursione nei suggerimenti"
+L_GUI_TOOLTIP_WHO_TARGETTING = "Visualizza chi ha in bersaglio l'unità che è nel tuo gruppo/incursione"
+L_GUI_TOOLTIP_ITEM_COUNT = "Conteggio oggetti"
+L_GUI_TOOLTIP_UNIT_ROLE = "Ruolo dell'unità"
+L_GUI_TOOLTIP_INSTANCE_LOCK = "Info incursione nei suggerimenti"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -311,32 +337,6 @@ L_GUI_THREAT_HEIGHT = "Altezza delle barre di minaccia"
 L_GUI_THREAT_WIDTH = "Larghezza delle barre di minaccia"
 L_GUI_THREAT_ROWS = "Numero delle barre di minaccia"
 L_GUI_THREAT_HIDE_SOLO = "Mostra soltanto in gruppo/incursione"
-
--- Tooltip options
-L_GUI_TOOLTIP = "Suggerimenti"
-L_GUI_TOOLTIP_SUBTEXT = "In this block, you can change the standard tips when mouseovering." -- Need review
-L_GUI_TOOLTIP_ENABLE = "Attiva i suggerimenti"
-L_GUI_TOOLTIP_SHIFT = "Mostra i suggerimenti quando è premuto il tasto Shift"
-L_GUI_TOOLTIP_CURSOR = "Suggerimenti sopra il cursore"
-L_GUI_TOOLTIP_ICON = "Icone degli oggetti nei suggerimenti"
-L_GUI_TOOLTIP_HEALTH = "Valore numerico della salute"
-L_GUI_TOOLTIP_HIDE = "Nascondi i suggerimenti relativi alle barre delle azioni"
-L_GUI_TOOLTIP_HIDE_COMBAT = "Nascondi i suggerimenti in combattimento"
-L_GUI_TOOLTIP_SUBHEADER_PLUGINS = "Plugins" -- Need review
-L_GUI_TOOLTIP_TALENTS = "Mostra i talenti nei suggerimenti"
-L_GUI_TOOLTIP_ACHIEVEMENTS = "Mostra il paragone delle imprese nei suggerimenti"
-L_GUI_TOOLTIP_TARGET = "Mostra nei suggerimenti chi ha il giocatore come bersaglio"
-L_GUI_TOOLTIP_TITLE = "Titolo del giocatore nei suggerimenti"
-L_GUI_TOOLTIP_REALM = "Reame del giocatore nei suggerimenti"
-L_GUI_TOOLTIP_RANK = "Rango in gilda nei suggerimenti"
-L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Esperienza PvP del giocatore in arena"
-L_GUI_TOOLTIP_SPELL_ID = "ID Incantesimo/Abilità"
-L_GUI_TOOLTIP_AVERAGE_LVL_DESC = "The average item level" -- Need review
-L_GUI_TOOLTIP_RAID_ICON = "Visualizza i marchi d'incursione nei suggerimenti"
-L_GUI_TOOLTIP_WHO_TARGETTING = "Visualizza chi ha in bersaglio l'unità che è nel tuo gruppo/incursione"
-L_GUI_TOOLTIP_ITEM_COUNT = "Conteggio oggetti"
-L_GUI_TOOLTIP_UNIT_ROLE = "Ruolo dell'unità"
-L_GUI_TOOLTIP_INSTANCE_LOCK = "Info incursione nei suggerimenti"
 
 -- Chat options
 L_GUI_CHAT_SUBTEXT = "Here you can change the settings of the chat window." -- Need review

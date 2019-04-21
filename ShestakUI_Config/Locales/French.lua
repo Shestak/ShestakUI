@@ -175,6 +175,32 @@ L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Changeforme/Posture/barre de totems en 'm
 L_GUI_ACTIONBAR_MICROMENU = "Active le Micro menu"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Affiche le Micro menu au survol de la souris"
 
+-- Tooltip options
+L_GUI_TOOLTIP = "Tooltip"
+L_GUI_TOOLTIP_SUBTEXT = "In this block, you can change the standard tips when mouseovering." -- Need review
+L_GUI_TOOLTIP_ENABLE = "Activer les tooltips"
+L_GUI_TOOLTIP_SHIFT = "Afficher la tooltip quand la touche 'MAJ' est appuyée"
+L_GUI_TOOLTIP_CURSOR = "Afficher la Tooltip sous le curseur"
+L_GUI_TOOLTIP_ICON = "Afficher l'îcone de l'objet"
+L_GUI_TOOLTIP_HEALTH = "Afficher les points de vie"
+L_GUI_TOOLTIP_HIDE = "Cacher le tooltip pour les barres d'action"
+L_GUI_TOOLTIP_HIDE_COMBAT = "Cacher les tooltips en combat"
+L_GUI_TOOLTIP_SUBHEADER_PLUGINS = "Plugins" -- Need review
+L_GUI_TOOLTIP_TALENTS = "Afficher les talents"
+L_GUI_TOOLTIP_ACHIEVEMENTS = "Afficher Comparer les Hauts Faits"
+L_GUI_TOOLTIP_TARGET = "Afficher la cible"
+L_GUI_TOOLTIP_TITLE = "Afficher les titres"
+L_GUI_TOOLTIP_REALM = "Affiche le serveur du joueur"
+L_GUI_TOOLTIP_RANK = "Afficher le rang de guilde"
+L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Expérience en arène"
+L_GUI_TOOLTIP_SPELL_ID = "Afficher l'ID du sort"
+L_GUI_TOOLTIP_AVERAGE_LVL_DESC = "The average item level" -- Need review
+L_GUI_TOOLTIP_RAID_ICON = "Afficher l'îcone de raid"
+L_GUI_TOOLTIP_WHO_TARGETTING = "Afficher qui cible actuellement l'unité qui est dans votre groupe/raid"
+L_GUI_TOOLTIP_ITEM_COUNT = "Afficher le nombre d'objets possédés"
+L_GUI_TOOLTIP_UNIT_ROLE = "Afficher les rôles"
+L_GUI_TOOLTIP_INSTANCE_LOCK = "Afficher le verrouillage de votre instance"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -311,32 +337,6 @@ L_GUI_THREAT_HEIGHT = "Hauteur des barres de menace"
 L_GUI_THREAT_WIDTH = "Largeur des barres de menace"
 L_GUI_THREAT_ROWS = "Nombre de barres de menace"
 L_GUI_THREAT_HIDE_SOLO = "Afficher la menace seulement en groupe/raid"
-
--- Tooltip options
-L_GUI_TOOLTIP = "Tooltip"
-L_GUI_TOOLTIP_SUBTEXT = "In this block, you can change the standard tips when mouseovering." -- Need review
-L_GUI_TOOLTIP_ENABLE = "Activer les tooltips"
-L_GUI_TOOLTIP_SHIFT = "Afficher la tooltip quand la touche 'MAJ' est appuyée"
-L_GUI_TOOLTIP_CURSOR = "Afficher la Tooltip sous le curseur"
-L_GUI_TOOLTIP_ICON = "Afficher l'îcone de l'objet"
-L_GUI_TOOLTIP_HEALTH = "Afficher les points de vie"
-L_GUI_TOOLTIP_HIDE = "Cacher le tooltip pour les barres d'action"
-L_GUI_TOOLTIP_HIDE_COMBAT = "Cacher les tooltips en combat"
-L_GUI_TOOLTIP_SUBHEADER_PLUGINS = "Plugins" -- Need review
-L_GUI_TOOLTIP_TALENTS = "Afficher les talents"
-L_GUI_TOOLTIP_ACHIEVEMENTS = "Afficher Comparer les Hauts Faits"
-L_GUI_TOOLTIP_TARGET = "Afficher la cible"
-L_GUI_TOOLTIP_TITLE = "Afficher les titres"
-L_GUI_TOOLTIP_REALM = "Affiche le serveur du joueur"
-L_GUI_TOOLTIP_RANK = "Afficher le rang de guilde"
-L_GUI_TOOLTIP_ARENA_EXPERIENCE = "Expérience en arène"
-L_GUI_TOOLTIP_SPELL_ID = "Afficher l'ID du sort"
-L_GUI_TOOLTIP_AVERAGE_LVL_DESC = "The average item level" -- Need review
-L_GUI_TOOLTIP_RAID_ICON = "Afficher l'îcone de raid"
-L_GUI_TOOLTIP_WHO_TARGETTING = "Afficher qui cible actuellement l'unité qui est dans votre groupe/raid"
-L_GUI_TOOLTIP_ITEM_COUNT = "Afficher le nombre d'objets possédés"
-L_GUI_TOOLTIP_UNIT_ROLE = "Afficher les rôles"
-L_GUI_TOOLTIP_INSTANCE_LOCK = "Afficher le verrouillage de votre instance"
 
 -- Chat options
 L_GUI_CHAT_SUBTEXT = "Here you can change the settings of the chat window." -- Need review
