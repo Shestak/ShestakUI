@@ -1691,16 +1691,16 @@ do
 	local move_blizzard = ns.CreateCheckBox(parent, "move_blizzard", L_GUI_MISC_MOVE_BLIZZARD)
 	move_blizzard:SetPoint("TOPLEFT", click_cast_filter, "BOTTOMLEFT", -20, 0)
 
-	local color_picker = ns.CreateCheckBox(parent, "color_picker", L_GUI_MISC_COLOR_PICKER)
+	local color_picker = ns.CreateCheckBox(parent, "color_picker")
 	color_picker:SetPoint("TOPLEFT", move_blizzard, "BOTTOMLEFT", 0, 0)
 
 	local enchantment_scroll = ns.CreateCheckBox(parent, "enchantment_scroll", L_GUI_MISC_ENCHANTMENT_SCROLL)
 	enchantment_scroll:SetPoint("TOPLEFT", color_picker, "BOTTOMLEFT", 0, 0)
 
-	local archaeology = ns.CreateCheckBox(parent, "archaeology", L_GUI_MISC_ARCHAEOLOGY)
+	local archaeology = ns.CreateCheckBox(parent, "archaeology")
 	archaeology:SetPoint("TOPLEFT", enchantment_scroll, "BOTTOMLEFT", 0, 0)
 
-	local chars_currency = ns.CreateCheckBox(parent, "chars_currency", L_GUI_MISC_CHARS_CURRENCY)
+	local chars_currency = ns.CreateCheckBox(parent, "chars_currency")
 	chars_currency:SetPoint("TOPLEFT", archaeology, "BOTTOMLEFT", 0, 0)
 
 	local armory_link = ns.CreateCheckBox(parent, "armory_link")
@@ -1721,11 +1721,8 @@ do
 	local hide_talking_head = ns.CreateCheckBox(parent, "hide_talking_head", L_GUI_MISC_HIDE_TALKING_HEAD)
 	hide_talking_head:SetPoint("TOPLEFT", hide_banner, "BOTTOMLEFT", 0, 0)
 
-	local hide_raid_button = ns.CreateCheckBox(parent, "hide_raid_button", L_GUI_MISC_HIDE_RAID_BUTTON)
+	local hide_raid_button = ns.CreateCheckBox(parent, "hide_raid_button")
 	hide_raid_button:SetPoint("TOPLEFT", hide_talking_head, "BOTTOMLEFT", 0, 0)
-
-	local custom_lagtolerance = ns.CreateCheckBox(parent, "custom_lagtolerance", L_GUI_MISC_LAG_TOLERANCE)
-	custom_lagtolerance:SetPoint("TOPLEFT", hide_raid_button, "BOTTOMLEFT", 0, 0)
 end
 
 ----------------------------------------------------------------------------------------

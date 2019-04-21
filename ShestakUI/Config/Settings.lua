@@ -562,13 +562,12 @@ C["misc"] = {
 	["move_blizzard"] = false,					-- Move some Blizzard frames
 	["color_picker"] = false,					-- Improved ColorPicker
 	["enchantment_scroll"] = false,				-- Enchantment scroll on TradeSkill frame
-	["archaeology"] = false,					-- Archaeology artifacts and cooldown
+	["archaeology"] = false,					-- Archaeology tracker ('/arch' or right mouseover minimap button to show)
 	["chars_currency"] = false,					-- Tracks your currency tokens across multiple characters
 	["armory_link"] = false,					-- Add Armory link in UnitPopupMenus (It breaks set focus)
 	["merchant_itemlevel"] = false,				-- Show item level for weapons and armor in merchant
 	["minimize_mouseover"] = false,				-- Mouseover for quest minimize button
 	["hide_banner"] = true,						-- Hide Boss Banner Loot Frame
 	["hide_talking_head"] = false,				-- Hide Talking Head Frame
-	["hide_raid_button"] = false,				-- Hide button for oUF_RaidDPS (top left mouseover)
-	["custom_lagtolerance"] = false,			-- Custom lag tolerance to your latency
+	["hide_raid_button"] = false,				-- Button to hide raid frames in dps layout (top left mouseover)
 }
