@@ -211,13 +211,13 @@ L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Сообщать, когда примен
 L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "Сообщать в чат о применении назойливых игрушек"
 L_GUI_ANNOUNCEMENTS_SAYS_THANKS = "Благодарить за полезные заклинания (воскрешение и прочее из списка)"
 L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Команда для отсчета времени до атаки (/pc #)"
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Сообщать об отсутствующих настоях и еде"
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Сообщать в чат при проверке готовности"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Сообщать об отсутствующих настоях и еде (/ffcheck)"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Сообщать в рейдовый канал"
+L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Сообщать в чат при проверке готовности"
 L_GUI_ANNOUNCEMENTS_FEASTS = "Сообщать, когда ставят пир/почту/ремонт"
 L_GUI_ANNOUNCEMENTS_PORTALS = "Сообщать, когда создают порталы/ритуал призыва"
-L_GUI_ANNOUNCEMENTS_BAD_GEAR = "Проверять 'плохое' снаряжение в подземельях (удочки и прочее из списка)"
-L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Проверять Шляпу для сафари"
+L_GUI_ANNOUNCEMENTS_BAD_GEAR = "Проверять ваше 'плохое' снаряжение в подземельях (удочки и прочее из списка)"
+L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Проверять Шляпу для сафари в начале битвы петов"
 
 -- Automation options
 L_GUI_AUTOMATION = "Автоматизация"

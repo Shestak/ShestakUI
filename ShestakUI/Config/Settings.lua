@@ -244,13 +244,13 @@ C["announcements"] = {
 	["toys"] = false,							-- Announce some annoying toys
 	["says_thanks"] = false,					-- Says thanks for some spells (resurrection, from the list)
 	["pull_countdown"] = true,					-- Pull countdown announce (/pc #)
-	["flask_food"] = false,						-- Announce the usage of flasks and food
-	["flask_food_auto"] = false,				-- Auto announce when ReadyCheck (if enable, announce to raid channel)
+	["flask_food"] = false,						-- Announce the usage of flasks and food (/ffcheck)
 	["flask_food_raid"] = false,				-- Announce to raid channel
+	["flask_food_auto"] = false,				-- Auto announce to raid channel when ReadyCheck
 	["feasts"] = false,							-- Announce Feasts/Souls/Repair Bots cast
 	["portals"] = false,						-- Announce Portals/Ritual of Summoning cast
-	["bad_gear"] = false,						-- Check bad gear in instance (fishing pole, from the list)
-	["safari_hat"] = true,						-- Check Safari Hat
+	["bad_gear"] = false,						-- Check your bad gear in instance (fishing pole, from the list)
+	["safari_hat"] = true,						-- Check Safari Hat when starting Pet Battle
 }
 
 ----------------------------------------------------------------------------------------
