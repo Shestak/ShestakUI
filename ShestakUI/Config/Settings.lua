@@ -538,7 +538,7 @@ C["stats"] = {
 ----------------------------------------------------------------------------------------
 C["error"] = {
 	["black"] = true,							-- Hide errors from black list
-	["white"] = false,							-- Show errors from white list
+	["white"] = false,							-- Show only errors from white list
 	["combat"] = false,							-- Hide all errors in combat
 }
 

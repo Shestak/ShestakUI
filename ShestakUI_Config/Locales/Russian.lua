@@ -474,7 +474,7 @@ L_GUI_STATS_CURRENCY_RAID = "Рейдовые печати"
 L_GUI_ERROR = "Ошибки боя"
 L_GUI_ERROR_SUBTEXT = "Фильтрация стандартного текста вверху экрана от Blizzard."
 L_GUI_ERROR_BLACK = "Спрятать ошибки из 'черного' списка"
-L_GUI_ERROR_WHITE = "Показывать ошибки из 'белого' списка"
+L_GUI_ERROR_WHITE = "Показывать только ошибки из 'белого' списка"
 L_GUI_ERROR_HIDE_COMBAT = "Спрятать все ошибки во время боя"
 
 -- Miscellaneous options

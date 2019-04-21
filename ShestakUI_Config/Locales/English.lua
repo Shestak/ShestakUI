@@ -496,7 +496,7 @@ L_GUI_STATS_CURRENCY_RAID = "Raid Seals"
 L_GUI_ERROR = "Errors"
 L_GUI_ERROR_SUBTEXT = "Filtering standard text at the top of the screen from Blizzard."
 L_GUI_ERROR_BLACK = "Hide errors from black list"
-L_GUI_ERROR_WHITE = "Show errors from white list"
+L_GUI_ERROR_WHITE = "Show only errors from white list"
 L_GUI_ERROR_HIDE_COMBAT = "Hide all errors in combat"
 
 -- Miscellaneous options
