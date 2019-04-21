@@ -469,7 +469,6 @@ L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Zeige Archäologie Fragmente"
 L_GUI_STATS_CURRENCY_COOKING = "Zeige Kochpreise/Marken"
 L_GUI_STATS_CURRENCY_PROFESSIONS = "Zeige Berufeabzeichen/Tokens"
 L_GUI_STATS_CURRENCY_RAID = "Zeige Schlatzugs Siegel/Bonuswürffe"
-L_GUI_STATS_CURRENCY_MISCELLANEOUS = "Zeige sonstige Abzeichen an"
 
 -- Error options
 L_GUI_ERROR = "Fehler"

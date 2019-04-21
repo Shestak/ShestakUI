@@ -469,7 +469,6 @@ L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Mostra i frammenti di archeologia sotto la l
 L_GUI_STATS_CURRENCY_COOKING = "Mostra le ricompense di cucina sotto la linguetta della valuta"
 L_GUI_STATS_CURRENCY_PROFESSIONS = "Mostra i gettoni delle professioni sotto la linguetta della valuta"
 L_GUI_STATS_CURRENCY_RAID = "Mostra i sigilli delle incursioni"
-L_GUI_STATS_CURRENCY_MISCELLANEOUS = "Mostra valuta varia sotto la linguetta della valuta"
 
 -- Error options
 L_GUI_ERROR = "Errori"

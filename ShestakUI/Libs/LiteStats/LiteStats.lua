@@ -518,7 +518,7 @@ if gold.enabled then
 			GameTooltip:AddLine(L_STATS_CURRENCY_RAID, ttsubh.r, ttsubh.g, ttsubh.b)
 		elseif IsSubTitle == 5 then
 			GameTooltip:AddLine(" ")
-			GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
+			GameTooltip:AddLine(EXPANSION_NAME7, ttsubh.r, ttsubh.g, ttsubh.b)
 		end
 		IsSubTitle = 0
 		if weekly then

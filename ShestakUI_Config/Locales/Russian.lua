@@ -469,7 +469,6 @@ L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Фрагменты археологии"
 L_GUI_STATS_CURRENCY_COOKING = "Кулинарные награды"
 L_GUI_STATS_CURRENCY_PROFESSIONS = "Жетоны профессий"
 L_GUI_STATS_CURRENCY_RAID = "Рейдовые печати"
-L_GUI_STATS_CURRENCY_MISCELLANEOUS = "Прочие вещи"
 
 -- Error options
 L_GUI_ERROR = "Ошибки боя"

@@ -530,7 +530,7 @@ C["stats"] = {
 	["currency_cooking"] = true,				-- Cooking Awards
 	["currency_professions"] = true,			-- Profession Tokens
 	["currency_raid"] = true,					-- Raid Seals
-	["currency_misc"] = true,					-- Miscellaneous Currency
+	["currency_misc"] = true,					-- BfA Currency
 }
 
 ----------------------------------------------------------------------------------------

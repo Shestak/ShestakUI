@@ -491,7 +491,6 @@ L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Archaeology Fragments"
 L_GUI_STATS_CURRENCY_COOKING = "Cooking Awards"
 L_GUI_STATS_CURRENCY_PROFESSIONS = "Profession Tokens"
 L_GUI_STATS_CURRENCY_RAID = "Raid Seals"
-L_GUI_STATS_CURRENCY_MISCELLANEOUS = "Miscellaneous Currency"
 
 -- Error options
 L_GUI_ERROR = "Errors"
