@@ -83,7 +83,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 			elseif spellmacro == "MACRO" then
 				self.button.id = self.button:GetID()
 
-				if localmacros == 1 then self.button.id = self.button.id + 36 end
+				if localmacros == 1 then self.button.id = self.button.id + MAX_ACCOUNT_MACROS end
 
 				self.button.name = GetMacroInfo(self.button.id)
 
@@ -110,7 +110,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 				if not self.button.id or self.button.id < 1 or self.button.id > (spellmacro == "STANCE" and 10 or 12) then
 					self.button.bindstring = "CLICK "..self.button.name..":LeftButton"
 				else
-					self.button.bindstring = (spellmacro == "STANCE" and "STANCEBUTTON" or "BONUSACTIONBUTTON")..self.button.id
+					self.button.bindstring = (spellmacro == "STANCE" and "SHAPESHIFTBUTTON" or "BONUSACTIONBUTTON")..self.button.id
 				end
 
 				GameTooltip:Show()
@@ -229,14 +229,16 @@ SlashCmdList.MOUSEOVERBIND = function()
 		function bind:Activate()
 			self.enabled = true
 			self:RegisterEvent("PLAYER_REGEN_DISABLED")
-			if C.actionbar.rightbars_mouseover == true then
-				RightBarMouseOver(1)
-			end
-			if C.actionbar.stancebar_mouseover == true then
-				StanceBarMouseOver(1)
-			end
-			if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
-				PetBarMouseOver(1)
+			if C.actionbar.enable then
+				if C.actionbar.rightbars_mouseover == true then
+					RightBarMouseOver(1)
+				end
+				if C.actionbar.stancebar_mouseover == true then
+					StanceBarMouseOver(1)
+				end
+				if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
+					PetBarMouseOver(1)
+				end
 			end
 			if C.extra_bar and C.extra_bar.enable == true and C.extra_bar.mouseover == true then
 				ExtraBarMouseOver(1)
@@ -256,14 +258,16 @@ SlashCmdList.MOUSEOVERBIND = function()
 			self:HideFrame()
 			self:UnregisterEvent("PLAYER_REGEN_DISABLED")
 			StaticPopup_Hide("KEYBIND_MODE")
-			if C.actionbar.rightbars_mouseover == true then
-				RightBarMouseOver(0)
-			end
-			if C.actionbar.stancebar_mouseover == true then
-				StanceBarMouseOver(0)
-			end
-			if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
-				PetBarMouseOver(0)
+			if C.actionbar.enable then
+				if C.actionbar.rightbars_mouseover == true then
+					RightBarMouseOver(0)
+				end
+				if C.actionbar.stancebar_mouseover == true then
+					StanceBarMouseOver(0)
+				end
+				if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
+					PetBarMouseOver(0)
+				end
 			end
 			if C.extra_bar and C.extra_bar.enable == true and C.extra_bar.mouseover == true then
 				ExtraBarMouseOver(0)
@@ -312,7 +316,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 		end
 
 		local function registermacro()
-			for i = 1, 36 do
+			for i = 1, MAX_ACCOUNT_MACROS do
 				local b = _G["MacroButton"..i]
 				b:HookScript("OnEnter", function(self) bind:Update(self, "MACRO") end)
 			end
