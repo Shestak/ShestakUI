@@ -336,7 +336,7 @@ C["tooltip"] = {
 	["average_lvl"] = false,					-- Average items level
 	["raid_icon"] = false,						-- Raid icon
 	["who_targetting"] = false,					-- Show who is targetting the unit (in raid or party)
-	["item_count"] = false,						-- Item count in tooltip
+	["item_count"] = false,						-- Item stack count in tooltip
 	["unit_role"] = false,						-- Unit role in tooltip
 	["instance_lock"] = false,					-- Your instance lock status in tooltip
 }
