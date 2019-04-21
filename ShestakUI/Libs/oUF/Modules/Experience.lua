@@ -155,13 +155,13 @@ end
 
 local function ElementEnable(self)
 	local element = self.Experience
-	self:RegisterEvent('PLAYER_XP_UPDATE', Path)
-	self:RegisterEvent('HONOR_XP_UPDATE', Path)
-	self:RegisterEvent('ZONE_CHANGED', Path)
-	self:RegisterEvent('ZONE_CHANGED_NEW_AREA', Path)
+	self:RegisterEvent('PLAYER_XP_UPDATE', Path, true)
+	self:RegisterEvent('HONOR_XP_UPDATE', Path, true)
+	self:RegisterEvent('ZONE_CHANGED', Path, true)
+	self:RegisterEvent('ZONE_CHANGED_NEW_AREA', Path, true)
 
 	if(element.Rested) then
-		self:RegisterEvent('UPDATE_EXHAUSTION', Path)
+		self:RegisterEvent('UPDATE_EXHAUSTION', Path, true)
 	end
 
 	element:Show()
@@ -228,7 +228,7 @@ local function Enable(self, unit)
 		element.restedAlpha = element.restedAlpha or 0.15
 
 		self:RegisterEvent('PLAYER_LEVEL_UP', VisibilityPath, true)
-		self:RegisterEvent('HONOR_LEVEL_UPDATE', VisibilityPath)
+		self:RegisterEvent('HONOR_LEVEL_UPDATE', VisibilityPath, true)
 		self:RegisterEvent('DISABLE_XP_GAIN', VisibilityPath, true)
 		self:RegisterEvent('ENABLE_XP_GAIN', VisibilityPath, true)
 

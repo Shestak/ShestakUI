@@ -31,8 +31,8 @@ end
 
 local function Enable(object)
 	if not object.EnemySpec then return end
-	object:RegisterEvent("UPDATE_BATTLEFIELD_SCORE", Update)
-	object:RegisterEvent("ARENA_OPPONENT_UPDATE", Update)
+	object:RegisterEvent("UPDATE_BATTLEFIELD_SCORE", Update, true)
+	object:RegisterEvent("ARENA_OPPONENT_UPDATE", Update, true)
 	return true
 end
 

@@ -221,6 +221,9 @@ local function Update(self, event, arg)
 	if (not UnitHasVehicleUI('player')) then
 		azeriteItemLocation = C_AzeriteItem and C_AzeriteItem.FindActiveAzeriteItem()
 		if (azeriteItemLocation) then
+			element.numTraitsLearnable = nil
+			element.unspentPower = nil
+
 			current, max = C_AzeriteItem.GetAzeriteItemXPInfo(azeriteItemLocation)
 			level = C_AzeriteItem.GetPowerLevel(azeriteItemLocation)
 			show = true

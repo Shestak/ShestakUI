@@ -147,8 +147,6 @@ local function Enable(self, unit)
 			PlayerPowerBarAlt:UnregisterEvent('PLAYER_ENTERING_WORLD')
 		end
 
-		element:Hide()
-
 		return true
 	end
 end

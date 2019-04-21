@@ -707,7 +707,7 @@ local function style(self, unit)
 	self:RegisterEvent("UNIT_NAME_UPDATE", UpdateName)
 
 	table.insert(self.__elements, UpdateTarget)
-	self:RegisterEvent("PLAYER_TARGET_CHANGED", UpdateTarget)
+	self:RegisterEvent("PLAYER_TARGET_CHANGED", UpdateTarget, true)
 
 	-- Disable movement via /moveui
 	self.disableMovement = true

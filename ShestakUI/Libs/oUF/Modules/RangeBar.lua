@@ -112,7 +112,7 @@ local Enable = function(self)
 		rb.__owner = self
 		rb.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent("PLAYER_TARGET_CHANGED", Path)
+		self:RegisterEvent("PLAYER_TARGET_CHANGED", Path, true)
 		self:RegisterEvent("UNIT_FLAGS", Path)
 
 		return true

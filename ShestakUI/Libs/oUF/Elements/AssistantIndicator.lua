@@ -3,6 +3,7 @@ local oUF = ns.oUF
 
 local function Update(self, event)
 	local element = self.AssistantIndicator
+	local unit = self.unit
 
 	--[[ Callback: AssistantIndicator:PreUpdate()
 	Called before the element has been updated.
@@ -13,7 +14,6 @@ local function Update(self, event)
 		element:PreUpdate()
 	end
 
-	local unit = self.unit
 	local isAssistant = UnitInRaid(unit) and UnitIsGroupAssistant(unit) and not UnitIsGroupLeader(unit)
 	if(isAssistant) then
 		element:Show()

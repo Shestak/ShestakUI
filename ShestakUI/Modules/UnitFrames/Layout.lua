@@ -26,6 +26,7 @@ local function Shared(self, unit)
 		self:SetAttribute("type2", "focus")
 		self:SetAttribute("type3", "macro")
 		self:SetAttribute("macrotext3", "/clearfocus")
+		self:SetAttribute('oUF-enableArenaPrep', false)
 	else
 		self:SetAttribute("*type2", "togglemenu")
 	end
@@ -1163,7 +1164,7 @@ local function Shared(self, unit)
 	-- Agro border
 	if C.raidframe.aggro_border == true and unit ~= "arenatarget" then
 		table.insert(self.__elements, T.UpdateThreat)
-		self:RegisterEvent("PLAYER_TARGET_CHANGED", T.UpdateThreat)
+		self:RegisterEvent("PLAYER_TARGET_CHANGED", T.UpdateThreat, true)
 		self:RegisterEvent("UNIT_THREAT_LIST_UPDATE", T.UpdateThreat)
 		self:RegisterEvent("UNIT_THREAT_SITUATION_UPDATE", T.UpdateThreat)
 	end

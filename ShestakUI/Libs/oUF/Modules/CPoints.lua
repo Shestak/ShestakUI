@@ -115,9 +115,9 @@ local Enable = function(self)
 		element.__owner = self
 		element.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent("UNIT_POWER_UPDATE", Path, true)
-		self:RegisterEvent("UNIT_MAXPOWER", Path, true)
-		self:RegisterEvent("PLAYER_TARGET_CHANGED", Path)
+		self:RegisterEvent("UNIT_POWER_UPDATE", Path)
+		self:RegisterEvent("UNIT_MAXPOWER", Path)
+		self:RegisterEvent("PLAYER_TARGET_CHANGED", Path, true)
 
 		if T.class == "DRUID" and C.unitframe_class_bar.combo_always ~= true and C.unitframe_class_bar.combo_old ~= true then
 			element.hadler = CreateFrame("Frame", nil, element)
