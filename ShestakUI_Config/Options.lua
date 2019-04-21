@@ -1677,13 +1677,13 @@ do
 	local disenchanting = ns.CreateCheckBox(parent, "disenchanting", L_GUI_MISC_DISENCHANTING)
 	disenchanting:SetPoint("TOPLEFT", already_known, "BOTTOMLEFT", 0, 0)
 
-	local sum_buyouts = ns.CreateCheckBox(parent, "sum_buyouts", L_GUI_MISC_SUM_BUYOUTS)
+	local sum_buyouts = ns.CreateCheckBox(parent, "sum_buyouts")
 	sum_buyouts:SetPoint("TOPLEFT", disenchanting, "BOTTOMLEFT", 0, 0)
 
-	local click_cast = ns.CreateCheckBox(parent, "click_cast", L_GUI_MISC_CLICK_CAST)
+	local click_cast = ns.CreateCheckBox(parent, "click_cast")
 	click_cast:SetPoint("TOPLEFT", sum_buyouts, "BOTTOMLEFT", 0, 0)
 
-	local click_cast_filter = ns.CreateCheckBox(parent, "click_cast_filter", L_GUI_MISC_CLICK_CAST_FILTER)
+	local click_cast_filter = ns.CreateCheckBox(parent, "click_cast_filter")
 	click_cast_filter:SetPoint("TOPLEFT", click_cast, "BOTTOMLEFT", 20, 0)
 
 	click_cast.children = {click_cast_filter}
