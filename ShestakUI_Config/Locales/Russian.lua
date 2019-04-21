@@ -189,7 +189,7 @@ L.automation_tab_binder_desc = "Клавиша 'Tab' будет выбирать
 L_GUI_AUTOMATION_LOGGING_COMBAT = "Включать запись журнала боя в рейде"
 L.automation_buff_on_scroll = "Накладывать баффы на себя прокруткой колеса мыши (из списка)"
 L.automation_buff_on_scroll_desc = "Если бафф из списка не висит на игроке, прокрутив колесо он применится"
-L_GUI_AUTOMATION_OPEN_ITEMS = "Открывать сундуки, ящики и т.д"
+L_GUI_AUTOMATION_OPEN_ITEMS = "Открывать сундуки и ящики в вашей сумке"
 L.automation_invite_keyword = "Ключевое слово для авто приглашения"
 L.automation_invite_keyword_desc = "Если вам напишут в личку ключевое слово, то сработает приглашение в группу. \nДля включения наберите '/ainv'. После команды можно написать своё слово '/ainv инв'"
 
