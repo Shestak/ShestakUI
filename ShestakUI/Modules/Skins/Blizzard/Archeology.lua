@@ -10,7 +10,7 @@ local function LoadSkin()
 
 	ArchaeologyFrameArtifactPageSolveFrameSolveButton:SkinButton(true)
 	ArchaeologyFrameArtifactPageBackButton:SkinButton(true)
-	T.SkinDropDownBox(ArchaeologyFrameRaceFilter, 125)
+	T.SkinDropDownBox(ArchaeologyFrameRaceFilter)
 
 	ArchaeologyFrameRankBar:StripTextures()
 	ArchaeologyFrameRankBar:SetStatusBarTexture(C.media.texture)
