@@ -22,7 +22,12 @@ TabBinder:SetScript("OnEvent", function(self, event, ...)
 		end
 	elseif event == "ZONE_CHANGED_NEW_AREA" or event == "PLAYER_ENTERING_WORLD" or (event == "PLAYER_REGEN_ENABLED" and RTB_Fail) or event == "DUEL_REQUESTED" or event == "DUEL_FINISHED" then
 		local BindSet = GetCurrentBindingSet()
-		if InCombatLockdown() or (BindSet ~= 1 and BindSet ~= 2) then
+		if BindSet ~= 1 and BindSet ~= 2 then
+			return
+		end
+
+		if InCombatLockdown() then
+			RTB_Fail = true
 			return
 		end
 
@@ -49,7 +54,7 @@ TabBinder:SetScript("OnEvent", function(self, event, ...)
 			CurrentBind = GetBindingAction(TargetKey)
 		end
 
-		if ZoneType == "arena" or PVPType == "combat" or ZoneType == "pvp" or event == "DUEL_REQUESTED" then
+		if ZoneType == "arena" or ZoneType == "pvp" or PVPType == "combat" or event == "DUEL_REQUESTED" then
 			if CurrentBind ~= "TARGETNEARESTENEMYPLAYER" then
 				if TargetKey == nil then
 					Success = true
