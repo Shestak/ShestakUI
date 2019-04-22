@@ -989,110 +989,78 @@ do
 	damage_meter_spam:SetPoint("TOPLEFT", sticky, "BOTTOMLEFT", 0, 0)
 end
 
--- Announcements
+-- Nameplate
 do
-	local parent = ShestakUIOptionsPanel.announcements
+	local parent = ShestakUIOptionsPanel.nameplate
 
-	local drinking = ns.CreateCheckBox(parent, "drinking", L_GUI_ANNOUNCEMENTS_DRINKING)
-	drinking:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_NAMEPLATE_ENABLE)
+	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local interrupts = ns.CreateCheckBox(parent, "interrupts", L_GUI_ANNOUNCEMENTS_INTERRUPTS)
-	interrupts:SetPoint("TOPLEFT", drinking, "BOTTOMLEFT", 0, 0)
+	local height = ns.CreateNumberSlider(parent, "height", nil, nil, 0, 20, 1, true, L_GUI_NAMEPLATE_HEIGHT)
+	height:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, -20)
 
-	local spells = ns.CreateCheckBox(parent, "spells", L_GUI_ANNOUNCEMENTS_SPELLS)
-	spells:SetPoint("TOPLEFT", interrupts, "BOTTOMLEFT", 0, 0)
+	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 200, 1, true, L_GUI_NAMEPLATE_WIDTH)
+	width:SetPoint("LEFT", height, "RIGHT", 120, 0)
 
-	local spells_from_all = ns.CreateCheckBox(parent, "spells_from_all", L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL)
-	spells_from_all:SetPoint("TOPLEFT", spells, "BOTTOMLEFT", 20, 0)
+	local distance = ns.CreateNumberSlider(parent, "distance", nil, nil, 0, 200, 1, true, L_GUI_NAMEPLATE_DISTANCE)
+	distance:SetPoint("TOPLEFT", height, "BOTTOMLEFT", 0, -20)
 
-	spells.children = {spells_from_all}
+	local ad_height = ns.CreateNumberSlider(parent, "ad_height", nil, nil, 0, 30, 1, true, L_GUI_NAMEPLATE_AD_HEIGHT)
+	ad_height:SetPoint("TOPLEFT", distance, "BOTTOMLEFT", 0, -20)
 
-	local toys = ns.CreateCheckBox(parent, "toys", L_GUI_ANNOUNCEMENTS_TOY_TRAIN)
-	toys:SetPoint("TOPLEFT", spells_from_all, "BOTTOMLEFT", -20, 0)
+	local ad_width = ns.CreateNumberSlider(parent, "ad_width", nil, nil, 0, 50, 1, true, L_GUI_NAMEPLATE_AD_WIDTH)
+	ad_width:SetPoint("LEFT", ad_height, "RIGHT", 120, 0)
 
-	local says_thanks = ns.CreateCheckBox(parent, "says_thanks", L_GUI_ANNOUNCEMENTS_SAYS_THANKS)
-	says_thanks:SetPoint("TOPLEFT", toys, "BOTTOMLEFT", 0, 0)
+	local combat = ns.CreateCheckBox(parent, "combat", L_GUI_NAMEPLATE_COMBAT)
+	combat:SetPoint("TOPLEFT", ad_height, "BOTTOMLEFT", 0, -20)
 
-	local pull_countdown = ns.CreateCheckBox(parent, "pull_countdown", L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN)
-	pull_countdown:SetPoint("TOPLEFT", says_thanks, "BOTTOMLEFT", 0, 0)
+	local health_value = ns.CreateCheckBox(parent, "health_value", L_GUI_NAMEPLATE_HEALTH)
+	health_value:SetPoint("TOPLEFT", combat, "BOTTOMLEFT", 0, 0)
 
-	local flask_food = ns.CreateCheckBox(parent, "flask_food", L_GUI_ANNOUNCEMENTS_FLASK_FOOD)
-	flask_food:SetPoint("TOPLEFT", pull_countdown, "BOTTOMLEFT", 0, 0)
+	local show_castbar_name = ns.CreateCheckBox(parent, "show_castbar_name", L_GUI_NAMEPLATE_CASTBAR_NAME)
+	show_castbar_name:SetPoint("TOPLEFT", health_value, "BOTTOMLEFT", 0, 0)
 
-	local flask_food_raid = ns.CreateCheckBox(parent, "flask_food_raid", L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID)
-	flask_food_raid:SetPoint("TOPLEFT", flask_food, "BOTTOMLEFT", 20, 0)
-	
-	local flask_food_auto = ns.CreateCheckBox(parent, "flask_food_auto", L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO)
-	flask_food_auto:SetPoint("TOPLEFT", flask_food_raid, "BOTTOMLEFT", 0, 0)
+	local class_icons = ns.CreateCheckBox(parent, "class_icons", L_GUI_NAMEPLATE_CLASS_ICON)
+	class_icons:SetPoint("TOPLEFT", show_castbar_name, "BOTTOMLEFT", 0, 0)
 
-	flask_food.children = {flask_food_raid, flask_food_auto}
+	local name_abbrev = ns.CreateCheckBox(parent, "name_abbrev", L_GUI_NAMEPLATE_NAME_ABBREV)
+	name_abbrev:SetPoint("TOPLEFT", class_icons, "BOTTOMLEFT", 0, 0)
 
-	local feasts = ns.CreateCheckBox(parent, "feasts", L_GUI_ANNOUNCEMENTS_FEASTS)
-	feasts:SetPoint("TOPLEFT", flask_food_auto, "BOTTOMLEFT", -20, 0)
+	local clamp = ns.CreateCheckBox(parent, "clamp", L_GUI_NAMEPLATE_CLAMP)
+	clamp:SetPoint("TOPLEFT", name_abbrev, "BOTTOMLEFT", 0, 0)
 
-	local portals = ns.CreateCheckBox(parent, "portals", L_GUI_ANNOUNCEMENTS_PORTALS)
-	portals:SetPoint("TOPLEFT", feasts, "BOTTOMLEFT", 0, 0)
+	local track_debuffs = ns.CreateCheckBox(parent, "track_debuffs", L_GUI_NAMEPLATE_SHOW_DEBUFFS)
+	track_debuffs:SetPoint("TOPLEFT", clamp, "BOTTOMLEFT", 0, 0)
 
-	local bad_gear = ns.CreateCheckBox(parent, "bad_gear", L_GUI_ANNOUNCEMENTS_BAD_GEAR)
-	bad_gear:SetPoint("TOPLEFT", portals, "BOTTOMLEFT", 0, 0)
+	local track_buffs = ns.CreateCheckBox(parent, "track_buffs", L_GUI_NAMEPLATE_SHOW_BUFFS)
+	track_buffs:SetPoint("TOPLEFT", track_debuffs, "BOTTOMLEFT", 0, 0)
 
-	local safari_hat = ns.CreateCheckBox(parent, "safari_hat", L_GUI_ANNOUNCEMENTS_SAFARI_HAT)
-	safari_hat:SetPoint("TOPLEFT", bad_gear, "BOTTOMLEFT", 0, 0)
-end
+	local auras_size = ns.CreateNumberSlider(parent, "auras_size", nil, nil, 0, 50, 1, true, L_GUI_NAMEPLATE_DEBUFFS_SIZE)
+	auras_size:SetPoint("TOPLEFT", track_buffs, "BOTTOMLEFT", 0, -20)
 
--- Automation
-do
-	local parent = ShestakUIOptionsPanel.automation
+	local healer_icon = ns.CreateCheckBox(parent, "healer_icon", L_GUI_NAMEPLATE_HEALER_ICON)
+	healer_icon:SetPoint("TOPLEFT", auras_size, "BOTTOMLEFT", 0, -20)
 
-	local release = ns.CreateCheckBox(parent, "release", L_GUI_AUTOMATION_RELEASE)
-	release:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+	local totem_icons = ns.CreateCheckBox(parent, "totem_icons", L_GUI_NAMEPLATE_TOTEM_ICONS)
+	totem_icons:SetPoint("TOPLEFT", healer_icon, "BOTTOMLEFT", 0, 0)
 
-	local screenshot = ns.CreateCheckBox(parent, "screenshot", L_GUI_AUTOMATION_SCREENSHOT)
-	screenshot:SetPoint("TOPLEFT", release, "BOTTOMLEFT", 0, 0)
+	-- Panel 2
+	local parent = ShestakUIOptionsPanel.nameplate2
 
-	local solve_artifact = ns.CreateCheckBox(parent, "solve_artifact")
-	solve_artifact:SetPoint("TOPLEFT", screenshot, "BOTTOMLEFT", 0, 0)
+	local enhance_threat = ns.CreateCheckBox(parent, "enhance_threat", L_GUI_NAMEPLATE_THREAT)
+	enhance_threat:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local accept_invite = ns.CreateCheckBox(parent, "accept_invite", L_GUI_AUTOMATION_ACCEPT_INVITE)
-	accept_invite:SetPoint("TOPLEFT", solve_artifact, "BOTTOMLEFT", 0, 0)
+	local good_color = ns.CreateColourPicker(parent, "good_color", true, L_GUI_NAMEPLATE_GOOD_COLOR)
+	good_color:SetPoint("TOPLEFT", enhance_threat, "BOTTOMLEFT", 4, -10)
 
-	local decline_duel = ns.CreateCheckBox(parent, "decline_duel", L_GUI_AUTOMATION_DECLINE_DUEL)
-	decline_duel:SetPoint("TOPLEFT", accept_invite, "BOTTOMLEFT", 0, 0)
+	local near_color = ns.CreateColourPicker(parent, "near_color", true, L_GUI_NAMEPLATE_NEAR_COLOR)
+	near_color:SetPoint("TOPLEFT", good_color, "BOTTOMLEFT", 0, -10)
 
-	local accept_quest = ns.CreateCheckBox(parent, "accept_quest", L_GUI_AUTOMATION_ACCEPT_QUEST)
-	accept_quest:SetPoint("TOPLEFT", decline_duel, "BOTTOMLEFT", 0, 0)
+	local bad_color = ns.CreateColourPicker(parent, "bad_color", true, L_GUI_NAMEPLATE_BAD_COLOR)
+	bad_color:SetPoint("TOPLEFT", near_color, "BOTTOMLEFT", 0, -10)
 
-	local auto_collapse = ns.CreateCheckBox(parent, "auto_collapse", L_GUI_AUTOMATION_AUTO_COLLAPSE)
-	auto_collapse:SetPoint("TOPLEFT", accept_quest, "BOTTOMLEFT", 0, 0)
-
-	local auto_collapse_reload = ns.CreateCheckBox(parent, "auto_collapse_reload", L_GUI_AUTOMATION_AUTO_COLLAPSE_RELOAD)
-	auto_collapse_reload:SetPoint("TOPLEFT", auto_collapse, "BOTTOMLEFT", 20, 0)
-
-	auto_collapse.children = {auto_collapse_reload}
-
-	local skip_cinematic = ns.CreateCheckBox(parent, "skip_cinematic", L_GUI_AUTOMATION_SKIP_CINEMATIC)
-	skip_cinematic:SetPoint("TOPLEFT", auto_collapse_reload, "BOTTOMLEFT", -20, 0)
-
-	local auto_role = ns.CreateCheckBox(parent, "auto_role", L_GUI_AUTOMATION_AUTO_ROLE)
-	auto_role:SetPoint("TOPLEFT", skip_cinematic, "BOTTOMLEFT", 0, 0)
-
-	local cancel_bad_buffs = ns.CreateCheckBox(parent, "cancel_bad_buffs", L_GUI_AUTOMATION_CANCEL_BAD_BUFFS)
-	cancel_bad_buffs:SetPoint("TOPLEFT", auto_role, "BOTTOMLEFT", 0, 0)
-
-	local tab_binder = ns.CreateCheckBox(parent, "tab_binder")
-	tab_binder:SetPoint("TOPLEFT", cancel_bad_buffs, "BOTTOMLEFT", 0, 0)
-
-	local logging_combat = ns.CreateCheckBox(parent, "logging_combat", L_GUI_AUTOMATION_LOGGING_COMBAT)
-	logging_combat:SetPoint("TOPLEFT", tab_binder, "BOTTOMLEFT", 0, 0)
-
-	local buff_on_scroll = ns.CreateCheckBox(parent, "buff_on_scroll")
-	buff_on_scroll:SetPoint("TOPLEFT", logging_combat, "BOTTOMLEFT", 0, 0)
-
-	local open_items = ns.CreateCheckBox(parent, "open_items", L_GUI_AUTOMATION_OPEN_ITEMS)
-	open_items:SetPoint("TOPLEFT", buff_on_scroll, "BOTTOMLEFT", 0, 0)
-
-	local invite_keyword = ns.CreateEditBox(parent, "invite_keyword", true)
-	invite_keyword:SetPoint("TOPLEFT", open_items, "BOTTOMLEFT", 6, -8)
+	local offtank_color = ns.CreateColourPicker(parent, "offtank_color", true, L_GUI_NAMEPLATE_OFFTANK_COLOR)
+	offtank_color:SetPoint("TOPLEFT", bad_color, "BOTTOMLEFT", 0, -10)
 end
 
 -- Combat text
@@ -1184,6 +1152,159 @@ do
 
 	local short_numbers = ns.CreateCheckBox(parent, "short_numbers", L_GUI_COMBATTEXT_SHORT_NUMBERS)
 	short_numbers:SetPoint("TOPLEFT", direction, "BOTTOMLEFT", 0, 0)
+end
+
+-- Auras/Buffs/Debuffs
+do
+	local parent = ShestakUIOptionsPanel.aura
+
+	local player_buff_size = ns.CreateNumberSlider(parent, "player_buff_size", nil, nil, 0, 40, 1, true, L_GUI_AURA_PLAYER_BUFF_SIZE, L_GUI_AURA_PLAYER_BUFF_SIZE_DESC)
+	player_buff_size:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, -20)
+
+	local show_spiral = ns.CreateCheckBox(parent, "show_spiral", L_GUI_AURA_SHOW_SPIRAL)
+	show_spiral:SetPoint("TOPLEFT", player_buff_size, "BOTTOMLEFT", 0, -10)
+
+	local show_timer = ns.CreateCheckBox(parent, "show_timer", L_GUI_AURA_SHOW_TIMER)
+	show_timer:SetPoint("TOPLEFT", show_spiral, "BOTTOMLEFT", 0, 0)
+
+	local player_auras = ns.CreateCheckBox(parent, "player_auras", L_GUI_AURA_PLAYER_AURAS)
+	player_auras:SetPoint("TOPLEFT", show_timer, "BOTTOMLEFT", 0, 0)
+
+	local target_auras = ns.CreateCheckBox(parent, "target_auras", L_GUI_AURA_TARGET_AURAS)
+	target_auras:SetPoint("TOPLEFT", player_auras, "BOTTOMLEFT", 0, 0)
+
+	local focus_debuffs = ns.CreateCheckBox(parent, "focus_debuffs", L_GUI_AURA_FOCUS_DEBUFFS)
+	focus_debuffs:SetPoint("TOPLEFT", target_auras, "BOTTOMLEFT", 0, 0)
+
+	local fot_debuffs = ns.CreateCheckBox(parent, "fot_debuffs", L_GUI_AURA_FOT_DEBUFFS)
+	fot_debuffs:SetPoint("TOPLEFT", focus_debuffs, "BOTTOMLEFT", 0, 0)
+
+	local pet_debuffs = ns.CreateCheckBox(parent, "pet_debuffs", L_GUI_AURA_PET_DEBUFFS)
+	pet_debuffs:SetPoint("TOPLEFT", fot_debuffs, "BOTTOMLEFT", 0, 0)
+
+	local tot_debuffs = ns.CreateCheckBox(parent, "tot_debuffs", L_GUI_AURA_TOT_DEBUFFS)
+	tot_debuffs:SetPoint("TOPLEFT", pet_debuffs, "BOTTOMLEFT", 0, 0)
+
+	local boss_buffs = ns.CreateCheckBox(parent, "boss_buffs", L_GUI_AURA_BOSS_BUFFS)
+	boss_buffs:SetPoint("TOPLEFT", tot_debuffs, "BOTTOMLEFT", 0, 0)
+
+	local player_aura_only = ns.CreateCheckBox(parent, "player_aura_only", L_GUI_AURA_PLAYER_AURA_ONLY)
+	player_aura_only:SetPoint("TOPLEFT", boss_buffs, "BOTTOMLEFT", 0, 0)
+
+	local debuff_color_type = ns.CreateCheckBox(parent, "debuff_color_type", L_GUI_AURA_DEBUFF_COLOR_TYPE)
+	debuff_color_type:SetPoint("TOPLEFT", player_aura_only, "BOTTOMLEFT", 0, 0)
+
+	local cast_by = ns.CreateCheckBox(parent, "cast_by", L_GUI_AURA_CAST_BY)
+	cast_by:SetPoint("TOPLEFT", debuff_color_type, "BOTTOMLEFT", 0, 0)
+
+	local classcolor_border = ns.CreateCheckBox(parent, "classcolor_border", L_GUI_AURA_CLASSCOLOR_BORDER)
+	classcolor_border:SetPoint("TOPLEFT", cast_by, "BOTTOMLEFT", 0, 0)
+end
+
+-- Announcements
+do
+	local parent = ShestakUIOptionsPanel.announcements
+
+	local drinking = ns.CreateCheckBox(parent, "drinking", L_GUI_ANNOUNCEMENTS_DRINKING)
+	drinking:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local interrupts = ns.CreateCheckBox(parent, "interrupts", L_GUI_ANNOUNCEMENTS_INTERRUPTS)
+	interrupts:SetPoint("TOPLEFT", drinking, "BOTTOMLEFT", 0, 0)
+
+	local spells = ns.CreateCheckBox(parent, "spells", L_GUI_ANNOUNCEMENTS_SPELLS)
+	spells:SetPoint("TOPLEFT", interrupts, "BOTTOMLEFT", 0, 0)
+
+	local spells_from_all = ns.CreateCheckBox(parent, "spells_from_all", L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL)
+	spells_from_all:SetPoint("TOPLEFT", spells, "BOTTOMLEFT", 20, 0)
+
+	spells.children = {spells_from_all}
+
+	local toys = ns.CreateCheckBox(parent, "toys", L_GUI_ANNOUNCEMENTS_TOY_TRAIN)
+	toys:SetPoint("TOPLEFT", spells_from_all, "BOTTOMLEFT", -20, 0)
+
+	local says_thanks = ns.CreateCheckBox(parent, "says_thanks", L_GUI_ANNOUNCEMENTS_SAYS_THANKS)
+	says_thanks:SetPoint("TOPLEFT", toys, "BOTTOMLEFT", 0, 0)
+
+	local pull_countdown = ns.CreateCheckBox(parent, "pull_countdown", L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN)
+	pull_countdown:SetPoint("TOPLEFT", says_thanks, "BOTTOMLEFT", 0, 0)
+
+	local flask_food = ns.CreateCheckBox(parent, "flask_food", L_GUI_ANNOUNCEMENTS_FLASK_FOOD)
+	flask_food:SetPoint("TOPLEFT", pull_countdown, "BOTTOMLEFT", 0, 0)
+
+	local flask_food_raid = ns.CreateCheckBox(parent, "flask_food_raid", L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID)
+	flask_food_raid:SetPoint("TOPLEFT", flask_food, "BOTTOMLEFT", 20, 0)
+
+	local flask_food_auto = ns.CreateCheckBox(parent, "flask_food_auto", L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO)
+	flask_food_auto:SetPoint("TOPLEFT", flask_food_raid, "BOTTOMLEFT", 0, 0)
+
+	flask_food.children = {flask_food_raid, flask_food_auto}
+
+	local feasts = ns.CreateCheckBox(parent, "feasts", L_GUI_ANNOUNCEMENTS_FEASTS)
+	feasts:SetPoint("TOPLEFT", flask_food_auto, "BOTTOMLEFT", -20, 0)
+
+	local portals = ns.CreateCheckBox(parent, "portals", L_GUI_ANNOUNCEMENTS_PORTALS)
+	portals:SetPoint("TOPLEFT", feasts, "BOTTOMLEFT", 0, 0)
+
+	local bad_gear = ns.CreateCheckBox(parent, "bad_gear", L_GUI_ANNOUNCEMENTS_BAD_GEAR)
+	bad_gear:SetPoint("TOPLEFT", portals, "BOTTOMLEFT", 0, 0)
+
+	local safari_hat = ns.CreateCheckBox(parent, "safari_hat", L_GUI_ANNOUNCEMENTS_SAFARI_HAT)
+	safari_hat:SetPoint("TOPLEFT", bad_gear, "BOTTOMLEFT", 0, 0)
+end
+
+-- Automation
+do
+	local parent = ShestakUIOptionsPanel.automation
+
+	local release = ns.CreateCheckBox(parent, "release", L_GUI_AUTOMATION_RELEASE)
+	release:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local screenshot = ns.CreateCheckBox(parent, "screenshot", L_GUI_AUTOMATION_SCREENSHOT)
+	screenshot:SetPoint("TOPLEFT", release, "BOTTOMLEFT", 0, 0)
+
+	local solve_artifact = ns.CreateCheckBox(parent, "solve_artifact")
+	solve_artifact:SetPoint("TOPLEFT", screenshot, "BOTTOMLEFT", 0, 0)
+
+	local accept_invite = ns.CreateCheckBox(parent, "accept_invite", L_GUI_AUTOMATION_ACCEPT_INVITE)
+	accept_invite:SetPoint("TOPLEFT", solve_artifact, "BOTTOMLEFT", 0, 0)
+
+	local decline_duel = ns.CreateCheckBox(parent, "decline_duel", L_GUI_AUTOMATION_DECLINE_DUEL)
+	decline_duel:SetPoint("TOPLEFT", accept_invite, "BOTTOMLEFT", 0, 0)
+
+	local accept_quest = ns.CreateCheckBox(parent, "accept_quest", L_GUI_AUTOMATION_ACCEPT_QUEST)
+	accept_quest:SetPoint("TOPLEFT", decline_duel, "BOTTOMLEFT", 0, 0)
+
+	local auto_collapse = ns.CreateCheckBox(parent, "auto_collapse", L_GUI_AUTOMATION_AUTO_COLLAPSE)
+	auto_collapse:SetPoint("TOPLEFT", accept_quest, "BOTTOMLEFT", 0, 0)
+
+	local auto_collapse_reload = ns.CreateCheckBox(parent, "auto_collapse_reload", L_GUI_AUTOMATION_AUTO_COLLAPSE_RELOAD)
+	auto_collapse_reload:SetPoint("TOPLEFT", auto_collapse, "BOTTOMLEFT", 20, 0)
+
+	auto_collapse.children = {auto_collapse_reload}
+
+	local skip_cinematic = ns.CreateCheckBox(parent, "skip_cinematic", L_GUI_AUTOMATION_SKIP_CINEMATIC)
+	skip_cinematic:SetPoint("TOPLEFT", auto_collapse_reload, "BOTTOMLEFT", -20, 0)
+
+	local auto_role = ns.CreateCheckBox(parent, "auto_role", L_GUI_AUTOMATION_AUTO_ROLE)
+	auto_role:SetPoint("TOPLEFT", skip_cinematic, "BOTTOMLEFT", 0, 0)
+
+	local cancel_bad_buffs = ns.CreateCheckBox(parent, "cancel_bad_buffs", L_GUI_AUTOMATION_CANCEL_BAD_BUFFS)
+	cancel_bad_buffs:SetPoint("TOPLEFT", auto_role, "BOTTOMLEFT", 0, 0)
+
+	local tab_binder = ns.CreateCheckBox(parent, "tab_binder")
+	tab_binder:SetPoint("TOPLEFT", cancel_bad_buffs, "BOTTOMLEFT", 0, 0)
+
+	local logging_combat = ns.CreateCheckBox(parent, "logging_combat", L_GUI_AUTOMATION_LOGGING_COMBAT)
+	logging_combat:SetPoint("TOPLEFT", tab_binder, "BOTTOMLEFT", 0, 0)
+
+	local buff_on_scroll = ns.CreateCheckBox(parent, "buff_on_scroll")
+	buff_on_scroll:SetPoint("TOPLEFT", logging_combat, "BOTTOMLEFT", 0, 0)
+
+	local open_items = ns.CreateCheckBox(parent, "open_items", L_GUI_AUTOMATION_OPEN_ITEMS)
+	open_items:SetPoint("TOPLEFT", buff_on_scroll, "BOTTOMLEFT", 0, 0)
+
+	local invite_keyword = ns.CreateEditBox(parent, "invite_keyword", true)
+	invite_keyword:SetPoint("TOPLEFT", open_items, "BOTTOMLEFT", 6, -8)
 end
 
 -- Reminder
@@ -1394,127 +1515,6 @@ do
 
 	local auto_confirm_de = ns.CreateCheckBox(parent, "auto_confirm_de", L_GUI_LOOT_AUTODE)
 	auto_confirm_de:SetPoint("TOPLEFT", auto_greed, "BOTTOMLEFT", 0, 0)
-end
-
--- Nameplate
-do
-	local parent = ShestakUIOptionsPanel.nameplate
-
-	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_NAMEPLATE_ENABLE)
-	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
-	local height = ns.CreateNumberSlider(parent, "height", nil, nil, 0, 20, 1, true, L_GUI_NAMEPLATE_HEIGHT)
-	height:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, -20)
-
-	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 200, 1, true, L_GUI_NAMEPLATE_WIDTH)
-	width:SetPoint("LEFT", height, "RIGHT", 120, 0)
-
-	local distance = ns.CreateNumberSlider(parent, "distance", nil, nil, 0, 200, 1, true, L_GUI_NAMEPLATE_DISTANCE)
-	distance:SetPoint("TOPLEFT", height, "BOTTOMLEFT", 0, -20)
-
-	local ad_height = ns.CreateNumberSlider(parent, "ad_height", nil, nil, 0, 30, 1, true, L_GUI_NAMEPLATE_AD_HEIGHT)
-	ad_height:SetPoint("TOPLEFT", distance, "BOTTOMLEFT", 0, -20)
-
-	local ad_width = ns.CreateNumberSlider(parent, "ad_width", nil, nil, 0, 50, 1, true, L_GUI_NAMEPLATE_AD_WIDTH)
-	ad_width:SetPoint("LEFT", ad_height, "RIGHT", 120, 0)
-
-	local combat = ns.CreateCheckBox(parent, "combat", L_GUI_NAMEPLATE_COMBAT)
-	combat:SetPoint("TOPLEFT", ad_height, "BOTTOMLEFT", 0, -20)
-
-	local health_value = ns.CreateCheckBox(parent, "health_value", L_GUI_NAMEPLATE_HEALTH)
-	health_value:SetPoint("TOPLEFT", combat, "BOTTOMLEFT", 0, 0)
-
-	local show_castbar_name = ns.CreateCheckBox(parent, "show_castbar_name", L_GUI_NAMEPLATE_CASTBAR_NAME)
-	show_castbar_name:SetPoint("TOPLEFT", health_value, "BOTTOMLEFT", 0, 0)
-
-	local class_icons = ns.CreateCheckBox(parent, "class_icons", L_GUI_NAMEPLATE_CLASS_ICON)
-	class_icons:SetPoint("TOPLEFT", show_castbar_name, "BOTTOMLEFT", 0, 0)
-
-	local name_abbrev = ns.CreateCheckBox(parent, "name_abbrev", L_GUI_NAMEPLATE_NAME_ABBREV)
-	name_abbrev:SetPoint("TOPLEFT", class_icons, "BOTTOMLEFT", 0, 0)
-
-	local clamp = ns.CreateCheckBox(parent, "clamp", L_GUI_NAMEPLATE_CLAMP)
-	clamp:SetPoint("TOPLEFT", name_abbrev, "BOTTOMLEFT", 0, 0)
-
-	local track_debuffs = ns.CreateCheckBox(parent, "track_debuffs", L_GUI_NAMEPLATE_SHOW_DEBUFFS)
-	track_debuffs:SetPoint("TOPLEFT", clamp, "BOTTOMLEFT", 0, 0)
-
-	local track_buffs = ns.CreateCheckBox(parent, "track_buffs", L_GUI_NAMEPLATE_SHOW_BUFFS)
-	track_buffs:SetPoint("TOPLEFT", track_debuffs, "BOTTOMLEFT", 0, 0)
-
-	local auras_size = ns.CreateNumberSlider(parent, "auras_size", nil, nil, 0, 50, 1, true, L_GUI_NAMEPLATE_DEBUFFS_SIZE)
-	auras_size:SetPoint("TOPLEFT", track_buffs, "BOTTOMLEFT", 0, -20)
-
-	local healer_icon = ns.CreateCheckBox(parent, "healer_icon", L_GUI_NAMEPLATE_HEALER_ICON)
-	healer_icon:SetPoint("TOPLEFT", auras_size, "BOTTOMLEFT", 0, -20)
-
-	local totem_icons = ns.CreateCheckBox(parent, "totem_icons", L_GUI_NAMEPLATE_TOTEM_ICONS)
-	totem_icons:SetPoint("TOPLEFT", healer_icon, "BOTTOMLEFT", 0, 0)
-
-	-- Panel 2
-	local parent = ShestakUIOptionsPanel.nameplate2
-
-	local enhance_threat = ns.CreateCheckBox(parent, "enhance_threat", L_GUI_NAMEPLATE_THREAT)
-	enhance_threat:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
-	local good_color = ns.CreateColourPicker(parent, "good_color", true, L_GUI_NAMEPLATE_GOOD_COLOR)
-	good_color:SetPoint("TOPLEFT", enhance_threat, "BOTTOMLEFT", 4, -10)
-
-	local near_color = ns.CreateColourPicker(parent, "near_color", true, L_GUI_NAMEPLATE_NEAR_COLOR)
-	near_color:SetPoint("TOPLEFT", good_color, "BOTTOMLEFT", 0, -10)
-
-	local bad_color = ns.CreateColourPicker(parent, "bad_color", true, L_GUI_NAMEPLATE_BAD_COLOR)
-	bad_color:SetPoint("TOPLEFT", near_color, "BOTTOMLEFT", 0, -10)
-
-	local offtank_color = ns.CreateColourPicker(parent, "offtank_color", true, L_GUI_NAMEPLATE_OFFTANK_COLOR)
-	offtank_color:SetPoint("TOPLEFT", bad_color, "BOTTOMLEFT", 0, -10)
-end
-
--- Auras/Buffs/Debuffs
-do
-	local parent = ShestakUIOptionsPanel.aura
-
-	local player_buff_size = ns.CreateNumberSlider(parent, "player_buff_size", nil, nil, 0, 40, 1, true, L_GUI_AURA_PLAYER_BUFF_SIZE, L_GUI_AURA_PLAYER_BUFF_SIZE_DESC)
-	player_buff_size:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, -20)
-
-	local show_spiral = ns.CreateCheckBox(parent, "show_spiral", L_GUI_AURA_SHOW_SPIRAL)
-	show_spiral:SetPoint("TOPLEFT", player_buff_size, "BOTTOMLEFT", 0, -10)
-
-	local show_timer = ns.CreateCheckBox(parent, "show_timer", L_GUI_AURA_SHOW_TIMER)
-	show_timer:SetPoint("TOPLEFT", show_spiral, "BOTTOMLEFT", 0, 0)
-
-	local player_auras = ns.CreateCheckBox(parent, "player_auras", L_GUI_AURA_PLAYER_AURAS)
-	player_auras:SetPoint("TOPLEFT", show_timer, "BOTTOMLEFT", 0, 0)
-
-	local target_auras = ns.CreateCheckBox(parent, "target_auras", L_GUI_AURA_TARGET_AURAS)
-	target_auras:SetPoint("TOPLEFT", player_auras, "BOTTOMLEFT", 0, 0)
-
-	local focus_debuffs = ns.CreateCheckBox(parent, "focus_debuffs", L_GUI_AURA_FOCUS_DEBUFFS)
-	focus_debuffs:SetPoint("TOPLEFT", target_auras, "BOTTOMLEFT", 0, 0)
-
-	local fot_debuffs = ns.CreateCheckBox(parent, "fot_debuffs", L_GUI_AURA_FOT_DEBUFFS)
-	fot_debuffs:SetPoint("TOPLEFT", focus_debuffs, "BOTTOMLEFT", 0, 0)
-
-	local pet_debuffs = ns.CreateCheckBox(parent, "pet_debuffs", L_GUI_AURA_PET_DEBUFFS)
-	pet_debuffs:SetPoint("TOPLEFT", fot_debuffs, "BOTTOMLEFT", 0, 0)
-
-	local tot_debuffs = ns.CreateCheckBox(parent, "tot_debuffs", L_GUI_AURA_TOT_DEBUFFS)
-	tot_debuffs:SetPoint("TOPLEFT", pet_debuffs, "BOTTOMLEFT", 0, 0)
-
-	local boss_buffs = ns.CreateCheckBox(parent, "boss_buffs", L_GUI_AURA_BOSS_BUFFS)
-	boss_buffs:SetPoint("TOPLEFT", tot_debuffs, "BOTTOMLEFT", 0, 0)
-
-	local player_aura_only = ns.CreateCheckBox(parent, "player_aura_only", L_GUI_AURA_PLAYER_AURA_ONLY)
-	player_aura_only:SetPoint("TOPLEFT", boss_buffs, "BOTTOMLEFT", 0, 0)
-
-	local debuff_color_type = ns.CreateCheckBox(parent, "debuff_color_type", L_GUI_AURA_DEBUFF_COLOR_TYPE)
-	debuff_color_type:SetPoint("TOPLEFT", player_aura_only, "BOTTOMLEFT", 0, 0)
-
-	local cast_by = ns.CreateCheckBox(parent, "cast_by", L_GUI_AURA_CAST_BY)
-	cast_by:SetPoint("TOPLEFT", debuff_color_type, "BOTTOMLEFT", 0, 0)
-
-	local classcolor_border = ns.CreateCheckBox(parent, "classcolor_border", L_GUI_AURA_CLASSCOLOR_BORDER)
-	classcolor_border:SetPoint("TOPLEFT", cast_by, "BOTTOMLEFT", 0, 0)
 end
 
 -- Filger

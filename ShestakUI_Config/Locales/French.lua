@@ -220,6 +220,84 @@ L_GUI_CHAT_TABS_MOUSEOVER = "Affiche les onglets de discussion au survol de la s
 L_GUI_CHAT_STICKY = "Active le dernier canal utilisé(canal persistant)"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "Rassemble les lignes de statistiques de dégâts en un seul lien/ligne"
 
+-- Nameplate options
+L_GUI_NAMEPLATE_SUBTEXT = "Nameplates settings" -- Need review
+L_GUI_NAMEPLATE_ENABLE = "Activer les barres de nom"
+L_GUI_NAMEPLATE_COMBAT = "Afficher automatiquement les barres de nom en combat"
+L_GUI_NAMEPLATE_HEALTH = "Valeur de points de vie"
+L_GUI_NAMEPLATE_HEIGHT = "Hauteur des barres de nom"
+L_GUI_NAMEPLATE_WIDTH = "Largeur des barres de nom"
+L_GUI_NAMEPLATE_DISTANCE = "Display range" -- Need review
+L_GUI_NAMEPLATE_AD_HEIGHT = "Additional height" -- Need review
+L_GUI_NAMEPLATE_AD_WIDTH = "Additional width" -- Need review
+L_GUI_NAMEPLATE_CASTBAR_NAME = "Afficher le nom du sort"
+L_GUI_NAMEPLATE_CLASS_ICON = "Icône de classe en JcJ"
+L_GUI_NAMEPLATE_NAME_ABBREV = "Afficher les noms abrégés"
+L_GUI_NAMEPLATE_CLAMP = "Afficher les barres en haut de l'écran quand celles-ci sont au delà de la vision"
+L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Affiche les affaiblissements (Les noms abrégés doivent être désactivés)"
+L_GUI_NAMEPLATE_SHOW_BUFFS = "Afficher les améliorations au dessus des barres des alliés (contenu dans la liste)"
+L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Taille des affaiblissements"
+L_GUI_NAMEPLATE_HEALER_ICON = "Affiche une icône de soigneur sur toutes les barres de vie des soigneurs ennemis dans les champs de bataille"
+L_GUI_NAMEPLATE_TOTEM_ICONS = "Afficher une icone au dessus des barres de vie des totems ennemis"
+L_GUI_NAMEPLATE_THREAT = "Activer la gestion de la menace, change automatiquement selon votre rôle"
+L_GUI_NAMEPLATE_GOOD_COLOR = "Bonne couleur de menace, dépend de si vous êtes un tank ou dps/heal"
+L_GUI_NAMEPLATE_NEAR_COLOR = "Perte/Gain de couleur de menace"
+L_GUI_NAMEPLATE_BAD_COLOR = "Mauvaise couleur de menace, dépend de si vous êtes un tank ou dps/heal"
+L_GUI_NAMEPLATE_OFFTANK_COLOR = "Coloration de la menace du tank secondaire"
+
+-- Combat text options
+L_GUI_COMBATTEXT = "Texte de combat"
+L_GUI_COMBATTEXT_SUBTEXT = "For moving type in the chat '/xct'" -- Need review
+L_GUI_COMBATTEXT_ENABLE = "Activer les textes de combat"
+L.combattext_blizz_head_numbers = "Enable Blizzard combat text" -- Need review
+L.combattext_blizz_head_numbers_desc = "Utiliser les textes de combat de Blizzard"
+L.combattext_damage_style = "Change default combat font" -- Need review
+L.combattext_damage_style_desc = "Change la police par défaut des dégâts/soins au dessus de la tête de la cible (Vous devez redémarrer WoW pour valider le changement)"
+L_GUI_COMBATTEXT_DAMAGE = "Afficher les dégâts dans une fenêtre dédiée"
+L_GUI_COMBATTEXT_HEALING = "Afficher les soins dans une fenêtre dédiée"
+L_GUI_COMBATTEXT_HOTS = "Afficher les effets des soins périodiques dans la fenêtre de soin"
+L_GUI_COMBATTEXT_OVERHEALING = "Afficher les excès de soins sortants"
+L_GUI_COMBATTEXT_PET_DAMAGE = "Afficher les dégâts du familier"
+L_GUI_COMBATTEXT_DOT_DAMAGE = "Afficher les dégâts des dots"
+L_GUI_COMBATTEXT_DAMAGE_COLOR = "Afficher les dégâts en fonction de l'école de magie"
+L_GUI_COMBATTEXT_CRIT_PREFIX = "Caractère à afficher avant le montant d'un critique"
+L_GUI_COMBATTEXT_CRIT_POSTFIX = "Caractère à afficher après le montant d'un critique"
+L_GUI_COMBATTEXT_ICONS = "Afficher l'icône du sort"
+L_GUI_COMBATTEXT_ICON_SIZE = "Icon size" -- Need review
+L_GUI_COMBATTEXT_ICON_SIZE_DESC = "Taille de l'icône du sort"
+L_GUI_COMBATTEXT_TRESHOLD = "Dégâts minimum pour afficher dans la fenêtre de dégâts"
+L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Soins minimum pour afficher dans la fenêtre de dégâts"
+L_GUI_COMBATTEXT_SCROLLABLE = "Autoriser le défilement avec la molette dans la fenêtre de dégâts/soins"
+L_GUI_COMBATTEXT_MAX_LINES = "Max lines" -- Need review
+L_GUI_COMBATTEXT_MAX_LINES_DESC = "Nombre de lignes maximum à conserver si l'option de défilement est activée (plus de ligne = plus de mémoire utilisée)"
+L_GUI_COMBATTEXT_TIME_VISIBLE = "Time" -- Need review
+L_GUI_COMBATTEXT_TIME_VISIBLE_DESC = "Temps en seconde durant lequel un message est affiché"
+L_GUI_COMBATTEXT_DK_RUNES = "Afficher le rechargement des runes du chevalier de la mort"
+L_GUI_COMBATTEXT_KILLINGBLOW = "Afficher les coups fatals"
+L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Rassembler tous les dégâts d'un aoe en un seul message"
+L_GUI_COMBATTEXT_MERGE_MELEE = "Rassemble les dégâts multiples en auto attaque"
+L_GUI_COMBATTEXT_DISPEL = "Affiche les sorts que vous avez dissipé"
+L_GUI_COMBATTEXT_INTERRUPT = "Affiche les sorts que vous avez interrompu"
+L_GUI_COMBATTEXT_DIRECTION = "Change scrolling direction from bottom to top" -- Need review
+L_GUI_COMBATTEXT_SHORT_NUMBERS = "Rendre plus lisible les nombres ('25.3k' au lieu de '25342')"
+
+-- Auras/Buffs/Debuffs
+L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size" -- Need review
+L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "Taille des buffs du joueur"
+L_GUI_AURA_SHOW_SPIRAL = "Spirale sur les icones d'aura"
+L_GUI_AURA_SHOW_TIMER = "Afficher le cooldown des icones d'aura"
+L_GUI_AURA_PLAYER_AURAS = "Auras sur la barre du joueur"
+L_GUI_AURA_TARGET_AURAS = "Auras sur la barre de cible"
+L_GUI_AURA_FOCUS_DEBUFFS = "Afficher les debuffs du focus"
+L_GUI_AURA_FOT_DEBUFFS = "Afficher les debuffs de la cible du focus"
+L_GUI_AURA_PET_DEBUFFS = "Afficher les debuffs du pet"
+L_GUI_AURA_TOT_DEBUFFS = "Afficher les debuffs de la cible de la cible"
+L_GUI_AURA_BOSS_BUFFS = "Afficher les améliorations sur le cadre du Boss"
+L_GUI_AURA_PLAYER_AURA_ONLY = "Afficher seulement ses propres debuffs sur la cible"
+L_GUI_AURA_DEBUFF_COLOR_TYPE = "Coleur de debuff par type"
+L_GUI_AURA_CAST_BY = "Voir qui a jeté un buff / debuff sur son tooltip"
+L_GUI_AURA_CLASSCOLOR_BORDER = "Active la couleur de votre classe pour la bordure de vos buffs"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -261,42 +339,6 @@ L.automation_buff_on_scroll_desc = "If the buff from the list is not applied to 
 L_GUI_AUTOMATION_OPEN_ITEMS = "Ouverture automatique des objets dans les sacs"
 L.automation_invite_keyword = "Mot clé pour l'invitation automatique"
 L.automation_invite_keyword_desc = "When player whisper you keyword he will be invited in your group. \nFor enable - type '/ainv'. Also after the command, you can write your word '/ainv inv'" -- Need review
-
--- Combat text options
-L_GUI_COMBATTEXT = "Texte de combat"
-L_GUI_COMBATTEXT_SUBTEXT = "For moving type in the chat '/xct'" -- Need review
-L_GUI_COMBATTEXT_ENABLE = "Activer les textes de combat"
-L.combattext_blizz_head_numbers = "Enable Blizzard combat text" -- Need review
-L.combattext_blizz_head_numbers_desc = "Utiliser les textes de combat de Blizzard"
-L.combattext_damage_style = "Change default combat font" -- Need review
-L.combattext_damage_style_desc = "Change la police par défaut des dégâts/soins au dessus de la tête de la cible (Vous devez redémarrer WoW pour valider le changement)"
-L_GUI_COMBATTEXT_DAMAGE = "Afficher les dégâts dans une fenêtre dédiée"
-L_GUI_COMBATTEXT_HEALING = "Afficher les soins dans une fenêtre dédiée"
-L_GUI_COMBATTEXT_HOTS = "Afficher les effets des soins périodiques dans la fenêtre de soin"
-L_GUI_COMBATTEXT_OVERHEALING = "Afficher les excès de soins sortants"
-L_GUI_COMBATTEXT_PET_DAMAGE = "Afficher les dégâts du familier"
-L_GUI_COMBATTEXT_DOT_DAMAGE = "Afficher les dégâts des dots"
-L_GUI_COMBATTEXT_DAMAGE_COLOR = "Afficher les dégâts en fonction de l'école de magie"
-L_GUI_COMBATTEXT_CRIT_PREFIX = "Caractère à afficher avant le montant d'un critique"
-L_GUI_COMBATTEXT_CRIT_POSTFIX = "Caractère à afficher après le montant d'un critique"
-L_GUI_COMBATTEXT_ICONS = "Afficher l'icône du sort"
-L_GUI_COMBATTEXT_ICON_SIZE = "Icon size" -- Need review
-L_GUI_COMBATTEXT_ICON_SIZE_DESC = "Taille de l'icône du sort"
-L_GUI_COMBATTEXT_TRESHOLD = "Dégâts minimum pour afficher dans la fenêtre de dégâts"
-L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Soins minimum pour afficher dans la fenêtre de dégâts"
-L_GUI_COMBATTEXT_SCROLLABLE = "Autoriser le défilement avec la molette dans la fenêtre de dégâts/soins"
-L_GUI_COMBATTEXT_MAX_LINES = "Max lines" -- Need review
-L_GUI_COMBATTEXT_MAX_LINES_DESC = "Nombre de lignes maximum à conserver si l'option de défilement est activée (plus de ligne = plus de mémoire utilisée)"
-L_GUI_COMBATTEXT_TIME_VISIBLE = "Time" -- Need review
-L_GUI_COMBATTEXT_TIME_VISIBLE_DESC = "Temps en seconde durant lequel un message est affiché"
-L_GUI_COMBATTEXT_DK_RUNES = "Afficher le rechargement des runes du chevalier de la mort"
-L_GUI_COMBATTEXT_KILLINGBLOW = "Afficher les coups fatals"
-L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Rassembler tous les dégâts d'un aoe en un seul message"
-L_GUI_COMBATTEXT_MERGE_MELEE = "Rassemble les dégâts multiples en auto attaque"
-L_GUI_COMBATTEXT_DISPEL = "Affiche les sorts que vous avez dissipé"
-L_GUI_COMBATTEXT_INTERRUPT = "Affiche les sorts que vous avez interrompu"
-L_GUI_COMBATTEXT_DIRECTION = "Change scrolling direction from bottom to top" -- Need review
-L_GUI_COMBATTEXT_SHORT_NUMBERS = "Rendre plus lisible les nombres ('25.3k' au lieu de '25342')"
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Contrôle des buffs"
@@ -387,48 +429,6 @@ L_GUI_LOOT_ICON_SIZE = "Taille de l'icône"
 L_GUI_LOOT_WIDTH = "Largeur de la fenêtre de butin"
 L_GUI_LOOT_AUTOGREED = "Activer désenchantement automatique pour les objets verts au niveau maximum"
 L_GUI_LOOT_AUTODE = "Confirmation automatique pour le désenchantement"
-
--- Nameplate options
-L_GUI_NAMEPLATE_SUBTEXT = "Nameplates settings" -- Need review
-L_GUI_NAMEPLATE_ENABLE = "Activer les barres de nom"
-L_GUI_NAMEPLATE_COMBAT = "Afficher automatiquement les barres de nom en combat"
-L_GUI_NAMEPLATE_HEALTH = "Valeur de points de vie"
-L_GUI_NAMEPLATE_HEIGHT = "Hauteur des barres de nom"
-L_GUI_NAMEPLATE_WIDTH = "Largeur des barres de nom"
-L_GUI_NAMEPLATE_DISTANCE = "Display range" -- Need review
-L_GUI_NAMEPLATE_AD_HEIGHT = "Additional height" -- Need review
-L_GUI_NAMEPLATE_AD_WIDTH = "Additional width" -- Need review
-L_GUI_NAMEPLATE_CASTBAR_NAME = "Afficher le nom du sort"
-L_GUI_NAMEPLATE_CLASS_ICON = "Icône de classe en JcJ"
-L_GUI_NAMEPLATE_NAME_ABBREV = "Afficher les noms abrégés"
-L_GUI_NAMEPLATE_CLAMP = "Afficher les barres en haut de l'écran quand celles-ci sont au delà de la vision"
-L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Affiche les affaiblissements (Les noms abrégés doivent être désactivés)"
-L_GUI_NAMEPLATE_SHOW_BUFFS = "Afficher les améliorations au dessus des barres des alliés (contenu dans la liste)"
-L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Taille des affaiblissements"
-L_GUI_NAMEPLATE_HEALER_ICON = "Affiche une icône de soigneur sur toutes les barres de vie des soigneurs ennemis dans les champs de bataille"
-L_GUI_NAMEPLATE_TOTEM_ICONS = "Afficher une icone au dessus des barres de vie des totems ennemis"
-L_GUI_NAMEPLATE_THREAT = "Activer la gestion de la menace, change automatiquement selon votre rôle"
-L_GUI_NAMEPLATE_GOOD_COLOR = "Bonne couleur de menace, dépend de si vous êtes un tank ou dps/heal"
-L_GUI_NAMEPLATE_NEAR_COLOR = "Perte/Gain de couleur de menace"
-L_GUI_NAMEPLATE_BAD_COLOR = "Mauvaise couleur de menace, dépend de si vous êtes un tank ou dps/heal"
-L_GUI_NAMEPLATE_OFFTANK_COLOR = "Coloration de la menace du tank secondaire"
-
--- Auras/Buffs/Debuffs
-L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size" -- Need review
-L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "Taille des buffs du joueur"
-L_GUI_AURA_SHOW_SPIRAL = "Spirale sur les icones d'aura"
-L_GUI_AURA_SHOW_TIMER = "Afficher le cooldown des icones d'aura"
-L_GUI_AURA_PLAYER_AURAS = "Auras sur la barre du joueur"
-L_GUI_AURA_TARGET_AURAS = "Auras sur la barre de cible"
-L_GUI_AURA_FOCUS_DEBUFFS = "Afficher les debuffs du focus"
-L_GUI_AURA_FOT_DEBUFFS = "Afficher les debuffs de la cible du focus"
-L_GUI_AURA_PET_DEBUFFS = "Afficher les debuffs du pet"
-L_GUI_AURA_TOT_DEBUFFS = "Afficher les debuffs de la cible de la cible"
-L_GUI_AURA_BOSS_BUFFS = "Afficher les améliorations sur le cadre du Boss"
-L_GUI_AURA_PLAYER_AURA_ONLY = "Afficher seulement ses propres debuffs sur la cible"
-L_GUI_AURA_DEBUFF_COLOR_TYPE = "Coleur de debuff par type"
-L_GUI_AURA_CAST_BY = "Voir qui a jeté un buff / debuff sur son tooltip"
-L_GUI_AURA_CLASSCOLOR_BORDER = "Active la couleur de votre classe pour la bordure de vos buffs"
 
 -- Filger
 L_GUI_FILGER = "Timers (Filger)" -- Need review

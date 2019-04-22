@@ -220,6 +220,84 @@ L_GUI_CHAT_TABS_MOUSEOVER = "Linguette delle chats al passaggio del mouse"
 L_GUI_CHAT_STICKY = "Ricorda l'ultimo canale"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "Riunisce lo spam di un contatore dei danni in un singolo link"
 
+-- Nameplate options
+L_GUI_NAMEPLATE_SUBTEXT = "Nameplates settings" -- Need review
+L_GUI_NAMEPLATE_ENABLE = "Attiva le barre delle unità"
+L_GUI_NAMEPLATE_COMBAT = "Mostra automaticamente le barre delle unità in combattimento"
+L_GUI_NAMEPLATE_HEALTH = "Valore numerico della salute"
+L_GUI_NAMEPLATE_HEIGHT = "Altezza delle barre delle unità"
+L_GUI_NAMEPLATE_WIDTH = "Larghezza delle barre delle unità"
+L_GUI_NAMEPLATE_DISTANCE = "Display range" -- Need review
+L_GUI_NAMEPLATE_AD_HEIGHT = "Additional height" -- Need review
+L_GUI_NAMEPLATE_AD_WIDTH = "Additional width" -- Need review
+L_GUI_NAMEPLATE_CASTBAR_NAME = "Mostra il nome di incantesimi/abilità sulle barre incantesimi"
+L_GUI_NAMEPLATE_CLASS_ICON = "Icone delle classi in PvP"
+L_GUI_NAMEPLATE_NAME_ABBREV = "Mostra nomi abbreviati"
+L_GUI_NAMEPLATE_CLAMP = "Aggancia le barre delle unità in cima allo schermo quando sono fuori portata visiva"
+L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Mostra le penalità sulle barre delle unità (l'ozpione 'Mostra nomi abbreviati' deve essere disabilitata)"
+L_GUI_NAMEPLATE_SHOW_BUFFS = "Mostra i benefici (da un elenco) sopra la barra la barra del giocatore"
+L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Dimensioni delle penalità sulle barre delle unità"
+L_GUI_NAMEPLATE_HEALER_ICON = "Nei Campi di Battaglia, mostra un'icona 'guaritore' accanto alle barre delle unità di tutti i guaritori nemici"
+L_GUI_NAMEPLATE_TOTEM_ICONS = "Mostra un’icona sopra la barra dei totem nemici"
+L_GUI_NAMEPLATE_THREAT = "Attiva il sensore di rilevamento minaccia (si adatta automaticamente al tuo ruolo)"
+L_GUI_NAMEPLATE_GOOD_COLOR = "Colore se il PG è minacciato (in base a difensore o assaltatore/guaritore)"
+L_GUI_NAMEPLATE_NEAR_COLOR = "Colore per perdita/guadagno minaccia"
+L_GUI_NAMEPLATE_BAD_COLOR = "Colore se il PG non è minacciato (se difensore o assaltatore/guaritore)"
+L_GUI_NAMEPLATE_OFFTANK_COLOR = "Colore della minaccia per il difensore secondario"
+
+-- Combat text options
+L_GUI_COMBATTEXT = "Testo di combattimento"
+L_GUI_COMBATTEXT_SUBTEXT = "For moving type in the chat '/xct'" -- Need review
+L_GUI_COMBATTEXT_ENABLE = "Attiva il testo di combattimento"
+L.combattext_blizz_head_numbers = "Enable Blizzard combat text" -- Need review
+L.combattext_blizz_head_numbers_desc = "Usa il testo di combattimento della Blizzard per danni/cure"
+L.combattext_damage_style = "Change default combat font" -- Need review
+L.combattext_damage_style_desc = "Cambia il carattere di base per danni/cure (è necessario riavviare il gioco)"
+L_GUI_COMBATTEXT_DAMAGE = "Mostra i danni in un proprio riquadro dedicato"
+L_GUI_COMBATTEXT_HEALING = "Mostra le cure in un proprio riquadro dedicato"
+L_GUI_COMBATTEXT_HOTS = "Mostra gli effetti delle cure periodiche nel riquadro delle cure"
+L_GUI_COMBATTEXT_OVERHEALING = "Mostra le cure in eccesso"
+L_GUI_COMBATTEXT_PET_DAMAGE = "Mostra i danni del tuo famiglio"
+L_GUI_COMBATTEXT_DOT_DAMAGE = "Mostra i tuoi danni nel tempo"
+L_GUI_COMBATTEXT_DAMAGE_COLOR = "Colora i numeri dei danni in base alla scuola di magia"
+L_GUI_COMBATTEXT_CRIT_PREFIX = "Simbolo che sarà aggiunto prima dei critici"
+L_GUI_COMBATTEXT_CRIT_POSTFIX = "Simbolo che sarà aggiunto dopo i critici"
+L_GUI_COMBATTEXT_ICONS = "Mostra le icone dei danni"
+L_GUI_COMBATTEXT_ICON_SIZE = "Icon size" -- Need review
+L_GUI_COMBATTEXT_ICON_SIZE_DESC = "Dimensioni icone danni (influenza anche le dimensioni del carattere dei danni)"
+L_GUI_COMBATTEXT_TRESHOLD = "Danno minimo da mostrare nel riquadro dei danni"
+L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Cure minime da mostrare nei messaggi delle cure"
+L_GUI_COMBATTEXT_SCROLLABLE = "Attiva la 'modalità scorrimento': consente di scorrere tra le righe dei riquadri con la rotellina del mouse"
+L_GUI_COMBATTEXT_MAX_LINES = "Max lines" -- Need review
+L_GUI_COMBATTEXT_MAX_LINES_DESC = "Massimo numero righe da ricordare in 'scorrimento' (più righe = più memoria)"
+L_GUI_COMBATTEXT_TIME_VISIBLE = "Time" -- Need review
+L_GUI_COMBATTEXT_TIME_VISIBLE_DESC = "Tempo (in secondi) in cui un singolo messaggio sarà visibile"
+L_GUI_COMBATTEXT_DK_RUNES = "Mostra la ricarica delle rune dei cavalieri della morte"
+L_GUI_COMBATTEXT_KILLINGBLOW = "Comunica i tuoi colpi di grazia"
+L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Unisci lo spam per danni multipli a più bersagli in un singolo messaggio"
+L_GUI_COMBATTEXT_MERGE_MELEE = "Unifica lo spam di attacchi automatici multipli"
+L_GUI_COMBATTEXT_DISPEL = "Comunica le tue dissoluzioni (dispels)"
+L_GUI_COMBATTEXT_INTERRUPT = "Comunica le tue interruzioni (interrupts)"
+L_GUI_COMBATTEXT_DIRECTION = "Change scrolling direction from bottom to top" -- Need review
+L_GUI_COMBATTEXT_SHORT_NUMBERS = "Usa abbreviazioni numeriche ('25.3k' invece di '25342')"
+
+-- Auras/Buffs/Debuffs
+L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size" -- Need review
+L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "Dimensione benefici giocatore"
+L_GUI_AURA_SHOW_SPIRAL = "Spirale trascorrere tempo sulle icone delle auree"
+L_GUI_AURA_SHOW_TIMER = "Mostra il timer del recupero sulle icone delle auree"
+L_GUI_AURA_PLAYER_AURAS = "Auree sul riquadro del giocatore"
+L_GUI_AURA_TARGET_AURAS = "Auree sul riquadro del bersaglio"
+L_GUI_AURA_FOCUS_DEBUFFS = "Penalità sul riquadro del focus"
+L_GUI_AURA_FOT_DEBUFFS = "Penalità sul riquadro del bersaglio del focus"
+L_GUI_AURA_PET_DEBUFFS = "Penalità sul riquadro del famiglio"
+L_GUI_AURA_TOT_DEBUFFS = "Penalità sul riquadro del bersaglio del bersaglio"
+L_GUI_AURA_BOSS_BUFFS = "Benefici sul riquadro del boss"
+L_GUI_AURA_PLAYER_AURA_ONLY = "Mostra solo le tue penalità sul riquadro del bersaglio"
+L_GUI_AURA_DEBUFF_COLOR_TYPE = "Colora le penalità a seconda del tipo"
+L_GUI_AURA_CAST_BY = "Mostra chi ha lanciato un beneficio o una penalità nei suggerimenti"
+L_GUI_AURA_CLASSCOLOR_BORDER = "Colora i bordi dei benefici del giocatore in base al colore della classi"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -261,42 +339,6 @@ L.automation_buff_on_scroll_desc = "If the buff from the list is not applied to 
 L_GUI_AUTOMATION_OPEN_ITEMS = "Apertura automatica degli oggetti nelle sacche"
 L.automation_invite_keyword = "Parola chiave per invitare"
 L.automation_invite_keyword_desc = "When player whisper you keyword he will be invited in your group. \nFor enable - type '/ainv'. Also after the command, you can write your word '/ainv inv'" -- Need review
-
--- Combat text options
-L_GUI_COMBATTEXT = "Testo di combattimento"
-L_GUI_COMBATTEXT_SUBTEXT = "For moving type in the chat '/xct'" -- Need review
-L_GUI_COMBATTEXT_ENABLE = "Attiva il testo di combattimento"
-L.combattext_blizz_head_numbers = "Enable Blizzard combat text" -- Need review
-L.combattext_blizz_head_numbers_desc = "Usa il testo di combattimento della Blizzard per danni/cure"
-L.combattext_damage_style = "Change default combat font" -- Need review
-L.combattext_damage_style_desc = "Cambia il carattere di base per danni/cure (è necessario riavviare il gioco)"
-L_GUI_COMBATTEXT_DAMAGE = "Mostra i danni in un proprio riquadro dedicato"
-L_GUI_COMBATTEXT_HEALING = "Mostra le cure in un proprio riquadro dedicato"
-L_GUI_COMBATTEXT_HOTS = "Mostra gli effetti delle cure periodiche nel riquadro delle cure"
-L_GUI_COMBATTEXT_OVERHEALING = "Mostra le cure in eccesso"
-L_GUI_COMBATTEXT_PET_DAMAGE = "Mostra i danni del tuo famiglio"
-L_GUI_COMBATTEXT_DOT_DAMAGE = "Mostra i tuoi danni nel tempo"
-L_GUI_COMBATTEXT_DAMAGE_COLOR = "Colora i numeri dei danni in base alla scuola di magia"
-L_GUI_COMBATTEXT_CRIT_PREFIX = "Simbolo che sarà aggiunto prima dei critici"
-L_GUI_COMBATTEXT_CRIT_POSTFIX = "Simbolo che sarà aggiunto dopo i critici"
-L_GUI_COMBATTEXT_ICONS = "Mostra le icone dei danni"
-L_GUI_COMBATTEXT_ICON_SIZE = "Icon size" -- Need review
-L_GUI_COMBATTEXT_ICON_SIZE_DESC = "Dimensioni icone danni (influenza anche le dimensioni del carattere dei danni)"
-L_GUI_COMBATTEXT_TRESHOLD = "Danno minimo da mostrare nel riquadro dei danni"
-L_GUI_COMBATTEXT_HEAL_TRESHOLD = "Cure minime da mostrare nei messaggi delle cure"
-L_GUI_COMBATTEXT_SCROLLABLE = "Attiva la 'modalità scorrimento': consente di scorrere tra le righe dei riquadri con la rotellina del mouse"
-L_GUI_COMBATTEXT_MAX_LINES = "Max lines" -- Need review
-L_GUI_COMBATTEXT_MAX_LINES_DESC = "Massimo numero righe da ricordare in 'scorrimento' (più righe = più memoria)"
-L_GUI_COMBATTEXT_TIME_VISIBLE = "Time" -- Need review
-L_GUI_COMBATTEXT_TIME_VISIBLE_DESC = "Tempo (in secondi) in cui un singolo messaggio sarà visibile"
-L_GUI_COMBATTEXT_DK_RUNES = "Mostra la ricarica delle rune dei cavalieri della morte"
-L_GUI_COMBATTEXT_KILLINGBLOW = "Comunica i tuoi colpi di grazia"
-L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "Unisci lo spam per danni multipli a più bersagli in un singolo messaggio"
-L_GUI_COMBATTEXT_MERGE_MELEE = "Unifica lo spam di attacchi automatici multipli"
-L_GUI_COMBATTEXT_DISPEL = "Comunica le tue dissoluzioni (dispels)"
-L_GUI_COMBATTEXT_INTERRUPT = "Comunica le tue interruzioni (interrupts)"
-L_GUI_COMBATTEXT_DIRECTION = "Change scrolling direction from bottom to top" -- Need review
-L_GUI_COMBATTEXT_SHORT_NUMBERS = "Usa abbreviazioni numeriche ('25.3k' invece di '25342')"
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Promemoria benefici"
@@ -387,48 +429,6 @@ L_GUI_LOOT_ICON_SIZE = "Dimensioni delle icone"
 L_GUI_LOOT_WIDTH = "Larghezza del riquadro bottino"
 L_GUI_LOOT_AUTOGREED = "A livello massimo, attiva automaticamente la bramosia per gli oggetti verdi"
 L_GUI_LOOT_AUTODE = "'Auto-conferma' il disincantamento degli oggetti"
-
--- Nameplate options
-L_GUI_NAMEPLATE_SUBTEXT = "Nameplates settings" -- Need review
-L_GUI_NAMEPLATE_ENABLE = "Attiva le barre delle unità"
-L_GUI_NAMEPLATE_COMBAT = "Mostra automaticamente le barre delle unità in combattimento"
-L_GUI_NAMEPLATE_HEALTH = "Valore numerico della salute"
-L_GUI_NAMEPLATE_HEIGHT = "Altezza delle barre delle unità"
-L_GUI_NAMEPLATE_WIDTH = "Larghezza delle barre delle unità"
-L_GUI_NAMEPLATE_DISTANCE = "Display range" -- Need review
-L_GUI_NAMEPLATE_AD_HEIGHT = "Additional height" -- Need review
-L_GUI_NAMEPLATE_AD_WIDTH = "Additional width" -- Need review
-L_GUI_NAMEPLATE_CASTBAR_NAME = "Mostra il nome di incantesimi/abilità sulle barre incantesimi"
-L_GUI_NAMEPLATE_CLASS_ICON = "Icone delle classi in PvP"
-L_GUI_NAMEPLATE_NAME_ABBREV = "Mostra nomi abbreviati"
-L_GUI_NAMEPLATE_CLAMP = "Aggancia le barre delle unità in cima allo schermo quando sono fuori portata visiva"
-L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Mostra le penalità sulle barre delle unità (l'ozpione 'Mostra nomi abbreviati' deve essere disabilitata)"
-L_GUI_NAMEPLATE_SHOW_BUFFS = "Mostra i benefici (da un elenco) sopra la barra la barra del giocatore"
-L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Dimensioni delle penalità sulle barre delle unità"
-L_GUI_NAMEPLATE_HEALER_ICON = "Nei Campi di Battaglia, mostra un'icona 'guaritore' accanto alle barre delle unità di tutti i guaritori nemici"
-L_GUI_NAMEPLATE_TOTEM_ICONS = "Mostra un’icona sopra la barra dei totem nemici"
-L_GUI_NAMEPLATE_THREAT = "Attiva il sensore di rilevamento minaccia (si adatta automaticamente al tuo ruolo)"
-L_GUI_NAMEPLATE_GOOD_COLOR = "Colore se il PG è minacciato (in base a difensore o assaltatore/guaritore)"
-L_GUI_NAMEPLATE_NEAR_COLOR = "Colore per perdita/guadagno minaccia"
-L_GUI_NAMEPLATE_BAD_COLOR = "Colore se il PG non è minacciato (se difensore o assaltatore/guaritore)"
-L_GUI_NAMEPLATE_OFFTANK_COLOR = "Colore della minaccia per il difensore secondario"
-
--- Auras/Buffs/Debuffs
-L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size" -- Need review
-L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "Dimensione benefici giocatore"
-L_GUI_AURA_SHOW_SPIRAL = "Spirale trascorrere tempo sulle icone delle auree"
-L_GUI_AURA_SHOW_TIMER = "Mostra il timer del recupero sulle icone delle auree"
-L_GUI_AURA_PLAYER_AURAS = "Auree sul riquadro del giocatore"
-L_GUI_AURA_TARGET_AURAS = "Auree sul riquadro del bersaglio"
-L_GUI_AURA_FOCUS_DEBUFFS = "Penalità sul riquadro del focus"
-L_GUI_AURA_FOT_DEBUFFS = "Penalità sul riquadro del bersaglio del focus"
-L_GUI_AURA_PET_DEBUFFS = "Penalità sul riquadro del famiglio"
-L_GUI_AURA_TOT_DEBUFFS = "Penalità sul riquadro del bersaglio del bersaglio"
-L_GUI_AURA_BOSS_BUFFS = "Benefici sul riquadro del boss"
-L_GUI_AURA_PLAYER_AURA_ONLY = "Mostra solo le tue penalità sul riquadro del bersaglio"
-L_GUI_AURA_DEBUFF_COLOR_TYPE = "Colora le penalità a seconda del tipo"
-L_GUI_AURA_CAST_BY = "Mostra chi ha lanciato un beneficio o una penalità nei suggerimenti"
-L_GUI_AURA_CLASSCOLOR_BORDER = "Colora i bordi dei benefici del giocatore in base al colore della classi"
 
 -- Filger
 L_GUI_FILGER = "Timers (Filger)"

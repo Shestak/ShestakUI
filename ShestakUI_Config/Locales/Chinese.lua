@@ -220,6 +220,84 @@ L_GUI_CHAT_TABS_MOUSEOVER = "鼠标悬停显示频道标签"
 L_GUI_CHAT_STICKY = "记住上一次使用的频道"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "在链接中合并垃圾邮件"
 
+-- Nameplate options
+L_GUI_NAMEPLATE_SUBTEXT = "Nameplates settings" -- Need review
+L_GUI_NAMEPLATE_ENABLE = "开启单位姓名版增强"
+L_GUI_NAMEPLATE_COMBAT = "战斗中自动显示单位姓名版"
+L_GUI_NAMEPLATE_HEALTH = "生命值以百分比显示"
+L_GUI_NAMEPLATE_HEIGHT = "单位姓名版高度"
+L_GUI_NAMEPLATE_WIDTH = "单位姓名版宽度"
+L_GUI_NAMEPLATE_DISTANCE = "Display range" -- Need review
+L_GUI_NAMEPLATE_AD_HEIGHT = "Additional height" -- Need review
+L_GUI_NAMEPLATE_AD_WIDTH = "Additional width" -- Need review
+L_GUI_NAMEPLATE_CASTBAR_NAME = "法术名称"
+L_GUI_NAMEPLATE_CLASS_ICON = "PvP时显示职业图标"
+L_GUI_NAMEPLATE_NAME_ABBREV = "名字缩写"
+L_GUI_NAMEPLATE_CLAMP = "堆叠视野外单位姓名版"
+L_GUI_NAMEPLATE_SHOW_DEBUFFS = "DeBuffs图标(需要关闭'名字缩写')"
+L_GUI_NAMEPLATE_SHOW_BUFFS = "在姓名版上方显示Buff"
+L_GUI_NAMEPLATE_DEBUFFS_SIZE = "DeBuffs大小"
+L_GUI_NAMEPLATE_HEALER_ICON = "战场中显示治疗职业图标"
+L_GUI_NAMEPLATE_TOTEM_ICONS = "在姓名版上方显示团队标记"
+L_GUI_NAMEPLATE_THREAT = "仇恨情况"
+L_GUI_NAMEPLATE_GOOD_COLOR = "安全仇恨颜色"
+L_GUI_NAMEPLATE_NEAR_COLOR = "临界仇恨颜色"
+L_GUI_NAMEPLATE_BAD_COLOR = "危险仇恨颜色"
+L_GUI_NAMEPLATE_OFFTANK_COLOR = "副坦仇恨颜色"
+
+-- Combat text options
+L_GUI_COMBATTEXT = "战斗文字"
+L_GUI_COMBATTEXT_SUBTEXT = "For moving type in the chat '/xct'" -- Need review
+L_GUI_COMBATTEXT_ENABLE = "启用xCT战斗信息"
+L.combattext_blizz_head_numbers = "Enable Blizzard combat text" -- Need review
+L.combattext_blizz_head_numbers_desc = "启用暴雪默认伤害/治疗模式(需关闭xCT战斗信息)"
+L.combattext_damage_style = "Change default combat font" -- Need review
+L.combattext_damage_style_desc = "改变模型顶部/玩家头像的伤害/治疗字体"
+L_GUI_COMBATTEXT_DAMAGE = "独立显示伤害输出"
+L_GUI_COMBATTEXT_HEALING = "独立显示治疗输出"
+L_GUI_COMBATTEXT_HOTS = "Hot造成的治疗"
+L_GUI_COMBATTEXT_OVERHEALING = "过量治疗输出"
+L_GUI_COMBATTEXT_PET_DAMAGE = "宠物伤害输出"
+L_GUI_COMBATTEXT_DOT_DAMAGE = "Dot造成的伤害"
+L_GUI_COMBATTEXT_DAMAGE_COLOR = "伤害文字按法术类型著色"
+L_GUI_COMBATTEXT_CRIT_PREFIX = "暴击时文本左侧修饰符号"
+L_GUI_COMBATTEXT_CRIT_POSTFIX = "暴击时文本右侧修饰符号"
+L_GUI_COMBATTEXT_ICONS = "伤害输出技能图标"
+L_GUI_COMBATTEXT_ICON_SIZE = "Icon size" -- Need review
+L_GUI_COMBATTEXT_ICON_SIZE_DESC = "伤害输出图标大小"
+L_GUI_COMBATTEXT_TRESHOLD = "伤害输出最小阈值"
+L_GUI_COMBATTEXT_HEAL_TRESHOLD = "承受/输出治疗最小阈值"
+L_GUI_COMBATTEXT_SCROLLABLE = "允许鼠标调整滚动区域"
+L_GUI_COMBATTEXT_MAX_LINES = "Max lines" -- Need review
+L_GUI_COMBATTEXT_MAX_LINES_DESC = "滚动区域显示最多行数"
+L_GUI_COMBATTEXT_TIME_VISIBLE = "Time" -- Need review
+L_GUI_COMBATTEXT_TIME_VISIBLE_DESC = "信息保留时间(秒)"
+L_GUI_COMBATTEXT_DK_RUNES = "死亡骑士符文恢复"
+L_GUI_COMBATTEXT_KILLINGBLOW = "击杀信息"
+L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "将AOE伤害合并为一条信息"
+L_GUI_COMBATTEXT_MERGE_MELEE = "将多个自动攻击伤害合并为一条信息"
+L_GUI_COMBATTEXT_DISPEL = "当你驱散成功时提示"
+L_GUI_COMBATTEXT_INTERRUPT = "当你打断成功时提示"
+L_GUI_COMBATTEXT_DIRECTION = "Change scrolling direction from bottom to top" -- Need review
+L_GUI_COMBATTEXT_SHORT_NUMBERS = "数值以K为单位显示"
+
+-- Auras/Buffs/Debuffs
+L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size" -- Need review
+L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "玩家Buffs图标大小"
+L_GUI_AURA_SHOW_SPIRAL = "漩涡冷却样式"
+L_GUI_AURA_SHOW_TIMER = "层数堆叠"
+L_GUI_AURA_PLAYER_AURAS = "玩家显示法术效果"
+L_GUI_AURA_TARGET_AURAS = "目标显示法术效果"
+L_GUI_AURA_FOCUS_DEBUFFS = "焦点显示DeBuffs"
+L_GUI_AURA_FOT_DEBUFFS = "焦点目标显示DeBuffs"
+L_GUI_AURA_PET_DEBUFFS = "宠物显示DeBuffs"
+L_GUI_AURA_TOT_DEBUFFS = "目标的目标显示DeBuffs"
+L_GUI_AURA_BOSS_BUFFS = "Boss显示Buffs"
+L_GUI_AURA_PLAYER_AURA_ONLY = "目标只显示自身施放的DeBuffs"
+L_GUI_AURA_DEBUFF_COLOR_TYPE = "DeBuffs按法术类型著色"
+L_GUI_AURA_CAST_BY = "鼠标提示中,显示Buffs/DeBuffs提供者"
+L_GUI_AURA_CLASSCOLOR_BORDER = "自身Buffs图标边框按职业著色"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -261,42 +339,6 @@ L.automation_buff_on_scroll_desc = "If the buff from the list is not applied to 
 L_GUI_AUTOMATION_OPEN_ITEMS = "自动打开背包中的封装物品"
 L.automation_invite_keyword = "自动邀请关键字"
 L.automation_invite_keyword_desc = "When player whisper you keyword he will be invited in your group. \nFor enable - type '/ainv'. Also after the command, you can write your word '/ainv inv'" -- Need review
-
--- Combat text options
-L_GUI_COMBATTEXT = "战斗文字"
-L_GUI_COMBATTEXT_SUBTEXT = "For moving type in the chat '/xct'" -- Need review
-L_GUI_COMBATTEXT_ENABLE = "启用xCT战斗信息"
-L.combattext_blizz_head_numbers = "Enable Blizzard combat text" -- Need review
-L.combattext_blizz_head_numbers_desc = "启用暴雪默认伤害/治疗模式(需关闭xCT战斗信息)"
-L.combattext_damage_style = "Change default combat font" -- Need review
-L.combattext_damage_style_desc = "改变模型顶部/玩家头像的伤害/治疗字体"
-L_GUI_COMBATTEXT_DAMAGE = "独立显示伤害输出"
-L_GUI_COMBATTEXT_HEALING = "独立显示治疗输出"
-L_GUI_COMBATTEXT_HOTS = "Hot造成的治疗"
-L_GUI_COMBATTEXT_OVERHEALING = "过量治疗输出"
-L_GUI_COMBATTEXT_PET_DAMAGE = "宠物伤害输出"
-L_GUI_COMBATTEXT_DOT_DAMAGE = "Dot造成的伤害"
-L_GUI_COMBATTEXT_DAMAGE_COLOR = "伤害文字按法术类型著色"
-L_GUI_COMBATTEXT_CRIT_PREFIX = "暴击时文本左侧修饰符号"
-L_GUI_COMBATTEXT_CRIT_POSTFIX = "暴击时文本右侧修饰符号"
-L_GUI_COMBATTEXT_ICONS = "伤害输出技能图标"
-L_GUI_COMBATTEXT_ICON_SIZE = "Icon size" -- Need review
-L_GUI_COMBATTEXT_ICON_SIZE_DESC = "伤害输出图标大小"
-L_GUI_COMBATTEXT_TRESHOLD = "伤害输出最小阈值"
-L_GUI_COMBATTEXT_HEAL_TRESHOLD = "承受/输出治疗最小阈值"
-L_GUI_COMBATTEXT_SCROLLABLE = "允许鼠标调整滚动区域"
-L_GUI_COMBATTEXT_MAX_LINES = "Max lines" -- Need review
-L_GUI_COMBATTEXT_MAX_LINES_DESC = "滚动区域显示最多行数"
-L_GUI_COMBATTEXT_TIME_VISIBLE = "Time" -- Need review
-L_GUI_COMBATTEXT_TIME_VISIBLE_DESC = "信息保留时间(秒)"
-L_GUI_COMBATTEXT_DK_RUNES = "死亡骑士符文恢复"
-L_GUI_COMBATTEXT_KILLINGBLOW = "击杀信息"
-L_GUI_COMBATTEXT_MERGE_AOE_SPAM = "将AOE伤害合并为一条信息"
-L_GUI_COMBATTEXT_MERGE_MELEE = "将多个自动攻击伤害合并为一条信息"
-L_GUI_COMBATTEXT_DISPEL = "当你驱散成功时提示"
-L_GUI_COMBATTEXT_INTERRUPT = "当你打断成功时提示"
-L_GUI_COMBATTEXT_DIRECTION = "Change scrolling direction from bottom to top" -- Need review
-L_GUI_COMBATTEXT_SHORT_NUMBERS = "数值以K为单位显示"
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Buff提示"
@@ -387,48 +429,6 @@ L_GUI_LOOT_ICON_SIZE = "拾取框架图标大小"
 L_GUI_LOOT_WIDTH = "拾取框架宽度"
 L_GUI_LOOT_AUTOGREED = "满级后自动贪婪绿色物品"
 L_GUI_LOOT_AUTODE = "自动选择分解"
-
--- Nameplate options
-L_GUI_NAMEPLATE_SUBTEXT = "Nameplates settings" -- Need review
-L_GUI_NAMEPLATE_ENABLE = "开启单位姓名版增强"
-L_GUI_NAMEPLATE_COMBAT = "战斗中自动显示单位姓名版"
-L_GUI_NAMEPLATE_HEALTH = "生命值以百分比显示"
-L_GUI_NAMEPLATE_HEIGHT = "单位姓名版高度"
-L_GUI_NAMEPLATE_WIDTH = "单位姓名版宽度"
-L_GUI_NAMEPLATE_DISTANCE = "Display range" -- Need review
-L_GUI_NAMEPLATE_AD_HEIGHT = "Additional height" -- Need review
-L_GUI_NAMEPLATE_AD_WIDTH = "Additional width" -- Need review
-L_GUI_NAMEPLATE_CASTBAR_NAME = "法术名称"
-L_GUI_NAMEPLATE_CLASS_ICON = "PvP时显示职业图标"
-L_GUI_NAMEPLATE_NAME_ABBREV = "名字缩写"
-L_GUI_NAMEPLATE_CLAMP = "堆叠视野外单位姓名版"
-L_GUI_NAMEPLATE_SHOW_DEBUFFS = "DeBuffs图标(需要关闭'名字缩写')"
-L_GUI_NAMEPLATE_SHOW_BUFFS = "在姓名版上方显示Buff"
-L_GUI_NAMEPLATE_DEBUFFS_SIZE = "DeBuffs大小"
-L_GUI_NAMEPLATE_HEALER_ICON = "战场中显示治疗职业图标"
-L_GUI_NAMEPLATE_TOTEM_ICONS = "在姓名版上方显示团队标记"
-L_GUI_NAMEPLATE_THREAT = "仇恨情况"
-L_GUI_NAMEPLATE_GOOD_COLOR = "安全仇恨颜色"
-L_GUI_NAMEPLATE_NEAR_COLOR = "临界仇恨颜色"
-L_GUI_NAMEPLATE_BAD_COLOR = "危险仇恨颜色"
-L_GUI_NAMEPLATE_OFFTANK_COLOR = "副坦仇恨颜色"
-
--- Auras/Buffs/Debuffs
-L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size" -- Need review
-L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "玩家Buffs图标大小"
-L_GUI_AURA_SHOW_SPIRAL = "漩涡冷却样式"
-L_GUI_AURA_SHOW_TIMER = "层数堆叠"
-L_GUI_AURA_PLAYER_AURAS = "玩家显示法术效果"
-L_GUI_AURA_TARGET_AURAS = "目标显示法术效果"
-L_GUI_AURA_FOCUS_DEBUFFS = "焦点显示DeBuffs"
-L_GUI_AURA_FOT_DEBUFFS = "焦点目标显示DeBuffs"
-L_GUI_AURA_PET_DEBUFFS = "宠物显示DeBuffs"
-L_GUI_AURA_TOT_DEBUFFS = "目标的目标显示DeBuffs"
-L_GUI_AURA_BOSS_BUFFS = "Boss显示Buffs"
-L_GUI_AURA_PLAYER_AURA_ONLY = "目标只显示自身施放的DeBuffs"
-L_GUI_AURA_DEBUFF_COLOR_TYPE = "DeBuffs按法术类型著色"
-L_GUI_AURA_CAST_BY = "鼠标提示中,显示Buffs/DeBuffs提供者"
-L_GUI_AURA_CLASSCOLOR_BORDER = "自身Buffs图标边框按职业著色"
 
 -- Filger
 L_GUI_FILGER = "法术监视"
