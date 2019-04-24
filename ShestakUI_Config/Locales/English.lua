@@ -320,6 +320,51 @@ L_GUI_AURA_DEBUFF_COLOR_TYPE = "Color debuff by type"
 L_GUI_AURA_CAST_BY = "Show who cast a buff/debuff in its tooltip"
 L_GUI_AURA_CLASSCOLOR_BORDER = "Enable classcolor border for player buffs"
 
+-- Bag options
+L_GUI_BAGS = "Bags"
+L_GUI_BAGS_SUBTEXT = "Changing the built-in bags."
+L_GUI_BAGS_ENABLE = "Enable bags"
+L_GUI_BAGS_ILVL = "Show item level for weapons and armor"
+L_GUI_BAGS_BUTTON_SIZE = "Buttons size"
+L_GUI_BAGS_BUTTON_SPACE = "Buttons space"
+L_GUI_BAGS_BANK = "Number of columns in bank"
+L_GUI_BAGS_BAG = "Number of columns in main bag"
+
+-- Minimap options
+L_GUI_MINIMAP_SUBTEXT = "Minimap settings."
+L_GUI_MINIMAP_ENABLE = "Enable minimap"
+L_GUI_MINIMAP_ICON = "Tracking icon"
+L_GUI_GARRISON_ICON = "Garrison icon"
+L_GUI_MINIMAP_SIZE = "Map size"
+L_GUI_MINIMAP_HIDE_COMBAT = "Hide minimap in combat"
+L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu"
+L.minimap_bg_map_stylization = "BG map stylization"
+L.minimap_fog_of_war = "Remove fog of war on World Map"
+L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war"
+
+-- Loot options
+L_GUI_LOOT_SUBTEXT = "Settings for loot frame."
+L_GUI_LOOT_ENABLE = "Enable loot frame"
+L_GUI_LOOT_ROLL_ENABLE = "Enable group loot frame"
+L_GUI_LOOT_ICON_SIZE = "Icon size"
+L_GUI_LOOT_WIDTH = "Loot frame width"
+L_GUI_LOOT_AUTOGREED = "Enable auto-greed/disenchant for green item at max level"
+L_GUI_LOOT_AUTODE = "Auto confirm disenchant"
+
+-- Filger
+L_GUI_FILGER = "Timers (Filger)"
+L_GUI_FILGER_SUBTEXT = "Filger - analogue WeakAuras, but more simple and easy. Allows you to display in the form of icons and bars your auras and timers."
+L_GUI_FILGER_ENABLE = "Enable Filger"
+L_GUI_FILGER_TEST_MODE = "Test icon mode"
+L_GUI_FILGER_MAX_TEST_ICON = "The number of icons to the test"
+L_GUI_FILGER_SHOW_TOOLTIP = "Show tooltip"
+L_GUI_FILGER_DISABLE_CD = "Disable cooldowns"
+L_GUI_FILGER_DISABLE_PVP = "Disable PvP debuffs on Player and Target"
+L_GUI_FILGER_EXPIRATION = "Sort cooldowns by expiration time"
+L_GUI_FILGER_BUFFS_SIZE = "Buffs size"
+L_GUI_FILGER_COOLDOWN_SIZE = "Cooldowns size"
+L_GUI_FILGER_PVP_SIZE = "PvP debuffs size"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Announcements"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items."
@@ -420,51 +465,6 @@ L_GUI_THREAT_HEIGHT = "Threat bars height"
 L_GUI_THREAT_WIDTH = "Threat bars width"
 L_GUI_THREAT_ROWS = "Number of threat bars"
 L_GUI_THREAT_HIDE_SOLO = "Show only in party/raid"
-
--- Bag options
-L_GUI_BAGS = "Bags"
-L_GUI_BAGS_SUBTEXT = "Changing the built-in bags."
-L_GUI_BAGS_ENABLE = "Enable bags"
-L_GUI_BAGS_ILVL = "Show item level for weapons and armor"
-L_GUI_BAGS_BUTTON_SIZE = "Buttons size"
-L_GUI_BAGS_BUTTON_SPACE = "Buttons space"
-L_GUI_BAGS_BANK = "Number of columns in bank"
-L_GUI_BAGS_BAG = "Number of columns in main bag"
-
--- Minimap options
-L_GUI_MINIMAP_SUBTEXT = "Minimap settings."
-L_GUI_MINIMAP_ENABLE = "Enable minimap"
-L_GUI_MINIMAP_ICON = "Tracking icon"
-L_GUI_GARRISON_ICON = "Garrison icon"
-L_GUI_MINIMAP_SIZE = "Map size"
-L_GUI_MINIMAP_HIDE_COMBAT = "Hide minimap in combat"
-L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu"
-L.minimap_bg_map_stylization = "BG map stylization"
-L.minimap_fog_of_war = "Remove fog of war on World Map"
-L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war"
-
--- Loot options
-L_GUI_LOOT_SUBTEXT = "Settings for loot frame."
-L_GUI_LOOT_ENABLE = "Enable loot frame"
-L_GUI_LOOT_ROLL_ENABLE = "Enable group loot frame"
-L_GUI_LOOT_ICON_SIZE = "Icon size"
-L_GUI_LOOT_WIDTH = "Loot frame width"
-L_GUI_LOOT_AUTOGREED = "Enable auto-greed/disenchant for green item at max level"
-L_GUI_LOOT_AUTODE = "Auto confirm disenchant"
-
--- Filger
-L_GUI_FILGER = "Timers (Filger)"
-L_GUI_FILGER_SUBTEXT = "Filger - analogue WeakAuras, but more simple and easy. Allows you to display in the form of icons and bars your auras and timers."
-L_GUI_FILGER_ENABLE = "Enable Filger"
-L_GUI_FILGER_TEST_MODE = "Test icon mode"
-L_GUI_FILGER_MAX_TEST_ICON = "The number of icons to the test"
-L_GUI_FILGER_SHOW_TOOLTIP = "Show tooltip"
-L_GUI_FILGER_DISABLE_CD = "Disable cooldowns"
-L_GUI_FILGER_DISABLE_PVP = "Disable PvP debuffs on Player and Target"
-L_GUI_FILGER_EXPIRATION = "Sort cooldowns by expiration time"
-L_GUI_FILGER_BUFFS_SIZE = "Buffs size"
-L_GUI_FILGER_COOLDOWN_SIZE = "Cooldowns size"
-L_GUI_FILGER_PVP_SIZE = "PvP debuffs size"
 
 -- Panel options
 L_GUI_TOP_PANEL = "Top Panel"

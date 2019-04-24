@@ -298,6 +298,51 @@ L_GUI_AURA_DEBUFF_COLOR_TYPE = "DeBuff按法術類型著色"
 L_GUI_AURA_CAST_BY = "提示Buff/DeBuff提供者"
 L_GUI_AURA_CLASSCOLOR_BORDER = "自身Buff圖示邊框按職業著色"
 
+-- Bag options
+L_GUI_BAGS = "背包"
+L_GUI_BAGS_SUBTEXT = "Changing the built-in bags." -- Need review
+L_GUI_BAGS_ENABLE = "開啟背包增強"
+L_GUI_BAGS_ILVL = "Show item level for weapons and armor" -- Need review
+L_GUI_BAGS_BUTTON_SIZE = "格子大小"
+L_GUI_BAGS_BUTTON_SPACE = "格子間隔"
+L_GUI_BAGS_BANK = "銀行每行格數"
+L_GUI_BAGS_BAG = "背包每行格數"
+
+-- Minimap options
+L_GUI_MINIMAP_SUBTEXT = "Minimap settings." -- Need review
+L_GUI_MINIMAP_ENABLE = "開啟迷你地圖增強"
+L_GUI_MINIMAP_ICON = "追蹤菜單"
+L_GUI_GARRISON_ICON = "Garrison icon" -- Need review
+L_GUI_MINIMAP_SIZE = "迷你地圖大小"
+L_GUI_MINIMAP_HIDE_COMBAT = "戰鬥中隱藏迷你地圖"
+L_GUI_MINIMAP_TOGGLE_MENU = "小地圖頂部快捷菜單"
+L.minimap_bg_map_stylization = "開啟戰場地圖增強"
+L.minimap_fog_of_war = "世界地圖全亮選項"
+L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war" -- Need review
+
+-- Loot options
+L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review
+L_GUI_LOOT_ENABLE = "開啟拾取增強"
+L_GUI_LOOT_ROLL_ENABLE = "團隊拾取框架增強"
+L_GUI_LOOT_ICON_SIZE = "拾取框架圖示大小"
+L_GUI_LOOT_WIDTH = "拾取框架寬度"
+L_GUI_LOOT_AUTOGREED = "滿級后自動貪婪綠色物品"
+L_GUI_LOOT_AUTODE = "自動選擇分解"
+
+-- Filger
+L_GUI_FILGER = "Timers (Filger)" -- Need review
+L_GUI_FILGER_SUBTEXT = "Filger - analogue WeakAuras, but more simple and easy. Allows you to display in the form of icons and bars your auras and timers." -- Need review
+L_GUI_FILGER_ENABLE = "開啟Filger" -- Need review
+L_GUI_FILGER_TEST_MODE = "調試模式"
+L_GUI_FILGER_MAX_TEST_ICON = "調試模式圖示數量"
+L_GUI_FILGER_SHOW_TOOLTIP = "開啟提示"
+L_GUI_FILGER_DISABLE_CD = "關閉法術CD監視"
+L_GUI_FILGER_DISABLE_PVP = "Disable PvP debuffs on Player and Target" -- Need review
+L_GUI_FILGER_EXPIRATION = "Sort cooldowns by expiration time" -- Need review
+L_GUI_FILGER_BUFFS_SIZE = "Buffs圖示大小"
+L_GUI_FILGER_COOLDOWN_SIZE = "技能冷卻圖示大小"
+L_GUI_FILGER_PVP_SIZE = "PvP debuffs圖示大小"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告提醒"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -398,51 +443,6 @@ L_GUI_THREAT_HEIGHT = "仇恨欄高度"
 L_GUI_THREAT_WIDTH = "仇恨欄寬度"
 L_GUI_THREAT_ROWS = "仇恨欄數目"
 L_GUI_THREAT_HIDE_SOLO = "僅在隊伍/團隊中開啟"
-
--- Bag options
-L_GUI_BAGS = "背包"
-L_GUI_BAGS_SUBTEXT = "Changing the built-in bags." -- Need review
-L_GUI_BAGS_ENABLE = "開啟背包增強"
-L_GUI_BAGS_ILVL = "Show item level for weapons and armor" -- Need review
-L_GUI_BAGS_BUTTON_SIZE = "格子大小"
-L_GUI_BAGS_BUTTON_SPACE = "格子間隔"
-L_GUI_BAGS_BANK = "銀行每行格數"
-L_GUI_BAGS_BAG = "背包每行格數"
-
--- Minimap options
-L_GUI_MINIMAP_SUBTEXT = "Minimap settings." -- Need review
-L_GUI_MINIMAP_ENABLE = "開啟迷你地圖增強"
-L_GUI_MINIMAP_ICON = "追蹤菜單"
-L_GUI_GARRISON_ICON = "Garrison icon" -- Need review
-L_GUI_MINIMAP_SIZE = "迷你地圖大小"
-L_GUI_MINIMAP_HIDE_COMBAT = "戰鬥中隱藏迷你地圖"
-L_GUI_MINIMAP_TOGGLE_MENU = "小地圖頂部快捷菜單"
-L.minimap_bg_map_stylization = "開啟戰場地圖增強"
-L.minimap_fog_of_war = "世界地圖全亮選項"
-L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war" -- Need review
-
--- Loot options
-L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review
-L_GUI_LOOT_ENABLE = "開啟拾取增強"
-L_GUI_LOOT_ROLL_ENABLE = "團隊拾取框架增強"
-L_GUI_LOOT_ICON_SIZE = "拾取框架圖示大小"
-L_GUI_LOOT_WIDTH = "拾取框架寬度"
-L_GUI_LOOT_AUTOGREED = "滿級后自動貪婪綠色物品"
-L_GUI_LOOT_AUTODE = "自動選擇分解"
-
--- Filger
-L_GUI_FILGER = "Timers (Filger)" -- Need review
-L_GUI_FILGER_SUBTEXT = "Filger - analogue WeakAuras, but more simple and easy. Allows you to display in the form of icons and bars your auras and timers." -- Need review
-L_GUI_FILGER_ENABLE = "開啟Filger" -- Need review
-L_GUI_FILGER_TEST_MODE = "調試模式"
-L_GUI_FILGER_MAX_TEST_ICON = "調試模式圖示數量"
-L_GUI_FILGER_SHOW_TOOLTIP = "開啟提示"
-L_GUI_FILGER_DISABLE_CD = "關閉法術CD監視"
-L_GUI_FILGER_DISABLE_PVP = "Disable PvP debuffs on Player and Target" -- Need review
-L_GUI_FILGER_EXPIRATION = "Sort cooldowns by expiration time" -- Need review
-L_GUI_FILGER_BUFFS_SIZE = "Buffs圖示大小"
-L_GUI_FILGER_COOLDOWN_SIZE = "技能冷卻圖示大小"
-L_GUI_FILGER_PVP_SIZE = "PvP debuffs圖示大小"
 
 -- Panel options
 L_GUI_TOP_PANEL = "頂部信息面板"

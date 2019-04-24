@@ -298,6 +298,51 @@ L_GUI_AURA_DEBUFF_COLOR_TYPE = "Debuffs nach Art einfärben"
 L_GUI_AURA_CAST_BY = "Zeige im Tooltip an von wem ein Buff- bzw. Debuff gewirkt wurde"
 L_GUI_AURA_CLASSCOLOR_BORDER = "Aktiviere Klassenfarbe für Spielerbuffs"
 
+-- Bag options
+L_GUI_BAGS = "Taschen"
+L_GUI_BAGS_SUBTEXT = "Ändern der Blizzard Taschen."
+L_GUI_BAGS_ENABLE = "Taschen aktivieren"
+L_GUI_BAGS_ILVL = "Zeigt Itemlevel der Waffen & Rüstung"
+L_GUI_BAGS_BUTTON_SIZE = "Buttongröße"
+L_GUI_BAGS_BUTTON_SPACE = "Buttonabstand"
+L_GUI_BAGS_BANK = "Anzahl der Spalten in der Bank"
+L_GUI_BAGS_BAG = "Anzahl der Spalten in der Tasche"
+
+-- Minimap options
+L_GUI_MINIMAP_SUBTEXT = "Minimap Einstellungen."
+L_GUI_MINIMAP_ENABLE = "Minimap aktivieren"
+L_GUI_MINIMAP_ICON = "Aufspüren Symbol"
+L_GUI_GARRISON_ICON = "Garrisons Symbol"
+L_GUI_MINIMAP_SIZE = "Kartengröße"
+L_GUI_MINIMAP_HIDE_COMBAT = "Minimap im Kampf verstecken"
+L_GUI_MINIMAP_TOGGLE_MENU = "Zeige Toggle Menü"
+L.minimap_bg_map_stylization = "Schlachtfeldkarte Aussehn"
+L.minimap_fog_of_war = "Nebel des Krieges auf der Weltkarte"
+L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war" -- Need review
+
+-- Loot options
+L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review
+L_GUI_LOOT_ENABLE = "Plünderfenster aktivieren"
+L_GUI_LOOT_ROLL_ENABLE = "Gruppenplünderfenster aktivieren"
+L_GUI_LOOT_ICON_SIZE = "Symbolgröße"
+L_GUI_LOOT_WIDTH = "Breite des Plünderfensters"
+L_GUI_LOOT_AUTOGREED = "Aktiviere automatisches Würfeln (Gier) für Gegenstände, falls das höchste Level erreicht wurde."
+L_GUI_LOOT_AUTODE = "Entzauberung automatisch bestätigen"
+
+-- Filger
+L_GUI_FILGER = "Timers (Filger)"
+L_GUI_FILGER_SUBTEXT = "Filger - analogue WeakAuras, but more simple and easy. Allows you to display in the form of icons and bars your auras and timers." -- Need review
+L_GUI_FILGER_ENABLE = "Aktiviere Filger"
+L_GUI_FILGER_TEST_MODE = "Test Icon Mode"
+L_GUI_FILGER_MAX_TEST_ICON = "Anzahl der Icons im Test Mode"
+L_GUI_FILGER_SHOW_TOOLTIP = "Zeige Tooltips"
+L_GUI_FILGER_DISABLE_CD = "Deaktiviere Cooldowns"
+L_GUI_FILGER_DISABLE_PVP = "Disable PvP debuffs on Player and Target" -- Need review
+L_GUI_FILGER_EXPIRATION = "Sort cooldowns by expiration time" -- Need review
+L_GUI_FILGER_BUFFS_SIZE = "Buffs größe ändern"
+L_GUI_FILGER_COOLDOWN_SIZE = "Cooldowns größe ändern"
+L_GUI_FILGER_PVP_SIZE = "PvP Debuffs größe ändern"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigungen"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -398,51 +443,6 @@ L_GUI_THREAT_HEIGHT = "Höhe der Bedrohungsleisten"
 L_GUI_THREAT_WIDTH = "Breite der Bedrohungsleisten"
 L_GUI_THREAT_ROWS = "Anzahl der Bedrohungsleisten"
 L_GUI_THREAT_HIDE_SOLO = "Nur in Gruppen oder Schlachtzügen anzeigen"
-
--- Bag options
-L_GUI_BAGS = "Taschen"
-L_GUI_BAGS_SUBTEXT = "Ändern der Blizzard Taschen."
-L_GUI_BAGS_ENABLE = "Taschen aktivieren"
-L_GUI_BAGS_ILVL = "Zeigt Itemlevel der Waffen & Rüstung"
-L_GUI_BAGS_BUTTON_SIZE = "Buttongröße"
-L_GUI_BAGS_BUTTON_SPACE = "Buttonabstand"
-L_GUI_BAGS_BANK = "Anzahl der Spalten in der Bank"
-L_GUI_BAGS_BAG = "Anzahl der Spalten in der Tasche"
-
--- Minimap options
-L_GUI_MINIMAP_SUBTEXT = "Minimap Einstellungen."
-L_GUI_MINIMAP_ENABLE = "Minimap aktivieren"
-L_GUI_MINIMAP_ICON = "Aufspüren Symbol"
-L_GUI_GARRISON_ICON = "Garrisons Symbol"
-L_GUI_MINIMAP_SIZE = "Kartengröße"
-L_GUI_MINIMAP_HIDE_COMBAT = "Minimap im Kampf verstecken"
-L_GUI_MINIMAP_TOGGLE_MENU = "Zeige Toggle Menü"
-L.minimap_bg_map_stylization = "Schlachtfeldkarte Aussehn"
-L.minimap_fog_of_war = "Nebel des Krieges auf der Weltkarte"
-L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war" -- Need review
-
--- Loot options
-L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review
-L_GUI_LOOT_ENABLE = "Plünderfenster aktivieren"
-L_GUI_LOOT_ROLL_ENABLE = "Gruppenplünderfenster aktivieren"
-L_GUI_LOOT_ICON_SIZE = "Symbolgröße"
-L_GUI_LOOT_WIDTH = "Breite des Plünderfensters"
-L_GUI_LOOT_AUTOGREED = "Aktiviere automatisches Würfeln (Gier) für Gegenstände, falls das höchste Level erreicht wurde."
-L_GUI_LOOT_AUTODE = "Entzauberung automatisch bestätigen"
-
--- Filger
-L_GUI_FILGER = "Timers (Filger)"
-L_GUI_FILGER_SUBTEXT = "Filger - analogue WeakAuras, but more simple and easy. Allows you to display in the form of icons and bars your auras and timers." -- Need review
-L_GUI_FILGER_ENABLE = "Aktiviere Filger"
-L_GUI_FILGER_TEST_MODE = "Test Icon Mode"
-L_GUI_FILGER_MAX_TEST_ICON = "Anzahl der Icons im Test Mode"
-L_GUI_FILGER_SHOW_TOOLTIP = "Zeige Tooltips"
-L_GUI_FILGER_DISABLE_CD = "Deaktiviere Cooldowns"
-L_GUI_FILGER_DISABLE_PVP = "Disable PvP debuffs on Player and Target" -- Need review
-L_GUI_FILGER_EXPIRATION = "Sort cooldowns by expiration time" -- Need review
-L_GUI_FILGER_BUFFS_SIZE = "Buffs größe ändern"
-L_GUI_FILGER_COOLDOWN_SIZE = "Cooldowns größe ändern"
-L_GUI_FILGER_PVP_SIZE = "PvP Debuffs größe ändern"
 
 -- Panel options
 L_GUI_TOP_PANEL = "Oberes Panel"

@@ -298,6 +298,51 @@ L_GUI_AURA_DEBUFF_COLOR_TYPE = "Coleur de debuff par type"
 L_GUI_AURA_CAST_BY = "Voir qui a jeté un buff / debuff sur son tooltip"
 L_GUI_AURA_CLASSCOLOR_BORDER = "Active la couleur de votre classe pour la bordure de vos buffs"
 
+-- Bag options
+L_GUI_BAGS = "Sacs"
+L_GUI_BAGS_SUBTEXT = "Changing the built-in bags." -- Need review
+L_GUI_BAGS_ENABLE = "Activer les sacs"
+L_GUI_BAGS_ILVL = "Afficher le niveau d'objet des armes et armures"
+L_GUI_BAGS_BUTTON_SIZE = "Taille des boutons"
+L_GUI_BAGS_BUTTON_SPACE = "Espacement des boutons"
+L_GUI_BAGS_BANK = "Nombre de colonne pour la banque"
+L_GUI_BAGS_BAG = "Nombre de colonne pour les sacs"
+
+-- Minimap options
+L_GUI_MINIMAP_SUBTEXT = "Minimap settings." -- Need review
+L_GUI_MINIMAP_ENABLE = "Activer la minicarte"
+L_GUI_MINIMAP_ICON = "Icone de pistage"
+L_GUI_GARRISON_ICON = "Icone de la Garnison"
+L_GUI_MINIMAP_SIZE = "Taille de la minicarte"
+L_GUI_MINIMAP_HIDE_COMBAT = "Cacher la minimap en combat"
+L_GUI_MINIMAP_TOGGLE_MENU = "Montre le menu déroulant"
+L.minimap_bg_map_stylization = "Personnalisation de l'arrière plan de la carte"
+L.minimap_fog_of_war = "Retire le brouillard des zones non explorées sur la carte du monde"
+L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war" -- Need review
+
+-- Loot options
+L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review
+L_GUI_LOOT_ENABLE = "Activer la fenêtre de butin"
+L_GUI_LOOT_ROLL_ENABLE = "Activer la fenêtre de butin de groupe"
+L_GUI_LOOT_ICON_SIZE = "Taille de l'icône"
+L_GUI_LOOT_WIDTH = "Largeur de la fenêtre de butin"
+L_GUI_LOOT_AUTOGREED = "Activer désenchantement automatique pour les objets verts au niveau maximum"
+L_GUI_LOOT_AUTODE = "Confirmation automatique pour le désenchantement"
+
+-- Filger
+L_GUI_FILGER = "Timers (Filger)" -- Need review
+L_GUI_FILGER_SUBTEXT = "Filger - analogue WeakAuras, but more simple and easy. Allows you to display in the form of icons and bars your auras and timers." -- Need review
+L_GUI_FILGER_ENABLE = "Activer Filger"
+L_GUI_FILGER_TEST_MODE = "Activer le mode Test" -- Need review
+L_GUI_FILGER_MAX_TEST_ICON = "Nombre d'icône pour le mode Test"
+L_GUI_FILGER_SHOW_TOOLTIP = "Afficher l'info-bulle"
+L_GUI_FILGER_DISABLE_CD = "Ne pas afficher les temps de recharge"
+L_GUI_FILGER_DISABLE_PVP = "Disable PvP debuffs on Player and Target" -- Need review
+L_GUI_FILGER_EXPIRATION = "Sort cooldowns by expiration time" -- Need review
+L_GUI_FILGER_BUFFS_SIZE = "Taille des buffs"
+L_GUI_FILGER_COOLDOWN_SIZE = "Taille des temps de recharge"
+L_GUI_FILGER_PVP_SIZE = "Taille des debuffs JcJ"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -398,51 +443,6 @@ L_GUI_THREAT_HEIGHT = "Hauteur des barres de menace"
 L_GUI_THREAT_WIDTH = "Largeur des barres de menace"
 L_GUI_THREAT_ROWS = "Nombre de barres de menace"
 L_GUI_THREAT_HIDE_SOLO = "Afficher la menace seulement en groupe/raid"
-
--- Bag options
-L_GUI_BAGS = "Sacs"
-L_GUI_BAGS_SUBTEXT = "Changing the built-in bags." -- Need review
-L_GUI_BAGS_ENABLE = "Activer les sacs"
-L_GUI_BAGS_ILVL = "Afficher le niveau d'objet des armes et armures"
-L_GUI_BAGS_BUTTON_SIZE = "Taille des boutons"
-L_GUI_BAGS_BUTTON_SPACE = "Espacement des boutons"
-L_GUI_BAGS_BANK = "Nombre de colonne pour la banque"
-L_GUI_BAGS_BAG = "Nombre de colonne pour les sacs"
-
--- Minimap options
-L_GUI_MINIMAP_SUBTEXT = "Minimap settings." -- Need review
-L_GUI_MINIMAP_ENABLE = "Activer la minicarte"
-L_GUI_MINIMAP_ICON = "Icone de pistage"
-L_GUI_GARRISON_ICON = "Icone de la Garnison"
-L_GUI_MINIMAP_SIZE = "Taille de la minicarte"
-L_GUI_MINIMAP_HIDE_COMBAT = "Cacher la minimap en combat"
-L_GUI_MINIMAP_TOGGLE_MENU = "Montre le menu déroulant"
-L.minimap_bg_map_stylization = "Personnalisation de l'arrière plan de la carte"
-L.minimap_fog_of_war = "Retire le brouillard des zones non explorées sur la carte du monde"
-L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war" -- Need review
-
--- Loot options
-L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review
-L_GUI_LOOT_ENABLE = "Activer la fenêtre de butin"
-L_GUI_LOOT_ROLL_ENABLE = "Activer la fenêtre de butin de groupe"
-L_GUI_LOOT_ICON_SIZE = "Taille de l'icône"
-L_GUI_LOOT_WIDTH = "Largeur de la fenêtre de butin"
-L_GUI_LOOT_AUTOGREED = "Activer désenchantement automatique pour les objets verts au niveau maximum"
-L_GUI_LOOT_AUTODE = "Confirmation automatique pour le désenchantement"
-
--- Filger
-L_GUI_FILGER = "Timers (Filger)" -- Need review
-L_GUI_FILGER_SUBTEXT = "Filger - analogue WeakAuras, but more simple and easy. Allows you to display in the form of icons and bars your auras and timers." -- Need review
-L_GUI_FILGER_ENABLE = "Activer Filger"
-L_GUI_FILGER_TEST_MODE = "Activer le mode Test" -- Need review
-L_GUI_FILGER_MAX_TEST_ICON = "Nombre d'icône pour le mode Test"
-L_GUI_FILGER_SHOW_TOOLTIP = "Afficher l'info-bulle"
-L_GUI_FILGER_DISABLE_CD = "Ne pas afficher les temps de recharge"
-L_GUI_FILGER_DISABLE_PVP = "Disable PvP debuffs on Player and Target" -- Need review
-L_GUI_FILGER_EXPIRATION = "Sort cooldowns by expiration time" -- Need review
-L_GUI_FILGER_BUFFS_SIZE = "Taille des buffs"
-L_GUI_FILGER_COOLDOWN_SIZE = "Taille des temps de recharge"
-L_GUI_FILGER_PVP_SIZE = "Taille des debuffs JcJ"
 
 -- Panel options
 L_GUI_TOP_PANEL = "Panneau supérieur"

@@ -1201,6 +1201,120 @@ do
 	classcolor_border:SetPoint("TOPLEFT", cast_by, "BOTTOMLEFT", 0, 0)
 end
 
+-- Bag
+do
+	local parent = ShestakUIOptionsPanel.bag
+
+	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_BAGS_ENABLE)
+	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local ilvl = ns.CreateCheckBox(parent, "ilvl", L_GUI_BAGS_ILVL)
+	ilvl:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
+
+	local button_size = ns.CreateNumberSlider(parent, "button_size", nil, nil, 0, 40, 1, true, L_GUI_BAGS_BUTTON_SIZE)
+	button_size:SetPoint("TOPLEFT", ilvl, "BOTTOMLEFT", 0, -20)
+
+	local button_space = ns.CreateNumberSlider(parent, "button_space", nil, nil, 0, 7, 1, true, L_GUI_BAGS_BUTTON_SPACE)
+	button_space:SetPoint("TOPLEFT", button_size, "BOTTOMLEFT", 0, -20)
+
+	local bank_columns = ns.CreateNumberSlider(parent, "bank_columns", nil, nil, 0, 25, 1, true, L_GUI_BAGS_BANK)
+	bank_columns:SetPoint("TOPLEFT", button_space, "BOTTOMLEFT", 0, -20)
+
+	local bag_columns = ns.CreateNumberSlider(parent, "bag_columns", nil, nil, 0, 20, 1, true, L_GUI_BAGS_BAG)
+	bag_columns:SetPoint("TOPLEFT", bank_columns, "BOTTOMLEFT", 0, -20)
+end
+
+-- Minimap
+do
+	local parent = ShestakUIOptionsPanel.minimap
+
+	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_MINIMAP_ENABLE)
+	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local tracking_icon = ns.CreateCheckBox(parent, "tracking_icon", L_GUI_MINIMAP_ICON)
+	tracking_icon:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
+
+	local garrison_icon = ns.CreateCheckBox(parent, "garrison_icon", L_GUI_GARRISON_ICON)
+	garrison_icon:SetPoint("TOPLEFT", tracking_icon, "BOTTOMLEFT", 0, 0)
+
+	local size = ns.CreateNumberSlider(parent, "size", nil, nil, 0, 250, 1, true, L_GUI_MINIMAP_SIZE)
+	size:SetPoint("TOPLEFT", garrison_icon, "BOTTOMLEFT", 0, -20)
+
+	local hide_combat = ns.CreateCheckBox(parent, "hide_combat", L_GUI_MINIMAP_HIDE_COMBAT)
+	hide_combat:SetPoint("TOPLEFT", size, "BOTTOMLEFT", 0, -10)
+
+	local toggle_menu = ns.CreateCheckBox(parent, "toggle_menu", L_GUI_MINIMAP_TOGGLE_MENU)
+	toggle_menu:SetPoint("TOPLEFT", hide_combat, "BOTTOMLEFT", 0, 0)
+
+	-- Other
+	local subheader = ns.addSubCategory(parent, OTHER)
+	subheader:SetPoint("TOPLEFT", toggle_menu, "BOTTOMLEFT", 0, -16)
+
+	local bg_map_stylization = ns.CreateCheckBox(parent, "bg_map_stylization")
+	bg_map_stylization:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
+
+	local fog_of_war = ns.CreateCheckBox(parent, "fog_of_war")
+	fog_of_war:SetPoint("TOPLEFT", bg_map_stylization, "BOTTOMLEFT", 0, 0)
+end
+
+-- Loot
+do
+	local parent = ShestakUIOptionsPanel.loot
+
+	local lootframe = ns.CreateCheckBox(parent, "lootframe", L_GUI_LOOT_ENABLE)
+	lootframe:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local rolllootframe = ns.CreateCheckBox(parent, "rolllootframe", L_GUI_LOOT_ROLL_ENABLE)
+	rolllootframe:SetPoint("TOPLEFT", lootframe, "BOTTOMLEFT", 0, 0)
+
+	local icon_size = ns.CreateNumberSlider(parent, "icon_size", nil, nil, 0, 40, 1, true, L_GUI_LOOT_ICON_SIZE)
+	icon_size:SetPoint("TOPLEFT", rolllootframe, "BOTTOMLEFT", 0, -20)
+
+	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 350, 1, true, L_GUI_LOOT_WIDTH)
+	width:SetPoint("TOPLEFT", icon_size, "BOTTOMLEFT", 0, -20)
+
+	local auto_greed = ns.CreateCheckBox(parent, "auto_greed", L_GUI_LOOT_AUTOGREED)
+	auto_greed:SetPoint("TOPLEFT", width, "BOTTOMLEFT", 0, -10)
+
+	local auto_confirm_de = ns.CreateCheckBox(parent, "auto_confirm_de", L_GUI_LOOT_AUTODE)
+	auto_confirm_de:SetPoint("TOPLEFT", auto_greed, "BOTTOMLEFT", 0, 0)
+end
+
+-- Filger
+do
+	local parent = ShestakUIOptionsPanel.filger
+
+	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_FILGER_ENABLE)
+	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local test_mode = ns.CreateCheckBox(parent, "test_mode", L_GUI_FILGER_TEST_MODE)
+	test_mode:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
+
+	local max_test_icon = ns.CreateNumberSlider(parent, "max_test_icon", nil, nil, 0, 10, 1, true, L_GUI_FILGER_MAX_TEST_ICON)
+	max_test_icon:SetPoint("TOPLEFT", test_mode, "BOTTOMLEFT", 0, -20)
+
+	local show_tooltip = ns.CreateCheckBox(parent, "show_tooltip", L_GUI_FILGER_SHOW_TOOLTIP)
+	show_tooltip:SetPoint("TOPLEFT", max_test_icon, "BOTTOMLEFT", 0, -10)
+
+	local disable_cd = ns.CreateCheckBox(parent, "disable_cd", L_GUI_FILGER_DISABLE_CD)
+	disable_cd:SetPoint("TOPLEFT", show_tooltip, "BOTTOMLEFT", 0, 0)
+
+	local disable_pvp = ns.CreateCheckBox(parent, "disable_pvp", L_GUI_FILGER_DISABLE_PVP)
+	disable_pvp:SetPoint("TOPLEFT", disable_cd, "BOTTOMLEFT", 0, 0)
+
+	local expiration = ns.CreateCheckBox(parent, "expiration", L_GUI_FILGER_EXPIRATION)
+	expiration:SetPoint("TOPLEFT", disable_pvp, "BOTTOMLEFT", 0, 0)
+
+	local buffs_size = ns.CreateNumberSlider(parent, "buffs_size", nil, nil, 0, 50, 1, true, L_GUI_FILGER_BUFFS_SIZE)
+	buffs_size:SetPoint("TOPLEFT", expiration, "BOTTOMLEFT", 0, -20)
+
+	local cooldown_size = ns.CreateNumberSlider(parent, "cooldown_size", nil, nil, 0, 50, 1, true, L_GUI_FILGER_COOLDOWN_SIZE)
+	cooldown_size:SetPoint("TOPLEFT", buffs_size, "BOTTOMLEFT", 0, -20)
+
+	local pvp_size = ns.CreateNumberSlider(parent, "pvp_size", nil, nil, 0, 80, 1, true, L_GUI_FILGER_PVP_SIZE)
+	pvp_size:SetPoint("TOPLEFT", cooldown_size, "BOTTOMLEFT", 0, -20)
+end
+
 -- Announcements
 do
 	local parent = ShestakUIOptionsPanel.announcements
@@ -1436,120 +1550,6 @@ do
 
 	local hide_solo = ns.CreateCheckBox(parent, "hide_solo", L_GUI_THREAT_HIDE_SOLO)
 	hide_solo:SetPoint("TOPLEFT", bar_rows, "BOTTOMLEFT", 0, -20)
-end
-
--- Bag
-do
-	local parent = ShestakUIOptionsPanel.bag
-
-	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_BAGS_ENABLE)
-	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
-	local ilvl = ns.CreateCheckBox(parent, "ilvl", L_GUI_BAGS_ILVL)
-	ilvl:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
-
-	local button_size = ns.CreateNumberSlider(parent, "button_size", nil, nil, 0, 40, 1, true, L_GUI_BAGS_BUTTON_SIZE)
-	button_size:SetPoint("TOPLEFT", ilvl, "BOTTOMLEFT", 0, -20)
-
-	local button_space = ns.CreateNumberSlider(parent, "button_space", nil, nil, 0, 7, 1, true, L_GUI_BAGS_BUTTON_SPACE)
-	button_space:SetPoint("TOPLEFT", button_size, "BOTTOMLEFT", 0, -20)
-
-	local bank_columns = ns.CreateNumberSlider(parent, "bank_columns", nil, nil, 0, 25, 1, true, L_GUI_BAGS_BANK)
-	bank_columns:SetPoint("TOPLEFT", button_space, "BOTTOMLEFT", 0, -20)
-
-	local bag_columns = ns.CreateNumberSlider(parent, "bag_columns", nil, nil, 0, 20, 1, true, L_GUI_BAGS_BAG)
-	bag_columns:SetPoint("TOPLEFT", bank_columns, "BOTTOMLEFT", 0, -20)
-end
-
--- Minimap
-do
-	local parent = ShestakUIOptionsPanel.minimap
-
-	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_MINIMAP_ENABLE)
-	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
-	local tracking_icon = ns.CreateCheckBox(parent, "tracking_icon", L_GUI_MINIMAP_ICON)
-	tracking_icon:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
-
-	local garrison_icon = ns.CreateCheckBox(parent, "garrison_icon", L_GUI_GARRISON_ICON)
-	garrison_icon:SetPoint("TOPLEFT", tracking_icon, "BOTTOMLEFT", 0, 0)
-
-	local size = ns.CreateNumberSlider(parent, "size", nil, nil, 0, 250, 1, true, L_GUI_MINIMAP_SIZE)
-	size:SetPoint("TOPLEFT", garrison_icon, "BOTTOMLEFT", 0, -20)
-
-	local hide_combat = ns.CreateCheckBox(parent, "hide_combat", L_GUI_MINIMAP_HIDE_COMBAT)
-	hide_combat:SetPoint("TOPLEFT", size, "BOTTOMLEFT", 0, -10)
-
-	local toggle_menu = ns.CreateCheckBox(parent, "toggle_menu", L_GUI_MINIMAP_TOGGLE_MENU)
-	toggle_menu:SetPoint("TOPLEFT", hide_combat, "BOTTOMLEFT", 0, 0)
-
-	-- Other
-	local subheader = ns.addSubCategory(parent, OTHER)
-	subheader:SetPoint("TOPLEFT", toggle_menu, "BOTTOMLEFT", 0, -16)
-
-	local bg_map_stylization = ns.CreateCheckBox(parent, "bg_map_stylization")
-	bg_map_stylization:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
-
-	local fog_of_war = ns.CreateCheckBox(parent, "fog_of_war")
-	fog_of_war:SetPoint("TOPLEFT", bg_map_stylization, "BOTTOMLEFT", 0, 0)
-end
-
--- Loot
-do
-	local parent = ShestakUIOptionsPanel.loot
-
-	local lootframe = ns.CreateCheckBox(parent, "lootframe", L_GUI_LOOT_ENABLE)
-	lootframe:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
-	local rolllootframe = ns.CreateCheckBox(parent, "rolllootframe", L_GUI_LOOT_ROLL_ENABLE)
-	rolllootframe:SetPoint("TOPLEFT", lootframe, "BOTTOMLEFT", 0, 0)
-
-	local icon_size = ns.CreateNumberSlider(parent, "icon_size", nil, nil, 0, 40, 1, true, L_GUI_LOOT_ICON_SIZE)
-	icon_size:SetPoint("TOPLEFT", rolllootframe, "BOTTOMLEFT", 0, -20)
-
-	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 350, 1, true, L_GUI_LOOT_WIDTH)
-	width:SetPoint("TOPLEFT", icon_size, "BOTTOMLEFT", 0, -20)
-
-	local auto_greed = ns.CreateCheckBox(parent, "auto_greed", L_GUI_LOOT_AUTOGREED)
-	auto_greed:SetPoint("TOPLEFT", width, "BOTTOMLEFT", 0, -10)
-
-	local auto_confirm_de = ns.CreateCheckBox(parent, "auto_confirm_de", L_GUI_LOOT_AUTODE)
-	auto_confirm_de:SetPoint("TOPLEFT", auto_greed, "BOTTOMLEFT", 0, 0)
-end
-
--- Filger
-do
-	local parent = ShestakUIOptionsPanel.filger
-
-	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_FILGER_ENABLE)
-	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
-	local test_mode = ns.CreateCheckBox(parent, "test_mode", L_GUI_FILGER_TEST_MODE)
-	test_mode:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
-
-	local max_test_icon = ns.CreateNumberSlider(parent, "max_test_icon", nil, nil, 0, 10, 1, true, L_GUI_FILGER_MAX_TEST_ICON)
-	max_test_icon:SetPoint("TOPLEFT", test_mode, "BOTTOMLEFT", 0, -20)
-
-	local show_tooltip = ns.CreateCheckBox(parent, "show_tooltip", L_GUI_FILGER_SHOW_TOOLTIP)
-	show_tooltip:SetPoint("TOPLEFT", max_test_icon, "BOTTOMLEFT", 0, -10)
-
-	local disable_cd = ns.CreateCheckBox(parent, "disable_cd", L_GUI_FILGER_DISABLE_CD)
-	disable_cd:SetPoint("TOPLEFT", show_tooltip, "BOTTOMLEFT", 0, 0)
-
-	local disable_pvp = ns.CreateCheckBox(parent, "disable_pvp", L_GUI_FILGER_DISABLE_PVP)
-	disable_pvp:SetPoint("TOPLEFT", disable_cd, "BOTTOMLEFT", 0, 0)
-
-	local expiration = ns.CreateCheckBox(parent, "expiration", L_GUI_FILGER_EXPIRATION)
-	expiration:SetPoint("TOPLEFT", disable_pvp, "BOTTOMLEFT", 0, 0)
-
-	local buffs_size = ns.CreateNumberSlider(parent, "buffs_size", nil, nil, 0, 50, 1, true, L_GUI_FILGER_BUFFS_SIZE)
-	buffs_size:SetPoint("TOPLEFT", expiration, "BOTTOMLEFT", 0, -20)
-
-	local cooldown_size = ns.CreateNumberSlider(parent, "cooldown_size", nil, nil, 0, 50, 1, true, L_GUI_FILGER_COOLDOWN_SIZE)
-	cooldown_size:SetPoint("TOPLEFT", buffs_size, "BOTTOMLEFT", 0, -20)
-
-	local pvp_size = ns.CreateNumberSlider(parent, "pvp_size", nil, nil, 0, 80, 1, true, L_GUI_FILGER_PVP_SIZE)
-	pvp_size:SetPoint("TOPLEFT", cooldown_size, "BOTTOMLEFT", 0, -20)
 end
 
 -- Top Panel

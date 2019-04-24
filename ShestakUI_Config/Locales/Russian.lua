@@ -298,6 +298,51 @@ L_GUI_AURA_DEBUFF_COLOR_TYPE = "Цвета краёв отрицательных
 L_GUI_AURA_CAST_BY = "Отображать имя того, кто применил эффект"
 L_GUI_AURA_CLASSCOLOR_BORDER = "Окрашивать края положительных эффектов игрока в цвет класса"
 
+-- Bag options
+L_GUI_BAGS = "Сумки"
+L_GUI_BAGS_SUBTEXT = "Изменение встроенных в сборку сумок."
+L_GUI_BAGS_ENABLE = "Включить сумки"
+L_GUI_BAGS_ILVL = "Показывать уровень предметов для оружия и брони"
+L_GUI_BAGS_BUTTON_SIZE = "Размер ячеек"
+L_GUI_BAGS_BUTTON_SPACE = "Расстояние между ячейками"
+L_GUI_BAGS_BANK = "Количество столбцов в банке"
+L_GUI_BAGS_BAG = "Количество столбцов в сумках"
+
+-- Minimap options
+L_GUI_MINIMAP_SUBTEXT = "Настройка миникарты."
+L_GUI_MINIMAP_ENABLE = "Включить миникарту"
+L_GUI_MINIMAP_ICON = "Иконка отслеживания объектов"
+L_GUI_GARRISON_ICON = "Иконка гарнизона"
+L_GUI_MINIMAP_SIZE = "Размер миникарты"
+L_GUI_MINIMAP_HIDE_COMBAT = "Скрыть миникарту в бою"
+L_GUI_MINIMAP_TOGGLE_MENU = "Отображать меню над миникартой"
+L.minimap_bg_map_stylization = "Стилизация карты полей боя"
+L.minimap_fog_of_war = "Убрать туман войны с глобальной карты"
+L.minimap_fog_of_war_desc = "Нажмите правой кнопкой по кнопке закрытия карты, чтобы активировать опцию скрытия тумана"
+
+-- Loot options
+L_GUI_LOOT_SUBTEXT = "Настройка окна добычи."
+L_GUI_LOOT_ENABLE = "Включить окно добычи"
+L_GUI_LOOT_ROLL_ENABLE = "Включить групповое окно добычи"
+L_GUI_LOOT_ICON_SIZE = "Размер иконки"
+L_GUI_LOOT_WIDTH = "Ширина окна добычи"
+L_GUI_LOOT_AUTOGREED = "Авто не откажусь/распылить для зеленых предметов на макс. уровне"
+L_GUI_LOOT_AUTODE = "Убрать запрос о распылении предмета"
+
+-- Filger
+L_GUI_FILGER = "Таймеры (Filger)"
+L_GUI_FILGER_SUBTEXT = "Filger - аналог WeakAuras, но более простой и легкий. Позволяет выводить в виде иконок и полос ваши ауры и таймеры."
+L_GUI_FILGER_ENABLE = "Включить Filger"
+L_GUI_FILGER_TEST_MODE = "Тестирование иконок"
+L_GUI_FILGER_MAX_TEST_ICON = "Иконок для теста"
+L_GUI_FILGER_SHOW_TOOLTIP = "Показывать подсказку для иконок"
+L_GUI_FILGER_DISABLE_CD = "Выключить блок перезарядок"
+L_GUI_FILGER_DISABLE_PVP = "Выключить PvP дебаффы на игроке и цели"
+L_GUI_FILGER_EXPIRATION = "Сортировать перезарядки по времени"
+L_GUI_FILGER_BUFFS_SIZE = "Размер баффов и проков"
+L_GUI_FILGER_COOLDOWN_SIZE = "Размер перезарядок"
+L_GUI_FILGER_PVP_SIZE = "Размер PvP дебаффов"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Объявления"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Здесь можно включить оповещения в чат о заклинаниях и предметах."
@@ -398,51 +443,6 @@ L_GUI_THREAT_HEIGHT = "Высота полос"
 L_GUI_THREAT_WIDTH = "Ширина полос"
 L_GUI_THREAT_ROWS = "Количество полос"
 L_GUI_THREAT_HIDE_SOLO = "Отображать только в группе/рейде"
-
--- Bag options
-L_GUI_BAGS = "Сумки"
-L_GUI_BAGS_SUBTEXT = "Изменение встроенных в сборку сумок."
-L_GUI_BAGS_ENABLE = "Включить сумки"
-L_GUI_BAGS_ILVL = "Показывать уровень предметов для оружия и брони"
-L_GUI_BAGS_BUTTON_SIZE = "Размер ячеек"
-L_GUI_BAGS_BUTTON_SPACE = "Расстояние между ячейками"
-L_GUI_BAGS_BANK = "Количество столбцов в банке"
-L_GUI_BAGS_BAG = "Количество столбцов в сумках"
-
--- Minimap options
-L_GUI_MINIMAP_SUBTEXT = "Настройка миникарты."
-L_GUI_MINIMAP_ENABLE = "Включить миникарту"
-L_GUI_MINIMAP_ICON = "Иконка отслеживания объектов"
-L_GUI_GARRISON_ICON = "Иконка гарнизона"
-L_GUI_MINIMAP_SIZE = "Размер миникарты"
-L_GUI_MINIMAP_HIDE_COMBAT = "Скрыть миникарту в бою"
-L_GUI_MINIMAP_TOGGLE_MENU = "Отображать меню над миникартой"
-L.minimap_bg_map_stylization = "Стилизация карты полей боя"
-L.minimap_fog_of_war = "Убрать туман войны с глобальной карты"
-L.minimap_fog_of_war_desc = "Нажмите правой кнопкой по кнопке закрытия карты, чтобы активировать опцию скрытия тумана"
-
--- Loot options
-L_GUI_LOOT_SUBTEXT = "Настройка окна добычи."
-L_GUI_LOOT_ENABLE = "Включить окно добычи"
-L_GUI_LOOT_ROLL_ENABLE = "Включить групповое окно добычи"
-L_GUI_LOOT_ICON_SIZE = "Размер иконки"
-L_GUI_LOOT_WIDTH = "Ширина окна добычи"
-L_GUI_LOOT_AUTOGREED = "Авто не откажусь/распылить для зеленых предметов на макс. уровне"
-L_GUI_LOOT_AUTODE = "Убрать запрос о распылении предмета"
-
--- Filger
-L_GUI_FILGER = "Таймеры (Filger)"
-L_GUI_FILGER_SUBTEXT = "Filger - аналог WeakAuras, но более простой и легкий. Позволяет выводить в виде иконок и полос ваши ауры и таймеры."
-L_GUI_FILGER_ENABLE = "Включить Filger"
-L_GUI_FILGER_TEST_MODE = "Тестирование иконок"
-L_GUI_FILGER_MAX_TEST_ICON = "Иконок для теста"
-L_GUI_FILGER_SHOW_TOOLTIP = "Показывать подсказку для иконок"
-L_GUI_FILGER_DISABLE_CD = "Выключить блок перезарядок"
-L_GUI_FILGER_DISABLE_PVP = "Выключить PvP дебаффы на игроке и цели"
-L_GUI_FILGER_EXPIRATION = "Сортировать перезарядки по времени"
-L_GUI_FILGER_BUFFS_SIZE = "Размер баффов и проков"
-L_GUI_FILGER_COOLDOWN_SIZE = "Размер перезарядок"
-L_GUI_FILGER_PVP_SIZE = "Размер PvP дебаффов"
 
 -- Panel options
 L_GUI_TOP_PANEL = "Верхняя панель"

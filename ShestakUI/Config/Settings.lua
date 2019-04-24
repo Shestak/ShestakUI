@@ -337,6 +337,61 @@ C["aura"] = {
 }
 
 ----------------------------------------------------------------------------------------
+--	Bag options
+----------------------------------------------------------------------------------------
+C["bag"] = {
+	["enable"] = true,							-- Enable bags
+	["ilvl"] = false,							-- Show item level for weapons and armor
+	["button_size"] = 27,						-- Buttons size
+	["button_space"] = 3,						-- Buttons space
+	["bank_columns"] = 17,						-- Horizontal number of columns in bank
+	["bag_columns"] = 10,						-- Horizontal number of columns in main bag
+}
+
+----------------------------------------------------------------------------------------
+--	Minimap options
+----------------------------------------------------------------------------------------
+C["minimap"] = {
+	["enable"] = true,							-- Enable minimap
+	["tracking_icon"] = false,					-- Tracking icon
+	["garrison_icon"] = false,					-- Garrison icon
+	["size"] = 130,								-- Minimap size
+	["hide_combat"] = false,					-- Hide minimap in combat
+	["toggle_menu"] = true,						-- Show toggle menu
+	-- Other
+	["bg_map_stylization"] = true,				-- BG map stylization
+	["fog_of_war"] = false,						-- Remove fog of war on World Map
+}
+
+----------------------------------------------------------------------------------------
+--	Loot options
+----------------------------------------------------------------------------------------
+C["loot"] = {
+	["lootframe"] = true,						-- Enable loot frame
+	["rolllootframe"] = true,					-- Enable group roll frame
+	["icon_size"] = 22,							-- Icon size
+	["width"] = 221,							-- Loot window width
+	["auto_greed"] = true,						-- Push "greed" or "disenchant" button when green item roll at max level
+	["auto_confirm_de"] = true,					-- Auto confirm disenchant
+}
+
+----------------------------------------------------------------------------------------
+--	Filger options
+----------------------------------------------------------------------------------------
+C["filger"] = {
+	["enable"] = true,							-- Enable Filger
+	["test_mode"] = false,						-- Test icon mode
+	["max_test_icon"] = 5,						-- The number of icons to the test
+	["show_tooltip"] = false,					-- Show tooltip
+	["disable_cd"] = false,						-- Disable cooldowns
+	["disable_pvp"] = false,					-- Disable PvP debuffs on Player and Target
+	["expiration"] = false,						-- Sort cooldowns by expiration time
+	["buffs_size"] = 37,						-- Buffs size
+	["cooldown_size"] = 30,						-- Cooldowns size
+	["pvp_size"] = 60,							-- PvP debuffs size
+}
+
+----------------------------------------------------------------------------------------
 --	Announcements options
 ----------------------------------------------------------------------------------------
 C["announcements"] = {
@@ -442,61 +497,6 @@ C["threat"] = {
 	["width"] = 217,							-- Bars width
 	["bar_rows"] = 7,							-- Number of bars
 	["hide_solo"] = false,						-- Show only in party/raid
-}
-
-----------------------------------------------------------------------------------------
---	Bag options
-----------------------------------------------------------------------------------------
-C["bag"] = {
-	["enable"] = true,							-- Enable bags
-	["ilvl"] = false,							-- Show item level for weapons and armor
-	["button_size"] = 27,						-- Buttons size
-	["button_space"] = 3,						-- Buttons space
-	["bank_columns"] = 17,						-- Horizontal number of columns in bank
-	["bag_columns"] = 10,						-- Horizontal number of columns in main bag
-}
-
-----------------------------------------------------------------------------------------
---	Minimap options
-----------------------------------------------------------------------------------------
-C["minimap"] = {
-	["enable"] = true,							-- Enable minimap
-	["tracking_icon"] = false,					-- Tracking icon
-	["garrison_icon"] = false,					-- Garrison icon
-	["size"] = 130,								-- Minimap size
-	["hide_combat"] = false,					-- Hide minimap in combat
-	["toggle_menu"] = true,						-- Show toggle menu
-	-- Other
-	["bg_map_stylization"] = true,				-- BG map stylization
-	["fog_of_war"] = false,						-- Remove fog of war on World Map
-}
-
-----------------------------------------------------------------------------------------
---	Loot options
-----------------------------------------------------------------------------------------
-C["loot"] = {
-	["lootframe"] = true,						-- Enable loot frame
-	["rolllootframe"] = true,					-- Enable group roll frame
-	["icon_size"] = 22,							-- Icon size
-	["width"] = 221,							-- Loot window width
-	["auto_greed"] = true,						-- Push "greed" or "disenchant" button when green item roll at max level
-	["auto_confirm_de"] = true,					-- Auto confirm disenchant
-}
-
-----------------------------------------------------------------------------------------
---	Filger options
-----------------------------------------------------------------------------------------
-C["filger"] = {
-	["enable"] = true,							-- Enable Filger
-	["test_mode"] = false,						-- Test icon mode
-	["max_test_icon"] = 5,						-- The number of icons to the test
-	["show_tooltip"] = false,					-- Show tooltip
-	["disable_cd"] = false,						-- Disable cooldowns
-	["disable_pvp"] = false,					-- Disable PvP debuffs on Player and Target
-	["expiration"] = false,						-- Sort cooldowns by expiration time
-	["buffs_size"] = 37,						-- Buffs size
-	["cooldown_size"] = 30,						-- Cooldowns size
-	["pvp_size"] = 60,							-- PvP debuffs size
 }
 
 ----------------------------------------------------------------------------------------

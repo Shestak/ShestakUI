@@ -298,6 +298,51 @@ L_GUI_AURA_DEBUFF_COLOR_TYPE = "DeBuffs按法术类型著色"
 L_GUI_AURA_CAST_BY = "鼠标提示中,显示Buffs/DeBuffs提供者"
 L_GUI_AURA_CLASSCOLOR_BORDER = "自身Buffs图标边框按职业著色"
 
+-- Bag options
+L_GUI_BAGS = "背包"
+L_GUI_BAGS_SUBTEXT = "Changing the built-in bags." -- Need review
+L_GUI_BAGS_ENABLE = "开启背包增强"
+L_GUI_BAGS_ILVL = "在背包显示物品等级"
+L_GUI_BAGS_BUTTON_SIZE = "格子大小"
+L_GUI_BAGS_BUTTON_SPACE = "格子间距"
+L_GUI_BAGS_BANK = "银行每行格数"
+L_GUI_BAGS_BAG = "背包每行格数"
+
+-- Minimap options
+L_GUI_MINIMAP_SUBTEXT = "Minimap settings." -- Need review
+L_GUI_MINIMAP_ENABLE = "开启迷你地图增强"
+L_GUI_MINIMAP_ICON = "追踪菜单"
+L_GUI_GARRISON_ICON = "要塞图标"
+L_GUI_MINIMAP_SIZE = "迷你地图大小"
+L_GUI_MINIMAP_HIDE_COMBAT = "战斗中隐藏迷你地图"
+L_GUI_MINIMAP_TOGGLE_MENU = "小地图顶部快捷菜单"
+L.minimap_bg_map_stylization = "开启战场地图增强"
+L.minimap_fog_of_war = "世界地图全亮选项"
+L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war" -- Need review
+
+-- Loot options
+L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review
+L_GUI_LOOT_ENABLE = "开启拾取增强"
+L_GUI_LOOT_ROLL_ENABLE = "开启团队拾取框架增强"
+L_GUI_LOOT_ICON_SIZE = "拾取框架图标大小"
+L_GUI_LOOT_WIDTH = "拾取框架宽度"
+L_GUI_LOOT_AUTOGREED = "满级后自动贪婪绿色物品"
+L_GUI_LOOT_AUTODE = "自动选择分解"
+
+-- Filger
+L_GUI_FILGER = "法术监视"
+L_GUI_FILGER_SUBTEXT = "Filger - analogue WeakAuras, but more simple and easy. Allows you to display in the form of icons and bars your auras and timers." -- Need review
+L_GUI_FILGER_ENABLE = "开启法术监视"
+L_GUI_FILGER_TEST_MODE = "调试模式"
+L_GUI_FILGER_MAX_TEST_ICON = "调试模式图标数量"
+L_GUI_FILGER_SHOW_TOOLTIP = "开启提示"
+L_GUI_FILGER_DISABLE_CD = "关闭法术CD监视"
+L_GUI_FILGER_DISABLE_PVP = "Disable PvP debuffs on Player and Target" -- Need review
+L_GUI_FILGER_EXPIRATION = "Sort cooldowns by expiration time" -- Need review
+L_GUI_FILGER_BUFFS_SIZE = "Buffs图标大小"
+L_GUI_FILGER_COOLDOWN_SIZE = "技能冷却图标大小"
+L_GUI_FILGER_PVP_SIZE = "PvP debuffs图标大小"
+
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
@@ -398,51 +443,6 @@ L_GUI_THREAT_HEIGHT = "仇恨栏高度"
 L_GUI_THREAT_WIDTH = "仇恨栏宽度"
 L_GUI_THREAT_ROWS = "仇恨栏数目"
 L_GUI_THREAT_HIDE_SOLO = "仅在队伍/团队中开启"
-
--- Bag options
-L_GUI_BAGS = "背包"
-L_GUI_BAGS_SUBTEXT = "Changing the built-in bags." -- Need review
-L_GUI_BAGS_ENABLE = "开启背包增强"
-L_GUI_BAGS_ILVL = "在背包显示物品等级"
-L_GUI_BAGS_BUTTON_SIZE = "格子大小"
-L_GUI_BAGS_BUTTON_SPACE = "格子间距"
-L_GUI_BAGS_BANK = "银行每行格数"
-L_GUI_BAGS_BAG = "背包每行格数"
-
--- Minimap options
-L_GUI_MINIMAP_SUBTEXT = "Minimap settings." -- Need review
-L_GUI_MINIMAP_ENABLE = "开启迷你地图增强"
-L_GUI_MINIMAP_ICON = "追踪菜单"
-L_GUI_GARRISON_ICON = "要塞图标"
-L_GUI_MINIMAP_SIZE = "迷你地图大小"
-L_GUI_MINIMAP_HIDE_COMBAT = "战斗中隐藏迷你地图"
-L_GUI_MINIMAP_TOGGLE_MENU = "小地图顶部快捷菜单"
-L.minimap_bg_map_stylization = "开启战场地图增强"
-L.minimap_fog_of_war = "世界地图全亮选项"
-L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war" -- Need review
-
--- Loot options
-L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review
-L_GUI_LOOT_ENABLE = "开启拾取增强"
-L_GUI_LOOT_ROLL_ENABLE = "开启团队拾取框架增强"
-L_GUI_LOOT_ICON_SIZE = "拾取框架图标大小"
-L_GUI_LOOT_WIDTH = "拾取框架宽度"
-L_GUI_LOOT_AUTOGREED = "满级后自动贪婪绿色物品"
-L_GUI_LOOT_AUTODE = "自动选择分解"
-
--- Filger
-L_GUI_FILGER = "法术监视"
-L_GUI_FILGER_SUBTEXT = "Filger - analogue WeakAuras, but more simple and easy. Allows you to display in the form of icons and bars your auras and timers." -- Need review
-L_GUI_FILGER_ENABLE = "开启法术监视"
-L_GUI_FILGER_TEST_MODE = "调试模式"
-L_GUI_FILGER_MAX_TEST_ICON = "调试模式图标数量"
-L_GUI_FILGER_SHOW_TOOLTIP = "开启提示"
-L_GUI_FILGER_DISABLE_CD = "关闭法术CD监视"
-L_GUI_FILGER_DISABLE_PVP = "Disable PvP debuffs on Player and Target" -- Need review
-L_GUI_FILGER_EXPIRATION = "Sort cooldowns by expiration time" -- Need review
-L_GUI_FILGER_BUFFS_SIZE = "Buffs图标大小"
-L_GUI_FILGER_COOLDOWN_SIZE = "技能冷却图标大小"
-L_GUI_FILGER_PVP_SIZE = "PvP debuffs图标大小"
 
 -- Panel options
 L_GUI_TOP_PANEL = "顶部信息面板"
