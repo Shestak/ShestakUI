@@ -444,7 +444,7 @@ L_GUI_THREAT_WIDTH = "Anchura de las barras de amenaza"
 L_GUI_THREAT_ROWS = "Número de barras de amenaza"
 L_GUI_THREAT_HIDE_SOLO = "Mostrar solo en grupo/raid"
 
--- Panel options
+-- Top panel options
 L_GUI_TOP_PANEL = "Panel superior"
 L_GUI_TOP_PANEL_SUBTEXT = "Manage built-in top panel with information." -- Need review
 L_GUI_TOP_PANEL_ENABLE = "Activar panel superior"

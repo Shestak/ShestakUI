@@ -99,7 +99,7 @@ C["unitframe"] = {
 	-- Icons
 	["icons_pvp"] = false,						-- Mouseover PvP text (not icons) on player and target frames
 	["icons_combat"] = true,					-- Combat icon
-	["icons_resting"] = true,					-- Resting icon for low lvl chars
+	["icons_resting"] = true,					-- Resting icon
 	-- Portraits
 	["portrait_enable"] = false,				-- Enable player/target portraits
 	["portrait_classcolor_border"] = true,		-- Enable classcolor border
@@ -381,7 +381,7 @@ C["loot"] = {
 C["filger"] = {
 	["enable"] = true,							-- Enable Filger
 	["test_mode"] = false,						-- Test icon mode
-	["max_test_icon"] = 5,						-- The number of icons to the test
+	["max_test_icon"] = 5,						-- Number of icons to the test
 	["show_tooltip"] = false,					-- Show tooltip
 	["disable_cd"] = false,						-- Disable cooldowns
 	["disable_pvp"] = false,					-- Disable PvP debuffs on Player and Target
@@ -500,7 +500,7 @@ C["threat"] = {
 }
 
 ----------------------------------------------------------------------------------------
---	Panel options
+--	Top panel options
 ----------------------------------------------------------------------------------------
 C["toppanel"] = {
 	["enable"] = true,							-- Enable top panel
@@ -564,7 +564,7 @@ C["misc"] = {
 	["enchantment_scroll"] = false,				-- Enchantment scroll on TradeSkill frame
 	["archaeology"] = false,					-- Archaeology tracker ('/arch' or right mouseover minimap button to show)
 	["chars_currency"] = false,					-- Tracks your currency tokens across multiple characters
-	["armory_link"] = false,					-- Add Armory link in UnitPopupMenus (It breaks set focus)
+	["armory_link"] = false,					-- Add the Armory link in the chat menu and target (It breaks set focus)
 	["merchant_itemlevel"] = false,				-- Show item level for weapons and armor in merchant
 	["minimize_mouseover"] = false,				-- Mouseover for quest minimize button
 	["hide_banner"] = true,						-- Hide Boss Banner Loot Frame

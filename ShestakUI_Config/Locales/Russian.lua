@@ -444,7 +444,7 @@ L_GUI_THREAT_WIDTH = "Ширина полос"
 L_GUI_THREAT_ROWS = "Количество полос"
 L_GUI_THREAT_HIDE_SOLO = "Отображать только в группе/рейде"
 
--- Panel options
+-- Top panel options
 L_GUI_TOP_PANEL = "Верхняя панель"
 L_GUI_TOP_PANEL_SUBTEXT = "Управление встроенной верхней панелью с информацией."
 L_GUI_TOP_PANEL_ENABLE = "Включить верхнюю панель"

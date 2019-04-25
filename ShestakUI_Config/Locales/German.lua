@@ -444,7 +444,7 @@ L_GUI_THREAT_WIDTH = "Breite der Bedrohungsleisten"
 L_GUI_THREAT_ROWS = "Anzahl der Bedrohungsleisten"
 L_GUI_THREAT_HIDE_SOLO = "Nur in Gruppen oder Schlachtzügen anzeigen"
 
--- Panel options
+-- Top panel options
 L_GUI_TOP_PANEL = "Oberes Panel"
 L_GUI_TOP_PANEL_SUBTEXT = "Manage built-in top panel with information." -- Need review
 L_GUI_TOP_PANEL_ENABLE = "Aktiviere oberes Panel"

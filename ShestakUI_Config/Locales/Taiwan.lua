@@ -444,7 +444,7 @@ L_GUI_THREAT_WIDTH = "仇恨欄寬度"
 L_GUI_THREAT_ROWS = "仇恨欄數目"
 L_GUI_THREAT_HIDE_SOLO = "僅在隊伍/團隊中開啟"
 
--- Panel options
+-- Top panel options
 L_GUI_TOP_PANEL = "頂部信息面板"
 L_GUI_TOP_PANEL_SUBTEXT = "Manage built-in top panel with information." -- Need review
 L_GUI_TOP_PANEL_ENABLE = "開啟頂部信息面板"
