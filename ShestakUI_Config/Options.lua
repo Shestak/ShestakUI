@@ -563,22 +563,22 @@ do
 	show_pet:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
 
 	local show_focus = ns.CreateCheckBox(parent, "show_focus", L_GUI_UF_SHOW_FOCUS)
-	show_focus:SetPoint("LEFT", show_pet, "RIGHT", 170, 0)
+	show_focus:SetPoint("TOPLEFT", show_pet, "BOTTOMLEFT", 0, 0)
 
 	local show_target_target = ns.CreateCheckBox(parent, "show_target_target", L_GUI_UF_SHOW_TOT)
-	show_target_target:SetPoint("LEFT", show_focus, "RIGHT", 170, 0)
+	show_target_target:SetPoint("LEFT", show_focus, "RIGHT", 248, 0)
 
 	local show_boss = ns.CreateCheckBox(parent, "show_boss", L_GUI_UF_SHOW_BOSS)
-	show_boss:SetPoint("TOPLEFT", show_pet, "BOTTOMLEFT", 0, 0)
+	show_boss:SetPoint("TOPLEFT", show_focus, "BOTTOMLEFT", 0, 0)
 
 	local boss_on_right = ns.CreateCheckBox(parent, "boss_on_right", L_GUI_UF_BOSS_RIGHT)
-	boss_on_right:SetPoint("LEFT", show_boss, "RIGHT", 170, 0)
+	boss_on_right:SetPoint("LEFT", show_boss, "RIGHT", 248, 0)
 
 	local show_arena = ns.CreateCheckBox(parent, "show_arena", L_GUI_UF_SHOW_ARENA)
 	show_arena:SetPoint("TOPLEFT", show_boss, "BOTTOMLEFT", 0, 0)
 
 	local arena_on_right = ns.CreateCheckBox(parent, "arena_on_right", L_GUI_UF_ARENA_RIGHT)
-	arena_on_right:SetPoint("LEFT", show_arena, "RIGHT", 170, 0)
+	arena_on_right:SetPoint("LEFT", show_arena, "RIGHT", 248, 0)
 
 	local boss_debuffs = ns.CreateNumberSlider(parent, "boss_debuffs", nil, nil, 0, 3, 1, true, L_GUI_UF_BOSS_DEBUFFS, L_GUI_UF_BOSS_DEBUFFS_DESC)
 	boss_debuffs:SetPoint("TOPLEFT", show_arena, "BOTTOMLEFT", 0, -20)
@@ -725,10 +725,10 @@ do
 	show_party:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
 
 	local show_raid = ns.CreateCheckBox(parent, "show_raid", L_GUI_UF_SHOW_RAID)
-	show_raid:SetPoint("LEFT", show_party, "RIGHT", 320, 0)
+	show_raid:SetPoint("TOPLEFT", show_party, "BOTTOMLEFT", 0, 0)
 
 	local solo_mode = ns.CreateCheckBox(parent, "solo_mode", L_GUI_UF_SOLO_MODE)
-	solo_mode:SetPoint("TOPLEFT", show_party, "BOTTOMLEFT", 0, 0)
+	solo_mode:SetPoint("TOPLEFT", show_raid, "BOTTOMLEFT", 0, 0)
 
 	local player_in_party = ns.CreateCheckBox(parent, "player_in_party", L_GUI_UF_PLAYER_PARTY)
 	player_in_party:SetPoint("TOPLEFT", solo_mode, "BOTTOMLEFT", 0, 0)
@@ -753,16 +753,16 @@ do
 	icons_role:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
 
 	local icons_raid_mark = ns.CreateCheckBox(parent, "icons_raid_mark", L_GUI_UF_ICONS_RAID_MARK)
-	icons_raid_mark:SetPoint("LEFT", icons_role, "RIGHT", 170, 0)
+	icons_raid_mark:SetPoint("LEFT", icons_role, "RIGHT", 248, 0)
 
 	local icons_ready_check = ns.CreateCheckBox(parent, "icons_ready_check", L_GUI_UF_ICONS_READY_CHECK)
-	icons_ready_check:SetPoint("LEFT", icons_raid_mark, "RIGHT", 170, 0)
+	icons_ready_check:SetPoint("TOPLEFT", icons_role, "BOTTOMLEFT", 0, 0)
 
 	local icons_leader = ns.CreateCheckBox(parent, "icons_leader", L_GUI_UF_ICONS_LEADER)
-	icons_leader:SetPoint("TOPLEFT", icons_role, "BOTTOMLEFT", 0, 0)
+	icons_leader:SetPoint("LEFT", icons_ready_check, "RIGHT", 248, 0)
 
 	local icons_sumon = ns.CreateCheckBox(parent, "icons_sumon", L_GUI_UF_ICONS_SUMON)
-	icons_sumon:SetPoint("LEFT", icons_leader, "RIGHT", 170, 0)
+	icons_sumon:SetPoint("TOPLEFT", icons_ready_check, "BOTTOMLEFT", 0, 0)
 
 	-- Panel 2
 	local parent = ShestakUIOptionsPanel.raidframe2
