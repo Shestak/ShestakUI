@@ -14,7 +14,7 @@ Butsu:SetScript("OnEvent", function(self, event, ...)
 	self[event](self, event, ...)
 end)
 
-function Butsu:LOOT_OPENED(event, autoloot)
+function Butsu:LOOT_OPENED()
 	self:Show()
 	lb:Show()
 
@@ -121,7 +121,7 @@ function Butsu:LOOT_OPENED(event, autoloot)
 end
 Butsu:RegisterEvent("LOOT_OPENED")
 
-function Butsu:LOOT_SLOT_CLEARED(event, slot)
+function Butsu:LOOT_SLOT_CLEARED(_, slot)
 	if not self:IsShown() then return end
 
 	_NS.slots[slot]:Hide()
@@ -171,7 +171,7 @@ Butsu:SetScript("OnMouseUp", function(self)
 	self:StopMovingOrSizing()
 end)
 
-Butsu:SetScript("OnHide", function(self)
+Butsu:SetScript("OnHide", function()
 	StaticPopup_Hide("CONFIRM_LOOT_DISTRIBUTION")
 	CloseLoot()
 end)
@@ -264,7 +264,7 @@ lb:ClearAllPoints()
 lb:SetPoint("BOTTOMRIGHT", Butsu, "TOPRIGHT", -21, -18)
 lb:SetFrameStrata("DIALOG")
 lb:RegisterForClicks("RightButtonUp", "LeftButtonUp")
-lb:SetScript("OnClick", function(self, button)
+lb:SetScript("OnClick", function(_, button)
 	if button == "RightButton" then
 		ToggleDropDownMenu(nil, nil, LDD, lb, 0, 0)
 	else

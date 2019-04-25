@@ -15,7 +15,7 @@ end
 
 local Fane = CreateFrame("Frame")
 
-local updateFS = function(self, inc, ...)
+local updateFS = function(self, _, ...)
 	local fstring = self:GetFontString()
 
 	fstring:SetFont(C.font.chat_tabs_font, C.font.chat_tabs_font_size, C.font.chat_tabs_font_style)
@@ -59,7 +59,7 @@ local ChatFrame2_GetAlpha = function(self)
 	end
 end
 
-local faneifyTab = function(frame, sel)
+local faneifyTab = function(frame)
 	local i = frame:GetID()
 
 	if not frame.Fane then

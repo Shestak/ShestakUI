@@ -464,7 +464,7 @@ local function LoadSkin()
 
 	T.SkinScrollBar(AuctionatorScrollFrameScrollBar)
 
-	hooksecurefunc("AuctionFrameTab_OnClick", function(self, button, down, index)
+	hooksecurefunc("AuctionFrameTab_OnClick", function(self, _, _, index)
 		local index = self:GetID()
 		if index == 4 then
 			Atr_Hlist:SetPoint("TOPLEFT", -193, -67)
