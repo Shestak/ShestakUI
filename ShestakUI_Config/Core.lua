@@ -7,10 +7,10 @@ local _, ns = ...
 local realm = GetRealmName()
 local name = UnitName("player")
 
-local pysWidth, pysHeight = _G.GetPhysicalScreenSize()
+local _, pysHeight = _G.GetPhysicalScreenSize()
 local fixedHeight = 768 / pysHeight
 local scale = tonumber(floor(fixedHeight*100 + .5)/100)
-mult = fixedHeight / scale
+local mult = fixedHeight / scale
 
 -- [[ Variables ]]
 

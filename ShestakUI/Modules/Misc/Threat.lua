@@ -16,7 +16,6 @@ end
 
 local bar, tList, barList = {}, {}, {}
 local max = math.max
-local timer = 0
 local targeted = false
 
 RAID_CLASS_COLORS["PET"] = {r = 0, g = 0.7, b = 0, colorStr = "ff00b200"}

@@ -9,8 +9,6 @@ local bind, oneBind, localmacros = CreateFrame("Frame", "HoverBind", UIParent), 
 SlashCmdList.MOUSEOVERBIND = function()
 	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
 	if not bind.loaded then
-		local find = string.find
-
 		bind:SetFrameStrata("DIALOG")
 		bind:EnableMouse(true)
 		bind:EnableKeyboard(true)

@@ -122,7 +122,7 @@ local function SetUpAlert()
 		end
 	end
 
-	for i, name in next, remove do
+	for i in next, remove do
 		table.remove(AlertFrame.alertFrameSubSystems, i)
 	end
 end

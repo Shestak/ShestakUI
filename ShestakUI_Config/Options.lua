@@ -6,10 +6,10 @@ local L = ns
 local realm = GetRealmName()
 local name = UnitName("player")
 
-local pysWidth, pysHeight = _G.GetPhysicalScreenSize()
+local _, pysHeight = _G.GetPhysicalScreenSize()
 local fixedHeight = 768 / pysHeight
 local scale = tonumber(floor(fixedHeight*100 + .5)/100)
-mult = fixedHeight / scale
+local mult = fixedHeight / scale
 
 -- Main window
 local options = CreateFrame("Frame", "ShestakUIOptionsPanel", UIParent)
@@ -96,13 +96,13 @@ end)
 tinsert(ns.buttons, ResetButton)
 
 -- Font
-FontTable = {
+local FontTable = {
 	"Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Normal.ttf",
 	"Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Pixel.ttf",
 	STANDARD_TEXT_FONT
 }
 
-FlagsTable = {
+local FlagsTable = {
 	"OUTLINE",
 	"OUTLINEMONOCHROME",
 	""

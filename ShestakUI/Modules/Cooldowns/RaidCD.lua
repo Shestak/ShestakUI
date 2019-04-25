@@ -17,7 +17,6 @@ local floor = math.floor
 local currentNumResses = 0
 local charges = nil
 local inBossCombat = nil
-local timer = 0
 local Ressesbars = {}
 local bars = {}
 
