@@ -443,7 +443,6 @@ L_GUI_THREAT_HEIGHT = "仇恨欄高度"
 L_GUI_THREAT_WIDTH = "仇恨欄寬度"
 L_GUI_THREAT_ROWS = "仇恨欄數目"
 L_GUI_THREAT_HIDE_SOLO = "僅在隊伍/團隊中開啟"
-L_GUI_THREAT_ENABLE_NEW = "新式仇恨欄"
 
 -- Top panel options
 L_GUI_TOP_PANEL = "頂部信息条"
