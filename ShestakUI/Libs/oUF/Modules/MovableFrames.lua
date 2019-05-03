@@ -59,7 +59,7 @@ local getPoint = function(obj, anchor)
 
 		return string.format("%s\031%s\031%d\031%d", point, "UIParent", round(x * UIS / OS), round(y * UIS / OS))
 	else
-		local point, parent, _, x, y = anchor:GetPoint()
+		local point, _, _, x, y = anchor:GetPoint()
 
 		return string.format("%s\031%s\031%d\031%d", point, "UIParent", round(x), round(y))
 	end
@@ -407,11 +407,11 @@ StaticPopupDialogs.RESET_UF = {
 SlashCmdList.RESETUF = function() StaticPopup_Show("RESET_UF") end
 SLASH_RESETUF1 = "/resetuf"
 
-T.MoveUnitFrames = function(inp)
+T.MoveUnitFrames = function()
 	if InCombatLockdown() then return print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") end
 
 	if not _LOCK then
-		for k, obj in next, oUF.objects do
+		for _, obj in next, oUF.objects do
 			if not obj.disableMovement then
 				local _, _, isHeader = getObjectInformation(obj)
 				local backdrop = getBackdrop(obj, isHeader)
@@ -421,7 +421,7 @@ T.MoveUnitFrames = function(inp)
 
 		_LOCK = true
 	else
-		for k, bdrop in next, backdropPool do
+		for _, bdrop in next, backdropPool do
 			bdrop:Hide()
 		end
 

@@ -130,7 +130,7 @@ SpellBinder.makeSpellsList = function(self, scroll, delete)
 			bf.fs:SetText(spell.modifier..spell.origbutton)
 			bf.fs:SetPoint("RIGHT", bf.delete, "LEFT", -4, 0)
 
-			for frame, j in pairs(ClickCastFrames) do
+			for frame in pairs(ClickCastFrames) do
 				local f
 				if frame and type(frame) == "table" then f = frame:GetName() end
 				if f and DB.frames[frame] then
@@ -165,7 +165,7 @@ SpellBinder.makeSpellsList = function(self, scroll, delete)
 end
 
 SpellBinder.makeFramesList = function(self)
-	for frame, value in pairs(ClickCastFrames) do
+	for frame in pairs(ClickCastFrames) do
 		local v
 		if frame and type(frame) == "table" then v = frame:GetName() end
 		if C.misc.click_cast_filter ~= true then
@@ -237,10 +237,9 @@ hooksecurefunc(SpellBookFrame, "Hide", function()
 end)
 
 SpellBinder.DeleteSpell = function()
-	local count = table.getn(DB.spells)
 	for i, spell in ipairs(DB.spells) do
 		if spell.checked then
-			for frame, j in pairs(ClickCastFrames) do
+			for frame in pairs(ClickCastFrames) do
 				local f
 				if frame and type(frame) == "table" then f = frame:GetName() end
 				if f then

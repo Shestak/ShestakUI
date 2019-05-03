@@ -394,10 +394,6 @@ hooksecurefunc("PetBattleUnitFrame_UpdateDisplay", function(self)
 	local isTooltip = false
 	if self:GetName() == "PetBattlePrimaryUnitTooltip" then isTooltip = true end
 
-	-- Set which Glow frame this will use (Enemy Frames are +3 / Tooltip is 7)
-	local sGlow = "Glow7"
-	if not isTooltip then sGlow = "Glow"..tostring(self.petIndex + nEnemy) end
-
 	-- Set the color for the Glow
 	local nQuality = C_PetBattles.GetBreedQuality(self.petOwner, self.petIndex) - 1
 	local r, g, b, hex = GetItemQualityColor(nQuality)

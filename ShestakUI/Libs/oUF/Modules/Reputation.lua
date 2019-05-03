@@ -71,7 +71,7 @@ oUF.colors.reaction[MAX_REPUTATION_REACTION + 1] = {0, 0.5, 0.9} -- paragon colo
 
 -- Changed tooltip for ShestakUI
 local function UpdateTooltip(element)
-	local cur, max, name, factionID, standingID, standingText, pendingReward = GetReputation()
+	local cur, max, name, _, standingID, standingText, pendingReward = GetReputation()
 	local rewardAtlas = pendingReward and "|A:ParagonReputation_Bag:0:0:0:0|a" or ""
 	local color = element.__owner.colors.reaction[standingID]
 

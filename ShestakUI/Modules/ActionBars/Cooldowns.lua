@@ -29,7 +29,7 @@ local function Timer_ForceUpdate(self)
 	self:Show()
 end
 
-local function Timer_OnSizeChanged(self, width, height)
+local function Timer_OnSizeChanged(self, width)
 	local fontScale = T.Round(width) / 40
 	if fontScale == self.fontScale then
 		return

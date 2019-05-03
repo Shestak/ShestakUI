@@ -267,7 +267,7 @@ function lpanels:Init()
 	end f.name = f.name and "LP_"..f.name or "LP_"..i end
 
 	-- Begin to cycle through user profile and create panels
-	for i, f in ipairs(self.profile) do self:MakePanel(f) end
+	for _, f in ipairs(self.profile) do self:MakePanel(f) end
 end
 
 function lpanels:Exit()

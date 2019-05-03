@@ -8,8 +8,8 @@ local tips = {[1] = _G["ItemRefTooltip"]}
 local types = {item = true, enchant = true, spell = true, quest = true, unit = true, talent = true, achievement = true, glyph = true, instancelock = true, currency = true}
 
 local CreateTip = function(link)
-	for k, v in ipairs(tips) do
-		for i, tip in ipairs(tips) do
+	for _, v in ipairs(tips) do
+		for _, tip in ipairs(tips) do
 			if tip:IsShown() and tip.link == link then
 				tip.link = nil
 				HideUIPanel(tip)

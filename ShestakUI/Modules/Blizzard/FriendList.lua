@@ -114,7 +114,6 @@ hooksecurefunc("WhoList_Update", function()
 
 		local info = C_FriendList.GetWhoInfo(index)
 		if info then
-			local name = info.fullName
 			local guild = info.fullGuildName
 			local level = info.level
 			local race = info.raceStr

@@ -17,7 +17,7 @@ local function UpdateData()
 	end
 	local i, limit = 1, GetCurrencyListSize()
 	while i <= limit do
-		local name, isHeader, isExpanded, _, _, count, icon = GetCurrencyListInfo(i)
+		local name, isHeader, isExpanded, _, _, count = GetCurrencyListInfo(i)
 		if isHeader then
 			if not isExpanded then
 				collapsed[name] = true

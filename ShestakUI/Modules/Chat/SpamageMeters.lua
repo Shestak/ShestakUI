@@ -52,14 +52,14 @@ local events = {
 }
 
 local function FilterLine(event, source, message, ...)
-	for k, v in ipairs(nextLines) do
+	for _, v in ipairs(nextLines) do
 		if message:match(v) then
 			local curTime = time()
 			for i, j in ipairs(meters) do
 				local elapsed = curTime - j.time
 				if j.source == source and j.event == event and elapsed < 1 then
 					local toInsert = true
-					for a, b in ipairs(j.data) do
+					for _, b in ipairs(j.data) do
 						if b == message then
 							toInsert = false
 						end
@@ -74,7 +74,7 @@ local function FilterLine(event, source, message, ...)
 		end
 	end
 
-	for k, v in ipairs(firstLines) do
+	for _, v in ipairs(firstLines) do
 		local newID = 0
 		if message:match(v) then
 			local curTime = time()
@@ -113,7 +113,7 @@ function SetItemRef(link, text, button, frame)
 		ItemRefTooltip:ClearLines()
 		ItemRefTooltip:AddLine(meters[meterID].title)
 		ItemRefTooltip:AddLine(string.format(BY_SOURCE..": %s", meters[meterID].source))
-		for k, v in ipairs(meters[meterID].data) do
+		for _, v in ipairs(meters[meterID].data) do
 			local left, right = v:match("^(.*)  (.*)$")
 			if left and right then
 				ItemRefTooltip:AddDoubleLine(left, right, 1, 1, 1, 1, 1, 1)

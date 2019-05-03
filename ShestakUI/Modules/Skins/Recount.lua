@@ -42,7 +42,7 @@ local function SkinButton(frame, text)
 end
 
 -- Override bar textures
-Recount.UpdateBarTextures = function(self)
+Recount.UpdateBarTextures = function()
 	for _, v in pairs(Recount.MainWindow.Rows) do
 		v.StatusBar:SetStatusBarTexture(C.media.texture)
 		v.StatusBar:GetStatusBarTexture():SetHorizTile(false)
@@ -87,7 +87,7 @@ end
 
 -- Skin some others frame, not available outside Recount
 Recount.AddWindow_ = Recount.AddWindow
-Recount.AddWindow = function(self, frame)
+Recount.AddWindow = function(_, frame)
 	Recount:AddWindow_(frame)
 
 	if frame.YesButton then
@@ -119,10 +119,10 @@ if _G["Recount_Realtime_Upstream Traffic_UP_TRAFFIC"] then SkinFrame(_G["Recount
 
 -- Update Textures
 Recount:UpdateBarTextures()
-Recount.MainWindow.ConfigButton:HookScript("OnClick", function(self) Recount:UpdateBarTextures() end)
+Recount.MainWindow.ConfigButton:HookScript("OnClick", function() Recount:UpdateBarTextures() end)
 
 -- Reskin Dropdown
-Recount.MainWindow.FileButton:HookScript("OnClick", function(self) if LibDropdownFrame0 then LibDropdownFrame0:SetTemplate("Transparent") end end)
+Recount.MainWindow.FileButton:HookScript("OnClick", function() if LibDropdownFrame0 then LibDropdownFrame0:SetTemplate("Transparent") end end)
 
 -- Reskin Buttons
 SkinButton(Recount.MainWindow.CloseButton, "X")

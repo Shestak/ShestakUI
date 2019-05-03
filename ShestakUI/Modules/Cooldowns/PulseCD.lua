@@ -127,7 +127,7 @@ local function OnUpdate(_, update)
 end
 
 -- Event Handlers
-function frame:ADDON_LOADED(addon)
+function frame:ADDON_LOADED()
 	for _, v in pairs(T.pulse_ignored_spells) do
 		T.pulse_ignored_spells[v] = true
 	end

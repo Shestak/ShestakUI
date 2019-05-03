@@ -107,7 +107,7 @@ local InitMove = function(msg)
 	if msg and (msg == "reset" or msg == "куыуе") then
 		SavedPositions = {}
 		SavedOptionsPerChar.UFPos = {}
-		for i, v in pairs(placed) do
+		for _, v in pairs(placed) do
 			if _G[v] then
 				_G[v]:SetUserPlaced(false)
 			end
@@ -116,13 +116,13 @@ local InitMove = function(msg)
 		return
 	end
 	if not moving then
-		for i, v in pairs(T.MoverFrames) do
+		for _, v in pairs(T.MoverFrames) do
 			local mover = GetMover(v)
 			if mover then mover:Show() end
 		end
 		moving = true
 	else
-		for i, v in pairs(movers) do
+		for _, v in pairs(movers) do
 			v:Hide()
 		end
 		moving = false

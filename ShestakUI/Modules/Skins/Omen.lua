@@ -9,7 +9,7 @@ local Omen = LibStub("AceAddon-3.0"):GetAddon("Omen")
 -- Skin Bar Texture
 Omen.UpdateBarTextureSettings_ = Omen.UpdateBarTextureSettings
 Omen.UpdateBarTextureSettings = function(self)
-	for i, v in ipairs(self.Bars) do
+	for _, v in ipairs(self.Bars) do
 		v.texture:SetTexture(C.media.texture)
 		v:CreateBackdrop("Transparent")
 	end
@@ -19,7 +19,7 @@ end
 Omen.UpdateBarLabelSettings_ = Omen.UpdateBarLabelSettings
 Omen.UpdateBarLabelSettings = function(self)
 	self:UpdateBarLabelSettings_()
-	for i, v in ipairs(self.Bars) do
+	for _, v in ipairs(self.Bars) do
 		v.Text1:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)
 		v.Text1:SetShadowOffset(C.font.stylization_font_shadow and 1 or 0, C.font.stylization_font_shadow and -1 or 0)
 		v.Text2:SetFont(C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)

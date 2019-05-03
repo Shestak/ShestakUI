@@ -51,8 +51,6 @@ function frame:OnEvent(event, arg1)
 			if str then str:SetText(nil) end
 		end
 	end
-
-	local r, g, b = RYGColorGradient(min)
 end
 
 frame:SetScript("OnEvent", frame.OnEvent)

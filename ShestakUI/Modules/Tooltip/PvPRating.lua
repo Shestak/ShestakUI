@@ -61,7 +61,7 @@ frame:SetScript("OnEvent", function(self, event, ...)
 
 		active = false
 
-		for index, Achievement in pairs(statistic) do
+		for _, Achievement in pairs(statistic) do
 			if tonumber(GetComparisonStatistic(Achievement)) and tonumber(GetComparisonStatistic(Achievement)) > 0 then
 				tooltip:AddDoubleLine(select(2, GetAchievementInfo(Achievement)), gradient(tonumber(GetComparisonStatistic(Achievement)), 0, 100))
 				active = true

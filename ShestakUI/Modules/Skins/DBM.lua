@@ -12,7 +12,7 @@ local backdrop = {
 local DBMSkin = CreateFrame("Frame")
 DBMSkin:RegisterEvent("PLAYER_LOGIN")
 DBMSkin:RegisterEvent("ADDON_LOADED")
-DBMSkin:SetScript("OnEvent", function(self, event, addon)
+DBMSkin:SetScript("OnEvent", function()
 	if IsAddOnLoaded("DBM-Core") then
 		local function SkinBars(self)
 			for bar in self:GetBarIterator() do
@@ -298,7 +298,7 @@ StaticPopupDialogs.SETTINGS_DBM = {
 ----------------------------------------------------------------------------------------
 local OnLogon = CreateFrame("Frame")
 OnLogon:RegisterEvent("PLAYER_ENTERING_WORLD")
-OnLogon:SetScript("OnEvent", function(self, event)
+OnLogon:SetScript("OnEvent", function(self)
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 
 	if IsAddOnLoaded("DBM-Core") then

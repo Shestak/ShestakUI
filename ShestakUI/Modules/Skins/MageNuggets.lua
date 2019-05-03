@@ -6,7 +6,7 @@ if C.skins.mage_nuggets ~= true then return end
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
-frame:SetScript("OnEvent", function(self, event)
+frame:SetScript("OnEvent", function()
 	if not IsAddOnLoaded("MageNuggets") then return end
 
 	MageNuggets.cooldownSize = 3

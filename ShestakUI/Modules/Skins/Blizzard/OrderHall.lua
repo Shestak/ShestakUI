@@ -20,7 +20,7 @@ local function LoadSkin()
 	hooksecurefunc(OrderHallCommandBar, "RefreshCategories", function(self)
 		local index = 0
 		C_Timer.After(0.5, function()
-			for i, child in ipairs({self:GetChildren()}) do
+			for _, child in ipairs({self:GetChildren()}) do
 				if child.Icon and child.Count and child.TroopPortraitCover then
 					index = index + 1
 					child.TroopPortraitCover:Hide()

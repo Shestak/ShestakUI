@@ -569,7 +569,7 @@ function skin:HandleAutoScrollFrame(listFrame)
 end
 
 local f = CreateFrame("Frame")
-f:SetScript("OnEvent",function(self,event,...)
+f:SetScript("OnEvent",function(self)
 	C_Timer.After(0,function()
 		if Rematch.isLoaded and not self.skinDone then
 			for panel,func in pairs(skin.panels) do

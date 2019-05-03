@@ -178,7 +178,7 @@ end
 local SlotCache = {}
 local ItemCache = {}
 local TestTips = {}
-for i, slot in pairs(InventorySlots) do
+for _, slot in pairs(InventorySlots) do
 	local tip = CreateFrame("GameTooltip", "AverageItemLevelTooltip"..slot, nil, "GameTooltipTemplate")
 	tip:SetOwner(WorldFrame, "ANCHOR_NONE")
 	TestTips[slot] = tip
@@ -298,7 +298,7 @@ local f = CreateFrame("frame", nil, GameTooltip)
 local ShouldInspect = false
 lastInspectRequest = 0
 local FailTimeout = 1
-f:SetScript("OnUpdate", function(self, elapsed)
+f:SetScript("OnUpdate", function(self)
 	local _, unitID = GameTooltip:GetUnit()
 	local guid = unitID and UnitGUID(unitID)
 	if not guid or (InspectFrame and InspectFrame:IsVisible()) then return end
@@ -392,7 +392,7 @@ local function ScanUnit(unitID)
 	wipe(ItemCache)
 	wipe(GuidCache[ScannedGUID].legos)
 	local numEquipped = 0
-	for i, slot in pairs(InventorySlots) do
+	for _, slot in pairs(InventorySlots) do
 		if GetInventoryItemTexture(unitID, slot) then
 			SlotCache[slot] = false
 			numEquipped = numEquipped + 1
@@ -417,7 +417,7 @@ end
 
 function E:INSPECT_READY(guid)
 	ActiveGUID = nil
-	local unitID, name = GetUnitIDFromGUID(guid)
+	local unitID = GetUnitIDFromGUID(guid)
 	if unitID then
 		local _, class = UnitClass(unitID)
 		local colors = class and RAID_CLASS_COLORS[class]

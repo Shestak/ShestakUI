@@ -1413,7 +1413,7 @@ end
 --	Test UnitFrames(by community)
 ----------------------------------------------------------------------------------------
 local moving = false
-SlashCmdList.TEST_UF = function(msg)
+SlashCmdList.TEST_UF = function()
 	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
 	if not moving then
 		for _, frames in pairs({"oUF_Target", "oUF_TargetTarget", "oUF_Pet", "oUF_Focus", "oUF_FocusTarget"}) do

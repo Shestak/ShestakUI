@@ -31,7 +31,7 @@ local function hook(frame)
 	end
 end
 
-for i, frame in ipairs(oUF.objects) do hook(frame) end
+for _, frame in ipairs(oUF.objects) do hook(frame) end
 oUF:RegisterInitCallback(hook)
 
 local f, min, max = CreateFrame("Frame"), math.min, math.max

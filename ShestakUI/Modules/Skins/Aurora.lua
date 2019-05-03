@@ -5,7 +5,7 @@
 ----------------------------------------------------------------------------------------
 local AuroraSkin = CreateFrame("Frame")
 AuroraSkin:RegisterEvent("PLAYER_LOGIN")
-AuroraSkin:SetScript("OnEvent", function(self, event, addon)
+AuroraSkin:SetScript("OnEvent", function()
 	if not IsAddOnLoaded("Aurora") then return end
 	local F = unpack(Aurora)
 

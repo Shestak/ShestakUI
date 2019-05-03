@@ -16,7 +16,7 @@ local buttons = {
 local function SkinButton(f)
 	if not f or f:GetObjectType() ~= "Button" then return end
 
-	for i, buttons in pairs(buttons) do
+	for _, buttons in pairs(buttons) do
 		if f:GetName() ~= nil then
 			if f:GetName():match(buttons) then return end
 		end

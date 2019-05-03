@@ -135,7 +135,7 @@ local OnEvent = function(self, event)
 			end
 		end
 	elseif event == "ZONE_CHANGED_NEW_AREA" then
-		for k, v in pairs(icons) do
+		for _, v in pairs(icons) do
 			v.endTime = 0
 		end
 	end

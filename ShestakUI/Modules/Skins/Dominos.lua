@@ -6,7 +6,7 @@ if C.skins.dominos ~= true then return end
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
-frame:SetScript("OnEvent", function(self, event, addon)
+frame:SetScript("OnEvent", function()
 	if not IsAddOnLoaded("Dominos") then return end
 
 	local function StyleNormalButton(self)

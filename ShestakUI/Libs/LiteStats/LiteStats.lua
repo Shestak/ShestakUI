@@ -592,7 +592,7 @@ if gold.enabled then
 					return a[3] > b[3]
 				end
 			end)
-			for i, v in ipairs(goldTable) do
+			for _, v in ipairs(goldTable) do
 				GameTooltip:AddDoubleLine(v[1], v[2], 1, 1, 1, 1, 1, 1)
 				total = total + v[3]
 			end

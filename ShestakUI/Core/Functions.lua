@@ -1513,7 +1513,7 @@ T.CreateAuraWatchIcon = function(self, icon)
 	icon.overlay:SetTexture()
 end
 
-T.CreateAuraWatch = function(self, unit)
+T.CreateAuraWatch = function(self)
 	local auras = CreateFrame("Frame", nil, self)
 	auras:SetPoint("TOPLEFT", self.Health, 0, 0)
 	auras:SetPoint("BOTTOMRIGHT", self.Health, 0, 0)
