@@ -65,7 +65,7 @@ local function LoadSkin()
 		slot:CreateBackdrop("Default")
 		slot.backdrop:SetAllPoints()
 
-		hooksecurefunc(slot.IconBorder, "SetVertexColor", function(self, r, g, b)
+		hooksecurefunc(slot.IconBorder, "SetVertexColor", function(self)
 			self:SetTexture("")
 		end)
 	end

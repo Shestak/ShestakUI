@@ -9,7 +9,7 @@ local self = CapFrame
 local db
 local bars = {}
 
-local OnEvent = function(obj, event, ...)
+local OnEvent = function(_, event, ...)
 	if event == "ADDON_LOADED" and IsAddOnLoaded("Capping") then
 		db = CappingDB
 		db.texture = "Smooth"

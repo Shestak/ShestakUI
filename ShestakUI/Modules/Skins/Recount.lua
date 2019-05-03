@@ -43,7 +43,7 @@ end
 
 -- Override bar textures
 Recount.UpdateBarTextures = function(self)
-	for k, v in pairs(Recount.MainWindow.Rows) do
+	for _, v in pairs(Recount.MainWindow.Rows) do
 		v.StatusBar:SetStatusBarTexture(C.media.texture)
 		v.StatusBar:GetStatusBarTexture():SetHorizTile(false)
 		v.StatusBar:GetStatusBarTexture():SetVertTile(false)

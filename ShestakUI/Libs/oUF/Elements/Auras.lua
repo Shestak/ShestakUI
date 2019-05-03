@@ -153,7 +153,6 @@ local function SetPosition(icons, x)
 		local growthx = (icons["growth-x"] == "LEFT" and -1) or 1
 		local growthy = (icons["growth-y"] == "DOWN" and -1) or 1
 		local cols = math.floor(icons:GetWidth() / sizex + .5)
-		local rows = math.floor(icons:GetHeight() / sizey + .5)
 
 		for i = 1, #icons do
 			local button = icons[i]

@@ -24,7 +24,7 @@ local function LoadSkin()
 	T.SkinCloseButton(TalkingHeadFrame.MainFrame.CloseButton)
 	TalkingHeadFrame.MainFrame.CloseButton:SetPoint("TOPRIGHT", -39, -17)
 
-	hooksecurefunc(TalkingHeadFrame.TextFrame.Text, "SetTextColor", function(self, r, g, b)
+	hooksecurefunc(TalkingHeadFrame.TextFrame.Text, "SetTextColor", function(self, r)
 		if r == 0 then
 			self:SetTextColor(1, 1, 1)
 		end

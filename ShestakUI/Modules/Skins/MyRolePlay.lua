@@ -22,7 +22,7 @@ hooksecurefunc(mrp, "CreateOptionsPanel", function()
 	T.SkinDropDownBox(MyRolePlayOptionsPanel_WeightUnit)
 end)
 
-local function reskinHeader(c, field)
+local function reskinHeader(_, field)
 	for i = 1, field:GetNumChildren() do
 		local f = select(i, field:GetChildren())
 		if not f.reskinned then

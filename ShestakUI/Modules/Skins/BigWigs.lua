@@ -142,7 +142,7 @@ local function registerStyle()
 	bars:RegisterBarStyle("ShestakUI", {
 		apiVersion = 1,
 		version = 1,
-		GetSpacing = function(bar) return T.Scale(13) end,
+		GetSpacing = function() return T.Scale(13) end,
 		ApplyStyle = applystyle,
 		BarStopped = freestyle,
 		GetStyleName = function() return "ShestakUI" end,

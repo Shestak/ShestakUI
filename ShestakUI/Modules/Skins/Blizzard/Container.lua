@@ -221,7 +221,7 @@ local function LoadSkin()
 			leftMostPoint = screenWidth - xOffset
 			column = 1
 			local frameHeight
-			for index, frameName in ipairs(ContainerFrame1.bags) do
+			for _, frameName in ipairs(ContainerFrame1.bags) do
 				frameHeight = _G[frameName]:GetHeight()
 				if freeScreenHeight < frameHeight then
 					column = column + 1

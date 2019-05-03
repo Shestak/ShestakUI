@@ -77,7 +77,7 @@ local function LoadSkin()
 				end
 			end
 
-			local r, g, b = _G["SpellButton"..i.."SpellName"]:GetTextColor()
+			local r = _G["SpellButton"..i.."SpellName"]:GetTextColor()
 
 			if r < 0.8 then
 				_G["SpellButton"..i.."SpellName"]:SetTextColor(0.6, 0.6, 0.6)

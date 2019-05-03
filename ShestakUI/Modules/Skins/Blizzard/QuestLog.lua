@@ -177,7 +177,7 @@ local function LoadSkin()
 		end
 	end)
 
-	hooksecurefunc(QuestInfoRequiredMoneyText, "SetTextColor", function(self, r, g, b)
+	hooksecurefunc(QuestInfoRequiredMoneyText, "SetTextColor", function(self, r)
 		if r == 0 then
 			self:SetTextColor(1, 0.8, 0)
 		elseif r == 0.2 then

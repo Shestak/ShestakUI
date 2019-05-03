@@ -17,7 +17,6 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	FBC_FRAME_OFFSET = C.actionbar.button_space - 7
 
 	local function CreateBorder(self)
-		local name = self:GetName()
 		local button = self
 		local icon = _G[btn:GetName().."Icon"]
 		local border = _G[btn:GetName().."Border"]

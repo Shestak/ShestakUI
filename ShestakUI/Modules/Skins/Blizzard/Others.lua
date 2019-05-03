@@ -123,7 +123,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		T.SkinEditBox(WardrobeOutfitEditFrame.EditBox, 250, 25)
 
 		-- Reskin Dropdown menu
-		hooksecurefunc("UIDropDownMenu_InitializeHelper", function(frame)
+		hooksecurefunc("UIDropDownMenu_InitializeHelper", function()
 			for i = 1, UIDROPDOWNMENU_MAXLEVELS do
 				_G["DropDownList"..i.."Backdrop"]:SetTemplate("Transparent")
 				_G["DropDownList"..i.."MenuBackdrop"]:SetTemplate("Transparent")

@@ -122,7 +122,7 @@ local function LoadSkin()
 	AuctionsItemButton:SetTemplate("Default")
 	AuctionsItemButton.IconBorder:Kill()
 
-	AuctionsItemButton:HookScript("OnEvent", function(self, event, ...)
+	AuctionsItemButton:HookScript("OnEvent", function(self, event)
 		if event == "NEW_AUCTION_UPDATE" and self:GetNormalTexture() then
 			self:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			self:GetNormalTexture():ClearAllPoints()
@@ -464,7 +464,7 @@ local function LoadSkin()
 
 	T.SkinScrollBar(AuctionatorScrollFrameScrollBar)
 
-	hooksecurefunc("AuctionFrameTab_OnClick", function(self, _, _, index)
+	hooksecurefunc("AuctionFrameTab_OnClick", function(self)
 		local index = self:GetID()
 		if index == 4 then
 			Atr_Hlist:SetPoint("TOPLEFT", -193, -67)

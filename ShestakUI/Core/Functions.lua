@@ -938,7 +938,7 @@ T.PreUpdatePower = function(power, unit)
 	end
 end
 
-T.PostUpdatePower = function(power, unit, cur, min, max)
+T.PostUpdatePower = function(power, unit, cur, _, max)
 	if unit and unit:find("arena%dtarget") then return end
 	local self = power:GetParent()
 	local pType, pToken = UnitPowerType(unit)
@@ -1130,7 +1130,7 @@ end
 local ticks = {}
 
 local setBarTicks = function(Castbar, ticknum)
-	for k, v in pairs(ticks) do
+	for _, v in pairs(ticks) do
 		v:Hide()
 	end
 	if ticknum and ticknum > 0 then
@@ -1151,7 +1151,7 @@ local setBarTicks = function(Castbar, ticknum)
 	end
 end
 
-T.PostCastStart = function(Castbar, unit, name)
+T.PostCastStart = function(Castbar, unit)
 	Castbar.channeling = false
 	if unit == "vehicle" then unit = "player" end
 
@@ -1237,7 +1237,7 @@ end
 
 local channelingTicks = T.CastBarTicks
 
-T.PostChannelStart = function(Castbar, unit, name)
+T.PostChannelStart = function(Castbar, unit)
 	Castbar.channeling = true
 	if unit == "vehicle" then unit = "player" end
 
@@ -1527,19 +1527,19 @@ T.CreateAuraWatch = function(self, unit)
 	local buffs = {}
 
 	if T.RaidBuffs["ALL"] then
-		for key, value in pairs(T.RaidBuffs["ALL"]) do
+		for _, value in pairs(T.RaidBuffs["ALL"]) do
 			tinsert(buffs, value)
 		end
 	end
 
 	if T.RaidBuffs[T.class] then
-		for key, value in pairs(T.RaidBuffs[T.class]) do
+		for _, value in pairs(T.RaidBuffs[T.class]) do
 			tinsert(buffs, value)
 		end
 	end
 
 	if buffs then
-		for key, spell in pairs(buffs) do
+		for _, spell in pairs(buffs) do
 			local icon = CreateFrame("Frame", nil, auras)
 			icon.spellID = spell[1]
 			icon.anyUnit = spell[4]
