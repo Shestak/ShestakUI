@@ -102,7 +102,7 @@ Scanner:SetScript("OnEvent", function()
 						AutoButton.c:SetText("")
 					end
 
-					AutoButton:SetScript("OnUpdate", function(self, elapsed)
+					AutoButton:SetScript("OnUpdate", function()
 						local cd_start, cd_finish, cd_enable = GetContainerItemCooldown(b, s)
 						CooldownFrame_Set(AutoButton.cd, cd_start, cd_finish, cd_enable)
 					end)
@@ -132,7 +132,7 @@ Scanner:SetScript("OnEvent", function()
 				AutoButton.t:SetTexture(itemIcon)
 				AutoButton.c:SetText("")
 
-				AutoButton:SetScript("OnUpdate", function(self, elapsed)
+				AutoButton:SetScript("OnUpdate", function()
 					local cd_start, cd_finish, cd_enable = GetInventoryItemCooldown("player", w)
 					CooldownFrame_Set(AutoButton.cd, cd_start, cd_finish, cd_enable)
 				end)

@@ -29,7 +29,7 @@ hooksecurefunc("MainMenuBarVehicleLeaveButton_Update", function()
 				self:LockHighlight()
 			end)
 		else
-			vehicle:SetScript("OnClick", function(self)
+			vehicle:SetScript("OnClick", function()
 				VehicleExit()
 			end)
 		end

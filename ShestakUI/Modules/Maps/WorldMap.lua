@@ -34,7 +34,7 @@ coords.MouseText:SetPoint("BOTTOMLEFT", coords.PlayerText, "TOPLEFT", 0, 5)
 coords.MouseText:SetText(L_MAP_CURSOR..": 0,0")
 
 local int = 0
-WorldMapFrame:HookScript("OnUpdate", function(self, elapsed)
+WorldMapFrame:HookScript("OnUpdate", function(self)
 	int = int + 1
 	if int >= 3 then
 		local UnitMap = C_Map.GetBestMapForUnit("player")

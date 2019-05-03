@@ -19,7 +19,7 @@ local HasAction = HasAction
 local function timer_Create(parent, interval)
 	local updater = parent:CreateAnimationGroup()
 	updater:SetLooping("NONE")
-	updater:SetScript("OnFinished", function(self)
+	updater:SetScript("OnFinished", function()
 		if parent:Update() then
 			parent:Start(interval)
 		end
@@ -42,7 +42,7 @@ local function timer_Create(parent, interval)
 		return self
 	end
 
-	parent.Active = function(self)
+	parent.Active = function()
 		return updater:IsPlaying()
 	end
 

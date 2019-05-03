@@ -500,7 +500,7 @@ local StartConfigmode = function()
 
 			if not f.tr then
 				f.tr = CreateFrame("Frame", nil, f)
-				f.tr:SetScript("OnDragStart", function(self, button)
+				f.tr:SetScript("OnDragStart", function(self)
 					self:GetParent():StartMoving()
 				end)
 				f.tr:SetScript("OnDragStop", function(self)
@@ -699,7 +699,7 @@ if C.combattext.merge_aoe_spam then
 	if C.combattext.damage or C.combattext.healing then
 		local pairs = pairs
 		SQ = {}
-		for k, v in pairs(T.aoespam) do
+		for k in pairs(T.aoespam) do
 			SQ[k] = {queue = 0, msg = "", color = {}, count = 0, utime = 0, locked = false}
 		end
 		ct.SpamQueue = function(spellId, add)
@@ -720,7 +720,7 @@ if C.combattext.merge_aoe_spam then
 			if tslu > 0.5 then
 				tslu = 0
 				local utime = time()
-				for k, v in pairs(SQ) do
+				for k in pairs(SQ) do
 					if not SQ[k]["locked"] and SQ[k]["queue"] > 0 and SQ[k]["utime"] <= utime then
 						if SQ[k]["count"] > 1 then
 							count = " |cffFFFFFF x "..SQ[k]["count"].."|r"

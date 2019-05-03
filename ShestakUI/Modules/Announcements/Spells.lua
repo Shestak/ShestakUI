@@ -17,7 +17,7 @@ frame:SetScript("OnEvent", function(self)
 	if C.announcements.spells_from_all == true and not (sourceGUID == UnitGUID("player") and sourceName == T.name) then
 		if not sourceName then return end
 
-		for i, spells in pairs(spells) do
+		for _, spells in pairs(spells) do
 			if spellID == spells then
 				if destName == nil then
 					SendChatMessage(string.format(L_ANNOUNCE_FP_USE, sourceName, GetSpellLink(spellID)), T.CheckChat())
@@ -29,7 +29,7 @@ frame:SetScript("OnEvent", function(self)
 	else
 		if not (sourceGUID == UnitGUID("player") and sourceName == T.name) then return end
 
-		for i, spells in pairs(spells) do
+		for _, spells in pairs(spells) do
 			if spellID == spells then
 				if destName == nil then
 					SendChatMessage(string.format(L_ANNOUNCE_FP_USE, sourceName, GetSpellLink(spellID)), T.CheckChat())

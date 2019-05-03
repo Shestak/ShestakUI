@@ -45,7 +45,7 @@ for k = 0, 20 do
 	subs[k + 1] = GetItemSubClassInfo(LE_ITEM_CLASS_WEAPON, k)
 end
 
-for i, subclass in ipairs(unusable[1]) do
+for _, subclass in ipairs(unusable[1]) do
 	unusable[subs[subclass+1]] = true
 end
 

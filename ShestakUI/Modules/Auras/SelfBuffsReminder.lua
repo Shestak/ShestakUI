@@ -7,7 +7,7 @@ if C.reminder.solo_buffs_enable ~= true then return end
 local tab = T.ReminderSelfBuffs[T.class]
 if not tab then return end
 
-local function OnEvent(self, event, arg1, arg2)
+local function OnEvent(self, event, arg1)
 	local group = tab[self.id]
 	if not group.spells then return end
 	if not GetSpecialization() then return end
@@ -154,7 +154,7 @@ for i = 1, #tab do
 	frame:RegisterEvent("UNIT_ENTERED_VEHICLE")
 	frame:RegisterEvent("UNIT_EXITED_VEHICLE")
 	frame:SetScript("OnEvent", OnEvent)
-	frame:SetScript("OnUpdate", function(self, elapsed)
+	frame:SetScript("OnUpdate", function(self)
 		if not self.icon:GetTexture() then
 			self:Hide()
 		end

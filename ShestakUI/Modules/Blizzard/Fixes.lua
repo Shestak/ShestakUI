@@ -47,7 +47,7 @@ end
 --	Fix SearchLFGLeave() taint
 ----------------------------------------------------------------------------------------
 local TaintFix = CreateFrame("Frame")
-TaintFix:SetScript("OnUpdate", function(self, elapsed)
+TaintFix:SetScript("OnUpdate", function()
 	if LFRBrowseFrame.timeToClear then
 		LFRBrowseFrame.timeToClear = nil
 	end

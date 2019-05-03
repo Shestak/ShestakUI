@@ -81,7 +81,7 @@ local StopTimer = function(icon)
 	UpdatePositions()
 end
 
-local IconUpdate = function(self, elapsed)
+local IconUpdate = function(self)
 	if (self.endTime < GetTime()) then
 		StopTimer(self)
 	end

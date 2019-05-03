@@ -77,7 +77,7 @@ hooksecurefunc(GameTooltip, "SetCurrencyByID", function(tooltip, id)
 	AddTooltipInfo(tooltip, id, not MerchantMoneyInset:IsMouseOver())
 end)
 
-hooksecurefunc(GameTooltip, "SetCurrencyToken", function(tooltip, i)
+hooksecurefunc(GameTooltip, "SetCurrencyToken", function(_, i)
 	local name = GetCurrencyListInfo(i)
 	if name then
 		AddTooltipInfo(GameTooltip, nameToID[name], not TokenFrame:IsMouseOver())
@@ -126,7 +126,7 @@ hooksecurefunc(GameTooltip, "SetQuestCurrency", function(tooltip, type, id)
 	end
 end)
 
-hooksecurefunc(GameTooltip, "SetQuestLogCurrency", function(tooltip, type, id)
+hooksecurefunc(GameTooltip, "SetQuestLogCurrency", function(tooltip, _, id)
 	local name = GetQuestLogRewardCurrencyInfo(id)
 	if name then
 		AddTooltipInfo(tooltip, nameToID[name], true)

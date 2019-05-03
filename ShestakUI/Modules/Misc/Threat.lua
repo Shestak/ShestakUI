@@ -20,7 +20,7 @@ local targeted = false
 
 RAID_CLASS_COLORS["PET"] = {r = 0, g = 0.7, b = 0, colorStr = "ff00b200"}
 
-local CreateFS = function(frame, fsize, fstyle)
+local CreateFS = function(frame)
 	local fstring = frame:CreateFontString(nil, "OVERLAY")
 	fstring:SetFont(C.font.threat_meter_font, C.font.threat_meter_font_size, C.font.threat_meter_font_style)
 	fstring:SetShadowOffset(C.font.threat_meter_font_shadow and 1 or 0, C.font.threat_meter_font_shadow and -1 or 0)
@@ -91,7 +91,7 @@ local SortMethod = function(a, b)
 end
 
 local UpdateBars = function()
-	for i, v in pairs(bar) do
+	for _, v in pairs(bar) do
 		v:Hide()
 	end
 	table.sort(barList, SortMethod)

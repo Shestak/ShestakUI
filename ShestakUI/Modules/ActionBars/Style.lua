@@ -220,10 +220,10 @@ local function SetupFlyoutButton()
 				button:StyleButton()
 
 				if C.actionbar.rightbars_mouseover == true then
-					SpellFlyout:HookScript("OnEnter", function(self) RightBarMouseOver(1) end)
-					SpellFlyout:HookScript("OnLeave", function(self) RightBarMouseOver(0) end)
-					button:HookScript("OnEnter", function(self) RightBarMouseOver(1) end)
-					button:HookScript("OnLeave", function(self) RightBarMouseOver(0) end)
+					SpellFlyout:HookScript("OnEnter", function() RightBarMouseOver(1) end)
+					SpellFlyout:HookScript("OnLeave", function() RightBarMouseOver(0) end)
+					button:HookScript("OnEnter", function() RightBarMouseOver(1) end)
+					button:HookScript("OnLeave", function() RightBarMouseOver(0) end)
 				end
 				button.IsSkinned = true
 			end
@@ -280,7 +280,7 @@ end
 hooksecurefunc("ActionButton_Update", StyleNormalButton)
 hooksecurefunc("ActionButton_UpdateFlyout", StyleFlyoutButton)
 if C.actionbar.hotkey == true then
-	hooksecurefunc("ActionButton_OnEvent", function(self, event, ...) if event == "PLAYER_ENTERING_WORLD" then ActionButton_UpdateHotkeys(self, self.buttonType) end end)
+	hooksecurefunc("ActionButton_OnEvent", function(self, event) if event == "PLAYER_ENTERING_WORLD" then ActionButton_UpdateHotkeys(self, self.buttonType) end end)
 	hooksecurefunc("ActionButton_UpdateHotkeys", UpdateHotkey)
 end
 if C.actionbar.hide_highlight == true then

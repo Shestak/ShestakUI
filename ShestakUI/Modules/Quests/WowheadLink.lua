@@ -52,7 +52,7 @@ hooksecurefunc("QuestObjectiveTracker_OnOpenDropDown", function(self)
 	questID = b.id
 	info = UIDropDownMenu_CreateInfo()
 	info.text = L_WATCH_WOWHEAD_LINK
-	info.func = function(id)
+	info.func = function()
 		local inputBox = StaticPopup_Show("WATCHFRAME_URL")
 		inputBox.editBox:SetText(linkQuest:format(questID))
 		inputBox.editBox:HighlightText()

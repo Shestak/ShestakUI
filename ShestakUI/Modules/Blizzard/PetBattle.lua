@@ -386,10 +386,6 @@ hooksecurefunc("PetBattleUnitFrame_UpdateDisplay", function(self)
 	-- There must be a petOwner and a petIndex
 	if not self.petOwner or not self.petIndex then return end
 
-	-- Is this Enemy or Player? (This Value will be Added to the Glow Index)
-	local nEnemy = 0
-	if self.petOwner == LE_BATTLE_PET_ENEMY then nEnemy = 3 end
-
 	-- Check if this is the Tooltip
 	local isTooltip = false
 	if self:GetName() == "PetBattlePrimaryUnitTooltip" then isTooltip = true end

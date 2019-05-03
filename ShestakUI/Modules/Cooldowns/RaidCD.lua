@@ -40,7 +40,7 @@ local function sortByExpiration(a, b)
 	return a.endTime > b.endTime
 end
 
-local CreateFS = function(frame, fsize, fstyle)
+local CreateFS = function(frame)
 	local fstring = frame:CreateFontString(nil, "OVERLAY")
 	fstring:SetFont(C.font.raid_cooldowns_font, C.font.raid_cooldowns_font_size, C.font.raid_cooldowns_font_style)
 	fstring:SetShadowOffset(C.font.raid_cooldowns_font_shadow and 1 or 0, C.font.raid_cooldowns_font_shadow and -1 or 0)
@@ -111,7 +111,7 @@ local UpdateCharges = function(bar)
 	end
 end
 
-local BarUpdate = function(self, elapsed)
+local BarUpdate = function(self)
 	local curTime = GetTime()
 	if self.endTime < curTime then
 		if self.isResses then

@@ -46,7 +46,7 @@ frame:Register("MERCHANT_CLOSED", function()
 	atMerchant = false
 end)
 
-frame:Register("BAG_UPDATE_DELAYED", function(bag)
+frame:Register("BAG_UPDATE_DELAYED", function()
 	if atBank or atMail or atMerchant then return end
 	for bag = 0, 4 do
 		for slot = 0, GetContainerNumSlots(bag) do

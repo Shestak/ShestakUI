@@ -16,7 +16,7 @@ local visible, flask, battleelixir, guardianelixir, food, stamina, spell4, custo
 -- We need to check if you have two different elixirs if your not flasked, before we say your not flasked
 local function CheckElixir(unit)
 	if battleelixirbuffs and battleelixirbuffs[1] then
-		for i, battleelixirbuffs in pairs(battleelixirbuffs) do
+		for _, battleelixirbuffs in pairs(battleelixirbuffs) do
 			local name, _, icon = GetSpellInfo(battleelixirbuffs)
 			if T.CheckPlayerBuff(name) then
 				FlaskFrame.t:SetTexture(icon)
@@ -29,7 +29,7 @@ local function CheckElixir(unit)
 	end
 
 	if guardianelixirbuffs and guardianelixirbuffs[1] then
-		for i, guardianelixirbuffs in pairs(guardianelixirbuffs) do
+		for _, guardianelixirbuffs in pairs(guardianelixirbuffs) do
 			local name, _, icon = GetSpellInfo(guardianelixirbuffs)
 			if T.CheckPlayerBuff(name) then
 				guardianelixir = true

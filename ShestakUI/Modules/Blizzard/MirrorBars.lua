@@ -28,13 +28,13 @@ do
 		return self:SetPoint(p1, frame, p2, x, y)
 	end
 
-	local OnUpdate = function(self, elapsed)
+	local OnUpdate = function(self)
 		if self.paused then return end
 
 		self:SetValue(GetMirrorTimerProgress(self.type) / 1e3)
 	end
 
-	local Start = function(self, value, maxvalue, scale, paused, text)
+	local Start = function(self, value, maxvalue, _, paused, text)
 		if paused > 0 then
 			self.paused = 1
 		elseif self.paused then

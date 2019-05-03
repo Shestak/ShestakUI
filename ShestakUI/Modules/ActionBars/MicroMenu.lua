@@ -12,9 +12,9 @@ frame.shown = false
 UpdateMicroButtonsParent(frame)
 if C.actionbar.micromenu_mouseover == true then frame:SetAlpha(0) end
 
-local function CheckFade(self, elapsed)
+local function CheckFade()
 	local mouseactive
-	for i, button in pairs(MICRO_BUTTONS) do
+	for _, button in pairs(MICRO_BUTTONS) do
 		local b = _G[button]
 		if b.mouseover == true then
 			mouseactive = true
@@ -44,7 +44,7 @@ local function CheckFade(self, elapsed)
 end
 frame:SetScript("OnUpdate", CheckFade)
 
-for i, button in pairs(MICRO_BUTTONS) do
+for _, button in pairs(MICRO_BUTTONS) do
 	local m = _G[button]
 	local pushed = m:GetPushedTexture()
 	local normal = m:GetNormalTexture()

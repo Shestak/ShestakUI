@@ -497,7 +497,7 @@ stArchFrame:HookScript("OnMouseUp", function(self)
 	stArch:updateFramePosition(self)
 end)
 
-SlashCmdList.STARCHAEOLOGIST = function(msg, editBox)
+SlashCmdList.STARCHAEOLOGIST = function()
 	ToggleFrame(stArchFrame)
 	stArchFrame:StopMovingOrSizing()
 
