@@ -1735,7 +1735,7 @@ do
 	frame.name = "ShestakUI"
 	frame:SetScript("OnShow", function(self)
 		if self.show then return end
-		local T, C, L = unpack(ShestakUI)
+		local T = unpack(ShestakUI)
 		local title = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
 		title:SetPoint("TOPLEFT", 16, -16)
 		title:SetText("Info:")
