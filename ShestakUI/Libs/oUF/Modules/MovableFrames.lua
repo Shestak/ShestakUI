@@ -328,6 +328,13 @@ do
 		savePosition(self.obj, self)
 	end
 
+	local OnMouseUp = function(self, button)
+		if button == "RightButton" then
+			local style, identifier = getObjectInformation(self.obj)
+			_DB[style][identifier] =  nil
+		end
+	end
+
 	getBackdrop = function(obj, isHeader)
 		local target = isHeader or obj
 		if not target:GetCenter() then return end
@@ -386,6 +393,7 @@ do
 		backdrop:SetScript("OnLeave", function(self)
 			self.backdrop:SetBackdropBorderColor(1, 0, 0)
 		end)
+		backdrop:SetScript("OnMouseUp", OnMouseUp)
 
 		backdropPool[target] = backdrop
 
@@ -416,7 +424,7 @@ T.MoveUnitFrames = function()
 				local _, _, isHeader = getObjectInformation(obj)
 				local backdrop = getBackdrop(obj, isHeader)
 				if backdrop then backdrop:Show() end
-			end	
+			end
 		end
 
 		_LOCK = true

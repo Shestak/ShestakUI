@@ -69,6 +69,12 @@ local OnDragStop = function(self)
 	SetPosition(self)
 end
 
+local RestoreDefaults = function(self, button)
+	if button == "RightButton" then
+		SavedPositions[self.frame:GetName()] = nil
+	end
+end
+
 local CreateMover = function(frame)
 	local mover = CreateFrame("Frame", nil, UIParent)
 	mover:SetTemplate("Transparent")
@@ -83,6 +89,7 @@ local CreateMover = function(frame)
 	mover:SetScript("OnDragStop", OnDragStop)
 	mover:SetScript("OnEnter", function(self) self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b) end)
 	mover:SetScript("OnLeave", function(self) self:SetBackdropBorderColor(1, 0, 0) end)
+	mover:SetScript("OnMouseUp", RestoreDefaults)
 	mover.frame = frame
 
 	mover.name = mover:CreateFontString(nil, "OVERLAY")
