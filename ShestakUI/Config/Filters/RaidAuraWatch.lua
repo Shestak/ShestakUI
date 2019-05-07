@@ -80,6 +80,30 @@ end
 
 T.RaidDebuffs = {
 -----------------------------------------------------------------
+-- Crucible of Storms
+-----------------------------------------------------------------
+	-- The Restless Cabal
+	[SpellName(282386)] = 3, -- Aphotic Blast
+	[SpellName(282384)] = 3, -- Shear Mind
+	[SpellName(282566)] = 3, -- Promises of Power
+	[SpellName(282561)] = 3, -- Dark Herald
+	[SpellName(282432)] = 3, -- Crushing Doubt
+	[SpellName(282589)] = 3, -- Cerebral Assault
+	[SpellName(292826)] = 3, -- Mind Scramble
+
+	-- Uu'nat, Harbinger of the Void
+	[SpellName(284851)] = 3, -- Touch of the End
+	[SpellName(286459)] = 3, -- Feedback: Void
+	[SpellName(286457)] = 3, -- Feedback: Ocean
+	[SpellName(286458)] = 3, -- Feedback: Storm
+	[SpellName(285367)] = 3, -- Piercing Gaze of N'Zoth
+	[SpellName(284733)] = 3, -- Embrace of the Void
+	[SpellName(284722)] = 3, -- Umbral Shell
+	[SpellName(285345)] = 3, -- Maddening Eyes of N'Zoth
+	[SpellName(285477)] = 3, -- Obscurity
+	[SpellName(285652)] = 3, -- Insatiable Torment
+
+-----------------------------------------------------------------
 -- Battle of Dazar'alor
 -----------------------------------------------------------------
 	-- Champion of the Light
