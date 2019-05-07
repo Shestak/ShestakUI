@@ -650,6 +650,9 @@ do
 
 	local plugins_power_prediction = ns.CreateCheckBox(parent, "plugins_power_prediction", L_GUI_UF_PLUGINS_POWER_PREDICTION)
 	plugins_power_prediction:SetPoint("TOPLEFT", plugins_diminishing, "BOTTOMLEFT", 0, 0)
+
+	local plugins_absorbs = ns.CreateCheckBox(parent, "plugins_absorbs")
+	plugins_absorbs:SetPoint("TOPLEFT", plugins_power_prediction, "BOTTOMLEFT", 0, 0)
 end
 
 -- Unit Frames Class bar

@@ -102,6 +102,7 @@ L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texte de combat sur les barres du joueur et 
 L_GUI_UF_PLUGINS_FADER = "Barres de unités"
 L_GUI_UF_PLUGINS_DIMINISHING = "Icones de rendement décroissants sur les fenêtre d'arène"
 L_GUI_UF_PLUGINS_POWER_PREDICTION = "Prédiction du coût des sorts sur la fenêtre du joueur"
+L.unitframe_plugins_absorbs = "Absorbs value on player frame" -- Need review
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Barres de classe"

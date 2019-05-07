@@ -685,6 +685,13 @@ local function Shared(self, unit)
 			self.GCD.Height = T.Scale(3)
 			self.GCD.Width = T.Scale(4)
 		end
+
+		-- Absorbs value
+		if C.unitframe.plugins_absorbs == true then
+			self.Absorbs = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+			self.Absorbs:SetPoint("LEFT", self.Health, "LEFT", 4, 0)
+			self:Tag(self.Absorbs, "[Absorbs]")
+		end
 	end
 
 	-- Counter bar

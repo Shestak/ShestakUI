@@ -102,6 +102,7 @@ L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Текст боя на рамках игро
 L_GUI_UF_PLUGINS_FADER = "Скрывать рамки вне боя"
 L_GUI_UF_PLUGINS_DIMINISHING = "Иконка диминишинга на рамках арены"
 L_GUI_UF_PLUGINS_POWER_PREDICTION = "Полоса прогноза использования маны/энергии"
+L.unitframe_plugins_absorbs = "Количество поглощения на рамке игрока"
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Классовые панели"

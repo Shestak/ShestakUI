@@ -162,3 +162,11 @@ oUF.Tags.Methods["NameplateHealth"] = function(unit)
 	end
 end
 oUF.Tags.Events["NameplateHealth"] = "UNIT_HEALTH_FREQUENT UNIT_MAXHEALTH NAME_PLATE_UNIT_ADDED"
+
+oUF.Tags.Methods["Absorbs"] = function(unit)
+    local absorb = UnitGetTotalAbsorbs(unit)
+    if absorb and absorb > 0 then
+        return T.ShortValue(absorb)
+    end
+end
+oUF.Tags.Events["Absorbs"] = "UNIT_ABSORB_AMOUNT_CHANGED"

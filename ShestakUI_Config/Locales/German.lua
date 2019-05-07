@@ -102,6 +102,7 @@ L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Kampftexts auf Spieler/Zielfenster"
 L_GUI_UF_PLUGINS_FADER = "Blende Einheitenfenster aus"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns Symbole auf Arena Fenstern"
 L_GUI_UF_PLUGINS_POWER_PREDICTION = "Power cost prediction bar on player frame" -- Need review
+L.unitframe_plugins_absorbs = "Absorbs value on player frame" -- Need review
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Unit Frames Klassenleisten"

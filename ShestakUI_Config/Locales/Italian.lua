@@ -102,6 +102,7 @@ L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Testo di combattimento sul riquadro del gioc
 L_GUI_UF_PLUGINS_FADER = "Sfuma i riquadri delle unità"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminuzione dell'effetto (diminishing return) sulle icone dei riquadri d'arena"
 L_GUI_UF_PLUGINS_POWER_PREDICTION = "Previsione del costo in potere sulla barra del riquadro del giocatore"
+L.unitframe_plugins_absorbs = "Absorbs value on player frame" -- Need review
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Barre di classe"

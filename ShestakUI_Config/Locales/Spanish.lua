@@ -102,6 +102,7 @@ L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "Texto de combate en el marco del jugador/obj
 L_GUI_UF_PLUGINS_FADER = "Desvanecer marcos de unidades"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames" -- Needs review
 L_GUI_UF_PLUGINS_POWER_PREDICTION = "Power cost prediction bar on player frame" -- Need review
+L.unitframe_plugins_absorbs = "Absorbs value on player frame" -- Need review
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Unit Frames Class bars" -- Needs review
