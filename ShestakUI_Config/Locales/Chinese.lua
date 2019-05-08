@@ -102,7 +102,7 @@ L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "玩家/目标框架显示战斗文字"
 L_GUI_UF_PLUGINS_FADER = "自动隐藏玩家框架"
 L_GUI_UF_PLUGINS_DIMINISHING = "竞技场框架显示技能递减"
 L_GUI_UF_PLUGINS_POWER_PREDICTION = "即将获得的资源"
-L.unitframe_plugins_absorbs = "Absorbs value on player frame" -- Need review
+L.unitframe_plugins_absorbs = "吸收量"
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "职业资源栏"
