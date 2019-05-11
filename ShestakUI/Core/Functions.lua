@@ -1129,24 +1129,24 @@ end
 
 local ticks = {}
 
-local setBarTicks = function(Castbar, ticknum)
+local setBarTicks = function(Castbar, numTicks)
 	for _, v in pairs(ticks) do
 		v:Hide()
 	end
-	if ticknum and ticknum > 0 then
-		local delta = Castbar:GetWidth() / ticknum
-		for k = 1, ticknum do
-			if not ticks[k] then
-				ticks[k] = Castbar:CreateTexture(nil, "OVERLAY")
-				ticks[k]:SetTexture(C.media.texture)
-				ticks[k]:SetVertexColor(unpack(C.media.border_color))
-				ticks[k]:SetWidth(1)
-				ticks[k]:SetHeight(Castbar:GetHeight())
-				ticks[k]:SetDrawLayer("OVERLAY", 7)
+	if numTicks and numTicks > 0 then
+		local delta = Castbar:GetWidth() / numTicks
+		for i = 1, numTicks do
+			if not ticks[i] then
+				ticks[i] = Castbar:CreateTexture(nil, "OVERLAY")
+				ticks[i]:SetTexture(C.media.texture)
+				ticks[i]:SetVertexColor(unpack(C.media.border_color))
+				ticks[i]:SetWidth(1)
+				ticks[i]:SetHeight(Castbar:GetHeight())
+				ticks[i]:SetDrawLayer("OVERLAY", 7)
 			end
-			ticks[k]:ClearAllPoints()
-			ticks[k]:SetPoint("CENTER", Castbar, "RIGHT", -delta * k, 0)
-			ticks[k]:Show()
+			ticks[i]:ClearAllPoints()
+			ticks[i]:SetPoint("CENTER", Castbar, "RIGHT", -delta * i, 0)
+			ticks[i]:Show()
 		end
 	end
 end
@@ -1235,8 +1235,6 @@ T.PostCastStart = function(Castbar, unit)
 	end
 end
 
-local channelingTicks = T.CastBarTicks
-
 T.PostChannelStart = function(Castbar, unit)
 	Castbar.channeling = true
 	if unit == "vehicle" then unit = "player" end
@@ -1250,7 +1248,7 @@ T.PostChannelStart = function(Castbar, unit)
 
 	if unit == "player" and C.unitframe.castbar_ticks == true then
 		local spell = UnitChannelInfo(unit)
-		Castbar.channelingTicks = channelingTicks[spell] or 0
+		Castbar.channelingTicks = T.CastBarTicks[spell] or 0
 		setBarTicks(Castbar, Castbar.channelingTicks)
 	end
 
