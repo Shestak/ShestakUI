@@ -165,7 +165,7 @@ end
 
 local function onValueChanged(self, value)
 	if self.step < 1 then
-		value = string.format("%.2f", value)
+		value = tonumber(string.format("%.2f", value))
 	else
 		value = floor(value + 0.5)
 	end
@@ -179,7 +179,7 @@ local function onValueChanged(self, value)
 
 		if self.needsReload then
 			if self.step < 1 then
-				self.oldValue = string.format("%.2f", self.oldValue)
+				self.oldValue = tonumber(string.format("%.2f", self.oldValue))
 			end
 			old[self] = self.oldValue
 			checkIsReloadNeeded()
