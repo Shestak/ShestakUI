@@ -184,9 +184,26 @@ Only functions when a Legion artifact is equipped.
 
 * self - the ArtifactPower widget
 --]]
-local function OnMouseUp()
-	if (HasArtifactEquipped()) then
-		SocketInventoryItem(INVSLOT_MAINHAND)
+local function OnMouseUp(element, btn)
+	if btn == "MiddleButton" then
+		if element.offAlpha == 0 then
+			element.offAlpha = 1
+			SavedOptions.ArtifactPower = true
+		else
+			element.offAlpha = 0
+			SavedOptions.ArtifactPower = false
+		end
+	else
+		if (HasArtifactEquipped()) then
+			SocketInventoryItem(INVSLOT_MAINHAND)
+		end
+	end
+end
+
+local function CheckAlpha(element)
+	if SavedOptions and SavedOptions.ArtifactPower == true then
+		element.outAlpha = 1
+		element:SetAlpha(element.outAlpha or 1)
 	end
 end
 
@@ -321,6 +338,10 @@ local function Enable(self, unit)
 		if (not element:GetScript('OnMouseUp')) then
 			element:SetScript('OnMouseUp', element.OnMouseUp or OnMouseUp)
 		end
+
+		element.hadler = CreateFrame("Frame", nil, element)
+		element.hadler:RegisterEvent("PLAYER_LOGIN")
+		element.hadler:SetScript("OnEvent", function() CheckAlpha(element) end)
 	end
 
 	self:RegisterEvent('ARTIFACT_XP_UPDATE', Path, true)

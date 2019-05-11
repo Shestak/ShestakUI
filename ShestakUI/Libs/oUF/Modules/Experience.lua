@@ -99,6 +99,25 @@ local function OnLeave(element)
 	element:SetAlpha(element.outAlpha)
 end
 
+local function OnMouseUp(element, btn)
+	if btn == "MiddleButton" then
+		if element.outAlpha == 0 then
+			element.outAlpha = 1
+			SavedOptions.Experience = true
+		else
+			element.outAlpha = 0
+			SavedOptions.Experience = false
+		end
+	end
+end
+
+local function CheckAlpha(element)
+	if SavedOptions and SavedOptions.Experience == true then
+		element.outAlpha = 1
+		element:SetAlpha(element.outAlpha or 1)
+	end
+end
+
 local function UpdateColor(element, isHonor, isRested)
 	local colors = element.__owner.colors
 	if(isHonor) then
@@ -264,6 +283,14 @@ local function Enable(self, unit)
 			if(not element:GetScript('OnLeave')) then
 				element:SetScript('OnLeave', OnLeave)
 			end
+
+			if(not element:GetScript('OnMouseUp')) then
+				element:SetScript('OnMouseUp', OnMouseUp)
+			end
+
+			element.hadler = CreateFrame("Frame", nil, element)
+			element.hadler:RegisterEvent("PLAYER_LOGIN")
+			element.hadler:SetScript("OnEvent", function() CheckAlpha(element) end)
 		end
 
 		return true

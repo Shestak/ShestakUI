@@ -108,9 +108,9 @@ C["unitframe"] = {
 	-- Plugins
 	["plugins_gcd"] = false,					-- Global cooldown spark on player frame
 	["plugins_swing"] = false,					-- Swing bar
-	["plugins_reputation_bar"] = false,			-- Reputation bar (left from player frame by mouseover)
-	["plugins_experience_bar"] = false,			-- Experience bar (left from player frame by mouseover)
-	["plugins_artifact_bar"] = false,			-- Artifact Power bar (left from player frame by mouseover)
+	["plugins_reputation_bar"] = false,			-- Reputation bar (left from player frame by mouseover, Middle-Click to lock visibility)
+	["plugins_experience_bar"] = false,			-- Experience bar (left from player frame by mouseover, Middle-Click to lock visibility)
+	["plugins_artifact_bar"] = false,			-- Artifact Power bar (left from player frame by mouseover, Middle-Click to lock visibility)
 	["plugins_smooth_bar"] = false,				-- Smooth bar
 	["plugins_enemy_spec"] = false,				-- Enemy specialization in BG and Arena
 	["plugins_combat_feedback"] = false,		-- Combat text on player/target frame

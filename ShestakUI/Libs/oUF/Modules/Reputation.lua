@@ -93,8 +93,25 @@ local function OnLeave(element)
 	element:SetAlpha(element.outAlpha)
 end
 
-local function OnMouseUp()
-	ToggleCharacter("ReputationFrame")
+local function OnMouseUp(element, btn)
+	if btn == "MiddleButton" then
+		if element.outAlpha == 0 then
+			element.outAlpha = 1
+			SavedOptions.Reputation = true
+		else
+			element.outAlpha = 0
+			SavedOptions.Reputation = false
+		end
+	else
+		ToggleCharacter("ReputationFrame")
+	end
+end
+
+local function CheckAlpha(element)
+	if SavedOptions and SavedOptions.Reputation == true then
+		element.outAlpha = 1
+		element:SetAlpha(element.outAlpha or 1)
+	end
 end
 
 local function Update(self, event, unit)
@@ -208,6 +225,10 @@ local function Enable(self, unit)
 			if(not element:GetScript('OnMouseUp')) then
 				element:SetScript('OnMouseUp', OnMouseUp)
 			end
+
+			element.hadler = CreateFrame("Frame", nil, element)
+			element.hadler:RegisterEvent("PLAYER_LOGIN")
+			element.hadler:SetScript("OnEvent", function() CheckAlpha(element) end)
 		end
 
 		return true
