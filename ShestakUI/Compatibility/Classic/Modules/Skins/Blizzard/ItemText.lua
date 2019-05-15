@@ -8,16 +8,20 @@ local function LoadSkin()
 	ItemTextFrame:StripTextures(true)
 	ItemTextScrollFrame:StripTextures()
 	ItemTextFrame:CreateBackdrop("Transparent")
-	ItemTextFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
-	ItemTextFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
+	ItemTextFrame.backdrop:SetPoint("TOPLEFT", 10, -12)
+	ItemTextFrame.backdrop:SetPoint("BOTTOMRIGHT", -32, 76)
+
 	T.SkinCloseButton(ItemTextCloseButton, ItemTextFrame.backdrop)
+
 	T.SkinNextPrevButton(ItemTextPrevPageButton)
 	ItemTextPrevPageButton:ClearAllPoints()
 	ItemTextPrevPageButton:SetPoint("TOPLEFT", ItemTextFrame, "TOPLEFT", 48, -50)
 	T.SkinNextPrevButton(ItemTextNextPageButton)
 	ItemTextNextPageButton:ClearAllPoints()
-	ItemTextNextPageButton:SetPoint("TOPRIGHT", ItemTextFrame, "TOPRIGHT", -48, -50)
+	ItemTextNextPageButton:SetPoint("TOPRIGHT", ItemTextFrame, "TOPRIGHT", -70, -50)
+
 	T.SkinScrollBar(ItemTextScrollFrameScrollBar)
+
 	ItemTextPageText:SetTextColor(1, 1, 1)
 	ItemTextPageText.SetTextColor = T.dummy
 end

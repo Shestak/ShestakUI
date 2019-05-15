@@ -8,11 +8,14 @@ local function LoadSkin()
 	PetitionFrame:StripTextures(true)
 	PetitionFrame:CreateBackdrop("Transparent")
 	PetitionFrame.backdrop:SetAllPoints()
+	PetitionFrame.backdrop:SetPoint("TOPLEFT", 10, -12)
+	PetitionFrame.backdrop:SetPoint("BOTTOMRIGHT", -32, 68)
 
 	PetitionFrameSignButton:SkinButton()
 	PetitionFrameRequestButton:SkinButton()
 	PetitionFrameRenameButton:SkinButton()
 	PetitionFrameCancelButton:SkinButton()
+
 	T.SkinCloseButton(PetitionFrameCloseButton, PetitionFrame.backdrop)
 
 	PetitionFrameCharterTitle:SetTextColor(1, 0.8, 0)
@@ -32,7 +35,7 @@ local function LoadSkin()
 
 	PetitionFrameRenameButton:SetPoint("LEFT", PetitionFrameRequestButton, "RIGHT", 3, 0)
 	PetitionFrameRenameButton:SetPoint("RIGHT", PetitionFrameCancelButton, "LEFT", -3, 0)
-	PetitionFrameCancelButton:SetPoint("BOTTOMRIGHT", PetitionFrame, "BOTTOMRIGHT", -5, 4)
+	PetitionFrameCancelButton:SetPoint("BOTTOMRIGHT", PetitionFrame.backdrop, "BOTTOMRIGHT", -5, 4)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

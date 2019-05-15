@@ -56,6 +56,7 @@ local function LoadSkin()
 		"VideoOptionsFrameOkay",
 		"VideoOptionsFrameCancel",
 		"VideoOptionsFrameDefaults",
+		"VideoOptionsFrameClassicDefaults",
 		"VideoOptionsFrameApply",
 		"RecordLoopbackSoundButton",
 		"PlayLoopbackSoundButton"
@@ -212,6 +213,8 @@ local function LoadSkin()
 
 	_G["VideoOptionsFrameDefaults"]:ClearAllPoints()
 	_G["VideoOptionsFrameDefaults"]:SetPoint("TOPLEFT", _G["VideoOptionsFrameCategoryFrame"], "BOTTOMLEFT", 0, -14)
+	_G["VideoOptionsFrameClassicDefaults"]:ClearAllPoints()
+	_G["VideoOptionsFrameClassicDefaults"]:SetPoint("LEFT", _G["VideoOptionsFrameDefaults"], "RIGHT", 4, 0)
 	_G["VideoOptionsFrameCancel"]:ClearAllPoints()
 	_G["VideoOptionsFrameCancel"]:SetPoint("TOPRIGHT", _G["VideoOptionsFramePanelContainer"], "BOTTOMRIGHT", 0, -14)
 	_G["VideoOptionsFrameOkay"]:ClearAllPoints()

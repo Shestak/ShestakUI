@@ -18,8 +18,11 @@ local function LoadSkin()
 	QuestFrameRewardPanel:StripTextures(true)
 
 	QuestFrame:CreateBackdrop("Transparent")
-	QuestFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
-	QuestFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
+	QuestFrame.backdrop:SetPoint("TOPLEFT", 10, -12)
+	QuestFrame.backdrop:SetPoint("BOTTOMRIGHT", -32, 76)
+
+	QuestNpcNameFrame:ClearAllPoints()
+	QuestNpcNameFrame:SetPoint("TOP", CharacterFrame.backdrop, "TOP", 0, -6)
 
 	QuestFrameAcceptButton:SkinButton(true)
 	QuestFrameDeclineButton:SkinButton(true)

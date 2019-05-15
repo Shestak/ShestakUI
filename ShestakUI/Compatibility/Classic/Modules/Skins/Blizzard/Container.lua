@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if not T.classic or C.skins.blizzard_frames ~= true then return end
+if not T.classic or C.skins.blizzard_frames ~= true then return else return end -- incomplete
 
 ----------------------------------------------------------------------------------------
 --	Bank/Container skin

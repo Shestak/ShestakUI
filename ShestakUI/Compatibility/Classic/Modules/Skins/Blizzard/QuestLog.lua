@@ -462,7 +462,7 @@ local function LoadSkin()
 				numObjectives = GetNumQuestLeaderBoards(questIndex)
 				title, level = GetQuestLogTitle(questIndex)
 				color = GetQuestDifficultyColor(level)
-				hex = E:RGBToHex(color.r, color.g, color.b)
+				hex = T.RGBToHex(color.r, color.g, color.b)
 				text = hex.."["..level.."] "..title
 
 				if numObjectives > 0 then

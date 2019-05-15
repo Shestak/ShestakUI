@@ -324,9 +324,4 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 			end)
 		end
 	end
-
-	if addon == "Blizzard_GuildUI" and T.client == "ruRU" then
-		_G["GuildFrameTab1"]:ClearAllPoints()
-		_G["GuildFrameTab1"]:SetPoint("TOPLEFT", _G["GuildFrame"], "BOTTOMLEFT", -4, 2)
-	end
 end)

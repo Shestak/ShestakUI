@@ -7,7 +7,9 @@ if not T.classic or C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	GuildRegistrarFrame:StripTextures(true)
 	GuildRegistrarFrame:CreateBackdrop("Transparent")
-	GuildRegistrarFrame.backdrop:SetAllPoints()
+	GuildRegistrarFrame.backdrop:SetPoint("TOPLEFT", 10, -12)
+	GuildRegistrarFrame.backdrop:SetPoint("BOTTOMRIGHT", -32, 76)
+
 	GuildRegistrarGreetingFrame:StripTextures()
 
 	GuildRegistrarFramePurchaseButton:SkinButton()

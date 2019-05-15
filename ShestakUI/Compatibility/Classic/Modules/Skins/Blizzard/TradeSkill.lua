@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if not T.classic or C.skins.blizzard_frames ~= true then return end
+if not T.classic or C.skins.blizzard_frames ~= true then return else return end -- incomplete
 
 ----------------------------------------------------------------------------------------
 --	TradeSkillUI skin
@@ -199,7 +199,7 @@ local function LoadSkin()
 			TradeSkillReagentLabel:SetAlpha(1)
 			TradeSkillSkillIcon:SetAlpha(1)
 			TradeSkillSkillIcon:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			E:SetInside(TradeSkillSkillIcon:GetNormalTexture())
+			TradeSkillSkillIcon:GetNormalTexture():SetInside()
 		else
 			TradeSkillReagentLabel:SetAlpha(0)
 			TradeSkillSkillIcon:SetAlpha(0)
