@@ -204,7 +204,11 @@ WorldMapFrameCloseButton:SetScript("OnClick", function(self, btn)
 		ToggleDropDownMenu(nil, nil, WorldMap_DDMenu, self:GetName(), -10, -6)
 		return
 	else
-		UIPanelCloseButton_OnClick(self)
+		if not T.classic then
+			UIPanelCloseButton_OnClick(self)
+		else
+			ToggleWorldMap()
+		end
 	end
 end)
 

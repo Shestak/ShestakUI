@@ -291,7 +291,12 @@ local function RefreshList(self)
 	local offset = HybridScrollFrame_GetOffset(scrollFrame)
 	local buttons = scrollFrame.buttons
 
-	local displayingProfessions = self:IsDisplayingProfessions()
+	local displayingProfessions
+
+	if not T.classic then
+		displayingProfessions = self:IsDisplayingProfessions()
+	end
+
 	local memberList = displayingProfessions and (self.sortedProfessionList) or (self.sortedMemberList or {})
 	for i = 1, #buttons do
 		local displayIndex = i + offset
