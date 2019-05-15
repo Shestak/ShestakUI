@@ -18,13 +18,17 @@ SLASH_TICKET1 = "/gm"
 SLASH_TICKET2 = "/гм"
 SLASH_TICKET3 = "/пь"
 
-SlashCmdList.JOURNAL = function() ToggleEncounterJournal() end
-SLASH_JOURNAL1 = "/ej"
-SLASH_JOURNAL2 = "/уо"
+if not T.classic then
+	SlashCmdList.JOURNAL = function() ToggleEncounterJournal() end
+	SLASH_JOURNAL1 = "/ej"
+	SLASH_JOURNAL2 = "/уо"
+end
 
-SlashCmdList.ROLECHECK = function() InitiateRolePoll() end
-SLASH_ROLECHECK1 = "/role"
-SLASH_ROLECHECK2 = "/кщду"
+if not T.classic then
+	SlashCmdList.ROLECHECK = function() InitiateRolePoll() end
+	SLASH_ROLECHECK1 = "/role"
+	SLASH_ROLECHECK2 = "/кщду"
+end
 
 SlashCmdList.CLEARCOMBAT = function() CombatLogClearEntries() end
 SLASH_CLEARCOMBAT1 = "/clc"
@@ -131,32 +135,36 @@ SLASH_PARTYTORAID4 = "/сщтмуке"
 ----------------------------------------------------------------------------------------
 --	Instance teleport
 ----------------------------------------------------------------------------------------
-SlashCmdList.INSTTELEPORT = function()
-	local inInstance = IsInInstance()
-	if inInstance then
-		LFGTeleport(true)
-	else
-		LFGTeleport()
+if not T.classic then
+	SlashCmdList.INSTTELEPORT = function()
+		local inInstance = IsInInstance()
+		if inInstance then
+			LFGTeleport(true)
+		else
+			LFGTeleport()
+		end
 	end
+	SLASH_INSTTELEPORT1 = "/teleport"
+	SLASH_INSTTELEPORT2 = "/еудузщке"
 end
-SLASH_INSTTELEPORT1 = "/teleport"
-SLASH_INSTTELEPORT2 = "/еудузщке"
 
 ----------------------------------------------------------------------------------------
 --	Spec switching(by Monolit)
 ----------------------------------------------------------------------------------------
-SlashCmdList.SPEC = function(spec)
-	if T.level >= SHOW_SPEC_LEVEL then
-		if GetSpecialization() ~= tonumber(spec) then
-			SetSpecialization(spec)
+if not T.classic then
+	SlashCmdList.SPEC = function(spec)
+		if T.level >= SHOW_SPEC_LEVEL then
+			if GetSpecialization() ~= tonumber(spec) then
+				SetSpecialization(spec)
+			end
+		else
+			print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_SPEC_LEVEL).."|r")
 		end
-	else
-		print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_SPEC_LEVEL).."|r")
 	end
+	SLASH_SPEC1 = "/ss"
+	SLASH_SPEC2 = "/spec"
+	SLASH_SPEC3 = "/ыы"
 end
-SLASH_SPEC1 = "/ss"
-SLASH_SPEC2 = "/spec"
-SLASH_SPEC3 = "/ыы"
 
 ----------------------------------------------------------------------------------------
 --	Demo mode for DBM
@@ -287,49 +295,53 @@ SLASH_CLEAR_CHAT2 = "/сдуфк"
 ----------------------------------------------------------------------------------------
 --	Test Blizzard Alerts
 ----------------------------------------------------------------------------------------
-SlashCmdList.TEST_ACHIEVEMENT = function()
-	PlaySound(SOUNDKIT.LFG_REWARDS)
-	if not AchievementFrame then
-		AchievementFrame_LoadUI()
+if not T.classic then
+	SlashCmdList.TEST_ACHIEVEMENT = function()
+		PlaySound(SOUNDKIT.LFG_REWARDS)
+		if not AchievementFrame then
+			AchievementFrame_LoadUI()
+		end
+		AchievementAlertSystem:AddAlert(112)
+		CriteriaAlertSystem:AddAlert(9023, "Doing great!")
+		GuildChallengeAlertSystem:AddAlert(3, 2, 5)
+		InvasionAlertSystem:AddAlert(678, DUNGEON_FLOOR_THENEXUS1, true, 1, 1)
+		WorldQuestCompleteAlertSystem:AddAlert(AlertFrameMixin:BuildQuestData(42114))
+		-- GarrisonFollowerAlertSystem:AddAlert(32, "Dagg", 90, 2, true, C_Garrison.GetFollowerInfo(32)) -- error when mouseover
+		-- GarrisonShipFollowerAlertSystem:AddAlert(592, "Ship", "Transport", "GarrBuilding_Barracks_1_H", 3, 2, 1) -- error when mouseover
+		GarrisonBuildingAlertSystem:AddAlert(GARRISON_CACHE)
+		GarrisonTalentAlertSystem:AddAlert(3, _G.C_Garrison.GetTalent(370))
+		LegendaryItemAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832:0:0:0:0:0:0:0:0:0:0\124h[Brutality Blade]\124h\124r")
+		LootAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832::::::::::\124h[Brutality Blade]\124h\124r", 1, 1, 100, 2, false, false, 0, false, false)
+		LootUpgradeAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832::::::::::\124h[Brutality Blade]\124h\124r", 1, 1, 1, nil, nil, false)
+		MoneyWonAlertSystem:AddAlert(81500)
+		StorePurchaseAlertSystem:AddAlert("", "Interface\\Icons\\Ability_pvp_gladiatormedallion", TRINKET0SLOT, 214)
+		DigsiteCompleteAlertSystem:AddAlert("Human")
+		NewRecipeLearnedAlertSystem:AddAlert(204)
 	end
-	AchievementAlertSystem:AddAlert(112)
-	CriteriaAlertSystem:AddAlert(9023, "Doing great!")
-	GuildChallengeAlertSystem:AddAlert(3, 2, 5)
-	InvasionAlertSystem:AddAlert(678, DUNGEON_FLOOR_THENEXUS1, true, 1, 1)
-	WorldQuestCompleteAlertSystem:AddAlert(AlertFrameMixin:BuildQuestData(42114))
-	-- GarrisonFollowerAlertSystem:AddAlert(32, "Dagg", 90, 2, true, C_Garrison.GetFollowerInfo(32)) -- error when mouseover
-	-- GarrisonShipFollowerAlertSystem:AddAlert(592, "Ship", "Transport", "GarrBuilding_Barracks_1_H", 3, 2, 1) -- error when mouseover
-	GarrisonBuildingAlertSystem:AddAlert(GARRISON_CACHE)
-	GarrisonTalentAlertSystem:AddAlert(3, _G.C_Garrison.GetTalent(370))
-	LegendaryItemAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832:0:0:0:0:0:0:0:0:0:0\124h[Brutality Blade]\124h\124r")
-	LootAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832::::::::::\124h[Brutality Blade]\124h\124r", 1, 1, 100, 2, false, false, 0, false, false)
-	LootUpgradeAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832::::::::::\124h[Brutality Blade]\124h\124r", 1, 1, 1, nil, nil, false)
-	MoneyWonAlertSystem:AddAlert(81500)
-	StorePurchaseAlertSystem:AddAlert("", "Interface\\Icons\\Ability_pvp_gladiatormedallion", TRINKET0SLOT, 214)
-	DigsiteCompleteAlertSystem:AddAlert("Human")
-	NewRecipeLearnedAlertSystem:AddAlert(204)
+	SLASH_TEST_ACHIEVEMENT1 = "/tach"
+	SLASH_TEST_ACHIEVEMENT2 = "/ефср"
 end
-SLASH_TEST_ACHIEVEMENT1 = "/tach"
-SLASH_TEST_ACHIEVEMENT2 = "/ефср"
 
 ----------------------------------------------------------------------------------------
 --	Test Blizzard Extra Action Button
 ----------------------------------------------------------------------------------------
-SlashCmdList.TEST_EXTRABUTTON = function()
-	if ExtraActionBarFrame:IsShown() then
-		ExtraActionBarFrame:Hide()
-	else
-		ExtraActionBarFrame:Show()
-		ExtraActionBarFrame:SetAlpha(1)
-		ExtraActionButton1:Show()
-		ExtraActionButton1:SetAlpha(1)
-		ExtraActionButton1.icon:SetTexture("Interface\\Icons\\spell_deathknight_breathofsindragosa")
-		ExtraActionButton1.icon:Show()
-		ExtraActionButton1.icon:SetAlpha(1)
+if not T.classic then
+	SlashCmdList.TEST_EXTRABUTTON = function()
+		if ExtraActionBarFrame:IsShown() then
+			ExtraActionBarFrame:Hide()
+		else
+			ExtraActionBarFrame:Show()
+			ExtraActionBarFrame:SetAlpha(1)
+			ExtraActionButton1:Show()
+			ExtraActionButton1:SetAlpha(1)
+			ExtraActionButton1.icon:SetTexture("Interface\\Icons\\spell_deathknight_breathofsindragosa")
+			ExtraActionButton1.icon:Show()
+			ExtraActionButton1.icon:SetAlpha(1)
+		end
 	end
+	SLASH_TEST_EXTRABUTTON1 = "/teb"
+	SLASH_TEST_EXTRABUTTON2 = "/еуи"
 end
-SLASH_TEST_EXTRABUTTON1 = "/teb"
-SLASH_TEST_EXTRABUTTON2 = "/еуи"
 
 ----------------------------------------------------------------------------------------
 --	Grid on screen

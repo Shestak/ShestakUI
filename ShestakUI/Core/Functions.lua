@@ -87,11 +87,21 @@ local function CheckRole()
 		else
 			T.Role = "Melee"
 		end
+	elseif role == "MELEE" then
+		T.Role = "Melee"
+	elseif role == "CASTER" then
+		T.Role = "Caster"
 	end
 end
 local RoleUpdater = CreateFrame("Frame")
 RoleUpdater:RegisterEvent("PLAYER_ENTERING_WORLD")
-RoleUpdater:RegisterEvent("PLAYER_TALENT_UPDATE")
+if not T.classic then
+	RoleUpdater:RegisterEvent("PLAYER_TALENT_UPDATE")
+else
+	RoleUpdater:RegisterEvent("CHARACTER_POINTS_CHANGED")
+	RoleUpdater:RegisterEvent("UNIT_INVENTORY_CHANGED")
+	RoleUpdater:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
+end
 RoleUpdater:SetScript("OnEvent", CheckRole)
 
 ----------------------------------------------------------------------------------------
@@ -268,8 +278,13 @@ function T.SkinTab(tab, bg)
 		tab.backdrop:SetPoint("BOTTOMRIGHT", -3, 2)
 	else
 		tab.backdrop:SetTemplate("Transparent")
-		tab.backdrop:SetPoint("TOPLEFT", 10, -3)
-		tab.backdrop:SetPoint("BOTTOMRIGHT", -10, 3)
+		if not T.classic then
+			tab.backdrop:SetPoint("TOPLEFT", 10, -3)
+			tab.backdrop:SetPoint("BOTTOMRIGHT", -10, 3)
+		else
+			tab.backdrop:SetPoint("TOPLEFT", 10, 0)
+			tab.backdrop:SetPoint("BOTTOMRIGHT", -10, 6)
+		end
 	end
 end
 

@@ -3,6 +3,19 @@
 ----------------------------------------------------------------------------------------
 --	ShestakUI variables
 ----------------------------------------------------------------------------------------
+-- Temporary Function
+IsClassicBuild = _G.IsClassicBuild or function()
+	local major, minor, fix = strsplit(".", tostring(GetBuildInfo()))
+	major, minor, fix = tonumber(major) or 0, tonumber(minor) or 0, tonumber(fix) or 0
+
+	local patch = major + (minor / 100)
+	if patch < 2 then
+		return true
+	end
+end
+
+T.classic = IsClassicBuild()
+
 T.dummy = function() return end
 T.name = UnitName("player")
 T.class = select(2, UnitClass("player"))

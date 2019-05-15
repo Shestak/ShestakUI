@@ -131,8 +131,10 @@ local UpdateThreat = function()
 	UpdateBars()
 end
 
+local lastCombatLogUpdate = 0
+
 local OnEvent = function(self, event, ...)
-	if event == "PLAYER_TARGET_CHANGED" or event == "UNIT_THREAT_LIST_UPDATE" then
+	if event == "PLAYER_TARGET_CHANGED" or event == "UNIT_THREAT_LIST_UPDATE" or event == "PLAYER_REGEN_DISABLED" then
 		if C.threat.hide_solo == true and GetNumGroupMembers() == 0 then
 			targeted = false
 		else
@@ -146,14 +148,36 @@ local OnEvent = function(self, event, ...)
 	if event == "PLAYER_TARGET_CHANGED" or event == "PLAYER_REGEN_ENABLED" then
 		wipe(tList)
 		wipe(barList)
+		if T.classic then
+			lastCombatLogUpdate = 0
+			if event == "PLAYER_REGEN_ENABLED" then
+				targeted = false
+			end
+		end
 	end
 	UpdateThreat()
+end
+
+if T.classic then
+	local UpdateFromCombatLog = CreateFrame("Frame")
+	UpdateFromCombatLog:SetScript("OnEvent", function(self, event, ...)
+		if not UnitAffectingCombat("player") then return end
+		if GetTime() - lastCombatLogUpdate > 0.25 then
+			lastCombatLogUpdate = GetTime()
+			OnEvent()
+		end
+	end)
+	UpdateFromCombatLog:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 end
 
 local addon = CreateFrame("Frame")
 addon:SetScript("OnEvent", OnEvent)
 addon:RegisterEvent("PLAYER_TARGET_CHANGED")
-addon:RegisterEvent("UNIT_THREAT_LIST_UPDATE")
+if not T.classic then
+	addon:RegisterEvent("UNIT_THREAT_LIST_UPDATE")
+else
+	addon:RegisterEvent("PLAYER_REGEN_DISABLED")
+end
 addon:RegisterEvent("PLAYER_REGEN_ENABLED")
 
 SlashCmdList.alThreat = function()

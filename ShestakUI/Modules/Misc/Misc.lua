@@ -15,8 +15,10 @@ hooksecurefunc("ShowReadyCheck", ShowReadyCheckHook)
 ----------------------------------------------------------------------------------------
 local ForceWarning = CreateFrame("Frame")
 ForceWarning:RegisterEvent("UPDATE_BATTLEFIELD_STATUS")
-ForceWarning:RegisterEvent("PET_BATTLE_QUEUE_PROPOSE_MATCH")
-ForceWarning:RegisterEvent("LFG_PROPOSAL_SHOW")
+if not T.classic then
+	ForceWarning:RegisterEvent("PET_BATTLE_QUEUE_PROPOSE_MATCH")
+	ForceWarning:RegisterEvent("LFG_PROPOSAL_SHOW")
+end
 ForceWarning:RegisterEvent("RESURRECT_REQUEST")
 ForceWarning:SetScript("OnEvent", function(self, event)
 	if event == "UPDATE_BATTLEFIELD_STATUS" then
@@ -47,9 +49,11 @@ StaticPopupDialogs.CONFIRM_SUMMON.hideOnEscape = nil
 StaticPopupDialogs.ADDON_ACTION_FORBIDDEN.button1 = nil
 StaticPopupDialogs.TOO_MANY_LUA_ERRORS.button1 = nil
 PetBattleQueueReadyFrame.hideOnEscape = nil
-PVPReadyDialog.leaveButton:Hide()
-PVPReadyDialog.enterButton:ClearAllPoints()
-PVPReadyDialog.enterButton:SetPoint("BOTTOM", PVPReadyDialog, "BOTTOM", 0, 25)
+if not T.classic then
+	PVPReadyDialog.leaveButton:Hide()
+	PVPReadyDialog.enterButton:ClearAllPoints()
+	PVPReadyDialog.enterButton:SetPoint("BOTTOM", PVPReadyDialog, "BOTTOM", 0, 25)
+end
 
 ----------------------------------------------------------------------------------------
 --	Spin camera while afk(by Telroth and Eclipse)
@@ -89,19 +93,21 @@ end
 ----------------------------------------------------------------------------------------
 --	Auto select current event boss from LFD tool(EventBossAutoSelect by Nathanyel)
 ----------------------------------------------------------------------------------------
-local firstLFD
-LFDParentFrame:HookScript("OnShow", function()
-	if not firstLFD then
-		firstLFD = 1
-		for i = 1, GetNumRandomDungeons() do
-			local id = GetLFGRandomDungeonInfo(i)
-			local isHoliday = select(15, GetLFGDungeonInfo(id))
-			if isHoliday and not GetLFGDungeonRewards(id) then
-				LFDQueueFrame_SetType(id)
+if not T.classic then
+	local firstLFD
+	LFDParentFrame:HookScript("OnShow", function()
+		if not firstLFD then
+			firstLFD = 1
+			for i = 1, GetNumRandomDungeons() do
+				local id = GetLFGRandomDungeonInfo(i)
+				local isHoliday = select(15, GetLFGDungeonInfo(id))
+				if isHoliday and not GetLFGDungeonRewards(id) then
+					LFDQueueFrame_SetType(id)
+				end
 			end
 		end
-	end
-end)
+	end)
+end
 
 ----------------------------------------------------------------------------------------
 --	Remove Boss Emote spam during BG(ArathiBasin SpamFix by Partha)
@@ -133,6 +139,9 @@ strip:SetText(L_MISC_UNDRESS)
 strip:SetHeight(22)
 strip:SetWidth(strip:GetTextWidth() + 40)
 strip:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
+if T.classic then
+	strip:SetFrameLevel(DressUpModelFrame:GetFrameLevel() + 2)
+end
 strip:RegisterForClicks("AnyUp")
 strip:SetScript("OnClick", function(self, button)
 	if button == "RightButton" then
@@ -142,7 +151,11 @@ strip:SetScript("OnClick", function(self, button)
 	end
 	PlaySound(SOUNDKIT.GS_TITLE_OPTION_OK)
 end)
-strip.model = DressUpModel
+if not T.classic then
+	strip.model = DressUpModel
+else
+	strip.model = DressUpModelFrame
+end
 
 strip:RegisterEvent("AUCTION_HOUSE_SHOW")
 strip:RegisterEvent("AUCTION_HOUSE_CLOSED")
@@ -152,23 +165,30 @@ strip:SetScript("OnEvent", function(self)
 		self:ClearAllPoints()
 		self:SetPoint("TOP", SideDressUpModelResetButton, "BOTTOM", 0, -3)
 		self.model = SideDressUpModel
-	elseif self.model ~= DressUpModel then
+	elseif not T.classic and self.model ~= DressUpModel then
 		self:SetParent(DressUpModel)
 		self:ClearAllPoints()
 		self:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
 		self.model = DressUpModel
+	elseif T.classic and self.model ~= DressUpModelFrame then
+		self:SetParent(DressUpModelFrame)
+		self:ClearAllPoints()
+		self:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
+		self.model = DressUpModelFrame
 	end
 end)
 
 ----------------------------------------------------------------------------------------
 --	GuildTab in FriendsFrame
 ----------------------------------------------------------------------------------------
-local n = FriendsFrame.numTabs + 1
-local gtframe = CreateFrame("Button", "FriendsFrameTab"..n, FriendsFrame, "FriendsFrameTabTemplate")
-gtframe:SetText(GUILD)
-gtframe:SetPoint("LEFT", _G["FriendsFrameTab"..n - 1], "RIGHT", -15, 0)
-PanelTemplates_DeselectTab(gtframe)
-gtframe:SetScript("OnClick", function() ToggleGuildFrame() end)
+if not T.classic then
+	local n = FriendsFrame.numTabs + 1
+	local gtframe = CreateFrame("Button", "FriendsFrameTab"..n, FriendsFrame, "FriendsFrameTabTemplate")
+	gtframe:SetText(GUILD)
+	gtframe:SetPoint("LEFT", _G["FriendsFrameTab"..n - 1], "RIGHT", -15, 0)
+	PanelTemplates_DeselectTab(gtframe)
+	gtframe:SetScript("OnClick", function() ToggleGuildFrame() end)
+end
 
 ----------------------------------------------------------------------------------------
 --	Force quit
@@ -186,39 +206,43 @@ end)
 ----------------------------------------------------------------------------------------
 --	Old achievements filter
 ----------------------------------------------------------------------------------------
-function AchievementFrame_GetCategoryNumAchievements_OldIncomplete(categoryID)
-	local numAchievements, numCompleted = GetCategoryNumAchievements(categoryID)
-	return numAchievements - numCompleted, 0, numCompleted
-end
-
-function old_nocomplete_filter_init()
-	AchievementFrameFilters = {
-		{text = ACHIEVEMENTFRAME_FILTER_ALL, func = AchievementFrame_GetCategoryNumAchievements_All},
-		{text = ACHIEVEMENTFRAME_FILTER_COMPLETED, func = AchievementFrame_GetCategoryNumAchievements_Complete},
-		{text = ACHIEVEMENTFRAME_FILTER_INCOMPLETE, func = AchievementFrame_GetCategoryNumAchievements_Incomplete},
-		{text = ACHIEVEMENTFRAME_FILTER_INCOMPLETE.." ("..ALL.." )", func = AchievementFrame_GetCategoryNumAchievements_OldIncomplete}
-	}
-end
-
-local filter = CreateFrame("Frame")
-filter:RegisterEvent("ADDON_LOADED")
-filter:SetScript("OnEvent", function(self, event, addon, ...)
-	if addon == "Blizzard_AchievementUI" then
-		if AchievementFrame then
-			old_nocomplete_filter_init()
-			if C.skins.blizzard_frames == true then
-				AchievementFrameFilterDropDown:SetWidth(AchievementFrameFilterDropDown:GetWidth() + 20)
-			end
-			filter:UnregisterEvent("ADDON_LOADED")
-		end
+if not T.classic then
+	function AchievementFrame_GetCategoryNumAchievements_OldIncomplete(categoryID)
+		local numAchievements, numCompleted = GetCategoryNumAchievements(categoryID)
+		return numAchievements - numCompleted, 0, numCompleted
 	end
-end)
+
+	function old_nocomplete_filter_init()
+		AchievementFrameFilters = {
+			{text = ACHIEVEMENTFRAME_FILTER_ALL, func = AchievementFrame_GetCategoryNumAchievements_All},
+			{text = ACHIEVEMENTFRAME_FILTER_COMPLETED, func = AchievementFrame_GetCategoryNumAchievements_Complete},
+			{text = ACHIEVEMENTFRAME_FILTER_INCOMPLETE, func = AchievementFrame_GetCategoryNumAchievements_Incomplete},
+			{text = ACHIEVEMENTFRAME_FILTER_INCOMPLETE.." ("..ALL.." )", func = AchievementFrame_GetCategoryNumAchievements_OldIncomplete}
+		}
+	end
+
+	local filter = CreateFrame("Frame")
+	filter:RegisterEvent("ADDON_LOADED")
+	filter:SetScript("OnEvent", function(self, event, addon, ...)
+		if addon == "Blizzard_AchievementUI" then
+			if AchievementFrame then
+				old_nocomplete_filter_init()
+				if C.skins.blizzard_frames == true then
+					AchievementFrameFilterDropDown:SetWidth(AchievementFrameFilterDropDown:GetWidth() + 20)
+				end
+				filter:UnregisterEvent("ADDON_LOADED")
+			end
+		end
+	end)
+end
 
 ----------------------------------------------------------------------------------------
 --	Boss Banner Hider
 ----------------------------------------------------------------------------------------
-if C.misc.hide_banner == true then
-	BossBanner.PlayBanner = function() end
+if not T.classic then
+	if C.misc.hide_banner == true then
+		BossBanner.PlayBanner = function() end
+	end
 end
 
 ----------------------------------------------------------------------------------------

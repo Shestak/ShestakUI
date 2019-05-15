@@ -1,5 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if C.automation.auto_role ~= true then return end
+if T.classic or C.automation.auto_role ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Automatically sets your role(Auto role setter by iSpawnAtHome)

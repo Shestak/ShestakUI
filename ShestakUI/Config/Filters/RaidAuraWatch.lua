@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.raidframe.plugins_aura_watch ~= true then return end
+if T.classic or C.raidframe.plugins_aura_watch ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.

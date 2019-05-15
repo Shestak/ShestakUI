@@ -22,13 +22,15 @@ frame:Register("BANKFRAME_CLOSED", function()
 	atBank = false
 end)
 
-frame:Register("GUILDBANKFRAME_OPENED", function()
-	atBank = true
-end)
+if not T.classic then
+	frame:Register("GUILDBANKFRAME_OPENED", function()
+		atBank = true
+	end)
 
-frame:Register("GUILDBANKFRAME_CLOSED", function()
-	atBank = false
-end)
+	frame:Register("GUILDBANKFRAME_CLOSED", function()
+		atBank = false
+	end)
+end
 
 frame:Register("MAIL_SHOW", function()
 	atMail = true

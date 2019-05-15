@@ -4,10 +4,13 @@ if C.tooltip.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Based on aTooltip(by ALZA)
 ----------------------------------------------------------------------------------------
-local StoryTooltip = QuestScrollFrame.StoryTooltip
-StoryTooltip:SetFrameLevel(4)
+local StoryTooltip, WarCampaignTooltip
+if not T.classic then
+	StoryTooltip = QuestScrollFrame.StoryTooltip
+	StoryTooltip:SetFrameLevel(4)
 
-local WarCampaignTooltip = QuestScrollFrame.WarCampaignTooltip
+	WarCampaignTooltip = QuestScrollFrame.WarCampaignTooltip
+end
 
 local tooltips = {
 	GameTooltip,
@@ -522,21 +525,23 @@ ItemRefTooltip:HookScript("OnTooltipSetItem", FixFont)
 ----------------------------------------------------------------------------------------
 --	Skin GameTooltip.ItemTooltip and EmbeddedItemTooltip
 ----------------------------------------------------------------------------------------
-GameTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-hooksecurefunc(GameTooltip.ItemTooltip.IconBorder, "SetVertexColor", function(self, r, g, b)
-	self:GetParent().backdrop:SetBackdropBorderColor(r, g, b)
-	self:SetTexture("")
-end)
+if not T.classic then
+	GameTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	hooksecurefunc(GameTooltip.ItemTooltip.IconBorder, "SetVertexColor", function(self, r, g, b)
+		self:GetParent().backdrop:SetBackdropBorderColor(r, g, b)
+		self:SetTexture("")
+	end)
 
-hooksecurefunc(GameTooltip.ItemTooltip.IconBorder, "Hide", function(self)
-	self:GetParent().backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-end)
+	hooksecurefunc(GameTooltip.ItemTooltip.IconBorder, "Hide", function(self)
+		self:GetParent().backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+	end)
 
-GameTooltip.ItemTooltip:CreateBackdrop("Default")
-GameTooltip.ItemTooltip.backdrop:SetPoint("TOPLEFT", GameTooltip.ItemTooltip.Icon, "TOPLEFT", -2, 2)
-GameTooltip.ItemTooltip.backdrop:SetPoint("BOTTOMRIGHT", GameTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 2, -2)
-GameTooltip.ItemTooltip.Count:ClearAllPoints()
-GameTooltip.ItemTooltip.Count:SetPoint("BOTTOMRIGHT", GameTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 1, 0)
+	GameTooltip.ItemTooltip:CreateBackdrop("Default")
+	GameTooltip.ItemTooltip.backdrop:SetPoint("TOPLEFT", GameTooltip.ItemTooltip.Icon, "TOPLEFT", -2, 2)
+	GameTooltip.ItemTooltip.backdrop:SetPoint("BOTTOMRIGHT", GameTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 2, -2)
+	GameTooltip.ItemTooltip.Count:ClearAllPoints()
+	GameTooltip.ItemTooltip.Count:SetPoint("BOTTOMRIGHT", GameTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 1, 0)
+end
 
 local reward = EmbeddedItemTooltip.ItemTooltip
 local icon = reward.Icon

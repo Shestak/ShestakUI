@@ -34,8 +34,10 @@ MinimapZoomIn:Hide()
 MinimapZoomOut:Hide()
 
 -- Hide Blob Ring
-Minimap:SetArchBlobRingScalar(0)
-Minimap:SetQuestBlobRingScalar(0)
+if not T.classic then
+	Minimap:SetArchBlobRingScalar(0)
+	Minimap:SetQuestBlobRingScalar(0)
+end
 
 -- Hide North texture at top
 MinimapNorthTag:SetTexture(nil)
@@ -54,48 +56,60 @@ MiniMapMailIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Mail.
 MiniMapMailIcon:SetSize(16, 16)
 
 -- Move QueueStatus icon
-QueueStatusFrame:SetClampedToScreen(true)
-QueueStatusFrame:SetFrameStrata("TOOLTIP")
-QueueStatusMinimapButton:ClearAllPoints()
-QueueStatusMinimapButton:SetPoint("TOP", Minimap, "TOP", 1, 6)
-QueueStatusMinimapButton:SetHighlightTexture(nil)
-QueueStatusMinimapButtonBorder:Hide()
+if not T.classic then
+	QueueStatusFrame:SetClampedToScreen(true)
+	QueueStatusFrame:SetFrameStrata("TOOLTIP")
+	QueueStatusMinimapButton:ClearAllPoints()
+	QueueStatusMinimapButton:SetPoint("TOP", Minimap, "TOP", 1, 6)
+	QueueStatusMinimapButton:SetHighlightTexture(nil)
+	QueueStatusMinimapButtonBorder:Hide()
+end
 
 -- Hide world map button
 MiniMapWorldMapButton:Hide()
 
 -- Garrison icon
-if C.minimap.garrison_icon == true then
-	GarrisonLandingPageMinimapButton:ClearAllPoints()
-	GarrisonLandingPageMinimapButton:SetPoint("TOPLEFT", Minimap, "TOPLEFT", 0, 2)
-	GarrisonLandingPageMinimapButton:SetSize(32, 32)
-else
-	GarrisonLandingPageMinimapButton:SetScale(0.0001)
-	GarrisonLandingPageMinimapButton:SetAlpha(0)
+if not T.classic then
+	if C.minimap.garrison_icon == true then
+		GarrisonLandingPageMinimapButton:ClearAllPoints()
+		GarrisonLandingPageMinimapButton:SetPoint("TOPLEFT", Minimap, "TOPLEFT", 0, 2)
+		GarrisonLandingPageMinimapButton:SetSize(32, 32)
+	else
+		GarrisonLandingPageMinimapButton:SetScale(0.0001)
+		GarrisonLandingPageMinimapButton:SetAlpha(0)
+	end
 end
 
 -- Instance Difficulty icon
-MiniMapInstanceDifficulty:SetParent(Minimap)
-MiniMapInstanceDifficulty:ClearAllPoints()
-MiniMapInstanceDifficulty:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 3, 2)
-MiniMapInstanceDifficulty:SetScale(0.75)
+if not T.classic then
+	MiniMapInstanceDifficulty:SetParent(Minimap)
+	MiniMapInstanceDifficulty:ClearAllPoints()
+	MiniMapInstanceDifficulty:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 3, 2)
+	MiniMapInstanceDifficulty:SetScale(0.75)
+end
 
 -- Guild Instance Difficulty icon
-GuildInstanceDifficulty:SetParent(Minimap)
-GuildInstanceDifficulty:ClearAllPoints()
-GuildInstanceDifficulty:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -2, 2)
-GuildInstanceDifficulty:SetScale(0.75)
+if not T.classic then
+	GuildInstanceDifficulty:SetParent(Minimap)
+	GuildInstanceDifficulty:ClearAllPoints()
+	GuildInstanceDifficulty:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -2, 2)
+	GuildInstanceDifficulty:SetScale(0.75)
+end
 
 -- Challenge Mode icon
-MiniMapChallengeMode:SetParent(Minimap)
-MiniMapChallengeMode:ClearAllPoints()
-MiniMapChallengeMode:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -2, -2)
-MiniMapChallengeMode:SetScale(0.75)
+if not T.classic then
+	MiniMapChallengeMode:SetParent(Minimap)
+	MiniMapChallengeMode:ClearAllPoints()
+	MiniMapChallengeMode:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -2, -2)
+	MiniMapChallengeMode:SetScale(0.75)
+end
 
 -- Invites icon
-GameTimeCalendarInvitesTexture:ClearAllPoints()
-GameTimeCalendarInvitesTexture:SetParent(Minimap)
-GameTimeCalendarInvitesTexture:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 0, 0)
+if not T.classic then
+	GameTimeCalendarInvitesTexture:ClearAllPoints()
+	GameTimeCalendarInvitesTexture:SetParent(Minimap)
+	GameTimeCalendarInvitesTexture:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 0, 0)
+end
 
 -- Default LFG icon
 LFG_EYE_TEXTURES.raid = LFG_EYE_TEXTURES.default
@@ -130,17 +144,19 @@ HelpOpenTicketButton:GetPushedTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
 HelpOpenTicketButton:SetSize(16, 16)
 
 -- GhostFrame
-GhostFrame:StripTextures()
-GhostFrame:SetTemplate("Overlay")
-GhostFrame:StyleButton()
-GhostFrame:ClearAllPoints()
-GhostFrame:SetPoint(unpack(C.position.ghost))
-GhostFrameContentsFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-GhostFrameContentsFrameIcon:SetSize(34, 34)
-GhostFrameContentsFrame:SetFrameLevel(GhostFrameContentsFrame:GetFrameLevel() + 2)
-GhostFrameContentsFrame:CreateBackdrop("Overlay")
-GhostFrameContentsFrame.backdrop:SetPoint("TOPLEFT", GhostFrameContentsFrameIcon, -2, 2)
-GhostFrameContentsFrame.backdrop:SetPoint("BOTTOMRIGHT", GhostFrameContentsFrameIcon, 2, -2)
+if not T.classic then
+	GhostFrame:StripTextures()
+	GhostFrame:SetTemplate("Overlay")
+	GhostFrame:StyleButton()
+	GhostFrame:ClearAllPoints()
+	GhostFrame:SetPoint(unpack(C.position.ghost))
+	GhostFrameContentsFrameIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	GhostFrameContentsFrameIcon:SetSize(34, 34)
+	GhostFrameContentsFrame:SetFrameLevel(GhostFrameContentsFrame:GetFrameLevel() + 2)
+	GhostFrameContentsFrame:CreateBackdrop("Overlay")
+	GhostFrameContentsFrame.backdrop:SetPoint("TOPLEFT", GhostFrameContentsFrameIcon, -2, 2)
+	GhostFrameContentsFrame.backdrop:SetPoint("BOTTOMRIGHT", GhostFrameContentsFrameIcon, 2, -2)
+end
 
 -- Enable mouse scrolling
 Minimap:EnableMouseWheel(true)
@@ -181,7 +197,11 @@ local micromenu = {
 			TalentFrame_LoadUI()
 		end
 		if T.level >= SHOW_SPEC_LEVEL then
-			ShowUIPanel(PlayerTalentFrame)
+			if not T.classic then
+				ShowUIPanel(PlayerTalentFrame)
+			else
+				ToggleTalentFrame()
+			end
 		else
 			if C.error.white == false then
 				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_SPEC_LEVEL), 1, 0.1, 0.1)
@@ -257,8 +277,17 @@ local micromenu = {
 		ToggleFrame(LootHistoryFrame)
 	end},
 }
+if T.classic then
+	tremove(micromenu, 14)
+	tremove(micromenu, 12)
+	tremove(micromenu, 11)
+	tremove(micromenu, 10)
+	tremove(micromenu, 9) -- remove once PvP is added in
+	tremove(micromenu, 6)
+	tremove(micromenu, 4)
+end
 
-if not IsTrialAccount() and not C_StorePublic.IsDisabledByParentalControls() then
+if not T.classic and not IsTrialAccount() and not C_StorePublic.IsDisabledByParentalControls() then
 	tinsert(micromenu, {text = BLIZZARD_STORE, notCheckable = 1, func = function() StoreMicroButton:Click() end})
 end
 
@@ -276,7 +305,7 @@ Minimap:SetScript("OnMouseUp", function(self, button)
 		else
 			EasyMenu(micromenu, menuFrame, "cursor", -160, 0, "MENU")
 		end
-	elseif button == "MiddleButton" then
+	elseif not T.classic and button == "MiddleButton" then
 		if position:match("LEFT") then
 			ToggleDropDownMenu(nil, nil, MiniMapTrackingDropDown, "cursor", 0, 0, "MENU", 2)
 		else
@@ -289,8 +318,10 @@ end)
 
 -- Set Square Map Mask
 Minimap:SetMaskTexture(C.media.blank)
-Minimap:SetArchBlobRingAlpha(0)
-Minimap:SetQuestBlobRingAlpha(0)
+if not T.classic then
+	Minimap:SetArchBlobRingAlpha(0)
+	Minimap:SetQuestBlobRingAlpha(0)
+end
 
 -- For others mods with a minimap button, set minimap buttons position in square mode
 function GetMinimapShape() return "SQUARE" end
@@ -313,19 +344,21 @@ end
 ----------------------------------------------------------------------------------------
 --	Tracking icon
 ----------------------------------------------------------------------------------------
-if C.minimap.tracking_icon then
-	MiniMapTrackingBackground:Hide()
-	MiniMapTracking:ClearAllPoints()
-	MiniMapTracking:SetPoint("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 0, -5)
-	MiniMapTrackingButton:SetHighlightTexture(nil)
-	MiniMapTrackingButtonBorder:Hide()
-	MiniMapTrackingIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	MiniMapTrackingIcon:SetSize(16, 16)
-	MiniMapTrackingIcon.SetPoint = T.dummy
+if not T.classic then
+	if C.minimap.tracking_icon then
+		MiniMapTrackingBackground:Hide()
+		MiniMapTracking:ClearAllPoints()
+		MiniMapTracking:SetPoint("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 0, -5)
+		MiniMapTrackingButton:SetHighlightTexture(nil)
+		MiniMapTrackingButtonBorder:Hide()
+		MiniMapTrackingIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		MiniMapTrackingIcon:SetSize(16, 16)
+		MiniMapTrackingIcon.SetPoint = T.dummy
 
-	MiniMapTracking:CreateBackdrop("ClassColor")
-	MiniMapTracking.backdrop:SetPoint("TOPLEFT", MiniMapTrackingIcon, -2, 2)
-	MiniMapTracking.backdrop:SetPoint("BOTTOMRIGHT", MiniMapTrackingIcon, 2, -2)
-else
-	MiniMapTracking:Hide()
+		MiniMapTracking:CreateBackdrop("ClassColor")
+		MiniMapTracking.backdrop:SetPoint("TOPLEFT", MiniMapTrackingIcon, -2, 2)
+		MiniMapTracking.backdrop:SetPoint("BOTTOMRIGHT", MiniMapTrackingIcon, 2, -2)
+	else
+		MiniMapTracking:Hide()
+	end
 end

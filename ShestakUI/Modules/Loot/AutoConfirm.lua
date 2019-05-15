@@ -5,7 +5,9 @@ if C.loot.auto_confirm_de ~= true then return end
 --	Disenchant confirmation(tekKrush by Tekkub)
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
-frame:RegisterEvent("CONFIRM_DISENCHANT_ROLL")
+if not T.classic then
+	frame:RegisterEvent("CONFIRM_DISENCHANT_ROLL")
+end
 frame:RegisterEvent("CONFIRM_LOOT_ROLL")
 frame:RegisterEvent("LOOT_BIND_CONFIRM")
 frame:SetScript("OnEvent", function()

@@ -1,5 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if IsAddOnLoaded("DBM-Core") or IsAddOnLoaded("BigWigs") then return end
+if T.classic or IsAddOnLoaded("DBM-Core") or IsAddOnLoaded("BigWigs") then return end
 
 ----------------------------------------------------------------------------------------
 --	Queue timer on LFGDungeonReadyDialog

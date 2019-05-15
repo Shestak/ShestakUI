@@ -1,4 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
+if T.classic then return end
 
 ----------------------------------------------------------------------------------------
 --	Add quest/achievement wowhead link

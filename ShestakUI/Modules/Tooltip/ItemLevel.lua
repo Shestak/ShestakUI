@@ -129,9 +129,17 @@ local TwoHanders = {
 }
 
 local InventorySlots = {}
-for i = 1, 17 do
-	if i ~= 4 then -- ignore shirt, tabard is 19
-		tinsert(InventorySlots, i)
+if not T.classic then
+	for i = 1, 17 do
+		if i ~= 4 then -- ignore shirt, tabard is 19
+			tinsert(InventorySlots, i)
+		end
+	end
+else
+	for i = 1, 18 do -- ranged is 18 for Classic
+		if i ~= 4 then -- ignore shirt, tabard is 19
+			tinsert(InventorySlots, i)
+		end
 	end
 end
 
@@ -484,20 +492,22 @@ end)
 ----------------------------------------------------------------------------------------
 --	Character Info Sheet
 ----------------------------------------------------------------------------------------
-MIN_PLAYER_LEVEL_FOR_ITEM_LEVEL_DISPLAY = 1
-hooksecurefunc("PaperDollFrame_SetItemLevel", function(self, unit)
-	if unit ~= "player" then return end
+if not T.classic then
+	MIN_PLAYER_LEVEL_FOR_ITEM_LEVEL_DISPLAY = 1
+	hooksecurefunc("PaperDollFrame_SetItemLevel", function(self, unit)
+		if unit ~= "player" then return end
 
-	local total, equip = GetAverageItemLevel()
-	if total > 0 then total = string.format("%.1f", total) end
-	if equip > 0 then equip = string.format("%.1f", equip) end
+		local total, equip = GetAverageItemLevel()
+		if total > 0 then total = string.format("%.1f", total) end
+		if equip > 0 then equip = string.format("%.1f", equip) end
 
-	local ilvl = equip
-	if equip ~= total then
-		ilvl = equip.." / "..total
-	end
+		local ilvl = equip
+		if equip ~= total then
+			ilvl = equip.." / "..total
+		end
 
-	self.Value:SetText(ilvl)
+		self.Value:SetText(ilvl)
 
-	self.tooltip = "|cffffffff"..STAT_AVERAGE_ITEM_LEVEL..": "..ilvl
-end)
+		self.tooltip = "|cffffffff"..STAT_AVERAGE_ITEM_LEVEL..": "..ilvl
+	end)
+end

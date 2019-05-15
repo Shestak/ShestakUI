@@ -23,8 +23,10 @@ local function InstallUI()
 	SetCVar("taintLog", 0)
 	SetCVar("buffDurations", 1)
 	SetCVar("autoOpenLootHistory", 0)
-	SetCVar("lossOfControl", 0)
-	SetCVar("nameplateShowSelf", 0)
+	if not T.classic then
+		SetCVar("lossOfControl", 0)
+		SetCVar("nameplateShowSelf", 0)
+	end
 
 	-- Setting chat frames
 	if C.chat.enable == true and not (IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter")) then

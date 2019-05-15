@@ -204,8 +204,10 @@ function Stuffing:SlotUpdate(b)
 		b.frame.text:SetText("")
 	end
 
-	b.frame.Azerite:Hide()
-	b.frame:UpdateItemContextMatching() -- Update Scrap items
+	if not T.classic then
+		b.frame.Azerite:Hide()
+		b.frame:UpdateItemContextMatching() -- Update Scrap items
+	end
 
 	if b.frame.UpgradeIcon then
 		b.frame.UpgradeIcon:SetPoint("TOPLEFT", C.bag.button_size/2.7, -C.bag.button_size/2.7)
@@ -234,8 +236,10 @@ function Stuffing:SlotUpdate(b)
 			b.frame.text:SetText(b.itemlevel)
 		end
 
-		if b.frame.Azerite and C_AzeriteEmpoweredItem.IsAzeriteEmpoweredItemByID(clink) then
-			b.frame.Azerite:Show()
+		if not T.classic then
+			if b.frame.Azerite and C_AzeriteEmpoweredItem.IsAzeriteEmpoweredItemByID(clink) then
+				b.frame.Azerite:Show()
+			end
 		end
 
 		if (IsItemUnusable(clink) or b.level and b.level > T.level) and not locked then
@@ -433,7 +437,11 @@ function Stuffing:BagFrameSlotNew(p, slot)
 	if slot > 3 then
 		ret.slot = slot
 		slot = slot - 4
-		ret.frame = CreateFrame("ItemButton", "StuffingBBag"..slot.."Slot", p, "BankItemButtonBagTemplate")
+		if not T.classic then
+			ret.frame = CreateFrame("ItemButton", "StuffingBBag"..slot.."Slot", p, "BankItemButtonBagTemplate")
+		else
+			ret.frame = CreateFrame("CheckButton", "StuffingBBag"..slot.."Slot", p, "BankItemButtonBagTemplate")
+		end
 		ret.frame:StripTextures()
 		ret.frame:SetID(slot)
 		hooksecurefunc(ret.frame.IconBorder, "SetVertexColor", function(self, r, g, b)
@@ -462,7 +470,11 @@ function Stuffing:BagFrameSlotNew(p, slot)
 			SetItemButtonTextureVertexColor(ret.frame, 1.0, 1.0, 1.0)
 		end
 	else
-		ret.frame = CreateFrame("ItemButton", "StuffingFBag"..slot.."Slot", p, "BagSlotButtonTemplate")
+		if not T.classic then
+			ret.frame = CreateFrame("ItemButton", "StuffingFBag"..slot.."Slot", p, "BagSlotButtonTemplate")
+		else
+			ret.frame = CreateFrame("CheckButton", "StuffingFBag"..slot.."Slot", p, "BagSlotButtonTemplate")
+		end
 
 		hooksecurefunc(ret.frame.IconBorder, "SetVertexColor", function(self, r, g, b)
 			if r ~= 0.65882 and g ~= 0.65882 and b ~= 0.65882 then
@@ -482,6 +494,9 @@ function Stuffing:BagFrameSlotNew(p, slot)
 	ret.frame:StyleButton()
 	ret.frame:SetTemplate("Default")
 	ret.frame:SetNormalTexture(nil)
+	if T.classic then
+		ret.frame:SetCheckedTexture(nil)
+	end
 
 	ret.icon = _G[ret.frame:GetName().."IconTexture"]
 	ret.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -531,7 +546,11 @@ function Stuffing:SlotNew(bag, slot)
 	end
 
 	if not ret.frame then
-		ret.frame = CreateFrame("ItemButton", "StuffingBag"..bag.."_"..slot, self.bags[bag], tpl)
+		if not T.classic then
+			ret.frame = CreateFrame("ItemButton", "StuffingBag"..bag.."_"..slot, self.bags[bag], tpl)
+		else
+			ret.frame = CreateFrame("Button", "StuffingBag"..bag.."_"..slot, self.bags[bag], tpl)
+		end
 		ret.frame:StyleButton()
 		ret.frame:SetTemplate("Default")
 		ret.frame:SetNormalTexture(nil)
@@ -1106,14 +1125,20 @@ function Stuffing:ADDON_LOADED(addon)
 	self:RegisterEvent("ITEM_LOCK_CHANGED")
 	self:RegisterEvent("BANKFRAME_OPENED")
 	self:RegisterEvent("BANKFRAME_CLOSED")
-	self:RegisterEvent("GUILDBANKFRAME_OPENED")
-	self:RegisterEvent("GUILDBANKFRAME_CLOSED")
+	if not T.classic then
+		self:RegisterEvent("GUILDBANKFRAME_OPENED")
+		self:RegisterEvent("GUILDBANKFRAME_CLOSED")
+	end
 	self:RegisterEvent("PLAYERBANKSLOTS_CHANGED")
-	self:RegisterEvent("PLAYERBANKBAGSLOTS_CHANGED")
-	self:RegisterEvent("PLAYERREAGENTBANKSLOTS_CHANGED")
+	if not T.classic then
+		self:RegisterEvent("PLAYERBANKBAGSLOTS_CHANGED")
+		self:RegisterEvent("PLAYERREAGENTBANKSLOTS_CHANGED")
+	end
 	self:RegisterEvent("BAG_CLOSED")
 	self:RegisterEvent("BAG_UPDATE_COOLDOWN")
-	self:RegisterEvent("SCRAPPING_MACHINE_SHOW")
+	if not T.classic then
+		self:RegisterEvent("SCRAPPING_MACHINE_SHOW")
+	end
 
 	self:InitBags()
 
@@ -1505,19 +1530,21 @@ function Stuffing.Menu(self, level)
 
 	if level ~= 1 then return end
 
-	wipe(info)
-	info.text = BAG_FILTER_CLEANUP.." Blizzard"
-	info.notCheckable = 1
-	info.func = function()
-		if _G["StuffingFrameReagent"] and _G["StuffingFrameReagent"]:IsShown() then
-			SortReagentBankBags()
-		elseif Stuffing.bankFrame and Stuffing.bankFrame:IsShown() then
-			SortBankBags()
-		else
-			SortBags()
+	if not T.classic then
+		wipe(info)
+		info.text = BAG_FILTER_CLEANUP.." Blizzard"
+		info.notCheckable = 1
+		info.func = function()
+			if _G["StuffingFrameReagent"] and _G["StuffingFrameReagent"]:IsShown() then
+				SortReagentBankBags()
+			elseif Stuffing.bankFrame and Stuffing.bankFrame:IsShown() then
+				SortBankBags()
+			else
+				SortBags()
+			end
 		end
+		UIDropDownMenu_AddButton(info, level)
 	end
-	UIDropDownMenu_AddButton(info, level)
 
 	wipe(info)
 	info.text = BAG_FILTER_CLEANUP

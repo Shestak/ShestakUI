@@ -19,6 +19,8 @@
 	<Script file="Core\GUI.lua"/>
 	<Script file="Core\PixelPerfect.lua"/>
 
+	<Script file="Compatibility\Classic.lua"/>
+
 	<Include file="Libs\oUF\oUF.xml"/>
 	<Include file="Libs\oGlow\oGlow.xml"/>
 	<Script file="Libs\LitePanels\LitePanels.lua"/>
@@ -43,6 +45,23 @@
 	<Script file="Config\Filters\OpenItems.lua"/>
 	<Script file="Config\Filters\RaidAuraWatch.lua"/>
 	<Script file="Config\Filters\Reminders.lua"/>
+
+	<Script file="Compatibility\Classic\Config\Filters\Announcements.lua"/>
+	<Script file="Compatibility\Classic\Config\Filters\ArenaControl.lua"/>
+	<Script file="Compatibility\Classic\Config\Filters\AutoButton.lua"/>
+	<Script file="Compatibility\Classic\Config\Filters\BadBuffs.lua"/>
+	<Script file="Compatibility\Classic\Config\Filters\ChannelingTicks.lua"/>
+	<Script file="Compatibility\Classic\Config\Filters\ChatSpam.lua"/>
+	<Script file="Compatibility\Classic\Config\Filters\CombatText.lua"/>
+	<Script file="Compatibility\Classic\Config\Filters\Cooldowns.lua"/>
+	<Script file="Compatibility\Classic\Config\Filters\Diminishing.lua"/>
+	<Script file="Compatibility\Classic\Config\Filters\Errors.lua"/>
+	<Script file="Compatibility\Classic\Config\Filters\FilgerSpells.lua"/>
+	<Script file="Compatibility\Classic\Config\Filters\Nameplates.lua"/>
+	<Script file="Compatibility\Classic\Config\Filters\NeedItems.lua"/>
+	<Script file="Compatibility\Classic\Config\Filters\OpenItems.lua"/>
+	<Script file="Compatibility\Classic\Config\Filters\RaidAuraWatch.lua"/>
+	<Script file="Compatibility\Classic\Config\Filters\Reminders.lua"/>
 
 	<Script file="Core\API.lua"/>
 	<Script file="Core\Functions.lua"/>
@@ -178,6 +197,8 @@
 	<Script file="Modules\Loot\Loot.lua"/>
 	<Script file="Modules\Loot\MasterLoot.lua"/>
 
+	<Script file="Compatibility\Classic\Modules\Maps\FogOfWar.lua"/>
+
 	<Script file="Modules\Maps\BattlefieldMap.lua"/>
 	<Script file="Modules\Maps\ButtonCollect.lua"/>
 	<Script file="Modules\Maps\FogOfWar.lua"/>
@@ -193,6 +214,7 @@
 	<Script file="Modules\Quests\WowheadLink.lua"/>
 
 	<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>
+	<Include file="Compatibility\Classic\Modules\Skins\Blizzard\LoadFrames.xml"/>
 	<Script file="Modules\Skins\Ace3.lua"/>
 	<Script file="Modules\Skins\AtlasLoot.lua"/>
 	<Script file="Modules\Skins\Aurora.lua"/>

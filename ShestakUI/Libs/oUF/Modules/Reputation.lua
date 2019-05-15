@@ -18,7 +18,7 @@ local function GetReputation()
 			min, max, cur = 0, 1, 1 -- force a full bar when maxed out
 		end
 		standingID = 5 -- force friends' color
-	else
+	elseif not IsClassicBuild() then
 		local value, nextThreshold, _, hasRewardPending = C_Reputation.GetFactionParagonInfo(factionID)
 		if(value) then
 			cur = value % nextThreshold

@@ -347,18 +347,26 @@ end
 
 -- Hide blizzard combat text
 if C.combattext.blizz_head_numbers ~= true then
-	SetCVar("floatingCombatTextCombatHealing", 0)
-	SetCVar("floatingCombatTextCombatDamage", 0)
-else
-	SetCVar("floatingCombatTextCombatHealing", 1)
-	SetCVar("floatingCombatTextCombatDamage", 1)
+	if C.combattext.blizz_head_numbers ~= true then
+		if not T.classic then
+			SetCVar("floatingCombatTextCombatHealing", 0)
+		end
+		SetCVar("floatingCombatTextCombatDamage", 0)
+	else
+		if not T.classic then
+			SetCVar("floatingCombatTextCombatHealing", 1)
+		end
+		SetCVar("floatingCombatTextCombatDamage", 1)
+	end
 end
 
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGOUT")
 frame:SetScript("OnEvent", function(self, event)
 	if event == "PLAYER_LOGOUT" then
-		SetCVar("floatingCombatTextCombatHealing", 1)
+		if not T.classic then
+			SetCVar("floatingCombatTextCombatHealing", 1)
+		end
 		SetCVar("floatingCombatTextCombatDamage", 1)
 	end
 end)
@@ -436,8 +444,10 @@ xCT:RegisterEvent("UNIT_POWER_UPDATE")
 if C.combattext.dk_runes and T.class == "DEATHKNIGHT" then
 	xCT:RegisterEvent("RUNE_POWER_UPDATE")
 end
-xCT:RegisterEvent("UNIT_ENTERED_VEHICLE")
-xCT:RegisterEvent("UNIT_EXITING_VEHICLE")
+if not T.classic then
+	xCT:RegisterEvent("UNIT_ENTERED_VEHICLE")
+	xCT:RegisterEvent("UNIT_EXITING_VEHICLE")
+end
 xCT:RegisterEvent("PLAYER_ENTERING_WORLD")
 xCT:SetScript("OnEvent", OnEvent)
 

@@ -31,7 +31,7 @@ function frame:PLAYER_ENTERING_WORLD()
 			SetCVar("nameplateShowEnemies", 0)
 		end
 	end
-	if C.nameplate.enhance_threat == true then
+	if not T.classic and C.nameplate.enhance_threat == true then
 		SetCVar("threatWarning", 3)
 	end
 	SetCVar("namePlateMinScale", 1)
@@ -68,10 +68,18 @@ if C.nameplate.healer_icon == true then
 		257,	-- Priest Holy
 		264,	-- Shaman Restoration
 	}
-	for _, specID in pairs(healerSpecIDs) do
-		local _, name = GetSpecializationInfoByID(specID)
-		if name and not healerSpecs[name] then
-			healerSpecs[name] = true
+	local healerClassTokens = {
+		"DRUID",
+		"PALADIN",
+		"PRIEST",
+		"SHAMAN",
+	}
+	if not T.classic then
+		for _, specID in pairs(healerSpecIDs) do
+			local _, name = GetSpecializationInfoByID(specID)
+			if name and not healerSpecs[name] then
+				healerSpecs[name] = true
+			end
 		end
 	end
 
@@ -82,11 +90,20 @@ if C.nameplate.healer_icon == true then
 			lastCheck = 0
 			healList = {}
 			for i = 1, GetNumBattlefieldScores() do
-				local name, _, _, _, _, faction, _, _, _, _, _, _, _, _, _, talentSpec = GetBattlefieldScore(i)
+				if not T.classic then
+					local name, _, _, _, _, faction, _, _, _, _, _, _, _, _, _, talentSpec = GetBattlefieldScore(i)
 
-				if name and healerSpecs[talentSpec] and t.factions[UnitFactionGroup("player")] == faction then
-					name = name:match("(.+)%-.+") or name
-					healList[name] = talentSpec
+					if name and healerSpecs[talentSpec] and t.factions[UnitFactionGroup("player")] == faction then
+						name = name:match("(.+)%-.+") or name
+						healList[name] = talentSpec
+					end
+				else -- Temporary? Look into localized names for custom GetSpecializationInfoByID in Classic.
+					local name, _, _, _, _, faction, _, _, classToken, damageDone, healingDone, _, _, _, _, talentSpec = GetBattlefieldScore(i)
+
+					if name and healerClassTokens[classToken] and healingDone >= damageDone and t.factions[UnitFactionGroup("player")] == faction then
+						name = name:match("(.+)%-.+") or name
+						healList[name] = talentSpec
+					end
 				end
 			end
 		end
@@ -129,31 +146,65 @@ if C.nameplate.healer_icon == true then
 	t:SetScript("OnEvent", CheckLoc)
 end
 
-local totemData = {
-	[GetSpellInfo(192058)] = "Interface\\Icons\\spell_nature_brilliance",			-- Capacitor Totem
-	[GetSpellInfo(98008)]  = "Interface\\Icons\\spell_shaman_spiritlink",			-- Spirit Link Totem
-	[GetSpellInfo(192077)] = "Interface\\Icons\\ability_shaman_windwalktotem",		-- Wind Rush Totem
-	[GetSpellInfo(204331)] = "Interface\\Icons\\spell_nature_wrathofair_totem",		-- Counterstrike Totem
-	[GetSpellInfo(204332)] = "Interface\\Icons\\spell_nature_windfury",				-- Windfury Totem
-	[GetSpellInfo(204336)] = "Interface\\Icons\\spell_nature_groundingtotem",		-- Grounding Totem
-	-- Water
-	[GetSpellInfo(157153)] = "Interface\\Icons\\ability_shaman_condensationtotem",	-- Cloudburst Totem
-	[GetSpellInfo(5394)]   = "Interface\\Icons\\INV_Spear_04",						-- Healing Stream Totem
-	[GetSpellInfo(108280)] = "Interface\\Icons\\ability_shaman_healingtide",		-- Healing Tide Totem
-	-- Earth
-	[GetSpellInfo(207399)] = "Interface\\Icons\\spell_nature_reincarnation",		-- Ancestral Protection Totem
-	[GetSpellInfo(198838)] = "Interface\\Icons\\spell_nature_stoneskintotem",		-- Earthen Wall Totem
-	[GetSpellInfo(51485)]  = "Interface\\Icons\\spell_nature_stranglevines",		-- Earthgrab Totem
-	[GetSpellInfo(196932)] = "Interface\\Icons\\spell_totem_wardofdraining",		-- Voodoo Totem
-	-- Fire
-	[GetSpellInfo(192222)] = "Interface\\Icons\\spell_shaman_spewlava",				-- Liquid Magma Totem
-	[GetSpellInfo(204330)] = "Interface\\Icons\\spell_fire_totemofwrath",			-- Skyfury Totem
-	-- Totem Mastery
-	[GetSpellInfo(202188)] = "Interface\\Icons\\spell_nature_stoneskintotem",		-- Resonance Totem
-	[GetSpellInfo(210651)] = "Interface\\Icons\\spell_shaman_stormtotem",			-- Storm Totem
-	[GetSpellInfo(210657)] = "Interface\\Icons\\spell_fire_searingtotem",			-- Ember Totem
-	[GetSpellInfo(210660)] = "Interface\\Icons\\spell_nature_invisibilitytotem",	-- Tailwind Totem
-}
+local totemData = {}
+if not T.classic then
+	totemData = {
+		-- Earth
+		[GetSpellInfo(207399)] = "Interface\\Icons\\spell_nature_reincarnation",			-- Ancestral Protection Totem
+		[GetSpellInfo(198838)] = "Interface\\Icons\\spell_nature_stoneskintotem",			-- Earthen Wall Totem
+		[GetSpellInfo(51485)]  = "Interface\\Icons\\spell_nature_stranglevines",			-- Earthgrab Totem
+		[GetSpellInfo(196932)] = "Interface\\Icons\\spell_totem_wardofdraining",			-- Voodoo Totem
+		-- Fire
+		[GetSpellInfo(192222)] = "Interface\\Icons\\spell_shaman_spewlava",					-- Liquid Magma Totem
+		[GetSpellInfo(204330)] = "Interface\\Icons\\spell_fire_totemofwrath",				-- Skyfury Totem
+		-- Water
+		[GetSpellInfo(157153)] = "Interface\\Icons\\ability_shaman_condensationtotem",		-- Cloudburst Totem
+		[GetSpellInfo(5394)]   = "Interface\\Icons\\INV_Spear_04",							-- Healing Stream Totem
+		[GetSpellInfo(108280)] = "Interface\\Icons\\ability_shaman_healingtide",			-- Healing Tide Totem
+		-- Air
+		[GetSpellInfo(192058)] = "Interface\\Icons\\spell_nature_brilliance",				-- Capacitor Totem
+		[GetSpellInfo(98008)]  = "Interface\\Icons\\spell_shaman_spiritlink",				-- Spirit Link Totem
+		[GetSpellInfo(192077)] = "Interface\\Icons\\ability_shaman_windwalktotem",			-- Wind Rush Totem
+		[GetSpellInfo(204331)] = "Interface\\Icons\\spell_nature_wrathofair_totem",			-- Counterstrike Totem
+		[GetSpellInfo(204332)] = "Interface\\Icons\\spell_nature_windfury",					-- Windfury Totem
+		[GetSpellInfo(204336)] = "Interface\\Icons\\spell_nature_groundingtotem",			-- Grounding Totem
+		-- Totem Mastery
+		[GetSpellInfo(202188)] = "Interface\\Icons\\spell_nature_stoneskintotem",			-- Resonance Totem
+		[GetSpellInfo(210651)] = "Interface\\Icons\\spell_shaman_stormtotem",				-- Storm Totem
+		[GetSpellInfo(210657)] = "Interface\\Icons\\spell_fire_searingtotem",				-- Ember Totem
+		[GetSpellInfo(210660)] = "Interface\\Icons\\spell_nature_invisibilitytotem",		-- Tailwind Totem
+	}
+else
+	totemData = {
+		-- Earth
+		[GetSpellInfo(2484)]   = "Interface\\Icons\\Spell_nature_strengthofearthtotem02",	-- Earthbind Totem
+		[GetSpellInfo(5730)]   = "Interface\\Icons\\Spell_nature_stoneclawtotem",			-- Stoneclaw Totem
+		[GetSpellInfo(8071)]   = "Interface\\Icons\\Spell_nature_stoneskintotem",			-- Stoneskin Totem
+		[GetSpellInfo(8075)]   = "Interface\\Icons\\Spell_nature_earthbindtotem",			-- Strength of Earth Totem
+		[GetSpellInfo(8143)]   = "Interface\\Icons\\Spell_nature_tremortotem",				-- Tremor Totem
+		[GetSpellInfo(8177)]   = "Interface\\Icons\\Spell_nature_groundingtotem",			-- Grounding Totem
+		-- Fire
+		[GetSpellInfo(1535)]   = "Interface\\Icons\\Spell_fire_sealoffire",					-- Fire Nova Totem
+		[GetSpellInfo(3599)]   = "Interface\\Icons\\Spell_fire_searingtotem",				-- Searing Totem
+		[GetSpellInfo(8181)]   = "Interface\\Icons\\Spell_frostresistancetotem_01",			-- Frost Resistance Totem
+		[GetSpellInfo(8190)]   = "Interface\\Icons\\Spell_fire_selfdestruct",				-- Magma Totem
+		[GetSpellInfo(8227)]   = "Interface\\Icons\\Spell_nature_guardianward",				-- Flametongue Totem
+		-- Water
+		[GetSpellInfo(5394)]   = "Interface\\Icons\\Inv_spear_04",							-- Healing Stream Totem
+		[GetSpellInfo(5675)]   = "Interface\\Icons\\Spell_nature_manaregentotem",			-- Mana Spring Totem
+		[GetSpellInfo(8166)]   = "Interface\\Icons\\Spell_nature_poisoncleansingtotem",		-- Poison Cleansing Totem
+		[GetSpellInfo(8170)]   = "Interface\\Icons\\Spell_nature_diseasecleansingtotem",	-- Disease Cleansing Totem
+		[GetSpellInfo(8184)]   = "Interface\\Icons\\Spell_fireresistancetotem_01",			-- Fire Resistance Totem
+		[GetSpellInfo(16190)]  = "Interface\\Icons\\Spell_frost_summonwaterelemental",		-- Mana Tide Totem
+		-- Air
+		[GetSpellInfo(6495)]   = "Interface\\Icons\\Spell_nature_removecurse",				-- Sentry Totem
+		[GetSpellInfo(8512)]   = "Interface\\Icons\\Spell_nature_windfury",					-- Windfury Totem
+		[GetSpellInfo(8835)]   = "Interface\\Icons\\Spell_nature_invisibilitytotem",		-- Grace of Air Totem
+		[GetSpellInfo(10595)]  = "Interface\\Icons\\Spell_nature_natureresistancetotem",	-- Nature Resistance Totem
+		[GetSpellInfo(15107)]  = "Interface\\Icons\\Spell_nature_earthbind",				-- Windwall Totem
+		[GetSpellInfo(25908)]  = "Interface\\Icons\\Spell_nature_brilliance",				-- Tranquil Air Totem
+	}
+end
 
 local function CreateVirtualFrame(frame, point)
 	if point == nil then point = frame end
@@ -456,22 +507,24 @@ local function style(self, unit)
 	self.Power.bg.multiplier = 0.2
 
 	-- Hide Blizzard Power Bar and changed position for Class Bar
-	hooksecurefunc(_G.NamePlateDriverFrame, "SetupClassNameplateBars", function(frame)
-		if frame.classNamePlateMechanicFrame then
-			local point, _, relativePoint, xOfs = frame.classNamePlateMechanicFrame:GetPoint()
-			if point then
-				if point == "TOP" and C_NamePlate.GetNamePlateForUnit("player") then
-					frame.classNamePlateMechanicFrame:SetPoint(point, C_NamePlate.GetNamePlateForUnit("player"), relativePoint, xOfs, 53)
-				else
-					frame.classNamePlateMechanicFrame:SetPoint(point, C_NamePlate.GetNamePlateForUnit("target"), relativePoint, xOfs, -5)
+	if not T.classic then
+		hooksecurefunc(_G.NamePlateDriverFrame, "SetupClassNameplateBars", function(frame)
+			if frame.classNamePlateMechanicFrame then
+				local point, _, relativePoint, xOfs = frame.classNamePlateMechanicFrame:GetPoint()
+				if point then
+					if point == "TOP" and C_NamePlate.GetNamePlateForUnit("player") then
+						frame.classNamePlateMechanicFrame:SetPoint(point, C_NamePlate.GetNamePlateForUnit("player"), relativePoint, xOfs, 53)
+					else
+						frame.classNamePlateMechanicFrame:SetPoint(point, C_NamePlate.GetNamePlateForUnit("target"), relativePoint, xOfs, -5)
+					end
 				end
 			end
-		end
-		if frame.classNamePlatePowerBar then
-			frame.classNamePlatePowerBar:Hide()
-			frame.classNamePlatePowerBar:UnregisterAllEvents()
-		end
-	end)
+			if frame.classNamePlatePowerBar then
+				frame.classNamePlatePowerBar:Hide()
+				frame.classNamePlatePowerBar:UnregisterAllEvents()
+			end
+		end)
+	end
 
 	-- Create Name Text
 	self.Name = self:CreateFontString(nil, "OVERLAY")
@@ -655,8 +708,10 @@ local function style(self, unit)
 
 	self.Health:RegisterEvent("PLAYER_REGEN_DISABLED")
 	self.Health:RegisterEvent("PLAYER_REGEN_ENABLED")
-	self.Health:RegisterEvent("UNIT_THREAT_SITUATION_UPDATE")
-	self.Health:RegisterEvent("UNIT_THREAT_LIST_UPDATE")
+	if not T.classic then
+		self.Health:RegisterEvent("UNIT_THREAT_SITUATION_UPDATE")
+		self.Health:RegisterEvent("UNIT_THREAT_LIST_UPDATE")
+	end
 
 	self.Health:SetScript("OnEvent", function(self, event)
 		threatColor(main)

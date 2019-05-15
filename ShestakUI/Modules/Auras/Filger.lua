@@ -31,7 +31,9 @@ COOLDOWN_Anchor:SetSize(C.filger.cooldown_size, C.filger.cooldown_size)
 T_DE_BUFF_BAR_Anchor:SetPoint(unpack(C.position.filger.target_bar))
 T_DE_BUFF_BAR_Anchor:SetSize(218, 25)
 
-SpellActivationOverlayFrame:SetFrameStrata("BACKGROUND")
+if not T.classic then
+	SpellActivationOverlayFrame:SetFrameStrata("BACKGROUND")
+end
 
 local Filger = {}
 local MyUnits = {player = true, vehicle = true, pet = true}
@@ -392,7 +394,10 @@ function Filger:OnEvent(event, unit, _, castID)
 				end
 			end
 			if event ~= "SPELL_UPDATE_COOLDOWN" then
-				local isTalent = data.talentID and select(10, GetTalentInfoByID(data.talentID))
+				local isTalent
+				if not T.classic then
+					isTalnt = data.talentID and select(10, GetTalentInfoByID(data.talentID))
+				end
 				if (data.filter == "BUFF" or data.filter == "DEBUFF") and (not data.spec or data.spec == ptt) and (not data.talentID or isTalent) then
 					local postfix = data.caster == "player" and "|PLAYER" or ""
 					if data.filter == "BUFF" then
@@ -577,7 +582,9 @@ if C["filger_spells"] and C["filger_spells"][T.class] then
 				end
 			end
 			frame:RegisterEvent("UNIT_AURA")
-			frame:RegisterEvent("PLAYER_FOCUS_CHANGED")
+			if not T.classic then
+				frame:RegisterEvent("PLAYER_FOCUS_CHANGED")
+			end
 			frame:RegisterEvent("PLAYER_TARGET_CHANGED")
 			frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 			frame:SetScript("OnEvent", Filger.OnEvent)

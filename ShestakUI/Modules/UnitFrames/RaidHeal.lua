@@ -122,8 +122,10 @@ local function Shared(self, unit)
 	if C.raidframe.aggro_border == true then
 		table.insert(self.__elements, T.UpdateThreat)
 		self:RegisterEvent("PLAYER_TARGET_CHANGED", T.UpdateThreat, true)
-		self:RegisterEvent("UNIT_THREAT_LIST_UPDATE", T.UpdateThreat)
-		self:RegisterEvent("UNIT_THREAT_SITUATION_UPDATE", T.UpdateThreat)
+		if not T.classic then
+			self:RegisterEvent("UNIT_THREAT_LIST_UPDATE", T.UpdateThreat)
+			self:RegisterEvent("UNIT_THREAT_SITUATION_UPDATE", T.UpdateThreat)
+		end
 	end
 
 	-- Raid marks
@@ -148,7 +150,7 @@ local function Shared(self, unit)
 	end
 
 	-- Summon icons
-	if C.raidframe.icons_sumon == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
+	if not T.classic and C.raidframe.icons_sumon == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
 		self.SummonIndicator = self.Health:CreateTexture(nil, "OVERLAY")
 		self.SummonIndicator:SetSize(24, 24)
 		self.SummonIndicator:SetPoint("BOTTOMRIGHT", self.Health, 7, -11)
@@ -186,7 +188,7 @@ local function Shared(self, unit)
 	end
 
 	-- Incoming heal text/bar
-	if C.raidframe.plugins_healcomm == true then
+	if not T.classic and C.raidframe.plugins_healcomm == true then
 		local mhpb = self.Health:CreateTexture(nil, "ARTWORK")
 		mhpb:SetTexture(C.media.texture)
 		mhpb:SetVertexColor(0, 1, 0.5, 0.2)

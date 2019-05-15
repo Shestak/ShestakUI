@@ -471,26 +471,38 @@ if durability.enabled then
 			GameTooltip:Show()
 		end,
 		OnClick = function(self, button)
-			if button == "RightButton" then
-				conf.AutoRepair = not conf.AutoRepair
-				self:GetScript("OnEnter")(self)
-			elseif button == "MiddleButton" then
-				conf.AutoGuildRepair = not conf.AutoGuildRepair
-				self:GetScript("OnEnter")(self)
-			elseif C_EquipmentSet.GetNumEquipmentSets() > 0 and button == "LeftButton" and (IsAltKeyDown() or IsShiftKeyDown()) then
-				local menulist = {{isTitle = true, notCheckable = 1, text = format(gsub(EQUIPMENT_SETS, ":", ""), "")}}
-				if C_EquipmentSet.GetNumEquipmentSets() == 0 then
-					tinsert(menulist, {text = NONE, notCheckable = 1, disabled = true})
-				else
-					for i = 1, C_EquipmentSet.GetNumEquipmentSets() do
-						local name, icon, setID = C_EquipmentSet.GetEquipmentSetInfo(i-1)
-						if not icon then icon = 134400 end
-						tinsert(menulist, {text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s", icon, t_icon, name), notCheckable = 1, func = function() if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end EquipmentManager_EquipSet(setID) end})
+			if not T.classic then
+				if button == "RightButton" then
+					conf.AutoRepair = not conf.AutoRepair
+					self:GetScript("OnEnter")(self)
+				elseif button == "MiddleButton" then
+					conf.AutoGuildRepair = not conf.AutoGuildRepair
+					self:GetScript("OnEnter")(self)
+				elseif C_EquipmentSet.GetNumEquipmentSets() > 0 and button == "LeftButton" and (IsAltKeyDown() or IsShiftKeyDown()) then
+					local menulist = {{isTitle = true, notCheckable = 1, text = format(gsub(EQUIPMENT_SETS, ":", ""), "")}}
+					if C_EquipmentSet.GetNumEquipmentSets() == 0 then
+						tinsert(menulist, {text = NONE, notCheckable = 1, disabled = true})
+					else
+						for i = 1, C_EquipmentSet.GetNumEquipmentSets() do
+							local name, icon, setID = C_EquipmentSet.GetEquipmentSetInfo(i-1)
+							if not icon then icon = 134400 end
+							tinsert(menulist, {text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s", icon, t_icon, name), notCheckable = 1, func = function() if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end EquipmentManager_EquipSet(setID) end})
+						end
 					end
+					EasyMenu(menulist, LSMenus, "cursor", 0, 0, "MENU")
+				elseif button == "LeftButton" then
+					ToggleCharacter("PaperDollFrame")
 				end
-				EasyMenu(menulist, LSMenus, "cursor", 0, 0, "MENU")
-			elseif button == "LeftButton" then
-				ToggleCharacter("PaperDollFrame")
+			else
+				if button == "RightButton" then
+					conf.AutoRepair = not conf.AutoRepair
+					self:GetScript("OnEnter")(self)
+				elseif button == "MiddleButton" then
+					conf.AutoGuildRepair = not conf.AutoGuildRepair
+					self:GetScript("OnEnter")(self)
+				elseif button == "LeftButton" then
+					ToggleCharacter("PaperDollFrame")
+				end
 			end
 		end
 	})
@@ -600,67 +612,70 @@ if gold.enabled then
 			GameTooltip:AddDoubleLine(TOTAL, formatgold(5, total), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			GameTooltip:AddLine(" ")
 
-			local currencies = 0
-			for i = 1, GetCurrencyListSize() do
-				local name, _, _, _, watched, count, icon = GetCurrencyListInfo(i)
-				if watched then
-					if currencies == 0 then GameTooltip:AddLine(TRACKING, ttsubh.r, ttsubh.g, ttsubh.b) end
-					local r, g, b
-					if count > 0 then r, g, b = 1, 1, 1 else r, g, b = 0.5, 0.5, 0.5 end
-					GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", count, icon, t_icon), r, g, b, r, g, b)
-					currencies = currencies + 1
+			if not T.classic then
+				local currencies = 0
+				for i = 1, GetCurrencyListSize() do
+					local name, _, _, _, watched, count, icon = GetCurrencyListInfo(i)
+					if watched then
+						if currencies == 0 then GameTooltip:AddLine(TRACKING, ttsubh.r, ttsubh.g, ttsubh.b) end
+						local r, g, b
+						if count > 0 then r, g, b = 1, 1, 1 else r, g, b = 0.5, 0.5, 0.5 end
+						GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", count, icon, t_icon), r, g, b, r, g, b)
+						currencies = currencies + 1
+					end
 				end
-			end
-			if archaeology and C.stats.currency_archaeology then
-				IsSubTitle = 1
-				Currency(384)	-- Dwarf Archaeology Fragment
-				Currency(385)	-- Troll Archaeology Fragment
-				Currency(393)	-- Fossil Archaeology Fragment
-				Currency(394)	-- Night Elf Archaeology Fragment
-				Currency(397)	-- Orc Archaeology Fragment
-				Currency(398)	-- Draenei Archaeology Fragment
-				Currency(399)	-- Vrykul Archaeology Fragment
-				Currency(400)	-- Nerubian Archaeology Fragment
-				Currency(401)	-- Tol'vir Archaeology Fragment
-				Currency(676)	-- Pandaren Archaeology Fragment
-				Currency(677)	-- Mogu Archaeology Fragment
-				Currency(754)	-- Mantid Archaeology Fragment
-				Currency(821)	-- Draenor Clans Archaeology Fragment
-				Currency(828)	-- Ogre Archaeology Fragment
-				Currency(829)	-- Arakkoa Archaeology Fragment
-				Currency(1172)	-- Highborne Archaeology Fragment
-				Currency(1173)	-- Highmountain Tauren Archaeology Fragment
-				Currency(1174)	-- Demonic Archaeology Fragment
-			end
 
-			if cooking and C.stats.currency_cooking then
-				IsSubTitle = 2
-				Currency(81)	-- Epicurean's Award
-				Currency(402)	-- Ironpaw Token
-			end
+				if archaeology and C.stats.currency_archaeology then
+					IsSubTitle = 1
+					Currency(384)	-- Dwarf Archaeology Fragment
+					Currency(385)	-- Troll Archaeology Fragment
+					Currency(393)	-- Fossil Archaeology Fragment
+					Currency(394)	-- Night Elf Archaeology Fragment
+					Currency(397)	-- Orc Archaeology Fragment
+					Currency(398)	-- Draenei Archaeology Fragment
+					Currency(399)	-- Vrykul Archaeology Fragment
+					Currency(400)	-- Nerubian Archaeology Fragment
+					Currency(401)	-- Tol'vir Archaeology Fragment
+					Currency(676)	-- Pandaren Archaeology Fragment
+					Currency(677)	-- Mogu Archaeology Fragment
+					Currency(754)	-- Mantid Archaeology Fragment
+					Currency(821)	-- Draenor Clans Archaeology Fragment
+					Currency(828)	-- Ogre Archaeology Fragment
+					Currency(829)	-- Arakkoa Archaeology Fragment
+					Currency(1172)	-- Highborne Archaeology Fragment
+					Currency(1173)	-- Highmountain Tauren Archaeology Fragment
+					Currency(1174)	-- Demonic Archaeology Fragment
+				end
 
-			if C.stats.currency_professions then
-				IsSubTitle = 3
-				Currency(910)	-- Secret of Draenor Alchemy
-				Currency(999)	-- Secret of Draenor Tailoring
-				Currency(1008)	-- Secret of Draenor Jewelcrafting
-				Currency(1017)	-- Secret of Draenor Leatherworking
-				Currency(1020)	-- Secret of Draenor Blacksmithing
-			end
+				if cooking and C.stats.currency_cooking then
+					IsSubTitle = 2
+					Currency(81)	-- Epicurean's Award
+					Currency(402)	-- Ironpaw Token
+				end
 
-			if C.stats.currency_raid and T.level == MAX_PLAYER_LEVEL then
-				IsSubTitle = 4
-				Currency(1580, false, true)	-- Seal of Wartorn Fate
-			end
+				if C.stats.currency_professions then
+					IsSubTitle = 3
+					Currency(910)	-- Secret of Draenor Alchemy
+					Currency(999)	-- Secret of Draenor Tailoring
+					Currency(1008)	-- Secret of Draenor Jewelcrafting
+					Currency(1017)	-- Secret of Draenor Leatherworking
+					Currency(1020)	-- Secret of Draenor Blacksmithing
+				end
 
-			if C.stats.currency_misc then
-				IsSubTitle = 5
-				Currency(1716)	-- Honorbound Service Medal
-				Currency(1717)	-- 7th Legion Service Medal
-				Currency(1718)	-- Titan Residuum
-				Currency(1560)	-- War Resources
-				Currency(1710)	-- Seafarer's Dubloon
-				Currency(515)	-- Darkmoon Prize Ticket
+				if C.stats.currency_raid and T.level == MAX_PLAYER_LEVEL then
+					IsSubTitle = 4
+					Currency(1580, false, true)	-- Seal of Wartorn Fate
+				end
+
+				if C.stats.currency_misc then
+					IsSubTitle = 5
+					Currency(1716)	-- Honorbound Service Medal
+					Currency(1717)	-- 7th Legion Service Medal
+					Currency(1718)	-- Titan Residuum
+					Currency(1560)	-- War Resources
+					Currency(1710)	-- Seafarer's Dubloon
+					Currency(515)	-- Darkmoon Prize Ticket
+				end
 			end
 
 			GameTooltip:AddLine(" ")
@@ -757,10 +772,18 @@ if clock.enabled then
 		OnEvent = function(self) if self.hovered then self:GetScript("OnEnter")(self) end end,
 		OnEnter = function(self)
 			if not self.hovered then RequestRaidInfo() self.hovered = true end
-			local currentCalendarTime = C_DateAndTime.GetCurrentCalendarTime()
-			local weekday = CALENDAR_WEEKDAY_NAMES[currentCalendarTime.weekday]
-			local month = CALENDAR_MONTH_NAMES[currentCalendarTime.month]
-			local fullDate = format(FULLDATE, weekday, month, currentCalendarTime.monthDay, currentCalendarTime.year, currentCalendarTime.month)
+			local currentCalendarTime, weekday, month, fullDate
+			if not T.classic then
+				currentCalendarTime = C_DateAndTime.GetCurrentCalendarTime()
+				weekday = CALENDAR_WEEKDAY_NAMES[currentCalendarTime.weekday]
+				month = CALENDAR_MONTH_NAMES[currentCalendarTime.month]
+				fullDate = format(FULLDATE, weekday, month, currentCalendarTime.monthDay, currentCalendarTime.year, currentCalendarTime.month)
+			else
+				currentCalendarTime = C_DateAndTime.GetTodaysDate()
+				weekday = CALENDAR_WEEKDAY_NAMES[currentCalendarTime.weekDay]
+				month = CALENDAR_MONTH_NAMES[currentCalendarTime.month]
+				fullDate = format(FULLDATE, weekday, month, currentCalendarTime.day, currentCalendarTime.year, currentCalendarTime.month)
+			end
 			GameTooltip:SetOwner(self, "ANCHOR_NONE")
 			GameTooltip:ClearAllPoints()
 			GameTooltip:SetPoint(clock.tip_anchor, clock.tip_frame, clock.tip_x, clock.tip_y)
@@ -796,39 +819,45 @@ if clock.enabled then
 					end
 				end
 			end
-			local addedLine
-			for i = 1, GetNumSavedWorldBosses() do
-				local name, _, reset = GetSavedWorldBossInfo(i)
-				if reset then
-					if not addedLine then
-						GameTooltip:AddLine(" ")
-						GameTooltip:AddLine(RAID_INFO_WORLD_BOSS, ttsubh.r, ttsubh.g, ttsubh.b)
-						addedLine = true
-					end
-					GameTooltip:AddDoubleLine(name, fmttime(reset), 1, 1, 1, 1, 1, 1)
-				end
-			end
-			if T.level == MAX_PLAYER_LEVEL then
-				local c = 0
-				for _, q in ipairs({52834, 52835, 52837, 52838, 52839, 52840}) do
-					if IsQuestFlaggedCompleted(q) then
-						c = c + 1
+			if not T.classic then
+				local addedLine
+				for i = 1, GetNumSavedWorldBosses() do
+					local name, _, reset = GetSavedWorldBossInfo(i)
+					if reset then
+						if not addedLine then
+							GameTooltip:AddLine(" ")
+							GameTooltip:AddLine(RAID_INFO_WORLD_BOSS, ttsubh.r, ttsubh.g, ttsubh.b)
+							addedLine = true
+						end
+						GameTooltip:AddDoubleLine(name, fmttime(reset), 1, 1, 1, 1, 1, 1)
 					end
 				end
-				local max = 2
-				local r, g, b = 1, 1, 1
-				if c == 0 then
-					r, g, b = 1, 0, 0
-				elseif c == 1 then
-					r, g, b = 1, 1, 0
+				if T.level == MAX_PLAYER_LEVEL then
+					local c = 0
+					for _, q in ipairs({52834, 52835, 52837, 52838, 52839, 52840}) do
+						if IsQuestFlaggedCompleted(q) then
+							c = c + 1
+						end
+					end
+					local max = 2
+					local r, g, b = 1, 1, 1
+					if c == 0 then
+						r, g, b = 1, 0, 0
+					elseif c == 1 then
+						r, g, b = 1, 1, 0
+					end
+					GameTooltip:AddLine(" ")
+					GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
+					GameTooltip:AddDoubleLine(L_STATS_SEALS, format("%s/%s", c, max), 1, 1, 1, r, g, b)
 				end
-				GameTooltip:AddLine(" ")
-				GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
-				GameTooltip:AddDoubleLine(L_STATS_SEALS, format("%s/%s", c, max), 1, 1, 1, r, g, b)
 			end
 			GameTooltip:Show()
 		end,
-		OnClick = function(_, b) (b == "RightButton" and ToggleTimeManager or ToggleCalendar)() end
+		OnClick = function(_, b)
+			if not T.classic then
+				(b == "RightButton" and ToggleTimeManager or ToggleCalendar)()
+			end
+		end
 	})
 end
 
@@ -961,7 +990,7 @@ if guild.enabled then
 				if IsInGuild() then
 					local total, _, online = GetNumGuildMembers()
 					return format(guild.fmt, online, total)
-				else return LOOKINGFORGUILD end
+				else return not T.classic and LOOKINGFORGUILD or format("%s %s", NO, GUILD) end
 			end, update = 5
 		},
 		OnLoad = function(self)
@@ -1446,7 +1475,11 @@ if talents.enabled then
 	}
 	Inject("Talents", {
 		OnLoad = function(self)
-			RegEvents(self, "PLAYER_ENTERING_WORLD PLAYER_TALENT_UPDATE PLAYER_LOOT_SPEC_UPDATED")
+			if not T.classic then
+				RegEvents(self, "PLAYER_ENTERING_WORLD PLAYER_TALENT_UPDATE PLAYER_LOOT_SPEC_UPDATED")
+			else
+				RegEvents(self, "PLAYER_ENTERING_WORLD CHARACTER_POINTS_CHANGED UNIT_INVENTORY_CHANGED UPDATE_BONUS_ACTIONBAR")
+			end
 		end,
 		OnEvent = function(self)
 			if UnitLevel(P) < SHOW_SPEC_LEVEL then
@@ -1454,10 +1487,13 @@ if talents.enabled then
 				return
 			end
 
-			local lootSpec = GetLootSpecialization()
-			local spec = GetSpecialization()
+			local lootSpec
+			if not T.classic then
+				lootSpec = GetLootSpecialization()
+				lootSpecName = lootSpec and select(2, GetSpecializationInfoByID(lootSpec)) or NO
+			end
 
-			lootSpecName = lootSpec and select(2, GetSpecializationInfoByID(lootSpec)) or NO
+			local spec = GetSpecialization()
 			specName = spec and select(2, GetSpecializationInfo(spec)) or NO
 
 			local specIcon, lootIcon = "", ""
@@ -1468,18 +1504,24 @@ if talents.enabled then
 				specIcon = format("|T%s:14:14:0:0:64:64:5:59:5:59|t", specTex)
 			end
 
-			if lootSpec == 0 then
-				lootIcon = specIcon
-				lootText = "|cff55ff55"..lootText.."|r"
-				lootSpecName = "|cff55ff55"..specName.."|r"
-			else
-				local _, _, _, texture = GetSpecializationInfoByID(lootSpec)
-				if texture then
-					lootIcon = format("|T%s:14:14:0:0:64:64:5:59:5:59|t", texture)
+			if not T.classic then
+				if lootSpec == 0 then
+					lootIcon = specIcon
+					lootText = "|cff55ff55"..lootText.."|r"
+					lootSpecName = "|cff55ff55"..specName.."|r"
+				else
+					local _, _, _, texture = GetSpecializationInfoByID(lootSpec)
+					if texture then
+						lootIcon = format("|T%s:14:14:0:0:64:64:5:59:5:59|t", texture)
+					end
 				end
 			end
 
-			self.text:SetText(format("%s:%s  %s:%s", L_STATS_SPEC, specIcon, lootText, lootIcon))
+			if not T.classic then
+				self.text:SetText(format("%s:%s  %s:%s", L_STATS_SPEC, specIcon, lootText, lootIcon))
+			else
+				self.text:SetText(format("%s:%s", L_STATS_SPEC, specIcon))
+			end
 			if specIcon and C.font.stats_font_size ~= 15 and C.font.stats_font_size ~= 17 then
 				local point, relativeTo, relativePoint, xOfs = self.text:GetPoint()
 				self.text:SetPoint(point, relativeTo, relativePoint, xOfs, -1)
@@ -1493,10 +1535,16 @@ if talents.enabled then
 				GameTooltip:ClearAllPoints()
 				GameTooltip:SetPoint(modules.Talents.tip_anchor, modules.Talents.tip_frame, modules.Talents.tip_x, modules.Talents.tip_y)
 				GameTooltip:ClearLines()
-				GameTooltip:AddLine(SPECIALIZATION.."/"..LOOT, tthead.r, tthead.g, tthead.b)
-				GameTooltip:AddLine(" ")
-				GameTooltip:AddDoubleLine(SPECIALIZATION, specName, ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-				GameTooltip:AddDoubleLine(LOOT, lootSpecName, ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				if not T.classic then
+					GameTooltip:AddLine(SPECIALIZATION.."/"..LOOT, tthead.r, tthead.g, tthead.b)
+					GameTooltip:AddLine(" ")
+					GameTooltip:AddDoubleLine(SPECIALIZATION, specName, ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+					GameTooltip:AddDoubleLine(LOOT, lootSpecName, ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				else
+					GameTooltip:AddLine(SPECIALIZATION, tthead.r, tthead.g, tthead.b)
+					GameTooltip:AddLine(" ")
+					GameTooltip:AddDoubleLine(SPECIALIZATION, specName, ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				end
 				GameTooltip:Show()
 			end
 		end,
@@ -1508,48 +1556,54 @@ if talents.enabled then
 				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_SPEC_LEVEL).."|r")
 				return
 			end
-			if b == "LeftButton" then
-				if not PlayerTalentFrame then
-					LoadAddOn("Blizzard_TalentUI")
-				end
-				if IsShiftKeyDown() then
-					PlayerTalentFrame_Toggle()
-				else
+			if not T.classic then
+				if b == "LeftButton" then
+					if not PlayerTalentFrame then
+						LoadAddOn("Blizzard_TalentUI")
+					end
+					if IsShiftKeyDown() then
+						PlayerTalentFrame_Toggle()
+					else
+						for index = 1, 4 do
+							local id, name, _, texture = GetSpecializationInfo(index)
+							if id then
+								if GetSpecializationInfo(GetSpecialization()) == id then
+									name = "|cff55ff55"..name.."|r"
+								end
+								specList[index + 1].text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59|t  %s", texture, name)
+								specList[index + 1].func = function() SetSpecialization(index) end
+							else
+								specList[index + 1] = nil
+							end
+						end
+						EasyMenu(specList, LSMenus, self, 0, 24, "MENU")
+					end
+				elseif b == "RightButton" and GetSpecialization() then
+					local lootSpec = GetLootSpecialization()
+					local _, specName = GetSpecializationInfo(GetSpecialization())
+					local specDefault = format(LOOT_SPECIALIZATION_DEFAULT, specName)
+					if lootSpec == 0 then
+						specDefault = "|cff55ff55"..format(LOOT_SPECIALIZATION_DEFAULT, specName).."|r"
+					end
+					lootList[2].text = specDefault
 					for index = 1, 4 do
 						local id, name, _, texture = GetSpecializationInfo(index)
 						if id then
-							if GetSpecializationInfo(GetSpecialization()) == id then
+							if lootSpec == id then
 								name = "|cff55ff55"..name.."|r"
 							end
-							specList[index + 1].text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59|t  %s", texture, name)
-							specList[index + 1].func = function() SetSpecialization(index) end
+							lootList[index + 2].text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59|t  %s", texture, name)
+							lootList[index + 2].func = function() SetLootSpecialization(id) end
 						else
-							specList[index + 1] = nil
+							lootList[index + 2] = nil
 						end
 					end
-					EasyMenu(specList, LSMenus, self, 0, 24, "MENU")
+					EasyMenu(lootList, LSMenus, self, 0, 40, "MENU")
 				end
-			elseif b == "RightButton" and GetSpecialization() then
-				local lootSpec = GetLootSpecialization()
-				local _, specName = GetSpecializationInfo(GetSpecialization())
-				local specDefault = format(LOOT_SPECIALIZATION_DEFAULT, specName)
-				if lootSpec == 0 then
-					specDefault = "|cff55ff55"..format(LOOT_SPECIALIZATION_DEFAULT, specName).."|r"
+			else
+				if b == "LeftButton" then
+					ToggleTalentFrame()
 				end
-				lootList[2].text = specDefault
-				for index = 1, 4 do
-					local id, name, _, texture = GetSpecializationInfo(index)
-					if id then
-						if lootSpec == id then
-							name = "|cff55ff55"..name.."|r"
-						end
-						lootList[index + 2].text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59|t  %s", texture, name)
-						lootList[index + 2].func = function() SetLootSpecialization(id) end
-					else
-						lootList[index + 2] = nil
-					end
-				end
-				EasyMenu(lootList, LSMenus, self, 0, 40, "MENU")
 			end
 		end
 	})
@@ -1567,9 +1621,22 @@ if stats.enabled then
 			local Effective = Base + PosBuff + NegBuff
 			local RangedBase, RangedPosBuff, RangedNegBuff = UnitRangedAttackPower("player")
 			local range = RangedBase + RangedPosBuff + RangedNegBuff
-			heal = GetSpellBonusHealing()
-			spell = GetSpellBonusDamage(7)
-			attack = Effective
+			local heal = GetSpellBonusHealing()
+			local spell
+			if not T.classic then
+				spell = GetSpellBonusDamage(7)
+			else
+				local current = {}
+				local best = 1
+				for i = 1, 7 do
+					 current[i] = GetSpellBonusDamage(i)
+					 if current[i] > current[best] then
+						best = i
+					end
+				end
+				spell = best
+			end
+			local attack = Effective
 			if heal > spell then
 				power = heal
 			else
@@ -1583,11 +1650,11 @@ if stats.enabled then
 				value = power
 			end
 			string = value
-		elseif sub == "mastery" then
+		elseif not T.classic and sub == "mastery" then
 			string = GetMasteryEffect()
 		elseif sub == "haste" then
 			string = GetHaste()
-		elseif sub == "resilience" then
+		elseif not T.classic and sub == "resilience" then
 			string, percent = GetCombatRating(16)
 		elseif sub == "crit" then
 			string = GetCritChance()
@@ -1610,9 +1677,9 @@ if stats.enabled then
 		elseif sub == "armor" then
 			local _, eff = UnitArmor(P)
 			string, percent = eff
-		elseif sub == "versatility" then
+		elseif not T.classic and sub == "versatility" then
 			string = GetCombatRatingBonus(CR_VERSATILITY_DAMAGE_DONE) + GetVersatilityBonus(CR_VERSATILITY_DAMAGE_DONE)
-		elseif sub == "leech" then
+		elseif not T.classic and sub == "leech" then
 			string = GetCombatRating(17)
 		else
 			string, percent = format("[%s]", sub)
@@ -1720,7 +1787,11 @@ if experience.enabled then
 			end
 		},
 		OnLoad = function(self)
-			RegEvents(self, "TIME_PLAYED_MSG PLAYER_LOGOUT PLAYER_LOGIN UPDATE_FACTION CHAT_MSG_COMBAT_XP_GAIN PLAYER_LEVEL_UP AZERITE_ITEM_EXPERIENCE_CHANGED PLAYER_EQUIPMENT_CHANGED")
+			if not T.classic then
+				RegEvents(self, "TIME_PLAYED_MSG PLAYER_LOGOUT PLAYER_LOGIN UPDATE_FACTION CHAT_MSG_COMBAT_XP_GAIN PLAYER_LEVEL_UP AZERITE_ITEM_EXPERIENCE_CHANGED PLAYER_EQUIPMENT_CHANGED")
+			else
+				RegEvents(self, "TIME_PLAYED_MSG PLAYER_LOGOUT PLAYER_LOGIN UPDATE_FACTION CHAT_MSG_COMBAT_XP_GAIN PLAYER_LEVEL_UP")
+			end
 			-- Filter first time played message
 			local ofunc = ChatFrame_DisplayTimePlayed
 			function ChatFrame_DisplayTimePlayed() ChatFrame_DisplayTimePlayed = ofunc end
@@ -1749,19 +1820,21 @@ if experience.enabled then
 			elseif (event == "UPDATE_FACTION" or event == "PLAYER_LOGIN") and conf.ExpMode == "rep" then
 				local standing, factionID
 				repname, standing, minrep, maxrep, currep, factionID = GetWatchedFactionInfo()
-				local friendID, _, _, _, _, _, standingText, _, nextThreshold = GetFriendshipReputation(factionID)
-				if friendID then
-					if not nextThreshold then
-						minrep, maxrep, currep = 0, 1, 1
-					end
-					standing = 5
-				else
-					local value, nextThreshold = C_Reputation.GetFactionParagonInfo(factionID)
-					if value then
-						currep = value % nextThreshold
-						minrep = 0
-						maxrep = nextThreshold
-						standing = 8
+				if not T.classic then
+					local friendID, _, _, _, _, _, standingText, _, nextThreshold = GetFriendshipReputation(factionID)
+					if friendID then
+						if not nextThreshold then
+							minrep, maxrep, currep = 0, 1, 1
+						end
+						standing = 5
+					else
+						local value, nextThreshold = C_Reputation.GetFactionParagonInfo(factionID)
+						if value then
+							currep = value % nextThreshold
+							minrep = 0
+							maxrep = nextThreshold
+							standing = 8
+						end
 					end
 				end
 				if not repname then repname = NONE end
@@ -1878,18 +1951,30 @@ if experience.enabled then
 		end,
 		OnClick = function(self, button)
 			if button == "RightButton" then
-				conf.ExpMode = conf.ExpMode == "xp" and "played"
-					or (conf.ExpMode == "played" and C_AzeriteItem and C_AzeriteItem.FindActiveAzeriteItem()) and "art"
-					or conf.ExpMode == "played" and "rep"
-					or conf.ExpMode == "art" and "rep"
-					or (conf.ExpMode == "rep" and UnitLevel(P) ~= MAX_PLAYER_LEVEL) and "xp"
-					or conf.ExpMode == "rep" and "played"
-				if conf.ExpMode == "rep" then
-					self:GetScript("OnEvent")(self,"UPDATE_FACTION")
-				elseif conf.ExpMode == "art" then
-					self:GetScript("OnEvent")(self,"AZERITE_ITEM_EXPERIENCE_CHANGED")
+				if not T.classic then
+					conf.ExpMode = conf.ExpMode == "xp" and "played"
+						or (conf.ExpMode == "played" and C_AzeriteItem and C_AzeriteItem.FindActiveAzeriteItem()) and "art"
+						or conf.ExpMode == "played" and "rep"
+						or conf.ExpMode == "art" and "rep"
+						or (conf.ExpMode == "rep" and UnitLevel(P) ~= MAX_PLAYER_LEVEL) and "xp"
+						or conf.ExpMode == "rep" and "played"
+					if conf.ExpMode == "rep" then
+						self:GetScript("OnEvent")(self,"UPDATE_FACTION")
+					elseif conf.ExpMode == "art" then
+						self:GetScript("OnEvent")(self,"AZERITE_ITEM_EXPERIENCE_CHANGED")
+					else
+						self:GetScript("OnUpdate")(self, 5)
+					end
 				else
-					self:GetScript("OnUpdate")(self, 5)
+					conf.ExpMode = conf.ExpMode == "xp" and "played"
+						or conf.ExpMode == "played" and "rep"
+						or (conf.ExpMode == "rep" and UnitLevel(P) ~= MAX_PLAYER_LEVEL) and "xp"
+						or conf.ExpMode == "rep" and "played"
+					if conf.ExpMode == "rep" then
+						self:GetScript("OnEvent")(self,"UPDATE_FACTION")
+					else
+						self:GetScript("OnUpdate")(self, 5)
+					end
 				end
 				self:GetScript("OnEnter")(self)
 			elseif button == "LeftButton" and conf.ExpMode == "rep" then

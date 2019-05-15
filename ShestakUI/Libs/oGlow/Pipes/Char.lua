@@ -2,10 +2,18 @@ if IsAddOnLoaded("Fizzle") then return end
 
 local _E
 local hook
-local slots = {
-	"Head", "Neck", "Shoulder", "Shirt", "Chest", "Waist", "Legs", "Feet", "Wrist", "Hands",
-	"Finger0", "Finger1", "Trinket0", "Trinket1", "Back", "MainHand", "SecondaryHand", [19] = "Tabard"
-}
+local slots = {}
+if not IsClassicBuild() then
+	slots = {
+		"Head", "Neck", "Shoulder", "Shirt", "Chest", "Waist", "Legs", "Feet", "Wrist", "Hands",
+		"Finger0", "Finger1", "Trinket0", "Trinket1", "Back", "MainHand", "SecondaryHand", [19] = "Tabard"
+	}
+else
+	slots = {
+		"Head", "Neck", "Shoulder", "Shirt", "Chest", "Waist", "Legs", "Feet", "Wrist", "Hands",
+		"Finger0", "Finger1", "Trinket0", "Trinket1", "Back", "MainHand", "SecondaryHand", "Ranged", "Tabard", [0] = "Ammo"
+	}
+end
 
 local update = function(self)
 	if CharacterFrame:IsShown() then

@@ -8,14 +8,56 @@ MapQuestInfoRewardsFrame.XPFrame.Name:SetFont(C.media.normal_font, 13)
 ----------------------------------------------------------------------------------------
 --	Change position
 ----------------------------------------------------------------------------------------
-hooksecurefunc(WorldMapFrame, "SynchronizeDisplayState", function()
-	if CharacterFrame:IsShown() or SpellBookFrame:IsShown() or (PlayerTalentFrame and PlayerTalentFrame:IsShown()) or (ChannelFrame and ChannelFrame:IsShown()) or PVEFrame:IsShown() then return end
-	if not WorldMapFrame:IsMaximized() then
-		WorldMapFrame:ClearAllPoints()
-		WorldMapFrame:SetPoint(unpack(C.position.map))
+if not T.classic then
+	hooksecurefunc(WorldMapFrame, "SynchronizeDisplayState", function()
+		if CharacterFrame:IsShown() or SpellBookFrame:IsShown() or (PlayerTalentFrame and PlayerTalentFrame:IsShown()) or (ChannelFrame and ChannelFrame:IsShown()) or PVEFrame:IsShown() then return end
+		if not WorldMapFrame:IsMaximized() then
+			WorldMapFrame:ClearAllPoints()
+			WorldMapFrame:SetPoint(unpack(C.position.map))
+		end
+	end)
+	WorldMapFrame:SetClampedToScreen(true)
+else
+	function SetUIPanelAttribute(frame, name, value)
+		local info = UIPanelWindows[frame:GetName()]
+		if not info then return end
+
+		if not frame:GetAttribute("UIPanelLayout-defined") then
+			frame:SetAttribute("UIPanelLayout-defined", true)
+			for name,value in pairs(info) do
+				frame:SetAttribute("UIPanelLayout-"..name, value)
+			end
+		end
+
+		frame:SetAttribute("UIPanelLayout-"..name, value)
 	end
-end)
-WorldMapFrame:SetClampedToScreen(true)
+
+	WorldMapFrame.BlackoutFrame:StripTextures()
+	WorldMapFrame.BlackoutFrame:EnableMouse(false)
+	WorldMapFrame:SetParent(UIParent)
+	WorldMapFrame:SetScale(1)
+	WorldMapFrame:EnableKeyboard(false)
+	WorldMapFrame:EnableMouse(false)
+	WorldMapFrame:SetToplevel()
+
+	table.insert(UISpecialFrames, WorldMapFrame:GetName())
+
+	if WorldMapFrame:GetAttribute("UIPanelLayout-area") ~= "center" then
+		SetUIPanelAttribute(WorldMapFrame, "area", "center")
+	end
+
+	if WorldMapFrame:GetAttribute("UIPanelLayout-allowOtherPanels") ~= true then
+		SetUIPanelAttribute(WorldMapFrame, "allowOtherPanels", true)
+	end
+
+	DropDownList1:HookScript("OnShow", function()
+		if DropDownList1:GetScale() ~= UIParent:GetScale() then
+			DropDownList1:SetScale(UIParent:GetScale())
+		end
+	end)
+
+	-- WorldMapTooltip:SetFrameLevel(WorldMapPositioningGuide:GetFrameLevel() + 110)
+end
 
 ----------------------------------------------------------------------------------------
 --	Creating coordinate

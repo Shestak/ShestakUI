@@ -1,4 +1,6 @@
 local _E
+if IsClassicBuild() then return end
+
 local hooked
 
 local updateContents = function(self)

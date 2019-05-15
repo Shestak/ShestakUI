@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.announcements.safari_hat ~= true then return end
+if T.classic or C.announcements.safari_hat ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Check Safari Hat

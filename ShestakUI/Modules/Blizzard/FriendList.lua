@@ -1,4 +1,5 @@
-﻿if IsAddOnLoaded("yClassColor") then return end
+﻿local T, C, L, _ = unpack(select(2, ...))
+if IsAddOnLoaded("yClassColor") then return end
 
 ----------------------------------------------------------------------------------------
 --	Class color guild/friends/etc list(yClassColor by Yleaf)
@@ -140,16 +141,18 @@ hooksecurefunc("WhoList_Update", function()
 end)
 
 -- LFRBrowseList
-hooksecurefunc("LFRBrowseFrameListButton_SetData", function(button, index)
-	local name, level, _, className, _, _, _, class = SearchLFGGetResults(index)
+if not T.classic then
+	hooksecurefunc("LFRBrowseFrameListButton_SetData", function(button, index)
+		local name, level, _, className, _, _, _, class = SearchLFGGetResults(index)
 
-	if index and class and name and level then
-		button.name:SetText(classColor[class]..name)
-		button.class:SetText(classColor[class]..className)
-		button.level:SetText(diffColor[level]..level)
-		button.level:SetWidth(30)
-	end
-end)
+		if index and class and name and level then
+			button.name:SetText(classColor[class]..name)
+			button.class:SetText(classColor[class]..className)
+			button.level:SetText(diffColor[level]..level)
+			button.level:SetWidth(30)
+		end
+	end)
+end
 
 -- WorldStateScoreList
 hooksecurefunc("WorldStateScoreFrame_Update", function()
@@ -267,17 +270,19 @@ local function update()
 	end
 end
 
-local loaded = false
-hooksecurefunc("GuildFrame_LoadUI", function()
-	if loaded then
-		return
-	else
-		loaded = true
-		hooksecurefunc("GuildRoster_SetView", viewChanged)
-		hooksecurefunc("GuildRoster_Update", update)
-		hooksecurefunc(GuildRosterContainer, "update", update)
-	end
-end)
+if not T.classic then
+	local loaded = false
+	hooksecurefunc("GuildFrame_LoadUI", function()
+		if loaded then
+			return
+		else
+			loaded = true
+			hooksecurefunc("GuildRoster_SetView", viewChanged)
+			hooksecurefunc("GuildRoster_Update", update)
+			hooksecurefunc(GuildRosterContainer, "update", update)
+		end
+	end)
+end
 
 -- CommunitiesFrame
 local function RefreshList(self)

@@ -59,6 +59,7 @@ do
 		},
 		["SHAMAN"] = {
 			["Magic"] = false,
+			["Disease"] = false, -- for Classic
 			["Curse"] = true,
 		},
 	}
@@ -67,37 +68,46 @@ do
 end
 
 local function CheckSpec()
-	local spec = GetSpecialization()
-
-	if T.class == "DRUID" then
-		if spec == 4 then
-			DispellFilter.Magic = true
-		else
-			DispellFilter.Magic = false
+	if not IsClassicBuild() then
+		local spec = GetSpecialization()
+		if T.class == "DRUID" then
+			if spec == 4 then
+				DispellFilter.Magic = true
+			else
+				DispellFilter.Magic = false
+			end
+		elseif T.class == "MONK" then
+			if spec == 2 then
+				DispellFilter.Magic = true
+			else
+				DispellFilter.Magic = false
+			end
+		elseif T.class == "PALADIN" then
+			if spec == 1 then
+				DispellFilter.Magic = true
+			else
+				DispellFilter.Magic = false
+			end
+		elseif T.class == "PRIEST" then
+			if spec == 3 then
+				DispellFilter.Magic = false
+			else
+				DispellFilter.Magic = true
+			end
+		elseif T.class == "SHAMAN" then
+			if spec == 3 then
+				DispellFilter.Magic = true
+			else
+				DispellFilter.Magic = false
+			end
 		end
-	elseif T.class == "MONK" then
-		if spec == 2 then
+	else
+		if T.class == "PALADIN" then
 			DispellFilter.Magic = true
-		else
-			DispellFilter.Magic = false
-		end
-	elseif T.class == "PALADIN" then
-		if spec == 1 then
+		elseif T.class == "PRIEST" then
 			DispellFilter.Magic = true
-		else
-			DispellFilter.Magic = false
-		end
-	elseif T.class == "PRIEST" then
-		if spec == 3 then
-			DispellFilter.Magic = false
-		else
-			DispellFilter.Magic = true
-		end
-	elseif T.class == "SHAMAN" then
-		if spec == 3 then
-			DispellFilter.Magic = true
-		else
-			DispellFilter.Magic = false
+		elseif T.class == "SHAMAN" then
+			DispellFilter.Disease = true
 		end
 	end
 end
@@ -274,7 +284,11 @@ local Enable = function(self)
 		rd.__owner = self
 		return true
 	end
-	self:RegisterEvent("PLAYER_TALENT_UPDATE", CheckSpec, true)
+	if not IsClassicBuild() then
+		self:RegisterEvent("PLAYER_TALENT_UPDATE", CheckSpec, true)
+	else
+		self:RegisterEvent("CHARACTER_POINTS_CHANGED", CheckSpec, true)
+	end
 	CheckSpec()
 end
 
@@ -284,7 +298,11 @@ local Disable = function(self)
 		self.RaidDebuffs:Hide()
 		self.RaidDebuffs.__owner = nil
 	end
-	self:UnregisterEvent("PLAYER_TALENT_UPDATE", CheckSpec)
+	if not IsClassicBuild() then
+		self:UnregisterEvent("PLAYER_TALENT_UPDATE", CheckSpec)
+	else
+		self:UnregisterEvent("CHARACTER_POINTS_CHANGED", CheckSpec)
+	end
 end
 
 oUF:AddElement("RaidDebuffs", Update, Enable, Disable)

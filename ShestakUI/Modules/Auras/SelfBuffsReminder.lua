@@ -151,8 +151,10 @@ for i = 1, #tab do
 	frame:RegisterEvent("PLAYER_REGEN_ENABLED")
 	frame:RegisterEvent("PLAYER_REGEN_DISABLED")
 	frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-	frame:RegisterEvent("UNIT_ENTERED_VEHICLE")
-	frame:RegisterEvent("UNIT_EXITED_VEHICLE")
+	if not T.classic then
+		frame:RegisterEvent("UNIT_ENTERED_VEHICLE")
+		frame:RegisterEvent("UNIT_EXITED_VEHICLE")
+	end
 	frame:SetScript("OnEvent", OnEvent)
 	frame:SetScript("OnUpdate", function(self)
 		if not self.icon:GetTexture() then

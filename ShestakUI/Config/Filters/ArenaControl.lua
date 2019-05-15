@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.unitframe.enable ~= true or C.unitframe.show_arena ~= true then return end
+if T.classic or C.unitframe.enable ~= true or C.unitframe.show_arena ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	The best way to add or delete spell is to go at www.wowhead.com, search for a spell.

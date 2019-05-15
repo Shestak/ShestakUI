@@ -107,6 +107,11 @@ local function _createStrings()
 	f[16] = _stringFactory(_G.CharacterMainHandSlot)
 	f[17] = _stringFactory(_G.CharacterSecondaryHandSlot)
 
+	if T.classic then
+		f[18] = _stringFactory(_G.CharacterRangedSlot)
+		-- f[0] = _stringFactory(_G.CharacterAmmoSlot)
+	end
+
 	f:Hide()
 end
 
@@ -138,6 +143,11 @@ local function _createGStrings()
 
 	g[16] = _stringFactory(_G.InspectMainHandSlot)
 	g[17] = _stringFactory(_G.InspectSecondaryHandSlot)
+
+	if T.classic then
+		g[18] = _stringFactory(_G.CharacterRangedSlot)
+		-- g[0] = _stringFactory(_G.CharacterAmmoSlot)
+	end
 
 	g:Hide()
 end
@@ -171,9 +181,11 @@ local function OnEvent(self, event, ...) -- Event handler
 
 		_G.PaperDollFrame:HookScript("OnShow", function(self)
 			f:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
-			f:RegisterEvent("ITEM_UPGRADE_MASTER_UPDATE")
-			f:RegisterEvent("ARTIFACT_UPDATE")
-			f:RegisterEvent("SOCKET_INFO_UPDATE")
+			if not T.classic then
+				f:RegisterEvent("ITEM_UPGRADE_MASTER_UPDATE")
+				f:RegisterEvent("ARTIFACT_UPDATE")
+				f:RegisterEvent("SOCKET_INFO_UPDATE")
+			end
 			f:RegisterEvent("COMBAT_RATING_UPDATE")
 			_updateItems("player", f)
 			f:Show()
@@ -181,9 +193,11 @@ local function OnEvent(self, event, ...) -- Event handler
 
 		_G.PaperDollFrame:HookScript("OnHide", function(self)
 			f:UnregisterEvent("PLAYER_EQUIPMENT_CHANGED")
-			f:UnregisterEvent("ITEM_UPGRADE_MASTER_UPDATE")
-			f:UnregisterEvent("ARTIFACT_UPDATE")
-			f:UnregisterEvent("SOCKET_INFO_UPDATE")
+			if not T.classic then
+				f:UnregisterEvent("ITEM_UPGRADE_MASTER_UPDATE")
+				f:UnregisterEvent("ARTIFACT_UPDATE")
+				f:UnregisterEvent("SOCKET_INFO_UPDATE")
+			end
 			f:UnregisterEvent("COMBAT_RATING_UPDATE")
 			f:Hide()
 		end)

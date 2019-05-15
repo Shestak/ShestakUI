@@ -23,7 +23,9 @@ local doHook = function()
 			if _E then return pipe(...) end
 		end
 
-		hooksecurefunc(TradeSkillFrame.RecipeList, "SetSelectedRecipeID", hook)
+		if not IsClassicBuild() then
+			hooksecurefunc(TradeSkillFrame.RecipeList, "SetSelectedRecipeID", hook)
+		end
 	end
 end
 

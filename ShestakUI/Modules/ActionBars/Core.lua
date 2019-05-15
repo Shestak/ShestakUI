@@ -9,19 +9,25 @@ frame:RegisterEvent("PLAYER_LOGIN")
 frame:SetScript("OnEvent", function()
 	MainMenuBar:SetScale(0.00001)
 	MainMenuBar:EnableMouse(false)
-	OverrideActionBar:SetScale(0.00001)
-	OverrideActionBar:EnableMouse(false)
+	if not T.classic then
+		OverrideActionBar:SetScale(0.00001)
+		OverrideActionBar:EnableMouse(false)
+	end
 	PetActionBarFrame:EnableMouse(false)
 	StanceBarFrame:EnableMouse(false)
-	MicroButtonAndBagsBar:SetScale(0.00001)
-	MicroButtonAndBagsBar:EnableMouse(false)
+	if not T.classic then
+		MicroButtonAndBagsBar:SetScale(0.00001)
+		MicroButtonAndBagsBar:EnableMouse(false)
+	end
 
 	local elements = {
 		MainMenuBar, MainMenuBarArtFrame, OverrideActionBar, PossessBarFrame, PetActionBarFrame, StanceBarFrame
 	}
 
-	if not C_ClassTrial.IsClassTrialCharacter() then
-		tinsert(elements, IconIntroTracker)
+	if not T.classic then
+		if not C_ClassTrial.IsClassTrialCharacter() then
+			tinsert(elements, IconIntroTracker)
+		end
 	end
 
 	for _, element in pairs(elements) do
@@ -36,13 +42,19 @@ frame:SetScript("OnEvent", function()
 	end
 	elements = nil
 
-	for i = 1, 6 do
-		local b = _G["OverrideActionBarButton"..i]
-		b:SetAttribute("statehidden", 1)
+	if not T.classic then
+		for i = 1, 6 do
+			local b = _G["OverrideActionBarButton"..i]
+			b:SetAttribute("statehidden", 1)
+		end
 	end
 
 	hooksecurefunc("TalentFrame_LoadUI", function()
-		PlayerTalentFrame:UnregisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
+		if not T.classic then
+			PlayerTalentFrame:UnregisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
+		else
+			TalentFrame:UnregisterEvent("CHARACTER_POINTS_CHANGED")
+		end
 	end)
 end)
 

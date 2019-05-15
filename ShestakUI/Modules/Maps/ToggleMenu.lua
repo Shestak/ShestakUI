@@ -75,8 +75,10 @@ C["togglemainmenu"] = {
 				SlashCmdList.alThreat()
 			end
 			SlashCmdList.DBMTEST()
-			SlashCmdList.TEST_EXTRABUTTON()
-			SlashCmdList.TEST_ACHIEVEMENT()
+			if not T.classic then
+				SlashCmdList.TEST_EXTRABUTTON()
+				SlashCmdList.TEST_ACHIEVEMENT()
+			end
 			--SlashCmdList.GRIDONSCREEN()
 		end
 	},

@@ -278,7 +278,9 @@ do
 end
 
 hooksecurefunc("ActionButton_Update", StyleNormalButton)
-hooksecurefunc("ActionButton_UpdateFlyout", StyleFlyoutButton)
+if not T.classic then
+	hooksecurefunc("ActionButton_UpdateFlyout", StyleFlyoutButton)
+end
 if C.actionbar.hotkey == true then
 	hooksecurefunc("ActionButton_OnEvent", function(self, event) if event == "PLAYER_ENTERING_WORLD" then ActionButton_UpdateHotkeys(self, self.buttonType) end end)
 	hooksecurefunc("ActionButton_UpdateHotkeys", UpdateHotkey)

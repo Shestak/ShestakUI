@@ -1,4 +1,5 @@
 local _E
+if IsClassicBuild() then return end
 
 local update = function(self)
 	if not IsAddOnLoaded("Blizzard_GuildBankUI") then return end

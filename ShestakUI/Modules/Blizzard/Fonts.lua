@@ -95,7 +95,9 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	SetFont(HelpFrameKnowledgebaseNavBarHomeButtonText, NORMAL, 13, nil, nil, nil, nil, 0, 0, 0, 1, -1)
 
 	-- Player title
-	for _, butt in pairs(PaperDollTitlesPane.buttons) do butt.text:SetFontObject(GameFontHighlightSmallLeft) end
+	if not T.classic then
+		for _, butt in pairs(PaperDollTitlesPane.buttons) do butt.text:SetFontObject(GameFontHighlightSmallLeft) end
+	end
 end)
 
 -- Registering fonts in LibSharedMedia

@@ -10,20 +10,36 @@ local oUF = ns.oUF
 local starttime, duration, usingspell, spellid
 local GetTime = GetTime
 
-local spells = {
-	["DEATHKNIGHT"] = 50977,
-	["DEMONHUNTER"] = 204157,
-	["DRUID"] = 8921,
-	["HUNTER"] = 982,
-	["MAGE"] = 118,
-	["MONK"] = 100780,
-	["PALADIN"] = 35395,
-	["PRIEST"] = 585,
-	["ROGUE"] = 1752,
-	["SHAMAN"] = 403,
-	["WARLOCK"] = 686,
-	["WARRIOR"] = 57755,
-}
+local spells
+
+if not T.classic then
+	spells = {
+		["DEATHKNIGHT"] = 50977,
+		["DEMONHUNTER"] = 204157,
+		["DRUID"] = 8921,
+		["HUNTER"] = 982,
+		["MAGE"] = 118,
+		["MONK"] = 100780,
+		["PALADIN"] = 35395,
+		["PRIEST"] = 585,
+		["ROGUE"] = 1752,
+		["SHAMAN"] = 403,
+		["WARLOCK"] = 686,
+		["WARRIOR"] = 57755,
+	}
+else
+	spells = {
+		["DRUID"] = 1126,
+		["HUNTER"] = 1978,
+		["MAGE"] = 168,
+		["PALADIN"] = 20154,
+		["PRIEST"] = 1243,
+		["ROGUE"] = 1752,
+		["SHAMAN"] = 403,
+		["WARLOCK"] = 687,
+		["WARRIOR"] = 6673,
+	}
+end
 
 local Enable = function(self)
 	if not self.GCD then return end

@@ -1,5 +1,7 @@
-local hook
 local _E
+if IsClassicBuild() then return end
+
+local hook
 
 local getID = function(loc)
 	local player, bank, bags, voidStorage, slot, bag = EquipmentManager_UnpackLocation(loc)

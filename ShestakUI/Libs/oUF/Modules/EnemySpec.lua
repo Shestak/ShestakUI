@@ -32,14 +32,18 @@ end
 local function Enable(object)
 	if not object.EnemySpec then return end
 	object:RegisterEvent("UPDATE_BATTLEFIELD_SCORE", Update, true)
-	object:RegisterEvent("ARENA_OPPONENT_UPDATE", Update, true)
+	if not IsClassicBuild() then
+		object:RegisterEvent("ARENA_OPPONENT_UPDATE", Update, true)
+	end
 	return true
 end
 
 local function Disable(object)
 	if object.EnemySpec then
 		object:UnregisterEvent("UPDATE_BATTLEFIELD_SCORE", Update)
-		object:UnregisterEvent("ARENA_OPPONENT_UPDATE", Update)
+		if not IsClassicBuild() then
+			object:UnregisterEvent("ARENA_OPPONENT_UPDATE", Update)
+		end
 	end
 end
 

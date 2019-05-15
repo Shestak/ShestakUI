@@ -145,8 +145,11 @@ local function CreateRollFrame()
 
 	local need, needtext = CreateRollButton(frame, "Interface\\Buttons\\UI-GroupLoot-Dice-Up", "Interface\\Buttons\\UI-GroupLoot-Dice-Highlight", "Interface\\Buttons\\UI-GroupLoot-Dice-Down", 1, NEED, "LEFT", frame.button, "RIGHT", 5, -1)
 	local greed, greedtext = CreateRollButton(frame, "Interface\\Buttons\\UI-GroupLoot-Coin-Up", "Interface\\Buttons\\UI-GroupLoot-Coin-Highlight", "Interface\\Buttons\\UI-GroupLoot-Coin-Down", 2, GREED, "LEFT", need, "RIGHT", 0, -1)
-	local de, detext = CreateRollButton(frame, "Interface\\Buttons\\UI-GroupLoot-DE-Up", "Interface\\Buttons\\UI-GroupLoot-DE-Highlight", "Interface\\Buttons\\UI-GroupLoot-DE-Down", 3, ROLL_DISENCHANT, "LEFT", greed, "RIGHT", 0, -1)
-	local pass, passtext = CreateRollButton(frame, "Interface\\Buttons\\UI-GroupLoot-Pass-Up", nil, "Interface\\Buttons\\UI-GroupLoot-Pass-Down", 0, PASS, "LEFT", de or greed, "RIGHT", 0, 2.2)
+	local de, detext
+	if not T.classic then
+		de, detext = CreateRollButton(frame, "Interface\\Buttons\\UI-GroupLoot-DE-Up", "Interface\\Buttons\\UI-GroupLoot-DE-Highlight", "Interface\\Buttons\\UI-GroupLoot-DE-Down", 3, ROLL_DISENCHANT, "LEFT", greed, "RIGHT", 0, -1)
+	end
+	local pass, passtext = CreateRollButton(frame, "Interface\\Buttons\\UI-GroupLoot-Pass-Up", nil, "Interface\\Buttons\\UI-GroupLoot-Pass-Down", 0, PASS, "LEFT", (not T.classic and de) or greed, "RIGHT", 0, 2.2)
 	frame.needbutt, frame.greedbutt, frame.disenchantbutt = need, greed, de
 	frame.need, frame.greed, frame.pass, frame.disenchant = needtext, greedtext, passtext, detext
 
@@ -220,7 +223,9 @@ local function START_LOOT_ROLL(rollID, time)
 	f.need:SetText(0)
 	f.greed:SetText(0)
 	f.pass:SetText(0)
-	f.disenchant:SetText(0)
+	if not T.classic then
+		f.disenchant:SetText(0)
+	end
 
 	local texture, name, _, quality, bop, canNeed, canGreed, canDisenchant, reasonNeed, reasonGreed, reasonDisenchant, deSkillRequired = GetLootRollItemInfo(rollID)
 	f.button.icon:SetTexture(texture)
@@ -250,15 +255,17 @@ local function START_LOOT_ROLL(rollID, time)
 		f.greedbutt.errtext = _G["LOOT_ROLL_INELIGIBLE_REASON"..reasonGreed]
 	end
 
-	if canDisenchant then
-		f.disenchantbutt:Enable()
-		f.disenchantbutt:SetAlpha(1)
-		SetDesaturation(f.disenchantbutt:GetNormalTexture(), false)
-	else
-		f.disenchantbutt:Disable()
-		f.disenchantbutt:SetAlpha(0.2)
-		SetDesaturation(f.disenchantbutt:GetNormalTexture(), true)
-		f.disenchantbutt.errtext = format(_G["LOOT_ROLL_INELIGIBLE_REASON"..reasonDisenchant], deSkillRequired)
+	if not T.classic then
+		if canDisenchant then
+			f.disenchantbutt:Enable()
+			f.disenchantbutt:SetAlpha(1)
+			SetDesaturation(f.disenchantbutt:GetNormalTexture(), false)
+		else
+			f.disenchantbutt:Disable()
+			f.disenchantbutt:SetAlpha(0.2)
+			SetDesaturation(f.disenchantbutt:GetNormalTexture(), true)
+			f.disenchantbutt.errtext = format(_G["LOOT_ROLL_INELIGIBLE_REASON"..reasonDisenchant], deSkillRequired)
+		end
 	end
 
 	f.fsbind:SetText(bop and "BoP" or "BoE")
@@ -310,7 +317,12 @@ end)
 
 SlashCmdList.TESTROLL = function()
 	local f = GetFrame()
-	local items = {32837, 34196, 33820, 84004}
+	local items = {}
+	if not T.classic then
+		items = {32837, 34196, 33820, 84004}
+	else
+		items = {19019, 22811, 20530, 19972}
+	end
 	if f:IsShown() then
 		f:Hide()
 	else
@@ -335,7 +347,9 @@ SlashCmdList.TESTROLL = function()
 		f.need:SetText(0)
 		f.greed:SetText(0)
 		f.pass:SetText(0)
-		f.disenchant:SetText(0)
+		if not T.classic then
+			f.disenchant:SetText(0)
+		end
 
 		f.button.link = "item:"..item..":0:0:0:0:0:0:0"
 		f:Show()

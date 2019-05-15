@@ -177,8 +177,10 @@ local SplitBars = function()
 			ToggleBar[3]:SetPoint("BOTTOMLEFT", SplitBarRight, "BOTTOMRIGHT", C.actionbar.button_space, 0)
 			ToggleBar[4]:ClearAllPoints()
 			ToggleBar[4]:SetPoint("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
-			VehicleButtonAnchor:ClearAllPoints()
-			VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+			if not T.classic then
+				VehicleButtonAnchor:ClearAllPoints()
+				VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+			end
 			if SavedOptionsPerChar.BottomBars == 2 then
 				ToggleBarText(3, "<\n<\n<", false, true)
 				ToggleBarText(4, ">\n>\n>", false, true)
@@ -192,8 +194,10 @@ local SplitBars = function()
 			ToggleBar[3]:SetPoint("BOTTOMLEFT", ActionBarAnchor, "BOTTOMRIGHT", C.actionbar.button_space, 0)
 			ToggleBar[4]:ClearAllPoints()
 			ToggleBar[4]:SetPoint("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
-			VehicleButtonAnchor:ClearAllPoints()
-			VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+			if not T.classic then
+				VehicleButtonAnchor:ClearAllPoints()
+				VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+			end
 			if SavedOptionsPerChar.BottomBars == 2 then
 				ToggleBarText(3, ">\n>\n>", true)
 				ToggleBarText(4, "<\n<\n<", true)
@@ -348,8 +352,10 @@ for i = 1, 5 do
 		elseif i == 3 or i == 4 then
 			ToggleBar[3]:FadeIn()
 			ToggleBar[4]:FadeIn()
-			VehicleButtonAnchor:ClearAllPoints()
-			VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", ToggleBar[4], "BOTTOMLEFT", -C.actionbar.button_space, 0)
+			if not T.classic then
+				VehicleButtonAnchor:ClearAllPoints()
+				VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", ToggleBar[4], "BOTTOMLEFT", -C.actionbar.button_space, 0)
+			end
 		else
 			ToggleBar[i]:FadeIn()
 		end
@@ -367,11 +373,13 @@ for i = 1, 5 do
 			if InCombatLockdown() then return end
 			ToggleBar[3]:FadeOut()
 			ToggleBar[4]:FadeOut()
-			VehicleButtonAnchor:ClearAllPoints()
-			if SavedOptionsPerChar.SplitBars == true then
-				VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
-			else
-				VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+			if not T.classic then
+				VehicleButtonAnchor:ClearAllPoints()
+				if SavedOptionsPerChar.SplitBars == true then
+					VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+				else
+					VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+				end
 			end
 		else
 			ToggleBar[i]:FadeOut()

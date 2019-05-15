@@ -47,8 +47,10 @@ ChatFrameMenuButton:Kill()
 
 -- Kill channel and voice buttons
 ChatFrameChannelButton:Kill()
-ChatFrameToggleVoiceDeafenButton:Kill()
-ChatFrameToggleVoiceMuteButton:Kill()
+if not T.classic then
+	ChatFrameToggleVoiceDeafenButton:Kill()
+	ChatFrameToggleVoiceMuteButton:Kill()
+end
 
 -- Set chat style
 local function SetChatStyle(frame)
@@ -102,12 +104,18 @@ local function SetChatStyle(frame)
 	_G[format("ChatFrame%sTabGlow", id)]:Kill()
 
 	-- Kill scroll bar
-	frame.ScrollBar:Kill()
+	if not T.classic then
+		frame.ScrollBar:Kill()
+	end
 	frame.ScrollToBottomButton:Kill()
 
 	-- Kill off editbox artwork
 	local a, b, c = select(6, _G[chat.."EditBox"]:GetRegions())
-	a:Kill() b:Kill() c:Kill()
+	if not T.classic then
+		a:Kill() b:Kill() c:Kill()
+	else
+		a:Kill() b:Kill()
+	end
 
 	-- Kill bubble tex/glow
 	if _G[chat.."Tab"].conversationIcon then _G[chat.."Tab"].conversationIcon:Kill() end
@@ -257,12 +265,14 @@ local function SetupChatPosAndFont(self)
 	end
 
 	-- Reposition Quick Join Toast and battle.net popup
-	QuickJoinToastButton:ClearAllPoints()
-	QuickJoinToastButton:SetPoint(unpack(C.position.bn_popup))
-	QuickJoinToastButton:EnableMouse(false)
-	QuickJoinToastButton.ClearAllPoints = T.dummy
-	QuickJoinToastButton.SetPoint = T.dummy
-	QuickJoinToastButton:SetAlpha(0)
+	if not T.classic then
+		QuickJoinToastButton:ClearAllPoints()
+		QuickJoinToastButton:SetPoint(unpack(C.position.bn_popup))
+		QuickJoinToastButton:EnableMouse(false)
+		QuickJoinToastButton.ClearAllPoints = T.dummy
+		QuickJoinToastButton.SetPoint = T.dummy
+		QuickJoinToastButton:SetAlpha(0)
+	end
 end
 
 GeneralDockManagerOverflowButton:SetPoint("BOTTOMRIGHT", ChatFrame1, "TOPRIGHT", 0, 5)

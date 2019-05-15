@@ -34,37 +34,47 @@ local function GetDebuffType(unit, filter)
 end
 
 local function CheckSpec()
-	local spec = GetSpecialization()
+	if not IsClassicBuild() then
+		local spec = GetSpecialization()
 
-	if T.class == "DRUID" then
-		if spec == 4 then
-			dispellist.Magic = true
-		else
-			dispellist.Magic = false
+		if T.class == "DRUID" then
+			if spec == 4 then
+				dispellist.Magic = true
+			else
+				dispellist.Magic = false
+			end
+		elseif T.class == "MONK" then
+			if spec == 2 then
+				dispellist.Magic = true
+			else
+				dispellist.Magic = false
+			end
+		elseif T.class == "PALADIN" then
+			if spec == 1 then
+				dispellist.Magic = true
+			else
+				dispellist.Magic = false
+			end
+		elseif T.class == "PRIEST" then
+			if spec == 3 then
+				dispellist.Magic = false
+			else
+				dispellist.Magic = true
+			end
+		elseif T.class == "SHAMAN" then
+			if spec == 3 then
+				dispellist.Magic = true
+			else
+				dispellist.Magic = false
+			end
 		end
-	elseif T.class == "MONK" then
-		if spec == 2 then
+	else
+		if T.class == "PALADIN" then
 			dispellist.Magic = true
-		else
-			dispellist.Magic = false
-		end
-	elseif T.class == "PALADIN" then
-		if spec == 1 then
+		elseif T.class == "PRIEST" then
 			dispellist.Magic = true
-		else
-			dispellist.Magic = false
-		end
-	elseif T.class == "PRIEST" then
-		if spec == 3 then
-			dispellist.Magic = false
-		else
-			dispellist.Magic = true
-		end
-	elseif T.class == "SHAMAN" then
-		if spec == 3 then
-			dispellist.Magic = true
-		else
-			dispellist.Magic = false
+		elseif T.class == "SHAMAN" then
+			dispellist.Disease = true
 		end
 	end
 end
@@ -118,7 +128,11 @@ local function Enable(object)
 
 	-- Make sure aura scanning is active for this object
 	object:RegisterEvent("UNIT_AURA", Update)
-	object:RegisterEvent("PLAYER_TALENT_UPDATE", CheckSpec, true)
+	if not IsClassicBuild() then
+		object:RegisterEvent("PLAYER_TALENT_UPDATE", CheckSpec, true)
+	else
+		object:RegisterEvent("CHARACTER_POINTS_CHANGED", CheckSpec, true)
+	end
 	CheckSpec()
 
 	if object.DebuffHighlightBackdrop or object.DebuffHighlightBackdropBorder then
@@ -137,7 +151,11 @@ end
 local function Disable(object)
 	if object.DebuffHighlightBackdrop or object.DebuffHighlightBackdropBorder or object.DebuffHighlight then
 		object:UnregisterEvent("UNIT_AURA", Update)
-		object:UnregisterEvent("PLAYER_TALENT_UPDATE", CheckSpec)
+		if not IsClassicBuild() then
+			object:UnregisterEvent("PLAYER_TALENT_UPDATE", CheckSpec)
+		else
+			object:UnregisterEvent("CHARACTER_POINTS_CHANGED", CheckSpec)
+		end
 	end
 end
 

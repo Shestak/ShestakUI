@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.chat.bubbles ~= true then return end
+if T.classic or C.chat.bubbles ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	ChatBubbles skin(by Haleth)

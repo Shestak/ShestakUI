@@ -11,9 +11,14 @@ local function Update(self, event, unit, powerType)
 	local element = self.CPoints
 	local cur, max
 
-	if UnitHasVehicleUI("player") then
-		cur = UnitPower("vehicle", 4)
-		max = UnitPowerMax("vehicle", 4)
+	if not IsClassicBuild() then
+		if UnitHasVehicleUI("player") then
+			cur = UnitPower("vehicle", 4)
+			max = UnitPowerMax("vehicle", 4)
+		else
+			cur = UnitPower("player", 4)
+			max = UnitPowerMax("player", 4)
+		end
 	else
 		cur = UnitPower("player", 4)
 		max = UnitPowerMax("player", 4)
@@ -28,10 +33,18 @@ local function Update(self, event, unit, powerType)
 	local s = 0
 
 	if element.max ~= max then
-		if max == 6 then
-			element[6]:Show()
+		if not IsClassicBuild() then
+			if max == 6 then
+				element[6]:Show()
+			else
+				element[6]:Hide()
+			end
 		else
-			element[6]:Hide()
+			if max == 5 then
+				element[5]:Show()
+			else
+				element[5]:Hide()
+			end
 		end
 
 		for i = 1, max do

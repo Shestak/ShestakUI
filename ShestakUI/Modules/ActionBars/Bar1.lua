@@ -20,11 +20,23 @@ for i = 1, 12 do
 	end
 end
 
-local Page = {
-	["DRUID"] = "[bonusbar:1,nostealth] 7; [bonusbar:1,stealth] 8; [bonusbar:2] 8; [bonusbar:3] 9; [bonusbar:4] 10;",
-	["ROGUE"] = "[bonusbar:1] 7;",
-	["DEFAULT"] = "[possessbar] 12; [shapeshift] 13; [overridebar] 14; [vehicleui] 12; [bar:2] 2; [bar:3] 3; [bar:4] 4; [bar:5] 5; [bar:6] 6;",
-}
+local Page = {}
+if not T.classic then
+	Page = {
+		["DRUID"] = "[bonusbar:1,nostealth] 7; [bonusbar:1,stealth] 8; [bonusbar:2] 8; [bonusbar:3] 9; [bonusbar:4] 10;",
+		["ROGUE"] = "[bonusbar:1] 7;",
+		["DEFAULT"] = "[possessbar] 12; [shapeshift] 13; [overridebar] 14; [vehicleui] 12; [bar:2] 2; [bar:3] 3; [bar:4] 4; [bar:5] 5; [bar:6] 6;",
+	}
+else
+	Page = {
+		["DRUID"] = "[bonusbar:1,nostealth] 7; [bonusbar:1,stealth] 8; [bonusbar:2] 8; [bonusbar:3] 9; [bonusbar:4] 10;",
+		["WARRIOR"] = "[bonusbar:1] 7; [bonusbar:2] 8; [bonusbar:3] 9;",
+		["PRIEST"] = "[bonusbar:1] 7;",
+		["ROGUE"] = "[bonusbar:1] 7; [form:3] 7;",
+		["WARLOCK"] = "[form:2] 10;",
+		["DEFAULT"] = "[bonusbar:5] 11; [bar:2] 2; [bar:3] 3; [bar:4] 4; [bar:5] 5; [bar:6] 6;",
+	}
+end
 
 local function GetBar()
 	local condition = Page["DEFAULT"]
@@ -38,8 +50,10 @@ local function GetBar()
 end
 
 bar:RegisterEvent("PLAYER_LOGIN")
-bar:RegisterEvent("UPDATE_VEHICLE_ACTIONBAR")
-bar:RegisterEvent("UPDATE_OVERRIDE_ACTIONBAR")
+if not T.classic then
+	bar:RegisterEvent("UPDATE_VEHICLE_ACTIONBAR")
+	bar:RegisterEvent("UPDATE_OVERRIDE_ACTIONBAR")
+end
 bar:SetScript("OnEvent", function(self, event, ...)
 	if event == "PLAYER_LOGIN" then
 		for i = 1, NUM_ACTIONBAR_BUTTONS do

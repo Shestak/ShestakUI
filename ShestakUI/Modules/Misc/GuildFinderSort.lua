@@ -1,3 +1,6 @@
+local T, C, L, _ = unpack(select(2, ...))
+if T.classic then return end
+
 ----------------------------------------------------------------------------------------
 --	Sorts the guild finder list(GuildFinderSorter by Tekkub)
 ----------------------------------------------------------------------------------------

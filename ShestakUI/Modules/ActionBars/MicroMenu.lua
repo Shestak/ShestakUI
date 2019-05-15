@@ -101,8 +101,10 @@ hooksecurefunc("UpdateMicroButtons", function()
 	CharacterMicroButton:ClearAllPoints()
 	CharacterMicroButton:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", -2, 0)
 
-	GuildMicroButtonTabard:ClearAllPoints()
-	GuildMicroButtonTabard:SetPoint("TOP", GuildMicroButton.frame, "TOP", 0, 25)
+	if not T.classic then
+		GuildMicroButtonTabard:ClearAllPoints()
+		GuildMicroButtonTabard:SetPoint("TOP", GuildMicroButton.frame, "TOP", 0, 25)
+	end
 
 	MainMenuBarPerformanceBar:SetPoint("BOTTOM", MainMenuMicroButton, "BOTTOM", 0, 0)
 end)

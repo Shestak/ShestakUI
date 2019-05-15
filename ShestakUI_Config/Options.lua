@@ -3,6 +3,25 @@ local L = ns
 ----------------------------------------------------------------------------------------
 --	GUI for ShestakUI(by Haleth, Solor)
 ----------------------------------------------------------------------------------------
+-- Temporary Function
+local function IsClassicBuild()
+	local major, minor, fix = strsplit(".", tostring(GetBuildInfo()))
+	major, minor, fix = tonumber(major) or 0, tonumber(minor) or 0, tonumber(fix) or 0
+
+	local patch = major + (minor / 100)
+	if patch < 2 then
+		return true
+	end
+end
+
+local function HideOptions(list)
+	for i = 1, #list do
+		local frame = list[i]
+		if frame then
+			frame:Hide()
+		end
+	end
+end
 local realm = GetRealmName()
 local name = UnitName("player")
 
@@ -118,7 +137,7 @@ ns.addCategory("raidframe", RAID_FRAMES_LABEL, L_GUI_UF_RAIDFRAMES_SUBTEXT, true
 ns.addCategory("actionbar", L_GUI_ACTIONBAR, ACTIONBARS_SUBTEXT)
 ns.addCategory("tooltip", L_GUI_TOOLTIP, L_GUI_TOOLTIP_SUBTEXT)
 ns.addCategory("chat", SOCIALS, L_GUI_CHAT_SUBTEXT)
-ns.addCategory("nameplate", UNIT_NAMEPLATES, L_GUI_NAMEPLATE_SUBTEXT, true)
+ns.addCategory("nameplate", UNIT_NAMEPLATES, L_GUI_NAMEPLATE_SUBTEXT, not IsClassicBuild() and true)
 ns.addCategory("combattext", L_GUI_COMBATTEXT, COMBATTEXT_SUBTEXT.." "..L_GUI_COMBATTEXT_SUBTEXT, true)
 ns.addCategory("aura", BUFFOPTIONS_LABEL, BUFFOPTIONS_SUBTEXT)
 ns.addCategory("bag", L_GUI_BAGS, L_GUI_BAGS_SUBTEXT)
@@ -509,6 +528,38 @@ do
 
 	local weak_auras = ns.CreateCheckBox(parent, "weak_auras", L_GUI_SKINS_WEAK_AURAS)
 	weak_auras:SetPoint("LEFT", vanaskos, "RIGHT", 320, 0)
+
+	local classic = {
+		atlasloot,
+		bigwigs,
+		blood_shield_tracker,
+		capping,
+		clique,
+		cool_line,
+		dbm,
+		dbm_movable,
+		dominos,
+		flyout_button,
+		ls_toasts,
+		mage_nuggets,
+		my_role_play,
+		npcscan,
+		nug_running,
+		omen,
+		opie,
+		ovale,
+		postal,
+		recount,
+		rematch,
+		skada,
+		tiny_dps,
+		vanaskos,
+		weak_auras
+	}
+
+	if IsClassicBuild() then
+		HideOptions(classic)
+	end
 end
 
 -- Unit Frames
@@ -653,6 +704,18 @@ do
 
 	local plugins_absorbs = ns.CreateCheckBox(parent, "plugins_absorbs")
 	plugins_absorbs:SetPoint("TOPLEFT", plugins_power_prediction, "BOTTOMLEFT", 0, 0)
+
+	local classic = {
+		show_focus,
+		show_arena,
+		arena_on_right,
+		plugins_artifact_bar,
+		plugins_diminishing
+	}
+
+	if IsClassicBuild() then
+		HideOptions(classic)
+	end
 end
 
 -- Unit Frames Class bar
@@ -693,6 +756,20 @@ do
 
 	local range = ns.CreateCheckBox(parent, "range", L_GUI_UF_PLUGINS_RANGE_BAR)
 	range:SetPoint("TOPLEFT", totem, "BOTTOMLEFT", 0, 0)
+
+	local classic = {
+		arcane,
+		chi,
+		stagger,
+		holy,
+		shard,
+		rune,
+		range,
+	}
+
+	if IsClassicBuild() then
+		HideOptions(classic)
+	end
 end
 
 -- Raid Frames
@@ -789,6 +866,16 @@ do
 
 	local plugins_auto_resurrection = ns.CreateCheckBox(parent, "plugins_auto_resurrection")
 	plugins_auto_resurrection:SetPoint("TOPLEFT", plugins_healcomm, "BOTTOMLEFT", 0, 0)
+
+	local classic = {
+		by_role,
+		icons_role,
+		icons_sumon
+	}
+
+	if IsClassicBuild() then
+		HideOptions(classic)
+	end
 end
 
 -- ActionBar
@@ -863,6 +950,14 @@ do
 	micromenu_mouseover:SetPoint("TOPLEFT", micromenu, "BOTTOMLEFT", 20, 0)
 
 	micromenu.children = {micromenu_mouseover}
+
+	local classic = {
+		hide_highlight
+	}
+
+	if IsClassicBuild() then
+		HideOptions(classic)
+	end
 end
 
 -- Tooltip
@@ -935,6 +1030,16 @@ do
 
 	local instance_lock = ns.CreateCheckBox(parent, "instance_lock", L_GUI_TOOLTIP_INSTANCE_LOCK)
 	instance_lock:SetPoint("TOPLEFT", unit_role, "BOTTOMLEFT", 0, 0)
+
+	local classic = {
+		achievements,
+		arena_experience,
+		unit_role
+	}
+
+	if IsClassicBuild() then
+		HideOptions(classic)
+	end
 end
 
 -- Chat
@@ -1048,22 +1153,25 @@ do
 	totem_icons:SetPoint("TOPLEFT", healer_icon, "BOTTOMLEFT", 0, 0)
 
 	-- Panel 2
-	local parent = ShestakUIOptionsPanel.nameplate2
+	local parent, enhance_threat, good_color, near_color, bad_color, offtank_color
+	if not IsClassicBuild() then
+		parent = ShestakUIOptionsPanel.nameplate2
 
-	local enhance_threat = ns.CreateCheckBox(parent, "enhance_threat", L_GUI_NAMEPLATE_THREAT)
-	enhance_threat:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+		local enhance_threat = ns.CreateCheckBox(parent, "enhance_threat", L_GUI_NAMEPLATE_THREAT)
+		enhance_threat:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local good_color = ns.CreateColourPicker(parent, "good_color", true, L_GUI_NAMEPLATE_GOOD_COLOR)
-	good_color:SetPoint("TOPLEFT", enhance_threat, "BOTTOMLEFT", 4, -10)
+		local good_color = ns.CreateColourPicker(parent, "good_color", true, L_GUI_NAMEPLATE_GOOD_COLOR)
+		good_color:SetPoint("TOPLEFT", enhance_threat, "BOTTOMLEFT", 4, -10)
 
-	local near_color = ns.CreateColourPicker(parent, "near_color", true, L_GUI_NAMEPLATE_NEAR_COLOR)
-	near_color:SetPoint("TOPLEFT", good_color, "BOTTOMLEFT", 0, -10)
+		local near_color = ns.CreateColourPicker(parent, "near_color", true, L_GUI_NAMEPLATE_NEAR_COLOR)
+		near_color:SetPoint("TOPLEFT", good_color, "BOTTOMLEFT", 0, -10)
 
-	local bad_color = ns.CreateColourPicker(parent, "bad_color", true, L_GUI_NAMEPLATE_BAD_COLOR)
-	bad_color:SetPoint("TOPLEFT", near_color, "BOTTOMLEFT", 0, -10)
+		local bad_color = ns.CreateColourPicker(parent, "bad_color", true, L_GUI_NAMEPLATE_BAD_COLOR)
+		bad_color:SetPoint("TOPLEFT", near_color, "BOTTOMLEFT", 0, -10)
 
-	local offtank_color = ns.CreateColourPicker(parent, "offtank_color", true, L_GUI_NAMEPLATE_OFFTANK_COLOR)
-	offtank_color:SetPoint("TOPLEFT", bad_color, "BOTTOMLEFT", 0, -10)
+		local offtank_color = ns.CreateColourPicker(parent, "offtank_color", true, L_GUI_NAMEPLATE_OFFTANK_COLOR)
+		offtank_color:SetPoint("TOPLEFT", bad_color, "BOTTOMLEFT", 0, -10)
+	end
 end
 
 -- Combat text
@@ -1155,6 +1263,14 @@ do
 
 	local short_numbers = ns.CreateCheckBox(parent, "short_numbers", L_GUI_COMBATTEXT_SHORT_NUMBERS)
 	short_numbers:SetPoint("TOPLEFT", direction, "BOTTOMLEFT", 0, 0)
+
+	local classic = {
+		dk_runes
+	}
+
+	if IsClassicBuild() then
+		HideOptions(classic)
+	end
 end
 
 -- Auras/Buffs/Debuffs
@@ -1202,6 +1318,15 @@ do
 
 	local classcolor_border = ns.CreateCheckBox(parent, "classcolor_border", L_GUI_AURA_CLASSCOLOR_BORDER)
 	classcolor_border:SetPoint("TOPLEFT", cast_by, "BOTTOMLEFT", 0, 0)
+
+	local classic = {
+		focus_debuffs,
+		fot_debuffs
+	}
+
+	if IsClassicBuild() then
+		HideOptions(classic)
+	end
 end
 
 -- Bag
@@ -1258,6 +1383,15 @@ do
 
 	local fog_of_war = ns.CreateCheckBox(parent, "fog_of_war")
 	fog_of_war:SetPoint("TOPLEFT", bg_map_stylization, "BOTTOMLEFT", 0, 0)
+
+	local classic = {
+		tracking_icon,
+		garrison_icon
+	}
+
+	if IsClassicBuild() then
+		HideOptions(classic)
+	end
 end
 
 -- Loot
@@ -1367,6 +1501,15 @@ do
 
 	local safari_hat = ns.CreateCheckBox(parent, "safari_hat", L_GUI_ANNOUNCEMENTS_SAFARI_HAT)
 	safari_hat:SetPoint("TOPLEFT", bad_gear, "BOTTOMLEFT", 0, 0)
+
+	local classic = {
+		drinking,
+		safari_hat
+	}
+
+	if IsClassicBuild() then
+		HideOptions(classic)
+	end
 end
 
 -- Automation
@@ -1422,6 +1565,16 @@ do
 
 	local invite_keyword = ns.CreateEditBox(parent, "invite_keyword", true)
 	invite_keyword:SetPoint("TOPLEFT", open_items, "BOTTOMLEFT", 6, -8)
+
+	local classic = {
+		screenshot,
+		solve_artifact,
+		auto_role
+	}
+
+	if IsClassicBuild() then
+		HideOptions(classic)
+	end
 end
 
 -- Reminder
@@ -1487,6 +1640,14 @@ do
 
 	local show_inarena = ns.CreateCheckBox(parent, "show_inarena", L_GUI_COOLDOWN_RAID_IN_ARENA)
 	show_inarena:SetPoint("TOPLEFT", show_inparty, "BOTTOMLEFT", 0, 0)
+
+	local classic = {
+		show_inarena
+	}
+
+	if IsClassicBuild() then
+		HideOptions(classic)
+	end
 end
 
 -- Enemy cooldowns
@@ -1510,6 +1671,14 @@ do
 
 	local show_inarena = ns.CreateCheckBox(parent, "show_inarena", L_GUI_COOLDOWN_ENEMY_IN_ARENA)
 	show_inarena:SetPoint("TOPLEFT", show_inpvp, "BOTTOMLEFT", 0, 0)
+
+	local classic = {
+		show_inarena
+	}
+
+	if IsClassicBuild() then
+		HideOptions(classic)
+	end
 end
 
 -- Pulse cooldowns
@@ -1613,8 +1782,14 @@ do
 	battleground:SetPoint("TOPLEFT", location, "BOTTOMLEFT", 0, 0)
 
 	-- Currency
-	local currency = ns.addSubCategory(parent, L_GUI_STATS_SUBHEADER_CURRENCY)
-	currency:SetPoint("TOPLEFT", battleground, "BOTTOMLEFT", 0, -16)
+	local currency
+	if not IsClassicBuild() then
+		currency = ns.addSubCategory(parent, L_GUI_STATS_SUBHEADER_CURRENCY)
+		currency:SetPoint("TOPLEFT", battleground, "BOTTOMLEFT", 0, -16)
+	else
+		currency = CreateFrame("Frame", nil, ShestakUIOptionsPanel)
+		EXPANSION_NAME7 = EXPANSION_NAME7 or "Battle for Azeroth"
+	end
 
 	local currency_archaeology = ns.CreateCheckBox(parent, "currency_archaeology", L_GUI_STATS_CURRENCY_ARCHAEOLOGY)
 	currency_archaeology:SetPoint("TOPLEFT", currency, "BOTTOMLEFT", 0, -8)
@@ -1630,6 +1805,19 @@ do
 
 	local currency_misc = ns.CreateCheckBox(parent, "currency_misc", CURRENCY.. " "..EXPANSION_NAME7)
 	currency_misc:SetPoint("TOPLEFT", currency_raid, "BOTTOMLEFT", 0, 0)
+
+	local classic = {
+		currency,
+		currency_archaeology,
+		currency_cooking,
+		currency_professions,
+		currency_raid,
+		currency_misc
+	}
+
+	if IsClassicBuild() then
+		HideOptions(classic)
+	end
 end
 
 -- Error
@@ -1726,6 +1914,19 @@ do
 
 	local hide_raid_button = ns.CreateCheckBox(parent, "hide_raid_button")
 	hide_raid_button:SetPoint("TOPLEFT", hide_talking_head, "BOTTOMLEFT", 0, 0)
+
+	local classic = {
+		vehicle_mouseover,
+		enchantment_scroll,
+		archaeology,
+		chars_currency,
+		hide_banner,
+		hide_talking_head
+	}
+
+	if IsClassicBuild() then
+		HideOptions(classic)
+	end
 end
 
 ----------------------------------------------------------------------------------------

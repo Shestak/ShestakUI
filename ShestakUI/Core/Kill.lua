@@ -1,4 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
+if T.classic then return end -- Temporary
 
 ----------------------------------------------------------------------------------------
 --	Kill all stuff on default UI that we don't need
@@ -28,14 +29,20 @@ frame:SetScript("OnEvent", function(self, event, addon)
 
 	Advanced_UseUIScale:Kill()
 	Advanced_UIScaleSlider:Kill()
-	TutorialFrameAlertButton:Kill()
+	if not T.classic then
+		TutorialFrameAlertButton:Kill()
+	end
 	HelpOpenTicketButtonTutorial:Kill()
-	TalentMicroButtonAlert:Kill()
-	CollectionsMicroButtonAlert:Kill()
-	ReagentBankHelpBox:Kill()
+	if not T.classic then
+		TalentMicroButtonAlert:Kill()
+		CollectionsMicroButtonAlert:Kill()
+		ReagentBankHelpBox:Kill()
+	end
 	BagHelpBox:Kill()
-	EJMicroButtonAlert:Kill()
-	PremadeGroupsPvETutorialAlert:Kill()
+	if not T.classic then
+		EJMicroButtonAlert:Kill()
+		PremadeGroupsPvETutorialAlert:Kill()
+	end
 	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_WORLD_MAP_FRAME, true)
 	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_PET_JOURNAL, true)
 	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_GARRISON_BUILDING, true)
@@ -73,7 +80,9 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	end
 
 	if C.bag.enable then
-		SetSortBagsRightToLeft(true)
+		if not T.classic then
+			SetSortBagsRightToLeft(true)
+		end
 		SetInsertItemsLeftToRight(false)
 	end
 end)

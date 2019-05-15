@@ -180,7 +180,11 @@ local raidbuff_reminder = CreateFrame("Frame", "RaidBuffReminder", UIParent)
 raidbuff_reminder:CreatePanel("Invisible", (C.reminder.raid_buffs_size * 6) + 15, C.reminder.raid_buffs_size + 4, "TOPLEFT", RaidBuffsAnchor, "TOPLEFT", 0, 4)
 raidbuff_reminder:RegisterEvent("UNIT_AURA")
 raidbuff_reminder:RegisterEvent("PLAYER_ENTERING_WORLD")
-raidbuff_reminder:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
+if not T.classic then
+	raidbuff_reminder:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
+else
+	raidbuff_reminder:RegisterEvent("CHARACTER_POINTS_CHANGED")
+end
 raidbuff_reminder:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 raidbuff_reminder:SetScript("OnEvent", OnAuraChange)
 
