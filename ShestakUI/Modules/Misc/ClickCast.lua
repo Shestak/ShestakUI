@@ -5,7 +5,11 @@
 --	Simple click2cast spell binder(sBinder by Fernir)
 ----------------------------------------------------------------------------------------
 local SpellBinder = CreateFrame("Frame", "SpellBinder", SpellBookFrame, "ButtonFrameTemplate")
-SpellBinder:SetPoint("TOPLEFT", SpellBookFrame, "TOPRIGHT", 100, 0)
+if not T.classic then
+	SpellBinder:SetPoint("TOPLEFT", SpellBookFrame, "TOPRIGHT", 100, 0)
+else
+	SpellBinder:SetPoint("TOPLEFT", SpellBookFrame, "TOPRIGHT", 32, -12)
+end
 SpellBinder:SetSize(300, 400)
 SpellBinder:Hide()
 

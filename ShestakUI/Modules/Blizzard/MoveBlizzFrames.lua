@@ -12,7 +12,7 @@ local frames = {
 	"WorldStateScoreFrame", "ChatConfigFrame", "RaidBrowserFrame", "InterfaceOptionsFrame",
 	"GameMenuFrame", "VideoOptionsFrame", "GuildInviteFrame", "ItemTextFrame", "BankFrame",
 	"OpenMailFrame", "StackSplitFrame", "MacOptionsFrame", "TutorialFrame", "StaticPopup1",
-	"StaticPopup2", "ScrollOfResurrectionSelectionFrame"
+	"StaticPopup2", "ScrollOfResurrectionSelectionFrame", "QuestLogFrame", "GuildFrame"
 }
 
 for i, v in pairs(frames) do
@@ -50,7 +50,7 @@ local AddOnFrames = {
 	["Blizzard_LookingForGuildUI"] = {"LookingForGuildFrame"},
 	["Blizzard_MacroUI"] = {"MacroFrame"},
 	["Blizzard_QuestChoice"] = {"QuestChoiceFrame"},
-	["Blizzard_TalentUI"] = {"PlayerTalentFrame"},
+	["Blizzard_TalentUI"] = {"PlayerTalentFrame", "TalentFrame"},
 	["Blizzard_TradeSkillUI"] = {"TradeSkillFrame"},
 	["Blizzard_TrainerUI"] = {"ClassTrainerFrame"},
 	["Blizzard_VoidStorageUI"] = {"VoidStorageFrame"},
