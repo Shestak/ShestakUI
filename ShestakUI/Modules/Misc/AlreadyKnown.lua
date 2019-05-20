@@ -42,7 +42,9 @@ local function IsKnown(itemLink)
 	if not itemID then return end
 	if knowns[itemID] then return true end
 
-	if PlayerHasToy(itemID) then return true end
+	if not T.classic then
+		if PlayerHasToy(itemID) then return true end
+	end
 
 	local _, _, _, _, _, _, _, _, _, _, _, class, subClass = GetItemInfo(itemID)
 	if not (knowables[class] or knowables[subClass]) then return end

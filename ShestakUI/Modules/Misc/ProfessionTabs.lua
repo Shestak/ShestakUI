@@ -146,8 +146,10 @@ local function HandleProfession(object, professionID, hat)
 			end
 		end
 
-		if hat and PlayerHasToy(134020) then
-			UpdateTab(object, GetSpellInfo(67556), nil, 236571, true)
+		if not T.classic then
+			if hat and PlayerHasToy(134020) then
+				UpdateTab(object, GetSpellInfo(67556), nil, 236571, true)
+			end
 		end
 	end
 end
