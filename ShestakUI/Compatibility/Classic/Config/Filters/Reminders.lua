@@ -303,16 +303,7 @@ if C.reminder.solo_buffs_enable == true then
 			},
 		},
 		SHAMAN = {
-			[1] = {	-- Shield group
-				["spells"] = {
-					324,	-- Lightning Shield
-				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true,
-				-- ["level"] = 8,
-			},
-			[2] = {	-- Weapons enchants group
+			[1] = {	-- Weapons enchants group
 				["weapon"] = true,
 				["combat"] = true,
 				["instance"] = true,

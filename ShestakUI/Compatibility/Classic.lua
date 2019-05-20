@@ -45,6 +45,7 @@ IsXPUserDisabled = _G.IsXPUserDisabled or T.dummy
 IsWatchingHonorAsXP = _G.IsWatchingHonorAsXP or T.dummy
 IsInActiveWorldPVP = _G.IsInActiveWorldPVP or T.dummy
 
+UnitInVehicle = _G.UnitInVehicle or T.dummy
 UnitHasVehicleUI = _G.UnitHasVehicleUI or T.dummy
 UnitIsWildBattlePet = _G.UnitIsWildBattlePet or T.dummy
 UnitIsBattlePetCompanion = _G.UnitIsBattlePetCompanion or T.dummy
