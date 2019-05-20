@@ -66,83 +66,289 @@ end
 ----------------------------------------------------------------------------------------
 --	Cast Bars for units that aren't "player"
 ----------------------------------------------------------------------------------------
-local unitEvents = {
-	["CURRENT_SPELL_CAST_CHANGED"] = true,
-	["UNIT_SPELLCAST_SENT"] = true,
-	["UNIT_SPELLCAST_CHANNEL_START"] = true,
-	["UNIT_SPELLCAST_CHANNEL_STOP"] = true,
-	["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
-	["UNIT_SPELLCAST_DELAYED"] = true,
-	["UNIT_SPELLCAST_FAILED"] = true,
-	["UNIT_SPELLCAST_FAILED_QUIET"] = true,
-	["UNIT_SPELLCAST_INTERRUPTED"] = true,
-	["UNIT_SPELLCAST_INTERRUPTIBLE"] = true,
-	["UNIT_SPELLCAST_NOT_INTERRUPTIBLE"] = true,
-	["UNIT_SPELLCAST_START"] = true,
-	["UNIT_SPELLCAST_STOP"] = true,
-	["UNIT_SPELLCAST_SUCCEEDED"] = true
-}
-
-local castEvents = {
-	["SPELL_CAST_START"] = true,
-	["SPELL_CAST_SUCCESS"] = true,
-	["SPELL_CAST_FAILED"] = true,
-	["SPELL_INTERRUPT"] = true,
-	["UNIT_SPELLCAST_CHANNEL_UPDATE"] = true,
-	["UNIT_SPELLCAST_DELAYED"] = true,
-	["UNIT_SPELLCAST_FAILED"] = true,
-	["UNIT_SPELLCAST_FAILED_QUIET"] = true,
-	["UNIT_SPELLCAST_INTERRUPTED"] = true,
-	["UNIT_SPELLCAST_INTERRUPTIBLE"] = true,
-	["UNIT_SPELLCAST_NOT_INTERRUPTIBLE"] = true,
-	["UNIT_SPELLCAST_START"] = true,
-	["UNIT_SPELLCAST_STOP"] = true,
-	["UNIT_SPELLCAST_SUCCEEDED"] = true
-}
-
 local CastScanner = CreateFrame("Frame")
+CastScanner.db = {}
 
-local function CombatLogCheck(unit)
-	if not unit then return end
-
-	local guid = UnitGUID(unit)
-	local timestamp, subevent, hideCaster, sourceGUID, sourceName, sourceFlags, sourceRaidFlags, destGUID, destName, destFlags, destRaidFlags = CombatLogGetCurrentEventInfo()
-	local name, text, texture, startTimeMS, endTimeMS, isTradeSkill, castID, notInterruptible, spellID
-	-- name:				String - The name of the spell, or nil if no spell is being cast.
-	-- text:				String - The name to be displayed.
-	-- texture:				String - The texture path associated with the spell icon.
-	-- startTimeMS:			Number - Specifies when casting began in milliseconds (corresponds to GetTime()*1000).
-	-- endTimeMS:			Number - Specifies when casting will end in milliseconds (corresponds to GetTime()*1000).
-	-- isTradeSkill:		Boolean - Specifies if the cast is a tradeskill
-	-- castID:				String - GUID-like string (an example is 3-3890-1159-21205-8936-00014B7E7F) where the second to last value is the spellID. The other values are as yet unknown.
-	-- notInterruptible:	Boolean - if true, indicates that this cast cannot be interrupted.
-	-- spellID:				Integer - The spell's unique identifier. (Added in 7.2.5)
-	return name, text, texture, startTimeMS, endTimeMS, isTradeSkill, castID, notInterruptible, spellID
-end
-
-UnitCastingInfo = _G.UnitCastingInfo or function()
+UnitCastingInfo = _G.UnitCastingInfo or function(unit)
 	if unit == "player" then
 		return CastingInfo()
-	elseif unit == "pet" then
-		-- things here later
-	elseif unit == "target" then
-		-- things here later
-	elseif unit == "focus" then
-		-- things here later
+	elseif UnitExists(unit) then
+		local castStatus, channelStatus, castTime, delay
+		local name, text, texture, startTimeMS, endTimeMS, isTradeSkill, castID, notInterruptible, spellID
+		local db = CastScanner.db[UnitGUID(unit)]
+
+		if db and db.castStatus and db.startTimeMS + db.castTime > GetTime() then
+			if db.channelStatus then return end
+			castStatus				= db.castStatus
+			channelStatus			= db.channelStatus
+			castTime				= db.castTime
+			delay					= db.delay
+			name					= db.name
+			text					= db.text
+			texture					= db.texture
+			startTimeMS				= db.startTimeMS
+			endTimeMS				= db.endTimeMS
+			isTradeSkill			= db.isTradeSkill
+			castID					= db.castID
+			notInterruptible		= db.notInterruptible
+			spellID					= db.spellID
+		elseif db then
+			wipe(db)
+		end
+
+		return name, text, texture, startTimeMS, endTimeMS, isTradeSkill, castID, notInterruptible, spellID
 	end
 end
 
-UnitChannelInfo = _G.UnitChannelInfo or function()
+UnitChannelInfo = _G.UnitChannelInfo or function(unit)
 	if unit == "player" then
 		return ChannelInfo()
-	elseif unit == "pet" then
-		-- things here later
-	elseif unit == "target" then
-		-- things here later
-	elseif unit == "focus" then
-		-- things here later
+	elseif UnitExists(unit) then
+		local castStatus, channelStatus, castTime, delay
+		local name, text, texture, startTimeMS, endTimeMS, isTradeSkill, castID, notInterruptible, spellID
+		local db = CastScanner.db[UnitGUID(unit)]
+
+		if db and db.castStatus and db.startTimeMS + db.castTime > GetTime() then
+			if not db.channelStatus then return end
+			castStatus				= db.castStatus
+			channelStatus			= db.channelStatus
+			castTime				= db.castTime
+			delay					= db.delay
+			name					= db.name
+			text					= db.text
+			texture					= db.texture
+			startTimeMS				= db.startTimeMS
+			endTimeMS				= db.endTimeMS
+			isTradeSkill			= db.isTradeSkill
+			castID					= db.castID
+			notInterruptible		= db.notInterruptible
+			spellID					= db.spellID
+		elseif db then
+			wipe(db)
+		end
+		
+		return name, text, texture, startTimeMS, endTimeMS, isTradeSkill, castID, notInterruptible, spellID
 	end
 end
+
+function CastScanner:AddCast(GUID, castID, spellID, timestamp, channelStatus)
+	if not GUID or not spellID then return nil end
+
+	if not self.db[GUID] then self.db[GUID] = {} end
+	local db = self.db[GUID]
+
+	local name, rank, texture, castTime = GetSpellInfo(spellID)
+	local text, isTradeSkill = nil, select(2, GetSpellTradeSkillLink(spellID))
+
+	if rank then
+		text = tostring(name.." (r"..rank..")")
+	else
+		text = name
+	end
+
+	if isTradeSkill then
+		isTradeSkill = true
+	else
+		isTradeSkill = false
+	end
+
+	local notInterruptible, playerGUID, targetGUID = true, UnitGUID("player"), UnitGUID("target")
+
+	if GUID == playerGUID or (GUID == targetGUID and UnitIsPlayer("target")) then
+		notInterruptible = false
+	end
+
+	db.castStatus					= true
+	db.channelStatus				= channelStatus or false
+	db.castTime						= castTime
+	db.delay						= 0
+	db.name							= name
+	db.text							= text
+	db.texture						= texture
+	db.startTimeMS					= timestamp
+	db.endTimeMS					= db.startTimeMS + castTime
+	db.isTradeSkill					= isTradeSkill
+	db.castID						= castID
+	db.notInterruptible				= notInterruptible -- build a DB for fallback later
+	db.spellID						= spellID
+
+	self.db[GUID]					= db
+end
+
+function CastScanner:DelayCast(GUID, castID, spellID, timestamp, channelStatus) -- Needs work
+	if not GUID or not spellID or not self.db[GUID] then return nil end
+
+	local db = self.db[GUID]
+
+	local oldStartTimeMS, oldDelay = db.startTimeMS or timestamp, db.delay or 0
+
+	local name, rank, texture, castTime = GetSpellInfo(spellID)
+	local text, isTradeSkill = nil, select(2, GetSpellTradeSkillLink(spellID))
+
+	if rank then
+		text = tostring(name.." (r"..rank..")")
+	else
+		text = name
+	end
+
+	if isTradeSkill then
+		isTradeSkill = true
+	else
+		isTradeSkill = false
+	end
+
+	local notInterruptible, playerGUID, targetGUID = true, UnitGUID("player"), UnitGUID("target")
+
+	if GUID == playerGUID or (GUID == targetGUID and UnitIsPlayer("target")) then
+		notInterruptible = false
+	end
+
+	db.castStatus					= true
+	db.channelStatus				= channelStatus or false
+	db.castTime						= castTime
+	db.delay						= (oldDelay + (0.5 * 1e3)) or 0
+	db.name							= name
+	db.text							= text
+	db.texture						= texture
+	db.startTimeMS					= oldStartTimeMS
+	db.endTimeMS					= db.startTimeMS + castTime
+	db.isTradeSkill					= isTradeSkill
+	db.castID						= castID
+	db.notInterruptible				= notInterruptible -- build a DB for fallback later
+	db.spellID						= spellID
+
+	if channelStatus then
+		-- can range from 0.5 - 1.0 seconds per hit (we'll use the minimum for now)
+		db.startTimeMS = -db.castTime + timestamp + (0.5 * 1e3)
+	else
+		-- can range from 0.5 - 1.0 seconds per hit (we'll use the minimum for now)
+		db.endTimeMS = db.endTimeMS + db.delay
+	end
+
+	self.db[GUID] = db
+end
+
+function CastScanner:RemoveCast(GUID, castID, spellID)
+	if self.db[GUID] then
+		wipe(self.db[GUID])
+	end
+end
+
+local function SpellName(id)
+	local name = GetSpellInfo(id)
+	if name then
+		return name
+	else
+		return "Empty"
+	end
+end
+
+local channelSpells = {
+	-- Druid
+	[SpellName(740)] = true,		-- Tranquility
+	-- Hunter
+	[SpellName(6197)] = true,		-- Eagle Eye
+	[SpellName(1002)] = true,		-- Eyes of the Beast
+	[SpellName(136)] = true,		-- Mend Pet
+	[SpellName(1510)] = true,		-- Volley
+	-- Mage
+	[SpellName(5143)] = true,		-- Arcane Missiles
+	[SpellName(10)] = true,			-- Blizzard
+	[SpellName(12051)] = true,		-- Evocation
+	-- Paladin
+	-- Priest
+	[SpellName(605)] = true,		-- Mind Control
+	[SpellName(15407)] = true,		-- Mind Flay
+	[SpellName(2096)] = true,		-- Mind Vision
+	-- Rogue
+	-- Shaman
+	[SpellName(6196)] = true,		-- Far Sight
+	-- Warlock
+	[SpellName(689)] = true,		-- Drain Life
+	[SpellName(5138)] = true,		-- Drain Mana
+	[SpellName(1120)] = true,		-- Drain Soul
+	[SpellName(126)] = true,		-- Eye of Kilrogg
+	[SpellName(755)] = true,		-- Health Funnel
+	[SpellName(1949)] = true,		-- Hellfire
+	[SpellName(5740)] = true,		-- Rain of Fire
+	[SpellName(18540)] = true,		-- Ritual of Doom
+	[SpellName(23598)] = true,		-- Ritual of Summoning
+	-- Warrior
+	-- Professions
+	[SpellName(746)] = true,		-- First Aid
+	[SpellName(7620)] = true,		-- Fishing
+	-- Racial
+	[SpellName(10797)] = true,		-- Starshards
+}
+
+-- Combat Log Event
+CastScanner:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+
+-- Unit Events
+CastScanner:RegisterEvent("UNIT_SPELLCAST_SENT")				-- "unit", "target", "castGUID", spellID
+CastScanner:RegisterEvent("UNIT_SPELLCAST_START")				-- "unitTarget", "castGUID", spellID
+CastScanner:RegisterEvent("UNIT_SPELLCAST_STOP")				-- "unitTarget", "castGUID", spellID
+CastScanner:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")			-- "unitTarget", "castGUID", spellID
+CastScanner:RegisterEvent("UNIT_SPELLCAST_CHANNEL_START")		-- "unitTarget", "castGUID", spellID
+CastScanner:RegisterEvent("UNIT_SPELLCAST_CHANNEL_STOP")		-- "unitTarget", "castGUID", spellID
+CastScanner:RegisterEvent("UNIT_SPELLCAST_CHANNEL_UPDATE")		-- "unitTarget", "castGUID", spellID
+CastScanner:RegisterEvent("UNIT_SPELLCAST_DELAYED")				-- "unitTarget", "castGUID", spellID
+CastScanner:RegisterEvent("UNIT_SPELLCAST_FAILED")				-- "unitTarget", "castGUID", spellID
+CastScanner:RegisterEvent("UNIT_SPELLCAST_FAILED_QUIET")		-- "unitTarget", "castGUID", spellID
+CastScanner:RegisterEvent("UNIT_SPELLCAST_INTERRUPTED")			-- "unitTarget", "castGUID", spellID
+-- CastScanner:RegisterEvent("UNIT_SPELLCAST_INTERRUPTIBLE")		-- "unitTarget" (BfA)
+-- CastScanner:RegisterEvent("UNIT_SPELLCAST_NOT_INTERRUPTIBLE")	-- "unitTarget" (BfA)
+
+CastScanner:SetScript("OnEvent", function(self, event, ...)
+	local unitTarget, castGUID, spellID
+
+	if event == "COMBAT_LOG_EVENT_UNFILTERED" then
+		-- local timestamp, subEvent, hideCaster, sourceGUID, sourceName, sourceFlags, sourceRaidFlags, destGUID, destName, destFlags, destRaidFlags, CLEUSpellID, spellName, spellSchool = CombatLogGetCurrentEventInfo()
+		local _, subEvent, _, sourceGUID, _, _, _, _, _, _, _, CLEUSpellID, spellName = CombatLogGetCurrentEventInfo()
+
+		if subEvent == "SPELL_CAST_START" then
+			if self.db[sourceGUID] then
+				if self.db[sourceGUID].castStatus == true and self.db[sourceGUID].spellID == CLEUSpellID then
+					castGUID = self.db[sourceGUID].castID
+				end
+			end
+
+			if not castGUID then return end
+
+			if not spellName == channelSpells[spellName] then
+				CastScanner:AddCast(sourceGUID, castGUID, CLEUSpellID, GetTime() * 1e3, true)
+			else
+				CastScanner:AddCast(sourceGUID, castGUID, CLEUSpellID, GetTime() * 1e3)
+			end
+		elseif subEvent == "SPELL_CAST_SUCCESS" or subEvent == "SPELL_CAST_FAILED" or subEvent == "SPELL_INTERRUPT" then
+			CastScanner:RemoveCast(sourceGUID, castGUID, CLEUSpellID)
+		end
+	elseif event == "UNIT_SPELLCAST_SENT" then
+		unitTarget, _, castGUID, spellID = ...
+		unitTarget = UnitGUID(unitTarget)
+		CastScanner:AddCast(unitTarget, castGUID, spellID, GetTime() * 1e3)
+	elseif event == "UNIT_SPELLCAST_START" then
+		unitTarget, castGUID, spellID = ...
+		unitTarget = UnitGUID(unitTarget)
+		CastScanner:AddCast(unitTarget, castGUID, spellID, GetTime() * 1e3)
+	elseif event == "UNIT_SPELLCAST_DELAYED" then
+		unitTarget, castGUID, spellID = ...
+		unitTarget = UnitGUID(unitTarget)
+		CastScanner:DelayCast(unitTarget, castGUID, spellID, GetTime() * 1e3)
+	elseif event == "UNIT_SPELLCAST_CHANNEL_START" then
+		unitTarget, castGUID, spellID = ...
+		unitTarget = UnitGUID(unitTarget)
+		CastScanner:AddCast(unitTarget, castGUID, spellID, GetTime() * 1e3, true)
+	elseif event == "UNIT_SPELLCAST_CHANNEL_UPDATE" then
+		unitTarget, castGUID, spellID = ...
+		unitTarget = UnitGUID(unitTarget)
+		CastScanner:DelayCast(unitTarget, castGUID, spellID, GetTime() * 1e3, true)
+	elseif event == "UNIT_SPELLCAST_STOP" or event == "UNIT_SPELLCAST_SUCCEEDED" or event == "UNIT_SPELLCAST_CHANNEL_STOP" or event == "UNIT_SPELLCAST_FAILED" or event == "UNIT_SPELLCAST_FAILED_QUIET" or event == "UNIT_SPELLCAST_INTERRUPTED" then
+		unitTarget, castGUID, spellID = ...
+		unitTarget = UnitGUID(unitTarget)
+		CastScanner:RemoveCast(unitTarget, castGUID, spellID)
+	end
+end)
 
 ----------------------------------------------------------------------------------------
 --	Specialization Functions 
