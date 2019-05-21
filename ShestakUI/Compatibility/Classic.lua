@@ -65,12 +65,28 @@ ShowFriends = _G.ShowFriends or function()
 end
 
 ----------------------------------------------------------------------------------------
+--	Classic Bugs
+----------------------------------------------------------------------------------------
+-- https://git.tukui.org/Tukz/Tukui/commit/ca387b55e84bc6cb13719c648ae6d34d7d3c7493#15effd8cfb7a22a107bef69a493f44fe34236102
+-- BUG TO REPORT AT BLIZZARD
+
+-- Message: Interface\FrameXML\SecureGroupHeaders.lua:303: attempt to call global 'UnitGroupRolesAssigned' (a nil value)
+-- Cause: UnitGroupRolesAssigned still exist in SecureGroupHeaders, it should not
+-- UnitGroupRolesAssigned = function() return "" end
+
+-- Message: Interface\FrameXML\SecureTemplates.lua:219: attempt to call global 'UnitIsOtherPlayersBattlePet' (a nil value)
+-- Cause: UnitIsOtherPlayersBattlePet still exist in SecureTemplates, it should not
+UnitIsOtherPlayersBattlePet = function(unit) return false end
+
+
+----------------------------------------------------------------------------------------
 --	Cast Bars for units that aren't "player"
 ----------------------------------------------------------------------------------------
 local CastScanner = CreateFrame("Frame")
 CastScanner.db = {}
 
 UnitCastingInfo = _G.UnitCastingInfo or function(unit)
+	assert(type(unit) == "string", "Usage: UnitCastingInfo(\"unit\")")
 	if unit == "player" then
 		return CastingInfo()
 	elseif UnitExists(unit) then
@@ -102,6 +118,7 @@ UnitCastingInfo = _G.UnitCastingInfo or function(unit)
 end
 
 UnitChannelInfo = _G.UnitChannelInfo or function(unit)
+	assert(type(unit) == "string", "Usage: UnitCastingInfo(\"unit\")")
 	if unit == "player" then
 		return ChannelInfo()
 	elseif UnitExists(unit) then
@@ -642,7 +659,7 @@ local specializationInfoDB = { -- needs localized names
 	},
 }
 
-GetSpecialization = _G.GetSpecialization or function()
+GetSpecialization = _G.GetSpecialization or function(...)
 	local current = {}
 	local primaryTree = 1
 	for i = 1, 3 do
@@ -673,6 +690,8 @@ GetSpecializationRole = _G.GetSpecializationRole or function()
 			role = "CASTER" -- ordinarily "DAMAGER"
 		end
 	end
+
+	return role
 end
 
 GetSpecializationInfo = _G.GetSpecializationInfo or function(specIndex, ...)
@@ -708,14 +727,7 @@ UnitGroupRolesAssigned = _G.UnitGroupRolesAssigned or function(unit) -- Needs wo
 		if role == "MELEE" or role == "CASTER" then
 			role = "DAMAGER"
 		else
-			local class = select(2, UnitClass(unit))
-			if class == "MAGE" or class == "HUNTER" or class == "ROGUE" or class == "WARLOCK" then
-				role = "DAMAGER"
-			elseif class == "DRUID" or class == "PALADIN" or class == "PRIEST" or class == "SHAMAN" then
-				role = "HEALER"
-			elseif class == "WARRIOR" then
-				role = "TANK"
-			end
+			role = role or ""
 		end
 		return role
 	end
