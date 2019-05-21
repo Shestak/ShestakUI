@@ -413,7 +413,9 @@ if durability.enabled then
 				if conf.AutoRepair and CanMerchantRepair() then
 					local cost, total = GetRepairAllCost(), 0
 					if cost > 0 then
-						if conf.AutoGuildRepair and CanGuildBankRepair() then RepairAllItems(1) total = cost end
+						if not T.classic then
+							if conf.AutoGuildRepair and CanGuildBankRepair() then RepairAllItems(1) total = cost end
+						end
 						if GetRepairAllCost() > 0 then
 							if not durability.ignore_inventory and GetRepairAllCost() <= GetMoney() then
 								total = GetRepairAllCost(); RepairAllItems()
@@ -467,7 +469,9 @@ if durability.enabled then
 			end
 			GameTooltip:AddLine(" ")
 			GameTooltip:AddDoubleLine(" ", L_STATS_AUTO_REPAIR..": "..(conf.AutoRepair and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
-			GameTooltip:AddDoubleLine(" ", L_STATS_GUILD_REPAIR..": "..(conf.AutoGuildRepair and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
+			if not T.classic then
+				GameTooltip:AddDoubleLine(" ", L_STATS_GUILD_REPAIR..": "..(conf.AutoGuildRepair and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
+			end
 			GameTooltip:Show()
 		end,
 		OnClick = function(self, button)
