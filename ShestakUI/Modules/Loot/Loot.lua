@@ -108,7 +108,11 @@ function Butsu:LOOT_OPENED(_, autoloot)
 
 		slot.name:SetText(EMPTY)
 		slot.name:SetTextColor(color.r, color.g, color.b)
-		slot.icon:SetTexture("Interface\\Icons\\INV_Misc_Herb_AncientLichen")
+		if not T.classic then
+			slot.icon:SetTexture("Interface\\Icons\\INV_Misc_Herb_AncientLichen")
+		else
+			slot.icon:SetTexture("Interface\\Icons\\Inv_misc_questionmark")
+		end
 
 		slot.count:Hide()
 		slot.drop:Hide()
