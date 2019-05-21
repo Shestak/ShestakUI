@@ -1,8 +1,8 @@
-## Interface: 80100
+## Interface: 11302
 ## Title: ShestakUI Config
 ## Notes: In-game configuration for ShestakUI
 ## Author: Haleth, Solor
-## Version: 7.10
+## Version: 0.50
 ## RequiredDeps: ShestakUI
 ## SavedVariables: ShestakUIOptionsGlobal, ShestakUIOptions
 ## SavedVariablesPerCharacter: ShestakUIOptionsPerChar
