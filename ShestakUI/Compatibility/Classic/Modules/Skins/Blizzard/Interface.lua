@@ -151,6 +151,7 @@ local function LoadSkin()
 		"AutoActivate5Players",
 		"AutoActivate10Players",
 		"AutoActivate15Players",
+		"AutoActivate20Players",
 		"AutoActivate25Players",
 		"AutoActivate40Players",
 		"AutoActivatePvE",

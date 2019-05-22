@@ -2,11 +2,10 @@ local T, C, L, _ = unpack(select(2, ...))
 if not T.classic then return end
 
 ----------------------------------------------------------------------------------------
---	Show All Action Bars
+--	Show All Action Bars (temporary)
 ----------------------------------------------------------------------------------------
-SetActionBarToggles(1, 1, 1, 1, 1) -- Seemingly not working? Using the below as an alternative for now.
-
-if IsTestBuild() then
+-- SetActionBarToggles seemingly not working? Using the below as an alternative for now.
+if IsTestBuild() and not InCombatLockdown() then
 	local actionBars = {
 		"BottomLeft",
 		"BottomRight",
