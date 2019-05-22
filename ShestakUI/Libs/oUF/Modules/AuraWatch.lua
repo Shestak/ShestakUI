@@ -178,7 +178,11 @@ local function setupIcons(self)
 
 			if watch.PostCreateIcon then watch:PostCreateIcon(icon, icon.spellID, name, self) end
 		else
-			print("|cffff0000WARNING: spell ID ["..tostring(icon.spellID).."] no longer exists! Report this to Shestak.|r")
+			if not T.classic then
+				print("|cffff0000WARNING: spell ID ["..tostring(icon.spellID).."] no longer exists! Report this to Shestak.|r")
+			else
+				print("|cffff0000WARNING: spell ID ["..tostring(icon.spellID).."] no longer exists! Report this to EsreverWoW.|r")
+			end
 		end
 	end
 end
