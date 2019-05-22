@@ -83,7 +83,7 @@ ShestakUI supports and contains language specific code for the following game cl
 - [Raid Frames](http://shestak.org/forum/showpost.php?p=12661&postcount=21)
 
 ## Links:
-- [Changelog](https://github.com/EsreverWoW/ShestakUI/commits/classic-staging)
+- [Changelog](https://github.com/EsreverWoW/ShestakUI_Classic/commits/classic-staging)
 
 ## Credits:
 AcidWeb, Aezay, Affli, Ailae, Allez, ALZA, Ammo, Astromech, Beoko, Bitbyte, Blamdarot, Bozo, Caellian, Califpornia, Camealion, Chiril, CrusaderHeimdall, Cybey, Dawn, Don Kaban, Dridzt, Duffed, Durcyn, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, gi2k15, Gethe, Gorlasch, Gsuz, Haleth, Haste, Hoochie, Hungtar, Hydra, HyPeRnIcS, Ildyria, iSpawnAtHome, Jaslm, Karl_w_w, Karudon, Katae, Kellett, Kemayo, Killakhan, Kraftman, Leatrix, m2jest1c, Magdain, Meurtcriss, Monolit, MrRuben5, Myrilandell of Lothar, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, Phanx, Renstrom, RustamIrzaev, Safturento, Sanex, Sara.Festung, SDPhantom, Semlar, Sildor, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Veev, Villiv, Wetxius, Woffle of Dark Iron, Wrug, Xuerian, Yleaf, Zork.
