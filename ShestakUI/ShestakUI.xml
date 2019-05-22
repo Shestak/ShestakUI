@@ -267,5 +267,7 @@
 	<Script file="Modules\Tooltip\UnitRole.lua"/>
 	<Script file="Modules\Tooltip\InstanceLockCompare.lua"/>
 
+	<Script file="Compatibility\Classic\Modules\Tooltip\ItemPrice.lua"/>
+
 	<Script file="Core\Movers.lua"/>
 </Ui>
