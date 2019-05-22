@@ -1,5 +1,5 @@
 ## Interface: 11302
-## Title: ShestakUI Config
+## Title: ShestakUI (Classic) Config
 ## Notes: In-game configuration for ShestakUI
 ## Author: Haleth, Solor
 ## Version: 0.50
