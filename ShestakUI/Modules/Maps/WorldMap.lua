@@ -40,6 +40,10 @@ else
 	WorldMapFrame:EnableMouse(false)
 	WorldMapFrame:SetToplevel()
 
+	WorldMapFrame.BorderFrame:SetFrameStrata(WorldMapFrame:GetFrameStrata())
+	WorldMapFrameCloseButton:SetFrameLevel(WorldMapFrame.BorderFrame:GetFrameLevel() + 2)
+	WorldMapZoomOutButton:SetFrameLevel(WorldMapFrame.BorderFrame:GetFrameLevel() + 2)
+
 	table.insert(UISpecialFrames, WorldMapFrame:GetName())
 
 	if WorldMapFrame:GetAttribute("UIPanelLayout-area") ~= "center" then
@@ -54,6 +58,7 @@ else
 		if DropDownList1:GetScale() ~= UIParent:GetScale() then
 			DropDownList1:SetScale(UIParent:GetScale())
 		end
+		DropDownList1:SetFrameLevel(WorldMapFrame.BorderFrame:GetFrameLevel() + 2)
 	end)
 
 	-- WorldMapTooltip:SetFrameLevel(WorldMapPositioningGuide:GetFrameLevel() + 110)
@@ -63,20 +68,36 @@ end
 --	Creating coordinate
 ----------------------------------------------------------------------------------------
 local coords = CreateFrame("Frame", "CoordsFrame", WorldMapFrame)
-coords:SetFrameLevel(WorldMapFrame.BorderFrame:GetFrameLevel() + 2)
-coords:SetFrameStrata(WorldMapFrame.BorderFrame:GetFrameStrata())
-coords.PlayerText = coords:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-coords.PlayerText:SetPoint("BOTTOM", WorldMapFrame.ScrollContainer, "BOTTOM", 5, 20)
-coords.PlayerText:SetJustifyH("LEFT")
-coords.PlayerText:SetText(UnitName("player")..": 0,0")
+if not T.classic then
+	coords:SetFrameLevel(WorldMapFrame.BorderFrame:GetFrameLevel() + 2)
+	coords:SetFrameStrata(WorldMapFrame.BorderFrame:GetFrameStrata())
+	coords.PlayerText = coords:CreateFontString(nil, "ARTWORK", "GameFontNormal")
+	coords.PlayerText:SetPoint("BOTTOM", WorldMapFrame.ScrollContainer, "BOTTOM", 5, 20)
+	coords.PlayerText:SetJustifyH("LEFT")
+	coords.PlayerText:SetText(UnitName("player")..": 0,0")
 
-coords.MouseText = coords:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-coords.MouseText:SetJustifyH("LEFT")
-coords.MouseText:SetPoint("BOTTOMLEFT", coords.PlayerText, "TOPLEFT", 0, 5)
-coords.MouseText:SetText(L_MAP_CURSOR..": 0,0")
+	coords.MouseText = coords:CreateFontString(nil, "ARTWORK", "GameFontNormal")
+	coords.MouseText:SetJustifyH("LEFT")
+	coords.MouseText:SetPoint("BOTTOMLEFT", coords.PlayerText, "TOPLEFT", 0, 5)
+	coords.MouseText:SetText(L_MAP_CURSOR..": 0,0")
+else
+	coords:SetFrameLevel(WorldMapFrame.ScrollContainer.Child:GetFrameLevel() + 2)
+	coords:SetFrameStrata(WorldMapFrame.ScrollContainer.Child:GetFrameStrata())
+	coords.PlayerText = coords:CreateFontString(nil, "ARTWORK", "GameFontNormal")
+	coords.PlayerText:SetPoint("BOTTOMLEFT", WorldMapFrame.ScrollContainer, "BOTTOMLEFT", 5, 5)
+	coords.PlayerText:SetJustifyH("LEFT")
+	coords.PlayerText:SetText(UnitName("player")..": 0,0")
+
+	coords.MouseText = coords:CreateFontString(nil, "ARTWORK", "GameFontNormal")
+	coords.MouseText:SetJustifyH("LEFT")
+	coords.MouseText:SetPoint("BOTTOMLEFT", coords.PlayerText, "TOPLEFT", 0, 5)
+	coords.MouseText:SetText(L_MAP_CURSOR..": 0,0")
+end
 
 local int = 0
 WorldMapFrame:HookScript("OnUpdate", function(self)
+	if not WorldMapFrame:IsShown() then return end
+
 	int = int + 1
 	if int >= 3 then
 		local UnitMap = C_Map.GetBestMapForUnit("player")
