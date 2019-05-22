@@ -207,6 +207,8 @@
 	<Script file="Modules\Maps\ToggleMenu.lua"/>
 	<Script file="Modules\Maps\WorldMap.lua"/>
 
+	<Script file="Compatibility\Classic\Modules\Quests\ObjectiveTracker.lua"/>
+
 	<Script file="Modules\Quests\AutoAccept.lua"/>
 	<Script file="Modules\Quests\AutoButton.lua"/>
 	<Script file="Modules\Quests\ObjectiveTracker.lua"/>
