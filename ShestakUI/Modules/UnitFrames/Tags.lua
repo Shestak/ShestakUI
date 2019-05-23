@@ -155,6 +155,16 @@ oUF.Tags.Events["NameplateNameColor"] = "UNIT_POWER_UPDATE UNIT_FLAGS"
 oUF.Tags.Methods["NameplateHealth"] = function(unit)
 	local hp = UnitHealth(unit)
 	local maxhp = UnitHealthMax(unit)
+
+	local hpRMH, maxhpRMH
+	if T.classic and IsAddOnLoaded("RealMobHealth") then
+		hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+
+		if hpRMH and maxhpRMH then
+			hp, maxhp = hpRMH, maxhpRMH
+		end
+	end
+
 	if maxhp == 0 then
 		return 0
 	else
@@ -170,3 +180,60 @@ oUF.Tags.Methods["Absorbs"] = function(unit)
     end
 end
 oUF.Tags.Events["Absorbs"] = "UNIT_ABSORB_AMOUNT_CHANGED"
+
+if T.classic and IsAddOnLoaded("RealMobHealth") then
+	oUF.Tags.Methods["curhp"] = function(unit)
+		local hp = UnitHealth(unit)
+		local hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+
+		if hpRMH and maxhpRMH then
+			hp = hpRMH
+		end
+
+		return hp
+	end
+	oUF.Tags.Events["curhp"] = "UNIT_HEALTH UNIT_MAXHEALTH"
+
+	oUF.Tags.Methods["maxhp"] = function(unit)
+		local maxhp = UnitHealthMax(unit)
+		local hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+
+		if hpRMH and maxhpRMH then
+			maxhp = maxhpRMH
+		end
+
+		return maxhp
+	end
+	oUF.Tags.Events["maxhp"] = "UNIT_MAXHEALTH"
+
+	oUF.Tags.Methods["missinghp"] = function(unit)
+		local hp, maxhp = UnitHealth(unit), UnitHealthMax(unit)
+		local hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+
+		if hpRMH and maxhpRMH then
+			hp, maxhp = hpRMH, maxhpRMH
+		end
+
+		local current = maxhp - hp
+		if current > 0 then
+			return current
+		end
+	end
+	oUF.Tags.Events["missinghp"] = "UNIT_HEALTH UNIT_MAXHEALTH"
+
+	oUF.Tags.Methods["perhp"] = function(unit)
+		local hp, maxhp = UnitHealth(unit), UnitHealthMax(unit)
+		local hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+
+		if hpRMH and maxhpRMH then
+			hp, maxhp = hpRMH, maxhpRMH
+		end
+
+		if maxhp == 0 then
+			return 0
+		else
+			return math.floor(hp / maxhp * 100 + 0.5)
+		end
+	end
+	oUF.Tags.Events["perhp"] = "UNIT_HEALTH UNIT_MAXHEALTH"
+end

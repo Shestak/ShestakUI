@@ -58,6 +58,16 @@ local function Update(self, event, unit)
 
 	local cur, max = UnitHealth(unit), UnitHealthMax(unit)
 	local disconnected = not UnitIsConnected(unit)
+
+	local hpRMH, maxhpRMH
+	if IsClassicBuild() and IsAddOnLoaded("RealMobHealth") then
+		hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+
+		if hpRMH and maxhpRMH then
+			cur, max = hpRMH, maxhpRMH
+		end
+	end
+
 	element:SetMinMaxValues(0, max)
 
 	if(disconnected) then
