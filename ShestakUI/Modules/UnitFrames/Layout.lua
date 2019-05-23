@@ -488,12 +488,16 @@ local function Shared(self, unit)
 		end
 
 		-- Totem bar
-		if not T.classic and C.unitframe_class_bar.totem == true and T.class == "SHAMAN" then
+		if C.unitframe_class_bar.totem == true and T.class == "SHAMAN" then
 			self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
 			self.TotemBar:CreateBackdrop("Default")
 			self.TotemBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.TotemBar:SetSize(217, 7)
-			self.TotemBar.Destroy = true
+			if not T.classic then
+				self.TotemBar.Destroy = true
+			else
+				self.TotemBar.Destroy = false
+			end
 
 			for i = 1, 4 do
 				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
