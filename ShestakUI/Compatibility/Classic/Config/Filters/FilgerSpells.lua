@@ -358,8 +358,6 @@ C["filger_spells"] = {
 			{spellID = 1850, filter = "CD"},
 			-- Enrage
 			{spellID = 5229, filter = "CD", absID = true},
-			-- Enraged Defense
-			{spellID = 6542, filter = "CD"},
 			-- Faerie Fire (Feral)
 			{spellID = 16857, filter = "CD"},
 			-- Feral Charge
