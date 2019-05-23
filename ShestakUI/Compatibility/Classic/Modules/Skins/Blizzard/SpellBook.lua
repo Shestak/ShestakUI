@@ -86,7 +86,11 @@ local function LoadSkin()
 			tab:StyleButton(true)
 
 			local point, relatedTo, point2 = tab:GetPoint()
-			tab:SetPoint(point, relatedTo, point2, -30, -64)
+			if i == 1 then
+				tab:SetPoint(point, relatedTo, point2, -30, -64)
+			else
+				tab:SetPoint(point, relatedTo, point2, 0, -16)
+			end
 		end
 	end
 

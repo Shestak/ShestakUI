@@ -1,41 +1,84 @@
 local T, C, L, _ = unpack(select(2, ...))
-if not T.classic or C.skins.blizzard_frames ~= true then return end
+if not T.classic or C.skins.blizzard_frames ~= true then return else return end -- incomplete
 
 ----------------------------------------------------------------------------------------
 --	Quest skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	QuestFrame:StripTextures(true)
-	-- QuestFrameInset:StripTextures(true)
-	QuestFrameDetailPanel:StripTextures(true)
-	QuestDetailScrollFrame:StripTextures(true)
-	QuestDetailScrollChildFrame:StripTextures(true)
-	QuestRewardScrollFrame:StripTextures(true)
-	QuestRewardScrollChildFrame:StripTextures(true)
-	QuestProgressScrollFrame:StripTextures(true)
-	QuestGreetingScrollFrame:StripTextures(true)
-	QuestFrameProgressPanel:StripTextures(true)
-	QuestFrameRewardPanel:StripTextures(true)
-
 	QuestFrame:CreateBackdrop("Transparent")
 	QuestFrame.backdrop:SetPoint("TOPLEFT", 10, -12)
 	QuestFrame.backdrop:SetPoint("BOTTOMRIGHT", -32, 76)
 
-	QuestNpcNameFrame:ClearAllPoints()
-	QuestNpcNameFrame:SetPoint("TOP", CharacterFrame.backdrop, "TOP", 0, -6)
+	QuestDetailScrollFrame:SetHeight(QuestFrame.backdrop:GetHeight() / 1.3)
+	QuestRewardScrollFrame:SetHeight(QuestFrame.backdrop:GetHeight() / 1.3)
+	QuestProgressScrollFrame:SetHeight(QuestFrame.backdrop:GetHeight() / 1.3)
+	QuestGreetingScrollFrame:SetHeight(QuestFrame.backdrop:GetHeight() / 1.3)
 
-	QuestFrameAcceptButton:SkinButton(true)
-	QuestFrameDeclineButton:SkinButton(true)
-	QuestFrameCompleteButton:SkinButton(true)
-	QuestFrameGoodbyeButton:SkinButton(true)
-	QuestFrameCompleteQuestButton:SkinButton(true)
+	QuestNpcNameFrame:ClearAllPoints()
+	QuestNpcNameFrame:SetPoint("TOP", QuestFrame.backdrop, "TOP", 0, -6)
 
 	T.SkinCloseButton(QuestFrameCloseButton, QuestFrame.backdrop)
-	T.SkinScrollBar(QuestDetailScrollFrameScrollBar)
-	T.SkinScrollBar(QuestProgressScrollFrameScrollBar)
-	T.SkinScrollBar(QuestRewardScrollFrameScrollBar)
-	T.SkinScrollBar(QuestGreetingScrollFrameScrollBar)
-	T.SkinScrollBar(QuestNPCModelTextScrollFrameScrollBar)
+
+	local QuestStrip = {
+		"QuestFrame",
+		"QuestFrameDetailPanel",
+		"QuestDetailScrollFrame",
+		"QuestDetailScrollChildFrame",
+		"QuestRewardScrollFrame",
+		"QuestRewardScrollChildFrame",
+		"QuestProgressScrollFrame",
+		"QuestGreetingScrollFrame",
+		"QuestFrameProgressPanel",
+		"QuestFrameRewardPanel",
+	}
+
+	for _, object in pairs(QuestStrip) do
+		_G[object]:StripTextures(true)
+	end
+
+	local LeftQuestButtons = {
+		"QuestFrameAcceptButton",
+		"QuestFrameCompleteButton",
+		"QuestFrameCompleteQuestButton",
+	}
+
+	local RightQuestButtons = {
+		"QuestFrameDeclineButton",
+		"QuestFrameGoodbyeButton",
+		"QuestFrameCancelButton",
+	}
+
+	for _, button in pairs(LeftQuestButtons) do
+		_G[button]:SkinButton()
+		_G[button]:SetPoint("BOTTOMLEFT", QuestFrame.backdrop, "BOTTOMLEFT", 4, 4)
+	end
+
+	for _, button in pairs(RightQuestButtons) do
+		_G[button]:SkinButton()
+		_G[button]:SetPoint("BOTTOMRIGHT", QuestFrame.backdrop, "BOTTOMRIGHT", -4, 4)
+	end
+
+	local ScrollBars = {
+		"QuestDetailScrollFrameScrollBar",
+		"QuestProgressScrollFrameScrollBar",
+		"QuestRewardScrollFrameScrollBar",
+		"QuestGreetingScrollFrameScrollBar",
+		"QuestNPCModelTextScrollFrameScrollBar",
+	}
+
+	for _, scrollbar in pairs(ScrollBars) do
+		T.SkinScrollBar(_G[scrollbar])
+	end
+
+	QuestInfoTitleHeader:SetTextColor(1, 0.8, 0)
+	QuestInfoTitleHeader:SetShadowColor(0, 0, 0)
+	QuestInfoDescriptionText:SetTextColor(1, 1, 1)
+	QuestInfoObjectivesHeader:SetTextColor(1, 0.8, 0)
+	QuestInfoObjectivesHeader:SetShadowColor(0, 0, 0)
+	QuestInfoObjectivesText:SetTextColor(1, 1, 1)
+	QuestInfoRewardsFrame.Header:SetTextColor(1, 0.8, 0)
+	QuestInfoRewardsFrame.Header:SetShadowColor(0, 0, 0)
+	QuestInfoRewardsFrame.ItemChooseText:SetTextColor(1, 1, 1)
 
 	for i = 1, 6 do
 		local button = _G["QuestProgressItem"..i]
@@ -65,10 +108,16 @@ local function LoadSkin()
 	local function UpdateGreetingPanel()
 		QuestFrameGreetingPanel:StripTextures()
 		QuestFrameGreetingGoodbyeButton:SkinButton()
+		QuestFrameGreetingGoodbyeButton:SetPoint("BOTTOMRIGHT", QuestFrame.backdrop, "BOTTOMRIGHT", -4, 4)
 		GreetingText:SetTextColor(1, 1, 1)
 		CurrentQuestsText:SetTextColor(1, 0.8, 0)
 		AvailableQuestsText:SetTextColor(1, 0.8, 0)
 		QuestGreetingFrameHorizontalBreak:Kill()
+
+		for i = 1, MAX_NUM_QUESTS do
+			local button = _G["QuestTitleButton"..i]
+			button:SetTextColor(1, 1, 0)
+		end
 
 		for button in QuestFrameGreetingPanel.titleButtonPool:EnumerateActive() do
 			local text = button:GetFontString():GetText()
