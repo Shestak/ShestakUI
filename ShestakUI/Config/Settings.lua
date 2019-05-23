@@ -137,6 +137,10 @@ C["unitframe_class_bar"] = {
 	["range"] = false,							-- Range bar (only for Priest)
 }
 
+if T.classic then
+	C["unitframe_class_bar"]["combo_old"] = true
+end
+
 ----------------------------------------------------------------------------------------
 --	Raid Frames options
 ----------------------------------------------------------------------------------------

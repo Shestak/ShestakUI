@@ -20,8 +20,8 @@ local function Update(self, event, unit, powerType)
 			max = UnitPowerMax("player", 4)
 		end
 	else
-		cur = UnitPower("player", 4)
-		max = UnitPowerMax("player", 4)
+		cur = UnitPower("player", 14)
+		max = UnitPowerMax("player", 14)
 	end
 
 	if max == 0 then

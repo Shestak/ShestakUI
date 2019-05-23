@@ -461,11 +461,11 @@ local function Shared(self, unit)
 			self.CPoints:SetSize(217, 7)
 
 			local maxComboPoints
-				if not T.classic then
-					maxComboPoints = 6
-				else
-					maxComboPoints = 5
-				end
+			if not T.classic then
+				maxComboPoints = 6
+			else
+				maxComboPoints = 5
+			end
 			for i = 1, maxComboPoints or 6 do
 				self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar", self.CPoints)
 				self.CPoints[i]:SetSize(213 / maxComboPoints or 6, 7)
