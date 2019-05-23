@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if T.classic or C.automation.accept_quest ~= true then return end
+if not T.classic or C.automation.accept_quest ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Quest automation(QuickQuest by p3lim)
@@ -21,61 +21,7 @@ local QuickQuestDB = {
 }
 
 local QuickQuestBlacklistDB = {
-	items = {
-		-- Inscription weapons
-		[31690] = 79343,	-- Inscribed Tiger Staff
-		[31691] = 79340,	-- Inscribed Crane Staff
-		[31692] = 79341,	-- Inscribed Serpent Staff
-
-		-- Darkmoon Faire artifacts
-		[29443] = 71635,	-- Imbued Crystal
-		[29444] = 71636,	-- Monstrous Egg
-		[29445] = 71637,	-- Mysterious Grimoire
-		[29446] = 71638,	-- Ornate Weapon
-		[29451] = 71715,	-- A Treatise on Strategy
-		[29456] = 71951,	-- Banner of the Fallen
-		[29457] = 71952,	-- Captured Insignia
-		[29458] = 71953,	-- Fallen Adventurer's Journal
-		[29464] = 71716,	-- Soothsayer's Runes
-
-		-- Tiller Gifts
-		["progress_79264"] = 79264,	-- Ruby Shard
-		["progress_79265"] = 79265,	-- Blue Feather
-		["progress_79266"] = 79266,	-- Jade Cat
-		["progress_79267"] = 79267,	-- Lovely Apple
-		["progress_79268"] = 79268,	-- Marsh Lily
-
-		-- Garrison scouting missives
-		[38180] = 122424,	-- Scouting Missive: Broken Precipice
-		[38193] = 122423,	-- Scouting Missive: Broken Precipice
-		[38182] = 122418,	-- Scouting Missive: Darktide Roost
-		[38196] = 122417,	-- Scouting Missive: Darktide Roost
-		[38179] = 122400,	-- Scouting Missive: Everbloom Wilds
-		[38192] = 122404,	-- Scouting Missive: Everbloom Wilds
-		[38194] = 122420,	-- Scouting Missive: Gorian Proving Grounds
-		[38202] = 122419,	-- Scouting Missive: Gorian Proving Grounds
-		[38178] = 122402,	-- Scouting Missive: Iron Siegeworks
-		[38191] = 122406,	-- Scouting Missive: Iron Siegeworks
-		[38184] = 122413,	-- Scouting Missive: Lost Veil Anzu
-		[38198] = 122414,	-- Scouting Missive: Lost Veil Anzu
-		[38177] = 122403,	-- Scouting Missive: Magnarok
-		[38190] = 122399,	-- Scouting Missive: Magnarok
-		[38181] = 122421,	-- Scouting Missive: Mok'gol Watchpost
-		[38195] = 122422,	-- Scouting Missive: Mok'gol Watchpost
-		[38185] = 122411,	-- Scouting Missive: Pillars of Fate
-		[38199] = 122409,	-- Scouting Missive: Pillars of Fate
-		[38187] = 122412,	-- Scouting Missive: Shattrath Harbor
-		[38201] = 122410,	-- Scouting Missive: Shattrath Harbor
-		[38186] = 122408,	-- Scouting Missive: Skettis
-		[38200] = 122407,	-- Scouting Missive: Skettis
-		[38183] = 122416,	-- Scouting Missive: Socrethar's Rise
-		[38197] = 122415,	-- Scouting Missive: Socrethar's Rise
-		[38176] = 122405,	-- Scouting Missive: Stonefury Cliffs
-		[38189] = 122401,	-- Scouting Missive: Stonefury Cliffs
-
-		-- Misc
-		[31664] = 88604,	-- Nat's Fishing Journal
-	}
+	items = {}
 }
 
 local metatable = {
@@ -110,29 +56,7 @@ local function GetNPCID()
 	return tonumber(string.match(UnitGUID('npc') or '', '%w+%-.-%-.-%-.-%-.-%-(.-)%-'))
 end
 
-local function IsTrackingHidden()
-	for index = 1, GetNumTrackingTypes() do
-		local name, _, active = GetTrackingInfo(index)
-		if name == (MINIMAP_TRACKING_TRIVIAL_QUESTS or MINIMAP_TRACKING_HIDDEN_QUESTS) then
-			return active
-		end
-	end
-end
-
-local ignoreQuestNPC = {
-	[88570] = true,		-- Fate-Twister Tiklal
-	[87391] = true,		-- Fate-Twister Seress
-	[111243] = true,	-- Archmage Lan'dalock
-	[108868] = true,	-- Talua (Hunter's order hall)
-	[101462] = true,	-- Reaves (Engineering)
-	[103792] = true,	-- Griftah (one of his quests is a scam)
-	[119388] = true, 	-- Chieftain Hatuun (repeatable resource quest)
-	[124312] = true,	-- High Exarch Turalyon (repeatable resource quest)
-	[126954] = true,	-- High Exarch Turalyon (repeatable resource quest)
-	[127037] = true,	-- Nabiru (repeatable resource quest)
-	[141584] = true,	-- Zurvan (Seal of Wartorn Fate, Horde)
-	[142063] = true,	-- Tezran (Seal of Wartorn Fate, Alliance)
-}
+local ignoreQuestNPC = {}
 
 local function GetQuestLogQuests(onlyComplete)
 	local quests = {}
@@ -177,55 +101,18 @@ QuickQuest:Register("QUEST_GREETING", function()
 	if(available > 0) then
 		for index = 1, available do
 			local isTrivial, _, _, _, isIgnored = GetAvailableQuestInfo(index)
-			if((not isTrivial and not isIgnored) or IsTrackingHidden()) then
+			if(not isTrivial and not isIgnored) then
 				SelectAvailableQuest(index)
 			end
 		end
 	end
 end)
 
-local ignoreGossipNPC = {
-	-- Bodyguards
-	[86945] = true,	-- Aeda Brightdawn (Horde)
-	[86933] = true,	-- Vivianne (Horde)
-	[86927] = true,	-- Delvar Ironfist (Alliance)
-	[86934] = true,	-- Defender Illona (Alliance)
-	[86682] = true,	-- Tormmok
-	[86964] = true,	-- Leorajh
-	[86946] = true,	-- Talonpriest Ishaal
+local ignoreGossipNPC = {}
 
-	-- Sassy Imps
-	[95139] = true,
-	[95141] = true,
-	[95142] = true,
-	[95143] = true,
-	[95144] = true,
-	[95145] = true,
-	[95146] = true,
-	[95200] = true,
-	[95201] = true,
+local rogueClassHallInsignia = {}
 
-	-- Misc NPCs
-	[117871] = true, -- War Councilor Victoria (Class Challenges @ Broken Shore)
-	[143925] = true, -- Dark Iron Mole Machine (Dark Iron Dwarf racial)
-}
-
-local rogueClassHallInsignia = {
-	[97004] = true, -- "Red" Jack Findle
-	[96782] = true, -- Lucian Trias
-	[93188] = true, -- Mongar
-}
-
-local darkmoonDailyNPCs = {
-	[54601] = true, -- Mola
-	[15303] = true, -- Maxima Blastenheimer
-	[14841] = true, -- Rinling
-	[54605] = true, -- Finlay Coolshot
-	[85546] = true, -- Ziggie Sparks
-	[54485] = true, -- Jessica Rogers
-	[85519] = true, -- Christoph VonFeasel
-	[67370] = true, -- Jeremy Feasel
-}
+local darkmoonDailyNPCs = {}
 
 local function GetAvailableGossipQuestInfo(index)
 	local name, level, isTrivial, frequency, isRepeatable, isLegendary, isIgnored = select(((index * 7) - 7) + 1, GetGossipAvailableQuests())
@@ -266,7 +153,7 @@ QuickQuest:Register("GOSSIP_SHOW", function()
 	if(available > 0) then
 		for index = 1, available do
 			local _, _, trivial, ignored = GetAvailableGossipQuestInfo(index)
-			if((not trivial and not ignored) or IsTrackingHidden()) then
+			if(not trivial and not ignored) then
 				SelectGossipAvailableQuest(index)
 			elseif(trivial and npcID == 64337 and QuickQuestDB.nomi) then
 				SelectGossipAvailableQuest(index)
@@ -317,11 +204,7 @@ QuickQuest:Register("GOSSIP_SHOW", function()
 	end
 end)
 
-local darkmoonNPC = {
-	[57850] = true,	-- Teleportologist Fozlebub
-	[55382] = true,	-- Darkmoon Faire Mystic Mage (Horde)
-	[54334] = true,	-- Darkmoon Faire Mystic Mage (Alliance)
-}
+local darkmoonNPC = {}
 
 QuickQuest:Register("GOSSIP_CONFIRM", function(index)
 	if(not QuickQuestDB.faireport) then return end
@@ -335,45 +218,22 @@ end)
 
 QuestFrame:UnregisterEvent("QUEST_DETAIL")
 QuickQuest:Register("QUEST_DETAIL", function(...)
-	if(not QuestGetAutoAccept() and not QuestIsFromAreaTrigger() and not QuickQuestBlacklistDB[GetQuestID()]) then
+	if(not QuickQuestBlacklistDB[GetQuestID()]) then
 		QuestFrame_OnEvent(QuestFrame, "QUEST_DETAIL", ...)
 	end
 end, true)
 
 QuickQuest:Register("QUEST_DETAIL", function(questStartItemID)
-	if(QuestGetAutoAccept() or (questStartItemID ~= nil and questStartItemID ~= 0)) then
+	--[[
+	if(questStartItemID ~= nil and questStartItemID ~= 0) then
 		AcknowledgeAutoAcceptQuest()
 	else
 		-- XXX: no way to tell if the quest is trivial
 		AcceptQuest()
 	end
+	--]]
+	AcceptQuest()
 end)
-
-local function AttemptAutoComplete(event)
-	if(GetNumAutoQuestPopUps() > 0) then
-		if(UnitIsDeadOrGhost("player")) then
-			QuickQuest:Register("PLAYER_REGEN_ENABLED", AttemptAutoComplete)
-			return
-		end
-
-		local questID, popUpType = GetAutoQuestPopUp(1)
-		if(popUpType == "OFFER") then
-			ShowQuestOffer(GetQuestLogIndexByID(questID))
-		else
-			ShowQuestComplete(GetQuestLogIndexByID(questID))
-		end
-	else
-		C_Timer.After(1, AttemptAutoComplete)
-	end
-
-	if(event == "PLAYER_REGEN_ENABLED") then
-		QuickQuest:UnregisterEvent("PLAYER_REGEN_ENABLED")
-	end
-end
-
-QuickQuest:Register("PLAYER_LOGIN", AttemptAutoComplete)
-QuickQuest:Register("QUEST_AUTOCOMPLETE", AttemptAutoComplete)
-QuickQuest:Register("QUEST_ACCEPT_CONFIRM", AcceptQuest)
 
 QuickQuest:Register("QUEST_ACCEPTED", function(id)
 	if(QuickQuestDB.share) then
@@ -419,18 +279,7 @@ QuickQuest:Register("QUEST_COMPLETE", function()
 	end
 end)
 
-local cashRewards = {
-	[45724] = 1e5,	-- Champion's Purse, 10 gold
-	[64491] = 2e6,	-- Royal Reward, 200 gold
-
-	-- Items from the Sixtrigger brothers quest chain in Stormheim
-	[138127] = 15,	-- Mysterious Coin, 15 copper
-	[138129] = 11,	-- Swatch of Priceless Silk, 11 copper
-	[138131] = 24,	-- Magical Sprouting Beans, 24 copper
-	[138123] = 15,	-- Shiny Gold Nugget, 15 copper
-	[138125] = 16,	-- Crystal Clear Gemstone, 16 copper
-	[138133] = 27,	-- Elixir of Endless Wonder, 27 copper
-}
+local cashRewards = {}
 
 QuickQuest:Register("QUEST_COMPLETE", function()
 	local choices = GetNumQuestChoices()

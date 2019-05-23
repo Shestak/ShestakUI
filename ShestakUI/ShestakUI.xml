@@ -217,6 +217,7 @@
 	<Script file="Modules\Maps\WorldMap.lua"/>
 
 	<Script file="Compatibility\Classic\Modules\Quests\ObjectiveTracker.lua"/>
+	<Script file="Compatibility\Classic\Modules\Quests\AutoAccept.lua"/>
 
 	<Script file="Modules\Quests\AutoAccept.lua"/>
 	<Script file="Modules\Quests\AutoButton.lua"/>
@@ -267,6 +268,7 @@
 	<Script file="Modules\Tooltip\UnitRole.lua"/>
 	<Script file="Modules\Tooltip\InstanceLockCompare.lua"/>
 
+	<Script file="Compatibility\Classic\Modules\Tooltip\ItemLevel.lua"/>
 	<Script file="Compatibility\Classic\Modules\Tooltip\ItemPrice.lua"/>
 
 	<Script file="Core\Movers.lua"/>

@@ -2,29 +2,6 @@ local T, C, L, _ = unpack(select(2, ...))
 if not T.classic then return end
 
 ----------------------------------------------------------------------------------------
---	Show All Action Bars (temporary)
-----------------------------------------------------------------------------------------
--- SetActionBarToggles seemingly not working? Using the below as an alternative for now.
-if IsTestBuild() and not InCombatLockdown() then
-	local actionBars = {
-		"BottomLeft",
-		"BottomRight",
-		"Right",
-		"RightTwo"
-	}
-
-	for i = 1, 4 do
-		local bar = select(i, GetActionBarToggles())
-		if not bar then
-			local checkbox = actionBars[i]
-			_G["InterfaceOptionsActionBarsPanel"..checkbox]:Click()
-		end
-	end
-
-	SetCVar("alwaysShowActionBars", 1)
-end
-
-----------------------------------------------------------------------------------------
 --	NOOP / Pass Functions not found in Classic
 ----------------------------------------------------------------------------------------
 GetCurrencyInfo = _G.GetCurrencyInfo or T.dummy
@@ -77,6 +54,14 @@ end
 -- Cause: UnitIsOtherPlayersBattlePet still exist in SecureTemplates, it should not
 UnitIsOtherPlayersBattlePet = function(unit) return false end
 
+----------------------------------------------------------------------------------------
+--	Quest Functions
+----------------------------------------------------------------------------------------
+GetAvailableQuestInfo = _G.GetAvailableQuestInfo or function(index)
+	if not index then return end
+
+	return IsActiveQuestTrivial(index), 1, false, false
+end
 
 ----------------------------------------------------------------------------------------
 --	Cast Bars for units that aren't "player"
@@ -730,6 +715,31 @@ UnitGroupRolesAssigned = _G.UnitGroupRolesAssigned or function(unit) -- Needs wo
 		end
 		return role
 	end
+end
+
+-- Add later
+GetInspectSpecialization = _G.GetInspectSpecialization or T.dummy
+GetAverageItemLevel = _G.GetAverageItemLevel or function()
+	local slotName = {
+		"HeadSlot", "NeckSlot", "ShoulderSlot", "BackSlot", "ChestSlot", "WristSlot",
+		"HandsSlot", "WaistSlot", "LegsSlot", "FeetSlot", "Finger0Slot", "Finger1Slot",
+		"Trinket0Slot", "Trinket1Slot", "MainHandSlot", "SecondaryHandSlot", "RangedSlot", "AmmoSlot"
+	}
+
+	local i, total, slot, itn, level = 0, 0, nil, 0
+
+	for i in pairs(slotName) do
+		slot = GetInventoryItemLink("player", GetInventorySlotInfo(slotName[i]))
+		if slot ~= nil then
+			itn = itn + 1
+			level = select(4, GetItemInfo(slot))
+			total = total + level
+		end
+	end
+
+	if total < 1 or itn < 1 then return 0 end
+
+	return floor(total / itn)
 end
 
 ----------------------------------------------------------------------------------------
