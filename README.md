@@ -14,6 +14,9 @@ This version of ShestakUI is meant to retain compatibility modern WoW, while als
 <img src="https://i.imgur.com/uvnad8c.jpg" align="right" width="48.5%">
 <img src="https://i.imgur.com/qD4KSGP.jpg" width="48.5%">
 
+## Third-Party AddOn Support:
+ - [RealMobHealth](https://www.wowinterface.com/downloads/info24924-RealMobHealth.html)
+
 ## Commands:
 **Main Commands**
 ```
@@ -57,7 +60,7 @@ This version of ShestakUI is meant to retain compatibility modern WoW, while als
 ```
 /heal               Switches to "Heal" layout.
 /dps                Switches to "DPS" layout.
-/farmmode, /fm     Increases the minimap.
+/farmmode, /fm      Increases the minimap.
 /tt                 Whisper target.
 /ainv               Enabling automatic invitation.
 /align              Grid alignment interface.
