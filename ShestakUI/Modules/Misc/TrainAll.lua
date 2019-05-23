@@ -18,19 +18,24 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		button:SetWidth(min(50, button:GetTextWidth() + 15))
 		button:SetScript("OnClick", function()
 			for i = 1, GetNumTrainerServices() do
-				if select(2, GetTrainerServiceInfo(i)) == "available" then
+				if (not T.classic and select(2, GetTrainerServiceInfo(i)) == "available") or (T.classic and select(3, GetTrainerServiceInfo(i)) == "available") then
 					BuyTrainerService(i)
 				end
 			end
 		end)
 		hooksecurefunc("ClassTrainerFrame_Update", function()
 			for i = 1, GetNumTrainerServices() do
-				if ClassTrainerTrainButton:IsEnabled() and select(2, GetTrainerServiceInfo(i)) == "available" then
+				if ClassTrainerTrainButton:IsEnabled() and ((not T.classic and select(2, GetTrainerServiceInfo(i)) == "available") or (T.classic and select(3, GetTrainerServiceInfo(i)) == "available")) == "available" then
 					button:Enable()
 					return
 				end
 			end
 			button:Disable()
 		end)
+
+		if T.classic then
+			ClassTrainerMoneyFrame:ClearAllPoints()
+			ClassTrainerMoneyFrame:SetPoint("BOTTOMLEFT", ClassTrainerFrame, "BOTTOMLEFT", 28, 85)
+		end
 	end
 end)
