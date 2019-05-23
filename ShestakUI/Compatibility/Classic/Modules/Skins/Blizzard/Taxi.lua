@@ -12,11 +12,12 @@ local function LoadSkin()
 
 	TaxiRouteMap:CreateBackdrop("Default")
 
+	TaxiPortrait:Kill()
+
 	T.SkinCloseButton(TaxiCloseButton, TaxiFrame.backdrop)
 
 	TaxiMerchant:ClearAllPoints()
 	TaxiMerchant:SetPoint("TOP", TaxiFrame.backdrop, "TOP", 0, -6)
-
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

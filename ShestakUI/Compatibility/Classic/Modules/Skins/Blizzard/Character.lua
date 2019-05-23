@@ -134,9 +134,13 @@ local function LoadSkin()
 	ColorItemBorder()
 
 	-- Pet Frame
+	PetNameText:ClearAllPoints()
+	PetNameText:SetPoint("TOP", CharacterFrame.backdrop, "TOP", 0, -4)
+
 	PetPaperDollFrame:StripTextures()
 	
-	T.SkinTab(PetPaperDollCloseButton)
+	PetPaperDollCloseButton:StripTextures()
+	PetPaperDollCloseButton:SkinButton()
 
 	T.SkinRotateButton(PetModelFrameRotateLeftButton)
 	PetModelFrameRotateLeftButton:ClearAllPoints()

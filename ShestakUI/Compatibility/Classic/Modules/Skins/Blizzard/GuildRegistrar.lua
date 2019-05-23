@@ -24,6 +24,9 @@ local function LoadSkin()
 
 	T.SkinCloseButton(GuildRegistrarFrameCloseButton, GuildRegistrarFrame.backdrop)
 
+	PetitionFrameNpcNameText:ClearAllPoints()
+	PetitionFrameNpcNameText:SetPoint("TOP", GuildRegistrarFrame.backdrop, "TOP", 0, -6)
+
 	GuildRegistrarFrameEditBox:StripTextures(true)
 	T.SkinEditBox(GuildRegistrarFrameEditBox, nil, GuildRegistrarFrameEditBox:GetHeight() - 15)
 
