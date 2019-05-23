@@ -264,6 +264,10 @@ end
 ----------------------------------------------------------------------------------------
 --	Default position of ShestakUI unitframes
 ----------------------------------------------------------------------------------------
+-- Temporary
+local BuggedSecureGroupHeaders = true
+if BuggedSecureGroupHeaders then return end
+
 oUF:Factory(function(self)
 	if SavedOptions == nil or SavedOptions.RaidLayout ~= "DPS" then return end
 
