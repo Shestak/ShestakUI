@@ -739,7 +739,7 @@ GetAverageItemLevel = _G.GetAverageItemLevel or function()
 
 	if total < 1 or itn < 1 then return 0 end
 
-	return floor(total / itn)
+	return floor(total / itn), floor(total / itn)
 end
 
 ----------------------------------------------------------------------------------------

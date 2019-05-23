@@ -445,7 +445,11 @@ if durability.enabled then
 				local avgItemLevel, avgItemLevelEquipped = GetAverageItemLevel()
 				avgItemLevel = floor(avgItemLevel)
 				avgItemLevelEquipped = floor(avgItemLevelEquipped)
-				GameTooltip:AddDoubleLine(DURABILITY, STAT_AVERAGE_ITEM_LEVEL..": "..avgItemLevelEquipped.." / "..avgItemLevel, tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
+				if not T.classic then
+					GameTooltip:AddDoubleLine(DURABILITY, STAT_AVERAGE_ITEM_LEVEL..": "..avgItemLevelEquipped.." / "..avgItemLevel, tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
+				else
+					GameTooltip:AddDoubleLine(DURABILITY, STAT_AVERAGE_ITEM_LEVEL..": "..avgItemLevelEquipped, tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
+				end
 			else
 				GameTooltip:AddLine(DURABILITY, tthead.r, tthead.g, tthead.b)
 			end
