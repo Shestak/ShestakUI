@@ -730,32 +730,38 @@ function Stuffing:CreateBagFrame(w)
 	end
 
 	if w == "Bank" then
-		-- Reagent button
-		f.b_reagent = CreateFrame("Button", "StuffingReagentButton"..w, f)
-		f.b_reagent:SetSize(105, 20)
-		f.b_reagent:SetPoint("TOPLEFT", 10, -4)
-		f.b_reagent:RegisterForClicks("AnyUp")
-		f.b_reagent:SkinButton()
-		f.b_reagent:SetScript("OnClick", function()
-			BankFrame_ShowPanel(BANK_PANELS[2].name)
-			PlaySound(SOUNDKIT.IG_BACKPACK_OPEN)
-			if not ReagentBankFrame.isMade then
-				CreateReagentContainer()
-				ReagentBankFrame.isMade = true
-			else
-				_G["StuffingFrameReagent"]:Show()
-			end
-			_G["StuffingFrameBank"]:SetAlpha(0)
-		end)
-		f.b_reagent:FontString("text", C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
-		f.b_reagent.text:SetPoint("CENTER")
-		f.b_reagent.text:SetText(REAGENT_BANK)
-		f.b_reagent:SetFontString(f.b_reagent.text)
+		if not T.classic then
+			-- Reagent button
+			f.b_reagent = CreateFrame("Button", "StuffingReagentButton"..w, f)
+			f.b_reagent:SetSize(105, 20)
+			f.b_reagent:SetPoint("TOPLEFT", 10, -4)
+			f.b_reagent:RegisterForClicks("AnyUp")
+			f.b_reagent:SkinButton()
+			f.b_reagent:SetScript("OnClick", function()
+				BankFrame_ShowPanel(BANK_PANELS[2].name)
+				PlaySound(SOUNDKIT.IG_BACKPACK_OPEN)
+				if not ReagentBankFrame.isMade then
+					CreateReagentContainer()
+					ReagentBankFrame.isMade = true
+				else
+					_G["StuffingFrameReagent"]:Show()
+				end
+				_G["StuffingFrameBank"]:SetAlpha(0)
+			end)
+			f.b_reagent:FontString("text", C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
+			f.b_reagent.text:SetPoint("CENTER")
+			f.b_reagent.text:SetText(REAGENT_BANK)
+			f.b_reagent:SetFontString(f.b_reagent.text)
+		end
 
 		-- Buy button
 		f.b_purchase = CreateFrame("Button", "StuffingPurchaseButton"..w, f)
 		f.b_purchase:SetSize(80, 20)
-		f.b_purchase:SetPoint("TOPLEFT", f.b_reagent, "TOPRIGHT", 3, 0)
+		if not T.classic then
+			f.b_purchase:SetPoint("TOPLEFT", f.b_reagent, "TOPRIGHT", 3, 0)
+		else
+			f.b_purchase:SetPoint("TOPLEFT", 10, -4)
+		end
 		f.b_purchase:RegisterForClicks("AnyUp")
 		f.b_purchase:SkinButton()
 		f.b_purchase:SetScript("OnClick", function(self) StaticPopup_Show("BUY_BANK_SLOT") end)
