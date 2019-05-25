@@ -156,7 +156,10 @@ end
 
 -- WorldStateScoreList
 hooksecurefunc("WorldStateScoreFrame_Update", function()
-	local inArena = IsActiveBattlefieldArena()
+	local inArena
+	if not T.classic then
+		inArena = IsActiveBattlefieldArena()
+	end
 	local offset = FauxScrollFrame_GetOffset(WorldStateScoreScrollFrame)
 
 	for i = 1, GetNumBattlefieldScores() do
