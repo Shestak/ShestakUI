@@ -235,5 +235,6 @@ OnLogon:SetScript("OnEvent", function(self, event)
 	if C.general.welcome_message == true then
 		print("|cffffff00"..L_WELCOME_LINE_1..T.version.." "..T.client..", "..T.name..".|r")
 		print("|cffffff00"..L_WELCOME_LINE_2_1.." |cffffff00"..L_WELCOME_LINE_2_2.."|r")
+		print("|cffffff00Please note that party & raid frames are currently disabled in this build due to a Blizzard bug. Using default party & raid frames for now.|r")
 	end
 end)
