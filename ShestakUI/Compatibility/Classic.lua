@@ -105,7 +105,7 @@ UnitCastingInfo = _G.UnitCastingInfo or function(unit)
 end
 
 UnitChannelInfo = _G.UnitChannelInfo or function(unit)
-	assert(type(unit) == "string", "Usage: UnitCastingInfo(\"unit\")")
+	assert(type(unit) == "string", "Usage: UnitChannelInfo(\"unit\")")
 
 	if not UnitExists(unit) then return end
 
