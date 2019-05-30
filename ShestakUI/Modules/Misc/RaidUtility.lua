@@ -47,7 +47,7 @@ RaidUtilityShowButton:SetScript("OnMouseUp", function(self, button)
 		if CheckRaidStatus() then
 			DoReadyCheck()
 		end
-	elseif button == "MiddleButton" then
+	elseif not T.classic and button == "MiddleButton" then
 		if CheckRaidStatus() then
 			InitiateRolePoll()
 		end
@@ -79,23 +79,25 @@ RaidUtilityConvertButton:SetScript("OnMouseUp", function(self)
 end)
 
 -- Role Check button
-CreateButton("RaidUtilityRoleButton", RaidUtilityPanel, "UIPanelButtonTemplate", RaidUtilityPanel:GetWidth() * 0.8, 18, "TOP", RaidUtilityConvertButton, "BOTTOM", 0, -5, ROLE_POLL)
-RaidUtilityRoleButton:SetScript("OnMouseUp", function(self) InitiateRolePoll() end)
+if not T.classic then
+	CreateButton("RaidUtilityRoleButton", RaidUtilityPanel, "UIPanelButtonTemplate", RaidUtilityPanel:GetWidth() * 0.8, 18, "TOP", RaidUtilityConvertButton, "BOTTOM", 0, -5, ROLE_POLL)
+	RaidUtilityRoleButton:SetScript("OnMouseUp", function(self) InitiateRolePoll() end)
+end
 
 -- MainTank button
-CreateButton("RaidUtilityMainTankButton", RaidUtilityPanel, "UIPanelButtonTemplate, SecureActionButtonTemplate", (RaidUtilityDisbandButton:GetWidth() / 2) - 2, 18, "TOPLEFT", RaidUtilityRoleButton, "BOTTOMLEFT", 0, -5, TANK)
+CreateButton("RaidUtilityMainTankButton", RaidUtilityPanel, "UIPanelButtonTemplate, SecureActionButtonTemplate", (RaidUtilityDisbandButton:GetWidth() / 2) - 2, 18, "TOPLEFT", RaidUtilityRoleButton or RaidUtilityConvertButton, "BOTTOMLEFT", 0, -5, TANK)
 RaidUtilityMainTankButton:SetAttribute("type", "maintank")
 RaidUtilityMainTankButton:SetAttribute("unit", "target")
 RaidUtilityMainTankButton:SetAttribute("action", "toggle")
 
 -- MainAssist button
-CreateButton("RaidUtilityMainAssistButton", RaidUtilityPanel, "UIPanelButtonTemplate, SecureActionButtonTemplate", (RaidUtilityDisbandButton:GetWidth() / 2) - 2, 18, "TOPRIGHT", RaidUtilityRoleButton, "BOTTOMRIGHT", 0, -5, MAINASSIST)
+CreateButton("RaidUtilityMainAssistButton", RaidUtilityPanel, "UIPanelButtonTemplate, SecureActionButtonTemplate", (RaidUtilityDisbandButton:GetWidth() / 2) - 2, 18, "TOPRIGHT", RaidUtilityRoleButton or RaidUtilityConvertButton, "BOTTOMRIGHT", 0, -5, MAINASSIST)
 RaidUtilityMainAssistButton:SetAttribute("type", "mainassist")
 RaidUtilityMainAssistButton:SetAttribute("unit", "target")
 RaidUtilityMainAssistButton:SetAttribute("action", "toggle")
 
 -- Ready Check button
-CreateButton("RaidUtilityReadyCheckButton", RaidUtilityPanel, "UIPanelButtonTemplate", RaidUtilityRoleButton:GetWidth() * 0.75, 18, "TOPLEFT", RaidUtilityMainTankButton, "BOTTOMLEFT", 0, -5, READY_CHECK)
+CreateButton("RaidUtilityReadyCheckButton", RaidUtilityPanel, "UIPanelButtonTemplate", (RaidUtilityPanel:GetWidth() * 0.8) * 0.75, 18, "TOPLEFT", RaidUtilityMainTankButton, "BOTTOMLEFT", 0, -5, READY_CHECK)
 RaidUtilityReadyCheckButton:SetScript("OnMouseUp", function(self) DoReadyCheck() end)
 
 -- World Marker button
@@ -113,7 +115,7 @@ if not T.classic then
 end
 
 -- Raid Control Panel
-CreateButton("RaidUtilityRaidControlButton", RaidUtilityPanel, "UIPanelButtonTemplate", RaidUtilityRoleButton:GetWidth(), 18, "TOPLEFT", RaidUtilityReadyCheckButton, "BOTTOMLEFT", 0, -5, RAID_CONTROL)
+CreateButton("RaidUtilityRaidControlButton", RaidUtilityPanel, "UIPanelButtonTemplate", (RaidUtilityPanel:GetWidth() * 0.8), 18, "TOPLEFT", RaidUtilityReadyCheckButton, "BOTTOMLEFT", 0, -5, RAID_CONTROL)
 RaidUtilityRaidControlButton:SetScript("OnMouseUp", function(self)
 	ToggleFriendsFrame(4)
 end)
