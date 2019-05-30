@@ -61,7 +61,7 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self, ...)
 			ail = GetAiL(unit)
 			d = GetAiL(unit) - GetAiL("player")
 			r, gb = GetAiLColor(ail)
-			ClearInspectPlayer(unit)
+			-- ClearInspectPlayer(unit) -- Seems to cause issues in Classic
 			if unit == "player" then
 				GameTooltip:AddLine(format("|cfffed100"..STAT_AVERAGE_ITEM_LEVEL..":|r "..ail), r, gb, gb)
 			else
