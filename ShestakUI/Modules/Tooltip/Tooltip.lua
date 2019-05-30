@@ -224,6 +224,14 @@ if C.tooltip.health_value == true then
 		local _, unit = GameTooltip:GetUnit()
 		if unit then
 			min, max = UnitHealth(unit), UnitHealthMax(unit)
+			local hpRMH, maxhpRMH
+			if T.classic and IsAddOnLoaded("RealMobHealth") then
+				hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+
+				if hpRMH and maxhpRMH then
+					min, max = hpRMH, maxhpRMH
+				end
+			end
 			if not self.text then
 				self.text = self:CreateFontString(nil, "OVERLAY", "Tooltip_Med")
 				self.text:SetPoint("CENTER", GameTooltipStatusBar, 0, 1.5)
