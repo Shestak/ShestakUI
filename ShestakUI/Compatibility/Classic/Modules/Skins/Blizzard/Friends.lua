@@ -32,6 +32,9 @@ local function LoadSkin()
 		"GuildFrameGuildStatusColumnHeader2",
 		"GuildFrameGuildStatusColumnHeader3",
 		"GuildFrameGuildStatusColumnHeader4",
+		"GuildMemberDetailFrame",
+		"GuildMemberNoteBackground",
+		"GuildMemberOfficerNoteBackground",
 		-- "LFRQueueFrameListInset",
 		-- "LFRQueueFrameRoleInset",
 		-- "LFRQueueFrameCommentInset",
@@ -77,6 +80,8 @@ local function LoadSkin()
 		"GuildFrameGuildInformationButton",
 		"GuildFrameAddMemberButton",
 		"GuildFrameControlButton",
+		"GuildMemberRemoveButton",
+		"GuildMemberGroupInviteButton",
 		"ScrollOfResurrectionSelectionFrameAcceptButton",
 		"ScrollOfResurrectionSelectionFrameCancelButton",
 		"ScrollOfResurrectionFrameAcceptButton",
@@ -114,6 +119,7 @@ local function LoadSkin()
 	FriendsFrameSendMessageButton:SetPoint("BOTTOMRIGHT", FriendsFrame, "BOTTOMRIGHT", -4, 4)
 	FriendsFrameIgnorePlayerButton:SetPoint("BOTTOMLEFT", FriendsFrame, "BOTTOMLEFT", 4, 4)
 	FriendsFrameUnsquelchButton:SetPoint("BOTTOMRIGHT", FriendsFrame, "BOTTOMRIGHT", -4, 4)
+	GuildFrameLFGButton:SetPoint("TOPRIGHT", GuildFrame, "TOPRIGHT", -8, -36)
 
 	-- Resize Buttons
 	WhoFrameWhoButton:SetSize(WhoFrameWhoButton:GetWidth() + 7, WhoFrameWhoButton:GetHeight())
@@ -164,6 +170,18 @@ local function LoadSkin()
 	GuildListScrollFrameScrollBar:SetPoint("TOPRIGHT", GuildListScrollFrame.backdrop, -6, 0)
 
 	-- GuildFrameGuildListToggleButton:SkinButton()
+
+	GuildMemberDetailFrame:CreateBackdrop("Transparent")
+
+	T.SkinCloseButton(GuildMemberDetailCloseButton, GuildMemberDetailCloseButton.backdrop)
+
+	GuildMemberNoteBackground:CreateBackdrop("Overlay")
+	GuildMemberNoteBackground.backdrop:SetPoint("TOPLEFT", -5, -2)
+	GuildMemberNoteBackground.backdrop:SetPoint("BOTTOMRIGHT", 7, 3)
+
+	GuildMemberOfficerNoteBackground:CreateBackdrop("Overlay")
+	GuildMemberOfficerNoteBackground.backdrop:SetPoint("TOPLEFT", -5, -2)
+	GuildMemberOfficerNoteBackground.backdrop:SetPoint("BOTTOMRIGHT", 7, 3)
 
 	-- BNet Frame
 	FriendsFrameBroadcastInput:CreateBackdrop("Overlay")
