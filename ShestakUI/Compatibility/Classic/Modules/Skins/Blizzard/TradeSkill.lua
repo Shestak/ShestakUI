@@ -67,10 +67,12 @@ local function LoadSkin()
 	T.SkinDropDownBox(TradeSkillSubClassDropDown, 160)
 	TradeSkillSubClassDropDown:SetPoint("RIGHT", TradeSkillInvSlotDropDown, "LEFT", 10, 0)
 
+	TradeSkillCancelButton:SetWidth(75)
 	TradeSkillCancelButton:ClearAllPoints()
 	TradeSkillCancelButton:SetPoint("TOPRIGHT", TradeSkillDetailScrollFrame, "BOTTOMRIGHT", 19, -3)
 	TradeSkillCancelButton:SkinButton()
 
+	TradeSkillCreateButton:SetWidth(75)
 	TradeSkillCreateButton:ClearAllPoints()
 	TradeSkillCreateButton:SetPoint("TOPRIGHT", TradeSkillCancelButton, "TOPLEFT", -3, 0)
 	TradeSkillCreateButton:SkinButton()
@@ -83,9 +85,10 @@ local function LoadSkin()
 
 	T.SkinEditBox(TradeSkillInputBox)
 	TradeSkillInputBox:SetSize(40, 16)
-	TradeSkillInputBox:SetPoint("LEFT", TradeSkillDecrementButton, "RIGHT", 6, 0)
+	TradeSkillInputBox:SetPoint("LEFT", TradeSkillDecrementButton, "RIGHT", 4, 0)
 
 	T.SkinNextPrevButton(TradeSkillIncrementButton)
+	TradeSkillIncrementButton:SetPoint("LEFT", TradeSkillInputBox, "RIGHT", 4, 0)
 
 	TradeSkillSkillIcon:StripTextures()
 	TradeSkillSkillIcon:SetTemplate("Default")

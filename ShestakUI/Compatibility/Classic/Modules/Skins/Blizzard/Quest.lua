@@ -9,8 +9,8 @@ local function LoadSkin()
 	QuestFrame.backdrop:SetPoint("TOPLEFT", 10, -12)
 	QuestFrame.backdrop:SetPoint("BOTTOMRIGHT", -32, 76)
 
-	QuestNpcNameFrame:ClearAllPoints()
-	QuestNpcNameFrame:SetPoint("TOP", QuestFrame.backdrop, "TOP", 0, -6)
+	QuestFrameNpcNameText:ClearAllPoints()
+	QuestFrameNpcNameText:SetPoint("TOP", QuestFrame.backdrop, "TOP", 0, -6)
 
 	T.SkinCloseButton(QuestFrameCloseButton, QuestFrame.backdrop)
 
