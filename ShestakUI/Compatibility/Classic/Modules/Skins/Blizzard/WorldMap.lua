@@ -21,6 +21,13 @@ local function LoadSkin()
 
 	T.SkinCloseButton(WorldMapFrameCloseButton, WorldMapFrame.backdrop)
 
+	if Questie_Toggle then
+		Questie_Toggle:SkinButton()
+		Questie_Toggle:ClearAllPoints()
+		Questie_Toggle:SetPoint("RIGHT", WorldMapContinentDropDown, "LEFT", 17, 3)
+		Questie_Toggle:SetHeight(22)
+	end
+
 	WorldMapFrame:RegisterEvent("PLAYER_LOGIN")
 	WorldMapFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
 	WorldMapFrame:RegisterEvent("PLAYER_REGEN_DISABLED")
