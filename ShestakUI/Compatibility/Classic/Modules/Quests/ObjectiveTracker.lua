@@ -8,6 +8,7 @@ local ObjectiveTracker = CreateFrame("Frame", "ObjectiveTrackerAnchor", UIParent
 ObjectiveTracker:SetPoint(unpack(C.position.quest))
 ObjectiveTracker:SetHeight(150)
 ObjectiveTracker:SetWidth(224)
+ObjectiveTracker:SetFrameStrata("LOW")
 
 local ClickFrames = {}
 
