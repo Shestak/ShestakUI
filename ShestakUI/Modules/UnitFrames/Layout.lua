@@ -803,7 +803,7 @@ local function Shared(self, unit)
 		end
 
 		if unit == "target" then
-			self.Auras = CreateFrame("Frame", self:GetName().."Auras", self)
+			self.Auras = CreateFrame("Frame", self:GetName().."_Auras", self)
 			self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5)
 			self.Auras.initialAnchor = "BOTTOMLEFT"
 			self.Auras["growth-x"] = "RIGHT"
@@ -1144,7 +1144,7 @@ local function Shared(self, unit)
 		self:Tag(self.AlternativePower.text, "[AltPower]")
 
 		if C.aura.boss_buffs == true then
-			self.Auras = CreateFrame("Frame", self:GetName().."_AuraBossBuff", self)
+			self.Auras = CreateFrame("Frame", self:GetName().."_Auras", self)
 			if C.unitframe.boss_on_right == true then
 				self.Auras:SetPoint("RIGHT", self, "LEFT", -5, 0)
 				self.Auras.initialAnchor = "RIGHT"
@@ -1157,7 +1157,7 @@ local function Shared(self, unit)
 			self.Auras.numDebuffs = C.unitframe.boss_debuffs
 			self.Auras.numBuffs = C.unitframe.boss_buffs
 			self.Auras:SetHeight(31)
-			self.Auras:SetWidth(87)
+			self.Auras:SetWidth(280)
 			self.Auras.spacing = T.Scale(3)
 			self.Auras.size = T.Scale(31)
 			self.Auras.gap = true

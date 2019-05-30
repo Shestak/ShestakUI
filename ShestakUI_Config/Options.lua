@@ -580,7 +580,7 @@ do
 	local arena_on_right = ns.CreateCheckBox(parent, "arena_on_right", L_GUI_UF_ARENA_RIGHT)
 	arena_on_right:SetPoint("LEFT", show_arena, "RIGHT", 248, 0)
 
-	local boss_debuffs = ns.CreateNumberSlider(parent, "boss_debuffs", nil, nil, 0, 3, 1, true, L_GUI_UF_BOSS_DEBUFFS, L_GUI_UF_BOSS_DEBUFFS_DESC)
+	local boss_debuffs = ns.CreateNumberSlider(parent, "boss_debuffs", nil, nil, 0, 5, 1, true, L_GUI_UF_BOSS_DEBUFFS, L_GUI_UF_BOSS_DEBUFFS_DESC)
 	boss_debuffs:SetPoint("TOPLEFT", show_arena, "BOTTOMLEFT", 0, -20)
 
 	local boss_buffs = ns.CreateNumberSlider(parent, "boss_buffs", nil, nil, 0, 3, 1, true, L_GUI_UF_BOSS_BUFFS, L_GUI_UF_BOSS_BUFFS_DESC)
