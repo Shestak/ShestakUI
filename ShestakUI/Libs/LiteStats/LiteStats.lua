@@ -258,7 +258,12 @@ if latency.enabled then
 		},
 		OnEnter = function(self)
 			local _, _, latencyHome, latencyWorld = GetNetStats()
-			local latency = format(MAINMENUBAR_LATENCY_LABEL, latencyHome, latencyWorld)
+			local latency
+			if not T.classic then -- For some reason formatting the localized string directly isn't working in Classic
+				latency = format(MAINMENUBAR_LATENCY_LABEL, latencyHome, latencyWorld)
+			else
+				latency = format("Latency:\n%.0f ms (home)\n%.0f ms (world)", latencyHome, latencyWorld)
+			end
 			GameTooltip:SetOwner(self, "ANCHOR_NONE")
 			GameTooltip:ClearAllPoints()
 			GameTooltip:SetPoint(modules.Latency.tip_anchor, modules.Latency.tip_frame, modules.Latency.tip_x, modules.Latency.tip_y)
