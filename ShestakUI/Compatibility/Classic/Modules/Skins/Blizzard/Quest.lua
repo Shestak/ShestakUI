@@ -95,6 +95,31 @@ local function LoadSkin()
 	QuestInfoRewardsFrame.ItemChooseText:SetTextColor(1, 1, 1)
 	QuestInfoRewardsFrame.ItemReceiveText:SetTextColor(1, 1, 1)
 
+	local function UpdateQuestRewards()
+		local rewardsFrame = QuestInfoFrame.rewardsFrame
+		local rewardButtons = rewardsFrame.RewardButtons
+		for i = 1, #rewardButtons do
+			local item = _G["QuestInfoRewardsFrameQuestInfoItem"..i]
+			local icon = _G["QuestInfoRewardsFrameQuestInfoItem"..i.."IconTexture"]
+			local count = _G["QuestInfoRewardsFrameQuestInfoItem"..i.."Count"]
+
+			-- item:StripTextures()
+			item:SetTemplate("Default")
+			item:StyleButton()
+			item:SetSize(143, 40)
+			item:SetFrameLevel(item:GetFrameLevel() + 2)
+
+			icon:SetSize(32, 32)
+			icon:SetDrawLayer("OVERLAY")
+			icon:SetPoint("TOPLEFT", 4, -4)
+			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+			-- count:SetParent(item.backdrop)
+			count:SetDrawLayer("OVERLAY")
+		end
+	end
+	QuestInfoRewardsFrame:HookScript("OnShow", UpdateQuestRewards)
+
 	for i = 1, 6 do
 		local button = _G["QuestProgressItem"..i]
 		local texture = _G["QuestProgressItem"..i.."IconTexture"]

@@ -22,6 +22,16 @@ local function LoadSkin()
 		"FriendsFrameInset",
 		"WhoFrameListInset",
 		"WhoFrameEditBoxInset",
+		"GuildFrame",
+		"GuildFrameLFGFrame",
+		"GuildFrameColumnHeader1",
+		"GuildFrameColumnHeader2",
+		"GuildFrameColumnHeader3",
+		"GuildFrameColumnHeader4",
+		"GuildFrameGuildStatusColumnHeader1",
+		"GuildFrameGuildStatusColumnHeader2",
+		"GuildFrameGuildStatusColumnHeader3",
+		"GuildFrameGuildStatusColumnHeader4",
 		-- "LFRQueueFrameListInset",
 		-- "LFRQueueFrameRoleInset",
 		-- "LFRQueueFrameCommentInset",
@@ -33,7 +43,7 @@ local function LoadSkin()
 		"BattleTagInviteFrame",
 		"RecruitAFriendNoteFrame",
 		-- "QuickJoinScrollFrame",
-		-- "QuickJoinRoleSelectionFrame"
+		-- "QuickJoinRoleSelectionFrame",
 	}
 
 	for _, object in pairs(StripAllTextures) do
@@ -64,13 +74,16 @@ local function LoadSkin()
 		"AddFriendInfoFrameContinueButton",
 		"FriendsFriendsCloseButton",
 		"FriendsFriendsSendRequestButton",
+		"GuildFrameGuildInformationButton",
+		"GuildFrameAddMemberButton",
+		"GuildFrameControlButton",
 		"ScrollOfResurrectionSelectionFrameAcceptButton",
 		"ScrollOfResurrectionSelectionFrameCancelButton",
 		"ScrollOfResurrectionFrameAcceptButton",
 		"ScrollOfResurrectionFrameCancelButton",
 		"RecruitAFriendFrameSendButton",
 		"RaidFrameRaidInfoButton",
-		"RaidFrameConvertToRaidButton"
+		"RaidFrameConvertToRaidButton",
 	}
 
 	for _, button in pairs(buttons) do
@@ -82,13 +95,15 @@ local function LoadSkin()
 		"FriendsFrameIgnoreScrollFrameScrollBar",
 		"FriendsFriendsScrollFrameScrollBar",
 		"WhoListScrollFrameScrollBar",
-		-- "QuickJoinScrollFrameScrollBar"
+		"GuildListScrollFrameScrollBar",
+		-- "QuickJoinScrollFrameScrollBar",
 	}
 
 	for _, scrollbar in pairs(scrollbars) do
 		T.SkinScrollBar(_G[scrollbar])
 	end
 
+	T.SkinCheckBox(GuildFrameLFGButton)
 	T.SkinCheckBox(RaidFrameAllAssistCheckButton)
 
 	-- Reposition buttons
@@ -139,6 +154,16 @@ local function LoadSkin()
 
 	WhoListScrollFrame:ClearAllPoints()
 	WhoListScrollFrame:SetPoint("TOPRIGHT", WhoFrameListInset, -25, 0)
+
+	-- Guild Frame
+	GuildListScrollFrame:StripTextures()
+	GuildListScrollFrame:CreateBackdrop("Overlay")
+	GuildListScrollFrame.backdrop:SetPoint("TOPLEFT", -2, 4)
+	GuildListScrollFrame.backdrop:SetPoint("BOTTOMRIGHT", 25, -4)
+
+	GuildListScrollFrameScrollBar:SetPoint("TOPRIGHT", GuildListScrollFrame.backdrop, -6, 0)
+
+	-- GuildFrameGuildListToggleButton:SkinButton()
 
 	-- BNet Frame
 	FriendsFrameBroadcastInput:CreateBackdrop("Overlay")
