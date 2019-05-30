@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if not T.classic or C.skins.blizzard_frames ~= true then return else return end -- incomplete
+if not T.classic or C.skins.blizzard_frames ~= true then return end -- incomplete
 
 ----------------------------------------------------------------------------------------
 --	QuestLog skin
@@ -20,12 +20,12 @@ local function LoadSkin()
 		"QuestLogFrameAbandonButton",
 		"QuestFrameExitButton",
 		"QuestFramePushQuestButton",
-		"QuestFrameCompleteButton",
-		"QuestFrameGoodbyeButton",
-		"QuestFrameCompleteQuestButton",
-		"QuestFrameCancelButton",
-		"QuestFrameAcceptButton",
-		"QuestFrameDeclineButton"
+		-- "QuestFrameCompleteButton",
+		-- "QuestFrameGoodbyeButton",
+		-- "QuestFrameCompleteQuestButton",
+		-- "QuestFrameCancelButton",
+		-- "QuestFrameAcceptButton",
+		-- "QuestFrameDeclineButton"
 	}
 
 	for _, button in pairs(QuestButtons) do
@@ -176,22 +176,22 @@ local function LoadSkin()
 		local titleTextColor = {1, 0.80, 0.10}
 		local textColor = {1, 1, 1}
 
-		QuestTitleText:SetTextColor(unpack(titleTextColor))
+		-- QuestTitleText:SetTextColor(unpack(titleTextColor))
 		QuestTitleFont:SetTextColor(unpack(titleTextColor))
 		QuestFont:SetTextColor(unpack(textColor))
 		QuestFontNormalSmall:SetTextColor(unpack(textColor))
-		QuestDescription:SetTextColor(unpack(textColor))
-		QuestObjectiveText:SetTextColor(unpack(textColor))
+		-- QuestDescription:SetTextColor(unpack(textColor))
+		-- QuestObjectiveText:SetTextColor(unpack(textColor))
 
-		QuestDetailObjectiveTitleText:SetTextColor(unpack(titleTextColor))
-		QuestDetailRewardTitleText:SetTextColor(unpack(titleTextColor))
-		QuestDetailItemReceiveText:SetTextColor(unpack(textColor))
-		QuestDetailSpellLearnText:SetTextColor(unpack(textColor))
-		QuestDetailItemChooseText:SetTextColor(unpack(textColor))
+		-- QuestDetailObjectiveTitleText:SetTextColor(unpack(titleTextColor))
+		-- QuestDetailRewardTitleText:SetTextColor(unpack(titleTextColor))
+		-- QuestDetailItemReceiveText:SetTextColor(unpack(textColor))
+		-- QuestDetailSpellLearnText:SetTextColor(unpack(textColor))
+		-- QuestDetailItemChooseText:SetTextColor(unpack(textColor))
 
 		QuestLogDescriptionTitle:SetTextColor(unpack(titleTextColor))
 		QuestLogQuestTitle:SetTextColor(unpack(titleTextColor))
-		QuestLogPlayerTitleText:SetTextColor(unpack(titleTextColor))
+		-- QuestLogPlayerTitleText:SetTextColor(unpack(titleTextColor))
 		QuestLogRewardTitleText:SetTextColor(unpack(titleTextColor))
 		QuestLogObjectivesText:SetTextColor(unpack(textColor))
 		QuestLogQuestDescription:SetTextColor(unpack(textColor))
@@ -199,12 +199,12 @@ local function LoadSkin()
 		QuestLogItemReceiveText:SetTextColor(unpack(textColor))
 		QuestLogSpellLearnText:SetTextColor(unpack(textColor))
 
-		QuestRewardRewardTitleText:SetTextColor(unpack(titleTextColor))
-		QuestRewardTitleText:SetTextColor(unpack(titleTextColor))
-		QuestRewardItemChooseText:SetTextColor(unpack(textColor))
-		QuestRewardItemReceiveText:SetTextColor(unpack(textColor))
-		QuestRewardSpellLearnText:SetTextColor(unpack(textColor))
-		QuestRewardText:SetTextColor(unpack(textColor))
+		-- QuestRewardRewardTitleText:SetTextColor(unpack(titleTextColor))
+		-- QuestRewardTitleText:SetTextColor(unpack(titleTextColor))
+		-- QuestRewardItemChooseText:SetTextColor(unpack(textColor))
+		-- QuestRewardItemReceiveText:SetTextColor(unpack(textColor))
+		-- QuestRewardSpellLearnText:SetTextColor(unpack(textColor))
+		-- QuestRewardText:SetTextColor(unpack(textColor))
 
 		if GetQuestLogRequiredMoney() > 0 then
 			if GetQuestLogRequiredMoney() > GetMoney() then
@@ -250,9 +250,11 @@ local function LoadSkin()
 	QuestLogTitleText:ClearAllPoints()
 	QuestLogTitleText:SetPoint("TOP", QuestLogFrame.backdrop, "TOP", 0, -6)
 
+	--[[
 	QuestDetailScrollFrame:SetHeight(400)
 	QuestRewardScrollFrame:SetHeight(400)
 	QuestProgressScrollFrame:SetHeight(400)
+	--]]
 
 	QuestLogListScrollFrame:StripTextures()
 	QuestLogListScrollFrame:CreateBackdrop("Default", true)
@@ -281,6 +283,7 @@ local function LoadSkin()
 	QuestFrameExitButton:SetPoint("BOTTOMRIGHT", -31, 15)
 	QuestFrameExitButton:SetWidth(100)
 
+	--[[
 	QuestFrameAcceptButton:SetPoint("BOTTOMLEFT", 20, 4)
 	QuestFrameDeclineButton:SetPoint("BOTTOMRIGHT", -37, 4)
 	QuestFrameCompleteButton:SetPoint("BOTTOMLEFT", 20, 4)
@@ -289,13 +292,14 @@ local function LoadSkin()
 	QuestFrameCancelButton:SetPoint("BOTTOMRIGHT", -37, 4)
 
 	QuestFrameNpcNameText:SetPoint("CENTER", QuestNpcNameFrame, "CENTER", -1, 0)
+	--]]
 
 	T.SkinScrollBar(QuestLogDetailScrollFrameScrollBar)
-	T.SkinScrollBar(QuestDetailScrollFrameScrollBar)
+	-- T.SkinScrollBar(QuestDetailScrollFrameScrollBar)
 	T.SkinScrollBar(QuestLogListScrollFrameScrollBar)
 	QuestLogListScrollFrameScrollBar:SetPoint("TOPLEFT", QuestLogListScrollFrame, "TOPRIGHT", 5, -16)
-	T.SkinScrollBar(QuestProgressScrollFrameScrollBar)
-	T.SkinScrollBar(QuestRewardScrollFrameScrollBar)
+	-- T.SkinScrollBar(QuestProgressScrollFrameScrollBar)
+	-- T.SkinScrollBar(QuestRewardScrollFrameScrollBar)
 
 	T.SkinCloseButton(QuestFrameCloseButton, QuestFrame.backdrop)
 
@@ -347,6 +351,7 @@ local function LoadSkin()
 		QuestLogListScrollFrame:Show()
 	end)
 
+	--[[
 	for i = 1, MAX_REQUIRED_ITEMS do
 		local item = _G["QuestProgressItem"..i]
 		local icon = _G["QuestProgressItem"..i.."IconTexture"]
@@ -388,10 +393,11 @@ local function LoadSkin()
 			QuestQualityColors(item, name, nil, link)
 		end
 	end)
+	--]]
 
-	QUESTS_DISPLAYED = 25
+	QUESTS_DISPLAYED = 20
 
-	for i = 7, 25 do
+	for i = 7, 20 do
 		local questLogTitle = CreateFrame("Button", "QuestLogTitle"..i, QuestLogFrame, "QuestLogTitleButtonTemplate")
 
 		questLogTitle:SetID(i)
@@ -399,6 +405,7 @@ local function LoadSkin()
 		questLogTitle:SetPoint("TOPLEFT", _G["QuestLogTitle"..i - 1], "BOTTOMLEFT", 0, 1)
 	end
 
+	--[[
 	for i = 1, QUESTS_DISPLAYED do
 		local questLogTitle = _G["QuestLogTitle"..i]
 		local highlight = _G["QuestLogTitle"..i.."Highlight"]
@@ -447,6 +454,7 @@ local function LoadSkin()
 			self:GetNormalTexture():SetTexCoord(0, 0, 0, 0)
  		end
 	end)
+	--]]
 
 	-- Quest Watch
 	hooksecurefunc("QuestWatch_Update", function()

@@ -579,6 +579,7 @@ end
 
 function T.SkinMaxMinFrame(frame, point)
 	frame:SetSize(18, 18)
+	frame:StripTextures()
 
 	if point then
 		frame:SetPoint("RIGHT", point, "LEFT", -2, 0)

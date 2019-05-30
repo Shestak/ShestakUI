@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if not T.classic or C.skins.blizzard_frames ~= true then return else return end -- incomplete
+if not T.classic or C.skins.blizzard_frames ~= true then return end  -- incomplete
 
 ----------------------------------------------------------------------------------------
 --	Quest skin
@@ -9,15 +9,23 @@ local function LoadSkin()
 	QuestFrame.backdrop:SetPoint("TOPLEFT", 10, -12)
 	QuestFrame.backdrop:SetPoint("BOTTOMRIGHT", -32, 76)
 
-	QuestDetailScrollFrame:SetHeight(QuestFrame.backdrop:GetHeight() / 1.3)
-	QuestRewardScrollFrame:SetHeight(QuestFrame.backdrop:GetHeight() / 1.3)
-	QuestProgressScrollFrame:SetHeight(QuestFrame.backdrop:GetHeight() / 1.3)
-	QuestGreetingScrollFrame:SetHeight(QuestFrame.backdrop:GetHeight() / 1.3)
-
 	QuestNpcNameFrame:ClearAllPoints()
 	QuestNpcNameFrame:SetPoint("TOP", QuestFrame.backdrop, "TOP", 0, -6)
 
 	T.SkinCloseButton(QuestFrameCloseButton, QuestFrame.backdrop)
+
+	local ScrollFrames = {
+		"QuestDetailScrollFrame",
+		"QuestRewardScrollFrame",
+		"QuestProgressScrollFrame",
+		"QuestGreetingScrollFrame",
+	}
+
+	for _, object in pairs(ScrollFrames) do
+		_G[object]:ClearAllPoints()
+		_G[object]:SetPoint("TOP", QuestFrame.backdrop, -6, -30)
+		_G[object]:SetHeight(362)
+	end
 
 	local QuestStrip = {
 		"QuestFrame",
@@ -35,6 +43,11 @@ local function LoadSkin()
 	for _, object in pairs(QuestStrip) do
 		_G[object]:StripTextures(true)
 	end
+
+	QuestFrameDetailPanel:SetPoint("TOPLEFT", -5, -12)
+	QuestFrameDetailPanel:SetPoint("BOTTOMRIGHT", 0, 76)
+	QuestFrameProgressPanel:SetPoint("TOPLEFT", -5, -12)
+	QuestFrameProgressPanel:SetPoint("BOTTOMRIGHT", 0, 76)
 
 	local LeftQuestButtons = {
 		"QuestFrameAcceptButton",
@@ -76,9 +89,11 @@ local function LoadSkin()
 	QuestInfoObjectivesHeader:SetTextColor(1, 0.8, 0)
 	QuestInfoObjectivesHeader:SetShadowColor(0, 0, 0)
 	QuestInfoObjectivesText:SetTextColor(1, 1, 1)
+	QuestInfoRewardText:SetTextColor(1, 1, 1)
 	QuestInfoRewardsFrame.Header:SetTextColor(1, 0.8, 0)
 	QuestInfoRewardsFrame.Header:SetShadowColor(0, 0, 0)
 	QuestInfoRewardsFrame.ItemChooseText:SetTextColor(1, 1, 1)
+	QuestInfoRewardsFrame.ItemReceiveText:SetTextColor(1, 1, 1)
 
 	for i = 1, 6 do
 		local button = _G["QuestProgressItem"..i]
@@ -116,13 +131,11 @@ local function LoadSkin()
 
 		for i = 1, MAX_NUM_QUESTS do
 			local button = _G["QuestTitleButton"..i]
-			button:SetTextColor(1, 1, 0)
-		end
 
-		for button in QuestFrameGreetingPanel.titleButtonPool:EnumerateActive() do
-			local text = button:GetFontString():GetText()
-			if text and strfind(text, "|cff000000") then
-				button:GetFontString():SetText(gsub(text, "|cff000000", "|cffFFFF00"))
+			if button:GetFontString() then
+				if button:GetFontString():GetText() and button:GetFontString():GetText():find("|cff000000") then
+					button:GetFontString():SetText(string.gsub(button:GetFontString():GetText(), "|cff000000", "|cffFFFF00"))
+				end
 			end
 		end
 	end

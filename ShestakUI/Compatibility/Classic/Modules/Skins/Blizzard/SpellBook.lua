@@ -62,6 +62,10 @@ local function LoadSkin()
 			end
 			_G["SpellButton"..i.."SubSpellName"]:SetTextColor(0.6, 0.6, 0.6)
 			_G["SpellButton"..i.."AutoCastable"]:SetTexture("Interface\\Buttons\\UI-AutoCastableOverlay")
+			_G["SpellButton"..i.."AutoCastable"]:ClearAllPoints()
+			_G["SpellButton"..i.."AutoCastable"]:SetPoint("TOPLEFT", -12, 12)
+			_G["SpellButton"..i.."AutoCastable"]:SetPoint("BOTTOMRIGHT", 14, -14)
+			_G["SpellButton"..i.."AutoCastable"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 		end
 	end
@@ -109,11 +113,21 @@ local function LoadSkin()
 	hooksecurefunc("SpellBookFrame_UpdateSkillLineTabs", SkinSkillLine)
 
 	-- Bottom Tabs
+	SpellBookFrameTabButton1:ClearAllPoints()
+	SpellBookFrameTabButton1:SetPoint("TOPLEFT", SpellBookFrame.backdrop, "BOTTOMLEFT", 2, -2)
 	for i = 1, 3 do
-		T.SkinTab(_G["SpellBookFrameTabButton"..i])
+		local tab = _G["SpellBookFrameTabButton"..i]
+		local lastTab = _G["SpellBookFrameTabButton"..(i-1)]
+		if lastTab then
+			tab:ClearAllPoints()
+			tab:SetPoint("LEFT", lastTab, "RIGHT", -16, 0)
+		end
+		tab:StripTextures()
+		tab:SetNormalTexture("")
+		tab:SetHighlightTexture("")
+		tab:SetSize(tab:GetWidth() * 0.75, 32)
+		T.SkinTab(tab)
 	end
-	_G["SpellBookFrameTabButton1"]:ClearAllPoints()
-	_G["SpellBookFrameTabButton1"]:SetPoint("TOPLEFT", _G["SpellBookFrame"], "BOTTOMLEFT", -5, 1)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

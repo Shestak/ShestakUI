@@ -241,6 +241,11 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		StackSplitFrame.backdrop:SetPoint("TOPLEFT", 5, -5)
 		StackSplitFrame.backdrop:SetPoint("BOTTOMRIGHT", -5, 10)
 
+		if T.classic then
+			StackSplitOkayButton:SkinButton()
+			StackSplitCancelButton:SkinButton()
+		end
+
 		_G["StaticPopup1CloseButton"]:HookScript("OnShow", function(self)
 			self:StripTextures(true)
 			T.SkinCloseButton(self, nil, "-")

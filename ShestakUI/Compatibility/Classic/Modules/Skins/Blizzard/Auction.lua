@@ -29,8 +29,15 @@ local function LoadSkin()
 
 	-- Dress Up Frame
 	AuctionFrame:HookScript("OnShow", function()
+		SideDressUpFrame:StripTextures(true)
+		SideDressUpFrame:SetTemplate("Transparent")
+
 		SideDressUpFrame:ClearAllPoints()
 		SideDressUpFrame:SetPoint("TOPLEFT", AuctionFrame, "TOPRIGHT", 3, 0)
+
+		SideDressUpModelResetButton:SkinButton()
+		T.SkinCloseButton(SideDressUpModelCloseButton)
+		SideDressUpModelCloseButton:SetPoint("TOPRIGHT", 6, 8)
 	end)
 
 	-- WoW Token

@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if not T.classic or C.skins.blizzard_frames ~= true then return else return end -- incomplete
+if not T.classic or C.skins.blizzard_frames ~= true then return end -- incomplete
 
 ----------------------------------------------------------------------------------------
 --	TradeSkillUI skin
@@ -36,7 +36,6 @@ local function LoadSkin()
 	TradeSkillRankFrame:ClearAllPoints()
 	TradeSkillRankFrame:SetPoint("TOP", -10, -38)
 	TradeSkillRankFrame:SetStatusBarTexture(C.media.blank)
-	-- TradeSkillRankFrame:RegisterStatusBar()
 
 	TradeSkillRankFrameSkillName:Hide()
 	TradeSkillRankFrameSkillRank:ClearAllPoints()
@@ -101,28 +100,29 @@ local function LoadSkin()
 	T.SkinCloseButton(TradeSkillFrameCloseButton, TradeSkillFrame.backdrop)
 
 	TradeSkillExpandButtonFrame:StripTextures()
+	TradeSkillCollapseAllButton:SetPoint("LEFT", TradeSkillExpandTabLeft, "RIGHT", -1, 6)
 
-	TradeSkillCollapseAllButton:SetPoint("LEFT", TradeSkillExpandTabLeft, "RIGHT", -8, 5)
-	-- TradeSkillCollapseAllButton:SetNormalTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\PlusMinusButton")
-	TradeSkillCollapseAllButton.SetNormalTexture = T.dummy
-	TradeSkillCollapseAllButton:GetNormalTexture():SetPoint("LEFT", 3, 2)
-	TradeSkillCollapseAllButton:GetNormalTexture():SetSize(15, 15)
+	TradeSkillCollapseAllButtonText:ClearAllPoints()
+	TradeSkillCollapseAllButtonText:SetPoint("LEFT", TradeSkillCollapseAllButton, "RIGHT", 6, 0)
 
-	TradeSkillCollapseAllButton:SetHighlightTexture("")
-	TradeSkillCollapseAllButton.SetHighlightTexture = T.dummy
-
-	-- TradeSkillCollapseAllButton:SetDisabledTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\PlusMinusButton")
-	TradeSkillCollapseAllButton.SetDisabledTexture = T.dummy
-	TradeSkillCollapseAllButton:GetDisabledTexture():SetPoint("LEFT", 3, 2)
-	TradeSkillCollapseAllButton:GetDisabledTexture():SetSize(15, 15)
-	TradeSkillCollapseAllButton:GetDisabledTexture():SetTexCoord(0.045, 0.475, 0.085, 0.925)
-	TradeSkillCollapseAllButton:GetDisabledTexture():SetDesaturated(true)
+	TradeSkillCollapseAllButton:SetSize(14, 14)
+	TradeSkillCollapseAllButton:SetPoint("CENTER")
+	TradeSkillCollapseAllButton:SetHitRectInsets(1, 1, 1, 1)
 
 	hooksecurefunc(TradeSkillCollapseAllButton, "SetNormalTexture", function(self, texture)
-		if strfind(texture, "MinusButton") then
-			self:GetNormalTexture():SetTexCoord(0.545, 0.975, 0.085, 0.925)
-		else
-			self:GetNormalTexture():SetTexCoord(0.045, 0.475, 0.085, 0.925)
+		self:StripTextures()
+		self:SetTemplate("Overlay")
+
+		self.minus = self:CreateTexture(nil, "OVERLAY")
+		self.minus:SetSize(7, 1)
+		self.minus:SetPoint("CENTER")
+		self.minus:SetTexture(C.media.blank)
+
+		if not string.find(texture, "MinusButton") then
+			self.plus = self:CreateTexture(nil, "OVERLAY")
+			self.plus:SetSize(1, 7)
+			self.plus:SetPoint("CENTER")
+			self.plus:SetTexture(C.media.blank)
 		end
 	end)
 
@@ -130,28 +130,52 @@ local function LoadSkin()
 		CreateFrame("Button", "TradeSkillSkill"..i, TradeSkillFrame, "TradeSkillSkillButtonTemplate"):SetPoint("TOPLEFT", _G["TradeSkillSkill"..i - 1], "BOTTOMLEFT")
 	end
 
-	for i = 1, TRADE_SKILLS_DISPLAYED do
-		local button = _G["TradeSkillSkill"..i]
-		local highlight = _G["TradeSkillSkill"..i.."Highlight"]
+	local function UpdateTradeskill()
+		local numSkills = GetNumTradeSkills()
+		local offset = FauxScrollFrame_GetOffset(TradeSkillListScrollFrame)
+		local index, button, highlight, text
 
-		-- button:SetNormalTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\PlusMinusButton")
-		button.SetNormalTexture = T.dummy
-		button:GetNormalTexture():SetSize(14, 14)
-		button:GetNormalTexture():SetPoint("LEFT", 2, 1)
+		for i = 1, TRADE_SKILLS_DISPLAYED do
+			button = _G["TradeSkillSkill"..i]
+			highlight = _G["TradeSkillSkill"..i.."Highlight"]
+			text = _G["TradeSkillSkill"..i.."Text"]
+			index = offset + i
 
-		highlight:SetTexture("")
-		highlight.SetTexture = T.dummy
+			if index <= numSkills then
+				local skillName, skillType, numAvailable, isExpanded = GetTradeSkillInfo(index)
 
-		hooksecurefunc(button, "SetNormalTexture", function(self, texture)
-			if strfind(texture, "MinusButton") then
-				self:GetNormalTexture():SetTexCoord(0.545, 0.975, 0.085, 0.925)
-			elseif strfind(texture, "PlusButton") then
-				self:GetNormalTexture():SetTexCoord(0.045, 0.475, 0.085, 0.925)
-			else
-				self:GetNormalTexture():SetTexCoord(0, 0, 0, 0)
+				if skillType == "header" then
+					button:SetSize(14, 14)
+					button:SetPoint("CENTER")
+					button:SetHitRectInsets(1, 1, 1, 1)
+
+					highlight:SetTexture("")
+					highlight.SetTexture = T.dummy
+
+					text:ClearAllPoints()
+					text:SetPoint("LEFT", button, "RIGHT", 6, 0)
+
+					hooksecurefunc(button, "SetNormalTexture", function(self, texture)
+						self:StripTextures()
+						self:SetTemplate("Overlay")
+
+						self.minus = self:CreateTexture(nil, "OVERLAY")
+						self.minus:SetSize(7, 1)
+						self.minus:SetPoint("CENTER")
+						self.minus:SetTexture(C.media.blank)
+
+						if not string.find(texture, "MinusButton") then
+							self.plus = self:CreateTexture(nil, "OVERLAY")
+							self.plus:SetSize(1, 7)
+							self.plus:SetPoint("CENTER")
+							self.plus:SetTexture(C.media.blank)
+						end
+					end)
+				end
 			end
-		end)
+		end
 	end
+	hooksecurefunc("TradeSkillFrame_Update", UpdateTradeskill)
 
 	for i = 1, MAX_TRADE_SKILL_REAGENTS do
 		local reagent = _G["TradeSkillReagent"..i]
@@ -205,9 +229,10 @@ local function LoadSkin()
 			TradeSkillSkillIcon:SetAlpha(0)
 		end
 
-		local skillLink = GetTradeSkillItemLink(id)
+		--[[
+		local skillLink = GetTradeSkillItemLink(id) -- Causing crashes
 		if skillLink then
-			local _, _, quality = GetItemInfo(match(skillLink, "item:(%d+)"))
+			local _, _, quality = GetItemInfo(string.match(skillLink, "item:(%d+)"))
 			if quality then
 				TradeSkillSkillIcon:SetBackdropBorderColor(GetItemQualityColor(quality))
 				TradeSkillSkillName:SetTextColor(GetItemQualityColor(quality))
@@ -216,6 +241,7 @@ local function LoadSkin()
 				TradeSkillSkillName:SetTextColor(1, 1, 1)
 			end
 		end
+		--]]
 
 		local numReagents = GetTradeSkillNumReagents(id)
 		for i = 1, numReagents, 1 do
@@ -224,9 +250,10 @@ local function LoadSkin()
 			local reagent = _G["TradeSkillReagent"..i]
 			local icon = _G["TradeSkillReagent"..i.."IconTexture"]
 			local name = _G["TradeSkillReagent"..i.."Name"]
+			local count = _G["TradeSkillReagent"..i.."Count"]
 
 			if reagentLink then
-				local _, _, quality = GetItemInfo(match(reagentLink, "item:(%d+)"))
+				local _, _, quality = GetItemInfo(string.match(reagentLink, "item:(%d+)"))
 				if quality then
 					icon.backdrop:SetBackdropBorderColor(GetItemQualityColor(quality))
 					reagent:SetBackdropBorderColor(GetItemQualityColor(quality))
@@ -235,12 +262,15 @@ local function LoadSkin()
 					else
 						name:SetTextColor(GetItemQualityColor(quality))
 					end
+					count:ClearAllPoints()
+					count:SetPoint("BOTTOMLEFT", icon, "BOTTOMLEFT", 0, -1)
 				else
 					reagent:SetBackdropBorderColor(unpack(C.media.border_color))
 					icon.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 				end
 			end
 		end
+		--]]
 	end)
 end
 

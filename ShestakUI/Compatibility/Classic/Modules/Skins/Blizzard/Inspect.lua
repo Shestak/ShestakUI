@@ -15,9 +15,14 @@ local function LoadSkin()
 	InspectNameText:ClearAllPoints()
     InspectNameText:SetPoint("TOP", InspectFrame.backdrop, "TOP", 0, -6)
 
+	InspectFrameTab1:ClearAllPoints()
+	InspectFrameTab1:SetPoint("TOPLEFT", InspectFrame.backdrop, "BOTTOMLEFT", 2, -2)
 	for i = 1, 2 do
 		T.SkinTab(_G["InspectFrameTab"..i])
 	end
+
+	-- Character Frame
+	InspectPaperDollFrame:StripTextures()
 
 	InspectModelFrame:StripTextures()
 	InspectModelFrame:CreateBackdrop("Default")

@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if not T.classic or C.skins.blizzard_frames ~= true then return else return end -- incomplete
+if not T.classic or C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	TrainerUI skin
@@ -23,6 +23,8 @@ local function LoadSkin()
 	ClassTrainerTrainButton:SetPoint("RIGHT", ClassTrainerCancelButton, "LEFT", -2, 0)
 
 	T.SkinDropDownBox(ClassTrainerFrameFilterDropDown)
+	ClassTrainerFrameFilterDropDown:ClearAllPoints()
+	ClassTrainerFrameFilterDropDown:SetPoint("TOPLEFT", ClassTrainerFrame.backdrop, "TOPRIGHT", -182, -56)
 
 	ClassTrainerListScrollFrame:StripTextures()
 	T.SkinScrollBar(ClassTrainerListScrollFrameScrollBar)
@@ -31,22 +33,22 @@ local function LoadSkin()
 	T.SkinScrollBar(ClassTrainerDetailScrollFrameScrollBar)
 
 	ClassTrainerSkillIcon:StripTextures()
-    ClassTrainerSkillIcon:SkinButton()
-    --[[
+	ClassTrainerSkillIcon:SkinButton()
+
 	hooksecurefunc("ClassTrainer_SetSelection", function()
-      HandleIcon(ClassTrainerSkillIcon, ClassTrainerSkillIcon:GetNormalTexture())
-    end, 1)
-	--]]
+		ClassTrainerSkillIcon:GetNormalTexture():ClearAllPoints()
+		ClassTrainerSkillIcon:GetNormalTexture():SetPoint("TOPLEFT", 2, -2)
+		ClassTrainerSkillIcon:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
+		ClassTrainerSkillIcon:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	end)
 
 	ClassTrainerExpandButtonFrame:StripTextures()
-    ClassTrainerCollapseAllButton:StripTextures()
-    -- SkinCollapseButton(ClassTrainerCollapseAllButton, true)
+	ClassTrainerCollapseAllButton:StripTextures()
+	T.SkinExpandOrCollapse(ClassTrainerCollapseAllButton)
 
-    --[[
 	for i = 1, CLASS_TRAINER_SKILLS_DISPLAYED do
-      SkinCollapseButton(_G["ClassTrainerSkill"..i])
-    end
-	--]]
+		T.SkinExpandOrCollapse(_G["ClassTrainerSkill"..i])
+	end
 end
 
 T.SkinFuncs["Blizzard_TrainerUI"] = LoadSkin

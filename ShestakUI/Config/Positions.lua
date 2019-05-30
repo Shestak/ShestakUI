@@ -21,6 +21,7 @@ C["position"] = {
 	["ghost"] = {"BOTTOM", Minimap, "TOP", 0, 5},									-- Ghost frame
 	["uierror"] = {"TOP", UIParent, "TOP", 0, -30},									-- Errors frame
 	["quest"] = {"TOPLEFT", UIParent, "TOPLEFT", 21, -2},							-- Quest log
+	["quest_timer"] = {"BOTTOM", Minimap, "TOP", 0, 64},							-- Quest timer
 	["loot"] = {"TOPLEFT", UIParent, "TOPLEFT", 245, -220},							-- Loot
 	["group_loot"] = {"BOTTOM", UIParent, "BOTTOM", -238, 500},						-- Group roll loot
 	["threat_meter"] = {"BOTTOMLEFT", "ActionBarAnchor", "BOTTOMRIGHT", 7, 16},		-- Threat meter
@@ -79,3 +80,7 @@ C["position"] = {
 		["target_bar"] = {"BOTTOMLEFT", C.unitframe.portrait_enable and "oUF_Target_Portrait" or "oUF_Target", "BOTTOMRIGHT", C.unitframe.portrait_enable and 6 or 9, C.unitframe.portrait_enable and -3 or -41},	-- "T_DE/BUFF_BAR"
 	},
 }
+
+if T.classic then
+	C.position.quest = {"TOPLEFT", UIParent, "TOPLEFT", 21, -36}
+end

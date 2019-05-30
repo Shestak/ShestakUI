@@ -1,32 +1,24 @@
 local T, C, L, _ = unpack(select(2, ...))
-if not T.classic or C.skins.blizzard_frames ~= true then return else return end -- incomplete
+if not T.classic or C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Gossip skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	local frames = {
-		"Quest",
-		"Gossip"
-	}
-
-	local panels = {
-		"Greeting",
-		"Detail",
-		"Progress",
-		"Reward"
-	}
-
 	local buttons = {
-		QuestFrameGreetingGoodbyeButton,
-		GossipFrameGreetingGoodbyeButton,
-		QuestFrameDeclineButton,
-		QuestFrameAcceptButton,
-		QuestFrameGoodbyeButton,
-		QuestFrameCompleteButton,
-		QuestFrameCancelButton,
-		QuestFrameCompleteQuestButton
+		"QuestFrameGreetingGoodbyeButton",
+		"GossipFrameGreetingGoodbyeButton",
+		"QuestFrameDeclineButton",
+		"QuestFrameAcceptButton",
+		"QuestFrameGoodbyeButton",
+		"QuestFrameCompleteButton",
+		"QuestFrameCancelButton",
+		"QuestFrameCompleteQuestButton"
 	}
+
+	for i = 1, #buttons do
+		_G[buttons[i]]:SkinButton(true)
+	end
 
 	local StripAllTextures = {
 		"GossipFrame",
@@ -44,21 +36,6 @@ local function LoadSkin()
 
 	for _, texture in pairs(KillTextures) do
 		_G[texture]:Kill()
-	end
-
-	local buttons = {
-		"QuestFrameGreetingGoodbyeButton",
-		"GossipFrameGreetingGoodbyeButton",
-		"QuestFrameDeclineButton",
-		"QuestFrameAcceptButton",
-		"QuestFrameGoodbyeButton",
-		"QuestFrameCompleteButton",
-		"QuestFrameCancelButton",
-		"QuestFrameCompleteQuestButton"
-	}
-
-	for i = 1, #buttons do
-		_G[buttons[i]]:SkinButton(true)
 	end
 
 	for i = 1, NUMGOSSIPBUTTONS do

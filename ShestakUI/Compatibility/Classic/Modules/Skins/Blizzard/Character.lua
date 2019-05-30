@@ -232,14 +232,25 @@ local function LoadSkin()
 			index = offset + i
 
 			if index <= numFactions then
+				header:SetSize(16, 16)
+				header:StripTextures()
+				header:SetTemplate("Overlay")
+				header:SetPoint("CENTER")
+				header:SetHitRectInsets(1, 1, 1, 1)
+
+				header.Text:ClearAllPoints()
+				header.Text:SetPoint("LEFT", header, "RIGHT", 8, 0)
+
+				header.minus = header:CreateTexture(nil, "OVERLAY")
+				header.minus:SetSize(7, 1)
+				header.minus:SetPoint("CENTER")
+				header.minus:SetTexture(C.media.blank)
+
 				if header.isCollapsed then
-					header:StripTextures(true)
-					header:SetNormalTexture(nil)
-					header.Text:SetText("+")
-				else
-					header:StripTextures(true)
-					header:SetNormalTexture(nil)
-					header.Text:SetText("-")
+					header.plus = header:CreateTexture(nil, "OVERLAY")
+					header.plus:SetSize(1, 7)
+					header.plus:SetPoint("CENTER")
+					header.plus:SetTexture(C.media.blank)
 				end
 			end
 		end
@@ -268,21 +279,29 @@ local function LoadSkin()
 	SkillFrame:StripTextures()
 
 	SkillFrameExpandButtonFrame:DisableDrawLayer("BACKGROUND")
+	SkillFrameCollapseAllButton:SetPoint("LEFT", SkillFrameExpandTabLeft, "RIGHT", -60, -3)
 
-	SkillFrameCollapseAllButton:SetPoint("LEFT", SkillFrameExpandTabLeft, "RIGHT", -70, -3)
+	SkillFrameCollapseAllButtonText:ClearAllPoints()
+	SkillFrameCollapseAllButtonText:SetPoint("LEFT", SkillFrameCollapseAllButton, "RIGHT", 6, 0)
 
-	SkillFrameCollapseAllButton.Text = SkillFrameCollapseAllButton:CreateFontString(nil, "OVERLAY")
-	SkillFrameCollapseAllButton.Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-	SkillFrameCollapseAllButton.Text:SetPoint("LEFT", SkillFrameCollapseAllButton, "LEFT", 15, 1)
-	SkillFrameCollapseAllButton.Text:SetText("-")
+	SkillFrameCollapseAllButton:SetSize(14, 14)
+	SkillFrameCollapseAllButton:SetPoint("CENTER")
+	SkillFrameCollapseAllButton:SetHitRectInsets(1, 1, 1, 1)
 
 	hooksecurefunc(SkillFrameCollapseAllButton, "SetNormalTexture", function(self, texture)
-		if string.find(texture, "MinusButton") then
-			self:StripTextures()
-			SkillFrameCollapseAllButton.Text:SetText("-")
-		else
-			self:StripTextures()
-			SkillFrameCollapseAllButton.Text:SetText("+")
+		self:StripTextures()
+		self:SetTemplate("Overlay")
+
+		self.minus = self:CreateTexture(nil, "OVERLAY")
+		self.minus:SetSize(7, 1)
+		self.minus:SetPoint("CENTER")
+		self.minus:SetTexture(C.media.blank)
+
+		if not string.find(texture, "MinusButton") then
+			self.plus = self:CreateTexture(nil, "OVERLAY")
+			self.plus:SetSize(1, 7)
+			self.plus:SetPoint("CENTER")
+			self.plus:SetTexture(C.media.blank)
 		end
 	end)
 
@@ -291,6 +310,7 @@ local function LoadSkin()
 	for i = 1, SKILLS_TO_DISPLAY do
 		local bar = _G["SkillRankFrame"..i]
 		local label = _G["SkillTypeLabel"..i]
+		local text = _G["SkillTypeLabel"..i.."Text"]
 		local border = _G["SkillRankFrame"..i.."Border"]
 		local background = _G["SkillRankFrame"..i.."Background"]
 
@@ -300,20 +320,27 @@ local function LoadSkin()
 		border:StripTextures()
 		background:SetTexture(nil)
 
-		label:StripTextures()
+		label:SetPoint("TOPLEFT", bar, "TOPLEFT", -20, 0)
+		label:SetSize(14, 14)
+		label:SetPoint("CENTER")
+		label:SetHitRectInsets(1, 1, 1, 1)
 
-		label:SetPoint("TOPLEFT", bar, "TOPLEFT", -30, 0)
-
-		label.Text = label:CreateFontString(nil, "OVERLAY")
-		label.Text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-		label.Text:SetPoint("LEFT", label, "LEFT", 15, 1)
-		label.Text:SetText("-")
+		text:SetPoint("LEFT", label, "RIGHT", 6, 0)
 
 		hooksecurefunc(label, "SetNormalTexture", function(self, texture)
-			if string.find(texture, "MinusButton") then
-				self:StripTextures()
-			else
-				self:StripTextures()
+			self:StripTextures()
+			self:SetTemplate("Overlay")
+
+			self.minus = self:CreateTexture(nil, "OVERLAY")
+			self.minus:SetSize(7, 1)
+			self.minus:SetPoint("CENTER")
+			self.minus:SetTexture(C.media.blank)
+
+			if not string.find(texture, "MinusButton") then
+				self.plus = self:CreateTexture(nil, "OVERLAY")
+				self.plus:SetSize(1, 7)
+				self.plus:SetPoint("CENTER")
+				self.plus:SetTexture(C.media.blank)
 			end
 		end)
 	end
