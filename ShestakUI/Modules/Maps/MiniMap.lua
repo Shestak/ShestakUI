@@ -361,4 +361,39 @@ if not T.classic then
 	else
 		MiniMapTracking:Hide()
 	end
+else
+	if C.minimap.tracking_icon then
+		MiniMapTrackingFrame:ClearAllPoints()
+		MiniMapTrackingFrame:SetPoint("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 0, -5)
+		MiniMapTrackingBorder:Hide()
+		MiniMapTrackingFrame:SetFrameStrata("HIGH")
+		MiniMapTrackingIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		MiniMapTrackingIcon:SetSize(16, 16)
+		MiniMapTrackingIcon.SetPoint = T.dummy
+
+		MiniMapTrackingFrame:CreateBackdrop("ClassColor")
+		MiniMapTrackingFrame.backdrop:SetPoint("TOPLEFT", MiniMapTrackingIcon, -2, 2)
+		MiniMapTrackingFrame.backdrop:SetPoint("BOTTOMRIGHT", MiniMapTrackingIcon, 2, -2)
+	else
+		MiniMapTrackingFrame:Hide()
+		MiniMapTrackingBorder:Hide()
+		MiniMapTrackingIcon:Hide()
+	end
+end
+
+----------------------------------------------------------------------------------------
+--	Battlefield icon (Classic)
+----------------------------------------------------------------------------------------
+if T.classic then
+	MiniMapBattlefieldFrame:ClearAllPoints()
+	MiniMapBattlefieldFrame:SetPoint("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", 2, -2)
+	MiniMapBattlefieldBorder:Hide()
+	MiniMapBattlefieldIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	MiniMapBattlefieldIcon:SetSize(16, 16)
+	MiniMapBattlefieldIcon.SetPoint = T.dummy
+	BattlegroundShine:Hide()
+
+	MiniMapBattlefieldFrame:CreateBackdrop("ClassColor")
+	MiniMapBattlefieldFrame.backdrop:SetPoint("TOPLEFT", MiniMapBattlefieldIcon, -2, 2)
+	MiniMapBattlefieldFrame.backdrop:SetPoint("BOTTOMRIGHT", MiniMapBattlefieldIcon, 2, -2)
 end

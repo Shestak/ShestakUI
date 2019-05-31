@@ -1385,7 +1385,6 @@ do
 	fog_of_war:SetPoint("TOPLEFT", bg_map_stylization, "BOTTOMLEFT", 0, 0)
 
 	local classic = {
-		tracking_icon,
 		garrison_icon
 	}
 
