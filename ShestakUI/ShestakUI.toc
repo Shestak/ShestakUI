@@ -2,7 +2,7 @@
 ## Title: ShestakUI (Classic)
 ## Notes: A total UI overhaul for World of Warcraft
 ## Author: Shestak
-## Version: 0.51
+## Version: 0.52
 ## OptionalDeps: Blizzard_CombatText, ShestakUI_Config, AtlasLoot, cargBags, Clique, epgp, Grid, Grid2, _NPCScan.Overlay, ls_Toasts, Mapster, Omen, OPie, oUF_Freebgrid, PitBull4, Postal, Prat-3.0, Quartz, RealMobHealth, Recount, Rematch, ShadowedUnitFrames, Stuf, TidyPlates, TipTac, TipTacTalents, TradeSkillMaster_Mailing, tullaCC, VuhDo, WeakAuras
 ## SavedVariables: SavedOptions, SavedStats, SavedAddonProfiles, SavedBindings, SavedCurrency
 ## SavedVariablesPerCharacter: SavedOptionsPerChar, SavedPositions
