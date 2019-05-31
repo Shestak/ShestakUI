@@ -95,6 +95,7 @@ local function LoadSkin()
 	QuestInfoRewardsFrame.ItemChooseText:SetTextColor(1, 1, 1)
 	QuestInfoRewardsFrame.ItemReceiveText:SetTextColor(1, 1, 1)
 
+	--[[ -- Texture removal blocking AutoQueest selection highlight
 	local function UpdateQuestRewards()
 		local rewardsFrame = QuestInfoFrame.rewardsFrame
 		local rewardButtons = rewardsFrame.RewardButtons
@@ -119,6 +120,7 @@ local function LoadSkin()
 		end
 	end
 	QuestInfoRewardsFrame:HookScript("OnShow", UpdateQuestRewards)
+	--]]
 
 	for i = 1, 6 do
 		local button = _G["QuestProgressItem"..i]

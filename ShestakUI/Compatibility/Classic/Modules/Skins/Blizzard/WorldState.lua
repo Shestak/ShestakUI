@@ -7,9 +7,15 @@ if not T.classic or C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	WorldStateScoreScrollFrame:StripTextures()
 	WorldStateScoreFrame:StripTextures()
-	WorldStateScoreFrame:SetTemplate("Transparent")
+	WorldStateScoreFrame:CreateBackdrop("Transparent")
+	WorldStateScoreFrame.backdrop:SetAllPoints()
+	WorldStateScoreFrame.backdrop:SetPoint("TOPLEFT", 10, -12)
+	WorldStateScoreFrame.backdrop:SetPoint("BOTTOMRIGHT", -38, 66)
 
-	T.SkinCloseButton(WorldStateScoreFrameCloseButton)
+	WorldStateScoreFrameLabel:ClearAllPoints()
+	WorldStateScoreFrameLabel:SetPoint("TOP", WorldStateScoreFrame.backdrop, "TOP", 0, -6)
+
+	T.SkinCloseButton(WorldStateScoreFrameCloseButton, WorldStateScoreFrame.backdrop)
 
 	WorldStateScoreFrameLeaveButton:SkinButton()
 	-- WorldStateScoreFrameQueueButton:SkinButton()
@@ -23,6 +29,8 @@ local function LoadSkin()
 		b:SetTemplate("Default")
 	end
 
+	WorldStateScoreFrameTab1:ClearAllPoints()
+	WorldStateScoreFrameTab1:SetPoint("TOPLEFT", WorldStateScoreFrame.backdrop, "BOTTOMLEFT", 2, -2)
 	for i = 1, 3 do
 		T.SkinTab(_G["WorldStateScoreFrameTab"..i])
 	end
