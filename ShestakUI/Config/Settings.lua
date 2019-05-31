@@ -120,6 +120,12 @@ C["unitframe"] = {
 	["plugins_absorbs"] = false,				-- Absorbs value on player frame
 }
 
+if T.classic then
+	C["unitframe"]["castbar_ticks"] = true
+	C["unitframe"]["plugins_swing"] = true
+	C["unitframe"]["plugins_experience_bar"] = true
+end
+
 ----------------------------------------------------------------------------------------
 --	Unit Frames Class bar options
 ----------------------------------------------------------------------------------------
@@ -210,6 +216,11 @@ C["actionbar"] = {
 	["micromenu_mouseover"] = false,			-- Micro menu on mouseover
 }
 
+if T.classic then
+	C["actionbar"]["rightbars_mouseover"] = false
+	C["actionbar"]["stancebar_mouseover"] = false
+end
+
 ----------------------------------------------------------------------------------------
 --	Tooltip options
 ----------------------------------------------------------------------------------------
@@ -237,6 +248,11 @@ C["tooltip"] = {
 	["unit_role"] = false,						-- Unit role in tooltip
 	["instance_lock"] = false,					-- Your instance lock status in tooltip
 }
+
+if T.classic then
+	C["tooltip"]["realm"] = false
+	C["tooltip"]["item_count"] = true
+end
 
 ----------------------------------------------------------------------------------------
 --	Chat options
@@ -287,6 +303,13 @@ C["nameplate"] = {
 	["bad_color"] = {1, 0, 0},					-- Bad threat color
 	["offtank_color"] = {0, 0.5, 1},			-- Offtank threat color
 }
+
+if T.classic then
+	C["nameplate"]["distance"] = 60
+	C["nameplate"]["health_value"] = true
+	C["nameplate"]["show_castbar_name"] = true
+	C["nameplate"]["track_debuffs"] = true
+end
 
 ----------------------------------------------------------------------------------------
 --	Combat text options
@@ -368,6 +391,10 @@ C["minimap"] = {
 	["fog_of_war"] = false,						-- Remove fog of war on World Map
 }
 
+if T.classic then
+	C["minimap"]["tracking_icon"] = true
+end
+
 ----------------------------------------------------------------------------------------
 --	Loot options
 ----------------------------------------------------------------------------------------
@@ -379,6 +406,11 @@ C["loot"] = {
 	["auto_greed"] = true,						-- Push "greed" or "disenchant" button when green item roll at max level
 	["auto_confirm_de"] = true,					-- Auto confirm disenchant
 }
+
+if T.classic then
+	C["loot"]["auto_greed"] = false
+	C["loot"]["auto_confirm_de"] = false
+end
 
 ----------------------------------------------------------------------------------------
 --	Filger options
