@@ -326,6 +326,8 @@ local spell_ranks = table.concat({
 })
 
 local string_byte = string.byte
+local string_find = string.find
+local string_sub = string.sub
 
 local ranks = {
 	[49] = 1, [50] = 2, [51] = 3, [52] = 4, [53] = 5, [54] = 6, [55] = 7, [56] = 8, [57] = 9,
@@ -334,11 +336,42 @@ local ranks = {
 }
 
 GetSpellRank = function(spellID)
-	return ranks[string_byte(spell_ranks, spellID)]
+	if type(spellID) == "number" then
+		return ranks[string_byte(spell_ranks,spellID)]
+    elseif type(spellID) == "string" then
+         local s = string_find(spellID, "%(")
+		 if s then
+			 local e = string_find(spellID, "%)", s)
+			 if e then
+  				 rank = string_sub(spellID, s + 1, e - 1)
+				 return rank
+			 end
+		 end
+	end
+end
+
+local OldGetSpelInfo = GetSpellInfo
+GetSpellInfo = function(spellID)
+	local name, rank, icon, castTime, minRange, maxRange, spellId = OldGetSpelInfo(spellID)
+	rank = rank or GetSpellRank(spellID)
+	return name, rank, icon, castTime, minRange, maxRange, spellId
 end
 
 ----------------------------------------------------------------------------------------
---	Specialization Functions 
+--	LibClassicDurations (by d87)
+----------------------------------------------------------------------------------------
+local ClassicAuraTracker = CreateFrame("Frame")
+
+local LibClassicDurations
+LibClassicDurations = LibStub("LibClassicDurations")
+
+if LibClassicDurations then
+	_G.LibClassicDurations = _G.LibClassicDurations or LibClassicDurations
+	LibClassicDurations:RegisterFrame(ClassicAuraTracker)
+end
+
+----------------------------------------------------------------------------------------
+--	Specialization Functions
 ----------------------------------------------------------------------------------------
 local specializationID = {
 	["DRUID"] = {

@@ -86,6 +86,15 @@ local function updateIcon(unit, icons, index, offset, filter, isDebuff, visible)
 			icon = (icons.CreateIcon or createAuraIcon) (icons, n)
 		end
 
+		if IsClassicBuild() and LibClassicDurations then
+			local durationNew, expirationTimeNew = LibClassicDurations:GetAuraDurationByUnit(unit, spellID, caster)
+
+			if duration == 0 and durationNew then
+				duration = durationNew
+				expirationTime = expirationTimeNew
+			end
+		end
+
 		local show = (icons.CustomFilter or customFilter) (icons, unit, icon, name, texture,
 			count, debuffType, duration, expiration, caster, isStealable, nameplateShowSelf, spellID,
 			canApply, isBossDebuff, casterIsPlayer, nameplateShowAll, timeMod, effect1, effect2, effect3)

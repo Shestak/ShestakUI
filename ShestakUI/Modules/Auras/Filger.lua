@@ -58,6 +58,15 @@ function Filger:UnitAura(unitID, inSpellID, spellName, filter, absID)
 		local name, icon, count, _, duration, expirationTime, unitCaster, _, _, spellID = UnitAura(unitID, i, filter)
 		if not name then break end
 		if (absID and spellID == inSpellID) or (not absID and name == spellName) then
+			if T.classic and LibClassicDurations then
+				local durationNew, expirationTimeNew = LibClassicDurations:GetAuraDurationByUnit(unitID, spellID, unitCaster)
+
+				if duration == 0 and durationNew then
+					duration = durationNew
+					expirationTime = expirationTimeNew
+				end
+			end
+
 			return name, spellID, icon, count, duration, expirationTime, unitCaster
 		end
 	end
@@ -330,6 +339,15 @@ function Filger:OnEvent(event, unit, _, castID)
 					local isTalent = data.talentID and select(10, GetTalentInfoByID(data.talentID))
 					if ((data.filter == "BUFF" and filter == "HELPFUL") or (data.filter == "DEBUFF" and filter == "HARMFUL")) and (not data.spec or data.spec == ptt) and (not data.talentID or isTalent) then
 						if not data.count or count >= data.count then
+							if T.classic and LibClassicDurations then
+								local durationNew, expirationTimeNew = LibClassicDurations:GetAuraDurationByUnit(unit, spid, caster)
+
+								if duration == 0 and durationNew then
+									duration = durationNew
+									expirationTime = expirationTimeNew
+								end
+							end
+
 							self.actives[spid] = {data = data, name = name, icon = icon, count = count, start = expirationTime - duration, duration = duration, spid = spid, sort = data.sort}
 						end
 					elseif data.filter == "ICD" and (data.trigger == "BUFF" or data.trigger == "DEBUFF") and (not data.spec or data.spec == ptt) and (not data.talentID or isTalent) then

@@ -206,8 +206,17 @@ local Update = function(self, event, unit)
 		local i = 0
 		while(true) do
 			i = i + 1
-			local name, icon, count, debuffType, duration, expirationTime, _, _, _, spellId, _, isBossDebuff = UnitAura(unit, i, filter)
+			local name, icon, count, debuffType, duration, expirationTime, unitCaster, _, _, spellId, _, isBossDebuff = UnitAura(unit, i, filter)
 			if not name then break end
+
+			if IsClassicBuild() and LibClassicDurations then
+				local durationNew, expirationTimeNew = LibClassicDurations:GetAuraDurationByUnit(unit, spellId, unitCaster)
+
+				if duration == 0 and durationNew then
+					duration = durationNew
+					expirationTime = expirationTimeNew
+				end
+			end
 
 			if rd.ShowBossDebuff and isBossDebuff then
 				local prio = rd.BossDebuffPriority or bossDebuffPrio
