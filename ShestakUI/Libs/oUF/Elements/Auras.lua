@@ -91,7 +91,7 @@ local function updateIcon(unit, icons, index, offset, filter, isDebuff, visible)
 
 			if duration == 0 and durationNew then
 				duration = durationNew
-				expirationTime = expirationTimeNew
+				expiration = expirationTimeNew
 			end
 		end
 

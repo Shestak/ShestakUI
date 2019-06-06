@@ -109,7 +109,7 @@ local function Update(frame, event, unit)
 
 					if duration == 0 and durationNew then
 						duration = durationNew
-						expirationTime = expirationTimeNew
+						remaining = expirationTimeNew
 					end
 				end
 				resetIcon(icon, count, duration, remaining)
