@@ -51,9 +51,11 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 
 		-- Reskin popups
 		for i = 1, 4 do
+			--[[
 			for j = 1, 4 do
-				_G["StaticPopup"..i.."Button"..j]:SkinButton()
+				_G["StaticPopup"..i.."Button"..j]:SkinButton() -- possibly causing issues entering BGs
 			end
+			--]]
 			_G["StaticPopup"..i]:StripTextures()
 			_G["StaticPopup"..i]:CreateBackdrop("Transparent")
 			_G["StaticPopup"..i].backdrop:SetPoint("TOPLEFT", 2, -2)
