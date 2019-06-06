@@ -158,7 +158,13 @@ oUF.Tags.Methods["NameplateHealth"] = function(unit)
 
 	local hpRMH, maxhpRMH
 	if T.classic and IsAddOnLoaded("RealMobHealth") then
-		hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+		if GetAddOnMetadata("RealMobHealth", "Version") == "1.0" then
+			if RealMobHealth.GetHealth then
+				hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+			end
+		else
+			hpRMH, maxhpRMH = RealMobHealth.GetUnitHealth(unit, true)
+		end
 
 		if hpRMH and maxhpRMH then
 			hp, maxhp = hpRMH, maxhpRMH
@@ -184,7 +190,14 @@ oUF.Tags.Events["Absorbs"] = "UNIT_ABSORB_AMOUNT_CHANGED"
 if T.classic and IsAddOnLoaded("RealMobHealth") then
 	oUF.Tags.Methods["curhp"] = function(unit)
 		local hp = UnitHealth(unit)
-		local hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+		local hpRMH, maxhpRMH
+		if GetAddOnMetadata("RealMobHealth", "Version") == "1.0" then
+			if RealMobHealth.GetHealth then
+				hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+			end
+		else
+			hpRMH, maxhpRMH = RealMobHealth.GetUnitHealth(unit, true)
+		end
 
 		if hpRMH and maxhpRMH then
 			hp = hpRMH
@@ -196,7 +209,14 @@ if T.classic and IsAddOnLoaded("RealMobHealth") then
 
 	oUF.Tags.Methods["maxhp"] = function(unit)
 		local maxhp = UnitHealthMax(unit)
-		local hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+		local hpRMH, maxhpRMH
+		if GetAddOnMetadata("RealMobHealth", "Version") == "1.0" then
+			if RealMobHealth.GetHealth then
+				hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+			end
+		else
+			hpRMH, maxhpRMH = RealMobHealth.GetUnitHealth(unit, true)
+		end
 
 		if hpRMH and maxhpRMH then
 			maxhp = maxhpRMH
@@ -208,7 +228,14 @@ if T.classic and IsAddOnLoaded("RealMobHealth") then
 
 	oUF.Tags.Methods["missinghp"] = function(unit)
 		local hp, maxhp = UnitHealth(unit), UnitHealthMax(unit)
-		local hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+		local hpRMH, maxhpRMH
+		if GetAddOnMetadata("RealMobHealth", "Version") == "1.0" then
+			if RealMobHealth.GetHealth then
+				hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+			end
+		else
+			hpRMH, maxhpRMH = RealMobHealth.GetUnitHealth(unit, true)
+		end
 
 		if hpRMH and maxhpRMH then
 			hp, maxhp = hpRMH, maxhpRMH
@@ -223,7 +250,14 @@ if T.classic and IsAddOnLoaded("RealMobHealth") then
 
 	oUF.Tags.Methods["perhp"] = function(unit)
 		local hp, maxhp = UnitHealth(unit), UnitHealthMax(unit)
-		local hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+		local hpRMH, maxhpRMH
+		if GetAddOnMetadata("RealMobHealth", "Version") == "1.0" then
+			if RealMobHealth.GetHealth then
+				hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+			end
+		else
+			hpRMH, maxhpRMH = RealMobHealth.GetUnitHealth(unit, true)
+		end
 
 		if hpRMH and maxhpRMH then
 			hp, maxhp = hpRMH, maxhpRMH

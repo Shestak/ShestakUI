@@ -61,7 +61,13 @@ local function Update(self, event, unit)
 
 	local hpRMH, maxhpRMH
 	if IsClassicBuild() and IsAddOnLoaded("RealMobHealth") then
-		hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+		if GetAddOnMetadata("RealMobHealth", "Version") == "1.0" then
+			if RealMobHealth.GetHealth then
+				hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+			end
+		else
+			hpRMH, maxhpRMH = RealMobHealth.GetUnitHealth(unit, true)
+		end
 
 		if hpRMH and maxhpRMH then
 			cur, max = hpRMH, maxhpRMH

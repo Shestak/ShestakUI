@@ -226,7 +226,13 @@ if C.tooltip.health_value == true then
 			min, max = UnitHealth(unit), UnitHealthMax(unit)
 			local hpRMH, maxhpRMH
 			if T.classic and IsAddOnLoaded("RealMobHealth") and UnitExists(unit) then
-				hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+				if GetAddOnMetadata("RealMobHealth", "Version") == "1.0" then
+					if RealMobHealth.GetHealth then
+						hpRMH, maxhpRMH = RealMobHealth.GetHealth(unit, true)
+					end
+				else
+					hpRMH, maxhpRMH = RealMobHealth.GetUnitHealth(unit, true)
+				end
 
 				if hpRMH and maxhpRMH then
 					min, max = hpRMH, maxhpRMH
