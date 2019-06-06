@@ -1379,7 +1379,11 @@ function Stuffing:SortBags()
 	if _G["StuffingFrameReagent"] and _G["StuffingFrameReagent"]:IsShown() then
 		bagList = {-3}
 	elseif Stuffing.bankFrame and Stuffing.bankFrame:IsShown() then
-		bagList = {11, 10, 9, 8, 7, 6, 5, -1}
+		if not T.classic then
+			bagList = {11, 10, 9, 8, 7, 6, 5, -1}
+		else
+			bagList = {10, 9, 8, 7, 6, 5, -1}
+		end
 	else
 		bagList = {4, 3, 2, 1, 0}
 	end
