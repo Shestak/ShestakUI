@@ -231,6 +231,7 @@ local function LoadSkin()
 	CommunitiesFrame.MemberList.ShowOfflineButton:SetSize(25, 25)
 	CommunitiesFrame.MemberList.ShowOfflineButton:SetPoint("BOTTOMLEFT", CommunitiesFrame.MemberList, "TOPLEFT", -3, 26)
 	CommunitiesFrame.CommunitiesControlFrame.GuildRecruitmentButton:SkinButton()
+	CommunitiesFrame.CommunitiesControlFrame.GuildControlButton:SkinButton()
 	T.SkinCheckBox(CommunitiesFrame.MemberList.ShowOfflineButton)
 	T.SkinDropDownBox(CommunitiesFrame.GuildMemberListDropDownMenu)
 
