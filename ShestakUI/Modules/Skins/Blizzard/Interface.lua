@@ -8,8 +8,6 @@ local function LoadSkin()
 	InterfaceOptionsFrame:StripTextures()
 	InterfaceOptionsFrame:SetTemplate("Transparent")
 
-	InterfaceOptionsFrame.Border:StripTextures()
-
 	InterfaceOptionsFrameHeader:SetTexture(nil)
 	InterfaceOptionsFrameHeader:ClearAllPoints()
 	InterfaceOptionsFrameHeader:SetPoint("TOP", InterfaceOptionsFrame, 0, 0)
