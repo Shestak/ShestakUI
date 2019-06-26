@@ -152,7 +152,7 @@ hooksecurefunc("LFRBrowseFrameListButton_SetData", function(button, index)
 end)
 
 -- WorldStateScoreList
---[[
+--[[FIXME
 hooksecurefunc("WorldStateScoreFrame_Update", function()
 	local inArena = IsActiveBattlefieldArena()
 	local offset = FauxScrollFrame_GetOffset(WorldStateScoreScrollFrame)
