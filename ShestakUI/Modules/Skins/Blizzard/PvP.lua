@@ -230,6 +230,7 @@ local function LoadSecondarySkin()
 	-- PvP Ready Dialog
 	PVPReadyDialog:StripTextures()
 	PVPReadyDialog:SetTemplate("Transparent")
+	PVPReadyDialog.Border:StripTextures()
 	PVPReadyDialogBackground:SetAlpha(0)
 	PVPReadyDialogEnterBattleButton:SkinButton()
 	PVPReadyDialogLeaveQueueButton:SkinButton()

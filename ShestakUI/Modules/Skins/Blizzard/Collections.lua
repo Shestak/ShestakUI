@@ -78,6 +78,15 @@ local function LoadSkin()
 
 	MountJournalFilterButton:SetPoint("TOPLEFT", MountJournalSearchBox, "TOPRIGHT", 5, 2)
 
+	-- New Mount Equip. 8.2
+	MountJournal.BottomLeftInset:StripTextures()
+	MountJournal.BottomLeftInset:CreateBackdrop("Transparent")
+	MountJournal.BottomLeftInset:SetPoint("BOTTOMLEFT", 0, 33)
+	MountJournal.BottomLeftInset.SlotButton:StripTextures()
+	MountJournal.BottomLeftInset.SlotButton.ItemIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	MountJournal.BottomLeftInset.SlotButton.ItemIcon:SetInside()
+	MountJournal.BottomLeftInset.SlotButton:SkinButton()
+
 	for i = 1, #MountJournal.ListScrollFrame.buttons do
 		local button = _G["MountJournalListScrollFrameButton"..i]
 

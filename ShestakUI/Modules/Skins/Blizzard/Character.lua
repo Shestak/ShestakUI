@@ -327,9 +327,6 @@ local function LoadSkin()
 
 	-- Help box
 	T.SkinHelpBox(CharacterFrame.ReputationTabHelpBox)
-	T.SkinHelpBox(PaperDollItemsFrame.UnspentAzeriteHelpBox)
-	PaperDollItemsFrame.UnspentAzeriteHelpBox.CloseButton:SetPoint("TOPRIGHT", PaperDollItemsFrame.UnspentAzeriteHelpBox, "TOPRIGHT", -3, -3)
-	PaperDollItemsFrame.UnspentAzeriteHelpBox.CloseButton.SetPoint = T.dummy
 
 	-- Unit Background Texture
 	CharacterModelFrameBackgroundTopLeft:SetPoint("TOPLEFT", CharacterModelFrame.backdrop, "TOPLEFT", 2, -2)

@@ -485,7 +485,6 @@ local function LoadSkin()
 	hooksecurefunc(LegendaryItemAlertSystem, "setUpFunction", SkinLegendaryItemAlert)
 
 	local function SkinLootWonAlert(frame)
-		frame:SetAlpha(1)
 		if not frame.hooked then
 			hooksecurefunc(frame, "SetAlpha", forceAlpha)
 			frame.hooked = true
@@ -497,42 +496,28 @@ local function LoadSkin()
 			frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -5, 6)
 		end
 
+		frame:SetAlpha(1)
 		frame.Background:Kill()
-		frame.IconBorder:Kill()
+
+		local lootItem = frame.lootItem or frame
+		lootItem.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		lootItem.Icon:SetDrawLayer("BORDER")
+		lootItem.IconBorder:Kill()
+		lootItem.SpecRing:SetTexture("")
+
 		frame.glow:Kill()
 		frame.shine:Kill()
 		frame.BGAtlas:Kill()
 		frame.PvPBackground:Kill()
 
-		frame.SpecRing:SetTexture("")
-		frame.SpecIcon:SetPoint("TOPLEFT", frame, "TOPLEFT", 10, -15)
-		frame.SpecIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		-- frame.SpecIcon:SetTexture("Interface\\Icons\\spell_nature_brilliance")
-
-		-- Icon
-		frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		frame.Icon:SetDrawLayer("BORDER")
-		frame.Icon:ClearAllPoints()
-		frame.Icon:SetPoint("LEFT", frame.backdrop, 9, 0)
-
 		-- Icon border
-		if not frame.Icon.b then
-			frame.Icon.b = CreateFrame("Frame", nil, frame)
-			frame.Icon.b:SetTemplate("Default")
-			frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
-			frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
-			frame.Icon:SetParent(frame.Icon.b)
+		if not lootItem.Icon.b then
+			lootItem.Icon.b = CreateFrame("Frame", nil, frame)
+			lootItem.Icon.b:SetTemplate("Default")
+			lootItem.Icon.b:SetPoint("TOPLEFT", lootItem.Icon, "TOPLEFT", -2, 2)
+			lootItem.Icon.b:SetPoint("BOTTOMRIGHT", lootItem.Icon, "BOTTOMRIGHT", 2, -2)
+			lootItem.Icon:SetParent(lootItem.Icon.b)
 		end
-
-		if not frame.SpecIcon.b then
-			frame.SpecIcon.b = CreateFrame("Frame", nil, frame)
-			frame.SpecIcon.b:SetFrameLevel(3)
-			frame.SpecIcon.b:SetTemplate("Default")
-			frame.SpecIcon.b:SetPoint("TOPLEFT", frame.SpecIcon, "TOPLEFT", -2, 2)
-			frame.SpecIcon.b:SetPoint("BOTTOMRIGHT", frame.SpecIcon, "BOTTOMRIGHT", 2, -2)
-			frame.SpecIcon:SetParent(frame.SpecIcon.b)
-		end
-		frame.SpecIcon.b:SetShown(frame.SpecIcon:IsShown() and frame.SpecIcon:GetTexture() ~= nil)
 	end
 	hooksecurefunc(LootAlertSystem, "setUpFunction", SkinLootWonAlert)
 
@@ -789,16 +774,18 @@ local function LoadSkin()
 	frame:SetAlpha(1)
 	hooksecurefunc(frame, "SetAlpha", forceAlpha)
 	frame.Background:Kill()
-	frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	frame.IconBorder:Kill()
 	frame.glow:Kill()
 	frame.shine:Kill()
+
+	local lootItem = frame.lootItem or frame
+	lootItem.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	lootItem.IconBorder:Kill()
 	-- Icon border
-	frame.Icon.b = CreateFrame("Frame", nil, frame)
-	frame.Icon.b:SetTemplate("Default")
-	frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
-	frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
-	frame.Icon:SetParent(frame.Icon.b)
+	lootItem.Icon.b = CreateFrame("Frame", nil, frame)
+	lootItem.Icon.b:SetTemplate("Default")
+	lootItem.Icon.b:SetPoint("TOPLEFT", lootItem.Icon, "TOPLEFT", -2, 2)
+	lootItem.Icon.b:SetPoint("BOTTOMRIGHT", lootItem.Icon, "BOTTOMRIGHT", 2, -2)
+	lootItem.Icon:SetParent(lootItem.Icon.b)
 	-- Create Backdrop
 	frame:CreateBackdrop("Transparent")
 	frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -9, 6)
