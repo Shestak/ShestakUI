@@ -57,6 +57,7 @@
 	<Script file="ProductChoice.lua"/>
 	<Script file="PvE.lua"/>
 	<Script file="PvP.lua"/>
+	<Script file="PvPMatch.lua"/>
 	<Script file="Quest.lua"/>
 	<Script file="QuestChoice.lua"/>
 	<Script file="QuestLog.lua"/>
@@ -76,5 +77,4 @@
 	<Script file="VoidStorage.lua"/>
 	<Script file="Warboard.lua"/>
 	<Script file="WorldMap.lua"/>
-	<Script file="WorldState.lua"/>
 </Ui>
