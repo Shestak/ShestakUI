@@ -369,9 +369,12 @@ local function LoadSkin()
 		end
 	end)
 
-	hooksecurefunc("CommunitiesGuildNewsButton_SetNews", function(button)
-		if button.header:IsShown() then
-			button.header:SetAlpha(0)
+	hooksecurefunc("GuildNewsButton_SetNews", function(button, news_id)
+		local newsInfo = C_GuildInfo_GetGuildNewsInfo(news_id)
+		if newsInfo then
+			if button.header:IsShown() then
+				button.header:SetAlpha(0)
+			end
 		end
 	end)
 

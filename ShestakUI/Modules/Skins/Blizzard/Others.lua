@@ -41,6 +41,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		}
 
 		QueueStatusFrame:StripTextures()
+		GameMenuFrame.Border:StripTextures()
 
 		for i = 1, getn(bgskins) do
 			local frame = _G[bgskins[i]]
@@ -67,6 +68,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 				_G["StaticPopup"..i.."Button"..j]:SkinButton()
 			end
 			_G["StaticPopup"..i]:StripTextures()
+			_G["StaticPopup"..i].Border:StripTextures()
 			_G["StaticPopup"..i]:CreateBackdrop("Transparent")
 			_G["StaticPopup"..i].backdrop:SetPoint("TOPLEFT", 2, -2)
 			_G["StaticPopup"..i].backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
@@ -125,6 +127,7 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		-- Reskin Dropdown menu
 		hooksecurefunc("UIDropDownMenu_InitializeHelper", function()
 			for i = 1, UIDROPDOWNMENU_MAXLEVELS do
+				_G["DropDownList"..i]["Border"]:StripTextures()
 				_G["DropDownList"..i.."Backdrop"]:SetTemplate("Transparent")
 				_G["DropDownList"..i.."MenuBackdrop"]:SetTemplate("Transparent")
 			end

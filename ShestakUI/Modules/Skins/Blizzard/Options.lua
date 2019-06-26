@@ -8,6 +8,8 @@ local function LoadSkin()
 	VideoOptionsFrame:StripTextures()
 	VideoOptionsFrame:SetTemplate("Transparent")
 
+	VideoOptionsFrame.Border:StripTextures()
+
 	VideoOptionsFrameHeader:SetTexture(nil)
 	VideoOptionsFrameHeader:ClearAllPoints()
 	VideoOptionsFrameHeader:SetPoint("TOP", VideoOptionsFrame, 0, 0)
@@ -188,6 +190,7 @@ local function LoadSkin()
 		"AudioOptionsVoicePanelVoiceChatMicVolume",
 		"AudioOptionsVoicePanelVoiceChatMicSensitivity",
 		"AudioOptionsVoicePanelVoiceChatVolume",
+		"AudioOptionsVoicePanelVoiceChatDucking",
 		"RaidGraphics_Quality",
 		"RaidGraphics_ViewDistanceSlider",
 		"RaidGraphics_EnvironmentalDetailSlider",
