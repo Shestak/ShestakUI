@@ -162,6 +162,8 @@ local StripTexturesBlizzFrames = {
 	"LeftInset",
 	"RightInset",
 	"NineSlice",
+	"BG",
+	"border",
 	"Border",
 	"BorderFrame",
 	"bottomInset",
