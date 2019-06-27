@@ -185,6 +185,7 @@ SpellBinder.ToggleButtons = function()
 				local spellname = GetSpellBookItemName(slot, SpellBookFrame.bookType)
 				if spellname then
 					SpellBinder.spellbuttons[i]:Show()
+					AutoCastShine_AutoCastStart(SpellBinder.spellbuttons[i])
 				end
 			end
 		end
@@ -339,8 +340,6 @@ SpellBinder:SetScript("OnEvent", function(self, event)
 			button:RegisterForClicks("AnyDown")
 			button:SetAllPoints(parent)
 			button:SetScript("OnClick", addSpell)
-
-			AutoCastShine_AutoCastStart(button)
 
 			button:Hide()
 			SpellBinder.spellbuttons[i] = button
