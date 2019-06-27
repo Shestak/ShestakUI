@@ -32,6 +32,7 @@ local function LoadSkin()
 	T.SkinScrollBar(PVPMatchResults.content.scrollFrame.scrollBar)
 	T.SkinCloseButton(PVPMatchResults.CloseButton)
 	PVPMatchResults.buttonContainer.leaveButton:SkinButton()
+	PVPMatchResults.buttonContainer.requeueButton:SkinButton()
 
 	for i = 1, 3 do
 		T.SkinTab(_G.PVPMatchResults.content.tabContainer.tabGroup["tab"..i])
