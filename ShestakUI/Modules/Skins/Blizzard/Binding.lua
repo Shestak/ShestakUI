@@ -19,8 +19,6 @@ local function LoadSkin()
 	KeyBindingFrame:StripTextures()
 	KeyBindingFrame:SetTemplate("Transparent")
 
-	KeyBindingFrame.BG:StripTextures()
-
 	KeyBindingFrame.header:StripTextures()
 	KeyBindingFrame.header:ClearAllPoints()
 	KeyBindingFrame.header:SetPoint("TOP", KeyBindingFrame, "TOP", 0, -4)
