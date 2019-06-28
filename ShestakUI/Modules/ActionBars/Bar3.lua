@@ -8,12 +8,6 @@ local bar = CreateFrame("Frame", "Bar3Holder", RightActionBarAnchor)
 bar:SetAllPoints(RightActionBarAnchor)
 MultiBarLeft:SetParent(bar)
 
-hooksecurefunc(MultiBarLeft, "SetScale", function(self, scale)
-	if scale ~= 1 then
-		self:SetScale(1)
-	end
-end)
-
 for i = 1, 12 do
 	local b = _G["MultiBarLeftButton"..i]
 	local b2 = _G["MultiBarLeftButton"..i-1]

@@ -10,8 +10,8 @@ MinimapAnchor:CreatePanel("ClassColor", C.minimap.size, C.minimap.size, unpack(C
 ----------------------------------------------------------------------------------------
 --	Shape, location and scale
 ----------------------------------------------------------------------------------------
--- Kill Minimap Cluster
-MinimapCluster:Kill()
+-- Disable Minimap Cluster
+MinimapCluster:EnableMouse(false)
 
 -- Parent Minimap into our frame
 Minimap:SetParent(MinimapAnchor)
