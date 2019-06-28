@@ -66,6 +66,7 @@ T.DiminishingSpells = {
 	-- Incapacitates
 	[217832] = {"incapacitate"},	-- Imprison
 	[221527] = {"incapacitate"},	-- Imprison (Honor talent)
+	[2637] = {"incapacitate"},		-- Hibernate
 	[99] = {"incapacitate"},		-- Incapacitating Roar
 	[3355] = {"incapacitate"},		-- Freezing Trap
 	[203337] = {"incapacitate"},	-- Freezing Trap (Honor talent)
@@ -109,7 +110,6 @@ T.DiminishingSpells = {
 	-- Disorients
 	[207167] = {"disorient"},		-- Blinding Sleet
 	[207685] = {"disorient"},		-- Sigil of Misery
-	[2637] = {"disorient"},			-- Hibernate
 	[33786] = {"disorient"},		-- Cyclone
 	[209753] = {"disorient"},		-- Cyclone (Honor talent)
 	[31661] = {"disorient"},		-- Dragon's Breath
