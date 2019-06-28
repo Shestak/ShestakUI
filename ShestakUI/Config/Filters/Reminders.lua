@@ -9,9 +9,13 @@ if C.reminder.raid_buffs_enable == true or C.announcements.flask_food == true th
 	T.ReminderBuffs = {
 		Flask = {
 			251836,	-- Flask of the Currents (Agility)
-			251839,	-- Flask of the Undertow (Strenght)
-			251838,	-- Flask of the Vast Horizon (Stamina)
 			251837,	-- Flask of Endless Fathoms (Intellect)
+			251838,	-- Flask of the Vast Horizon (Stamina)
+			251839,	-- Flask of the Undertow (Strenght)
+			298836,	-- Greater Flask of the Currents (Agility)
+			298837,	-- Greater Flask of Endless Fathoms (Intellect)
+			298839,	-- Greater Flask of the Vast Horizon (Stamina)
+			298841,	-- Greater Flask of the Undertow (Strength)
 		},
 		BattleElixir = {
 			--spellID,	-- Spell name
