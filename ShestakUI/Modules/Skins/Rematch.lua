@@ -292,7 +292,6 @@ skin.panels = {
 			end
 		end
 		self.Top.SearchBox:SetHeight(22)
-		self.Top.SearchBox:SetPoint("LEFT",self.Top.Toggle,"RIGHT",4,0)
 		self.Top.SearchBox:SetPoint("RIGHT",self.Top.Teams,"LEFT",-4,0)
 	end,
 
