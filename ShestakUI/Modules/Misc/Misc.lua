@@ -33,7 +33,7 @@ ForceWarning:SetScript("OnEvent", function(self, event)
 	elseif event == "LFG_PROPOSAL_SHOW" then
 		PlaySound(SOUNDKIT.READY_CHECK, "Master")
 	elseif event == "RESURRECT_REQUEST" then
-		PlaySoundFile("Sound\\Spells\\Resurrection.wav", "Master")
+		PlaySound(37, "Master")
 	end
 end)
 
