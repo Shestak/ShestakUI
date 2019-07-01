@@ -124,7 +124,7 @@ Garbage:RegisterAllEvents()
 Garbage:SetScript("OnEvent", function(self, event)
 	eventcount = eventcount + 1
 
-	if (InCombatLockdown() and eventcount > 25000) or (not InCombatLockdown() and eventcount > 10000) or event == "PLAYER_ENTERING_WORLD" then
+	if (not InCombatLockdown() and eventcount > 10000) or event == "PLAYER_ENTERING_WORLD" then
 		collectgarbage("collect")
 		eventcount = 0
 	end
