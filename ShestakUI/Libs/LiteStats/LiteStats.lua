@@ -291,7 +291,9 @@ if memory.enabled then
 			end, update = 5,
 		},
 		OnEnter = function(self)
-			collectgarbage()
+			if not InCombatLockdown() then
+				collectgarbage()
+			end
 			self.hovered = true
 			GameTooltip:SetOwner(self, "ANCHOR_NONE")
 			GameTooltip:ClearAllPoints()
