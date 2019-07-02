@@ -4,20 +4,6 @@ if C.stats.battleground ~= true then return end
 ----------------------------------------------------------------------------------------
 --	BGScore(by Elv22, edited by Tukz)
 ----------------------------------------------------------------------------------------
--- Map IDs
-local WSG = 92
-local TP = 206
-local AV = 91
-local SOTA = 128
-local IOC = 169
-local EOTS = 112
-local TBFG = 275
-local AB = 93
-local TOK = 417
-local SSM = 423
-local DG = 519
-local SS = 907
-
 local classcolor = ("|cff%.2x%.2x%.2x"):format(T.color.r * 255, T.color.g * 255, T.color.b * 255)
 
 local BGFrame = CreateFrame("Frame", "InfoBattleGround", UIParent)
@@ -25,6 +11,8 @@ BGFrame:CreatePanel("Invisible", 300, C.font.stats_font_size, unpack(C.position.
 BGFrame:EnableMouse(true)
 BGFrame:SetScript("OnEnter", function(self)
 	local numScores = GetNumBattlefieldScores()
+	local pvpStatIDs = C_PvP.GetMatchPVPStatIDs()
+
 	for i = 1, numScores do
 		local name, _, honorableKills, deaths, _, _, _, _, _, damageDone, healingDone = GetBattlefieldScore(i)
 		if name and name == T.name then
@@ -39,35 +27,12 @@ BGFrame:SetScript("OnEnter", function(self)
 			GameTooltip:AddDoubleLine(DEATHS..":", deaths, 1, 1, 1)
 			GameTooltip:AddDoubleLine(DAMAGE..":", damageDone, 1, 1, 1)
 			GameTooltip:AddDoubleLine(SHOW_COMBAT_HEALING..":", healingDone, 1, 1, 1)
+
 			-- Add extra statistics depending on what BG you are
-			if areaID == WSG or areaID == TP then
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(1)..":", GetBattlefieldStatData(i, 1), 1, 1, 1)
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(2)..":", GetBattlefieldStatData(i, 2), 1, 1, 1)
-			elseif areaID == EOTS then
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(1)..":", GetBattlefieldStatData(i, 1), 1, 1, 1)
-			elseif areaID == AV then
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(1)..":", GetBattlefieldStatData(i, 1), 1, 1, 1)
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(2)..":", GetBattlefieldStatData(i, 2), 1, 1, 1)
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(3)..":", GetBattlefieldStatData(i, 3), 1, 1, 1)
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(4)..":", GetBattlefieldStatData(i, 4), 1, 1, 1)
-			elseif areaID == SOTA then
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(1)..":", GetBattlefieldStatData(i, 1), 1, 1, 1)
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(2)..":", GetBattlefieldStatData(i, 2), 1, 1, 1)
-			elseif areaID == IOC or areaID == TBFG or areaID == AB then
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(1)..":", GetBattlefieldStatData(i, 1), 1, 1, 1)
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(2)..":", GetBattlefieldStatData(i, 2), 1, 1, 1)
-			elseif areaID == TOK then
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(1)..":", GetBattlefieldStatData(i, 1), 1, 1, 1)
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(2)..":", GetBattlefieldStatData(i, 2), 1, 1, 1)
-			elseif areaID == SSM then
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(1)..":", GetBattlefieldStatData(i, 1), 1, 1, 1)
-			elseif areaID == DG then
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(1)..":", GetBattlefieldStatData(i, 1), 1, 1, 1)
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(2)..":", GetBattlefieldStatData(i, 3), 1, 1, 1)
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(3)..":", GetBattlefieldStatData(i, 4), 1, 1, 1)
-			elseif areaID == SS then
-				GameTooltip:AddDoubleLine(GetBattlefieldStatInfo(1)..":", GetBattlefieldStatData(i, 1), 1, 1, 1)
+			for j = 1, #pvpStatIDs do
+				GameTooltip:AddDoubleLine(C_PvP.GetMatchPVPStatColumn(pvpStatIDs[j])..":", GetBattlefieldStatData(i, j), 1, 1, 1)
 			end
+
 			break
 		end
 	end
