@@ -100,7 +100,6 @@ local function Stuffing_OnShow()
 	Stuffing:Layout()
 	Stuffing:SearchReset()
 	PlaySound(SOUNDKIT.IG_BACKPACK_OPEN)
-	collectgarbage("collect")
 end
 
 local function StuffingBank_OnHide()

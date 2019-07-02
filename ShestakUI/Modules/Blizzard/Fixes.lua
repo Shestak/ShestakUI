@@ -114,18 +114,3 @@ FrameStackFix:SetScript("OnEvent", function(self, event, addon)
 		end)
 	end
 end)
-
-----------------------------------------------------------------------------------------
---	Collect garbage
-----------------------------------------------------------------------------------------
-local eventcount = 0
-local Garbage = CreateFrame("Frame")
-Garbage:RegisterAllEvents()
-Garbage:SetScript("OnEvent", function(self, event)
-	eventcount = eventcount + 1
-
-	if (not InCombatLockdown() and eventcount > 10000) or event == "PLAYER_ENTERING_WORLD" then
-		collectgarbage("collect")
-		eventcount = 0
-	end
-end)

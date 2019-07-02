@@ -107,10 +107,6 @@ load:SetScript("OnEvent", function(self, event)
 		end
 	end)
 
-	ColorPickerOkayButton:HookScript("OnClick", function()
-		collectgarbage("collect")
-	end)
-
 	OpacitySliderFrame:HookScript("OnValueChanged", function(self)
 		if not editingText then
 			UpdateAlphaText()
