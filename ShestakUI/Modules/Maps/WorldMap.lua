@@ -33,18 +33,33 @@ coords.MouseText:SetJustifyH("LEFT")
 coords.MouseText:SetPoint("BOTTOMLEFT", coords.PlayerText, "TOPLEFT", 0, 5)
 coords.MouseText:SetText(L_MAP_CURSOR..": 0,0")
 
+local mapRects, tempVec2D = {}, CreateVector2D(0, 0)
+local function GetPlayerMapPos(mapID)
+	tempVec2D.x, tempVec2D.y = UnitPosition("player")
+	if not tempVec2D.x then return end
+
+	local mapRect = mapRects[mapID]
+	if not mapRect then
+		mapRect = {
+			select(2, C_Map.GetWorldPosFromMapPos(mapID, CreateVector2D(0, 0))),
+			select(2, C_Map.GetWorldPosFromMapPos(mapID, CreateVector2D(1, 1)))}
+		mapRect[2]:Subtract(mapRect[1])
+		mapRects[mapID] = mapRect
+	end
+	tempVec2D:Subtract(mapRect[1])
+
+	return (tempVec2D.y/mapRect[2].y), (tempVec2D.x/mapRect[2].x)
+end
+
 local int = 0
 WorldMapFrame:HookScript("OnUpdate", function(self)
 	int = int + 1
 	if int >= 3 then
-		local UnitMap = C_Map.GetBestMapForUnit("player")
+		local unitMap = C_Map.GetBestMapForUnit("player")
 		local x, y = 0, 0
 
-		if UnitMap then
-			local GetPlayerMapPosition = C_Map.GetPlayerMapPosition(UnitMap, "player")
-			if GetPlayerMapPosition then
-				x, y = GetPlayerMapPosition:GetXY()
-			end
+		if unitMap then
+			x, y = GetPlayerMapPos(unitMap)
 		end
 
 		x = math.floor(100 * x)

@@ -74,6 +74,24 @@ end)
 -- Config missing?
 if not modules then return end
 
+local mapRects, tempVec2D = {}, CreateVector2D(0, 0)
+local function GetPlayerMapPos(mapID)
+	tempVec2D.x, tempVec2D.y = UnitPosition("player")
+	if not tempVec2D.x then return end
+
+	local mapRect = mapRects[mapID]
+	if not mapRect then
+		mapRect = {
+			select(2, C_Map.GetWorldPosFromMapPos(mapID, CreateVector2D(0, 0))),
+			select(2, C_Map.GetWorldPosFromMapPos(mapID, CreateVector2D(1, 1)))}
+		mapRect[2]:Subtract(mapRect[1])
+		mapRects[mapID] = mapRect
+	end
+	tempVec2D:Subtract(mapRect[1])
+
+	return (tempVec2D.y/mapRect[2].y), (tempVec2D.x/mapRect[2].x)
+end
+
 if modules and ((coords and coords.enabled) or (location and location.enabled)) then
 	ls:SetScript("OnUpdate", function(self, elapsed)
 		self.elapsed = (self.elapsed or 0) + elapsed
@@ -81,11 +99,7 @@ if modules and ((coords and coords.enabled) or (location and location.enabled)) 
 			local unitMap = C_Map.GetBestMapForUnit("player")
 
 			if unitMap then
-				local GetPlayerMapPosition = C_Map.GetPlayerMapPosition(C_Map.GetBestMapForUnit("player"), "player")
-
-				if GetPlayerMapPosition then
-					coordX, coordY = C_Map.GetPlayerMapPosition(C_Map.GetBestMapForUnit("player"), "player"):GetXY()
-				end
+				coordX, coordY = GetPlayerMapPos(unitMap)
 			end
 
 			self.elapsed = 0
