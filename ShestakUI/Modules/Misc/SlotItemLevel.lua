@@ -15,21 +15,35 @@ f:RegisterEvent("PLAYER_LOGIN")
 -- Tooltip and scanning by Phanx @ http://www.wowinterface.com/forums/showthread.php?p=271406
 local S_ITEM_LEVEL = "^" .. gsub(ITEM_LEVEL, "%%d", "(%%d+)")
 
-local scantip = CreateFrame("GameTooltip", "iLvlScanningTooltip", nil, "GameTooltipTemplate")
-scantip:SetOwner(UIParent, "ANCHOR_NONE")
+local scanner = CreateFrame("GameTooltip", "SlotScanningTooltip", nil, "GameTooltipTemplate")
+scanner:SetOwner(UIParent, "ANCHOR_NONE")
+
+local scannerName = scanner:GetName()
 
 local function _getRealItemLevel(slotId, unit)
-	local realItemLevel
-	local hasItem = scantip:SetInventoryItem(unit, slotId)
+	local hasItem = scanner:SetInventoryItem(unit, slotId)
 	if not hasItem then return nil end -- With this we don't get ilvl for offhand if we equip 2h weapon
+	local realItemLevel
 
-	for i = 2, scantip:NumLines() do -- Line 1 is always the name so you can skip it.
-		local text = _G["iLvlScanningTooltipTextLeft"..i]:GetText()
-		if text and text ~= "" then
-			realItemLevel = realItemLevel or strmatch(text, S_ITEM_LEVEL)
-
-			if realItemLevel then
-				return tonumber(realItemLevel)
+	local line = _G[scannerName.."TextLeft2"]
+	if line then
+		local msg = line:GetText()
+		if msg and string.find(msg, S_ITEM_LEVEL) then
+			local itemLevel = string.match(msg, S_ITEM_LEVEL)
+			if itemLevel and (tonumber(itemLevel) > 0) then
+				realItemLevel = itemLevel
+			end
+		else
+			-- Check line 3, some artifacts have the ilevel there
+			line = _G[scannerName.."TextLeft3"]
+			if line then
+				local msg = line:GetText()
+				if msg and string.find(msg, S_ITEM_LEVEL) then
+					local itemLevel = string.match(msg, S_ITEM_LEVEL)
+					if itemLevel and (tonumber(itemLevel) > 0) then
+						realItemLevel = itemLevel
+					end
+				end
 			end
 		end
 	end
