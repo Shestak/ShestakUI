@@ -23,6 +23,7 @@ WorldMapFrame:SetClampedToScreen(true)
 local coords = CreateFrame("Frame", "CoordsFrame", WorldMapFrame)
 coords:SetFrameLevel(WorldMapFrame.BorderFrame:GetFrameLevel() + 2)
 coords:SetFrameStrata(WorldMapFrame.BorderFrame:GetFrameStrata())
+
 coords.PlayerText = coords:CreateFontString(nil, "ARTWORK", "GameFontNormal")
 coords.PlayerText:SetPoint("BOTTOM", WorldMapFrame.ScrollContainer, "BOTTOM", 5, 20)
 coords.PlayerText:SetJustifyH("LEFT")
@@ -62,29 +63,23 @@ WorldMapFrame:HookScript("OnUpdate", function(self)
 			x, y = GetPlayerMapPos(unitMap)
 		end
 
-		x = math.floor(100 * x)
-		y = math.floor(100 * y)
 		if x ~= 0 and y ~= 0 then
-			coords.PlayerText:SetText(UnitName("player")..": "..x..","..y)
+			coords.PlayerText:SetFormattedText("%s: %.0f,%.0f", T.name, x * 100, y * 100)
 		else
 			coords.PlayerText:SetText(UnitName("player")..": ".."|cffff0000"..L_MAP_BOUNDS.."|r")
 		end
 
-		local scale = WorldMapFrame.ScrollContainer:GetEffectiveScale()
-		local width = WorldMapFrame.ScrollContainer:GetWidth()
-		local height = WorldMapFrame.ScrollContainer:GetHeight()
-		local centerX, centerY = WorldMapFrame.ScrollContainer:GetCenter()
-		local x, y = GetCursorPosition()
-		local adjustedX = (x / scale - (centerX - (width/2))) / width
-		local adjustedY = (centerY + (height/2) - y / scale) / height
-
-		if adjustedX >= 0 and adjustedY >= 0 and adjustedX <= 1 and adjustedY <= 1 then
-			adjustedX = math.floor(100 * adjustedX)
-			adjustedY = math.floor(100 * adjustedY)
-			coords.MouseText:SetText(L_MAP_CURSOR..adjustedX..","..adjustedY)
+		if WorldMapFrame.ScrollContainer:IsMouseOver() then
+			local mouseX, mouseY = WorldMapFrame.ScrollContainer:GetNormalizedCursorPosition()
+			if mouseX and mouseY and mouseX >= 0 and mouseY >= 0 then
+				coords.MouseText:SetFormattedText("%s %.0f,%.0f", L_MAP_CURSOR, mouseX * 100, mouseY * 100)
+			else
+				coords.MouseText:SetText(L_MAP_CURSOR.."|cffff0000"..L_MAP_BOUNDS.."|r")
+			end
 		else
 			coords.MouseText:SetText(L_MAP_CURSOR.."|cffff0000"..L_MAP_BOUNDS.."|r")
 		end
+
 		int = 0
 	end
 end)
