@@ -24,8 +24,11 @@ local CreateTip = function(link)
 
 	local num = #tips + 1
 	local tip = CreateFrame("GameTooltip", "ItemRefTooltip"..num, UIParent, "GameTooltipTemplate")
-	tip:SetTemplate("Transparent")
-	tip:SetPoint("BOTTOM", 0, 80)
+	if num == 2 then
+		tip:SetPoint("LEFT", ItemRefTooltip, "RIGHT", 3, 0)
+	else
+		tip:SetPoint("LEFT", "ItemRefTooltip"..num - 1, "RIGHT", 3, 0)
+	end
 	tip:SetSize(128, 64)
 	tip:EnableMouse(true)
 	tip:SetMovable(true)
@@ -33,10 +36,17 @@ local CreateTip = function(link)
 	tip:RegisterForDrag("LeftButton")
 	tip:SetScript("OnDragStart", function(self) self:StartMoving() end)
 	tip:SetScript("OnDragStop", function(self) self:StopMovingOrSizing() end)
-	tip:HookScript("OnShow", function(self)
-		self:SetBackdropColor(C.media.backdrop_color[1], C.media.backdrop_color[2], C.media.backdrop_color[3], C.media.backdrop_alpha)
-		self:SetBackdropBorderColor(unpack(C.media.border_color))
-	end)
+
+	tip:SetBackdrop(nil)
+	tip.SetBackdrop = T.dummy
+	if tip.BackdropFrame then
+		tip.BackdropFrame:SetBackdrop(nil)
+	end
+	local bg = CreateFrame("Frame", nil, tip)
+	bg:SetPoint("TOPLEFT")
+	bg:SetPoint("BOTTOMRIGHT")
+	bg:SetFrameLevel(tip:GetFrameLevel() - 1)
+	bg:SetTemplate("Transparent")
 
 	local close = CreateFrame("Button", "ItemRefTooltip"..num.."CloseButton", tip)
 	close:SetScript("OnClick", function(self) HideUIPanel(tip) end)
