@@ -34,17 +34,6 @@ local function LoadSkin()
 		button_icon:SetPoint("BOTTOMRIGHT", -2, 2)
 	end
 
-	hooksecurefunc("ItemSocketingFrame_Update", function()
-		local numSockets = GetNumSockets()
-		for i = 1, numSockets do
-			local button = _G["ItemSocketingSocket"..i]
-			local gemColor = GetSocketTypes(i)
-			local color = GEM_TYPE_INFO[gemColor]
-			button:SetBackdropBorderColor(color.r, color.g, color.b)
-			button.overlay:SetVertexColor(color.r, color.g, color.b, 0.35)
-		end
-	end)
-
 	ItemSocketingFramePortrait:Kill()
 	ItemSocketingSocketButton:ClearAllPoints()
 	ItemSocketingSocketButton:SetPoint("BOTTOMRIGHT", ItemSocketingFrame.backdrop, "BOTTOMRIGHT", -5, 5)
