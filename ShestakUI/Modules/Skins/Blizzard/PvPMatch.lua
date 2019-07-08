@@ -2,7 +2,7 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.skins.blizzard_frames ~= true then return end
 
 ----------------------------------------------------------------------------------------
---	WorldStateScore skin
+--	PVPMatch skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	-- Macro to show the PVPMatchScoreboard: /run PVPMatchScoreboard:Show()
