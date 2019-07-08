@@ -63,7 +63,7 @@ WorldMapFrame:HookScript("OnUpdate", function(self)
 			x, y = GetPlayerMapPos(unitMap)
 		end
 
-		if x ~= 0 and y ~= 0 then
+		if x and y and x >= 0 and y >= 0 then
 			coords.PlayerText:SetFormattedText("%s: %.0f,%.0f", T.name, x * 100, y * 100)
 		else
 			coords.PlayerText:SetText(UnitName("player")..": ".."|cffff0000"..L_MAP_BOUNDS.."|r")
