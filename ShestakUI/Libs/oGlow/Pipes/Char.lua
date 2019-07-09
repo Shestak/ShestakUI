@@ -18,16 +18,14 @@ local update = function(self)
 	end
 end
 
-local UNIT_INVENTORY_CHANGED = function(self, event, unit)
-	if unit == "player" then
-		update(self)
-	end
+local PLAYER_EQUIPMENT_CHANGED = function(self)
+	update(self)
 end
 
 local enable = function(self)
 	_E = true
 
-	self:RegisterEvent("UNIT_INVENTORY_CHANGED", UNIT_INVENTORY_CHANGED)
+	self:RegisterEvent("PLAYER_EQUIPMENT_CHANGED", PLAYER_EQUIPMENT_CHANGED)
 
 	if not hook then
 		hook = function(...)
@@ -40,7 +38,7 @@ end
 
 local disable = function(self)
 	_E = nil
-	self:UnregisterEvent("UNIT_INVENTORY_CHANGED", UNIT_INVENTORY_CHANGED)
+	self:UnregisterEvent("PLAYER_EQUIPMENT_CHANGED", PLAYER_EQUIPMENT_CHANGED)
 end
 
 oGlow:RegisterPipe("char", enable, disable, update, "Character frame")
