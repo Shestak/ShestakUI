@@ -80,111 +80,181 @@ end
 
 T.RaidDebuffs = {
 -----------------------------------------------------------------
+-- Eternal Palace
+-----------------------------------------------------------------
+	-- Abyssal Commander Sivara
+	[SpellName(300701)] = 3,	-- Rimefrost
+	[SpellName(300705)] = 3,	-- Septic Taint
+	[SpellName(294847)] = 3,	-- Unstable Mixture
+	[SpellName(295850)] = 3,	-- Delirious
+	[SpellName(295421)] = 3,	-- Overflowing Venom
+	[SpellName(295807)] = 3,	-- Frozen
+	[SpellName(300883)] = 3,	-- Inversion Sickness
+	[SpellName(295705)] = 3,	-- Toxic Bolt
+
+	-- Blackwater Behemoth
+	[SpellName(292127)] = 3,	-- Darkest Depths
+	[SpellName(292138)] = 3,	-- Radiant Biomass
+	[SpellName(292167)] = 3,	-- Toxic Spine
+	[SpellName(301494)] = 3,	-- Piercing Barb
+
+	-- Radiance of Azshara
+	[SpellName(296566)] = 3,	-- Tide Fist
+	[SpellName(296737)] = 3,	-- Arcane Bomb
+	[SpellName(295920)] = 3,	-- Ancient Tempest
+	[SpellName(296462)] = 3,	-- Squall Trap
+	[SpellName(299152)] = 3,	-- Waterlogged
+
+	-- Lady Ashvane
+	[SpellName(296693)] = 3,	-- Waterlogged
+	[SpellName(296725)] = 3,	-- Barnacle Bash
+	[SpellName(296942)] = 3,	-- Arcing Azerite
+	[SpellName(296752)] = 3,	-- Cutting Coral
+	[SpellName(297333)] = 3,	-- Briny Bubble
+
+	-- Orgozoa
+	[SpellName(298156)] = 3,	-- Desensitizing Sting
+	[SpellName(298306)] = 3,	-- Incubation Fluid
+
+	-- The Queen’s Court
+	[SpellName(301830)] = 3,	-- Pashmar's Touch
+	[SpellName(296851)] = 3,	-- Fanatical Verdict
+	[SpellName(297836)] = 3,	-- Potent Spark
+	[SpellName(297586)] = 3,	-- Suffering
+	[SpellName(304410)] = 3,	-- Repeat Performance
+	[SpellName(299914)] = 3,	-- Frenetic Charge
+	[SpellName(303306)] = 3,	-- Sphere of Influence
+	[SpellName(300545)] = 3,	-- Mighty Rupture
+
+	-- Za’qul
+	[SpellName(295495)] = 3,	-- Mind Tether
+	[SpellName(295249)] = 3,	-- Delirium Realm
+	[SpellName(303819)] = 3,	-- Nightmare Pool
+	[SpellName(293509)] = 3,	-- Manifest Nightmares
+	[SpellName(295327)] = 3,	-- Shattered Psyche
+	[SpellName(294545)] = 3,	-- Portal of Madness
+	[SpellName(298192)] = 3,	-- Dark Beyond
+	[SpellName(292963)] = 3,	-- Dread
+	[SpellName(300133)] = 3,	-- Snapped
+
+	-- Queen Azshara
+	[SpellName(298781)] = 3,	-- Arcane Orb
+	[SpellName(297907)] = 3,	-- Cursed Heart
+	[SpellName(302999)] = 3,	-- Arcane Vulnerability
+	[SpellName(302141)] = 3,	-- Beckon
+	[SpellName(299276)] = 3,	-- Sanction
+	[SpellName(303657)] = 3,	-- Arcane Burst
+	[SpellName(298756)] = 3,	-- Serrated Edge
+	[SpellName(301078)] = 3,	-- Charged Spear
+	[SpellName(298014)] = 3,	-- Cold Blast
+	[SpellName(298018)] = 3,	-- Frozen
+
+-----------------------------------------------------------------
 -- Crucible of Storms
 -----------------------------------------------------------------
 	-- The Restless Cabal
-	[SpellName(282386)] = 3, -- Aphotic Blast
-	[SpellName(282384)] = 3, -- Shear Mind
-	[SpellName(282566)] = 3, -- Promises of Power
-	[SpellName(282561)] = 3, -- Dark Herald
-	[SpellName(282432)] = 3, -- Crushing Doubt
-	[SpellName(282589)] = 3, -- Cerebral Assault
-	[SpellName(292826)] = 3, -- Mind Scramble
+	[SpellName(282386)] = 3,	-- Aphotic Blast
+	[SpellName(282384)] = 3,	-- Shear Mind
+	[SpellName(282566)] = 3,	-- Promises of Power
+	[SpellName(282561)] = 3,	-- Dark Herald
+	[SpellName(282432)] = 3,	-- Crushing Doubt
+	[SpellName(282589)] = 3,	-- Cerebral Assault
+	[SpellName(292826)] = 3,	-- Mind Scramble
 
 	-- Uu'nat, Harbinger of the Void
-	[SpellName(284851)] = 3, -- Touch of the End
-	[SpellName(286459)] = 3, -- Feedback: Void
-	[SpellName(286457)] = 3, -- Feedback: Ocean
-	[SpellName(286458)] = 3, -- Feedback: Storm
-	[SpellName(285367)] = 3, -- Piercing Gaze of N'Zoth
-	[SpellName(284733)] = 3, -- Embrace of the Void
-	[SpellName(284722)] = 3, -- Umbral Shell
-	[SpellName(285345)] = 3, -- Maddening Eyes of N'Zoth
-	[SpellName(285477)] = 3, -- Obscurity
-	[SpellName(285652)] = 3, -- Insatiable Torment
+	[SpellName(284851)] = 3,	-- Touch of the End
+	[SpellName(286459)] = 3,	-- Feedback: Void
+	[SpellName(286457)] = 3,	-- Feedback: Ocean
+	[SpellName(286458)] = 3,	-- Feedback: Storm
+	[SpellName(285367)] = 3,	-- Piercing Gaze of N'Zoth
+	[SpellName(284733)] = 3,	-- Embrace of the Void
+	[SpellName(284722)] = 3,	-- Umbral Shell
+	[SpellName(285345)] = 3,	-- Maddening Eyes of N'Zoth
+	[SpellName(285477)] = 3,	-- Obscurity
+	[SpellName(285652)] = 3,	-- Insatiable Torment
 
 -----------------------------------------------------------------
 -- Battle of Dazar'alor
 -----------------------------------------------------------------
 	-- Champion of the Light
-	[SpellName(283573)] = 3, -- Sacred Blade
-	[SpellName(283617)] = 3, -- Wave of Light
-	[SpellName(283651)] = 3, -- Blinding Faith
-	[SpellName(284595)] = 3, -- Penance
-	[SpellName(283582)] = 3, -- Consecration
+	[SpellName(283573)] = 3,	-- Sacred Blade
+	[SpellName(283617)] = 3,	-- Wave of Light
+	[SpellName(283651)] = 3,	-- Blinding Faith
+	[SpellName(284595)] = 3,	-- Penance
+	[SpellName(283582)] = 3,	-- Consecration
 
 	-- Grong
-	[SpellName(285998)] = 3, -- Ferocious Roar
-	[SpellName(283069)] = 3, -- Megatomic Fire
-	[SpellName(285671)] = 3, -- Crushed
-	[SpellName(285875)] = 3, -- Rending Bite
+	[SpellName(285998)] = 3,	-- Ferocious Roar
+	[SpellName(283069)] = 3,	-- Megatomic Fire
+	[SpellName(285671)] = 3,	-- Crushed
+	[SpellName(285875)] = 3,	-- Rending Bite
 
 	-- Jadefire Masters
-	[SpellName(282037)] = 3, -- Rising Flames
-	[SpellName(284374)] = 3, -- Magma Trap
-	[SpellName(285632)] = 3, -- Stalking
-	[SpellName(288151)] = 3, -- Tested
-	[SpellName(284089)] = 3, -- Successful Defense
-	[SpellName(286988)] = 3, -- Searing Embers
+	[SpellName(282037)] = 3,	-- Rising Flames
+	[SpellName(284374)] = 3,	-- Magma Trap
+	[SpellName(285632)] = 3,	-- Stalking
+	[SpellName(288151)] = 3,	-- Tested
+	[SpellName(284089)] = 3,	-- Successful Defense
+	[SpellName(286988)] = 3,	-- Searing Embers
 
 	-- Opulence
-	[SpellName(286501)] = 3, -- Creeping Blaze
-	[SpellName(283610)] = 3, -- Crush
-	[SpellName(289383)] = 3, -- Chaotic Displacement
-	[SpellName(285479)] = 3, -- Flame Jet
-	[SpellName(283063)] = 3, -- Flames of Punishment
-	[SpellName(283507)] = 3, -- Volatile Charge
+	[SpellName(286501)] = 3,	-- Creeping Blaze
+	[SpellName(283610)] = 3,	-- Crush
+	[SpellName(289383)] = 3,	-- Chaotic Displacement
+	[SpellName(285479)] = 3,	-- Flame Jet
+	[SpellName(283063)] = 3,	-- Flames of Punishment
+	[SpellName(283507)] = 3,	-- Volatile Charge
 
 	-- Conclave of the Chosen
-	[SpellName(284663)] = 3, -- Bwonsamdi's Wrath
-	[SpellName(282444)] = 3, -- Lacerating Claws
-	[SpellName(282592)] = 3, -- Bleeding Wounds
-	[SpellName(282209)] = 3, -- Mark of Prey
-	[SpellName(285879)] = 3, -- Mind Wipe
-	[SpellName(282135)] = 3, -- Crawling Hex
-	[SpellName(286060)] = 3, -- Cry of the Fallen
-	[SpellName(282447)] = 3, -- Kimbul's Wrath
-	[SpellName(282834)] = 3, -- Kimbul's Wrath
-	[SpellName(286811)] = 3, -- Akunda's Wrath
-	[SpellName(286838)] = 3, -- Static Orb
+	[SpellName(284663)] = 3,	-- Bwonsamdi's Wrath
+	[SpellName(282444)] = 3,	-- Lacerating Claws
+	[SpellName(282592)] = 3,	-- Bleeding Wounds
+	[SpellName(282209)] = 3,	-- Mark of Prey
+	[SpellName(285879)] = 3,	-- Mind Wipe
+	[SpellName(282135)] = 3,	-- Crawling Hex
+	[SpellName(286060)] = 3,	-- Cry of the Fallen
+	[SpellName(282447)] = 3,	-- Kimbul's Wrath
+	[SpellName(282834)] = 3,	-- Kimbul's Wrath
+	[SpellName(286811)] = 3,	-- Akunda's Wrath
+	[SpellName(286838)] = 3,	-- Static Orb
 
 	-- King Rastakhan
-	[SpellName(284995)] = 3, -- Zombie Dust
-	[SpellName(285349)] = 3, -- Plague of Fire
-	[SpellName(285044)] = 3, -- Toad Toxin
-	[SpellName(284831)] = 3, -- Scorching Detonation
-	[SpellName(289858)] = 3, -- Crushed
-	[SpellName(284662)] = 3, -- Seal of Purification
-	[SpellName(285178)] = 3, -- Serpent's Breath
-	[SpellName(285010)] = 3, -- Poison Toad Slime
+	[SpellName(284995)] = 3,	-- Zombie Dust
+	[SpellName(285349)] = 3,	-- Plague of Fire
+	[SpellName(285044)] = 3,	-- Toad Toxin
+	[SpellName(284831)] = 3,	-- Scorching Detonation
+	[SpellName(289858)] = 3,	-- Crushed
+	[SpellName(284662)] = 3,	-- Seal of Purification
+	[SpellName(285178)] = 3,	-- Serpent's Breath
+	[SpellName(285010)] = 3,	-- Poison Toad Slime
 
 	-- Mekkatorque
-	[SpellName(288806)] = 3, -- Gigavolt Blast
-	[SpellName(289023)] = 3, -- Enormous
-	[SpellName(286646)] = 3, -- Gigavolt Charge
-	[SpellName(288939)] = 3, -- Gigavolt Radiation
-	[SpellName(284168)] = 3, -- Shrunk
-	[SpellName(286516)] = 3, -- Anti-Tampering Shock
-	[SpellName(284214)] = 3, -- Trample
+	[SpellName(288806)] = 3,	-- Gigavolt Blast
+	[SpellName(289023)] = 3,	-- Enormous
+	[SpellName(286646)] = 3,	-- Gigavolt Charge
+	[SpellName(288939)] = 3,	-- Gigavolt Radiation
+	[SpellName(284168)] = 3,	-- Shrunk
+	[SpellName(286516)] = 3,	-- Anti-Tampering Shock
+	[SpellName(284214)] = 3,	-- Trample
 
 	-- Stormwall Blockade
-	[SpellName(284369)] = 3, -- Sea Storm
-	[SpellName(284410)] = 3, -- Tempting Song
-	[SpellName(284405)] = 3, -- Tempting Song
-	[SpellName(284121)] = 3, -- Thunderous Boom
-	[SpellName(286680)] = 3, -- Roiling Tides
-	[SpellName(285000)] = 5, -- Kelp-Wrapped
+	[SpellName(284369)] = 3,	-- Sea Storm
+	[SpellName(284410)] = 3,	-- Tempting Song
+	[SpellName(284405)] = 3,	-- Tempting Song
+	[SpellName(284121)] = 3,	-- Thunderous Boom
+	[SpellName(286680)] = 3,	-- Roiling Tides
+	[SpellName(285000)] = 5,	-- Kelp-Wrapped
 
 	-- Jaina
-	[SpellName(285253)] = 3, -- Ice Shard
-	[SpellName(287993)] = 3, -- Chilling Touch
-	[SpellName(287365)] = 3, -- Searing Pitch
-	[SpellName(288038)] = 3, -- Marked Target
-	[SpellName(285254)] = 3, -- Avalanche
-	[SpellName(287626)] = 3, -- Grasp of Frost
-	[SpellName(287490)] = 3, -- Frozen Solid
-	[SpellName(287199)] = 3, -- Ring of Ice
-	[SpellName(288392)] = 3, -- Vengeful Seas
+	[SpellName(285253)] = 3,	-- Ice Shard
+	[SpellName(287993)] = 3,	-- Chilling Touch
+	[SpellName(287365)] = 3,	-- Searing Pitch
+	[SpellName(288038)] = 3,	-- Marked Target
+	[SpellName(285254)] = 3,	-- Avalanche
+	[SpellName(287626)] = 3,	-- Grasp of Frost
+	[SpellName(287490)] = 3,	-- Frozen Solid
+	[SpellName(287199)] = 3,	-- Ring of Ice
+	[SpellName(288392)] = 3,	-- Vengeful Seas
 
 -----------------------------------------------------------------
 -- Uldir
@@ -425,6 +495,24 @@ T.RaidDebuffs = {
 	[SpellName(260685)] = 3,	-- Taint of G'huun
 	[SpellName(266107)] = 5,	-- Thirst for Blood
 	[SpellName(260455)] = 3,	-- Serrated Fangs
+
+	-- Operation: Mechagon
+	[SpellName(291928)] = 3,	-- Giga-Zap
+	[SpellName(302274)] = 3,	-- Fulminating Zap
+	[SpellName(298669)] = 3,	-- Taze
+	[SpellName(295445)] = 3,	-- Wreck
+	[SpellName(294929)] = 3,	-- Blazing Chomp
+	[SpellName(297257)] = 3,	-- Electrical Charge
+	[SpellName(294855)] = 3,	-- Blossom Blast
+	[SpellName(291972)] = 3,	-- Explosive Leap
+	[SpellName(285443)] = 3,	-- "Hidden" Flame Cannon
+	[SpellName(291974)] = 3,	-- Obnoxious Monologue
+	[SpellName(296150)] = 3,	-- Vent Blast
+	[SpellName(298602)] = 3,	-- Smoke Cloud
+	[SpellName(296560)] = 3,	-- Clinging Static
+	[SpellName(297283)] = 3,	-- Cave In
+	[SpellName(291914)] = 3,	-- Cutting Beam
+	[SpellName(302384)] = 3,	-- Static Discharge
 
 -----------------------------------------------------------------
 -- Other
