@@ -8,6 +8,8 @@ local function LoadSkin()
 	WarboardQuestChoiceFrame:StripTextures()
 	WarboardQuestChoiceFrame.NineSlice:Hide()
 	WarboardQuestChoiceFrame:CreateBackdrop("Transparent")
+	WarboardQuestChoiceFrame.backdrop:SetPoint("TOPLEFT", -4, 4)
+	WarboardQuestChoiceFrame.backdrop:SetPoint("BOTTOMRIGHT", 4, 0)
 
 	WarboardQuestChoiceFrame.BorderFrame:Hide()
 	WarboardQuestChoiceFrame.BorderFrame.Header:SetAlpha(0)
