@@ -153,7 +153,7 @@ local function fmttime(sec, t)
 	return strmatch(string, "^%s*$") and "0"..abbr(t, "second") or string
 end
 
-function gradient(perc)
+local function gradient(perc)
 	perc = perc > 1 and 1 or perc < 0 and 0 or perc -- Stay between 0-1
 	local seg, relperc = math.modf(perc*2)
 	local r1, g1, b1, r2, g2, b2 = select(seg * 3 + 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0) -- R -> Y -> G
