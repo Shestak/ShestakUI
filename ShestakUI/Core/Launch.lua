@@ -25,6 +25,7 @@ local function InstallUI()
 	SetCVar("autoOpenLootHistory", 0)
 	SetCVar("lossOfControl", 0)
 	SetCVar("nameplateShowSelf", 0)
+	SetCVar("fstack_preferParentKeys", 0)
 
 	-- Setting chat frames
 	if C.chat.enable == true and not (IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter")) then
