@@ -54,7 +54,7 @@ for k = 0, 11 do
 	subs[k + 1] = GetItemSubClassInfo(LE_ITEM_CLASS_ARMOR, k)
 end
 
-for i, subclass in ipairs(unusable[2]) do
+for _, subclass in ipairs(unusable[2]) do
 	unusable[subs[subclass + 1]] = true
 end
 
@@ -592,7 +592,7 @@ function Stuffing:BagType(bag)
 end
 
 function Stuffing:BagNew(bag, f)
-	for i, v in pairs(self.bags) do
+	for _, v in pairs(self.bags) do
 		if v:GetID() == bag then
 			v.bagType = self:BagType(bag)
 			return v
@@ -1251,7 +1251,7 @@ function Stuffing:BAG_CLOSED(id)
 end
 
 function Stuffing:BAG_UPDATE_COOLDOWN()
-	for i, v in pairs(self.buttons) do
+	for _, v in pairs(self.buttons) do
 		self:UpdateCooldowns(v)
 	end
 end
@@ -1428,17 +1428,17 @@ function Stuffing:Restack()
 
 	Stuffing_Open()
 
-	for i, v in pairs(self.buttons) do
+	for _, v in pairs(self.buttons) do
 		if InBags(v.bag) then
 			local _, cnt, _, _, _, _, clink = GetContainerItemInfo(v.bag, v.slot)
 			if clink then
 				local n, _, _, _, _, _, _, s = GetItemInfo(clink)
 
 				if n and cnt ~= s then
-					if not st[n] then
-						st[n] = {{item = v, size = cnt, max = s}}
+					if not st[clink] then
+						st[clink] = {{item = v, size = cnt, max = s}}
 					else
-						table.insert(st[n], {item = v, size = cnt, max = s})
+						table.insert(st[clink], {item = v, size = cnt, max = s})
 					end
 				end
 			end
@@ -1447,7 +1447,7 @@ function Stuffing:Restack()
 
 	local did_restack = false
 
-	for i, v in pairs(st) do
+	for _, v in pairs(st) do
 		if #v > 1 then
 			for j = 2, #v, 2 do
 				local a, b = v[j - 1], v[j]
