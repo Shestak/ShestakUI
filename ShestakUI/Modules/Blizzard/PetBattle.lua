@@ -111,7 +111,7 @@ hooksecurefunc("PetBattleFrame_UpdateSpeedIndicators", function(self)
 		return
 	end
 
-	for i, unit in pairs(units) do
+	for _, unit in pairs(units) do
 		unit.FirstAttack:Show()
 		if unit.SpeedIcon:IsShown() then
 			unit.FirstAttack:SetVertexColor(0, 1, 0, 1)
@@ -177,7 +177,7 @@ local extraUnits = {
 	f.Enemy3
 }
 
-for i, unit in pairs(extraUnits) do
+for _, unit in pairs(extraUnits) do
 	unit.BorderAlive:SetAlpha(0)
 	unit.HealthBarBG:SetAlpha(0)
 	unit.HealthDivider:SetAlpha(0)
@@ -343,7 +343,7 @@ end)
 -- Tooltips skinning
 local tooltips = {BattlePetTooltip, PetBattlePrimaryAbilityTooltip, PetBattlePrimaryUnitTooltip, FloatingPetBattleAbilityTooltip, FloatingBattlePetTooltip}
 
-for i, tt in pairs(tooltips) do
+for _, tt in pairs(tooltips) do
 	tt:SetTemplate("Transparent")
 
 	tt.Background:SetTexture(nil)

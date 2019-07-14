@@ -44,7 +44,7 @@ bar:RegisterEvent("UPDATE_SHAPESHIFT_FORMS")
 bar:RegisterEvent("UPDATE_SHAPESHIFT_USABLE")
 bar:RegisterEvent("UPDATE_SHAPESHIFT_COOLDOWN")
 bar:RegisterEvent("ACTIONBAR_PAGE_CHANGED")
-bar:SetScript("OnEvent", function(self, event, ...)
+bar:SetScript("OnEvent", function(self, event)
 	if event == "PLAYER_LOGIN" then
 		for i = 1, NUM_STANCE_SLOTS do
 			local button = _G["StanceButton"..i]

@@ -15,7 +15,7 @@ local frames = {
 	"StaticPopup2", "ScrollOfResurrectionSelectionFrame"
 }
 
-for i, v in pairs(frames) do
+for _, v in pairs(frames) do
 	if _G[v] then
 		_G[v]:EnableMouse(true)
 		_G[v]:SetMovable(true)

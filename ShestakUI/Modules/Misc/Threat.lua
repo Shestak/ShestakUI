@@ -131,7 +131,7 @@ local UpdateThreat = function()
 	UpdateBars()
 end
 
-local OnEvent = function(self, event, ...)
+local OnEvent = function(_, event)
 	if event == "PLAYER_TARGET_CHANGED" or event == "UNIT_THREAT_LIST_UPDATE" then
 		if C.threat.hide_solo == true and GetNumGroupMembers() == 0 then
 			targeted = false

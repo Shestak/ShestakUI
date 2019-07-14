@@ -6,7 +6,7 @@ if C.misc.sum_buyouts ~= true then return end
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")
-frame:SetScript("OnEvent", function(self, event, addon)
+frame:SetScript("OnEvent", function(_, _, addon)
 	if addon == "Blizzard_AuctionUI" then
 		local f = CreateFrame("Frame", nil, AuctionFrameAuctions)
 		f:SetSize(200, 20)
@@ -16,7 +16,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 		text:SetPoint("LEFT")
 
 		f:RegisterEvent("AUCTION_OWNED_LIST_UPDATE")
-		f:SetScript("OnEvent", function(self, event, ...)
+		f:SetScript("OnEvent", function()
 			local totalBuyout = 0
 			local totalBid = 0
 

@@ -677,7 +677,7 @@ SlashCmdList.XCT = function(input)
 			pr("|cffffff00"..L_COMBATTEXT_TEST_ENABLED.."|r")
 		end
 	elseif input == "reset" then
-		for i, v in pairs(placed) do
+		for _, v in pairs(placed) do
 			if _G[v] then
 				_G[v]:SetUserPlaced(false)
 			end

@@ -115,7 +115,7 @@ end
 -- Event Handler
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("READY_CHECK")
-frame:SetScript("OnEvent", function(self, event, ...)
+frame:SetScript("OnEvent", function()
 	if C.announcements.flask_food_auto then
 		run()
 	end

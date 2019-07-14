@@ -202,7 +202,7 @@ end
 
 local filter = CreateFrame("Frame")
 filter:RegisterEvent("ADDON_LOADED")
-filter:SetScript("OnEvent", function(self, event, addon, ...)
+filter:SetScript("OnEvent", function(_, _, addon)
 	if addon == "Blizzard_AchievementUI" then
 		if AchievementFrame then
 			old_nocomplete_filter_init()

@@ -74,7 +74,7 @@ function stopOpening(msg, ...)
 	if msg then print(msg, ...) end
 end
 
-function onEvent(frame, event, arg1, arg2, arg3, arg4)
+function onEvent(_, event, arg1)
 	if event == "UI_ERROR_MESSAGE" then
 		if arg1 == ERR_INV_FULL then
 			stopOpening("|cffffff00"..L_MAIL_STOPPED)
