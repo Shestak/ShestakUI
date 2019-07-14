@@ -31,7 +31,6 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	CollectionsJournal:StripTextures()
 	CollectionsJournal:SetTemplate("Transparent")
-	CollectionsJournal:Hide()
 	CollectionsJournalPortrait:SetAlpha(0)
 
 	for i = 1, 5 do
