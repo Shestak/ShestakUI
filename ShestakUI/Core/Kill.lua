@@ -43,6 +43,8 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	SetCVar("countdownForCooldowns", 0)
 	InterfaceOptionsActionBarsPanelCountdownCooldowns:Kill()
 
+	SetCVar("fstack_preferParentKeys", 0)
+
 	if C.chat.enable then
 		SetCVar("chatStyle", "im")
 	end
