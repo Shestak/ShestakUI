@@ -415,6 +415,11 @@ ns.CreateColourPicker = function(parent, option, needsReload, text)
 end
 
 -- DropDown
+local DropDownText = {
+	["Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Normal.ttf"] = "Normal font",
+	["Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Pixel.ttf"] = "Pixel Font",
+	[STANDARD_TEXT_FONT] = "Blizzard font"
+}
 
 ns.CreateDropDown = function(parent, option, needsReload, text, tableValue)
 	local f = CreateFrame("Frame", parent:GetName()..option.."DropDown", parent, "UIDropDownMenuTemplate")
@@ -424,7 +429,7 @@ ns.CreateDropDown = function(parent, option, needsReload, text, tableValue)
 		local info = UIDropDownMenu_CreateInfo()
 		info.func = self.SetValue
 		for _, value in pairs(tableValue) do
-			info.text = value
+			info.text = DropDownText[value] or value
 			info.arg1 = value
 			info.checked = value == f.selectedValue
 			UIDropDownMenu_AddButton(info)
@@ -433,7 +438,8 @@ ns.CreateDropDown = function(parent, option, needsReload, text, tableValue)
 
 	function f:SetValue(newValue)
 		f.selectedValue = newValue
-		UIDropDownMenu_SetText(f, newValue)
+		local text = DropDownText[newValue] or newValue
+		UIDropDownMenu_SetText(f, text)
 		SaveValue(f, newValue)
 		old[f] = f.oldValue
 		checkIsReloadNeeded()
@@ -797,7 +803,8 @@ local function displaySettings()
 	end
 
 	for _, dropdown in pairs(dropdowns) do
-		UIDropDownMenu_SetText(dropdown, C[dropdown.group][dropdown.option])
+		local text = DropDownText[C[dropdown.group][dropdown.option]] or C[dropdown.group][dropdown.option]
+		UIDropDownMenu_SetText(dropdown, text)
 		dropdown.selectedValue = C[dropdown.group][dropdown.option]
 		dropdown.oldValue = C[dropdown.group][dropdown.option]
 	end
