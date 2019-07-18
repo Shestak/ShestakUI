@@ -97,7 +97,7 @@ ttt:SetScript("OnUpdate", function(self, elapsed)
 end)
 
 -- HOOK: OnTooltipSetUnit
-GameTooltip:HookScript("OnTooltipSetUnit", function(self, ...)
+GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 	-- Abort any delayed inspect in progress
 	ttt:Hide()
 	-- Get the unit -- Check the UnitFrame unit if this tip is from a concated unit, such as "targettarget".

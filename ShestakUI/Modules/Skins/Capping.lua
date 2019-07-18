@@ -9,15 +9,15 @@ local self = CapFrame
 local db
 local bars = {}
 
-local OnEvent = function(_, event, ...)
+local OnEvent = function(_, event)
 	if event == "ADDON_LOADED" and IsAddOnLoaded("Capping") then
 		db = CappingDB
 		db.texture = "Smooth"
 		db.altstyle = false
 		db.inset = 0
 		hooksecurefunc(Capping, "StartBar", function(...) self:StyleBar(...) end)
-		hooksecurefunc(Capping, "StopBar", function(...) self:SortBars() end)
-		hooksecurefunc(Capping, "ModMap", function(...) self:SortBars() end)
+		hooksecurefunc(Capping, "StopBar", function() self:SortBars() end)
+		hooksecurefunc(Capping, "ModMap", function() self:SortBars() end)
 	end
 end
 

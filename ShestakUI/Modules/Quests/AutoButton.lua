@@ -86,7 +86,7 @@ Scanner:SetScript("OnEvent", function()
 		for s = 1, GetContainerNumSlots(b) do
 			local itemID = GetContainerItemID(b, s)
 			itemID = tonumber(itemID)
-			for i, Items in pairs(Items) do
+			for _, Items in pairs(Items) do
 				if itemID == Items then
 					local itemName = GetItemInfo(itemID)
 					local count = GetItemCount(itemID)

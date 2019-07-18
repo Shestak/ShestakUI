@@ -15,7 +15,7 @@ local function newTooltipHooker(method, func)
 	return function(tooltip)
 		local modified = false
 
-		tooltip:HookScript("OnTooltipCleared", function(self, ...)
+		tooltip:HookScript("OnTooltipCleared", function()
 			modified = false
 		end)
 
@@ -28,14 +28,14 @@ local function newTooltipHooker(method, func)
 	end
 end
 
-local hookItem = newTooltipHooker("OnTooltipSetItem", function(self, ...)
+local hookItem = newTooltipHooker("OnTooltipSetItem", function(self)
 	local _, link = self:GetItem()
 	if link then
 		setTooltipIcon(self, GetItemIcon(link))
 	end
 end)
 
-local hookSpell = newTooltipHooker("OnTooltipSetSpell", function(self, ...)
+local hookSpell = newTooltipHooker("OnTooltipSetSpell", function(self)
 	local _, id = self:GetSpell()
 	if id then
 		setTooltipIcon(self, select(3, GetSpellInfo(id)))

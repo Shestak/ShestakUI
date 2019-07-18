@@ -357,7 +357,7 @@ GameTooltip:HookScript("OnTooltipSetUnit", OnTooltipSetUnit)
 --	Adds guild rank to tooltips(GuildRank by Meurtcriss)
 ----------------------------------------------------------------------------------------
 if C.tooltip.rank == true then
-	GameTooltip:HookScript("OnTooltipSetUnit", function(self, ...)
+	GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 		-- Get the unit
 		local _, unit = self:GetUnit()
 		if not unit then

@@ -171,7 +171,7 @@ local function CreateRollFrame()
 end
 
 local function GetFrame()
-	for i, f in ipairs(frames) do
+	for _, f in ipairs(frames) do
 		if not f.rollID then return f end
 	end
 
@@ -287,7 +287,7 @@ local function LOOT_HISTORY_ROLL_CHANGED(rollindex, playerindex)
 end
 
 LootRollAnchor:RegisterEvent("ADDON_LOADED")
-LootRollAnchor:SetScript("OnEvent", function(frame, event, addon)
+LootRollAnchor:SetScript("OnEvent", function(_, _, addon)
 	if addon ~= "ShestakUI" then return end
 
 	LootRollAnchor:UnregisterEvent("ADDON_LOADED")
@@ -297,7 +297,7 @@ LootRollAnchor:SetScript("OnEvent", function(frame, event, addon)
 	UIParent:UnregisterEvent("START_LOOT_ROLL")
 	UIParent:UnregisterEvent("CANCEL_LOOT_ROLL")
 
-	LootRollAnchor:SetScript("OnEvent", function(frame, event, ...)
+	LootRollAnchor:SetScript("OnEvent", function(_, event, ...)
 		if event == "LOOT_HISTORY_ROLL_CHANGED" then
 			return LOOT_HISTORY_ROLL_CHANGED(...)
 		else

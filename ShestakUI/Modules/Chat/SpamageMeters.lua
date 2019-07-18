@@ -51,11 +51,11 @@ local events = {
 	"CHAT_MSG_YELL"
 }
 
-local function FilterLine(event, source, message, ...)
+local function FilterLine(event, source, message)
 	for _, v in ipairs(nextLines) do
 		if message:match(v) then
 			local curTime = time()
-			for i, j in ipairs(meters) do
+			for _, j in ipairs(meters) do
 				local elapsed = curTime - j.time
 				if j.source == source and j.event == event and elapsed < 1 then
 					local toInsert = true
