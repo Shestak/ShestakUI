@@ -44,13 +44,3 @@ local function CaptureUpdate()
 	end
 end
 hooksecurefunc("UIParent_ManageFramePositions", CaptureUpdate)
-
-----------------------------------------------------------------------------------------
---	Battlefield score frame
-----------------------------------------------------------------------------------------
-do
-	local f = _G["UIWidgetTopCenterContainerFrame"]
-	f:ClearAllPoints()
-	f:SetFrameStrata("BACKGROUND")
-	f:SetPoint(unpack(C.position.attempt))
-end
