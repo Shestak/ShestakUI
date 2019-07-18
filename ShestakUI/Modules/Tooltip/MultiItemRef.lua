@@ -49,7 +49,7 @@ local CreateTip = function(link)
 	bg:SetTemplate("Transparent")
 
 	local close = CreateFrame("Button", "ItemRefTooltip"..num.."CloseButton", tip)
-	close:SetScript("OnClick", function(self) HideUIPanel(tip) end)
+	close:SetScript("OnClick", function() HideUIPanel(tip) end)
 	T.SkinCloseButton(close)
 
 	table.insert(UISpecialFrames, tip:GetName())

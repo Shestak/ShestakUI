@@ -316,7 +316,7 @@ local function LoadSkin()
 		button.bg:SetPoint("BOTTOMRIGHT", -2, 3)
 	end
 
-	hooksecurefunc(PlayerTalentFrameTalents.PvpTalentFrame.TalentList, "Update", function(self)
+	hooksecurefunc(PlayerTalentFrameTalents.PvpTalentFrame.TalentList, "Update", function()
 		for _, button in pairs(PlayerTalentFrameTalents.PvpTalentFrame.TalentList.ScrollFrame.buttons) do
 			if button.Selected:IsShown() then
 				button.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b, 1)

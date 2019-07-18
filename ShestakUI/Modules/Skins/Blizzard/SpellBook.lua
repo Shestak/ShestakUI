@@ -44,7 +44,7 @@ local function LoadSkin()
 	T.SkinCloseButton(SpellLockedTooltip.CloseButton)
 
 	-- Skin SpellButtons
-	local function SpellButtons(self, first)
+	local function SpellButtons(_, first)
 		for i = 1, SPELLS_PER_PAGE do
 			local button = _G["SpellButton"..i]
 			local icon = _G["SpellButton"..i.."IconTexture"]
@@ -192,7 +192,7 @@ local function LoadSkin()
 		end
 	end
 
-	hooksecurefunc("UpdateProfessionButton", function(self)
+	hooksecurefunc("UpdateProfessionButton", function()
 		for _, button in pairs(professionbuttons) do
 			local button = _G[button]
 			button:GetHighlightTexture():SetColorTexture(1, 1, 1, 0.3)

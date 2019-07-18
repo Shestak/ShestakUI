@@ -6,7 +6,7 @@ if C.tooltip.enable ~= true or C.tooltip.instance_lock ~= true then return end
 ----------------------------------------------------------------------------------------
 local myTip = CreateFrame("GameTooltip", "InstanceLockTooltip", nil, "GameTooltipTemplate")
 
-local function ILockCompare(frame, link, ...)
+local function ILockCompare(frame, link)
 	if not frame or not link then return end
 
 	local linkType = string.match(link, "(instancelock):")

@@ -42,7 +42,7 @@ local Colors = {
 	{0.9, 0.1, 0.1},	-- >40
 }
 
-local Update = function(self, event, unit)
+local Update = function(self)
 	local rb = self.RangeBar
 	if rb.PreUpdate then
 		rb:PreUpdate()
@@ -72,7 +72,7 @@ local Update = function(self, event, unit)
 	end
 
 	local timer = 0
-	rb:SetScript("OnUpdate", function(self, elapsed)
+	rb:SetScript("OnUpdate", function(_, elapsed)
 		timer = timer + elapsed
 		if timer >= 0.2 then
 			local Distance = 0

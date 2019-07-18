@@ -184,7 +184,7 @@ SlashCmdList.RESETSTATS = function() StaticPopup_Show("RESET_STATS") end
 ----------------------------------------------------------------------------------------
 local OnLogon = CreateFrame("Frame")
 OnLogon:RegisterEvent("PLAYER_ENTERING_WORLD")
-OnLogon:SetScript("OnEvent", function(self, event)
+OnLogon:SetScript("OnEvent", function(self)
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 
 	-- Create empty CVar if they doesn't exist

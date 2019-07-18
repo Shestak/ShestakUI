@@ -44,7 +44,7 @@ local function LoadSkin()
 	CliqueSpellTab.backdrop:SetAllPoints()
 	CliqueSpellTab:StyleButton()
 
-	CliqueConfigPage1:SetScript("OnShow", function(self)
+	CliqueConfigPage1:SetScript("OnShow", function()
 		for i = 1, 12 do
 			if _G["CliqueRow"..i] then
 				_G["CliqueRow"..i.."Icon"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)

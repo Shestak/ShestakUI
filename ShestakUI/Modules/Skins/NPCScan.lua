@@ -43,14 +43,14 @@ frame:SetScript("OnEvent", function()
 			close.text:SetPoint("CENTER", 0, 1)
 			close.text:SetText("x")
 
-			close:HookScript("OnEnter", function(self)
+			close:HookScript("OnEnter", function()
 				close.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 				if close.backdrop.overlay then
 					close.backdrop.overlay:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.3)
 				end
 			end)
 
-			close:HookScript("OnLeave", function(self)
+			close:HookScript("OnLeave", function()
 				close.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 				if close.backdrop.overlay then
 					close.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)

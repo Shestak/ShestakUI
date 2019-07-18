@@ -31,7 +31,7 @@ hooksecurefunc(GameTooltip, "SetUnitAura", function(self, ...)
 	if debuginfo == true and id and IsModifierKeyDown() then print(UnitAura(...)..": "..id) end
 end)
 
-hooksecurefunc("SetItemRef", function(link, ...)
+hooksecurefunc("SetItemRef", function(link)
 	local id = tonumber(link:match("spell:(%d+)"))
 	if id then addLine(ItemRefTooltip, id) end
 end)

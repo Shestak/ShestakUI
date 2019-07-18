@@ -298,7 +298,7 @@ local f = CreateFrame("frame", nil, GameTooltip)
 local ShouldInspect = false
 lastInspectRequest = 0
 local FailTimeout = 1
-f:SetScript("OnUpdate", function(self)
+f:SetScript("OnUpdate", function()
 	local _, unitID = GameTooltip:GetUnit()
 	local guid = unitID and UnitGUID(unitID)
 	if not guid or (InspectFrame and InspectFrame:IsVisible()) then return end
@@ -447,11 +447,11 @@ local function InspectLevel()
 		local text = InspectModelFrame:CreateFontString("InspectFrameiLvL", "OVERLAY", "SystemFont_Outline_Small")
 		text:SetPoint("BOTTOM", 5, 20)
 		text:Hide()
-		InspectPaperDollFrame:HookScript("OnShow", function(self)
+		InspectPaperDollFrame:HookScript("OnShow", function()
 			text:Show()
 			DecorateTooltip(UnitGUID("target"), true)
 		end)
-		InspectPaperDollFrame:HookScript("OnHide", function(self)
+		InspectPaperDollFrame:HookScript("OnHide", function()
 			text:Hide()
 		end)
 	end

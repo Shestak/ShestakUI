@@ -10,7 +10,7 @@ local function SkinDropDown(Frame)
 	T.SkinNextPrevButton(_G[Frame..'-button'])
 	local a, b, c, d = _G[Frame..'-button']:GetPoint()
 	_G[Frame..'-button']:SetPoint(a, b, c, d - 4, 0)
-	_G[Frame]:HookScript('OnUpdate', function(self)
+	_G[Frame]:HookScript('OnUpdate', function()
 		for i = 1, 3 do
 			local CatFrame = _G['AtlasLoot-DropDown-CatFrame'..i]
 			if CatFrame and not CatFrame.IsSkinned then
@@ -34,7 +34,7 @@ end
 
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-frame:SetScript("OnEvent", function(self, event)
+frame:SetScript("OnEvent", function(self)
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	if IsAddOnLoaded("Skinner") or IsAddOnLoaded("Aurora") then return end
 	if not IsAddOnLoaded("AtlasLoot") then return end

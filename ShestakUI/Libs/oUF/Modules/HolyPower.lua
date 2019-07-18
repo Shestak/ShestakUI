@@ -5,7 +5,7 @@ local oUF = ns.oUF
 
 local SPELL_POWER_HOLY_POWER = Enum.PowerType.HolyPower or 9
 
-local function Update(self, event, unit, powerType)
+local function Update(self, _, unit, powerType)
 	if(self.unit ~= unit or (powerType and powerType ~= "HOLY_POWER")) then return end
 
 	local element = self.HolyPower

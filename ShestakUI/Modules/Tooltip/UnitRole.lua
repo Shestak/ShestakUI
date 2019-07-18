@@ -18,7 +18,7 @@ local function GetLFDRole(unit)
 	end
 end
 
-GameTooltip:HookScript("OnTooltipSetUnit", function(self, ...)
+GameTooltip:HookScript("OnTooltipSetUnit", function()
 	local _, instanceType = IsInInstance()
 	if instanceType == "scenario" then return end
 	local _, unit = GameTooltip:GetUnit()
