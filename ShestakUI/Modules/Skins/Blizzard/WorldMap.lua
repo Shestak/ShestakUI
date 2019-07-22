@@ -176,10 +176,7 @@ local function LoadSkin()
 		frame.BountyName:SetFont(C.media.normal_font, 16)
 		frame.BountyName:SetShadowOffset(1, -1)
 
-		T.SkinCloseButton(frame.TutorialBox.CloseButton)
-		frame.TutorialBox:StripTextures()
-		frame.TutorialBox.Arrow:Hide()
-		frame.TutorialBox:CreateBackdrop("Transparent")
+		T.SkinHelpBox(frame.TutorialBox)
 	end
 
 	-- Elements

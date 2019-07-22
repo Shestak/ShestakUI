@@ -63,11 +63,7 @@ local function LoadSkin()
 	HonorFrameSpecificFrameScrollBar:SetPoint("BOTTOMLEFT", HonorFrameSpecificFrame, "BOTTOMRIGHT", 0, 15)
 	HonorFrameQueueButton:SkinButton(true)
 
-	PremadeGroupsPvPTutorialAlert:StripTextures()
-	PremadeGroupsPvPTutorialAlert:SetTemplate("Transparent")
-	PremadeGroupsPvPTutorialAlert.Arrow:Hide()
-	T.SkinCloseButton(PremadeGroupsPvPTutorialAlert.CloseButton)
-
+	T.SkinHelpBox(PremadeGroupsPvPTutorialAlert)
 	T.SkinHelpBox(HonorFrame.BonusFrame.BrawlHelpBox)
 
 	PVPQueueFrame.HonorInset:StripTextures()
