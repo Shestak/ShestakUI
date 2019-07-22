@@ -805,6 +805,7 @@ function Stuffing:InitBags()
 	self.buttons = {}
 	self.bags = {}
 	self.bagframe_buttons = {}
+	self.bags_num = {}
 
 	local f = self:CreateBagFrame("Bags")
 	f:SetScript("OnShow", Stuffing_OnShow)
@@ -983,6 +984,7 @@ function Stuffing:Layout(isBank)
 
 			slots = slots + GetContainerNumSlots(i)
 		end
+		self.bags_num[i] = x
 	end
 
 	rows = floor(slots / cols)
@@ -1112,6 +1114,7 @@ function Stuffing:ADDON_LOADED(addon)
 	self:RegisterEvent("BAG_CLOSED")
 	self:RegisterEvent("BAG_UPDATE_COOLDOWN")
 	self:RegisterEvent("SCRAPPING_MACHINE_SHOW")
+	self:RegisterEvent("BAG_UPDATE_DELAYED")
 
 	self:InitBags()
 
@@ -1178,6 +1181,16 @@ function Stuffing:BAG_UPDATE(id)
 	self:BagSlotUpdate(id)
 end
 
+function Stuffing:BAG_UPDATE_DELAYED(id)
+	for _, i in ipairs(BAGS_BACKPACK) do
+		local numSlots = GetContainerNumSlots(i)
+		if self.bags_num[i] and self.bags_num[i] ~= numSlots then
+			self:Layout()
+			return
+		end
+	end
+end
+
 function Stuffing:ITEM_LOCK_CHANGED(bag, slot)
 	if slot == nil then return end
 	for _, v in ipairs(self.buttons) do
@@ -1225,6 +1238,7 @@ function Stuffing:BAG_CLOSED(id)
 		table.remove(self.bags, id)
 		b:Hide()
 		table.insert(trashBag, #trashBag + 1, b)
+		self.bags_num[id] = -1
 	end
 
 	while true do
@@ -1247,7 +1261,9 @@ function Stuffing:BAG_CLOSED(id)
 			break
 		end
 	end
-	Stuffing_Close()
+	if id > 4 then
+		Stuffing_Close() -- prevent graphical bug with empty slots
+	end
 end
 
 function Stuffing:BAG_UPDATE_COOLDOWN()
