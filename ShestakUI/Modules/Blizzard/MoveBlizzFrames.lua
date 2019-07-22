@@ -9,7 +9,7 @@ local frames = {
 	"QuestLogPopupDetailFrame", "MerchantFrame", "TradeFrame", "MailFrame", "LootFrame",
 	"FriendsFrame", "CinematicFrame", "TabardFrame", "PetStableFrame", "BankFrame",
 	"PetitionFrame", "HelpFrame", "GossipFrame", "DressUpFrame", "GuildRegistrarFrame",
-	"ChatConfigFrame", "RaidBrowserFrame", "InterfaceOptionsFrame", "WorldMapFrame"
+	"ChatConfigFrame", "RaidBrowserFrame", "InterfaceOptionsFrame", "WorldMapFrame",
 	"GameMenuFrame", "VideoOptionsFrame", "GuildInviteFrame", "ItemTextFrame",
 	"OpenMailFrame", "StackSplitFrame", "TutorialFrame", "StaticPopup1",
 	"StaticPopup2", "ScrollOfResurrectionSelectionFrame"
