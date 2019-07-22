@@ -26,8 +26,8 @@ frame:SetScript("OnEvent", function(self, event, addon)
 			else
 				local recipeInfo = self.selectedRecipeID and C_TradeSkillUI.GetRecipeInfo(self.selectedRecipeID)
 				if recipeInfo and recipeInfo.alternateVerb then
-					local _, tradeSkillName = C_TradeSkillUI.GetTradeSkillLine()
-					if string.find(tradeSkillName, GetSpellInfo(7411)) then
+					local _, _, _, _, _, parentSkillLineID = C_TradeSkillUI.GetTradeSkillLine()
+					if parentSkillLineID == 333 then
 						button:Show()
 						local numCreateable = recipeInfo.numAvailable
 						local numScrollsAvailable = GetItemCount(38682)
