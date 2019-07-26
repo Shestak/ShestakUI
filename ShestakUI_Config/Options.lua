@@ -819,14 +819,14 @@ do
 	local classcolor_border = ns.CreateCheckBox(parent, "classcolor_border", L_GUI_ACTIONBAR_CLASSCOLOR_BORDER)
 	classcolor_border:SetPoint("TOPLEFT", split_bars, "BOTTOMLEFT", 0, 0)
 
-	local toggle_mode = ns.CreateCheckBox(parent, "toggle_mode", L_GUI_ACTIONBAR_TOGGLE_MODE)
-	toggle_mode:SetPoint("TOPLEFT", classcolor_border, "BOTTOMLEFT", 0, 0)
-
 	local hide_highlight = ns.CreateCheckBox(parent, "hide_highlight", L_GUI_ACTIONBAR_HIDE_HIGHLIGHT)
-	hide_highlight:SetPoint("TOPLEFT", toggle_mode, "BOTTOMLEFT", 0, 0)
+	hide_highlight:SetPoint("TOPLEFT", classcolor_border, "BOTTOMLEFT", 0, 0)
+
+	local toggle_mode = ns.CreateCheckBox(parent, "toggle_mode")
+	toggle_mode:SetPoint("TOPLEFT", hide_highlight, "BOTTOMLEFT", 0, 0)
 
 	local bottombars = ns.CreateNumberSlider(parent, "bottombars", nil, nil, 1, 3, 1, true, L_GUI_ACTIONBAR_BOTTOMBARS)
-	bottombars:SetPoint("TOPLEFT", hide_highlight, "BOTTOMLEFT", 0, -20)
+	bottombars:SetPoint("TOPLEFT", toggle_mode, "BOTTOMLEFT", 0, -20)
 
 	local rightbars = ns.CreateNumberSlider(parent, "rightbars", nil, nil, 0, 3, 1, true, L_GUI_ACTIONBAR_RIGHTBARS)
 	rightbars:SetPoint("LEFT", bottombars, "RIGHT", 120, 0)
