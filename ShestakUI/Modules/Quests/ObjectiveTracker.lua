@@ -5,19 +5,13 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame", "ObjectiveTrackerAnchor", UIParent)
 frame:SetPoint(unpack(C.position.quest))
-frame:SetHeight(150)
-frame:SetWidth(224)
+frame:SetSize(224, 150)
 
 ObjectiveTrackerFrame:ClearAllPoints()
 ObjectiveTrackerFrame:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, 0)
 ObjectiveTrackerFrame:SetHeight(T.screenHeight / 1.6)
 
-hooksecurefunc(ObjectiveTrackerFrame, "SetPoint", function(_, _, parent)
-	if parent ~= frame then
-		ObjectiveTrackerFrame:ClearAllPoints()
-		ObjectiveTrackerFrame:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, 0)
-	end
-end)
+ObjectiveTrackerFrame.IsUserPlaced = function() return true end
 
 for _, headerName in pairs({"QuestHeader", "AchievementHeader", "ScenarioHeader"}) do
 	ObjectiveTrackerFrame.BlocksFrame[headerName].Background:Hide()
