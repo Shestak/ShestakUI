@@ -8,12 +8,12 @@ top:ClearAllPoints()
 top:SetPoint(unpack(C.position.uiwidget))
 
 local below = _G["UIWidgetBelowMinimapContainerFrame"]
-local function RepositionBelowFrame()
-	below:ClearAllPoints()
-	below:SetPoint(unpack(C.position.uiwidget))
+local function RepositionBelowFrame(_, _, parent)
+	if parent == "MinimapCluster" or parent == _G["MinimapCluster"] then
+		below:ClearAllPoints()
+		below:SetPoint(unpack(C.position.uiwidget))
+	end
 end
-
-RepositionBelowFrame()
 
 hooksecurefunc(below, "SetPoint", RepositionBelowFrame)
 
