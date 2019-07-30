@@ -197,6 +197,17 @@ local function LoadSkin()
 					icon:SetPoint("LEFT", frame.backdrop, 9, 0)
 				end
 			end
+
+			for _, button in next, frame.RewardFrames do
+				if not button.isSkinned then
+					local icon, ring = button:GetRegions()
+					icon:SetSize(18, 18)
+					icon:SkinIcon(true)
+					ring:Hide()
+					button.isSkinned = true
+				end
+			end
+
 			frame.isSkinned = true
 		end
 	end
@@ -277,6 +288,16 @@ local function LoadSkin()
 		frame.QuestTexture.b:SetPoint("TOPLEFT", frame.QuestTexture, "TOPLEFT", -2, 2)
 		frame.QuestTexture.b:SetPoint("BOTTOMRIGHT", frame.QuestTexture, "BOTTOMRIGHT", 2, -2)
 		frame.QuestTexture:SetParent(frame.QuestTexture.b)
+
+		for _, button in next, frame.RewardFrames do
+			if not button.isSkinned then
+				local icon, ring = button:GetRegions()
+				icon:SetSize(18, 18)
+				icon:SkinIcon(true)
+				ring:Hide()
+				button.isSkinned = true
+			end
+		end
 	end
 	hooksecurefunc(WorldQuestCompleteAlertSystem, "setUpFunction", SkinWorldQuestCompleteAlert)
 

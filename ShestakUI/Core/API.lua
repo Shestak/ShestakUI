@@ -303,15 +303,22 @@ end
 ----------------------------------------------------------------------------------------
 --	Style icon function
 ----------------------------------------------------------------------------------------
-local function SkinIcon(icon, parent)
+local function SkinIcon(icon, t, parent)
 	parent = parent or icon:GetParent()
 
-	parent:CreateBackdrop("Default")
-	parent.backdrop:SetPoint("TOPLEFT", icon, -2, 2)
-	parent.backdrop:SetPoint("BOTTOMRIGHT", icon, 2, -2)
+	if t then
+		icon.b = CreateFrame("Frame", nil, parent)
+		icon.b:SetTemplate("Default")
+		icon.b:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
+		icon.b:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+	else
+		parent:CreateBackdrop("Default")
+		parent.backdrop:SetPoint("TOPLEFT", icon, -2, 2)
+		parent.backdrop:SetPoint("BOTTOMRIGHT", icon, 2, -2)
+	end
 
 	icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	icon:SetParent(parent)
+	icon:SetParent(t and icon.b or parent)
 end
 
 ----------------------------------------------------------------------------------------
