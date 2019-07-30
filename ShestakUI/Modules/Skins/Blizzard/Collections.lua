@@ -456,9 +456,12 @@ local function LoadSkin()
 			button:StyleButton(nil, 0)
 			button:CreateBackdrop("Default")
 
-			button.level:SetFontObject("SystemFont_Outline_Small")
-			button.level.SetFontObject = T.dummy
-			button.level:SetTextColor(1, 1, 1)
+			hooksecurefunc(button.level, "SetFontObject", function(self, font)
+				if font ~= "SystemFont_Outline_Small" then
+					self:SetFontObject("SystemFont_Outline_Small")
+					self:SetTextColor(1, 1, 1)
+				end
+			end)
 
 			button.levelBackground:SetAlpha(0)
 
