@@ -327,6 +327,8 @@ local function LoadSkin()
 
 	-- Help box
 	T.SkinHelpBox(CharacterFrame.ReputationTabHelpBox)
+	T.SkinHelpBox(PaperDollItemsFrame.HelpTipBox)
+	PaperDollItemsFrame.HelpTipBox.CloseButton.SetPoint = T.dummy
 
 	-- Unit Background Texture
 	CharacterModelFrameBackgroundTopLeft:SetPoint("TOPLEFT", CharacterModelFrame.backdrop, "TOPLEFT", 2, -2)
