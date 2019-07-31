@@ -85,8 +85,8 @@ local function InstallUI()
 	SavedOptionsPerChar = {}
 
 	SavedOptionsPerChar.Install = true
-	SavedOptionsPerChar.FogOfWar = false
-	SavedOptionsPerChar.Coords = false
+	SavedOptionsPerChar.FogOfWar = true
+	SavedOptionsPerChar.Coords = true
 	SavedOptionsPerChar.AutoInvite = false
 	SavedOptionsPerChar.Archaeology = false
 	SavedOptionsPerChar.BarsLocked = false
@@ -193,8 +193,8 @@ OnLogon:SetScript("OnEvent", function(self)
 	if SavedAddonProfiles == nil then SavedAddonProfiles = {} end
 	if SavedOptionsPerChar == nil then SavedOptionsPerChar = {} end
 	if SavedOptions.RaidLayout == nil then SavedOptions.RaidLayout = "UNKNOWN" end
-	if SavedOptionsPerChar.FogOfWar == nil then SavedOptionsPerChar.FogOfWar = false end
-	if SavedOptionsPerChar.Coords == nil then SavedOptionsPerChar.Coords = false end
+	if SavedOptionsPerChar.FogOfWar == nil then SavedOptionsPerChar.FogOfWar = true end
+	if SavedOptionsPerChar.Coords == nil then SavedOptionsPerChar.Coords = true end
 	if SavedOptionsPerChar.AutoInvite == nil then SavedOptionsPerChar.AutoInvite = false end
 	if SavedOptionsPerChar.Archaeology == nil then SavedOptionsPerChar.Archaeology = false end
 	if SavedOptionsPerChar.BarsLocked == nil then SavedOptionsPerChar.BarsLocked = false end
