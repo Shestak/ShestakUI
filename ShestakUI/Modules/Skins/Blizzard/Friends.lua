@@ -247,16 +247,13 @@ local function LoadSkin()
 	end
 
 	hooksecurefunc("FriendsFrame_UpdateFriendButton", function(button)
-		if button.buttonType == _G.FRIENDS_BUTTON_TYPE_BNET then
+		if button.buttonType == FRIENDS_BUTTON_TYPE_BNET and button.travelPassButton then
 			local isEnabled = button.travelPassButton:IsEnabled()
-			if button.inv then
-				button.travelPassButton:SetAlpha(isEnabled and 1 or 0.4)
-				button.gameIcon.b:SetShown(button.gameIcon:IsShown())
-			end
-		else
-			if button.gameIcon.b then
-				button.gameIcon.b:SetShown(button.gameIcon:IsShown())
-			end	
+			button.travelPassButton:SetAlpha(isEnabled and 1 or 0.4)
+		end
+
+		if button.gameIcon.b then
+			button.gameIcon.b:SetShown(button.gameIcon:IsShown())
 		end
 	end)
 
