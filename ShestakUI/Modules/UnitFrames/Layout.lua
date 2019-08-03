@@ -303,33 +303,6 @@ local function Shared(self, unit)
 					self.ArcaneCharge[i].bg:SetVertexColor(0.4, 0.8, 1, 0.2)
 				end
 			end
-
-			-- Rune of Power bar
-			if C.unitframe_class_bar.totem == true then
-				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
-				self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
-				self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
-				self.TotemBar:SetSize(108, 7)
-				self.TotemBar.Destroy = true
-
-				for i = 1, 2 do
-					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
-					self.TotemBar[i]:SetSize(108 / 2, 7)
-					if i == 1 then
-						self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
-					else
-						self.TotemBar[i]:SetPoint("TOPLEFT", self.TotemBar[i-1], "TOPRIGHT", 0, 0)
-					end
-					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
-					self.TotemBar[i]:SetMinMaxValues(0, 1)
-					self.TotemBar[i]:CreateBorder(false, true)
-
-					self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
-					self.TotemBar[i].bg:SetAllPoints()
-					self.TotemBar[i].bg:SetTexture(C.media.texture)
-					self.TotemBar[i].bg.multiplier = 0.2
-				end
-			end
 		end
 
 		if T.class == "MONK" then
@@ -355,29 +328,6 @@ local function Shared(self, unit)
 					self.HarmonyBar[i].bg:SetAllPoints()
 					self.HarmonyBar[i].bg:SetTexture(C.media.texture)
 					self.HarmonyBar[i].bg:SetVertexColor(0.33, 0.63, 0.33, 0.2)
-				end
-			end
-
-			-- Statue bar
-			if C.unitframe_class_bar.totem == true then
-				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
-				self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
-				self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
-				self.TotemBar:SetSize(53, 7)
-				self.TotemBar.Destroy = true
-
-				for i = 1, 1 do
-					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
-					self.TotemBar[i]:SetSize(53, 7)
-					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
-					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
-					self.TotemBar[i]:SetMinMaxValues(0, 1)
-					self.TotemBar[i]:CreateBorder(false, true)
-
-					self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
-					self.TotemBar[i].bg:SetAllPoints()
-					self.TotemBar[i].bg:SetTexture(C.media.texture)
-					self.TotemBar[i].bg.multiplier = 0.2
 				end
 			end
 
@@ -475,7 +425,7 @@ local function Shared(self, unit)
 			self.CPoints[6]:SetStatusBarColor(0.1, 0.9, 0.1)
 		end
 
-		-- Totem bar
+		-- Totem bar for Shaman
 		if C.unitframe_class_bar.totem == true and T.class == "SHAMAN" then
 			self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
 			self.TotemBar:CreateBackdrop("Default")
@@ -507,65 +457,38 @@ local function Shared(self, unit)
 			end
 		end
 
+		-- Totem bar for other classes
+		if C.unitframe_class_bar.totem == true and T.class ~= "SHAMAN" then
+			self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
+			self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
+			self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
+			self.TotemBar:SetSize(140, 7)
+			self.TotemBar.Destroy = true
+
+			for i = 1, 4 do
+				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
+				self.TotemBar[i]:SetSize(140 / 4, 7)
+				if i == 1 then
+					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
+				else
+					self.TotemBar[i]:SetPoint("TOPLEFT", self.TotemBar[i-1], "TOPRIGHT", 0, 0)
+				end
+				self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
+				self.TotemBar[i]:SetMinMaxValues(0, 1)
+				self.TotemBar[i]:CreateBorder(false, true)
+
+				self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
+				self.TotemBar[i].bg:SetAllPoints()
+				self.TotemBar[i].bg:SetTexture(C.media.texture)
+				self.TotemBar[i].bg.multiplier = 0.2
+			end
+		end
+
 		-- Additional mana
 		if T.class == "DRUID" or T.class == "PRIEST" or T.class == "SHAMAN" then
 			CreateFrame("Frame"):SetScript("OnUpdate", function() T.UpdateClassMana(self) end)
 			self.ClassMana = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 			self.ClassMana:SetTextColor(1, 0.49, 0.04)
-		end
-
-		-- Mushroom bar
-		if T.class == "DRUID" then
-			if C.unitframe_class_bar.totem == true then
-				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
-				self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
-				self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
-				self.TotemBar:SetSize(108, 7)
-				self.TotemBar.Destroy = true
-
-				for i = 1, 3 do
-					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
-					self.TotemBar[i]:SetSize(108 / 3, 7)
-					if i == 1 then
-						self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
-					else
-						self.TotemBar[i]:SetPoint("TOPLEFT", self.TotemBar[i-1], "TOPRIGHT", 0, 0)
-					end
-					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
-					self.TotemBar[i]:SetMinMaxValues(0, 1)
-					self.TotemBar[i]:CreateBorder(false, true)
-
-					self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
-					self.TotemBar[i].bg:SetAllPoints()
-					self.TotemBar[i].bg:SetTexture(C.media.texture)
-					self.TotemBar[i].bg.multiplier = 0.2
-				end
-			end
-		end
-
-		-- Mocking Banner bar
-		if C.unitframe_class_bar.totem == true and T.class == "WARRIOR" then
-			if C.unitframe_class_bar.totem == true then
-				self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
-				self.TotemBar:SetFrameLevel(self.Health:GetFrameLevel() + 2)
-				self.TotemBar:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
-				self.TotemBar:SetSize(53, 7)
-				self.TotemBar.Destroy = true
-
-				for i = 1, 1 do
-					self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
-					self.TotemBar[i]:SetSize(53, 7)
-					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
-					self.TotemBar[i]:SetStatusBarTexture(C.media.texture)
-					self.TotemBar[i]:SetMinMaxValues(0, 1)
-					self.TotemBar[i]:CreateBorder(false, true)
-
-					self.TotemBar[i].bg = self.TotemBar[i]:CreateTexture(nil, "BORDER")
-					self.TotemBar[i].bg:SetAllPoints()
-					self.TotemBar[i].bg:SetTexture(C.media.texture)
-					self.TotemBar[i].bg.multiplier = 0.2
-				end
-			end
 		end
 
 		-- Experience bar
