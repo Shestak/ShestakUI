@@ -218,6 +218,44 @@ local function LoadSkin()
 	FriendsTabHeaderRecruitAFriendButtonIcon:SetPoint("TOPLEFT", 2, -2)
 	FriendsTabHeaderRecruitAFriendButtonIcon:SetPoint("BOTTOMRIGHT", -2, 2)
 
+	FriendsFrameStatusDropDown:SetPoint("TOPLEFT", 1, -27)
+
+	for i = 1, FRIENDS_TO_DISPLAY do
+		local button = _G["FriendsFrameFriendsScrollFrameButton"..i]
+		local icon = button.gameIcon
+
+		icon.b = CreateFrame("Frame", nil, button)
+		icon.b:SetTemplate("Default")
+		icon.b:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
+		icon.b:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+
+		icon:SetParent(icon.b)
+		icon:SetSize(22, 22)
+		icon:SetTexCoord(.15, .85, .15, .85)
+		icon:ClearAllPoints()
+		icon:SetPoint("RIGHT", button, "RIGHT", -24, 0)
+		icon.SetPoint = T.dummy
+
+		button.travelPassButton:SetSize(20, 32)
+		button.travelPassButton:SkinButton()
+		button.background:Hide()
+
+		button.inv = button.travelPassButton:CreateTexture(nil, "OVERLAY", nil, 7)
+		button.inv:SetTexture([[Interface\FriendsFrame\PlusManz-PlusManz]])
+		button.inv:SetPoint("TOPRIGHT", 1, -4)
+		button.inv:SetSize(22, 22)
+	end
+
+	hooksecurefunc("FriendsFrame_UpdateFriendButton", function(button)
+		if button.buttonType == _G.FRIENDS_BUTTON_TYPE_BNET then
+			local isEnabled = button.travelPassButton:IsEnabled()
+			if button.inv then
+				button.travelPassButton:SetAlpha(isEnabled and 1 or 0.4)
+				button.gameIcon.b:SetShown(button.gameIcon:IsShown())
+			end
+		end
+	end)
+
 	T.SkinCloseButton(FriendsFrameCloseButton)
 	T.SkinDropDownBox(WhoFrameDropDown, 150)
 	T.SkinDropDownBox(FriendsFrameStatusDropDown, 70)
