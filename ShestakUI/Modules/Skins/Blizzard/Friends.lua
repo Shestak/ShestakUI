@@ -253,6 +253,10 @@ local function LoadSkin()
 				button.travelPassButton:SetAlpha(isEnabled and 1 or 0.4)
 				button.gameIcon.b:SetShown(button.gameIcon:IsShown())
 			end
+		else
+			if button.gameIcon.b then
+				button.gameIcon.b:SetShown(button.gameIcon:IsShown())
+			end	
 		end
 	end)
 
