@@ -110,6 +110,11 @@ local function LoadSkin()
 	QuestNPCModelTextFrame:StripTextures()
 	QuestNPCModelTextFrame:CreateBackdrop("Overlay")
 	QuestNPCModelTextFrame.backdrop:SetPoint("TOPLEFT", QuestNPCModel.backdrop, "BOTTOMLEFT", 0, -1)
+	QuestNPCModelNameTooltipFrame:CreateBackdrop("Transparent")
+	QuestNPCModelNameTooltipFrame.backdrop:SetPoint("TOPLEFT", QuestNPCModel.backdrop, "BOTTOMLEFT", 0, -1)
+	QuestNPCModelNameTooltipFrame.backdrop:SetPoint("TOPRIGHT", QuestNPCModel.backdrop, "BOTTOMRIGHT", 0, -1)
+	QuestNPCModelNameText:SetPoint("TOPLEFT", QuestNPCModelNameplate, 15, -15)
+	QuestNPCModelNameText:SetPoint("BOTTOMRIGHT", QuestNPCModelNameplate, -15, 12)
 	hooksecurefunc("QuestFrame_ShowQuestPortrait", function(parentFrame, _, _, _, _, x, y)
 		if parentFrame == QuestLogPopupDetailFrame or parentFrame == QuestFrame then
 			x = x + 8
