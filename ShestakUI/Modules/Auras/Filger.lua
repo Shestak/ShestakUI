@@ -358,6 +358,12 @@ function Filger:OnEvent(event, unit, _, castID)
 					self.actives[spid] = nil
 				end
 			end
+		elseif event == "SPELL_UPDATE_COOLDOWN" then
+			for spid in pairs(self.actives) do
+				if self.actives[spid].data.filter == "CD" then
+					self.actives[spid] = nil
+				end
+			end
 		end
 
 		local ptt = GetSpecialization()
