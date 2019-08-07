@@ -1380,7 +1380,7 @@ function Stuffing:SortBags()
 
 					local n, _, q, iL, rL, c1, c2, _, Sl = GetItemInfo(itemLink)
 					-- Hearthstone
-					if n == GetItemInfo(6948) or n == GetItemInfo(110560) then
+					if n == GetItemInfo(6948) or n == GetItemInfo(110560) or n == GetItemInfo(140192) then
 						q = 9
 					end
 					-- Fix for battle pets
