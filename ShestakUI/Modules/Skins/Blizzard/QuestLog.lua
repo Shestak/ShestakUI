@@ -31,6 +31,12 @@ local function LoadSkin()
 	local function QuestObjectiveText()
 		if not QuestInfoFrame.questLog then return end
 		local numVisibleObjectives = 0
+		local waypointText = C_QuestLog.GetNextWaypointText(select(8, GetQuestLogTitle(GetQuestLogSelection())))
+		if waypointText then
+			numVisibleObjectives = numVisibleObjectives + 1
+			QuestInfoObjectivesFrame.Objectives[numVisibleObjectives]:SetTextColor(0.5, 0.5, 0.5)
+		end
+
 		for i = 1, GetNumQuestLeaderBoards() do
 			local _, type, finished = GetQuestLogLeaderBoard(i)
 			if type ~= "spell" and type ~= "log" and numVisibleObjectives < MAX_OBJECTIVES then
