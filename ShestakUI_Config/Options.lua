@@ -6,14 +6,9 @@ local L = ns
 local realm = GetRealmName()
 local name = UnitName("player")
 
-local _, pysHeight = _G.GetPhysicalScreenSize()
-local fixedHeight = 768 / pysHeight
-local scale = tonumber(floor(fixedHeight*100 + .5)/100)
-local mult = fixedHeight / scale
-
 -- Main window
 local options = CreateFrame("Frame", "ShestakUIOptionsPanel", UIParent)
-options:SetSize(800 * mult, 770 * mult)
+options:SetSize(800, 770)
 options:SetPoint("CENTER")
 options:SetFrameStrata("HIGH")
 options:EnableMouse(true)

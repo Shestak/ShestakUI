@@ -6,11 +6,6 @@ local _, ns = ...
 local realm = GetRealmName()
 local name = UnitName("player")
 
-local _, pysHeight = _G.GetPhysicalScreenSize()
-local fixedHeight = 768 / pysHeight
-local scale = tonumber(floor(fixedHeight*100 + .5)/100)
-local mult = fixedHeight / scale
-
 -- [[ Variables ]]
 
 ns.localization = {}
@@ -516,7 +511,7 @@ ns.addCategory = function(name, text, subText, second, third)
 	local tag = strlower(name)
 
 	local panel = CreateFrame("Frame", baseName..name, ShestakUIOptionsPanel)
-	panel:SetSize(600 * mult, 670 * mult)
+	panel:SetSize(600, 670)
 	panel:SetPoint("RIGHT", 0, 10)
 	panel:EnableMouseWheel(true)
 	panel:Hide()
@@ -526,7 +521,7 @@ ns.addCategory = function(name, text, subText, second, third)
 		local name2 = name.."2"
 		local tag2 = strlower(name2)
 		panel_2 = CreateFrame("Frame", baseName..name2, ShestakUIOptionsPanel)
-		panel_2:SetSize(600 * mult, 670 * mult)
+		panel_2:SetSize(600, 670)
 		panel_2:SetPoint("RIGHT", 0, 10)
 		panel_2:EnableMouseWheel(true)
 		panel_2:Hide()
@@ -583,7 +578,7 @@ ns.addCategory = function(name, text, subText, second, third)
 		panel_2.subText:SetPoint("TOPLEFT", panel_2.Title, "BOTTOMLEFT", 0, -8)
 		panel_2.subText:SetJustifyH("LEFT")
 		panel_2.subText:SetJustifyV("TOP")
-		panel_2.subText:SetSize(570 * mult, 30 * mult)
+		panel_2.subText:SetSize(570, 30)
 		panel_2.subText:SetText(subText)
 
 		panel:SetScript("OnMouseWheel", function(_, delta)
@@ -602,7 +597,7 @@ ns.addCategory = function(name, text, subText, second, third)
 			local name3 = name.."3"
 			local tag3 = strlower(name3)
 			panel_3 = CreateFrame("Frame", baseName..name3, ShestakUIOptionsPanel)
-			panel_3:SetSize(600 * mult, 670 * mult)
+			panel_3:SetSize(600, 670)
 			panel_3:SetPoint("RIGHT", 0, 10)
 			panel_3:EnableMouseWheel(true)
 			panel_3:Hide()
@@ -675,7 +670,7 @@ ns.addCategory = function(name, text, subText, second, third)
 			panel_3.subText:SetPoint("TOPLEFT", panel_3.Title, "BOTTOMLEFT", 0, -8)
 			panel_3.subText:SetJustifyH("LEFT")
 			panel_3.subText:SetJustifyV("TOP")
-			panel_3.subText:SetSize(570 * mult, 30 * mult)
+			panel_3.subText:SetSize(570, 30)
 			panel_3.subText:SetText(subText)
 
 			panel:SetScript("OnMouseWheel", function(_, delta)
@@ -708,12 +703,12 @@ ns.addCategory = function(name, text, subText, second, third)
 	panel.subText:SetPoint("TOPLEFT", panel.Title, "BOTTOMLEFT", 0, -8)
 	panel.subText:SetJustifyH("LEFT")
 	panel.subText:SetJustifyV("TOP")
-	panel.subText:SetSize(570 * mult, 30 * mult)
+	panel.subText:SetSize(570, 30)
 	panel.subText:SetText(subText)
 
 	local tab = CreateFrame("Button", nil, ShestakUIOptionsPanel)
 	tab:SetPoint("TOPLEFT", 11, -offset)
-	tab:SetSize(168 * mult, 22 * mult)
+	tab:SetSize(168, 22)
 
 	tab.Text = tab:CreateFontString(nil, "ARTWORK", "GameFontNormal")
 	tab.Text:SetPoint("LEFT", tab, 8, 0)
@@ -733,7 +728,7 @@ ns.addCategory = function(name, text, subText, second, third)
 
 	tinsert(panels, panel)
 
-	offset = (offset + 24) * mult
+	offset = (offset + 24)
 end
 
 ns.addSubCategory = function(category, name)
@@ -742,7 +737,7 @@ ns.addSubCategory = function(category, name)
 	header:SetTextColor(179/255, 211/255, 243/255)
 
 	local line = category:CreateTexture(nil, "ARTWORK")
-	line:SetSize(500 * mult, 1 * mult)
+	line:SetSize(500, 1)
 	line:SetPoint("TOPLEFT", header, "BOTTOMLEFT", 0, -4)
 	line:SetColorTexture(0.37, 0.3, 0.3, 1)
 
@@ -856,7 +851,7 @@ init:SetScript("OnEvent", function()
 
 	local sunFrame = CreateFrame("Frame", nil, ShestakUIOptionsPanel)
 	sunFrame:SetPoint("LEFT", 10, 9)
-	sunFrame:SetSize(175, 670 * mult)
+	sunFrame:SetSize(175, 670)
 	sunFrame:CreateBackdrop("Overlay")
 	sunFrame.backdrop:SetPoint("TOPLEFT", 0, 3)
 	sunFrame.backdrop:SetPoint("BOTTOMRIGHT", -2, -4)
