@@ -1476,20 +1476,20 @@ C["filger_spells"] = {
 			Position = {"TOP", P_PROC_ICON_Anchor},
 
 			-- Buffs
-			-- Righteous Verdict
-			{spellID = 267611, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Infusion of Light
-			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Selfless Healer
-			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Divine Purpose
 			{spellID = 223819, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Righteous Verdict
+			{spellID = 267611, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Blade of Wrath
+			{spellID = 281178, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Infusion of Light
+			{spellID = 54149, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Grand Crusader
 			{spellID = 85416, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Final Verdict
-			{spellID = 157048, unitID = "player", caster = "player", filter = "BUFF"},
 			-- The Fires of Justice
 			{spellID = 209785, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Selfless Healer
+			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Trinkets
 
@@ -1509,12 +1509,12 @@ C["filger_spells"] = {
 			{spellID = 267799, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Eye of Tyr
 			{spellID = 209202, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Forbearance
-			{spellID = 25771, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Judgment
 			{spellID = 197277, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Hand of Hindrance
 			{spellID = 183218, unitID = "target", caster = "player", filter = "DEBUFF"},
+			-- Forbearance
+			{spellID = 25771, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Trinket Effects
 
@@ -1533,14 +1533,24 @@ C["filger_spells"] = {
 			{spellID = 209202, filter = "CD"},
 			-- Cleanse
 			{spellID = 4987, filter = "CD"},
+			-- Hand of Reckoning
+			{spellID = 62124, filter = "CD"},
 			-- Rebuke
 			{spellID = 96231, filter = "CD"},
+			-- Hand of Hindrance
+			{spellID = 183218, filter = "CD"},
 			-- Repentance
 			{spellID = 20066, filter = "CD"},
 			-- Hammer of Justice
 			{spellID = 853, filter = "CD"},
 			-- Judgment
 			{spellID = 20271, filter = "CD"},
+			-- Crusader Strike
+			{spellID = 35395, filter = "CD"},
+			-- Blade of Justice
+			{spellID = 184575, filter = "CD"},
+			-- Holy Shock
+			{spellID = 20473, filter = "CD"},
 			-- Consecration
 			{spellID = 26573, filter = "CD"},
 			-- Avenger's Shield
@@ -1553,10 +1563,12 @@ C["filger_spells"] = {
 			{spellID = 114165, filter = "CD"},
 			-- Blessing of Freedom
 			{spellID = 1044, filter = "CD"},
-			-- Seraphim
-			{spellID = 152262, filter = "CD"},
 			-- Rule of Law
 			{spellID = 214202, filter = "CD"},
+			-- Seraphim
+			{spellID = 152262, filter = "CD"},
+			-- Wake of Ashes
+			{spellID = 255937, filter = "CD"},
 			-- Speed of Light
 			{spellID = 85499, filter = "CD"},
 			-- Divine Protection
@@ -1577,6 +1589,8 @@ C["filger_spells"] = {
 			{spellID = 6940, filter = "CD"},
 			-- Avenging Wrath
 			{spellID = 31884, filter = "CD"},
+			-- Shield of Vengeance
+			{spellID = 184662, filter = "CD"},
 			-- Ardent Defender
 			{spellID = 31850, filter = "CD", absID = true},
 			-- Guardian of Ancient Kings
@@ -1587,20 +1601,6 @@ C["filger_spells"] = {
 			{spellID = 184092, filter = "CD"},
 			-- Divine Shield
 			{spellID = 642, filter = "CD"},
-			-- Hand of Reckoning
-			{spellID = 62124, filter = "CD"},
-			-- Blade of Justice
-			{spellID = 184575, filter = "CD"},
-			-- Crusader Strike
-			{spellID = 35395, filter = "CD"},
-			-- Wake of Ashes
-			{spellID = 255937, filter = "CD"},
-			-- Hand of Hindrance
-			{spellID = 183218, filter = "CD"},
-			-- Shield of Vengeance
-			{spellID = 184662, filter = "CD"},
-			-- Holy Shock
-			{spellID = 20473, filter = "CD"},
 
 			-- PvP
 			-- Honorable Medallion
