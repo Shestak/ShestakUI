@@ -111,7 +111,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Player's level check
 ----------------------------------------------------------------------------------------
-local function CheckLevel(_, level)
+local function CheckLevel(level)
 	T.level = level
 end
 local LevelUpdater = CreateFrame("Frame")
