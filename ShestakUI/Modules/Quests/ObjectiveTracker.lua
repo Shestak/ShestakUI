@@ -278,6 +278,13 @@ hooksecurefunc("BonusObjectiveTracker_ShowRewardsTooltip", function(block)
 	end
 end)
 
+ScenarioStageBlock:HookScript("OnEnter", function(self)
+	if IsFramePositionedLeft(ObjectiveTrackerFrame) then
+		GameTooltip:ClearAllPoints()
+		GameTooltip:SetPoint("LEFT", self, "RIGHT", 50, 0)
+	end
+end)
+
 ----------------------------------------------------------------------------------------
 --	Kill reward animation when finished dungeon or bonus objectives
 ----------------------------------------------------------------------------------------
