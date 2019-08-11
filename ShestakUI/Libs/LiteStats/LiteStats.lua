@@ -32,9 +32,8 @@ local gsub = gsub
 
 -- Config
 local modules = LPSTAT_CONFIG
-local fps = modules.FPS
 local latency = modules.Latency
-local memory = modules.Memory
+local fps = modules.FPS
 local durability = modules.Durability
 local gold = modules.Gold
 local clock = modules.Clock
@@ -219,7 +218,7 @@ function SlashCmdList.LSTATS()
 	if clock.enabled then
 		slprint(TIMEMANAGER_TITLE, L_STATS_OPEN_CALENDAR, L_STATS_RC_TIME_MANAGER, L_STATS_TOGGLE_TIME)
 	end
-	if memory.enabled then
+	if fps.enabled then
 		slprint(L_STATS_MEMORY, L_STATS_RC_COLLECTS_GARBAGE)
 	end
 	if friends.enabled or guild.enabled then
@@ -244,19 +243,6 @@ function SlashCmdList.LSTATS()
 end
 
 CreateFrame("Frame", "LSMenus", UIParent, "UIDropDownMenuTemplate")
-
-----------------------------------------------------------------------------------------
---	FPS
-----------------------------------------------------------------------------------------
-if fps.enabled then
-	Inject("FPS", {
-		text = {
-			string = function()
-				return format(fps.fmt, floor(GetFramerate()))
-			end
-		},
-	})
-end
 
 ----------------------------------------------------------------------------------------
 --	Latency
@@ -284,64 +270,76 @@ if latency.enabled then
 end
 
 ----------------------------------------------------------------------------------------
---	Memory
+--	FPS
 ----------------------------------------------------------------------------------------
-if memory.enabled then
+if fps.enabled then
 	local function sortdesc(a, b) return a[2] > b[2] end
 	local function formatmem(val, dec)
 		return format(format("%%.%df %s", dec or 1, val > 1024 and "MB" or "KB"), val / (val > 1024 and 1024 or 1))
 	end
+
 	local memoryt = {}
+	local cput = {}
+	local function UpdateMemory()
+		local totalMemory = 0
+		UpdateMemUse()
+		for i = 1, #memoryt do memoryt[i] = nil end
+		for i = 1, GetNumAddOns() do
+			local memory = GetAddOnMemoryUsage(i)
+			local addon, name = GetAddOnInfo(i)
+			if IsAddOnLoaded(i) then tinsert(memoryt, {name or addon, memory}) end
+			totalMemory = totalMemory + memory
+		end
+		table.sort(memoryt, sortdesc)
+		return totalMemory
+	end
+
+	local function UpdateCPU()
+		local totalCPU = 0
+		UpdateAddOnCPUUsage()
+		for i = 1, #cput do cput[i] = nil end
+		for i = 1, GetNumAddOns() do
+			local cpu = GetAddOnCPUUsage(i)
+			local addon, name = GetAddOnInfo(i)
+			if IsAddOnLoaded(i) then tinsert(cput, {name or addon, cpu}) end
+			totalCPU = totalCPU + cpu
+		end
+		table.sort(cput, sortdesc)
+		return totalCPU
+	end
+
 	local isCPU = GetCVar("scriptProfile") == "1"
-	Inject("Memory", {
+	Inject("FPS", {
 		text = {
 			string = function(self)
-				self.total = 0
-				UpdateMemUse()
 				local parent = self:GetParent()
-				for i = 1, GetNumAddOns() do self.total = self.total + GetAddOnMemoryUsage(i) end
 				if parent.hovered then self:GetParent():GetScript("OnEnter")(parent) end
-				return self.total >= 1024 and format(memory.fmt_mb, self.total / 1024) or format(memory.fmt_kb, self.total)
-			end, update = 5,
+				return format(fps.fmt, floor(GetFramerate()))
+			end
 		},
 		OnEnter = function(self)
 			self.hovered = true
 			GameTooltip:SetOwner(self, "ANCHOR_NONE")
 			GameTooltip:ClearAllPoints()
-			GameTooltip:SetPoint(modules.Memory.tip_anchor, modules.Memory.tip_frame, modules.Memory.tip_x, modules.Memory.tip_y)
+			GameTooltip:SetPoint(modules.FPS.tip_anchor, modules.FPS.tip_frame, modules.FPS.tip_x, modules.FPS.tip_y)
 			GameTooltip:ClearLines()
 			local lat, r = select(4, GetNetStats()), 750
+			local totalMemory = UpdateMemory()
+			local totalCPU = isCPU and UpdateCPU()
 			GameTooltip:AddDoubleLine(
 				format("|cffffffff%s|r %s, %s%s|r %s", floor(GetFramerate()), FPS_ABBR, gradient(1 - lat / r), lat, MILLISECONDS_ABBR),
-				format("%s: |cffffffff%s", ADDONS, formatmem(self.text.total)), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
+				format("%s: |cffffffff%s", ADDONS, formatmem(totalMemory)), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
 			GameTooltip:AddLine(" ")
-			if memory.max_addons ~= 0 or IsAltKeyDown() then
+			if fps.max_addons ~= 0 or IsAltKeyDown() then
+				local ctable
 				if isCPU and IsControlKeyDown() then
-					self.timer = 5
-				end
-				if not self.timer or self.timer + 5 < time() then
-					if isCPU and IsControlKeyDown() then
-						UpdateAddOnCPUUsage()
-						for i = 1, #memoryt do memoryt[i] = nil end
-						for i = 1, GetNumAddOns() do
-							local addon, name = GetAddOnInfo(i)
-							if IsAddOnLoaded(i) then tinsert(memoryt, {name or addon, GetAddOnCPUUsage(i)}) end
-						end
-						table.sort(memoryt, sortdesc)
-					else
-						self.timer = time()
-						UpdateMemUse()
-						for i = 1, #memoryt do memoryt[i] = nil end
-						for i = 1, GetNumAddOns() do
-							local addon, name = GetAddOnInfo(i)
-							if IsAddOnLoaded(i) then tinsert(memoryt, {name or addon, GetAddOnMemoryUsage(i)}) end
-						end
-						table.sort(memoryt, sortdesc)
-					end
+					ctable = cput
+				else
+					ctable = memoryt
 				end
 				local exmem = 0
-				for i,t in ipairs(memoryt) do
-					if memory.max_addons and i > memory.max_addons and not IsAltKeyDown() then
+				for i, t in ipairs(ctable) do
+					if fps.max_addons and i > fps.max_addons and not IsAltKeyDown() then
 						exmem = exmem + t[2]
 					else
 						local color = t[2] <= 102.4 and {0,1} -- 0 - 100
@@ -359,7 +357,7 @@ if memory.enabled then
 					end
 				end
 				if exmem > 0 and not IsAltKeyDown() then
-					local more = #memoryt - memory.max_addons
+					local more = #memoryt - fps.max_addons
 					GameTooltip:AddDoubleLine(format("%d %s (%s)", more, L_STATS_HIDDEN, ALT_KEY), formatmem(exmem), ttsubh.r, ttsubh.g, ttsubh.b, ttsubh.r, ttsubh.g, ttsubh.b)
 				end
 				GameTooltip:AddDoubleLine(" ", "--------------", 1, 1, 1, 0.5, 0.5, 0.5)
@@ -370,17 +368,13 @@ if memory.enabled then
 				GameTooltip:AddDoubleLine(L_STATS_DOWNLOAD, format("%s%%", floor(GetDownloadedPercentage() * 100 + 0.5)), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 				GameTooltip:AddLine(" ")
 			end
-			GameTooltip:AddDoubleLine(L_STATS_MEMORY_USAGE, formatmem(gcinfo() - self.text.total), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+			GameTooltip:AddDoubleLine(L_STATS_MEMORY_USAGE, formatmem(gcinfo() - totalMemory), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			GameTooltip:AddDoubleLine(L_STATS_TOTAL_MEMORY_USAGE, formatmem(collectgarbage"count"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			if isCPU then
-				self.totalCPU = 0
-				UpdateAddOnCPUUsage()
-				for i = 1, GetNumAddOns() do self.totalCPU = self.totalCPU + GetAddOnCPUUsage(i) end
-				GameTooltip:AddDoubleLine(L_STATS_TOTAL_CPU_USAGE, format("%d ms", self.totalCPU), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(L_STATS_TOTAL_CPU_USAGE, format("%d ms", totalCPU), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 			end
 			GameTooltip:Show()
 		end,
-		--OnUpdate = AltUpdate,
 		OnLeave = function(self) self.hovered = false end,
 		OnClick = function(self, button)
 			if button == "RightButton" then
@@ -869,7 +863,7 @@ if location.enabled then
 			self.text:SetText(location.truncate == 0 and label or strtrim(strsub(label, 1, location.truncate)))
 			self.text:SetTextColor(r, g, b, font.alpha)
 		end,
-		OnUpdate = function(self,u)
+		OnUpdate = function(self, u)
 			if self.hovered then
 				self.elapsed = self.elapsed + u
 				if self.elapsed > 1 or self.init then
@@ -933,20 +927,20 @@ if ping.enabled then
 			self.anim:SetToAlpha(0)
 			self.anim:SetDuration(2.8)
 			self.anim:SetStartDelay(5)
-			end,
+		end,
 		OnEvent = function(self, _, unit)
 			if unit == P and ping.hide_self then return end
-				local class = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(unit))]
-				self.text:SetText(format(ping.fmt, UnitName(unit)))
-				if class then
-					self.text:SetTextColor(class.r, class.g, class.b, 1)
-				else
-					self.text:SetTextColor(1, 1, 1, 1)
-				end
-				self.animGroup:Stop()
-				self.text:Show()
-				self.animGroup:Play()
+			local class = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(unit))]
+			self.text:SetText(format(ping.fmt, UnitName(unit)))
+			if class then
+				self.text:SetTextColor(class.r, class.g, class.b, 1)
+			else
+				self.text:SetTextColor(1, 1, 1, 1)
 			end
+			self.animGroup:Stop()
+			self.text:Show()
+			self.animGroup:Play()
+		end
 	})
 end
 
@@ -1900,9 +1894,9 @@ if experience.enabled then
 					or (conf.ExpMode == "rep" and UnitLevel(P) ~= MAX_PLAYER_LEVEL) and "xp"
 					or conf.ExpMode == "rep" and "played"
 				if conf.ExpMode == "rep" then
-					self:GetScript("OnEvent")(self,"UPDATE_FACTION")
+					self:GetScript("OnEvent")(self, "UPDATE_FACTION")
 				elseif conf.ExpMode == "art" then
-					self:GetScript("OnEvent")(self,"AZERITE_ITEM_EXPERIENCE_CHANGED")
+					self:GetScript("OnEvent")(self, "AZERITE_ITEM_EXPERIENCE_CHANGED")
 				else
 					self:GetScript("OnUpdate")(self, 5)
 				end

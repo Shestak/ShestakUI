@@ -459,7 +459,6 @@ L_GUI_STATS = "Stats"
 L_GUI_STATS_SUBTEXT = "Statistics blocks located at the bottom of the screen. Type in the chat '/ls' for info." -- Need review
 L_GUI_STATS_CLOCK = "Horloge"
 L_GUI_STATS_LATENCY = "Latence"
-L_GUI_STATS_MEMORY = "Mémoire"
 L_GUI_STATS_FPS = "FPS"
 L_GUI_STATS_EXPERIENCE = "Expérience"
 L_GUI_STATS_TALENTS_DESC = "Date-text allows you to change the spec and loot on click" -- Need review

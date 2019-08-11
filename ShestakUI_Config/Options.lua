@@ -1577,11 +1577,8 @@ do
 	local latency = ns.CreateCheckBox(parent, "latency", L_GUI_STATS_LATENCY)
 	latency:SetPoint("TOPLEFT", clock, "BOTTOMLEFT", 0, 0)
 
-	local memory = ns.CreateCheckBox(parent, "memory", L_GUI_STATS_MEMORY)
-	memory:SetPoint("TOPLEFT", latency, "BOTTOMLEFT", 0, 0)
-
 	local fps = ns.CreateCheckBox(parent, "fps", L_GUI_STATS_FPS)
-	fps:SetPoint("TOPLEFT", memory, "BOTTOMLEFT", 0, 0)
+	fps:SetPoint("TOPLEFT", latency, "BOTTOMLEFT", 0, 0)
 
 	local friend = ns.CreateCheckBox(parent, "friend", FRIENDS)
 	friend:SetPoint("TOPLEFT", fps, "BOTTOMLEFT", 0, 0)

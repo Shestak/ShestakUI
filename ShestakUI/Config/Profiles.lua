@@ -236,7 +236,6 @@ if IsWetxius then
 	C["raidframe"].solo_mode = true
 	C["raidframe"].icons_leader = false
 	C["toppanel"].enable = false
-	C["stats"].fps = false
 	C["stats"].battleground = true
 	C["stats"].currency_cooking = false
 	C["stats"].currency_professions = false

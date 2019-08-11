@@ -516,7 +516,6 @@ C["toppanel"] = {
 C["stats"] = {
 	["clock"] = true,							-- Clock
 	["latency"] = true,							-- Latency
-	["memory"] = true,							-- Memory
 	["fps"] = true,								-- FPS
 	["friend"] = true,							-- Friends
 	["guild"] = true,							-- Guild
