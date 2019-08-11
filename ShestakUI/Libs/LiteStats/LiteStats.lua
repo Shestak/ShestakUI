@@ -1345,47 +1345,48 @@ if friends.enabled then
 					for i = 1, BNtotal do
 						_, presenceName, battleTag, _, toonName, toonID, client, isOnline, _, isAFK, isDND = BNGetFriendInfo(i)
 						toonName = BNet_GetValidatedCharacterName(toonName, battleTag, client) or ""
-						if not isOnline then break end
-						if isAFK then
-							status = "|cffE7E716"..L_CHAT_AFK.."|r"
-						else
-							if isDND then
-								status = "|cffff0000"..L_CHAT_DND.."|r"
-							else
-								status = ""
-							end
-						end
-						if client == BNET_CLIENT_WOW then
-							local _, toonName, client, realmName, _, _, _, class, _, zoneName, level = BNGetGameAccountInfo(toonID)
-							for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
-							if GetLocale() ~= "enUS" then
-								for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
-							end
-							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
-							if UnitInParty(toonName) or UnitInRaid(toonName) then grouped = " |cffaaaaaa*|r" else grouped = "" end
-							GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r", client, levelc.r * 255, levelc.g * 255, levelc.b * 255, level, classc.r * 255, classc.g * 255, classc.b * 255, toonName, grouped, 255, 0, 0, status), presenceName, 238, 238, 238, 238, 238, 238)
-							if self.altdown then
-								if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
-								if GetRealmName() == realmName then realm_r, realm_g, realm_b = 0.3, 1.0, 0.3 else realm_r, realm_g, realm_b = 0.65, 0.65, 0.65 end
-								GameTooltip:AddDoubleLine("  "..zoneName, realmName, zone_r, zone_g, zone_b, realm_r, realm_g, realm_b)
-							end
-						else
-							local _, _, _, _, _, _, _, _, _, _, _, gameText, _, _, _, _, _, isGameAFK, isGameBusy = BNGetGameAccountInfo(toonID)
-							if client == "BSAp" or client == "App" then
-								client = gameText
-							else
-								client = clientTags[client]
-							end
-							if isGameAFK then
+						if isOnline then
+							if isAFK then
 								status = "|cffE7E716"..L_CHAT_AFK.."|r"
 							else
-								if isGameBusy then
+								if isDND then
 									status = "|cffff0000"..L_CHAT_DND.."|r"
 								else
 									status = ""
 								end
 							end
-							GameTooltip:AddDoubleLine("|cffeeeeee "..presenceName.."|r".." "..status, "|cffeeeeee"..client.."|r")
+							if client == BNET_CLIENT_WOW then
+								local _, toonName, client, realmName, _, _, _, class, _, zoneName, level = BNGetGameAccountInfo(toonID)
+								for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
+								if GetLocale() ~= "enUS" then
+									for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
+								end
+								classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
+								if UnitInParty(toonName) or UnitInRaid(toonName) then grouped = " |cffaaaaaa*|r" else grouped = "" end
+								GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r", client, levelc.r * 255, levelc.g * 255, levelc.b * 255, level, classc.r * 255, classc.g * 255, classc.b * 255, toonName, grouped, 255, 0, 0, status), presenceName, 238, 238, 238, 238, 238, 238)
+								if self.altdown then
+									if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
+									if GetRealmName() == realmName then realm_r, realm_g, realm_b = 0.3, 1.0, 0.3 else realm_r, realm_g, realm_b = 0.65, 0.65, 0.65 end
+									GameTooltip:AddDoubleLine("  "..zoneName, realmName, zone_r, zone_g, zone_b, realm_r, realm_g, realm_b)
+								end
+							else
+								local _, _, _, _, _, _, _, _, _, _, _, gameText, _, _, _, _, _, isGameAFK, isGameBusy = BNGetGameAccountInfo(toonID)
+								if client == "BSAp" or client == "App" then
+									client = gameText
+								else
+									client = clientTags[client]
+								end
+								if isGameAFK then
+									status = "|cffE7E716"..L_CHAT_AFK.."|r"
+								else
+									if isGameBusy then
+										status = "|cffff0000"..L_CHAT_DND.."|r"
+									else
+										status = ""
+									end
+								end
+								GameTooltip:AddDoubleLine("|cffeeeeee"..presenceName.."|r".." "..status, "|cffeeeeee"..client.."|r")
+							end
 						end
 					end
 				end
