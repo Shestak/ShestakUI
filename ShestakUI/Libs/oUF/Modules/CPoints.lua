@@ -19,7 +19,7 @@ local function Update(self, _, unit, powerType)
 		max = UnitPowerMax("player", 4)
 	end
 
-	if max == 0 then
+	if max == 0 or max > 6 then
 		max = MAX_COMBO_POINTS
 	end
 
