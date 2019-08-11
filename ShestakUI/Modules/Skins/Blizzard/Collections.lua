@@ -590,6 +590,8 @@ local function LoadSkin()
 			button.border.backdrop:SetPoint("TOPLEFT", button.Icon, -2, 2)
 			button.border.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, 2, -2)
 
+			button.ProgressBar:SetPoint("TOPLEFT", button.backdrop, "BOTTOMLEFT", 2, 4)
+
 			button.isSkinned = true
 		end
 	end
