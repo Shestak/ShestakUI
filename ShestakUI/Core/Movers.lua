@@ -148,10 +148,12 @@ local RestoreUI = function(self)
 		end)
 		return
 	end
-	for frame_name, point in pairs(SavedPositions) do
-		if _G[frame_name] then
-			_G[frame_name]:ClearAllPoints()
-			_G[frame_name]:SetPoint(unpack(point))
+	if SavedPositions then
+		for frame_name, point in pairs(SavedPositions) do
+			if _G[frame_name] then
+				_G[frame_name]:ClearAllPoints()
+				_G[frame_name]:SetPoint(unpack(point))
+			end
 		end
 	end
 end
