@@ -67,7 +67,7 @@ local function LoadSkin()
 			self.CloseButton.Border:Hide()
 		end
 		if self.portrait then
-			self.portrait:Hide()
+			self.portrait:SetAlpha(0)
 		end
 		if self.skinned then return end
 		self.Currency.Icon:SkinIcon()
