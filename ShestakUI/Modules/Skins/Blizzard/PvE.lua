@@ -257,6 +257,13 @@ local function LoadSkin()
 	LFGListFrame.SearchPanel.FilterButton:SkinButton()
 	LFGListFrame.SearchPanel.FilterButton:SetPoint("LEFT", LFGListFrame.SearchPanel.SearchBox, "RIGHT", 5, 0)
 
+	hooksecurefunc("LFGListSearchEntry_Update", function(button)
+		if button and not button.isSkinned then
+			button.CancelButton:SkinButton()
+			button.isSkinned = true
+		end
+	end)
+
 	hooksecurefunc("LFGListSearchPanel_UpdateAutoComplete", function(self)
 		for i = 1, LFGListFrame.SearchPanel.AutoCompleteFrame:GetNumChildren() do
 			local child = select(i, LFGListFrame.SearchPanel.AutoCompleteFrame:GetChildren())
