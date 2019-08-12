@@ -7,11 +7,11 @@ local function Showlevel(_, _, _, title, level, _, isHeader, _, _, _, questID)
 	for button in pairs(QuestScrollFrame.titleFramePool.activeObjects) do
 		if title and not isHeader and button.questID == questID then
 			local title = level ~= T.level and "["..level.."] "..title or title
+			local height = button.Text:GetHeight()
 			button.Text:SetText(title)
-			button.Text:SetPoint("TOPLEFT", 24, -5)
-			button.Text:SetWidth(205)
-			button.Text:SetWordWrap(false)
-			button.Check:SetPoint("LEFT", button.Text, button.Text:GetWrappedWidth(), 0)
+			button.Text:SetWidth(190)
+			button.Check:SetPoint("LEFT", button.Text, button.Text:GetWrappedWidth() + 2, 0)
+			button:SetHeight(button:GetHeight() - height + button.Text:GetHeight())
 		end
 	end
 end
