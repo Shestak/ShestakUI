@@ -3,34 +3,39 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	UIWidget frame
 ----------------------------------------------------------------------------------------
-local top = _G["UIWidgetTopCenterContainerFrame"]
-top:ClearAllPoints()
-top:SetPoint(unpack(C.position.uiwidget))
+local top, below = _G["UIWidgetTopCenterContainerFrame"], _G["UIWidgetBelowMinimapContainerFrame"]
+local topAnchor = CreateFrame("Frame", "UIWidgetTopAnchor", UIParent)
+topAnchor:SetSize(200, 30)
+topAnchor:SetPoint(unpack(C.position.uiwidget))
+_G["UIWidgetTopCenterContainerFrame"]:ClearAllPoints()
+_G["UIWidgetTopCenterContainerFrame"]:SetPoint("CENTER", topAnchor)
 
-local below = _G["UIWidgetBelowMinimapContainerFrame"]
-local function RepositionBelowFrame(_, _, parent)
-	if parent == "MinimapCluster" or parent == _G["MinimapCluster"] then
-		below:ClearAllPoints()
-		below:SetPoint(unpack(C.position.uiwidget))
+local belowAnchor = CreateFrame("Frame", "UIWidgetBelowAnchor", UIParent)
+belowAnchor:SetSize(100, 30)
+belowAnchor:SetPoint(unpack(C.position.uiwidget))
+
+hooksecurefunc(below, "SetPoint", function(self, _, anchor)
+	if anchor and anchor ~= belowAnchor then
+		self:ClearAllPoints()
+		self:SetPoint("CENTER", belowAnchor)
 	end
-end
-
-hooksecurefunc(below, "SetPoint", RepositionBelowFrame)
+end)
 
 for _, frame in pairs({top, below}) do
-	frame:EnableMouse(true)
-	frame:SetMovable(true)
-	frame:SetUserPlaced(true)
-	frame:SetScript("OnMouseDown", function(self, button)
+	local anchor = frame == top and topAnchor or belowAnchor
+	anchor:EnableMouse(true)
+	anchor:SetMovable(true)
+	anchor:SetUserPlaced(true)
+	frame:SetScript("OnMouseDown", function(_, button)
 		if IsAltKeyDown() or IsShiftKeyDown() then
-			frame:ClearAllPoints()
-			frame:StartMoving()
+			anchor:ClearAllPoints()
+			anchor:StartMoving()
 		elseif IsControlKeyDown() and button == "RightButton" then
-			frame:ClearAllPoints()
-			frame:SetPoint(unpack(C.position.uiwidget))
+			anchor:ClearAllPoints()
+			anchor:SetPoint(unpack(C.position.uiwidget))
 		end
 	end)
 	frame:SetScript("OnMouseUp", function()
-		frame:StopMovingOrSizing()
+		anchor:StopMovingOrSizing()
 	end)
 end
