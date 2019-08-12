@@ -23,25 +23,21 @@ hooksecurefunc("QuestLogQuests_AddQuestButton", Showlevel)
 hooksecurefunc("QuestMapLogTitleButton_OnClick", function(self)
 	local questLogIndex = GetQuestLogIndexByID(self.questID)
 	if IsControlKeyDown() then
+		CloseDropDownMenus()
 		QuestMapQuestOptions_AbandonQuest(self.questID)
 	elseif IsAltKeyDown() and GetQuestLogPushable(questLogIndex) then
+		CloseDropDownMenus()
 		QuestMapQuestOptions_ShareQuest(self.questID)
 	end
 end)
 
-hooksecurefunc(QUEST_TRACKER_MODULE, "OnBlockHeaderClick", function(self, block)
+hooksecurefunc(QUEST_TRACKER_MODULE, "OnBlockHeaderClick", function(_, block)
 	local questLogIndex = block.id
-	SetAbandonQuest()
 	if IsControlKeyDown() then
-		local items = GetAbandonQuestItems()
-		if items then
-			StaticPopup_Hide("ABANDON_QUEST")
-			StaticPopup_Show("ABANDON_QUEST_WITH_ITEMS", GetAbandonQuestName(), items)
-		else
-			StaticPopup_Hide("ABANDON_QUEST_WITH_ITEMS")
-			StaticPopup_Show("ABANDON_QUEST", GetAbandonQuestName())
-		end
+		CloseDropDownMenus()
+		QuestMapQuestOptions_AbandonQuest(questLogIndex)
 	elseif IsAltKeyDown() and GetQuestLogPushable(questLogIndex) then
+		CloseDropDownMenus()
 		QuestLogPushQuest(questLogIndex)
 	end
 end)
