@@ -394,6 +394,9 @@ local function LoadSkin()
 		for _, reward in pairs(button.Rewards) do
 			reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			if not reward.backdrop then
+				reward:ClearAllPoints()
+				reward:SetPoint("TOPRIGHT", -5, -5)
+
 				reward:CreateBackdrop("Default")
 				reward.backdrop:SetPoint("TOPLEFT", reward.Icon, "TOPLEFT", -2, 2)
 				reward.backdrop:SetPoint("BOTTOMRIGHT", reward.Icon, "BOTTOMRIGHT", 2, -2)
