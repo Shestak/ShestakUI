@@ -3,23 +3,19 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Quest level
 ----------------------------------------------------------------------------------------
-hooksecurefunc("QuestLogQuests_Update", function()
-	for button in QuestScrollFrame.titleFramePool:EnumerateActive() do
-		if button and button:IsShown() then
-			local link = GetQuestLink(button.questID)
-			if link then
-				local level = strmatch(link, "quest:%d+:(%d+)")
-				local title = button.Text:GetText()
-				if level and title then
-					local height = button.Text:GetHeight()
-					button.Text:SetFormattedText("[%d] %s", level, title)
-					button.Check:SetPoint("LEFT", button.Text, button.Text:GetWrappedWidth() + 2, 0)
-					button:SetHeight(button:GetHeight() - height + button.Text:GetHeight())
-				end
-			end
+local function Showlevel(_, _, _, title, level, _, isHeader, _, _, _, questID)
+	for button in pairs(QuestScrollFrame.titleFramePool.activeObjects) do
+		if title and not isHeader and button.questID == questID then
+			local title = level ~= T.level and "["..level.."] "..title or title
+			button.Text:SetText(title)
+			button.Text:SetPoint("TOPLEFT", 24, -5)
+			button.Text:SetWidth(205)
+			button.Text:SetWordWrap(false)
+			button.Check:SetPoint("LEFT", button.Text, button.Text:GetWrappedWidth(), 0)
 		end
 	end
-end)
+end
+hooksecurefunc("QuestLogQuests_AddQuestButton", Showlevel)
 
 ----------------------------------------------------------------------------------------
 --	Ctrl+Click to abandon a quest or Alt+Click to share a quest(by Suicidal Katt)
