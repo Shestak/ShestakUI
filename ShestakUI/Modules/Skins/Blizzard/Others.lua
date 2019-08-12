@@ -107,8 +107,9 @@ SkinBlizzUI:SetScript("OnEvent", function(self, event, addon)
 		_G["CinematicFrameCloseDialogResumeButton"]:SkinButton()
 		_G["CinematicFrameCloseDialogResumeButton"]:SetPoint("LEFT", _G["CinematicFrameCloseDialogConfirmButton"], "RIGHT", 15, 0)
 
-		-- Movie popup
+		-- Movie popup /run MovieFrame_PlayMovie(MovieFrame, 18)
 		MovieFrame.CloseDialog:SetScale(C.general.uiscale)
+		MovieFrame.CloseDialog:StripTextures()
 		MovieFrame.CloseDialog:SetTemplate("Transparent")
 		MovieFrame.CloseDialog.ConfirmButton:SkinButton()
 		MovieFrame.CloseDialog.ResumeButton:SkinButton()
