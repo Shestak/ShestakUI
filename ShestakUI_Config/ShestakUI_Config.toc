@@ -2,7 +2,7 @@
 ## Title: ShestakUI Config
 ## Notes: In-game configuration for ShestakUI
 ## Author: Haleth, Solor
-## Version: 7.14
+## Version: 7.15
 ## RequiredDeps: ShestakUI
 ## SavedVariables: ShestakUIOptionsGlobal, ShestakUIOptions
 ## SavedVariablesPerCharacter: ShestakUIOptionsPerChar
