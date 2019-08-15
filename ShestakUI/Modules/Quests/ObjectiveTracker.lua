@@ -294,3 +294,14 @@ hooksecurefunc("BonusObjectiveTracker_AnimateReward", function()
 	ObjectiveTrackerBonusRewardsFrame:ClearAllPoints()
 	ObjectiveTrackerBonusRewardsFrame:SetPoint("BOTTOM", UIParent, "TOP", 0, 90)
 end)
+
+----------------------------------------------------------------------------------------
+--	Skin ScenarioStageBlock
+----------------------------------------------------------------------------------------
+local StageBlock = _G["ScenarioStageBlock"]
+StageBlock:CreateBackdrop("Overlay")
+StageBlock.backdrop:SetPoint("TOPLEFT", ScenarioStageBlock.NormalBG, 3, -3)
+StageBlock.backdrop:SetPoint("BOTTOMRIGHT", ScenarioStageBlock.NormalBG, -3, 3)
+
+StageBlock.NormalBG:SetAlpha(0)
+StageBlock.FinalBG:SetAlpha(0)
