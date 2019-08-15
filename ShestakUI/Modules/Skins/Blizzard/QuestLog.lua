@@ -170,9 +170,10 @@ local function LoadSkin()
 			for spellReward in rewardsFrame.spellRewardPool:EnumerateActive() do
 				if not spellReward.isSkinned then
 					SkinReward(spellReward)
-					local border = select(3, spellReward:GetRegions())
-					border:Hide()
 					if not isMapQuest then
+						local border = select(3, spellReward:GetRegions())
+						border:Hide()
+
 						spellReward.Icon:SetPoint("TOPLEFT", 0, 0)
 						spellReward:SetHitRectInsets(0, 0, 0, 0)
 						spellReward:SetSize(147, 41)
