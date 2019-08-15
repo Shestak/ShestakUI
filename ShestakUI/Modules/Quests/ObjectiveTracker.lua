@@ -305,3 +305,19 @@ StageBlock.backdrop:SetPoint("BOTTOMRIGHT", ScenarioStageBlock.NormalBG, -3, 3)
 
 StageBlock.NormalBG:SetAlpha(0)
 StageBlock.FinalBG:SetAlpha(0)
+
+----------------------------------------------------------------------------------------
+--	Skin Timer bar
+----------------------------------------------------------------------------------------
+hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "AddTimerBar", function(self, block, line)
+	local timerBar = self.usedTimerBars[block] and self.usedTimerBars[block][line]
+	local bar = timerBar.Bar
+
+	if not timerBar.styled then
+		bar:SetStatusBarTexture(C.media.texture)
+		bar:SetTemplate("Transparent")
+		bar:SetBackdropColor(0, 0, 0, 0)
+		bar:DisableDrawLayer("ARTWORK")
+		timerBar.styled = true
+	end
+end)
