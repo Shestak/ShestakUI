@@ -281,7 +281,7 @@ end)
 ScenarioStageBlock:HookScript("OnEnter", function(self)
 	if IsFramePositionedLeft(ObjectiveTrackerFrame) then
 		GameTooltip:ClearAllPoints()
-		GameTooltip:SetPoint("LEFT", self, "RIGHT", 50, 0)
+		GameTooltip:SetPoint("TOPLEFT", self, "TOPRIGHT", 50, -3)
 	end
 end)
 
@@ -301,11 +301,11 @@ end)
 local StageBlock = _G["ScenarioStageBlock"]
 StageBlock:CreateBackdrop("Overlay")
 StageBlock.backdrop:SetPoint("TOPLEFT", ScenarioStageBlock.NormalBG, 3, -3)
-StageBlock.backdrop:SetPoint("BOTTOMRIGHT", ScenarioStageBlock.NormalBG, -3, 3)
+StageBlock.backdrop:SetPoint("BOTTOMRIGHT", ScenarioStageBlock.NormalBG, -6, 3)
 
 StageBlock.NormalBG:SetAlpha(0)
 StageBlock.FinalBG:SetAlpha(0)
-
+StageBlock.GlowTexture:SetTexture("")
 ----------------------------------------------------------------------------------------
 --	Skin Timer bar
 ----------------------------------------------------------------------------------------
