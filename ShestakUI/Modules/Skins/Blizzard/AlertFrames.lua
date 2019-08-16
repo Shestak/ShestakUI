@@ -127,6 +127,18 @@ local function LoadSkin()
 			frame.dungeonTexture.b:SetPoint("BOTTOMRIGHT", frame.dungeonTexture, "BOTTOMRIGHT", 2, -2)
 			frame.dungeonTexture:SetParent(frame.dungeonTexture.b)
 		end
+
+		if frame.RewardFrames then
+			for _, button in next, frame.RewardFrames do
+				if not button.isSkinned then
+					local icon, ring = button:GetRegions()
+					icon:SetSize(18, 18)
+					icon:SkinIcon(true)
+					ring:Hide()
+					button.isSkinned = true
+				end
+			end
+		end
 	end
 	hooksecurefunc(DungeonCompletionAlertSystem, "setUpFunction", SkinDungeonCompletionAlert)
 
@@ -198,13 +210,15 @@ local function LoadSkin()
 				end
 			end
 
-			for _, button in next, frame.RewardFrames do
-				if not button.isSkinned then
-					local icon, ring = button:GetRegions()
-					icon:SetSize(18, 18)
-					icon:SkinIcon(true)
-					ring:Hide()
-					button.isSkinned = true
+			if frame.RewardFrames then
+				for _, button in next, frame.RewardFrames do
+					if not button.isSkinned then
+						local icon, ring = button:GetRegions()
+						icon:SetSize(18, 18)
+						icon:SkinIcon(true)
+						ring:Hide()
+						button.isSkinned = true
+					end
 				end
 			end
 
@@ -289,13 +303,15 @@ local function LoadSkin()
 		frame.QuestTexture.b:SetPoint("BOTTOMRIGHT", frame.QuestTexture, "BOTTOMRIGHT", 2, -2)
 		frame.QuestTexture:SetParent(frame.QuestTexture.b)
 
-		for _, button in next, frame.RewardFrames do
-			if not button.isSkinned then
-				local icon, ring = button:GetRegions()
-				icon:SetSize(18, 18)
-				icon:SkinIcon(true)
-				ring:Hide()
-				button.isSkinned = true
+		if frame.RewardFrames then
+			for _, button in next, frame.RewardFrames do
+				if not button.isSkinned then
+					local icon, ring = button:GetRegions()
+					icon:SetSize(18, 18)
+					icon:SkinIcon(true)
+					ring:Hide()
+					button.isSkinned = true
+				end
 			end
 		end
 	end
