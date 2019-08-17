@@ -127,18 +127,6 @@ local function LoadSkin()
 			frame.dungeonTexture.b:SetPoint("BOTTOMRIGHT", frame.dungeonTexture, "BOTTOMRIGHT", 2, -2)
 			frame.dungeonTexture:SetParent(frame.dungeonTexture.b)
 		end
-
-		if frame.RewardFrames then
-			for _, button in next, frame.RewardFrames do
-				if not button.isSkinned then
-					local icon, ring = button:GetRegions()
-					icon:SetSize(18, 18)
-					icon:SkinIcon(true)
-					ring:Hide()
-					button.isSkinned = true
-				end
-			end
-		end
 	end
 	hooksecurefunc(DungeonCompletionAlertSystem, "setUpFunction", SkinDungeonCompletionAlert)
 
@@ -207,18 +195,6 @@ local function LoadSkin()
 					icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 					icon:ClearAllPoints()
 					icon:SetPoint("LEFT", frame.backdrop, 9, 0)
-				end
-			end
-
-			if frame.RewardFrames then
-				for _, button in next, frame.RewardFrames do
-					if not button.isSkinned then
-						local icon, ring = button:GetRegions()
-						icon:SetSize(18, 18)
-						icon:SkinIcon(true)
-						ring:Hide()
-						button.isSkinned = true
-					end
 				end
 			end
 
@@ -302,18 +278,6 @@ local function LoadSkin()
 		frame.QuestTexture.b:SetPoint("TOPLEFT", frame.QuestTexture, "TOPLEFT", -2, 2)
 		frame.QuestTexture.b:SetPoint("BOTTOMRIGHT", frame.QuestTexture, "BOTTOMRIGHT", 2, -2)
 		frame.QuestTexture:SetParent(frame.QuestTexture.b)
-
-		if frame.RewardFrames then
-			for _, button in next, frame.RewardFrames do
-				if not button.isSkinned then
-					local icon, ring = button:GetRegions()
-					icon:SetSize(18, 18)
-					icon:SkinIcon(true)
-					ring:Hide()
-					button.isSkinned = true
-				end
-			end
-		end
 	end
 	hooksecurefunc(WorldQuestCompleteAlertSystem, "setUpFunction", SkinWorldQuestCompleteAlert)
 
@@ -787,6 +751,20 @@ local function LoadSkin()
 	hooksecurefunc(NewPetAlertSystem, "setUpFunction", SkinNewPetMountAlert)
 	hooksecurefunc(NewMountAlertSystem, "setUpFunction", SkinNewPetMountAlert)
 	hooksecurefunc(NewToyAlertSystem, "setUpFunction", SkinNewPetMountAlert)
+
+	hooksecurefunc("StandardRewardAlertFrame_AdjustRewardAnchors", function(frame)
+		if frame.RewardFrames then
+			for _, button in next, frame.RewardFrames do
+				if not button.isSkinned then
+					local icon, ring = button:GetRegions()
+					icon:SetSize(18, 18)
+					icon:SkinIcon(true)
+					ring:Hide()
+					button.isSkinned = true
+				end
+			end
+		end
+	end)
 
 	-- Bonus Roll Money
 	local frame = BonusRollMoneyWonFrame
