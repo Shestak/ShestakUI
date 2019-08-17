@@ -5,6 +5,7 @@ if C.skins.blizzard_frames ~= true then return end
 --	BonusRoll skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
+	-- /run BonusRollFrame_StartBonusRoll(242969,'test',40,515,79,14)
 	BonusRollFrame:StripTextures()
 	BonusRollFrame:CreateBackdrop("Transparent")
 	BonusRollFrame.backdrop:SetFrameLevel(0)
@@ -38,20 +39,26 @@ local function LoadSkin()
 	BonusRollFrame.SpecIcon.b:SetPoint("BOTTOMRIGHT", BonusRollFrame.SpecIcon, "BOTTOMRIGHT", 2, -2)
 	BonusRollFrame.SpecIcon:SetParent(BonusRollFrame.SpecIcon.b)
 
-	hooksecurefunc("BonusRollFrame_StartBonusRoll", function()
-		BonusRollFrame.SpecIcon.b:SetShown(BonusRollFrame.SpecIcon:IsShown() and BonusRollFrame.SpecIcon:GetTexture() ~= nil)
+	hooksecurefunc(BonusRollFrame.SpecIcon, "Hide", function(specIcon)
+		if specIcon.b and specIcon.b:IsShown() then
+			specIcon.b:Hide()
+		end
 	end)
 
-	BonusRollMoneyWonFrame:StripTextures()
-	BonusRollMoneyWonFrame:CreateBackdrop("Transparent")
-	BonusRollMoneyWonFrame.backdrop:SetPoint("TOPLEFT", BonusRollMoneyWonFrame, "TOPLEFT", -9, 6)
-	BonusRollMoneyWonFrame.backdrop:SetPoint("BOTTOMRIGHT", BonusRollMoneyWonFrame, "BOTTOMRIGHT", 5, -6)
+	hooksecurefunc(BonusRollFrame.SpecIcon, "Show", function(specIcon)
+		if specIcon.b and not specIcon.b:IsShown() and specIcon:GetTexture() ~= nil then
+			specIcon.b:Show()
+		end
+	end)
 
-	BonusRollLootWonFrame:StripTextures()
-	BonusRollLootWonFrame:CreateBackdrop("Transparent")
-	BonusRollLootWonFrame.backdrop:SetPoint("TOPLEFT", BonusRollLootWonFrame, "TOPLEFT", -9, 6)
-	BonusRollLootWonFrame.backdrop:SetPoint("BOTTOMRIGHT", BonusRollLootWonFrame, "BOTTOMRIGHT", 5, -6)
-	
+	hooksecurefunc("BonusRollFrame_StartBonusRoll", function()
+		-- skin currency icons
+		local ccf, pfifc = BonusRollFrame.CurrentCountFrame.Text, BonusRollFrame.PromptFrame.InfoFrame.Cost
+		local text1, text2 = ccf and ccf:GetText(), pfifc and pfifc:GetText()
+		if text1 and text1:find('|t') then ccf:SetText(text1:gsub('|T(.-):.-|t', '|T%1:16:16:0:0:64:64:5:59:5:59|t')) end
+		if text2 and text2:find('|t') then pfifc:SetText(text2:gsub('|T(.-):.-|t', '|T%1:16:16:0:0:64:64:5:59:5:59|t')) end
+	end)
+
 	T.SkinHelpBox(BonusRollFrame.PromptFrame.EncounterJournalLinkButtonHelp)
 end
 
