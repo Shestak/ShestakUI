@@ -179,7 +179,7 @@ local function LoadSkin()
 		local size = portrait.Portrait:GetSize() + 2
 		portrait:SetSize(size, size)
 
-		portrait.Portrait:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		portrait.Portrait:SetTexCoord(0.2, 0.85, 0.2, 0.85)
 		portrait.Portrait:ClearAllPoints()
 		portrait.Portrait:SetPoint("TOPLEFT", 1, -1)
 
@@ -618,7 +618,9 @@ local function LoadSkin()
 	CapacitiveFollower.Portrait.IconBackdrop:SetTemplate("Default")
 
 	hooksecurefunc(CapacitiveFollower.PortraitRingQuality, "SetVertexColor", function(self, r, g, b)
-		CapacitiveFollower.Portrait.IconBackdrop:SetBackdropBorderColor(r, g, b)
+		if r ~= 1 and g ~= 1 and b ~= 1 then
+			CapacitiveFollower.Portrait.IconBackdrop:SetBackdropBorderColor(r, g, b)
+		end
 		self:SetTexture("")
 	end)
 
