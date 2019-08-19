@@ -82,9 +82,7 @@ local function LoadSkin()
 	MountJournal.BottomLeftInset:CreateBackdrop("Transparent")
 	MountJournal.BottomLeftInset:SetPoint("BOTTOMLEFT", 0, 33)
 	MountJournal.BottomLeftInset.SlotButton:StripTextures()
-	MountJournal.BottomLeftInset.SlotButton.ItemIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	MountJournal.BottomLeftInset.SlotButton.ItemIcon:SetInside()
-	MountJournal.BottomLeftInset.SlotButton:SkinButton()
+	MountJournal.BottomLeftInset.SlotButton.ItemIcon:SkinIcon()
 
 	for i = 1, #MountJournal.ListScrollFrame.buttons do
 		local button = _G["MountJournalListScrollFrameButton"..i]
