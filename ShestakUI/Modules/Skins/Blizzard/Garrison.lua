@@ -323,6 +323,9 @@ local function LoadSkin()
 		local r, g, b
 		if frame.IconBorder and frame.IconBorder:IsShown() then
 			r, g, b = frame.IconBorder:GetVertexColor()
+			if r > 0.64 and r < 0.67 then
+				r, g, b = unpack(C.media.border_color)
+			end
 		else
 			r, g, b = unpack(C.media.border_color)
 		end
