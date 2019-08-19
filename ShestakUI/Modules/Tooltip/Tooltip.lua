@@ -524,7 +524,9 @@ ItemRefTooltip:HookScript("OnTooltipSetItem", FixFont)
 ----------------------------------------------------------------------------------------
 GameTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 hooksecurefunc(GameTooltip.ItemTooltip.IconBorder, "SetVertexColor", function(self, r, g, b)
-	self:GetParent().backdrop:SetBackdropBorderColor(r, g, b)
+	if r ~= 0.65882 and g ~= 0.65882 and b ~= 0.65882 then
+		self:GetParent().backdrop:SetBackdropBorderColor(r, g, b)
+	end
 	self:SetTexture("")
 end)
 
@@ -547,7 +549,9 @@ if icon then
 	reward.backdrop:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
 
 	hooksecurefunc(reward.IconBorder, "SetVertexColor", function(self, r, g, b)
-		self:GetParent().backdrop:SetBackdropBorderColor(r, g, b)
+		if r ~= 0.65882 and g ~= 0.65882 and b ~= 0.65882 then
+			self:GetParent().backdrop:SetBackdropBorderColor(r, g, b)
+		end
 		self:SetTexture("")
 	end)
 
