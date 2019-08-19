@@ -78,14 +78,8 @@ local function LoadSkin()
 	ArchaeologyFrameHelpPageHelpScrollHelpText:SetTextColor(1, 1, 1)
 
 	ArchaeologyFrameArtifactPageHistoryTitle:SetTextColor(1, 0.8, 0)
-	ArchaeologyFrameArtifactPageIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	ArchaeologyFrameArtifactPageIcon.backdrop = CreateFrame("Frame", nil, ArchaeologyFrameArtifactPage)
-	ArchaeologyFrameArtifactPageIcon.backdrop:SetTemplate("Default")
-	ArchaeologyFrameArtifactPageIcon.backdrop:SetPoint("TOPLEFT", ArchaeologyFrameArtifactPageIcon, "TOPLEFT", -2, 2)
-	ArchaeologyFrameArtifactPageIcon.backdrop:SetPoint("BOTTOMRIGHT", ArchaeologyFrameArtifactPageIcon, "BOTTOMRIGHT", 2, -2)
-	ArchaeologyFrameArtifactPageIcon.backdrop:SetFrameLevel(ArchaeologyFrameArtifactPage:GetFrameLevel())
-	ArchaeologyFrameArtifactPageIcon:SetParent(ArchaeologyFrameArtifactPageIcon.backdrop)
-	ArchaeologyFrameArtifactPageIcon:SetDrawLayer("OVERLAY")
+
+	ArchaeologyFrameArtifactPageIcon:SkinIcon(true)
 
 	ArchaeologyFrameArtifactPageHistoryScrollChildText:SetTextColor(1, 1, 1)
 	T.SkinCloseButton(ArchaeologyFrameCloseButton)
@@ -115,7 +109,7 @@ local function LoadSkin()
 	bar:SetStatusBarTexture(C.media.texture)
 	bar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
 
-	bar:CreateBackdrop()
+	bar:CreateBackdrop("Overlay")
 end
 
 T.SkinFuncs["Blizzard_ArchaeologyUI"] = LoadSkin
