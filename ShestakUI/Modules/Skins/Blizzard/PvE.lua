@@ -84,7 +84,10 @@ local function LoadSkin()
 		LFGListApplicationDialog.DamagerButton,
 		LFGInvitePopupRoleButtonTank,
 		LFGInvitePopupRoleButtonHealer,
-		LFGInvitePopupRoleButtonDPS
+		LFGInvitePopupRoleButtonDPS,
+		RolePollPopupRoleButtonTank,
+		RolePollPopupRoleButtonHealer,
+		RolePollPopupRoleButtonDPS
 	}
 
 	for _, roleButton in pairs(checkButtons) do
@@ -308,7 +311,7 @@ local function LoadSkin()
 	LFDQueueFrameRandomScrollFrameScrollBackgroundTopLeft:SetTexture(nil)
 	LFDQueueFrameRandomScrollFrameScrollBackgroundBottomRight:SetTexture(nil)
 	LFDQueueFrameRandomScrollFrameChildFrameBonusRepFrame.ChooseButton:SkinButton()
-	RolePollPopup:SetTemplate("Transparent")
+
 	LFGInvitePopup:StripTextures()
 	LFGInvitePopup:SetTemplate("Transparent")
 	LFGDungeonReadyPopup:SetTemplate("Transparent")
