@@ -9,7 +9,7 @@ stArch["archSkill"] = {}	-- Archaeology skill level
 stArch["progressBars"] = {}	-- Status bars for artifacts
 stArch["artifactInfo"] = {}	-- Information to update bars
 
-local numRaces = 18
+local numRaces = GetNumArchaeologyRaces()
 local Loaded = false
 
 function stArch:OnLoad(self)
@@ -93,15 +93,18 @@ function stArch:OnLoad(self)
 			GameTooltip:Hide()
 		end)
 
-		-- Race Text
-		progressBars[i]["race"]:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-		progressBars[i]["race"]:SetText(RACE)
-		progressBars[i]["race"]:SetPoint("LEFT", progressBars[i]["bar"], "LEFT", 2, 0)
-
 		-- Progress Text
 		progressBars[i]["progress"]:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 		progressBars[i]["progress"]:SetText("")
 		progressBars[i]["progress"]:SetPoint("RIGHT", progressBars[i]["bar"], "RIGHT", 1, 0)
+
+		-- Race Text
+		progressBars[i]["race"]:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+		progressBars[i]["race"]:SetText(RACE)
+		progressBars[i]["race"]:SetPoint("LEFT", progressBars[i]["bar"], "LEFT", 2, 0)
+		progressBars[i]["race"]:SetPoint("RIGHT", progressBars[i]["progress"], "LEFT", -2, 0)
+		progressBars[i]["race"]:SetWordWrap(false)
+		progressBars[i]["race"]:SetJustifyH("LEFT")
 	end
 
 	-------------------------------------------------------------
@@ -220,7 +223,7 @@ end
 
 function stArch:UpdateFrameHeight(self)
 	-- Update frame Sizes to fit correctly
-	stArch["progressBars"]["frame"]:SetHeight(stArch["progressBars"][1]["border"]:GetHeight() * (numRaces + 6))
+	stArch["progressBars"]["frame"]:SetHeight(numRaces * (stArch["progressBars"][1]["border"]:GetHeight() + 5) + 5)
 	stArch["progressBars"]["solveFrame"]:SetHeight(stArch["progressBars"]["frame"]:GetHeight())
 	stArch["progressBars"]["solveToggle"]:SetHeight(stArch["progressBars"]["frame"]:GetHeight())
 	if stArch["archSkill"]["frame"]:IsShown() then
@@ -259,7 +262,7 @@ function stArch:updateSkillBar()
 	skill["bar"]:SetValue(skill["rank"])
 	skill["text"]:SetText(skill["rank"].."/"..skill["maxRank"])
 
-	if (skill["rank"] + 5) > skill["maxRank"] and skill["maxRank"] ~= 700 then
+	if (skill["rank"] + 5) > skill["maxRank"] and skill["rank"] ~= skill["maxRank"] then
 		skill["bar"]:SetStatusBarColor(0.7, 0.2, 0)
 	else
 		skill["bar"]:SetStatusBarColor(0, 0.4, 0.8)
@@ -387,10 +390,10 @@ function stArch:EnableSolve(index, button)
 
 		if GetNumArtifactsByRace(index) > 0 then
 			if stArch["artifactInfo"][index]["canSolve"] then
-				if not ((stArch["archSkill"]["rank"] + 5) > stArch["archSkill"]["maxRank"] and stArch["archSkill"]["maxRank"] ~= 700) or IsShiftKeyDown() then
+				if not ((stArch["archSkill"]["rank"] + 5) > stArch["archSkill"]["maxRank"] and stArch["archSkill"]["rank"] ~= stArch["archSkill"]["maxRank"]) or IsShiftKeyDown() then
 					SolveArtifact()
 				end
-				if (stArch["archSkill"]["rank"] + 5) > stArch["archSkill"]["maxRank"] and stArch["archSkill"]["maxRank"] ~= 700 and not IsShiftKeyDown() then
+				if (stArch["archSkill"]["rank"] + 5) > stArch["archSkill"]["maxRank"] and stArch["archSkill"]["rank"] ~= stArch["archSkill"]["maxRank"] and not IsShiftKeyDown() then
 					print("[|cffe76a6ast|rArch] You should go train before finishing this cast or you won't get all your skill points! (Hold shift if you don't care and still want to complete your artifact now)")
 				end
 			end
@@ -416,7 +419,7 @@ function stArch:OnEvent()
 	stArch:updateSkillLevel()
 	stArch:updateSkillBar()
 
-	if stArch["archSkill"]["rank"] == 700 then
+	if stArch["archSkill"]["rank"] == stArch["archSkill"]["maxRank"] then
 		stArch["archSkill"]["frame"]:Hide()
 	end
 end
