@@ -220,6 +220,7 @@ local function LoadSkin()
 						button.Follower.Selection:SetTexture("")
 						button.Follower.AbilitiesBG:SetTexture("")
 						button.Follower.BusyFrame:SetAllPoints()
+						button.Follower.Name:SetWordWrap(false)
 
 						if button.Follower.PortraitFrame then
 							HandleGarrisonPortrait(button.Follower.PortraitFrame)
