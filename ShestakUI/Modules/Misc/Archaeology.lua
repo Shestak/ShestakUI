@@ -9,7 +9,7 @@ stArch["archSkill"] = {}	-- Archaeology skill level
 stArch["progressBars"] = {}	-- Status bars for artifacts
 stArch["artifactInfo"] = {}	-- Information to update bars
 
-local numRaces = GetNumArchaeologyRaces()
+local numRaces = 20
 local Loaded = false
 
 function stArch:OnLoad(self)
