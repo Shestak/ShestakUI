@@ -28,22 +28,27 @@ end)
 
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PET_BATTLE_OPENING_DONE")
-frame:SetScript("OnEvent", function()
-	button:Hide()
-	local name = GetSpellInfo(158486)
-	if PlayerHasToy(92738) and not T.CheckPlayerBuff(name) then
-		local maxlevel = true
-		for i = 1, 3 do
-			local level = C_PetBattles.GetLevel(1, i)
-			if level and level < 25 then
-				maxlevel = false
+frame:RegisterEvent("PET_BATTLE_OVER")
+frame:SetScript("OnEvent", function(_, event)
+	if event == "PET_BATTLE_OPENING_DONE" then
+		button:Hide()
+		local name = GetSpellInfo(158486)
+		if PlayerHasToy(92738) and not T.CheckPlayerBuff(name) then
+			local maxlevel = true
+			for i = 1, 3 do
+				local level = C_PetBattles.GetLevel(1, i)
+				if level and level < 25 then
+					maxlevel = false
+				end
 			end
+			if maxlevel then return end
+			button:SetPoint("BOTTOM", PetBattleBarHolder, "TOP", 0, 45)
+			button:Show()
+			PlaySound(SOUNDKIT.RAID_WARNING, "master")
+			RaidNotice_AddMessage(RaidWarningFrame, RESISTANCE_NONE.." "..GetSpellLink(158486).."!", ChatTypeInfo["RAID_WARNING"])
+			print("|cffff3300"..RESISTANCE_NONE.." "..GetSpellLink(158486).."|cffff3300!|r")
 		end
-		if maxlevel then return end
-		button:SetPoint("BOTTOM", PetBattleBarHolder, "TOP", 0, 27)
-		button:Show()
-		PlaySound(SOUNDKIT.RAID_WARNING, "master")
-		RaidNotice_AddMessage(RaidWarningFrame, RESISTANCE_NONE.." "..GetSpellLink(158486).."!", ChatTypeInfo["RAID_WARNING"])
-		print("|cffff3300"..RESISTANCE_NONE.." "..GetSpellLink(158486).."|cffff3300!|r")
+	else
+		button:Hide()
 	end
 end)
