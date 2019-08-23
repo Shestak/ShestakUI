@@ -160,11 +160,35 @@ local function LoadSkin()
 				if not followerReward.isSkinned then
 					followerReward:CreateBackdrop("Overlay")
 					followerReward.backdrop:SetAllPoints(followerReward.BG)
-					followerReward.backdrop:SetPoint("TOPLEFT", 30, -5)
+					followerReward.backdrop:SetPoint("TOPLEFT", 40, -5)
 					followerReward.backdrop:SetPoint("BOTTOMRIGHT", 2, 5)
 					followerReward.BG:Hide()
 					followerReward.isSkinned = true
+
+					followerReward.PortraitFrame:ClearAllPoints()
+					followerReward.PortraitFrame:SetPoint("RIGHT", followerReward.backdrop, "LEFT", -2, 0)
+
+					followerReward.PortraitFrame.PortraitRing:Hide()
+					followerReward.PortraitFrame.PortraitRingQuality:SetTexture()
+					followerReward.PortraitFrame.LevelBorder:SetAlpha(0)
+					followerReward.PortraitFrame.Portrait:SetTexCoord(0.2, 0.85, 0.2, 0.85)
+
+					local level = followerReward.PortraitFrame.Level
+					level:ClearAllPoints()
+					level:SetPoint("BOTTOM", followerReward.PortraitFrame, 0, 3)
+
+					local squareBG = CreateFrame("Frame", nil, followerReward.PortraitFrame)
+					squareBG:SetFrameLevel(followerReward.PortraitFrame:GetFrameLevel()-1)
+					squareBG:SetPoint("TOPLEFT", 2, -2)
+					squareBG:SetPoint("BOTTOMRIGHT", -2, 2)
+					squareBG:SetTemplate("Default")
+					followerReward.PortraitFrame.squareBG = squareBG
 				end
+				local r, g, b = followerReward.PortraitFrame.PortraitRingQuality:GetVertexColor()
+				if r > 0.99 and r < 1 then
+					r, g, b = unpack(C.media.border_color)
+				end
+				followerReward.PortraitFrame.squareBG:SetBackdropBorderColor(r, g, b)
 			end
 			-- Spell Rewards
 			for spellReward in rewardsFrame.spellRewardPool:EnumerateActive() do
