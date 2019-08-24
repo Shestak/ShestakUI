@@ -83,7 +83,7 @@ SpellBinder.makeSpellsList = function(self, scroll, delete)
 
 	for i, spell in ipairs(DB.spells) do
 		v = spell.spell
-		if v then
+		if v and GetSpellBookItemName(v) then
 			local bf = _G[i.."_cbs"] or CreateFrame("Button", i.."_cbs", scroll)
 			spell.checked = spell.checked or false
 
@@ -287,7 +287,7 @@ local addSpell = function(self, button)
 
 			for _, v in pairs(DB.spells) do if v.spell == spellname then return end end
 
-			tinsert(DB.spells, {["id"] = slot, ["modifier"] = modifier, ["button"] = button, ["spell"] = spellname, ["rank"] = rank, ["texture"] = texture, ["origbutton"] = originalbutton,})
+			tinsert(DB.spells, {["id"] = slot, ["modifier"] = modifier, ["button"] = button, ["spell"] = spellname, ["texture"] = texture, ["origbutton"] = originalbutton,})
 			SpellBinder:makeSpellsList(ScrollSpells.child, false)
 		end
 	end
@@ -317,11 +317,12 @@ SpellBinder.SheduleUpdate = function()
 	end
 end
 
-SpellBinder:RegisterEvent("GROUP_ROSTER_UPDATE")
-SpellBinder:RegisterEvent("PLAYER_ENTERING_WORLD")
 SpellBinder:RegisterEvent("PLAYER_LOGIN")
-SpellBinder:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+SpellBinder:RegisterEvent("PLAYER_ENTERING_WORLD")
+SpellBinder:RegisterEvent("GROUP_ROSTER_UPDATE")
 SpellBinder:RegisterEvent("ZONE_CHANGED")
+SpellBinder:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+SpellBinder:RegisterEvent("PLAYER_TALENT_UPDATE")
 SpellBinder:SetScript("OnEvent", function(self, event)
 	if event == "PLAYER_LOGIN" then
 		SavedBindings = _G.SavedBindings or {}
@@ -348,6 +349,30 @@ SpellBinder:SetScript("OnEvent", function(self, event)
 		self:UnregisterEvent("PLAYER_LOGIN")
 	elseif event == "PLAYER_ENTERING_WORLD" or event == "GROUP_ROSTER_UPDATE" or event == "ZONE_CHANGED" or event == "ZONE_CHANGED_NEW_AREA" then
 		SpellBinder.UpdateAll()
+	elseif event == "PLAYER_TALENT_UPDATE" then
+		if DB then
+			for i, spell in ipairs(DB.spells) do
+				for frame in pairs(ClickCastFrames) do
+					local f
+					if frame and type(frame) == "table" then f = frame:GetName() end
+					if f then
+						if _G[f]:CanChangeAttribute() or _G[f]:CanChangeProtectedState() then
+							if _G[f]:GetAttribute(spell.modifier.."type"..spell.button) ~= "menu" then
+								if spell.button:find("harmbutton") then
+									_G[f]:SetAttribute(spell.modifier..spell.button, nil)
+									_G[f]:SetAttribute(spell.modifier.."type-"..spell.spell, nil)
+									_G[f]:SetAttribute(spell.modifier.."spell-"..spell.spell, nil)
+								else
+									_G[f]:SetAttribute(spell.modifier.."type"..spell.button, nil)
+									_G[f]:SetAttribute(spell.modifier.."spell"..spell.button, nil)
+								end
+							end
+						end
+					end
+				end
+			end
+			SpellBinder:makeSpellsList(ScrollSpells.child, true)
+		end
 	end
 end)
 
