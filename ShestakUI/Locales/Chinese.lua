@@ -295,7 +295,7 @@ L_SLASHCMD_HELP = {
 	"/dps - 载入DPS布局",
 	"/frame - 在聊天框输出鼠标指向的框体名字",
 	"/farmmode - 开启/关闭小地图采集模式",
-	"/moveui - 解锁/锁定 界面中所有可移动的框体",
+	"/moveui - 解锁/锁定 界面中所有可移动的框体", -- Need review
 	"/resetui - 重置一般设置到初始值",
 	"/resetuf - 重置头像框架到初始位置",
 	"/resetconfig - 重置ShestakUI_Config到初始值",

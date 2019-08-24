@@ -291,7 +291,7 @@ L_SLASHCMD_HELP = {
 	"/dps - Switches to 'DPS' layout.",
 	"/frame - Description is not ready.",
 	"/farmmode - Increase the size of the minimap.",
-	"/moveui - Allows the movement of interface elements.",
+	"/moveui - Allows the movement of interface elements. Ctrl + Right-Click to reset position",
 	"/resetui - Resets general settings to default.",
 	"/resetuf - Resets the unit frames to their default position.",
 	"/resetconfig - Resets ShestakUI_Config settings.",

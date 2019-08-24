@@ -295,7 +295,7 @@ L_SLASHCMD_HELP = {
 	"/dps - Cambia a la apariencia de 'Daño'.",
 	"/frame - La descripción aun no está lista.",
 	"/farmmode - Incrementa el tamaño del minimapa.",
-	"/moveui - Permite mover los elementos de la interfaz.",
+	"/moveui - Permite mover los elementos de la interfaz.", -- Need review
 	"/resetui - Reinicia la configuración general a la por defecto.",
 	"/resetuf - Reinicia los marcos de unidades a su posición por defecto.",
 	"/resetconfig - Reinicia la configuración de ShestakUI_Config.",

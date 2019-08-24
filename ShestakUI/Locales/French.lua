@@ -295,7 +295,7 @@ L_SLASHCMD_HELP = {
 	"/dps - Bascule sur l'interface 'DPS'.",
 	"/frame - Description is not ready.",
 	"/farmmode - Agrandi la taille de la minimap.",
-	"/moveui - Permet de déplacer des éléments de l'interface.",
+	"/moveui - Permet de déplacer des éléments de l'interface.", -- Need review
 	"/resetui - Remet les paramètres généraux à leurs valeurs par défaut.",
 	"/resetuf - Remet les cadres d'unité à leur position par défaut.",
 	"/resetconfig - Remet les paramètres ShestakUI_Config à leurs valeurs par défaut.",

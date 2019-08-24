@@ -295,7 +295,7 @@ L_SLASHCMD_HELP = {
 	"/dps - Zum DPS Layout wechseln.",
 	"/frame - Beschreibung nicht verfügbar.",
 	"/farmmode - Erhöht die Größe der Minimap.",
-	"/moveui - Ermöglicht das Bewegen der Interface Elemente.",
+	"/moveui - Ermöglicht das Bewegen der Interface Elemente.", -- Need review
 	"/resetui - Zurücksetzen der allgemeinen Einstellungen auf die Standardwerte.",
 	"/resetuf - Zurücksetzen der Einheitenfenster auf die Standardposition.",
 	"/resetconfig - Zurücksetzen der ShestakUI_Config Einstellungen.",

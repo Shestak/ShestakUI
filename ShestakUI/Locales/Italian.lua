@@ -295,7 +295,7 @@ L_SLASHCMD_HELP = {
 	"/dps - Passa alla configurazione 'assaltatori'.",
 	"/frame - La descrizione non è pronta.",
 	"/farmmode - Incrementa le dimensioni della minimappa.",
-	"/moveui - Consenti lo spostamento degli elementi dell'interfaccia.",
+	"/moveui - Consenti lo spostamento degli elementi dell'interfaccia.", -- Need review
 	"/resetui - Ripristina le impostazioni generali iniziali.",
 	"/resetuf - Riporta i riquadri delle unità alla loro posizione originaria.",
 	"/resetconfig - Riporta le impostazioni della ShestakUI_Config a quelle iniziali.",

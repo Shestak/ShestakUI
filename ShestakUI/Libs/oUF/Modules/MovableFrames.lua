@@ -345,6 +345,7 @@ do
 
 	local OnMouseUp = function(self, button)
 		if button == "RightButton" then
+			self.backdrop:SetBackdropColor(0.2, 0.6, 0.2, 0.7)
 			local style, identifier = getObjectInformation(self.obj)
 			_DB[style][identifier] =  nil
 		end
