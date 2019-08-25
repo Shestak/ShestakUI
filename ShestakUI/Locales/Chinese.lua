@@ -257,7 +257,7 @@ L_STATS_OPEN_CALENDAR = "左键开/关日历"
 L_STATS_RC_TIME_MANAGER = "右键开/关计时器"
 L_STATS_TOGGLE_TIME = "本地/服务器及24小时制可于计时器中设置"
 L_STATS_MEMORY = "内存"
-L_STATS_RC_COLLECTS_GARBAGE = "右键整理内存"
+L_STATS_RC_COLLECTS_GARBAGE = "帧数模块上鼠标悬停显示，右键整理内存"
 L_STATS_VIEW_NOTES = "按住Alt键检视: 好友的所在地 公会成员的会阶/注记/干部注记"
 L_STATS_CHANGE_SORTING = "[公会]右键密语/邀请，中键更改排列方式，Shift+中键反转排序"
 L_STATS_OPEN_CHARACTER = "左键开/关角色界面"
@@ -295,7 +295,7 @@ L_SLASHCMD_HELP = {
 	"/dps - 载入DPS布局",
 	"/frame - 在聊天框输出鼠标指向的框体名字",
 	"/farmmode - 开启/关闭小地图采集模式",
-	"/moveui - 解锁/锁定 界面中所有可移动的框体", -- Need review
+	"/moveui - 解锁/锁定 界面中所有可移动的框体，Ctrl+右键选中的框架重置到预设位置",
 	"/resetui - 重置一般设置到初始值",
 	"/resetuf - 重置头像框架到初始位置",
 	"/resetconfig - 重置ShestakUI_Config到初始值",
