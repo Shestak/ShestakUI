@@ -717,6 +717,7 @@ local function LoadSkin()
 	OrderHallMissionFrameMissions:StripTextures()
 	OrderHallMissionFrameMissionsListScrollFrame:StripTextures()
 	T.SkinScrollBar(OrderHallMissionFrameMissionsListScrollFrameScrollBar)
+
 	OrderHallMissionFrameMissions.CombatAllyUI:StripTextures()
 	OrderHallMissionFrameMissions.CombatAllyUI:CreateBackdrop("Overlay")
 	OrderHallMissionFrameMissions.CombatAllyUI.backdrop:SetPoint("TOPLEFT", 18, -2)
@@ -724,6 +725,15 @@ local function LoadSkin()
 	OrderHallMissionFrameMissions.CombatAllyUI.InProgress.Unassign:SkinButton()
 	OrderHallMissionFrameMissions.CombatAllyUI.InProgress.CombatAllySpell.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	OrderHallMissionFrameMissions.CombatAllyUI.InProgress.CombatAllySpell:CreateBackdrop("Default")
+	HandleGarrisonPortrait(OrderHallMissionFrameMissions.CombatAllyUI.InProgress.PortraitFrame)
+	OrderHallMissionFrameMissions.CombatAllyUI.InProgress.CombatAllySpell:SetPoint("BOTTOMLEFT", OrderHallMissionFrameMissions.CombatAllyUI.InProgress.PortraitFrame.backdrop, "BOTTOMRIGHT", 12, -20)
+	hooksecurefunc(OrderHallMissionFrameMissions.CombatAllyUI.InProgress.PortraitFrame.PortraitRingQuality, "SetVertexColor", function(self, r, g, b)
+		if r ~= 1 and g ~= 1 and b ~= 1 then
+			OrderHallMissionFrameMissions.CombatAllyUI.InProgress.PortraitFrame.backdrop:SetBackdropBorderColor(r, g, b)
+		end
+		self:SetTexture("")
+	end)
+
 	OrderHallMissionFrameMissions.MaterialFrame:StripTextures()
 	OrderHallMissionFrame.MissionTab:StripTextures()
 	OrderHallMissionFrame.MissionTab.ZoneSupportMissionPage:StripTextures()
