@@ -548,6 +548,7 @@ if gold.enabled then
 			if event == "MERCHANT_SHOW" then
 				if conf.AutoSell and not (IsAltKeyDown() or IsShiftKeyDown()) then
 					local profit = 0
+					local numItem = 0
 					for bag = 0, NUM_BAG_SLOTS do for slot = 0, GetContainerNumSlots(bag) do
 						local link = GetContainerItemLink(bag, slot)
 						if link then
@@ -555,9 +556,18 @@ if gold.enabled then
 							for _, exception in pairs(SavedStats.JunkIgnore) do
 								if exception == itemstring then ignore = true break end
 							end
-							if (select(3, GetItemInfo(link)) == 0 and not ignore) or (ignore and select(3, GetItemInfo(link)) ~= 0) then
-								profit = profit + select(11, GetItemInfo(link)) * select(2, GetContainerItemInfo(bag, slot))
-								UseContainerItem(bag, slot)
+							local _, _, itemRarity, _, _, _, _, _, _, _, itemSellPrice = GetItemInfo(link)
+							local _, itemCount = GetContainerItemInfo(bag, slot)
+							if (itemRarity == 0 and not ignore) or (ignore and itemRarity ~= 0) then
+								profit = profit + (itemSellPrice * itemCount)
+								numItem = numItem + 1
+								if numItem < 12 then
+									UseContainerItem(bag, slot)
+								else
+									C_Timer.After(numItem/8, function()
+										UseContainerItem(bag, slot)
+									end)
+								end
 							end
 						end
 					end end
