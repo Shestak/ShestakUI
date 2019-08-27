@@ -421,7 +421,6 @@ function T.SkinDropDownBox(frame, width, pos)
 	if text then
 		text:ClearAllPoints()
 		text:SetPoint("RIGHT", button, "LEFT", -2, 0)
-		text:SetWidth(frame:GetWidth() / 1.5)
 	end
 
 	button:ClearAllPoints()
