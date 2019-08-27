@@ -330,6 +330,8 @@ L_GUI_LOOT_ICON_SIZE = "Размер иконки"
 L_GUI_LOOT_WIDTH = "Ширина окна добычи"
 L_GUI_LOOT_AUTOGREED = "Авто не откажусь/распылить для зеленых предметов на макс. уровне"
 L_GUI_LOOT_AUTODE = "Убрать запрос о распылении предмета"
+L.loot_faster_loot = "Ускорить взятие добычи"
+L.loot_faster_loot_desc = "Работает, если включен автоматический сбор добычи"
 
 -- Filger
 L_GUI_FILGER = "Таймеры (Filger)"

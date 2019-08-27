@@ -330,6 +330,8 @@ L_GUI_LOOT_ICON_SIZE = "Taille de l'icône"
 L_GUI_LOOT_WIDTH = "Largeur de la fenêtre de butin"
 L_GUI_LOOT_AUTOGREED = "Activer désenchantement automatique pour les objets verts au niveau maximum"
 L_GUI_LOOT_AUTODE = "Confirmation automatique pour le désenchantement"
+L.loot_faster_loot = "Faster looting" -- Need review
+L.loot_faster_loot_desc = "Works only if enabled auto loot" -- Need review
 
 -- Filger
 L_GUI_FILGER = "Timers (Filger)" -- Need review

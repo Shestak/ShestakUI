@@ -1276,6 +1276,9 @@ do
 
 	local auto_confirm_de = ns.CreateCheckBox(parent, "auto_confirm_de", L_GUI_LOOT_AUTODE)
 	auto_confirm_de:SetPoint("TOPLEFT", auto_greed, "BOTTOMLEFT", 0, 0)
+
+	local faster_loot = ns.CreateCheckBox(parent, "faster_loot")
+	faster_loot:SetPoint("TOPLEFT", auto_confirm_de, "BOTTOMLEFT", 0, 0)
 end
 
 -- Filger

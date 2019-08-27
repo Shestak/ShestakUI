@@ -330,6 +330,8 @@ L_GUI_LOOT_ICON_SIZE = "Symbolgröße"
 L_GUI_LOOT_WIDTH = "Breite des Plünderfensters"
 L_GUI_LOOT_AUTOGREED = "Aktiviere automatisches Würfeln (Gier) für Gegenstände, falls das höchste Level erreicht wurde."
 L_GUI_LOOT_AUTODE = "Entzauberung automatisch bestätigen"
+L.loot_faster_loot = "Faster looting" -- Need review
+L.loot_faster_loot_desc = "Works only if enabled auto loot" -- Need review
 
 -- Filger
 L_GUI_FILGER = "Timers (Filger)"

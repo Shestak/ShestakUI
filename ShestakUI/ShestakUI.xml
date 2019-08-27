@@ -175,6 +175,7 @@
 
 	<Script file="Modules\Loot\AutoConfirm.lua"/>
 	<Script file="Modules\Loot\AutoGreed.lua"/>
+	<Script file="Modules\Loot\FasterLoot.lua"/>
 	<Script file="Modules\Loot\GroupLoot.lua"/>
 	<Script file="Modules\Loot\Loot.lua"/>
 	<Script file="Modules\Loot\MasterLoot.lua"/>

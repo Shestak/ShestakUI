@@ -330,6 +330,8 @@ L_GUI_LOOT_ICON_SIZE = "Dimensioni delle icone"
 L_GUI_LOOT_WIDTH = "Larghezza del riquadro bottino"
 L_GUI_LOOT_AUTOGREED = "A livello massimo, attiva automaticamente la bramosia per gli oggetti verdi"
 L_GUI_LOOT_AUTODE = "'Auto-conferma' il disincantamento degli oggetti"
+L.loot_faster_loot = "Faster looting" -- Need review
+L.loot_faster_loot_desc = "Works only if enabled auto loot" -- Need review
 
 -- Filger
 L_GUI_FILGER = "Timers (Filger)"

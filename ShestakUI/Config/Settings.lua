@@ -374,6 +374,7 @@ C["loot"] = {
 	["width"] = 221,							-- Loot window width
 	["auto_greed"] = true,						-- Push "greed" or "disenchant" button when green item roll at max level
 	["auto_confirm_de"] = true,					-- Auto confirm disenchant
+	["faster_loot"] = false,					-- Faster auto looting
 }
 
 ----------------------------------------------------------------------------------------

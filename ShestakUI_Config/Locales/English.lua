@@ -352,6 +352,8 @@ L_GUI_LOOT_ICON_SIZE = "Icon size"
 L_GUI_LOOT_WIDTH = "Loot frame width"
 L_GUI_LOOT_AUTOGREED = "Enable auto-greed/disenchant for green item at max level"
 L_GUI_LOOT_AUTODE = "Auto confirm disenchant"
+L.loot_faster_loot = "Faster looting"
+L.loot_faster_loot_desc = "Works only if enabled auto loot"
 
 -- Filger
 L_GUI_FILGER = "Timers (Filger)"
