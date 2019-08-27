@@ -95,6 +95,11 @@ local function LoadSkin()
 
 	SkinReward(QuestInfoSkillPointFrame)
 
+	QuestInfoPlayerTitleFrame.FrameLeft:SetTexture()
+	QuestInfoPlayerTitleFrame.FrameCenter:SetTexture()
+	QuestInfoPlayerTitleFrame.FrameRight:SetTexture()
+	QuestInfoPlayerTitleFrame.Icon:SkinIcon()
+
 	hooksecurefunc("QuestInfo_GetRewardButton", function(rewardsFrame, index)
 		local button = rewardsFrame.RewardButtons[index]
 		if not button.restyled then
