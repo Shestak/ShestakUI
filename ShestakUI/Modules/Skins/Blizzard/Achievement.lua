@@ -67,6 +67,15 @@ local function LoadSkin()
 	AchievementFrameFilterDropDown:ClearAllPoints()
 	AchievementFrameFilterDropDown:SetPoint("TOPLEFT", AchievementFrameAchievements, "TOPLEFT", -19, 24)
 
+	local frame = CreateFrame("Frame")
+	frame:RegisterEvent("ADDON_LOADED")
+	frame:SetScript("OnEvent", function()
+		if not IsAddOnLoaded("Overachiever") then return end
+		AchievementFrameFilterDropDownButton:SetWidth(17)
+		AchievementFrameFilterDropDown:ClearAllPoints()
+		AchievementFrameFilterDropDown:SetPoint("TOPLEFT", AchievementFrameAchievements, "TOPLEFT", -19, 24)
+	end)
+
 	T.SkinEditBox(AchievementFrame.searchBox)
 	AchievementFrame.searchBox:SetHeight(15)
 	AchievementFrame.searchBox:ClearAllPoints()
