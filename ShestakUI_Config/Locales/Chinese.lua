@@ -330,8 +330,8 @@ L_GUI_LOOT_ICON_SIZE = "拾取框架图标大小"
 L_GUI_LOOT_WIDTH = "拾取框架宽度"
 L_GUI_LOOT_AUTOGREED = "满级后自动贪婪绿色物品"
 L_GUI_LOOT_AUTODE = "自动选择分解"
-L.loot_faster_loot = "Faster looting" -- Need review
-L.loot_faster_loot_desc = "Works only if enabled auto loot" -- Need review
+L.loot_faster_loot = "快速拾取"
+L.loot_faster_loot_desc = "仅在自动拾取模式中生效"
 
 -- Filger
 L_GUI_FILGER = "法术监视"
