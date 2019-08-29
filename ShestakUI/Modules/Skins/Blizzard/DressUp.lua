@@ -45,7 +45,7 @@ local function LoadSkin()
 	WardrobeOutfitEditFrame.AcceptButton:SkinButton()
 	WardrobeOutfitEditFrame.CancelButton:SkinButton()
 	WardrobeOutfitEditFrame.DeleteButton:SkinButton()
-	T.SkinEditBox(WardrobeOutfitEditFrame.EditBox)
+	T.SkinEditBox(WardrobeOutfitEditFrame.EditBox, 250, 25)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

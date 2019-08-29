@@ -93,8 +93,6 @@ local function LoadSkin()
 		SkinReward(QuestInfoRewardsFrame[name])
 	end
 
-	SkinReward(QuestInfoSkillPointFrame)
-
 	QuestInfoPlayerTitleFrame.FrameLeft:SetTexture()
 	QuestInfoPlayerTitleFrame.FrameCenter:SetTexture()
 	QuestInfoPlayerTitleFrame.FrameRight:SetTexture()
