@@ -139,6 +139,7 @@ local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 end
 
 local function CreateBackdrop(f, t)
+	if f.backdrop then return end
 	if not t then t = "Default" end
 
 	local b = CreateFrame("Frame", "$parentBackdrop", f)
