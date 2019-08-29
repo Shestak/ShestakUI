@@ -18,9 +18,7 @@ local function LoadSkin()
 	local frames = {
 		"InterfaceOptionsFramePanelContainer",
 		"InterfaceOptionsFrameAddOns",
-		"InterfaceOptionsFrameCategories",
-		"InterfaceOptionsFrameTab1",
-		"InterfaceOptionsFrameTab2"
+		"InterfaceOptionsFrameCategories"
 	}
 
 	for i = 1, getn(frames) do
