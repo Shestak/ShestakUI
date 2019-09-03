@@ -48,8 +48,12 @@ local function LoadSkin()
 	for i = 1, #questHeader do
 		local frame = questHeader[i]
 		frame:CreateBackdrop("Overlay")
-		frame.backdrop:SetPoint("TOPLEFT", 6, -9)
-		frame.backdrop:SetPoint("BOTTOMRIGHT", -6, 2)
+		if i == 1 then
+			frame.backdrop:SetPoint("TOPLEFT", 6, -5)
+		else
+			frame.backdrop:SetPoint("TOPLEFT", 6, -9)
+		end
+		frame.backdrop:SetPoint("BOTTOMRIGHT", -6, 11)
 		frame.HighlightTexture:Hide()
 		frame.Background:Hide()
 		if i == 1 then -- WarCampaignHeader
