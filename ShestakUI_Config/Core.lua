@@ -507,27 +507,38 @@ local onTabClick = function(tab)
 	setActiveTab(tab)
 end
 
-ns.addCategory = function(name, text, subText, second, third)
-	local tag = strlower(name)
-
-	local panel = CreateFrame("Frame", baseName..name, ShestakUIOptionsPanel)
+local function CreateOptionPanel(name, text, subText)
+	local panel = CreateFrame("Frame", name, ShestakUIOptionsPanel)
 	panel:SetSize(600, 670)
 	panel:SetPoint("RIGHT", 0, 10)
 	panel:EnableMouseWheel(true)
 	panel:Hide()
 
-	local panel_2, panel_3
+	panel.Title = panel:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
+	panel.Title:SetPoint("TOPLEFT", 8, -16)
+	panel.Title:SetText(text)
+
+	panel.subText = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+	panel.subText:SetPoint("TOPLEFT", panel.Title, "BOTTOMLEFT", 0, -8)
+	panel.subText:SetJustifyH("LEFT")
+	panel.subText:SetJustifyV("TOP")
+	panel.subText:SetSize(570, 30)
+	panel.subText:SetText(subText)
+
+	return panel
+end
+
+ns.addCategory = function(name, text, subText, second, third)
+	local tag = strlower(name)
+	local panel, panel_2, panel_3 = CreateOptionPanel(baseName..name, text, subText)
+
 	if second then
 		local name2 = name.."2"
 		local tag2 = strlower(name2)
-		panel_2 = CreateFrame("Frame", baseName..name2, ShestakUIOptionsPanel)
-		panel_2:SetSize(600, 670)
-		panel_2:SetPoint("RIGHT", 0, 10)
-		panel_2:EnableMouseWheel(true)
-		panel_2:Hide()
+		panel_2 = CreateOptionPanel(baseName..name2, text, subText)
 
 		local general = CreateFrame("Button", nil, ShestakUIOptionsPanel, "UIPanelButtonTemplate")
-		general:SetPoint("TOPRIGHT", -190, -44)
+		general:SetPoint("TOPRIGHT", -195, -44)
 		general:SetSize(128, 25)
 		general:SetText(GENERAL_LABEL)
 		general:SetWidth(general.Text:GetWidth() + 15)
@@ -570,17 +581,6 @@ ns.addCategory = function(name, text, subText, second, third)
 
 		ShestakUIOptionsPanel[tag2] = panel_2
 
-		panel_2.Title = panel_2:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
-		panel_2.Title:SetPoint("TOPLEFT", 8, -16)
-		panel_2.Title:SetText(text)
-
-		panel_2.subText = panel_2:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-		panel_2.subText:SetPoint("TOPLEFT", panel_2.Title, "BOTTOMLEFT", 0, -8)
-		panel_2.subText:SetJustifyH("LEFT")
-		panel_2.subText:SetJustifyV("TOP")
-		panel_2.subText:SetSize(570, 30)
-		panel_2.subText:SetText(subText)
-
 		panel:SetScript("OnMouseWheel", function(_, delta)
 			if delta < 0 then
 				optional:Click()
@@ -596,25 +596,7 @@ ns.addCategory = function(name, text, subText, second, third)
 		if third then
 			local name3 = name.."3"
 			local tag3 = strlower(name3)
-			panel_3 = CreateFrame("Frame", baseName..name3, ShestakUIOptionsPanel)
-			panel_3:SetSize(600, 670)
-			panel_3:SetPoint("RIGHT", 0, 10)
-			panel_3:EnableMouseWheel(true)
-			panel_3:Hide()
-
-			local general = CreateFrame("Button", nil, ShestakUIOptionsPanel, "UIPanelButtonTemplate")
-			general:SetPoint("TOPRIGHT", -195, -44)
-			general:SetSize(128, 25)
-			general:SetText(GENERAL_LABEL)
-			general:SetWidth(general.Text:GetWidth() + 15)
-			general.Text:SetTextColor(1, 1, 1)
-			general:Hide()
-
-			local optional = CreateFrame("Button", nil, general, "UIPanelButtonTemplate")
-			optional:SetPoint("LEFT", general, "RIGHT", 5, 0)
-			optional:SetSize(128, 25)
-			optional:SetText(ADVANCED_LABEL)
-			optional:SetWidth(optional.Text:GetWidth() + 15)
+			panel_3 = CreateOptionPanel(baseName..name3, text, subText)
 
 			local more = CreateFrame("Button", nil, general, "UIPanelButtonTemplate")
 			more:SetPoint("LEFT", optional, "RIGHT", 5, 0)
@@ -650,34 +632,13 @@ ns.addCategory = function(name, text, subText, second, third)
 			end)
 
 			tinsert(panels, panel_3)
-			tinsert(ns.buttons, general)
-			tinsert(ns.buttons, optional)
 			tinsert(ns.buttons, more)
 
 			panel.third = true
-			panel.general = general
-			panel.optional = optional
 			panel.more = more
 
 			panel_3.tag = tag
 			ShestakUIOptionsPanel[tag3] = panel_3
-
-			panel_3.Title = panel_3:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
-			panel_3.Title:SetPoint("TOPLEFT", 8, -16)
-			panel_3.Title:SetText(text)
-
-			panel_3.subText = panel_3:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-			panel_3.subText:SetPoint("TOPLEFT", panel_3.Title, "BOTTOMLEFT", 0, -8)
-			panel_3.subText:SetJustifyH("LEFT")
-			panel_3.subText:SetJustifyV("TOP")
-			panel_3.subText:SetSize(570, 30)
-			panel_3.subText:SetText(subText)
-
-			panel:SetScript("OnMouseWheel", function(_, delta)
-				if delta < 0 then
-					optional:Click()
-				end
-			end)
 
 			panel_2:SetScript("OnMouseWheel", function(_, delta)
 				if delta > 0 then
@@ -694,17 +655,6 @@ ns.addCategory = function(name, text, subText, second, third)
 			end)
 		end
 	end
-
-	panel.Title = panel:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
-	panel.Title:SetPoint("TOPLEFT", 8, -16)
-	panel.Title:SetText(text)
-
-	panel.subText = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-	panel.subText:SetPoint("TOPLEFT", panel.Title, "BOTTOMLEFT", 0, -8)
-	panel.subText:SetJustifyH("LEFT")
-	panel.subText:SetJustifyV("TOP")
-	panel.subText:SetSize(570, 30)
-	panel.subText:SetText(subText)
 
 	local tab = CreateFrame("Button", nil, ShestakUIOptionsPanel)
 	tab:SetPoint("TOPLEFT", 11, -offset)
