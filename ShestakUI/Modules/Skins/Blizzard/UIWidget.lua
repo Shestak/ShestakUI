@@ -9,22 +9,7 @@ local function LoadSkin()
 		for _, widgetFrame in UIWidgetManager:EnumerateWidgetsByWidgetTag("") do
 			-- print(widgetFrame.widgetType) -- debug finder
 			if widgetFrame.widgetType == 2 then -- StatusBar
-				local bar = widgetFrame.Bar
-				local atlas = bar:GetStatusBarAtlas()
-				if not atlas then
-					bar:SetStatusBarTexture(C.media.texture)
-				end
-				if not bar.styled then
-					bar.BGLeft:SetAlpha(0)
-					bar.BGRight:SetAlpha(0)
-					bar.BGCenter:SetAlpha(0)
-					bar.BorderLeft:SetAlpha(0)
-					bar.BorderRight:SetAlpha(0)
-					bar.BorderCenter:SetAlpha(0)
-					bar.Spark:SetAlpha(0)
-					bar:CreateBackdrop("Overlay")
-					bar.styled = true
-				end
+				T.SkinStatusBarWidget(widgetFrame)
 			elseif widgetFrame.widgetType == 3 then -- DoubleStatusBar
 				for _, bar in pairs({widgetFrame.LeftBar, widgetFrame.RightBar}) do
 					local atlas = bar:GetStatusBarAtlas()

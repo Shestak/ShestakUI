@@ -8,7 +8,7 @@ local function LoadSkin()
 	WarboardQuestChoiceFrame:StripTextures()
 	WarboardQuestChoiceFrame.NineSlice:Hide()
 	WarboardQuestChoiceFrame:CreateBackdrop("Transparent")
-	WarboardQuestChoiceFrame.backdrop:SetPoint("TOPLEFT", -4, 4)
+	WarboardQuestChoiceFrame.backdrop:SetPoint("TOPLEFT", -4, 5)
 	WarboardQuestChoiceFrame.backdrop:SetPoint("BOTTOMRIGHT", 4, 0)
 
 	WarboardQuestChoiceFrame.BorderFrame:Hide()
@@ -37,6 +37,20 @@ local function LoadSkin()
 		option.ArtBackdrop:SetPoint("BOTTOMRIGHT", option.Artwork, 2, -2)
 		option.ArtBackdrop:SetTemplate("Default")
 	end
+
+	hooksecurefunc(WarboardQuestChoiceFrame, "TryShow", function(self)
+		for _, option in next, self.Options do
+			if option.WidgetContainer.widgetFrames then
+				for _, widgetFrame in next, option.WidgetContainer.widgetFrames do
+					if widgetFrame.widgetType == 2 then
+						T.SkinStatusBarWidget(widgetFrame)
+					elseif widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.TextWithState then
+						widgetFrame.Text:SetTextColor(1, 1, 1)
+					end
+				end
+			end
+		end
+	end)
 
 	T.SkinCloseButton(WarboardQuestChoiceFrame.CloseButton, WarboardQuestChoiceFrame.backdrop)
 
