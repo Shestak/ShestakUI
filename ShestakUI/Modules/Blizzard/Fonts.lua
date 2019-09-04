@@ -85,6 +85,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	SetFont(Game16Font, NORMAL, 16)
 	SetFont(Fancy16Font, NORMAL, 16)
 	SetFont(QuestFont_Enormous, NORMAL, 30, nil, 1, 0.82, 0)
+	SetFont(TextStatusBarTextLarge, NORMAL, 13, "OUTLINE")
 
 	-- Derived fonts
 	SetFont(BossEmoteNormalHuge, NORMAL, 27, "THICKOUTLINE")
