@@ -303,6 +303,10 @@ local function LoadSkin()
 				r, g, b = unpack(C.media.border_color)
 			end
 
+			if (r > 0.64 and r < 0.67) or (r > 0.99 and g > 0.99 and b > 0.99) then
+				r, g, b = unpack(C.media.border_color)
+			end
+
 			if not reward.backdrop then
 				reward.Icon:SkinIcon()
 				reward.backdrop:SetFrameLevel(reward:GetFrameLevel())
@@ -324,7 +328,7 @@ local function LoadSkin()
 		local r, g, b
 		if frame.IconBorder and frame.IconBorder:IsShown() then
 			r, g, b = frame.IconBorder:GetVertexColor()
-			if r > 0.64 and r < 0.67 then
+			if (r > 0.64 and r < 0.67) or (r > 0.99 and g > 0.99 and b > 0.99) then
 				r, g, b = unpack(C.media.border_color)
 			end
 		else
@@ -413,7 +417,9 @@ local function LoadSkin()
 				reward.Quantity:SetParent(reward.backdrop)
 				reward.IconBorder:SetAlpha(0)
 				hooksecurefunc(reward.IconBorder, "SetVertexColor", function(self, r, g, b)
-					self:GetParent().backdrop:SetBackdropBorderColor(r, g, b)
+					if r ~= 0.65882 and g ~= 0.65882 and b ~= 0.65882 then
+						self:GetParent().backdrop:SetBackdropBorderColor(r, g, b)
+					end
 				end)
 			end
 		end
