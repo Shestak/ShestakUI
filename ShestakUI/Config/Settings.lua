@@ -118,6 +118,10 @@ C["unitframe"] = {
 	["plugins_diminishing"] = false,			-- Diminishing Returns icons on arena frames
 	["plugins_power_prediction"] = false,		-- Power cost prediction bar on player frame
 	["plugins_absorbs"] = false,				-- Absorbs value on player frame
+	-- Size
+	["extra_height_auto"] = true,				-- Auto height for health/power depending on font size
+	["extra_health_height"] = 0,				-- Additional height for health
+	["extra_power_height"] = 0,					-- Additional height for power
 }
 
 ----------------------------------------------------------------------------------------
@@ -171,6 +175,7 @@ C["raidframe"] = {
 	["plugins_pvp_debuffs"] = false,			-- Show also PvP debuff icons (from the list)
 	["plugins_healcomm"] = true,				-- Incoming heal bar on raid frame
 	["plugins_auto_resurrection"] = false,		-- Auto cast resurrection on middle-click (doesn't work with Clique)
+	["hide_health_value"] = false,				-- Hide health value (only for heal layout)
 }
 
 ----------------------------------------------------------------------------------------

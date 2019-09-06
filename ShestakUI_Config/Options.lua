@@ -107,7 +107,7 @@ local FlagsTable = {
 ns.addCategory("general", GENERAL_LABEL, L_GUI_GENERAL_SUBTEXT, true)
 ns.addCategory("font", L.font, L.font_subtext, true, true)
 ns.addCategory("skins", L_GUI_SKINS, L_GUI_SKINS_SUBTEXT)
-ns.addCategory("unitframe", UNITFRAME_LABEL, L_GUI_UF_SUBTEXT, true)
+ns.addCategory("unitframe", UNITFRAME_LABEL, L_GUI_UF_SUBTEXT, true, true)
 ns.addCategory("unitframe_class_bar", L_GUI_UF_PLUGINS_CLASS_BAR, L_GUI_UF_PLUGINS_CLASS_BAR_SUBTEXT)
 ns.addCategory("raidframe", RAID_FRAMES_LABEL, L_GUI_UF_RAIDFRAMES_SUBTEXT, true)
 ns.addCategory("actionbar", L_GUI_ACTIONBAR, ACTIONBARS_SUBTEXT)
@@ -648,6 +648,27 @@ do
 
 	local plugins_absorbs = ns.CreateCheckBox(parent, "plugins_absorbs")
 	plugins_absorbs:SetPoint("TOPLEFT", plugins_power_prediction, "BOTTOMLEFT", 0, 0)
+
+	-- Panel 3
+	local parent = ShestakUIOptionsPanel.unitframe3
+
+	local extra_height_auto = ns.CreateCheckBox(parent, "extra_height_auto")
+	extra_height_auto:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local extra_health_height = ns.CreateNumberSlider(parent, "extra_health_height", nil, nil, 0, 40, 1, true)
+	extra_health_height:SetPoint("TOPLEFT", extra_height_auto, "BOTTOMLEFT", 0, -20)
+
+	local extra_power_height = ns.CreateNumberSlider(parent, "extra_power_height", nil, nil, 0, 20, 1, true)
+	extra_power_height:SetPoint("LEFT", extra_health_height, "RIGHT", 120, 0)
+	
+	local function toggleOptions()
+		local shown = not extra_height_auto:GetChecked()
+		extra_health_height:SetShown(shown)
+		extra_power_height:SetShown(shown)
+	end
+
+	extra_height_auto:HookScript("OnClick", toggleOptions)
+	extra_health_height:HookScript("OnShow", toggleOptions)
 end
 
 -- Unit Frames Class bar
@@ -784,6 +805,9 @@ do
 
 	local plugins_auto_resurrection = ns.CreateCheckBox(parent, "plugins_auto_resurrection")
 	plugins_auto_resurrection:SetPoint("TOPLEFT", plugins_healcomm, "BOTTOMLEFT", 0, 0)
+
+	local hide_health_value = ns.CreateCheckBox(parent, "hide_health_value")
+	hide_health_value:SetPoint("TOPLEFT", plugins_auto_resurrection, "BOTTOMLEFT", 0, 0)
 end
 
 -- ActionBar

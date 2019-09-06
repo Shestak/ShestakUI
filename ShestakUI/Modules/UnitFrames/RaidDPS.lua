@@ -9,9 +9,9 @@ local oUF = ns.oUF
 
 -- Frame size
 local party_width = 140
-local party_height = 27
-local partytarget_width = 30
-local partytarget_height = 27
+local party_height = 27 + T.extraHeight
+local partytarget_width = 30 + T.extraHeight
+local partytarget_height = 27 + T.extraHeight
 local unit_width = 104
 local unit_height = 17
 
@@ -37,13 +37,13 @@ local function Shared(self, unit)
 	self.Health:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 	self.Health:SetPoint("TOPRIGHT", self, "TOPRIGHT", 0, 0)
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
-		self.Health:SetHeight(27)
+		self.Health:SetHeight(27 + T.extraHeight)
 	elseif unit == "tank" then
 		self.Health:SetHeight(23)
 	elseif unit == "raid" then
 		self.Health:SetHeight(15)
 	elseif unit == "party" then
-		self.Health:SetHeight(21)
+		self.Health:SetHeight(21 + C.unitframe.extra_health_height)
 	else
 		self.Health:SetHeight(17)
 	end
@@ -94,7 +94,7 @@ local function Shared(self, unit)
 		if unit == "raid" then
 			self.Power:SetHeight(1)
 		elseif unit == "party" then
-			self.Power:SetHeight(5)
+			self.Power:SetHeight(5 + C.unitframe.extra_power_height)
 		else
 			self.Power:SetHeight(2)
 		end
@@ -333,7 +333,7 @@ oUF:Factory(function(self)
 			"point", "BOTTOM"
 		)
 
-		partypet:SetPoint("BOTTOMLEFT", party, "BOTTOMRIGHT", 44, 0)
+		partypet:SetPoint("BOTTOMLEFT", party, "BOTTOMRIGHT", 44 + T.extraHeight, 0)
 	end
 
 	if C.raidframe.show_raid == true then

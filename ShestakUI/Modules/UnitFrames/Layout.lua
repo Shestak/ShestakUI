@@ -7,6 +7,12 @@ if C.unitframe.enable ~= true then return end
 local _, ns = ...
 local oUF = ns.oUF
 
+if C.unitframe.extra_height_auto then
+	C.unitframe.extra_health_height = C.font.unit_frames_font_size - 8
+	C.unitframe.extra_power_height = C.font.unit_frames_font_size - 8
+end
+T.extraHeight = C.unitframe.extra_health_height + C.unitframe.extra_power_height
+
 -- Create layout
 local function Shared(self, unit)
 	-- Set our own colors
@@ -39,9 +45,9 @@ local function Shared(self, unit)
 	-- Health bar
 	self.Health = CreateFrame("StatusBar", self:GetName().."_Health", self)
 	if unit == "player" or unit == "target" or unit == "arena" or unit == "boss" then
-		self.Health:SetHeight(21)
+		self.Health:SetHeight(21 + C.unitframe.extra_health_height)
 	elseif unit == "arenatarget" then
-		self.Health:SetHeight(27)
+		self.Health:SetHeight(27 + T.extraHeight)
 	else
 		self.Health:SetHeight(13)
 	end
@@ -108,7 +114,7 @@ local function Shared(self, unit)
 	-- Power bar
 	self.Power = CreateFrame("StatusBar", self:GetName().."_Power", self)
 	if unit == "player" or unit == "target" or unit == "arena" or unit == "boss" then
-		self.Power:SetHeight(5)
+		self.Power:SetHeight(5 + C.unitframe.extra_power_height)
 	elseif unit == "arenatarget" then
 		self.Power:SetHeight(0)
 	else
@@ -182,6 +188,8 @@ local function Shared(self, unit)
 			self:Tag(self.Level, "[cpoints] [Threat] [DiffColor][level][shortclassification]")
 		elseif unit == "focus" or unit == "pet" then
 			self.Info:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
+			self.Info:SetPoint("RIGHT", self.Health.value, "LEFT", 0, 0)
+			self.Info:SetJustifyH("LEFT")
 			if unit == "pet" then
 				self:Tag(self.Info, "[PetNameColor][NameMedium]")
 			else
@@ -206,6 +214,8 @@ local function Shared(self, unit)
 			self:Tag(self.Info, "[GetNameColor][NameMedium]")
 		else
 			self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
+			self.Info:SetPoint("LEFT", self.Health.value, "RIGHT", 0, 0)
+			self.Info:SetJustifyH("RIGHT")
 			self:Tag(self.Info, "[GetNameColor][NameMedium]")
 		end
 	end
@@ -999,10 +1009,10 @@ local function Shared(self, unit)
 
 	if C.unitframe.show_arena and unit == "arena" then
 		self.Trinket = CreateFrame("Frame", self:GetName().."_Trinket", self)
-		self.Trinket:SetSize(31, 31)
+		self.Trinket:SetSize(31 + T.extraHeight, 31 + T.extraHeight)
 
 		self.FactionIcon = CreateFrame("Frame", nil, self)
-		self.FactionIcon:SetSize(31, 31)
+		self.FactionIcon:SetSize(31 + T.extraHeight, 31 + T.extraHeight)
 
 		if C.unitframe.arena_on_right == true then
 			self.Trinket:SetPoint("TOPRIGHT", self, "TOPLEFT", -5, 2)
@@ -1079,10 +1089,10 @@ local function Shared(self, unit)
 			end
 			self.Auras.numDebuffs = C.unitframe.boss_debuffs
 			self.Auras.numBuffs = C.unitframe.boss_buffs
-			self.Auras:SetHeight(31)
+			self.Auras:SetHeight(31 + T.extraHeight)
 			self.Auras:SetWidth(280)
 			self.Auras.spacing = T.Scale(3)
-			self.Auras.size = T.Scale(31)
+			self.Auras.size = T.Scale(31 + T.extraHeight)
 			self.Auras.gap = true
 			self.Auras.PostCreateIcon = T.PostCreateIcon
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
@@ -1181,11 +1191,11 @@ oUF:RegisterStyle("Shestak", Shared)
 
 local player = oUF:Spawn("player", "oUF_Player")
 player:SetPoint(unpack(C.position.unitframes.player))
-player:SetSize(217, 27)
+player:SetSize(217, 27 + T.extraHeight)
 
 local target = oUF:Spawn("target", "oUF_Target")
 target:SetPoint(unpack(C.position.unitframes.target))
-target:SetSize(217, 27)
+target:SetSize(217, 27 + T.extraHeight)
 
 if C.unitframe.show_pet == true then
 	local pet = oUF:Spawn("pet", "oUF_Pet")
@@ -1224,7 +1234,7 @@ if C.unitframe.show_boss == true then
 		else
 			boss[i]:SetPoint("BOTTOM", boss[i-1], "TOP", 0, 30)
 		end
-		boss[i]:SetSize(150, 27)
+		boss[i]:SetSize(150, 27 + T.extraHeight)
 	end
 end
 
@@ -1241,7 +1251,7 @@ if C.unitframe.show_arena == true then
 		else
 			arena[i]:SetPoint("BOTTOM", arena[i-1], "TOP", 0, 30)
 		end
-		arena[i]:SetSize(150, 27)
+		arena[i]:SetSize(150, 27 + T.extraHeight)
 	end
 
 	local arenatarget = {}
@@ -1256,7 +1266,7 @@ if C.unitframe.show_arena == true then
 		else
 			arenatarget[i]:SetPoint("BOTTOM", arenatarget[i-1], "TOP", 0, 30)
 		end
-		arenatarget[i]:SetSize(30, 27)
+		arenatarget[i]:SetSize(30 + T.extraHeight, 27 + T.extraHeight)
 	end
 end
 
@@ -1412,7 +1422,7 @@ if C.unitframe.lines == true then
 	HorizontalPlayerLine:CreatePanel("ClassColor", 228, 1, "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -5, -5)
 
 	local VerticalPlayerLine = CreateFrame("Frame", "VerticalPlayerLine", oUF_Player)
-	VerticalPlayerLine:CreatePanel("ClassColor", 1, 98, "RIGHT", HorizontalPlayerLine, "LEFT", 0, 13)
+	VerticalPlayerLine:CreatePanel("ClassColor", 1, 98 + T.extraHeight, "RIGHT", HorizontalPlayerLine, "LEFT", 0, 13 + (T.extraHeight) / 2)
 end
 
 ----------------------------------------------------------------------------------------
@@ -1433,7 +1443,7 @@ if C.unitframe.lines == true then
 	end)
 
 	local VerticalTargetLine = CreateFrame("Frame", "VerticalTargetLine", oUF_Target)
-	VerticalTargetLine:CreatePanel("ClassColor", 1, 98, "LEFT", HorizontalTargetLine, "RIGHT", 0, 13)
+	VerticalTargetLine:CreatePanel("ClassColor", 1, 98 + T.extraHeight, "LEFT", HorizontalTargetLine, "RIGHT", 0, 13 + (T.extraHeight) / 2)
 	VerticalTargetLine:RegisterEvent("PLAYER_TARGET_CHANGED")
 	VerticalTargetLine:SetScript("OnEvent", function(self)
 		local _, class = UnitClass("target")

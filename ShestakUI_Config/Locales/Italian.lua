@@ -103,6 +103,10 @@ L_GUI_UF_PLUGINS_FADER = "Sfuma i riquadri delle unità"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminuzione dell'effetto (diminishing return) sulle icone dei riquadri d'arena"
 L_GUI_UF_PLUGINS_POWER_PREDICTION = "Previsione del costo in potere sulla barra del riquadro del giocatore"
 L.unitframe_plugins_absorbs = "Absorbs value on player frame" -- Need review
+L.unitframe_extra_height_auto = "Auto height for health/power" -- Need review
+L.unitframe_extra_height_auto_desc = "Smart adjust depending on font size" -- Need review
+L.unitframe_extra_health_height = "Additional height for health" -- Need review
+L.unitframe_extra_power_height = "Additional height for power" -- Need review
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Barre di classe"
@@ -151,6 +155,7 @@ L_GUI_UF_PLUGINS_PVP_DEBUFFS = "Mostra anche un’icona per le penalità PvP (da
 L_GUI_UF_PLUGINS_HEALCOMM = "Mostra le cure in arrivo sul riquadro"
 L.raidframe_plugins_auto_resurrection = "Auto cast resurrection" -- Need review
 L.raidframe_plugins_auto_resurrection_desc = "'Auto-lancia' resurrezione col tasto centrale quando l'unità è morta (non funziona con Clique attiva)"
+L.raidframe_hide_health_value = "Hide health value (only for heal layout)" -- Need review
 
 -- ActionBar options
 L_GUI_ACTIONBAR = "Barre delle azioni"

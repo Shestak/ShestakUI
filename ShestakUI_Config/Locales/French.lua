@@ -103,6 +103,10 @@ L_GUI_UF_PLUGINS_FADER = "Barres de unités"
 L_GUI_UF_PLUGINS_DIMINISHING = "Icones de rendement décroissants sur les fenêtre d'arène"
 L_GUI_UF_PLUGINS_POWER_PREDICTION = "Prédiction du coût des sorts sur la fenêtre du joueur"
 L.unitframe_plugins_absorbs = "Absorbs value on player frame" -- Need review
+L.unitframe_extra_height_auto = "Auto height for health/power" -- Need review
+L.unitframe_extra_height_auto_desc = "Smart adjust depending on font size" -- Need review
+L.unitframe_extra_health_height = "Additional height for health" -- Need review
+L.unitframe_extra_power_height = "Additional height for power" -- Need review
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Barres de classe"
@@ -151,6 +155,7 @@ L_GUI_UF_PLUGINS_PVP_DEBUFFS = "Afficher aussi les debuff JcJ (de la liste)"
 L_GUI_UF_PLUGINS_HEALCOMM = "Barre de soin entrant (incoming)"
 L.raidframe_plugins_auto_resurrection = "Auto cast resurrection" -- Need review
 L.raidframe_plugins_auto_resurrection_desc = "Lance automatiquement le sort de résurrection de masse avec un clic central souris sur une cible morte (ne fonctionne pas avec l'addon Clique activé)"
+L.raidframe_hide_health_value = "Hide health value (only for heal layout)" -- Need review
 
 -- ActionBar options
 L_GUI_ACTIONBAR = "Barres d'action"

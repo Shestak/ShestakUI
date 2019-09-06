@@ -125,6 +125,10 @@ L_GUI_UF_PLUGINS_FADER = "Fade unit frames"
 L_GUI_UF_PLUGINS_DIMINISHING = "Diminishing Returns icons on arena frames"
 L_GUI_UF_PLUGINS_POWER_PREDICTION = "Power cost prediction bar on player frame"
 L.unitframe_plugins_absorbs = "Absorbs value on player frame"
+L.unitframe_extra_height_auto = "Auto height for health/power"
+L.unitframe_extra_height_auto_desc = "Smart adjust depending on font size"
+L.unitframe_extra_health_height = "Additional height for health"
+L.unitframe_extra_power_height = "Additional height for power"
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Class Power Bars"
@@ -173,6 +177,7 @@ L_GUI_UF_PLUGINS_PVP_DEBUFFS = "Show also PvP debuff icons (from the list)"
 L_GUI_UF_PLUGINS_HEALCOMM = "Show incoming heal on frame"
 L.raidframe_plugins_auto_resurrection = "Auto cast resurrection"
 L.raidframe_plugins_auto_resurrection_desc = "Auto cast resurrection on middle-click (doesn't work with Clique)"
+L.raidframe_hide_health_value = "Hide health value (only for heal layout)"
 
 -- ActionBar options
 L_GUI_ACTIONBAR = "Action Bars"

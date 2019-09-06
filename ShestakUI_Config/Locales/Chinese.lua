@@ -103,6 +103,10 @@ L_GUI_UF_PLUGINS_FADER = "自动隐藏玩家框架"
 L_GUI_UF_PLUGINS_DIMINISHING = "竞技场框架显示技能递减"
 L_GUI_UF_PLUGINS_POWER_PREDICTION = "即将获得的资源"
 L.unitframe_plugins_absorbs = "吸收量"
+L.unitframe_extra_height_auto = "Auto height for health/power" -- Need review
+L.unitframe_extra_height_auto_desc = "Smart adjust depending on font size" -- Need review
+L.unitframe_extra_health_height = "Additional height for health" -- Need review
+L.unitframe_extra_power_height = "Additional height for power" -- Need review
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "职业资源栏"
@@ -151,6 +155,7 @@ L_GUI_UF_PLUGINS_PVP_DEBUFFS = "PvP DeBuff图标"
 L_GUI_UF_PLUGINS_HEALCOMM = "即将受到的治疗"
 L.raidframe_plugins_auto_resurrection = "中键施放复活技能"
 L.raidframe_plugins_auto_resurrection_desc = "鼠标中键点击已死亡角色时施放复活技能(Clique启用时无效)"
+L.raidframe_hide_health_value = "Hide health value (only for heal layout)" -- Need review
 
 -- ActionBar options
 L_GUI_ACTIONBAR = "动作条"

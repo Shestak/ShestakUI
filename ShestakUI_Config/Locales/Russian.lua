@@ -103,6 +103,10 @@ L_GUI_UF_PLUGINS_FADER = "Скрывать рамки вне боя"
 L_GUI_UF_PLUGINS_DIMINISHING = "Иконка диминишинга на рамках арены"
 L_GUI_UF_PLUGINS_POWER_PREDICTION = "Полоса прогноза использования маны/энергии"
 L.unitframe_plugins_absorbs = "Количество поглощения на рамке игрока"
+L.unitframe_extra_height_auto = "Авто высота здоровья и энергии"
+L.unitframe_extra_height_auto_desc = "Умное увеличение в зависимости от размера шрифта"
+L.unitframe_extra_health_height = "Доп. высота для здоровья"
+L.unitframe_extra_power_height = "Доп. высота для энергии"
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Классовые панели"
@@ -151,6 +155,7 @@ L_GUI_UF_PLUGINS_PVP_DEBUFFS = "Отображать PvP дебаффы (из с
 L_GUI_UF_PLUGINS_HEALCOMM = "Отображать поступающее лечение"
 L.raidframe_plugins_auto_resurrection = "Автокаст воскрешения"
 L.raidframe_plugins_auto_resurrection_desc = "Автокаст воскрешения средней кнопкой мыши (не работает с Clique)"
+L.raidframe_hide_health_value = "Скрыть значение здоровья (только для раскладки 'Лекарь')"
 
 -- ActionBar options
 L_GUI_ACTIONBAR = "Панели команд"
