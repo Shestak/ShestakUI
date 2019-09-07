@@ -103,10 +103,10 @@ L_GUI_UF_PLUGINS_FADER = "自動隱藏玩家框架"
 L_GUI_UF_PLUGINS_DIMINISHING = "競技場框架顯示技能遞減"
 L_GUI_UF_PLUGINS_POWER_PREDICTION = "即將獲得的資源"
 L.unitframe_plugins_absorbs = "吸收量"
-L.unitframe_extra_height_auto = "Auto height for health/power" -- Need review
-L.unitframe_extra_height_auto_desc = "Smart adjust depending on font size" -- Need review
-L.unitframe_extra_health_height = "Additional height for health" -- Need review
-L.unitframe_extra_power_height = "Additional height for power" -- Need review
+L.unitframe_extra_height_auto = "血量/能量框架自動增高"
+L.unitframe_extra_height_auto_desc = "按字體大小智能調節框架高度"
+L.unitframe_extra_health_height = "血量框架額外增高"
+L.unitframe_extra_power_height = "能量框架額外增高"
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "職業資源欄"
@@ -141,7 +141,7 @@ L_GUI_UF_PLAYER_PARTY = "隊伍中顯示玩家框架"
 L_GUI_UF_SHOW_TANK = "團隊主坦克框架"
 L_GUI_UF_SHOW_TANK_TT = "坦克目標的目標"
 L_GUI_UF_RAID_GROUP = "小隊數目"
-L_GUI_UF_RAID_VERTICAL_GROUP = "竪向排列團隊隊伍(僅在HPS局中生效)"
+L_GUI_UF_RAID_VERTICAL_GROUP = "竪向排列團隊隊伍(僅在HPS佈局中生效)"
 L_GUI_UF_SUBHEADER_ICONS = "標記"
 L_GUI_UF_ICONS_ROLE = "角色類型標記"
 L_GUI_UF_ICONS_RAID_MARK = "團隊標記"
@@ -155,7 +155,7 @@ L_GUI_UF_PLUGINS_PVP_DEBUFFS = "PVP DeBuff圖標"
 L_GUI_UF_PLUGINS_HEALCOMM = "即將受到的治療"
 L.raidframe_plugins_auto_resurrection = "中鍵施放復活技能"
 L.raidframe_plugins_auto_resurrection_desc = "滑鼠中鍵點擊已死亡角色時施放復活技能(Clique啟用時無效)"
-L.raidframe_hide_health_value = "Hide health value (only for heal layout)" -- Need review
+L.raidframe_hide_health_value = "隱藏血量(僅在HPS佈局中生效)"
 
 -- ActionBar options
 L_GUI_ACTIONBAR = "快捷列"
