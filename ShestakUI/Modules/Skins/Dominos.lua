@@ -117,7 +117,9 @@ frame:SetScript("OnEvent", function()
 
 	do
 		for i = 1, 60 do
-			_G["DominosActionButton"..i]:StyleButton()
+			if _G["DominosActionButton"..i] then
+				_G["DominosActionButton"..i]:StyleButton()
+			end
 		end
 
 		for i = 1, 12 do
@@ -129,7 +131,7 @@ frame:SetScript("OnEvent", function()
 		end
 
 		for i = 1, NUM_STANCE_SLOTS do
-			local name = "DominosClassButton"..i
+			local name = "StanceButton"..i
 			local button = _G[name]
 			local icon = _G[name.."Icon"]
 			local hotkey = _G[name.."HotKey"]
