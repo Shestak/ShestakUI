@@ -8,8 +8,9 @@ local _, ns = ...
 local oUF = ns.oUF
 
 -- Frame size
-local unit_width = 60.2
-local unit_height = 26
+local unit_width = C.raidframe.heal_width
+local unit_height = C.raidframe.heal_height
+local power_height = C.raidframe.heal_power_height
 
 -- Create layout
 local function Shared(self, unit)
@@ -36,8 +37,8 @@ local function Shared(self, unit)
 		self.Health:SetPoint("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 0)
 		self.Health:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 0)
 	else
-		self.Health:SetPoint("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 3)
-		self.Health:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 3)
+		self.Health:SetPoint("BOTTOMLEFT", self, "BOTTOMLEFT", 0, power_height + 1)
+		self.Health:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, power_height + 1)
 	end
 	self.Health:SetStatusBarTexture(C.media.texture)
 
@@ -97,7 +98,7 @@ local function Shared(self, unit)
 		self.Power = CreateFrame("StatusBar", nil, self)
 		self.Power:SetPoint("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 0)
 		self.Power:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 0)
-		self.Power:SetPoint("TOP", self, "BOTTOM", 0, 2)
+		self.Power:SetPoint("TOP", self, "BOTTOM", 0, power_height)
 		self.Power:SetStatusBarTexture(C.media.texture)
 
 		self.Power.PostUpdate = function(power, unit)

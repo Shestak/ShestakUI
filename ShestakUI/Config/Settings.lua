@@ -176,6 +176,17 @@ C["raidframe"] = {
 	["plugins_healcomm"] = true,				-- Incoming heal bar on raid frame
 	["plugins_auto_resurrection"] = false,		-- Auto cast resurrection on middle-click (doesn't work with Clique)
 	["hide_health_value"] = false,				-- Hide health value (only for heal layout)
+	-- Heal layout size
+	["heal_width"] = 60.2,						-- Unit width
+	["heal_height"] = 26,						-- Unit height
+	["heal_power_height"] = 2,					-- Raid power height
+	-- DPS layout size
+	["dps_raid_width"] = 104,					-- Raid width
+	["dps_raid_height"] = 17,					-- Raid height
+	["dps_raid_power_height"] = 1,				-- Raid power height
+	["dps_party_width"] = 140,					-- Party width
+	["dps_party_height"] = 27,					-- Party height
+	["dps_party_power_height"] = 5,				-- Party power height
 }
 
 ----------------------------------------------------------------------------------------

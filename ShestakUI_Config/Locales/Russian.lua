@@ -156,6 +156,17 @@ L_GUI_UF_PLUGINS_HEALCOMM = "Отображать поступающее леч�
 L.raidframe_plugins_auto_resurrection = "Автокаст воскрешения"
 L.raidframe_plugins_auto_resurrection_desc = "Автокаст воскрешения средней кнопкой мыши (не работает с Clique)"
 L.raidframe_hide_health_value = "Скрыть значение здоровья (только для раскладки 'Лекарь')"
+L.raidframe_subheader_heal_size = "Размеры для раскладки 'Лекарь'"
+L.raidframe_heal_width = "Ширина рамок"
+L.raidframe_heal_height = "Высота рамок"
+L.raidframe_heal_power_height = "Высота энергии"
+L.raidframe_subheader_dps_size = "Размеры для раскладки 'Боец'"
+L.raidframe_dps_party_width = "Ширина группы"
+L.raidframe_dps_party_height = "Высота группы"
+L.raidframe_dps_raid_width = "Ширина рейда"
+L.raidframe_dps_raid_height = "Высота рейда"
+L.raidframe_dps_party_power_height = "Высота энергии группы"
+L.raidframe_dps_raid_power_height = "Высота энергии рейда"
 
 -- ActionBar options
 L_GUI_ACTIONBAR = "Панели команд"

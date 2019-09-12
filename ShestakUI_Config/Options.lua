@@ -660,7 +660,7 @@ do
 
 	local extra_power_height = ns.CreateNumberSlider(parent, "extra_power_height", nil, nil, 0, 20, 1, true)
 	extra_power_height:SetPoint("LEFT", extra_health_height, "RIGHT", 120, 0)
-	
+
 	local function toggleOptions()
 		local shown = not extra_height_auto:GetChecked()
 		extra_health_height:SetShown(shown)
@@ -808,6 +808,39 @@ do
 
 	local hide_health_value = ns.CreateCheckBox(parent, "hide_health_value")
 	hide_health_value:SetPoint("TOPLEFT", plugins_auto_resurrection, "BOTTOMLEFT", 0, 0)
+
+	local subheader = ns.addSubCategory(parent, L.raidframe_subheader_heal_size)
+	subheader:SetPoint("TOPLEFT", hide_health_value, "BOTTOMLEFT", 0, -10)
+
+	local heal_width = ns.CreateNumberSlider(parent, "heal_width", nil, nil, 50, 120, 1, true)
+	heal_width:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -30)
+
+	local heal_height = ns.CreateNumberSlider(parent, "heal_height", nil, nil, 20, 60, 1, true)
+	heal_height:SetPoint("LEFT", heal_width, "RIGHT", 120, 0)
+
+	local heal_power_height = ns.CreateNumberSlider(parent, "heal_power_height", nil, nil, 0, 10, 1, true)
+	heal_power_height:SetPoint("TOPLEFT", heal_width, "BOTTOMLEFT", 0, -20)
+
+	local subheader = ns.addSubCategory(parent, L.raidframe_subheader_dps_size)
+	subheader:SetPoint("TOPLEFT", heal_power_height, "BOTTOMLEFT", 0, -10)
+
+	local dps_party_width = ns.CreateNumberSlider(parent, "dps_party_width", nil, nil, 80, 300, 1, true)
+	dps_party_width:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -30)
+
+	local dps_party_height = ns.CreateNumberSlider(parent, "dps_party_height", nil, nil, 15, 60, 1, true)
+	dps_party_height:SetPoint("LEFT", dps_party_width, "RIGHT", 120, 0)
+
+	local dps_raid_width = ns.CreateNumberSlider(parent, "dps_raid_width", nil, nil, 80, 200, 1, true)
+	dps_raid_width:SetPoint("TOPLEFT", dps_party_width, "BOTTOMLEFT", 0, -20)
+
+	local dps_raid_height = ns.CreateNumberSlider(parent, "dps_raid_height", nil, nil, 15, 40, 1, true)
+	dps_raid_height:SetPoint("LEFT", dps_raid_width, "RIGHT", 120, 0)
+
+	local dps_party_power_height = ns.CreateNumberSlider(parent, "dps_party_power_height", nil, nil, 0, 10, 1, true)
+	dps_party_power_height:SetPoint("TOPLEFT", dps_raid_width, "BOTTOMLEFT", 0, -20)
+
+	local dps_raid_power_height = ns.CreateNumberSlider(parent, "dps_raid_power_height", nil, nil, 0, 10, 1, true)
+	dps_raid_power_height:SetPoint("LEFT", dps_party_power_height, "RIGHT", 120, 0)
 end
 
 -- ActionBar

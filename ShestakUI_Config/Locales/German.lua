@@ -156,6 +156,18 @@ L_GUI_UF_PLUGINS_HEALCOMM = "Leiste für Eingehende Heilung"
 L.raidframe_plugins_auto_resurrection = "Auto cast resurrection" -- Need review
 L.raidframe_plugins_auto_resurrection_desc = "Mittel-Klick um automatisch Auferstehung zu zauber wenn das Ziel tot ist (funktioniert nicht wenn Clique installiert ist)"
 L.raidframe_hide_health_value = "Hide health value (only for heal layout)" -- Need review
+L.raidframe_subheader_heal_size = "Size for heal layout" -- Need review
+L.raidframe_heal_width = "Frame width" -- Need review
+L.raidframe_heal_height = "Frame height" -- Need review
+L.raidframe_heal_power_height = "Power height" -- Need review
+L.raidframe_subheader_dps_size = "Size for dps layout" -- Need review
+L.raidframe_dps_party_width = "Party width" -- Need review
+L.raidframe_dps_party_height = "Party height" -- Need review
+L.raidframe_dps_raid_width = "Raid width" -- Need review
+L.raidframe_dps_raid_height = "Raid height" -- Need review
+L.raidframe_dps_party_power_height = "Party power height" -- Need review
+L.raidframe_dps_raid_power_height = "Raid power height" -- Need review
+
 
 -- ActionBar options
 L_GUI_ACTIONBAR = "Aktionsleisten"

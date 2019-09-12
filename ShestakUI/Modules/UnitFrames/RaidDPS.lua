@@ -8,12 +8,16 @@ local _, ns = ...
 local oUF = ns.oUF
 
 -- Frame size
-local party_width = 140
-local party_height = 27 + T.extraHeight
-local partytarget_width = 30 + T.extraHeight
-local partytarget_height = 27 + T.extraHeight
-local unit_width = 104
-local unit_height = 17
+local party_width = C.raidframe.dps_party_width
+local party_height = C.raidframe.dps_party_height + T.extraHeight
+local party_power_height = C.raidframe.dps_party_power_height + C.unitframe.extra_power_height
+local partytarget_width = party_height + 3
+local partytarget_height = party_height
+local raid_width = C.raidframe.dps_raid_width
+local raid_height = C.raidframe.dps_raid_height
+local raid_power_height = C.raidframe.dps_raid_power_height
+local tank_width = 60
+local tank_height = 26
 
 -- Create layout
 local function Shared(self, unit)
@@ -37,13 +41,13 @@ local function Shared(self, unit)
 	self.Health:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 	self.Health:SetPoint("TOPRIGHT", self, "TOPRIGHT", 0, 0)
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
-		self.Health:SetHeight(27 + T.extraHeight)
+		self.Health:SetHeight(party_height)
 	elseif unit == "tank" then
-		self.Health:SetHeight(23)
+		self.Health:SetHeight(tank_height - 3)
 	elseif unit == "raid" then
-		self.Health:SetHeight(15)
+		self.Health:SetHeight(raid_height - raid_power_height - 1)
 	elseif unit == "party" then
-		self.Health:SetHeight(21 + C.unitframe.extra_health_height)
+		self.Health:SetHeight(party_height - party_power_height - 1)
 	else
 		self.Health:SetHeight(17)
 	end
@@ -92,9 +96,9 @@ local function Shared(self, unit)
 		-- Power bar
 		self.Power = CreateFrame("StatusBar", nil, self)
 		if unit == "raid" then
-			self.Power:SetHeight(1)
+			self.Power:SetHeight(raid_power_height)
 		elseif unit == "party" then
-			self.Power:SetHeight(5 + C.unitframe.extra_power_height)
+			self.Power:SetHeight(party_power_height)
 		else
 			self.Power:SetHeight(2)
 		end
@@ -333,7 +337,7 @@ oUF:Factory(function(self)
 			"point", "BOTTOM"
 		)
 
-		partypet:SetPoint("BOTTOMLEFT", party, "BOTTOMRIGHT", 44 + T.extraHeight, 0)
+		partypet:SetPoint("BOTTOMLEFT", party, "BOTTOMRIGHT", partytarget_width + 14, 0)
 	end
 
 	if C.raidframe.show_raid == true then
@@ -346,8 +350,8 @@ oUF:Factory(function(self)
 					self:SetWidth(header:GetAttribute("initial-width"))
 					self:SetHeight(header:GetAttribute("initial-height"))
 				]],
-				"initial-width", T.Scale(unit_width),
-				"initial-height", T.Scale(unit_height),
+				"initial-width", T.Scale(raid_width),
+				"initial-height", T.Scale(raid_height),
 				"showRaid", true,
 				"yOffset", T.Scale(-7),
 				"point", "TOPLEFT",
@@ -380,9 +384,9 @@ oUF:Factory(function(self)
 		end
 		local raidtank = self:SpawnHeader("oUF_MainTank", nil, "raid",
 			"oUF-initialConfigFunction", ([[
-				self:SetWidth(60)
-				self:SetHeight(26)
-			]]),
+				self:SetWidth(%d)
+				self:SetHeight(%d)
+			]]):format(tank_width, tank_height),
 			"showRaid", true,
 			"yOffset", T.Scale(-7),
 			"groupFilter", "MAINTANK",
