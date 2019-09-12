@@ -225,7 +225,7 @@ if C.misc.hide_talking_head == true then
 end
 
 ----------------------------------------------------------------------------------------
---	Hide button for oUF_RaidDPS 
+--	Hide button for oUF_RaidDPS
 ----------------------------------------------------------------------------------------
 if C.misc.hide_raid_button == true then
 	local show = false

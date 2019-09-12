@@ -346,7 +346,7 @@ elseif T.class == "MONK" then
 	end
 	if C.combattext.healing then
 		T.healfilter[196608] = true	-- Eye of the Tiger
-		T.healfilter[216521] = true	-- Celestial Fortune		
+		T.healfilter[216521] = true	-- Celestial Fortune
 	end
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
