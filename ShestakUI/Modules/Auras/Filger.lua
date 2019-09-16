@@ -379,6 +379,7 @@ function Filger:OnEvent(event, unit, _, castID)
 				end)
 			else
 				self:SetScript("OnUpdate", nil)
+				self:RegisterEvent("UNIT_AURA")
 			end
 
 			for spid in pairs(self.actives) do
