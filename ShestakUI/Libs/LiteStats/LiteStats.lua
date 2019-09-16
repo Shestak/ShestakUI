@@ -279,11 +279,10 @@ if fps.enabled then
 	end
 
 	local memoryt = {}
-	local cput = {}
 	local function UpdateMemory()
 		local totalMemory = 0
 		UpdateMemUse()
-		for i = 1, #memoryt do memoryt[i] = nil end
+		wipe(memoryt)
 		for i = 1, GetNumAddOns() do
 			local memory = GetAddOnMemoryUsage(i)
 			local addon, name = GetAddOnInfo(i)
@@ -294,14 +293,27 @@ if fps.enabled then
 		return totalMemory
 	end
 
+
+	local startTime
+	C_Timer.After(0.25, function()
+		ResetCPUUsage()
+		startTime = GetTime()
+	end)
+
+	local cput = {}
+	local lastCPU = {}
 	local function UpdateCPU()
 		local totalCPU = 0
 		UpdateAddOnCPUUsage()
-		for i = 1, #cput do cput[i] = nil end
+		wipe(cput)
 		for i = 1, GetNumAddOns() do
 			local cpu = GetAddOnCPUUsage(i)
 			local addon, name = GetAddOnInfo(i)
-			if IsAddOnLoaded(i) then tinsert(cput, {name or addon, cpu}) end
+			local cpus = cpu / (GetTime() - startTime)
+			local cpur = cpu - (lastCPU[i] and lastCPU[i] or cpu)
+			lastCPU[i] = cpu
+
+			if IsAddOnLoaded(i) then tinsert(cput, {name or addon, cpu, cpus, cpur}) end
 			totalCPU = totalCPU + cpu
 		end
 		table.sort(cput, sortdesc)
@@ -332,7 +344,7 @@ if fps.enabled then
 			GameTooltip:AddLine(" ")
 			if fps.max_addons ~= 0 or IsAltKeyDown() then
 				local ctable
-				if isCPU and IsControlKeyDown() then
+				if isCPU and not IsControlKeyDown() then
 					ctable = cput
 				else
 					ctable = memoryt
@@ -349,8 +361,8 @@ if fps.enabled then
 							or t[2] <= 5120 and {1,0.75} -- 2.5mb - 5mb
 							or t[2] <= 8192 and {1,0.5} -- 5mb - 8mb
 							or {1,0.1} -- 8mb +
-						if isCPU and IsControlKeyDown() then
-							GameTooltip:AddDoubleLine(t[1], format("%d ms", t[2]), 1, 1, 1, color[1], color[2], 0)
+						if isCPU and not IsControlKeyDown() then
+							GameTooltip:AddDoubleLine(t[1], format("%d ms (%.2f) | %.2f", t[2], t[3], t[4]), 1, 1, 1, color[1], color[2], 0)
 						else
 							GameTooltip:AddDoubleLine(t[1], formatmem(t[2]), 1, 1, 1, color[1], color[2], 0)
 						end
