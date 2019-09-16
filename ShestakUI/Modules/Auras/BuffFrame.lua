@@ -4,6 +4,7 @@ if C.aura.player_auras ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Style player buff(by Tukz)
 ----------------------------------------------------------------------------------------
+_G.BUFF_WARNING_TIME = 0
 local rowbuffs = 16
 
 local GetFormattedTime = function(s)
@@ -83,6 +84,25 @@ local function StyleBuffs(buttonName, index)
 		duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 		duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
+		if not buff.timer then
+			buff.timer = buff:CreateAnimationGroup()
+			buff.timerAnim = buff.timer:CreateAnimation()
+			buff.timerAnim:SetDuration(0.1)
+
+			buff.timer:SetScript("OnFinished", function(self, requested)
+				if not requested then
+					if buff.timeLeft and C.aura.show_timer == true then
+						buff.duration:SetFormattedText(GetFormattedTime(buff.timeLeft))
+						buff.duration:SetVertexColor(1, 1, 1)
+					else
+						self:Stop()
+					end
+					self:Play()
+				end
+			end)
+			buff.timer:Play()
+		end
+
 		count:ClearAllPoints()
 		count:SetPoint("BOTTOMRIGHT", 2, 0)
 		count:SetDrawLayer("ARTWORK")
@@ -90,21 +110,6 @@ local function StyleBuffs(buttonName, index)
 		count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
 		buff.isSkinned = true
-	end
-end
-
-local function UpdateFlash(self)
-	self:SetAlpha(1)
-end
-
-local function UpdateDuration(auraButton, timeLeft)
-	local duration = auraButton.duration
-	if timeLeft and C.aura.show_timer == true then
-		duration:SetFormattedText(GetFormattedTime(timeLeft))
-		duration:SetVertexColor(1, 1, 1)
-		duration:Show()
-	else
-		duration:Hide()
 	end
 end
 
@@ -150,7 +155,7 @@ local function UpdateDebuffAnchors(buttonName, index)
 	_G[buttonName..index]:Hide()
 end
 
+AuraButton_UpdateDuration = function() end
+
 hooksecurefunc("BuffFrame_UpdateAllBuffAnchors", UpdateBuffAnchors)
 hooksecurefunc("DebuffButton_UpdateAnchors", UpdateDebuffAnchors)
-hooksecurefunc("AuraButton_UpdateDuration", UpdateDuration)
-hooksecurefunc("AuraButton_OnUpdate", UpdateFlash)
