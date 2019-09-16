@@ -77,6 +77,7 @@ local function CheckRole()
 	local spec = GetSpecialization()
 	local role = spec and GetSpecializationRole(spec)
 
+	T.Spec = spec
 	if role == "TANK" then
 		T.Role = "Tank"
 	elseif role == "HEALER" then
