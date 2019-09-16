@@ -4,64 +4,96 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Style ActionBars buttons(by Tukz)
 ----------------------------------------------------------------------------------------
-local function StyleNormalButton(self)
-	local name = self:GetName()
-	local button = self
-	local icon = _G[name.."Icon"]
-	local count = _G[name.."Count"]
-	local flash = _G[name.."Flash"]
-	local hotkey = _G[name.."HotKey"]
-	local border = _G[name.."Border"]
-	local btname = _G[name.."Name"]
-	local normal = _G[name.."NormalTexture"]
-	local float = _G[name.."FloatingBG"]
-	local highlight = button.SpellHighlightTexture
+local gsub = string.gsub
+local function UpdateHotkey(self)
+	local hotkey = _G[self:GetName().."HotKey"]
+	local text = hotkey:GetText()
+	if not text then return end
 
-	flash:SetTexture("")
-	button:SetNormalTexture("")
+	text = gsub(text, "(s%-)", "S")
+	text = gsub(text, "(a%-)", "A")
+	text = gsub(text, "(а%-)", "A") -- fix ruRU
+	text = gsub(text, "(c%-)", "C")
+	text = gsub(text, "(Mouse Button )", "M")
+	text = gsub(text, "(Кнопка мыши )", "M")
+	text = gsub(text, KEY_BUTTON3, "M3")
+	text = gsub(text, KEY_PAGEUP, "PU")
+	text = gsub(text, KEY_PAGEDOWN, "PD")
+	text = gsub(text, KEY_SPACE, "SpB")
+	text = gsub(text, KEY_INSERT, "Ins")
+	text = gsub(text, KEY_HOME, "Hm")
+	text = gsub(text, KEY_DELETE, "Del")
+	text = gsub(text, KEY_NUMPADDECIMAL, "Nu.")
+	text = gsub(text, KEY_NUMPADDIVIDE, "Nu/")
+	text = gsub(text, KEY_NUMPADMINUS, "Nu-")
+	text = gsub(text, KEY_NUMPADMULTIPLY, "Nu*")
+	text = gsub(text, KEY_NUMPADPLUS, "Nu+")
+	text = gsub(text, KEY_NUMLOCK, "NuL")
+	text = gsub(text, KEY_MOUSEWHEELDOWN, "MWD")
+	text = gsub(text, KEY_MOUSEWHEELUP, "MWU")
 
-	if float then
-		float:Hide()
-		float = T.dummy
-	end
-
-	if border then
-		border:Hide()
-		border = T.dummy
-	end
-
-	count:ClearAllPoints()
-	count:SetPoint("BOTTOMRIGHT", 0, 2)
-	count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
-	count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-
-	if btname then
-		if C.actionbar.macro == true then
-			btname:ClearAllPoints()
-			btname:SetPoint("BOTTOM", 0, 0)
-			btname:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
-			btname:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-			btname:SetWidth(C.actionbar.button_size - 1)
-		else
-			btname:Kill()
-		end
-	end
-
-	if C.actionbar.hotkey == true then
-		hotkey:ClearAllPoints()
-		hotkey:SetPoint("TOPRIGHT", 0, 0)
-		hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
-		hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-		hotkey:SetWidth(C.actionbar.button_size - 1)
-		hotkey.ClearAllPoints = T.dummy
-		hotkey.SetPoint = T.dummy
+	if hotkey:GetText() == _G["RANGE_INDICATOR"] then
+		hotkey:SetText("")
 	else
-		hotkey:Kill()
+		hotkey:SetText(text)
 	end
+end
 
+local function StyleNormalButton(button)
 	if not button.isSkinned then
-		if self:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() and not name:match("ExtraAction") then
-			self:SetSize(C.actionbar.button_size, C.actionbar.button_size)
+		local name = button:GetName()
+		local icon = _G[name.."Icon"]
+		local count = _G[name.."Count"]
+		local flash = _G[name.."Flash"]
+		local hotkey = _G[name.."HotKey"]
+		local border = _G[name.."Border"]
+		local btname = _G[name.."Name"]
+		local normal = _G[name.."NormalTexture"]
+		local float = _G[name.."FloatingBG"]
+		local highlight = button.SpellHighlightTexture
+
+		flash:SetTexture("")
+		button:SetNormalTexture("")
+
+		if float then
+			float:Kill()
+		end
+
+		if border then
+			border:Kill()
+		end
+
+		count:ClearAllPoints()
+		count:SetPoint("BOTTOMRIGHT", 0, 2)
+		count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+		count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+
+		if btname then
+			if C.actionbar.macro == true then
+				btname:ClearAllPoints()
+				btname:SetPoint("BOTTOM", 0, 0)
+				btname:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+				btname:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+				btname:SetWidth(C.actionbar.button_size - 1)
+			else
+				btname:Kill()
+			end
+		end
+
+		if C.actionbar.hotkey == true then
+			hotkey:ClearAllPoints()
+			hotkey:SetPoint("TOPRIGHT", 0, 0)
+			hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+			hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+			hotkey:SetWidth(C.actionbar.button_size - 1)
+			hotkey.ClearAllPoints = T.dummy
+			hotkey.SetPoint = T.dummy
+		else
+			hotkey:Kill()
+		end
+
+		if button:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() and not name:match("ExtraAction") then
+			button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		end
 		button:SetTemplate("Transparent")
 		if C.actionbar.classcolor_border == true then
@@ -73,51 +105,53 @@ local function StyleNormalButton(self)
 		icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
 		icon:SetDrawLayer("BACKGROUND", 7)
 
+		if normal then
+			normal:ClearAllPoints()
+			normal:SetPoint("TOPLEFT")
+			normal:SetPoint("BOTTOMRIGHT")
+		end
+
+		if highlight then
+			highlight:ClearAllPoints()
+			highlight:SetPoint("TOPLEFT", -4, 4)
+			highlight:SetPoint("BOTTOMRIGHT", 4, -4)
+		end
+
+		UpdateHotkey(button)
+
 		button.isSkinned = true
-	end
-
-	if normal then
-		normal:ClearAllPoints()
-		normal:SetPoint("TOPLEFT")
-		normal:SetPoint("BOTTOMRIGHT")
-	end
-
-	if highlight then
-		highlight:ClearAllPoints()
-		highlight:SetPoint("TOPLEFT", -4, 4)
-		highlight:SetPoint("BOTTOMRIGHT", 4, -4)
 	end
 end
 
 local function StyleSmallButton(normal, button, icon, name, pet)
-	local flash = _G[name.."Flash"]
-	local hotkey = _G[name.."HotKey"]
-
-	button:SetNormalTexture("")
-
-	hooksecurefunc(button, "SetNormalTexture", function(self, texture)
-		if texture and texture ~= "" then
-			self:SetNormalTexture("")
-		end
-	end)
-
-	flash:SetColorTexture(0.8, 0.8, 0.8, 0.5)
-	flash:SetPoint("TOPLEFT", button, 2, -2)
-	flash:SetPoint("BOTTOMRIGHT", button, -2, 2)
-
-	if C.actionbar.hotkey == true then
-		hotkey:ClearAllPoints()
-		hotkey:SetPoint("TOPRIGHT", 0, 0)
-		hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
-		hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-		hotkey:SetWidth(C.actionbar.button_size - 1)
-		hotkey.ClearAllPoints = T.dummy
-		hotkey.SetPoint = T.dummy
-	else
-		hotkey:Kill()
-	end
-
 	if not button.isSkinned then
+		local flash = _G[name.."Flash"]
+		local hotkey = _G[name.."HotKey"]
+
+		button:SetNormalTexture("")
+
+		hooksecurefunc(button, "SetNormalTexture", function(self, texture)
+			if texture and texture ~= "" then
+				self:SetNormalTexture("")
+			end
+		end)
+
+		flash:SetColorTexture(0.8, 0.8, 0.8, 0.5)
+		flash:SetPoint("TOPLEFT", button, 2, -2)
+		flash:SetPoint("BOTTOMRIGHT", button, -2, 2)
+
+		if C.actionbar.hotkey == true then
+			hotkey:ClearAllPoints()
+			hotkey:SetPoint("TOPRIGHT", 0, 0)
+			hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+			hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+			hotkey:SetWidth(C.actionbar.button_size - 1)
+			hotkey.ClearAllPoints = T.dummy
+			hotkey.SetPoint = T.dummy
+		else
+			hotkey:Kill()
+		end
+
 		button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		button:SetTemplate("Transparent")
 		if C.actionbar.classcolor_border == true then
@@ -143,13 +177,15 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 			cooldown:SetSize(C.actionbar.button_size - 2, C.actionbar.button_size - 2)
 		end
 
-		button.isSkinned = true
-	end
+		if normal then
+			normal:ClearAllPoints()
+			normal:SetPoint("TOPLEFT")
+			normal:SetPoint("BOTTOMRIGHT")
+		end
 
-	if normal then
-		normal:ClearAllPoints()
-		normal:SetPoint("TOPLEFT")
-		normal:SetPoint("BOTTOMRIGHT")
+		UpdateHotkey(button)
+
+		button.isSkinned = true
 	end
 end
 
@@ -170,39 +206,6 @@ function T.StylePet()
 		local icon = _G[name.."Icon"]
 		local normal = _G[name.."NormalTexture2"]
 		StyleSmallButton(normal, button, icon, name, true)
-	end
-end
-
-local function UpdateHotkey(self)
-	local hotkey = _G[self:GetName().."HotKey"]
-	local text = hotkey:GetText()
-
-	text = string.gsub(text, "(s%-)", "S")
-	text = string.gsub(text, "(a%-)", "A")
-	text = string.gsub(text, "(а%-)", "A") -- fix ruRU
-	text = string.gsub(text, "(c%-)", "C")
-	text = string.gsub(text, "(Mouse Button )", "M")
-	text = string.gsub(text, "(Кнопка мыши )", "M")
-	text = string.gsub(text, KEY_BUTTON3, "M3")
-	text = string.gsub(text, KEY_PAGEUP, "PU")
-	text = string.gsub(text, KEY_PAGEDOWN, "PD")
-	text = string.gsub(text, KEY_SPACE, "SpB")
-	text = string.gsub(text, KEY_INSERT, "Ins")
-	text = string.gsub(text, KEY_HOME, "Hm")
-	text = string.gsub(text, KEY_DELETE, "Del")
-	text = string.gsub(text, KEY_NUMPADDECIMAL, "Nu.")
-	text = string.gsub(text, KEY_NUMPADDIVIDE, "Nu/")
-	text = string.gsub(text, KEY_NUMPADMINUS, "Nu-")
-	text = string.gsub(text, KEY_NUMPADMULTIPLY, "Nu*")
-	text = string.gsub(text, KEY_NUMPADPLUS, "Nu+")
-	text = string.gsub(text, KEY_NUMLOCK, "NuL")
-	text = string.gsub(text, KEY_MOUSEWHEELDOWN, "MWD")
-	text = string.gsub(text, KEY_MOUSEWHEELUP, "MWU")
-
-	if hotkey:GetText() == _G["RANGE_INDICATOR"] then
-		hotkey:SetText("")
-	else
-		hotkey:SetText(text)
 	end
 end
 
@@ -280,7 +283,6 @@ end
 hooksecurefunc("ActionButton_Update", StyleNormalButton)
 hooksecurefunc("ActionButton_UpdateFlyout", StyleFlyoutButton)
 if C.actionbar.hotkey == true then
-	hooksecurefunc("ActionButton_OnEvent", function(self, event) if event == "PLAYER_ENTERING_WORLD" then ActionButton_UpdateHotkeys(self, self.buttonType) end end)
 	hooksecurefunc("ActionButton_UpdateHotkeys", UpdateHotkey)
 end
 if C.actionbar.hide_highlight == true then
