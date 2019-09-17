@@ -56,11 +56,11 @@ local function StyleNormalButton(button)
 		button:SetNormalTexture("")
 
 		if float then
-			float:Kill()
+			float:SetTexture("")
 		end
 
 		if border then
-			border:Kill()
+			border:SetTexture("")
 		end
 
 		count:ClearAllPoints()
