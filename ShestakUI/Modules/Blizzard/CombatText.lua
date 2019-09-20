@@ -324,6 +324,7 @@ local function OnEvent(self, event, subevent, powerType)
 		if GetRuneCooldown(arg1) ~= 0 then return end
 		xCT3:AddMessage("+"..COMBAT_TEXT_RUNE_DEATH, 0.75, 0, 0)
 	elseif event == "UNIT_ENTERED_VEHICLE" or event == "UNIT_EXITING_VEHICLE" then
+		local arg1 = subevent
 		if arg1 == "player" then
 			SetUnit()
 		end
