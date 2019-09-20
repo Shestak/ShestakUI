@@ -210,7 +210,7 @@ local function LoadSkin()
 		end
 	end)
 
-	T.SkinIconSelectionFrame(GearManagerDialogPopup, NUM_GEARSET_ICONS_SHOWN, "GearManagerDialogPopupButton", frameNameOverride)
+	T.SkinIconSelectionFrame(GearManagerDialogPopup, NUM_GEARSET_ICONS_SHOWN, "GearManagerDialogPopupButton")
 
 	-- Handle Tabs at bottom of character frame
 	for i = 1, 4 do
