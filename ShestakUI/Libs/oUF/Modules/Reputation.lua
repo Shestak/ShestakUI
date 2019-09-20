@@ -8,6 +8,22 @@ local _, ns = ...
 local oUF = ns.oUF or oUF
 assert(oUF, 'oUF Reputation was unable to locate oUF install')
 
+local paragonStrings = {
+	deDE = 'Huldigend',
+	esES = 'Baluarte',
+	frFR = 'Parangon',
+	itIT = 'Eccellenza',
+	ptBR = 'Parag\195\163o',
+	ruRU = '\208\152\208\180\208\181\208\176\208\187',
+	koKR = '\235\182\136\235\169\184\236\157\152 \235\143\153\235\167\185',
+	zhCN = '\229\183\133\229\179\176',
+}
+
+paragonStrings.esMX = paragonStrings.esES
+paragonStrings.zhTW = paragonStrings.zhCN
+
+_G.PARAGON = paragonStrings[GetLocale()] or 'Paragon'
+
 local function GetReputation()
 	local pendingReward
 	local name, standingID, min, max, cur, factionID = GetWatchedFactionInfo()
@@ -41,32 +57,6 @@ local function GetReputation()
 	return cur, max, name, factionID, standingID, standingText, pendingReward
 end
 
-for tag, func in next, {
-	['reputation:cur'] = function()
-		return (GetReputation())
-	end,
-	['reputation:max'] = function()
-		local _, max = GetReputation()
-		return max
-	end,
-	['reputation:per'] = function()
-		local cur, max = GetReputation()
-		return math.floor(cur / max * 100 + 1/2)
-	end,
-	['reputation:standing'] = function()
-		local _, _, _, _, _, standingText = GetReputation()
-		return standingText
-	end,
-	['reputation:faction'] = function()
-		local _, _, name = GetReputation()
-		return name
-	end,
-} do
-	oUF.Tags.Methods[tag] = func
-	oUF.Tags.Events[tag] = 'UPDATE_FACTION'
-end
-
-oUF.Tags.SharedEvents.UPDATE_FACTION = true
 oUF.colors.reaction[MAX_REPUTATION_REACTION + 1] = {0, 0.5, 0.9} -- paragon color
 
 -- Changed tooltip for ShestakUI
