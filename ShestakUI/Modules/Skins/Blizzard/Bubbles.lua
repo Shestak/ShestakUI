@@ -14,6 +14,8 @@ local function styleBubble(frame)
 	end
 
 	frame:CreateBackdrop("Transparent")
+	frame.backdrop:SetPoint("TOPLEFT", 2, -2)
+	frame.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
 	frame.backdrop:SetScale(UIParent:GetScale())
 
 	frame:SetClampedToScreen(false)
