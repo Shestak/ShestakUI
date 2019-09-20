@@ -352,10 +352,6 @@ end
 
 local function addAPI(object)
 	local mt = getmetatable(object).__index
-	if not object.Size then mt.Size = Size end
-	if not object.Width then mt.Width = Width end
-	if not object.Height then mt.Height = Height end
-	if not object.Point then mt.Point = Point end
 	if not object.SetOutside then mt.SetOutside = SetOutside end
 	if not object.SetInside then mt.SetInside = SetInside end
 	if not object.CreateOverlay then mt.CreateOverlay = CreateOverlay end
