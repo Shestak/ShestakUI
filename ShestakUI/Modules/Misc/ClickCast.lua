@@ -18,6 +18,7 @@ SpellBinder.title:SetText(L_MISC_BINDER_OPEN)
 SpellBinder.sbOpen = false
 SpellBinder.spellbuttons = {}
 
+local DB
 ClickCastFrames = _G.ClickCastFrames or {}
 for _, v in pairs({
 	"PlayerFrame", "PetFrame",
@@ -70,7 +71,7 @@ SpellBinder.makeSpellsList = function(self, scroll, delete)
 	scroll:SetSize(270, 300)
 
 	if delete then
-		i = 1
+		local i = 1
 		while _G[i.."_cbs"] do
 			_G[i.."_fs"]:SetText("")
 			_G[i.."_texture"]:SetTexture(nil)
@@ -82,7 +83,7 @@ SpellBinder.makeSpellsList = function(self, scroll, delete)
 	end
 
 	for i, spell in ipairs(DB.spells) do
-		v = spell.spell
+		local v = spell.spell
 		if v and GetSpellBookItemName(v) then
 			local bf = _G[i.."_cbs"] or CreateFrame("Button", i.."_cbs", scroll)
 			spell.checked = spell.checked or false

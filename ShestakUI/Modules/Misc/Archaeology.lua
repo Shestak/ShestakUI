@@ -233,7 +233,7 @@ function stArch:UpdateFrameHeight(self)
 	end
 end
 
-function IsArchaeologist()
+local function IsArchaeologist()
 	local _, _, arch = GetProfessions()
 	if arch then
 		return true

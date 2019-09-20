@@ -96,8 +96,8 @@ local UpdateBars = function()
 	end
 	table.sort(barList, SortMethod)
 	for i = 1, #barList do
-		cur = tList[barList[i]]
-		max = tList[barList[1]]
+		local cur = tList[barList[i]]
+		local max = tList[barList[1]]
 		if i > C.threat.bar_rows or not cur or cur.pct == 0 then break end
 		if not bar[i] then
 			bar[i] = CreateBar()
