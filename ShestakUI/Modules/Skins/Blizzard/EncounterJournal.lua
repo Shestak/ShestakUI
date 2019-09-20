@@ -236,11 +236,10 @@ local function LoadSkin()
 			itemSet.ItemLevel:SetTextColor(1, 1, 1)
 			itemSet.Background:Hide()
 
-			if not itemSet.bg then
+			if not itemSet.backdrop then
 				itemSet:CreateBackdrop("Overlay")
 				itemSet.backdrop:SetPoint("TOPLEFT", -4, 4)
 				itemSet.backdrop:SetPoint("BOTTOMRIGHT", 4, -3)
-				itemSet.bg = bg
 			end
 
 			local items = itemSet.ItemButtons
