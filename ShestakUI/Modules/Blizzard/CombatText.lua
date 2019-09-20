@@ -740,14 +740,15 @@ if C.combattext.merge_aoe_spam then
 	end
 end
 
+local unpack, select, time = unpack, select, time
+local gflags = bit.bor(COMBATLOG_OBJECT_AFFILIATION_MINE,
+	COMBATLOG_OBJECT_REACTION_FRIENDLY,
+	COMBATLOG_OBJECT_CONTROL_PLAYER,
+	COMBATLOG_OBJECT_TYPE_GUARDIAN
+)
+
 -- Damage
 if C.combattext.damage then
-	local unpack, select, time = unpack, select, time
-	local gflags = bit.bor(COMBATLOG_OBJECT_AFFILIATION_MINE,
-		COMBATLOG_OBJECT_REACTION_FRIENDLY,
-		COMBATLOG_OBJECT_CONTROL_PLAYER,
-		COMBATLOG_OBJECT_TYPE_GUARDIAN
-	)
 	local xCTd = CreateFrame("Frame")
 	if C.combattext.damage_color then
 		ct.dmgcolor = {}
@@ -966,7 +967,6 @@ end
 
 -- Healing
 if C.combattext.healing then
-	local unpack, select, time = unpack, select, time
 	local xCTh = CreateFrame("Frame")
 	if C.combattext.icons then
 		ct.blank = "Interface\\AddOns\\ShestakUI\\Media\\Textures\\Blank.tga"
