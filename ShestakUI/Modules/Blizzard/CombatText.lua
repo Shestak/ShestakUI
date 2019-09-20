@@ -33,7 +33,7 @@ end
 -- Limit lines
 local function LimitLines()
 	for i = 1, #ct.frames do
-		f = ct.frames[i]
+		local f = ct.frames[i]
 		if i == 4 and C.combattext.icons then
 			f:SetMaxLines(math.floor(f:GetHeight() / (C.combattext.icon_size * 1.5)))
 		else
@@ -58,7 +58,7 @@ end
 
 -- Partial resists styler
 local part = "-%s [%s %s]"
-local r, g, b
+local r, g, b, lowMana, lowHealth
 
 -- Function, handles everything
 local function OnEvent(self, event, subevent, powerType)
@@ -464,7 +464,7 @@ end
 local StartConfigmode = function()
 	if not InCombatLockdown()then
 		for i = 1, #ct.frames do
-			f = ct.frames[i]
+			local f = ct.frames[i]
 			f:SetTemplate("Transparent")
 			f:SetBackdropBorderColor(1, 0, 0, 1)
 
@@ -542,7 +542,7 @@ end
 
 local function EndConfigmode()
 	for i = 1, #ct.frames do
-		f = ct.frames[i]
+		local f = ct.frames[i]
 		f:SetBackdrop(nil)
 		f.iborder:Hide()
 		f.oborder:Hide()

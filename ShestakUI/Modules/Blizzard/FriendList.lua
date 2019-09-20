@@ -334,8 +334,7 @@ local function friendsFrame()
 
 	for i = 1, #buttons do
 		local nameText, infoText
-		button = buttons[i]
-		index = offset + i
+		local button = buttons[i]
 		if button:IsShown() then
 			if button.buttonType == FRIENDS_BUTTON_TYPE_WOW then
 				local name, level, class, area, connected = GetFriendInfo(button.id)

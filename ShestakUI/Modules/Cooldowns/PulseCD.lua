@@ -52,7 +52,7 @@ local function OnUpdate(_, update)
 	if elapsed > 0.05 then
 		for i, v in pairs(watching) do
 			if GetTime() >= v[1] + 0.5 + threshold then
-				local start, duration, enabled, texture, isPet
+				local name, texture, start, duration, enabled, isPet
 				if v[2] == "spell" then
 					name = GetSpellInfo(v[3])
 					texture = GetSpellTexture(v[3])

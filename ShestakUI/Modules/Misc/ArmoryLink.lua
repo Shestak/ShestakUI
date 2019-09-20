@@ -69,6 +69,7 @@ hooksecurefunc("UnitPopup_OnClick", function(self)
 	local dropdownFrame = UIDROPDOWNMENU_INIT_MENU
 	local name = dropdownFrame.name
 	local server = dropdownFrame.server
+	local linkurl
 	if not server then
 		server = myserver
 	else
