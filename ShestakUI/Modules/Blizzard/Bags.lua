@@ -1213,7 +1213,7 @@ function Stuffing:BAG_UPDATE(id)
 	self:BagSlotUpdate(id)
 end
 
-function Stuffing:BAG_UPDATE_DELAYED(id)
+function Stuffing:BAG_UPDATE_DELAYED()
 	for _, i in ipairs(BAGS_BACKPACK) do
 		local numSlots = GetContainerNumSlots(i)
 		if self.bags_num[i] and self.bags_num[i] ~= numSlots then
