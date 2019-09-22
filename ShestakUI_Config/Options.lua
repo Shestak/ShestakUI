@@ -1051,23 +1051,29 @@ do
 	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_NAMEPLATE_ENABLE)
 	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local height = ns.CreateNumberSlider(parent, "height", nil, nil, 0, 20, 1, true, L_GUI_NAMEPLATE_HEIGHT)
-	height:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, -20)
-
-	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 200, 1, true, L_GUI_NAMEPLATE_WIDTH)
-	width:SetPoint("LEFT", height, "RIGHT", 120, 0)
-
 	local distance = ns.CreateNumberSlider(parent, "distance", nil, nil, 0, 200, 1, true, L_GUI_NAMEPLATE_DISTANCE)
-	distance:SetPoint("TOPLEFT", height, "BOTTOMLEFT", 0, -20)
+	distance:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, -20)
+
+	local height = ns.CreateNumberSlider(parent, "height", nil, nil, 0, 20, 1, true, L_GUI_NAMEPLATE_HEIGHT)
+	height:SetPoint("TOPLEFT", distance, "BOTTOMLEFT", 0, -20)
 
 	local ad_height = ns.CreateNumberSlider(parent, "ad_height", nil, nil, 0, 30, 1, true, L_GUI_NAMEPLATE_AD_HEIGHT)
-	ad_height:SetPoint("TOPLEFT", distance, "BOTTOMLEFT", 0, -20)
+	ad_height:SetPoint("LEFT", height, "RIGHT", 120, 0)
+
+	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 200, 1, true, L_GUI_NAMEPLATE_WIDTH)
+	width:SetPoint("TOPLEFT", height, "BOTTOMLEFT", 0, -20)
 
 	local ad_width = ns.CreateNumberSlider(parent, "ad_width", nil, nil, 0, 50, 1, true, L_GUI_NAMEPLATE_AD_WIDTH)
-	ad_width:SetPoint("LEFT", ad_height, "RIGHT", 120, 0)
+	ad_width:SetPoint("LEFT", width, "RIGHT", 120, 0)
+
+	local alpha = ns.CreateNumberSlider(parent, "alpha", nil, nil, 0, 1, 0.01, true, L_GUI_NAMEPLATE_ALPHA)
+	alpha:SetPoint("TOPLEFT", width, "BOTTOMLEFT", 0, -20)
+
+	local target_alpha = ns.CreateNumberSlider(parent, "target_alpha", nil, nil, 0, 1, 0.01, true, L_GUI_NAMEPLATE_TARGET_ALPHA)
+	target_alpha:SetPoint("LEFT", alpha, "RIGHT", 120, 0)
 
 	local combat = ns.CreateCheckBox(parent, "combat", L_GUI_NAMEPLATE_COMBAT)
-	combat:SetPoint("TOPLEFT", ad_height, "BOTTOMLEFT", 0, -20)
+	combat:SetPoint("TOPLEFT", alpha, "BOTTOMLEFT", 0, -20)
 
 	local health_value = ns.CreateCheckBox(parent, "health_value", L_GUI_NAMEPLATE_HEALTH)
 	health_value:SetPoint("TOPLEFT", combat, "BOTTOMLEFT", 0, 0)
