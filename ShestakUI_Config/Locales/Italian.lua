@@ -240,17 +240,15 @@ L_GUI_CHAT_STICKY = "Ricorda l'ultimo canale"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "Riunisce lo spam di un contatore dei danni in un singolo link"
 
 -- Nameplate options
-L_GUI_NAMEPLATE_SUBTEXT = "Nameplate settings" -- Need review
+L_GUI_NAMEPLATE_SUBTEXT = "Nameplates settings" -- Need review
 L_GUI_NAMEPLATE_ENABLE = "Attiva le barre delle unità"
 L_GUI_NAMEPLATE_COMBAT = "Mostra automaticamente le barre delle unità in combattimento"
 L_GUI_NAMEPLATE_HEALTH = "Valore numerico della salute"
-L_GUI_NAMEPLATE_DISTANCE = "Display range" -- Need review
 L_GUI_NAMEPLATE_HEIGHT = "Altezza delle barre delle unità"
 L_GUI_NAMEPLATE_WIDTH = "Larghezza delle barre delle unità"
-L_GUI_NAMEPLATE_ALPHA = "Nameplate alpha" -- Needs review
+L_GUI_NAMEPLATE_DISTANCE = "Display range" -- Need review
 L_GUI_NAMEPLATE_AD_HEIGHT = "Additional height" -- Need review
 L_GUI_NAMEPLATE_AD_WIDTH = "Additional width" -- Need review
-L_GUI_NAMEPLATE_TARGET_ALPHA = "Target nameplate alpha" -- Needs review
 L_GUI_NAMEPLATE_CASTBAR_NAME = "Mostra il nome di incantesimi/abilità sulle barre incantesimi"
 L_GUI_NAMEPLATE_CLASS_ICON = "Icone delle classi in PvP"
 L_GUI_NAMEPLATE_NAME_ABBREV = "Mostra nomi abbreviati"

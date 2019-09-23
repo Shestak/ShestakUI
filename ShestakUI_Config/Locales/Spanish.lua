@@ -240,17 +240,15 @@ L_GUI_CHAT_STICKY = "Recordar último canal"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link" -- Needs review
 
 -- Nameplate options
-L_GUI_NAMEPLATE_SUBTEXT = "Nameplate settings" -- Need review
+L_GUI_NAMEPLATE_SUBTEXT = "Nameplates settings" -- Need review
 L_GUI_NAMEPLATE_ENABLE = "Activar placas de nombre"
 L_GUI_NAMEPLATE_COMBAT = "Mostrar automáticamente placa de nombre en combate"
 L_GUI_NAMEPLATE_HEALTH = "Valor de la vida en números"
-L_GUI_NAMEPLATE_DISTANCE = "Display range" -- Need review
 L_GUI_NAMEPLATE_HEIGHT = "Altura de la placa de nombre"
 L_GUI_NAMEPLATE_WIDTH = "Anchura de la placa de nombre"
-L_GUI_NAMEPLATE_ALPHA = "Nameplate alpha" -- Needs review
+L_GUI_NAMEPLATE_DISTANCE = "Display range" -- Need review
 L_GUI_NAMEPLATE_AD_HEIGHT = "Additional height" -- Need review
 L_GUI_NAMEPLATE_AD_WIDTH = "Additional width" -- Need review
-L_GUI_NAMEPLATE_TARGET_ALPHA = "Target nameplate alpha" -- Needs review
 L_GUI_NAMEPLATE_CASTBAR_NAME = "Mostrar nombre del hechizo en la barra de lanzamiento"
 L_GUI_NAMEPLATE_CLASS_ICON = "Iconos de clase en JcJ"
 L_GUI_NAMEPLATE_NAME_ABBREV = "Mostrar los nombres abreviados"
