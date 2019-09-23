@@ -1,4 +1,4 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
 --	ShestakUI fonts configuration file
@@ -110,163 +110,93 @@ C["font"] = {
 }
 
 ----------------------------------------------------------------------------------------
---	Font replace for zhTW and zhCN client
+--	Font replacement for zhTW, zhCN, and koKR clients
 ----------------------------------------------------------------------------------------
+local locale_font
 if T.client == "zhTW" then
-	C["media"].normal_font = "Fonts\\bLEI00D.ttf"
-	C["media"].pixel_font = "Fonts\\bLEI00D.ttf"
-	C["media"].pixel_font_style = "OUTLINE"
-	C["media"].pixel_font_size = 11
-
-	C["font"].stats_font = "Fonts\\bLEI00D.ttf"
-	C["font"].stats_font_size = 12
-	C["font"].stats_font_style = "OUTLINE"
-	C["font"].stats_font_shadow = true
-
-	C["font"].combat_text_font = "Fonts\\bLEI00D.ttf"
-	C["font"].combat_text_font_size = 16
-	C["font"].combat_text_font_style = "OUTLINE"
-	C["font"].combat_text_font_shadow = true
-
-	C["font"].chat_font = "Fonts\\bLEI00D.ttf"
-	C["font"].chat_font_style = "OUTLINE"
-	C["font"].chat_font_shadow = true
-
-	C["font"].chat_tabs_font = "Fonts\\bLEI00D.ttf"
-	C["font"].chat_tabs_font_size = 12
-	C["font"].chat_tabs_font_style = "OUTLINE"
-	C["font"].chat_tabs_font_shadow = true
-
-	C["font"].action_bars_font = "Fonts\\bLEI00D.ttf"
-	C["font"].action_bars_font_size = 12
-	C["font"].action_bars_font_style = "OUTLINE"
-	C["font"].action_bars_font_shadow = true
-
-	C["font"].threat_meter_font = "Fonts\\bLEI00D.ttf"
-	C["font"].threat_meter_font_size = 12
-	C["font"].threat_meter_font_style = "OUTLINE"
-	C["font"].threat_meter_font_shadow = true
-
-	C["font"].raid_cooldowns_font = "Fonts\\bLEI00D.ttf"
-	C["font"].raid_cooldowns_font_size = 12
-	C["font"].raid_cooldowns_font_style = "OUTLINE"
-	C["font"].raid_cooldowns_font_shadow = true
-
-	C["font"].cooldown_timers_font = "Fonts\\bLEI00D.ttf"
-	C["font"].cooldown_timers_font_size = 13
-	C["font"].cooldown_timers_font_style = "OUTLINE"
-	C["font"].cooldown_timers_font_shadow = true
-
-	C["font"].loot_font = "Fonts\\bLEI00D.ttf"
-	C["font"].loot_font_size = 13
-	C["font"].loot_font_style = "OUTLINE"
-	C["font"].loot_font_shadow = true
-
-	C["font"].nameplates_font = "Fonts\\bLEI00D.ttf"
-	C["font"].nameplates_font_size = 13
-	C["font"].nameplates_font_style = "OUTLINE"
-	C["font"].nameplates_font_shadow = true
-
-	C["font"].unit_frames_font = "Fonts\\bLEI00D.ttf"
-	C["font"].unit_frames_font_size = 12
-	C["font"].unit_frames_font_style = "OUTLINE"
-	C["font"].unit_frames_font_shadow = true
-
-	C["font"].auras_font = "Fonts\\bLEI00D.ttf"
-	C["font"].auras_font_size = 11
-	C["font"].auras_font_style = "OUTLINE"
-	C["font"].auras_font_shadow = true
-
-	C["font"].filger_font = "Fonts\\bLEI00D.ttf"
-	C["font"].filger_font_size = 14
-	C["font"].filger_font_style = "OUTLINE"
-	C["font"].filger_font_shadow = true
-
-	C["font"].stylization_font = "Fonts\\bLEI00D.ttf"
-	C["font"].stylization_font_size = 12
-	C["font"].stylization_font_style = ""
-	C["font"].stylization_font_shadow = true
-
-	C["font"].bags_font = "Fonts\\bLEI00D.ttf"
-	C["font"].bags_font_size = 11
-	C["font"].bags_font_style = "OUTLINE"
-	C["font"].bags_font_shadow = true
+	locale_font = "Fonts\\bLEI00D.ttf"
 elseif T.client == "zhCN" then
-	C["media"].normal_font = "Fonts\\ARKai_T.ttf"
-	C["media"].pixel_font = "Fonts\\ARKai_C.ttf"
+	locale_font = "Fonts\\ARKai_T.ttf"
+elseif T.client == "koKR" then
+	locale_font = "Fonts\\2002.ttf"
+end
+
+if locale_font then
+	C["media"].normal_font = locale_font
+	C["media"].pixel_font = locale_font
 	C["media"].pixel_font_style = "OUTLINE"
 	C["media"].pixel_font_size = 11
 
-	C["font"].stats_font = "Fonts\\ARKai_T.ttf"
+	C["font"].stats_font = locale_font
 	C["font"].stats_font_size = 12
 	C["font"].stats_font_style = "OUTLINE"
 	C["font"].stats_font_shadow = true
 
-	C["font"].combat_text_font = "Fonts\\ARKai_T.ttf"
+	C["font"].combat_text_font = locale_font
 	C["font"].combat_text_font_size = 16
 	C["font"].combat_text_font_style = "OUTLINE"
 	C["font"].combat_text_font_shadow = true
 
-	C["font"].chat_font = "Fonts\\ARKai_T.ttf"
+	C["font"].chat_font = locale_font
 	C["font"].chat_font_style = "OUTLINE"
 	C["font"].chat_font_shadow = true
 
-	C["font"].chat_tabs_font = "Fonts\\ARKai_T.ttf"
+	C["font"].chat_tabs_font = locale_font
 	C["font"].chat_tabs_font_size = 12
 	C["font"].chat_tabs_font_style = "OUTLINE"
 	C["font"].chat_tabs_font_shadow = true
 
-	C["font"].action_bars_font = "Fonts\\ARKai_T.ttf"
+	C["font"].action_bars_font = locale_font
 	C["font"].action_bars_font_size = 12
 	C["font"].action_bars_font_style = "OUTLINE"
 	C["font"].action_bars_font_shadow = true
 
-	C["font"].threat_meter_font = "Fonts\\ARKai_T.ttf"
+	C["font"].threat_meter_font = locale_font
 	C["font"].threat_meter_font_size = 12
 	C["font"].threat_meter_font_style = "OUTLINE"
 	C["font"].threat_meter_font_shadow = true
 
-	C["font"].raid_cooldowns_font = "Fonts\\ARKai_T.ttf"
+	C["font"].raid_cooldowns_font = locale_font
 	C["font"].raid_cooldowns_font_size = 12
 	C["font"].raid_cooldowns_font_style = "OUTLINE"
 	C["font"].raid_cooldowns_font_shadow = true
 
-	C["font"].cooldown_timers_font = "Fonts\\ARKai_T.ttf"
+	C["font"].cooldown_timers_font = locale_font
 	C["font"].cooldown_timers_font_size = 13
 	C["font"].cooldown_timers_font_style = "OUTLINE"
 	C["font"].cooldown_timers_font_shadow = true
 
-	C["font"].loot_font = "Fonts\\ARKai_T.ttf"
+	C["font"].loot_font = locale_font
 	C["font"].loot_font_size = 13
 	C["font"].loot_font_style = "OUTLINE"
 	C["font"].loot_font_shadow = true
 
-	C["font"].nameplates_font = "Fonts\\ARKai_T.ttf"
+	C["font"].nameplates_font = locale_font
 	C["font"].nameplates_font_size = 13
 	C["font"].nameplates_font_style = "OUTLINE"
 	C["font"].nameplates_font_shadow = true
 
-	C["font"].unit_frames_font = "Fonts\\ARKai_T.ttf"
+	C["font"].unit_frames_font = locale_font
 	C["font"].unit_frames_font_size = 12
 	C["font"].unit_frames_font_style = "OUTLINE"
 	C["font"].unit_frames_font_shadow = true
 
-	C["font"].auras_font = "Fonts\\ARKai_T.ttf"
+	C["font"].auras_font = locale_font
 	C["font"].auras_font_size = 11
 	C["font"].auras_font_style = "OUTLINE"
 	C["font"].auras_font_shadow = true
 
-	C["font"].filger_font = "Fonts\\ARKai_T.ttf"
+	C["font"].filger_font = locale_font
 	C["font"].filger_font_size = 14
 	C["font"].filger_font_style = "OUTLINE"
 	C["font"].filger_font_shadow = true
 
-	C["font"].stylization_font = "Fonts\\ARKai_T.ttf"
+	C["font"].stylization_font = locale_font
 	C["font"].stylization_font_size = 12
 	C["font"].stylization_font_style = ""
 	C["font"].stylization_font_shadow = true
 
-	C["font"].bags_font = "Fonts\\ARKai_T.ttf"
+	C["font"].bags_font = locale_font
 	C["font"].bags_font_size = 11
 	C["font"].bags_font_style = "OUTLINE"
 	C["font"].bags_font_shadow = true

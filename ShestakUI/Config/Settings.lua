@@ -279,6 +279,7 @@ C["nameplate"] = {
 	["enable"] = true, 							-- Enable nameplate
 	["height"] = 9,								-- Nameplate height
 	["width"] = 120,							-- Nameplate width
+	["alpha"] = 0.5,							-- Nameplate alpha
 	["distance"] = 40,							-- Show nameplates for units within this range
 	["ad_height"] = 0,							-- Additional height for selected nameplate
 	["ad_width"] = 0,							-- Additional width for selected nameplate
