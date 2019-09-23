@@ -239,13 +239,14 @@ L_GUI_CHAT_STICKY = "Active le dernier canal utilisé(canal persistant)"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "Rassemble les lignes de statistiques de dégâts en un seul lien/ligne"
 
 -- Nameplate options
-L_GUI_NAMEPLATE_SUBTEXT = "Nameplates settings" -- Need review
+L_GUI_NAMEPLATE_SUBTEXT = "Nameplate settings" -- Need review
 L_GUI_NAMEPLATE_ENABLE = "Activer les barres de nom"
 L_GUI_NAMEPLATE_COMBAT = "Afficher automatiquement les barres de nom en combat"
 L_GUI_NAMEPLATE_HEALTH = "Valeur de points de vie"
+L_GUI_NAMEPLATE_DISTANCE = "Display range" -- Need review
 L_GUI_NAMEPLATE_HEIGHT = "Hauteur des barres de nom"
 L_GUI_NAMEPLATE_WIDTH = "Largeur des barres de nom"
-L_GUI_NAMEPLATE_DISTANCE = "Display range" -- Need review
+L_GUI_NAMEPLATE_ALPHA = "Nameplate alpha" -- Needs review
 L_GUI_NAMEPLATE_AD_HEIGHT = "Additional height" -- Need review
 L_GUI_NAMEPLATE_AD_WIDTH = "Additional width" -- Need review
 L_GUI_NAMEPLATE_CASTBAR_NAME = "Afficher le nom du sort"

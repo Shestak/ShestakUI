@@ -40,6 +40,8 @@ function frame:PLAYER_ENTERING_WORLD()
 	SetCVar("nameplateSelectedScale", 1)
 	SetCVar("nameplateMinAlpha", 1)
 	SetCVar("nameplateMaxAlpha", 1)
+	SetCVar("nameplateSelectedAlpha", 1)
+	SetCVar("nameplateNotSelectedAlpha", 1)
 
 	SetCVar("nameplateOtherTopInset", C.nameplate.clamp and 0.08 or -1)
 	SetCVar("nameplateOtherBottomInset", C.nameplate.clamp and 0.1 or -1)
@@ -315,10 +317,10 @@ local function UpdateTarget(self)
 		if C.nameplate.class_icons == true then
 			self.Class.Icon:SetSize((C.nameplate.height * 2 * T.noscalemult) + 8, (C.nameplate.height * 2 * T.noscalemult) + 8)
 		end
-		if UnitExists("target") and not UnitIsUnit(self.unit, "player") then
-			self:SetAlpha(0.5)
-		else
+		if not UnitExists("target") or UnitIsUnit(self.unit, "player") then
 			self:SetAlpha(1)
+		else
+			self:SetAlpha(C.nameplate.alpha)
 		end
 	end
 end
