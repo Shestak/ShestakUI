@@ -295,6 +295,10 @@ local function LoadSkin()
 		button.level:ClearAllPoints()
 		button.level:SetPoint("BOTTOMRIGHT", -2, 3)
 
+		hooksecurefunc(button.qualityBorder, "SetVertexColor", function(_, r, g, b)
+			button.name:SetTextColor(r, g, b)
+		end)
+
 		for j = 1, 3 do
 			local spell = button["spell"..j]
 
@@ -395,6 +399,10 @@ local function LoadSkin()
 	PetJournalPetCardXPBar:SetStatusBarTexture(C.media.texture)
 	PetJournalPetCardXPBar:SetPoint("BOTTOM", PetJournalPetCard.backdrop, "BOTTOM", 0, 6)
 	PetJournalPetCardXPBar:SetFrameLevel(PetJournalPetCardXPBar:GetFrameLevel() + 2)
+
+	hooksecurefunc(PetJournalPetCardPetInfo.qualityBorder, "SetVertexColor", function(_, r, g, b)
+		PetJournalPetCardPetInfo.name:SetTextColor(r, g, b)
+	end)
 
 	-- ToyBox
 	ToyBox.iconsFrame:StripTextures()
