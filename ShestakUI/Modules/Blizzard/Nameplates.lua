@@ -457,17 +457,10 @@ local function style(self, unit)
 	self.Power.bg:SetTexture(C.media.texture)
 	self.Power.bg.multiplier = 0.2
 
-	-- Hide Blizzard Power Bar and changed position for Class Bar
+	-- Hide Blizzard Power Bar
 	hooksecurefunc(_G.NamePlateDriverFrame, "SetupClassNameplateBars", function(frame)
-		if frame.classNamePlateMechanicFrame then
-			local point, _, relativePoint, xOfs = frame.classNamePlateMechanicFrame:GetPoint()
-			if point then
-				if point == "TOP" and C_NamePlate.GetNamePlateForUnit("player") then
-					frame.classNamePlateMechanicFrame:SetPoint(point, C_NamePlate.GetNamePlateForUnit("player"), relativePoint, xOfs, 53)
-				else
-					frame.classNamePlateMechanicFrame:SetPoint(point, C_NamePlate.GetNamePlateForUnit("target"), relativePoint, xOfs, -5)
-				end
-			end
+		if not frame or frame:IsForbidden() then
+			return
 		end
 		if frame.classNamePlatePowerBar then
 			frame.classNamePlatePowerBar:Hide()
