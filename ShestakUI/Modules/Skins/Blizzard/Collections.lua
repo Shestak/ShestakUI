@@ -43,7 +43,6 @@ local function LoadSkin()
 		"PetJournalFindBattle",
 		"PetJournalFilterButton",
 		"MountJournalFilterButton",
-		"MountJournalSummonRandomFavoriteButton",
 		"HeirloomsJournalFilterButton",
 		"ToyBoxFilterButton"
 	}
@@ -58,6 +57,17 @@ local function LoadSkin()
 	end
 
 	T.SkinCloseButton(CollectionsJournalCloseButton)
+
+	local function StyleItemButton(frame)
+		frame:CreateBackdrop("Default")
+		frame.backdrop:SetAllPoints()
+		frame:StyleButton()
+		_G[frame:GetName().."Border"]:Hide()
+		frame.texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		frame.texture:ClearAllPoints()
+		frame.texture:SetPoint("TOPLEFT", 2, -2)
+		frame.texture:SetPoint("BOTTOMRIGHT", -2, 2)
+	end
 
 	-- MountJournal
 	MountJournal.LeftInset:StripTextures()
@@ -136,14 +146,7 @@ local function LoadSkin()
 	MountJournalListScrollFrame:HookScript("OnVerticalScroll", ColorSelectedMount)
 	MountJournalListScrollFrame:HookScript("OnMouseWheel", ColorSelectedMount)
 
-	MountJournalSummonRandomFavoriteButton:CreateBackdrop("Default")
-	MountJournalSummonRandomFavoriteButton.backdrop:SetAllPoints()
-	MountJournalSummonRandomFavoriteButton:StyleButton()
-	MountJournalSummonRandomFavoriteButtonBorder:Hide()
-	MountJournalSummonRandomFavoriteButton.texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	MountJournalSummonRandomFavoriteButton.texture:ClearAllPoints()
-	MountJournalSummonRandomFavoriteButton.texture:SetPoint("TOPLEFT", 2, -2)
-	MountJournalSummonRandomFavoriteButton.texture:SetPoint("BOTTOMRIGHT", -2, 2)
+	StyleItemButton(MountJournalSummonRandomFavoriteButton)
 
 	do
 		local button = MountJournal.MountDisplay.InfoButton
@@ -256,24 +259,8 @@ local function LoadSkin()
 	hooksecurefunc(PetJournalListScrollFrame, "update", ColorSelectedPet)
 	PetJournalAchievementStatus:DisableDrawLayer("BACKGROUND")
 
-	PetJournalHealPetButton:CreateBackdrop("Default")
-	PetJournalHealPetButton.backdrop:SetAllPoints()
-	PetJournalHealPetButton:StyleButton()
-	PetJournalHealPetButtonBorder:Hide()
-	PetJournalHealPetButton.texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	PetJournalHealPetButton.texture:ClearAllPoints()
-	PetJournalHealPetButton.texture:SetPoint("TOPLEFT", 2, -2)
-	PetJournalHealPetButton.texture:SetPoint("BOTTOMRIGHT", -2, 2)
-
-	PetJournalSummonRandomFavoritePetButton:CreateBackdrop("Default")
-	PetJournalSummonRandomFavoritePetButton.backdrop:SetAllPoints()
-	PetJournalSummonRandomFavoritePetButton:StyleButton()
-	PetJournalSummonRandomFavoritePetButtonBorder:Hide()
-	PetJournalSummonRandomFavoritePetButton.texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	PetJournalSummonRandomFavoritePetButton.texture:ClearAllPoints()
-	PetJournalSummonRandomFavoritePetButton.texture:SetPoint("TOPLEFT", 2, -2)
-	PetJournalSummonRandomFavoritePetButton.texture:SetPoint("BOTTOMRIGHT", -2, 2)
-
+	StyleItemButton(PetJournalHealPetButton)
+	StyleItemButton(PetJournalSummonRandomFavoritePetButton)
 
 	for i = 1, 3 do
 		local button = _G["PetJournalLoadoutPet"..i]
