@@ -81,7 +81,7 @@ end)
 hooksecurefunc("BonusObjectiveTracker_OnOpenDropDown", function(self)
 	local block = self.activeFrame
 	local questID = block.TrackedQuest.questID
-	info = UIDropDownMenu_CreateInfo()
+	local info = UIDropDownMenu_CreateInfo()
 	info.text = L_WATCH_WOWHEAD_LINK
 	info.func = function()
 		local inputBox = StaticPopup_Show("WATCHFRAME_URL")

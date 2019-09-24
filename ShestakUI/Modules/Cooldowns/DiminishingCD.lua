@@ -78,7 +78,7 @@ function DisplayDrActives(self, test)
 
 	index = 1
 	for cat, value in pairs(self.actives) do
-		aura = self.auras[index]
+		local aura = self.auras[index]
 		aura.icon:SetTexture(value.icon)
 		aura.count:SetText(value.dr)
 		aura.count:Hide()
@@ -188,7 +188,7 @@ local function CombatLogCheck(self)
 end
 
 for frame, target in pairs(framelist) do
-	self = _G[frame]
+	local self = _G[frame]
 	local DrTracker = CreateFrame("Frame", nil, self)
 	DrTracker:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 	DrTracker:SetScript("OnEvent", CombatLogCheck)
@@ -218,7 +218,7 @@ local function tdr()
 	local testlist = {"stun", "root", "silence"}
 
 	for frame in pairs(framelist) do
-		self = _G[frame].DrTracker
+		local self = _G[frame].DrTracker
 		if not self.actives then self.actives = {} end
 		local dr = 1
 		for _, cat in pairs(testlist) do

@@ -309,6 +309,7 @@ do
 	frame:RegisterEvent("VARIABLES_LOADED")
 end
 
+local getBackdrop
 do
 	local function UpdateCoords(self)
 		local mover = self.child

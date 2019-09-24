@@ -32,7 +32,7 @@ local function LoadSkin()
 	end
 
 	for i = 1, NUMGOSSIPBUTTONS do
-		obj = select(3, _G["GossipTitleButton"..i]:GetRegions())
+		local obj = select(3, _G["GossipTitleButton"..i]:GetRegions())
 		obj:SetTextColor(1, 1, 1)
 		obj:SetShadowOffset(1, -1)
 	end

@@ -382,13 +382,13 @@ local function refreshAddOnMenu()
 			end
 		end
 	end
-	menuwidth = ceil(menusize / 25)
-	menuheight = ceil(menusize / menuwidth)
+	local menuwidth = ceil(menusize / 25)
+	local menuheight = ceil(menusize / menuwidth)
 
 	local lastMenuEntryID = lastMainMenuEntryID
 	menusize = mainmenusize
 	for i = 1, GetNumAddOns() do
-		j = totalmainmenusize + i
+		local j = totalmainmenusize + i
 		local name = GetAddOnInfo(i)
 		addonmenuitems[j]:Hide()
 		if addonInfo[i].is_main or addonInfo[i].parent == i or not addonInfo[addonInfo[i].parent].collapsed then
@@ -430,7 +430,7 @@ expandbutton:SetScript("OnMouseUp", function(self)
 end)
 
 for i = 1, GetNumAddOns() do
-	j = totalmainmenusize + i
+	local j = totalmainmenusize + i
 	local name = GetAddOnInfo(i)
 	addonmenuitems[j] = CreateFrame("CheckButton", "AddonMenu"..j, AddonBG)
 	addonmenuitems[j]:CreatePanel("Overlay", buttonwidth(1), buttonheight(1), "BOTTOM", AddonBG, "BOTTOM", 0, buttonspacing(1))
