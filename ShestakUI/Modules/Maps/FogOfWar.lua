@@ -359,5 +359,5 @@ end
 
 -- Show overlays on startup
 for pin in WorldMapFrame:EnumeratePinsByTemplate("MapExplorationPinTemplate") do
-	hooksecurefunc(pin, "RefreshOverlays", function() RefMap(pin, fullUpdate) end)
+	hooksecurefunc(pin, "RefreshOverlays", RefMap)
 end
