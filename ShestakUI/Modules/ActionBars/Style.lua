@@ -119,6 +119,11 @@ local function StyleNormalButton(button)
 
 		UpdateHotkey(button)
 
+		if _G[name.."FlyoutArrow"] then
+			button.oborder:SetFrameLevel(button:GetFrameLevel())
+			button.iborder:SetFrameLevel(button:GetFrameLevel())
+		end
+
 		button.isSkinned = true
 	end
 end
