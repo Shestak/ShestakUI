@@ -674,6 +674,7 @@ local function Shared(self, unit)
 		end
 		self.Debuffs.PostCreateIcon = T.PostCreateIcon
 		self.Debuffs.PostUpdateIcon = T.PostUpdateIcon
+		self.Debuffs.CustomFilter = T.CustomFilter
 
 		if unit == "pet" then
 			self:RegisterEvent("UNIT_PET", T.UpdateAllElements)
@@ -750,6 +751,7 @@ local function Shared(self, unit)
 			self.Auras.gap = true
 			self.Auras.PostCreateIcon = T.PostCreateIcon
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
+			self.Auras.CustomFilter = T.CustomFilter
 
 			-- Rogue/Druid Combo bar
 			if C.unitframe_class_bar.combo == true and (C.unitframe_class_bar.combo_old == true or (T.class ~= "DRUID" and T.class ~= "ROGUE")) then
@@ -1096,6 +1098,7 @@ local function Shared(self, unit)
 			self.Auras.gap = true
 			self.Auras.PostCreateIcon = T.PostCreateIcon
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
+			self.Auras.CustomFilter = T.CustomFilter
 		end
 
 		self:HookScript("OnShow", T.UpdateAllElements)

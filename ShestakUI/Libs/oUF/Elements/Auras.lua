@@ -86,6 +86,11 @@ local function updateIcon(unit, icons, index, offset, filter, isDebuff, visible)
 			icon = (icons.CreateIcon or createAuraIcon) (icons, n)
 		end
 
+		icon.caster = caster
+		icon.filter = filter
+		icon.isDebuff = isDebuff
+		icon.isPlayer = caster == 'player' or caster == 'vehicle'
+
 		local show = (icons.CustomFilter or customFilter) (icons, unit, icon, name, texture,
 			count, debuffType, duration, expiration, caster, isStealable, nameplateShowSelf, spellID,
 			canApply, isBossDebuff, casterIsPlayer, nameplateShowAll, timeMod, effect1, effect2, effect3)
@@ -122,11 +127,6 @@ local function updateIcon(unit, icons, index, offset, filter, isDebuff, visible)
 
 			icon.icon:SetTexture(texture)
 			icon.count:SetText((count > 1 and count))
-
-			icon.caster = caster
-			icon.filter = filter
-			icon.isDebuff = isDebuff
-			icon.isPlayer = caster == 'player' or caster == 'vehicle'
 
 			icon:SetID(index)
 			icon:Show()

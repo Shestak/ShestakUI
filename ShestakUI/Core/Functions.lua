@@ -431,7 +431,6 @@ function T.SkinDropDownBox(frame, width, pos)
 		button:SetPoint("RIGHT", frame, "RIGHT", -10, 3)
 	end
 	button.SetPoint = T.dummy
-	scrolldn = false
 	T.SkinNextPrevButton(button)
 
 	frame:CreateBackdrop("Overlay")
@@ -1469,9 +1468,7 @@ T.PostUpdateIcon = function(_, unit, button, _, _, duration, expiration, debuffT
 
 	if button.isDebuff then
 		if not UnitIsFriend("player", unit) and not playerUnits[button.caster] then
-			if C.aura.player_aura_only then
-				button:Hide()
-			else
+			if not C.aura.player_aura_only then
 				button:SetBackdropBorderColor(unpack(C.media.border_color))
 				button.icon:SetDesaturated(true)
 			end
@@ -1506,11 +1503,27 @@ T.PostUpdateIcon = function(_, unit, button, _, _, duration, expiration, debuffT
 	button.first = true
 end
 
+T.CustomFilter = function(_, unit, button, _, _, _, _, _, _, caster)
+	if C.aura.player_aura_only then
+		if button.isDebuff then
+			local playerUnits = {
+				player = true,
+				pet = true,
+				vehicle = true,
+			}
+			if not UnitIsFriend("player", unit) and not playerUnits[caster] then
+				return false
+			end
+		end
+	end
+	return true
+end
+
 T.UpdateThreat = function(self, _, unit)
 	if self.unit ~= unit then return end
 	local threat = UnitThreatSituation(self.unit)
 	if threat and threat > 1 then
-		r, g, b = GetThreatStatusColor(threat)
+		local r, g, b = GetThreatStatusColor(threat)
 		self.backdrop:SetBackdropBorderColor(r, g, b)
 	else
 		self.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
