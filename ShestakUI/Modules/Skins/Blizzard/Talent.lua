@@ -164,7 +164,7 @@ local function LoadSkin()
 			_G["PlayerTalentFrameSpecializationSpecButton"..i.."Glow"]:Hide()
 			_G["PlayerTalentFrameSpecializationSpecButton"..i.."Glow"].Show = T.dummy
 
-			local hover = bu:CreateTexture(nil, nil, self)
+			local hover = bu:CreateTexture()
 			hover:SetColorTexture(1, 1, 1, 0.3)
 			bu:SetHighlightTexture(hover)
 			bu:GetHighlightTexture():SetPoint("TOPLEFT", 10, 0)

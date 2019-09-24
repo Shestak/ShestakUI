@@ -102,7 +102,7 @@ local function LoadSkin()
 		reward.EnlistmentBonus:SetSize(20, 20)
 		reward.EnlistmentBonus:SetPoint("TOPRIGHT", 2, 2)
 
-		local EnlistmentBonusIcon = reward.EnlistmentBonus:CreateTexture(nil, nil, self)
+		local EnlistmentBonusIcon = reward.EnlistmentBonus:CreateTexture()
 		EnlistmentBonusIcon:SetPoint("TOPLEFT", reward.EnlistmentBonus, "TOPLEFT", 2, -2)
 		EnlistmentBonusIcon:SetPoint("BOTTOMRIGHT", reward.EnlistmentBonus, "BOTTOMRIGHT", -2, 2)
 		EnlistmentBonusIcon:SetTexture("Interface\\Icons\\achievement_guildperk_honorablemention_rank2")

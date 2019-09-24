@@ -485,14 +485,14 @@ local StartConfigmode = function()
 				f.fs:SetTextColor(1, 1, 0, 0.9)
 			end
 
-			f.t = f:CreateTexture("ARTWORK")
+			f.t = f:CreateTexture(nil, "ARTWORK")
 			f.t:SetPoint("TOPLEFT", f, "TOPLEFT", 1, -1)
 			f.t:SetPoint("TOPRIGHT", f, "TOPRIGHT", -1, -19)
 			f.t:SetHeight(20)
 			f.t:SetColorTexture(0.5, 0.5, 0.5)
 			f.t:SetAlpha(0.3)
 
-			f.d = f:CreateTexture("ARTWORK")
+			f.d = f:CreateTexture(nil, "ARTWORK")
 			f.d:SetHeight(16)
 			f.d:SetWidth(16)
 			f.d:SetPoint("BOTTOMRIGHT", f, "BOTTOMRIGHT", -1, 1)

@@ -448,7 +448,7 @@ function T.SkinCheckBox(frame, default)
 	frame.backdrop:SetPoint("BOTTOMRIGHT", -4, 4)
 
 	if frame.SetHighlightTexture then
-		local highligh = frame:CreateTexture(nil, nil, self)
+		local highligh = frame:CreateTexture()
 		highligh:SetColorTexture(1, 1, 1, 0.3)
 		highligh:SetPoint("TOPLEFT", frame, 6, -6)
 		highligh:SetPoint("BOTTOMRIGHT", frame, -6, 6)
@@ -457,7 +457,7 @@ function T.SkinCheckBox(frame, default)
 
 	if frame.SetCheckedTexture then
 		if default then return end
-		local checked = frame:CreateTexture(nil, nil, self)
+		local checked = frame:CreateTexture()
 		checked:SetColorTexture(1, 0.82, 0, 0.8)
 		checked:SetPoint("TOPLEFT", frame, 6, -6)
 		checked:SetPoint("BOTTOMRIGHT", frame, -6, 6)
@@ -465,21 +465,12 @@ function T.SkinCheckBox(frame, default)
 	end
 
 	if frame.SetDisabledCheckedTexture then
-		local disabled = frame:CreateTexture(nil, nil, self)
+		local disabled = frame:CreateTexture()
 		disabled:SetColorTexture(0.6, 0.6, 0.6, 0.75)
 		disabled:SetPoint("TOPLEFT", frame, 6, -6)
 		disabled:SetPoint("BOTTOMRIGHT", frame, -6, 6)
 		frame:SetDisabledCheckedTexture(disabled)
 	end
-
-	frame:HookScript("OnDisable", function(self)
-		if not self.SetDisabledTexture then return end
-		if self:GetChecked() then
-			self:SetDisabledTexture(disabled)
-		else
-			self:SetDisabledTexture("")
-		end
-	end)
 end
 
 function T.SkinCloseButton(f, point, text, pixel)
