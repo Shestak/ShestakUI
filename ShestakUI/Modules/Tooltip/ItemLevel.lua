@@ -103,8 +103,9 @@ local function GetUnitIDFromGUID(guid)
 	return nil, name
 end
 
-local function ColorDiff(a, b)
-	local diff = b - a
+local function ColorDiff(p, t)
+	local diff = t - p
+	local r, g, b
 	if diff >= 10 then
 		r, g, b = 1, 0.1, 0.1
 	elseif diff >= 5 then

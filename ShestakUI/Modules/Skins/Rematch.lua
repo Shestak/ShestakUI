@@ -4,8 +4,7 @@ if C.skins.rematch ~= true or not IsAddOnLoaded("Rematch") then return end
 ----------------------------------------------------------------------------------------
 --	Rematch skin
 ----------------------------------------------------------------------------------------
-local _,skin = ...
-Skin = skin
+local _, skin = ...
 
 local rematch = Rematch
 local roster = rematch.Roster
