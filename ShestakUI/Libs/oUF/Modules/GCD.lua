@@ -31,7 +31,7 @@ local Enable = function(self)
 	local width = bar:GetWidth()
 	bar:Hide()
 
-	bar.spark = bar:CreateTexture(nil, "DIALOG")
+	bar.spark = bar:CreateTexture(nil, "OVERLAY")
 	bar.spark:SetTexture(C.media.blank)
 	bar.spark:SetVertexColor(unpack(bar.Color))
 	bar.spark:SetHeight(bar.Height)
