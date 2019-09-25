@@ -109,24 +109,24 @@ local function LoadSkin()
 	QuestMapFrame.DetailsFrame.CompleteQuestFrame.CompleteButton:SkinButton(true)
 	QuestMapFrame.DetailsFrame.CompleteQuestFrame.CompleteButton:SetPoint("TOP", 0, 4)
 
-	QuestNPCModel:StripTextures()
-	QuestNPCModel:CreateBackdrop("Transparent")
-	QuestNPCModelNameTooltipFrame:CreateBackdrop("Overlay")
-	QuestNPCModelNameTooltipFrame.backdrop:SetPoint("TOPLEFT", QuestNPCModel.backdrop, "BOTTOMLEFT", 0, -1)
-	QuestNPCModelNameTooltipFrame.backdrop:SetPoint("TOPRIGHT", QuestNPCModel.backdrop, "BOTTOMRIGHT", 0, -1)
-	QuestNPCModelNameText:SetPoint("TOPLEFT", QuestNPCModelNameplate, 15, -15)
-	QuestNPCModelNameText:SetPoint("BOTTOMRIGHT", QuestNPCModelNameplate, -15, 12)
-	QuestNPCModelTextFrame:StripTextures()
-	QuestNPCModelTextFrame:CreateBackdrop("Overlay")
-	QuestNPCModelTextFrame.backdrop:SetPoint("TOPLEFT", QuestNPCModelNameTooltipFrame.backdrop, "BOTTOMLEFT", 0, -1)
-	hooksecurefunc("QuestFrame_ShowQuestPortrait", function(parentFrame, _, _, _, _, x, y)
-		if parentFrame == QuestLogPopupDetailFrame or parentFrame == QuestFrame then
-			x = x + 8
-			y = y + 40
-		end
-		QuestNPCModel:ClearAllPoints()
-		QuestNPCModel:SetPoint("TOPLEFT", parentFrame, "TOPRIGHT", x, y)
-	end)
+	--FIXME QuestNPCModel:StripTextures()
+	-- QuestNPCModel:CreateBackdrop("Transparent")
+	-- QuestNPCModelNameTooltipFrame:CreateBackdrop("Overlay")
+	-- QuestNPCModelNameTooltipFrame.backdrop:SetPoint("TOPLEFT", QuestNPCModel.backdrop, "BOTTOMLEFT", 0, -1)
+	-- QuestNPCModelNameTooltipFrame.backdrop:SetPoint("TOPRIGHT", QuestNPCModel.backdrop, "BOTTOMRIGHT", 0, -1)
+	-- QuestNPCModelNameText:SetPoint("TOPLEFT", QuestNPCModelNameplate, 15, -15)
+	-- QuestNPCModelNameText:SetPoint("BOTTOMRIGHT", QuestNPCModelNameplate, -15, 12)
+	-- QuestNPCModelTextFrame:StripTextures()
+	-- QuestNPCModelTextFrame:CreateBackdrop("Overlay")
+	-- QuestNPCModelTextFrame.backdrop:SetPoint("TOPLEFT", QuestNPCModelNameTooltipFrame.backdrop, "BOTTOMLEFT", 0, -1)
+	-- hooksecurefunc("QuestFrame_ShowQuestPortrait", function(parentFrame, _, _, _, _, x, y)
+		-- if parentFrame == QuestLogPopupDetailFrame or parentFrame == QuestFrame then
+			-- x = x + 8
+			-- y = y + 40
+		-- end
+		-- QuestNPCModel:ClearAllPoints()
+		-- QuestNPCModel:SetPoint("TOPLEFT", parentFrame, "TOPRIGHT", x, y)
+	-- end)
 
 	-- Quests Buttons
 	for i = 1, 2 do

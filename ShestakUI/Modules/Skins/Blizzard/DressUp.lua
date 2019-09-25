@@ -10,9 +10,9 @@ local function LoadSkin()
 	DressUpFramePortrait:Hide()
 	DressUpFrameInset:Hide()
 
-	DressUpModel:CreateBackdrop("Default")
-	DressUpModel.backdrop:SetPoint("TOPLEFT", -3, 4)
-	DressUpModel.backdrop:SetPoint("BOTTOMRIGHT", 2, 1)
+	DressUpFrame.ModelScene:CreateBackdrop("Default")
+	DressUpFrame.ModelScene.backdrop:SetPoint("TOPLEFT", -3, 4)
+	DressUpFrame.ModelScene.backdrop:SetPoint("BOTTOMRIGHT", 2, 1)
 	DressUpFrame.ModelBackground:SetDrawLayer("BACKGROUND", 3)
 
 	T.SkinMaxMinFrame(MaximizeMinimizeFrame, DressUpFrameCloseButton)
@@ -32,8 +32,8 @@ local function LoadSkin()
 
 	SideDressUpFrame:StripTextures()
 	SideDressUpFrame:SetTemplate("Transparent")
-	SideDressUpModelResetButton:SkinButton()
-	T.SkinCloseButton(SideDressUpModelCloseButton, SideDressUpFrame)
+	--FIXME SideDressUpModelResetButton:SkinButton()
+	-- T.SkinCloseButton(SideDressUpModelCloseButton, SideDressUpFrame)
 
 	WardrobeOutfitFrame:StripTextures(true)
 	WardrobeOutfitFrame:CreateBackdrop("Transparent")

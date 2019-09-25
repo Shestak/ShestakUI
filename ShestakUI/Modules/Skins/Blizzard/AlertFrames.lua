@@ -656,7 +656,7 @@ local function LoadSkin()
 	end
 	hooksecurefunc(HonorAwardedAlertSystem, "setUpFunction", SkinHonorAwardedAlert)
 
-	local function SkinStorePurchaseAlert(frame)
+	local function SkinEntitlementDeliveredAlert(frame)
 		frame:SetAlpha(1)
 		if not frame.hooked then
 			hooksecurefunc(frame, "SetAlpha", forceAlpha)
@@ -688,7 +688,42 @@ local function LoadSkin()
 			frame.Icon:SetParent(frame.Icon.b)
 		end
 	end
-	hooksecurefunc(StorePurchaseAlertSystem, "setUpFunction", SkinStorePurchaseAlert)
+	hooksecurefunc(EntitlementDeliveredAlertSystem, "setUpFunction", SkinEntitlementDeliveredAlert)
+
+	local function SkinRafRewardDeliveredAlert(frame)
+		frame:SetAlpha(1)
+		if not frame.hooked then
+			hooksecurefunc(frame, "SetAlpha", forceAlpha)
+			frame.hooked = true
+		end
+
+		if not frame.backdrop then
+			frame:CreateBackdrop("Transparent")
+			frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 10, -6)
+			frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -14, 6)
+		end
+
+		-- Background
+		frame.StandardBackground:Kill()
+		frame.glow:Kill()
+		frame.shine:Kill()
+
+		-- Icon
+		frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		frame.Icon:ClearAllPoints()
+		frame.Icon:SetPoint("LEFT", frame.backdrop, 9, 0)
+
+		-- Icon border
+		if not frame.Icon.b then
+			frame.Icon.b = CreateFrame("Frame", nil, frame)
+			frame.Icon.b:SetTemplate("Default")
+			frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
+			frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
+			frame.Icon:SetParent(frame.Icon.b)
+		end
+	end
+
+	hooksecurefunc(RafRewardDeliveredAlertSystem, "setUpFunction", SkinRafRewardDeliveredAlert)
 
 	local function SkinDigsiteCompleteAlert(frame)
 		frame:SetAlpha(1)

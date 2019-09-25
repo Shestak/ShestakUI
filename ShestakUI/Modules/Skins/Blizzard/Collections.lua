@@ -619,14 +619,22 @@ local function LoadSkin()
 		end
 	end)
 
-	for i = 1, 3 do
-		for j = 1, 6 do
-			WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j]:StripTextures()
-			WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j]:SetFrameLevel(WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j]:GetFrameLevel() + 2)
-			WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j]:CreateBackdrop("Overlay")
-			WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j].Border:Kill()
-		end
-	end
+	-- for i = 1, 3 do
+		-- for j = 1, 6 do
+			-- WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j]:StripTextures()
+			-- WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j]:SetFrameLevel(WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j]:GetFrameLevel() + 2)
+			-- WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j]:CreateBackdrop("Overlay")
+			-- WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j].Border:Kill()
+		-- end
+	-- end
+
+    for i = 1, #WardrobeCollectionFrame.ItemsCollectionFrame.Models do
+        local model = WardrobeCollectionFrame.ItemsCollectionFrame.Models[i]
+		--FIXME model:StripTextures()
+		-- model:SetFrameLevel(model:GetFrameLevel() + 2)
+		-- model:CreateBackdrop("Overlay")
+		model.Border:Kill()
+    end
 
 	hooksecurefunc(WardrobeCollectionFrame.ItemsCollectionFrame, "UpdateItems", function(self)
 		local indexOffset = (self.PagingFrame:GetCurrentPage() - 1) * self.PAGE_SIZE
@@ -650,12 +658,17 @@ local function LoadSkin()
 		end
 	end)
 
-	for i = 1, 2 do
-		for j = 1, 4 do
-			WardrobeCollectionFrame.SetsTransmogFrame["ModelR"..i.."C"..j]:StripTextures()
-			WardrobeCollectionFrame.SetsTransmogFrame["ModelR"..i.."C"..j]:CreateBackdrop("Overlay")
-		end
-	end
+	-- for i = 1, 2 do
+		-- for j = 1, 4 do
+			-- WardrobeCollectionFrame.SetsTransmogFrame["ModelR"..i.."C"..j]:StripTextures()
+			-- WardrobeCollectionFrame.SetsTransmogFrame["ModelR"..i.."C"..j]:CreateBackdrop("Overlay")
+		-- end
+	-- end
+
+	-- FIXME
+	for i = 1, #WardrobeCollectionFrame.SetsTransmogFrame.Models do
+        local model = WardrobeCollectionFrame.SetsTransmogFrame.Models[i]
+    end
 
 	local function SkinSetItemButtons(self)
 		for itemFrame in self.DetailsFrame.itemFramesPool:EnumerateActive() do
@@ -668,8 +681,8 @@ local function LoadSkin()
 	-- Help box
 	local HelpBox = {
 		ToyBox.favoriteHelpBox,
-		HeirloomsJournal.UpgradeLevelHelpBox,
-		CollectionsJournal.WardrobeTabHelpBox,
+		--FIXME HeirloomsJournal.UpgradeLevelHelpBox,
+		-- CollectionsJournal.WardrobeTabHelpBox,
 		WardrobeCollectionFrame.ItemsCollectionFrame.HelpBox,
 		WardrobeCollectionFrame.SetsTabHelpBox,
 		WardrobeTransmogFrame.SpecHelpBox,

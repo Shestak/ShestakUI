@@ -150,7 +150,7 @@ local function LoadSkin()
 	end)
 
 	CommunitiesFrame.GuildFinderFrame:StripTextures()
-	CommunitiesFrame.GuildFinderFrame.FindAGuildButton:SkinButton()
+	--FIXME CommunitiesFrame.GuildFinderFrame.FindAGuildButton:SkinButton()
 
 	-- Notification Settings
 	local NotificationSettings = CommunitiesFrame.NotificationSettingsDialog
