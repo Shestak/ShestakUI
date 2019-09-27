@@ -4,35 +4,17 @@
 --	Accept invites from guild members or friend list(by ALZA)
 ----------------------------------------------------------------------------------------
 if C.automation.accept_invite == true then
-	local CheckFriend = function(name)
-		for i = 1, GetNumFriends() do
-			if GetFriendInfo(i) == name then
-				return true
-			end
-		end
-		for i = 1, select(2, BNGetNumFriends()) do
-			local presenceID, _, _, _, _, toonID, client, isOnline = BNGetFriendInfo(i)
-			if client == BNET_CLIENT_WOW and isOnline then
-				local _, toonName, _, realmName = BNGetGameAccountInfo(toonID or presenceID)
-				if name == toonName or name == toonName.."-"..realmName then
-					return true
-				end
-			end
-		end
-		if IsInGuild() then
-			for i = 1, GetNumGuildMembers() do
-				if Ambiguate(GetGuildRosterInfo(i), "none") == name then
-					return true
-				end
-			end
+	local function CheckFriend(inviterGUID)
+		if C_BattleNet.GetGameAccountInfoByGUID(inviterGUID) or C_FriendList.IsFriend(inviterGUID) or IsGuildMember(inviterGUID) then
+			return true
 		end
 	end
 
 	local ai = CreateFrame("Frame")
 	ai:RegisterEvent("PARTY_INVITE_REQUEST")
-	ai:SetScript("OnEvent", function(self, event, name)
+	ai:SetScript("OnEvent", function(self, event, name, _, _, _, _, _, inviterGUID)
 		if QueueStatusMinimapButton:IsShown() or GetNumGroupMembers() > 0 then return end
-		if CheckFriend(name) then
+		if CheckFriend(inviterGUID) then
 			RaidNotice_AddMessage(RaidWarningFrame, L_INFO_INVITE..name, {r = 0.41, g = 0.8, b = 0.94}, 3)
 			print(format("|cffffff00"..L_INFO_INVITE..name..".|r"))
 			AcceptGroup()
