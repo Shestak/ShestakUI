@@ -1362,6 +1362,7 @@ if friends.enabled then
 					GameTooltip:AddLine(" ")
 					GameTooltip:AddLine(BATTLENET_FRIEND)
 					for i = 1, BNtotal do
+						local accountInfo = C_BattleNet.GetFriendAccountInfo(i)
 						_, presenceName, battleTag, _, toonName, toonID, client, isOnline, _, isAFK, isDND = BNGetFriendInfo(i)
 						toonName = BNet_GetValidatedCharacterName(toonName, battleTag, client) or ""
 						if isOnline then
@@ -1374,7 +1375,7 @@ if friends.enabled then
 									status = ""
 								end
 							end
-							if client == BNET_CLIENT_WOW then
+							if accountInfo.gameAccountInfo.clientProgram == BNET_CLIENT_WOW then
 								local _, toonName, client, realmName, _, _, _, class, _, zoneName, level = BNGetGameAccountInfo(toonID)
 								for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
 								if GetLocale() ~= "enUS" then
@@ -1385,7 +1386,7 @@ if friends.enabled then
 									classc = {r = 1, g = 1, b = 1}
 								end
 								if UnitInParty(toonName) or UnitInRaid(toonName) then grouped = " |cffaaaaaa*|r" else grouped = "" end
-								GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r", client, levelc.r * 255, levelc.g * 255, levelc.b * 255, level, classc.r * 255, classc.g * 255, classc.b * 255, toonName, grouped, 255, 0, 0, status), presenceName, 238, 238, 238, 238, 238, 238)
+								GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r", client, levelc.r * 255, levelc.g * 255, levelc.b * 255, level, classc.r * 255, classc.g * 255, classc.b * 255, toonName, grouped, 255, 0, 0, status), accountInfo.accountName, 238, 238, 238, 238, 238, 238)
 								if self.altdown then
 									if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
 									if GetRealmName() == realmName then realm_r, realm_g, realm_b = 0.3, 1.0, 0.3 else realm_r, realm_g, realm_b = 0.65, 0.65, 0.65 end
@@ -1393,11 +1394,11 @@ if friends.enabled then
 								end
 							else
 								local _, _, _, _, _, _, _, _, _, _, _, gameText, _, _, _, _, _, isGameAFK, isGameBusy = BNGetGameAccountInfo(toonID)
-								if client == "BSAp" or client == "App" then
-									client = gameText
-								else
-									client = clientTags[client]
-								end
+								--FIXME if accountInfo.gameAccountInfo.clientProgram == "BSAp" or accountInfo.gameAccountInfo.clientProgram == "App" then
+									-- accountInfo.gameAccountInfo.clientProgram = gameText
+								-- else
+									-- accountInfo.gameAccountInfo.clientProgram = clientTags[accountInfo.gameAccountInfo.clientProgram]
+								-- end
 								if isGameAFK then
 									status = "|cffE7E716"..L_CHAT_AFK.."|r"
 								else
@@ -1407,7 +1408,7 @@ if friends.enabled then
 										status = ""
 									end
 								end
-								GameTooltip:AddDoubleLine("|cffeeeeee"..presenceName.."|r".." "..status, "|cffeeeeee"..client.."|r")
+								GameTooltip:AddDoubleLine("|cffeeeeee"..accountInfo.accountName.."|r".." "..status, "|cffeeeeee"..accountInfo.gameAccountInfo.clientProgram.."|r")
 							end
 						end
 					end
