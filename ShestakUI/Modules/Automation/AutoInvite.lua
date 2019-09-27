@@ -5,7 +5,7 @@
 ----------------------------------------------------------------------------------------
 if C.automation.accept_invite == true then
 	local function CheckFriend(inviterGUID)
-		if C_BattleNet.GetGameAccountInfoByGUID(inviterGUID) or C_FriendList.IsFriend(inviterGUID) or IsGuildMember(inviterGUID) then
+		if C_BattleNet.GetAccountInfoByGUID(inviterGUID) or C_FriendList.IsFriend(inviterGUID) or IsGuildMember(inviterGUID) then
 			return true
 		end
 	end
