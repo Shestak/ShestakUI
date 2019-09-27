@@ -108,9 +108,9 @@ hooksecurefunc("WhoList_Update", function()
 
 	for i = 1, WHOS_TO_DISPLAY, 1 do
 		local index = whoOffset + i
-		local nameText = _G["WhoFrameButton"..i.."Name"]
-		local levelText = _G["WhoFrameButton"..i.."Level"]
-		local variableText = _G["WhoFrameButton"..i.."Variable"]
+		local nameText = _G["WhoListScrollFrameButton"..i].Name
+		local levelText = _G["WhoListScrollFrameButton"..i].Level
+		local variableText = _G["WhoListScrollFrameButton"..i].Variable
 
 		local info = C_FriendList.GetWhoInfo(index)
 		if info then
