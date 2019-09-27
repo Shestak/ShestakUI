@@ -1405,11 +1405,11 @@ if friends.enabled then
 									GameTooltip:AddDoubleLine("  "..areaName, realmName, zone_r, zone_g, zone_b, realm_r, realm_g, realm_b)
 								end
 							else
-								--FIXME if client == "BSAp" or client == "App" then
-									-- client = gameText
-								-- else
+								if client == "App" then
+									client = accountInfo.gameAccountInfo.richPresence
+								else
 									client = clientTags[client]
-								-- end
+								end
 								if accountInfo.gameAccountInfo.isGameAFK then
 									status = "|cffE7E716"..L_CHAT_AFK.."|r"
 								else
