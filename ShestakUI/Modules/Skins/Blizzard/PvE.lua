@@ -94,6 +94,10 @@ local function LoadSkin()
 		T.SkinCheckBox(roleButton.checkButton or roleButton.CheckButton)
 	end
 
+	hooksecurefunc("SetCheckButtonIsRadio", function(button)
+		T.SkinCheckBox(button)
+	end)
+
 	local scrollbars = {
 		"ScenarioQueueFrameSpecificScrollFrameScrollBar",
 		"LFGListApplicationViewerScrollFrameScrollBar",
