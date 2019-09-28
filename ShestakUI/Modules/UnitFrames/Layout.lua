@@ -178,11 +178,14 @@ local function Shared(self, unit)
 	-- Names
 	if unit ~= "player" then
 		self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+		self.Info:SetWordWrap(false)
 		if unit ~= "arenatarget" then
 			self.Level = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		end
 		if unit == "target" then
 			self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
+			self.Info:SetPoint("LEFT", self.Health.value, "RIGHT", 0, 0)
+			self.Info:SetJustifyH("RIGHT")
 			self:Tag(self.Info, "[GetNameColor][NameLong]")
 			self.Level:SetPoint("RIGHT", self.Power, "RIGHT", 0, 0)
 			self:Tag(self.Level, "[cpoints] [Threat] [DiffColor][level][shortclassification]")
@@ -201,15 +204,23 @@ local function Shared(self, unit)
 		elseif unit == "arena" then
 			if C.unitframe.arena_on_right == true then
 				self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
+				self.Info:SetPoint("LEFT", self.Health.value, "RIGHT", 0, 0)
+				self.Info:SetJustifyH("RIGHT")
 			else
 				self.Info:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
+				self.Info:SetPoint("RIGHT", self.Health.value, "LEFT", 0, 0)
+				self.Info:SetJustifyH("LEFT")
 			end
 			self:Tag(self.Info, "[GetNameColor][NameMedium]")
 		elseif unit == "boss" then
 			if C.unitframe.boss_on_right == true then
 				self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
+				self.Info:SetPoint("LEFT", self.Health.value, "RIGHT", 0, 0)
+				self.Info:SetJustifyH("RIGHT")
 			else
 				self.Info:SetPoint("LEFT", self.Health, "LEFT", 2, 0)
+				self.Info:SetPoint("RIGHT", self.Health.value, "LEFT", 0, 0)
+				self.Info:SetJustifyH("LEFT")
 			end
 			self:Tag(self.Info, "[GetNameColor][NameMedium]")
 		else
