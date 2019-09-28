@@ -1225,8 +1225,6 @@ if C.unitframe.show_focus == true then
 	local focustarget = oUF:Spawn("focustarget", "oUF_FocusTarget")
 	focustarget:SetPoint(unpack(C.position.unitframes.focus_target))
 	focustarget:SetSize(105, 16)
-else
-	local focus = oUF:Spawn("focus", "oUF_Focus")
 end
 
 if C.unitframe.show_target_target == true then

@@ -352,7 +352,7 @@ SpellBinder:SetScript("OnEvent", function(self, event)
 		SpellBinder.UpdateAll()
 	elseif event == "PLAYER_TALENT_UPDATE" then
 		if DB then
-			for i, spell in ipairs(DB.spells) do
+			for _, spell in ipairs(DB.spells) do
 				for frame in pairs(ClickCastFrames) do
 					local f
 					if frame and type(frame) == "table" then f = frame:GetName() end

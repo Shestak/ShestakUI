@@ -50,7 +50,7 @@ local function GetValues()
 end
 
 -- Changed tooltip for ShestakUI
-local function UpdateTooltip(element)
+local function UpdateTooltip()
 	local cur, max, perc, rested, restedPerc, level, isHonor = GetValues()
 
 	GameTooltip:SetText(isHonor and HONOR_LEVEL_LABEL:format(level) or COMBAT_XP_GAIN.." "..format(LEVEL_GAINED, T.level), 0.40, 0.78, 1)
@@ -178,7 +178,6 @@ local function ElementDisable(self)
 end
 
 local function Visibility(self, event, unit)
-	local element = self.Experience
 	local shouldEnable
 
 	if(not UnitHasVehicleUI('player')) then

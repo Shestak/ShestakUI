@@ -14,10 +14,11 @@ Butsu:SetScript("OnEvent", function(self, event, ...)
 	self[event](self, event, ...)
 end)
 
-function Butsu:LOOT_OPENED(_, autoloot)
+function Butsu:LOOT_OPENED(_, ...)
 	self:Show()
 	lb:Show()
 
+	local autoLoot = ...
 	if not self:IsShown() then
 		CloseLoot(not autoLoot)
 	end

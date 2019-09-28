@@ -16,7 +16,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	if addon ~= "ShestakUI" or addon == "tekticles" then return end
 
 	local NORMAL = C.media.normal_font
-	local BLANK = C.media.blank_font
+	-- local BLANK = C.media.blank_font
 
 	UIDROPDOWNMENU_DEFAULT_TEXT_HEIGHT = 12
 	CHAT_FONT_HEIGHTS = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20}

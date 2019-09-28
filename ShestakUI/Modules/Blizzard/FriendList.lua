@@ -5,7 +5,6 @@
 ----------------------------------------------------------------------------------------
 local GUILD_INDEX_MAX = 12
 local SMOOTH = {1, 0, 0, 1, 1, 0, 0, 1, 0}
-local myName = UnitName("player")
 local BC = {}
 for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do
 	BC[v] = k
@@ -100,7 +99,6 @@ end
 
 -- WhoList
 local function whoFrame()
-	local whoOffset = FauxScrollFrame_GetOffset(WhoListScrollFrame)
 	local scrollFrame = WhoListScrollFrame
 	local offset = HybridScrollFrame_GetOffset(scrollFrame)
 	local buttons = scrollFrame.buttons
@@ -174,7 +172,7 @@ hooksecurefunc("WorldStateScoreFrame_Update", function()
 			local n, r = strsplit("-", name, 2)
 			n = classColor[class]..n.."|r"
 
-			if name == myName then
+			if name == T.name then
 				n = ">>> "..n.." <<<"
 			end
 
@@ -337,7 +335,6 @@ local FRIENDS_LEVEL_TEMPLATE = FRIENDS_LEVEL_TEMPLATE:gsub("%%d", "%%s")
 FRIENDS_LEVEL_TEMPLATE = FRIENDS_LEVEL_TEMPLATE:gsub("%$d", "%$s")
 local function friendsFrame()
 	local scrollFrame = FriendsListFrameScrollFrame
-	local offset = HybridScrollFrame_GetOffset(scrollFrame)
 	local buttons = scrollFrame.buttons
 
 	local playerArea = GetRealZoneText()
