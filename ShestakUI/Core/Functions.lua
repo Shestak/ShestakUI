@@ -166,21 +166,22 @@ T.SkinFuncs = {}
 T.SkinFuncs["ShestakUI"] = {}
 
 function T.SkinScrollBar(frame)
-	if frame:GetName() then
-		if _G[frame:GetName().."BG"] then
-			_G[frame:GetName().."BG"]:SetTexture(nil)
+	local frameName = frame.GetName and frame:GetName()
+	if frameName then
+		if _G[frameName.."BG"] then
+			_G[frameName.."BG"]:SetTexture(nil)
 		end
-		if _G[frame:GetName().."Track"] then
-			_G[frame:GetName().."Track"]:SetTexture(nil)
+		if _G[frameName.."Track"] then
+			_G[frameName.."Track"]:SetTexture(nil)
 		end
-		if _G[frame:GetName().."Top"] then
-			_G[frame:GetName().."Top"]:SetTexture(nil)
+		if _G[frameName.."Top"] then
+			_G[frameName.."Top"]:SetTexture(nil)
 		end
-		if _G[frame:GetName().."Bottom"] then
-			_G[frame:GetName().."Bottom"]:SetTexture(nil)
+		if _G[frameName.."Bottom"] then
+			_G[frameName.."Bottom"]:SetTexture(nil)
 		end
-		if _G[frame:GetName().."Middle"] then
-			_G[frame:GetName().."Middle"]:SetTexture(nil)
+		if _G[frameName.."Middle"] then
+			_G[frameName.."Middle"]:SetTexture(nil)
 		end
 	end
 
@@ -193,9 +194,9 @@ function T.SkinScrollBar(frame)
 	if frame.ScrollBarBottom then frame.ScrollBarBottom:SetTexture(nil) end
 	if frame.ScrollBarMiddle then frame.ScrollBarMiddle:SetTexture(nil) end
 
-	local UpButton = frame.ScrollUpButton or frame.ScrollUp or frame.UpButton or _G[frame:GetName() and frame:GetName().."ScrollUpButton"] or frame:GetParent().scrollUp
-	local DownButton = frame.ScrollDownButton or frame.ScrollDown or frame.DownButton or _G[frame:GetName() and frame:GetName().."ScrollDownButton"] or frame:GetParent().scrollDown
-	local ThumbTexture = frame.ThumbTexture or frame.thumbTexture or _G[frame:GetName() and frame:GetName().."ThumbTexture"]
+	local UpButton = frame.ScrollUpButton or frame.ScrollUp or frame.UpButton or _G[frameName and frameName.."ScrollUpButton"] or frame:GetParent().scrollUp
+	local DownButton = frame.ScrollDownButton or frame.ScrollDown or frame.DownButton or _G[frameName and frameName.."ScrollDownButton"] or frame:GetParent().scrollDown
+	local ThumbTexture = frame.ThumbTexture or frame.thumbTexture or _G[frameName and frameName.."ThumbTexture"]
 
 	if UpButton and DownButton then
 		if not UpButton.icon then
@@ -286,9 +287,10 @@ end
 
 function T.SkinNextPrevButton(btn, left, scroll)
 	local normal, pushed, disabled
-	local isPrevButton = btn:GetName() and (string.find(btn:GetName(), "Left") or string.find(btn:GetName(), "Prev") or string.find(btn:GetName(), "Decrement") or string.find(btn:GetName(), "Back")) or left
-	local isScrollUpButton = btn:GetName() and string.find(btn:GetName(), "ScrollUp") or scroll == "Up"
-	local isScrollDownButton = btn:GetName() and string.find(btn:GetName(), "ScrollDown") or scroll == "Down"
+	local frameName = btn.GetName and btn:GetName()
+	local isPrevButton = frameName and (string.find(frameName, "Left") or string.find(frameName, "Prev") or string.find(frameName, "Decrement") or string.find(frameName, "Back")) or left
+	local isScrollUpButton = frameName and string.find(frameName, "ScrollUp") or scroll == "Up"
+	local isScrollDownButton = frameName and string.find(frameName, "ScrollDown") or scroll == "Down"
 
 	if btn:GetNormalTexture() then
 		normal = btn:GetNormalTexture():GetTexture()
@@ -397,8 +399,9 @@ function T.SkinEditBox(frame, width, height)
 
 	frame:CreateBackdrop("Overlay")
 
-	if frame:GetName() and (frame:GetName():find("Gold") or frame:GetName():find("Silver") or frame:GetName():find("Copper")) then
-		if frame:GetName():find("Gold") then
+	local frameName = frame.GetName and frame:GetName()
+	if frameName and (frameName:find("Gold") or frameName:find("Silver") or frameName:find("Copper")) then
+		if frameName:find("Gold") then
 			frame.backdrop:SetPoint("TOPLEFT", -3, 1)
 			frame.backdrop:SetPoint("BOTTOMRIGHT", -3, 0)
 		else
