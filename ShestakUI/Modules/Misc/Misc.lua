@@ -135,14 +135,15 @@ strip:SetWidth(strip:GetTextWidth() + 40)
 strip:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
 strip:RegisterForClicks("AnyUp")
 strip:SetScript("OnClick", function(self, button)
+	local actor = self.model:GetPlayerActor()
 	if button == "RightButton" then
-		self.model:UndressSlot(19)
+		-- actor:UndressSlot(19) -- FIXME
 	else
-		self.model:Undress()
+		actor:Undress()
 	end
 	PlaySound(SOUNDKIT.GS_TITLE_OPTION_OK)
 end)
-strip.model = DressUpModel
+strip.model = DressUpFrame.ModelScene
 
 strip:RegisterEvent("AUCTION_HOUSE_SHOW")
 strip:RegisterEvent("AUCTION_HOUSE_CLOSED")
@@ -152,11 +153,11 @@ strip:SetScript("OnEvent", function(self)
 		self:ClearAllPoints()
 		self:SetPoint("TOP", SideDressUpModelResetButton, "BOTTOM", 0, -3)
 		self.model = SideDressUpModel
-	elseif self.model ~= DressUpModel then
-		self:SetParent(DressUpModel)
+	elseif self.model ~= DressUpFrame.ModelScene then
+		self:SetParent(DressUpFrame.ModelScene)
 		self:ClearAllPoints()
 		self:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
-		self.model = DressUpModel
+		self.model = DressUpFrame.ModelScene
 	end
 end)
 
