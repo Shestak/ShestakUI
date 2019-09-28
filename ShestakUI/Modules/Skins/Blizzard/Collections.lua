@@ -5,7 +5,7 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 local LoadTootlipSkin = CreateFrame("Frame")
 LoadTootlipSkin:RegisterEvent("ADDON_LOADED")
-LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
+LoadTootlipSkin:SetScript("OnEvent", function(self, _, addon)
 	if IsAddOnLoaded("Skinner") or IsAddOnLoaded("Aurora") or not C.tooltip.enable then
 		self:UnregisterEvent("ADDON_LOADED")
 		return
@@ -619,55 +619,32 @@ local function LoadSkin()
 		end
 	end)
 
-	-- for i = 1, 3 do
-		-- for j = 1, 6 do
-			-- WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j]:StripTextures()
-			-- WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j]:SetFrameLevel(WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j]:GetFrameLevel() + 2)
-			-- WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j]:CreateBackdrop("Overlay")
-			-- WardrobeCollectionFrame.ItemsCollectionFrame["ModelR"..i.."C"..j].Border:Kill()
-		-- end
-	-- end
-
     for i = 1, #WardrobeCollectionFrame.ItemsCollectionFrame.Models do
         local model = WardrobeCollectionFrame.ItemsCollectionFrame.Models[i]
-		--FIXME model:StripTextures()
-		-- model:SetFrameLevel(model:GetFrameLevel() + 2)
-		-- model:CreateBackdrop("Overlay")
-		model.Border:Kill()
+		model.Border:SetAlpha(0)
+		local bg = CreateFrame("Frame", nil, model)
+		bg:CreateBackdrop("Overlay")
+		bg.backdrop:SetOutside(model, 3, 3)
+
+		hooksecurefunc(model.Border, 'SetAtlas', function(_, texture)
+			local color
+			if texture == "transmog-wardrobe-border-uncollected" then
+				color = {0.3, 0.3, 1}
+			elseif texture == "transmog-wardrobe-border-unusable" then
+				color = {0.8, 0, 0}
+			else
+				color = C.media.border_color
+			end
+			bg.backdrop:SetBackdropBorderColor(unpack(color))
+		end)
     end
 
-	hooksecurefunc(WardrobeCollectionFrame.ItemsCollectionFrame, "UpdateItems", function(self)
-		local indexOffset = (self.PagingFrame:GetCurrentPage() - 1) * self.PAGE_SIZE
-		for i = 1, self.PAGE_SIZE do
-			local model = self.Models[i]
-			local index = i + indexOffset
-			local visualInfo = self.filteredVisualsList[index]
-			if visualInfo then
-				local color
-				if not visualInfo.isCollected then
-					color = {0.3, 0.3, 1}
-				elseif not visualInfo.isUsable then
-					color = {0.8, 0, 0}
-				else
-					color = C.media.border_color
-				end
-				if model.backdrop then
-					model.backdrop:SetBackdropBorderColor(unpack(color))
-				end
-			end
-		end
-	end)
-
-	-- for i = 1, 2 do
-		-- for j = 1, 4 do
-			-- WardrobeCollectionFrame.SetsTransmogFrame["ModelR"..i.."C"..j]:StripTextures()
-			-- WardrobeCollectionFrame.SetsTransmogFrame["ModelR"..i.."C"..j]:CreateBackdrop("Overlay")
-		-- end
-	-- end
-
-	-- FIXME
 	for i = 1, #WardrobeCollectionFrame.SetsTransmogFrame.Models do
         local model = WardrobeCollectionFrame.SetsTransmogFrame.Models[i]
+		model.Border:SetAlpha(0)
+		local bg = CreateFrame("Frame", nil, model)
+		bg:CreateBackdrop("Overlay")
+		bg.backdrop:SetOutside(model, 3, 3)
     end
 
 	local function SkinSetItemButtons(self)
@@ -681,8 +658,6 @@ local function LoadSkin()
 	-- Help box
 	local HelpBox = {
 		ToyBox.favoriteHelpBox,
-		--FIXME HeirloomsJournal.UpgradeLevelHelpBox,
-		-- CollectionsJournal.WardrobeTabHelpBox,
 		WardrobeCollectionFrame.ItemsCollectionFrame.HelpBox,
 		WardrobeCollectionFrame.SetsTabHelpBox,
 		WardrobeTransmogFrame.SpecHelpBox,
