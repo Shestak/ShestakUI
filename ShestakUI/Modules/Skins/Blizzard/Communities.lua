@@ -14,7 +14,11 @@ local function LoadSkin()
 		CommunitiesFrame.NotificationSettingsDialog.ScrollFrame.ScrollBar,
 		CommunitiesAvatarPickerDialogScrollBar,
 		CommunitiesGuildTextEditFrameScrollBar,
-		CommunitiesGuildLogFrameScrollBar
+		CommunitiesGuildLogFrameScrollBar,
+		ClubFinderCommunityAndGuildFinderFrame.CommunityCards.ListScrollFrame.scrollBar,
+		ClubFinderCommunityAndGuildFinderFrameScrollBar,
+		ClubFinderGuildFinderFrameScrollBar,
+		ClubFinderCommunityAndGuildFinderFrame.PendingCommunityCards.ListScrollFrame.scrollBar
 	}
 
 	for i = 1, #scrollbars do
@@ -100,7 +104,7 @@ local function LoadSkin()
 		end
 	end)
 
-	hooksecurefunc(CommunitiesListEntryMixin, "SetAddCommunity", function(self)
+	local function SkinCommunitiesButton(self, colorSection)
 		self:SetSize(166, 65)
 		self.Background:Hide()
 		self:SetFrameLevel(self:GetFrameLevel() + 5)
@@ -118,39 +122,115 @@ local function LoadSkin()
 			self.bg:SetPoint("BOTTOMRIGHT", -1, 3)
 		end
 
+		if colorSection then
+			self.Selection:SetInside(self.bg, 0, 0)
+			if colorSection == 1 then
+				self.Selection:SetColorTexture(GREEN_FONT_COLOR.r, GREEN_FONT_COLOR.g, GREEN_FONT_COLOR.b, 0.2)
+			else
+				self.Selection:SetColorTexture(BATTLENET_FONT_COLOR.r, BATTLENET_FONT_COLOR.g, BATTLENET_FONT_COLOR.b, 0.2)
+			end
+		end
+
 		local highlight = self:GetHighlightTexture()
 		highlight:SetColorTexture(1, 1, 1, 0.3)
 		highlight:SetInside(self.bg, 0, 0)
-	end)
+	end
 
 	hooksecurefunc(CommunitiesListEntryMixin, "SetGuildFinder", function(self)
-		self:SetSize(166, 65)
-		self.Background:Hide()
-		self:SetFrameLevel(self:GetFrameLevel() + 5)
-		self.CircleMask:Hide()
-
-		self.Icon:SetDrawLayer("OVERLAY", 1)
-		self.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		self.IconRing:Hide()
-
-		if not self.bg then
-			self.bg = CreateFrame("Frame", nil, self)
-			self.bg:CreateBackdrop("Overlay")
-			self.bg:SetFrameLevel(self:GetFrameLevel() - 2)
-			self.bg:SetPoint("TOPLEFT", 4, -3)
-			self.bg:SetPoint("BOTTOMRIGHT", -1, 3)
-		end
-
-		self.Selection:SetInside(self.bg, 0, 0)
-		self.Selection:SetColorTexture(GREEN_FONT_COLOR.r, GREEN_FONT_COLOR.g, GREEN_FONT_COLOR.b, 0.2)
-
-		local highlight = self:GetHighlightTexture()
-		highlight:SetColorTexture(1, 1, 1, 0.3)
-		highlight:SetInside(self.bg, 0, 0)
+		SkinCommunitiesButton(self, 1)
 	end)
 
+	hooksecurefunc(CommunitiesListEntryMixin, "SetFindCommunity", function(self)
+		SkinCommunitiesButton(self, 2)
+	end)
+
+	hooksecurefunc(CommunitiesListEntryMixin, "SetAddCommunity", function(self)
+		SkinCommunitiesButton(self)
+	end)
+
+	-- GuildFinderFrame
 	CommunitiesFrame.GuildFinderFrame:StripTextures()
-	--FIXME CommunitiesFrame.GuildFinderFrame.FindAGuildButton:SkinButton()
+	ClubFinderCommunityAndGuildFinderFrame:StripTextures()
+	ClubFinderGuildFinderFrame.OptionsList.Search:SkinButton()
+	ClubFinderCommunityAndGuildFinderFrame.OptionsList.Search:SkinButton()
+
+	T.SkinDropDownBox(ClubFinderGuildFinderFrame.OptionsList.ClubFocusDropdown)
+	T.SkinDropDownBox(ClubFinderGuildFinderFrame.OptionsList.ClubSizeDropdown)
+
+	T.SkinDropDownBox(ClubFinderCommunityAndGuildFinderFrame.OptionsList.ClubFocusDropdown)
+	T.SkinDropDownBox(ClubFinderCommunityAndGuildFinderFrame.OptionsList.SortByDropdown)
+
+	ClubFinderGuildFinderFrame.OptionsList.Search:ClearAllPoints()
+	ClubFinderGuildFinderFrame.OptionsList.Search:SetPoint("TOP", ClubFinderGuildFinderFrame.OptionsList.SearchBox, "BOTTOM", 0, -3)
+	T.SkinEditBox(ClubFinderGuildFinderFrame.OptionsList.SearchBox, 146, 18)
+
+	ClubFinderGuildFinderFrame.ClubFinderSearchTab:SetPoint("TOPLEFT", CommunitiesFrame, "TOPRIGHT", 5, -30)
+	ClubFinderCommunityAndGuildFinderFrame.ClubFinderSearchTab:SetPoint("TOPLEFT", CommunitiesFrame, "TOPRIGHT", 5, -30)
+
+	T.SkinCheckBox(ClubFinderGuildFinderFrame.OptionsList.TankRoleFrame.CheckBox)
+	T.SkinCheckBox(ClubFinderGuildFinderFrame.OptionsList.HealerRoleFrame.CheckBox)
+	T.SkinCheckBox(ClubFinderGuildFinderFrame.OptionsList.DpsRoleFrame.CheckBox)
+
+	T.SkinCheckBox(ClubFinderCommunityAndGuildFinderFrame.OptionsList.TankRoleFrame.CheckBox)
+	T.SkinCheckBox(ClubFinderCommunityAndGuildFinderFrame.OptionsList.HealerRoleFrame.CheckBox)
+	T.SkinCheckBox(ClubFinderCommunityAndGuildFinderFrame.OptionsList.DpsRoleFrame.CheckBox)
+
+	ClubFinderCommunityAndGuildFinderFrame.OptionsList.Search:ClearAllPoints()
+	ClubFinderCommunityAndGuildFinderFrame.OptionsList.Search:SetPoint("TOP", ClubFinderCommunityAndGuildFinderFrame.OptionsList.SearchBox, "BOTTOM", 0, -3)
+	T.SkinEditBox(ClubFinderCommunityAndGuildFinderFrame.OptionsList.SearchBox, 146, 18)
+
+	for _, button in pairs(ClubFinderCommunityAndGuildFinderFrame.CommunityCards.ListScrollFrame.buttons, ClubFinderCommunityAndGuildFinderFrame.PendingCommunityCards.ListScrollFrame.buttons) do
+		if not button.isSkinned then
+			button.CircleMask:Hide()
+			button.LogoBorder:Hide()
+
+			button:StripTextures()
+			button:CreateBackdrop("Overlay")
+			button.backdrop:SetPoint("TOPLEFT", 0, 0)
+			button.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
+			button:StyleButton()
+			button.CommunityLogo:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+			button.isSkinned = true
+		end
+	end
+
+	for _, card in pairs(ClubFinderGuildFinderFrame.GuildCards.Cards, ClubFinderGuildFinderFrame.PendingGuildCards.Cards) do
+		if not card.isSkinned then
+			card.CardBackground:Hide()
+			card.bg = CreateFrame("Frame", nil, card)
+			card.bg:CreateBackdrop("Overlay")
+			card.bg:SetFrameLevel(card:GetFrameLevel() - 2)
+			card.bg:SetPoint("TOPLEFT", 2, 3)
+			card.bg:SetPoint("BOTTOMRIGHT", -2, 3)
+			card.RequestJoin:SkinButton()
+			card.isSkinned = true
+		end
+	end
+
+	for _, t in ipairs({ClubFinderGuildFinderFrame.RequestToJoinFrame, ClubFinderCommunityAndGuildFinderFrame.RequestToJoinFrame}) do
+		t:StripTextures()
+		t:CreateBackdrop("Transparent")
+
+		hooksecurefunc(t, 'Initialize', function(self)
+			for button in self.SpecsPool:EnumerateActive() do
+				if button.CheckBox then
+					T.SkinCheckBox(button.CheckBox)
+					button.CheckBox:SetSize(26, 26)
+				end
+			end
+		end)
+
+		t.MessageFrame:StripTextures(true)
+		t.MessageFrame.MessageScroll:StripTextures(true)
+
+		t.MessageFrame.MessageScroll:CreateBackdrop("Overlay")
+		t.MessageFrame.MessageScroll.backdrop:SetPoint("TOPLEFT", -4, 5)
+		t.MessageFrame.MessageScroll.backdrop:SetPoint("BOTTOMRIGHT", 6, -6)
+
+		t.Apply:SkinButton()
+		t.Cancel:SkinButton()
+	end
 
 	-- Notification Settings
 	local NotificationSettings = CommunitiesFrame.NotificationSettingsDialog
@@ -224,6 +304,10 @@ local function LoadSkin()
 	SkinTab(CommunitiesFrame.RosterTab)
 	SkinTab(CommunitiesFrame.GuildBenefitsTab)
 	SkinTab(CommunitiesFrame.GuildInfoTab)
+	SkinTab(ClubFinderGuildFinderFrame.ClubFinderSearchTab)
+	SkinTab(ClubFinderGuildFinderFrame.ClubFinderPendingTab)
+	SkinTab(ClubFinderCommunityAndGuildFinderFrame.ClubFinderSearchTab)
+	SkinTab(ClubFinderCommunityAndGuildFinderFrame.ClubFinderPendingTab)
 
 	-- Member List
 	CommunitiesFrame.MemberList:StripTextures()
