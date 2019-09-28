@@ -22,6 +22,11 @@ local BuffsAnchor = CreateFrame("Frame", "BuffsAnchor", UIParent)
 BuffsAnchor:SetPoint(unpack(C.position.player_buffs))
 BuffsAnchor:SetSize((15 * C.aura.player_buff_size) + 42, (C.aura.player_buff_size * 2) + 3)
 
+TemporaryEnchantFrame:SetPoint(unpack(C.position.player_buffs))
+
+_G["TempEnchant2"]:ClearAllPoints()
+_G["TempEnchant2"]:SetPoint("RIGHT", _G["TempEnchant1"], "LEFT", -3, 0)
+
 for i = 1, NUM_TEMP_ENCHANT_FRAMES do
 	local buff = _G["TempEnchant"..i]
 	local icon = _G["TempEnchant"..i.."Icon"]
@@ -49,11 +54,6 @@ for i = 1, NUM_TEMP_ENCHANT_FRAMES do
 	duration:SetDrawLayer("ARTWORK")
 	duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 	duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
-
-	TemporaryEnchantFrame:SetPoint(unpack(C.position.player_buffs))
-
-	_G["TempEnchant2"]:ClearAllPoints()
-	_G["TempEnchant2"]:SetPoint("RIGHT", _G["TempEnchant1"], "LEFT", -3, 0)
 end
 
 local function StyleBuffs(buttonName, index)
@@ -155,7 +155,31 @@ local function UpdateDebuffAnchors(buttonName, index)
 	_G[buttonName..index]:Hide()
 end
 
-AuraButton_UpdateDuration = function() end
-
 hooksecurefunc("BuffFrame_UpdateAllBuffAnchors", UpdateBuffAnchors)
 hooksecurefunc("DebuffButton_UpdateAnchors", UpdateDebuffAnchors)
+
+function AuraButton_UpdateDuration(buff, timeLeft)
+	local name = buff:GetName()
+	if not strmatch(name, "TempEnchant") then return end
+
+	buff.timeLeft = timeLeft
+	if not buff.timerEnchant then
+		buff.timerEnchant = buff:CreateAnimationGroup()
+		buff.timerAnim = buff.timerEnchant:CreateAnimation()
+		buff.timerAnim:SetDuration(0.1)
+
+		buff.timerEnchant:SetScript("OnFinished", function(self, requested)
+			if not requested then
+				if buff.timeLeft and C.aura.show_timer == true then
+					buff.duration:SetFormattedText(GetFormattedTime(buff.timeLeft))
+					buff.duration:SetVertexColor(1, 1, 1)
+					buff.duration:Show()
+				else
+					self:Stop()
+				end
+				self:Play()
+			end
+		end)
+		buff.timerEnchant:Play()
+	end
+end
