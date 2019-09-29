@@ -110,7 +110,7 @@ local function LoadSkin()
 
 			if b and not b.reskinned then
 				t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				t:SetPoint("LEFT", c, "RIGHT", 2, 0)
+				c:SetPoint("RIGHT", t, "LEFT", -3, 0)
 
 				b:CreateBackdrop("Default")
 				b.backdrop:SetPoint("TOPLEFT", t, "TOPLEFT", -2, 2)
