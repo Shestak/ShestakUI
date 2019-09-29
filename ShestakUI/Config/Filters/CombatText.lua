@@ -312,6 +312,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[211076] = 3		-- Mark of Aluneth
 		T.merge[210817] = 44425		-- Arcane Rebound
 		T.aoespam[44425] = 1.2		-- Arcane Barrage
+		T.aoespam[277703] = 3		-- Trailing Embers
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
