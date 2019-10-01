@@ -7,17 +7,18 @@ local top, below = _G["UIWidgetTopCenterContainerFrame"], _G["UIWidgetBelowMinim
 local topAnchor = CreateFrame("Frame", "UIWidgetTopAnchor", UIParent)
 topAnchor:SetSize(200, 30)
 topAnchor:SetPoint(unpack(C.position.uiwidget))
+
 _G["UIWidgetTopCenterContainerFrame"]:ClearAllPoints()
-_G["UIWidgetTopCenterContainerFrame"]:SetPoint("CENTER", topAnchor)
+_G["UIWidgetTopCenterContainerFrame"]:SetPoint("TOP", topAnchor)
 
 local belowAnchor = CreateFrame("Frame", "UIWidgetBelowAnchor", UIParent)
-belowAnchor:SetSize(100, 30)
+belowAnchor:SetSize(150, 30)
 belowAnchor:SetPoint(unpack(C.position.uiwidget))
 
 hooksecurefunc(below, "SetPoint", function(self, _, anchor)
 	if anchor and anchor ~= belowAnchor then
 		self:ClearAllPoints()
-		self:SetPoint("CENTER", belowAnchor)
+		self:SetPoint("TOP", belowAnchor)
 	end
 end)
 
