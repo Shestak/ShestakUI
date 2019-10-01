@@ -1527,7 +1527,7 @@ if talents.enabled then
 				end
 			end
 
-			self.text:SetText(format("%s:%s  %s:%s", L_STATS_SPEC, specIcon, lootText, lootIcon))
+			self.text:SetFormattedText("%s:%s  %s:%s", L_STATS_SPEC, specIcon, lootText, lootIcon)
 			if specIcon and C.font.stats_font_size ~= 15 and C.font.stats_font_size ~= 17 then
 				local point, relativeTo, relativePoint, xOfs = self.text:GetPoint()
 				self.text:SetPoint(point, relativeTo, relativePoint, xOfs, -1)

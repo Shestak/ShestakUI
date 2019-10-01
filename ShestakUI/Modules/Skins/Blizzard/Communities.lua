@@ -25,6 +25,20 @@ local function LoadSkin()
 		T.SkinScrollBar(scrollbars[i])
 	end
 
+	local closeButton = {
+		CommunitiesGuildNewsFiltersFrame.CloseButton,
+		CommunitiesGuildLogFrameCloseButton,
+		CommunitiesFrameCloseButton,
+		CommunitiesFrame.GuildMemberDetailFrame.CloseButton,
+		CommunitiesGuildRecruitmentFrameCloseButton,
+		CommunitiesGuildTextEditFrameCloseButton
+	}
+
+	for i = 1, #closeButton do
+		T.SkinCloseButton(closeButton[i])
+	end
+
+	-- General Communities Frame
 	CommunitiesFrame:StripTextures()
 	CommunitiesFrame:CreateBackdrop("Transparent")
 	CommunitiesFrame.NineSlice:Hide()
@@ -32,7 +46,6 @@ local function LoadSkin()
 	CommunitiesFrameCommunitiesList:StripTextures()
 
 	T.SkinMaxMinFrame(CommunitiesFrame.MaximizeMinimizeFrame, CommunitiesFrameCloseButton)
-	T.SkinCloseButton(CommunitiesFrameCloseButton)
 
 	CommunitiesFrame.InviteButton:SkinButton()
 
@@ -372,7 +385,6 @@ local function LoadSkin()
 	CommunitiesFrame.GuildMemberDetailFrame.NoteBackground:SetTemplate("Overlay")
 	CommunitiesFrame.GuildMemberDetailFrame.OfficerNoteBackground:SetTemplate("Overlay")
 	T.SkinDropDownBox(CommunitiesFrame.GuildMemberDetailFrame.RankDropdown, 160)
-	T.SkinCloseButton(CommunitiesFrame.GuildMemberDetailFrame.CloseButton)
 	CommunitiesFrame.GuildMemberDetailFrame.RemoveButton:SkinButton()
 	CommunitiesFrame.GuildMemberDetailFrame.GroupInviteButton:SkinButton()
 	CommunitiesFrame.GuildMemberDetailFrame.RemoveButton:ClearAllPoints()
@@ -381,7 +393,6 @@ local function LoadSkin()
 	-- Recruitment
 	CommunitiesGuildRecruitmentFrame:StripTextures()
 	CommunitiesGuildRecruitmentFrame:CreateBackdrop("Transparent")
-	T.SkinCloseButton(CommunitiesGuildRecruitmentFrameCloseButton)
 
 	for i = 1, 2 do
 		T.SkinTab(_G["CommunitiesGuildRecruitmentFrameTab"..i], true)
@@ -494,7 +505,6 @@ local function LoadSkin()
 	CommunitiesGuildTextEditFrame.Container:SetTemplate("Overlay")
 	CommunitiesGuildTextEditFrameAcceptButton:SkinButton()
 	select(4, CommunitiesGuildTextEditFrame:GetChildren()):SkinButton()
-	T.SkinCloseButton(CommunitiesGuildTextEditFrameCloseButton)
 
 	-- Guild Log
 	CommunitiesGuildLogFrame:StripTextures()
@@ -502,14 +512,12 @@ local function LoadSkin()
 	CommunitiesGuildLogFrame.Container:SetTemplate("Overlay")
 	CommunitiesGuildLogFrame:SetTemplate("Transparent")
 	select(3, CommunitiesGuildLogFrame:GetChildren()):SkinButton()
-	T.SkinCloseButton(CommunitiesGuildLogFrameCloseButton)
 	CommunitiesFrame.GuildLogButton:SkinButton()
 	CommunitiesFrame.GuildLogButton:SetPoint("BOTTOMLEFT", CommunitiesFrame, "BOTTOMLEFT", 196, 5)
 
 	-- Filters Frame
 	CommunitiesGuildNewsFiltersFrame:StripTextures()
 	CommunitiesGuildNewsFiltersFrame:SetTemplate("Transparent")
-	T.SkinCloseButton(CommunitiesGuildNewsFiltersFrame.CloseButton)
 
 	for i = 1, #CommunitiesGuildNewsFiltersFrame.GuildNewsFilterButtons do
 		local checkbox = CommunitiesGuildNewsFiltersFrame.GuildNewsFilterButtons[i]

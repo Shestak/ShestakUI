@@ -6,69 +6,70 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	local StripAllTextures = {
-		"PVEFrame",
-		"PVEFrameLeftInset",
-		"LFDParentFrame",
-		"LFDParentFrameInset",
-		"RaidFinderFrame",
-		"RaidFinderQueueFrame",
-		"RaidFinderFrameBottomInset",
-		"RaidFinderFrameRoleInset",
-		"ScenarioFinderFrame",
-		"LFGDungeonReadyDialog",
-		"LFGDungeonReadyStatus",
-		"LFDQueueFrameCooldownFrame",
-		"RaidFinderQueueFrameCooldownFrame",
-		"RaidFinderQueueFramePartyBackfill",
-		"LFDQueueFramePartyBackfill",
-		"LFDQueueFrame",
-		"LFGListApplicationDialog"
+		PVEFrame,
+		PVEFrameLeftInset,
+		LFDParentFrame,
+		LFDParentFrameInset,
+		RaidFinderFrame,
+		RaidFinderQueueFrame,
+		RaidFinderFrameBottomInset,
+		RaidFinderFrameRoleInset,
+		ScenarioFinderFrame,
+		LFGDungeonReadyDialog,
+		LFGDungeonReadyStatus,
+		LFDQueueFrameCooldownFrame,
+		RaidFinderQueueFrameCooldownFrame,
+		RaidFinderQueueFramePartyBackfill,
+		LFDQueueFramePartyBackfill,
+		LFDQueueFrame,
+		LFGListApplicationDialog
 	}
 
-	for _, object in pairs(StripAllTextures) do
-		_G[object]:StripTextures()
+	for i = 1, #StripAllTextures do
+		StripAllTextures[i]:StripTextures()
 	end
 
 	local KillTextures = {
-		"LFDQueueFrameBackground",
-		"PVEFramePortrait",
-		"ScenarioFinderFrameInset",
-		"LFGDungeonReadyDialogBackground",
-		"RaidFinderQueueFrameBackground",
-		"LFGDungeonReadyDialogBottomArt",
-		"LFGDungeonReadyDialogFiligree",
-		"ScenarioQueueFrameRandomScrollFrameScrollBackground",
-		"ScenarioQueueFrameRandomScrollFrameScrollBackgroundTopLeft",
-		"ScenarioQueueFrameRandomScrollFrameScrollBackgroundBottomRight",
-		"RaidFinderQueueFrameScrollFrameScrollBackground",
-		"RaidFinderQueueFrameScrollFrameScrollBackgroundTopLeft",
-		"RaidFinderQueueFrameScrollFrameScrollBackgroundBottomRight"
+		LFDQueueFrameBackground,
+		PVEFramePortrait,
+		ScenarioFinderFrameInset,
+		LFGDungeonReadyDialogBackground,
+		RaidFinderQueueFrameBackground,
+		LFGDungeonReadyDialogBottomArt,
+		LFGDungeonReadyDialogFiligree,
+		ScenarioQueueFrameRandomScrollFrameScrollBackground,
+		ScenarioQueueFrameRandomScrollFrameScrollBackgroundTopLeft,
+		ScenarioQueueFrameRandomScrollFrameScrollBackgroundBottomRight,
+		RaidFinderQueueFrameScrollFrameScrollBackground,
+		RaidFinderQueueFrameScrollFrameScrollBackgroundTopLeft,
+		RaidFinderQueueFrameScrollFrameScrollBackgroundBottomRight,
+		PVEFrame.shadows,
+		LFGListFrame.EntryCreation.ActivityFinder.Background
 	}
 
-	for _, texture in pairs(KillTextures) do
-		_G[texture]:Kill()
+	for i = 1, #KillTextures do
+		KillTextures[i]:Kill()
 	end
 
 	local buttons = {
-		"LFDQueueFrameFindGroupButton",
-		"RaidFinderFrameFindRaidButton",
-		"ScenarioQueueFrameFindGroupButton",
-		"LFGDungeonReadyDialogLeaveQueueButton",
-		"LFGDungeonReadyDialogEnterDungeonButton",
-		"RaidFinderQueueFramePartyBackfillBackfillButton",
-		"RaidFinderQueueFramePartyBackfillNoBackfillButton",
-		"LFDQueueFramePartyBackfillBackfillButton",
-		"LFDQueueFramePartyBackfillNoBackfillButton",
-		"LFGInvitePopupAcceptButton",
-		"LFGInvitePopupDeclineButton"
+		LFDQueueFrameFindGroupButton,
+		RaidFinderFrameFindRaidButton,
+		ScenarioQueueFrameFindGroupButton,
+		LFGDungeonReadyDialogLeaveQueueButton,
+		LFGDungeonReadyDialogEnterDungeonButton,
+		RaidFinderQueueFramePartyBackfillBackfillButton,
+		RaidFinderQueueFramePartyBackfillNoBackfillButton,
+		LFDQueueFramePartyBackfillBackfillButton,
+		LFDQueueFramePartyBackfillNoBackfillButton,
+		LFGInvitePopupAcceptButton,
+		LFGInvitePopupDeclineButton,
+		LFGListApplicationDialog.SignUpButton,
+		LFGListApplicationDialog.CancelButton
 	}
 
 	for i = 1, #buttons do
-		_G[buttons[i]]:SkinButton()
+		buttons[i]:SkinButton()
 	end
-
-	LFGListApplicationDialog.SignUpButton:SkinButton()
-	LFGListApplicationDialog.CancelButton:SkinButton()
 
 	local checkButtons = {
 		LFDQueueFrameRoleButtonTank,
@@ -99,19 +100,18 @@ local function LoadSkin()
 	end)
 
 	local scrollbars = {
-		"ScenarioQueueFrameSpecificScrollFrameScrollBar",
-		"LFGListApplicationViewerScrollFrameScrollBar",
-		"LFDQueueFrameSpecificListScrollFrameScrollBar",
-		"LFDQueueFrameRandomScrollFrameScrollBar",
-		"RaidFinderQueueFrameScrollFrameScrollBar",
-		"LFGListEntryCreationSearchScrollFrameScrollBar"
+		ScenarioQueueFrameSpecificScrollFrameScrollBar,
+		LFGListApplicationViewerScrollFrameScrollBar,
+		LFDQueueFrameSpecificListScrollFrameScrollBar,
+		LFDQueueFrameRandomScrollFrameScrollBar,
+		RaidFinderQueueFrameScrollFrameScrollBar,
+		LFGListEntryCreationSearchScrollFrameScrollBar,
+		LFGListFrame.SearchPanel.ScrollFrame.scrollBar
 	}
 
-	for _, scrollbar in pairs(scrollbars) do
-		T.SkinScrollBar(_G[scrollbar])
+	for i = 1, #scrollbars do
+		T.SkinScrollBar(scrollbars[i])
 	end
-
-	T.SkinScrollBar(LFGListFrame.SearchPanel.ScrollFrame.scrollBar)
 
 	for i = 1, 4 do
 		local button = GroupFinderFrame["groupButton"..i]
@@ -214,7 +214,6 @@ local function LoadSkin()
 	LFGListApplicationDialog:SetTemplate("Transparent")
 	PVEFrame:CreateBackdrop("Transparent")
 	PVEFrame.backdrop:SetAllPoints()
-	PVEFrame.shadows:Kill()
 	ScenarioQueueFrame.Bg:Hide()
 
 	LFDQueueFrameNoLFDWhileLFR:CreateBackdrop("Overlay")
@@ -364,7 +363,6 @@ local function LoadSkin()
 	LFGListFrame.EntryCreation.ListGroupButton:SkinButton()
 	LFGListFrame.EntryCreation.CancelButton:SkinButton()
 
-	LFGListFrame.EntryCreation.ActivityFinder.Background:Kill()
 	LFGListFrame.EntryCreation.ActivityFinder.Dialog:StripTextures()
 	LFGListFrame.EntryCreation.ActivityFinder.Dialog:SetTemplate("Transparent")
 	LFGListFrame.EntryCreation.ActivityFinder.Dialog.BorderFrame:StripTextures()
