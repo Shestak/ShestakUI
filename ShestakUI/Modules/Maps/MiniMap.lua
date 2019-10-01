@@ -144,7 +144,7 @@ GhostFrameContentsFrame.backdrop:SetPoint("BOTTOMRIGHT", GhostFrameContentsFrame
 
 -- Enable mouse scrolling
 Minimap:EnableMouseWheel(true)
-Minimap:SetScript("OnMouseWheel", function(self, d)
+Minimap:SetScript("OnMouseWheel", function(_, d)
 	if d > 0 then
 		_G.MinimapZoomIn:Click()
 	elseif d < 0 then
@@ -155,7 +155,7 @@ end)
 -- Hide Game Time
 MinimapAnchor:RegisterEvent("PLAYER_LOGIN")
 MinimapAnchor:RegisterEvent("ADDON_LOADED")
-MinimapAnchor:SetScript("OnEvent", function(self, event, addon)
+MinimapAnchor:SetScript("OnEvent", function(_, _, addon)
 	if addon == "Blizzard_TimeManager" then
 		TimeManagerClockButton:Kill()
 	end

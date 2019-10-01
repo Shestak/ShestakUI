@@ -347,7 +347,7 @@ if not addonInfo then
 	end
 end
 
-local function addonEnableToggle(self, i)
+local function addonEnableToggle(_, i)
 	local was_enabled = addonInfo[i].enabled
 	for j = 1, GetNumAddOns() do
 		if (addonInfo[j].parent == i and addonInfo[i].collapsed) or (i == j and not addonInfo[addonInfo[i].parent].collapsed) then
@@ -361,7 +361,7 @@ local function addonEnableToggle(self, i)
 	end
 end
 
-local function addonFrameToggle(self, i)
+local function addonFrameToggle(_, i)
 	local name = GetAddOnInfo(i)
 	if C.toggleaddons[name] then
 		if IsAddOnLoaded(i) then
@@ -487,7 +487,7 @@ for i = 1, GetNumAddOns() do
 			end
 			GameTooltip:Show()
 		end)
-		expandAddonButton:HookScript("OnLeave", function(self)
+		expandAddonButton:HookScript("OnLeave", function()
 			GameTooltip:Hide()
 		end)
 

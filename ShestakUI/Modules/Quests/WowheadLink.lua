@@ -95,7 +95,7 @@ end)
 
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")
-frame:SetScript("OnEvent", function(self, event, addon)
+frame:SetScript("OnEvent", function(_, _, addon)
 	if addon == "Blizzard_AchievementUI" then
 		hooksecurefunc("AchievementButton_OnClick", function(self)
 			if self.id and IsControlKeyDown() then

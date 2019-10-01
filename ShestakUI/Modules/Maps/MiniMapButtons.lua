@@ -21,7 +21,7 @@ switch.t:SetPoint("BOTTOMRIGHT", switch, -2, 2)
 
 switch:EnableMouse(true)
 switch:RegisterForClicks("AnyUp")
-switch:SetScript("OnClick", function(self, button)
+switch:SetScript("OnClick", function(_, button)
 	if button == "LeftButton" then
 		SavedOptions.RaidLayout = "HEAL"
 		ReloadUI()
@@ -51,7 +51,7 @@ switch:SetScript("OnLeave", function()
 end)
 
 switch:RegisterEvent("PLAYER_LOGIN")
-switch:SetScript("OnEvent", function(self)
+switch:SetScript("OnEvent", function()
 	if SavedOptions and SavedOptions.RaidLayout == "DPS" then
 		switch.t:SetTexCoord(0.25, 0.5, 0, 1)
 	elseif SavedOptions and SavedOptions.RaidLayout == "HEAL" then

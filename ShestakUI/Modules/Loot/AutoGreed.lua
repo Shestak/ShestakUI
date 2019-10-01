@@ -7,7 +7,7 @@ if C.loot.auto_greed ~= true or T.level ~= MAX_PLAYER_LEVEL then return end
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("START_LOOT_ROLL")
 frame:SetScript("OnEvent", function(_, _, id)
-	local _, name, _, quality, BoP, canNeed, _, canDisenchant = GetLootRollItemInfo(id)
+	local _, _, _, quality, BoP, _, _, canDisenchant = GetLootRollItemInfo(id)
 	if id and quality == 2 and not BoP then
 		local link = GetLootRollItemLink(id)
 		local _, _, _, ilevel = GetItemInfo(link)

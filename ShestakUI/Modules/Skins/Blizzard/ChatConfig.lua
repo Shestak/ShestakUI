@@ -184,7 +184,7 @@ local function LoadSkin()
 		frame.styled = true
 	end)
 
-	ChatConfigBackgroundFrame:SetScript("OnShow", function(self)
+	ChatConfigBackgroundFrame:SetScript("OnShow", function()
 		ReskinColourSwatch(CombatConfigColorsColorizeSpellNamesColorSwatch)
 		ReskinColourSwatch(CombatConfigColorsColorizeDamageNumberColorSwatch)
 

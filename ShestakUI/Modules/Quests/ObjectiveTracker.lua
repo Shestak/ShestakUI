@@ -119,7 +119,7 @@ hooksecurefunc(QUEST_TRACKER_MODULE, "Update", function()
 	end
 end)
 
-hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "AddObjective", function(self, block)
+hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "AddObjective", function(_, block)
 	if block.module == ACHIEVEMENT_TRACKER_MODULE then
 		block.HeaderText:SetTextColor(0.75, 0.61, 0)
 		block.HeaderText.col = nil

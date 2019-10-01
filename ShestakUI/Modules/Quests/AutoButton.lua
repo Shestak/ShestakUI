@@ -13,7 +13,7 @@ local function AutoButtonHide()
 		AutoButton:EnableMouse(false)
 	else
 		AutoButton:RegisterEvent("PLAYER_REGEN_ENABLED")
-		AutoButton:SetScript("OnEvent", function(self, event)
+		AutoButton:SetScript("OnEvent", function(_, event)
 			if event == "PLAYER_REGEN_ENABLED" then
 				AutoButton:EnableMouse(false)
 				AutoButton:UnregisterEvent("PLAYER_REGEN_ENABLED")
@@ -31,7 +31,7 @@ local function AutoButtonShow(item)
 		end
 	else
 		AutoButton:RegisterEvent("PLAYER_REGEN_ENABLED")
-		AutoButton:SetScript("OnEvent", function(self, event)
+		AutoButton:SetScript("OnEvent", function(_, event)
 			if event == "PLAYER_REGEN_ENABLED" then
 				AutoButton:EnableMouse(true)
 				if item then

@@ -53,7 +53,7 @@ local function GetPlayerMapPos(mapID)
 end
 
 local int = 0
-WorldMapFrame:HookScript("OnUpdate", function(self)
+WorldMapFrame:HookScript("OnUpdate", function()
 	int = int + 1
 	if int >= 3 then
 		local unitMap = C_Map.GetBestMapForUnit("player")

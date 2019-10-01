@@ -5,7 +5,7 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 local LoadTootlipSkin = CreateFrame("Frame")
 LoadTootlipSkin:RegisterEvent("ADDON_LOADED")
-LoadTootlipSkin:SetScript("OnEvent", function(self, event, addon)
+LoadTootlipSkin:SetScript("OnEvent", function(self, _, addon)
 	if IsAddOnLoaded("Skinner") or IsAddOnLoaded("Aurora") or not C.tooltip.enable then
 		self:UnregisterEvent("ADDON_LOADED")
 		return

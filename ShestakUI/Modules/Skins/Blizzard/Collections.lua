@@ -444,7 +444,7 @@ local function LoadSkin()
 		end
 	end)
 
-	hooksecurefunc(HeirloomsJournal, "UpdateButton", function(self, button)
+	hooksecurefunc(HeirloomsJournal, "UpdateButton", function(_, button)
 		if not button.styled then
 			button:StyleButton(nil, 0)
 			button:CreateBackdrop("Default")
@@ -541,7 +541,7 @@ local function LoadSkin()
 	WardrobeCollectionFrameScrollFrameScrollBar:SetPoint("TOPLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame, "TOPRIGHT", 4, 15)
 	WardrobeCollectionFrameScrollFrameScrollBar:SetPoint("BOTTOMLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame, "BOTTOMRIGHT", 4, 14)
 
-	local function SetItemQuality(self, itemFrame)
+	local function SetItemQuality(_, itemFrame)
 		if (itemFrame.backdrop) then
 			local _, _, quality = GetItemInfo(itemFrame.itemID);
 			local alpha = 1
