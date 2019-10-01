@@ -474,6 +474,7 @@ local function style(self, unit)
 	self.Name:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
 	self.Name:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -3, 4)
 	self.Name:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 3, 4)
+	self.Name:SetWordWrap(false)
 
 	if C.nameplate.name_abbrev == true then
 		self:Tag(self.Name, "[NameplateNameColor][NameLongAbbrev]")

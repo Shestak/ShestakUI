@@ -67,7 +67,7 @@ for i, spell in pairs(spells) do
 
 	l:SetPoint("LEFT", b, "LEFT", 2, 0)
 	l:SetPoint("RIGHT", b, "RIGHT", -2, 0)
-	l:SetHeight(C.media.pixel_font_size)
+	l:SetWordWrap(false)
 
 	b:SetFontString(l)
 

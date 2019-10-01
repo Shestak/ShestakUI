@@ -938,7 +938,7 @@ local function Shared(self, unit)
 			self.Castbar.Text:SetPoint("LEFT", self.Castbar, "LEFT", 2, 0)
 			self.Castbar.Text:SetTextColor(1, 1, 1)
 			self.Castbar.Text:SetJustifyH("LEFT")
-			self.Castbar.Text:SetHeight(C.font.unit_frames_font_size)
+			self.Castbar.Text:SetWordWrap(false)
 			self.Castbar.Text:SetWidth(self.Castbar:GetWidth() - 50)
 
 			if C.unitframe.castbar_icon == true and unit ~= "arena" then
