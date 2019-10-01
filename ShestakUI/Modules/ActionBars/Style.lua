@@ -287,6 +287,7 @@ end
 
 hooksecurefunc("ActionButton_Update", StyleNormalButton)
 hooksecurefunc("ActionButton_UpdateFlyout", StyleFlyoutButton)
+hooksecurefunc("SpellButton_OnClick", StyleFlyoutButton)
 if C.actionbar.hotkey == true then
 	hooksecurefunc("ActionButton_UpdateHotkeys", UpdateHotkey)
 end
