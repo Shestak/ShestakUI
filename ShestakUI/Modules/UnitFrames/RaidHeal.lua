@@ -76,10 +76,13 @@ local function Shared(self, unit)
 
 	-- Names
 	self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+	self.Info:SetWordWrap(false)
 	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
-		self.Info:SetPoint("CENTER", self.Health, "CENTER", 0, 0)
+		self.Info:SetPoint("LEFT", self.Health, "LEFT", 0, 0)
+		self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
 	else
-		self.Info:SetPoint("TOP", self.Health, "TOP", 0, -4)
+		self.Info:SetPoint("TOPLEFT", self.Health, "TOPLEFT", 0, -4)
+		self.Info:SetPoint("TOPRIGHT", self.Health, "TOPRIGHT", 0, -4)
 	end
 	self:Tag(self.Info, "[GetNameColor][NameShort]")
 
