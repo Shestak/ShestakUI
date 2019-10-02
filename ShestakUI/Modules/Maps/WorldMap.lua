@@ -25,7 +25,7 @@ coords:SetFrameLevel(WorldMapFrame.BorderFrame:GetFrameLevel() + 2)
 coords:SetFrameStrata(WorldMapFrame.BorderFrame:GetFrameStrata())
 
 coords.PlayerText = coords:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-coords.PlayerText:SetPoint("BOTTOM", WorldMapFrame.ScrollContainer, "BOTTOM", 5, 20)
+coords.PlayerText:SetPoint("BOTTOMLEFT", WorldMapFrame.ScrollContainer, "BOTTOM", -40, 20)
 coords.PlayerText:SetJustifyH("LEFT")
 coords.PlayerText:SetText(UnitName("player")..": 0,0")
 
