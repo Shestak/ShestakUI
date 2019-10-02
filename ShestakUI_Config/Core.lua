@@ -161,7 +161,11 @@ end
 
 local function onValueChanged(self, value)
 	if self.step < 1 then
-		value = tonumber(string.format("%.2f", value))
+		if self.option == "uiscale" then
+			value = tonumber(string.format("%.3f", value))
+		else
+			value = tonumber(string.format("%.2f", value))
+		end
 	else
 		value = floor(value + 0.5)
 	end
@@ -231,6 +235,9 @@ local function onSliderEnterPressed(self)
 
 	local value = tonumber(self:GetText())
 	if value and value >= floor(min) and value <= floor(max) then
+		if slider.option == "uiscale" then
+			slider:SetValueStep(0.001)
+		end
 		slider:SetValue(value)
 	else
 		self:SetText(floor(slider:GetValue()*1000)/1000)
