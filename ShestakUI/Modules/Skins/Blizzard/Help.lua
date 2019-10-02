@@ -127,7 +127,6 @@ local function LoadSkin()
 
 	BrowserSettingsTooltip:StripTextures()
 	BrowserSettingsTooltip:CreateBackdrop("Transparent")
-	--FIXME BrowserSettingsTooltip.CacheButton:SkinButton()
 	BrowserSettingsTooltip.CookiesButton:SkinButton()
 
 	-- Misc items
