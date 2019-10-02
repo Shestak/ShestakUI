@@ -14,24 +14,26 @@ StaticPopupDialogs.ARCHAEOLOGY_SOLVE = {
 }
 
 local fragment = {
-	["1174"] = 1,	-- Demonic
-	["1173"] = 2,	-- Highmountain
-	["1172"] = 3,	-- Highborne
-	["828"] = 4,	-- Ogre
-	["821"] = 5,	-- Draenor Clans
-	["829"] = 6,	-- Arakkoa
-	["677"] = 7,	-- Mogu
-	["676"] = 8,	-- Pandaren
-	["754"] = 9,	-- Mantid
-	["399"] = 10,	-- Vrykul
-	["385"] = 11,	-- Troll
-	["401"] = 12,	-- Tol'vir
-	["397"] = 13,	-- Orc
-	["400"] = 14,	-- Nerubian
-	["394"] = 15,	-- Night Elf
-	["393"] = 16,	-- Fossil
-	["398"] = 17,	-- Draenei
-	["384"] = 18,	-- Dwarf
+	["1535"] = 1,	-- Drust
+	["1534"] = 2,	-- Zandalari
+	["1174"] = 3,	-- Demonic
+	["1173"] = 4,	-- Highmountain
+	["1172"] = 5,	-- Highborne
+	["828"] = 6,	-- Ogre
+	["821"] = 7,	-- Draenor Clans
+	["829"] = 8,	-- Arakkoa
+	["677"] = 9,	-- Mogu
+	["676"] = 10,	-- Pandaren
+	["754"] = 11,	-- Mantid
+	["399"] = 12,	-- Vrykul
+	["385"] = 13,	-- Troll
+	["401"] = 14,	-- Tol'vir
+	["397"] = 15,	-- Orc
+	["400"] = 16,	-- Nerubian
+	["394"] = 17,	-- Night Elf
+	["393"] = 18,	-- Fossil
+	["398"] = 19,	-- Draenei
+	["384"] = 20,	-- Dwarf
 }
 
 local _CURRENCY = string.gsub(string.gsub(CURRENCY_GAINED_MULTIPLE, "%%s", "(.+)"), "%%d", "(.+)")
@@ -41,7 +43,7 @@ frame:SetScript("OnEvent", function(self, event, message)
 	local link = string.match(message, _CURRENCY)
 	if not link then return end
 
-	local id = string.match(link, ":(%d+)|h") -- FIXME: don't work
+	local _, _, _, _, id = string.find(link, "|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?")
 	local race = fragment[id]
 	if race then
 		SetSelectedArtifact(race)
