@@ -74,11 +74,11 @@ function stopOpening(msg, ...)
 	if msg then print(msg, ...) end
 end
 
-function onEvent(_, event, arg1)
+function onEvent(_, event, _, text)
 	if event == "UI_ERROR_MESSAGE" then
-		if arg1 == ERR_INV_FULL then
+		if text == ERR_INV_FULL then
 			stopOpening("|cffffff00"..L_MAIL_STOPPED)
-		elseif arg1 == ERR_ITEM_MAX_COUNT then
+		elseif text == ERR_ITEM_MAX_COUNT then
 			stopOpening("|cffffff00"..L_MAIL_UNIQUE)
 		end
 	end
