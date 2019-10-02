@@ -273,6 +273,7 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 		end)
 		T.SkinCloseButton(_G["RolePollPopupCloseButton"])
 		T.SkinCloseButton(_G["ItemRefCloseButton"])
+
 		if C.skins.blizzard_frames == true then
 			-- Social Browser frame
 			SocialBrowserFrame:StripTextures()
@@ -353,6 +354,10 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 			hooksecurefunc("BuildIconArray", function(_, baseName, _, rowSize, numRows)
 				local numIcons = rowSize * numRows
 				SkinIconArray(baseName, numIcons)
+			end)
+
+			hooksecurefunc(HelpTipTemplateMixin, "ApplyText", function(self)
+				T.SkinHelpBox(self)
 			end)
 		end
 	end
