@@ -110,7 +110,7 @@ local function LoadSkin()
 	QuestMapFrame.DetailsFrame.CompleteQuestFrame.CompleteButton:SetPoint("TOP", 0, 4)
 
 	QuestModelScene:StripTextures()
-	QuestModelScene:CreateBackdrop("Transparent")
+	QuestModelScene:CreateBackdrop("Overlay")
 	QuestNPCModelNameTooltipFrame:CreateBackdrop("Overlay")
 	QuestNPCModelNameTooltipFrame.backdrop:SetPoint("TOPLEFT", QuestModelScene.backdrop, "BOTTOMLEFT", 0, -1)
 	QuestNPCModelNameTooltipFrame.backdrop:SetPoint("TOPRIGHT", QuestModelScene.backdrop, "BOTTOMRIGHT", 0, -1)
