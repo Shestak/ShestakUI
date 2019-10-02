@@ -199,7 +199,7 @@ if IsWetxius then
 	C["misc"].enchantment_scroll = true
 	C["announcements"].bad_gear = true
 	C["automation"].accept_invite = true
-	C["automation"].accept_quest = true
+	-- C["automation"].accept_quest = true
 	C["automation"].auto_collapse = true
 	C["automation"].auto_role = true
 	C["automation"].tab_binder = true
