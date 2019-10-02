@@ -137,7 +137,7 @@ strip:RegisterForClicks("AnyUp")
 strip:SetScript("OnClick", function(self, button)
 	local actor = self.model:GetPlayerActor()
 	if button == "RightButton" then
-		-- actor:UndressSlot(19) -- FIXME
+		actor:UndressSlot(19)
 	else
 		actor:Undress()
 	end
@@ -148,11 +148,11 @@ strip.model = DressUpFrame.ModelScene
 strip:RegisterEvent("AUCTION_HOUSE_SHOW")
 strip:RegisterEvent("AUCTION_HOUSE_CLOSED")
 strip:SetScript("OnEvent", function(self)
-	if AuctionFrame:IsVisible() and self.model ~= SideDressUpModel then
-		self:SetParent(SideDressUpModel)
+	if AuctionFrame:IsVisible() and self.model ~= SideDressUpFrame.ModelScene then
+		self:SetParent(SideDressUpFrame.ModelScene)
 		self:ClearAllPoints()
-		self:SetPoint("TOP", SideDressUpModelResetButton, "BOTTOM", 0, -3)
-		self.model = SideDressUpModel
+		self:SetPoint("BOTTOM", SideDressUpFrame.ResetButton, "TOP", 0, 3)
+		self.model = SideDressUpFrame.ModelScene
 	elseif self.model ~= DressUpFrame.ModelScene then
 		self:SetParent(DressUpFrame.ModelScene)
 		self:ClearAllPoints()

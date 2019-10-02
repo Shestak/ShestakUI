@@ -32,8 +32,8 @@ local function LoadSkin()
 
 	SideDressUpFrame:StripTextures()
 	SideDressUpFrame:SetTemplate("Transparent")
-	--FIXME SideDressUpModelResetButton:SkinButton()
-	-- T.SkinCloseButton(SideDressUpModelCloseButton, SideDressUpFrame)
+	SideDressUpFrame.ResetButton:SkinButton()
+	T.SkinCloseButton(SideDressUpFrameCloseButton, SideDressUpFrame)
 
 	WardrobeOutfitFrame:StripTextures(true)
 	WardrobeOutfitFrame:CreateBackdrop("Transparent")
