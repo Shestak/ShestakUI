@@ -813,7 +813,7 @@ local function Shared(self, unit)
 			-- Quest icon
 			self.QuestIndicator = self.Health:CreateTexture(nil, "OVERLAY")
 			self.QuestIndicator:SetSize(20, 20)
-			self.QuestIndicator:SetPoint("RIGHT", self.Info, "LEFT", -10, 0)
+			self.QuestIndicator:SetPoint("CENTER", self.Health, "CENTER", -20, 0)
 		end
 
 		if C.unitframe.plugins_combat_feedback == true then
