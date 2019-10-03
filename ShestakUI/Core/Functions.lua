@@ -1513,6 +1513,21 @@ T.CustomFilter = function(_, unit, button, _, _, _, _, _, _, caster)
 	return true
 end
 
+T.CustomFilterBoss = function(_, unit, button, name, _, _, _, _, _, caster)
+	if button.isDebuff then
+		local playerUnits = {
+			player = true,
+			pet = true,
+			vehicle = true,
+		}
+		if playerUnits[caster] or caster == unit and not T.DebuffBlackList[name] then
+			return true
+		end
+		return false
+	end
+	return true
+end
+
 T.UpdateThreat = function(self, _, unit)
 	if self.unit ~= unit then return end
 	local threat = UnitThreatSituation(self.unit)

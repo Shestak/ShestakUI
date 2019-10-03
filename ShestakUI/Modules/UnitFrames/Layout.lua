@@ -1109,7 +1109,7 @@ local function Shared(self, unit)
 			self.Auras.gap = true
 			self.Auras.PostCreateIcon = T.PostCreateIcon
 			self.Auras.PostUpdateIcon = T.PostUpdateIcon
-			self.Auras.CustomFilter = T.CustomFilter
+			self.Auras.CustomFilter = T.CustomFilterBoss
 		end
 
 		self:HookScript("OnShow", T.UpdateAllElements)
