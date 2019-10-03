@@ -4,7 +4,6 @@ if C.aura.player_auras ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Style player buff(by Tukz)
 ----------------------------------------------------------------------------------------
-_G.BUFF_WARNING_TIME = 0
 local rowbuffs = 16
 
 local GetFormattedTime = function(s)
@@ -183,3 +182,5 @@ function AuraButton_UpdateDuration(buff, timeLeft)
 		buff.timerEnchant:Play()
 	end
 end
+
+BuffFrame:SetScript("OnUpdate", nil) -- Disable BuffFrame_OnUpdate that change alpha
