@@ -20,8 +20,8 @@ local function LoadSkin()
 
 		if not frame.backdrop then
 			frame:CreateBackdrop("Transparent")
-			frame.backdrop:SetPoint("TOPLEFT", frame.Background, "TOPLEFT", -2, -6)
-			frame.backdrop:SetPoint("BOTTOMRIGHT", frame.Background, "BOTTOMRIGHT", -2, 6)
+			frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -1, -6)
+			frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 6)
 		end
 
 		-- Background
@@ -40,7 +40,7 @@ local function LoadSkin()
 		frame.Icon.Texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		frame.Icon.Overlay:Kill()
 		frame.Icon.Texture:ClearAllPoints()
-		frame.Icon.Texture:SetPoint("LEFT", frame, 7, 0)
+		frame.Icon.Texture:SetPoint("LEFT", frame, 8, 0)
 
 		if not frame.Icon.Texture.b then
 			frame.Icon.Texture.b = CreateFrame("Frame", nil, frame)
@@ -156,14 +156,18 @@ local function LoadSkin()
 		frame.EmblemBorder:Kill()
 
 		-- Icon border
-		frame.EmblemIcon:SetPoint("LEFT", frame.backdrop, 10, 0)
-		frame.EmblemBackground:SetPoint("LEFT", frame.backdrop, 10, 0)
-		if not frame.EmblemIcon.b then
-			frame.EmblemIcon.b = CreateFrame("Frame", nil, frame)
-			frame.EmblemIcon.b:SetTemplate("Default")
-			frame.EmblemIcon.b:SetPoint("TOPLEFT", frame.EmblemIcon, "TOPLEFT", -3, 3)
-			frame.EmblemIcon.b:SetPoint("BOTTOMRIGHT", frame.EmblemIcon, "BOTTOMRIGHT", 3, -2)
-			frame.EmblemIcon:SetParent(frame.EmblemIcon.b)
+		frame.EmblemBackground:SetPoint("LEFT", frame.backdrop, 9, 0)
+		frame.EmblemIcon:SetPoint("CENTER", frame.EmblemBackground, 0, 0)
+		frame.EmblemBackground:SetDrawLayer("ARTWORK", 1)
+		frame.EmblemIcon:SetDrawLayer("ARTWORK", 2)
+
+		if not frame.EmblemBackground.b then
+			frame.EmblemBackground.b = CreateFrame("Frame", nil, frame)
+			frame.EmblemBackground.b:SetTemplate("Default")
+			frame.EmblemBackground.b:SetPoint("TOPLEFT", frame.EmblemBackground, "TOPLEFT", -2, 2)
+			frame.EmblemBackground.b:SetPoint("BOTTOMRIGHT", frame.EmblemBackground, "BOTTOMRIGHT", 2, -2)
+			frame.EmblemBackground:SetParent(frame.EmblemBackground.b)
+			frame.EmblemIcon:SetParent(frame.EmblemBackground.b)
 		end
 	end
 	hooksecurefunc(GuildChallengeAlertSystem, "setUpFunction", SkinGuildChallengeAlert)
@@ -253,7 +257,7 @@ local function LoadSkin()
 
 		if not frame.backdrop then
 			frame:CreateBackdrop("Transparent")
-			frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 19, -6)
+			frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 18, -6)
 			frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -22, 6)
 		end
 
@@ -272,7 +276,7 @@ local function LoadSkin()
 		-- Icon
 		frame.QuestTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		frame.QuestTexture:SetDrawLayer("ARTWORK")
-		frame.QuestTexture:SetPoint("LEFT", frame.backdrop, 9, 0)
+		frame.QuestTexture:SetPoint("LEFT", frame.backdrop, 8, 0)
 		frame.QuestTexture.b = CreateFrame("Frame", nil, frame)
 		frame.QuestTexture.b:SetTemplate("Default")
 		frame.QuestTexture.b:SetPoint("TOPLEFT", frame.QuestTexture, "TOPLEFT", -2, 2)
@@ -308,14 +312,14 @@ local function LoadSkin()
 
 		local level = frame.PortraitFrame.Level
 		level:ClearAllPoints()
-		level:SetPoint("BOTTOM", frame.PortraitFrame, 0, 10)
+		level:SetPoint("BOTTOM", frame.PortraitFrame, 0, 11)
+		level:SetFontObject("SystemFont_Outline_Small")
 
 		local squareBG = CreateFrame("Frame", nil, frame.PortraitFrame)
 		squareBG:SetFrameLevel(frame.PortraitFrame:GetFrameLevel()-1)
 		squareBG:SetPoint("TOPLEFT", 2, -2)
 		squareBG:SetPoint("BOTTOMRIGHT", -2, 10)
 		squareBG:SetTemplate("Default")
-		frame.PortraitFrame.squareBG = squareBG
 
 		local cover = frame.PortraitFrame.PortraitRingCover
 		if cover then
@@ -325,9 +329,7 @@ local function LoadSkin()
 
 		local color = ITEM_QUALITY_COLORS[quality]
 		if color and quality > 1 then
-			frame.PortraitFrame.squareBG:SetBackdropBorderColor(color.r, color.g, color.b)
-		else
-			frame.PortraitFrame.squareBG:SetBackdropBorderColor(unpack(C.media.border_color))
+			frame.Name:SetTextColor(color.r, color.g, color.b)
 		end
 
 		-- Background
@@ -361,7 +363,7 @@ local function LoadSkin()
 		-- Create Backdrop
 		if not frame.backdrop then
 			frame:CreateBackdrop("Transparent")
-			frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 22, -6)
+			frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 21, -6)
 			frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -25, 6)
 		end
 
@@ -515,6 +517,7 @@ local function LoadSkin()
 	hooksecurefunc(LegendaryItemAlertSystem, "setUpFunction", SkinLegendaryItemAlert)
 
 	local function SkinLootWonAlert(frame)
+		frame:SetAlpha(1)
 		if not frame.hooked then
 			hooksecurefunc(frame, "SetAlpha", forceAlpha)
 			frame.hooked = true
@@ -526,19 +529,20 @@ local function LoadSkin()
 			frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -5, 6)
 		end
 
-		frame:SetAlpha(1)
 		frame.Background:Kill()
-
-		local lootItem = frame.lootItem or frame
-		lootItem.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		lootItem.Icon:SetDrawLayer("BORDER")
-		lootItem.IconBorder:Kill()
-		lootItem.SpecRing:SetTexture("")
-
 		frame.glow:Kill()
 		frame.shine:Kill()
 		frame.BGAtlas:Kill()
 		frame.PvPBackground:Kill()
+		frame.RatedPvPBackground:Kill()
+
+		local lootItem = frame.lootItem or frame
+		lootItem.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		lootItem.Icon:SetDrawLayer("BORDER")
+		lootItem.Icon:ClearAllPoints()
+		lootItem.Icon:SetPoint("LEFT", frame.backdrop, 9, 0)
+		lootItem.IconBorder:Kill()
+		lootItem.SpecRing:SetTexture("")
 
 		-- Icon border
 		if not lootItem.Icon.b then
@@ -595,7 +599,7 @@ local function LoadSkin()
 
 		if not frame.backdrop then
 			frame:CreateBackdrop("Transparent")
-			frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -12, -6)
+			frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -13, -6)
 			frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 9, 6)
 		end
 
@@ -734,7 +738,7 @@ local function LoadSkin()
 
 		if not frame.backdrop then
 			frame:CreateBackdrop("Transparent")
-			frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -16, -6)
+			frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", -17, -6)
 			frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 13, 6)
 		end
 
