@@ -6,6 +6,8 @@ local GetTime = GetTime
 local UnitCastingInfo = UnitCastingInfo
 local UnitChannelInfo = UnitChannelInfo
 
+local FALLBACK_ICON = 136243
+
 local function updateSafeZone(self)
 	local safeZone = self.SafeZone
 	local width = self:GetWidth()
@@ -45,7 +47,7 @@ local function UNIT_SPELLCAST_START(self, event, unit)
 	element:SetValue(0)
 
 	if(element.Text) then element.Text:SetText(text) end
-	if(element.Icon) then element.Icon:SetTexture(texture or "Interface\\Icons\\trade_engineering") end
+	if(element.Icon) then element.Icon:SetTexture(texture or FALLBACK_ICON) end
 	if(element.Time) then element.Time:SetText() end
 
 	local shield = element.Shield
@@ -258,7 +260,7 @@ local function UNIT_SPELLCAST_CHANNEL_START(self, event, unit, _, spellID)
 	element:SetValue(duration)
 
 	if(element.Text) then element.Text:SetText(name) end
-	if(element.Icon) then element.Icon:SetTexture(texture or "Interface\\Icons\\trade_engineering") end
+	if(element.Icon) then element.Icon:SetTexture(texture or FALLBACK_ICON) end
 	if(element.Time) then element.Time:SetText() end
 
 	local shield = element.Shield
