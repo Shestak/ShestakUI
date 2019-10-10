@@ -1494,6 +1494,34 @@ if talents.enabled then
 	}
 	Inject("Talents", {
 		OnLoad = function(self)
+			self.text2 = self:CreateFontString(nil, "OVERLAY")
+			self.text2:SetFont(self.text:GetFont())
+			self.text2:SetPoint("LEFT", self.text, "RIGHT", 0, -1)
+
+			self.text3 = self:CreateFontString(nil, "OVERLAY")
+			self.text3:SetFont(self.text:GetFont())
+			self.text3:SetPoint("LEFT", self.text2, "RIGHT", 0, 1)
+
+			self.text4 = self:CreateFontString(nil, "OVERLAY")
+			self.text4:SetFont(self.text:GetFont())
+			self.text4:SetPoint("LEFT", self.text3, "RIGHT", 0, -1)
+
+			self.globalFrame = CreateFrame("Frame", self)
+			self.globalFrame:SetPoint("TOPLEFT", self.text)
+			self.globalFrame:SetPoint("BOTTOMRIGHT", self.text4)
+
+			self.globalFrame:SetScript("OnEnter", function()
+				self:GetScript("OnEnter")(self)
+			end)
+
+			self.globalFrame:SetScript("OnLeave", function()
+				self:GetScript("OnLeave")(self)
+			end)
+
+			self.globalFrame:SetScript("OnMouseUp", function(_, b)
+				self:GetScript("OnMouseUp")(self, b)
+			end)
+
 			RegEvents(self, "PLAYER_ENTERING_WORLD PLAYER_TALENT_UPDATE PLAYER_LOOT_SPEC_UPDATED")
 		end,
 		OnEvent = function(self)
@@ -1509,11 +1537,12 @@ if talents.enabled then
 			specName = spec and select(2, GetSpecializationInfo(spec)) or NO
 
 			local specIcon, lootIcon = "", ""
-			local lootText = LOOT
+			local lootText = LOOT..":"
 
 			local _, _, _, specTex = GetSpecializationInfo(spec)
+			local texSize = 14
 			if specTex then
-				specIcon = format("|T%s:14:14:0:0:64:64:5:59:5:59|t", specTex)
+				specIcon = format("|T%s:"..texSize..":"..texSize..":0:0:64:64:5:59:5:59|t", specTex)
 			end
 
 			if lootSpec == 0 then
@@ -1523,15 +1552,15 @@ if talents.enabled then
 			else
 				local _, _, _, texture = GetSpecializationInfoByID(lootSpec)
 				if texture then
-					lootIcon = format("|T%s:14:14:0:0:64:64:5:59:5:59|t", texture)
+					lootIcon = format("|T%s:"..texSize..":"..texSize..":0:0:64:64:5:59:5:59|t", texture)
 				end
 			end
 
-			self.text:SetText(format("%s:%s  %s:%s", L_STATS_SPEC, specIcon, lootText, lootIcon))
-			if specIcon and floor(C.font.stats_font_size + 0.5) ~= 15 and floor(C.font.stats_font_size + 0.5) ~= 17 then
-				local point, relativeTo, relativePoint, xOfs = self.text:GetPoint()
-				self.text:SetPoint(point, relativeTo, relativePoint, xOfs, -1)
-			end
+			self.text:SetText(L_STATS_SPEC..":")
+			self.text2:SetText(specIcon.." ")
+			self.text3:SetText(lootText)
+			self.text4:SetText(lootIcon)
+
 			if self.hovered then self:GetScript("OnEnter")(self) end
 		end,
 		OnEnter = function(self)
@@ -1541,7 +1570,7 @@ if talents.enabled then
 				GameTooltip:ClearAllPoints()
 				GameTooltip:SetPoint(modules.Talents.tip_anchor, modules.Talents.tip_frame, modules.Talents.tip_x, modules.Talents.tip_y)
 				GameTooltip:ClearLines()
-				GameTooltip:AddLine(SPECIALIZATION.."/"..LOOT, tthead.r, tthead.g, tthead.b)
+				GameTooltip:AddLine(SPECIALIZATION.." "..ENCHANT_CONDITION_AND..LOOT, tthead.r, tthead.g, tthead.b)
 				GameTooltip:AddLine(" ")
 				GameTooltip:AddDoubleLine(SPECIALIZATION, specName, ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
 				GameTooltip:AddDoubleLine(LOOT, lootSpecName, ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
