@@ -429,6 +429,7 @@ local function LoadSkin()
 		GarrisonLandingPage.FollowerTab.XPBar,
 		GarrisonLandingPage.ShipFollowerTab.XPBar,
 		GarrisonMissionFrame.FollowerTab.XPBar,
+		GarrisonShipyardFrame.FollowerTab.XPBar,
 		OrderHallMissionFrame.FollowerTab.XPBar,
 		BFAMissionFrame.FollowerTab.XPBar
 	}
@@ -443,6 +444,10 @@ local function LoadSkin()
 		if xpBar:GetParent().PortraitFrame then
 			xpBar:ClearAllPoints()
 			xpBar:SetPoint("BOTTOMLEFT", xpBar:GetParent().PortraitFrame, "BOTTOMRIGHT", 8, -15)
+		end
+
+		if xpBar.Label then
+			xpBar.Label:SetFontObject(SystemFont_Outline_Small)
 		end
 	end
 
@@ -495,7 +500,7 @@ local function LoadSkin()
 
 	-- ShipYard
 	GarrisonShipyardFrame:StripTextures(true)
-	GarrisonShipyardFrame:SetTemplate("Transparent")
+	GarrisonShipyardFrame:CreateBackdrop("Transparent")
 	GarrisonShipyardFrame.BorderFrame.GarrCorners:StripTextures()
 	GarrisonShipyardFrame.BorderFrame:StripTextures(true)
 	GarrisonShipyardFrame.BorderFrame.TitleText:SetPoint("TOP", -6, -1)
@@ -518,6 +523,9 @@ local function LoadSkin()
 	GarrisonShipyardFrame.MissionComplete.NextMissionButton:SkinButton()
 	GarrisonShipyardFrame.MissionCompleteBackground:SetAllPoints(MissionList.MapTexture)
 	MissionPage.StartMissionButton:SkinButton()
+	MissionList.MapTexture:ClearAllPoints()
+	MissionList.MapTexture:SetPoint("TOPLEFT")
+	MissionList.MapTexture:SetPoint("BOTTOMRIGHT")
 
 	T.SkinEditBox(GarrisonShipyardFrameFollowers.SearchBox)
 	GarrisonShipyardFrameFollowers.SearchBox:SetPoint("TOPLEFT", 2, 25)
