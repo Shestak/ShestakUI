@@ -13,16 +13,19 @@ local function LoadSkin()
 			self.AzeriteTexture:SetAlpha(0)
 			self.RankFrame.Texture:SetTexture("")
 			self.RankFrame.Label:SetFontObject("SystemFont_Outline_Small")
-			self.RankFrame.Label:SetPoint("CENTER", self.RankFrame.Texture, 0, 3)
+			self.RankFrame.Label:SetShadowOffset(0, 0)
+			self.RankFrame.Label:SetPoint("CENTER", self.RankFrame.Texture, 0, 2)
 
 			self.styled = true
 		end
 		self:GetHighlightTexture():SetColorTexture(1, 1, 1, 0.3)
-		self:GetHighlightTexture():SetAllPoints()
+		self:GetHighlightTexture():SetPoint("TOPLEFT", 2, -2)
+		self:GetHighlightTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 	end
 
 	local function UpdateAzeriteEmpoweredItem(self)
 		self.AzeriteTexture:SetAtlas("AzeriteIconFrame")
+		self.AzeriteTexture:SetTexCoord(0.05, 0.95, 0.05, 0.95)
 		self.AzeriteTexture:SetPoint("TOPLEFT", 2, -2)
 		self.AzeriteTexture:SetPoint("BOTTOMRIGHT", -2, 2)
 		self.AzeriteTexture:SetDrawLayer("BORDER", 1)
@@ -70,6 +73,12 @@ local function LoadSkin()
 		icon:ClearAllPoints()
 		icon:SetPoint("TOPLEFT", 2, -2)
 		icon:SetPoint("BOTTOMRIGHT", -2, 2)
+
+		if slot.popoutButton:GetPoint() == "TOP" then
+			slot.popoutButton:SetPoint("TOP", slot, "BOTTOM", 0, 2)
+		else
+			slot.popoutButton:SetPoint("LEFT", slot, "RIGHT", -2, 0)
+		end
 
 		hooksecurefunc(slot, "DisplayAsAzeriteItem", UpdateAzeriteItem)
 		hooksecurefunc(slot, "DisplayAsAzeriteEmpoweredItem", UpdateAzeriteEmpoweredItem)
