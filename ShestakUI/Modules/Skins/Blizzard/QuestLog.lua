@@ -14,6 +14,7 @@ local function LoadSkin()
 	T.SkinCloseButton(QuestLogPopupDetailFrameCloseButton, QuestLogPopupDetailFrame.backdrop)
 
 	QuestLogPopupDetailFrameScrollFrame:StripTextures()
+	QuestLogPopupDetailFrameScrollFrame:SetPoint("TOPLEFT", 13, -65)
 	T.SkinScrollBar(QuestLogPopupDetailFrameScrollFrameScrollBar)
 
 	QuestLogPopupDetailFrame.ShowMapButton:SkinButton(true)
@@ -27,6 +28,8 @@ local function LoadSkin()
 	QuestLogPopupDetailFrame.ShareButton:ClearAllPoints()
 	QuestLogPopupDetailFrame.ShareButton:SetPoint("LEFT", QuestLogPopupDetailFrame.AbandonButton, "RIGHT", 3, 0)
 	QuestLogPopupDetailFrame.ShareButton:SetPoint("RIGHT", QuestLogPopupDetailFrame.TrackButton, "LEFT", -3, 0)
+	QuestLogPopupDetailFrame.TrackButton:SetWidth(110)
+	QuestLogPopupDetailFrame.TrackButton:SetPoint("BOTTOMRIGHT", -4, 5)
 
 	local function QuestObjectiveText()
 		if not QuestInfoFrame.questLog then return end
@@ -100,9 +103,18 @@ local function LoadSkin()
 
 	hooksecurefunc("QuestInfo_GetRewardButton", function(rewardsFrame, index)
 		local button = rewardsFrame.RewardButtons[index]
-		if not button.restyled then
+		if not button.backdrop then
 			SkinReward(button, rewardsFrame == MapQuestInfoRewardsFrame)
-			button.restyled = true
+			hooksecurefunc("SetItemButtonQuality", function(self, quality)
+				if self == button then
+					if not button.backdrop then return end
+					if quality and quality > LE_ITEM_QUALITY_COMMON and BAG_ITEM_QUALITY_COLORS[quality] then
+						button.backdrop:SetBackdropBorderColor(BAG_ITEM_QUALITY_COLORS[quality].r, BAG_ITEM_QUALITY_COLORS[quality].g, BAG_ITEM_QUALITY_COLORS[quality].b)
+					else
+						button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+					end
+				end
+			end)
 		end
 	end)
 
@@ -168,6 +180,7 @@ local function LoadSkin()
 					followerReward.BG:Hide()
 					followerReward.isSkinned = true
 
+					followerReward.PortraitFrame:SetWidth(followerReward.PortraitFrame:GetHeight())
 					followerReward.PortraitFrame:ClearAllPoints()
 					followerReward.PortraitFrame:SetPoint("RIGHT", followerReward.backdrop, "LEFT", -2, 0)
 
@@ -178,7 +191,9 @@ local function LoadSkin()
 
 					local level = followerReward.PortraitFrame.Level
 					level:ClearAllPoints()
-					level:SetPoint("BOTTOM", followerReward.PortraitFrame, 0, 3)
+					level:SetPoint("BOTTOM", followerReward.PortraitFrame, 0, 5)
+					level:SetFontObject("SystemFont_Outline_Small")
+					level:SetShadowOffset(0, 0)
 
 					local squareBG = CreateFrame("Frame", nil, followerReward.PortraitFrame)
 					squareBG:SetFrameLevel(followerReward.PortraitFrame:GetFrameLevel()-1)
@@ -186,6 +201,12 @@ local function LoadSkin()
 					squareBG:SetPoint("BOTTOMRIGHT", -2, 2)
 					squareBG:SetTemplate("Default")
 					followerReward.PortraitFrame.squareBG = squareBG
+
+					followerReward.PortraitFrame.Portrait:SetPoint("TOPLEFT", squareBG, 2, -2)
+					followerReward.PortraitFrame.Portrait:SetPoint("BOTTOMRIGHT", squareBG, -2, 2)
+
+					local point, relativeTo, relativePoint, xOfs, yOfs = followerReward:GetPoint()
+					followerReward:SetPoint(point, relativeTo, relativePoint, 8, yOfs)
 				end
 				local r, g, b = followerReward.PortraitFrame.PortraitRingQuality:GetVertexColor()
 				if r > 0.99 and r < 1 then

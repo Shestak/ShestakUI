@@ -77,6 +77,7 @@ local function LoadSkin()
 	QuestScrollFrameTopBorder.backdrop:SetSize(284, 23)
 	QuestScrollFrameTopBorder.backdrop:SetPoint("LEFT", WorldMapFrame.Header, "RIGHT", 2, 0)
 
+	QuestMapDetailsScrollFrame:SetPoint("TOPLEFT", 1, 0)
 	QuestMapDetailsScrollFrameScrollBar:SetPoint("TOPLEFT", QuestMapDetailsScrollFrame, "TOPRIGHT", 0, -18)
 	T.SkinScrollBar(QuestMapDetailsScrollFrameScrollBar)
 

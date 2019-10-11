@@ -314,6 +314,7 @@ local function LoadSkin()
 		level:ClearAllPoints()
 		level:SetPoint("BOTTOM", frame.PortraitFrame, 0, 11)
 		level:SetFontObject("SystemFont_Outline_Small")
+		level:SetShadowOffset(0, 0)
 
 		local squareBG = CreateFrame("Frame", nil, frame.PortraitFrame)
 		squareBG:SetFrameLevel(frame.PortraitFrame:GetFrameLevel()-1)
