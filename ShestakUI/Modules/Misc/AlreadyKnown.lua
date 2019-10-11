@@ -178,7 +178,12 @@ local function QuestInfo_ShowRewards()
 		end
 	end
 end
-hooksecurefunc("QuestInfo_ShowRewards", QuestInfo_ShowRewards)
+
+if IsAddOnLoaded("Pawn") then
+	hooksecurefunc("PawnUI_OnQuestInfo_ShowRewards", QuestInfo_ShowRewards)
+else
+	hooksecurefunc("QuestInfo_ShowRewards", QuestInfo_ShowRewards)
+end
 
 -- Guild rewards frame
 local function GuildRewards_Update()
