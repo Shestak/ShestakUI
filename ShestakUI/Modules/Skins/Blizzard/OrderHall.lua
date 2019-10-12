@@ -64,7 +64,7 @@ local function LoadSkin()
 	T.SkinCloseButton(OrderHallTalentFrameCloseButton)
 	OrderHallTalentFrame:HookScript("OnShow", function(self)
 		if self.CloseButton.Border then
-			self.CloseButton.Border:Hide()
+			self.CloseButton.Border:SetAlpha(0)
 		end
 		if self.portrait then
 			self.portrait:SetAlpha(0)
