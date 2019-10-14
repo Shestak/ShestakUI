@@ -80,6 +80,8 @@ hooksecurefunc(WORLD_QUEST_TRACKER_MODULE, "AddObjective", function(_, block)
 		item.Count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 		item.Count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 
+		item.HotKey:SetFontObject(NumberFont_OutlineThick_Mono_Small)
+
 		item.skinned = true
 	end
 end)
