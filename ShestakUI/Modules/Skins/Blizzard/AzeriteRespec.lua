@@ -22,7 +22,6 @@ local function LoadSkin()
 	AzeriteRespecFrame.ButtonFrame.AzeriteRespecButton:SkinButton()
 	AzeriteRespecFrame.ButtonFrame.AzeriteRespecButton:SetPoint("BOTTOMRIGHT", -4, 5)
 	T.SkinCloseButton(AzeriteRespecFrameCloseButton)
-	T.SkinHelpBox(AzeriteRespecFrame.HelpBox)
 end
 
 T.SkinFuncs["Blizzard_AzeriteRespecUI"] = LoadSkin
