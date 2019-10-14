@@ -29,7 +29,10 @@ BGFrame:SetScript("OnEnter", function(self)
 
 			-- Add extra statistics depending on what BG you are
 			for j = 1, #pvpStatIDs do
-				GameTooltip:AddDoubleLine(C_PvP.GetMatchPVPStatColumn(pvpStatIDs[j])..":", GetBattlefieldStatData(i, j), 1, 1, 1)
+				local info = C_PvP.GetMatchPVPStatColumn(pvpStatIDs[j])
+				if info then
+					GameTooltip:AddDoubleLine(info.name..":", GetBattlefieldStatData(i, j), 1, 1, 1)
+				end
 			end
 
 			break
