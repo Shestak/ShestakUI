@@ -320,6 +320,12 @@ local function LoadSkin()
 	LFGDungeonReadyPopup:SetTemplate("Transparent")
 	LFGDungeonReadyDialog.SetBackdrop = T.dummy
 
+	for _, frame in pairs({LFGDungeonReadyDialogRewardsFrameReward1, LFGDungeonReadyDialogRewardsFrameReward2}) do
+		frame.texture:SetSize(18, 18)
+		frame.texture:SkinIcon(true)
+		frame:DisableDrawLayer("OVERLAY")
+	end
+
 	LFGListFrame.CategorySelection.CategoryButtons[1]:SetNormalFontObject(GameFontNormal)
 	hooksecurefunc("LFGListCategorySelection_AddButton", function(self, index)
 		local button = self.CategoryButtons[index]
