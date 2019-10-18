@@ -1488,6 +1488,8 @@ C["filger_spells"] = {
 			{spellID = 85416, unitID = "player", caster = "player", filter = "BUFF"},
 			-- The Fires of Justice
 			{spellID = 209785, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Empyrean Power (Azerite Traits)
+			{spellID = 286393, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
 			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
 
