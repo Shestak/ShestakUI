@@ -22,7 +22,7 @@ function Mountz(groundmount, flyingmount, underwatermount)
 		flyablex = true
 	end
 	for i = 1, 40 do
-		local sid = select(11, UnitBuff("player", i))
+		local sid = select(10, UnitBuff("player", i))
 		if sid == 73701 or sid == 76377 then
 			InVj = true
 		end
