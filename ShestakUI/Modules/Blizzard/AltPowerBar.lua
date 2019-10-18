@@ -104,6 +104,9 @@ status.text = status:CreateFontString(nil, "OVERLAY")
 status.text:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 status.text:SetPoint("CENTER", bar, "CENTER", 0, 0)
 
+local _, ns = ...
+local oUF = ns.oUF
+
 -- Update Function
 local update = 1
 status:SetScript("OnUpdate", function(self, elapsed)
@@ -119,6 +122,8 @@ status:SetScript("OnUpdate", function(self, elapsed)
 		end
 		if blizzColors[texture] then
 			r, g, b = blizzColors[texture].r, blizzColors[texture].g, blizzColors[texture].b
+		elseif r == 1 and g == 1 and b == 1 then
+			r, g, b = oUF:ColorGradient(power, mpower, 0.8, 0, 0, 0.8, 0.8, 0, 0, 0.8, 0)
 		elseif not texture then
 			r, g, b = 0.3, 0.7, 0.3
 		end
