@@ -419,6 +419,8 @@ local function LoadSkin()
 				hooksecurefunc(reward.IconBorder, "SetVertexColor", function(self, r, g, b)
 					if r ~= 0.65882 and g ~= 0.65882 and b ~= 0.65882 then
 						self:GetParent().backdrop:SetBackdropBorderColor(r, g, b)
+					else
+						self:GetParent().backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 					end
 				end)
 			end
