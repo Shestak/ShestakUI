@@ -560,6 +560,7 @@ hooksecurefunc("GameTooltip_ShowProgressBar", function(tt)
 	if bar then
 		bar:StripTextures()
 		bar:CreateBackdrop("Transparent")
+		bar.backdrop:SetBackdropColor(0.1, 0.1, 0.1, 1)
 		bar:SetStatusBarTexture(C.media.texture)
 		label:ClearAllPoints()
 		label:SetPoint("CENTER", bar, 0, 0)
