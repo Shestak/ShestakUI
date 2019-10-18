@@ -47,6 +47,11 @@ local function LoadSkin()
 						T.SkinStatusBarWidget(widgetFrame)
 					elseif widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.TextWithState then
 						widgetFrame.Text:SetTextColor(1, 1, 1)
+					elseif widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.SpellDisplay then
+						local r, g, b = widgetFrame.Spell.Text:GetTextColor()
+						if r < 0.2 and g < 0.2 and b < 0.2 then
+							widgetFrame.Spell.Text:SetTextColor(1, 1, 1)
+						end
 					end
 				end
 			end
