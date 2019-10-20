@@ -20,7 +20,7 @@ else
 end
 
 -- Hide bar
-if C.actionbar.stancebar_hide then ShiftHolder:Hide() return end
+if C.actionbar.stancebar_hide then StanceBarFrame:SetParent(ShiftHolder) ShiftHolder:Hide() return end
 
 -- Create bar
 local bar = CreateFrame("Frame", "UIShapeShift", ShiftHolder, "SecureHandlerStateTemplate")
