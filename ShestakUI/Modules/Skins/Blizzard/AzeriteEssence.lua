@@ -19,7 +19,7 @@ local function LoadSkin()
 
 	for _, button in pairs(AzeriteEssenceUI.EssenceList.buttons) do
 		button:DisableDrawLayer("ARTWORK")
-		button:StyleButton()
+		button:StyleButton(nil, 3)
 
 		button.Icon:SkinIcon()
 		button.Icon:SetSize(27, 27)
@@ -28,9 +28,14 @@ local function LoadSkin()
 		button.bg = CreateFrame("Frame", nil, button)
 		button.bg:CreateBackdrop("Overlay")
 		button.bg:SetFrameLevel(button:GetFrameLevel() - 1)
-		button.bg:SetPoint("TOPLEFT", 2, -3)
-		button.bg:SetPoint("BOTTOMRIGHT", -2, 3)
+		button.bg:SetPoint("TOPLEFT", 3, -3)
+		button.bg:SetPoint("BOTTOMRIGHT", -3, 3)
 	end
+
+	local HeaderButton = AzeriteEssenceUI.EssenceList.HeaderButton
+    HeaderButton.Middle:Hide()
+    HeaderButton.Left:Hide()
+    HeaderButton.Right:Hide()
 
 	T.SkinScrollBar(AzeriteEssenceUI.EssenceList.ScrollBar)
 	T.SkinCloseButton(AzeriteEssenceUICloseButton)
