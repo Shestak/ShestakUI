@@ -411,7 +411,7 @@ end)
 ----------------------------------------------------------------------------------------
 --	Fix GameTooltipMoneyFrame font size
 ----------------------------------------------------------------------------------------
-local function FixFont()
+hooksecurefunc("GameTooltip_OnTooltipAddMoney", function()
 	for i = 1, 2 do
 		if _G["GameTooltipMoneyFrame"..i] then
 			_G["GameTooltipMoneyFrame"..i.."PrefixText"]:SetFontObject("GameTooltipText")
@@ -430,11 +430,7 @@ local function FixFont()
 			_G["ItemRefTooltipMoneyFrame"..i.."CopperButton"]:SetNormalFontObject("GameTooltipText")
 		end
 	end
-end
-
-GameTooltip:HookScript("OnTooltipSetItem", FixFont)
-ItemRefTooltip:HookScript("OnTooltipSetItem", FixFont)
-
+end)
 ----------------------------------------------------------------------------------------
 --	Skin GameTooltip.ItemTooltip and EmbeddedItemTooltip
 ----------------------------------------------------------------------------------------
