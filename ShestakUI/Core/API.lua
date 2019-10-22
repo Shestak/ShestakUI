@@ -256,15 +256,15 @@ end
 --	Style buttons function
 ----------------------------------------------------------------------------------------
 T.SetModifiedBackdrop = function(self)
-	if self:GetButtonState() == "DISABLED" then return end
-	self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-	if self.overlay then
-		self.overlay:SetVertexColor(T.color.r * 0.3, T.color.g * 0.3, T.color.b * 0.3, 1)
+	if self:IsEnabled() then
+		self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		if self.overlay then
+			self.overlay:SetVertexColor(T.color.r * 0.3, T.color.g * 0.3, T.color.b * 0.3, 1)
+		end
 	end
 end
 
 T.SetOriginalBackdrop = function(self)
-	if self:GetButtonState() == "DISABLED" then return end
 	self:SetBackdropBorderColor(unpack(C.media.border_color))
 	if self.overlay then
 		self.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
