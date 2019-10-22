@@ -443,7 +443,10 @@ function T.SkinDropDownBox(frame, width, pos)
 	frame.backdrop:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 2, -2)
 end
 
-function T.SkinCheckBox(frame)
+function T.SkinCheckBox(frame, size)
+	if size then
+		frame:SetSize(size, size)
+	end
 	frame:SetNormalTexture("")
 	frame:SetPushedTexture("")
 	frame:CreateBackdrop("Overlay")

@@ -76,23 +76,28 @@ local function LoadSkin()
 	MountJournal.MountDisplay.ShadowOverlay:StripTextures()
 	MountJournal.MountCount:StripTextures()
 
+	MountJournal.MountDisplay:SetPoint("BOTTOMRIGHT", MountJournal.RightInset, "BOTTOMRIGHT", -3, 6)
 	MountJournal.MountDisplay:CreateBackdrop("Overlay")
 	MountJournal.MountDisplay.backdrop:SetPoint("TOPLEFT", 2, -2)
-	MountJournal.MountDisplay.backdrop:SetPoint("BOTTOMRIGHT", 1, 2)
+	MountJournal.MountDisplay.backdrop:SetPoint("BOTTOMRIGHT", 1, -2)
 
 	T.SkinEditBox(MountJournalSearchBox, nil, 18)
 	T.SkinScrollBar(MountJournalListScrollFrameScrollBar)
 	T.SkinRotateButton(MountJournal.MountDisplay.ModelScene.RotateLeftButton)
 	T.SkinRotateButton(MountJournal.MountDisplay.ModelScene.RotateRightButton)
 
+	MountJournalListScrollFrameScrollBar:SetPoint("TOPLEFT", MountJournalListScrollFrame, "TOPRIGHT", 4, 17)
 	MountJournalFilterButton:SetPoint("TOPLEFT", MountJournalSearchBox, "TOPRIGHT", 5, 2)
 
 	-- New Mount Equip. 8.2
 	MountJournal.BottomLeftInset:StripTextures()
-	MountJournal.BottomLeftInset:CreateBackdrop("Transparent")
-	MountJournal.BottomLeftInset:SetPoint("BOTTOMLEFT", 0, 33)
+	MountJournal.BottomLeftInset:CreateBackdrop("Overlay")
+	MountJournal.BottomLeftInset.backdrop:SetPoint("TOPLEFT", 0, 2)
+	MountJournal.BottomLeftInset:SetPoint("BOTTOMLEFT", 0, 32)
 	MountJournal.BottomLeftInset.SlotButton:StripTextures()
 	MountJournal.BottomLeftInset.SlotButton.ItemIcon:SkinIcon()
+
+	T.SkinCheckBox(MountJournal.MountDisplay.ModelScene.TogglePlayer, 26)
 
 	for i = 1, #MountJournal.ListScrollFrame.buttons do
 		local button = _G["MountJournalListScrollFrameButton"..i]
@@ -175,6 +180,8 @@ local function LoadSkin()
 	PetJournalLoadoutBorderSlotHeaderText:SetParent(PetJournal)
 	PetJournalLoadoutBorderSlotHeaderText:SetPoint("CENTER", PetJournalLoadoutBorderTop, "TOP", 0, 4)
 
+	PetJournalListScrollFrameScrollBar:SetPoint("TOPLEFT", PetJournalListScrollFrame, "TOPRIGHT", 4, 17)
+	PetJournalListScrollFrameScrollBar:SetPoint("BOTTOMLEFT", PetJournalListScrollFrame, "BOTTOMRIGHT", 4, 14)
 	T.SkinScrollBar(PetJournalListScrollFrameScrollBar)
 
 	for i = 1, #PetJournal.listScroll.buttons do
