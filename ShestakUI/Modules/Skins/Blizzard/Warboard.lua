@@ -58,12 +58,13 @@ local function LoadSkin()
 		end
 	end)
 
-	T.SkinCloseButton(WarboardQuestChoiceFrame.CloseButton, WarboardQuestChoiceFrame.backdrop)
+	T.SkinCloseButton(WarboardQuestChoiceFrame.CloseButton)
 
 	WarboardQuestChoiceFrame:HookScript("OnShow", function(self)
 		if self.CloseButton.Border then
 			self.CloseButton.Border:Hide()
 		end
+		self.CloseButton:SetPoint("TOPRIGHT", -4, -4)
 	end)
 end
 
