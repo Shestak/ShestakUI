@@ -205,7 +205,7 @@ local function LoadSkin()
 					followerReward.PortraitFrame.Portrait:SetPoint("TOPLEFT", squareBG, 2, -2)
 					followerReward.PortraitFrame.Portrait:SetPoint("BOTTOMRIGHT", squareBG, -2, 2)
 
-					local point, relativeTo, relativePoint, xOfs, yOfs = followerReward:GetPoint()
+					local point, relativeTo, relativePoint, _, yOfs = followerReward:GetPoint()
 					followerReward:SetPoint(point, relativeTo, relativePoint, 8, yOfs)
 				end
 				local r, g, b = followerReward.PortraitFrame.PortraitRingQuality:GetVertexColor()
