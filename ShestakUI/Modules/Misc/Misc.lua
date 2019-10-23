@@ -136,6 +136,7 @@ strip:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
 strip:RegisterForClicks("AnyUp")
 strip:SetScript("OnClick", function(self, button)
 	local actor = self.model:GetPlayerActor()
+	if not actor then return end
 	if button == "RightButton" then
 		actor:UndressSlot(19)
 	else
