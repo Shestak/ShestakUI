@@ -33,9 +33,9 @@ local function LoadSkin()
 	end
 
 	local HeaderButton = AzeriteEssenceUI.EssenceList.HeaderButton
-    HeaderButton.Middle:Hide()
-    HeaderButton.Left:Hide()
-    HeaderButton.Right:Hide()
+	HeaderButton.Middle:Hide()
+	HeaderButton.Left:Hide()
+	HeaderButton.Right:Hide()
 
 	T.SkinScrollBar(AzeriteEssenceUI.EssenceList.ScrollBar)
 	T.SkinCloseButton(AzeriteEssenceUICloseButton)
