@@ -15,8 +15,6 @@ C["position"] = {
 	["bn_popup"] = {"BOTTOMLEFT", ChatFrame1, "TOPLEFT", -3, 24},					-- Battle.net popup
 	["achievement"] = {"TOP", UIParent, "TOP", 0, -21},								-- Achievements frame
 	["tooltip"] = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5},						-- Tooltip
-	["uiwidget"] = {"TOP", UIParent, "TOP", 0, -21},								-- UIWidget frame
-	["capture_bar"] = {"TOP", UIParent, "TOP", 0, 3},								-- BG capture bars
 	["vehicle"] = {"BOTTOM", Minimap, "TOP", 0, 27},								-- Vehicle frame
 	["ghost"] = {"BOTTOM", Minimap, "TOP", 0, 5},									-- Ghost frame
 	["uierror"] = {"TOP", UIParent, "TOP", 0, -30},									-- Errors frame
@@ -38,6 +36,8 @@ C["position"] = {
 	["extra_button"] = {"BOTTOMRIGHT", ActionButton1, "BOTTOMLEFT", -3, 0},			-- Extra action button
 	["alt_power_bar"] = {"TOP", UIParent, "TOP", 0, -21},							-- Alt power bar
 	["talking_head"] = {"TOP", UIParent, "TOP", 0, -21},							-- Talking Head
+	["uiwidget_top"] = {"TOP", UIParent, "TOP", 0, -21},							-- Top Widget
+	["uiwidget_below"] = {"TOP", UIParent, "TOP", 0, -71},							-- Below Widget
 	-- ActionBar positions
 	["bottom_bars"] = {"BOTTOM", UIParent, "BOTTOM", 0, 8},							-- Bottom bars
 	["right_bars"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 330},			-- Right bars

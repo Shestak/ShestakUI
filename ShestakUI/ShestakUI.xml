@@ -132,7 +132,6 @@
 	<Script file="Modules\Blizzard\AlertFrames.lua"/>
 	<Script file="Modules\Blizzard\AltPowerBar.lua"/>
 	<Script file="Modules\Blizzard\Bags.lua"/>
-	<Script file="Modules\Blizzard\CaptureBar.lua"/>
 	<Script file="Modules\Blizzard\ColorPicker.lua"/>
 	<Script file="Modules\Blizzard\CombatText.lua"/>
 	<Script file="Modules\Blizzard\Durability.lua"/>
