@@ -570,7 +570,7 @@ if gold.enabled then
 							end
 							local _, _, itemRarity, _, _, _, _, _, _, _, itemSellPrice = GetItemInfo(link)
 							local _, itemCount = GetContainerItemInfo(bag, slot)
-							if (itemRarity == 0 and not ignore) or (ignore and itemRarity ~= 0) then
+							if itemSellPrice and itemSellPrice > 0 and ((itemRarity == 0 and not ignore) or (ignore and itemRarity ~= 0)) then
 								profit = profit + (itemSellPrice * itemCount)
 								numItem = numItem + 1
 								if numItem < 12 then
