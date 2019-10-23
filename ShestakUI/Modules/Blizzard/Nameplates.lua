@@ -42,6 +42,7 @@ function frame:PLAYER_ENTERING_WORLD()
 	SetCVar("nameplateMaxAlpha", 1)
 	SetCVar("nameplateSelectedAlpha", 1)
 	SetCVar("nameplateNotSelectedAlpha", 1)
+	SetCVar("nameplateLargeTopInset", 0.08)
 
 	SetCVar("nameplateOtherTopInset", C.nameplate.clamp and 0.08 or -1)
 	SetCVar("nameplateOtherBottomInset", C.nameplate.clamp and 0.1 or -1)
