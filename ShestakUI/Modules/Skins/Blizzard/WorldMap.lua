@@ -113,18 +113,29 @@ local function LoadSkin()
 
 	QuestModelScene:StripTextures()
 	QuestModelScene:CreateBackdrop("Overlay")
+	QuestModelScene.backdrop:SetBackdropColor(C.media.backdrop_color[1], C.media.backdrop_color[2], C.media.backdrop_color[3], C.media.backdrop_alpha)
 	QuestNPCModelNameTooltipFrame:CreateBackdrop("Overlay")
+	QuestNPCModelNameTooltipFrame.backdrop:SetBackdropColor(C.media.backdrop_color[1], C.media.backdrop_color[2], C.media.backdrop_color[3], C.media.backdrop_alpha)
 	QuestNPCModelNameTooltipFrame.backdrop:SetPoint("TOPLEFT", QuestModelScene.backdrop, "BOTTOMLEFT", 0, -1)
 	QuestNPCModelNameTooltipFrame.backdrop:SetPoint("TOPRIGHT", QuestModelScene.backdrop, "BOTTOMRIGHT", 0, -1)
 	QuestNPCModelNameText:SetPoint("TOPLEFT", QuestNPCModelNameplate, 15, -15)
 	QuestNPCModelNameText:SetPoint("BOTTOMRIGHT", QuestNPCModelNameplate, -15, 12)
 	QuestNPCModelTextFrame:StripTextures()
 	QuestNPCModelTextFrame:CreateBackdrop("Overlay")
+	QuestNPCModelTextFrame.backdrop:SetBackdropColor(C.media.backdrop_color[1], C.media.backdrop_color[2], C.media.backdrop_color[3], C.media.backdrop_alpha)
 	QuestNPCModelTextFrame.backdrop:SetPoint("TOPLEFT", QuestNPCModelNameTooltipFrame.backdrop, "BOTTOMLEFT", 0, -1)
 	hooksecurefunc("QuestFrame_ShowQuestPortrait", function(parentFrame, _, _, _, _, x, y)
 		if parentFrame == QuestLogPopupDetailFrame or parentFrame == QuestFrame then
 			x = x + 8
 			y = y + 40
+
+			QuestModelScene.backdrop.overlay:Hide()
+			QuestNPCModelNameTooltipFrame.backdrop.overlay:Hide()
+			QuestNPCModelTextFrame.backdrop.overlay:Hide()
+		else
+			QuestModelScene.backdrop.overlay:Show()
+			QuestNPCModelNameTooltipFrame.backdrop.overlay:Show()
+			QuestNPCModelTextFrame.backdrop.overlay:Show()
 		end
 		QuestModelScene:ClearAllPoints()
 		QuestModelScene:SetPoint("TOPLEFT", parentFrame, "TOPRIGHT", x, y)
