@@ -28,7 +28,12 @@ local function LoadSkin()
 		QuickJoinScrollFrame,
 		QuickJoinRoleSelectionFrame,
 		FriendsFrameBattlenetFrame.BroadcastFrame,
-		FriendsFrameBattlenetFrame.UnavailableInfoFrame
+		FriendsFrameBattlenetFrame.UnavailableInfoFrame,
+		RecruitAFriendFrame.RecruitList.Header,
+		RecruitAFriendFrame.RecruitList.ScrollFrameInset,
+		RecruitAFriendFrame.RewardClaiming,
+		RecruitAFriendRecruitmentFrame,
+		RecruitAFriendRewardsFrame
 	}
 
 	for i = 1, #StripAllTextures do
@@ -59,7 +64,11 @@ local function LoadSkin()
 		QuickJoinRoleSelectionFrame.CancelButton,
 		FriendsListFrameScrollFrame.PendingInvitesHeaderButton,
 		FriendsFrameBattlenetFrame.BroadcastFrame.CancelButton,
-		FriendsFrameBattlenetFrame.BroadcastFrame.UpdateButton
+		FriendsFrameBattlenetFrame.BroadcastFrame.UpdateButton,
+		RecruitAFriendFrame.RewardClaiming.ClaimOrViewRewardButton,
+		RecruitAFriendFrame.RecruitmentButton,
+		RecruitAFriendFrame.SplashFrame.OKButton,
+		RecruitAFriendRecruitmentFrame.GenerateOrCopyLinkButton
 	}
 
 	for i = 1, #buttons do
@@ -71,7 +80,8 @@ local function LoadSkin()
 		FriendsFriendsScrollFrame.scrollBar,
 		IgnoreListFrameScrollFrame.scrollBar,
 		WhoListScrollFrame.scrollBar,
-		QuickJoinScrollFrame.scrollBar
+		QuickJoinScrollFrame.scrollBar,
+		RecruitAFriendFrame.RecruitList.ScrollFrame.Slider
 	}
 
 	for i = 1, #scrollbars do
@@ -98,6 +108,50 @@ local function LoadSkin()
 	AddFriendNameEditBox:SetHeight(AddFriendNameEditBox:GetHeight() - 5)
 	AddFriendFrame:SetTemplate("Transparent")
 	FriendsFriendsFrame:SetTemplate("Transparent")
+
+	-- Recruit a Friend
+	local SplashFrame = RecruitAFriendFrame.SplashFrame
+	SplashFrame:CreateBackdrop("Overlay")
+	SplashFrame.backdrop:SetPoint("TOPLEFT", 2, -2)
+	SplashFrame.backdrop:SetPoint("BOTTOMRIGHT", -1, -1)
+
+	SplashFrame.Picture.b = CreateFrame("Frame", nil, SplashFrame)
+	SplashFrame.Picture.b:SetTemplate("Default")
+	SplashFrame.Picture.b:SetPoint("TOPLEFT", SplashFrame.Picture, "TOPLEFT", -2, 2)
+	SplashFrame.Picture.b:SetPoint("BOTTOMRIGHT", SplashFrame.Picture, "BOTTOMRIGHT", 2, -2)
+	SplashFrame.Picture:SetParent(SplashFrame.Picture.b)
+
+	RecruitAFriendFrame.SplashFrame.Description:SetTextColor(1, 1, 1)
+
+	SplashFrame.Background:Hide()
+	SplashFrame.PictureFrame:Hide()
+
+	SplashFrame.Bracket_TopLeft:Hide()
+	SplashFrame.Bracket_TopRight:Hide()
+	SplashFrame.Bracket_BottomRight:Hide()
+	SplashFrame.Bracket_BottomLeft:Hide()
+	SplashFrame.PictureFrame_Bracket_TopLeft:Hide()
+	SplashFrame.PictureFrame_Bracket_TopRight:Hide()
+	SplashFrame.PictureFrame_Bracket_BottomRight:Hide()
+	SplashFrame.PictureFrame_Bracket_BottomLeft:Hide()
+
+	RecruitAFriendRewardsFrame:SetTemplate("Transparent")
+	T.SkinCloseButton(RecruitAFriendRewardsFrame.CloseButton)
+
+	for object in pairs(RecruitAFriendRewardsFrame.rewardPool.activeObjects) do
+		object.Button.Icon:SkinIcon()
+		object.Button.IconBorder:SetAlpha(0)
+		object.Button:StyleButton(true, 0)
+	end
+
+	RecruitAFriendFrame.RewardClaiming.NextRewardButton.Icon:SkinIcon()
+	RecruitAFriendFrame.RewardClaiming.NextRewardButton.CircleMask:Hide()
+	RecruitAFriendFrame.RewardClaiming.NextRewardButton.IconBorder:SetAlpha(0)
+
+	RecruitAFriendRecruitmentFrame:SetTemplate("Transparent")
+	T.SkinCloseButton(RecruitAFriendRecruitmentFrame.CloseButton)
+	T.SkinEditBox(RecruitAFriendRecruitmentFrame.EditBox, nil, 18)
+	RecruitAFriendRecruitmentFrame.EditBox:SetPoint("RIGHT", RecruitAFriendRecruitmentFrame.GenerateOrCopyLinkButton, "LEFT", -10, 0)
 
 	-- Quick Join Frame
 	QuickJoinRoleSelectionFrame:SetTemplate("Transparent")
@@ -156,7 +210,6 @@ local function LoadSkin()
 	end
 
 	FriendsFrame:SetTemplate("Transparent")
-	RecruitAFriendFrame:SetTemplate("Transparent")
 	FriendsFrameStatusDropDown:SetPoint("TOPLEFT", 1, -27)
 
 	for i = 1, FRIENDS_TO_DISPLAY do

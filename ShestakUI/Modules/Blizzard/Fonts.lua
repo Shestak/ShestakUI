@@ -80,6 +80,7 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	SetFont(Game16Font, NORMAL, 16)
 	SetFont(Game12Font, NORMAL, 12)
 	SetFont(Fancy16Font, NORMAL, 16)
+	SetFont(FriendsFont_11, NORMAL, 11)
 
 	-- Derived fonts
 	SetFont(BossEmoteNormalHuge, NORMAL, 27, "THICKOUTLINE")
