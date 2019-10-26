@@ -66,11 +66,3 @@ local function LoadSkin()
 end
 
 T.SkinFuncs["Blizzard_IslandsQueueUI"] = LoadSkin
-
-local function LoadSecondarySkin()
-	IslandsPartyPoseFrame:StripTextures()
-	IslandsPartyPoseFrame:CreateBackdrop("Transparent")
-	IslandsPartyPoseFrame.LeaveButton:SkinButton()
-end
-
-T.SkinFuncs["Blizzard_IslandsPartyPoseUI"] = LoadSecondarySkin
