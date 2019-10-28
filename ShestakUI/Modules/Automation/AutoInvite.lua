@@ -52,8 +52,8 @@ autoinvite:SetScript("OnEvent", function(self, event, arg1, arg2, ...)
 			InviteUnit(arg2)
 		elseif event == "CHAT_MSG_BN_WHISPER" then
 			local bnetIDAccount = select(11, ...)
-			local bnetIDGameAccount = select(6, BNGetFriendInfoByID(bnetIDAccount))
-			BNInviteFriend(bnetIDGameAccount)
+			local accountInfo = C_BattleNet.GetAccountInfoByID(bnetIDAccount)
+			BNInviteFriend(accountInfo.gameAccountInfo.gameAccountID)
 		end
 	end
 end)
