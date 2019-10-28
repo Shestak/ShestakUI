@@ -21,14 +21,6 @@ WORLD_QUEST_TRACKER_MODULE.Header.Background:Hide()
 
 ObjectiveTrackerFrame.HeaderMenu.Title:SetAlpha(0)
 
---FIXME hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "SetStringText", function(_, fontString, _, useFullHeight)
-	-- local _, fontHeight = SystemFont_Shadow_Med1:GetFont()
-	-- local stringHeight = fontString:GetHeight()
-	-- if stringHeight > OBJECTIVE_TRACKER_DOUBLE_LINE_HEIGHT * 2 - (fontHeight * 2) and not useFullHeight then
-		-- fontString:SetHeight(fontHeight * 2.1)
-	-- end
--- end)
-
 ----------------------------------------------------------------------------------------
 --	Skin ObjectiveTrackerFrame item buttons
 ----------------------------------------------------------------------------------------
