@@ -263,6 +263,17 @@ local function LoadSkin()
 	LFGListFrame.SearchPanel.FilterButton:SkinButton()
 	LFGListFrame.SearchPanel.FilterButton:SetPoint("LEFT", LFGListFrame.SearchPanel.SearchBox, "RIGHT", 5, 0)
 
+	hooksecurefunc("LFGListApplicationViewer_UpdateApplicant", function(button)
+		if not button.DeclineButton.isSkinned then
+			button.DeclineButton:SkinButton()
+			button.DeclineButton.isSkinned = true
+		end
+		if not button.InviteButton.isSkinned then
+			button.InviteButton:SkinButton()
+			button.InviteButton.isSkinned = true
+		end
+	end)
+
 	hooksecurefunc("LFGListSearchEntry_Update", function(button)
 		if button and not button.isSkinned then
 			button.CancelButton:SkinButton()
@@ -340,6 +351,8 @@ local function LoadSkin()
 			button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
 			button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
 			button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
+
+			button.Label:SetFontObject(_G.GameFontNormal)
 			button.styled = true
 		end
 	end)
@@ -382,25 +395,35 @@ local function LoadSkin()
 	T.SkinCheckBox(LFGListFrame.ApplicationViewer.AutoAcceptButton)
 	LFGListFrame.ApplicationViewer.Inset:StripTextures()
 	LFGListFrame.ApplicationViewer.Inset:SetTemplate("Transparent")
+
 	LFGListFrame.ApplicationViewer.NameColumnHeader:SkinButton(true)
-	LFGListFrame.ApplicationViewer.RoleColumnHeader:SkinButton(true)
-	LFGListFrame.ApplicationViewer.ItemLevelColumnHeader:SkinButton(true)
 	LFGListFrame.ApplicationViewer.NameColumnHeader:ClearAllPoints()
 	LFGListFrame.ApplicationViewer.NameColumnHeader:SetPoint("BOTTOMLEFT", LFGListFrame.ApplicationViewer.Inset, "TOPLEFT", 0, 1)
+	LFGListFrame.ApplicationViewer.NameColumnHeader.Label:SetFont(C.media.normal_font, 10)
+
+	LFGListFrame.ApplicationViewer.RoleColumnHeader:SkinButton(true)
 	LFGListFrame.ApplicationViewer.RoleColumnHeader:ClearAllPoints()
 	LFGListFrame.ApplicationViewer.RoleColumnHeader:SetPoint("LEFT", LFGListFrame.ApplicationViewer.NameColumnHeader, "RIGHT", 1, 0)
+	LFGListFrame.ApplicationViewer.RoleColumnHeader.Label:SetFont(C.media.normal_font, 10)
+
+	LFGListFrame.ApplicationViewer.ItemLevelColumnHeader:SkinButton(true)
 	LFGListFrame.ApplicationViewer.ItemLevelColumnHeader:ClearAllPoints()
 	LFGListFrame.ApplicationViewer.ItemLevelColumnHeader:SetPoint("LEFT", LFGListFrame.ApplicationViewer.RoleColumnHeader, "RIGHT", 1, 0)
+	LFGListFrame.ApplicationViewer.ItemLevelColumnHeader.Label:SetFont(C.media.normal_font, 10)
+
 	LFGListFrame.ApplicationViewer.RefreshButton:SkinButton()
 	LFGListFrame.ApplicationViewer.RefreshButton:SetSize(24,24)
 	LFGListFrame.ApplicationViewer.RefreshButton:ClearAllPoints()
 	LFGListFrame.ApplicationViewer.RefreshButton:SetPoint("BOTTOMRIGHT", LFGListFrame.ApplicationViewer.Inset, "TOPRIGHT", 16, 4)
+
 	LFGListFrame.ApplicationViewer.RemoveEntryButton:SkinButton(true)
-	LFGListFrame.ApplicationViewer.EditButton:SkinButton(true)
 	LFGListFrame.ApplicationViewer.RemoveEntryButton:ClearAllPoints()
 	LFGListFrame.ApplicationViewer.RemoveEntryButton:SetPoint("BOTTOMLEFT", -1, 3)
+
+	LFGListFrame.ApplicationViewer.EditButton:SkinButton(true)
 	LFGListFrame.ApplicationViewer.EditButton:ClearAllPoints()
 	LFGListFrame.ApplicationViewer.EditButton:SetPoint("BOTTOMRIGHT", -6, 3)
+
 	LFGListApplicationViewerScrollFrameScrollBar:ClearAllPoints()
 	LFGListApplicationViewerScrollFrameScrollBar:SetPoint("TOPLEFT", LFGListFrame.ApplicationViewer.Inset, "TOPRIGHT", 0, -14)
 	LFGListApplicationViewerScrollFrameScrollBar:SetPoint("BOTTOMLEFT", LFGListFrame.ApplicationViewer.Inset, "BOTTOMRIGHT", 0, 14)
