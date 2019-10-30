@@ -6,12 +6,10 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	TaxiFrame:StripTextures()
-	TaxiFrame:CreateBackdrop("Transparent")
-	TaxiFrame.backdrop:SetPoint("TOPLEFT", -5, 3)
-	TaxiFrame.backdrop:SetPoint("BOTTOMRIGHT", 5, -7)
+	TaxiFrame.TitleText:SetPoint("TOP", TaxiFrame, "TOP", -4, -25)
 	TaxiRouteMap:CreateBackdrop("Default")
 	T.SkinCloseButton(TaxiFrame.CloseButton)
-	TaxiFrame.CloseButton:SetPoint("TOPRIGHT", -4, -1)
+	TaxiFrame.CloseButton:SetPoint("TOPRIGHT", -9, -26)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
