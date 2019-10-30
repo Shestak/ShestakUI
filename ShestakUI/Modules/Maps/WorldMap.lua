@@ -18,6 +18,15 @@ end)
 WorldMapFrame:SetClampedToScreen(true)
 
 ----------------------------------------------------------------------------------------
+--	Count of quests
+----------------------------------------------------------------------------------------
+local numQuest = CreateFrame("Frame", nil, QuestMapFrame)
+numQuest.text = numQuest:CreateFontString(nil, "ARTWORK", "GameFontNormal")
+numQuest.text:SetPoint("TOP", QuestMapFrame, "TOP", 0, -21)
+numQuest.text:SetJustifyH("LEFT")
+numQuest.text:SetText(select(2, GetNumQuestLogEntries()).."/"..C_QuestLog.GetMaxNumQuestsCanAccept())
+
+----------------------------------------------------------------------------------------
 --	Creating coordinate
 ----------------------------------------------------------------------------------------
 local coords = CreateFrame("Frame", "CoordsFrame", WorldMapFrame)
@@ -79,6 +88,8 @@ WorldMapFrame:HookScript("OnUpdate", function()
 		else
 			coords.MouseText:SetText(L_MAP_CURSOR.."|cffff0000"..L_MAP_BOUNDS.."|r")
 		end
+
+		numQuest.text:SetText(select(2, GetNumQuestLogEntries()).."/"..C_QuestLog.GetMaxNumQuestsCanAccept())
 
 		int = 0
 	end
