@@ -10,6 +10,7 @@ local function LoadSkin()
 
 	ItemUpgradeFrameMoneyFrame:StripTextures()
 	ItemUpgradeFrame.ButtonFrame:StripTextures()
+	ItemUpgradeFrame.TextFrame:StripTextures()
 
 	ItemUpgradeFrameUpgradeButton:ClearAllPoints()
 	ItemUpgradeFrameUpgradeButton:SetPoint("BOTTOMRIGHT", ItemUpgradeFrame, "BOTTOMRIGHT", -3, 3)
