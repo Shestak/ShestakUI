@@ -28,7 +28,6 @@ local function LoadSkin()
 		local t = _G["MerchantItem"..i.."ItemButtonIconTexture"]
 		local item_bar = _G["MerchantItem"..i]
 		local c = _G["MerchantItem"..i.."AltCurrencyFrameItem1"]
-		local ct = _G["MerchantItem"..i.."AltCurrencyFrameItem1Texture"]
 
 		item_bar:StripTextures(true)
 		item_bar:CreateBackdrop("Overlay")
@@ -45,11 +44,22 @@ local function LoadSkin()
 		t:SetPoint("TOPLEFT", 2, -2)
 		t:SetPoint("BOTTOMRIGHT", -2, 2)
 
-		c:SetPoint("LEFT", _G["MerchantItem"..i.."AltCurrencyFrame"], "LEFT", 13, 5)
-		c:CreateBackdrop("Default")
-		c.backdrop:SetPoint("TOPLEFT", ct, "TOPLEFT", -2, 2)
-		c.backdrop:SetPoint("BOTTOMRIGHT", ct, "BOTTOMRIGHT", 2, -2)
-		ct:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		hooksecurefunc(_G["MerchantItem"..i.."AltCurrencyFrame"], "SetPoint", function(self, _, _, _, x)
+			if x == -14 then
+				c:SetPoint("LEFT", self, "LEFT", 15, 0)
+			elseif x == 0 then
+				c:SetPoint("LEFT", self, "LEFT", 14, 5)
+			end
+		end)
+
+		for j = 1, 3 do
+			local c = _G["MerchantItem"..i.."AltCurrencyFrameItem"..j]
+			local ct = _G["MerchantItem"..i.."AltCurrencyFrameItem"..j.."Texture"]
+			c:CreateBackdrop("Default")
+			c.backdrop:SetPoint("TOPLEFT", ct, "TOPLEFT", -2, 2)
+			c.backdrop:SetPoint("BOTTOMRIGHT", ct, "BOTTOMRIGHT", 2, -2)
+			ct:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		end
 
 		_G["MerchantItem"..i.."MoneyFrame"]:ClearAllPoints()
 		_G["MerchantItem"..i.."MoneyFrame"]:SetPoint("BOTTOMLEFT", b, "BOTTOMRIGHT", 3, 0)
