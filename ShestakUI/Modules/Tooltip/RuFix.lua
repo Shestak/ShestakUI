@@ -49,7 +49,9 @@ end
 local function TranslateClass(text)
 	if text then
 		for rus, replaceclass in next, replaceclass do
-			text = text:gsub(rus, replaceclass)
+			if not (rus == "Охотник" and string.find(text, "Охотник на демонов")) then
+				text = text:gsub(rus, replaceclass)
+			end
 		end
 		return text
 	end
