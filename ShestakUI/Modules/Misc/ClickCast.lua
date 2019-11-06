@@ -65,7 +65,7 @@ ScrollSpells:SetPoint("TOPLEFT", _G["SpellBinderInset"], "TOPLEFT", 0, -5)
 ScrollSpells:SetPoint("BOTTOMRIGHT", _G["SpellBinderInset"], "BOTTOMRIGHT", -30, 5)
 ScrollSpells:SetScrollChild(ScrollSpells.child)
 
-SpellBinder.makeSpellsList = function(self, scroll, delete)
+SpellBinder.makeSpellsList = function(_, scroll, delete)
 	local oldb
 	scroll:SetPoint("TOPLEFT")
 	scroll:SetSize(270, 300)
@@ -113,7 +113,7 @@ SpellBinder.makeSpellsList = function(self, scroll, delete)
 			bf.delete:GetNormalTexture():SetVertexColor(0.8, 0, 0)
 			bf.delete:SetPushedTexture("Interface\\BUTTONS\\UI-GroupLoot-Pass-Up")
 			bf.delete:SetHighlightTexture("Interface\\BUTTONS\\UI-GroupLoot-Pass-Up")
-			bf.delete:SetScript("OnClick", function(self)
+			bf.delete:SetScript("OnClick", function()
 				for j, k in ipairs(DB.spells) do
 					if k ~= spell then
 						k.checked = false
@@ -165,7 +165,7 @@ SpellBinder.makeSpellsList = function(self, scroll, delete)
 	end
 end
 
-SpellBinder.makeFramesList = function(self)
+SpellBinder.makeFramesList = function()
 	for frame in pairs(ClickCastFrames) do
 		local v
 		if frame and type(frame) == "table" then v = frame:GetName() end
@@ -213,7 +213,7 @@ SpellBinder.OpenButton:SetScript("OnShow", function(self)
 	self:SetScript("OnLeave", function() GameTooltip:Hide() end)
 end)
 
-SpellBinder.OpenButton:SetScript("OnClick", function(self)
+SpellBinder.OpenButton:SetScript("OnClick", function()
 	if InCombatLockdown() then SpellBinder:Hide() return end
 	if SpellBinder:IsVisible() then
 		SpellBinder:Hide()
@@ -226,7 +226,7 @@ SpellBinder.OpenButton:SetScript("OnClick", function(self)
 end)
 SpellBinder.OpenButton:Show()
 
-_G["SpellBinderCloseButton"]:SetScript("OnClick", function(self)
+_G["SpellBinderCloseButton"]:SetScript("OnClick", function()
 	SpellBinder:Hide()
 	SpellBinder.sbOpen = false
 	SpellBinder:ToggleButtons()
@@ -307,7 +307,7 @@ SpellBinder.SheduleUpdate = function()
 	SpellBinder.updated = false
 	if InCombatLockdown() then
 		SpellBinder:RegisterEvent("PLAYER_REGEN_ENABLED")
-		SpellBinder:SetScript("OnEvent", function(self)
+		SpellBinder:SetScript("OnEvent", function()
 			SpellBinder.UpdateAll()
 			if SpellBinder.updated then
 				SpellBinder:UnregisterEvent("PLAYER_REGEN_ENABLED")

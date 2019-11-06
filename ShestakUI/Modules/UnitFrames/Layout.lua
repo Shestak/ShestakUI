@@ -1308,7 +1308,7 @@ if C.unitframe.show_arena == true then
 	arenaprepupdate:RegisterEvent("PLAYER_ENTERING_WORLD")
 	arenaprepupdate:RegisterEvent("ARENA_OPPONENT_UPDATE")
 	arenaprepupdate:RegisterEvent("ARENA_PREP_OPPONENT_SPECIALIZATIONS")
-	arenaprepupdate:SetScript("OnEvent", function(self, event)
+	arenaprepupdate:SetScript("OnEvent", function(_, event)
 		if event == "PLAYER_LOGIN" then
 			for i = 1, 5 do
 				arenaprep[i]:SetAllPoints(_G["oUF_Arena"..i])

@@ -69,7 +69,7 @@ local function CheckSpec()
 	end
 end
 
-local function Update(object, event, unit)
+local function Update(object, _, unit)
 	if object.unit ~= unit then return end
 	local debuffType, texture = GetDebuffType(unit, object.DebuffHighlightFilter)
 	if debuffType then

@@ -7,7 +7,7 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_enemy_spec ~= true then ret
 local _, ns = ...
 local oUF = ns.oUF
 
-local function Update(object, event, unit)
+local function Update(object, _, unit)
 	if object.unit ~= unit or unit == "player" or unit:find("pet") then return end
 	object.EnemySpec:SetText("")
 	if UnitIsFriend("player", unit) or not UnitIsPlayer(unit) then return end

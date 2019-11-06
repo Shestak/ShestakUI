@@ -70,7 +70,7 @@ local function UpdateSlot(self, slot)
 	end
 end
 
-local function Update(self, unit)
+local function Update(self)
 	-- Update every slot on login, still have issues with it
 	for i = 1, MAX_TOTEMS do
 		UpdateSlot(self, i)
@@ -83,7 +83,7 @@ local function Event(self, event, ...)
 	end
 end
 
-local function Enable(self, unit)
+local function Enable(self)
 	local totem = self.TotemBar
 
 	if totem then
@@ -118,7 +118,7 @@ local function Enable(self, unit)
 	end
 end
 
-local function Disable(self, unit)
+local function Disable(self)
 	local totem = self.TotemBar
 	if totem then
 		self:UnregisterEvent("PLAYER_TOTEM_UPDATE", Event)

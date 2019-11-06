@@ -212,7 +212,7 @@ function lpanels:MakePanel(f)
 			if is(t.string, "function") and t.update ~= 0 then
 				text.elapsed = 0
 				local update, string = t.update or 1, t.string
-				local function OnUpdate(self, u)
+				local function OnUpdate(_, u)
 					text.elapsed = text.elapsed + u
 					if text.elapsed > update then text:SetText(string(text)) text.elapsed = 0 end
 				end
@@ -276,7 +276,7 @@ function lpanels:Exit()
 	self.reset = 1 self.reset = nil
 end
 
-function lpanels.OnEvent(self, event)
+function lpanels.OnEvent(_, event)
 	if event == "PLAYER_LOGIN" then
 		lpanels:Init()
 		lpanels = lpanels:Exit()

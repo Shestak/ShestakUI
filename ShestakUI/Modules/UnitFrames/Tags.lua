@@ -7,7 +7,7 @@ if C.unitframe.enable ~= true and C.nameplate.enable ~= true then return end
 local _, ns = ...
 local oUF = ns.oUF
 
-oUF.Tags.Methods["Threat"] = function(unit)
+oUF.Tags.Methods["Threat"] = function()
 	local _, status, percent = UnitDetailedThreatSituation("player", "target")
 	if percent and percent > 0 then
 		return ("%s%d%%|r"):format(Hex(GetThreatStatusColor(status)), percent)
@@ -38,7 +38,7 @@ oUF.Tags.Methods["DiffColor"] = function(unit)
 end
 oUF.Tags.Events["DiffColor"] = "UNIT_LEVEL"
 
-oUF.Tags.Methods["PetNameColor"] = function(unit)
+oUF.Tags.Methods["PetNameColor"] = function()
 	return string.format("|cff%02x%02x%02x", T.color.r * 255, T.color.g * 255, T.color.b * 255)
 end
 oUF.Tags.Events["PetNameColor"] = "UNIT_POWER_UPDATE"

@@ -532,7 +532,7 @@ end
 b:SetSize(19, 19)
 b:SetAlpha(0)
 
-b:SetScript("OnClick", function(self)
+b:SetScript("OnClick", function()
 	if _G["stArchaeologyFrame"]:IsShown() then
 		_G["stArchaeologyFrame"]:Hide()
 		SavedOptionsPerChar.Archaeology = false
@@ -577,11 +577,11 @@ local last = 0
 local time = 3
 
 f:RegisterEvent("UNIT_SPELLCAST_STOP")
-f:SetScript("OnEvent", function(self, event, unit, _, _, _, spellid)
+f:SetScript("OnEvent", function(_, _, unit, _, _, _, spellid)
 	if not unit == "player" or select(2, UnitRace("player")) == "Dwarf" then return end
 	if spellid == 80451 then
 		text:SetText("3")
-		f:SetScript("OnUpdate", function(self, elapsed)
+		f:SetScript("OnUpdate", function(_, elapsed)
 			last = last + elapsed
 			if last > 1 then
 				time = time - 1

@@ -20,7 +20,7 @@ do
 	local cache = setmetatable({}, {__type = "k"})
 
 	local frame = CreateFrame("Frame")
-	frame:SetScript("OnEvent", function(self, event)
+	frame:SetScript("OnEvent", function()
 		for k,t in pairs(GUIDs) do
 			GUIDs[k] = nil
 			for a in pairs(t) do
@@ -73,7 +73,7 @@ local function expireIcon(icon)
 end
 
 local found = {}
-local function Update(frame, event, unit)
+local function Update(frame, _, unit)
 	if frame.unit ~= unit then return end
 	local watch = frame.AuraWatch
 	local index, icons = 1, watch.watched

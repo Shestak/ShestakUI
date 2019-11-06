@@ -32,7 +32,7 @@ local function UpdateBar()
 	local flag = 0
 	local duration = 40
 	local interval = 0.1
-	obj:SetScript("OnUpdate", function(self, elapsed)
+	obj:SetScript("OnUpdate", function(_, elapsed)
 		obj.nextUpdate = obj.nextUpdate + elapsed
 		if obj.nextUpdate > interval then
 			local newTime = GetTime()
@@ -52,7 +52,7 @@ local function UpdateBar()
 end
 
 frame:RegisterEvent("LFG_PROPOSAL_SHOW")
-frame:SetScript("OnEvent", function(self)
+frame:SetScript("OnEvent", function()
 	if LFGDungeonReadyDialog:IsShown() then
 		UpdateBar()
 	end

@@ -16,7 +16,7 @@ local function Smooth(self, value)
 	end
 end
 
-local function SmoothBar(self, bar)
+local function SmoothBar(_, bar)
 	bar.SetValue_ = bar.SetValue
 	bar.SetValue = Smooth
 end

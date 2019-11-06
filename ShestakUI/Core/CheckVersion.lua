@@ -36,7 +36,7 @@ C_ChatInfo.RegisterAddonMessagePrefix("ShestakUIVersion")
 local whisp = CreateFrame("Frame")
 whisp:RegisterEvent("CHAT_MSG_WHISPER")
 whisp:RegisterEvent("CHAT_MSG_BN_WHISPER")
-whisp:SetScript("OnEvent", function(self, event, text, name, ...)
+whisp:SetScript("OnEvent", function(_, event, text, name, ...)
 	if text:lower():match("ui_version") or text:lower():match("уи_версия") then
 		if event == "CHAT_MSG_WHISPER" then
 			SendChatMessage("ShestakUI "..T.version, "WHISPER", nil, name)

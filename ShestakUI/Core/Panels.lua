@@ -71,7 +71,7 @@ shiftanchor:RegisterEvent("PLAYER_LOGIN")
 shiftanchor:RegisterEvent("PLAYER_ENTERING_WORLD")
 shiftanchor:RegisterEvent("UPDATE_SHAPESHIFT_FORMS")
 shiftanchor:RegisterEvent("UPDATE_SHAPESHIFT_FORM")
-shiftanchor:SetScript("OnEvent", function(self)
+shiftanchor:SetScript("OnEvent", function()
 	local forms = GetNumShapeshiftForms()
 	if forms > 0 then
 		if C.actionbar.stancebar_horizontal ~= true then
