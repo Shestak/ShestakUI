@@ -1049,7 +1049,7 @@ if guild.enabled then
 									text = string.format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r %s", levelc.r * 255, levelc.g * 255, levelc.b * 255, guildTable[i][3], classc.r * 255, classc.g * 255, classc.b * 255, Ambiguate(guildTable[i][1], "all"), ""),
 									arg1 = guildTable[i][1],
 									notCheckable = true,
-									func = function(self, arg1)
+									func = function(_, arg1)
 										menuFrame:Hide()
 										InviteUnit(arg1)
 									end
@@ -1061,7 +1061,7 @@ if guild.enabled then
 							text = string.format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r %s", levelc.r * 255, levelc.g * 255, levelc.b * 255, guildTable[i][3], classc.r * 255, classc.g * 255, classc.b * 255, Ambiguate(guildTable[i][1], "all"), grouped),
 							arg1 = guildTable[i][1],
 							notCheckable = true,
-							func = function(self, arg1)
+							func = function(_, arg1)
 								menuFrame:Hide()
 								SetItemRef("player:"..arg1, ("|Hplayer:%1$s|h[%1$s]|h"):format(arg1), "LeftButton")
 							end
@@ -1143,6 +1143,7 @@ if friends.enabled then
 	local totalBattleNetOnline = 0
 	local BNTable = {}
 	local friendTable = {}
+	local BNTableEnter = {}
 	local function BuildFriendTable(total)
 		totalFriendsOnline = 0
 		wipe(friendTable)
@@ -1182,12 +1183,12 @@ if friends.enabled then
 			end
 		end
 
-		table.sort(BNTable, function(a, b)
-			if a[2] and b[2] and a[3] and b[3] then
-				if a[2] == b[2] then return a[3] < b[3] end
-				return a[2] < b[2]
-			end
-		end)
+		-- table.sort(BNTable, function(a, b)
+			-- if a[2] and b[2] and a[3] and b[3] then
+				-- if a[2] == b[2] then return a[3] < b[3] end
+				-- return a[2] < b[2]
+			-- end
+		-- end)
 	end
 	local clientTags = {
 		[BNET_CLIENT_D3] = "Diablo 3",
@@ -1198,7 +1199,7 @@ if friends.enabled then
 		[BNET_CLIENT_SC2] = "StarCraft 2",
 		[BNET_CLIENT_DESTINY2] = "Destiny 2",
 		[BNET_CLIENT_COD] = "Call of Duty: Black Ops 4",
-		["BSAp"] = "Mobile",
+		["BSAp"] = COMMUNITIES_PRESENCE_MOBILE_CHAT
 	}
 	Inject("Friends", {
 		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN PLAYER_ENTERING_WORLD GROUP_ROSTER_UPDATE FRIENDLIST_UPDATE BN_FRIEND_LIST_SIZE_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED") end,
@@ -1253,7 +1254,7 @@ if friends.enabled then
 								text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1], grouped),
 								arg1 = friendTable[i][1],
 								notCheckable = true,
-								func = function(self, arg1)
+								func = function(_, arg1)
 									menuFrame:Hide()
 									SetItemRef("player:"..arg1, ("|Hplayer:%1$s|h[%1$s]|h"):format(arg1), "LeftButton")
 								end
@@ -1265,7 +1266,7 @@ if friends.enabled then
 									text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1]),
 									arg1 = friendTable[i][1],
 									notCheckable = true,
-									func = function(self, arg1)
+									func = function(_, arg1)
 										menuFrame:Hide()
 										InviteUnit(arg1)
 									end
@@ -1289,7 +1290,7 @@ if friends.enabled then
 								text = BNTable[i][2]..grouped,
 								arg1 = BNTable[i][2],
 								notCheckable = true,
-								func = function(self, arg1)
+								func = function(_, arg1)
 									menuFrame:Hide()
 									ChatFrame_SendBNetTell(arg1)
 								end
@@ -1306,7 +1307,7 @@ if friends.enabled then
 										text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, BNTable[i][16], classc.r * 255, classc.g * 255, classc.b * 255, BNTable[i][4]),
 										arg1 = BNTable[i][5],
 										notCheckable = true,
-										func = function(self, arg1)
+										func = function(_, arg1)
 											menuFrame:Hide()
 											BNInviteFriend(arg1)
 										end
@@ -1327,13 +1328,18 @@ if friends.enabled then
 			local name, level, class, zone, connected, status, note, classc, levelc, zone_r, zone_g, zone_b, grouped, realm_r, realm_g, realm_b
 			for i = 0, total do if select(5, GetFriendInfo(i)) then online = online + 1 end end
 			local BNonline, BNtotal = 0, BNGetNumFriends()
+			wipe(BNTableEnter)
 			if BNtotal > 0 then
 				for i = 1, BNtotal do
 					local accountInfo = C_BattleNet.GetFriendAccountInfo(i)
+					BNTableEnter[i] = {accountInfo, accountInfo.gameAccountInfo.clientProgram}
 					if accountInfo.gameAccountInfo.isOnline then
 						BNonline = BNonline + 1
 					end
 				end
+				-- table.sort(BNTableEnter, function(a, b)
+					-- return a[2] > b[2]
+				-- end)
 			end
 			local totalonline = online + BNonline
 			local totalfriends = total + BNtotal
@@ -1366,8 +1372,8 @@ if friends.enabled then
 				if BNonline > 0 then
 					GameTooltip:AddLine(" ")
 					GameTooltip:AddLine(BATTLENET_FRIEND)
-					for i = 1, BNtotal do
-						local accountInfo = C_BattleNet.GetFriendAccountInfo(i)
+					for i = 1, #BNTableEnter do
+						local accountInfo = BNTableEnter[i][1]
 						local isOnline = accountInfo.gameAccountInfo.isOnline
 						local client = accountInfo.gameAccountInfo.clientProgram
 						if isOnline then
@@ -1397,6 +1403,9 @@ if friends.enabled then
 									classc = {r = 1, g = 1, b = 1}
 								end
 								if UnitInParty(characterName) or UnitInRaid(characterName) then grouped = " |cffaaaaaa*|r" else grouped = "" end
+								if accountInfo.gameAccountInfo.factionName ~= UnitFactionGroup("player") then
+									grouped = " |cffff0000*|r"
+								end
 								GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r", client, levelc.r * 255, levelc.g * 255, levelc.b * 255, level, classc.r * 255, classc.g * 255, classc.b * 255, characterName, grouped, 255, 0, 0, status), accountInfo.accountName, 238, 238, 238, 238, 238, 238)
 								if self.altdown then
 									if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
