@@ -164,6 +164,17 @@ local function LoadSkin()
 			item.Icon:SetDrawLayer("OVERLAY")
 			item.Icon:SetParent(item.border)
 
+			hooksecurefunc(item.IconBorder, "SetVertexColor", function(self, r, g, b)
+				if r ~= 0.65882 and g ~= 0.65882 and b ~= 0.65882 then
+					self:GetParent().border.backdrop:SetBackdropBorderColor(r, g, b)
+				end
+				self:SetTexture("")
+			end)
+
+			hooksecurefunc(item.IconBorder, "Hide", function(self)
+				self:GetParent().border.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+			end)
+
 			item.Count:SetDrawLayer("OVERLAY")
 			item.Count:SetParent(item.border)
 
@@ -331,11 +342,17 @@ local function LoadSkin()
 	LFGDungeonReadyPopup:SetTemplate("Transparent")
 	LFGDungeonReadyDialog.SetBackdrop = T.dummy
 
-	for _, frame in pairs({LFGDungeonReadyDialogRewardsFrameReward1, LFGDungeonReadyDialogRewardsFrameReward2}) do
-		frame.texture:SetSize(18, 18)
-		frame.texture:SkinIcon(true)
-		frame:DisableDrawLayer("OVERLAY")
-	end
+	hooksecurefunc("LFGDungeonReadyDialog_UpdateRewards", function()
+		for i = 1, LFD_MAX_REWARDS do
+			local reward = LFGDungeonReadyDialogRewardsFrame.Rewards[i]
+			if not reward.isSkinned then
+				reward.texture:SetSize(18, 18)
+				reward.texture:SkinIcon(true)
+				reward:DisableDrawLayer("OVERLAY")
+				reward.isSkinned = true
+			end
+		end
+	end)
 
 	LFGListFrame.CategorySelection.CategoryButtons[1]:SetNormalFontObject(GameFontNormal)
 	hooksecurefunc("LFGListCategorySelection_AddButton", function(self, index)
