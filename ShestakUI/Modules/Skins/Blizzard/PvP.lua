@@ -74,7 +74,7 @@ local function LoadSkin()
 	RewardFrameSeason.CircleMask:Hide()
 	RewardFrameSeason.Icon:SkinIcon()
 
-	for _, i in pairs({"RandomBGButton", "RandomEpicBGButton", "Arena1Button", "BrawlButton"}) do
+	for _, i in pairs({"RandomBGButton", "RandomEpicBGButton", "Arena1Button", "BrawlButton", "SpecialEventButton"}) do
 		local button = HonorFrame.BonusFrame[i]
 		button:StripTextures()
 		button:SetTemplate("Overlay")
@@ -108,6 +108,31 @@ local function LoadSkin()
 		EnlistmentBonusIcon:SetTexture("Interface\\Icons\\achievement_guildperk_honorablemention_rank2")
 		EnlistmentBonusIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
+
+	hooksecurefunc('PVPUIFrame_ConfigureRewardFrame', function(rewardFrame, _, _, itemRewards, currencyRewards)
+		local rewardTexture, rewardQuaility, _ = nil, 1
+
+		if currencyRewards then
+			for _, reward in ipairs(currencyRewards) do
+				local name, _, texture, _, _, _, _, quality = GetCurrencyInfo(reward.id)
+				if quality == _G.LE_ITEM_QUALITY_ARTIFACT then
+					_, rewardTexture, _, rewardQuaility = CurrencyContainerUtil.GetCurrencyContainerInfo(reward.id, reward.quantity, name, texture, quality)
+				end
+			end
+		end
+
+		if not rewardTexture and itemRewards then
+			local reward = itemRewards[1]
+			if reward then
+				_, _, rewardQuaility, _, _, _, _, _, _, rewardTexture = GetItemInfo(reward.id)
+			end
+		end
+
+		if rewardTexture then
+			rewardFrame.Icon:SetTexture(rewardTexture)
+			rewardFrame:SetBackdropBorderColor(GetItemQualityColor(rewardQuaility))
+		end
+	end)
 
 	for i = 1, #HonorFrame.SpecificFrame.buttons do
 		local button = HonorFrame.SpecificFrame.buttons[i]
