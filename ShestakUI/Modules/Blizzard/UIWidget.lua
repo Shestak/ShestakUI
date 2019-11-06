@@ -50,57 +50,70 @@ end
 ----------------------------------------------------------------------------------------
 --	UIWidget skin
 ----------------------------------------------------------------------------------------
-do
-	local function SkinUIWidgets()
-		for _, frame in pairs({UIWidgetTopCenterContainerFrame, UIWidgetBelowMinimapContainerFrame}) do
-			for _, widgetFrame in pairs(frame.widgetFrames) do
-				if widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.CaptureBar then
-					-- TODO: find way to skin capture bar
-					-- if not widgetFrame.backdrop then
-						-- widgetFrame.LeftLine:SetAlpha(0)
-						-- widgetFrame.RightLine:SetAlpha(0)
-						-- -- select(4, widgetFrame:GetRegions()):Hide()
+local atlasColors = {
+	["UI-Frame-Bar-Fill-Blue"] = {0.2, 0.6, 1},
+	["UI-Frame-Bar-Fill-Red"] = {0.9, 0.2, 0.2}
+}
 
-						-- widgetFrame.LeftBar:SetTexture(C.media.texture)
-						-- widgetFrame.NeutralBar:SetTexture(C.media.texture)
-						-- widgetFrame.RightBar:SetTexture(C.media.texture)
+hooksecurefunc(UIWidgetTemplateStatusBarMixin, "Setup", function(widgetInfo)
+	local bar = widgetInfo.Bar
+	local atlas = bar:GetStatusBarAtlas()
+	if atlasColors[atlas] then
+		bar:SetStatusBarTexture(C.media.texture)
+		bar:SetStatusBarColor(unpack(atlasColors[atlas]))
+	end
+	if not bar.styled then
+		bar.BGLeft:SetAlpha(0)
+		bar.BGRight:SetAlpha(0)
+		bar.BGCenter:SetAlpha(0)
+		bar.BorderLeft:SetAlpha(0)
+		bar.BorderRight:SetAlpha(0)
+		bar.BorderCenter:SetAlpha(0)
+		bar.Spark:SetAlpha(0)
+		bar:CreateBackdrop("Overlay")
+		bar.styled = true
+	end
+end)
 
-						-- widgetFrame.LeftBar:SetVertexColor(0.2, 0.6, 1)
-						-- widgetFrame.NeutralBar:SetVertexColor(0.8, 0.8, 0.8)
-						-- widgetFrame.RightBar:SetVertexColor(0.9, 0.2, 0.2)
-
-						-- widgetFrame:CreateBackdrop("Default")
-						-- widgetFrame.backdrop:SetPoint("TOPLEFT", widgetFrame.LeftBar, -2, 2)
-						-- widgetFrame.backdrop:SetPoint("BOTTOMRIGHT", widgetFrame.RightBar, 2, -2)
-					-- end
-				elseif widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.StatusBar then
-					T.SkinStatusBarWidget(widgetFrame)
-				elseif widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.DoubleStatusBar then
-					for _, bar in pairs({widgetFrame.LeftBar, widgetFrame.RightBar}) do
-						local atlas = bar:GetStatusBarAtlas()
-						if not atlas then
-							bar:SetStatusBarTexture(C.media.texture)
-						end
-						if not bar.styled then
-							bar.BG:SetAlpha(0)
-							bar.BorderLeft:SetAlpha(0)
-							bar.BorderRight:SetAlpha(0)
-							bar.BorderCenter:SetAlpha(0)
-							bar.Spark:SetAlpha(0)
-							bar.SparkGlow:SetAlpha(0)
-							bar:CreateBackdrop("Overlay")
-							bar.styled = true
-						end
-					end
-				end
-			end
+hooksecurefunc(UIWidgetTemplateDoubleStatusBarMixin, "Setup", function(widgetInfo)
+	for _, bar in pairs({widgetInfo.LeftBar, widgetInfo.RightBar}) do
+		local atlas = bar:GetStatusBarAtlas()
+		if atlasColors[atlas] then
+			bar:SetStatusBarTexture(C.media.texture)
+			bar:SetStatusBarColor(unpack(atlasColors[atlas]))
+		end
+		if not bar.styled then
+			bar.BG:SetAlpha(0)
+			bar.BorderLeft:SetAlpha(0)
+			bar.BorderRight:SetAlpha(0)
+			bar.BorderCenter:SetAlpha(0)
+			bar.Spark:SetAlpha(0)
+			bar.SparkGlow:SetAlpha(0)
+			bar:CreateBackdrop("Overlay")
+			bar.styled = true
 		end
 	end
+end)
 
-	local frame = CreateFrame("Frame")
-	frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-	frame:RegisterEvent("UPDATE_ALL_UI_WIDGETS")
-	frame:SetScript("OnEvent", function()
-		SkinUIWidgets()
-	end)
-end
+hooksecurefunc(UIWidgetTemplateCaptureBarMixin, "Setup", function(widgetInfo)
+	widgetInfo.LeftLine:SetAlpha(0)
+	widgetInfo.RightLine:SetAlpha(0)
+	widgetInfo.BarBackground:SetAlpha(0)
+	widgetInfo.Glow1:SetAlpha(0)
+	widgetInfo.Glow2:SetAlpha(0)
+	widgetInfo.Glow3:SetAlpha(0)
+
+	widgetInfo.LeftBar:SetTexture(C.media.texture)
+	widgetInfo.NeutralBar:SetTexture(C.media.texture)
+	widgetInfo.RightBar:SetTexture(C.media.texture)
+
+	widgetInfo.LeftBar:SetVertexColor(0.2, 0.6, 1)
+	widgetInfo.NeutralBar:SetVertexColor(0.8, 0.8, 0.8)
+	widgetInfo.RightBar:SetVertexColor(0.9, 0.2, 0.2)
+
+	if not widgetInfo.backdrop then
+		widgetInfo:CreateBackdrop("Default")
+		widgetInfo.backdrop:SetPoint("TOPLEFT", widgetInfo.LeftBar, -2, 2)
+		widgetInfo.backdrop:SetPoint("BOTTOMRIGHT", widgetInfo.RightBar, 2, -2)
+	end
+end)

@@ -43,9 +43,7 @@ local function LoadSkin()
 		for _, option in next, self.Options do
 			if option.WidgetContainer.widgetFrames then
 				for _, widgetFrame in next, option.WidgetContainer.widgetFrames do
-					if widgetFrame.widgetType == 2 then
-						T.SkinStatusBarWidget(widgetFrame)
-					elseif widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.TextWithState then
+					if widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.TextWithState then
 						widgetFrame.Text:SetTextColor(1, 1, 1)
 					elseif widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.SpellDisplay then
 						local r, g, b = widgetFrame.Spell.Text:GetTextColor()
