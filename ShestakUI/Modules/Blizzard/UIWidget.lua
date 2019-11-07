@@ -52,8 +52,38 @@ end
 ----------------------------------------------------------------------------------------
 local atlasColors = {
 	["UI-Frame-Bar-Fill-Blue"] = {0.2, 0.6, 1},
-	["UI-Frame-Bar-Fill-Red"] = {0.9, 0.2, 0.2}
+	["UI-Frame-Bar-Fill-Red"] = {0.9, 0.2, 0.2},
+	["objectivewidget-bar-fill-left"] = {0.2, 0.6, 1},
+	["objectivewidget-bar-fill-right"] = {0.9, 0.2, 0.2}
 }
+
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:RegisterEvent("UPDATE_ALL_UI_WIDGETS")
+frame:SetScript("OnEvent", function()
+	for _, widgetFrame in pairs(UIWidgetTopCenterContainerFrame.widgetFrames) do
+		if widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.DoubleStatusBar then
+			for _, bar in pairs({widgetFrame.LeftBar, widgetFrame.RightBar}) do
+				hooksecurefunc(bar, "SetStatusBarAtlas", function(self, atlas)
+					if atlasColors[atlas] then
+						bar:SetStatusBarTexture(C.media.texture)
+						bar:SetStatusBarColor(unpack(atlasColors[atlas]))
+					end
+				end)
+				if not bar.styled then
+					bar.BG:SetAlpha(0)
+					bar.BorderLeft:SetAlpha(0)
+					bar.BorderRight:SetAlpha(0)
+					bar.BorderCenter:SetAlpha(0)
+					bar.Spark:SetAlpha(0)
+					bar.SparkGlow:SetAlpha(0)
+					bar:CreateBackdrop("Overlay")
+					bar.styled = true
+				end
+			end
+		end
+	end
+end)
 
 hooksecurefunc(UIWidgetTemplateStatusBarMixin, "Setup", function(widgetInfo)
 	local bar = widgetInfo.Bar
@@ -72,26 +102,6 @@ hooksecurefunc(UIWidgetTemplateStatusBarMixin, "Setup", function(widgetInfo)
 		bar.Spark:SetAlpha(0)
 		bar:CreateBackdrop("Overlay")
 		bar.styled = true
-	end
-end)
-
-hooksecurefunc(UIWidgetTemplateDoubleStatusBarMixin, "Setup", function(widgetInfo)
-	for _, bar in pairs({widgetInfo.LeftBar, widgetInfo.RightBar}) do
-		local atlas = bar:GetStatusBarAtlas()
-		if atlasColors[atlas] then
-			bar:SetStatusBarTexture(C.media.texture)
-			bar:SetStatusBarColor(unpack(atlasColors[atlas]))
-		end
-		if not bar.styled then
-			bar.BG:SetAlpha(0)
-			bar.BorderLeft:SetAlpha(0)
-			bar.BorderRight:SetAlpha(0)
-			bar.BorderCenter:SetAlpha(0)
-			bar.Spark:SetAlpha(0)
-			bar.SparkGlow:SetAlpha(0)
-			bar:CreateBackdrop("Overlay")
-			bar.styled = true
-		end
 	end
 end)
 
