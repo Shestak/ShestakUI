@@ -534,4 +534,6 @@ T.OpenItems = {
 	[140591] = true,	-- Shattered Satchel of Cooperation
 	[140601] = true,	-- Sixtrigger Resource Crate
 	[141350] = true,	-- Kirin Tor Chest
+	[163611] = true,	-- Seafarer's Coin Pouch
+	[163612] = true,	-- Wayfinder's Satchel
 }
