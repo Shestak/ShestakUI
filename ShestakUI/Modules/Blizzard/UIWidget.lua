@@ -53,6 +53,7 @@ end
 local atlasColors = {
 	["UI-Frame-Bar-Fill-Blue"] = {0.2, 0.6, 1},
 	["UI-Frame-Bar-Fill-Red"] = {0.9, 0.2, 0.2},
+	["UI-Frame-Bar-Fill-Yellow"] = {1, 0.6, 0},
 	["objectivewidget-bar-fill-left"] = {0.2, 0.6, 1},
 	["objectivewidget-bar-fill-right"] = {0.9, 0.2, 0.2}
 }
