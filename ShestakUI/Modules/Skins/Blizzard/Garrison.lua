@@ -48,11 +48,8 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, _, addon)
 
 		GarrisonShipyardMapMissionTooltip:StripTextures()
 		GarrisonShipyardMapMissionTooltip:SetTemplate("Transparent")
-		GarrisonShipyardMapMissionTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		GarrisonShipyardMapMissionTooltip.ItemTooltip.IconBorder:SetAlpha(0)
-		GarrisonShipyardMapMissionTooltip.ItemTooltip:CreateBackdrop("Default")
-		GarrisonShipyardMapMissionTooltip.ItemTooltip.backdrop:SetPoint("TOPLEFT", GarrisonShipyardMapMissionTooltip.ItemTooltip.Icon, "TOPLEFT", -2, 2)
-		GarrisonShipyardMapMissionTooltip.ItemTooltip.backdrop:SetPoint("BOTTOMRIGHT", GarrisonShipyardMapMissionTooltip.ItemTooltip.Icon, "BOTTOMRIGHT", 2, -2)
+		GarrisonShipyardMapMissionTooltip.ItemTooltip.Icon:SkinIcon()
 
 		GarrisonMissionMechanicFollowerCounterTooltip:HookScript("OnShow", function(self)
 			self:SetTemplate("Transparent")
