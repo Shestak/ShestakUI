@@ -35,7 +35,6 @@ local defaults = {
 	-- Secondary Professions
 	[794] = {false, false},	-- Archaeology
 	[185] = {true, true},	-- Cooking
-	[129] = {true, false},	-- First Aid
 	[356] = {false, false},	-- Fishing
 }
 
