@@ -30,8 +30,6 @@ if C.automation.accept_invite == true then
 					return
 				end
 			end
-		else
-			C_FriendList.SendWho(name)
 		end
 	end)
 end
