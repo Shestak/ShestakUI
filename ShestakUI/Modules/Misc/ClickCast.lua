@@ -131,8 +131,7 @@ SpellBinder.makeSpellsList = function(_, scroll, delete)
 			bf.fs:SetText(spell.modifier..spell.origbutton)
 			bf.fs:SetPoint("RIGHT", bf.delete, "LEFT", -4, 0)
 
-			local usable, noMana = IsUsableSpell(v)
-			if usable or noMana then
+			if GetSpellInfo(v) then
 				bf:SetAlpha(1)
 				for frame in pairs(ClickCastFrames) do
 					local f
