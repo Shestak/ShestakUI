@@ -5,7 +5,7 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 if C.error.white == true or C.error.black == true then
 	local frame = CreateFrame("Frame")
-	frame:SetScript("OnEvent", function(self, event, _, text)
+	frame:SetScript("OnEvent", function(_, _, _, text)
 		if C.error.white == true and C.error.black == false then
 			if T.white_list[text] then
 				UIErrorsFrame:AddMessage(text, 1, 0, 0)

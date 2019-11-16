@@ -123,7 +123,7 @@ local StartTimer = function(name, sID)
 	UpdatePositions()
 end
 
-local OnEvent = function(self, event)
+local OnEvent = function(_, event)
 	if event == "COMBAT_LOG_EVENT_UNFILTERED" then
 		local _, eventType, _, _, sourceName, sourceFlags, _, _, _, _, _, spellID = CombatLogGetCurrentEventInfo()
 

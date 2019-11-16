@@ -194,7 +194,7 @@ end
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-frame:SetScript("OnEvent", function(self, event)
+frame:SetScript("OnEvent", function(self)
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	SetActionBarToggles(1, 1, 1, 1, 0)
 	if C.actionbar.show_grid == true then
@@ -272,7 +272,7 @@ T.ShiftBarUpdate = function()
 	end
 end
 
-T.PetBarUpdate = function(self, event)
+T.PetBarUpdate = function()
 	local petActionButton, petActionIcon, petAutoCastableTexture, petAutoCastShine
 	for i = 1, NUM_PET_ACTION_SLOTS, 1 do
 		local buttonName = "PetActionButton"..i

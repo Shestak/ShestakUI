@@ -61,7 +61,7 @@ local part = "-%s [%s %s]"
 local r, g, b, lowMana, lowHealth
 
 -- Function, handles everything
-local function OnEvent(self, event, subevent, powerType)
+local function OnEvent(_, event, subevent, powerType)
 	if event == "COMBAT_TEXT_UPDATE" then
 		local arg2, arg3 = GetCurrentCombatTextEventInfo()
 		if SHOW_COMBAT_TEXT == "0" then
@@ -357,7 +357,7 @@ end
 
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGOUT")
-frame:SetScript("OnEvent", function(self, event)
+frame:SetScript("OnEvent", function(_, event)
 	if event == "PLAYER_LOGOUT" then
 		SetCVar("floatingCombatTextCombatHealing", 1)
 		SetCVar("floatingCombatTextCombatDamage", 1)
@@ -580,7 +580,7 @@ local function StartTestMode()
 	end
 
 	for i = 1, #ct.frames do
-		ct.frames[i]:SetScript("OnUpdate", function(self, elapsed)
+		ct.frames[i]:SetScript("OnUpdate", function(_, elapsed)
 			UpdateInterval = random(65, 1000) / 250
 			TimeSinceLastUpdate = TimeSinceLastUpdate + elapsed
 			if TimeSinceLastUpdate > UpdateInterval then
@@ -715,7 +715,7 @@ if C.combattext.merge_aoe_spam then
 		end
 		local tslu = 0
 		local xCTspam = CreateFrame("Frame")
-		xCTspam:SetScript("OnUpdate", function(self, elapsed)
+		xCTspam:SetScript("OnUpdate", function(_, elapsed)
 			local count
 			tslu = tslu + elapsed
 			if tslu > 0.5 then
@@ -765,7 +765,7 @@ if C.combattext.damage then
 		ct.blank = "Interface\\AddOns\\ShestakUI\\Media\\Textures\\Blank.tga"
 	end
 	local misstypes = {ABSORB = ABSORB, BLOCK = BLOCK, DEFLECT = DEFLECT, DODGE = DODGE, EVADE = EVADE, IMMUNE = IMMUNE, MISS = MISS, MISFIRE = MISS, PARRY = PARRY, REFLECT = REFLECT, RESIST = RESIST}
-	local dmg = function(self, event)
+	local dmg = function()
 		local msg, icon
 		local _, eventType, _, sourceGUID, _, sourceFlags, _, destGUID = CombatLogGetCurrentEventInfo()
 		if (sourceGUID == ct.pguid and destGUID ~= ct.pguid) or (sourceGUID == UnitGUID("pet") and C.combattext.pet_damage) or (sourceFlags == gflags) then
@@ -972,7 +972,7 @@ if C.combattext.healing then
 	if C.combattext.icons then
 		ct.blank = "Interface\\AddOns\\ShestakUI\\Media\\Textures\\Blank.tga"
 	end
-	local heal = function(self, event)
+	local heal = function()
 		local msg, icon
 		local _, eventType, _, sourceGUID, _, sourceFlags = CombatLogGetCurrentEventInfo()
 		if sourceGUID == ct.pguid or sourceFlags == gflags then

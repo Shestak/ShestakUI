@@ -39,7 +39,7 @@ local fragment = {
 local _CURRENCY = string.gsub(string.gsub(CURRENCY_GAINED_MULTIPLE, "%%s", "(.+)"), "%%d", "(.+)")
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("CHAT_MSG_CURRENCY")
-frame:SetScript("OnEvent", function(self, event, message)
+frame:SetScript("OnEvent", function(_, _, message)
 	local link = string.match(message, _CURRENCY)
 	if not link then return end
 

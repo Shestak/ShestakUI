@@ -127,7 +127,7 @@ function SetItemRef(link, text, button, frame)
 	end
 end
 
-local function ParseChatEvent(self, event, message, sender, ...)
+local function ParseChatEvent(_, event, message, sender, ...)
 	for _, value in ipairs(events) do
 		if event == value then
 			local isRecount, isFirstLine, newMessage = FilterLine(event, sender, message)

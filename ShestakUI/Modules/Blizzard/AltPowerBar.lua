@@ -49,7 +49,7 @@ bar:EnableMouse(true)
 bar:SetMovable(true)
 bar:SetUserPlaced(true)
 bar:SetFrameStrata("HIGH")
-bar:SetScript("OnMouseDown", function(self, button)
+bar:SetScript("OnMouseDown", function(_, button)
 	if IsAltKeyDown() or IsShiftKeyDown() then
 		bar:ClearAllPoints()
 		bar:StartMoving()

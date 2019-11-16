@@ -32,7 +32,7 @@ local fontstrings = setmetatable({}, {
 	end,
 })
 
-function frame:OnEvent(event)
+function frame:OnEvent()
 	local min = 1
 	for slot, id in pairs(SLOTIDS) do
 		local v1, v2 = GetInventoryItemDurability(id)

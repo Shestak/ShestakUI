@@ -89,7 +89,7 @@ local function Timer_Create(self)
 	timer.text = text
 
 	Timer_OnSizeChanged(timer, scaler:GetSize())
-	scaler:SetScript("OnSizeChanged", function(self, ...) Timer_OnSizeChanged(timer, ...) end)
+	scaler:SetScript("OnSizeChanged", function(_, ...) Timer_OnSizeChanged(timer, ...) end)
 
 	self.timer = timer
 	return timer

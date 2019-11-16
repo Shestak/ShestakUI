@@ -67,7 +67,7 @@ local function LootClick(frame)
 	end
 end
 
-local function OnEvent(frame, event, rollID)
+local function OnEvent(frame, _, rollID)
 	cancelled_rolls[rollID] = true
 	if frame.rollID ~= rollID then return end
 

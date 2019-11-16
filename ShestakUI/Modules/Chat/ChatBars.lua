@@ -22,7 +22,7 @@ local function CreateButton(b, l, r, m)
 	b:SetTemplate("Default")
 
 	b:RegisterForClicks("AnyUp")
-	b:SetScript("OnClick", function(self, b)
+	b:SetScript("OnClick", function(_, b)
 		if b == "LeftButton" then
 			ChatFrame_OpenChat(l, SELECTED_DOCK_FRAME)
 		elseif b == "RightButton" then

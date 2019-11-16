@@ -16,7 +16,7 @@ local function reset()
 	lastupdate = 0
 end
 
-local function pull(self, elapsed)
+local function pull(_, elapsed)
 	local tname = UnitName("target")
 	if tname then
 		target = tname

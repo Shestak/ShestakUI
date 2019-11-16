@@ -106,7 +106,7 @@ for i = 1, NUM_CHAT_WINDOWS do
 	icon:SetTexture("Interface\\BUTTONS\\UI-GuildButton-PublicNote-Up")
 	icon:SetSize(16, 16)
 
-	button:SetScript("OnMouseUp", function(self, btn)
+	button:SetScript("OnMouseUp", function(_, btn)
 		if btn == "RightButton" then
 			ToggleFrame(ChatMenu)
 		elseif btn == "MiddleButton" then

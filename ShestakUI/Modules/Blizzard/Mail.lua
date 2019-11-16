@@ -47,7 +47,7 @@ function openMail(index)
 	end
 end
 
-function waitForMail(self, elapsed)
+function waitForMail(_, elapsed)
 	t = t + elapsed
 	if (not needsToWait) or (t > deletedelay) then
 		needsToWait = false

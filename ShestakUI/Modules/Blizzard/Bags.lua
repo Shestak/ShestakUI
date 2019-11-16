@@ -310,7 +310,7 @@ function Stuffing:UpdateCooldowns(b)
 	end
 end
 
-function CreateReagentContainer()
+function Stuffing:CreateReagentContainer()
 	ReagentBankFrame:StripTextures()
 
 	local Reagent = CreateFrame("Frame", "StuffingFrameReagent", UIParent)
@@ -751,7 +751,7 @@ function Stuffing:CreateBagFrame(w)
 			BankFrame_ShowPanel(BANK_PANELS[2].name)
 			PlaySound(SOUNDKIT.IG_BACKPACK_OPEN)
 			if not ReagentBankFrame.isMade then
-				CreateReagentContainer()
+				self:CreateReagentContainer()
 				ReagentBankFrame.isMade = true
 			else
 				_G["StuffingFrameReagent"]:Show()
@@ -769,7 +769,7 @@ function Stuffing:CreateBagFrame(w)
 		f.b_purchase:SetPoint("TOPLEFT", f.b_reagent, "TOPRIGHT", 3, 0)
 		f.b_purchase:RegisterForClicks("AnyUp")
 		f.b_purchase:SkinButton()
-		f.b_purchase:SetScript("OnClick", function(self) StaticPopup_Show("BUY_BANK_SLOT") end)
+		f.b_purchase:SetScript("OnClick", function() StaticPopup_Show("BUY_BANK_SLOT") end)
 		f.b_purchase:FontString("text", C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
 		f.b_purchase.text:SetPoint("CENTER")
 		f.b_purchase.text:SetText(BANKSLOTPURCHASE)
@@ -982,7 +982,7 @@ function Stuffing:Layout(isBank)
 			b.frame:SetSize(bsize, bsize)
 
 			local btns = self.buttons
-			b.frame:HookScript("OnEnter", function(self)
+			b.frame:HookScript("OnEnter", function()
 				local bag
 				if isBank then bag = v else bag = v + 1 end
 
@@ -995,7 +995,7 @@ function Stuffing:Layout(isBank)
 				end
 			end)
 
-			b.frame:HookScript("OnLeave", function(self)
+			b.frame:HookScript("OnLeave", function()
 				for _, btn in ipairs(btns) do
 					btn.frame:SetAlpha(1)
 				end

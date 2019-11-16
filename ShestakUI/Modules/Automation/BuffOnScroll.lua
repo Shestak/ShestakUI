@@ -28,7 +28,7 @@ WARRIOR3 = WARRIOR1
 local frame = CreateFrame("Frame")
 -- Function for waiting through the global cooldown
 local GcTimer = 0
-local function WaitForGC(self, elapsed)
+local function WaitForGC(_, elapsed)
 	GcTimer = GcTimer + elapsed
 	if GcTimer >= 1.5 then
 		CheckBuffs()

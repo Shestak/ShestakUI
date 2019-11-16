@@ -190,7 +190,7 @@ local function SetChatStyle(frame)
 end
 
 -- Setup chatframes 1 to 10 on login
-local function SetupChat(self)
+local function SetupChat()
 	for i = 1, NUM_CHAT_WINDOWS do
 		local frame = _G[format("ChatFrame%s", i)]
 		SetChatStyle(frame)
@@ -217,7 +217,7 @@ local function SetupChat(self)
 	ChatTypeInfo.CHANNEL.sticky = var
 end
 
-local function SetupChatPosAndFont(self)
+local function SetupChatPosAndFont()
 	for i = 1, NUM_CHAT_WINDOWS do
 		local chat = _G[format("ChatFrame%s", i)]
 		local id = chat:GetID()
@@ -302,7 +302,7 @@ function FCFManager_GetNumDedicatedFrames(...)
 end
 
 -- Remove player's realm name
-local function RemoveRealmName(self, event, msg, author, ...)
+local function RemoveRealmName(_, _, msg, author, ...)
 	local realm = string.gsub(T.realm, " ", "")
 	if msg:find("-" .. realm) then
 		return false, gsub(msg, "%-"..realm, ""), author, ...

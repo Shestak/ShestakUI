@@ -14,7 +14,7 @@ local custombuffs = T.ReminderBuffs["Custom"]
 local visible, flask, battleelixir, guardianelixir, food, stamina, spell4, custom
 
 -- We need to check if you have two different elixirs if your not flasked, before we say your not flasked
-local function CheckElixir(unit)
+local function CheckElixir()
 	if battleelixirbuffs and battleelixirbuffs[1] then
 		for _, battleelixirbuffs in pairs(battleelixirbuffs) do
 			local name, _, icon = GetSpellInfo(battleelixirbuffs)
@@ -54,7 +54,7 @@ local function CheckElixir(unit)
 end
 
 -- Main Script
-local function OnAuraChange(self, event, arg1, unit)
+local function OnAuraChange(_, event, arg1)
 	if event == "UNIT_AURA" and arg1 ~= "player" then return end
 
 	-- If We're a caster we may want to see different buffs

@@ -103,7 +103,7 @@ button.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 button.t:SetPoint("TOPLEFT", button, 2, -2)
 button.t:SetPoint("BOTTOMRIGHT", button, -2, 2)
 
-button:SetScript("OnClick", function(self)
+button:SetScript("OnClick", function()
 	if not InCombatLockdown() then
 		if _G["TeleportMenu"]:IsShown() then
 			_G["TeleportMenu"]:Hide()

@@ -134,7 +134,7 @@ local OnEnter = function(self)
 	GameTooltip:Show()
 end
 
-local OnLeave = function(self)
+local OnLeave = function()
 	GameTooltip:Hide()
 end
 

@@ -6,7 +6,7 @@ if C.announcements.spells ~= true then return end
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-frame:SetScript("OnEvent", function(self)
+frame:SetScript("OnEvent", function()
 	local _, event, _, sourceGUID, sourceName, _, _, _, destName, _, _, spellID = CombatLogGetCurrentEventInfo()
 	local spells = T.AnnounceSpells
 	local _, _, difficultyID = GetInstanceInfo()

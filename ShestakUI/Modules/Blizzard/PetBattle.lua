@@ -104,7 +104,7 @@ for i, unit in pairs(units) do
 end
 
 -- Pets speed indicator update
-hooksecurefunc("PetBattleFrame_UpdateSpeedIndicators", function(self)
+hooksecurefunc("PetBattleFrame_UpdateSpeedIndicators", function()
 	if not f.ActiveAlly.SpeedIcon:IsShown() and not f.ActiveEnemy.SpeedIcon:IsShown() then
 		f.ActiveAlly.FirstAttack:Hide()
 		f.ActiveEnemy.FirstAttack:Hide()
@@ -300,7 +300,7 @@ local function SkinPetButton(self)
 end
 
 -- Setup pet action bar
-hooksecurefunc("PetBattleFrame_UpdateActionBarLayout", function(self)
+hooksecurefunc("PetBattleFrame_UpdateActionBarLayout", function()
 	for i = 1, NUM_BATTLE_PET_ABILITIES do
 		local b = bf.abilityButtons[i]
 
@@ -321,7 +321,7 @@ hooksecurefunc("PetBattleFrame_UpdateActionBarLayout", function(self)
 	bf.SwitchPetButton:ClearAllPoints()
 	bf.SwitchPetButton:SetPoint("LEFT", bf.abilityButtons[3], "RIGHT", C.actionbar.button_space, 0)
 
-	bf.SwitchPetButton:SetScript("OnClick", function(self)
+	bf.SwitchPetButton:SetScript("OnClick", function()
 		PetBattlePetSelectionFrame_Show(bf.PetSelectionFrame)
 	end)
 

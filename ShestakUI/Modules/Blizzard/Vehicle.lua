@@ -55,8 +55,8 @@ if C.misc.vehicle_mouseover == true then
 			for i = 1, T.numSeat do
 				local pb = _G["VehicleSeatIndicatorButton"..i]
 				pb:SetAlpha(0)
-				pb:HookScript("OnEnter", function(self) VehicleSeatIndicator:SetAlpha(1) vehmousebutton(1) end)
-				pb:HookScript("OnLeave", function(self) VehicleSeatIndicator:SetAlpha(0) vehmousebutton(0) end)
+				pb:HookScript("OnEnter", function() VehicleSeatIndicator:SetAlpha(1) vehmousebutton(1) end)
+				pb:HookScript("OnLeave", function() VehicleSeatIndicator:SetAlpha(0) vehmousebutton(0) end)
 			end
 		end
 	end

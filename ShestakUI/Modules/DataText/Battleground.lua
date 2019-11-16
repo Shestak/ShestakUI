@@ -41,8 +41,8 @@ BGFrame:SetScript("OnEnter", function(self)
 	GameTooltip:Show()
 end)
 
-BGFrame:SetScript("OnLeave", function(self) GameTooltip:Hide() end)
-BGFrame:SetScript("OnMouseUp", function(self, button)
+BGFrame:SetScript("OnLeave", function() GameTooltip:Hide() end)
+BGFrame:SetScript("OnMouseUp", function(_, button)
 	if QueueStatusMinimapButton:IsShown() then
 		if button == "RightButton" then
 			ToggleBattlefieldMap()
@@ -74,7 +74,7 @@ Text3:SetPoint("LEFT", Text2, "RIGHT", 5, 0)
 Text3:SetHeight(C.font.stats_font_size)
 
 local int = 2
-local function Update(self, t)
+local function Update(_, t)
 	int = int - t
 	if int < 0 then
 		local dmgtxt
@@ -98,7 +98,7 @@ local function Update(self, t)
 end
 
 -- Hide text when not in an bg
-local function OnEvent(self, event)
+local function OnEvent(_, event)
 	if event == "PLAYER_ENTERING_WORLD" then
 		local _, instanceType = IsInInstance()
 		if instanceType == "pvp" then

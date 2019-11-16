@@ -12,7 +12,7 @@ end
 
 local frame = CreateFrame("Frame", nil, UIParent)
 frame:RegisterEvent("ADDON_LOADED")
-frame:SetScript("OnEvent", function(self, event, addon)
+frame:SetScript("OnEvent", function(_, _, addon)
 	if addon ~= "ShestakUI" or addon == "tekticles" then return end
 
 	local NORMAL = C.media.normal_font

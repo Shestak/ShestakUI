@@ -47,13 +47,13 @@ local OnLeave = function(self)
 	updateFS(self, emphasis, r, g, b)
 end
 
-local ChatFrame2_SetAlpha = function(self, alpha)
+local ChatFrame2_SetAlpha = function(_, alpha)
 	if CombatLogQuickButtonFrame_Custom then
 		CombatLogQuickButtonFrame_Custom:SetAlpha(alpha)
 	end
 end
 
-local ChatFrame2_GetAlpha = function(self)
+local ChatFrame2_GetAlpha = function()
 	if CombatLogQuickButtonFrame_Custom then
 		return CombatLogQuickButtonFrame_Custom:GetAlpha()
 	end

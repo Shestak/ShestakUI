@@ -3,7 +3,7 @@
 ----------------------------------------------------------------------------------------
 --	Force readycheck warning
 ----------------------------------------------------------------------------------------
-local ShowReadyCheckHook = function(self, initiator)
+local ShowReadyCheckHook = function(_, initiator)
 	if initiator ~= "player" then
 		PlaySound(SOUNDKIT.READY_CHECK, "Master")
 	end
@@ -18,7 +18,7 @@ ForceWarning:RegisterEvent("UPDATE_BATTLEFIELD_STATUS")
 ForceWarning:RegisterEvent("PET_BATTLE_QUEUE_PROPOSE_MATCH")
 ForceWarning:RegisterEvent("LFG_PROPOSAL_SHOW")
 ForceWarning:RegisterEvent("RESURRECT_REQUEST")
-ForceWarning:SetScript("OnEvent", function(self, event)
+ForceWarning:SetScript("OnEvent", function(_, event)
 	if event == "UPDATE_BATTLEFIELD_STATUS" then
 		for i = 1, GetMaxBattlefieldID() do
 			local status = GetBattlefieldStatus(i)
@@ -73,7 +73,7 @@ if C.misc.afk_spin_camera == true then
 	local SpinCam = CreateFrame("Frame")
 	SpinCam:RegisterEvent("PLAYER_LEAVING_WORLD")
 	SpinCam:RegisterEvent("PLAYER_FLAGS_CHANGED")
-	SpinCam:SetScript("OnEvent", function(self, event, unit)
+	SpinCam:SetScript("OnEvent", function(_, event)
 		if event == "PLAYER_LEAVING_WORLD" then
 			SpinStop()
 		else

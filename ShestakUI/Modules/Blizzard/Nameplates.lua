@@ -79,7 +79,7 @@ if C.nameplate.healer_icon == true then
 	end
 
 	local lastCheck = 20
-	local function CheckHealers(self, elapsed)
+	local function CheckHealers(_, elapsed)
 		lastCheck = lastCheck + elapsed
 		if lastCheck > 25 then
 			lastCheck = 0
@@ -95,7 +95,7 @@ if C.nameplate.healer_icon == true then
 		end
 	end
 
-	local function CheckArenaHealers(self, elapsed)
+	local function CheckArenaHealers(_, elapsed)
 		lastCheck = lastCheck + elapsed
 		if lastCheck > 25 then
 			lastCheck = 0
@@ -113,7 +113,7 @@ if C.nameplate.healer_icon == true then
 		end
 	end
 
-	local function CheckLoc(self, event)
+	local function CheckLoc(_, event)
 		if event == "PLAYER_ENTERING_WORLD" or event == "PLAYER_ENTERING_BATTLEGROUND" then
 			local _, instanceType = IsInInstance()
 			if instanceType == "pvp" then
@@ -385,7 +385,7 @@ local function castColor(self)
 	end
 end
 
-local function callback(self, event, unit)
+local function callback(self, _, unit)
 	if not self then return end
 	if unit then
 		local name = UnitName(unit)
@@ -655,7 +655,7 @@ local function style(self, unit)
 	self.Health:RegisterEvent("UNIT_THREAT_SITUATION_UPDATE")
 	self.Health:RegisterEvent("UNIT_THREAT_LIST_UPDATE")
 
-	self.Health:SetScript("OnEvent", function(self, event)
+	self.Health:SetScript("OnEvent", function()
 		threatColor(main)
 	end)
 

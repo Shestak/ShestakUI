@@ -24,7 +24,7 @@ local function IsMerchantButtonOver()
 	return GetMouseFocus():GetName() and GetMouseFocus():GetName():find("MerchantItem%d")
 end
 
-GameTooltip:HookScript("OnTooltipSetItem", function(self)
+GameTooltip:HookScript("OnTooltipSetItem", function()
 	if MerchantFrame:IsShown() and IsMerchantButtonOver() then
 		for i = 2, GameTooltip:NumLines() do
 			if _G["GameTooltipTextLeft"..i]:GetText():find(ITEM_VENDOR_STACK_BUY) then

@@ -14,7 +14,7 @@ local alertBlacklist = {
 	TalkingHeadFrame = true
 }
 
-local POSITION, ANCHOR_POINT, YOFFSET = "BOTTOM", "TOP", -9
+local POSITION, ANCHOR_POINT, YOFFSET, FIRST_YOFFSET = "BOTTOM", "TOP", -9
 
 local function CheckGrow()
 	local point = AchievementAnchor:GetPoint()
@@ -103,7 +103,7 @@ local function SetUpAlert()
 		self:SetPoint(POSITION, AchievementAnchor, POSITION, 2, FIRST_YOFFSET)
 	end)
 
-	hooksecurefunc(AlertFrame, "AddAlertFrameSubSystem", function(self, alertFrameSubSystem)
+	hooksecurefunc(AlertFrame, "AddAlertFrameSubSystem", function(_, alertFrameSubSystem)
 		local _, isBlacklisted = ReplaceAnchors(alertFrameSubSystem)
 		if isBlacklisted then
 			for i, alertSubSystem in ipairs(AlertFrame.alertFrameSubSystems) do

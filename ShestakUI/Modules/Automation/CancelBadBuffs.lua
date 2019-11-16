@@ -6,7 +6,7 @@ if C.automation.cancel_bad_buffs ~= true then return end
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("UNIT_AURA")
-frame:SetScript("OnEvent", function(self, event, unit)
+frame:SetScript("OnEvent", function(_, event, unit)
 	if unit ~= "player" then return end
 
 	if event == "UNIT_AURA" and not InCombatLockdown() then

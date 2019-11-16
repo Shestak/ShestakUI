@@ -8,7 +8,7 @@ local disable = false
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("DUEL_REQUESTED")
 frame:RegisterEvent("PET_BATTLE_PVP_DUEL_REQUESTED")
-frame:SetScript("OnEvent", function(self, event, name)
+frame:SetScript("OnEvent", function(_, event, name)
 	if disable == true then return end
 	if event == "DUEL_REQUESTED" then
 		CancelDuel()

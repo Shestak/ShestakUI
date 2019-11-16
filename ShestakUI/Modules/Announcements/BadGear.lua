@@ -6,7 +6,7 @@ if C.announcements.bad_gear ~= true then return end
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-frame:SetScript("OnEvent", function(self, event)
+frame:SetScript("OnEvent", function(_, event)
 	if event ~= "ZONE_CHANGED_NEW_AREA" or not IsInInstance() then return end
 	local item = {}
 	for i = 1, 17 do

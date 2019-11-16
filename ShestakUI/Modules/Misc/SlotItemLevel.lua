@@ -164,7 +164,7 @@ local function OnEvent(self, event, ...) -- Event handler
 		_createGStrings()
 		_createGStrings = nil
 
-		_G.InspectPaperDollFrame:HookScript("OnShow", function(self)
+		_G.InspectPaperDollFrame:HookScript("OnShow", function()
 			g:SetFrameLevel(_G.InspectHeadSlot:GetFrameLevel())
 			f:RegisterEvent("INSPECT_READY")
 			f:RegisterEvent("UNIT_INVENTORY_CHANGED")
@@ -172,7 +172,7 @@ local function OnEvent(self, event, ...) -- Event handler
 			g:Show()
 		end)
 
-		_G.InspectPaperDollFrame:HookScript("OnHide", function(self)
+		_G.InspectPaperDollFrame:HookScript("OnHide", function()
 			f:UnregisterEvent("INSPECT_READY")
 			f:UnregisterEvent("UNIT_INVENTORY_CHANGED")
 			g:Hide()
@@ -183,7 +183,7 @@ local function OnEvent(self, event, ...) -- Event handler
 		_createStrings()
 		_createStrings = nil
 
-		_G.PaperDollFrame:HookScript("OnShow", function(self)
+		_G.PaperDollFrame:HookScript("OnShow", function()
 			f:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
 			f:RegisterEvent("ITEM_UPGRADE_MASTER_UPDATE")
 			f:RegisterEvent("ARTIFACT_UPDATE")
@@ -193,7 +193,7 @@ local function OnEvent(self, event, ...) -- Event handler
 			f:Show()
 		end)
 
-		_G.PaperDollFrame:HookScript("OnHide", function(self)
+		_G.PaperDollFrame:HookScript("OnHide", function()
 			f:UnregisterEvent("PLAYER_EQUIPMENT_CHANGED")
 			f:UnregisterEvent("ITEM_UPGRADE_MASTER_UPDATE")
 			f:UnregisterEvent("ARTIFACT_UPDATE")

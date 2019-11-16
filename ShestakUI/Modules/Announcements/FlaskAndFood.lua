@@ -141,7 +141,7 @@ if C.misc.raid_tools == true then
 		button:SkinButton()
 	end
 	button:EnableMouse(true)
-	button:SetScript("OnMouseUp", function(self) run() end)
+	button:SetScript("OnMouseUp", function() run() end)
 
 	local t = button:CreateFontString(nil, "OVERLAY", button)
 	t:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)

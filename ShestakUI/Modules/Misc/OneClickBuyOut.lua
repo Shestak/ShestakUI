@@ -5,7 +5,7 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 local LoadOCBO = CreateFrame("Frame")
 LoadOCBO:RegisterEvent("ADDON_LOADED")
-LoadOCBO:SetScript("OnEvent", function(self, event, addon)
+LoadOCBO:SetScript("OnEvent", function(_, _, addon)
 	if addon ~= "Blizzard_AuctionUI" or addon == "OneClickBuyOut" then return end
 	local f, buyoutPrice, index, minBid, minIncrement, bidAmount, bid, name
 	local gt, buttonNames = GameTooltip, {"BrowseButton"}
@@ -72,7 +72,7 @@ LoadOCBO:SetScript("OnEvent", function(self, event, addon)
 		gt:Show()
 	end)
 
-	BrowseBuyoutButton:HookScript("OnLeave", function(self)
+	BrowseBuyoutButton:HookScript("OnLeave", function()
 		gt:Hide()
 	end)
 
@@ -92,7 +92,7 @@ LoadOCBO:SetScript("OnEvent", function(self, event, addon)
 		gt:Show()
 	end)
 
-	BrowseBidButton:HookScript("OnLeave", function(self)
+	BrowseBidButton:HookScript("OnLeave", function()
 		gt:Hide()
 	end)
 
@@ -102,7 +102,7 @@ LoadOCBO:SetScript("OnEvent", function(self, event, addon)
 		gt:Show()
 	end)
 
-	AuctionsCancelAuctionButton:HookScript("OnLeave", function(self)
+	AuctionsCancelAuctionButton:HookScript("OnLeave", function()
 		gt:Hide()
 	end)
 end)

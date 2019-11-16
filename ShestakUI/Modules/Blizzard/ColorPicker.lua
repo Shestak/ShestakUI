@@ -77,12 +77,12 @@ end
 
 local load = CreateFrame("Frame")
 load:RegisterEvent("PLAYER_ENTERING_WORLD")
-load:SetScript("OnEvent", function(self, event)
+load:SetScript("OnEvent", function(self)
 	self:UnregisterAllEvents()
 
 	if IsAddOnLoaded("ColorPickerPlus") then return end
 
-	ColorPickerFrame:HookScript("OnShow", function(self)
+	ColorPickerFrame:HookScript("OnShow", function()
 		-- Get color that will be replaced
 		local r, g, b = ColorPickerFrame:GetColorRGB()
 		ColorPPOldColorSwatch:SetColorTexture(r, g, b)
@@ -91,23 +91,23 @@ load:SetScript("OnEvent", function(self, event)
 		if ColorPickerFrame.hasOpacity then
 			ColorPPBoxA:Show()
 			ColorPPBoxLabelA:Show()
-			ColorPPBoxH:SetScript("OnTabPressed", function(self) ColorPPBoxA:SetFocus() end)
+			ColorPPBoxH:SetScript("OnTabPressed", function() ColorPPBoxA:SetFocus() end)
 			UpdateAlphaText()
 		else
 			ColorPPBoxA:Hide()
 			ColorPPBoxLabelA:Hide()
-			ColorPPBoxH:SetScript("OnTabPressed", function(self) ColorPPBoxR:SetFocus() end)
+			ColorPPBoxH:SetScript("OnTabPressed", function() ColorPPBoxR:SetFocus() end)
 		end
 	end)
 
-	ColorPickerFrame:HookScript("OnColorSelect", function(self, r, g, b)
+	ColorPickerFrame:HookScript("OnColorSelect", function(_, r, g, b)
 		ColorSwatch:SetColorTexture(r, g, b)
 		if not editingText then
 			UpdateColorTexts(r, g, b)
 		end
 	end)
 
-	OpacitySliderFrame:HookScript("OnValueChanged", function(self)
+	OpacitySliderFrame:HookScript("OnValueChanged", function()
 		if not editingText then
 			UpdateAlphaText()
 		end
@@ -145,7 +145,7 @@ load:SetScript("OnEvent", function(self, event)
 	b:SetPoint("TOPLEFT", "ColorSwatch", "BOTTOMLEFT", -15, -5)
 
 	-- Copy color into buffer on button click
-	b:SetScript("OnClick", function(self)
+	b:SetScript("OnClick", function()
 		-- Copy current dialog colors into buffer
 		colorBuffer.r, colorBuffer.g, colorBuffer.b = ColorPickerFrame:GetColorRGB()
 
@@ -171,7 +171,7 @@ load:SetScript("OnEvent", function(self, event)
 	b:Disable()
 
 	-- Paste color on button click, updating frame components
-	b:SetScript("OnClick", function(self)
+	b:SetScript("OnClick", function()
 		ColorPickerFrame:SetColorRGB(colorBuffer.r, colorBuffer.g, colorBuffer.b)
 		ColorSwatch:SetColorTexture(colorBuffer.r, colorBuffer.g, colorBuffer.b)
 		if ColorPickerFrame.hasOpacity then
@@ -266,10 +266,10 @@ load:SetScript("OnEvent", function(self, event)
 	ColorPPBoxA:SetPoint("LEFT", "ColorPPBoxH", "RIGHT", 18, 0)
 
 	-- Define the order of tab cursor movement
-	ColorPPBoxR:SetScript("OnTabPressed", function(self) ColorPPBoxG:SetFocus() end)
-	ColorPPBoxG:SetScript("OnTabPressed", function(self) ColorPPBoxB:SetFocus() end)
-	ColorPPBoxB:SetScript("OnTabPressed", function(self) ColorPPBoxH:SetFocus() end)
-	ColorPPBoxA:SetScript("OnTabPressed", function(self) ColorPPBoxR:SetFocus() end)
+	ColorPPBoxR:SetScript("OnTabPressed", function() ColorPPBoxG:SetFocus() end)
+	ColorPPBoxG:SetScript("OnTabPressed", function() ColorPPBoxB:SetFocus() end)
+	ColorPPBoxB:SetScript("OnTabPressed", function() ColorPPBoxH:SetFocus() end)
+	ColorPPBoxA:SetScript("OnTabPressed", function() ColorPPBoxR:SetFocus() end)
 
 	-- Make the color picker movable
 	local mover = CreateFrame("Frame", nil, ColorPickerFrame)
