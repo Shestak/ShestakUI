@@ -84,7 +84,7 @@ SpellBinder.makeSpellsList = function(_, scroll, delete)
 
 	for i, spell in ipairs(DB.spells) do
 		local v = spell.spell
-		if v and GetSpellBookItemName(v) then
+		if v then
 			local bf = _G[i.."_cbs"] or CreateFrame("Button", i.."_cbs", scroll)
 			spell.checked = spell.checked or false
 
@@ -131,32 +131,38 @@ SpellBinder.makeSpellsList = function(_, scroll, delete)
 			bf.fs:SetText(spell.modifier..spell.origbutton)
 			bf.fs:SetPoint("RIGHT", bf.delete, "LEFT", -4, 0)
 
-			for frame in pairs(ClickCastFrames) do
-				local f
-				if frame and type(frame) == "table" then f = frame:GetName() end
-				if f and DB.frames[frame] then
-					if _G[f]:CanChangeAttribute() or _G[f]:CanChangeProtectedState() then
-						if _G[f]:GetAttribute(spell.modifier.."type"..spell.button) ~= "menu" then
-							_G[f]:RegisterForClicks("AnyDown")
+			local usable, noMana = IsUsableSpell(v)
+			if usable or noMana then
+				bf:SetAlpha(1)
+				for frame in pairs(ClickCastFrames) do
+					local f
+					if frame and type(frame) == "table" then f = frame:GetName() end
+					if f and DB.frames[frame] then
+						if _G[f]:CanChangeAttribute() or _G[f]:CanChangeProtectedState() then
+							if _G[f]:GetAttribute(spell.modifier.."type"..spell.button) ~= "menu" then
+								_G[f]:RegisterForClicks("AnyDown")
 
-							if spell.button:find("harmbutton") then
-								_G[f]:SetAttribute(spell.modifier..spell.button, spell.spell)
-								_G[f]:SetAttribute(spell.modifier.."type-"..spell.spell, "spell")
-								_G[f]:SetAttribute(spell.modifier.."spell-"..spell.spell, spell.spell)
+								if spell.button:find("harmbutton") then
+									_G[f]:SetAttribute(spell.modifier..spell.button, spell.spell)
+									_G[f]:SetAttribute(spell.modifier.."type-"..spell.spell, "spell")
+									_G[f]:SetAttribute(spell.modifier.."spell-"..spell.spell, spell.spell)
 
-								DB.keys[spell.modifier..spell.button] = spell.spell
-								DB.keys[spell.modifier.."type-"..spell.spell] = "spell"
-								DB.keys[spell.modifier.."spell-"..spell.spell] = spell.spell
-							else
-								_G[f]:SetAttribute(spell.modifier.."type"..spell.button, "spell")
-								_G[f]:SetAttribute(spell.modifier.."spell"..spell.button, spell.spell)
+									DB.keys[spell.modifier..spell.button] = spell.spell
+									DB.keys[spell.modifier.."type-"..spell.spell] = "spell"
+									DB.keys[spell.modifier.."spell-"..spell.spell] = spell.spell
+								else
+									_G[f]:SetAttribute(spell.modifier.."type"..spell.button, "spell")
+									_G[f]:SetAttribute(spell.modifier.."spell"..spell.button, spell.spell)
 
-								DB.keys[spell.modifier.."type"..spell.button] = "spell"
-								DB.keys[spell.modifier.."spell"..spell.button] = spell.spell
+									DB.keys[spell.modifier.."type"..spell.button] = "spell"
+									DB.keys[spell.modifier.."spell"..spell.button] = spell.spell
+								end
 							end
 						end
 					end
 				end
+			else
+				bf:SetAlpha(0.3)
 			end
 
 			bf:Show()
