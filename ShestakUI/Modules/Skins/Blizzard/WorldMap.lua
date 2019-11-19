@@ -34,6 +34,7 @@ local function LoadSkin()
 	QuestMapFrame.backdrop:SetSize(284, 468)
 
 	QuestScrollFrame:ClearAllPoints()
+	QuestScrollFrame:SetPoint("TOP", WorldMapFrame.backdrop, "TOP", 0, -3)
 	QuestScrollFrame:SetPoint("LEFT", WorldMapFrame.backdrop, "RIGHT", 4, 0)
 	QuestScrollFrame.DetailFrame:StripTextures()
 	QuestScrollFrame.DetailFrame.BottomDetail:Hide()
@@ -205,6 +206,47 @@ local function LoadSkin()
 	WorldMapFloorNavigationDropDown(WorldMapFrame.overlayFrames[1])
 	WorldMapTrackingOptionsButton(WorldMapFrame.overlayFrames[2])
 	WorldMapBountyBoard(WorldMapFrame.overlayFrames[3])
+
+	-- QuestSessionManagement skin (based on skin from Aurora)
+	QuestMapFrame.QuestSessionManagement:StripTextures()
+
+	local ExecuteSessionCommand = QuestMapFrame.QuestSessionManagement.ExecuteSessionCommand
+	ExecuteSessionCommand:SetTemplate("Default")
+	ExecuteSessionCommand:StyleButton()
+
+	local icon = ExecuteSessionCommand:CreateTexture(nil, "ARTWORK")
+	icon:SetPoint("TOPLEFT", 0, 0)
+	icon:SetPoint("BOTTOMRIGHT", 0, 0)
+	ExecuteSessionCommand.normalIcon = icon
+
+	local sessionCommandToButtonAtlas = { -- Skin from Aurora
+		[_G.Enum.QuestSessionCommand.Start] = "QuestSharing-DialogIcon",
+		[_G.Enum.QuestSessionCommand.Stop] = "QuestSharing-Stop-DialogIcon"
+	}
+
+	hooksecurefunc(QuestMapFrame.QuestSessionManagement, "UpdateExecuteCommandAtlases", function(self, command)
+		self.ExecuteSessionCommand:SetNormalTexture("")
+		self.ExecuteSessionCommand:SetPushedTexture("")
+		self.ExecuteSessionCommand:SetDisabledTexture("")
+
+		local atlas = sessionCommandToButtonAtlas[command]
+		if atlas then
+			self.ExecuteSessionCommand.normalIcon:SetAtlas(atlas)
+		end
+	end)
+
+	hooksecurefunc(QuestSessionManager, "NotifyDialogShow", function(_, dialog)
+		if not dialog.isSkinned then
+			dialog:StripTextures()
+			dialog:SetTemplate("Transparent")
+			dialog.ButtonContainer.Confirm:SkinButton()
+			dialog.ButtonContainer.Decline:SkinButton()
+			if dialog.MinimizeButton then
+				T.SkinCloseButton(dialog.MinimizeButton, nil, "-")
+			end
+			dialog.isSkinned = true
+		end
+	end)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
