@@ -213,6 +213,13 @@ hooksecurefunc("PetBattleWeatherFrame_Update", function(self)
 		self.Duration:SetPoint("CENTER", self, 0, 8)
 		self:ClearAllPoints()
 		self:SetPoint("TOP", UIParent, 0, -15)
+		self:SetFrameStrata("MEDIUM")
+		if not self.ChildFrame then
+			self.ChildFrame = CreateFrame("Frame", nil, self)
+			self.ChildFrame:SetAllPoints(self)
+			self.ChildFrame:SetFrameStrata("LOW")
+		end
+		self.BackgroundArt:SetParent(self.ChildFrame)
 	end
 end)
 
