@@ -222,7 +222,10 @@ local function SkinBar(line)
 		border:SetBackdropColor(0, 0, 0, 0)
 		bar.newIconBg = border
 
-		bar.AnimIn.Play = T.dummy
+		hooksecurefunc(bar.AnimIn, "Play", function()
+			bar.AnimIn:Stop()
+		end)
+
 		BonusObjectiveTrackerProgressBar_PlayFlareAnim = T.dummy
 		progressBar.styled = true
 	end
