@@ -377,11 +377,6 @@ oUF:Factory(function(self)
 
 	if C.raidframe.raid_tanks == true then
 		-- Tanks
-		if C.raidframe.raid_tanks_tt == true then
-			mt_template = "oUF_MainTankTT"
-		else
-			mt_template = "oUF_MainTank"
-		end
 		local raidtank = self:SpawnHeader("oUF_MainTank", nil, "raid",
 			"oUF-initialConfigFunction", ([[
 				self:SetWidth(%d)
@@ -390,7 +385,7 @@ oUF:Factory(function(self)
 			"showRaid", true,
 			"yOffset", T.Scale(-7),
 			"groupFilter", "MAINTANK",
-			"template", mt_template
+			"template", C.raidframe.raid_tanks_tt and "oUF_MainTankTT" or "oUF_MainTank"
 		)
 		if C.actionbar.split_bars then
 			raidtank:SetPoint(C.position.unitframes.tank[1], SplitBarRight, C.position.unitframes.tank[3], C.position.unitframes.tank[4], C.position.unitframes.tank[5])
