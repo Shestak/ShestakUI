@@ -17,13 +17,14 @@ local tooltips = {
 	FriendsTooltip,
 	ItemRefShoppingTooltip1,
 	ItemRefShoppingTooltip2,
-	AtlasLootTooltip,
-	QuestHelperTooltip,
-	QuestGuru_QuestWatchTooltip,
 	StoryTooltip,
 	ReputationParagonTooltip,
 	WarCampaignTooltip,
-	EmbeddedItemTooltip
+	EmbeddedItemTooltip,
+	-- Addons
+	AtlasLootTooltip,
+	QuestGuru_QuestWatchTooltip,
+	LibDBIconTooltip
 }
 
 local backdrop = {
@@ -50,7 +51,7 @@ for _, tt in pairs(tooltips) do
 	end
 end
 
--- Extra tooltip's skin
+-- LibExtraTip skin
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
 frame:SetScript("OnEvent", function()
