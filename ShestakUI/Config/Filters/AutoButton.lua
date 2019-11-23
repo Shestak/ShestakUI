@@ -69,6 +69,7 @@ T.ABItems = {
 	140257, -- Advanced Telemancy Beacon
 	142401, -- Telemancy Orbs
 	-- BfA
+	166905, -- Hunting Knife
 	168183, -- Rare Metal Collector
 }
 
