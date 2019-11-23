@@ -4,7 +4,7 @@ if C.skins.minimap_buttons ~= true or C.minimap.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Skin addons icons on minimap
 ----------------------------------------------------------------------------------------
-local buttons = {
+local blackList = {
 	"QueueStatusMinimapButton",
 	"MiniMapTrackingButton",
 	"MiniMapMailFrame",
@@ -14,9 +14,7 @@ local buttons = {
 }
 
 local function SkinButton(f)
-	if not f or f:GetObjectType() ~= "Button" then return end
-
-	for _, buttons in pairs(buttons) do
+	for _, buttons in pairs(blackList) do
 		if f:GetName() ~= nil then
 			if f:GetName():match(buttons) then return end
 		end
@@ -55,8 +53,10 @@ frame:RegisterEvent("PLAYER_LOGIN")
 frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 frame:SetScript("OnEvent", function(_, event)
 	if event == "PLAYER_LOGIN" then
-		for i = 1, Minimap:GetNumChildren() do
-			SkinButton(select(i, Minimap:GetChildren()))
+		for _, child in ipairs({Minimap:GetChildren()}) do
+			if child:GetObjectType() == "Button" and child:GetNumRegions() >= 3 and child:IsShown() then
+				SkinButton(child)
+			end
 		end
 	end
 
