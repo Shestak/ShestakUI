@@ -536,4 +536,5 @@ T.OpenItems = {
 	[141350] = true,	-- Kirin Tor Chest
 	[163611] = true,	-- Seafarer's Coin Pouch
 	[163612] = true,	-- Wayfinder's Satchel
+	[163613] = true,	-- Sack of Plunder
 }
