@@ -71,7 +71,7 @@ SLASH_ENABLE_ADDON2 = "/enable"
 ----------------------------------------------------------------------------------------
 --	Disband party or raid(by Monolit)
 ----------------------------------------------------------------------------------------
-function DisbandRaidGroup()
+local function DisbandRaidGroup()
 	if InCombatLockdown() then return end
 	if UnitInRaid("player") then
 		SendChatMessage(L_INFO_DISBAND, "RAID")
