@@ -78,7 +78,6 @@ if C.announcements.bad_gear == true then
 			88710,	-- Nat's Hat
 			33820,	-- Weather-Beaten Fishing Hat
 			19972,	-- Lucky Fishing Hat
-			46349,	-- Chef's Hat
 		},
 		-- Neck
 		[2] = {
