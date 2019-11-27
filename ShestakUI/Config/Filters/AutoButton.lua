@@ -71,6 +71,7 @@ T.ABItems = {
 	-- BfA
 	166905, -- Hunting Knife
 	168183, -- Rare Metal Collector
+	168253, -- Fathom Hook
 }
 
 T.ABEquipedItems = {
