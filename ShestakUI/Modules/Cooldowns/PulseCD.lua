@@ -37,6 +37,28 @@ local function tcount(tab)
 	return n
 end
 
+local function memoize(f)
+    local cache = nil
+
+    local memoized = {}
+
+    local function get()
+        if (cache == nil) then
+            cache = f()
+        end
+
+        return cache
+    end
+
+    memoized.resetCache = function()
+        cache = nil
+    end
+
+    setmetatable(memoized, {__call = get})
+
+    return memoized
+end
+
 local function GetPetActionIndexByName(name)
 	for i = 1, NUM_PET_ACTION_SLOTS, 1 do
 		if GetPetActionInfo(i) == name then
@@ -51,42 +73,67 @@ local function OnUpdate(_, update)
 	elapsed = elapsed + update
 	if elapsed > 0.05 then
 		for i, v in pairs(watching) do
-			if GetTime() >= v[1] + 0.5 + threshold then
-				local name, texture, start, duration, enabled, isPet
+			if GetTime() >= v[1] + 0.5 then
+				local getCooldownDetails
 				if v[2] == "spell" then
-					name = GetSpellInfo(v[3])
-					texture = GetSpellTexture(v[3])
-					start, duration, enabled = GetSpellCooldown(v[3])
+					getCooldownDetails = memoize(function()
+                        local start, duration, enabled = GetSpellCooldown(v[3])
+                        return {
+                            name = GetSpellInfo(v[3]),
+                            texture = GetSpellTexture(v[3]),
+                            start = start,
+                            duration = duration,
+                            enabled = enabled
+                        }
+                    end)
 				elseif v[2] == "item" then
-					name = GetItemInfo(i)
-					texture = v[3]
-					start, duration, enabled = GetItemCooldown(i)
+					getCooldownDetails = memoize(function()
+                        local start, duration, enabled = GetItemCooldown(i)
+                        return {
+                            name = GetItemInfo(i),
+                            texture = v[3],
+                            start = start,
+                            duration = duration,
+                            enabled = enabled
+                        }
+                    end)
 				elseif v[2] == "pet" then
-					name, _, texture = GetPetActionInfo(v[3])
-					start, duration, enabled = GetPetActionCooldown(v[3])
-					isPet = true
+					getCooldownDetails = memoize(function()
+                        local name, texture = GetPetActionInfo(v[3])
+                        local start, duration, enabled = GetPetActionCooldown(v[3])
+                        return {
+                            name = name,
+                            texture = texture,
+                            isPet = true,
+                            start = start,
+                            duration = duration,
+                            enabled = enabled
+                        }
+                    end)
 				end
-				if T.pulse_ignored_spells[name] then
+				local cooldown = getCooldownDetails()
+				if T.pulse_ignored_spells[cooldown.name] then
 					watching[i] = nil
 				else
-					if enabled ~= 0 then
-						if duration and duration > threshold and texture then
-							cooldowns[i] = {start, duration, texture, isPet}
-						end
-					end
-					if not (enabled == 0 and v[2] == "spell") then
-						watching[i] = nil
-					end
+					if cooldown.enabled ~= 0 then
+                        if cooldown.duration and cooldown.duration > threshold and cooldown.texture then
+                            cooldowns[i] = getCooldownDetails
+                        end
+                    end
+                    if not (cooldown.enabled == 0 and v[2] == "spell") then
+                        watching[i] = nil
+                    end
 				end
 			end
 		end
-		for i, v in pairs(cooldowns) do
-			local remaining = v[2] - (GetTime() - v[1])
-			if remaining <= 0 then
-				tinsert(animating, {v[3], v[4]})
-				cooldowns[i] = nil
-			end
-		end
+		for i, getCooldownDetails in pairs(cooldowns) do
+            local cooldown = getCooldownDetails()
+            local remaining = cooldown.duration - (GetTime() - cooldown.start)
+            if remaining <= 0 then
+                tinsert(animating, {cooldown.texture, cooldown.isPet, cooldown.name})
+                cooldowns[i] = nil
+            end
+        end
 
 		elapsed = 0
 		if #animating == 0 and tcount(watching) == 0 and tcount(cooldowns) == 0 then
@@ -134,6 +181,13 @@ function frame:ADDON_LOADED()
 	self:UnregisterEvent("ADDON_LOADED")
 end
 frame:RegisterEvent("ADDON_LOADED")
+
+function frame:SPELL_UPDATE_COOLDOWN()
+    for _, getCooldownDetails in pairs(cooldowns) do
+        getCooldownDetails.resetCache()
+    end
+end
+frame:RegisterEvent("SPELL_UPDATE_COOLDOWN")
 
 function frame:UNIT_SPELLCAST_SUCCEEDED(unit, _, spellID)
 	if unit == "player" then
