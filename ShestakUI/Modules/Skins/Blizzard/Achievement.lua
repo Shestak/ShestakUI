@@ -152,7 +152,11 @@ local function LoadSkin()
 		end
 		if IsAddOnLoaded("Overachiever_Tabs") then
 			for i = 4, 6 do
-				T.SkinTab(_G["AchievementFrameTab"..i])
+				local tab = _G["AchievementFrameTab"..i]
+				if tab and not tab.isSkinned then
+					T.SkinTab(_G["AchievementFrameTab"..i])
+					tab.isSkinned = true
+				end
 			end
 		end
 	end)
