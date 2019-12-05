@@ -72,6 +72,7 @@ T.ABItems = {
 	166905, -- Hunting Knife
 	168183, -- Rare Metal Collector
 	168253, -- Fathom Hook
+	168482, -- Plug the Geysers
 }
 
 T.ABEquipedItems = {
