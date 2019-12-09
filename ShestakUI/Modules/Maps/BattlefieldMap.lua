@@ -13,6 +13,7 @@ tinymap:SetScript("OnEvent", function(_, _, addon)
 
 	BattlefieldMapFrame:SetSize(223, 150)
 	BattlefieldMapFrame:CreateBackdrop("ClassColor")
+	BattlefieldMapFrame.backdrop:SetBackdropColor(C.media.backdrop_color[1], C.media.backdrop_color[2], C.media.backdrop_color[3], C.media.backdrop_alpha)
 	BattlefieldMapFrame.backdrop:SetPoint("TOPLEFT", -2, 4)
 	BattlefieldMapFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 1)
 
