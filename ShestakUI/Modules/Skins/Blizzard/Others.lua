@@ -44,6 +44,7 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 		GameMenuFrame:StripTextures()
 		LFDRoleCheckPopup:StripTextures()
 		RolePollPopup:StripTextures()
+		OpacityFrame:StripTextures()
 
 		for i = 1, getn(bgskins) do
 			local frame = _G[bgskins[i]]
