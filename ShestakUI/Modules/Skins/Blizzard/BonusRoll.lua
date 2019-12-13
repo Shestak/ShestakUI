@@ -24,7 +24,7 @@ local function LoadSkin()
 	BonusRollFrame.PromptFrame.IconBackdrop:SetPoint("BOTTOMRIGHT", BonusRollFrame.PromptFrame.Icon, 2, -2)
 
 	BonusRollFrame.PromptFrame.Timer:CreateBackdrop("Default")
-	BonusRollFrame.PromptFrame.Timer.Bar:SetColorTexture(1, 1, 1)
+	BonusRollFrame.PromptFrame.Timer:SetStatusBarTexture(C.media.texture)
 	BonusRollFrame.PromptFrame.Timer:SetPoint("BOTTOMLEFT", BonusRollFrame.PromptFrame, "BOTTOMLEFT", 0, 1)
 
 	BonusRollFrame.SpecRing:SetTexture("")
