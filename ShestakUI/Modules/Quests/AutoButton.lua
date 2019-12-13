@@ -59,22 +59,21 @@ AutoButton:SetAttribute("type", "item")
 AutoButtonHide()
 
 -- Texture for our button
-AutoButton.t = AutoButton:CreateTexture(nil, "OVERLAY")
-AutoButton.t:SetPoint("TOPLEFT", AutoButton, "TOPLEFT", 2, -2)
-AutoButton.t:SetPoint("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", -2, 2)
+AutoButton.t = AutoButton:CreateTexture(nil, "BORDER")
+AutoButton.t:SetPoint("TOPLEFT", 2, -2)
+AutoButton.t:SetPoint("BOTTOMRIGHT", -2, 2)
 AutoButton.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 -- Count text for our button
 AutoButton.c = AutoButton:CreateFontString(nil, "OVERLAY")
-AutoButton.c:SetFont(C.media.pixel_font, C.media.pixel_font_size * 2, C.media.pixel_font_style)
-AutoButton.c:SetTextColor(1, 1, 1, 1)
-AutoButton.c:SetPoint("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", 1, -2)
-AutoButton.c:SetJustifyH("CENTER")
+AutoButton.c:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
+AutoButton.c:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
+AutoButton.c:SetPoint("BOTTOMRIGHT", 1, -2)
 
 -- Cooldown
 AutoButton.cd = CreateFrame("Cooldown", nil, AutoButton, "CooldownFrameTemplate")
-AutoButton.cd:SetPoint("TOPLEFT", AutoButton, "TOPLEFT", 2, -2)
-AutoButton.cd:SetPoint("BOTTOMRIGHT", AutoButton, "BOTTOMRIGHT", -2, 2)
+AutoButton.cd:SetAllPoints(AutoButton.t)
+AutoButton.cd:SetFrameLevel(1)
 
 local Scanner = CreateFrame("Frame")
 Scanner:RegisterEvent("BAG_UPDATE")
