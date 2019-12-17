@@ -3518,10 +3518,12 @@ C["filger_spells"] = {
 			-- Seaforium Bombs
 			{spellID = 66271, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Drinking in Arena
-			-- Drinking
+			-- Drink
 			{spellID = 80167, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Mage Food
+			-- Refreshment [Mage Food]
 			{spellID = 167152, unitID = "target", caster = "all", filter = "BUFF"},
+			-- Food & Drink
+			{spellID = 257427, unitID = "target", caster = "all", filter = "BUFF"},
 
 			-- Mythic
 			-- Sanguine Ichor
