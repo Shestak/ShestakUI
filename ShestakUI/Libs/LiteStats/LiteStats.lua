@@ -501,8 +501,8 @@ if durability.enabled then
 				if C_EquipmentSet.GetNumEquipmentSets() == 0 then
 					tinsert(menulist, {text = NONE, notCheckable = 1, disabled = true})
 				else
-					for i = 1, C_EquipmentSet.GetNumEquipmentSets() do
-						local name, icon, setID = C_EquipmentSet.GetEquipmentSetInfo(i-1)
+					for _, eSetID in pairs(C_EquipmentSet.GetEquipmentSetIDs()) do
+						local name, icon, setID = C_EquipmentSet.GetEquipmentSetInfo(eSetID)
 						if not icon then icon = 134400 end
 						tinsert(menulist, {text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s", icon, t_icon, name), notCheckable = 1, func = function() if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end EquipmentManager_EquipSet(setID) end})
 					end
