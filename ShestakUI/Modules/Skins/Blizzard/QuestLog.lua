@@ -175,7 +175,7 @@ local function LoadSkin()
 				if not followerReward.isSkinned then
 					followerReward:CreateBackdrop("Overlay")
 					followerReward.backdrop:SetAllPoints(followerReward.BG)
-					followerReward.backdrop:SetPoint("TOPLEFT", 40, -5)
+					followerReward.backdrop:SetPoint("TOPLEFT", 45, -5)
 					followerReward.backdrop:SetPoint("BOTTOMRIGHT", 2, 5)
 					followerReward.BG:Hide()
 					followerReward.isSkinned = true
