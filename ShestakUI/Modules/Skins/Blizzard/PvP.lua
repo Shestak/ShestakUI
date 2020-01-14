@@ -18,6 +18,11 @@ end)
 
 if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
+	-- Set texture to hide circle
+	PVPQueueFrame.CategoryButton1.Icon:SetTexture("Interface\\Icons\\achievement_bg_winwsg")
+	PVPQueueFrame.CategoryButton2.Icon:SetTexture("Interface\\Icons\\achievement_bg_killxenemies_generalsroom")
+	PVPQueueFrame.CategoryButton3.Icon:SetTexture("Interface\\Icons\\Achievement_General_StayClassy")
+
 	for i = 1, 3 do
 		local button = _G["PVPQueueFrameCategoryButton"..i]
 		button.Ring:Kill()
