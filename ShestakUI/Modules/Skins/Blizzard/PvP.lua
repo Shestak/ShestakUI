@@ -239,12 +239,13 @@ local function LoadSkin()
 	NewSeasonPopup.SeasonDescription:SetShadowOffset(1, -1)
 	NewSeasonPopup.SeasonDescription2:SetTextColor(1, 1, 1)
 	NewSeasonPopup.SeasonDescription2:SetShadowOffset(1, -1)
+	NewSeasonPopup.SeasonDescription2:SetWidth(400)
 
-	local RewardFrame = SeasonRewardFrame
+	local RewardFrame = NewSeasonPopup.SeasonRewardFrame
 	RewardFrame.Ring:Hide()
 	RewardFrame.CircleMask:Hide()
 	RewardFrame.Icon:SkinIcon()
-	select(3, RewardFrame:GetRegions()):SetTextColor(1, 1, 1)
+	select(3, RewardFrame:GetRegions()):SetTextColor(1, 0.8, 0)
 	select(3, RewardFrame:GetRegions()):SetShadowOffset(1, -1)
 
 	NewSeasonPopup.Leave:SkinButton()

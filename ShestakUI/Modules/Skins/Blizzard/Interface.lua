@@ -8,9 +8,11 @@ local function LoadSkin()
 	InterfaceOptionsFrame:StripTextures()
 	InterfaceOptionsFrame:SetTemplate("Transparent")
 
-	InterfaceOptionsFrameHeader:SetTexture(nil)
-	InterfaceOptionsFrameHeader:ClearAllPoints()
-	InterfaceOptionsFrameHeader:SetPoint("TOP", InterfaceOptionsFrame, 0, 0)
+	if T.wowBuild < 33050 then -- FIXME
+		InterfaceOptionsFrameHeader:SetTexture(nil)
+		InterfaceOptionsFrameHeader:ClearAllPoints()
+		InterfaceOptionsFrameHeader:SetPoint("TOP", InterfaceOptionsFrame, 0, 0)
+	end
 
 	InterfaceOptionsFrameTab1:StripTextures()
 	InterfaceOptionsFrameTab2:StripTextures()

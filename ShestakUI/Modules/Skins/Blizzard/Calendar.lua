@@ -6,30 +6,30 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	local frames = {
-		"CalendarFrame",
-		"CalendarCreateEventFrame",
-		"CalendarCreateEventTitleFrame",
-		"CalendarCreateEventInviteList",
-		"CalendarCreateEventDescriptionContainer",
-		"CalendarCreateEventInviteListSection",
-		"CalendarTexturePickerFrame",
-		"CalendarTexturePickerTitleFrame",
-		"CalendarMassInviteFrame",
-		"CalendarMassInviteTitleFrame",
-		"CalendarViewRaidFrame",
-		"CalendarViewRaidTitleFrame",
-		"CalendarViewHolidayTitleFrame",
-		"CalendarViewEventFrame",
-		"CalendarViewEventTitleFrame",
-		"CalendarViewEventDescriptionContainer",
-		"CalendarViewEventInviteList",
-		"CalendarViewEventInviteListSection",
-		"CalendarEventPickerFrame",
-		"CalendarEventPickerTitleFrame"
+		CalendarFrame,
+		CalendarCreateEventFrame,
+		CalendarCreateEventTitleFrame,
+		CalendarCreateEventInviteList,
+		CalendarCreateEventDescriptionContainer,
+		CalendarCreateEventInviteListSection,
+		CalendarTexturePickerFrame,
+		CalendarTexturePickerTitleFrame,
+		CalendarMassInviteFrame,
+		CalendarMassInviteTitleFrame,
+		CalendarViewRaidFrame,
+		CalendarViewRaidTitleFrame,
+		CalendarViewHolidayTitleFrame,
+		CalendarViewEventFrame,
+		CalendarViewEventTitleFrame,
+		CalendarViewEventDescriptionContainer,
+		CalendarViewEventInviteList,
+		CalendarViewEventInviteListSection,
+		CalendarEventPickerFrame,
+		CalendarEventPickerTitleFrame
 	}
 
 	for _, frame in pairs(frames) do
-		_G[frame]:StripTextures()
+		frame:StripTextures()
 	end
 
 	CalendarFrame:CreateBackdrop("Transparent")

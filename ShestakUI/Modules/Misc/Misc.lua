@@ -149,7 +149,7 @@ strip.model = DressUpFrame.ModelScene
 strip:RegisterEvent("AUCTION_HOUSE_SHOW")
 strip:RegisterEvent("AUCTION_HOUSE_CLOSED")
 strip:SetScript("OnEvent", function(self)
-	if AuctionFrame:IsVisible() and self.model ~= SideDressUpFrame.ModelScene then
+	if AuctionFrame and AuctionFrame:IsVisible() and self.model ~= SideDressUpFrame.ModelScene then
 		self:SetParent(SideDressUpFrame.ModelScene)
 		self:ClearAllPoints()
 		self:SetPoint("BOTTOM", SideDressUpFrame.ResetButton, "TOP", 0, 3)

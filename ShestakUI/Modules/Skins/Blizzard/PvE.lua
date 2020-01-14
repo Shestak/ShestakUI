@@ -520,6 +520,7 @@ local function LoadSecondarySkin()
 	NoticeFrame.SeasonDescription:SetShadowOffset(1, -1)
 	NoticeFrame.SeasonDescription2:SetTextColor(1, 1, 1)
 	NoticeFrame.SeasonDescription2:SetShadowOffset(1, -1)
+	NoticeFrame.SeasonDescription2:SetWidth(400)
 	NoticeFrame.SeasonDescription3:SetTextColor(1, 0.8, 0)
 	NoticeFrame.SeasonDescription3:SetShadowOffset(1, -1)
 

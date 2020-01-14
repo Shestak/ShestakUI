@@ -8,9 +8,11 @@ local function LoadSkin()
 	ChatConfigFrame:StripTextures()
 	ChatConfigFrame:SetTemplate("Transparent")
 
-	ChatConfigFrameHeader:SetTexture(nil)
-	ChatConfigFrameHeader:ClearAllPoints()
-	ChatConfigFrameHeader:SetPoint("TOP", ChatConfigFrame, 0, 7)
+	if T.wowBuild < 33050 then -- FIXME
+		ChatConfigFrameHeader:SetTexture(nil)
+		ChatConfigFrameHeader:ClearAllPoints()
+		ChatConfigFrameHeader:SetPoint("TOP", ChatConfigFrame, 0, 7)
+	end
 
 	local frames = {
 		"ChatConfigCategoryFrame",

@@ -19,9 +19,11 @@ local function LoadSkin()
 	KeyBindingFrame:StripTextures()
 	KeyBindingFrame:SetTemplate("Transparent")
 
-	KeyBindingFrame.header:StripTextures()
-	KeyBindingFrame.header:ClearAllPoints()
-	KeyBindingFrame.header:SetPoint("TOP", KeyBindingFrame, "TOP", 0, -4)
+	if T.wowBuild < 33050 then -- FIXME
+		KeyBindingFrame.header:StripTextures()
+		KeyBindingFrame.header:ClearAllPoints()
+		KeyBindingFrame.header:SetPoint("TOP", KeyBindingFrame, "TOP", 0, -4)
+	end
 
 	KeyBindingFrame.bindingsContainer:StripTextures()
 	KeyBindingFrame.bindingsContainer:SetTemplate("Overlay")

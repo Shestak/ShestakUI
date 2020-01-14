@@ -34,8 +34,10 @@ local function LoadSkin()
 		_G[frames[i]]:CreateBackdrop("Overlay")
 	end
 
-	HelpFrameHeader:StripTextures(true)
-	HelpFrameHeader:SetFrameLevel(HelpFrameHeader:GetFrameLevel() + 2)
+	if T.wowBuild < 33050 then -- FIXME
+		HelpFrameHeader:StripTextures(true)
+		HelpFrameHeader:SetFrameLevel(HelpFrameHeader:GetFrameLevel() + 2)
+	end
 	HelpFrameKnowledgebaseErrorFrame:SetFrameLevel(HelpFrameKnowledgebaseErrorFrame:GetFrameLevel() + 2)
 
 	HelpFrameReportBugScrollFrame:StripTextures()
