@@ -52,8 +52,8 @@ local function LoadSkin()
 		"SecondaryHandSlot"
 	}
 
-	select(15, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
-	select(15, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
+	select(16, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
+	select(16, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
 
 	for _, i in pairs(slots) do
 		_G["Character"..i.."Frame"]:Hide()
