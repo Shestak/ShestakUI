@@ -155,16 +155,16 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 
 		-- Hide header textures and move text/buttons
 		local BlizzardHeader = {
-			"GameMenuFrame",
-			"ColorPickerFrame"
+			GameMenuFrame,
+			ColorPickerFrame
 		}
 
-		for i = 1, getn(BlizzardHeader) do
-			local title = _G[BlizzardHeader[i].."Header"]
+		for _, frame in pairs(BlizzardHeader) do
+			local title = frame.Header
 			if title then
-				title:SetTexture(nil)
+				title:StripTextures()
 				title:ClearAllPoints()
-				title:SetPoint("TOP", BlizzardHeader[i], 0, 7)
+				title:SetPoint("TOP", frame, 0, 7)
 			end
 		end
 
