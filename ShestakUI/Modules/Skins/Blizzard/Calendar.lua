@@ -8,24 +8,24 @@ local function LoadSkin()
 	local frames = {
 		CalendarFrame,
 		CalendarCreateEventFrame,
-		CalendarCreateEventTitleFrame,
+		CalendarCreateEventFrame.Header,
 		CalendarCreateEventInviteList,
 		CalendarCreateEventDescriptionContainer,
 		CalendarCreateEventInviteListSection,
 		CalendarTexturePickerFrame,
-		CalendarTexturePickerTitleFrame,
+		CalendarTexturePickerFrame.Header,
 		CalendarMassInviteFrame,
-		CalendarMassInviteTitleFrame,
+		CalendarMassInviteFrame.Header,
 		CalendarViewRaidFrame,
-		CalendarViewRaidTitleFrame,
-		CalendarViewHolidayTitleFrame,
+		CalendarViewRaidFrame.Header,
+		CalendarViewHolidayFrame.Header,
 		CalendarViewEventFrame,
-		CalendarViewEventTitleFrame,
+		CalendarViewEventFrame.Header,
 		CalendarViewEventDescriptionContainer,
 		CalendarViewEventInviteList,
 		CalendarViewEventInviteListSection,
 		CalendarEventPickerFrame,
-		CalendarEventPickerTitleFrame
+		CalendarEventPickerFrame.Header
 	}
 
 	for _, frame in pairs(frames) do

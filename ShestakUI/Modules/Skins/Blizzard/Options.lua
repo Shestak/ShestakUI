@@ -8,11 +8,9 @@ local function LoadSkin()
 	VideoOptionsFrame:StripTextures()
 	VideoOptionsFrame:SetTemplate("Transparent")
 
-	if T.wowBuild < 33050 then -- FIXME
-		VideoOptionsFrameHeader:SetTexture(nil)
-		VideoOptionsFrameHeader:ClearAllPoints()
-		VideoOptionsFrameHeader:SetPoint("TOP", VideoOptionsFrame, 0, 0)
-	end
+	VideoOptionsFrame.Header:StripTextures()
+	VideoOptionsFrame.Header:ClearAllPoints()
+	VideoOptionsFrame.Header:SetPoint("TOP", VideoOptionsFrame, 0, 0)
 
 	local frames = {
 		"VideoOptionsFrameCategoryFrame",

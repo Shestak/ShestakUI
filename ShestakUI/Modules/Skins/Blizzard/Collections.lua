@@ -499,27 +499,25 @@ local function LoadSkin()
 	WardrobeTransmogFrame.SpecButton:SkinButton()
 	WardrobeTransmogFrame.ApplyButton:SkinButton()
 	WardrobeTransmogFrame.SpecButton:SetPoint("RIGHT", WardrobeTransmogFrame.ApplyButton, "LEFT", -2, 0)
-	if T.wowBuild < 33050 then -- FIXME
-		WardrobeTransmogFrame.Model.ClearAllPendingButton:SkinButton()
+	WardrobeTransmogFrame.ModelScene.ClearAllPendingButton:SkinButton()
 
-		for i = 1, #WardrobeTransmogFrame.Model.SlotButtons do
-			local slot = WardrobeTransmogFrame.Model.SlotButtons[i]
-			local icon = slot.Icon
-			local border = slot.Border
+	for i = 1, #WardrobeTransmogFrame.ModelScene.SlotButtons do
+		local slot = WardrobeTransmogFrame.ModelScene.SlotButtons[i]
+		local icon = slot.Icon
+		local border = slot.Border
 
-			if slot then
-				border:Kill()
+		if slot then
+			border:Kill()
 
-				slot:StyleButton()
-				slot:SetFrameLevel(slot:GetFrameLevel() + 2)
-				slot:CreateBackdrop("Default")
-				slot.backdrop:SetAllPoints()
+			slot:StyleButton()
+			slot:SetFrameLevel(slot:GetFrameLevel() + 2)
+			slot:CreateBackdrop("Default")
+			slot.backdrop:SetAllPoints()
 
-				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				icon:ClearAllPoints()
-				icon:SetPoint("TOPLEFT", 2, -2)
-				icon:SetPoint("BOTTOMRIGHT", -2, 2)
-			end
+			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			icon:ClearAllPoints()
+			icon:SetPoint("TOPLEFT", 2, -2)
+			icon:SetPoint("BOTTOMRIGHT", -2, 2)
 		end
 	end
 

@@ -15,11 +15,7 @@ local function LoadSkin()
 	DressUpFrame.ModelScene.backdrop:SetPoint("BOTTOMRIGHT", 2, 1)
 	DressUpFrame.ModelBackground:SetDrawLayer("BACKGROUND", 3)
 
-	if T.wowBuild < 33050 then -- FIXME
-		T.SkinMaxMinFrame(MaximizeMinimizeFrame, DressUpFrameCloseButton)
-	else
-		T.SkinMaxMinFrame(DressUpFrame.MaximizeMinimizeFrame, DressUpFrameCloseButton)
-	end
+	T.SkinMaxMinFrame(DressUpFrame.MaximizeMinimizeFrame, DressUpFrameCloseButton)
 
 	DressUpFrameCancelButton:SkinButton()
 	DressUpFrameResetButton:SkinButton()
