@@ -233,6 +233,7 @@ function Stuffing:SlotUpdate(b)
 	end
 
 	b.frame.Azerite:Hide()
+	b.frame.Corrupted:Hide()
 	b.frame:UpdateItemContextMatching() -- Update Scrap items
 
 	if b.frame.UpgradeIcon then
@@ -264,6 +265,10 @@ function Stuffing:SlotUpdate(b)
 
 		if b.frame.Azerite and C_AzeriteEmpoweredItem.IsAzeriteEmpoweredItemByID(clink) then
 			b.frame.Azerite:Show()
+		end
+
+		if b.frame.Corrupted and IsCorruptedItem(clink) then
+			b.frame.Corrupted:Show()
 		end
 
 		if (IsItemUnusable(clink) or b.level and b.level > T.level) and not locked then
@@ -588,6 +593,12 @@ function Stuffing:SlotNew(bag, slot)
 		ret.frame.Azerite:SetPoint("TOPLEFT", ret.frame, 1, -1)
 		ret.frame.Azerite:SetPoint("BOTTOMRIGHT", ret.frame, -1, 1)
 		ret.frame.Azerite:Hide()
+
+		ret.frame.Corrupted = ret.frame:CreateTexture(nil, "OVERLAY")
+		ret.frame.Corrupted:SetAtlas("Nzoth-inventory-icon")
+		ret.frame.Corrupted:SetPoint("TOPLEFT", ret.frame, 1, -1)
+		ret.frame.Corrupted:SetPoint("BOTTOMRIGHT", ret.frame, -1, 1)
+		ret.frame.Corrupted:Hide()
 
 		local Battlepay = _G[ret.frame:GetName()].BattlepayItemTexture
 		if Battlepay then
