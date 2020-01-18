@@ -58,7 +58,6 @@
 	<Script file="PartyPoseUI.lua"/>
 	<Script file="Petition.lua"/>
 	<Script file="PetStable.lua"/>
-	<Script file="ProductChoice.lua"/>
 	<Script file="PvE.lua"/>
 	<Script file="PvP.lua"/>
 	<Script file="PvPMatch.lua"/>
