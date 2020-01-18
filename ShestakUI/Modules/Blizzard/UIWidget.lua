@@ -128,3 +128,7 @@ hooksecurefunc(UIWidgetTemplateCaptureBarMixin, "Setup", function(widgetInfo)
 		widgetInfo.backdrop:SetPoint("BOTTOMRIGHT", widgetInfo.RightBar, 2, -2)
 	end
 end)
+
+hooksecurefunc(UIWidgetTemplateScenarioHeaderCurrenciesAndBackgroundMixin, "Setup", function(widgetInfo)
+	widgetInfo.Frame:SetAlpha(0)
+end)
