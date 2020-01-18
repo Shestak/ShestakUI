@@ -33,25 +33,25 @@ local function LoadSkin()
 
 	-- TalentFrame skin from ElvUI
 	local function colorBorder(child, backdrop, atlas)
-		if child.AlphaIconOverlay:IsShown() then --isBeingResearched or (talentAvailability and not selected)
+		if child.AlphaIconOverlay:IsShown() then -- isBeingResearched or (talentAvailability and not selected)
 			local alpha = child.AlphaIconOverlay:GetAlpha()
-			if alpha <= 0.5 then --talentAvailability
-				backdrop:SetBackdropBorderColor(0.5, 0.5, 0.5) --[border = grey, shadow x2]
+			if alpha <= 0.5 then -- talentAvailability
+				backdrop:SetBackdropBorderColor(0.5, 0.5, 0.5) -- [border = grey, shadow x2]
 				child.darkOverlay:SetColorTexture(0, 0, 0, 0.50)
 				child.darkOverlay:Show()
-			elseif alpha <= 0.7 then --isBeingResearched
-				backdrop:SetBackdropBorderColor(0, 1, 1) --[border = teal, shadow x1]
+			elseif alpha <= 0.7 then -- isBeingResearched
+				backdrop:SetBackdropBorderColor(0, 1, 1) -- [border = teal, shadow x1]
 				child.darkOverlay:SetColorTexture(0, 0, 0, 0.25)
 				child.darkOverlay:Show()
 			end
-		elseif atlas == "orderhalltalents-spellborder-green" then
-			backdrop:SetBackdropBorderColor(0, 1, 0) --[border = green, no shadow]
+		elseif atlas:find("green") then
+			backdrop:SetBackdropBorderColor(0, 1, 0) -- [border = green, no shadow]
 			child.darkOverlay:Hide()
-		elseif atlas == "orderhalltalents-spellborder-yellow" then
-			backdrop:SetBackdropBorderColor(1, 1, 0) --[border = yellow, no shadow]
+		elseif atlas:find("yellow") then
+			backdrop:SetBackdropBorderColor(1, 1, 0) -- [border = yellow, no shadow]
 			child.darkOverlay:Hide()
-		elseif atlas == "orderhalltalents-spellborder" then
-			backdrop:SetBackdropBorderColor(0.2, 0.2, 0.2) --[border = dark grey, shadow x3]
+		else
+			backdrop:SetBackdropBorderColor(0.2, 0.2, 0.2) -- [border = dark grey, shadow x3]
 			child.darkOverlay:SetColorTexture(0, 0, 0, 0.75)
 			child.darkOverlay:Show()
 		end
@@ -62,6 +62,14 @@ local function LoadSkin()
 	OrderHallTalentFrame.NineSlice:Hide()
 	OrderHallTalentFrame.OverlayElements:Hide()
 	T.SkinCloseButton(OrderHallTalentFrameCloseButton)
+
+	hooksecurefunc(OrderHallTalentFrame, "SetUseThemedTextures", function(self)
+		self.Background:ClearAllPoints()
+		self.Background:SetPoint("TOPLEFT")
+		self.Background:SetPoint("BOTTOMRIGHT")
+		self.Background:SetDrawLayer("BACKGROUND", 2)
+	end)
+
 	OrderHallTalentFrame:HookScript("OnShow", function(self)
 		if self.CloseButton.Border then
 			self.CloseButton.Border:SetAlpha(0)
@@ -71,10 +79,6 @@ local function LoadSkin()
 		end
 		if self.skinned then return end
 		self.Currency.Icon:SkinIcon()
-		self.Background:ClearAllPoints()
-		self.Background:SetPoint("TOPLEFT")
-		self.Background:SetPoint("BOTTOMRIGHT")
-		self.Background:SetDrawLayer("BACKGROUND", 2)
 		self.BackButton:SkinButton()
 
 		for i = 1, self:GetNumChildren() do
@@ -89,7 +93,7 @@ local function LoadSkin()
 				child.Icon:SetInside(child.backdrop)
 				child.hover:SetInside(child.backdrop)
 				child.pushed:SetInside(child.backdrop)
-				child.backdrop:SetFrameLevel(child.backdrop:GetFrameLevel()+1)
+				child.backdrop:SetFrameLevel(child.backdrop:GetFrameLevel() + 1)
 
 				child.darkOverlay = child:CreateTexture()
 				child.darkOverlay:SetAllPoints(child.Icon)
@@ -107,7 +111,6 @@ local function LoadSkin()
 		self.choiceTexturePool:ReleaseAll()
 		hooksecurefunc(self, "RefreshAllData", function(frame)
 			frame.choiceTexturePool:ReleaseAll()
-
 			for i = 1, frame:GetNumChildren() do
 				local child = select(i, frame:GetChildren())
 				if child and child.Icon and child.Border and child.backdrop then
