@@ -1535,6 +1535,8 @@ C["filger_spells"] = {
 			{spellID = 209202, filter = "CD"},
 			-- Cleanse
 			{spellID = 4987, filter = "CD"},
+			-- Cleanse Toxins
+			{spellID = 213644, filter = "CD"},
 			-- Hand of Reckoning
 			{spellID = 62124, filter = "CD"},
 			-- Rebuke
