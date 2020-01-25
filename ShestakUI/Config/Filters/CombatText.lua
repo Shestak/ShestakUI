@@ -38,6 +38,7 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[255586] = 3.5			-- Lightning Arc [Azerite trait]
 	T.aoespam[279856] = 2			-- Glacial Assault [Azerite trait]
 	T.aoespam[295261] = 3			-- Focused Azerite Beam [Azerite Essence]
+	T.aoespam[296061] = 0.5			-- Null Barrier [Azerite trait]
 	T.aoespam[271686] = 1			-- Heed My Call [Azerite trait]
 	T.merge[271685] = 271686		-- Heed My Call [Azerite trait]
 end
