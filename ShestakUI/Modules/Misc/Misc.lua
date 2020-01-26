@@ -126,16 +126,15 @@ if C.misc.hide_bg_spam == true then
 end
 
 ----------------------------------------------------------------------------------------
---	Undress button in auction dress-up frame(by Nefarion)
+--	Undress button in dress-up frame(by Nefarion)
 ----------------------------------------------------------------------------------------
 local strip = CreateFrame("Button", "DressUpFrameUndressButton", DressUpFrame, "UIPanelButtonTemplate")
 strip:SetText(L_MISC_UNDRESS)
-strip:SetHeight(22)
 strip:SetWidth(strip:GetTextWidth() + 40)
 strip:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
 strip:RegisterForClicks("AnyUp")
-strip:SetScript("OnClick", function(self, button)
-	local actor = self.model:GetPlayerActor()
+strip:SetScript("OnClick", function(_, button)
+	local actor = DressUpFrame.ModelScene:GetPlayerActor()
 	if not actor then return end
 	if button == "RightButton" then
 		actor:UndressSlot(19)
@@ -143,23 +142,6 @@ strip:SetScript("OnClick", function(self, button)
 		actor:Undress()
 	end
 	PlaySound(SOUNDKIT.GS_TITLE_OPTION_OK)
-end)
-strip.model = DressUpFrame.ModelScene
-
-strip:RegisterEvent("AUCTION_HOUSE_SHOW")
-strip:RegisterEvent("AUCTION_HOUSE_CLOSED")
-strip:SetScript("OnEvent", function(self)
-	if AuctionFrame and AuctionFrame:IsVisible() and self.model ~= SideDressUpFrame.ModelScene then
-		self:SetParent(SideDressUpFrame.ModelScene)
-		self:ClearAllPoints()
-		self:SetPoint("BOTTOM", SideDressUpFrame.ResetButton, "TOP", 0, 3)
-		self.model = SideDressUpFrame.ModelScene
-	elseif self.model ~= DressUpFrame.ModelScene then
-		self:SetParent(DressUpFrame.ModelScene)
-		self:ClearAllPoints()
-		self:SetPoint("RIGHT", DressUpFrameResetButton, "LEFT", -2, 0)
-		self.model = DressUpFrame.ModelScene
-	end
 end)
 
 ----------------------------------------------------------------------------------------
