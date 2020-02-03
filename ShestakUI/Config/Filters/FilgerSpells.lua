@@ -2842,6 +2842,8 @@ C["filger_spells"] = {
 			{spellID = 256740, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Drums of the Mountain
 			{spellID = 230935, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Mallet of Thunderous Skins
+			{spellID = 292686, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Engineering
 			-- Goblin Glider [Goblin Glider Kit]
