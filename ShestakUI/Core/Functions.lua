@@ -1504,7 +1504,7 @@ T.CustomFilterBoss = function(_, unit, button, name, _, _, _, _, _, caster)
 			pet = true,
 			vehicle = true,
 		}
-		if playerUnits[caster] or caster == unit and not T.DebuffBlackList[name] then
+		if (playerUnits[caster] or caster == unit) and not T.DebuffBlackList[name] then
 			return true
 		end
 		return false
