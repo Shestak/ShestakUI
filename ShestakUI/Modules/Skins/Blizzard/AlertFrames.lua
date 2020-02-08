@@ -537,7 +537,7 @@ local function LoadSkin()
 		frame.PvPBackground:Kill()
 		frame.RatedPvPBackground:Kill()
 
-		local lootItem = frame.lootItem or frame
+		local lootItem = frame.lootItem
 		lootItem.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		lootItem.Icon:SetDrawLayer("BORDER")
 		lootItem.Icon:ClearAllPoints()
@@ -584,6 +584,7 @@ local function LoadSkin()
 		if not frame.Icon.b then
 			frame.Icon.b = CreateFrame("Frame", nil, frame)
 			frame.Icon.b:SetTemplate("Default")
+			frame.Icon.b:SetFrameLevel(1)
 			frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
 			frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
 			frame.Icon:SetParent(frame.Icon.b)
@@ -861,12 +862,13 @@ local function LoadSkin()
 	frame.glow:Kill()
 	frame.shine:Kill()
 
-	local lootItem = frame.lootItem or frame
+	local lootItem = frame.lootItem
 	lootItem.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	lootItem.IconBorder:Kill()
+	lootItem.IconBorder:SetAlpha(0)
 	-- Icon border
 	lootItem.Icon.b = CreateFrame("Frame", nil, frame)
 	lootItem.Icon.b:SetTemplate("Default")
+	lootItem.Icon.b:SetFrameLevel(1)
 	lootItem.Icon.b:SetPoint("TOPLEFT", lootItem.Icon, "TOPLEFT", -2, 2)
 	lootItem.Icon.b:SetPoint("BOTTOMRIGHT", lootItem.Icon, "BOTTOMRIGHT", 2, -2)
 	lootItem.Icon:SetParent(lootItem.Icon.b)
