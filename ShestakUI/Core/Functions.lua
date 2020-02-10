@@ -435,7 +435,7 @@ function T.SkinDropDownBox(frame, width, pos)
 		button:SetPoint("RIGHT", frame, "RIGHT", -10, 3)
 	end
 	button.SetPoint = T.dummy
-	T.SkinNextPrevButton(button)
+	T.SkinNextPrevButton(button, nil, "Down")
 
 	frame:CreateBackdrop("Overlay")
 	frame:SetFrameLevel(frame:GetFrameLevel() + 2)
