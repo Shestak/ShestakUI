@@ -1103,7 +1103,7 @@ local function Shared(self, unit)
 			self.Auras.numDebuffs = C.unitframe.boss_debuffs
 			self.Auras.numBuffs = C.unitframe.boss_buffs
 			self.Auras:SetHeight(31 + T.extraHeight)
-			self.Auras:SetWidth(280)
+			self.Auras:SetWidth((34 + T.extraHeight) * (C.unitframe.boss_debuffs + C.unitframe.boss_buffs + 1))
 			self.Auras.spacing = T.Scale(3)
 			self.Auras.size = T.Scale(31 + T.extraHeight)
 			self.Auras.gap = true
