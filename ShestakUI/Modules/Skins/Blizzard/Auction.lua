@@ -9,10 +9,24 @@ local function LoadSkin()
 	AuctionHouseFrame:SetTemplate("Transparent")
 	AuctionHouseFramePortrait:SetAlpha(0)
 
+	AuctionHouseFrame.MoneyFrameBorder:StripTextures()
+	AuctionHouseFrame.MoneyFrameInset:StripTextures()
+
 	T.SkinCloseButton(AuctionHouseFrameCloseButton)
 
 	AuctionHouseFrame.SearchBar.FavoritesSearchButton:SetSize(22, 22)
 	T.SkinEditBox(AuctionHouseFrame.SearchBar.SearchBox, nil, 18)
+	T.SkinCloseButton(AuctionHouseFrame.SearchBar.FilterButton.ClearFiltersButton)
+	AuctionHouseFrame.SearchBar.FilterButton.ClearFiltersButton:SetPoint("TOPRIGHT", 3, 6)
+
+	local function SkinEditBoxes(Frame)
+		T.SkinEditBox(Frame.MinLevel)
+		T.SkinEditBox(Frame.MaxLevel)
+		Frame.MinLevel.backdrop:SetPoint("BOTTOMRIGHT", -3, 0)
+		Frame.MaxLevel.backdrop:SetPoint("BOTTOMRIGHT", -3, 0)
+	end
+
+	SkinEditBoxes(AuctionHouseFrame.SearchBar.FilterButton.LevelRangeFrame)
 
 	local buttons = {
 		AuctionHouseFrame.SearchBar.SearchButton,
@@ -20,19 +34,12 @@ local function LoadSkin()
 		AuctionHouseFrame.SearchBar.FavoritesSearchButton,
 		AuctionHouseFrame.ItemSellFrame.QuantityInput.MaxButton,
 		AuctionHouseFrame.ItemSellFrame.PostButton,
-		AuctionHouseFrame.ItemSellList.RefreshFrame.RefreshButton,
-		AuctionHouseFrame.CommoditiesSellList.RefreshFrame.RefreshButton,
 		AuctionHouseFrame.CommoditiesSellFrame.PostButton,
 		AuctionHouseFrame.CommoditiesSellFrame.QuantityInput.MaxButton,
 		AuctionHouseFrameAuctionsFrame.CancelAuctionButton,
-		AuctionHouseFrameAuctionsFrame.AllAuctionsList.RefreshFrame.RefreshButton,
-		AuctionHouseFrameAuctionsFrame.BidsList.RefreshFrame.RefreshButton,
 		AuctionHouseFrameAuctionsFrame.BidFrame.BidButton,
 		AuctionHouseFrameAuctionsFrame.BuyoutFrame.BuyoutButton,
-		AuctionHouseFrameAuctionsFrame.ItemList.RefreshFrame.RefreshButton,
-		AuctionHouseFrameAuctionsFrame.CommoditiesList.RefreshFrame.RefreshButton,
 		AuctionHouseFrame.ItemBuyFrame.BackButton,
-		AuctionHouseFrame.ItemBuyFrame.ItemList.RefreshFrame.RefreshButton,
 		AuctionHouseFrame.ItemBuyFrame.BidFrame.BidButton,
 		AuctionHouseFrame.ItemBuyFrame.BuyoutFrame.BuyoutButton,
 		AuctionHouseFrame.BuyDialog.BuyNowButton,
@@ -47,16 +54,7 @@ local function LoadSkin()
 
 	local scrollbars = {
 		AuctionHouseFrameScrollBar,
-		AuctionHouseFrame.BrowseResultsFrame.ItemList.ScrollFrame.scrollBar,
-		AuctionHouseFrame.CommoditiesBuyFrame.ItemList.ScrollFrame.scrollBar,
-		AuctionHouseFrame.CommoditiesSellList.ScrollFrame.scrollBar,
-		AuctionHouseFrame.ItemSellList.ScrollFrame.scrollBar,
-		AuctionHouseFrameAuctionsFrame.AllAuctionsList.ScrollFrame.scrollBar,
 		AuctionHouseFrameAuctionsFrame.SummaryList.ScrollFrame.scrollBar,
-		AuctionHouseFrameAuctionsFrame.BidsList.ScrollFrame.scrollBar,
-		AuctionHouseFrameAuctionsFrame.CommoditiesList.ScrollFrame.scrollBar,
-		AuctionHouseFrameAuctionsFrame.ItemList.ScrollFrame.scrollBar,
-		AuctionHouseFrame.ItemBuyFrame.ItemList.ScrollFrame.scrollBar,
 		AuctionHouseFrame.WoWTokenResults.DummyScrollBar
 	}
 
@@ -95,8 +93,8 @@ local function LoadSkin()
 		local button = AuctionHouseFrame.CategoriesList.FilterButtons[i]
 		button:StripTextures(true)
 		button:CreateBackdrop("Overlay")
-		button.backdrop:SetPoint("TOPLEFT", 2, -2)
-		button.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+		button.backdrop:SetPoint("TOPLEFT", button.SelectedTexture, "TOPLEFT", 1, -1)
+		button.backdrop:SetPoint("BOTTOMRIGHT", button.SelectedTexture, "BOTTOMRIGHT", -1, 1)
 	end
 
 	hooksecurefunc("AuctionFrameFilters_UpdateCategories", function(categoriesList)
@@ -109,15 +107,14 @@ local function LoadSkin()
 				button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 				button.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
 			end
+			if button.type == "subSubCategory" then
+				button.SelectedTexture:SetHeight(21)
+				button.SelectedTexture:SetPoint("TOPRIGHT", 0, 0)
+			end
 		end
 	end)
 
-	AuctionHouseFrame.MoneyFrameBorder:StripTextures()
-	AuctionHouseFrame.MoneyFrameInset:StripTextures()
-
-	AuctionHouseFrame.BrowseResultsFrame.ItemList:StripTextures()
-
-	local function HandleListIcon(frame)
+	local function SkinListIcon(frame)
 		if not frame.tableBuilder then return end
 
 		for i = 1, 22 do
@@ -153,17 +150,48 @@ local function LoadSkin()
 			end
 		end
 
-		HandleListIcon(frame)
+		SkinListIcon(frame)
 	end
 
-	hooksecurefunc(AuctionHouseFrame.BrowseResultsFrame.ItemList, "RefreshScrollFrame", SkinHeaders)
-	hooksecurefunc(AuctionHouseFrame.ItemSellList, "RefreshScrollFrame", SkinHeaders)
-	hooksecurefunc(AuctionHouseFrame.CommoditiesSellList, "RefreshScrollFrame", SkinHeaders)
-	hooksecurefunc(AuctionHouseFrameAuctionsFrame.AllAuctionsList, "RefreshScrollFrame", SkinHeaders)
-	hooksecurefunc(AuctionHouseFrameAuctionsFrame.BidsList, "RefreshScrollFrame", SkinHeaders)
-	hooksecurefunc(AuctionHouseFrameAuctionsFrame.ItemList, "RefreshScrollFrame", SkinHeaders)
-	hooksecurefunc(AuctionHouseFrameAuctionsFrame.CommoditiesList, "RefreshScrollFrame", SkinHeaders)
-	hooksecurefunc(AuctionHouseFrame.ItemBuyFrame.ItemList, "RefreshScrollFrame", SkinHeaders)
+	local function SkinSummaryIcons(frame)
+		for i = 1, 23 do
+			local child = select(i, frame.ScrollFrame.scrollChild:GetChildren())
+
+			if child and child.Icon then
+				if not child.IsSkinned then
+					child.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+					if child.IconBorder then
+						child.IconBorder:SetAlpha(0)
+					end
+
+					child.IsSkinned = true
+				end
+			end
+		end
+	end
+
+	hooksecurefunc(AuctionHouseFrameAuctionsFrame.SummaryList, "RefreshScrollFrame", SkinSummaryIcons)
+
+	local function SkinAuctionFrame(frame, scroll)
+		frame:StripTextures()
+		frame.RefreshFrame.RefreshButton:SkinButton()
+		frame.RefreshFrame.RefreshButton:SetSize(24, 24)
+		T.SkinScrollBar(frame.ScrollFrame.scrollBar)
+		if scroll then
+			frame.ScrollFrame.scrollBar:SetPoint("BOTTOMLEFT", frame.ScrollFrame, "BOTTOMRIGHT", 4, 15)
+		end
+		hooksecurefunc(frame, "RefreshScrollFrame", SkinHeaders)
+	end
+
+	SkinAuctionFrame(AuctionHouseFrame.BrowseResultsFrame.ItemList)
+	SkinAuctionFrame(AuctionHouseFrame.ItemBuyFrame.ItemList, true)
+	SkinAuctionFrame(AuctionHouseFrame.ItemSellList)
+	SkinAuctionFrame(AuctionHouseFrame.CommoditiesSellList)
+	SkinAuctionFrame(AuctionHouseFrameAuctionsFrame.ItemList)
+	SkinAuctionFrame(AuctionHouseFrameAuctionsFrame.AllAuctionsList, true)
+	SkinAuctionFrame(AuctionHouseFrameAuctionsFrame.BidsList, true)
+	SkinAuctionFrame(AuctionHouseFrameAuctionsFrame.CommoditiesList, true)
 
 	local function SkinItemIcon(frame, nostrip)
 		if not nostrip then frame:StripTextures() end
@@ -173,7 +201,6 @@ local function LoadSkin()
 		frame.Icon:SkinIcon()
 	end
 
-	AuctionHouseFrame.ItemBuyFrame.ItemList:StripTextures()
 	AuctionHouseFrame.ItemBuyFrame.ItemDisplay:StripTextures()
 	SkinItemIcon(AuctionHouseFrame.ItemBuyFrame.ItemDisplay.ItemButton)
 	T.SkinEditBox(AuctionHouseFrameGold)
@@ -183,6 +210,9 @@ local function LoadSkin()
 	buyFrame.BackButton:SkinButton()
 	buyFrame.BuyDisplay.BuyButton:SkinButton()
 	buyFrame.ItemList.RefreshFrame.RefreshButton:SkinButton()
+	buyFrame.ItemList.RefreshFrame.RefreshButton:SetSize(24, 24)
+
+	T.SkinScrollBar(buyFrame.ItemList.ScrollFrame.scrollBar)
 
 	buyFrame.BuyDisplay:StripTextures()
 	buyFrame.ItemList:StripTextures()
@@ -197,9 +227,6 @@ local function LoadSkin()
 	itemDisplay.ItemButton.Icon:SkinIcon()
 	itemDisplay.ItemButton.CircleMask:Hide()
 	itemDisplay.ItemButton.IconBorder:SetAlpha(0)
-
-	AuctionHouseFrame.ItemSellList:StripTextures()
-	AuctionHouseFrame.CommoditiesSellList:StripTextures()
 
 	local function SkinMoneyBox(frame)
 		frame:DisableDrawLayer("BACKGROUND")
@@ -229,16 +256,12 @@ local function LoadSkin()
 	T.SkinCheckBox(AuctionHouseFrame.ItemSellFrame.BuyoutModeCheckButton, 25)
 
 	AuctionHouseFrameAuctionsFrame.SummaryList:StripTextures()
-	AuctionHouseFrameAuctionsFrame.AllAuctionsList:StripTextures()
-	AuctionHouseFrameAuctionsFrame.BidsList:StripTextures()
-	AuctionHouseFrameAuctionsFrame.ItemList:StripTextures()
 	AuctionHouseFrameAuctionsFrame.ItemDisplay:StripTextures()
-	AuctionHouseFrameAuctionsFrame.CommoditiesList:StripTextures()
+
+	SkinItemIcon(AuctionHouseFrameAuctionsFrame.ItemDisplay.ItemButton)
 
 	T.SkinEditBox(AuctionHouseFrameAuctionsFrameGold)
 	T.SkinEditBox(AuctionHouseFrameAuctionsFrameSilver)
-
-	SkinItemIcon(AuctionHouseFrameAuctionsFrame.ItemDisplay.ItemButton)
 
 	AuctionHouseFrame.BuyDialog:StripTextures()
 	AuctionHouseFrame.BuyDialog:SetTemplate("Transparent")
