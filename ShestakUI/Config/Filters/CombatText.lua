@@ -17,6 +17,7 @@ if C.combattext.healing then
 	T.healfilter[241835] = true		-- Starlight of Celumbra
 	T.healfilter[273836] = true		-- Filthy Transfusion [Azerite trait]
 	T.healfilter[280707] = true		-- Laser Matrix [Azerite trait]
+	T.healfilter[302847] = true		-- Anima of Life [Azerite Essence]
 end
 
 -- General merge outgoing damage
@@ -38,9 +39,13 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[255586] = 3.5			-- Lightning Arc [Azerite trait]
 	T.aoespam[279856] = 2			-- Glacial Assault [Azerite trait]
 	T.aoespam[295261] = 3			-- Focused Azerite Beam [Azerite Essence]
+	T.aoespam[294926] = 0.5			-- Anima of Death [Azerite Essence]
+	T.aoespam[294946] = 1			-- Anima of Death [Azerite Essence]
 	T.aoespam[296061] = 0.5			-- Null Barrier [Azerite trait]
 	T.aoespam[271686] = 1			-- Heed My Call [Azerite trait]
 	T.merge[271685] = 271686		-- Heed My Call [Azerite trait]
+	T.aoespam[317029] = 3			-- Echoing Void [Corruption]
+	T.aoespam[279958] = 0.5			-- Azerite Globules [Azerite trait]
 end
 
 -- Class config
@@ -389,6 +394,7 @@ elseif T.class == "PALADIN" then
 		T.merge[228288] = 20271		-- Judgment Retribution
 		T.aoespam[217020] = 1		-- Zeal
 		T.aoespam[204011] = 3		-- Retribution Aura
+		T.aoespam[286232] = 1		-- Light's Decree
 	end
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
