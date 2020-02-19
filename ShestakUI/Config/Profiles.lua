@@ -210,7 +210,7 @@ if IsWetxius then
 	C["combattext"].blizz_head_numbers = true
 	C["combattext"].dk_runes = false
 	C["pulsecooldown"].enable = true
-	C["pulsecooldown"].threshold = 8
+	C["pulsecooldown"].threshold = 6
 	C["threat"].enable = false
 	C["tooltip"].hide_combat = true
 	C["tooltip"].rank = false
