@@ -217,7 +217,7 @@ local function LoadSkin()
 	buyFrame.BuyDisplay:StripTextures()
 	buyFrame.ItemList:StripTextures()
 
-	buyFrame.BuyDisplay.QuantityInput.InputBox:StripTextures()
+	buyFrame.BuyDisplay.QuantityInput.InputBox:DisableDrawLayer("BACKGROUND")
 	buyFrame.BuyDisplay.QuantityInput.InputBox:CreateBackdrop("Overlay")
 	buyFrame.BuyDisplay.QuantityInput.InputBox.backdrop:SetPoint("TOPLEFT", 2, -2)
 	buyFrame.BuyDisplay.QuantityInput.InputBox.backdrop:SetPoint("BOTTOMRIGHT", -20, 6)
