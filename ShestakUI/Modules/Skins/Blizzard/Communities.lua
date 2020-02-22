@@ -161,6 +161,19 @@ local function LoadSkin()
 		SkinCommunitiesButton(self)
 	end)
 
+	-- ClubFinderInvitationFrame
+	CommunitiesFrame.ClubFinderInvitationFrame.InsetFrame:StripTextures()
+	CommunitiesFrame.ClubFinderInvitationFrame:SetTemplate("Overlay")
+	CommunitiesFrame.ClubFinderInvitationFrame.AcceptButton:SkinButton()
+	CommunitiesFrame.ClubFinderInvitationFrame.DeclineButton:SkinButton()
+	CommunitiesFrame.ClubFinderInvitationFrame.ApplyButton:SkinButton()
+
+
+	CommunitiesFrame.ClubFinderInvitationFrame.WarningDialog:StripTextures()
+	CommunitiesFrame.ClubFinderInvitationFrame.WarningDialog:SetTemplate("Transparent")
+	CommunitiesFrame.ClubFinderInvitationFrame.WarningDialog.Accept:SkinButton()
+	CommunitiesFrame.ClubFinderInvitationFrame.WarningDialog.Cancel:SkinButton()
+
 	-- GuildFinderFrame
 	CommunitiesFrame.GuildFinderFrame:StripTextures()
 	ClubFinderCommunityAndGuildFinderFrame:StripTextures()
@@ -192,6 +205,9 @@ local function LoadSkin()
 	ClubFinderCommunityAndGuildFinderFrame.OptionsList.Search:SetPoint("TOP", ClubFinderCommunityAndGuildFinderFrame.OptionsList.SearchBox, "BOTTOM", 0, -3)
 	T.SkinEditBox(ClubFinderCommunityAndGuildFinderFrame.OptionsList.SearchBox, 146, 18)
 
+	T.SkinNextPrevButton(ClubFinderGuildFinderFrame.GuildCards.PreviousPage)
+	T.SkinNextPrevButton(ClubFinderGuildFinderFrame.GuildCards.NextPage)
+
 	for _, button in pairs(ClubFinderCommunityAndGuildFinderFrame.CommunityCards.ListScrollFrame.buttons, ClubFinderCommunityAndGuildFinderFrame.PendingCommunityCards.ListScrollFrame.buttons) do
 		if not button.isSkinned then
 			button.CircleMask:Hide()
@@ -208,7 +224,7 @@ local function LoadSkin()
 		end
 	end
 
-	for _, card in pairs(ClubFinderGuildFinderFrame.GuildCards.Cards, ClubFinderGuildFinderFrame.PendingGuildCards.Cards) do
+	local function SkinCard(card)
 		if not card.isSkinned then
 			card.CardBackground:Hide()
 			card.bg = CreateFrame("Frame", nil, card)
@@ -219,6 +235,14 @@ local function LoadSkin()
 			card.RequestJoin:SkinButton()
 			card.isSkinned = true
 		end
+	end
+
+	for _, card in pairs(ClubFinderGuildFinderFrame.GuildCards.Cards) do
+		SkinCard(card)
+	end
+
+	for _, card in pairs(ClubFinderGuildFinderFrame.PendingGuildCards.Cards) do
+		SkinCard(card)
 	end
 
 	for _, t in ipairs({ClubFinderGuildFinderFrame.RequestToJoinFrame, ClubFinderCommunityAndGuildFinderFrame.RequestToJoinFrame}) do
@@ -265,6 +289,21 @@ local function LoadSkin()
 		T.SkinCheckBox(self.HideNotificationsButton)
 	end)
 
+	local EditStreamDialog = CommunitiesFrame.EditStreamDialog
+	CommunitiesFrame.EditStreamDialog:StripTextures()
+	CommunitiesFrame.EditStreamDialog:SetTemplate("Transparent")
+
+	CommunitiesFrame.EditStreamDialog.NameEdit:SetPoint("TOPLEFT", CommunitiesFrame.EditStreamDialog.NameLabel, "BOTTOMLEFT", 6, -5)
+	CommunitiesFrame.EditStreamDialog.NameEdit:SetPoint("RIGHT", CommunitiesFrame.EditStreamDialog, "RIGHT", -34, 0)
+
+	T.SkinEditBox(CommunitiesFrame.EditStreamDialog.NameEdit, nil, 18)
+	T.SkinEditBox(CommunitiesFrame.EditStreamDialog.Description)
+	T.SkinCheckBox(CommunitiesFrame.EditStreamDialog.TypeCheckBox)
+
+	CommunitiesFrame.EditStreamDialog.Accept:SkinButton()
+	CommunitiesFrame.EditStreamDialog.Delete:SkinButton()
+	CommunitiesFrame.EditStreamDialog.Cancel:SkinButton()
+
 	-- Communities Settings
 	local Settings = CommunitiesSettingsDialog
 	Settings:StripTextures()
@@ -272,7 +311,7 @@ local function LoadSkin()
 
 	Settings.IconPreview:RemoveMaskTexture(Settings.CircleMask)
 	Settings.IconPreviewRing:Hide()
-	Settings.IconPreview:SkinIcon()
+	Settings.IconPreview:SkinIcon(true)
 
 	T.SkinEditBox(Settings.NameEdit)
 	T.SkinEditBox(Settings.ShortNameEdit)
