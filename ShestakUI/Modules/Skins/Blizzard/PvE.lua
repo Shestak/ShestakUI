@@ -414,7 +414,6 @@ local function LoadSkin()
 	LFGListFrame.EntryCreation.ActivityFinder.Dialog.CancelButton:SkinButton()
 
 	-- ApplicationViewer (Custom Groups)
-	LFGListFrame.ApplicationViewer.InfoBackground:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	T.SkinCheckBox(LFGListFrame.ApplicationViewer.AutoAcceptButton)
 	LFGListFrame.ApplicationViewer.Inset:StripTextures()
 	LFGListFrame.ApplicationViewer.Inset:SetTemplate("Transparent")
@@ -450,6 +449,10 @@ local function LoadSkin()
 	LFGListApplicationViewerScrollFrameScrollBar:ClearAllPoints()
 	LFGListApplicationViewerScrollFrameScrollBar:SetPoint("TOPLEFT", LFGListFrame.ApplicationViewer.Inset, "TOPRIGHT", 0, -14)
 	LFGListApplicationViewerScrollFrameScrollBar:SetPoint("BOTTOMLEFT", LFGListFrame.ApplicationViewer.Inset, "BOTTOMRIGHT", 0, 14)
+
+	LFGListFrame.ApplicationViewer.InfoBackground:SkinIcon()
+	LFGListFrame.ApplicationViewer.InfoBackground:SetPoint("TOPLEFT", 1, -27)
+	LFGListFrame.ApplicationViewer.InfoBackground:SetSize(326, 90)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
