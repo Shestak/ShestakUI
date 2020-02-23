@@ -81,6 +81,26 @@ end
 
 T.RaidDebuffs = {
 -----------------------------------------------------------------
+-- Ny'alotha, the Waking City
+-----------------------------------------------------------------
+	-- Wrathion, the Black Emperor
+	[SpellName(306163)] = 3,	-- Incineration
+	[SpellName(306015)] = 3,	-- Searing Armor
+	-- Maut
+	[SpellName(307806)] = 3,	-- Devour Magic
+	[SpellName(307399)] = 3,	-- Shadow Wounds
+	-- The Prophet Skitra
+	-- Dark Inquisitor Xanesh
+	-- The Hivemind
+	-- Shad'har the Insatiable
+	-- Drest'agath
+	-- Il'gynoth, Corruption Reborn
+	-- Vexiona
+	-- Ra-den the Despoiled
+	-- Carapace of N'Zoth
+	-- N'Zoth the Corruptor
+
+-----------------------------------------------------------------
 -- Eternal Palace
 -----------------------------------------------------------------
 	-- Abyssal Commander Sivara
@@ -324,6 +344,16 @@ T.RaidDebuffs = {
 	[SpellName(209858)] = 5,	-- Necrotic Wound
 	[SpellName(240559)] = 5,	-- Grievous Wound
 	[SpellName(240443)] = 5,	-- Burst
+
+	-- 8.3 Mythic+
+	[SpellName(314406)] = 3,	-- Crippling Pestilence
+	[SpellName(314411)] = 3,	-- Lingering Doubt
+	[SpellName(314467)] = 4,	-- Volatile Rupture
+	[SpellName(314478)] = 5,	-- Cascading Terror
+	[SpellName(314531)] = 3,	-- Tear Flesh
+	[SpellName(314565)] = 3,	-- Defiled Ground
+	[SpellName(314592)] = 3,	-- Mind Flay
+	[SpellName(314308)] = 4,	-- Spirit Breaker
 
 	-- Freehold
 	[SpellName(258323)] = 3,	-- Infected Wound
