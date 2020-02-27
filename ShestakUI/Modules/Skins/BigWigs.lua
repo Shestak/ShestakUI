@@ -176,6 +176,17 @@ f:SetScript("OnEvent", function(_, event, addon)
 			end
 			registerStyle()
 			f:UnregisterEvent("ADDON_LOADED")
+		elseif addon == "ShestakUI" then
+			if BigWigsLoader and C.skins.blizzard_frames == true then
+				BigWigsLoader.RegisterMessage(addon, "BigWigs_FrameCreated", function(_, frame, name)
+					if name == "QueueTimer" then
+						frame:SetSize(240, 15)
+						frame:StripTextures()
+						frame:SetStatusBarTexture(C.media.texture)
+						frame:CreateBackdrop("Overlay")
+					end
+				end)
+			end
 		end
 	end
 end)
