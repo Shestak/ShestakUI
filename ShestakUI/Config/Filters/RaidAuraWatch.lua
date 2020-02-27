@@ -418,7 +418,6 @@ T.RaidDebuffs = {
 	[SpellName(256198)] = 3,	-- Azerite Rounds: Incendiary
 	[SpellName(256101)] = 4,	-- Explosive Burst
 	[SpellName(256044)] = 6,	-- Deadeye
-	[SpellName(256474)] = 4,	-- Heartstopper Venom
 
 	-- Waycrest Manor
 	[SpellName(260703)] = 3,	-- Unstable Runic Mark
