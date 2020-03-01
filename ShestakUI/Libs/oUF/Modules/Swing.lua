@@ -33,7 +33,7 @@ local function Melee(self)
 
 	if UnitGUID(self.unit) == tarGUID then
 		if string.find(event, "MISSED") then
-			if missType == "PARRY" then
+			if missType == "PARRY" and bar.max then
 				bar.max = bar.min + ((bar.max - bar.min) * 0.6)
 				bar:SetMinMaxValues(bar.min, bar.max)
 			end
