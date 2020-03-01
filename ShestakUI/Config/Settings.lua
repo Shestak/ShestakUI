@@ -585,7 +585,7 @@ C["misc"] = {
 	["armory_link"] = false,					-- Add the Armory link in the chat menu and target (It breaks set focus)
 	["merchant_itemlevel"] = false,				-- Show item level for weapons and armor in merchant
 	["minimize_mouseover"] = false,				-- Mouseover for quest minimize button
-	["hide_banner"] = true,						-- Hide Boss Banner Loot Frame
+	["hide_banner"] = false,					-- Hide Boss Banner Loot Frame
 	["hide_talking_head"] = false,				-- Hide Talking Head Frame
 	["hide_raid_button"] = false,				-- Button to hide raid frames in dps layout (top left mouseover)
 }
