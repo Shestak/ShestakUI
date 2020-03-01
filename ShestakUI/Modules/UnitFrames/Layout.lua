@@ -997,7 +997,11 @@ local function Shared(self, unit)
 	if C.unitframe.plugins_swing == true and unit == "player" then
 		self.Swing = CreateFrame("StatusBar", self:GetName().."_Swing", self)
 		self.Swing:CreateBackdrop("Default")
-		self.Swing:SetPoint("BOTTOMRIGHT", "oUF_Player_Castbar", "TOPRIGHT", 0, 7)
+		if C.unitframe.unit_castbar then
+			self.Swing:SetPoint("BOTTOMRIGHT", "oUF_Player_Castbar", "TOPRIGHT", 0, 7)
+		else
+			self.Swing:SetPoint(C.position.unitframes.player_castbar[1], C.position.unitframes.player_castbar[2], C.position.unitframes.player_castbar[3], C.position.unitframes.player_castbar[4], C.position.unitframes.player_castbar[5] + 23)
+		end
 		self.Swing:SetSize(281, 5)
 		self.Swing:SetStatusBarTexture(C.media.texture)
 		if C.unitframe.own_color == true then
