@@ -47,6 +47,7 @@ if C.chat.spam == true then
 	-- Repeat spam filter
 	local lastMessage
 	local function repeatMessageFilter(self, _, text, sender)
+		sender = Ambiguate(sender, "guild")
 		if sender == T.name or UnitIsInMyGuild(sender) then return end
 		if not self.repeatMessages or self.repeatCount > 100 then
 			self.repeatCount = 0
@@ -66,6 +67,7 @@ if C.chat.spam == true then
 	-- Gold/portals spam filter
 	local SpamList = T.ChatSpamList
 	local function tradeFilter(_, _, text, sender)
+		sender = Ambiguate(sender, "guild")
 		if sender == T.name or UnitIsInMyGuild(sender) then return end
 		for _, value in pairs(SpamList) do
 			if text:lower():match(value) then
