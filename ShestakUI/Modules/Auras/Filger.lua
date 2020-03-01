@@ -25,10 +25,11 @@ PVE_PVP_DEBUFF_Anchor:SetSize(C.filger.pvp_size, C.filger.pvp_size)
 PVE_PVP_CC_Anchor:SetPoint(unpack(C.position.filger.pve_cc))
 PVE_PVP_CC_Anchor:SetSize(221, 25)
 
-COOLDOWN_Anchor:SetPoint(unpack(C.position.filger.cooldown))
+COOLDOWN_Anchor:SetPoint(C.position.filger.cooldown[1], C.position.filger.cooldown[2], C.position.filger.cooldown[3], C.position.filger.cooldown[4], C.unitframe.plugins_swing and C.position.filger.cooldown[5] + 12 or C.position.filger.cooldown[5])
 COOLDOWN_Anchor:SetSize(C.filger.cooldown_size, C.filger.cooldown_size)
 
 T_DE_BUFF_BAR_Anchor:SetPoint(unpack(C.position.filger.target_bar))
+T_DE_BUFF_BAR_Anchor:SetPoint(C.position.filger.target_bar[1], C.unitframe.portrait_enable and "oUF_Target_Portrait" or C.position.filger.target_bar[2], C.position.filger.target_bar[3], C.unitframe.portrait_enable and C.position.filger.target_bar[4] - 3 or C.position.filger.target_bar[4], C.unitframe.portrait_enable and C.position.filger.target_bar[5] + 38 or C.position.filger.target_bar[5])
 T_DE_BUFF_BAR_Anchor:SetSize(218, 25)
 
 SpellActivationOverlayFrame:SetFrameStrata("BACKGROUND")
