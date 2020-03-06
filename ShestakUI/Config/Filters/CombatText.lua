@@ -47,6 +47,7 @@ if C.combattext.merge_aoe_spam then
 	T.merge[271685] = 271686		-- Heed My Call [Azerite trait]
 	T.aoespam[317029] = 3			-- Echoing Void [Corruption]
 	T.aoespam[279958] = 0.5			-- Azerite Globules [Azerite trait]
+	T.aoespam[317159] = 3			-- Twilight Devastation [Corruption]
 end
 
 -- Class config
