@@ -77,10 +77,7 @@ local function LoadSkin()
 	T.SkinDropDownBox(CommunitiesFrame.StreamDropDownMenu, nil, true)
 	T.SkinDropDownBox(CommunitiesFrame.CommunitiesListDropDownMenu)
 
-	CommunitiesFrame.AddToChatButton:ClearAllPoints()
-	CommunitiesFrame.AddToChatButton:SetPoint("BOTTOM", CommunitiesFrame.ChatEditBox, "BOTTOMRIGHT", -5, -30)
 	CommunitiesFrame.AddToChatButton:SkinButton()
-
 	CommunitiesFrame.CommunitiesControlFrame.CommunitiesSettingsButton:SkinButton()
 
 	hooksecurefunc(CommunitiesListEntryMixin, "SetClubInfo", function(self, clubInfo)
@@ -168,11 +165,16 @@ local function LoadSkin()
 	CommunitiesFrame.ClubFinderInvitationFrame.DeclineButton:SkinButton()
 	CommunitiesFrame.ClubFinderInvitationFrame.ApplyButton:SkinButton()
 
-
 	CommunitiesFrame.ClubFinderInvitationFrame.WarningDialog:StripTextures()
 	CommunitiesFrame.ClubFinderInvitationFrame.WarningDialog:SetTemplate("Transparent")
 	CommunitiesFrame.ClubFinderInvitationFrame.WarningDialog.Accept:SkinButton()
 	CommunitiesFrame.ClubFinderInvitationFrame.WarningDialog.Cancel:SkinButton()
+
+	-- InvitationFrame
+	CommunitiesFrame.InvitationFrame.InsetFrame:StripTextures()
+	CommunitiesFrame.InvitationFrame:SetTemplate("Overlay")
+	CommunitiesFrame.InvitationFrame.AcceptButton:SkinButton()
+	CommunitiesFrame.InvitationFrame.DeclineButton:SkinButton()
 
 	-- GuildFinderFrame
 	CommunitiesFrame.GuildFinderFrame:StripTextures()
