@@ -538,4 +538,5 @@ T.OpenItems = {
 	[163612] = true,	-- Wayfinder's Satchel
 	[163613] = true,	-- Sack of Plunder
 	[168740] = true,	-- Blingtron 7000 Gift Package
+	[165851] = true,	-- Bag of Anchors
 }
