@@ -9,7 +9,7 @@ local oUF = ns.oUF or oUF
 
 local ARTIFACT_BAR_COLOR = ARTIFACT_BAR_COLOR or CreateColor(0.901, 0.8, 0.601, 1)
 
-local ItemDataLoadedCancelFunc, azeriteItemLocation
+local ItemDataLoadedCancelFunc
 
 local function GetNumTraitsLearnable(numTraitsLearned, power, tier)
 	local numPoints = 0;
@@ -139,11 +139,16 @@ Called when the mouse cursor enters the widget's interactive area.
 local function OnEnter(element)
 	element:SetAlpha(element.onAlpha)
 
+	local azeriteItemLocation = C_AzeriteItem.FindActiveAzeriteItem()
+
 	if (azeriteItemLocation) then
 		local azeriteItem = Item:CreateFromItemLocation(azeriteItemLocation)
 		ItemDataLoadedCancelFunc = azeriteItem:ContinueWithCancelOnItemLoad(function()
 			GameTooltip:SetOwner(element, "ANCHOR_BOTTOM", 0, -5)	-- ShestakUI
-			GameTooltip:SetText(AZERITE_POWER_TOOLTIP_TITLE:format(element.level, element.max - element.current), HIGHLIGHT_FONT_COLOR:GetRGB())
+			GameTooltip:SetText(
+				AZERITE_POWER_TOOLTIP_TITLE:format(element.level, element.max - element.current),
+				HIGHLIGHT_FONT_COLOR:GetRGB()
+			)
 			GameTooltip:AddLine(AZERITE_POWER_TOOLTIP_BODY:format(azeriteItem:GetItemName()))
 			GameTooltip:Show()
 		end)
@@ -185,6 +190,8 @@ Only functions when a Legion artifact is equipped.
 * self - the ArtifactPower widget
 --]]
 local function OnMouseUp(element, btn)
+	local azeriteItemLocation = C_AzeriteItem.FindActiveAzeriteItem()
+
 	if btn == "MiddleButton" then
 		if element.offAlpha == 0 then
 			element.offAlpha = 1
@@ -194,8 +201,11 @@ local function OnMouseUp(element, btn)
 			SavedOptions.ArtifactPower = false
 		end
 	else
-		if (HasArtifactEquipped()) then
+		if (HasArtifactEquipped() and not C_ArtifactUI.IsEquippedArtifactDisabled()) then
 			SocketInventoryItem(INVSLOT_MAINHAND)
+		elseif (azeriteItemLocation) then
+			UIParentLoadAddOn("Blizzard_AzeriteEssenceUI")
+			ToggleFrame(AzeriteEssenceUI)
 		end
 	end
 end
@@ -236,7 +246,7 @@ local function Update(self, event, arg)
 	local current, max, level, show
 	local isUsable = true
 	if (not UnitHasVehicleUI('player')) then
-		azeriteItemLocation = C_AzeriteItem and C_AzeriteItem.FindActiveAzeriteItem()
+		local azeriteItemLocation = C_AzeriteItem and C_AzeriteItem.FindActiveAzeriteItem()
 		if (azeriteItemLocation) then
 			element.numTraitsLearnable = nil
 			element.unspentPower = nil

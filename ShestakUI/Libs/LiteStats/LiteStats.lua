@@ -1978,8 +1978,13 @@ if experience.enabled then
 					self:GetScript("OnUpdate")(self, 5)
 				end
 				self:GetScript("OnEnter")(self)
-			elseif button == "LeftButton" and conf.ExpMode == "rep" then
-				ToggleCharacter("ReputationFrame")
+			elseif button == "LeftButton" then
+				if conf.ExpMode == "rep" then
+					ToggleCharacter("ReputationFrame")
+				elseif conf.ExpMode == "art" then
+					UIParentLoadAddOn("Blizzard_AzeriteEssenceUI")
+					ToggleFrame(AzeriteEssenceUI)
+				end
 			end
 		end
 	})
