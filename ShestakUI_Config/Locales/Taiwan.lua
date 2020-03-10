@@ -10,7 +10,9 @@ L_GUI_SET_SAVED_SETTTINGS_DESC = "在 一般設定 與 角色專用設定 之間
 L_GUI_RESET_CHAR = "確定要重置你所有角色的 ShestakUI 設定?"
 L_GUI_RESET_ALL = "確定要重置全部 ShestakUI 設定?"
 L_GUI_PER_CHAR = "確定要設定/取消 角色專用設定 模式?"
-L_GUI_NEED_RELOAD = "|cffff2735必須重新加載UI來配置你的更改|r"
+L_GUI_RESET_CAT = "Are you sure you want to reset category's settings?" -- Need review
+L_GUI_RESET_CAT_DESC = "Reset category's settings. \nCTRL-click to reset all" -- Need review
+L_GUI_NEED_RELOAD = "必須重新加載UI來配置你的更改"
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "一般用戶界面設置，鍵入 /uihelp 獲取更多可用命令。"

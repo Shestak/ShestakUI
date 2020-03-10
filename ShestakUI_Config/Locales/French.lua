@@ -10,7 +10,9 @@ L_GUI_SET_SAVED_SETTTINGS_DESC = "Switch between a profile that applies to all c
 L_GUI_RESET_CHAR = "Réinitialiser les paramètres de votre personnage sur ShestakUI ?"
 L_GUI_RESET_ALL = "Réinitialiser tous les paramètres de ShestakUI ?"
 L_GUI_PER_CHAR = "Modifier la configuration du personnage ?"
-L_GUI_NEED_RELOAD = "|cffff2735Vous devez recharger l'Interface pour appliquer vos changements.|r"
+L_GUI_RESET_CAT = "Are you sure you want to reset category's settings?" -- Need review
+L_GUI_RESET_CAT_DESC = "Reset category's settings. \nCTRL-click to reset all" -- Need review
+L_GUI_NEED_RELOAD = "Vous devez recharger l'Interface pour appliquer vos changements."
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface settings. Type in chat '/uihelp' for help." -- Need review

@@ -49,7 +49,7 @@ options.ProfileBox = ProfileBox
 
 local reloadText = options:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
 reloadText:SetPoint("BOTTOM", 0, 11)
-reloadText:SetText(L_GUI_NEED_RELOAD)
+reloadText:SetText("|cffff2735"..L_GUI_NEED_RELOAD.."|r")
 reloadText:Hide()
 options.reloadText = reloadText
 
@@ -64,6 +64,7 @@ StaticPopupDialogs.SHESTAKUI_RESET_PERCHAR = {
 	end,
 	whileDead = true,
 	hideOnEscape = true,
+	showAlert = true,
 }
 
 StaticPopupDialogs.SHESTAKUI_RESET = {
@@ -77,17 +78,39 @@ StaticPopupDialogs.SHESTAKUI_RESET = {
 	end,
 	whileDead = true,
 	hideOnEscape = true,
+	showAlert = true,
+}
+
+StaticPopupDialogs.SHESTAKUI_RESET_CATEGORY = {
+	text = L_GUI_RESET_CAT,
+	button1 = ACCEPT,
+	button2 = CANCEL,
+	OnAccept = function()
+		if ShestakUIOptionsPanelgeneral2:IsShown() then
+			C.options.media = {}
+		else
+			C.options[C.category] = {}
+		end
+		ReloadUI()
+	end,
+	whileDead = true,
+	hideOnEscape = true,
 }
 
 local ResetButton = CreateFrame("Button", nil, options, "UIPanelButtonTemplate")
 ResetButton:SetSize(100, 23)
 ResetButton:SetText(DEFAULT)
+ResetButton.tooltipText = "|cffFFD100"..L_GUI_RESET_CAT_DESC.."|r"
 ResetButton:SetPoint("BOTTOMLEFT", ShestakUIOptionsPanel, "BOTTOMLEFT", 10, 7)
 ResetButton:SetScript("OnClick", function()
-	if ShestakUIOptionsGlobal[realm][name] == true then
-		StaticPopup_Show("SHESTAKUI_RESET_PERCHAR")
+	if IsModifiedClick() then
+		if ShestakUIOptionsGlobal[realm][name] == true then
+			StaticPopup_Show("SHESTAKUI_RESET_PERCHAR")
+		else
+			StaticPopup_Show("SHESTAKUI_RESET")
+		end
 	else
-		StaticPopup_Show("SHESTAKUI_RESET")
+		StaticPopup_Show("SHESTAKUI_RESET_CATEGORY")
 	end
 end)
 tinsert(ns.buttons, ResetButton)

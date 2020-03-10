@@ -7,7 +7,9 @@ L_GUI_SET_SAVED_SETTTINGS_DESC = "Switch between a profile that applies to all c
 L_GUI_RESET_CHAR = "Are you sure you want to reset your character's settings for ShestakUI?"
 L_GUI_RESET_ALL = "Are you sure you want to reset all settings for ShestakUI"
 L_GUI_PER_CHAR = "Are you sure you want to change to or from 'Per Char Settings'?"
-L_GUI_NEED_RELOAD = "|cffff2735You need to reload the UI to apply your changes.|r"
+L_GUI_RESET_CAT = "Are you sure you want to reset category's settings?"
+L_GUI_RESET_CAT_DESC = "Reset category's settings. \nCTRL-click to reset all"
+L_GUI_NEED_RELOAD = "You need to reload the UI to apply your changes."
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface settings. Type in chat '/uihelp' for help."

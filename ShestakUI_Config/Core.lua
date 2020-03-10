@@ -490,6 +490,8 @@ local function setActiveTab(tab)
 	if activeTab.panel_2 then
 		activeTab.panel_2:Hide()
 	end
+
+	C.category = tab.panel.tag
 end
 
 local onTabClick = function(tab)
