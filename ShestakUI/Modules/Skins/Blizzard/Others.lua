@@ -45,6 +45,7 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 		LFDRoleCheckPopup:StripTextures()
 		RolePollPopup:StripTextures()
 		OpacityFrame:StripTextures()
+		ColorPickerFrame.Border:Hide()
 
 		for i = 1, getn(bgskins) do
 			local frame = _G[bgskins[i]]
@@ -130,6 +131,10 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 				_G["DropDownList"..i.."MenuBackdrop"]:SetTemplate("Transparent")
 			end
 		end)
+
+		if RaiderIO_CustomDropDownListMenuBackdrop then
+			RaiderIO_CustomDropDownListMenuBackdrop:StripTextures()
+		end
 
 		-- Reskin menu
 		local ChatMenus = {
