@@ -12,18 +12,18 @@ local firstLines = {
 	"^Отчёт Skada: (.*), с (.*):$",							-- Skada ruRU
 	"^Skada: (.*) por (.*):$",								-- Skada esES/ptBR
 	"^Skada: (.*) per (.*):$",								-- Skada itIT
-	"^(.*) 의 Skada 보고 (.*):$",							-- Skada koKR
+	"^(.*) 의 Skada 보고 (.*):$",								-- Skada koKR
 	"^Skada报告(.*)的(.*):$",								-- Skada zhCN
 	"^Skada:(.*)來自(.*):$",								-- Skada zhTW
 	"^(.*) Done for (.*)$",									-- TinyDPS enUS
 	"^(.*) für (.*)$",										-- TinyDPS deDE
-	"데미지량 -(.*)$",										-- TinyDPS koKR
+	"데미지량 -(.*)$",											-- TinyDPS koKR
 	"힐량 -(.*)$",											-- TinyDPS koKR
 	"Урон:(.*)$",											-- TinyDPS ruRU
 	"Исцеление:(.*)$",										-- TinyDPS ruRU
 	"^Numeration: (.*) - (.*)$",							-- Numeration
 	"alDamageMeter : (.*)$",								-- alDamageMeter
-	"^Details! Report for (.*)$"							-- Details!
+	"^Details!: (.*)$"										-- Details!
 }
 
 local nextLines = {
