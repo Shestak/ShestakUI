@@ -43,6 +43,11 @@ hooksecurefunc(texture, "SetTexture", disableTexture)
 button:StyleButton()
 button:SetSize(53, 53)
 
+button.Count:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
+button.Count:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
+button.Count:SetPoint("BOTTOMRIGHT", 0, 1)
+button.Count:SetJustifyH("RIGHT")
+
 ------------------------------------------------------------------------------------------
 --	Skin ZoneAbilityFrame
 ------------------------------------------------------------------------------------------
@@ -71,7 +76,7 @@ button.Icon:SetDrawLayer("BACKGROUND", 7)
 
 button.Count:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
 button.Count:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
-button.Count:SetPoint("BOTTOMRIGHT", 1, -2)
+button.Count:SetPoint("BOTTOMRIGHT", 0, 1)
 button.Count:SetJustifyH("RIGHT")
 
 button.Cooldown:SetAllPoints(button.Icon)

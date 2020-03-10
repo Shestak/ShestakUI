@@ -328,6 +328,7 @@ SlashCmdList.TEST_EXTRABUTTON = function()
 		ExtraActionButton1.icon:SetTexture("Interface\\Icons\\spell_deathknight_breathofsindragosa")
 		ExtraActionButton1.icon:Show()
 		ExtraActionButton1.icon:SetAlpha(1)
+		ExtraActionButton1.Count:SetText("2")
 	end
 end
 SLASH_TEST_EXTRABUTTON1 = "/teb"

@@ -51,6 +51,7 @@ local function StyleNormalButton(button)
 		local normal = _G[name.."NormalTexture"]
 		local float = _G[name.."FloatingBG"]
 		local highlight = button.SpellHighlightTexture
+		local isExtraAction = name:match("ExtraAction")
 
 		flash:SetTexture("")
 		button:SetNormalTexture("")
@@ -63,10 +64,12 @@ local function StyleNormalButton(button)
 			border:SetTexture("")
 		end
 
-		count:ClearAllPoints()
-		count:SetPoint("BOTTOMRIGHT", 0, 2)
-		count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
-		count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+		if not isExtraAction then
+			count:ClearAllPoints()
+			count:SetPoint("BOTTOMRIGHT", 0, 2)
+			count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
+			count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+		end
 
 		if btname then
 			if C.actionbar.macro == true then
@@ -92,7 +95,7 @@ local function StyleNormalButton(button)
 			hotkey:Kill()
 		end
 
-		if button:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() and not name:match("ExtraAction") then
+		if button:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() and not isExtraAction then
 			button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		end
 		button:SetTemplate("Transparent")
