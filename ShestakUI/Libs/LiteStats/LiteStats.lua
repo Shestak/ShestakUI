@@ -690,6 +690,8 @@ if gold.enabled then
 				Currency(1717)	-- 7th Legion Service Medal
 				Currency(1718)	-- Titan Residuum
 				Currency(1721)	-- Prismatic Manapearl
+				Currency(1719)	-- Corrupted Mementos
+				Currency(1755)	-- Coalescing Visions
 				Currency(515)	-- Darkmoon Prize Ticket
 			end
 
