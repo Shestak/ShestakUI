@@ -48,7 +48,7 @@ local function LoadSkin()
 			backdrop:SetBackdropBorderColor(0, 1, 0) -- [border = green, no shadow]
 			child.darkOverlay:Hide()
 		elseif atlas:find("yellow") then
-			backdrop:SetBackdropBorderColor(1, 1, 0) -- [border = yellow, no shadow]
+			backdrop:SetBackdropBorderColor(unpack(C.media.border_color)) -- [border = yellow, no shadow]
 			child.darkOverlay:Hide()
 		else
 			backdrop:SetBackdropBorderColor(0.2, 0.2, 0.2) -- [border = dark grey, shadow x3]
