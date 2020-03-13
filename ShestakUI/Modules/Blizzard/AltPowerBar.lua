@@ -41,7 +41,6 @@ PlayerPowerBarAlt:UnregisterEvent("PLAYER_ENTERING_WORLD")
 -- AltPowerBar
 local bar = CreateFrame("Frame", "UIAltPowerBar", UIParent)
 bar:SetSize(221, 25)
-bar:SetPoint(unpack(C.position.alt_power_bar))
 bar:SetTemplate("Default")
 
 -- Make moveable
@@ -67,7 +66,10 @@ bar:RegisterEvent("UNIT_POWER_UPDATE")
 bar:RegisterEvent("UNIT_POWER_BAR_SHOW")
 bar:RegisterEvent("UNIT_POWER_BAR_HIDE")
 bar:RegisterEvent("PLAYER_ENTERING_WORLD")
-bar:SetScript("OnEvent", function(self)
+bar:SetScript("OnEvent", function(self, event)
+	if event == "PLAYER_ENTERING_WORLD" then
+		bar:SetPoint(unpack(C.position.alt_power_bar))
+	end
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	if UnitAlternatePowerInfo("player") then
 		self:Show()
