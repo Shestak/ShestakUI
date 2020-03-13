@@ -51,6 +51,14 @@ for _, tt in pairs(tooltips) do
 	end
 end
 
+if RaiderIO_ProfileTooltip then
+	RaiderIO_ProfileTooltip:SetBackdrop(nil)
+	RaiderIO_ProfileTooltip.SetBackdrop = T.dummy
+	RaiderIO_ProfileTooltip:CreateBackdrop("Transparent")
+	RaiderIO_ProfileTooltip.backdrop:SetPoint("TOPLEFT", 3, 0)
+	RaiderIO_ProfileTooltip.backdrop:SetPoint("BOTTOMRIGHT", -2, 0)
+end
+
 -- LibExtraTip skin
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
