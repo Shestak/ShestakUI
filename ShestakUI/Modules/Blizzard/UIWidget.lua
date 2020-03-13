@@ -24,7 +24,6 @@ end)
 
 for _, frame in pairs({top, below}) do
 	local anchor = frame == top and topAnchor or belowAnchor
-	anchor:EnableMouse(true)
 	anchor:SetMovable(true)
 	anchor:SetUserPlaced(true)
 	anchor:SetClampedToScreen(true)
