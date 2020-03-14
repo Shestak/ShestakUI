@@ -531,6 +531,59 @@ local function LoadSecondarySkin()
 	NoticeFrame.Affix.Portrait:SkinIcon()
 
 	NoticeFrame.Leave:SkinButton()
+
+	if IsAddOnLoaded("PremadeGroupsFilter") then
+		T.SkinCheckBox(UsePFGButton)
+		PremadeGroupsFilterDialog:StripTextures()
+		PremadeGroupsFilterDialog:CreateBackdrop("Transparent")
+		PremadeGroupsFilterDialog.backdrop:SetPoint("TOPLEFT", 3, 0)
+		PremadeGroupsFilterDialog.backdrop:SetPoint("BOTTOMRIGHT", 0, -2)
+		PremadeGroupsFilterDialog.ResetButton:SkinButton()
+		PremadeGroupsFilterDialog.RefreshButton:SkinButton()
+		T.SkinCloseButton(PremadeGroupsFilterDialog.CloseButton)
+
+		T.SkinDropDownBox(PremadeGroupsFilterDialog.Difficulty.DropDown)
+		T.SkinEditBox(PremadeGroupsFilterDialog.Expression)
+		PremadeGroupsFilterDialog.Advanced:StripTextures()
+		PremadeGroupsFilterDialog.Difficulty.DropDown:SetPoint("TOPRIGHT", PremadeGroupsFilterDialog.Difficulty, "TOPRIGHT", 5, 1)
+		PremadeGroupsFilterDialog.ResetButton:SetPoint("BOTTOMLEFT", PremadeGroupsFilterDialog, "BOTTOMLEFT", 9, 2)
+		PremadeGroupsFilterDialog.RefreshButton:SetPoint("BOTTOMRIGHT", PremadeGroupsFilterDialog, "BOTTOMRIGHT", -11, 2)
+
+		local checkButtons = {
+			PremadeGroupsFilterDialog.Difficulty.Act,
+			PremadeGroupsFilterDialog.Ilvl.Act,
+			PremadeGroupsFilterDialog.Noilvl.Act,
+			PremadeGroupsFilterDialog.Defeated.Act,
+			PremadeGroupsFilterDialog.Members.Act,
+			PremadeGroupsFilterDialog.Tanks.Act,
+			PremadeGroupsFilterDialog.Heals.Act,
+			PremadeGroupsFilterDialog.Dps.Act
+		}
+
+		for _, button in pairs(checkButtons) do
+			button:SetSize(27, 27)
+			T.SkinCheckBox(button)
+		end
+
+		local editBoxes = {
+			PremadeGroupsFilterDialog.Ilvl.Min,
+			PremadeGroupsFilterDialog.Ilvl.Max,
+			PremadeGroupsFilterDialog.Defeated.Min,
+			PremadeGroupsFilterDialog.Defeated.Max,
+			PremadeGroupsFilterDialog.Members.Min,
+			PremadeGroupsFilterDialog.Members.Max,
+			PremadeGroupsFilterDialog.Tanks.Min,
+			PremadeGroupsFilterDialog.Tanks.Max,
+			PremadeGroupsFilterDialog.Heals.Min,
+			PremadeGroupsFilterDialog.Heals.Max,
+			PremadeGroupsFilterDialog.Dps.Min,
+			PremadeGroupsFilterDialog.Dps.Max
+		}
+
+		for _, box in pairs(editBoxes) do
+			T.SkinEditBox(box, nil, 17)
+		end
+	end
 end
 
 T.SkinFuncs["Blizzard_ChallengesUI"] = LoadSecondarySkin
