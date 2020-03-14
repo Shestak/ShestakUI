@@ -518,9 +518,9 @@ local function Shared(self, unit)
 			self.Experience:CreateBackdrop("Default")
 			self.Experience:EnableMouse(true)
 			if C.unitframe.portrait_enable == true then
-				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
+				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 27)
 			else
-				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
+				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 27)
 			end
 			self.Experience:SetSize(7, 94)
 			self.Experience:SetOrientation("Vertical")
@@ -546,15 +546,15 @@ local function Shared(self, unit)
 			self.Reputation:EnableMouse(true)
 			if C.unitframe.portrait_enable == true then
 				if self.Experience and self.Experience:IsShown() then
-					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
+					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 27)
 				else
-					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
+					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 27)
 				end
 			else
 				if self.Experience and self.Experience:IsShown() then
-					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 28)
+					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 27)
 				else
-					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
+					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 27)
 				end
 			end
 			self.Reputation:SetSize(7, 94)
@@ -576,31 +576,31 @@ local function Shared(self, unit)
 			self.ArtifactPower:CreateBackdrop("Default")
 			self.ArtifactPower:EnableMouse(true)
 			if C.unitframe.portrait_enable == true then
-				if T.level == MAX_PLAYER_LEVEL then
+				if self.Experience and self.Experience:IsShown() then
 					if C.unitframe.plugins_reputation_bar == true then
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -38 - C.unitframe.portrait_width, 28)
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -53 - C.unitframe.portrait_width, 27)
 					else
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 27)
 					end
 				else
 					if C.unitframe.plugins_reputation_bar == true then
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -52 - C.unitframe.portrait_width, 28)
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 27)
 					else
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 27)
 					end
 				end
 			else
-				if T.level == MAX_PLAYER_LEVEL then
+				if self.Experience and self.Experience:IsShown() then
 					if C.unitframe.plugins_reputation_bar == true then
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -31, 28)
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -46, 27)
 					else
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 27)
 					end
 				else
 					if C.unitframe.plugins_reputation_bar == true then
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -45, 28)
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 27)
 					else
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 28)
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 27)
 					end
 				end
 			end
@@ -611,9 +611,7 @@ local function Shared(self, unit)
 			self.ArtifactPower.bg = self.ArtifactPower:CreateTexture(nil, "BORDER")
 			self.ArtifactPower.bg:SetAllPoints()
 			self.ArtifactPower.bg:SetTexture(C.media.texture)
-			self.ArtifactPower.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
 
-			self.ArtifactPower.color = {T.color.r, T.color.g, T.color.b}
 			self.ArtifactPower.offAlpha = 0
 		end
 

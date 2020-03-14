@@ -212,8 +212,8 @@ end
 
 local function CheckAlpha(element)
 	if SavedOptions and SavedOptions.ArtifactPower == true then
-		element.outAlpha = 1
-		element:SetAlpha(element.outAlpha or 1)
+		element.offAlpha = 1
+		element:SetAlpha(element.offAlpha or 1)
 	end
 end
 
@@ -226,6 +226,7 @@ Used to update the widget's color based on whether the equipped artifact is usab
 local function UpdateColor(element, isUsable)
 	local color = isUsable and element.color or element.unusableColor
 	element:SetStatusBarColor(unpack(color))
+	element.bg:SetVertexColor(color[1], color[2], color[3], 0.2)	-- ShestakUI
 end
 
 local function Update(self, event, arg)
