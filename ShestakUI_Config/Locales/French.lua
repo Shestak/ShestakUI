@@ -311,6 +311,7 @@ L_GUI_COMBATTEXT_SHORT_NUMBERS = "Rendre plus lisible les nombres ('25.3k' au li
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size" -- Need review
 L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "Taille des buffs du joueur"
+L.aura_player_debuff_size = "Debuffs size" -- Need review
 L_GUI_AURA_SHOW_SPIRAL = "Spirale sur les icones d'aura"
 L_GUI_AURA_SHOW_TIMER = "Afficher le cooldown des icones d'aura"
 L_GUI_AURA_PLAYER_AURAS = "Auras sur la barre du joueur"

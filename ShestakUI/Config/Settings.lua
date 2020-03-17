@@ -342,6 +342,7 @@ C["combattext"] = {
 ----------------------------------------------------------------------------------------
 C["aura"] = {
 	["player_buff_size"] = 25,					-- Player buffs size
+	["player_debuff_size"] = 25,				-- Debuffs size
 	["show_spiral"] = false,					-- Spiral on aura icons
 	["show_timer"] = true,						-- Show cooldown timer on aura icons
 	["player_auras"] = true,					-- Auras on player frame

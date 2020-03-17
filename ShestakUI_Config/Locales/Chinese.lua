@@ -312,6 +312,7 @@ L_GUI_COMBATTEXT_SHORT_NUMBERS = "数值以K为单位显示"
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Buff大小"
 L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "玩家Buff图标大小"
+L.aura_player_debuff_size = "Debuffs size" -- Need review
 L_GUI_AURA_SHOW_SPIRAL = "漩涡冷却样式"
 L_GUI_AURA_SHOW_TIMER = "层数堆叠"
 L_GUI_AURA_PLAYER_AURAS = "玩家显示法术效果"

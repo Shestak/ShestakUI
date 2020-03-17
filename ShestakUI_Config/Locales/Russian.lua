@@ -311,6 +311,7 @@ L_GUI_COMBATTEXT_SHORT_NUMBERS = "Сокращать цифры ('25.3k' вме�
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Размер аур"
 L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "Размер положительных эффектов игрока"
+L.aura_player_debuff_size = "Размер дебаффов"
 L_GUI_AURA_SHOW_SPIRAL = "Спираль перезарядки на аурах"
 L_GUI_AURA_SHOW_TIMER = "Отображать таймер перезарядки аур"
 L_GUI_AURA_PLAYER_AURAS = "Ауры игрока"

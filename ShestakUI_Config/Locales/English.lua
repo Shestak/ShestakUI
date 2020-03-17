@@ -333,6 +333,7 @@ L_GUI_COMBATTEXT_SHORT_NUMBERS = "Use short numbers ('25.3k' instead of '25342')
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size"
 L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "Player buffs size"
+L.aura_player_debuff_size = "Debuffs size"
 L_GUI_AURA_SHOW_SPIRAL = "Spiral on aura icons"
 L_GUI_AURA_SHOW_TIMER = "Show cooldown timer on aura icons"
 L_GUI_AURA_PLAYER_AURAS = "Auras on player frame"

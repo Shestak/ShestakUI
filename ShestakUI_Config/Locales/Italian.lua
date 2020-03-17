@@ -312,6 +312,7 @@ L_GUI_COMBATTEXT_SHORT_NUMBERS = "Usa abbreviazioni numeriche ('25.3k' invece di
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size" -- Need review
 L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "Dimensione benefici giocatore"
+L.aura_player_debuff_size = "Debuffs size" -- Need review
 L_GUI_AURA_SHOW_SPIRAL = "Spirale trascorrere tempo sulle icone delle auree"
 L_GUI_AURA_SHOW_TIMER = "Mostra il timer del recupero sulle icone delle auree"
 L_GUI_AURA_PLAYER_AURAS = "Auree sul riquadro del giocatore"
