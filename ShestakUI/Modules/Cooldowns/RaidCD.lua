@@ -296,10 +296,9 @@ local OnEvent = function(self, event)
 		end
 	end
 	if event == "COMBAT_LOG_EVENT_UNFILTERED" then
-		local _, eventType, _, _, sourceName, sourceFlags = CombatLogGetCurrentEventInfo()
+		local _, eventType, _, _, sourceName, sourceFlags, _, _, _, _, _, spellID = CombatLogGetCurrentEventInfo()
 		if band(sourceFlags, filter) == 0 then return end
 		if eventType == "SPELL_RESURRECT" or eventType == "SPELL_CAST_SUCCESS" or eventType == "SPELL_AURA_APPLIED" then
-			local spellId = select(12, CombatLogGetCurrentEventInfo())
 			if sourceName then
 				sourceName = sourceName:gsub("-.+", "")
 			else
