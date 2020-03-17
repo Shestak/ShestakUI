@@ -40,55 +40,48 @@ StaticPopupDialogs.WATCHFRAME_URL = {
 	whileDead = true,
 	hasEditBox = true,
 	editBoxWidth = 350,
-	OnShow = function(self) self.editBox:SetFocus() end,
+	OnShow = function(self, text)
+		self.editBox:SetMaxLetters(0)
+		self.editBox:SetText(text)
+		self.editBox:HighlightText()
+	end,
 	EditBoxOnEnterPressed = function(self) self:GetParent():Hide() end,
 	EditBoxOnEscapePressed = function(self) self:GetParent():Hide() end,
 	preferredIndex = 5,
 }
 
 hooksecurefunc("QuestObjectiveTracker_OnOpenDropDown", function(self)
-	local _, b, info, questID
-	b = self.activeFrame
-	questID = b.id
+	local id = self.activeFrame.id
 	info = UIDropDownMenu_CreateInfo()
 	info.text = L_WATCH_WOWHEAD_LINK
 	info.func = function()
-		local inputBox = StaticPopup_Show("WATCHFRAME_URL")
-		inputBox.editBox:SetText(linkQuest:format(questID))
-		inputBox.editBox:HighlightText()
+		local text = linkQuest:format(id)
+		StaticPopup_Show("WATCHFRAME_URL", _, _, text)
 	end
-	info.arg1 = questID
-	info.notCheckable = true
-	UIDropDownMenu_AddButton(info, UIDROPDOWN_MENU_LEVEL)
-end)
-
-hooksecurefunc("AchievementObjectiveTracker_OnOpenDropDown", function(self)
-	local _, b, i, info
-	b = self.activeFrame
-	i = b.id
-	info = UIDropDownMenu_CreateInfo()
-	info.text = L_WATCH_WOWHEAD_LINK
-	info.func = function(_, i)
-		local inputBox = StaticPopup_Show("WATCHFRAME_URL")
-		inputBox.editBox:SetText(linkAchievement:format(i))
-		inputBox.editBox:HighlightText()
-	end
-	info.arg1 = i
 	info.notCheckable = true
 	UIDropDownMenu_AddButton(info, UIDROPDOWN_MENU_LEVEL)
 end)
 
 hooksecurefunc("BonusObjectiveTracker_OnOpenDropDown", function(self)
-	local block = self.activeFrame
-	local questID = block.TrackedQuest.questID
+	local id = self.activeFrame.TrackedQuest.questID
 	local info = UIDropDownMenu_CreateInfo()
 	info.text = L_WATCH_WOWHEAD_LINK
 	info.func = function()
-		local inputBox = StaticPopup_Show("WATCHFRAME_URL")
-		inputBox.editBox:SetText(linkQuest:format(questID))
-		inputBox.editBox:HighlightText()
+		local text = linkQuest:format(id)
+		StaticPopup_Show("WATCHFRAME_URL", _, _, text)
 	end
-	info.arg1 = questID
+	info.notCheckable = true
+	UIDropDownMenu_AddButton(info, UIDROPDOWN_MENU_LEVEL)
+end)
+
+hooksecurefunc("AchievementObjectiveTracker_OnOpenDropDown", function(self)
+	local id = self.activeFrame.id
+	info = UIDropDownMenu_CreateInfo()
+	info.text = L_WATCH_WOWHEAD_LINK
+	info.func = function()
+		local text = linkAchievement:format(id)
+		StaticPopup_Show("WATCHFRAME_URL", _, _, text)
+	end
 	info.notCheckable = true
 	UIDropDownMenu_AddButton(info, UIDROPDOWN_MENU_LEVEL)
 end)
@@ -99,9 +92,8 @@ frame:SetScript("OnEvent", function(_, _, addon)
 	if addon == "Blizzard_AchievementUI" then
 		hooksecurefunc("AchievementButton_OnClick", function(self)
 			if self.id and IsControlKeyDown() then
-				local inputBox = StaticPopup_Show("WATCHFRAME_URL")
-				inputBox.editBox:SetText(linkAchievement:format(self.id))
-				inputBox.editBox:HighlightText()
+				local text = linkAchievement:format(self.id)
+				StaticPopup_Show("WATCHFRAME_URL", _, _, text)
 			end
 		end)
 	end
