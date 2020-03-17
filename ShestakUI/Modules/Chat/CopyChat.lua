@@ -121,8 +121,8 @@ for i = 1, NUM_CHAT_WINDOWS do
 	end)
 	button:SetScript("OnEnter", function() button:FadeIn() end)
 	button:SetScript("OnLeave", function() button:FadeOut() end)
+end
 
-	SlashCmdList.COPY_CHAT = function()
-		Copy(_G["ChatFrame1"])
-	end
+SlashCmdList.COPY_CHAT = function()
+	Copy(_G["ChatFrame1"])
 end
