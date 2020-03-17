@@ -48,6 +48,7 @@ if C.enemycooldown.enable == true then
 		-- Interrupts and Silences
 		[57994] = 12,	-- Wind Shear
 		[47528] = 15,	-- Mind Freeze
+		[183752] = 15,	-- Disrupt
 		[106839] = 15,	-- Skull Bash
 		[116705] = 15,	-- Spear Hand Strike
 		[96231] = 15,	-- Rebuke
