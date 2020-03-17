@@ -531,11 +531,8 @@ if gold.enabled then
 			GameTooltip:AddLine(PROFESSIONS_COOKING, ttsubh.r, ttsubh.g, ttsubh.b)
 		elseif IsSubTitle == 3 then
 			GameTooltip:AddLine(" ")
-			GameTooltip:AddLine(TRADE_SKILLS, ttsubh.r, ttsubh.g, ttsubh.b)
-		elseif IsSubTitle == 4 then
-			GameTooltip:AddLine(" ")
 			GameTooltip:AddLine(L_STATS_CURRENCY_RAID, ttsubh.r, ttsubh.g, ttsubh.b)
-		elseif IsSubTitle == 5 then
+		elseif IsSubTitle == 4 then
 			GameTooltip:AddLine(" ")
 			GameTooltip:AddLine(EXPANSION_NAME7, ttsubh.r, ttsubh.g, ttsubh.b)
 		end
@@ -543,7 +540,6 @@ if gold.enabled then
 		if weekly then
 			if discovered then GameTooltip:AddDoubleLine(name, format("%s |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", REFORGE_CURRENT..": ".. amount.." - "..WEEKLY..": "..week.." / "..weekmax, tex, t_icon), 1, 1, 1, 1, 1, 1) end
 		elseif capped then
-			if id == 392 then maxed = 4000 end
 			if discovered then GameTooltip:AddDoubleLine(name, format("%s |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", amount.." / "..maxed, tex, t_icon), 1, 1, 1, 1, 1, 1) end
 		else
 			if discovered then GameTooltip:AddDoubleLine(name, format("%s |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", amount, tex, t_icon), 1, 1, 1, 1, 1, 1) end
@@ -643,23 +639,25 @@ if gold.enabled then
 			if archaeology and C.stats.currency_archaeology then
 				IsSubTitle = 1
 				Currency(384)	-- Dwarf Archaeology Fragment
-				Currency(385)	-- Troll Archaeology Fragment
-				Currency(393)	-- Fossil Archaeology Fragment
-				Currency(394)	-- Night Elf Archaeology Fragment
-				Currency(397)	-- Orc Archaeology Fragment
-				Currency(398)	-- Draenei Archaeology Fragment
-				Currency(399)	-- Vrykul Archaeology Fragment
-				Currency(400)	-- Nerubian Archaeology Fragment
-				Currency(401)	-- Tol'vir Archaeology Fragment
-				Currency(676)	-- Pandaren Archaeology Fragment
-				Currency(677)	-- Mogu Archaeology Fragment
-				Currency(754)	-- Mantid Archaeology Fragment
-				Currency(821)	-- Draenor Clans Archaeology Fragment
-				Currency(828)	-- Ogre Archaeology Fragment
-				Currency(829)	-- Arakkoa Archaeology Fragment
-				Currency(1172)	-- Highborne Archaeology Fragment
-				Currency(1173)	-- Highmountain Tauren Archaeology Fragment
-				Currency(1174)	-- Demonic Archaeology Fragment
+				Currency(385)	-- Troll
+				Currency(393)	-- Fossil
+				Currency(394)	-- Night Elf
+				Currency(397)	-- Orc
+				Currency(398)	-- Draenei
+				Currency(399)	-- Vrykul
+				Currency(400)	-- Nerubian
+				Currency(401)	-- Tol'vir
+				Currency(676)	-- Pandaren
+				Currency(677)	-- Mogu
+				Currency(754)	-- Mantid
+				Currency(821)	-- Draenor Clans
+				Currency(828)	-- Ogre
+				Currency(829)	-- Arakkoa
+				Currency(1172)	-- Highborne
+				Currency(1173)	-- Highmountain Tauren
+				Currency(1174)	-- Demonic
+				Currency(1534)	-- Zandalari
+				Currency(1535)	-- Drust
 			end
 
 			if cooking and C.stats.currency_cooking then
@@ -668,22 +666,13 @@ if gold.enabled then
 				Currency(402)	-- Ironpaw Token
 			end
 
-			if C.stats.currency_professions then
-				IsSubTitle = 3
-				Currency(910)	-- Secret of Draenor Alchemy
-				Currency(999)	-- Secret of Draenor Tailoring
-				Currency(1008)	-- Secret of Draenor Jewelcrafting
-				Currency(1017)	-- Secret of Draenor Leatherworking
-				Currency(1020)	-- Secret of Draenor Blacksmithing
-			end
-
 			if C.stats.currency_raid and T.level == MAX_PLAYER_LEVEL then
-				IsSubTitle = 4
+				IsSubTitle = 3
 				Currency(1580, false, true)	-- Seal of Wartorn Fate
 			end
 
 			if C.stats.currency_misc then
-				IsSubTitle = 5
+				IsSubTitle = 4
 				Currency(1560)	-- War Resources
 				Currency(1710)	-- Seafarer's Dubloon
 				Currency(1716)	-- Honorbound Service Medal

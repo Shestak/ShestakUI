@@ -496,7 +496,6 @@ L_GUI_STATS_BG = "Champ de bataille"
 L_GUI_STATS_SUBHEADER_CURRENCY = "Currency (displayed in gold data text)" -- Need review
 L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Afficher les fragments d'Archéologie dans l'onglet des devises"
 L_GUI_STATS_CURRENCY_COOKING = "Afficher les marques de Cuisine dans l'onglet des devises"
-L_GUI_STATS_CURRENCY_PROFESSIONS = "Afficher les marques de métiers dans l'onglet des devises"
 L_GUI_STATS_CURRENCY_RAID = "Afficher les sceaux de raid dans l'onglet des devises"
 
 -- Error options

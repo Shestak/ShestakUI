@@ -497,7 +497,6 @@ L_GUI_STATS_BG = "Campo de Batalla"
 L_GUI_STATS_SUBHEADER_CURRENCY = "Currency (displayed in gold data text)" -- Need review
 L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Show Archaeology Fragments" -- Needs review
 L_GUI_STATS_CURRENCY_COOKING = "Show Cooking Awards" -- Needs review
-L_GUI_STATS_CURRENCY_PROFESSIONS = "Show Profession Tokens" -- Needs review
 L_GUI_STATS_CURRENCY_RAID = "Show Raid Seals" -- Needs review
 
 -- Error options

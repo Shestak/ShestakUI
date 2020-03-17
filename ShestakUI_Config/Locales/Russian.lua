@@ -496,7 +496,6 @@ L_GUI_STATS_BG = "Поле боя"
 L_GUI_STATS_SUBHEADER_CURRENCY = "Валюта (отображается в дата-тексте золота)"
 L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Фрагменты археологии"
 L_GUI_STATS_CURRENCY_COOKING = "Кулинарные награды"
-L_GUI_STATS_CURRENCY_PROFESSIONS = "Жетоны профессий"
 L_GUI_STATS_CURRENCY_RAID = "Рейдовые печати"
 
 -- Error options

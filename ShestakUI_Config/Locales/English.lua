@@ -518,7 +518,6 @@ L_GUI_STATS_BG = "Battleground"
 L_GUI_STATS_SUBHEADER_CURRENCY = "Currency (displayed in gold data text)"
 L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Archaeology Fragments"
 L_GUI_STATS_CURRENCY_COOKING = "Cooking Awards"
-L_GUI_STATS_CURRENCY_PROFESSIONS = "Profession Tokens"
 L_GUI_STATS_CURRENCY_RAID = "Raid Seals"
 
 -- Error options

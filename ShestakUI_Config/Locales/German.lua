@@ -497,7 +497,6 @@ L_GUI_STATS_BG = "Schlachtfeld"
 L_GUI_STATS_SUBHEADER_CURRENCY = "Currency/Abzeichen (Anzeige im Gold Data Text)"
 L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Zeige Archäologie Fragmente"
 L_GUI_STATS_CURRENCY_COOKING = "Zeige Kochpreise/Marken"
-L_GUI_STATS_CURRENCY_PROFESSIONS = "Zeige Berufeabzeichen/Tokens"
 L_GUI_STATS_CURRENCY_RAID = "Zeige Schlatzugs Siegel/Bonuswürffe"
 
 -- Error options

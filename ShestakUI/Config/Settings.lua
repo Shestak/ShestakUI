@@ -550,7 +550,6 @@ C["stats"] = {
 	-- Currency (displayed in gold stats)
 	["currency_archaeology"] = false,			-- Archaeology Fragments
 	["currency_cooking"] = true,				-- Cooking Awards
-	["currency_professions"] = true,			-- Profession Tokens
 	["currency_raid"] = true,					-- Raid Seals
 	["currency_misc"] = true,					-- BfA Currency
 }

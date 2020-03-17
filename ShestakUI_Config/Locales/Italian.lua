@@ -497,7 +497,6 @@ L_GUI_STATS_BG = "Campi di Battaglia"
 L_GUI_STATS_SUBHEADER_CURRENCY = "Currency (displayed in gold data text)" -- Need review
 L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Mostra i frammenti di archeologia sotto la linguetta della valuta"
 L_GUI_STATS_CURRENCY_COOKING = "Mostra le ricompense di cucina sotto la linguetta della valuta"
-L_GUI_STATS_CURRENCY_PROFESSIONS = "Mostra i gettoni delle professioni sotto la linguetta della valuta"
 L_GUI_STATS_CURRENCY_RAID = "Mostra i sigilli delle incursioni"
 
 -- Error options
