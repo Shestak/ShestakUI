@@ -446,9 +446,12 @@ do
 	local minimap_buttons = ns.CreateCheckBox(parent, "minimap_buttons", L_GUI_SKINS_MINIMAP_BUTTONS)
 	minimap_buttons:SetPoint("TOPLEFT", blizzard_frames, "BOTTOMLEFT", 0, 0)
 
+	local minimap_buttons_mouseover = ns.CreateCheckBox(parent, "minimap_buttons_mouseover")
+	minimap_buttons_mouseover:SetPoint("TOPLEFT", minimap_buttons, "BOTTOMLEFT", 20, 0)
+
 	-- Addons
 	local subheader = ns.addSubCategory(parent, L_GUI_SKINS_SUBHEADER)
-	subheader:SetPoint("TOPLEFT", minimap_buttons, "BOTTOMLEFT", 0, -16)
+	subheader:SetPoint("TOPLEFT", minimap_buttons_mouseover, "BOTTOMLEFT", -20, -16)
 
 	local ace3 = ns.CreateCheckBox(parent, "ace3", L_GUI_SKINS_ACE3)
 	ace3:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)

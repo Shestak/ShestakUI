@@ -75,6 +75,7 @@ L_GUI_SKINS_SKADA = "Skada"
 L_GUI_SKINS_TINY_DPS = "TinyDPS"
 L_GUI_SKINS_VANASKOS = "VanasKoS"
 L_GUI_SKINS_WEAK_AURAS = "WeakAuras"
+L.skins_minimap_buttons_mouseover = "Addons icons on mouseover"
 
 -- Unit Frames options
 L_GUI_UF_SUBTEXT = "Customize player, target frames and etc."

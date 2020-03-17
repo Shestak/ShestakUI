@@ -40,6 +40,7 @@ C["general"] = {
 C["skins"] = {
 	["blizzard_frames"] = false,				-- Blizzard frames skin
 	["minimap_buttons"] = false,				-- Skin addons icons on minimap
+	["minimap_buttons_mouseover"] = true,		-- Addons icons on mouseover
 	["ace3"] = false,							-- Ace3 options elements skin
 	["atlasloot"] = false,						-- AtlasLoot skin
 	["bigwigs"] = false,						-- BigWigs skin

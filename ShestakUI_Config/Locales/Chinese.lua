@@ -53,6 +53,7 @@ L_GUI_SKINS_BLIZZARD = "美化暴雪默认界面"
 L_GUI_SKINS_MINIMAP_BUTTONS = "小地图插件图标"
 L_GUI_SKINS_SUBHEADER = "单体插件"
 L_GUI_SKINS_DBM_MOVABLE = "允许移动DBM计时条"
+L.skins_minimap_buttons_mouseover = "Addons icons on mouseover" -- Need review
 
 -- Unit Frames options
 L_GUI_UF_SUBTEXT = "定制玩家/目标框架/其他框架"

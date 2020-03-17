@@ -51,7 +51,6 @@
 	<Script file="Macro.lua"/>
 	<Script file="Mail.lua"/>
 	<Script file="Merchant.lua"/>
-	<Script file="MinimapButtons.lua"/>
 	<Script file="Obliterum.lua"/>
 	<Script file="Options.lua"/>
 	<Script file="OrderHall.lua"/>
