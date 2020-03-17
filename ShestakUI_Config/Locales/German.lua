@@ -233,13 +233,15 @@ L_GUI_CHAT_WIDTH = "Breite des Chatfensters"
 L_GUI_CHAT_HEIGHT = "Höhe desChatfensters"
 L_GUI_CHAT_BAR = "Kleine Leiste um den Chatchannel zu wechseln"
 L_GUI_CHAT_BAR_MOUSEOVER = "Aktionsleiste bei Mousover hervorheben"
-L_GUI_CHAT_TIMESTAMP = "Farbe des Zeitstempels"
 L_GUI_CHAT_WHISP = "Geräusch abspielen wenn eine private Nachricht empfangen wird"
 L_GUI_CHAT_SKIN_BUBBLE = "Blizzard Chat Blasen verändern"
 L_GUI_CHAT_CL_TAB = "Kampflog Reiter anzeigen"
 L_GUI_CHAT_TABS_MOUSEOVER = "Zeige Chat-Reiter bei Mouseover"
 L_GUI_CHAT_STICKY = "Behalte den letzen Channel"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "Fasse DMG-Meterspam in einer Zeile zusammen"
+L.chat_loot_icons = "Icons for loot" -- Needs review
+L.chat_custom_time_color = "Enable custom timestamp coloring" -- Needs review
+L.chat_time_color = "Farbe des Zeitstempels"
 
 -- Nameplate options
 L_GUI_NAMEPLATE_SUBTEXT = "Nameplates Einstellung"

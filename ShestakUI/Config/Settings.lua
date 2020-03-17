@@ -263,13 +263,15 @@ C["chat"] = {
 	["height"] = 112,							-- Chat height
 	["chat_bar"] = false,						-- Lite Button Bar for switch chat channel
 	["chat_bar_mouseover"] = false,				-- Lite Button Bar on mouseover
-	["time_color"] = {1, 1, 0},					-- Timestamp coloring (http://www.december.com/html/spec/colorcodescompact.html)
 	["whisp_sound"] = true,						-- Sound when whisper
 	["bubbles"] = true,							-- Skin Blizzard chat bubbles
 	["combatlog"] = true,						-- Show CombatLog tab
 	["tabs_mouseover"] = false,					-- Chat tabs on mouseover
 	["sticky"] = true,							-- Remember last channel
 	["damage_meter_spam"] = false,				-- Merge damage meter spam in one line-link
+	["loot_icons"] = false,						-- Icons for loot
+	["custom_time_color"] = true,				-- Enable custom timestamp coloring
+	["time_color"] = {1, 1, 0},					-- Timestamp coloring (http://www.december.com/html/spec/colorcodescompact.html)
 }
 
 ----------------------------------------------------------------------------------------

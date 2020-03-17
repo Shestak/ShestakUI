@@ -232,13 +232,15 @@ L_GUI_CHAT_WIDTH = "Largeur de la fenêtre"
 L_GUI_CHAT_HEIGHT = "Hauteur de la fenêtre"
 L_GUI_CHAT_BAR = "Bouton pour changer de canal"
 L_GUI_CHAT_BAR_MOUSEOVER = "Affiche les boutons de canaux au survol de la souris"
-L_GUI_CHAT_TIMESTAMP = "Coloration du temps"
 L_GUI_CHAT_WHISP = "Alerte sonore quand murmure"
 L_GUI_CHAT_SKIN_BUBBLE = "Skin des bulles de discussions"
 L_GUI_CHAT_CL_TAB = "Afficher l'onglet du journal de combat"
 L_GUI_CHAT_TABS_MOUSEOVER = "Affiche les onglets de discussion au survol de la souris"
 L_GUI_CHAT_STICKY = "Active le dernier canal utilisé(canal persistant)"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "Rassemble les lignes de statistiques de dégâts en un seul lien/ligne"
+L.chat_loot_icons = "Icons for loot" -- Needs review
+L.chat_custom_time_color = "Enable custom timestamp coloring" -- Needs review
+L.chat_time_color = "Coloration du temps"
 
 -- Nameplate options
 L_GUI_NAMEPLATE_SUBTEXT = "Nameplate settings" -- Need review

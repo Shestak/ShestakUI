@@ -233,13 +233,15 @@ L_GUI_CHAT_WIDTH = "Anchura del chat"
 L_GUI_CHAT_HEIGHT = "Altura del chat"
 L_GUI_CHAT_BAR = "Pequeña barra de botones para cambiar de canal en el chat"
 L_GUI_CHAT_BAR_MOUSEOVER = "Lite Button Bar on mouseover" -- Needs review
-L_GUI_CHAT_TIMESTAMP = "Color de la marca de tiempo"
 L_GUI_CHAT_WHISP = "Sonido cuando te susurran"
 L_GUI_CHAT_SKIN_BUBBLE = "Estilizar las burbujas de chat"
 L_GUI_CHAT_CL_TAB = "Mostrar la pestaña del Registro de Combate"
 L_GUI_CHAT_TABS_MOUSEOVER = "Chat tabs on mouseover" -- Needs review
 L_GUI_CHAT_STICKY = "Recordar último canal"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link" -- Needs review
+L.chat_loot_icons = "Icons for loot" -- Needs review
+L.chat_custom_time_color = "Enable custom timestamp coloring" -- Needs review
+L.chat_time_color = "Color de la marca de tiempo"
 
 -- Nameplate options
 L_GUI_NAMEPLATE_SUBTEXT = "Nameplate settings" -- Need review

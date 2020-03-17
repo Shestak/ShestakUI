@@ -233,13 +233,15 @@ L_GUI_CHAT_WIDTH = "聊天框寬度"
 L_GUI_CHAT_HEIGHT = "聊天框高度"
 L_GUI_CHAT_BAR = "聊天頻道快捷鍵"
 L_GUI_CHAT_BAR_MOUSEOVER = "滑鼠懸停顯示聊天頻道快捷鍵"
-L_GUI_CHAT_TIMESTAMP = "時間標籤顏色"
 L_GUI_CHAT_WHISP = "接受密語時聲音提示"
 L_GUI_CHAT_SKIN_BUBBLE = "美化聊天泡泡"
 L_GUI_CHAT_CL_TAB = "戰鬥記錄標籤"
 L_GUI_CHAT_TABS_MOUSEOVER = "滑鼠懸停顯示頻道標籤"
 L_GUI_CHAT_STICKY = "記住上一次使用的頻道"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "在鏈接中合併垃圾郵件"
+L.chat_loot_icons = "Icons for loot" -- Needs review
+L.chat_custom_time_color = "Enable custom timestamp coloring" -- Needs review
+L.chat_time_color = "時間標籤顏色"
 
 -- Nameplate options
 L_GUI_NAMEPLATE_SUBTEXT = "單位名條設置"
