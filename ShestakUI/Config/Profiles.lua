@@ -199,8 +199,7 @@ if IsWetxius then
 	C["misc"].enchantment_scroll = true
 	C["announcements"].bad_gear = true
 	C["automation"].accept_invite = true
-	-- C["automation"].accept_quest = true
-	C["automation"].auto_collapse = true
+	C["automation"].screenshot = true
 	C["automation"].auto_role = true
 	C["automation"].tab_binder = true
 	C["skins"].blizzard_frames = true
@@ -209,6 +208,7 @@ if IsWetxius then
 	C["combattext"].crit_prefix = ""
 	C["combattext"].blizz_head_numbers = true
 	C["combattext"].dk_runes = false
+	C["combattext"].heal_treshold = UnitHealthMax("player")/100
 	C["pulsecooldown"].enable = true
 	C["pulsecooldown"].threshold = 6
 	C["threat"].enable = false
@@ -248,9 +248,4 @@ if IsWetxius then
 	C["position"].bank = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 20}
 	C["position"].auto_button = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 33, 83}
 	C["position"].unitframes.arena = {"BOTTOMRIGHT", UIParent, "RIGHT", -55, -70}
-	if T.level == MAX_PLAYER_LEVEL then
-		C["automation"].screenshot = true
-		C["combattext"].heal_treshold = 1000
-		C["stats"].experience = false
-	end
 end
