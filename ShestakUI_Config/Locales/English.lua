@@ -475,6 +475,8 @@ L_GUI_COOLDOWN_ENEMY_DIRECTION = "Enemy cooldowns icon direction"
 L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "Show everywhere enemy cooldowns"
 L_GUI_COOLDOWN_ENEMY_IN_BG = "Show enemy cooldowns in bg zone"
 L_GUI_COOLDOWN_ENEMY_IN_ARENA = "Show enemy cooldowns in arena zone"
+L.enemycooldown_show_inparty = "Show in party zone for allies"
+L.enemycooldown_class_color = "Enable classcolor border"
 
 -- Pulse cooldowns options
 L_GUI_COOLDOWN_PULSE = "Pulse Cooldowns"

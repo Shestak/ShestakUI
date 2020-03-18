@@ -1605,6 +1605,12 @@ do
 
 	local show_inarena = ns.CreateCheckBox(parent, "show_inarena", L_GUI_COOLDOWN_ENEMY_IN_ARENA)
 	show_inarena:SetPoint("TOPLEFT", show_inpvp, "BOTTOMLEFT", 0, 0)
+
+	local show_inparty = ns.CreateCheckBox(parent, "show_inparty")
+	show_inparty:SetPoint("TOPLEFT", show_inarena, "BOTTOMLEFT", 0, 0)
+
+	local class_color = ns.CreateCheckBox(parent, "class_color")
+	class_color:SetPoint("TOPLEFT", show_inparty, "BOTTOMLEFT", 0, 0)
 end
 
 -- Pulse cooldowns

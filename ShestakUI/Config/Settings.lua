@@ -497,6 +497,8 @@ C["enemycooldown"] = {
 	["show_always"] = false,					-- Show everywhere
 	["show_inpvp"] = false,						-- Show in bg zone
 	["show_inarena"] = true,					-- Show in arena zone
+	["show_inparty"] = false,					-- Show in party zone for allies
+	["class_color"] = false,					-- Enable classcolor border
 }
 
 ----------------------------------------------------------------------------------------

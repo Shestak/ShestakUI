@@ -454,6 +454,8 @@ L_GUI_COOLDOWN_ENEMY_DIRECTION = "敌对技能冷却图标"
 L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "始终显示敌对技能冷却"
 L_GUI_COOLDOWN_ENEMY_IN_BG = "战场中显示敌对技能冷却"
 L_GUI_COOLDOWN_ENEMY_IN_ARENA = "竞技场中显示敌对技能冷却"
+L.enemycooldown_show_inparty = "Show in party zone for allies" -- Need review
+L.enemycooldown_class_color = "Enable classcolor border" -- Need review
 
 -- Pulse cooldowns options
 L_GUI_COOLDOWN_PULSE = "技能冷却闪烁"

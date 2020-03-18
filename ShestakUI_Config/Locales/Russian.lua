@@ -453,6 +453,8 @@ L_GUI_COOLDOWN_ENEMY_DIRECTION = "Направление иконок"
 L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "Отображать везде"
 L_GUI_COOLDOWN_ENEMY_IN_BG = "Отображать на полях боя"
 L_GUI_COOLDOWN_ENEMY_IN_ARENA = "Отображать на арене"
+L.enemycooldown_show_inparty = "Отображать в группе для союзников"
+L.enemycooldown_class_color = "Окрашивать края в цвет класса"
 
 -- Pulse cooldowns options
 L_GUI_COOLDOWN_PULSE = "Свои перезарядки"
