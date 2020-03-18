@@ -523,6 +523,7 @@ T.OpenItems = {
 	[123857] = true,	-- Runic Pouch
 	[123858] = true,	-- Follower Retraining Scroll Case
 	[123975] = true,	-- Greater Bounty Spoils
+	[132892] = true,	-- Blingtron 6000 Gift Package
 	[137560] = true,	-- Dreamweaver Provisions
 	[137561] = true,	-- Highmountain Tribute
 	[137562] = true,	-- Valarjar Cache
@@ -539,4 +540,5 @@ T.OpenItems = {
 	[163613] = true,	-- Sack of Plunder
 	[168740] = true,	-- Blingtron 7000 Gift Package
 	[165851] = true,	-- Bag of Anchors
+	[173372] = true,	-- Cache of the Black Empire
 }

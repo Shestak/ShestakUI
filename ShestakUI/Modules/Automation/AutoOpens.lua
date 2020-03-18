@@ -50,8 +50,8 @@ frame:Register("BAG_UPDATE_DELAYED", function()
 	if atBank or atMail or atMerchant then return end
 	for bag = 0, 4 do
 		for slot = 0, GetContainerNumSlots(bag) do
-			local id = GetContainerItemID(bag, slot)
-			if id and T.OpenItems[id] then
+			local _, _, locked, _, _, _, _, _, _, id = GetContainerItemInfo(bag, slot)
+			if id and T.OpenItems[id] and not locked then
 				print("|cffff0000"..USE_COLON.." "..GetContainerItemLink(bag, slot).."|cffff0000.|r")
 				UseContainerItem(bag, slot)
 				return
