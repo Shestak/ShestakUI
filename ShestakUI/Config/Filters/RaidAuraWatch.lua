@@ -90,8 +90,13 @@ T.RaidDebuffs = {
 	[SpellName(307806)] = 3,	-- Devour Magic
 	[SpellName(307399)] = 3,	-- Shadow Wounds
 	-- The Prophet Skitra
+	[SpellName(308059)] = 3,	-- Shadow Shock
 	-- Dark Inquisitor Xanesh
+	[SpellName(311551)] = 3,	-- Abyssal Strike
+	[SpellName(306311)] = 3,	-- Soul Flay
 	-- The Hivemind
+	[SpellName(313460)] = 3,	-- Nullification
+	[SpellName(313461)] = 3,	-- Corrosion
 	-- Shad'har the Insatiable
 	-- Drest'agath
 	-- Il'gynoth, Corruption Reborn
