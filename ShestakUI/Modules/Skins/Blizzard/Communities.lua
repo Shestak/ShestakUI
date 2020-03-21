@@ -182,10 +182,10 @@ local function LoadSkin()
 	ClubFinderGuildFinderFrame.OptionsList.Search:SkinButton()
 	ClubFinderCommunityAndGuildFinderFrame.OptionsList.Search:SkinButton()
 
-	T.SkinDropDownBox(ClubFinderGuildFinderFrame.OptionsList.ClubFocusDropdown)
+	T.SkinDropDownBox(ClubFinderGuildFinderFrame.OptionsList.ClubFilterDropdown)
 	T.SkinDropDownBox(ClubFinderGuildFinderFrame.OptionsList.ClubSizeDropdown)
 
-	T.SkinDropDownBox(ClubFinderCommunityAndGuildFinderFrame.OptionsList.ClubFocusDropdown)
+	T.SkinDropDownBox(ClubFinderCommunityAndGuildFinderFrame.OptionsList.ClubFilterDropdown)
 	T.SkinDropDownBox(ClubFinderCommunityAndGuildFinderFrame.OptionsList.SortByDropdown)
 
 	ClubFinderGuildFinderFrame.OptionsList.Search:ClearAllPoints()
