@@ -10,9 +10,19 @@ frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:SetScript("OnEvent", function()
 	if not IsAddOnLoaded("WeakAuras") then return end
 
-	local function Skin_WeakAuras(frame)
+	local function Skin_WeakAuras(frame, type)
 		if not frame.backdrop then
-			frame:CreateBackdrop("Default")
+			if type == "icon" then
+				frame:SetSize(frame:GetWidth() - 5, frame:GetHeight() - 5)
+				frame:CreateBackdrop("Transparent")
+				frame.backdrop:SetBackdropColor(0, 0, 0, 0)
+				frame.backdrop:HookScript("OnUpdate", function(self)
+					self:SetAlpha(self:GetParent().icon:GetAlpha())
+				end)
+			else
+				frame:CreateBackdrop("Transparent")
+				frame.backdrop:SetBackdropColor(0, 0, 0, 0)
+			end
 		end
 
 		if frame.icon then
@@ -48,7 +58,7 @@ frame:SetScript("OnEvent", function()
 
 	for weakAura, _ in pairs(WeakAuras.regions) do
 		if WeakAuras.regions[weakAura].regionType == "icon" or WeakAuras.regions[weakAura].regionType == "aurabar" then
-			Skin_WeakAuras(WeakAuras.regions[weakAura].region)
+			Skin_WeakAuras(WeakAuras.regions[weakAura].region, WeakAuras.regions[weakAura].regionType)
 		end
 	end
 end)
