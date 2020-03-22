@@ -879,9 +879,14 @@ function Stuffing:InitBags()
 		end
 	end
 
+	local hideSearch = function(self)
+		self:Hide()
+		self:GetParent().detail:Show()
+	end
+
 	editbox:SetScript("OnEscapePressed", resetAndClear)
 	editbox:SetScript("OnEnterPressed", resetAndClear)
-	editbox:SetScript("OnEditFocusLost", editbox.Hide)
+	editbox:SetScript("OnEditFocusLost", hideSearch)
 	editbox:SetScript("OnEditFocusGained", editbox.HighlightText)
 	editbox:SetScript("OnTextChanged", updateSearch)
 	editbox:SetText(SEARCH)
