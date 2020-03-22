@@ -541,4 +541,6 @@ T.OpenItems = {
 	[168740] = true,	-- Blingtron 7000 Gift Package
 	[165851] = true,	-- Bag of Anchors
 	[173372] = true,	-- Cache of the Black Empire
+	[174958] = true,	-- Cache of the Fallen Mogu
+	[174959] = true,	-- Cache of the Mantid Swarm
 }
