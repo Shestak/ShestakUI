@@ -145,37 +145,6 @@ strip:SetScript("OnClick", function(_, button)
 end)
 
 ----------------------------------------------------------------------------------------
---	Old achievements filter
-----------------------------------------------------------------------------------------
-function AchievementFrame_GetCategoryNumAchievements_OldIncomplete(categoryID)
-	local numAchievements, numCompleted = GetCategoryNumAchievements(categoryID)
-	return numAchievements - numCompleted, 0, numCompleted
-end
-
-function old_nocomplete_filter_init()
-	AchievementFrameFilters = {
-		{text = ACHIEVEMENTFRAME_FILTER_ALL, func = AchievementFrame_GetCategoryNumAchievements_All},
-		{text = ACHIEVEMENTFRAME_FILTER_COMPLETED, func = AchievementFrame_GetCategoryNumAchievements_Complete},
-		{text = ACHIEVEMENTFRAME_FILTER_INCOMPLETE, func = AchievementFrame_GetCategoryNumAchievements_Incomplete},
-		{text = ACHIEVEMENTFRAME_FILTER_INCOMPLETE.." ("..ALL.." )", func = AchievementFrame_GetCategoryNumAchievements_OldIncomplete}
-	}
-end
-
-local filter = CreateFrame("Frame")
-filter:RegisterEvent("ADDON_LOADED")
-filter:SetScript("OnEvent", function(_, _, addon)
-	if addon == "Blizzard_AchievementUI" then
-		if AchievementFrame then
-			old_nocomplete_filter_init()
-			if C.skins.blizzard_frames == true then
-				AchievementFrameFilterDropDown:SetWidth(AchievementFrameFilterDropDown:GetWidth() + 20)
-			end
-			filter:UnregisterEvent("ADDON_LOADED")
-		end
-	end
-end)
-
-----------------------------------------------------------------------------------------
 --	Boss Banner Hider
 ----------------------------------------------------------------------------------------
 if C.misc.hide_banner == true then
