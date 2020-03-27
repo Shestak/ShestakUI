@@ -677,31 +677,33 @@ function Stuffing:SearchUpdate(str)
 			b.frame:SetAlpha(0.2)
 		end
 		if b.name then
-			local _, setName = GetContainerItemEquipmentSetInfo(b.bag, b.slot)
-			setName = setName or ""
 			local ilink = GetContainerItemLink(b.bag, b.slot)
-			local _, _, _, _, minLevel, class, subclass, _, equipSlot, _, _, _, _, bindType = GetItemInfo(ilink)
-			if bindType == 2 then
-				bindType = "boe"
-			else
-				bindType = ""
-			end
-			class = _G[class] or ""
-			subclass = _G[subclass] or ""
-			equipSlot = _G[equipSlot] or ""
-			minLevel = minLevel or 1
-			if not string.find(string.lower(b.name), str) and not string.find(string.lower(setName), str) and not string.find(string.lower(class), str) and not string.find(string.lower(subclass), str) and not string.find(string.lower(equipSlot), str) and not string.find(string.lower(bindType), str) then
-				if IsItemUnusable(b.name) or minLevel > T.level then
-					_G[b.frame:GetName().."IconTexture"]:SetVertexColor(0.5, 0.5, 0.5)
+			if ilink then
+				local _, setName = GetContainerItemEquipmentSetInfo(b.bag, b.slot)
+				setName = setName or ""
+				local _, _, _, _, minLevel, class, subclass, _, equipSlot, _, _, _, _, bindType = GetItemInfo(ilink)
+				if bindType == 2 then
+					bindType = "boe"
+				else
+					bindType = ""
 				end
-				SetItemButtonDesaturated(b.frame, true)
-				b.frame:SetAlpha(0.2)
-			else
-				if IsItemUnusable(b.name) or minLevel > T.level then
-					_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
+				class = _G[class] or ""
+				subclass = _G[subclass] or ""
+				equipSlot = _G[equipSlot] or ""
+				minLevel = minLevel or 1
+				if not string.find(string.lower(b.name), str) and not string.find(string.lower(setName), str) and not string.find(string.lower(class), str) and not string.find(string.lower(subclass), str) and not string.find(string.lower(equipSlot), str) and not string.find(string.lower(bindType), str) then
+					if IsItemUnusable(b.name) or minLevel > T.level then
+						_G[b.frame:GetName().."IconTexture"]:SetVertexColor(0.5, 0.5, 0.5)
+					end
+					SetItemButtonDesaturated(b.frame, true)
+					b.frame:SetAlpha(0.2)
+				else
+					if IsItemUnusable(b.name) or minLevel > T.level then
+						_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
+					end
+					SetItemButtonDesaturated(b.frame, false)
+					b.frame:SetAlpha(1)
 				end
-				SetItemButtonDesaturated(b.frame, false)
-				b.frame:SetAlpha(1)
 			end
 		end
 	end
