@@ -681,6 +681,7 @@ if gold.enabled then
 				Currency(1721)	-- Prismatic Manapearl
 				Currency(1719)	-- Corrupted Mementos
 				Currency(1755)	-- Coalescing Visions
+				Currency(1803)	-- Echoes of Ny'alotha
 				Currency(515)	-- Darkmoon Prize Ticket
 			end
 
