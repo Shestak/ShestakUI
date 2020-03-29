@@ -8,11 +8,11 @@ if GetLocale() ~= "zhTW" then return end
 L_GUI_SET_SAVED_SETTTINGS = "角色專用設定"
 L_GUI_SET_SAVED_SETTTINGS_DESC = "在 一般設定 與 角色專用設定 之間切換。"
 L_GUI_RESET_CHAR = "確定要重置你所有角色的 ShestakUI 設定?"
-L_GUI_RESET_ALL = "確定要重置全部 ShestakUI 設定?"
+L_GUI_RESET_ALL = "確定要重置全部 ShestakUI 到預設值?"
 L_GUI_PER_CHAR = "確定要設定/取消 角色專用設定 模式?"
-L_GUI_RESET_CAT = "Are you sure you want to reset category's settings?" -- Need review
-L_GUI_RESET_CAT_DESC = "Reset category's settings. \nCTRL-click to reset all" -- Need review
-L_GUI_NEED_RELOAD = "必須重新加載UI來配置你的更改"
+L_GUI_RESET_CAT = "確定要重置當前分類到預設值?"
+L_GUI_RESET_CAT_DESC = "左鍵重置當前分類到預設值。\nCTRL+左鍵重置全部到預設值。"
+L_GUI_NEED_RELOAD = "請點擊套用以重載當前改動。"
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "一般用戶界面設置，鍵入 /uihelp 獲取更多可用命令。"
@@ -53,7 +53,7 @@ L_GUI_SKINS_BLIZZARD = "美化暴雪默認界面"
 L_GUI_SKINS_MINIMAP_BUTTONS = "小地圖插件圖標"
 L_GUI_SKINS_SUBHEADER = "單體插件"
 L_GUI_SKINS_DBM_MOVABLE = "允許移動DBM計時條"
-L.skins_minimap_buttons_mouseover = "Addons icons on mouseover" -- Need review
+L.skins_minimap_buttons_mouseover = "滑鼠懸停顯示插件圖標"
 
 -- Unit Frames options
 L_GUI_UF_SUBTEXT = "定制玩家/目標框架/其他框架"
@@ -240,8 +240,8 @@ L_GUI_CHAT_CL_TAB = "戰鬥記錄標籤"
 L_GUI_CHAT_TABS_MOUSEOVER = "滑鼠懸停顯示頻道標籤"
 L_GUI_CHAT_STICKY = "記住上一次使用的頻道"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "在鏈接中合併垃圾郵件"
-L.chat_loot_icons = "Icons for loot" -- Needs review
-L.chat_custom_time_color = "Enable custom timestamp coloring" -- Needs review
+L.chat_loot_icons = "拾取信息帶圖標"
+L.chat_custom_time_color = "自定義時間標籤顏色"
 L.chat_time_color = "時間標籤顏色"
 
 -- Nameplate options
@@ -312,7 +312,7 @@ L_GUI_COMBATTEXT_SHORT_NUMBERS = "數值以K為單位顯示"
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Buff大小"
 L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "玩家Buff圖標大小"
-L.aura_player_debuff_size = "Debuffs size" -- Need review
+L.aura_player_debuff_size = "DeBuffs大小"
 L_GUI_AURA_SHOW_SPIRAL = "漩渦冷卻樣式"
 L_GUI_AURA_SHOW_TIMER = "層數堆疊"
 L_GUI_AURA_PLAYER_AURAS = "玩家顯示法術效果"
