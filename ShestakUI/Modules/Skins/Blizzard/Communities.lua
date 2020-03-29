@@ -18,7 +18,9 @@ local function LoadSkin()
 		ClubFinderCommunityAndGuildFinderFrame.CommunityCards.ListScrollFrame.scrollBar,
 		ClubFinderCommunityAndGuildFinderFrameScrollBar,
 		ClubFinderGuildFinderFrameScrollBar,
-		ClubFinderCommunityAndGuildFinderFrame.PendingCommunityCards.ListScrollFrame.scrollBar
+		ClubFinderCommunityAndGuildFinderFrame.PendingCommunityCards.ListScrollFrame.scrollBar,
+		CommunitiesFrameGuildDetailsFrameInfoMOTDScrollFrameScrollBar,
+		CommunitiesFrameGuildDetailsFrameInfoScrollBar
 	}
 
 	for i = 1, #scrollbars do
@@ -526,19 +528,25 @@ local function LoadSkin()
 	backdrop2:SetTemplate("Overlay")
 	backdrop2:SetFrameLevel(CommunitiesFrameGuildDetailsFrameInfo:GetFrameLevel() - 1)
 	backdrop2:SetPoint("TOPLEFT", CommunitiesFrameGuildDetailsFrameInfo, "TOPLEFT", 2, -158)
-	backdrop2:SetPoint("BOTTOMRIGHT", CommunitiesFrameGuildDetailsFrameInfo, "BOTTOMRIGHT", 0, 118)
+	backdrop2:SetPoint("BOTTOMRIGHT", CommunitiesFrameGuildDetailsFrameInfo, "BOTTOMRIGHT", -8, 123)
 
 	local backdrop3 = CreateFrame("Frame", nil, CommunitiesFrameGuildDetailsFrameInfo)
 	backdrop3:SetTemplate("Overlay")
 	backdrop3:SetFrameLevel(CommunitiesFrameGuildDetailsFrameInfo:GetFrameLevel() - 1)
 	backdrop3:SetPoint("TOPLEFT", CommunitiesFrameGuildDetailsFrameInfo, "TOPLEFT", 2, -236)
-	backdrop3:SetPoint("BOTTOMRIGHT", CommunitiesFrameGuildDetailsFrameInfo, "BOTTOMRIGHT", 0, -1)
+	backdrop3:SetPoint("BOTTOMRIGHT", CommunitiesFrameGuildDetailsFrameInfo, "BOTTOMRIGHT", -8, -1)
 
 	local backdrop4 = CreateFrame("Frame", nil, CommunitiesFrameGuildDetailsFrameInfo)
 	backdrop4:SetTemplate("Overlay")
 	backdrop4:SetFrameLevel(CommunitiesFrameGuildDetailsFrameInfo:GetFrameLevel() - 1)
 	backdrop4:SetPoint("TOPLEFT", CommunitiesFrameGuildDetailsFrameInfo, "TOPLEFT", 591, -22)
-	backdrop4:SetPoint("BOTTOMRIGHT", CommunitiesFrameGuildDetailsFrameInfo, "BOTTOMRIGHT", 15, -1)
+	backdrop4:SetPoint("BOTTOMRIGHT", CommunitiesFrameGuildDetailsFrameInfo, "BOTTOMRIGHT", 20, -1)
+
+	CommunitiesFrameGuildDetailsFrameInfoMOTDScrollFrameScrollBar:SetPoint("TOPLEFT", CommunitiesFrameGuildDetailsFrameInfoMOTDScrollFrame, "TOPRIGHT", 0, -12)
+	CommunitiesFrameGuildDetailsFrameInfoMOTDScrollFrameScrollBar:SetPoint("BOTTOMLEFT", CommunitiesFrameGuildDetailsFrameInfoMOTDScrollFrame, "BOTTOMRIGHT", 0, 12)
+
+	CommunitiesFrameGuildDetailsFrameInfoScrollBar:SetPoint("TOPLEFT", CommunitiesFrameGuildDetailsFrameInfo.DetailsFrame, "TOPRIGHT", 0, -12)
+	CommunitiesFrameGuildDetailsFrameInfoScrollBar:SetPoint("BOTTOMLEFT", CommunitiesFrameGuildDetailsFrameInfo.DetailsFrame, "BOTTOMRIGHT", 0, 13)
 
 	-- Guild Message EditBox
 	CommunitiesGuildTextEditFrame:StripTextures()
