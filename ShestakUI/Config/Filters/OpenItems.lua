@@ -544,4 +544,5 @@ T.OpenItems = {
 	[174958] = true,	-- Cache of the Fallen Mogu
 	[174959] = true,	-- Cache of the Mantid Swarm
 	[174960] = true,	-- Cache of the Aqir Swarm
+	[174961] = true,	-- Cache of the Amathet
 }
