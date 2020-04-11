@@ -785,7 +785,13 @@ if C.combattext.damage then
 						else
 							icon = GetSpellTexture(6603)
 						end
+					end
+					if icon then
 						msg = " \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
+					elseif C.combattext.icons then
+						msg = " \124T"..ct.blank..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
+					else
+						msg = ""
 					end
 					local color = {1, 1, 1}
 					if C.combattext.merge_aoe_spam and C.combattext.merge_melee then
@@ -815,7 +821,13 @@ if C.combattext.damage then
 					end
 					if C.combattext.icons then
 						icon = GetSpellTexture(spellId)
+					end
+					if icon then
 						msg = " \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
+					elseif C.combattext.icons then
+						msg = " \124T"..ct.blank..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
+					else
+						msg = ""
 					end
 					if C.combattext.merge_aoe_spam then
 						spellId = T.merge[spellId] or spellId
