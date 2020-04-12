@@ -42,6 +42,7 @@
 	<Script file="Inspect.lua"/>
 	<Script file="Interface.lua"/>
 	<Script file="Islands.lua"/>
+	<Script file="ItemInteraction.lua"/>
 	<Script file="ItemSocketing.lua"/>
 	<Script file="ItemText.lua"/>
 	<Script file="ItemUpgrade.lua"/>
