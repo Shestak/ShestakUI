@@ -34,33 +34,18 @@ frame:SetScript("OnEvent", function()
 		end
 		element:SetAlpha(0)
 	end
-	elements = nil
 
 	for i = 1, 6 do
 		local b = _G["OverrideActionBarButton"..i]
-		b:SetAttribute("statehidden", 1)
+		b:UnregisterAllEvents()
+		b:SetAttribute("statehidden", true)
+		b:SetAttribute("showgrid", 1)
 	end
 
 	hooksecurefunc("TalentFrame_LoadUI", function()
 		PlayerTalentFrame:UnregisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 	end)
 end)
-
-do
-	local uiManagedFrames = {
-		"MultiBarLeft",
-		"MultiBarRight",
-		"MultiBarBottomLeft",
-		"MultiBarBottomRight",
-		"StanceBarFrame",
-		"PossessBarFrame",
-		"ExtraActionBarFrame"
-	}
-	for _, frame in pairs(uiManagedFrames) do
-		UIPARENT_MANAGED_FRAME_POSITIONS[frame] = nil
-	end
-	uiManagedFrames = nil
-end
 
 ----------------------------------------------------------------------------------------
 --	Set mouseover for bars
@@ -228,6 +213,21 @@ frame:SetScript("OnEvent", function(self)
 		end
 	else
 		SetCVar("alwaysShowActionBars", 0)
+	end
+
+	for i = 1, 12 do
+		_G["ActionButton"..i]:SetAttribute("statehidden", true)
+		_G["MultiBarBottomLeftButton"..i]:SetAttribute("statehidden", true)
+		_G["MultiBarBottomRightButton"..i]:SetAttribute("statehidden", true)
+		_G["MultiBarRightButton"..i]:SetAttribute("statehidden", true)
+		_G["MultiBarLeftButton"..i]:SetAttribute("statehidden", true)
+
+		if _G["VehicleMenuBarActionButton"..i] then
+			_G["VehicleMenuBarActionButton"..i]:SetAttribute("statehidden", true)
+		end
+
+		_G["MultiCastActionButton"..i]:SetAttribute("showgrid", 1)
+		_G["MultiCastActionButton"..i]:SetAttribute("statehidden", true)
 	end
 end)
 

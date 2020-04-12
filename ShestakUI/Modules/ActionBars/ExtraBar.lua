@@ -12,14 +12,14 @@ else
 end
 anchor:SetSize(53, 53)
 anchor:SetFrameStrata("LOW")
+RegisterStateDriver(anchor, "visibility", "[petbattle] hide; show")
 
 ExtraActionBarFrame:SetParent(ExtraButtonAnchor)
 ExtraActionBarFrame:ClearAllPoints()
 ExtraActionBarFrame:SetPoint("CENTER", anchor, "CENTER")
 ExtraActionBarFrame:SetSize(53, 53)
 ExtraActionBarFrame.ignoreFramePositionManager = true
-
-RegisterStateDriver(anchor, "visibility", "[petbattle] hide; show")
+ExtraActionButton1:SetAttribute("showgrid", 1)
 
 ZoneAbilityFrame:SetParent(ExtraButtonAnchor)
 ZoneAbilityFrame:ClearAllPoints()
