@@ -24,8 +24,8 @@ BGFrame:SetScript("OnEnter", function(self)
 			GameTooltip:AddLine(" ")
 			GameTooltip:AddDoubleLine(HONORABLE_KILLS..":", honorableKills, 1, 1, 1)
 			GameTooltip:AddDoubleLine(DEATHS..":", deaths, 1, 1, 1)
-			GameTooltip:AddDoubleLine(DAMAGE..":", damageDone, 1, 1, 1)
-			GameTooltip:AddDoubleLine(SHOW_COMBAT_HEALING..":", healingDone, 1, 1, 1)
+			GameTooltip:AddDoubleLine(DAMAGE..":", T.ShortValue(damageDone), 1, 1, 1)
+			GameTooltip:AddDoubleLine(SHOW_COMBAT_HEALING..":", T.ShortValue(healingDone), 1, 1, 1)
 
 			-- Add extra statistics depending on what BG you are
 			for j = 1, #pvpStatIDs do
