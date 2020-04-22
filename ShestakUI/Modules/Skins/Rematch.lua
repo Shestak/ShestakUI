@@ -199,7 +199,7 @@ skin.panels = {
 		self.Target.Pet2.IconBorder:SetAlpha(0)
 		self.Target.Pet3:SkinButton()
 		self.Target.Pet3.IconBorder:SetAlpha(0)
-		self.Target.Model:SkinButton()
+		self.Target.Model:CreateBackdrop("Overlay")
 		self.Target.ModelBorder:SetAlpha(0)
 
 		for i = 1, 3 do
