@@ -539,6 +539,7 @@ T.OpenItems = {
 	[163612] = true,	-- Wayfinder's Satchel
 	[163613] = true,	-- Sack of Plunder
 	[165714] = true,	-- Gold Strongbox
+	[165717] = true,	-- Steel Strongbox
 	[165851] = true,	-- Bag of Anchors
 	[166295] = true,	-- Proudmoore Admiralty Supplies
 	[168740] = true,	-- Blingtron 7000 Gift Package
