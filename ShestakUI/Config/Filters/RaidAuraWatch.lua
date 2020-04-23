@@ -568,6 +568,11 @@ if C.raidframe.plugins_pvp_debuffs == true then
 		[SpellName(91797)] = 3,		-- Monstrous Blow (Mutated Ghoul)
 		[SpellName(91800)] = 3,		-- Gnaw (Ghoul)
 		[SpellName(47476)] = 3,		-- Strangulate
+		-- Demon Hunter
+		[SpellName(217832)] = 3,	-- Imprison
+		[SpellName(211881)] = 3,	-- Fel Eruption
+		[SpellName(179057)] = 3,	-- Chaos Nova
+		[SpellName(205630)] = 3,	-- Illidan's Grasp
 		-- Druid
 		[SpellName(33786)] = 3,		-- Cyclone
 		[SpellName(78675)] = 3,		-- Solar Beam
@@ -594,6 +599,7 @@ if C.raidframe.plugins_pvp_debuffs == true then
 		[SpellName(8122)] = 3,		-- Psychic Scream
 		[SpellName(64044)] = 3,		-- Psychic Horror
 		[SpellName(15487)] = 3,		-- Silence
+		[SpellName(284402)] = 3,	-- Vampiric Touch (Don't dispel)
 		-- Rogue
 		[SpellName(6770)] = 3,		-- Sap
 		[SpellName(2094)] = 3,		-- Blind
@@ -609,6 +615,7 @@ if C.raidframe.plugins_pvp_debuffs == true then
 		[SpellName(6358)] = 3,		-- Seduction (Succubus)
 		[SpellName(115268)] = 3,	-- Mesmerize (Shivarra)
 		[SpellName(30283)] = 3,		-- Shadowfury
+		[SpellName(30108)] = 3,		-- Unstable Affliction (Don't dispel)
 		-- Warrior
 		[SpellName(46968)] = 3,		-- Shockwave
 		[SpellName(132169)] = 3,	-- Storm Bolt
