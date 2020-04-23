@@ -281,6 +281,7 @@ local function Shared(self, unit)
 			self.Runes:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.Runes:SetSize(217, 7)
 			self.Runes.colorSpec = true
+			self.Runes.sortOrder = "asc"
 
 			for i = 1, 6 do
 				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_RuneBar", self.Runes)
