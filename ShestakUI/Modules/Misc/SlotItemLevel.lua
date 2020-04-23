@@ -156,9 +156,25 @@ local function _createGStrings()
 	g:Hide()
 end
 
-local function OnEvent(self, event, ...) -- Event handler
+local function OnEvent(self, event, ...)
 	if event == "ADDON_LOADED" and (...) == "Blizzard_InspectUI" then
 		self:UnregisterEvent(event)
+
+		if not InspectFrameiLvL and not C.tooltip.average_lvl then
+			local text = InspectModelFrame:CreateFontString("InspectFrameiLvL", "OVERLAY", "SystemFont_Outline_Small")
+			text:SetPoint("BOTTOM", 5, 20)
+			text:Hide()
+			InspectPaperDollFrame:HookScript("OnShow", function()
+				local avgilvl = C_PaperDollInfo.GetInspectItemLevel("target")
+				if avgilvl and tonumber(avgilvl) > 0 then
+					text:SetText("|cFFFFFF00"..avgilvl)
+					text:Show()
+				end
+			end)
+			InspectPaperDollFrame:HookScript("OnHide", function()
+				text:Hide()
+			end)
+		end
 
 		g = CreateFrame("Frame", nil, _G.InspectPaperDollFrame) -- iLevel number frame for Inspect
 		_createGStrings()
