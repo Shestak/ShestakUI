@@ -139,6 +139,7 @@ local function Shared(self, unit)
 		self.Info:SetPoint("CENTER", self.Health, "CENTER", 0, 4)
 	else
 		self.Info:SetPoint("LEFT", self.Health, "LEFT", 3, 0)
+		self.Info:SetPoint("RIGHT", self.Health.value, "LEFT", 0, 0)
 		self.Info:SetJustifyH("LEFT")
 	end
 	if self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and unit ~= "tank") then
