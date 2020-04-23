@@ -37,6 +37,29 @@ local function LoadSkin()
 	for i = 1, 3 do
 		T.SkinTab(_G.PVPMatchResults.content.tabContainer.tabGroup["tab"..i])
 	end
+
+	local conquest = PVPMatchResults.content.earningsContainer.progressContainer.conquest.button
+	conquest.CircleMask:Hide()
+	conquest.Ring:Hide()
+	conquest.Icon:SkinIcon()
+	PVPMatchResults.content.earningsContainer.progressContainer.conquest:SetScale(1)
+
+	local honor = PVPMatchResults.content.earningsContainer.progressContainer.honor.button
+	honor.CircleMask:Hide()
+	honor.RingBorder:Hide()
+	honor.RewardIcon:SkinIcon()
+	PVPMatchResults.content.earningsContainer.progressContainer.honor:SetScale(1)
+
+	hooksecurefunc(PVPMatchResults, "AddItemReward", function()
+		for itemFrame in PVPMatchResults.itemPool:EnumerateActive() do
+			itemFrame.IconBorder:Hide()
+			itemFrame.IconBorderDropShadow:SetAlpha(0)
+			itemFrame:SetScale(1)
+			if not itemFrame.backdrop then
+				itemFrame.Icon:SkinIcon()
+			end
+		end
+	end)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
