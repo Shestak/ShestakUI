@@ -105,7 +105,9 @@ local function Visibility(self, event, unit)
 			self.Stagger:Hide()
 			self:UnregisterEvent('UNIT_AURA', Path)
 		end
-		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end	-- ShestakUI
+		if SPEC_MONK_WINDWALKER ~= GetSpecialization() then
+			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end	-- ShestakUI
+		end
 	else
 		if(not self.Stagger:IsShown()) then
 			self.Stagger:Show()
