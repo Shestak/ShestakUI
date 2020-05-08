@@ -38,17 +38,17 @@ local function LoadSkin()
 		T.SkinTab(_G.PVPMatchResults.content.tabContainer.tabGroup["tab"..i])
 	end
 
-	local conquest = PVPMatchResults.content.earningsContainer.progressContainer.conquest.button
-	conquest.CircleMask:Hide()
-	conquest.Ring:Hide()
-	conquest.Icon:SkinIcon()
-	PVPMatchResults.content.earningsContainer.progressContainer.conquest:SetScale(1)
-
 	local honor = PVPMatchResults.content.earningsContainer.progressContainer.honor.button
 	honor.CircleMask:Hide()
 	honor.RingBorder:Hide()
 	honor.RewardIcon:SkinIcon()
 	PVPMatchResults.content.earningsContainer.progressContainer.honor:SetScale(1)
+
+	local conquest = PVPMatchResults.content.earningsContainer.progressContainer.conquest.button
+	conquest.CircleMask:Hide()
+	conquest.Ring:Hide()
+	conquest.Icon:SkinIcon()
+	PVPMatchResults.content.earningsContainer.progressContainer.conquest:SetScale(1)
 
 	hooksecurefunc(PVPMatchResults, "AddItemReward", function()
 		for itemFrame in PVPMatchResults.itemPool:EnumerateActive() do
@@ -57,6 +57,14 @@ local function LoadSkin()
 			itemFrame:SetScale(1)
 			if not itemFrame.backdrop then
 				itemFrame.Icon:SkinIcon()
+			end
+			local atlas = itemFrame.IconBorder:GetAtlas()
+			if atlas:find("green") then
+				itemFrame.backdrop:SetBackdropBorderColor(GetItemQualityColor(2))
+			elseif atlas:find("blue") then
+				itemFrame.backdrop:SetBackdropBorderColor(GetItemQualityColor(3))
+			elseif atlas:find("purple") then
+				itemFrame.backdrop:SetBackdropBorderColor(GetItemQualityColor(4))
 			end
 		end
 	end)
