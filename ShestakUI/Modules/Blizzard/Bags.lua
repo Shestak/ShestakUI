@@ -252,6 +252,18 @@ function Stuffing:SlotUpdate(b)
 		ContainerFrameItemButton_CIMIUpdateIcon(b.frame.CanIMogItOverlay)
 	end
 
+	if IsAddOnLoaded("CorruptionTooltips") then
+		local itemLoc = ItemLocation:CreateFromBagAndSlot(b.bag, b.slot)
+		local Icons = CorruptionTooltips:GetModule("Icons")
+
+		if itemLoc:IsValid() then
+			local itemLink = C_Item.GetItemLink(itemLoc)
+			Icons:ApplyIcon(b.frame, itemLink)
+		else
+			Icons:ClearIcon(b.frame)
+		end
+	end
+
 	if clink then
 		b.name, _, _, b.itemlevel, b.level, _, _, _, _, _, _, b.itemClassID, b.itemSubClassID = GetItemInfo(clink)
 		if not b.name then	-- Keystone bug
