@@ -105,15 +105,18 @@ local function LoadSkin()
 		local button = rewardsFrame.RewardButtons[index]
 		if not button.backdrop then
 			SkinReward(button, rewardsFrame == MapQuestInfoRewardsFrame)
-			hooksecurefunc("SetItemButtonQuality", function(self, quality)
-				if self == button then
-					if not button.backdrop then return end
-					if quality and quality > LE_ITEM_QUALITY_COMMON and BAG_ITEM_QUALITY_COLORS[quality] then
-						button.backdrop:SetBackdropBorderColor(BAG_ITEM_QUALITY_COLORS[quality].r, BAG_ITEM_QUALITY_COLORS[quality].g, BAG_ITEM_QUALITY_COLORS[quality].b)
-					else
-						button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-					end
+
+			hooksecurefunc(button.IconBorder, "SetVertexColor", function(self, r, g, b)
+				if r ~= 0.65882 and g ~= 0.65882 and b ~= 0.65882 then
+					self:GetParent().backdrop:SetBackdropBorderColor(r, g, b)
+				else
+					self:GetParent().backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 				end
+				self:SetTexture("")
+			end)
+
+			hooksecurefunc(button.IconBorder, "Hide", function(self)
+				self:GetParent().backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 			end)
 		end
 	end)
