@@ -37,7 +37,7 @@ C["position"] = {
 	["alt_power_bar"] = {"TOP", UIWidgetTopCenterContainerFrame, "BOTTOM", 0, -7},	-- Alt power bar
 	["talking_head"] = {"TOP", UIParent, "TOP", 0, -21},							-- Talking Head
 	["uiwidget_top"] = {"TOP", UIParent, "TOP", 0, -21},							-- Top Widget
-	["uiwidget_below"] = {"TOP", UIParent, "TOP", 0, -71},							-- Below Widget
+	["uiwidget_below"] = {"TOP", UIWidgetTopCenterContainerFrame, "BOTTOM", 0, -15},-- Below Widget
 	-- ActionBar positions
 	["bottom_bars"] = {"BOTTOM", UIParent, "BOTTOM", 0, 8},							-- Bottom bars
 	["right_bars"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 330},			-- Right bars

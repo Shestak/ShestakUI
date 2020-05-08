@@ -8,12 +8,20 @@ local topAnchor = CreateFrame("Frame", "UIWidgetTopAnchor", UIParent)
 topAnchor:SetSize(200, 30)
 topAnchor:SetPoint(unpack(C.position.uiwidget_top))
 
-_G["UIWidgetTopCenterContainerFrame"]:ClearAllPoints()
-_G["UIWidgetTopCenterContainerFrame"]:SetPoint("TOP", topAnchor)
+top:ClearAllPoints()
+top:SetPoint("TOP", topAnchor)
 
 local belowAnchor = CreateFrame("Frame", "UIWidgetBelowAnchor", UIParent)
 belowAnchor:SetSize(150, 30)
-belowAnchor:SetPoint(unpack(C.position.uiwidget_below))
+
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:SetScript("OnEvent", function(self, event)
+	if event == "PLAYER_ENTERING_WORLD" then
+		belowAnchor:SetPoint(unpack(C.position.uiwidget_below))
+		self:UnregisterEvent("PLAYER_ENTERING_WORLD")
+	end
+end)
 
 hooksecurefunc(below, "SetPoint", function(self, _, anchor)
 	if anchor and anchor ~= belowAnchor then
