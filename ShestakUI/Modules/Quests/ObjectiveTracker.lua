@@ -18,6 +18,7 @@ for _, headerName in pairs({"QuestHeader", "AchievementHeader", "ScenarioHeader"
 end
 BONUS_OBJECTIVE_TRACKER_MODULE.Header.Background:Hide()
 WORLD_QUEST_TRACKER_MODULE.Header.Background:Hide()
+ObjectiveTrackerBlocksFrame.UIWidgetsHeader.Background:Hide()
 
 ObjectiveTrackerFrame.HeaderMenu.Title:SetAlpha(0)
 
