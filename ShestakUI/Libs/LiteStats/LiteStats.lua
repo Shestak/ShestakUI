@@ -867,7 +867,7 @@ if location.enabled then
 			self.hostile = {FACTION_CONTROLLED_TERRITORY, {1, 0.1, 0.1}}
 			self.contested = {CONTESTED_TERRITORY, {1, 0.7, 0}}
 			self.combat = {COMBAT_ZONE, {1, 0.1, 0.1}}
-			self.neutral = {format(FACTION_CONTROLLED_TERRITORY, FACTION_STANDING_LABEL4), {1, 0.93, 0.76}}
+			self.neutral = {"", {1, 0.93, 0.76}}
 		end,
 		OnEvent = function(self)
 			self.subzone, self.zone, self.pvp = GetSubZoneText(), GetZoneText(), {GetZonePVPInfo()}
