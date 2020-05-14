@@ -6,11 +6,10 @@ if C.misc.already_known ~= true then return end
 ----------------------------------------------------------------------------------------
 local color = {r = 0.1, g = 1, b = 0.1}
 local knowns, lines = {}, {}
-local glyph = LE_ITEM_CLASS_GLYPH
 local recipe = LE_ITEM_CLASS_RECIPE
 local pet = LE_ITEM_MISCELLANEOUS_COMPANION_PET
 local mount = LE_ITEM_MISCELLANEOUS_MOUNT
-local knowables = {[glyph] = true, [recipe] = true, [pet] = true, [mount] = true}
+local knowables = {[recipe] = true, [pet] = true, [mount] = true}
 
 local pattern = ITEM_PET_KNOWN:gsub("%(", "%%(")
 pattern = pattern:gsub("%)", "%%)")
@@ -42,7 +41,15 @@ local function IsKnown(itemLink)
 	if not itemID then return end
 	if knowns[itemID] then return true end
 
-	if PlayerHasToy(itemID) then return true end
+	if PlayerHasToy(itemID) then
+		knowns[itemID] = true
+		return true
+	end
+
+	if C_Heirloom.PlayerHasHeirloom(itemID) then
+		knowns[itemID] = true
+		return true
+	end
 
 	local _, _, _, _, _, _, _, _, _, _, _, class, subClass = GetItemInfo(itemID)
 	if not (knowables[class] or knowables[subClass]) then return end
@@ -244,66 +251,42 @@ if IsAddOnLoaded("Blizzard_GuildBankUI") then
 end
 
 -- Auction frame
-local function AuctionFrameBrowse_Update()
-	local numItems = GetNumAuctionItems("list")
-	local offset = FauxScrollFrame_GetOffset(BrowseScrollFrame)
+local function AuctionHouseFrame_RefreshScrollFrame(self)
+	local numResults = self.getNumEntries()
+	local buttons = HybridScrollFrame_GetButtons(self.ScrollFrame)
+	local buttonCount = buttons and #buttons or 0
+	local offset = self:GetScrollOffset()
+	local populateCount = math.min(buttonCount, numResults)
+	for i = 1, buttonCount do
+		local visible = i + offset <= numResults
+		local button = buttons[i]
+		if visible then
+			if button.rowData.itemKey.itemID then
+				local itemLink
+				if button.rowData.itemKey.itemID == 82800 then -- BattlePet
+					itemLink = format("|Hbattlepet:%d::::::|h[Dummy]|h", button.rowData.itemKey.battlePetSpeciesID)
+				else -- Normal item
+					itemLink = format("item:%d:", button.rowData.itemKey.itemID)
+				end
 
-	for i = 1, NUM_BROWSE_TO_DISPLAY do
-		local index = offset + i + NUM_AUCTION_ITEMS_PER_PAGE * AuctionFrameBrowse.page
-		if index > numItems + NUM_AUCTION_ITEMS_PER_PAGE * AuctionFrameBrowse.page then return end
-
-		local texture = _G["BrowseButton"..i.."ItemIconTexture"]
-		if texture and texture:IsShown() then
-			local _, _, _, _, canUse, _, _, _, _, _, _, _, _, _, _, hasAllInfo = GetAuctionItemInfo("list", offset + i)
-			if canUse and hasAllInfo and IsKnown(GetAuctionItemLink("list", offset + i)) then
-				texture:SetVertexColor(color.r, color.g, color.b)
+				if itemLink and IsKnown(itemLink) then
+					-- Highlight
+					button.SelectedHighlight:Show()
+					button.SelectedHighlight:SetVertexColor(color.r, color.g, color.b)
+					button.SelectedHighlight:SetAlpha(.2)
+					-- Icon
+					button.cells[2].Icon:SetVertexColor(color.r, color.g, color.b)
+					button.cells[2].IconBorder:SetVertexColor(color.r, color.g, color.b)
+				else
+					-- Highlight
+					button.SelectedHighlight:SetVertexColor(1, 1, 1)
+					-- Icon
+					button.cells[2].Icon:SetVertexColor(1, 1, 1)
+					button.cells[2].IconBorder:SetVertexColor(1, 1, 1)
+				end
 			end
 		end
 	end
-end
-
-local function AuctionFrameBid_Update()
-	local numItems = GetNumAuctionItems("bidder")
-	local offset = FauxScrollFrame_GetOffset(BidScrollFrame)
-
-	for i = 1, NUM_BIDS_TO_DISPLAY do
-		local index = offset + i
-		if index > numItems then return end
-
-		local texture = _G["BidButton"..i.."ItemIconTexture"]
-		if texture and texture:IsShown() then
-			local _, _, _, _, canUse = GetAuctionItemInfo("bidder", index)
-			if canUse and IsKnown(GetAuctionItemLink("bidder", index)) then
-				texture:SetVertexColor(color.r, color.g, color.b)
-			end
-		end
-	end
-end
-
-local function AuctionFrameAuctions_Update()
-	local numItems = GetNumAuctionItems("owner")
-	local offset = FauxScrollFrame_GetOffset(AuctionsScrollFrame)
-
-	for i = 1, NUM_AUCTIONS_TO_DISPLAY do
-		local index = offset + i + NUM_AUCTION_ITEMS_PER_PAGE * AuctionFrameAuctions.page
-		if index > numItems + NUM_AUCTION_ITEMS_PER_PAGE * AuctionFrameAuctions.page then return end
-
-		local texture = _G["AuctionsButton"..i.."ItemIconTexture"]
-		if texture and texture:IsShown() then
-			local _, _, _, _, canUse = GetAuctionItemInfo("owner", offset + i)
-			if canUse and IsKnown(GetAuctionItemLink("owner", index)) then
-				texture:SetVertexColor(color.r, color.g, color.b)
-			end
-		end
-	end
-end
-
-local isBlizzard_AuctionUILoaded
-if IsAddOnLoaded("Blizzard_AuctionUI") then
-	isBlizzard_AuctionUILoaded = true
-	hooksecurefunc("AuctionFrameBrowse_Update", AuctionFrameBrowse_Update)
-	hooksecurefunc("AuctionFrameBid_Update", AuctionFrameBid_Update)
-	hooksecurefunc("AuctionFrameAuctions_Update", AuctionFrameAuctions_Update)
 end
 
 -- Black market frame
@@ -354,11 +337,9 @@ if not (isBlizzard_GuildUILoaded and isBlizzard_GuildBankUILoaded and isBlizzard
 		elseif addon == "Blizzard_GuildBankUI" then
 			isBlizzard_GuildBankUILoaded = true
 			hooksecurefunc("GuildBankFrame_Update", GuildBankFrame_Update)
-		elseif addon == "Blizzard_AuctionUI" then
+		elseif addon == "Blizzard_AuctionHouseUI" then
 			isBlizzard_AuctionUILoaded = true
-			hooksecurefunc("AuctionFrameBrowse_Update", AuctionFrameBrowse_Update)
-			hooksecurefunc("AuctionFrameBid_Update", AuctionFrameBid_Update)
-			hooksecurefunc("AuctionFrameAuctions_Update", AuctionFrameAuctions_Update)
+			hooksecurefunc(AuctionHouseFrame.BrowseResultsFrame.ItemList, "RefreshScrollFrame", AuctionHouseFrame_RefreshScrollFrame)
 		elseif addon == "Blizzard_BlackMarketUI" then
 			isBlizzard_BlackMarketUILoaded = true
 			hooksecurefunc("BlackMarketFrame_UpdateHotItem", BlackMarketFrame_UpdateHotItem)
