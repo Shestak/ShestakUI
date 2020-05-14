@@ -1,5 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
--- if C.misc.click_cast ~= true then return end
+if C.misc.click_cast ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Simple click2cast spell binder(sBinder by Fernir)
