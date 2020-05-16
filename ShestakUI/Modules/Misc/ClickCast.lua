@@ -301,26 +301,11 @@ end
 
 SpellBinder.UpdateAll = function()
 	if InCombatLockdown() then
-		SpellBinder.SheduleUpdate()
+		SpellBinder:RegisterEvent("PLAYER_REGEN_ENABLED")
 		return
 	end
 	SpellBinder:makeFramesList()
 	SpellBinder:makeSpellsList(ScrollSpells.child, true)
-end
-
-SpellBinder.SheduleUpdate = function()
-	SpellBinder.updated = false
-	if InCombatLockdown() then
-		SpellBinder:RegisterEvent("PLAYER_REGEN_ENABLED")
-		SpellBinder:SetScript("OnEvent", function()
-			SpellBinder.UpdateAll()
-			if SpellBinder.updated then
-				SpellBinder:UnregisterEvent("PLAYER_REGEN_ENABLED")
-			end
-		end)
-	else
-		SpellBinder.UpdateAll()
-	end
 end
 
 SpellBinder:RegisterEvent("PLAYER_LOGIN")
@@ -354,7 +339,10 @@ SpellBinder:SetScript("OnEvent", function(self, event)
 
 		self:UnregisterEvent("PLAYER_LOGIN")
 	elseif event == "PLAYER_ENTERING_WORLD" or event == "GROUP_ROSTER_UPDATE" or event == "ZONE_CHANGED" or event == "ZONE_CHANGED_NEW_AREA" then
+		C_Timer.After(0.5, function() SpellBinder.UpdateAll() end)
+	elseif event == "PLAYER_REGEN_ENABLED" then
 		SpellBinder.UpdateAll()
+		self:UnregisterEvent("PLAYER_REGEN_ENABLED")
 	elseif event == "PLAYER_TALENT_UPDATE" then
 		if DB then
 			for _, spell in ipairs(DB.spells) do
