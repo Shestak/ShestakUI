@@ -13,6 +13,7 @@ L_GUI_PER_CHAR = "Modifier la configuration du personnage ?"
 L_GUI_RESET_CAT = "Are you sure you want to reset category's settings?" -- Need review
 L_GUI_RESET_CAT_DESC = "Reset category's settings. \nCTRL-click to reset all" -- Need review
 L_GUI_NEED_RELOAD = "Vous devez recharger l'Interface pour appliquer vos changements."
+L_GUI_LAYOUT = "Change layout" -- Need review
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "Ces paramètres controllent les rendus de l'interface utilisateur. Saisir '/uihelp' dans le chat pour plus d'information."

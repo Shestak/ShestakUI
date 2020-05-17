@@ -872,6 +872,16 @@ do
 
 	local dps_raid_power_height = ns.CreateNumberSlider(parent, "dps_raid_power_height", nil, nil, 0, 10, 1, true)
 	dps_raid_power_height:SetPoint("LEFT", dps_party_power_height, "RIGHT", 120, 0)
+
+	local LayoutButton = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
+	LayoutButton:SetPoint("BOTTOMRIGHT", parent, "BOTTOMRIGHT", -20, 5)
+	LayoutButton:SetSize(100, 23)
+	LayoutButton:SetText(L_GUI_LAYOUT)
+	LayoutButton:SetWidth(LayoutButton.Text:GetWidth() + 15)
+	LayoutButton:SetScript("OnClick", function()
+		StaticPopup_Show("SWITCH_RAID")
+	end)
+	tinsert(ns.buttons, LayoutButton)
 end
 
 -- ActionBar

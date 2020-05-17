@@ -13,6 +13,7 @@ L_GUI_PER_CHAR = "确定要设定/取消 角色专用设定 模式?"
 L_GUI_RESET_CAT = "确定要重置当前分类到预设值?"
 L_GUI_RESET_CAT_DESC = "左键重置当前分类到预设值。\nCTRL+左键重置全部到预设值。"
 L_GUI_NEED_RELOAD = "请点击套用以重载当前改动。"
+L_GUI_LAYOUT = "Change layout" -- Need review
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "一般用戶界面设置，键入 /uihelp 获取更多可用命令。"

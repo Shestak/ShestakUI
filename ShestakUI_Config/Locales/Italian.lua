@@ -13,6 +13,7 @@ L_GUI_PER_CHAR = "Vuoi davvero modificare questa impostazione (attivazione/disat
 L_GUI_RESET_CAT = "Are you sure you want to reset category's settings?" -- Need review
 L_GUI_RESET_CAT_DESC = "Reset category's settings. \nCTRL-click to reset all" -- Need review
 L_GUI_NEED_RELOAD = "You need to reload the UI to apply your changes." -- Need review
+L_GUI_LAYOUT = "Change layout" -- Need review
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface settings. Type in chat '/uihelp' for help." -- Need review
