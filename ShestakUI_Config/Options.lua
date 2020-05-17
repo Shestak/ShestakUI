@@ -155,7 +155,7 @@ ns.addCategory("threat", L_GUI_THREAT, L_GUI_THREAT_SUBTEXT)
 ns.addCategory("toppanel", L_GUI_TOP_PANEL, L_GUI_TOP_PANEL_SUBTEXT)
 ns.addCategory("stats", L_GUI_STATS, L_GUI_STATS_SUBTEXT)
 ns.addCategory("error", L_GUI_ERROR, L_GUI_ERROR_SUBTEXT)
-ns.addCategory("misc", OTHER, L_GUI_MISC_SUBTEXT, true)
+ns.addCategory("misc", OTHER, L_GUI_MISC_SUBTEXT)
 
 -- General
 do
@@ -612,7 +612,7 @@ do
 	-- Panel 2
 	local parent = ShestakUIOptionsPanel.unitframe2
 
-	local icons_pvp = ns.CreateCheckBox(parent, "icons_pvp", L_GUI_UF_ICONS_PVP)
+	local icons_pvp = ns.CreateCheckBox(parent, "icons_pvp")
 	icons_pvp:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
 	local icons_combat = ns.CreateCheckBox(parent, "icons_combat", L_GUI_UF_ICONS_COMBAT)
@@ -1814,11 +1814,8 @@ do
 	local merchant_itemlevel = ns.CreateCheckBox(parent, "merchant_itemlevel", L_GUI_MISC_MERCHANT_ITEMLEVEL)
 	merchant_itemlevel:SetPoint("TOPLEFT", armory_link, "BOTTOMLEFT", 0, 0)
 
-	-- Panel 2
-	local parent = ShestakUIOptionsPanel.misc2
-
 	local minimize_mouseover = ns.CreateCheckBox(parent, "minimize_mouseover", L_GUI_MISC_MINIMIZE_MOUSEOVER)
-	minimize_mouseover:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+	minimize_mouseover:SetPoint("TOPLEFT", merchant_itemlevel, "BOTTOMLEFT", 0, 0)
 
 	local hide_banner = ns.CreateCheckBox(parent, "hide_banner", L_GUI_MISC_HIDE_BANNER)
 	hide_banner:SetPoint("TOPLEFT", minimize_mouseover, "BOTTOMLEFT", 0, 0)
