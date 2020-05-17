@@ -169,6 +169,7 @@ C["raidframe"] = {
 	["icons_ready_check"] = true,				-- Ready check icons on frames
 	["icons_leader"] = true,					-- Leader icon and assistant icon on frames
 	["icons_sumon"] = true,						-- Sumon icons on frames
+	["icons_phase"] = true,						-- Phase icons on frames
 	-- Plugins
 	["plugins_debuffhighlight_icon"] = false,	-- Debuff highlight texture + icon
 	["plugins_aura_watch"] = true,				-- Raid debuff icons (from the list)

@@ -151,6 +151,7 @@ L_GUI_UF_ICONS_RAID_MARK = "团队标记"
 L_GUI_UF_ICONS_READY_CHECK = "就绪确认标记"
 L_GUI_UF_ICONS_LEADER = "队长/助手标记"
 L_GUI_UF_ICONS_SUMON = "召唤标记"
+L.raidframe_icons_phase = "Phase" -- Need review
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "高亮DeBuff图标"
 L_GUI_UF_PLUGINS_AURA_WATCH = "团队法术监视"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "团队减益时间"

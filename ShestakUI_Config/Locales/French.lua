@@ -151,6 +151,7 @@ L_GUI_UF_ICONS_RAID_MARK = "Signe de raid"
 L_GUI_UF_ICONS_READY_CHECK = "Icone d'appel"
 L_GUI_UF_ICONS_LEADER = "Icone du Chef de raid, icone de l'assistant"
 L_GUI_UF_ICONS_SUMON = "Faire apparaître les icones sur les barres"
+L.raidframe_icons_phase = "Phase" -- Need review
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Mise en évidence des debuffs texture + îcone"
 L_GUI_UF_PLUGINS_AURA_WATCH = "Aura/debuff de raid"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Durée sur les icônes de débuff du raid"

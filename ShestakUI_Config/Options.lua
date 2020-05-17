@@ -811,6 +811,9 @@ do
 	local icons_sumon = ns.CreateCheckBox(parent, "icons_sumon", L_GUI_UF_ICONS_SUMON)
 	icons_sumon:SetPoint("TOPLEFT", icons_ready_check, "BOTTOMLEFT", 0, 0)
 
+	local icons_phase = ns.CreateCheckBox(parent, "icons_phase")
+	icons_phase:SetPoint("LEFT", icons_sumon, "RIGHT", 248, 0)
+
 	-- Panel 2
 	local parent = ShestakUIOptionsPanel.raidframe2
 

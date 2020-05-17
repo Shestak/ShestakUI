@@ -151,6 +151,7 @@ L_GUI_UF_ICONS_RAID_MARK = "Marchi d'incursione"
 L_GUI_UF_ICONS_READY_CHECK = "Icone dell'appello"
 L_GUI_UF_ICONS_LEADER = "Icona del capoincursione, dell'assistente"
 L_GUI_UF_ICONS_SUMON = "Icone d’evocazione sui riquadri"
+L.raidframe_icons_phase = "Phase" -- Need review
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "Evidenzia texture + icona delle penalità"
 L_GUI_UF_PLUGINS_AURA_WATCH = "Icone delle penalità d'incursione"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "Timer sulle icone delle penalità d'incursione"

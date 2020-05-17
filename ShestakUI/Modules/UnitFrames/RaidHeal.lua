@@ -18,6 +18,8 @@ local function Shared(self, unit)
 	or (self:GetParent():GetName():match("oUF_RaidHeal")) and "raid"
 	or (self:GetParent():GetName():match("oUF_MainTank")) and "tank" or unit
 
+	local suffix = self:GetAttribute("unitsuffix")
+
 	-- Set our own colors
 	self.colors = T.oUF_colors
 
@@ -33,7 +35,7 @@ local function Shared(self, unit)
 	self.Health = CreateFrame("StatusBar", nil, self)
 	self.Health:SetPoint("TOPLEFT")
 	self.Health:SetPoint("TOPRIGHT")
-	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
+	if (suffix == "pet" or suffix == "target") and unit ~= "tank" then
 		self.Health:SetPoint("BOTTOMLEFT", self, "BOTTOMLEFT", 0, 0)
 		self.Health:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 0)
 	else
@@ -77,7 +79,7 @@ local function Shared(self, unit)
 	-- Names
 	self.Info = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 	self.Info:SetWordWrap(false)
-	if (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") and unit ~= "tank" then
+	if (suffix == "pet" or suffix == "target") and unit ~= "tank" then
 		self.Info:SetPoint("LEFT", self.Health, "LEFT", 0, 0)
 		self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
 	else
@@ -86,7 +88,7 @@ local function Shared(self, unit)
 	end
 	self:Tag(self.Info, "[GetNameColor][NameShort]")
 
-	if not (self:GetAttribute("unitsuffix") == "pet" or (self:GetAttribute("unitsuffix") == "target" and unit ~= "tank")) then
+	if not (suffix == "pet" or (suffix == "target" and unit ~= "tank")) then
 		self.Health.value = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		self.Health.value:SetPoint("TOP", self.Info, "BOTTOM", 0, -1)
 		self.Health.value:SetTextColor(1, 1, 1)
@@ -142,28 +144,35 @@ local function Shared(self, unit)
 	end
 
 	-- LFD role icons
-	if C.raidframe.icons_role == true and not (self:GetAttribute("unitsuffix") == "target") then
+	if C.raidframe.icons_role == true and not (suffix == "target") then
 		self.GroupRoleIndicator = self.Health:CreateTexture(nil, "OVERLAY")
 		self.GroupRoleIndicator:SetSize(12, 12)
 		self.GroupRoleIndicator:SetPoint("TOP", self.Health, 0, 8)
 	end
 
 	-- Ready check icons
-	if C.raidframe.icons_ready_check == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
+	if C.raidframe.icons_ready_check == true and not (suffix == "target" or suffix == "targettarget") then
 		self.ReadyCheckIndicator = self.Health:CreateTexture(nil, "OVERLAY")
 		self.ReadyCheckIndicator:SetSize(12, 12)
 		self.ReadyCheckIndicator:SetPoint("BOTTOMRIGHT", self.Health, 2, 1)
 	end
 
 	-- Summon icons
-	if C.raidframe.icons_sumon == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
+	if C.raidframe.icons_sumon == true and not (suffix == "target" or suffix == "targettarget") then
 		self.SummonIndicator = self.Health:CreateTexture(nil, "OVERLAY")
 		self.SummonIndicator:SetSize(24, 24)
 		self.SummonIndicator:SetPoint("BOTTOMRIGHT", self.Health, 7, -11)
 	end
 
+	-- Phase icons
+	if C.raidframe.icons_phase == true and not (suffix == "target" or suffix == "targettarget") then
+		self.PhaseIndicator = self.Health:CreateTexture(nil, "OVERLAY")
+		self.PhaseIndicator:SetSize(20, 20)
+		self.PhaseIndicator:SetPoint("TOPRIGHT", self.Health, 5, 5)
+	end
+
 	-- Leader/Assistant icons
-	if C.raidframe.icons_leader == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
+	if C.raidframe.icons_leader == true and not (suffix == "target" or suffix == "targettarget") then
 		-- Leader icon
 		self.LeaderIndicator = self.Health:CreateTexture(nil, "OVERLAY")
 		self.LeaderIndicator:SetSize(12, 12)
@@ -176,14 +185,14 @@ local function Shared(self, unit)
 	end
 
 	-- Resurrect icon
-	if not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
+	if not (suffix == "target" or suffix == "targettarget") then
 		self.ResurrectIndicator = self.Health:CreateTexture(nil, "OVERLAY")
 		self.ResurrectIndicator:SetSize(13, 13)
 		self.ResurrectIndicator:SetPoint("BOTTOMRIGHT", self.Health, 2, -7)
 	end
 
 	-- Debuff highlight
-	if not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
+	if not (suffix == "target" or suffix == "targettarget") then
 		self.DebuffHighlight = self.Health:CreateTexture(nil, "OVERLAY")
 		self.DebuffHighlight:SetAllPoints(self.Health)
 		self.DebuffHighlight:SetTexture(C.media.highlight)
@@ -221,19 +230,19 @@ local function Shared(self, unit)
 	end
 
 	-- Range alpha
-	if C.raidframe.show_range == true and not (self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
+	if C.raidframe.show_range == true and not (suffix == "target" or suffix == "targettarget") then
 		self.Range = {insideAlpha = 1, outsideAlpha = C.raidframe.range_alpha}
 	end
 
 	-- Smooth bars
 	if C.unitframe.plugins_smooth_bar == true then
 		self.Health.Smooth = true
-		if not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target") then
+		if not (suffix == "pet" or suffix == "target") then
 			self.Power.Smooth = true
 		end
 	end
 
-	if C.raidframe.plugins_aura_watch == true and not (self:GetAttribute("unitsuffix") == "pet" or self:GetAttribute("unitsuffix") == "target" or self:GetAttribute("unitsuffix") == "targettarget") then
+	if C.raidframe.plugins_aura_watch == true and not (suffix == "pet" or suffix == "target" or suffix == "targettarget") then
 		-- Classbuffs
 		T.CreateAuraWatch(self, unit)
 

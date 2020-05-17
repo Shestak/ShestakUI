@@ -17,6 +17,7 @@
 	<Script file="Elements\HealPrediction.lua"/>
 	<Script file="Elements\Health.lua"/>
 	<Script file="Elements\LeaderIndicator.lua"/>
+	<Script file="Elements\PhaseIndicator.lua"/>
 	<Script file="Elements\Portraits.lua"/>
 	<Script file="Elements\Power.lua"/>
 	<Script file="Elements\PowerPrediction.lua"/>
