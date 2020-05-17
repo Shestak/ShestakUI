@@ -1102,34 +1102,18 @@ T.UpdateClassMana = function(self)
 	end
 end
 
-T.UpdatePvPStatus = function(self, elapsed)
-	if self.elapsed and self.elapsed > 0.2 then
-		local unit = self.unit
-		local time = GetPVPTimer()
+T.UpdatePvPStatus = function(self)
+	local unit = self.unit
 
-		local min = format("%01.f", floor((time / 1000) / 60))
-		local sec = format("%02.f", floor((time / 1000) - min * 60))
-		if self.Status then
-			local factionGroup = UnitFactionGroup(unit)
-			if UnitIsPVPFreeForAll(unit) then
-				if time ~= 301000 and time ~= -1 then
-					self.Status:SetText(PVP.." ".."["..min..":"..sec.."]")
-				else
-					self.Status:SetText(PVP)
-				end
-			elseif factionGroup and UnitIsPVP(unit) then
-				if time ~= 301000 and time ~= -1 then
-					self.Status:SetText(PVP.." ".."["..min..":"..sec.."]")
-				else
-					self.Status:SetText(PVP)
-				end
-			else
-				self.Status:SetText("")
-			end
+	if self.Status then
+		local factionGroup = UnitFactionGroup(unit)
+		if UnitIsPVPFreeForAll(unit) then
+			self.Status:SetText(PVP)
+		elseif factionGroup and UnitIsPVP(unit) then
+			self.Status:SetText(PVP)
+		else
+			self.Status:SetText("")
 		end
-		self.elapsed = 0
-	else
-		self.elapsed = (self.elapsed or 0) + elapsed
 	end
 end
 

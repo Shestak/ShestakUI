@@ -827,10 +827,7 @@ local function Shared(self, unit)
 			self.Status:Hide()
 			self.Status.Override = T.dummy
 
-			self.Status.Update = CreateFrame("Frame", nil, self)
-			self.Status.Update:SetScript("OnUpdate", function(self, elapsed) T.UpdatePvPStatus(self:GetParent(), elapsed) end)
-
-			self:SetScript("OnEnter", function(self) FlashInfo.ManaLevel:Hide() self.Status:Show() UnitFrame_OnEnter(self) end)
+			self:SetScript("OnEnter", function(self) FlashInfo.ManaLevel:Hide() T.UpdatePvPStatus(self) self.Status:Show() UnitFrame_OnEnter(self) end)
 			self:SetScript("OnLeave", function(self) FlashInfo.ManaLevel:Show() self.Status:Hide() UnitFrame_OnLeave(self) end)
 		end
 	end
