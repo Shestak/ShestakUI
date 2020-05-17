@@ -150,7 +150,6 @@ if Sw2rT1 then
 	C["general"].welcome_message = false
 	C["misc"].shift_marking = false
 	C["misc"].raid_tools = false
-	C["misc"].hide_bg_spam = true
 	C["misc"].disenchanting = true
 	C["misc"].hide_banner = false
 	C["misc"].hide_talking_head = true

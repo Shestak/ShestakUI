@@ -104,28 +104,6 @@ LFDParentFrame:HookScript("OnShow", function()
 end)
 
 ----------------------------------------------------------------------------------------
---	Remove Boss Emote spam during BG(ArathiBasin SpamFix by Partha)
-----------------------------------------------------------------------------------------
-if C.misc.hide_bg_spam == true then
-	local Fixer = CreateFrame("Frame")
-	local RaidBossEmoteFrame, spamDisabled = RaidBossEmoteFrame
-
-	local function DisableSpam()
-		if GetZoneText() == L_ZONE_ARATHIBASIN or GetZoneText() == L_ZONE_GILNEAS then
-			RaidBossEmoteFrame:UnregisterEvent("RAID_BOSS_EMOTE")
-			spamDisabled = true
-		elseif spamDisabled then
-			RaidBossEmoteFrame:RegisterEvent("RAID_BOSS_EMOTE")
-			spamDisabled = false
-		end
-	end
-
-	Fixer:RegisterEvent("PLAYER_ENTERING_WORLD")
-	Fixer:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-	Fixer:SetScript("OnEvent", DisableSpam)
-end
-
-----------------------------------------------------------------------------------------
 --	Undress button in dress-up frame(by Nefarion)
 ----------------------------------------------------------------------------------------
 local strip = CreateFrame("Button", "DressUpFrameUndressButton", DressUpFrame, "UIPanelButtonTemplate")

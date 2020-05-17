@@ -576,7 +576,6 @@ C["misc"] = {
 	["quest_auto_button"] = false,				-- Quest/item auto button (from the list)
 	["raid_tools"] = true,						-- Raid tools
 	["profession_tabs"] = true,					-- Professions tabs on TradeSkill frames
-	["hide_bg_spam"] = false,					-- Remove Boss Emote spam during BG ("Arathi Basin" and "The Battle for Gilneas")
 	["item_level"] = true,						-- Item level on character slot buttons
 	["already_known"] = true,					-- Colorizes recipes/mounts/pets/toys that is already known
 	["disenchanting"] = false,					-- Milling, Prospecting and Disenchanting by Alt + click

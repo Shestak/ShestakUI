@@ -1766,11 +1766,8 @@ do
 	local profession_tabs = ns.CreateCheckBox(parent, "profession_tabs", L_GUI_MISC_PROFESSION_TABS)
 	profession_tabs:SetPoint("TOPLEFT", raid_tools, "BOTTOMLEFT", 0, 0)
 
-	local hide_bg_spam = ns.CreateCheckBox(parent, "hide_bg_spam", L_GUI_MISC_HIDE_BG_SPAM)
-	hide_bg_spam:SetPoint("TOPLEFT", profession_tabs, "BOTTOMLEFT", 0, 0)
-
 	local item_level = ns.CreateCheckBox(parent, "item_level", L_GUI_MISC_ITEM_LEVEL)
-	item_level:SetPoint("TOPLEFT", hide_bg_spam, "BOTTOMLEFT", 0, 0)
+	item_level:SetPoint("TOPLEFT", profession_tabs, "BOTTOMLEFT", 0, 0)
 
 	local already_known = ns.CreateCheckBox(parent, "already_known", L_GUI_MISC_ALREADY_KNOWN)
 	already_known:SetPoint("TOPLEFT", item_level, "BOTTOMLEFT", 0, 0)
