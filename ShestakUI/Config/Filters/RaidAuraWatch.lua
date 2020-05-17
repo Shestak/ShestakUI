@@ -207,7 +207,7 @@ T.RaidDebuffs = {
 	[SpellName(283617)] = 3,	-- Wave of Light
 	[SpellName(283651)] = 3,	-- Blinding Faith
 	[SpellName(284595)] = 3,	-- Penance
-	[SpellName(283582)] = 3,	-- Consecration
+	-- [SpellName(283582)] = 3,	-- Consecration
 
 	-- Grong
 	[SpellName(285998)] = 3,	-- Ferocious Roar
