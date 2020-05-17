@@ -147,7 +147,6 @@ L_GUI_UF_PLUGINS_HOLY_BAR = "Enable Holy Power bar"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Enable Shards bar"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Enable Rune bar"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Enable Totem bar"
-L_GUI_UF_PLUGINS_RANGE_BAR = "Enable Range bar (for Priest)"
 
 -- Raid Frames options
 L_GUI_UF_RAIDFRAMES_SUBTEXT = "Customize the appearance of the raid frames."

@@ -67,22 +67,10 @@ local function Update(self, _, unit, powerType)
 			end
 		end
 
-		if self.RangeBar then
-			if element[1]:IsShown() and self.RangeBar:IsShown() then
-				element:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 21)
-				if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 33) end
-			elseif element[1]:IsShown() or self.RangeBar:IsShown() then
-				element:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
-			else
-				if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
-			end
+		if element[1]:IsShown() then
+			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
 		else
-			if element[1]:IsShown() then
-				if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 19) end
-			else
-				if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
-			end
+			if self.Auras then self.Auras:SetPoint("BOTTOMLEFT", self, "TOPLEFT", -2, 5) end
 		end
 	end
 end

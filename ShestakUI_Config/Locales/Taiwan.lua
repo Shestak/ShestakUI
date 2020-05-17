@@ -125,7 +125,6 @@ L_GUI_UF_PLUGINS_HOLY_BAR = "聖光能量"
 L_GUI_UF_PLUGINS_SHARD_BAR = "靈魂碎片"
 L_GUI_UF_PLUGINS_RUNE_BAR = "符文"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "圖騰"
-L_GUI_UF_PLUGINS_RANGE_BAR = "距離顯示(僅牧師)"
 
 -- Raid Frames options
 L_GUI_UF_RAIDFRAMES_SUBTEXT = "定制隊伍/團隊框架"

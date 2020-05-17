@@ -734,9 +734,6 @@ do
 
 	local totem = ns.CreateCheckBox(parent, "totem", L_GUI_UF_PLUGINS_TOTEM_BAR)
 	totem:SetPoint("TOPLEFT", rune, "BOTTOMLEFT", 0, 0)
-
-	local range = ns.CreateCheckBox(parent, "range", L_GUI_UF_PLUGINS_RANGE_BAR)
-	range:SetPoint("TOPLEFT", totem, "BOTTOMLEFT", 0, 0)
 end
 
 -- Raid Frames

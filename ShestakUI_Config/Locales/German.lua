@@ -125,7 +125,6 @@ L_GUI_UF_PLUGINS_HOLY_BAR = "Aktivere Heilige Kraft Leiste"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Aktiviere Splitter Leiste"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Runenleiste"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Totemleiste"
-L_GUI_UF_PLUGINS_RANGE_BAR = "Aktiviere Abstandsleiste"
 
 -- Raid Frames options
 L_GUI_UF_RAIDFRAMES_SUBTEXT = "Customize the appearance of the raid frames." -- Need review

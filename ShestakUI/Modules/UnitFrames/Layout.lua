@@ -784,19 +784,6 @@ local function Shared(self, unit)
 				self.CPoints[6]:SetStatusBarColor(0.1, 0.9, 0.1)
 			end
 
-			-- Priest Range bar
-			if C.unitframe_class_bar.range == true and T.class == "PRIEST" then
-				self.RangeBar = CreateFrame("StatusBar", self:GetName().."_RangeBar", self)
-				self.RangeBar:CreateBackdrop("Default")
-				self.RangeBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.RangeBar:SetSize(217, 7)
-				self.RangeBar:SetStatusBarTexture(C.media.texture)
-
-				self.RangeBar.bg = self.RangeBar:CreateTexture(nil, "BORDER")
-				self.RangeBar.bg:SetAllPoints()
-				self.RangeBar.bg:SetTexture(C.media.texture)
-			end
-
 			-- Enemy specialization
 			if C.unitframe.plugins_enemy_spec == true then
 				self.EnemySpec = T.SetFontString(self.Power, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)

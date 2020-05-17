@@ -125,7 +125,6 @@ L_GUI_UF_PLUGINS_HOLY_BAR = "Activer la barre de Puissance sacrée"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Activier la barre de Fragment d'âme"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Activer la barre de Rune"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Activer la barre de Totem"
-L_GUI_UF_PLUGINS_RANGE_BAR = "Active la barre de distance (pour la classe Prêtre)"
 
 -- Raid Frames options
 L_GUI_UF_RAIDFRAMES_SUBTEXT = "Customize the appearance of the raid frames." -- Need review

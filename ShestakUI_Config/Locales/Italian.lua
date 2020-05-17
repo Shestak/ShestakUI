@@ -125,7 +125,6 @@ L_GUI_UF_PLUGINS_HOLY_BAR = "Attiva la barra di classe del paladino"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Attiva la barra di classe dello stregone"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Attiva la barra di classe del cavaliere della morte"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Attiva la barra dei totems dello sciamano"
-L_GUI_UF_PLUGINS_RANGE_BAR = "Attiva la barra della distanza per i sacerdoti"
 
 -- Raid Frames options
 L_GUI_UF_RAIDFRAMES_SUBTEXT = "Customize the appearance of the raid frames." -- Need review
