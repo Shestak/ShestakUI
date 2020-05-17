@@ -46,9 +46,17 @@ local function LoadSkin()
 					if widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.TextWithState then
 						widgetFrame.Text:SetTextColor(1, 1, 1)
 					elseif widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.SpellDisplay then
-						local r, g, b = widgetFrame.Spell.Text:GetTextColor()
-						if r < 0.2 and g < 0.2 and b < 0.2 then
+						local _, g = widgetFrame.Spell.Text:GetTextColor()
+						if g < 0.2 then
 							widgetFrame.Spell.Text:SetTextColor(1, 1, 1)
+						end
+						widgetFrame.Spell.Border:Hide()
+						widgetFrame.Spell.IconMask:Hide()
+						if not widgetFrame.Spell.backdrop then
+							widgetFrame.Spell.Icon:SkinIcon()
+						end
+						if widgetFrame.Spell.Icon:GetWidth() < 25 then
+							widgetFrame.Spell.Icon:SetSize(20, 20)
 						end
 					end
 				end
