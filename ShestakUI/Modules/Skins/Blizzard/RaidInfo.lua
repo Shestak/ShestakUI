@@ -6,36 +6,37 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	local StripAllTextures = {
-		"RaidInfoScrollFrame",
-		"RaidInfoFrame",
-		"RaidInfoInstanceLabel",
-		"RaidInfoIDLabel"
+		RaidInfoScrollFrame,
+		RaidInfoFrame,
+		RaidInfoInstanceLabel,
+		RaidInfoIDLabel,
+		RaidInfoFrame.Header
 	}
 
 	local KillTextures = {
-		"RaidInfoScrollFrameScrollBarBG",
-		"RaidInfoScrollFrameScrollBarTop",
-		"RaidInfoScrollFrameScrollBarBottom",
-		"RaidInfoScrollFrameScrollBarMiddle"
+		RaidInfoScrollFrameScrollBarBG,
+		RaidInfoScrollFrameScrollBarTop,
+		RaidInfoScrollFrameScrollBarBottom,
+		RaidInfoScrollFrameScrollBarMiddle
 	}
 
 	local buttons = {
-		"RaidFrameConvertToRaidButton",
-		"RaidFrameRaidInfoButton",
-		"RaidInfoExtendButton",
-		"RaidInfoCancelButton"
+		RaidFrameConvertToRaidButton,
+		RaidFrameRaidInfoButton,
+		RaidInfoExtendButton,
+		RaidInfoCancelButton
 	}
 
 	for _, object in pairs(StripAllTextures) do
-		_G[object]:StripTextures()
+		object:StripTextures()
 	end
 
 	for _, texture in pairs(KillTextures) do
-		_G[texture]:Kill()
+		texture:Kill()
 	end
 
 	for i = 1, #buttons do
-		_G[buttons[i]]:SkinButton()
+		buttons[i]:SkinButton()
 	end
 
 	RaidInfoFrame:CreateBackdrop("Transparent")
