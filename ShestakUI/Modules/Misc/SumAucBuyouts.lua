@@ -7,28 +7,35 @@ if C.misc.sum_buyouts ~= true then return end
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")
 frame:SetScript("OnEvent", function(_, _, addon)
-	if addon == "Blizzard_AuctionUI" then
-		local f = CreateFrame("Frame", nil, AuctionFrameAuctions)
+	if addon == "Blizzard_AuctionHouseUI" then
+		local f = CreateFrame("Frame", nil, AuctionHouseFrame)
 		f:SetSize(200, 20)
-		f:SetPoint("LEFT", AuctionFrameMoneyFrame, "RIGHT", 38, -1)
+		f:SetPoint("LEFT", AuctionHouseFrame.MoneyFrameBorder, "RIGHT", 38, -1)
 
-		local text = f:CreateFontString(nil, "OVERLAY", "GameFontHighlightMedium")
+		local text = f:CreateFontString(nil, "OVERLAY", "PriceFont")
 		text:SetPoint("LEFT")
 
-		f:RegisterEvent("AUCTION_OWNED_LIST_UPDATE")
+		f:RegisterEvent("OWNED_AUCTIONS_UPDATED")
 		f:SetScript("OnEvent", function()
 			local totalBuyout = 0
 			local totalBid = 0
 
-			for i = 1, GetNumAuctionItems("owner") do
-				totalBuyout = totalBuyout + select(10, GetAuctionItemInfo("owner", i))
-				totalBid = totalBid + select(8, GetAuctionItemInfo("owner", i))
+			for i = 1, C_AuctionHouse.GetNumOwnedAuctions() do
+				local info = C_AuctionHouse.GetOwnedAuctionInfo(i)
+				if info.buyoutAmount then
+					totalBuyout = totalBuyout + (info.buyoutAmount * info.quantity)
+				end
+				if info.bidAmount then
+					totalBid = totalBid + info.bidAmount
+				end
 			end
 
-			if totalBuyout > 0 then
+			if totalBid > 0 and totalBuyout > 0 then
 				text:SetText(BIDS..": "..GetCoinTextureString(totalBid).."     "..BUYOUT..": "..GetCoinTextureString(totalBuyout))
 			elseif totalBid > 0 and totalBuyout == 0 then
 				text:SetText(BIDS..": "..GetCoinTextureString(totalBid))
+			elseif totalBid == 0 and totalBuyout > 0 then
+				text:SetText(BUYOUT..": "..GetCoinTextureString(totalBuyout))
 			else
 				text:SetText("")
 			end
