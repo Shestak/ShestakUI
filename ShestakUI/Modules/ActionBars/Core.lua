@@ -190,44 +190,41 @@ frame:SetScript("OnEvent", function(self)
 			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
 			ActionButton_ShowGrid(button, reason)
+			button:SetAttribute("statehidden", true)
 
 			button = _G[format("MultiBarRightButton%d", i)]
 			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
 			ActionButton_ShowGrid(button, reason)
+			button:SetAttribute("statehidden", true)
 
 			button = _G[format("MultiBarBottomRightButton%d", i)]
 			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
 			ActionButton_ShowGrid(button, reason)
+			button:SetAttribute("statehidden", true)
 
 			button = _G[format("MultiBarLeftButton%d", i)]
 			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
 			ActionButton_ShowGrid(button, reason)
+			button:SetAttribute("statehidden", true)
 
 			button = _G[format("MultiBarBottomLeftButton%d", i)]
 			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
 			ActionButton_ShowGrid(button, reason)
+			button:SetAttribute("statehidden", true)
+
+			if _G["VehicleMenuBarActionButton"..i] then
+				_G["VehicleMenuBarActionButton"..i]:SetAttribute("statehidden", true)
+			end
+
+			_G["MultiCastActionButton"..i]:SetAttribute("showgrid", 1)
+			_G["MultiCastActionButton"..i]:SetAttribute("statehidden", true)
 		end
 	else
 		SetCVar("alwaysShowActionBars", 0)
-	end
-
-	for i = 1, 12 do
-		_G["ActionButton"..i]:SetAttribute("statehidden", true)
-		_G["MultiBarBottomLeftButton"..i]:SetAttribute("statehidden", true)
-		_G["MultiBarBottomRightButton"..i]:SetAttribute("statehidden", true)
-		_G["MultiBarRightButton"..i]:SetAttribute("statehidden", true)
-		_G["MultiBarLeftButton"..i]:SetAttribute("statehidden", true)
-
-		if _G["VehicleMenuBarActionButton"..i] then
-			_G["VehicleMenuBarActionButton"..i]:SetAttribute("statehidden", true)
-		end
-
-		_G["MultiCastActionButton"..i]:SetAttribute("showgrid", 1)
-		_G["MultiCastActionButton"..i]:SetAttribute("statehidden", true)
 	end
 end)
 
