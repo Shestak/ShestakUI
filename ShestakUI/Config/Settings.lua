@@ -177,6 +177,7 @@ C["raidframe"] = {
 	["plugins_healcomm"] = true,				-- Incoming heal bar on raid frame
 	["plugins_auto_resurrection"] = false,		-- Auto cast resurrection on middle-click (doesn't work with Clique)
 	["hide_health_value"] = false,				-- Hide health value (only for heal layout)
+	["auto_position"] = true,					-- Auto reposition raid frame (only for heal layout)
 	-- Heal layout size
 	["heal_width"] = 60.2,						-- Unit width
 	["heal_height"] = 26,						-- Unit height

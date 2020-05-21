@@ -837,8 +837,11 @@ do
 	local hide_health_value = ns.CreateCheckBox(parent, "hide_health_value")
 	hide_health_value:SetPoint("TOPLEFT", plugins_auto_resurrection, "BOTTOMLEFT", 0, 0)
 
+	local auto_position = ns.CreateCheckBox(parent, "auto_position")
+	auto_position:SetPoint("TOPLEFT", hide_health_value, "BOTTOMLEFT", 0, 0)
+
 	local subheader = ns.addSubCategory(parent, L.raidframe_subheader_heal_size)
-	subheader:SetPoint("TOPLEFT", hide_health_value, "BOTTOMLEFT", 0, -10)
+	subheader:SetPoint("TOPLEFT", auto_position, "BOTTOMLEFT", 0, -10)
 
 	local heal_width = ns.CreateNumberSlider(parent, "heal_width", nil, nil, 50, 120, 1, true)
 	heal_width:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -30)
