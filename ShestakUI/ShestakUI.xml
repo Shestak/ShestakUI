@@ -71,7 +71,6 @@
 	<Script file="Modules\Misc\Misc.lua"/>
 	<Script file="Modules\Misc\Mounts.lua"/>
 	<Script file="Modules\Misc\MouseoverMarking.lua"/>
-	<Script file="Modules\Misc\OneClickBuyOut.lua"/>
 	<Script file="Modules\Misc\OneClickDisenchanting.lua"/>
 	<Script file="Modules\Misc\OneClickEnchantScroll.lua"/>
 	<Script file="Modules\Misc\ProfessionTabs.lua"/>
