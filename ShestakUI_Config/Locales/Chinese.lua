@@ -13,7 +13,7 @@ L_GUI_PER_CHAR = "确定要设定/取消 角色专用设定 模式?"
 L_GUI_RESET_CAT = "确定要重置当前分类到预设值?"
 L_GUI_RESET_CAT_DESC = "左键重置当前分类到预设值。\nCTRL+左键重置全部到预设值。"
 L_GUI_NEED_RELOAD = "请点击套用以重载当前改动。"
-L_GUI_LAYOUT = "Change layout" -- Need review
+L_GUI_LAYOUT = "布局切换"
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "一般用戶界面设置，键入 /uihelp 获取更多可用命令。"
@@ -83,7 +83,7 @@ L_GUI_UF_BOSS_DEBUFFS = "DeBuff数量"
 L_GUI_UF_BOSS_DEBUFFS_DESC = "Boss框架DeBuff数量"
 L_GUI_UF_BOSS_BUFFS = "Buff数量"
 L_GUI_UF_BOSS_BUFFS_DESC = "Boss框架Buff数量"
-L.unitframe_icons_pvp = "PvP status text" -- Need review
+L.unitframe_icons_pvp = "PvP状态"
 L.unitframe_icons_pvp_desc = "PvP状态(鼠标悬停显示)"
 L_GUI_UF_ICONS_COMBAT = "战斗标记"
 L_GUI_UF_ICONS_RESTING = "休息标记"
@@ -152,7 +152,7 @@ L_GUI_UF_ICONS_RAID_MARK = "团队标记"
 L_GUI_UF_ICONS_READY_CHECK = "就绪确认标记"
 L_GUI_UF_ICONS_LEADER = "队长/助手标记"
 L_GUI_UF_ICONS_SUMON = "召唤标记"
-L.raidframe_icons_phase = "Phase" -- Need review
+L.raidframe_icons_phase = "相位标记"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "高亮DeBuff图标"
 L_GUI_UF_PLUGINS_AURA_WATCH = "团队法术监视"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "团队减益时间"
