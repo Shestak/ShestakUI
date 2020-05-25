@@ -159,50 +159,41 @@ hooksecurefunc("LFRBrowseFrameListButton_SetData", function(button, index)
 	end
 end)
 
--- WorldStateScoreList
---[[FIXME
-hooksecurefunc("WorldStateScoreFrame_Update", function()
-	local inArena = IsActiveBattlefieldArena()
-	local offset = FauxScrollFrame_GetOffset(WorldStateScoreScrollFrame)
+-- PVPMatchResults
+hooksecurefunc(PVPCellNameMixin, "Populate", function(self, rowData)
+	local name = rowData.name
+	local className = rowData.className or ""
+	local n, r = strsplit("-", name, 2)
+	n = classColor[className]..n.."|r"
 
-	for i = 1, GetNumBattlefieldScores() do
-		local index = offset + i
-		local name, _, _, _, _, faction, _, _, class = GetBattlefieldScore(index)
-		if name then
-			local n, r = strsplit("-", name, 2)
-			n = classColor[class]..n.."|r"
+	if name == UnitName("player") then
+		n = ">>> "..n.." <<<"
+	end
 
-			if name == T.name then
-				n = ">>> "..n.." <<<"
+	if r then
+		local color
+		local faction = rowData.faction
+		local inArena = IsActiveBattlefieldArena()
+		if inArena then
+			if faction == 1 then
+				color = "|cffffd100"
+			else
+				color = "|cff19ff19"
 			end
-
-			if r then
-				local color
-				if inArena then
-					if faction == 1 then
-						color = "|cffffd100"
-					else
-						color = "|cff19ff19"
-					end
-				else
-					if faction == 1 then
-						color = "|cff00adf0"
-					else
-						color = "|cffff1919"
-					end
-				end
-				r = color..r.."|r"
-				n = n.."|cffffffff - |r"..r
-			end
-
-			local button = _G["WorldStateScoreButton"..i]
-			if button then
-				button.name.text:SetText(n)
+		else
+			if faction == 1 then
+				color = "|cff00adf0"
+			else
+				color = "|cffff1919"
 			end
 		end
+		r = color..r.."|r"
+		n = n.."|cffffffff - |r"..r
 	end
+
+	local text = self.text
+	text:SetText(n)
 end)
---]]
 
 local _VIEW
 
