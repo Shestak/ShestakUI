@@ -10,7 +10,7 @@ frame:SetScript("OnEvent", function()
 	if not IsAddOnLoaded("Capping") then return end
 
 	local db = CappingFrame.db.profile
-	db.barTexture = "Smooth"
+	db.barTexture = "Smooth!"
 	db.spacing = 7
 	db.font = "Hooge"
 	db.fontSize = C.font.stylization_font_size
