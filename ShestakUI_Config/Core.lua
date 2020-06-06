@@ -743,10 +743,14 @@ local function displaySettings()
 	userChangedSlider = false
 
 	for _, slider in pairs(sliders) do
-		slider:SetValue(C[slider.group][slider.option])
-		slider.textInput:SetText(floor(C[slider.group][slider.option]*1000)/1000)
+		local value = C[slider.group][slider.option]
+		if slider.group == "font" and T.screenHeight > 1200 then
+			value = value / T.mult
+		end
+		slider:SetValue(value)
+		slider.textInput:SetText(floor(value*1000)/1000)
 		slider.textInput:SetCursorPosition(0)
-		slider.oldValue = C[slider.group][slider.option]
+		slider.oldValue = value
 	end
 
 	userChangedSlider = true
