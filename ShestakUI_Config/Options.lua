@@ -683,8 +683,14 @@ do
 	-- Panel 3
 	local parent = ShestakUIOptionsPanel.unitframe3
 
+	local subheader = ns.addSubCategory(parent, L.unitframe_subheader_player_width)
+	subheader:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local player_width = ns.CreateNumberSlider(parent, "player_width", nil, nil, 105, 400, 1, true)
+	player_width:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -28)
+
 	local extra_height_auto = ns.CreateCheckBox(parent, "extra_height_auto")
-	extra_height_auto:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+	extra_height_auto:SetPoint("TOPLEFT", player_width, "BOTTOMLEFT", 0, -20)
 
 	local extra_health_height = ns.CreateNumberSlider(parent, "extra_health_height", nil, nil, 0, 40, 1, true)
 	extra_health_height:SetPoint("TOPLEFT", extra_height_auto, "BOTTOMLEFT", 0, -20)

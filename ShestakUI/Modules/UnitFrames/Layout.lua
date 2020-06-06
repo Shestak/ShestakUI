@@ -13,6 +13,9 @@ if C.unitframe.extra_height_auto then
 end
 T.extraHeight = C.unitframe.extra_health_height + C.unitframe.extra_power_height
 
+local player_width = C.unitframe.player_width
+local pet_width = (player_width - 7) / 2
+
 -- Create layout
 local function Shared(self, unit)
 	-- Set our own colors
@@ -49,7 +52,7 @@ local function Shared(self, unit)
 	elseif unit == "arenatarget" then
 		self.Health:SetHeight(27 + T.extraHeight)
 	else
-		self.Health:SetHeight(13)
+		self.Health:SetHeight(13 + (C.unitframe.extra_health_height / 2))
 	end
 	self.Health:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
 	self.Health:SetPoint("TOPRIGHT", self, "TOPRIGHT", 0, 0)
@@ -279,13 +282,13 @@ local function Shared(self, unit)
 			self.Runes = CreateFrame("Frame", self:GetName().."_RuneBar", self)
 			self.Runes:CreateBackdrop("Default")
 			self.Runes:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.Runes:SetSize(217, 7)
+			self.Runes:SetSize(player_width, 7)
 			self.Runes.colorSpec = true
 			self.Runes.sortOrder = "asc"
 
 			for i = 1, 6 do
 				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_RuneBar", self.Runes)
-				self.Runes[i]:SetSize(212 / 6, 7)
+				self.Runes[i]:SetSize((player_width - 5) / 6, 7)
 				if i == 1 then
 					self.Runes[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				else
@@ -306,11 +309,11 @@ local function Shared(self, unit)
 				self.ArcaneCharge = CreateFrame("Frame", self:GetName().."_ArcaneCharge", self)
 				self.ArcaneCharge:CreateBackdrop("Default")
 				self.ArcaneCharge:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.ArcaneCharge:SetSize(217, 7)
+				self.ArcaneCharge:SetSize(player_width, 7)
 
 				for i = 1, 4 do
 					self.ArcaneCharge[i] = CreateFrame("StatusBar", self:GetName().."_ArcaneCharge"..i, self.ArcaneCharge)
-					self.ArcaneCharge[i]:SetSize(214 / 4, 7)
+					self.ArcaneCharge[i]:SetSize((player_width - 3) / 4, 7)
 					if i == 1 then
 						self.ArcaneCharge[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 					else
@@ -333,11 +336,11 @@ local function Shared(self, unit)
 				self.HarmonyBar = CreateFrame("Frame", self:GetName().."_HarmonyBar", self)
 				self.HarmonyBar:CreateBackdrop("Default")
 				self.HarmonyBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.HarmonyBar:SetSize(217, 7)
+				self.HarmonyBar:SetSize(player_width, 7)
 
 				for i = 1, 6 do
 					self.HarmonyBar[i] = CreateFrame("StatusBar", self:GetName().."_HarmonyBar", self.HarmonyBar)
-					self.HarmonyBar[i]:SetSize(212 / 6, 7)
+					self.HarmonyBar[i]:SetSize((player_width - 5) / 6, 7)
 					if i == 1 then
 						self.HarmonyBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 					else
@@ -358,7 +361,7 @@ local function Shared(self, unit)
 				self.Stagger = CreateFrame("StatusBar", self:GetName().."_Stagger", self)
 				self.Stagger:CreateBackdrop("Default")
 				self.Stagger:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.Stagger:SetSize(217, 7)
+				self.Stagger:SetSize(player_width, 7)
 				self.Stagger:SetStatusBarTexture(C.media.texture)
 
 				self.Stagger.bg = self.Stagger:CreateTexture(nil, "BORDER")
@@ -376,11 +379,11 @@ local function Shared(self, unit)
 			self.HolyPower = CreateFrame("Frame", self:GetName().."_HolyPowerBar", self)
 			self.HolyPower:CreateBackdrop("Default")
 			self.HolyPower:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.HolyPower:SetSize(217, 7)
+			self.HolyPower:SetSize(player_width, 7)
 
 			for i = 1, 5 do
 				self.HolyPower[i] = CreateFrame("StatusBar", self:GetName().."_HolyPower"..i, self.HolyPower)
-				self.HolyPower[i]:SetSize(213 / 5, 7)
+				self.HolyPower[i]:SetSize((player_width - 4) / 5, 7)
 				if i == 1 then
 					self.HolyPower[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				else
@@ -401,11 +404,11 @@ local function Shared(self, unit)
 			self.SoulShards = CreateFrame("Frame", self:GetName().."SoulShards", self)
 			self.SoulShards:CreateBackdrop("Default")
 			self.SoulShards:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.SoulShards:SetSize(217, 7)
+			self.SoulShards:SetSize(player_width, 7)
 
 			for i = 1, 5 do
 				self.SoulShards[i] = CreateFrame("StatusBar", self:GetName().."SoulShards"..i, self.SoulShards)
-				self.SoulShards[i]:SetSize(213 / 5, 7)
+				self.SoulShards[i]:SetSize((player_width - 4) / 5, 7)
 				if i == 1 then
 					self.SoulShards[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				else
@@ -426,11 +429,11 @@ local function Shared(self, unit)
 			self.CPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)
 			self.CPoints:CreateBackdrop("Default")
 			self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.CPoints:SetSize(217, 7)
+			self.CPoints:SetSize(player_width, 7)
 
 			for i = 1, 6 do
 				self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar", self.CPoints)
-				self.CPoints[i]:SetSize(212 / 6, 7)
+				self.CPoints[i]:SetSize((player_width - 5) / 6, 7)
 				if i == 1 then
 					self.CPoints[i]:SetPoint("LEFT", self.CPoints)
 				else
@@ -452,12 +455,12 @@ local function Shared(self, unit)
 			self.TotemBar = CreateFrame("Frame", self:GetName().."_TotemBar", self)
 			self.TotemBar:CreateBackdrop("Default")
 			self.TotemBar:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-			self.TotemBar:SetSize(217, 7)
+			self.TotemBar:SetSize(player_width, 7)
 			self.TotemBar.Destroy = true
 
 			for i = 1, 4 do
 				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
-				self.TotemBar[i]:SetSize(214 / 4, 7)
+				self.TotemBar[i]:SetSize((player_width - 3) / 4, 7)
 
 				if i == 1 then
 					self.TotemBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -514,11 +517,11 @@ local function Shared(self, unit)
 			self.Experience:CreateBackdrop("Default")
 			self.Experience:EnableMouse(true)
 			if C.unitframe.portrait_enable == true then
-				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 27)
+				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
 			else
-				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 27)
+				self.Experience:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
 			end
-			self.Experience:SetSize(7, 94)
+			self.Experience:SetSize(7, 94 + T.extraHeight + (C.unitframe.extra_health_height / 2))
 			self.Experience:SetOrientation("Vertical")
 			self.Experience:SetStatusBarTexture(C.media.texture)
 
@@ -542,18 +545,18 @@ local function Shared(self, unit)
 			self.Reputation:EnableMouse(true)
 			if C.unitframe.portrait_enable == true then
 				if self.Experience and self.Experience:IsShown() then
-					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 27)
+					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
 				else
-					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 27)
+					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
 				end
 			else
 				if self.Experience and self.Experience:IsShown() then
-					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 27)
+					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 28)
 				else
-					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 27)
+					self.Reputation:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
 				end
 			end
-			self.Reputation:SetSize(7, 94)
+			self.Reputation:SetSize(7, 94 + T.extraHeight + (C.unitframe.extra_health_height / 2))
 			self.Reputation:SetOrientation("Vertical")
 			self.Reputation:SetStatusBarTexture(C.media.texture)
 
@@ -574,33 +577,33 @@ local function Shared(self, unit)
 			if C.unitframe.portrait_enable == true then
 				if self.Experience and self.Experience:IsShown() then
 					if C.unitframe.plugins_reputation_bar == true then
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -53 - C.unitframe.portrait_width, 27)
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -53 - C.unitframe.portrait_width, 28)
 					else
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 27)
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
 					end
 				else
 					if C.unitframe.plugins_reputation_bar == true then
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 27)
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
 					else
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 27)
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
 					end
 				end
 			else
 				if self.Experience and self.Experience:IsShown() then
 					if C.unitframe.plugins_reputation_bar == true then
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -46, 27)
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -46, 28)
 					else
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 27)
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 28)
 					end
 				else
 					if C.unitframe.plugins_reputation_bar == true then
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 27)
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 28)
 					else
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 27)
+						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
 					end
 				end
 			end
-			self.ArtifactPower:SetSize(7, 94)
+			self.ArtifactPower:SetSize(7, 94 + T.extraHeight + (C.unitframe.extra_health_height / 2))
 			self.ArtifactPower:SetOrientation("Vertical")
 			self.ArtifactPower:SetStatusBarTexture(C.media.texture)
 
@@ -614,7 +617,7 @@ local function Shared(self, unit)
 		-- GCD spark
 		if C.unitframe.plugins_gcd == true then
 			self.GCD = CreateFrame("Frame", self:GetName().."_GCD", self)
-			self.GCD:SetWidth(220)
+			self.GCD:SetWidth(player_width + 3)
 			self.GCD:SetHeight(3)
 			self.GCD:SetFrameStrata("HIGH")
 			self.GCD:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 0)
@@ -663,7 +666,7 @@ local function Shared(self, unit)
 	if unit == "pet" or unit == "targettarget" or unit == "focus" or unit == "focustarget" then
 		self.Debuffs = CreateFrame("Frame", self:GetName().."Debuffs", self)
 		self.Debuffs:SetHeight(25)
-		self.Debuffs:SetWidth(109)
+		self.Debuffs:SetWidth(pet_width + 4)
 		self.Debuffs.size = T.Scale(C.aura.player_debuff_size)
 		self.Debuffs.spacing = T.Scale(3)
 		self.Debuffs.num = 4
@@ -722,7 +725,7 @@ local function Shared(self, unit)
 		if unit == "player" then
 			self.Debuffs = CreateFrame("Frame", self:GetName().."Debuffs", self)
 			self.Debuffs:SetHeight(165)
-			self.Debuffs:SetWidth(221)
+			self.Debuffs:SetWidth(player_width + 4)
 			self.Debuffs.size = T.Scale(C.aura.player_debuff_size)
 			self.Debuffs.spacing = T.Scale(3)
 			self.Debuffs.initialAnchor = "BOTTOMRIGHT"
@@ -750,7 +753,7 @@ local function Shared(self, unit)
 			self.Auras.numDebuffs = 16
 			self.Auras.numBuffs = 32
 			self.Auras:SetHeight(165)
-			self.Auras:SetWidth(221)
+			self.Auras:SetWidth(player_width + 4)
 			self.Auras.spacing = T.Scale(3)
 			self.Auras.size = T.Scale(C.aura.player_debuff_size)
 			self.Auras.gap = true
@@ -763,11 +766,11 @@ local function Shared(self, unit)
 				self.CPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)
 				self.CPoints:CreateBackdrop("Default")
 				self.CPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
-				self.CPoints:SetSize(217, 7)
+				self.CPoints:SetSize(player_width, 7)
 
 				for i = 1, 6 do
 					self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar", self.CPoints)
-					self.CPoints[i]:SetSize(212 / 6, 7)
+					self.CPoints[i]:SetSize((player_width - 5) / 6, 7)
 					if i == 1 then
 						self.CPoints[i]:SetPoint("LEFT", self.CPoints)
 					else
@@ -869,7 +872,7 @@ local function Shared(self, unit)
 			self.Castbar:SetHeight(16)
 		else
 			self.Castbar:SetPoint("TOPLEFT", self, "BOTTOMLEFT", 0, -7)
-			self.Castbar:SetWidth(105)
+			self.Castbar:SetWidth(pet_width)
 			self.Castbar:SetHeight(5)
 		end
 
@@ -1156,7 +1159,7 @@ local function Shared(self, unit)
 		mainBar:SetPoint("RIGHT", self.Power:GetStatusBarTexture(), "RIGHT")
 		mainBar:SetStatusBarTexture(C.media.texture)
 		mainBar:SetStatusBarColor(1, 1, 1, 0.5)
-		mainBar:SetWidth(217)
+		mainBar:SetWidth(player_width)
 
 		self.PowerPrediction = {
 			mainBar = mainBar
@@ -1187,32 +1190,32 @@ oUF:RegisterStyle("Shestak", Shared)
 
 local player = oUF:Spawn("player", "oUF_Player")
 player:SetPoint(unpack(C.position.unitframes.player))
-player:SetSize(217, 27 + T.extraHeight)
+player:SetSize(player_width, 27 + T.extraHeight)
 
 local target = oUF:Spawn("target", "oUF_Target")
 target:SetPoint(unpack(C.position.unitframes.target))
-target:SetSize(217, 27 + T.extraHeight)
+target:SetSize(player_width, 27 + T.extraHeight)
 
 if C.unitframe.show_pet == true then
 	local pet = oUF:Spawn("pet", "oUF_Pet")
 	pet:SetPoint(unpack(C.position.unitframes.pet))
-	pet:SetSize(105, 16)
+	pet:SetSize(pet_width, 16 + (C.unitframe.extra_health_height / 2))
 end
 
 if C.unitframe.show_focus == true then
 	local focus = oUF:Spawn("focus", "oUF_Focus")
 	focus:SetPoint(unpack(C.position.unitframes.focus))
-	focus:SetSize(105, 16)
+	focus:SetSize(pet_width, 16 + (C.unitframe.extra_health_height / 2))
 
 	local focustarget = oUF:Spawn("focustarget", "oUF_FocusTarget")
 	focustarget:SetPoint(unpack(C.position.unitframes.focus_target))
-	focustarget:SetSize(105, 16)
+	focustarget:SetSize(pet_width, 16 + (C.unitframe.extra_health_height / 2))
 end
 
 if C.unitframe.show_target_target == true then
 	local targettarget = oUF:Spawn("targettarget", "oUF_TargetTarget")
 	targettarget:SetPoint(unpack(C.position.unitframes.target_target))
-	targettarget:SetSize(105, 16)
+	targettarget:SetSize(pet_width, 16 + (C.unitframe.extra_health_height / 2))
 end
 
 if C.unitframe.show_boss == true then
@@ -1413,10 +1416,10 @@ SLASH_TEST_UF4 = "/еуыега"
 ----------------------------------------------------------------------------------------
 if C.unitframe.lines == true then
 	local HorizontalPlayerLine = CreateFrame("Frame", "HorizontalPlayerLine", oUF_Player)
-	HorizontalPlayerLine:CreatePanel("ClassColor", 228, 1, "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -5, -5)
+	HorizontalPlayerLine:CreatePanel("ClassColor", player_width + 11, 1, "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -5, -5)
 
 	local VerticalPlayerLine = CreateFrame("Frame", "VerticalPlayerLine", oUF_Player)
-	VerticalPlayerLine:CreatePanel("ClassColor", 1, 98 + T.extraHeight, "RIGHT", HorizontalPlayerLine, "LEFT", 0, 13 + (T.extraHeight) / 2)
+	VerticalPlayerLine:CreatePanel("ClassColor", 1, 98 + T.extraHeight + (C.unitframe.extra_health_height / 2), "TOPRIGHT", "oUF_Player", "TOPLEFT", -5, 30)
 end
 
 ----------------------------------------------------------------------------------------
@@ -1424,7 +1427,7 @@ end
 ----------------------------------------------------------------------------------------
 if C.unitframe.lines == true then
 	local HorizontalTargetLine = CreateFrame("Frame", "HorizontalTargetLine", oUF_Target)
-	HorizontalTargetLine:CreatePanel("ClassColor", 228, 1, "TOPRIGHT", "oUF_Target", "BOTTOMRIGHT", 5, -5)
+	HorizontalTargetLine:CreatePanel("ClassColor", player_width + 11, 1, "TOPRIGHT", "oUF_Target", "BOTTOMRIGHT", 5, -5)
 	HorizontalTargetLine:RegisterEvent("PLAYER_TARGET_CHANGED")
 	HorizontalTargetLine:SetScript("OnEvent", function(self)
 		local _, class = UnitClass("target")
@@ -1437,7 +1440,7 @@ if C.unitframe.lines == true then
 	end)
 
 	local VerticalTargetLine = CreateFrame("Frame", "VerticalTargetLine", oUF_Target)
-	VerticalTargetLine:CreatePanel("ClassColor", 1, 98 + T.extraHeight, "LEFT", HorizontalTargetLine, "RIGHT", 0, 13 + (T.extraHeight) / 2)
+	VerticalTargetLine:CreatePanel("ClassColor", 1, 98 + T.extraHeight + (C.unitframe.extra_health_height / 2), "TOPLEFT", "oUF_Target", "TOPRIGHT", 5, 30)
 	VerticalTargetLine:RegisterEvent("PLAYER_TARGET_CHANGED")
 	VerticalTargetLine:SetScript("OnEvent", function(self)
 		local _, class = UnitClass("target")
