@@ -155,6 +155,8 @@ local function registerStyle()
 	if BigWigsLoader and BigWigs3DB.namespaces.BigWigs_Plugins_Bars.profiles.Default.barStyle == "ShestakUI" then
 		BigWigsLoader.RegisterMessage("BigWigs_Plugins", "BigWigs_FrameCreated", function()
 			BigWigsProximityAnchor:SetTemplate("Transparent")
+			BigWigsAltPower:SetTemplate("Transparent")
+			BigWigsInfoBox:SetTemplate("Transparent")
 		end)
 
 		BigWigsLoader.RegisterMessage("BigWigs_Plugins", "BigWigs_BarEmphasized", function(_, _, bar)
@@ -196,41 +198,43 @@ function T.UploadBW()
 	local bars = BigWigs:GetPlugin("Bars", true)
 	if bars then
 		bars.db.profile.barStyle = "ShestakUI"
-		bars.db.profile.font = C.font.stylization_font
+		bars.db.profile.fontName = C.font.stylization_font
 		bars.db.profile.BigWigsAnchor_width = 185
-		bars.db.profile.BigWigsAnchor_x = 38
-		bars.db.profile.BigWigsEmphasizeAnchor_width = 185
-		bars.db.profile.BigWigsEmphasizeAnchor_x = 420
-		bars.db.profile.BigWigsEmphasizeAnchor_y = 248
+		bars.db.profile.BigWigsAnchor_x = 188 / UIParent:GetEffectiveScale()
+		bars.db.profile.BigWigsEmphasizeAnchor_width = 184
+		bars.db.profile.BigWigsEmphasizeAnchor_x = 620
 		bars.db.profile.emphasizeGrowup = true
 		bars.db.profile.InstalledBars = C.actionbar.bottombars
 		if C.actionbar.bottombars == 1 then
-			bars.db.profile.BigWigsAnchor_y = 116
+			bars.db.profile.BigWigsAnchor_y = 185 * UIParent:GetEffectiveScale()
+			bars.db.profile.BigWigsEmphasizeAnchor_y = 344 * UIParent:GetEffectiveScale()
 		elseif C.actionbar.bottombars == 2 then
-			bars.db.profile.BigWigsAnchor_y = 138
+			bars.db.profile.BigWigsAnchor_y = 213 * UIParent:GetEffectiveScale()
+			bars.db.profile.BigWigsEmphasizeAnchor_y = 372 * UIParent:GetEffectiveScale()
 		elseif C.actionbar.bottombars == 3 then
-			bars.db.profile.BigWigsAnchor_y = 159
+			bars.db.profile.BigWigsAnchor_y = 241 * UIParent:GetEffectiveScale()
+			bars.db.profile.BigWigsEmphasizeAnchor_y = 400 * UIParent:GetEffectiveScale()
 		end
 	end
 	local mess = BigWigs:GetPlugin("Messages")
 	if mess then
-		mess.db.profile.font = "Calibri"
+		mess.db.profile.fontName = "Calibri"
 		mess.db.profile.fontSize = 20
-		mess.db.profile.BWMessageAnchor_x = 415
-		mess.db.profile.BWMessageAnchor_y = 320
-		mess.db.profile.BWEmphasizeMessageAnchor_x = 415
-		mess.db.profile.BWEmphasizeMessageAnchor_y = 335
-		mess.db.profile.BWEmphasizeCountdownMessageAnchor_x = 465
-		mess.db.profile.BWEmphasizeCountdownMessageAnchor_y = 370
+		mess.db.profile.BWMessageAnchor_x = 615
+		mess.db.profile.BWMessageAnchor_y = 440
+		mess.db.profile.BWEmphasizeMessageAnchor_x = 618
+		mess.db.profile.BWEmphasizeMessageAnchor_y = 495
+		mess.db.profile.BWEmphasizeCountdownMessageAnchor_x = 665
+		mess.db.profile.BWEmphasizeCountdownMessageAnchor_y = 477
 	end
 	local prox = BigWigs:GetPlugin("Proximity")
 	if prox then
-		prox.db.profile.font = "Calibri"
+		prox.db.profile.fontName = "Calibri"
 		prox.db.profile.objects.ability = false
 	end
 	BigWigsIconDB.hide = true
-	BigWigs:GetPlugin("Super Emphasize").db.profile.font = "Calibri"
-	BigWigs:GetPlugin("Alt Power").db.profile.font = "Calibri"
+	BigWigs:GetPlugin("Super Emphasize").db.profile.fontName = "Calibri"
+	BigWigs:GetPlugin("Alt Power").db.profile.fontName = "Calibri"
 	if InCombatLockdown() then
 		print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r")
 		print("|cffffff00Reload your UI to apply skin.|r")
