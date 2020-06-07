@@ -188,11 +188,11 @@ DBMSkin:SetScript("OnEvent", function()
 		_G["DBM_GUI_OptionsFramePanelContainer"]:SetTemplate("Overlay")
 
 		_G["DBM_GUI_OptionsFrameTab1"]:ClearAllPoints()
-		_G["DBM_GUI_OptionsFrameTab1"]:SetPoint("TOPLEFT", _G["DBM_GUI_OptionsFrameBossMods"], "TOPLEFT", 10, 27)
+		_G["DBM_GUI_OptionsFrameTab1"]:SetPoint("TOPLEFT", _G["DBM_GUI_OptionsFrameList"], "TOPLEFT", 10, 27)
 		_G["DBM_GUI_OptionsFrameTab2"]:ClearAllPoints()
 		_G["DBM_GUI_OptionsFrameTab2"]:SetPoint("TOPLEFT", _G["DBM_GUI_OptionsFrameTab1"], "TOPRIGHT", 6, 0)
 
-		_G["DBM_GUI_OptionsFrameBossMods"]:HookScript("OnShow", function(self) self:SetTemplate("Overlay") end)
+		_G["DBM_GUI_OptionsFrameList"]:HookScript("OnShow", function(self) self:SetTemplate("Overlay") end)
 		_G["DBM_GUI_OptionsFrameDBMOptions"]:HookScript("OnShow", function(self) self:SetTemplate("Overlay") end)
 		_G["DBM_GUI_OptionsFrameHeader"]:SetTexture("")
 		_G["DBM_GUI_OptionsFrameHeader"]:ClearAllPoints()
