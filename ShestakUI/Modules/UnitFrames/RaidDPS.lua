@@ -199,8 +199,8 @@ local function Shared(self, unit)
 	-- Phase icons
 	if C.raidframe.icons_phase == true and not (suffix == "target") then
 		self.PhaseIndicator = self.Health:CreateTexture(nil, "OVERLAY")
-		self.PhaseIndicator:SetSize(20, 20)
-		self.PhaseIndicator:SetPoint("TOPRIGHT", self.Health, 5, 5)
+		self.PhaseIndicator:SetSize(18, 18)
+		self.PhaseIndicator:SetPoint("BOTTOMLEFT", self.Health, -5, -10)
 	end
 
 	-- Summon icons
