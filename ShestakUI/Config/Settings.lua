@@ -41,6 +41,7 @@ C["skins"] = {
 	["blizzard_frames"] = false,				-- Blizzard frames skin
 	["minimap_buttons"] = false,				-- Skin addons icons on minimap
 	["minimap_buttons_mouseover"] = true,		-- Addons icons on mouseover
+	-- Addons
 	["ace3"] = false,							-- Ace3 options elements skin
 	["atlasloot"] = false,						-- AtlasLoot skin
 	["bigwigs"] = false,						-- BigWigs skin
@@ -194,6 +195,27 @@ C["raidframe"] = {
 }
 
 ----------------------------------------------------------------------------------------
+--	Auras/Buffs/Debuffs options
+----------------------------------------------------------------------------------------
+C["aura"] = {
+	["player_buff_size"] = 25,					-- Player buffs size
+	["player_debuff_size"] = 25,				-- Debuffs size
+	["show_spiral"] = false,					-- Spiral on aura icons
+	["show_timer"] = true,						-- Show cooldown timer on aura icons
+	["player_auras"] = true,					-- Auras on player frame
+	["target_auras"] = true,					-- Auras on target frame
+	["focus_debuffs"] = false,					-- DeBuffs on focus frame
+	["fot_debuffs"] = false,					-- DeBuffs on focustarget frame
+	["pet_debuffs"] = false,					-- DeBuffs on pet frame
+	["tot_debuffs"] = false,					-- DeBuffs on targettarget frame
+	["boss_buffs"] = true,						-- Buffs on boss frame
+	["player_aura_only"] = false,				-- Only your debuff on target frame
+	["debuff_color_type"] = true,				-- Color debuff by type
+	["cast_by"] = false,						-- Show who cast a buff/debuff in its tooltip
+	["classcolor_border"] = false,				-- Enable classcolor border for player buffs
+}
+
+----------------------------------------------------------------------------------------
 --	ActionBar options
 ----------------------------------------------------------------------------------------
 C["actionbar"] = {
@@ -259,12 +281,12 @@ C["tooltip"] = {
 ----------------------------------------------------------------------------------------
 C["chat"] = {
 	["enable"] = true,							-- Enable chat
+	["width"] = 350,							-- Chat width
+	["height"] = 112,							-- Chat height
 	["background"] = false,						-- Enable background for chat
 	["background_alpha"] = 0.7,					-- Background alpha
 	["filter"] = true,							-- Removing some systems spam ("Player1" won duel "Player2")
 	["spam"] = false,							-- Removing some players spam (gold/portals/etc)
-	["width"] = 350,							-- Chat width
-	["height"] = 112,							-- Chat height
 	["chat_bar"] = false,						-- Lite Button Bar for switch chat channel
 	["chat_bar_mouseover"] = false,				-- Lite Button Bar on mouseover
 	["whisp_sound"] = true,						-- Sound when whisper
@@ -338,27 +360,6 @@ C["combattext"] = {
 	["interrupt"] = true,						-- Tells you about your interrupts (works only with ["damage"] = true)
 	["direction"] = true,						-- Change scrolling direction from bottom to top
 	["short_numbers"] = true,					-- Use short numbers ("25.3k" instead of "25342")
-}
-
-----------------------------------------------------------------------------------------
---	Auras/Buffs/Debuffs options
-----------------------------------------------------------------------------------------
-C["aura"] = {
-	["player_buff_size"] = 25,					-- Player buffs size
-	["player_debuff_size"] = 25,				-- Debuffs size
-	["show_spiral"] = false,					-- Spiral on aura icons
-	["show_timer"] = true,						-- Show cooldown timer on aura icons
-	["player_auras"] = true,					-- Auras on player frame
-	["target_auras"] = true,					-- Auras on target frame
-	["focus_debuffs"] = false,					-- DeBuffs on focus frame
-	["fot_debuffs"] = false,					-- DeBuffs on focustarget frame
-	["pet_debuffs"] = false,					-- DeBuffs on pet frame
-	["tot_debuffs"] = false,					-- DeBuffs on targettarget frame
-	["boss_buffs"] = true,						-- Buffs on boss frame
-	["player_aura_only"] = false,				-- Only your debuff on target frame
-	["debuff_color_type"] = true,				-- Color debuff by type
-	["cast_by"] = false,						-- Show who cast a buff/debuff in its tooltip
-	["classcolor_border"] = false,				-- Enable classcolor border for player buffs
 }
 
 ----------------------------------------------------------------------------------------
