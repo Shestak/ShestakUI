@@ -294,19 +294,19 @@ local function LoadSkin()
 	end)
 
 	local EditStreamDialog = CommunitiesFrame.EditStreamDialog
-	CommunitiesFrame.EditStreamDialog:StripTextures()
-	CommunitiesFrame.EditStreamDialog:SetTemplate("Transparent")
+	EditStreamDialog:StripTextures()
+	EditStreamDialog:SetTemplate("Transparent")
 
-	CommunitiesFrame.EditStreamDialog.NameEdit:SetPoint("TOPLEFT", CommunitiesFrame.EditStreamDialog.NameLabel, "BOTTOMLEFT", 6, -5)
-	CommunitiesFrame.EditStreamDialog.NameEdit:SetPoint("RIGHT", CommunitiesFrame.EditStreamDialog, "RIGHT", -34, 0)
+	EditStreamDialog.NameEdit:SetPoint("TOPLEFT", EditStreamDialog.NameLabel, "BOTTOMLEFT", 6, -5)
+	EditStreamDialog.NameEdit:SetPoint("RIGHT", EditStreamDialog, "RIGHT", -34, 0)
 
-	T.SkinEditBox(CommunitiesFrame.EditStreamDialog.NameEdit, nil, 18)
-	T.SkinEditBox(CommunitiesFrame.EditStreamDialog.Description)
-	T.SkinCheckBox(CommunitiesFrame.EditStreamDialog.TypeCheckBox)
+	T.SkinEditBox(EditStreamDialog.NameEdit, nil, 18)
+	T.SkinEditBox(EditStreamDialog.Description)
+	T.SkinCheckBox(EditStreamDialog.TypeCheckBox)
 
-	CommunitiesFrame.EditStreamDialog.Accept:SkinButton()
-	CommunitiesFrame.EditStreamDialog.Delete:SkinButton()
-	CommunitiesFrame.EditStreamDialog.Cancel:SkinButton()
+	EditStreamDialog.Accept:SkinButton()
+	EditStreamDialog.Delete:SkinButton()
+	EditStreamDialog.Cancel:SkinButton()
 
 	-- Communities Settings
 	local Settings = CommunitiesSettingsDialog

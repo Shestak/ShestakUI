@@ -7,7 +7,7 @@ if C.unitframe.enable ~= true or C.unitframe.plugins_gcd ~= true then return end
 local _, ns = ...
 local oUF = ns.oUF
 
-local starttime, duration, usingspell, spellid
+local starttime, duration, usingspell
 local GetTime = GetTime
 
 local Enable = function(self)

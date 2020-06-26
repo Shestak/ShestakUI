@@ -50,26 +50,26 @@ local function PositionAndStyle()
 	collectFrame:SetPoint(unpack(C.position.minimap_buttons))
 	for i = 1, #buttons do
 		local f = buttons[i]
-		buttons[i]:ClearAllPoints()
+		f:ClearAllPoints()
 		if i == 1 then
-			buttons[i]:SetPoint("TOP", collectFrame, "TOP", 0, 0)
+			f:SetPoint("TOP", collectFrame, "TOP", 0, 0)
 		elseif i == line then
-			buttons[i]:SetPoint("TOPRIGHT", buttons[1], "TOPLEFT", -1, 0)
+			f:SetPoint("TOPRIGHT", buttons[1], "TOPLEFT", -1, 0)
 		else
-			buttons[i]:SetPoint("TOP", buttons[i-1], "BOTTOM", 0, -1)
+			f:SetPoint("TOP", buttons[i-1], "BOTTOM", 0, -1)
 		end
-		buttons[i].ClearAllPoints = T.dummy
-		buttons[i].SetPoint = T.dummy
+		f.ClearAllPoints = T.dummy
+		f.SetPoint = T.dummy
 		if C.skins.minimap_buttons_mouseover then
-			buttons[i]:SetAlpha(0)
-			buttons[i]:HookScript("OnEnter", function()
-				buttons[i]:FadeIn()
+			f:SetAlpha(0)
+			f:HookScript("OnEnter", function()
+				f:FadeIn()
 			end)
-			buttons[i]:HookScript("OnLeave", function()
-				buttons[i]:FadeOut()
+			f:HookScript("OnLeave", function()
+				f:FadeOut()
 			end)
 		end
-		SkinButton(buttons[i])
+		SkinButton(f)
 	end
 end
 
