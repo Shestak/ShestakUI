@@ -3,7 +3,7 @@ if GetLocale() ~= "zhCN" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for zhCN client
---	Translation: Mania, Tat2dawn, Sakaras
+--	Translation: Mania, Tat2dawn, Sakaras, Joe
 ----------------------------------------------------------------------------------------
 L_GUI_SET_SAVED_SETTTINGS = "角色专用设定"
 L_GUI_SET_SAVED_SETTTINGS_DESC = "在 一般设定 与 角色专用设定 之间切换。"
@@ -108,8 +108,8 @@ L_GUI_UF_PLUGINS_FADER = "自动隐藏玩家框架"
 L_GUI_UF_PLUGINS_DIMINISHING = "竞技场框架显示技能递减"
 L_GUI_UF_PLUGINS_POWER_PREDICTION = "即将获得的资源"
 L.unitframe_plugins_absorbs = "吸收量"
-L.unitframe_subheader_player_width = "Player and target frame size" -- Need review
-L.unitframe_player_width = "Width" -- Need review
+L.unitframe_subheader_player_width = "玩家/目标框架大小"
+L.unitframe_player_width = "宽度"
 L.unitframe_extra_height_auto = "血量/能量框架自动增高"
 L.unitframe_extra_height_auto_desc = "按字体大小智能调节框架高度"
 L.unitframe_extra_health_height = "血量框架额外增高"
@@ -187,7 +187,7 @@ L_GUI_ACTIONBAR_GRID = "动作条显示空白快捷键"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "快捷键大小"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "快捷键间距"
 L_GUI_ACTIONBAR_SPLIT_BARS = "#5动作条分段(2*6; 该选项开启后将激活所有动作条)"
-L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "动作条边框按职业著色"
+L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "动作条边框按职业着色"
 L.actionbar_toggle_mode = "自由折叠"
 L.actionbar_toggle_mode_desc = "可随时调节动作条显示数目。按钮位于底部动作条上方及右側动作条下方，鼠标悬停显示。"
 L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "关闭动作条技能特效高亮"
@@ -331,7 +331,7 @@ L_GUI_AURA_BOSS_BUFFS = "Boss显示Buff"
 L_GUI_AURA_PLAYER_AURA_ONLY = "目标只显示自身施放的DeBuff"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "DeBuff按法术类型著色"
 L_GUI_AURA_CAST_BY = "提示Buff/DeBuff提供者"
-L_GUI_AURA_CLASSCOLOR_BORDER = "自身Buff图标边框按职业著色"
+L_GUI_AURA_CLASSCOLOR_BORDER = "自身Buff图标边框按职业着色"
 
 -- Bag options
 L_GUI_BAGS = "背包"
@@ -461,7 +461,7 @@ L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "始终显示敌对技能冷却"
 L_GUI_COOLDOWN_ENEMY_IN_BG = "战场中显示敌对技能冷却"
 L_GUI_COOLDOWN_ENEMY_IN_ARENA = "竞技场中显示敌对技能冷却"
 L.enemycooldown_show_inparty = "Show in party zone for allies" -- Need review
-L.enemycooldown_class_color = "Enable classcolor border" -- Need review
+L.enemycooldown_class_color = "按职业着色"
 
 -- Pulse cooldowns options
 L_GUI_COOLDOWN_PULSE = "技能冷却闪烁"

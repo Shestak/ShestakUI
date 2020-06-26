@@ -3,7 +3,7 @@ if GetLocale() ~= "zhTW" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for zhTW client
---	Translation: Leg883, Mania, Tat2dawn, Tibles, Sakaras
+--	Translation: Leg883, Mania, Tat2dawn, Tibles, Sakaras, Joe
 ----------------------------------------------------------------------------------------
 L_GUI_SET_SAVED_SETTTINGS = "角色專用設定"
 L_GUI_SET_SAVED_SETTTINGS_DESC = "在 一般設定 與 角色專用設定 之間切換。"
@@ -108,8 +108,8 @@ L_GUI_UF_PLUGINS_FADER = "自動隱藏玩家框架"
 L_GUI_UF_PLUGINS_DIMINISHING = "競技場框架顯示技能遞減"
 L_GUI_UF_PLUGINS_POWER_PREDICTION = "即將獲得的資源"
 L.unitframe_plugins_absorbs = "吸收量"
-L.unitframe_subheader_player_width = "Player and target frame size" -- Need review
-L.unitframe_player_width = "Width" -- Need review
+L.unitframe_subheader_player_width = "玩家/目標框架大小"
+L.unitframe_player_width = "寬度"
 L.unitframe_extra_height_auto = "血量/能量框架自動增高"
 L.unitframe_extra_height_auto_desc = "按字體大小智能調節框架高度"
 L.unitframe_extra_health_height = "血量框架額外增高"
@@ -461,7 +461,7 @@ L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "始終顯示敵對技能冷卻"
 L_GUI_COOLDOWN_ENEMY_IN_BG = "戰場中顯示敵對技能冷卻"
 L_GUI_COOLDOWN_ENEMY_IN_ARENA = "競技場中顯示敵對技能冷卻"
 L.enemycooldown_show_inparty = "Show in party zone for allies" -- Need review
-L.enemycooldown_class_color = "Enable classcolor border" -- Need review
+L.enemycooldown_class_color = "按職業著色"
 
 -- Pulse cooldowns options
 L_GUI_COOLDOWN_PULSE = "技能冷卻閃爍"
