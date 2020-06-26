@@ -64,7 +64,7 @@ local skinTable = {
 		},
 		["menu_anchor"] = {
 			16, -- [1]
-			3, -- [2]
+			6, -- [2]
 			["side"] = 2,
 		},
 		["bg_r"] = 1,
@@ -278,7 +278,7 @@ local skinTable = {
 			["text_face"] = "Hooge",
 			["anchor"] = {
 				-19, -- [1]
-				5, -- [2]
+				9, -- [2]
 			},
 			["text_color"] = {
 				1, -- [1]
@@ -317,6 +317,12 @@ if lower_instance then
 					bar.bg:SetVertexColor(.6, .6, .6, 0.25)
 				end
 			end
+
+			local frame = _G["DetailsUpFrameInstance"..i]
+			frame.b = CreateFrame("Frame", nil, frame:GetParent())
+			frame.b:SetTemplate("Overlay")
+			frame.b:SetPoint("TOPLEFT", frame, "TOPLEFT", -23, 2)
+			frame.b:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 34, 4)
 
 			instance:ChangeSkin("Minimalistic v2")
 		end
