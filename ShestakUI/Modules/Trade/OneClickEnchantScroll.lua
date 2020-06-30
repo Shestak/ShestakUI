@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.misc.enchantment_scroll ~= true then return end
+if C.trade.enchantment_scroll ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Enchantment scroll on TradeSkill frame(OneClickEnchantScroll by Sara.Festung)

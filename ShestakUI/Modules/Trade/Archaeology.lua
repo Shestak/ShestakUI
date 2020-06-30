@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.misc.archaeology ~= true or IsAddOnLoaded("stArchaeologist") then return end
+if C.trade.archaeology ~= true or IsAddOnLoaded("stArchaeologist") then return end
 
 ----------------------------------------------------------------------------------------
 --	Archaeology tracker(stArchaeologist by Safturento)

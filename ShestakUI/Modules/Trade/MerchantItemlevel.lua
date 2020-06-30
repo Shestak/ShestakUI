@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.misc.merchant_itemlevel ~= true then return end
+if C.trade.merchant_itemlevel ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Show item level for weapons and armor in merchant

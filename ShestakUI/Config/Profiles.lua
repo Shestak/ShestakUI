@@ -71,7 +71,7 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["general"].welcome_message = false
 	C["misc"].invite_keyword = "inv"
 	C["misc"].item_level = true
-	C["misc"].move_blizzard = true
+	C["general"].move_blizzard = true
 	C["announcements"].flask_food = true
 	C["announcements"].pull_countdown = false
 	C["automation"].release = false
@@ -150,9 +150,9 @@ if Sw2rT1 then
 	C["general"].welcome_message = false
 	C["misc"].shift_marking = false
 	C["misc"].raid_tools = false
-	C["misc"].disenchanting = true
-	C["misc"].hide_banner = false
-	C["misc"].hide_talking_head = true
+	C["trade"].disenchanting = true
+	C["general"].hide_banner = false
+	C["general"].hide_talking_head = true
 	C["misc"].hide_raid_button = true
 	C["announcements"].pull_countdown = false
 	C["automation"].accept_invite = true
@@ -191,11 +191,11 @@ end
 if IsWetxius then
 	C["general"].welcome_message = false
 	C["misc"].shift_marking = false
-	C["misc"].vehicle_mouseover = true
+	C["general"].vehicle_mouseover = true
 	C["misc"].quest_auto_button = true
-	C["misc"].disenchanting = true
+	C["trade"].disenchanting = true
 	C["misc"].click_cast = true
-	C["misc"].enchantment_scroll = true
+	C["trade"].enchantment_scroll = true
 	C["announcements"].bad_gear = true
 	C["automation"].accept_invite = true
 	C["automation"].screenshot = true

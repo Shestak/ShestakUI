@@ -10,8 +10,6 @@
 ## X-Website: http://shestak.org
 ## X-Thanks: Tryllemann, Wetxius
 
-Core.lua
-
 Locales\English.lua
 Locales\Chinese.lua
 Locales\French.lua
@@ -21,4 +19,5 @@ Locales\Russian.lua
 Locales\Spanish.lua
 Locales\Taiwan.lua
 
+Core.lua
 Options.lua

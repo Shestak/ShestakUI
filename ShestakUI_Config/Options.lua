@@ -128,6 +128,23 @@ local FlagsTable = {
 	""
 }
 
+local ErrorTable = {
+	"BLACKLIST",
+	"WHITELIST",
+	"COMBAT",
+	"NONE"
+}
+
+local TextureTable
+local LSM = LibStub and LibStub:GetLibrary("LibSharedMedia-3.0", true)
+if LSM then
+	TextureTable = LSM:HashTable("statusbar")
+else
+	TextureTable = {
+		"Interface\\AddOns\\ShestakUI\\Media\\Textures\\Texture.tga"
+	}
+end
+
 -- Category
 ns.addCategory("general", GENERAL_LABEL, L_GUI_GENERAL_SUBTEXT, true)
 ns.addCategory("font", L.font, L.font_subtext, true, true)
@@ -154,7 +171,7 @@ ns.addCategory("pulsecooldown", L_GUI_COOLDOWN_PULSE, L_GUI_COOLDOWN_PULSE_SUBTE
 ns.addCategory("threat", L_GUI_THREAT, L_GUI_THREAT_SUBTEXT)
 ns.addCategory("toppanel", L_GUI_TOP_PANEL, L_GUI_TOP_PANEL_SUBTEXT)
 ns.addCategory("stats", L_GUI_STATS, L_GUI_STATS_SUBTEXT)
-ns.addCategory("error", L_GUI_ERROR, L_GUI_ERROR_SUBTEXT)
+ns.addCategory("trade", L_GUI_TRADE, L_GUI_TRADE_SUBTEXT)
 ns.addCategory("misc", OTHER, L_GUI_MISC_SUBTEXT)
 
 -- General
@@ -178,6 +195,31 @@ do
 	auto_scale:HookScript("OnClick", toggleUIScaleOptions)
 	uiscale:HookScript("OnShow", toggleUIScaleOptions)
 
+	-- Blizzard UI
+	local subheader = ns.addSubCategory(parent, L.general_subheader_blizzard)
+	subheader:SetPoint("TOPLEFT", uiscale, "BOTTOMLEFT", 0, -10)
+
+	local error_filter = ns.CreateDropDown(parent, "error_filter", true, nil, ErrorTable)
+	error_filter:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
+
+	local vehicle_mouseover = ns.CreateCheckBox(parent, "vehicle_mouseover")
+	vehicle_mouseover:SetPoint("TOPLEFT", error_filter, "BOTTOMLEFT", 16, 0)
+
+	local move_blizzard = ns.CreateCheckBox(parent, "move_blizzard")
+	move_blizzard:SetPoint("TOPLEFT", vehicle_mouseover, "BOTTOMLEFT", 0, 0)
+
+	local color_picker = ns.CreateCheckBox(parent, "color_picker")
+	color_picker:SetPoint("TOPLEFT", move_blizzard, "BOTTOMLEFT", 0, 0)
+
+	local minimize_mouseover = ns.CreateCheckBox(parent, "minimize_mouseover")
+	minimize_mouseover:SetPoint("TOPLEFT", color_picker, "BOTTOMLEFT", 0, 0)
+
+	local hide_banner = ns.CreateCheckBox(parent, "hide_banner")
+	hide_banner:SetPoint("TOPLEFT", minimize_mouseover, "BOTTOMLEFT", 0, 0)
+
+	local hide_talking_head = ns.CreateCheckBox(parent, "hide_talking_head")
+	hide_talking_head:SetPoint("TOPLEFT", hide_banner, "BOTTOMLEFT", 0, 0)
+
 	-- Panel 2
 	local parent = ShestakUIOptionsPanel.general2
 
@@ -190,8 +232,12 @@ do
 	local backdrop_alpha = ns.CreateNumberSlider(parent, "backdrop_alpha", nil, nil, 0, 1, 0.05, true)
 	backdrop_alpha:SetPoint("TOPLEFT", backdrop_color, "BOTTOMLEFT", 0, -28)
 
+	local texture = ns.CreateDropDown(parent, "texture", true, nil, TextureTable, true)
+	texture:SetPoint("TOPLEFT", backdrop_alpha, "BOTTOMLEFT", -20, -15)
+
+	-- Pixel Font
 	local subheader = ns.addSubCategory(parent, L.media_subheader_pixel)
-	subheader:SetPoint("TOPLEFT", backdrop_alpha, "BOTTOMLEFT", 0, -10)
+	subheader:SetPoint("TOPLEFT", texture, "BOTTOMLEFT", 16, -10)
 
 	local pixel_font = ns.CreateDropDown(parent, "pixel_font", true, L.font_stats_font, FontTable)
 	pixel_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
@@ -849,6 +895,7 @@ do
 	local auto_position = ns.CreateCheckBox(parent, "auto_position")
 	auto_position:SetPoint("TOPLEFT", hide_health_value, "BOTTOMLEFT", 0, 0)
 
+	-- Heal layout size
 	local subheader = ns.addSubCategory(parent, L.raidframe_subheader_heal_size)
 	subheader:SetPoint("TOPLEFT", auto_position, "BOTTOMLEFT", 0, -10)
 
@@ -861,6 +908,7 @@ do
 	local heal_power_height = ns.CreateNumberSlider(parent, "heal_power_height", nil, nil, 0, 10, 1, true)
 	heal_power_height:SetPoint("TOPLEFT", heal_width, "BOTTOMLEFT", 0, -20)
 
+	-- DPS layout size
 	local subheader = ns.addSubCategory(parent, L.raidframe_subheader_dps_size)
 	subheader:SetPoint("TOPLEFT", heal_power_height, "BOTTOMLEFT", 0, -10)
 
@@ -1479,7 +1527,7 @@ do
 	local portals = ns.CreateCheckBox(parent, "portals", L_GUI_ANNOUNCEMENTS_PORTALS)
 	portals:SetPoint("TOPLEFT", feasts, "BOTTOMLEFT", 0, 0)
 
-	local bad_gear = ns.CreateCheckBox(parent, "bad_gear", L_GUI_ANNOUNCEMENTS_BAD_GEAR)
+	local bad_gear = ns.CreateCheckBox(parent, "bad_gear")
 	bad_gear:SetPoint("TOPLEFT", portals, "BOTTOMLEFT", 0, 0)
 
 	local safari_hat = ns.CreateCheckBox(parent, "safari_hat", L_GUI_ANNOUNCEMENTS_SAFARI_HAT)
@@ -1749,94 +1797,67 @@ do
 	currency_misc:SetPoint("TOPLEFT", currency_raid, "BOTTOMLEFT", 0, 0)
 end
 
--- Error
+-- Trade
 do
-	local parent = ShestakUIOptionsPanel.error
+	local parent = ShestakUIOptionsPanel.trade
 
-	local black = ns.CreateCheckBox(parent, "black", L_GUI_ERROR_BLACK)
-	black:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+	local profession_tabs = ns.CreateCheckBox(parent, "profession_tabs")
+	profession_tabs:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local white = ns.CreateCheckBox(parent, "white", L_GUI_ERROR_WHITE)
-	white:SetPoint("TOPLEFT", black, "BOTTOMLEFT", 0, 0)
+	local already_known = ns.CreateCheckBox(parent, "already_known")
+	already_known:SetPoint("TOPLEFT", profession_tabs, "BOTTOMLEFT", 0, 0)
 
-	local combat = ns.CreateCheckBox(parent, "combat", L_GUI_ERROR_HIDE_COMBAT)
-	combat:SetPoint("TOPLEFT", white, "BOTTOMLEFT", 0, 0)
+	local disenchanting = ns.CreateCheckBox(parent, "disenchanting")
+	disenchanting:SetPoint("TOPLEFT", already_known, "BOTTOMLEFT", 0, 0)
+
+	local enchantment_scroll = ns.CreateCheckBox(parent, "enchantment_scroll")
+	enchantment_scroll:SetPoint("TOPLEFT", disenchanting, "BOTTOMLEFT", 0, 0)
+
+	local sum_buyouts = ns.CreateCheckBox(parent, "sum_buyouts")
+	sum_buyouts:SetPoint("TOPLEFT", enchantment_scroll, "BOTTOMLEFT", 0, 0)
+
+	local archaeology = ns.CreateCheckBox(parent, "archaeology")
+	archaeology:SetPoint("TOPLEFT", sum_buyouts, "BOTTOMLEFT", 0, 0)
+
+	local merchant_itemlevel = ns.CreateCheckBox(parent, "merchant_itemlevel")
+	merchant_itemlevel:SetPoint("TOPLEFT", archaeology, "BOTTOMLEFT", 0, 0)
 end
 
 -- Miscellaneous
 do
 	local parent = ShestakUIOptionsPanel.misc
 
-	local shift_marking = ns.CreateCheckBox(parent, "shift_marking")
-	shift_marking:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+	local raid_tools = ns.CreateCheckBox(parent, "raid_tools")
+	raid_tools:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local afk_spin_camera = ns.CreateCheckBox(parent, "afk_spin_camera", L_GUI_MISC_SPIN_CAMERA)
+	local shift_marking = ns.CreateCheckBox(parent, "shift_marking")
+	shift_marking:SetPoint("TOPLEFT", raid_tools, "BOTTOMLEFT", 0, 0)
+
+	local afk_spin_camera = ns.CreateCheckBox(parent, "afk_spin_camera")
 	afk_spin_camera:SetPoint("TOPLEFT", shift_marking, "BOTTOMLEFT", 0, 0)
 
-	local vehicle_mouseover = ns.CreateCheckBox(parent, "vehicle_mouseover", L_GUI_MISC_VEHICLE_MOUSEOVER)
-	vehicle_mouseover:SetPoint("TOPLEFT", afk_spin_camera, "BOTTOMLEFT", 0, 0)
+	local quest_auto_button = ns.CreateCheckBox(parent, "quest_auto_button")
+	quest_auto_button:SetPoint("TOPLEFT", afk_spin_camera, "BOTTOMLEFT", 0, 0)
 
-	local quest_auto_button = ns.CreateCheckBox(parent, "quest_auto_button", L_GUI_MISC_QUEST_AUTOBUTTON)
-	quest_auto_button:SetPoint("TOPLEFT", vehicle_mouseover, "BOTTOMLEFT", 0, 0)
-
-	local raid_tools = ns.CreateCheckBox(parent, "raid_tools")
-	raid_tools:SetPoint("TOPLEFT", quest_auto_button, "BOTTOMLEFT", 0, 0)
-
-	local profession_tabs = ns.CreateCheckBox(parent, "profession_tabs", L_GUI_MISC_PROFESSION_TABS)
-	profession_tabs:SetPoint("TOPLEFT", raid_tools, "BOTTOMLEFT", 0, 0)
-
-	local item_level = ns.CreateCheckBox(parent, "item_level", L_GUI_MISC_ITEM_LEVEL)
-	item_level:SetPoint("TOPLEFT", profession_tabs, "BOTTOMLEFT", 0, 0)
-
-	local already_known = ns.CreateCheckBox(parent, "already_known", L_GUI_MISC_ALREADY_KNOWN)
-	already_known:SetPoint("TOPLEFT", item_level, "BOTTOMLEFT", 0, 0)
-
-	local disenchanting = ns.CreateCheckBox(parent, "disenchanting", L_GUI_MISC_DISENCHANTING)
-	disenchanting:SetPoint("TOPLEFT", already_known, "BOTTOMLEFT", 0, 0)
-
-	local sum_buyouts = ns.CreateCheckBox(parent, "sum_buyouts")
-	sum_buyouts:SetPoint("TOPLEFT", disenchanting, "BOTTOMLEFT", 0, 0)
+	local item_level = ns.CreateCheckBox(parent, "item_level")
+	item_level:SetPoint("TOPLEFT", quest_auto_button, "BOTTOMLEFT", 0, 0)
 
 	local click_cast = ns.CreateCheckBox(parent, "click_cast")
-	click_cast:SetPoint("TOPLEFT", sum_buyouts, "BOTTOMLEFT", 0, 0)
+	click_cast:SetPoint("TOPLEFT", item_level, "BOTTOMLEFT", 0, 0)
 
 	local click_cast_filter = ns.CreateCheckBox(parent, "click_cast_filter")
 	click_cast_filter:SetPoint("TOPLEFT", click_cast, "BOTTOMLEFT", 20, 0)
 
 	click_cast.children = {click_cast_filter}
 
-	local move_blizzard = ns.CreateCheckBox(parent, "move_blizzard", L_GUI_MISC_MOVE_BLIZZARD)
-	move_blizzard:SetPoint("TOPLEFT", click_cast_filter, "BOTTOMLEFT", -20, 0)
-
-	local color_picker = ns.CreateCheckBox(parent, "color_picker")
-	color_picker:SetPoint("TOPLEFT", move_blizzard, "BOTTOMLEFT", 0, 0)
-
-	local enchantment_scroll = ns.CreateCheckBox(parent, "enchantment_scroll", L_GUI_MISC_ENCHANTMENT_SCROLL)
-	enchantment_scroll:SetPoint("TOPLEFT", color_picker, "BOTTOMLEFT", 0, 0)
-
-	local archaeology = ns.CreateCheckBox(parent, "archaeology")
-	archaeology:SetPoint("TOPLEFT", enchantment_scroll, "BOTTOMLEFT", 0, 0)
-
 	local chars_currency = ns.CreateCheckBox(parent, "chars_currency")
-	chars_currency:SetPoint("TOPLEFT", archaeology, "BOTTOMLEFT", 0, 0)
+	chars_currency:SetPoint("TOPLEFT", click_cast_filter, "BOTTOMLEFT", -20, 0)
 
 	local armory_link = ns.CreateCheckBox(parent, "armory_link")
 	armory_link:SetPoint("TOPLEFT", chars_currency, "BOTTOMLEFT", 0, 0)
 
-	local merchant_itemlevel = ns.CreateCheckBox(parent, "merchant_itemlevel", L_GUI_MISC_MERCHANT_ITEMLEVEL)
-	merchant_itemlevel:SetPoint("TOPLEFT", armory_link, "BOTTOMLEFT", 0, 0)
-
-	local minimize_mouseover = ns.CreateCheckBox(parent, "minimize_mouseover", L_GUI_MISC_MINIMIZE_MOUSEOVER)
-	minimize_mouseover:SetPoint("TOPLEFT", merchant_itemlevel, "BOTTOMLEFT", 0, 0)
-
-	local hide_banner = ns.CreateCheckBox(parent, "hide_banner", L_GUI_MISC_HIDE_BANNER)
-	hide_banner:SetPoint("TOPLEFT", minimize_mouseover, "BOTTOMLEFT", 0, 0)
-
-	local hide_talking_head = ns.CreateCheckBox(parent, "hide_talking_head", L_GUI_MISC_HIDE_TALKING_HEAD)
-	hide_talking_head:SetPoint("TOPLEFT", hide_banner, "BOTTOMLEFT", 0, 0)
-
 	local hide_raid_button = ns.CreateCheckBox(parent, "hide_raid_button")
-	hide_raid_button:SetPoint("TOPLEFT", hide_talking_head, "BOTTOMLEFT", 0, 0)
+	hide_raid_button:SetPoint("TOPLEFT", armory_link, "BOTTOMLEFT", 0, 0)
 end
 
 ----------------------------------------------------------------------------------------

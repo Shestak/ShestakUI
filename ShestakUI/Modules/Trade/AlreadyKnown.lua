@@ -1,5 +1,5 @@
 local T, C, L, _ = unpack(select(2, ...))
-if C.misc.already_known ~= true then return end
+if C.trade.already_known ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Colorizes recipes/mounts/pets/toys that is already known(AlreadyKnown by Villiv)

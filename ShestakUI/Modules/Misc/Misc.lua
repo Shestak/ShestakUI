@@ -125,24 +125,8 @@ end)
 ----------------------------------------------------------------------------------------
 --	Boss Banner Hider
 ----------------------------------------------------------------------------------------
-if C.misc.hide_banner == true then
+if C.general.hide_banner == true then
 	BossBanner.PlayBanner = function() end
-end
-
-----------------------------------------------------------------------------------------
---	Hide TalkingHeadFrame
-----------------------------------------------------------------------------------------
-if C.misc.hide_talking_head == true then
-	local frame = CreateFrame("Frame")
-	frame:RegisterEvent("ADDON_LOADED")
-	frame:SetScript("OnEvent", function(self, event, addon)
-		if addon == "Blizzard_TalkingHeadUI" then
-			hooksecurefunc("TalkingHeadFrame_PlayCurrent", function()
-				TalkingHeadFrame:Hide()
-			end)
-			self:UnregisterEvent(event)
-		end
-	end)
 end
 
 ----------------------------------------------------------------------------------------

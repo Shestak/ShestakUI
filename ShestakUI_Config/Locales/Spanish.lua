@@ -20,9 +20,25 @@ L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface setti
 L_GUI_GENERAL_WELCOME_MESSAGE = "Mensaje de bienvenida en el chat"
 L_GUI_GENERAL_AUTOSCALE = "Auto escalado de la UI"
 L_GUI_GENERAL_UISCALE = "Escalado de la UI (si auto escalado está desactivado)"
+L.general_subheader_blizzard = "Blizzard UI elements" -- Need review
+L.general_error_filter = "Error filtering" -- Need review
+L.general_error_blacklist = "Blacklist" -- Need review
+L.general_error_whitelist = "Whitelist" -- Need review
+L.general_error_combat = "In combat" -- Need review
+L.general_error_none = "None" -- Need review
+L.general_vehicle_mouseover = "Marco del Vehículo al pasar el ratón por encima"
+L.general_move_blizzard = "Move some Blizzard frames" -- Needs review
+L.general_color_picker = "Improved ColorPicker" -- Needs review
+L.general_color_picker_desc = "Add copy/paste buttons and digit text entry for Blizzard color picker frame" -- Need review
+L.general_minimize_mouseover = "Mouseover for quest minimize button" -- Need review
+L.general_hide_banner = "Hide Boss Banner Loot Frame" -- Need review
+L.general_hide_talking_head = "Hide Talking Head Frame" -- Need review
+
+-- Media options
 L.media_border_color = "Color for borders" -- Need review
 L.media_backdrop_color = "Color for borders backdrop" -- Need review
 L.media_backdrop_alpha = "Alpha for transparent backdrop" -- Need review
+L.media_texture = "Main texture" -- Need review
 L.media_subheader_pixel = "Change Pixel font" -- Need review
 
 -- Font options
@@ -176,7 +192,6 @@ L.raidframe_dps_raid_width = "Raid width" -- Need review
 L.raidframe_dps_raid_height = "Raid height" -- Need review
 L.raidframe_dps_party_power_height = "Party power height" -- Need review
 L.raidframe_dps_raid_power_height = "Raid power height" -- Need review
-
 
 -- ActionBar options
 L_GUI_ACTIONBAR = "Action Bars" -- Need review
@@ -395,7 +410,8 @@ L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Announce to raid channel" -- Needs review
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Auto announce to raid channel when ReadyCheck" -- Needs review
 L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Souls/Repair Bots cast" -- Needs review
 L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast" -- Needs review
-L_GUI_ANNOUNCEMENTS_BAD_GEAR = "Check your bad gear in instance (fishing pole, from the list)" -- Needs review
+L.announcements_bad_gear = "Check your bad gear" -- Need review
+L.announcements_bad_gear_desc = "Check your bad gear in instance (fishing pole, from the list)" -- Needs review
 L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Check Safari Hat when starting Pet Battle" -- Needs review
 
 -- Automation options
@@ -507,44 +523,40 @@ L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Show Archaeology Fragments" -- Needs review
 L_GUI_STATS_CURRENCY_COOKING = "Show Cooking Awards" -- Needs review
 L_GUI_STATS_CURRENCY_RAID = "Show Raid Seals" -- Needs review
 
--- Error options
-L_GUI_ERROR = "Errores"
-L_GUI_ERROR_SUBTEXT = "Filtering standard text at the top of the screen from Blizzard." -- Need review
-L_GUI_ERROR_BLACK = "Ocultar errores de la lista negra"
-L_GUI_ERROR_WHITE = "Mostrar errores de la lista blanca"
-L_GUI_ERROR_HIDE_COMBAT = "Hide all errors in combat" -- Needs review
+-- Trade options
+L_GUI_TRADE = "Trade" -- Need review
+L_GUI_TRADE_SUBTEXT = "Settings related to professions and trade" -- Need review
+L.trade_profession_tabs = "Professions tabs" -- Need review
+L.trade_profession_tabs_desc = "Pestanas de profesiones de artesania y marcos de comercio"
+L.trade_already_known = "Colorizes already known items" -- Need review
+L.trade_already_known_desc = "Colorizes recipes/mounts/pets/toys that is already known" -- Needs review
+L.trade_disenchanting = "Quick Disenchanting" -- Need review
+L.trade_disenchanting_desc = "Milling, Prospecting and Disenchanting by Alt + click" -- Needs review
+L.trade_sum_buyouts = "Sum up all current auctions" -- Needs review
+L.trade_sum_buyouts_desc = "At auctions tab shows sum up all current auctions" -- Need review
+L.trade_enchantment_scroll = "Enchantment scroll on TradeSkill frame" -- Needs review
+L.trade_archaeology = "Archaeology tracker" -- Needs review
+L.trade_archaeology_desc = "Archaeology tracker ('/arch' or right mouseover minimap button to show)" -- Need review
+L.trade_merchant_itemlevel = "Item level in merchant" -- Need review
+L.trade_merchant_itemlevel_desc = "Show item level for weapons and armor in merchant" -- Need review
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "Other settings that add interesting features." -- Need review
 L.misc_shift_marking = "Marks mouseover target" -- Need review
 L.misc_shift_marking_desc = "Marks mouseover target when you push Shift (only in group)" -- Need review
-L_GUI_MISC_SPIN_CAMERA = "Rotar cámara mientras estás ausente"
-L_GUI_MISC_VEHICLE_MOUSEOVER = "Marco del Vehículo al pasar el ratón por encima"
-L_GUI_MISC_QUEST_AUTOBUTTON = "Auto botón misión/objeto"
+L.misc_afk_spin_camera = "Rotar cámara mientras estás ausente"
+L.misc_quest_auto_button = "Quest items auto button" -- Need review
+L.misc_quest_auto_button_desc = "Auto botón misión/objeto" -- Need review
 L.misc_raid_tools = "Herramientas de Raid"
 L.misc_raid_tools_desc = "Button at the top of the screen for ready check (Left-click), checking roles (Middle-click), setting marks, etc. (for leader and assistants)" -- Need review
-L_GUI_MISC_PROFESSION_TABS = "Pestanas de profesiones de artesania y marcos de comercio"
-L_GUI_MISC_ITEM_LEVEL = "Item level on character slot buttons" -- Needs review
-L_GUI_MISC_ALREADY_KNOWN = "Colorizes recipes/mounts/pets/toys that is already known" -- Needs review
-L_GUI_MISC_DISENCHANTING = "Milling, Prospecting and Disenchanting by Alt + click" -- Needs review
-L.misc_sum_buyouts = "Sum up all current auctions" -- Needs review
-L.misc_sum_buyouts_desc = "At auctions tab shows sum up all current auctions" -- Need review
+L.misc_item_level = "Item level on slot buttons" -- Need review
+L.misc_item_level_desc = "Item level on character slot buttons" -- Needs review
 L.misc_click_cast = "Simple click2cast spell binder" -- Needs review
 L.misc_click_cast_desc = "Allows you to assign spells (analog Clique) to the mouse buttons. Setup through the side bookmark in the spell book" -- Need review
 L.misc_click_cast_filter = "Ignore Player and Target frames for click2cast" -- Needs review
-L_GUI_MISC_MOVE_BLIZZARD = "Move some Blizzard frames" -- Needs review
-L.misc_color_picker = "Improved ColorPicker" -- Needs review
-L.misc_color_picker_desc = "Add copy/paste buttons and digit text entry for Blizzard color picker frame" -- Need review
-L_GUI_MISC_ENCHANTMENT_SCROLL = "Enchantment scroll on TradeSkill frame" -- Needs review
-L.misc_archaeology = "Archaeology tracker" -- Needs review
-L.misc_archaeology_desc = "Archaeology tracker ('/arch' or right mouseover minimap button to show)" -- Need review
 L.misc_chars_currency = "Tracks your currency tokens across multiple characters" -- Needs review
 L.misc_chars_currency_desc = "Hover over the icon of the required currency in the character window to display information in the tooltip" -- Need review
 L.misc_armory_link = "Add Armory link" -- Need review
 L.misc_armory_link_desc = "Add Armory link in UnitPopupMenus (It breaks set focus)" -- Needs review
-L_GUI_MISC_MERCHANT_ITEMLEVEL = "Show item level for weapons and armor in merchant" -- Need review
-L_GUI_MISC_MINIMIZE_MOUSEOVER = "Mouseover for quest minimize button" -- Need review
-L_GUI_MISC_HIDE_BANNER = "Hide Boss Banner Loot Frame" -- Need review
-L_GUI_MISC_HIDE_TALKING_HEAD = "Hide Talking Head Frame" -- Need review
 L.misc_hide_raid_button = "Button to hide raid frames in dps layout" -- Need review
 L.misc_hide_raid_button_desc = "The button is displayed by hovering the mouse in the upper left corner" -- Need review

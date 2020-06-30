@@ -20,9 +20,25 @@ L_GUI_GENERAL_SUBTEXT = "一般用戶界面设置，键入 /uihelp 获取更多�
 L_GUI_GENERAL_WELCOME_MESSAGE = "欢迎信息"
 L_GUI_GENERAL_AUTOSCALE = "自动UI缩放"
 L_GUI_GENERAL_UISCALE = "自定义UI缩放"
+L.general_subheader_blizzard = "Blizzard UI elements" -- Need review
+L.general_error_filter = "Error filtering" -- Need review
+L.general_error_blacklist = "Blacklist" -- Need review
+L.general_error_whitelist = "Whitelist" -- Need review
+L.general_error_combat = "In combat" -- Need review
+L.general_error_none = "None" -- Need review
+L.general_vehicle_mouseover = "驾驶框架解锁"
+L.general_move_blizzard = "移动暴雪界面框架"
+L.general_color_picker = "改进型颜色选择器"
+L.general_color_picker_desc = "增加按鈕：复制/粘上/职业 输入框：RGB/色值/透明度"
+L.general_minimize_mouseover = "鼠标悬停显示任务最小化按钮"
+L.general_hide_banner = "自动隐藏Boss额外拾取提示"
+L.general_hide_talking_head = "自动隐藏任务对话框"
+
+-- Media options
 L.media_border_color = "背景颜色"
 L.media_backdrop_color = "边框背景颜色"
 L.media_backdrop_alpha = "透明背景"
+L.media_texture = "Main texture" -- Need review
 L.media_subheader_pixel = "像素字体"
 
 -- Font options
@@ -176,7 +192,6 @@ L.raidframe_dps_raid_width = "框架宽度"
 L.raidframe_dps_raid_height = "框架高度"
 L.raidframe_dps_party_power_height = "队伍能量框架高度"
 L.raidframe_dps_raid_power_height = "能量框架高度"
-
 
 -- ActionBar options
 L_GUI_ACTIONBAR = "动作条"
@@ -395,7 +410,8 @@ L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "在团队频道通告"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "当团队检查就绪时进行通告"
 L_GUI_ANNOUNCEMENTS_FEASTS = "放置食物/大锅/灵魂井/修理机器人时进行通告"
 L_GUI_ANNOUNCEMENTS_PORTALS = "开启传送门/召唤仪式时进行通告"
-L_GUI_ANNOUNCEMENTS_BAD_GEAR = "进入副本时提醒非副本装备"
+L.announcements_bad_gear = "Check your bad gear" -- Need review
+L.announcements_bad_gear_desc = "进入副本时提醒非副本装备"
 L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "检查'狩猎帽'使用情况"
 
 -- Automation options
@@ -507,44 +523,40 @@ L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "考古"
 L_GUI_STATS_CURRENCY_COOKING = "烹饪"
 L_GUI_STATS_CURRENCY_RAID = "副本徽记"
 
--- Error options
-L_GUI_ERROR = "错误收集"
-L_GUI_ERROR_SUBTEXT = "隱藏屏幕上方紅字信息"
-L_GUI_ERROR_BLACK = "隐藏黑名单错误"
-L_GUI_ERROR_WHITE = "显示白名单错误"
-L_GUI_ERROR_HIDE_COMBAT = "战斗中隐藏所有错误提示"
+-- Trade options
+L_GUI_TRADE = "Trade" -- Need review
+L_GUI_TRADE_SUBTEXT = "Settings related to professions and trade" -- Need review
+L.trade_profession_tabs = "Professions tabs" -- Need review
+L.trade_profession_tabs_desc = "专业/商业框架显示专业技能按鈕"
+L.trade_already_known = "Colorizes already known items" -- Need review
+L.trade_already_known_desc = "已拥有食谱/坐骑/宠物着色"
+L.trade_disenchanting = "Quick Disenchanting" -- Need review
+L.trade_disenchanting_desc = "快捷研磨/选矿/分解(Alt+左键)"
+L.trade_sum_buyouts = "总结拍卖物品的总金额"
+L.trade_sum_buyouts_desc = "拍卖界面显示拍卖物品的总金额"
+L.trade_enchantment_scroll = "附魔界面显示附魔卷轴数量"
+L.trade_archaeology = "考古学小助手"
+L.trade_archaeology_desc = "显示考古学各类文物的进度及符文石数量(键入 /arch 或点击小地图隐藏按键打开界面)"
+L.trade_merchant_itemlevel = "Item level in merchant" -- Need review
+L.trade_merchant_itemlevel_desc = "在商人界面显示物品等级"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "一些便捷的功能设置"
 L.misc_shift_marking = "鼠标目标标记"
 L.misc_shift_marking_desc = "鼠标指向目标Shift+左键显示团队标记菜单(仅限队伍/团队)"
-L_GUI_MISC_SPIN_CAMERA = "AFK时旋转镜头"
-L_GUI_MISC_VEHICLE_MOUSEOVER = "驾驶框架解锁"
-L_GUI_MISC_QUEST_AUTOBUTTON = "任务/道具自动按钮"
+L.misc_afk_spin_camera = "AFK时旋转镜头"
+L.misc_quest_auto_button = "Quest items auto button" -- Need review
+L.misc_quest_auto_button_desc = "任务/道具自动按钮" -- Need review
 L.misc_raid_tools = "团队工具"
 L.misc_raid_tools_desc = "团队管理便捷功能: 右键就位确认，中键角色检查，左键展开更多功能(仅限队长/助手)"
-L_GUI_MISC_PROFESSION_TABS = "专业/商业框架显示专业技能按鈕"
-L_GUI_MISC_ITEM_LEVEL = "角色界面显示装备的物品等级"
-L_GUI_MISC_ALREADY_KNOWN = "已拥有食谱/坐骑/宠物着色"
-L_GUI_MISC_DISENCHANTING = "快捷研磨/选矿/分解(Alt+左键)"
-L.misc_sum_buyouts = "总结拍卖物品的总金额"
-L.misc_sum_buyouts_desc = "拍卖界面显示拍卖物品的总金额"
+L.misc_item_level = "Item level on slot buttons" -- Need review
+L.misc_item_level_desc = "角色界面显示装备的物品等级"
 L.misc_click_cast = "简单的点击施法绑定"
 L.misc_click_cast_desc = "开启后法术书有鼠标绑定界面可以进行设置"
 L.misc_click_cast_filter = "忽略玩家/目标框架点击施法"
-L_GUI_MISC_MOVE_BLIZZARD = "移动暴雪界面框架"
-L.misc_color_picker = "改进型颜色选择器"
-L.misc_color_picker_desc = "增加按鈕：复制/粘上/职业 输入框：RGB/色值/透明度"
-L_GUI_MISC_ENCHANTMENT_SCROLL = "附魔界面显示附魔卷轴数量"
-L.misc_archaeology = "考古学小助手"
-L.misc_archaeology_desc = "显示考古学各类文物的进度及符文石数量(键入 /arch 或点击小地图隐藏按键打开界面)"
 L.misc_chars_currency = "追踪所有角色的货币"
 L.misc_chars_currency_desc = "在货币界面中追踪所有角色的货币"
 L.misc_armory_link = "英雄榜"
 L.misc_armory_link_desc = "头像菜单增加英雄榜链接"
-L_GUI_MISC_MERCHANT_ITEMLEVEL = "在商人界面显示物品等级"
-L_GUI_MISC_MINIMIZE_MOUSEOVER = "鼠标悬停显示任务最小化按钮"
-L_GUI_MISC_HIDE_BANNER = "自动隐藏Boss额外拾取提示"
-L_GUI_MISC_HIDE_TALKING_HEAD = "自动隐藏任务对话框"
 L.misc_hide_raid_button = "DPS团队框架最小化按钮"
 L.misc_hide_raid_button_desc = "按钮在DPS团队框架左上方鼠标悬停显示"

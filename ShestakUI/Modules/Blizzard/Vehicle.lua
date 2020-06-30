@@ -18,7 +18,7 @@ end)
 ----------------------------------------------------------------------------------------
 --	Vehicle indicator on mouseover
 ----------------------------------------------------------------------------------------
-if C.misc.vehicle_mouseover == true then
+if C.general.vehicle_mouseover == true then
 	local function VehicleNumSeatIndicator()
 		if VehicleSeatIndicatorButton6 then
 			T.numSeat = 6

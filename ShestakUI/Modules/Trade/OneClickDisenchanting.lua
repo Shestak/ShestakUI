@@ -1,5 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if C.misc.disenchanting ~= true then return end
+if C.trade.disenchanting ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	One-click Milling, Prospecting and Disenchanting(Molinari by p3lim)

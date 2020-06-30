@@ -1,5 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if C.misc.sum_buyouts ~= true then return end
+if C.trade.sum_buyouts ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Sum up all current auctions(Sigma by Ailae)

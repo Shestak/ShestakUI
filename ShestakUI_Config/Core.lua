@@ -95,30 +95,6 @@ local function toggle(self)
 	else
 		PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF)
 	end
-	if self.group == "error" then
-		if self.option == "white" and checked then
-			local black = ShestakUIOptionsPanelerror.black
-			if black:GetChecked() then
-				black:SetChecked(false)
-				SaveValue(black, false)
-				if old[black] == nil then
-					old[black] = not black:GetChecked()
-				end
-			end
-		end
-
-		if self.option == "black" and checked then
-			local white = ShestakUIOptionsPanelerror.white
-			if white:GetChecked() then
-				white:SetChecked(false)
-				SaveValue(white, false)
-
-				if old[white] == nil then
-					old[white] = not white:GetChecked()
-				end
-			end
-		end
-	end
 
 	SaveValue(self, checked)
 	if self.children then toggleChildren(self, checked) end
@@ -421,27 +397,33 @@ end
 local DropDownText = {
 	["Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Normal.ttf"] = "Normal font",
 	["Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Pixel.ttf"] = "Pixel Font",
-	[STANDARD_TEXT_FONT] = "Blizzard font"
+	[STANDARD_TEXT_FONT] = "Blizzard font",
+	["BLACKLIST"] = ns.general_error_blacklist,
+	["WHITELIST"] = ns.general_error_whitelist,
+	["COMBAT"] = ns.general_error_combat,
+	["NONE"] = ns.general_error_none,
 }
 
-ns.CreateDropDown = function(parent, option, needsReload, text, tableValue)
+ns.CreateDropDown = function(parent, option, needsReload, text, tableValue, keyName)
 	local f = CreateFrame("Frame", parent:GetName()..option.."DropDown", parent, "UIDropDownMenuTemplate")
 	UIDropDownMenu_SetWidth(f, 110)
 
 	UIDropDownMenu_Initialize(f, function(self)
 		local info = UIDropDownMenu_CreateInfo()
 		info.func = self.SetValue
-		for _, value in pairs(tableValue) do
-			info.text = DropDownText[value] or value
+		for key, value in pairs(tableValue) do
+			info.text = keyName and key or DropDownText[value] or value
 			info.arg1 = value
+			info.arg2 = key
+			info.tooltipText = text
 			info.checked = value == f.selectedValue
 			UIDropDownMenu_AddButton(info)
 		end
 	end)
 
-	function f:SetValue(newValue)
+	function f:SetValue(newValue, newkey)
 		f.selectedValue = newValue
-		local text = DropDownText[newValue] or newValue
+		local text = keyName and newkey or DropDownText[newValue] or newValue
 		UIDropDownMenu_SetText(f, text)
 		SaveValue(f, newValue)
 		old[f] = f.oldValue

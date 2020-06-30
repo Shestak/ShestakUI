@@ -32,6 +32,14 @@ C["general"] = {
 	["welcome_message"] = true,					-- Enable welcome message in chat
 	["auto_scale"] = true,						-- Autoscale
 	["uiscale"] = 0.96,							-- Your value (between 0.2 and 1) if "auto_scale" is disable
+	-- Blizzard UI
+	["error_filter"] = "BLACKLIST",				-- Filter Blizzard red errors (BLACKLIST, WHITELIST, COMBAT, NONE)
+	["move_blizzard"] = false,					-- Move some Blizzard frames
+	["color_picker"] = false,					-- Improved ColorPicker
+	["vehicle_mouseover"] = false,				-- Vehicle frame on mouseover
+	["minimize_mouseover"] = false,				-- Mouseover for quest minimize button
+	["hide_banner"] = false,					-- Hide Boss Banner Loot Frame
+	["hide_talking_head"] = false,				-- Hide Talking Head Frame
 }
 
 ----------------------------------------------------------------------------------------
@@ -322,6 +330,7 @@ C["nameplate"] = {
 	["auras_size"] = 25,						-- Debuffs size
 	["healer_icon"] = false,					-- Show icon above enemy healers nameplate in battlegrounds
 	["totem_icons"] = false,					-- Show icon above enemy totems nameplate
+	-- Threat
 	["enhance_threat"] = true,					-- Enable threat feature, automatically changes by your role
 	["good_color"] = {0.2, 0.8, 0.2},			-- Good threat color
 	["near_color"] = {1, 1, 0},					-- Near threat color
@@ -561,39 +570,30 @@ C["stats"] = {
 }
 
 ----------------------------------------------------------------------------------------
---	Error options
+--	Trade options
 ----------------------------------------------------------------------------------------
-C["error"] = {
-	["black"] = true,							-- Hide errors from black list
-	["white"] = false,							-- Show only errors from white list
-	["combat"] = false,							-- Hide all errors in combat
+C["trade"] = {
+	["profession_tabs"] = true,					-- Professions tabs on TradeSkill frames
+	["already_known"] = true,					-- Colorizes recipes/mounts/pets/toys that is already known
+	["disenchanting"] = false,					-- Milling, Prospecting and Disenchanting by Alt + click
+	["enchantment_scroll"] = false,				-- Enchantment scroll on TradeSkill frame
+	["sum_buyouts"] = false,					-- Sum up all current auctions
+	["archaeology"] = false,					-- Archaeology tracker ('/arch' or right mouseover minimap button to show)
+	["merchant_itemlevel"] = false,				-- Show item level for weapons and armor in merchant
 }
 
 ----------------------------------------------------------------------------------------
 --	Miscellaneous options
 ----------------------------------------------------------------------------------------
 C["misc"] = {
+	["raid_tools"] = true,						-- Raid tools
 	["shift_marking"] = true,					-- Marks mouseover target when you push Shift (only in group)
 	["afk_spin_camera"] = false,				-- Spin camera while afk
-	["vehicle_mouseover"] = false,				-- Vehicle frame on mouseover
 	["quest_auto_button"] = false,				-- Quest/item auto button (from the list)
-	["raid_tools"] = true,						-- Raid tools
-	["profession_tabs"] = true,					-- Professions tabs on TradeSkill frames
 	["item_level"] = true,						-- Item level on character slot buttons
-	["already_known"] = true,					-- Colorizes recipes/mounts/pets/toys that is already known
-	["disenchanting"] = false,					-- Milling, Prospecting and Disenchanting by Alt + click
-	["sum_buyouts"] = false,					-- Sum up all current auctions
 	["click_cast"] = false,						-- Simple click2cast spell binder
 	["click_cast_filter"] = false,				-- Ignore Player and Target frames for click2cast
-	["move_blizzard"] = false,					-- Move some Blizzard frames
-	["color_picker"] = false,					-- Improved ColorPicker
-	["enchantment_scroll"] = false,				-- Enchantment scroll on TradeSkill frame
-	["archaeology"] = false,					-- Archaeology tracker ('/arch' or right mouseover minimap button to show)
 	["chars_currency"] = false,					-- Tracks your currency tokens across multiple characters
 	["armory_link"] = false,					-- Add the Armory link in the chat menu and target (It breaks set focus)
-	["merchant_itemlevel"] = false,				-- Show item level for weapons and armor in merchant
-	["minimize_mouseover"] = false,				-- Mouseover for quest minimize button
-	["hide_banner"] = false,					-- Hide Boss Banner Loot Frame
-	["hide_talking_head"] = false,				-- Hide Talking Head Frame
 	["hide_raid_button"] = false,				-- Button to hide raid frames in dps layout (top left mouseover)
 }

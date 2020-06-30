@@ -1,5 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
-if C.misc.color_picker ~= true then return end
+if C.general.color_picker ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Improved ColorPicker(ColorPickerPlus by Jaslm)

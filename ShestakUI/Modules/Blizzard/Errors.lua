@@ -3,16 +3,17 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Clear UIErrorsFrame(module from Kousei by Haste)
 ----------------------------------------------------------------------------------------
-if C.error.white == true or C.error.black == true then
+if C.general.error_filter == "WHITELIST" or C.general.error_filter == "BLACKLIST" then
 	local frame = CreateFrame("Frame")
+	frame:RegisterEvent("UI_ERROR_MESSAGE")
 	frame:SetScript("OnEvent", function(_, _, _, text)
-		if C.error.white == true and C.error.black == false then
+		if C.general.error_filter == "WHITELIST" then
 			if T.white_list[text] then
 				UIErrorsFrame:AddMessage(text, 1, 0, 0)
 			else
 				L_INFO_ERRORS = text
 			end
-		elseif C.error.black == true and C.error.white == false then
+		elseif C.general.error_filter == "BLACKLIST" then
 			if T.black_list[text] then
 				L_INFO_ERRORS = text
 			else
@@ -20,18 +21,19 @@ if C.error.white == true or C.error.black == true then
 			end
 		end
 	end)
-	SlashCmdList.ERROR = function()
-		UIErrorsFrame:AddMessage(L_INFO_ERRORS, 1, 0, 0)
-	end
-	SLASH_ERROR1 = "/error"
+
 	UIErrorsFrame:UnregisterEvent("UI_ERROR_MESSAGE")
-	frame:RegisterEvent("UI_ERROR_MESSAGE")
 end
+
+SlashCmdList.ERROR = function()
+	UIErrorsFrame:AddMessage(L_INFO_ERRORS, 1, 0, 0)
+end
+SLASH_ERROR1 = "/error"
 
 ----------------------------------------------------------------------------------------
 --	Clear all UIErrors frame in combat
 ----------------------------------------------------------------------------------------
-if C.error.combat == true then
+if C.general.error_filter == "COMBAT" then
 	local frame = CreateFrame("Frame")
 	local OnEvent = function(self, event, ...) self[event](self, event, ...) end
 	frame:SetScript("OnEvent", OnEvent)

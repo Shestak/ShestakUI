@@ -155,7 +155,7 @@ if C.skins.blizzard_frames == true then
 	button.plus:Hide()
 	hooksecurefunc("ObjectiveTracker_Collapse", function()
 		button.plus:Show()
-		if C.misc.minimize_mouseover then
+		if C.general.minimize_mouseover then
 			button:SetAlpha(0)
 			button:HookScript("OnEnter", function() button:SetAlpha(1) end)
 			button:HookScript("OnLeave", function() button:SetAlpha(0) end)
@@ -164,7 +164,7 @@ if C.skins.blizzard_frames == true then
 
 	hooksecurefunc("ObjectiveTracker_Expand", function()
 		button.plus:Hide()
-		if C.misc.minimize_mouseover then
+		if C.general.minimize_mouseover then
 			button:SetAlpha(1)
 			button:HookScript("OnEnter", function() button:SetAlpha(1) end)
 			button:HookScript("OnLeave", function() button:SetAlpha(1) end)

@@ -59,27 +59,28 @@
 	<Script file="Modules\UnitFrames\RaidDPS.lua"/>
 	<Script file="Modules\UnitFrames\RaidHeal.lua"/>
 
-	<Script file="Modules\Misc\AlreadyKnown.lua"/>
-	<Script file="Modules\Misc\Archaeology.lua"/>
 	<Script file="Modules\Misc\ArmoryLink.lua"/>
 	<Script file="Modules\Misc\CharsCurrency.lua"/>
 	<Script file="Modules\Misc\ClickCast.lua"/>
 	<Script file="Modules\Misc\LFGQueueTimer.lua"/>
 	<Script file="Modules\Misc\MagePortals.lua"/>
-	<Script file="Modules\Misc\Merchant.lua"/>
-	<Script file="Modules\Misc\MerchantItemlevel.lua"/>
 	<Script file="Modules\Misc\Misc.lua"/>
 	<Script file="Modules\Misc\Mounts.lua"/>
 	<Script file="Modules\Misc\MouseoverMarking.lua"/>
-	<Script file="Modules\Misc\OneClickDisenchanting.lua"/>
-	<Script file="Modules\Misc\OneClickEnchantScroll.lua"/>
-	<Script file="Modules\Misc\ProfessionTabs.lua"/>
 	<Script file="Modules\Misc\PvPQueueTimer.lua"/>
 	<Script file="Modules\Misc\RaidUtility.lua"/>
 	<Script file="Modules\Misc\SlotItemLevel.lua"/>
-	<Script file="Modules\Misc\SumAucBuyouts.lua"/>
 	<Script file="Modules\Misc\Threat.lua"/>
-	<Script file="Modules\Misc\TrainAll.lua"/>
+
+	<Script file="Modules\Trade\AlreadyKnown.lua"/>
+	<Script file="Modules\Trade\Archaeology.lua"/>
+	<Script file="Modules\Trade\Merchant.lua"/>
+	<Script file="Modules\Trade\MerchantItemlevel.lua"/>
+	<Script file="Modules\Trade\OneClickDisenchanting.lua"/>
+	<Script file="Modules\Trade\OneClickEnchantScroll.lua"/>
+	<Script file="Modules\Trade\ProfessionTabs.lua"/>
+	<Script file="Modules\Trade\SumAucBuyouts.lua"/>
+	<Script file="Modules\Trade\TrainAll.lua"/>
 
 	<Script file="Modules\ActionBars\Core.lua"/>
 	<Script file="Modules\ActionBars\Bindings.lua"/>
