@@ -20,16 +20,16 @@ L_GUI_GENERAL_SUBTEXT = "一般用戶界面設置，鍵入 /uihelp 獲取更多�
 L_GUI_GENERAL_WELCOME_MESSAGE = "歡迎信息"
 L_GUI_GENERAL_AUTOSCALE = "自動UI縮放"
 L_GUI_GENERAL_UISCALE = "自定義UI縮放"
-L.general_subheader_blizzard = "Blizzard UI elements" -- Need review
-L.general_error_filter = "Error filtering" -- Need review
-L.general_error_blacklist = "Blacklist" -- Need review
-L.general_error_whitelist = "Whitelist" -- Need review
-L.general_error_combat = "In combat" -- Need review
-L.general_error_none = "None" -- Need review
+L.general_subheader_blizzard = "暴雪插件"
+L.general_error_filter = "紅字錯誤過濾"
+L.general_error_blacklist = "黑名單"
+L.general_error_whitelist = "白名單"
+L.general_error_combat = "戰鬥中"
+L.general_error_none = "不過濾"
 L.general_vehicle_mouseover = "駕駛框架解鎖"
 L.general_move_blizzard = "移動暴雪界面框架"
 L.general_color_picker = "改進型顏色選擇器"
-L.general_color_picker_desc = "增加 按鈕：複製/貼上/職業 輸入框：RGB/色值/透明度"
+L.general_color_picker_desc = "增加按鈕：複製/貼上/職業 輸入框：RGB/色值/透明度"
 L.general_minimize_mouseover = "任務欄最小化按鈕滑鼠懸停顯示"
 L.general_hide_banner = "自動隱藏Boss額外拾取提示"
 L.general_hide_talking_head = "自動隱藏任務對話框"
@@ -38,7 +38,7 @@ L.general_hide_talking_head = "自動隱藏任務對話框"
 L.media_border_color = "背景顏色"
 L.media_backdrop_color = "邊框背景顏色"
 L.media_backdrop_alpha = "透明背景"
-L.media_texture = "Main texture" -- Need review
+L.media_texture = "主要材質"
 L.media_subheader_pixel = "像素字體"
 
 -- Font options
@@ -112,11 +112,11 @@ L_GUI_UF_SUBHEADER_PLUGINS = "輔助功能"
 L_GUI_UF_PLUGINS_GCD = "公共CD計時條"
 L_GUI_UF_PLUGINS_SWING = "普通攻擊計時條"
 L.unitframe_plugins_reputation_bar = "聲望條"
-L.unitframe_plugins_reputation_bar_desc = "聲望條(玩家框架左側滑鼠懸停顯示，中鍵鎖定顯示。)"
+L.unitframe_plugins_reputation_bar_desc = "在玩家框架左側滑鼠懸停顯示，中鍵鎖定顯示。"
 L.unitframe_plugins_experience_bar = "經驗條"
-L.unitframe_plugins_experience_bar_desc = "經驗條(玩家框架左側滑鼠懸停顯示，中鍵鎖定顯示。)"
+L.unitframe_plugins_experience_bar_desc = "在玩家框架左側滑鼠懸停顯示，中鍵鎖定顯示。"
 L.unitframe_plugins_artifact_bar = "神器能量條"
-L.unitframe_plugins_artifact_bar_desc = "神器能量條(玩家框架左側滑鼠懸停顯示，中鍵鎖定顯示。)"
+L.unitframe_plugins_artifact_bar_desc = "在玩家框架左側滑鼠懸停顯示，中鍵鎖定顯示。"
 L_GUI_UF_PLUGINS_SMOOTH_BAR = "平滑條"
 L_GUI_UF_PLUGINS_ENEMY_SPEC = "敵對玩家天賦"
 L_GUI_UF_PLUGINS_COMBAT_FEEDBACK = "玩家/目標框架顯示戰鬥文字"
@@ -174,7 +174,7 @@ L.raidframe_icons_phase = "相位標記"
 L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON = "高亮DeBuff圖標"
 L_GUI_UF_PLUGINS_AURA_WATCH = "團隊法術監視"
 L_GUI_UF_PLUGINS_AURA_WATCH_TIMER = "團隊減益時間"
-L_GUI_UF_PLUGINS_PVP_DEBUFFS = "PVP DeBuff圖標"
+L_GUI_UF_PLUGINS_PVP_DEBUFFS = "PvP DeBuff圖標"
 L_GUI_UF_PLUGINS_HEALCOMM = "即將受到的治療"
 L.raidframe_plugins_auto_resurrection = "中鍵施放復活技能"
 L.raidframe_plugins_auto_resurrection_desc = "滑鼠中鍵點擊已死亡角色時施放復活技能(Clique啟用時無效)"
@@ -201,7 +201,7 @@ L_GUI_ACTIONBAR_MACRO = "巨集名稱"
 L_GUI_ACTIONBAR_GRID = "快捷列顯示空白快捷鍵"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "快捷鍵大小"
 L_GUI_ACTIONBAR_BUTTON_SPACE = "快捷鍵間隔"
-L_GUI_ACTIONBAR_SPLIT_BARS = "#5快捷列分段(2*6; 該選項開啟后將激活所有快捷列)"
+L_GUI_ACTIONBAR_SPLIT_BARS = "#5快捷列分段(2*6; 該選項開啟後將激活所有快捷列)"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "快捷列邊框按職業著色"
 L.actionbar_toggle_mode = "自由折疊"
 L.actionbar_toggle_mode_desc = "可隨時調節快捷列顯示數目。按鈕位於底部快捷列上方及右側快捷列下方，滑鼠懸停顯示。"
@@ -410,8 +410,8 @@ L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "在團隊頻道通告"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "當團隊檢查就緒時進行通告"
 L_GUI_ANNOUNCEMENTS_FEASTS = "放置食物/大鍋/靈魂井/修理機器人時進行通告"
 L_GUI_ANNOUNCEMENTS_PORTALS = "開啟傳送門/召喚儀式時進行通告"
-L.announcements_bad_gear = "Check your bad gear" -- Need review
-L.announcements_bad_gear_desc = "進入副本時提醒非副本裝備"
+L.announcements_bad_gear = "檢查裝備"
+L.announcements_bad_gear_desc = "進入副本時提醒非副本裝備(魚竿等裝備)"
 L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "檢查'狩旅團之帽'使用情況"
 
 -- Automation options
@@ -430,12 +430,12 @@ L_GUI_AUTOMATION_SKIP_CINEMATIC = "自動跳過過場動畫(按住Ctrl臨時停�
 L_GUI_AUTOMATION_AUTO_ROLE = "自動設定角色類型"
 L_GUI_AUTOMATION_CANCEL_BAD_BUFFS = "自動取消非增益性質的Buff"
 L.automation_tab_binder = "Tab鍵只選定玩家"
-L.automation_tab_binder_desc = "在PVP區域按Tab鍵只選取對敵玩家目標，忽略寵物圖騰等次要目標。"
+L.automation_tab_binder_desc = "在PvP區域按Tab鍵只選取對敵玩家目標，忽略寵物圖騰等次要目標。"
 L_GUI_AUTOMATION_LOGGING_COMBAT = "團隊副本時自動開啟戰鬥記錄"
 L.automation_buff_on_scroll = "使用滑鼠滾輪施放Buff"
-L.automation_buff_on_scroll_desc = "指定Buff缺失時使用滑鼠中鍵滾輪施放"
+L.automation_buff_on_scroll_desc = "指定Buff缺失時使用滑鼠滾輪施放"
 L_GUI_AUTOMATION_OPEN_ITEMS = "自動打開背包中的封裝物品"
-L.automation_invite_keyword = "密語自動邀請關鍵詞"
+L.automation_invite_keyword = "自動邀請關鍵詞"
 L.automation_invite_keyword_desc = "鍵入 /ainv 開/關密語自動邀請，鍵入 /ainv 123 代表開啟並更改當前密語關鍵詞為123。"
 
 -- Buffs reminder options
@@ -476,7 +476,7 @@ L_GUI_COOLDOWN_ENEMY_DIRECTION = "敵對技能冷卻圖標方向"
 L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "始終顯示敵對技能冷卻"
 L_GUI_COOLDOWN_ENEMY_IN_BG = "戰場中顯示敵對技能冷卻"
 L_GUI_COOLDOWN_ENEMY_IN_ARENA = "競技場中顯示敵對技能冷卻"
-L.enemycooldown_show_inparty = "Show in party zone for allies" -- Need review
+L.enemycooldown_show_inparty = "Show in party zone for allies"
 L.enemycooldown_class_color = "按職業著色"
 
 -- Pulse cooldowns options
@@ -492,7 +492,7 @@ L_GUI_COOLDOWN_PULSE_THRESHOLD_DESC = "持續時間最小閾值"
 
 -- Threat options
 L_GUI_THREAT = "仇恨欄"
-L_GUI_THREAT_SUBTEXT = "仇恨威胁值统计(类似Omen)"
+L_GUI_THREAT_SUBTEXT = "仇恨威脅值統計(類似Omen)"
 L_GUI_THREAT_ENABLE = "仇恨欄"
 L_GUI_THREAT_HEIGHT = "仇恨欄高度"
 L_GUI_THREAT_WIDTH = "仇恨欄寬度"
@@ -500,8 +500,8 @@ L_GUI_THREAT_ROWS = "仇恨欄數目"
 L_GUI_THREAT_HIDE_SOLO = "僅在隊伍/團隊中開啟"
 
 -- Top panel options
-L_GUI_TOP_PANEL = "頂部信息条"
-L_GUI_TOP_PANEL_SUBTEXT = "管理顶部信息条"
+L_GUI_TOP_PANEL = "頂部信息條"
+L_GUI_TOP_PANEL_SUBTEXT = "管理頂部信息條"
 L_GUI_TOP_PANEL_ENABLE = "頂部信息條"
 L_GUI_TOP_PANEL_MOUSE = "滑鼠懸停時顯示頂部信息條"
 L_GUI_TOP_PANEL_WIDTH = "信息條寬度"
@@ -509,7 +509,7 @@ L_GUI_TOP_PANEL_HEIGHT = "信息條高度"
 
 -- Stats options
 L_GUI_STATS = "信息條"
-L_GUI_STATS_SUBTEXT = "位于屏幕底部的信息条，鍵入 /ls 獲取更多資訊。"
+L_GUI_STATS_SUBTEXT = "位于屏幕底部的信息條，鍵入 /ls 獲取更多資訊。"
 L_GUI_STATS_CLOCK = "時鐘"
 L_GUI_STATS_LATENCY = "延遲"
 L_GUI_STATS_FPS = "幀數"
@@ -524,33 +524,33 @@ L_GUI_STATS_CURRENCY_COOKING = "烹飪"
 L_GUI_STATS_CURRENCY_RAID = "副本徽印"
 
 -- Trade options
-L_GUI_TRADE = "Trade" -- Need review
-L_GUI_TRADE_SUBTEXT = "Settings related to professions and trade" -- Need review
-L.trade_profession_tabs = "Professions tabs" -- Need review
-L.trade_profession_tabs_desc = "專業/商業框架顯示專業技能按鈕"
-L.trade_already_known = "Colorizes already known items" -- Need review
-L.trade_already_known_desc = "彩色顯示已學會的食譜/坐騎/寵物"
-L.trade_disenchanting = "Quick Disenchanting" -- Need review
-L.trade_disenchanting_desc = "快捷研磨/選礦/分解(Alt+左鍵)"
+L_GUI_TRADE = "商業"
+L_GUI_TRADE_SUBTEXT = "專業和商業設置"
+L.trade_profession_tabs = "專業界面快捷按鈕"
+L.trade_profession_tabs_desc = "專業/商業界面顯示快捷按鈕"
+L.trade_already_known = "彩色顯示已學會的"
+L.trade_already_known_desc = "彩色顯示已學會的食譜/圖紙/坐騎/寵物"
+L.trade_disenchanting = "快捷研磨"
+L.trade_disenchanting_desc = "Alt+左鍵包裡物品即可快捷研磨/選礦/分解/開鎖"
 L.trade_sum_buyouts = "結算拍賣物品的總金額"
 L.trade_sum_buyouts_desc = "拍賣界面顯示拍賣物品的總金額"
 L.trade_enchantment_scroll = "附魔界面顯示附魔卷軸數量"
 L.trade_archaeology = "考古學小助手"
 L.trade_archaeology_desc = "顯示考古學各類文物的進度及符文石數量(鍵入 /arch 或點擊小地圖隱藏按鈕打開界面)"
-L.trade_merchant_itemlevel_desc = "在商人界面顯示物品等級"
-L.trade_merchant_itemlevel = "Item level in merchant" -- Need review
+L.trade_merchant_itemlevel = "商人界面顯示物品等級"
+L.trade_merchant_itemlevel_desc = "在商人界面顯示武器裝備的物品等級"
 
 -- Miscellaneous options
 L_GUI_MISC_SUBTEXT = "一些便捷的功能設置"
 L.misc_shift_marking = "滑鼠目標標記"
 L.misc_shift_marking_desc = "滑鼠指向目標Shift+左鍵顯示團隊標記菜單(僅限隊伍/團隊)"
 L.misc_afk_spin_camera = "AFK時旋轉鏡頭"
-L.misc_quest_auto_button = "Quest items auto button" -- Need review
-L.misc_quest_auto_button_desc = "任務/道具自動按鈕" -- Need review
+L.misc_quest_auto_button = "任務/道具自動按鈕"
+L.misc_quest_auto_button_desc = "任務/道具自動按鈕"
 L.misc_raid_tools = "團隊工具"
 L.misc_raid_tools_desc = "團隊管理便捷功能: 右鍵就位確認，中鍵角色檢查，左鍵展開更多功能(僅限隊長/助手)"
-L.misc_item_level = "Item level on slot buttons" -- Need review
-L.misc_item_level_desc = "人物界面顯示裝備的物品等級"
+L.misc_item_level = "人物界面顯示物品等級"
+L.misc_item_level_desc = "人物界面顯示武器裝備的物品等級"
 L.misc_click_cast = "簡單的點擊施法綁定"
 L.misc_click_cast_desc = "開啟後法術書有滑鼠綁定界面可以進行設置"
 L.misc_click_cast_filter = "忽略玩家/目標框架點擊施法"
