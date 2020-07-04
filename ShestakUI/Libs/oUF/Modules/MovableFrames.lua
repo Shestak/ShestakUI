@@ -372,7 +372,7 @@ do
 		backdrop:SetScript("OnShow", OnShow)
 
 		local name = backdrop:CreateFontString(nil, "OVERLAY")
-		name:SetFont(C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
+		name:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 		name:SetTextColor(1, 1, 1)
 		name:SetAllPoints(target)
 
