@@ -90,6 +90,8 @@ L_MINIMAP_CALENDAR = "Kalender"
 L_MINIMAP_HEAL_LAYOUT = "Links-Klick - Heiler Layout"
 L_MINIMAP_DPS_LAYOUT = "Rechts-Klick - DPS Layout"
 L_MINIMAP_BLIZZ_LAYOUT = "Mittel-Klick - Blizzard Layout"
+L_MINIMAP_FARM = "Minimap size" -- Need review
+L_MINIMAP_TOGGLE = "Toggle action bars" -- Need review
 
 -- Chat
 L_CHAT_WHISPER = "Von"

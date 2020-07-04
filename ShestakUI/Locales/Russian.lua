@@ -90,6 +90,8 @@ L_MINIMAP_CALENDAR = "Календарь"
 L_MINIMAP_HEAL_LAYOUT = "Левый клик - Лекарь"
 L_MINIMAP_DPS_LAYOUT = "Правый клик - Боец"
 L_MINIMAP_BLIZZ_LAYOUT = "Средний клик - Blizzard"
+L_MINIMAP_FARM = "Размер миникарты"
+L_MINIMAP_TOGGLE = "Переключение панелей команд"
 
 -- Chat
 L_CHAT_WHISPER = "От"

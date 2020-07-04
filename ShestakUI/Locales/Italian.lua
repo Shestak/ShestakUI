@@ -90,6 +90,8 @@ L_MINIMAP_CALENDAR = "Calendario"
 L_MINIMAP_HEAL_LAYOUT = "Click-Sinistro - Disposizione da Guaritore"
 L_MINIMAP_DPS_LAYOUT = "Click-Destro - Disposizione d'Assaltatore"
 L_MINIMAP_BLIZZ_LAYOUT = "Click-Centrale - Disposizione Blizzard"
+L_MINIMAP_FARM = "Minimap size" -- Need review
+L_MINIMAP_TOGGLE = "Toggle action bars" -- Need review
 
 -- Chat
 L_CHAT_WHISPER = "Da"

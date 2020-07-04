@@ -550,10 +550,14 @@ end)
 
 b:SetScript("OnEnter", function()
 	b:FadeIn()
+	GameTooltip:SetOwner(b, "ANCHOR_LEFT")
+	GameTooltip:AddLine(PROFESSIONS_ARCHAEOLOGY)
+	GameTooltip:Show()
 end)
 
 b:SetScript("OnLeave", function()
 	b:FadeOut()
+	GameTooltip:Hide()
 end)
 
 local bt = b:CreateTexture(nil, "OVERLAY")

@@ -353,6 +353,11 @@ for i = 1, 5 do
 		else
 			ToggleBar[i]:FadeIn()
 		end
+		if i == 5 then
+			GameTooltip:SetOwner(ToggleBar[i], "ANCHOR_LEFT")
+			GameTooltip:AddLine(L_MINIMAP_TOGGLE)
+			GameTooltip:Show()
+		end
 	end)
 
 	ToggleBar[i]:SetScript("OnLeave", function()
@@ -375,6 +380,9 @@ for i = 1, 5 do
 			end
 		else
 			ToggleBar[i]:FadeOut()
+		end
+		if i == 5 then
+			GameTooltip:Hide()
 		end
 	end)
 
