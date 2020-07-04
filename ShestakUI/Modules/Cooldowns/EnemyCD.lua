@@ -114,6 +114,11 @@ local StartTimer = function(name, sID)
 			icon:SetBackdropBorderColor(color.r, color.g, color.b)
 		end
 	end
+	for _, v in pairs(icons) do
+		if v.name == name and v.sID == sID then
+			StopTimer(v)
+		end
+	end
 	icon.name = name
 	icon.sID = sID
 	icon:Show()
