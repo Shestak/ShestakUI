@@ -90,8 +90,8 @@ L_MINIMAP_CALENDAR = "日曆"
 L_MINIMAP_HEAL_LAYOUT = "左鍵 - HPS 佈局"
 L_MINIMAP_DPS_LAYOUT = "右鍵 - DPS 佈局"
 L_MINIMAP_BLIZZ_LAYOUT = "中鍵 - 暴雪 佈局"
-L_MINIMAP_FARM = "Minimap size" -- Need review
-L_MINIMAP_TOGGLE = "Toggle action bars" -- Need review
+L_MINIMAP_FARM = "小地圖大小"
+L_MINIMAP_TOGGLE = "快捷列自由折疊"
 
 -- Chat
 L_CHAT_WHISPER = "From"
