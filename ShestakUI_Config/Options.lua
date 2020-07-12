@@ -1007,7 +1007,7 @@ do
 	local show_grid = ns.CreateCheckBox(parent, "show_grid", L_GUI_ACTIONBAR_GRID)
 	show_grid:SetPoint("TOPLEFT", macro, "BOTTOMLEFT", 0, 0)
 
-	local button_size = ns.CreateNumberSlider(parent, "button_size", nil, nil, 0, 35, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	local button_size = ns.CreateNumberSlider(parent, "button_size", nil, nil, 0, 40, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
 	button_size:SetPoint("TOPLEFT", show_grid, "BOTTOMLEFT", 0, -20)
 
 	local button_space = ns.CreateNumberSlider(parent, "button_space", nil, nil, 0, 7, 1, true, L_GUI_ACTIONBAR_BUTTON_SPACE)
