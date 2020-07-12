@@ -1504,11 +1504,8 @@ do
 	local toys = ns.CreateCheckBox(parent, "toys", L_GUI_ANNOUNCEMENTS_TOY_TRAIN)
 	toys:SetPoint("TOPLEFT", spells_from_all, "BOTTOMLEFT", -20, 0)
 
-	local says_thanks = ns.CreateCheckBox(parent, "says_thanks", L_GUI_ANNOUNCEMENTS_SAYS_THANKS)
-	says_thanks:SetPoint("TOPLEFT", toys, "BOTTOMLEFT", 0, 0)
-
 	local pull_countdown = ns.CreateCheckBox(parent, "pull_countdown", L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN)
-	pull_countdown:SetPoint("TOPLEFT", says_thanks, "BOTTOMLEFT", 0, 0)
+	pull_countdown:SetPoint("TOPLEFT", toys, "BOTTOMLEFT", 0, 0)
 
 	local flask_food = ns.CreateCheckBox(parent, "flask_food", L_GUI_ANNOUNCEMENTS_FLASK_FOOD)
 	flask_food:SetPoint("TOPLEFT", pull_countdown, "BOTTOMLEFT", 0, 0)
@@ -1538,55 +1535,61 @@ end
 do
 	local parent = ShestakUIOptionsPanel.automation
 
-	local release = ns.CreateCheckBox(parent, "release", L_GUI_AUTOMATION_RELEASE)
+	local release = ns.CreateCheckBox(parent, "release")
 	release:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local screenshot = ns.CreateCheckBox(parent, "screenshot", L_GUI_AUTOMATION_SCREENSHOT)
+	local screenshot = ns.CreateCheckBox(parent, "screenshot")
 	screenshot:SetPoint("TOPLEFT", release, "BOTTOMLEFT", 0, 0)
 
 	local solve_artifact = ns.CreateCheckBox(parent, "solve_artifact")
 	solve_artifact:SetPoint("TOPLEFT", screenshot, "BOTTOMLEFT", 0, 0)
 
-	local accept_invite = ns.CreateCheckBox(parent, "accept_invite", L_GUI_AUTOMATION_ACCEPT_INVITE)
+	local accept_invite = ns.CreateCheckBox(parent, "accept_invite")
 	accept_invite:SetPoint("TOPLEFT", solve_artifact, "BOTTOMLEFT", 0, 0)
 
-	local decline_duel = ns.CreateCheckBox(parent, "decline_duel", L_GUI_AUTOMATION_DECLINE_DUEL)
+	local decline_duel = ns.CreateCheckBox(parent, "decline_duel")
 	decline_duel:SetPoint("TOPLEFT", accept_invite, "BOTTOMLEFT", 0, 0)
 
-	local accept_quest = ns.CreateCheckBox(parent, "accept_quest", L_GUI_AUTOMATION_ACCEPT_QUEST)
+	local accept_quest = ns.CreateCheckBox(parent, "accept_quest")
 	accept_quest:SetPoint("TOPLEFT", decline_duel, "BOTTOMLEFT", 0, 0)
 
-	local auto_collapse = ns.CreateCheckBox(parent, "auto_collapse", L_GUI_AUTOMATION_AUTO_COLLAPSE)
+	local auto_collapse = ns.CreateCheckBox(parent, "auto_collapse")
 	auto_collapse:SetPoint("TOPLEFT", accept_quest, "BOTTOMLEFT", 0, 0)
 
-	local auto_collapse_reload = ns.CreateCheckBox(parent, "auto_collapse_reload", L_GUI_AUTOMATION_AUTO_COLLAPSE_RELOAD)
+	local auto_collapse_reload = ns.CreateCheckBox(parent, "auto_collapse_reload")
 	auto_collapse_reload:SetPoint("TOPLEFT", auto_collapse, "BOTTOMLEFT", 20, 0)
 
 	auto_collapse.children = {auto_collapse_reload}
 
-	local skip_cinematic = ns.CreateCheckBox(parent, "skip_cinematic", L_GUI_AUTOMATION_SKIP_CINEMATIC)
+	local skip_cinematic = ns.CreateCheckBox(parent, "skip_cinematic")
 	skip_cinematic:SetPoint("TOPLEFT", auto_collapse_reload, "BOTTOMLEFT", -20, 0)
 
-	local auto_role = ns.CreateCheckBox(parent, "auto_role", L_GUI_AUTOMATION_AUTO_ROLE)
+	local auto_role = ns.CreateCheckBox(parent, "auto_role")
 	auto_role:SetPoint("TOPLEFT", skip_cinematic, "BOTTOMLEFT", 0, 0)
 
-	local cancel_bad_buffs = ns.CreateCheckBox(parent, "cancel_bad_buffs", L_GUI_AUTOMATION_CANCEL_BAD_BUFFS)
+	local cancel_bad_buffs = ns.CreateCheckBox(parent, "cancel_bad_buffs")
 	cancel_bad_buffs:SetPoint("TOPLEFT", auto_role, "BOTTOMLEFT", 0, 0)
 
 	local tab_binder = ns.CreateCheckBox(parent, "tab_binder")
 	tab_binder:SetPoint("TOPLEFT", cancel_bad_buffs, "BOTTOMLEFT", 0, 0)
 
-	local logging_combat = ns.CreateCheckBox(parent, "logging_combat", L_GUI_AUTOMATION_LOGGING_COMBAT)
+	local logging_combat = ns.CreateCheckBox(parent, "logging_combat")
 	logging_combat:SetPoint("TOPLEFT", tab_binder, "BOTTOMLEFT", 0, 0)
 
 	local buff_on_scroll = ns.CreateCheckBox(parent, "buff_on_scroll")
 	buff_on_scroll:SetPoint("TOPLEFT", logging_combat, "BOTTOMLEFT", 0, 0)
 
-	local open_items = ns.CreateCheckBox(parent, "open_items", L_GUI_AUTOMATION_OPEN_ITEMS)
+	local open_items = ns.CreateCheckBox(parent, "open_items")
 	open_items:SetPoint("TOPLEFT", buff_on_scroll, "BOTTOMLEFT", 0, 0)
 
+	local resurrection = ns.CreateCheckBox(parent, "resurrection")
+	resurrection:SetPoint("TOPLEFT", open_items, "BOTTOMLEFT", 0, 0)
+
+	local summon = ns.CreateCheckBox(parent, "summon")
+	summon:SetPoint("TOPLEFT", resurrection, "BOTTOMLEFT", 0, 0)
+
 	local invite_keyword = ns.CreateEditBox(parent, "invite_keyword", true)
-	invite_keyword:SetPoint("TOPLEFT", open_items, "BOTTOMLEFT", 6, -8)
+	invite_keyword:SetPoint("TOPLEFT", summon, "BOTTOMLEFT", 6, -8)
 end
 
 -- Reminder

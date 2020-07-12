@@ -106,7 +106,6 @@
 	<Script file="Modules\Announcements\Interrupts.lua"/>
 	<Script file="Modules\Announcements\PullCountdown.lua"/>
 	<Script file="Modules\Announcements\SafariHat.lua"/>
-	<Script file="Modules\Announcements\SayThanks.lua"/>
 	<Script file="Modules\Announcements\Spells.lua"/>
 
 	<Script file="Modules\Auras\AuraSource.lua"/>
@@ -122,10 +121,12 @@
 	<Script file="Modules\Automation\CancelBadBuffs.lua"/>
 	<Script file="Modules\Automation\DeclineDuel.lua"/>
 	<Script file="Modules\Automation\LoggingCombat.lua"/>
+	<Script file="Modules\Automation\Resurrection.lua"/>
 	<Script file="Modules\Automation\Screenshots.lua"/>
 	<Script file="Modules\Automation\SetRole.lua"/>
 	<Script file="Modules\Automation\SkipCinematic.lua"/>
 	<Script file="Modules\Automation\SolveArtifact.lua"/>
+	<Script file="Modules\Automation\Summon.lua"/>
 	<Script file="Modules\Automation\TabBinder.lua"/>
 
 	<Script file="Modules\Blizzard\AlertFrames.lua"/>

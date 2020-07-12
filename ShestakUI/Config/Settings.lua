@@ -436,7 +436,6 @@ C["announcements"] = {
 	["spells"] = false,							-- Announce when you cast some spell (from the list)
 	["spells_from_all"] = false,				-- Check spells cast from all members
 	["toys"] = false,							-- Announce some annoying toys
-	["says_thanks"] = false,					-- Says thanks for some spells (resurrection, from the list)
 	["pull_countdown"] = true,					-- Pull countdown announce (/pc #)
 	["flask_food"] = false,						-- Announce the usage of flasks and food (/ffcheck)
 	["flask_food_raid"] = false,				-- Announce to raid channel
@@ -466,6 +465,8 @@ C["automation"] = {
 	["logging_combat"] = false,					-- Auto enables combat log text file in raid instances
 	["buff_on_scroll"] = false,					-- Cast buff on mouse scroll (from the list)
 	["open_items"] = false,						-- Auto opening of items in bag
+	["resurrection"] = false,					-- Auto confirm resurrection
+	["summon"] = false,							-- Auto confirm summon after 10 sec
 	["invite_keyword"] = "inv",					-- Short keyword for invite (for enable - in game type /ainv)
 }
 
