@@ -38,7 +38,9 @@ T.MoverFrames = {
 	PVE_PVP_DEBUFF_Anchor,
 	PVE_PVP_CC_Anchor,
 	COOLDOWN_Anchor,
-	T_DE_BUFF_BAR_Anchor
+	T_DE_BUFF_BAR_Anchor,
+	SplitBarLeft,
+	SplitBarRight
 }
 
 local moving = false
