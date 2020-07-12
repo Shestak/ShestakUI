@@ -116,7 +116,6 @@ local function UpdateBuffAnchors()
 	local buttonName = "BuffButton"
 	local previousBuff, aboveBuff
 	local numBuffs = 0
-	local numAuraRows = 0
 	local slack = BuffFrame.numEnchants
 	local mainhand, _, _, _, offhand = GetWeaponEnchantInfo()
 
@@ -127,11 +126,13 @@ local function UpdateBuffAnchors()
 		index = numBuffs + slack
 		buff:ClearAllPoints()
 		if (index > 1) and (mod(index, rowbuffs) == 1) then
-			numAuraRows = numAuraRows + 1
-			buff:SetPoint("TOP", aboveBuff, "BOTTOM", 0, -3)
+			if index == rowbuffs + 1 then
+				buff:SetPoint("TOP", BuffButton1, "BOTTOM", 0, -3)
+			else
+				buff:SetPoint("TOP", aboveBuff, "BOTTOM", 0, -3)
+			end
 			aboveBuff = buff
 		elseif index == 1 then
-			numAuraRows = 1
 			buff:SetPoint("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
 		else
 			if numBuffs == 1 then
