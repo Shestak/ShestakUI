@@ -822,6 +822,16 @@ local function Shared(self, unit)
 		end
 	end
 
+	local function castColor(self)
+		if self.notInterruptible then
+			self:SetStatusBarColor(0.78, 0.25, 0.25)
+			self.bg:SetColorTexture(0.78, 0.25, 0.25, 0.2)
+		else
+			self:SetStatusBarColor(1, 0.8, 0)
+			self.bg:SetColorTexture(1, 0.8, 0, 0.2)
+		end
+	end
+	
 	if C.unitframe.unit_castbar == true and unit ~= "arenatarget" then
 		self.Castbar = CreateFrame("StatusBar", self:GetName().."_Castbar", self)
 		self.Castbar:SetStatusBarTexture(C.media.texture, "ARTWORK")
@@ -837,8 +847,10 @@ local function Shared(self, unit)
 		self.Castbar.Overlay:SetPoint("TOPLEFT", -2, 2)
 		self.Castbar.Overlay:SetPoint("BOTTOMRIGHT", 2, -2)
 
-		self.Castbar.PostCastStart = T.PostCastStart
-		self.Castbar.PostChannelStart = T.PostChannelStart
+		self.Castbar.PostCastStart = castColor
+		self.Castbar.PostChannelStart = castColor
+		self.Castbar.PostCastNotInterruptible = castColor
+		self.Castbar.PostCastInterruptible = castColor
 
 		if unit == "player" then
 			if C.unitframe.castbar_icon == true then
