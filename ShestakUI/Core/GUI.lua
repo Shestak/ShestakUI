@@ -12,16 +12,6 @@ if ShestakUIOptionsGlobal[T.realm][T.name] == nil then ShestakUIOptionsGlobal[T.
 -- Сreate the main options table
 if ShestakUIOptions == nil then ShestakUIOptions = {} end
 
--- TODO: Remove Backward compatible for old GUI after while
-if GUIConfigSettings then
-	ShestakUIOptions = GUIConfigSettings
-end
-
-if GUIConfigAll and GUIConfigAll[T.realm][T.name] == true then
-	ShestakUIOptionsGlobal[T.realm][T.name] = true
-	ShestakUIOptionsPerChar = GUIConfig
-end
-
 -- Determine which settings to use
 local profile
 if ShestakUIOptionsGlobal[T.realm][T.name] == true then
