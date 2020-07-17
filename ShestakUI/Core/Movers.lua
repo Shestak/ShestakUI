@@ -9,7 +9,7 @@ T.MoverFrames = {
 	ActionBarAnchor,
 	RightActionBarAnchor,
 	PetActionBarAnchor,
-	ShiftHolder,
+	StanceBarAnchor,
 	MicroAnchor,
 	VehicleAnchor,
 	AchievementAnchor,
@@ -52,7 +52,8 @@ local placed = {
 	"stArchaeologyFrame",
 	"StuffingFrameBags",
 	"StuffingFrameBank",
-	"alDamageMeterFrame"
+	"UIWidgetTopAnchor",
+	"UIWidgetBelowAnchor"
 }
 
 local function UpdateCoords(self)

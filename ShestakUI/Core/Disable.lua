@@ -25,10 +25,6 @@ if C.actionbar.bottombars < 1 then
 	C.actionbar.bottombars = 1
 end
 
-if C.actionbar.petbar_horizontal == true then
-	C.actionbar.stancebar_horizontal = false
-end
-
 ----------------------------------------------------------------------------------------
 --	Auto-overwrite script config is X addon is found
 ----------------------------------------------------------------------------------------

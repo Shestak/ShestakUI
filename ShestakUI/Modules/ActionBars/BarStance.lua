@@ -4,28 +4,12 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	StanceBar(by Tukz)
 ----------------------------------------------------------------------------------------
-local ShiftHolder = CreateFrame("Frame", "ShiftHolder", T_PetBattleFrameHider)
-if C.actionbar.stancebar_horizontal == true then
-	ShiftHolder:SetPoint(unpack(C.position.stance_bar))
-	ShiftHolder:SetWidth((C.actionbar.button_size * 7) + (C.actionbar.button_space * 6))
-	ShiftHolder:SetHeight(C.actionbar.button_size)
-else
-	if (PetActionBarFrame:IsShown() or PetHolder) and C.actionbar.petbar_horizontal ~= true then
-		ShiftHolder:SetPoint("RIGHT", "PetHolder", "LEFT", -C.actionbar.button_space, (C.actionbar.button_size / 2) + 1)
-	else
-		ShiftHolder:SetPoint("RIGHT", "RightActionBarAnchor", "LEFT", -C.actionbar.button_space, (C.actionbar.button_size / 2) + 1)
-	end
-	ShiftHolder:SetWidth(C.actionbar.button_size)
-	ShiftHolder:SetHeight((C.actionbar.button_size * 7) + (C.actionbar.button_space * 6))
-end
-
 -- Hide bar
-if C.actionbar.stancebar_hide then StanceBarFrame:SetParent(ShiftHolder) ShiftHolder:Hide() return end
+if C.actionbar.stancebar_hide then StanceBarFrame:SetParent(StanceBarAnchor) StanceBarAnchor:Hide() return end
 
 -- Create bar
-local bar = CreateFrame("Frame", "UIShapeShift", ShiftHolder, "SecureHandlerStateTemplate")
-bar:ClearAllPoints()
-bar:SetAllPoints(ShiftHolder)
+local bar = CreateFrame("Frame", "StanceHolder", UIParent, "SecureHandlerStateTemplate")
+bar:SetAllPoints(StanceBarAnchor)
 
 local States = {
 	["DEATHKNIGHT"] = "show",
@@ -52,9 +36,9 @@ bar:SetScript("OnEvent", function(self, event)
 			button:SetParent(self)
 			if i == 1 then
 				if C.actionbar.stancebar_horizontal == true then
-					button:SetPoint("BOTTOMLEFT", ShiftHolder, "BOTTOMLEFT", 0, 0)
+					button:SetPoint("BOTTOMLEFT", StanceBarAnchor, "BOTTOMLEFT", 0, 0)
 				else
-					button:SetPoint("TOPLEFT", ShiftHolder, "TOPLEFT", 0, 0)
+					button:SetPoint("TOPLEFT", StanceBarAnchor, "TOPLEFT", 0, 0)
 				end
 			else
 				local previous = _G["StanceButton"..i-1]
@@ -75,9 +59,9 @@ bar:SetScript("OnEvent", function(self, event)
 		local function moveStance()
 			if not InCombatLockdown() then
 				if C.actionbar.stancebar_horizontal == true then
-					StanceButton1:SetPoint("BOTTOMLEFT", ShiftHolder, "BOTTOMLEFT", 0, 0)
+					StanceButton1:SetPoint("BOTTOMLEFT", StanceBarAnchor, "BOTTOMLEFT", 0, 0)
 				else
-					StanceButton1:SetPoint("TOPLEFT", ShiftHolder, "TOPLEFT", 0, 0)
+					StanceButton1:SetPoint("TOPLEFT", StanceBarAnchor, "TOPLEFT", 0, 0)
 				end
 			end
 		end
@@ -103,9 +87,9 @@ end)
 
 -- Mouseover bar
 if C.actionbar.rightbars_mouseover == true and C.actionbar.stancebar_horizontal == false then
-	ShapeShiftBarAnchor:SetAlpha(0)
-	ShapeShiftBarAnchor:SetScript("OnEnter", function() RightBarMouseOver(1) end)
-	ShapeShiftBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
+	StanceBarAnchor:SetAlpha(0)
+	StanceBarAnchor:SetScript("OnEnter", function() if StanceButton1:IsShown() then RightBarMouseOver(1) end end)
+	StanceBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
 	for i = 1, NUM_STANCE_SLOTS do
 		local b = _G["StanceButton"..i]
 		b:SetAlpha(0)
@@ -114,9 +98,9 @@ if C.actionbar.rightbars_mouseover == true and C.actionbar.stancebar_horizontal 
 	end
 end
 if C.actionbar.stancebar_mouseover == true and C.actionbar.stancebar_horizontal == true then
-	ShapeShiftBarAnchor:SetAlpha(0)
-	ShapeShiftBarAnchor:SetScript("OnEnter", function() StanceBarMouseOver(1) end)
-	ShapeShiftBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then StanceBarMouseOver(0) end end)
+	StanceBarAnchor:SetAlpha(0)
+	StanceBarAnchor:SetScript("OnEnter", function() StanceBarMouseOver(1) end)
+	StanceBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then StanceBarMouseOver(0) end end)
 	for i = 1, NUM_STANCE_SLOTS do
 		local b = _G["StanceButton"..i]
 		b:SetAlpha(0)
