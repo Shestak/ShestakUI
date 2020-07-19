@@ -268,20 +268,21 @@ C["tooltip"] = {
 	["hidebuttons"] = false,					-- Hide tooltip for actions bars
 	["hide_combat"] = false,					-- Hide tooltip in combat
 	-- Plugins
-	["talents"] = false,						-- Show tooltip talents
-	["achievements"] = true,					-- Comparing achievements in tooltip
-	["target"] = true,							-- Target player in tooltip
 	["title"] = false,							-- Player title in tooltip
 	["realm"] = true,							-- Player realm name in tooltip
 	["rank"] = true,							-- Player guild-rank in tooltip
-	["arena_experience"] = false,				-- Player PvP experience in arena
-	["spell_id"] = false,						-- Id number spells (/si to print buff info in chat)
+	["target"] = true,							-- Target player in tooltip
+	["talents"] = false,						-- Show tooltip talents
 	["average_lvl"] = false,					-- Average items level
 	["raid_icon"] = false,						-- Raid icon
-	["who_targetting"] = false,					-- Show who is targetting the unit (in raid or party)
-	["item_count"] = false,						-- Item stack count in tooltip
 	["unit_role"] = false,						-- Unit role in tooltip
+	["who_targetting"] = false,					-- Show who is targetting the unit (in raid or party)
+	["arena_experience"] = false,				-- Player PvP experience in arena
+	["spell_id"] = false,						-- Id number spells (/si to print buff info in chat)
+	["item_count"] = false,						-- Item stack count in tooltip
+	["achievements"] = true,					-- Comparing achievements in tooltip
 	["instance_lock"] = false,					-- Your instance lock status in tooltip
+	["mount"] = false,							-- Show source of mount
 }
 
 ----------------------------------------------------------------------------------------
