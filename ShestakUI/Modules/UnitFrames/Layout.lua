@@ -287,7 +287,7 @@ local function Shared(self, unit)
 			self.Runes.sortOrder = "asc"
 
 			for i = 1, 6 do
-				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_RuneBar", self.Runes)
+				self.Runes[i] = CreateFrame("StatusBar", self:GetName().."_Rune"..i, self.Runes)
 				self.Runes[i]:SetSize((player_width - 5) / 6, 7)
 				if i == 1 then
 					self.Runes[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -306,7 +306,7 @@ local function Shared(self, unit)
 		if T.class == "MAGE" then
 			-- Arcane Charge bar
 			if C.unitframe_class_bar.arcane == true then
-				self.ArcaneCharge = CreateFrame("Frame", self:GetName().."_ArcaneCharge", self)
+				self.ArcaneCharge = CreateFrame("Frame", self:GetName().."_ArcaneChargeBar", self)
 				self.ArcaneCharge:CreateBackdrop("Default")
 				self.ArcaneCharge:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.ArcaneCharge:SetSize(player_width, 7)
@@ -339,7 +339,7 @@ local function Shared(self, unit)
 				self.HarmonyBar:SetSize(player_width, 7)
 
 				for i = 1, 6 do
-					self.HarmonyBar[i] = CreateFrame("StatusBar", self:GetName().."_HarmonyBar", self.HarmonyBar)
+					self.HarmonyBar[i] = CreateFrame("StatusBar", self:GetName().."_Harmony"..i, self.HarmonyBar)
 					self.HarmonyBar[i]:SetSize((player_width - 5) / 6, 7)
 					if i == 1 then
 						self.HarmonyBar[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -401,7 +401,7 @@ local function Shared(self, unit)
 
 		-- Soul Shards bar
 		if C.unitframe_class_bar.shard == true and T.class == "WARLOCK" then
-			self.SoulShards = CreateFrame("Frame", self:GetName().."SoulShards", self)
+			self.SoulShards = CreateFrame("Frame", self:GetName().."SoulShardsBar", self)
 			self.SoulShards:CreateBackdrop("Default")
 			self.SoulShards:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.SoulShards:SetSize(player_width, 7)
@@ -432,7 +432,7 @@ local function Shared(self, unit)
 			self.CPoints:SetSize(player_width, 7)
 
 			for i = 1, 6 do
-				self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar", self.CPoints)
+				self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_Combo"..i, self.CPoints)
 				self.CPoints[i]:SetSize((player_width - 5) / 6, 7)
 				if i == 1 then
 					self.CPoints[i]:SetPoint("LEFT", self.CPoints)
@@ -459,7 +459,7 @@ local function Shared(self, unit)
 			self.TotemBar.Destroy = true
 
 			for i = 1, 4 do
-				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
+				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_Totem"..i, self.TotemBar)
 				self.TotemBar[i]:SetSize((player_width - 3) / 4, 7)
 
 				if i == 1 then
@@ -486,7 +486,7 @@ local function Shared(self, unit)
 			self.TotemBar.Destroy = true
 
 			for i = 1, 4 do
-				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_TotemBar", self.TotemBar)
+				self.TotemBar[i] = CreateFrame("StatusBar", self:GetName().."_Totem"..i, self.TotemBar)
 				self.TotemBar[i]:SetSize(140 / 4, 7)
 				if i == 1 then
 					self.TotemBar[i]:SetPoint("TOPLEFT", self, "TOPLEFT", 0, 0)
@@ -769,7 +769,7 @@ local function Shared(self, unit)
 				self.CPoints:SetSize(player_width, 7)
 
 				for i = 1, 6 do
-					self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_ComboBar", self.CPoints)
+					self.CPoints[i] = CreateFrame("StatusBar", self:GetName().."_Combo"..i, self.CPoints)
 					self.CPoints[i]:SetSize((player_width - 5) / 6, 7)
 					if i == 1 then
 						self.CPoints[i]:SetPoint("LEFT", self.CPoints)
@@ -1022,7 +1022,7 @@ local function Shared(self, unit)
 		self.Trinket:SetTemplate("Default")
 		self.FactionIcon:SetTemplate("Default")
 
-		self.AuraTracker = CreateFrame("Frame", self:GetName().."_Auratracker", self)
+		self.AuraTracker = CreateFrame("Frame", self:GetName().."_AuraTracker", self)
 		self.AuraTracker:SetWidth(self.Trinket:GetWidth())
 		self.AuraTracker:SetHeight(self.Trinket:GetHeight())
 		self.AuraTracker:SetPoint("CENTER", self.Trinket, "CENTER")
