@@ -60,13 +60,14 @@
 	<Script file="Modules\UnitFrames\RaidHeal.lua"/>
 
 	<Script file="Modules\Misc\ArmoryLink.lua"/>
+	<Script file="Modules\Misc\BattlefieldScore.lua"/>
 	<Script file="Modules\Misc\CharsCurrency.lua"/>
 	<Script file="Modules\Misc\ClickCast.lua"/>
 	<Script file="Modules\Misc\LFGQueueTimer.lua"/>
 	<Script file="Modules\Misc\MagePortals.lua"/>
+	<Script file="Modules\Misc\Marking.lua"/>
 	<Script file="Modules\Misc\Misc.lua"/>
 	<Script file="Modules\Misc\Mounts.lua"/>
-	<Script file="Modules\Misc\MouseoverMarking.lua"/>
 	<Script file="Modules\Misc\PvPQueueTimer.lua"/>
 	<Script file="Modules\Misc\RaidUtility.lua"/>
 	<Script file="Modules\Misc\SlotItemLevel.lua"/>
@@ -144,7 +145,6 @@
 	<Script file="Modules\Blizzard\MoveBlizzFrames.lua"/>
 	<Script file="Modules\Blizzard\Nameplates.lua"/>
 	<Script file="Modules\Blizzard\PetBattle.lua"/>
-	<Script file="Modules\Blizzard\ShiftMark.lua"/>
 	<Script file="Modules\Blizzard\TalkingHead.lua"/>
 	<Script file="Modules\Blizzard\TimerTracker.lua"/>
 	<Script file="Modules\Blizzard\UIWidget.lua"/>
@@ -168,8 +168,6 @@
 	<Script file="Modules\Cooldowns\EnemyCD.lua"/>
 	<Script file="Modules\Cooldowns\PulseCD.lua"/>
 	<Script file="Modules\Cooldowns\RaidCD.lua"/>
-
-	<Script file="Modules\DataText\Battleground.lua"/>
 
 	<Script file="Modules\Loot\AutoConfirm.lua"/>
 	<Script file="Modules\Loot\AutoGreed.lua"/>

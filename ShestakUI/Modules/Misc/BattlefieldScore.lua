@@ -10,10 +10,9 @@ local BGFrame = CreateFrame("Frame", "InfoBattleGround", UIParent)
 BGFrame:CreatePanel("Invisible", 300, C.font.stats_font_size, unpack(C.position.bg_score))
 BGFrame:EnableMouse(true)
 BGFrame:SetScript("OnEnter", function(self)
-	local numScores = GetNumBattlefieldScores()
 	local pvpStatIDs = C_PvP.GetMatchPVPStatIDs()
 
-	for i = 1, numScores do
+	for i = 1, GetNumBattlefieldScores() do
 		local name, _, honorableKills, deaths, _, _, _, _, _, damageDone, healingDone = GetBattlefieldScore(i)
 		if name and name == T.name then
 			GameTooltip:SetOwner(self, "ANCHOR_TOPLEFT", 0, T.Scale(4))
@@ -79,15 +78,14 @@ local function Update(_, t)
 	if int < 0 then
 		local dmgtxt
 		RequestBattlefieldScoreData()
-		local numScores = GetNumBattlefieldScores()
-		for i = 1, numScores do
+		for i = 1, GetNumBattlefieldScores() do
 			local name, killingBlows, _, _, honorGained, _, _, _, _, damageDone, healingDone = GetBattlefieldScore(i)
-			if healingDone > damageDone then
-				dmgtxt = (classcolor..SHOW_COMBAT_HEALING.." :|r "..T.ShortValue(healingDone))
-			else
-				dmgtxt = (classcolor..DAMAGE.." :|r "..T.ShortValue(damageDone))
-			end
 			if name and name == T.name then
+				if healingDone > damageDone then
+					dmgtxt = (classcolor..SHOW_COMBAT_HEALING.." :|r "..T.ShortValue(healingDone))
+				else
+					dmgtxt = (classcolor..DAMAGE.." :|r "..T.ShortValue(damageDone))
+				end
 				Text1:SetText(dmgtxt)
 				Text2:SetText(classcolor..COMBAT_HONOR_GAIN.." :|r "..format("%d", honorGained))
 				Text3:SetText(classcolor..KILLING_BLOWS.." :|r "..killingBlows)
