@@ -214,6 +214,7 @@ L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "宠物动作条横向排列"
 L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "鼠标悬停显示宠物动作条(仅横向时)"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "隐藏变身/姿态动作条"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "变身/姿态动作条横向排列"
+L.actionbar_stancebar_horizontal_desc = "Located below the player's frame" -- Needs review
 L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "鼠标悬停显示变身/姿态动作条(仅横向时)"
 L_GUI_ACTIONBAR_MICROMENU = "微型菜单"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "鼠标悬停显示微型菜单"

@@ -214,6 +214,7 @@ L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Activar barra de mascota horizontal"
 L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Barra de mascota al pasar el ratón (sólo para la barra de mascota horizontal)"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Ocultar cambio de forma"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Activar barra de estancia horizontal"
+L.actionbar_stancebar_horizontal_desc = "Located below the player's frame" -- Needs review
 L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Barras de Cambios de forma/Estancias al pasar el ratón" -- Needs review
 L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu" -- Needs review
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover" -- Needs review

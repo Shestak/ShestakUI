@@ -214,6 +214,7 @@ L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Aktiviere horizontale Begleiterleiste"
 L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Zeige die Begleiterleiste nur bei Mouseover(nur für horizontale Begleiterleiste)"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Gestaltenleiste verstecken"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Horizontale Haltungsleiste aktivieren"
+L.actionbar_stancebar_horizontal_desc = "Located below the player's frame" -- Needs review
 L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Zeige Haltungsleiste/Gestaltenleiste nur bei Mouseover"
 L_GUI_ACTIONBAR_MICROMENU = "Zeige Micromenü"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micromenü bei MouseOver"

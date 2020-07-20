@@ -214,6 +214,7 @@ L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Rendi orizzontale la barra famiglio"
 L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "Barra famiglio al passaggio del mouse (solo con la barra famiglio orizzontale)"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "Nascondi barra postura"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "Rendi orizzontale la barra postura"
+L.actionbar_stancebar_horizontal_desc = "Located below the player's frame" -- Needs review
 L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Barra postura al passaggio del mouse"
 L_GUI_ACTIONBAR_MICROMENU = "Attiva il micromenu"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micromenu al passaggio del mouse"

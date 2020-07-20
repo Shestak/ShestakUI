@@ -214,6 +214,7 @@ L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "寵物快捷列橫向排列"
 L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "滑鼠懸停顯示寵物快捷列(僅横向時)"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "隱藏變身/姿態快捷列"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "變身/姿態快捷列橫向排列"
+L.actionbar_stancebar_horizontal_desc = "Located below the player's frame" -- Needs review
 L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "滑鼠懸停顯示變身/姿態快捷列(僅横向時)"
 L_GUI_ACTIONBAR_MICROMENU = "微型菜單"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "滑鼠懸停顯示微型菜單"
