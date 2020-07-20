@@ -142,7 +142,7 @@ end
 ----------------------------------------------------------------------------------------
 --	Unit tooltip styling
 ----------------------------------------------------------------------------------------
-function GameTooltip_UnitColor(unit)
+local function GetColor(unit)
 	if not unit then return end
 	local r, g, b
 
@@ -264,11 +264,12 @@ local OnTooltipSetUnit = function(self)
 		name = UnitPVPName(unit)
 	end
 
-	_G["GameTooltipTextLeft1"]:SetText(name)
+	local r, g, b = GetColor(unit)
+	_G["GameTooltipTextLeft1"]:SetFormattedText("|cff%02x%02x%02x%s|r", r * 255, g * 255, b * 255, name or "")
+
 	if realm and realm ~= "" and C.tooltip.realm then
 		self:AddLine(FRIENDS_LIST_REALM.."|cffffffff"..realm.."|r")
 	end
-
 
 	if UnitIsPlayer(unit) then
 		if UnitIsAFK(unit) then
@@ -319,7 +320,7 @@ local OnTooltipSetUnit = function(self)
 	end
 
 	if C.tooltip.target == true and UnitExists(unit.."target") then
-		local r, g, b = GameTooltip_UnitColor(unit.."target")
+		local r, g, b = GetColor(unit.."target")
 		local text = ""
 
 		if UnitIsEnemy("player", unit.."target") then
