@@ -15,6 +15,7 @@ frame:SetScript("OnEvent", function()
 	StanceBarFrame:EnableMouse(false)
 	MicroButtonAndBagsBar:SetScale(0.00001)
 	MicroButtonAndBagsBar:EnableMouse(false)
+	MicroButtonAndBagsBar:SetPoint("BOTTOMRIGHT", 0, -99) -- Prevent scaling for right panels
 
 	local elements = {
 		MainMenuBar, MainMenuBarArtFrame, OverrideActionBar, PossessBarFrame, PetActionBarFrame, StanceBarFrame

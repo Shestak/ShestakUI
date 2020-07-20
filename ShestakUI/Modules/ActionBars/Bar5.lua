@@ -13,14 +13,6 @@ if C.actionbar.rightbars < 3 then
 	end
 else
 	bar:SetAllPoints(RightActionBarAnchor)
-
-	if not C.general.auto_scale then
-		hooksecurefunc(MultiBarLeft, "SetScale", function(_, scale)
-			if not InCombatLockdown() then
-				MultiBarBottomRight:SetScale(scale)
-			end
-		end)
-	end
 end
 MultiBarBottomRight:SetParent(bar)
 bar:SetFrameStrata("LOW")
