@@ -1141,6 +1141,27 @@ local setBarTicks = function(Castbar, numTicks)
 	end
 end
 
+local function castColor(unit)
+	local r, g, b
+	if UnitIsPlayer(unit) then
+		local _, class = UnitClass(unit)
+		local color = T.oUF_colors.class[class]
+		if color then
+			r, g, b = color[1], color[2], color[3]
+		end
+	else
+		local reaction = UnitReaction(unit, "player")
+		local color = T.oUF_colors.reaction[reaction]
+		if color and reaction >= 5 then
+			r, g, b = color[1], color[2], color[3]
+		else
+			r, g, b = 0.85, 0.77, 0.36
+		end
+	end
+
+	return r, g, b
+end
+
 T.PostCastStart = function(Castbar, unit)
 	Castbar.channeling = false
 	if unit == "vehicle" then unit = "player" end
@@ -1154,23 +1175,6 @@ T.PostCastStart = function(Castbar, unit)
 
 	if unit == "player" and C.unitframe.castbar_ticks == true then
 		setBarTicks(Castbar, 0)
-	end
-
-	local r, g, b, color
-	if UnitIsPlayer(unit) then
-		local _, class = UnitClass(unit)
-		color = T.oUF_colors.class[class]
-	else
-		local reaction = T.oUF_colors.reaction[UnitReaction(unit, "player")]
-		if reaction then
-			r, g, b = reaction[1], reaction[2], reaction[3]
-		else
-			r, g, b = 1, 1, 1
-		end
-	end
-
-	if color then
-		r, g, b = color[1], color[2], color[3]
 	end
 
 	if Castbar.notInterruptible and UnitCanAttack("player", unit) then
@@ -1198,6 +1202,7 @@ T.PostCastStart = function(Castbar, unit)
 				Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
 				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
 			else
+				local r, g, b = castColor(unit)
 				Castbar:SetStatusBarColor(r, g, b)
 				Castbar.bg:SetVertexColor(r, g, b, 0.2)
 			end
@@ -1242,23 +1247,6 @@ T.PostChannelStart = function(Castbar, unit)
 		setBarTicks(Castbar, Castbar.channelingTicks)
 	end
 
-	local r, g, b, color
-	if UnitIsPlayer(unit) then
-		local _, class = UnitClass(unit)
-		color = T.oUF_colors.class[class]
-	else
-		local reaction = T.oUF_colors.reaction[UnitReaction(unit, "player")]
-		if reaction then
-			r, g, b = reaction[1], reaction[2], reaction[3]
-		else
-			r, g, b = 1, 1, 1
-		end
-	end
-
-	if color then
-		r, g, b = color[1], color[2], color[3]
-	end
-
 	if Castbar.notInterruptible and UnitCanAttack("player", unit) then
 		Castbar:SetStatusBarColor(0.8, 0, 0)
 		Castbar.bg:SetVertexColor(0.8, 0, 0, 0.2)
@@ -1284,6 +1272,7 @@ T.PostChannelStart = function(Castbar, unit)
 				Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
 				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
 			else
+				local r, g, b = castColor(unit)
 				Castbar:SetStatusBarColor(r, g, b)
 				Castbar.bg:SetVertexColor(r, g, b, 0.2)
 			end
