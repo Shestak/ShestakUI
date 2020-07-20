@@ -26,16 +26,6 @@ local CreateFS = function(frame)
 	return fstring
 end
 
-local truncate = function(value)
-	if value >= 1e6 then
-		return string.format("%.2fb", value / 1e6)
-	elseif value >= 1e3 then
-		return string.format("%.2fm", value / 1e3)
-	else
-		return string.format("%.0fk", value)
-	end
-end
-
 local AddUnit = function(unit)
 	local threatpct, _, threatval = select(3, UnitDetailedThreatSituation(unit, "target"))
 	if threatval and threatval < 0 then
@@ -111,7 +101,7 @@ local UpdateBars = function()
 		bar[i]:SetStatusBarColor(color.r, color.g, color.b)
 		bar[i].bg:SetVertexColor(color.r, color.g, color.b, 0.2)
 		bar[i].left:SetText(cur.name)
-		bar[i].right:SetText(string.format("%s [%d%%]", truncate(cur.val / 1000), cur.pct))
+		bar[i].right:SetText(string.format("%s [%d%%]", T.ShortValue(cur.val), cur.pct))
 		bar[i]:Show()
 	end
 end
