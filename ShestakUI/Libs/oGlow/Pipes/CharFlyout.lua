@@ -6,9 +6,9 @@ local getID = function(loc)
 	if not player and not bank and not bags and not voidStorage then return end
 
 	if not bags then
-		return GetInventoryItemID("player", slot)
+		return GetInventoryItemLink("player", slot)
 	else
-		return GetContainerItemID(bag, slot)
+		return GetContainerItemLink(bag, slot)
 	end
 end
 
