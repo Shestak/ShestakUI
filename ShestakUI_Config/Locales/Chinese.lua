@@ -208,16 +208,16 @@ L.actionbar_toggle_mode_desc = "可随时调节动作条显示数目。按钮位
 L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "关闭动作条技能特效高亮"
 L_GUI_ACTIONBAR_BOTTOMBARS = "底部动作条数目"
 L_GUI_ACTIONBAR_RIGHTBARS = "右侧动作条数目"
-L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "鼠标悬停显示右侧动作条"
+L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "右侧动作条鼠标悬停显示"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "隐藏宠物动作条"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "宠物动作条横向排列"
-L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "鼠标悬停显示宠物动作条(仅横向时)"
+L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "鼠标悬停显示"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "隐藏变身/姿态动作条"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "变身/姿态动作条横向排列"
-L.actionbar_stancebar_horizontal_desc = "Located below the player's frame" -- Needs review
-L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "鼠标悬停显示变身/姿态动作条(仅横向时)"
+L.actionbar_stancebar_horizontal_desc = "位于玩家框架下方"
+L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "鼠标悬停显示"
 L_GUI_ACTIONBAR_MICROMENU = "微型菜单"
-L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "鼠标悬停显示微型菜单"
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "鼠标悬停显示"
 
 -- Tooltip options
 L.tooltip = "鼠标提示"
@@ -244,7 +244,7 @@ L.tooltip_who_targetting = "关注成员(在队伍/团队中谁以目标為目�
 L.tooltip_item_count = "物品的简易统计"
 L.tooltip_unit_role = "角色类型"
 L.tooltip_instance_lock = "自身信息提示"
-L.tooltip_mount = "Source of mount" -- Needs review
+L.tooltip_mount = "坐骑来源"
 
 -- Chat options
 L_GUI_CHAT_SUBTEXT = "这里可以设置你的聊天框"
@@ -405,7 +405,6 @@ L_GUI_ANNOUNCEMENTS_INTERRUPTS = "当你打断成功时在队伍/团队中进行
 L_GUI_ANNOUNCEMENTS_SPELLS = "当你施放相同法术时在队伍/团队中进行通告"
 L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "检视所有队员的法术"
 L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "使用玩具火车/烈酒的遥控器时进行通告"
-L_GUI_ANNOUNCEMENTS_SAYS_THANKS = "感谢Buff提供者"
 L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "倒计时通告(/pc #)"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "通告食物和合剂的使用情況(/ffcheck)"
 L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "在团队频道通告"

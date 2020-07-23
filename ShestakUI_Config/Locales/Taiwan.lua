@@ -208,16 +208,16 @@ L.actionbar_toggle_mode_desc = "可隨時調節快捷列顯示數目。按鈕位
 L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "關閉快捷列技能特效高亮"
 L_GUI_ACTIONBAR_BOTTOMBARS = "底部快捷列數目"
 L_GUI_ACTIONBAR_RIGHTBARS = "右側快捷列數目"
-L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "滑鼠懸停顯示右側快捷列"
+L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "右側快捷列滑鼠懸停顯示"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "隱藏寵物快捷列"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "寵物快捷列橫向排列"
-L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "滑鼠懸停顯示寵物快捷列(僅横向時)"
+L_GUI_ACTIONBAR_PETBAR_MOUSEOVER = "滑鼠懸停顯示"
 L_GUI_ACTIONBAR_STANCEBAR_HIDE = "隱藏變身/姿態快捷列"
 L_GUI_ACTIONBAR_STANCEBAR_HORIZONTAL = "變身/姿態快捷列橫向排列"
-L.actionbar_stancebar_horizontal_desc = "Located below the player's frame" -- Needs review
-L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "滑鼠懸停顯示變身/姿態快捷列(僅横向時)"
+L.actionbar_stancebar_horizontal_desc = "位於玩家框架下方"
+L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "滑鼠懸停顯示"
 L_GUI_ACTIONBAR_MICROMENU = "微型菜單"
-L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "滑鼠懸停顯示微型菜單"
+L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "滑鼠懸停顯示"
 
 -- Tooltip options
 L.tooltip = "滑鼠提示"
@@ -244,7 +244,7 @@ L.tooltip_who_targetting = "關注成員(在隊伍/團隊中誰以目標為目�
 L.tooltip_item_count = "物品的簡易統計"
 L.tooltip_unit_role = "角色類型"
 L.tooltip_instance_lock = "自身信息提示"
-L.tooltip_mount = "Source of mount" -- Needs review
+L.tooltip_mount = "坐騎來源"
 
 -- Chat options
 L_GUI_CHAT_SUBTEXT = "這裡可以設置你的聊天框"
