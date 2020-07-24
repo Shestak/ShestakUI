@@ -23,9 +23,9 @@ AutoSummon:SetScript("OnEvent", function(_, event)
 end)
 
 StaticPopupDialogs["CANCEL_SUMMON"] = {
-	text = LFG_LIST_AUTO_ACCEPT.." ".. string.lower(SUMMONS);
+	text = LFG_LIST_AUTO_ACCEPT.." ".. string.lower(SUMMONS),
 	button1 = CANCEL,
-	OnAccept = function(self)
+	OnAccept = function()
 		disable = true
 	end,
 	timeout = 12,

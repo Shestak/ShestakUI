@@ -194,7 +194,7 @@ SlashCmdList.FRAME = function(arg)
 	else
 		arg = GetMouseFocus()
 	end
-	if arg ~= nil then FRAME = arg end
+	if arg ~= nil then _G.FRAME = arg end
 	if arg ~= nil and not arg:IsForbidden() and arg:GetName() ~= nil then
 		local point, relativeTo, relativePoint, xOfs, yOfs = arg:GetPoint()
 		print("|cffCC0000--------------------------------------------------------------------|r")

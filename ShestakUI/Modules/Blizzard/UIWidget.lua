@@ -72,7 +72,7 @@ frame:SetScript("OnEvent", function()
 	for _, widgetFrame in pairs(UIWidgetTopCenterContainerFrame.widgetFrames) do
 		if widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.DoubleStatusBar then
 			for _, bar in pairs({widgetFrame.LeftBar, widgetFrame.RightBar}) do
-				hooksecurefunc(bar, "SetStatusBarAtlas", function(self, atlas)
+				hooksecurefunc(bar, "SetStatusBarAtlas", function(_, atlas)
 					if atlasColors[atlas] then
 						bar:SetStatusBarTexture(C.media.texture)
 						bar:SetStatusBarColor(unpack(atlasColors[atlas]))
