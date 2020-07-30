@@ -5,9 +5,13 @@ if C.tooltip.enable ~= true or C.tooltip.mount ~= true then return end
 --	Show source of mount
 ----------------------------------------------------------------------------------------
 local MountCache = {}
-for _, mountID in ipairs(C_MountJournal.GetMountIDs()) do
-	MountCache[select(2, C_MountJournal.GetMountInfoByID(mountID))] = mountID
-end
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function()
+	for _, mountID in ipairs(C_MountJournal.GetMountIDs()) do
+		MountCache[select(2, C_MountJournal.GetMountInfoByID(mountID))] = mountID
+	end
+end)
 
 hooksecurefunc(GameTooltip, "SetUnitAura", function(self, ...)
 	local id = select(10, UnitAura(...))
