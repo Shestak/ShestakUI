@@ -14,6 +14,7 @@ frame:SetScript("OnEvent", function()
 end)
 
 hooksecurefunc(GameTooltip, "SetUnitAura", function(self, ...)
+	if not UnitIsPlayer(...) or UnitIsUnit(..., "player") then return end
 	local id = select(10, UnitAura(...))
 
 	if id and MountCache[id] then
