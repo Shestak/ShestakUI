@@ -487,7 +487,7 @@ stArchFrame:EnableMouse(true)
 stArchFrame:SetMovable(true)
 stArchFrame:SetUserPlaced(true)
 stArchFrame:HookScript("OnMouseDown", function(self, button)
-	if IsShiftKeyDown() then
+	if IsAltKeyDown() or IsShiftKeyDown() then
 		self:StartMoving()
 	elseif IsControlKeyDown() and button == "RightButton" then
 		self:SetPoint(unpack(C.position.archaeology))

@@ -166,7 +166,7 @@ do
 end
 
 Butsu:SetScript("OnMouseDown", function(self, button)
-	if IsAltKeyDown() then
+	if IsAltKeyDown() or IsShiftKeyDown() then
 		self:StartMoving()
 	elseif IsControlKeyDown() and button == "RightButton" then
 		self:SetPoint(unpack(C.position.loot))
