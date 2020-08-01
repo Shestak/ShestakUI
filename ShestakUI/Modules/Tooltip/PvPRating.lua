@@ -5,7 +5,6 @@ if C.tooltip.enable ~= true or C.tooltip.arena_experience ~= true then return en
 --	Arena function(ArenaExp by Fernir)
 ----------------------------------------------------------------------------------------
 local active = false
-local tooltip = _G["GameTooltip"]
 local statistic = {
 	370,	-- Highest 2 man personal rating
 	595,	-- Highest 3 man personal rating
@@ -29,52 +28,46 @@ local gradient = function(val, low, high)
 end
 
 local frame = CreateFrame("Frame")
-frame:RegisterEvent("ADDON_LOADED")
-frame:SetScript("OnEvent", function(self, event, ...)
-	if event == "ADDON_LOADED" then
-		if ... then
-			frame:UnregisterEvent("ADDON_LOADED")
-			tooltip:HookScript("OnTooltipSetUnit", function()
-				if InCombatLockdown() then return end
-				if AchievementFrame and AchievementFrame:IsShown() then return end
-
-				self.unit = select(2, tooltip:GetUnit())
-				if not UnitIsPlayer(self.unit) then return end
-
-				if _G.GearScore then
-					_G.GearScore:UnregisterEvent("INSPECT_ACHIEVEMENT_READY")
-				end
-				ClearAchievementComparisonUnit()
-				frame:RegisterEvent("INSPECT_ACHIEVEMENT_READY")
-				SetAchievementComparisonUnit(self.unit)
-			end)
-			tooltip:HookScript("OnTooltipCleared", function()
-				if frame:IsEventRegistered("INSPECT_ACHIEVEMENT_READY") and frame:IsEventRegistered("INSPECT_ACHIEVEMENT_READY") then
-					frame:UnregisterEvent("INSPECT_ACHIEVEMENT_READY")
-					ClearAchievementComparisonUnit()
-				end
-				active = false
-			end)
-		end
-	elseif event == "INSPECT_ACHIEVEMENT_READY" then
+frame:SetScript("OnEvent", function(_, event)
+	if event == "INSPECT_ACHIEVEMENT_READY" then
 		if not GetComparisonAchievementPoints() then return end
 
 		active = false
 
-		for _, Achievement in pairs(statistic) do
-			if tonumber(GetComparisonStatistic(Achievement)) and tonumber(GetComparisonStatistic(Achievement)) > 0 then
-				tooltip:AddDoubleLine(select(2, GetAchievementInfo(Achievement)), gradient(tonumber(GetComparisonStatistic(Achievement)), 0, 100))
+		for _, id in pairs(statistic) do
+			local rating = tonumber(GetComparisonStatistic(id))
+			if rating and rating > 0 then
+				local _, name = GetAchievementInfo(id)
+				GameTooltip:AddDoubleLine(name, gradient(rating, 0, 100))
 				active = true
 			end
 		end
 
-		if active then tooltip:Show() end
-
-		if _G.GearScore then
-			_G.GearScore:RegisterEvent("INSPECT_ACHIEVEMENT_READY")
+		if active then
+			GameTooltip:Show()
 		end
 
 		frame:UnregisterEvent("INSPECT_ACHIEVEMENT_READY")
 		ClearAchievementComparisonUnit()
 	end
+end)
+
+GameTooltip:HookScript("OnTooltipSetUnit", function(self)
+	if InCombatLockdown() then return end
+	if AchievementFrame and AchievementFrame:IsShown() then return end
+
+	local _, unitID = self:GetUnit()
+	if UnitIsPlayer(unitID) then
+		ClearAchievementComparisonUnit()
+		frame:RegisterEvent("INSPECT_ACHIEVEMENT_READY")
+		SetAchievementComparisonUnit(unitID)
+	end
+end)
+
+GameTooltip:HookScript("OnTooltipCleared", function()
+	if frame:IsEventRegistered("INSPECT_ACHIEVEMENT_READY") then
+		frame:UnregisterEvent("INSPECT_ACHIEVEMENT_READY")
+		ClearAchievementComparisonUnit()
+	end
+	active = false
 end)
