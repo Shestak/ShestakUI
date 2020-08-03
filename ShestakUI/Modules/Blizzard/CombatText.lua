@@ -657,17 +657,17 @@ local placed = {
 -- Slash commands
 SlashCmdList.XCT = function(input)
 	input = string.lower(input)
-	if input == "unlock" then
+	if input == "move" then
 		if ct.locked then
 			StartConfigmode()
-		else
-			pr("|cffffff00"..L_COMBATTEXT_ALREADY_UNLOCKED.."|r")
-		end
-	elseif input == "lock" then
-		if ct.locked then
-			pr("|cffffff00"..L_COMBATTEXT_ALREADY_LOCKED.."|r")
+			if not ct.testmode then
+				StartTestMode()
+			end
 		else
 			StaticPopup_Show("XCT_LOCK")
+			if ct.testmode then
+				EndTestMode()
+			end
 		end
 	elseif input == "test" then
 		if ct.testmode then
@@ -685,8 +685,7 @@ SlashCmdList.XCT = function(input)
 		end
 		ReloadUI()
 	else
-		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_UNLOCK.."|r")
-		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_LOCK.."|r")
+		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_MOVE.."|r")
 		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_TEST.."|r")
 		pr("|cffffff00"..L_COMBATTEXT_TEST_USE_RESET.."|r")
 	end

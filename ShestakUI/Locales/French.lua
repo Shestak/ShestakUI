@@ -196,12 +196,9 @@ L_WELCOME_LINE_2_2 = "pour plus d'informations"
 
 -- Combat text
 L_COMBATTEXT_KILLING_BLOW = "Coup Fatal"
-L_COMBATTEXT_ALREADY_UNLOCKED = "Fenêtre des textes de combat déjà déverrouillée."
-L_COMBATTEXT_ALREADY_LOCKED = "Fenêtre des textes de combat déjà verrouillée."
 L_COMBATTEXT_TEST_DISABLED = "Mode test de la fenêtre des textes de combat désactivé."
 L_COMBATTEXT_TEST_ENABLED = "Mode test de la fenêtre des textes de combat activé."
-L_COMBATTEXT_TEST_USE_UNLOCK = "Tapez /xct unlock pour bouger et redimensionner la fenêtre des textes de combat."
-L_COMBATTEXT_TEST_USE_LOCK = "Tapez /xct lock pour verrouiller la fenêtre des textes de combat."
+L_COMBATTEXT_TEST_USE_MOVE = "Tapez /xct move pour bouger et redimensionner la fenêtre des textes de combat."
 L_COMBATTEXT_TEST_USE_TEST = "Tapez /xct test pour activer le mode test de la fenêtre des textes de combat."
 L_COMBATTEXT_TEST_USE_RESET = "Type /xct reset pour réstaurer les positions par défaut."
 L_COMBATTEXT_POPUP = "Pour sauvegardez vos modifications vous devez recharger l'interface."

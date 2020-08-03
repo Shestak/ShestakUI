@@ -196,12 +196,9 @@ L_WELCOME_LINE_2_2 = "für weitere Informationen."
 
 -- Combat text
 L_COMBATTEXT_KILLING_BLOW = "Todesstoß"
-L_COMBATTEXT_ALREADY_UNLOCKED = "Kampftext bereits freigegeben."
-L_COMBATTEXT_ALREADY_LOCKED = "Kampftext bereits gespert."
 L_COMBATTEXT_TEST_DISABLED = "Kampftext Testmodus deaktiviert."
 L_COMBATTEXT_TEST_ENABLED = "Kampftext Testmodus aktiviert."
-L_COMBATTEXT_TEST_USE_UNLOCK = "Gib '/xct' ein um die Kampftext Fenster freizugeben um sie verschieben und verändern zu können."
-L_COMBATTEXT_TEST_USE_LOCK = "Gib '/xct' ein um den Kampftext Testmodus zu sperren."
+L_COMBATTEXT_TEST_USE_MOVE = "Gib '/xct move' ein um die Kampftext Fenster freizugeben um sie verschieben und verändern zu können."
 L_COMBATTEXT_TEST_USE_TEST = "Gib '/xct' ein um den Kampftext Testmodus zu aktivieren."
 L_COMBATTEXT_TEST_USE_RESET = "Gib /xct reset ein, um die Standardpositionen wiederherzustellen."
 L_COMBATTEXT_POPUP = "Um die Kampftext Fensterpositionen zu sichern muss das Interface neu geladen werden."

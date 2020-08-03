@@ -192,12 +192,9 @@ L_WELCOME_LINE_2_2 = "for more information."
 
 -- Combat text
 L_COMBATTEXT_KILLING_BLOW = "Killing Blow"
-L_COMBATTEXT_ALREADY_UNLOCKED = "Combat text already unlocked."
-L_COMBATTEXT_ALREADY_LOCKED = "Combat text already locked."
 L_COMBATTEXT_TEST_DISABLED = "Combat text test mode disabled."
 L_COMBATTEXT_TEST_ENABLED = "Combat text test mode enabled."
-L_COMBATTEXT_TEST_USE_UNLOCK = "Type /xct unlock to move and resize combat text frames."
-L_COMBATTEXT_TEST_USE_LOCK = "Type /xct lock to lock combat text frames."
+L_COMBATTEXT_TEST_USE_MOVE = "Type /xct move to move and resize combat text frames."
 L_COMBATTEXT_TEST_USE_TEST = "Type /xct test to toggle combat text testmode."
 L_COMBATTEXT_TEST_USE_RESET = "Type /xct reset to restore default positions."
 L_COMBATTEXT_POPUP = "To save combat text window positions you need to reload your UI."

@@ -196,12 +196,9 @@ L_WELCOME_LINE_2_2 = "獲取更多信息。"
 
 -- Combat text
 L_COMBATTEXT_KILLING_BLOW = "最後一擊"
-L_COMBATTEXT_ALREADY_UNLOCKED = "戰鬥信息已解鎖"
-L_COMBATTEXT_ALREADY_LOCKED = "戰鬥信息已鎖定"
 L_COMBATTEXT_TEST_DISABLED = "戰鬥信息測試模式已禁用"
 L_COMBATTEXT_TEST_ENABLED = "戰鬥信息測試模式已啟用"
-L_COMBATTEXT_TEST_USE_UNLOCK = "鍵入 /xct unlock 移動/調整戰鬥信息框架大小"
-L_COMBATTEXT_TEST_USE_LOCK = "鍵入 /xct lock 鎖定戰鬥信息框架"
+L_COMBATTEXT_TEST_USE_MOVE = "鍵入 /xct move 移動/調整戰鬥信息框架大小"
 L_COMBATTEXT_TEST_USE_TEST = "鍵入 /xct test 啟用/禁用戰鬥信息測試模式"
 L_COMBATTEXT_TEST_USE_RESET = "鍵入 /xct reset 重置到初始位置"
 L_COMBATTEXT_POPUP = "保存戰鬥信息窗口的位置須重載插件"
