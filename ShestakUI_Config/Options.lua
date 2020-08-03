@@ -1091,7 +1091,7 @@ do
 	hide_combat:SetPoint("TOPLEFT", hidebuttons, "BOTTOMLEFT", 0, 0)
 
 	-- Plugins
-	local subheader = ns.addSubCategory(parent)
+	local subheader = ns.addSubCategory(parent, L_GUI_UF_SUBHEADER_PLUGINS)
 	subheader:SetPoint("TOPLEFT", hide_combat, "BOTTOMLEFT", 0, -16)
 
 	local title = ns.CreateCheckBox(parent, "title")
@@ -1112,8 +1112,11 @@ do
 	local average_lvl = ns.CreateCheckBox(parent, "average_lvl", STAT_AVERAGE_ITEM_LEVEL)
 	average_lvl:SetPoint("LEFT", talents, "RIGHT", 320, 0)
 
+	local show_shift = ns.CreateCheckBox(parent, "show_shift")
+	show_shift:SetPoint("TOPLEFT", talents, "BOTTOMLEFT", 20, 0)
+
 	local raid_icon = ns.CreateCheckBox(parent, "raid_icon")
-	raid_icon:SetPoint("TOPLEFT", talents, "BOTTOMLEFT", 0, 0)
+	raid_icon:SetPoint("TOPLEFT", shift_lvl, "BOTTOMLEFT", -20, 0)
 
 	local unit_role = ns.CreateCheckBox(parent, "unit_role")
 	unit_role:SetPoint("LEFT", raid_icon, "RIGHT", 320, 0)

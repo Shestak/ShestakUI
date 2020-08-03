@@ -8,7 +8,7 @@ if C.tooltip.enable ~= true or C.tooltip.talents ~= true then return end
 local TALENTS_PREFIX = SPECIALIZATION..":|cffffffff "
 local CACHE_SIZE = 25
 local INSPECT_DELAY = 0.2
-local INSPECT_FREQ = 2
+local INSPECT_FREQ = 1.5
 
 -- Variables
 local ttt = CreateFrame("Frame", "TipTacTalents")
@@ -85,12 +85,9 @@ ttt:SetScript("OnUpdate", function(self, elapsed)
 		self:Hide()
 		-- Make sure the mouseover unit is still our unit
 		if UnitGUID("mouseover") == current.guid then
+			if (InspectFrame and InspectFrame:IsVisible()) then return end
 			lastInspectRequest = GetTime()
 			self:RegisterEvent("INSPECT_READY")
-			-- Az: Fix the blizzard inspect copypasta code (Blizzard_InspectUI\InspectPaperDollFrame.lua @ line 23)
-			if InspectFrame then
-				InspectFrame.unit = "player"
-			end
 			NotifyInspect(current.unit)
 		end
 	end
@@ -100,6 +97,9 @@ end)
 GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 	-- Abort any delayed inspect in progress
 	ttt:Hide()
+
+	if C.tooltip.show_shift and not IsShiftKeyDown() then return end
+
 	-- Get the unit -- Check the UnitFrame unit if this tip is from a concated unit, such as "targettarget".
 	local _, unit = self:GetUnit()
 	if not unit then
@@ -108,10 +108,12 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 			unit = mFocus.unit
 		end
 	end
+
 	-- No Unit or not a Player
 	if not unit or not UnitIsPlayer(unit) then
 		return
 	end
+
 	-- Only bother for players over level 9
 	local level = UnitLevel(unit)
 	if level > 9 or level == -1 then
@@ -138,9 +140,13 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 		end
 		-- Queue an inspect request
 		if CanInspect(unit) and not isInspectOpen then
-			local lastInspectTime = GetTime() - lastInspectRequest
-			ttt.nextUpdate = (lastInspectTime > INSPECT_FREQ) and INSPECT_DELAY or (INSPECT_FREQ - lastInspectTime + INSPECT_DELAY)
-			ttt:Show()
+			if C.tooltip.average_lvl then
+				ttt:RegisterEvent("INSPECT_READY")
+			else
+				local lastInspectTime = GetTime() - lastInspectRequest
+				ttt.nextUpdate = (lastInspectTime > INSPECT_FREQ) and INSPECT_DELAY or (INSPECT_FREQ - lastInspectTime + INSPECT_DELAY)
+				ttt:Show()
+			end
 			if not cacheLoaded then
 				self:AddLine(TALENTS_PREFIX..L_TOOLTIP_LOADING)
 			end

@@ -275,12 +275,12 @@ for _, slot in pairs(InventorySlots) do
 			GuidCache[guid].neckLevel = SlotCache[2]
 			GuidCache[guid].timestamp = GetTime()
 
-			wipe(GuidCache[guid].legos)
-			for _, link in pairs(ItemCache) do
-				if IsLegendary(link) then
-					tinsert(GuidCache[guid].legos, link)
-				end
-			end
+			-- wipe(GuidCache[guid].legos)
+			-- for _, link in pairs(ItemCache) do
+				-- if IsLegendary(link) then
+					-- tinsert(GuidCache[guid].legos, link)
+				-- end
+			-- end
 
 			E("ItemScanComplete", guid, GuidCache[guid])
 		end
@@ -375,15 +375,15 @@ local function DecorateTooltip(guid, isInspect)
 			levelText = format("|cff%2x%2x%2x%.1f|r", r1 * 255, g1 * 255, b1 * 255, averageItemLevel, r2 * 255, g2 * 255, b2 * 255)
 		end
 
-		if isInspect then
+		if isInspect and averageItemLevel > 0 then
 			InspectFrameiLvL:SetText(levelText)
 		end
 
 		AddLine(Sekret, STAT_AVERAGE_ITEM_LEVEL..": ", levelText, "|cffF9D700", "|cffffffff")
 
-		for i, lego in ipairs(cache.legos) do
-			AddLine("|Hlego" .. i .. "|h", lego, " ", "|cffffffff", "|cffffffff")
-		end
+		-- for i, lego in ipairs(cache.legos) do
+			-- AddLine("|Hlego" .. i .. "|h", lego, " ", "|cffffffff", "|cffffffff")
+		-- end
 	end
 end
 
@@ -391,7 +391,7 @@ local function ScanUnit(unitID)
 	ScannedGUID = UnitGUID(unitID)
 	wipe(SlotCache)
 	wipe(ItemCache)
-	wipe(GuidCache[ScannedGUID].legos)
+	-- wipe(GuidCache[ScannedGUID].legos)
 	local numEquipped = 0
 	for _, slot in pairs(InventorySlots) do
 		if GetInventoryItemTexture(unitID, slot) then
@@ -420,24 +420,24 @@ function E:INSPECT_READY(guid)
 	ActiveGUID = nil
 	local unitID = GetUnitIDFromGUID(guid)
 	if unitID then
-		local _, class = UnitClass(unitID)
-		local colors = class and RAID_CLASS_COLORS[class]
-		local specID = GetInspectSpecialization(unitID)
-		local specName
-		if not specName and specID and specID ~= 0 then
-			specID, specName = GetSpecializationInfoByID(specID, UnitSex(unitID))
-			if colors then
-				specName = "|c" .. colors.colorStr .. specName .. "|r"
-			end
-		end
+		-- local _, class = UnitClass(unitID)
+		-- local colors = class and RAID_CLASS_COLORS[class]
+		-- local specID = GetInspectSpecialization(unitID)
+		-- local specName
+		-- if not specName and specID and specID ~= 0 then
+			-- specID, specName = GetSpecializationInfoByID(specID, UnitSex(unitID))
+			-- if colors then
+				-- specName = "|c" .. colors.colorStr .. specName .. "|r"
+			-- end
+		-- end
 
 		if not GuidCache[guid] then
 			GuidCache[guid] = {ilevel = 0, weaponLevel = 0, timestamp = 0, legos = {}}
 		end
-		local cache = GuidCache[guid]
-		cache.specID = specID
-		cache.class = class
-		cache.specName = specName
+		-- local cache = GuidCache[guid]
+		-- cache.specID = specID
+		-- cache.class = class
+		-- cache.specName = specName
 
 		ScanUnit(unitID)
 	end
@@ -469,6 +469,7 @@ function E:ItemScanComplete(guid)
 end
 
 GameTooltip:HookScript("OnTooltipSetUnit", function(self)
+	if C.tooltip.show_shift and not IsShiftKeyDown() then return end
 	local _, unitID = self:GetUnit()
 	local guid = unitID and UnitGUID(unitID)
 	if guid and UnitIsPlayer(unitID) then
