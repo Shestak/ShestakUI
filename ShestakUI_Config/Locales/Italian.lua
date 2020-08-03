@@ -354,7 +354,7 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Colora i bordi dei benefici del giocatore in bas
 
 -- Bag options
 L_GUI_BAGS = "Sacche"
-L_GUI_BAGS_SUBTEXT = "Changing the built-in bags." -- Need review
+L_GUI_BAGS_SUBTEXT = "Right click on the close button to open the menu. To move the bags, hold down Shift - click." -- Need review
 L_GUI_BAGS_ENABLE = "Attiva le sacche"
 L_GUI_BAGS_ILVL = "Mostra il livello oggetto di armi e armature"
 L_GUI_BAGS_BUTTON_SIZE = "Dimensioni degli scomparti"

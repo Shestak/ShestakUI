@@ -200,7 +200,7 @@ L_GUI_ACTIONBAR_HOTKEY = "Отображать назначения клавиш
 L_GUI_ACTIONBAR_MACRO = "Отображать имена макросов"
 L_GUI_ACTIONBAR_GRID = "Отображать пустые кнопки панелей команд"
 L_GUI_ACTIONBAR_BUTTON_SIZE = "Размер кнопок"
-L_GUI_ACTIONBAR_BUTTON_SPACE = "Расстояние между кнопками"
+L_GUI_ACTIONBAR_BUTTON_SPACE = "Промежуток"
 L_GUI_ACTIONBAR_SPLIT_BARS = "Разделить пятую панель на две панели по 6 кнопок"
 L_GUI_ACTIONBAR_CLASSCOLOR_BORDER = "Окрашивать края кнопок в цвет класса"
 L.actionbar_toggle_mode = "Включить режим переключения панелей"
@@ -354,13 +354,13 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Окрашивать края положител
 
 -- Bag options
 L_GUI_BAGS = "Сумки"
-L_GUI_BAGS_SUBTEXT = "Изменение встроенных в сборку сумок."
+L_GUI_BAGS_SUBTEXT = "Правый клик по кнопке закрытия, чтобы открыть меню. Для перемещения сумок зажать Shift - клик."
 L_GUI_BAGS_ENABLE = "Включить сумки"
 L_GUI_BAGS_ILVL = "Показывать уровень предметов для оружия и брони"
 L_GUI_BAGS_BUTTON_SIZE = "Размер ячеек"
-L_GUI_BAGS_BUTTON_SPACE = "Расстояние между ячейками"
-L_GUI_BAGS_BANK = "Количество столбцов в банке"
-L_GUI_BAGS_BAG = "Количество столбцов в сумках"
+L_GUI_BAGS_BUTTON_SPACE = "Промежуток"
+L_GUI_BAGS_BANK = "Cтолбцов в банке"
+L_GUI_BAGS_BAG = "Cтолбцов в сумках"
 
 -- Minimap options
 L_GUI_MINIMAP_SUBTEXT = "Настройка миникарты."

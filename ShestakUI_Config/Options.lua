@@ -1116,7 +1116,7 @@ do
 	show_shift:SetPoint("TOPLEFT", talents, "BOTTOMLEFT", 20, 0)
 
 	local raid_icon = ns.CreateCheckBox(parent, "raid_icon")
-	raid_icon:SetPoint("TOPLEFT", shift_lvl, "BOTTOMLEFT", -20, 0)
+	raid_icon:SetPoint("TOPLEFT", show_shift, "BOTTOMLEFT", -20, 0)
 
 	local unit_role = ns.CreateCheckBox(parent, "unit_role")
 	unit_role:SetPoint("LEFT", raid_icon, "RIGHT", 320, 0)
@@ -1386,13 +1386,13 @@ do
 	button_size:SetPoint("TOPLEFT", ilvl, "BOTTOMLEFT", 0, -20)
 
 	local button_space = ns.CreateNumberSlider(parent, "button_space", nil, nil, 0, 7, 1, true, L_GUI_BAGS_BUTTON_SPACE)
-	button_space:SetPoint("TOPLEFT", button_size, "BOTTOMLEFT", 0, -20)
-
-	local bank_columns = ns.CreateNumberSlider(parent, "bank_columns", nil, nil, 0, 25, 1, true, L_GUI_BAGS_BANK)
-	bank_columns:SetPoint("TOPLEFT", button_space, "BOTTOMLEFT", 0, -20)
+	button_space:SetPoint("LEFT", button_size, "RIGHT", 120, 0)
 
 	local bag_columns = ns.CreateNumberSlider(parent, "bag_columns", nil, nil, 0, 20, 1, true, L_GUI_BAGS_BAG)
-	bag_columns:SetPoint("TOPLEFT", bank_columns, "BOTTOMLEFT", 0, -20)
+	bag_columns:SetPoint("TOPLEFT", button_size, "BOTTOMLEFT", 0, -20)
+
+	local bank_columns = ns.CreateNumberSlider(parent, "bank_columns", nil, nil, 0, 25, 1, true, L_GUI_BAGS_BANK)
+	bank_columns:SetPoint("LEFT", bag_columns, "RIGHT", 120, 0)
 end
 
 -- Minimap
@@ -1435,23 +1435,23 @@ do
 	local lootframe = ns.CreateCheckBox(parent, "lootframe", L_GUI_LOOT_ENABLE)
 	lootframe:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local rolllootframe = ns.CreateCheckBox(parent, "rolllootframe", L_GUI_LOOT_ROLL_ENABLE)
-	rolllootframe:SetPoint("TOPLEFT", lootframe, "BOTTOMLEFT", 0, 0)
-
 	local icon_size = ns.CreateNumberSlider(parent, "icon_size", nil, nil, 0, 40, 1, true, L_GUI_LOOT_ICON_SIZE)
-	icon_size:SetPoint("TOPLEFT", rolllootframe, "BOTTOMLEFT", 0, -20)
+	icon_size:SetPoint("TOPLEFT", lootframe, "BOTTOMLEFT", 0, -20)
 
 	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 350, 1, true, L_GUI_LOOT_WIDTH)
 	width:SetPoint("TOPLEFT", icon_size, "BOTTOMLEFT", 0, -20)
 
+	local faster_loot = ns.CreateCheckBox(parent, "faster_loot")
+	faster_loot:SetPoint("TOPLEFT", width, "BOTTOMLEFT", 0, -10)
+
+	local rolllootframe = ns.CreateCheckBox(parent, "rolllootframe", L_GUI_LOOT_ROLL_ENABLE)
+	rolllootframe:SetPoint("TOPLEFT", faster_loot, "BOTTOMLEFT", 0, 0)
+
 	local auto_greed = ns.CreateCheckBox(parent, "auto_greed", L_GUI_LOOT_AUTOGREED)
-	auto_greed:SetPoint("TOPLEFT", width, "BOTTOMLEFT", 0, -10)
+	auto_greed:SetPoint("TOPLEFT", rolllootframe, "BOTTOMLEFT", 0, 0)
 
 	local auto_confirm_de = ns.CreateCheckBox(parent, "auto_confirm_de", L_GUI_LOOT_AUTODE)
 	auto_confirm_de:SetPoint("TOPLEFT", auto_greed, "BOTTOMLEFT", 0, 0)
-
-	local faster_loot = ns.CreateCheckBox(parent, "faster_loot")
-	faster_loot:SetPoint("TOPLEFT", auto_confirm_de, "BOTTOMLEFT", 0, 0)
 end
 
 -- Filger

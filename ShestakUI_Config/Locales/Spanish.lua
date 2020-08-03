@@ -354,7 +354,7 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Activar borde por color de clase para los benefi
 
 -- Bag options
 L_GUI_BAGS = "Bolsas"
-L_GUI_BAGS_SUBTEXT = "Changing the built-in bags." -- Need review
+L_GUI_BAGS_SUBTEXT = "Right click on the close button to open the menu. To move the bags, hold down Shift - click." -- Need review
 L_GUI_BAGS_ENABLE = "Activar bolsas"
 L_GUI_BAGS_ILVL = "Show item level for weapons and armor" -- Need review
 L_GUI_BAGS_BUTTON_SIZE = "Tamaño de los huecos"

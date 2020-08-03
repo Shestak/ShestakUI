@@ -354,7 +354,7 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Active la couleur de votre classe pour la bordur
 
 -- Bag options
 L_GUI_BAGS = "Sacs"
-L_GUI_BAGS_SUBTEXT = "Changing the built-in bags." -- Need review
+L_GUI_BAGS_SUBTEXT = "Right click on the close button to open the menu. To move the bags, hold down Shift - click." -- Need review
 L_GUI_BAGS_ENABLE = "Activer les sacs"
 L_GUI_BAGS_ILVL = "Afficher le niveau d'objet des armes et armures"
 L_GUI_BAGS_BUTTON_SIZE = "Taille des boutons"

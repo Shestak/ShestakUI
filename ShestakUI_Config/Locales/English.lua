@@ -377,7 +377,7 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Enable classcolor border for player buffs"
 
 -- Bag options
 L_GUI_BAGS = "Bags"
-L_GUI_BAGS_SUBTEXT = "Changing the built-in bags."
+L_GUI_BAGS_SUBTEXT = "Right click on the close button to open the menu. To move the bags, hold down Shift - click."
 L_GUI_BAGS_ENABLE = "Enable bags"
 L_GUI_BAGS_ILVL = "Show item level for weapons and armor"
 L_GUI_BAGS_BUTTON_SIZE = "Buttons size"

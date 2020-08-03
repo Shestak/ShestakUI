@@ -354,7 +354,7 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Aktiviere Klassenfarbe für Spielerbuffs"
 
 -- Bag options
 L_GUI_BAGS = "Taschen"
-L_GUI_BAGS_SUBTEXT = "Ändern der Blizzard Taschen."
+L_GUI_BAGS_SUBTEXT = "Right click on the close button to open the menu. To move the bags, hold down Shift - click." -- Need review
 L_GUI_BAGS_ENABLE = "Taschen aktivieren"
 L_GUI_BAGS_ILVL = "Zeigt Itemlevel der Waffen & Rüstung"
 L_GUI_BAGS_BUTTON_SIZE = "Buttongröße"

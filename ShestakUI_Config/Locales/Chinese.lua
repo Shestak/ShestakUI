@@ -354,7 +354,7 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "自身Buff图标边框按职业着色"
 
 -- Bag options
 L_GUI_BAGS = "背包"
-L_GUI_BAGS_SUBTEXT = "替换系统背包"
+L_GUI_BAGS_SUBTEXT = "Right click on the close button to open the menu. To move the bags, hold down Shift - click." -- Need review
 L_GUI_BAGS_ENABLE = "背包增强"
 L_GUI_BAGS_ILVL = "显示物品等级"
 L_GUI_BAGS_BUTTON_SIZE = "格子大小"
