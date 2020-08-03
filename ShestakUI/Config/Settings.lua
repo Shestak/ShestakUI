@@ -417,15 +417,24 @@ C["loot"] = {
 ----------------------------------------------------------------------------------------
 C["filger"] = {
 	["enable"] = true,							-- Enable Filger
+	["show_tooltip"] = false,					-- Show tooltip
+	["expiration"] = false,						-- Sort cooldowns by expiration time
+	-- Elements
+	["show_buff"] = true,						-- Player buffs
+	["show_proc"] = true,						-- Player procs
+	["show_debuff"] = true,						-- Debuffs on target
+	["show_aura_bar"] = true,					-- Aura bars on target
+	["show_special"] = true,					-- Special buffs on player
+	["show_pvp_player"] = true,					-- PvP debuffs on player
+	["show_pvp_target"] = true,					-- PvP auras on target
+	["show_cd"] = true,							-- Cooldowns
+	-- Icons size
+	["buffs_size"] = 37,						-- Buffs size
+	["pvp_size"] = 60,							-- PvP auras size
+	["cooldown_size"] = 30,						-- Cooldowns size
+	-- Testing
 	["test_mode"] = false,						-- Test icon mode
 	["max_test_icon"] = 5,						-- Number of icons to the test
-	["show_tooltip"] = false,					-- Show tooltip
-	["disable_cd"] = false,						-- Disable cooldowns
-	["disable_pvp"] = false,					-- Disable PvP debuffs on Player and Target
-	["expiration"] = false,						-- Sort cooldowns by expiration time
-	["buffs_size"] = 37,						-- Buffs size
-	["cooldown_size"] = 30,						-- Cooldowns size
-	["pvp_size"] = 60,							-- PvP debuffs size
 }
 
 ----------------------------------------------------------------------------------------

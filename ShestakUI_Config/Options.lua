@@ -1458,32 +1458,62 @@ do
 	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_FILGER_ENABLE)
 	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
+	local show_tooltip = ns.CreateCheckBox(parent, "show_tooltip", L_GUI_FILGER_SHOW_TOOLTIP)
+	show_tooltip:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
+
+	local expiration = ns.CreateCheckBox(parent, "expiration", L_GUI_FILGER_EXPIRATION)
+	expiration:SetPoint("TOPLEFT", show_tooltip, "BOTTOMLEFT", 0, 0)
+
+	-- Elements
+	local subheader = ns.addSubCategory(parent, L.filger_subheader_elements)
+	subheader:SetPoint("TOPLEFT", expiration, "BOTTOMLEFT", 0, -10)
+
+	local show_buff = ns.CreateCheckBox(parent, "show_buff")
+	show_buff:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -10)
+
+	local show_proc = ns.CreateCheckBox(parent, "show_proc")
+	show_proc:SetPoint("LEFT", show_buff, "RIGHT", 320, 0)
+
+	local show_debuff = ns.CreateCheckBox(parent, "show_debuff")
+	show_debuff:SetPoint("TOPLEFT", show_buff, "BOTTOMLEFT", 0, 0)
+
+	local show_aura_bar = ns.CreateCheckBox(parent, "show_aura_bar")
+	show_aura_bar:SetPoint("LEFT", show_debuff, "RIGHT", 320, 0)
+
+	local show_pvp_player = ns.CreateCheckBox(parent, "show_pvp_player")
+	show_pvp_player:SetPoint("TOPLEFT", show_debuff, "BOTTOMLEFT", 0, 0)
+
+	local show_pvp_target = ns.CreateCheckBox(parent, "show_pvp_target")
+	show_pvp_target:SetPoint("LEFT", show_pvp_player, "RIGHT", 320, 0)
+
+	local show_special = ns.CreateCheckBox(parent, "show_special")
+	show_special:SetPoint("TOPLEFT", show_pvp_player, "BOTTOMLEFT", 0, 0)
+
+	local show_cd = ns.CreateCheckBox(parent, "show_cd")
+	show_cd:SetPoint("LEFT", show_special, "RIGHT", 320, 0)
+
+	-- Size
+	local subheader = ns.addSubCategory(parent, L.filger_subheader_size)
+	subheader:SetPoint("TOPLEFT", show_special, "BOTTOMLEFT", 0, -10)
+
+	local buffs_size = ns.CreateNumberSlider(parent, "buffs_size", nil, nil, 0, 50, 1, true, L_GUI_FILGER_BUFFS_SIZE)
+	buffs_size:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -30)
+
+	local pvp_size = ns.CreateNumberSlider(parent, "pvp_size", nil, nil, 0, 80, 1, true, L_GUI_FILGER_PVP_SIZE)
+	pvp_size:SetPoint("TOPLEFT", buffs_size, "BOTTOMLEFT", 0, -20)
+
+	local cooldown_size = ns.CreateNumberSlider(parent, "cooldown_size", nil, nil, 0, 50, 1, true, L_GUI_FILGER_COOLDOWN_SIZE)
+	cooldown_size:SetPoint("TOPLEFT", pvp_size, "BOTTOMLEFT", 0, -20)
+
+	-- Testing
+	local subheader = ns.addSubCategory(parent, L.filger_subheader_test)
+	subheader:SetPoint("TOPLEFT", cooldown_size, "BOTTOMLEFT", 0, -10)
+
 	local test_mode = ns.CreateCheckBox(parent, "test_mode", L_GUI_FILGER_TEST_MODE)
-	test_mode:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
+	test_mode:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -10)
 
 	local max_test_icon = ns.CreateNumberSlider(parent, "max_test_icon", nil, nil, 0, 10, 1, true, L_GUI_FILGER_MAX_TEST_ICON)
 	max_test_icon:SetPoint("TOPLEFT", test_mode, "BOTTOMLEFT", 0, -20)
-
-	local show_tooltip = ns.CreateCheckBox(parent, "show_tooltip", L_GUI_FILGER_SHOW_TOOLTIP)
-	show_tooltip:SetPoint("TOPLEFT", max_test_icon, "BOTTOMLEFT", 0, -10)
-
-	local disable_cd = ns.CreateCheckBox(parent, "disable_cd", L_GUI_FILGER_DISABLE_CD)
-	disable_cd:SetPoint("TOPLEFT", show_tooltip, "BOTTOMLEFT", 0, 0)
-
-	local disable_pvp = ns.CreateCheckBox(parent, "disable_pvp", L_GUI_FILGER_DISABLE_PVP)
-	disable_pvp:SetPoint("TOPLEFT", disable_cd, "BOTTOMLEFT", 0, 0)
-
-	local expiration = ns.CreateCheckBox(parent, "expiration", L_GUI_FILGER_EXPIRATION)
-	expiration:SetPoint("TOPLEFT", disable_pvp, "BOTTOMLEFT", 0, 0)
-
-	local buffs_size = ns.CreateNumberSlider(parent, "buffs_size", nil, nil, 0, 50, 1, true, L_GUI_FILGER_BUFFS_SIZE)
-	buffs_size:SetPoint("TOPLEFT", expiration, "BOTTOMLEFT", 0, -20)
-
-	local cooldown_size = ns.CreateNumberSlider(parent, "cooldown_size", nil, nil, 0, 50, 1, true, L_GUI_FILGER_COOLDOWN_SIZE)
-	cooldown_size:SetPoint("TOPLEFT", buffs_size, "BOTTOMLEFT", 0, -20)
-
-	local pvp_size = ns.CreateNumberSlider(parent, "pvp_size", nil, nil, 0, 80, 1, true, L_GUI_FILGER_PVP_SIZE)
-	pvp_size:SetPoint("TOPLEFT", cooldown_size, "BOTTOMLEFT", 0, -20)
 end
 
 -- Announcements
