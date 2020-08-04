@@ -47,6 +47,7 @@ C["general"] = {
 ----------------------------------------------------------------------------------------
 C["skins"] = {
 	["blizzard_frames"] = false,				-- Blizzard frames skin
+	["bubbles"] = true,							-- Skin Blizzard chat bubbles
 	["minimap_buttons"] = false,				-- Skin addons icons on minimap
 	["minimap_buttons_mouseover"] = true,		-- Addons icons on mouseover
 	-- Addons
@@ -300,7 +301,6 @@ C["chat"] = {
 	["chat_bar"] = false,						-- Lite Button Bar for switch chat channel
 	["chat_bar_mouseover"] = false,				-- Lite Button Bar on mouseover
 	["whisp_sound"] = true,						-- Sound when whisper
-	["bubbles"] = true,							-- Skin Blizzard chat bubbles
 	["combatlog"] = true,						-- Show CombatLog tab
 	["tabs_mouseover"] = false,					-- Chat tabs on mouseover
 	["sticky"] = true,							-- Remember last channel
