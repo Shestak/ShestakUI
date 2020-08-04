@@ -41,7 +41,7 @@
 	<Script file="Modules\AutoResurrect.lua"/>
 	<Script file="Modules\CombatFeedback.lua"/>
 	<Script file="Modules\CounterBar.lua"/>
-	<Script file="Modules\CPoints.lua"/>
+	<Script file="Modules\ComboPoints.lua"/>
 	<Script file="Modules\DebuffHighlight.lua"/>
 	<Script file="Modules\EnemySpec.lua"/>
 	<Script file="Modules\Experience.lua"/>

@@ -8,7 +8,7 @@ local MAX_COMBO_POINTS = MAX_COMBO_POINTS
 local function Update(self, _, unit, powerType)
 	if(self.unit ~= unit and (powerType and (powerType ~= "COMBO_POINTS"))) then return end
 
-	local element = self.CPoints
+	local element = self.ComboPoints
 	local cur, max
 
 	if UnitHasVehicleUI("player") then
@@ -76,11 +76,11 @@ local function Update(self, _, unit, powerType)
 end
 
 local function Path(self, ...)
-	return (self.CPoints.Override or Update) (self, ...)
+	return (self.ComboPoints.Override or Update) (self, ...)
 end
 
 local function Visibility(self)
-	local element = self.CPoints
+	local element = self.ComboPoints
 	local form = GetShapeshiftFormID()
 
 	if form == CAT_FORM or (UnitHasVehicleUI("player") and UnitPower("vehicle", 4) > 0) then
@@ -97,7 +97,7 @@ local function ForceUpdate(element)
 end
 
 local Enable = function(self)
-	local element = self.CPoints
+	local element = self.ComboPoints
 	if(element) then
 		element.__owner = self
 		element.ForceUpdate = ForceUpdate
@@ -126,7 +126,7 @@ local Enable = function(self)
 end
 
 local Disable = function(self)
-	local element = self.CPoints
+	local element = self.ComboPoints
 	if(element) then
 		self:UnregisterEvent("UNIT_POWER_UPDATE", Path)
 		self:UnregisterEvent("UNIT_MAXPOWER", Path)
@@ -135,4 +135,4 @@ local Disable = function(self)
 	end
 end
 
-oUF:AddElement("CPoints", Path, Enable, Disable)
+oUF:AddElement("ComboPoints", Path, Enable, Disable)
