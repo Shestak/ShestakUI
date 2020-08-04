@@ -1660,7 +1660,7 @@ if stats.enabled then
 			else
 				value = power
 			end
-			string = value
+			string, percent = value
 		elseif sub == "mastery" then
 			string = GetMasteryEffect()
 		elseif sub == "haste" then
