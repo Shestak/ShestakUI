@@ -1892,11 +1892,8 @@ do
 	local chars_currency = ns.CreateCheckBox(parent, "chars_currency")
 	chars_currency:SetPoint("TOPLEFT", click_cast_filter, "BOTTOMLEFT", -20, 0)
 
-	local armory_link = ns.CreateCheckBox(parent, "armory_link")
-	armory_link:SetPoint("TOPLEFT", chars_currency, "BOTTOMLEFT", 0, 0)
-
 	local hide_raid_button = ns.CreateCheckBox(parent, "hide_raid_button")
-	hide_raid_button:SetPoint("TOPLEFT", armory_link, "BOTTOMLEFT", 0, 0)
+	hide_raid_button:SetPoint("TOPLEFT", chars_currency, "BOTTOMLEFT", 0, 0)
 end
 
 ----------------------------------------------------------------------------------------

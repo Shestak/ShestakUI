@@ -606,6 +606,5 @@ C["misc"] = {
 	["click_cast"] = false,						-- Simple click2cast spell binder
 	["click_cast_filter"] = false,				-- Ignore Player and Target frames for click2cast
 	["chars_currency"] = false,					-- Tracks your currency tokens across multiple characters
-	["armory_link"] = false,					-- Add the Armory link in the chat menu and target (It breaks set focus)
 	["hide_raid_button"] = false,				-- Button to hide raid frames in dps layout (top left mouseover)
 }

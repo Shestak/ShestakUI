@@ -593,7 +593,5 @@ L.misc_click_cast_desc = "Allows you to assign spells (analog Clique) to the mou
 L.misc_click_cast_filter = "Ignore Player and Target frames"
 L.misc_chars_currency = "Tracks your currency tokens across multiple characters"
 L.misc_chars_currency_desc = "Hover over the icon of the required currency in the character window to display information in the tooltip"
-L.misc_armory_link = "Add Armory link"
-L.misc_armory_link_desc = "Add the Armory link in the chat menu and target (but it will not be possible to set the focus through the target menu)"
 L.misc_hide_raid_button = "Button to hide raid frames in dps layout"
 L.misc_hide_raid_button_desc = "The button is displayed by hovering the mouse in the upper left corner"

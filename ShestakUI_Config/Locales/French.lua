@@ -570,7 +570,5 @@ L.misc_click_cast_desc = "Allows you to assign spells (analog Clique) to the mou
 L.misc_click_cast_filter = "Ignore les cadres Joueur et Cible pour l'addon click2cast"
 L.misc_chars_currency = "Affiche les jetons et autres monnaies de vos différents personnages"
 L.misc_chars_currency_desc = "Hover over the icon of the required currency in the character window to display information in the tooltip" -- Need review
-L.misc_armory_link = "Add Armory link" -- Need review
-L.misc_armory_link_desc = "Ajouter un lien d'armurerie dans une fenêtre UnitPopupMenus (Cela casse les UnitPopupMenus)"
 L.misc_hide_raid_button = "Masquer le button pour activer oUF_RaidDPS"
 L.misc_hide_raid_button_desc = "The button is displayed by hovering the mouse in the upper left corner" -- Need review

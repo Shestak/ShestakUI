@@ -59,7 +59,6 @@
 	<Script file="Modules\UnitFrames\RaidDPS.lua"/>
 	<Script file="Modules\UnitFrames\RaidHeal.lua"/>
 
-	<Script file="Modules\Misc\ArmoryLink.lua"/>
 	<Script file="Modules\Misc\BattlefieldScore.lua"/>
 	<Script file="Modules\Misc\CharsCurrency.lua"/>
 	<Script file="Modules\Misc\ClickCast.lua"/>

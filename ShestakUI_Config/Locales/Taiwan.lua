@@ -568,7 +568,5 @@ L.misc_click_cast_desc = "開啟後法術書有滑鼠綁定界面可以進行設
 L.misc_click_cast_filter = "忽略玩家/目標框架點擊施法"
 L.misc_chars_currency = "追蹤所有角色的兌換通貨"
 L.misc_chars_currency_desc = "在兌換通貨界面中追蹤所有角色的兌換通貨"
-L.misc_armory_link = "英雄榜"
-L.misc_armory_link_desc = "頭像菜單增加英雄榜鏈接"
 L.misc_hide_raid_button = "DPS團隊框架最小化按鈕"
 L.misc_hide_raid_button_desc = "按鈕在DPS團隊框架左上方滑鼠懸停顯示"

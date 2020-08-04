@@ -570,7 +570,5 @@ L.misc_click_cast_desc = "开启后法术书有鼠标绑定界面可以进行设
 L.misc_click_cast_filter = "忽略玩家/目标框架点击施法"
 L.misc_chars_currency = "追踪所有角色的货币"
 L.misc_chars_currency_desc = "在货币界面中追踪所有角色的货币"
-L.misc_armory_link = "英雄榜"
-L.misc_armory_link_desc = "头像菜单增加英雄榜链接"
 L.misc_hide_raid_button = "DPS团队框架最小化按钮"
 L.misc_hide_raid_button_desc = "按钮在DPS团队框架左上方鼠标悬停显示"
