@@ -132,6 +132,9 @@ end
 ----------------------------------------------------------------------------------------
 if C.toppanel.enable ~= true then return end
 
+C.toppanel.height = C.toppanel.height + ((C.font.stats_font_size - 8) * 7)
+C.toppanel.width = C.toppanel.width + (C.font.stats_font_size - 8)
+
 local toppanelanchor = CreateFrame("Frame", "TopPanelAnchor", T_PetBattleFrameHider)
 toppanelanchor:SetPoint(unpack(C.position.top_panel))
 toppanelanchor:SetSize(C.toppanel.width, C.toppanel.height / 2)

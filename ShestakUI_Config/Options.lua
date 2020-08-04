@@ -1775,10 +1775,10 @@ do
 	local mouseover = ns.CreateCheckBox(parent, "mouseover", L_GUI_TOP_PANEL_MOUSE)
 	mouseover:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
 
-	local height = ns.CreateNumberSlider(parent, "height", nil, nil, 0, 100, 1, true, L_GUI_TOP_PANEL_HEIGHT)
+	local height = ns.CreateNumberSlider(parent, "height", nil, nil, 40, 150, 1, true, L_GUI_TOP_PANEL_HEIGHT)
 	height:SetPoint("TOPLEFT", mouseover, "BOTTOMLEFT", 0, -20)
 
-	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 400, 1, true, L_GUI_TOP_PANEL_WIDTH)
+	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 100, 500, 1, true, L_GUI_TOP_PANEL_WIDTH)
 	width:SetPoint("TOPLEFT", height, "BOTTOMLEFT", 0, -20)
 end
 
