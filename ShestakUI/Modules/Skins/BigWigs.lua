@@ -140,7 +140,7 @@ local applystyle = function(bar)
 	bar.candyBarIconFrame:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 end
 
-local function registerStyle()
+local function registerStyle(myProfile)
 	if not BigWigs then return end
 	local bars = BigWigs:GetPlugin("Bars", true)
 	if not bars then return end
@@ -152,7 +152,8 @@ local function registerStyle()
 		BarStopped = freestyle,
 		GetStyleName = function() return "ShestakUI" end,
 	})
-	if BigWigsLoader and BigWigs3DB.namespaces.BigWigs_Plugins_Bars.profiles.Default.barStyle == "ShestakUI" then
+
+	if BigWigsLoader and myProfile and myProfile.barStyle == "ShestakUI" then
 		BigWigsLoader.RegisterMessage("BigWigs_Plugins", "BigWigs_FrameCreated", function()
 			BigWigsProximityAnchor:SetTemplate("Transparent")
 			BigWigsAltPower:SetTemplate("Transparent")
@@ -173,10 +174,17 @@ f:RegisterEvent("ADDON_LOADED")
 f:SetScript("OnEvent", function(_, event, addon)
 	if event == "ADDON_LOADED" then
 		if addon == "BigWigs_Plugins" then
-			if not BigWigs3DB.namespaces.BigWigs_Plugins_Bars or BigWigs3DB.namespaces.BigWigs_Plugins_Bars.profiles.Default.InstalledBars ~= C.actionbar.bottombars then
-				StaticPopup_Show("SETTINGS_BIGWIGS")
+			local myProfile
+			if BigWigs3DB then
+				if BigWigs3DB.profileKeys and BigWigs3DB.namespaces and BigWigs3DB.namespaces.BigWigs_Plugins_Bars and BigWigs3DB.namespaces.BigWigs_Plugins_Bars.profiles then
+					myProfile = BigWigs3DB.namespaces.BigWigs_Plugins_Bars.profiles[BigWigs3DB.profileKeys[UnitName("player").." - "..GetRealmName()]]
+				end
+				if not myProfile or myProfile.InstalledBars ~= C.actionbar.bottombars then
+					StaticPopup_Show("SETTINGS_BIGWIGS")
+				end
 			end
-			registerStyle()
+
+			registerStyle(myProfile)
 			f:UnregisterEvent("ADDON_LOADED")
 		elseif addon == "ShestakUI" then
 			if BigWigsLoader and C.skins.blizzard_frames == true then
