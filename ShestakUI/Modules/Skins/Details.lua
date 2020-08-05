@@ -19,6 +19,16 @@ hooksecurefunc(_detalhes.gump, "CriaNovaBarra", function(_, instancia, index)
 	end
 end)
 
+hooksecurefunc(_detalhes, "SetFontOutline", function(_, fontString)
+	local fonte, size = fontString:GetFont()
+	if fonte == "Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Pixel.ttf" then
+		fontString:SetFont(fonte, size, "OUTLINEMONOCHROME")
+		if fontString:GetShadowColor() then
+			fontString:SetShadowColor(0, 0, 0, 0)
+		end
+	end
+end)
+
 local skinTable = {
 	file = [[Interface\AddOns\Details\images\skins\classic_skin_v1.blp]],
 	author = "Shestak",
@@ -183,7 +193,6 @@ local skinTable = {
 				["lower_alpha"] = 0.1,
 				["upper_enabled"] = false,
 			},
-			-- ["texture_custom_file"d = "AddOns\\ShestakUI\\Media\\Textures\\Texture.tga",
 			["textR_class_colors"] = false,
 			["texture_custom"] = "AddOns\\ShestakUI\\Media\\Textures\\Texture.tga",
 			["texture"] = "Smooth!",
@@ -271,7 +280,7 @@ local skinTable = {
 		["stretch_button_side"] = 1,
 		["attribute_text"] = {
 			["enabled"] = true,
-			["shadow"] = false,
+			["shadow"] = true,
 			["side"] = 1,
 			["text_size"] = 8,
 			["custom_text"] = "{name}",
