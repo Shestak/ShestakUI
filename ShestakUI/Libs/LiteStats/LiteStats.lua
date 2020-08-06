@@ -32,20 +32,20 @@ local gsub = gsub
 
 -- Config
 local modules = LPSTAT_CONFIG
+local clock = modules.Clock
 local latency = modules.Latency
 local fps = modules.FPS
+local friends = modules.Friends
+local guild = modules.Guild
 local durability = modules.Durability
-local gold = modules.Gold
-local clock = modules.Clock
+local experience = modules.Experience
+local talents = modules.Talents
 local location = modules.Location
 local coords = modules.Coords
 local ping = modules.Ping
-local guild = modules.Guild
-local friends = modules.Friends
-local bags = modules.Bags
-local talents = modules.Talents
+local gold = modules.Gold
 local stats = modules.Stats
-local experience = modules.Experience
+local bags = modules.Bags
 local loot = modules.Loot
 local nameplates = modules.Nameplates
 
@@ -245,6 +245,109 @@ end
 CreateFrame("Frame", "LSMenus", UIParent, "UIDropDownMenuTemplate")
 
 ----------------------------------------------------------------------------------------
+--	Clock
+----------------------------------------------------------------------------------------
+if clock.enabled then
+	local CALENDAR_MONTH_NAMES = {
+		MONTH_JANUARY,
+		MONTH_FEBRUARY,
+		MONTH_MARCH,
+		MONTH_APRIL,
+		MONTH_MAY,
+		MONTH_JUNE,
+		MONTH_JULY,
+		MONTH_AUGUST,
+		MONTH_SEPTEMBER,
+		MONTH_OCTOBER,
+		MONTH_NOVEMBER,
+		MONTH_DECEMBER,
+	}
+	Inject("Clock", {
+		text = {
+			string = function()
+				return zsub(GameTime_GetTime(true), "%s*AM", clock.AM, "%s*PM", clock.PM, ":", clock.colon)
+			end
+		},
+		OnLoad = function(self) RequestRaidInfo() RegEvents(self, "UPDATE_INSTANCE_INFO") end,
+		OnEvent = function(self) if self.hovered then self:GetScript("OnEnter")(self) end end,
+		OnEnter = function(self)
+			if not self.hovered then RequestRaidInfo() self.hovered = true end
+			local currentCalendarTime = C_DateAndTime.GetCurrentCalendarTime()
+			local weekday = CALENDAR_WEEKDAY_NAMES[currentCalendarTime.weekday]
+			local month = CALENDAR_MONTH_NAMES[currentCalendarTime.month]
+			local fullDate = format(FULLDATE, weekday, month, currentCalendarTime.monthDay, currentCalendarTime.year, currentCalendarTime.month)
+			GameTooltip:SetOwner(self, "ANCHOR_NONE")
+			GameTooltip:ClearAllPoints()
+			GameTooltip:SetPoint(clock.tip_anchor, clock.tip_frame, clock.tip_x, clock.tip_y)
+			GameTooltip:ClearLines()
+			GameTooltip:AddLine(fullDate, tthead.r, tthead.g, tthead.b)
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_LOCALTIME, ":", ""), zsub(GameTime_GetLocalTime(true), "%s*AM", "am", "%s*PM", "pm"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_REALMTIME, ":", ""), zsub(GameTime_GetGameTime(true), "%s*AM", "am", "%s*PM", "pm"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+
+			local titleName
+			for i = 1, GetNumSavedInstances() do
+				local name, _, reset, difficulty, locked, extended, _, isRaid, maxPlayers, _, numEncounters, encounterProgress = GetSavedInstanceInfo(i)
+				if isRaid and (locked or extended) or maxPlayers == 5 and difficulty == 23 and (locked or extended) then
+					local tr, tg, tb, diff
+					if not titleName then
+						GameTooltip:AddLine(" ")
+						GameTooltip:AddLine(GROUP_FINDER, ttsubh.r, ttsubh.g, ttsubh.b)
+						titleName = true
+					end
+					if extended then tr, tg, tb = 0.3, 1, 0.3 else tr, tg, tb = 1, 1, 1 end
+
+					local _, _, isHeroic, _, displayHeroic, displayMythic = GetDifficultyInfo(difficulty)
+					if displayMythic then
+						diff = "M"
+					elseif isHeroic or displayHeroic then
+						diff = "H"
+					end
+
+					if (numEncounters and numEncounters > 0) and (encounterProgress and encounterProgress > 0) then
+						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s] (%s/%s)", name, maxPlayers, diff or "", encounterProgress, numEncounters), fmttime(reset), 1, 1, 1, tr, tg, tb)
+					else
+						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s]", name, maxPlayers, diff or ""), fmttime(reset), 1, 1, 1, tr, tg, tb)
+					end
+				end
+			end
+			local addedLine
+			for i = 1, GetNumSavedWorldBosses() do
+				local name, _, reset = GetSavedWorldBossInfo(i)
+				if reset then
+					if not addedLine then
+						GameTooltip:AddLine(" ")
+						GameTooltip:AddLine(RAID_INFO_WORLD_BOSS, ttsubh.r, ttsubh.g, ttsubh.b)
+						addedLine = true
+					end
+					GameTooltip:AddDoubleLine(name, fmttime(reset), 1, 1, 1, 1, 1, 1)
+				end
+			end
+			if T.level == MAX_PLAYER_LEVEL then
+				local c = 0
+				for _, q in ipairs({52834, 52835, 52837, 52838, 52839, 52840}) do
+					if IsQuestFlaggedCompleted(q) then
+						c = c + 1
+					end
+				end
+				local max = 2
+				local r, g, b = 1, 1, 1
+				if c == 0 then
+					r, g, b = 1, 0, 0
+				elseif c == 1 then
+					r, g, b = 1, 1, 0
+				end
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
+				GameTooltip:AddDoubleLine(L_STATS_SEALS, format("%s/%s", c, max), 1, 1, 1, r, g, b)
+			end
+			GameTooltip:Show()
+		end,
+		OnClick = function(_, b) (b == "RightButton" and ToggleTimeManager or ToggleCalendar)() end
+	})
+end
+
+----------------------------------------------------------------------------------------
 --	Latency
 ----------------------------------------------------------------------------------------
 if latency.enabled then
@@ -410,550 +513,296 @@ if fps.enabled then
 end
 
 ----------------------------------------------------------------------------------------
---	Durability
+--	Friends
 ----------------------------------------------------------------------------------------
-if durability.enabled then
-	Inject("Durability", {
-		OnLoad = function(self)
-			CreateFrame("GameTooltip", "LPDURA")
-			LPDURA:SetOwner(WorldFrame, "ANCHOR_NONE")
-			if durability.man then DurabilityFrame.Show = DurabilityFrame.Hide end
-			RegEvents(self, "UPDATE_INVENTORY_DURABILITY MERCHANT_SHOW PLAYER_LOGIN")
-		end,
+if friends.enabled then
+	local totalFriendsOnline = 0
+	local totalBattleNetOnline = 0
+	local BNTable = {}
+	local friendTable = {}
+	local BNTableEnter = {}
+	local function BuildFriendTable(total)
+		totalFriendsOnline = 0
+		wipe(friendTable)
+
+		for i = 1, total do
+			local name, level, class, area, connected, status, note = GetFriendInfo(i)
+			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
+			if GetLocale() ~= "enUS" then
+				for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
+			end
+			friendTable[i] = {name, level, class, area, connected, status, note}
+			if connected then
+				totalFriendsOnline = totalFriendsOnline + 1
+			end
+		end
+
+		table.sort(friendTable, function(a, b)
+			if a[1] and b[1] then
+				return a[1] < b[1]
+			end
+		end)
+	end
+	local function BuildBNTable(total)
+		totalBattleNetOnline = 0
+		wipe(BNTable)
+
+		for i = 1, total do
+			local accountInfo = C_BattleNet.GetFriendAccountInfo(i)
+			local class = accountInfo.gameAccountInfo.className
+			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
+			if GetLocale() ~= "enUS" then
+				for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
+			end
+			BNTable[i] = {accountInfo.bnetAccountID, accountInfo.accountName, accountInfo.battleTag, accountInfo.gameAccountInfo.characterName, accountInfo.gameAccountInfo.gameAccountID, accountInfo.gameAccountInfo.clientProgram, accountInfo.gameAccountInfo.isOnline, accountInfo.isAFK, accountInfo.isDND, accountInfo.note, accountInfo.gameAccountInfo.realmName, accountInfo.gameAccountInfo.factionName, accountInfo.gameAccountInfo.raceName, class, accountInfo.gameAccountInfo.areaName, accountInfo.gameAccountInfo.characterLevel}
+			if accountInfo.gameAccountInfo.isOnline then
+				totalBattleNetOnline = totalBattleNetOnline + 1
+			end
+		end
+	end
+	local clientTags = {
+		[BNET_CLIENT_D3] = "Diablo 3",
+		[BNET_CLIENT_WTCG] = "Hearthstone",
+		[BNET_CLIENT_HEROES] = "Heroes of the Storm",
+		[BNET_CLIENT_OVERWATCH] = "Overwatch",
+		[BNET_CLIENT_SC] = "StarCraft",
+		[BNET_CLIENT_SC2] = "StarCraft 2",
+		[BNET_CLIENT_DESTINY2] = "Destiny 2",
+		[BNET_CLIENT_COD] = "Call of Duty: Black Ops 4",
+		["BSAp"] = COMMUNITIES_PRESENCE_MOBILE_CHAT
+	}
+	Inject("Friends", {
+		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN PLAYER_ENTERING_WORLD GROUP_ROSTER_UPDATE FRIENDLIST_UPDATE BN_FRIEND_LIST_SIZE_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED") end,
 		OnEvent = function(self, event)
-			if event == "UPDATE_INVENTORY_DURABILITY" or event == "PLAYER_LOGIN" then
-				local dmin = 100
-				for id = 1, 18 do
-					local dur, dmax = GetInventoryItemDurability(id)
-					if dur ~= dmax then dmin = floor(min(dmin, dur / dmax * 100)) end
-				end
-				self.text:SetText(format(gsub(durability.fmt, "%[color%]", (gradient(dmin / 100))), dmin))
-			elseif event == "MERCHANT_SHOW" and not (IsAltKeyDown() or IsShiftKeyDown()) then
-				if conf.AutoRepair and CanMerchantRepair() then
-					local cost, total = GetRepairAllCost(), 0
-					if cost > 0 then
-						if conf.AutoGuildRepair and CanGuildBankRepair() then RepairAllItems(1) total = cost end
-						if GetRepairAllCost() > 0 then
-							if not durability.ignore_inventory and GetRepairAllCost() <= GetMoney() then
-								total = GetRepairAllCost(); RepairAllItems()
+			if event ~= "GROUP_ROSTER_UPDATE" then
+				local numBNetTotal, numBNetOnline = BNGetNumFriends()
+				local online, total = 0, GetNumFriends()
+				for i = 0, total do if select(5, GetFriendInfo(i)) then online = online + 1 end end
+				online = online + numBNetOnline
+				total = total + numBNetTotal
+				self.text:SetText(format(friends.fmt, online, total))
+			end
+			if self.hovered then self:GetScript("OnEnter")(self) end
+		end,
+		OnUpdate = AltUpdate,
+		OnClick = function(self, b)
+			if b == "MiddleButton" then
+				ToggleIgnorePanel()
+			elseif b == "LeftButton" then
+				ToggleFriendsFrame(1)
+			elseif b == "RightButton" then
+				HideTT(self)
+
+				local BNTotal = BNGetNumFriends()
+				local total = GetNumFriends()
+				BuildBNTable(BNTotal)
+				BuildFriendTable(total)
+
+				local classc, levelc, grouped
+				local menuCountWhispers = 0
+				local menuCountInvites = 0
+
+				menuList[2].menuList = {}
+				menuList[3].menuList = {}
+
+				if totalFriendsOnline > 0 then
+					for i = 1, #friendTable do
+						if friendTable[i][5] then
+							if UnitInParty(friendTable[i][1]) or UnitInRaid(friendTable[i][1]) then
+								grouped = " |cffaaaaaa*|r"
 							else
-								for id = 1, 18 do
-									local cost = select(3, LPDURA:SetInventoryItem(P, id))
-									if cost ~= 0 and cost <= GetMoney() then
-										if not InRepairMode() then ShowRepairCursor() end
-										PickupInventoryItem(id)
-										total = total + cost
+								grouped = ""
+							end
+
+							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[friendTable[i][3]], GetQuestDifficultyColor(friendTable[i][2])
+							if classc == nil then
+								classc = GetQuestDifficultyColor(friendTable[i][2])
+							end
+
+							menuCountWhispers = menuCountWhispers + 1
+							menuList[3].menuList[menuCountWhispers] = {
+								text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1], grouped),
+								arg1 = friendTable[i][1],
+								notCheckable = true,
+								func = function(_, arg1)
+									menuFrame:Hide()
+									SetItemRef("player:"..arg1, ("|Hplayer:%1$s|h[%1$s]|h"):format(arg1), "LeftButton")
+								end
+							}
+
+							if not (UnitInParty(friendTable[i][1]) or UnitInRaid(friendTable[i][1])) then
+								menuCountInvites = menuCountInvites + 1
+								menuList[2].menuList[menuCountInvites] = {
+									text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1]),
+									arg1 = friendTable[i][1],
+									notCheckable = true,
+									func = function(_, arg1)
+										menuFrame:Hide()
+										InviteUnit(arg1)
+									end
+								}
+							end
+						end
+					end
+				end
+
+				if totalBattleNetOnline > 0 then
+					for i = 1, #BNTable do
+						if BNTable[i][7] then
+							if UnitInParty(BNTable[i][4]) or UnitInRaid(BNTable[i][4]) then
+								grouped = " |cffaaaaaa*|r"
+							else
+								grouped = ""
+							end
+
+							menuCountWhispers = menuCountWhispers + 1
+							menuList[3].menuList[menuCountWhispers] = {
+								text = BNTable[i][2]..grouped,
+								arg1 = BNTable[i][2],
+								notCheckable = true,
+								func = function(_, arg1)
+									menuFrame:Hide()
+									ChatFrame_SendBNetTell(arg1)
+								end
+							}
+
+							if BNTable[i][6] == BNET_CLIENT_WOW and UnitFactionGroup("player") == BNTable[i][12] then
+								if not (UnitInParty(BNTable[i][4]) or UnitInRaid(BNTable[i][4])) then
+									classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[BNTable[i][14]], GetQuestDifficultyColor(BNTable[i][16])
+									if classc == nil then
+										classc = GetQuestDifficultyColor(BNTable[i][16])
+									end
+									menuCountInvites = menuCountInvites + 1
+									menuList[2].menuList[menuCountInvites] = {
+										text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, BNTable[i][16], classc.r * 255, classc.g * 255, classc.b * 255, BNTable[i][4]),
+										arg1 = BNTable[i][5],
+										notCheckable = true,
+										func = function(_, arg1)
+											menuFrame:Hide()
+											BNInviteFriend(arg1)
+										end
+									}
+								end
+							end
+						end
+					end
+				end
+
+				EasyMenu(menuList, menuFrame, self, 0, 0, "MENU")
+			end
+		end,
+		OnEnter = function(self)
+			ShowFriends()
+			self.hovered = true
+			local online, total = 0, GetNumFriends()
+			local name, level, class, zone, connected, status, note, classc, levelc, zone_r, zone_g, zone_b, grouped, realm_r, realm_g, realm_b
+			for i = 0, total do if select(5, GetFriendInfo(i)) then online = online + 1 end end
+			local BNonline, BNtotal = 0, BNGetNumFriends()
+			wipe(BNTableEnter)
+			if BNtotal > 0 then
+				for i = 1, BNtotal do
+					local accountInfo = C_BattleNet.GetFriendAccountInfo(i)
+					BNTableEnter[i] = {accountInfo, accountInfo.gameAccountInfo.clientProgram}
+					if accountInfo.gameAccountInfo.isOnline then
+						BNonline = BNonline + 1
+					end
+				end
+			end
+			local totalonline = online + BNonline
+			local totalfriends = total + BNtotal
+			if online > 0 or BNonline > 0 then
+				GameTooltip:SetOwner(self, "ANCHOR_NONE")
+				GameTooltip:ClearAllPoints()
+				GameTooltip:SetPoint(modules.Friends.tip_anchor, modules.Friends.tip_frame, modules.Friends.tip_x, modules.Friends.tip_y)
+				GameTooltip:ClearLines()
+				GameTooltip:AddDoubleLine(FRIENDS_LIST, format("%s: %s/%s", GUILD_ONLINE_LABEL, totalonline, totalfriends), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
+				if online > 0 then
+					GameTooltip:AddLine(" ")
+					GameTooltip:AddLine(WOW_FRIEND)
+					for i = 1, total do
+						name, level, class, zone, connected, status, note = GetFriendInfo(i)
+						if not connected then break end
+						if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
+						for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
+						if GetLocale() ~= "enUS" then
+							for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
+						end
+						classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
+						if not classc then
+							classc = {r = 1, g = 1, b = 1}
+						end
+						grouped = (UnitInParty(name) or UnitInRaid(name)) and (GetRealZoneText() == zone and " |cff7fff00*|r" or " |cffff7f00*|r") or ""
+						GameTooltip:AddDoubleLine(format("|cff%02x%02x%02x%d|r %s%s%s", levelc.r * 255, levelc.g * 255, levelc.b * 255, level, name, grouped, " "..status), zone, classc.r, classc.g, classc.b, zone_r, zone_g, zone_b)
+						if self.altdown and note then GameTooltip:AddLine("  "..note, ttsubh.r, ttsubh.g, ttsubh.b, 1) end
+					end
+				end
+				if BNonline > 0 then
+					GameTooltip:AddLine(" ")
+					GameTooltip:AddLine(BATTLENET_FRIEND)
+					for i = 1, #BNTableEnter do
+						local accountInfo = BNTableEnter[i][1]
+						local isOnline = accountInfo.gameAccountInfo.isOnline
+						local client = accountInfo.gameAccountInfo.clientProgram
+						if isOnline then
+							if client == BNET_CLIENT_WOW then
+								if accountInfo.isAFK then
+									status = "|cffE7E716"..L_CHAT_AFK.."|r"
+								else
+									if accountInfo.isDND then
+										status = "|cffff0000"..L_CHAT_DND.."|r"
+									else
+										status = ""
 									end
 								end
-							end
-							HideRepairCursor()
-						end
-						if total > 0 then print(format("|cff66C6FF%s |cffFFFFFF%s", REPAIR_COST, formatgold(1, total))) end
-					end
-				end
-			end
-		end,
-		OnEnter = function(self)
-			GameTooltip:SetOwner(self, "ANCHOR_NONE")
-			GameTooltip:ClearAllPoints()
-			GameTooltip:SetPoint(modules.Durability.tip_anchor, modules.Durability.tip_frame, modules.Durability.tip_x, modules.Durability.tip_y)
-			GameTooltip:ClearLines()
-			if C.tooltip.average_lvl == true then
-				local avgItemLevel, avgItemLevelEquipped = GetAverageItemLevel()
-				avgItemLevel = floor(avgItemLevel)
-				avgItemLevelEquipped = floor(avgItemLevelEquipped)
-				GameTooltip:AddDoubleLine(DURABILITY, STAT_AVERAGE_ITEM_LEVEL..": "..avgItemLevelEquipped.." / "..avgItemLevel, tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
-			else
-				GameTooltip:AddLine(DURABILITY, tthead.r, tthead.g, tthead.b)
-			end
-			GameTooltip:AddLine(" ")
-			local nodur, totalcost = true, 0
-			for slot, string in gmatch("1HEAD3SHOULDER5CHEST6WAIST7LEGS8FEET9WRIST10HANDS16MAINHAND17SECONDARYHAND", "(%d+)([^%d]+)") do
-				local dur, dmax = GetInventoryItemDurability(slot)
-				local string = _G[string.."SLOT"]
-				if dur ~= dmax then
-					local perc = dur ~= 0 and dur/dmax or 0
-					local hex = gradient(perc)
-					GameTooltip:AddDoubleLine(durability.gear_icons and format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s", GetInventoryItemTexture(P, slot), t_icon, string) or string,format("|cffaaaaaa%s/%s | %s%s%%", dur, dmax, hex, floor(perc * 100)), 1, 1, 1)
-					totalcost, nodur = totalcost + select(3, LPDURA:SetInventoryItem(P, slot))
-				end
-			end
-			if nodur then
-				GameTooltip:AddLine("100%", 0.1, 1, 0.1)
-			else
-				GameTooltip:AddDoubleLine(" ", "--------------", 1, 1, 1, 0.5, 0.5, 0.5)
-				GameTooltip:AddDoubleLine(REPAIR_COST, formatgold(1, totalcost), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-			end
-			GameTooltip:AddLine(" ")
-			GameTooltip:AddDoubleLine(" ", L_STATS_AUTO_REPAIR..": "..(conf.AutoRepair and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
-			GameTooltip:AddDoubleLine(" ", L_STATS_GUILD_REPAIR..": "..(conf.AutoGuildRepair and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
-			GameTooltip:Show()
-		end,
-		OnClick = function(self, button)
-			if button == "RightButton" then
-				conf.AutoRepair = not conf.AutoRepair
-				self:GetScript("OnEnter")(self)
-			elseif button == "MiddleButton" then
-				conf.AutoGuildRepair = not conf.AutoGuildRepair
-				self:GetScript("OnEnter")(self)
-			elseif C_EquipmentSet.GetNumEquipmentSets() > 0 and button == "LeftButton" and (IsAltKeyDown() or IsShiftKeyDown()) then
-				local menulist = {{isTitle = true, notCheckable = 1, text = format(gsub(EQUIPMENT_SETS, ":", ""), "")}}
-				if C_EquipmentSet.GetNumEquipmentSets() == 0 then
-					tinsert(menulist, {text = NONE, notCheckable = 1, disabled = true})
-				else
-					for _, eSetID in pairs(C_EquipmentSet.GetEquipmentSetIDs()) do
-						local name, icon, setID = C_EquipmentSet.GetEquipmentSetInfo(eSetID)
-						if not icon then icon = 134400 end
-						tinsert(menulist, {text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s", icon, t_icon, name), notCheckable = 1, func = function() if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end EquipmentManager_EquipSet(setID) end})
-					end
-				end
-				EasyMenu(menulist, LSMenus, "cursor", 0, 0, "MENU")
-			elseif button == "LeftButton" then
-				ToggleCharacter("PaperDollFrame")
-			end
-		end
-	})
-end
 
-----------------------------------------------------------------------------------------
---	Gold
-----------------------------------------------------------------------------------------
-if gold.enabled then
-	local IsSubTitle = 0
-	local function Currency(id, weekly, capped)
-		local name, amount, tex, week, weekmax, maxed, discovered = GetCurrencyInfo(id)
-		if amount == 0 then return end
-		if IsSubTitle == 1 then
-			GameTooltip:AddLine(" ")
-			GameTooltip:AddLine(PROFESSIONS_ARCHAEOLOGY, ttsubh.r, ttsubh.g, ttsubh.b)
-		elseif IsSubTitle == 2 then
-			GameTooltip:AddLine(" ")
-			GameTooltip:AddLine(PROFESSIONS_COOKING, ttsubh.r, ttsubh.g, ttsubh.b)
-		elseif IsSubTitle == 3 then
-			GameTooltip:AddLine(" ")
-			GameTooltip:AddLine(L_STATS_CURRENCY_RAID, ttsubh.r, ttsubh.g, ttsubh.b)
-		elseif IsSubTitle == 4 then
-			GameTooltip:AddLine(" ")
-			GameTooltip:AddLine(EXPANSION_NAME7, ttsubh.r, ttsubh.g, ttsubh.b)
-		end
-		IsSubTitle = 0
-		if weekly then
-			if discovered then GameTooltip:AddDoubleLine(name, format("%s |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", REFORGE_CURRENT..": ".. amount.." - "..WEEKLY..": "..week.." / "..weekmax, tex, t_icon), 1, 1, 1, 1, 1, 1) end
-		elseif capped then
-			if discovered then GameTooltip:AddDoubleLine(name, format("%s |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", amount.." / "..maxed, tex, t_icon), 1, 1, 1, 1, 1, 1) end
-		else
-			if discovered then GameTooltip:AddDoubleLine(name, format("%s |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", amount, tex, t_icon), 1, 1, 1, 1, 1, 1) end
-		end
-	end
-	Inject("Gold", {
-		OnLoad = function(self)
-			self.started = GetMoney()
-			RegEvents(self, "PLAYER_LOGIN PLAYER_MONEY MERCHANT_SHOW")
-			if not SavedStats.JunkIgnore then SavedStats.JunkIgnore = {} end
-		end,
-		OnEvent = function(self, event)
-			conf.Gold = GetMoney()
-			if event == "MERCHANT_SHOW" then
-				if conf.AutoSell and not (IsAltKeyDown() or IsShiftKeyDown()) then
-					local profit = 0
-					local numItem = 0
-					for bag = 0, NUM_BAG_SLOTS do for slot = 0, GetContainerNumSlots(bag) do
-						local link = GetContainerItemLink(bag, slot)
-						if link then
-							local itemstring, ignore = strmatch(link, "|Hitem:(%d-):"), false
-							for _, exception in pairs(SavedStats.JunkIgnore) do
-								if exception == itemstring then ignore = true break end
-							end
-							local _, _, itemRarity, _, _, _, _, _, _, _, itemSellPrice = GetItemInfo(link)
-							local _, itemCount = GetContainerItemInfo(bag, slot)
-							if itemSellPrice and itemSellPrice > 0 and ((itemRarity == 0 and not ignore) or (ignore and itemRarity ~= 0)) then
-								profit = profit + (itemSellPrice * itemCount)
-								numItem = numItem + 1
-								if numItem < 12 then
-									UseContainerItem(bag, slot)
-								else
-									C_Timer.After(numItem/8, function()
-										UseContainerItem(bag, slot)
-									end)
+								local characterName = accountInfo.gameAccountInfo.characterName
+								local realmName = accountInfo.gameAccountInfo.realmName
+								local class = accountInfo.gameAccountInfo.className
+								local areaName = accountInfo.gameAccountInfo.areaName
+								local level = accountInfo.gameAccountInfo.characterLevel
+
+								for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
+								if GetLocale() ~= "enUS" then
+									for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
 								end
+								classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
+								if not classc then
+									classc = {r = 1, g = 1, b = 1}
+								end
+								if UnitInParty(characterName) or UnitInRaid(characterName) then grouped = " |cffaaaaaa*|r" else grouped = "" end
+								if accountInfo.gameAccountInfo.factionName ~= UnitFactionGroup("player") then
+									grouped = " |cffff0000*|r"
+								end
+								GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r", client, levelc.r * 255, levelc.g * 255, levelc.b * 255, level, classc.r * 255, classc.g * 255, classc.b * 255, characterName, grouped, 255, 0, 0, status), accountInfo.accountName, 238, 238, 238, 238, 238, 238)
+								if self.altdown then
+									if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
+									if GetRealmName() == realmName then realm_r, realm_g, realm_b = 0.3, 1.0, 0.3 else realm_r, realm_g, realm_b = 0.65, 0.65, 0.65 end
+									GameTooltip:AddDoubleLine("  "..areaName, realmName, zone_r, zone_g, zone_b, realm_r, realm_g, realm_b)
+								end
+							else
+								if client == "App" then
+									client = accountInfo.gameAccountInfo.richPresence
+								else
+									client = clientTags[client] or ""
+								end
+								if accountInfo.gameAccountInfo.isGameAFK then
+									status = "|cffE7E716"..L_CHAT_AFK.."|r"
+								else
+									if accountInfo.gameAccountInfo.isGameBusy then
+										status = "|cffff0000"..L_CHAT_DND.."|r"
+									else
+										status = ""
+									end
+								end
+								GameTooltip:AddDoubleLine("|cffeeeeee"..accountInfo.accountName.."|r".." "..status, "|cffeeeeee"..client.."|r")
 							end
 						end
-					end end
-					if profit > 0 then print(format("|cff66C6FF%s: |cffFFFFFF%s", L_STATS_JUNK_PROFIT, formatgold(1, profit))) end
-				end
-				return
-			end
-			self.text:SetText(formatgold(gold.style, conf.Gold))
-		end,
-		OnEnter = function(self)
-			local curgold = GetMoney()
-			local _, _, archaeology, _, cooking = GetProfessions()
-			conf.Gold = curgold
-			GameTooltip:SetOwner(self, "ANCHOR_NONE")
-			GameTooltip:ClearAllPoints()
-			GameTooltip:SetPoint(gold.tip_anchor, gold.tip_frame, gold.tip_x, gold.tip_y)
-			GameTooltip:ClearLines()
-			GameTooltip:AddLine(CURRENCY, tthead.r, tthead.g, tthead.b)
-			GameTooltip:AddLine(" ")
-			if self.started ~= curgold then
-				local gained = curgold > self.started
-				local color = gained and "|cff55ff55" or "|cffff5555"
-				GameTooltip:AddDoubleLine(L_STATS_SESSION_GAIN, format("%s$|r %s %s$|r", color, formatgold(1, abs(self.started - curgold)), color), 1, 1, 1, 1, 1, 1)
-				GameTooltip:AddLine(" ")
-			end
-			GameTooltip:AddLine(L_STATS_SERVER_GOLD, ttsubh.r, ttsubh.g, ttsubh.b)
-			local total = 0
-			local goldTable = {}
-			local charIndex = 0
-			wipe(goldTable)
-			for char, conf in pairs(SavedStats[realm]) do
-				if conf.Gold and conf.Gold > 99 then
-					charIndex = charIndex + 1
-					goldTable[charIndex] = {char, formatgold(5, conf.Gold), conf.Gold}
-				end
-			end
-			table.sort(goldTable, function(a, b)
-				if (a and b) then
-					return a[3] > b[3]
-				end
-			end)
-			for _, v in ipairs(goldTable) do
-				GameTooltip:AddDoubleLine(v[1], v[2], 1, 1, 1, 1, 1, 1)
-				total = total + v[3]
-			end
-			GameTooltip:AddDoubleLine(" ", "-----------------", 1, 1, 1, 0.5, 0.5, 0.5)
-			GameTooltip:AddDoubleLine(TOTAL, formatgold(5, total), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-			GameTooltip:AddLine(" ")
-
-			local currencies = 0
-			for i = 1, GetCurrencyListSize() do
-				local name, _, _, _, watched, count, icon = GetCurrencyListInfo(i)
-				if watched then
-					if currencies == 0 then GameTooltip:AddLine(TRACKING, ttsubh.r, ttsubh.g, ttsubh.b) end
-					local r, g, b
-					if count > 0 then r, g, b = 1, 1, 1 else r, g, b = 0.5, 0.5, 0.5 end
-					GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", count, icon, t_icon), r, g, b, r, g, b)
-					currencies = currencies + 1
-				end
-			end
-			if archaeology and C.stats.currency_archaeology then
-				IsSubTitle = 1
-				Currency(384)	-- Dwarf Archaeology Fragment
-				Currency(385)	-- Troll
-				Currency(393)	-- Fossil
-				Currency(394)	-- Night Elf
-				Currency(397)	-- Orc
-				Currency(398)	-- Draenei
-				Currency(399)	-- Vrykul
-				Currency(400)	-- Nerubian
-				Currency(401)	-- Tol'vir
-				Currency(676)	-- Pandaren
-				Currency(677)	-- Mogu
-				Currency(754)	-- Mantid
-				Currency(821)	-- Draenor Clans
-				Currency(828)	-- Ogre
-				Currency(829)	-- Arakkoa
-				Currency(1172)	-- Highborne
-				Currency(1173)	-- Highmountain Tauren
-				Currency(1174)	-- Demonic
-				Currency(1534)	-- Zandalari
-				Currency(1535)	-- Drust
-			end
-
-			if cooking and C.stats.currency_cooking then
-				IsSubTitle = 2
-				Currency(81)	-- Epicurean's Award
-				Currency(402)	-- Ironpaw Token
-			end
-
-			if C.stats.currency_raid and T.level == MAX_PLAYER_LEVEL then
-				IsSubTitle = 3
-				Currency(1580, false, true)	-- Seal of Wartorn Fate
-			end
-
-			if C.stats.currency_misc then
-				IsSubTitle = 4
-				Currency(1560)	-- War Resources
-				Currency(1710)	-- Seafarer's Dubloon
-				Currency(1716)	-- Honorbound Service Medal
-				Currency(1717)	-- 7th Legion Service Medal
-				Currency(1718)	-- Titan Residuum
-				Currency(1721)	-- Prismatic Manapearl
-				Currency(1719)	-- Corrupted Mementos
-				Currency(1755)	-- Coalescing Visions
-				Currency(1803)	-- Echoes of Ny'alotha
-				Currency(515)	-- Darkmoon Prize Ticket
-			end
-
-			GameTooltip:AddLine(" ")
-			GameTooltip:AddDoubleLine(" ", L_STATS_AUTO_SELL..": "..(conf.AutoSell and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
-			GameTooltip:Show()
-		end,
-		OnClick = function(self, button)
-			if button == "LeftButton" then
-				ToggleCharacter("TokenFrame")
-			elseif button == "RightButton" then
-				conf.AutoSell = not conf.AutoSell
-				self:GetScript("OnEnter")(self)
-			end
-		end
-	})
-	SLASH_KJUNK1 = "/junk"
-	function SlashCmdList.KJUNK(s)
-		local action = strsplit(" ", s)
-		if action == "list" then
-			print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_ADDITIONS, (#SavedStats.JunkIgnore == 0 and NONE or "")))
-			for i, id in pairs(SavedStats.JunkIgnore) do
-				local _, link = GetItemInfo(id)
-				print("- ["..i.."]", link)
-			end
-		elseif action == "clear" then
-			SavedStats.JunkIgnore = {}
-			print("|cff66C6FF"..L_STATS_JUNK_CLEARED.."|r")
-		elseif action == "add" or strfind(action, "^del") or strfind(action, "^rem") then
-			local _, mouselink = GameTooltip:GetItem()
-			for id in s:gmatch("|Hitem:(%d-):") do
-				mouselink = nil
-				local _, link = GetItemInfo(id)
-				if action == "add" then
-					if not tContains(SavedStats.JunkIgnore,id) then
-						tinsert(SavedStats.JunkIgnore, id)
-						print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_ADDED, link))
-					else
-						print(format("%s |cff66C6FF%s|r", link, L_STATS_JUNK_ALREADY_ADDITIONS))
-					end
-				elseif strfind(action, "^del") or strfind(action, "^rem") then
-					tDeleteItem(SavedStats.JunkIgnore, id)
-					print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_REMOVED, link))
-				end
-			end
-			if mouselink then
-				for id in mouselink:gmatch("|Hitem:(%d-):") do
-					if action == "add" then
-						if not tContains(SavedStats.JunkIgnore,id) then
-							tinsert(SavedStats.JunkIgnore, id)
-							print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_ADDED, mouselink))
-						else
-							print(format("%s |cff66C6FF%s|r", mouselink, L_STATS_JUNK_ALREADY_ADDITIONS))
-						end
-					elseif strfind(action, "^del") or strfind(action, "^rem") then
-						tDeleteItem(SavedStats.JunkIgnore, id)
-						print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_REMOVED, mouselink))
 					end
 				end
-			end
-		else
-			print("Lite|cff66C6FFStats|r: "..L_STATS_JUNK_LIST)
-			print(format("/junk <add||rem(ove)> [%s] - %s", L_STATS_JUNK_ITEMLINK, L_STATS_JUNK_ADD_ITEM))
-			print("/junk list - "..L_STATS_JUNK_ITEMS_LIST)
-			print("/junk clear - "..L_STATS_JUNK_CLEAR_ADDITIONS)
-		end
-	end
-end
-
-----------------------------------------------------------------------------------------
---	Clock
-----------------------------------------------------------------------------------------
-if clock.enabled then
-	local CALENDAR_MONTH_NAMES = {
-		MONTH_JANUARY,
-		MONTH_FEBRUARY,
-		MONTH_MARCH,
-		MONTH_APRIL,
-		MONTH_MAY,
-		MONTH_JUNE,
-		MONTH_JULY,
-		MONTH_AUGUST,
-		MONTH_SEPTEMBER,
-		MONTH_OCTOBER,
-		MONTH_NOVEMBER,
-		MONTH_DECEMBER,
-	}
-	Inject("Clock", {
-		text = {
-			string = function()
-				return zsub(GameTime_GetTime(true), "%s*AM", clock.AM, "%s*PM", clock.PM, ":", clock.colon)
-			end
-		},
-		OnLoad = function(self) RequestRaidInfo() RegEvents(self, "UPDATE_INSTANCE_INFO") end,
-		OnEvent = function(self) if self.hovered then self:GetScript("OnEnter")(self) end end,
-		OnEnter = function(self)
-			if not self.hovered then RequestRaidInfo() self.hovered = true end
-			local currentCalendarTime = C_DateAndTime.GetCurrentCalendarTime()
-			local weekday = CALENDAR_WEEKDAY_NAMES[currentCalendarTime.weekday]
-			local month = CALENDAR_MONTH_NAMES[currentCalendarTime.month]
-			local fullDate = format(FULLDATE, weekday, month, currentCalendarTime.monthDay, currentCalendarTime.year, currentCalendarTime.month)
-			GameTooltip:SetOwner(self, "ANCHOR_NONE")
-			GameTooltip:ClearAllPoints()
-			GameTooltip:SetPoint(clock.tip_anchor, clock.tip_frame, clock.tip_x, clock.tip_y)
-			GameTooltip:ClearLines()
-			GameTooltip:AddLine(fullDate, tthead.r, tthead.g, tthead.b)
-			GameTooltip:AddLine(" ")
-			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_LOCALTIME, ":", ""), zsub(GameTime_GetLocalTime(true), "%s*AM", "am", "%s*PM", "pm"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-			GameTooltip:AddDoubleLine(gsub(TIMEMANAGER_TOOLTIP_REALMTIME, ":", ""), zsub(GameTime_GetGameTime(true), "%s*AM", "am", "%s*PM", "pm"), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-
-			local titleName
-			for i = 1, GetNumSavedInstances() do
-				local name, _, reset, difficulty, locked, extended, _, isRaid, maxPlayers, _, numEncounters, encounterProgress = GetSavedInstanceInfo(i)
-				if isRaid and (locked or extended) or maxPlayers == 5 and difficulty == 23 and (locked or extended) then
-					local tr, tg, tb, diff
-					if not titleName then
-						GameTooltip:AddLine(" ")
-						GameTooltip:AddLine(GROUP_FINDER, ttsubh.r, ttsubh.g, ttsubh.b)
-						titleName = true
-					end
-					if extended then tr, tg, tb = 0.3, 1, 0.3 else tr, tg, tb = 1, 1, 1 end
-
-					local _, _, isHeroic, _, displayHeroic, displayMythic = GetDifficultyInfo(difficulty)
-					if displayMythic then
-						diff = "M"
-					elseif isHeroic or displayHeroic then
-						diff = "H"
-					end
-
-					if (numEncounters and numEncounters > 0) and (encounterProgress and encounterProgress > 0) then
-						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s] (%s/%s)", name, maxPlayers, diff or "", encounterProgress, numEncounters), fmttime(reset), 1, 1, 1, tr, tg, tb)
-					else
-						GameTooltip:AddDoubleLine(format("%s |cffaaaaaa[%s%s]", name, maxPlayers, diff or ""), fmttime(reset), 1, 1, 1, tr, tg, tb)
-					end
-				end
-			end
-			local addedLine
-			for i = 1, GetNumSavedWorldBosses() do
-				local name, _, reset = GetSavedWorldBossInfo(i)
-				if reset then
-					if not addedLine then
-						GameTooltip:AddLine(" ")
-						GameTooltip:AddLine(RAID_INFO_WORLD_BOSS, ttsubh.r, ttsubh.g, ttsubh.b)
-						addedLine = true
-					end
-					GameTooltip:AddDoubleLine(name, fmttime(reset), 1, 1, 1, 1, 1, 1)
-				end
-			end
-			if T.level == MAX_PLAYER_LEVEL then
-				local c = 0
-				for _, q in ipairs({52834, 52835, 52837, 52838, 52839, 52840}) do
-					if IsQuestFlaggedCompleted(q) then
-						c = c + 1
-					end
-				end
-				local max = 2
-				local r, g, b = 1, 1, 1
-				if c == 0 then
-					r, g, b = 1, 0, 0
-				elseif c == 1 then
-					r, g, b = 1, 1, 0
-				end
-				GameTooltip:AddLine(" ")
-				GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
-				GameTooltip:AddDoubleLine(L_STATS_SEALS, format("%s/%s", c, max), 1, 1, 1, r, g, b)
-			end
-			GameTooltip:Show()
-		end,
-		OnClick = function(_, b) (b == "RightButton" and ToggleTimeManager or ToggleCalendar)() end
-	})
-end
-
-----------------------------------------------------------------------------------------
---	Location
-----------------------------------------------------------------------------------------
-if location.enabled then
-	Inject("Location", {
-		OnLoad = function(self)
-			RegEvents(self, "ZONE_CHANGED ZONE_CHANGED_INDOORS ZONE_CHANGED_NEW_AREA PLAYER_ENTERING_WORLD")
-			self.sanctuary = {SANCTUARY_TERRITORY, {0.41, 0.8, 0.94}}
-			self.arena = {FREE_FOR_ALL_TERRITORY, {1, 0.1, 0.1}}
-			self.friendly = {FACTION_CONTROLLED_TERRITORY, {0.1, 1, 0.1}}
-			self.hostile = {FACTION_CONTROLLED_TERRITORY, {1, 0.1, 0.1}}
-			self.contested = {CONTESTED_TERRITORY, {1, 0.7, 0}}
-			self.combat = {COMBAT_ZONE, {1, 0.1, 0.1}}
-			self.neutral = {"", {1, 0.93, 0.76}}
-		end,
-		OnEvent = function(self)
-			self.subzone, self.zone, self.pvp = GetSubZoneText(), GetZoneText(), {GetZonePVPInfo()}
-			if not self.pvp[1] then self.pvp[1] = "neutral" end
-			local label = (self.subzone ~= "" and location.subzone) and self.subzone or self.zone
-			local r, g, b = unpack(self.pvp[1] and (self[self.pvp[1]][2] or self.other) or self.other)
-			self.text:SetText(location.truncate == 0 and label or strtrim(strsub(label, 1, location.truncate)))
-			self.text:SetTextColor(r, g, b, font.alpha)
-		end,
-		OnUpdate = function(self, u)
-			if self.hovered then
-				self.elapsed = self.elapsed + u
-				if self.elapsed > 1 or self.init then
-					GameTooltip:ClearLines()
-					GameTooltip:AddLine(format("%s |cffffffff(%s)", self.zone, Coords()), tthead.r, tthead.g, tthead.b, 1, 1, 1)
-					if self.pvp[1] and not IsInInstance() then
-						local r, g, b = unpack(self[self.pvp[1]][2])
-						if self.subzone and self.subzone ~= self.zone then GameTooltip:AddLine(self.subzone, r, g, b) end
-						GameTooltip:AddLine(format(self[self.pvp[1]][1], self.pvp[3] or ""), r, g, b)
-					end
-					GameTooltip:Show()
-					self.elapsed, self.init = 0, false
-				end
-			end
-		end,
-		OnEnter = function(self)
-			self.hovered, self.init = true, true
-			GameTooltip:SetOwner(self, "ANCHOR_NONE")
-			GameTooltip:ClearAllPoints()
-			GameTooltip:SetPoint(modules.Location.tip_anchor, modules.Location.tip_frame, modules.Location.tip_x, modules.Location.tip_y)
-		end,
-		OnClick = function(self)
-			if IsShiftKeyDown() then
-				ChatEdit_ActivateChat(ChatEdit_ChooseBoxForSend())
-				ChatEdit_ChooseBoxForSend():Insert(format(" (%s: %s)", self.zone, Coords()))
+				GameTooltip:Show()
 			else
-				ToggleFrame(WorldMapFrame)
+				HideTT(self)
 			end
-		end
-	})
-end
-
-----------------------------------------------------------------------------------------
---	Coordinates
-----------------------------------------------------------------------------------------
-if coords.enabled then
-	Inject("Coords", {
-		text = {string = Coords},
-		OnClick = function()
-			if IsShiftKeyDown() then
-				ChatEdit_ActivateChat(ChatEdit_ChooseBoxForSend())
-				ChatEdit_ChooseBoxForSend():Insert(format(" (%s: %s)", GetZoneText(), Coords()))
-			else
-				ToggleFrame(WorldMapFrame)
-			end
-		end
-	})
-end
-
-----------------------------------------------------------------------------------------
---	Ping
-----------------------------------------------------------------------------------------
-if ping.enabled then
-	Inject("Ping", {
-		OnLoad = function(self)
-			self:RegisterEvent("MINIMAP_PING")
-			self.animGroup = self.text:CreateAnimationGroup()
-			self.anim = self.animGroup:CreateAnimation("Alpha")
-			self.animGroup:SetScript("OnFinished", function() self.text:Hide() end)
-			self.anim:SetFromAlpha(1)
-			self.anim:SetToAlpha(0)
-			self.anim:SetDuration(2.8)
-			self.anim:SetStartDelay(5)
-		end,
-		OnEvent = function(self, _, unit)
-			if unit == P and ping.hide_self then return end
-			local class = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(unit))]
-			self.text:SetText(format(ping.fmt, UnitName(unit)))
-			if class then
-				self.text:SetTextColor(class.r, class.g, class.b, 1)
-			else
-				self.text:SetTextColor(1, 1, 1, 1)
-			end
-			self.animGroup:Stop()
-			self.text:Show()
-			self.animGroup:Play()
 		end
 	})
 end
@@ -1128,586 +977,106 @@ if guild.enabled then
 end
 
 ----------------------------------------------------------------------------------------
---	Friends
+--	Durability
 ----------------------------------------------------------------------------------------
-if friends.enabled then
-	local totalFriendsOnline = 0
-	local totalBattleNetOnline = 0
-	local BNTable = {}
-	local friendTable = {}
-	local BNTableEnter = {}
-	local function BuildFriendTable(total)
-		totalFriendsOnline = 0
-		wipe(friendTable)
-
-		for i = 1, total do
-			local name, level, class, area, connected, status, note = GetFriendInfo(i)
-			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
-			if GetLocale() ~= "enUS" then
-				for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
-			end
-			friendTable[i] = {name, level, class, area, connected, status, note}
-			if connected then
-				totalFriendsOnline = totalFriendsOnline + 1
-			end
-		end
-
-		table.sort(friendTable, function(a, b)
-			if a[1] and b[1] then
-				return a[1] < b[1]
-			end
-		end)
-	end
-	local function BuildBNTable(total)
-		totalBattleNetOnline = 0
-		wipe(BNTable)
-
-		for i = 1, total do
-			local accountInfo = C_BattleNet.GetFriendAccountInfo(i)
-			local class = accountInfo.gameAccountInfo.className
-			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
-			if GetLocale() ~= "enUS" then
-				for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
-			end
-			BNTable[i] = {accountInfo.bnetAccountID, accountInfo.accountName, accountInfo.battleTag, accountInfo.gameAccountInfo.characterName, accountInfo.gameAccountInfo.gameAccountID, accountInfo.gameAccountInfo.clientProgram, accountInfo.gameAccountInfo.isOnline, accountInfo.isAFK, accountInfo.isDND, accountInfo.note, accountInfo.gameAccountInfo.realmName, accountInfo.gameAccountInfo.factionName, accountInfo.gameAccountInfo.raceName, class, accountInfo.gameAccountInfo.areaName, accountInfo.gameAccountInfo.characterLevel}
-			if accountInfo.gameAccountInfo.isOnline then
-				totalBattleNetOnline = totalBattleNetOnline + 1
-			end
-		end
-
-		-- table.sort(BNTable, function(a, b)
-			-- if a[2] and b[2] and a[3] and b[3] then
-				-- if a[2] == b[2] then return a[3] < b[3] end
-				-- return a[2] < b[2]
-			-- end
-		-- end)
-	end
-	local clientTags = {
-		[BNET_CLIENT_D3] = "Diablo 3",
-		[BNET_CLIENT_WTCG] = "Hearthstone",
-		[BNET_CLIENT_HEROES] = "Heroes of the Storm",
-		[BNET_CLIENT_OVERWATCH] = "Overwatch",
-		[BNET_CLIENT_SC] = "StarCraft",
-		[BNET_CLIENT_SC2] = "StarCraft 2",
-		[BNET_CLIENT_DESTINY2] = "Destiny 2",
-		[BNET_CLIENT_COD] = "Call of Duty: Black Ops 4",
-		["BSAp"] = COMMUNITIES_PRESENCE_MOBILE_CHAT
-	}
-	Inject("Friends", {
-		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN PLAYER_ENTERING_WORLD GROUP_ROSTER_UPDATE FRIENDLIST_UPDATE BN_FRIEND_LIST_SIZE_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED BN_FRIEND_ACCOUNT_ONLINE BN_FRIEND_ACCOUNT_OFFLINE BN_FRIEND_INFO_CHANGED") end,
+if durability.enabled then
+	Inject("Durability", {
+		OnLoad = function(self)
+			CreateFrame("GameTooltip", "LPDURA")
+			LPDURA:SetOwner(WorldFrame, "ANCHOR_NONE")
+			if durability.man then DurabilityFrame.Show = DurabilityFrame.Hide end
+			RegEvents(self, "UPDATE_INVENTORY_DURABILITY MERCHANT_SHOW PLAYER_LOGIN")
+		end,
 		OnEvent = function(self, event)
-			if event ~= "GROUP_ROSTER_UPDATE" then
-				local numBNetTotal, numBNetOnline = BNGetNumFriends()
-				local online, total = 0, GetNumFriends()
-				for i = 0, total do if select(5, GetFriendInfo(i)) then online = online + 1 end end
-				online = online + numBNetOnline
-				total = total + numBNetTotal
-				self.text:SetText(format(friends.fmt, online, total))
-			end
-			if self.hovered then self:GetScript("OnEnter")(self) end
-		end,
-		OnUpdate = AltUpdate,
-		OnClick = function(self, b)
-			if b == "MiddleButton" then
-				ToggleIgnorePanel()
-			elseif b == "LeftButton" then
-				ToggleFriendsFrame(1)
-			elseif b == "RightButton" then
-				HideTT(self)
-
-				local BNTotal = BNGetNumFriends()
-				local total = GetNumFriends()
-				BuildBNTable(BNTotal)
-				BuildFriendTable(total)
-
-				local classc, levelc, grouped
-				local menuCountWhispers = 0
-				local menuCountInvites = 0
-
-				menuList[2].menuList = {}
-				menuList[3].menuList = {}
-
-				if totalFriendsOnline > 0 then
-					for i = 1, #friendTable do
-						if friendTable[i][5] then
-							if UnitInParty(friendTable[i][1]) or UnitInRaid(friendTable[i][1]) then
-								grouped = " |cffaaaaaa*|r"
+			if event == "UPDATE_INVENTORY_DURABILITY" or event == "PLAYER_LOGIN" then
+				local dmin = 100
+				for id = 1, 18 do
+					local dur, dmax = GetInventoryItemDurability(id)
+					if dur ~= dmax then dmin = floor(min(dmin, dur / dmax * 100)) end
+				end
+				self.text:SetText(format(gsub(durability.fmt, "%[color%]", (gradient(dmin / 100))), dmin))
+			elseif event == "MERCHANT_SHOW" and not (IsAltKeyDown() or IsShiftKeyDown()) then
+				if conf.AutoRepair and CanMerchantRepair() then
+					local cost, total = GetRepairAllCost(), 0
+					if cost > 0 then
+						if conf.AutoGuildRepair and CanGuildBankRepair() then RepairAllItems(1) total = cost end
+						if GetRepairAllCost() > 0 then
+							if not durability.ignore_inventory and GetRepairAllCost() <= GetMoney() then
+								total = GetRepairAllCost(); RepairAllItems()
 							else
-								grouped = ""
-							end
-
-							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[friendTable[i][3]], GetQuestDifficultyColor(friendTable[i][2])
-							if classc == nil then
-								classc = GetQuestDifficultyColor(friendTable[i][2])
-							end
-
-							menuCountWhispers = menuCountWhispers + 1
-							menuList[3].menuList[menuCountWhispers] = {
-								text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1], grouped),
-								arg1 = friendTable[i][1],
-								notCheckable = true,
-								func = function(_, arg1)
-									menuFrame:Hide()
-									SetItemRef("player:"..arg1, ("|Hplayer:%1$s|h[%1$s]|h"):format(arg1), "LeftButton")
-								end
-							}
-
-							if not (UnitInParty(friendTable[i][1]) or UnitInRaid(friendTable[i][1])) then
-								menuCountInvites = menuCountInvites + 1
-								menuList[2].menuList[menuCountInvites] = {
-									text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1]),
-									arg1 = friendTable[i][1],
-									notCheckable = true,
-									func = function(_, arg1)
-										menuFrame:Hide()
-										InviteUnit(arg1)
+								for id = 1, 18 do
+									local cost = select(3, LPDURA:SetInventoryItem(P, id))
+									if cost ~= 0 and cost <= GetMoney() then
+										if not InRepairMode() then ShowRepairCursor() end
+										PickupInventoryItem(id)
+										total = total + cost
 									end
-								}
+								end
 							end
+							HideRepairCursor()
 						end
+						if total > 0 then print(format("|cff66C6FF%s |cffFFFFFF%s", REPAIR_COST, formatgold(1, total))) end
 					end
 				end
-
-				if totalBattleNetOnline > 0 then
-					for i = 1, #BNTable do
-						if BNTable[i][7] then
-							if UnitInParty(BNTable[i][4]) or UnitInRaid(BNTable[i][4]) then
-								grouped = " |cffaaaaaa*|r"
-							else
-								grouped = ""
-							end
-
-							menuCountWhispers = menuCountWhispers + 1
-							menuList[3].menuList[menuCountWhispers] = {
-								text = BNTable[i][2]..grouped,
-								arg1 = BNTable[i][2],
-								notCheckable = true,
-								func = function(_, arg1)
-									menuFrame:Hide()
-									ChatFrame_SendBNetTell(arg1)
-								end
-							}
-
-							if BNTable[i][6] == BNET_CLIENT_WOW and UnitFactionGroup("player") == BNTable[i][12] then
-								if not (UnitInParty(BNTable[i][4]) or UnitInRaid(BNTable[i][4])) then
-									classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[BNTable[i][14]], GetQuestDifficultyColor(BNTable[i][16])
-									if classc == nil then
-										classc = GetQuestDifficultyColor(BNTable[i][16])
-									end
-									menuCountInvites = menuCountInvites + 1
-									menuList[2].menuList[menuCountInvites] = {
-										text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, BNTable[i][16], classc.r * 255, classc.g * 255, classc.b * 255, BNTable[i][4]),
-										arg1 = BNTable[i][5],
-										notCheckable = true,
-										func = function(_, arg1)
-											menuFrame:Hide()
-											BNInviteFriend(arg1)
-										end
-									}
-								end
-							end
-						end
-					end
-				end
-
-				EasyMenu(menuList, menuFrame, self, 0, 0, "MENU")
 			end
 		end,
 		OnEnter = function(self)
-			ShowFriends()
-			self.hovered = true
-			local online, total = 0, GetNumFriends()
-			local name, level, class, zone, connected, status, note, classc, levelc, zone_r, zone_g, zone_b, grouped, realm_r, realm_g, realm_b
-			for i = 0, total do if select(5, GetFriendInfo(i)) then online = online + 1 end end
-			local BNonline, BNtotal = 0, BNGetNumFriends()
-			wipe(BNTableEnter)
-			if BNtotal > 0 then
-				for i = 1, BNtotal do
-					local accountInfo = C_BattleNet.GetFriendAccountInfo(i)
-					BNTableEnter[i] = {accountInfo, accountInfo.gameAccountInfo.clientProgram}
-					if accountInfo.gameAccountInfo.isOnline then
-						BNonline = BNonline + 1
-					end
-				end
-				-- table.sort(BNTableEnter, function(a, b)
-					-- return a[2] > b[2]
-				-- end)
-			end
-			local totalonline = online + BNonline
-			local totalfriends = total + BNtotal
-			if online > 0 or BNonline > 0 then
-				GameTooltip:SetOwner(self, "ANCHOR_NONE")
-				GameTooltip:ClearAllPoints()
-				GameTooltip:SetPoint(modules.Friends.tip_anchor, modules.Friends.tip_frame, modules.Friends.tip_x, modules.Friends.tip_y)
-				GameTooltip:ClearLines()
-				GameTooltip:AddDoubleLine(FRIENDS_LIST, format("%s: %s/%s", GUILD_ONLINE_LABEL, totalonline, totalfriends), tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
-				if online > 0 then
-					GameTooltip:AddLine(" ")
-					GameTooltip:AddLine(WOW_FRIEND)
-					for i = 1, total do
-						name, level, class, zone, connected, status, note = GetFriendInfo(i)
-						if not connected then break end
-						if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
-						for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
-						if GetLocale() ~= "enUS" then
-							for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
-						end
-						classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
-						if not classc then
-							classc = {r = 1, g = 1, b = 1}
-						end
-						grouped = (UnitInParty(name) or UnitInRaid(name)) and (GetRealZoneText() == zone and " |cff7fff00*|r" or " |cffff7f00*|r") or ""
-						GameTooltip:AddDoubleLine(format("|cff%02x%02x%02x%d|r %s%s%s", levelc.r * 255, levelc.g * 255, levelc.b * 255, level, name, grouped, " "..status), zone, classc.r, classc.g, classc.b, zone_r, zone_g, zone_b)
-						if self.altdown and note then GameTooltip:AddLine("  "..note, ttsubh.r, ttsubh.g, ttsubh.b, 1) end
-					end
-				end
-				if BNonline > 0 then
-					GameTooltip:AddLine(" ")
-					GameTooltip:AddLine(BATTLENET_FRIEND)
-					for i = 1, #BNTableEnter do
-						local accountInfo = BNTableEnter[i][1]
-						local isOnline = accountInfo.gameAccountInfo.isOnline
-						local client = accountInfo.gameAccountInfo.clientProgram
-						if isOnline then
-							if client == BNET_CLIENT_WOW then
-								if accountInfo.isAFK then
-									status = "|cffE7E716"..L_CHAT_AFK.."|r"
-								else
-									if accountInfo.isDND then
-										status = "|cffff0000"..L_CHAT_DND.."|r"
-									else
-										status = ""
-									end
-								end
-
-								local characterName = accountInfo.gameAccountInfo.characterName
-								local realmName = accountInfo.gameAccountInfo.realmName
-								local class = accountInfo.gameAccountInfo.className
-								local areaName = accountInfo.gameAccountInfo.areaName
-								local level = accountInfo.gameAccountInfo.characterLevel
-
-								for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
-								if GetLocale() ~= "enUS" then
-									for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
-								end
-								classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class], GetQuestDifficultyColor(level)
-								if not classc then
-									classc = {r = 1, g = 1, b = 1}
-								end
-								if UnitInParty(characterName) or UnitInRaid(characterName) then grouped = " |cffaaaaaa*|r" else grouped = "" end
-								if accountInfo.gameAccountInfo.factionName ~= UnitFactionGroup("player") then
-									grouped = " |cffff0000*|r"
-								end
-								GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r", client, levelc.r * 255, levelc.g * 255, levelc.b * 255, level, classc.r * 255, classc.g * 255, classc.b * 255, characterName, grouped, 255, 0, 0, status), accountInfo.accountName, 238, 238, 238, 238, 238, 238)
-								if self.altdown then
-									if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
-									if GetRealmName() == realmName then realm_r, realm_g, realm_b = 0.3, 1.0, 0.3 else realm_r, realm_g, realm_b = 0.65, 0.65, 0.65 end
-									GameTooltip:AddDoubleLine("  "..areaName, realmName, zone_r, zone_g, zone_b, realm_r, realm_g, realm_b)
-								end
-							else
-								if client == "App" then
-									client = accountInfo.gameAccountInfo.richPresence
-								else
-									client = clientTags[client] or ""
-								end
-								if accountInfo.gameAccountInfo.isGameAFK then
-									status = "|cffE7E716"..L_CHAT_AFK.."|r"
-								else
-									if accountInfo.gameAccountInfo.isGameBusy then
-										status = "|cffff0000"..L_CHAT_DND.."|r"
-									else
-										status = ""
-									end
-								end
-								GameTooltip:AddDoubleLine("|cffeeeeee"..accountInfo.accountName.."|r".." "..status, "|cffeeeeee"..client.."|r")
-							end
-						end
-					end
-				end
-				GameTooltip:Show()
-			else
-				HideTT(self)
-			end
-		end
-	})
-end
-
-----------------------------------------------------------------------------------------
---	Bags
-----------------------------------------------------------------------------------------
-if bags.enabled then
-	Inject("Bags", {
-		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN BAG_UPDATE") end,
-		OnEvent = function(self)
-			local free, total = 0, 0
-			for i = 0, NUM_BAG_SLOTS do
-				free, total = free + GetContainerNumFreeSlots(i), total + GetContainerNumSlots(i)
-			end
-			self.text:SetText(format(bags.fmt, free, total))
-		end,
-		OnClick = function() ToggleAllBags() end,
-		OnEnter = function(self)
-			local free, total = 0, 0
-			for i = 0, NUM_BAG_SLOTS do
-				free, total = free + GetContainerNumFreeSlots(i), total + GetContainerNumSlots(i)
-			end
-			GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT", -3, 26)
+			GameTooltip:SetOwner(self, "ANCHOR_NONE")
+			GameTooltip:ClearAllPoints()
+			GameTooltip:SetPoint(modules.Durability.tip_anchor, modules.Durability.tip_frame, modules.Durability.tip_x, modules.Durability.tip_y)
 			GameTooltip:ClearLines()
-			if GetBindingKey("TOGGLEBACKPACK") then
-				GameTooltip:AddLine(BACKPACK_TOOLTIP.." ("..GetBindingKey("TOGGLEBACKPACK")..")", tthead.r, tthead.g, tthead.b)
+			if C.tooltip.average_lvl == true then
+				local avgItemLevel, avgItemLevelEquipped = GetAverageItemLevel()
+				avgItemLevel = floor(avgItemLevel)
+				avgItemLevelEquipped = floor(avgItemLevelEquipped)
+				GameTooltip:AddDoubleLine(DURABILITY, STAT_AVERAGE_ITEM_LEVEL..": "..avgItemLevelEquipped.." / "..avgItemLevel, tthead.r, tthead.g, tthead.b, tthead.r, tthead.g, tthead.b)
 			else
-				GameTooltip:AddLine(BACKPACK_TOOLTIP, tthead.r, tthead.g, tthead.b)
+				GameTooltip:AddLine(DURABILITY, tthead.r, tthead.g, tthead.b)
 			end
 			GameTooltip:AddLine(" ")
-			GameTooltip:AddLine(format(NUM_FREE_SLOTS, free, total), 1, 1, 1)
+			local nodur, totalcost = true, 0
+			for slot, string in gmatch("1HEAD3SHOULDER5CHEST6WAIST7LEGS8FEET9WRIST10HANDS16MAINHAND17SECONDARYHAND", "(%d+)([^%d]+)") do
+				local dur, dmax = GetInventoryItemDurability(slot)
+				local string = _G[string.."SLOT"]
+				if dur ~= dmax then
+					local perc = dur ~= 0 and dur/dmax or 0
+					local hex = gradient(perc)
+					GameTooltip:AddDoubleLine(durability.gear_icons and format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s", GetInventoryItemTexture(P, slot), t_icon, string) or string,format("|cffaaaaaa%s/%s | %s%s%%", dur, dmax, hex, floor(perc * 100)), 1, 1, 1)
+					totalcost, nodur = totalcost + select(3, LPDURA:SetInventoryItem(P, slot))
+				end
+			end
+			if nodur then
+				GameTooltip:AddLine("100%", 0.1, 1, 0.1)
+			else
+				GameTooltip:AddDoubleLine(" ", "--------------", 1, 1, 1, 0.5, 0.5, 0.5)
+				GameTooltip:AddDoubleLine(REPAIR_COST, formatgold(1, totalcost), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+			end
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddDoubleLine(" ", L_STATS_AUTO_REPAIR..": "..(conf.AutoRepair and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
+			GameTooltip:AddDoubleLine(" ", L_STATS_GUILD_REPAIR..": "..(conf.AutoGuildRepair and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
 			GameTooltip:Show()
-			if C.toppanel.enable == true and C.toppanel.mouseover == true then
-				TopPanel:SetAlpha(1)
-			end
 		end,
-		OnLeave = function()
-			if C.toppanel.enable == true and C.toppanel.mouseover == true then
-				TopPanel:SetAlpha(0)
-			end
-		end,
-	})
-end
-
-----------------------------------------------------------------------------------------
---	Talents
-----------------------------------------------------------------------------------------
-if talents.enabled then
-	local lootSpecName, specName
-	local specList = {
-		{text = SPECIALIZATION, isTitle = true, notCheckable = true},
-		{notCheckable = true},
-		{notCheckable = true},
-		{notCheckable = true},
-		{notCheckable = true}
-	}
-	local lootList = {
-		{text = SELECT_LOOT_SPECIALIZATION, isTitle = true, notCheckable = true},
-		{notCheckable = true, func = function() SetLootSpecialization(0) end},
-		{notCheckable = true},
-		{notCheckable = true},
-		{notCheckable = true},
-		{notCheckable = true}
-	}
-	Inject("Talents", {
-		OnLoad = function(self)
-			self.text2 = self:CreateFontString(nil, "OVERLAY")
-			self.text2:SetFont(self.text:GetFont())
-			self.text2:SetPoint("LEFT", self.text, "RIGHT", 0, -1)
-
-			self.text3 = self:CreateFontString(nil, "OVERLAY")
-			self.text3:SetFont(self.text:GetFont())
-			self.text3:SetPoint("LEFT", self.text2, "RIGHT", 0, 1)
-
-			self.text4 = self:CreateFontString(nil, "OVERLAY")
-			self.text4:SetFont(self.text:GetFont())
-			self.text4:SetPoint("LEFT", self.text3, "RIGHT", 0, -1)
-
-			self.globalFrame = CreateFrame("Frame", self)
-			self.globalFrame:SetPoint("TOPLEFT", self.text)
-			self.globalFrame:SetPoint("BOTTOMRIGHT", self.text4)
-
-			self.globalFrame:SetScript("OnEnter", function()
+		OnClick = function(self, button)
+			if button == "RightButton" then
+				conf.AutoRepair = not conf.AutoRepair
 				self:GetScript("OnEnter")(self)
-			end)
-
-			self.globalFrame:SetScript("OnLeave", function()
-				self:GetScript("OnLeave")(self)
-			end)
-
-			self.globalFrame:SetScript("OnMouseUp", function(_, b)
-				self:GetScript("OnMouseUp")(self, b)
-			end)
-
-			RegEvents(self, "PLAYER_ENTERING_WORLD PLAYER_TALENT_UPDATE PLAYER_LOOT_SPEC_UPDATED")
-		end,
-		OnEvent = function(self)
-			if UnitLevel(P) < SHOW_SPEC_LEVEL then
-				self.text:SetText(format("%s %s", NO, SPECIALIZATION))
-				return
-			end
-
-			local lootSpec = GetLootSpecialization()
-			local spec = GetSpecialization()
-
-			lootSpecName = lootSpec and select(2, GetSpecializationInfoByID(lootSpec)) or NO
-			specName = spec and select(2, GetSpecializationInfo(spec)) or NO
-
-			local specIcon, lootIcon = "", ""
-			local lootText = LOOT..":"
-
-			local _, _, _, specTex = GetSpecializationInfo(spec)
-			local texSize = 14
-			if specTex then
-				specIcon = format("|T%s:"..texSize..":"..texSize..":0:0:64:64:5:59:5:59|t", specTex)
-			end
-
-			if lootSpec == 0 then
-				lootIcon = specIcon
-				lootText = "|cff55ff55"..lootText.."|r"
-				lootSpecName = "|cff55ff55"..specName.."|r"
-			else
-				local _, _, _, texture = GetSpecializationInfoByID(lootSpec)
-				if texture then
-					lootIcon = format("|T%s:"..texSize..":"..texSize..":0:0:64:64:5:59:5:59|t", texture)
-				end
-			end
-
-			self.text:SetText(L_STATS_SPEC..":")
-			self.text2:SetText(specIcon.." ")
-			self.text3:SetText(lootText)
-			self.text4:SetText(lootIcon)
-
-			if self.hovered then self:GetScript("OnEnter")(self) end
-		end,
-		OnEnter = function(self)
-			self.hovered = true
-			if UnitLevel(P) >= SHOW_SPEC_LEVEL then
-				GameTooltip:SetOwner(self, "ANCHOR_NONE")
-				GameTooltip:ClearAllPoints()
-				GameTooltip:SetPoint(modules.Talents.tip_anchor, modules.Talents.tip_frame, modules.Talents.tip_x, modules.Talents.tip_y)
-				GameTooltip:ClearLines()
-				GameTooltip:AddLine(SPECIALIZATION.." "..ENCHANT_CONDITION_AND..LOOT, tthead.r, tthead.g, tthead.b)
-				GameTooltip:AddLine(" ")
-				GameTooltip:AddDoubleLine(SPECIALIZATION, specName, ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-				GameTooltip:AddDoubleLine(LOOT, lootSpecName, ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
-				GameTooltip:Show()
-			end
-		end,
-		OnLeave = function(self)
-			self.hovered = false
-		end,
-		OnClick = function(self, b)
-			if UnitLevel(P) < SHOW_SPEC_LEVEL then
-				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_SPEC_LEVEL).."|r")
-				return
-			end
-			if b == "LeftButton" then
-				if not PlayerTalentFrame then
-					LoadAddOn("Blizzard_TalentUI")
-				end
-				if IsShiftKeyDown() then
-					PlayerTalentFrame_Toggle()
+			elseif button == "MiddleButton" then
+				conf.AutoGuildRepair = not conf.AutoGuildRepair
+				self:GetScript("OnEnter")(self)
+			elseif C_EquipmentSet.GetNumEquipmentSets() > 0 and button == "LeftButton" and (IsAltKeyDown() or IsShiftKeyDown()) then
+				local menulist = {{isTitle = true, notCheckable = 1, text = format(gsub(EQUIPMENT_SETS, ":", ""), "")}}
+				if C_EquipmentSet.GetNumEquipmentSets() == 0 then
+					tinsert(menulist, {text = NONE, notCheckable = 1, disabled = true})
 				else
-					for index = 1, 4 do
-						local id, name, _, texture = GetSpecializationInfo(index)
-						if id then
-							if GetSpecializationInfo(GetSpecialization()) == id then
-								name = "|cff55ff55"..name.."|r"
-							end
-							specList[index + 1].text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59|t  %s", texture, name)
-							specList[index + 1].func = function() SetSpecialization(index) end
-						else
-							specList[index + 1] = nil
-						end
-					end
-					EasyMenu(specList, LSMenus, self, 0, 24, "MENU")
-				end
-			elseif b == "RightButton" and GetSpecialization() then
-				local lootSpec = GetLootSpecialization()
-				local _, specName = GetSpecializationInfo(GetSpecialization())
-				local specDefault = format(LOOT_SPECIALIZATION_DEFAULT, specName)
-				if lootSpec == 0 then
-					specDefault = "|cff55ff55"..format(LOOT_SPECIALIZATION_DEFAULT, specName).."|r"
-				end
-				lootList[2].text = specDefault
-				for index = 1, 4 do
-					local id, name, _, texture = GetSpecializationInfo(index)
-					if id then
-						if lootSpec == id then
-							name = "|cff55ff55"..name.."|r"
-						end
-						lootList[index + 2].text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59|t  %s", texture, name)
-						lootList[index + 2].func = function() SetLootSpecialization(id) end
-					else
-						lootList[index + 2] = nil
+					for _, eSetID in pairs(C_EquipmentSet.GetEquipmentSetIDs()) do
+						local name, icon, setID = C_EquipmentSet.GetEquipmentSetInfo(eSetID)
+						if not icon then icon = 134400 end
+						tinsert(menulist, {text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t %s", icon, t_icon, name), notCheckable = 1, func = function() if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end EquipmentManager_EquipSet(setID) end})
 					end
 				end
-				EasyMenu(lootList, LSMenus, self, 0, 40, "MENU")
-			end
-		end
-	})
-end
-
-----------------------------------------------------------------------------------------
---	Character Stats
-----------------------------------------------------------------------------------------
-if stats.enabled then
-	local function tags(sub)
-		local percent, string = true
-		if sub == "power" then
-			local value, power
-			local Base, PosBuff, NegBuff = UnitAttackPower("player")
-			local Effective = Base + PosBuff + NegBuff
-			local RangedBase, RangedPosBuff, RangedNegBuff = UnitRangedAttackPower("player")
-			local range = RangedBase + RangedPosBuff + RangedNegBuff
-			local heal = GetSpellBonusHealing()
-			local spell = GetSpellBonusDamage(7)
-			local attack = Effective
-			if heal > spell then
-				power = heal
-			else
-				power = spell
-			end
-			if attack > power and T.class ~= "HUNTER" then
-				value = attack
-			elseif T.class == "HUNTER" then
-				value = range
-			else
-				value = power
-			end
-			string, percent = value
-		elseif sub == "mastery" then
-			string = GetMasteryEffect()
-		elseif sub == "haste" then
-			string = GetHaste()
-		elseif sub == "resilience" then
-			string, percent = GetCombatRating(16)
-		elseif sub == "crit" then
-			string = GetCritChance()
-		elseif sub == "dodge" then
-			string = GetDodgeChance()
-		elseif sub == "parry" then
-			string = GetParryChance()
-		elseif sub == "block" then
-			string = GetBlockChance()
-		elseif sub == "avoidance" then
-			string = GetDodgeChance() + GetParryChance()
-		elseif sub == "manaregen" then
-			local I5SR = true
-			if T.class == "ROGUE" or T.class == "WARRIOR" or T.class == "DEATHKNIGHT" then
-				string, percent = "??"
-			else
-				local base, cast = GetManaRegen()
-				string, percent = floor((I5SR and cast or base) * 5)
-			end
-		elseif sub == "armor" then
-			local _, eff = UnitArmor(P)
-			string, percent = eff
-		elseif sub == "versatility" then
-			string = GetCombatRatingBonus(CR_VERSATILITY_DAMAGE_DONE) + GetVersatilityBonus(CR_VERSATILITY_DAMAGE_DONE)
-		elseif sub == "leech" then
-			string = GetCombatRating(17)
-		else
-			string, percent = format("[%s]", sub)
-		end
-		if not percent then return string end
-		return format("%.1f", string)
-	end
-	Inject("Stats", {
-		OnLoad = function(self)
-			RegEvents(self, "PLAYER_LOGIN UNIT_STATS UNIT_DAMAGE UNIT_RANGEDDAMAGE PLAYER_DAMAGE_DONE_MODS UNIT_ATTACK_SPEED UNIT_ATTACK_POWER UNIT_RANGED_ATTACK_POWER")
-		end,
-		OnEvent = function(self) self.fired = true end,
-		OnUpdate = function(self, u)
-			self.elapsed = self.elapsed + u
-			if self.fired and self.elapsed > 2.5 then
-				self.text:SetText(gsub(stats[format("spec%dfmt", GetSpecialization() and GetSpecialization() or 1)], "%[(%w-)%]", tags))
-				self.elapsed, self.fired = 0, false
+				EasyMenu(menulist, LSMenus, "cursor", 0, 0, "MENU")
+			elseif button == "LeftButton" then
+				ToggleCharacter("PaperDollFrame")
 			end
 		end
 	})
@@ -1979,6 +1348,627 @@ if experience.enabled then
 				end
 			end
 		end
+	})
+end
+
+----------------------------------------------------------------------------------------
+--	Talents
+----------------------------------------------------------------------------------------
+if talents.enabled then
+	local lootSpecName, specName
+	local specList = {
+		{text = SPECIALIZATION, isTitle = true, notCheckable = true},
+		{notCheckable = true},
+		{notCheckable = true},
+		{notCheckable = true},
+		{notCheckable = true}
+	}
+	local lootList = {
+		{text = SELECT_LOOT_SPECIALIZATION, isTitle = true, notCheckable = true},
+		{notCheckable = true, func = function() SetLootSpecialization(0) end},
+		{notCheckable = true},
+		{notCheckable = true},
+		{notCheckable = true},
+		{notCheckable = true}
+	}
+	Inject("Talents", {
+		OnLoad = function(self)
+			self.text2 = self:CreateFontString(nil, "OVERLAY")
+			self.text2:SetFont(self.text:GetFont())
+			self.text2:SetPoint("LEFT", self.text, "RIGHT", 0, -1)
+
+			self.text3 = self:CreateFontString(nil, "OVERLAY")
+			self.text3:SetFont(self.text:GetFont())
+			self.text3:SetPoint("LEFT", self.text2, "RIGHT", 0, 1)
+
+			self.text4 = self:CreateFontString(nil, "OVERLAY")
+			self.text4:SetFont(self.text:GetFont())
+			self.text4:SetPoint("LEFT", self.text3, "RIGHT", 0, -1)
+
+			self.globalFrame = CreateFrame("Frame", self)
+			self.globalFrame:SetPoint("TOPLEFT", self.text)
+			self.globalFrame:SetPoint("BOTTOMRIGHT", self.text4)
+
+			self.globalFrame:SetScript("OnEnter", function()
+				self:GetScript("OnEnter")(self)
+			end)
+
+			self.globalFrame:SetScript("OnLeave", function()
+				self:GetScript("OnLeave")(self)
+			end)
+
+			self.globalFrame:SetScript("OnMouseUp", function(_, b)
+				self:GetScript("OnMouseUp")(self, b)
+			end)
+
+			RegEvents(self, "PLAYER_ENTERING_WORLD PLAYER_TALENT_UPDATE PLAYER_LOOT_SPEC_UPDATED")
+		end,
+		OnEvent = function(self)
+			if UnitLevel(P) < SHOW_SPEC_LEVEL then
+				self.text:SetText(format("%s %s", NO, SPECIALIZATION))
+				return
+			end
+
+			local lootSpec = GetLootSpecialization()
+			local spec = GetSpecialization()
+
+			lootSpecName = lootSpec and select(2, GetSpecializationInfoByID(lootSpec)) or NO
+			specName = spec and select(2, GetSpecializationInfo(spec)) or NO
+
+			local specIcon, lootIcon = "", ""
+			local lootText = LOOT..":"
+
+			local _, _, _, specTex = GetSpecializationInfo(spec)
+			local texSize = 14
+			if specTex then
+				specIcon = format("|T%s:"..texSize..":"..texSize..":0:0:64:64:5:59:5:59|t", specTex)
+			end
+
+			if lootSpec == 0 then
+				lootIcon = specIcon
+				lootText = "|cff55ff55"..lootText.."|r"
+				lootSpecName = "|cff55ff55"..specName.."|r"
+			else
+				local _, _, _, texture = GetSpecializationInfoByID(lootSpec)
+				if texture then
+					lootIcon = format("|T%s:"..texSize..":"..texSize..":0:0:64:64:5:59:5:59|t", texture)
+				end
+			end
+
+			self.text:SetText(L_STATS_SPEC..":")
+			self.text2:SetText(specIcon.." ")
+			self.text3:SetText(lootText)
+			self.text4:SetText(lootIcon)
+
+			if self.hovered then self:GetScript("OnEnter")(self) end
+		end,
+		OnEnter = function(self)
+			self.hovered = true
+			if UnitLevel(P) >= SHOW_SPEC_LEVEL then
+				GameTooltip:SetOwner(self, "ANCHOR_NONE")
+				GameTooltip:ClearAllPoints()
+				GameTooltip:SetPoint(modules.Talents.tip_anchor, modules.Talents.tip_frame, modules.Talents.tip_x, modules.Talents.tip_y)
+				GameTooltip:ClearLines()
+				GameTooltip:AddLine(SPECIALIZATION.." "..ENCHANT_CONDITION_AND..LOOT, tthead.r, tthead.g, tthead.b)
+				GameTooltip:AddLine(" ")
+				GameTooltip:AddDoubleLine(SPECIALIZATION, specName, ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:AddDoubleLine(LOOT, lootSpecName, ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+				GameTooltip:Show()
+			end
+		end,
+		OnLeave = function(self)
+			self.hovered = false
+		end,
+		OnClick = function(self, b)
+			if UnitLevel(P) < SHOW_SPEC_LEVEL then
+				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_SPEC_LEVEL).."|r")
+				return
+			end
+			if b == "LeftButton" then
+				if not PlayerTalentFrame then
+					LoadAddOn("Blizzard_TalentUI")
+				end
+				if IsShiftKeyDown() then
+					PlayerTalentFrame_Toggle()
+				else
+					for index = 1, 4 do
+						local id, name, _, texture = GetSpecializationInfo(index)
+						if id then
+							if GetSpecializationInfo(GetSpecialization()) == id then
+								name = "|cff55ff55"..name.."|r"
+							end
+							specList[index + 1].text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59|t  %s", texture, name)
+							specList[index + 1].func = function() SetSpecialization(index) end
+						else
+							specList[index + 1] = nil
+						end
+					end
+					EasyMenu(specList, LSMenus, self, 0, 24, "MENU")
+				end
+			elseif b == "RightButton" and GetSpecialization() then
+				local lootSpec = GetLootSpecialization()
+				local _, specName = GetSpecializationInfo(GetSpecialization())
+				local specDefault = format(LOOT_SPECIALIZATION_DEFAULT, specName)
+				if lootSpec == 0 then
+					specDefault = "|cff55ff55"..format(LOOT_SPECIALIZATION_DEFAULT, specName).."|r"
+				end
+				lootList[2].text = specDefault
+				for index = 1, 4 do
+					local id, name, _, texture = GetSpecializationInfo(index)
+					if id then
+						if lootSpec == id then
+							name = "|cff55ff55"..name.."|r"
+						end
+						lootList[index + 2].text = format("|T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59|t  %s", texture, name)
+						lootList[index + 2].func = function() SetLootSpecialization(id) end
+					else
+						lootList[index + 2] = nil
+					end
+				end
+				EasyMenu(lootList, LSMenus, self, 0, 40, "MENU")
+			end
+		end
+	})
+end
+
+----------------------------------------------------------------------------------------
+--	Location
+----------------------------------------------------------------------------------------
+if location.enabled then
+	Inject("Location", {
+		OnLoad = function(self)
+			RegEvents(self, "ZONE_CHANGED ZONE_CHANGED_INDOORS ZONE_CHANGED_NEW_AREA PLAYER_ENTERING_WORLD")
+			self.sanctuary = {SANCTUARY_TERRITORY, {0.41, 0.8, 0.94}}
+			self.arena = {FREE_FOR_ALL_TERRITORY, {1, 0.1, 0.1}}
+			self.friendly = {FACTION_CONTROLLED_TERRITORY, {0.1, 1, 0.1}}
+			self.hostile = {FACTION_CONTROLLED_TERRITORY, {1, 0.1, 0.1}}
+			self.contested = {CONTESTED_TERRITORY, {1, 0.7, 0}}
+			self.combat = {COMBAT_ZONE, {1, 0.1, 0.1}}
+			self.neutral = {"", {1, 0.93, 0.76}}
+		end,
+		OnEvent = function(self)
+			self.subzone, self.zone, self.pvp = GetSubZoneText(), GetZoneText(), {GetZonePVPInfo()}
+			if not self.pvp[1] then self.pvp[1] = "neutral" end
+			local label = (self.subzone ~= "" and location.subzone) and self.subzone or self.zone
+			local r, g, b = unpack(self.pvp[1] and (self[self.pvp[1]][2] or self.other) or self.other)
+			self.text:SetText(location.truncate == 0 and label or strtrim(strsub(label, 1, location.truncate)))
+			self.text:SetTextColor(r, g, b, font.alpha)
+		end,
+		OnUpdate = function(self, u)
+			if self.hovered then
+				self.elapsed = self.elapsed + u
+				if self.elapsed > 1 or self.init then
+					GameTooltip:ClearLines()
+					GameTooltip:AddLine(format("%s |cffffffff(%s)", self.zone, Coords()), tthead.r, tthead.g, tthead.b, 1, 1, 1)
+					if self.pvp[1] and not IsInInstance() then
+						local r, g, b = unpack(self[self.pvp[1]][2])
+						if self.subzone and self.subzone ~= self.zone then GameTooltip:AddLine(self.subzone, r, g, b) end
+						GameTooltip:AddLine(format(self[self.pvp[1]][1], self.pvp[3] or ""), r, g, b)
+					end
+					GameTooltip:Show()
+					self.elapsed, self.init = 0, false
+				end
+			end
+		end,
+		OnEnter = function(self)
+			self.hovered, self.init = true, true
+			GameTooltip:SetOwner(self, "ANCHOR_NONE")
+			GameTooltip:ClearAllPoints()
+			GameTooltip:SetPoint(modules.Location.tip_anchor, modules.Location.tip_frame, modules.Location.tip_x, modules.Location.tip_y)
+		end,
+		OnClick = function(self)
+			if IsShiftKeyDown() then
+				ChatEdit_ActivateChat(ChatEdit_ChooseBoxForSend())
+				ChatEdit_ChooseBoxForSend():Insert(format(" (%s: %s)", self.zone, Coords()))
+			else
+				ToggleFrame(WorldMapFrame)
+			end
+		end
+	})
+end
+
+----------------------------------------------------------------------------------------
+--	Coordinates
+----------------------------------------------------------------------------------------
+if coords.enabled then
+	Inject("Coords", {
+		text = {string = Coords},
+		OnClick = function()
+			if IsShiftKeyDown() then
+				ChatEdit_ActivateChat(ChatEdit_ChooseBoxForSend())
+				ChatEdit_ChooseBoxForSend():Insert(format(" (%s: %s)", GetZoneText(), Coords()))
+			else
+				ToggleFrame(WorldMapFrame)
+			end
+		end
+	})
+end
+
+----------------------------------------------------------------------------------------
+--	Ping
+----------------------------------------------------------------------------------------
+if ping.enabled then
+	Inject("Ping", {
+		OnLoad = function(self)
+			self:RegisterEvent("MINIMAP_PING")
+			self.animGroup = self.text:CreateAnimationGroup()
+			self.anim = self.animGroup:CreateAnimation("Alpha")
+			self.animGroup:SetScript("OnFinished", function() self.text:Hide() end)
+			self.anim:SetFromAlpha(1)
+			self.anim:SetToAlpha(0)
+			self.anim:SetDuration(2.8)
+			self.anim:SetStartDelay(5)
+		end,
+		OnEvent = function(self, _, unit)
+			if unit == P and ping.hide_self then return end
+			local class = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(unit))]
+			self.text:SetText(format(ping.fmt, UnitName(unit)))
+			if class then
+				self.text:SetTextColor(class.r, class.g, class.b, 1)
+			else
+				self.text:SetTextColor(1, 1, 1, 1)
+			end
+			self.animGroup:Stop()
+			self.text:Show()
+			self.animGroup:Play()
+		end
+	})
+end
+
+----------------------------------------------------------------------------------------
+--	Gold
+----------------------------------------------------------------------------------------
+if gold.enabled then
+	local IsSubTitle = 0
+	local function Currency(id, weekly, capped)
+		local name, amount, tex, week, weekmax, maxed, discovered = GetCurrencyInfo(id)
+		if amount == 0 then return end
+		if IsSubTitle == 1 then
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddLine(PROFESSIONS_ARCHAEOLOGY, ttsubh.r, ttsubh.g, ttsubh.b)
+		elseif IsSubTitle == 2 then
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddLine(PROFESSIONS_COOKING, ttsubh.r, ttsubh.g, ttsubh.b)
+		elseif IsSubTitle == 3 then
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddLine(L_STATS_CURRENCY_RAID, ttsubh.r, ttsubh.g, ttsubh.b)
+		elseif IsSubTitle == 4 then
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddLine(EXPANSION_NAME7, ttsubh.r, ttsubh.g, ttsubh.b)
+		end
+		IsSubTitle = 0
+		if weekly then
+			if discovered then GameTooltip:AddDoubleLine(name, format("%s |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", REFORGE_CURRENT..": ".. amount.." - "..WEEKLY..": "..week.." / "..weekmax, tex, t_icon), 1, 1, 1, 1, 1, 1) end
+		elseif capped then
+			if discovered then GameTooltip:AddDoubleLine(name, format("%s |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", amount.." / "..maxed, tex, t_icon), 1, 1, 1, 1, 1, 1) end
+		else
+			if discovered then GameTooltip:AddDoubleLine(name, format("%s |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", amount, tex, t_icon), 1, 1, 1, 1, 1, 1) end
+		end
+	end
+	Inject("Gold", {
+		OnLoad = function(self)
+			self.started = GetMoney()
+			RegEvents(self, "PLAYER_LOGIN PLAYER_MONEY MERCHANT_SHOW")
+			if not SavedStats.JunkIgnore then SavedStats.JunkIgnore = {} end
+		end,
+		OnEvent = function(self, event)
+			conf.Gold = GetMoney()
+			if event == "MERCHANT_SHOW" then
+				if conf.AutoSell and not (IsAltKeyDown() or IsShiftKeyDown()) then
+					local profit = 0
+					local numItem = 0
+					for bag = 0, NUM_BAG_SLOTS do for slot = 0, GetContainerNumSlots(bag) do
+						local link = GetContainerItemLink(bag, slot)
+						if link then
+							local itemstring, ignore = strmatch(link, "|Hitem:(%d-):"), false
+							for _, exception in pairs(SavedStats.JunkIgnore) do
+								if exception == itemstring then ignore = true break end
+							end
+							local _, _, itemRarity, _, _, _, _, _, _, _, itemSellPrice = GetItemInfo(link)
+							local _, itemCount = GetContainerItemInfo(bag, slot)
+							if itemSellPrice and itemSellPrice > 0 and ((itemRarity == 0 and not ignore) or (ignore and itemRarity ~= 0)) then
+								profit = profit + (itemSellPrice * itemCount)
+								numItem = numItem + 1
+								if numItem < 12 then
+									UseContainerItem(bag, slot)
+								else
+									C_Timer.After(numItem/8, function()
+										UseContainerItem(bag, slot)
+									end)
+								end
+							end
+						end
+					end end
+					if profit > 0 then print(format("|cff66C6FF%s: |cffFFFFFF%s", L_STATS_JUNK_PROFIT, formatgold(1, profit))) end
+				end
+				return
+			end
+			self.text:SetText(formatgold(gold.style, conf.Gold))
+		end,
+		OnEnter = function(self)
+			local curgold = GetMoney()
+			local _, _, archaeology, _, cooking = GetProfessions()
+			conf.Gold = curgold
+			GameTooltip:SetOwner(self, "ANCHOR_NONE")
+			GameTooltip:ClearAllPoints()
+			GameTooltip:SetPoint(gold.tip_anchor, gold.tip_frame, gold.tip_x, gold.tip_y)
+			GameTooltip:ClearLines()
+			GameTooltip:AddLine(CURRENCY, tthead.r, tthead.g, tthead.b)
+			GameTooltip:AddLine(" ")
+			if self.started ~= curgold then
+				local gained = curgold > self.started
+				local color = gained and "|cff55ff55" or "|cffff5555"
+				GameTooltip:AddDoubleLine(L_STATS_SESSION_GAIN, format("%s$|r %s %s$|r", color, formatgold(1, abs(self.started - curgold)), color), 1, 1, 1, 1, 1, 1)
+				GameTooltip:AddLine(" ")
+			end
+			GameTooltip:AddLine(L_STATS_SERVER_GOLD, ttsubh.r, ttsubh.g, ttsubh.b)
+			local total = 0
+			local goldTable = {}
+			local charIndex = 0
+			wipe(goldTable)
+			for char, conf in pairs(SavedStats[realm]) do
+				if conf.Gold and conf.Gold > 99 then
+					charIndex = charIndex + 1
+					goldTable[charIndex] = {char, formatgold(5, conf.Gold), conf.Gold}
+				end
+			end
+			table.sort(goldTable, function(a, b)
+				if (a and b) then
+					return a[3] > b[3]
+				end
+			end)
+			for _, v in ipairs(goldTable) do
+				GameTooltip:AddDoubleLine(v[1], v[2], 1, 1, 1, 1, 1, 1)
+				total = total + v[3]
+			end
+			GameTooltip:AddDoubleLine(" ", "-----------------", 1, 1, 1, 0.5, 0.5, 0.5)
+			GameTooltip:AddDoubleLine(TOTAL, formatgold(5, total), ttsubh.r, ttsubh.g, ttsubh.b, 1, 1, 1)
+			GameTooltip:AddLine(" ")
+
+			local currencies = 0
+			for i = 1, GetCurrencyListSize() do
+				local name, _, _, _, watched, count, icon = GetCurrencyListInfo(i)
+				if watched then
+					if currencies == 0 then GameTooltip:AddLine(TRACKING, ttsubh.r, ttsubh.g, ttsubh.b) end
+					local r, g, b
+					if count > 0 then r, g, b = 1, 1, 1 else r, g, b = 0.5, 0.5, 0.5 end
+					GameTooltip:AddDoubleLine(name, format("%d |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", count, icon, t_icon), r, g, b, r, g, b)
+					currencies = currencies + 1
+				end
+			end
+			if archaeology and C.stats.currency_archaeology then
+				IsSubTitle = 1
+				Currency(384)	-- Dwarf Archaeology Fragment
+				Currency(385)	-- Troll
+				Currency(393)	-- Fossil
+				Currency(394)	-- Night Elf
+				Currency(397)	-- Orc
+				Currency(398)	-- Draenei
+				Currency(399)	-- Vrykul
+				Currency(400)	-- Nerubian
+				Currency(401)	-- Tol'vir
+				Currency(676)	-- Pandaren
+				Currency(677)	-- Mogu
+				Currency(754)	-- Mantid
+				Currency(821)	-- Draenor Clans
+				Currency(828)	-- Ogre
+				Currency(829)	-- Arakkoa
+				Currency(1172)	-- Highborne
+				Currency(1173)	-- Highmountain Tauren
+				Currency(1174)	-- Demonic
+				Currency(1534)	-- Zandalari
+				Currency(1535)	-- Drust
+			end
+
+			if cooking and C.stats.currency_cooking then
+				IsSubTitle = 2
+				Currency(81)	-- Epicurean's Award
+				Currency(402)	-- Ironpaw Token
+			end
+
+			if C.stats.currency_raid and T.level == MAX_PLAYER_LEVEL then
+				IsSubTitle = 3
+				Currency(1580, false, true)	-- Seal of Wartorn Fate
+			end
+
+			if C.stats.currency_misc then
+				IsSubTitle = 4
+				Currency(1560)	-- War Resources
+				Currency(1710)	-- Seafarer's Dubloon
+				Currency(1716)	-- Honorbound Service Medal
+				Currency(1717)	-- 7th Legion Service Medal
+				Currency(1718)	-- Titan Residuum
+				Currency(1721)	-- Prismatic Manapearl
+				Currency(1719)	-- Corrupted Mementos
+				Currency(1755)	-- Coalescing Visions
+				Currency(1803)	-- Echoes of Ny'alotha
+				Currency(515)	-- Darkmoon Prize Ticket
+			end
+
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddDoubleLine(" ", L_STATS_AUTO_SELL..": "..(conf.AutoSell and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, ttsubh.r, ttsubh.g, ttsubh.b)
+			GameTooltip:Show()
+		end,
+		OnClick = function(self, button)
+			if button == "LeftButton" then
+				ToggleCharacter("TokenFrame")
+			elseif button == "RightButton" then
+				conf.AutoSell = not conf.AutoSell
+				self:GetScript("OnEnter")(self)
+			end
+		end
+	})
+	SLASH_KJUNK1 = "/junk"
+	function SlashCmdList.KJUNK(s)
+		local action = strsplit(" ", s)
+		if action == "list" then
+			print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_ADDITIONS, (#SavedStats.JunkIgnore == 0 and NONE or "")))
+			for i, id in pairs(SavedStats.JunkIgnore) do
+				local _, link = GetItemInfo(id)
+				print("- ["..i.."]", link)
+			end
+		elseif action == "clear" then
+			SavedStats.JunkIgnore = {}
+			print("|cff66C6FF"..L_STATS_JUNK_CLEARED.."|r")
+		elseif action == "add" or strfind(action, "^del") or strfind(action, "^rem") then
+			local _, mouselink = GameTooltip:GetItem()
+			for id in s:gmatch("|Hitem:(%d-):") do
+				mouselink = nil
+				local _, link = GetItemInfo(id)
+				if action == "add" then
+					if not tContains(SavedStats.JunkIgnore,id) then
+						tinsert(SavedStats.JunkIgnore, id)
+						print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_ADDED, link))
+					else
+						print(format("%s |cff66C6FF%s|r", link, L_STATS_JUNK_ALREADY_ADDITIONS))
+					end
+				elseif strfind(action, "^del") or strfind(action, "^rem") then
+					tDeleteItem(SavedStats.JunkIgnore, id)
+					print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_REMOVED, link))
+				end
+			end
+			if mouselink then
+				for id in mouselink:gmatch("|Hitem:(%d-):") do
+					if action == "add" then
+						if not tContains(SavedStats.JunkIgnore,id) then
+							tinsert(SavedStats.JunkIgnore, id)
+							print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_ADDED, mouselink))
+						else
+							print(format("%s |cff66C6FF%s|r", mouselink, L_STATS_JUNK_ALREADY_ADDITIONS))
+						end
+					elseif strfind(action, "^del") or strfind(action, "^rem") then
+						tDeleteItem(SavedStats.JunkIgnore, id)
+						print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_REMOVED, mouselink))
+					end
+				end
+			end
+		else
+			print("Lite|cff66C6FFStats|r: "..L_STATS_JUNK_LIST)
+			print(format("/junk <add||rem(ove)> [%s] - %s", L_STATS_JUNK_ITEMLINK, L_STATS_JUNK_ADD_ITEM))
+			print("/junk list - "..L_STATS_JUNK_ITEMS_LIST)
+			print("/junk clear - "..L_STATS_JUNK_CLEAR_ADDITIONS)
+		end
+	end
+end
+
+----------------------------------------------------------------------------------------
+--	Character Stats
+----------------------------------------------------------------------------------------
+if stats.enabled then
+	local function tags(sub)
+		local percent, string = true
+		if sub == "power" then
+			local value, power
+			local Base, PosBuff, NegBuff = UnitAttackPower("player")
+			local Effective = Base + PosBuff + NegBuff
+			local RangedBase, RangedPosBuff, RangedNegBuff = UnitRangedAttackPower("player")
+			local range = RangedBase + RangedPosBuff + RangedNegBuff
+			local heal = GetSpellBonusHealing()
+			local spell = GetSpellBonusDamage(7)
+			local attack = Effective
+			if heal > spell then
+				power = heal
+			else
+				power = spell
+			end
+			if attack > power and T.class ~= "HUNTER" then
+				value = attack
+			elseif T.class == "HUNTER" then
+				value = range
+			else
+				value = power
+			end
+			string, percent = value
+		elseif sub == "mastery" then
+			string = GetMasteryEffect()
+		elseif sub == "haste" then
+			string = GetHaste()
+		elseif sub == "resilience" then
+			string, percent = GetCombatRating(16)
+		elseif sub == "crit" then
+			string = GetCritChance()
+		elseif sub == "dodge" then
+			string = GetDodgeChance()
+		elseif sub == "parry" then
+			string = GetParryChance()
+		elseif sub == "block" then
+			string = GetBlockChance()
+		elseif sub == "avoidance" then
+			string = GetDodgeChance() + GetParryChance()
+		elseif sub == "manaregen" then
+			local I5SR = true
+			if T.class == "ROGUE" or T.class == "WARRIOR" or T.class == "DEATHKNIGHT" then
+				string, percent = "??"
+			else
+				local base, cast = GetManaRegen()
+				string, percent = floor((I5SR and cast or base) * 5)
+			end
+		elseif sub == "armor" then
+			local _, eff = UnitArmor(P)
+			string, percent = eff
+		elseif sub == "versatility" then
+			string = GetCombatRatingBonus(CR_VERSATILITY_DAMAGE_DONE) + GetVersatilityBonus(CR_VERSATILITY_DAMAGE_DONE)
+		elseif sub == "leech" then
+			string = GetCombatRating(17)
+		else
+			string, percent = format("[%s]", sub)
+		end
+		if not percent then return string end
+		return format("%.1f", string)
+	end
+	Inject("Stats", {
+		OnLoad = function(self)
+			RegEvents(self, "PLAYER_LOGIN UNIT_STATS UNIT_DAMAGE UNIT_RANGEDDAMAGE PLAYER_DAMAGE_DONE_MODS UNIT_ATTACK_SPEED UNIT_ATTACK_POWER UNIT_RANGED_ATTACK_POWER")
+		end,
+		OnEvent = function(self) self.fired = true end,
+		OnUpdate = function(self, u)
+			self.elapsed = self.elapsed + u
+			if self.fired and self.elapsed > 2.5 then
+				self.text:SetText(gsub(stats[format("spec%dfmt", GetSpecialization() and GetSpecialization() or 1)], "%[(%w-)%]", tags))
+				self.elapsed, self.fired = 0, false
+			end
+		end
+	})
+end
+
+----------------------------------------------------------------------------------------
+--	Bags
+----------------------------------------------------------------------------------------
+if bags.enabled then
+	Inject("Bags", {
+		OnLoad = function(self) RegEvents(self, "PLAYER_LOGIN BAG_UPDATE") end,
+		OnEvent = function(self)
+			local free, total = 0, 0
+			for i = 0, NUM_BAG_SLOTS do
+				free, total = free + GetContainerNumFreeSlots(i), total + GetContainerNumSlots(i)
+			end
+			self.text:SetText(format(bags.fmt, free, total))
+		end,
+		OnClick = function() ToggleAllBags() end,
+		OnEnter = function(self)
+			local free, total = 0, 0
+			for i = 0, NUM_BAG_SLOTS do
+				free, total = free + GetContainerNumFreeSlots(i), total + GetContainerNumSlots(i)
+			end
+			GameTooltip:SetOwner(self, "ANCHOR_BOTTOMLEFT", -3, 26)
+			GameTooltip:ClearLines()
+			if GetBindingKey("TOGGLEBACKPACK") then
+				GameTooltip:AddLine(BACKPACK_TOOLTIP.." ("..GetBindingKey("TOGGLEBACKPACK")..")", tthead.r, tthead.g, tthead.b)
+			else
+				GameTooltip:AddLine(BACKPACK_TOOLTIP, tthead.r, tthead.g, tthead.b)
+			end
+			GameTooltip:AddLine(" ")
+			GameTooltip:AddLine(format(NUM_FREE_SLOTS, free, total), 1, 1, 1)
+			GameTooltip:Show()
+			if C.toppanel.enable == true and C.toppanel.mouseover == true then
+				TopPanel:SetAlpha(1)
+			end
+		end,
+		OnLeave = function()
+			if C.toppanel.enable == true and C.toppanel.mouseover == true then
+				TopPanel:SetAlpha(0)
+			end
+		end,
 	})
 end
 

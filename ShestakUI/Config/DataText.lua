@@ -122,6 +122,28 @@ LPSTAT_CONFIG = {
 		anchor_frame = "Coords", anchor_to = "right", anchor_from = "left",
 		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20
 	},
+-- MiniMap block
+	Ping = {
+		enabled = true,
+		fmt = "|cffff5555*|r %s |cffff5555*|r",	-- "* PlayerName *"
+		hide_self = true,	-- Hide player's ping
+		anchor_frame = "Minimap", anchor_to = "bottom", anchor_from = "bottom",
+		x_off = 0, y_off = 25,
+	},
+-- Bags block
+	Gold = {
+		enabled = true,
+		style = 1,	-- Display styles: [1] 55g 21s 11c [2] 8829.4g [3] 823.55.94 [4] with texture
+		anchor_frame = cBN and "NivayacBniv_Bag" or C.bag.enable and "StuffingFrameBags" or "Location",
+		anchor_to = "right", anchor_from = cBN and "bottom" or C.bag.enable and "topright" or "left",
+		x_off = cBN and 15 or C.bag.enable and -25 or -3,
+		y_off = cBN and 8 or C.bag.enable and -13 or 0,
+		tip_frame = cBN and "NivayacBniv_Bag" or C.bag.enable and "StuffingFrameBags" or "UIParent",
+		tip_anchor = cBN and "TOPRIGHT" or C.bag.enable and "TOPRIGHT" or "BOTTOMRIGHT",
+		tip_x = cBN and 0 or C.bag.enable and -50 or -21,
+		tip_y = cBN and 85 or C.bag.enable and 0 or 20,
+		strata = cBN and "DIALOG" or "MEDIUM"
+	},
 -- Top block
 	Stats = {
 		enabled = C.toppanel.enable,
@@ -154,28 +176,6 @@ LPSTAT_CONFIG = {
 		fmt = class"N: ".."%s",
 		anchor_frame = "Loot", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0,
-	},
--- MiniMap block
-	Ping = {
-		enabled = true,
-		fmt = "|cffff5555*|r %s |cffff5555*|r",	-- "* PlayerName *"
-		hide_self = true,	-- Hide player's ping
-		anchor_frame = "Minimap", anchor_to = "bottom", anchor_from = "bottom",
-		x_off = 0, y_off = 25,
-	},
--- Bags block
-	Gold = {
-		enabled = true,
-		style = 1,	-- Display styles: [1] 55g 21s 11c [2] 8829.4g [3] 823.55.94 [4] with texture
-		anchor_frame = cBN and "NivayacBniv_Bag" or C.bag.enable and "StuffingFrameBags" or "Location",
-		anchor_to = "right", anchor_from = cBN and "bottom" or C.bag.enable and "topright" or "left",
-		x_off = cBN and 15 or C.bag.enable and -25 or -3,
-		y_off = cBN and 8 or C.bag.enable and -13 or 0,
-		tip_frame = cBN and "NivayacBniv_Bag" or C.bag.enable and "StuffingFrameBags" or "UIParent",
-		tip_anchor = cBN and "TOPRIGHT" or C.bag.enable and "TOPRIGHT" or "BOTTOMRIGHT",
-		tip_x = cBN and 0 or C.bag.enable and -50 or -21,
-		tip_y = cBN and 85 or C.bag.enable and 0 or 20,
-		strata = cBN and "DIALOG" or "MEDIUM"
 	},
 }
 
