@@ -43,7 +43,7 @@ L.media_subheader_pixel = "Изменение пиксельного шрифт�
 
 -- Font options
 L.font = "Шрифты"
-L.font_subtext = "Настройка отдельных шрифтов для элементов."
+L.font_subtext = "Настройка шрифтов для элементов. 'MONOCHROMEOUTLINE' только для пиксельных шрифтов."
 L.font_stats_font = "Выбор шрифта"
 L.font_stats_font_style = "Стиль шрифта"
 L.font_stats_font_shadow = "Тень для шрифта"
@@ -59,7 +59,7 @@ L.font_subheader_loot = "Шрифт добычи"
 L.font_subheader_nameplates = "Шрифт индикаторов здоровья"
 L.font_subheader_unit = "Шрифт рамок портретов"
 L.font_subheader_aura = "Шрифт аур"
-L.font_subheader_filger = "Шрифт Filger"
+L.font_subheader_filger = "Шрифт полос Filger"
 L.font_subheader_style = "Шрифт стилизаций"
 L.font_subheader_bag = "Шрифт сумок"
 

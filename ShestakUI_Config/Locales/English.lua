@@ -40,7 +40,7 @@ L.media_subheader_pixel = "Change Pixel font"
 
 -- Font options
 L.font = "Fonts"
-L.font_subtext = "Customize individual fonts for elements."
+L.font_subtext = "Customize individual fonts for elements. 'MONOCHROMEOUTLINE' for pixel fonts only."
 L.font_stats_font = "Select font"
 L.font_stats_font_style = "Font flag"
 L.font_stats_font_shadow = "Font shadow"
@@ -56,7 +56,7 @@ L.font_subheader_loot = "Loot font"
 L.font_subheader_nameplates = "Nameplates font"
 L.font_subheader_unit = "Unit frames font"
 L.font_subheader_aura = "Auras font"
-L.font_subheader_filger = "Filger font"
+L.font_subheader_filger = "Filger bar font"
 L.font_subheader_style = "Stylization font"
 L.font_subheader_bag = "Bags font"
 
