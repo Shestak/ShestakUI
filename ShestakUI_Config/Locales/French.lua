@@ -407,6 +407,9 @@ L_GUI_FILGER_EXPIRATION = "Organiser les temps de recharge par temps d'expiratio
 L_GUI_FILGER_BUFFS_SIZE = "Taille des buffs"
 L_GUI_FILGER_COOLDOWN_SIZE = "Taille des temps de recharge"
 L_GUI_FILGER_PVP_SIZE = "Taille des debuffs JcJ"
+L.filger_buffs_space = "Buffs space" -- Need review
+L.filger_pvp_space = "PvP auras space" -- Need review
+L.filger_cooldown_space = "Cooldowns space" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"

@@ -430,6 +430,9 @@ L_GUI_FILGER_EXPIRATION = "Sort cooldowns by expiration time"
 L_GUI_FILGER_BUFFS_SIZE = "Buffs size"
 L_GUI_FILGER_COOLDOWN_SIZE = "Cooldowns size"
 L_GUI_FILGER_PVP_SIZE = "PvP auras size"
+L.filger_buffs_space = "Buffs space"
+L.filger_pvp_space = "PvP auras space"
+L.filger_cooldown_space = "Cooldowns space"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Announcements"

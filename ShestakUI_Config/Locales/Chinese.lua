@@ -407,6 +407,9 @@ L_GUI_FILGER_EXPIRATION = "按冷却时间排序"
 L_GUI_FILGER_BUFFS_SIZE = "Buff图标大小"
 L_GUI_FILGER_COOLDOWN_SIZE = "技能冷却图标大小"
 L_GUI_FILGER_PVP_SIZE = "PvP DeBuff图标大小"
+L.filger_buffs_space = "Buffs space" -- Need review
+L.filger_pvp_space = "PvP auras space" -- Need review
+L.filger_cooldown_space = "Cooldowns space" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"

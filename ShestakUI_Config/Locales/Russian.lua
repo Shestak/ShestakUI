@@ -407,6 +407,9 @@ L_GUI_FILGER_EXPIRATION = "Сортировать перезарядки по в
 L_GUI_FILGER_BUFFS_SIZE = "Размер баффов и проков"
 L_GUI_FILGER_COOLDOWN_SIZE = "Размер перезарядок"
 L_GUI_FILGER_PVP_SIZE = "Размер PvP аур"
+L.filger_buffs_space = "Промежуток"
+L.filger_pvp_space = "Промежуток"
+L.filger_cooldown_space = "Промежуток"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Объявления"

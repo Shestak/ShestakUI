@@ -431,8 +431,11 @@ C["filger"] = {
 	["show_cd"] = true,							-- Cooldowns
 	-- Icons size
 	["buffs_size"] = 37,						-- Buffs size
+	["buffs_space"] = 3,						-- Buffs space
 	["pvp_size"] = 60,							-- PvP auras size
+	["pvp_space"] = 3,							-- PvP auras space
 	["cooldown_size"] = 30,						-- Cooldowns size
+	["cooldown_space"] = 3,						-- Cooldowns space
 	-- Testing
 	["test_mode"] = false,						-- Test icon mode
 	["max_test_icon"] = 5,						-- Number of icons to the test

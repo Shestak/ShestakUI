@@ -407,6 +407,9 @@ L_GUI_FILGER_EXPIRATION = "Sort cooldowns by expiration time" -- Need review
 L_GUI_FILGER_BUFFS_SIZE = "Buffs größe ändern"
 L_GUI_FILGER_COOLDOWN_SIZE = "Cooldowns größe ändern"
 L_GUI_FILGER_PVP_SIZE = "PvP Debuffs größe ändern"
+L.filger_buffs_space = "Buffs space" -- Need review
+L.filger_pvp_space = "PvP auras space" -- Need review
+L.filger_cooldown_space = "Cooldowns space" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigungen"
