@@ -22,7 +22,7 @@ end)
 hooksecurefunc(_detalhes, "SetFontOutline", function(_, fontString)
 	local fonte, size = fontString:GetFont()
 	if fonte == "Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Pixel.ttf" then
-		fontString:SetFont(fonte, size, "OUTLINEMONOCHROME")
+		fontString:SetFont(fonte, size, "MONOCHROMEOUTLINE")
 		if fontString:GetShadowColor() then
 			fontString:SetShadowColor(0, 0, 0, 0)
 		end

@@ -574,7 +574,7 @@ f:SetPoint("CENTER", 0, -80)
 f:SetSize(40, 40)
 
 local text = f:CreateFontString(nil, "OVERLAY")
-text:SetFont(C.media.pixel_font, 16, "OUTLINEMONOCHROME")
+text:SetFont(C.media.pixel_font, 16, "MONOCHROMEOUTLINE")
 text:SetPoint("CENTER")
 
 local last = 0
