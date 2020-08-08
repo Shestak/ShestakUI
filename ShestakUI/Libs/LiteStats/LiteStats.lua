@@ -1619,24 +1619,15 @@ end
 --	Gold
 ----------------------------------------------------------------------------------------
 if gold.enabled then
-	local IsSubTitle = 0
+	local titleName
 	local function Currency(id, weekly, capped)
 		local name, amount, tex, week, weekmax, maxed, discovered = GetCurrencyInfo(id)
 		if amount == 0 then return end
-		if IsSubTitle == 1 then
+		if titleName then
 			GameTooltip:AddLine(" ")
-			GameTooltip:AddLine(PROFESSIONS_ARCHAEOLOGY, ttsubh.r, ttsubh.g, ttsubh.b)
-		elseif IsSubTitle == 2 then
-			GameTooltip:AddLine(" ")
-			GameTooltip:AddLine(PROFESSIONS_COOKING, ttsubh.r, ttsubh.g, ttsubh.b)
-		elseif IsSubTitle == 3 then
-			GameTooltip:AddLine(" ")
-			GameTooltip:AddLine(L_STATS_CURRENCY_RAID, ttsubh.r, ttsubh.g, ttsubh.b)
-		elseif IsSubTitle == 4 then
-			GameTooltip:AddLine(" ")
-			GameTooltip:AddLine(EXPANSION_NAME7, ttsubh.r, ttsubh.g, ttsubh.b)
+			GameTooltip:AddLine(titleName, ttsubh.r, ttsubh.g, ttsubh.b)
+			titleName = nil
 		end
-		IsSubTitle = 0
 		if weekly then
 			if discovered then GameTooltip:AddDoubleLine(name, format("%s |T%s:"..t_icon..":"..t_icon..":0:0:64:64:5:59:5:59:%d|t", REFORGE_CURRENT..": ".. amount.." - "..WEEKLY..": "..week.." / "..weekmax, tex, t_icon), 1, 1, 1, 1, 1, 1) end
 		elseif capped then
@@ -1737,7 +1728,7 @@ if gold.enabled then
 				end
 			end
 			if archaeology and C.stats.currency_archaeology then
-				IsSubTitle = 1
+				titleName = PROFESSIONS_ARCHAEOLOGY
 				Currency(384)	-- Dwarf Archaeology Fragment
 				Currency(385)	-- Troll
 				Currency(393)	-- Fossil
@@ -1761,18 +1752,18 @@ if gold.enabled then
 			end
 
 			if cooking and C.stats.currency_cooking then
-				IsSubTitle = 2
+				titleName = PROFESSIONS_COOKING
 				Currency(81)	-- Epicurean's Award
 				Currency(402)	-- Ironpaw Token
 			end
 
 			if C.stats.currency_raid and T.level == MAX_PLAYER_LEVEL then
-				IsSubTitle = 3
+				titleName = L_STATS_CURRENCY_RAID
 				Currency(1580, false, true)	-- Seal of Wartorn Fate
 			end
 
 			if C.stats.currency_misc then
-				IsSubTitle = 4
+				titleName = EXPANSION_NAME7
 				Currency(1560)	-- War Resources
 				Currency(1710)	-- Seafarer's Dubloon
 				Currency(1716)	-- Honorbound Service Medal
