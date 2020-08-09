@@ -244,7 +244,8 @@ local OnTooltipSetUnit = function(self)
 	local creatureType = UnitCreatureType(unit)
 	local _, faction = UnitFactionGroup(unit)
 	local _, playerFaction = UnitFactionGroup("player")
-	local UnitPVPName = UnitPVPName
+	local titleName = UnitPVPName(unit)
+	local isPlayer = UnitIsPlayer(unit)
 
 	if level and level == -1 then
 		if classification == "worldboss" then
@@ -260,8 +261,8 @@ local OnTooltipSetUnit = function(self)
 	else classification = "" end
 
 
-	if UnitPVPName(unit) and C.tooltip.title then
-		name = UnitPVPName(unit)
+	if titleName and C.tooltip.title then
+		name = titleName
 	end
 
 	local r, g, b = GetColor(unit)
@@ -271,14 +272,14 @@ local OnTooltipSetUnit = function(self)
 		self:AddLine(FRIENDS_LIST_REALM.."|cffffffff"..realm.."|r")
 	end
 
-	if UnitIsPlayer(unit) then
+	if isPlayer then
 		if UnitIsAFK(unit) then
 			self:AppendText((" %s"):format("|cffE7E716"..L_CHAT_AFK.."|r"))
 		elseif UnitIsDND(unit) then
 			self:AppendText((" %s"):format("|cffFF0000"..L_CHAT_DND.."|r"))
 		end
 
-		if UnitIsPlayer(unit) and englishRace == "Pandaren" and faction ~= nil and faction ~= playerFaction then
+		if isPlayer and englishRace == "Pandaren" and faction ~= nil and faction ~= playerFaction then
 			local hex = "cffff3333"
 			if faction == "Alliance" then
 				hex = "cff69ccf0"
@@ -286,16 +287,20 @@ local OnTooltipSetUnit = function(self)
 			self:AppendText((" [|%s%s|r]"):format(hex, faction:sub(1, 2)))
 		end
 
-		if GetGuildInfo(unit) then
-			_G["GameTooltipTextLeft2"]:SetFormattedText("%s", GetGuildInfo(unit))
+		local guildName, guildRank = GetGuildInfo(unit)
+		if guildName then
+			_G["GameTooltipTextLeft2"]:SetFormattedText("%s", guildName)
 			if UnitIsInMyGuild(unit) then
 				_G["GameTooltipTextLeft2"]:SetTextColor(1, 1, 0)
 			else
 				_G["GameTooltipTextLeft2"]:SetTextColor(0, 1, 1)
 			end
+			if C.tooltip.rank then
+				self:AddLine(RANK..": |cffffffff"..guildRank.."|r")
+			end
 		end
 
-		local n = GetGuildInfo(unit) and 3 or 2
+		local n = guildName and 3 or 2
 		-- thx TipTac for the fix above with color blind enabled
 		if GetCVar("colorblindMode") == "1" then n = n + 1 end
 		_G["GameTooltipTextLeft"..n]:SetFormattedText("|cff%02x%02x%02x%s|r %s", levelColor.r * 255, levelColor.g * 255, levelColor.b * 255, level, race or UNKNOWN)
@@ -351,29 +356,6 @@ local OnTooltipSetUnit = function(self)
 end
 
 GameTooltip:HookScript("OnTooltipSetUnit", OnTooltipSetUnit)
-
-----------------------------------------------------------------------------------------
---	Adds guild rank to tooltips(GuildRank by Meurtcriss)
-----------------------------------------------------------------------------------------
-if C.tooltip.rank == true then
-	GameTooltip:HookScript("OnTooltipSetUnit", function(self)
-		-- Get the unit
-		local _, unit = self:GetUnit()
-		if not unit then
-			local mFocus = GetMouseFocus()
-			if mFocus and mFocus.unit then
-				unit = mFocus.unit
-			end
-		end
-		-- Get and display guild rank
-		if UnitIsPlayer(unit) then
-			local guildName, guildRank = GetGuildInfo(unit)
-			if guildName then
-				self:AddLine(RANK..": |cffffffff"..guildRank.."|r")
-			end
-		end
-	end)
-end
 
 ----------------------------------------------------------------------------------------
 --	Hide tooltips in combat for action bars, pet bar and stance bar
