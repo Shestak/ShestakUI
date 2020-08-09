@@ -514,6 +514,7 @@ function T.SkinSlider(f)
 	if f:GetOrientation() == "VERTICAL" then
 		bd:SetPoint("TOPLEFT", -2, -6)
 		bd:SetPoint("BOTTOMRIGHT", 2, 6)
+		f:GetThumbTexture():SetRotation(rad(90))
 	else
 		bd:SetPoint("TOPLEFT", 14, -2)
 		bd:SetPoint("BOTTOMRIGHT", -15, 3)
