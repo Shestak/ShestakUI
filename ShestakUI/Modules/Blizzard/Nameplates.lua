@@ -246,7 +246,7 @@ end
 local function threatColor(self, forced)
 	if UnitIsPlayer(self.unit) then return end
 	local combat = UnitAffectingCombat("player")
-	local _, threatStatus = UnitDetailedThreatSituation("player", self.unit)
+	local threatStatus = UnitThreatSituation("player", self.unit)
 
 	if C.nameplate.enhance_threat ~= true then
 		SetVirtualBorder(self.Health, unpack(C.media.border_color))
@@ -254,7 +254,11 @@ local function threatColor(self, forced)
 	if UnitIsTapDenied(self.unit) then
 		self.Health:SetStatusBarColor(0.6, 0.6, 0.6)
 	elseif combat then
-		if threatStatus == 3 then	-- securely tanking, highest threat
+		if self.npcID == "120651" then	-- Explosives affix
+			self.Health:SetStatusBarColor(0.9, 0.2, 0.9)
+			SetVirtualBorder(self.Health, 0.9, 0.2, 0.9)
+			self:SetAlpha(1)
+		elseif threatStatus == 3 then	-- securely tanking, highest threat
 			if T.Role == "Tank" then
 				if C.nameplate.enhance_threat == true then
 					self.Health:SetStatusBarColor(unpack(C.nameplate.good_color))
@@ -283,16 +287,22 @@ local function threatColor(self, forced)
 		elseif threatStatus == 0 then	-- not tanking, lower threat than tank
 			if C.nameplate.enhance_threat == true then
 				if T.Role == "Tank" then
-					self.Health:SetStatusBarColor(unpack(C.nameplate.bad_color))
+					local offTank = false
 					if IsInGroup() or IsInRaid() then
 						for i = 1, GetNumGroupMembers() do
 							if UnitExists("raid"..i) and not UnitIsUnit("raid"..i, "player") then
 								local isTanking = UnitDetailedThreatSituation("raid"..i, self.unit)
 								if isTanking and UnitGroupRolesAssigned("raid"..i) == "TANK" then
-									self.Health:SetStatusBarColor(unpack(C.nameplate.offtank_color))
+									offTank = true
+									break
 								end
 							end
 						end
+					end
+					if offTank then
+						self.Health:SetStatusBarColor(unpack(C.nameplate.offtank_color))
+					else
+						self.Health:SetStatusBarColor(unpack(C.nameplate.bad_color))
 					end
 				else
 					self.Health:SetStatusBarColor(unpack(C.nameplate.good_color))
@@ -330,7 +340,7 @@ end
 
 local function UpdateName(self)
 	if C.nameplate.healer_icon == true then
-		local name = UnitName(self.unit)
+		local name = self.unitName
 		if name then
 			if testing then
 				self.HPHeal:Show()
@@ -364,7 +374,7 @@ local function UpdateName(self)
 	end
 
 	if C.nameplate.totem_icons == true then
-		local name = UnitName(self.unit)
+		local name = self.unitName
 		if name then
 			if totemData[name] then
 				self.Totem.Icon:SetTexture(totemData[name])
@@ -390,8 +400,10 @@ end
 local function callback(self, _, unit)
 	if not self then return end
 	if unit then
-		local name = UnitName(unit)
-		if name and T.PlateBlacklist[name] then
+		local unitGUID = UnitGUID(unit)
+		self.npcID = unitGUID and select(6, strsplit('-', unitGUID))
+		self.unitName = UnitName(unit)
+		if self.unitName and T.PlateBlacklist[self.unitName] then
 			self:Hide()
 		else
 			self:Show()
