@@ -21,7 +21,7 @@ local function addLine(self, id, isItem)
 end
 
 GameTooltip:HookScript("OnTooltipSetSpell", function(self)
-	local id = select(2, self:GetSpell())
+	local _, id = self:GetSpell()
 	if id then addLine(self, id) end
 end)
 
@@ -37,7 +37,7 @@ hooksecurefunc("SetItemRef", function(link)
 end)
 
 local function attachItemTooltip(self)
-	local link = select(2, self:GetItem())
+	local _, link = self:GetItem()
 	if not link then return end
 	local id = link:match("item:(%d+):")
 	if id then addLine(self, id, true) end
