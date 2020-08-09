@@ -641,8 +641,19 @@ function T.SkinExpandOrCollapse(f)
 		self.settingTexture = nil
 	end)
 
-	f:HookScript("OnEnter", T.SetModifiedBackdrop)
-	f:HookScript("OnLeave", T.SetOriginalBackdrop)
+	f:HookScript("OnEnter", function(self)
+		self.bg:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		if self.bg.overlay then
+			self.bg.overlay:SetVertexColor(T.color.r * 0.3, T.color.g * 0.3, T.color.b * 0.3, 1)
+		end
+	end)
+
+	f:HookScript("OnLeave", function(self)
+		self.bg:SetBackdropBorderColor(unpack(C.media.border_color))
+		if self.bg.overlay then
+			self.bg.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
+		end
+	end)
 end
 
 function T.SkinHelpBox(frame)
