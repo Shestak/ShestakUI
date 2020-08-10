@@ -4,12 +4,12 @@ if not IsAddOnLoaded("ShestakUI_Config") then return end
 ----------------------------------------------------------------------------------------
 --	This Module loads new user settings if ShestakUI_Config is loaded
 ----------------------------------------------------------------------------------------
--- Сreate the profile boolean
+-- Create the profile boolean
 if not ShestakUIOptionsGlobal then ShestakUIOptionsGlobal = {} end
 if ShestakUIOptionsGlobal[T.realm] == nil then ShestakUIOptionsGlobal[T.realm] = {} end
 if ShestakUIOptionsGlobal[T.realm][T.name] == nil then ShestakUIOptionsGlobal[T.realm][T.name] = false end
 
--- Сreate the main options table
+-- Create the main options table
 if ShestakUIOptions == nil then ShestakUIOptions = {} end
 
 -- Determine which settings to use
