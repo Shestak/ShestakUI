@@ -231,8 +231,8 @@ L.tooltip_hidebuttons = "隐藏动作条提示"
 L.tooltip_hide_combat = "战斗中隐藏提示"
 L.tooltip_subheader = "辅助功能"
 L.tooltip_talents = "天赋"
-L.tooltip_show_shift = "Show when Shift is pushed" -- Need review
-L.tooltip_show_shift_desc = "Show items level and spec when Shift is pushed" -- Need review
+L.tooltip_show_shift = "按下Shift时显示"
+L.tooltip_show_shift_desc = "按下Shift时显示天赋/平均装等"
 L.tooltip_achievements = "成就比较"
 L.tooltip_target = "目标的目标"
 L.tooltip_title = "头衔"
@@ -245,7 +245,7 @@ L.tooltip_raid_icon = "团队标记"
 L.tooltip_who_targetting = "关注成员(在队伍/团队中谁以目标為目标)"
 L.tooltip_item_count = "物品的简易统计"
 L.tooltip_unit_role = "角色类型"
-L.tooltip_instance_lock = "自身信息提示"
+L.tooltip_instance_lock = "副本进度比较"
 L.tooltip_mount = "坐骑来源"
 
 -- Chat options
@@ -354,7 +354,7 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "自身Buff图标边框按职业着色"
 
 -- Bag options
 L_GUI_BAGS = "背包"
-L_GUI_BAGS_SUBTEXT = "Right click on the close button to open the menu. To move the bags, hold down Shift - click." -- Need review
+L_GUI_BAGS_SUBTEXT = "背包的关闭按钮另有菜单按右键开启。按住Shift+左键可拖动。"
 L_GUI_BAGS_ENABLE = "背包增强"
 L_GUI_BAGS_ILVL = "显示物品等级"
 L_GUI_BAGS_BUTTON_SIZE = "格子大小"
@@ -392,24 +392,24 @@ L_GUI_FILGER_ENABLE = "法术监视"
 L_GUI_FILGER_TEST_MODE = "调试模式"
 L_GUI_FILGER_MAX_TEST_ICON = "调试模式图标数量"
 L_GUI_FILGER_SHOW_TOOLTIP = "鼠标指向提示"
-L.filger_subheader_elements = "Showing elements" -- Need review
-L.filger_show_buff = "Player buffs" -- Need review
-L.filger_show_proc = "Player procs" -- Need review
-L.filger_show_debuff = "Debuffs on target" -- Need review
-L.filger_show_aura_bar = "Aura bars on target" -- Need review
-L.filger_show_special = "Special buffs on player" -- Need review
-L.filger_show_pvp_player = "SPvP debuffs on player" -- Need review
-L.filger_show_pvp_target = "PvP auras on target" -- Need review
-L.filger_show_cd = "Cooldowns" -- Need review
-L.filger_subheader_size = "Icons size" -- Need review
-L.filger_subheader_test = "Test mode" -- Need review
+L.filger_subheader_elements = "分组显示"
+L.filger_show_buff = "玩家Buff"
+L.filger_show_proc = "玩家Procs Buff"
+L.filger_show_debuff = "目标DeBuff"
+L.filger_show_aura_bar = "目标Buff计时条"
+L.filger_show_special = "玩家Special Buff"
+L.filger_show_pvp_player = "玩家PvP DeBuff"
+L.filger_show_pvp_target = "目标PvP DeBuff"
+L.filger_show_cd = "技能冷却"
+L.filger_subheader_size = "图标大小"
+L.filger_subheader_test = "调试模式"
 L_GUI_FILGER_EXPIRATION = "按冷却时间排序"
 L_GUI_FILGER_BUFFS_SIZE = "Buff图标大小"
 L_GUI_FILGER_COOLDOWN_SIZE = "技能冷却图标大小"
 L_GUI_FILGER_PVP_SIZE = "PvP DeBuff图标大小"
-L.filger_buffs_space = "Buffs space" -- Need review
-L.filger_pvp_space = "PvP auras space" -- Need review
-L.filger_cooldown_space = "Cooldowns space" -- Need review
+L.filger_buffs_space = "图标间距"
+L.filger_pvp_space = "图标间距"
+L.filger_cooldown_space = "图标间距"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"
@@ -493,7 +493,7 @@ L_GUI_COOLDOWN_ENEMY_DIRECTION = "敌对技能冷却图标方向"
 L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "始终显示敌对技能冷却"
 L_GUI_COOLDOWN_ENEMY_IN_BG = "战场中显示敌对技能冷却"
 L_GUI_COOLDOWN_ENEMY_IN_ARENA = "竞技场中显示敌对技能冷却"
-L.enemycooldown_show_inparty = "Show in party zone for allies" -- Need review
+L.enemycooldown_show_inparty = "组队时显示敌对技能冷却"
 L.enemycooldown_class_color = "按职业着色"
 
 -- Pulse cooldowns options
