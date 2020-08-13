@@ -136,7 +136,7 @@ SpellBinder.makeSpellsList = function(_, scroll, delete)
 				for frame in pairs(ClickCastFrames) do
 					local f
 					if frame and type(frame) == "table" then f = frame:GetName() end
-					if f and DB.frames[frame] then
+					if f and SpellBinder.frames[frame] then
 						if _G[f]:CanChangeAttribute() or _G[f]:CanChangeProtectedState() then
 							if _G[f]:GetAttribute(spell.modifier.."type"..spell.button) ~= "menu" then
 								_G[f]:RegisterForClicks("AnyDown")
@@ -175,9 +175,9 @@ SpellBinder.makeFramesList = function()
 		local v
 		if frame and type(frame) == "table" then v = frame:GetName() end
 		if C.misc.click_cast_filter ~= true then
-			if v then DB.frames[frame] = DB.frames[frame] or true end
+			if v then SpellBinder.frames[frame] = SpellBinder.frames[frame] or true end
 		else
-			if v ~= "oUF_Target" and v ~= "oUF_Player" then DB.frames[frame] = DB.frames[frame] or true end
+			if v ~= "oUF_Target" and v ~= "oUF_Player" then SpellBinder.frames[frame] = SpellBinder.frames[frame] or true end
 		end
 	end
 end
@@ -320,8 +320,8 @@ SpellBinder:SetScript("OnEvent", function(self, event)
 		SavedBindings[UnitName("player")] = _G.SavedBindings[UnitName("player")] or {}
 		DB = SavedBindings[UnitName("player")]
 		DB.spells = DB.spells or {}
-		DB.frames = DB.frames or {}
 		DB.keys = DB.keys or {}
+		SpellBinder.frames = SpellBinder.frames or {}
 		SpellBinder:makeFramesList()
 		SpellBinder:makeSpellsList(ScrollSpells.child, true)
 
