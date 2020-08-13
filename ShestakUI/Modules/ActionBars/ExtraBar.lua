@@ -66,7 +66,7 @@ button:StyleButton()
 button:SetSize(53, 53)
 button:SetTemplate("Transparent")
 if C.actionbar.classcolor_border == true then
-	button:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+	button:SetBackdropBorderColor(unpack(C.media.classborder_color))
 end
 
 button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)

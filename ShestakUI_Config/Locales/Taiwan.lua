@@ -36,6 +36,7 @@ L.general_hide_talking_head = "自動隱藏任務對話框"
 
 -- Media options
 L.media_border_color = "背景顏色"
+L.media_classborder_color = "Color for class borders" -- Need review
 L.media_backdrop_color = "邊框背景顏色"
 L.media_backdrop_alpha = "透明背景"
 L.media_texture = "主要材質"

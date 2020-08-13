@@ -115,7 +115,7 @@ for i = 1, NUM_CHAT_WINDOWS do
 	button:SetSize(20, 20)
 	button:SetAlpha(0)
 	button:SetTemplate("Transparent")
-	button:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+	button:SetBackdropBorderColor(unpack(C.media.classborder_color))
 
 	local icon = button:CreateTexture(nil, "BORDER")
 	icon:SetPoint("CENTER")

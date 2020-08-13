@@ -226,9 +226,9 @@ local function LoadSkin()
 				local bu = _G["PlayerTalentFrameTalentsTalentRow"..i.."Talent"..j]
 				local selected = _G["PlayerTalentFrameTalentsTalentRow"..i.."Talent"..j.."Selection"]
 				if selected:IsShown() then
-					bu.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b, 1)
-					bu.bg.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b, 1)
-					bu.bg.backdrop.overlay:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.3)
+					bu.backdrop:SetBackdropBorderColor(unpack(C.media.classborder_color))
+					bu.bg.backdrop:SetBackdropBorderColor(unpack(C.media.classborder_color))
+					bu.bg.backdrop.overlay:SetVertexColor(C.media.classborder_color[1], C.media.classborder_color[2], C.media.classborder_color[3], 0.3)
 				else
 					bu.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 					bu.bg.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
@@ -321,9 +321,9 @@ local function LoadSkin()
 	hooksecurefunc(PlayerTalentFrameTalents.PvpTalentFrame.TalentList, "Update", function()
 		for _, button in pairs(PlayerTalentFrameTalents.PvpTalentFrame.TalentList.ScrollFrame.buttons) do
 			if button.Selected:IsShown() then
-				button.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b, 1)
-				button.bg.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b, 1)
-				button.bg.backdrop.overlay:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.3)
+				button.backdrop:SetBackdropBorderColor(unpack(C.media.classborder_color))
+				button.bg.backdrop:SetBackdropBorderColor(unpack(C.media.classborder_color))
+				button.bg.backdrop.overlay:SetVertexColor(C.media.classborder_color[1], C.media.classborder_color[2], C.media.classborder_color[3], 0.3)
 			else
 				button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 				button.bg.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))

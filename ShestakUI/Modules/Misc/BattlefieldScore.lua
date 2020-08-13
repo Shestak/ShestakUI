@@ -4,7 +4,7 @@ if C.stats.battleground ~= true then return end
 ----------------------------------------------------------------------------------------
 --	BGScore(by Elv22, edited by Tukz)
 ----------------------------------------------------------------------------------------
-local classcolor = ("|cff%.2x%.2x%.2x"):format(T.color.r * 255, T.color.g * 255, T.color.b * 255)
+local classcolor = ("|cff%.2x%.2x%.2x"):format(C.media.classborder_color[1] * 255, C.media.classborder_color[2] * 255, C.media.classborder_color[3] * 255)
 
 local BGFrame = CreateFrame("Frame", "InfoBattleGround", UIParent)
 BGFrame:CreatePanel("Invisible", 300, C.font.stats_font_size, unpack(C.position.bg_score))

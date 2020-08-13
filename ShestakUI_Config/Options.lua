@@ -231,8 +231,11 @@ do
 	local border_color = ns.CreateColourPicker(parent, "border_color", true)
 	border_color:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 4, 0)
 
+	local classborder_color = ns.CreateColourPicker(parent, "classborder_color", true)
+	classborder_color:SetPoint("TOPLEFT", border_color, "BOTTOMLEFT", 0, -8)
+
 	local backdrop_color = ns.CreateColourPicker(parent, "backdrop_color", true)
-	backdrop_color:SetPoint("TOPLEFT", border_color, "BOTTOMLEFT", 0, -8)
+	backdrop_color:SetPoint("TOPLEFT", classborder_color, "BOTTOMLEFT", 0, -8)
 
 	local backdrop_alpha = ns.CreateNumberSlider(parent, "backdrop_alpha", nil, nil, 0, 1, 0.05, true)
 	backdrop_alpha:SetPoint("TOPLEFT", backdrop_color, "BOTTOMLEFT", 0, -28)

@@ -107,7 +107,7 @@ local CreateMover = function(frame)
 	mover:RegisterForDrag("LeftButton")
 	mover:SetScript("OnDragStart", OnDragStart)
 	mover:SetScript("OnDragStop", OnDragStop)
-	mover:SetScript("OnEnter", function(self) self:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b) end)
+	mover:SetScript("OnEnter", function(self) self:SetBackdropBorderColor(unpack(C.media.classborder_color)) end)
 	mover:SetScript("OnLeave", function(self) self:SetBackdropBorderColor(1, 0, 0) end)
 	mover:SetScript("OnMouseUp", RestoreDefaults)
 	mover.frame = frame

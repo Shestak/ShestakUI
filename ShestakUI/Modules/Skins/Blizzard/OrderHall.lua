@@ -14,7 +14,7 @@ local function LoadSkin()
 	OrderHallCommandBar.CurrencyIcon:SetAtlas("legionmission-icon-currency", false)
 	OrderHallCommandBar.AreaName:ClearAllPoints()
 	OrderHallCommandBar.AreaName:SetPoint("LEFT", OrderHallCommandBar.CurrencyIcon, "RIGHT", 25, 0)
-	OrderHallCommandBar.AreaName:SetVertexColor(T.color.r, T.color.g, T.color.b)
+	OrderHallCommandBar.AreaName:SetVertexColor(unpack(C.media.classborder_color))
 	OrderHallCommandBar.WorldMapButton:Kill()
 
 	hooksecurefunc(OrderHallCommandBar, "RefreshCategories", function(self)

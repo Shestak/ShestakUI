@@ -36,6 +36,7 @@ L.general_hide_talking_head = "Nascondi il Talking Head Frame"
 
 -- Media options
 L.media_border_color = "Color for borders" -- Need review
+L.media_classborder_color = "Color for class borders" -- Need review
 L.media_backdrop_color = "Color for borders backdrop" -- Need review
 L.media_backdrop_alpha = "Alpha for transparent backdrop" -- Need review
 L.media_texture = "Main texture" -- Need review

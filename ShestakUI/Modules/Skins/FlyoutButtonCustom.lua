@@ -71,7 +71,7 @@ frame:SetScript("OnEvent", function()
 			button:CreateBackdrop("Transparent")
 			button.backdrop:SetAllPoints()
 			if C.actionbar.classcolor_border == true then
-				button.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+				button.backdrop:SetBackdropBorderColor(unpack(C.media.classborder_color))
 			end
 
 			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)

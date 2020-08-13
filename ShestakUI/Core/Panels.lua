@@ -113,13 +113,13 @@ bottompanel:SetPoint("RIGHT", UIParent, "RIGHT", -21, 0)
 if C.chat.background == true then
 	local chatbd = CreateFrame("Frame", "ChatBackground", UIParent)
 	chatbd:CreatePanel("Transparent", C.chat.width + 7, C.chat.height + 4, "TOPLEFT", ChatFrame1, "TOPLEFT", -3, 1)
-	chatbd:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+	chatbd:SetBackdropBorderColor(unpack(C.media.classborder_color))
 	chatbd:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
 
 	if C.chat.tabs_mouseover ~= true then
 		local chattabs = CreateFrame("Frame", "ChatTabsPanel", UIParent)
 		chattabs:CreatePanel("Transparent", chatbd:GetWidth(), 20, "BOTTOM", chatbd, "TOP", 0, 3)
-		chattabs:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		chattabs:SetBackdropBorderColor(unpack(C.media.classborder_color))
 		chattabs:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
 	end
 else
@@ -133,7 +133,7 @@ end
 if C.toppanel.enable ~= true then return end
 
 C.toppanel.height = C.toppanel.height + ((C.font.stats_font_size - 8) * 7)
-C.toppanel.width = C.toppanel.width + (C.font.stats_font_size - 8)
+C.toppanel.width = C.toppanel.width + ((C.font.stats_font_size - 8) * 3)
 
 local toppanelanchor = CreateFrame("Frame", "TopPanelAnchor", T_PetBattleFrameHider)
 toppanelanchor:SetPoint(unpack(C.position.top_panel))
@@ -153,17 +153,18 @@ if C.toppanel.mouseover == true then
 	end)
 end
 
+local r, g, b = unpack(C.media.classborder_color)
 toppanel.bgl = toppanel:CreateTexture(nil, "BORDER")
 toppanel.bgl:SetPoint("RIGHT", toppanel, "CENTER", 0, 0)
 toppanel.bgl:SetSize(C.toppanel.width / 2, C.toppanel.height / 2)
 toppanel.bgl:SetTexture(C.media.blank)
-toppanel.bgl:SetGradientAlpha("HORIZONTAL", T.color.r, T.color.g, T.color.b, 0, T.color.r, T.color.g, T.color.b, 0.1)
+toppanel.bgl:SetGradientAlpha("HORIZONTAL", r, g, b, 0, r, g, b, 0.1)
 
 toppanel.bgr = toppanel:CreateTexture(nil, "BORDER")
 toppanel.bgr:SetPoint("LEFT", toppanel, "CENTER", 0, 0)
 toppanel.bgr:SetSize(C.toppanel.width / 2, C.toppanel.height / 2)
 toppanel.bgr:SetTexture(C.media.blank)
-toppanel.bgr:SetGradientAlpha("HORIZONTAL", T.color.r, T.color.g, T.color.b, 0.1, T.color.r, T.color.g, T.color.b, 0)
+toppanel.bgr:SetGradientAlpha("HORIZONTAL", r, g, b, 0.1, r, g, b, 0)
 
 toppanel.tbl = toppanel:CreateTexture(nil, "ARTWORK")
 toppanel.tbl:SetPoint("RIGHT", toppanel, "TOP", 0, 0)
@@ -175,7 +176,7 @@ toppanel.tcl = toppanel:CreateTexture(nil, "OVERLAY")
 toppanel.tcl:SetPoint("RIGHT", toppanel, "TOP", 0, 0)
 toppanel.tcl:SetSize(C.toppanel.width / 2, 1)
 toppanel.tcl:SetTexture(C.media.blank)
-toppanel.tcl:SetGradientAlpha("HORIZONTAL", T.color.r, T.color.g, T.color.b, 0, T.color.r, T.color.g, T.color.b, 1)
+toppanel.tcl:SetGradientAlpha("HORIZONTAL", r, g, b, 0, r, g, b, 1)
 
 toppanel.tbr = toppanel:CreateTexture(nil, "ARTWORK")
 toppanel.tbr:SetPoint("LEFT", toppanel, "TOP", 0, 0)
@@ -187,7 +188,7 @@ toppanel.tcr = toppanel:CreateTexture(nil, "OVERLAY")
 toppanel.tcr:SetPoint("LEFT", toppanel, "TOP", 0, 0)
 toppanel.tcr:SetSize(C.toppanel.width / 2, 1)
 toppanel.tcr:SetTexture(C.media.blank)
-toppanel.tcr:SetGradientAlpha("HORIZONTAL", T.color.r, T.color.g, T.color.b, 1, T.color.r, T.color.g, T.color.b, 0)
+toppanel.tcr:SetGradientAlpha("HORIZONTAL", r, g, b, 1, r, g, b, 0)
 
 toppanel.bbl = toppanel:CreateTexture(nil, "ARTWORK")
 toppanel.bbl:SetPoint("RIGHT", toppanel, "BOTTOM", 0, 0)
@@ -199,7 +200,7 @@ toppanel.bcl = toppanel:CreateTexture(nil, "OVERLAY")
 toppanel.bcl:SetPoint("RIGHT", toppanel, "BOTTOM", 0, 0)
 toppanel.bcl:SetSize(C.toppanel.width / 2, 1)
 toppanel.bcl:SetTexture(C.media.blank)
-toppanel.bcl:SetGradientAlpha("HORIZONTAL", T.color.r, T.color.g, T.color.b, 0, T.color.r, T.color.g, T.color.b, 1)
+toppanel.bcl:SetGradientAlpha("HORIZONTAL", r, g, b, 0, r, g, b, 1)
 
 toppanel.bbr = toppanel:CreateTexture(nil, "ARTWORK")
 toppanel.bbr:SetPoint("LEFT", toppanel, "BOTTOM", 0, 0)
@@ -211,4 +212,4 @@ toppanel.bcr = toppanel:CreateTexture(nil, "OVERLAY")
 toppanel.bcr:SetPoint("LEFT", toppanel, "BOTTOM", 0, 0)
 toppanel.bcr:SetSize(C.toppanel.width / 2, 1)
 toppanel.bcr:SetTexture(C.media.blank)
-toppanel.bcr:SetGradientAlpha("HORIZONTAL", T.color.r, T.color.g, T.color.b, 1, T.color.r, T.color.g, T.color.b, 0)
+toppanel.bcr:SetGradientAlpha("HORIZONTAL", r, g, b, 1, r, g, b, 0)

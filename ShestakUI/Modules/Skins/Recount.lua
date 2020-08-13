@@ -37,7 +37,7 @@ local function SkinButton(frame, text)
 		frame.text:SetText(text)
 	end
 
-	frame:HookScript("OnEnter", function(self) self.text:SetTextColor(T.color.r, T.color.g, T.color.b) end)
+	frame:HookScript("OnEnter", function(self) self.text:SetTextColor(unpack(C.media.classborder_color)) end)
 	frame:HookScript("OnLeave", function(self) self.text:SetTextColor(1, 1, 1) end)
 end
 

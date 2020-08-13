@@ -36,6 +36,7 @@ L.general_hide_talking_head = "Verstecke Talking Head Frame"
 
 -- Media options
 L.media_border_color = "Farbe für Rahmen"
+L.media_classborder_color = "Color for class borders" -- Need review
 L.media_backdrop_color = "Farbe für Rahmen-Hintergrund"
 L.media_backdrop_alpha = "Alpha für transparenten Hintergrund"
 L.media_texture = "Main texture" -- Need review

@@ -34,6 +34,8 @@ local function LoadSkin()
 		_G[frames[i]]:CreateBackdrop("Overlay")
 	end
 
+	HelpFrameLeftInset.backdrop:SetPoint("BOTTOMRIGHT", -3, -2)
+
 	HelpFrame.Header:StripTextures(true)
 	HelpFrame.Header:SetFrameLevel(HelpFrame.Header:GetFrameLevel() + 2)
 
@@ -81,7 +83,7 @@ local function LoadSkin()
 		end
 
 		if t then
-			t:SetColorTexture(T.color.r, T.color.g, T.color.b, 0.3)
+			t:SetColorTexture(C.media.classborder_color[1], C.media.classborder_color[2], C.media.classborder_color[3], 0.3)
 			t:SetPoint("TOPLEFT", b, 2, -2)
 			t:SetPoint("BOTTOMRIGHT", b, -2, 2)
 		end
@@ -96,7 +98,7 @@ local function LoadSkin()
 		b.text:SetFont(C.media.normal_font, 13)
 
 		if t then
-			t:SetColorTexture(T.color.r, T.color.g, T.color.b, 0.3)
+			t:SetColorTexture(C.media.classborder_color[1], C.media.classborder_color[2], C.media.classborder_color[3], 0.3)
 			t:SetPoint("TOPLEFT", b, 2, -2)
 			t:SetPoint("BOTTOMRIGHT", b, -2, 2)
 		end

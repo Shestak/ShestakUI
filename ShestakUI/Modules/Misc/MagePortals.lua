@@ -54,7 +54,7 @@ for i, spell in pairs(spells) do
 
 	local b = CreateFrame("Button", nil, frame, "SecureActionButtonTemplate")
 	b:CreatePanel("Transparent", C.minimap.size, 20, "BOTTOMLEFT", frame, "BOTTOMLEFT", 0, ((i - 1) * 21))
-	b:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+	b:SetBackdropBorderColor(unpack(C.media.classborder_color))
 	b:SetFrameStrata("HIGH")
 
 	local l = b:CreateFontString("TeleportMenuName"..i, "OVERLAY")

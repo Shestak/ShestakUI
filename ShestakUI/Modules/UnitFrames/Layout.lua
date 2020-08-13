@@ -1417,9 +1417,11 @@ SLASH_TEST_UF4 = "/еуыега"
 if C.unitframe.lines == true then
 	local HorizontalPlayerLine = CreateFrame("Frame", "HorizontalPlayerLine", oUF_Player)
 	HorizontalPlayerLine:CreatePanel("ClassColor", player_width + 11, 1, "TOPLEFT", "oUF_Player", "BOTTOMLEFT", -5, -5)
+	HorizontalPlayerLine:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 
 	local VerticalPlayerLine = CreateFrame("Frame", "VerticalPlayerLine", oUF_Player)
 	VerticalPlayerLine:CreatePanel("ClassColor", 1, 98 + T.extraHeight + (C.unitframe.extra_health_height / 2), "TOPRIGHT", "oUF_Player", "TOPLEFT", -5, 30)
+	VerticalPlayerLine:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
 end
 
 ----------------------------------------------------------------------------------------

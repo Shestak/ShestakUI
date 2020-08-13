@@ -159,6 +159,20 @@ SLASH_SPEC2 = "/spec"
 SLASH_SPEC3 = "/ыы"
 
 ----------------------------------------------------------------------------------------
+--	Get target NPC name and ID
+----------------------------------------------------------------------------------------
+SlashCmdList.NPCID = function()
+	-- NPC name and id
+	local name = UnitName("target")
+	local unitGUID = UnitGUID("target")
+	local id = unitGUID and select(6, strsplit('-', unitGUID))
+	if id then
+		print(name..": "..id)
+	end
+end
+SLASH_NPCID1 = "/getid"
+
+----------------------------------------------------------------------------------------
 --	Demo mode for DBM
 ----------------------------------------------------------------------------------------
 SlashCmdList.DBMTEST = function() if IsAddOnLoaded("DBM-Core") then DBM:DemoMode() end end

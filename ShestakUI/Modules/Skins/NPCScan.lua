@@ -44,9 +44,9 @@ frame:SetScript("OnEvent", function()
 			close.text:SetText("x")
 
 			close:HookScript("OnEnter", function()
-				close.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+				close.backdrop:SetBackdropBorderColor(unpack(C.media.classborder_color))
 				if close.backdrop.overlay then
-					close.backdrop.overlay:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.3)
+					close.backdrop.overlay:SetVertexColor(C.media.classborder_color[1], C.media.classborder_color[2], C.media.classborder_color[3], 0.3)
 				end
 			end)
 

@@ -282,7 +282,7 @@ local function SkinPetButton(self)
 	self:CreateBackdrop("Transparent")
 	self.backdrop:SetAllPoints()
 	if C.actionbar.classcolor_border == true then
-		self.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		self.backdrop:SetBackdropBorderColor(unpack(C.media.classborder_color))
 	end
 
 	self.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)

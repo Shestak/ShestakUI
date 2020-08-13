@@ -36,6 +36,7 @@ L.general_hide_talking_head = "Скрыть рамку говорящей гол
 
 -- Media options
 L.media_border_color = "Цвет для окантовки"
+L.media_classborder_color = "Цвет для классовых окантовок"
 L.media_backdrop_color = "Цвет для фона"
 L.media_backdrop_alpha = "Прозрачность фона"
 L.media_texture = "Основная текстура"

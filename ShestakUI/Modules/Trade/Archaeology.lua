@@ -172,7 +172,7 @@ function stArch:OnLoad(self)
 	progressBars["solveToggle"]["openDirection"] = ">"
 
 	progressBars["solveToggle"]:SetScript("OnEnter", function()
-		progressBars["solveToggle"]["text"]:SetTextColor(T.color.r, T.color.g, T.color.b)
+		progressBars["solveToggle"]["text"]:SetTextColor(unpack(C.media.classborder_color))
 		progressBars["solveToggle"]:FadeIn()
 	end)
 	progressBars["solveToggle"]:SetScript("OnLeave", function()
@@ -367,14 +367,9 @@ end
 
 function stArch:EnableSolve(index, button)
 	button["text"]:SetTextColor(1, 1, 1)
-	button:SetScript("OnEnter", function()
-		button:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
-		button.overlay:SetVertexColor(T.color.r * 0.3, T.color.g * 0.3, T.color.b * 0.3, 1)
-	end)
-	button:SetScript("OnLeave", function()
-		button:SetBackdropBorderColor(unpack(C.media.border_color))
-		button.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
-	end)
+	button:HookScript("OnEnter", T.SetModifiedBackdrop)
+	button:HookScript("OnLeave", T.SetOriginalBackdrop)
+
 	button:SetScript("OnClick", function()
 		SetSelectedArtifact(index)
 		local _, _, _, _, _, numSockets = GetActiveArtifactByRace(index)

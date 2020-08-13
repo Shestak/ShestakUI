@@ -642,9 +642,9 @@ function T.SkinExpandOrCollapse(f)
 	end)
 
 	f:HookScript("OnEnter", function(self)
-		self.bg:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+		self.bg:SetBackdropBorderColor(unpack(C.media.classborder_color))
 		if self.bg.overlay then
-			self.bg.overlay:SetVertexColor(T.color.r * 0.3, T.color.g * 0.3, T.color.b * 0.3, 1)
+			self.bg.overlay:SetVertexColor(C.media.classborder_color[1] * 0.3, C.media.classborder_color[2] * 0.3, C.media.classborder_color[3] * 0.3, 1)
 		end
 	end)
 

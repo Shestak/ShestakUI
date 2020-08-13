@@ -107,7 +107,7 @@ local function LoadSkin()
 	frame.Flash:SetWidth(172)
 
 	bar:SetStatusBarTexture(C.media.texture)
-	bar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
+	bar:SetStatusBarColor(unpack(C.media.classborder_color))
 
 	bar:CreateBackdrop("Overlay")
 end

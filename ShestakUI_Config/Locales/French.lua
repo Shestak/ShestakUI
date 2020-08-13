@@ -36,6 +36,7 @@ L.general_hide_talking_head = "Masquer la fenêtre de discussion principale"
 
 -- Media options
 L.media_border_color = "Couleurs des bordures (fenêtres, barres, info-bulles, etc)"
+L.media_classborder_color = "Color for class borders" -- Need review
 L.media_backdrop_color = "Couleurs du remplissage des bordures (fenêtres, barres, info-bulles, etc)"
 L.media_backdrop_alpha = "Transparence du fond des bordures"
 L.media_texture = "Main texture" -- Need review

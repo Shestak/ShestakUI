@@ -405,7 +405,7 @@ do
 		backdrop:SetScript("OnDragStart", OnDragStart)
 		backdrop:SetScript("OnDragStop", OnDragStop)
 		backdrop:SetScript("OnEnter", function(self)
-			self.backdrop:SetBackdropBorderColor(T.color.r, T.color.g, T.color.b)
+			self.backdrop:SetBackdropBorderColor(unpack(C.media.classborder_color))
 		end)
 		backdrop:SetScript("OnLeave", function(self)
 			self.backdrop:SetBackdropBorderColor(1, 0, 0)

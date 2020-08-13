@@ -33,6 +33,7 @@ L.general_hide_talking_head = "Hide Talking Head Frame"
 
 -- Media options
 L.media_border_color = "Color for borders"
+L.media_classborder_color = "Color for class borders"
 L.media_backdrop_color = "Color for borders backdrop"
 L.media_backdrop_alpha = "Alpha for transparent backdrop"
 L.media_texture = "Main texture"

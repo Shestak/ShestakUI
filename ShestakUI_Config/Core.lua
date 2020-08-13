@@ -1,5 +1,6 @@
-local T, C, L
+local T, C
 local _, ns = ...
+local L = ns
 
 ----------------------------------------------------------------------------------------
 --	GUI for ShestakUI(by Haleth, Solor)
@@ -228,7 +229,7 @@ ns.CreateNumberSlider = function(parent, option, lowText, highText, low, high, s
 	local f = CreateFrame("EditBox", parent:GetName()..option.."TextInput", slider, "InputBoxTemplate")
 	f:SetAutoFocus(false)
 	f:SetWidth(60)
-	f:SetHeight(20)
+	f:SetHeight(18)
 	f:SetMaxLetters(8)
 	f:SetFontObject(GameFontHighlight)
 
@@ -257,8 +258,8 @@ end
 ns.CreateEditBox = function(parent, option, needsReload, text, number)
 	local f = CreateFrame("EditBox", parent:GetName()..option.."TextInput", parent, "InputBoxTemplate")
 	f:SetAutoFocus(false)
-	f:SetWidth(55)
-	f:SetHeight(20)
+	f:SetWidth(60)
+	f:SetHeight(18)
 	f:SetMaxLetters(8)
 	f:SetFontObject(GameFontHighlight)
 
@@ -398,10 +399,10 @@ local DropDownText = {
 	["Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Normal.ttf"] = "Normal font",
 	["Interface\\AddOns\\ShestakUI\\Media\\Fonts\\Pixel.ttf"] = "Pixel Font",
 	[STANDARD_TEXT_FONT] = "Blizzard font",
-	["BLACKLIST"] = ns.general_error_blacklist,
-	["WHITELIST"] = ns.general_error_whitelist,
-	["COMBAT"] = ns.general_error_combat,
-	["NONE"] = ns.general_error_none,
+	["BLACKLIST"] = L.general_error_blacklist,
+	["WHITELIST"] = L.general_error_whitelist,
+	["COMBAT"] = L.general_error_combat,
+	["NONE"] = L.general_error_none,
 }
 
 ns.CreateDropDown = function(parent, option, needsReload, text, tableValue, keyName)
@@ -756,7 +757,7 @@ init:RegisterEvent("PLAYER_LOGIN")
 init:SetScript("OnEvent", function()
 	if not ShestakUI then return end
 
-	T, C, L = unpack(ShestakUI)
+	T, C = unpack(ShestakUI)
 
 	local ShestakUIOptionsPanel = ShestakUIOptionsPanel
 
@@ -790,9 +791,6 @@ init:SetScript("OnEvent", function()
 		StaticPopup_Show("PERCHAR")
 	end)
 
-	-- F.CreateBD(ShestakUIOptionsPanel)
-	-- F.CreateSD(ShestakUIOptionsPanel)
-
 	ShestakUIOptionsPanel:SetTemplate("Transparent")
 
 	local sunFrame = CreateFrame("Frame", nil, ShestakUIOptionsPanel)
@@ -808,9 +806,6 @@ init:SetScript("OnEvent", function()
 		panel:CreateBackdrop("Overlay")
 		panel.backdrop:SetPoint("TOPLEFT", -10, 2)
 		panel.backdrop:SetPoint("BOTTOMRIGHT", -10, -5)
-		-- local bg = F.CreateBDFrame(panel.tab.Icon)
-		-- F.Reskin(panel.tab)
-		-- panel.tab:SkinButton()
 	end
 
 	setActiveTab(ShestakUIOptionsPanel.general.tab)
@@ -825,15 +820,10 @@ init:SetScript("OnEvent", function()
 
 	for _, slider in pairs(sliders) do
 		T.SkinSlider(slider)
-		T.SkinEditBox(slider.textInput, nil, 18)
-		-- F.ReskinSlider(slider)
-		-- F.ReskinInput(slider.textInput)
-		-- F.SetFS(slider.textInput)
-		-- F.SetFS(slider.text)
+		T.SkinEditBox(slider.textInput)
 	end
 
 	for _, picker in pairs(colourpickers) do
-		-- F.CreateBG(picker)
 		local value = C[picker.group][picker.option]
 		picker:SetTemplate("Transparent")
 		picker:SetBackdropBorderColor(unpack(value))
@@ -841,7 +831,7 @@ init:SetScript("OnEvent", function()
 	end
 
 	for _, editbox in pairs(editboxes) do
-		T.SkinEditBox(editbox, nil, 18)
+		T.SkinEditBox(editbox)
 	end
 
 	for _, dropdown in pairs(dropdowns) do
