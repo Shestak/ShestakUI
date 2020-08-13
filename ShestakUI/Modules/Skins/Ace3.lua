@@ -116,7 +116,6 @@ AceGUI.RegisterAsWidget = function(self, widget)
 			if frame.backdrop.overlay then
 				frame.backdrop.overlay:SetVertexColor(C.media.classborder_color[1], C.media.classborder_color[2], C.media.classborder_color[3], 0.3)
 			end
-			T.SetModifiedBackdrop(frame)
 		end)
 		frame:HookScript("OnLeave", function()
 			frame.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
