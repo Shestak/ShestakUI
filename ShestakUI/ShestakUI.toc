@@ -4,7 +4,7 @@
 ## Author: Shestak
 ## Version: 7.29
 ## OptionalDeps: Blizzard_CombatText, ShestakUI_Config, AtlasLoot, cargBags, Clique, epgp, Grid, Grid2, _NPCScan.Overlay, ls_Toasts, Mapster, Omen, OPie, oUF_Freebgrid, PitBull4, Postal, Prat-3.0, Quartz, Recount, Rematch, ShadowedUnitFrames, Stuf, TidyPlates, TipTac, TipTacTalents, TradeSkillMaster_Mailing, tullaCC, VuhDo, WeakAuras
-## SavedVariables: SavedOptions, SavedStats, SavedAddonProfiles, SavedBindings, SavedCurrency
+## SavedVariables: SavedOptions, SavedStats, SavedBindings, SavedCurrency
 ## SavedVariablesPerCharacter: SavedOptionsPerChar, SavedPositions
 
 ## X-Website: http://shestak.org

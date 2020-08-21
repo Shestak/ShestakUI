@@ -190,7 +190,6 @@ OnLogon:SetScript("OnEvent", function(self)
 	-- Create empty CVar if they doesn't exist
 	if SavedOptions == nil then SavedOptions = {} end
 	if SavedPositions == nil then SavedPositions = {} end
-	if SavedAddonProfiles == nil then SavedAddonProfiles = {} end
 	if SavedOptionsPerChar == nil then SavedOptionsPerChar = {} end
 	if SavedOptions.RaidLayout == nil then SavedOptions.RaidLayout = "UNKNOWN" end
 	if SavedOptionsPerChar.FogOfWar == nil then SavedOptionsPerChar.FogOfWar = true end
