@@ -11,7 +11,7 @@ L_GUI_RESET_CHAR = "Bist du sicher, dass du die Charaktereinstellungen für Shes
 L_GUI_RESET_ALL = "Bist du sicher, dass du alle Einstellungen von ShestakUI zurücksetzen willst?"
 L_GUI_PER_CHAR = "Bist du sicher, dass du 'Einzelne Einstellungen für jeden Charakter' ein oder ausschalten möchtest?"
 L_GUI_RESET_CAT = "Bist Du sicher, dass Du die Einstellungen der Kategorie zurücksetzen möchtest?"
-L_GUI_RESET_CAT_DESC = "Einstellungen der Kategorie zurücksetzen. \CTRL-Klick zum Zurücksetzen aller"
+L_GUI_RESET_CAT_DESC = "Einstellungen der Kategorie zurücksetzen. \nCTRL-Klick zum Zurücksetzen aller"
 L_GUI_NEED_RELOAD = "Benutzeroberfläche erneut laden, um Ihre Änderungen zu übernehmen."
 L_GUI_LAYOUT = "Layout ändern"
 
