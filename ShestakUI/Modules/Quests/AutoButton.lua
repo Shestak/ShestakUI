@@ -4,9 +4,6 @@ if C.misc.quest_auto_button ~= true then return end
 ----------------------------------------------------------------------------------------
 --	AutoButton for used items(by Elv22) (use macro /click AutoButton)
 ----------------------------------------------------------------------------------------
-local Items = T.ABItems
-local EquipedItems = T.ABEquipedItems
-
 local function AutoButtonHide()
 	AutoButton:SetAlpha(0)
 	if not InCombatLockdown() then
@@ -85,60 +82,29 @@ Scanner:SetScript("OnEvent", function()
 		for s = 1, GetContainerNumSlots(b) do
 			local itemID = GetContainerItemID(b, s)
 			itemID = tonumber(itemID)
-			for _, Items in pairs(Items) do
-				if itemID == Items then
-					local itemName = GetItemInfo(itemID)
-					local count = GetItemCount(itemID)
-					local itemIcon = GetItemIcon(itemID)
-
-					-- Set our texture to the item found in bags
-					AutoButton.t:SetTexture(itemIcon)
-
-					-- Get the count if there is one
-					if count and count > 1 then
-						AutoButton.c:SetText(count)
-					else
-						AutoButton.c:SetText("")
-					end
-
-					AutoButton:SetScript("OnUpdate", function()
-						local cd_start, cd_finish, cd_enable = GetContainerItemCooldown(b, s)
-						CooldownFrame_Set(AutoButton.cd, cd_start, cd_finish, cd_enable)
-					end)
-
-					AutoButton:SetScript("OnEnter", function(self)
-						GameTooltip:SetOwner(self, "ANCHOR_LEFT")
-						GameTooltip:SetHyperlink(format("item:%s", itemID))
-						GameTooltip:Show()
-					end)
-
-					AutoButton:SetScript("OnLeave", GameTooltip_Hide)
-
-					AutoButtonShow(itemName)
-				end
-			end
-		end
-	end
-
-	-- Scan inventory for Equipment matches
-	for w = 1, 19 do
-		for _, EquipedItems in pairs(EquipedItems) do
-			if GetInventoryItemID("player", w) == EquipedItems then
-				local itemName = GetItemInfo(EquipedItems)
-				local itemIcon = GetInventoryItemTexture("player", w)
+			if T.ABItems[itemID] then
+				local itemName = GetItemInfo(itemID)
+				local count = GetItemCount(itemID)
+				local itemIcon = GetItemIcon(itemID)
 
 				-- Set our texture to the item found in bags
 				AutoButton.t:SetTexture(itemIcon)
-				AutoButton.c:SetText("")
+
+				-- Get the count if there is one
+				if count and count > 1 then
+					AutoButton.c:SetText(count)
+				else
+					AutoButton.c:SetText("")
+				end
 
 				AutoButton:SetScript("OnUpdate", function()
-					local cd_start, cd_finish, cd_enable = GetInventoryItemCooldown("player", w)
+					local cd_start, cd_finish, cd_enable = GetContainerItemCooldown(b, s)
 					CooldownFrame_Set(AutoButton.cd, cd_start, cd_finish, cd_enable)
 				end)
 
 				AutoButton:SetScript("OnEnter", function(self)
 					GameTooltip:SetOwner(self, "ANCHOR_LEFT")
-					GameTooltip:SetHyperlink(format("item:%s", EquipedItems))
+					GameTooltip:SetHyperlink(format("item:%s", itemID))
 					GameTooltip:Show()
 				end)
 
