@@ -2398,8 +2398,6 @@ f:SetScript("OnEvent", function()
 	T, C = unpack(ShestakUI)
 
 	SpellList:StripTextures()
-	SpellBinderInset:StripTextures()
-
 	SpellList:CreateBackdrop("Transparent")
 	SpellList.backdrop:SetPoint("TOPLEFT", -18, 0)
 	SpellList.backdrop:SetPoint("BOTTOMRIGHT", 0, 9)
