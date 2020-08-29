@@ -235,9 +235,9 @@ local StartTimer = function(name, spellId)
 		end
 	else
 		bar.startTime = GetTime()
-		bar.endTime = GetTime() + T.raid_spells[spellId]
+		bar.endTime = GetTime() + T.RaidSpells[spellId]
 		bar.left:SetText(format("%s - %s", name:gsub("%-[^|]+", ""), spell))
-		bar.right:SetText(FormatTime(T.raid_spells[spellId]))
+		bar.right:SetText(FormatTime(T.RaidSpells[spellId]))
 		bar.isResses = false
 		bar.name = name
 		bar.spell = spell
@@ -304,7 +304,7 @@ local OnEvent = function(self, event)
 			else
 				return
 			end
-			if T.raid_spells[spellId] and show[select(2, IsInInstance())] and IsInGroup() then
+			if T.RaidSpells[spellId] and show[select(2, IsInInstance())] and IsInGroup() then
 				if (sourceName == T.name and C.raidcooldown.show_self == true) or sourceName ~= T.name then
 					StartTimer(sourceName, spellId)
 				end
@@ -324,7 +324,7 @@ local OnEvent = function(self, event)
 	end
 end
 
-for spell in pairs(T.raid_spells) do
+for spell in pairs(T.RaidSpells) do
 	local name = GetSpellInfo(spell)
 	if not name then
 		print("|cffff0000WARNING: spell ID ["..tostring(spell).."] no longer exists! Report this to Shestak.|r")

@@ -6,7 +6,7 @@
 --	Take the number ID at the end of the URL, and add it to the list
 ----------------------------------------------------------------------------------------
 if C.announcements.spells == true then
-	T.AnnounceSpells = {
+	T.announce_spells = {
 		61999,	-- Raise Ally
 		20484,	-- Rebirth
 		20707,	-- Soulstone
@@ -17,6 +17,18 @@ if C.announcements.spells == true then
 		19801,	-- Tranquilizing Shot
 		2908,	-- Soothe
 	}
+
+	if #C.announcements.spells_list > 0 then
+		T.announce_spells = C.announcements.spells_list
+	else
+		if C.options.announcements and C.options.announcements.spells_list then
+			C.options.announcements.spells_list = nil
+		end
+	end
+	T.AnnounceSpells = {}
+	for _, spell in pairs(T.announce_spells) do
+		T.AnnounceSpells[spell] = true
+	end
 end
 
 if C.announcements.toys == true then

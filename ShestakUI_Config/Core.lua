@@ -10,7 +10,6 @@ local name = UnitName("player")
 
 -- [[ Variables ]]
 
-ns.localization = {}
 ns.buttons = {}
 
 local checkboxes = {}
@@ -39,6 +38,7 @@ local function setReloadNeeded(isNeeded)
 		ShestakUIOptionsPanelOkayButton:Disable()
 	end
 end
+ns.setReloadNeeded = setReloadNeeded
 
 -- check if a reload is needed
 local function checkIsReloadNeeded()
@@ -115,7 +115,6 @@ ns.CreateCheckBox = function(parent, option, text, textDesc)
 	f.group = parent.tag
 	f.option = option
 
-	f.Text:SetSize(520, 20)
 	if text then
 		f.Text:SetText(text)
 	else
@@ -268,7 +267,6 @@ ns.CreateEditBox = function(parent, option, needsReload, text, number)
 	f.value = ""
 	f.valueNumber = number and true or false
 
-	f:SetScript("OnEscapePressed", onSliderEscapePressed)
 	f:SetScript("OnEscapePressed", function(self) self:ClearFocus() self:SetText(f.value) end)
 	f:SetScript("OnEnterPressed", onEnterPressed)
 	f:SetScript("OnEditFocusGained", function() f.value = f:GetText() end)
@@ -286,6 +284,7 @@ ns.CreateEditBox = function(parent, option, needsReload, text, number)
 		label:SetText(ns[parent.tag.."_"..option])
 	end
 
+	f.label = label
 	f.tooltipText = ns[parent.tag.."_"..option.."_desc"] or text
 
 	f:SetScript("OnEnter", function()
@@ -403,6 +402,8 @@ local DropDownText = {
 	["WHITELIST"] = L.general_error_whitelist,
 	["COMBAT"] = L.general_error_combat,
 	["NONE"] = L.general_error_none,
+	["RAID"] = L.automation_auto_collapse_raid,
+	["RELOAD"] = L.automation_auto_collapse_reload,
 }
 
 ns.CreateDropDown = function(parent, option, needsReload, text, tableValue, keyName)
@@ -416,7 +417,6 @@ ns.CreateDropDown = function(parent, option, needsReload, text, tableValue, keyN
 			info.text = keyName and key or DropDownText[value] or value
 			info.arg1 = value
 			info.arg2 = key
-			info.tooltipText = text
 			info.checked = value == f.selectedValue
 			UIDropDownMenu_AddButton(info)
 		end
@@ -498,6 +498,8 @@ local onTabClick = function(tab)
 	end
 
 	setActiveTab(tab)
+
+	ns.HideSpellList()
 end
 
 local function CreateOptionPanel(name, text, subText)

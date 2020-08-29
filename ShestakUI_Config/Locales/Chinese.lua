@@ -14,6 +14,9 @@ L_GUI_RESET_CAT = "确定要重置当前分类到预设值?"
 L_GUI_RESET_CAT_DESC = "左键重置当前分类到预设值。\nCTRL+左键重置全部到预设值。"
 L_GUI_NEED_RELOAD = "请点击套用以重载当前改动。"
 L_GUI_LAYOUT = "布局切换"
+L_GUI_SPELL_LIST = "List of spells" -- Need review
+L_GUI_SPELL_INPUT = "Spell ID" -- Need review
+L_GUI_TIME_INPUT = "Time" -- Need review
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "一般用戶界面设置，键入 /uihelp 获取更多可用命令。"
@@ -411,6 +414,8 @@ L_GUI_FILGER_PVP_SIZE = "PvP DeBuff图标大小"
 L.filger_buffs_space = "图标间距"
 L.filger_pvp_space = "图标间距"
 L.filger_cooldown_space = "图标间距"
+L.filger_subheader_spells = "Adding new spells" -- Need review
+L.filger_category_list = "Spell list category" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "通告预警"
@@ -440,8 +445,9 @@ L.automation_solve_artifact_desc = "当有足夠碎片时自动弹出辨识窗�
 L.automation_accept_invite = "自动接受好友/公会成员的组队邀请"
 L.automation_decline_duel = "自动取消决斗"
 L.automation_accept_quest = "自动交接任务(按住Shift临时停用)"
-L.automation_auto_collapse = "副本时自动折叠任务追踪框架"
-L.automation_auto_collapse_reload = "重载时自动折叠任务追踪框架"
+L.automation_auto_collapse = "Auto collapse Objective Tracker" -- Need review
+L.automation_auto_collapse_raid = "In Instance" -- Need review
+L.automation_auto_collapse_reload = "After reload" -- Need review
 L.automation_skip_cinematic = "自动跳过过场动画(按住Ctrl临时停用)"
 L.automation_auto_role = "自动设定角色类型"
 L.automation_cancel_bad_buffs = "自动取消非增益性质的Buff"

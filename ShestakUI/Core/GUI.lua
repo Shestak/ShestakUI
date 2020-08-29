@@ -23,6 +23,18 @@ else
 	profile = ShestakUIOptions
 end
 
+-- Spells list
+C["filger"].buff_spells_list = {}
+C["filger"].proc_spells_list = {}
+C["filger"].debuff_spells_list = {}
+C["filger"].aura_bar_spells_list = {}
+C["filger"].cd_spells_list = {}
+C["filger"].ignore_spells_list = {}
+C["raidframe"].plugins_aura_watch_list = {}
+C["announcements"].spells_list = {}
+C["raidcooldown"].spells_list = {}
+C["enemycooldown"].spells_list = {}
+
 -- Apply or remove saved settings as needed
 for group, options in pairs(profile) do
 	if C[group] then

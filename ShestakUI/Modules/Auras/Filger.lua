@@ -51,16 +51,6 @@ function Filger:TooltipOnLeave()
 	GameTooltip:Hide()
 end
 
-function Filger:UnitAura(unitID, inSpellID, spellName, filter, absID)
-	for i = 1, 40 do
-		local name, icon, count, _, duration, expirationTime, unitCaster, _, _, spellID = UnitAura(unitID, i, filter)
-		if not name then break end
-		if (absID and spellID == inSpellID) or (not absID and name == spellName) then
-			return name, spellID, icon, count, duration, expirationTime, unitCaster
-		end
-	end
-end
-
 function Filger:UpdateCD()
 	local time = self.value.start + self.value.duration - GetTime()
 
@@ -87,8 +77,9 @@ function Filger:DisplayActives()
 	local id = self.Id
 	local index = 1
 	local previous = nil
+	local temp = {}
 
-	for _, _ in pairs(self.actives) do
+	for _, value in pairs(self.actives) do
 		local bar = self.bars[index]
 		if not bar then
 			bar = CreateFrame("Frame", "FilgerAnchor"..id.."Frame"..index, self)
@@ -211,10 +202,6 @@ function Filger:DisplayActives()
 		end
 		previous = bar
 		index = index + 1
-	end
-
-	local temp = {}
-	for _, value in pairs(self.actives) do
 		table.insert(temp, value)
 	end
 
@@ -227,24 +214,11 @@ function Filger:DisplayActives()
 	end
 	table.sort(temp, sortTable)
 
-	if not self.sortedIndex then self.sortedIndex = {} end
-
-	for n in pairs(self.sortedIndex) do
-		self.sortedIndex[n] = 999
-	end
-
-	local activeCount = 1
 	local limit = (C.actionbar.button_size * 12)/self.IconSize
-	for n in pairs(self.actives) do
-		self.sortedIndex[activeCount] = n
-		activeCount = activeCount + 1
-		if activeCount > limit then activeCount = limit end
-	end
-	table.sort(self.sortedIndex)
 
 	index = 1
 	for activeIndex, value in pairs(temp) do
-		if activeIndex >= activeCount then
+		if activeIndex >= limit then
 			break
 		end
 		local bar = self.bars[index]
@@ -319,11 +293,8 @@ local function FindAuras(self, unit)
 			local name, icon, count, _, duration, expirationTime, caster, _, _, spid = UnitAura(unit, index, filter)
 			if not name then break end
 
-			local data = SpellGroups[self.Id].spells[name] or SpellGroups[self.Id].spells[spid]
-			if data and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) and (not data.unitID or data.unitID == unit) then
-				if data.absID then
-					data = SpellGroups[self.Id].spells[spid]
-				end
+			local data = SpellGroups[self.Id].spells[name]
+			if data and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) and (not data.unitID or data.unitID == unit) and (not data.absID or spid == data.spellID) then
 				local isTalent = data.talentID and select(10, GetTalentInfoByID(data.talentID))
 				if ((data.filter == "BUFF" and filter == "HELPFUL") or (data.filter == "DEBUFF" and filter == "HARMFUL")) and (not data.spec or data.spec == T.Spec) and (not data.talentID or isTalent) then
 					if not data.count or count >= data.count then
@@ -358,7 +329,7 @@ function Filger:OnEvent(event, unit, _, castID)
 	elseif event == "PLAYER_FOCUS_CHANGED" then
 		FindAuras(self, "focus")
 	elseif event == "PLAYER_ENTERING_WORLD" or event == "SPELL_UPDATE_COOLDOWN" then
-		if event ~= "SPELL_UPDATE_COOLDOWN" then
+		if event == "PLAYER_ENTERING_WORLD" then
 			local _, instanceType = IsInInstance()
 			if instanceType == "raid" or instanceType == "pvp" then
 				if self:IsEventRegistered("UNIT_AURA") then
@@ -391,6 +362,10 @@ function Filger:OnEvent(event, unit, _, castID)
 					self.actives[spid] = nil
 				end
 			end
+			FindAuras(self, "player")
+			if UnitExists("pet") then
+				FindAuras(self, "pet")
+			end
 		elseif event == "SPELL_UPDATE_COOLDOWN" then
 			for spid in pairs(self.actives) do
 				if self.actives[spid].data.filter == "CD" then
@@ -401,75 +376,36 @@ function Filger:OnEvent(event, unit, _, castID)
 
 		for i = 1, #C["filger_spells"][T.class][self.Id], 1 do
 			local data = C["filger_spells"][T.class][self.Id][i]
-			local found = false
-			local spellName, name, icon, count, duration, expirationTime, caster, start, spid, filter
 
-			if event == "SPELL_UPDATE_COOLDOWN" or event == "PLAYER_ENTERING_WORLD" then
-				if data.filter == "CD" and (not data.spec or data.spec == T.Spec) then
-					if data.spellID then
-						name, _, icon = GetSpellInfo(data.spellID)
-						if name then
-							if data.absID then
-								start, duration = GetSpellCooldown(data.spellID)
-							else
-								start, duration = GetSpellCooldown(name)
-							end
-							spid = data.spellID
+			if data.filter == "CD" and (not data.spec or data.spec == T.Spec) then
+				local name, icon, start, duration, spid
+				if data.spellID then
+					name, _, icon = GetSpellInfo(data.spellID)
+					if name then
+						if data.absID then
+							start, duration = GetSpellCooldown(data.spellID)
+						else
+							start, duration = GetSpellCooldown(name)
 						end
-					elseif data.slotID then
-						spid = data.slotID
-						local slotLink = GetInventoryItemLink("player", data.slotID)
-						if slotLink then
-							name, _, _, _, _, _, _, _, _, icon = GetItemInfo(slotLink)
-							start, duration = GetInventoryItemCooldown("player", data.slotID)
-						end
+						spid = data.spellID
 					end
-					if name and (duration or 0) > 1.5 then
-						found = true
+				elseif data.slotID then
+					spid = data.slotID
+					local slotLink = GetInventoryItemLink("player", data.slotID)
+					if slotLink then
+						name, _, _, _, _, _, _, _, _, icon = GetItemInfo(slotLink)
+						start, duration = GetInventoryItemCooldown("player", data.slotID)
 					end
 				end
-			end
-			if event ~= "SPELL_UPDATE_COOLDOWN" then
-				local isTalent = data.talentID and select(10, GetTalentInfoByID(data.talentID))
-				if (data.filter == "BUFF" or data.filter == "DEBUFF") and (not data.spec or data.spec == T.Spec) and (not data.talentID or isTalent) then
-					local postfix = data.caster == "player" and "|PLAYER" or ""
-					if data.filter == "BUFF" then
-						filter = "HELPFUL"..postfix
-					else
-						filter = "HARMFUL"..postfix
-					end
-					spellName = GetSpellInfo(data.spellID)
-					if spellName then
-						name, spid, icon, count, duration, expirationTime, caster = Filger:UnitAura(data.unitID, data.spellID, spellName, filter, data.absID)
-						if name and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) then
-							if not data.count or count >= data.count then
-								start = expirationTime - duration
-								found = true
-							end
-						end
-					end
-				end
-			end
-
-			if found then
-				if not self.actives[spid] then
-					self.actives[spid] = {data = data, name = name, icon = icon, count = count, start = start, duration = duration, spid = spid, sort = data.sort}
-					if T.class == "DEATHKNIGHT" and data.filter == "CD" and self.actives[spid].duration < 10 then -- Hide out of rune cd
-						self.actives[spid] = nil
-					end
-				else
-					if data.filter ~= "ICD" and (self.actives[spid].count ~= count or self.actives[spid].start ~= start or self.actives[spid].duration ~= duration) then
-						self.actives[spid].count = count
-						self.actives[spid].start = start
-						self.actives[spid].duration = duration
+				if name and (duration or 0) > 1.5 then
+					if not (T.class == "DEATHKNIGHT" and data.filter == "CD" and self.actives[spid].duration < 10) then -- Filter rune cd
+						self.actives[spid] = {data = data, name = name, icon = icon, count = nil, start = start, duration = duration, spid = spid, sort = data.sort}
 					end
 				end
 			end
 		end
 
-		if self.actives then
-			Filger.DisplayActives(self)
-		end
+		Filger.DisplayActives(self)
 	end
 end
 
@@ -501,6 +437,40 @@ if C["filger_spells"] and C["filger_spells"]["ALL"] then
 	end
 end
 
+if not T.CustomFilgerSpell then
+	T.CustomFilgerSpell = {}
+end
+
+for _, spell in pairs(C.filger.buff_spells_list) do
+	if spell[2] == T.class then
+		tinsert(T.CustomFilgerSpell, {"P_BUFF_ICON", {spellID = spell[1], unitID = "player", caster = "player", filter = "BUFF"}})
+	end
+end
+
+for _, spell in pairs(C.filger.proc_spells_list) do
+	if spell[2] == T.class then
+		tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = spell[1], unitID = "player", caster = "player", filter = "BUFF"}})
+	end
+end
+
+for _, spell in pairs(C.filger.debuff_spells_list) do
+	if spell[2] == T.class then
+		tinsert(T.CustomFilgerSpell, {"T_DEBUFF_ICON", {spellID = spell[1], unitID = "target", caster = "player", filter = "DEBUFF"}})
+	end
+end
+
+for _, spell in pairs(C.filger.aura_bar_spells_list) do
+	if spell[2] == T.class then
+		tinsert(T.CustomFilgerSpell, {"T_DE/BUFF_BAR", {spellID = spell[1], unitID = "target", caster = "player", filter = "DEBUFF"}})
+	end
+end
+
+for _, spell in pairs(C.filger.cd_spells_list) do
+	if spell[2] == T.class then
+		tinsert(T.CustomFilgerSpell, {"COOLDOWN", {spellID = spell[1], filter = "CD"}})
+	end
+end
+
 if T.CustomFilgerSpell then
 	for _, data in pairs(T.CustomFilgerSpell) do
 		for class, _ in pairs(C["filger_spells"]) do
@@ -515,10 +485,17 @@ if T.CustomFilgerSpell then
 	end
 end
 
+local ignoreTable = {}
+for _, spell in pairs(C.filger.ignore_spells_list) do
+	if spell[2] == T.class then
+		ignoreTable[GetSpellInfo(spell[1])] = true
+	end
+end
+
 if C["filger_spells"] and C["filger_spells"][T.class] then
-	for index in pairs(C["filger_spells"]) do
-		if index ~= T.class then
-			C["filger_spells"][index] = nil
+	for class in pairs(C["filger_spells"]) do
+		if class ~= T.class then
+			C["filger_spells"][class] = nil
 		end
 	end
 
@@ -538,18 +515,16 @@ if C["filger_spells"] and C["filger_spells"][T.class] then
 					name = GetItemInfo(slotLink)
 				end
 			end
-			if name or data[j].slotID then
-				local id
-				if data[j].absID then
-					id = data[j].spellID or data[j].slotID
-				else
-					id = GetSpellInfo(data[j].spellID) or data[j].slotID
-				end
+			if name and not ignoreTable[name] or data[j].slotID then
+				local id = GetSpellInfo(data[j].spellID) or data[j].slotID
 				data[j].sort = j
 				group.spells[id] = data[j]
 			end
 			if not name and not data[j].slotID then
 				print("|cffff0000WARNING: spell/slot ID ["..(data[j].spellID or data[j].slotID or "UNKNOWN").."] no longer exists! Report this to Shestak.|r")
+				table.insert(jdx, j)
+			end
+			if ignoreTable[name] then
 				table.insert(jdx, j)
 			end
 		end

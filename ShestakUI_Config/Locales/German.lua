@@ -14,6 +14,9 @@ L_GUI_RESET_CAT = "Bist Du sicher, dass Du die Einstellungen der Kategorie zurü
 L_GUI_RESET_CAT_DESC = "Einstellungen der Kategorie zurücksetzen. \nCTRL-Klick zum Zurücksetzen aller"
 L_GUI_NEED_RELOAD = "Benutzeroberfläche erneut laden, um Ihre Änderungen zu übernehmen."
 L_GUI_LAYOUT = "Layout ändern"
+L_GUI_SPELL_LIST = "List of spells" -- Need review
+L_GUI_SPELL_INPUT = "Spell ID" -- Need review
+L_GUI_TIME_INPUT = "Time" -- Need review
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "Diese Einstellungen steuern die allgemeinen Einstellungen der Benutzeroberfläche. Geben Sie im Chat '/uihelp ein, um Hilfe zu erhalten."
@@ -411,6 +414,8 @@ L_GUI_FILGER_PVP_SIZE = "PvP Debuffs größe ändern"
 L.filger_buffs_space = "Buffs space"
 L.filger_pvp_space = "PvP Auren space"
 L.filger_cooldown_space = "Cooldowns space"
+L.filger_subheader_spells = "Adding new spells" -- Need review
+L.filger_category_list = "Spell list category" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigungen"
@@ -440,8 +445,9 @@ L.automation_solve_artifact_desc = "If there are enough fragments for an artifac
 L.automation_accept_invite = "Einladungen automatisch annehmen"
 L.automation_decline_duel = "Duell automatisch ablehnen"
 L.automation_accept_quest = "Quests automatisch annehmen"
-L.automation_auto_collapse = "WatchFrame Automatisch in Instanzen reduzuieren"
-L.automation_auto_collapse_reload = "Automatisches schließen der Questverfolgung nach Reload/RL"
+L.automation_auto_collapse = "Auto collapse Objective Tracker" -- Need review
+L.automation_auto_collapse_raid = "In Instance" -- Need review
+L.automation_auto_collapse_reload = "After reload" -- Need review
 L.automation_skip_cinematic = "Auto Cinematics/Filme überspringen"
 L.automation_auto_role = "Automatisch die eigene Rolle wählen"
 L.automation_cancel_bad_buffs = "Automatisch einige Buffs abbrechen"

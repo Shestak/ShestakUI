@@ -106,7 +106,7 @@ local StartTimer = function(name, sID)
 	local icon = CreateIcon()
 	icon.Texture:SetTexture(texture)
 	icon.Texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	icon.endTime = GetTime() + T.enemy_spells[sID]
+	icon.endTime = GetTime() + T.EnemySpells[sID]
 	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(name))]
 	if color then
 		name = format("|cff%02x%02x%02x%s|r", color.r * 255, color.g * 255, color.b * 255, name)
@@ -125,7 +125,7 @@ local StartTimer = function(name, sID)
 	icon:SetScript("OnUpdate", IconUpdate)
 	icon:SetScript("OnEnter", OnEnter)
 	icon:SetScript("OnLeave", GameTooltip_Hide)
-	CooldownFrame_Set(icon.Cooldown, GetTime(), T.enemy_spells[sID], 1)
+	CooldownFrame_Set(icon.Cooldown, GetTime(), T.EnemySpells[sID], 1)
 	tinsert(icons, icon)
 	table.sort(icons, sortByExpiration)
 	UpdatePositions()
@@ -139,13 +139,13 @@ local OnEvent = function(_, event)
 			local _, instanceType = IsInInstance()
 			if show[instanceType] then
 				if band(sourceFlags, COMBATLOG_OBJECT_REACTION_HOSTILE) ~= 0 then
-					if T.enemy_spells[spellID] then
+					if T.EnemySpells[spellID] then
 						StartTimer(sourceName, spellID)
 					end
 				end
 			elseif instanceType == "party" and C.enemycooldown.show_inparty then
 				if band(sourceFlags, COMBATLOG_OBJECT_AFFILIATION_PARTY) ~= 0 then
-					if T.enemy_spells[spellID] then
+					if T.EnemySpells[spellID] then
 						StartTimer(sourceName, spellID)
 					end
 				end
@@ -158,7 +158,7 @@ local OnEvent = function(_, event)
 	end
 end
 
-for spell in pairs(T.enemy_spells) do
+for spell in pairs(T.EnemySpells) do
 	local name = GetSpellInfo(spell)
 	if not name then
 		print("|cffff0000WARNING: spell ID ["..tostring(spell).."] no longer exists! Report this to Shestak.|r")

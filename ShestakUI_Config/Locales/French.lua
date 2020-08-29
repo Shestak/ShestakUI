@@ -14,6 +14,9 @@ L_GUI_RESET_CAT = "Are you sure you want to reset category's settings?" -- Need 
 L_GUI_RESET_CAT_DESC = "Reset category's settings. \nCTRL-click to reset all" -- Need review
 L_GUI_NEED_RELOAD = "Vous devez recharger l'Interface pour appliquer vos changements."
 L_GUI_LAYOUT = "Change layout" -- Need review
+L_GUI_SPELL_LIST = "List of spells" -- Need review
+L_GUI_SPELL_INPUT = "Spell ID" -- Need review
+L_GUI_TIME_INPUT = "Time" -- Need review
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "Ces paramètres controllent les rendus de l'interface utilisateur. Saisir '/uihelp' dans le chat pour plus d'information."
@@ -411,6 +414,8 @@ L_GUI_FILGER_PVP_SIZE = "Taille des debuffs JcJ"
 L.filger_buffs_space = "Buffs space" -- Need review
 L.filger_pvp_space = "PvP auras space" -- Need review
 L.filger_cooldown_space = "Cooldowns space" -- Need review
+L.filger_subheader_spells = "Adding new spells" -- Need review
+L.filger_category_list = "Spell list category" -- Need review
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"
@@ -440,8 +445,9 @@ L.automation_solve_artifact_desc = "If there are enough fragments for an artifac
 L.automation_accept_invite = "Accepter automatiquement les invitations"
 L.automation_decline_duel = "Décliner les duels automatiquement"
 L.automation_accept_quest = "Accepter les quêtes automatiquement"
-L.automation_auto_collapse = "Rétrécie automatiquement la liste des quêtes en instance"
-L.automation_auto_collapse_reload = "Fermeture automatique de la fenêtre de suivi des objectifs après rechargement"
+L.automation_auto_collapse = "Auto collapse Objective Tracker" -- Need review
+L.automation_auto_collapse_raid = "In Instance" -- Need review
+L.automation_auto_collapse_reload = "After reload" -- Need review
 L.automation_skip_cinematic = "Désactive automatiquement les cinématiques/film (inactif si la touche Ctrl est appuyée)"
 L.automation_auto_role = "Active automatiquement l'affichage de votre rôle"
 L.automation_cancel_bad_buffs = "Annule automatiquement certains buffs"

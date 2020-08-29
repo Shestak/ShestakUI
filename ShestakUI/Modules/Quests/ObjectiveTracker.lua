@@ -173,19 +173,19 @@ if C.skins.blizzard_frames == true then
 end
 
 ----------------------------------------------------------------------------------------
---	Auto collapse ObjectiveTrackerFrame
+--	Auto collapse Objective Tracker
 ----------------------------------------------------------------------------------------
-if C.automation.auto_collapse or C.automation.auto_collapse_reload then
+if C.automation.auto_collapse ~= "NONE" then
 	local collapse = CreateFrame("Frame")
 	collapse:RegisterEvent("PLAYER_ENTERING_WORLD")
 	collapse:SetScript("OnEvent", function()
-		if C.automation.auto_collapse and not C.automation.auto_collapse_reload then
+		if C.automation.auto_collapse == "RAID" then
 			if IsInInstance() then
 				ObjectiveTracker_Collapse()
 			elseif ObjectiveTrackerFrame.collapsed and not InCombatLockdown() then
 				ObjectiveTracker_Expand()
 			end
-		elseif C.automation.auto_collapse_reload then
+		elseif C.automation.auto_collapse == "RELOAD" then
 			ObjectiveTracker_Collapse()
 		end
 	end)
