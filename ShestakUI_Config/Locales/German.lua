@@ -14,9 +14,9 @@ L_GUI_RESET_CAT = "Bist Du sicher, dass Du die Einstellungen der Kategorie zurü
 L_GUI_RESET_CAT_DESC = "Einstellungen der Kategorie zurücksetzen. \nCTRL-Klick zum Zurücksetzen aller"
 L_GUI_NEED_RELOAD = "Benutzeroberfläche erneut laden, um Ihre Änderungen zu übernehmen."
 L_GUI_LAYOUT = "Layout ändern"
-L_GUI_SPELL_LIST = "List of spells" -- Need review
-L_GUI_SPELL_INPUT = "Spell ID" -- Need review
-L_GUI_TIME_INPUT = "Time" -- Need review
+L_GUI_SPELL_LIST = "Liste der Zauber"
+L_GUI_SPELL_INPUT = "Zauber ID"
+L_GUI_TIME_INPUT = "Zeit"
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "Diese Einstellungen steuern die allgemeinen Einstellungen der Benutzeroberfläche. Geben Sie im Chat '/uihelp ein, um Hilfe zu erhalten."
@@ -290,12 +290,12 @@ L.nameplate_ad_width_desc = "Zusätzliche Breite für ausgewählte Nameplate"
 L_GUI_NAMEPLATE_CASTBAR_NAME = "Zeige den Namen in der Zauberleiste"
 L_GUI_NAMEPLATE_CLASS_ICON = "Zeige Klassensymbole an (PvP)"
 L_GUI_NAMEPLATE_NAME_ABBREV = "Namen abgekürzt anzeigen"
-L_GUI_NAMEPLATE_CLAMP = "Clamp nameplates to the top of the screen when outside of view" -- Need review
+L_GUI_NAMEPLATE_CLAMP = "Namensschilder am oberen Rand des Bildschirms, wenn außerhalb der Sichtweite."
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Zeige Schwächungszauber (Abgekürzte Namen müssen deaktiviert sein)"
-L_GUI_NAMEPLATE_SHOW_BUFFS = "Show buffs above player nameplate (from the list)" -- Need review
+L_GUI_NAMEPLATE_SHOW_BUFFS = "Buffs über dem Namensschild des Spielers anzeigen (aus der Liste)"
 L_GUI_NAMEPLATE_DEBUFFS_SIZE = "Größe der Debuffs"
 L_GUI_NAMEPLATE_HEALER_ICON = "Zeige Heilersymbol auf allen gegnerischen Heiler-Nameplates im BG"
-L_GUI_NAMEPLATE_TOTEM_ICONS = "Show icon above enemy totems nameplate" -- Need review
+L_GUI_NAMEPLATE_TOTEM_ICONS = "Symbol über dem Namensschild des feindlichen Totems anzeigen"
 L_GUI_NAMEPLATE_THREAT = "Aktiviere Bedrohungsanzeige, ändert sich automatisch je nach deiner Rolle"
 L_GUI_NAMEPLATE_GOOD_COLOR = "Positive Bedrohungsfarbe. Variiert abhängig ob Tank oder dps/heal"
 L_GUI_NAMEPLATE_NEAR_COLOR = "Verlust oder Zuwachs der Bedrohung farbig kennzeichen"
@@ -358,7 +358,7 @@ L_GUI_AURA_CLASSCOLOR_BORDER = "Aktiviere Klassenfarbe für Spielerbuffs"
 
 -- Bag options
 L_GUI_BAGS = "Taschen"
-L_GUI_BAGS_SUBTEXT = "Right click on the close button to open the menu. To move the bags, hold down Shift - click." -- Need review
+L_GUI_BAGS_SUBTEXT = "Klicke mit der rechten Maustaste auf die Schaltfläche Schließen, um das Menü zu öffnen. Um die Beutel zu bewegen, halte die Umschalttaste gedrückt."
 L_GUI_BAGS_ENABLE = "Taschen aktivieren"
 L_GUI_BAGS_ILVL = "Zeigt Itemlevel der Waffen & Rüstung"
 L_GUI_BAGS_BUTTON_SIZE = "Buttongröße"
@@ -376,7 +376,7 @@ L_GUI_MINIMAP_HIDE_COMBAT = "Minimap im Kampf verstecken"
 L_GUI_MINIMAP_TOGGLE_MENU = "Zeige Toggle Menü"
 L.minimap_bg_map_stylization = "Schlachtfeldkarte Aussehn"
 L.minimap_fog_of_war = "Nebel des Krieges auf der Weltkarte"
-L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war" -- Need review
+L.minimap_fog_of_war_desc = "Klicke mit der rechten Maustaste auf die Schaltfläche zum Schließen der Weltkarte, um die Option zum Ausblenden des Kriegsnebels zu aktivieren"
 
 -- Loot options
 L_GUI_LOOT_SUBTEXT = "Einstellungen für den Beuterahmen."
@@ -391,7 +391,7 @@ L.loot_faster_loot_desc = "Funktioniert nur, wenn die automatische Beute aktivie
 
 -- Filger
 L_GUI_FILGER = "Timers (Filger)"
-L_GUI_FILGER_SUBTEXT = "Filger - analogue WeakAuras, but more simple and easy. Allows you to display in the form of icons and bars your auras and timers." -- Need review
+L_GUI_FILGER_SUBTEXT = "Filger - analog WeakAuras, aber einfacher und leichter. Ermöglicht es die, Auren und Timer in Form von Symbolen und Balken anzuzeigen."
 L_GUI_FILGER_ENABLE = "Aktiviere Filger"
 L_GUI_FILGER_TEST_MODE = "Test Icon Mode"
 L_GUI_FILGER_MAX_TEST_ICON = "Anzahl der Icons im Test Mode"
@@ -406,7 +406,7 @@ L.filger_show_pvp_player = "PvP-Debuffs auf Spieler"
 L.filger_show_pvp_target = "PvP-Auren auf Spieler"
 L.filger_show_cd = "Cooldowns"
 L.filger_subheader_size = "Icons größe"
-L.filger_subheader_test = "Test modus"
+L.filger_subheader_test = "Test Modus"
 L_GUI_FILGER_EXPIRATION = "Abklingzeiten nach ablaufzeit sortieren"
 L_GUI_FILGER_BUFFS_SIZE = "Buff größe ändern"
 L_GUI_FILGER_COOLDOWN_SIZE = "Cooldowns größe ändern"
@@ -414,8 +414,8 @@ L_GUI_FILGER_PVP_SIZE = "PvP Debuffs größe ändern"
 L.filger_buffs_space = "Buffs space"
 L.filger_pvp_space = "PvP Auren space"
 L.filger_cooldown_space = "Cooldowns space"
-L.filger_subheader_spells = "Adding new spells" -- Need review
-L.filger_category_list = "Spell list category" -- Need review
+L.filger_subheader_spells = "Hinzufügen neuer Zaubersprüche"
+L.filger_category_list = "Kategorie der Zauberliste"
 
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Benachrichtigungen"
@@ -441,13 +441,13 @@ L_GUI_AUTOMATION_SUBTEXT = "Dieser Block enthält Einstellungen, die die Routine
 L.automation_release = "Automatisch im Schlachtfeld wiederbeleben"
 L.automation_screenshot = "Speicher einen Screenshot wenn ein Achivment errungen wird"
 L.automation_solve_artifact = "Auto Popup für gelöste Artefakte"
-L.automation_solve_artifact_desc = "If there are enough fragments for an artifact, a popup will appear to solve it." -- Need review
+L.automation_solve_artifact_desc = "Wenn es genug Fragmente für ein Artefakt gibt, erscheint ein Popup-Fenster, um es zu lösen."
 L.automation_accept_invite = "Einladungen automatisch annehmen"
 L.automation_decline_duel = "Duell automatisch ablehnen"
 L.automation_accept_quest = "Quests automatisch annehmen"
-L.automation_auto_collapse = "Auto collapse Objective Tracker" -- Need review
-L.automation_auto_collapse_raid = "In Instance" -- Need review
-L.automation_auto_collapse_reload = "After reload" -- Need review
+L.automation_auto_collapse = "Automatisches Zusammenklappen des Objective Tracker"
+L.automation_auto_collapse_raid = "In Instanzen"
+L.automation_auto_collapse_reload = "Nach dem Reload"
 L.automation_skip_cinematic = "Auto Cinematics/Filme überspringen"
 L.automation_auto_role = "Automatisch die eigene Rolle wählen"
 L.automation_cancel_bad_buffs = "Automatisch einige Buffs abbrechen"
@@ -500,7 +500,7 @@ L_GUI_COOLDOWN_ENEMY_DIRECTION = "Gegner Cooldowns Symbol ausrichtung"
 L_GUI_COOLDOWN_ENEMY_EVERYWHERE = "Zeige gegnerische Abklingzeiten überall"
 L_GUI_COOLDOWN_ENEMY_IN_BG = "Zeige gegnerische Abklingzeiten in Schlachtfeldern"
 L_GUI_COOLDOWN_ENEMY_IN_ARENA = "Zeige gegnerische Abklingzeiten in der Arena"
-L.enemycooldown_show_inparty = "Show in party zone for allies" -- Need review
+L.enemycooldown_show_inparty = "Anzeigen in der Partyzone für Allies"
 L.enemycooldown_class_color = "Klassenfarbige Umrandung aktivieren"
 
 -- Pulse cooldowns options
@@ -525,7 +525,7 @@ L_GUI_THREAT_HIDE_SOLO = "Nur in Gruppen oder Schlachtzügen anzeigen"
 
 -- Top panel options
 L_GUI_TOP_PANEL = "Oberes Panel"
-L_GUI_TOP_PANEL_SUBTEXT = "Manage built-in top panel with information." -- Need review
+L_GUI_TOP_PANEL_SUBTEXT = "Eingebautes oberes Bedienfeld mit Informationen verwalten."
 L_GUI_TOP_PANEL_ENABLE = "Aktiviere oberes Panel"
 L_GUI_TOP_PANEL_MOUSE = "Oberes Panel nur bei Mouseover anzeigen"
 L_GUI_TOP_PANEL_WIDTH = "Breite des Panels"
