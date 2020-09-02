@@ -326,7 +326,7 @@ if clock.enabled then
 			if T.level == MAX_PLAYER_LEVEL then
 				local c = 0
 				for _, q in ipairs({52834, 52835, 52837, 52838, 52839, 52840}) do
-					if IsQuestFlaggedCompleted(q) then
+					if C_QuestLog.IsQuestFlaggedCompleted(q) then
 						c = c + 1
 					end
 				end

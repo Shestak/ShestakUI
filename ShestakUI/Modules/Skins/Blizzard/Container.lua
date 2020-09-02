@@ -43,7 +43,7 @@ local function LoadSkin()
 
 		T.SkinCloseButton(close, frame.backdrop)
 
-		for j = 1, MAX_CONTAINER_ITEMS do
+		for j = 1, 36 do
 			local item = _G["ContainerFrame"..i.."Item"..j]
 			local icon = _G["ContainerFrame"..i.."Item"..j.."IconTexture"]
 			local quest = _G["ContainerFrame"..i.."Item"..j.."IconQuestTexture"]
@@ -181,7 +181,7 @@ local function LoadSkin()
 	hooksecurefunc("ContainerFrame_Update", function(frame)
 		local name = frame:GetName()
 		local item
-		for i = 1, MAX_CONTAINER_ITEMS do
+		for i = 1, 36 do
 			item = _G[name.."Item"..i]
 			if _G[name.."Item"..i.."IconQuestTexture"]:IsShown() then
 				item:SetBackdropBorderColor(1, 1, 0)

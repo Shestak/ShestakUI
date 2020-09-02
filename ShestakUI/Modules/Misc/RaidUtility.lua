@@ -73,7 +73,7 @@ RaidUtilityConvertButton:SetScript("OnMouseUp", function()
 		C_PartyInfo.ConvertToParty()
 		RaidUtilityConvertButton.t:SetText(CONVERT_TO_RAID)
 	elseif UnitInParty("player") then
-		ConvertToRaid()
+		C_PartyInfo.ConvertToRaid()
 		RaidUtilityConvertButton.t:SetText(CONVERT_TO_PARTY)
 	end
 end)
