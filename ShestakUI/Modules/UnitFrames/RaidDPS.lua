@@ -93,6 +93,10 @@ local function Shared(self, unit)
 		end
 		self.Health.value:SetTextColor(1, 1, 1)
 
+		if unit == "raid" and C.raidframe.hide_health_value then
+			self.Health.value:SetAlpha(0)
+		end
+
 		self.Health.PostUpdate = T.PostUpdateRaidHealth
 
 		-- Power bar

@@ -159,14 +159,6 @@ C["unitframe_class_bar"] = {
 ----------------------------------------------------------------------------------------
 C["raidframe"] = {
 	-- Main
-	["by_role"] = true,							-- Sorting players in group by role
-	["aggro_border"] = true,					-- Aggro border
-	["deficit_health"] = false,					-- Raid deficit health
-	["vertical_health"] = false,				-- Vertical orientation of health
-	["alpha_health"] = false,					-- Alpha of healthbars when 100%hp
-	["show_range"] = true,						-- Show range opacity for raidframes
-	["range_alpha"] = 0.5,						-- Alpha of unitframes when unit is out of range
-	-- Frames
 	["show_party"] = true,						-- Show party frames
 	["show_raid"] = true,						-- Show raid frames
 	["solo_mode"] = false,						-- Show player frame always
@@ -174,7 +166,16 @@ C["raidframe"] = {
 	["raid_tanks"] = true,						-- Show raid tanks
 	["raid_tanks_tt"] = false,					-- Show raid tanks target target
 	["raid_groups"] = 5,						-- Number of groups in raid
+	["auto_position"] = "DYNAMIC",				-- Auto reposition raid frame (only for heal layout) (DYNAMIC, STATIC, NONE)
 	["raid_groups_vertical"] = false,			-- Vertical raid groups (only for heal layout)
+	["vertical_health"] = false,				-- Vertical orientation of health (only for heal layout)
+	["by_role"] = true,							-- Sorting players in group by role
+	["aggro_border"] = true,					-- Aggro border
+	["deficit_health"] = false,					-- Raid deficit health
+	["hide_health_value"] = false,				-- Hide raid health value
+	["alpha_health"] = false,					-- Alpha of healthbars when 100%hp
+	["show_range"] = true,						-- Show range opacity for raidframes
+	["range_alpha"] = 0.5,						-- Alpha of unitframes when unit is out of range
 	-- Icons
 	["icons_role"] = false,						-- Role icon on frames
 	["icons_raid_mark"] = true,					-- Raid mark icons on frames
@@ -189,8 +190,6 @@ C["raidframe"] = {
 	["plugins_pvp_debuffs"] = false,			-- Show also PvP debuff icons (from the list)
 	["plugins_healcomm"] = true,				-- Incoming heal bar on raid frame
 	["plugins_auto_resurrection"] = false,		-- Auto cast resurrection on middle-click (doesn't work with Clique)
-	["hide_health_value"] = false,				-- Hide health value (only for heal layout)
-	["auto_position"] = true,					-- Auto reposition raid frame (only for heal layout)
 	-- Heal layout size
 	["heal_width"] = 60.2,						-- Unit width
 	["heal_height"] = 26,						-- Unit height

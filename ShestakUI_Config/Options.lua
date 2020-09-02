@@ -1022,7 +1022,7 @@ do
 	player_width:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -28)
 
 	local extra_height_auto = ns.CreateCheckBox(parent, "extra_height_auto")
-	extra_height_auto:SetPoint("TOPLEFT", player_width, "BOTTOMLEFT", 0, -20)
+	extra_height_auto:SetPoint("TOPLEFT", player_width, "BOTTOMLEFT", 0, -10)
 
 	local extra_health_height = ns.CreateNumberSlider(parent, "extra_health_height", nil, nil, 0, 40, 1, true)
 	extra_health_height:SetPoint("TOPLEFT", extra_height_auto, "BOTTOMLEFT", 0, -20)
@@ -1081,8 +1081,38 @@ end
 do
 	local parent = ShestakUIOptionsPanel.raidframe
 
+	local show_party = ns.CreateCheckBox(parent, "show_party", L_GUI_UF_SHOW_PARTY)
+	show_party:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	local show_raid = ns.CreateCheckBox(parent, "show_raid", L_GUI_UF_SHOW_RAID)
+	show_raid:SetPoint("LEFT", show_party, "RIGHT", 248, 0)
+
+	local raid_tanks = ns.CreateCheckBox(parent, "raid_tanks", L_GUI_UF_SHOW_TANK)
+	raid_tanks:SetPoint("TOPLEFT", show_party, "BOTTOMLEFT", 0, 0)
+
+	local raid_tanks_tt = ns.CreateCheckBox(parent, "raid_tanks_tt", L_GUI_UF_SHOW_TANK_TT)
+	raid_tanks_tt:SetPoint("LEFT", raid_tanks, "RIGHT", 248, 0)
+
+	local solo_mode = ns.CreateCheckBox(parent, "solo_mode", L_GUI_UF_SOLO_MODE)
+	solo_mode:SetPoint("TOPLEFT", raid_tanks, "BOTTOMLEFT", 0, 0)
+
+	local player_in_party = ns.CreateCheckBox(parent, "player_in_party", L_GUI_UF_PLAYER_PARTY)
+	player_in_party:SetPoint("TOPLEFT", solo_mode, "BOTTOMLEFT", 0, 0)
+
+	local raid_groups = ns.CreateNumberSlider(parent, "raid_groups", nil, nil, 1, 8, 1, true, L_GUI_UF_RAID_GROUP)
+	raid_groups:SetPoint("TOPLEFT", player_in_party, "BOTTOMLEFT", 0, -20)
+
+	local auto_position = ns.CreateDropDown(parent, "auto_position", true, L.raidframe_auto_position, {"DYNAMIC", "STATIC", "NONE"})
+	auto_position:SetPoint("TOPLEFT", raid_groups, "BOTTOMLEFT", -16, -10)
+
+	local raid_groups_vertical = ns.CreateCheckBox(parent, "raid_groups_vertical")
+	raid_groups_vertical:SetPoint("TOPLEFT", auto_position, "BOTTOMLEFT", 16, 0)
+
+	local vertical_health = ns.CreateCheckBox(parent, "vertical_health")
+	vertical_health:SetPoint("TOPLEFT", raid_groups_vertical, "BOTTOMLEFT", 0, 0)
+
 	local by_role = ns.CreateCheckBox(parent, "by_role", L_GUI_UF_BY_ROLE)
-	by_role:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+	by_role:SetPoint("TOPLEFT", vertical_health, "BOTTOMLEFT", 0, 0)
 
 	local aggro_border = ns.CreateCheckBox(parent, "aggro_border", L_GUI_UF_AGGRO_BORDER)
 	aggro_border:SetPoint("TOPLEFT", by_role, "BOTTOMLEFT", 0, 0)
@@ -1090,11 +1120,11 @@ do
 	local deficit_health = ns.CreateCheckBox(parent, "deficit_health", L_GUI_UF_DEFICIT_HEALTH)
 	deficit_health:SetPoint("TOPLEFT", aggro_border, "BOTTOMLEFT", 0, 0)
 
-	local vertical_health = ns.CreateCheckBox(parent, "vertical_health", L_GUI_UF_VERTICAL_HEALTH)
-	vertical_health:SetPoint("TOPLEFT", deficit_health, "BOTTOMLEFT", 0, 0)
+	local hide_health_value = ns.CreateCheckBox(parent, "hide_health_value")
+	hide_health_value:SetPoint("TOPLEFT", deficit_health, "BOTTOMLEFT", 0, 0)
 
 	local alpha_health = ns.CreateCheckBox(parent, "alpha_health", L_GUI_UF_ALPHA_HEALTH)
-	alpha_health:SetPoint("TOPLEFT", vertical_health, "BOTTOMLEFT", 0, 0)
+	alpha_health:SetPoint("TOPLEFT", hide_health_value, "BOTTOMLEFT", 0, 0)
 
 	local show_range = ns.CreateCheckBox(parent, "show_range", L_GUI_UF_SHOW_RANGE)
 	show_range:SetPoint("TOPLEFT", alpha_health, "BOTTOMLEFT", 0, 0)
@@ -1102,37 +1132,9 @@ do
 	local range_alpha = ns.CreateNumberSlider(parent, "range_alpha", nil, nil, 0, 1, 0.05, true, L_GUI_UF_RANGE_ALPHA, L_GUI_UF_RANGE_ALPHA_DESC)
 	range_alpha:SetPoint("TOPLEFT", show_range, "BOTTOMLEFT", 0, -20)
 
-	-- Frames
-	local subheader = ns.addSubCategory(parent, L_GUI_UF_SUBHEADER_RAIDFRAMES)
-	subheader:SetPoint("TOPLEFT", range_alpha, "BOTTOMLEFT", 0, -16)
-
-	local show_party = ns.CreateCheckBox(parent, "show_party", L_GUI_UF_SHOW_PARTY)
-	show_party:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
-
-	local show_raid = ns.CreateCheckBox(parent, "show_raid", L_GUI_UF_SHOW_RAID)
-	show_raid:SetPoint("TOPLEFT", show_party, "BOTTOMLEFT", 0, 0)
-
-	local solo_mode = ns.CreateCheckBox(parent, "solo_mode", L_GUI_UF_SOLO_MODE)
-	solo_mode:SetPoint("TOPLEFT", show_raid, "BOTTOMLEFT", 0, 0)
-
-	local player_in_party = ns.CreateCheckBox(parent, "player_in_party", L_GUI_UF_PLAYER_PARTY)
-	player_in_party:SetPoint("TOPLEFT", solo_mode, "BOTTOMLEFT", 0, 0)
-
-	local raid_tanks = ns.CreateCheckBox(parent, "raid_tanks", L_GUI_UF_SHOW_TANK)
-	raid_tanks:SetPoint("TOPLEFT", player_in_party, "BOTTOMLEFT", 0, 0)
-
-	local raid_tanks_tt = ns.CreateCheckBox(parent, "raid_tanks_tt", L_GUI_UF_SHOW_TANK_TT)
-	raid_tanks_tt:SetPoint("TOPLEFT", raid_tanks, "BOTTOMLEFT", 0, 0)
-
-	local raid_groups = ns.CreateNumberSlider(parent, "raid_groups", nil, nil, 0, 8, 1, true, L_GUI_UF_RAID_GROUP)
-	raid_groups:SetPoint("TOPLEFT", raid_tanks_tt, "BOTTOMLEFT", 0, -20)
-
-	local raid_groups_vertical = ns.CreateCheckBox(parent, "raid_groups_vertical", L_GUI_UF_RAID_VERTICAL_GROUP)
-	raid_groups_vertical:SetPoint("TOPLEFT", raid_groups, "BOTTOMLEFT", 0, -10)
-
 	-- Icons
 	local subheader = ns.addSubCategory(parent, L_GUI_UF_SUBHEADER_ICONS)
-	subheader:SetPoint("TOPLEFT", raid_groups_vertical, "BOTTOMLEFT", 0, -16)
+	subheader:SetPoint("TOPLEFT", range_alpha, "BOTTOMLEFT", 0, -10)
 
 	local icons_role = ns.CreateCheckBox(parent, "icons_role", L_GUI_UF_ICONS_ROLE)
 	icons_role:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -8)
@@ -1199,15 +1201,9 @@ do
 	local plugins_auto_resurrection = ns.CreateCheckBox(parent, "plugins_auto_resurrection")
 	plugins_auto_resurrection:SetPoint("TOPLEFT", plugins_healcomm, "BOTTOMLEFT", 0, 0)
 
-	local hide_health_value = ns.CreateCheckBox(parent, "hide_health_value")
-	hide_health_value:SetPoint("TOPLEFT", plugins_auto_resurrection, "BOTTOMLEFT", 0, 0)
-
-	local auto_position = ns.CreateCheckBox(parent, "auto_position")
-	auto_position:SetPoint("TOPLEFT", hide_health_value, "BOTTOMLEFT", 0, 0)
-
 	-- Heal layout size
 	local subheader = ns.addSubCategory(parent, L.raidframe_subheader_heal_size)
-	subheader:SetPoint("TOPLEFT", auto_position, "BOTTOMLEFT", 0, -10)
+	subheader:SetPoint("TOPLEFT", plugins_auto_resurrection, "BOTTOMLEFT", 0, -10)
 
 	local heal_width = ns.CreateNumberSlider(parent, "heal_width", nil, nil, 50, 120, 1, true)
 	heal_width:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -30)

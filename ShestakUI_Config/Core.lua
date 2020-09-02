@@ -404,6 +404,8 @@ local DropDownText = {
 	["NONE"] = L.general_error_none,
 	["RAID"] = L.automation_auto_collapse_raid,
 	["RELOAD"] = L.automation_auto_collapse_reload,
+	["DYNAMIC"] = L.raidframe_auto_position_dynamic,
+	["STATIC"] = L.raidframe_auto_position_static,
 }
 
 ns.CreateDropDown = function(parent, option, needsReload, text, tableValue, keyName)
@@ -442,6 +444,18 @@ ns.CreateDropDown = function(parent, option, needsReload, text, tableValue, keyN
 	label:SetHeight(20)
 	label:SetJustifyH("LEFT")
 	label:SetPoint("LEFT", 160, 4)
+
+	f.tooltipText = ns[parent.tag.."_"..option.."_desc"]
+	if f.tooltipText then
+		f:SetScript("OnEnter", function()
+			GameTooltip:SetOwner(f, "ANCHOR_RIGHT", 0, 0)
+			GameTooltip:SetText(f.tooltipText, nil, nil, nil, nil, true)
+		end)
+
+		f:SetScript("OnLeave", function()
+			GameTooltip:Hide()
+		end)
+	end
 
 	f.group = parent.tag
 	f.option = option
