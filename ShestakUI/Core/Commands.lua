@@ -89,7 +89,7 @@ local function DisbandRaidGroup()
 			end
 		end
 	end
-	LeaveParty()
+	C_PartyInfo.LeaveParty()
 end
 
 StaticPopupDialogs.DISBAND_RAID = {
@@ -115,9 +115,9 @@ SLASH_GROUPDISBAND2 = "/кв"
 SlashCmdList.PARTYTORAID = function()
 	if GetNumGroupMembers() > 0 then
 		if UnitInRaid("player") and (UnitIsGroupLeader("player")) then
-			ConvertToParty()
+			C_PartyInfo.ConvertToParty()
 		elseif UnitInParty("player") and (UnitIsGroupLeader("player")) then
-			ConvertToRaid()
+			C_PartyInfo.ConvertToRaid()
 		end
 	else
 		print("|cffffff00"..ERR_NOT_IN_GROUP.."|r")

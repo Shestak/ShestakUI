@@ -70,7 +70,7 @@ RaidUtilityDisbandButton:SetScript("OnMouseUp", function() StaticPopup_Show("DIS
 CreateButton("RaidUtilityConvertButton", RaidUtilityPanel, "UIPanelButtonTemplate", RaidUtilityPanel:GetWidth() * 0.8, 18, "TOP", RaidUtilityDisbandButton, "BOTTOM", 0, -5, UnitInRaid("player") and CONVERT_TO_PARTY or CONVERT_TO_RAID)
 RaidUtilityConvertButton:SetScript("OnMouseUp", function()
 	if UnitInRaid("player") then
-		ConvertToParty()
+		C_PartyInfo.ConvertToParty()
 		RaidUtilityConvertButton.t:SetText(CONVERT_TO_RAID)
 	elseif UnitInParty("player") then
 		ConvertToRaid()

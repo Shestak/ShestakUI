@@ -10,7 +10,7 @@ hooksecurefunc("SetItemRef", function(link) -- Secure hook to avoid taint
 		local player = link:match("^player:([^:]+)")
 		local bplayer = link:match("^BNplayer:([^:]+)")
 		if player then
-			InviteToGroup(player)
+			C_PartyInfo.InviteUnit(player)
 		elseif bplayer then
 			local _, value = strmatch(link, "(%a+):(.+)")
 			local _, bnID = strmatch(value, "([^:]*):([^:]*):")
