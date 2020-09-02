@@ -66,11 +66,8 @@ local function LoadSkin()
 		if i == 1 then
 			BackpackTokenFrame:StripTextures(true)
 			for i = 1, MAX_WATCHED_TOKENS do
-				_G["BackpackTokenFrameToken"..i].icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				_G["BackpackTokenFrameToken"..i]:CreateBackdrop("Default")
-				_G["BackpackTokenFrameToken"..i].backdrop:SetPoint("TOPLEFT", _G["BackpackTokenFrameToken"..i].icon, "TOPLEFT", -2, 2)
-				_G["BackpackTokenFrameToken"..i].backdrop:SetPoint("BOTTOMRIGHT", _G["BackpackTokenFrameToken"..i].icon, "BOTTOMRIGHT", 2, -2)
-				_G["BackpackTokenFrameToken"..i].icon:SetPoint("LEFT", _G["BackpackTokenFrameToken"..i].count, "RIGHT", 2, 0)
+				_G["BackpackTokenFrameToken"..i].icon:SkinIcon()
+				_G["BackpackTokenFrameToken"..i].count:SetPoint("RIGHT", _G["BackpackTokenFrameToken"..i].icon, "LEFT", -5, 0)
 			end
 		end
 	end
@@ -213,7 +210,7 @@ local function LoadSkin()
 			leftLimit = BankFrame:GetRight() - 25
 		end
 
-		while containerScale > CONTAINER_SCALE do
+		while containerScale > 0.75 do
 			screenHeight = GetScreenHeight() / containerScale
 			xOffset = CONTAINER_OFFSET_X / containerScale
 			yOffset = CONTAINER_OFFSET_Y / containerScale
@@ -225,10 +222,10 @@ local function LoadSkin()
 				frameHeight = _G[frameName]:GetHeight()
 				if freeScreenHeight < frameHeight then
 					column = column + 1
-					leftMostPoint = screenWidth - (column * CONTAINER_WIDTH * containerScale) - xOffset
+					leftMostPoint = screenWidth - (column * 192 * containerScale) - xOffset
 					freeScreenHeight = screenHeight - yOffset
 				end
-				freeScreenHeight = freeScreenHeight - frameHeight - VISIBLE_CONTAINER_SPACING
+				freeScreenHeight = freeScreenHeight - frameHeight - 3
 			end
 			if leftMostPoint < leftLimit then
 				containerScale = containerScale - 0.01
@@ -237,8 +234,8 @@ local function LoadSkin()
 			end
 		end
 
-		if containerScale < CONTAINER_SCALE then
-			containerScale = CONTAINER_SCALE
+		if containerScale < 0.75 then
+			containerScale = 0.75
 		end
 
 		screenHeight = GetScreenHeight() / containerScale
@@ -258,16 +255,16 @@ local function LoadSkin()
 				column = column + 1
 				freeScreenHeight = screenHeight - yOffset
 				if column > 1 then
-					frame:SetPoint("BOTTOMRIGHT", ContainerFrame1.bags[(index - bagsPerColumn) - 1], "BOTTOMLEFT", -CONTAINER_SPACING, 0)
+					frame:SetPoint("BOTTOMRIGHT", ContainerFrame1.bags[(index - bagsPerColumn) - 1], "BOTTOMLEFT", 0, 0)
 				else
-					frame:SetPoint("BOTTOMRIGHT", ContainerFrame1.bags[index - bagsPerColumn], "BOTTOMLEFT", -CONTAINER_SPACING, 0)
+					frame:SetPoint("BOTTOMRIGHT", ContainerFrame1.bags[index - bagsPerColumn], "BOTTOMLEFT", 0, 0)
 				end
 				bagsPerColumn = 0
 			else
-				frame:SetPoint("BOTTOMRIGHT", ContainerFrame1.bags[index - 1], "TOPRIGHT", 0, CONTAINER_SPACING)
+				frame:SetPoint("BOTTOMRIGHT", ContainerFrame1.bags[index - 1], "TOPRIGHT", 0, 0)
 				bagsPerColumn = bagsPerColumn + 1
 			end
-			freeScreenHeight = freeScreenHeight - frame:GetHeight() - VISIBLE_CONTAINER_SPACING
+			freeScreenHeight = freeScreenHeight - frame:GetHeight() - 3
 		end
 	end)
 end
