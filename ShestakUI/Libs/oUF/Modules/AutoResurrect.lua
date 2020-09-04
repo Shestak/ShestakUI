@@ -61,7 +61,7 @@ local Enable = function(self)
 	local _, class = UnitClass("player")
 	if not class then return end
 
-	if classList[class] and not IsAddOnLoaded("Clique") then
+	if classList[class] and not IsAddOnLoaded("Clique") and not InCombatLockdown() then
 		self:SetAttribute("*type3", "macro")
 		self:SetAttribute("macrotext3", macroBody(class))
 		return true
