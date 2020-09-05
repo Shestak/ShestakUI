@@ -64,7 +64,9 @@ frame:SetScript("OnEvent", function(_, _, addon)
 		InterfaceOptionsActionBarsPanelRightTwo:Kill()
 		InterfaceOptionsActionBarsPanelAlwaysShowActionBars:Kill()
 		InterfaceOptionsActionBarsPanelStackRightBars:Kill()
-		SetCVar("multiBarRightVerticalLayout", 0)
+		if not InCombatLockdown() then
+			SetCVar("multiBarRightVerticalLayout", 0)
+		end
 	end
 
 	if C.nameplate.enable then
