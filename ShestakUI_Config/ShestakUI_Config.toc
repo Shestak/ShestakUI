@@ -1,13 +1,14 @@
 ## Interface: 80300
 ## Title: ShestakUI Config
 ## Notes: In-game configuration for ShestakUI
-## Author: Haleth, Solor
-## Version: 7.29
+## Author: Shestak
+## Version: 7.30
 ## RequiredDeps: ShestakUI
 ## SavedVariables: ShestakUIOptionsGlobal, ShestakUIOptions
 ## SavedVariablesPerCharacter: ShestakUIOptionsPerChar
 
 ## X-Website: http://shestak.org
+## X-Credits: Haleth, Solor
 ## X-Thanks: Tryllemann, Wetxius
 
 Locales\English.lua
