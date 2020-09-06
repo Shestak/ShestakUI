@@ -6,10 +6,10 @@ local T, C, L, _ = unpack(select(2, ...))
 if C.general.error_filter == "WHITELIST" or C.general.error_filter == "BLACKLIST" then
 	local frame = CreateFrame("Frame")
 	frame:RegisterEvent("UI_ERROR_MESSAGE")
-	frame:SetScript("OnEvent", function(_, _, _, text)
+	frame:SetScript("OnEvent", function(_, _, messageType, text)
 		if C.general.error_filter == "WHITELIST" then
 			if T.white_list[text] then
-				UIErrorsFrame:AddMessage(text, 1, 0, 0)
+				UIErrorsFrame:TryDisplayMessage(messageType, text, RED_FONT_COLOR:GetRGB())
 			else
 				L_INFO_ERRORS = text
 			end
@@ -17,7 +17,7 @@ if C.general.error_filter == "WHITELIST" or C.general.error_filter == "BLACKLIST
 			if T.black_list[text] then
 				L_INFO_ERRORS = text
 			else
-				UIErrorsFrame:AddMessage(text, 1, 0, 0)
+				UIErrorsFrame:TryDisplayMessage(messageType, text, RED_FONT_COLOR:GetRGB())
 			end
 		end
 	end)
