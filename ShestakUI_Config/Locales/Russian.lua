@@ -17,6 +17,8 @@ L_GUI_LAYOUT = "Смена раскладки"
 L_GUI_SPELL_LIST = "Список заклинаний"
 L_GUI_SPELL_INPUT = "Номер заклинания"
 L_GUI_TIME_INPUT = "Время"
+L_GUI_EXPERT_MODE = "Режим эксперта"
+L_GUI_EXPERT_MODE_DESC = "Редактирование профиля Lua"
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "Эти настройки контролируют общие параметры UI. Наберите в чат '/uihelp' для помощи."
@@ -216,6 +218,7 @@ L.actionbar_toggle_mode_desc = "Быстрое изменение количес
 L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Скрывать подсветку кнопок"
 L_GUI_ACTIONBAR_BOTTOMBARS = "Количество нижних панелей"
 L_GUI_ACTIONBAR_RIGHTBARS = "Количество правых панелей"
+L.actionbar_bottombars_mouseover = "Нижние панели команд по наведению курсора"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Правые панели команд по наведению курсора"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "Скрыть панель питомца"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Горизонтальная панель питомца"

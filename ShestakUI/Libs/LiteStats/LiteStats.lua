@@ -58,10 +58,10 @@ local ls, coordX, coordY, conf, Coords = CreateFrame("Frame"), 0, 0, {}
 RegEvents(ls, "ADDON_LOADED PLAYER_REGEN_DISABLED PLAYER_REGEN_ENABLED")
 ls:SetScript("OnEvent", function(_, event, addon)
 	if event == "ADDON_LOADED" and addon == "ShestakUI" then
-		if not SavedStats then SavedStats = {} end
-		if not SavedStats[realm] then SavedStats[realm] = {} end
-		if not SavedStats[realm][char] then SavedStats[realm][char] = {} end
-		conf = SavedStats[realm][char]
+		if not ShestakUIStats then ShestakUIStats = {} end
+		if not ShestakUIStats[realm] then ShestakUIStats[realm] = {} end
+		if not ShestakUIStats[realm][char] then ShestakUIStats[realm][char] = {} end
+		conf = ShestakUIStats[realm][char]
 
 		-- true/false defaults for autosell and autorepair
 		if conf.AutoSell == nil then conf.AutoSell = true end
@@ -1263,7 +1263,7 @@ if experience.enabled then
 				GameTooltip:AddLine(" ")
 				GameTooltip:AddLine(L_STATS_ACC_PLAYED, ttsubh.r, ttsubh.g, ttsubh.b)
 				local total = 0
-				for realm, t in pairs(SavedStats) do
+				for realm, t in pairs(ShestakUIStats) do
 					for name, conf in pairs(t) do
 						if conf.Played then
 							local r, g, b, player = 1, 1, 1
@@ -1640,7 +1640,7 @@ if gold.enabled then
 		OnLoad = function(self)
 			self.started = GetMoney()
 			RegEvents(self, "PLAYER_LOGIN PLAYER_MONEY MERCHANT_SHOW")
-			if not SavedStats.JunkIgnore then SavedStats.JunkIgnore = {} end
+			if not ShestakUIStats.JunkIgnore then ShestakUIStats.JunkIgnore = {} end
 		end,
 		OnEvent = function(self, event)
 			conf.Gold = GetMoney()
@@ -1652,7 +1652,7 @@ if gold.enabled then
 						local link = GetContainerItemLink(bag, slot)
 						if link then
 							local itemstring, ignore = strmatch(link, "|Hitem:(%d-):"), false
-							for _, exception in pairs(SavedStats.JunkIgnore) do
+							for _, exception in pairs(ShestakUIStats.JunkIgnore) do
 								if exception == itemstring then ignore = true break end
 							end
 							local _, _, itemRarity, _, _, _, _, _, _, _, itemSellPrice = GetItemInfo(link)
@@ -1697,7 +1697,7 @@ if gold.enabled then
 			local goldTable = {}
 			local charIndex = 0
 			wipe(goldTable)
-			for char, conf in pairs(SavedStats[realm]) do
+			for char, conf in pairs(ShestakUIStats[realm]) do
 				if conf.Gold and conf.Gold > 99 then
 					charIndex = charIndex + 1
 					goldTable[charIndex] = {char, formatgold(5, conf.Gold), conf.Gold}
@@ -1793,13 +1793,13 @@ if gold.enabled then
 	function SlashCmdList.KJUNK(s)
 		local action = strsplit(" ", s)
 		if action == "list" then
-			print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_ADDITIONS, (#SavedStats.JunkIgnore == 0 and NONE or "")))
-			for i, id in pairs(SavedStats.JunkIgnore) do
+			print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_ADDITIONS, (#ShestakUIStats.JunkIgnore == 0 and NONE or "")))
+			for i, id in pairs(ShestakUIStats.JunkIgnore) do
 				local _, link = GetItemInfo(id)
 				print("- ["..i.."]", link)
 			end
 		elseif action == "clear" then
-			SavedStats.JunkIgnore = {}
+			ShestakUIStats.JunkIgnore = {}
 			print("|cff66C6FF"..L_STATS_JUNK_CLEARED.."|r")
 		elseif action == "add" or strfind(action, "^del") or strfind(action, "^rem") then
 			local _, mouselink = GameTooltip:GetItem()
@@ -1807,28 +1807,28 @@ if gold.enabled then
 				mouselink = nil
 				local _, link = GetItemInfo(id)
 				if action == "add" then
-					if not tContains(SavedStats.JunkIgnore,id) then
-						tinsert(SavedStats.JunkIgnore, id)
+					if not tContains(ShestakUIStats.JunkIgnore,id) then
+						tinsert(ShestakUIStats.JunkIgnore, id)
 						print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_ADDED, link))
 					else
 						print(format("%s |cff66C6FF%s|r", link, L_STATS_JUNK_ALREADY_ADDITIONS))
 					end
 				elseif strfind(action, "^del") or strfind(action, "^rem") then
-					tDeleteItem(SavedStats.JunkIgnore, id)
+					tDeleteItem(ShestakUIStats.JunkIgnore, id)
 					print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_REMOVED, link))
 				end
 			end
 			if mouselink then
 				for id in mouselink:gmatch("|Hitem:(%d-):") do
 					if action == "add" then
-						if not tContains(SavedStats.JunkIgnore,id) then
-							tinsert(SavedStats.JunkIgnore, id)
+						if not tContains(ShestakUIStats.JunkIgnore,id) then
+							tinsert(ShestakUIStats.JunkIgnore, id)
 							print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_ADDED, mouselink))
 						else
 							print(format("%s |cff66C6FF%s|r", mouselink, L_STATS_JUNK_ALREADY_ADDITIONS))
 						end
 					elseif strfind(action, "^del") or strfind(action, "^rem") then
-						tDeleteItem(SavedStats.JunkIgnore, id)
+						tDeleteItem(ShestakUIStats.JunkIgnore, id)
 						print(format("|cff66C6FF%s:|r %s", L_STATS_JUNK_REMOVED, mouselink))
 					end
 				end

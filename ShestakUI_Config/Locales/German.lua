@@ -17,6 +17,8 @@ L_GUI_LAYOUT = "Layout ändern"
 L_GUI_SPELL_LIST = "Liste der Zauber"
 L_GUI_SPELL_INPUT = "Zauber ID"
 L_GUI_TIME_INPUT = "Zeit"
+L_GUI_EXPERT_MODE = "Expert mode" -- Need review
+L_GUI_EXPERT_MODE_DESC = "Custom editing of Lua profile" -- Need review
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "Diese Einstellungen steuern die allgemeinen Einstellungen der Benutzeroberfläche. Geben Sie im Chat '/uihelp ein, um Hilfe zu erhalten."
@@ -216,6 +218,7 @@ L.actionbar_toggle_mode_desc = "The quick change in the number of panels. For th
 L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "hebe keine Procs hervor"
 L_GUI_ACTIONBAR_BOTTOMBARS = "Anzahl der Aktionsleisten an der unteren Seite"
 L_GUI_ACTIONBAR_RIGHTBARS = "Anzahl der Aktionsleisten an der rechten Seite"
+L.actionbar_bottombars_mouseover = "Bottom bars on mouseover" -- Needs review
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Zeige die rechten Leisten nur bei Mouseover"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "Verstecke Begleiterleiste"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Aktiviere horizontale Begleiterleiste"

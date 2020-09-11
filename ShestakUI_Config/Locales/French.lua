@@ -17,6 +17,8 @@ L_GUI_LAYOUT = "Change layout" -- Need review
 L_GUI_SPELL_LIST = "List of spells" -- Need review
 L_GUI_SPELL_INPUT = "Spell ID" -- Need review
 L_GUI_TIME_INPUT = "Time" -- Need review
+L_GUI_EXPERT_MODE = "Expert mode" -- Need review
+L_GUI_EXPERT_MODE_DESC = "Custom editing of Lua profile" -- Need review
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "Ces paramètres controllent les rendus de l'interface utilisateur. Saisir '/uihelp' dans le chat pour plus d'information."
@@ -216,6 +218,7 @@ L.actionbar_toggle_mode_desc = "The quick change in the number of panels. For th
 L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Cache la surbrillance des effets à déclenchement"
 L_GUI_ACTIONBAR_BOTTOMBARS = "Nombre de barres d'action en bas"
 L_GUI_ACTIONBAR_RIGHTBARS = "Nombre de barres d'action à droite"
+L.actionbar_bottombars_mouseover = "Bottom bars on mouseover" -- Needs review
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barres de droite en 'mouseover'"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "Cacher la barre du familier"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Activer la barre du familier horizontale"

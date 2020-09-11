@@ -204,7 +204,7 @@ local function RefMap(self, fullUpdate)
 					texture:SetPoint("TOPLEFT", offsetX + (TILE_SIZE_WIDTH * (k-1)), -(offsetY + (TILE_SIZE_HEIGHT * (j - 1))))
 					texture:SetTexture(tonumber(fileDataIDs[((j - 1) * numTexturesWide) + k]), nil, nil, "TRILINEAR")
 					texture:SetDrawLayer("ARTWORK", -1)
-					if SavedOptionsPerChar.FogOfWar == true then
+					if ShestakUISettingsPerChar.FogOfWar == true then
 						texture:Show()
 					else
 						texture:Hide()

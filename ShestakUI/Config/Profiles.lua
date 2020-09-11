@@ -106,7 +106,6 @@ if T.name == "Oz" and T.realm == "Pozzo dell'Eternità" then
 	C["chat"].damage_meter_spam = true
 	C["minimap"].size = 116
 	C["minimap"].toggle_menu = false
-	C["map"].map_boss_count = true
 	C["loot"].auto_greed = false
 	C["nameplate"].show_castbar_name = true
 	C["nameplate"].class_icons = true
@@ -252,4 +251,8 @@ if IsWetxius then
 	T.CustomFilgerSpell = {
 		{"COOLDOWN", {spellID = 313698, filter = "ICD", trigger = "BUFF", duration = 80}}, -- Gift of the Titans
 	}
+end
+
+if ShestakUICustomProfile then
+	ShestakUICustomProfile()
 end

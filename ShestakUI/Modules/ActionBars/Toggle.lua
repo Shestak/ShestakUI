@@ -18,34 +18,34 @@ end
 
 local MainBars = function()
 	if C.actionbar.rightbars > 2 then
-		if SavedOptionsPerChar.BottomBars == 1 then
+		if ShestakUISettingsPerChar.BottomBars == 1 then
 			ActionBarAnchor:SetHeight(C.actionbar.button_size)
 			ToggleBarText(1, "+ + +", true)
 			Bar2Holder:Hide()
-		elseif SavedOptionsPerChar.BottomBars == 2 then
+		elseif ShestakUISettingsPerChar.BottomBars == 2 then
 			ActionBarAnchor:SetHeight(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			ToggleBarText(1, "- - -", false, true)
 			Bar2Holder:Show()
 		end
 	elseif C.actionbar.rightbars < 3 and C.actionbar.split_bars ~= true then
-		if SavedOptionsPerChar.BottomBars == 1 then
+		if ShestakUISettingsPerChar.BottomBars == 1 then
 			ActionBarAnchor:SetHeight(C.actionbar.button_size)
 			ToggleBarText(1, "+ + +", true)
 			Bar2Holder:Hide()
 			Bar5Holder:Hide()
-		elseif SavedOptionsPerChar.BottomBars == 2 then
+		elseif ShestakUISettingsPerChar.BottomBars == 2 then
 			ActionBarAnchor:SetHeight(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			ToggleBarText(1, "+ + +", true)
 			Bar2Holder:Show()
 			Bar5Holder:Hide()
-		elseif SavedOptionsPerChar.BottomBars == 3 then
+		elseif ShestakUISettingsPerChar.BottomBars == 3 then
 			ActionBarAnchor:SetHeight((C.actionbar.button_size * 3) + (C.actionbar.button_space * 2))
 			ToggleBarText(1, "- - -", false, true)
 			Bar2Holder:Show()
 			Bar5Holder:Show()
 		end
 	elseif C.actionbar.rightbars < 3 and C.actionbar.split_bars == true then
-		if SavedOptionsPerChar.BottomBars == 1 then
+		if ShestakUISettingsPerChar.BottomBars == 1 then
 			ActionBarAnchor:SetHeight(C.actionbar.button_size)
 			ToggleBarText(1, "+ + +", true)
 			Bar2Holder:Hide()
@@ -61,7 +61,7 @@ local MainBars = function()
 				b:SetAlpha(0)
 				b:SetScale(0.000001)
 			end
-		elseif SavedOptionsPerChar.BottomBars == 2 then
+		elseif ShestakUISettingsPerChar.BottomBars == 2 then
 			ActionBarAnchor:SetHeight(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			ToggleBarText(1, "- - -", false, true)
 			Bar2Holder:Show()
@@ -69,12 +69,16 @@ local MainBars = function()
 			ToggleBar[4]:SetHeight(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			for i = 1, 3 do
 				local b = _G["MultiBarBottomRightButton"..i]
-				b:SetAlpha(1)
+				if not C.actionbar.bottombars_mouseover then
+					b:SetAlpha(1)
+				end
 				b:SetScale(1)
 			end
 			for i = 7, 9 do
 				local b = _G["MultiBarBottomRightButton"..i]
-				b:SetAlpha(1)
+				if not C.actionbar.bottombars_mouseover then
+					b:SetAlpha(1)
+				end
 				b:SetScale(1)
 			end
 		end
@@ -83,7 +87,7 @@ end
 
 local RightBars = function()
 	if C.actionbar.rightbars > 2 then
-		if SavedOptionsPerChar.RightBars == 1 then
+		if ShestakUISettingsPerChar.RightBars == 1 then
 			RightActionBarAnchor:SetWidth(C.actionbar.button_size)
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
@@ -93,7 +97,7 @@ local RightBars = function()
 			ToggleBarText(2, "> > >", false, true)
 			Bar3Holder:Hide()
 			Bar4Holder:Hide()
-		elseif SavedOptionsPerChar.RightBars == 2 then
+		elseif ShestakUISettingsPerChar.RightBars == 2 then
 			RightActionBarAnchor:SetWidth(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
@@ -103,7 +107,7 @@ local RightBars = function()
 			ToggleBarText(2, "> > >", false, true)
 			Bar3Holder:Hide()
 			Bar4Holder:Show()
-		elseif SavedOptionsPerChar.RightBars == 3 then
+		elseif ShestakUISettingsPerChar.RightBars == 3 then
 			RightActionBarAnchor:SetWidth((C.actionbar.button_size * 3) + (C.actionbar.button_space * 2))
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
@@ -117,7 +121,7 @@ local RightBars = function()
 			if C.actionbar.rightbars > 2 then
 				Bar5Holder:Show()
 			end
-		elseif SavedOptionsPerChar.RightBars == 0 then
+		elseif ShestakUISettingsPerChar.RightBars == 0 then
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
 				PetActionBarAnchor:SetPoint("BOTTOMRIGHT", ToggleBar[2], "TOPRIGHT", 3, 3)
@@ -132,7 +136,7 @@ local RightBars = function()
 			end
 		end
 	elseif C.actionbar.rightbars < 3 then
-		if SavedOptionsPerChar.RightBars == 1 then
+		if ShestakUISettingsPerChar.RightBars == 1 then
 			RightActionBarAnchor:SetWidth(C.actionbar.button_size)
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
@@ -142,7 +146,7 @@ local RightBars = function()
 			ToggleBarText(2, "> > >", false, true)
 			Bar3Holder:Show()
 			Bar4Holder:Hide()
-		elseif SavedOptionsPerChar.RightBars == 2 then
+		elseif ShestakUISettingsPerChar.RightBars == 2 then
 			RightActionBarAnchor:SetWidth(C.actionbar.button_size * 2 + C.actionbar.button_space)
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
@@ -153,7 +157,7 @@ local RightBars = function()
 			RightActionBarAnchor:Show()
 			Bar3Holder:Show()
 			Bar4Holder:Show()
-		elseif SavedOptionsPerChar.RightBars == 0 then
+		elseif ShestakUISettingsPerChar.RightBars == 0 then
 			if not C.actionbar.petbar_horizontal == true then
 				PetActionBarAnchor:ClearAllPoints()
 				PetActionBarAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -18, 320)
@@ -172,14 +176,14 @@ end
 
 local SplitBars = function()
 	if C.actionbar.split_bars == true and C.actionbar.rightbars ~= 3 then
-		if SavedOptionsPerChar.SplitBars == true then
+		if ShestakUISettingsPerChar.SplitBars == true then
 			ToggleBar[3]:ClearAllPoints()
 			ToggleBar[3]:SetPoint("BOTTOMLEFT", SplitBarRight, "BOTTOMRIGHT", C.actionbar.button_space, 0)
 			ToggleBar[4]:ClearAllPoints()
 			ToggleBar[4]:SetPoint("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 			VehicleButtonAnchor:ClearAllPoints()
 			VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
-			if SavedOptionsPerChar.BottomBars == 2 then
+			if ShestakUISettingsPerChar.BottomBars == 2 then
 				ToggleBarText(3, "<\n<\n<", false, true)
 				ToggleBarText(4, ">\n>\n>", false, true)
 			else
@@ -187,14 +191,16 @@ local SplitBars = function()
 				ToggleBarText(4, ">\n>", false, true)
 			end
 			Bar5Holder:Show()
-		elseif SavedOptionsPerChar.SplitBars == false then
+			SplitBarLeft:Show()
+			SplitBarRight:Show()
+		elseif ShestakUISettingsPerChar.SplitBars == false then
 			ToggleBar[3]:ClearAllPoints()
 			ToggleBar[3]:SetPoint("BOTTOMLEFT", ActionBarAnchor, "BOTTOMRIGHT", C.actionbar.button_space, 0)
 			ToggleBar[4]:ClearAllPoints()
 			ToggleBar[4]:SetPoint("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 			VehicleButtonAnchor:ClearAllPoints()
 			VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
-			if SavedOptionsPerChar.BottomBars == 2 then
+			if ShestakUISettingsPerChar.BottomBars == 2 then
 				ToggleBarText(3, ">\n>\n>", true)
 				ToggleBarText(4, "<\n<\n<", true)
 			else
@@ -209,10 +215,10 @@ local SplitBars = function()
 end
 
 local LockCheck = function(i)
-	if SavedOptionsPerChar.BarsLocked == true then
+	if ShestakUISettingsPerChar.BarsLocked == true then
 		ToggleBar[i].Text:SetText("U")
 		ToggleBar[i].Text:SetTextColor(0.3, 0.3, 0.9)
-	elseif SavedOptionsPerChar.BarsLocked == false then
+	elseif ShestakUISettingsPerChar.BarsLocked == false then
 		ToggleBar[i].Text:SetText("L")
 		ToggleBar[i].Text:SetTextColor(0.9, 0.3, 0.3)
 	else
@@ -236,23 +242,23 @@ for i = 1, 5 do
 
 		ToggleBar[i]:SetScript("OnMouseDown", function()
 			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
-			SavedOptionsPerChar.BottomBars = SavedOptionsPerChar.BottomBars + 1
+			ShestakUISettingsPerChar.BottomBars = ShestakUISettingsPerChar.BottomBars + 1
 
 			if C.actionbar.rightbars > 2 then
-				if SavedOptionsPerChar.BottomBars > 2 then
-					SavedOptionsPerChar.BottomBars = 1
+				if ShestakUISettingsPerChar.BottomBars > 2 then
+					ShestakUISettingsPerChar.BottomBars = 1
 				end
 			elseif C.actionbar.rightbars < 3 and C.actionbar.split_bars ~= true then
-				if SavedOptionsPerChar.BottomBars > 3 then
-					SavedOptionsPerChar.BottomBars = 1
-				elseif SavedOptionsPerChar.BottomBars > 2 then
-					SavedOptionsPerChar.BottomBars = 3
-				elseif SavedOptionsPerChar.BottomBars < 1 then
-					SavedOptionsPerChar.BottomBars = 3
+				if ShestakUISettingsPerChar.BottomBars > 3 then
+					ShestakUISettingsPerChar.BottomBars = 1
+				elseif ShestakUISettingsPerChar.BottomBars > 2 then
+					ShestakUISettingsPerChar.BottomBars = 3
+				elseif ShestakUISettingsPerChar.BottomBars < 1 then
+					ShestakUISettingsPerChar.BottomBars = 3
 				end
 			elseif C.actionbar.rightbars < 3 and C.actionbar.split_bars == true then
-				if SavedOptionsPerChar.BottomBars > 2 then
-					SavedOptionsPerChar.BottomBars = 1
+				if ShestakUISettingsPerChar.BottomBars > 2 then
+					ShestakUISettingsPerChar.BottomBars = 1
 				end
 			end
 
@@ -266,21 +272,21 @@ for i = 1, 5 do
 
 		ToggleBar[i]:SetScript("OnMouseDown", function()
 			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
-			SavedOptionsPerChar.RightBars = SavedOptionsPerChar.RightBars - 1
+			ShestakUISettingsPerChar.RightBars = ShestakUISettingsPerChar.RightBars - 1
 
 			if C.actionbar.rightbars > 2 then
-				if SavedOptionsPerChar.RightBars > 3 then
-					SavedOptionsPerChar.RightBars = 2
-				elseif SavedOptionsPerChar.RightBars > 2 then
-					SavedOptionsPerChar.RightBars = 1
-				elseif SavedOptionsPerChar.RightBars < 0 then
-					SavedOptionsPerChar.RightBars = 3
+				if ShestakUISettingsPerChar.RightBars > 3 then
+					ShestakUISettingsPerChar.RightBars = 2
+				elseif ShestakUISettingsPerChar.RightBars > 2 then
+					ShestakUISettingsPerChar.RightBars = 1
+				elseif ShestakUISettingsPerChar.RightBars < 0 then
+					ShestakUISettingsPerChar.RightBars = 3
 				end
 			elseif C.actionbar.rightbars < 3 then
-				if SavedOptionsPerChar.RightBars > 2 then
-					SavedOptionsPerChar.RightBars = 1
-				elseif SavedOptionsPerChar.RightBars < 0 then
-					SavedOptionsPerChar.RightBars = 2
+				if ShestakUISettingsPerChar.RightBars > 2 then
+					ShestakUISettingsPerChar.RightBars = 1
+				elseif ShestakUISettingsPerChar.RightBars < 0 then
+					ShestakUISettingsPerChar.RightBars = 2
 				end
 			end
 
@@ -307,10 +313,10 @@ for i = 1, 5 do
 		ToggleBar[i]:SetScript("OnMouseDown", function()
 			if InCombatLockdown() then return end
 
-			if SavedOptionsPerChar.BarsLocked == true then
-				SavedOptionsPerChar.BarsLocked = false
-			elseif SavedOptionsPerChar.BarsLocked == false then
-				SavedOptionsPerChar.BarsLocked = true
+			if ShestakUISettingsPerChar.BarsLocked == true then
+				ShestakUISettingsPerChar.BarsLocked = false
+			elseif ShestakUISettingsPerChar.BarsLocked == false then
+				ShestakUISettingsPerChar.BarsLocked = true
 			end
 
 			LockCheck(i)
@@ -322,10 +328,10 @@ for i = 1, 5 do
 		ToggleBar[i]:SetScript("OnMouseDown", function()
 			if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
 
-			if SavedOptionsPerChar.SplitBars == false then
-				SavedOptionsPerChar.SplitBars = true
-			elseif SavedOptionsPerChar.SplitBars == true then
-				SavedOptionsPerChar.SplitBars = false
+			if ShestakUISettingsPerChar.SplitBars == false then
+				ShestakUISettingsPerChar.SplitBars = true
+			elseif ShestakUISettingsPerChar.SplitBars == true then
+				ShestakUISettingsPerChar.SplitBars = false
 			end
 			SplitBars()
 		end)
@@ -346,11 +352,21 @@ for i = 1, 5 do
 				ToggleBar[i]:FadeIn()
 			end
 		elseif i == 3 or i == 4 then
-			ToggleBar[3]:FadeIn()
-			ToggleBar[4]:FadeIn()
+			if C.actionbar.bottombars_mouseover then
+				ToggleBar[i]:SetAlpha(1)
+				BottomBarMouseOver(1)
+			else
+				ToggleBar[3]:FadeIn()
+				ToggleBar[4]:FadeIn()
+			end
 			VehicleButtonAnchor:ClearAllPoints()
 			VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", ToggleBar[4], "BOTTOMLEFT", -C.actionbar.button_space, 0)
 		else
+			if i == 1 and C.actionbar.bottombars_mouseover then
+				BottomBarMouseOver(1)
+				ToggleBar[i]:SetAlpha(1)
+				return
+			end
 			ToggleBar[i]:FadeIn()
 		end
 		if i == 5 then
@@ -370,15 +386,25 @@ for i = 1, 5 do
 			end
 		elseif i == 3 or i == 4 then
 			if InCombatLockdown() then return end
-			ToggleBar[3]:FadeOut()
-			ToggleBar[4]:FadeOut()
+			if C.actionbar.bottombars_mouseover then
+				ToggleBar[i]:SetAlpha(0)
+				BottomBarMouseOver(0)
+			else
+				ToggleBar[3]:FadeOut()
+				ToggleBar[4]:FadeOut()
+			end
 			VehicleButtonAnchor:ClearAllPoints()
-			if SavedOptionsPerChar.SplitBars == true then
+			if ShestakUISettingsPerChar.SplitBars == true then
 				VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", SplitBarLeft, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 			else
 				VehicleButtonAnchor:SetPoint("BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
 			end
 		else
+			if i == 1 and C.actionbar.bottombars_mouseover then
+				BottomBarMouseOver(0)
+				ToggleBar[i]:SetAlpha(0)
+				return
+			end
 			ToggleBar[i]:FadeOut()
 		end
 		if i == 5 then
@@ -388,11 +414,11 @@ for i = 1, 5 do
 
 	ToggleBar[i]:SetScript("OnUpdate", function()
 		if InCombatLockdown() then return end
-		if SavedOptionsPerChar.BarsLocked == true then
+		if ShestakUISettingsPerChar.BarsLocked == true then
 			for i = 1, 4 do
 				ToggleBar[i]:EnableMouse(false)
 			end
-		elseif SavedOptionsPerChar.BarsLocked == false then
+		elseif ShestakUISettingsPerChar.BarsLocked == false then
 			for i = 1, 4 do
 				ToggleBar[i]:EnableMouse(true)
 			end

@@ -41,11 +41,11 @@ RightBarAnchor:SetFrameStrata("LOW")
 ----------------------------------------------------------------------------------------
 if C.actionbar.split_bars == true then
 	local SplitBarLeft = CreateFrame("Frame", "SplitBarLeft", T_PetBattleFrameHider)
-	SplitBarLeft:CreatePanel("Invisible", (C.actionbar.button_size * 3) + (C.actionbar.button_space * 2), (C.actionbar.button_size * 2) + C.actionbar.button_space, "BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", -C.actionbar.button_space, 0)
+	SplitBarLeft:CreatePanel("Invisible", (C.actionbar.button_size * 3) + (C.actionbar.button_space * 3), (C.actionbar.button_size * 2) + C.actionbar.button_space, "BOTTOMRIGHT", ActionBarAnchor, "BOTTOMLEFT", 0, 0)
 	SplitBarLeft:SetFrameStrata("LOW")
 
 	local SplitBarRight = CreateFrame("Frame", "SplitBarRight", T_PetBattleFrameHider)
-	SplitBarRight:CreatePanel("Invisible", (C.actionbar.button_size * 3) + (C.actionbar.button_space * 2), (C.actionbar.button_size * 2) + C.actionbar.button_space, "BOTTOMLEFT", ActionBarAnchor, "BOTTOMRIGHT", C.actionbar.button_space, 0)
+	SplitBarRight:CreatePanel("Invisible", (C.actionbar.button_size * 3) + (C.actionbar.button_space * 3), (C.actionbar.button_size * 2) + C.actionbar.button_space, "BOTTOMLEFT", ActionBarAnchor, "BOTTOMRIGHT", 0, 0)
 	SplitBarRight:SetFrameStrata("LOW")
 end
 

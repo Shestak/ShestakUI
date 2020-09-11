@@ -88,6 +88,7 @@ StaticPopupDialogs.SHESTAKUI_RESET_CATEGORY = {
 	OnAccept = function()
 		if ShestakUIOptionsPanelgeneral2:IsShown() then
 			C.options.media = {}
+			C.options.media.profile = C.media.profile
 		else
 			C.options[C.category] = {}
 		end
@@ -425,6 +426,61 @@ end)
 AddSpellButton:Disable()
 tinsert(ns.buttons, AddSpellButton)
 
+-- Expert mode
+do
+	local frame = CreateFrame("Frame", "ShestakUIProfileFrame", UIParent)
+	frame:SetWidth(540)
+	frame:SetHeight(320)
+	frame:SetPoint("CENTER", UIParent, "CENTER", 0, 100)
+	frame:SetFrameStrata("DIALOG")
+	tinsert(UISpecialFrames, "ShestakUIProfileFrame")
+	frame:Hide()
+	frame:EnableMouse(true)
+
+	local editBox = CreateFrame("EditBox", "ShestakUIProfileFrameEditBox", frame)
+	editBox:SetMultiLine(true)
+	editBox:SetMaxLetters(99999)
+	editBox:SetAutoFocus(true)
+	editBox:SetFontObject(ChatFontNormal)
+	editBox:SetWidth(510)
+	editBox:SetHeight(300)
+	editBox:SetScript("OnEscapePressed", function() frame:Hide() end)
+
+	local scrollArea = CreateFrame("ScrollFrame", "ShestakUIProfileFrameScroll", frame, "UIPanelScrollFrameTemplate")
+	scrollArea:SetPoint("TOPLEFT", frame, "TOPLEFT", 4, -8)
+	scrollArea:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -27, 30)
+	scrollArea:SetScrollChild(editBox)
+
+	local CancelButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
+	CancelButton:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -4, 3)
+	CancelButton:SetSize(100, 23)
+	CancelButton:SetText(CLOSE)
+	CancelButton:SetWidth(CancelButton.Text:GetWidth() + 15)
+	CancelButton:SetScript("OnClick", function()
+		frame:Hide()
+	end)
+
+	tinsert(ns.buttons, CancelButton)
+
+	local SaveButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
+	SaveButton:SetPoint("BOTTOMRIGHT", CancelButton, "BOTTOMLEFT", -4, 0)
+	SaveButton:SetSize(100, 23)
+	SaveButton:SetText(SAVE)
+	SaveButton:SetWidth(SaveButton.Text:GetWidth() + 15)
+	SaveButton:SetScript("OnClick", function()
+		local _, output = loadstring(editBox:GetText())
+		if output then
+			print("|cffFF0000"..output.."|r")
+		else
+			C.options.media = C.options.media or {}
+			C.options.media.profile = editBox:GetText()
+			frame:Hide()
+			ns.setReloadNeeded(true)
+		end
+	end)
+
+	tinsert(ns.buttons, SaveButton)
+end
 -- Category
 ns.addCategory("general", GENERAL_LABEL, L_GUI_GENERAL_SUBTEXT, true)
 ns.addCategory("font", L.font, L.font_subtext, true, true)
@@ -530,6 +586,33 @@ do
 
 	local pixel_font_size = ns.CreateNumberSlider(parent, "pixel_font_size", nil, nil, 8, 48, 1, true, FONT_SIZE)
 	pixel_font_size:SetPoint("TOPLEFT", pixel_font, "BOTTOMLEFT", 16, -16)
+
+	local LuaButton = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
+	LuaButton:SetPoint("BOTTOMRIGHT", parent, "BOTTOMRIGHT", -20, 5)
+	LuaButton:SetSize(100, 23)
+	LuaButton:SetText(L_GUI_EXPERT_MODE)
+	LuaButton:SetWidth(LuaButton.Text:GetWidth() + 15)
+	LuaButton:SetScript("OnClick", function()
+		ShestakUIProfileFrameEditBox:SetText(C.media.profile)
+		C_Timer.After(0.01, function()
+			local _, max = ShestakUIProfileFrameScrollScrollBar:GetMinMaxValues()
+			for _ = 1, max do
+				ScrollFrameTemplate_OnMouseWheel(ShestakUIProfileFrameScroll, -1)
+			end
+		end)
+		ShestakUIProfileFrame:Show()
+	end)
+
+	LuaButton:SetScript("OnEnter", function()
+		GameTooltip:SetOwner(LuaButton, "ANCHOR_RIGHT", 5, 5)
+		GameTooltip:SetText(L_GUI_EXPERT_MODE_DESC, nil, nil, nil, nil, true)
+	end)
+
+	LuaButton:SetScript("OnLeave", function()
+		GameTooltip:Hide()
+	end)
+
+	tinsert(ns.buttons, LuaButton)
 end
 
 -- Font
@@ -1337,8 +1420,11 @@ do
 	local rightbars = ns.CreateNumberSlider(parent, "rightbars", nil, nil, 0, 3, 1, true, L_GUI_ACTIONBAR_RIGHTBARS)
 	rightbars:SetPoint("LEFT", bottombars, "RIGHT", 120, 0)
 
+	local bottombars_mouseover = ns.CreateCheckBox(parent, "bottombars_mouseover")
+	bottombars_mouseover:SetPoint("TOPLEFT", bottombars, "BOTTOMLEFT", 0, -10)
+
 	local rightbars_mouseover = ns.CreateCheckBox(parent, "rightbars_mouseover", L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER)
-	rightbars_mouseover:SetPoint("TOPLEFT", bottombars, "BOTTOMLEFT", 0, -10)
+	rightbars_mouseover:SetPoint("TOPLEFT", bottombars_mouseover, "BOTTOMLEFT", 0, 0)
 
 	local petbar_hide = ns.CreateCheckBox(parent, "petbar_hide", L_GUI_ACTIONBAR_PETBAR_HIDE)
 	petbar_hide:SetPoint("TOPLEFT", rightbars_mouseover, "BOTTOMLEFT", 0, 0)
@@ -2410,6 +2496,9 @@ f:SetScript("OnEvent", function()
 
 	T.SkinEditBox(SpellListTextInput)
 	T.SkinEditBox(SpellListTextInput2)
+
+	ShestakUIProfileFrame:SetTemplate("Transparent")
+	T.SkinScrollBar(ShestakUIProfileFrameScrollScrollBar)
 end)
 
 local menuButton = CreateFrame("Button", "GameMenuButtonSettingsUI", GameMenuFrame, "GameMenuButtonTemplate")

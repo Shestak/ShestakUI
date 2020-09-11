@@ -98,7 +98,7 @@ end)
 coords:RegisterEvent("PLAYER_ENTERING_WORLD")
 coords:SetScript("OnEvent", function(self, event)
 	self:UnregisterEvent(event)
-	if SavedOptionsPerChar and SavedOptionsPerChar.Coords ~= true then
+	if ShestakUISettingsPerChar and ShestakUISettingsPerChar.Coords ~= true then
 		coords:SetAlpha(0)
 	end
 end)
@@ -127,15 +127,15 @@ local function WorldMapMenu(self, level)
 	wipe(info)
 	info.text = L_MAP_COORDS
 	info.checked = function()
-		return SavedOptionsPerChar.Coords == true
+		return ShestakUISettingsPerChar.Coords == true
 	end
 
 	info.func = function()
-		if SavedOptionsPerChar.Coords == true then
-			SavedOptionsPerChar.Coords = false
+		if ShestakUISettingsPerChar.Coords == true then
+			ShestakUISettingsPerChar.Coords = false
 			coords:SetAlpha(0)
 		else
-			SavedOptionsPerChar.Coords = true
+			ShestakUISettingsPerChar.Coords = true
 			coords:SetAlpha(1)
 		end
 	end
@@ -145,17 +145,17 @@ local function WorldMapMenu(self, level)
 		wipe(info)
 		info.text = L_MAP_FOG
 		info.checked = function()
-			return SavedOptionsPerChar.FogOfWar == true
+			return ShestakUISettingsPerChar.FogOfWar == true
 		end
 
 		info.func = function()
-			if SavedOptionsPerChar.FogOfWar == true then
-				SavedOptionsPerChar.FogOfWar = false
+			if ShestakUISettingsPerChar.FogOfWar == true then
+				ShestakUISettingsPerChar.FogOfWar = false
 				for i = 1, #T.overlayTextures do
 					T.overlayTextures[i]:Hide()
 				end
 			else
-				SavedOptionsPerChar.FogOfWar = true
+				ShestakUISettingsPerChar.FogOfWar = true
 				for i = 1, #T.overlayTextures do
 					T.overlayTextures[i]:Show()
 				end

@@ -14,6 +14,8 @@ L_GUI_LAYOUT = "Change layout"
 L_GUI_SPELL_LIST = "List of spells"
 L_GUI_SPELL_INPUT = "Spell ID"
 L_GUI_TIME_INPUT = "Time"
+L_GUI_EXPERT_MODE = "Expert mode"
+L_GUI_EXPERT_MODE_DESC = "Custom editing of Lua profile"
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface settings. Type in chat '/uihelp' for help."
@@ -239,6 +241,7 @@ L.actionbar_toggle_mode_desc = "The quick change in the number of panels. For th
 L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Hide proc highlight"
 L_GUI_ACTIONBAR_BOTTOMBARS = "Number of action bars on the bottom"
 L_GUI_ACTIONBAR_RIGHTBARS = "Number of action bars on right"
+L.actionbar_bottombars_mouseover = "Bottom bars on mouseover"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Right bars on mouseover"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "Hide pet bar"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Enable horizontal pet bar"

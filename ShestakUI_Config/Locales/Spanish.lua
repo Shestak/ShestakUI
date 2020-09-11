@@ -17,6 +17,8 @@ L_GUI_LAYOUT = "Change layout" -- Need review
 L_GUI_SPELL_LIST = "List of spells" -- Need review
 L_GUI_SPELL_INPUT = "Spell ID" -- Need review
 L_GUI_TIME_INPUT = "Time" -- Need review
+L_GUI_EXPERT_MODE = "Expert mode" -- Need review
+L_GUI_EXPERT_MODE_DESC = "Custom editing of Lua profile" -- Need review
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface settings. Type in chat '/uihelp' for help." -- Need review
@@ -216,6 +218,7 @@ L.actionbar_toggle_mode_desc = "The quick change in the number of panels. For th
 L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "Hide proc highlight" -- Needs review
 L_GUI_ACTIONBAR_BOTTOMBARS = "Número de barras de acción abajo"
 L_GUI_ACTIONBAR_RIGHTBARS = "Número de barras de acción en la derecha"
+L.actionbar_bottombars_mouseover = "Bottom bars on mouseover" -- Needs review
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "Barras de la derecha se muestran al pasar el ratón"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "Ocultar barra de mascota"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "Activar barra de mascota horizontal"

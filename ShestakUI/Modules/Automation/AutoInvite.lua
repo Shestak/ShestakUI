@@ -45,7 +45,7 @@ local autoinvite = CreateFrame("Frame")
 autoinvite:RegisterEvent("CHAT_MSG_WHISPER")
 autoinvite:RegisterEvent("CHAT_MSG_BN_WHISPER")
 autoinvite:SetScript("OnEvent", function(_, event, arg1, arg2, ...)
-	if ((not UnitExists("party1") or UnitIsGroupLeader("player") or UnitIsGroupAssistant("player")) and arg1:lower():match(C.automation.invite_keyword)) and SavedOptionsPerChar.AutoInvite == true and not QueueStatusMinimapButton:IsShown() then
+	if ((not UnitExists("party1") or UnitIsGroupLeader("player") or UnitIsGroupAssistant("player")) and arg1:lower():match(C.automation.invite_keyword)) and ShestakUISettingsPerChar.AutoInvite == true and not QueueStatusMinimapButton:IsShown() then
 		if event == "CHAT_MSG_WHISPER" then
 			C_PartyInfo.InviteUnit(arg2)
 		elseif event == "CHAT_MSG_BN_WHISPER" then
@@ -58,16 +58,16 @@ end)
 
 SlashCmdList.AUTOINVITE = function(msg)
 	if msg == "" then
-		if SavedOptionsPerChar.AutoInvite == true then
-			SavedOptionsPerChar.AutoInvite = false
+		if ShestakUISettingsPerChar.AutoInvite == true then
+			ShestakUISettingsPerChar.AutoInvite = false
 			print("|cffffff00"..L_INVITE_DISABLE..".|r")
 		else
-			SavedOptionsPerChar.AutoInvite = true
+			ShestakUISettingsPerChar.AutoInvite = true
 			print("|cffffff00"..L_INVITE_ENABLE..C.automation.invite_keyword..".|r")
 			C.automation.invite_keyword = C.automation.invite_keyword
 		end
 	else
-		SavedOptionsPerChar.AutoInvite = true
+		ShestakUISettingsPerChar.AutoInvite = true
 		print("|cffffff00"..L_INVITE_ENABLE..msg..".|r")
 		C.automation.invite_keyword = msg
 	end

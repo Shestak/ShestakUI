@@ -139,6 +139,62 @@ if C.actionbar.rightbars_mouseover == true then
 	RightActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
 end
 
+function BottomBarMouseOver(alpha)
+	for i = 1, 12 do
+		local b = _G["ActionButton"..i]
+		b:SetAlpha(alpha)
+		local c = _G["ActionButton"..i.."Cooldown"]
+		T.HideSpiral(c, alpha)
+	end
+
+	if C.actionbar.bottombars > 1 and MultiBarBottomLeft:IsShown() then
+		for i = 1, 12 do
+			local b = _G["MultiBarBottomLeftButton"..i]
+			b:SetAlpha(alpha)
+			local c = _G["MultiBarBottomLeftButton"..i.."Cooldown"]
+			T.HideSpiral(c, alpha)
+		end
+	end
+
+	if C.actionbar.rightbars < 3 and MultiBarBottomRight:IsShown() then
+		if C.actionbar.toggle_mode == true and ShestakUISettingsPerChar.BottomBars == 1 then
+			for i = 4, 6 do
+				local b = _G["MultiBarBottomRightButton"..i]
+				b:SetAlpha(alpha)
+				local c = _G["MultiBarBottomRightButton"..i.."Cooldown"]
+				T.HideSpiral(c, alpha)
+			end
+
+			for i = 10, 12 do
+				local b = _G["MultiBarBottomRightButton"..i]
+				b:SetAlpha(alpha)
+				local c = _G["MultiBarBottomRightButton"..i.."Cooldown"]
+				T.HideSpiral(c, alpha)
+			end
+		else
+			for i = 1, 12 do
+				local b = _G["MultiBarBottomRightButton"..i]
+				b:SetAlpha(alpha)
+				local c = _G["MultiBarBottomRightButton"..i.."Cooldown"]
+				T.HideSpiral(c, alpha)
+			end
+		end
+	end
+end
+
+if C.actionbar.bottombars_mouseover then
+	ActionBarAnchor:SetScript("OnEnter", function() BottomBarMouseOver(1) end)
+	ActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then BottomBarMouseOver(0) end end)
+
+	if C.actionbar.split_bars == true then
+		SplitBarLeft:SetScript("OnEnter", function() BottomBarMouseOver(1) end)
+		SplitBarLeft:SetScript("OnLeave", function() if not HoverBind.enabled then BottomBarMouseOver(0) end end)
+
+		SplitBarRight:SetScript("OnEnter", function() BottomBarMouseOver(1) end)
+		SplitBarRight:SetScript("OnLeave", function() if not HoverBind.enabled then BottomBarMouseOver(0) end end)
+	end
+end
+
 ----------------------------------------------------------------------------------------
 --	Fix cooldown spiral alpha (WoD bug)
 ----------------------------------------------------------------------------------------
@@ -160,6 +216,10 @@ EventSpiral:SetScript("OnEvent", function()
 
 	if C.actionbar.stancebar_mouseover == true and C.actionbar.stancebar_horizontal == true then
 		StanceBarMouseOver(0)
+	end
+
+	if C.actionbar.bottombars_mouseover then
+		BottomBarMouseOver(0)
 	end
 end)
 

@@ -81,20 +81,20 @@ local function InstallUI()
 	end
 
 	-- Reset saved variables on char
-	SavedPositions = {}
-	SavedOptionsPerChar = {}
+	ShestakUIPositions = {}
+	ShestakUISettingsPerChar = {}
 
-	SavedOptionsPerChar.Install = true
-	SavedOptionsPerChar.FogOfWar = true
-	SavedOptionsPerChar.Coords = true
-	SavedOptionsPerChar.AutoInvite = false
-	SavedOptionsPerChar.Archaeology = false
-	SavedOptionsPerChar.BarsLocked = false
-	SavedOptionsPerChar.SplitBars = true
-	SavedOptionsPerChar.RightBars = C.actionbar.rightbars
-	SavedOptionsPerChar.BottomBars = C.actionbar.bottombars
+	ShestakUISettingsPerChar.Install = true
+	ShestakUISettingsPerChar.FogOfWar = true
+	ShestakUISettingsPerChar.Coords = true
+	ShestakUISettingsPerChar.AutoInvite = false
+	ShestakUISettingsPerChar.Archaeology = false
+	ShestakUISettingsPerChar.BarsLocked = false
+	ShestakUISettingsPerChar.SplitBars = true
+	ShestakUISettingsPerChar.RightBars = C.actionbar.rightbars
+	ShestakUISettingsPerChar.BottomBars = C.actionbar.bottombars
 
-	if SavedOptions.RaidLayout ~= "UNKNOWN" then
+	if ShestakUISettings.RaidLayout ~= "UNKNOWN" then
 		ReloadUI()
 	else
 		StaticPopup_Show("SWITCH_RAID")
@@ -114,8 +114,8 @@ StaticPopupDialogs.INSTALL_UI = {
 	button1 = ACCEPT,
 	button2 = CANCEL,
 	OnAccept = InstallUI,
-	OnCancel = function() SavedOptionsPerChar.Install = false
-	if SavedOptions.RaidLayout == "UNKNOWN" then StaticPopup_Show("SWITCH_RAID") end end,
+	OnCancel = function() ShestakUISettingsPerChar.Install = false
+	if ShestakUISettings.RaidLayout == "UNKNOWN" then StaticPopup_Show("SWITCH_RAID") end end,
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = false,
@@ -139,7 +139,7 @@ StaticPopupDialogs.RESET_UI = {
 	button1 = ACCEPT,
 	button2 = CANCEL,
 	OnAccept = InstallUI,
-	OnCancel = function() SavedOptionsPerChar.Install = true end,
+	OnCancel = function() ShestakUISettingsPerChar.Install = true end,
 	showAlert = true,
 	timeout = 0,
 	whileDead = 1,
@@ -151,7 +151,7 @@ StaticPopupDialogs.RESET_STATS = {
 	text = L_POPUP_RESETSTATS,
 	button1 = ACCEPT,
 	button2 = CANCEL,
-	OnAccept = function() SavedStats = {} ReloadUI() end,
+	OnAccept = function() ShestakUIStats = {} ReloadUI() end,
 	showAlert = true,
 	timeout = 0,
 	whileDead = 1,
@@ -164,9 +164,9 @@ StaticPopupDialogs.SWITCH_RAID = {
 	button1 = DAMAGER,
 	button2 = HEALER,
 	button3 = "Blizzard",
-	OnAccept = function() SavedOptions.RaidLayout = "DPS" ReloadUI() end,
-	OnCancel = function() SavedOptions.RaidLayout = "HEAL" ReloadUI() end,
-	OnAlt = function() SavedOptions.RaidLayout = "NONE" ReloadUI() end,
+	OnAccept = function() ShestakUISettings.RaidLayout = "DPS" ReloadUI() end,
+	OnCancel = function() ShestakUISettings.RaidLayout = "HEAL" ReloadUI() end,
+	OnAlt = function() ShestakUISettings.RaidLayout = "NONE" ReloadUI() end,
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = false,
@@ -187,19 +187,59 @@ OnLogon:RegisterEvent("PLAYER_ENTERING_WORLD")
 OnLogon:SetScript("OnEvent", function(self)
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 
+	-- TODO delete old variable
+	if SavedOptions then
+		ShestakUISettings = SavedOptions
+		SavedOptions = nil
+	end
+
+	if SavedStats then
+		ShestakUIStats = SavedStats
+		SavedStats = nil
+	end
+
+	if SavedBindings then
+		ShestakUIBindings = SavedBindings
+		SavedBindings = nil
+	end
+
+	if SavedCurrency then
+		ShestakUICurrency = SavedCurrency
+		SavedCurrency = nil
+	end
+
+	if not ShestakUISettings.Migrated then
+		if SavedOptionsPerChar then
+			if SavedOptionsPerChar.UFPos then
+				SavedPositions.UFPos = SavedOptionsPerChar.UFPos
+				SavedOptionsPerChar.UFPos = nil
+				StaticPopup_Show("INSTALL_UI")
+			end
+			ShestakUISettingsPerChar = SavedOptionsPerChar
+			SavedOptionsPerChar = nil
+		end
+
+		if SavedPositions then
+			ShestakUIPositions = SavedPositions
+			SavedPositions = nil
+		end
+
+		ShestakUISettings.Migrated = true
+	end
+
 	-- Create empty CVar if they doesn't exist
-	if SavedOptions == nil then SavedOptions = {} end
-	if SavedPositions == nil then SavedPositions = {} end
-	if SavedOptionsPerChar == nil then SavedOptionsPerChar = {} end
-	if SavedOptions.RaidLayout == nil then SavedOptions.RaidLayout = "UNKNOWN" end
-	if SavedOptionsPerChar.FogOfWar == nil then SavedOptionsPerChar.FogOfWar = true end
-	if SavedOptionsPerChar.Coords == nil then SavedOptionsPerChar.Coords = true end
-	if SavedOptionsPerChar.AutoInvite == nil then SavedOptionsPerChar.AutoInvite = false end
-	if SavedOptionsPerChar.Archaeology == nil then SavedOptionsPerChar.Archaeology = false end
-	if SavedOptionsPerChar.BarsLocked == nil then SavedOptionsPerChar.BarsLocked = false end
-	if SavedOptionsPerChar.SplitBars == nil then SavedOptionsPerChar.SplitBars = true end
-	if SavedOptionsPerChar.RightBars == nil then SavedOptionsPerChar.RightBars = C.actionbar.rightbars end
-	if SavedOptionsPerChar.BottomBars == nil then SavedOptionsPerChar.BottomBars = C.actionbar.bottombars end
+	if ShestakUISettings == nil then ShestakUISettings = {} end
+	if ShestakUIPositions == nil then ShestakUIPositions = {} end
+	if ShestakUISettingsPerChar == nil then ShestakUISettingsPerChar = {} end
+	if ShestakUISettings.RaidLayout == nil then ShestakUISettings.RaidLayout = "UNKNOWN" end
+	if ShestakUISettingsPerChar.FogOfWar == nil then ShestakUISettingsPerChar.FogOfWar = true end
+	if ShestakUISettingsPerChar.Coords == nil then ShestakUISettingsPerChar.Coords = true end
+	if ShestakUISettingsPerChar.AutoInvite == nil then ShestakUISettingsPerChar.AutoInvite = false end
+	if ShestakUISettingsPerChar.Archaeology == nil then ShestakUISettingsPerChar.Archaeology = false end
+	if ShestakUISettingsPerChar.BarsLocked == nil then ShestakUISettingsPerChar.BarsLocked = false end
+	if ShestakUISettingsPerChar.SplitBars == nil then ShestakUISettingsPerChar.SplitBars = true end
+	if ShestakUISettingsPerChar.RightBars == nil then ShestakUISettingsPerChar.RightBars = C.actionbar.rightbars end
+	if ShestakUISettingsPerChar.BottomBars == nil then ShestakUISettingsPerChar.BottomBars = C.actionbar.bottombars end
 
 	if T.screenWidth < 1024 and GetCVar("gxMonitor") == "0" then
 		SetCVar("useUiScale", 0)
@@ -219,12 +259,12 @@ OnLogon:SetScript("OnEvent", function(self)
 		end
 
 		-- Install default if we never ran ShestakUI on this character
-		if not SavedOptionsPerChar.Install then
+		if not ShestakUISettingsPerChar.Install then
 			StaticPopup_Show("INSTALL_UI")
 		end
 	end
 
-	if SavedOptions.RaidLayout == "UNKNOWN" and SavedOptionsPerChar.Install then
+	if ShestakUISettings.RaidLayout == "UNKNOWN" and ShestakUISettingsPerChar.Install then
 		StaticPopup_Show("SWITCH_RAID")
 	end
 

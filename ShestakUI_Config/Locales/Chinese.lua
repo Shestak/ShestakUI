@@ -17,6 +17,8 @@ L_GUI_LAYOUT = "布局切换"
 L_GUI_SPELL_LIST = "法术列表"
 L_GUI_SPELL_INPUT = "法术ID"
 L_GUI_TIME_INPUT = "时间"
+L_GUI_EXPERT_MODE = "Expert mode" -- Need review
+L_GUI_EXPERT_MODE_DESC = "Custom editing of Lua profile" -- Need review
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "一般用戶界面设置，键入 /uihelp 获取更多可用命令。"
@@ -216,6 +218,7 @@ L.actionbar_toggle_mode_desc = "可随时调节动作条显示数目。按钮位
 L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "关闭动作条技能特效高亮"
 L_GUI_ACTIONBAR_BOTTOMBARS = "底部动作条数目"
 L_GUI_ACTIONBAR_RIGHTBARS = "右侧动作条数目"
+L.actionbar_bottombars_mouseover = "Bottom bars on mouseover" -- Needs review
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "右侧动作条鼠标悬停显示"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "隐藏宠物动作条"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "宠物动作条横向排列"

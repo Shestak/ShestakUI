@@ -27,9 +27,9 @@ for i = 1, 12 do
 		elseif i == 4 then
 			b:SetPoint("BOTTOMLEFT", SplitBarLeft, "BOTTOMLEFT", 0, 0)
 		elseif i == 7 then
-			b:SetPoint("TOPLEFT", SplitBarRight, "TOPLEFT", 0, 0)
+			b:SetPoint("TOPLEFT", SplitBarRight, "TOPLEFT", C.actionbar.button_space, 0)
 		elseif i == 10 then
-			b:SetPoint("BOTTOMLEFT", SplitBarRight, "BOTTOMLEFT", 0, 0)
+			b:SetPoint("BOTTOMLEFT", SplitBarRight, "BOTTOMLEFT", C.actionbar.button_space, 0)
 		else
 			b:SetPoint("LEFT", b2, "RIGHT", C.actionbar.button_space, 0)
 		end
@@ -62,5 +62,14 @@ if C.actionbar.rightbars_mouseover == true and C.actionbar.rightbars > 2 then
 		b:SetAlpha(0)
 		b:HookScript("OnEnter", function() RightBarMouseOver(1) end)
 		b:HookScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
+	end
+end
+
+if C.actionbar.bottombars_mouseover and C.actionbar.rightbars < 3 then
+	for i = 1, 12 do
+		local b = _G["MultiBarBottomRightButton"..i]
+		b:SetAlpha(0)
+		b:HookScript("OnEnter", function() BottomBarMouseOver(1) end)
+		b:HookScript("OnLeave", function() if not HoverBind.enabled then BottomBarMouseOver(0) end end)
 	end
 end

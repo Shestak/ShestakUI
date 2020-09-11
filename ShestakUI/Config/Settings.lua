@@ -241,6 +241,7 @@ C["actionbar"] = {
 	["toggle_mode"] = true,						-- Enable toggle mode
 	-- Bottom bars
 	["bottombars"] = 2,							-- Number of action bars on the bottom (1, 2 or 3)
+	["bottombars_mouseover"] = false,			-- Bottom bars on mouseover
 	-- Right bars
 	["rightbars"] = 3,							-- Number of action bars on right (0, 1, 2 or 3)
 	["rightbars_mouseover"] = true,				-- Right bars on mouseover

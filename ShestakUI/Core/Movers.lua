@@ -68,12 +68,24 @@ local coordFrame = CreateFrame("Frame")
 coordFrame:SetScript("OnUpdate", UpdateCoords)
 coordFrame:Hide()
 
+local SaveDefaultPosition = function(mover)
+	local ap, p, rp, x, y = mover.frame:GetPoint()
+	ShestakUIPositions.Default = ShestakUIPositions.Default or {}
+	if not ShestakUIPositions.Default[mover.frame:GetName()] then
+		if not p then
+			p = UIParent
+		end
+		ShestakUIPositions.Default[mover.frame:GetName()] = {ap, p:GetName(), rp, x, y}
+	end
+end
+
 local SetPosition = function(mover)
 	local ap, _, rp, x, y = mover:GetPoint()
-	SavedPositions[mover.frame:GetName()] = {ap, "UIParent", rp, x, y}
+	ShestakUIPositions[mover.frame:GetName()] = {ap, "UIParent", rp, x, y}
 end
 
 local OnDragStart = function(self)
+	SaveDefaultPosition(self)
 	self:StartMoving()
 
 	coordFrame.child = self
@@ -90,8 +102,15 @@ end
 
 local RestoreDefaults = function(self, button)
 	if button == "RightButton" then
-		self:SetBackdropColor(0.2, 0.6, 0.2, 0.7)
-		SavedPositions[self.frame:GetName()] = nil
+		local data = ShestakUIPositions.Default[self.frame:GetName()]
+		if data then
+			self.frame:ClearAllPoints()
+			self.frame:SetPoint(unpack(data))
+			self:ClearAllPoints()
+			self:SetAllPoints(self.frame)
+			ShestakUIPositions.Default[self.frame:GetName()] = nil
+			ShestakUIPositions[self.frame:GetName()] = nil
+		end
 	end
 end
 
@@ -132,8 +151,7 @@ end
 local InitMove = function(msg)
 	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
 	if msg and (msg == "reset" or msg == "куыуе") then
-		SavedPositions = {}
-		SavedOptionsPerChar.UFPos = {}
+		ShestakUIPositions = {}
 		for _, v in pairs(placed) do
 			if _G[v] then
 				_G[v]:SetUserPlaced(false)
@@ -168,8 +186,8 @@ local RestoreUI = function(self)
 		end)
 		return
 	end
-	if SavedPositions then
-		for frame_name, point in pairs(SavedPositions) do
+	if ShestakUIPositions then
+		for frame_name, point in pairs(ShestakUIPositions) do
 			if _G[frame_name] then
 				_G[frame_name]:ClearAllPoints()
 				_G[frame_name]:SetPoint(unpack(point))

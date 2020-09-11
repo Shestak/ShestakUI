@@ -13,8 +13,8 @@ local numRaces = 20
 local Loaded = false
 
 function stArch:OnLoad(self)
-	if SavedOptionsPerChar == nil then SavedOptionsPerChar = {} end
-	if SavedOptionsPerChar.Archaeology == false then self:Hide() end
+	if ShestakUISettingsPerChar == nil then ShestakUISettingsPerChar = {} end
+	if ShestakUISettingsPerChar.Archaeology == false then self:Hide() end
 	-- Title Bar
 	stArch["title"] = CreateFrame("Frame", "ArchTitleFrame", self)
 	stArch["title"]:SetWidth(self:GetWidth() - 10)
@@ -32,7 +32,7 @@ function stArch:OnLoad(self)
 	T.SkinCloseButton(stArch["close"], nil, nil, true)
 	stArch["close"]:SetWidth(12)
 	stArch["close"]:SetHeight(12)
-	stArch["close"]:SetScript("OnMouseUp", function() self:Hide() SavedOptionsPerChar.Archaeology = false end)
+	stArch["close"]:SetScript("OnMouseUp", function() self:Hide() ShestakUISettingsPerChar.Archaeology = false end)
 
 	-- Artifact Progress Bars
 	local progressBars = stArch["progressBars"]
@@ -500,7 +500,7 @@ SlashCmdList.STARCHAEOLOGIST = function()
 	ToggleFrame(stArchFrame)
 	stArchFrame:StopMovingOrSizing()
 
-	if stArchFrame:IsShown() then SavedOptionsPerChar.Archaeology = true else SavedOptionsPerChar.Archaeology = false end
+	if stArchFrame:IsShown() then ShestakUISettingsPerChar.Archaeology = true else ShestakUISettingsPerChar.Archaeology = false end
 end
 SLASH_STARCHAEOLOGIST1 = "/starch"
 SLASH_STARCHAEOLOGIST2 = "/arch"
@@ -513,8 +513,8 @@ stArchFrame:HookScript("OnEvent", function(self)
 		stArch:OnEvent()
 		stArch:UpdateFrameHeight(self)
 	end
-	if not select(3, GetProfessions()) then stArchFrame:Hide() SavedOptionsPerChar.Archaeology = false end
-	if SavedOptionsPerChar.Archaeology == true and not self:IsShown() then self:Show() end
+	if not select(3, GetProfessions()) then stArchFrame:Hide() ShestakUISettingsPerChar.Archaeology = false end
+	if ShestakUISettingsPerChar.Archaeology == true and not self:IsShown() then self:Show() end
 end)
 
 local b = CreateFrame("Button", "SwitchArch", UIParent)
@@ -530,10 +530,10 @@ b:SetAlpha(0)
 b:SetScript("OnClick", function()
 	if _G["stArchaeologyFrame"]:IsShown() then
 		_G["stArchaeologyFrame"]:Hide()
-		SavedOptionsPerChar.Archaeology = false
+		ShestakUISettingsPerChar.Archaeology = false
 	else
 		_G["stArchaeologyFrame"]:Show()
-		SavedOptionsPerChar.Archaeology = true
+		ShestakUISettingsPerChar.Archaeology = true
 	end
 	if C.minimap.toggle_menu and _G["TTMenuAddOnBackground"]:IsShown() then
 		_G["TTMenuAddOnBackground"]:Hide()

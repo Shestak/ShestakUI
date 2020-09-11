@@ -23,13 +23,13 @@ switch:EnableMouse(true)
 switch:RegisterForClicks("AnyUp")
 switch:SetScript("OnClick", function(_, button)
 	if button == "LeftButton" then
-		SavedOptions.RaidLayout = "HEAL"
+		ShestakUISettings.RaidLayout = "HEAL"
 		ReloadUI()
 	elseif button == "RightButton" then
-		SavedOptions.RaidLayout = "DPS"
+		ShestakUISettings.RaidLayout = "DPS"
 		ReloadUI()
 	elseif button == "MiddleButton" then
-		SavedOptions.RaidLayout = "NONE"
+		ShestakUISettings.RaidLayout = "NONE"
 		ReloadUI()
 	end
 end)
@@ -52,14 +52,14 @@ end)
 
 switch:RegisterEvent("PLAYER_LOGIN")
 switch:SetScript("OnEvent", function()
-	if SavedOptions and SavedOptions.RaidLayout == "DPS" then
+	if ShestakUISettings and ShestakUISettings.RaidLayout == "DPS" then
 		switch.t:SetTexCoord(0.25, 0.5, 0, 1)
-	elseif SavedOptions and SavedOptions.RaidLayout == "HEAL" then
+	elseif ShestakUISettings and ShestakUISettings.RaidLayout == "HEAL" then
 		switch.t:SetTexCoord(0.75, 1, 0, 1)
-	elseif SavedOptions and SavedOptions.RaidLayout == "NONE" then
+	elseif ShestakUISettings and ShestakUISettings.RaidLayout == "NONE" then
 		switch.t:SetTexture("Interface\\ChatFrame\\UI-ChatIcon-Blizz")
 		switch.t:SetTexCoord(0.2, 0.8, -0.1, 1.1)
-	elseif SavedOptions and SavedOptions.RaidLayout == "UNKNOWN" or SavedOptions == nil then
+	elseif ShestakUISettings and ShestakUISettings.RaidLayout == "UNKNOWN" or ShestakUISettings == nil then
 		switch.t:SetTexture("Interface\\InventoryItems\\WoWUnknownItem01")
 		switch.t:SetTexCoord(0.2, 0.8, 0.2, 0.8)
 	end

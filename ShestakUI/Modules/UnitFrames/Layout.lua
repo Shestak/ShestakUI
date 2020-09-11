@@ -1461,7 +1461,7 @@ end
 if C.raidframe.auto_position == "DYNAMIC" then
 	local prevNum = C.raidframe.raid_groups
 	local function Reposition(self)
-		if SavedOptions and SavedOptions.RaidLayout == "HEAL" and not C.raidframe.raid_groups_vertical and C.raidframe.raid_groups > 5 then
+		if ShestakUISettings and ShestakUISettings.RaidLayout == "HEAL" and not C.raidframe.raid_groups_vertical and C.raidframe.raid_groups > 5 then
 			if InCombatLockdown() then return end
 			local num = GetNumGroupMembers()
 			local maxGroup = 5
@@ -1499,7 +1499,7 @@ if C.raidframe.auto_position == "DYNAMIC" then
 	frame:SetScript("OnEvent", Reposition)
 elseif C.raidframe.auto_position == "STATIC" then
 	local function Reposition()
-		if SavedOptions and SavedOptions.RaidLayout == "HEAL" and not C.raidframe.raid_groups_vertical and C.raidframe.raid_groups > 5 then
+		if ShestakUISettings and ShestakUISettings.RaidLayout == "HEAL" and not C.raidframe.raid_groups_vertical and C.raidframe.raid_groups > 5 then
 			if C.unitframe.castbar_icon == true then
 				oUF_Player_Castbar:SetPoint(C.position.unitframes.player_castbar[1], C.position.unitframes.player_castbar[2], C.position.unitframes.player_castbar[3], C.position.unitframes.player_castbar[4] + 11, C.position.unitframes.player_castbar[5] + (C.raidframe.raid_groups - 5) * 33)
 			else

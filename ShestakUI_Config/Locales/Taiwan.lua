@@ -17,6 +17,8 @@ L_GUI_LAYOUT = "佈局切換"
 L_GUI_SPELL_LIST = "法術列表"
 L_GUI_SPELL_INPUT = "法術ID"
 L_GUI_TIME_INPUT = "時間"
+L_GUI_EXPERT_MODE = "Expert mode" -- Need review
+L_GUI_EXPERT_MODE_DESC = "Custom editing of Lua profile" -- Need review
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "一般用戶界面設置，鍵入 /uihelp 獲取更多可用命令。"
@@ -216,6 +218,7 @@ L.actionbar_toggle_mode_desc = "可隨時調節快捷列顯示數目。按鈕位
 L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "關閉快捷列技能特效高亮"
 L_GUI_ACTIONBAR_BOTTOMBARS = "底部快捷列數目"
 L_GUI_ACTIONBAR_RIGHTBARS = "右側快捷列數目"
+L.actionbar_bottombars_mouseover = "Bottom bars on mouseover" -- Needs review
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "右側快捷列滑鼠懸停顯示"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "隱藏寵物快捷列"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "寵物快捷列橫向排列"

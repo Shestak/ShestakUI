@@ -160,23 +160,19 @@ frame:SetScript("OnEvent", function(self, event, addon)
 	if event == "ADDON_LOADED" then
 		if addon ~= "ShestakUI" then return end
 
-		if not SavedCurrency then SavedCurrency = {} end
-		if not SavedCurrency[T.realm] then SavedCurrency[T.realm] = {} end
-		if not SavedCurrency[T.realm][faction] then SavedCurrency[T.realm][faction] = {} end
-		if not SavedCurrency[T.realm][faction][T.name] then SavedCurrency[T.realm][faction][T.name] = {} end
+		if faction ~= "Alliance" and faction ~= "Horde" then return end
 
-		for k in pairs(SavedCurrency[T.realm]) do
-			if k ~= "Alliance" and k ~= "Horde" then
-				SavedCurrency[T.realm][k] = nil
-			end
-		end
+		ShestakUICurrency = ShestakUICurrency or {}
+		ShestakUICurrency[T.realm] = ShestakUICurrency[T.realm] or {}
+		ShestakUICurrency[T.realm][faction] = ShestakUICurrency[T.realm][faction] or {}
+		ShestakUICurrency[T.realm][faction][T.name] = ShestakUICurrency[T.realm][faction][T.name] or {}
 
-		local now = time()
-
-		realmDB = SavedCurrency[T.realm][faction]
+		realmDB = ShestakUICurrency[T.realm][faction]
 		if not realmDB then return end
+
 		charDB = realmDB[T.name]
 
+		local now = time()
 		charDB.class = select(2, UnitClass("player"))
 		charDB.lastSeen = now
 
