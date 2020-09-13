@@ -50,7 +50,7 @@ if IsAddOnLoaded("Mapster") then
 	C.minimap.fog_of_war = false
 end
 
-if IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter") or IsAddOnLoaded("BasicChatMods") then
+if IsAddOnLoaded("Prat-3.0") or IsAddOnLoaded("Chatter") or IsAddOnLoaded("BasicChatMods") or IsAddOnLoaded("Glass") then
 	C.chat.enable = false
 end
 
