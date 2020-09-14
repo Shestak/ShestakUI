@@ -180,7 +180,7 @@ SLASH_DBMTEST1 = "/dbmtest"
 SLASH_DBMTEST2 = "/виьеуые"
 
 ----------------------------------------------------------------------------------------
---	Switch to heal layout
+--	Switch to Heal layout
 ----------------------------------------------------------------------------------------
 SlashCmdList.HEAL = function()
 	ShestakUISettings.RaidLayout = "HEAL"
@@ -190,7 +190,7 @@ SLASH_HEAL1 = "/heal"
 SLASH_HEAL2 = "/руфд"
 
 ----------------------------------------------------------------------------------------
---	Switch to dps layout
+--	Switch to DPS layout
 ----------------------------------------------------------------------------------------
 SlashCmdList.DPS = function()
 	ShestakUISettings.RaidLayout = "DPS"
