@@ -516,24 +516,28 @@ end
 --	Friends
 ----------------------------------------------------------------------------------------
 if friends.enabled then
-	local totalFriendsOnline = 0
 	local totalBattleNetOnline = 0
 	local BNTable = {}
 	local friendTable = {}
 	local BNTableEnter = {}
 	local function BuildFriendTable(total)
-		totalFriendsOnline = 0
 		wipe(friendTable)
 
 		for i = 1, total do
-			local name, level, class, area, connected, status, note = GetFriendInfo(i)
-			for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
-			if GetLocale() ~= "enUS" then
-				for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
-			end
-			friendTable[i] = {name, level, class, area, connected, status, note}
-			if connected then
-				totalFriendsOnline = totalFriendsOnline + 1
+			local info = C_FriendList.GetFriendInfoByIndex(i)
+			if info and info.connected then
+				local class = info.className
+				local status = ""
+				if info.dnd then
+					status = CHAT_FLAG_DND
+				elseif info.afk then
+					status = CHAT_FLAG_AFK
+				end
+				for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end
+				if GetLocale() ~= "enUS" then
+					for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do if class == v then class = k end end
+				end
+				friendTable[i] = {info.name, info.level, class,  info.area, info.connected, status, info.notes}
 			end
 		end
 
@@ -576,10 +580,9 @@ if friends.enabled then
 		OnEvent = function(self, event)
 			if event ~= "GROUP_ROSTER_UPDATE" then
 				local numBNetTotal, numBNetOnline = BNGetNumFriends()
-				local online, total = 0, GetNumFriends()
-				for i = 0, total do if select(5, GetFriendInfo(i)) then online = online + 1 end end
-				online = online + numBNetOnline
-				total = total + numBNetTotal
+				local numOnline, numTotal = C_FriendList.GetNumOnlineFriends(), C_FriendList.GetNumFriends()
+				local online = numOnline + numBNetOnline
+				local total = numTotal + numBNetTotal
 				self.text:SetText(format(friends.fmt, online, total))
 			end
 			if self.hovered then self:GetScript("OnEnter")(self) end
@@ -594,7 +597,7 @@ if friends.enabled then
 				HideTT(self)
 
 				local BNTotal = BNGetNumFriends()
-				local total = GetNumFriends()
+				local total = C_FriendList.GetNumFriends()
 				BuildBNTable(BNTotal)
 				BuildFriendTable(total)
 
@@ -605,43 +608,41 @@ if friends.enabled then
 				menuList[2].menuList = {}
 				menuList[3].menuList = {}
 
-				if totalFriendsOnline > 0 then
+				if #friendTable > 0 then
 					for i = 1, #friendTable do
-						if friendTable[i][5] then
-							if UnitInParty(friendTable[i][1]) or UnitInRaid(friendTable[i][1]) then
-								grouped = " |cffaaaaaa*|r"
-							else
-								grouped = ""
-							end
+						if UnitInParty(friendTable[i][1]) or UnitInRaid(friendTable[i][1]) then
+							grouped = " |cffaaaaaa*|r"
+						else
+							grouped = ""
+						end
 
-							classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[friendTable[i][3]], GetQuestDifficultyColor(friendTable[i][2])
-							if classc == nil then
-								classc = GetQuestDifficultyColor(friendTable[i][2])
-							end
+						classc, levelc = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[friendTable[i][3]], GetQuestDifficultyColor(friendTable[i][2])
+						if classc == nil then
+							classc = GetQuestDifficultyColor(friendTable[i][2])
+						end
 
-							menuCountWhispers = menuCountWhispers + 1
-							menuList[3].menuList[menuCountWhispers] = {
-								text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1], grouped),
+						menuCountWhispers = menuCountWhispers + 1
+						menuList[3].menuList[menuCountWhispers] = {
+							text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1], grouped),
+							arg1 = friendTable[i][1],
+							notCheckable = true,
+							func = function(_, arg1)
+								menuFrame:Hide()
+								SetItemRef("player:"..arg1, ("|Hplayer:%1$s|h[%1$s]|h"):format(arg1), "LeftButton")
+							end
+						}
+
+						if not (UnitInParty(friendTable[i][1]) or UnitInRaid(friendTable[i][1])) then
+							menuCountInvites = menuCountInvites + 1
+							menuList[2].menuList[menuCountInvites] = {
+								text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1]),
 								arg1 = friendTable[i][1],
 								notCheckable = true,
 								func = function(_, arg1)
 									menuFrame:Hide()
-									SetItemRef("player:"..arg1, ("|Hplayer:%1$s|h[%1$s]|h"):format(arg1), "LeftButton")
+									C_PartyInfo.InviteUnit(arg1)
 								end
 							}
-
-							if not (UnitInParty(friendTable[i][1]) or UnitInRaid(friendTable[i][1])) then
-								menuCountInvites = menuCountInvites + 1
-								menuList[2].menuList[menuCountInvites] = {
-									text = format("|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r", levelc.r * 255, levelc.g * 255, levelc.b * 255, friendTable[i][2], classc.r * 255, classc.g * 255, classc.b * 255, friendTable[i][1]),
-									arg1 = friendTable[i][1],
-									notCheckable = true,
-									func = function(_, arg1)
-										menuFrame:Hide()
-										C_PartyInfo.InviteUnit(arg1)
-									end
-								}
-							end
 						end
 					end
 				end
@@ -694,9 +695,8 @@ if friends.enabled then
 		OnEnter = function(self)
 			C_FriendList.ShowFriends()
 			self.hovered = true
-			local online, total = 0, GetNumFriends()
+			local online, total = C_FriendList.GetNumOnlineFriends(), C_FriendList.GetNumFriends()
 			local name, level, class, zone, connected, status, note, classc, levelc, zone_r, zone_g, zone_b, grouped, realm_r, realm_g, realm_b
-			for i = 0, total do if select(5, GetFriendInfo(i)) then online = online + 1 end end
 			local BNonline, BNtotal = 0, BNGetNumFriends()
 			wipe(BNTableEnter)
 			if BNtotal > 0 then
@@ -720,7 +720,19 @@ if friends.enabled then
 					GameTooltip:AddLine(" ")
 					GameTooltip:AddLine(WOW_FRIEND)
 					for i = 1, total do
-						name, level, class, zone, connected, status, note = GetFriendInfo(i)
+						local info = C_FriendList.GetFriendInfoByIndex(i)
+						local name = info.name
+						local level = info.level
+						local class = info.className
+						local zone = info.area
+						local connected = info.connected
+						local status = ""
+						if info.dnd then
+							status = CHAT_FLAG_DND
+						elseif info.afk then
+							status = CHAT_FLAG_AFK
+						end
+						local note = info.notes
 						if not connected then break end
 						if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
 						for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do if class == v then class = k end end

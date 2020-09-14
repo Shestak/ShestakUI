@@ -335,11 +335,11 @@ local function friendsFrame()
 		local button = buttons[i]
 		if button:IsShown() then
 			if button.buttonType == FRIENDS_BUTTON_TYPE_WOW then
-				local name, level, class, area, connected = GetFriendInfo(button.id)
-				if connected then
-					nameText = classColor[class]..name.."|r, "..format(FRIENDS_LEVEL_TEMPLATE, diffColor[level]..level.."|r", class)
-					if area == playerArea then
-						infoText = format("|cff00ff00%s|r", area)
+				local info = C_FriendList.GetFriendInfoByIndex(button.id)
+				if info.connected then
+					nameText = classColor[info.className]..info.name.."|r, "..format(FRIENDS_LEVEL_TEMPLATE, diffColor[info.level]..info.level.."|r", info.className)
+					if info.area == playerArea then
+						infoText = format("|cff00ff00%s|r", info.area)
 					end
 				end
 			elseif button.buttonType == FRIENDS_BUTTON_TYPE_BNET then
