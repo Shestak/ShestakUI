@@ -149,10 +149,6 @@ L_COOLDOWNS_COMBATRESS = "CombatRess" -- Needs review
 L_COOLDOWNS_COMBATRESS_REMAINDER = "Combat resurrect: " -- Needs review
 L_COOLDOWNS_NEXTTIME = "Next time: " -- Needs review
 
--- Autoinvite
-L_INVITE_ENABLE = "Auto Invitar ON: "
-L_INVITE_DISABLE = "Auto Invitar OFF"
-
 -- Bind key
 L_BIND_SAVED = "La configuración de las teclas ha sido guardada."
 L_BIND_DISCARD = "Se han descartado los cambios en la configuración de las teclas."
@@ -304,7 +300,6 @@ L_SLASHCMD_HELP = {
 	"/pulsecd - Prueba de tus propios enfriamientos.",
 	"/threat - Prueba del medidor de amenaza.",
 	"/tt - Susurrar objetivo.",
-	"/ainv - Activa la invitación automática.",
 	"/testuf - Prueba de los marcos de unidades.",
 	"/cfg - Abre la configuración de la interfaz.",
 }

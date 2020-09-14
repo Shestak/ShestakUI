@@ -466,8 +466,9 @@ L.automation_buff_on_scroll_desc = "指定Buff缺失时使用鼠标滚轮施放"
 L.automation_open_items = "自动打开背包中的封装物品"
 L.automation_resurrection = "自动确认复活"
 L.automation_summon = "自动确认召唤"
-L.automation_invite_keyword = "自动邀请关键词"
-L.automation_invite_keyword_desc = "键入 /ainv 开/关密语自动邀请，键入 /ainv 123 代表开启并更改当前密语关键词为123。"
+L.automation_whisper_invite = "Auto invite when whisper keyword" -- Needs review
+L.automation_invite_keyword = "List of keyword (separated by space)" -- Needs review
+L.automation_invite_keyword_desc = "When player whisper you keyword he will be invited in your group" -- Needs review
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Buff提示"

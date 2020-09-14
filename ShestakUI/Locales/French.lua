@@ -149,10 +149,6 @@ L_COOLDOWNS_COMBATRESS = "Résurrection en combat"
 L_COOLDOWNS_COMBATRESS_REMAINDER = "Résurrection en combat : "
 L_COOLDOWNS_NEXTTIME = "Suivant : "
 
--- Autoinvite
-L_INVITE_ENABLE = "Invitation automatique activée : "
-L_INVITE_DISABLE = "Invitation automatique désactivée"
-
 -- Bind key
 L_BIND_SAVED = "Vos assignations de touches ont été sauvegardées."
 L_BIND_DISCARD = "Vos nouvelles assignations de touches n'ont pas été sauvegardées."
@@ -304,7 +300,6 @@ L_SLASHCMD_HELP = {
 	"/pulsecd - Lance un test local de Cooldown pulse.",
 	"/threat - Lance un test des barres de menace.",
 	"/tt - Chuchote à la cible.",
-	"/ainv - Active l'invitation automatique.",
 	"/testuf - Lance un test des cadres d'unité.",
 	"/cfg - Ouvre les paramètres de l'interface.",
 }

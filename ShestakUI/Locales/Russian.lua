@@ -149,10 +149,6 @@ L_COOLDOWNS_COMBATRESS = "Возрождение"
 L_COOLDOWNS_COMBATRESS_REMAINDER = "Возрождений в бою: "
 L_COOLDOWNS_NEXTTIME = "Следующее: "
 
--- Autoinvite
-L_INVITE_ENABLE = "Автоприглашение включено: "
-L_INVITE_DISABLE = "Автоприглашение выключено"
-
 -- Bind key
 L_BIND_SAVED = "Все назначения клавиш сохранены."
 L_BIND_DISCARD = "Все новые назначения клавиш были отменены."
@@ -304,7 +300,6 @@ L_SLASHCMD_HELP = {
 	"/pulsecd - Тест своих перезарядок.",
 	"/threat - Тест списка угрозы.",
 	"/tt - Шепнуть цели.",
-	"/ainv - Включение автоматического приглашения.",
 	"/testuf - Тест юнит фреймов.",
 	"/cfg - Открыть настройки интерфейса.",
 }

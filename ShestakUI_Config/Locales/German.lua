@@ -466,8 +466,9 @@ L.automation_buff_on_scroll_desc = "Wenn der Stärkungszauber aus der Liste nich
 L.automation_open_items = "Öffnet Automatisch Items in der Tasche"
 L.automation_resurrection = "Auferstehung bestätigen"
 L.automation_summon = "Bestätige Summon"
-L.automation_invite_keyword = "Kurzes Schlüsselwort für Einladungen"
-L.automation_invite_keyword_desc = "When player whisper you keyword he will be invited in your group. \nFor enable - type '/ainv'. Also after the command, you can write your word '/ainv inv'" -- Need review
+L.automation_whisper_invite = "Auto invite when whisper keyword" -- Needs review
+L.automation_invite_keyword = "List of keyword (separated by space)" -- Needs review
+L.automation_invite_keyword_desc = "When player whisper you keyword he will be invited in your group" -- Needs review
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Erinnerungen für Buffs"

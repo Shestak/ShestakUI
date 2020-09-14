@@ -481,7 +481,8 @@ C["automation"] = {
 	["open_items"] = false,						-- Auto opening of items in bag
 	["resurrection"] = false,					-- Auto confirm resurrection
 	["summon"] = false,							-- Auto confirm summon after 10 sec
-	["invite_keyword"] = "inv",					-- Short keyword for invite (for enable - in game type /ainv)
+	["whisper_invite"] = false,					-- Auto invite when whisper keyword
+	["invite_keyword"] = "inv +",				-- List of keyword (separated by space)
 }
 
 ----------------------------------------------------------------------------------------

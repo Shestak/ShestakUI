@@ -149,10 +149,6 @@ L_COOLDOWNS_COMBATRESS = "Resurrezione in Combattimento"
 L_COOLDOWNS_COMBATRESS_REMAINDER = "Resurrezione in combattimento: "
 L_COOLDOWNS_NEXTTIME = "Tempi di ricarica: "
 
--- Autoinvite
-L_INVITE_ENABLE = "Invito automatico attivato: "
-L_INVITE_DISABLE = "Invito automatico disattivato"
-
 -- Bind key
 L_BIND_SAVED = "Tutte le assegnazioni tasti sono state salvate."
 L_BIND_DISCARD = "Tutte le nuove assegnazioni tasti non sono state salvate."
@@ -304,7 +300,6 @@ L_SLASHCMD_HELP = {
 	"/pulsecd - Prova i tuoi recuperi con effetto 'pulse'.",
 	"/threat - Prova il Contatore Minaccia.",
 	"/tt - Sussurra al bersaglio.",
-	"/ainv - Attiva gli inviti automatici.",
 	"/testuf - Prova i riquadri delle unità.",
 	"/cfg - Apri il pannello impostazioni interfaccia.",
 }

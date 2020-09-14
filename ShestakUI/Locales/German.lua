@@ -149,10 +149,6 @@ L_COOLDOWNS_COMBATRESS = "Battlerezz"
 L_COOLDOWNS_COMBATRESS_REMAINDER = "Battlerezz übrig: "
 L_COOLDOWNS_NEXTTIME = "Nächste möglichkeit: "
 
--- Autoinvite
-L_INVITE_ENABLE = "Autoinvite AN: "
-L_INVITE_DISABLE = "Autoinvite AUS"
-
 -- Bind key
 L_BIND_SAVED = "Alle Tastenbelegungen wurden gespeichert."
 L_BIND_DISCARD = "Alle grade neu belegten Tastenbelegungen wurden verworfen."
@@ -304,7 +300,6 @@ L_SLASHCMD_HELP = {
 	"/pulsecd - Pulsierende Abklingzeiten testen.",
 	"/threat - Bedrohungsmeter testen.",
 	"/tt - Ziehl anflüstern.",
-	"/ainv - Automatisches Einladen aktivieren.",
 	"/testuf - Einheitenfenster testen.",
 	"/cfg - Interface Einstellungen öffnen.",
 }

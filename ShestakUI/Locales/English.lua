@@ -145,10 +145,6 @@ L_COOLDOWNS_COMBATRESS = "BattleRes"
 L_COOLDOWNS_COMBATRESS_REMAINDER = "Battle Resurrection: "
 L_COOLDOWNS_NEXTTIME = "Next time: "
 
--- Autoinvite
-L_INVITE_ENABLE = "Autoinvite ON: "
-L_INVITE_DISABLE = "Autoinvite OFF"
-
 -- Bind key
 L_BIND_SAVED = "All keybindings have been saved."
 L_BIND_DISCARD = "All newly set keybindings have been discarded."
@@ -300,7 +296,6 @@ L_SLASHCMD_HELP = {
 	"/pulsecd - Self cooldown pulse test.",
 	"/threat - Threat meter test.",
 	"/tt - Whisper target.",
-	"/ainv - Enables automatic invitation.",
 	"/testuf - Unit frame test.",
 	"/cfg - Opens interface settings.",
 }

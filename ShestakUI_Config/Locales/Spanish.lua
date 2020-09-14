@@ -466,8 +466,9 @@ L.automation_buff_on_scroll_desc = "If the buff from the list is not applied to 
 L.automation_open_items = "Auto opening of items in bag" -- Needs review
 L.automation_resurrection = "Confirm resurrection" -- Needs review
 L.automation_summon = "Confirm summon" -- Needs review
-L.automation_invite_keyword = "Acrónimo para invitaciones"
-L.automation_invite_keyword_desc = "When player whisper you keyword he will be invited in your group. \nFor enable - type '/ainv'. Also after the command, you can write your word '/ainv inv'" -- Need review
+L.automation_whisper_invite = "Auto invite when whisper keyword" -- Needs review
+L.automation_invite_keyword = "List of keyword (separated by space)" -- Needs review
+L.automation_invite_keyword_desc = "When player whisper you keyword he will be invited in your group" -- Needs review
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Recordatorio de Ventajas"

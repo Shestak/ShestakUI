@@ -149,10 +149,6 @@ L_COOLDOWNS_COMBATRESS = "戰復"
 L_COOLDOWNS_COMBATRESS_REMAINDER = "戰復剩餘: "
 L_COOLDOWNS_NEXTTIME = "下次: "
 
--- Autoinvite
-L_INVITE_ENABLE = "自動邀請已啟用 關鍵詞: "
-L_INVITE_DISABLE = "自動邀請已關閉"
-
 -- Bind key
 L_BIND_SAVED = "快捷鍵設置已保存"
 L_BIND_DISCARD = "新的快捷鍵設置已取消"
@@ -304,7 +300,6 @@ L_SLASHCMD_HELP = {
 	"/pulsecd - 技能冷卻閃爍測試模式",
 	"/threat - 仇恨欄測試模式",
 	"/tt - 密語當前目標",
-	"/ainv - 開/關密語關鍵詞自動邀請進組",
 	"/testuf - 頭像框架測試模式",
 	"/cfg - 開啟ShestakUI設置界面",
 }
