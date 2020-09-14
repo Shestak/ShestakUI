@@ -46,9 +46,6 @@ local function InstallUI()
 			-- Save new default position and dimension
 			FCF_SavePositionAndDimensions(frame)
 
-			-- Set default font size
-			FCF_SetChatWindowFontSize(nil, frame, 11)
-
 			-- Rename general and combat log tabs
 			if i == 1 then FCF_SetWindowName(frame, GENERAL) end
 			if i == 2 then FCF_SetWindowName(frame, GUILD_BANK_LOG) end
