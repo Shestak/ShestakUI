@@ -255,9 +255,7 @@ local function threatColor(self, forced)
 		self.Health:SetStatusBarColor(0.6, 0.6, 0.6)
 	elseif combat then
 		if self.npcID == "120651" then	-- Explosives affix
-			self.Health:SetStatusBarColor(0.9, 0.2, 0.9)
-			SetVirtualBorder(self.Health, 0.9, 0.2, 0.9)
-			self:SetAlpha(1)
+			self.Health:SetStatusBarColor(1, 0.3, 0)
 		elseif threatStatus == 3 then	-- securely tanking, highest threat
 			if T.Role == "Tank" then
 				if C.nameplate.enhance_threat == true then
