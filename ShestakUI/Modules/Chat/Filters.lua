@@ -37,7 +37,15 @@ if C.chat.filter == true then
 	ERR_LEARN_SPELL_S = ""
 	ERR_LEARN_PASSIVE_S = ""
 	ERR_SPELL_UNLEARNED_S = ""
-	ERR_CHAT_THROTTLED = ""
+
+	-- Prevent empty line
+	local function systemFilter(_, _, text)
+		if text and text == "" then
+			return true
+		end
+	end
+
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", systemFilter)
 end
 
 ----------------------------------------------------------------------------------------
