@@ -84,7 +84,6 @@ local function InstallUI()
 	ShestakUISettingsPerChar.Install = true
 	ShestakUISettingsPerChar.FogOfWar = true
 	ShestakUISettingsPerChar.Coords = true
-	ShestakUISettingsPerChar.AutoInvite = false
 	ShestakUISettingsPerChar.Archaeology = false
 	ShestakUISettingsPerChar.BarsLocked = false
 	ShestakUISettingsPerChar.SplitBars = true
@@ -231,7 +230,6 @@ OnLogon:SetScript("OnEvent", function(self)
 	if ShestakUISettings.RaidLayout == nil then ShestakUISettings.RaidLayout = "UNKNOWN" end
 	if ShestakUISettingsPerChar.FogOfWar == nil then ShestakUISettingsPerChar.FogOfWar = true end
 	if ShestakUISettingsPerChar.Coords == nil then ShestakUISettingsPerChar.Coords = true end
-	if ShestakUISettingsPerChar.AutoInvite == nil then ShestakUISettingsPerChar.AutoInvite = false end
 	if ShestakUISettingsPerChar.Archaeology == nil then ShestakUISettingsPerChar.Archaeology = false end
 	if ShestakUISettingsPerChar.BarsLocked == nil then ShestakUISettingsPerChar.BarsLocked = false end
 	if ShestakUISettingsPerChar.SplitBars == nil then ShestakUISettingsPerChar.SplitBars = true end
