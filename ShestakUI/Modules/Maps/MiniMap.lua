@@ -183,7 +183,7 @@ local micromenu = {
 		if T.level >= SHOW_SPEC_LEVEL then
 			ShowUIPanel(PlayerTalentFrame)
 		else
-			if C.error.white == false then
+			if C.general.error_filter ~= "WHITELIST" then
 				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_SPEC_LEVEL), 1, 0.1, 0.1)
 			else
 				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_SPEC_LEVEL).."|r")
@@ -209,7 +209,7 @@ local micromenu = {
 		if T.level >= SHOW_PVP_LEVEL then
 			TogglePVPUI()
 		else
-			if C.error.white == false then
+			if C.general.error_filter ~= "WHITELIST" then
 				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL), 1, 0.1, 0.1)
 			else
 				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL).."|r")
@@ -220,7 +220,7 @@ local micromenu = {
 		if T.level >= SHOW_LFD_LEVEL then
 			PVEFrame_ToggleFrame("GroupFinderFrame", nil)
 		else
-			if C.error.white == false then
+			if C.general.error_filter ~= "WHITELIST" then
 				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL), 1, 0.1, 0.1)
 			else
 				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
@@ -231,7 +231,7 @@ local micromenu = {
 		if C_AdventureJournal.CanBeShown() then
 			ToggleEncounterJournal()
 		else
-			if C.error.white == false then
+			if C.general.error_filter ~= "WHITELIST" then
 				UIErrorsFrame:AddMessage(FEATURE_NOT_YET_AVAILABLE, 1, 0.1, 0.1)
 			else
 				print("|cffffff00"..FEATURE_NOT_YET_AVAILABLE.."|r")
