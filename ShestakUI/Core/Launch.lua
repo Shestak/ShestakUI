@@ -204,6 +204,7 @@ OnLogon:SetScript("OnEvent", function(self)
 		SavedCurrency = nil
 	end
 
+	if ShestakUISettings == nil then ShestakUISettings = {} end
 	if not ShestakUISettings.Migrated then
 		if SavedOptionsPerChar then
 			if SavedOptionsPerChar.UFPos then
