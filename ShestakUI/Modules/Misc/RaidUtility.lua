@@ -35,6 +35,8 @@ local function CreateButton(name, parent, template, width, height, point, relati
 		b.t:SetPoint("CENTER")
 		b.t:SetJustifyH("CENTER")
 		b.t:SetText(text)
+		b.t:SetWidth(width - 2)
+		b.t:SetHeight(C.media.pixel_font_size)
 	end
 end
 
