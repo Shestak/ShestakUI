@@ -34,7 +34,7 @@ C["raidframe"].plugins_aura_watch_list = {}
 C["announcements"].spells_list = {}
 C["raidcooldown"].spells_list = {}
 C["enemycooldown"].spells_list = {}
-C["media"].profile = "local T, C, L = unpack(ShestakUI)\n"
+C["media"].profile = "-- Insert Your code here\n"
 
 -- Apply or remove saved settings as needed
 for group, options in pairs(profile) do
@@ -56,4 +56,4 @@ end
 C.options = profile
 
 -- Load edited profile code
-loadstring(C["media"].profile)()
+loadstring("local T, C, L = unpack(ShestakUI)\n"..C["media"].profile)()
