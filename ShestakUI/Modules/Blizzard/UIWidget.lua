@@ -65,36 +65,8 @@ local atlasColors = {
 	["objectivewidget-bar-fill-right"] = {0.9, 0.2, 0.2}
 }
 
-local frame = CreateFrame("Frame")
-frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-frame:RegisterEvent("UPDATE_ALL_UI_WIDGETS")
-frame:SetScript("OnEvent", function()
-	for _, widgetFrame in pairs(UIWidgetTopCenterContainerFrame.widgetFrames) do
-		if widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.DoubleStatusBar then
-			for _, bar in pairs({widgetFrame.LeftBar, widgetFrame.RightBar}) do
-				hooksecurefunc(bar, "SetStatusBarAtlas", function(_, atlas)
-					if atlasColors[atlas] then
-						bar:SetStatusBarTexture(C.media.texture)
-						bar:SetStatusBarColor(unpack(atlasColors[atlas]))
-					end
-				end)
-				if not bar.styled then
-					bar.BG:SetAlpha(0)
-					bar.BorderLeft:SetAlpha(0)
-					bar.BorderRight:SetAlpha(0)
-					bar.BorderCenter:SetAlpha(0)
-					bar.Spark:SetAlpha(0)
-					bar.SparkGlow:SetAlpha(0)
-					bar:CreateBackdrop("Overlay")
-					bar.styled = true
-				end
-			end
-		end
-	end
-end)
-
-hooksecurefunc(UIWidgetTemplateStatusBarMixin, "Setup", function(widgetInfo)
-	local bar = widgetInfo.Bar
+local function SkinStatusBar(widget)
+	local bar = widget.Bar
 	local atlas = bar:GetStatusBarAtlas()
 	if atlasColors[atlas] then
 		bar:SetStatusBarTexture(C.media.texture)
@@ -111,28 +83,86 @@ hooksecurefunc(UIWidgetTemplateStatusBarMixin, "Setup", function(widgetInfo)
 		bar:CreateBackdrop("Overlay")
 		bar.styled = true
 	end
-end)
+end
 
-hooksecurefunc(UIWidgetTemplateCaptureBarMixin, "Setup", function(widgetInfo)
-	widgetInfo.LeftLine:SetAlpha(0)
-	widgetInfo.RightLine:SetAlpha(0)
-	widgetInfo.BarBackground:SetAlpha(0)
-	widgetInfo.Glow1:SetAlpha(0)
-	widgetInfo.Glow2:SetAlpha(0)
-	widgetInfo.Glow3:SetAlpha(0)
+local function SkinDoubleStatusBar(widget)
+	for _, bar in pairs({widget.LeftBar, widget.RightBar}) do
+		local atlas = bar:GetStatusBarAtlas()
+		if atlasColors[atlas] then
+			bar:SetStatusBarTexture(C.media.texture)
+			bar:SetStatusBarColor(unpack(atlasColors[atlas]))
+		end
+		if not bar.styled then
+			bar.BG:SetAlpha(0)
+			bar.BorderLeft:SetAlpha(0)
+			bar.BorderRight:SetAlpha(0)
+			bar.BorderCenter:SetAlpha(0)
+			bar.Spark:SetAlpha(0)
+			bar.SparkGlow:SetAlpha(0)
+			bar:CreateBackdrop("Overlay")
+			bar.styled = true
+		end
+	end
+end
 
-	widgetInfo.LeftBar:SetTexture(C.media.texture)
-	widgetInfo.NeutralBar:SetTexture(C.media.texture)
-	widgetInfo.RightBar:SetTexture(C.media.texture)
+local function SkinCaptureBar(widget)
+	widget.LeftLine:SetAlpha(0)
+	widget.RightLine:SetAlpha(0)
+	widget.BarBackground:SetAlpha(0)
+	widget.Glow1:SetAlpha(0)
+	widget.Glow2:SetAlpha(0)
+	widget.Glow3:SetAlpha(0)
 
-	widgetInfo.LeftBar:SetVertexColor(0.2, 0.6, 1)
-	widgetInfo.NeutralBar:SetVertexColor(0.8, 0.8, 0.8)
-	widgetInfo.RightBar:SetVertexColor(0.9, 0.2, 0.2)
+	widget.LeftBar:SetTexture(C.media.texture)
+	widget.NeutralBar:SetTexture(C.media.texture)
+	widget.RightBar:SetTexture(C.media.texture)
 
-	if not widgetInfo.backdrop then
-		widgetInfo:CreateBackdrop("Default")
-		widgetInfo.backdrop:SetPoint("TOPLEFT", widgetInfo.LeftBar, -2, 2)
-		widgetInfo.backdrop:SetPoint("BOTTOMRIGHT", widgetInfo.RightBar, 2, -2)
+	widget.LeftBar:SetVertexColor(0.2, 0.6, 1)
+	widget.NeutralBar:SetVertexColor(0.8, 0.8, 0.8)
+	widget.RightBar:SetVertexColor(0.9, 0.2, 0.2)
+
+	if not widget.backdrop then
+		widget:CreateBackdrop("Default")
+		widget.backdrop:SetPoint("TOPLEFT", widget.LeftBar, -2, 2)
+		widget.backdrop:SetPoint("BOTTOMRIGHT", widget.RightBar, 2, -2)
+	end
+end
+
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("UPDATE_UI_WIDGET")
+frame:RegisterEvent("UPDATE_ALL_UI_WIDGETS")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:SetScript("OnEvent", function(_, event, widgetInfo)
+	if event == "UPDATE_UI_WIDGET" then
+		if widgetInfo then
+			if widgetInfo.widgetType == _G.Enum.UIWidgetVisualizationType.StatusBar then
+				for _, widget in pairs(UIWidgetTopCenterContainerFrame.widgetFrames) do
+					SkinStatusBar(widget)
+				end
+			elseif widgetInfo.widgetType == _G.Enum.UIWidgetVisualizationType.DoubleStatusBar then
+				for _, widget in pairs(UIWidgetTopCenterContainerFrame.widgetFrames) do
+					SkinDoubleStatusBar(widget)
+				end
+			elseif widgetInfo.widgetType == _G.Enum.UIWidgetVisualizationType.CaptureBar then
+				for _, widget in pairs(UIWidgetBelowMinimapContainerFrame.widgetFrames) do
+					SkinCaptureBar(widget)
+				end
+			end
+		end
+	else
+		for _, widget in pairs(UIWidgetTopCenterContainerFrame.widgetFrames) do
+			if widget.widgetType == _G.Enum.UIWidgetVisualizationType.StatusBar then
+				SkinStatusBar(widget)
+			elseif widget.widgetType == _G.Enum.UIWidgetVisualizationType.DoubleStatusBar then
+				SkinDoubleStatusBar(widget)
+			end
+		end
+
+		for _, widget in pairs(UIWidgetBelowMinimapContainerFrame.widgetFrames) do
+			if widget.widgetType == Enum.UIWidgetVisualizationType.CaptureBar then
+				SkinCaptureBar(widget)
+			end
+		end
 	end
 end)
 
