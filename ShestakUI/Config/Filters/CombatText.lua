@@ -30,7 +30,7 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[195256] = 4			-- Stormlash
 	T.aoespam[270827] = 0.5			-- Webweaver's Soul Gem (Vessel of Skittering Shadows Trinket)
 	T.aoespam[207694] = 3			-- Symbiote Strike
-	T.aoespam[210380] = 4			-- Aura of Sacrifice
+	--FIXME T.aoespam[210380] = 4			-- Aura of Sacrifice
 	T.aoespam[252907] = 5			-- Torment the Weak
 	T.aoespam[252896] = 0.5			-- Chaotic Darkness
 	T.aoespam[253022] = 0.5			-- Sorrow
@@ -361,7 +361,7 @@ elseif T.class == "MONK" then
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
-		T.aoespam[203539] = 10		-- Greater Blessing of Wisdom
+		--FIXME T.aoespam[203539] = 10		-- Greater Blessing of Wisdom
 		T.aoespam[216371] = 4		-- Avenging Crusader
 		T.aoespam[209540] = 8		-- Light of the Titans
 		T.aoespam[53652] = 3		-- Beacon of Light
@@ -369,7 +369,7 @@ elseif T.class == "PALADIN" then
 		T.aoespam[114852] = 0		-- Holy Prism
 		T.aoespam[119952] = 3		-- Arcing Light
 		T.aoespam[144581] = 3		-- Blessing of the Guardians (T16)
-		T.aoespam[210291] = 6		-- Aura of Mercy
+		--FIXME T.aoespam[210291] = 6		-- Aura of Mercy
 		T.aoespam[183811] = 6		-- Judgment of Light
 		T.aoespam[225311] = 1		-- Light of Dawn
 		-- Damaging spells
@@ -393,9 +393,9 @@ elseif T.class == "PALADIN" then
 		T.aoespam[204301] = 8		-- Blessed Hammer
 		T.aoespam[224239] = 1		-- Divine Storm
 		T.aoespam[20271] = 1		-- Judgment
-		T.merge[228288] = 20271		-- Judgment Retribution
+		--FIXME T.merge[228288] = 20271		-- Judgment Retribution
 		T.aoespam[217020] = 1		-- Zeal
-		T.aoespam[204011] = 3		-- Retribution Aura
+		--FIXME T.aoespam[204011] = 3		-- Retribution Aura
 		T.aoespam[286232] = 1		-- Light's Decree
 	end
 elseif T.class == "PRIEST" then

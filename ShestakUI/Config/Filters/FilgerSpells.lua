@@ -1508,7 +1508,7 @@ C["filger_spells"] = {
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Execution Sentence
-			{spellID = 267799, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--FIXME {spellID = 267799, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Eye of Tyr
 			{spellID = 209202, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Judgment
@@ -1578,7 +1578,7 @@ C["filger_spells"] = {
 			-- Divine Protection
 			{spellID = 498, filter = "CD", absID = true},
 			-- Execution Sentence
-			{spellID = 267798, filter = "CD"},
+			--FIXME {spellID = 267798, filter = "CD"},
 			-- Light's Hammer
 			{spellID = 114158, filter = "CD"},
 			-- Blinding Light
@@ -1602,7 +1602,7 @@ C["filger_spells"] = {
 			-- Blessing of Protection
 			{spellID = 1022, filter = "CD"},
 			-- Light of the Protector
-			{spellID = 184092, filter = "CD"},
+			--FIXME {spellID = 184092, filter = "CD"},
 			-- Divine Shield
 			{spellID = 642, filter = "CD"},
 
@@ -2633,7 +2633,7 @@ C["filger_spells"] = {
 			-- Avatar
 			{spellID = 107574, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bloodbath
-			{spellID = 12292, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 12292, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Recklesness
 			{spellID = 1719, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -2659,7 +2659,7 @@ C["filger_spells"] = {
 			-- Sudden Death
 			{spellID = 52437, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Raging Blow!
-			{spellID = 131116, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 131116, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Meat Cleaver
 			{spellID = 85739, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enrage
@@ -3186,7 +3186,7 @@ C["filger_spells"] = {
 			-- Piercing Howl
 			{spellID = 12323, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Warbringer
-			{spellID = 7922, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--FIXME {spellID = 7922, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Other
 			-- Dark Simulacrum

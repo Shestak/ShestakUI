@@ -101,13 +101,12 @@ end)
 --	Difficulty color for ObjectiveTrackerFrame lines
 ----------------------------------------------------------------------------------------
 hooksecurefunc(QUEST_TRACKER_MODULE, "Update", function()
-	for i = 1, GetNumQuestWatches() do
-		local questID, _, questIndex = GetQuestWatchInfo(i)
+	for i = 1, C_QuestLog.GetNumQuestWatches() do
+		local questID = C_QuestLog.GetQuestIDForQuestWatchIndex(i)
 		if not questID then
 			break
 		end
-		local _, level = GetQuestLogTitle(questIndex)
-		local col = GetQuestDifficultyColor(level)
+		local col = GetDifficultyColor(C_PlayerInfo.GetContentDifficultyQuestForPlayer(questID))
 		local block = QUEST_TRACKER_MODULE:GetExistingBlock(questID)
 		if block then
 			block.HeaderText:SetTextColor(col.r, col.g, col.b)

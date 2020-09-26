@@ -40,8 +40,8 @@ local function LoadSkin()
 
 	local honor = PVPMatchResults.content.earningsContainer.progressContainer.honor.button
 	honor.CircleMask:Hide()
-	honor.RingBorder:Hide()
-	honor.RewardIcon:SkinIcon()
+	honor.Ring:Hide()
+	honor.Icon:SkinIcon()
 	PVPMatchResults.content.earningsContainer.progressContainer.honor:SetScale(1)
 
 	local conquest = PVPMatchResults.content.earningsContainer.progressContainer.conquest.button

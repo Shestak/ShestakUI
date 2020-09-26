@@ -278,7 +278,7 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 			T.SkinCloseButton(self, nil, "-")
 		end)
 		T.SkinCloseButton(_G["RolePollPopupCloseButton"])
-		T.SkinCloseButton(_G["ItemRefCloseButton"])
+		--FIXME T.SkinCloseButton(_G["ItemRefCloseButton"])
 
 		if C.skins.blizzard_frames == true then
 			-- Social Browser frame
@@ -318,16 +318,16 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 			hooksecurefunc("NavBar_Initialize", SetHomeButtonOffsetX)
 
 			if T.client == "ruRU" then
-				_G["DeclensionFrame"]:SetTemplate("Transparent")
-				_G["DeclensionFrameCancelButton"]:SkinButton()
-				_G["DeclensionFrameOkayButton"]:SkinButton()
-				T.SkinNextPrevButton(_G["DeclensionFrameSetNext"])
-				T.SkinNextPrevButton(_G["DeclensionFrameSetPrev"])
-				for i = 1, 5 do
-					_G["DeclensionFrameDeclension"..i.."Edit"]:StripTextures(true)
-					_G["DeclensionFrameDeclension"..i.."Edit"]:SetTemplate("Overlay")
-					_G["DeclensionFrameDeclension"..i.."Edit"]:SetTextInsets(3, 0, 0, 0)
-				end
+				--FIXME _G["DeclensionFrame"]:SetTemplate("Transparent")
+				-- _G["DeclensionFrameCancelButton"]:SkinButton()
+				-- _G["DeclensionFrameOkayButton"]:SkinButton()
+				-- T.SkinNextPrevButton(_G["DeclensionFrameSetNext"])
+				-- T.SkinNextPrevButton(_G["DeclensionFrameSetPrev"])
+				-- for i = 1, 5 do
+					-- _G["DeclensionFrameDeclension"..i.."Edit"]:StripTextures(true)
+					-- _G["DeclensionFrameDeclension"..i.."Edit"]:SetTemplate("Overlay")
+					-- _G["DeclensionFrameDeclension"..i.."Edit"]:SetTextInsets(3, 0, 0, 0)
+				-- end
 			end
 			if C.skins.clique ~= true and IsAddOnLoaded("Clique") then
 				CliqueSpellTab:GetRegions():SetSize(0.1, 0.1)

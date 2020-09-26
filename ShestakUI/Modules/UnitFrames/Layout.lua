@@ -1053,7 +1053,7 @@ local function Shared(self, unit)
 	end
 
 	if C.unitframe.show_boss and unit == "boss" then
-		self.AlternativePower = CreateFrame("StatusBar", nil, self.Health)
+		self.AlternativePower = CreateFrame("StatusBar", nil, self.Health, "BackdropTemplate")
 		self.AlternativePower:SetFrameLevel(self.Health:GetFrameLevel() + 1)
 		self.AlternativePower:SetHeight(4)
 		self.AlternativePower:SetStatusBarTexture(C.media.texture)

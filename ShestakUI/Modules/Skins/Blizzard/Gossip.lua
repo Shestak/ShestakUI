@@ -31,11 +31,11 @@ local function LoadSkin()
 		_G[buttons[i]]:SkinButton(true)
 	end
 
-	for i = 1, NUMGOSSIPBUTTONS do
-		local obj = select(3, _G["GossipTitleButton"..i]:GetRegions())
-		obj:SetTextColor(1, 1, 1)
-		obj:SetShadowOffset(1, -1)
-	end
+	--FIXME for i = 1, NUMGOSSIPBUTTONS do
+		-- local obj = select(3, _G["GossipTitleButton"..i]:GetRegions())
+		-- obj:SetTextColor(1, 1, 1)
+		-- obj:SetShadowOffset(1, -1)
+	-- end
 
 	GossipGreetingText:SetTextColor(1, 1, 1)
 	GossipGreetingText:SetShadowOffset(1, -1)

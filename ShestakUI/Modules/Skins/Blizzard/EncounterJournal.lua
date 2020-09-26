@@ -65,7 +65,7 @@ local function LoadSkin()
 		end
 	end)
 
-	EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:SkinButton(true)
+	--FIXME EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:SkinButton(true)
 
 	T.SkinEditBox(EncounterJournalSearchBox)
 	T.SkinCloseButton(EncounterJournalCloseButton)
@@ -122,8 +122,8 @@ local function LoadSkin()
 	EncounterJournalEncounterFrameInfoOverviewTab:SetPoint("TOPLEFT", EncounterJournalEncounterFrameInfo, "TOPRIGHT", 8, -40)
 	EncounterJournalEncounterFrameInfoOverviewTab.SetPoint = T.dummy
 
-	T.SkinScrollBar(EncounterJournalScrollBar)
-	T.SkinScrollBar(EncounterJournalInstanceSelectScrollFrameScrollBar)
+	--FIXME T.SkinScrollBar(EncounterJournalScrollBar)
+	-- T.SkinScrollBar(EncounterJournalInstanceSelectScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoDetailsScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoLootScrollFrameScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInstanceFrameLoreScrollFrameScrollBar)
@@ -222,46 +222,46 @@ local function LoadSkin()
 
 	EncounterJournal.LootJournal:DisableDrawLayer("BACKGROUND")
 
-	EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:GetFontString():SetTextColor(1, 1, 1)
-	select(5, EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:GetRegions()):Hide()
-	select(6, EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:GetRegions()):Hide()
-	EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.UpLeft:SetAlpha(0)
-	EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.UpRight:SetAlpha(0)
-	EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.HighLeft:SetAlpha(0)
-	EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.HighRight:SetAlpha(0)
-	EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.DownLeft:SetAlpha(0)
-	EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.DownRight:SetAlpha(0)
+	--FIXME EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:GetFontString():SetTextColor(1, 1, 1)
+	-- select(5, EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:GetRegions()):Hide()
+	-- select(6, EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:GetRegions()):Hide()
+	-- EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.UpLeft:SetAlpha(0)
+	-- EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.UpRight:SetAlpha(0)
+	-- EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.HighLeft:SetAlpha(0)
+	-- EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.HighRight:SetAlpha(0)
+	-- EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.DownLeft:SetAlpha(0)
+	-- EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.DownRight:SetAlpha(0)
 
-	hooksecurefunc(EncounterJournal.LootJournal.ItemSetsFrame, "UpdateList", function()
-		local itemSets = EncounterJournal.LootJournal.ItemSetsFrame.buttons
+	-- hooksecurefunc(EncounterJournal.LootJournal.ItemSetsFrame, "UpdateList", function()
+		-- local itemSets = EncounterJournal.LootJournal.ItemSetsFrame.buttons
 
-		for i = 1, #itemSets do
-			local itemSet = itemSets[i]
-			itemSet.ItemLevel:SetTextColor(1, 1, 1)
-			itemSet.Background:Hide()
+		-- for i = 1, #itemSets do
+			-- local itemSet = itemSets[i]
+			-- itemSet.ItemLevel:SetTextColor(1, 1, 1)
+			-- itemSet.Background:Hide()
 
-			if not itemSet.backdrop then
-				itemSet:CreateBackdrop("Overlay")
-				itemSet.backdrop:SetPoint("TOPLEFT", -4, 4)
-				itemSet.backdrop:SetPoint("BOTTOMRIGHT", 4, -3)
-			end
+			-- if not itemSet.backdrop then
+				-- itemSet:CreateBackdrop("Overlay")
+				-- itemSet.backdrop:SetPoint("TOPLEFT", -4, 4)
+				-- itemSet.backdrop:SetPoint("BOTTOMRIGHT", 4, -3)
+			-- end
 
-			local items = itemSet.ItemButtons
-			for j = 1, #items do
-				local item = items[j]
-				item.Border:Hide()
-				item.Icon:SetPoint("TOPLEFT", 1, -1)
-				item.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				item.Icon:SetDrawLayer("OVERLAY")
-				item.IconBackdrop = CreateFrame("Frame", nil, item)
-				item.IconBackdrop:SetFrameLevel(item:GetFrameLevel() - 1)
-				item.IconBackdrop:SetPoint("TOPLEFT", item.Icon, -2, 2)
-				item.IconBackdrop:SetPoint("BOTTOMRIGHT", item.Icon, 2, -2)
-				item.IconBackdrop:SetTemplate("Default")
-				item.IconBackdrop:SetBackdropBorderColor(itemSet.SetName:GetTextColor())
-			end
-		end
-	end)
+			-- local items = itemSet.ItemButtons
+			-- for j = 1, #items do
+				-- local item = items[j]
+				-- item.Border:Hide()
+				-- item.Icon:SetPoint("TOPLEFT", 1, -1)
+				-- item.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				-- item.Icon:SetDrawLayer("OVERLAY")
+				-- item.IconBackdrop = CreateFrame("Frame", nil, item)
+				-- item.IconBackdrop:SetFrameLevel(item:GetFrameLevel() - 1)
+				-- item.IconBackdrop:SetPoint("TOPLEFT", item.Icon, -2, 2)
+				-- item.IconBackdrop:SetPoint("BOTTOMRIGHT", item.Icon, 2, -2)
+				-- item.IconBackdrop:SetTemplate("Default")
+				-- item.IconBackdrop:SetBackdropBorderColor(itemSet.SetName:GetTextColor())
+			-- end
+		-- end
+	-- end)
 
 	local items = EncounterJournal.encounter.info.lootScroll.buttons
 	for i = 1, #items do

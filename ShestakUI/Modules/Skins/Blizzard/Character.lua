@@ -52,8 +52,8 @@ local function LoadSkin()
 		"SecondaryHandSlot"
 	}
 
-	select(16, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
-	select(16, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
+	select(17, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
+	select(17, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
 
 	for _, i in pairs(slots) do
 		_G["Character"..i.."Frame"]:Hide()
@@ -165,7 +165,7 @@ local function LoadSkin()
 		bg:SetSize(165, 1)
 		bg:SetVertexColor(unpack(C.media.border_color))
 
-		local border = CreateFrame("Frame", "$parentOuterBorder", frame)
+		local border = CreateFrame("Frame", "$parentOuterBorder", frame, "BackdropTemplate")
 		border:SetPoint("TOPLEFT", bg, "TOPLEFT", -T.mult, T.mult)
 		border:SetPoint("BOTTOMRIGHT", bg, "BOTTOMRIGHT", T.mult, -T.mult)
 		border:SetFrameLevel(frame:GetFrameLevel() + 1)
@@ -307,7 +307,7 @@ local function LoadSkin()
 		T.SkinCheckBox(ReputationDetailMainScreenCheckBox)
 		T.SkinCheckBox(ReputationDetailInactiveCheckBox)
 		T.SkinCheckBox(ReputationDetailAtWarCheckBox)
-		T.SkinCheckBox(ReputationDetailLFGBonusReputationCheckBox)
+		--FIXME T.SkinCheckBox(ReputationDetailLFGBonusReputationCheckBox)
 	end
 	ReputationFrame:HookScript("OnShow", UpdateFactionSkins)
 	hooksecurefunc("ExpandFactionHeader", UpdateFactionSkins)
@@ -342,7 +342,7 @@ local function LoadSkin()
 	CharacterFrame:SetTemplate("Transparent")
 
 	-- Help box
-	T.SkinHelpBox(CharacterFrame.ReputationTabHelpBox)
+	--FIXME T.SkinHelpBox(CharacterFrame.ReputationTabHelpBox)
 
 	-- Unit Background Texture
 	CharacterModelFrameBackgroundTopLeft:SetPoint("TOPLEFT", CharacterModelFrame.backdrop, "TOPLEFT", 2, -2)

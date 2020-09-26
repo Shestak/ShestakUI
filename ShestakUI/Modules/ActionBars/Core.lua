@@ -250,31 +250,31 @@ frame:SetScript("OnEvent", function(self)
 			local button = _G[format("ActionButton%d", i)]
 			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
-			ActionButton_ShowGrid(button, reason)
+			button:ShowGrid(ACTION_BUTTON_SHOW_GRID_REASON_EVENT)
 			button:SetAttribute("statehidden", true)
 
 			button = _G[format("MultiBarRightButton%d", i)]
 			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
-			ActionButton_ShowGrid(button, reason)
+			button:ShowGrid(ACTION_BUTTON_SHOW_GRID_REASON_EVENT)
 			button:SetAttribute("statehidden", true)
 
 			button = _G[format("MultiBarBottomRightButton%d", i)]
 			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
-			ActionButton_ShowGrid(button, reason)
+			button:ShowGrid(ACTION_BUTTON_SHOW_GRID_REASON_EVENT)
 			button:SetAttribute("statehidden", true)
 
 			button = _G[format("MultiBarLeftButton%d", i)]
 			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
-			ActionButton_ShowGrid(button, reason)
+			button:ShowGrid(ACTION_BUTTON_SHOW_GRID_REASON_EVENT)
 			button:SetAttribute("statehidden", true)
 
 			button = _G[format("MultiBarBottomLeftButton%d", i)]
 			button.noGrid = nil
 			button:SetAttribute("showgrid", 1)
-			ActionButton_ShowGrid(button, reason)
+			button:ShowGrid(ACTION_BUTTON_SHOW_GRID_REASON_EVENT)
 			button:SetAttribute("statehidden", true)
 
 			if _G["VehicleMenuBarActionButton"..i] then

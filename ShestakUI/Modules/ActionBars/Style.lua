@@ -120,11 +120,9 @@ local function StyleNormalButton(button)
 			highlight:SetPoint("BOTTOMRIGHT", 4, -4)
 		end
 
-		UpdateHotkey(button)
-
 		if _G[name.."FlyoutArrow"] then
-			button.oborder:SetFrameLevel(button:GetFrameLevel())
-			button.iborder:SetFrameLevel(button:GetFrameLevel())
+			-- button.oborder:SetFrameLevel(button:GetFrameLevel())
+			-- button.iborder:SetFrameLevel(button:GetFrameLevel())
 		end
 
 		button.isSkinned = true
@@ -190,8 +188,6 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 			normal:SetPoint("TOPLEFT")
 			normal:SetPoint("BOTTOMRIGHT")
 		end
-
-		UpdateHotkey(button)
 
 		button.isSkinned = true
 	end
@@ -280,6 +276,11 @@ do
 		_G["MultiBarBottomRightButton"..i]:StyleButton()
 		_G["MultiBarLeftButton"..i]:StyleButton()
 		_G["MultiBarRightButton"..i]:StyleButton()
+		StyleNormalButton(_G["ActionButton"..i])
+		StyleNormalButton(_G["MultiBarBottomLeftButton"..i])
+		StyleNormalButton(_G["MultiBarBottomRightButton"..i])
+		StyleNormalButton(_G["MultiBarLeftButton"..i])
+		StyleNormalButton(_G["MultiBarRightButton"..i])
 	end
 
 	for i = 1, 10 do
@@ -288,11 +289,25 @@ do
 	end
 end
 
-hooksecurefunc("ActionButton_Update", StyleNormalButton)
 hooksecurefunc("ActionButton_UpdateFlyout", StyleFlyoutButton)
 hooksecurefunc("SpellButton_OnClick", StyleFlyoutButton)
 if C.actionbar.hotkey == true then
-	hooksecurefunc("ActionButton_UpdateHotkeys", UpdateHotkey)
+	local frame = CreateFrame("Frame")
+	frame:RegisterEvent("UPDATE_BINDINGS")
+	frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+	frame:SetScript("OnEvent", function()
+		for i = 1, 12 do
+			UpdateHotkey(_G["ActionButton"..i])
+			UpdateHotkey(_G["MultiBarBottomLeftButton"..i])
+			UpdateHotkey(_G["MultiBarBottomRightButton"..i])
+			UpdateHotkey(_G["MultiBarLeftButton"..i])
+			UpdateHotkey(_G["MultiBarRightButton"..i])
+		end
+		for i = 1, 10 do
+			UpdateHotkey(_G["StanceButton"..i])
+			UpdateHotkey(_G["PetActionButton"..i])
+		end
+	end)
 end
 if C.actionbar.hide_highlight == true then
 	hooksecurefunc("ActionButton_ShowOverlayGlow", HideHighlightButton)

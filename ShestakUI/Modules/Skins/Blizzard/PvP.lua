@@ -68,8 +68,8 @@ local function LoadSkin()
 	HonorFrameSpecificFrameScrollBar:SetPoint("BOTTOMLEFT", HonorFrameSpecificFrame, "BOTTOMRIGHT", 0, 15)
 	HonorFrameQueueButton:SkinButton(true)
 
-	T.SkinHelpBox(PremadeGroupsPvPTutorialAlert)
-	T.SkinHelpBox(HonorFrame.BonusFrame.BrawlHelpBox)
+	--FIXME T.SkinHelpBox(PremadeGroupsPvPTutorialAlert)
+	-- T.SkinHelpBox(HonorFrame.BonusFrame.BrawlHelpBox)
 
 	PVPQueueFrame.HonorInset:StripTextures()
 	PVPQueueFrame.HonorInset.RatedPanel.Label:SetWidth(160)
@@ -117,14 +117,14 @@ local function LoadSkin()
 	hooksecurefunc('PVPUIFrame_ConfigureRewardFrame', function(rewardFrame, _, _, itemRewards, currencyRewards)
 		local rewardTexture, rewardQuaility, _ = nil, 1
 
-		if currencyRewards then
-			for _, reward in ipairs(currencyRewards) do
-				local name, _, texture, _, _, _, _, quality = GetCurrencyInfo(reward.id)
-				if quality == _G.LE_ITEM_QUALITY_ARTIFACT then
-					_, rewardTexture, _, rewardQuaility = CurrencyContainerUtil.GetCurrencyContainerInfo(reward.id, reward.quantity, name, texture, quality)
-				end
-			end
-		end
+		--FIXME if currencyRewards then
+			-- for _, reward in ipairs(currencyRewards) do
+				-- local name, _, texture, _, _, _, _, quality = GetCurrencyInfo(reward.id)
+				-- if quality == _G.LE_ITEM_QUALITY_ARTIFACT then
+					-- _, rewardTexture, _, rewardQuaility = CurrencyContainerUtil.GetCurrencyContainerInfo(reward.id, reward.quantity, name, texture, quality)
+				-- end
+			-- end
+		-- end
 
 		if not rewardTexture and itemRewards then
 			local reward = itemRewards[1]
