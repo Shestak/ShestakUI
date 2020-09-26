@@ -13,7 +13,7 @@ ObjectiveTrackerFrame:SetHeight(T.screenHeight / 1.6)
 
 ObjectiveTrackerFrame.IsUserPlaced = function() return true end
 
-for _, headerName in pairs({"QuestHeader", "AchievementHeader", "ScenarioHeader"}) do
+for _, headerName in pairs({"QuestHeader", "AchievementHeader", "ScenarioHeader", "CampaignQuestHeader"}) do
 	ObjectiveTrackerFrame.BlocksFrame[headerName].Background:Hide()
 end
 BONUS_OBJECTIVE_TRACKER_MODULE.Header.Background:Hide()
@@ -154,6 +154,8 @@ if C.skins.blizzard_frames == true then
 	button.plus:Hide()
 	hooksecurefunc("ObjectiveTracker_Collapse", function()
 		button.plus:Show()
+		button:SetNormalTexture("")
+		button:SetPushedTexture("")
 		if C.general.minimize_mouseover then
 			button:SetAlpha(0)
 			button:HookScript("OnEnter", function() button:SetAlpha(1) end)
@@ -163,12 +165,49 @@ if C.skins.blizzard_frames == true then
 
 	hooksecurefunc("ObjectiveTracker_Expand", function()
 		button.plus:Hide()
+		button:SetNormalTexture("")
+		button:SetPushedTexture("")
 		if C.general.minimize_mouseover then
 			button:SetAlpha(1)
 			button:HookScript("OnEnter", function() button:SetAlpha(1) end)
 			button:HookScript("OnLeave", function() button:SetAlpha(1) end)
 		end
 	end)
+
+	local function SkinSmallMinimizeButton(button)
+		button:SetSize(15, 15)
+		button:StripTextures()
+		button:SetTemplate("Overlay")
+
+		button.minus = button:CreateTexture(nil, "OVERLAY")
+		button.minus:SetSize(5, 1)
+		button.minus:SetPoint("CENTER")
+		button.minus:SetTexture(C.media.blank)
+
+		button.plus = button:CreateTexture(nil, "OVERLAY")
+		button.plus:SetSize(1, 5)
+		button.plus:SetPoint("CENTER")
+		button.plus:SetTexture(C.media.blank)
+
+		button:HookScript("OnEnter", T.SetModifiedBackdrop)
+		button:HookScript("OnLeave", T.SetOriginalBackdrop)
+
+		button.plus:Hide()
+
+		hooksecurefunc(button, "SetCollapsed", function(self, collapsed)
+			if collapsed then
+				button.plus:Show()
+			else
+				button.plus:Hide()
+			end
+			button:SetNormalTexture("")
+			button:SetPushedTexture("")
+		end)
+	end
+
+	SkinSmallMinimizeButton(ObjectiveTrackerBlocksFrame.CampaignQuestHeader.MinimizeButton)
+	SkinSmallMinimizeButton(ObjectiveTrackerBlocksFrame.QuestHeader.MinimizeButton)
+	SkinSmallMinimizeButton(ObjectiveTrackerBlocksFrame.AchievementHeader.MinimizeButton)
 end
 
 ----------------------------------------------------------------------------------------
