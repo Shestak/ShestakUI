@@ -1871,7 +1871,7 @@ C["filger_spells"] = {
 			-- Rapture
 			{spellID = 47536, filter = "CD"},
 			-- Shadow Covenant
-			{spellID = 204065, filter = "CD"},
+			--FIXME {spellID = 204065, filter = "CD"},
 
 			-- PvP
 			-- Honorable Medallion

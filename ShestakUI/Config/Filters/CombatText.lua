@@ -111,8 +111,8 @@ elseif T.class == "DEMONHUNTER" then
 		T.aoespam[258883] = 4		-- Trail of Ruin
 		T.aoespam[247455] = 1		-- Spirit Bomb
 		T.aoespam[243160] = 0		-- Erupting Souls
-		T.aoespam[187727] = 0		-- Immolation Aura
-		T.aoespam[178741] = 6		-- Immolation Aura Tick
+		--FIXME T.aoespam[187727] = 0		-- Immolation Aura
+		-- T.aoespam[178741] = 6		-- Immolation Aura Tick
 		T.aoespam[189112] = 0		-- Infernal Strike
 		T.aoespam[228478] = 0		-- Soul Cleave
 		T.aoespam[204598] = 7		-- Sigil of Flame
@@ -401,7 +401,7 @@ elseif T.class == "PALADIN" then
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
-		T.aoespam[204065] = 0		-- Shadow Covenant
+		--FIXME T.aoespam[204065] = 0		-- Shadow Covenant
 		T.aoespam[270501] = 2.5		-- Contrition
 		T.merge[281469] = 270501	-- Contrition
 		T.aoespam[194509] = 0.5		-- Power Word: Radiance
@@ -509,9 +509,9 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[224125] = 4		-- Fiery Jaws
 		T.aoespam[198480] = 1		-- Fire Nova
 		T.aoespam[199116] = 4		-- Doom Vortex
-		T.aoespam[421] = 1			-- Chain Lightning
-		T.merge[45297] = 421		-- Chain Lightning Overload
-		T.aoespam[8349] = 0			-- Fire Nova
+		--FIXME T.aoespam[421] = 1			-- Chain Lightning
+		-- T.merge[45297] = 421		-- Chain Lightning Overload
+		--FIXME T.aoespam[8349] = 0			-- Fire Nova
 		T.aoespam[77478] = 3		-- Earhquake
 		T.aoespam[51490] = 0		-- Thunderstorm
 		T.aoespam[8187] = 3			-- Magma Totem
