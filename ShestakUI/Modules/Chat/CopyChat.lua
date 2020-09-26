@@ -71,12 +71,7 @@ end
 
 local function colorizeLine(text, r, g, b)
 	local hexCode = T.RGBToHex(r, g, b)
-	local hexReplacement = format("|r%s", hexCode)
-
-	text = gsub(text, "|r", hexReplacement)
-	text = format("%s%s|r", hexCode, text)
-
-	return text
+	return format("%s%s|r", hexCode, text)
 end
 
 local function Copy(cf)
