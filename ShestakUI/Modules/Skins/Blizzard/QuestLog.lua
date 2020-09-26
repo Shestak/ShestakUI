@@ -161,6 +161,10 @@ local function LoadSkin()
 		if template.canHaveSealMaterial then
 			local questFrame = parentFrame:GetParent():GetParent()
 			questFrame.SealMaterialBG:Hide()
+			local text = QuestInfoSealFrame.Text:GetText()
+			if text and text:find("|cff042c54") then
+				QuestInfoSealFrame.Text:SetText(string.gsub(text, "|cff042c54", "|cff1C86EE"))
+			end
 		end
 
 		local rewardsFrame = QuestInfoFrame.rewardsFrame
