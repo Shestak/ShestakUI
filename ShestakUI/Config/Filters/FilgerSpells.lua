@@ -1861,7 +1861,7 @@ C["filger_spells"] = {
 			-- Vampiric Embrace
 			{spellID = 15286, filter = "CD"},
 			-- Dark Ascension
-			{spellID = 280711, filter = "CD"},
+			--FIXME {spellID = 280711, filter = "CD"},
 			-- Power Word: Solace
 			{spellID = 129250, filter = "CD"},
 			-- Power Word: Radiance
