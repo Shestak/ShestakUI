@@ -192,7 +192,7 @@ local function LoadSkin()
 			_G["AchievementFrameSummaryAchievement"..i.."Description"]:SetShadowOffset(1, -1)
 
 			if not frame.backdrop then
-				frame:CreateBackdrop("Overlay", true)
+				frame:CreateBackdrop("Overlay")
 				frame.backdrop:SetPoint("TOPLEFT", 2, -2)
 				frame.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
 
@@ -209,8 +209,8 @@ local function LoadSkin()
 				_G["AchievementFrameSummaryAchievement"..i.."IconTexture"]:SetPoint("BOTTOMRIGHT", -2, 2)
 			end
 
-			if frame.accountWide then
-				frame.backdrop:SetBackdropBorderColor(ACHIEVEMENTUI_BLUEBORDER_R, ACHIEVEMENTUI_BLUEBORDER_G, ACHIEVEMENTUI_BLUEBORDER_B)
+			if frame.accountWide and AchievementFrameHeaderTitle:GetText() == _G.ACHIEVEMENT_TITLE then
+				frame.backdrop:SetBackdropBorderColor(ACHIEVEMENT_BLUE_BORDER_COLOR:GetRGB())
 			else
 				frame.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 			end
