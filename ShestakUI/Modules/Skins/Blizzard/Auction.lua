@@ -171,7 +171,7 @@ local function LoadSkin()
 		end
 	end
 
-	hooksecurefunc(AuctionHouseFrameAuctionsFrame.SummaryList, "RefreshScrollFrame", SkinSummaryIcons)
+	hooksecurefunc(AuctionHouseFrameAuctionsFrame.SummaryList, "RefreshListDisplay", SkinSummaryIcons)
 
 	local function SkinAuctionFrame(frame, scroll)
 		frame:StripTextures()
