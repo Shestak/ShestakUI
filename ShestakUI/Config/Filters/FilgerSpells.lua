@@ -263,7 +263,7 @@ C["filger_spells"] = {
 			-- Darkness
 			{spellID = 196718, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Immolation Aura
-			{spellID = 178740, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 178740, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Demon Spikes
 			{spellID = 203720, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Barrier
@@ -374,7 +374,7 @@ C["filger_spells"] = {
 			-- Demon Spikes
 			{spellID = 203720, filter = "CD"},
 			-- Immolation Aura
-			{spellID = 178740, filter = "CD"},
+			--FIXME {spellID = 178740, filter = "CD"},
 			-- Felblade
 			{spellID = 213241, filter = "CD"},
 			-- Throw Glaive
