@@ -82,3 +82,14 @@ frame:SetScript("OnEvent", function(_, _, addon)
 		SetInsertItemsLeftToRight(false)
 	end
 end)
+
+local function AcknowledgeTips()
+	if InCombatLockdown() then return end
+
+	for frame in _G.HelpTip.framePool:EnumerateActive() do
+		frame:Acknowledge()
+	end
+end
+
+AcknowledgeTips()
+hooksecurefunc(_G.HelpTip, "Show", AcknowledgeTips)
