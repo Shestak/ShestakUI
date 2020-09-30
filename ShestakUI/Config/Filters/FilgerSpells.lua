@@ -724,7 +724,7 @@ C["filger_spells"] = {
 			-- Bestial Wrath
 			{spellID = 19574, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Trueshot
-			{spellID = 193526, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 193526, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Aspect of the Wild
 			{spellID = 193530, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Aspect of the Eagle
@@ -746,7 +746,7 @@ C["filger_spells"] = {
 			-- Survivalist
 			{spellID = 164857, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Trick Shot
-			{spellID = 227272, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 227272, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bombardment
 			{spellID = 82921, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spitting Cobra
