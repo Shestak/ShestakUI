@@ -429,8 +429,8 @@ tinsert(ns.buttons, AddSpellButton)
 -- Expert mode
 do
 	local frame = CreateFrame("Frame", "ShestakUIProfileFrame", UIParent)
-	frame:SetWidth(540)
-	frame:SetHeight(320)
+	frame:SetWidth(630)
+	frame:SetHeight(380)
 	frame:SetPoint("CENTER", UIParent, "CENTER", 0, 100)
 	frame:SetFrameStrata("DIALOG")
 	tinsert(UISpecialFrames, "ShestakUIProfileFrame")
@@ -442,8 +442,8 @@ do
 	editBox:SetMaxLetters(99999)
 	editBox:SetAutoFocus(true)
 	editBox:SetFontObject(ChatFontNormal)
-	editBox:SetWidth(510)
-	editBox:SetHeight(300)
+	editBox:SetWidth(600)
+	editBox:SetHeight(360)
 	editBox:SetScript("OnEscapePressed", function() frame:Hide() end)
 
 	local scrollArea = CreateFrame("ScrollFrame", "ShestakUIProfileFrameScroll", frame, "UIPanelScrollFrameTemplate")
@@ -481,6 +481,7 @@ do
 
 	tinsert(ns.buttons, SaveButton)
 end
+
 -- Category
 ns.addCategory("general", GENERAL_LABEL, L_GUI_GENERAL_SUBTEXT, true)
 ns.addCategory("font", L.font, L.font_subtext, true, true)
@@ -1619,7 +1620,7 @@ do
 	ad_width:SetPoint("LEFT", width, "RIGHT", 120, 0)
 
 	local combat = ns.CreateCheckBox(parent, "combat", L_GUI_NAMEPLATE_COMBAT)
-	combat:SetPoint("TOPLEFT", width, "BOTTOMLEFT", 0, -20)
+	combat:SetPoint("TOPLEFT", width, "BOTTOMLEFT", 0, -10)
 
 	local health_value = ns.CreateCheckBox(parent, "health_value", L_GUI_NAMEPLATE_HEALTH)
 	health_value:SetPoint("TOPLEFT", combat, "BOTTOMLEFT", 0, 0)

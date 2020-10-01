@@ -187,6 +187,7 @@ local function createSlider(parent, option, lowText, highText, low, high, step, 
 	f:SetMinMaxValues(low, high)
 	f:SetObeyStepOnDrag(true)
 	f:SetValueStep(step)
+	f:SetWidth(150)
 
 	f.tooltipText = ns[parent.tag.."_"..option.."_desc"] or textDesc or ns[parent.tag.."_"..option] or text
 
@@ -227,12 +228,12 @@ ns.CreateNumberSlider = function(parent, option, lowText, highText, low, high, s
 
 	local f = CreateFrame("EditBox", parent:GetName()..option.."TextInput", slider, "InputBoxTemplate")
 	f:SetAutoFocus(false)
-	f:SetWidth(60)
+	f:SetWidth(50)
 	f:SetHeight(18)
 	f:SetMaxLetters(8)
 	f:SetFontObject(GameFontHighlight)
 
-	f:SetPoint("LEFT", slider, "RIGHT", 20, 0)
+	f:SetPoint("LEFT", slider, "RIGHT", 10, 0)
 
 	f:SetScript("OnEscapePressed", onSliderEscapePressed)
 	f:SetScript("OnEnterPressed", onSliderEnterPressed)
