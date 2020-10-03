@@ -16,7 +16,6 @@ bar:SetTemplate("Default")
 -- Make moveable
 bar:EnableMouse(true)
 bar:SetMovable(true)
-bar:SetUserPlaced(true)
 bar:SetFrameStrata("HIGH")
 bar:SetScript("OnMouseDown", function(_, button)
 	if IsAltKeyDown() or IsShiftKeyDown() then
@@ -25,6 +24,7 @@ bar:SetScript("OnMouseDown", function(_, button)
 	elseif IsControlKeyDown() and button == "RightButton" then
 		bar:ClearAllPoints()
 		bar:SetPoint(unpack(C.position.alt_power_bar))
+		bar:SetUserPlaced(false)
 	end
 end)
 bar:SetScript("OnMouseUp", function()
@@ -38,7 +38,10 @@ bar:RegisterEvent("UNIT_POWER_BAR_HIDE")
 bar:RegisterEvent("PLAYER_ENTERING_WORLD")
 bar:SetScript("OnEvent", function(self, event)
 	if event == "PLAYER_ENTERING_WORLD" then
-		bar:SetPoint(unpack(C.position.alt_power_bar))
+		if not bar:IsUserPlaced() then
+			bar:ClearAllPoints()
+			bar:SetPoint(unpack(C.position.alt_power_bar))
+		end
 	end
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	if UnitAlternatePowerInfo("player") then

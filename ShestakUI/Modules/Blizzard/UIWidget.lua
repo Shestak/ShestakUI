@@ -18,7 +18,10 @@ local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:SetScript("OnEvent", function(self, event)
 	if event == "PLAYER_ENTERING_WORLD" then
-		belowAnchor:SetPoint(unpack(C.position.uiwidget_below))
+		if not belowAnchor:IsUserPlaced() then
+			belowAnchor:ClearAllPoints()
+			belowAnchor:SetPoint(unpack(C.position.uiwidget_below))
+		end
 		self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	end
 end)
@@ -33,7 +36,6 @@ end)
 for _, frame in pairs({top, below}) do
 	local anchor = frame == top and topAnchor or belowAnchor
 	anchor:SetMovable(true)
-	anchor:SetUserPlaced(true)
 	anchor:SetClampedToScreen(true)
 	frame:SetClampedToScreen(true)
 	frame:SetScript("OnMouseDown", function(_, button)
@@ -47,6 +49,7 @@ for _, frame in pairs({top, below}) do
 			else
 				anchor:SetPoint(unpack(C.position.uiwidget_below))
 			end
+			anchor:SetUserPlaced(false)
 		end
 	end)
 	frame:SetScript("OnMouseUp", function()
