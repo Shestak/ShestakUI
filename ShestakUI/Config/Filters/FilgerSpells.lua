@@ -157,7 +157,7 @@ C["filger_spells"] = {
 			-- Dark Simulacrum
 			{spellID = 77606, filter = "CD"},
 			-- Soul Reaper
-			{spellID = 130736, filter = "CD"},
+			--FIXME {spellID = 130736, filter = "CD"},
 			-- Death Grip
 			{spellID = 49576, filter = "CD"},
 			-- Plague Leech
@@ -488,11 +488,11 @@ C["filger_spells"] = {
 			-- Ironfur
 			{spellID = 192081, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pulverize
-			{spellID = 158792, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 158792, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lunar Empowerment
-			{spellID = 164547, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 164547, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Solar Empowerment
-			{spellID = 164545, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 164545, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature's Grasp
 			{spellID = 170856, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dash
@@ -1266,7 +1266,7 @@ C["filger_spells"] = {
 			-- Surge of Mists
 			{spellID = 246328, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Strikes
-			{spellID = 129914, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 129914, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Teachings of the Monastery
 			{spellID = 202090, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Transfer the Power
