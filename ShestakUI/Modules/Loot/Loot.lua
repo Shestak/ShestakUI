@@ -169,7 +169,9 @@ Butsu:SetScript("OnMouseDown", function(self, button)
 	if IsAltKeyDown() or IsShiftKeyDown() then
 		self:StartMoving()
 	elseif IsControlKeyDown() and button == "RightButton" then
+		self:ClearAllPoints()
 		self:SetPoint(unpack(C.position.loot))
+		self:SetUserPlaced(false)
 	end
 end)
 
@@ -185,7 +187,6 @@ end)
 Butsu:SetMovable(true)
 Butsu:RegisterForClicks("AnyUp")
 Butsu:SetParent(UIParent)
-Butsu:SetUserPlaced(true)
 Butsu:SetPoint(unpack(C.position.loot))
 Butsu:SetTemplate("Transparent")
 Butsu:SetClampedToScreen(true)
