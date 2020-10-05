@@ -166,34 +166,9 @@ T.SkinFuncs = {}
 T.SkinFuncs["ShestakUI"] = {}
 
 function T.SkinScrollBar(frame)
+	frame:StripTextures()
+
 	local frameName = frame.GetName and frame:GetName()
-	if frameName then
-		if _G[frameName.."BG"] then
-			_G[frameName.."BG"]:SetTexture(nil)
-		end
-		if _G[frameName.."Track"] then
-			_G[frameName.."Track"]:SetTexture(nil)
-		end
-		if _G[frameName.."Top"] then
-			_G[frameName.."Top"]:SetTexture(nil)
-		end
-		if _G[frameName.."Bottom"] then
-			_G[frameName.."Bottom"]:SetTexture(nil)
-		end
-		if _G[frameName.."Middle"] then
-			_G[frameName.."Middle"]:SetTexture(nil)
-		end
-	end
-
-	if frame.Background then frame.Background:SetTexture(nil) end
-	if frame.trackBG then frame.trackBG:SetTexture(nil) end
-	if frame.Middle then frame.Middle:SetTexture(nil) end
-	if frame.Top then frame.Top:SetTexture(nil) end
-	if frame.Bottom then frame.Bottom:SetTexture(nil) end
-	if frame.ScrollBarTop then frame.ScrollBarTop:SetTexture(nil) end
-	if frame.ScrollBarBottom then frame.ScrollBarBottom:SetTexture(nil) end
-	if frame.ScrollBarMiddle then frame.ScrollBarMiddle:SetTexture(nil) end
-
 	local UpButton = frame.ScrollUpButton or frame.ScrollUp or frame.UpButton or _G[frameName and frameName.."ScrollUpButton"] or frame:GetParent().scrollUp
 	local DownButton = frame.ScrollDownButton or frame.ScrollDown or frame.DownButton or _G[frameName and frameName.."ScrollDownButton"] or frame:GetParent().scrollDown
 	local ThumbTexture = frame.ThumbTexture or frame.thumbTexture or _G[frameName and frameName.."ThumbTexture"]
