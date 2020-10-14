@@ -13,7 +13,7 @@ local anchor = CreateFrame("Frame", "PulseCDAnchor", UIParent)
 anchor:SetSize(C.pulsecooldown.size, C.pulsecooldown.size)
 anchor:SetPoint(unpack(C.position.pulse_cooldown))
 
-local frame = CreateFrame("Frame", "PulseCDFrame", anchor)
+local frame = CreateFrame("Frame", "PulseCDFrame", anchor, "BackdropTemplate")
 frame:SetScript("OnEvent", function(self, event, ...) self[event](self, ...) end)
 frame:SetBackdrop({
 	bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = T.noscalemult,

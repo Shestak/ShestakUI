@@ -206,6 +206,7 @@ local micromenu = {
 		ToggleChannelFrame()
 	end},
 	{text = PLAYER_V_PLAYER, notCheckable = 1, func = function()
+		local SHOW_PVP_LEVEL = 10 -- FIXME
 		if T.level >= SHOW_PVP_LEVEL then
 			TogglePVPUI()
 		else
@@ -217,6 +218,7 @@ local micromenu = {
 		end
 	end},
 	{text = DUNGEONS_BUTTON, notCheckable = 1, func = function()
+		local SHOW_LFD_LEVEL = 15 -- FIXME
 		if T.level >= SHOW_LFD_LEVEL then
 			PVEFrame_ToggleFrame("GroupFinderFrame", nil)
 		else

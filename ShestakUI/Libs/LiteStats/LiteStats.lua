@@ -6,6 +6,8 @@ local T, C, L, _ = unpack(select(2, ...))
 local P = "player"
 local realm, char, class, layout = GetRealmName(), UnitName(P), select(2, UnitClass(P)), {}
 
+SHOW_SPEC_LEVEL = 15 --FIXME
+
 -- Tooltip text colors
 local tthead = {r = 0.40, g = 0.78, b = 1}	-- Headers
 local ttsubh = {r = 0.75, g = 0.90, b = 1}	-- Subheaders

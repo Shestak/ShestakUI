@@ -39,9 +39,9 @@ FCF_StartAlertFlash = T.dummy
 ----------------------------------------------------------------------------------------
 --	Fix DeclensionFrame strata
 ----------------------------------------------------------------------------------------
-if T.client == "ruRU" then
-	_G["DeclensionFrame"]:SetFrameStrata("HIGH")
-end
+--FIXME if T.client == "ruRU" then
+	-- _G["DeclensionFrame"]:SetFrameStrata("HIGH")
+-- end
 
 ----------------------------------------------------------------------------------------
 --	Fix SearchLFGLeave() taint

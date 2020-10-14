@@ -38,12 +38,11 @@ local function LoadSkin()
 	QuestScrollFrame:SetPoint("LEFT", WorldMapFrame.backdrop, "RIGHT", 4, 0)
 	QuestScrollFrame.DetailFrame:StripTextures()
 	QuestScrollFrame.DetailFrame.BottomDetail:Hide()
-	QuestScrollFrame.Background:SetAlpha(0)
 	QuestScrollFrame.Contents.Separator.Divider:Hide()
 	QuestScrollFrame:SetSize(259, 463)
 
 	local questHeader = {
-		QuestScrollFrame.Contents.WarCampaignHeader,
+		QuestMapFrame.CampaignOverview.Header,
 		QuestScrollFrame.Contents.StoryHeader
 	}
 
@@ -69,9 +68,9 @@ local function LoadSkin()
 		end
 	end
 
-	QuestScrollFrameScrollBar:SetPoint("TOPLEFT", QuestScrollFrame, "TOPRIGHT", 4, -16)
-	QuestScrollFrameScrollBar:SetPoint("BOTTOMLEFT", QuestScrollFrame, "BOTTOMRIGHT", 4, 15)
-	T.SkinScrollBar(QuestScrollFrameScrollBar)
+	QuestScrollFrame.ScrollBar:SetPoint("TOPLEFT", QuestScrollFrame, "TOPRIGHT", 4, -16)
+	QuestScrollFrame.ScrollBar:SetPoint("BOTTOMLEFT", QuestScrollFrame, "BOTTOMRIGHT", 4, 15)
+	T.SkinScrollBar(QuestScrollFrame.ScrollBar)
 
 	local QuestScrollFrameTopBorder = CreateFrame("Frame", "$parentBorder", QuestScrollFrame)
 	QuestScrollFrameTopBorder:CreateBackdrop("Overlay")
@@ -80,8 +79,10 @@ local function LoadSkin()
 	QuestScrollFrameTopBorder.backdrop:SetPoint("LEFT", WorldMapFrame.Header, "RIGHT", 2, 0)
 
 	QuestMapDetailsScrollFrame:SetPoint("TOPLEFT", 1, 0)
-	QuestMapDetailsScrollFrameScrollBar:SetPoint("TOPLEFT", QuestMapDetailsScrollFrame, "TOPRIGHT", 0, -18)
-	T.SkinScrollBar(QuestMapDetailsScrollFrameScrollBar)
+	QuestMapDetailsScrollFrame.ScrollBar:SetPoint("TOPLEFT", QuestMapDetailsScrollFrame, "TOPRIGHT", 0, -18)
+	T.SkinScrollBar(QuestMapDetailsScrollFrame.ScrollBar)
+
+	QuestMapFrame.Background:SetAlpha(0)
 
 	QuestMapFrame.DetailsFrame:StripTextures()
 	QuestMapFrame.DetailsFrame.RewardsFrame:StripTextures()
@@ -195,17 +196,17 @@ local function LoadSkin()
 	end
 
 	-- Bounty Board
-	local function WorldMapBountyBoard(frame)
-		frame.BountyName:SetFont(C.media.normal_font, 16)
-		frame.BountyName:SetShadowOffset(1, -1)
+	-- local function WorldMapBountyBoard(frame)
+		-- frame.BountyName:SetFont(C.media.normal_font, 16)
+		-- frame.BountyName:SetShadowOffset(1, -1)
 
-		T.SkinHelpBox(frame.TutorialBox)
-	end
+		-- T.SkinHelpBox(frame.TutorialBox)
+	-- end
 
 	-- Elements
 	WorldMapFloorNavigationDropDown(WorldMapFrame.overlayFrames[1])
 	WorldMapTrackingOptionsButton(WorldMapFrame.overlayFrames[2])
-	WorldMapBountyBoard(WorldMapFrame.overlayFrames[3])
+	--FIXME WorldMapBountyBoard(WorldMapFrame.overlayFrames[3])
 
 	-- QuestSessionManagement skin (based on skin from Aurora)
 	QuestMapFrame.QuestSessionManagement:StripTextures()

@@ -34,7 +34,7 @@ local function LoadSkin()
 	local function QuestObjectiveText()
 		if not QuestInfoFrame.questLog then return end
 		local numVisibleObjectives = 0
-		local waypointText = C_QuestLog.GetNextWaypointText(select(8, GetQuestLogTitle(GetQuestLogSelection())))
+		local waypointText = C_QuestLog.GetNextWaypointText(C_QuestLog.GetSelectedQuest())
 		if waypointText then
 			numVisibleObjectives = numVisibleObjectives + 1
 			QuestInfoObjectivesFrame.Objectives[numVisibleObjectives]:SetTextColor(0.5, 0.5, 0.5)
@@ -161,6 +161,10 @@ local function LoadSkin()
 		if template.canHaveSealMaterial then
 			local questFrame = parentFrame:GetParent():GetParent()
 			questFrame.SealMaterialBG:Hide()
+			local text = QuestInfoSealFrame.Text:GetText()
+			if text and text:find("|cff042c54") then
+				QuestInfoSealFrame.Text:SetText(string.gsub(text, "|cff042c54", "|cff1C86EE"))
+			end
 		end
 
 		local rewardsFrame = QuestInfoFrame.rewardsFrame
@@ -284,12 +288,77 @@ local function LoadSkin()
 		end
 	end)
 
+	local function SkinExpandOrCollapse(f)
+		local bg = CreateFrame("Frame", nil, f)
+		bg:SetSize(13, 13)
+		bg:SetPoint("TOPLEFT", f:GetNormalTexture(), 0, -1)
+		bg:SetTemplate("Overlay")
+		f.bg = bg
+
+		bg.minus = bg:CreateTexture(nil, "OVERLAY")
+		bg.minus:SetSize(5, 1)
+		bg.minus:SetPoint("CENTER")
+		bg.minus:SetTexture(C.media.blank)
+
+		bg.plus = bg:CreateTexture(nil, "OVERLAY")
+		bg.plus:SetSize(1, 5)
+		bg.plus:SetPoint("CENTER")
+		bg.plus:SetTexture(C.media.blank)
+		bg.plus:Hide()
+
+		hooksecurefunc(f, "SetNormalAtlas", function(self, texture)
+			if self.settingTexture then return end
+			self.settingTexture = true
+			self:SetNormalTexture("")
+
+			if texture and texture ~= "" then
+				if texture:find("Closed") then
+					self.bg.plus:Show()
+				elseif texture:find("Open") then
+					self.bg.plus:Hide()
+				end
+				self.bg:Show()
+			else
+				self.bg:Hide()
+			end
+			self.settingTexture = nil
+		end)
+
+		hooksecurefunc(f, "SetPushedAtlas", function(self)
+			if self.settingTexture then return end
+			self.settingTexture = true
+			self:SetPushedTexture("")
+
+			self.settingTexture = nil
+		end)
+
+		hooksecurefunc(f, "SetHighlightTexture", function(self, texture)
+			if texture == "Interface\\Buttons\\UI-PlusButton-Hilight" then
+				self:SetHighlightTexture("")
+			end
+		end)
+
+		f:HookScript("OnEnter", function(self)
+			self.bg:SetBackdropBorderColor(unpack(C.media.classborder_color))
+			if self.bg.overlay then
+				self.bg.overlay:SetVertexColor(C.media.classborder_color[1] * 0.3, C.media.classborder_color[2] * 0.3, C.media.classborder_color[3] * 0.3, 1)
+			end
+		end)
+
+		f:HookScript("OnLeave", function(self)
+			self.bg:SetBackdropBorderColor(unpack(C.media.border_color))
+			if self.bg.overlay then
+				self.bg.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
+			end
+		end)
+	end
+
 	hooksecurefunc("QuestLogQuests_Update", function()
-		for i = 6, QuestMapFrame.QuestsFrame.Contents:GetNumChildren() do
+		for i = 1, QuestMapFrame.QuestsFrame.Contents:GetNumChildren() do
 			local child = select(i, QuestMapFrame.QuestsFrame.Contents:GetChildren())
 			if child and child.ButtonText and not child.Text then
 				if not child.isSkinned then
-					T.SkinExpandOrCollapse(child)
+					SkinExpandOrCollapse(child)
 					child.isSkinned = true
 				end
 			end

@@ -53,9 +53,9 @@ hooksecurefunc("CompactUnitFrame_SetUpFrame", function(frame)
 	if frame.IsForbidden and frame:IsForbidden() then
 		return
 	end
-	if frame and frame.GetName and frame:GetName():match("^NamePlate") then
-		return
-	end
+	--FIXME if frame and frame.GetName and frame:GetName():match("^NamePlate") then
+		-- return
+	-- end
 	ClickCastFrames[frame] = true
 end)
 

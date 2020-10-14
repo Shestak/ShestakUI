@@ -25,11 +25,11 @@ local function CreatCopyFrame()
 	frame:SetFrameStrata("DIALOG")
 	tinsert(UISpecialFrames, "CopyFrame")
 	frame:Hide()
+	frame:EnableMouse(true)
 
 	editBox = CreateFrame("EditBox", "CopyBox", frame)
 	editBox:SetMultiLine(true)
 	editBox:SetMaxLetters(99999)
-	editBox:EnableMouse(true)
 	editBox:SetAutoFocus(false)
 	editBox:SetFontObject(ChatFontNormal)
 	editBox:SetWidth(500)
@@ -71,12 +71,7 @@ end
 
 local function colorizeLine(text, r, g, b)
 	local hexCode = T.RGBToHex(r, g, b)
-	local hexReplacement = format("|r%s", hexCode)
-
-	text = gsub(text, "|r", hexReplacement)
-	text = format("%s%s|r", hexCode, text)
-
-	return text
+	return format("%s%s|r", hexCode, text)
 end
 
 local function Copy(cf)
@@ -89,7 +84,7 @@ local function Copy(cf)
 			font:SetFormattedText("%s \n", line)
 			local cleanLine = font:GetText() or ""
 			text = text..cleanLine
-			text = colorizeLine(text, r, g, b)
+			--FIXME text = colorizeLine(text, r, g, b)
 		end
 	end
 	text = text:gsub("|T[^\\]+\\[^\\]+\\[Uu][Ii]%-[Rr][Aa][Ii][Dd][Tt][Aa][Rr][Gg][Ee][Tt][Ii][Nn][Gg][Ii][Cc][Oo][Nn]_(%d)[^|]+|t", "{rt%1}")

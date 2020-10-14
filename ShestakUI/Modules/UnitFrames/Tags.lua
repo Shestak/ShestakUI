@@ -28,7 +28,7 @@ oUF.Tags.Methods["DiffColor"] = function(unit)
 			r, g, b = 0.71, 0.43, 0.27
 		elseif DiffColor >= -2 then
 			r, g, b = 0.84, 0.75, 0.65
-		elseif -DiffColor <= GetQuestGreenRange() then
+		elseif -DiffColor <= 5 then
 			r, g, b = 0.33, 0.59, 0.33
 		else
 			r, g, b = 0.55, 0.57, 0.61
@@ -161,7 +161,7 @@ oUF.Tags.Methods["NameplateHealth"] = function(unit)
 		return ("%s - %d%%"):format(T.ShortValue(hp), hp / maxhp * 100 + 0.5)
 	end
 end
-oUF.Tags.Events["NameplateHealth"] = "UNIT_HEALTH_FREQUENT UNIT_MAXHEALTH NAME_PLATE_UNIT_ADDED"
+oUF.Tags.Events["NameplateHealth"] = "UNIT_HEALTH UNIT_MAXHEALTH NAME_PLATE_UNIT_ADDED"
 
 oUF.Tags.Methods["Absorbs"] = function(unit)
     local absorb = UnitGetTotalAbsorbs(unit)

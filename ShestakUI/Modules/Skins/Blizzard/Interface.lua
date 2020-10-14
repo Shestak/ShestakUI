@@ -63,6 +63,7 @@ local function LoadSkin()
 		-- Display
 		"DisplayPanelRotateMinimap",
 		"DisplayPanelAJAlerts",
+		"DisplayPanelShowInGameNavigation",
 		"DisplayPanelShowTutorials",
 		-- Social
 		"SocialPanelProfanityFilter",
@@ -115,7 +116,8 @@ local function LoadSkin()
 		-- Assessability
 		"AccessibilityPanelMovePad",
 		"AccessibilityPanelCinematicSubtitles",
-		"AccessibilityPanelColorblindMode"
+		"AccessibilityPanelColorblindMode",
+		"AccessibilityPanelOverrideFadeOut"
 	}
 
 	for i = 1, getn(checkboxes) do
@@ -174,6 +176,8 @@ local function LoadSkin()
 		"CameraPanelStyleDropDown",
 		"MousePanelClickMoveStyleDropDown",
 		"AccessibilityPanelColorFilterDropDown",
+		"AccessibilityPanelMotionSicknessDropdown",
+		"AccessibilityPanelShakeIntensityDropdown",
 		"DisplayPanelOutlineDropDown",
 		"DisplayPanelSelfHighlightDropDown",
 		"DisplayPanelDisplayDropDown",

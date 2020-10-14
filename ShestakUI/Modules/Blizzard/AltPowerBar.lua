@@ -44,7 +44,7 @@ bar:SetScript("OnEvent", function(self, event)
 		end
 	end
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
-	if UnitAlternatePowerInfo("player") then
+	if GetUnitPowerBarInfo("player") then
 		self:Show()
 	else
 		self:Hide()
@@ -53,8 +53,7 @@ end)
 
 -- Tooltip
 bar:SetScript("OnEnter", function(self)
-	local name = select(11, UnitAlternatePowerInfo("player"))
-	local tooltip = select(12, UnitAlternatePowerInfo("player"))
+	local name, tooltip = GetUnitPowerBarStrings("player")
 
 	GameTooltip:SetOwner(self, "ANCHOR_BOTTOM", 0, -5)
 	GameTooltip:AddLine(name, 1, 1, 1)
@@ -92,7 +91,7 @@ status:SetScript("OnUpdate", function(self, elapsed)
 	if update >= 1 then
 		local cur = UnitPower("player", ALTERNATE_POWER_INDEX)
 		local max = UnitPowerMax("player", ALTERNATE_POWER_INDEX)
-		local texture, r, g, b = UnitAlternatePowerTextureInfo("player", 2, 0)
+		local texture, r, g, b = GetUnitPowerBarTextureInfo("player", 2, 0)
 		if not texture or (r == 1 and g == 1 and b == 1) then
 			r, g, b = oUF:ColorGradient(cur, max, 0.8, 0.2, 0.1, 1, 0.8, 0.1, 0.33, 0.59, 0.33)
 		end

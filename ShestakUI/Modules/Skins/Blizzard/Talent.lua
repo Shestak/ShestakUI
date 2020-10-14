@@ -38,7 +38,7 @@ local function LoadSkin()
 		select(i, PlayerTalentFrameSpecialization:GetRegions()):Hide()
 	end
 
-	select(7, PlayerTalentFrameSpecialization:GetChildren()):DisableDrawLayer("OVERLAY")
+	select(8, PlayerTalentFrameSpecialization:GetChildren()):DisableDrawLayer("OVERLAY")
 
 	for i = 1, 5 do
 		select(i, PlayerTalentFrameSpecializationSpellScrollFrameScrollChild:GetRegions()):Hide()
@@ -338,7 +338,7 @@ local function LoadSkin()
 
 	-- Help box
 	local HelpBox = {
-		PlayerTalentFrameTalentsPvpTalentFrame.TrinketSlot.HelpBox,
+		--FIXME PlayerTalentFrameTalentsPvpTalentFrame.TrinketSlot.HelpBox,
 		PlayerTalentFrameTalentsPvpTalentFrame.WarmodeTutorialBox
 	}
 

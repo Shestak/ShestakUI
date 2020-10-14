@@ -51,34 +51,34 @@ button.Count:SetJustifyH("RIGHT")
 ------------------------------------------------------------------------------------------
 --	Skin ZoneAbilityFrame
 ------------------------------------------------------------------------------------------
-local button = ZoneAbilityFrame.SpellButton
-local texture = button.Style
-local disableTexture = function(style, texture)
-	if texture then
-		style:SetTexture(nil)
-	end
-end
-button.Style:SetTexture(nil)
-hooksecurefunc(texture, "SetTexture", disableTexture)
+--FIXME local button = ZoneAbilityFrame.SpellButton
+-- local texture = button.Style
+-- local disableTexture = function(style, texture)
+	-- if texture then
+		-- style:SetTexture(nil)
+	-- end
+-- end
+-- button.Style:SetTexture(nil)
+-- hooksecurefunc(texture, "SetTexture", disableTexture)
 
-button:StripTextures()
-button:StyleButton()
-button:SetSize(53, 53)
-button:SetTemplate("Transparent")
-if C.actionbar.classcolor_border == true then
-	button:SetBackdropBorderColor(unpack(C.media.classborder_color))
-end
+-- button:StripTextures()
+-- button:StyleButton()
+-- button:SetSize(53, 53)
+-- button:SetTemplate("Transparent")
+-- if C.actionbar.classcolor_border == true then
+	-- button:SetBackdropBorderColor(unpack(C.media.classcolor))
+-- end
 
-button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-button.Icon:SetPoint("TOPLEFT", button, 2, -2)
-button.Icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
-button.Icon:SetDrawLayer("BACKGROUND", 7)
+-- button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+-- button.Icon:SetPoint("TOPLEFT", button, 2, -2)
+-- button.Icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
+-- button.Icon:SetDrawLayer("BACKGROUND", 7)
 
-button.Count:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
-button.Count:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
-button.Count:SetPoint("BOTTOMRIGHT", 0, 1)
-button.Count:SetJustifyH("RIGHT")
+-- button.Count:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
+-- button.Count:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
+-- button.Count:SetPoint("BOTTOMRIGHT", 0, 1)
+-- button.Count:SetJustifyH("RIGHT")
 
-button.Cooldown:SetAllPoints(button.Icon)
+-- button.Cooldown:SetAllPoints(button.Icon)
 
-T.SkinHelpBox(ZoneAbilityButtonAlert)
+-- T.SkinHelpBox(ZoneAbilityButtonAlert)

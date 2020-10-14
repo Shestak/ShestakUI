@@ -24,7 +24,7 @@ local numQuest = CreateFrame("Frame", nil, QuestMapFrame)
 numQuest.text = numQuest:CreateFontString(nil, "ARTWORK", "GameFontNormal")
 numQuest.text:SetPoint("TOP", QuestMapFrame, "TOP", 0, -21)
 numQuest.text:SetJustifyH("LEFT")
-numQuest.text:SetText(select(2, GetNumQuestLogEntries()).."/"..C_QuestLog.GetMaxNumQuestsCanAccept())
+numQuest.text:SetText(select(2, C_QuestLog.GetNumQuestLogEntries()).."/"..C_QuestLog.GetMaxNumQuestsCanAccept())
 
 ----------------------------------------------------------------------------------------
 --	Creating coordinate
@@ -89,7 +89,7 @@ WorldMapFrame:HookScript("OnUpdate", function()
 			coords.MouseText:SetText(L_MAP_CURSOR.."|cffff0000"..L_MAP_BOUNDS.."|r")
 		end
 
-		numQuest.text:SetText(select(2, GetNumQuestLogEntries()).."/"..C_QuestLog.GetMaxNumQuestsCanAccept())
+		numQuest.text:SetText(select(2, C_QuestLog.GetNumQuestLogEntries()).."/"..C_QuestLog.GetMaxNumQuestsCanAccept())
 
 		int = 0
 	end

@@ -1,4 +1,4 @@
-## Interface: 80300
+## Interface: 90001
 ## Title: ShestakUI
 ## Notes: A total UI overhaul for World of Warcraft
 ## Author: Shestak

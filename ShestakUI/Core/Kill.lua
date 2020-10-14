@@ -26,16 +26,16 @@ frame:SetScript("OnEvent", function(_, _, addon)
 		CompactRaidFrameManager_UpdateOptionsFlowContainer = T.dummy
 	end
 
-	Advanced_UseUIScale:Kill()
-	Advanced_UIScaleSlider:Kill()
+	Display_UseUIScale:Kill()
+	Display_UIScaleSlider:Kill()
 	TutorialFrameAlertButton:Kill()
-	HelpOpenTicketButtonTutorial:Kill()
-	TalentMicroButtonAlert:Kill()
-	CollectionsMicroButtonAlert:Kill()
-	ReagentBankHelpBox:Kill()
-	BagHelpBox:Kill()
-	EJMicroButtonAlert:Kill()
-	PremadeGroupsPvETutorialAlert:Kill()
+	--FIXME HelpOpenTicketButtonTutorial:Kill()
+	-- TalentMicroButtonAlert:Kill()
+	-- CollectionsMicroButtonAlert:Kill()
+	-- ReagentBankHelpBox:Kill()
+	-- BagHelpBox:Kill()
+	-- EJMicroButtonAlert:Kill()
+	-- PremadeGroupsPvETutorialAlert:Kill()
 	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_WORLD_MAP_FRAME, true)
 	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_PET_JOURNAL, true)
 	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_GARRISON_BUILDING, true)
@@ -82,3 +82,14 @@ frame:SetScript("OnEvent", function(_, _, addon)
 		SetInsertItemsLeftToRight(false)
 	end
 end)
+
+local function AcknowledgeTips()
+	if InCombatLockdown() then return end
+
+	for frame in _G.HelpTip.framePool:EnumerateActive() do
+		frame:Acknowledge()
+	end
+end
+
+AcknowledgeTips()
+hooksecurefunc(_G.HelpTip, "Show", AcknowledgeTips)

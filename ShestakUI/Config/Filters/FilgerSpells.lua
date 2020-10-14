@@ -157,7 +157,7 @@ C["filger_spells"] = {
 			-- Dark Simulacrum
 			{spellID = 77606, filter = "CD"},
 			-- Soul Reaper
-			{spellID = 130736, filter = "CD"},
+			--FIXME {spellID = 130736, filter = "CD"},
 			-- Death Grip
 			{spellID = 49576, filter = "CD"},
 			-- Plague Leech
@@ -263,7 +263,7 @@ C["filger_spells"] = {
 			-- Darkness
 			{spellID = 196718, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Immolation Aura
-			{spellID = 178740, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 178740, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Demon Spikes
 			{spellID = 203720, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Soul Barrier
@@ -374,7 +374,7 @@ C["filger_spells"] = {
 			-- Demon Spikes
 			{spellID = 203720, filter = "CD"},
 			-- Immolation Aura
-			{spellID = 178740, filter = "CD"},
+			--FIXME {spellID = 178740, filter = "CD"},
 			-- Felblade
 			{spellID = 213241, filter = "CD"},
 			-- Throw Glaive
@@ -488,11 +488,11 @@ C["filger_spells"] = {
 			-- Ironfur
 			{spellID = 192081, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pulverize
-			{spellID = 158792, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 158792, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lunar Empowerment
-			{spellID = 164547, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 164547, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Solar Empowerment
-			{spellID = 164545, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 164545, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Nature's Grasp
 			{spellID = 170856, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dash
@@ -724,7 +724,7 @@ C["filger_spells"] = {
 			-- Bestial Wrath
 			{spellID = 19574, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Trueshot
-			{spellID = 193526, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 193526, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Aspect of the Wild
 			{spellID = 193530, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Aspect of the Eagle
@@ -746,7 +746,7 @@ C["filger_spells"] = {
 			-- Survivalist
 			{spellID = 164857, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Trick Shot
-			{spellID = 227272, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 227272, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bombardment
 			{spellID = 82921, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spitting Cobra
@@ -1266,7 +1266,7 @@ C["filger_spells"] = {
 			-- Surge of Mists
 			{spellID = 246328, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Strikes
-			{spellID = 129914, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 129914, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Teachings of the Monastery
 			{spellID = 202090, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Transfer the Power
@@ -1508,7 +1508,7 @@ C["filger_spells"] = {
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
 			-- Execution Sentence
-			{spellID = 267799, unitID = "target", caster = "player", filter = "DEBUFF"},
+			--FIXME {spellID = 267799, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Eye of Tyr
 			{spellID = 209202, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Judgment
@@ -1578,7 +1578,7 @@ C["filger_spells"] = {
 			-- Divine Protection
 			{spellID = 498, filter = "CD", absID = true},
 			-- Execution Sentence
-			{spellID = 267798, filter = "CD"},
+			--FIXME {spellID = 267798, filter = "CD"},
 			-- Light's Hammer
 			{spellID = 114158, filter = "CD"},
 			-- Blinding Light
@@ -1602,7 +1602,7 @@ C["filger_spells"] = {
 			-- Blessing of Protection
 			{spellID = 1022, filter = "CD"},
 			-- Light of the Protector
-			{spellID = 184092, filter = "CD"},
+			--FIXME {spellID = 184092, filter = "CD"},
 			-- Divine Shield
 			{spellID = 642, filter = "CD"},
 
@@ -1861,7 +1861,7 @@ C["filger_spells"] = {
 			-- Vampiric Embrace
 			{spellID = 15286, filter = "CD"},
 			-- Dark Ascension
-			{spellID = 280711, filter = "CD"},
+			--FIXME {spellID = 280711, filter = "CD"},
 			-- Power Word: Solace
 			{spellID = 129250, filter = "CD"},
 			-- Power Word: Radiance
@@ -1871,7 +1871,7 @@ C["filger_spells"] = {
 			-- Rapture
 			{spellID = 47536, filter = "CD"},
 			-- Shadow Covenant
-			{spellID = 204065, filter = "CD"},
+			--FIXME {spellID = 204065, filter = "CD"},
 
 			-- PvP
 			-- Honorable Medallion
@@ -2633,7 +2633,7 @@ C["filger_spells"] = {
 			-- Avatar
 			{spellID = 107574, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Bloodbath
-			{spellID = 12292, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 12292, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Recklesness
 			{spellID = 1719, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -2659,7 +2659,7 @@ C["filger_spells"] = {
 			-- Sudden Death
 			{spellID = 52437, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Raging Blow!
-			{spellID = 131116, unitID = "player", caster = "player", filter = "BUFF"},
+			--FIXME {spellID = 131116, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Meat Cleaver
 			{spellID = 85739, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Enrage
@@ -3186,7 +3186,7 @@ C["filger_spells"] = {
 			-- Piercing Howl
 			{spellID = 12323, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Warbringer
-			{spellID = 7922, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--FIXME {spellID = 7922, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Other
 			-- Dark Simulacrum
