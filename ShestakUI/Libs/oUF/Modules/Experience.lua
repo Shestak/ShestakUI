@@ -22,7 +22,7 @@ oUF.colors.honor = {
 local function IsPlayerMaxLevel()
 	local maxLevel = GetRestrictedAccountData()
 	if(maxLevel == 0) then
-		maxLevel = MAX_PLAYER_LEVEL_TABLE[GetExpansionLevel()]
+		maxLevel = GetMaxLevelForPlayerExpansion()
 	end
 
 	return maxLevel == UnitLevel('player')
