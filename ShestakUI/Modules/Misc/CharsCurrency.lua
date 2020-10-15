@@ -15,17 +15,18 @@ local function UpdateData()
 	if TokenFrame:IsVisible() then
 		return
 	end
-	local i, limit = 1, GetCurrencyListSize()
+	local i, limit = 1, C_CurrencyInfo.GetCurrencyListSize()
 	while i <= limit do
-		local name, isHeader, isExpanded, _, _, count = GetCurrencyListInfo(i)
+		local info = C_CurrencyInfo.GetCurrencyListInfo(i)
+		local name, isHeader, isExpanded, count = info.name, info.isHeader, info.isHeaderExpanded, info.quantity
 		if isHeader then
 			if not isExpanded then
 				collapsed[name] = true
-				ExpandCurrencyList(i, 1)
-				limit = GetCurrencyListSize()
+				C_CurrencyInfo.ExpandCurrencyList(i, 1)
+				limit = C_CurrencyInfo.GetCurrencyListSize()
 			end
 		else
-			local link = GetCurrencyListLink(i)
+			local link = C_CurrencyInfo.GetCurrencyListLink(i)
 			local id = tonumber(strmatch(link, "currency:(%d+)"))
 			nameToID[name] = id
 			if count > 0 then
@@ -37,9 +38,12 @@ local function UpdateData()
 		i = i + 1
 	end
 	while i > 0 do
-		local name, isHeader, isExpanded = GetCurrencyListInfo(i)
-		if isHeader and isExpanded and collapsed[name] then
-			ExpandCurrencyList(i, 0)
+		local info = C_CurrencyInfo.GetCurrencyListInfo(i)
+		if info then
+			local name, isHeader, isExpanded = info.name, info.isHeader, info.isHeaderExpanded
+			if isHeader and isExpanded and collapsed[name] then
+				C_CurrencyInfo.ExpandCurrencyList(i, 0)
+			end
 		end
 		i = i - 1
 	end
@@ -78,9 +82,9 @@ hooksecurefunc(GameTooltip, "SetCurrencyByID", function(tooltip, id)
 end)
 
 hooksecurefunc(GameTooltip, "SetCurrencyToken", function(_, i)
-	local name = GetCurrencyListInfo(i)
-	if name then
-		AddTooltipInfo(GameTooltip, nameToID[name], not TokenFrame:IsMouseOver())
+	local info = C_CurrencyInfo.GetCurrencyListInfo(i)
+	if info.name then
+		AddTooltipInfo(GameTooltip, nameToID[info.name], not TokenFrame:IsMouseOver())
 	end
 end)
 
