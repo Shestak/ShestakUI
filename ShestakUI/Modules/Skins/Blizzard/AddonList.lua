@@ -29,6 +29,7 @@ local function LoadSkin()
 		_G["AddonListEntry"..i.."Load"]:SkinButton()
 	end
 
+	AddonListScrollFrame:StripTextures()
 	T.SkinScrollBar(AddonListScrollFrameScrollBar)
 	T.SkinCloseButton(AddonListCloseButton)
 	T.SkinDropDownBox(AddonCharacterDropDown)
