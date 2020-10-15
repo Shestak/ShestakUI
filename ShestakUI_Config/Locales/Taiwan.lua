@@ -17,8 +17,8 @@ L_GUI_LAYOUT = "佈局切換"
 L_GUI_SPELL_LIST = "法術列表"
 L_GUI_SPELL_INPUT = "法術ID"
 L_GUI_TIME_INPUT = "時間"
-L_GUI_EXPERT_MODE = "Expert mode" -- Need review
-L_GUI_EXPERT_MODE_DESC = "Custom editing of Lua profile" -- Need review
+L_GUI_EXPERT_MODE = "專家模式"
+L_GUI_EXPERT_MODE_DESC = "編寫你的插件代碼"
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "一般用戶界面設置，鍵入 /uihelp 獲取更多可用命令。"
@@ -218,7 +218,7 @@ L.actionbar_toggle_mode_desc = "可隨時調節快捷列顯示數目。按鈕位
 L_GUI_ACTIONBAR_HIDE_HIGHLIGHT = "關閉快捷列技能特效高亮"
 L_GUI_ACTIONBAR_BOTTOMBARS = "底部快捷列數目"
 L_GUI_ACTIONBAR_RIGHTBARS = "右側快捷列數目"
-L.actionbar_bottombars_mouseover = "Bottom bars on mouseover" -- Needs review
+L.actionbar_bottombars_mouseover = "底部快捷列滑鼠懸停顯示"
 L_GUI_ACTIONBAR_RIGHTBARS_MOUSEOVER = "右側快捷列滑鼠懸停顯示"
 L_GUI_ACTIONBAR_PETBAR_HIDE = "隱藏寵物快捷列"
 L_GUI_ACTIONBAR_PETBAR_HORIZONTAL = "寵物快捷列橫向排列"
@@ -466,9 +466,9 @@ L.automation_buff_on_scroll_desc = "指定Buff缺失時使用滑鼠滾輪施放"
 L.automation_open_items = "自動打開背包中的封裝物品"
 L.automation_resurrection = "自動確認復活"
 L.automation_summon = "自動確認召喚"
-L.automation_whisper_invite = "Auto invite when whisper keyword" -- Needs review
-L.automation_invite_keyword = "List of keyword (separated by space)" -- Needs review
-L.automation_invite_keyword_desc = "When player whisper you keyword he will be invited in your group" -- Needs review
+L.automation_whisper_invite = "密語自動邀請"
+L.automation_invite_keyword = "添加關鍵詞(需加空隔鍵)"
+L.automation_invite_keyword_desc = "通過關鍵詞自動邀請對方進組"
 
 -- Buffs reminder options
 L_GUI_REMINDER = "Buff提示"

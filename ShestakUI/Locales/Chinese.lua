@@ -90,7 +90,7 @@ L_MINIMAP_CALENDAR = "日历"
 L_MINIMAP_HEAL_LAYOUT = "左鍵 - HPS 布局"
 L_MINIMAP_DPS_LAYOUT = "右键 - DPS 布局"
 L_MINIMAP_BLIZZ_LAYOUT = "中键 - 暴雪 布局"
-L_MINIMAP_FARM = "小地图大小"
+L_MINIMAP_FARM = "小地图缩放"
 L_MINIMAP_TOGGLE = "动作条自由折叠"
 
 -- Chat
