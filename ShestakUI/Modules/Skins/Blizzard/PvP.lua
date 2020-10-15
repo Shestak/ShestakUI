@@ -114,17 +114,17 @@ local function LoadSkin()
 		EnlistmentBonusIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 
-	hooksecurefunc('PVPUIFrame_ConfigureRewardFrame', function(rewardFrame, _, _, itemRewards, currencyRewards)
+	hooksecurefunc("PVPUIFrame_ConfigureRewardFrame", function(rewardFrame, _, _, itemRewards, currencyRewards)
 		local rewardTexture, rewardQuaility, _ = nil, 1
 
-		--FIXME if currencyRewards then
-			-- for _, reward in ipairs(currencyRewards) do
-				-- local name, _, texture, _, _, _, _, quality = GetCurrencyInfo(reward.id)
-				-- if quality == _G.LE_ITEM_QUALITY_ARTIFACT then
-					-- _, rewardTexture, _, rewardQuaility = CurrencyContainerUtil.GetCurrencyContainerInfo(reward.id, reward.quantity, name, texture, quality)
-				-- end
-			-- end
-		-- end
+		if currencyRewards then
+			for _, reward in ipairs(currencyRewards) do
+				local info = C_CurrencyInfo.GetCurrencyInfo(reward.id)
+				if infon and info.quality == Enum.ItemQuality.Legendary then
+					_, rewardTexture, _, rewardQuaility = CurrencyContainerUtil.GetCurrencyContainerInfo(reward.id, reward.quantity, info.name, info.iconFileID, info.quality)
+				end
+			end
+		end
 
 		if not rewardTexture and itemRewards then
 			local reward = itemRewards[1]
