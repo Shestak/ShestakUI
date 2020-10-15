@@ -4,22 +4,21 @@ if C.skins.bubbles ~= true then return end
 ----------------------------------------------------------------------------------------
 --	ChatBubbles skin
 ----------------------------------------------------------------------------------------
-local function styleBubble(frame)
-	if frame:IsForbidden() then return end
-	for i = 1, frame:GetNumRegions() do
-		local region = select(i, frame:GetRegions())
-		if region:IsObjectType("Texture") then
-			region:SetTexture(nil)
-		end
-	end
+local function styleBubble(bubble)
+	if bubble:IsForbidden() then return end
+
+	local frame = bubble:GetChildren(1)
+	frame:SetBackdrop()
+	frame.Tail:Hide()
 
 	frame:CreateBackdrop("Transparent")
 	frame.backdrop:SetPoint("TOPLEFT", 2, -2)
 	frame.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
 	frame.backdrop:SetScale(UIParent:GetScale())
 
-	frame:SetClampedToScreen(false)
-	frame:SetFrameStrata("BACKGROUND")
+	bubble:SetClampedToScreen(false)
+	bubble:SetFrameStrata("BACKGROUND")
+	bubble.styled = true
 end
 
 local function onUpdate(self, elapsed)
@@ -27,9 +26,9 @@ local function onUpdate(self, elapsed)
 	if self.elapsed < 0.1 then return end
 	self.elapsed = 0
 
-	for _, frame in pairs(C_ChatBubbles.GetAllChatBubbles()) do
-		if not frame.backdrop then
-			styleBubble(frame)
+	for _, bubble in pairs(C_ChatBubbles.GetAllChatBubbles()) do
+		if not bubble.styled then
+			styleBubble(bubble)
 		end
 	end
 end
