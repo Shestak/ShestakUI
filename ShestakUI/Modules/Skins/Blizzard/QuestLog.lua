@@ -364,6 +364,28 @@ local function LoadSkin()
 			end
 		end
 	end)
+
+	hooksecurefunc(CampaignHeaderMixin, "UpdateCollapsedState", function(self)
+		if not self.styled then
+			local frame = QuestScrollFrame.Contents
+			frame:CreateBackdrop("Overlay")
+			frame.backdrop:SetPoint("TOPLEFT", self, 6, -5)
+			frame.backdrop:SetPoint("BOTTOMRIGHT", self, -6, 10)
+
+			if UnitFactionGroup("player") == "Horde" then
+				frame.backdrop.overlay:SetVertexColor(0.2, 0.1, 0.1)
+			else
+				frame.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.2)
+			end
+
+			self.SelectedHighlight:SetAlpha(0)
+			self.HighlightTexture:SetAlpha(0)
+			self.Background:SetAlpha(0)
+			self.TopFiligree:Hide()
+			SkinExpandOrCollapse(self.CollapseButton)
+			self.styled = true
+		end
+	end)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
