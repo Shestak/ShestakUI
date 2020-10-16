@@ -1354,8 +1354,10 @@ SlashCmdList.TEST_UF = function()
 	if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
 	if not moving then
 		for _, frames in pairs({"oUF_Target", "oUF_TargetTarget", "oUF_Pet", "oUF_Focus", "oUF_FocusTarget"}) do
-			_G[frames].oldunit = _G[frames].unit
-			_G[frames]:SetAttribute("unit", "player")
+			if _G[frames] then
+				_G[frames].oldunit = _G[frames].unit
+				_G[frames]:SetAttribute("unit", "player")
+			end
 		end
 
 		if C.unitframe.show_arena == true then
@@ -1387,7 +1389,9 @@ SlashCmdList.TEST_UF = function()
 		moving = true
 	else
 		for _, frames in pairs({"oUF_Target", "oUF_TargetTarget", "oUF_Pet", "oUF_Focus", "oUF_FocusTarget"}) do
-			_G[frames]:SetAttribute("unit", _G[frames].oldunit)
+			if _G[frames] then
+				_G[frames]:SetAttribute("unit", _G[frames].oldunit)
+			end
 		end
 
 		if C.unitframe.show_arena == true then
