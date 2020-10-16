@@ -21,6 +21,7 @@ local tooltips = {
 	ReputationParagonTooltip,
 	WarCampaignTooltip,
 	EmbeddedItemTooltip,
+	QuickKeybindTooltip,
 	-- Addons
 	AtlasLootTooltip,
 	QuestGuru_QuestWatchTooltip,
