@@ -7,6 +7,7 @@ if C.unitframe.enable ~= true then return end
 local _, ns = ...
 local oUF = ns.oUF
 
+-- Frame size
 if C.unitframe.extra_height_auto then
 	C.unitframe.extra_health_height = C.font.unit_frames_font_size - 8
 	C.unitframe.extra_power_height = C.font.unit_frames_font_size - 8
@@ -401,13 +402,13 @@ local function Shared(self, unit)
 
 		-- Soul Shards bar
 		if C.unitframe_class_bar.shard == true and T.class == "WARLOCK" then
-			self.SoulShards = CreateFrame("Frame", self:GetName().."SoulShardsBar", self)
+			self.SoulShards = CreateFrame("Frame", self:GetName().."_SoulShardsBar", self)
 			self.SoulShards:CreateBackdrop("Default")
 			self.SoulShards:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.SoulShards:SetSize(player_width, 7)
 
 			for i = 1, 5 do
-				self.SoulShards[i] = CreateFrame("StatusBar", self:GetName().."SoulShards"..i, self.SoulShards)
+				self.SoulShards[i] = CreateFrame("StatusBar", self:GetName().."_SoulShards"..i, self.SoulShards)
 				self.SoulShards[i]:SetSize((player_width - 4) / 5, 7)
 				if i == 1 then
 					self.SoulShards[i]:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
@@ -635,7 +636,7 @@ local function Shared(self, unit)
 		end
 	end
 
-	-- Counter bar
+	-- Counter bar (Darkmoon Fair)
 	if unit == "player" or unit == "pet" then
 		self.CounterBar = CreateFrame("StatusBar", self:GetName().."_CounterBar", self)
 		self.CounterBar:CreateBackdrop("Default")
@@ -664,7 +665,7 @@ local function Shared(self, unit)
 	end
 
 	if unit == "pet" or unit == "targettarget" or unit == "focus" or unit == "focustarget" then
-		self.Debuffs = CreateFrame("Frame", self:GetName().."Debuffs", self)
+		self.Debuffs = CreateFrame("Frame", self:GetName().."_Debuffs", self)
 		self.Debuffs:SetHeight(25)
 		self.Debuffs:SetWidth(pet_width + 4)
 		self.Debuffs.size = T.Scale(C.aura.player_debuff_size)
@@ -723,7 +724,7 @@ local function Shared(self, unit)
 		end
 
 		if unit == "player" then
-			self.Debuffs = CreateFrame("Frame", self:GetName().."Debuffs", self)
+			self.Debuffs = CreateFrame("Frame", self:GetName().."_Debuffs", self)
 			self.Debuffs:SetHeight(165)
 			self.Debuffs:SetWidth(player_width + 4)
 			self.Debuffs.size = T.Scale(C.aura.player_debuff_size)
@@ -922,7 +923,7 @@ local function Shared(self, unit)
 			self.Castbar.Text:SetWordWrap(false)
 			self.Castbar.Text:SetWidth(self.Castbar:GetWidth() - 50)
 
-			if C.unitframe.castbar_icon == true and unit ~= "arena" then
+			if (C.unitframe.castbar_icon == true and (unit == "player" or unit == "target")) or unit == "arena" or unit == "boss" then
 				self.Castbar.Button = CreateFrame("Frame", nil, self.Castbar)
 				self.Castbar.Button:SetHeight(20)
 				self.Castbar.Button:SetWidth(20)
@@ -937,28 +938,19 @@ local function Shared(self, unit)
 					self.Castbar.Button:SetPoint("RIGHT", self.Castbar, "LEFT", -5, 0)
 				elseif unit == "target" then
 					self.Castbar.Button:SetPoint("LEFT", self.Castbar, "RIGHT", 5, 0)
-				end
-			end
-
-			if unit == "arena" or unit == "boss" then
-				self.Castbar.Button = CreateFrame("Frame", nil, self.Castbar)
-				self.Castbar.Button:SetHeight(20)
-				self.Castbar.Button:SetWidth(20)
-				self.Castbar.Button:SetTemplate("Default")
-				if unit == "boss" then
+				elseif unit == "boss" then
 					if C.unitframe.boss_on_right == true then
 						self.Castbar.Button:SetPoint("TOPRIGHT", self.Castbar, "TOPLEFT", -5, 2)
 					else
 						self.Castbar.Button:SetPoint("TOPLEFT", self.Castbar, "TOPRIGHT", 5, 2)
 					end
-				else
-					self.Castbar.Button:SetPoint("TOPRIGHT", self.Castbar, "TOPLEFT", -5, 2)
+				elseif unit == "arena" then
+					if C.unitframe.arena_on_right == true then
+						self.Castbar.Button:SetPoint("TOPRIGHT", self.Castbar, "TOPLEFT", -5, 2)
+					else
+						self.Castbar.Button:SetPoint("TOPLEFT", self.Castbar, "TOPRIGHT", 5, 2)
+					end
 				end
-
-				self.Castbar.Icon = self.Castbar.Button:CreateTexture(nil, "ARTWORK")
-				self.Castbar.Icon:SetPoint("TOPLEFT", self.Castbar.Button, 2, -2)
-				self.Castbar.Icon:SetPoint("BOTTOMRIGHT", self.Castbar.Button, -2, 2)
-				self.Castbar.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			end
 
 			if unit == "player" and C.unitframe.castbar_latency == true then
