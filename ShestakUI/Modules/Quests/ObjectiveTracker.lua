@@ -205,9 +205,22 @@ if C.skins.blizzard_frames == true then
 		end)
 	end
 
-	SkinSmallMinimizeButton(ObjectiveTrackerBlocksFrame.CampaignQuestHeader.MinimizeButton)
-	SkinSmallMinimizeButton(ObjectiveTrackerBlocksFrame.QuestHeader.MinimizeButton)
-	SkinSmallMinimizeButton(ObjectiveTrackerBlocksFrame.AchievementHeader.MinimizeButton)
+	local smallButton = {
+		ObjectiveTrackerBlocksFrame.QuestHeader,
+		ObjectiveTrackerBlocksFrame.CampaignQuestHeader,
+		ObjectiveTrackerBlocksFrame.ScenarioHeader,
+		ObjectiveTrackerBlocksFrame.AchievementHeader,
+		BONUS_OBJECTIVE_TRACKER_MODULE.Header,
+		WORLD_QUEST_TRACKER_MODULE.Header,
+		ObjectiveTrackerFrame.BlocksFrame.UIWidgetsHeader
+	}
+
+	for i = 1, #smallButton do
+		local button = smallButton[i].MinimizeButton
+		if button then
+			SkinSmallMinimizeButton(button)
+		end
+	end
 end
 
 ----------------------------------------------------------------------------------------
