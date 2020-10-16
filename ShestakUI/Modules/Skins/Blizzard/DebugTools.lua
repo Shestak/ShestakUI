@@ -5,35 +5,7 @@ if C.skins.blizzard_frames ~= true then return end
 --	DebugTools skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	ScriptErrorsFrame:SetParent(UIParent)
-	ScriptErrorsFrame:SetTemplate("Transparent")
-	ScriptErrorsFrame.Reload:SkinButton()
-	ScriptErrorsFrame.Close:SkinButton()
-	T.SkinNextPrevButton(ScriptErrorsFrame.PreviousError, true)
-	T.SkinNextPrevButton(ScriptErrorsFrame.NextError)
-	T.SkinScrollBar(ScriptErrorsFrameScrollBar)
-	T.SkinCloseButton(ScriptErrorsFrameClose)
-	ScriptErrorsFrame.ScrollFrame:CreateBackdrop("Overlay")
-	ScriptErrorsFrame.ScrollFrame:SetHeight(ScriptErrorsFrame:GetHeight() - 71)
-
-	local texs = {
-		"TopLeft",
-		"TopRight",
-		"Top",
-		"BottomLeft",
-		"BottomRight",
-		"Bottom",
-		"Left",
-		"Right",
-		"TitleBG",
-		"DialogBG"
-	}
-
-	for i = 1, #texs do
-		_G["ScriptErrorsFrame"..texs[i]]:SetTexture(nil)
-		_G["EventTraceFrame"..texs[i]]:SetTexture(nil)
-	end
-
+	EventTraceFrame:StripTextures()
 	EventTraceFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(EventTraceFrameCloseButton)
 	EventTraceFrameScrollBG:SetTexture(nil)
@@ -55,3 +27,23 @@ local function LoadSkin()
 end
 
 T.SkinFuncs["Blizzard_DebugTools"] = LoadSkin
+
+local function LoadSecondarySkin()
+	ScriptErrorsFrame:SetParent(UIParent)
+	ScriptErrorsFrame:SetSize(400, 280)
+	ScriptErrorsFrame:StripTextures()
+	ScriptErrorsFrame:SetTemplate("Transparent")
+	ScriptErrorsFrame.Reload:SkinButton()
+	ScriptErrorsFrame.Close:SkinButton()
+
+	T.SkinNextPrevButton(ScriptErrorsFrame.PreviousError, true)
+	T.SkinNextPrevButton(ScriptErrorsFrame.NextError)
+	T.SkinScrollBar(ScriptErrorsFrameScrollBar)
+	T.SkinCloseButton(ScriptErrorsFrameClose)
+
+	ScriptErrorsFrame.ScrollFrame:CreateBackdrop("Overlay")
+	ScriptErrorsFrame.ScrollFrame:SetSize(ScriptErrorsFrame:GetWidth() - 45, ScriptErrorsFrame:GetHeight() - 72)
+	ScriptErrorsFrame.ScrollFrame.Text:SetFont(C.media.normal_font, 12)
+end
+
+tinsert(T.SkinFuncs["ShestakUI"], LoadSecondarySkin)
