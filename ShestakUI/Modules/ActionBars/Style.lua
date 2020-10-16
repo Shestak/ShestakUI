@@ -125,6 +125,10 @@ local function StyleNormalButton(button)
 			-- button.iborder:SetFrameLevel(button:GetFrameLevel())
 		end
 
+		if button.QuickKeybindHighlightTexture then
+			button.QuickKeybindHighlightTexture:SetTexture("")
+		end
+
 		button.isSkinned = true
 	end
 end
@@ -187,6 +191,10 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 			normal:ClearAllPoints()
 			normal:SetPoint("TOPLEFT")
 			normal:SetPoint("BOTTOMRIGHT")
+		end
+
+		if button.QuickKeybindHighlightTexture then
+			button.QuickKeybindHighlightTexture:SetTexture("")
 		end
 
 		button.isSkinned = true
@@ -287,6 +295,7 @@ do
 		_G["StanceButton"..i]:StyleButton()
 		_G["PetActionButton"..i]:StyleButton()
 	end
+	StyleNormalButton(ExtraActionButton1)
 end
 
 hooksecurefunc("ActionButton_UpdateFlyout", StyleFlyoutButton)

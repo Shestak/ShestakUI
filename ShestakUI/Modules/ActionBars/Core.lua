@@ -18,7 +18,8 @@ frame:SetScript("OnEvent", function()
 	MicroButtonAndBagsBar:SetPoint("BOTTOMRIGHT", 0, -99) -- Prevent scaling for right panels
 
 	local elements = {
-		MainMenuBar, MainMenuBarArtFrame, OverrideActionBar, PossessBarFrame, PetActionBarFrame, StanceBarFrame
+		MainMenuBar, MainMenuBarArtFrame, OverrideActionBar, PossessBarFrame, PetActionBarFrame, StanceBarFrame,
+		MultiBarBottomLeft.QuickKeybindGlow, MultiBarLeft.QuickKeybindGlow, MultiBarBottomRight.QuickKeybindGlow, MultiBarRight.QuickKeybindGlow
 	}
 
 	if not C_ClassTrial.IsClassTrialCharacter() then
