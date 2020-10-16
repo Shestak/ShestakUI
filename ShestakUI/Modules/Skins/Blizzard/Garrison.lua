@@ -40,6 +40,9 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, _, addon)
 		T.SkinCloseButton(FloatingGarrisonFollowerAbilityTooltip.CloseButton)
 		T.SkinCloseButton(FloatingGarrisonMissionTooltip.CloseButton)
 		T.SkinCloseButton(FloatingGarrisonShipyardFollowerTooltip.CloseButton)
+
+		GarrisonFollowerMissionAbilityWithoutCountersTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		GarrisonFollowerAbilityWithoutCountersTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 
 	if addon == "Blizzard_GarrisonUI" then
@@ -49,7 +52,7 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, _, addon)
 		GarrisonShipyardMapMissionTooltip:StripTextures()
 		GarrisonShipyardMapMissionTooltip:SetTemplate("Transparent")
 		GarrisonShipyardMapMissionTooltip.ItemTooltip.IconBorder:SetAlpha(0)
-		GarrisonShipyardMapMissionTooltip.ItemTooltip.Icon:SkinIcon()
+		GarrisonShipyardMapMissionTooltip.ItemTooltip.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 		GarrisonMissionMechanicFollowerCounterTooltip:HookScript("OnShow", function(self)
 			self:SetTemplate("Transparent")
@@ -108,9 +111,9 @@ local function LoadSkin()
 	MissionList.CompleteDialog.BorderFrame.ViewButton:SkinButton()
 	GarrisonMissionFrame.MissionComplete.NextMissionButton:SkinButton()
 
-	GarrisonMissionFrameHelpBoxButton:SkinButton()
-	GarrisonMissionFrameHelpBox:StripTextures()
-	GarrisonMissionFrameHelpBox:SetTemplate("Transparent")
+	--FIXME GarrisonMissionFrameHelpBoxButton:SkinButton()
+	-- GarrisonMissionFrameHelpBox:StripTextures()
+	-- GarrisonMissionFrameHelpBox:SetTemplate("Transparent")
 
 	local function SkinTab(tab)
 		tab:StripTextures()
@@ -206,7 +209,7 @@ local function LoadSkin()
 			local index = offset + i
 
 			if button then
-				if (index <= #followersList) and not button.template then
+				if (index <= #followersList) then
 					if button.Follower and not button.Follower.backdrop then
 						button.Follower:CreateBackdrop("Overlay")
 						button.Follower.backdrop:SetPoint("TOPLEFT", 0, 0)
@@ -230,8 +233,8 @@ local function LoadSkin()
 				if button.Follower.Counters then
 					for y = 1, #button.Follower.Counters do
 						local counter = button.Follower.Counters[y]
-						if counter and not counter.template then
-							counter:SetTemplate("Default")
+						if counter and not counter.styled then
+							-- counter:SetTemplate("Default") -- FIXME looks ugly, not pixelperfect
 							if counter.Border then
 								counter.Border:SetTexture("")
 							end
@@ -239,6 +242,7 @@ local function LoadSkin()
 								counter.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 								counter.Icon:SetInside()
 							end
+							counter.styled = true
 						end
 					end
 				end
@@ -703,10 +707,10 @@ local function LoadSkin()
 	OrderHallMissionFrame.ClassHallIcon:Kill()
 	T.SkinCloseButton(OrderHallMissionFrame.CloseButton)
 
-	OrderHallMissionTutorialFrame.GlowBox.ArrowGlowUp:Hide()
-	OrderHallMissionTutorialFrame.GlowBox:StripTextures()
-	OrderHallMissionTutorialFrame.GlowBox:SetTemplate("Transparent")
-	T.SkinCloseButton(OrderHallMissionTutorialFrame.GlowBox.CloseButton)
+	--FIXME OrderHallMissionTutorialFrame.GlowBox.ArrowGlowUp:Hide()
+	-- OrderHallMissionTutorialFrame.GlowBox:StripTextures()
+	-- OrderHallMissionTutorialFrame.GlowBox:SetTemplate("Transparent")
+	-- T.SkinCloseButton(OrderHallMissionTutorialFrame.GlowBox.CloseButton)
 
 	for i = 1, 3 do
 		T.SkinTab(_G["OrderHallMissionFrameTab"..i])
