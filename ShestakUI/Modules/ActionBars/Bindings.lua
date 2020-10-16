@@ -285,27 +285,31 @@ SlashCmdList.MOUSEOVERBIND = function()
 		}
 
 		-- Registering
-		local stance = StanceButton1:GetScript("OnClick")
-		local pet = PetActionButton1:GetScript("OnClick")
-		local button = ActionButton1:GetScript("OnClick")
+		for i = 1, 12 do
+			local b = _G["ActionButton"..i]
+			b:HookScript("OnEnter", function(self) bind:Update(self) end)
 
-		local function register(val)
-			if val.IsProtected and val.GetObjectType and val.GetScript and val:GetObjectType() == "CheckButton" and val:IsProtected() then
-				local script = val:GetScript("OnClick")
-				if script == button then
-					val:HookScript("OnEnter", function(self) bind:Update(self) end)
-				elseif script == stance then
-					val:HookScript("OnEnter", function(self) bind:Update(self, "STANCE") end)
-				elseif script == pet then
-					val:HookScript("OnEnter", function(self) bind:Update(self, "PET") end)
-				end
-			end
+			b = _G["MultiBarBottomLeftButton"..i]
+			b:HookScript("OnEnter", function(self) bind:Update(self) end)
+
+			b = _G["MultiBarLeftButton"..i]
+			b:HookScript("OnEnter", function(self) bind:Update(self) end)
+
+			b = _G["MultiBarRightButton"..i]
+			b:HookScript("OnEnter", function(self) bind:Update(self) end)
+
+			b = _G["MultiBarBottomRightButton"..i]
+			b:HookScript("OnEnter", function(self) bind:Update(self) end)
 		end
 
-		local val = EnumerateFrames()
-		while val do
-			register(val)
-			val = EnumerateFrames(val)
+		for i = 1, NUM_STANCE_SLOTS do
+			local b = _G["StanceButton"..i]
+			b:HookScript("OnEnter", function(self) bind:Update(self, "STANCE") end)
+		end
+
+		for i = 1, NUM_PET_ACTION_SLOTS do
+			local b = _G["PetActionButton"..i]
+			b:HookScript("OnEnter", function(self) bind:Update(self, "PET") end)
 		end
 
 		for i = 1, 12 do
