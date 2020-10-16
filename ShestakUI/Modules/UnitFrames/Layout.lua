@@ -252,9 +252,9 @@ local function Shared(self, unit)
 
 		-- Resting icon
 		if C.unitframe.icons_resting == true then
-			self.RestingIndicator = self.Power:CreateTexture(nil, "OVERLAY")
+			self.RestingIndicator = self.Health:CreateTexture(nil, "OVERLAY")
 			self.RestingIndicator:SetSize(18, 18)
-			self.RestingIndicator:SetPoint("BOTTOMLEFT", -8, -8)
+			self.RestingIndicator:SetPoint("BOTTOMLEFT", self, "BOTTOMLEFT", -8, -8)
 		end
 
 		-- Leader/Assistant icons
