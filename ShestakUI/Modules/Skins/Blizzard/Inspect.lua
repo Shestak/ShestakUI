@@ -96,8 +96,6 @@ local function LoadSkin()
 		SkinPvpTalents(InspectPVPFrame["TalentSlot"..i])
 	end
 
-	SkinPvpTalents(InspectPVPFrame.TrinketSlot)
-
 	InspectPVPFrame.BG:Kill()
 
 	SpecializationRing:Hide()
