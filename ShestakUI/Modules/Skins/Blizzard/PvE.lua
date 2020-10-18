@@ -347,6 +347,8 @@ local function LoadSkin()
 	LFGInvitePopup:SetTemplate("Transparent")
 	LFGDungeonReadyPopup:SetTemplate("Transparent")
 	LFGDungeonReadyDialog.SetBackdrop = T.dummy
+	LFGDungeonReadyDialog.Border:Hide()
+	LFGDungeonReadyStatus.Border:Hide()
 
 	hooksecurefunc("LFGDungeonReadyDialog_UpdateRewards", function()
 		for i = 1, LFD_MAX_REWARDS do
