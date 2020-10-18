@@ -1801,7 +1801,7 @@ C["filger_spells"] = {
 			-- Power Word: Shield
 			{spellID = 17, filter = "CD"},
 			-- Holy Fire
-			{spellID = 14914, filter = "CD"},
+			--FIXME Share cd with Mind Blast {spellID = 14914, filter = "CD"},
 			-- Shadow Word: Death
 			{spellID = 32379, filter = "CD"},
 			-- Circle of Healing
