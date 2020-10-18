@@ -146,12 +146,13 @@ SLASH_INSTTELEPORT2 = "/еудузщке"
 --	Spec switching(by Monolit)
 ----------------------------------------------------------------------------------------
 SlashCmdList.SPEC = function(spec)
-	if T.level >= SHOW_SPEC_LEVEL then
+	local canUse, failureReason = C_SpecializationInfo.CanPlayerUseTalentSpecUI()()
+	if canUse then
 		if GetSpecialization() ~= tonumber(spec) then
 			SetSpecialization(spec)
 		end
 	else
-		print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_SPEC_LEVEL).."|r")
+		print("|cffffff00"..failureReason.."|r")
 	end
 end
 SLASH_SPEC1 = "/ss"

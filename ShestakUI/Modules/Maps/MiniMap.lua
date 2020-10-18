@@ -182,13 +182,13 @@ local micromenu = {
 		if not PlayerTalentFrame then
 			TalentFrame_LoadUI()
 		end
-		if T.level >= SHOW_SPEC_LEVEL then
+		if T.level >= 10 then
 			ShowUIPanel(PlayerTalentFrame)
 		else
 			if C.general.error_filter ~= "WHITELIST" then
-				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_SPEC_LEVEL), 1, 0.1, 0.1)
+				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, 10), 1, 0.1, 0.1)
 			else
-				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_SPEC_LEVEL).."|r")
+				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, 10).."|r")
 			end
 		end
 	end},
@@ -208,26 +208,24 @@ local micromenu = {
 		ToggleChannelFrame()
 	end},
 	{text = PLAYER_V_PLAYER, notCheckable = 1, func = function()
-		local SHOW_PVP_LEVEL = 10 -- FIXME
-		if T.level >= SHOW_PVP_LEVEL then
+		if T.level >= 10 then
 			TogglePVPUI()
 		else
 			if C.general.error_filter ~= "WHITELIST" then
-				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL), 1, 0.1, 0.1)
+				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, 10), 1, 0.1, 0.1)
 			else
-				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_PVP_LEVEL).."|r")
+				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, 10).."|r")
 			end
 		end
 	end},
 	{text = DUNGEONS_BUTTON, notCheckable = 1, func = function()
-		local SHOW_LFD_LEVEL = 15 -- FIXME
-		if T.level >= SHOW_LFD_LEVEL then
+		if T.level >= 10 then
 			PVEFrame_ToggleFrame("GroupFinderFrame", nil)
 		else
 			if C.general.error_filter ~= "WHITELIST" then
-				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL), 1, 0.1, 0.1)
+				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, 10), 1, 0.1, 0.1)
 			else
-				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_LFD_LEVEL).."|r")
+				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, 10).."|r")
 			end
 		end
 	end},

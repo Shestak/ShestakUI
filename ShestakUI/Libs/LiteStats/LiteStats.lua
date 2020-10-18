@@ -6,8 +6,6 @@ local T, C, L, _ = unpack(select(2, ...))
 local P = "player"
 local realm, char, class, layout = GetRealmName(), UnitName(P), select(2, UnitClass(P)), {}
 
-SHOW_SPEC_LEVEL = 15 --FIXME
-
 -- Tooltip text colors
 local tthead = {r = 0.40, g = 0.78, b = 1}	-- Headers
 local ttsubh = {r = 0.75, g = 0.90, b = 1}	-- Subheaders
@@ -1419,7 +1417,7 @@ if talents.enabled then
 			RegEvents(self, "PLAYER_ENTERING_WORLD PLAYER_TALENT_UPDATE PLAYER_LOOT_SPEC_UPDATED")
 		end,
 		OnEvent = function(self)
-			if UnitLevel(P) < SHOW_SPEC_LEVEL then
+			if UnitLevel(P) < 10 then
 				self.text:SetText(format("%s %s", NO, SPECIALIZATION))
 				return
 			end
@@ -1459,7 +1457,7 @@ if talents.enabled then
 		end,
 		OnEnter = function(self)
 			self.hovered = true
-			if UnitLevel(P) >= SHOW_SPEC_LEVEL then
+			if UnitLevel(P) >= 10 then
 				GameTooltip:SetOwner(self, "ANCHOR_NONE")
 				GameTooltip:ClearAllPoints()
 				GameTooltip:SetPoint(modules.Talents.tip_anchor, modules.Talents.tip_frame, modules.Talents.tip_x, modules.Talents.tip_y)
@@ -1475,8 +1473,8 @@ if talents.enabled then
 			self.hovered = false
 		end,
 		OnClick = function(self, b)
-			if UnitLevel(P) < SHOW_SPEC_LEVEL then
-				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, SHOW_SPEC_LEVEL).."|r")
+			if UnitLevel(P) < 10 then
+				print("|cffffff00"..format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, 10).."|r")
 				return
 			end
 			if b == "LeftButton" then
