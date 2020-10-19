@@ -98,6 +98,18 @@ if C.reminder.solo_buffs_enable == true then
 				["pvp"] = true,
 			},
 		},
+		PALADIN = {
+			[1] = {	-- Auras group
+				["spells"] = {
+					SpellName(465),		-- Devotion Aura
+					SpellName(183435),	-- Retribution Aura
+					SpellName(317920),	-- Concentration Aura
+				},
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true
+			},
+		},
 		PRIEST = {
 			[1] = {	-- Stamina group
 				["spells"] = {
