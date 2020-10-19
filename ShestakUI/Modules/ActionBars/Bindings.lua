@@ -138,7 +138,9 @@ SlashCmdList.MOUSEOVERBIND = function()
 					self.button.bindstring = "CLICK "..self.button.name..":LeftButton"
 				else
 					local modact = 1 + (self.button.action - 1) % 12
-					if self.button.action < 13 or self.button.action > 72 then
+					if self.button.name == "ExtraActionButton1" then
+						self.button.bindstring = "EXTRAACTIONBUTTON1"
+					elseif self.button.action < 13 or self.button.action > 72 then
 						self.button.bindstring = "ACTIONBUTTON"..modact
 					elseif self.button.action < 73 and self.button.action > 60 then
 						self.button.bindstring = "MULTIACTIONBAR1BUTTON"..modact
@@ -153,6 +155,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 					end
 				end
 
+				GameTooltip:AddLine(bind.button.name)
 				GameTooltip:Show()
 				bind.button.bindings = {GetBindingKey(bind.button.bindstring)}
 				GameTooltip:SetScript("OnHide", function(self)
@@ -316,6 +319,8 @@ SlashCmdList.MOUSEOVERBIND = function()
 			local b = _G["SpellButton"..i]
 			b:HookScript("OnEnter", function(self) bind:Update(self, "SPELL") end)
 		end
+
+		ExtraActionButton1:HookScript("OnEnter", function(self) bind:Update(self) end)
 
 		local function registermacro()
 			for i = 1, MAX_ACCOUNT_MACROS do
