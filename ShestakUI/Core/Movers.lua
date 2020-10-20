@@ -111,6 +111,8 @@ local RestoreDefaults = function(self, button)
 			ShestakUIPositions.Default[self.frame:GetName()] = nil
 			ShestakUIPositions[self.frame:GetName()] = nil
 		end
+	elseif button == "MiddleButton" then
+		self:Hide()
 	end
 end
 

@@ -348,6 +348,8 @@ do
 		if button == "RightButton" then
 			local style, identifier = getObjectInformation(self.obj)
 			restoreDefaultPosition(style, identifier)
+		elseif button == "MiddleButton" then
+			self:Hide()
 		end
 	end
 
