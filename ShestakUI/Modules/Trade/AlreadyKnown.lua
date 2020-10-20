@@ -137,7 +137,7 @@ hooksecurefunc("MerchantFrame_UpdateBuybackInfo", MerchantFrame_UpdateBuybackInf
 local function QuestInfo_ShowRewards()
 	local numQuestRewards, numQuestChoices
 	if QuestInfoFrame.questLog then
-		numQuestRewards, numQuestChoices = GetNumQuestLogRewards(), GetNumQuestLogChoices()
+		numQuestRewards, numQuestChoices = GetNumQuestLogRewards(), GetNumQuestLogChoices(C_QuestLog.GetSelectedQuest(), true)
 	else
 		numQuestRewards, numQuestChoices = GetNumQuestRewards(), GetNumQuestChoices()
 	end
