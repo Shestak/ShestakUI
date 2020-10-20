@@ -52,6 +52,10 @@ local function OnEvent(self, event, arg1)
 		end
 	end
 
+	if group.mainhand or group.offhand then
+		self:RegisterEvent("UNIT_INVENTORY_CHANGED")
+	end
+
 	local role = group.role
 	local spec = group.spec
 	local reversecheck = group.reversecheck
@@ -76,6 +80,22 @@ local function OnEvent(self, event, arg1)
 
 	if ((group.combat and UnitAffectingCombat("player")) or (group.instance and difficultyID ~= 0) or (group.pvp and (instanceType == "arena" or instanceType == "pvp"))) and
 	specpass == true and rolepass == true and not UnitInVehicle("player") then
+		if group.mainhand then
+			local hasMainHandEnchant = GetWeaponEnchantInfo()
+			if not hasMainHandEnchant then
+				self:Show()
+				if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end
+			end
+			return
+		elseif group.offhand then
+			local _, _, _, _, hasOffHandEnchant = GetWeaponEnchantInfo()
+			if not hasOffHandEnchant and C_PaperDollInfo.OffhandHasWeapon() then
+				self:Show()
+				if canplaysound == true then PlaySoundFile(C.media.warning_sound, "Master") end
+			end
+			return
+		end
+
 		wipe(playerBuff)
 		local i = 1
 		while true do

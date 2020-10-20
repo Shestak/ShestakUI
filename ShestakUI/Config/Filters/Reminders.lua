@@ -142,6 +142,30 @@ if C.reminder.solo_buffs_enable == true then
 				["pvp"] = true,
 			},
 		},
+		SHAMAN = {
+			[1] = {	-- Windfury Weapon group
+				["spells"] = {
+					SpellName(33757),	-- Windfury Weapon
+				},
+				["mainhand"] = true,
+				["spec"] = 2,
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
+				["level"] = 10,
+			},
+			[2] = {	-- Flametongue Weapon group
+				["spells"] = {
+					SpellName(318038),	-- Flametongue Weapon
+				},
+				["offhand"] = true,
+				["spec"] = 2,
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
+				["level"] = 10,
+			},
+		},
 		WARRIOR = {
 			[1] = {	-- Battle Shout group
 				["spells"] = {
