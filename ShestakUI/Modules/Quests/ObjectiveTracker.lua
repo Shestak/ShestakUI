@@ -391,3 +391,26 @@ StageBlock.backdrop:SetPoint("BOTTOMRIGHT", ScenarioStageBlock.NormalBG, -6, 5)
 StageBlock.NormalBG:SetAlpha(0)
 StageBlock.FinalBG:SetAlpha(0)
 StageBlock.GlowTexture:SetTexture("")
+
+----------------------------------------------------------------------------------------
+--	Ctrl+Click to abandon a quest or Alt+Click to share a quest(by Suicidal Katt)
+----------------------------------------------------------------------------------------
+hooksecurefunc("QuestMapLogTitleButton_OnClick", function(self)
+	if IsControlKeyDown() then
+		CloseDropDownMenus()
+		QuestMapQuestOptions_AbandonQuest(self.questID)
+	elseif IsAltKeyDown() and C_QuestLog.IsPushableQuest(self.questID) then
+		CloseDropDownMenus()
+		QuestMapQuestOptions_ShareQuest(self.questID)
+	end
+end)
+
+hooksecurefunc(QUEST_TRACKER_MODULE, "OnBlockHeaderClick", function(_, block)
+	if IsControlKeyDown() then
+		CloseDropDownMenus()
+		QuestMapQuestOptions_AbandonQuest(block.id)
+	elseif IsAltKeyDown() and C_QuestLog.IsPushableQuest(block.id) then
+		CloseDropDownMenus()
+		QuestMapQuestOptions_ShareQuest(block.id)
+	end
+end)
