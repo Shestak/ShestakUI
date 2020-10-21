@@ -1517,11 +1517,8 @@ do
 	local who_targetting = ns.CreateCheckBox(parent, "who_targetting")
 	who_targetting:SetPoint("TOPLEFT", raid_icon, "BOTTOMLEFT", 0, 0)
 
-	local arena_experience = ns.CreateCheckBox(parent, "arena_experience")
-	arena_experience:SetPoint("TOPLEFT", who_targetting, "BOTTOMLEFT", 0, 0)
-
 	local spell_id = ns.CreateCheckBox(parent, "spell_id")
-	spell_id:SetPoint("TOPLEFT", arena_experience, "BOTTOMLEFT", 0, 0)
+	spell_id:SetPoint("TOPLEFT", who_targetting, "BOTTOMLEFT", 0, 0)
 
 	local item_count = ns.CreateCheckBox(parent, "item_count")
 	item_count:SetPoint("TOPLEFT", spell_id, "BOTTOMLEFT", 0, 0)

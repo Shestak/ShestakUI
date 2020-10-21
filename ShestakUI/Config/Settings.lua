@@ -280,7 +280,6 @@ C["tooltip"] = {
 	["raid_icon"] = false,						-- Raid icon
 	["unit_role"] = false,						-- Unit role in tooltip
 	["who_targetting"] = false,					-- Show who is targetting the unit (in raid or party)
-	["arena_experience"] = false,				-- Player PvP experience in arena
 	["spell_id"] = false,						-- Id number spells (/si to print buff info in chat)
 	["item_count"] = false,						-- Item count in bags and bank
 	["achievements"] = true,					-- Comparing achievements in tooltip

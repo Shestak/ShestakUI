@@ -249,7 +249,6 @@ L.tooltip_target = "Afficher la cible"
 L.tooltip_title = "Afficher les titres"
 L.tooltip_realm = "Affiche le serveur du joueur"
 L.tooltip_rank = "Afficher le rang de guilde"
-L.tooltip_arena_experience = "Expérience en arène"
 L.tooltip_spell_id = "Afficher l'ID du sort"
 L.tooltip_average_lvl_desc = "The average item level" -- Need review
 L.tooltip_raid_icon = "Afficher l'îcone de raid"

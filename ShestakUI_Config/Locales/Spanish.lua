@@ -249,7 +249,6 @@ L.tooltip_target = "Jugador objetivo en la descripción"
 L.tooltip_title = "Player title in tooltip" -- Need review
 L.tooltip_realm = "Player realm name in tooltip" -- Need review
 L.tooltip_rank = "Rango del jugador en la hermandad en la descripción"
-L.tooltip_arena_experience = "Experiencia JcJ del jugador en Arenas en la descripción"
 L.tooltip_spell_id = "ID del hechizo"
 L.tooltip_average_lvl_desc = "The average item level" -- Need review
 L.tooltip_raid_icon = "Icono de banda"

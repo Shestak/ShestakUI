@@ -249,7 +249,6 @@ L.tooltip_target = "Mostra nei suggerimenti chi ha il giocatore come bersaglio"
 L.tooltip_title = "Titolo del giocatore nei suggerimenti"
 L.tooltip_realm = "Reame del giocatore nei suggerimenti"
 L.tooltip_rank = "Rango in gilda nei suggerimenti"
-L.tooltip_arena_experience = "Esperienza PvP del giocatore in arena"
 L.tooltip_spell_id = "ID Incantesimo/Abilità"
 L.tooltip_average_lvl_desc = "The average item level" -- Need review
 L.tooltip_raid_icon = "Visualizza i marchi d'incursione nei suggerimenti"

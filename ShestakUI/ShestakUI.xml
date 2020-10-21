@@ -225,7 +225,6 @@
 	<Script file="Modules\Tooltip\ItemLevel.lua"/>
 	<Script file="Modules\Tooltip\MountSource.lua"/>
 	<Script file="Modules\Tooltip\MultiItemRef.lua"/>
-	<Script file="Modules\Tooltip\PvPRating.lua"/>
 	<Script file="Modules\Tooltip\RuFix.lua"/>
 	<Script file="Modules\Tooltip\SpellID.lua"/>
 	<Script file="Modules\Tooltip\ItemCount.lua"/>
