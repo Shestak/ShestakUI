@@ -825,6 +825,13 @@ function Stuffing:CreateBagFrame(w)
 			end
 			ToggleDropDownMenu(nil, nil, Stuffing_DDMenu, self:GetName(), 0, 0)
 			return
+		elseif btn == "LeftButton" and IsShiftKeyDown() then
+			if InCombatLockdown() then
+				print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return
+			end
+			Stuffing:SetBagsForSorting("d")
+			Stuffing:Restack()
+			return
 		end
 		self:GetParent():Hide()
 	end)
