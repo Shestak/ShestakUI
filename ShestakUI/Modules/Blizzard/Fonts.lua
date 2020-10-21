@@ -88,6 +88,9 @@ frame:SetScript("OnEvent", function(_, _, addon)
 	SetFont(Number12Font, NORMAL, 11)
 	SetFont(Number13Font, NORMAL, 12)
 	SetFont(Number15Font, NORMAL, 14)
+	SetFont(Game11Font_o1, NORMAL, 11, nil, nil, nil, nil, 0, 0, 0, 1, -1)
+	SetFont(Game12Font_o1, NORMAL, 12, nil, nil, nil, nil, 0, 0, 0, 1, -1)
+	SetFont(Game13Font_o1, NORMAL, 13, nil, nil, nil, nil, 0, 0, 0, 1, -1)
 
 	-- Derived fonts
 	SetFont(BossEmoteNormalHuge, NORMAL, 27, "THICKOUTLINE")
