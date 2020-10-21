@@ -54,7 +54,6 @@ autoinvite:SetScript("OnEvent", function(_, event, arg1, arg2, ...)
 	if ((not UnitExists("party1") or UnitIsGroupLeader("player") or UnitIsGroupAssistant("player"))) and not QueueStatusMinimapButton:IsShown() then
 		for word in pairs(list_keyword) do
 			if arg1:lower():match(word) then
-				print(YES)
 				if event == "CHAT_MSG_WHISPER" then
 					C_PartyInfo.InviteUnit(arg2)
 				elseif event == "CHAT_MSG_BN_WHISPER" then
