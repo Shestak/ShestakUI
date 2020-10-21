@@ -275,6 +275,10 @@ local function Shared(self, unit)
 		end
 	end
 
+	if T.PostCreateDPSRaidFrames then
+		T.PostCreateDPSRaidFrames(self, unit)
+	end
+
 	return self
 end
 

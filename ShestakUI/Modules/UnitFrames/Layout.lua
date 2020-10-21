@@ -1172,6 +1172,11 @@ local function Shared(self, unit)
 	end
 
 	T.HideAuraFrame(self)
+
+	if T.PostCreateUnitFrames then
+		T.PostCreateUnitFrames(self, unit)
+	end
+
 	return self
 end
 

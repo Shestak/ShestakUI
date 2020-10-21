@@ -291,6 +291,10 @@ local function Shared(self, unit)
 		self.RaidDebuffs.Debuffs = T.RaidDebuffs
 	end
 
+	if T.PostCreateHealRaidFrames then
+		T.PostCreateHealRaidFrames(self, unit)
+	end
+
 	return self
 end
 

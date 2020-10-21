@@ -721,6 +721,10 @@ local function style(self, unit)
 
 	-- Disable movement via /moveui
 	self.disableMovement = true
+
+	if T.PostCreateNameplates then
+		T.PostCreateNameplates(self, unit)
+	end
 end
 
 oUF:RegisterStyle("ShestakNameplates", style)
