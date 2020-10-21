@@ -318,16 +318,16 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 			hooksecurefunc("NavBar_Initialize", SetHomeButtonOffsetX)
 
 			if T.client == "ruRU" then
-				--FIXME _G["DeclensionFrame"]:SetTemplate("Transparent")
-				-- _G["DeclensionFrameCancelButton"]:SkinButton()
-				-- _G["DeclensionFrameOkayButton"]:SkinButton()
-				-- T.SkinNextPrevButton(_G["DeclensionFrameSetNext"])
-				-- T.SkinNextPrevButton(_G["DeclensionFrameSetPrev"])
-				-- for i = 1, 5 do
-					-- _G["DeclensionFrameDeclension"..i.."Edit"]:StripTextures(true)
-					-- _G["DeclensionFrameDeclension"..i.."Edit"]:SetTemplate("Overlay")
-					-- _G["DeclensionFrameDeclension"..i.."Edit"]:SetTextInsets(3, 0, 0, 0)
-				-- end
+				_G["DeclensionFrame"]:SetTemplate("Transparent")
+				_G["DeclensionFrameCancelButton"]:SkinButton()
+				_G["DeclensionFrameOkayButton"]:SkinButton()
+				T.SkinNextPrevButton(_G["DeclensionFrameSetNext"])
+				T.SkinNextPrevButton(_G["DeclensionFrameSetPrev"])
+				for i = 1, 5 do
+					_G["DeclensionFrameDeclension"..i.."Edit"]:StripTextures(true)
+					_G["DeclensionFrameDeclension"..i.."Edit"]:SetTemplate("Overlay")
+					_G["DeclensionFrameDeclension"..i.."Edit"]:SetTextInsets(3, 0, 0, 0)
+				end
 			end
 			if C.skins.clique ~= true and IsAddOnLoaded("Clique") then
 				CliqueSpellTab:GetRegions():SetSize(0.1, 0.1)
