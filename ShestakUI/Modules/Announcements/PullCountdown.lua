@@ -52,6 +52,7 @@ function frame.Pull(timer)
 end
 
 SlashCmdList.PULLCOUNTDOWN = function(msg)
+	if not IsInGroup() then return end
 	if tonumber(msg) ~= nil then
 		frame.Pull(msg)
 	else

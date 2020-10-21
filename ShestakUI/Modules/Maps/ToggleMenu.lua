@@ -65,9 +65,6 @@ C["togglemainmenu"] = {
 			if C.unitframe.enable == true then
 				SlashCmdList.TEST_UF()
 			end
-			if C.announcements.pull_countdown == true then
-				SlashCmdList.PULLCOUNTDOWN()
-			end
 			if C.loot.rolllootframe == true then
 				SlashCmdList.TESTROLL()
 			end
