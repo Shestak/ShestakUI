@@ -199,18 +199,24 @@ local function LoadSkin()
 		tex:SetAllPoints(button.Icon)
 	end
 
-	-- Bounty Board
-	-- local function WorldMapBountyBoard(frame)
-		-- frame.BountyName:SetFont(C.media.normal_font, 16)
-		-- frame.BountyName:SetShadowOffset(1, -1)
+	-- Tracking Pin
+	local function WorldMapTrackingPinButton(button)
+		local shadow = button:GetRegions()
+		shadow:Hide()
 
-		-- T.SkinHelpBox(frame.TutorialBox)
-	-- end
+		button.Background:Hide()
+		button.IconOverlay:SetAlpha(0)
+		button.Border:Hide()
+
+		local tex = button:GetHighlightTexture()
+		tex:SetAtlas("Waypoint-MapPin-Untracked")
+		tex:SetAllPoints(button.Icon)
+	end
 
 	-- Elements
 	WorldMapFloorNavigationDropDown(WorldMapFrame.overlayFrames[1])
 	WorldMapTrackingOptionsButton(WorldMapFrame.overlayFrames[2])
-	--FIXME WorldMapBountyBoard(WorldMapFrame.overlayFrames[3])
+	WorldMapTrackingPinButton(WorldMapFrame.overlayFrames[3])
 
 	-- QuestSessionManagement skin (based on skin from Aurora)
 	QuestMapFrame.QuestSessionManagement:StripTextures()
