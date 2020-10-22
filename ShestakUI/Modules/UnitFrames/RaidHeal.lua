@@ -54,7 +54,6 @@ local function Shared(self, unit)
 		end
 	end
 
-	self.Health.frequentUpdates = true
 	if C.unitframe.own_color == true then
 		self.Health.colorDisconnected = false
 		self.Health.colorReaction = false
@@ -220,8 +219,7 @@ local function Shared(self, unit)
 			myBar = mhpb,
 			otherBar = ohpb,
 			absorbBar = ahpb,
-			maxOverflow = 1,
-			frequentUpdates = true
+			maxOverflow = 1
 		}
 
 		--self.IncHeal = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)

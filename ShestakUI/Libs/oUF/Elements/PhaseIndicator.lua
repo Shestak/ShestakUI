@@ -1,6 +1,32 @@
 local _, ns = ...
 local oUF = ns.oUF
 
+--[[ Override: PhaseIndicator:UpdateTooltip()
+Used to populate the tooltip when the widget is hovered.
+
+* self - the PhaseIndicator widget
+--]]
+local function UpdateTooltip(element)
+	local text = PartyUtil.GetPhasedReasonString(element.reason, element.__owner.unit)
+	if(text) then
+		GameTooltip:SetText(text, nil, nil, nil, nil, true)
+		GameTooltip:Show()
+	end
+end
+
+local function onEnter(element)
+	if(not element:IsVisible()) then return end
+
+	if(element.reason) then
+		GameTooltip:SetOwner(element, 'ANCHOR_BOTTOMRIGHT')
+		element:UpdateTooltip()
+	end
+end
+
+local function onLeave()
+	GameTooltip:Hide()
+end
+
 local function Update(self, event, unit)
 	if(self.unit ~= unit) then return end
 
@@ -15,21 +41,26 @@ local function Update(self, event, unit)
 		element:PreUpdate()
 	end
 
-	local isInSamePhase = not UnitPhaseReason(unit)
-	if(not isInSamePhase and UnitIsPlayer(unit) and UnitIsConnected(unit)) then
+	-- BUG: UnitPhaseReason returns wrong data for friendly NPCs in phased scenarios like WM or Chromie Time
+	-- https://github.com/Stanzilla/WoWUIBugs/issues/49
+	local phaseReason = UnitIsPlayer(unit) and UnitIsConnected(unit) and UnitPhaseReason(unit) or nil
+	if(phaseReason) then
 		element:Show()
 	else
 		element:Hide()
 	end
 
-	--[[ Callback: PhaseIndicator:PostUpdate(isInSamePhase)
+	element.reason = phaseReason
+
+	--[[ Callback: PhaseIndicator:PostUpdate(isInSamePhase, phaseReason)
 	Called after the element has been updated.
 
 	* self          - the PhaseIndicator element
 	* isInSamePhase - indicates whether the unit is in the same phase as the player (boolean)
+	* phaseReason   - the reason why the unit is in a different phase (number?)
 	--]]
 	if(element.PostUpdate) then
-		return element:PostUpdate(isInSamePhase)
+		return element:PostUpdate(not phaseReason, phaseReason)
 	end
 end
 
@@ -56,8 +87,21 @@ local function Enable(self)
 
 		self:RegisterEvent('UNIT_PHASE', Path)
 
-		if(element:IsObjectType('Texture') and not element:GetTexture()) then
-			element:SetTexture([[Interface\TargetingFrame\UI-PhasingIcon]])
+		local icon = (element.Icon or element)
+		if(icon:IsObjectType('Texture') and not icon:GetTexture()) then
+			icon:SetTexture([[Interface\TargetingFrame\UI-PhasingIcon]])
+		end
+
+		if(element.IsMouseEnabled and element:IsMouseEnabled()) then
+			if(not element:GetScript('OnEnter')) then
+				element:SetScript('OnEnter', onEnter)
+			end
+
+			if(not element:GetScript('OnLeave')) then
+				element:SetScript('OnLeave', onLeave)
+			end
+
+			element.UpdateTooltip = element.UpdateTooltip or UpdateTooltip
 		end
 
 		return true

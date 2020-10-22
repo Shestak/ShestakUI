@@ -59,7 +59,6 @@ local function Shared(self, unit)
 	self.Health:SetPoint("TOPRIGHT", self, "TOPRIGHT", 0, 0)
 	self.Health:SetStatusBarTexture(C.media.texture)
 
-	self.Health.frequentUpdates = true
 	if C.unitframe.own_color == true then
 		self.Health.colorTapping = false
 		self.Health.colorDisconnected = false
@@ -1137,8 +1136,7 @@ local function Shared(self, unit)
 			myBar = mhpb,
 			otherBar = ohpb,
 			absorbBar = ahpb,
-			maxOverflow = 1,
-			frequentUpdates = true
+			maxOverflow = 1
 		}
 	end
 

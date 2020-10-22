@@ -62,7 +62,6 @@ local function Shared(self, unit)
 		end
 	end
 
-	self.Health.frequentUpdates = true
 	self.Health.colorTapping = true
 	self.Health.colorDisconnected = true
 	self.Health.colorClassPet = false
@@ -257,8 +256,7 @@ local function Shared(self, unit)
 			myBar = mhpb,
 			otherBar = ohpb,
 			absorbBar = ahpb,
-			maxOverflow = 1,
-			frequentUpdates = true
+			maxOverflow = 1
 		}
 	end
 

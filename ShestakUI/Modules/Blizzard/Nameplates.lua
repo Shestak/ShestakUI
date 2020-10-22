@@ -433,7 +433,6 @@ local function style(self, unit)
 	self.Health = CreateFrame("StatusBar", nil, self)
 	self.Health:SetAllPoints(self)
 	self.Health:SetStatusBarTexture(C.media.texture)
-	self.Health.frequentUpdates = true
 	self.Health.colorTapping = true
 	self.Health.colorDisconnected = true
 	self.Health.colorClass = true
