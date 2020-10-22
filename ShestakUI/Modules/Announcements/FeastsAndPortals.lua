@@ -1,4 +1,5 @@
 ﻿local T, C, L, _ = unpack(select(2, ...))
+if C.announcements.feasts ~= true and C.announcements.portals ~= true and C.announcements.toys ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Announce Feasts/Souls/Repair Bots/Portals/Ritual of Summoning
@@ -6,8 +7,9 @@
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 frame:SetScript("OnEvent", function()
+	if not IsInGroup() or InCombatLockdown() then return end
 	local _, subEvent, _, _, srcName, _, _, _, destName, _, _, spellID = CombatLogGetCurrentEventInfo()
-	if not IsInGroup() or InCombatLockdown() or not subEvent or not spellID or not srcName then return end
+	if not subEvent or not spellID or not srcName then return end
 	if not UnitInRaid(srcName) and not UnitInParty(srcName) then return end
 
 	local srcName = srcName:gsub("%-[^|]+", "")
