@@ -231,6 +231,9 @@ SlashCmdList.MOUSEOVERBIND = function()
 			self.enabled = true
 			self:RegisterEvent("PLAYER_REGEN_DISABLED")
 			if C.actionbar.enable then
+				if C.actionbar.bottombars_mouseover == true then
+					BottomBarMouseOver(1)
+				end
 				if C.actionbar.rightbars_mouseover == true then
 					RightBarMouseOver(1)
 				end
@@ -260,6 +263,9 @@ SlashCmdList.MOUSEOVERBIND = function()
 			self:UnregisterEvent("PLAYER_REGEN_DISABLED")
 			StaticPopup_Hide("KEYBIND_MODE")
 			if C.actionbar.enable then
+				if C.actionbar.bottombars_mouseover == true then
+					BottomBarMouseOver(0)
+				end
 				if C.actionbar.rightbars_mouseover == true then
 					RightBarMouseOver(0)
 				end
