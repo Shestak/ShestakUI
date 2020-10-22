@@ -709,13 +709,19 @@ function Stuffing:SearchUpdate(str)
 						_G[b.frame:GetName().."IconTexture"]:SetVertexColor(0.5, 0.5, 0.5)
 					end
 					SetItemButtonDesaturated(b.frame, true)
-					b.frame:SetAlpha(0.2)
+					b.frame.searchOverlay:Show()
+					if C.bag.ilvl == true then
+						b.frame.text:SetAlpha(0.2)
+					end
 				else
 					if IsItemUnusable(b.name) or minLevel > T.level then
 						_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
 					end
 					SetItemButtonDesaturated(b.frame, false)
-					b.frame:SetAlpha(1)
+					b.frame.searchOverlay:Hide()
+					if C.bag.ilvl == true then
+						b.frame.text:SetAlpha(1)
+					end
 				end
 			end
 		end
@@ -889,11 +895,18 @@ function Stuffing:InitBags()
 	editbox.backdrop:SetPoint("TOPLEFT", -2, 1)
 	editbox.backdrop:SetPoint("BOTTOMRIGHT", 2, -1)
 
-	local resetAndClear = function(self)
+	local fullReset = function(self)
 		self:GetParent().detail:Show()
 		self:ClearFocus()
-		Stuffing:SearchReset()
+		editbox:SetText("")
+		Stuffing:SearchUpdate("")
 	end
+
+	-- local resetAndClear = function(self)
+		-- self:GetParent().detail:Show()
+		-- self:ClearFocus()
+		-- Stuffing:SearchReset()
+	-- end
 
 	local updateSearch = function(self, t)
 		if t == true then
@@ -906,8 +919,8 @@ function Stuffing:InitBags()
 		self:GetParent().detail:Show()
 	end
 
-	editbox:SetScript("OnEscapePressed", resetAndClear)
-	editbox:SetScript("OnEnterPressed", resetAndClear)
+	editbox:SetScript("OnEscapePressed", fullReset)
+	editbox:SetScript("OnEnterPressed", function(self) self:ClearFocus() end)
 	editbox:SetScript("OnEditFocusLost", hideSearch)
 	editbox:SetScript("OnEditFocusGained", editbox.HighlightText)
 	editbox:SetScript("OnTextChanged", updateSearch)
