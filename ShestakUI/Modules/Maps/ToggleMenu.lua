@@ -266,12 +266,12 @@ OpenMenuBG:SetFrameLevel(defaultframelevel)
 OpenMenuBG:SetFrameStrata("HIGH")
 OpenMenuBG:SetScript("OnMouseUp", function()
 	ToggleMenu_Toggle()
-	if (T.class == "MAGE" and T.level >= 17) and _G["TeleportMenu"]:IsShown() then
+	if (T.class == "MAGE" and T.level >= 11) and _G["TeleportMenu"]:IsShown() then
 		_G["TeleportMenu"]:Hide()
 	end
 end)
 OpenMenuBG:HookScript("OnEnter", function(self)
-	if (T.class == "MAGE" and T.level >= 17) and _G["TeleportMenu"]:IsShown() then
+	if (T.class == "MAGE" and T.level >= 11) and _G["TeleportMenu"]:IsShown() then
 	else
 		self:FadeIn()
 	end
