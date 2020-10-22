@@ -53,7 +53,6 @@ end
 button.style:SetTexture(nil)
 hooksecurefunc(texture, "SetTexture", disableTexture)
 
-button:StyleButton()
 button:SetSize(53, 53)
 
 button.Count:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)

@@ -95,7 +95,7 @@ local function StyleNormalButton(button)
 			hotkey:Kill()
 		end
 
-		if button:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() and not isExtraAction then
+		if not isExtraAction then
 			button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		end
 		button:SetTemplate("Transparent")
@@ -120,14 +120,14 @@ local function StyleNormalButton(button)
 			highlight:SetPoint("BOTTOMRIGHT", 4, -4)
 		end
 
-		if _G[name.."FlyoutArrow"] then
-			-- button.oborder:SetFrameLevel(button:GetFrameLevel())
-			-- button.iborder:SetFrameLevel(button:GetFrameLevel())
-		end
+		button.oborder:SetFrameLevel(button:GetFrameLevel())
+		button.iborder:SetFrameLevel(button:GetFrameLevel())
 
 		if button.QuickKeybindHighlightTexture then
 			button.QuickKeybindHighlightTexture:SetTexture("")
 		end
+
+		button:StyleButton()
 
 		button.isSkinned = true
 	end
@@ -196,6 +196,8 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 		if button.QuickKeybindHighlightTexture then
 			button.QuickKeybindHighlightTexture:SetTexture("")
 		end
+
+		button:StyleButton()
 
 		button.isSkinned = true
 	end
@@ -279,11 +281,6 @@ end
 
 do
 	for i = 1, 12 do
-		_G["ActionButton"..i]:StyleButton()
-		_G["MultiBarBottomLeftButton"..i]:StyleButton()
-		_G["MultiBarBottomRightButton"..i]:StyleButton()
-		_G["MultiBarLeftButton"..i]:StyleButton()
-		_G["MultiBarRightButton"..i]:StyleButton()
 		StyleNormalButton(_G["ActionButton"..i])
 		StyleNormalButton(_G["MultiBarBottomLeftButton"..i])
 		StyleNormalButton(_G["MultiBarBottomRightButton"..i])
@@ -291,10 +288,6 @@ do
 		StyleNormalButton(_G["MultiBarRightButton"..i])
 	end
 
-	for i = 1, 10 do
-		_G["StanceButton"..i]:StyleButton()
-		_G["PetActionButton"..i]:StyleButton()
-	end
 	StyleNormalButton(ExtraActionButton1)
 end
 
