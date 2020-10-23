@@ -12,6 +12,9 @@ local g -- iLvel number for Inspect frame
 f:RegisterEvent("ADDON_LOADED")
 f:RegisterEvent("PLAYER_LOGIN")
 
+local fontObject = CreateFont("iLvLFont")
+fontObject:SetFontObject("SystemFont_Outline_Small")
+
 -- Tooltip and scanning by Phanx @ http://www.wowinterface.com/forums/showthread.php?p=271406
 local S_ITEM_LEVEL = "^" .. gsub(ITEM_LEVEL, "%%d", "(%%d+)")
 
@@ -94,7 +97,7 @@ end
 
 local function _createStrings()
 	local function _stringFactory(parent)
-		local s = f:CreateFontString(nil, "OVERLAY", "SystemFont_Outline_Small")
+		local s = f:CreateFontString(nil, "OVERLAY", "iLvLFont")
 		s:SetPoint("TOP", parent, "TOP", 0, -2)
 
 		return s
@@ -126,7 +129,7 @@ end
 
 local function _createGStrings()
 	local function _stringFactory(parent)
-		local s = g:CreateFontString(nil, "OVERLAY", "SystemFont_Outline_Small")
+		local s = g:CreateFontString(nil, "OVERLAY", "iLvLFont")
 		s:SetPoint("TOP", parent, "TOP", 0, -2)
 
 		return s
@@ -229,3 +232,83 @@ local function OnEvent(self, event, ...)
 	end
 end
 f:SetScript("OnEvent", OnEvent)
+
+----------------------------------------------------------------------------------------
+--	Item level on flyout buttons (by Merathilis)
+----------------------------------------------------------------------------------------
+local ItemDB = {}
+
+local function _getRealItemLevel(link, bag, slot)
+	if ItemDB[link] then return ItemDB[link] end
+
+	local realItemLevel
+
+	scanner:SetOwner(UIParent, "ANCHOR_NONE")
+	if bag and type(bag) == "string" then
+		scanner:SetInventoryItem(bag, slot)
+	else
+		scanner:SetBagItem(bag, slot)
+	end
+
+	local line = _G[scannerName.."TextLeft2"]
+	if line then
+		local msg = line:GetText()
+		if msg and string.find(msg, S_ITEM_LEVEL) then
+			local itemLevel = string.match(msg, S_ITEM_LEVEL)
+			if itemLevel and (tonumber(itemLevel) > 0) then
+				realItemLevel = itemLevel
+			end
+		else
+			-- Check line 3, some artifacts have the ilevel there
+			line = _G[scannerName.."TextLeft3"]
+			if line then
+				local msg = line:GetText()
+				if msg and string.find(msg, S_ITEM_LEVEL) then
+					local itemLevel = string.match(msg, S_ITEM_LEVEL)
+					if itemLevel and (tonumber(itemLevel) > 0) then
+						realItemLevel = itemLevel
+					end
+				end
+			end
+		end
+	end
+
+	ItemDB[link] = tonumber(realItemLevel)
+	return realItemLevel
+end
+
+local function SetupFlyoutLevel(button, bag, slot)
+	if not button.iLvl then
+		button.iLvl = button:CreateFontString(nil, "OVERLAY", "iLvLFont")
+		button.iLvl:SetPoint("TOP", 0, -2)
+	end
+
+	local link, level
+	if bag then
+		link = GetContainerItemLink(bag, slot)
+		level = _getRealItemLevel(link, bag, slot)
+	else
+		link = GetInventoryItemLink("player", slot)
+		level = _getRealItemLevel(link, "player", slot)
+	end
+
+	button.iLvl:SetText("|cFFFFFF00"..level)
+end
+
+hooksecurefunc("EquipmentFlyout_DisplayButton", function(button)
+	local location = button.location
+
+	if not location or location >= EQUIPMENTFLYOUT_FIRST_SPECIAL_LOCATION then
+		if button.iLvl then button.iLvl:SetText("") end
+		return
+	end
+
+	local _, _, bags, voidStorage, slot, bag = EquipmentManager_UnpackLocation(location)
+	if voidStorage then return end
+
+	if bags then
+		SetupFlyoutLevel(button, bag, slot)
+	else
+		SetupFlyoutLevel(button, nil, slot)
+	end
+end)
