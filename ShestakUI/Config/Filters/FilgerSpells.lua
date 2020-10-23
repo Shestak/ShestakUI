@@ -1256,6 +1256,8 @@ C["filger_spells"] = {
 			{spellID = 20271, filter = "CD"},
 			-- Blade of Justice
 			{spellID = 184575, filter = "CD"},
+			-- Hammer of Wrath
+			{spellID = 24275, filter = "CD"},
 			-- Holy Shock
 			{spellID = 20473, filter = "CD"},
 			-- Consecration
