@@ -107,8 +107,6 @@ function Addon:PLAYER_LOGIN(event)
         self:UpdateActionButtonState(button, true)
     end
 
-
-
     -- register existing action buttons
     -- the method varies between classic and shadowlands, as action buttons in
     -- shadowlands use ActionBarActionButtonMixin
@@ -201,6 +199,10 @@ function Addon:PLAYER_LOGIN(event)
         end
 
         local function petActionBar_Update(bar)
+            -- the UI does not actually use the self arg here
+            -- and sometimes calls the method without it
+            bar = bar or _G.PetActionBarFrame
+
             -- reset the timer on update, so that we don't trigger the bar's
             -- own range updater code
             bar.rangeTimer = nil
@@ -212,7 +214,7 @@ function Addon:PLAYER_LOGIN(event)
                     self.buttonStates[button] = nil
                     self:UpdatePetActionButtonWatched(button)
                 end
-            -- if we don't, wipe any actions we currently are showing
+                -- if we don't, wipe any actions we currently are showing
             else
                 wipe(self.watchedPetActions)
             end
@@ -402,7 +404,9 @@ function Addon:StartButtonFlashing(button)
         if self.flashAnimations then
             self.flashAnimations[button] = animation
         else
-            self.flashAnimations = { [button] = animation }
+            self.flashAnimations = {
+                [button] = animation
+            }
         end
     end
 
