@@ -1146,88 +1146,28 @@ local function castColor(unit)
 end
 
 T.PostCastStart = function(Castbar, unit)
-	Castbar.channeling = false
 	if unit == "vehicle" then unit = "player" end
 
 	if unit == "player" and C.unitframe.castbar_latency == true and Castbar.Latency then
 		local _, _, _, ms = GetNetStats()
 		Castbar.Latency:SetText(("%dms"):format(ms))
-		Castbar.SafeZone:SetDrawLayer("BORDER")
-		Castbar.SafeZone:SetVertexColor(0.85, 0.27, 0.27)
+		if Castbar.casting then
+			Castbar.SafeZone:SetDrawLayer("BORDER")
+			Castbar.SafeZone:SetVertexColor(0.85, 0.27, 0.27)
+		else
+			Castbar.SafeZone:SetDrawLayer("ARTWORK")
+			Castbar.SafeZone:SetVertexColor(0.85, 0.27, 0.27, 0.75)
+		end
 	end
 
 	if unit == "player" and C.unitframe.castbar_ticks == true then
-		setBarTicks(Castbar, 0)
-	end
-
-	if Castbar.notInterruptible and UnitCanAttack("player", unit) then
-		Castbar:SetStatusBarColor(0.8, 0, 0)
-		Castbar.bg:SetVertexColor(0.8, 0, 0, 0.2)
-		Castbar.Overlay:SetBackdropBorderColor(0.8, 0, 0)
-		if C.unitframe.castbar_icon == true and (unit == "target" or unit == "focus") then
-			Castbar.Button:SetBackdropBorderColor(0.8, 0, 0)
-		end
-	else
-		if unit == "pet" or unit == "vehicle" then
-			local _, class = UnitClass("player")
-			local r, g, b = unpack(T.oUF_colors.class[class])
-			if C.unitframe.own_color == true then
-				Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
-				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
-			else
-				if b then
-					Castbar:SetStatusBarColor(r, g, b)
-					Castbar.bg:SetVertexColor(r, g, b, 0.2)
-				end
-			end
+		if Castbar.casting then
+			setBarTicks(Castbar, 0)
 		else
-			if C.unitframe.own_color == true then
-				Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
-				Castbar.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
-			else
-				local r, g, b = castColor(unit)
-				Castbar:SetStatusBarColor(r, g, b)
-				Castbar.bg:SetVertexColor(r, g, b, 0.2)
-			end
+			local spell = UnitChannelInfo(unit)
+			Castbar.channelingTicks = T.CastBarTicks[spell] or 0
+			setBarTicks(Castbar, Castbar.channelingTicks)
 		end
-		Castbar.Overlay:SetBackdropBorderColor(unpack(C.media.border_color))
-		if C.unitframe.castbar_icon == true and (unit == "target" or unit == "focus") then
-			Castbar.Button:SetBackdropBorderColor(unpack(C.media.border_color))
-		end
-	end
-
-	if Castbar.Time and Castbar.Text then
-		local timeWidth = Castbar.Time:GetStringWidth()
-		local textWidth = Castbar:GetWidth() - timeWidth - 5
-
-		if timeWidth == 0 then
-			C_Timer.After(0.05, function()
-				textWidth = Castbar:GetWidth() - Castbar.Time:GetStringWidth() - 5
-				if textWidth > 0 then
-					Castbar.Text:SetWidth(textWidth)
-				end
-			end)
-		else
-			Castbar.Text:SetWidth(textWidth)
-		end
-	end
-end
-
-T.PostChannelStart = function(Castbar, unit)
-	Castbar.channeling = true
-	if unit == "vehicle" then unit = "player" end
-
-	if unit == "player" and C.unitframe.castbar_latency == true and Castbar.Latency then
-		local _, _, _, ms = GetNetStats()
-		Castbar.Latency:SetText(("%dms"):format(ms))
-		Castbar.SafeZone:SetDrawLayer("ARTWORK")
-		Castbar.SafeZone:SetVertexColor(0.85, 0.27, 0.27, 0.75)
-	end
-
-	if unit == "player" and C.unitframe.castbar_ticks == true then
-		local spell = UnitChannelInfo(unit)
-		Castbar.channelingTicks = T.CastBarTicks[spell] or 0
-		setBarTicks(Castbar, Castbar.channelingTicks)
 	end
 
 	if Castbar.notInterruptible and UnitCanAttack("player", unit) then

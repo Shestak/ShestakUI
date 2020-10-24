@@ -822,7 +822,7 @@ local function Shared(self, unit)
 		end
 	end
 
-	if C.unitframe.unit_castbar == true and unit ~= "arenatarget" then
+	if C.unitframe.unit_castbar == true and not unit:match('%wtarget$') then
 		self.Castbar = CreateFrame("StatusBar", self:GetName().."_Castbar", self)
 		self.Castbar:SetStatusBarTexture(C.media.texture, "ARTWORK")
 
