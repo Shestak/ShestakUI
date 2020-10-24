@@ -52,6 +52,7 @@ local function StyleNormalButton(button)
 		local float = _G[name.."FloatingBG"]
 		local highlight = button.SpellHighlightTexture
 		local isExtraAction = name:match("ExtraAction")
+		local isFlyout = name:match("Flyout")
 
 		flash:SetTexture("")
 		button:SetNormalTexture("")
@@ -95,7 +96,7 @@ local function StyleNormalButton(button)
 			hotkey:Kill()
 		end
 
-		if not isExtraAction then
+		if not isFlyout and not isExtraAction then
 			button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		end
 		button:SetTemplate("Transparent")
@@ -234,7 +235,6 @@ local function SetupFlyoutButton()
 
 			if not button.IsSkinned then
 				StyleNormalButton(button)
-				button:StyleButton()
 
 				if C.actionbar.rightbars_mouseover == true then
 					SpellFlyout:HookScript("OnEnter", function() RightBarMouseOver(1) end)
