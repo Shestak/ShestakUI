@@ -56,12 +56,6 @@ local function Shared(self, unit)
 	end
 	self.Health:SetStatusBarTexture(C.media.texture)
 
-	self.Health.PostUpdate = function(health, unit)
-		if not UnitIsConnected(unit) or UnitIsDead(unit) or UnitIsGhost(unit) then
-			health:SetValue(0)
-		end
-	end
-
 	self.Health.colorTapping = true
 	self.Health.colorDisconnected = true
 	self.Health.colorClassPet = false
@@ -98,6 +92,7 @@ local function Shared(self, unit)
 		end
 
 		self.Health.PostUpdate = T.PostUpdateRaidHealth
+		self.Health.PostUpdateColor = T.PostUpdateRaidHealthColor
 
 		-- Power bar
 		self.Power = CreateFrame("StatusBar", nil, self)
@@ -120,7 +115,6 @@ local function Shared(self, unit)
 			self.Power.colorPower = true
 		end
 
-		self.Power.PreUpdate = T.PreUpdatePower
 		self.Power.PostUpdate = T.PostUpdatePower
 
 		-- Power bar background

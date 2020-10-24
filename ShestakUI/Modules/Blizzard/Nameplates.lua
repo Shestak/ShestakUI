@@ -461,7 +461,7 @@ local function style(self, unit)
 	self.Power:SetPoint("BOTTOMRIGHT", self.Health, "BOTTOMRIGHT", 0, -6-(C.nameplate.height * T.noscalemult / 2))
 	self.Power.frequentUpdates = true
 	self.Power.colorPower = true
-	self.Power.PostUpdate = T.PreUpdatePower
+	self.Power.PostUpdateColor = T.PostUpdatePowerColor
 	CreateVirtualFrame(self.Power)
 
 	self.Power.bg = self.Power:CreateTexture(nil, "BORDER")
