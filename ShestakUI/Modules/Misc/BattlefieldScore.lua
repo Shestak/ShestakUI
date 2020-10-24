@@ -10,7 +10,7 @@ local BGFrame = CreateFrame("Frame", "InfoBattleGround", UIParent)
 BGFrame:CreatePanel("Invisible", 300, C.font.stats_font_size, unpack(C.position.bg_score))
 BGFrame:EnableMouse(true)
 BGFrame:SetScript("OnEnter", function(self)
-	local pvpStatIDs = C_PvP.GetMatchPVPStatIDs()
+	local columns = C_PvP.GetMatchPVPStatColumns()
 
 	for i = 1, GetNumBattlefieldScores() do
 		local name, _, honorableKills, deaths, _, _, _, _, _, damageDone, healingDone = GetBattlefieldScore(i)
@@ -27,10 +27,12 @@ BGFrame:SetScript("OnEnter", function(self)
 			GameTooltip:AddDoubleLine(SHOW_COMBAT_HEALING..":", T.ShortValue(healingDone), 1, 1, 1)
 
 			-- Add extra statistics depending on what BG you are
-			for j = 1, #pvpStatIDs do
-				local info = C_PvP.GetMatchPVPStatColumn(pvpStatIDs[j])
-				if info then
-					GameTooltip:AddDoubleLine(info.name..":", GetBattlefieldStatData(i, j), 1, 1, 1)
+			if columns then
+				for j, stat in ipairs(columns) do
+					local name = stat.name
+					if name and strlen(name) > 0 then
+						GameTooltip:AddDoubleLine(name, GetBattlefieldStatData(i, j), 1, 1, 1)
+					end
 				end
 			end
 
