@@ -48,6 +48,12 @@ local function Shared(self, unit)
 		self.Health:SetOrientation("VERTICAL")
 	end
 
+	self.Health.PostUpdate = function(health, unit)
+		if not UnitIsConnected(unit) or UnitIsDead(unit) or UnitIsGhost(unit) then
+			health:SetValue(0)
+		end
+	end
+
 	if C.unitframe.own_color == true then
 		self.Health.colorDisconnected = false
 		self.Health.colorReaction = false
@@ -91,7 +97,6 @@ local function Shared(self, unit)
 		end
 
 		self.Health.PostUpdate = T.PostUpdateRaidHealth
-		self.Health.PostUpdateColor = T.PostUpdateRaidHealthColor
 
 		-- Power bar
 		self.Power = CreateFrame("StatusBar", nil, self)
@@ -99,6 +104,12 @@ local function Shared(self, unit)
 		self.Power:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", 0, 0)
 		self.Power:SetPoint("TOP", self, "BOTTOM", 0, power_height)
 		self.Power:SetStatusBarTexture(C.media.texture)
+
+		self.Power.PostUpdate = function(power, unit)
+			if not UnitIsConnected(unit) or UnitIsDead(unit) or UnitIsGhost(unit) then
+				power:SetValue(0)
+			end
+		end
 
 		self.Power.frequentUpdates = true
 		self.Power.colorDisconnected = true

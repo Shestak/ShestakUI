@@ -503,7 +503,7 @@ local function style(self, unit)
 	self.Power:SetPoint("BOTTOMRIGHT", self.Health, "BOTTOMRIGHT", 0, -6-(C.nameplate.height * T.noscalemult / 2))
 	self.Power.frequentUpdates = true
 	self.Power.colorPower = true
-	self.Power.PostUpdateColor = T.PostUpdatePowerColor
+	self.Power.PostUpdate = T.PreUpdatePower
 	CreateVirtualFrame(self.Power)
 
 	self.Power.bg = self.Power:CreateTexture(nil, "BORDER")
@@ -712,7 +712,7 @@ local function style(self, unit)
 		threatColor(main)
 	end)
 
-	self.Health.PostUpdateColor = HealthPostUpdate
+	self.Health.PostUpdate = HealthPostUpdate
 
 	-- Every event should be register with this
 	table.insert(self.__elements, UpdateName)
