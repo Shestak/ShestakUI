@@ -52,7 +52,7 @@ local function LoadSkin()
 			select(i, PlayerTalentFramePetSpecialization:GetRegions()):Hide()
 		end
 
-		select(7, PlayerTalentFramePetSpecialization:GetChildren()):DisableDrawLayer("OVERLAY")
+		select(8, PlayerTalentFramePetSpecialization:GetChildren()):DisableDrawLayer("OVERLAY")
 
 		for i = 1, 5 do
 			select(i, PlayerTalentFramePetSpecializationSpellScrollFrameScrollChild:GetRegions()):Hide()
