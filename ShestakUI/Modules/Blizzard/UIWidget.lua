@@ -70,6 +70,7 @@ local atlasColors = {
 
 local function SkinStatusBar(widget)
 	local bar = widget.Bar
+	if not bar then return end
 	local atlas = bar:GetStatusBarAtlas()
 	if atlasColors[atlas] then
 		bar:SetStatusBarTexture(C.media.texture)
