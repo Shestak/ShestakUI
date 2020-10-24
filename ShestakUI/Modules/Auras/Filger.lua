@@ -338,6 +338,11 @@ function Filger:OnEvent(event, unit, _, castID)
 						timer.elapsed = (timer.elapsed or 0) + elapsed
 						if timer.elapsed < 0.1 then return end
 						timer.elapsed = 0
+						for spid in pairs(self.actives) do
+							if self.actives[spid].data.filter ~= "CD" and self.actives[spid].data.filter ~= "ICD" then
+								self.actives[spid] = nil
+							end
+						end
 						FindAuras(self, "player")
 						if UnitExists("target") then
 							FindAuras(self, "target")
