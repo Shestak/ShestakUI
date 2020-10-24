@@ -9,7 +9,7 @@ local function LoadSkin()
 	local PVPMatchScoreboard = _G.PVPMatchScoreboard
 	PVPMatchScoreboard:StripTextures()
 	PVPMatchScoreboard:DisableDrawLayer("BORDER")
-	PVPMatchScoreboard:SetTemplate("Transparent")
+	PVPMatchScoreboard:CreateBackdrop("Transparent")
 
 	PVPMatchScoreboard.Content:StripTextures()
 
@@ -24,7 +24,7 @@ local function LoadSkin()
 	local PVPMatchResults = _G.PVPMatchResults
 	PVPMatchResults:StripTextures()
 	PVPMatchResults:DisableDrawLayer("BORDER")
-	PVPMatchResults:SetTemplate("Transparent")
+	PVPMatchResults:CreateBackdrop("Transparent")
 
 	PVPMatchResults.content:StripTextures()
 	PVPMatchResults.content.tabContainer:StripTextures()
