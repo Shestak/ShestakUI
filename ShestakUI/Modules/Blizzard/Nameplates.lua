@@ -558,8 +558,6 @@ local function style(self, unit)
 	self.Castbar.bg:SetColorTexture(1, 0.8, 0, 0.2)
 
 	self.Castbar.PostCastStart = castColor
-	self.Castbar.PostChannelStart = castColor
-	self.Castbar.PostCastNotInterruptible = castColor
 	self.Castbar.PostCastInterruptible = castColor
 
 	-- Create Cast Time Text

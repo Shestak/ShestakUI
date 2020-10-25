@@ -838,7 +838,6 @@ local function Shared(self, unit)
 		self.Castbar.Overlay:SetPoint("BOTTOMRIGHT", 2, -2)
 
 		self.Castbar.PostCastStart = T.PostCastStart
-		self.Castbar.PostChannelStart = T.PostChannelStart
 
 		if unit == "player" then
 			if C.unitframe.castbar_icon == true then
