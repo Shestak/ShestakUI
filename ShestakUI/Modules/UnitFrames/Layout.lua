@@ -1093,10 +1093,8 @@ local function Shared(self, unit)
 
 	-- Agro border
 	if C.raidframe.aggro_border == true and unit ~= "arenatarget" then
-		table.insert(self.__elements, T.UpdateThreat)
-		self:RegisterEvent("PLAYER_TARGET_CHANGED", T.UpdateThreat, true)
-		self:RegisterEvent("UNIT_THREAT_LIST_UPDATE", T.UpdateThreat)
-		self:RegisterEvent("UNIT_THREAT_SITUATION_UPDATE", T.UpdateThreat)
+		self.ThreatIndicator = CreateFrame("Frame", nil, self)
+		self.ThreatIndicator.PostUpdate = T.UpdateThreat
 	end
 
 	-- Raid marks

@@ -1410,14 +1410,14 @@ T.CustomFilterBoss = function(_, unit, button, name, _, _, _, _, _, caster)
 	return true
 end
 
-T.UpdateThreat = function(self, _, unit)
-	if self.unit ~= unit then return end
-	local threat = UnitThreatSituation(self.unit)
-	if threat and threat > 1 then
-		local r, g, b = GetThreatStatusColor(threat)
-		self.backdrop:SetBackdropBorderColor(r, g, b)
+T.UpdateThreat = function(self, unit, status, r, g, b)
+	local parent = self:GetParent()
+	local badunit = not unit or parent.unit ~= unit
+
+	if not badunit and status and status > 1 then
+		parent.backdrop:SetBackdropBorderColor(r, g, b)
 	else
-		self.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+		parent.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 	end
 end
 

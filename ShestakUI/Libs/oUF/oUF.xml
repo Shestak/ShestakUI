@@ -31,6 +31,7 @@
 	<Script file="Elements\Stagger.lua"/>
 	<Script file="Elements\SummonIndicator.lua"/>
 	<Script file="Elements\Tags.lua"/>
+	<Script file="Elements\ThreatIndicator.lua"/>
 
 	<Script file="Finalize.lua"/>
 
