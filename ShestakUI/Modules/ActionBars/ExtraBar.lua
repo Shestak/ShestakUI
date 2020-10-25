@@ -18,6 +18,8 @@ ExtraActionBarFrame:SetParent(anchor)
 ExtraActionBarFrame:ClearAllPoints()
 ExtraActionBarFrame:SetAllPoints()
 ExtraActionBarFrame.ignoreInLayout = true
+ExtraAbilityContainer.SetSize = T.dummy
+UIPARENT_MANAGED_FRAME_POSITIONS.ExtraAbilityContainer = nil
 
 ZoneAbilityFrame:SetParent(anchor)
 ZoneAbilityFrame:ClearAllPoints()
