@@ -69,7 +69,7 @@ for i, unit in pairs(units) do
 		unit.FirstAttack:SetTexCoord(unit.SpeedIcon:GetTexCoord())
 		unit.FirstAttack:SetVertexColor(0.1, 0.1, 0.1, 1)
 
-		unit.Level:SetPoint("BOTTOMLEFT", unit.Icon, "BOTTOMLEFT", 2, 2)
+		unit.Level:SetPoint("BOTTOMLEFT", unit.Icon, "BOTTOMLEFT", 2, 0)
 	else
 		unit.HealthBarBackdrop:SetPoint("TOPRIGHT", unit.ActualHealthBar, "TOPRIGHT", 2, 2)
 		unit.HealthBarBackdrop:SetPoint("BOTTOMRIGHT", unit.ActualHealthBar, "BOTTOMRIGHT", 2, -2)
@@ -85,7 +85,7 @@ for i, unit in pairs(units) do
 		unit.FirstAttack:SetTexCoord(0.5, 0, 0.5, 1)
 		unit.FirstAttack:SetVertexColor(0.1, 0.1, 0.1, 1)
 
-		unit.Level:SetPoint("BOTTOMRIGHT", unit.Icon, "BOTTOMRIGHT", -2, 2)
+		unit.Level:SetPoint("BOTTOMRIGHT", unit.Icon, "BOTTOMRIGHT", -2, 0)
 	end
 
 	unit.PetType:ClearAllPoints()
@@ -97,7 +97,8 @@ for i, unit in pairs(units) do
 	unit.HealthText:SetPoint("CENTER", unit.HealthBarBackdrop, "CENTER")
 
 	unit.LevelUnderlay:SetAlpha(0)
-	unit.Level:SetFontObject(NumberFont_Outline_Large)
+	unit.Level:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
+	unit.Level:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
 	unit.Level:SetTextColor(1, 1, 1)
 
 	unit.BorderFlash:Kill()
@@ -156,7 +157,8 @@ hooksecurefunc("PetBattleAuraHolder_Update", function(self)
 				frame.Duration:SetText(turnsRemaining)
 			end
 
-			frame.Duration:SetFontObject(NumberFont_Outline_Med)
+			frame.Duration:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
+			frame.Duration:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
 			frame.Duration:ClearAllPoints()
 			frame.Duration:SetPoint("CENTER", frame.Icon, "CENTER", 1, -2)
 
@@ -236,10 +238,11 @@ bf.TurnTimer.SkipButton.SetPoint = T.dummy
 
 bf.xpBar:SetParent(bar)
 bf.xpBar:SetWidth(bar:GetWidth() - 4)
+bf.xpBar:StripTextures()
 bf.xpBar:CreateBackdrop("Overlay")
+bf.xpBar:SetStatusBarTexture(C.media.texture)
 bf.xpBar:ClearAllPoints()
 bf.xpBar:SetPoint("BOTTOM", bf.TurnTimer.SkipButton, "TOP", 0, 5)
-bf.xpBar:SetScript("OnShow", function(self) self:StripTextures() self:SetStatusBarTexture(C.media.texture) end)
 
 bf.TurnTimer:SetParent(bar)
 bf.TurnTimer:SetSize(bf.TurnTimer.SkipButton:GetWidth(), bf.TurnTimer.SkipButton:GetHeight())
@@ -291,7 +294,7 @@ local function SkinPetButton(self)
 
 	self.checked = true
 	self:StyleButton()
-	self.SelectedHighlight:SetAlpha(0)
+	self.SelectedHighlight:SetTexture("")
 
 	self.CooldownShadow:SetAllPoints()
 	self.CooldownFlash:SetAllPoints()
