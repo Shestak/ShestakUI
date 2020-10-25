@@ -196,7 +196,7 @@ Butsu:SetFrameLevel(10)
 
 local close = CreateFrame("Button", "LootCloseButton", Butsu, "UIPanelCloseButton")
 T.SkinCloseButton(close, nil, nil, true)
-close:SetSize(14, 14)
+close:SetSize(15, 15)
 close:SetScript("OnClick", function() CloseLoot() end)
 
 ----------------------------------------------------------------------------------------
@@ -266,9 +266,9 @@ local function LDD_Initialize()
 end
 
 T.SkinCloseButton(lb, LootCloseButton, "-", true)
-lb:SetSize(14, 14)
+lb:SetSize(15, 15)
 lb:ClearAllPoints()
-lb:SetPoint("BOTTOMRIGHT", Butsu, "TOPRIGHT", -21, -18)
+lb:SetPoint("BOTTOMRIGHT", Butsu, "TOPRIGHT", -22, -19)
 lb:SetFrameStrata("DIALOG")
 lb:RegisterForClicks("RightButtonUp", "LeftButtonUp")
 lb:SetScript("OnClick", function(_, button)

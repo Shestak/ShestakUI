@@ -466,6 +466,12 @@ function T.SkinCloseButton(f, point, text, pixel)
 		f.text:SetPoint("CENTER")
 		f.text:SetTexture(C.media.blank)
 	end
+	if text == "-" and pixel then
+		f.text = f:CreateTexture(nil, "OVERLAY")
+		f.text:SetSize(5, 1)
+		f.text:SetPoint("CENTER")
+		f.text:SetTexture(C.media.blank)
+	end
 	if not f.text then
 		if pixel then
 			f.text = f:FontString(nil, C.media.pixel_font, 8)
