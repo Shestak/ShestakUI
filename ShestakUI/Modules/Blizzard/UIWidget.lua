@@ -70,7 +70,6 @@ local atlasColors = {
 
 local function SkinStatusBar(widget)
 	local bar = widget.Bar
-	if not bar then return end
 	local atlas = bar:GetStatusBarAtlas()
 	if atlasColors[atlas] then
 		bar:SetStatusBarTexture(C.media.texture)
@@ -136,36 +135,18 @@ local frame = CreateFrame("Frame")
 frame:RegisterEvent("UPDATE_UI_WIDGET")
 frame:RegisterEvent("UPDATE_ALL_UI_WIDGETS")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-frame:SetScript("OnEvent", function(_, event, widgetInfo)
-	if event == "UPDATE_UI_WIDGET" then
-		if widgetInfo then
-			if widgetInfo.widgetType == _G.Enum.UIWidgetVisualizationType.StatusBar then
-				for _, widget in pairs(UIWidgetTopCenterContainerFrame.widgetFrames) do
-					SkinStatusBar(widget)
-				end
-			elseif widgetInfo.widgetType == _G.Enum.UIWidgetVisualizationType.DoubleStatusBar then
-				for _, widget in pairs(UIWidgetTopCenterContainerFrame.widgetFrames) do
-					SkinDoubleStatusBar(widget)
-				end
-			elseif widgetInfo.widgetType == _G.Enum.UIWidgetVisualizationType.CaptureBar then
-				for _, widget in pairs(UIWidgetBelowMinimapContainerFrame.widgetFrames) do
-					SkinCaptureBar(widget)
-				end
-			end
+frame:SetScript("OnEvent", function()
+	for _, widget in pairs(UIWidgetTopCenterContainerFrame.widgetFrames) do
+		if widget.widgetType == _G.Enum.UIWidgetVisualizationType.StatusBar then
+			SkinStatusBar(widget)
+		elseif widget.widgetType == _G.Enum.UIWidgetVisualizationType.DoubleStatusBar then
+			SkinDoubleStatusBar(widget)
 		end
-	else
-		for _, widget in pairs(UIWidgetTopCenterContainerFrame.widgetFrames) do
-			if widget.widgetType == _G.Enum.UIWidgetVisualizationType.StatusBar then
-				SkinStatusBar(widget)
-			elseif widget.widgetType == _G.Enum.UIWidgetVisualizationType.DoubleStatusBar then
-				SkinDoubleStatusBar(widget)
-			end
-		end
+	end
 
-		for _, widget in pairs(UIWidgetBelowMinimapContainerFrame.widgetFrames) do
-			if widget.widgetType == Enum.UIWidgetVisualizationType.CaptureBar then
-				SkinCaptureBar(widget)
-			end
+	for _, widget in pairs(UIWidgetBelowMinimapContainerFrame.widgetFrames) do
+		if widget.widgetType == Enum.UIWidgetVisualizationType.CaptureBar then
+			SkinCaptureBar(widget)
 		end
 	end
 end)
