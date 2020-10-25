@@ -1203,6 +1203,8 @@ C["filger_spells"] = {
 			{spellID = 286393, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Selfless Healer
 			{spellID = 114250, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Shining Light
+			{spellID = 327510, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
