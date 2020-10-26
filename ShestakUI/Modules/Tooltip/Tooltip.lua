@@ -8,6 +8,7 @@ local StoryTooltip = QuestScrollFrame.StoryTooltip
 StoryTooltip:SetFrameLevel(4)
 
 local WarCampaignTooltip = QuestScrollFrame.WarCampaignTooltip
+T.SkinCloseButton(_G.ItemRefTooltip.CloseButton)
 
 local tooltips = {
 	GameTooltip,
