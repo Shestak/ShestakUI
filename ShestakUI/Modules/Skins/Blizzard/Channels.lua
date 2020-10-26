@@ -26,6 +26,8 @@ local function LoadSkin()
 	CreateChannelPopup.CancelButton:ClearAllPoints()
 	CreateChannelPopup.CancelButton:SetPoint("BOTTOMRIGHT", -5, 5)
 
+	CreateChannelPopup.Name.Label:SetDrawLayer("OVERLAY")
+	CreateChannelPopup.Password.Label:SetDrawLayer("OVERLAY")
 	T.SkinEditBox(CreateChannelPopup.Name)
 	T.SkinEditBox(CreateChannelPopup.Password)
 
