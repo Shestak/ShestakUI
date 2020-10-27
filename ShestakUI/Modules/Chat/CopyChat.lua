@@ -69,10 +69,10 @@ local function MessageIsProtected(message)
 	return message and (message ~= gsub(message, '(:?|?)|K(.-)|k', canChangeMessage))
 end
 
-local function colorizeLine(text, r, g, b)
-	local hexCode = T.RGBToHex(r, g, b)
-	return format("%s%s|r", hexCode, text)
-end
+-- local function colorizeLine(text, r, g, b)
+	-- local hexCode = T.RGBToHex(r, g, b)
+	-- return format("%s%s|r", hexCode, text)
+-- end
 
 local function Copy(cf)
 	if not isf then CreatCopyFrame() end

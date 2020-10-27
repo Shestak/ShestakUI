@@ -338,7 +338,6 @@ local function LoadSkin()
 
 	-- Help box
 	local HelpBox = {
-		--FIXME PlayerTalentFrameTalentsPvpTalentFrame.TrinketSlot.HelpBox,
 		PlayerTalentFrameTalentsPvpTalentFrame.WarmodeTutorialBox
 	}
 

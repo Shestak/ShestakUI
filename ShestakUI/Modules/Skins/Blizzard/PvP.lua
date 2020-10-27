@@ -68,9 +68,6 @@ local function LoadSkin()
 	HonorFrameSpecificFrameScrollBar:SetPoint("BOTTOMLEFT", HonorFrameSpecificFrame, "BOTTOMRIGHT", 0, 15)
 	HonorFrameQueueButton:SkinButton(true)
 
-	--FIXME T.SkinHelpBox(PremadeGroupsPvPTutorialAlert)
-	-- T.SkinHelpBox(HonorFrame.BonusFrame.BrawlHelpBox)
-
 	PVPQueueFrame.HonorInset:StripTextures()
 	PVPQueueFrame.HonorInset.RatedPanel.Label:SetWidth(160)
 

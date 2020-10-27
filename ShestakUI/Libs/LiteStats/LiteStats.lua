@@ -697,7 +697,7 @@ if friends.enabled then
 			C_FriendList.ShowFriends()
 			self.hovered = true
 			local online, total = C_FriendList.GetNumOnlineFriends(), C_FriendList.GetNumFriends()
-			local name, level, class, zone, connected, status, note, classc, levelc, zone_r, zone_g, zone_b, grouped, realm_r, realm_g, realm_b
+			local zone, status, classc, levelc, zone_r, zone_g, zone_b, grouped, realm_r, realm_g, realm_b
 			local BNonline, BNtotal = 0, BNGetNumFriends()
 			wipe(BNTableEnter)
 			if BNtotal > 0 then
@@ -788,7 +788,7 @@ if friends.enabled then
 								end
 								GameTooltip:AddDoubleLine(format("%s (|cff%02x%02x%02x%d|r |cff%02x%02x%02x%s|r%s) |cff%02x%02x%02x%s|r", client, levelc.r * 255, levelc.g * 255, levelc.b * 255, level, classc.r * 255, classc.g * 255, classc.b * 255, characterName, grouped, 255, 0, 0, status), accountInfo.accountName, 238, 238, 238, 238, 238, 238)
 								if self.altdown then
-									if GetRealZoneText() == zone then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
+									if GetRealZoneText() == areaName then zone_r, zone_g, zone_b = 0.3, 1.0, 0.3 else zone_r, zone_g, zone_b = 0.65, 0.65, 0.65 end
 									if GetRealmName() == realmName then realm_r, realm_g, realm_b = 0.3, 1.0, 0.3 else realm_r, realm_g, realm_b = 0.65, 0.65, 0.65 end
 									GameTooltip:AddDoubleLine("  "..areaName, realmName, zone_r, zone_g, zone_b, realm_r, realm_g, realm_b)
 								end

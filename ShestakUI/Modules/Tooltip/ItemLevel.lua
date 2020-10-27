@@ -140,9 +140,9 @@ local function IsArtifact(itemLink)
 	return itemLink:find("|cffe6cc80") -- this is probably a horrible way to find whether it"s an artifact
 end
 
-local function IsLegendary()
-	return false
-end
+-- local function IsLegendary()
+	-- return false
+-- end
 
 local function IsCached(itemLink) -- we can"t get the correct level of an artifact until all of its relics have been cached
 	local cached = true

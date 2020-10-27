@@ -14,14 +14,12 @@ local function Update(self, _, unit, powerType)
 		element:PreUpdate(unit)
 	end
 
-	if element.isEnabled then
-		if UnitHasVehicleUI("player") then
-			element:Hide()
-			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
-		else
-			element:Show()
-			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
-		end
+	if UnitHasVehicleUI("player") then
+		element:Hide()
+		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
+	else
+		element:Show()
+		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
 	end
 
 	local cur = UnitPower("player", SPELL_POWER_HOLY_POWER)
@@ -50,21 +48,12 @@ end
 
 local function Visibility(self)
 	local element = self.HolyPower
-	local spec = GetSpecialization()
 
-	--FIXME if spec == SPEC_PALADIN_RETRIBUTION then
-		if not UnitHasVehicleUI("player") then
-			element:Show()
-			if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
-		end
-		self:RegisterEvent("UNIT_POWER_UPDATE", Path)
-		element.isEnabled = true
-	-- else
-		-- element:Hide()
-		-- if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 5) end
-		-- self:UnregisterEvent("UNIT_POWER_UPDATE", Path)
-		-- element.isEnabled = false
-	-- end
+	if not UnitHasVehicleUI("player") then
+		element:Show()
+		if self.Debuffs then self.Debuffs:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 2, 19) end
+	end
+	self:RegisterEvent("UNIT_POWER_UPDATE", Path)
 end
 
 local function Enable(self)

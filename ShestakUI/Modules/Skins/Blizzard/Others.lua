@@ -278,7 +278,6 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 			T.SkinCloseButton(self, nil, "-")
 		end)
 		T.SkinCloseButton(_G["RolePollPopupCloseButton"])
-		--FIXME T.SkinCloseButton(_G["ItemRefCloseButton"])
 
 		if C.skins.blizzard_frames == true then
 			-- Social Browser frame

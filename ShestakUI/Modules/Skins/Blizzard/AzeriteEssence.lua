@@ -5,8 +5,6 @@ if C.skins.blizzard_frames ~= true then return end
 --	AzeriteEssenceUI skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	--FIXME T.SkinHelpBox(AzeriteEssenceUI.EssenceList.Tutorial)
-
 	AzeriteEssenceUI:StripTextures()
 	AzeriteEssenceUI:SetTemplate("Transparent")
 
