@@ -133,6 +133,7 @@ local function Stuffing_OnShow()
 end
 
 local function StuffingBank_OnHide()
+	if _G["StuffingFrameReagent"] and _G["StuffingFrameReagent"]:IsShown() then return end
 	CloseBankFrame()
 	if Stuffing.frame:IsShown() then
 		Stuffing.frame:Hide()
@@ -141,6 +142,9 @@ local function StuffingBank_OnHide()
 end
 
 local function Stuffing_OnHide()
+	if _G["StuffingFrameReagent"] and _G["StuffingFrameReagent"]:IsShown() then
+		CloseBankFrame()
+	end
 	if Stuffing.bankFrame and Stuffing.bankFrame:IsShown() then
 		Stuffing.bankFrame:Hide()
 	end
@@ -360,7 +364,6 @@ function Stuffing:CreateReagentContainer()
 	SwitchBankButton:SetScript("OnClick", function()
 		Reagent:Hide()
 		_G["StuffingFrameBank"]:Show()
-		_G["StuffingFrameBank"]:SetAlpha(1)
 		BankFrame_ShowPanel(BANK_PANELS[1].name)
 		PlaySound(SOUNDKIT.IG_BACKPACK_OPEN)
 	end)
@@ -390,6 +393,7 @@ function Stuffing:CreateReagentContainer()
 			ToggleDropDownMenu(nil, nil, Stuffing_DDMenu, self:GetName(), 0, 0)
 			return
 		else
+			Reagent:Hide()
 			StuffingBank_OnHide()
 		end
 	end)
@@ -726,6 +730,32 @@ function Stuffing:SearchUpdate(str)
 			end
 		end
 	end
+
+	if ReagentBankFrameItem1 then
+		for slotID = 1, 98 do
+			local _, _, _, _, _, _, ilink = GetContainerItemInfo(-3, slotID)
+			local button = _G["ReagentBankFrameItem"..slotID]
+			if ilink then
+				local name, _, _, _, minLevel, class, subclass = GetItemInfo(ilink)
+				class = _G[class] or ""
+				subclass = _G[subclass] or ""
+				minLevel = minLevel or 1
+				if not string.find(string.lower(name), str) and not string.find(string.lower(class), str) and not string.find(string.lower(subclass), str) then
+					if IsItemUnusable(name) or minLevel > T.level then
+						_G[button:GetName().."IconTexture"]:SetVertexColor(0.5, 0.5, 0.5)
+					end
+					SetItemButtonDesaturated(button, true)
+					button.searchOverlay:Show()
+				else
+					if IsItemUnusable(name) or minLevel > T.level then
+						_G[button:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
+					end
+					SetItemButtonDesaturated(button, false)
+					button.searchOverlay:Hide()
+				end
+			end
+		end
+	end
 end
 
 function Stuffing:SearchReset()
@@ -792,7 +822,7 @@ function Stuffing:CreateBagFrame(w)
 			else
 				_G["StuffingFrameReagent"]:Show()
 			end
-			_G["StuffingFrameBank"]:SetAlpha(0)
+			_G["StuffingFrameBank"]:Hide()
 		end)
 		f.b_reagent:FontString("text", C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
 		f.b_reagent.text:SetPoint("CENTER")
@@ -1528,41 +1558,76 @@ end
 
 function Stuffing:Restack()
 	local st = {}
+	local sr = {}
+	local did_restack = false
 
 	Stuffing_Open()
 
-	for _, v in pairs(self.buttons) do
-		if InBags(v.bag) then
-			local _, cnt, _, _, _, _, clink = GetContainerItemInfo(v.bag, v.slot)
+	if _G["StuffingFrameReagent"] and _G["StuffingFrameReagent"]:IsShown() then
+		for slotID = 1, 98 do
+			local _, cnt, _, _, _, _, clink = GetContainerItemInfo(-3, slotID)
+			local button = _G["ReagentBankFrameItem"..slotID]
 			if clink then
 				local n, _, _, _, _, _, _, s = GetItemInfo(clink)
 
 				if n and cnt ~= s then
-					if not st[clink] then
-						st[clink] = {{item = v, size = cnt, max = s}}
+					if not sr[clink] then
+						sr[clink] = {{item = slotID, size = cnt, max = s}}
 					else
-						table.insert(st[clink], {item = v, size = cnt, max = s})
+						table.insert(sr[clink], {item = slotID, size = cnt, max = s})
 					end
 				end
 			end
 		end
-	end
 
-	local did_restack = false
+		for _, v in pairs(sr) do
+			if #v > 1 then
+				for j = 2, #v, 2 do
+					local a, b = v[j - 1], v[j]
+					local _, _, l1 = GetContainerItemInfo(-3, a.item)
+					local _, _, l2 = GetContainerItemInfo(-3, b.item)
 
-	for _, v in pairs(st) do
-		if #v > 1 then
-			for j = 2, #v, 2 do
-				local a, b = v[j - 1], v[j]
-				local _, _, l1 = GetContainerItemInfo(a.item.bag, a.item.slot)
-				local _, _, l2 = GetContainerItemInfo(b.item.bag, b.item.slot)
+					if l1 or l2 then
+						did_restack = true
+					else
+						PickupContainerItem(-3, a.item)
+						PickupContainerItem(-3, b.item)
+						did_restack = true
+					end
+				end
+			end
+		end
+	else
+		for _, v in pairs(self.buttons) do
+			if InBags(v.bag) then
+				local _, cnt, _, _, _, _, clink = GetContainerItemInfo(v.bag, v.slot)
+				if clink then
+					local n, _, _, _, _, _, _, s = GetItemInfo(clink)
 
-				if l1 or l2 then
-					did_restack = true
-				else
-					PickupContainerItem(a.item.bag, a.item.slot)
-					PickupContainerItem(b.item.bag, b.item.slot)
-					did_restack = true
+					if n and cnt ~= s then
+						if not st[clink] then
+							st[clink] = {{item = v, size = cnt, max = s}}
+						else
+							table.insert(st[clink], {item = v, size = cnt, max = s})
+						end
+					end
+				end
+			end
+		end
+		for _, v in pairs(st) do
+			if #v > 1 then
+				for j = 2, #v, 2 do
+					local a, b = v[j - 1], v[j]
+					local _, _, l1 = GetContainerItemInfo(a.item.bag, a.item.slot)
+					local _, _, l2 = GetContainerItemInfo(b.item.bag, b.item.slot)
+
+					if l1 or l2 then
+						did_restack = true
+					else
+						PickupContainerItem(a.item.bag, a.item.slot)
+						PickupContainerItem(b.item.bag, b.item.slot)
+						did_restack = true
+					end
 				end
 			end
 		end
