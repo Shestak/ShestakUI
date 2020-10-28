@@ -21,20 +21,23 @@ T.CastBarTicks = {
 	[SpellName(740)] = 4,		-- Tranquility
 	-- Mage
 	[SpellName(5143)] = 5,		-- Arcane Missiles
+	[SpellName(12051)] = 6,		-- Evocation
 	[SpellName(205021)] = 5,	-- Ray of Frost
 	-- Monk
-	[SpellName(113656)] = 4,	-- Fists of Fury
 	[SpellName(115175)] = 8,	-- Soothing Mist
 	[SpellName(117952)] = 4,	-- Crackling Jade Lightning
 	-- Priest
-	[SpellName(15407)] = 4,		-- Mind Flay
-	[SpellName(48045)] = 4,		-- Mind Sear
+	[SpellName(15407)] = 6,		-- Mind Flay
+	[SpellName(48045)] = 6,		-- Mind Sear
 	[SpellName(47540)] = 3,		-- Penance
 	[SpellName(64843)] = 4,		-- Divine Hymn
+	[SpellName(64902)] = 5,		-- Symbol of Hope (Mana Hymn)
 	-- Warlock
 	[SpellName(755)] = 5,		-- Health Funnel
 	[SpellName(198590)] = 5,	-- Drain Soul
 	[SpellName(234153)] = 5,	-- Drain Life
+	-- Racials
+	[SpellName(291944)] = 6,	-- Regeneratin (Zandalari)
 }
 
 local f = CreateFrame("Frame")
