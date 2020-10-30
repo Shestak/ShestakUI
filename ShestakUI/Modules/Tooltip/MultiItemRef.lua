@@ -6,6 +6,7 @@ if C.tooltip.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 local tips = {[1] = _G["ItemRefTooltip"]}
 local types = {item = true, enchant = true, spell = true, quest = true, unit = true, talent = true, achievement = true, glyph = true, instancelock = true, currency = true}
+local shown
 
 local CreateTip = function(link)
 	for _, v in ipairs(tips) do
@@ -65,19 +66,21 @@ local ShowTip = function(tip, link)
 	if not tip:IsShown() then
 		tip:SetOwner(UIParent, "ANCHOR_PRESERVE")
 	end
+	shown = true
 	tip:SetHyperlink(link)
+	shown = nil
 end
 
-local _SetItemRef = SetItemRef
-function SetItemRef(...)
-	local link = ...
+local SetHyperlink = _G.ItemRefTooltip.SetHyperlink
+function _G.ItemRefTooltip:SetHyperlink(link, ...)
 	local handled = strsplit(":", link)
-	if not IsModifiedClick() and handled and types[handled] then
+	if not IsModifiedClick() and handled and types[handled] and not shown then
 		local tip = CreateTip(link)
 		if tip then
 			ShowTip(tip, link)
 		end
-	else
-		return _SetItemRef(...)
+		return
 	end
+
+	SetHyperlink(self, link, ...)
 end
