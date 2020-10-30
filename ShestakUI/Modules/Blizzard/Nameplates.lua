@@ -395,11 +395,11 @@ local function castColor(self)
 	end
 end
 
-local function HealthPostUpdate(self, unit)
+local function HealthPostUpdate(self, unit, cur, max)
 	local main = self:GetParent()
 	local perc = 0
-	if self.max and self.max > 0 then
-		perc = self.cur / self.max
+	if max and max > 0 then
+		perc = cur / max
 	end
 
 	local r, g, b
