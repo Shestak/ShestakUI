@@ -5,6 +5,7 @@ if C.chat.enable ~= true or C.chat.damage_meter_spam ~= true then return end
 --	Merge damage meter spam(SpamageMeters by Wrug and Cybey)
 ----------------------------------------------------------------------------------------
 local firstLines = {
+	"^Details!: (.*)$",										-- Details!
 	"^Recount - (.*)$", 									-- Recount
 	"^Skada: (.*) for (.*):$",								-- Skada enUS
 	"^Skada: (.*) für (.*):$",								-- Skada deDE
@@ -15,15 +16,13 @@ local firstLines = {
 	"^(.*) 의 Skada 보고 (.*):$",								-- Skada koKR
 	"^Skada报告(.*)的(.*):$",								-- Skada zhCN
 	"^Skada:(.*)來自(.*):$",								-- Skada zhTW
+	"^Numeration: (.*) - (.*)$",							-- Numeration
 	"^(.*) Done for (.*)$",									-- TinyDPS enUS
 	"^(.*) für (.*)$",										-- TinyDPS deDE
 	"데미지량 -(.*)$",											-- TinyDPS koKR
 	"힐량 -(.*)$",											-- TinyDPS koKR
 	"Урон:(.*)$",											-- TinyDPS ruRU
-	"Исцеление:(.*)$",										-- TinyDPS ruRU
-	"^Numeration: (.*) - (.*)$",							-- Numeration
-	"alDamageMeter : (.*)$",								-- alDamageMeter
-	"^Details!: (.*)$"										-- Details!
+	"Исцеление:(.*)$"										-- TinyDPS ruRU
 }
 
 local nextLines = {
@@ -52,15 +51,18 @@ local events = {
 }
 
 local function FilterLine(event, source, message)
-	for _, v in ipairs(nextLines) do
+	for i = 1, #nextLines do
+		local v = nextLines[i]
 		if message:match(v) then
 			local curTime = time()
-			for _, j in ipairs(meters) do
+			for i = 1, #meters do
+				local j = meters[i]
 				local elapsed = curTime - j.time
-				if j.source == source and j.event == event and elapsed < 1 then
+				if j.source == source and j.event == event and elapsed < 5 then
 					local toInsert = true
-					for _, b in ipairs(j.data) do
-						if b == message then
+
+					for i = 1, #j.data do
+						if j.data[i] == message then
 							toInsert = false
 						end
 					end
@@ -74,42 +76,41 @@ local function FilterLine(event, source, message)
 		end
 	end
 
-	for _, v in ipairs(firstLines) do
+	for i = 1, #firstLines do
+		local v = firstLines[i]
 		local newID = 0
 		if message:match(v) then
 			local curTime = time()
 
-			for i, j in ipairs(meters) do
+			for i = 1, #meters do
+				local j = meters[i]
 				local elapsed = curTime - j.time
 				if j.source == source and j.event == event and elapsed < 1 then
 					newID = i
-					return true, true, string.format("|HMergeSpamMeter:%1$d|h|cFFFFFF00[%2$s]|r|h", newID or 0, message or "nil")
+					return true, true, string.format("|Hspam:%1$d|h|cFFFFFF00[%2$s]|r|h", newID or 0, message or "nil")
 				end
 			end
 
 			table.insert(meters, {source = source, event = event, time = curTime, data = {}, title = message})
 
-			for i, j in ipairs(meters) do
+			for i = 1, #meters do
+				local j = meters[i]
 				if j.source == source and j.event == event and j.time == curTime then
 					newID = i
 				end
 			end
 
-			return true, true, string.format("|HMergeSpamMeter:%1$d|h|cFFFFFF00[%2$s]|r|h", newID or 0, message or "nil")
+			return true, true, string.format("|Hspam:%1$d|h|cFFFFFF00[%2$s]|r|h", newID or 0, message or "nil")
 		end
 	end
 	return false, false, nil
 end
 
-local orig2 = SetItemRef
-function SetItemRef(link, text, button, frame)
-	local linkType, id = strsplit(":", link)
-	if linkType == "MergeSpamMeter" then
+local SetHyperlink = _G.ItemRefTooltip.SetHyperlink
+function _G.ItemRefTooltip:SetHyperlink(link, ...)
+	if link and (strsub(link, 1, 4) == "spam") then
+		local _, id = strsplit(":", link)
 		local meterID = tonumber(id)
-		ShowUIPanel(ItemRefTooltip)
-		if not ItemRefTooltip:IsShown() then
-			ItemRefTooltip:SetOwner(UIParent, "ANCHOR_PRESERVE")
-		end
 		ItemRefTooltip:ClearLines()
 		ItemRefTooltip:AddLine(meters[meterID].title)
 		ItemRefTooltip:AddLine(string.format(BY_SOURCE..": %s", meters[meterID].source))
@@ -122,22 +123,19 @@ function SetItemRef(link, text, button, frame)
 			end
 		end
 		ItemRefTooltip:Show()
-	else
-		return orig2(link, text, button, frame)
+		return
 	end
+
+	SetHyperlink(self, link, ...)
 end
 
 local function ParseChatEvent(_, event, message, sender, ...)
-	for _, value in ipairs(events) do
-		if event == value then
-			local isRecount, isFirstLine, newMessage = FilterLine(event, sender, message)
-			if isRecount then
-				if isFirstLine then
-					return false, newMessage, sender, ...
-				else
-					return true
-				end
-			end
+	local isRecount, isFirstLine, newMessage = FilterLine(event, sender, message)
+	if isRecount then
+		if isFirstLine then
+			return false, newMessage, sender, ...
+		else
+			return true
 		end
 	end
 end
