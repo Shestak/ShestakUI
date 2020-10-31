@@ -71,21 +71,9 @@ local QuickQuestDB = {
 			[31664] = 88604, -- Nat's Fishing Journal
 		},
 		npcs = {
-			-- seals/coins
-			[88570] = true, -- Fate-Twister Tiklal (6.0 coins, horde)
-			[87391] = true, -- Fate-Twister Seress (6.0 coins, alliance)
-			[111243] = true, -- Archmage Lan'dalock (7.0 coins)
-			[141584] = true, -- Zurvan (8.0 coins, horde)
-			[142063] = true, -- Tezran (8.0 coins, alliance)
-
-			-- valuable resources
-			[119388] = true, -- Chieftain Hatuun (Argus resources)
-			[124312] = true, -- High Exarch Turalyon (Argus resources)
-			[126954] = true, -- High Exarch Turalyon (Argus resources)
-			[127037] = true, -- Nabiru (Argus resources)
-
 			-- misc
 			[103792] = true, -- Griftah (his quests are scams)
+			[143925] = true, -- Dark Iron Mole Machine (Dark Iron Dwarf racial)
 
 			-- Bodyguards
 			[86945] = true, -- Aeda Brightdawn (Horde)
@@ -107,8 +95,45 @@ local QuickQuestDB = {
 			[95200] = true,
 			[95201] = true,
 
-			-- misc
-			[143925] = true, -- Dark Iron Mole Machine (Dark Iron Dwarf racial)
+		},
+		quests = {
+			-- 6.0 coins
+			[36054] = true, -- Sealing Fate: Gold
+			[37454] = true, -- Sealing Fate: Piles of Gold
+			[37455] = true, -- Sealing Fate: Immense Fortune of Gold
+			[36055] = true, -- Sealing Fate: Apexis Crystals
+			[37452] = true, -- Sealing Fate: Heap of Apexis Crystals
+			[37453] = true, -- Sealing Fate: Mountain of Apexis Crystals
+			[36056] = true, -- Sealing Fate: Garrison Resources
+			[37456] = true, -- Sealing Fate: Stockpiled Garrison Resources
+			[37457] = true, -- Sealing Fate: Tremendous Garrison Resources
+			[36057] = true, -- Sealing Fate: Honor
+
+			-- 7.0 coins
+			[43892] = true, -- Sealing Fate: Order Resources
+			[43893] = true, -- Sealing Fate: Stashed Order Resources
+			[43894] = true, -- Sealing Fate: Extraneous Order Resources
+			[43895] = true, -- Sealing Fate: Gold
+			[43896] = true, -- Sealing Fate: Piles of Gold
+			[43897] = true, -- Sealing Fate: Immense Fortune of Gold
+			[47851] = true, -- Sealing Fate: Marks of Honor
+			[47864] = true, -- Sealing Fate: Additional Marks of Honor
+			[47865] = true, -- Sealing Fate: Piles of Marks of Honor
+
+			-- 8.0 coins
+			[52834] = true, -- Seal of Wartorn Fate: Gold
+			[52838] = true, -- Seal of Wartorn Fate: Piles of Gold
+			[52835] = true, -- Seal of Wartorn Fate: Marks of Honor
+			[52839] = true, -- Seal of Wartorn Fate: Additional Marks of Honor
+			[52837] = true, -- Seal of Wartorn Fate: War Resources
+			[52840] = true, -- Seal of Wartorn Fate: Stashed War Resources
+
+			-- 7.0 valuable resources
+			[48910] = true, -- Supplying Krokuun
+			[48634] = true, -- Further Supplying Krokuun
+			[48911] = true, -- Void Inoculation
+			[48635] = true, -- More Void Inoculation
+			[48799] = true, -- Fuel for a Doomed World
 		},
 	},
 }
@@ -229,6 +254,21 @@ local rogueNPCs = {
 	[93188] = true, -- Mongar
 }
 
+local function IsQuestIgnored(questID)
+	if ignoredQuests[questID] then
+		return true
+	end
+
+	local questTitle = tonumber(questID) and C_QuestLog.GetTitleForQuestID(questID) or ''
+	for key in next, QuickQuestDB.blocklist.quests do
+		if key == questID or questTitle:lower():find(key:lower()) then
+			return true
+		end
+	end
+
+	return false
+end
+
 EventHandler:Register('GOSSIP_CONFIRM', function(index)
 	-- triggered when a gossip confirm prompt is displayed
 	if paused then
@@ -310,7 +350,7 @@ EventHandler:Register('GOSSIP_SHOW', function()
 
 	-- turn in all completed quests
 	for index, info in next, C_GossipInfo.GetActiveQuests() do
-		if not ignoredQuests[info.questID] then
+		if not IsQuestIgnored(info.questID) then
 			if info.isComplete and not C_QuestLog.IsWorldQuest(info.questID) then
 				C_GossipInfo.SelectActiveQuest(index)
 			end
@@ -319,7 +359,7 @@ EventHandler:Register('GOSSIP_SHOW', function()
 
 	-- accept all available quests
 	for index, info in next, C_GossipInfo.GetAvailableQuests() do
-		if not ignoredQuests[info.questID] then
+		if not IsQuestIgnored(info.questID) then
 			if not info.isTrivial or ns.ShouldAcceptTrivialQuests() then
 				C_GossipInfo.SelectAvailableQuest(index)
 			end
@@ -339,7 +379,7 @@ EventHandler:Register('QUEST_GREETING', function()
 
 	-- turn in all completed quests
 	for index = 1, GetNumActiveQuests() do
-		if not ignoredQuests[GetActiveQuestID(index)] then
+		if not IsQuestIgnored(GetActiveQuestID(index)) then
 			local _, isComplete = GetActiveTitle(index)
 			if isComplete and not C_QuestLog.IsWorldQuest(GetActiveQuestID(index)) then
 				SelectActiveQuest(index)
@@ -350,7 +390,7 @@ EventHandler:Register('QUEST_GREETING', function()
 	-- accept all available quests
 	for index = 1, GetNumAvailableQuests() do
 		local isTrivial, _, _, _, questID = GetAvailableQuestInfo(index)
-		if not ignoredQuests[questID] then
+		if not IsQuestIgnored(questID) then
 			if not isTrivial or ns.ShouldAcceptTrivialQuests() then
 				SelectAvailableQuest(index)
 			end
@@ -372,7 +412,7 @@ EventHandler:Register('QUEST_DETAIL', function(questItemID)
 		-- this type of quest is automatically accepted, but the dialogue persists
 		AcknowledgeAutoAcceptQuest()
 	elseif not C_QuestLog.IsQuestTrivial(GetQuestID()) or ns.ShouldAcceptTrivialQuests() then
-		if ignoredQuests[GetQuestID()] then
+		if IsQuestIgnored(GetQuestID()) then
 			CloseQuest()
 		else
 			AcceptQuest()
