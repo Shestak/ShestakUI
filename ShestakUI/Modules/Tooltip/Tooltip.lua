@@ -427,6 +427,7 @@ hooksecurefunc("SetTooltipMoney", function()
 		end
 	end
 end)
+
 ----------------------------------------------------------------------------------------
 --	Skin GameTooltip.ItemTooltip and EmbeddedItemTooltip
 ----------------------------------------------------------------------------------------
