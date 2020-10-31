@@ -54,10 +54,12 @@
 	<Script file="Core\CheckVersion.lua"/>
 	<Script file="Core\Panels.lua"/>
 
+	<Script file="Modules\UnitFrames\Functions.lua"/>
 	<Script file="Modules\UnitFrames\Tags.lua"/>
 	<Script file="Modules\UnitFrames\Layout.lua"/>
 	<Script file="Modules\UnitFrames\RaidDPS.lua"/>
 	<Script file="Modules\UnitFrames\RaidHeal.lua"/>
+	<Script file="Modules\UnitFrames\Nameplates.lua"/>
 
 	<Script file="Modules\Misc\BattlefieldScore.lua"/>
 	<Script file="Modules\Misc\CharsCurrency.lua"/>
@@ -142,7 +144,6 @@
 	<Script file="Modules\Blizzard\Mail.lua"/>
 	<Script file="Modules\Blizzard\MirrorBars.lua"/>
 	<Script file="Modules\Blizzard\MoveBlizzFrames.lua"/>
-	<Script file="Modules\Blizzard\Nameplates.lua"/>
 	<Script file="Modules\Blizzard\PetBattle.lua"/>
 	<Script file="Modules\Blizzard\TalkingHead.lua"/>
 	<Script file="Modules\Blizzard\TimerTracker.lua"/>
