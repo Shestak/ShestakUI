@@ -205,23 +205,6 @@ T.BuffBlackList = {
 }
 
 T.PlateBlacklist = {
-	-- Army of the Dead
-	["Army of the Dead"] = true,
-	["Войско мертвых"] = true,
-	-- Wild Imp
-	["Wild Imp"] = true,
-	["Дикий бес"] = true,
-	-- Hunter Trap
-	["Venomous Snake"] = true,
-	["Ядовитая змея"] = true,
-	["Viper"] = true,
-	["Гадюка"] = true,
-	-- Raid
-	["Liquid Obsidian"] = true,
-	["Жидкий обсидиан"] = true,
-	["Lava Parasites"] = true,
-	["Лавовый паразит"] = true,
-	-- Gundrak
-	["Fanged Pit Viper"] = true,
-	["Клыкастая глубинная гадюка"] = true,
+	["24207"] = true, -- Army of the Dead
+	["29630"] = true, -- Fanged Pit Viper (Gundrak)
 }

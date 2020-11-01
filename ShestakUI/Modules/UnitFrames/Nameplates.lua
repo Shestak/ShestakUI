@@ -444,7 +444,7 @@ local function callback(self, _, unit)
 		local unitGUID = UnitGUID(unit)
 		self.npcID = unitGUID and select(6, strsplit('-', unitGUID))
 		self.unitName = UnitName(unit)
-		if self.unitName and T.PlateBlacklist[self.unitName] then
+		if self.npcID and T.PlateBlacklist[self.npcID] then
 			self:Hide()
 		else
 			self:Show()
