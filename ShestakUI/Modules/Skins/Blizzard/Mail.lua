@@ -54,6 +54,9 @@ local function LoadSkin()
 
 	T.SkinScrollBar(SendMailScrollFrameScrollBar)
 
+	select(3, SendMailNameEditBox:GetRegions()):SetDrawLayer("OVERLAY")
+	select(3, SendMailSubjectEditBox:GetRegions()):SetDrawLayer("OVERLAY")
+
 	T.SkinEditBox(SendMailNameEditBox)
 	T.SkinEditBox(SendMailSubjectEditBox)
 	T.SkinEditBox(SendMailMoneyGold)
