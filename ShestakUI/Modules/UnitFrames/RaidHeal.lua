@@ -284,7 +284,6 @@ local function Shared(self, unit)
 		self.RaidDebuffs.ShowDispellableDebuff = C.raidframe.plugins_debuffhighlight_icon
 		self.RaidDebuffs.FilterDispellableDebuff = true
 		self.RaidDebuffs.MatchBySpellName = true
-		self.RaidDebuffs.Debuffs = T.RaidDebuffs
 	end
 
 	if T.PostCreateHealRaidFrames then

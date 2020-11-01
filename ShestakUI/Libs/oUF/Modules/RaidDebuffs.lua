@@ -230,10 +230,10 @@ local Update = function(self, _, unit)
 				end
 			end
 
-			local prio = rd.Debuffs and rd.Debuffs[rd.MatchBySpellName and name or spellId]
+			local prio = T.RaidDebuffs[rd.MatchBySpellName and name or spellId]
 			local prioPvP
 			if C.raidframe.plugins_pvp_debuffs == true then
-				prioPvP = rd.Debuffs and T.PvPDebuffs[rd.MatchBySpellName and name or spellId]
+				prioPvP = T.PvPDebuffs[rd.MatchBySpellName and name or spellId]
 			end
 			if not T.RaidDebuffsIgnore[spellId] and (prio and (prio > rd.priority) or prioPvP and (prioPvP > rd.priority)) then
 				if (prio and not prioPvP) or ((prio and prioPvP) and prio > prioPvP) then
