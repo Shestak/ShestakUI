@@ -36,6 +36,7 @@ function frame:PLAYER_LOGIN()
 	if C.nameplate.enhance_threat == true then
 		SetCVar("threatWarning", 3)
 	end
+	SetCVar("nameplateGlobalScale", 1)
 	SetCVar("namePlateMinScale", 1)
 	SetCVar("namePlateMaxScale", 1)
 	SetCVar("nameplateLargerScale", 1)
