@@ -363,11 +363,12 @@ SLASH_TEST_EXTRABUTTON2 = "/еуи"
 --	Grid on screen
 ----------------------------------------------------------------------------------------
 local grid
-SlashCmdList.GRIDONSCREEN = function()
+SlashCmdList.GRIDONSCREEN = function(msg)
 	if grid then
 		grid:Hide()
 		grid = nil
 	else
+		if msg and msg == "hide" then return end
 		grid = CreateFrame("Frame", nil, UIParent)
 		grid:SetAllPoints(UIParent)
 		local width = GetScreenWidth() / 128

@@ -143,7 +143,10 @@ local function restorePosition(obj)
 	-- Hah, a spot you have to use semi-colon!
 	-- Guess I've never experienced that as these are usually wrapped in do end
 	-- statements.
-	target.SetPoint = restorePosition
+	if(not target._SetPoint) then
+		target._SetPoint = target.SetPoint
+		target.SetPoint = restorePosition
+	end
 	target:ClearAllPoints()
 
 	-- damn it Blizzard, _how_ did you manage to get the input of this function
@@ -179,6 +182,10 @@ local savePosition = function(obj, anchor)
 	if not _DB[style] then _DB[style] = {} end
 
 	_DB[style][identifier] = getPoint(isHeader or obj, anchor)
+
+	local ap, _, rp, x, y = anchor:GetPoint()
+	obj:ClearAllPoints()
+	obj:SetPoint(ap, "UIParent", rp, x, y)
 end
 
 -- Attempt to figure out a more sane name to dispaly
@@ -310,6 +317,7 @@ do
 end
 
 local getBackdrop
+local controls
 do
 	local function UpdateCoords(self)
 		local mover = self.child
@@ -353,13 +361,112 @@ do
 		end
 	end
 
+	-- Controls
+	controls = CreateFrame("frame", nil, UIParent)
+	controls:SetPoint("CENTER", UIParent)
+	controls:SetSize(65, 25)
+	controls:SetFrameStrata("TOOLTIP")
+	controls:SetFrameLevel(100)
+	controls:Hide()
+	controls:SetScript("OnLeave", function(self)
+		if MouseIsOver(self) then return end
+		if not self._frame then
+			self:Hide()
+		elseif not MouseIsOver(self._frame) then
+			self:Hide()
+		end
+	end)
+
+	local function CreateArrow(moveX, moveY, callback)
+		moveX = moveX or 0
+		moveY = moveY or 0
+
+		local button = CreateFrame("button", nil, controls)
+		button:SetSize(14, 14)
+		button.controls = controls
+
+		button.tex = button:CreateTexture(nil, "OVERLAY")
+		button.tex:SetTexture("Interface\\OPTIONSFRAME\\VoiceChat-Play")
+
+		button.tex:SetPoint("CENTER")
+		button.tex:SetSize(12, 12)
+		button.tex:SetAlpha(0.6)
+
+		button:SetScript("OnEnter", function(self)
+			self.tex:SetAlpha(1)
+		end)
+		button:SetScript("OnLeave", function(self)
+			self.tex:SetAlpha(0.6)
+		end)
+
+		callback = callback or function(self)
+			local frame = self.controls._frame
+			if not frame then return end
+			local point, relativeTo, relativePoint, xOfs, yOfs = frame.obj:GetPoint()
+			saveDefaultPosition(frame.obj)
+			if IsControlKeyDown() then
+				frame.obj:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 20), yOfs + (moveY * 20))
+			elseif IsShiftKeyDown() then
+				frame.obj:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 5), yOfs + (moveY * 5))
+			else
+				frame.obj:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 1), yOfs + (moveY * 1))
+			end
+			local point, _, relativePoint, xOfs, yOfs = frame.obj:GetPoint()
+			local style, identifier = getObjectInformation(frame.obj)
+			if not _DB[style] then _DB[style] = {} end
+			_DB[style][identifier] = getPoint(frame.obj)
+			frame:SetAllPoints(frame.obj)
+		end
+
+		button:SetScript("OnClick", callback)
+
+		if controls.last then
+			button:SetPoint("LEFT", controls.last, "RIGHT", 2, 0)
+		else
+			button:SetPoint("LEFT", controls, "LEFT", 2, 0)
+		end
+
+		controls.last = button
+
+		return button
+	end
+
+	controls.left = CreateArrow(-1, 0)
+	controls.left.tex:SetRotation(3.14159)
+
+	controls.up = CreateArrow(0, 1)
+	controls.up.tex:SetRotation(1.5708)
+
+	controls.down = CreateArrow(0, -1)
+	controls.down.tex:SetRotation(-1.5708)
+
+	controls.right = CreateArrow(1, 0)
+	controls.right.tex:SetRotation(0)
+
+	local function GetQuadrant(frame)
+		local _, y = frame:GetCenter()
+		local vhalf = (y > UIParent:GetHeight() / 2) and "TOP" or "BOTTOM"
+		return vhalf
+	end
+
+	local function ShowControls(frame)
+		local y = GetQuadrant(frame)
+		controls._frame = frame
+		controls:Show()
+		controls:ClearAllPoints()
+		if y == "TOP" then
+			controls:SetPoint("TOP", frame, "BOTTOM", 0, 0)
+		else
+			controls:SetPoint("BOTTOM", frame, "TOP", 0, 0)
+		end
+	end
+
 	getBackdrop = function(obj, isHeader)
 		local target = isHeader or obj
 		if not target:GetCenter() then return end
 		if backdropPool[target] then return backdropPool[target] end
 
-		local backdrop = CreateFrame("Frame")
-		backdrop:SetParent(UIParent)
+		local backdrop = CreateFrame("Frame", nil, UIParent, "BackdropTemplate")
 		backdrop:Hide()
 
 		backdrop:SetFrameStrata("MEDIUM")
@@ -403,13 +510,20 @@ do
 			backdrop.baseWidth, backdrop.baseHeight = isHeader:GetSize()
 		end
 
+		local frame = backdrop.header or backdrop.obj
+		if frame._SetPoint then
+			frame.SetPoint = frame._SetPoint
+		end
+
 		backdrop:SetScript("OnDragStart", OnDragStart)
 		backdrop:SetScript("OnDragStop", OnDragStop)
 		backdrop:SetScript("OnEnter", function(self)
 			self.backdrop:SetBackdropBorderColor(unpack(C.media.classborder_color))
+			ShowControls(backdrop)
 		end)
 		backdrop:SetScript("OnLeave", function(self)
 			self.backdrop:SetBackdropBorderColor(1, 0, 0)
+			if not MouseIsOver(controls) then controls:Hide() end
 		end)
 		backdrop:SetScript("OnMouseUp", OnMouseUp)
 
@@ -451,6 +565,7 @@ T.MoveUnitFrames = function()
 			bdrop:Hide()
 		end
 
+		controls:Hide()
 		_LOCK = nil
 	end
 end

@@ -81,6 +81,8 @@ end
 
 local SetPosition = function(mover)
 	local ap, _, rp, x, y = mover:GetPoint()
+	mover.frame:ClearAllPoints()
+	mover.frame:SetPoint(ap, "UIParent", rp, x, y)
 	ShestakUIPositions[mover.frame:GetName()] = {ap, "UIParent", rp, x, y}
 end
 
@@ -102,7 +104,7 @@ end
 
 local RestoreDefaults = function(self, button)
 	if button == "RightButton" then
-		local data = ShestakUIPositions.Default[self.frame:GetName()]
+		local data = ShestakUIPositions.Default and ShestakUIPositions.Default[self.frame:GetName()]
 		if data then
 			self.frame:ClearAllPoints()
 			self.frame:SetPoint(unpack(data))
@@ -113,6 +115,104 @@ local RestoreDefaults = function(self, button)
 		end
 	elseif button == "MiddleButton" then
 		self:Hide()
+	end
+end
+
+-- Controls
+local controls = CreateFrame("frame", nil, UIParent)
+controls:SetPoint("CENTER", UIParent)
+controls:SetSize(65, 25)
+controls:SetFrameStrata("TOOLTIP")
+controls:SetFrameLevel(100)
+controls:Hide()
+controls:SetScript("OnLeave", function(self)
+	if MouseIsOver(self) then return end
+	if not self._frame then
+		self:Hide()
+	elseif not MouseIsOver(self._frame) then
+		self:Hide()
+	end
+end)
+
+local function CreateArrow(moveX, moveY, callback)
+	moveX = moveX or 0
+	moveY = moveY or 0
+
+	local button = CreateFrame("button", nil, controls)
+	button:SetSize(14, 14)
+	button.controls = controls
+
+	button.tex = button:CreateTexture(nil, "OVERLAY")
+	button.tex:SetTexture("Interface\\OPTIONSFRAME\\VoiceChat-Play")
+
+	button.tex:SetPoint("CENTER")
+	button.tex:SetSize(12, 12)
+	button.tex:SetAlpha(0.6)
+
+	button:SetScript("OnEnter", function(self)
+		self.tex:SetAlpha(1)
+	end)
+	button:SetScript("OnLeave", function(self)
+		self.tex:SetAlpha(0.6)
+	end)
+
+	callback = callback or function(self)
+		local frame = self.controls._frame
+		if not frame then return end
+		local point, relativeTo, relativePoint, xOfs, yOfs = frame.frame:GetPoint()
+		SaveDefaultPosition(frame)
+		if IsControlKeyDown() then
+			frame.frame:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 20), yOfs + (moveY * 20))
+		elseif IsShiftKeyDown() then
+			frame.frame:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 5), yOfs + (moveY * 5))
+		else
+			frame.frame:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 1), yOfs + (moveY * 1))
+		end
+		local point, _, relativePoint, xOfs, yOfs = frame.frame:GetPoint()
+		ShestakUIPositions[frame.frame:GetName()] = {point, "UIParent", relativePoint, xOfs, yOfs}
+		frame:SetAllPoints(frame.frame)
+	end
+
+	button:SetScript("OnClick", callback)
+
+	if controls.last then
+		button:SetPoint("LEFT", controls.last, "RIGHT", 2, 0)
+	else
+		button:SetPoint("LEFT", controls, "LEFT", 2, 0)
+	end
+
+	controls.last = button
+
+	return button
+end
+
+controls.left = CreateArrow(-1, 0)
+controls.left.tex:SetRotation(3.14159)
+
+controls.up = CreateArrow(0, 1)
+controls.up.tex:SetRotation(1.5708)
+
+controls.down = CreateArrow(0, -1)
+controls.down.tex:SetRotation(-1.5708)
+
+controls.right = CreateArrow(1, 0)
+controls.right.tex:SetRotation(0)
+
+local function GetQuadrant(frame)
+	local _, y = frame:GetCenter()
+	local vhalf = (y > UIParent:GetHeight() / 2) and "TOP" or "BOTTOM"
+	return vhalf
+end
+
+local function ShowControls(frame)
+	local y = GetQuadrant(frame)
+	controls._frame = frame
+	controls:Show()
+	controls:ClearAllPoints()
+	if y == "TOP" then
+		controls:SetPoint("TOP", frame, "BOTTOM", 0, 0)
+	else
+		controls:SetPoint("BOTTOM", frame, "TOP", 0, 0)
 	end
 end
 
@@ -128,8 +228,8 @@ local CreateMover = function(frame)
 	mover:RegisterForDrag("LeftButton")
 	mover:SetScript("OnDragStart", OnDragStart)
 	mover:SetScript("OnDragStop", OnDragStop)
-	mover:SetScript("OnEnter", function(self) self:SetBackdropBorderColor(unpack(C.media.classborder_color)) end)
-	mover:SetScript("OnLeave", function(self) self:SetBackdropBorderColor(1, 0, 0) end)
+	mover:SetScript("OnEnter", function(self) self:SetBackdropBorderColor(unpack(C.media.classborder_color)) ShowControls(self) end)
+	mover:SetScript("OnLeave", function(self) self:SetBackdropBorderColor(1, 0, 0) if not MouseIsOver(controls) then controls:Hide() end end)
 	mover:SetScript("OnMouseUp", RestoreDefaults)
 	mover.frame = frame
 
@@ -137,7 +237,11 @@ local CreateMover = function(frame)
 	mover.name:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 	mover.name:SetPoint("CENTER")
 	mover.name:SetTextColor(1, 1, 1)
-	mover.name:SetText(frame:GetName())
+	local text = frame:GetName()
+	if string.find(text, "Anchor") then
+		text = text:gsub("Anchor", "")
+	end
+	mover.name:SetText(text)
 	mover.name:SetWidth(frame:GetWidth() - 4)
 	movers[frame:GetName()] = mover
 end
@@ -168,11 +272,14 @@ local InitMove = function(msg)
 			if mover then mover:Show() end
 		end
 		moving = true
+		SlashCmdList.GRIDONSCREEN()
 	else
 		for _, v in pairs(movers) do
 			v:Hide()
 		end
 		moving = false
+		SlashCmdList.GRIDONSCREEN("hide")
+		controls:Hide()
 	end
 	if T.MoveUnitFrames then T.MoveUnitFrames() end
 end
