@@ -14,6 +14,7 @@ local icons = {}
 local band = bit.band
 local pos = C.position.enemy_cooldown
 local limit = (C.actionbar.button_size * 12)/C.enemycooldown.size
+local space = C.filger.cooldown_space
 
 local EnemyCDAnchor = CreateFrame("Frame", "EnemyCDAnchor", UIParent)
 if C.unitframe.enable ~= true then
@@ -53,15 +54,15 @@ local UpdatePositions = function()
 			icons[i]:SetPoint("BOTTOMLEFT", EnemyCDAnchor, "BOTTOMLEFT", 0, 0)
 		elseif i < limit then
 			if direction == "UP" then
-				icons[i]:SetPoint("BOTTOM", icons[i-1], "TOP", 0, 3)
+				icons[i]:SetPoint("BOTTOM", icons[i-1], "TOP", 0, space)
 			elseif direction == "DOWN" then
-				icons[i]:SetPoint("TOP", icons[i-1], "BOTTOM", 0, -3)
+				icons[i]:SetPoint("TOP", icons[i-1], "BOTTOM", 0, -space)
 			elseif direction == "RIGHT" then
-				icons[i]:SetPoint("LEFT", icons[i-1], "RIGHT", 3, 0)
+				icons[i]:SetPoint("LEFT", icons[i-1], "RIGHT", space, 0)
 			elseif direction == "LEFT" then
-				icons[i]:SetPoint("RIGHT", icons[i-1], "LEFT", -3, 0)
+				icons[i]:SetPoint("RIGHT", icons[i-1], "LEFT", -space, 0)
 			else
-				icons[i]:SetPoint("LEFT", icons[i-1], "RIGHT", 3, 0)
+				icons[i]:SetPoint("LEFT", icons[i-1], "RIGHT", space, 0)
 			end
 
 		end
