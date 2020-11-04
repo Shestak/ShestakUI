@@ -46,6 +46,7 @@ L.media_backdrop_color = "Couleurs du remplissage des bordures (fenêtres, barre
 L.media_backdrop_alpha = "Transparence du fond des bordures"
 L.media_texture = "Main texture" -- Need review
 L.media_subheader_pixel = "Modification de la Police Pixel" -- Need review
+L.media_subheader_normal = "Change General font" -- Need review
 
 -- Font options
 L.font = "Polices" -- Need review

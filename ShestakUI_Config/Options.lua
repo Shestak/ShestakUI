@@ -117,7 +117,7 @@ end)
 tinsert(ns.buttons, ResetButton)
 
 local FontTable
-local LSM = LibStub and LibStub:GetLibrary("LibSharedMedia-3.0", true)
+local LSM = LibStub and LibStub("LibSharedMedia-3.0")
 if LSM then
 	FontTable = LSM:HashTable("font")
 else
@@ -148,7 +148,6 @@ local CollapseTable = {
 }
 
 local TextureTable
-local LSM = LibStub and LibStub:GetLibrary("LibSharedMedia-3.0", true)
 if LSM then
 	TextureTable = LSM:HashTable("statusbar")
 else
@@ -587,6 +586,12 @@ do
 
 	local pixel_font_size = ns.CreateNumberSlider(parent, "pixel_font_size", nil, nil, 8, 48, 1, true, FONT_SIZE)
 	pixel_font_size:SetPoint("TOPLEFT", pixel_font, "BOTTOMLEFT", 16, -16)
+
+	local subheader = ns.addSubCategory(parent, L.media_subheader_normal)
+	subheader:SetPoint("TOPLEFT", pixel_font_size, "BOTTOMLEFT", 0, -10)
+
+	local normal_font = ns.CreateDropDown(parent, "normal_font", true, L.font_stats_font, FontTable, LSM and true)
+	normal_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local LuaButton = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
 	LuaButton:SetPoint("BOTTOMRIGHT", parent, "BOTTOMRIGHT", -20, 5)

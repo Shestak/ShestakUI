@@ -46,6 +46,7 @@ L.media_backdrop_color = "边框背景颜色"
 L.media_backdrop_alpha = "透明背景"
 L.media_texture = "主要材质"
 L.media_subheader_pixel = "像素字体"
+L.media_subheader_normal = "Change General font" -- Need review
 
 -- Font options
 L.font = "字体设置"

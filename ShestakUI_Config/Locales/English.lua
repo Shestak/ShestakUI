@@ -43,6 +43,7 @@ L.media_backdrop_color = "Color for borders backdrop"
 L.media_backdrop_alpha = "Alpha for transparent backdrop"
 L.media_texture = "Main texture"
 L.media_subheader_pixel = "Change Pixel font"
+L.media_subheader_normal = "Change General font"
 
 -- Font options
 L.font = "Fonts"

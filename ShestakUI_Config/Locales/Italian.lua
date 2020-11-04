@@ -46,6 +46,7 @@ L.media_backdrop_color = "Color for borders backdrop" -- Need review
 L.media_backdrop_alpha = "Alpha for transparent backdrop" -- Need review
 L.media_texture = "Main texture" -- Need review
 L.media_subheader_pixel = "Change Pixel font" -- Need review
+L.media_subheader_normal = "Change General font" -- Need review
 
 -- Font options
 L.font = "Fonts" -- Need review
