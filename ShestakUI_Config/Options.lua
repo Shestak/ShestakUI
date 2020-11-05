@@ -574,9 +574,16 @@ do
 	local texture = ns.CreateDropDown(parent, "texture", true, nil, TextureTable, LSM and true)
 	texture:SetPoint("TOPLEFT", backdrop_alpha, "BOTTOMLEFT", -20, -15)
 
+	-- Normal Font
+	local subheader = ns.addSubCategory(parent, L.media_subheader_normal)
+	subheader:SetPoint("TOPLEFT", texture, "BOTTOMLEFT", 16, -10)
+
+	local normal_font = ns.CreateDropDown(parent, "normal_font", true, L.font_stats_font, FontTable, LSM and true)
+	normal_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
+
 	-- Pixel Font
 	local subheader = ns.addSubCategory(parent, L.media_subheader_pixel)
-	subheader:SetPoint("TOPLEFT", texture, "BOTTOMLEFT", 16, -10)
+	subheader:SetPoint("TOPLEFT", normal_font, "BOTTOMLEFT", 16, -10)
 
 	local pixel_font = ns.CreateDropDown(parent, "pixel_font", true, L.font_stats_font, FontTable, LSM and true)
 	pixel_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
@@ -586,12 +593,6 @@ do
 
 	local pixel_font_size = ns.CreateNumberSlider(parent, "pixel_font_size", nil, nil, 8, 48, 1, true, FONT_SIZE)
 	pixel_font_size:SetPoint("TOPLEFT", pixel_font, "BOTTOMLEFT", 16, -16)
-
-	local subheader = ns.addSubCategory(parent, L.media_subheader_normal)
-	subheader:SetPoint("TOPLEFT", pixel_font_size, "BOTTOMLEFT", 0, -10)
-
-	local normal_font = ns.CreateDropDown(parent, "normal_font", true, L.font_stats_font, FontTable, LSM and true)
-	normal_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local LuaButton = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
 	LuaButton:SetPoint("BOTTOMRIGHT", parent, "BOTTOMRIGHT", -20, 5)
@@ -2313,9 +2314,12 @@ do
 	local battleground = ns.CreateCheckBox(parent, "battleground", L_GUI_STATS_BG)
 	battleground:SetPoint("TOPLEFT", coords, "BOTTOMLEFT", 0, 0)
 
+	local bottom_line = ns.CreateCheckBox(parent, "bottom_line")
+	bottom_line:SetPoint("TOPLEFT", battleground, "BOTTOMLEFT", 0, 0)
+
 	-- Currency
 	local currency = ns.addSubCategory(parent, L_GUI_STATS_SUBHEADER_CURRENCY)
-	currency:SetPoint("TOPLEFT", battleground, "BOTTOMLEFT", 0, -16)
+	currency:SetPoint("TOPLEFT", bottom_line, "BOTTOMLEFT", 0, -16)
 
 	local currency_archaeology = ns.CreateCheckBox(parent, "currency_archaeology", L_GUI_STATS_CURRENCY_ARCHAEOLOGY)
 	currency_archaeology:SetPoint("TOPLEFT", currency, "BOTTOMLEFT", 0, -8)

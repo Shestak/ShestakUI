@@ -577,6 +577,7 @@ C["stats"] = {
 	["location"] = true,						-- Location
 	["coords"] = true,							-- Coords
 	["battleground"] = false,					-- BG Score
+	["bottom_line"] = true,						-- Bottom classcolor line
 	-- Currency (displayed in gold stats)
 	["currency_archaeology"] = false,			-- Archaeology Fragments
 	["currency_cooking"] = true,				-- Cooking Awards

@@ -573,6 +573,7 @@ L_GUI_STATS_TALENTS_DESC = "Date-text allows you to change the spec and loot on 
 L_GUI_STATS_COORDS = "Coords"
 L_GUI_STATS_LOCATION = "Location"
 L_GUI_STATS_BG = "Battleground"
+L.stats_bottom_line = "Bottom classcolor line"
 L_GUI_STATS_SUBHEADER_CURRENCY = "Currency (displayed in gold data text)"
 L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Archaeology Fragments"
 L_GUI_STATS_CURRENCY_COOKING = "Cooking Awards"

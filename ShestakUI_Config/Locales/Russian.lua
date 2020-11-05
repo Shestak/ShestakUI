@@ -550,6 +550,7 @@ L_GUI_STATS_TALENTS_DESC = "Дата-текст позволяет менять 
 L_GUI_STATS_COORDS = "Координаты"
 L_GUI_STATS_LOCATION = "Зона"
 L_GUI_STATS_BG = "Поле боя"
+L.stats_bottom_line = "Цветная полоса снизу"
 L_GUI_STATS_SUBHEADER_CURRENCY = "Валюта (отображается в дата-тексте золота)"
 L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "Фрагменты археологии"
 L_GUI_STATS_CURRENCY_COOKING = "Кулинарные награды"

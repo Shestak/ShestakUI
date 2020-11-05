@@ -550,6 +550,7 @@ L_GUI_STATS_TALENTS_DESC = "左键专精选单/右键拾取专精选单"
 L_GUI_STATS_COORDS = "坐标"
 L_GUI_STATS_LOCATION = "位置"
 L_GUI_STATS_BG = "战场分数"
+L.stats_bottom_line = "Bottom classcolor line" -- Need review
 L_GUI_STATS_SUBHEADER_CURRENCY = "货币(金币信息中显示)"
 L_GUI_STATS_CURRENCY_ARCHAEOLOGY = "考古"
 L_GUI_STATS_CURRENCY_COOKING = "烹饪"
