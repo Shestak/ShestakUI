@@ -93,6 +93,7 @@ local function LoadSkin()
 		reward:SetTemplate("Default")
 		reward:SetSize(40, 40)
 		reward:SetPoint("RIGHT", button, "RIGHT", -8, 0)
+		reward.CircleMask:Hide()
 
 		reward.Icon:SetAllPoints()
 		reward.Icon:SetPoint("TOPLEFT", 2, -2)
