@@ -133,6 +133,7 @@ L_GUI_UF_PLUGINS_POWER_PREDICTION = "Balken der Energiekosten auf dem Spielerfra
 L.unitframe_plugins_absorbs = "Absorbiert den Wert auf dem Spielerframe"
 L.unitframe_subheader_player_width = "Spieler- und Ziel-Frame-Größe"
 L.unitframe_player_width = "Breite"
+L.unitframe_subheader_boss_width = "Boss and arena frame size" -- Need review
 L.unitframe_extra_height_auto = "Automatische Höhe für Gesundheit/Kraft"
 L.unitframe_extra_height_auto_desc = "Intelligente Anpassung je nach Schriftgröße"
 L.unitframe_extra_health_height = "Zusätzliche Höhe für die Gesundheit"

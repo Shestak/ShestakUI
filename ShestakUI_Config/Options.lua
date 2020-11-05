@@ -1111,8 +1111,14 @@ do
 	local player_width = ns.CreateNumberSlider(parent, "player_width", nil, nil, 105, 400, 1, true)
 	player_width:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -28)
 
+	local subheader = ns.addSubCategory(parent, L.unitframe_subheader_boss_width)
+	subheader:SetPoint("TOPLEFT", player_width, "BOTTOMLEFT", 0, -10)
+
+	local boss_width = ns.CreateNumberSlider(parent, "boss_width", nil, nil, 105, 300, 1, true, L.unitframe_player_width)
+	boss_width:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -28)
+
 	local extra_height_auto = ns.CreateCheckBox(parent, "extra_height_auto")
-	extra_height_auto:SetPoint("TOPLEFT", player_width, "BOTTOMLEFT", 0, -10)
+	extra_height_auto:SetPoint("TOPLEFT", boss_width, "BOTTOMLEFT", 0, -10)
 
 	local extra_health_height = ns.CreateNumberSlider(parent, "extra_health_height", nil, nil, 0, 40, 1, true)
 	extra_health_height:SetPoint("TOPLEFT", extra_height_auto, "BOTTOMLEFT", 0, -20)

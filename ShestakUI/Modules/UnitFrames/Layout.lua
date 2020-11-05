@@ -16,6 +16,7 @@ T.extraHeight = C.unitframe.extra_health_height + C.unitframe.extra_power_height
 
 local player_width = C.unitframe.player_width
 local pet_width = (player_width - 7) / 2
+local boss_width = C.unitframe.boss_width
 
 -- Create layout
 local function Shared(self, unit)
@@ -867,7 +868,7 @@ local function Shared(self, unit)
 			self.Castbar:SetHeight(16)
 		elseif unit == "arena" or unit == "boss" then
 			self.Castbar:SetPoint("TOPLEFT", self, "BOTTOMLEFT", 0, -7)
-			self.Castbar:SetWidth(150)
+			self.Castbar:SetWidth(boss_width)
 			self.Castbar:SetHeight(16)
 		else
 			self.Castbar:SetPoint("TOPLEFT", self, "BOTTOMLEFT", 0, -7)
@@ -1223,7 +1224,7 @@ if C.unitframe.show_boss == true then
 		else
 			boss[i]:SetPoint("BOTTOM", boss[i-1], "TOP", 0, 30)
 		end
-		boss[i]:SetSize(150, 27 + T.extraHeight)
+		boss[i]:SetSize(boss_width, 27 + T.extraHeight)
 	end
 end
 
@@ -1240,7 +1241,7 @@ if C.unitframe.show_arena == true then
 		else
 			arena[i]:SetPoint("BOTTOM", arena[i-1], "TOP", 0, 30)
 		end
-		arena[i]:SetSize(150, 27 + T.extraHeight)
+		arena[i]:SetSize(boss_width, 27 + T.extraHeight)
 	end
 
 	local arenatarget = {}

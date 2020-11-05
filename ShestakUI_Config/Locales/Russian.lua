@@ -133,6 +133,7 @@ L_GUI_UF_PLUGINS_POWER_PREDICTION = "Полоса прогноза исполь�
 L.unitframe_plugins_absorbs = "Количество поглощения на рамке игрока"
 L.unitframe_subheader_player_width = "Размеры рамок игрока и цели"
 L.unitframe_player_width = "Ширина"
+L.unitframe_subheader_boss_width = "Размеры рамок босса и арены"
 L.unitframe_extra_height_auto = "Авто высота здоровья и энергии"
 L.unitframe_extra_height_auto_desc = "Умное увеличение в зависимости от размера шрифта"
 L.unitframe_extra_health_height = "Доп. высота для здоровья"

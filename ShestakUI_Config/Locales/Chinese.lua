@@ -133,6 +133,7 @@ L_GUI_UF_PLUGINS_POWER_PREDICTION = "即将获得的资源"
 L.unitframe_plugins_absorbs = "吸收量"
 L.unitframe_subheader_player_width = "玩家/目标框架大小"
 L.unitframe_player_width = "宽度"
+L.unitframe_subheader_boss_width = "Boss and arena frame size" -- Need review
 L.unitframe_extra_height_auto = "血量/能量框架自动增高"
 L.unitframe_extra_height_auto_desc = "按字体大小智能调节框架高度"
 L.unitframe_extra_health_height = "血量框架额外增高"
