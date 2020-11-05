@@ -333,7 +333,7 @@ end
 if C.minimap.tracking_icon then
 	MiniMapTrackingBackground:Hide()
 	MiniMapTracking:ClearAllPoints()
-	MiniMapTracking:SetPoint("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 0, -5)
+	MiniMapTracking:SetPoint("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 0, -4)
 	MiniMapTrackingButton:SetHighlightTexture(nil)
 	MiniMapTrackingButtonBorder:Hide()
 	MiniMapTrackingIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
