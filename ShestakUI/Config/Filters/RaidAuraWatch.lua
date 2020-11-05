@@ -562,7 +562,7 @@ T.RaidDebuffs = {
 -- PvP
 -----------------------------------------------------------------
 if C.raidframe.plugins_pvp_debuffs == true then
-	T.PvPDebuffs = {
+	local PvPDebuffs = {
 		-- Death Knight
 		[SpellName(108194)] = 3,	-- Asphyxiate
 		[SpellName(91797)] = 3,		-- Monstrous Blow (Mutated Ghoul)
@@ -621,6 +621,10 @@ if C.raidframe.plugins_pvp_debuffs == true then
 		[SpellName(132169)] = 3,	-- Storm Bolt
 		[SpellName(194958)] = 3,	-- Intimidating Shout
 	}
+
+	for spell, prio in pairs(PvPDebuffs) do
+		T.RaidDebuffs[spell] = prio
+	end
 end
 
 T.RaidDebuffsReverse = {
