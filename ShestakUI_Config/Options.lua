@@ -117,7 +117,7 @@ end)
 tinsert(ns.buttons, ResetButton)
 
 local FontTable
-local LSM = LibStub and LibStub("LibSharedMedia-3.0")
+local LSM = LibStub and LibStub:GetLibrary("LibSharedMedia-3.0", true)
 if LSM then
 	FontTable = LSM:HashTable("font")
 else
