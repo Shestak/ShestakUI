@@ -45,8 +45,8 @@ L.media_classborder_color = "Цвет для классовых окантово
 L.media_backdrop_color = "Цвет для фона"
 L.media_backdrop_alpha = "Прозрачность фона"
 L.media_texture = "Основная текстура"
-L.media_subheader_pixel = "Изменение пиксельного шрифта"
 L.media_subheader_normal = "Изменение основного шрифта"
+L.media_subheader_pixel = "Изменение дополнительного шрифта"
 
 -- Font options
 L.font = "Шрифты"

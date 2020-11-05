@@ -45,8 +45,8 @@ L.media_classborder_color = "邊框按職業著色"
 L.media_backdrop_color = "邊框背景顏色"
 L.media_backdrop_alpha = "透明背景"
 L.media_texture = "主要材質"
-L.media_subheader_pixel = "像素字體"
-L.media_subheader_normal = "Change General font" -- Need review
+L.media_subheader_normal = "Change general font" -- Need review
+L.media_subheader_pixel = "像素字體" -- Need review
 
 -- Font options
 L.font = "字體設置"

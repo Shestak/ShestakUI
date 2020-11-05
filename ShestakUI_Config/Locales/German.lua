@@ -45,8 +45,8 @@ L.media_classborder_color = "Farbe für Klassenrahmen"
 L.media_backdrop_color = "Farbe für Rahmen-Hintergrund"
 L.media_backdrop_alpha = "Alpha für transparenten Hintergrund"
 L.media_texture = "Haupttextur"
-L.media_subheader_pixel = "Ändere Pixel Schriftart"
-L.media_subheader_normal = "Change General font" -- Need review
+L.media_subheader_normal = "Change general font" -- Need review
+L.media_subheader_pixel = "Ändere Pixel Schriftart" -- Need review
 
 -- Font options
 L.font = "Schriftart"
