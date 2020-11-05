@@ -70,9 +70,12 @@ local applystyle = function(bar)
 	bar.OldSetScale = bar.SetScale
 
 	-- Set currect scale if bars attached to nameplates
-	hooksecurefunc(bar, "SetParent", function()
-		bar:SetScale(T.noscalemult)
-	end)
+	if not bar.hook then
+		hooksecurefunc(bar, "SetParent", function()
+			bar:SetScale(T.noscalemult)
+		end)
+		bar.hook = true
+	end
 
 	-- Create or reparent and use bar background
 	local bg = nil
