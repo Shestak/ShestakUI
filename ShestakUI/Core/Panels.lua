@@ -124,9 +124,9 @@ if C.chat.background == true then
 		chattabs:SetBackdropBorderColor(unpack(C.media.classborder_color))
 		chattabs:SetBackdropColor(0, 0, 0, C.chat.background_alpha)
 	end
-else
+elseif C.stats.bottom_line then
 	local leftpanel = CreateFrame("Frame", "LeftPanel", UIParent)
-	leftpanel:CreatePanel("ClassColor", 1, C.chat.height - 2, "BOTTOMLEFT", bottompanel, "LEFT", 0, 0)
+	leftpanel:CreatePanel("ClassColor", 1, C.chat.height - 2, "BOTTOMLEFT", BottomPanel, "LEFT", 0, 0)
 end
 
 ----------------------------------------------------------------------------------------
