@@ -361,7 +361,6 @@ elseif T.class == "MONK" then
 elseif T.class == "PALADIN" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
-		--FIXME T.aoespam[203539] = 10		-- Greater Blessing of Wisdom
 		T.aoespam[216371] = 4		-- Avenging Crusader
 		T.aoespam[209540] = 8		-- Light of the Titans
 		T.aoespam[53652] = 3		-- Beacon of Light
@@ -369,7 +368,6 @@ elseif T.class == "PALADIN" then
 		T.aoespam[114852] = 0		-- Holy Prism
 		T.aoespam[119952] = 3		-- Arcing Light
 		T.aoespam[144581] = 3		-- Blessing of the Guardians (T16)
-		--FIXME T.aoespam[210291] = 6		-- Aura of Mercy
 		T.aoespam[183811] = 6		-- Judgment of Light
 		T.aoespam[225311] = 1		-- Light of Dawn
 		-- Damaging spells
@@ -393,9 +391,7 @@ elseif T.class == "PALADIN" then
 		T.aoespam[204301] = 8		-- Blessed Hammer
 		T.aoespam[224239] = 1		-- Divine Storm
 		T.aoespam[20271] = 1		-- Judgment
-		--FIXME T.merge[228288] = 20271		-- Judgment Retribution
 		T.aoespam[217020] = 1		-- Zeal
-		--FIXME T.aoespam[204011] = 3		-- Retribution Aura
 		T.aoespam[286232] = 1		-- Light's Decree
 	end
 elseif T.class == "PRIEST" then
