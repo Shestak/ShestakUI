@@ -182,10 +182,6 @@ local savePosition = function(obj, anchor)
 	if not _DB[style] then _DB[style] = {} end
 
 	_DB[style][identifier] = getPoint(isHeader or obj, anchor)
-
-	local ap, _, rp, x, y = anchor:GetPoint()
-	obj:ClearAllPoints()
-	obj:SetPoint(ap, "UIParent", rp, x, y)
 end
 
 -- Attempt to figure out a more sane name to dispaly
@@ -321,11 +317,11 @@ local controls
 do
 	local function UpdateCoords(self)
 		local mover = self.child
-		local ap, _, rp, x, y = mover:GetPoint()
+		local ap, _, _, x, y = mover:GetPoint()
 
-		local frame = mover.header or mover.obj
+		local frame = mover.target
 		frame:ClearAllPoints()
-		frame:SetPoint(ap, "UIParent", rp, x, y)
+		frame:SetPoint(ap, "UIParent", ap, x, y)
 	end
 
 	local coordFrame = CreateFrame("Frame")
@@ -350,6 +346,9 @@ do
 
 		coordFrame.child = nil
 		coordFrame:Hide()
+
+		self:ClearAllPoints()
+		self:SetAllPoints(self.header or self.obj)
 	end
 
 	local OnMouseUp = function(self, button)
@@ -402,20 +401,19 @@ do
 		callback = callback or function(self)
 			local frame = self.controls._frame
 			if not frame then return end
-			local point, relativeTo, relativePoint, xOfs, yOfs = frame.obj:GetPoint()
+			local point, relativeTo, relativePoint, xOfs, yOfs = frame.target:GetPoint()
 			saveDefaultPosition(frame.obj)
 			if IsControlKeyDown() then
-				frame.obj:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 20), yOfs + (moveY * 20))
+				frame.target:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 20), yOfs + (moveY * 20))
 			elseif IsShiftKeyDown() then
-				frame.obj:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 5), yOfs + (moveY * 5))
+				frame.target:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 5), yOfs + (moveY * 5))
 			else
-				frame.obj:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 1), yOfs + (moveY * 1))
+				frame.target:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 1), yOfs + (moveY * 1))
 			end
-			local point, _, relativePoint, xOfs, yOfs = frame.obj:GetPoint()
 			local style, identifier = getObjectInformation(frame.obj)
 			if not _DB[style] then _DB[style] = {} end
-			_DB[style][identifier] = getPoint(frame.obj)
-			frame:SetAllPoints(frame.obj)
+			_DB[style][identifier] = getPoint(frame.target)
+			frame:SetAllPoints(frame.target)
 		end
 
 		button:SetScript("OnClick", callback)
@@ -487,8 +485,11 @@ do
 		backdrop.name = name
 		backdrop.obj = obj
 		backdrop.header = isHeader
+		backdrop.target = target
 
 		backdrop.backdrop:SetBackdropBorderColor(1, 0, 0)
+
+		backdrop.baseWidth, backdrop.baseHeight = obj:GetSize()
 
 		-- We have to define a minHeight on the header if it doesn't have one. The
 		-- reason for this is that the header frame will have an height of 0.1 when
