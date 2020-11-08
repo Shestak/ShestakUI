@@ -6,6 +6,7 @@ if C.unitframe.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 local _, ns = ...
 local oUF = ns.oUF
+T.oUF = oUF
 
 T.UpdateAllElements = function(frame)
 	for _, v in ipairs(frame.__elements) do
