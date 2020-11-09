@@ -304,6 +304,7 @@ L_GUI_NAMEPLATE_SHOW_BUFFS = "顯示Buff"
 L_GUI_NAMEPLATE_DEBUFFS_SIZE = "DeBuff大小"
 L_GUI_NAMEPLATE_HEALER_ICON = "戰場中顯示治療職業圖標"
 L_GUI_NAMEPLATE_TOTEM_ICONS = "顯示敵對圖騰圖標"
+L.nameplate_target_glow = "Show glow texture for target" -- Need review
 L_GUI_NAMEPLATE_THREAT = "仇恨情況"
 L_GUI_NAMEPLATE_GOOD_COLOR = "安全仇恨顏色"
 L_GUI_NAMEPLATE_NEAR_COLOR = "臨界仇恨顏色"

@@ -335,6 +335,14 @@ local function UpdateTarget(self)
 			self:SetAlpha(C.nameplate.alpha)
 		end
 	end
+
+	if C.nameplate.target_glow then
+		if UnitIsUnit(self.unit, "target") and not UnitIsUnit(self.unit, "player") then
+			self.Glow:Show()
+		else
+			self.Glow:Hide()
+		end
+	end
 end
 
 local function UpdateName(self)
@@ -535,6 +543,17 @@ local function style(self, unit)
 		self:Tag(self.Name, "[NameplateNameColor][NameLongAbbrev]")
 	else
 		self:Tag(self.Name, "[NameplateNameColor][NameLong]")
+	end
+
+	-- Target Glow
+	if C.nameplate.target_glow then
+		self.Glow = CreateFrame("Frame", nil, self, "BackdropTemplate")
+		self.Glow:SetBackdrop({edgeFile = [[Interface\AddOns\ShestakUI\Media\Textures\Glow.tga]], edgeSize = 4 * T.noscalemult})
+		self.Glow:SetPoint("TOPLEFT", -7 * T.noscalemult, 7 * T.noscalemult)
+		self.Glow:SetPoint("BOTTOMRIGHT", 7 * T.noscalemult, -7 * T.noscalemult)
+		self.Glow:SetBackdropBorderColor(0.8, 0.8, 0.8)
+		self.Glow:SetFrameLevel(0)
+		self.Glow:Hide()
 	end
 
 	-- Create Level
