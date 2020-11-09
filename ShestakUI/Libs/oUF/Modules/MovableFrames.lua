@@ -96,8 +96,18 @@ local function restorePosition(obj)
 	local style, identifier, isHeader = getObjectInformation(obj)
 	local target = isHeader or obj
 	if ShestakUIPositions.UnitFrame[target:GetName()] then
+		local SetPoint = getmetatable(target).__index.SetPoint
+
+		-- Hah, a spot you have to use semi-colon!
+		-- Guess I've never experienced that as these are usually wrapped in do end
+		-- statements.
+		if(not target._SetPoint) then
+			target._SetPoint = target.SetPoint
+			target.SetPoint = restorePosition
+		end
 		target:ClearAllPoints()
-		target:SetPoint(unpack(ShestakUIPositions.UnitFrame[target:GetName()]))
+
+		SetPoint(target, unpack(ShestakUIPositions.UnitFrame[target:GetName()]))
 	else
 		-- We've not saved any custom position for this style
 		if not _DB[style] or not _DB[style][identifier] then return end
