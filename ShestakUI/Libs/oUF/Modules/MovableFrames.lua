@@ -10,60 +10,7 @@ local oUF = ns.oUF
 local _DB
 local _LOCK
 
-local round = function(n)
-	return math.floor(n * 1e5 + .5) / 1e5
-end
-
 local backdropPool = {}
-
-local getPoint = function(obj, anchor)
-	if not anchor then
-		local UIx, UIy = UIParent:GetCenter()
-		local Ox, Oy = obj:GetCenter()
-
-		-- Frame doesn't really have a positon yet
-		if not Ox then return end
-
-		local UIS = UIParent:GetEffectiveScale()
-		local OS = obj:GetEffectiveScale()
-
-		local UIWidth, UIHeight = UIParent:GetRight(), UIParent:GetTop()
-
-		local LEFT = UIWidth / 3
-		local RIGHT = UIWidth * 2 / 3
-
-		local point, x, y
-		if Ox >= RIGHT then
-			point = "RIGHT"
-			x = obj:GetRight() - UIWidth
-		elseif Ox <= LEFT then
-			point = "LEFT"
-			x = obj:GetLeft()
-		else
-			x = Ox - UIx
-		end
-
-		local BOTTOM = UIHeight / 3
-		local TOP = UIHeight * 2 / 3
-
-		if Oy >= TOP then
-			point = "TOP"..(point or "")
-			y = obj:GetTop() - UIHeight
-		elseif Oy <= BOTTOM then
-			point = "BOTTOM"..(point or "")
-			y = obj:GetBottom()
-		else
-			if not point then point = "CENTER" end
-			y = Oy - UIy
-		end
-
-		return string.format("%s\031%s\031%d\031%d", point, "UIParent", round(x * UIS / OS), round(y * UIS / OS))
-	else
-		local point, _, _, x, y = anchor:GetPoint()
-
-		return string.format("%s\031%s\031%d\031%d", point, "UIParent", round(x), round(y))
-	end
-end
 
 local getObjectInformation = function(obj)
 	-- This won't be set if we're dealing with oUF <1.3.22. Due to this we're just
@@ -91,41 +38,55 @@ local getObjectInformation = function(obj)
 	return style, identifier, isHeader
 end
 
-local restoreDefaultPosition = function(style, identifier)
-	-- We've not saved any default position for this style
-	if not _DB.__INITIAL or not _DB.__INITIAL[style] or not _DB.__INITIAL[style][identifier] then return end
-
-	local obj, isHeader
-	for _, frame in next, oUF.objects do
-		local fStyle, fIdentifier, fIsHeader = getObjectInformation(frame)
-		if fStyle == style and fIdentifier == identifier then
-			obj = frame
-			isHeader = fIsHeader
-
-			break
-		end
-	end
-
-	if obj then
-		local scale = obj:GetScale()
-		local target = isHeader or obj
-		local SetPoint = getmetatable(target).__index.SetPoint
-
+local restoreDefaultPosition = function(style, identifier, obj)
+	local style, identifier, isHeader = getObjectInformation(obj)
+	local target = isHeader or obj
+	if ShestakUIPositions.Default[target:GetName()] then
 		target:ClearAllPoints()
-
-		local point, parentName, x, y = string.split("\031", _DB.__INITIAL[style][identifier])
-		SetPoint(target, point, parentName, point, x / scale, y / scale)
-
+		target:SetPoint(unpack(ShestakUIPositions.Default[target:GetName()]))
 		local backdrop = backdropPool[target]
 		if backdrop then
 			backdrop:ClearAllPoints()
 			backdrop:SetAllPoints(target)
 		end
+		ShestakUIPositions.Default[target:GetName()] = nil
+		ShestakUIPositions.UnitFrame[target:GetName()] = nil
+	else
+		-- We've not saved any default position for this style
+		if not _DB.__INITIAL or not _DB.__INITIAL[style] or not _DB.__INITIAL[style][identifier] then return end
 
-		-- We don't need this anymore
-		_DB.__INITIAL[style][identifier] = nil
-		if not next(_DB.__INITIAL[style]) then
-			_DB[style] = nil
+		local obj, isHeader
+		for _, frame in next, oUF.objects do
+			local fStyle, fIdentifier, fIsHeader = getObjectInformation(frame)
+			if fStyle == style and fIdentifier == identifier then
+				obj = frame
+				isHeader = fIsHeader
+
+				break
+			end
+		end
+
+		if obj then
+			local scale = obj:GetScale()
+			local target = isHeader or obj
+			local SetPoint = getmetatable(target).__index.SetPoint
+
+			target:ClearAllPoints()
+
+			local point, parentName, x, y = string.split("\031", _DB.__INITIAL[style][identifier])
+			SetPoint(target, point, parentName, point, x / scale, y / scale)
+
+			local backdrop = backdropPool[target]
+			if backdrop then
+				backdrop:ClearAllPoints()
+				backdrop:SetAllPoints(target)
+			end
+
+			-- We don't need this anymore
+			_DB.__INITIAL[style][identifier] = nil
+			if not next(_DB.__INITIAL[style]) then
+				_DB[style] = nil
+			end
 		end
 	end
 end
@@ -133,55 +94,51 @@ end
 local function restorePosition(obj)
 	if InCombatLockdown() then return end
 	local style, identifier, isHeader = getObjectInformation(obj)
-	-- We've not saved any custom position for this style
-	if not _DB[style] or not _DB[style][identifier] then return end
-
-	local scale = obj:GetScale()
 	local target = isHeader or obj
-	local SetPoint = getmetatable(target).__index.SetPoint
+	if ShestakUIPositions.UnitFrame[target:GetName()] then
+		target:ClearAllPoints()
+		target:SetPoint(unpack(ShestakUIPositions.UnitFrame[target:GetName()]))
+	else
+		-- We've not saved any custom position for this style
+		if not _DB[style] or not _DB[style][identifier] then return end
 
-	-- Hah, a spot you have to use semi-colon!
-	-- Guess I've never experienced that as these are usually wrapped in do end
-	-- statements.
-	if(not target._SetPoint) then
-		target._SetPoint = target.SetPoint
-		target.SetPoint = restorePosition
+		local scale = obj:GetScale()
+		local target = isHeader or obj
+		local SetPoint = getmetatable(target).__index.SetPoint
+
+		-- Hah, a spot you have to use semi-colon!
+		-- Guess I've never experienced that as these are usually wrapped in do end
+		-- statements.
+		if(not target._SetPoint) then
+			target._SetPoint = target.SetPoint
+			target.SetPoint = restorePosition
+		end
+		target:ClearAllPoints()
+
+		-- damn it Blizzard, _how_ did you manage to get the input of this function
+		-- reversed. Any sane person would implement this as: split(str, dlm, lim)
+		local point, parentName, x, y = string.split("\031", _DB[style][identifier])
+		SetPoint(target, point, parentName, point, x / scale, y / scale)
 	end
-	target:ClearAllPoints()
-
-	-- damn it Blizzard, _how_ did you manage to get the input of this function
-	-- reversed. Any sane person would implement this as: split(str, dlm, lim)
-	local point, parentName, x, y = string.split("\031", _DB[style][identifier])
-	SetPoint(target, point, parentName, point, x / scale, y / scale)
 end
 
 local saveDefaultPosition = function(obj)
 	local style, identifier, isHeader = getObjectInformation(obj)
-	if not _DB.__INITIAL then
-		_DB.__INITIAL = {}
-	end
+	local target = isHeader or obj
 
-	if not _DB.__INITIAL[style] then
-		_DB.__INITIAL[style] = {}
-	end
-
-	if not _DB.__INITIAL[style][identifier] then
-		local point
-		if isHeader then
-			point = getPoint(isHeader)
-		else
-			point = getPoint(obj)
+	local ap, p, rp, x, y = target:GetPoint()
+	ShestakUIPositions.Default = ShestakUIPositions.Default or {}
+	if not ShestakUIPositions.Default[target:GetName()] then
+		if not p then
+			p = UIParent
 		end
-
-		_DB.__INITIAL[style][identifier] = point
+		ShestakUIPositions.Default[target:GetName()] = {ap, p:GetName(), rp, x, y}
 	end
 end
 
 local savePosition = function(obj, anchor)
-	local style, identifier, isHeader = getObjectInformation(obj)
-	if not _DB[style] then _DB[style] = {} end
-
-	_DB[style][identifier] = getPoint(isHeader or obj, anchor)
+	local ap, _, rp, x, y = anchor:GetPoint()
+	ShestakUIPositions.UnitFrame[anchor.target:GetName()] = {ap, "UIParent", rp, x, y}
 end
 
 -- Attempt to figure out a more sane name to dispaly
@@ -296,10 +253,13 @@ do
 	end)
 
 	function frame:VARIABLES_LOADED()
+		-- TODO remove after while
 		-- I honestly don't trust the load order of CVs
 		if ShestakUIPositions == nil then ShestakUIPositions = {} end
 		_DB = ShestakUIPositions.UFPos or {}
 		ShestakUIPositions.UFPos = _DB
+
+		ShestakUIPositions.UnitFrame = ShestakUIPositions.UnitFrame or {}
 
 		-- Got to catch them all
 		for _, obj in next, oUF.objects do
@@ -354,7 +314,7 @@ do
 	local OnMouseUp = function(self, button)
 		if button == "RightButton" then
 			local style, identifier = getObjectInformation(self.obj)
-			restoreDefaultPosition(style, identifier)
+			restoreDefaultPosition(style, identifier, self.obj)
 		elseif button == "MiddleButton" then
 			self:Hide()
 		end
@@ -410,9 +370,11 @@ do
 			else
 				frame.target:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 1), yOfs + (moveY * 1))
 			end
-			local style, identifier = getObjectInformation(frame.obj)
-			if not _DB[style] then _DB[style] = {} end
-			_DB[style][identifier] = getPoint(frame.target)
+			local point, relativeTo, relativePoint, xOfs, yOfs = frame.target:GetPoint()
+			if not relativeTo then
+				relativeTo = UIParent
+			end
+			ShestakUIPositions.UnitFrame[frame.target:GetName()] = {point, relativeTo:GetName(), relativePoint, xOfs, yOfs}
 			frame:SetAllPoints(frame.target)
 		end
 
@@ -538,7 +500,7 @@ StaticPopupDialogs.RESET_UF = {
 	text = L_POPUP_RESETUI,
 	button1 = ACCEPT,
 	button2 = CANCEL,
-	OnAccept = function() if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") else ShestakUIPositions.UFPos = {} ReloadUI() end end,
+	OnAccept = function() if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") else ShestakUIPositions.UFPos = {} ShestakUIPositions.UnitFrame = {} ReloadUI() end end,
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = true,

@@ -168,8 +168,11 @@ local function CreateArrow(moveX, moveY, callback)
 		else
 			frame.frame:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 1), yOfs + (moveY * 1))
 		end
-		local point, _, relativePoint, xOfs, yOfs = frame.frame:GetPoint()
-		ShestakUIPositions[frame.frame:GetName()] = {point, "UIParent", relativePoint, xOfs, yOfs}
+		local point, relativeTo, relativePoint, xOfs, yOfs = frame.frame:GetPoint()
+		if not relativeTo then
+			relativeTo = UIParent
+		end
+		ShestakUIPositions[frame.frame:GetName()] = {point, relativeTo:GetName(), relativePoint, xOfs, yOfs}
 		frame:SetAllPoints(frame.frame)
 	end
 
