@@ -238,7 +238,6 @@ function Stuffing:SlotUpdate(b)
 	end
 
 	b.frame.Azerite:Hide()
-	b.frame.Corrupted:Hide()
 	b.frame:UpdateItemContextMatching() -- Update Scrap items
 
 	if b.frame.UpgradeIcon then
@@ -261,18 +260,6 @@ function Stuffing:SlotUpdate(b)
 		ContainerFrameItemButton_CIMIUpdateIcon(b.frame.CanIMogItOverlay)
 	end
 
-	if IsAddOnLoaded("CorruptionTooltips") then
-		local itemLoc = ItemLocation:CreateFromBagAndSlot(b.bag, b.slot)
-		local Icons = CorruptionTooltips:GetModule("Icons")
-
-		if itemLoc:IsValid() then
-			local itemLink = C_Item.GetItemLink(itemLoc)
-			Icons:ApplyIcon(b.frame, itemLink)
-		else
-			Icons:ClearIcon(b.frame)
-		end
-	end
-
 	if clink then
 		b.name, _, _, b.itemlevel, b.level, _, _, _, _, _, _, b.itemClassID, b.itemSubClassID = GetItemInfo(clink)
 		if not b.name then	-- Keystone bug
@@ -286,10 +273,6 @@ function Stuffing:SlotUpdate(b)
 
 		if b.frame.Azerite and C_AzeriteEmpoweredItem.IsAzeriteEmpoweredItemByID(clink) then
 			b.frame.Azerite:Show()
-		end
-
-		if b.frame.Corrupted and IsCorruptedItem(clink) then
-			b.frame.Corrupted:Show()
 		end
 
 		if (IsItemUnusable(clink) or b.level and b.level > T.level) and not locked then
@@ -616,12 +599,6 @@ function Stuffing:SlotNew(bag, slot)
 		ret.frame.Azerite:SetPoint("BOTTOMRIGHT", ret.frame, -1, 1)
 		ret.frame.Azerite:Hide()
 
-		ret.frame.Corrupted = ret.frame:CreateTexture(nil, "OVERLAY")
-		ret.frame.Corrupted:SetAtlas("Nzoth-inventory-icon")
-		ret.frame.Corrupted:SetPoint("TOPLEFT", ret.frame, 1, -1)
-		ret.frame.Corrupted:SetPoint("BOTTOMRIGHT", ret.frame, -1, 1)
-		ret.frame.Corrupted:Hide()
-
 		local Battlepay = _G[ret.frame:GetName()].BattlepayItemTexture
 		if Battlepay then
 			Battlepay:SetAlpha(0)
@@ -793,22 +770,37 @@ function Stuffing:CreateBagFrame(w)
 	f:SetMovable(true)
 	f:SetFrameStrata("MEDIUM")
 	f:SetFrameLevel(5)
-	f:RegisterForDrag("LeftButton")
-	f:SetScript("OnDragStart", function(self)
-		if IsShiftKeyDown() then
-			self:StartMoving()
-			DragFunction(self, true)
+	f:SetScript("OnMouseDown", function(_, button)
+		if IsAltKeyDown() or IsShiftKeyDown() then
+			f:ClearAllPoints()
+			f:StartMoving()
+			DragFunction(f, true)
+		elseif IsControlKeyDown() and button == "RightButton" then
+			f:ClearAllPoints()
+			if w == "Bank" then
+				f:SetPoint(unpack(C.position.bank))
+			else
+				f:SetPoint(unpack(C.position.bag))
+			end
+			f:SetUserPlaced(false)
 		end
 	end)
-	f:SetScript("OnDragStop", function(self)
-		self:StopMovingOrSizing()
-		DragFunction(self, false)
+
+	f:SetScript("OnMouseUp", function()
+		f:StopMovingOrSizing()
+		DragFunction(f, false)
+		local ap, _, rp, x, y = f:GetPoint()
+		ShestakUIPositions[f:GetName()] = {ap, "UIParent", rp, x, y}
 	end)
 
-	if w == "Bank" then
-		f:SetPoint(unpack(C.position.bank))
+	if ShestakUIPositions[f:GetName()] then
+		f:SetPoint(unpack(ShestakUIPositions[f:GetName()]))
 	else
-		f:SetPoint(unpack(C.position.bag))
+		if w == "Bank" then
+			f:SetPoint(unpack(C.position.bank))
+		else
+			f:SetPoint(unpack(C.position.bag))
+		end
 	end
 
 	if w == "Bank" then
