@@ -1,7 +1,7 @@
 local T, C, L, _ = unpack(select(2, ...))
 
 ----------------------------------------------------------------------------------------
---	Move ObjectiveTrackerFrame
+--	Move ObjectiveTrackerFrame and hide background
 ----------------------------------------------------------------------------------------
 local frame = CreateFrame("Frame", "ObjectiveTrackerAnchor", UIParent)
 frame:SetPoint(unpack(C.position.quest))
@@ -25,7 +25,7 @@ ObjectiveTrackerFrame.HeaderMenu.Title:SetAlpha(0)
 ----------------------------------------------------------------------------------------
 --	Skin ObjectiveTrackerFrame item buttons
 ----------------------------------------------------------------------------------------
-hooksecurefunc(QUEST_TRACKER_MODULE, "SetBlockHeader", function(_, block)
+local function SkinItemButton(_, block)
 	local item = block.itemButton
 
 	if item and not item.skinned then
@@ -50,34 +50,11 @@ hooksecurefunc(QUEST_TRACKER_MODULE, "SetBlockHeader", function(_, block)
 
 		item.skinned = true
 	end
-end)
+end
 
-hooksecurefunc(WORLD_QUEST_TRACKER_MODULE, "AddObjective", function(_, block)
-	local item = block.itemButton
-
-	if item and not item.skinned then
-		item:SetSize(C.actionbar.button_size, C.actionbar.button_size)
-		item:SetTemplate("Default")
-		item:StyleButton()
-
-		item:SetNormalTexture(nil)
-
-		item.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		item.icon:SetPoint("TOPLEFT", item, 2, -2)
-		item.icon:SetPoint("BOTTOMRIGHT", item, -2, 2)
-
-		item.Cooldown:SetAllPoints(item.icon)
-
-		item.Count:ClearAllPoints()
-		item.Count:SetPoint("TOPLEFT", 1, -1)
-		item.Count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
-		item.Count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
-
-		item.HotKey:SetFontObject(NumberFont_OutlineThick_Mono_Small)
-
-		item.skinned = true
-	end
-end)
+hooksecurefunc(QUEST_TRACKER_MODULE, "SetBlockHeader", SkinItemButton)
+hooksecurefunc(WORLD_QUEST_TRACKER_MODULE, "AddObjective", SkinItemButton)
+hooksecurefunc(CAMPAIGN_QUEST_TRACKER_MODULE, "AddObjective", SkinItemButton)
 
 hooksecurefunc("QuestObjectiveSetupBlockButton_AddRightButton", function(block, button)
 	if button and button.GetPoint then
