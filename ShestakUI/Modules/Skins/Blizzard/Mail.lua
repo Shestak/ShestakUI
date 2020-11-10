@@ -68,6 +68,10 @@ local function LoadSkin()
 	SendMailSubjectEditBox.backdrop:SetPoint("TOPLEFT", -3, 0)
 	SendMailSubjectEditBox.backdrop:SetPoint("BOTTOMRIGHT", -4, 0)
 
+	SendMailNameEditBox:ClearAllPoints()
+	SendMailNameEditBox:SetPoint('TOPLEFT', SendMailFrame, 'TOPLEFT', 90, -30)
+	SendMailNameEditBox.SetPoint = T.dummy
+
 	local function MailFrameSkin()
 		for i = 1, ATTACHMENTS_MAX_SEND do
 			local b = _G["SendMailAttachment"..i]
