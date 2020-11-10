@@ -340,9 +340,14 @@ local function resetColour(previousValues)
 	checkIsReloadNeeded()
 end
 
-local function onColourSwatchClicked(self)
-	local colourTable = C[self.group][self.option]
+local function onColourSwatchClicked(self, button)
+	if button == "RightButton" then
+		C.options[self.group][self.option] = nil
+		setReloadNeeded(true)
+		return
+	end
 
+	local colourTable = C[self.group][self.option]
 	local r, g, b = unpack(colourTable)
 	r, g, b = round(r), round(g), round(b)
 	local originalR, originalG, originalB = r, g, b
@@ -387,7 +392,7 @@ ns.CreateColourPicker = function(parent, option, needsReload, text)
 
 	f.needsReload = needsReload
 
-	f:SetScript("OnClick", onColourSwatchClicked)
+	f:SetScript("OnMouseUp", onColourSwatchClicked)
 	parent[option] = f
 
 	tinsert(colourpickers, f)
