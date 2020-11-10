@@ -41,10 +41,10 @@ end)
 
 hooksecurefunc("PossessBar_UpdateState", function()
 	for i = 1, NUM_POSSESS_SLOTS do
-		local _, name, enabled = GetPossessInfo(i)
+		local _, _, enabled = GetPossessInfo(i)
 		if enabled then
 			vehicle:SetScript("OnClick", function()
-				CancelUnitBuff("player", name)
+				CancelPetPossess()
 			end)
 			vehicle:Show()
 		else
