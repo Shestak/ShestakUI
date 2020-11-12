@@ -770,12 +770,23 @@ function Stuffing:CreateBagFrame(w)
 	f:SetMovable(true)
 	f:SetFrameStrata("MEDIUM")
 	f:SetFrameLevel(5)
-	f:SetScript("OnMouseDown", function(_, button)
+	f:RegisterForDrag("LeftButton")
+	f:SetScript("OnDragStart", function(self)
 		if IsAltKeyDown() or IsShiftKeyDown() then
-			f:ClearAllPoints()
-			f:StartMoving()
-			DragFunction(f, true)
-		elseif IsControlKeyDown() and button == "RightButton" then
+			self:StartMoving()
+			DragFunction(self, true)
+		end
+	end)
+
+	f:SetScript("OnDragStop", function(self)
+		self:StopMovingOrSizing()
+		DragFunction(self, false)
+		local ap, _, rp, x, y = f:GetPoint()
+		ShestakUIPositions[f:GetName()] = {ap, "UIParent", rp, x, y}
+	end)
+
+	f:SetScript("OnMouseDown", function(_, button)
+		if IsControlKeyDown() and button == "RightButton" then
 			f:ClearAllPoints()
 			if w == "Bank" then
 				f:SetPoint(unpack(C.position.bank))
@@ -783,14 +794,8 @@ function Stuffing:CreateBagFrame(w)
 				f:SetPoint(unpack(C.position.bag))
 			end
 			f:SetUserPlaced(false)
+			ShestakUIPositions[f:GetName()] = nil
 		end
-	end)
-
-	f:SetScript("OnMouseUp", function()
-		f:StopMovingOrSizing()
-		DragFunction(f, false)
-		local ap, _, rp, x, y = f:GetPoint()
-		ShestakUIPositions[f:GetName()] = {ap, "UIParent", rp, x, y}
 	end)
 
 	if ShestakUIPositions[f:GetName()] then
