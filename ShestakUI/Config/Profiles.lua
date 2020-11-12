@@ -160,9 +160,11 @@ if Sw2rT1 then
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
 	C["skins"].dbm = true
+	C["skins"].details = true
 	C["skins"].weak_auras = true
 	C["combattext"].crit_prefix = ""
 	C["combattext"].crit_postfix = ""
+	C["minimap"].size = 165
 	C["raidcooldown"].enable = false
 	C["threat"].enable = false
 	C["tooltip"].item_icon = true
