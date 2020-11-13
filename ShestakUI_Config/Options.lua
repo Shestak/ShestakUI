@@ -1664,6 +1664,9 @@ do
 	local target_glow = ns.CreateCheckBox(parent, "target_glow")
 	target_glow:SetPoint("TOPLEFT", totem_icons, "BOTTOMLEFT", 0, 0)
 
+	local only_name = ns.CreateCheckBox(parent, "only_name")
+	only_name:SetPoint("TOPLEFT", target_glow, "BOTTOMLEFT", 0, 0)
+
 	-- Panel 2
 	local parent = ShestakUIOptionsPanel.nameplate2
 

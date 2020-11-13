@@ -138,8 +138,12 @@ oUF.Tags.Events["NameplateLevel"] = "UNIT_LEVEL PLAYER_LEVEL_UP"
 oUF.Tags.Methods["NameplateNameColor"] = function(unit)
 	local reaction = UnitReaction(unit, "player")
 	if not UnitIsUnit("player", unit) and UnitIsPlayer(unit) and (reaction and reaction >= 5) then
-		local c = T.oUF_colors.power["MANA"]
-		return string.format("|cff%02x%02x%02x", c[1] * 255, c[2] * 255, c[3] * 255)
+		if C.nameplate.only_name then
+			return _TAGS["raidcolor"](unit)
+		else
+			local c = T.oUF_colors.power["MANA"]
+			return string.format("|cff%02x%02x%02x", c[1] * 255, c[2] * 255, c[3] * 255)
+		end
 	elseif UnitIsPlayer(unit) then
 		return _TAGS["raidcolor"](unit)
 	elseif reaction then
