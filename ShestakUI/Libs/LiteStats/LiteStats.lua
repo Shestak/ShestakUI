@@ -829,6 +829,7 @@ if guild.enabled then
 		wipe(guildTable)
 		for i = 1, GetNumGuildMembers() do
 			local name, rank, _, level, _, zone, note, officernote, connected, status, class, _, _, mobile = GetGuildRosterInfo(i)
+			if not name then break end
 			name = Ambiguate(name, "none")
 			guildTable[i] = {name, rank, level, zone, note, officernote, connected, status, class, mobile}
 		end
