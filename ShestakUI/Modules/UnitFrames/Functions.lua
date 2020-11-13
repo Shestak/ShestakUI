@@ -14,32 +14,6 @@ T.UpdateAllElements = function(frame)
 	end
 end
 
-local SetUpAnimGroup = function(self)
-	self.anim = self:CreateAnimationGroup()
-	self.anim:SetLooping("BOUNCE")
-	self.anim.fade = self.anim:CreateAnimation("Alpha")
-	self.anim.fade:SetFromAlpha(1)
-	self.anim.fade:SetToAlpha(0)
-	self.anim.fade:SetDuration(0.6)
-	self.anim.fade:SetSmoothing("IN_OUT")
-end
-
-local Flash = function(self)
-	if not self.anim then
-		SetUpAnimGroup(self)
-	end
-
-	if not self.anim:IsPlaying() then
-		self.anim:Play()
-	end
-end
-
-local StopFlash = function(self)
-	if self.anim then
-		self.anim:Finish()
-	end
-end
-
 T.SetFontString = function(parent, fontName, fontHeight, fontStyle)
 	local fs = parent:CreateFontString(nil, "ARTWORK")
 	fs:SetFont(fontName, fontHeight, fontStyle)
@@ -355,6 +329,32 @@ T.PostUpdatePower = function(power, unit, cur, _, max)
 	end
 end
 
+local SetUpAnimGroup = function(self)
+	self.anim = self:CreateAnimationGroup()
+	self.anim:SetLooping("BOUNCE")
+	self.anim.fade = self.anim:CreateAnimation("Alpha")
+	self.anim.fade:SetFromAlpha(1)
+	self.anim.fade:SetToAlpha(0)
+	self.anim.fade:SetDuration(0.6)
+	self.anim.fade:SetSmoothing("IN_OUT")
+end
+
+local Flash = function(self)
+	if not self.anim then
+		SetUpAnimGroup(self)
+	end
+
+	if not self.anim:IsPlaying() then
+		self.anim:Play()
+	end
+end
+
+local StopFlash = function(self)
+	if self.anim then
+		self.anim:Finish()
+	end
+end
+
 T.UpdateManaLevel = function(self, elapsed)
 	self.elapsed = (self.elapsed or 0) + elapsed
 	if self.elapsed < 0.2 then return end
@@ -427,7 +427,6 @@ T.UpdatePvPStatus = function(self)
 end
 
 local ticks = {}
-
 local setBarTicks = function(Castbar, numTicks)
 	for _, v in pairs(ticks) do
 		v:Hide()
@@ -557,43 +556,6 @@ T.CustomCastDelayText = function(self, duration)
 	self.Time:SetText(("%.1f |cffaf5050%s %.1f|r"):format(self.channeling and duration or self.max - duration, self.channeling and "-" or "+", abs(self.delay)))
 end
 
-local FormatTime = function(s)
-	local day, hour, minute = 86400, 3600, 60
-	if s >= day then
-		return format("%dd", floor(s / day + 0.5)), s % day
-	elseif s >= hour then
-		return format("%dh", floor(s / hour + 0.5)), s % hour
-	elseif s >= minute then
-		return format("%dm", floor(s / minute + 0.5)), s % minute
-	elseif s >= minute / 12 then
-		return floor(s + 0.5), (s * 100 - floor(s * 100)) / 100
-	end
-	return format("%.1f", s), (s * 100 - floor(s * 100)) / 100
-end
-
-local CreateAuraTimer = function(self, elapsed)
-	if self.timeLeft then
-		self.elapsed = (self.elapsed or 0) + elapsed
-		if self.elapsed >= 0.1 then
-			if not self.first then
-				self.timeLeft = self.timeLeft - self.elapsed
-			else
-				self.timeLeft = self.timeLeft - GetTime()
-				self.first = false
-			end
-			if self.timeLeft > 0 then
-				local time = FormatTime(self.timeLeft)
-				self.remaining:SetText(time)
-				self.remaining:SetTextColor(1, 1, 1)
-			else
-				self.remaining:Hide()
-				self:SetScript("OnUpdate", nil)
-			end
-			self.elapsed = 0
-		end
-	end
-end
-
 T.AuraTrackerTime = function(self, elapsed)
 	if self.active then
 		self.timeleft = self.timeleft - elapsed
@@ -656,6 +618,43 @@ T.PostCreateIcon = function(element, button)
 		button.remaining:SetParent(button.parent)
 	else
 		element.disableCooldown = true
+	end
+end
+
+local FormatTime = function(s)
+	local day, hour, minute = 86400, 3600, 60
+	if s >= day then
+		return format("%dd", floor(s / day + 0.5)), s % day
+	elseif s >= hour then
+		return format("%dh", floor(s / hour + 0.5)), s % hour
+	elseif s >= minute then
+		return format("%dm", floor(s / minute + 0.5)), s % minute
+	elseif s >= minute / 12 then
+		return floor(s + 0.5), (s * 100 - floor(s * 100)) / 100
+	end
+	return format("%.1f", s), (s * 100 - floor(s * 100)) / 100
+end
+
+local CreateAuraTimer = function(self, elapsed)
+	if self.timeLeft then
+		self.elapsed = (self.elapsed or 0) + elapsed
+		if self.elapsed >= 0.1 then
+			if not self.first then
+				self.timeLeft = self.timeLeft - self.elapsed
+			else
+				self.timeLeft = self.timeLeft - GetTime()
+				self.first = false
+			end
+			if self.timeLeft > 0 then
+				local time = FormatTime(self.timeLeft)
+				self.remaining:SetText(time)
+				self.remaining:SetTextColor(1, 1, 1)
+			else
+				self.remaining:Hide()
+				self:SetScript("OnUpdate", nil)
+			end
+			self.elapsed = 0
+		end
 	end
 end
 
