@@ -313,7 +313,7 @@ C["filger_spells"] = {
 			-- Demon Spikes
 			{spellID = 203720, filter = "CD"},
 			-- Immolation Aura
-			--FIXME {spellID = 178740, filter = "CD"},
+			{spellID = 258920, filter = "CD"},
 			-- Felblade
 			{spellID = 213241, filter = "CD"},
 			-- Throw Glaive
@@ -1541,7 +1541,7 @@ C["filger_spells"] = {
 			-- Rapture
 			{spellID = 47536, filter = "CD"},
 			-- Shadow Covenant
-			--FIXME {spellID = 204065, filter = "CD"},
+			{spellID = 314867, filter = "CD"},
 		},
 	},
 	["ROGUE"] = {

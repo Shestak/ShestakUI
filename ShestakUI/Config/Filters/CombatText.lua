@@ -394,7 +394,7 @@ elseif T.class == "PALADIN" then
 elseif T.class == "PRIEST" then
 	if C.combattext.merge_aoe_spam then
 		-- Healing spells
-		--FIXME T.aoespam[204065] = 0		-- Shadow Covenant
+		T.aoespam[314867] = 0		-- Shadow Covenant
 		T.aoespam[270501] = 2.5		-- Contrition
 		T.merge[281469] = 270501	-- Contrition
 		T.aoespam[194509] = 0.5		-- Power Word: Radiance
