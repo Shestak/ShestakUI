@@ -124,6 +124,7 @@ local function LoadSkin()
 		"Graphics_OutlineModeDropDown",
 		"Advanced_BufferingDropDown",
 		"Advanced_FilteringDropDown",
+		"Advanced_SSAOTypeDropDown",
 		"Advanced_RTShadowQualityDropDown",
 		"Advanced_LagDropDown",
 		"Advanced_HardwareCursorDropDown",
