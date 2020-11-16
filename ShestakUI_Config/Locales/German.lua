@@ -84,6 +84,7 @@ L_GUI_UF_SUBTEXT = "Anpassen von Player, Zielframes usw."
 L_GUI_UF_ENABLE = "Unitframes aktivieren"
 L_GUI_UF_OWN_COLOR = "Farbe für die Lebensleiste festlegen"
 L_GUI_UF_UF_COLOR = "Farbe der Lebensleiste (falls eigene Farbe verwender wird)"
+L.unitframe_uf_color_bg = "Color of health background" -- Need review
 L_GUI_UF_ENEMY_HEALTH_COLOR = "Lebensleiste eines gegnerischen Ziels ist rot"
 L_GUI_UF_TOTAL_VALUE = "Zeige Infotext auf Spieler und Ziel mit XXX/Gesamt"
 L_GUI_UF_COLOR_VALUE = "Lebens/Mana Werte einfärben"

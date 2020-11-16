@@ -84,6 +84,7 @@ L_GUI_UF_SUBTEXT = "Customize player, target frames and etc." -- Need review
 L_GUI_UF_ENABLE = "Abilita i riquadri delle unità"
 L_GUI_UF_OWN_COLOR = "Scegli il colore per la tua barra della salute"
 L_GUI_UF_UF_COLOR = "Colore barre salute (se è attivo il colore per la tua barra della salute)"
+L.unitframe_uf_color_bg = "Color of health background" -- Need review
 L_GUI_UF_ENEMY_HEALTH_COLOR = "Colora di rosso la barra della salute dei nemici"
 L_GUI_UF_TOTAL_VALUE = "Visualizza un testo sui riquadri di giocatore e bersaglio con i valori XXXX/Totale"
 L_GUI_UF_COLOR_VALUE = "Valori di salute e mana colorati"

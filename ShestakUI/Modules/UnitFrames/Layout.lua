@@ -83,7 +83,7 @@ local function Shared(self, unit)
 	self.Health.bg:SetAllPoints()
 	self.Health.bg:SetTexture(C.media.texture)
 	if C.unitframe.own_color == true then
-		self.Health.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
+		self.Health.bg:SetVertexColor(unpack(C.unitframe.uf_color_bg))
 	else
 		self.Health.bg.multiplier = 0.2
 	end
@@ -986,7 +986,7 @@ local function Shared(self, unit)
 		self.Swing.bg:SetAllPoints(self.Swing)
 		self.Swing.bg:SetTexture(C.media.texture)
 		if C.unitframe.own_color == true then
-			self.Swing.bg:SetVertexColor(C.unitframe.uf_color[1], C.unitframe.uf_color[2], C.unitframe.uf_color[3], 0.2)
+			self.Swing.bg:SetVertexColor(unpack(C.unitframe.uf_color_bg))
 		else
 			self.Swing.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
 		end

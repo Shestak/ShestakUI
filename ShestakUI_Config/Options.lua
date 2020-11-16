@@ -972,6 +972,9 @@ do
 	local uf_color = ns.CreateColourPicker(parent, "uf_color", true, L_GUI_UF_UF_COLOR)
 	uf_color:SetPoint("TOPLEFT", own_color, "BOTTOMLEFT", 24, -4)
 
+	local uf_color_bg = ns.CreateColourPicker(parent, "uf_color_bg", true)
+	uf_color_bg:SetPoint("LEFT", uf_color, "RIGHT", 248, 0)
+
 	local enemy_health_color = ns.CreateCheckBox(parent, "enemy_health_color", L_GUI_UF_ENEMY_HEALTH_COLOR)
 	enemy_health_color:SetPoint("TOPLEFT", uf_color, "BOTTOMLEFT", -24, -4)
 

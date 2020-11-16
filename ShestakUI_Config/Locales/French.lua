@@ -84,6 +84,7 @@ L_GUI_UF_SUBTEXT = "Customize player, target frames and etc." -- Need review
 L_GUI_UF_ENABLE = "Activer les barres d'unité"
 L_GUI_UF_OWN_COLOR = "Mettre la couleur de classe comme couleur pour la barre de vie"
 L_GUI_UF_UF_COLOR = "Couleur de la barre de vie"
+L.unitframe_uf_color_bg = "Color of health background" -- Need review
 L_GUI_UF_ENEMY_HEALTH_COLOR = "Si activée, la couleur des cibles ennemi est rouge"
 L_GUI_UF_TOTAL_VALUE = "Afficher la vie des joueur/cible avec XXXX/Total"
 L_GUI_UF_COLOR_VALUE = "Valeur de vie/mana colorée"
