@@ -103,16 +103,21 @@ local function LoadSkin()
 			frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -35, 6)
 		end
 
-		frame.shine:Kill()
-		frame.glowFrame:Kill()
-		frame.glowFrame.glow:Kill()
+		if frame.glowFrame then
+			frame.glowFrame:Kill()
 
-		frame.raidArt:Kill()
-		frame.dungeonArt1:Kill()
-		frame.dungeonArt2:Kill()
-		frame.dungeonArt3:Kill()
-		frame.dungeonArt4:Kill()
-		frame.heroicIcon:Kill()
+			if frame.glowFrame.glow then
+				frame.glowFrame.glow:Kill()
+			end
+		end
+
+		if frame.shine then frame.shine:Kill() end
+		if frame.raidArt then frame.raidArt:Kill() end
+		if frame.heroicIcon then frame.heroicIcon:Kill() end
+		if frame.dungeonArt1 then frame.dungeonArt1:Kill() end
+		if frame.dungeonArt2 then frame.dungeonArt2:Kill() end
+		if frame.dungeonArt3 then frame.dungeonArt3:Kill() end
+		if frame.dungeonArt4 then frame.dungeonArt4:Kill() end
 
 		-- Icon
 		frame.dungeonTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
