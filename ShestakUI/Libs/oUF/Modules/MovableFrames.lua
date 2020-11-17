@@ -147,8 +147,133 @@ local saveDefaultPosition = function(obj)
 end
 
 local savePosition = function(obj, anchor)
-	local ap, _, rp, x, y = anchor:GetPoint()
-	ShestakUIPositions.UnitFrame[anchor.target:GetName()] = {ap, "UIParent", rp, x, y}
+	local x, y, ap = T.CalculateMoverPoints(anchor)
+	ShestakUIPositions.UnitFrame[anchor.target:GetName()] = {ap, "UIParent", ap, x, y}
+end
+
+-- Controls
+local controls = CreateFrame("frame", nil, UIParent)
+controls:SetPoint("CENTER", UIParent)
+controls:SetSize(65, 25)
+controls:SetFrameStrata("TOOLTIP")
+controls:SetFrameLevel(100)
+controls:SetClampedToScreen(true)
+controls:Hide()
+controls:SetScript("OnLeave", function(self)
+	if MouseIsOver(self) then return end
+	if not self._frame then
+		self:Hide()
+	elseif not MouseIsOver(self._frame) then
+		self:Hide()
+	end
+	controls.x:SetText("")
+	controls.y:SetText("")
+end)
+
+local function CreateArrow(moveX, moveY, callback)
+	moveX = moveX or 0
+	moveY = moveY or 0
+
+	local button = CreateFrame("button", nil, controls)
+	button:SetSize(14, 14)
+	button.controls = controls
+
+	button.tex = button:CreateTexture(nil, "OVERLAY")
+	button.tex:SetTexture("Interface\\OPTIONSFRAME\\VoiceChat-Play")
+
+	button.tex:SetPoint("CENTER")
+	button.tex:SetSize(12, 12)
+	button.tex:SetVertexColor(0.6, 0.6, 0.6)
+
+	button:SetScript("OnEnter", function(self)
+		self.tex:SetVertexColor(1, 1, 1)
+	end)
+	button:SetScript("OnLeave", function(self)
+		self.tex:SetVertexColor(0.6, 0.6, 0.6)
+	end)
+
+	callback = callback or function(self)
+		local frame = self.controls._frame
+		if not frame then return end
+		local point, relativeTo, relativePoint, xOfs, yOfs = frame.target:GetPoint()
+		saveDefaultPosition(frame.obj)
+		if IsControlKeyDown() then
+			frame.target:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 20), yOfs + (moveY * 20))
+		elseif IsShiftKeyDown() then
+			frame.target:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 5), yOfs + (moveY * 5))
+		else
+			frame.target:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 1), yOfs + (moveY * 1))
+		end
+		local point, relativeTo, relativePoint, xOfs, yOfs = frame.target:GetPoint()
+		if not relativeTo then
+			relativeTo = UIParent
+		end
+		ShestakUIPositions.UnitFrame[frame.target:GetName()] = {point, relativeTo:GetName(), relativePoint, xOfs, yOfs}
+		frame:SetAllPoints(frame.target)
+		controls.x:SetText(T.Round(xOfs))
+		controls.y:SetText(T.Round(yOfs))
+	end
+
+	button:SetScript("OnClick", callback)
+
+	if controls.last then
+		button:SetPoint("LEFT", controls.last, "RIGHT", 2, 0)
+	else
+		button:SetPoint("LEFT", controls, "LEFT", 2, 0)
+	end
+
+	controls.last = button
+
+	return button
+end
+
+controls.left = CreateArrow(-1, 0)
+controls.left.tex:SetRotation(3.14159)
+
+controls.up = CreateArrow(0, 1)
+controls.up.tex:SetRotation(1.5708)
+
+controls.down = CreateArrow(0, -1)
+controls.down.tex:SetRotation(-1.5708)
+
+controls.right = CreateArrow(1, 0)
+controls.right.tex:SetRotation(0)
+
+controls.x = controls:CreateFontString(nil, "OVERLAY")
+controls.x:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+controls.x:SetPoint("RIGHT", controls, "LEFT", -10, 0)
+
+controls.y = controls:CreateFontString(nil, "OVERLAY")
+controls.y:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+controls.y:SetPoint("LEFT", controls, "RIGHT", 10, 0)
+
+controls.shadow = controls:CreateTexture(nil, "OVERLAY")
+controls.shadow:SetPoint("TOPLEFT", controls.x, "TOPLEFT", -5, 5)
+controls.shadow:SetPoint("BOTTOMRIGHT", controls.y, "BOTTOMRIGHT", 2, -5)
+controls.shadow:SetTexture(C.media.texture)
+controls.shadow:SetVertexColor(0.1, 0.1, 0.1, 0.8)
+
+local function GetQuadrant(frame)
+	local _, y = frame:GetCenter()
+	local vhalf = (y > UIParent:GetHeight() / 2) and "TOP" or "BOTTOM"
+	return vhalf
+end
+
+local function ShowControls(frame)
+	local y = GetQuadrant(frame)
+	controls._frame = frame
+	controls:Show()
+	controls:SetAlpha(1)
+	controls:ClearAllPoints()
+	if y == "TOP" then
+		controls:SetPoint("TOP", frame, "BOTTOM", 0, 0)
+	else
+		controls:SetPoint("BOTTOM", frame, "TOP", 0, 0)
+	end
+
+	local point, relativeTo, relativePoint, xOfs, yOfs = frame.target:GetPoint()
+	controls.x:SetText(T.Round(xOfs))
+	controls.y:SetText(T.Round(yOfs))
 end
 
 -- Attempt to figure out a more sane name to dispaly
@@ -283,11 +408,12 @@ do
 end
 
 local getBackdrop
-local controls
 do
 	local function UpdateCoords(self)
 		local mover = self.child
-		local ap, _, _, x, y = mover:GetPoint()
+		local x, y, ap = T.CalculateMoverPoints(mover)
+		controls.x:SetText(T.Round(x))
+		controls.y:SetText(T.Round(y))
 
 		local frame = mover.target
 		frame:ClearAllPoints()
@@ -330,107 +456,6 @@ do
 		end
 	end
 
-	-- Controls
-	controls = CreateFrame("frame", nil, UIParent)
-	controls:SetPoint("CENTER", UIParent)
-	controls:SetSize(65, 25)
-	controls:SetFrameStrata("TOOLTIP")
-	controls:SetFrameLevel(100)
-	controls:Hide()
-	controls:SetScript("OnLeave", function(self)
-		if MouseIsOver(self) then return end
-		if not self._frame then
-			self:Hide()
-		elseif not MouseIsOver(self._frame) then
-			self:Hide()
-		end
-	end)
-
-	local function CreateArrow(moveX, moveY, callback)
-		moveX = moveX or 0
-		moveY = moveY or 0
-
-		local button = CreateFrame("button", nil, controls)
-		button:SetSize(14, 14)
-		button.controls = controls
-
-		button.tex = button:CreateTexture(nil, "OVERLAY")
-		button.tex:SetTexture("Interface\\OPTIONSFRAME\\VoiceChat-Play")
-
-		button.tex:SetPoint("CENTER")
-		button.tex:SetSize(12, 12)
-		button.tex:SetAlpha(0.6)
-
-		button:SetScript("OnEnter", function(self)
-			self.tex:SetAlpha(1)
-		end)
-		button:SetScript("OnLeave", function(self)
-			self.tex:SetAlpha(0.6)
-		end)
-
-		callback = callback or function(self)
-			local frame = self.controls._frame
-			if not frame then return end
-			local point, relativeTo, relativePoint, xOfs, yOfs = frame.target:GetPoint()
-			saveDefaultPosition(frame.obj)
-			if IsControlKeyDown() then
-				frame.target:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 20), yOfs + (moveY * 20))
-			elseif IsShiftKeyDown() then
-				frame.target:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 5), yOfs + (moveY * 5))
-			else
-				frame.target:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 1), yOfs + (moveY * 1))
-			end
-			local point, relativeTo, relativePoint, xOfs, yOfs = frame.target:GetPoint()
-			if not relativeTo then
-				relativeTo = UIParent
-			end
-			ShestakUIPositions.UnitFrame[frame.target:GetName()] = {point, relativeTo:GetName(), relativePoint, xOfs, yOfs}
-			frame:SetAllPoints(frame.target)
-		end
-
-		button:SetScript("OnClick", callback)
-
-		if controls.last then
-			button:SetPoint("LEFT", controls.last, "RIGHT", 2, 0)
-		else
-			button:SetPoint("LEFT", controls, "LEFT", 2, 0)
-		end
-
-		controls.last = button
-
-		return button
-	end
-
-	controls.left = CreateArrow(-1, 0)
-	controls.left.tex:SetRotation(3.14159)
-
-	controls.up = CreateArrow(0, 1)
-	controls.up.tex:SetRotation(1.5708)
-
-	controls.down = CreateArrow(0, -1)
-	controls.down.tex:SetRotation(-1.5708)
-
-	controls.right = CreateArrow(1, 0)
-	controls.right.tex:SetRotation(0)
-
-	local function GetQuadrant(frame)
-		local _, y = frame:GetCenter()
-		local vhalf = (y > UIParent:GetHeight() / 2) and "TOP" or "BOTTOM"
-		return vhalf
-	end
-
-	local function ShowControls(frame)
-		local y = GetQuadrant(frame)
-		controls._frame = frame
-		controls:Show()
-		controls:ClearAllPoints()
-		if y == "TOP" then
-			controls:SetPoint("TOP", frame, "BOTTOM", 0, 0)
-		else
-			controls:SetPoint("BOTTOM", frame, "TOP", 0, 0)
-		end
-	end
-
 	getBackdrop = function(obj, isHeader)
 		local target = isHeader or obj
 		if not target:GetCenter() then return end
@@ -445,6 +470,7 @@ do
 		backdrop:CreateBackdrop("Transparent")
 		backdrop:EnableMouse(true)
 		backdrop:SetMovable(true)
+		backdrop:SetClampedToScreen(true)
 		backdrop:RegisterForDrag("LeftButton")
 
 		backdrop:SetScript("OnShow", OnShow)

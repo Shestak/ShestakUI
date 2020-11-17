@@ -158,3 +158,32 @@ T.UTF = function(string, i, dots)
 		end
 	end
 end
+
+----------------------------------------------------------------------------------------
+--	Move functions
+----------------------------------------------------------------------------------------
+T.CalculateMoverPoints = function(mover)
+	local centerX, centerY = UIParent:GetCenter()
+	local width = UIParent:GetRight()
+	local x, y = mover:GetCenter()
+
+	local point = "BOTTOM"
+	if y >= centerY then
+		point = "TOP"
+		y = -(UIParent:GetTop() - mover:GetTop())
+	else
+		y = mover:GetBottom()
+	end
+
+	if x >= (width * 2 / 3) then
+		point = point.."RIGHT"
+		x = mover:GetRight() - width
+	elseif x <= (width / 3) then
+		point = point.."LEFT"
+		x = mover:GetLeft()
+	else
+		x = x - centerX
+	end
+
+	return x, y, point
+end
