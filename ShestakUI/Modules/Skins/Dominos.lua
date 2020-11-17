@@ -75,6 +75,12 @@ frame:SetScript("OnEvent", function()
 		button:StyleButton()
 		button:SetNormalTexture("")
 
+		hooksecurefunc(button, "SetNormalTexture", function(self, texture)
+			if texture and texture ~= "" then
+				self:SetNormalTexture("")
+			end
+		end)
+
 		if flash then
 			flash:SetColorTexture(0.8, 0.8, 0.8, 0.5)
 			flash:SetPoint("TOPLEFT", button, 2, -2)
@@ -119,6 +125,7 @@ frame:SetScript("OnEvent", function()
 		for i = 1, 60 do
 			if _G["DominosActionButton"..i] then
 				_G["DominosActionButton"..i]:StyleButton()
+				StyleNormalButton(_G["DominosActionButton"..i])
 			end
 		end
 
@@ -128,6 +135,11 @@ frame:SetScript("OnEvent", function()
 			_G["MultiBarBottomRightButton"..i]:StyleButton()
 			_G["MultiBarLeftButton"..i]:StyleButton()
 			_G["MultiBarRightButton"..i]:StyleButton()
+			StyleNormalButton(_G["ActionButton"..i])
+			StyleNormalButton(_G["MultiBarBottomLeftButton"..i])
+			StyleNormalButton(_G["MultiBarBottomRightButton"..i])
+			StyleNormalButton(_G["MultiBarLeftButton"..i])
+			StyleNormalButton(_G["MultiBarRightButton"..i])
 		end
 
 		for i = 1, NUM_STANCE_SLOTS do
@@ -146,6 +158,4 @@ frame:SetScript("OnEvent", function()
 			StyleSmallButton(button, icon, name, hotkey, true)
 		end
 	end
-
-	hooksecurefunc("ActionButton_Update", StyleNormalButton)
 end)
