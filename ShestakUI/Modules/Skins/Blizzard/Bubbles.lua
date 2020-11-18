@@ -8,9 +8,7 @@ local function styleBubble(bubble)
 	if bubble:IsForbidden() then return end
 
 	local frame = bubble:GetChildren(1)
-	if T.beta ~= 90002 then
-		frame:SetBackdrop()
-	end
+	frame:DisableDrawLayer("BORDER")
 	frame.Tail:Hide()
 
 	frame:CreateBackdrop("Transparent")
