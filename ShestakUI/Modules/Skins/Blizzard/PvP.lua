@@ -243,8 +243,8 @@ local function LoadSkin()
 	RewardFrame.Ring:Hide()
 	RewardFrame.CircleMask:Hide()
 	RewardFrame.Icon:SkinIcon()
-	select(3, RewardFrame:GetRegions()):SetTextColor(1, 0.8, 0)
-	select(3, RewardFrame:GetRegions()):SetShadowOffset(1, -1)
+	--FIXME select(3, RewardFrame:GetRegions()):SetTextColor(1, 0.8, 0)
+	-- select(3, RewardFrame:GetRegions()):SetShadowOffset(1, -1)
 
 	NewSeasonPopup.Leave:SkinButton()
 end
