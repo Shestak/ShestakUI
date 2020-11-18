@@ -1,8 +1,8 @@
-## Interface: 90001
+## Interface: 90002
 ## Title: ShestakUI Config
 ## Notes: In-game configuration for ShestakUI
 ## Author: Shestak
-## Version: 8.08
+## Version: 8.09
 ## RequiredDeps: ShestakUI
 ## SavedVariables: ShestakUIOptionsGlobal, ShestakUIOptions
 ## SavedVariablesPerCharacter: ShestakUIOptionsPerChar
