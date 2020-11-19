@@ -416,7 +416,6 @@ elseif T.class == "PRIEST" then
 		-- Damaging spells
 		T.aoespam[204213] = 4		-- Purge the Wicked
 		T.aoespam[205386] = 0.5		-- Shadow Crash
-		T.aoespam[263346] = 0.5		-- Dark Void
 		T.aoespam[49821] = 3		-- Mind Sear
 		T.aoespam[263165] = 5		-- Void Torrent
 		T.aoespam[228361] = 1		-- Void Eruption
