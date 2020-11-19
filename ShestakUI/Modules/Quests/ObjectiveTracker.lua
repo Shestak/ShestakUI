@@ -35,8 +35,8 @@ ObjectiveTrackerFrame.HeaderMenu.Title:SetAlpha(0)
 ----------------------------------------------------------------------------------------
 --	Skin ObjectiveTrackerFrame item buttons
 ----------------------------------------------------------------------------------------
-local function SkinItemButton(_, block)
-	local item = block.itemButton
+hooksecurefunc("QuestObjectiveSetupBlockButton_Item", function(block)
+	local item = block and block.itemButton
 
 	if item and not item.skinned then
 		item:SetSize(C.actionbar.button_size, C.actionbar.button_size)
@@ -57,17 +57,12 @@ local function SkinItemButton(_, block)
 		item.Count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 
 		item.HotKey:SetFontObject(NumberFont_OutlineThick_Mono_Small)
-
 		item.skinned = true
 	end
-end
-
-hooksecurefunc(QUEST_TRACKER_MODULE, "SetBlockHeader", SkinItemButton)
-hooksecurefunc(WORLD_QUEST_TRACKER_MODULE, "AddObjective", SkinItemButton)
-hooksecurefunc(CAMPAIGN_QUEST_TRACKER_MODULE, "AddObjective", SkinItemButton)
+end)
 
 hooksecurefunc("QuestObjectiveSetupBlockButton_AddRightButton", function(block, button)
-	if button and button.GetPoint then
+	if not InCombatLockdown() and button and button.GetPoint then
 		local a, b, c, d, e = button:GetPoint()
 		if block.groupFinderButton and b == block.groupFinderButton and block.itemButton and button == block.itemButton then
 			button:SetPoint(a, b, c, d - 1, e)
