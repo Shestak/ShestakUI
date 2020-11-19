@@ -7,7 +7,6 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	local StripAllTextures = {
 		"GossipFrame",
-		"GossipFrameInset",
 		"GossipFrameGreetingPanel"
 	}
 
@@ -53,6 +52,7 @@ local function LoadSkin()
 
 	GossipFrame:CreateBackdrop("Transparent")
 	GossipFrame.backdrop:SetAllPoints()
+	GossipFrame:DisableDrawLayer("BACKGROUND")
 
 	T.SkinCloseButton(GossipFrameCloseButton, GossipFrame.backdrop)
 
@@ -65,9 +65,7 @@ local function LoadSkin()
 	NPCFriendshipStatusBar.icon:SetPoint("TOPLEFT", -30, 7)
 
 	-- Extreme hackage, blizzard makes button text on quest frame use hex color codes for some reason
-	hooksecurefunc("GossipFrameUpdate", function()
-		ColorGossipText()
-	end)
+	hooksecurefunc("GossipFrameUpdate", ColorGossipText)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
