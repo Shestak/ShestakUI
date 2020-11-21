@@ -720,7 +720,7 @@ local function changeProfile()
 	for group, options in pairs(profile) do
 		if C[group] then
 			for option, value in pairs(options) do
-				if C[group][option] == nil or (group == "unitframes" and (tonumber(profile[group][option]) or type(profile[group][option]) == "table")) then
+				if C[group][option] == nil or C[group][option] == value then
 					profile[group][option] = nil
 				else
 					C[group][option] = value
@@ -744,11 +744,11 @@ local function displaySettings()
 
 	for _, slider in pairs(sliders) do
 		local value = C[slider.group][slider.option]
-		if slider.group == "font" and T.screenHeight > 1200 then
+		if T.screenHeight > 1200 and slider.group == "font" and not slider.option == "nameplates_font_size" then
 			value = value / T.mult
 		end
 		slider:SetValue(value)
-		slider.textInput:SetText(floor(value*1000)/1000)
+		slider.textInput:SetText(floor(value * 1000) / 1000)
 		slider.textInput:SetCursorPosition(0)
 		slider.oldValue = value
 	end
