@@ -49,7 +49,6 @@ function frame:PLAYER_LOGIN()
 
 	SetCVar("nameplateOtherTopInset", C.nameplate.clamp and 0.08 or -1)
 	SetCVar("nameplateOtherBottomInset", C.nameplate.clamp and 0.1 or -1)
-	SetCVar("nameplateMaxDistance", C.nameplate.distance or 40)
 end
 
 local healList, exClass, healerSpecs = {}, {}, {}

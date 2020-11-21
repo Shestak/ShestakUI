@@ -1615,26 +1615,23 @@ do
 	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_NAMEPLATE_ENABLE)
 	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local distance = ns.CreateNumberSlider(parent, "distance", nil, nil, 0, 200, 1, true, L_GUI_NAMEPLATE_DISTANCE)
-	distance:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, -20)
-
-	local alpha = ns.CreateNumberSlider(parent, "alpha", nil, nil, 0, 1, 0.05, true)
-	alpha:SetPoint("LEFT", distance, "RIGHT", 120, 0)
+	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 150 / multScale, 1, true, L_GUI_NAMEPLATE_WIDTH)
+	width:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, -20)
 
 	local height = ns.CreateNumberSlider(parent, "height", nil, nil, 0, 20 / multScale, 1, true, L_GUI_NAMEPLATE_HEIGHT)
-	height:SetPoint("TOPLEFT", distance, "BOTTOMLEFT", 0, -20)
-
-	local ad_height = ns.CreateNumberSlider(parent, "ad_height", nil, nil, 0, 15 / multScale, 1, true)
-	ad_height:SetPoint("LEFT", height, "RIGHT", 120, 0)
-
-	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 150 / multScale, 1, true, L_GUI_NAMEPLATE_WIDTH)
-	width:SetPoint("TOPLEFT", height, "BOTTOMLEFT", 0, -20)
+	height:SetPoint("LEFT", width, "RIGHT", 120, 0)
 
 	local ad_width = ns.CreateNumberSlider(parent, "ad_width", nil, nil, 0, 80 / multScale, 1, true)
-	ad_width:SetPoint("LEFT", width, "RIGHT", 120, 0)
+	ad_width:SetPoint("TOPLEFT", width, "BOTTOMLEFT", 0, -20)
+
+	local ad_height = ns.CreateNumberSlider(parent, "ad_height", nil, nil, 0, 15 / multScale, 1, true)
+	ad_height:SetPoint("LEFT", ad_width, "RIGHT", 120, 0)
+
+	local alpha = ns.CreateNumberSlider(parent, "alpha", nil, nil, 0, 1, 0.05, true)
+	alpha:SetPoint("TOPLEFT", ad_width, "BOTTOMLEFT", 0, -20)
 
 	local combat = ns.CreateCheckBox(parent, "combat", L_GUI_NAMEPLATE_COMBAT)
-	combat:SetPoint("TOPLEFT", width, "BOTTOMLEFT", 0, -10)
+	combat:SetPoint("TOPLEFT", alpha, "BOTTOMLEFT", 0, -10)
 
 	local health_value = ns.CreateCheckBox(parent, "health_value", L_GUI_NAMEPLATE_HEALTH)
 	health_value:SetPoint("TOPLEFT", combat, "BOTTOMLEFT", 0, 0)

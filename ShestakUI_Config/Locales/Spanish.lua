@@ -287,7 +287,6 @@ L_GUI_NAMEPLATE_SUBTEXT = "Nameplate settings" -- Need review
 L_GUI_NAMEPLATE_ENABLE = "Activar placas de nombre"
 L_GUI_NAMEPLATE_COMBAT = "Mostrar automáticamente placa de nombre en combate"
 L_GUI_NAMEPLATE_HEALTH = "Valor de la vida en números"
-L_GUI_NAMEPLATE_DISTANCE = "Display range" -- Need review
 L_GUI_NAMEPLATE_HEIGHT = "Altura de la placa de nombre"
 L_GUI_NAMEPLATE_WIDTH = "Anchura de la placa de nombre"
 L.nameplate_alpha = "Alpha" -- Needs review

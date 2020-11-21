@@ -287,7 +287,6 @@ L_GUI_NAMEPLATE_SUBTEXT = "Nameplate settings" -- Need review
 L_GUI_NAMEPLATE_ENABLE = "Attiva le barre delle unità"
 L_GUI_NAMEPLATE_COMBAT = "Mostra automaticamente le barre delle unità in combattimento"
 L_GUI_NAMEPLATE_HEALTH = "Valore numerico della salute"
-L_GUI_NAMEPLATE_DISTANCE = "Display range" -- Need review
 L_GUI_NAMEPLATE_HEIGHT = "Altezza delle barre delle unità"
 L_GUI_NAMEPLATE_WIDTH = "Larghezza delle barre delle unità"
 L.nameplate_alpha = "Alpha" -- Needs review

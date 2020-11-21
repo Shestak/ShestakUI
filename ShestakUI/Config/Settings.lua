@@ -317,12 +317,11 @@ C["chat"] = {
 ----------------------------------------------------------------------------------------
 C["nameplate"] = {
 	["enable"] = true, 							-- Enable nameplate
-	["height"] = 9,								-- Nameplate height
 	["width"] = 120,							-- Nameplate width
-	["alpha"] = 0.5,							-- Non-target nameplate alpha
-	["distance"] = 40,							-- Show nameplates for units within this range
-	["ad_height"] = 0,							-- Additional height for selected nameplate
+	["height"] = 9,								-- Nameplate height
 	["ad_width"] = 0,							-- Additional width for selected nameplate
+	["ad_height"] = 0,							-- Additional height for selected nameplate
+	["alpha"] = 0.5,							-- Non-target nameplate alpha
 	["combat"] = false,							-- Automatically show nameplate in combat
 	["health_value"] = false,					-- Numeral health value
 	["show_castbar_name"] = false,				-- Show castbar name

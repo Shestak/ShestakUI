@@ -287,7 +287,6 @@ L_GUI_NAMEPLATE_SUBTEXT = "Paramètres des Barres de Noms" -- Need review
 L_GUI_NAMEPLATE_ENABLE = "Activer les barres de nom"
 L_GUI_NAMEPLATE_COMBAT = "Afficher automatiquement les barres de nom en combat"
 L_GUI_NAMEPLATE_HEALTH = "Valeur de points de vie"
-L_GUI_NAMEPLATE_DISTANCE = "Distance d'affichage"
 L_GUI_NAMEPLATE_HEIGHT = "Hauteur des barres de nom"
 L_GUI_NAMEPLATE_WIDTH = "Largeur des barres de nom"
 L.nameplate_alpha = "Transparence"
