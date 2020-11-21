@@ -143,8 +143,8 @@ local function Shared(self, unit)
 	-- LFD role icons
 	if C.raidframe.icons_role == true and not (suffix == "target") then
 		self.GroupRoleIndicator = self.Health:CreateTexture(nil, "OVERLAY")
-		self.GroupRoleIndicator:SetSize(12, 12)
-		self.GroupRoleIndicator:SetPoint("TOP", self.Health, 0, 8)
+		self.GroupRoleIndicator:SetSize(10, 10)
+		self.GroupRoleIndicator:SetPoint("TOP", self.Health, 0, 6)
 	end
 
 	-- Ready check icons
