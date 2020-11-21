@@ -80,8 +80,8 @@ else
 		StanceAnchor:SetPoint("RIGHT", "RightActionBarAnchor", "LEFT", 0, (C.actionbar.button_size / 2) + 2)
 	else
 		StanceAnchor:SetPoint("RIGHT", PetActionBarAnchor:IsShown() and "PetActionBarAnchor" or "RightActionBarAnchor", "LEFT", 0, (C.actionbar.button_size / 2) + 2)
-		PetBarAnchor:HookScript("OnShow", function() StanceAnchor:SetPoint("RIGHT", "PetActionBarAnchor", "LEFT", 0, (C.actionbar.button_size / 2) + 2) end)
-		PetBarAnchor:HookScript("OnHide", function() StanceAnchor:SetPoint("RIGHT", "RightActionBarAnchor", "LEFT", 0, (C.actionbar.button_size / 2) + 2) end)
+		PetBarAnchor:HookScript("OnShow", function() if InCombatLockdown() then return end StanceAnchor:SetPoint("RIGHT", "PetActionBarAnchor", "LEFT", 0, (C.actionbar.button_size / 2) + 2) end)
+		PetBarAnchor:HookScript("OnHide", function() if InCombatLockdown() then return end StanceAnchor:SetPoint("RIGHT", "RightActionBarAnchor", "LEFT", 0, (C.actionbar.button_size / 2) + 2) end)
 	end
 	StanceAnchor:SetWidth(C.actionbar.button_size + C.actionbar.button_space)
 	StanceAnchor:SetHeight((C.actionbar.button_size * 7) + (C.actionbar.button_space * 6))
