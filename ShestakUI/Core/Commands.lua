@@ -325,7 +325,7 @@ SlashCmdList.TEST_ACHIEVEMENT = function()
 	-- GarrisonFollowerAlertSystem:AddAlert(32, "Dagg", 90, 2, true, C_Garrison.GetFollowerInfo(32)) -- error when mouseover
 	-- GarrisonShipFollowerAlertSystem:AddAlert(592, "Ship", "Transport", "GarrBuilding_Barracks_1_H", 3, 2, 1) -- error when mouseover
 	GarrisonBuildingAlertSystem:AddAlert(GARRISON_CACHE)
-	GarrisonTalentAlertSystem:AddAlert(3, _G.C_Garrison.GetTalent(370))
+	GarrisonTalentAlertSystem:AddAlert(3, _G.C_Garrison.GetTalentInfo(370))
 	LegendaryItemAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832:0:0:0:0:0:0:0:0:0:0\124h[Brutality Blade]\124h\124r")
 	LootAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832::::::::::\124h[Brutality Blade]\124h\124r", 1, 1, 100, 2, false, false, 0, false, false)
 	LootUpgradeAlertSystem:AddAlert("\124cffa335ee\124Hitem:18832::::::::::\124h[Brutality Blade]\124h\124r", 1, 1, 1, nil, nil, false)

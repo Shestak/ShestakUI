@@ -266,17 +266,9 @@ local function LoadSkin()
 			frame.backdrop:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -22, 6)
 		end
 
-		frame.shine:Kill()
-
 		-- Background
-		for i = 1, frame:GetNumRegions() do
-			local region = select(i, frame:GetRegions())
-			if region:GetObjectType() == "Texture" then
-				if region:GetTexture() == "Interface\\LFGFrame\\UI-LFG-DUNGEONTOAST" then
-					region:Kill()
-				end
-			end
-		end
+		frame.ToastBackground:Kill()
+		frame.shine:Kill()
 
 		-- Icon
 		frame.QuestTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
