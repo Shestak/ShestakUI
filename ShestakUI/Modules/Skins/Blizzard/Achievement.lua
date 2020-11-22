@@ -351,13 +351,13 @@ local function LoadSkin()
 		if not player.bg3 or not friend.bg3 then return end
 
 		if player.accountWide then
-			player.bg3:SetColorTexture(ACHIEVEMENTUI_BLUEBORDER_R, ACHIEVEMENTUI_BLUEBORDER_G, ACHIEVEMENTUI_BLUEBORDER_B)
+			player.bg3:SetColorTexture(ACHIEVEMENT_BLUE_BORDER_COLOR:GetRGB())
 		else
 			player.bg3:SetColorTexture(unpack(C.media.border_color))
 		end
 
 		if friend.accountWide then
-			friend.bg3:SetColorTexture(ACHIEVEMENTUI_BLUEBORDER_R, ACHIEVEMENTUI_BLUEBORDER_G, ACHIEVEMENTUI_BLUEBORDER_B)
+			friend.bg3:SetColorTexture(ACHIEVEMENT_BLUE_BORDER_COLOR:GetRGB())
 		else
 			friend.bg3:SetColorTexture(unpack(C.media.border_color))
 		end
