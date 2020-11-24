@@ -289,13 +289,9 @@ local function SkinSimpleBar(self, block, line)
 	end
 end
 
-hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(self, block, line)
-	SkinSimpleBar(self, block, line)
-end)
-
-hooksecurefunc(SCENARIO_TRACKER_MODULE, "AddProgressBar", function(self, block, line)
-	SkinSimpleBar(self, block, line)
-end)
+hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", SkinSimpleBar)
+hooksecurefunc(SCENARIO_TRACKER_MODULE, "AddProgressBar", SkinSimpleBar)
+hooksecurefunc(CAMPAIGN_QUEST_TRACKER_MODULE, "AddProgressBar", SkinSimpleBar)
 
 ----------------------------------------------------------------------------------------
 --	Skin Timer bar
