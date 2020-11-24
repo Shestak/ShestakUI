@@ -6,6 +6,7 @@
 T.MoverFrames = {
 	VehicleButtonAnchor,
 	ExtraButtonAnchor,
+	ZoneButtonAnchor,
 	ActionBarAnchor,
 	RightActionBarAnchor,
 	PetActionBarAnchor,

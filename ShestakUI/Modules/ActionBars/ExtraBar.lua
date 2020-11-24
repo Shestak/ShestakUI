@@ -21,11 +21,19 @@ ExtraActionBarFrame.ignoreInLayout = true
 ExtraAbilityContainer.SetSize = T.dummy
 UIPARENT_MANAGED_FRAME_POSITIONS.ExtraAbilityContainer = nil
 
-ZoneAbilityFrame:SetParent(anchor)
+-- Zone Ability button
+local zoneAnchor = CreateFrame("Frame", "ZoneButtonAnchor", UIParent)
+zoneAnchor:SetPoint(unpack(C.position.zone_button))
+zoneAnchor:SetSize(39, 39)
+zoneAnchor:SetFrameStrata("LOW")
+RegisterStateDriver(zoneAnchor, "visibility", "[petbattle] hide; show")
+
+ZoneAbilityFrame:SetParent(zoneAnchor)
 ZoneAbilityFrame:ClearAllPoints()
 ZoneAbilityFrame:SetAllPoints()
 ZoneAbilityFrame.ignoreInLayout = true
-ZoneAbilityFrame.SpellButtonContainer:SetPoint("TOP", anchor, "TOP")
+ZoneAbilityFrame.SpellButtonContainer:SetPoint("TOPLEFT", zoneAnchor)
+ZoneAbilityFrame.SpellButtonContainer.spacing = 3
 
 ------------------------------------------------------------------------------------------
 --	Skin ExtraActionBarFrame(by Zork)
@@ -57,7 +65,7 @@ local function SkinZoneAbilities()
 		if not button.IsSkinned then
 			button.NormalTexture:SetAlpha(0)
 			button:StyleButton()
-			button:SetSize(53, 53)
+			button:SetSize(39, 39)
 			button:SetTemplate("Transparent")
 			if C.actionbar.classcolor_border == true then
 				button:SetBackdropBorderColor(unpack(C.media.classborder_color))

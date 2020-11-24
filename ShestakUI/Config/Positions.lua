@@ -34,6 +34,7 @@ C["position"] = {
 	["archaeology"] = {"BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 5},					-- Archaeology frame
 	["auto_button"] = {"BOTTOMLEFT", Minimap, "TOPLEFT", -2, 27},					-- Auto button
 	["extra_button"] = {"BOTTOMRIGHT", ActionButton1, "BOTTOMLEFT", -3, 0},			-- Extra action button
+	["zone_button"] = {"BOTTOMLEFT", UIParent, "BOTTOM", -394, 125},				-- Zone action button
 	["alt_power_bar"] = {"TOP", UIWidgetTopCenterContainerFrame, "BOTTOM", 0, -7},	-- Alt power bar
 	["talking_head"] = {"TOP", UIParent, "TOP", 0, -21},							-- Talking Head
 	["uiwidget_top"] = {"TOP", UIParent, "TOP", 0, -21},							-- Top Widget
