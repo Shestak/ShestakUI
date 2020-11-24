@@ -316,6 +316,7 @@ if C.actionbar.hotkey == true then
 			UpdateHotkey(_G["StanceButton"..i])
 			UpdateHotkey(_G["PetActionButton"..i])
 		end
+		UpdateHotkey(ExtraActionButton1)
 	end)
 end
 if C.actionbar.hide_highlight == true then
