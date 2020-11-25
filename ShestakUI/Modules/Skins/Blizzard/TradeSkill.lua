@@ -91,6 +91,36 @@ local function LoadSkin()
 
 			button.NameFrame:Kill()
 		end
+
+		for i = 1, #TradeSkillFrame.DetailsFrame.Contents.OptionalReagents do
+			local button = TradeSkillFrame.DetailsFrame.Contents.OptionalReagents[i]
+			local icon = button.Icon
+
+			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			icon:SetDrawLayer("OVERLAY")
+
+			if not icon.backdrop then
+				icon.backdrop = CreateFrame("Frame", nil, button)
+				icon.backdrop:SetFrameStrata("BACKGROUND")
+				icon.backdrop:SetTemplate("Default")
+				icon.backdrop:SetPoint("TOPLEFT", button, "TOPLEFT", 1, -1)
+				icon.backdrop:SetPoint("BOTTOMRIGHT", button, "BOTTOMLEFT", 42, 1)
+			end
+
+			icon:SetParent(icon.backdrop)
+			icon:SetPoint("TOPLEFT", icon.backdrop, "TOPLEFT", 2, -2)
+			icon:SetPoint("BOTTOMRIGHT", icon.backdrop, "BOTTOMRIGHT", -2, 2)
+
+			button.SocketGlow:SetAtlas(nil)
+			button.SocketGlow:SetColorTexture(0, 1, 0)
+			button.SocketGlow:SetInside(icon.backdrop)
+
+			button.SelectedTexture:SetAtlas(nil)
+			button.SelectedTexture:SetColorTexture(0.9, 0.8, 0.1)
+			button.SelectedTexture:SetOutside(icon.backdrop)
+
+			button.NameFrame:Kill()
+		end
 	end)
 
 	local function SkinSkillRankBar(self, _, tradeSkillInfo)
@@ -137,6 +167,42 @@ local function LoadSkin()
 	if Auctionator_Search then
 		Auctionator_Search:SkinButton(true)
 	end
+
+	-- Optional Reagent list
+	local OptionalReagents = TradeSkillFrame.OptionalReagentList
+	OptionalReagents:StripTextures()
+	OptionalReagents:CreateBackdrop("Transparent")
+	OptionalReagents.backdrop:SetPoint("TOPLEFT", 2, 2)
+	OptionalReagents:SetFrameLevel(520)
+
+	OptionalReagents:ClearAllPoints()
+	OptionalReagents:SetPoint("TOPLEFT", TradeSkillFrame, "TOPRIGHT", 35, -2)
+	OptionalReagents:SetHeight(492)
+
+	OptionalReagents.ScrollList:StripTextures()
+
+	T.SkinCheckBox(OptionalReagents.HideUnownedButton, 22)
+	OptionalReagents.HideUnownedButton:SetPoint("TOPLEFT", 8, -4)
+	T.SkinScrollBar(OptionalReagents.ScrollList.ScrollFrame.scrollBar)
+	OptionalReagents.CloseButton:SkinButton()
+	OptionalReagents.CloseButton:SetPoint("BOTTOM", 0, 1)
+
+	hooksecurefunc(OptionalReagents, "Show", function()
+		for _, button in pairs(TradeSkillFrame.OptionalReagentList.ScrollList.ScrollFrame.buttons) do
+			if button.backdrop then return end
+			button:DisableDrawLayer("ARTWORK")
+			button.NameFrame:Kill()
+
+			button:CreateBackdrop("Default")
+			button.backdrop:SetPoint("TOPLEFT", button.Icon, -2, 2)
+			button.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, 2, -2)
+
+			button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			button.Icon:SetSize(32, 32)
+			button.Icon:ClearAllPoints()
+			button.Icon:SetPoint("TOPLEFT", button, "TOPLEFT", 3, -3)
+		end
+	end)
 end
 
 T.SkinFuncs["Blizzard_TradeSkillUI"] = LoadSkin
