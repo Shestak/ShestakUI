@@ -35,16 +35,13 @@ SLASH_ERROR1 = "/error"
 ----------------------------------------------------------------------------------------
 if C.general.error_filter == "COMBAT" then
 	local frame = CreateFrame("Frame")
-	local OnEvent = function(self, event, ...) self[event](self, event, ...) end
-	frame:SetScript("OnEvent", OnEvent)
-	local function PLAYER_REGEN_DISABLED()
-		UIErrorsFrame:Hide()
-	end
-	local function PLAYER_REGEN_ENABLED()
-		UIErrorsFrame:Show()
-	end
 	frame:RegisterEvent("PLAYER_REGEN_DISABLED")
-	frame["PLAYER_REGEN_DISABLED"] = PLAYER_REGEN_DISABLED
 	frame:RegisterEvent("PLAYER_REGEN_ENABLED")
-	frame["PLAYER_REGEN_ENABLED"] = PLAYER_REGEN_ENABLED
+	frame:SetScript("OnEvent", function(_, event)
+		if event == "PLAYER_REGEN_DISABLED" then
+			UIErrorsFrame:UnregisterEvent("UI_ERROR_MESSAGE")
+		else
+			UIErrorsFrame:RegisterEvent("UI_ERROR_MESSAGE")
+		end
+	end)
 end
