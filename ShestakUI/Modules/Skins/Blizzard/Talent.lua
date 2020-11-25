@@ -291,7 +291,12 @@ local function LoadSkin()
 	PlayerTalentFrameTalents.PvpTalentFrame:StripTextures()
 	PlayerTalentFrameTalentsPvpTalentFrameTalentList:StripTextures()
 	PlayerTalentFrameTalentsPvpTalentFrameTalentList:CreateBackdrop("Transparent")
+	PlayerTalentFrameTalentsPvpTalentFrameTalentList.backdrop:SetPoint("TOPLEFT", 3, 2)
 	T.SkinScrollBar(PlayerTalentFrameTalentsPvpTalentFrameTalentListScrollFrameScrollBar)
+
+	PlayerTalentFrameTalentsPvpTalentFrameTalentList:ClearAllPoints()
+	PlayerTalentFrameTalentsPvpTalentFrameTalentList:SetPoint("TOPLEFT", PlayerTalentFrame, "TOPRIGHT", 0, -2)
+	PlayerTalentFrameTalentsPvpTalentFrameTalentList:SetHeight(465)
 
 	local TalentList_CloseButton = select(4, PlayerTalentFrameTalents.PvpTalentFrame.TalentList:GetChildren())
 	if TalentList_CloseButton and TalentList_CloseButton:HasScript("OnClick") then
