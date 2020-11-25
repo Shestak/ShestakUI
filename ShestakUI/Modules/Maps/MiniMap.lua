@@ -66,7 +66,7 @@ MiniMapWorldMapButton:Hide()
 
 -- Garrison icon
 if C.minimap.garrison_icon == true then
-	GarrisonLandingPageMinimapButton:SetSize(32, 32)
+	GarrisonLandingPageMinimapButton:SetScale(0.75)
 	hooksecurefunc("GarrisonLandingPageMinimapButton_UpdateIcon", function(self)
 		self:ClearAllPoints()
 		self:SetPoint("TOPLEFT", Minimap, "TOPLEFT", 0, 2)
