@@ -503,7 +503,6 @@ elseif T.class == "SHAMAN" then
 		T.aoespam[199116] = 4		-- Doom Vortex
 		T.aoespam[188443] = 1		-- Chain Lightning
 		T.merge[45297] = 188443		-- Chain Lightning Overload
-		--FIXME T.aoespam[8349] = 0			-- Fire Nova
 		T.aoespam[77478] = 3		-- Earhquake
 		T.aoespam[51490] = 0		-- Thunderstorm
 		T.aoespam[8187] = 3			-- Magma Totem
