@@ -14,7 +14,6 @@ local function LoadSkin()
 		RaidFinderQueueFrame,
 		RaidFinderFrameBottomInset,
 		RaidFinderFrameRoleInset,
-		-- ScenarioFinderFrame,
 		LFGDungeonReadyDialog,
 		LFGDungeonReadyStatus,
 		LFDQueueFrameCooldownFrame,
@@ -32,14 +31,10 @@ local function LoadSkin()
 	local KillTextures = {
 		LFDQueueFrameBackground,
 		PVEFramePortrait,
-		--FIXME ScenarioFinderFrameInset,
 		LFGDungeonReadyDialogBackground,
 		RaidFinderQueueFrameBackground,
 		LFGDungeonReadyDialogBottomArt,
 		LFGDungeonReadyDialogFiligree,
-		-- ScenarioQueueFrameRandomScrollFrameScrollBackground,
-		-- ScenarioQueueFrameRandomScrollFrameScrollBackgroundTopLeft,
-		-- ScenarioQueueFrameRandomScrollFrameScrollBackgroundBottomRight,
 		RaidFinderQueueFrameScrollFrameScrollBackground,
 		RaidFinderQueueFrameScrollFrameScrollBackgroundTopLeft,
 		RaidFinderQueueFrameScrollFrameScrollBackgroundBottomRight,
@@ -54,7 +49,6 @@ local function LoadSkin()
 	local buttons = {
 		LFDQueueFrameFindGroupButton,
 		RaidFinderFrameFindRaidButton,
-		--FIXME ScenarioQueueFrameFindGroupButton,
 		LFGDungeonReadyDialogLeaveQueueButton,
 		LFGDungeonReadyDialogEnterDungeonButton,
 		RaidFinderQueueFramePartyBackfillBackfillButton,
@@ -100,7 +94,6 @@ local function LoadSkin()
 	end)
 
 	local scrollbars = {
-		--FIXME ScenarioQueueFrameSpecificScrollFrameScrollBar,
 		LFGListApplicationViewerScrollFrameScrollBar,
 		LFDQueueFrameSpecificListScrollFrameScrollBar,
 		LFDQueueFrameRandomScrollFrameScrollBar,
@@ -211,7 +204,6 @@ local function LoadSkin()
 	end
 	SkinMoney("LFDQueueFrameRandomScrollFrameChildFrameMoneyReward")
 	SkinMoney("RaidFinderQueueFrameScrollFrameChildFrameMoneyReward")
-	--FIXME SkinMoney("ScenarioQueueFrameRandomScrollFrameChildFrameMoneyReward")
 
 	hooksecurefunc("LFGDungeonListButton_SetDungeon", function(button)
 		if not button.expandOrCollapseButton.isSkinned then
@@ -230,7 +222,6 @@ local function LoadSkin()
 	LFGListApplicationDialog:SetTemplate("Transparent")
 	PVEFrame:CreateBackdrop("Transparent")
 	PVEFrame.backdrop:SetAllPoints()
-	--FIXME ScenarioQueueFrame.Bg:Hide()
 
 	LFDQueueFrameNoLFDWhileLFR:CreateBackdrop("Overlay")
 	LFDQueueFrameNoLFDWhileLFR.backdrop:SetPoint("TOPLEFT", 2, 5)
@@ -257,12 +248,6 @@ local function LoadSkin()
 
 	T.SkinDropDownBox(RaidFinderQueueFrameSelectionDropDown, 300)
 	RaidFinderQueueFrameSelectionDropDown:SetPoint("RIGHT", -10, 0)
-
-	-- T.SkinDropDownBox(ScenarioQueueFrameTypeDropDown, 300)
-	-- ScenarioQueueFrameSpecificScrollFrameScrollBackgroundTopLeft:Hide()
-	-- ScenarioQueueFrameSpecificScrollFrameScrollBackgroundBottomRight:Hide()
-	--FIXME ScenarioQueueFrameRandomScrollFrameChildFrame.bonusRepFrame.ChooseButton:SkinButton()
-	-- ScenarioQueueFrameTypeDropDown:SetPoint("RIGHT", -10, 0)
 
 	LFGListFrame.SearchPanel.ResultsInset:StripTextures()
 	LFGListFrame.NothingAvailable:StripTextures()
@@ -340,7 +325,6 @@ local function LoadSkin()
 	LFDQueueFrameRandomScrollFrameScrollBackground:SetTexture(nil)
 	LFDQueueFrameRandomScrollFrameScrollBackgroundTopLeft:SetTexture(nil)
 	LFDQueueFrameRandomScrollFrameScrollBackgroundBottomRight:SetTexture(nil)
-	--FIXME LFDQueueFrameRandomScrollFrameChildFrameBonusRepFrame.ChooseButton:SkinButton()
 
 	LFGInvitePopup:StripTextures()
 	LFGInvitePopup:SetTemplate("Transparent")

@@ -111,10 +111,6 @@ local function LoadSkin()
 	MissionList.CompleteDialog.BorderFrame.ViewButton:SkinButton()
 	GarrisonMissionFrame.MissionComplete.NextMissionButton:SkinButton()
 
-	--FIXME GarrisonMissionFrameHelpBoxButton:SkinButton()
-	-- GarrisonMissionFrameHelpBox:StripTextures()
-	-- GarrisonMissionFrameHelpBox:SetTemplate("Transparent")
-
 	local function SkinTab(tab)
 		tab:StripTextures()
 		tab:StyleButton()
@@ -710,11 +706,6 @@ local function LoadSkin()
 	OrderHallMissionFrame.GarrCorners:StripTextures()
 	OrderHallMissionFrame.ClassHallIcon:Kill()
 	T.SkinCloseButton(OrderHallMissionFrame.CloseButton)
-
-	--FIXME OrderHallMissionTutorialFrame.GlowBox.ArrowGlowUp:Hide()
-	-- OrderHallMissionTutorialFrame.GlowBox:StripTextures()
-	-- OrderHallMissionTutorialFrame.GlowBox:SetTemplate("Transparent")
-	-- T.SkinCloseButton(OrderHallMissionTutorialFrame.GlowBox.CloseButton)
 
 	for i = 1, 3 do
 		T.SkinTab(_G["OrderHallMissionFrameTab"..i])
