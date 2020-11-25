@@ -130,8 +130,8 @@ hooksecurefunc(GameTooltip, "SetQuestCurrency", function(tooltip, type, id)
 	end
 end)
 
-hooksecurefunc(GameTooltip, "SetQuestLogCurrency", function(tooltip, _, id)
-	local name = GetQuestLogRewardCurrencyInfo(id)
+hooksecurefunc(GameTooltip, "SetQuestLogCurrency", function(tooltip, type, id)
+	local name = GetQuestCurrencyInfo(type, id)
 	if name then
 		AddTooltipInfo(tooltip, nameToID[name], true)
 	end
