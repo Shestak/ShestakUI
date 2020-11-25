@@ -189,10 +189,12 @@ local function LoadSkin()
 			portrait.PortraitRingCover:SetTexture("")
 		end
 
-		portrait.Level:ClearAllPoints()
-		portrait.Level:SetPoint("BOTTOM", 0, 1)
-		portrait.Level:SetFontObject("SystemFont_Outline_Small")
-		portrait.LevelBorder:SetAlpha(0)
+		if portrait.Level then
+			portrait.Level:ClearAllPoints()
+			portrait.Level:SetPoint("BOTTOM", 0, 1)
+			portrait.Level:SetFontObject("SystemFont_Outline_Small")
+			portrait.LevelBorder:SetAlpha(0)
+		end
 
 		if not portrait.backdrop then
 			portrait:CreateBackdrop("Default")
