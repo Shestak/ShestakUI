@@ -2267,7 +2267,7 @@ do
 	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 300, 1, true, L_GUI_THREAT_WIDTH)
 	width:SetPoint("TOPLEFT", height, "BOTTOMLEFT", 0, -20)
 
-	local bar_rows = ns.CreateNumberSlider(parent, "bar_rows", nil, nil, 0, 15, 5, true, L_GUI_THREAT_ROWS)
+	local bar_rows = ns.CreateNumberSlider(parent, "bar_rows", nil, nil, 1, 15, 1, true, L_GUI_THREAT_ROWS)
 	bar_rows:SetPoint("TOPLEFT", width, "BOTTOMLEFT", 0, -20)
 
 	local hide_solo = ns.CreateCheckBox(parent, "hide_solo", L_GUI_THREAT_HIDE_SOLO)
