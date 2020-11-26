@@ -69,6 +69,9 @@ L.font_subheader_aura = "Auras font" -- Need review
 L.font_subheader_filger = "Filger font" -- Need review
 L.font_subheader_style = "Stylization font" -- Need review
 L.font_subheader_bag = "Bags font" -- Need review
+L.font_subheader_blizzard = "System font size" -- Need review
+L.font_tooltip_header_font_size = "Tooltip header" -- Need review
+L.font_tooltip_font_size = "Tooltip text" -- Need review
 
 -- Skins options
 L_GUI_SKINS = "Restyling"

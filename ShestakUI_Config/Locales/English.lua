@@ -66,6 +66,9 @@ L.font_subheader_aura = "Auras font"
 L.font_subheader_filger = "Filger bar font"
 L.font_subheader_style = "Stylization font"
 L.font_subheader_bag = "Bags font"
+L.font_subheader_blizzard = "System font size"
+L.font_tooltip_header_font_size = "Tooltip header"
+L.font_tooltip_font_size = "Tooltip text"
 
 -- Skins options
 L_GUI_SKINS = "Stylization"

@@ -69,6 +69,9 @@ L.font_subheader_aura = "增益減益"
 L.font_subheader_filger = "法術監視(Filger)"
 L.font_subheader_style = "界面美化"
 L.font_subheader_bag = "背包"
+L.font_subheader_blizzard = "System font size" -- Need review
+L.font_tooltip_header_font_size = "Tooltip header" -- Need review
+L.font_tooltip_font_size = "Tooltip text" -- Need review
 
 -- Skins options
 L_GUI_SKINS = "界面美化"

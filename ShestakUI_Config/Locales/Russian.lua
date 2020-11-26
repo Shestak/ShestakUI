@@ -69,6 +69,9 @@ L.font_subheader_aura = "Шрифт аур"
 L.font_subheader_filger = "Шрифт полос Filger"
 L.font_subheader_style = "Шрифт стилизаций"
 L.font_subheader_bag = "Шрифт сумок"
+L.font_subheader_blizzard = "Размер системных шрифтов"
+L.font_tooltip_header_font_size = "Заголовок подсказки"
+L.font_tooltip_font_size = "Текст подсказки"
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"

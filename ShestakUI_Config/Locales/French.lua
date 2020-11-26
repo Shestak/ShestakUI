@@ -69,6 +69,9 @@ L.font_subheader_aura = "Police des Auras"
 L.font_subheader_filger = "Police de Filger"
 L.font_subheader_style = "Police de la stylisation"
 L.font_subheader_bag = "Police des Sacs"
+L.font_subheader_blizzard = "System font size" -- Need review
+L.font_tooltip_header_font_size = "Tooltip header" -- Need review
+L.font_tooltip_font_size = "Tooltip text" -- Need review
 
 -- Skins options
 L_GUI_SKINS = "Personnalisation d'addon"
