@@ -116,6 +116,7 @@ ResetButton:SetScript("OnClick", function()
 end)
 tinsert(ns.buttons, ResetButton)
 
+-- Tables
 local FontTable
 local LSM = LibStub and LibStub:GetLibrary("LibSharedMedia-3.0", true)
 if LSM then
@@ -174,6 +175,7 @@ local FilgerDropDownText = {
 	[IGNORE] = "ignore_spells_list",
 }
 
+-- Spell list frame
 local SpellList = CreateFrame("Frame", "SpellList", ShestakUIOptionsPanel, "ButtonFrameTemplate")
 SpellList:SetPoint("TOPLEFT", ShestakUIOptionsPanel, "TOPRIGHT", 22, 0)
 SpellList:SetSize(290, 420)
@@ -428,9 +430,9 @@ tinsert(ns.buttons, AddSpellButton)
 -- Expert mode
 do
 	local frame = CreateFrame("Frame", "ShestakUIProfileFrame", UIParent)
-	frame:SetWidth(630)
-	frame:SetHeight(380)
-	frame:SetPoint("CENTER", UIParent, "CENTER", 0, 100)
+	frame:SetWidth(650)
+	frame:SetHeight(520)
+	frame:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
 	frame:SetFrameStrata("DIALOG")
 	tinsert(UISpecialFrames, "ShestakUIProfileFrame")
 	frame:Hide()
@@ -441,17 +443,19 @@ do
 	editBox:SetMaxLetters(99999)
 	editBox:SetAutoFocus(true)
 	editBox:SetFontObject(ChatFontNormal)
-	editBox:SetWidth(600)
-	editBox:SetHeight(360)
+	editBox:SetWidth(620)
+	editBox:SetHeight(500)
 	editBox:SetScript("OnEscapePressed", function() frame:Hide() end)
 
 	local scrollArea = CreateFrame("ScrollFrame", "ShestakUIProfileFrameScroll", frame, "UIPanelScrollFrameTemplate")
-	scrollArea:SetPoint("TOPLEFT", frame, "TOPLEFT", 4, -8)
-	scrollArea:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -27, 30)
+	scrollArea:SetPoint("TOPLEFT", frame, "TOPLEFT", 10, -10)
+	scrollArea:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -29, 34)
 	scrollArea:SetScrollChild(editBox)
+	ShestakUIProfileFrameScrollScrollBar:SetPoint("TOPLEFT", ShestakUIProfileFrameScroll, "TOPRIGHT", 8, -12)
+	ShestakUIProfileFrameScrollScrollBar:SetPoint("BOTTOMLEFT", ShestakUIProfileFrameScroll, "BOTTOMRIGHT", 8, 12)
 
 	local CancelButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
-	CancelButton:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -4, 3)
+	CancelButton:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -4, 4)
 	CancelButton:SetSize(100, 23)
 	CancelButton:SetText(CLOSE)
 	CancelButton:SetWidth(CancelButton.Text:GetWidth() + 15)
@@ -2409,6 +2413,40 @@ do
 end
 
 ----------------------------------------------------------------------------------------
+--	Skin extra frames
+----------------------------------------------------------------------------------------
+local f = CreateFrame("Frame")
+f:RegisterEvent("PLAYER_LOGIN")
+f:SetScript("OnEvent", function()
+	if not ShestakUI then return end
+	T, C = unpack(ShestakUI)
+
+	SpellList:StripTextures()
+	SpellList:CreateBackdrop("Transparent")
+	SpellList.backdrop:SetPoint("TOPLEFT", -18, 0)
+	SpellList.backdrop:SetPoint("BOTTOMRIGHT", 0, 9)
+
+	SpellListScrollFrameSpellList:StripTextures()
+	SpellListScrollFrameSpellList:CreateBackdrop("Overlay")
+	SpellListScrollFrameSpellList.backdrop:SetPoint("TOPLEFT", 2, 3)
+	SpellListScrollFrameSpellList.backdrop:SetPoint("BOTTOMRIGHT", 2, -3)
+	T.SkinCloseButton(SpellListCloseButton)
+
+	SpellListScrollFrameSpellListScrollBar:SetPoint("TOPLEFT", SpellListScrollFrameSpellList, "TOPRIGHT", 6, -13)
+	SpellListScrollFrameSpellListScrollBar:SetPoint("BOTTOMLEFT", SpellListScrollFrameSpellList, "BOTTOMRIGHT", 6, 13)
+	T.SkinScrollBar(SpellListScrollFrameSpellListScrollBar)
+
+	T.SkinEditBox(SpellListTextInput)
+	T.SkinEditBox(SpellListTextInput2)
+
+	ShestakUIProfileFrame:SetTemplate("Transparent")
+	T.SkinScrollBar(ShestakUIProfileFrameScrollScrollBar)
+	ShestakUIProfileFrameScroll:CreateBackdrop("Overlay")
+	ShestakUIProfileFrameScroll.backdrop:SetPoint("TOPLEFT", -4, 4)
+	ShestakUIProfileFrameScroll.backdrop:SetPoint("BOTTOMRIGHT", 4, -4)
+end)
+
+----------------------------------------------------------------------------------------
 --	Information
 ----------------------------------------------------------------------------------------
 do
@@ -2500,34 +2538,6 @@ end
 ----------------------------------------------------------------------------------------
 --	Button in GameMenuButton frame
 ----------------------------------------------------------------------------------------
-local f = CreateFrame("Frame")
-f:RegisterEvent("PLAYER_LOGIN")
-f:SetScript("OnEvent", function()
-	if not ShestakUI then return end
-	T, C = unpack(ShestakUI)
-
-	SpellList:StripTextures()
-	SpellList:CreateBackdrop("Transparent")
-	SpellList.backdrop:SetPoint("TOPLEFT", -18, 0)
-	SpellList.backdrop:SetPoint("BOTTOMRIGHT", 0, 9)
-
-	SpellListScrollFrameSpellList:StripTextures()
-	SpellListScrollFrameSpellList:CreateBackdrop("Overlay")
-	SpellListScrollFrameSpellList.backdrop:SetPoint("TOPLEFT", 2, 3)
-	SpellListScrollFrameSpellList.backdrop:SetPoint("BOTTOMRIGHT", 2, -3)
-	T.SkinCloseButton(SpellListCloseButton)
-
-	SpellListScrollFrameSpellListScrollBar:SetPoint("TOPLEFT", SpellListScrollFrameSpellList, "TOPRIGHT", 6, -13)
-	SpellListScrollFrameSpellListScrollBar:SetPoint("BOTTOMLEFT", SpellListScrollFrameSpellList, "BOTTOMRIGHT", 6, 13)
-	T.SkinScrollBar(SpellListScrollFrameSpellListScrollBar)
-
-	T.SkinEditBox(SpellListTextInput)
-	T.SkinEditBox(SpellListTextInput2)
-
-	ShestakUIProfileFrame:SetTemplate("Transparent")
-	T.SkinScrollBar(ShestakUIProfileFrameScrollScrollBar)
-end)
-
 local menuButton = CreateFrame("Button", "GameMenuButtonSettingsUI", GameMenuFrame, "GameMenuButtonTemplate")
 menuButton:SetText("ShestakUI")
 menuButton:SetPoint("TOP", GetLocale() ~= "koKR" and "GameMenuButtonAddons" or "GameMenuButtonRatings", "BOTTOM", 0, -1)
