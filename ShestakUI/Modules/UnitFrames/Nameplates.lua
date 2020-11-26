@@ -207,21 +207,36 @@ local function SetVirtualBorder(frame, r, g, b)
 end
 
 -- Auras functions
-local AurasCustomFilter = function(_, unit, button, name, _, _, _, _, _, caster, isStealable, nameplateShowSelf, _, _, _, _, nameplateShowAll)
+local AurasCustomFilter = function(_, unit, button, name, _, _, _, _, _, _, isStealable, nameplateShowSelf, _, _, _, _, nameplateShowAll)
 	local allow = false
 
-	if caster == "player" then
-		if UnitIsUnit(unit, "player") then
-			if ((nameplateShowAll or nameplateShowSelf) and not T.BuffBlackList[name]) then
-				allow = true
-			elseif T.BuffWhiteList[name] then
-				allow = true
+	if not UnitIsFriend("player", unit) then
+		if button.isDebuff then
+			if button.isPlayer then
+				if ((nameplateShowAll or nameplateShowSelf) and not T.DebuffBlackList[name]) then
+					allow = true
+				elseif T.DebuffWhiteList[name] then
+					allow = true
+				end
 			end
 		else
-			if ((nameplateShowAll or nameplateShowSelf) and not T.DebuffBlackList[name]) then
+			if T.BuffWhiteList[name] then
 				allow = true
-			elseif T.DebuffWhiteList[name] then
+				button.bordertop:SetColorTexture(0, 0.5, 0)
+				button.borderbottom:SetColorTexture(0, 0.5, 0)
+				button.borderleft:SetColorTexture(0, 0.5, 0)
+				button.borderright:SetColorTexture(0, 0.5, 0)
+			elseif isStealable then
 				allow = true
+				button.bordertop:SetColorTexture(1, 0.85, 0)
+				button.borderbottom:SetColorTexture(1, 0.85, 0)
+				button.borderleft:SetColorTexture(1, 0.85, 0)
+				button.borderright:SetColorTexture(1, 0.85, 0)
+			else
+				button.bordertop:SetColorTexture(unpack(C.media.border_color))
+				button.borderbottom:SetColorTexture(unpack(C.media.border_color))
+				button.borderleft:SetColorTexture(unpack(C.media.border_color))
+				button.borderright:SetColorTexture(unpack(C.media.border_color))
 			end
 		end
 	end
@@ -379,33 +394,38 @@ local function threatColor(self, forced)
 end
 
 local function UpdateTarget(self)
-	if UnitIsUnit(self.unit, "target") and not UnitIsUnit(self.unit, "player") then
-		self:SetSize((C.nameplate.width + C.nameplate.ad_width) * T.noscalemult, (C.nameplate.height + C.nameplate.ad_height) * T.noscalemult)
-		self.Castbar:SetPoint("BOTTOMLEFT", self.Health, "BOTTOMLEFT", 0, -8-((C.nameplate.height + C.nameplate.ad_height) * T.noscalemult))
-		self.Castbar.Icon:SetSize(((C.nameplate.height + C.nameplate.ad_height) * 2 * T.noscalemult) + 8, ((C.nameplate.height + C.nameplate.ad_height) * 2 * T.noscalemult) + 8)
-		if C.nameplate.class_icons == true then
-			self.Class.Icon:SetSize(((C.nameplate.height + C.nameplate.ad_height) * 2 * T.noscalemult) + 8, ((C.nameplate.height + C.nameplate.ad_height) * 2 * T.noscalemult) + 8)
+	local isTarget = UnitIsUnit(self.unit, "target")
+	local isMe = UnitIsUnit(self.unit, "player")
+
+	if isTarget and not isMe then
+		if C.nameplate.ad_height > 0 or C.nameplate.ad_width > 0 then
+			self:SetSize((C.nameplate.width + C.nameplate.ad_width) * T.noscalemult, (C.nameplate.height + C.nameplate.ad_height) * T.noscalemult)
+			self.Castbar:SetPoint("BOTTOMLEFT", self.Health, "BOTTOMLEFT", 0, -8-((C.nameplate.height + C.nameplate.ad_height) * T.noscalemult))
+			self.Castbar.Icon:SetSize(((C.nameplate.height + C.nameplate.ad_height) * 2 * T.noscalemult) + 8, ((C.nameplate.height + C.nameplate.ad_height) * 2 * T.noscalemult) + 8)
+			if C.nameplate.class_icons == true then
+				self.Class.Icon:SetSize(((C.nameplate.height + C.nameplate.ad_height) * 2 * T.noscalemult) + 8, ((C.nameplate.height + C.nameplate.ad_height) * 2 * T.noscalemult) + 8)
+			end
+		end
+		if C.nameplate.target_glow then
+			self.Glow:Show()
 		end
 		self:SetAlpha(1)
 	else
-		self:SetSize(C.nameplate.width * T.noscalemult, C.nameplate.height * T.noscalemult)
-		self.Castbar:SetPoint("BOTTOMLEFT", self.Health, "BOTTOMLEFT", 0, -8-(C.nameplate.height * T.noscalemult))
-		self.Castbar.Icon:SetSize((C.nameplate.height * 2 * T.noscalemult) + 8, (C.nameplate.height * 2 * T.noscalemult) + 8)
-		if C.nameplate.class_icons == true then
-			self.Class.Icon:SetSize((C.nameplate.height * 2 * T.noscalemult) + 8, (C.nameplate.height * 2 * T.noscalemult) + 8)
+		if C.nameplate.ad_height > 0 or C.nameplate.ad_width > 0 then
+			self:SetSize(C.nameplate.width * T.noscalemult, C.nameplate.height * T.noscalemult)
+			self.Castbar:SetPoint("BOTTOMLEFT", self.Health, "BOTTOMLEFT", 0, -8-(C.nameplate.height * T.noscalemult))
+			self.Castbar.Icon:SetSize((C.nameplate.height * 2 * T.noscalemult) + 8, (C.nameplate.height * 2 * T.noscalemult) + 8)
+			if C.nameplate.class_icons == true then
+				self.Class.Icon:SetSize((C.nameplate.height * 2 * T.noscalemult) + 8, (C.nameplate.height * 2 * T.noscalemult) + 8)
+			end
 		end
-		if not UnitExists("target") or UnitIsUnit(self.unit, "player") then
+		if C.nameplate.target_glow then
+			self.Glow:Hide()
+		end
+		if not UnitExists("target") or isMe then
 			self:SetAlpha(1)
 		else
 			self:SetAlpha(C.nameplate.alpha)
-		end
-	end
-
-	if C.nameplate.target_glow then
-		if UnitIsUnit(self.unit, "target") and not UnitIsUnit(self.unit, "player") then
-			self.Glow:Show()
-		else
-			self.Glow:Hide()
 		end
 	end
 end

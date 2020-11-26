@@ -34,6 +34,8 @@ C["raidframe"].plugins_aura_watch_list = {}
 C["announcements"].spells_list = {}
 C["raidcooldown"].spells_list = {}
 C["enemycooldown"].spells_list = {}
+C["nameplate"].debuffs_list = {}
+C["nameplate"].buffs_list = {}
 C["media"].profile = "-- Insert Your code here\n"
 
 -- Apply or remove saved settings as needed
