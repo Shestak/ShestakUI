@@ -98,6 +98,7 @@ StanceAnchor:SetScript("OnEvent", function()
 		end
 	end
 end)
+RegisterStateDriver(StanceAnchor, "visibility", GetNumShapeshiftForms() == 0 and "hide" or "show")
 
 ----------------------------------------------------------------------------------------
 --	Bottom line

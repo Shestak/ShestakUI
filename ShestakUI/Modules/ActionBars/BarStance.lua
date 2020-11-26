@@ -11,17 +11,6 @@ if C.actionbar.stancebar_hide then StanceBarFrame:SetParent(StanceBarAnchor) Sta
 local bar = CreateFrame("Frame", "StanceHolder", UIParent, "SecureHandlerStateTemplate")
 bar:SetAllPoints(StanceBarAnchor)
 
-local States = {
-	["DEATHKNIGHT"] = "show",
-	["DRUID"] = "show",
-	["MONK"] = "show",
-	["PALADIN"] = "show",
-	["PRIEST"] = "show",
-	["ROGUE"] = "show",
-	["WARLOCK"] = "show",
-	["WARRIOR"] = "show",
-}
-
 bar:RegisterEvent("PLAYER_LOGIN")
 bar:RegisterEvent("PLAYER_ENTERING_WORLD")
 bar:RegisterEvent("UPDATE_SHAPESHIFT_FORMS")
@@ -55,17 +44,6 @@ bar:SetScript("OnEvent", function(self, event)
 				button:Hide()
 			end
 		end
-		RegisterStateDriver(self, "visibility", States[T.class] or "hide")
-		local function moveStance()
-			if not InCombatLockdown() then
-				if C.actionbar.stancebar_horizontal == true then
-					StanceButton1:SetPoint("BOTTOMLEFT", StanceBarAnchor, "BOTTOMLEFT", 0, 0)
-				else
-					StanceButton1:SetPoint("TOPLEFT", StanceBarAnchor, "TOPLEFT", 0, 0)
-				end
-			end
-		end
-		hooksecurefunc("StanceBar_Update", moveStance)
 	elseif event == "UPDATE_SHAPESHIFT_FORMS" then
 		if InCombatLockdown() then return end
 		for i = 1, NUM_STANCE_SLOTS do
