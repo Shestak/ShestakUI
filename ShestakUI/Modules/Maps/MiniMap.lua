@@ -151,13 +151,13 @@ MinimapAnchor:RegisterEvent("ADDON_LOADED")
 MinimapAnchor:SetScript("OnEvent", function(_, _, addon)
 	if addon == "Blizzard_TimeManager" then
 		TimeManagerClockButton:Kill()
-    elseif addon == "Blizzard_HybridMinimap" then
-        HybridMinimap:SetFrameStrata("BACKGROUND")
+	elseif addon == "Blizzard_HybridMinimap" then
+		HybridMinimap:SetFrameStrata("BACKGROUND")
 		HybridMinimap:SetFrameLevel(100)
 		HybridMinimap.MapCanvas:SetUseMaskTexture(false)
 		HybridMinimap.CircleMask:SetTexture("Interface\\BUTTONS\\WHITE8X8")
 		HybridMinimap.MapCanvas:SetUseMaskTexture(true)
-    end
+	end
 end)
 
 ----------------------------------------------------------------------------------------
