@@ -25,6 +25,10 @@ MinimapBackdrop:SetPoint("TOPLEFT", MinimapAnchor, "TOPLEFT", 2, -2)
 MinimapBackdrop:SetPoint("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", -2, 2)
 MinimapBackdrop:SetSize(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
 
+-- Adjusting for patch 9.0.1 Minimap.xml
+Minimap:SetFrameStrata("LOW")
+Minimap:SetFrameLevel(2)
+
 -- Hide Border
 MinimapBorder:Hide()
 MinimapBorderTop:Hide()
@@ -147,7 +151,13 @@ MinimapAnchor:RegisterEvent("ADDON_LOADED")
 MinimapAnchor:SetScript("OnEvent", function(_, _, addon)
 	if addon == "Blizzard_TimeManager" then
 		TimeManagerClockButton:Kill()
-	end
+    elseif addon == "Blizzard_HybridMinimap" then
+        HybridMinimap:SetFrameStrata("BACKGROUND")
+		HybridMinimap:SetFrameLevel(100)
+		HybridMinimap.MapCanvas:SetUseMaskTexture(false)
+		HybridMinimap.CircleMask:SetTexture("Interface\\BUTTONS\\WHITE8X8")
+		HybridMinimap.MapCanvas:SetUseMaskTexture(true)
+    end
 end)
 
 ----------------------------------------------------------------------------------------
