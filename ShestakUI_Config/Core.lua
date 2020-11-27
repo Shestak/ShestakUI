@@ -165,13 +165,21 @@ local function onValueChanged(self, value)
 end
 
 local function onMouseWheel(self, delta)
+	if not IsControlKeyDown() and not IsShiftKeyDown() then
+		local script = self.parent:GetScript("OnMouseWheel")
+		if script then
+			script(self.parent, delta)
+		end
+		return
+	end
+
 	value = self.textInput:GetText()
 
 	local step = self.step
 	if IsControlKeyDown() then
 		step = self.step * 5
 	elseif IsShiftKeyDown() then
-		step = self.step * 2
+		step = self.step
 	end
 
 	if delta < 0 then
@@ -247,6 +255,7 @@ local function createSlider(parent, option, lowText, highText, low, high, step, 
 	f.step = step
 	f.min = low
 	f.max = high
+	f.parent = parent
 
 	f:SetScript("OnValueChanged", onValueChanged)
 	f:SetScript("OnMouseWheel", onMouseWheel)
