@@ -89,15 +89,15 @@ hooksecurefunc("QuestObjectiveSetupBlockButton_FindGroup", function(block)
 			end
 		end)
 
-		hooksecurefunc(icon, "Hide", function(button)
-			if button.b and button.b:IsShown() then
-				button.b:Hide()
+		hooksecurefunc(icon, "Show", function(button)
+			if button.b then
+				button.b:Show()
 			end
 		end)
 
-		hooksecurefunc(icon, "Show", function(button)
-			if button.b and not button.b:IsShown() then
-				button.b:Show()
+		hooksecurefunc(icon, "Hide", function(button)
+			if button.b then
+				button.b:Hide()
 			end
 		end)
 
@@ -241,13 +241,41 @@ if C.automation.auto_collapse ~= "NONE" then
 end
 
 ----------------------------------------------------------------------------------------
---	Skin bonus/world quest objective progress bar
+--	Skin simple quest objective progress bar
 ----------------------------------------------------------------------------------------
-local function SkinBar(line)
+local function SkinBar(_, _, line)
 	local progressBar = line.ProgressBar
 	local bar = progressBar.Bar
-	local icon = bar.Icon
 	local label = bar.Label
+
+	if not progressBar.styled then
+		bar:SetSize(200, 20)
+		bar:SetStatusBarTexture(C.media.texture)
+		bar:SetTemplate("Transparent")
+		bar:SetBackdropColor(0, 0, 0, 0)
+		bar:DisableDrawLayer("ARTWORK")
+
+		label:ClearAllPoints()
+		label:SetPoint("CENTER", 0, -1)
+		label:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
+		label:SetDrawLayer("OVERLAY")
+
+		progressBar.styled = true
+	end
+end
+
+hooksecurefunc(QUEST_TRACKER_MODULE, "AddProgressBar", SkinBar)
+hooksecurefunc(CAMPAIGN_QUEST_TRACKER_MODULE, "AddProgressBar", SkinBar)
+hooksecurefunc(SCENARIO_TRACKER_MODULE, "AddProgressBar", SkinBar)
+
+----------------------------------------------------------------------------------------
+--	Skin quest objective progress bar with icon
+----------------------------------------------------------------------------------------
+local function SkinBarIcon(_, _, line)
+	local progressBar = line.ProgressBar
+	local bar = progressBar.Bar
+	local label = bar.Label
+	local icon = bar.Icon
 
 	if not progressBar.styled then
 		bar.BarFrame:Hide()
@@ -283,47 +311,14 @@ local function SkinBar(line)
 	bar.newIconBg:SetShown(icon:IsShown())
 end
 
-hooksecurefunc(BONUS_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", function(_, _, line)
-	SkinBar(line)
-end)
-
-hooksecurefunc(WORLD_QUEST_TRACKER_MODULE, "AddProgressBar", function(_, _, line)
-	SkinBar(line)
-end)
-
-----------------------------------------------------------------------------------------
---	Skin default/scenario quest objective progress bar
-----------------------------------------------------------------------------------------
-local function SkinSimpleBar(self, block, line)
-	local progressBar = self.usedProgressBars[block] and self.usedProgressBars[block][line]
-	local bar = progressBar.Bar
-	local label = bar.Label
-
-	if not progressBar.styled then
-		bar:SetSize(200, 20)
-		bar:SetStatusBarTexture(C.media.texture)
-		bar:SetTemplate("Transparent")
-		bar:SetBackdropColor(0, 0, 0, 0)
-		bar:DisableDrawLayer("ARTWORK")
-
-		label:ClearAllPoints()
-		label:SetPoint("CENTER", 0, -1)
-		label:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-		label:SetDrawLayer("OVERLAY")
-
-		progressBar.styled = true
-	end
-end
-
-hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", SkinSimpleBar)
-hooksecurefunc(SCENARIO_TRACKER_MODULE, "AddProgressBar", SkinSimpleBar)
-hooksecurefunc(CAMPAIGN_QUEST_TRACKER_MODULE, "AddProgressBar", SkinSimpleBar)
+hooksecurefunc(BONUS_OBJECTIVE_TRACKER_MODULE, "AddProgressBar", SkinBarIcon)
+hooksecurefunc(WORLD_QUEST_TRACKER_MODULE, "AddProgressBar", SkinBarIcon)
 
 ----------------------------------------------------------------------------------------
 --	Skin Timer bar
 ----------------------------------------------------------------------------------------
-hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "AddTimerBar", function(self, block, line)
-	local timerBar = self.usedTimerBars[block] and self.usedTimerBars[block][line]
+local function SkinTimer(_, _, line)
+	local timerBar = line.TimerBar
 	local bar = timerBar.Bar
 
 	if not timerBar.styled then
@@ -333,7 +328,12 @@ hooksecurefunc(DEFAULT_OBJECTIVE_TRACKER_MODULE, "AddTimerBar", function(self, b
 		bar:DisableDrawLayer("ARTWORK")
 		timerBar.styled = true
 	end
-end)
+end
+
+hooksecurefunc(QUEST_TRACKER_MODULE, "AddTimerBar", SkinTimer)
+hooksecurefunc(SCENARIO_TRACKER_MODULE, "AddTimerBar", SkinTimer)
+hooksecurefunc(BONUS_OBJECTIVE_TRACKER_MODULE, "AddTimerBar", SkinTimer)
+hooksecurefunc(ACHIEVEMENT_TRACKER_MODULE, "AddTimerBar", SkinTimer)
 
 ----------------------------------------------------------------------------------------
 --	Set tooltip depending on position
@@ -363,6 +363,16 @@ ScenarioStageBlock:HookScript("OnEnter", function(self)
 		GameTooltip:SetPoint("TOPLEFT", self, "TOPRIGHT", 50, -3)
 	end
 end)
+
+do
+	if IsFramePositionedLeft(ObjectiveTrackerFrame) then
+		local list = ScenarioBlocksFrame.MawBuffsBlock.Container.List
+		if list then
+			list:ClearAllPoints()
+			list:SetPoint("TOPLEFT", ScenarioBlocksFrame.MawBuffsBlock.Container, "TOPRIGHT", 15, 0)
+		end
+	end
+end
 
 ----------------------------------------------------------------------------------------
 --	Kill reward animation when finished dungeon or bonus objectives
