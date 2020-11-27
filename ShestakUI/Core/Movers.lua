@@ -193,7 +193,7 @@ local function ShowControls(frame)
 	else
 		controls:SetPoint("BOTTOM", frame, "TOP", 0, 0)
 	end
-	local point, relativeTo, relativePoint, xOfs, yOfs = frame.frame:GetPoint()
+	local _, _, _, xOfs, yOfs = frame.frame:GetPoint()
 	controls.x:SetText(T.Round(xOfs))
 	controls.y:SetText(T.Round(yOfs))
 end

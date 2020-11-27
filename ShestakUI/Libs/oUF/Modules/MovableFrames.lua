@@ -133,7 +133,7 @@ local function restorePosition(obj)
 end
 
 local saveDefaultPosition = function(obj)
-	local style, identifier, isHeader = getObjectInformation(obj)
+	local _, _, isHeader = getObjectInformation(obj)
 	local target = isHeader or obj
 
 	local ap, p, rp, x, y = target:GetPoint()
@@ -271,7 +271,7 @@ local function ShowControls(frame)
 		controls:SetPoint("BOTTOM", frame, "TOP", 0, 0)
 	end
 
-	local point, relativeTo, relativePoint, xOfs, yOfs = frame.target:GetPoint()
+	local _, _, _, xOfs, yOfs = frame.target:GetPoint()
 	controls.x:SetText(T.Round(xOfs))
 	controls.y:SetText(T.Round(yOfs))
 end

@@ -1568,7 +1568,6 @@ function Stuffing:Restack()
 	if _G["StuffingFrameReagent"] and _G["StuffingFrameReagent"]:IsShown() then
 		for slotID = 1, 98 do
 			local _, cnt, _, _, _, _, clink = GetContainerItemInfo(-3, slotID)
-			local button = _G["ReagentBankFrameItem"..slotID]
 			if clink then
 				local n, _, _, _, _, _, _, s = GetItemInfo(clink)
 
