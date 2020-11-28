@@ -5,7 +5,11 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 T.Round = function(number, decimals)
 	if not decimals then decimals = 0 end
-	return (("%%.%df"):format(decimals)):format(number)
+	if decimals and decimals > 0 then
+		local mult = 10 ^ decimals
+		return floor(number * mult + 0.5) / mult
+	end
+	return floor(number + 0.5)
 end
 
 T.ShortValue = function(value)
