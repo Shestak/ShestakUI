@@ -582,14 +582,14 @@ do
 	local subheader = ns.addSubCategory(parent, L.media_subheader_normal)
 	subheader:SetPoint("TOPLEFT", texture, "BOTTOMLEFT", 16, -10)
 
-	local normal_font = ns.CreateDropDown(parent, "normal_font", true, L.font_stats_font, FontTable, LSM and true)
+	local normal_font = ns.CreateDropDown(parent, "normal_font", true, L.font_stats_font, FontTable, LSM and true, true)
 	normal_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	-- Pixel Font
 	local subheader = ns.addSubCategory(parent, L.media_subheader_pixel)
 	subheader:SetPoint("TOPLEFT", normal_font, "BOTTOMLEFT", 16, -10)
 
-	local pixel_font = ns.CreateDropDown(parent, "pixel_font", true, L.font_stats_font, FontTable, LSM and true)
+	local pixel_font = ns.CreateDropDown(parent, "pixel_font", true, L.font_stats_font, FontTable, LSM and true, true)
 	pixel_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local pixel_font_style = ns.CreateDropDown(parent, "pixel_font_style", true, L.font_stats_font_style, FlagsTable)
@@ -633,7 +633,7 @@ do
 	local subheader = ns.addSubCategory(parent, L.font_subheader_unit)
 	subheader:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local unit_frames_font = ns.CreateDropDown(parent, "unit_frames_font", true, L.font_stats_font, FontTable, LSM and true)
+	local unit_frames_font = ns.CreateDropDown(parent, "unit_frames_font", true, L.font_stats_font, FontTable, LSM and true, true)
 	unit_frames_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local unit_frames_font_style = ns.CreateDropDown(parent, "unit_frames_font_style", true, L.font_stats_font_style, FlagsTable)
@@ -648,7 +648,7 @@ do
 	local subheader = ns.addSubCategory(parent, L.font_subheader_aura)
 	subheader:SetPoint("TOPLEFT", unit_frames_font_size, "BOTTOMLEFT", 0, -10)
 
-	local auras_font = ns.CreateDropDown(parent, "auras_font", true, L.font_stats_font, FontTable, LSM and true)
+	local auras_font = ns.CreateDropDown(parent, "auras_font", true, L.font_stats_font, FontTable, LSM and true, true)
 	auras_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local auras_font_style = ns.CreateDropDown(parent, "auras_font_style", true, L.font_stats_font_style, FlagsTable)
@@ -663,7 +663,7 @@ do
 	local subheader = ns.addSubCategory(parent, L.font_subheader_nameplates)
 	subheader:SetPoint("TOPLEFT", auras_font_size, "BOTTOMLEFT", 0, -10)
 
-	local nameplates_font = ns.CreateDropDown(parent, "nameplates_font", true, L.font_stats_font, FontTable, LSM and true)
+	local nameplates_font = ns.CreateDropDown(parent, "nameplates_font", true, L.font_stats_font, FontTable, LSM and true, true)
 	nameplates_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local nameplates_font_style = ns.CreateDropDown(parent, "nameplates_font_style", true, L.font_stats_font_style, FlagsTable)
@@ -678,7 +678,7 @@ do
 	local subheader = ns.addSubCategory(parent, L.font_subheader_action)
 	subheader:SetPoint("TOPLEFT", nameplates_font_size, "BOTTOMLEFT", 0, -10)
 
-	local action_bars_font = ns.CreateDropDown(parent, "action_bars_font", true, L.font_stats_font, FontTable, LSM and true)
+	local action_bars_font = ns.CreateDropDown(parent, "action_bars_font", true, L.font_stats_font, FontTable, LSM and true, true)
 	action_bars_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local action_bars_font_style = ns.CreateDropDown(parent, "action_bars_font_style", true, L.font_stats_font_style, FlagsTable)
@@ -693,7 +693,7 @@ do
 	local subheader = ns.addSubCategory(parent, L.font_subheader_cooldown)
 	subheader:SetPoint("TOPLEFT", action_bars_font_size, "BOTTOMLEFT", 0, -10)
 
-	local cooldown_timers_font = ns.CreateDropDown(parent, "cooldown_timers_font", true, L.font_stats_font, FontTable, LSM and true)
+	local cooldown_timers_font = ns.CreateDropDown(parent, "cooldown_timers_font", true, L.font_stats_font, FontTable, LSM and true, true)
 	cooldown_timers_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local cooldown_timers_font_style = ns.CreateDropDown(parent, "cooldown_timers_font_style", true, L.font_stats_font_style, FlagsTable)
@@ -711,7 +711,7 @@ do
 	local subheader = ns.addSubCategory(parent, L.font_subheader_combat)
 	subheader:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local combat_text_font = ns.CreateDropDown(parent, "combat_text_font", true, L.font_stats_font, FontTable, LSM and true)
+	local combat_text_font = ns.CreateDropDown(parent, "combat_text_font", true, L.font_stats_font, FontTable, LSM and true, true)
 	combat_text_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local combat_text_font_style = ns.CreateDropDown(parent, "combat_text_font_style", true, L.font_stats_font_style, FlagsTable)
@@ -726,7 +726,7 @@ do
 	local subheader = ns.addSubCategory(parent, L.font_subheader_filger)
 	subheader:SetPoint("TOPLEFT", combat_text_font_size, "BOTTOMLEFT", 0, -10)
 
-	local filger_font = ns.CreateDropDown(parent, "filger_font", true, L.font_stats_font, FontTable, LSM and true)
+	local filger_font = ns.CreateDropDown(parent, "filger_font", true, L.font_stats_font, FontTable, LSM and true, true)
 	filger_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local filger_font_style = ns.CreateDropDown(parent, "filger_font_style", true, L.font_stats_font_style, FlagsTable)
@@ -741,7 +741,7 @@ do
 	local subheader = ns.addSubCategory(parent, L.font_subheader_threat)
 	subheader:SetPoint("TOPLEFT", filger_font_size, "BOTTOMLEFT", 0, -10)
 
-	local threat_meter_font = ns.CreateDropDown(parent, "threat_meter_font", true, L.font_stats_font, FontTable, LSM and true)
+	local threat_meter_font = ns.CreateDropDown(parent, "threat_meter_font", true, L.font_stats_font, FontTable, LSM and true, true)
 	threat_meter_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local threat_meter_font_style = ns.CreateDropDown(parent, "threat_meter_font_style", true, L.font_stats_font_style, FlagsTable)
@@ -756,7 +756,7 @@ do
 	local subheader = ns.addSubCategory(parent, L.font_subheader_raidcd)
 	subheader:SetPoint("TOPLEFT", threat_meter_font_size, "BOTTOMLEFT", 0, -10)
 
-	local raid_cooldowns_font = ns.CreateDropDown(parent, "raid_cooldowns_font", true, L.font_stats_font, FontTable, LSM and true)
+	local raid_cooldowns_font = ns.CreateDropDown(parent, "raid_cooldowns_font", true, L.font_stats_font, FontTable, LSM and true, true)
 	raid_cooldowns_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local raid_cooldowns_font_style = ns.CreateDropDown(parent, "raid_cooldowns_font_style", true, L.font_stats_font_style, FlagsTable)
@@ -771,7 +771,7 @@ do
 	local subheader = ns.addSubCategory(parent, L.font_subheader_loot)
 	subheader:SetPoint("TOPLEFT", raid_cooldowns_font_size, "BOTTOMLEFT", 0, -10)
 
-	local loot_font = ns.CreateDropDown(parent, "loot_font", true, L.font_stats_font, FontTable, LSM and true)
+	local loot_font = ns.CreateDropDown(parent, "loot_font", true, L.font_stats_font, FontTable, LSM and true, true)
 	loot_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local loot_font_style = ns.CreateDropDown(parent, "loot_font_style", true, L.font_stats_font_style, FlagsTable)
@@ -789,7 +789,7 @@ do
 	local subheader = ns.addSubCategory(parent, L.font_subheader_bag)
 	subheader:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local bags_font = ns.CreateDropDown(parent, "bags_font", true, L.font_stats_font, FontTable, LSM and true)
+	local bags_font = ns.CreateDropDown(parent, "bags_font", true, L.font_stats_font, FontTable, LSM and true, true)
 	bags_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local bags_font_style = ns.CreateDropDown(parent, "bags_font_style", true, L.font_stats_font_style, FlagsTable)
@@ -804,7 +804,7 @@ do
 	local subheader = ns.addSubCategory(parent, L.font_subheader_chat)
 	subheader:SetPoint("TOPLEFT", bags_font_size, "BOTTOMLEFT", 0, -10)
 
-	local chat_font = ns.CreateDropDown(parent, "chat_font", true, L.font_stats_font, FontTable, LSM and true)
+	local chat_font = ns.CreateDropDown(parent, "chat_font", true, L.font_stats_font, FontTable, LSM and true, true)
 	chat_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local chat_font_style = ns.CreateDropDown(parent, "chat_font_style", true, L.font_stats_font_style, FlagsTable)
@@ -816,7 +816,7 @@ do
 	local subheader = ns.addSubCategory(parent, L.font_subheader_chat_tabs)
 	subheader:SetPoint("TOPLEFT", chat_font_shadow, "BOTTOMLEFT", 0, -10)
 
-	local chat_tabs_font = ns.CreateDropDown(parent, "chat_tabs_font", true, L.font_stats_font, FontTable, LSM and true)
+	local chat_tabs_font = ns.CreateDropDown(parent, "chat_tabs_font", true, L.font_stats_font, FontTable, LSM and true, true)
 	chat_tabs_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local chat_tabs_font_style = ns.CreateDropDown(parent, "chat_tabs_font_style", true, L.font_stats_font_style, FlagsTable)
@@ -831,7 +831,7 @@ do
 	local subheader = ns.addSubCategory(parent, L.font_subheader_style)
 	subheader:SetPoint("TOPLEFT", chat_tabs_font_size, "BOTTOMLEFT", 0, -10)
 
-	local stylization_font = ns.CreateDropDown(parent, "stylization_font", true, L.font_stats_font, FontTable, LSM and true)
+	local stylization_font = ns.CreateDropDown(parent, "stylization_font", true, L.font_stats_font, FontTable, LSM and true, true)
 	stylization_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local stylization_font_style = ns.CreateDropDown(parent, "stylization_font_style", true, L.font_stats_font_style, FlagsTable)
@@ -846,7 +846,7 @@ do
 	local subheader = ns.addSubCategory(parent, L.font_subheader_stats)
 	subheader:SetPoint("TOPLEFT", stylization_font_size, "BOTTOMLEFT", 0, -10)
 
-	local stats_font = ns.CreateDropDown(parent, "stats_font", true, nil, FontTable, LSM and true)
+	local stats_font = ns.CreateDropDown(parent, "stats_font", true, nil, FontTable, LSM and true, true)
 	stats_font:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", -16, -10)
 
 	local stats_font_style = ns.CreateDropDown(parent, "stats_font_style", true, nil, FlagsTable)
