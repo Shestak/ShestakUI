@@ -571,49 +571,49 @@ local function Shared(self, unit)
 		end
 
 		-- Artifact Power bar
-		if C.unitframe.plugins_artifact_bar == true then
-			self.ArtifactPower = CreateFrame("StatusBar", self:GetName().."_ArtifactPower", self)
-			self.ArtifactPower:CreateBackdrop("Default")
-			self.ArtifactPower:EnableMouse(true)
-			if C.unitframe.portrait_enable == true then
-				if self.Experience and self.Experience:IsShown() then
-					if C.unitframe.plugins_reputation_bar == true then
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -53 - C.unitframe.portrait_width, 28)
-					else
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
-					end
-				else
-					if C.unitframe.plugins_reputation_bar == true then
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
-					else
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
-					end
-				end
-			else
-				if self.Experience and self.Experience:IsShown() then
-					if C.unitframe.plugins_reputation_bar == true then
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -46, 28)
-					else
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 28)
-					end
-				else
-					if C.unitframe.plugins_reputation_bar == true then
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 28)
-					else
-						self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
-					end
-				end
-			end
-			self.ArtifactPower:SetSize(7, 94 + T.extraHeight + (C.unitframe.extra_health_height / 2))
-			self.ArtifactPower:SetOrientation("Vertical")
-			self.ArtifactPower:SetStatusBarTexture(C.media.texture)
+		--FIXME if C.unitframe.plugins_artifact_bar == true
+			-- self.ArtifactPower = CreateFrame("StatusBar", self:GetName().."_ArtifactPower", self)
+			-- self.ArtifactPower:CreateBackdrop("Default")
+			-- self.ArtifactPower:EnableMouse(true)
+			-- if C.unitframe.portrait_enable == true then
+				-- if self.Experience and self.Experience:IsShown() then
+					-- if C.unitframe.plugins_reputation_bar == true then
+						-- self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -53 - C.unitframe.portrait_width, 28)
+					-- else
+						-- self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
+					-- end
+				-- else
+					-- if C.unitframe.plugins_reputation_bar == true then
+						-- self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -39 - C.unitframe.portrait_width, 28)
+					-- else
+						-- self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -25 - C.unitframe.portrait_width, 28)
+					-- end
+				-- end
+			-- else
+				-- if self.Experience and self.Experience:IsShown() then
+					-- if C.unitframe.plugins_reputation_bar == true then
+						-- self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -46, 28)
+					-- else
+						-- self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 28)
+					-- end
+				-- else
+					-- if C.unitframe.plugins_reputation_bar == true then
+						-- self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -32, 28)
+					-- else
+						-- self.ArtifactPower:SetPoint("TOPLEFT", self, "TOPLEFT", -18, 28)
+					-- end
+				-- end
+			-- end
+			-- self.ArtifactPower:SetSize(7, 94 + T.extraHeight + (C.unitframe.extra_health_height / 2))
+			-- self.ArtifactPower:SetOrientation("Vertical")
+			-- self.ArtifactPower:SetStatusBarTexture(C.media.texture)
 
-			self.ArtifactPower.bg = self.ArtifactPower:CreateTexture(nil, "BORDER")
-			self.ArtifactPower.bg:SetAllPoints()
-			self.ArtifactPower.bg:SetTexture(C.media.texture)
+			-- self.ArtifactPower.bg = self.ArtifactPower:CreateTexture(nil, "BORDER")
+			-- self.ArtifactPower.bg:SetAllPoints()
+			-- self.ArtifactPower.bg:SetTexture(C.media.texture)
 
-			self.ArtifactPower.offAlpha = 0
-		end
+			-- self.ArtifactPower.offAlpha = 0
+		-- end
 
 		-- GCD spark
 		if C.unitframe.plugins_gcd == true then
