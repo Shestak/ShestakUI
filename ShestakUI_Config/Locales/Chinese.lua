@@ -69,9 +69,9 @@ L.font_subheader_aura = "增益減益"
 L.font_subheader_filger = "法术监视(Filger)"
 L.font_subheader_style = "界面美化"
 L.font_subheader_bag = "背包"
-L.font_subheader_blizzard = "System font size" -- Need review
-L.font_tooltip_header_font_size = "Tooltip header" -- Need review
-L.font_tooltip_font_size = "Tooltip text" -- Need review
+L.font_subheader_blizzard = "系统"
+L.font_tooltip_header_font_size = "鼠标提示标题"
+L.font_tooltip_font_size = "鼠标提示信息"
 
 -- Skins options
 L_GUI_SKINS = "界面美化"
@@ -303,8 +303,8 @@ L_GUI_NAMEPLATE_CLASS_ICON = "PvP时显示职业图标"
 L_GUI_NAMEPLATE_NAME_ABBREV = "名字缩写"
 L_GUI_NAMEPLATE_CLAMP = "当单位姓名板超出屏幕时仍贴边显示"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "显示DeBuff(需要关闭名字缩写)"
-L_GUI_NAMEPLATE_SHOW_BUFFS = "Show dispellable enemy buffs and buffs from the list" -- Need review
-L_GUI_NAMEPLATE_DEBUFFS_SIZE = "DeBuff大小" -- Need review
+L_GUI_NAMEPLATE_SHOW_BUFFS = "显示可进攻驱散"
+L_GUI_NAMEPLATE_DEBUFFS_SIZE = "图标大小"
 L_GUI_NAMEPLATE_HEALER_ICON = "战场中显示治疗职业图标"
 L_GUI_NAMEPLATE_TOTEM_ICONS = "显示敌对图腾图标"
 L.nameplate_target_glow = "目标边框高亮"
