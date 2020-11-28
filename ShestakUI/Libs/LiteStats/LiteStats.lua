@@ -324,24 +324,25 @@ if clock.enabled then
 					GameTooltip:AddDoubleLine(name, fmttime(reset), 1, 1, 1, 1, 1, 1)
 				end
 			end
-			if T.level == MAX_PLAYER_LEVEL then
-				local c = 0
-				for _, q in ipairs({52834, 52835, 52837, 52838, 52839, 52840}) do
-					if C_QuestLog.IsQuestFlaggedCompleted(q) then
-						c = c + 1
-					end
-				end
-				local max = 2
-				local r, g, b = 1, 1, 1
-				if c == 0 then
-					r, g, b = 1, 0, 0
-				elseif c == 1 then
-					r, g, b = 1, 1, 0
-				end
-				GameTooltip:AddLine(" ")
-				GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
-				GameTooltip:AddDoubleLine(L_STATS_SEALS, format("%s/%s", c, max), 1, 1, 1, r, g, b)
-			end
+			-- In 9.0 seals not available
+			-- if T.level == MAX_PLAYER_LEVEL then
+				-- local c = 0
+				-- for _, q in ipairs({52834, 52835, 52837, 52838, 52839, 52840}) do
+					-- if C_QuestLog.IsQuestFlaggedCompleted(q) then
+						-- c = c + 1
+					-- end
+				-- end
+				-- local max = 2
+				-- local r, g, b = 1, 1, 1
+				-- if c == 0 then
+					-- r, g, b = 1, 0, 0
+				-- elseif c == 1 then
+					-- r, g, b = 1, 1, 0
+				-- end
+				-- GameTooltip:AddLine(" ")
+				-- GameTooltip:AddLine(MISCELLANEOUS, ttsubh.r, ttsubh.g, ttsubh.b)
+				-- GameTooltip:AddDoubleLine(L_STATS_SEALS, format("%s/%s", c, max), 1, 1, 1, r, g, b)
+			-- end
 			GameTooltip:Show()
 		end,
 		OnClick = function(_, b) (b == "RightButton" and ToggleTimeManager or ToggleCalendar)() end
