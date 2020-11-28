@@ -2200,13 +2200,6 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", SPECIAL_P_BUFF_ICON_Anchor},
 
-			-- Ashjra'kamas, Shroud of Resolve
-			-- Draconic Empowerment
-			{spellID = 317859, unitID = "player", caster = "player", filter = "BUFF"},
-
-			-- Gift of the Titans
-			{spellID = 313698, unitID = "player", caster = "player", filter = "BUFF"},
-
 			-- Potions: Miscellaneous
 			-- Invisibility [Invisibility Potion]
 			{spellID = 11392, unitID = "player", caster = "player", filter = "BUFF", absID = true},
