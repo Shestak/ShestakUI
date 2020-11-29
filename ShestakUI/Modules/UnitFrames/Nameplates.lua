@@ -531,16 +531,157 @@ local function HealthPostUpdate(self, unit, cur, max)
 	threatColor(main, true)
 end
 
-local function callback(self, _, unit)
+local UIWidgetSetLayoutDirection = Enum.UIWidgetSetLayoutDirection
+local UIWidgetLayoutDirection = Enum.UIWidgetLayoutDirection
+local function Widget_DefaultLayout(widgetContainerFrame, sortedWidgets)
+	local horizontalRowContainer = nil
+	local horizontalRowHeight = 0
+	local horizontalRowWidth = 0
+	local totalWidth = 0
+	local totalHeight = 0
+
+	widgetContainerFrame.horizontalRowContainerPool:ReleaseAll()
+
+	for index, widgetFrame in ipairs(sortedWidgets) do
+		widgetFrame:ClearAllPoints()
+
+		-- if widgetFrame.Bar and not widgetFrame.Bar.backdrop then
+			-- widgetFrame.Bar:CreateBackdrop('Transparent')
+		-- end
+
+		local widgetSetUsesVertical = widgetContainerFrame.widgetSetLayoutDirection == UIWidgetSetLayoutDirection.Vertical
+		local widgetUsesVertical = widgetFrame.layoutDirection == UIWidgetLayoutDirection.Vertical
+
+		local useOverlapLayout = widgetFrame.layoutDirection == UIWidgetLayoutDirection.Overlap
+		local useVerticalLayout = widgetUsesVertical or (widgetFrame.layoutDirection == UIWidgetLayoutDirection.Default and widgetSetUsesVertical)
+
+		if useOverlapLayout then
+			-- This widget uses overlap layout
+
+			if index == 1 then
+				if widgetSetUsesVertical then
+					widgetFrame:SetPoint(widgetContainerFrame.verticalAnchorPoint, widgetContainerFrame)
+				else
+					widgetFrame:SetPoint(widgetContainerFrame.horizontalAnchorPoint, widgetContainerFrame)
+				end
+			else
+				local relative = sortedWidgets[index - 1]
+				if widgetSetUsesVertical then
+					widgetFrame:SetPoint(widgetContainerFrame.verticalAnchorPoint, relative, widgetContainerFrame.verticalAnchorPoint, 0, 0)
+				else
+					widgetFrame:SetPoint(widgetContainerFrame.horizontalAnchorPoint, relative, widgetContainerFrame.horizontalAnchorPoint, 0, 0)
+				end
+			end
+
+			local width, height = widgetFrame:GetSize()
+			if width > totalWidth then
+				totalWidth = width
+			end
+			if height > totalHeight then
+				totalHeight = height
+			end
+
+			widgetFrame:SetParent(widgetContainerFrame)
+		elseif useVerticalLayout then
+			if index == 1 then
+				widgetFrame:SetPoint(widgetContainerFrame.verticalAnchorPoint, widgetContainerFrame)
+			else
+				local relative = horizontalRowContainer or sortedWidgets[index - 1]
+				widgetFrame:SetPoint(widgetContainerFrame.verticalAnchorPoint, relative, widgetContainerFrame.verticalRelativePoint, 0, widgetContainerFrame.verticalAnchorYOffset)
+
+				if horizontalRowContainer then
+					horizontalRowContainer:SetSize(horizontalRowWidth, horizontalRowHeight)
+					totalWidth = totalWidth + horizontalRowWidth
+					totalHeight = totalHeight + horizontalRowHeight
+					horizontalRowHeight = 0
+					horizontalRowWidth = 0
+					horizontalRowContainer = nil
+				end
+
+				totalHeight = totalHeight + widgetContainerFrame.verticalAnchorYOffset
+			end
+
+			widgetFrame:SetParent(widgetContainerFrame)
+
+			local width, height = widgetFrame:GetSize()
+			if width > totalWidth then
+				totalWidth = width
+			end
+			totalHeight = totalHeight + height
+		else
+			local forceNewRow = widgetFrame.layoutDirection == UIWidgetLayoutDirection.HorizontalForceNewRow
+			local needNewRowContainer = not horizontalRowContainer or forceNewRow
+			if needNewRowContainer then
+				if horizontalRowContainer then
+					--horizontalRowContainer:Layout()
+					horizontalRowContainer:SetSize(horizontalRowWidth, horizontalRowHeight)
+					totalWidth = totalWidth + horizontalRowWidth
+					totalHeight = totalHeight + horizontalRowHeight
+					horizontalRowHeight = 0
+					horizontalRowWidth = 0
+				end
+
+				local newHorizontalRowContainer = widgetContainerFrame.horizontalRowContainerPool:Acquire()
+				newHorizontalRowContainer:Show()
+
+				if index == 1 then
+					newHorizontalRowContainer:SetPoint(widgetContainerFrame.verticalAnchorPoint, widgetContainerFrame, widgetContainerFrame.verticalAnchorPoint)
+				else
+					local relative = horizontalRowContainer or sortedWidgets[index - 1]
+					newHorizontalRowContainer:SetPoint(widgetContainerFrame.verticalAnchorPoint, relative, widgetContainerFrame.verticalRelativePoint, 0, widgetContainerFrame.verticalAnchorYOffset)
+
+					totalHeight = totalHeight + widgetContainerFrame.verticalAnchorYOffset
+				end
+				widgetFrame:SetPoint('TOPLEFT', newHorizontalRowContainer)
+				widgetFrame:SetParent(newHorizontalRowContainer)
+
+				horizontalRowWidth = horizontalRowWidth + widgetFrame:GetWidth()
+				horizontalRowContainer = newHorizontalRowContainer
+			else
+				local relative = sortedWidgets[index - 1]
+				widgetFrame:SetParent(horizontalRowContainer)
+				widgetFrame:SetPoint(widgetContainerFrame.horizontalAnchorPoint, relative, widgetContainerFrame.horizontalRelativePoint, widgetContainerFrame.horizontalAnchorXOffset, 0)
+
+				horizontalRowWidth = horizontalRowWidth + widgetFrame:GetWidth() + widgetContainerFrame.horizontalAnchorXOffset
+			end
+
+			local widgetHeight = widgetFrame:GetHeight()
+			if widgetHeight > horizontalRowHeight then
+				horizontalRowHeight = widgetHeight
+			end
+		end
+	end
+
+	if horizontalRowContainer then
+		horizontalRowContainer:SetSize(horizontalRowWidth, horizontalRowHeight)
+		totalWidth = totalWidth + horizontalRowWidth
+		totalHeight = totalHeight + horizontalRowHeight
+	end
+
+	widgetContainerFrame:SetSize(totalWidth, totalHeight)
+end
+
+local function callback(self, event, unit)
 	if not self then return end
 	if unit then
 		local unitGUID = UnitGUID(unit)
 		self.npcID = unitGUID and select(6, strsplit('-', unitGUID))
 		self.unitName = UnitName(unit)
+		self.widgetsOnly = UnitNameplateShowsWidgetsOnly(unit)
 		if self.npcID and T.PlateBlacklist[self.npcID] then
 			self:Hide()
 		else
 			self:Show()
+		end
+
+		if self.widgetsOnly then
+			self.Health:SetAlpha(0)
+			self.Level:SetAlpha(0)
+			self.Name:SetAlpha(0)
+		else
+			self.Health:SetAlpha(1)
+			self.Level:SetAlpha(1)
+			self.Name:SetAlpha(1)
 		end
 
 		if UnitIsUnit(unit, "player") then
@@ -553,6 +694,13 @@ local function callback(self, _, unit)
 			self.Name:Show()
 			self.Castbar:SetAlpha(1)
 			self.RaidTargetIndicator:SetAlpha(1)
+
+			if event == "NAME_PLATE_UNIT_ADDED" then
+				self.widgetSet = UnitWidgetSet(unit)
+				self.WidgetContainer:RegisterForWidgetSet(self.widgetSet, Widget_DefaultLayout, nil, unit)
+			elseif event == "NAME_PLATE_UNIT_REMOVED" then
+				self.WidgetContainer:UnregisterForWidgetSet()
+			end
 
 			if C.nameplate.only_name then
 				if UnitIsFriend("player", unit) then
@@ -716,6 +864,11 @@ local function style(self, unit)
 	self.Castbar.Icon:SetSize((C.nameplate.height * 2 * T.noscalemult) + 8, (C.nameplate.height * 2 * T.noscalemult) + 8)
 	self.Castbar.Icon:SetPoint("TOPLEFT", self.Health, "TOPRIGHT", 8, 0)
 	CreateVirtualFrame(self.Castbar, self.Castbar.Icon)
+
+	-- WidgetContainer
+	self.WidgetContainer = CreateFrame("Frame", nil, self, "UIWidgetContainerNoResizeTemplate")
+	self.WidgetContainer:SetPoint("BOTTOM", self.Name, "BOTTOM", 0, 5)
+	self.WidgetContainer:Hide()
 
 	-- Raid Icon
 	self.RaidTargetIndicator = self:CreateTexture(nil, "OVERLAY", nil, 7)
