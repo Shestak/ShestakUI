@@ -20,6 +20,7 @@
 	<Script file="Channels.lua"/>
 	<Script file="Character.lua"/>
 	<Script file="ChatConfig.lua"/>
+	<Script file="ChromieTime.lua"/>
 	<Script file="Collections.lua"/>
 	<Script file="Communities.lua"/>
 	<Script file="Container.lua"/>
