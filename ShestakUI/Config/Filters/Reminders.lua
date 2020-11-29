@@ -105,9 +105,7 @@ if C.reminder.solo_buffs_enable == true then
 					SpellName(183435),	-- Retribution Aura
 					SpellName(317920),	-- Concentration Aura
 				},
-				["combat"] = true,
-				["instance"] = true,
-				["pvp"] = true
+				["instance"] = true
 			},
 		},
 		PRIEST = {
