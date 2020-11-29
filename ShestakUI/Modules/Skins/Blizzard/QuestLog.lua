@@ -371,12 +371,7 @@ local function LoadSkin()
 			frame:CreateBackdrop("Overlay")
 			frame.backdrop:SetPoint("TOPLEFT", self, 6, -5)
 			frame.backdrop:SetPoint("BOTTOMRIGHT", self, -6, 10)
-
-			if UnitFactionGroup("player") == "Horde" then
-				frame.backdrop.overlay:SetVertexColor(0.2, 0.1, 0.1)
-			else
-				frame.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.2)
-			end
+			frame.backdrop.overlay:SetVertexColor(1, 1, 1, 0.2)
 
 			self.SelectedHighlight:SetAlpha(0)
 			self.HighlightTexture:SetAlpha(0)

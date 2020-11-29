@@ -48,11 +48,7 @@ local function LoadSkin()
 	CampaignOverview:CreateBackdrop("Overlay")
 	CampaignOverview.backdrop:SetPoint("TOPLEFT", CampaignOverview.Header, "TOPLEFT",  8, -5)
 	CampaignOverview.backdrop:SetPoint("BOTTOMRIGHT", CampaignOverview.Header, "BOTTOMRIGHT", -4, 10)
-	if UnitFactionGroup("player") == "Horde" then
-		CampaignOverview.backdrop.overlay:SetVertexColor(0.2, 0.1, 0.1)
-	else
-		CampaignOverview.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.2)
-	end
+	CampaignOverview.backdrop.overlay:SetVertexColor(1, 1, 1, 0.2)
 	CampaignOverview.Header.Background:SetAlpha(0)
 	CampaignOverview.Header.TopFiligree:Hide()
 
