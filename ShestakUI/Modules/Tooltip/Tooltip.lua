@@ -7,7 +7,7 @@ if C.tooltip.enable ~= true then return end
 local StoryTooltip = QuestScrollFrame.StoryTooltip
 StoryTooltip:SetFrameLevel(4)
 
-local WarCampaignTooltip = QuestScrollFrame.WarCampaignTooltip
+local CampaignTooltip = QuestScrollFrame.CampaignTooltip
 T.SkinCloseButton(_G.ItemRefTooltip.CloseButton)
 
 local tooltips = {
@@ -20,7 +20,7 @@ local tooltips = {
 	ItemRefShoppingTooltip2,
 	StoryTooltip,
 	ReputationParagonTooltip,
-	WarCampaignTooltip,
+	CampaignTooltip,
 	EmbeddedItemTooltip,
 	QuickKeybindTooltip,
 	-- Addons
