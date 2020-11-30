@@ -56,8 +56,6 @@ L_MISC_SCROLL = "Rolle"
 L_RAID_UTIL_DISBAND = "Gruppe auflösen"
 
 -- Zone name
-L_ZONE_ARATHIBASIN = "Arathibecken"
-L_ZONE_GILNEAS = "Die Schlacht um Gilneas"
 L_ZONE_ANCIENTDALARAN = "Dalarankrater"
 
 -- WatchFrame Wowhead link

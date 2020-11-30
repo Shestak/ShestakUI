@@ -56,8 +56,6 @@ L_MISC_SCROLL = "Свиток"
 L_RAID_UTIL_DISBAND = "Распустить группу"
 
 -- Zone name
-L_ZONE_ARATHIBASIN = "Низина Арати"
-L_ZONE_GILNEAS = "Битва за Гилнеас"
 L_ZONE_ANCIENTDALARAN = "Даларанский кратер"
 
 -- WatchFrame Wowhead link

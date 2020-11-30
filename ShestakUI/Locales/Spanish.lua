@@ -56,8 +56,6 @@ L_MISC_SCROLL = "Pergamino"
 L_RAID_UTIL_DISBAND = "Disolver grupo"
 
 -- Zone name
-L_ZONE_ARATHIBASIN = "Cuenca de Arathi"
-L_ZONE_GILNEAS = "La Batalla por Gilneas"
 L_ZONE_ANCIENTDALARAN = "Cráter de Dalaran"
 
 -- WatchFrame Wowhead link

@@ -56,8 +56,6 @@ L_MISC_SCROLL = "Parchemin"
 L_RAID_UTIL_DISBAND = "Dissoudre le raid"
 
 -- Zone name
-L_ZONE_ARATHIBASIN = "Bassin d'Arathi"
-L_ZONE_GILNEAS = "La bataille de Gilnéas"
 L_ZONE_ANCIENTDALARAN = "Cratère de Dalaran"
 
 -- WatchFrame Wowhead link

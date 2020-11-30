@@ -56,8 +56,6 @@ L_MISC_SCROLL = "Pergamena"
 L_RAID_UTIL_DISBAND = "Sciogli il gruppo"
 
 -- Zone name
-L_ZONE_ARATHIBASIN = "Bacino d'Arathi"
-L_ZONE_GILNEAS = "Battaglia per Gilneas"
 L_ZONE_ANCIENTDALARAN = "Cratere di Dalaran"
 
 -- WatchFrame Wowhead link

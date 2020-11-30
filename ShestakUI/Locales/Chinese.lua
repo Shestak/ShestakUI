@@ -56,8 +56,6 @@ L_MISC_SCROLL = "附魔羊皮纸"
 L_RAID_UTIL_DISBAND = "解散团队"
 
 -- Zone name
-L_ZONE_ARATHIBASIN = "阿拉希盆地"
-L_ZONE_GILNEAS = "吉尔尼斯之战"
 L_ZONE_ANCIENTDALARAN = "达拉然巨坑"
 
 -- WatchFrame Wowhead link

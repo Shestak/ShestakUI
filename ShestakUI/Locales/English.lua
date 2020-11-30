@@ -52,8 +52,6 @@ L_MISC_SCROLL = "Scroll"
 L_RAID_UTIL_DISBAND = "Disband Group"
 
 -- Zone name
-L_ZONE_ARATHIBASIN = "Arathi Basin"
-L_ZONE_GILNEAS = "The Battle for Gilneas"
 L_ZONE_ANCIENTDALARAN = "Dalaran Crater"
 
 -- WatchFrame Wowhead link
