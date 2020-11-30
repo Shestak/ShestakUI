@@ -548,4 +548,5 @@ T.OpenItems = {
 	[174959] = true,	-- Cache of the Mantid Swarm
 	[174960] = true,	-- Cache of the Aqir Swarm
 	[174961] = true,	-- Cache of the Amathet
+	[184522] = true,	-- Veiled Satchel of Cooperation
 }
