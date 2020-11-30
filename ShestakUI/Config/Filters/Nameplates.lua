@@ -87,8 +87,10 @@ T.DebuffWhiteList = {
 	[SpellName(107079)] = true,	-- Quaking Palm (Pandaren)
 }
 
-for _, spell in pairs(C.nameplate.debuffs_list) do
-	T.DebuffWhiteList[SpellName(spell)] = true
+if C.nameplate.debuffs_list then
+	for _, spell in pairs(C.nameplate.debuffs_list) do
+		T.DebuffWhiteList[SpellName(spell)] = true
+	end
 end
 
 T.DebuffBlackList = {
@@ -99,8 +101,10 @@ T.BuffWhiteList = {
 	-- [SpellName(spellID)] = true,	-- Spell Name
 }
 
-for _, spell in pairs(C.nameplate.buffs_list) do
-	T.BuffWhiteList[SpellName(spell)] = true
+if C.nameplate.buffs_list then
+	for _, spell in pairs(C.nameplate.buffs_list) do
+		T.BuffWhiteList[SpellName(spell)] = true
+	end
 end
 
 T.BuffBlackList = {
