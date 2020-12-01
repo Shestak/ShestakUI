@@ -804,6 +804,8 @@ C["filger_spells"] = {
 			{spellID = 48107, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Floes
 			{spellID = 108839, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Alter Time
+			{spellID = 108978, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 198111, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror Image
