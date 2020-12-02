@@ -2411,8 +2411,6 @@ C["filger_spells"] = {
 			{spellID = 1833, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Kidney Shot
 			{spellID = 408, unitID = "player", caster = "all", filter = "DEBUFF"},
-			-- Between the Eyes
-			{spellID = 199804, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Gouge
 			{spellID = 1776, unitID = "player", caster = "all", filter = "DEBUFF"},
 
@@ -2803,8 +2801,6 @@ C["filger_spells"] = {
 			{spellID = 1833, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Kidney Shot
 			{spellID = 408, unitID = "target", caster = "all", filter = "DEBUFF"},
-			-- Between the Eyes
-			{spellID = 199804, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Garrote
 			{spellID = 1330, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Smoke Bomb
