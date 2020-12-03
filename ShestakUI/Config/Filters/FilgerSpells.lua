@@ -808,6 +808,8 @@ C["filger_spells"] = {
 			{spellID = 108978, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 198111, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rune of Power
+			{spellID = 116011, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror Image
 			{spellID = 55342, filter = "ICD", trigger = "NONE", duration = 40},
 			-- Icicles
@@ -859,8 +861,8 @@ C["filger_spells"] = {
 			{spellID = 122, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Cone of Cold
 			{spellID = 120, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Flurry
-			{spellID = 228354, unitID = "target", caster = "player", filter = "DEBUFF", absID = true},
+			-- Winter's Chill
+			{spellID = 228358, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Ice Nova
 			{spellID = 157997, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Slow
