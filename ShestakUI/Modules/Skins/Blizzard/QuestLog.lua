@@ -353,6 +353,13 @@ local function LoadSkin()
 		end)
 	end
 
+	local campaignColor = {
+		Bastion = {0.45, 0.4, 0.4},
+		Maldraxxus = {0.1, 0.3, 0.15},
+		Ardenweald = {0.15, 0.25, 0.35},
+		Revendreth = {0.25, 0.1, 0.1}
+	}
+
 	hooksecurefunc("QuestLogQuests_Update", function()
 		for i = 1, QuestMapFrame.QuestsFrame.Contents:GetNumChildren() do
 			local child = select(i, QuestMapFrame.QuestsFrame.Contents:GetChildren())
@@ -363,22 +370,28 @@ local function LoadSkin()
 				end
 			end
 		end
-	end)
+		for campaignHeader in QuestScrollFrame.campaignHeaderFramePool:EnumerateActive() do
+			local campaign = campaignHeader:GetCampaign()
+			if campaign then
+				if not campaignHeader.backdrop then
+					campaignHeader:CreateBackdrop("Overlay")
+					campaignHeader.backdrop:SetPoint("TOPLEFT", campaignHeader.Background, 6, -2)
+					campaignHeader.backdrop:SetPoint("BOTTOMRIGHT", campaignHeader.Background, -6, 10)
 
-	hooksecurefunc(CampaignHeaderMixin, "UpdateCollapsedState", function(self)
-		if not self.styled then
-			local frame = QuestScrollFrame.Contents
-			frame:CreateBackdrop("Overlay")
-			frame.backdrop:SetPoint("TOPLEFT", self, 6, -5)
-			frame.backdrop:SetPoint("BOTTOMRIGHT", self, -6, 10)
-			frame.backdrop.overlay:SetVertexColor(1, 1, 1, 0.2)
-
-			self.SelectedHighlight:SetAlpha(0)
-			self.HighlightTexture:SetAlpha(0)
-			self.Background:SetAlpha(0)
-			self.TopFiligree:Hide()
-			SkinExpandOrCollapse(self.CollapseButton)
-			self.styled = true
+					campaignHeader.SelectedHighlight:SetAlpha(0)
+					campaignHeader.HighlightTexture:SetAlpha(0)
+					campaignHeader.Background:SetAlpha(0)
+					campaignHeader.TopFiligree:Hide()
+					SkinExpandOrCollapse(campaignHeader.CollapseButton)
+				end
+				if campaignHeader.backdrop then
+					if campaignColor[campaign.uiTextureKit] then
+						campaignHeader.backdrop.overlay:SetVertexColor(unpack(campaignColor[campaign.uiTextureKit]))
+					else
+						campaignHeader.backdrop.overlay:SetVertexColor(1, 1, 1, 0.2)
+					end
+				end
+			end
 		end
 	end)
 end
