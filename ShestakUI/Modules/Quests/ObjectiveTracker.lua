@@ -397,6 +397,32 @@ StageBlock.FinalBG:SetAlpha(0)
 StageBlock.GlowTexture:SetTexture("")
 
 ----------------------------------------------------------------------------------------
+--	Skin MawBuffsBlock
+----------------------------------------------------------------------------------------
+local Maw = ScenarioBlocksFrame.MawBuffsBlock.Container
+Maw:SkinButton()
+Maw:ClearAllPoints()
+Maw:SetPoint("TOPLEFT", ScenarioStageBlock.backdrop, "BOTTOMLEFT", 0, -20)
+Maw.List.button:SetSize(234, 30)
+Maw.List:StripTextures()
+Maw.List:SetTemplate("Overlay")
+
+Maw.List:HookScript("OnShow", function(self)
+	self.button:SetPushedTexture("")
+	self.button:SetHighlightTexture("")
+	self.button:SetWidth(234)
+	self.button:SetButtonState("NORMAL")
+	self.button:SetPushedTextOffset(0, 0)
+	self.button:SetButtonState("PUSHED", true)
+end)
+
+Maw.List:HookScript("OnHide", function(self)
+	self.button:SetPushedTexture("")
+	self.button:SetHighlightTexture("")
+	self.button:SetWidth(234)
+end)
+
+----------------------------------------------------------------------------------------
 --	Ctrl+Click to abandon a quest or Alt+Click to share a quest(by Suicidal Katt)
 ----------------------------------------------------------------------------------------
 hooksecurefunc("QuestMapLogTitleButton_OnClick", function(self)
