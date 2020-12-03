@@ -153,4 +153,7 @@ end)
 
 hooksecurefunc(UIWidgetTemplateScenarioHeaderCurrenciesAndBackgroundMixin, "Setup", function(widgetInfo)
 	widgetInfo.Frame:SetAlpha(0)
+	for frame in widgetInfo.currencyPool:EnumerateActive() do
+		frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	end
 end)
