@@ -27,6 +27,7 @@
 	<Script file="Contribution.lua"/>
 	<Script file="CovenantPreview.lua"/>
 	<Script file="CovenantRenown.lua"/>
+	<Script file="CovenantSanctum.lua"/>
 	<Script file="DebugTools.lua"/>
 	<Script file="DeathRecap.lua"/>
 	<Script file="DressUp.lua"/>
