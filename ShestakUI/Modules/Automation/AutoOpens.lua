@@ -52,7 +52,7 @@ frame:Register("BAG_UPDATE_DELAYED", function()
 		for slot = 0, GetContainerNumSlots(bag) do
 			local _, _, locked, _, _, lootable, _, _, _, id = GetContainerItemInfo(bag, slot)
 			if lootable and not locked and id and T.OpenItems[id] then
-				print("|cffff0000"..USE_COLON.." "..GetContainerItemLink(bag, slot).."|cffff0000.|r")
+				print("|cffff0000"..OPENING..": "..GetContainerItemLink(bag, slot).."|cffff0000.|r")
 				UseContainerItem(bag, slot)
 				return
 			end
