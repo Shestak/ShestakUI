@@ -357,7 +357,11 @@ local function LoadSkin()
 		Bastion = {0.45, 0.4, 0.4},
 		Maldraxxus = {0.1, 0.3, 0.15},
 		Ardenweald = {0.15, 0.25, 0.35},
-		Revendreth = {0.25, 0.1, 0.1}
+		Revendreth = {0.25, 0.1, 0.1},
+		Kyrian = {0.45, 0.4, 0.4},
+		Necrolord = {0.1, 0.3, 0.15},
+		Fey = {0.15, 0.25, 0.35},
+		Venthyr = {0.25, 0.1, 0.1}
 	}
 
 	hooksecurefunc("QuestLogQuests_Update", function()
