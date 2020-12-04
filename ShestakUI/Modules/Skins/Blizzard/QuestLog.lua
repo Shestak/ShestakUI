@@ -397,6 +397,19 @@ local function LoadSkin()
 				end
 			end
 		end
+		for callingHeader in QuestScrollFrame.covenantCallingsHeaderFramePool:EnumerateActive() do
+			if not callingHeader.backdrop then
+				callingHeader:CreateBackdrop("Overlay")
+				callingHeader.backdrop:SetPoint("TOPLEFT", callingHeader.Background, 7, -2)
+				callingHeader.backdrop:SetPoint("BOTTOMRIGHT", callingHeader.Background, -5, 10)
+				callingHeader.backdrop.overlay:SetVertexColor(1, 1, 1, 0.2)
+
+				callingHeader.Background:SetAlpha(0)
+				callingHeader.HighlightBackground:SetAlpha(0)
+				callingHeader.SelectedTexture:SetAlpha(0)
+				callingHeader.Divider:SetAlpha(0)
+			end
+		end
 	end)
 end
 
