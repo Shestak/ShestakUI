@@ -819,6 +819,7 @@ local function LoadSkin()
 	hooksecurefunc(NewPetAlertSystem, "setUpFunction", SkinNewPetMountAlert)
 	hooksecurefunc(NewMountAlertSystem, "setUpFunction", SkinNewPetMountAlert)
 	hooksecurefunc(NewToyAlertSystem, "setUpFunction", SkinNewPetMountAlert)
+	hooksecurefunc(NewRuneforgePowerAlertSystem, "setUpFunction", SkinNewPetMountAlert)
 
 	hooksecurefunc("StandardRewardAlertFrame_AdjustRewardAnchors", function(frame)
 		if frame.RewardFrames then
