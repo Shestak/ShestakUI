@@ -454,46 +454,55 @@ local function LoadSkin()
 		end
 	end
 
-	local function onShowFollower(frame)
-		local ft = frame:GetParent().FollowerTab
+	local function onShowFollower(followerList)
+		local followerTab = followerList and followerList.followerTab
+		local abilityFrame = followerTab.AbilitiesFrame
+		if not abilityFrame then return end
 
 		-- Ability buttons
-		local btn
-		for i = 1, #ft.AbilitiesFrame.Abilities do
-			btn = ft.AbilitiesFrame.Abilities[i]
-			if not btn.IconButton.backdrop then
-				btn.IconButton.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				btn.IconButton.Icon:SetDrawLayer("BACKGROUND", 1)
-				btn.IconButton:CreateBackdrop("Default")
-				btn.IconButton.Border:SetTexture(nil)
+		local abilities = abilityFrame.Abilities
+		if abilities then
+			for i = 1, #abilities do
+				local IconButton = abilities[i].IconButton
+				if IconButton and not IconButton.backdrop then
+					IconButton.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+					IconButton.Icon:SetDrawLayer("BACKGROUND", 1)
+					IconButton:CreateBackdrop("Default")
+					IconButton.Border:SetTexture(nil)
+				end
 			end
 		end
 
 		-- CombatAllySpell buttons
-		for i = 1, #ft.AbilitiesFrame.CombatAllySpell do
-			btn = ft.AbilitiesFrame.CombatAllySpell[i]
-			if not btn.backdrop then
-				btn.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				btn:CreateBackdrop("Default")
+		local combatAllySpell = abilityFrame.CombatAllySpell
+		if combatAllySpell then
+			for i = 1, #combatAllySpell do
+				local button = combatAllySpell[i]
+				if button and not button.backdrop then
+					button.iconTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+					button:CreateBackdrop("Default")
+				end
 			end
 		end
 
 		-- Equipment
-		if ft.AbilitiesFrame.Equipment then
-			for i = 1, #ft.AbilitiesFrame.Equipment do
-				btn = ft.AbilitiesFrame.Equipment[i]
-				btn.Border:SetTexture(nil)
-				btn.BG:SetTexture(nil)
-				btn.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				btn:SetScale(1)
-				if not btn.backdrop then
-					btn:CreateBackdrop("Default")
-					btn.backdrop:SetPoint("TOPLEFT", btn.Icon, "TOPLEFT", -2, 2)
-					btn.backdrop:SetPoint("BOTTOMRIGHT", btn.Icon, "BOTTOMRIGHT", 2, -2)
+		local equipment = abilityFrame.Equipment
+		if equipment then
+			for i = 1, #equipment do
+				local button = equipment[i]
+				if button then
+					button.Border:SetTexture(nil)
+					button.BG:SetTexture(nil)
+					button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+					button:SetScale(1)
+					if not button.backdrop then
+						button:CreateBackdrop("Default")
+						button.backdrop:SetPoint("TOPLEFT", button.Icon, "TOPLEFT", -2, 2)
+						button.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, "BOTTOMRIGHT", 2, -2)
+					end
 				end
 			end
 		end
-		ft, btn = nil
 	end
 
 	hooksecurefunc(GarrisonMissionFrame.FollowerList, "ShowFollower", onShowFollower)
