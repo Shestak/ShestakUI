@@ -175,9 +175,16 @@ local function LoadSkin()
 		local size = portrait.Portrait:GetSize() + 2
 		portrait:SetSize(size, size)
 
+		if not portrait.backdrop then
+			portrait:CreateBackdrop("Default")
+			portrait.backdrop:SetPoint("TOPLEFT", portrait, "TOPLEFT", -1, 1)
+			portrait.backdrop:SetPoint("BOTTOMRIGHT", portrait, "BOTTOMRIGHT", 1, -1)
+			portrait.backdrop:SetFrameLevel(portrait:GetFrameLevel())
+		end
+
 		portrait.Portrait:SetTexCoord(0.2, 0.85, 0.2, 0.85)
 		portrait.Portrait:ClearAllPoints()
-		portrait.Portrait:SetPoint("TOPLEFT", 1, -1)
+		portrait.Portrait:SetInside(portrait.backdrop)
 
 		if portrait.PortraitRing then
 			portrait.PortraitRing:Hide()
@@ -185,18 +192,28 @@ local function LoadSkin()
 			portrait.PortraitRingCover:SetTexture("")
 		end
 
-		if portrait.Level then
-			portrait.Level:ClearAllPoints()
-			portrait.Level:SetPoint("BOTTOM", 0, 1)
-			portrait.Level:SetFontObject("SystemFont_Outline_Small")
-			portrait.LevelBorder:SetAlpha(0)
+		if portrait.PuckBorder then portrait.PuckBorder:SetAlpha(0) end
+
+		local level = portrait.Level or portrait.LevelText
+		if level then
+			level:ClearAllPoints()
+			level:SetPoint("BOTTOM", 0, 1)
+			level:SetFontObject("SystemFont_Outline_Small")
+			if portrait.LevelCircle then portrait.LevelCircle:Hide() end
+			if portrait.LevelBorder then portrait.LevelBorder:SetScale(.0001) end
 		end
 
-		if not portrait.backdrop then
-			portrait:CreateBackdrop("Default")
-			portrait.backdrop:SetPoint("TOPLEFT", portrait, "TOPLEFT", -1, 1)
-			portrait.backdrop:SetPoint("BOTTOMRIGHT", portrait, "BOTTOMRIGHT", 1, -1)
-			portrait.backdrop:SetFrameLevel(portrait:GetFrameLevel())
+		if portrait.HealthBar then
+			portrait.HealthBar.Border:Hide()
+
+			local background = portrait.HealthBar.Background
+			background:SetAlpha(0)
+			background:ClearAllPoints()
+			background:SetPoint("TOPLEFT", portrait.backdrop, "BOTTOMLEFT", 0, -3)
+			background:SetPoint("BOTTOMRIGHT", portrait.backdrop, "BOTTOMRIGHT", -0, -6)
+			portrait.HealthBar.Health:SetTexture(C.media.texture)
+
+			portrait.CircleMask:Hide()
 		end
 	end
 
@@ -888,6 +905,68 @@ local function LoadSkin()
 	BFAMissionFrame.MapTab.ScrollContainer:ClearAllPoints()
 	BFAMissionFrame.MapTab.ScrollContainer:SetPoint("TOPLEFT")
 	BFAMissionFrame.MapTab.ScrollContainer:SetPoint("BOTTOMRIGHT")
+
+	----------------------------------------------------------------------------------------
+	--	Shadowlands Mission skin
+	----------------------------------------------------------------------------------------
+	CovenantMissionFrame:StripTextures()
+	CovenantMissionFrame:CreateBackdrop("Transparent")
+	CovenantMissionFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
+	CovenantMissionFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
+	CovenantMissionFrame.OverlayElements:Hide()
+	CovenantMissionFrame.BackgroundTile:Hide()
+	CovenantMissionFrame.MapTab:Hide()
+	CovenantMissionFrame.RaisedBorder:Hide()
+	CovenantMissionFrame.MissionTab:StripTextures()
+	CovenantMissionFrame:DisableDrawLayer("BORDER")
+	T.SkinCloseButton(CovenantMissionFrame.CloseButton)
+
+	hooksecurefunc(CovenantMissionFrameFollowers, "UpdateData", UpdateData)
+
+	CovenantMissionFrameMissions:StripTextures()
+	CovenantMissionFrameMissions.MaterialFrame:StripTextures()
+	CovenantMissionFrameMissions.RaisedFrameEdges:StripTextures()
+	T.SkinScrollBar(CovenantMissionFrameMissionsListScrollFrameScrollBar)
+
+	for i = 1, #CovenantMissionFrame.MissionTab.MissionList.listScroll.buttons do
+		local button = CovenantMissionFrame.MissionTab.MissionList.listScroll.buttons[i]
+		if not button.backdrop then
+			button.ButtonBG:Hide()
+			button.Highlight:Hide()
+			button:CreateBackdrop("Overlay")
+			button.backdrop:SetPoint("TOPLEFT", 0, 0)
+			button.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
+			button:StyleButton(nil, 2)
+			button.LocBG:SetHeight(75)
+			button.LocBG:SetPoint("RIGHT", 0, -1)
+		end
+	end
+
+	for i = 1, 2 do
+		T.SkinTab(_G["CovenantMissionFrameTab"..i])
+	end
+
+	-- Followers
+	local Follower = CovenantMissionFrameFollowers
+	Follower:StripTextures()
+	T.SkinScrollBar(CovenantMissionFrameFollowersListScrollFrameScrollBar)
+	Follower.MaterialFrame:StripTextures()
+	Follower.HealAllButton:SkinButton()
+	Follower.ElevatedFrame:Hide()
+
+	local FollowerTab = CovenantMissionFrame.FollowerTab
+	FollowerTab:StripTextures()
+	FollowerTab:CreateBackdrop("Overlay")
+	FollowerTab.backdrop:SetPoint("TOPLEFT", -2, 0)
+	FollowerTab.backdrop:SetPoint("BOTTOMRIGHT", 2, 20)
+	FollowerTab.RaisedFrameEdges:Hide()
+
+	FollowerTab.HealFollowerFrame.ButtonFrame:Hide()
+	HealFollowerButtonTemplate:SkinButton()
+
+	-- Mission
+	T.SkinCloseButton(CovenantMissionFrame.MissionTab.MissionPage.CloseButton)
+	CovenantMissionFrame.MissionTab.MissionPage.StartMissionButton:SkinButton()
 end
 
 T.SkinFuncs["Blizzard_GarrisonUI"] = LoadSkin
