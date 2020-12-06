@@ -200,11 +200,15 @@ local function LoadSkin()
 			level:SetPoint("BOTTOM", 0, 1)
 			level:SetFontObject("SystemFont_Outline_Small")
 			if portrait.LevelCircle then portrait.LevelCircle:Hide() end
-			if portrait.LevelBorder then portrait.LevelBorder:SetScale(.0001) end
+			if portrait.LevelBorder then portrait.LevelBorder:SetScale(0.0001) end
 		end
 
 		if portrait.HealthBar then
 			portrait.HealthBar.Border:Hide()
+
+			local roleIcon = portrait.HealthBar.RoleIcon
+			roleIcon:ClearAllPoints()
+			roleIcon:SetPoint("TOPRIGHT", portrait.backdrop, "TOPRIGHT", 4, 4)
 
 			local background = portrait.HealthBar.Background
 			background:SetAlpha(0)
@@ -518,6 +522,16 @@ local function LoadSkin()
 						button.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, "BOTTOMRIGHT", 2, -2)
 					end
 				end
+			end
+		end
+
+		-- AutoSpell buttons
+		for autoSpell in followerTab.autoSpellPool:EnumerateActive() do
+			if not autoSpell.backdrop then
+				autoSpell.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				autoSpell:CreateBackdrop("Default")
+				autoSpell.SpellBorder:SetTexture("")
+				autoSpell.IconMask:Hide()
 			end
 		end
 	end
@@ -967,6 +981,8 @@ local function LoadSkin()
 	-- Mission
 	T.SkinCloseButton(CovenantMissionFrame.MissionTab.MissionPage.CloseButton)
 	CovenantMissionFrame.MissionTab.MissionPage.StartMissionButton:SkinButton()
+
+	HandleGarrisonPortrait(GarrisonLandingPage.FollowerTab.CovenantFollowerPortraitFrame)
 end
 
 T.SkinFuncs["Blizzard_GarrisonUI"] = LoadSkin
