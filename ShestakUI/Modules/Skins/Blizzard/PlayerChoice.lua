@@ -32,19 +32,20 @@ local function LoadSkin()
 			frame.IsSkinned = true
 		end
 
-		frame.backdrop:SetShown(not IsInJailersTower())
+		local IsInJailers = IsInJailersTower()
+		frame.backdrop:SetShown(not IsInJailers)
 
 		for i = 1, frame:GetNumOptions() do
 			local option = frame.Options[i]
 			local hasArtworkBorderArt = option.ArtworkBorder:IsShown()
 			option:CreateBackdrop("Overlay")
 			option.backdrop:SetPoint("TOPLEFT", -2, 20)
-			option.backdrop:SetShown(not IsInJailersTower() and hasArtworkBorderArt)
+			option.backdrop:SetShown(not IsInJailers and hasArtworkBorderArt)
 
 			for i = 1, #option.OptionButtonsContainer.Buttons do
 				local button = option.OptionButtonsContainer.Buttons[i]
 				if not button.isSkinned then
-					if IsInJailersTower() then
+					if IsInJailers then
 						button:StripTextures(true)
 					end
 					if i == 1 or (hasArtworkBorderArt and i == 2) then
@@ -58,6 +59,9 @@ local function LoadSkin()
 			option.OptionText:SetTextColor(1, 1, 1)
 
 			option.Background:SetShown(not hasArtworkBorderArt)
+			if IsInJailers then
+				option.Background:Show()
+			end
 			option.Header.Ribbon:SetAlpha(0)
 
 			option.ArtworkBorder:SetAlpha(0)
@@ -69,7 +73,7 @@ local function LoadSkin()
 				option.ArtBackdrop:SetPoint("BOTTOMRIGHT", option.Artwork, 2, -2)
 				option.ArtBackdrop:SetTemplate("Default")
 			end
-			option.ArtBackdrop:SetShown(not IsInJailersTower() and hasArtworkBorderArtt)
+			option.ArtBackdrop:SetShown(not IsInJailers and hasArtworkBorderArtt)
 
 			for i = 1, option.WidgetContainer:GetNumChildren() do
 				local child = select(i, option.WidgetContainer:GetChildren())
