@@ -1728,23 +1728,16 @@ if gold.enabled then
 				Currency(402)	-- Ironpaw Token
 			end
 
-			if C.stats.currency_raid and T.level == MAX_PLAYER_LEVEL then
-				titleName = L_STATS_CURRENCY_RAID
-				Currency(1580, false, true)	-- Seal of Wartorn Fate
-			end
+			-- if C.stats.currency_raid and T.level == MAX_PLAYER_LEVEL then
+				-- titleName = L_STATS_CURRENCY_RAID
+				-- Currency(1580, false, true)	-- Seal of Wartorn Fate
+			-- end
 
 			if C.stats.currency_misc then
-				titleName = EXPANSION_NAME7
-				Currency(1560)	-- War Resources
-				Currency(1710)	-- Seafarer's Dubloon
-				Currency(1716)	-- Honorbound Service Medal
-				Currency(1717)	-- 7th Legion Service Medal
-				Currency(1718)	-- Titan Residuum
-				Currency(1721)	-- Prismatic Manapearl
-				Currency(1719)	-- Corrupted Mementos
-				Currency(1755)	-- Coalescing Visions
-				Currency(1803)	-- Echoes of Ny'alotha
-				Currency(515)	-- Darkmoon Prize Ticket
+				titleName = EXPANSION_NAME8
+				Currency(1813)	-- Reservoir Anima
+				Currency(1828)	-- Soul Ash
+				Currency(1767)	-- Stygia
 			end
 
 			GameTooltip:AddLine(" ")

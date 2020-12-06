@@ -2411,7 +2411,7 @@ do
 	local currency_raid = ns.CreateCheckBox(parent, "currency_raid", L_GUI_STATS_CURRENCY_RAID)
 	currency_raid:SetPoint("TOPLEFT", currency_cooking, "BOTTOMLEFT", 0, 0)
 
-	local currency_misc = ns.CreateCheckBox(parent, "currency_misc", CURRENCY.. " "..EXPANSION_NAME7)
+	local currency_misc = ns.CreateCheckBox(parent, "currency_misc", CURRENCY.. " "..EXPANSION_NAME8)
 	currency_misc:SetPoint("TOPLEFT", currency_raid, "BOTTOMLEFT", 0, 0)
 end
 
