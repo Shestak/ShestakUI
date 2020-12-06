@@ -96,7 +96,6 @@ LPSTAT_CONFIG = {
 			["Защитники Тол Барада"] = "Тол Барад",
 			["Гидраксианские Повелители Вод"] = "Повелители Вод",
 		},
-		artifact_fmt = "[curart]([curart%]%)"..class"AP",	-- Artifact power format
 		anchor_frame = C.stats.durability and "Durability" or C.stats.guild and "Guild" or C.stats.friend and "Friends" or C.stats.fps and "FPS" or C.stats.latency and "Latency" or "Clock", anchor_to = "left", anchor_from = "right",
 		x_off = 3, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMLEFT", tip_x = 21, tip_y = 20
 	},
