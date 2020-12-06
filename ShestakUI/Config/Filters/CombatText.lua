@@ -302,8 +302,7 @@ elseif T.class == "MAGE" then
 		T.aoespam[157979] = 0		-- Unstable Magic (Arcane)
 		T.aoespam[153564] = 0		-- Meteor
 		T.aoespam[155158] = 4		-- Meteor Burn
-		T.aoespam[224637] = 1.6		-- Phoenix's Flames
-		T.aoespam[194466] = 1.6		-- Phoenix's Flames
+		T.aoespam[257542] = 0.6		-- Phoenix's Flames
 		T.aoespam[205345] = 4		-- Conflagration Flare Up
 		T.aoespam[226757] = 4		-- Conflagration
 		T.aoespam[198928] = 1.2		-- Cinderstorm
@@ -319,6 +318,7 @@ elseif T.class == "MAGE" then
 		T.merge[210817] = 44425		-- Arcane Rebound
 		T.aoespam[44425] = 1.2		-- Arcane Barrage
 		T.aoespam[277703] = 3		-- Trailing Embers
+		T.aoespam[325130] = 1.9		-- Shifting Power (Mage Covenant Abilities)
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
