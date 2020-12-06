@@ -419,7 +419,7 @@ local function LoadSkin()
 		frame.Background:Kill()
 
 		-- Icon
-		frame.MissionType:SetSize(50, 50)
+		frame.MissionType:SetSize(45, 45)
 		frame.MissionType:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		frame.MissionType:SetDrawLayer("ARTWORK")
 		frame.MissionType:ClearAllPoints()
@@ -429,6 +429,14 @@ local function LoadSkin()
 		frame.MissionType.b:SetPoint("TOPLEFT", frame.MissionType, "TOPLEFT", -2, 2)
 		frame.MissionType.b:SetPoint("BOTTOMRIGHT", frame.MissionType, "BOTTOMRIGHT", 2, -2)
 		frame.MissionType:SetParent(frame.MissionType.b)
+
+		frame.EncounterIcon:SetSize(45, 45)
+		frame.EncounterIcon:SetOutside(frame.MissionType.b)
+		frame.EncounterIcon.CircleMask:Hide()
+		frame.EncounterIcon.PortraitBorder:Hide()
+		frame.EncounterIcon.RareOverlay:Hide()
+		frame.EncounterIcon.EliteOverlay:Hide()
+		frame.EncounterIcon.Portrait:SetTexCoord(0.2, 0.85, 0.2, 0.85)
 	end
 	hooksecurefunc(GarrisonMissionAlertSystem, "setUpFunction", SkinGarrisonMissionAlert)
 
@@ -444,7 +452,7 @@ local function LoadSkin()
 		frame.shine:Kill()
 
 		-- Icon
-		frame.MissionType:SetSize(50, 50)
+		frame.MissionType:SetSize(45, 45)
 		frame.MissionType:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		frame.MissionType:SetDrawLayer("ARTWORK")
 		frame.MissionType:ClearAllPoints()
@@ -471,7 +479,7 @@ local function LoadSkin()
 		frame.shine:Kill()
 
 		-- Icon
-		frame.MissionType:SetSize(50, 50)
+		frame.MissionType:SetSize(45, 45)
 		frame.MissionType:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		frame.MissionType:SetDrawLayer("ARTWORK")
 		frame.MissionType:ClearAllPoints()
