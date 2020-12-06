@@ -17,6 +17,14 @@ hooksecurefunc(_detalhes.gump, "CreateNewLine", function(_, instancia, index)
 		bar.bg:SetTexture(C.media.texture)
 		bar.bg:SetVertexColor(.6, .6, .6, 0.25)
 	end
+
+	local frame = _G["DetailsUpFrameInstance"..instancia.meu_id]
+	if not frame.b then
+		frame.b = CreateFrame("Frame", nil, frame:GetParent())
+		frame.b:SetTemplate("Overlay")
+		frame.b:SetPoint("TOPLEFT", frame, "TOPLEFT", -23, 2)
+		frame.b:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 34, 4)
+	end
 end)
 
 hooksecurefunc(_detalhes, "SetFontOutline", function(_, fontString)
