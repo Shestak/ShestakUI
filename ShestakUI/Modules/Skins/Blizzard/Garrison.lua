@@ -951,8 +951,7 @@ local function LoadSkin()
 			button.backdrop:SetPoint("TOPLEFT", 0, 0)
 			button.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 			button:StyleButton(nil, 2)
-			button.LocBG:SetHeight(75)
-			button.LocBG:SetPoint("RIGHT", 0, -1)
+			button.Overlay.Overlay:SetAllPoints(button.backdrop)
 		end
 	end
 
@@ -968,6 +967,8 @@ local function LoadSkin()
 	Follower.HealAllButton:SkinButton()
 	Follower.ElevatedFrame:Hide()
 
+	hooksecurefunc(Follower, "ShowFollower", onShowFollower)
+
 	local FollowerTab = CovenantMissionFrame.FollowerTab
 	FollowerTab:StripTextures()
 	FollowerTab:CreateBackdrop("Overlay")
@@ -977,6 +978,9 @@ local function LoadSkin()
 
 	FollowerTab.HealFollowerFrame.ButtonFrame:Hide()
 	HealFollowerButtonTemplate:SkinButton()
+
+	FollowerTab.HealFollowerFrame.CostFrame.CostLabel:SetFont(C.media.normal_font, 14)
+	FollowerTab.HealFollowerFrame.CostFrame.CostIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	-- Mission
 	T.SkinCloseButton(CovenantMissionFrame.MissionTab.MissionPage.CloseButton)
