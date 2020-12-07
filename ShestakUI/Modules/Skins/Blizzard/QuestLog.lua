@@ -250,20 +250,22 @@ local function LoadSkin()
 	QuestInfoItemHighlight:StripTextures()
 	QuestInfoItemHighlight:SetTemplate("Default")
 	QuestInfoItemHighlight:SetBackdropBorderColor(1, 1, 0)
-	QuestInfoItemHighlight:SetBackdropColor(0, 0, 0, 0)
+	QuestInfoItemHighlight:SetBackdropColor(1, 1, 1, 0.2)
 
 	hooksecurefunc("QuestInfoItem_OnClick", function(self)
-		QuestInfoItemHighlight:ClearAllPoints()
-		QuestInfoItemHighlight:SetPoint("TOPLEFT", self.Icon, "TOPLEFT", -2, 2)
-		QuestInfoItemHighlight:SetPoint("BOTTOMRIGHT", self.Icon, "BOTTOMRIGHT", 2, -2)
+		if self.type == "choice" then
+			QuestInfoItemHighlight:ClearAllPoints()
+			QuestInfoItemHighlight:SetPoint("TOPLEFT", self.Icon, "TOPLEFT", -2, 2)
+			QuestInfoItemHighlight:SetPoint("BOTTOMRIGHT", self.Icon, "BOTTOMRIGHT", 2, -2)
 
-		local parent = self:GetParent()
-		for i = 1, #parent.RewardButtons do
-			local questItem = QuestInfoRewardsFrame.RewardButtons[i]
-			if questItem ~= self then
-				questItem.Name:SetTextColor(1, 1, 1)
-			else
-				self.Name:SetTextColor(1, 1, 0)
+			local parent = self:GetParent()
+			for i = 1, #parent.RewardButtons do
+				local questItem = QuestInfoRewardsFrame.RewardButtons[i]
+				if questItem ~= self then
+					questItem.Name:SetTextColor(1, 1, 1)
+				else
+					self.Name:SetTextColor(1, 1, 0)
+				end
 			end
 		end
 	end)
