@@ -73,4 +73,6 @@ T.ABItems = {
 	[168183] = true,	-- Rare Metal Collector
 	[168253] = true,	-- Fathom Hook
 	[168482] = true,	-- Plug the Geysers
+	-- Shadowlands
+	[183045] = true,	-- Korinna's Allaying Crook
 }
