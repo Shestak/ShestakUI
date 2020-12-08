@@ -986,6 +986,9 @@ local function LoadSkin()
 	T.SkinCloseButton(CovenantMissionFrame.MissionTab.MissionPage.CloseButton)
 	CovenantMissionFrame.MissionTab.MissionPage.StartMissionButton:SkinButton()
 
+	CovenantMissionFrame.MissionComplete.CompleteFrame.ContinueButton:SkinButton()
+	CovenantMissionFrame.MissionComplete.RewardsScreen.FinalRewardsPanel.ContinueButton:SkinButton()
+
 	HandleGarrisonPortrait(GarrisonLandingPage.FollowerTab.CovenantFollowerPortraitFrame)
 end
 
