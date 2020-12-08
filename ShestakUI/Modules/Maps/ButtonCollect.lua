@@ -74,7 +74,7 @@ local function PositionAndStyle()
 end
 
 local collect = CreateFrame("Frame")
-collect:RegisterEvent("PLAYER_LOGIN")
+collect:RegisterEvent("PLAYER_ENTERING_WORLD")
 collect:SetScript("OnEvent", function()
 	for _, child in ipairs({Minimap:GetChildren()}) do
 		if not BlackList[child:GetName()] then
@@ -93,4 +93,5 @@ collect:SetScript("OnEvent", function()
 		SkinButton(WIM3MinimapButton)
 		SkinButton(WIM3MinimapButton)
 	end
+	collect:UnregisterEvent("PLAYER_ENTERING_WORLD")
 end)
