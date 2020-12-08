@@ -258,6 +258,33 @@ C["actionbar"] = {
 	-- MicroMenu
 	["micromenu"] = false,						-- Enable micro menu
 	["micromenu_mouseover"] = false,			-- Micro menu on mouseover
+	-- Bars editor
+	["editor"] = false,							-- Allow to move and change each panel individually
+	-- Bar 1
+	["bar1_num"] = 12,							-- Number of buttons
+	["bar1_row"] = 12,							-- Buttons per row
+	["bar1_size"] = 25,							-- Buttons size
+	["bar1_mouseover"] = false,					-- Bar on mouseover
+	-- Bar 2
+	["bar2_num"] = 12,							-- Number of buttons
+	["bar2_row"] = 12,							-- Buttons per row
+	["bar2_size"] = 25,							-- Buttons size
+	["bar2_mouseover"] = false,					-- Bar on mouseover
+	-- Bar 3
+	["bar3_num"] = 12,							-- Number of buttons
+	["bar3_row"] = 1,							-- Buttons per row
+	["bar3_size"] = 25,							-- Buttons size
+	["bar3_mouseover"] = false,					-- Bar on mouseover
+	-- Bar 4
+	["bar4_num"] = 12,							-- Number of buttons
+	["bar4_row"] = 1,							-- Buttons per row
+	["bar4_size"] = 25,							-- Buttons size
+	["bar4_mouseover"] = false,					-- Bar on mouseover
+	-- Bar 5
+	["bar5_num"] = 12,							-- Number of buttons
+	["bar5_row"] = 1,							-- Buttons per row
+	["bar5_size"] = 25,							-- Buttons size
+	["bar5_mouseover"] = false,					-- Bar on mouseover
 }
 
 ----------------------------------------------------------------------------------------

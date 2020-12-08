@@ -5,18 +5,44 @@ if C.actionbar.enable ~= true then return end
 --	ActionBar(by Tukz)
 ----------------------------------------------------------------------------------------
 local bar = CreateFrame("Frame", "Bar1Holder", ActionBarAnchor, "SecureHandlerStateTemplate")
-bar:SetAllPoints(ActionBarAnchor)
+if C.actionbar.editor then
+	local NumRow = ceil(C.actionbar.bar1_num / C.actionbar.bar1_row)
+	bar:SetWidth((C.actionbar.bar1_size * C.actionbar.bar1_row) + (C.actionbar.button_space * (C.actionbar.bar1_row - 1)))
+	bar:SetHeight((C.actionbar.bar1_size * NumRow) + (C.actionbar.button_space * (NumRow - 1)))
+	bar:SetPoint("BOTTOMLEFT", ActionBarAnchor, 0, 0)
+else
+	bar:SetAllPoints(ActionBarAnchor)
+end
 
+local NumPerRows = C.actionbar.bar1_row
+local NextRowButtonAnchor = _G["ActionButton1"]
 for i = 1, 12 do
-	local button = _G["ActionButton"..i]
-	button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
-	button:ClearAllPoints()
-	button:SetParent(Bar1Holder)
-	if i == 1 then
-		button:SetPoint("BOTTOMLEFT", Bar1Holder, 0, 0)
+	local b = _G["ActionButton"..i]
+	b:SetSize(C.actionbar.button_size, C.actionbar.button_size)
+	b:ClearAllPoints()
+	b:SetParent(Bar1Holder)
+	if C.actionbar.editor then
+		if i <= C.actionbar.bar1_num then
+			if i == 1 then
+				b:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
+			elseif i == NumPerRows + 1 then
+				b:SetPoint("TOPLEFT", NextRowButtonAnchor, "BOTTOMLEFT", 0, -C.actionbar.button_space)
+
+				NumPerRows = NumPerRows + C.actionbar.bar1_row
+				NextRowButtonAnchor = _G["ActionButton"..i]
+			else
+				b:SetPoint("LEFT", _G["ActionButton"..i-1], "RIGHT", C.actionbar.button_space, 0)
+			end
+		else
+			b:SetPoint("TOP", UIParent, "TOP", 0, 200)
+		end
 	else
-		local previous = _G["ActionButton"..i-1]
-		button:SetPoint("LEFT", previous, "RIGHT", C.actionbar.button_space, 0)
+		if i == 1 then
+			b:SetPoint("BOTTOMLEFT", Bar1Holder, 0, 0)
+		else
+			local previous = _G["ActionButton"..i-1]
+			b:SetPoint("LEFT", previous, "RIGHT", C.actionbar.button_space, 0)
+		end
 	end
 end
 
@@ -90,4 +116,29 @@ if C.actionbar.bottombars_mouseover then
 		b:HookScript("OnEnter", function() BottomBarMouseOver(1) end)
 		b:HookScript("OnLeave", function() if not HoverBind.enabled then BottomBarMouseOver(0) end end)
 	end
+end
+
+if C.actionbar.editor and C.actionbar.bar1_mouseover then
+	local function BarMouseOver(alpha)
+		if MultiBarRight:IsShown() then
+			for i = 1, 12 do
+				local pb = _G["ActionButton"..i]
+				pb:SetAlpha(alpha)
+				local g = _G["ActionButton"..i.."Cooldown"]
+				T.HideSpiral(g, alpha)
+			end
+			bar:SetAlpha(alpha)
+		end
+	end
+
+	for i = 1, 12 do
+		local b = _G["ActionButton"..i]
+		b:SetAlpha(0)
+		b:HookScript("OnEnter", function() BarMouseOver(1) end)
+		b:HookScript("OnLeave", function() if not HoverBind.enabled then BarMouseOver(0) end end)
+	end
+
+	bar:SetAlpha(0)
+	bar:SetScript("OnEnter", function() BarMouseOver(1) end)
+	bar:SetScript("OnLeave", function() if not HoverBind.enabled then BarMouseOver(0) end end)
 end

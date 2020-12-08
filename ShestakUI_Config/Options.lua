@@ -493,7 +493,7 @@ ns.addCategory("unitframe", UNITFRAME_LABEL, L_GUI_UF_SUBTEXT, 3)
 ns.addCategory("unitframe_class_bar", L_GUI_UF_PLUGINS_CLASS_BAR, L_GUI_UF_PLUGINS_CLASS_BAR_SUBTEXT)
 ns.addCategory("raidframe", RAID_FRAMES_LABEL, L_GUI_UF_RAIDFRAMES_SUBTEXT, 2)
 ns.addCategory("aura", BUFFOPTIONS_LABEL, BUFFOPTIONS_SUBTEXT)
-ns.addCategory("actionbar", L_GUI_ACTIONBAR, ACTIONBARS_SUBTEXT)
+ns.addCategory("actionbar", L_GUI_ACTIONBAR, ACTIONBARS_SUBTEXT, 2)
 ns.addCategory("tooltip", L.tooltip, L.tooltip_subtext)
 ns.addCategory("chat", SOCIALS, L_GUI_CHAT_SUBTEXT)
 ns.addCategory("nameplate", UNIT_NAMEPLATES, L_GUI_NAMEPLATE_SUBTEXT, 2)
@@ -1470,7 +1470,7 @@ do
 	local petbar_mouseover = ns.CreateCheckBox(parent, "petbar_mouseover", L_GUI_ACTIONBAR_PETBAR_MOUSEOVER)
 	petbar_mouseover:SetPoint("TOPLEFT", petbar_horizontal, "BOTTOMLEFT", 20, 0)
 
-	petbar_horizontal.children = {petbar_mouseover}
+	-- petbar_horizontal.children = {petbar_mouseover}
 
 	local stancebar_hide = ns.CreateCheckBox(parent, "stancebar_hide", L_GUI_ACTIONBAR_STANCEBAR_HIDE)
 	stancebar_hide:SetPoint("TOPLEFT", petbar_mouseover, "BOTTOMLEFT", -20, 0)
@@ -1481,7 +1481,7 @@ do
 	local stancebar_mouseover = ns.CreateCheckBox(parent, "stancebar_mouseover", L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER)
 	stancebar_mouseover:SetPoint("TOPLEFT", stancebar_horizontal, "BOTTOMLEFT", 20, 0)
 
-	stancebar_horizontal.children = {stancebar_mouseover}
+	-- stancebar_horizontal.children = {stancebar_mouseover}
 
 	local micromenu = ns.CreateCheckBox(parent, "micromenu", L_GUI_ACTIONBAR_MICROMENU)
 	micromenu:SetPoint("TOPLEFT", stancebar_mouseover, "BOTTOMLEFT", -20, 0)
@@ -1490,6 +1490,92 @@ do
 	micromenu_mouseover:SetPoint("TOPLEFT", micromenu, "BOTTOMLEFT", 20, 0)
 
 	micromenu.children = {micromenu_mouseover}
+
+	-- Panel 2
+	local parent = ShestakUIOptionsPanel.actionbar2
+
+	local editor = ns.CreateCheckBox(parent, "editor")
+	editor:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+
+	-- Bar 1
+	local subheader = ns.addSubCategory(editor, BINDING_HEADER_ACTIONBAR.." 1")
+	subheader:SetPoint("TOPLEFT", editor, "BOTTOMLEFT", 0, -10)
+
+	local bar1_num = ns.CreateNumberSlider(parent, "bar1_num", nil, nil, 0, 12, 1, true)
+	bar1_num:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -30)
+
+	local bar1_row = ns.CreateNumberSlider(parent, "bar1_row", nil, nil, 1, 12, 1, true)
+	bar1_row:SetPoint("LEFT", bar1_num, "RIGHT", 120, 0)
+
+	local bar1_size = ns.CreateNumberSlider(parent, "bar1_size", nil, nil, 0, 40, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	bar1_size:SetPoint("TOPLEFT", bar1_num, "BOTTOMLEFT", 0, -20)
+
+	local bar1_mouseover = ns.CreateCheckBox(parent, "bar1_mouseover")
+	bar1_mouseover:SetPoint("LEFT", bar1_size, "RIGHT", 130, 0)
+
+	-- Bar 2
+	local subheader = ns.addSubCategory(editor, BINDING_HEADER_ACTIONBAR.." 2")
+	subheader:SetPoint("TOPLEFT", bar1_size, "BOTTOMLEFT", 0, -10)
+
+	local bar2_num = ns.CreateNumberSlider(parent, "bar2_num", nil, nil, 0, 12, 1, true, L.actionbar_bar1_num)
+	bar2_num:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -30)
+
+	local bar2_row = ns.CreateNumberSlider(parent, "bar2_row", nil, nil, 1, 12, 1, true, L.actionbar_bar1_row)
+	bar2_row:SetPoint("LEFT", bar2_num, "RIGHT", 120, 0)
+
+	local bar2_size = ns.CreateNumberSlider(parent, "bar2_size", nil, nil, 0, 40, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	bar2_size:SetPoint("TOPLEFT", bar2_num, "BOTTOMLEFT", 0, -20)
+
+	local bar2_mouseover = ns.CreateCheckBox(parent, "bar2_mouseover", L.actionbar_bar1_mouseover)
+	bar2_mouseover:SetPoint("LEFT", bar2_size, "RIGHT", 130, 0)
+
+	-- Bar 3
+	local subheader = ns.addSubCategory(editor, BINDING_HEADER_ACTIONBAR.." 3")
+	subheader:SetPoint("TOPLEFT", bar2_size, "BOTTOMLEFT", 0, -10)
+
+	local bar3_num = ns.CreateNumberSlider(parent, "bar3_num", nil, nil, 0, 12, 1, true, L.actionbar_bar1_num)
+	bar3_num:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -30)
+
+	local bar3_row = ns.CreateNumberSlider(parent, "bar3_row", nil, nil, 1, 12, 1, true, L.actionbar_bar1_row)
+	bar3_row:SetPoint("LEFT", bar3_num, "RIGHT", 120, 0)
+
+	local bar3_size = ns.CreateNumberSlider(parent, "bar3_size", nil, nil, 0, 40, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	bar3_size:SetPoint("TOPLEFT", bar3_num, "BOTTOMLEFT", 0, -20)
+
+	local bar3_mouseover = ns.CreateCheckBox(parent, "bar3_mouseover", L.actionbar_bar1_mouseover)
+	bar3_mouseover:SetPoint("LEFT", bar3_size, "RIGHT", 130, 0)
+
+	-- Bar 4
+	local subheader = ns.addSubCategory(editor, BINDING_HEADER_ACTIONBAR.." 4")
+	subheader:SetPoint("TOPLEFT", bar3_size, "BOTTOMLEFT", 0, -10)
+
+	local bar4_num = ns.CreateNumberSlider(parent, "bar4_num", nil, nil, 0, 12, 1, true, L.actionbar_bar1_num)
+	bar4_num:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -30)
+
+	local bar4_row = ns.CreateNumberSlider(parent, "bar4_row", nil, nil, 1, 12, 1, true, L.actionbar_bar1_row)
+	bar4_row:SetPoint("LEFT", bar4_num, "RIGHT", 120, 0)
+
+	local bar4_size = ns.CreateNumberSlider(parent, "bar4_size", nil, nil, 0, 40, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	bar4_size:SetPoint("TOPLEFT", bar4_num, "BOTTOMLEFT", 0, -20)
+
+	local bar4_mouseover = ns.CreateCheckBox(parent, "bar4_mouseover", L.actionbar_bar1_mouseover)
+	bar4_mouseover:SetPoint("LEFT", bar4_size, "RIGHT", 130, 0)
+
+	-- Bar 5
+	local subheader = ns.addSubCategory(editor, BINDING_HEADER_ACTIONBAR.." 5")
+	subheader:SetPoint("TOPLEFT", bar4_size, "BOTTOMLEFT", 0, -10)
+
+	local bar5_num = ns.CreateNumberSlider(parent, "bar5_num", nil, nil, 0, 12, 1, true, L.actionbar_bar1_num)
+	bar5_num:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -30)
+
+	local bar5_row = ns.CreateNumberSlider(parent, "bar5_row", nil, nil, 1, 12, 1, true, L.actionbar_bar1_row)
+	bar5_row:SetPoint("LEFT", bar5_num, "RIGHT", 120, 0)
+
+	local bar5_size = ns.CreateNumberSlider(parent, "bar5_size", nil, nil, 0, 40, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	bar5_size:SetPoint("TOPLEFT", bar5_num, "BOTTOMLEFT", 0, -20)
+
+	local bar5_mouseover = ns.CreateCheckBox(parent, "bar5_mouseover", L.actionbar_bar1_mouseover)
+	bar5_mouseover:SetPoint("LEFT", bar5_size, "RIGHT", 130, 0)
 end
 
 -- Tooltip

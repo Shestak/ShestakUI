@@ -44,6 +44,16 @@ T.MoverFrames = {
 	SplitBarRight
 }
 
+if C.actionbar.editor then
+	tinsert(T.MoverFrames, Bar1Holder)
+	tinsert(T.MoverFrames, Bar2Holder)
+	tinsert(T.MoverFrames, Bar3Holder)
+	tinsert(T.MoverFrames, Bar4Holder)
+	tinsert(T.MoverFrames, Bar5Holder)
+	tremove(T.MoverFrames, 5)	-- RightActionBarAnchor
+	tremove(T.MoverFrames, 4)	-- ActionBarAnchor
+end
+
 local moving = false
 local movers = {}
 local placed = {

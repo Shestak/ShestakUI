@@ -258,6 +258,11 @@ L.actionbar_stancebar_horizontal_desc = "Located below the player's frame"
 L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "Stance bar on mouseover"
 L_GUI_ACTIONBAR_MICROMENU = "Enable micro menu"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Micro menu on mouseover"
+L.actionbar_editor = "Bars editor"
+L.actionbar_editor_desc = "Allow to move and change each panel individually"
+L.actionbar_bar1_num = "Number of buttons"
+L.actionbar_bar1_row = "Buttons per row"
+L.actionbar_bar1_mouseover = "Bar on mouseover"
 
 -- Tooltip options
 L.tooltip = "Tooltip"

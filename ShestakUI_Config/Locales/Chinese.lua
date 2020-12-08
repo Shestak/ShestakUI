@@ -235,6 +235,11 @@ L.actionbar_stancebar_horizontal_desc = "位于玩家框架下方"
 L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "鼠标悬停显示"
 L_GUI_ACTIONBAR_MICROMENU = "微型菜单"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "鼠标悬停显示"
+L.actionbar_editor = "Bars editor" -- Needs review
+L.actionbar_editor_desc = "Allow to move and change each panel individually" -- Needs review
+L.actionbar_bar1_num = "Number of buttons" -- Needs review
+L.actionbar_bar1_row = "Buttons per row" -- Needs review
+L.actionbar_bar1_mouseover = "Bar on mouseover" -- Needs review
 
 -- Tooltip options
 L.tooltip = "鼠标提示"

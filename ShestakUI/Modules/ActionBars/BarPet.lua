@@ -70,7 +70,7 @@ if C.actionbar.rightbars_mouseover == true and C.actionbar.petbar_horizontal == 
 		b:HookScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
 	end
 end
-if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
+if C.actionbar.petbar_mouseover == true and (C.actionbar.petbar_horizontal == true or C.actionbar.editor) then
 	PetActionBarAnchor:SetAlpha(0)
 	PetActionBarAnchor:SetScript("OnEnter", function() PetBarMouseOver(1) end)
 	PetActionBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then PetBarMouseOver(0) end end)

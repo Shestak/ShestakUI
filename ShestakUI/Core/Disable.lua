@@ -25,6 +25,12 @@ if C.actionbar.bottombars < 1 then
 	C.actionbar.bottombars = 1
 end
 
+if C.actionbar.editor then
+	C.actionbar.bottombars_mouseover = false
+	C.actionbar.rightbars_mouseover = false
+	C.actionbar.toggle_mode = false
+end
+
 ----------------------------------------------------------------------------------------
 --	Auto-overwrite script config is X addon is found
 ----------------------------------------------------------------------------------------

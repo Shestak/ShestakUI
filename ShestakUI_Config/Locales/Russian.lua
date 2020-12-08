@@ -235,6 +235,11 @@ L.actionbar_stancebar_horizontal_desc = "Расположена снизу от 
 L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "По наведению курсора"
 L_GUI_ACTIONBAR_MICROMENU = "Включить микроменю"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "Микроменю по наведению курсора"
+L.actionbar_editor = "Редактор панелей"
+L.actionbar_editor_desc = "Разблокировать настройку и перемещение каждой панели в отдельности"
+L.actionbar_bar1_num = "Количество кнопок"
+L.actionbar_bar1_row = "Кнопок в ряду"
+L.actionbar_bar1_mouseover = "По наведениею курсора"
 
 -- Tooltip options
 L.tooltip = "Подсказки"
