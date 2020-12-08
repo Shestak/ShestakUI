@@ -5,6 +5,7 @@
 	<Script file="AdventureMap.lua"/>
 	<Script file="AlertFrames.lua"/>
 	<Script file="AlliedRaces.lua"/>
+	<Script file="AnimaDiversion.lua"/>
 	<Script file="Archeology.lua"/>
 	<Script file="Artifact.lua"/>
 	<Script file="Auction.lua"/>
