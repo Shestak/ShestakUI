@@ -191,7 +191,8 @@ frame:RegisterEvent("SPELL_UPDATE_COOLDOWN")
 
 function frame:UNIT_SPELLCAST_SUCCEEDED(unit, _, spellID)
 	if unit == "player" then
-		watching[spellID] = {GetTime(), "spell", spellID}
+		local name = GetSpellInfo(spellID) -- Fix wrong double cd for trinket
+		watching[spellID] = {GetTime(), "spell", name}
 		self:SetScript("OnUpdate", OnUpdate)
 	end
 end
