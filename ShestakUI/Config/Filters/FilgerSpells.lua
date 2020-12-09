@@ -800,8 +800,6 @@ C["filger_spells"] = {
 			{spellID = 235450, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Barrier
 			{spellID = 11426, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Heating Up
-			{spellID = 48107, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Ice Floes
 			{spellID = 108839, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Alter Time
@@ -831,6 +829,8 @@ C["filger_spells"] = {
 			{spellID = 190446, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Glacial Spike!
 			{spellID = 199844, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Heating Up
+			{spellID = 48107, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hot Streak!
 			{spellID = 48108, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Pyroclasm
