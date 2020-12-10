@@ -235,11 +235,11 @@ L.actionbar_stancebar_horizontal_desc = "位於玩家框架下方"
 L_GUI_ACTIONBAR_STANCEBAR_MOUSEOVER = "滑鼠懸停顯示"
 L_GUI_ACTIONBAR_MICROMENU = "微型菜單"
 L_GUI_ACTIONBAR_MICROMENU_MOUSEOVER = "滑鼠懸停顯示"
-L.actionbar_editor = "Bars editor" -- Needs review
-L.actionbar_editor_desc = "Allow to move and change each panel individually" -- Needs review
-L.actionbar_bar1_num = "Number of buttons" -- Needs review
-L.actionbar_bar1_row = "Buttons per row" -- Needs review
-L.actionbar_bar1_mouseover = "Bar on mouseover" -- Needs review
+L.actionbar_editor = "快捷列佈局"
+L.actionbar_editor_desc = "允許快捷列獨立移動和更改"
+L.actionbar_bar1_num = "快捷鍵數"
+L.actionbar_bar1_row = "每行快捷鍵數"
+L.actionbar_bar1_mouseover = "滑鼠懸停顯示"
 
 -- Tooltip options
 L.tooltip = "滑鼠提示"
@@ -388,7 +388,7 @@ L_GUI_BAGS_BAG = "背包每行格數"
 L_GUI_MINIMAP_SUBTEXT = "小地圖設置"
 L_GUI_MINIMAP_ENABLE = "小地圖增強"
 L_GUI_MINIMAP_ICON = "追蹤菜單"
-L_GUI_GARRISON_ICON = "要塞報告圖標" -- Need review
+L_GUI_GARRISON_ICON = "聖所報告圖標"
 L_GUI_MINIMAP_SIZE = "小地圖大小"
 L_GUI_MINIMAP_HIDE_COMBAT = "戰鬥中隱藏小地圖"
 L_GUI_MINIMAP_TOGGLE_MENU = "小地圖頂部快捷菜單"
