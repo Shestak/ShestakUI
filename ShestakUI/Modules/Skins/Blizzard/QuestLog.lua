@@ -212,6 +212,33 @@ local function LoadSkin()
 					followerReward.PortraitFrame.Portrait:SetPoint("TOPLEFT", squareBG, 2, -2)
 					followerReward.PortraitFrame.Portrait:SetPoint("BOTTOMRIGHT", squareBG, -2, 2)
 
+					-- AdventuresFollowerPortraitFrame
+					local portrait = followerReward.AdventuresFollowerPortraitFrame
+					portrait:SetWidth(portrait:GetHeight())
+					portrait:ClearAllPoints()
+					portrait:SetPoint("RIGHT", followerReward.backdrop, "LEFT", -2, 0)
+
+					portrait.CircleMask:Hide()
+					portrait.PuckBorder:Hide()
+					portrait.LevelDisplayFrame.LevelCircle:SetAlpha(0)
+
+					local level = portrait.LevelDisplayFrame.LevelText
+					level:ClearAllPoints()
+					level:SetPoint("BOTTOM", portrait, 0, 5)
+					level:SetFontObject("SystemFont_Outline_Small")
+					level:SetShadowOffset(0, 0)
+
+					if not portrait.backdrop then
+						portrait:CreateBackdrop("Default")
+						portrait.backdrop:SetPoint("TOPLEFT", portrait, "TOPLEFT", -1, 1)
+						portrait.backdrop:SetPoint("BOTTOMRIGHT", portrait, "BOTTOMRIGHT", 1, -1)
+						portrait.backdrop:SetFrameLevel(portrait:GetFrameLevel())
+					end
+
+					portrait.Portrait:SetTexCoord(0.2, 0.85, 0.2, 0.85)
+					portrait.Portrait:ClearAllPoints()
+					portrait.Portrait:SetInside(portrait.backdrop)
+
 					local point, relativeTo, relativePoint, _, yOfs = followerReward:GetPoint()
 					followerReward:SetPoint(point, relativeTo, relativePoint, 8, yOfs)
 				end
