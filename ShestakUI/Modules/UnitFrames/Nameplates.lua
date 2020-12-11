@@ -544,16 +544,6 @@ local function callback(self, event, unit)
 			self:Show()
 		end
 
-		if self.widgetsOnly then
-			self.Health:SetAlpha(0)
-			self.Level:SetAlpha(0)
-			self.Name:SetAlpha(0)
-		else
-			self.Health:SetAlpha(1)
-			self.Level:SetAlpha(1)
-			self.Name:SetAlpha(1)
-		end
-
 		if UnitIsUnit(unit, "player") then
 			self.Power:Show()
 			self.Name:Hide()
@@ -564,6 +554,18 @@ local function callback(self, event, unit)
 			self.Name:Show()
 			self.Castbar:SetAlpha(1)
 			self.RaidTargetIndicator:SetAlpha(1)
+
+			if self.widgetsOnly or (UnitWidgetSet(unit) and UnitIsOwnerOrControllerOfUnit("player", unit)) then
+				self.Health:SetAlpha(0)
+				self.Level:SetAlpha(0)
+				self.Name:SetAlpha(0)
+				self.Castbar:SetAlpha(0)
+			else
+				self.Health:SetAlpha(1)
+				self.Level:SetAlpha(1)
+				self.Name:SetAlpha(1)
+				self.Castbar:SetAlpha(1)
+			end
 
 			local nameplate = C_NamePlate.GetNamePlateForUnit(unit)
 			if nameplate.UnitFrame then
