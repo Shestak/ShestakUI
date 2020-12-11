@@ -83,7 +83,17 @@ local function SkinStatusBar(widget)
 		bar.BorderRight:SetAlpha(0)
 		bar.BorderCenter:SetAlpha(0)
 		bar.Spark:SetAlpha(0)
-		bar:CreateBackdrop("Overlay")
+		local parent = widget:GetParent():GetParent()
+		if parent.castBar or parent.UnitFrame then -- nameplate
+			Mixin(bar, BackdropTemplateMixin)
+			bar:SetBackdrop({
+				bgFile = C.media.blank,
+				insets = {left = 0, right = 0, top = 0, bottom = 0}
+			})
+			bar:SetBackdropColor(0.1, 0.1, 0.1, 1)
+		else
+			bar:CreateBackdrop("Overlay")
+		end
 		bar.styled = true
 	end
 end
@@ -156,4 +166,8 @@ hooksecurefunc(UIWidgetTemplateScenarioHeaderCurrenciesAndBackgroundMixin, "Setu
 	for frame in widgetInfo.currencyPool:EnumerateActive() do
 		frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
+end)
+
+hooksecurefunc(UIWidgetTemplateStatusBarMixin, "Setup", function(widget)
+	SkinStatusBar(widget)
 end)
