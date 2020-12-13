@@ -175,14 +175,14 @@ end
 local MenuBG = CreateFrame("Frame", "TTMenuBackground", UIParent)
 MenuBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOMRIGHT", Minimap, "TOPRIGHT", 2, 3)
 MenuBG:SetFrameLevel(defaultframelevel)
-MenuBG:SetFrameStrata("HIGH")
+MenuBG:SetFrameStrata("MEDIUM")
 MenuBG:EnableMouse(true)
 MenuBG:Hide()
 
 local AddonBG = CreateFrame("Frame", "TTMenuAddOnBackground", UIParent)
 AddonBG:CreatePanel("Transparent", borderwidth(1), 1, "BOTTOMRIGHT", MenuBG, "BOTTOMRIGHT", 0, 0)
 AddonBG:SetFrameLevel(defaultframelevel)
-AddonBG:SetFrameStrata("HIGH")
+AddonBG:SetFrameStrata("MEDIUM")
 AddonBG:EnableMouse(true)
 AddonBG:Hide()
 
@@ -225,7 +225,7 @@ local function addMainMenuButtons(menuItems, menuName, menuBackground)
 			menuItems[index] = CreateFrame("Button", menuName..index, menuBackground)
 			menuItems[index]:CreatePanel("Overlay", buttonwidth(1), buttonheight(1), "BOTTOM", menuBackground, "BOTTOM", 0, buttonspacing(1))
 			menuItems[index]:SetFrameLevel(defaultframelevel + 1)
-			menuItems[index]:SetFrameStrata("HIGH")
+			menuItems[index]:SetFrameStrata("MEDIUM")
 			if mainmenusize == 0 then
 				menuItems[index]:SetPoint("BOTTOMRIGHT", menuBackground, "BOTTOMRIGHT", buttonspacing(-1), buttonspacing(-1))
 			else
@@ -263,7 +263,7 @@ OpenMenuBG:CreatePanel("Overlay", borderwidth(1), buttonheight(1) / 1.3, "BOTTOM
 OpenMenuBG:EnableMouse(true)
 OpenMenuBG:RegisterForClicks("AnyUp")
 OpenMenuBG:SetFrameLevel(defaultframelevel)
-OpenMenuBG:SetFrameStrata("HIGH")
+OpenMenuBG:SetFrameStrata("MEDIUM")
 OpenMenuBG:SetScript("OnMouseUp", function()
 	ToggleMenu_Toggle()
 	if (T.class == "MAGE" and T.level >= 11) and _G["TeleportMenu"]:IsShown() then
@@ -290,7 +290,7 @@ expandbutton:CreatePanel("Overlay", buttonwidth(1), buttonheight(1) / 2, "TOP", 
 expandbutton:EnableMouse(true)
 expandbutton:RegisterForClicks("AnyUp")
 expandbutton:SetFrameLevel(defaultframelevel + 1)
-expandbutton:SetFrameStrata("HIGH")
+expandbutton:SetFrameStrata("MEDIUM")
 updateTextures(expandbutton)
 
 Text = expandbutton:CreateFontString(nil, "OVERLAY")
@@ -436,7 +436,7 @@ for i = 1, GetNumAddOns() do
 	addonmenuitems[j]:EnableMouse(true)
 	addonmenuitems[j]:RegisterForClicks("AnyUp")
 	addonmenuitems[j]:SetFrameLevel(defaultframelevel + 1)
-	addonmenuitems[j]:SetFrameStrata("HIGH")
+	addonmenuitems[j]:SetFrameStrata("MEDIUM")
 	updateTextures(addonmenuitems[j], true)
 
 	addonmenuitems[j]:SetChecked(not addonInfo[i].enabled)
@@ -472,7 +472,7 @@ for i = 1, GetNumAddOns() do
 		local expandAddonButton = CreateFrame("Button", "AddonMenuExpand"..j, addonmenuitems[j])
 		expandAddonButton:CreatePanel("Overlay", buttonheight(1) - 4, buttonheight(1) - 4, "TOPLEFT", addonmenuitems[j], "TOPLEFT", 2, -2)
 		expandAddonButton:SetFrameLevel(defaultframelevel + 2)
-		expandAddonButton:SetFrameStrata("HIGH")
+		expandAddonButton:SetFrameStrata("MEDIUM")
 		expandAddonButton:EnableMouse(true)
 		expandAddonButton:RegisterForClicks("AnyUp")
 		updateTextures(expandAddonButton)
