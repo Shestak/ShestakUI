@@ -220,48 +220,32 @@ local function LoadSkin()
 	end
 	hooksecurefunc("EncounterJournal_DisplayInstance", SkinBosses)
 
-	EncounterJournal.LootJournal:DisableDrawLayer("BACKGROUND")
 
-	--FIXME EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:GetFontString():SetTextColor(1, 1, 1)
-	-- select(5, EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:GetRegions()):Hide()
-	-- select(6, EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:GetRegions()):Hide()
-	-- EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.UpLeft:SetAlpha(0)
-	-- EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.UpRight:SetAlpha(0)
-	-- EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.HighLeft:SetAlpha(0)
-	-- EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.HighRight:SetAlpha(0)
-	-- EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.DownLeft:SetAlpha(0)
-	-- EncounterJournal.LootJournal.ItemSetsFrame.ClassButton.DownRight:SetAlpha(0)
+	local LootJournal = EncounterJournal.LootJournal
+	LootJournal:DisableDrawLayer("BACKGROUND")
+	LootJournal.ClassDropDownButton:SkinButton(true)
+	LootJournal.RuneforgePowerFilterDropDownButton:SkinButton(true)
+	T.SkinScrollBar(LootJournal.PowersFrame.ScrollBar)
 
-	-- hooksecurefunc(EncounterJournal.LootJournal.ItemSetsFrame, "UpdateList", function()
-		-- local itemSets = EncounterJournal.LootJournal.ItemSetsFrame.buttons
+	hooksecurefunc(LootJournal.PowersFrame, "RefreshListDisplay", function(buttons)
+		if not buttons.elements then return end
 
-		-- for i = 1, #itemSets do
-			-- local itemSet = itemSets[i]
-			-- itemSet.ItemLevel:SetTextColor(1, 1, 1)
-			-- itemSet.Background:Hide()
+		for i = 1, buttons:GetNumElementFrames() do
+			local btn = buttons.elements[i]
+			if btn and not btn.IsSkinned then
+				btn.Background:SetAlpha(0)
+				btn.CircleMask:Hide()
+				btn.Icon:SetSize(50, 50)
+				btn.Icon:SkinIcon(true)
 
-			-- if not itemSet.backdrop then
-				-- itemSet:CreateBackdrop("Overlay")
-				-- itemSet.backdrop:SetPoint("TOPLEFT", -4, 4)
-				-- itemSet.backdrop:SetPoint("BOTTOMRIGHT", 4, -3)
-			-- end
+				btn:CreateBackdrop("Overlay")
+				btn.backdrop:SetPoint("TOPLEFT", 2, -2)
+				btn.backdrop:SetPoint("BOTTOMRIGHT", 2, 2)
 
-			-- local items = itemSet.ItemButtons
-			-- for j = 1, #items do
-				-- local item = items[j]
-				-- item.Border:Hide()
-				-- item.Icon:SetPoint("TOPLEFT", 1, -1)
-				-- item.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				-- item.Icon:SetDrawLayer("OVERLAY")
-				-- item.IconBackdrop = CreateFrame("Frame", nil, item)
-				-- item.IconBackdrop:SetFrameLevel(item:GetFrameLevel() - 1)
-				-- item.IconBackdrop:SetPoint("TOPLEFT", item.Icon, -2, 2)
-				-- item.IconBackdrop:SetPoint("BOTTOMRIGHT", item.Icon, 2, -2)
-				-- item.IconBackdrop:SetTemplate("Default")
-				-- item.IconBackdrop:SetBackdropBorderColor(itemSet.SetName:GetTextColor())
-			-- end
-		-- end
-	-- end)
+				btn.IsSkinned = true
+			end
+		end
+	end)
 
 	local items = EncounterJournal.encounter.info.lootScroll.buttons
 	for i = 1, #items do
