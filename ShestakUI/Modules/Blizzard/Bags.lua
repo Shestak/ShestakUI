@@ -173,45 +173,11 @@ end
 local trashButton = {}
 local trashBag = {}
 
--- Tooltip and scanning by Phanx @ http://www.wowinterface.com/forums/showthread.php?p=271406
-local S_ITEM_LEVEL = "^" .. gsub(_G.ITEM_LEVEL, "%%d", "(%%d+)")
-
-local scanner = CreateFrame("GameTooltip", "BagScanningTooltip", nil, "GameTooltipTemplate")
-local scannerName = scanner:GetName()
-
 local ItemDB = {}
-
-local function _getRealItemLevel(link, owner, bag, slot)
+local function _getRealItemLevel(link, bag, slot)
 	if ItemDB[link] then return ItemDB[link] end
 
-	local realItemLevel
-
-	scanner.owner = owner
-	scanner:SetOwner(owner, "ANCHOR_NONE")
-	scanner:SetBagItem(bag, slot)
-
-	local line = _G[scannerName.."TextLeft2"]
-	if line then
-		local msg = line:GetText()
-		if msg and string.find(msg, S_ITEM_LEVEL) then
-			local itemLevel = string.match(msg, S_ITEM_LEVEL)
-			if itemLevel and (tonumber(itemLevel) > 0) then
-				realItemLevel = itemLevel
-			end
-		else
-			-- Check line 3, some artifacts have the ilevel there
-			line = _G[scannerName.."TextLeft3"]
-			if line then
-				local msg = line:GetText()
-				if msg and string.find(msg, S_ITEM_LEVEL) then
-					local itemLevel = string.match(msg, S_ITEM_LEVEL)
-					if itemLevel and (tonumber(itemLevel) > 0) then
-						realItemLevel = itemLevel
-					end
-				end
-			end
-		end
-	end
+	local realItemLevel = C_Item.GetCurrentItemLevel(ItemLocation:CreateFromBagAndSlot(bag, slot))
 
 	ItemDB[link] = tonumber(realItemLevel)
 	return realItemLevel
@@ -267,7 +233,7 @@ function Stuffing:SlotUpdate(b)
 		end
 
 		if C.bag.ilvl == true and b.itemlevel and quality > 1 and (b.itemClassID == 2 or b.itemClassID == 4 or (b.itemClassID == 3 and b.itemSubClassID == 11)) then
-			b.itemlevel = _getRealItemLevel(clink, self, b.bag, b.slot) or b.itemlevel
+			b.itemlevel = _getRealItemLevel(clink, b.bag, b.slot) or b.itemlevel
 			b.frame.text:SetText(b.itemlevel)
 		end
 
