@@ -929,11 +929,14 @@ local function LoadSkin()
 	CovenantMissionFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 	CovenantMissionFrame.OverlayElements:Hide()
 	CovenantMissionFrame.BackgroundTile:Hide()
-	CovenantMissionFrame.MapTab:Hide()
 	CovenantMissionFrame.RaisedBorder:Hide()
 	CovenantMissionFrame.MissionTab:StripTextures()
 	CovenantMissionFrame:DisableDrawLayer("BORDER")
 	T.SkinCloseButton(CovenantMissionFrame.CloseButton)
+
+	hooksecurefunc(CovenantMissionFrame, "SetupTabs", function(self)
+		self.MapTab:SetShown(not self.Tab2:IsShown())
+	end)
 
 	hooksecurefunc(CovenantMissionFrameFollowers, "UpdateData", UpdateData)
 
