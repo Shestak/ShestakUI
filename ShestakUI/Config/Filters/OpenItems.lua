@@ -552,5 +552,6 @@ T.OpenItems = {
 	[181475] = true,	-- Bounty of the Grove Wardens
 	[181556] = true,	-- Tribute of the Court
 	[181741] = true,	-- Tribute of the Paragon
+	[181732] = true,	-- Tribute of the Ambitious
 	[184522] = true,	-- Veiled Satchel of Cooperation
 }
