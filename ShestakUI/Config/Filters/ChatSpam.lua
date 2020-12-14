@@ -16,13 +16,12 @@ T.ChatSpamList = {
 	"монетки",
 	"м0нетки",
 	"монеты",
-	"порталы",
-	"портал",
-	"порты",
-	"порт",
+	"visа",
 	"mastercard",
 	"webmoney",
 	"вебмани",
+	"qiwi",
+	"qiwі",
 	"яндекс",
 	"skype",
 	"skуpe",
@@ -31,17 +30,11 @@ T.ChatSpamList = {
 	"скаип",
 	"sкайп",
 	"аттестат",
+	"портал",
 	"анус",
-	"анальное",
-	"visа",
-	"qiwi",
-	"qiwі",
-	"к/г",
-	"ісq",
-	"іcq",
-	"аsя",
-	"asя",
-	"dving.ru",
-	"nigmаz.сom",
-	"rpgdealer.ru"
+	"анальное"
 }
+
+for word in gmatch(C.chat.spam_list, "%S+") do
+	tinsert(T.ChatSpamList, word)
+end

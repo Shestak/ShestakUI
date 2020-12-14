@@ -1693,8 +1693,13 @@ do
 	local spam = ns.CreateCheckBox(parent, "spam", L_GUI_CHAT_GOLD)
 	spam:SetPoint("TOPLEFT", filter, "BOTTOMLEFT", 0, 0)
 
+	local spam_list = ns.CreateEditBox(parent, "spam_list", true)
+	spam_list:SetPoint("TOPLEFT", spam, "BOTTOMLEFT", 6, -10)
+	spam_list:SetWidth(200)
+	spam_list:SetMaxLetters(40)
+
 	local chat_bar = ns.CreateCheckBox(parent, "chat_bar", L_GUI_CHAT_BAR)
-	chat_bar:SetPoint("TOPLEFT", spam, "BOTTOMLEFT", 0, 0)
+	chat_bar:SetPoint("TOPLEFT", spam_list, "BOTTOMLEFT", -6, -10)
 
 	local chat_bar_mouseover = ns.CreateCheckBox(parent, "chat_bar_mouseover", L_GUI_CHAT_BAR_MOUSEOVER)
 	chat_bar_mouseover:SetPoint("TOPLEFT", chat_bar, "BOTTOMLEFT", 20, 0)
