@@ -62,35 +62,21 @@ local function _updateItems(unit, frame)
 				equiped[i] = itemLink
 			end
 
-			local delay = false
-			if itemLink then
-				local _, _, quality = GetItemInfo(itemLink)
+			local realItemLevel = _getRealItemLevel(i, unit)
+			realItemLevel = realItemLevel or ""
+			if realItemLevel and tonumber(realItemLevel) == 1 then
+				realItemLevel = ""
+			end
 
-				if (quality == 6) and (i == 16 or i == 17) then
-					local relics = {select(4, strsplit(":", itemLink))}
-					for i = 1, 3 do
-						local relicID = relics[i] ~= "" and relics[i]
-						local relicLink = select(2, GetItemGem(itemLink, i))
-						if relicID and not relicLink then
-							delay = true
-						end
-					end
-					if delay then
-						C_Timer.After(0.1, function()
-							local realItemLevel = _getRealItemLevel(i, unit)
-							realItemLevel = realItemLevel or ""
-							frame[i]:SetText("|cFFFFFF00"..realItemLevel)
-						end)
-					end
+			local color = "|cffFFFF00"
+			if itemLink and (i == 15 or i == 5 or i == 11 or i == 12) and (realItemLevel ~= "" and tonumber(realItemLevel) > 184) then
+				local _, _, enchant = strsplit(":", itemLink)
+				if enchant and enchant == "" then
+					color = "|cffFF0000"
 				end
 			end
 
-			local realItemLevel = _getRealItemLevel(i, unit)
-			realItemLevel = realItemLevel or ""
-			if realItemLevel and realItemLevel == 1 then
-				realItemLevel = ""
-			end
-			frame[i]:SetText("|cFFFFFF00"..realItemLevel)
+			frame[i]:SetText(color..realItemLevel)
 		end
 	end
 end
@@ -242,35 +228,10 @@ local function _getRealItemLevel(link, bag, slot)
 	if ItemDB[link] then return ItemDB[link] end
 
 	local realItemLevel
-
-	scanner:SetOwner(UIParent, "ANCHOR_NONE")
 	if bag and type(bag) == "string" then
-		scanner:SetInventoryItem(bag, slot)
+		realItemLevel = C_Item.GetCurrentItemLevel(ItemLocation:CreateFromEquipmentSlot(slot))
 	else
-		scanner:SetBagItem(bag, slot)
-	end
-
-	local line = _G[scannerName.."TextLeft2"]
-	if line then
-		local msg = line:GetText()
-		if msg and string.find(msg, S_ITEM_LEVEL) then
-			local itemLevel = string.match(msg, S_ITEM_LEVEL)
-			if itemLevel and (tonumber(itemLevel) > 0) then
-				realItemLevel = itemLevel
-			end
-		else
-			-- Check line 3, some artifacts have the ilevel there
-			line = _G[scannerName.."TextLeft3"]
-			if line then
-				local msg = line:GetText()
-				if msg and string.find(msg, S_ITEM_LEVEL) then
-					local itemLevel = string.match(msg, S_ITEM_LEVEL)
-					if itemLevel and (tonumber(itemLevel) > 0) then
-						realItemLevel = itemLevel
-					end
-				end
-			end
-		end
+		realItemLevel = C_Item.GetCurrentItemLevel(ItemLocation:CreateFromBagAndSlot(bag, slot))
 	end
 
 	ItemDB[link] = tonumber(realItemLevel)
@@ -292,7 +253,9 @@ local function SetupFlyoutLevel(button, bag, slot)
 		level = _getRealItemLevel(link, "player", slot)
 	end
 
-	button.iLvl:SetText("|cFFFFFF00"..level)
+	if level then
+		button.iLvl:SetText("|cFFFFFF00"..level)
+	end
 end
 
 hooksecurefunc("EquipmentFlyout_DisplayButton", function(button)
