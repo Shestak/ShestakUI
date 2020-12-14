@@ -253,6 +253,12 @@ if IsWetxius then
 	T.CustomFilgerSpell = {
 		{"COOLDOWN", {spellID = 313698, filter = "ICD", trigger = "BUFF", duration = 80}}, -- Gift of the Titans
 	}
+
+	local frame = CreateFrame("Frame")
+	frame:RegisterEvent("PLAYER_LOGIN")
+	frame:SetScript("OnEvent", function()
+		xCT3:SetPoint("CENTER", 0, 305)
+	end)
 end
 
 ----------------------------------------------------------------------------------------
