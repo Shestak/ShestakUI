@@ -553,12 +553,13 @@ function Stuffing:SlotNew(bag, slot)
 		ret.count:SetPoint("BOTTOMRIGHT", 1, 1)
 
 		if C.bag.ilvl == true then
-			ret.frame:FontString("text", C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
+			ret.frame.text = ret.frame:CreateFontString(nil, "ARTWORK")
+			ret.frame.text:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
 			ret.frame.text:SetPoint("TOPLEFT", 1, -1)
 			ret.frame.text:SetTextColor(1, 1, 0)
 		end
 
-		ret.frame.Azerite = ret.frame:CreateTexture(nil, "OVERLAY")
+		ret.frame.Azerite = ret.frame:CreateTexture(nil, "ARTWORK")
 		ret.frame.Azerite:SetAtlas("AzeriteIconFrame")
 		ret.frame.Azerite:SetTexCoord(0, 1, 0, 1)
 		ret.frame.Azerite:SetPoint("TOPLEFT", ret.frame, 1, -1)
@@ -639,7 +640,11 @@ function Stuffing:SearchUpdate(str)
 
 	for _, b in ipairs(self.buttons) do
 		if b.frame and not b.name then
-			b.frame:SetAlpha(0.2)
+			if str == "" then
+				b.frame.searchOverlay:Hide()
+			else
+				b.frame.searchOverlay:Show()
+			end
 		end
 		if b.name then
 			local ilink = GetContainerItemLink(b.bag, b.slot)
@@ -662,18 +667,12 @@ function Stuffing:SearchUpdate(str)
 					end
 					SetItemButtonDesaturated(b.frame, true)
 					b.frame.searchOverlay:Show()
-					if C.bag.ilvl == true then
-						b.frame.text:SetAlpha(0.2)
-					end
 				else
 					if IsItemUnusable(b.name) or minLevel > T.level then
 						_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
 					end
 					SetItemButtonDesaturated(b.frame, false)
 					b.frame.searchOverlay:Hide()
-					if C.bag.ilvl == true then
-						b.frame.text:SetAlpha(1)
-					end
 				end
 			end
 		end
