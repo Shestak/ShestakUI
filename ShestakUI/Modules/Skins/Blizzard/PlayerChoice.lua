@@ -58,10 +58,10 @@ local function LoadSkin()
 			option.Header.Text:SetTextColor(1, .8, 0)
 			option.OptionText:SetTextColor(1, 1, 1)
 
-			option.Background:SetShown(IsInJailers and not hasArtworkBorderArt)
-			-- if IsInJailers then
-				-- option.Background:Show()
-			-- end
+			option.Background:SetShown(not hasArtworkBorderArt)
+			if IsInJailers then
+				option.Background:Show()
+			end
 			option.Header.Ribbon:SetAlpha(0)
 
 			option.ArtworkBorder:SetAlpha(0)
