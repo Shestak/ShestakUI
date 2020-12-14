@@ -518,10 +518,11 @@ ns.CreateDropDown = function(parent, option, needsReload, text, tableValue, LSM,
 	else
 		label:SetText(ns[parent.tag.."_"..option])
 	end
-	label:SetWidth(440)
+	-- label:SetWidth(440)
 	label:SetHeight(20)
 	label:SetJustifyH("LEFT")
 	label:SetPoint("LEFT", 160, 4)
+	f.label = label
 
 	f.tooltipText = ns[parent.tag.."_"..option.."_desc"]
 	if f.tooltipText then
@@ -638,7 +639,6 @@ ns.addCategory = function(name, text, subText, num)
 	panel.tab = tab
 	panel.tag = tag
 	ShestakUIOptionsPanel[tag] = panel
-
 
 	local numPages = num or 1
 	if numPages > 1 then

@@ -578,6 +578,21 @@ do
 	local texture = ns.CreateDropDown(parent, "texture", true, nil, TextureTable, LSM and true)
 	texture:SetPoint("TOPLEFT", backdrop_alpha, "BOTTOMLEFT", -20, -15)
 
+	local texturePreview = CreateFrame("Frame", nil, parent)
+	texturePreview:SetSize(100, 30)
+	texturePreview:SetPoint("LEFT", texture.label, "RIGHT", 10, 0)
+	texturePreview:Hide()
+
+	texturePreview.tex = texturePreview:CreateTexture(nil, "OVERLAY")
+	texturePreview.tex:SetPoint("CENTER")
+	texturePreview.tex:SetSize(100, 30)
+
+	hooksecurefunc(texture, "SetValue", function()
+		texturePreview:Show()
+		texturePreview.tex:SetTexture(C.options.media.texture)
+		texturePreview.tex:SetVertexColor(unpack(C.media.classborder_color))
+	end)
+
 	-- Normal Font
 	local subheader = ns.addSubCategory(parent, L.media_subheader_normal)
 	subheader:SetPoint("TOPLEFT", texture, "BOTTOMLEFT", 16, -10)
