@@ -147,12 +147,12 @@ end
 ----------------------------------------------------------------------------------------
 if Sw2rT1 then
 	C["general"].welcome_message = false
-	C["misc"].shift_marking = false
-	C["misc"].raid_tools = false
-	C["trade"].disenchanting = true
 	C["general"].hide_banner = false
 	C["general"].hide_talking_head = true
+	C["misc"].shift_marking = false
+	C["misc"].raid_tools = false
 	C["misc"].hide_raid_button = true
+	C["trade"].disenchanting = true
 	C["announcements"].pull_countdown = false
 	C["automation"].accept_invite = true
 	--C["automation"].accept_quest = true
@@ -165,6 +165,7 @@ if Sw2rT1 then
 	C["combattext"].crit_prefix = ""
 	C["combattext"].crit_postfix = ""
 	C["minimap"].size = 165
+	C["minimap"].fog_of_war = true
 	C["raidcooldown"].enable = false
 	C["threat"].enable = false
 	C["tooltip"].item_icon = true
@@ -176,7 +177,6 @@ if Sw2rT1 then
 	C["chat"].combatlog = false
 	C["chat"].damage_meter_spam = true
 	C["bag"].ilvl = true
-	C["minimap"].fog_of_war = true
 	C["filger"].enable = false
 	C["unitframe"].enemy_health_color = false
 	C["unitframe"].castbar_latency = false
@@ -195,6 +195,7 @@ if IsWetxius then
 	C["skins"].blizzard_frames = true
 	C["skins"].minimap_buttons = true
 	C["skins"].bigwigs = true
+	C["skins"].details = true
 	C["unitframe"].castbar_icon = true
 	C["unitframe"].plugins_enemy_spec = true
 	C["raidframe"].solo_mode = true
@@ -213,6 +214,7 @@ if IsWetxius then
 	C["chat"].chat_bar = true
 	C["chat"].chat_bar_mouseover = true
 	C["chat"].combatlog = false
+	C["chat"].loot_icons = true
 	C["nameplate"].health_value = true
 	C["nameplate"].healer_icon = true
 	C["combattext"].crit_prefix = ""
@@ -227,6 +229,7 @@ if IsWetxius then
 	C["automation"].screenshot = true
 	C["automation"].auto_role = true
 	C["automation"].tab_binder = true
+	C["automation"].open_items = true
 	C["pulsecooldown"].enable = true
 	C["pulsecooldown"].threshold = 6
 	C["threat"].enable = false
@@ -249,10 +252,6 @@ if IsWetxius then
 	C["position"].bank = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 20}
 	C["position"].auto_button = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 33, 83}
 	C["position"].unitframes.arena = {"BOTTOMRIGHT", UIParent, "RIGHT", -55, -70}
-
-	T.CustomFilgerSpell = {
-		{"COOLDOWN", {spellID = 313698, filter = "ICD", trigger = "BUFF", duration = 80}}, -- Gift of the Titans
-	}
 
 	local frame = CreateFrame("Frame")
 	frame:RegisterEvent("PLAYER_LOGIN")
