@@ -508,6 +508,7 @@ tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
 local function LoadSecondarySkin()
 	ChallengesFrameInset:StripTextures()
 	ChallengesFrame:DisableDrawLayer("BACKGROUND")
+	ChallengesFrame.WeeklyInfo.Child:DisableDrawLayer("BACKGROUND")
 
 	hooksecurefunc("ChallengesFrame_Update", function(self)
 		for _, frame in ipairs(self.DungeonIcons) do
