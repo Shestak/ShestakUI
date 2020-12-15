@@ -215,7 +215,7 @@ local micromenu = {
 			end
 		end
 	end},
-	{text = DUNGEONS_BUTTON, notCheckable = 1, func = function()
+	{text = GROUP_FINDER, notCheckable = 1, func = function()
 		if T.level >= 10 then
 			PVEFrame_ToggleFrame("GroupFinderFrame", nil)
 		else
@@ -256,6 +256,15 @@ local micromenu = {
 
 if not IsTrialAccount() and not C_StorePublic.IsDisabledByParentalControls() then
 	tinsert(micromenu, {text = BLIZZARD_STORE, notCheckable = 1, func = function() StoreMicroButton:Click() end})
+end
+
+if T.level == MAX_PLAYER_LEVEL then
+	tinsert(micromenu, {text = RATED_PVP_WEEKLY_VAULT, notCheckable = 1, func = function()
+		if not WeeklyRewardsFrame then
+			WeeklyRewards_LoadUI()
+		end
+		ToggleFrame(WeeklyRewardsFrame)
+	end})
 end
 
 local frame = CreateFrame("Frame")
