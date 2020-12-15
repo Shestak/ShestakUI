@@ -212,8 +212,9 @@ local function LoadSkin()
 
 		button.Reward:StripTextures()
 		button.Reward:SetTemplate("Default")
-		button.Reward:SetSize(35, 35)
+		button.Reward:SetSize(40, 40)
 		button.Reward:SetPoint("RIGHT", button, "RIGHT", -7, -1)
+		button.Reward.CircleMask:Hide()
 
 		button.Reward.Icon:SetAllPoints()
 		button.Reward.Icon:SetPoint("TOPLEFT", 2, -2)
@@ -238,13 +239,13 @@ local function LoadSkin()
 	NewSeasonPopup.SeasonDescription2:SetTextColor(1, 1, 1)
 	NewSeasonPopup.SeasonDescription2:SetShadowOffset(1, -1)
 	NewSeasonPopup.SeasonDescription2:SetWidth(400)
+	NewSeasonPopup.SeasonRewardText:SetTextColor(1, 0.8, 0)
+	NewSeasonPopup.SeasonRewardText:SetShadowOffset(1, -1)
 
 	local RewardFrame = NewSeasonPopup.SeasonRewardFrame
 	RewardFrame.Ring:Hide()
 	RewardFrame.CircleMask:Hide()
 	RewardFrame.Icon:SkinIcon()
-	--FIXME select(3, RewardFrame:GetRegions()):SetTextColor(1, 0.8, 0)
-	-- select(3, RewardFrame:GetRegions()):SetShadowOffset(1, -1)
 
 	NewSeasonPopup.Leave:SkinButton()
 end
