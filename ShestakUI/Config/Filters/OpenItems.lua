@@ -550,8 +550,10 @@ T.OpenItems = {
 	[174961] = true,	-- Cache of the Amathet
 	[181372] = true,	-- Tribute of the Ascended
 	[181475] = true,	-- Bounty of the Grove Wardens
+	[181476] = true,	-- Tribute of the Wild Hunt
 	[181556] = true,	-- Tribute of the Court
 	[181741] = true,	-- Tribute of the Paragon
 	[181732] = true,	-- Tribute of the Ambitious
+	[183701] = true,	-- Cleansing Rite Materials
 	[184522] = true,	-- Veiled Satchel of Cooperation
 }
