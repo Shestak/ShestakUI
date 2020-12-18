@@ -165,6 +165,7 @@ end)
 ----------------------------------------------------------------------------------------
 local menuFrame = CreateFrame("Frame", "MinimapRightClickMenu", UIParent, "UIDropDownMenuTemplate")
 local guildText = IsInGuild() and ACHIEVEMENTS_GUILD_TAB or LOOKINGFORGUILD
+local journalText = T.client == "ruRU" and ENCOUNTER_JOURNAL or ADVENTURE_JOURNAL
 local micromenu = {
 	{text = CHARACTER_BUTTON, notCheckable = 1, func = function()
 		ToggleCharacter("PaperDollFrame")
@@ -226,7 +227,7 @@ local micromenu = {
 			end
 		end
 	end},
-	{text = ADVENTURE_JOURNAL, notCheckable = 1, func = function()
+	{text = journalText, notCheckable = 1, func = function()
 		if C_AdventureJournal.CanBeShown() then
 			ToggleEncounterJournal()
 		else
