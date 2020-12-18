@@ -13,6 +13,17 @@ local function LoadSkin()
 	T.SkinNextPrevButton(frame.Pager.NextPage)
 
 	frame.OpenPortalButton:SkinButton()
+
+	hooksecurefunc(TorghastLevelPickerFrame, "ScrollAndSelectHighestAvailableLayer", function(self)
+		for layer in self.gossipOptionsPool:EnumerateActive() do
+			if not layer.styled then
+				layer.SelectedBorder:SetAtlas("charactercreate-ring-select")
+				layer.SelectedBorder:SetSize(120, 120)
+				layer.SelectedBorder:SetPoint("CENTER", 0, 0)
+				layer.styled = true
+			end
+		end
+	end)
 end
 
 T.SkinFuncs["Blizzard_TorghastLevelPicker"] = LoadSkin
