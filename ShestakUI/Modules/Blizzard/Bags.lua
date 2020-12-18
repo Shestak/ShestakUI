@@ -204,6 +204,9 @@ function Stuffing:SlotUpdate(b)
 	end
 
 	b.frame.Azerite:Hide()
+	b.frame.Conduit:Hide()
+	b.frame.Conduit2:Hide()
+
 	b.frame:UpdateItemContextMatching() -- Update Scrap items
 
 	if b.frame.UpgradeIcon then
@@ -237,8 +240,16 @@ function Stuffing:SlotUpdate(b)
 			b.frame.text:SetText(b.itemlevel)
 		end
 
-		if b.frame.Azerite and C_AzeriteEmpoweredItem.IsAzeriteEmpoweredItemByID(clink) then
+		if C_AzeriteEmpoweredItem.IsAzeriteEmpoweredItemByID(clink) then
+			b.frame.Azerite:SetAtlas("AzeriteIconFrame")
 			b.frame.Azerite:Show()
+		elseif C_Soulbinds.IsItemConduitByItemInfo(clink) then
+			b.frame.Conduit:SetAtlas("ConduitIconFrame")
+			b.frame.Conduit:Show()
+			local color = BAG_ITEM_QUALITY_COLORS[quality]
+			b.frame.Conduit:SetVertexColor(color.r, color.g, color.b)
+			b.frame.Conduit2:SetAtlas("ConduitIconFrame-Corners")
+			b.frame.Conduit2:Show()
 		end
 
 		if (IsItemUnusable(clink) or b.level and b.level > T.level) and not locked then
@@ -561,10 +572,21 @@ function Stuffing:SlotNew(bag, slot)
 
 		ret.frame.Azerite = ret.frame:CreateTexture(nil, "ARTWORK")
 		ret.frame.Azerite:SetAtlas("AzeriteIconFrame")
-		ret.frame.Azerite:SetTexCoord(0, 1, 0, 1)
 		ret.frame.Azerite:SetPoint("TOPLEFT", ret.frame, 1, -1)
 		ret.frame.Azerite:SetPoint("BOTTOMRIGHT", ret.frame, -1, 1)
 		ret.frame.Azerite:Hide()
+
+		ret.frame.Conduit = ret.frame:CreateTexture(nil, "ARTWORK")
+		ret.frame.Conduit:SetAtlas("ConduitIconFrame")
+		ret.frame.Conduit:SetPoint("TOPLEFT", ret.frame, 2, -2)
+		ret.frame.Conduit:SetPoint("BOTTOMRIGHT", ret.frame, -2, 2)
+		ret.frame.Conduit:Hide()
+
+		ret.frame.Conduit2 = ret.frame:CreateTexture(nil, "ARTWORK")
+		ret.frame.Conduit2:SetAtlas("ConduitIconFrame-Corners")
+		ret.frame.Conduit2:SetPoint("TOPLEFT", ret.frame, 2, -2)
+		ret.frame.Conduit2:SetPoint("BOTTOMRIGHT", ret.frame, -2, 2)
+		ret.frame.Conduit2:Hide()
 
 		local Battlepay = _G[ret.frame:GetName()].BattlepayItemTexture
 		if Battlepay then
@@ -734,7 +756,7 @@ function Stuffing:CreateBagFrame(w)
 	f:EnableMouse(true)
 	f:SetMovable(true)
 	f:SetFrameStrata("MEDIUM")
-	f:SetFrameLevel(5)
+	f:SetFrameLevel(10)
 	f:RegisterForDrag("LeftButton")
 	f:SetScript("OnDragStart", function(self)
 		if IsAltKeyDown() or IsShiftKeyDown() then
