@@ -321,7 +321,14 @@ function Filger:OnEvent(event, unit, _, castID)
 		local name, _, icon = GetSpellInfo(castID)
 		local data = SpellGroups[self.Id].spells[name]
 		if data and data.filter == "ICD" and data.trigger == "NONE" and (not data.spec or data.spec == T.Spec) then
-			self.actives[castID] = {data = data, name = name, icon = icon, count = nil, start = GetTime(), duration = data.duration, spid = castID, sort = data.sort}
+			local start, duration = GetTime(), data.duration
+			if data.totem then
+				local haveTotem, _, startTime, durationTime = GetTotemInfo(1)
+				if haveTotem then
+					start, duration = startTime, durationTime
+				end
+			end
+			self.actives[data.spellID] = {data = data, name = name, icon = icon, count = nil, start = start, duration = duration, spid = data.spellID, sort = data.sort}
 			Filger.DisplayActives(self)
 		end
 	elseif event == "PLAYER_TARGET_CHANGED" then
