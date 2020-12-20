@@ -813,7 +813,7 @@ C["filger_spells"] = {
 			-- Temporal Shield
 			{spellID = 198111, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rune of Power
-			{spellID = 116011, unitID = "player", caster = "player", filter = "BUFF"},
+			{spellID = 116014, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Mirror Image
 			{spellID = 55342, filter = "ICD", trigger = "NONE", duration = 40},
 			-- Icicles
@@ -843,6 +843,8 @@ C["filger_spells"] = {
 			{spellID = 269651, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Clearcasting
 			{spellID = 263725, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Rune of Power
+			{spellID = 116011, filter = "ICD", trigger = "NONE", totem = true},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
