@@ -402,6 +402,8 @@ C["filger_spells"] = {
 			{spellID = 170856, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dash
 			{spellID = 1850, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Starfall
+			{spellID = 191034, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
@@ -427,6 +429,10 @@ C["filger_spells"] = {
 			{spellID = 69369, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Guardian of Elune
 			{spellID = 213680, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Eclipse (Solar)
+			{spellID = 48517, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Eclipse (Lunar)
+			{spellID = 48518, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
