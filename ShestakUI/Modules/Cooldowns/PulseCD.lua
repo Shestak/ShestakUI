@@ -191,8 +191,11 @@ frame:RegisterEvent("SPELL_UPDATE_COOLDOWN")
 
 function frame:UNIT_SPELLCAST_SUCCEEDED(unit, _, spellID)
 	if unit == "player" then
-		local name = GetSpellInfo(spellID) -- Fix wrong double cd for trinket
-		watching[spellID] = {GetTime(), "spell", name}
+		local texture = GetSpellTexture(spellID)
+		local t1 = GetInventoryItemTexture("player", 13)
+		local t2 = GetInventoryItemTexture("player", 14)
+		if texture == t1 or texture == t2 then return end -- Fix wrong buff cd for trinket
+		watching[spellID] = {GetTime(), "spell", spellID}
 		self:SetScript("OnUpdate", OnUpdate)
 	end
 end
