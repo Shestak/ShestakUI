@@ -356,3 +356,34 @@ if C.chat.loot_icons == true then
 
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_LOOT", AddLootIcons)
 end
+
+----------------------------------------------------------------------------------------
+--	Swith channels by Tab
+----------------------------------------------------------------------------------------
+local cycles = {
+	{chatType = "SAY", use = function() return 1 end},
+	{chatType = "PARTY", use = function() return not IsInRaid() and IsInGroup(LE_PARTY_CATEGORY_HOME) end},
+	{chatType = "RAID", use = function() return IsInRaid(LE_PARTY_CATEGORY_HOME) end},
+	{chatType = "INSTANCE_CHAT", use = function() return IsPartyLFG() end},
+	{chatType = "GUILD", use = function() return IsInGuild() end},
+	{chatType = "SAY", use = function() return 1 end},
+}
+
+local function UpdateTabChannelSwitch(self)
+	if strsub(tostring(self:GetText()), 1, 1) == "/" then return end
+	local currChatType = self:GetAttribute("chatType")
+	for i, curr in ipairs(cycles) do
+		if curr.chatType == currChatType then
+			local h, r, step = i + 1, #cycles, 1
+			if IsShiftKeyDown() then h, r, step = i - 1, 1, -1 end
+			for j = h, r, step do
+				if cycles[j]:use(self, currChatType) then
+					self:SetAttribute("chatType", cycles[j].chatType)
+					ChatEdit_UpdateHeader(self)
+					return
+				end
+			end
+		end
+	end
+end
+hooksecurefunc("ChatEdit_CustomTabPressed", UpdateTabChannelSwitch)
