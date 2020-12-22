@@ -996,6 +996,20 @@ local function LoadSkin()
 
 	CovenantMissionFrame.MissionTab.MissionPage.CostFrame.CostLabel:SetFont(C.media.normal_font, 14)
 	CovenantMissionFrame.MissionTab.MissionPage.CostFrame.CostIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+	----------------------------------------------------------------------------------------
+	--	KayrCovenantMissions AddOn skin
+	----------------------------------------------------------------------------------------
+	if IsAddOnLoaded("KayrCovenantMissions") then
+		hooksecurefunc(CovenantMissionFrame, "SetupTabs", function(tab, isSelected)
+			if KayrCovenantMissionsAdvice then
+				KayrCovenantMissionsAdvice:StripTextures()
+				KayrCovenantMissionsAdvice:CreateBackdrop("Transparent")
+				KayrCovenantMissionsAdvice.backdrop:SetPoint("TOPLEFT", 2, -4)
+				KayrCovenantMissionsAdvice.backdrop:SetPoint("BOTTOMRIGHT", 0, 4)
+			end
+		end)
+	end
 end
 
 T.SkinFuncs["Blizzard_GarrisonUI"] = LoadSkin
