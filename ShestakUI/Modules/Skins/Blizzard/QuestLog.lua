@@ -214,7 +214,7 @@ local function LoadSkin()
 
 					-- AdventuresFollowerPortraitFrame
 					local portrait = followerReward.AdventuresFollowerPortraitFrame
-					portrait:SetWidth(portrait:GetHeight())
+					portrait:SetWidth(portrait:GetHeight() - 2)
 					portrait:ClearAllPoints()
 					portrait:SetPoint("RIGHT", followerReward.backdrop, "LEFT", -2, 0)
 
@@ -237,7 +237,7 @@ local function LoadSkin()
 
 					portrait.Portrait:SetTexCoord(0.2, 0.85, 0.2, 0.85)
 					portrait.Portrait:ClearAllPoints()
-					portrait.Portrait:SetInside(portrait.backdrop)
+					portrait.Portrait:SetInside(portrait.backdrop, 3, 3)
 
 					local point, relativeTo, relativePoint, _, yOfs = followerReward:GetPoint()
 					followerReward:SetPoint(point, relativeTo, relativePoint, 8, yOfs)
