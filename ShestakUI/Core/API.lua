@@ -3,6 +3,11 @@
 local backdropr, backdropg, backdropb, backdropa = unpack(C.media.backdrop_color)
 local borderr, borderg, borderb, bordera = unpack(C.media.border_color)
 
+local Mult = T.mult
+if T.screenHeight > 1200 then
+	Mult = T.Scale(1)
+end
+
 ----------------------------------------------------------------------------------------
 --	Position functions
 ----------------------------------------------------------------------------------------
@@ -50,11 +55,11 @@ local function CreateBorder(f, i, o)
 	if i then
 		if f.iborder then return end
 		local border = CreateFrame("Frame", "$parentInnerBorder", f, "BackdropTemplate")
-		border:SetPoint("TOPLEFT", T.mult, -T.mult)
-		border:SetPoint("BOTTOMRIGHT", -T.mult, T.mult)
+		border:SetPoint("TOPLEFT", Mult, -Mult)
+		border:SetPoint("BOTTOMRIGHT", -Mult, Mult)
 		border:SetBackdrop({
-			edgeFile = C.media.blank, edgeSize = T.mult,
-			insets = {left = T.mult, right = T.mult, top = T.mult, bottom = T.mult}
+			edgeFile = C.media.blank, edgeSize = Mult,
+			insets = {left = Mult, right = Mult, top = Mult, bottom = Mult}
 		})
 		border:SetBackdropBorderColor(unpack(C.media.backdrop_color))
 		f.iborder = border
@@ -63,12 +68,12 @@ local function CreateBorder(f, i, o)
 	if o then
 		if f.oborder then return end
 		local border = CreateFrame("Frame", "$parentOuterBorder", f, "BackdropTemplate")
-		border:SetPoint("TOPLEFT", -T.mult, T.mult)
-		border:SetPoint("BOTTOMRIGHT", T.mult, -T.mult)
+		border:SetPoint("TOPLEFT", -Mult, Mult)
+		border:SetPoint("BOTTOMRIGHT", Mult, -Mult)
 		border:SetFrameLevel(f:GetFrameLevel() + 1)
 		border:SetBackdrop({
-			edgeFile = C.media.blank, edgeSize = T.mult,
-			insets = {left = T.mult, right = T.mult, top = T.mult, bottom = T.mult}
+			edgeFile = C.media.blank, edgeSize = Mult,
+			insets = {left = Mult, right = Mult, top = Mult, bottom = Mult}
 		})
 		border:SetBackdropBorderColor(unpack(C.media.backdrop_color))
 		f.oborder = border
@@ -90,8 +95,8 @@ local function SetTemplate(f, t)
 	GetTemplate(t)
 
 	f:SetBackdrop({
-		bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = T.mult,
-		insets = {left = -T.mult, right = -T.mult, top = -T.mult, bottom = -T.mult}
+		bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = Mult,
+		insets = {left = -Mult, right = -Mult, top = -Mult, bottom = -Mult}
 	})
 
 	if t == "Transparent" then
@@ -118,8 +123,8 @@ local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 	f:SetFrameStrata("BACKGROUND")
 	f:SetPoint(a1, p, a2, x, y)
 	f:SetBackdrop({
-		bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = T.mult,
-		insets = {left = -T.mult, right = -T.mult, top = -T.mult, bottom = -T.mult}
+		bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = Mult,
+		insets = {left = -Mult, right = -Mult, top = -Mult, bottom = -Mult}
 	})
 
 	if t == "Transparent" then
