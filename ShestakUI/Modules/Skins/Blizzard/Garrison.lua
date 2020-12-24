@@ -945,6 +945,12 @@ local function LoadSkin()
 	CovenantMissionFrameMissions.RaisedFrameEdges:StripTextures()
 	T.SkinScrollBar(CovenantMissionFrameMissionsListScrollFrameScrollBar)
 
+	CovenantMissionFrameMissionsListScrollFrameScrollBarScrollUpButton:SetSize(17, 15)
+	CovenantMissionFrameMissionsListScrollFrameScrollBarThumbTexture:SetWidth(17)
+	CovenantMissionFrameMissionsListScrollFrameScrollBarScrollDownButton:SetSize(17, 15)
+	CovenantMissionFrameMissionsListScrollFrameScrollBar:SetPoint("TOPLEFT", CovenantMissionFrameMissionsListScrollFrame, "TOPRIGHT", -17, -23)
+	CovenantMissionFrameMissionsListScrollFrameScrollBar:SetPoint("BOTTOMLEFT", CovenantMissionFrameMissionsListScrollFrame, "BOTTOMRIGHT", -17, 21)
+
 	for i = 1, #CovenantMissionFrame.MissionTab.MissionList.listScroll.buttons do
 		local button = CovenantMissionFrame.MissionTab.MissionList.listScroll.buttons[i]
 		if not button.backdrop then
@@ -955,6 +961,10 @@ local function LoadSkin()
 			button.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 			button:StyleButton(nil, 2)
 			button.Overlay.Overlay:SetAllPoints(button.backdrop)
+
+			if i ~= 1 then
+				button:SetPoint("TOPLEFT", CovenantMissionFrame.MissionTab.MissionList.listScroll.buttons[i-1], "BOTTOMLEFT", 0, -3)
+			end
 		end
 	end
 
@@ -990,6 +1000,7 @@ local function LoadSkin()
 	CovenantMissionFrame.MissionTab.MissionPage.StartMissionButton:SkinButton()
 
 	CovenantMissionFrame.MissionComplete.CompleteFrame.ContinueButton:SkinButton()
+	CovenantMissionFrame.MissionComplete.CompleteFrame.SpeedButton:SkinButton()
 	CovenantMissionFrame.MissionComplete.RewardsScreen.FinalRewardsPanel.ContinueButton:SkinButton()
 
 	HandleGarrisonPortrait(GarrisonLandingPage.FollowerTab.CovenantFollowerPortraitFrame)
