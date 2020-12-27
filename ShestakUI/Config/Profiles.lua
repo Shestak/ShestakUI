@@ -230,6 +230,8 @@ if IsWetxius then
 	C["automation"].auto_role = true
 	C["automation"].tab_binder = true
 	C["automation"].open_items = true
+	C["enemycooldown"].show_inparty = true
+	C["enemycooldown"].class_color = true
 	C["pulsecooldown"].enable = true
 	C["pulsecooldown"].threshold = 6
 	C["threat"].enable = false
@@ -258,6 +260,11 @@ if IsWetxius then
 	frame:SetScript("OnEvent", function()
 		xCT3:SetPoint("CENTER", 0, 305)
 	end)
+
+	T.CustomFilgerSpell = {
+		{"P_PROC_ICON", {spellID = 328908, unitID = "player", caster = "player", filter = "BUFF"}}, -- Combat Meditation
+		{"P_PROC_ICON", {spellID = 26573, filter = "ICD", trigger = "NONE", totem = true}}, -- Consecration
+	}
 end
 
 ----------------------------------------------------------------------------------------
