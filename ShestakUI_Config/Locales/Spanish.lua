@@ -381,6 +381,7 @@ L_GUI_BAGS = "Bolsas"
 L_GUI_BAGS_SUBTEXT = "Right click on the close button to open the menu. To move the bags, hold down Shift - click." -- Need review
 L_GUI_BAGS_ENABLE = "Activar bolsas"
 L_GUI_BAGS_ILVL = "Show item level for weapons and armor" -- Need review
+L.bag_new_items = "Show animation for new items" -- Need review
 L_GUI_BAGS_BUTTON_SIZE = "Tamaño de los huecos"
 L_GUI_BAGS_BUTTON_SPACE = "Espacio entre huecos"
 L_GUI_BAGS_BANK = "Número de columnas en el banco"
