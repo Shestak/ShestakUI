@@ -1962,8 +1962,11 @@ do
 	local ilvl = ns.CreateCheckBox(parent, "ilvl", L_GUI_BAGS_ILVL)
 	ilvl:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
 
+	local new_items = ns.CreateCheckBox(parent, "new_items")
+	new_items:SetPoint("TOPLEFT", ilvl, "BOTTOMLEFT", 0, 0)
+
 	local button_size = ns.CreateNumberSlider(parent, "button_size", nil, nil, 0, 40, 1, true, L_GUI_BAGS_BUTTON_SIZE)
-	button_size:SetPoint("TOPLEFT", ilvl, "BOTTOMLEFT", 0, -20)
+	button_size:SetPoint("TOPLEFT", new_items, "BOTTOMLEFT", 0, -20)
 
 	local button_space = ns.CreateNumberSlider(parent, "button_space", nil, nil, 0, 10, 1, true, L_GUI_BAGS_BUTTON_SPACE)
 	button_space:SetPoint("LEFT", button_size, "RIGHT", 120, 0)

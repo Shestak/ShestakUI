@@ -381,6 +381,7 @@ L_GUI_BAGS = "Sacche"
 L_GUI_BAGS_SUBTEXT = "Right click on the close button to open the menu. To move the bags, hold down Shift - click." -- Need review
 L_GUI_BAGS_ENABLE = "Attiva le sacche"
 L_GUI_BAGS_ILVL = "Mostra il livello oggetto di armi e armature"
+L.bag_new_items = "Show animation for new items" -- Need review
 L_GUI_BAGS_BUTTON_SIZE = "Dimensioni degli scomparti"
 L_GUI_BAGS_BUTTON_SPACE = "Spazio tra gli scomparti"
 L_GUI_BAGS_BANK = "Numero di colonne in banca"

@@ -247,7 +247,9 @@ function Stuffing:SlotUpdate(b)
 			b.frame.Conduit:SetAtlas("ConduitIconFrame")
 			b.frame.Conduit:Show()
 			local color = BAG_ITEM_QUALITY_COLORS[quality]
-			b.frame.Conduit:SetVertexColor(color.r, color.g, color.b)
+			if color then
+				b.frame.Conduit:SetVertexColor(color.r, color.g, color.b)
+			end
 			b.frame.Conduit2:SetAtlas("ConduitIconFrame-Corners")
 			b.frame.Conduit2:Show()
 		end
@@ -273,6 +275,33 @@ function Stuffing:SlotUpdate(b)
 	SetItemButtonTexture(b.frame, texture)
 	SetItemButtonCount(b.frame, count)
 	SetItemButtonDesaturated(b.frame, locked)
+
+	if C.bag.new_items then
+		local IsNewItem = C_NewItems.IsNewItem(b.bag, b.slot)
+		if IsNewItem then
+			if not b.frame.Animation then
+				b.frame.Animation = b.frame:CreateAnimationGroup()
+				b.frame.Animation:SetLooping("BOUNCE")
+
+				b.frame.Animation.FadeOut = b.frame.Animation:CreateAnimation("Alpha")
+				b.frame.Animation.FadeOut:SetFromAlpha(1)
+				b.frame.Animation.FadeOut:SetToAlpha(0.6)
+				b.frame.Animation.FadeOut:SetDuration(0.4)
+				b.frame.Animation.FadeOut:SetSmoothing("IN_OUT")
+				b.frame:HookScript("OnEnter", function(self)
+					local IsNewItem = C_NewItems.IsNewItem(b.bag, b.slot)
+
+					if not IsNewItem and b.frame.Animation:IsPlaying() then
+						b.frame.Animation:Stop()
+					end
+				end)
+			end
+
+			if not b.frame.Animation:IsPlaying() then
+				b.frame.Animation:Play()
+			end
+		end
+	end
 
 	b.frame:Show()
 end

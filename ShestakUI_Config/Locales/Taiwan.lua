@@ -381,6 +381,7 @@ L_GUI_BAGS = "背包"
 L_GUI_BAGS_SUBTEXT = "背包的關閉按鈕另有菜單按右鍵開啓。按住Shift+左鍵可拖動。"
 L_GUI_BAGS_ENABLE = "背包增強"
 L_GUI_BAGS_ILVL = "顯示物品等級"
+L.bag_new_items = "Show animation for new items" -- Need review
 L_GUI_BAGS_BUTTON_SIZE = "格子大小"
 L_GUI_BAGS_BUTTON_SPACE = "格子間隔"
 L_GUI_BAGS_BANK = "銀行每行格數"

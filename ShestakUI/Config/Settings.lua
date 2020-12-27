@@ -409,6 +409,7 @@ C["combattext"] = {
 C["bag"] = {
 	["enable"] = true,							-- Enable bags
 	["ilvl"] = false,							-- Show item level for weapons and armor
+	["new_items"] = false,						-- Show animation for new items
 	["button_size"] = 27,						-- Buttons size
 	["button_space"] = 3,						-- Buttons space
 	["bank_columns"] = 17,						-- Horizontal number of columns in bank

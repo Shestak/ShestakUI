@@ -381,6 +381,7 @@ L_GUI_BAGS = "Taschen"
 L_GUI_BAGS_SUBTEXT = "Klicke mit der rechten Maustaste auf die Schaltfläche Schließen, um das Menü zu öffnen. Um die Beutel zu bewegen, halte die Umschalttaste gedrückt."
 L_GUI_BAGS_ENABLE = "Taschen aktivieren"
 L_GUI_BAGS_ILVL = "Zeigt Itemlevel der Waffen & Rüstung"
+L.bag_new_items = "Show animation for new items" -- Need review
 L_GUI_BAGS_BUTTON_SIZE = "Buttongröße"
 L_GUI_BAGS_BUTTON_SPACE = "Buttonabstand"
 L_GUI_BAGS_BANK = "Anzahl der Spalten in der Bank"
