@@ -69,7 +69,7 @@ local function _updateItems(unit, frame)
 			end
 
 			local color = "|cffFFFF00"
-			if itemLink and (i == 15 or i == 5 or i == 11 or i == 12) and (realItemLevel ~= "" and tonumber(realItemLevel) > 184) then
+			if itemLink and (i == 15 or i == 5 or i == 16 or i == 11 or i == 12) and (realItemLevel ~= "" and tonumber(realItemLevel) > 184) then
 				local _, _, enchant = strsplit(":", itemLink)
 				if enchant and enchant == "" then
 					color = "|cffFF0000"
