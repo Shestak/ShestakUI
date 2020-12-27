@@ -15,10 +15,6 @@ if C.combattext.healing then
 	T.healfilter[207694] = true		-- Symbiote Strike
 	T.healfilter[242597] = true		-- Rethu's Incessant Courage
 	T.healfilter[241835] = true		-- Starlight of Celumbra
-	T.healfilter[273836] = true		-- Filthy Transfusion [Azerite trait]
-	T.healfilter[280707] = true		-- Laser Matrix [Azerite trait]
-	T.healfilter[302847] = true		-- Anima of Life [Azerite Essence]
-	T.healfilter[298197] = true		-- Stand Your Ground [Azerite Essence]
 end
 
 -- General merge outgoing damage
@@ -28,25 +24,10 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[6603] = 3				-- Auto Attack
 	T.aoespam[195222] = 4			-- Stormlash
 	T.aoespam[195256] = 4			-- Stormlash
-	T.aoespam[270827] = 0.5			-- Webweaver's Soul Gem (Vessel of Skittering Shadows Trinket)
 	T.aoespam[207694] = 3			-- Symbiote Strike
 	T.aoespam[252907] = 5			-- Torment the Weak
 	T.aoespam[252896] = 0.5			-- Chaotic Darkness
 	T.aoespam[253022] = 0.5			-- Sorrow
-	T.aoespam[273836] = 3			-- Filthy Transfusion [Azerite trait]
-	T.aoespam[280705] = 3			-- Laser Matrix [Azerite trait]
-	T.aoespam[282724] = 5			-- Battlefield Focus [Azerite trait]
-	T.aoespam[255586] = 3.5			-- Lightning Arc [Azerite trait]
-	T.aoespam[279856] = 2			-- Glacial Assault [Azerite trait]
-	T.aoespam[295261] = 3			-- Focused Azerite Beam [Azerite Essence]
-	T.aoespam[294926] = 0.5			-- Anima of Death [Azerite Essence]
-	T.aoespam[294946] = 1			-- Anima of Death [Azerite Essence]
-	T.aoespam[296061] = 0.5			-- Null Barrier [Azerite trait]
-	T.aoespam[271686] = 1			-- Heed My Call [Azerite trait]
-	T.merge[271685] = 271686		-- Heed My Call [Azerite trait]
-	T.aoespam[317029] = 3			-- Echoing Void [Corruption]
-	T.aoespam[279958] = 0.5			-- Azerite Globules [Azerite trait]
-	T.aoespam[317159] = 3			-- Twilight Devastation [Corruption]
 end
 
 -- Class config
@@ -131,7 +112,7 @@ elseif T.class == "DEMONHUNTER" then
 		T.aoespam[199552] = 2		-- Blade Dance (AOE, Multi)
 		T.merge[200685] = 199552	-- Blade Dance
 		T.aoespam[201789] = 4		-- Fury of the Illidari
-		T.merge[201628] = 201789	-- Fury of the Illidari	Off-Hand
+		T.merge[201628] = 201789	-- Fury of the Illidari Off-Hand
 		T.aoespam[203796] = 4		-- Demon Blades
 		T.aoespam[192611] = 1		-- Fel Rush
 		T.aoespam[198030] = 3		-- Eye Beam
@@ -142,11 +123,11 @@ elseif T.class == "DEMONHUNTER" then
 		T.aoespam[207690] = 10		-- Bloodlet
 		T.aoespam[202446] = 1		-- Anguish
 		T.aoespam[211796] = 4		-- Chaos Blades
-		T.merge[211797] = 211796	-- Chaos Blades	Off-Hand
+		T.merge[211797] = 211796	-- Chaos Blades Off-Hand
 		T.aoespam[227518] = 1.5		-- Annihilation
-		T.merge[201428] = 227518	-- Annihilation	Off-Hand
+		T.merge[201428] = 227518	-- Annihilation Off-Hand
 		T.aoespam[210153] = 2		-- Death Sweep
-		T.merge[210155] = 210153	-- Death Sweep	Off-Hand
+		T.merge[210155] = 210153	-- Death Sweep Off-Hand
 		T.aoespam[236237] = 2		-- Chaos Cleave
 		T.aoespam[203794] = 2		-- Consume Soul
 	end
@@ -165,7 +146,6 @@ elseif T.class == "DRUID" then
 		T.aoespam[157982] = 3		-- Tranquility
 		T.aoespam[81269] = 4		-- Wild Mushroom
 		T.aoespam[124988] = 3		-- Nature's Vigil
-		T.aoespam[144876] = 3		-- Spark of Life (T16)
 		T.aoespam[155777] = 4		-- Rejuvenation (Germination)
 		-- Damaging spells
 		T.aoespam[274838] = 2		-- Feral Frenzy
@@ -364,7 +344,6 @@ elseif T.class == "PALADIN" then
 		T.aoespam[85222] = 1		-- Light of Dawn
 		T.aoespam[114852] = 0		-- Holy Prism
 		T.aoespam[119952] = 3		-- Arcing Light
-		T.aoespam[144581] = 3		-- Blessing of the Guardians (T16)
 		T.aoespam[183811] = 6		-- Judgment of Light
 		T.aoespam[225311] = 1		-- Light of Dawn
 		-- Damaging spells
@@ -583,12 +562,12 @@ elseif T.class == "WARRIOR" then
 	if C.combattext.merge_aoe_spam then
 		T.aoespam[845] = 0.5		-- Cleave (Arms)
 		T.aoespam[202147] = 5		-- Second Wind (Arms Talent Heal)
-		T.aoespam[260643] = 0.5		-- Skullsplitter (Arms Talent Sweeping Strikes)
-		T.aoespam[167105] = 0.5		-- Colossus Smash (Arms Talent Sweeping Strikes)
-		T.aoespam[260798] = 0.5		-- Execute Arms (Arms Talent Sweeping Strikes)
-		T.aoespam[7384] = 0.5		-- Overpower (Arms Talent Sweeping Strikes)
-		T.aoespam[1464] = 0.5		-- Slam (Arms Talent Sweeping Strikes)
-		T.aoespam[12294] = 0.5		-- Mortal Strike (Arms Talent Sweeping Strikes)
+		T.aoespam[260643] = 0.5		-- Skullsplitter (Sweeping Strikes)
+		T.aoespam[167105] = 0.5		-- Colossus Smash (Sweeping Strikes)
+		T.aoespam[260798] = 0.5		-- Execute Arms (Sweeping Strikes)
+		T.aoespam[7384] = 0.5		-- Overpower (Sweeping Strikes)
+		T.aoespam[1464] = 0.5		-- Slam (Sweeping Strikes)
+		T.aoespam[12294] = 0.5		-- Mortal Strike (Sweeping Strikes)
 		T.aoespam[262115] = 3		-- Deep Wounds (Arms Mastery DoT)
 		T.aoespam[262161] = 1		-- Warbreaker (Arms Talent)
 		T.aoespam[199850] = 1.5		-- Whirlwind (Arms)

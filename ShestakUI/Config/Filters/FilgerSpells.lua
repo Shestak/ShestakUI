@@ -229,8 +229,6 @@ C["filger_spells"] = {
 			-- Buffs
 			-- Soul Fragments
 			{spellID = 203981, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Painbringer (Vengeance Artifact)
-			{spellID = 212988, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Momentum
 			{spellID = 208628, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -324,8 +322,6 @@ C["filger_spells"] = {
 			{spellID = 211053, filter = "CD"},
 			-- Vengeful Retreat
 			{spellID = 198793, filter = "CD", absID = true},
-			-- Soul Carver (Artifact)
-			{spellID = 207407, filter = "CD"},
 			-- Sigil of Silence
 			{spellID = 202137, filter = "CD"},
 			-- Sigil of Misery
@@ -350,8 +346,6 @@ C["filger_spells"] = {
 			{spellID = 236189, filter = "CD"},
 			-- Blur
 			{spellID = 198589, filter = "CD"},
-			-- Fury of the Illidari (Artifact)
-			{spellID = 201467, filter = "CD"},
 			-- Netherwalk
 			{spellID = 196555, filter = "CD"},
 			-- Nemesis
