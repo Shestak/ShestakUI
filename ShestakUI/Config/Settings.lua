@@ -169,6 +169,7 @@ C["raidframe"] = {
 	["raid_tanks_tt"] = false,					-- Show raid tanks target target
 	["raid_groups"] = 5,						-- Number of groups in raid
 	["auto_position"] = "DYNAMIC",				-- Auto reposition raid frame (only for Heal layout) (DYNAMIC, STATIC, NONE)
+	["party_vertical"] = false,					-- Vertical party (only for Heal layout)
 	["raid_groups_vertical"] = false,			-- Vertical raid groups (only for Heal layout)
 	["vertical_health"] = false,				-- Vertical orientation of health (only for Heal layout)
 	["by_role"] = true,							-- Sorting players in group by role

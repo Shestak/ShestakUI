@@ -1238,8 +1238,11 @@ do
 	local auto_position = ns.CreateDropDown(parent, "auto_position", true, L.raidframe_auto_position, {"DYNAMIC", "STATIC", "NONE"})
 	auto_position:SetPoint("TOPLEFT", raid_groups, "BOTTOMLEFT", -16, -10)
 
+	local party_vertical = ns.CreateCheckBox(parent, "party_vertical", nil, L.raidframe_raid_groups_vertical_desc)
+	party_vertical:SetPoint("TOPLEFT", auto_position, "BOTTOMLEFT", 16, 0)
+
 	local raid_groups_vertical = ns.CreateCheckBox(parent, "raid_groups_vertical")
-	raid_groups_vertical:SetPoint("TOPLEFT", auto_position, "BOTTOMLEFT", 16, 0)
+	raid_groups_vertical:SetPoint("TOPLEFT", party_vertical, "BOTTOMLEFT", 0, 0)
 
 	local vertical_health = ns.CreateCheckBox(parent, "vertical_health")
 	vertical_health:SetPoint("TOPLEFT", raid_groups_vertical, "BOTTOMLEFT", 0, 0)

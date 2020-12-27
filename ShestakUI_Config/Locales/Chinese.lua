@@ -176,6 +176,7 @@ L_GUI_UF_PLAYER_PARTY = "队伍中显示玩家框架"
 L_GUI_UF_SHOW_TANK = "团队主坦克框架"
 L_GUI_UF_SHOW_TANK_TT = "坦克目标的目标"
 L_GUI_UF_RAID_GROUP = "小队数目"
+L.raidframe_raid_groups_vertical = "Vertical party frames" -- Needs review
 L.raidframe_raid_groups_vertical = "竖向排列团队队伍"
 L.raidframe_raid_groups_vertical_desc = "仅在HPS布局中生效"
 L_GUI_UF_SUBHEADER_ICONS = "标记"
