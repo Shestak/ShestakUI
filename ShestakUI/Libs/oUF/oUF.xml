@@ -36,7 +36,6 @@
 	<Script file="Finalize.lua"/>
 
 	<Script file="Modules\ArcaneCharge.lua"/>
-	<Script file="Modules\ArtifactPower.lua"/>
 	<Script file="Modules\AuraTracker.lua"/>
 	<Script file="Modules\AuraWatch.lua"/>
 	<Script file="Modules\AutoResurrect.lua"/>
