@@ -135,7 +135,18 @@ if C.reminder.solo_buffs_enable == true then
 			},
 		},
 		SHAMAN = {
-			[1] = {	-- Windfury Weapon group
+			[1] = {	-- Water/Earth Shield
+				["spells"] = {
+					SpellName(52127),	-- Water Shield
+					SpellName(974),	-- Earth Shield
+				},
+				-- ["spec"] = 3,
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
+				-- ["level"] = 10,
+			},
+			[2] = {	-- Windfury Weapon group
 				["spells"] = {
 					SpellName(33757),	-- Windfury Weapon
 				},
@@ -146,7 +157,7 @@ if C.reminder.solo_buffs_enable == true then
 				["pvp"] = true,
 				["level"] = 10,
 			},
-			[2] = {	-- Flametongue Weapon group
+			[3] = {	-- Flametongue Weapon group
 				["spells"] = {
 					SpellName(318038),	-- Flametongue Weapon
 				},
