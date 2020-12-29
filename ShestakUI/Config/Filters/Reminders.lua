@@ -140,11 +140,9 @@ if C.reminder.solo_buffs_enable == true then
 					SpellName(52127),	-- Water Shield
 					SpellName(974),	-- Earth Shield
 				},
-				-- ["spec"] = 3,
 				["combat"] = true,
 				["instance"] = true,
 				["pvp"] = true,
-				-- ["level"] = 10,
 			},
 			[2] = {	-- Windfury Weapon group
 				["spells"] = {
