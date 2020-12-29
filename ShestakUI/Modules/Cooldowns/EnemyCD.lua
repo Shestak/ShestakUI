@@ -108,11 +108,9 @@ local StartTimer = function(sGUID, sID)
 	icon.Texture:SetTexture(texture)
 	icon.Texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	icon.endTime = GetTime() + T.EnemySpells[sID]
-	local locClass, _, _, _, _, name, _ = GetPlayerInfoByGUID(sGUID)
-	local color = NULL
-	if locClass then
-		color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[string.upper(locClass):gsub("%s+", "")]
-	end
+	local locClass = "UNKNOWN"
+	locClass, _, _, _, _, name, _ = GetPlayerInfoByGUID(sGUID)
+	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[string.upper(locClass):gsub("%s+", "")]
 	if color then
 		name = format("|cff%02x%02x%02x%s|r", color.r * 255, color.g * 255, color.b * 255, name)
 		if C.enemycooldown.class_color then
