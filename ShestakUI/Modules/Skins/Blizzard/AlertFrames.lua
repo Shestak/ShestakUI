@@ -42,6 +42,7 @@ local function LoadSkin()
 		frame.Icon.Texture:ClearAllPoints()
 		frame.Icon.Texture:SetPoint("LEFT", frame, 8, 0)
 
+		-- Icon border
 		if not frame.Icon.Texture.b then
 			frame.Icon.Texture.b = CreateFrame("Frame", nil, frame)
 			frame.Icon.Texture.b:SetTemplate("Default")
@@ -126,6 +127,7 @@ local function LoadSkin()
 		frame.dungeonTexture:ClearAllPoints()
 		frame.dungeonTexture:SetPoint("LEFT", frame.backdrop, 9, 0)
 
+		-- Icon border
 		if not frame.dungeonTexture.b then
 			frame.dungeonTexture.b = CreateFrame("Frame", nil, frame)
 			frame.dungeonTexture.b:SetTemplate("Default")
@@ -167,6 +169,7 @@ local function LoadSkin()
 		frame.EmblemBackground:SetDrawLayer("ARTWORK", 1)
 		frame.EmblemIcon:SetDrawLayer("ARTWORK", 2)
 
+		-- Icon border
 		if not frame.EmblemBackground.b then
 			frame.EmblemBackground.b = CreateFrame("Frame", nil, frame)
 			frame.EmblemBackground.b:SetTemplate("Default")
@@ -275,11 +278,15 @@ local function LoadSkin()
 		frame.QuestTexture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		frame.QuestTexture:SetDrawLayer("ARTWORK")
 		frame.QuestTexture:SetPoint("LEFT", frame.backdrop, 8, 0)
-		frame.QuestTexture.b = CreateFrame("Frame", nil, frame)
-		frame.QuestTexture.b:SetTemplate("Default")
-		frame.QuestTexture.b:SetPoint("TOPLEFT", frame.QuestTexture, "TOPLEFT", -2, 2)
-		frame.QuestTexture.b:SetPoint("BOTTOMRIGHT", frame.QuestTexture, "BOTTOMRIGHT", 2, -2)
-		frame.QuestTexture:SetParent(frame.QuestTexture.b)
+
+		-- Icon border
+		if not frame.QuestTexture.b then
+			frame.QuestTexture.b = CreateFrame("Frame", nil, frame)
+			frame.QuestTexture.b:SetTemplate("Default")
+			frame.QuestTexture.b:SetPoint("TOPLEFT", frame.QuestTexture, "TOPLEFT", -2, 2)
+			frame.QuestTexture.b:SetPoint("BOTTOMRIGHT", frame.QuestTexture, "BOTTOMRIGHT", 2, -2)
+			frame.QuestTexture:SetParent(frame.QuestTexture.b)
+		end
 	end
 	hooksecurefunc(WorldQuestCompleteAlertSystem, "setUpFunction", SkinWorldQuestCompleteAlert)
 
@@ -314,16 +321,18 @@ local function LoadSkin()
 		level:SetFontObject("SystemFont_Outline_Small")
 		level:SetShadowOffset(0, 0)
 
-		local squareBG = CreateFrame("Frame", nil, frame.PortraitFrame)
-		squareBG:SetFrameLevel(frame.PortraitFrame:GetFrameLevel()-1)
-		squareBG:SetPoint("TOPLEFT", 2, -2)
-		squareBG:SetPoint("BOTTOMRIGHT", -2, 10)
-		squareBG:SetTemplate("Default")
+		if not frame.squareBG then
+			frame.squareBG = CreateFrame("Frame", nil, frame.PortraitFrame)
+			frame.squareBG:SetFrameLevel(frame.PortraitFrame:GetFrameLevel()-1)
+			frame.squareBG:SetPoint("TOPLEFT", 2, -2)
+			frame.squareBG:SetPoint("BOTTOMRIGHT", -2, 10)
+			frame.squareBG:SetTemplate("Default")
+		end
 
 		local cover = frame.PortraitFrame.PortraitRingCover
 		if cover then
 			cover:SetColorTexture(0, 0, 0)
-			cover:SetAllPoints(squareBG)
+			cover:SetAllPoints(frame.squareBG)
 		end
 
 		local color = ITEM_QUALITY_COLORS[quality]
@@ -359,7 +368,6 @@ local function LoadSkin()
 	hooksecurefunc(GarrisonShipFollowerAlertSystem, "setUpFunction", SkinGarrisonShipFollowerAlert)
 
 	local function SkinGarrisonTalentAlert(frame)
-		-- Create Backdrop
 		if not frame.backdrop then
 			frame:CreateBackdrop("Transparent")
 			frame.backdrop:SetPoint("TOPLEFT", frame, "TOPLEFT", 21, -6)
@@ -375,11 +383,15 @@ local function LoadSkin()
 		frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		frame.Icon:SetDrawLayer("ARTWORK")
 		frame.Icon:SetPoint("LEFT", frame.backdrop, 9, 0)
-		frame.Icon.b = CreateFrame("Frame", nil, frame)
-		frame.Icon.b:SetTemplate("Default")
-		frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
-		frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
-		frame.Icon:SetParent(frame.Icon.b)
+
+		-- Icon border
+		if not frame.Icon.b then
+			frame.Icon.b = CreateFrame("Frame", nil, frame)
+			frame.Icon.b:SetTemplate("Default")
+			frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
+			frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
+			frame.Icon:SetParent(frame.Icon.b)
+		end
 	end
 	hooksecurefunc(GarrisonTalentAlertSystem, "setUpFunction", SkinGarrisonTalentAlert)
 
@@ -398,11 +410,15 @@ local function LoadSkin()
 		frame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		frame.Icon:SetDrawLayer("ARTWORK")
 		frame.Icon:SetPoint("LEFT", frame.backdrop, 9, 0)
-		frame.Icon.b = CreateFrame("Frame", nil, frame)
-		frame.Icon.b:SetTemplate("Default")
-		frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
-		frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
-		frame.Icon:SetParent(frame.Icon.b)
+
+		-- Icon border
+		if not frame.Icon.b then
+			frame.Icon.b = CreateFrame("Frame", nil, frame)
+			frame.Icon.b:SetTemplate("Default")
+			frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
+			frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
+			frame.Icon:SetParent(frame.Icon.b)
+		end
 	end
 	hooksecurefunc(GarrisonBuildingAlertSystem, "setUpFunction", SkinGarrisonBuildingAlert)
 
@@ -424,11 +440,15 @@ local function LoadSkin()
 		frame.MissionType:SetDrawLayer("ARTWORK")
 		frame.MissionType:ClearAllPoints()
 		frame.MissionType:SetPoint("LEFT", frame.backdrop, 9, 0)
-		frame.MissionType.b = CreateFrame("Frame", nil, frame)
-		frame.MissionType.b:SetTemplate("Default")
-		frame.MissionType.b:SetPoint("TOPLEFT", frame.MissionType, "TOPLEFT", -2, 2)
-		frame.MissionType.b:SetPoint("BOTTOMRIGHT", frame.MissionType, "BOTTOMRIGHT", 2, -2)
-		frame.MissionType:SetParent(frame.MissionType.b)
+
+		-- Icon border
+		if not frame.MissionType.b then
+			frame.MissionType.b = CreateFrame("Frame", nil, frame)
+			frame.MissionType.b:SetTemplate("Default")
+			frame.MissionType.b:SetPoint("TOPLEFT", frame.MissionType, "TOPLEFT", -2, 2)
+			frame.MissionType.b:SetPoint("BOTTOMRIGHT", frame.MissionType, "BOTTOMRIGHT", 2, -2)
+			frame.MissionType:SetParent(frame.MissionType.b)
+		end
 
 		frame.EncounterIcon:SetSize(45, 45)
 		frame.EncounterIcon:SetOutside(frame.MissionType.b)
@@ -457,11 +477,15 @@ local function LoadSkin()
 		frame.MissionType:SetDrawLayer("ARTWORK")
 		frame.MissionType:ClearAllPoints()
 		frame.MissionType:SetPoint("LEFT", frame.backdrop, 9, 0)
-		frame.MissionType.b = CreateFrame("Frame", nil, frame)
-		frame.MissionType.b:SetTemplate("Default")
-		frame.MissionType.b:SetPoint("TOPLEFT", frame.MissionType, "TOPLEFT", -2, 2)
-		frame.MissionType.b:SetPoint("BOTTOMRIGHT", frame.MissionType, "BOTTOMRIGHT", 2, -2)
-		frame.MissionType:SetParent(frame.MissionType.b)
+
+		-- Icon border
+		if not frame.MissionType.b then
+			frame.MissionType.b = CreateFrame("Frame", nil, frame)
+			frame.MissionType.b:SetTemplate("Default")
+			frame.MissionType.b:SetPoint("TOPLEFT", frame.MissionType, "TOPLEFT", -2, 2)
+			frame.MissionType.b:SetPoint("BOTTOMRIGHT", frame.MissionType, "BOTTOMRIGHT", 2, -2)
+			frame.MissionType:SetParent(frame.MissionType.b)
+		end
 	end
 	hooksecurefunc(GarrisonShipMissionAlertSystem, "setUpFunction", SkinGarrisonShipMissionAlert)
 
@@ -484,11 +508,15 @@ local function LoadSkin()
 		frame.MissionType:SetDrawLayer("ARTWORK")
 		frame.MissionType:ClearAllPoints()
 		frame.MissionType:SetPoint("LEFT", frame.backdrop, 9, 0)
-		frame.MissionType.b = CreateFrame("Frame", nil, frame)
-		frame.MissionType.b:SetTemplate("Default")
-		frame.MissionType.b:SetPoint("TOPLEFT", frame.MissionType, "TOPLEFT", -2, 2)
-		frame.MissionType.b:SetPoint("BOTTOMRIGHT", frame.MissionType, "BOTTOMRIGHT", 2, -2)
-		frame.MissionType:SetParent(frame.MissionType.b)
+
+		-- Icon border
+		if not frame.MissionType.b then
+			frame.MissionType.b = CreateFrame("Frame", nil, frame)
+			frame.MissionType.b:SetTemplate("Default")
+			frame.MissionType.b:SetPoint("TOPLEFT", frame.MissionType, "TOPLEFT", -2, 2)
+			frame.MissionType.b:SetPoint("BOTTOMRIGHT", frame.MissionType, "BOTTOMRIGHT", 2, -2)
+			frame.MissionType:SetParent(frame.MissionType.b)
+		end
 	end
 	hooksecurefunc(GarrisonRandomMissionAlertSystem, "setUpFunction", SkinGarrisonRandomMissionAlert)
 
@@ -515,11 +543,15 @@ local function LoadSkin()
 		frame.Icon:SetDrawLayer("ARTWORK")
 		frame.Icon:ClearAllPoints()
 		frame.Icon:SetPoint("LEFT", frame.backdrop, 9, 0)
-		frame.Icon.b = CreateFrame("Frame", nil, frame)
-		frame.Icon.b:SetTemplate("Default")
-		frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
-		frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
-		frame.Icon:SetParent(frame.Icon.b)
+
+		-- Icon border
+		if not frame.Icon.b then
+			frame.Icon.b = CreateFrame("Frame", nil, frame)
+			frame.Icon.b:SetTemplate("Default")
+			frame.Icon.b:SetPoint("TOPLEFT", frame.Icon, "TOPLEFT", -2, 2)
+			frame.Icon.b:SetPoint("BOTTOMRIGHT", frame.Icon, "BOTTOMRIGHT", 2, -2)
+			frame.Icon:SetParent(frame.Icon.b)
+		end
 	end
 	hooksecurefunc(LegendaryItemAlertSystem, "setUpFunction", SkinLegendaryItemAlert)
 
