@@ -75,5 +75,6 @@ T.ABItems = {
 	[168482] = true,	-- Plug the Geysers
 	-- Shadowlands
 	[177836] = true,	-- Wingpierce Javelin
+	[180280] = true,	-- Soulforged Core
 	[183045] = true,	-- Korinna's Allaying Crook
 }
