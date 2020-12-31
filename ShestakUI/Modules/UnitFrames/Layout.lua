@@ -1308,25 +1308,25 @@ SlashCmdList.TEST_UF = function()
 			end
 		end
 
-		if C.unitframe.show_arena == true then
-			for i = 1, 5 do
-				_G["oUF_Arena"..i].oldunit = _G["oUF_Arena"..i].unit
-				_G["oUF_Arena"..i].Trinket.Hide = T.dummy
-				_G["oUF_Arena"..i].Trinket.Icon:SetTexture("Interface\\Icons\\INV_Jewelry_Necklace_37")
-				_G["oUF_Arena"..i]:SetAttribute("unit", "player")
+		-- if C.unitframe.show_arena == true then
+			-- for i = 1, 5 do
+				-- _G["oUF_Arena"..i].oldunit = _G["oUF_Arena"..i].unit
+				-- _G["oUF_Arena"..i].Trinket.Hide = T.dummy
+				-- _G["oUF_Arena"..i].Trinket.Icon:SetTexture("Interface\\Icons\\INV_Jewelry_Necklace_37")
+				-- _G["oUF_Arena"..i]:SetAttribute("unit", "player")
 
-				_G["oUF_Arena"..i.."Target"].oldunit = 	_G["oUF_Arena"..i.."Target"].unit
-				_G["oUF_Arena"..i.."Target"]:SetAttribute("unit", "player")
+				-- _G["oUF_Arena"..i.."Target"].oldunit = 	_G["oUF_Arena"..i.."Target"].unit
+				-- _G["oUF_Arena"..i.."Target"]:SetAttribute("unit", "player")
 
-				if C.unitframe.plugins_enemy_spec == true then
-					_G["oUF_Arena"..i].EnemySpec:SetText(SPECIALIZATION)
-				end
+				-- if C.unitframe.plugins_enemy_spec == true then
+					-- _G["oUF_Arena"..i].EnemySpec:SetText(SPECIALIZATION)
+				-- end
 
-				if C.unitframe.plugins_diminishing == true then
-					SlashCmdList.DIMINISHINGCD()
-				end
-			end
-		end
+				-- if C.unitframe.plugins_diminishing == true then
+					-- SlashCmdList.DIMINISHINGCD()
+				-- end
+			-- end
+		-- end
 
 		if C.unitframe.show_boss == true then
 			for i = 1, MAX_BOSS_FRAMES do
@@ -1342,13 +1342,13 @@ SlashCmdList.TEST_UF = function()
 			end
 		end
 
-		if C.unitframe.show_arena == true then
-			for i = 1, 5 do
-				_G["oUF_Arena"..i].Trinket.Hide = nil
-				_G["oUF_Arena"..i]:SetAttribute("unit", _G["oUF_Arena"..i].oldunit)
-				_G["oUF_Arena"..i.."Target"]:SetAttribute("unit", _G["oUF_Arena"..i.."Target"].oldunit)
-			end
-		end
+		-- if C.unitframe.show_arena == true then
+			-- for i = 1, 5 do
+				-- _G["oUF_Arena"..i].Trinket.Hide = nil
+				-- _G["oUF_Arena"..i]:SetAttribute("unit", _G["oUF_Arena"..i].oldunit)
+				-- _G["oUF_Arena"..i.."Target"]:SetAttribute("unit", _G["oUF_Arena"..i.."Target"].oldunit)
+			-- end
+		-- end
 
 		if C.unitframe.show_boss == true then
 			for i = 1, MAX_BOSS_FRAMES do
