@@ -19,19 +19,19 @@ local function scan(unit)
 	end
 end
 
-local function checkFood(unit)
-	scan(unit)
-	for _, id in pairs(foods) do
-		if unitBuffs[GetSpellInfo(id)] then
+local function checkFood()
+	for i = 1, #foods do
+		local name = unpack(foods[i])
+		if unitBuffs[name] then
 			return true
 		end
 	end
 end
 
-local function checkFlask(unit)
-	scan(unit)
-	for _, id in pairs(flasks) do
-		if unitBuffs[GetSpellInfo(id)] then
+local function checkFlask()
+	for i = 1, #flasks do
+		local name = unpack(flasks[i])
+		if unitBuffs[name] then
 			return true
 		end
 	end
@@ -39,10 +39,11 @@ end
 
 local function checkUnit(unit)
 	local name = UnitName(unit)
-	if not checkFood(unit) then
+	scan(unit)
+	if not checkFood() then
 		noFood[#noFood + 1] = name
 	end
-	if not checkFlask(unit) then
+	if not checkFlask() then
 		noFlask[#noFlask + 1] = name
 	end
 end
@@ -55,8 +56,6 @@ end
 local function run()
 	local checkType
 	local output
-
-	if C.announcements.flask_food_auto == true then C.announcements.flask_food_raid = true end
 
 	table.wipe(noFood)
 	table.wipe(noFlask)
