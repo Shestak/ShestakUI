@@ -102,6 +102,30 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 		end
 		_G["StaticPopup1ExtraButton"]:SkinButton()
 
+		-- _G["StaticPopup1CloseButton"]:HookScript("OnShow", function(self)
+			-- self:StripTextures(true)
+			-- T.SkinCloseButton(self, nil, "-")
+		-- end)
+
+		hooksecurefunc("StaticPopup_Show", function()
+			if StaticPopup1.insertedFrame and not StaticPopup1.insertedFrame.styled then
+				WeeklyRewardsFrameIconTexture:SkinIcon()
+				WeeklyRewardsFrameNameFrame:SetAlpha(0)
+				StaticPopup1.insertedFrame.ItemFrame.IconBorder:SetAlpha(0)
+				StaticPopup1.insertedFrame.styled = true
+
+				for AlsoItems in StaticPopup1.insertedFrame.AlsoItemsFrame.pool:EnumerateActive() do
+					if not AlsoItems.styled then
+						AlsoItems.IconBorder:SetAlpha(0)
+						AlsoItems.Icon:SkinIcon()
+						AlsoItems.styled = true
+					end
+				end
+			end
+		end)
+
+		T.SkinCloseButton(_G["RolePollPopupCloseButton"])
+
 		-- Cinematic popup
 		_G["CinematicFrameCloseDialog"]:SetScale(C.general.uiscale)
 		_G["CinematicFrameCloseDialog"]:StripTextures()
@@ -272,12 +296,6 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 		StackSplitFrame.backdrop:SetPoint("BOTTOMRIGHT", -5, 10)
 		StackSplitFrame.OkayButton:SkinButton()
 		StackSplitFrame.CancelButton:SkinButton()
-
-		_G["StaticPopup1CloseButton"]:HookScript("OnShow", function(self)
-			self:StripTextures(true)
-			T.SkinCloseButton(self, nil, "-")
-		end)
-		T.SkinCloseButton(_G["RolePollPopupCloseButton"])
 
 		if C.skins.blizzard_frames == true then
 			-- Social Browser frame
