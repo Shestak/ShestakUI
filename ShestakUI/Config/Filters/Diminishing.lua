@@ -21,7 +21,7 @@ T.DiminishingSpells = {
 	[22570] = {"stun"},				-- Maim
 	[163505] = {"stun"},			-- Rake (Prowl)
 	[5211] = {"stun"},				-- Mighty Bash
-	[202244] = {"stun"},			-- Overrun (Also a knockback)
+	[202244] = {"stun"},			-- Overrun
 	[24394] = {"stun"},				-- Intimidation
 	[119381] = {"stun"},			-- Leg Sweep
 	[202346] = {"stun"},			-- Double Barrel
@@ -43,9 +43,10 @@ T.DiminishingSpells = {
 	[199085] = {"stun"},			-- Warpath
 	[20549] = {"stun"},				-- War Stomp (Tauren)
 	[255723] = {"stun"},			-- Bull Rush (Highmountain Tauren)
-	--PTR [287712] = {"stun"},			-- Haymaker (Kul Tiran)
+	[287712] = {"stun"},			-- Haymaker (Kul Tiran)
 
 	-- Roots
+	[334693] = {"root"},			-- Absolute Zero (Breath of Sindragosa)
 	[204085] = {"root"},			-- Deathchill (Chains of Ice)
 	[233395] = {"root"},			-- Deathchill (Remorseless Winter)
 	[339] = {"root"},				-- Entangling Roots
@@ -100,6 +101,7 @@ T.DiminishingSpells = {
 	[211010] = {"incapacitate"},	-- Hex (Snake)
 	[211015] = {"incapacitate"},	-- Hex (Cockroach)
 	[269352] = {"incapacitate"},	-- Hex (Skeletal Hatchling)
+	[309328] = {"incapacitate"},	-- Hex (Living Honey)
 	[277778] = {"incapacitate"},	-- Hex (Zandalari Tendonripper)
 	[277784] = {"incapacitate"},	-- Hex (Wicker Mongrel)
 	[197214] = {"incapacitate"},	-- Sundering
@@ -124,18 +126,17 @@ T.DiminishingSpells = {
 	[6358] = {"disorient"},			-- Seduction (Succubus)
 	[261589] = {"disorient"},		-- Seduction (Grimoire of Sacrifice)
 	[5246] = {"disorient"},			-- Intimidating Shout
+	[331866] = {"disorient"},		-- Agent of Chaos (Venthyr Covenant)
 
 	-- Silences
 	[47476] = {"silence"},			-- Strangulate
 	[204490] = {"silence"},			-- Sigil of Silence
 	[202933] = {"silence"},			-- Spider Sting
-	[233022] = {"silence"},			-- Spider Sting 2 (TODO: incorrect?)
 	[217824] = {"silence"},			-- Shield of Virtue
 	[199683] = {"silence"},			-- Last Word
 	[15487] = {"silence"},			-- Silence
 	[1330] = {"silence"},			-- Garrote
-	[43523] = {"silence"},			-- Unstable Affliction Silence Effect (TODO: incorrect?)
-	[196364] = {"silence"},			-- Unstable Affliction Silence Effect 2
+	[196364] = {"silence"},			-- Unstable Affliction Silence Effect
 }
 
 local function GetIcon(id)
