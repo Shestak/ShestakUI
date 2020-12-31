@@ -26,6 +26,7 @@ local tooltips = {
 	-- Addons
 	AtlasLootTooltip,
 	QuestGuru_QuestWatchTooltip,
+	TomTomTooltip,
 	LibDBIconTooltip
 }
 
