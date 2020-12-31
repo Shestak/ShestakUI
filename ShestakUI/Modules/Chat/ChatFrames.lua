@@ -279,6 +279,15 @@ local function SetupChatPosAndFont()
 			self:SetPoint(unpack(C.position.bn_popup))
 		end
 	end)
+
+	-- /run BNToastFrame:AddToast(BN_TOAST_TYPE_ONLINE, 1)
+	hooksecurefunc(BNToastFrame, "ShowToast", function(self)
+		if not self.IsSkinned then
+			T.SkinCloseButton(self.CloseButton, nil, "x")
+			self.CloseButton:SetSize(16, 16)
+			self.IsSkinned = true
+		end
+	end)
 end
 
 GeneralDockManagerOverflowButton:SetPoint("BOTTOMRIGHT", ChatFrame1, "TOPRIGHT", 0, 5)
