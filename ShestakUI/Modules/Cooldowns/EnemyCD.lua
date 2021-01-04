@@ -102,13 +102,20 @@ local CreateIcon = function()
 	return icon
 end
 
-local StartTimer = function(sGUID, sID)
+local StartTimer = function(sGUID, sID, sName)
 	local _, _, texture = GetSpellInfo(sID)
 	local icon = CreateIcon()
 	icon.Texture:SetTexture(texture)
 	icon.Texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	icon.endTime = GetTime() + T.EnemySpells[sID]
 	local _, class, _, _, _, name = GetPlayerInfoByGUID(sGUID)
+
+	-- false check for pet
+	if not class then
+		class = select(2, UnitClass(sName))
+		name = sName
+	end
+
 	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class]
 	if color then
 		name = format("|cff%02x%02x%02x%s|r", color.r * 255, color.g * 255, color.b * 255, name)
@@ -135,20 +142,20 @@ end
 
 local OnEvent = function(_, event)
 	if event == "COMBAT_LOG_EVENT_UNFILTERED" then
-		local _, eventType, _, sourceGUID, _, sourceFlags, _, _, _, _, _, spellID = CombatLogGetCurrentEventInfo()
+		local _, eventType, _, sourceGUID, sourceName, sourceFlags, _, _, _, _, _, spellID = CombatLogGetCurrentEventInfo()
 
 		if eventType == "SPELL_CAST_SUCCESS" and sourceName ~= T.name then
 			local _, instanceType = IsInInstance()
 			if show[instanceType] then
 				if band(sourceFlags, COMBATLOG_OBJECT_REACTION_HOSTILE) ~= 0 then
 					if T.EnemySpells[spellID] then
-						StartTimer(sourceGUID, spellID)
+						StartTimer(sourceGUID, spellID, sourceName)
 					end
 				end
 			elseif instanceType == "party" and C.enemycooldown.show_inparty then
 				if band(sourceFlags, COMBATLOG_OBJECT_AFFILIATION_PARTY) ~= 0 then
 					if T.EnemySpells[spellID] then
-						StartTimer(sourceGUID, spellID)
+						StartTimer(sourceGUID, spellID, sourceName)
 					end
 				end
 			end
