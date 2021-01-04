@@ -145,9 +145,7 @@ end
 
 local function registerStyle(myProfile)
 	if not BigWigs then return end
-	local bars = BigWigs:GetPlugin("Bars", true)
-	if not bars then return end
-	bars:RegisterBarStyle("ShestakUI", {
+	BigWigsAPI:RegisterBarStyle("ShestakUI", {
 		apiVersion = 1,
 		version = 1,
 		GetSpacing = function() return T.Scale(13) end,
