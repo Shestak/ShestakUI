@@ -14,9 +14,9 @@ ObjectiveTrackerFrame:SetHeight(T.screenHeight / 1.6)
 ObjectiveTrackerFrame.IsUserPlaced = function() return true end
 
 local headers = {
+	ObjectiveTrackerBlocksFrame.ScenarioHeader,
 	ObjectiveTrackerBlocksFrame.CampaignQuestHeader,
 	ObjectiveTrackerBlocksFrame.QuestHeader,
-	ObjectiveTrackerBlocksFrame.ScenarioHeader,
 	ObjectiveTrackerBlocksFrame.AchievementHeader,
 	BONUS_OBJECTIVE_TRACKER_MODULE.Header,
 	WORLD_QUEST_TRACKER_MODULE.Header,
@@ -62,16 +62,17 @@ hooksecurefunc("QuestObjectiveSetupBlockButton_Item", function(block)
 end)
 
 hooksecurefunc("QuestObjectiveSetupBlockButton_FindGroup", function(block)
-	if block.hasGroupFinderButton and block.groupFinderButton and not block.groupFinderButton.styled then
+	if block.groupFinderButton and not block.groupFinderButton.styled then
 		local icon = block.groupFinderButton
 		icon:SetSize(26, 26)
 		icon:SetNormalTexture("")
 		icon:SetHighlightTexture("")
 		icon:SetPushedTexture("")
-		icon.b = CreateFrame("Frame", nil, block)
+		icon.b = CreateFrame("Frame", nil, icon)
 		icon.b:SetTemplate("Overlay")
 		icon.b:SetPoint("TOPLEFT", icon, "TOPLEFT", 2, -3)
 		icon.b:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", -4, 3)
+		icon.b:SetFrameLevel(1)
 
 		icon:HookScript("OnEnter", function(self)
 			if self:IsEnabled() then
@@ -89,16 +90,8 @@ hooksecurefunc("QuestObjectiveSetupBlockButton_FindGroup", function(block)
 			end
 		end)
 
-		hooksecurefunc(icon, "Show", function(button)
-			if button.b then
-				button.b:Show()
-			end
-		end)
-
-		hooksecurefunc(icon, "Hide", function(button)
-			if button.b then
-				button.b:Hide()
-			end
+		hooksecurefunc(icon, "Show", function(self)
+			self.b:SetFrameLevel(1)
 		end)
 
 		icon.styled = true
