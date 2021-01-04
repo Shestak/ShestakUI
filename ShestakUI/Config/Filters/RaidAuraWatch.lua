@@ -173,6 +173,7 @@ T.RaidDebuffs = {
 	[SpellName(323650)] = 3,	-- Haunting Fixation
 	[SpellName(326874)] = 3,	-- Ankle Bites
 	[SpellName(340446)] = 3,	-- Mark of Envy
+	[SpellName(323437)] = 3,	-- Stigma of Pride
 	-- Mists of Tirna Scithe
 	[SpellName(325027)] = 3,	-- Bramble Burst
 	[SpellName(323043)] = 3,	-- Bloodletting
