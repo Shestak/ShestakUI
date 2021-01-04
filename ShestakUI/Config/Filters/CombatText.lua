@@ -72,6 +72,9 @@ if T.class == "DEATHKNIGHT" then
 		T.aoespam[156000] = 3		-- Defile
 		T.aoespam[155166] = 3		-- Mark of Sindragosa
 		T.aoespam[55090] = 0		-- Scourge Strike
+		T.aoespam[319236] = 5		-- Unholy Pact
+		T.aoespam[311730] = 4		-- Swarming Mist (Covenant Venthyr)
+		T.aoespam[315443] = 6		-- Abomination Limb (Covenant Necrolord)
 		T.merge[66198] = 222024		-- Obliterate Off-Hand
 		T.merge[66196] = 222026		-- Frost Strike Off-Hand
 		T.merge[66188] = 49998		-- Death Strike Off-Hand
@@ -203,7 +206,7 @@ elseif T.class == "HUNTER" then
 		T.aoespam[2643] = 0			-- Multi-Shot (Beast Mastery)
 		T.aoespam[259491] = 3		-- Serpent Sting (Survival)
 		T.aoespam[13812] = 3		-- Explosive Trap
-		T.aoespam[212680] = 3		-- Explosive Shot
+		T.aoespam[212680] = 1		-- Explosive Shot
 		T.aoespam[118459] = 3		-- Beast Cleave
 		T.aoespam[120361] = 3		-- Barrage
 		T.aoespam[131900] = 3		-- A Murder of Crows
@@ -237,11 +240,15 @@ elseif T.class == "HUNTER" then
 		T.aoespam[63900] = 1		-- Thunderstomp
 		T.aoespam[197465] = 1		-- Surge of the Stormgod
 		T.aoespam[207097] = 4		-- Titan's Thunder
+		T.aoespam[269576] = 6		-- Master Marksman
+		T.aoespam[328837] = 0.5		-- Wild Spirits (Covenant Night Fae)
+		T.aoespam[328757] = 6		-- Wild Spirits (Covenant Night Fae)
 		-- Healing spells
 		T.aoespam[199483] = 9		-- Camouflage
 		T.aoespam[136] = 9			-- Mend Pet
 		T.merge[214303] = 136		-- Mend Pet (Hati)
 		T.aoespam[197161] = 8		-- Mimiron's Shell Heal
+		T.aoespam[339400] = 4		-- Rejuvenating Wind (Conduit)
 	end
 	if C.combattext.healing then
 		T.healfilter[197205] = true	-- Spirit Bond
