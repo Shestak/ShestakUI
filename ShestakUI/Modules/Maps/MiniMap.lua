@@ -50,7 +50,7 @@ MinimapZoneTextButton:Hide()
 -- Hide Game Time
 GameTimeFrame:Hide()
 
--- Hide Mail Button
+-- Move Mail icon
 MiniMapMailFrame:ClearAllPoints()
 MiniMapMailFrame:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 8, -10)
 MiniMapMailBorder:Hide()
