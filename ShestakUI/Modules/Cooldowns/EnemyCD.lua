@@ -108,7 +108,7 @@ local StartTimer = function(sGUID, sID)
 	icon.Texture:SetTexture(texture)
 	icon.Texture:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	icon.endTime = GetTime() + T.EnemySpells[sID]
-	local _, class, _, _, _, name, _ = GetPlayerInfoByGUID(sGUID)
+	local _, class, _, _, _, name = GetPlayerInfoByGUID(sGUID)
 	local color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[class]
 	if color then
 		name = format("|cff%02x%02x%02x%s|r", color.r * 255, color.g * 255, color.b * 255, name)
