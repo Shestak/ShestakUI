@@ -54,14 +54,6 @@ for _, tt in pairs(tooltips) do
 	end
 end
 
-if RaiderIO_ProfileTooltip then
-	RaiderIO_ProfileTooltip:SetBackdrop(nil)
-	RaiderIO_ProfileTooltip.SetBackdrop = T.dummy
-	RaiderIO_ProfileTooltip:CreateBackdrop("Transparent")
-	RaiderIO_ProfileTooltip.backdrop:SetPoint("TOPLEFT", 3, 0)
-	RaiderIO_ProfileTooltip.backdrop:SetPoint("BOTTOMRIGHT", -2, 0)
-end
-
 -- LibExtraTip skin
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_LOGIN")
@@ -88,6 +80,31 @@ frame:SetScript("OnEvent", function()
 		end)
 	end
 end)
+
+if IsAddOnLoaded("RaiderIO") then
+	PVEFrame:HookScript("OnShow", function(self)
+		if not RaiderIOProfileTooltip.styled then
+			RaiderIOProfileTooltip:SetBackdrop(nil)
+			RaiderIOProfileTooltip.SetBackdrop = T.dummy
+			RaiderIOProfileTooltip:CreateBackdrop("Transparent")
+			RaiderIOProfileTooltip.backdrop:SetPoint("TOPLEFT", 3, 0)
+			RaiderIOProfileTooltip.backdrop:SetPoint("BOTTOMRIGHT", -2, 0)
+			RaiderIOProfileTooltip.styled = true
+
+			if DF_Frame and C.skins.blizzard_frames then
+				DF_Frame:StripTextures()
+				DF_Frame:SetTemplate("Transparent")
+				T.SkinEditBox(DF_Frame.minRioEdit, nil, 15)
+				T.SkinEditBox(DF_Frame.maxRioEdit, nil, 15)
+				T.SkinCheckBox(DF_Frame.showRIO)
+				T.SkinCheckBox(DF_Frame.showClass)
+				T.SkinCheckBox(DF_Frame.removeSelfRole)
+				T.SkinCheckBox(DF_Frame.showPreviousRIO)
+				DF_Frame.applyBtn:SkinButton()
+			end
+		end
+	end)
+end
 
 local anchor = CreateFrame("Frame", "TooltipAnchor", UIParent)
 anchor:SetSize(200, 40)
