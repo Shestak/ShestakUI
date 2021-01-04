@@ -286,6 +286,7 @@ local function SkinBarIcon(_, _, line)
 
 		icon:SetPoint("RIGHT", 24, 0)
 		icon:SetSize(20, 20)
+		icon:SetMask(nil)
 
 		local border = CreateFrame("Frame", "$parentBorder", bar)
 		border:SetAllPoints(icon)
@@ -388,6 +389,27 @@ StageBlock.backdrop:SetPoint("BOTTOMRIGHT", ScenarioStageBlock.NormalBG, -6, 5)
 StageBlock.NormalBG:SetAlpha(0)
 StageBlock.FinalBG:SetAlpha(0)
 StageBlock.GlowTexture:SetTexture("")
+
+----------------------------------------------------------------------------------------
+--	Skin ScenarioStageBlock
+----------------------------------------------------------------------------------------
+local ChallengeBlock = _G["ScenarioChallengeModeBlock"]
+ChallengeBlock:CreateBackdrop("Overlay")
+ChallengeBlock.backdrop:SetPoint("TOPLEFT", ChallengeBlock, 3, -3)
+ChallengeBlock.backdrop:SetPoint("BOTTOMRIGHT", ChallengeBlock, -6, 3)
+ChallengeBlock.backdrop.overlay:SetVertexColor(0.12, 0.12, 0.12, 1)
+
+local bg = select(3, ChallengeBlock:GetRegions())
+bg:Hide()
+
+ChallengeBlock.TimerBGBack:Hide()
+ChallengeBlock.TimerBG:Hide()
+
+ChallengeBlock.StatusBar:SetStatusBarTexture(C.media.texture)
+ChallengeBlock.StatusBar:CreateBackdrop("Overlay")
+ChallengeBlock.StatusBar.backdrop:SetFrameLevel(ChallengeBlock.backdrop:GetFrameLevel() + 1)
+ChallengeBlock.StatusBar:SetStatusBarColor(0, 0.6, 1)
+ChallengeBlock.StatusBar:SetFrameLevel(ChallengeBlock.StatusBar:GetFrameLevel() + 3)
 
 ----------------------------------------------------------------------------------------
 --	Skin MawBuffsBlock
