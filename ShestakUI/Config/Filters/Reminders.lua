@@ -20,6 +20,7 @@ if C.reminder.raid_buffs_enable == true or C.announcements.flask_food == true th
 		Flask = {
 			SpellName(307185),	-- Spectral Flask of Power (Main Stat)
 			SpellName(307187),	-- Spectral Flask of Stamina (Stamina)
+			SpellName(307166),	-- Eternal Flask (Cauldron)
 		},
 		BattleElixir = {
 			-- SpellName(spellID),	-- Spell name
