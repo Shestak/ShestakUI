@@ -218,6 +218,12 @@ local AurasCustomFilter = function(_, unit, button, name, _, _, _, _, _, _, isSt
 				elseif T.DebuffWhiteList[name] then
 					allow = true
 				end
+				if C.nameplate.track_buffs then
+					button.bordertop:SetColorTexture(unpack(C.media.border_color))
+					button.borderbottom:SetColorTexture(unpack(C.media.border_color))
+					button.borderleft:SetColorTexture(unpack(C.media.border_color))
+					button.borderright:SetColorTexture(unpack(C.media.border_color))
+				end
 			end
 		else
 			if T.BuffWhiteList[name] then
@@ -232,11 +238,6 @@ local AurasCustomFilter = function(_, unit, button, name, _, _, _, _, _, _, isSt
 				button.borderbottom:SetColorTexture(1, 0.85, 0)
 				button.borderleft:SetColorTexture(1, 0.85, 0)
 				button.borderright:SetColorTexture(1, 0.85, 0)
-			else
-				button.bordertop:SetColorTexture(unpack(C.media.border_color))
-				button.borderbottom:SetColorTexture(unpack(C.media.border_color))
-				button.borderleft:SetColorTexture(unpack(C.media.border_color))
-				button.borderright:SetColorTexture(unpack(C.media.border_color))
 			end
 		end
 	end
@@ -246,7 +247,6 @@ end
 
 local AurasPostCreateIcon = function(element, button)
 	CreateVirtualFrame(button)
-	button:EnableMouse(false)
 
 	button.remaining = T.SetFontString(button, C.font.auras_font, C.font.auras_font_size * T.noscalemult, C.font.auras_font_style)
 	button.remaining:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
@@ -782,6 +782,7 @@ local function style(self, unit)
 		self.Auras:SetSize(20 + C.nameplate.width, C.nameplate.auras_size)
 		self.Auras.spacing = 5 * T.noscalemult
 		self.Auras.size = C.nameplate.auras_size * T.noscalemult - 3
+		self.Auras.disableMouse = true
 
 		self.Auras.CustomFilter = AurasCustomFilter
 		self.Auras.PostCreateIcon = AurasPostCreateIcon
