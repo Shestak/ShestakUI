@@ -123,6 +123,7 @@ T.DiminishingSpells = {
 	[226943] = {"disorient"},		-- Mind Bomb
 	[2094] = {"disorient"},			-- Blind
 	[118699] = {"disorient"},		-- Fear
+	[5484] = {"disorient"},			-- Howl of Terror
 	[6358] = {"disorient"},			-- Seduction (Succubus)
 	[261589] = {"disorient"},		-- Seduction (Grimoire of Sacrifice)
 	[5246] = {"disorient"},			-- Intimidating Shout
