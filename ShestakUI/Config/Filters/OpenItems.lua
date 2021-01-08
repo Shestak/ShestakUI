@@ -552,6 +552,7 @@ T.OpenItems = {
 	[181475] = true,	-- Bounty of the Grove Wardens
 	[181476] = true,	-- Tribute of the Wild Hunt
 	[181556] = true,	-- Tribute of the Court
+	[181557] = true,	-- Favor of the Court
 	[183701] = true,	-- Cleansing Rite Materials
 	[181732] = true,	-- Tribute of the Ambitious
 	[181733] = true,	-- Tribute of the Duty-Bound
