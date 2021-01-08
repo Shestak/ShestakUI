@@ -221,6 +221,7 @@ T.RaidDebuffs = {
 	[SpellName(334748)] = 3,	-- Drain FLuids
 	[SpellName(333489)] = 3,	-- Necrotic Breath
 	[SpellName(320717)] = 3,	-- Blood Hunger
+	[SpellName(320788)] = 3,	-- Frozen Binds
 	-- Theater of Pain
 	[SpellName(333299)] = 3,	-- Curse of Desolation
 	[SpellName(319539)] = 3,	-- Soulless
