@@ -293,7 +293,7 @@ local function FindAuras(self, unit)
 			local name, icon, count, _, duration, expirationTime, caster, _, _, spid = UnitAura(unit, index, filter)
 			if not name then break end
 
-			local data = SpellGroups[self.Id].spells[name]
+			local data = SpellGroups[self.Id].spells[name] or SpellGroups[self.Id].spells[spid]
 			if data and (data.caster ~= 1 and (caster == data.caster or data.caster == "all") or MyUnits[caster]) and (not data.unitID or data.unitID == unit) and (not data.absID or spid == data.spellID) then
 				local isTalent = data.talentID and select(10, GetTalentInfoByID(data.talentID))
 				if ((data.filter == "BUFF" and filter == "HELPFUL") or (data.filter == "DEBUFF" and filter == "HARMFUL")) and (not data.spec or data.spec == T.Spec) and (not data.talentID or isTalent) then
@@ -516,7 +516,7 @@ if C["filger_spells"] and C["filger_spells"][T.class] then
 				end
 			end
 			if name and not ignoreTable[name] or data[j].slotID then
-				local id = GetSpellInfo(data[j].spellID) or data[j].slotID
+				local id = data[j].absID and data[j].spellID or GetSpellInfo(data[j].spellID) or data[j].slotID
 				data[j].sort = j
 				group.spells[id] = data[j]
 			end
