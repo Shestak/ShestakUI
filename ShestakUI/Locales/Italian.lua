@@ -21,7 +21,6 @@ L_ANNOUNCE_PC_MSG = "Avvio incontro %s in %s.."
 L_ANNOUNCE_PC_ABORTED = "Avvio incontro ANNULLATO!"
 
 -- Announce feasts and portals
-L_ANNOUNCE_FP_STAT = "%s ha preparato un/una %s - [%s]."
 L_ANNOUNCE_FP_PRE = "%s ha preparato un/una %s."
 L_ANNOUNCE_FP_PUT = "%s ha messo già un/una %s."
 L_ANNOUNCE_FP_CAST = "%s sta lanciando %s."

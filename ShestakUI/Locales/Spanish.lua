@@ -21,7 +21,6 @@ L_ANNOUNCE_PC_MSG = "Pulling %s in %s.." -- Needs review
 L_ANNOUNCE_PC_ABORTED = "Pull ABORTED!" -- Needs review
 
 -- Announce feasts and portals
-L_ANNOUNCE_FP_STAT = "%s has prepared a %s - [%s]." -- Needs review
 L_ANNOUNCE_FP_PRE = "%s has prepared a %s." -- Needs review
 L_ANNOUNCE_FP_PUT = "%s has put down a %s." -- Needs review
 L_ANNOUNCE_FP_CAST = "%s is casting %s." -- Needs review

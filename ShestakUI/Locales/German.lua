@@ -21,7 +21,6 @@ L_ANNOUNCE_PC_MSG = "Pull %s in %s.."
 L_ANNOUNCE_PC_ABORTED = "Pull ABGEBROCHEN!"
 
 -- Announce feasts and portals
-L_ANNOUNCE_FP_STAT = "%s bereitet ein %s vor - [%s]."
 L_ANNOUNCE_FP_PRE = "%s bereitet ein %s vor."
 L_ANNOUNCE_FP_PUT = "%s stellt ein %s auf."
 L_ANNOUNCE_FP_CAST = "%s zaubert ein %s."

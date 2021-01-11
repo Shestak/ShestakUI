@@ -21,7 +21,6 @@ L_ANNOUNCE_PC_MSG = "Pull %s dans %s.."
 L_ANNOUNCE_PC_ABORTED = "Pull ABANDONNE !"
 
 -- Announce feasts and portals
-L_ANNOUNCE_FP_STAT = "%s a préparé un %s - [%s]."
 L_ANNOUNCE_FP_PRE = "%s a préparé un %s."
 L_ANNOUNCE_FP_PUT = "%s a déposé au sol un %s."
 L_ANNOUNCE_FP_CAST = "%s lance le sort %s."

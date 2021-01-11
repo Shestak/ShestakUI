@@ -21,7 +21,6 @@ L_ANNOUNCE_PC_MSG = "准备接怪: %s，倒数 %s.."
 L_ANNOUNCE_PC_ABORTED = "取消拉怪 !"
 
 -- Announce feasts and portals
-L_ANNOUNCE_FP_STAT = "%s 放置了 %s - [%s]。"
 L_ANNOUNCE_FP_PRE = "%s 放置了 %s"
 L_ANNOUNCE_FP_PUT = "%s 放置了 %s"
 L_ANNOUNCE_FP_CAST = "%s 开启了 %s"

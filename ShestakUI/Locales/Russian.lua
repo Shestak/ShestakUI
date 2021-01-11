@@ -21,7 +21,6 @@ L_ANNOUNCE_PC_MSG = "Атакуем %s через %s.."
 L_ANNOUNCE_PC_ABORTED = "Атака ОТМЕНЕНА!"
 
 -- Announce feasts and portals
-L_ANNOUNCE_FP_STAT = "%s готовит %s - [%s]."
 L_ANNOUNCE_FP_PRE = "%s готовит %s."
 L_ANNOUNCE_FP_PUT = "%s ставит %s."
 L_ANNOUNCE_FP_CAST = "%s создает %s."
