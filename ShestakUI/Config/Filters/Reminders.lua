@@ -34,7 +34,6 @@ if C.reminder.raid_buffs_enable == true or C.announcements.flask_food == true th
 		},
 		Stamina = {
 			SpellName(21562),	-- Power Word: Fortitude
-			SpellName(158486) ,	-- War-Scroll of Fortitude
 		},
 		Custom = {
 			-- SpellName(spellID),	-- Spell name
@@ -45,7 +44,6 @@ if C.reminder.raid_buffs_enable == true or C.announcements.flask_food == true th
 	function T.ReminderCasterBuffs()
 		Spell4Buff = {	-- Intellect
 			SpellName(1459),	-- Arcane Intellect
-			SpellName(264760),	-- War-Scroll of Intellect
 		}
 	end
 
@@ -53,7 +51,6 @@ if C.reminder.raid_buffs_enable == true or C.announcements.flask_food == true th
 	function T.ReminderPhysicalBuffs()
 		Spell4Buff = {	-- Attack Power
 			SpellName(6673),	-- Battle Shout
-			SpellName(264761),	-- War-Scroll of Battle Shout
 		}
 	end
 end
