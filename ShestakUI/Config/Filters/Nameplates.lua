@@ -97,7 +97,7 @@ T.DebuffBlackList = {
 }
 
 T.BuffWhiteList = {
-	-- [SpellName(spellID)] = true,	-- Spell Name
+	[SpellName(226510)] = true,	-- Sanguine Ichor
 }
 
 for _, spell in pairs(C.nameplate.buffs_list) do
