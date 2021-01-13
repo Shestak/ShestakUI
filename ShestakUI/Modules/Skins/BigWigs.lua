@@ -157,7 +157,6 @@ local function registerStyle(myProfile)
 	if BigWigsLoader and myProfile and myProfile.barStyle == "ShestakUI" then
 		BigWigsLoader.RegisterMessage("BigWigs_Plugins", "BigWigs_FrameCreated", function()
 			BigWigsProximityAnchor:SetTemplate("Transparent")
-			BigWigsAltPower:SetTemplate("Transparent")
 			BigWigsInfoBox:SetTemplate("Transparent")
 		end)
 
@@ -188,9 +187,12 @@ f:SetScript("OnEvent", function(_, event, addon)
 			registerStyle(myProfile)
 			f:UnregisterEvent("ADDON_LOADED")
 		elseif addon == "ShestakUI" then
-			if BigWigsLoader and C.skins.blizzard_frames == true then
+			if BigWigsLoader then
 				BigWigsLoader.RegisterMessage(addon, "BigWigs_FrameCreated", function(_, frame, name)
-					if name == "QueueTimer" then
+					if name == "AltPower" then
+						frame:SetTemplate("Transparent")
+					end
+					if name == "QueueTimer" and C.skins.blizzard_frames then
 						frame:SetSize(240, 15)
 						frame:StripTextures()
 						frame:SetStatusBarTexture(C.media.texture)
