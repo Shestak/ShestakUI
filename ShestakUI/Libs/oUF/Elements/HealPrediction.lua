@@ -30,120 +30,114 @@ end
 local function Update(self, event, unit)
 	if(self.unit ~= unit) then return end
 
-	local hp = self.HealPrediction
-	if(hp.PreUpdate) then hp:PreUpdate(unit) end
+	local element = self.HealthPrediction
+
+	if(element.PreUpdate) then
+		element:PreUpdate(unit)
+	end
 
 	local myIncomingHeal = UnitGetIncomingHeals(unit, 'player') or 0
 	local allIncomingHeal = UnitGetIncomingHeals(unit) or 0
-	local totalAbsorb = UnitGetTotalAbsorbs(unit) or 0
-
+	local absorb = UnitGetTotalAbsorbs(unit) or 0
+	local healAbsorb = UnitGetTotalHealAbsorbs(unit) or 0
 	local health, maxHealth = UnitHealth(unit), UnitHealthMax(unit)
 
-	if(health + allIncomingHeal > maxHealth * hp.maxOverflow) then
-		allIncomingHeal = maxHealth * hp.maxOverflow - health
-	end
-
-	if(allIncomingHeal < myIncomingHeal) then
-		myIncomingHeal = allIncomingHeal
+	if healAbsorb > allIncomingHeal then
+		healAbsorb = healAbsorb - allIncomingHeal
 		allIncomingHeal = 0
-	else
-		allIncomingHeal = allIncomingHeal - myIncomingHeal
-	end
+		myIncomingHeal = 0
+		absorb = 0
 
-	if health + myIncomingHeal + allIncomingHeal + totalAbsorb >= maxHealth then
-		totalAbsorb = max(0, maxHealth - (health + myIncomingHeal + allIncomingHeal))
+		if health + healAbsorb > maxHealth then
+			healAbsorb = maxHealth - health
+		end
+	else
+		allIncomingHeal = allIncomingHeal - healAbsorb
+		healAbsorb = 0
+
+		if health + allIncomingHeal > maxHealth then
+			allIncomingHeal = maxHealth - health
+		end
+
+		if(allIncomingHeal < myIncomingHeal) then
+			myIncomingHeal = allIncomingHeal
+			allIncomingHeal = 0
+		else
+			allIncomingHeal = allIncomingHeal - myIncomingHeal
+		end
+
+		if health + myIncomingHeal + allIncomingHeal + absorb >= maxHealth then
+			absorb = max(0, maxHealth - (health + myIncomingHeal + allIncomingHeal))
+		end
 	end
 
 	local previousTexture = self.Health:GetStatusBarTexture()
 
-	previousTexture = UpdateFillBar(self, previousTexture, hp.myBar, myIncomingHeal, maxHealth)
-	previousTexture = UpdateFillBar(self, previousTexture, hp.otherBar, allIncomingHeal, maxHealth)
-	previousTexture = UpdateFillBar(self, previousTexture, hp.absorbBar, totalAbsorb, maxHealth)
+	previousTexture = UpdateFillBar(self, previousTexture, element.healAbsorbBar, healAbsorb, maxHealth)
+	previousTexture = UpdateFillBar(self, previousTexture, element.myBar, myIncomingHeal, maxHealth)
+	previousTexture = UpdateFillBar(self, previousTexture, element.otherBar, allIncomingHeal, maxHealth)
+	previousTexture = UpdateFillBar(self, previousTexture, element.absorbBar, absorb, maxHealth)
 
-	if(hp.PostUpdate) then
-		return hp:PostUpdate(unit)
+	if(element.PostUpdate) then
+		return element:PostUpdate(unit, myIncomingHeal, otherIncomingHeal, absorb, healAbsorb)
 	end
 end
 
 local function Path(self, ...)
-	return (self.HealPrediction.Override or Update) (self, ...)
+	--[[ Override: HealthPrediction.Override(self, event, unit)
+	Used to completely override the internal update function.
+	* self  - the parent object
+	* event - the event triggering the update (string)
+	* unit  - the unit accompanying the event
+	--]]
+	return (self.HealthPrediction.Override or Update) (self, ...)
 end
 
-local ForceUpdate = function(element)
+local function ForceUpdate(element)
 	return Path(element.__owner, 'ForceUpdate', element.__owner.unit)
 end
 
 local function Enable(self)
-	local hp = self.HealPrediction
-	if(hp) then
-		hp.__owner = self
-		hp.ForceUpdate = ForceUpdate
+	local element = self.HealthPrediction
+	if(element) then
+		element.__owner = self
+		element.ForceUpdate = ForceUpdate
 
-		self:RegisterEvent('UNIT_HEAL_PREDICTION', Path)
-		self:RegisterEvent('UNIT_MAXHEALTH', Path)
 		self:RegisterEvent('UNIT_HEALTH', Path)
+		self:RegisterEvent('UNIT_MAXHEALTH', Path)
+		self:RegisterEvent('UNIT_HEAL_PREDICTION', Path)
 		self:RegisterEvent('UNIT_ABSORB_AMOUNT_CHANGED', Path)
 		self:RegisterEvent('UNIT_HEAL_ABSORB_AMOUNT_CHANGED', Path)
-
-		if(not hp.maxOverflow) then
-			hp.maxOverflow = 1.05
-		end
-
-		if(hp.myBar) then
-			if(hp.myBar:IsObjectType'StatusBar' and not hp.myBar:GetStatusBarTexture()) then
-				hp.myBar:SetStatusBarTexture([[Interface\TargetingFrame\UI-StatusBar]])
-			end
-
-			hp.myBar:Show()
-		end
-		if(hp.otherBar) then
-			if(hp.otherBar:IsObjectType'StatusBar' and not hp.otherBar:GetStatusBarTexture()) then
-				hp.otherBar:SetStatusBarTexture([[Interface\TargetingFrame\UI-StatusBar]])
-			end
-
-			hp.otherBar:Show()
-		end
-		if(hp.absorbBar) then
-			if(hp.absorbBar:IsObjectType'StatusBar' and not hp.absorbBar:GetStatusBarTexture()) then
-				hp.absorbBar:SetStatusBarTexture([[Interface\TargetingFrame\UI-StatusBar]])
-			end
-
-			hp.absorbBar:Show()
-		end
-		if(hp.healAbsorbBar) then
-			if(hp.healAbsorbBar:IsObjectType'StatusBar' and not hp.healAbsorbBar:GetStatusBarTexture()) then
-				hp.healAbsorbBar:SetStatusBarTexture([[Interface\TargetingFrame\UI-StatusBar]])
-			end
-
-			hp.healAbsorbBar:Show()
-		end
 
 		return true
 	end
 end
 
 local function Disable(self)
-	local hp = self.HealPrediction
-	if(hp) then
-		if(hp.myBar) then
-			hp.myBar:Hide()
-		end
-		if(hp.otherBar) then
-			hp.otherBar:Hide()
-		end
-		if(hp.absorbBar) then
-			hp.absorbBar:Hide()
-		end
-		if(hp.healAbsorbBar) then
-			hp.healAbsorbBar:Hide()
+	local element = self.HealthPrediction
+	if(element) then
+		if(element.myBar) then
+			element.myBar:Hide()
 		end
 
-		self:UnregisterEvent('UNIT_HEAL_PREDICTION', Path)
-		self:UnregisterEvent('UNIT_MAXHEALTH', Path)
+		if(element.otherBar) then
+			element.otherBar:Hide()
+		end
+
+		if(element.absorbBar) then
+			element.absorbBar:Hide()
+		end
+
+		if(element.healAbsorbBar) then
+			element.healAbsorbBar:Hide()
+		end
+
 		self:UnregisterEvent('UNIT_HEALTH', Path)
+		self:UnregisterEvent('UNIT_MAXHEALTH', Path)
+		self:UnregisterEvent('UNIT_HEAL_PREDICTION', Path)
 		self:UnregisterEvent('UNIT_ABSORB_AMOUNT_CHANGED', Path)
 		self:UnregisterEvent('UNIT_HEAL_ABSORB_AMOUNT_CHANGED', Path)
 	end
 end
 
-oUF:AddElement('HealPrediction', Path, Enable, Disable)
+oUF:AddElement('HealthPrediction', Path, Enable, Disable)

@@ -213,11 +213,15 @@ local function Shared(self, unit)
 		ahpb:SetTexture(C.media.texture)
 		ahpb:SetVertexColor(1, 1, 0, 0.2)
 
-		self.HealPrediction = {
+		local hab = self.Health:CreateTexture(nil, "ARTWORK")
+		hab:SetTexture(C.media.texture)
+		hab:SetVertexColor(1, 0, 0, 0.4)
+
+		self.HealthPrediction = {
 			myBar = mhpb,
 			otherBar = ohpb,
 			absorbBar = ahpb,
-			maxOverflow = 1
+			healAbsorbBar = hab
 		}
 
 		--self.IncHeal = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
