@@ -1419,14 +1419,13 @@ if C.raidframe.auto_position == "DYNAMIC" then
 	local function Reposition(self)
 		if ShestakUISettings and ShestakUISettings.RaidLayout == "HEAL" and not C.raidframe.raid_groups_vertical and C.raidframe.raid_groups > 5 then
 			if InCombatLockdown() then return end
-			local num = GetNumGroupMembers()
 			local maxGroup = 5
-			if num > 35 then
-				maxGroup = 8
-			elseif num > 30 then
-				maxGroup = 7
-			elseif num > 25 then
-				maxGroup = 6
+			local num = GetNumGroupMembers()
+			if num > 5 then
+				local _, _, subgroup = GetRaidRosterInfo(num)
+				if subgroup and subgroup > maxGroup then
+					maxGroup = subgroup
+				end
 			end
 			if maxGroup >= C.raidframe.raid_groups then
 				maxGroup = C.raidframe.raid_groups
