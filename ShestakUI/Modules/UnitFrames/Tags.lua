@@ -109,16 +109,6 @@ oUF.Tags.Methods["AltPower"] = function(unit)
 end
 oUF.Tags.Events["AltPower"] = "UNIT_POWER_UPDATE"
 
-oUF.Tags.Methods["IncHeal"] = function(unit)
-	local incheal = UnitGetIncomingHeals(unit) or 0
-	local player = UnitGetIncomingHeals(unit, "player") or 0
-	incheal = incheal - player
-	if incheal > 0 then
-		return "|cff00FF00+"..T.ShortValue(incheal).."|r"
-	end
-end
-oUF.Tags.Events["IncHeal"] = "UNIT_HEAL_PREDICTION"
-
 oUF.Tags.Methods["NameplateLevel"] = function(unit)
 	local level = UnitLevel(unit)
 	local c = UnitClassification(unit)

@@ -223,10 +223,6 @@ local function Shared(self, unit)
 			absorbBar = ahpb,
 			healAbsorbBar = hab
 		}
-
-		--self.IncHeal = T.SetFontString(self.Health, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-		--self.IncHeal:SetPoint("CENTER", self.Health, "TOP", 0, 0)
-		--self:Tag(self.IncHeal, "[IncHeal]")
 	end
 
 	-- Range alpha
@@ -248,8 +244,7 @@ local function Shared(self, unit)
 
 		-- Raid debuffs
 		self.RaidDebuffs = CreateFrame("Frame", nil, self)
-		self.RaidDebuffs:SetHeight(19)
-		self.RaidDebuffs:SetWidth(19)
+		self.RaidDebuffs:SetSize(19, 19)
 		self.RaidDebuffs:SetPoint("CENTER", self, 0, 1)
 		self.RaidDebuffs:SetFrameStrata("MEDIUM")
 		self.RaidDebuffs:SetFrameLevel(10)
