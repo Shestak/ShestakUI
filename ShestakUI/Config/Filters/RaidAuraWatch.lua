@@ -248,6 +248,7 @@ T.RaidDebuffs = {
 	[SpellName(335306)] = 3,	-- Barbed Shackles
 	[SpellName(322429)] = 3,	-- Severing Slice
 	[SpellName(334653)] = 3,	-- Engorge
+	[SpellName(327814)] = 3,	-- Wicked Gash
 	-- Spires of Ascension
 	[SpellName(338729)] = 3,	-- Charged Stomp
 	[SpellName(323195)] = 3,	-- Purifying Blast
