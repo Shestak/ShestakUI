@@ -163,6 +163,8 @@ L.unitframe_extra_height_auto = "Auto height for health/power"
 L.unitframe_extra_height_auto_desc = "Smart adjust depending on font size"
 L.unitframe_extra_health_height = "Additional height for health"
 L.unitframe_extra_power_height = "Additional height for power"
+L.unitframe_subheader_castbar = "Size of player and target castbar"
+L.unitframe_castbar_height = "Height"
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Class Power Bars"

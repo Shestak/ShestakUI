@@ -137,6 +137,8 @@ C["unitframe"] = {
 	["extra_height_auto"] = true,				-- Auto height for health/power depending on font size
 	["extra_health_height"] = 0,				-- Additional height for health
 	["extra_power_height"] = 0,					-- Additional height for power
+	["castbar_width"] = 258,					-- Player and Target castbar width
+	["castbar_height"] = 16,					-- Player and Target castbar height
 }
 
 ----------------------------------------------------------------------------------------

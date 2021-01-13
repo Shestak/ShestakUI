@@ -1160,6 +1160,15 @@ do
 	local extra_power_height = ns.CreateNumberSlider(parent, "extra_power_height", nil, nil, 0, 20, 1, true)
 	extra_power_height:SetPoint("LEFT", extra_health_height, "RIGHT", 120, 0)
 
+	local subheader = ns.addSubCategory(parent, L.unitframe_subheader_castbar)
+	subheader:SetPoint("TOPLEFT", extra_health_height, "BOTTOMLEFT", 0, -10)
+
+	local castbar_width = ns.CreateNumberSlider(parent, "castbar_width", nil, nil, 190, 400, 1, true, L.unitframe_player_width)
+	castbar_width:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -28)
+
+	local castbar_height = ns.CreateNumberSlider(parent, "castbar_height", nil, nil, 16, 40, 1, true)
+	castbar_height:SetPoint("LEFT", castbar_width, "RIGHT", 120, 0)
+
 	local function toggleOptions()
 		local shown = not extra_height_auto:GetChecked()
 		extra_health_height:SetShown(shown)

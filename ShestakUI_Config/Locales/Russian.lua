@@ -140,6 +140,8 @@ L.unitframe_extra_height_auto = "Авто высота здоровья и эн�
 L.unitframe_extra_height_auto_desc = "Умное увеличение в зависимости от размера шрифта"
 L.unitframe_extra_health_height = "Доп. высота для здоровья"
 L.unitframe_extra_power_height = "Доп. высота для энергии"
+L.unitframe_subheader_castbar = "Размер кастбара игрока и цели"
+L.unitframe_castbar_height = "Высота"
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Классовые панели"

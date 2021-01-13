@@ -797,30 +797,30 @@ local function Shared(self, unit)
 
 		if unit == "player" then
 			if C.unitframe.castbar_icon == true then
-				self.Castbar:SetPoint(C.position.unitframes.player_castbar[1], C.position.unitframes.player_castbar[2], C.position.unitframes.player_castbar[3], C.position.unitframes.player_castbar[4] + 11, C.position.unitframes.player_castbar[5])
-				self.Castbar:SetWidth(258)
+				self.Castbar:SetPoint(C.position.unitframes.player_castbar[1], C.position.unitframes.player_castbar[2], C.position.unitframes.player_castbar[3], C.position.unitframes.player_castbar[4] + ((C.unitframe.castbar_height + 7) / 2) , C.position.unitframes.player_castbar[5])
+				self.Castbar:SetWidth(C.unitframe.castbar_width)
 			else
 				self.Castbar:SetPoint(unpack(C.position.unitframes.player_castbar))
-				self.Castbar:SetWidth(281)
+				self.Castbar:SetWidth(C.unitframe.castbar_width + C.unitframe.castbar_height + 7)
 			end
-			self.Castbar:SetHeight(16)
+			self.Castbar:SetHeight(C.unitframe.castbar_height)
 		elseif unit == "target" then
 			if C.unitframe.castbar_icon == true then
 				if C.unitframe.plugins_swing == true then
-					self.Castbar:SetPoint(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4] - 23, C.position.unitframes.target_castbar[5] + 12)
+					self.Castbar:SetPoint(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4] - C.unitframe.castbar_height - 7, C.position.unitframes.target_castbar[5] + 12)
 				else
-					self.Castbar:SetPoint(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4] - 23, C.position.unitframes.target_castbar[5])
+					self.Castbar:SetPoint(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4] - C.unitframe.castbar_height - 7, C.position.unitframes.target_castbar[5])
 				end
-				self.Castbar:SetWidth(258)
+				self.Castbar:SetWidth(C.unitframe.castbar_width)
 			else
 				if C.unitframe.plugins_swing == true then
 					self.Castbar:SetPoint(C.position.unitframes.target_castbar[1], C.position.unitframes.target_castbar[2], C.position.unitframes.target_castbar[3], C.position.unitframes.target_castbar[4], C.position.unitframes.target_castbar[5] + 12)
 				else
 					self.Castbar:SetPoint(unpack(C.position.unitframes.target_castbar))
 				end
-				self.Castbar:SetWidth(281)
+				self.Castbar:SetWidth(C.unitframe.castbar_width + C.unitframe.castbar_height + 7)
 			end
-			self.Castbar:SetHeight(16)
+			self.Castbar:SetHeight(C.unitframe.castbar_height)
 		elseif unit == "arena" or unit == "boss" then
 			self.Castbar:SetPoint("TOPLEFT", self, "BOTTOMLEFT", 0, -7)
 			self.Castbar:SetWidth(boss_width)
@@ -829,37 +829,6 @@ local function Shared(self, unit)
 			self.Castbar:SetPoint("TOPLEFT", self, "BOTTOMLEFT", 0, -7)
 			self.Castbar:SetWidth(pet_width)
 			self.Castbar:SetHeight(5)
-		end
-
-		if unit == "focus" then
-			self.Castbar.Button = CreateFrame("Frame", nil, self.Castbar)
-			self.Castbar.Button:SetHeight(65)
-			self.Castbar.Button:SetWidth(65)
-			self.Castbar.Button:SetPoint(unpack(C.position.unitframes.focus_castbar))
-			self.Castbar.Button:SetTemplate("Default")
-
-			self.Castbar.Icon = self.Castbar.Button:CreateTexture(nil, "ARTWORK")
-			self.Castbar.Icon:SetPoint("TOPLEFT", self.Castbar.Button, 2, -2)
-			self.Castbar.Icon:SetPoint("BOTTOMRIGHT", self.Castbar.Button, -2, 2)
-			self.Castbar.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
-			self.Castbar.Time = T.SetFontString(self.Castbar, C.font.unit_frames_font, C.font.unit_frames_font_size * 2, C.font.unit_frames_font_style)
-			self.Castbar.Time:SetParent(self.Castbar.Button)
-			self.Castbar.Time:SetPoint("CENTER", self.Castbar.Icon, "CENTER", 0, 10)
-			self.Castbar.Time:SetTextColor(1, 1, 1)
-
-			self.Castbar.Time2 = T.SetFontString(self.Castbar, C.font.unit_frames_font, C.font.unit_frames_font_size * 2, C.font.unit_frames_font_style)
-			self.Castbar.Time2:SetParent(self.Castbar.Button)
-			self.Castbar.Time2:SetPoint("CENTER", self.Castbar.Icon, "CENTER", 0, -10)
-			self.Castbar.Time2:SetTextColor(1, 1, 1)
-
-			self.Castbar.CustomTimeText = function(self, duration)
-				self.Time:SetText(("%.1f"):format(self.max))
-				self.Time2:SetText(("%.1f"):format(self.channeling and duration or self.max - duration))
-			end
-			self.Castbar.CustomDelayText = function(self)
-				self.Time:SetText(("|cffaf5050%s %.1f|r"):format(self.channeling and "-" or "+", abs(self.delay)))
-			end
 		end
 
 		if unit == "player" or unit == "target" or unit == "arena" or unit == "boss" then
@@ -879,8 +848,7 @@ local function Shared(self, unit)
 
 			if (C.unitframe.castbar_icon == true and (unit == "player" or unit == "target")) or unit == "arena" or unit == "boss" then
 				self.Castbar.Button = CreateFrame("Frame", nil, self.Castbar)
-				self.Castbar.Button:SetHeight(20)
-				self.Castbar.Button:SetWidth(20)
+				self.Castbar.Button:SetSize(self.Castbar:GetHeight() + 4, self.Castbar:GetHeight() + 4)
 				self.Castbar.Button:SetTemplate("Default")
 
 				self.Castbar.Icon = self.Castbar.Button:CreateTexture(nil, "ARTWORK")
@@ -916,6 +884,36 @@ local function Shared(self, unit)
 				self.Castbar.Latency:SetTextColor(1, 1, 1)
 				self.Castbar.Latency:SetPoint("TOPRIGHT", self.Castbar.Time, "BOTTOMRIGHT", 0, 0)
 				self.Castbar.Latency:SetJustifyH("RIGHT")
+			end
+		end
+
+		if unit == "focus" then
+			self.Castbar.Button = CreateFrame("Frame", nil, self.Castbar)
+			self.Castbar.Button:SetSize(65, 65)
+			self.Castbar.Button:SetPoint(unpack(C.position.unitframes.focus_castbar))
+			self.Castbar.Button:SetTemplate("Default")
+
+			self.Castbar.Icon = self.Castbar.Button:CreateTexture(nil, "ARTWORK")
+			self.Castbar.Icon:SetPoint("TOPLEFT", self.Castbar.Button, 2, -2)
+			self.Castbar.Icon:SetPoint("BOTTOMRIGHT", self.Castbar.Button, -2, 2)
+			self.Castbar.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+
+			self.Castbar.Time = T.SetFontString(self.Castbar, C.font.unit_frames_font, C.font.unit_frames_font_size * 2, C.font.unit_frames_font_style)
+			self.Castbar.Time:SetParent(self.Castbar.Button)
+			self.Castbar.Time:SetPoint("CENTER", self.Castbar.Icon, "CENTER", 0, 10)
+			self.Castbar.Time:SetTextColor(1, 1, 1)
+
+			self.Castbar.Time2 = T.SetFontString(self.Castbar, C.font.unit_frames_font, C.font.unit_frames_font_size * 2, C.font.unit_frames_font_style)
+			self.Castbar.Time2:SetParent(self.Castbar.Button)
+			self.Castbar.Time2:SetPoint("CENTER", self.Castbar.Icon, "CENTER", 0, -10)
+			self.Castbar.Time2:SetTextColor(1, 1, 1)
+
+			self.Castbar.CustomTimeText = function(self, duration)
+				self.Time:SetText(("%.1f"):format(self.max))
+				self.Time2:SetText(("%.1f"):format(self.channeling and duration or self.max - duration))
+			end
+			self.Castbar.CustomDelayText = function(self)
+				self.Time:SetText(("|cffaf5050%s %.1f|r"):format(self.channeling and "-" or "+", abs(self.delay)))
 			end
 		end
 	end

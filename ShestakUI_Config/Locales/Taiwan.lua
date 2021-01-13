@@ -140,6 +140,8 @@ L.unitframe_extra_height_auto = "血量/能量框架自動增高"
 L.unitframe_extra_height_auto_desc = "按字體大小智能調節框架高度"
 L.unitframe_extra_health_height = "血量框架額外增高"
 L.unitframe_extra_power_height = "能量框架額外增高"
+L.unitframe_subheader_castbar = "Size of player and target castbar" -- Need review
+L.unitframe_castbar_height = "Height" -- Need review
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "職業資源欄"
