@@ -222,6 +222,7 @@ T.RaidDebuffs = {
 	[SpellName(333489)] = 3,	-- Necrotic Breath
 	[SpellName(320717)] = 3,	-- Blood Hunger
 	[SpellName(320788)] = 3,	-- Frozen Binds
+	[SpellName(320200)] = 3,	-- Stitchneedle
 	-- Theater of Pain
 	[SpellName(333299)] = 3,	-- Curse of Desolation
 	[SpellName(319539)] = 3,	-- Soulless
@@ -282,6 +283,8 @@ T.RaidDebuffs = {
 	[SpellName(323687)] = 3,	-- Arcane Lightning
 	[SpellName(323877)] = 3,	-- Echo Finger Laser X-treme
 	[SpellName(334535)] = 3,	-- Beak Slice
+	[SpellName(333711)] = 3,	-- Decrepit Bite
+	[SpellName(320147)] = 3,	-- Bleeding
 
 -----------------------------------------------------------------
 -- Other
