@@ -105,27 +105,25 @@ coords:SetScript("OnEvent", function(self, event)
 end)
 
 ----------------------------------------------------------------------------------------
---	Dropdown menu for close button
+--	Added options to map tracking button
 ----------------------------------------------------------------------------------------
-local WorldMap_DDMenu = CreateFrame("Frame", "WorldMapDropDownMenu")
-WorldMap_DDMenu.displayMode = "MENU"
-WorldMap_DDMenu.info = {}
-WorldMap_DDMenu.HideMenu = function()
-	if UIDROPDOWNMENU_OPEN_MENU == WorldMap_DDMenu then
-		CloseDropDownMenus()
-	end
-end
+hooksecurefunc(WorldMapFrame.overlayFrames[2], "InitializeDropDown", function(self)
+	UIDropDownMenu_AddSeparator()
+	local info = UIDropDownMenu_CreateInfo()
 
-local function WorldMapMenu(self, level)
-	if not level then return end
+	info.isTitle = true
+	info.notCheckable = true
+	info.text = "ShestakUI"
 
-	local info = self.info
+	UIDropDownMenu_AddButton(info)
+	info.text = nil
 
-	wipe(info)
+	info.isTitle = nil
+	info.disabled = nil
+	info.notCheckable = nil
+	info.isNotRadio = true
+	info.keepShownOnClick = true
 
-	if level ~= 1 then return end
-
-	wipe(info)
 	info.text = L_MAP_COORDS
 	info.checked = function()
 		return ShestakUISettingsPerChar.Coords == true
@@ -140,10 +138,9 @@ local function WorldMapMenu(self, level)
 			coords:SetAlpha(1)
 		end
 	end
-	UIDropDownMenu_AddButton(info, level)
+	UIDropDownMenu_AddButton(info)
 
 	if C.minimap.fog_of_war == true then
-		wipe(info)
 		info.text = L_MAP_FOG
 		info.checked = function()
 			return ShestakUISettingsPerChar.FogOfWar == true
@@ -162,41 +159,6 @@ local function WorldMapMenu(self, level)
 				end
 			end
 		end
-		UIDropDownMenu_AddButton(info, level)
-	end
-
-	wipe(info)
-	info.disabled = nil
-	info.notCheckable = 1
-	info.text = CLOSE
-	info.func = self.HideMenu
-	info.tooltipTitle = CLOSE
-	UIDropDownMenu_AddButton(info, level)
-end
-
-WorldMapFrameCloseButton:RegisterForClicks("AnyUp")
-WorldMapFrameCloseButton:SetScript("OnClick", function(self, btn)
-	if btn == "RightButton" then
-		if WorldMap_DDMenu.initialize ~= WorldMapMenu then
-			CloseDropDownMenus()
-			WorldMap_DDMenu.initialize = WorldMapMenu
-		end
-		ToggleDropDownMenu(nil, nil, WorldMap_DDMenu, self:GetName(), -10, -6)
-		return
-	else
-		UIPanelCloseButton_OnClick(self)
+		UIDropDownMenu_AddButton(info)
 	end
 end)
-
-local tooltip_hide = function()
-	GameTooltip:Hide()
-end
-
-local tooltip_show = function(self)
-	GameTooltip:SetOwner(self, "ANCHOR_LEFT", 19, 7)
-	GameTooltip:ClearLines()
-	GameTooltip:SetText(L_BAG_RIGHT_CLICK_CLOSE)
-end
-
-WorldMapFrameCloseButton:HookScript("OnEnter", tooltip_show)
-WorldMapFrameCloseButton:HookScript("OnLeave", tooltip_hide)
