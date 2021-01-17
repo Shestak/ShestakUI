@@ -67,6 +67,7 @@ RegisterStateDriver(PetBarAnchor, "visibility", "[pet,novehicleui,nopossessbar,n
 --	Stance bar anchor
 ----------------------------------------------------------------------------------------
 local StanceAnchor = CreateFrame("Frame", "StanceBarAnchor", T_PetBattleFrameHider)
+StanceAnchor:SetFrameStrata("LOW")
 if C.actionbar.stancebar_horizontal == true then
 	if C.actionbar.petbar_horizontal == true then
 		StanceAnchor:SetPoint(C.position.stance_bar[1], C.position.stance_bar[2], C.position.stance_bar[3], C.position.stance_bar[4], C.position.stance_bar[5] - (C.actionbar.button_size + C.actionbar.button_space))
@@ -97,8 +98,8 @@ StanceAnchor:SetScript("OnEvent", function()
 			StanceAnchor:SetHeight((C.actionbar.button_size * forms) + (C.actionbar.button_space * (forms - 1)))
 		end
 	end
+	RegisterStateDriver(StanceAnchor, "visibility", GetNumShapeshiftForms() == 0 and "hide" or "show")
 end)
-RegisterStateDriver(StanceAnchor, "visibility", GetNumShapeshiftForms() == 0 and "hide" or "show")
 
 ----------------------------------------------------------------------------------------
 --	Bottom line
