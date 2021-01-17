@@ -202,7 +202,8 @@ T.RaidDebuffs = {
 	[SpellName(320512)] = 3,	-- Corroded Claws
 	[SpellName(333406)] = 3,	-- Assassinate
 	[SpellName(332397)] = 3,	-- Shroudweb
-	[SpellName(330069)] = 3,	-- Concentrated Plague
+	[SpellName(330069)] = 2,	-- Concentrated Plague
+	[SpellName(319070)] = 3,	-- Corrosive Gunk
 	-- The Necrotic Wake
 	[SpellName(321821)] = 3,	-- Disgusting Guts
 	[SpellName(323365)] = 3,	-- Clinging Darkness
