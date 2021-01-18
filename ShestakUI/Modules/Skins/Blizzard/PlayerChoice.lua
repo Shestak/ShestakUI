@@ -7,13 +7,6 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	local frame = _G.PlayerChoiceFrame
 
-	local function StyleText(text)
-		if text.IsSkinned then return end
-		text:SetTextColor(1, 1, 1)
-		text.SetTextColor = T.dummy
-		text.IsSkinned = true
-	end
-
 	hooksecurefunc(frame, "Update", function()
 		if not frame.IsSkinned then
 			frame.BlackBackground:SetAlpha(0)

@@ -483,7 +483,7 @@ ns.CreateDropDown = function(parent, option, needsReload, text, tableValue, LSM,
 	local f = CreateFrame("Frame", parent:GetName()..option.."DropDown", parent, "UIDropDownMenuTemplate")
 	UIDropDownMenu_SetWidth(f, 110)
 
-	UIDropDownMenu_Initialize(f, function(self, level)
+	UIDropDownMenu_Initialize(f, function(self)
 		local info = UIDropDownMenu_CreateInfo()
 		info.func = self.SetValue
 		for key, value in pairs(tableValue) do

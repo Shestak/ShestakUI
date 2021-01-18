@@ -1012,7 +1012,7 @@ local function LoadSkin()
 	--	KayrCovenantMissions AddOn skin
 	----------------------------------------------------------------------------------------
 	if IsAddOnLoaded("KayrCovenantMissions") then
-		hooksecurefunc(CovenantMissionFrame, "SetupTabs", function(tab, isSelected)
+		hooksecurefunc(CovenantMissionFrame, "SetupTabs", function()
 			if KayrCovenantMissionsAdvice then
 				KayrCovenantMissionsAdvice:StripTextures()
 				KayrCovenantMissionsAdvice:CreateBackdrop("Transparent")

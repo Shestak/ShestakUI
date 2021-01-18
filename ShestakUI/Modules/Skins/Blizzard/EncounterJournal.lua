@@ -65,8 +65,6 @@ local function LoadSkin()
 		end
 	end)
 
-	--FIXME EncounterJournal.LootJournal.ItemSetsFrame.ClassButton:SkinButton(true)
-
 	T.SkinEditBox(EncounterJournalSearchBox)
 	T.SkinCloseButton(EncounterJournalCloseButton)
 	T.SkinDropDownBox(EncounterJournalInstanceSelectTierDropDown)
