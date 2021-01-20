@@ -975,12 +975,18 @@ local function LoadSkin()
 	-- Followers
 	local Follower = CovenantMissionFrameFollowers
 	Follower:StripTextures()
-	T.SkinScrollBar(CovenantMissionFrameFollowersListScrollFrameScrollBar)
 	Follower.MaterialFrame:StripTextures()
 	Follower.HealAllButton:SkinButton()
 	Follower.ElevatedFrame:Hide()
 
 	hooksecurefunc(Follower, "ShowFollower", onShowFollower)
+
+	T.SkinScrollBar(CovenantMissionFrameFollowersListScrollFrameScrollBar)
+	CovenantMissionFrameFollowersListScrollFrameScrollBarScrollUpButton:SetSize(17, 15)
+	CovenantMissionFrameFollowersListScrollFrameScrollBarThumbTexture:SetWidth(17)
+	CovenantMissionFrameFollowersListScrollFrameScrollBarScrollDownButton:SetSize(17, 15)
+	CovenantMissionFrameFollowersListScrollFrameScrollBar:SetPoint("TOPLEFT", CovenantMissionFrameFollowersListScrollFrame, "TOPRIGHT", -17, -23)
+	CovenantMissionFrameFollowersListScrollFrameScrollBar:SetPoint("BOTTOMLEFT", CovenantMissionFrameFollowersListScrollFrame, "BOTTOMRIGHT", -17, 21)
 
 	local FollowerTab = CovenantMissionFrame.FollowerTab
 	FollowerTab:StripTextures()
