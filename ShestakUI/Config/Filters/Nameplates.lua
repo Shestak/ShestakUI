@@ -111,4 +111,5 @@ T.BuffBlackList = {
 T.PlateBlacklist = {
 	["24207"] = true, -- Army of the Dead
 	["29630"] = true, -- Fanged Pit Viper (Gundrak)
+	["55659"] = true, -- Wild Imp
 }
