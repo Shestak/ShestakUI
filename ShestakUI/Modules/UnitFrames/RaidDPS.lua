@@ -178,7 +178,7 @@ local function Shared(self, unit)
 		self.AssistantIndicator:SetPoint("TOPLEFT", self.Health, -3, 8)
 	end
 
-	-- Agro border
+	-- Aggro border
 	if C.raidframe.aggro_border == true then
 		self.ThreatIndicator = CreateFrame("Frame", nil, self)
 		self.ThreatIndicator.PostUpdate = T.UpdateThreat

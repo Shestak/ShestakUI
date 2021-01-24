@@ -442,13 +442,6 @@ local function Shared(self, unit)
 				end
 				self.ComboPoints[i]:SetStatusBarTexture(C.media.texture)
 			end
-
-			self.ComboPoints[1]:SetStatusBarColor(0.9, 0.1, 0.1)
-			self.ComboPoints[2]:SetStatusBarColor(0.9, 0.1, 0.1)
-			self.ComboPoints[3]:SetStatusBarColor(0.9, 0.9, 0.1)
-			self.ComboPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
-			self.ComboPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
-			self.ComboPoints[6]:SetStatusBarColor(0.1, 0.9, 0.1)
 		end
 
 		-- Totem bar for Shaman
@@ -607,12 +600,9 @@ local function Shared(self, unit)
 		self.CounterBar.Text = T.SetFontString(self.CounterBar, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 		self.CounterBar.Text:SetPoint("CENTER")
 
-		local r, g, b
-		local max
-
 		self.CounterBar:SetScript("OnValueChanged", function(_, value)
-			_, max = self.CounterBar:GetMinMaxValues()
-			r, g, b = oUF:ColorGradient(value, max, 0.8, 0, 0, 0.8, 0.8, 0, 0, 0.8, 0)
+			local _, max = self.CounterBar:GetMinMaxValues()
+			local r, g, b = oUF:ColorGradient(value, max, 0.8, 0, 0, 0.8, 0.8, 0, 0, 0.8, 0)
 			self.CounterBar:SetStatusBarColor(r, g, b)
 			self.CounterBar.bg:SetVertexColor(r, g, b, 0.2)
 			self.CounterBar.Text:SetText(floor(value))
@@ -734,13 +724,6 @@ local function Shared(self, unit)
 					end
 					self.ComboPoints[i]:SetStatusBarTexture(C.media.texture)
 				end
-
-				self.ComboPoints[1]:SetStatusBarColor(0.9, 0.1, 0.1)
-				self.ComboPoints[2]:SetStatusBarColor(0.9, 0.1, 0.1)
-				self.ComboPoints[3]:SetStatusBarColor(0.9, 0.9, 0.1)
-				self.ComboPoints[4]:SetStatusBarColor(0.9, 0.9, 0.1)
-				self.ComboPoints[5]:SetStatusBarColor(0.1, 0.9, 0.1)
-				self.ComboPoints[6]:SetStatusBarColor(0.1, 0.9, 0.1)
 			end
 
 			-- Enemy specialization
@@ -1044,7 +1027,7 @@ local function Shared(self, unit)
 		self:HookScript("OnShow", T.UpdateAllElements)
 	end
 
-	-- Agro border
+	-- Aggro border
 	if C.raidframe.aggro_border == true and unit ~= "arenatarget" then
 		self.ThreatIndicator = CreateFrame("Frame", nil, self)
 		self.ThreatIndicator.PostUpdate = T.UpdateThreat

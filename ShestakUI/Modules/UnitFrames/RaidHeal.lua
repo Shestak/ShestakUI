@@ -106,7 +106,7 @@ local function Shared(self, unit)
 		self.Power:SetStatusBarTexture(C.media.texture)
 
 		self.Power.PostUpdate = function(power, unit)
-			if not UnitIsConnected(unit) or UnitIsDead(unit) or UnitIsGhost(unit) then
+			if not UnitIsConnected(unit) or UnitIsDeadOrGhost(unit) then
 				power:SetValue(0)
 			end
 		end
@@ -127,7 +127,7 @@ local function Shared(self, unit)
 		self.Power.bg.multiplier = 0.2
 	end
 
-	-- Agro border
+	-- Aggro border
 	if C.raidframe.aggro_border == true then
 		self.ThreatIndicator = CreateFrame("Frame", nil, self)
 		self.ThreatIndicator.PostUpdate = T.UpdateThreat
