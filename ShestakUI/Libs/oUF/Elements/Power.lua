@@ -214,6 +214,10 @@ local function Enable(self)
 			element.UpdateColor = UpdateColor
 		end
 
+		if(not element.GetDisplayPower) then
+			element.GetDisplayPower = GetDisplayPower
+		end
+
 		element:Show()
 
 		return true
