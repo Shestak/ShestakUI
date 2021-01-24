@@ -51,6 +51,10 @@ local function LoadSkin()
 			option.Header.Text:SetTextColor(1, .8, 0)
 			option.OptionText:SetTextColor(1, 1, 1)
 
+			if option.RewardsFrame.Rewards.lastReward then
+				option.RewardsFrame.Rewards.lastReward.Name:SetTextColor(1, 1, 1)
+			end
+
 			option.Background:SetShown(not hasArtworkBorderArt)
 			if IsInJailers then
 				option.Background:Show()
@@ -69,8 +73,8 @@ local function LoadSkin()
 			option.ArtBackdrop:SetShown(not IsInJailers and hasArtworkBorderArt)
 
 			if option.WidgetContainer.widgetFrames then
-                for _, widgetFrame in next, option.WidgetContainer.widgetFrames do
-                    if widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.TextWithState then
+				for _, widgetFrame in next, option.WidgetContainer.widgetFrames do
+					if widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.TextWithState then
 						widgetFrame.Text:SetTextColor(1, 1, 1)
 					elseif widgetFrame.widgetType == _G.Enum.UIWidgetVisualizationType.SpellDisplay then
 						local _, g = widgetFrame.Spell.Text:GetTextColor()
@@ -86,8 +90,8 @@ local function LoadSkin()
 							widgetFrame.Spell.Icon:SetSize(20, 20)
 						end
 					end
-                end
-            end
+				end
+			end
 		end
 	end)
 end
