@@ -54,6 +54,22 @@ local function Update(self, _, unit, powerType)
 		end
 	end
 
+	if T.class == "ROGUE" then
+		for i = 2, 4 do
+			element[i]:SetStatusBarColor(unpack(element.Colors[i]))
+		end
+
+		local UnitChargedPowerPoints = GetUnitChargedPowerPoints("player")
+		local chargedPoint = UnitChargedPowerPoints and UnitChargedPowerPoints[1]
+
+		if chargedPoint then
+			element[chargedPoint]:SetStatusBarColor(unpack(element.Colors[7]))
+			if element[chargedPoint]:GetAlpha() == 0.2 then
+				element[chargedPoint]:SetAlpha(0.5)
+			end
+		end
+	end
+
 	if C.unitframe_class_bar.combo_old == true or (T.class ~= "DRUID" and T.class ~= "ROGUE") then
 		if element[1]:GetAlpha() == 1 then
 			for i = 1, max do
@@ -102,6 +118,16 @@ local Enable = function(self)
 		element.__owner = self
 		element.ForceUpdate = ForceUpdate
 
+		element.Colors = {
+			[1] = {0.9, 0.1, 0.1},
+			[2] = {0.9, 0.1, 0.1},
+			[3] = {0.9, 0.9, 0.1},
+			[4] = {0.9, 0.9, 0.1},
+			[5] = {0.1, 0.9, 0.1},
+			[6] = {0.1, 0.9, 0.1},
+			[7] = {0.33, 0.73, 1},	-- Echoing Reprimand
+		}
+
 		self:RegisterEvent("UNIT_POWER_UPDATE", Path, true)
 		self:RegisterEvent("UNIT_MAXPOWER", Path, true)
 		self:RegisterEvent("PLAYER_TARGET_CHANGED", Path, true)
@@ -113,12 +139,8 @@ local Enable = function(self)
 			element.hadler:SetScript("OnEvent", function() Visibility(self) end)
 		end
 
-		for index = 1, MAX_COMBO_POINTS do
-			local cpoint = element[index]
-			if(cpoint:IsObjectType"Texture" and not cpoint:GetTexture()) then
-				cpoint:SetTexture[[Interface\ComboFrame\ComboPoint]]
-				cpoint:SetTexCoord(0, 0.375, 0, 1)
-			end
+		for i = 1, 6 do
+			element[i]:SetStatusBarColor(unpack(element.Colors[i]))
 		end
 
 		return true
@@ -130,6 +152,7 @@ local Disable = function(self)
 	if(element) then
 		self:UnregisterEvent("UNIT_POWER_UPDATE", Path)
 		self:UnregisterEvent("UNIT_MAXPOWER", Path)
+		self:UnregisterEvent("PLAYER_TARGET_CHANGED", Path)
 		element.hadler:UnregisterEvent("UPDATE_SHAPESHIFT_FORM")
 		element.hadler:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	end
