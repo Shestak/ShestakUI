@@ -270,6 +270,8 @@ local function SetupChatPosAndFont()
 	QuickJoinToastButton.Toast.backdrop:SetPoint("TOPLEFT", 0, 0)
 	QuickJoinToastButton.Toast.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 	QuickJoinToastButton.Toast.backdrop:Hide()
+	QuickJoinToastButton.Toast:SetWidth(C.chat.width + 7)
+	QuickJoinToastButton.Toast.Text:SetWidth(C.chat.width - 20)
 
 	hooksecurefunc(QuickJoinToastButton, "ShowToast", function() QuickJoinToastButton.Toast.backdrop:Show() end)
 	hooksecurefunc(QuickJoinToastButton, "HideToast", function() QuickJoinToastButton.Toast.backdrop:Hide() end)
