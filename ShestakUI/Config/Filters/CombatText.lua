@@ -22,6 +22,7 @@ if C.combattext.merge_aoe_spam then
 	T.merge = {}
 	T.aoespam = {}
 	T.aoespam[6603] = 3				-- Auto Attack
+	T.aoespam[287988] = 3			-- Pet Attack
 	T.aoespam[195222] = 4			-- Stormlash
 	T.aoespam[195256] = 4			-- Stormlash
 	T.aoespam[207694] = 3			-- Symbiote Strike

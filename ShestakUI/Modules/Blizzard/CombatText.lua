@@ -747,6 +747,12 @@ local gflags = bit.bor(COMBATLOG_OBJECT_AFFILIATION_MINE,
 	COMBATLOG_OBJECT_TYPE_GUARDIAN
 )
 
+local petflags = bit.bor(COMBATLOG_OBJECT_AFFILIATION_MINE,
+	COMBATLOG_OBJECT_REACTION_FRIENDLY,
+	COMBATLOG_OBJECT_CONTROL_PLAYER,
+	COMBATLOG_OBJECT_TYPE_PET
+)
+
 -- Damage
 if C.combattext.damage then
 	local xCTd = CreateFrame("Frame")
@@ -879,8 +885,8 @@ if C.combattext.damage then
 						if bit.band(sourceFlags, COMBATLOG_OBJECT_AFFILIATION_MINE) ~= COMBATLOG_OBJECT_AFFILIATION_MINE then
 							spellId = 6603
 						end
-						if bit.band(sourceFlags, COMBATLOG_OBJECT_CONTROL_PLAYER) == COMBATLOG_OBJECT_CONTROL_PLAYER then
-							spellId = 6603
+						if sourceFlags == petflags then
+							spellId = 287988
 						end
 						if T.aoespam[spellId] then
 							SQ[spellId]["locked"] = true
