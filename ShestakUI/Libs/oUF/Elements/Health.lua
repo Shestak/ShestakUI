@@ -118,6 +118,10 @@ local function Enable(self, unit)
 		self:RegisterEvent('UNIT_FACTION', Path) -- For tapping
 		self:RegisterEvent('UNIT_FLAGS', Path) -- For selection
 
+		-- Fix disconnected players
+		self:RegisterEvent('PARTY_MEMBER_ENABLE', Path)
+		self:RegisterEvent('PARTY_MEMBER_DISABLE', Path)
+
 		if(element:IsObjectType('StatusBar') and not element:GetStatusBarTexture()) then
 			element:SetStatusBarTexture([[Interface\TargetingFrame\UI-StatusBar]])
 		end
@@ -138,11 +142,12 @@ local function Disable(self)
 		element:Hide()
 
 		self:UnregisterEvent('UNIT_HEALTH', Path)
-		self:UnregisterEvent('UNIT_HEALTH', Path)
 		self:UnregisterEvent('UNIT_MAXHEALTH', Path)
 		self:UnregisterEvent('UNIT_CONNECTION', Path)
 		self:UnregisterEvent('UNIT_FACTION', Path)
 		self:UnregisterEvent('UNIT_FLAGS', Path)
+		self:UnregisterEvent('PARTY_MEMBER_ENABLE', Path)
+		self:UnregisterEvent('PARTY_MEMBER_DISABLE', Path)
 	end
 end
 
