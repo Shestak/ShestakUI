@@ -143,6 +143,47 @@ AceGUI.RegisterAsWidget = function(self, widget)
 
 		lowtext:SetPoint("TOPLEFT", frame, "BOTTOMLEFT", 2, -2)
 		hightext:SetPoint("TOPRIGHT", frame, "BOTTOMRIGHT", -2, -2)
+	elseif TYPE == "Keybinding" then
+		local button = widget.button
+		local msgframe = widget.msgframe
+
+		button:SkinButton()
+
+		msgframe:StripTextures()
+		msgframe:SetTemplate("Transparent")
+		msgframe.msg:ClearAllPoints()
+		msgframe.msg:SetPoint("CENTER")
+
+	elseif TYPE == "ColorPicker" then
+		local frame = widget.frame
+		local colorSwatch = widget.colorSwatch
+
+		frame:CreateBackdrop()
+		if frame.backdrop then
+			frame.backdrop:SetSize(25, 20)
+			frame.backdrop:ClearAllPoints()
+			frame.backdrop:SetPoint("LEFT", frame, "LEFT", 4, 0)
+		end
+
+		colorSwatch:SetTexture(C.media.blank)
+		colorSwatch:ClearAllPoints()
+		colorSwatch:SetParent(frame.backdrop)
+		colorSwatch:SetInside(frame.backdrop)
+
+		if colorSwatch.background then
+			colorSwatch.background:SetColorTexture(0, 0, 0, 0)
+		end
+
+		if colorSwatch.checkers then
+			colorSwatch.checkers:ClearAllPoints()
+			colorSwatch.checkers:SetParent(frame.backdrop)
+			colorSwatch.checkers:SetInside(frame.backdrop)
+		end
+	elseif TYPE == "Icon" then
+		widget.frame:StripTextures()
+	elseif TYPE == "Dropdown-Pullout" then
+		local pullout = widget
+		pullout.frame:SetTemplate("Transparent")
 	end
 	return oldRegisterAsWidget(self, widget)
 end
@@ -154,10 +195,28 @@ AceGUI.RegisterAsContainer = function(self, widget)
 	if TYPE == "ScrollFrame" then
 		local frame = widget.scrollbar
 		T.SkinScrollBar(frame)
-	elseif TYPE == "InlineGroup" or TYPE == "TreeGroup" or TYPE == "TabGroup" or TYPE == "DropdownGroup" then
+	elseif TYPE == "InlineGroup" or TYPE == "TreeGroup" or TYPE == "TabGroup" or TYPE == "Frame" or TYPE == "DropdownGroup" or TYPE == "Window" then
 		local frame = widget.content:GetParent()
+		if TYPE == "Frame" then
+			frame:StripTextures()
+			for i = 1, frame:GetNumChildren() do
+				local child = select(i, frame:GetChildren())
+				if child:IsObjectType("Button") and child:GetText() then
+					child:SkinButton()
+				else
+					child:StripTextures()
+				end
+			end
+		elseif TYPE == "Window" then
+			frame:StripTextures()
+			T.SkinCloseButton(frame.obj.closebutton)
+		end
 
-		frame:SetTemplate("Overlay")
+		if TYPE == "Frame" then
+			frame:SetTemplate("Transparent")
+		else
+			frame:SetTemplate("Overlay")
+		end
 
 		if widget.treeframe then
 			widget.treeframe:SetTemplate("Overlay")
@@ -177,6 +236,10 @@ AceGUI.RegisterAsContainer = function(self, widget)
 				tab.text:SetPoint("LEFT", 14, 0)
 				return tab
 			end
+		end
+
+		if widget.scrollbar then
+			T.SkinScrollBar(widget.scrollbar)
 		end
 	end
 
