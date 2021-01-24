@@ -9,6 +9,7 @@ if C.unitframe.enable ~= true or C.unitframe.show_arena ~= true or C.unitframe.p
 T.DiminishingSpells = {
 	-- Stuns
 	[210141] = {"stun"},			-- Zombie Explosion
+	[334693] = {"stun"},			-- Absolute Zero (Breath of Sindragosa)
 	[108194] = {"stun"},			-- Asphyxiate (Unholy)
 	[221562] = {"stun"},			-- Asphyxiate (Blood)
 	[91800] = {"stun"},				-- Gnaw (Ghoul)
@@ -46,7 +47,6 @@ T.DiminishingSpells = {
 	[287712] = {"stun"},			-- Haymaker (Kul Tiran)
 
 	-- Roots
-	[334693] = {"root"},			-- Absolute Zero (Breath of Sindragosa)
 	[204085] = {"root"},			-- Deathchill (Chains of Ice)
 	[233395] = {"root"},			-- Deathchill (Remorseless Winter)
 	[339] = {"root"},				-- Entangling Roots
