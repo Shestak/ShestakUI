@@ -27,7 +27,9 @@ local tooltips = {
 	AtlasLootTooltip,
 	QuestGuru_QuestWatchTooltip,
 	TomTomTooltip,
-	LibDBIconTooltip
+	LibDBIconTooltip,
+	AceConfigDialogTooltip,
+	BigWigsOptionsTooltip
 }
 
 local backdrop = {
