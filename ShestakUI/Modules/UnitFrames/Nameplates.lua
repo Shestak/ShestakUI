@@ -331,15 +331,14 @@ end
 
 local function threatColor(self, forced)
 	if UnitIsPlayer(self.unit) then return end
-	local combat = UnitAffectingCombat("player")
-	local threatStatus = UnitThreatSituation("player", self.unit)
 
 	if C.nameplate.enhance_threat ~= true then
 		SetVirtualBorder(self.Health, unpack(C.media.border_color))
 	end
 	if UnitIsTapDenied(self.unit) then
 		self.Health:SetStatusBarColor(0.6, 0.6, 0.6)
-	elseif combat then
+	elseif UnitAffectingCombat("player") then
+		local threatStatus = UnitThreatSituation("player", self.unit)
 		if self.npcID == "120651" then	-- Explosives affix
 			self.Health:SetStatusBarColor(1, 0.3, 0)
 		elseif threatStatus == 3 then	-- securely tanking, highest threat
@@ -372,11 +371,11 @@ local function threatColor(self, forced)
 			if C.nameplate.enhance_threat == true then
 				if T.Role == "Tank" then
 					local offTank = false
-					if IsInGroup() or IsInRaid() then
+					if IsInRaid() then
 						for i = 1, GetNumGroupMembers() do
-							if UnitExists("raid"..i) and not UnitIsUnit("raid"..i, "player") then
+							if UnitExists("raid"..i) and not UnitIsUnit("raid"..i, "player") and UnitGroupRolesAssigned("raid"..i) == "TANK" then
 								local isTanking = UnitDetailedThreatSituation("raid"..i, self.unit)
-								if isTanking and UnitGroupRolesAssigned("raid"..i) == "TANK" then
+								if isTanking then
 									offTank = true
 									break
 								end
