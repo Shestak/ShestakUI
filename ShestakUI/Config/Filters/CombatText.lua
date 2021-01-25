@@ -74,8 +74,9 @@ if T.class == "DEATHKNIGHT" then
 		T.aoespam[155166] = 3		-- Mark of Sindragosa
 		T.aoespam[55090] = 0		-- Scourge Strike
 		T.aoespam[319236] = 5		-- Unholy Pact
+		T.aoespam[212423] = 6		-- Skulker Shot
 		T.aoespam[311730] = 4		-- Swarming Mist (Covenant Venthyr)
-		T.aoespam[315443] = 6		-- Abomination Limb (Covenant Necrolord)
+		T.aoespam[323798] = 6		-- Abomination Limb (Covenant Necrolord)
 		T.merge[66198] = 222024		-- Obliterate Off-Hand
 		T.merge[66196] = 222026		-- Frost Strike Off-Hand
 		T.merge[66188] = 49998		-- Death Strike Off-Hand
@@ -134,6 +135,7 @@ elseif T.class == "DEMONHUNTER" then
 		T.merge[210155] = 210153	-- Death Sweep Off-Hand
 		T.aoespam[236237] = 2		-- Chaos Cleave
 		T.aoespam[203794] = 2		-- Consume Soul
+		T.aoespam[307046] = 0		-- Elysian Decree (Covenant Kyrian)
 	end
 elseif T.class == "DRUID" then
 	if C.combattext.merge_aoe_spam then
@@ -574,12 +576,13 @@ elseif T.class == "WARRIOR" then
 		T.aoespam[167105] = 0.5		-- Colossus Smash (Sweeping Strikes)
 		T.aoespam[260798] = 0.5		-- Execute Arms (Sweeping Strikes)
 		T.aoespam[7384] = 0.5		-- Overpower (Sweeping Strikes)
+		T.aoespam[315961] = 0.5		-- Dreadnaught (Arms Talent)
 		T.aoespam[1464] = 0.5		-- Slam (Sweeping Strikes)
 		T.aoespam[12294] = 0.5		-- Mortal Strike (Sweeping Strikes)
 		T.aoespam[262115] = 3		-- Deep Wounds (Arms Mastery DoT)
 		T.aoespam[262161] = 1		-- Warbreaker (Arms Talent)
-		T.aoespam[199850] = 1.5		-- Whirlwind (Arms)
-		T.merge[199658] = 199850	-- Whirlwind (Arms)
+		T.aoespam[199658] = 1.5		-- Whirlwind (Arms)
+		T.merge[199850] = 199658	-- Whirlwind (Arms)
 		T.aoespam[280772] = 1		-- Siegebreaker (Fury Talent)
 		T.aoespam[218617] = 2		-- Rampage
 		T.merge[184707] = 218617	-- Rampage 2nd
@@ -588,6 +591,8 @@ elseif T.class == "WARRIOR" then
 		T.merge[201363] = 218617	-- Rampage 5th
 		T.aoespam[199667] = 1.5		-- Whirlwind (Fury)
 		T.merge[44949] = 199667		-- Whirlwind Off-Hand (Fury)
+		T.merge[199851] = 199667	-- Whirlwind Off-Hand (Fury)
+		T.merge[199852] = 199667	-- Whirlwind Off-Hand (Fury)
 		T.aoespam[46968] = 0		-- Shockwave
 		T.aoespam[6343] = 0			-- Thunder Clap
 		T.aoespam[115767] = 3		-- Deep Wounds
@@ -603,6 +608,11 @@ elseif T.class == "WARRIOR" then
 		T.merge[85384] = 96103		-- Raging Blow Off-Hand
 		T.merge[95738] = 50622		-- Bladestorm Off-Hand
 		T.merge[163558] = 280849	-- Execute Off-Hand
+		T.aoespam[317488] = 0.5		-- Condemn (Covenant Venthyr)
+		T.merge[317489] = 317488	-- Condemn Off-Hand (Fury) (Covenant Venthyr)
+		T.aoespam[307871] = 2		-- Spear of Bastion (Covenant Kyrian)
+		T.aoespam[325886] = 0		-- Ancient Aftershock (Covenant Night Fae)
+		T.aoespam[326062] = 0		-- Ancient Aftershock Second (Covenant Night Fae)
 	end
 	if C.combattext.healing then
 		T.healfilter[117313] = true	-- Bloodthirst Heal
