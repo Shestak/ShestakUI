@@ -747,12 +747,6 @@ local gflags = bit.bor(COMBATLOG_OBJECT_AFFILIATION_MINE,
 	COMBATLOG_OBJECT_TYPE_GUARDIAN
 )
 
-local petflags = bit.bor(COMBATLOG_OBJECT_AFFILIATION_MINE,
-	COMBATLOG_OBJECT_REACTION_FRIENDLY,
-	COMBATLOG_OBJECT_CONTROL_PLAYER,
-	COMBATLOG_OBJECT_TYPE_PET
-)
-
 -- Damage
 if C.combattext.damage then
 	local xCTd = CreateFrame("Frame")
@@ -885,8 +879,9 @@ if C.combattext.damage then
 						if bit.band(sourceFlags, COMBATLOG_OBJECT_AFFILIATION_MINE) ~= COMBATLOG_OBJECT_AFFILIATION_MINE then
 							spellId = 6603
 						end
-						if sourceFlags == petflags then
-							spellId = 287988
+						if (sourceGUID == UnitGUID("pet") or sourceFlags == gflags) and not T.aoespam[spellId] then
+							T.aoespam[spellId] = 3
+							SQ[spellId] = {queue = 0, msg = "", color = {}, count = 0, utime = 0, locked = false}
 						end
 						if T.aoespam[spellId] then
 							SQ[spellId]["locked"] = true
@@ -918,7 +913,7 @@ if C.combattext.damage then
 				xCT4:AddMessage(missType)
 			elseif eventType == "SPELL_MISSED" or eventType == "RANGE_MISSED" then
 				local spellId, _, _, missType = select(12, CombatLogGetCurrentEventInfo())
-				-- if missType == "IMMUNE" and spellId == 118895 then return end
+				if missType == "IMMUNE" and spellId == 204242 then return end -- Consecration slow
 				if C.combattext.icons then
 					icon = GetSpellTexture(spellId)
 					missType = misstypes[missType].." \124T"..icon..":"..C.combattext.icon_size..":"..C.combattext.icon_size..":0:0:64:64:5:59:5:59\124t"
