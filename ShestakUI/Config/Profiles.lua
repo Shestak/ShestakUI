@@ -259,6 +259,7 @@ if IsWetxius then
 	frame:RegisterEvent("PLAYER_LOGIN")
 	frame:SetScript("OnEvent", function()
 		xCT3:SetPoint("CENTER", 0, 305)
+		xCT3:SetWidth(400)
 	end)
 
 	T.CustomFilgerSpell = {
