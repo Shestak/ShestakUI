@@ -621,21 +621,21 @@ T.PostCreateIcon = function(element, button)
 	end
 end
 
+local day, hour, minute = 86400, 3600, 60
 local FormatTime = function(s)
-	local day, hour, minute = 86400, 3600, 60
 	if s >= day then
-		return format("%dd", floor(s / day + 0.5)), s % day
+		return format("%dd", floor(s / day + 0.5))
 	elseif s >= hour then
-		return format("%dh", floor(s / hour + 0.5)), s % hour
+		return format("%dh", floor(s / hour + 0.5))
 	elseif s >= minute then
-		return format("%dm", floor(s / minute + 0.5)), s % minute
-	elseif s >= minute / 12 then
-		return floor(s + 0.5), (s * 100 - floor(s * 100)) / 100
+		return format("%dm", floor(s / minute + 0.5))
+	elseif s >= 5 then
+		return floor(s + 0.5)
 	end
-	return format("%.1f", s), (s * 100 - floor(s * 100)) / 100
+	return format("%.1f", s)
 end
 
-local CreateAuraTimer = function(self, elapsed)
+T.CreateAuraTimer = function(self, elapsed)
 	if self.timeLeft then
 		self.elapsed = (self.elapsed or 0) + elapsed
 		if self.elapsed >= 0.1 then
@@ -648,7 +648,6 @@ local CreateAuraTimer = function(self, elapsed)
 			if self.timeLeft > 0 then
 				local time = FormatTime(self.timeLeft)
 				self.remaining:SetText(time)
-				self.remaining:SetTextColor(1, 1, 1)
 			else
 				self.remaining:Hide()
 				self:SetScript("OnUpdate", nil)
@@ -692,7 +691,7 @@ T.PostUpdateIcon = function(_, unit, button, _, _, duration, expiration, debuffT
 	if duration and duration > 0 and C.aura.show_timer == true then
 		button.remaining:Show()
 		button.timeLeft = expiration
-		button:SetScript("OnUpdate", CreateAuraTimer)
+		button:SetScript("OnUpdate", T.CreateAuraTimer)
 	else
 		button.remaining:Hide()
 		button.timeLeft = math.huge
