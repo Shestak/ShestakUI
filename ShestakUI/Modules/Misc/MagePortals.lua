@@ -61,7 +61,9 @@ for i, spell in pairs(spells) do
 
 	local l = b:CreateFontString("TeleportMenuName"..i, "OVERLAY")
 	l:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
-	if i == 9 then
+	if i == 5 and UnitFactionGroup("player") == "Horde" then
+		l:SetText(C_Map.GetAreaInfo(75))
+	elseif i == 9 then
 		l:SetText(L_ZONE_ANCIENTDALARAN)
 	else
 		l:SetText(string.sub(teleport, (string.find(teleport, ":") and string.find(teleport, ":") + 1) or 0))
