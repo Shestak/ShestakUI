@@ -9,12 +9,8 @@ if C.combattext.enable ~= true then return end
 -- General filter outgoing healing
 if C.combattext.healing then
 	T.healfilter = {}
-	T.healfilter[270661] = true		-- Self Reliance
 	T.healfilter[143924] = true		-- Leech
-	T.healfilter[127802] = true		-- Touch of the Grave
-	T.healfilter[207694] = true		-- Symbiote Strike
-	T.healfilter[242597] = true		-- Rethu's Incessant Courage
-	T.healfilter[241835] = true		-- Starlight of Celumbra
+	T.healfilter[127802] = true		-- Touch of the Grave [Undead]
 end
 
 -- General merge outgoing damage
@@ -22,12 +18,9 @@ if C.combattext.merge_aoe_spam then
 	T.merge = {}
 	T.aoespam = {}
 	T.aoespam[6603] = 3				-- Auto Attack
-	T.aoespam[195222] = 4			-- Stormlash
-	T.aoespam[195256] = 4			-- Stormlash
-	T.aoespam[207694] = 3			-- Symbiote Strike
-	T.aoespam[252907] = 5			-- Torment the Weak
-	T.aoespam[252896] = 0.5			-- Chaotic Darkness
-	T.aoespam[253022] = 0.5			-- Sorrow
+	T.aoespam[195222] = 4			-- Stormlash [Shaman]
+	T.aoespam[195256] = 4			-- Stormlash [Shaman]
+	T.aoespam[259756] = 6			-- Entropic Embrace (Void Elves)
 end
 
 -- Class config
