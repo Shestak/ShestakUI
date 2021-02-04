@@ -89,6 +89,12 @@ local herbs = {
 	[152505] = true,	-- Riverbud
 	[152510] = true,	-- Anchor Weed
 	[168487] = true,	-- Zin'anthid
+	[168583] = true,	-- Widowbloom
+	[168586] = true,	-- Rising Glory
+	[168589] = true,	-- Marrowroot
+	[169701] = true,	-- Deathblossom
+	[170554] = true,	-- Vigil's Torch
+	[171315] = true,	-- Nightshade
 }
 
 local ores = {
@@ -118,6 +124,12 @@ local ores = {
 	[152513] = true,	-- Platinum Ore
 	[155830] = true,	-- Runic Core, BfA Jewelcrafting Quest
 	[168185] = true,	-- Osmenite Ore
+	[171828] = true,	-- Laestrite
+	[171829] = true,	-- Solenium
+	[171830] = true,	-- Oxxein
+	[171831] = true,	-- Phaedrum
+	[171832] = true,	-- Sinvyr
+	[171833] = true,	-- Elethium
 }
 
 function button:PLAYER_LOGIN()
