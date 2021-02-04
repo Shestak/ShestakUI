@@ -102,28 +102,6 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 		end
 		_G["StaticPopup1ExtraButton"]:SkinButton()
 
-		-- _G["StaticPopup1CloseButton"]:HookScript("OnShow", function(self)
-			-- self:StripTextures(true)
-			-- T.SkinCloseButton(self, nil, "-")
-		-- end)
-
-		hooksecurefunc("StaticPopup_Show", function()
-			if StaticPopup1.insertedFrame and not StaticPopup1.insertedFrame.styled then
-				WeeklyRewardsFrameIconTexture:SkinIcon()
-				WeeklyRewardsFrameNameFrame:SetAlpha(0)
-				StaticPopup1.insertedFrame.ItemFrame.IconBorder:SetAlpha(0)
-				StaticPopup1.insertedFrame.styled = true
-
-				for AlsoItems in StaticPopup1.insertedFrame.AlsoItemsFrame.pool:EnumerateActive() do
-					if not AlsoItems.styled then
-						AlsoItems.IconBorder:SetAlpha(0)
-						AlsoItems.Icon:SkinIcon()
-						AlsoItems.styled = true
-					end
-				end
-			end
-		end)
-
 		T.SkinCloseButton(_G["RolePollPopupCloseButton"])
 
 		-- Cinematic popup

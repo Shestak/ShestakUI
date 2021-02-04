@@ -55,6 +55,27 @@ local function LoadSkin()
 		end
 	end
 
+	hooksecurefunc(frame, "SelectReward", function(self)
+		local frame = self.confirmSelectionFrame
+		if frame and not frame.styled then
+			WeeklyRewardsFrameIconTexture:SkinIcon()
+			WeeklyRewardsFrameNameFrame:SetAlpha(0)
+			frame.ItemFrame.IconBorder:SetAlpha(0)
+			frame.styled = true
+
+			local alsoItems = frame.AlsoItemsFrame
+			if alsoItems and alsoItems.pool then
+				for items in alsoItems.pool:EnumerateActive() do
+					if not items.styled then
+						items.IconBorder:SetAlpha(0)
+						items.Icon:SkinIcon()
+						items.styled = true
+					end
+				end
+			end
+		end
+	end)
+
 	local rewardText = frame.ConcessionFrame.RewardsFrame.Text
 	hooksecurefunc(rewardText, "SetText", function(self, text)
 		if not text then text = self:GetText() end
