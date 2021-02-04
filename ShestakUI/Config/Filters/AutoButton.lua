@@ -77,4 +77,5 @@ T.ABItems = {
 	[177836] = true,	-- Wingpierce Javelin
 	[180280] = true,	-- Soulforged Core
 	[183045] = true,	-- Korinna's Allaying Crook
+	[180170] = true,	-- Pulsing Animacone
 }
