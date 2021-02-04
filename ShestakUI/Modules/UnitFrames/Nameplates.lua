@@ -49,6 +49,18 @@ function frame:PLAYER_LOGIN()
 
 	SetCVar("nameplateOtherTopInset", C.nameplate.clamp and 0.08 or -1)
 	SetCVar("nameplateOtherBottomInset", C.nameplate.clamp and 0.1 or -1)
+
+	if C.nameplate.only_name then
+		SetCVar("nameplateShowOnlyNames", 1)
+	end
+
+	local function changeFont(self, size)
+		local mult = size or 1
+		self:SetFont(C.font.nameplates_font, C.font.nameplates_font_size * mult * T.noscalemult, C.font.nameplates_font_style)
+		self:SetShadowOffset(C.font.nameplates_font_shadow and 1 or 0, C.font.nameplates_font_shadow and -1 or 0)
+	end
+	changeFont(SystemFont_NamePlateFixed)
+	changeFont(SystemFont_LargeNamePlateFixed, 2)
 end
 
 local healList, exClass, healerSpecs = {}, {}, {}
