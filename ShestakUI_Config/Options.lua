@@ -1733,8 +1733,11 @@ do
 	local loot_icons = ns.CreateCheckBox(parent, "loot_icons")
 	loot_icons:SetPoint("TOPLEFT", damage_meter_spam, "BOTTOMLEFT", 0, 0)
 
+	local role_icons = ns.CreateCheckBox(parent, "role_icons", L.tooltip_unit_role)
+	role_icons:SetPoint("TOPLEFT", loot_icons, "BOTTOMLEFT", 0, 0)
+
 	local custom_time_color = ns.CreateCheckBox(parent, "custom_time_color")
-	custom_time_color:SetPoint("TOPLEFT", loot_icons, "BOTTOMLEFT", 0, 0)
+	custom_time_color:SetPoint("TOPLEFT", role_icons, "BOTTOMLEFT", 0, 0)
 
 	local time_color = ns.CreateColourPicker(parent, "time_color", true)
 	time_color:SetPoint("TOPLEFT", custom_time_color, "BOTTOMLEFT", 24, -4)

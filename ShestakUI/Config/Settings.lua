@@ -337,6 +337,7 @@ C["chat"] = {
 	["sticky"] = true,							-- Remember last channel
 	["damage_meter_spam"] = false,				-- Merge damage meter spam in one line-link
 	["loot_icons"] = false,						-- Icons for loot
+	["role_icons"] = false,						-- Role Icons
 	["custom_time_color"] = true,				-- Enable custom timestamp coloring
 	["time_color"] = {1, 1, 0},					-- Timestamp coloring (http://www.december.com/html/spec/colorcodescompact.html)
 }
