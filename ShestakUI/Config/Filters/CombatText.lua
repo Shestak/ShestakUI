@@ -21,6 +21,7 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[195222] = 4			-- Stormlash [Shaman]
 	T.aoespam[195256] = 4			-- Stormlash [Shaman]
 	T.aoespam[259756] = 6			-- Entropic Embrace (Void Elves)
+	T.aoespam[321519] = 5			-- Paralytic Poison (Covenant Night Fae)
 end
 
 -- Class config
@@ -300,7 +301,7 @@ elseif T.class == "MAGE" then
 		T.merge[210817] = 44425		-- Arcane Rebound
 		T.aoespam[44425] = 1.2		-- Arcane Barrage
 		T.aoespam[277703] = 3		-- Trailing Embers
-		T.aoespam[325130] = 1.9		-- Shifting Power (Mage Covenant Abilities)
+		T.aoespam[325130] = 1.9		-- Shifting Power (Covenant Night Fae)
 	end
 elseif T.class == "MONK" then
 	if C.combattext.merge_aoe_spam then
