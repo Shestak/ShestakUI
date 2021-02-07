@@ -75,8 +75,9 @@ local function LoadSkin()
 	end
 
 	AuctionHouseFrame:HookScript("OnShow", function()
-		if AuctionFrameTab4 then
+		if AuctionFrameTab4 and not AuctionFrameTab4.styled then
 			T.SkinTab(AuctionFrameTab4)
+			AuctionFrameTab4.styled = true
 		end
 	end)
 
@@ -287,15 +288,17 @@ local function LoadAuctionatorSkin()
 	local frame = CreateFrame("Frame")
 	frame:RegisterEvent("AUCTION_HOUSE_SHOW")
 	frame:SetScript("OnEvent", function()
+		local list = _G.AuctionatorShoppingListFrame
+		if not list then return end
+
+		local config = _G.AuctionatorConfigFrame
+		local selling = _G.AuctionatorSellingFrame
+		local cancelling = _G.AuctionatorCancellingFrame
+
 		T.SkinTab(AuctionatorTabs_ShoppingLists)
 		T.SkinTab(AuctionatorTabs_Selling)
 		T.SkinTab(AuctionatorTabs_Cancelling)
 		T.SkinTab(AuctionatorTabs_Auctionator)
-
-		local list = _G.AuctionatorShoppingListFrame
-		local config = _G.AuctionatorConfigFrame
-		local selling = _G.AuctionatorSellingFrame
-		local cancelling = _G.AuctionatorCancellingFrame
 
 		local frames = {
 			list.ScrollList,
