@@ -416,7 +416,6 @@ elseif T.class == "PRIEST" then
 	end
 	if C.combattext.healing then
 		T.healfilter[34914] = true	-- Vampiric Touch
-		T.healfilter[15290] = false	-- Vampiric Embrace
 	end
 elseif T.class == "ROGUE" then
 	if C.combattext.merge_aoe_spam then
