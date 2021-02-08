@@ -98,6 +98,39 @@ hooksecurefunc("QuestObjectiveSetupBlockButton_FindGroup", function(block)
 	end
 end)
 
+-- WorldQuestsList button skin
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function()
+	if not IsAddOnLoaded("WorldQuestsList") then return end
+
+	local orig = _G.WorldQuestList.ObjectiveTracker_Update_hook
+	local function orig_hook(...)
+		orig(...)
+		for _, b in pairs(WorldQuestList.LFG_objectiveTrackerButtons) do
+			if b and not b.skinned then
+				b:SetSize(20, 20)
+				b.texture:SetAtlas("socialqueuing-icon-eye")
+				b.texture:SetSize(12, 12)
+				b:SetHighlightTexture("")
+
+				local point, anchor, point2, x, y = b:GetPoint()
+				if x == -18 then
+					b:SetPoint(point, anchor, point2, -13, y)
+				end
+
+				b.b = CreateFrame("Frame", nil, b)
+				b.b:SetTemplate("Overlay")
+				b.b:SetPoint("TOPLEFT", b, "TOPLEFT", 0, 0)
+				b.b:SetPoint("BOTTOMRIGHT", b, "BOTTOMRIGHT", 0, 0)
+				b.b:SetFrameLevel(1)
+				b.skinned = true
+			end
+		end
+	end
+	_G.WorldQuestList.ObjectiveTracker_Update_hook = orig_hook
+end)
+
 ----------------------------------------------------------------------------------------
 --	Difficulty color for ObjectiveTrackerFrame lines
 ----------------------------------------------------------------------------------------
