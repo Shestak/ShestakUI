@@ -36,14 +36,14 @@ T.RaidBuffs = {
 		{194384, "TOPRIGHT", {0.8, 0.4, 0.2}},				-- Atonement
 		{41635, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},			-- Prayer of Mending
 		{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}}, 				-- Renew
-		{6788, "BOTTOMLEFT", {1, 0, 0}, true}, 				-- Weakened Soul
-		{17, "TOPLEFT", {0.81, 0.85, 0.1}, true},			-- Power Word: Shield
+		{6788, "BOTTOMLEFT", {1, 0, 0}}, 					-- Weakened Soul
+		{17, "TOPLEFT", {0.81, 0.85, 0.1}},					-- Power Word: Shield
 		{33206, "LEFT", {0.89, 0.1, 0.1}, true},			-- Pain Suppression
 		{47788, "LEFT", {0.86, 0.52, 0}, true},				-- Guardian Spirit
 	},
 	SHAMAN = {
 		{61295, "TOPRIGHT", {0.7, 0.3, 0.7}},				-- Riptide
-		{204288, "BOTTOMRIGHT", {0.2, 0.7, 0.2}, true},		-- Earth Shield
+		{204288, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},			-- Earth Shield
 	},
 	HUNTER = {
 		{35079, "TOPRIGHT", {0.2, 0.2, 1}},					-- Misdirection
@@ -53,9 +53,6 @@ T.RaidBuffs = {
 	},
 	WARLOCK = {
 		{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},				-- Soulstone
-	},
-	WARRIOR = {
-		{114030, "TOPLEFT", {0.2, 0.2, 1}},					-- Vigilance
 	},
 	ALL = {
 		{23333, "LEFT", {1, 0, 0}, true}, 					-- Warsong flag, Horde
