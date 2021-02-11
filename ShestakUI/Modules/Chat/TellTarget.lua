@@ -20,7 +20,10 @@ end
 
 -- Slash command
 SlashCmdList.TELLTARGET = function(msg)
-	SendChatMessage(msg, "WHISPER")
+	local name = GetUnitName("target", true)
+	if name then
+		SendChatMessage(msg, "WHISPER", nil, name)
+	end
 end
 SLASH_TELLTARGET1 = "/tt"
 SLASH_TELLTARGET2 = "/ее"
