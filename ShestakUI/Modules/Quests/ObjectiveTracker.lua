@@ -35,6 +35,27 @@ ObjectiveTrackerFrame.HeaderMenu.Title:SetAlpha(0)
 ----------------------------------------------------------------------------------------
 --	Skin ObjectiveTrackerFrame item buttons
 ----------------------------------------------------------------------------------------
+local function HotkeyShow(self)
+	local item = self:GetParent()
+	if item.rangeOverlay then item.rangeOverlay:Show() end
+end
+
+local function HotkeyHide(self)
+	local item = self:GetParent()
+	if item.rangeOverlay then item.rangeOverlay:Hide() end
+end
+
+local function HotkeyColor(self, r)
+	local item = self:GetParent()
+	if item.rangeOverlay then
+		if r == 0.6 then
+			item.rangeOverlay:SetVertexColor(0, 0, 0, 0)
+		else
+			item.rangeOverlay:SetVertexColor(1, 0.3, 0.1, 0.6)
+		end
+	end
+end
+
 hooksecurefunc("QuestObjectiveSetupBlockButton_Item", function(block)
 	local item = block and block.itemButton
 
@@ -56,7 +77,17 @@ hooksecurefunc("QuestObjectiveSetupBlockButton_Item", function(block)
 		item.Count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 		item.Count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 
-		item.HotKey:SetFontObject(NumberFont_OutlineThick_Mono_Small)
+		local rangeOverlay = item:CreateTexture(nil, "OVERLAY")
+		rangeOverlay:SetTexture(C.media.texture)
+		rangeOverlay:SetInside()
+		item.rangeOverlay = rangeOverlay
+
+		hooksecurefunc(item.HotKey, "Show", HotkeyShow)
+		hooksecurefunc(item.HotKey, "Hide", HotkeyHide)
+		hooksecurefunc(item.HotKey, "SetVertexColor", HotkeyColor)
+		HotkeyColor(item.HotKey, item.HotKey:GetTextColor())
+		item.HotKey:SetAlpha(0)
+
 		item.skinned = true
 	end
 end)
