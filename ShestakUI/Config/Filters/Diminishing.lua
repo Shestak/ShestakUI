@@ -23,10 +23,12 @@ T.DiminishingSpells = {
 	[163505] = {"stun"},			-- Rake (Prowl)
 	[5211] = {"stun"},				-- Mighty Bash
 	[202244] = {"stun"},			-- Overrun
+	[325321] = {"stun"},			-- Wild Hunt's Charge
 	[24394] = {"stun"},				-- Intimidation
 	[119381] = {"stun"},			-- Leg Sweep
 	[202346] = {"stun"},			-- Double Barrel
 	[853] = {"stun"},				-- Hammer of Justice
+	[255941] = {"stun"},			-- Wake of Ashes
 	[64044] = {"stun"},				-- Psychic Horror
 	[200200] = {"stun"},			-- Holy Word: Chastise Censure
 	[1833] = {"stun"},				-- Cheap Shot
@@ -45,6 +47,7 @@ T.DiminishingSpells = {
 	[20549] = {"stun"},				-- War Stomp (Tauren)
 	[255723] = {"stun"},			-- Bull Rush (Highmountain Tauren)
 	[287712] = {"stun"},			-- Haymaker (Kul Tiran)
+	[332423] = {"stun"},			-- Sparkling Driftglobe Core
 
 	-- Roots
 	[204085] = {"root"},			-- Deathchill (Chains of Ice)
@@ -61,7 +64,9 @@ T.DiminishingSpells = {
 	[198121] = {"root"},			-- Frostbite
 	[233582] = {"root"},			-- Entrenched in Flame
 	[116706] = {"root"},			-- Disable
+	[324382] = {"root"},			-- Clash
 	[64695] = {"root"},				-- Earthgrab (Totem effect)
+	[285515] = {"root"},			-- Surge of Power
 
 	-- Incapacitates
 	[217832] = {"incapacitate"},	-- Imprison
