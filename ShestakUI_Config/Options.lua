@@ -1736,8 +1736,11 @@ do
 	local role_icons = ns.CreateCheckBox(parent, "role_icons", L.tooltip_unit_role)
 	role_icons:SetPoint("TOPLEFT", loot_icons, "BOTTOMLEFT", 0, 0)
 
+	local history = ns.CreateCheckBox(parent, "history", HISTORY)
+	history:SetPoint("TOPLEFT", role_icons, "BOTTOMLEFT", 0, 0)
+
 	local custom_time_color = ns.CreateCheckBox(parent, "custom_time_color")
-	custom_time_color:SetPoint("TOPLEFT", role_icons, "BOTTOMLEFT", 0, 0)
+	custom_time_color:SetPoint("TOPLEFT", history, "BOTTOMLEFT", 0, 0)
 
 	local time_color = ns.CreateColourPicker(parent, "time_color", true)
 	time_color:SetPoint("TOPLEFT", custom_time_color, "BOTTOMLEFT", 24, -4)

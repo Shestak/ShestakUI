@@ -156,6 +156,7 @@
 	<Script file="Modules\Chat\CopyChat.lua"/>
 	<Script file="Modules\Chat\ChatBars.lua"/>
 	<Script file="Modules\Chat\Filters.lua"/>
+	<Script file="Modules\Chat\History.lua"/>
 	<Script file="Modules\Chat\Invite.lua"/>
 	<Script file="Modules\Chat\MouseScroll.lua"/>
 	<Script file="Modules\Chat\Sounds.lua"/>
