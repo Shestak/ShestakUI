@@ -39,6 +39,7 @@ hooksecurefunc("MainMenuBarVehicleLeaveButton_Update", function()
 		end
 		vehicle:Show()
 	else
+		vehicle:UnlockHighlight()
 		vehicle:Hide()
 	end
 end)

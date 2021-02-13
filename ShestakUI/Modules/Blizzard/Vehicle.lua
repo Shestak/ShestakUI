@@ -19,46 +19,19 @@ end)
 --	Vehicle indicator on mouseover
 ----------------------------------------------------------------------------------------
 if C.general.vehicle_mouseover == true then
-	local function VehicleNumSeatIndicator()
-		if VehicleSeatIndicatorButton6 then
-			T.numSeat = 6
-		elseif VehicleSeatIndicatorButton5 then
-			T.numSeat = 5
-		elseif VehicleSeatIndicatorButton4 then
-			T.numSeat = 4
-		elseif VehicleSeatIndicatorButton3 then
-			T.numSeat = 3
-		elseif VehicleSeatIndicatorButton2 then
-			T.numSeat = 2
-		elseif VehicleSeatIndicatorButton1 then
-			T.numSeat = 1
-		end
-	end
-
-	local function vehmousebutton(alpha)
-		for i = 1, T.numSeat do
-		local pb = _G["VehicleSeatIndicatorButton"..i]
-			pb:SetAlpha(alpha)
-		end
-	end
-
-	local function vehmouse()
+	local function VehicleSeatMouseover(vehicleID)
 		if VehicleSeatIndicator:IsShown() then
 			VehicleSeatIndicator:SetAlpha(0)
-			VehicleSeatIndicator:EnableMouse(true)
+			VehicleSeatIndicator:HookScript("OnEnter", function() VehicleSeatIndicator:SetAlpha(1) end)
+			VehicleSeatIndicator:HookScript("OnLeave", function() VehicleSeatIndicator:SetAlpha(0) end)
 
-			VehicleNumSeatIndicator()
-
-			VehicleSeatIndicator:HookScript("OnEnter", function() VehicleSeatIndicator:SetAlpha(1) vehmousebutton(1) end)
-			VehicleSeatIndicator:HookScript("OnLeave", function() VehicleSeatIndicator:SetAlpha(0) vehmousebutton(0) end)
-
-			for i = 1, T.numSeat do
-				local pb = _G["VehicleSeatIndicatorButton"..i]
-				pb:SetAlpha(0)
-				pb:HookScript("OnEnter", function() VehicleSeatIndicator:SetAlpha(1) vehmousebutton(1) end)
-				pb:HookScript("OnLeave", function() VehicleSeatIndicator:SetAlpha(0) vehmousebutton(0) end)
+			local _, numSeat = GetVehicleUIIndicator(vehicleID)
+			for i = 1, numSeat do
+				local b = _G["VehicleSeatIndicatorButton"..i]
+				b:HookScript("OnEnter", function() VehicleSeatIndicator:SetAlpha(1) end)
+				b:HookScript("OnLeave", function() VehicleSeatIndicator:SetAlpha(0) end)
 			end
 		end
 	end
-	hooksecurefunc("VehicleSeatIndicator_Update", vehmouse)
+	hooksecurefunc("VehicleSeatIndicator_SetUpVehicle", VehicleSeatMouseover)
 end
