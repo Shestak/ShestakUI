@@ -366,7 +366,8 @@ T.RaidDebuffsReverse = {
 }
 
 T.RaidDebuffsIgnore = {
-	--[spellID] = true,			-- Spell name
+	[980] = true,			-- Agony
+	[1943] = true,			-- Rupture
 }
 
 for _, spell in pairs(C.raidframe.plugins_aura_watch_list) do
