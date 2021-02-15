@@ -2432,7 +2432,7 @@ C["filger_spells"] = {
 			-- Static Charge
 			{spellID = 118905, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Pulverize (Earth Elemental)
-			{spellID = 118345, unitID = "player", caster = "all", filter = "DEBUFF"},
+			{spellID = 118345, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Sundering
 			{spellID = 197214, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Lightning Lasso
@@ -2847,7 +2847,7 @@ C["filger_spells"] = {
 			-- Static Charge
 			{spellID = 118905, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Pulverize (Earth Elemental)
-			{spellID = 118345, unitID = "target", caster = "all", filter = "DEBUFF"},
+			{spellID = 118345, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
 			-- Sundering
 			{spellID = 197214, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Lightning Lasso
