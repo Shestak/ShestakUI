@@ -51,8 +51,23 @@ local function LoadSkin()
 			option.Header.Text:SetTextColor(1, .8, 0)
 			option.OptionText:SetTextColor(1, 1, 1)
 
-			if option.RewardsFrame.Rewards.lastReward then
-				option.RewardsFrame.Rewards.lastReward.Name:SetTextColor(1, 1, 1)
+			local reward = option.RewardsFrame.Rewards.lastReward
+			if reward then
+				if not reward.backdrop then
+					reward.Icon:SkinIcon()
+				end
+				reward.Name:SetTextColor(1, 1, 1)
+				reward.IconBorder:SetTexture("")
+				local r, g, b
+				if reward.IconBorder and reward.IconBorder:IsShown() then
+					r, g, b = reward.IconBorder:GetVertexColor()
+					if (r > 0.64 and r < 0.67) or (r > 0.99 and g > 0.99 and b > 0.99) then
+						r, g, b = unpack(C.media.border_color)
+					end
+				else
+					r, g, b = unpack(C.media.border_color)
+				end
+				reward.backdrop:SetBackdropBorderColor(r, g, b)
 			end
 
 			option.Background:SetShown(not hasArtworkBorderArt)
