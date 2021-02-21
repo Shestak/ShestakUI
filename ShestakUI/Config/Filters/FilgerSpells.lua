@@ -2240,6 +2240,9 @@ C["filger_spells"] = {
 			-- Mallet of Thunderous Skins
 			{spellID = 292686, unitID = "player", caster = "all", filter = "BUFF"},
 
+			-- Prideful (Seasonal Affix)
+			{spellID = 340880, unitID = "player", caster = "all", filter = "DEBUFF"},
+
 			-- Engineering
 			-- Goblin Glider [Goblin Glider Kit]
 			{spellID = 126389, unitID = "player", caster = "all", filter = "BUFF", absID = true},
@@ -2773,6 +2776,8 @@ C["filger_spells"] = {
 			{spellID = 853, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Blinding Light
 			{spellID = 105421, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Turn Evil
+			{spellID = 10326, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Avenger's Shield
 			{spellID = 31935, unitID = "target", caster = "all", filter = "DEBUFF"},
 
@@ -2918,10 +2923,6 @@ C["filger_spells"] = {
 			{spellID = 107079, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- War Stomp (Tauren)
 			{spellID = 20549, unitID = "target", caster = "all", filter = "DEBUFF"},
-
-			-- Professions
-			-- Shieldtronic Shield
-			{spellID = 173260, unitID = "target", caster = "all", filter = "BUFF"},
 
 			-- Player vs. Player
 			-- Battlegrounds
