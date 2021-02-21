@@ -48,10 +48,10 @@ end
 local function HotkeyColor(self, r)
 	local item = self:GetParent()
 	if item.rangeOverlay then
-		if r == 0.6 then
-			item.rangeOverlay:SetVertexColor(0, 0, 0, 0)
+		if r == 1 then
+			item.rangeOverlay:Show()
 		else
-			item.rangeOverlay:SetVertexColor(1, 0.3, 0.1, 0.6)
+			item.rangeOverlay:Hide()
 		end
 	end
 end
@@ -80,6 +80,7 @@ hooksecurefunc("QuestObjectiveSetupBlockButton_Item", function(block)
 		local rangeOverlay = item:CreateTexture(nil, "OVERLAY")
 		rangeOverlay:SetTexture(C.media.texture)
 		rangeOverlay:SetInside()
+		rangeOverlay:SetVertexColor(1, 0.3, 0.1, 0.6)
 		item.rangeOverlay = rangeOverlay
 
 		hooksecurefunc(item.HotKey, "Show", HotkeyShow)
