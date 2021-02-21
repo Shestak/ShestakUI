@@ -287,157 +287,165 @@ local function LoadAuctionatorSkin()
 	if not IsAddOnLoaded("Auctionator") then return end
 	local frame = CreateFrame("Frame")
 	frame:RegisterEvent("AUCTION_HOUSE_SHOW")
-	frame:SetScript("OnEvent", function()
-		local list = _G.AuctionatorShoppingListFrame
-		if not list then return end
+	frame:RegisterEvent("TRADE_SKILL_SHOW")
+	frame:SetScript("OnEvent", function(_, event)
+		if event == "TRADE_SKILL_SHOW" then
+			if AuctionatorTradeSkillSearch then
+				AuctionatorTradeSkillSearch:SkinButton(true)
+				frame:UnregisterEvent("TRADE_SKILL_SHOW")
+			end
+		else
+			local list = _G.AuctionatorShoppingListFrame
+			if not list then return end
 
-		local config = _G.AuctionatorConfigFrame
-		local selling = _G.AuctionatorSellingFrame
-		local cancelling = _G.AuctionatorCancellingFrame
+			local config = _G.AuctionatorConfigFrame
+			local selling = _G.AuctionatorSellingFrame
+			local cancelling = _G.AuctionatorCancellingFrame
 
-		T.SkinTab(AuctionatorTabs_ShoppingLists)
-		T.SkinTab(AuctionatorTabs_Selling)
-		T.SkinTab(AuctionatorTabs_Cancelling)
-		T.SkinTab(AuctionatorTabs_Auctionator)
+			T.SkinTab(AuctionatorTabs_ShoppingLists)
+			T.SkinTab(AuctionatorTabs_Selling)
+			T.SkinTab(AuctionatorTabs_Cancelling)
+			T.SkinTab(AuctionatorTabs_Auctionator)
 
-		local frames = {
-			list.ScrollList,
-			list.ShoppingResultsInset,
-			selling.CurrentItemInset,
-			selling.HistoricalPriceInset,
-			selling.BagInset,
-			selling.BagListing.ScrollFrame,
-			cancelling.HistoricalPriceInset,
-			AuctionatorConfigFrame
-		}
+			local frames = {
+				list.ScrollList,
+				list.ShoppingResultsInset,
+				selling.CurrentItemInset,
+				selling.HistoricalPriceInset,
+				selling.BagInset,
+				selling.BagListing.ScrollFrame,
+				cancelling.HistoricalPriceInset,
+				AuctionatorConfigFrame
+			}
 
-		for i = 1, #frames do
-			frames[i]:StripTextures()
-		end
+			for i = 1, #frames do
+				frames[i]:StripTextures()
+			end
 
-		local buttons = {
-			_G.AuctionatorShoppingLists_AddItem,
-			list.ManualSearch,
-			list.CreateList,
-			list.DeleteList,
-			list.Rename,
-			list.Export,
-			list.Import,
-			list.ExportCSV,
-			selling.SaleItemFrame.MaxButton,
-			selling.SaleItemFrame.PostButton,
-			config.OptionsButton,
-			config.ScanButton
-		}
+			local buttons = {
+				_G.AuctionatorShoppingLists_AddItem,
+				list.ManualSearch,
+				list.CreateList,
+				list.DeleteList,
+				list.Rename,
+				list.Export,
+				list.Import,
+				list.ExportCSV,
+				selling.SaleItemFrame.MaxButton,
+				selling.SaleItemFrame.PostButton,
+				config.OptionsButton,
+				config.ScanButton
+			}
 
-		for i = 1, #buttons do
-			buttons[i]:SkinButton()
-		end
+			for i = 1, #buttons do
+				buttons[i]:SkinButton()
+			end
 
-		local scrollbars = {
-			_G.AuctionatorSellingFrameScrollBar,
-			cancelling.ResultsListing.ScrollFrame.scrollBar,
-			list.ScrollList.ScrollFrame.scrollBar,
-			list.ResultsListing.ScrollFrame.scrollBar,
-			selling.CurrentItemListing.ScrollFrame.scrollBar,
-			selling.HistoricalPriceListing.ScrollFrame.scrollBar,
-			selling.ResultsListing.ScrollFrame.scrollBar
-		}
+			local scrollbars = {
+				_G.AuctionatorSellingFrameScrollBar,
+				cancelling.ResultsListing.ScrollFrame.scrollBar,
+				list.ScrollList.ScrollFrame.scrollBar,
+				list.ResultsListing.ScrollFrame.scrollBar,
+				selling.CurrentItemListing.ScrollFrame.scrollBar,
+				selling.HistoricalPriceListing.ScrollFrame.scrollBar,
+				selling.ResultsListing.ScrollFrame.scrollBar
+			}
 
-		for i = 1, #scrollbars do
-			T.SkinScrollBar(scrollbars[i])
-		end
+			for i = 1, #scrollbars do
+				T.SkinScrollBar(scrollbars[i])
+			end
 
-		local editboxes = {
-			selling.SaleItemFrame.Price.MoneyInput.GoldBox,
-			selling.SaleItemFrame.Price.MoneyInput.SilverBox,
-			selling.SaleItemFrame.Price.MoneyInput.CopperBox
-		}
+			local editboxes = {
+				selling.SaleItemFrame.Price.MoneyInput.GoldBox,
+				selling.SaleItemFrame.Price.MoneyInput.SilverBox,
+				selling.SaleItemFrame.Price.MoneyInput.CopperBox
+			}
 
-		for i = 1, #editboxes do
-			editboxes[i]:DisableDrawLayer("BACKGROUND")
-			editboxes[i]:CreateBackdrop("Overlay")
-			editboxes[i].backdrop:SetPoint("TOPLEFT", 6, -2)
-			editboxes[i].backdrop:SetPoint("BOTTOMRIGHT", -22, 6)
-		end
+			for i = 1, #editboxes do
+				editboxes[i]:DisableDrawLayer("BACKGROUND")
+				editboxes[i]:CreateBackdrop("Overlay")
+				editboxes[i].backdrop:SetPoint("TOPLEFT", 6, -2)
+				editboxes[i].backdrop:SetPoint("BOTTOMRIGHT", -22, 6)
+			end
 
-		local editboxes = {
-			selling.SaleItemFrame.Quantity.InputBox,
-			config.DiscordLink.InputBox,
-			config.TechnicalRoadmap.InputBox,
-			config.BugReportLink.InputBox
-		}
+			local editboxes = {
+				selling.SaleItemFrame.Quantity.InputBox,
+				config.DiscordLink.InputBox,
+				config.TechnicalRoadmap.InputBox,
+				config.BugReportLink.InputBox
+			}
 
-		for i = 1, #editboxes do
-			T.SkinEditBox(editboxes[i])
-		end
-		selling.SaleItemFrame.Quantity.InputBox.backdrop:SetPoint("TOPLEFT", 2, 4)
-		selling.SaleItemFrame.Quantity.InputBox.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+			for i = 1, #editboxes do
+				T.SkinEditBox(editboxes[i])
+			end
+			selling.SaleItemFrame.Quantity.InputBox.backdrop:SetPoint("TOPLEFT", 2, 4)
+			selling.SaleItemFrame.Quantity.InputBox.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
 
-		local function SkinHeaders(frame)
-			local maxHeaders = frame:GetNumChildren()
-			for i = 1, maxHeaders do
-				local header = select(i, frame:GetChildren())
-				if header and not header.IsSkinned then
-					header:DisableDrawLayer("BACKGROUND")
-					header:GetHighlightTexture():Hide()
-					header:CreateBackdrop("Overlay")
-					header.backdrop:SetPoint("TOPLEFT", 2, 0)
-					header.backdrop:SetPoint("BOTTOMRIGHT", -2, 0)
+			local function SkinHeaders(frame)
+				local maxHeaders = frame:GetNumChildren()
+				for i = 1, maxHeaders do
+					local header = select(i, frame:GetChildren())
+					if header and not header.IsSkinned then
+						header:DisableDrawLayer("BACKGROUND")
+						header:GetHighlightTexture():Hide()
+						header:CreateBackdrop("Overlay")
+						header.backdrop:SetPoint("TOPLEFT", 2, 0)
+						header.backdrop:SetPoint("BOTTOMRIGHT", -2, 0)
 
-					header.IsSkinned = true
+						header.IsSkinned = true
+					end
 				end
 			end
-		end
 
-		local headers = {
-			list.ResultsListing.HeaderContainer,
-			cancelling.ResultsListing.HeaderContainer,
-			selling.CurrentItemListing.HeaderContainer,
-			selling.HistoricalPriceListing.HeaderContainer,
-			selling.ResultsListing.HeaderContainer
-		}
+			local headers = {
+				list.ResultsListing.HeaderContainer,
+				cancelling.ResultsListing.HeaderContainer,
+				selling.CurrentItemListing.HeaderContainer,
+				selling.HistoricalPriceListing.HeaderContainer,
+				selling.ResultsListing.HeaderContainer
+			}
 
-		for i = 1, #headers do
-			SkinHeaders(headers[i])
-		end
-
-		T.SkinDropDownBox(AuctionatorShoppingListFrame.ListDropdown, 230)
-		AuctionatorShoppingListFrame.CreateList:SetPoint("LEFT", AuctionatorShoppingListFrame.ListDropdown, "RIGHT", -5, 4)
-
-		local tabs = {
-			selling.HistoryTabsContainer.RealmHistoryTab,
-			selling.HistoryTabsContainer.YourHistoryTab
-		}
-
-		for i = 1, #tabs do
-			local tab = tabs[i]
-			tab:DisableDrawLayer("BACKGROUND")
-			tab:GetHighlightTexture():SetTexture(nil)
-			tab.backdrop = CreateFrame("Frame", nil, tab)
-			tab.backdrop:SetFrameLevel(tab:GetFrameLevel() - 1)
-			tab.backdrop:SetTemplate("Overlay")
-			tab.backdrop:SetPoint("TOPLEFT", 10, 0)
-			tab.backdrop:SetPoint("BOTTOMRIGHT", -10, 6)
-		end
-
-		AuctionatorSellingFrame.AuctionatorSaleItem.Icon.Icon:SkinIcon(true)
-		AuctionatorSellingFrame.AuctionatorSaleItem.Icon.EmptySlot:Hide()
-
-		for _, duration in ipairs(selling.AuctionatorSaleItem.Duration.radioButtons) do
-			if duration.RadioButton then
-				T.SkinCheckBox(duration.RadioButton)
+			for i = 1, #headers do
+				SkinHeaders(headers[i])
 			end
-		end
 
-		for _, child in ipairs({cancelling:GetChildren()}) do
-			if child.StartScanButton then
-				child.StartScanButton:SkinButton()
-				child.CancelNextButton:SkinButton()
+			T.SkinDropDownBox(AuctionatorShoppingListFrame.ListDropdown, 230)
+			AuctionatorShoppingListFrame.CreateList:SetPoint("LEFT", AuctionatorShoppingListFrame.ListDropdown, "RIGHT", -5, 4)
+
+			local tabs = {
+				selling.HistoryTabsContainer.RealmHistoryTab,
+				selling.HistoryTabsContainer.YourHistoryTab
+			}
+
+			for i = 1, #tabs do
+				local tab = tabs[i]
+				tab:DisableDrawLayer("BACKGROUND")
+				tab:GetHighlightTexture():SetTexture(nil)
+				tab.backdrop = CreateFrame("Frame", nil, tab)
+				tab.backdrop:SetFrameLevel(tab:GetFrameLevel() - 1)
+				tab.backdrop:SetTemplate("Overlay")
+				tab.backdrop:SetPoint("TOPLEFT", 10, 0)
+				tab.backdrop:SetPoint("BOTTOMRIGHT", -10, 6)
 			end
-		end
 
-		frame:UnregisterAllEvents()
+			AuctionatorSellingFrame.AuctionatorSaleItem.Icon.Icon:SkinIcon(true)
+			AuctionatorSellingFrame.AuctionatorSaleItem.Icon.EmptySlot:Hide()
+
+			for _, duration in ipairs(selling.AuctionatorSaleItem.Duration.radioButtons) do
+				if duration.RadioButton then
+					T.SkinCheckBox(duration.RadioButton)
+				end
+			end
+
+			for _, child in ipairs({cancelling:GetChildren()}) do
+				if child.StartScanButton then
+					child.StartScanButton:SkinButton()
+					child.CancelNextButton:SkinButton()
+				end
+			end
+
+			frame:UnregisterEvent("AUCTION_HOUSE_SHOW")
+		end
 	end)
 end
 
