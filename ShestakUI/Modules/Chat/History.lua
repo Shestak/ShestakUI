@@ -18,16 +18,6 @@ local function prnt(frame, message)
 	end
 end
 
-function t.print(message)
-	if message == "frameid" then
-		for frame, id in next, CF do
-			prnt(frame, "ChatFrame"..id)
-		end
-	else
-		prnt(DEFAULT_CHAT_FRAME, message)
-	end
-end
-
  -- CircularBuffer bug (feature?) due to modulus usage (CircularBuffer.lua:38,46,123), causing elements to be added at the back when buffer is full, screwing up saved data
 function t.pushfront(frame)
 	if frame == COMBATLOG then return end -- ensure Combat Log is ignored
@@ -108,10 +98,10 @@ function t.PLAYER_ENTERING_WORLD()
 			if id <= NUM_CHAT_WINDOWS and DB[id] and #DB[id] > 0 then
 				cfid[id].historyBuffer:ReplaceElements(DB[id])
 			end -- restore any history for ChatFrame1-10 (excluding Combat Log)
+			prnt(cfid[id], "|cffBCEE68--- "..HISTORY.." ---|r")
 		end
 	end
 	t.pew = true
-	prnt(DEFAULT_CHAT_FRAME, "|cffBCEE68--- "..HISTORY.." ---|r")
 end
 
 function t.PLAYER_LEAVING_WORLD()
