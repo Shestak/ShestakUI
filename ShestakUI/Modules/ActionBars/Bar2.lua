@@ -60,26 +60,13 @@ if C.actionbar.bottombars_mouseover then
 end
 
 if C.actionbar.editor and C.actionbar.bar2_mouseover then
-	local function BarMouseOver(alpha)
-		if MultiBarRight:IsShown() then
-			for i = 1, 12 do
-				local pb = _G["MultiBarBottomLeftButton"..i]
-				pb:SetAlpha(alpha)
-				local g = _G["MultiBarBottomLeftButton"..i.."Cooldown"]
-				T.HideSpiral(g, alpha)
-			end
-			bar:SetAlpha(alpha)
-		end
-	end
-
 	for i = 1, 12 do
 		local b = _G["MultiBarBottomLeftButton"..i]
 		b:SetAlpha(0)
-		b:HookScript("OnEnter", function() BarMouseOver(1) end)
-		b:HookScript("OnLeave", function() if not HoverBind.enabled then BarMouseOver(0) end end)
+		b:HookScript("OnEnter", function() Bar2MouseOver(1) end)
+		b:HookScript("OnLeave", function() if not HoverBind.enabled then Bar2MouseOver(0) end end)
 	end
 
-	bar:SetAlpha(0)
-	bar:SetScript("OnEnter", function() BarMouseOver(1) end)
-	bar:SetScript("OnLeave", function() if not HoverBind.enabled then BarMouseOver(0) end end)
+	bar:SetScript("OnEnter", function() Bar2MouseOver(1) end)
+	bar:SetScript("OnLeave", function() if not HoverBind.enabled then Bar2MouseOver(0) end end)
 end
