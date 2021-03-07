@@ -17,6 +17,11 @@ local function LoadSkin()
 	QuestFrameProgressPanel:StripTextures(true)
 	QuestFrameRewardPanel:StripTextures(true)
 
+	QuestFrameProgressPanelMaterialTopLeft:SetAlpha(0)
+	QuestFrameProgressPanelMaterialTopRight:SetAlpha(0)
+	QuestFrameProgressPanelMaterialBotLeft:SetAlpha(0)
+	QuestFrameProgressPanelMaterialBotRight:SetAlpha(0)
+
 	QuestFrame:CreateBackdrop("Transparent")
 	QuestFrame.backdrop:SetPoint("TOPLEFT", 0, 0)
 	QuestFrame.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
