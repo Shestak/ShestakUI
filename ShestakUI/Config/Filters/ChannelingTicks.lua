@@ -44,7 +44,10 @@ local f = CreateFrame("Frame")
 f:RegisterEvent("PLAYER_ENTERING_WORLD")
 f:RegisterEvent("PLAYER_TALENT_UPDATE")
 f:SetScript("OnEvent", function()
-	if T.class ~= "PRIEST" then return end
+	if T.class ~= "PRIEST" then
+		f:UnregisterAllEvents()
+		return
+	end
 
 	-- Penance
 	local penanceTicks = IsPlayerSpell(193134) and 4 or 3
