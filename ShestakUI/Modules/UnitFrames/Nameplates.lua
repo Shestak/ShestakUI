@@ -111,7 +111,7 @@ if C.nameplate.healer_icon == true then
 
 	local function CheckArenaHealers(_, elapsed)
 		lastCheck = lastCheck + elapsed
-		if lastCheck > 25 then
+		if lastCheck > 10 then
 			lastCheck = 0
 			healList = {}
 			for i = 1, 5 do
@@ -128,7 +128,7 @@ if C.nameplate.healer_icon == true then
 	end
 
 	local function CheckLoc(_, event)
-		if event == "PLAYER_ENTERING_WORLD" or event == "PLAYER_ENTERING_BATTLEGROUND" then
+		if event == "PLAYER_ENTERING_WORLD" then
 			local _, instanceType = IsInInstance()
 			if instanceType == "pvp" then
 				t:SetScript("OnUpdate", CheckHealers)
@@ -142,7 +142,6 @@ if C.nameplate.healer_icon == true then
 	end
 
 	t:RegisterEvent("PLAYER_ENTERING_WORLD")
-	t:RegisterEvent("PLAYER_ENTERING_BATTLEGROUND")
 	t:SetScript("OnEvent", CheckLoc)
 end
 
