@@ -1226,8 +1226,14 @@ do
 	local show_raid = ns.CreateCheckBox(parent, "show_raid", L_GUI_UF_SHOW_RAID)
 	show_raid:SetPoint("LEFT", show_party, "RIGHT", 248, 0)
 
+	local show_target = ns.CreateCheckBox(parent, "show_target")
+	show_target:SetPoint("TOPLEFT", show_party, "BOTTOMLEFT", 0, 0)
+
+	local show_pet = ns.CreateCheckBox(parent, "show_pet")
+	show_pet:SetPoint("LEFT", show_target, "RIGHT", 248, 0)
+
 	local raid_tanks = ns.CreateCheckBox(parent, "raid_tanks", L_GUI_UF_SHOW_TANK)
-	raid_tanks:SetPoint("TOPLEFT", show_party, "BOTTOMLEFT", 0, 0)
+	raid_tanks:SetPoint("TOPLEFT", show_target, "BOTTOMLEFT", 0, 0)
 
 	local raid_tanks_tt = ns.CreateCheckBox(parent, "raid_tanks_tt", L_GUI_UF_SHOW_TANK_TT)
 	raid_tanks_tt:SetPoint("LEFT", raid_tanks, "RIGHT", 248, 0)
@@ -1236,10 +1242,10 @@ do
 	solo_mode:SetPoint("TOPLEFT", raid_tanks, "BOTTOMLEFT", 0, 0)
 
 	local player_in_party = ns.CreateCheckBox(parent, "player_in_party", L_GUI_UF_PLAYER_PARTY)
-	player_in_party:SetPoint("TOPLEFT", solo_mode, "BOTTOMLEFT", 0, 0)
+	player_in_party:SetPoint("LEFT", solo_mode, "RIGHT", 248, 0)
 
 	local raid_groups = ns.CreateNumberSlider(parent, "raid_groups", nil, nil, 1, 8, 1, true, L_GUI_UF_RAID_GROUP)
-	raid_groups:SetPoint("TOPLEFT", player_in_party, "BOTTOMLEFT", 0, -20)
+	raid_groups:SetPoint("TOPLEFT", solo_mode, "BOTTOMLEFT", 0, -20)
 
 	local auto_position = ns.CreateDropDown(parent, "auto_position", true, L.raidframe_auto_position, {"DYNAMIC", "STATIC", "NONE"})
 	auto_position:SetPoint("TOPLEFT", raid_groups, "BOTTOMLEFT", -16, -10)

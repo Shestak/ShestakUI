@@ -164,6 +164,8 @@ C["raidframe"] = {
 	-- Main
 	["show_party"] = true,						-- Show party frames
 	["show_raid"] = true,						-- Show raid frames
+	["show_target"] = true,						-- Show target frames
+	["show_pet"] = true,						-- Show pet frames
 	["solo_mode"] = false,						-- Show player frame always
 	["player_in_party"] = true,					-- Show player frame in party
 	["raid_tanks"] = true,						-- Show raid tanks
