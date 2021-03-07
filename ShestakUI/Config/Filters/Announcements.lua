@@ -114,6 +114,8 @@ if C.announcements.bad_gear == true then
 		},
 		-- Main-Hand
 		[16] = {
+			180136,	-- The Brokers Angle'r
+			133755,	-- Underlight Angler
 			44050,	-- Mastercraft Kalu'ak Fishing Pole
 			19970,	-- Arcanite Fishing Pole
 			84660,	-- Pandaren Fishing Pole
