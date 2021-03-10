@@ -115,6 +115,85 @@ C["font"] = {
 }
 
 ----------------------------------------------------------------------------------------
+--	Pixel font replacement
+----------------------------------------------------------------------------------------
+if (ShestakUIOptions and ShestakUIOptions["font"]["global_font"] == true) or (ShestakUIOptionsPerChar and ShestakUIOptionsPerChar["font"]["global_font"] == true) then
+	C["media"].pixel_font = C.media.normal_font
+	C["media"].pixel_font_size = 11
+	C["media"].pixel_font_style = "OUTLINE"
+
+	C["font"].stats_font = C.media.normal_font
+	C["font"].stats_font_size = 12
+	C["font"].stats_font_style = "OUTLINE"
+	C["font"].stats_font_shadow = false
+
+	C["font"].combat_text_font = C.media.normal_font
+	C["font"].combat_text_font_size = 20
+	C["font"].combat_text_font_style = "OUTLINE"
+	C["font"].combat_text_font_shadow = false
+
+	C["font"].chat_tabs_font = C.media.normal_font
+	C["font"].chat_tabs_font_size = 12
+	C["font"].chat_tabs_font_style = "OUTLINE"
+	C["font"].chat_tabs_font_shadow = false
+
+	C["font"].action_bars_font = C.media.normal_font
+	C["font"].action_bars_font_size = 12
+	C["font"].action_bars_font_style = "OUTLINE"
+	C["font"].action_bars_font_shadow = false
+
+	C["font"].threat_meter_font = C.media.normal_font
+	C["font"].threat_meter_font_size = 12
+	C["font"].threat_meter_font_style = "OUTLINE"
+	C["font"].threat_meter_font_shadow = false
+
+	C["font"].raid_cooldowns_font = C.media.normal_font
+	C["font"].raid_cooldowns_font_size = 12
+	C["font"].raid_cooldowns_font_style = "OUTLINE"
+	C["font"].raid_cooldowns_font_shadow = false
+
+	C["font"].cooldown_timers_font = C.media.normal_font
+	C["font"].cooldown_timers_font_size = 16
+	C["font"].cooldown_timers_font_style = "OUTLINE"
+	C["font"].cooldown_timers_font_shadow = false
+
+	C["font"].loot_font = C.media.normal_font
+	C["font"].loot_font_size = 12
+	C["font"].loot_font_style = "OUTLINE"
+	C["font"].loot_font_shadow = false
+
+	C["font"].nameplates_font = C.media.normal_font
+	C["font"].nameplates_font_size = 13
+	C["font"].nameplates_font_style = "OUTLINE"
+	C["font"].nameplates_font_shadow = false
+
+	C["font"].unit_frames_font = C.media.normal_font
+	C["font"].unit_frames_font_size = 13
+	C["font"].unit_frames_font_style = "OUTLINE"
+	C["font"].unit_frames_font_shadow = false
+
+	C["font"].auras_font = C.media.normal_font
+	C["font"].auras_font_size = 12
+	C["font"].auras_font_style = "OUTLINE"
+	C["font"].auras_font_shadow = false
+
+	C["font"].filger_font = C.media.normal_font
+	C["font"].filger_font_size = 12
+	C["font"].filger_font_style = "OUTLINE"
+	C["font"].filger_font_shadow = false
+
+	C["font"].stylization_font = C.media.normal_font
+	C["font"].stylization_font_size = 12
+	C["font"].stylization_font_style = ""
+	C["font"].stylization_font_shadow = false
+
+	C["font"].bags_font = C.media.normal_font
+	C["font"].bags_font_size = 12
+	C["font"].bags_font_style = "OUTLINE"
+	C["font"].bags_font_shadow = false
+end
+
+----------------------------------------------------------------------------------------
 --	Font replacement for zhTW, zhCN, and koKR clients
 ----------------------------------------------------------------------------------------
 local locale_font

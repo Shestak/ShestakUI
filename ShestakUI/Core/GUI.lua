@@ -14,6 +14,7 @@ C.enemycooldown.spells_list = {}
 C.nameplate.debuffs_list = {}
 C.nameplate.buffs_list = {}
 C.chat.spam_list = ""
+C.font.global_font = false
 C.media.profile = "-- Insert Your code here\n"
 C.options = {}
 

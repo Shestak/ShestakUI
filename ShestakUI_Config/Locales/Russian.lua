@@ -72,6 +72,7 @@ L.font_subheader_bag = "Шрифт сумок"
 L.font_subheader_blizzard = "Размер системных шрифтов"
 L.font_tooltip_header_font_size = "Заголовок подсказки"
 L.font_tooltip_font_size = "Текст подсказки"
+L.font_global_font = "Отключить пиксельный шрифт"
 
 -- Skins options
 L_GUI_SKINS = "Стилизация"

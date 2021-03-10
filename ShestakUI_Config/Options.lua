@@ -720,6 +720,9 @@ do
 	local cooldown_timers_font_shadow = ns.CreateCheckBox(parent, "cooldown_timers_font_shadow", L.font_stats_font_shadow)
 	cooldown_timers_font_shadow:SetPoint("LEFT", cooldown_timers_font_size, "RIGHT", 160, 0)
 
+	local global_font = ns.CreateCheckBox(parent, "global_font")
+	global_font:SetPoint("TOPLEFT", cooldown_timers_font_size, "BOTTOMLEFT", 0, -30)
+
 	-- Panel 2
 	local parent = ShestakUIOptionsPanel.font2
 
