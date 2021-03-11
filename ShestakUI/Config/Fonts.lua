@@ -117,7 +117,7 @@ C["font"] = {
 ----------------------------------------------------------------------------------------
 --	Pixel font replacement
 ----------------------------------------------------------------------------------------
-if (ShestakUIOptions and ShestakUIOptions["font"]["global_font"] == true) or (ShestakUIOptionsPerChar and ShestakUIOptionsPerChar["font"]["global_font"] == true) then
+if (ShestakUIOptions and ShestakUIOptions["font"] and ShestakUIOptions["font"]["global_font"] == true) or (ShestakUIOptionsPerChar and ShestakUIOptionsPerChar["font"] and ShestakUIOptionsPerChar["font"]["global_font"] == true) then
 	C["media"].pixel_font = C.media.normal_font
 	C["media"].pixel_font_size = 11
 	C["media"].pixel_font_style = "OUTLINE"
