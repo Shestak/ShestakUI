@@ -72,7 +72,7 @@ L.font_subheader_bag = "背包"
 L.font_subheader_blizzard = "系统"
 L.font_tooltip_header_font_size = "鼠标提示标题"
 L.font_tooltip_font_size = "鼠标提示信息"
-L.font_global_font = "Disable Pixel font" -- Need review
+L.font_global_font = "禁用像素字体"
 
 -- Skins options
 L_GUI_SKINS = "界面美化"
@@ -141,8 +141,8 @@ L.unitframe_extra_height_auto = "血量/能量框架自动增高"
 L.unitframe_extra_height_auto_desc = "按字体大小智能调节框架高度"
 L.unitframe_extra_health_height = "血量框架额外增高"
 L.unitframe_extra_power_height = "能量框架额外增高"
-L.unitframe_subheader_castbar = "Size of player and target castbar" -- Need review
-L.unitframe_castbar_height = "Height" -- Need review
+L.unitframe_subheader_castbar = "玩家/目标施法条大小"
+L.unitframe_castbar_height = "高度"
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "职业资源栏"
@@ -165,8 +165,8 @@ L_GUI_UF_AGGRO_BORDER = "边框按仇恨值着色"
 L_GUI_UF_DEFICIT_HEALTH = "团队生命值亏减模式"
 L_GUI_UF_SHOW_PARTY = "队伍框架"
 L_GUI_UF_SHOW_RAID = "团队框架"
-L.raidframe_show_target = "Show target frames" -- Needs review
-L.raidframe_show_pet = "Show pet frames" -- Needs review
+L.raidframe_show_target = "目标框架"
+L.raidframe_show_pet = "宠物框架"
 L.raidframe_vertical_health = "垂直显示团队框架生命值"
 L.raidframe_vertical_health_desc = "仅在HPS布局中生效"
 L_GUI_UF_ALPHA_HEALTH = "满血时淡化单位框架"
