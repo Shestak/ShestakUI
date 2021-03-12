@@ -491,7 +491,7 @@ local function HealthPostUpdate(self, unit, cur, max)
 			SetColorBorder(self, unpack(C.media.border_color))
 		end
 	elseif not isPlayer and C.nameplate.enhance_threat == true then
-		SetVirtualBorder(self, unpack(C.media.border_color))
+		SetColorBorder(self, unpack(C.media.border_color))
 	end
 
 	threatColor(main, true)
