@@ -146,32 +146,24 @@ if C.nameplate.healer_icon == true then
 end
 
 local totemData = {
-	[GetSpellInfo(192058)] = "Interface\\Icons\\spell_nature_brilliance",			-- Capacitor Totem
-	[GetSpellInfo(98008)]  = "Interface\\Icons\\spell_shaman_spiritlink",			-- Spirit Link Totem
-	[GetSpellInfo(192077)] = "Interface\\Icons\\ability_shaman_windwalktotem",		-- Wind Rush Totem
-	[GetSpellInfo(204331)] = "Interface\\Icons\\spell_nature_wrathofair_totem",		-- Counterstrike Totem
-	[GetSpellInfo(204332)] = "Interface\\Icons\\spell_nature_windfury",				-- Windfury Totem
-	[GetSpellInfo(204336)] = "Interface\\Icons\\spell_nature_groundingtotem",		-- Grounding Totem
-	-- Water
-	[GetSpellInfo(157153)] = "Interface\\Icons\\ability_shaman_condensationtotem",	-- Cloudburst Totem
-	[GetSpellInfo(5394)]   = "Interface\\Icons\\INV_Spear_04",						-- Healing Stream Totem
-	[GetSpellInfo(108280)] = "Interface\\Icons\\ability_shaman_healingtide",		-- Healing Tide Totem
-	-- Earth
-	[GetSpellInfo(207399)] = "Interface\\Icons\\spell_nature_reincarnation",		-- Ancestral Protection Totem
-	[GetSpellInfo(198838)] = "Interface\\Icons\\spell_nature_stoneskintotem",		-- Earthen Wall Totem
-	[GetSpellInfo(51485)]  = "Interface\\Icons\\spell_nature_stranglevines",		-- Earthgrab Totem
-	[GetSpellInfo(196932)] = "Interface\\Icons\\spell_totem_wardofdraining",		-- Voodoo Totem
-	-- Fire
-	[GetSpellInfo(192222)] = "Interface\\Icons\\spell_shaman_spewlava",				-- Liquid Magma Totem
-	[GetSpellInfo(204330)] = "Interface\\Icons\\spell_fire_totemofwrath",			-- Skyfury Totem
-	-- Totem Mastery
-	[GetSpellInfo(202188)] = "Interface\\Icons\\spell_nature_stoneskintotem",		-- Resonance Totem
-	[GetSpellInfo(210651)] = "Interface\\Icons\\spell_shaman_stormtotem",			-- Storm Totem
-	[GetSpellInfo(210657)] = "Interface\\Icons\\spell_fire_searingtotem",			-- Ember Totem
-	[GetSpellInfo(210660)] = "Interface\\Icons\\spell_nature_invisibilitytotem",	-- Tailwind Totem
+	[GetSpellInfo(192058)] = 136013,	-- Capacitor Totem
+	[GetSpellInfo(98008)]  = 237586,	-- Spirit Link Totem
+	[GetSpellInfo(192077)] = 538576,	-- Wind Rush Totem
+	[GetSpellInfo(204331)] = 511726,	-- Counterstrike Totem
+	[GetSpellInfo(204332)] = 136114,	-- Windfury Totem
+	[GetSpellInfo(204336)] = 136039,	-- Grounding Totem
+	[GetSpellInfo(157153)] = 971076,	-- Cloudburst Totem
+	[GetSpellInfo(5394)]   = 135127,	-- Healing Stream Totem
+	[GetSpellInfo(108280)] = 538569,	-- Healing Tide Totem
+	[GetSpellInfo(207399)] = 136080,	-- Ancestral Protection Totem
+	[GetSpellInfo(198838)] = 136098,	-- Earthen Wall Totem
+	[GetSpellInfo(51485)]  = 136100,	-- Earthgrab Totem
+	[GetSpellInfo(196932)] = 136232,	-- Voodoo Totem
+	[GetSpellInfo(192222)] = 971079,	-- Liquid Magma Totem
+	[GetSpellInfo(204330)] = 135829,	-- Skyfury Totem
 }
 
-local function CreateVirtualFrame(frame, point)
+local function CreateBorderFrame(frame, point)
 	if point == nil then point = frame end
 	if point.backdrop then return end
 
@@ -210,7 +202,7 @@ local function CreateVirtualFrame(frame, point)
 	frame.borderright:SetDrawLayer("BORDER", -7)
 end
 
-local function SetVirtualBorder(frame, r, g, b)
+local function SetColorBorder(frame, r, g, b)
 	frame.bordertop:SetColorTexture(r, g, b)
 	frame.borderbottom:SetColorTexture(r, g, b)
 	frame.borderleft:SetColorTexture(r, g, b)
@@ -230,25 +222,16 @@ local AurasCustomFilter = function(_, unit, button, name, _, _, _, _, _, _, isSt
 					allow = true
 				end
 				if C.nameplate.track_buffs then
-					button.bordertop:SetColorTexture(unpack(C.media.border_color))
-					button.borderbottom:SetColorTexture(unpack(C.media.border_color))
-					button.borderleft:SetColorTexture(unpack(C.media.border_color))
-					button.borderright:SetColorTexture(unpack(C.media.border_color))
+					SetColorBorder(button, unpack(C.media.border_color))
 				end
 			end
 		else
 			if T.BuffWhiteList[name] then
 				allow = true
-				button.bordertop:SetColorTexture(0, 0.5, 0)
-				button.borderbottom:SetColorTexture(0, 0.5, 0)
-				button.borderleft:SetColorTexture(0, 0.5, 0)
-				button.borderright:SetColorTexture(0, 0.5, 0)
+				SetColorBorder(button, 0, 0.5, 0)
 			elseif isStealable then
 				allow = true
-				button.bordertop:SetColorTexture(1, 0.85, 0)
-				button.borderbottom:SetColorTexture(1, 0.85, 0)
-				button.borderleft:SetColorTexture(1, 0.85, 0)
-				button.borderright:SetColorTexture(1, 0.85, 0)
+				SetColorBorder(button, 1, 0.85, 0)
 			end
 		end
 	end
@@ -262,7 +245,7 @@ if T.screenHeight > 1200 then
 end
 
 local AurasPostCreateIcon = function(element, button)
-	CreateVirtualFrame(button)
+	CreateBorderFrame(button)
 
 	button.remaining = T.SetFontString(button, C.font.auras_font, C.font.auras_font_size * T.noscalemult / Mult, C.font.auras_font_style)
 	button.remaining:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
@@ -307,7 +290,7 @@ local function threatColor(self, forced)
 	if UnitIsPlayer(self.unit) then return end
 
 	if C.nameplate.enhance_threat ~= true then
-		SetVirtualBorder(self.Health, unpack(C.media.border_color))
+		SetColorBorder(self.Health, unpack(C.media.border_color))
 	end
 	if UnitIsTapDenied(self.unit) then
 		self.Health:SetStatusBarColor(0.6, 0.6, 0.6)
@@ -315,31 +298,37 @@ local function threatColor(self, forced)
 		local threatStatus = UnitThreatSituation("player", self.unit)
 		if self.npcID == "120651" then	-- Explosives affix
 			self.Health:SetStatusBarColor(1, 0.3, 0)
+		elseif self.npcID == "174773" then	-- Spiteful Shade affix
+			if threatStatus == 3 then
+				self.Health:SetStatusBarColor(1, 0.3, 0)
+			else
+				self.Health:SetStatusBarColor(unpack(C.nameplate.good_color))
+			end
 		elseif threatStatus == 3 then	-- securely tanking, highest threat
 			if T.Role == "Tank" then
 				if C.nameplate.enhance_threat == true then
 					self.Health:SetStatusBarColor(unpack(C.nameplate.good_color))
 				else
-					SetVirtualBorder(self.Health, unpack(C.nameplate.bad_color))
+					SetColorBorder(self.Health, unpack(C.nameplate.bad_color))
 				end
 			else
 				if C.nameplate.enhance_threat == true then
 					self.Health:SetStatusBarColor(unpack(C.nameplate.bad_color))
 				else
-					SetVirtualBorder(self.Health, unpack(C.nameplate.bad_color))
+					SetColorBorder(self.Health, unpack(C.nameplate.bad_color))
 				end
 			end
 		elseif threatStatus == 2 then	-- insecurely tanking, another unit have higher threat but not tanking
 			if C.nameplate.enhance_threat == true then
 				self.Health:SetStatusBarColor(unpack(C.nameplate.near_color))
 			else
-				SetVirtualBorder(self.Health, unpack(C.nameplate.near_color))
+				SetColorBorder(self.Health, unpack(C.nameplate.near_color))
 			end
 		elseif threatStatus == 1 then	-- not tanking, higher threat than tank
 			if C.nameplate.enhance_threat == true then
 				self.Health:SetStatusBarColor(unpack(C.nameplate.near_color))
 			else
-				SetVirtualBorder(self.Health, unpack(C.nameplate.near_color))
+				SetColorBorder(self.Health, unpack(C.nameplate.near_color))
 			end
 		elseif threatStatus == 0 then	-- not tanking, lower threat than tank
 			if C.nameplate.enhance_threat == true then
@@ -448,7 +437,6 @@ local function UpdateName(self)
 		if name then
 			if totemData[name] then
 				self.Totem.Icon:SetTexture(totemData[name])
-				self.Totem.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 				self.Totem:Show()
 			else
 				self.Totem:Hide()
@@ -496,11 +484,11 @@ local function HealthPostUpdate(self, unit, cur, max)
 
 	if isPlayer then
 		if perc <= 0.5 and perc >= 0.2 then
-			SetVirtualBorder(self, 1, 1, 0)
+			SetColorBorder(self, 1, 1, 0)
 		elseif perc < 0.2 then
-			SetVirtualBorder(self, 1, 0, 0)
+			SetColorBorder(self, 1, 0, 0)
 		else
-			SetVirtualBorder(self, unpack(C.media.border_color))
+			SetColorBorder(self, unpack(C.media.border_color))
 		end
 	elseif not isPlayer and C.nameplate.enhance_threat == true then
 		SetVirtualBorder(self, unpack(C.media.border_color))
@@ -595,7 +583,7 @@ local function style(self, unit)
 	self.Health.colorClass = true
 	self.Health.colorReaction = true
 	self.Health.colorHealth = true
-	CreateVirtualFrame(self.Health)
+	CreateBorderFrame(self.Health)
 
 	self.Health.bg = self.Health:CreateTexture(nil, "BORDER")
 	self.Health.bg:SetAllPoints()
@@ -619,7 +607,7 @@ local function style(self, unit)
 	self.Power.frequentUpdates = true
 	self.Power.colorPower = true
 	self.Power.PostUpdate = T.PreUpdatePower
-	CreateVirtualFrame(self.Power)
+	CreateBorderFrame(self.Power)
 
 	self.Power.bg = self.Power:CreateTexture(nil, "BORDER")
 	self.Power.bg:SetAllPoints()
@@ -676,7 +664,7 @@ local function style(self, unit)
 	self.Castbar:SetStatusBarColor(1, 0.8, 0)
 	self.Castbar:SetPoint("TOPLEFT", self.Health, "BOTTOMLEFT", 0, -8)
 	self.Castbar:SetPoint("BOTTOMRIGHT", self.Health, "BOTTOMRIGHT", 0, -8-(C.nameplate.height * T.noscalemult))
-	CreateVirtualFrame(self.Castbar)
+	CreateBorderFrame(self.Castbar)
 
 	self.Castbar.bg = self.Castbar:CreateTexture(nil, "BORDER")
 	self.Castbar.bg:SetAllPoints()
@@ -713,7 +701,7 @@ local function style(self, unit)
 	self.Castbar.Icon:SetDrawLayer("ARTWORK")
 	self.Castbar.Icon:SetSize((C.nameplate.height * 2 * T.noscalemult) + 8, (C.nameplate.height * 2 * T.noscalemult) + 8)
 	self.Castbar.Icon:SetPoint("TOPLEFT", self.Health, "TOPRIGHT", 8, 0)
-	CreateVirtualFrame(self.Castbar, self.Castbar.Icon)
+	CreateBorderFrame(self.Castbar, self.Castbar.Icon)
 
 	-- Raid Icon
 	self.RaidTargetIndicator = self:CreateTexture(nil, "OVERLAY", nil, 7)
@@ -728,7 +716,7 @@ local function style(self, unit)
 		self.Class.Icon:SetPoint("TOPRIGHT", self.Health, "TOPLEFT", -8, 0)
 		self.Class.Icon:SetTexture("Interface\\WorldStateFrame\\Icons-Classes")
 		self.Class.Icon:SetTexCoord(0, 0, 0, 0)
-		CreateVirtualFrame(self.Class, self.Class.Icon)
+		CreateBorderFrame(self.Class, self.Class.Icon)
 	end
 
 	-- Create Totem Icon
@@ -737,7 +725,8 @@ local function style(self, unit)
 		self.Totem.Icon = self.Totem:CreateTexture(nil, "OVERLAY")
 		self.Totem.Icon:SetSize((C.nameplate.height * 2 * T.noscalemult) + 8, (C.nameplate.height * 2 * T.noscalemult) + 8)
 		self.Totem.Icon:SetPoint("BOTTOM", self.Health, "TOP", 0, 16)
-		CreateVirtualFrame(self.Totem, self.Totem.Icon)
+		self.Totem.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		CreateBorderFrame(self.Totem, self.Totem.Icon)
 	end
 
 	-- Create Healer Icon
