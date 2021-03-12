@@ -1666,7 +1666,7 @@ if gold.enabled then
 			conf.Gold = GetMoney()
 			if event == "MERCHANT_SHOW" then
 				if conf.AutoSell and not (IsAltKeyDown() or IsShiftKeyDown()) then
-					local profit = 0
+					-- local profit = 0
 					local numItem = 0
 					for bag = 0, NUM_BAG_SLOTS do for slot = 0, GetContainerNumSlots(bag) do
 						local link = GetContainerItemLink(bag, slot)
@@ -1676,9 +1676,9 @@ if gold.enabled then
 								if exception == itemstring then ignore = true break end
 							end
 							local _, _, itemRarity, _, _, _, _, _, _, _, itemSellPrice = GetItemInfo(link)
-							local _, itemCount = GetContainerItemInfo(bag, slot)
+							-- local _, itemCount = GetContainerItemInfo(bag, slot)
 							if itemSellPrice and itemSellPrice > 0 and ((itemRarity == 0 and not ignore) or (ignore and itemRarity ~= 0)) then
-								profit = profit + (itemSellPrice * itemCount)
+								-- profit = profit + (itemSellPrice * itemCount)
 								numItem = numItem + 1
 								if numItem < 12 then
 									UseContainerItem(bag, slot)
@@ -1690,7 +1690,7 @@ if gold.enabled then
 							end
 						end
 					end end
-					if profit > 0 then print(format("|cff66C6FF%s: |cffFFFFFF%s", L_STATS_JUNK_PROFIT, formatgold(1, profit))) end
+					-- if profit > 0 then print(format("|cff66C6FF%s: |cffFFFFFF%s", L_STATS_JUNK_PROFIT, formatgold(1, profit))) end
 				end
 				return
 			end
