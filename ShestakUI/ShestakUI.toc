@@ -3,7 +3,7 @@
 ## Notes: A total UI overhaul for World of Warcraft
 ## Author: Shestak
 ## Version: 8.18
-## OptionalDeps: Blizzard_CombatText, ShestakUI_Config, AtlasLoot, cargBags, Clique, epgp, Grid, Grid2, _NPCScan.Overlay, ls_Toasts, Mapster, Omen, OPie, oUF_Freebgrid, PitBull4, Postal, Prat-3.0, Quartz, Recount, Rematch, ShadowedUnitFrames, Stuf, TidyPlates, TipTac, TipTacTalents, TradeSkillMaster_Mailing, tullaCC, VuhDo, WeakAuras, ShestakUI_Profile
+## OptionalDeps: Blizzard_CombatText, ShestakUI_Config, ShestakUI_Profile, AtlasLoot, cargBags, Clique, epgp, Grid, Grid2, ls_Toasts, Mapster, Omen, OPie, PitBull4, Postal, Prat-3.0, Quartz, Recount, Rematch, ShadowedUnitFrames, TidyPlates, TipTac, TipTacTalents, tullaCC, VuhDo, WeakAuras
 ## SavedVariables: ShestakUISettings, ShestakUIStats, ShestakUIBindings, ShestakUICurrency, ShestakUIPositions
 ## SavedVariablesPerCharacter: ShestakUISettingsPerChar, ShestakUIChatHistory
 
