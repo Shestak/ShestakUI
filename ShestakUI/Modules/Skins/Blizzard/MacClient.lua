@@ -8,7 +8,6 @@ local function LoadSkin()
 	if IsMacClient() then
 		T.SkinCheckBox(_G["MacKeyboardOptionsFrameCheckButton9"])
 		T.SkinCheckBox(_G["MacKeyboardOptionsFrameCheckButton10"])
-		T.SkinCheckBox(_G["MacKeyboardOptionsFrameCheckButton11"])
 	end
 end
 

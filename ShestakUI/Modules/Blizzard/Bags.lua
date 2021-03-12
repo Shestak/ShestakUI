@@ -1780,5 +1780,4 @@ StaticPopupDialogs.BUY_BANK_SLOT = {
 -- Kill Blizzard functions
 LootWonAlertFrame_OnClick = T.dummy
 LootUpgradeFrame_OnClick = T.dummy
-StorePurchaseAlertFrame_OnClick = T.dummy
 LegendaryItemAlertFrame_OnClick = T.dummy
