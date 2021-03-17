@@ -1883,6 +1883,9 @@ do
 
 	local offtank_color = ns.CreateColourPicker(parent, "offtank_color", true, L_GUI_NAMEPLATE_OFFTANK_COLOR)
 	offtank_color:SetPoint("TOPLEFT", bad_color, "BOTTOMLEFT", 0, -8)
+
+	local extra_color = ns.CreateColourPicker(parent, "extra_color", true)
+	extra_color:SetPoint("TOPLEFT", offtank_color, "BOTTOMLEFT", 0, -8)
 end
 
 -- Combat text
@@ -1906,8 +1909,11 @@ do
 	local healing = ns.CreateCheckBox(parent, "healing", L_GUI_COMBATTEXT_HEALING)
 	healing:SetPoint("TOPLEFT", damage, "BOTTOMLEFT", 0, 0)
 
+	local incoming = ns.CreateCheckBox(parent, "incoming", L.combattext_incoming)
+	incoming:SetPoint("TOPLEFT", healing, "BOTTOMLEFT", 0, 0)
+
 	local show_hots = ns.CreateCheckBox(parent, "show_hots", L_GUI_COMBATTEXT_HOTS)
-	show_hots:SetPoint("TOPLEFT", healing, "BOTTOMLEFT", 0, 0)
+	show_hots:SetPoint("TOPLEFT", incoming, "BOTTOMLEFT", 0, 0)
 
 	local show_overhealing = ns.CreateCheckBox(parent, "show_overhealing", L_GUI_COMBATTEXT_OVERHEALING)
 	show_overhealing:SetPoint("TOPLEFT", show_hots, "BOTTOMLEFT", 0, 0)

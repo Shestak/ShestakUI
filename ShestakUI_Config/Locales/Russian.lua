@@ -325,6 +325,7 @@ L_GUI_NAMEPLATE_GOOD_COLOR = "Цвет наименьшей угрозы (для
 L_GUI_NAMEPLATE_NEAR_COLOR = "Цвет получения/сброса угрозы"
 L_GUI_NAMEPLATE_BAD_COLOR = "Цвет наивысшей угрозы (для танка наименьшей)"
 L_GUI_NAMEPLATE_OFFTANK_COLOR = "Цвет угрозы для оффтанка (если вы танк)"
+L.nameplate_extra_color = "Цвет сфер и теней (аффиксы)"
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Текст боя"
@@ -334,8 +335,9 @@ L.combattext_blizz_head_numbers = "Задействовать текст боя 
 L.combattext_blizz_head_numbers_desc = "Включить исходящий текст боя Blizzard (над головами)"
 L.combattext_damage_style = "Смена шрифта текста боя"
 L.combattext_damage_style_desc = "Использовать пиксельный шрифт текста боя над головами (требуется рестарт WoW)"
-L_GUI_COMBATTEXT_DAMAGE = "Отображать исходящий урон в его блоке"
-L_GUI_COMBATTEXT_HEALING = "Отображать исходящее лечение в его блоке"
+L_GUI_COMBATTEXT_DAMAGE = "Отображать исходящий урон"
+L_GUI_COMBATTEXT_HEALING = "Отображать исходящее лечение"
+L.combattext_incoming = "Отображать входящий урон и лечение"
 L_GUI_COMBATTEXT_HOTS = "Отображать лечение ваших периодических заклинаний"
 L_GUI_COMBATTEXT_OVERHEALING = "Отображать исходящее избыточное лечение"
 L_GUI_COMBATTEXT_PET_DAMAGE = "Отображать урон вашего питомца"

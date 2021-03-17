@@ -297,10 +297,10 @@ local function threatColor(self, forced)
 	elseif UnitAffectingCombat("player") then
 		local threatStatus = UnitThreatSituation("player", self.unit)
 		if self.npcID == "120651" then	-- Explosives affix
-			self.Health:SetStatusBarColor(1, 0.3, 0)
+			self.Health:SetStatusBarColor(unpack(C.nameplate.extra_color))
 		elseif self.npcID == "174773" then	-- Spiteful Shade affix
 			if threatStatus == 3 then
-				self.Health:SetStatusBarColor(1, 0.3, 0)
+				self.Health:SetStatusBarColor(unpack(C.nameplate.extra_color))
 			else
 				self.Health:SetStatusBarColor(unpack(C.nameplate.good_color))
 			end

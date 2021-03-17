@@ -325,6 +325,7 @@ L_GUI_NAMEPLATE_GOOD_COLOR = "安全仇恨顏色"
 L_GUI_NAMEPLATE_NEAR_COLOR = "臨界仇恨顏色"
 L_GUI_NAMEPLATE_BAD_COLOR = "危險仇恨顏色"
 L_GUI_NAMEPLATE_OFFTANK_COLOR = "副坦仇恨顏色"
+L.nameplate_extra_color = "Explosive and Spiteful affix color" -- Need review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "戰鬥文字"
@@ -336,6 +337,7 @@ L.combattext_damage_style = "改變默認的顯示風格"
 L.combattext_damage_style_desc = "改變模型頂部/玩家頭像的傷害/治療字體"
 L_GUI_COMBATTEXT_DAMAGE = "獨立顯示傷害輸出"
 L_GUI_COMBATTEXT_HEALING = "獨立顯示治療輸出"
+L.combattext_incoming = "Show incoming damage and healing" -- Need review
 L_GUI_COMBATTEXT_HOTS = "Hot造成的治療"
 L_GUI_COMBATTEXT_OVERHEALING = "過量治療輸出"
 L_GUI_COMBATTEXT_PET_DAMAGE = "寵物傷害輸出"
