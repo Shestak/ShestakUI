@@ -154,7 +154,7 @@ function button:PLAYER_LOGIN()
 	GameTooltip:HookScript("OnTooltipSetItem", function(self)
 		local _, link = self:GetItem()
 
-		if link and not InCombatLockdown() and IsAltKeyDown() and not (AuctionFrame and AuctionFrame:IsShown()) then
+		if link and not InCombatLockdown() and IsAltKeyDown() and not (AuctionHouseFrame and AuctionHouseFrame:IsShown()) then
 			local itemID = GetItemInfoFromHyperlink(link)
 			if not itemID then return end
 			local spell, r, g, b
