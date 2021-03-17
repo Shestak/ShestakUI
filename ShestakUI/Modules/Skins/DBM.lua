@@ -21,7 +21,6 @@ DBMSkin:SetScript("OnEvent", function()
 						local frame = bar.frame
 						local tbar = _G[frame:GetName().."Bar"]
 						local spark = _G[frame:GetName().."BarSpark"]
-						local texture = _G[frame:GetName().."BarTexture"]
 						local icon1 = _G[frame:GetName().."BarIcon1"]
 						local icon2 = _G[frame:GetName().."BarIcon2"]
 						local name = _G[frame:GetName().."BarName"]
@@ -92,11 +91,6 @@ DBMSkin:SetScript("OnEvent", function()
 							icon2.styled = true
 						end
 
-						if not texture.styled then
-							texture:SetTexture(C.media.texture)
-							texture.styled = true
-						end
-
 						if not tbar.styled then
 							tbar:SetPoint("TOPLEFT", frame, "TOPLEFT", 2, -2)
 							tbar:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 2)
@@ -129,30 +123,29 @@ DBMSkin:SetScript("OnEvent", function()
 						if bar.owner.options.IconRight then icon2:Show() icon2.overlay:Show() else icon2:Hide() icon2.overlay:Hide() end
 						tbar:SetAlpha(1)
 						frame:SetAlpha(1)
-						texture:SetAlpha(1)
 						frame:Show()
 						bar:Update(0)
 						bar.injected = true
 					end
 					bar:ApplyStyle()
-					bar.ApplyPosition = function()
-						if C.unitframe.enable ~= true or C.skins.dbm_movable == true then return end
-						self.mainAnchor:ClearAllPoints()
-						if C.unitframe.portrait_enable == true then
-							if bar.owner.options.IconRight then
-								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(138 + C.unitframe.portrait_width), -69)
-							else
-								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(110 + C.unitframe.portrait_width), -69)
-							end
-						else
-							if bar.owner.options.IconRight then
-								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -131, -69)
-							else
-								self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -103, -69)
-							end
-						end
-					end
-					bar:ApplyPosition()
+					--FIXME bar.ApplyPosition = function()
+						-- if C.unitframe.enable ~= true or C.skins.dbm_movable == true then return end
+						-- self.mainAnchor:ClearAllPoints()
+						-- if C.unitframe.portrait_enable == true then
+							-- if bar.owner.options.IconRight then
+								-- self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(138 + C.unitframe.portrait_width), -69)
+							-- else
+								-- self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(110 + C.unitframe.portrait_width), -69)
+							-- end
+						-- else
+							-- if bar.owner.options.IconRight then
+								-- self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -131, -69)
+							-- else
+								-- self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -103, -69)
+							-- end
+						-- end
+					-- end
+					-- bar:ApplyPosition()
 				end
 			end
 		end
