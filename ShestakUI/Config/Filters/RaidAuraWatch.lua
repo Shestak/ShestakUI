@@ -155,8 +155,8 @@ T.RaidDebuffs = {
 -----------------------------------------------------------------
 	-- Mythic+ Affixes
 	[SpellName(226489)] = 5,	-- Sanguine Ichor
-	[SpellName(209858)] = 5,	-- Necrotic Wound
-	[SpellName(240559)] = 5,	-- Grievous Wound
+	[SpellName(209858)] = 4,	-- Necrotic Wound
+	[SpellName(240559)] = 4,	-- Grievous Wound
 	[SpellName(240443)] = 5,	-- Burst
 	-- Halls of Atonement
 	[SpellName(335338)] = 3,	-- Ritual of Woe
