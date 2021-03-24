@@ -491,7 +491,15 @@ local function HealthPostUpdate(self, unit, cur, max)
 			SetColorBorder(self, unpack(C.media.border_color))
 		end
 	elseif not isPlayer and C.nameplate.enhance_threat == true then
-		SetColorBorder(self, unpack(C.media.border_color))
+		if C.nameplate.low_health then
+			if perc < C.nameplate.low_health_value then
+				SetColorBorder(self, 0.8, 0, 0)
+			else
+				SetColorBorder(self, unpack(C.media.border_color))
+			end
+		else
+			SetColorBorder(self, unpack(C.media.border_color))
+		end
 	end
 
 	threatColor(main, true)

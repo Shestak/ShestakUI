@@ -1866,6 +1866,12 @@ do
 	local only_name = ns.CreateCheckBox(parent, "only_name")
 	only_name:SetPoint("TOPLEFT", target_glow, "BOTTOMLEFT", 0, 0)
 
+	local low_health_value = ns.CreateNumberSlider(parent, "low_health_value", nil, nil, 0.1, 1, 0.05, true)
+	low_health_value:SetPoint("TOPLEFT", only_name, "BOTTOMLEFT", 0, -20)
+
+	local low_health = ns.CreateCheckBox(parent, "low_health")
+	low_health:SetPoint("LEFT", low_health_value, "RIGHT", 70, 0)
+
 	-- Panel 2
 	local parent = ShestakUIOptionsPanel.nameplate2
 

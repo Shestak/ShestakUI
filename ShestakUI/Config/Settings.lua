@@ -368,6 +368,8 @@ C["nameplate"] = {
 	["totem_icons"] = false,					-- Show icon above enemy totems nameplate
 	["target_glow"] = false,					-- Show glow texture for target
 	["only_name"] = false,						-- Show only name for friendly units
+	["low_health"] = false,						-- Show red border when low health
+	["low_health_value"] = 0.2,					-- Value for low health (between 0.1 and 1)
 	-- Threat
 	["enhance_threat"] = true,					-- Enable threat feature, automatically changes by your role
 	["good_color"] = {0.2, 0.8, 0.2},			-- Good threat color
