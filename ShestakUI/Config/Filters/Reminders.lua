@@ -114,9 +114,9 @@ if C.reminder.solo_buffs_enable == true then
 			[1] = {	-- Lethal Poisons group
 				["spells"] = {
 					SpellName(2823),	-- Deadly Poison
+					SpellName(315584),	-- Instant Poison
 					SpellName(8679),	-- Wound Poison
 				},
-				["spec"] = 1,			-- Only Assassination have poisen now
 				["combat"] = true,
 				["instance"] = true,
 				["pvp"] = true,
@@ -124,9 +124,9 @@ if C.reminder.solo_buffs_enable == true then
 			[2] = {	-- Non-Lethal Poisons group
 				["spells"] = {
 					SpellName(3408),	-- Crippling Poison
+					SpellName(5761),	-- Numbing Poison
 					SpellName(108211),	-- Leeching Poison
 				},
-				["spec"] = 1,			-- Only Assassination have poisen now
 				["combat"] = true,
 				["instance"] = true,
 				["pvp"] = true,
