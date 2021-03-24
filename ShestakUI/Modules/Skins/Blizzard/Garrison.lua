@@ -221,6 +221,8 @@ local function LoadSkin()
 		end
 	end
 
+	HandleGarrisonPortrait(GarrisonMissionFrame.FollowerTab.PortraitFrame)
+
 	local function UpdateData(dataFrame)
 		local offset = _G.HybridScrollFrame_GetOffset(dataFrame.listScroll)
 		local Buttons = dataFrame.listScroll.buttons
@@ -538,6 +540,7 @@ local function LoadSkin()
 
 	hooksecurefunc(GarrisonMissionFrame.FollowerList, "ShowFollower", onShowFollower)
 	hooksecurefunc(GarrisonLandingPageFollowerList, "ShowFollower", onShowFollower)
+	hooksecurefunc(GarrisonShipyardFrameFollowers, "ShowFollower", onShowFollower)
 	hooksecurefunc(GarrisonMissionFrame.FollowerList, "UpdateData", UpdateData)
 	hooksecurefunc(GarrisonLandingPageFollowerList, "UpdateData", UpdateData)
 
@@ -579,6 +582,42 @@ local function LoadSkin()
 	GarrisonShipyardFrame.FollowerTab:StripTextures()
 	GarrisonShipyardFrame.FollowerTab:SetTemplate("Overlay")
 	T.SkinScrollBar(GarrisonShipyardFrameFollowersListScrollFrameScrollBar)
+
+	local function UpdateDataShip(self)
+		local numFollowers = #self.followersList
+		local scrollFrame = self.listScroll
+		local offset = HybridScrollFrame_GetOffset(scrollFrame)
+		local buttons = scrollFrame.buttons
+
+		for i = 1, #buttons do
+			local button = buttons[i]
+			local index = offset + i
+			if index <= numFollowers then
+				if button and not button.backdrop then
+					button:CreateBackdrop("Overlay")
+					button.backdrop:SetPoint("TOPLEFT", -1, 1)
+					button.backdrop:SetPoint("BOTTOMRIGHT", 1, -1)
+					button:StyleButton(nil, 1)
+					button.BG:Hide()
+					button.Selection:SetTexture("")
+					button.Portrait:SetPoint("TOPLEFT", 2, 0)
+				end
+
+				if button.Selection and button.backdrop then
+					if button.Selection:IsShown() then
+						button.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
+						button.backdrop.overlay:SetVertexColor(1 * 0.3, 0.82 * 0.3, 0, 1)
+					else
+						button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+						button.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
+					end
+				end
+			end
+		end
+	end
+
+	hooksecurefunc(GarrisonShipyardFrameFollowers, "UpdateData", UpdateDataShip)
+	hooksecurefunc(GarrisonLandingPageShipFollowerList, "UpdateData", UpdateDataShip)
 
 	local function skinFollowerTraitsAndEquipment(obj)
 		local btn
