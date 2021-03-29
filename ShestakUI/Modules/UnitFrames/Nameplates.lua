@@ -452,6 +452,8 @@ local function castColor(self)
 	else
 		self:SetStatusBarColor(1, 0.8, 0)
 		self.bg:SetColorTexture(1, 0.8, 0, 0.2)
+	end
+
 	if C.nameplate.cast_color then
 		if T.InterruptCast[self.spellID] then
 			SetColorBorder(self, 1, 0.8, 0)
