@@ -1866,17 +1866,23 @@ do
 	local only_name = ns.CreateCheckBox(parent, "only_name")
 	only_name:SetPoint("TOPLEFT", target_glow, "BOTTOMLEFT", 0, 0)
 
-	local low_health_value = ns.CreateNumberSlider(parent, "low_health_value", nil, nil, 0.1, 1, 0.05, true)
-	low_health_value:SetPoint("TOPLEFT", only_name, "BOTTOMLEFT", 0, -20)
-
-	local low_health = ns.CreateCheckBox(parent, "low_health")
-	low_health:SetPoint("LEFT", low_health_value, "RIGHT", 70, 0)
+	local quests = ns.CreateCheckBox(parent, "quests")
+	quests:SetPoint("TOPLEFT", only_name, "BOTTOMLEFT", 0, 0)
 
 	-- Panel 2
 	local parent = ShestakUIOptionsPanel.nameplate2
 
+	local low_health_value = ns.CreateNumberSlider(parent, "low_health_value", nil, nil, 0.1, 1, 0.05, true)
+	low_health_value:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, -20)
+
+	local low_health = ns.CreateCheckBox(parent, "low_health")
+	low_health:SetPoint("LEFT", low_health_value, "RIGHT", 70, 0)
+
+	local cast_color = ns.CreateCheckBox(parent, "cast_color")
+	cast_color:SetPoint("TOPLEFT", parent.low_health_value, "BOTTOMLEFT", 0, -8)
+
 	local enhance_threat = ns.CreateCheckBox(parent, "enhance_threat", L_GUI_NAMEPLATE_THREAT)
-	enhance_threat:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+	enhance_threat:SetPoint("TOPLEFT", cast_color, "BOTTOMLEFT", 0, 0)
 
 	local good_color = ns.CreateColourPicker(parent, "good_color", true, L_GUI_NAMEPLATE_GOOD_COLOR)
 	good_color:SetPoint("TOPLEFT", enhance_threat, "BOTTOMLEFT", 24, -4)

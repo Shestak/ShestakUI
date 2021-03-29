@@ -109,7 +109,47 @@ T.BuffBlackList = {
 }
 
 T.PlateBlacklist = {
-	["24207"] = true, -- Army of the Dead
-	["29630"] = true, -- Fanged Pit Viper (Gundrak)
-	["55659"] = true, -- Wild Imp
+	["24207"] = true,	-- Army of the Dead
+	["29630"] = true,	-- Fanged Pit Viper (Gundrak)
+	["55659"] = true,	-- Wild Imp
+	["167966"] = true,	-- Experimental Sludge (De Other Side)
+}
+
+T.InterruptCast = {
+	-- De Other Side
+	[332612] = true,	-- Healing Wave
+	[332706] = true,	-- Heal
+	[332084] = true,	-- Self-Cleaning Cycle
+	-- Halls of Atonement
+	[325700] = true,	-- Collect Sins
+	[323552] = true,	-- Volley of Power
+	-- Mists of Tirna Scithe
+	[326046] = true,	-- Stimulate Resistance
+	[324914] = true,	-- Nourish the Forest
+	-- Spires of Ascension
+	[327413] = true,	-- Rebellious Fist
+	[317936] = true,	-- Forsworn Doctrine
+	[327648] = true,	-- Internal Strife
+	[328295] = true,	-- Greater Mending
+	-- The Necrotic Wake
+	[324293] = true,	-- Rasping Scream
+	[334748] = true,	-- Drain Fluids
+	[323190] = true,	-- Meat Shield
+	[333623] = true,	-- Frostbolt Volley
+	[320822] = true,	-- Final Bargain
+	[338353] = true,	-- Goresplatter
+	[327130] = true,	-- Repair Flesh
+	-- Theater of Pain
+	[330562] = true,	-- Demoralizing Shout
+	[342675] = true,	-- Bone Spear
+	[341969] = true,	-- Withering Discharge
+	[341977] = true,	-- Meat Shield
+	[330868] = true,	-- Necrotic Bolt Volley
+}
+
+T.ImportantCast = {
+	-- Halls of Atonement
+	[326450] = true,	-- Loyal Beasts
+	-- Theater of Pain
+	[330586] = true,	-- Devour Flesh
 }
