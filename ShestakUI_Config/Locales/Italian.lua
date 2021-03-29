@@ -407,7 +407,6 @@ L_GUI_MINIMAP_HIDE_COMBAT = "Nascondi la minimappa in combattimento"
 L_GUI_MINIMAP_TOGGLE_MENU = "Mostra il menu a scomparsa"
 L.minimap_bg_map_stylization = "Restyling della mappa dei Campi di Battaglia"
 L.minimap_fog_of_war = "Nebbia della guerra sulla mappa del mondo"
-L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war" -- Need review
 
 -- Loot options
 L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review

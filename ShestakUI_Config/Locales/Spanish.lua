@@ -407,7 +407,6 @@ L_GUI_MINIMAP_HIDE_COMBAT = "Ocultar minimapa en combate"
 L_GUI_MINIMAP_TOGGLE_MENU = "Show toggle menu" -- Needs review
 L.minimap_bg_map_stylization = "Estilizado del mapa de CB"
 L.minimap_fog_of_war = "Remove fog of war on World Map" -- Needs review
-L.minimap_fog_of_war_desc = "Right click on the close button of World Map to activate the option to hide fog of war" -- Need review
 
 -- Loot options
 L_GUI_LOOT_SUBTEXT = "Settings for loot frame." -- Need review

@@ -407,7 +407,6 @@ L_GUI_MINIMAP_HIDE_COMBAT = "Скрыть миникарту в бою"
 L_GUI_MINIMAP_TOGGLE_MENU = "Отображать меню над миникартой"
 L.minimap_bg_map_stylization = "Стилизация карты полей боя"
 L.minimap_fog_of_war = "Убрать туман войны с глобальной карты"
-L.minimap_fog_of_war_desc = "Нажмите правой кнопкой по кнопке закрытия карты, чтобы активировать опцию скрытия тумана"
 
 -- Loot options
 L_GUI_LOOT_SUBTEXT = "Настройка окна добычи."

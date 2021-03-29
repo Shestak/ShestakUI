@@ -407,7 +407,6 @@ L_GUI_MINIMAP_HIDE_COMBAT = "战斗中隐藏小地图"
 L_GUI_MINIMAP_TOGGLE_MENU = "小地图顶部快捷菜单"
 L.minimap_bg_map_stylization = "战场地图增强"
 L.minimap_fog_of_war = "地图全亮"
-L.minimap_fog_of_war_desc = "可在世界地图关闭按钮的菜单上选择开关"
 
 -- Loot options
 L_GUI_LOOT_SUBTEXT = "拾取框架设置"
