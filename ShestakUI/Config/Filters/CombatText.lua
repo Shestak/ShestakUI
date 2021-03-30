@@ -22,6 +22,7 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[195256] = 4			-- Stormlash [Shaman]
 	T.aoespam[259756] = 6			-- Entropic Embrace (Void Elves)
 	T.aoespam[321519] = 5			-- Paralytic Poison (Covenant Night Fae)
+	T.aoespam[344155] = 1			-- Gluttonous Spike (Trinket)
 end
 
 -- Class config
