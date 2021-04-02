@@ -145,6 +145,8 @@ T.InterruptCast = {
 	[341969] = true,	-- Withering Discharge
 	[341977] = true,	-- Meat Shield
 	[330868] = true,	-- Necrotic Bolt Volley
+	-- Plaguefall
+	[329239] = true,	-- Creepy Crawlers
 }
 
 T.ImportantCast = {
@@ -152,4 +154,6 @@ T.ImportantCast = {
 	[326450] = true,	-- Loyal Beasts
 	-- Theater of Pain
 	[330586] = true,	-- Devour Flesh
+	-- Plaguefall
+	[328177] = true,	-- Fungistorm
 }

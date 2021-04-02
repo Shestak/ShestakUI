@@ -11,7 +11,13 @@ local function LoadSkin()
 	AlliedRacesFramePortrait:SetAlpha(0)
 
 	AlliedRacesFrame.ModelFrame:StripTextures()
-	AlliedRacesFrame.ModelFrame:SetTemplate("Transparent")
+	AlliedRacesFrame.ModelFrame:CreateBackdrop("Transparent")
+	AlliedRacesFrame.ModelFrame.backdrop:SetFrameLevel(1)
+	AlliedRacesFrame.ModelFrame.backdrop:SetPoint("TOPLEFT", -2, 2)
+	AlliedRacesFrame.ModelFrame.backdrop:SetPoint("BOTTOMRIGHT", 2, -2)
+
+	AlliedRacesFrame.ModelFrame:SetSize(313, 575)
+	AlliedRacesFrame.ModelFrame:SetPoint("LEFT", 10, -6)
 
 	local scrollFrame = AlliedRacesFrame.RaceInfoFrame.ScrollFrame
 	scrollFrame.ScrollBar.Border:Hide()
