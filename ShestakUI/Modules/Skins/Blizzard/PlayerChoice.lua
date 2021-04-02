@@ -21,6 +21,7 @@ local function LoadSkin()
 
 			T.SkinCloseButton(frame.CloseButton)
 			frame.CloseButton.Border:SetAlpha(0)
+			frame.CloseButton.SetPoint = T.dummy
 
 			frame.IsSkinned = true
 		end
