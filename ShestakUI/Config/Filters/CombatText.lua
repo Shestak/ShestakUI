@@ -524,12 +524,8 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[27243] = 3		-- Seed of Corruption
 		T.aoespam[27285] = 3		-- Seed of Corruption (AoE)
 		T.aoespam[146739] = 3		-- Corruption
-		T.aoespam[233490] = 3		-- Unstable Affliction
-		T.merge[233496] = 233490	-- Unstable Affliction 2nd
-		T.merge[233497] = 233490	-- Unstable Affliction 3rd
-		T.merge[233498] = 233490	-- Unstable Affliction 4th
-		T.merge[233499] = 233490	-- Unstable Affliction 5th
-		T.aoespam[348] = 3			-- Immolate
+		T.aoespam[316099] = 3		-- Unstable Affliction
+		T.aoespam[348] = 4			-- Immolate
 		T.aoespam[980] = 3			-- Agony
 		T.aoespam[63106] = 3		-- Siphon Life
 		T.aoespam[205246] = 3		-- Phantom Singularity
@@ -553,6 +549,11 @@ elseif T.class == "WARLOCK" then
 		T.aoespam[6262] = 3			-- Healthstone
 		T.aoespam[3716] = 3			-- Torment (Voidwalker)
 		T.merge[157736] = 348		-- Immolate (DoT)
+		T.aoespam[312321] = 4		-- Scouring Tithe (Covenant Kyrian)
+		T.aoespam[325640] = 3		-- Soul Rot (Covenant Night Fae)
+		T.aoespam[327059] = 0.5		-- Decimating Bolt (Covenant Necrolord)
+		T.aoespam[322167] = 2		-- Impending Catastrophe (Covenant Venthyr)
+		T.aoespam[322170] = 3		-- Impending Catastrophe DoT (Covenant Venthyr)
 	end
 	if C.combattext.healing then
 		T.healfilter[198590] = true	-- Drain Soul
