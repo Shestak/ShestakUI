@@ -478,6 +478,7 @@ L.automation_accept_quest = "Принятие заданий (если зажа�
 L.automation_auto_collapse = "Сворачивать отслеживание заданий"
 L.automation_auto_collapse_raid = "В подземельях"
 L.automation_auto_collapse_reload = "При загрузке"
+L.automation_auto_collapse_scenario = "Частично"
 L.automation_skip_cinematic = "Пропуск видеороликов (если зажат Ctrl - не работает)"
 L.automation_auto_role = "Выбор вашей роли (в группе/рейде)"
 L.automation_cancel_bad_buffs = "Снимать назойливые праздничные баффы (из списка)"

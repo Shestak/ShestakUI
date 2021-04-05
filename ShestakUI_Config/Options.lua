@@ -145,6 +145,7 @@ local ErrorTable = {
 local CollapseTable = {
 	"RAID",
 	"RELOAD",
+	"SCENARIO",
 	"NONE",
 }
 

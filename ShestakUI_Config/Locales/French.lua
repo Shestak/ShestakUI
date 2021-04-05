@@ -478,6 +478,7 @@ L.automation_accept_quest = "Accepter les quêtes automatiquement"
 L.automation_auto_collapse = "Auto collapse Objective Tracker" -- Need review
 L.automation_auto_collapse_raid = "In Instance" -- Need review
 L.automation_auto_collapse_reload = "After reload" -- Need review
+L.automation_auto_collapse_scenario = "Partially" -- Need review
 L.automation_skip_cinematic = "Désactive automatiquement les cinématiques/film (inactif si la touche Ctrl est appuyée)"
 L.automation_auto_role = "Active automatiquement l'affichage de votre rôle"
 L.automation_cancel_bad_buffs = "Annule automatiquement certains buffs"

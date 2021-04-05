@@ -478,6 +478,7 @@ L.automation_accept_quest = "'Auto-accetta' le missioni"
 L.automation_auto_collapse = "Auto collapse Objective Tracker" -- Need review
 L.automation_auto_collapse_raid = "In Instance" -- Need review
 L.automation_auto_collapse_reload = "After reload" -- Need review
+L.automation_auto_collapse_scenario = "Partially" -- Need review
 L.automation_skip_cinematic = "'Auto-salta' i filmati"
 L.automation_auto_role = "'Auto-imposta' il tuo ruolo"
 L.automation_cancel_bad_buffs = "'Auto-cancella' alcuni benefici"

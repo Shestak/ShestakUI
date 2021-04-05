@@ -14,17 +14,17 @@ ObjectiveTrackerFrame:SetHeight(T.screenHeight / 1.6)
 ObjectiveTrackerFrame.IsUserPlaced = function() return true end
 
 local headers = {
-	ObjectiveTrackerBlocksFrame.ScenarioHeader,
-	ObjectiveTrackerBlocksFrame.CampaignQuestHeader,
-	ObjectiveTrackerBlocksFrame.QuestHeader,
-	ObjectiveTrackerBlocksFrame.AchievementHeader,
-	BONUS_OBJECTIVE_TRACKER_MODULE.Header,
-	WORLD_QUEST_TRACKER_MODULE.Header,
-	ObjectiveTrackerFrame.BlocksFrame.UIWidgetsHeader
+	SCENARIO_CONTENT_TRACKER_MODULE,
+	BONUS_OBJECTIVE_TRACKER_MODULE,
+	UI_WIDGET_TRACKER_MODULE,
+	CAMPAIGN_QUEST_TRACKER_MODULE,
+	QUEST_TRACKER_MODULE,
+	ACHIEVEMENT_TRACKER_MODULE,
+	WORLD_QUEST_TRACKER_MODULE
 }
 
 for i = 1, #headers do
-	local header = headers[i]
+	local header = headers[i].Header
 	if header then
 		header.Background:Hide()
 	end
@@ -272,7 +272,7 @@ if C.skins.blizzard_frames == true then
 	end
 
 	for i = 1, #headers do
-		local button = headers[i].MinimizeButton
+		local button = headers[i].Header.MinimizeButton
 		if button then
 			SkinSmallMinimizeButton(button)
 		end
@@ -291,6 +291,32 @@ if C.automation.auto_collapse ~= "NONE" then
 				ObjectiveTracker_Collapse()
 			elseif ObjectiveTrackerFrame.collapsed and not InCombatLockdown() then
 				ObjectiveTracker_Expand()
+			end
+		elseif C.automation.auto_collapse == "SCENARIO" then
+			local inInstance, instanceType = IsInInstance()
+			if inInstance then
+				if instanceType == "party" or instanceType == "scenario" then
+					for i = 3, #headers do
+						local button = headers[i].Header.MinimizeButton
+						if button and not headers[i].collapsed then
+							button:Click()
+						end
+					end
+				else
+					ObjectiveTracker_Collapse()
+				end
+			else
+				if not InCombatLockdown() then
+					for i = 3, #headers do
+						local button = headers[i].Header.MinimizeButton
+						if button and headers[i].collapsed then
+							button:Click()
+						end
+					end
+					if ObjectiveTrackerFrame.collapsed then
+						ObjectiveTracker_Expand()
+					end
+				end
 			end
 		elseif C.automation.auto_collapse == "RELOAD" then
 			ObjectiveTracker_Collapse()

@@ -478,6 +478,7 @@ L.automation_accept_quest = "Quests automatisch annehmen"
 L.automation_auto_collapse = "Automatisches Zusammenklappen des Objective Tracker"
 L.automation_auto_collapse_raid = "In Instanzen"
 L.automation_auto_collapse_reload = "Nach dem Reload"
+L.automation_auto_collapse_scenario = "Partially" -- Need review
 L.automation_skip_cinematic = "Auto Cinematics/Filme überspringen"
 L.automation_auto_role = "Automatisch die eigene Rolle wählen"
 L.automation_cancel_bad_buffs = "Automatisch einige Buffs abbrechen"

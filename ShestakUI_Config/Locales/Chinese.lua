@@ -478,6 +478,7 @@ L.automation_accept_quest = "自动交接任务(按住Shift临时停用)"
 L.automation_auto_collapse = "自动折叠任务追踪框架"
 L.automation_auto_collapse_raid = "副本中"
 L.automation_auto_collapse_reload = "重载后"
+L.automation_auto_collapse_scenario = "Partially" -- Need review
 L.automation_skip_cinematic = "自动跳过过场动画(按住Ctrl临时停用)"
 L.automation_auto_role = "自动设定角色类型"
 L.automation_cancel_bad_buffs = "自动取消非增益性质的Buff"

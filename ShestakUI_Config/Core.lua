@@ -475,6 +475,7 @@ local DropDownText = {
 	["NONE"] = L.general_error_none,
 	["RAID"] = L.automation_auto_collapse_raid,
 	["RELOAD"] = L.automation_auto_collapse_reload,
+	["SCENARIO"] = L.automation_auto_collapse_scenario,
 	["DYNAMIC"] = L.raidframe_auto_position_dynamic,
 	["STATIC"] = L.raidframe_auto_position_static,
 }

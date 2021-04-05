@@ -478,6 +478,7 @@ L.automation_accept_quest = "Auto aceptar misiones"
 L.automation_auto_collapse = "Auto collapse Objective Tracker" -- Need review
 L.automation_auto_collapse_raid = "In Instance" -- Need review
 L.automation_auto_collapse_reload = "After reload" -- Need review
+L.automation_auto_collapse_scenario = "Partially" -- Need review
 L.automation_skip_cinematic = "Auto skip cinematics/movies (disabled if hold Ctrl)" -- Needs review
 L.automation_auto_role = "Auto set your role" -- Needs review
 L.automation_cancel_bad_buffs = "Auto cancel annoying holiday buffs (from the list)" -- Needs review
