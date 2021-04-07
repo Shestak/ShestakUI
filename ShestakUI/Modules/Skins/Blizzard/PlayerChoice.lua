@@ -57,8 +57,8 @@ local function LoadSkin()
 				if not reward.backdrop then
 					reward.Icon:SkinIcon()
 				end
-				reward.Name:SetTextColor(1, 1, 1)
-				reward.IconBorder:SetTexture("")
+				if reward.Name then reward.Name:SetTextColor(1, 1, 1) end
+				if reward.IconBorder then reward.IconBorder:SetTexture("") end
 				local r, g, b
 				if reward.IconBorder and reward.IconBorder:IsShown() then
 					r, g, b = reward.IconBorder:GetVertexColor()
