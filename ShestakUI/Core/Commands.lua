@@ -292,11 +292,13 @@ SLASH_FRAMELIST4 = "/ад"
 --	Frame Stack on Cyrillic
 ----------------------------------------------------------------------------------------
 SlashCmdList.FSTACK = function()
-	SlashCmdList.FRAMESTACK(0)
+	UIParentLoadAddOn("Blizzard_DebugTools")
+	FrameStackTooltip_Toggle(false, true, true)
 end
 SLASH_FSTACK1 = "/аыефсл"
 SLASH_FSTACK2 = "/fs"
 SLASH_FSTACK3 = "/аы"
+SLASH_FRAMESTK1 = nil -- fix LFGFilter
 
 ----------------------------------------------------------------------------------------
 --	Clear chat
