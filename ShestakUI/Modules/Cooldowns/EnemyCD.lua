@@ -57,14 +57,11 @@ local UpdatePositions = function()
 				icons[i]:SetPoint("BOTTOM", icons[i-1], "TOP", 0, space)
 			elseif direction == "DOWN" then
 				icons[i]:SetPoint("TOP", icons[i-1], "BOTTOM", 0, -space)
-			elseif direction == "RIGHT" then
-				icons[i]:SetPoint("LEFT", icons[i-1], "RIGHT", space, 0)
 			elseif direction == "LEFT" then
 				icons[i]:SetPoint("RIGHT", icons[i-1], "LEFT", -space, 0)
 			else
 				icons[i]:SetPoint("LEFT", icons[i-1], "RIGHT", space, 0)
 			end
-
 		end
 		if i < limit then
 			icons[i]:SetAlpha(1)
