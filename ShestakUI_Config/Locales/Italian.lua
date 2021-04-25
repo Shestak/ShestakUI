@@ -453,20 +453,20 @@ L.filger_category_list = "Spell list category" -- Need review
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annunci"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
-L_GUI_ANNOUNCEMENTS_DRINKING = "Annuncia in chat quando un nemico in arena sta bevendo"
-L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Annuncia in gruppo/incursione quando tu interrompi un incantesimo/abilità"
-L_GUI_ANNOUNCEMENTS_SPELLS = "Annuncia in gruppo/incursione quando usi alcuni incantesimi/abilità"
-L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Controlla incantesimi/abilità lanciati da tutti i compagni di gruppo/incursione"
-L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "Annuncia l'uso del Trenino Giocattolo o del Telecomando di Birranera"
-L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Annuncia il conto alla rovescia di avvio incontro '/pc #'"
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Annuncia l'uso di tonici e cibo (/ffcheck)"
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Annuncia l'uso di cibi e tonici nel canale incursione"
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Annuncia automaticamente l'uso di cibi e tonici all'appello" -- Needs review
-L_GUI_ANNOUNCEMENTS_FEASTS = "Annuncia l'uso di tripudi/calderoni/anime/robots per le riparazioni"
-L_GUI_ANNOUNCEMENTS_PORTALS = "Annuncia l'uso di un portale/Rituale d'Evocazione"
+L.announcements_drinking = "Annuncia in chat quando un nemico in arena sta bevendo"
+L.announcements_interrupts = "Annuncia in gruppo/incursione quando tu interrompi un incantesimo/abilità"
+L.announcements_spells = "Annuncia in gruppo/incursione quando usi alcuni incantesimi/abilità"
+L.announcements_spells_from_all = "Controlla incantesimi/abilità lanciati da tutti i compagni di gruppo/incursione"
+L.announcements_toys = "Annuncia l'uso del Trenino Giocattolo o del Telecomando di Birranera"
+L.announcements_pull_countdown = "Annuncia il conto alla rovescia di avvio incontro '/pc #'"
+L.announcements_flask_food = "Annuncia l'uso di tonici e cibo (/ffcheck)"
+L.announcements_flask_food_raid = "Annuncia l'uso di cibi e tonici nel canale incursione"
+L.announcements_flask_food_auto = "Annuncia automaticamente l'uso di cibi e tonici all'appello" -- Needs review
+L.announcements_feasts = "Annuncia l'uso di tripudi/calderoni/anime/robots per le riparazioni"
+L.announcements_portals = "Annuncia l'uso di un portale/Rituale d'Evocazione"
 L.announcements_bad_gear = "Check your bad gear" -- Need review
 L.announcements_bad_gear_desc = "Controlla l'equip. non idoneo in instance"
-L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Controlla se il Cappello da Safari sia indossato o meno"
+L.announcements_safari_hat = "Controlla se il Cappello da Safari sia indossato o meno"
 
 -- Automation options
 L_GUI_AUTOMATION = "Automatismi"

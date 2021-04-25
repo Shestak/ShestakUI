@@ -490,17 +490,17 @@ C["filger"] = {
 --	Announcements options
 ----------------------------------------------------------------------------------------
 C["announcements"] = {
-	["drinking"] = false,						-- Announce when arena enemy is drinking
 	["interrupts"] = false,						-- Announce when you interrupt
 	["spells"] = false,							-- Announce when you cast some spell (from the list)
 	["spells_from_all"] = false,				-- Check spells cast from all members
+	["feasts"] = false,							-- Announce Feasts/Souls/Repair Bots cast
+	["portals"] = false,						-- Announce Portals/Ritual of Summoning cast
 	["toys"] = false,							-- Announce some annoying toys
-	["pull_countdown"] = true,					-- Pull countdown announce (/pc #)
 	["flask_food"] = false,						-- Announce the usage of flasks and food (/ffcheck)
 	["flask_food_raid"] = false,				-- Announce to raid channel
 	["flask_food_auto"] = false,				-- Auto check when ReadyCheck
-	["feasts"] = false,							-- Announce Feasts/Souls/Repair Bots cast
-	["portals"] = false,						-- Announce Portals/Ritual of Summoning cast
+	["drinking"] = false,						-- Announce when arena enemy is drinking
+	["pull_countdown"] = true,					-- Pull countdown announce (/pc #)
 	["bad_gear"] = false,						-- Check your bad gear in instance (fishing pole, from the list)
 	["safari_hat"] = true,						-- Check Safari Hat when starting Pet Battle
 }

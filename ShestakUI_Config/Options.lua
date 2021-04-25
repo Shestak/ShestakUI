@@ -2181,13 +2181,10 @@ end
 do
 	local parent = ShestakUIOptionsPanel.announcements
 
-	local drinking = ns.CreateCheckBox(parent, "drinking", L_GUI_ANNOUNCEMENTS_DRINKING)
-	drinking:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
+	local interrupts = ns.CreateCheckBox(parent, "interrupts")
+	interrupts:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local interrupts = ns.CreateCheckBox(parent, "interrupts", L_GUI_ANNOUNCEMENTS_INTERRUPTS)
-	interrupts:SetPoint("TOPLEFT", drinking, "BOTTOMLEFT", 0, 0)
-
-	local spells = ns.CreateCheckBox(parent, "spells", L_GUI_ANNOUNCEMENTS_SPELLS)
+	local spells = ns.CreateCheckBox(parent, "spells")
 	spells:SetPoint("TOPLEFT", interrupts, "BOTTOMLEFT", 0, 0)
 
 	local ListButton = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
@@ -2215,38 +2212,41 @@ do
 	spells:HookScript("OnClick", toggleListButton)
 	ListButton:HookScript("OnShow", toggleListButton)
 
-	local spells_from_all = ns.CreateCheckBox(parent, "spells_from_all", L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL)
+	local spells_from_all = ns.CreateCheckBox(parent, "spells_from_all")
 	spells_from_all:SetPoint("TOPLEFT", spells, "BOTTOMLEFT", 20, 0)
 
 	spells.children = {spells_from_all}
 
-	local toys = ns.CreateCheckBox(parent, "toys", L_GUI_ANNOUNCEMENTS_TOY_TRAIN)
-	toys:SetPoint("TOPLEFT", spells_from_all, "BOTTOMLEFT", -20, 0)
+	local feasts = ns.CreateCheckBox(parent, "feasts")
+	feasts:SetPoint("TOPLEFT", spells_from_all, "BOTTOMLEFT", -20, 0)
 
-	local pull_countdown = ns.CreateCheckBox(parent, "pull_countdown", L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN)
-	pull_countdown:SetPoint("TOPLEFT", toys, "BOTTOMLEFT", 0, 0)
+	local portals = ns.CreateCheckBox(parent, "portals")
+	portals:SetPoint("TOPLEFT", feasts, "BOTTOMLEFT", 0, 0)
 
-	local flask_food = ns.CreateCheckBox(parent, "flask_food", L_GUI_ANNOUNCEMENTS_FLASK_FOOD)
-	flask_food:SetPoint("TOPLEFT", pull_countdown, "BOTTOMLEFT", 0, 0)
+	local toys = ns.CreateCheckBox(parent, "toys")
+	toys:SetPoint("TOPLEFT", portals, "BOTTOMLEFT", 0, 0)
 
-	local flask_food_raid = ns.CreateCheckBox(parent, "flask_food_raid", L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID)
+	local flask_food = ns.CreateCheckBox(parent, "flask_food")
+	flask_food:SetPoint("TOPLEFT", toys, "BOTTOMLEFT", 0, 0)
+
+	local flask_food_raid = ns.CreateCheckBox(parent, "flask_food_raid")
 	flask_food_raid:SetPoint("TOPLEFT", flask_food, "BOTTOMLEFT", 20, 0)
 
-	local flask_food_auto = ns.CreateCheckBox(parent, "flask_food_auto", L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO)
+	local flask_food_auto = ns.CreateCheckBox(parent, "flask_food_auto")
 	flask_food_auto:SetPoint("TOPLEFT", flask_food_raid, "BOTTOMLEFT", 0, 0)
 
 	flask_food.children = {flask_food_raid, flask_food_auto}
 
-	local feasts = ns.CreateCheckBox(parent, "feasts", L_GUI_ANNOUNCEMENTS_FEASTS)
-	feasts:SetPoint("TOPLEFT", flask_food_auto, "BOTTOMLEFT", -20, 0)
+	local drinking = ns.CreateCheckBox(parent, "drinking")
+	drinking:SetPoint("TOPLEFT", flask_food_auto, "BOTTOMLEFT", -20, 0)
 
-	local portals = ns.CreateCheckBox(parent, "portals", L_GUI_ANNOUNCEMENTS_PORTALS)
-	portals:SetPoint("TOPLEFT", feasts, "BOTTOMLEFT", 0, 0)
+	local pull_countdown = ns.CreateCheckBox(parent, "pull_countdown")
+	pull_countdown:SetPoint("TOPLEFT", drinking, "BOTTOMLEFT", 0, 0)
 
 	local bad_gear = ns.CreateCheckBox(parent, "bad_gear")
-	bad_gear:SetPoint("TOPLEFT", portals, "BOTTOMLEFT", 0, 0)
+	bad_gear:SetPoint("TOPLEFT", pull_countdown, "BOTTOMLEFT", 0, 0)
 
-	local safari_hat = ns.CreateCheckBox(parent, "safari_hat", L_GUI_ANNOUNCEMENTS_SAFARI_HAT)
+	local safari_hat = ns.CreateCheckBox(parent, "safari_hat")
 	safari_hat:SetPoint("TOPLEFT", bad_gear, "BOTTOMLEFT", 0, 0)
 end
 

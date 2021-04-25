@@ -453,20 +453,20 @@ L.filger_category_list = "Spell list category" -- Need review
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Anuncios"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
-L_GUI_ANNOUNCEMENTS_DRINKING = "Anunciar en el chat cuando un enemigo en la arena beba"
-L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Anunciar en el grupo/banda cuando interrumpes"
-L_GUI_ANNOUNCEMENTS_SPELLS = "Anunciar en grupo/banda cuando lanzas el mismo hechizo que otro"
-L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Comprueba los lanzamientos de hechizo de todos los miembros"
-L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "Announce Toy Train or Direbrew's Remote cast" -- Needs review
-L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Pull countdown announce (/pc #)" -- Needs review
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Announce the usage of flasks and food (/ffcheck)" -- Needs review
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Announce to raid channel" -- Needs review
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Auto check when ReadyCheck" -- Needs review
-L_GUI_ANNOUNCEMENTS_FEASTS = "Announce Feasts/Souls/Repair Bots cast" -- Needs review
-L_GUI_ANNOUNCEMENTS_PORTALS = "Announce Portals/Ritual of Summoning cast" -- Needs review
+L.announcements_drinking = "Anunciar en el chat cuando un enemigo en la arena beba"
+L.announcements_interrupts = "Anunciar en el grupo/banda cuando interrumpes"
+L.announcements_spells = "Anunciar en grupo/banda cuando lanzas el mismo hechizo que otro"
+L.announcements_spells_from_all = "Comprueba los lanzamientos de hechizo de todos los miembros"
+L.announcements_toys = "Announce Toy Train or Direbrew's Remote cast" -- Needs review
+L.announcements_pull_countdown = "Pull countdown announce (/pc #)" -- Needs review
+L.announcements_flask_food = "Announce the usage of flasks and food (/ffcheck)" -- Needs review
+L.announcements_flask_food_raid = "Announce to raid channel" -- Needs review
+L.announcements_flask_food_auto = "Auto check when ReadyCheck" -- Needs review
+L.announcements_feasts = "Announce Feasts/Souls/Repair Bots cast" -- Needs review
+L.announcements_portals = "Announce Portals/Ritual of Summoning cast" -- Needs review
 L.announcements_bad_gear = "Check your bad gear" -- Need review
 L.announcements_bad_gear_desc = "Check your bad gear in instance (fishing pole, from the list)" -- Needs review
-L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Check Safari Hat when starting Pet Battle" -- Needs review
+L.announcements_safari_hat = "Check Safari Hat when starting Pet Battle" -- Needs review
 
 -- Automation options
 L_GUI_AUTOMATION = "Automation" -- Needs review

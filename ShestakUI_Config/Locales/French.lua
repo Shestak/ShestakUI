@@ -453,20 +453,20 @@ L.filger_category_list = "Spell list category" -- Need review
 -- Announcements options
 L_GUI_ANNOUNCEMENTS = "Annonces"
 L_GUI_ANNOUNCEMENTS_SUBTEXT = "Settings that add chat announcements about spells or items." -- Need review
-L_GUI_ANNOUNCEMENTS_DRINKING = "Annonce dans la fenêtre de discussion quand un joueur ennemi est entrain de boire"
-L_GUI_ANNOUNCEMENTS_INTERRUPTS = "Annonce /gr, /raid si vous interrompez un sort"
-L_GUI_ANNOUNCEMENTS_SPELLS = "Annonce dans la fenêtre groupe/raid quand vous lancez certains sorts"
-L_GUI_ANNOUNCEMENTS_SPELLS_FROM_ALL = "Annonce les sorts lancés par tous les membres"
-L_GUI_ANNOUNCEMENTS_TOY_TRAIN = "Annonce le lancement du sort Train électrique ou Télécommande navrebière"
-L_GUI_ANNOUNCEMENTS_PULL_COUNTDOWN = "Annonce le compte à rebours pou Pull '/pc #'"
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD = "Annonce l'usage de flasques et nourriture (/ffcheck)"
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD_RAID = "Announce flasque et nourriture sur le canal raid"
-L_GUI_ANNOUNCEMENTS_FLASK_FOOD_AUTO = "Annonce automatiquement la prise de flasque et nourriture après un appel raid" -- Needs review
-L_GUI_ANNOUNCEMENTS_FEASTS = "Annonce la pose de Festins/Pierre de soins/Robots de réparation"
-L_GUI_ANNOUNCEMENTS_PORTALS = "Annonce le lancement de Portails/Pierre de téléportation"
+L.announcements_drinking = "Annonce dans la fenêtre de discussion quand un joueur ennemi est entrain de boire"
+L.announcements_interrupts = "Annonce /gr, /raid si vous interrompez un sort"
+L.announcements_spells = "Annonce dans la fenêtre groupe/raid quand vous lancez certains sorts"
+L.announcements_spells_from_all = "Annonce les sorts lancés par tous les membres"
+L.announcements_toys = "Annonce le lancement du sort Train électrique ou Télécommande navrebière"
+L.announcements_pull_countdown = "Annonce le compte à rebours pou Pull '/pc #'"
+L.announcements_flask_food = "Annonce l'usage de flasques et nourriture (/ffcheck)"
+L.announcements_flask_food_raid = "Announce flasque et nourriture sur le canal raid"
+L.announcements_flask_food_auto = "Annonce automatiquement la prise de flasque et nourriture après un appel raid" -- Needs review
+L.announcements_feasts = "Annonce la pose de Festins/Pierre de soins/Robots de réparation"
+L.announcements_portals = "Annonce le lancement de Portails/Pierre de téléportation"
 L.announcements_bad_gear = "Check your bad gear" -- Need review
 L.announcements_bad_gear_desc = "Vérifie si un mauvais équipement est porté en instance"
-L_GUI_ANNOUNCEMENTS_SAFARI_HAT = "Vérifie l'équipement du Chapeau de Safari"
+L.announcements_safari_hat = "Vérifie l'équipement du Chapeau de Safari"
 
 -- Automation options
 L_GUI_AUTOMATION = "Automatisation"
