@@ -804,6 +804,16 @@ local function style(self, unit)
 
 	self.Health.PostUpdate = HealthPostUpdate
 
+	-- Absorb
+	if C.raidframe.plugins_healcomm == true then
+		local ahpb = self.Health:CreateTexture(nil, "ARTWORK")
+		ahpb:SetTexture(C.media.texture)
+		ahpb:SetVertexColor(1, 1, 0, 1)
+		self.HealthPrediction = {
+			absorbBar = ahpb
+		}
+	end
+
 	-- Every event should be register with this
 	table.insert(self.__elements, UpdateName)
 	self:RegisterEvent("UNIT_NAME_UPDATE", UpdateName)

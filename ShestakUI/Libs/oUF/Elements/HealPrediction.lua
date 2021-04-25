@@ -1,4 +1,4 @@
--- ShestakUI use old version of HealPrediction. Do not update if you are not sure what you are doing.
+-- ShestakUI use modified version of HealPrediction. Do not update if you are not sure what you are doing.
 
 local _, ns = ...
 local oUF = ns.oUF
@@ -73,10 +73,21 @@ local function Update(self, event, unit)
 
 	local previousTexture = self.Health:GetStatusBarTexture()
 
-	previousTexture = UpdateFillBar(self, previousTexture, element.healAbsorbBar, healAbsorb, maxHealth)
-	previousTexture = UpdateFillBar(self, previousTexture, element.myBar, myIncomingHeal, maxHealth)
-	previousTexture = UpdateFillBar(self, previousTexture, element.otherBar, allIncomingHeal, maxHealth)
-	previousTexture = UpdateFillBar(self, previousTexture, element.absorbBar, absorb, maxHealth)
+	if element.healAbsorbBar then
+		previousTexture = UpdateFillBar(self, previousTexture, element.healAbsorbBar, healAbsorb, maxHealth)
+	end
+
+	if element.myBar then
+		previousTexture = UpdateFillBar(self, previousTexture, element.myBar, myIncomingHeal, maxHealth)
+	end
+
+	if element.otherBar then
+		previousTexture = UpdateFillBar(self, previousTexture, element.otherBar, allIncomingHeal, maxHealth)
+	end
+
+	if element.absorbBar then
+		previousTexture = UpdateFillBar(self, previousTexture, element.absorbBar, absorb, maxHealth)
+	end
 
 	if(element.PostUpdate) then
 		return element:PostUpdate(unit, myIncomingHeal, otherIncomingHeal, absorb, healAbsorb)
@@ -105,9 +116,18 @@ local function Enable(self)
 
 		self:RegisterEvent('UNIT_HEALTH', Path)
 		self:RegisterEvent('UNIT_MAXHEALTH', Path)
-		self:RegisterEvent('UNIT_HEAL_PREDICTION', Path)
-		self:RegisterEvent('UNIT_ABSORB_AMOUNT_CHANGED', Path)
-		self:RegisterEvent('UNIT_HEAL_ABSORB_AMOUNT_CHANGED', Path)
+
+		if element.myBar or element.otherBar then
+			self:RegisterEvent('UNIT_HEAL_PREDICTION', Path)
+		end
+
+		if element.absorbBar then
+			self:RegisterEvent('UNIT_ABSORB_AMOUNT_CHANGED', Path)
+		end
+
+		if element.healAbsorbBar then
+			self:RegisterEvent('UNIT_HEAL_ABSORB_AMOUNT_CHANGED', Path)
+		end
 
 		return true
 	end
