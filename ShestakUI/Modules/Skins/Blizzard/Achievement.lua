@@ -140,6 +140,7 @@ local function LoadSkin()
 		_G[highlight:GetName().."Middle"]:SetAllPoints(frame)
 	end
 
+	local numTab = 0
 	AchievementFrame:HookScript("OnShow", function()
 		for i = 1, 20 do
 			local frame = _G["AchievementFrameCategoriesContainerButton"..i]
@@ -150,11 +151,19 @@ local function LoadSkin()
 				frame.isSkinned = true
 			end
 		end
+		if IsAddOnLoaded("Krowi_AchievementFilter") then
+			local tab = _G["AchievementFrameTab4"]
+			if tab and not tab.isSkinned then
+				T.SkinTab(tab)
+				tab.isSkinned = true
+				numTab = 1
+			end
+		end
 		if IsAddOnLoaded("Overachiever_Tabs") then
-			for i = 4, 6 do
+			for i = 4 + numTab, 6 + numTab do
 				local tab = _G["AchievementFrameTab"..i]
 				if tab and not tab.isSkinned then
-					T.SkinTab(_G["AchievementFrameTab"..i])
+					T.SkinTab(tab)
 					tab.isSkinned = true
 				end
 			end
