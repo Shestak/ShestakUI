@@ -379,6 +379,8 @@ C["nameplate"] = {
 	["bad_color"] = {1, 0, 0},					-- Bad threat color
 	["offtank_color"] = {0, 0.5, 1},			-- Offtank threat color
 	["extra_color"] = {1, 0.3, 0},				-- Explosive and Spiteful affix color
+	["mob_color_enable"] = false,				-- Change color for important mobs in dungeons
+	["mob_color"] = {0, 0.5, 0.8},				-- Color for mobs
 }
 
 ----------------------------------------------------------------------------------------

@@ -330,6 +330,8 @@ L_GUI_NAMEPLATE_NEAR_COLOR = "Colore per perdita/guadagno minaccia"
 L_GUI_NAMEPLATE_BAD_COLOR = "Colore se il PG non è minacciato (se difensore o assaltatore/guaritore)"
 L_GUI_NAMEPLATE_OFFTANK_COLOR = "Colore della minaccia per il difensore secondario"
 L.nameplate_extra_color = "Explosive and Spiteful affix color" -- Need review
+L.nameplate_mob_color_enable = "Change color for important mobs in dungeons" -- Need review
+L.nameplate_mob_color = "Color for mobs" -- Need review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Testo di combattimento"

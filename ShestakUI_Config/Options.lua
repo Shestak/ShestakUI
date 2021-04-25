@@ -1899,6 +1899,12 @@ do
 
 	local extra_color = ns.CreateColourPicker(parent, "extra_color", true)
 	extra_color:SetPoint("TOPLEFT", offtank_color, "BOTTOMLEFT", 0, -8)
+
+	local mob_color_enable = ns.CreateCheckBox(parent, "mob_color_enable")
+	mob_color_enable:SetPoint("TOPLEFT", extra_color, "BOTTOMLEFT", -24, -8)
+
+	local mob_color = ns.CreateColourPicker(parent, "mob_color", true)
+	mob_color:SetPoint("TOPLEFT", mob_color_enable, "BOTTOMLEFT", 24, -4)
 end
 
 -- Combat text

@@ -330,6 +330,8 @@ L_GUI_NAMEPLATE_NEAR_COLOR = "临界仇恨颜色"
 L_GUI_NAMEPLATE_BAD_COLOR = "危险仇恨颜色"
 L_GUI_NAMEPLATE_OFFTANK_COLOR = "副坦仇恨颜色"
 L.nameplate_extra_color = "易爆/怨毒词缀颜色"
+L.nameplate_mob_color_enable = "Change color for important mobs in dungeons" -- Need review
+L.nameplate_mob_color = "Color for mobs" -- Need review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "战斗文字"

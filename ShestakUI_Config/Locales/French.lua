@@ -330,6 +330,8 @@ L_GUI_NAMEPLATE_NEAR_COLOR = "Perte/Gain de couleur de menace"
 L_GUI_NAMEPLATE_BAD_COLOR = "Mauvaise couleur de menace, dépend de si vous êtes un tank ou dps/heal"
 L_GUI_NAMEPLATE_OFFTANK_COLOR = "Coloration de la menace du tank secondaire"
 L.nameplate_extra_color = "Explosive and Spiteful affix color" -- Need review
+L.nameplate_mob_color_enable = "Change color for important mobs in dungeons" -- Need review
+L.nameplate_mob_color = "Color for mobs" -- Need review
 
 -- Combat text options
 L_GUI_COMBATTEXT = "Texte de combat"
