@@ -236,6 +236,7 @@ T.RaidDebuffs = {
 	[SpellName(319626)] = 3,	-- Phantasmal Parasite
 	[SpellName(324449)] = 3,	-- Manifest Death
 	[SpellName(341949)] = 3,	-- Withering Blight
+	[SpellName(333861)] = 3,	-- Ricocheting Blade
 	-- Sanguine Depths
 	[SpellName(326827)] = 3,	-- Dread Bindings
 	[SpellName(326836)] = 3,	-- Curse of Suppression
