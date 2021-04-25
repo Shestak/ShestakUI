@@ -89,9 +89,9 @@ collect:SetScript("OnEvent", function()
 	end
 	PositionAndStyle()
 
-	if WIM3MinimapButton and WIM3MinimapButton:GetParent() == UIParent and WIM3MinimapButton:GetNumRegions() < 9 then
+	if WIM3MinimapButton and WIM3MinimapButton:GetParent() == UIParent then
 		SkinButton(WIM3MinimapButton)
-		SkinButton(WIM3MinimapButton)
+		WIM3MinimapButton.backGround:Hide()
 	end
 	collect:UnregisterEvent("PLAYER_ENTERING_WORLD")
 end)
