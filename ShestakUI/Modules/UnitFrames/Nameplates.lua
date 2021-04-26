@@ -371,14 +371,54 @@ local function UpdateName(self)
 	end
 end
 
+local kickID = 0
+if C.nameplate.kick_color then
+	if T.class == "DEATHKNIGHT" then
+		kickID = 47528
+	elseif T.class == "DEMONHUNTER" then
+		kickID = 183752
+	elseif T.class == "DRUID" then
+		kickID = 106839
+	elseif T.class == "HUNTER" then
+		kickID = GetSpecialization() == 3 and 187707 or 147362
+	elseif T.class == "MAGE" then
+		kickID = 2139
+	elseif T.class == "MONK" then
+		kickID = 116705
+	elseif T.class == "PALADIN" then
+		kickID = 96231
+	elseif T.class == "PRIEST" then
+		kickID = 15487
+	elseif T.class == "ROGUE" then
+		kickID = 1766
+	elseif T.class == "SHAMAN" then
+		kickID = 57994
+	elseif T.class == "WARLOCK" then
+		kickID = 119910
+	elseif T.class == "WARRIOR" then
+		kickID = 6552
+	end
+end
+
 -- Cast color
 local function castColor(self)
 	if self.notInterruptible then
 		self:SetStatusBarColor(0.78, 0.25, 0.25)
 		self.bg:SetColorTexture(0.78, 0.25, 0.25, 0.2)
 	else
-		self:SetStatusBarColor(1, 0.8, 0)
-		self.bg:SetColorTexture(1, 0.8, 0, 0.2)
+		if C.nameplate.kick_color then
+			local start = GetSpellCooldown(kickID)
+			if start ~= 0 then
+				self:SetStatusBarColor(1, 0.5, 0)
+				self.bg:SetColorTexture(1, 0.5, 0, 0.2)
+			else
+				self:SetStatusBarColor(1, 0.8, 0)
+				self.bg:SetColorTexture(1, 0.8, 0, 0.2)
+			end
+		else
+			self:SetStatusBarColor(1, 0.8, 0)
+			self.bg:SetColorTexture(1, 0.8, 0, 0.2)
+		end
 	end
 
 	if C.nameplate.cast_color then

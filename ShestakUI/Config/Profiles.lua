@@ -225,7 +225,9 @@ if IsWetxius then
 	C["nameplate"].low_health = true
 	C["nameplate"].quests = true
 	C["nameplate"].cast_color = true
+	C["nameplate"].kick_color = true
 	C["nameplate"].mob_color_enable = true
+	C["nameplate"].extra_color = {1, 0, 0.55}
 	C["combattext"].crit_prefix = ""
 	C["combattext"].blizz_head_numbers = true
 	C["combattext"].dk_runes = false

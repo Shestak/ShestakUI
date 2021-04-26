@@ -1013,7 +1013,7 @@ do
 	local uf_color_bg = ns.CreateColourPicker(parent, "uf_color_bg", true)
 	uf_color_bg:SetPoint("LEFT", uf_color, "RIGHT", 248, 0)
 
-	local enemy_health_color = ns.CreateCheckBox(parent, "enemy_health_color", L_GUI_UF_ENEMY_HEALTH_COLOR)
+	local enemy_health_color = ns.CreateCheckBox(parent, "enemy_health_color")
 	enemy_health_color:SetPoint("TOPLEFT", uf_color, "BOTTOMLEFT", -24, -4)
 
 	local show_total_value = ns.CreateCheckBox(parent, "show_total_value", L_GUI_UF_TOTAL_VALUE)
@@ -1880,10 +1880,13 @@ do
 	low_health:SetPoint("LEFT", low_health_value, "RIGHT", 70, 0)
 
 	local cast_color = ns.CreateCheckBox(parent, "cast_color")
-	cast_color:SetPoint("TOPLEFT", parent.low_health_value, "BOTTOMLEFT", 0, -8)
+	cast_color:SetPoint("TOPLEFT", low_health_value, "BOTTOMLEFT", 0, -8)
+
+	local kick_color = ns.CreateCheckBox(parent, "kick_color")
+	kick_color:SetPoint("TOPLEFT", cast_color, "BOTTOMLEFT", 0, 0)
 
 	local enhance_threat = ns.CreateCheckBox(parent, "enhance_threat", L_GUI_NAMEPLATE_THREAT)
-	enhance_threat:SetPoint("TOPLEFT", cast_color, "BOTTOMLEFT", 0, 0)
+	enhance_threat:SetPoint("TOPLEFT", kick_color, "BOTTOMLEFT", 0, 0)
 
 	local good_color = ns.CreateColourPicker(parent, "good_color", true, L_GUI_NAMEPLATE_GOOD_COLOR)
 	good_color:SetPoint("TOPLEFT", enhance_threat, "BOTTOMLEFT", 24, -4)
