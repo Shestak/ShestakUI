@@ -144,12 +144,12 @@ skin.panels = {
 		self.Top.TypeBar:SetPoint("BOTTOM",0,-2)
 		for _,button in ipairs(self.Top.TypeBar.Tabs) do
 			button:SkinButton()
-			button:SetWidth(78)
+			button:SetWidth(button:GetWidth() - 7)
 		end
 		for _,button in ipairs(self.Top.TypeBar.Tabs) do
 		  button.Selected:ClearAllPoints()
-		  button.Selected:SetPoint("TOPLEFT",2,-2)
-		  button.Selected:SetPoint("BOTTOMRIGHT",-2,2)
+		  button.Selected:SetPoint("TOPLEFT", 0, -2)
+		  button.Selected:SetPoint("BOTTOMRIGHT", 0, 2)
 		  for _,texture in ipairs({"LeftSelected","RightSelected","MidSelected"}) do
 		        button.Selected[texture]:SetColorTexture(1, 1, 1, 0.25)
 		        button.Selected[texture]:SetHeight(20)
