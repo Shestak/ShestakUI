@@ -63,6 +63,7 @@ if C.enemycooldown.enable == true then
 		{47528, 15},	-- Mind Freeze
 		{183752, 15},	-- Disrupt
 		{106839, 15},	-- Skull Bash
+		{187707, 15},	-- Muzzle
 		{116705, 15},	-- Spear Hand Strike
 		{96231, 15},	-- Rebuke
 		{1766, 15},		-- Kick
@@ -75,16 +76,15 @@ if C.enemycooldown.enable == true then
 		{47476, 60},	-- Strangulate
 		{78675, 60},	-- Solar Beam
 		-- Crowd Controls
-		{115078, 15},	-- Paralysis
 		{20066, 15},	-- Repentance
-		{187650, 30},	-- Freezing Trap
+		{51514, 20},	-- Hex
+		{187650, 25},	-- Freezing Trap
+		{115078, 30},	-- Paralysis
 		{8122, 30},		-- Psychic Scream
 		{107570, 30},	-- Storm Bolt
-		{51514, 30},	-- Hex
 		{5484, 40},		-- Howl of Terror
 		{30283, 45},	-- Shadowfury
 		{108194, 45},	-- Asphyxiate
-		{19386, 45},	-- Wyvern Sting
 		{113724, 45},	-- Ring of Frost
 		{64044, 45},	-- Psychic Horror
 		{6789, 45},		-- Mortal Coil
@@ -93,9 +93,8 @@ if C.enemycooldown.enable == true then
 		-- Defense abilities
 		{48707, 60},	-- Anti-Magic Shell
 		{46924, 60},	-- Bladestorm
-		{287081, 60},	-- Lichborne
-		{31224, 90},	-- Cloak of Shadows
-		{213664, 120},	-- Nimble Brew
+		{49039, 120},	-- Lichborne
+		{31224, 120},	-- Cloak of Shadows
 		{47585, 120},	-- Dispersion
 		{1856, 120},	-- Vanish
 		{7744, 120},	-- Will of the Forsaken (Racial)
