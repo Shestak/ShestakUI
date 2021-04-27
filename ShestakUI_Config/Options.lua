@@ -2385,12 +2385,18 @@ do
 	ListButton:SetSize(100, 23)
 	ListButton:SetText(L_GUI_SPELL_LIST)
 	ListButton:SetWidth(ListButton.Text:GetWidth() + 15)
+	ListButton.tooltipText = "|cffFFD100"..L_GUI_RESET_SPELLS_DESC.."|r"
 	ListButton:SetScript("OnClick", function()
 		if not C.options["raidcooldown"] then
 			C.options["raidcooldown"] = {}
 		end
 		if not C.options["raidcooldown"]["spells_list"] then
 			C.options["raidcooldown"]["spells_list"] = T.raid_spells
+		end
+		if IsControlKeyDown() then
+			C.options["raidcooldown"]["spells_list"] = nil
+			ns.setReloadNeeded(true)
+			return
 		end
 		BuildSpellList(C.options["raidcooldown"]["spells_list"], true)
 	end)
@@ -2439,12 +2445,19 @@ do
 	ListButton:SetSize(100, 23)
 	ListButton:SetText(L_GUI_SPELL_LIST)
 	ListButton:SetWidth(ListButton.Text:GetWidth() + 15)
+	ListButton.tooltipText = "|cffFFD100"..L_GUI_RESET_SPELLS_DESC.."|r"
 	ListButton:SetScript("OnClick", function()
 		if not C.options["enemycooldown"] then
 			C.options["enemycooldown"] = {}
 		end
 		if not C.options["enemycooldown"]["spells_list"] then
 			C.options["enemycooldown"]["spells_list"] = T.enemy_spells
+			C.options.enemycooldown.spells_list_ver = 2
+		end
+		if IsControlKeyDown() then
+			C.options["enemycooldown"]["spells_list"] = nil
+			ns.setReloadNeeded(true)
+			return
 		end
 		BuildSpellList(C.options["enemycooldown"]["spells_list"], true)
 	end)

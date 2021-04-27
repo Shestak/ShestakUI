@@ -19,6 +19,7 @@ L_GUI_SPELL_INPUT = "Zauber ID"
 L_GUI_TIME_INPUT = "Zeit"
 L_GUI_EXPERT_MODE = "Expert mode" -- Need review
 L_GUI_EXPERT_MODE_DESC = "Custom editing of Lua profile" -- Need review
+L_GUI_RESET_SPELLS_DESC = "CTRL-click to reset list" -- Need review
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "Diese Einstellungen steuern die allgemeinen Einstellungen der Benutzeroberfläche. Geben Sie im Chat '/uihelp ein, um Hilfe zu erhalten."

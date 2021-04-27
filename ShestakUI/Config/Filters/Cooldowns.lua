@@ -103,6 +103,27 @@ if C.enemycooldown.enable == true then
 	}
 
 	if #C.enemycooldown.spells_list > 0 then
+		-- Sync spell list with new changes
+		if not C.options.enemycooldown.spells_list_ver or C.options.enemycooldown.spells_list_ver < 2 then
+			for i, spell in pairs(C.enemycooldown.spells_list) do
+				if spell[1] == 51514 then
+					spell[2] = 20
+				elseif spell[1] == 187650 then
+					spell[2] = 25
+				elseif spell[1] == 115078 then
+					spell[2] = 30
+				elseif spell[1] == 49039 then
+					spell[2] = 120
+				elseif spell[1] == 31224 then
+					spell[2] = 120
+				elseif spell[1] == 213664 or spell[1] == 19386 then
+					tremove(C.enemycooldown.spells_list, i)
+				end
+			end
+
+			tinsert(C.enemycooldown.spells_list, {187707, 15})
+			C.options.enemycooldown.spells_list_ver = 2
+		end
 		T.enemy_spells = C.enemycooldown.spells_list
 	else
 		if C.options.enemycooldown and C.options.enemycooldown.spells_list then

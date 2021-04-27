@@ -19,6 +19,7 @@ L_GUI_SPELL_INPUT = "Spell ID" -- Need review
 L_GUI_TIME_INPUT = "Time" -- Need review
 L_GUI_EXPERT_MODE = "Expert mode" -- Need review
 L_GUI_EXPERT_MODE_DESC = "Custom editing of Lua profile" -- Need review
+L_GUI_RESET_SPELLS_DESC = "CTRL-click to reset list" -- Need review
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface settings. Type in chat '/uihelp' for help." -- Need review

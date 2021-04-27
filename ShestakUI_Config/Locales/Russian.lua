@@ -19,6 +19,7 @@ L_GUI_SPELL_INPUT = "Номер заклинания"
 L_GUI_TIME_INPUT = "Время"
 L_GUI_EXPERT_MODE = "Режим эксперта"
 L_GUI_EXPERT_MODE_DESC = "Редактирование профиля Lua"
+L_GUI_RESET_SPELLS_DESC = "CTRL-клик, чтобы сбросить список"
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "Эти настройки контролируют общие параметры UI. Наберите в чат '/uihelp' для помощи."

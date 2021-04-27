@@ -11,6 +11,7 @@ C.raidframe.plugins_aura_watch_list = {}
 C.announcements.spells_list = {}
 C.raidcooldown.spells_list = {}
 C.enemycooldown.spells_list = {}
+C.enemycooldown.spells_list_ver = 1
 C.nameplate.debuffs_list = {}
 C.nameplate.buffs_list = {}
 C.chat.spam_list = ""

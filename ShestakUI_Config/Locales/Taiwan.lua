@@ -19,6 +19,7 @@ L_GUI_SPELL_INPUT = "法術ID"
 L_GUI_TIME_INPUT = "時間"
 L_GUI_EXPERT_MODE = "專家模式"
 L_GUI_EXPERT_MODE_DESC = "編寫你的插件代碼"
+L_GUI_RESET_SPELLS_DESC = "CTRL-click to reset list" -- Need review
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "一般用戶界面設置，鍵入 /uihelp 獲取更多可用命令。"
