@@ -106,7 +106,7 @@ if modules and ((coords and coords.enabled) or (location and location.enabled)) 
 		end
 	end)
 
-	function Coords() return format(coords and coords.fmt or "%.0f, %.0f", coordX and coordX * 100, coordY and coordY * 100) end
+	function Coords() return format(coords and coords.fmt or "%.0f, %.0f", coordX and coordX * 100 or 0, coordY and coordY * 100 or 0) end
 end
 
 -- Set profile
