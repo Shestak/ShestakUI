@@ -612,6 +612,8 @@ C["filger_spells"] = {
 			{spellID = 82921, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Spitting Cobra
 			{spellID = 194407, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Trueshot
+			{spellID = 288613, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
