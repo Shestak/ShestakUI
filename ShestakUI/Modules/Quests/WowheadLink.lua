@@ -33,6 +33,7 @@ else
 	linkAchievement = "http://www.wowhead.com/achievement=%d"
 end
 
+local selfText
 StaticPopupDialogs.WATCHFRAME_URL = {
 	text = L_WATCH_WOWHEAD_LINK,
 	button1 = OKAY,
@@ -44,9 +45,18 @@ StaticPopupDialogs.WATCHFRAME_URL = {
 		self.editBox:SetMaxLetters(0)
 		self.editBox:SetText(text)
 		self.editBox:HighlightText()
+		selfText = text
 	end,
 	EditBoxOnEnterPressed = function(self) self:GetParent():Hide() end,
 	EditBoxOnEscapePressed = function(self) self:GetParent():Hide() end,
+	EditBoxOnTextChanged = function(self)
+		if self:GetText():len() < 1 then
+			self:GetParent():Hide()
+		else
+			self:SetText(selfText)
+			self:HighlightText()
+		end
+	end,
 	preferredIndex = 5,
 }
 
