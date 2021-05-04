@@ -35,8 +35,8 @@ T.RaidBuffs = {
 	PRIEST = {
 		{194384, "TOPRIGHT", {0.8, 0.4, 0.2}},				-- Atonement
 		{41635, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},			-- Prayer of Mending
-		{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}}, 				-- Renew
-		{6788, "BOTTOMLEFT", {1, 0, 0}}, 					-- Weakened Soul
+		{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}},				-- Renew
+		{6788, "BOTTOMLEFT", {1, 0, 0}},					-- Weakened Soul
 		{17, "TOPLEFT", {0.81, 0.85, 0.1}},					-- Power Word: Shield
 		{33206, "LEFT", {0.89, 0.1, 0.1}, true},			-- Pain Suppression
 		{47788, "LEFT", {0.86, 0.52, 0}, true},				-- Guardian Spirit
@@ -55,9 +55,9 @@ T.RaidBuffs = {
 		{20707, "TOPRIGHT", {0.7, 0.32, 0.75}},				-- Soulstone
 	},
 	ALL = {
-		{23333, "LEFT", {1, 0, 0}, true}, 					-- Warsong flag, Horde
+		{23333, "LEFT", {1, 0, 0}, true},					-- Warsong flag, Horde
 		{23335, "LEFT", {0, 0, 1}, true},					-- Warsong flag, Alliance
-		{34976, "LEFT", {1, 0, 0}, true}, 					-- Netherstorm Flag
+		{34976, "LEFT", {1, 0, 0}, true},					-- Netherstorm Flag
 	},
 }
 
@@ -299,63 +299,76 @@ T.RaidDebuffs = {
 if C.raidframe.plugins_pvp_debuffs == true then
 	local PvPDebuffs = {
 		-- Death Knight
-		[SpellName(108194)] = 3,	-- Asphyxiate
-		[SpellName(91797)] = 3,		-- Monstrous Blow (Mutated Ghoul)
-		[SpellName(91800)] = 3,		-- Gnaw (Ghoul)
+		[SpellName(108194)] = 4,	-- Asphyxiate
+		[SpellName(91797)] = 4,		-- Monstrous Blow (Mutated Ghoul)
+		[SpellName(91800)] = 4,		-- Gnaw (Ghoul)
+		[SpellName(287254)] = 4,	-- Dead of Winter
 		[SpellName(47476)] = 3,		-- Strangulate
 		-- Demon Hunter
-		[SpellName(217832)] = 3,	-- Imprison
-		[SpellName(211881)] = 3,	-- Fel Eruption
-		[SpellName(179057)] = 3,	-- Chaos Nova
-		[SpellName(205630)] = 3,	-- Illidan's Grasp
+		[SpellName(217832)] = 4,	-- Imprison
+		[SpellName(211881)] = 4,	-- Fel Eruption
+		[SpellName(179057)] = 4,	-- Chaos Nova
+		[SpellName(205630)] = 4,	-- Illidan's Grasp
+		[SpellName(207685)] = 4,	-- Sigil of Misery
+		[SpellName(204490)] = 3,	-- Sigil of Silence
 		-- Druid
-		[SpellName(33786)] = 3,		-- Cyclone
+		[SpellName(33786)] = 4,		-- Cyclone
+		[SpellName(5211)] = 4,		-- Mighty Bash
+		[SpellName(22570)] = 4,		-- Maim
 		[SpellName(78675)] = 3,		-- Solar Beam
 		[SpellName(339)] = 2,		-- Entangling Roots
 		-- Hunter
-		[SpellName(3355)] = 3,		-- Freezing Trap
-		[SpellName(19386)] = 3,		-- Wyvern Sting
-		[SpellName(117526)] = 3,	-- Binding Shot
-		[SpellName(24394)] = 3,		-- Intimidation
+		[SpellName(3355)] = 4,		-- Freezing Trap
+		[SpellName(24394)] = 4,		-- Intimidation
+		[SpellName(213691)] = 4,	-- Scatter Shot
+		[SpellName(117526)] = 2,	-- Binding Shot
 		-- Mage
-		[SpellName(61305)] = 3,		-- Polymorph
-		[SpellName(82691)] = 3,		-- Ring of Frost
-		[SpellName(31661)] = 3,		-- Dragon's Breath
+		[SpellName(61305)] = 4,		-- Polymorph
+		[SpellName(82691)] = 4,		-- Ring of Frost
+		[SpellName(31661)] = 4,		-- Dragon's Breath
 		[SpellName(122)] = 2,		-- Frost Nova
 		-- Monk
-		[SpellName(115078)] = 3,	-- Paralysis
-		[SpellName(119381)] = 3,	-- Leg Sweep
+		[SpellName(115078)] = 4,	-- Paralysis
+		[SpellName(119381)] = 4,	-- Leg Sweep
+		[SpellName(120086)] = 4,	-- Fists of Fury
 		-- Paladin
-		[SpellName(20066)] = 3,		-- Repentance
-		[SpellName(853)] = 3,		-- Hammer of Justice
-		[SpellName(105421)] = 3,	-- Blinding Light
+		[SpellName(20066)] = 4,		-- Repentance
+		[SpellName(853)] = 4,		-- Hammer of Justice
+		[SpellName(105421)] = 4,	-- Blinding Light
 		-- Priest
-		[SpellName(605)] = 3,		-- Dominate Mind
-		[SpellName(8122)] = 3,		-- Psychic Scream
-		[SpellName(64044)] = 3,		-- Psychic Horror
+		[SpellName(605)] = 4,		-- Dominate Mind
+		[SpellName(8122)] = 4,		-- Psychic Scream
+		[SpellName(64044)] = 4,		-- Psychic Horror
+		[SpellName(205369)] = 4,	-- Mind Bomb
+		[SpellName(87204)] = 4,		-- Sin and Punishment
+		[SpellName(200196)] = 4,	-- Holy Word: Chastise
 		[SpellName(15487)] = 3,		-- Silence
-		[SpellName(284402)] = 3,	-- Vampiric Touch (Don't dispel)
 		-- Rogue
-		[SpellName(6770)] = 3,		-- Sap
-		[SpellName(2094)] = 3,		-- Blind
-		[SpellName(1776)] = 3,		-- Gouge
+		[SpellName(6770)] = 4,		-- Sap
+		[SpellName(2094)] = 4,		-- Blind
+		[SpellName(1833)] = 4,		-- Cheap Shot
+		[SpellName(408)] = 4,		-- Kidney Shot
+		[SpellName(1776)] = 4,		-- Gouge
 		[SpellName(1330)] = 3,		-- Garrote - Silence
 		-- Shaman
-		[SpellName(51514)] = 3,		-- Hex
-		[SpellName(118905)] = 3,	-- Static Charge
+		[SpellName(51514)] = 4,		-- Hex
+		[SpellName(118905)] = 4,	-- Static Charge
+		[SpellName(305485)] = 4,	-- Lightning Lasso
 		-- Warlock
-		[SpellName(118699)] = 3,	-- Fear
-		[SpellName(6789)] = 3,		-- Mortal Coil
-		[SpellName(5484)] = 3,		-- Howl of Terror
-		[SpellName(6358)] = 3,		-- Seduction (Succubus)
-		[SpellName(115268)] = 3,	-- Mesmerize (Shivarra)
-		[SpellName(30283)] = 3,		-- Shadowfury
-		[SpellName(30108)] = 3,		-- Unstable Affliction (Don't dispel)
+		[SpellName(118699)] = 4,	-- Fear
+		[SpellName(6789)] = 4,		-- Mortal Coil
+		[SpellName(5484)] = 4,		-- Howl of Terror
+		[SpellName(6358)] = 4,		-- Seduction (Succubus)
+		[SpellName(115268)] = 4,	-- Mesmerize (Shivarra)
+		[SpellName(30283)] = 4,		-- Shadowfury
 		-- Warrior
-		[SpellName(46968)] = 3,		-- Shockwave
-		[SpellName(132169)] = 3,	-- Storm Bolt
-		[SpellName(194958)] = 3,	-- Intimidating Shout
+		[SpellName(46968)] = 4,		-- Shockwave
+		[SpellName(132169)] = 4,	-- Storm Bolt
+		[SpellName(194958)] = 4,	-- Intimidating Shout
 	}
+
+	tinsert(T.RaidBuffs["ALL"], {284402, "RIGHT", {1, 0, 0}, true})	-- Vampiric Touch (Don't dispel)
+	tinsert(T.RaidBuffs["ALL"], {30108, "RIGHT", {1, 0, 0}, true})	-- Unstable Affliction (Don't dispel)
 
 	for spell, prio in pairs(PvPDebuffs) do
 		T.RaidDebuffs[spell] = prio
