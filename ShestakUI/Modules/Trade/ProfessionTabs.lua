@@ -99,6 +99,9 @@ local function UpdateTab(object, name, rank, texture, hat)
 	if hat then
 		tab:SetAttribute("type", "toy")
 		tab:SetAttribute("toy", 134020)
+	elseif texture == 135805 then	-- Cooking Fire
+		tab:SetAttribute("type", "macro")
+		tab:SetAttribute("macrotext", "/cast [@player]"..name)
 	else
 		tab:SetAttribute("type", "spell")
 		tab:SetAttribute("spell", name)
@@ -107,7 +110,7 @@ local function UpdateTab(object, name, rank, texture, hat)
 	tab:Show()
 
 	tab.name = name
-	tab.tooltip = rank and rank ~= "" and format("%s (%s)", name, rank) or name
+	tab.tooltip = rank and (rank ~= "" and rank ~= name) and format("%s (%s)", name, rank) or name
 
 	tabs[object][index] = tabs[object][index] or tab
 	tabs[object].index = tabs[object].index + 1
@@ -149,7 +152,7 @@ local function HandleProfession(object, professionID, hat)
 			end
 		end
 
-		if hat and PlayerHasToy(134020) then
+		if hat and PlayerHasToy(134020) and C_ToyBox.IsToyUsable(134020) then
 			UpdateTab(object, GetSpellInfo(67556), nil, 236571, true)
 		end
 	end
