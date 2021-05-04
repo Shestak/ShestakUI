@@ -2260,6 +2260,8 @@ C["filger_spells"] = {
 			{spellID = 58984, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Stoneform (Dwarf)
 			{spellID = 65116, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Fireblood (Dark Iron Dwarf)
+			{spellID = 265221, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Zone Buffs
 			-- Inactive (Battlegrounds)
@@ -2386,6 +2388,8 @@ C["filger_spells"] = {
 			{spellID = 119381, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Fists of Fury
 			{spellID = 120086, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Song of Chi-Ji
+			{spellID = 198898, unitID = "player", caster = "all", filter = "DEBUFF"},
 
 			-- Paladin
 			-- Repentance
@@ -2765,6 +2769,8 @@ C["filger_spells"] = {
 			{spellID = 119381, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Fists of Fury
 			{spellID = 120086, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Song of Chi-Ji
+			{spellID = 198898, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Paladin
 			-- Divine Shield
@@ -3012,8 +3018,29 @@ do
 		-- Darkflight
 		tinsert(T.CustomFilgerSpell, {"COOLDOWN", {spellID = 68992, filter = "CD"}})
 	elseif race == "Pandaren" then
-		-- Quaking Palm (Pandaren)
+		-- Quaking Palm
 		tinsert(T.CustomFilgerSpell, {"COOLDOWN", {spellID = 107079, filter = "CD"}})
+	elseif race == "DarkIronDwarf" then
+		-- Fireblood
+		tinsert(T.CustomFilgerSpell, {"COOLDOWN", {spellID = 265221, filter = "CD"}})
+	elseif race == "KulTiran" then
+		-- Haymaker
+		tinsert(T.CustomFilgerSpell, {"COOLDOWN", {spellID = 287712, filter = "CD"}})
+	elseif race == "HighmountainTauren" then
+		-- Bull Rush
+		tinsert(T.CustomFilgerSpell, {"COOLDOWN", {spellID = 255654, filter = "CD"}})
+	elseif race == "Vulpera" then
+		-- Bag of Tricks
+		tinsert(T.CustomFilgerSpell, {"COOLDOWN", {spellID = 312411, filter = "CD"}})
+	elseif race == "LightforgedDraenei" then
+		-- Light's Judgment
+		tinsert(T.CustomFilgerSpell, {"COOLDOWN", {spellID = 255647, filter = "CD"}})
+	elseif race == "ZandalariTroll" then
+		-- Regeneratin'
+		tinsert(T.CustomFilgerSpell, {"COOLDOWN", {spellID = 291944, filter = "CD"}})
+	elseif race == "MagharOrc" then
+		-- Ancestral Call
+		tinsert(T.CustomFilgerSpell, {"COOLDOWN", {spellID = 274738, filter = "CD"}})
 	end
 
 	-- Items
