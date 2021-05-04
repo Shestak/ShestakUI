@@ -1309,11 +1309,8 @@ do
 	-- Panel 2
 	local parent = ShestakUIOptionsPanel.raidframe2
 
-	local plugins_debuffhighlight_icon = ns.CreateCheckBox(parent, "plugins_debuffhighlight_icon", L_GUI_UF_PLUGINS_DEBUFFHIGHLIGHT_ICON)
-	plugins_debuffhighlight_icon:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
-
-	local plugins_aura_watch = ns.CreateCheckBox(parent, "plugins_aura_watch", L_GUI_UF_PLUGINS_AURA_WATCH)
-	plugins_aura_watch:SetPoint("TOPLEFT", plugins_debuffhighlight_icon, "BOTTOMLEFT", 0, 0)
+	local plugins_aura_watch = ns.CreateCheckBox(parent, "plugins_aura_watch")
+	plugins_aura_watch:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
 	local ListButton = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
 	ListButton:SetPoint("LEFT", plugins_aura_watch.Text, "RIGHT", 20, 0)
@@ -1339,16 +1336,19 @@ do
 	plugins_aura_watch:HookScript("OnClick", toggleListButton)
 	ListButton:HookScript("OnShow", toggleListButton)
 
-	local plugins_aura_watch_timer = ns.CreateCheckBox(parent, "plugins_aura_watch_timer", L_GUI_UF_PLUGINS_AURA_WATCH_TIMER)
+	local plugins_aura_watch_timer = ns.CreateCheckBox(parent, "plugins_aura_watch_timer")
 	plugins_aura_watch_timer:SetPoint("TOPLEFT", plugins_aura_watch, "BOTTOMLEFT", 20, 0)
 
-	plugins_aura_watch.children = {plugins_aura_watch_timer}
+	local plugins_debuffhighlight_icon = ns.CreateCheckBox(parent, "plugins_debuffhighlight_icon")
+	plugins_debuffhighlight_icon:SetPoint("TOPLEFT", plugins_aura_watch_timer, "BOTTOMLEFT", 0, 0)
 
-	local plugins_pvp_debuffs = ns.CreateCheckBox(parent, "plugins_pvp_debuffs", L_GUI_UF_PLUGINS_PVP_DEBUFFS)
-	plugins_pvp_debuffs:SetPoint("TOPLEFT", plugins_aura_watch_timer, "BOTTOMLEFT", -20, 0)
+	local plugins_pvp_debuffs = ns.CreateCheckBox(parent, "plugins_pvp_debuffs")
+	plugins_pvp_debuffs:SetPoint("TOPLEFT", plugins_debuffhighlight_icon, "BOTTOMLEFT", 0, 0)
+
+	plugins_aura_watch.children = {plugins_aura_watch_timer, plugins_debuffhighlight_icon, plugins_pvp_debuffs}
 
 	local plugins_healcomm = ns.CreateCheckBox(parent, "plugins_healcomm", L_GUI_UF_PLUGINS_HEALCOMM)
-	plugins_healcomm:SetPoint("TOPLEFT", plugins_pvp_debuffs, "BOTTOMLEFT", 0, 0)
+	plugins_healcomm:SetPoint("TOPLEFT", plugins_pvp_debuffs, "BOTTOMLEFT", -20, 0)
 
 	local plugins_auto_resurrection = ns.CreateCheckBox(parent, "plugins_auto_resurrection")
 	plugins_auto_resurrection:SetPoint("TOPLEFT", plugins_healcomm, "BOTTOMLEFT", 0, 0)
@@ -1706,10 +1706,10 @@ do
 	local background_alpha = ns.CreateNumberSlider(parent, "background_alpha", nil, nil, 0, 1, 0.05, true, L_GUI_CHAT_BACKGROUND_ALPHA)
 	background_alpha:SetPoint("TOPLEFT", background, "BOTTOMLEFT", 0, -20)
 
-	local filter = ns.CreateCheckBox(parent, "filter", L_GUI_CHAT_SPAM)
+	local filter = ns.CreateCheckBox(parent, "filter")
 	filter:SetPoint("TOPLEFT", background_alpha, "BOTTOMLEFT", 0, -10)
 
-	local spam = ns.CreateCheckBox(parent, "spam", L_GUI_CHAT_GOLD)
+	local spam = ns.CreateCheckBox(parent, "spam")
 	spam:SetPoint("TOPLEFT", filter, "BOTTOMLEFT", 0, 0)
 
 	local spam_list = ns.CreateEditBox(parent, "spam_list", true)

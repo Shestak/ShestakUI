@@ -190,10 +190,10 @@ C["raidframe"] = {
 	["icons_sumon"] = true,						-- Sumon icons on frames
 	["icons_phase"] = true,						-- Phase icons on frames
 	-- Plugins
-	["plugins_debuffhighlight_icon"] = false,	-- Debuff highlight texture + icon
 	["plugins_aura_watch"] = true,				-- Raid debuff icons (from the list)
 	["plugins_aura_watch_timer"] = false,		-- Timer on raid debuff icons
-	["plugins_pvp_debuffs"] = false,			-- Show also PvP debuff icons (from the list)
+	["plugins_debuffhighlight_icon"] = false,	-- Show dispellable debuff icon (texture will be shown anyway)
+	["plugins_pvp_debuffs"] = false,			-- Show PvP debuff icons (from the list)
 	["plugins_healcomm"] = true,				-- Incoming heal bar on raid frame
 	["plugins_auto_resurrection"] = false,		-- Auto cast resurrection on middle-click (doesn't work with Clique)
 	-- Heal layout size
