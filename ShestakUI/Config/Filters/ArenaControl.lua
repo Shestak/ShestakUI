@@ -45,6 +45,7 @@ T.ArenaControl = {
 	[SpellName(115078)] = 5,	-- Paralysis
 	[SpellName(119381)] = 5,	-- Leg Sweep
 	[SpellName(120086)] = 5,	-- Fists of Fury
+	[SpellName(198909)] = 5,	-- Song of Chi-Ji
 	-- Paladin
 	[SpellName(853)] = 5,		-- Hammer of Justice
 	[SpellName(20066)] = 5,		-- Repentance
@@ -80,6 +81,7 @@ T.ArenaControl = {
 	[SpellName(132169)] = 5,	-- Storm Bolt
 	[SpellName(132168)] = 5,	-- Shockwave
 	[SpellName(5246)] = 5,		-- Intimidating Shout
+	[SpellName(199085)] = 5,	-- Warpath
 	-- Racial
 	[SpellName(107079)] = 5,	-- Quaking Palm (Pandaren)
 	[SpellName(20549)] = 5,		-- War Stomp (Tauren)
@@ -99,12 +101,14 @@ T.ArenaControl = {
 	[SpellName(102359)] = 3,	-- Mass Entanglement
 	[SpellName(45334)] = 3,		-- Immobilized
 	[SpellName(117526)] = 3,	-- Binding Shot
+	[SpellName(212638)] = 3,	-- Tracker's Net
+	[SpellName(190925)] = 3,	-- Harpoon
 	[SpellName(122)] = 3,		-- Frost Nova
+	[SpellName(198121)] = 3,	-- Frostbite
 	[SpellName(33395)] = 3,		-- Freeze (Water Elemental)
 	[SpellName(116706)] = 3,	-- Disable
-	[SpellName(114404)] = 3,	-- Void Tendril's Grasp
 	[SpellName(64695)] = 3,		-- Earthgrab
-	[SpellName(170996)] = 3,	-- Debilitate (Terrorguard)
+	[SpellName(233582)] = 3,	-- Entrenched in Flame
 
 	-- Immunities
 	[SpellName(186265)] = 2,	-- Aspect of the Turtle

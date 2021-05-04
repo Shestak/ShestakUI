@@ -331,6 +331,7 @@ if C.raidframe.plugins_pvp_debuffs == true then
 		[SpellName(115078)] = 4,	-- Paralysis
 		[SpellName(119381)] = 4,	-- Leg Sweep
 		[SpellName(120086)] = 4,	-- Fists of Fury
+		[SpellName(198898)] = 4,	-- Song of Chi-Ji
 		-- Paladin
 		[SpellName(20066)] = 4,		-- Repentance
 		[SpellName(853)] = 4,		-- Hammer of Justice
