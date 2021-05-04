@@ -35,8 +35,6 @@ BGFrame:SetScript("OnEnter", function(self)
 					end
 				end
 			end
-
-			break
 		end
 	end
 	GameTooltip:Show()

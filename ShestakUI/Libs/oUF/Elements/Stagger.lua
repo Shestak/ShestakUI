@@ -143,10 +143,10 @@ local function Enable(self)
 		self:RegisterEvent('UNIT_DISPLAYPOWER', VisibilityPath)
 		self:RegisterEvent('PLAYER_TALENT_UPDATE', VisibilityPath, true)
 
-		element.hadler = CreateFrame("Frame", nil, element)	-- ShestakUI
-		element.hadler:RegisterEvent("PLAYER_TALENT_UPDATE")
-		element.hadler:RegisterEvent("PLAYER_ENTERING_WORLD")
-		element.hadler:SetScript("OnEvent", function() Visibility(self) end)
+		element.handler = CreateFrame("Frame", nil, element)	-- ShestakUI
+		element.handler:RegisterEvent("PLAYER_TALENT_UPDATE")
+		element.handler:RegisterEvent("PLAYER_ENTERING_WORLD")
+		element.handler:SetScript("OnEvent", function() Visibility(self) end)
 
 		if(element:IsObjectType('StatusBar') and not element:GetStatusBarTexture()) then
 			element:SetStatusBarTexture([[Interface\TargetingFrame\UI-StatusBar]])

@@ -62,10 +62,10 @@ local function Enable(self)
 		element.__owner = self
 		element.ForceUpdate = ForceUpdate
 
-		element.hadler = CreateFrame("Frame", nil, element)
-		element.hadler:RegisterEvent("PLAYER_TALENT_UPDATE")
-		element.hadler:RegisterEvent("PLAYER_ENTERING_WORLD")
-		element.hadler:SetScript("OnEvent", function() Visibility(self) end)
+		element.handler = CreateFrame("Frame", nil, element)
+		element.handler:RegisterEvent("PLAYER_TALENT_UPDATE")
+		element.handler:RegisterEvent("PLAYER_ENTERING_WORLD")
+		element.handler:SetScript("OnEvent", function() Visibility(self) end)
 
 		return true
 	end
@@ -74,8 +74,8 @@ end
 local function Disable(self)
 	local element = self.HolyPower
 	if(element) then
-		element.hadler:UnregisterEvent("PLAYER_TALENT_UPDATE")
-		element.hadler:UnregisterEvent("PLAYER_ENTERING_WORLD")
+		element.handler:UnregisterEvent("PLAYER_TALENT_UPDATE")
+		element.handler:UnregisterEvent("PLAYER_ENTERING_WORLD")
 	end
 end
 

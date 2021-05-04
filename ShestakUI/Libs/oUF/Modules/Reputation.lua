@@ -216,9 +216,9 @@ local function Enable(self, unit)
 				element:SetScript('OnMouseUp', OnMouseUp)
 			end
 
-			element.hadler = CreateFrame("Frame", nil, element)
-			element.hadler:RegisterEvent("PLAYER_LOGIN")
-			element.hadler:SetScript("OnEvent", function() CheckAlpha(element) end)
+			element.handler = CreateFrame("Frame", nil, element)
+			element.handler:RegisterEvent("PLAYER_LOGIN")
+			element.handler:SetScript("OnEvent", function() CheckAlpha(element) end)
 		end
 
 		return true

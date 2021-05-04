@@ -14,7 +14,7 @@ local custombuffs = T.ReminderBuffs["Custom"]
 local visible, flask, battleelixir, guardianelixir, food, stamina, spell4, custom
 local playerBuff = {}
 
--- We need to check if you have two different elixirs if your not flasked, before we say your not flasked
+-- We need to check if you have two different elixirs before we say you're not flasked
 local function CheckElixir()
 	if #battleelixirbuffs > 0 then
 		for i = 1, #battleelixirbuffs do
