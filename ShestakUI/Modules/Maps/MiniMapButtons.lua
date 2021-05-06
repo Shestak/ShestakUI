@@ -22,13 +22,13 @@ switch.t:SetPoint("BOTTOMRIGHT", switch, -2, 2)
 switch:EnableMouse(true)
 switch:RegisterForClicks("AnyUp")
 switch:SetScript("OnClick", function(_, button)
-	if button == "LeftButton" then
+	if button == "LeftButton" and ShestakUISettings.RaidLayout ~= "HEAL" then
 		ShestakUISettings.RaidLayout = "HEAL"
 		ReloadUI()
-	elseif button == "RightButton" then
+	elseif button == "RightButton" and ShestakUISettings.RaidLayout ~= "DPS" then
 		ShestakUISettings.RaidLayout = "DPS"
 		ReloadUI()
-	elseif button == "MiddleButton" then
+	elseif button == "MiddleButton" and ShestakUISettings.RaidLayout ~= "NONE" then
 		ShestakUISettings.RaidLayout = "NONE"
 		ReloadUI()
 	end
