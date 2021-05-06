@@ -31,7 +31,7 @@ for i = 1, 12 do
 				NumPerRows = NumPerRows + C.actionbar.bar1_row
 				NextRowButtonAnchor = _G["ActionButton"..i]
 			else
-				b:SetPoint("LEFT", _G["ActionButton"..i-1], "RIGHT", C.actionbar.button_space, 0)
+				b:SetPoint("LEFT", _G["ActionButton"..i-1], "RIGHT", T.Scale(C.actionbar.button_space), 0)
 			end
 		else
 			b:SetPoint("TOP", UIParent, "TOP", 0, 200)
@@ -41,7 +41,7 @@ for i = 1, 12 do
 			b:SetPoint("BOTTOMLEFT", Bar1Holder, 0, 0)
 		else
 			local previous = _G["ActionButton"..i-1]
-			b:SetPoint("LEFT", previous, "RIGHT", C.actionbar.button_space, 0)
+			b:SetPoint("LEFT", previous, "RIGHT", T.Scale(C.actionbar.button_space), 0)
 		end
 	end
 end

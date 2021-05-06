@@ -31,7 +31,7 @@ for i = 1, 12 do
 				NumPerRows = NumPerRows + C.actionbar.bar4_row
 				NextRowButtonAnchor = _G["MultiBarRightButton"..i]
 			else
-				b:SetPoint("LEFT", b2, "RIGHT", C.actionbar.button_space, 0)
+				b:SetPoint("LEFT", b2, "RIGHT", T.Scale(C.actionbar.button_space), 0)
 			end
 		else
 			b:SetPoint("TOP", UIParent, "TOP", 0, 200)

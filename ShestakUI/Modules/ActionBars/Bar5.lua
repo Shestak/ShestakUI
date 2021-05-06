@@ -80,7 +80,7 @@ for i = 1, 12 do
 				end
 			else
 				if C.actionbar.rightbars < 3 then
-					b:SetPoint("LEFT", b2, "RIGHT", C.actionbar.button_space, 0)
+					b:SetPoint("LEFT", b2, "RIGHT", T.Scale(C.actionbar.button_space), 0)
 				else
 					b:SetPoint("TOP", b2, "BOTTOM", 0, -C.actionbar.button_space)
 				end
