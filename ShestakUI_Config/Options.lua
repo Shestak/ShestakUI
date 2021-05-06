@@ -1097,10 +1097,10 @@ do
 	local portrait_classcolor_border = ns.CreateCheckBox(parent, "portrait_classcolor_border", L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER)
 	portrait_classcolor_border:SetPoint("TOPLEFT", portrait_enable, "BOTTOMLEFT", 0, 0)
 
-	local portrait_height = ns.CreateNumberSlider(parent, "portrait_height", nil, nil, 0, 120, 1, true, L_GUI_UF_PORTRAIT_HEIGHT)
+	local portrait_height = ns.CreateNumberSlider(parent, "portrait_height", nil, nil, 0, 190, 1, true, L_GUI_UF_PORTRAIT_HEIGHT)
 	portrait_height:SetPoint("TOPLEFT", portrait_classcolor_border, "BOTTOMLEFT", 0, -20)
 
-	local portrait_width = ns.CreateNumberSlider(parent, "portrait_width", nil, nil, 0, 120, 1, true, L_GUI_UF_PORTRAIT_WIDTH)
+	local portrait_width = ns.CreateNumberSlider(parent, "portrait_width", nil, nil, 0, 130, 1, true, L_GUI_UF_PORTRAIT_WIDTH)
 	portrait_width:SetPoint("LEFT", portrait_height, "RIGHT", 120, 0)
 
 	-- Plugins
@@ -1167,7 +1167,7 @@ do
 	local subheader = ns.addSubCategory(parent, L.unitframe_subheader_castbar)
 	subheader:SetPoint("TOPLEFT", extra_health_height, "BOTTOMLEFT", 0, -10)
 
-	local castbar_width = ns.CreateNumberSlider(parent, "castbar_width", nil, nil, 190, 400, 1, true, L.unitframe_player_width)
+	local castbar_width = ns.CreateNumberSlider(parent, "castbar_width", nil, nil, 190, 450, 1, true, L.unitframe_player_width)
 	castbar_width:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -28)
 
 	local castbar_height = ns.CreateNumberSlider(parent, "castbar_height", nil, nil, 16, 40, 1, true)
@@ -1403,10 +1403,10 @@ end
 do
 	local parent = ShestakUIOptionsPanel.aura
 
-	local player_buff_size = ns.CreateNumberSlider(parent, "player_buff_size", nil, nil, 0, 40, 1, true, L_GUI_AURA_PLAYER_BUFF_SIZE, L_GUI_AURA_PLAYER_BUFF_SIZE_DESC)
+	local player_buff_size = ns.CreateNumberSlider(parent, "player_buff_size", nil, nil, 0, 50, 1, true, L_GUI_AURA_PLAYER_BUFF_SIZE, L_GUI_AURA_PLAYER_BUFF_SIZE_DESC)
 	player_buff_size:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, -20)
 
-	local player_debuff_size = ns.CreateNumberSlider(parent, "player_debuff_size", nil, nil, 0, 40, 1, true)
+	local player_debuff_size = ns.CreateNumberSlider(parent, "player_debuff_size", nil, nil, 0, 50, 1, true)
 	player_debuff_size:SetPoint("LEFT", player_buff_size, "RIGHT", 120, 0)
 
 	local show_spiral = ns.CreateCheckBox(parent, "show_spiral", L_GUI_AURA_SHOW_SPIRAL)
@@ -1465,7 +1465,7 @@ do
 	local show_grid = ns.CreateCheckBox(parent, "show_grid", L_GUI_ACTIONBAR_GRID)
 	show_grid:SetPoint("TOPLEFT", macro, "BOTTOMLEFT", 0, 0)
 
-	local button_size = ns.CreateNumberSlider(parent, "button_size", nil, nil, 0, 40, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	local button_size = ns.CreateNumberSlider(parent, "button_size", nil, nil, 0, 50, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
 	button_size:SetPoint("TOPLEFT", show_grid, "BOTTOMLEFT", 0, -20)
 
 	local button_space = ns.CreateNumberSlider(parent, "button_space", nil, nil, 0, 10, 1, true, L_GUI_ACTIONBAR_BUTTON_SPACE)
@@ -1541,7 +1541,7 @@ do
 	local bar1_row = ns.CreateNumberSlider(parent, "bar1_row", nil, nil, 1, 12, 1, true)
 	bar1_row:SetPoint("LEFT", bar1_num, "RIGHT", 120, 0)
 
-	local bar1_size = ns.CreateNumberSlider(parent, "bar1_size", nil, nil, 0, 40, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	local bar1_size = ns.CreateNumberSlider(parent, "bar1_size", nil, nil, 0, 50, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
 	bar1_size:SetPoint("TOPLEFT", bar1_num, "BOTTOMLEFT", 0, -20)
 
 	local bar1_mouseover = ns.CreateCheckBox(parent, "bar1_mouseover")
@@ -1557,7 +1557,7 @@ do
 	local bar2_row = ns.CreateNumberSlider(parent, "bar2_row", nil, nil, 1, 12, 1, true, L.actionbar_bar1_row)
 	bar2_row:SetPoint("LEFT", bar2_num, "RIGHT", 120, 0)
 
-	local bar2_size = ns.CreateNumberSlider(parent, "bar2_size", nil, nil, 0, 40, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	local bar2_size = ns.CreateNumberSlider(parent, "bar2_size", nil, nil, 0, 50, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
 	bar2_size:SetPoint("TOPLEFT", bar2_num, "BOTTOMLEFT", 0, -20)
 
 	local bar2_mouseover = ns.CreateCheckBox(parent, "bar2_mouseover", L.actionbar_bar1_mouseover)
@@ -1573,7 +1573,7 @@ do
 	local bar3_row = ns.CreateNumberSlider(parent, "bar3_row", nil, nil, 1, 12, 1, true, L.actionbar_bar1_row)
 	bar3_row:SetPoint("LEFT", bar3_num, "RIGHT", 120, 0)
 
-	local bar3_size = ns.CreateNumberSlider(parent, "bar3_size", nil, nil, 0, 40, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	local bar3_size = ns.CreateNumberSlider(parent, "bar3_size", nil, nil, 0, 50, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
 	bar3_size:SetPoint("TOPLEFT", bar3_num, "BOTTOMLEFT", 0, -20)
 
 	local bar3_mouseover = ns.CreateCheckBox(parent, "bar3_mouseover", L.actionbar_bar1_mouseover)
@@ -1589,7 +1589,7 @@ do
 	local bar4_row = ns.CreateNumberSlider(parent, "bar4_row", nil, nil, 1, 12, 1, true, L.actionbar_bar1_row)
 	bar4_row:SetPoint("LEFT", bar4_num, "RIGHT", 120, 0)
 
-	local bar4_size = ns.CreateNumberSlider(parent, "bar4_size", nil, nil, 0, 40, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	local bar4_size = ns.CreateNumberSlider(parent, "bar4_size", nil, nil, 0, 50, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
 	bar4_size:SetPoint("TOPLEFT", bar4_num, "BOTTOMLEFT", 0, -20)
 
 	local bar4_mouseover = ns.CreateCheckBox(parent, "bar4_mouseover", L.actionbar_bar1_mouseover)
@@ -1605,7 +1605,7 @@ do
 	local bar5_row = ns.CreateNumberSlider(parent, "bar5_row", nil, nil, 1, 12, 1, true, L.actionbar_bar1_row)
 	bar5_row:SetPoint("LEFT", bar5_num, "RIGHT", 120, 0)
 
-	local bar5_size = ns.CreateNumberSlider(parent, "bar5_size", nil, nil, 0, 40, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	local bar5_size = ns.CreateNumberSlider(parent, "bar5_size", nil, nil, 0, 50, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
 	bar5_size:SetPoint("TOPLEFT", bar5_num, "BOTTOMLEFT", 0, -20)
 
 	local bar5_mouseover = ns.CreateCheckBox(parent, "bar5_mouseover", L.actionbar_bar1_mouseover)
@@ -1694,10 +1694,10 @@ do
 	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_CHAT_ENABLE)
 	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 500, 1, true, L_GUI_CHAT_WIDTH)
+	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 750, 1, true, L_GUI_CHAT_WIDTH)
 	width:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, -20)
 
-	local height = ns.CreateNumberSlider(parent, "height", nil, nil, 0, 200, 1, true, L_GUI_CHAT_HEIGHT)
+	local height = ns.CreateNumberSlider(parent, "height", nil, nil, 0, 300, 1, true, L_GUI_CHAT_HEIGHT)
 	height:SetPoint("LEFT", width, "RIGHT", 120, 0)
 
 	local background = ns.CreateCheckBox(parent, "background", L_GUI_CHAT_BACKGROUND)
@@ -1958,7 +1958,7 @@ do
 	local icons = ns.CreateCheckBox(parent, "icons", L_GUI_COMBATTEXT_ICONS)
 	icons:SetPoint("TOPLEFT", crit_postfix, "BOTTOMLEFT", -6, -8)
 
-	local icon_size = ns.CreateNumberSlider(parent, "icon_size", nil, nil, 0, 30, 1, true, L_GUI_COMBATTEXT_ICON_SIZE, L_GUI_COMBATTEXT_ICON_SIZE_DESC)
+	local icon_size = ns.CreateNumberSlider(parent, "icon_size", nil, nil, 0, 40, 1, true, L_GUI_COMBATTEXT_ICON_SIZE, L_GUI_COMBATTEXT_ICON_SIZE_DESC)
 	icon_size:SetPoint("TOPLEFT", icons, "BOTTOMLEFT", 0, -20)
 
 	local treshold = ns.CreateEditBox(parent, "treshold", true, L_GUI_COMBATTEXT_TRESHOLD, true)
@@ -2017,7 +2017,7 @@ do
 	local new_items = ns.CreateCheckBox(parent, "new_items")
 	new_items:SetPoint("TOPLEFT", ilvl, "BOTTOMLEFT", 0, 0)
 
-	local button_size = ns.CreateNumberSlider(parent, "button_size", nil, nil, 0, 40, 1, true, L_GUI_BAGS_BUTTON_SIZE)
+	local button_size = ns.CreateNumberSlider(parent, "button_size", nil, nil, 0, 50, 1, true, L_GUI_BAGS_BUTTON_SIZE)
 	button_size:SetPoint("TOPLEFT", new_items, "BOTTOMLEFT", 0, -20)
 
 	local button_space = ns.CreateNumberSlider(parent, "button_space", nil, nil, 0, 10, 1, true, L_GUI_BAGS_BUTTON_SPACE)
@@ -2043,7 +2043,7 @@ do
 	local garrison_icon = ns.CreateCheckBox(parent, "garrison_icon", L_GUI_GARRISON_ICON)
 	garrison_icon:SetPoint("TOPLEFT", tracking_icon, "BOTTOMLEFT", 0, 0)
 
-	local size = ns.CreateNumberSlider(parent, "size", nil, nil, 0, 250, 1, true, L_GUI_MINIMAP_SIZE)
+	local size = ns.CreateNumberSlider(parent, "size", nil, nil, 0, 300, 1, true, L_GUI_MINIMAP_SIZE)
 	size:SetPoint("TOPLEFT", garrison_icon, "BOTTOMLEFT", 0, -20)
 
 	local hide_combat = ns.CreateCheckBox(parent, "hide_combat", L_GUI_MINIMAP_HIDE_COMBAT)
@@ -2070,10 +2070,10 @@ do
 	local lootframe = ns.CreateCheckBox(parent, "lootframe", L_GUI_LOOT_ENABLE)
 	lootframe:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local icon_size = ns.CreateNumberSlider(parent, "icon_size", nil, nil, 0, 40, 1, true, L_GUI_LOOT_ICON_SIZE)
+	local icon_size = ns.CreateNumberSlider(parent, "icon_size", nil, nil, 0, 50, 1, true, L_GUI_LOOT_ICON_SIZE)
 	icon_size:SetPoint("TOPLEFT", lootframe, "BOTTOMLEFT", 0, -20)
 
-	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 350, 1, true, L_GUI_LOOT_WIDTH)
+	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 400, 1, true, L_GUI_LOOT_WIDTH)
 	width:SetPoint("TOPLEFT", icon_size, "BOTTOMLEFT", 0, -20)
 
 	local faster_loot = ns.CreateCheckBox(parent, "faster_loot")
@@ -2135,19 +2135,19 @@ do
 	local subheader = ns.addSubCategory(parent, L.filger_subheader_size)
 	subheader:SetPoint("TOPLEFT", show_special, "BOTTOMLEFT", 0, -10)
 
-	local buffs_size = ns.CreateNumberSlider(parent, "buffs_size", nil, nil, 0, 50, 1, true, L_GUI_FILGER_BUFFS_SIZE)
+	local buffs_size = ns.CreateNumberSlider(parent, "buffs_size", nil, nil, 0, 60, 1, true, L_GUI_FILGER_BUFFS_SIZE)
 	buffs_size:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -30)
 
 	local buffs_space = ns.CreateNumberSlider(parent, "buffs_space", nil, nil, 0, 10, 1, true)
 	buffs_space:SetPoint("LEFT", buffs_size, "RIGHT", 120, 0)
 
-	local pvp_size = ns.CreateNumberSlider(parent, "pvp_size", nil, nil, 0, 80, 1, true, L_GUI_FILGER_PVP_SIZE)
+	local pvp_size = ns.CreateNumberSlider(parent, "pvp_size", nil, nil, 0, 90, 1, true, L_GUI_FILGER_PVP_SIZE)
 	pvp_size:SetPoint("TOPLEFT", buffs_size, "BOTTOMLEFT", 0, -20)
 
 	local pvp_space = ns.CreateNumberSlider(parent, "pvp_space", nil, nil, 0, 10, 1, true)
 	pvp_space:SetPoint("LEFT", pvp_size, "RIGHT", 120, 0)
 
-	local cooldown_size = ns.CreateNumberSlider(parent, "cooldown_size", nil, nil, 0, 50, 1, true, L_GUI_FILGER_COOLDOWN_SIZE)
+	local cooldown_size = ns.CreateNumberSlider(parent, "cooldown_size", nil, nil, 0, 60, 1, true, L_GUI_FILGER_COOLDOWN_SIZE)
 	cooldown_size:SetPoint("TOPLEFT", pvp_size, "BOTTOMLEFT", 0, -20)
 
 	local cooldown_space = ns.CreateNumberSlider(parent, "cooldown_space", nil, nil, 0, 10, 1, true)
@@ -2326,7 +2326,7 @@ do
 	local solo_buffs_sound = ns.CreateCheckBox(parent, "solo_buffs_sound", L_GUI_REMINDER_SOLO_SOUND)
 	solo_buffs_sound:SetPoint("TOPLEFT", solo_buffs_enable, "BOTTOMLEFT", 0, 0)
 
-	local solo_buffs_size = ns.CreateNumberSlider(parent, "solo_buffs_size", nil, nil, 0, 65, 1, true, L_GUI_REMINDER_SOLO_SIZE, L_GUI_REMINDER_SOLO_SIZE_DESC)
+	local solo_buffs_size = ns.CreateNumberSlider(parent, "solo_buffs_size", nil, nil, 0, 80, 1, true, L_GUI_REMINDER_SOLO_SIZE, L_GUI_REMINDER_SOLO_SIZE_DESC)
 	solo_buffs_size:SetPoint("TOPLEFT", solo_buffs_sound, "BOTTOMLEFT", 0, -20)
 
 	-- Raid buffs
@@ -2339,7 +2339,7 @@ do
 	local raid_buffs_always = ns.CreateCheckBox(parent, "raid_buffs_always", L_GUI_REMINDER_RAID_ALWAYS)
 	raid_buffs_always:SetPoint("TOPLEFT", raid_buffs_enable, "BOTTOMLEFT", 0, 0)
 
-	local raid_buffs_size = ns.CreateNumberSlider(parent, "raid_buffs_size", nil, nil, 0, 30, 1, true, L_GUI_REMINDER_RAID_SIZE, L_GUI_REMINDER_RAID_SIZE_DESC)
+	local raid_buffs_size = ns.CreateNumberSlider(parent, "raid_buffs_size", nil, nil, 0, 40, 1, true, L_GUI_REMINDER_RAID_SIZE, L_GUI_REMINDER_RAID_SIZE_DESC)
 	raid_buffs_size:SetPoint("TOPLEFT", raid_buffs_always, "BOTTOMLEFT", 0, -20)
 
 	local raid_buffs_alpha = ns.CreateNumberSlider(parent, "raid_buffs_alpha", nil, nil, 0, 1, 0.05, true, L_GUI_REMINDER_RAID_ALPHA, L_GUI_REMINDER_RAID_ALPHA_DESC)
@@ -2480,7 +2480,7 @@ do
 	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_COOLDOWN_PULSE_ENABLE)
 	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
-	local size = ns.CreateNumberSlider(parent, "size", nil, nil, 0, 100, 1, true, L_GUI_COOLDOWN_ENEMY_SIZE)
+	local size = ns.CreateNumberSlider(parent, "size", nil, nil, 0, 150, 1, true, L_GUI_COOLDOWN_ENEMY_SIZE)
 	size:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, -20)
 
 	local sound = ns.CreateCheckBox(parent, "sound", L_GUI_COOLDOWN_PULSE_SOUND)
@@ -2506,7 +2506,7 @@ do
 	local height = ns.CreateNumberSlider(parent, "height", nil, nil, 0, 25, 1, true, L_GUI_THREAT_HEIGHT)
 	height:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, -20)
 
-	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 300, 1, true, L_GUI_THREAT_WIDTH)
+	local width = ns.CreateNumberSlider(parent, "width", nil, nil, 0, 350, 1, true, L_GUI_THREAT_WIDTH)
 	width:SetPoint("TOPLEFT", height, "BOTTOMLEFT", 0, -20)
 
 	local bar_rows = ns.CreateNumberSlider(parent, "bar_rows", nil, nil, 1, 15, 1, true, L_GUI_THREAT_ROWS)
