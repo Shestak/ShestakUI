@@ -58,7 +58,9 @@ local function Update(object, _, unit)
 	if auraName then -- If an aura is found, display it and set the time left!
 		object.AuraTracker.icon:SetTexture(auraIcon)
 		object.AuraTracker.timeleft = auraExpTime - GetTime()
-		object.AuraTracker.active = true
+		if object.AuraTracker.timeleft > 0 then
+			object.AuraTracker.active = true
+		end
 	elseif not auraName then -- No aura found and one is shown? Kill it since it's no longer active!
 		object.AuraTracker.icon:SetTexture("")
 		object.AuraTracker.text:SetText("")
