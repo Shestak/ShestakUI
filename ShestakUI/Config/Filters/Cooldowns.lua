@@ -11,7 +11,7 @@ if C.raidcooldown.enable == true then
 		{20484, 600},	-- Rebirth
 		{61999, 600},	-- Raise Ally
 		{20707, 600},	-- Soulstone
-		{265116, 600},	-- Unstable Temporal Time Shifter
+		{345130, 600},	-- Disposable Spectrophasic Reanimator
 		-- Heroism
 		{32182, 300},	-- Heroism
 		{2825, 300},	-- Bloodlust
@@ -44,6 +44,11 @@ if C.raidcooldown.enable == true then
 	}
 
 	if #C.raidcooldown.spells_list > 0 then
+		-- Sync spell list with new changes
+		if not C.options.raidcooldown.spells_list_ver or C.options.raidcooldown.spells_list_ver < 2 then
+			tinsert(C.raidcooldown.spells_list, {345130, 600})
+			C.options.raidcooldown.spells_list_ver = 2
+		end
 		T.raid_spells = C.raidcooldown.spells_list
 	else
 		if C.options.raidcooldown and C.options.raidcooldown.spells_list then

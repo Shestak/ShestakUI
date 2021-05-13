@@ -10,6 +10,7 @@ C.filger.ignore_spells_list = {}
 C.raidframe.plugins_aura_watch_list = {}
 C.announcements.spells_list = {}
 C.raidcooldown.spells_list = {}
+C.raidcooldown.spells_list_ver = 1
 C.enemycooldown.spells_list = {}
 C.enemycooldown.spells_list_ver = 1
 C.nameplate.debuffs_list = {}
