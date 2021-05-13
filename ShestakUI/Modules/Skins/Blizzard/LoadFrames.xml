@@ -74,6 +74,7 @@
 	<Script file="Scrapping.lua"/>
 	<Script file="Soulbinds.lua"/>
 	<Script file="SpellBook.lua"/>
+	<Script file="Subscription.lua"/>
 	<Script file="Tabard.lua"/>
 	<Script file="Talent.lua"/>
 	<Script file="TalkingHead.lua"/>
