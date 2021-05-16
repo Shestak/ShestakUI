@@ -8,6 +8,7 @@ local function LoadSkin()
 	local frame = _G.PlayerChoiceFrame
 
 	hooksecurefunc(frame, "Update", function()
+		if InCombatLockdown() then return end
 		if not frame.IsSkinned then
 			frame.BlackBackground:SetAlpha(0)
 			frame.Background:SetAlpha(0)
