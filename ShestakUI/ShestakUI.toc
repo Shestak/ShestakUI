@@ -2,7 +2,7 @@
 ## Title: ShestakUI
 ## Notes: A total UI overhaul for World of Warcraft
 ## Author: Shestak
-## Version: 8.20
+## Version: 8.21
 ## OptionalDeps: Blizzard_CombatText, ShestakUI_Config, ShestakUI_Profile, AtlasLoot, cargBags, Clique, epgp, Grid, Grid2, ls_Toasts, Mapster, Omen, OPie, PitBull4, Postal, Prat-3.0, Quartz, Recount, Rematch, ShadowedUnitFrames, TidyPlates, TipTac, TipTacTalents, tullaCC, VuhDo, WeakAuras
 ## SavedVariables: ShestakUISettings, ShestakUIStats, ShestakUIBindings, ShestakUICurrency, ShestakUIPositions
 ## SavedVariablesPerCharacter: ShestakUISettingsPerChar, ShestakUIChatHistory
