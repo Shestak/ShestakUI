@@ -8,7 +8,6 @@ local function LoadSkin()
 	local frame = _G.PlayerChoiceFrame
 
 	hooksecurefunc(frame, "Update", function()
-		if InCombatLockdown() then return end
 		if not frame.IsSkinned then
 			frame.BlackBackground:SetAlpha(0)
 			frame.Background:SetAlpha(0)
@@ -22,7 +21,12 @@ local function LoadSkin()
 
 			T.SkinCloseButton(frame.CloseButton)
 			frame.CloseButton.Border:SetAlpha(0)
-			frame.CloseButton.SetPoint = T.dummy
+
+			hooksecurefunc(frame.CloseButton, "SetPoint", function(self, point, anchor, attachTo, x, y)
+				if x ~= -4 then
+					self:SetPoint(point, anchor, attachTo, -4, -4)
+				end
+			end)
 
 			frame.IsSkinned = true
 		end
