@@ -90,8 +90,6 @@ local function StyleNormalButton(button, size)
 			hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 			hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 			hotkey:SetWidth(C.actionbar.button_size - 1)
-			hotkey.ClearAllPoints = T.dummy
-			hotkey.SetPoint = T.dummy
 		else
 			hotkey:Kill()
 		end
@@ -157,8 +155,6 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 			hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 			hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 			hotkey:SetWidth(C.actionbar.button_size - 1)
-			hotkey.ClearAllPoints = T.dummy
-			hotkey.SetPoint = T.dummy
 		else
 			hotkey:Kill()
 		end
