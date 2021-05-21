@@ -231,7 +231,6 @@ if IsWetxius then
 	C["combattext"].crit_prefix = ""
 	C["combattext"].blizz_head_numbers = true
 	C["combattext"].dk_runes = false
-	C["combattext"].heal_treshold = UnitHealthMax("player")/100
 	C["bag"].ilvl = true
 	C["bag"].new_items = true
 	C["minimap"].toggle_menu = false
@@ -268,17 +267,19 @@ if IsWetxius then
 	C["position"].bank = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 20}
 	C["position"].auto_button = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 33, 83}
 	C["position"].unitframes.arena = {"BOTTOMRIGHT", UIParent, "RIGHT", -55, -70}
+	C["position"].stance_bar = {"TOPRIGHT", "ActionBarAnchor", "TOPLEFT", -3, 0}
 
 	local frame = CreateFrame("Frame")
 	frame:RegisterEvent("PLAYER_LOGIN")
 	frame:SetScript("OnEvent", function()
 		xCT3:SetPoint("CENTER", 0, 305)
 		xCT3:SetWidth(400)
+		C["combattext"].heal_treshold = UnitHealthMax("player")/100
 	end)
 
 	T.CustomFilgerSpell = {
-		{"P_PROC_ICON", {spellID = 328908, unitID = "player", caster = "player", filter = "BUFF"}}, -- Combat Meditation
-		{"P_PROC_ICON", {spellID = 26573, filter = "ICD", trigger = "NONE", totem = true}}, -- Consecration
+		{"P_PROC_ICON", {spellID = 328908, unitID = "player", caster = "player", filter = "BUFF"}}, -- Combat Meditation {Kyrian)
+		{"P_PROC_ICON", {spellID = 26573, filter = "ICD", trigger = "NONE", totem = true}}, 		-- Consecration
 	}
 end
 
