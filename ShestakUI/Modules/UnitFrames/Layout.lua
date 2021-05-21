@@ -1099,7 +1099,7 @@ local function Shared(self, unit)
 		if unit ~= "arena" or unit ~= "arenatarget" or unit ~= "boss" then
 			self.Fader = {
 				[1] = {Combat = 1, Arena = 1, Instance = 1},
-				[2] = {PlayerTarget = 1, PlayerNotMaxHealth = 1, PlayerNotMaxMana = 1},
+				[2] = {PlayerTarget = 1, PlayerNotMaxHealth = 1, PlayerNotMaxMana = 1, Casting = 1},
 				[3] = {Stealth = 0.5},
 				[4] = {notCombat = 0, PlayerTaxi = 0},
 			}
