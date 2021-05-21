@@ -84,9 +84,6 @@ L_MAP_COORDS = "Coordinate"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendario"
-L_MINIMAP_HEAL_LAYOUT = "Click-Sinistro - Disposizione da Guaritore"
-L_MINIMAP_DPS_LAYOUT = "Click-Destro - Disposizione d'Assaltatore"
-L_MINIMAP_BLIZZ_LAYOUT = "Click-Centrale - Disposizione Blizzard"
 L_MINIMAP_FARM = "Minimap size" -- Need review
 L_MINIMAP_TOGGLE = "Toggle action bars" -- Need review
 
@@ -174,7 +171,6 @@ L_INFO_SKIN_DISABLED2 = " è disabilitato."
 L_POPUP_INSTALLUI = "È la prima volta che utilizzi la ShestakUI con questo personaggio. Devi riavviare l'interfaccia utente per configurarla."
 L_POPUP_RESETUI = "Vuoi davvero ripristinare tutte le impostazioni iniziali della ShestakUI?"
 L_POPUP_RESETSTATS = "Vuoi davvero riazzerare tutte le statistiche relative a tempo trascorso in gioco e oro?"
-L_POPUP_SWITCH_RAID = "Scegli la disposizione per le incursioni."
 L_POPUP_DISBAND_RAID = "Vuoi davvero sciogliere il gruppo?"
 L_POPUP_DISABLEUI = "A questa risoluzione la ShestakUI non funziona correttamente, vuoi disabilitare l'AddOn (clicca 'Cancella' se vuoi provare con un'altra risoluzione)?"
 L_POPUP_SETTINGS_ALL = "Applica le impostazioni per tutte le AddOns (DBM, BigWigs, Skada e MSBT)?"
@@ -281,8 +277,6 @@ L_SLASHCMD_HELP = {
 	"/teleport - Teletrasporto dalle spedizioni casuali.",
 	"/ss - Passa da una specializzazione dei talenti all'altra",
 	"/tt - Sussurra al bersaglio.",
-	"/heal - Passa alla configurazione 'guaritori'.",
-	"/dps - Passa alla configurazione 'assaltatori'.",
 	"/farmmode - Incrementa le dimensioni della minimappa.",
 	"/resetui - Ripristina le impostazioni generali iniziali.",
 	"/resetuf - Riporta i riquadri delle unità alla loro posizione originaria.",

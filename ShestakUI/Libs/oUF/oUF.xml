@@ -50,7 +50,6 @@
 	<Script file="Modules\GCD.lua"/>
 	<Script file="Modules\HarmonyOrbs.lua"/>
 	<Script file="Modules\HolyPower.lua"/>
-	<Script file="Modules\MovableFrames.lua"/>
 	<Script file="Modules\QuestIcon.lua"/>
 	<Script file="Modules\RaidDebuffs.lua"/>
 	<Script file="Modules\Reputation.lua"/>

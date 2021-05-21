@@ -478,6 +478,10 @@ local DropDownText = {
 	["SCENARIO"] = L.automation_auto_collapse_scenario,
 	["DYNAMIC"] = L.raidframe_auto_position_dynamic,
 	["STATIC"] = L.raidframe_auto_position_static,
+	["HEAL"] = L.raidframe_heal_layout,
+	["DPS"] = L.raidframe_dps_layout,
+	["AUTO"] = L.raidframe_auto_layout,
+	["BLIZZARD"] = "Blizzard",
 }
 
 ns.CreateDropDown = function(parent, option, needsReload, text, tableValue, LSM, isFont)

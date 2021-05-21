@@ -158,6 +158,7 @@ L_GUI_UF_PLUGINS_HOLY_BAR = "Activer la barre de Puissance sacrée"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Activier la barre de Fragment d'âme"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Activer la barre de Rune"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Activer la barre de Totem"
+L.unitframe_class_bar_totem_other = "Enable Totem bar for other classes" -- Need review
 
 -- Raid Frames options
 L_GUI_UF_RAIDFRAMES_SUBTEXT = "Customize the appearance of the raid frames." -- Need review
@@ -166,6 +167,10 @@ L_GUI_UF_AGGRO_BORDER = "Aggro signalée en bordure"
 L_GUI_UF_DEFICIT_HEALTH = "Déficit en vie du raid"
 L_GUI_UF_SHOW_PARTY = "Afficher les barres du groupe"
 L_GUI_UF_SHOW_RAID = "Afficher les barres du raid"
+L.raidframe_layout = "Raid layout" -- Needs review
+L.raidframe_heal_layout = "Heal" -- Needs review
+L.raidframe_dps_layout = "DPS" -- Needs review
+L.raidframe_auto_layout = "Auto" -- Needs review
 L.raidframe_show_target = "Show target frames" -- Needs review
 L.raidframe_show_pet = "Show pet frames" -- Needs review
 L.raidframe_vertical_health = "Orientation vertical des barres de vie"

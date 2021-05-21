@@ -286,7 +286,7 @@ end
 --	Default position of ShestakUI unitframes
 ----------------------------------------------------------------------------------------
 oUF:Factory(function(self)
-	if ShestakUISettings == nil or ShestakUISettings.RaidLayout ~= "DPS" then return end
+	if C.raidframe.layout ~= "DPS" and C.raidframe.layout ~= "AUTO" then return end
 
 	oUF:RegisterStyle("ShestakDPS", Shared)
 	oUF:SetActiveStyle("ShestakDPS")
@@ -310,7 +310,8 @@ oUF:Factory(function(self)
 			"yOffset", T.Scale(28),
 			"point", "BOTTOM"
 		)
-		party:SetPoint(unpack(C.position.unitframes.party_dps))
+		_G["PartyDPSAnchor"]:SetSize(T.Scale(party_width), T.Scale(party_height) * 5 + T.Scale(28) * 4)
+		party:SetPoint("BOTTOMLEFT", _G["PartyDPSAnchor"])
 
 		-- Party targets
 		if C.raidframe.show_target then
@@ -333,12 +334,13 @@ oUF:Factory(function(self)
 				"yOffset", T.Scale(28),
 				"point", "BOTTOM"
 			)
-			partytarget:SetPoint("TOPLEFT", party, "TOPRIGHT", 7, 0)
+			_G["PartyTargetDPSAnchor"]:SetSize(T.Scale(partytarget_width), T.Scale(partytarget_height) * 5 + T.Scale(28) * 4)
+			partytarget:SetPoint("BOTTOMLEFT", _G["PartyTargetDPSAnchor"])
 		end
 
 		-- Party pets
 		if C.raidframe.show_pet then
-			local partypet = self:SpawnHeader("oUF_PartyPet", nil, "custom [@raid6,exists] hide;show",
+			local partypet = self:SpawnHeader("oUF_PartyPetDPS", nil, "custom [@raid6,exists] hide;show",
 				"oUF-initialConfigFunction", [[
 					local header = self:GetParent()
 					self:SetWidth(header:GetAttribute("initial-width"))
@@ -358,8 +360,8 @@ oUF:Factory(function(self)
 				"yOffset", T.Scale(28),
 				"point", "BOTTOM"
 			)
-
-			partypet:SetPoint("BOTTOMLEFT", party, "BOTTOMRIGHT", partytarget_width + 14, 0)
+			_G["PartyPetDPSAnchor"]:SetSize(T.Scale(partytarget_width), T.Scale(partytarget_height) * 5 + T.Scale(28) * 4)
+			partypet:SetPoint("BOTTOMLEFT", _G["PartyPetDPSAnchor"])
 		end
 	end
 
@@ -388,11 +390,14 @@ oUF:Factory(function(self)
 				"columnAnchorPoint", "TOP"
 			)
 			if i == 1 then
-				raidgroup:SetPoint(unpack(C.position.unitframes.raid_dps))
+				_G["RaidDPSAnchor"..i]:SetPoint(unpack(C.position.unitframes.raid_dps))
+				raidgroup:SetPoint("TOPLEFT", _G["RaidDPSAnchor"..i])
 			elseif i == 5 then
-				raidgroup:SetPoint("TOPLEFT", raid[1], "TOPRIGHT", 7, 0)
+				_G["RaidDPSAnchor"..i]:SetPoint("TOPLEFT", _G["RaidDPSAnchor1"], "TOPRIGHT", 7, 0)
+				raidgroup:SetPoint("TOPLEFT", _G["RaidDPSAnchor"..i])
 			else
-				raidgroup:SetPoint("TOPLEFT", raid[i-1], "BOTTOMLEFT", 0, -7)
+				_G["RaidDPSAnchor"..i]:SetPoint("TOPLEFT", _G["RaidDPSAnchor"..i-1], "BOTTOMLEFT", 0, -7)
+				raidgroup:SetPoint("TOPLEFT", _G["RaidDPSAnchor"..i])
 			end
 			raid[i] = raidgroup
 		end
@@ -400,7 +405,7 @@ oUF:Factory(function(self)
 
 	if C.raidframe.raid_tanks == true then
 		-- Tanks
-		local raidtank = self:SpawnHeader("oUF_MainTank", nil, "raid",
+		local raidtank = self:SpawnHeader("oUF_MainTankDPS", nil, "raid",
 			"oUF-initialConfigFunction", ([[
 				self:SetWidth(%d)
 				self:SetHeight(%d)
@@ -410,10 +415,113 @@ oUF:Factory(function(self)
 			"groupFilter", "MAINTANK",
 			"template", C.raidframe.raid_tanks_tt and "oUF_MainTankTT" or "oUF_MainTank"
 		)
-		if C.actionbar.split_bars then
-			raidtank:SetPoint(C.position.unitframes.tank[1], SplitBarRight, C.position.unitframes.tank[3], C.position.unitframes.tank[4], C.position.unitframes.tank[5])
-		else
-			raidtank:SetPoint(unpack(C.position.unitframes.tank))
-		end
+		_G["RaidTankDPSAnchor"]:SetSize(tank_width, tank_height)
+		raidtank:SetPoint("TOPLEFT", _G["RaidTankDPSAnchor"])
 	end
 end)
+
+-- Create anchors
+for i = 1, C.raidframe.raid_groups do
+	local raid = CreateFrame("Frame", "RaidDPSAnchor"..i, UIParent)
+	raid:SetSize(raid_width, T.Scale(raid_height) * 5 + T.Scale(7) * 4)
+end
+
+local party = CreateFrame("Frame", "PartyDPSAnchor", UIParent)
+party:SetPoint(unpack(C.position.unitframes.party_dps))
+
+local party_target = CreateFrame("Frame", "PartyTargetDPSAnchor", UIParent)
+party_target:SetPoint("TOPLEFT", party, "TOPRIGHT", 7, 0)
+
+local party_pet = CreateFrame("Frame", "PartyPetDPSAnchor", UIParent)
+party_pet:SetPoint("BOTTOMLEFT", party, "BOTTOMRIGHT", partytarget_width + 14, 0)
+
+local raidtank = CreateFrame("Frame", "RaidTankDPSAnchor", UIParent)
+if C.actionbar.split_bars then
+	raidtank:SetPoint(C.position.unitframes.tank[1], SplitBarRight, C.position.unitframes.tank[3], C.position.unitframes.tank[4], C.position.unitframes.tank[5])
+else
+	raidtank:SetPoint(unpack(C.position.unitframes.tank))
+end
+
+----------------------------------------------------------------------------------------
+--	Auto change raid frame layout
+----------------------------------------------------------------------------------------
+if C.raidframe.layout == "AUTO" then
+	local function CheckSpec(self, event, unit)
+		if event == "PLAYER_SPECIALIZATION_CHANGED" and unit ~= "player" then return end
+		if (T.class == "DRUID" and GetSpecialization() == 4) or (T.class == "MONK" and GetSpecialization() == 2) or (T.class == "PALADIN" and GetSpecialization() == 1) or (T.class == "PRIEST" and GetSpecialization() ~= 3) or (T.class == "SHAMAN" and GetSpecialization() == 3) then
+			-- Disable DPS
+			for _, party in pairs({oUF_PartyDPS, oUF_PartyTargetDPS, oUF_PartyPetDPS}) do
+				party:SetAttribute("showSolo", false)
+				party:SetAttribute("showParty", false)
+				party:SetAttribute("showRaid", false)
+			end
+
+			for i = 1, C.raidframe.raid_groups do
+				if _G["oUF_RaidDPS"..i] then
+					_G["oUF_RaidDPS"..i]:SetAttribute("showRaid", false)
+				end
+			end
+
+			if oUF_MainTankDPS then
+				oUF_MainTankDPS:SetAttribute("showRaid", false)
+			end
+
+			-- Enable Heal
+			for _, party in pairs({oUF_Party, oUF_PartyTarget, oUF_PartyPet}) do
+				party:SetAttribute("showSolo", C.raidframe.solo_mode)
+				party:SetAttribute("showParty", true)
+				party:SetAttribute("showRaid", true)
+			end
+
+			for i = 1, C.raidframe.raid_groups do
+				if _G["oUF_RaidHeal"..i] then
+					_G["oUF_RaidHeal"..i]:SetAttribute("showRaid", true)
+				end
+			end
+
+			if oUF_MainTank then
+				oUF_MainTank:SetAttribute("showRaid", true)
+			end
+		else
+			-- Enable DPS
+			for _, party in pairs({oUF_PartyDPS, oUF_PartyTargetDPS, oUF_PartyPetDPS}) do
+				party:SetAttribute("showSolo", C.raidframe.solo_mode)
+				party:SetAttribute("showParty", true)
+				party:SetAttribute("showRaid", true)
+			end
+
+			for i = 1, C.raidframe.raid_groups do
+				if _G["oUF_RaidDPS"..i] then
+					_G["oUF_RaidDPS"..i]:SetAttribute("showRaid", true)
+				end
+			end
+
+			if oUF_MainTankDPS then
+				oUF_MainTankDPS:SetAttribute("showRaid", true)
+			end
+
+			-- Disable Heal
+			for _, party in pairs({oUF_Party, oUF_PartyTarget, oUF_PartyPet}) do
+				party:SetAttribute("showSolo", false)
+				party:SetAttribute("showParty", false)
+				party:SetAttribute("showRaid", false)
+			end
+
+			for i = 1, C.raidframe.raid_groups do
+				if _G["oUF_RaidHeal"..i] then
+					_G["oUF_RaidHeal"..i]:SetAttribute("showRaid", false)
+				end
+			end
+
+			if oUF_MainTank then
+				oUF_MainTank:SetAttribute("showRaid", false)
+			end
+		end
+		self:UnregisterEvent("PLAYER_ENTERING_WORLD")
+	end
+
+	local frame = CreateFrame("Frame")
+	frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+	frame:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
+	frame:SetScript("OnEvent", CheckSpec)
+end

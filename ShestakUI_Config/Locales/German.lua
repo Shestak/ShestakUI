@@ -158,6 +158,7 @@ L_GUI_UF_PLUGINS_HOLY_BAR = "Aktivere Heilige Kraft Leiste"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Aktiviere Splitter Leiste"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Runenleiste"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Totemleiste"
+L.unitframe_class_bar_totem_other = "Enable Totem bar for other classes" -- Need review
 
 -- Raid Frames options
 L_GUI_UF_RAIDFRAMES_SUBTEXT = "Anpassen des Aussehens der Raid Frames."
@@ -166,6 +167,10 @@ L_GUI_UF_AGGRO_BORDER = "Rahmen bei Bedrohung"
 L_GUI_UF_DEFICIT_HEALTH = "Fehlendes Leben im Raid"
 L_GUI_UF_SHOW_PARTY = "Zeige Gruppenfenster"
 L_GUI_UF_SHOW_RAID = "Zeige Raidfenster"
+L.raidframe_layout = "Raid layout" -- Needs review
+L.raidframe_heal_layout = "Heal" -- Needs review
+L.raidframe_dps_layout = "DPS" -- Needs review
+L.raidframe_auto_layout = "Auto" -- Needs review
 L.raidframe_show_target = "Show target frames" -- Needs review
 L.raidframe_show_pet = "Show pet frames" -- Needs review
 L.raidframe_vertical_health = "Vertikale Orientierung für Lebensbalken"

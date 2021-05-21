@@ -12,7 +12,7 @@ frame:SetScript("OnEvent", function(_, _, addon)
 		end
 	end
 
-	if C.unitframe.enable and (ShestakUISettings and (ShestakUISettings.RaidLayout == "HEAL" or ShestakUISettings.RaidLayout == "DPS")) then
+	if C.unitframe.enable and C.raidframe.layout ~= "BLIZZARD" then
 		InterfaceOptionsFrameCategoriesButton10:SetScale(0.00001)
 		InterfaceOptionsFrameCategoriesButton10:SetAlpha(0)
 		if not InCombatLockdown() then

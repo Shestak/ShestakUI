@@ -84,9 +84,6 @@ L_MAP_COORDS = "Coordonnées"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendrier"
-L_MINIMAP_HEAL_LAYOUT = "Clic-Gauche - Interface Heal"
-L_MINIMAP_DPS_LAYOUT = "Clic-Droit - Interface DPS"
-L_MINIMAP_BLIZZ_LAYOUT = "Clic-Centre - Interface Blizzard"
 L_MINIMAP_FARM = "Minimap size" -- Need review
 L_MINIMAP_TOGGLE = "Toggle action bars" -- Need review
 
@@ -174,7 +171,6 @@ L_INFO_SKIN_DISABLED2 = " est désactivé."
 L_POPUP_INSTALLUI = "Première utilisation de ShestakUI avec ce personnage. Vous devez recharger l'interface utilisateur pour le configurer."
 L_POPUP_RESETUI = "Etes-vous sûr de vouloir réinitialiser ShestakUI ?"
 L_POPUP_RESETSTATS = "Réinitialiser les statistiques pour le temps passé dans le jeu ?"
-L_POPUP_SWITCH_RAID = "Sélectionner une interface raid."
 L_POPUP_DISBAND_RAID = "Etes-vous sûr de vouloir dissoudre le groupe ?"
 L_POPUP_DISABLEUI = "ShestakUI ne fonctionne pas avec cette résolution, voulez-vous désactiver ShestakUI ? (Annuler si vous souhaitez essayer une autre résolution)"
 L_POPUP_SETTINGS_ALL = "Voulez-vous appliquer les modifications pour tout ? (DBM, BigWigs, Skada et MSBT)"
@@ -281,8 +277,6 @@ L_SLASHCMD_HELP = {
 	"/teleport - Téléportation dans le donjon aléatoire en cours.",
 	"/ss - Bascule d'une spécialisation talent à l'autre.",
 	"/tt - Chuchote à la cible.",
-	"/heal - Bascule vers l'interface 'Heal'.",
-	"/dps - Bascule sur l'interface 'DPS'.",
 	"/farmmode - Agrandi la taille de la minimap.",
 	"/resetui - Remet les paramètres généraux à leurs valeurs par défaut.",
 	"/resetuf - Remet les cadres d'unité à leur position par défaut.",

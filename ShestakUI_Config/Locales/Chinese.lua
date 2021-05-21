@@ -158,6 +158,7 @@ L_GUI_UF_PLUGINS_HOLY_BAR = "圣光能量"
 L_GUI_UF_PLUGINS_SHARD_BAR = "灵魂碎片"
 L_GUI_UF_PLUGINS_RUNE_BAR = "符文"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "图腾"
+L.unitframe_class_bar_totem_other = "Enable Totem bar for other classes" -- Need review
 
 -- Raid Frames options
 L_GUI_UF_RAIDFRAMES_SUBTEXT = "定制队伍/团队框架"
@@ -166,6 +167,10 @@ L_GUI_UF_AGGRO_BORDER = "边框按仇恨值着色"
 L_GUI_UF_DEFICIT_HEALTH = "团队生命值亏减模式"
 L_GUI_UF_SHOW_PARTY = "队伍框架"
 L_GUI_UF_SHOW_RAID = "团队框架"
+L.raidframe_layout = "Raid layout" -- Needs review
+L.raidframe_heal_layout = "Heal" -- Needs review
+L.raidframe_dps_layout = "DPS" -- Needs review
+L.raidframe_auto_layout = "Auto" -- Needs review
 L.raidframe_show_target = "目标框架"
 L.raidframe_show_pet = "宠物框架"
 L.raidframe_vertical_health = "垂直显示团队框架生命值"

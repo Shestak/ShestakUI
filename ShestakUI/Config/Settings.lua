@@ -154,7 +154,8 @@ C["unitframe_class_bar"] = {
 	["holy"] = true,							-- Holy Power bar
 	["shard"] = true,							-- Shard/Burning bar
 	["rune"] = true,							-- Rune bar
-	["totem"] = true,							-- Totem bar
+	["totem"] = true,							-- Totem bar for Shaman
+	["totem_other"] = true,						-- Totem bar for other classes
 }
 
 ----------------------------------------------------------------------------------------
@@ -162,6 +163,7 @@ C["unitframe_class_bar"] = {
 ----------------------------------------------------------------------------------------
 C["raidframe"] = {
 	-- Main
+	["layout"] = "HEAL",						-- Raid layout (HEAL, DPS, AUTO, BLIZZARD)
 	["show_party"] = true,						-- Show party frames
 	["show_raid"] = true,						-- Show raid frames
 	["show_target"] = true,						-- Show target frames
@@ -226,8 +228,8 @@ C["aura"] = {
 	["boss_buffs"] = true,						-- Buffs on boss frame
 	["player_aura_only"] = false,				-- Only your debuff on target frame
 	["debuff_color_type"] = true,				-- Color debuff by type
-	["cast_by"] = false,						-- Show who cast a buff/debuff in its tooltip
 	["classcolor_border"] = false,				-- Enable classcolor border for player buffs
+	["cast_by"] = false,						-- Show who cast a buff/debuff in its tooltip
 }
 
 ----------------------------------------------------------------------------------------
@@ -392,30 +394,30 @@ C["combattext"] = {
 	["blizz_head_numbers"] = false,				-- Use blizzard damage/healing output (above mob/player head)
 	["damage_style"] = true,					-- Change default damage/healing font above mobs/player heads (you need to restart WoW to see changes)
 	["damage"] = true,							-- Show outgoing damage
-	["healing"] = true,							-- Show outgoing healing
-	["incoming"] = true,						-- Show incoming damage and healing
-	["show_hots"] = true,						-- Show periodic healing effects in healing frame
-	["show_overhealing"] = true,				-- Show outgoing overhealing
 	["pet_damage"] = true,						-- Show your pet damage
 	["dot_damage"] = true,						-- Show damage from your dots
+	["healing"] = true,							-- Show outgoing healing
+	["show_hots"] = true,						-- Show periodic healing effects in healing frame
+	["show_overhealing"] = true,				-- Show outgoing overhealing
+	["incoming"] = true,						-- Show incoming damage and healing
 	["damage_color"] = true,					-- Display damage numbers depending on school of magic
-	["crit_prefix"] = "*",						-- Symbol that will be added before crit
-	["crit_postfix"] = "*",						-- Symbol that will be added after crit
-	["icons"] = true,							-- Show outgoing damage icons
-	["icon_size"] = 16,							-- Icon size of spells in outgoing damage frame, also has effect on dmg font size
-	["treshold"] = 1,							-- Minimum damage to show in damage frame
-	["heal_treshold"] = 1,						-- Minimum healing to show in incoming/outgoing healing messages
-	["scrollable"] = false,						-- Allows you to scroll frame lines with mousewheel
-	["max_lines"] = 15,							-- Max lines to keep in scrollable mode (more lines = more memory)
-	["time_visible"] = 3,						-- Time (seconds) a single message will be visible
-	["dk_runes"] = true,						-- Show deathknight rune recharge
-	["killingblow"] = false,					-- Tells you about your killingblows
-	["merge_aoe_spam"] = true,					-- Merges multiple aoe damage spam into single message
-	["merge_melee"] = true,						-- Merges multiple auto attack damage spam
 	["dispel"] = true,							-- Tells you about your dispels (works only with ["damage"] = true)
 	["interrupt"] = true,						-- Tells you about your interrupts (works only with ["damage"] = true)
-	["direction"] = true,						-- Change scrolling direction from bottom to top
+	["icons"] = true,							-- Show outgoing damage icons
+	["icon_size"] = 16,							-- Icon size of spells in outgoing damage frame, also has effect on dmg font size
+	["max_lines"] = 15,							-- Max lines to keep in scrollable mode (more lines = more memory)
+	["time_visible"] = 3,						-- Time (seconds) a single message will be visible
 	["short_numbers"] = true,					-- Use short numbers ("25.3k" instead of "25342")
+	["merge_aoe_spam"] = true,					-- Merges multiple aoe damage spam into single message
+	["merge_melee"] = true,						-- Merges multiple auto attack damage spam
+	["direction"] = true,						-- Change scrolling direction from bottom to top
+	["dk_runes"] = true,						-- Show Death Knight rune recharge
+	["killingblow"] = false,					-- Tells you about your killingblows
+	["scrollable"] = false,						-- Allows you to scroll frame lines with mousewheel
+	["crit_prefix"] = "*",						-- Symbol that will be added before crit
+	["crit_postfix"] = "*",						-- Symbol that will be added after crit
+	["treshold"] = 1,							-- Minimum damage to show in damage frame
+	["heal_treshold"] = 1,						-- Minimum healing to show in incoming/outgoing healing messages
 }
 
 ----------------------------------------------------------------------------------------

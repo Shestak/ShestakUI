@@ -191,26 +191,6 @@ SLASH_DBMTEST1 = "/dbmtest"
 SLASH_DBMTEST2 = "/виьеуые"
 
 ----------------------------------------------------------------------------------------
---	Switch to Heal layout
-----------------------------------------------------------------------------------------
-SlashCmdList.HEAL = function()
-	ShestakUISettings.RaidLayout = "HEAL"
-	ReloadUI()
-end
-SLASH_HEAL1 = "/heal"
-SLASH_HEAL2 = "/руфд"
-
-----------------------------------------------------------------------------------------
---	Switch to DPS layout
-----------------------------------------------------------------------------------------
-SlashCmdList.DPS = function()
-	ShestakUISettings.RaidLayout = "DPS"
-	ReloadUI()
-end
-SLASH_DPS1 = "/dps"
-SLASH_DPS2 = "/взы"
-
-----------------------------------------------------------------------------------------
 --	Command to show frame you currently have mouseovered
 ----------------------------------------------------------------------------------------
 SlashCmdList.FRAME = function(arg)

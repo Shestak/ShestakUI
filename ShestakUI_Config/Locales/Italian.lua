@@ -158,6 +158,7 @@ L_GUI_UF_PLUGINS_HOLY_BAR = "Attiva la barra di classe del paladino"
 L_GUI_UF_PLUGINS_SHARD_BAR = "Attiva la barra di classe dello stregone"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Attiva la barra di classe del cavaliere della morte"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Attiva la barra dei totems dello sciamano"
+L.unitframe_class_bar_totem_other = "Enable Totem bar for other classes" -- Need review
 
 -- Raid Frames options
 L_GUI_UF_RAIDFRAMES_SUBTEXT = "Customize the appearance of the raid frames." -- Need review
@@ -166,6 +167,10 @@ L_GUI_UF_AGGRO_BORDER = "Cambio di colore dei bordi in base al grado di aggressi
 L_GUI_UF_DEFICIT_HEALTH = "Deficit salute in incursione"
 L_GUI_UF_SHOW_PARTY = "Mostra i riquadri del gruppo"
 L_GUI_UF_SHOW_RAID = "Mostra i riquadri d'incursione"
+L.raidframe_layout = "Raid layout" -- Needs review
+L.raidframe_heal_layout = "Heal" -- Needs review
+L.raidframe_dps_layout = "DPS" -- Needs review
+L.raidframe_auto_layout = "Auto" -- Needs review
 L.raidframe_show_target = "Show target frames" -- Needs review
 L.raidframe_show_pet = "Show pet frames" -- Needs review
 L.raidframe_vertical_health = "Orientamento verticale della salute"

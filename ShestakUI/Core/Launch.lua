@@ -90,11 +90,7 @@ local function InstallUI()
 	ShestakUISettingsPerChar.RightBars = C.actionbar.rightbars
 	ShestakUISettingsPerChar.BottomBars = C.actionbar.bottombars
 
-	if ShestakUISettings.RaidLayout ~= "UNKNOWN" then
-		ReloadUI()
-	else
-		StaticPopup_Show("SWITCH_RAID")
-	end
+	ReloadUI()
 end
 
 local function DisableUI()
@@ -110,8 +106,7 @@ StaticPopupDialogs.INSTALL_UI = {
 	button1 = ACCEPT,
 	button2 = CANCEL,
 	OnAccept = InstallUI,
-	OnCancel = function() ShestakUISettingsPerChar.Install = false
-	if ShestakUISettings.RaidLayout == "UNKNOWN" then StaticPopup_Show("SWITCH_RAID") end end,
+	OnCancel = function() ShestakUISettingsPerChar.Install = false end,
 	timeout = 0,
 	whileDead = 1,
 	hideOnEscape = false,
@@ -155,20 +150,6 @@ StaticPopupDialogs.RESET_STATS = {
 	preferredIndex = 5,
 }
 
-StaticPopupDialogs.SWITCH_RAID = {
-	text = L_POPUP_SWITCH_RAID,
-	button1 = DAMAGER,
-	button2 = HEALER,
-	button3 = "Blizzard",
-	OnAccept = function() ShestakUISettings.RaidLayout = "DPS" ReloadUI() end,
-	OnCancel = function() ShestakUISettings.RaidLayout = "HEAL" ReloadUI() end,
-	OnAlt = function() ShestakUISettings.RaidLayout = "NONE" ReloadUI() end,
-	timeout = 0,
-	whileDead = 1,
-	hideOnEscape = false,
-	preferredIndex = 5,
-}
-
 SLASH_CONFIGURE1 = "/resetui"
 SlashCmdList.CONFIGURE = function() StaticPopup_Show("RESET_UI") end
 
@@ -183,52 +164,10 @@ OnLogon:RegisterEvent("PLAYER_ENTERING_WORLD")
 OnLogon:SetScript("OnEvent", function(self)
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
 
-	-- TODO delete old variable
-	if SavedOptions then
-		ShestakUISettings = SavedOptions
-		SavedOptions = nil
-	end
-
-	if SavedStats then
-		ShestakUIStats = SavedStats
-		SavedStats = nil
-	end
-
-	if SavedBindings then
-		ShestakUIBindings = SavedBindings
-		SavedBindings = nil
-	end
-
-	if SavedCurrency then
-		ShestakUICurrency = SavedCurrency
-		SavedCurrency = nil
-	end
-
-	if ShestakUISettings == nil then ShestakUISettings = {} end
-	if not ShestakUISettings.Migrated then
-		if SavedOptionsPerChar then
-			if SavedOptionsPerChar.UFPos then
-				SavedPositions.UFPos = SavedOptionsPerChar.UFPos
-				SavedOptionsPerChar.UFPos = nil
-				StaticPopup_Show("INSTALL_UI")
-			end
-			ShestakUISettingsPerChar = SavedOptionsPerChar
-			SavedOptionsPerChar = nil
-		end
-
-		if SavedPositions then
-			ShestakUIPositions = SavedPositions
-			SavedPositions = nil
-		end
-
-		ShestakUISettings.Migrated = true
-	end
-
 	-- Create empty CVar if they doesn't exist
 	if ShestakUISettings == nil then ShestakUISettings = {} end
 	if ShestakUIPositions == nil then ShestakUIPositions = {} end
 	if ShestakUISettingsPerChar == nil then ShestakUISettingsPerChar = {} end
-	if ShestakUISettings.RaidLayout == nil then ShestakUISettings.RaidLayout = "UNKNOWN" end
 	if ShestakUISettingsPerChar.FogOfWar == nil then ShestakUISettingsPerChar.FogOfWar = true end
 	if ShestakUISettingsPerChar.Coords == nil then ShestakUISettingsPerChar.Coords = true end
 	if ShestakUISettingsPerChar.Archaeology == nil then ShestakUISettingsPerChar.Archaeology = false end
@@ -258,10 +197,6 @@ OnLogon:SetScript("OnEvent", function(self)
 		if not ShestakUISettingsPerChar.Install then
 			StaticPopup_Show("INSTALL_UI")
 		end
-	end
-
-	if ShestakUISettings.RaidLayout == "UNKNOWN" and ShestakUISettingsPerChar.Install then
-		StaticPopup_Show("SWITCH_RAID")
 	end
 
 	-- Welcome message

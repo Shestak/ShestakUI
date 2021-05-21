@@ -84,9 +84,6 @@ L_MAP_COORDS = "坐标"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "日历"
-L_MINIMAP_HEAL_LAYOUT = "左鍵 - HPS 布局"
-L_MINIMAP_DPS_LAYOUT = "右键 - DPS 布局"
-L_MINIMAP_BLIZZ_LAYOUT = "中键 - 暴雪 布局"
 L_MINIMAP_FARM = "小地图缩放"
 L_MINIMAP_TOGGLE = "动作条自由折叠"
 
@@ -174,7 +171,6 @@ L_INFO_SKIN_DISABLED2 = " 已禁用"
 L_POPUP_INSTALLUI = "该角色首次使用ShestakUI，你必须重新加载UI来配置。"
 L_POPUP_RESETUI = "你确定要重新加载ShestakUI?"
 L_POPUP_RESETSTATS = "你确定要重置所有角色游戏时间和金币的统计数据?"
-L_POPUP_SWITCH_RAID = "选择团队布局"
 L_POPUP_DISBAND_RAID = "你确定要解散团队?"
 L_POPUP_DISABLEUI = "ShestakUI不支持此分辨率，是否停用ShestakUI? (若要尝试其他分辨率请按取消)"
 L_POPUP_SETTINGS_ALL = "套用所有插件设置?(DBM/BigWigs/Skada/MSBT)"
@@ -281,8 +277,6 @@ L_SLASHCMD_HELP = {
 	"/teleport - 传送随机副本",
 	"/ss - 切换天赋",
 	"/tt - 密语当前目标",
-	"/heal - 载入HPS布局",
-	"/dps - 载入DPS布局",
 	"/farmmode - 开启/关闭小地图采集模式",
 	"/resetui - 重置一般设置到初始值",
 	"/resetuf - 重置头像框架到初始位置",

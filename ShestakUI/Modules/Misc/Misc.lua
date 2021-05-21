@@ -191,7 +191,7 @@ if C.misc.hide_raid_button == true then
 
 	HideRaid:RegisterEvent("PLAYER_LOGIN")
 	HideRaid:SetScript("OnEvent", function(self)
-		if C.unitframe.enable == true and ShestakUISettings and ShestakUISettings.RaidLayout == "DPS" then
+		if C.unitframe.enable == true and C.raidframe.layout == "DPS" then
 			self:Show()
 		end
 	end)
