@@ -657,13 +657,14 @@ T.CreateAuraTimer = function(self, elapsed)
 	end
 end
 
-T.PostUpdateIcon = function(_, unit, button, _, _, duration, expiration, debuffType, isStealable)
-	local playerUnits = {
-		player = true,
-		pet = true,
-		vehicle = true,
-	}
 
+local playerUnits = {
+	player = true,
+	pet = true,
+	vehicle = true,
+}
+
+T.PostUpdateIcon = function(_, unit, button, _, _, duration, expiration, debuffType, isStealable)
 	if button.isDebuff then
 		if not UnitIsFriend("player", unit) and not playerUnits[button.caster] then
 			if not C.aura.player_aura_only then
@@ -704,11 +705,6 @@ end
 T.CustomFilter = function(_, unit, button, _, _, _, _, _, _, caster)
 	if C.aura.player_aura_only then
 		if button.isDebuff then
-			local playerUnits = {
-				player = true,
-				pet = true,
-				vehicle = true,
-			}
 			if not UnitIsFriend("player", unit) and not playerUnits[caster] then
 				return false
 			end
@@ -719,11 +715,6 @@ end
 
 T.CustomFilterBoss = function(_, unit, button, name, _, _, _, _, _, caster)
 	if button.isDebuff then
-		local playerUnits = {
-			player = true,
-			pet = true,
-			vehicle = true,
-		}
 		if (playerUnits[caster] or caster == unit) then
 			if (T.DebuffBlackList and not T.DebuffBlackList[name]) or not T.DebuffBlackList then
 				return true
