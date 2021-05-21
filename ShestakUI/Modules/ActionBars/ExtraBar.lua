@@ -74,7 +74,6 @@ button.Count:SetPoint("BOTTOMRIGHT", 0, 1)
 button.Count:SetJustifyH("RIGHT")
 
 button:SetAttribute("showgrid", 1)
-button:SetAttribute("statehidden", true)
 
 ------------------------------------------------------------------------------------------
 --	Skin ZoneAbilityFrame
