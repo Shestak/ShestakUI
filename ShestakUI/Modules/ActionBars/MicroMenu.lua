@@ -7,88 +7,58 @@ if C.actionbar.enable ~= true or C.actionbar.micromenu ~= true then return end
 local frame = CreateFrame("Frame", "MicroAnchor", T_PetBattleFrameHider)
 frame:SetPoint(unpack(C.position.micro_menu))
 frame:SetSize(284, 30)
-frame.shown = false
 
 UpdateMicroButtonsParent(frame)
 if C.actionbar.micromenu_mouseover == true then frame:SetAlpha(0) end
 
-local function CheckFade()
-	local mouseactive
-	for _, button in pairs(MICRO_BUTTONS) do
-		local b = _G[button]
-		if b.mouseover == true then
-			mouseactive = true
-		end
-	end
-
-	if C.actionbar.micromenu_mouseover ~= true then return end
-
-	if frame.mouseover == true then
-		mouseactive = true
-		if GameTooltip:IsShown() then
-			GameTooltip:Hide()
-		end
-	end
-
-	if mouseactive == true then
-		if frame.shown ~= true then
-			frame:SetAlpha(1)
-			frame.shown = true
-		end
-	else
-		if frame.shown == true then
-			frame:SetAlpha(0)
-			frame.shown = false
-		end
-	end
-end
-frame:SetScript("OnUpdate", CheckFade)
-
 for _, button in pairs(MICRO_BUTTONS) do
-	local m = _G[button]
-	local pushed = m:GetPushedTexture()
-	local normal = m:GetNormalTexture()
-	local disabled = m:GetDisabledTexture()
+	local bu = _G[button]
+	local normal = bu:GetNormalTexture()
+	local pushed = bu:GetPushedTexture()
+	local disabled = bu:GetDisabledTexture()
 
-	m:SetParent(frame)
-	m.SetParent = T.dummy
+	bu:SetParent(frame)
+	bu.SetParent = T.dummy
 	_G[button.."Flash"]:SetTexture("")
-	m:SetHighlightTexture("")
-	m.SetHighlightTexture = T.dummy
+	bu:SetHighlightTexture("")
+	bu.SetHighlightTexture = T.dummy
 
-	local f = CreateFrame("Frame", nil, m)
+	local f = CreateFrame("Frame", nil, bu)
 	f:SetFrameLevel(1)
 	f:SetFrameStrata("BACKGROUND")
-	f:SetPoint("BOTTOMLEFT", m, "BOTTOMLEFT", 2, 0)
-	f:SetPoint("TOPRIGHT", m, "TOPRIGHT", -2, -6)
+	f:SetPoint("BOTTOMLEFT", bu, "BOTTOMLEFT", 2, 0)
+	f:SetPoint("TOPRIGHT", bu, "TOPRIGHT", -2, -6)
 	f:SetTemplate("Default")
-	m.frame = f
-
-	pushed:SetTexCoord(0.22, 0.81, 0.26, 0.82)
-	pushed:ClearAllPoints()
-	pushed:SetPoint("TOPLEFT", m.frame, "TOPLEFT", 2, -2)
-	pushed:SetPoint("BOTTOMRIGHT", m.frame, "BOTTOMRIGHT", -2, 2)
+	bu.frame = f
 
 	normal:SetTexCoord(0.22, 0.81, 0.26, 0.82)
 	normal:ClearAllPoints()
-	normal:SetPoint("TOPLEFT", m.frame, "TOPLEFT", 2, -2)
-	normal:SetPoint("BOTTOMRIGHT", m.frame, "BOTTOMRIGHT", -2, 2)
+	normal:SetPoint("TOPLEFT", f, "TOPLEFT", 2, -2)
+	normal:SetPoint("BOTTOMRIGHT", f, "BOTTOMRIGHT", -2, 2)
+
+	pushed:SetTexCoord(0.22, 0.81, 0.26, 0.82)
+	pushed:ClearAllPoints()
+	pushed:SetPoint("TOPLEFT", f, "TOPLEFT", 2, -2)
+	pushed:SetPoint("BOTTOMRIGHT", f, "BOTTOMRIGHT", -2, 2)
 
 	if disabled then
 		disabled:SetTexCoord(0.22, 0.81, 0.26, 0.82)
 		disabled:ClearAllPoints()
-		disabled:SetPoint("TOPLEFT", m.frame, "TOPLEFT", 2, -2)
-		disabled:SetPoint("BOTTOMRIGHT", m.frame, "BOTTOMRIGHT", -2, 2)
+		disabled:SetPoint("TOPLEFT", f, "TOPLEFT", 2, -2)
+		disabled:SetPoint("BOTTOMRIGHT", f, "BOTTOMRIGHT", -2, 2)
 	end
 
-	m.mouseover = false
-	m:HookScript("OnEnter", function(self)
+	bu:HookScript("OnEnter", function(self)
 		self.frame:SetBackdropBorderColor(unpack(C.media.classborder_color))
-		self.mouseover = true
+		if C.actionbar.micromenu_mouseover then
+			frame:SetAlpha(1)
+		end
 	end)
-	m:HookScript("OnLeave", function(self)
+	bu:HookScript("OnLeave", function(self)
 		self.frame:SetBackdropBorderColor(unpack(C.media.border_color))
-		self.mouseover = false
+		if C.actionbar.micromenu_mouseover then
+			frame:SetAlpha(0)
+		end
 	end)
 end
 
