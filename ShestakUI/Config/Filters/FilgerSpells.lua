@@ -1294,8 +1294,6 @@ C["filger_spells"] = {
 			{spellID = 115750, filter = "CD"},
 			-- Holy Avenger
 			{spellID = 105809, filter = "CD"},
-			-- Holy Wrath
-			{spellID = 210220, filter = "CD"},
 			-- Aura Mastery
 			{spellID = 31821, filter = "CD"},
 			-- Blessing of Sacrifice
@@ -2753,8 +2751,6 @@ C["filger_spells"] = {
 			{spellID = 108978, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Temporal Shield
 			{spellID = 198111, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Evanesce
-			{spellID = 157913, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Evocation
 			{spellID = 12051, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
@@ -2886,8 +2882,6 @@ C["filger_spells"] = {
 			{spellID = 114052, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Ethereal Form
 			{spellID = 210918, unitID = "target", caster = "all", filter = "BUFF"},
-			-- Spirit Link
-			{spellID = 204293, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
 			-- Hex
 			{spellID = 51514, unitID = "target", caster = "all", filter = "DEBUFF"},
