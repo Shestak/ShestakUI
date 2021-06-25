@@ -159,7 +159,8 @@ local function LoadSkin()
 		"RaidGraphics_SSAODropDown",
 		"RaidGraphics_DepthEffectsDropDown",
 		"RaidGraphics_LightingQualityDropDown",
-		"RaidGraphics_OutlineModeDropDown"
+		"RaidGraphics_OutlineModeDropDown",
+		"RaidGraphics_ComputeEffectsDropDown"
 	}
 
 	for i = 1, getn(dropdown) do
