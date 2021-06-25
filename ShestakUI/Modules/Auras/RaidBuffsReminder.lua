@@ -4,17 +4,15 @@ if C.reminder.raid_buffs_enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Raid buffs on player(by Elv22)
 ----------------------------------------------------------------------------------------
--- Locals
 local flaskbuffs = T.ReminderBuffs["Flask"]
 local battleelixirbuffs = T.ReminderBuffs["BattleElixir"]
 local guardianelixirbuffs = T.ReminderBuffs["GuardianElixir"]
 local foodbuffs = T.ReminderBuffs["Food"]
 local staminabuffs = T.ReminderBuffs["Stamina"]
 local custombuffs = T.ReminderBuffs["Custom"]
-local visible, flask, battleelixir, guardianelixir, food, stamina, spell4, custom
+local visible, flask, battleelixir, guardianelixir, food, stamina, spell4, custom, weapon, armor
 local playerBuff = {}
 
--- We need to check if you have two different elixirs before we say you're not flasked
 local function CheckElixir()
 	if #battleelixirbuffs > 0 then
 		for i = 1, #battleelixirbuffs do
@@ -54,9 +52,68 @@ local function CheckElixir()
 	end
 end
 
--- Main Script
+local function CheckWeaponBuff()
+	local weaponBuff = false
+	local weaponOffBuff = false
+	local hasMainHandEnchant, _, _, _, hasOffHandEnchant = GetWeaponEnchantInfo()
+	if hasMainHandEnchant then
+		weaponBuff = true
+	end
+	local OffhandHasWeapon = C_PaperDollInfo.OffhandHasWeapon()
+	if not OffhandHasWeapon or OffhandHasWeapon and hasOffHandEnchant then
+		weaponOffBuff = true
+	end
+
+	if weaponBuff == true and weaponOffBuff == true then
+		WeaponFrame:SetAlpha(C.reminder.raid_buffs_alpha)
+		weapon = true
+		return
+	else
+		WeaponFrame:SetAlpha(1)
+		weapon = false
+	end
+end
+
+local scanner = CreateFrame("GameTooltip", "ArmorScanningTooltip", nil, "GameTooltipTemplate")
+scanner:SetOwner(UIParent, "ANCHOR_NONE")
+
+local KitPattern = "(.+) %(%d+ .+%)$"
+if T.client == "zhTW" then
+    KitPattern = "%(%+%d+.+"
+elseif T.client == "zhCN" then
+    KitPattern = "%（%+%d+ .+"
+elseif T.client == "koKR" then
+    KitPattern = "%(.+ %+%d+%)"
+end
+
+local function CheckArmorBuff()
+	local armorBuff = false
+	local hasItem = scanner:SetInventoryItem("player", 5)
+	if hasItem then
+		for i = 2, scanner:NumLines() do
+			local tooltipLine = _G["ArmorScanningTooltipTextLeft"..i]
+			local text = tooltipLine:GetText()
+			if text and text ~= "" then
+				if text:find(KitPattern) then
+					armorBuff = true
+					break
+				end
+			end
+		end
+	end
+
+	if armorBuff == true then
+		ArmorFrame:SetAlpha(C.reminder.raid_buffs_alpha)
+		armor = true
+		return
+	else
+		ArmorFrame:SetAlpha(1)
+		armor = false
+	end
+end
+
 local function OnAuraChange(_, event, arg1)
-	if event == "UNIT_AURA" and arg1 ~= "player" then return end
+	if (event == "UNIT_AURA" or event == "UNIT_INVENTORY_CHANGED") and arg1 ~= "player" then return end
 
 	wipe(playerBuff)
 	local i = 1
@@ -102,6 +159,16 @@ local function OnAuraChange(_, event, arg1)
 			FoodFrame:SetAlpha(1)
 			food = false
 		end
+	end
+
+	do
+		WeaponFrame.t:SetTexture(463543)
+		CheckWeaponBuff()
+	end
+
+	do
+		ArmorFrame.t:SetTexture(3528447)
+		CheckArmorBuff()
 	end
 
 	for i = 1, #staminabuffs do
@@ -158,7 +225,7 @@ local function OnAuraChange(_, event, arg1)
 	if (not IsInGroup() or instanceType ~= "raid") and C.reminder.raid_buffs_always == false then
 		RaidBuffReminder:SetAlpha(0)
 		visible = false
-	elseif flask == true and food == true and stamina == true and spell4 == true and custom == true then
+	elseif flask == true and food == true and stamina == true and spell4 == true and custom == true and weapon == true and armor == true then
 		if not visible then
 			RaidBuffReminder:SetAlpha(0)
 			visible = false
@@ -188,6 +255,7 @@ raidbuff_reminder:RegisterEvent("UNIT_AURA")
 raidbuff_reminder:RegisterEvent("PLAYER_ENTERING_WORLD")
 raidbuff_reminder:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 raidbuff_reminder:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+raidbuff_reminder:RegisterEvent("UNIT_INVENTORY_CHANGED")
 raidbuff_reminder:SetScript("OnEvent", OnAuraChange)
 
 local line = math.ceil(C.minimap.size / (C.reminder.raid_buffs_size + 2))
@@ -195,9 +263,11 @@ local line = math.ceil(C.minimap.size / (C.reminder.raid_buffs_size + 2))
 local buffButtons = {
 	"FlaskFrame",
 	"FoodFrame",
+	"WeaponFrame",
+	"ArmorFrame",
 	"StaminaFrame",
 	"Spell4Frame",
-	"CustomFrame"
+	"CustomFrame",
 }
 
 for i = 1, #buffButtons do
