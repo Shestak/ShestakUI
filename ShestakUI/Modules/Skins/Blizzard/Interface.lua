@@ -36,7 +36,9 @@ local function LoadSkin()
 		"InterfaceOptionsFrameTab2",
 		"InterfaceOptionsSocialPanelTwitterLoginButton",
 		"InterfaceOptionsDisplayPanelResetTutorials",
-		"InterfaceOptionsSocialPanelRedockChat"
+		"InterfaceOptionsSocialPanelRedockChat",
+		"InterfaceOptionsAccessibilityPanelConfigureTextToSpeech",
+		"InterfaceOptionsAccessibilityPanelRemoteTextToSpeechVoicePlaySample"
 	}
 
 	for i = 1, getn(buttons) do
@@ -117,7 +119,11 @@ local function LoadSkin()
 		"AccessibilityPanelMovePad",
 		"AccessibilityPanelCinematicSubtitles",
 		"AccessibilityPanelColorblindMode",
-		"AccessibilityPanelOverrideFadeOut"
+		"AccessibilityPanelOverrideFadeOut",
+		"AccessibilityPanelQuestTextContrast",
+		"AccessibilityPanelSpeechToText",
+		"AccessibilityPanelTextToSpeech",
+		"AccessibilityPanelRemoteTextToSpeech"
 	}
 
 	for i = 1, getn(checkboxes) do
@@ -164,24 +170,25 @@ local function LoadSkin()
 	T.SkinCheckBox(CompactUnitFrameProfilesRaidStylePartyFrames)
 
 	local dropdown = {
-		"ControlsPanelAutoLootKeyDropDown",
-		"CombatPanelFocusCastKeyDropDown",
-		"CombatPanelSelfCastKeyDropDown",
-		"SocialPanelWhisperMode",
-		"SocialPanelTimestamps",
-		"SocialPanelChatStyle",
-		"ActionBarsPanelPickupActionKeyDropDown",
-		"NamesPanelNPCNamesDropDown",
-		"NamesPanelUnitNameplatesMotionDropDown",
-		"CameraPanelStyleDropDown",
-		"MousePanelClickMoveStyleDropDown",
 		"AccessibilityPanelColorFilterDropDown",
 		"AccessibilityPanelMotionSicknessDropdown",
+		"AccessibilityPanelRemoteTextToSpeechVoiceDropdown",
 		"AccessibilityPanelShakeIntensityDropdown",
+		"ActionBarsPanelPickupActionKeyDropDown",
+		"CameraPanelStyleDropDown",
+		"CombatPanelFocusCastKeyDropDown",
+		"CombatPanelSelfCastKeyDropDown",
+		"ControlsPanelAutoLootKeyDropDown",
+		"DisplayPanelChatBubblesDropDown",
+		"DisplayPanelDisplayDropDown",
 		"DisplayPanelOutlineDropDown",
 		"DisplayPanelSelfHighlightDropDown",
-		"DisplayPanelDisplayDropDown",
-		"DisplayPanelChatBubblesDropDown"
+		"MousePanelClickMoveStyleDropDown",
+		"NamesPanelNPCNamesDropDown",
+		"NamesPanelUnitNameplatesMotionDropDown",
+		"SocialPanelChatStyle",
+		"SocialPanelTimestamps",
+		"SocialPanelWhisperMode"
 	}
 
 	for i = 1, getn(dropdown) do
