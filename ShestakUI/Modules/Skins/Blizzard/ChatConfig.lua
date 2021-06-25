@@ -27,7 +27,8 @@ local function LoadSkin()
 		"CombatConfigMessageSourcesDoneBy",
 		"CombatConfigMessageSourcesDoneTo",
 		"CombatConfigColorsUnitColors",
-		"CombatConfigColorsHighlighting"
+		"CombatConfigColorsHighlighting",
+		"ChatConfigTextToSpeechChannelSettingsLeft"
 	}
 
 	for i = 1, getn(frames) do
@@ -116,42 +117,42 @@ local function LoadSkin()
 	end
 
 	hooksecurefunc("ChatConfig_CreateCheckboxes", function(frame, checkBoxTable, checkBoxTemplate)
-			if frame.styled then return end
+		if frame.styled then return end
 
-			local checkBoxNameString = frame:GetName().."CheckBox"
+		local checkBoxNameString = frame:GetName().."CheckBox"
 
-			if checkBoxTemplate == "ChatConfigCheckBoxTemplate" then
-				for index in ipairs(checkBoxTable) do
-					local checkBoxName = checkBoxNameString..index
-					local checkbox = _G[checkBoxName]
+		if checkBoxTemplate == "ChatConfigCheckBoxTemplate" or checkBoxTemplate == "ChatConfigCheckBoxSmallTemplate" then
+			for index in ipairs(checkBoxTable) do
+				local checkBoxName = checkBoxNameString..index
+				local checkbox = _G[checkBoxName]
 
-					local bg = CreateFrame("Frame", nil, checkbox)
-					bg:SetPoint("TOPLEFT", 2, -1)
-					bg:SetPoint("BOTTOMRIGHT", -2, 1)
-					bg:SetTemplate("Overlay")
+				local bg = CreateFrame("Frame", nil, checkbox)
+				bg:SetPoint("TOPLEFT", 2, -1)
+				bg:SetPoint("BOTTOMRIGHT", -2, 1)
+				bg:SetTemplate("Overlay")
 
-					T.SkinCheckBox(_G[checkBoxName.."Check"])
-				end
-			elseif checkBoxTemplate == "ChatConfigCheckBoxWithSwatchTemplate" or checkBoxTemplate == "ChatConfigWideCheckBoxWithSwatchTemplate" or checkBoxTemplate == "MovableChatConfigWideCheckBoxWithSwatchTemplate" then
-				for index in ipairs(checkBoxTable) do
-					local checkBoxName = checkBoxNameString..index
-					local checkbox = _G[checkBoxName]
-
-					checkbox:StripTextures()
-					local bg = CreateFrame("Frame", nil, checkbox)
-					bg:SetPoint("TOPLEFT", 2, -1)
-					bg:SetPoint("BOTTOMRIGHT", -2, 1)
-					bg:CreateBackdrop("Overlay")
-					bg.backdrop:SetAllPoints(bg)
-
-					ReskinColourSwatch(_G[checkBoxName.."ColorSwatch"])
-
-					T.SkinCheckBox(_G[checkBoxName.."Check"])
-				end
+				T.SkinCheckBox(_G[checkBoxName.."Check"])
 			end
+		elseif checkBoxTemplate == "ChatConfigCheckBoxWithSwatchTemplate" or checkBoxTemplate == "ChatConfigWideCheckBoxWithSwatchTemplate" or checkBoxTemplate == "MovableChatConfigWideCheckBoxWithSwatchTemplate" then
+			for index in ipairs(checkBoxTable) do
+				local checkBoxName = checkBoxNameString..index
+				local checkbox = _G[checkBoxName]
 
-			frame.styled = true
-		end)
+				checkbox:StripTextures()
+				local bg = CreateFrame("Frame", nil, checkbox)
+				bg:SetPoint("TOPLEFT", 2, -1)
+				bg:SetPoint("BOTTOMRIGHT", -2, 1)
+				bg:CreateBackdrop("Overlay")
+				bg.backdrop:SetAllPoints(bg)
+
+				ReskinColourSwatch(_G[checkBoxName.."ColorSwatch"])
+
+				T.SkinCheckBox(_G[checkBoxName.."Check"])
+			end
+		end
+
+		frame.styled = true
+	end)
 
 	hooksecurefunc("ChatConfig_CreateColorSwatches", function(frame, swatchTable)
 		if frame.styled then return end
@@ -267,6 +268,22 @@ local function LoadSkin()
 
 	T.SkinSlider(TextToSpeechFrameAdjustRateSlider)
 	T.SkinSlider(TextToSpeechFrameAdjustVolumeSlider)
+
+	hooksecurefunc("TextToSpeechFrame_UpdateMessageCheckboxes", function(frame)
+		local checkBoxTable = frame.checkBoxTable
+		if checkBoxTable then
+			local checkBoxNameString = frame:GetName().."CheckBox"
+			local checkBoxName, checkBox
+			for index, value in ipairs(checkBoxTable) do
+				checkBoxName = checkBoxNameString..index
+				checkBox = _G[checkBoxName]
+				if checkBox and not checkBox.styled then
+					T.SkinCheckBox(checkBox)
+					checkBox.styled = true
+				end
+			end
+		end
+	end)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
