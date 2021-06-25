@@ -244,6 +244,29 @@ local function LoadSkin()
 			end
 		end
 	end)
+
+	-- TextToSpeech
+	local checkBoxes = {
+		TextToSpeechFramePanelContainer.PlaySoundSeparatingChatLinesCheckButton,
+		TextToSpeechFramePanelContainer.AddCharacterNameToSpeechCheckButton,
+		TextToSpeechFramePanelContainer.PlayActivitySoundWhenNotFocusedCheckButton,
+		TextToSpeechFramePanelContainer.NarrateMyMessagesCheckButton,
+		TextToSpeechFramePanelContainer.UseAlternateVoiceForSystemMessagesCheckButton
+	}
+
+	for i = 1, #checkBoxes do
+		T.SkinCheckBox(checkBoxes[i])
+	end
+
+	TextToSpeechDefaultButton:SkinButton()
+	TextToSpeechFramePlaySampleButton:SkinButton()
+	TextToSpeechFramePlaySampleAlternateButton:SkinButton()
+
+	T.SkinDropDownBox(TextToSpeechFrameTtsVoiceDropdown)
+	T.SkinDropDownBox(TextToSpeechFrameTtsVoiceAlternateDropdown)
+
+	T.SkinSlider(TextToSpeechFrameAdjustRateSlider)
+	T.SkinSlider(TextToSpeechFrameAdjustVolumeSlider)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
