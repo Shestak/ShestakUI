@@ -409,14 +409,15 @@ local function LoadSkin()
 	end
 
 	local campaignColor = {
-		Bastion = {0.45, 0.4, 0.4},
-		Maldraxxus = {0.1, 0.3, 0.15},
-		Ardenweald = {0.15, 0.25, 0.35},
-		Revendreth = {0.25, 0.1, 0.1},
-		Kyrian = {0.45, 0.4, 0.4},
-		Necrolord = {0.1, 0.3, 0.15},
-		Fey = {0.15, 0.25, 0.35},
-		Venthyr = {0.25, 0.1, 0.1}
+		Bastion = {0.45, 0.4, 0.4, 1},
+		Maldraxxus = {0.1, 0.3, 0.15, 1},
+		Ardenweald = {0.15, 0.25, 0.35, 1},
+		Revendreth = {0.25, 0.1, 0.1, 1},
+		Kyrian = {0.45, 0.4, 0.4, 1},
+		Necrolord = {0.1, 0.3, 0.15, 1},
+		Fey = {0.15, 0.25, 0.35, 1},
+		Venthyr = {0.25, 0.1, 0.1, 1},
+		Shadowlands = {0.15, 0.2, 0.4, 1}
 	}
 
 	hooksecurefunc("QuestLogQuests_Update", function()

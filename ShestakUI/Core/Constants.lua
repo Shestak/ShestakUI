@@ -12,5 +12,4 @@ T.realm = GetRealmName()
 T.color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[T.class]
 T.version = GetAddOnMetadata("ShestakUI", "Version")
 T.screenWidth, T.screenHeight = GetPhysicalScreenSize()
-T.wowBuild = select(2, GetBuildInfo()); T.wowBuild = tonumber(T.wowBuild)
-T.beta = select(4, GetBuildInfo())
+T.newPatch = select(4, GetBuildInfo()) >= 90100

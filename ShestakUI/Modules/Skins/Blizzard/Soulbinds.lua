@@ -14,7 +14,9 @@ local function LoadSkin()
 
 	frame.CommitConduitsButton:SkinButton()
 	frame.ActivateSoulbindButton:SkinButton()
-	frame.ConduitList.BottomShadowContainer.BottomShadow:SetAlpha(0)
+	if not T.newPatch then
+		frame.ConduitList.BottomShadowContainer.BottomShadow:SetAlpha(0)
+	end
 
 	local function SkinConduitList(frame)
 		local header = frame.CategoryButton.Container
@@ -42,8 +44,26 @@ local function LoadSkin()
 		end
 	end
 
-	for i = 1, 3 do
-		hooksecurefunc(frame.ConduitList.ScrollBox.ScrollTarget.Lists[i], "UpdateLayout", SkinConduitList)
+	if T.newPatch then
+		local numChildrenStyled = 0
+		hooksecurefunc(SoulbindViewer.ConduitList.ScrollBox, "Update", function(self)
+			local numChildren = self.ScrollTarget:GetNumChildren()
+			if numChildren > numChildrenStyled then
+				for i = 1, numChildren do
+					local list = select(i, self.ScrollTarget:GetChildren())
+					if list and not list.hooked then
+						hooksecurefunc(list, "Layout", SkinConduitList)
+						list.hooked = true
+					end
+				end
+
+				numChildrenStyled = numChildren
+			end
+		end)
+	else
+		for i = 1, 3 do
+			hooksecurefunc(frame.ConduitList.ScrollBox.ScrollTarget.Lists[i], "UpdateLayout", SkinConduitList)
+		end
 	end
 end
 
