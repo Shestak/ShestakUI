@@ -501,8 +501,29 @@ local function LoadSkin()
 	WardrobeTransmogFrame.SpecButton:SetPoint("RIGHT", WardrobeTransmogFrame.ApplyButton, "LEFT", -2, 0)
 	WardrobeTransmogFrame.ModelScene.ClearAllPendingButton:SkinButton()
 
-	if WardrobeTransmogFrame.ModelScene.SlotButtons then -- TODO: need to fix 9.1
-		for i = 1, #WardrobeTransmogFrame.ModelScene.SlotButtons do
+	if T.newPatch then
+		T.SkinCheckBox(WardrobeTransmogFrame.ToggleSecondaryAppearanceCheckbox)
+		for i = 1, #WardrobeTransmogFrame.SlotButtons do
+			local slot = WardrobeTransmogFrame.SlotButtons[i]
+			local icon = slot.Icon
+			local border = slot.Border
+
+			if slot then
+				border:Kill()
+
+				slot:StyleButton()
+				slot:SetFrameLevel(slot:GetFrameLevel() + 2)
+				slot:CreateBackdrop("Default")
+				slot.backdrop:SetAllPoints()
+
+				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				icon:ClearAllPoints()
+				icon:SetPoint("TOPLEFT", 2, -2)
+				icon:SetPoint("BOTTOMRIGHT", -2, 2)
+			end
+		end
+	else
+		for i = 1, #WardrobeTransmogFrame.SlotButtons do
 			local slot = WardrobeTransmogFrame.ModelScene.SlotButtons[i]
 			local icon = slot.Icon
 			local border = slot.Border
