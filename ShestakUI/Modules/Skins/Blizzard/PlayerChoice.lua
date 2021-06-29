@@ -34,22 +34,22 @@ local function LoadSkin()
 			frame.CloseButton.Border:SetAlpha(0)
 		end
 
-		local IsInJailers = IsInJailersTower()
-		frame.backdrop:SetShown(not IsInJailers)
+		local IsAnima = PlayerChoiceToggleButton and PlayerChoiceToggleButton:IsShown()
+		frame.backdrop:SetShown(not IsAnima)
 
 		for option in self.optionPools:EnumerateActiveByTemplate(self.optionFrameTemplate) do
-			local hasArtworkBorderArt = option.ArtworkBorder and option.ArtworkBorder:IsShown()
+			local hasArtwork = option.ArtworkBorder and option.ArtworkBorder:IsShown()
 			option:CreateBackdrop("Overlay")
 			option.backdrop:SetPoint("TOPLEFT", -2, 20)
 			option.backdrop:SetPoint("BOTTOMRIGHT", 2, -8)
-			option.backdrop:SetShown(not IsInJailers and hasArtworkBorderArt)
+			option.backdrop:SetShown(not IsAnima and hasArtwork)
 
 			if option.Header.Ribbon then option.Header.Ribbon:SetAlpha(0) end
 			if option.Header.Contents then option.Header.Contents.Text:SetTextColor(1, .8, 0) end
 			option.OptionText:SetTextColor(1, 1, 1)
 
-			option.Background:SetShown(not hasArtworkBorderArt)
-			if IsInJailers then
+			option.Background:SetShown(not hasArtwork)
+			if IsAnima then
 				option.Background:Show()
 			end
 
@@ -62,7 +62,7 @@ local function LoadSkin()
 					option.ArtBackdrop:SetPoint("BOTTOMRIGHT", option.Artwork, 2, -2)
 					option.ArtBackdrop:SetTemplate("Default")
 				end
-				option.ArtBackdrop:SetShown(not IsInJailers and hasArtworkBorderArt)
+				option.ArtBackdrop:SetShown(not IsAnima and hasArtwork)
 				if PlayerChoiceFrame:IsLegacy() then -- Garrison
 					option.ArtBackdrop:Hide()
 				end
@@ -72,10 +72,10 @@ local function LoadSkin()
 			if buttonsContainer and buttonsContainer.buttonPool then
 				for button in buttonsContainer.buttonPool:EnumerateActive() do
 					if not button.isSkinned then
-						if IsInJailers then
+						if IsAnima then
 							button:StripTextures(true)
 						end
-						-- if i == 1 or (hasArtworkBorderArt and i == 2) then
+						-- if i == 1 or (hasArtwork and i == 2) then
 							button:SkinButton()
 						-- end
 						button.isSkinned = true
