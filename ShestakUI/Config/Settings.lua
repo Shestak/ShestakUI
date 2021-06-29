@@ -117,6 +117,7 @@ C["unitframe"] = {
 	-- Portraits
 	["portrait_enable"] = false,				-- Enable player/target portraits
 	["portrait_classcolor_border"] = true,		-- Enable classcolor border
+	["portrait_type"] = "3D",					-- Type of portraits (3D, 2D, ICONS, OVERLAY)
 	["portrait_height"] = 92,					-- Portrait height
 	["portrait_width"] = 67,					-- Portrait width
 	-- Plugins

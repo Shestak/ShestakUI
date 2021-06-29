@@ -32,7 +32,14 @@ local function Update(self, event, unit)
 				element:SetUnit(unit)
 			end
 		else
-			SetPortraitTexture(element, unit)
+			if element.classIcons then
+				local _, class = UnitClass(self.unit)
+				local texcoord = CLASS_ICON_TCOORDS[class]
+				element.Icon:SetTexCoord(texcoord[1] + 0.015, texcoord[2] - 0.02, texcoord[3] + 0.018, texcoord[4] - 0.02)
+			else
+				SetPortraitTexture(element.Icon, unit)
+				element.Icon:SetTexCoord(0.15, 0.85, 0.15, 0.85)
+			end
 		end
 
 		element.guid = guid
@@ -84,6 +91,10 @@ local function Enable(self, unit)
 		-- information we want.
 		if(unit == 'party') then
 			self:RegisterEvent('PARTY_MEMBER_ENABLE', Path)
+		end
+
+		if element.classIcons then
+			element.Icon:SetTexture("Interface\\WorldStateFrame\\Icons-Classes")
 		end
 
 		element:Show()

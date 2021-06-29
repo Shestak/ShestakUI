@@ -637,7 +637,11 @@ local function Shared(self, unit)
 
 	if unit == "player" or unit == "target" then
 		if C.unitframe.portrait_enable == true then
-			self.Portrait = CreateFrame("PlayerModel", self:GetName().."_Portrait", self)
+			if C.unitframe.portrait_type == "3D" or C.unitframe.portrait_type == "OVERLAY" then
+				self.Portrait = CreateFrame("PlayerModel", self:GetName().."_Portrait", self)
+			else
+				self.Portrait = CreateFrame("Frame", self:GetName().."_Portrait", self)
+			end
 			self.Portrait:SetHeight(C.unitframe.portrait_height)
 			self.Portrait:SetWidth(C.unitframe.portrait_width)
 			if unit == "player" then
@@ -646,8 +650,15 @@ local function Shared(self, unit)
 				self.Portrait:SetPoint(unpack(C.position.unitframes.target_portrait))
 			end
 
+			self.Portrait.Icon = self.Portrait:CreateTexture(nil, "ARTWORK")
+			self.Portrait.Icon:SetAllPoints()
+
+			if C.unitframe.portrait_type == "ICONS" then
+				self.Portrait.classIcons = true
+			end
+
 			self.Portrait:CreateBackdrop("Transparent")
-			self.Portrait.backdrop:SetPoint("TOPLEFT", -2 + T.mult, 2 + T.mult)
+			self.Portrait.backdrop:SetPoint("TOPLEFT", -2 - T.mult, 2 + T.mult)
 			self.Portrait.backdrop:SetPoint("BOTTOMRIGHT", 2 + T.mult, -2 - T.mult)
 
 			if C.unitframe.portrait_classcolor_border == true then
@@ -665,6 +676,23 @@ local function Shared(self, unit)
 						end
 					end)
 				end
+			end
+
+			if C.unitframe.portrait_type == "OVERLAY" then
+				local healthTex = self.Health:GetStatusBarTexture()
+				self.Portrait:ClearAllPoints()
+				self.Portrait:SetPoint("TOPLEFT", healthTex, "TOPLEFT", 0, 0)
+				self.Portrait:SetPoint("BOTTOMRIGHT", healthTex, "BOTTOMRIGHT", 0, 1)
+				self.Portrait:SetFrameLevel(self.Health:GetFrameLevel())
+				self.Portrait.backdrop:Hide()
+				self.Portrait:SetAlpha(0.5)
+
+				local frame = CreateFrame("Frame")
+				frame:RegisterEvent("PLAYER_LOGIN")
+				frame:SetScript("OnEvent", function()
+					T_DE_BUFF_BAR_Anchor:ClearAllPoints()
+					T_DE_BUFF_BAR_Anchor:SetPoint(C.position.filger.target_bar[1], C.position.filger.target_bar[2], C.position.filger.target_bar[3], C.position.filger.target_bar[4], C.position.filger.target_bar[5])
+				end)
 			end
 		end
 

@@ -156,6 +156,13 @@ local RaidTable = {
 	"BLIZZARD"
 }
 
+local PortraitTable = {
+	"3D",
+	"2D",
+	"ICONS",
+	"OVERLAY"
+}
+
 local TextureTable
 if LSM then
 	TextureTable = LSM:HashTable("statusbar")
@@ -1104,8 +1111,11 @@ do
 	local portrait_classcolor_border = ns.CreateCheckBox(parent, "portrait_classcolor_border", L_GUI_UF_PORTRAIT_CLASSCOLOR_BORDER)
 	portrait_classcolor_border:SetPoint("TOPLEFT", portrait_enable, "BOTTOMLEFT", 0, 0)
 
+	local portrait_type = ns.CreateDropDown(parent, "portrait_type", true, nil, PortraitTable)
+	portrait_type:SetPoint("TOPLEFT", portrait_classcolor_border, "BOTTOMLEFT", -16, -10)
+
 	local portrait_height = ns.CreateNumberSlider(parent, "portrait_height", nil, nil, 0, 190, 1, true, L_GUI_UF_PORTRAIT_HEIGHT)
-	portrait_height:SetPoint("TOPLEFT", portrait_classcolor_border, "BOTTOMLEFT", 0, -20)
+	portrait_height:SetPoint("TOPLEFT", portrait_type, "BOTTOMLEFT", 16, -16)
 
 	local portrait_width = ns.CreateNumberSlider(parent, "portrait_width", nil, nil, 0, 130, 1, true, L_GUI_UF_PORTRAIT_WIDTH)
 	portrait_width:SetPoint("LEFT", portrait_height, "RIGHT", 120, 0)
@@ -2252,8 +2262,12 @@ do
 	local pull_countdown = ns.CreateCheckBox(parent, "pull_countdown")
 	pull_countdown:SetPoint("TOPLEFT", drinking, "BOTTOMLEFT", 0, 0)
 
+	-- Self announce
+	local subheader = ns.addSubCategory(parent, L.announcements_subheader_self)
+	subheader:SetPoint("TOPLEFT", pull_countdown, "BOTTOMLEFT", 0, -10)
+
 	local bad_gear = ns.CreateCheckBox(parent, "bad_gear")
-	bad_gear:SetPoint("TOPLEFT", pull_countdown, "BOTTOMLEFT", 0, 0)
+	bad_gear:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -10)
 
 	local safari_hat = ns.CreateCheckBox(parent, "safari_hat")
 	safari_hat:SetPoint("TOPLEFT", bad_gear, "BOTTOMLEFT", 0, 0)

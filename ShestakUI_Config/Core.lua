@@ -484,6 +484,8 @@ local DropDownText = {
 	["DPS"] = L.raidframe_dps_layout,
 	["AUTO"] = L.raidframe_auto_layout,
 	["BLIZZARD"] = "Blizzard",
+	["ICONS"] = L.unitframe_portrait_type_icons,
+	["OVERLAY"] = L.unitframe_portrait_type_overlay,
 }
 
 ns.CreateDropDown = function(parent, option, needsReload, text, tableValue, LSM, isFont)
