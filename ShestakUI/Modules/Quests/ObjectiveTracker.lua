@@ -299,7 +299,7 @@ if C.automation.auto_collapse ~= "NONE" then
 					for i = 3, #headers do
 						local button = headers[i].Header.MinimizeButton
 						if button and not headers[i].collapsed then
-							button:Click()
+							-- button:Click() -- FIXME
 						end
 					end
 				else
@@ -310,7 +310,7 @@ if C.automation.auto_collapse ~= "NONE" then
 					for i = 3, #headers do
 						local button = headers[i].Header.MinimizeButton
 						if button and headers[i].collapsed then
-							button:Click()
+							-- button:Click()
 						end
 					end
 					if ObjectiveTrackerFrame.collapsed then
