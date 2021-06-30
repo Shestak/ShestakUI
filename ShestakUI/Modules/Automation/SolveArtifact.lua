@@ -36,15 +36,13 @@ local fragment = {
 	["384"] = 20,	-- Dwarf
 }
 
-local _CURRENCY = string.gsub(string.gsub(CURRENCY_GAINED_MULTIPLE, "%%s", "(.+)"), "%%d", "(.+)")
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("CHAT_MSG_CURRENCY")
-frame:SetScript("OnEvent", function(_, _, message)
-	local link = string.match(message, _CURRENCY)
-	if not link then return end
+frame:SetScript("OnEvent", function(_, _, msg)
+	local _, _, currencyID = string.find(msg, "currency:(%d+)");
+	if not currencyID then return end
 
-	local _, _, _, _, id = string.find(link, "|?c?f?f?(%x*)|?H?([^:]*):?(%d+):?(%d*):?(%d*):?(%d*):?(%d*):?(%d*):?(%-?%d*):?(%-?%d*):?(%d*):?(%d*)|?h?%[?([^%[%]]*)%]?|?h?|?r?")
-	local race = fragment[id]
+	local race = fragment[currencyID]
 	if race then
 		SetSelectedArtifact(race)
 
