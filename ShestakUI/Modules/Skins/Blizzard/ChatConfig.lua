@@ -247,45 +247,43 @@ local function LoadSkin()
 	end)
 
 	-- TextToSpeech
-	if T.newPatch then
-		local checkBoxes = {
-			TextToSpeechFramePanelContainer.PlaySoundSeparatingChatLinesCheckButton,
-			TextToSpeechFramePanelContainer.AddCharacterNameToSpeechCheckButton,
-			TextToSpeechFramePanelContainer.PlayActivitySoundWhenNotFocusedCheckButton,
-			TextToSpeechFramePanelContainer.NarrateMyMessagesCheckButton,
-			TextToSpeechFramePanelContainer.UseAlternateVoiceForSystemMessagesCheckButton
-		}
+	local checkBoxes = {
+		TextToSpeechFramePanelContainer.PlaySoundSeparatingChatLinesCheckButton,
+		TextToSpeechFramePanelContainer.AddCharacterNameToSpeechCheckButton,
+		TextToSpeechFramePanelContainer.PlayActivitySoundWhenNotFocusedCheckButton,
+		TextToSpeechFramePanelContainer.NarrateMyMessagesCheckButton,
+		TextToSpeechFramePanelContainer.UseAlternateVoiceForSystemMessagesCheckButton
+	}
 
-		for i = 1, #checkBoxes do
-			T.SkinCheckBox(checkBoxes[i])
-		end
+	for i = 1, #checkBoxes do
+		T.SkinCheckBox(checkBoxes[i])
+	end
 
-		TextToSpeechDefaultButton:SkinButton()
-		TextToSpeechFramePlaySampleButton:SkinButton()
-		TextToSpeechFramePlaySampleAlternateButton:SkinButton()
+	TextToSpeechDefaultButton:SkinButton()
+	TextToSpeechFramePlaySampleButton:SkinButton()
+	TextToSpeechFramePlaySampleAlternateButton:SkinButton()
 
-		T.SkinDropDownBox(TextToSpeechFrameTtsVoiceDropdown)
-		T.SkinDropDownBox(TextToSpeechFrameTtsVoiceAlternateDropdown)
+	T.SkinDropDownBox(TextToSpeechFrameTtsVoiceDropdown)
+	T.SkinDropDownBox(TextToSpeechFrameTtsVoiceAlternateDropdown)
 
-		T.SkinSlider(TextToSpeechFrameAdjustRateSlider)
-		T.SkinSlider(TextToSpeechFrameAdjustVolumeSlider)
+	T.SkinSlider(TextToSpeechFrameAdjustRateSlider)
+	T.SkinSlider(TextToSpeechFrameAdjustVolumeSlider)
 
-		hooksecurefunc("TextToSpeechFrame_UpdateMessageCheckboxes", function(frame)
-			local checkBoxTable = frame.checkBoxTable
-			if checkBoxTable then
-				local checkBoxNameString = frame:GetName().."CheckBox"
-				local checkBoxName, checkBox
-				for index, value in ipairs(checkBoxTable) do
-					checkBoxName = checkBoxNameString..index
-					checkBox = _G[checkBoxName]
-					if checkBox and not checkBox.styled then
-						T.SkinCheckBox(checkBox)
-						checkBox.styled = true
-					end
+	hooksecurefunc("TextToSpeechFrame_UpdateMessageCheckboxes", function(frame)
+		local checkBoxTable = frame.checkBoxTable
+		if checkBoxTable then
+			local checkBoxNameString = frame:GetName().."CheckBox"
+			local checkBoxName, checkBox
+			for index, value in ipairs(checkBoxTable) do
+				checkBoxName = checkBoxNameString..index
+				checkBox = _G[checkBoxName]
+				if checkBox and not checkBox.styled then
+					T.SkinCheckBox(checkBox)
+					checkBox.styled = true
 				end
 			end
-		end)
-	end
+		end
+	end)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

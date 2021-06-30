@@ -313,7 +313,7 @@ EventHandler:Register('GOSSIP_SHOW', function()
 		-- we want to auto-accept the dialogues from Darkmoon Faire NPCs
 		for index, info in next, C_GossipInfo.GetOptions() do
 			if info.name:find('FF008E8') then
-				-- TODO: see if there is something else than the color we can easily match with
+				-- See if there is something else than the color we can easily match with
 				C_GossipInfo.SelectOption(index)
 				return
 			end

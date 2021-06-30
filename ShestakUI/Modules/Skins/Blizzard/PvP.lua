@@ -234,24 +234,14 @@ local function LoadSkin()
 	NewSeasonPopup:SetFrameLevel(5)
 	NewSeasonPopup.NewSeason:SetTextColor(1, 0.8, 0)
 	NewSeasonPopup.NewSeason:SetShadowOffset(1, -1)
-	-- TODO: fix subheaders color
-	if NewSeasonPopup.SeasonDescription then
-		NewSeasonPopup.SeasonDescription:SetTextColor(1, 1, 1)
-		NewSeasonPopup.SeasonDescription:SetShadowOffset(1, -1)
-		NewSeasonPopup.SeasonDescription2:SetTextColor(1, 1, 1)
-		NewSeasonPopup.SeasonDescription2:SetShadowOffset(1, -1)
-		NewSeasonPopup.SeasonDescription2:SetWidth(400)
-	else
-		NewSeasonPopup.SeasonDescriptionHeader:SetTextColor(1, 1, 1)
-		NewSeasonPopup.SeasonDescriptionHeader:SetShadowOffset(1, -1)
-
-		NewSeasonPopup:HookScript("OnShow", function(self)
-			for _, text in pairs(self.SeasonDescriptions) do
-				text:SetTextColor(1, 1, 1)
-				text:SetShadowOffset(1, -1)
-			end
-		end)
-	end
+	NewSeasonPopup.SeasonDescriptionHeader:SetTextColor(1, 1, 1)
+	NewSeasonPopup.SeasonDescriptionHeader:SetShadowOffset(1, -1)
+	NewSeasonPopup:HookScript("OnShow", function(self)
+		for _, text in pairs(self.SeasonDescriptions) do
+			text:SetTextColor(1, 1, 1)
+			text:SetShadowOffset(1, -1)
+		end
+	end)
 	NewSeasonPopup.SeasonRewardText:SetTextColor(1, 0.8, 0)
 	NewSeasonPopup.SeasonRewardText:SetShadowOffset(1, -1)
 

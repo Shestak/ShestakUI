@@ -84,10 +84,6 @@ local function LoadSkin()
 	end
 
 	T.SkinCheckBox(QuickKeybindFrame.characterSpecificButton)
-
-	if QuickKeybindFrame.phantomExtraActionButton then -- TODO: detele after 9.1
-		QuickKeybindFrame.phantomExtraActionButton:SetAllPoints(ExtraActionButton1)
-	end
 end
 
 T.SkinFuncs["Blizzard_BindingUI"] = LoadSkin

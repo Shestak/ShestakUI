@@ -26,9 +26,6 @@ local function LoadSkin()
 
 		-- Background
 		frame.Background:SetTexture(nil)
-		if frame.OldAchievement then -- TODO: delete after 9.1
-			frame.OldAchievement:Kill()
-		end
 		frame.glow:Kill()
 		frame.shine:Kill()
 		frame.GuildBanner:Kill()
