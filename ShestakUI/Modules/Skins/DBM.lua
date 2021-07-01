@@ -54,13 +54,18 @@ DBMSkin:SetScript("OnEvent", function()
 							tbar:SetBackdrop(backdrop)
 							tbar:SetBackdropColor(bar.color.r, bar.color.g, bar.color.b, 0.15)
 						else
-							tbar:SetStatusBarColor(bar.owner.options.StartColorR, bar.owner.options.StartColorG, bar.owner.options.StartColorB)
+							tbar:SetStatusBarColor(DBT.Options.StartColorR, DBT.Options.StartColorG, DBT.Options.StartColorB)
 							tbar:SetBackdrop(backdrop)
-							tbar:SetBackdropColor(bar.owner.options.StartColorR, bar.owner.options.StartColorG, bar.owner.options.StartColorB, 0.15)
+							tbar:SetBackdropColor(DBT.Options.StartColorR, DBT.Options.StartColorG, DBT.Options.StartColorB, 0.15)
 						end
 
-						if bar.enlarged then frame:SetWidth(bar.owner.options.HugeWidth) else frame:SetWidth(bar.owner.options.Width) end
-						if bar.enlarged then tbar:SetWidth(bar.owner.options.HugeWidth) else tbar:SetWidth(bar.owner.options.Width) end
+						if bar.enlarged then
+							frame:SetWidth(DBT.Options.HugeWidth)
+							tbar:SetWidth(DBT.Options.HugeWidth)
+						else
+							frame:SetWidth(DBT.Options.Width)
+							tbar:SetWidth(DBT.Options.Width)
+						end
 
 						if not frame.styled then
 							frame:SetScale(1)
@@ -119,8 +124,8 @@ DBMSkin:SetScript("OnEvent", function()
 							timer.styled = true
 						end
 
-						if bar.owner.options.IconLeft then icon1:Show() icon1.overlay:Show() else icon1:Hide() icon1.overlay:Hide() end
-						if bar.owner.options.IconRight then icon2:Show() icon2.overlay:Show() else icon2:Hide() icon2.overlay:Hide() end
+						if DBT.Options.IconLeft then icon1:Show() icon1.overlay:Show() else icon1:Hide() icon1.overlay:Hide() end
+						if DBT.Options.IconRight then icon2:Show() icon2.overlay:Show() else icon2:Hide() icon2.overlay:Hide() end
 						tbar:SetAlpha(1)
 						frame:SetAlpha(1)
 						frame:Show()
@@ -128,24 +133,6 @@ DBMSkin:SetScript("OnEvent", function()
 						bar.injected = true
 					end
 					bar:ApplyStyle()
-					--FIXME bar.ApplyPosition = function()
-						-- if C.unitframe.enable ~= true or C.skins.dbm_movable == true then return end
-						-- self.mainAnchor:ClearAllPoints()
-						-- if C.unitframe.portrait_enable == true then
-							-- if bar.owner.options.IconRight then
-								-- self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(138 + C.unitframe.portrait_width), -69)
-							-- else
-								-- self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -(110 + C.unitframe.portrait_width), -69)
-							-- end
-						-- else
-							-- if bar.owner.options.IconRight then
-								-- self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -131, -69)
-							-- else
-								-- self.mainAnchor:SetPoint("BOTTOMRIGHT", "oUF_Player", "BOTTOMLEFT", -103, -69)
-							-- end
-						-- end
-					-- end
-					-- bar:ApplyPosition()
 				end
 			end
 		end

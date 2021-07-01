@@ -81,7 +81,6 @@ L_GUI_SKINS_SUBTEXT = "Change the appearance of the standard interface." -- Need
 L_GUI_SKINS_BLIZZARD = "Attiva il restyling dei riquadri Blizzard"
 L_GUI_SKINS_MINIMAP_BUTTONS = "Attiva il restyling dei pulsanti delle AddOns sulla minimappa"
 L_GUI_SKINS_SUBHEADER = "Stylization of addons" -- Need review
-L_GUI_SKINS_DBM_MOVABLE = "Consenti di poter spostare le barre di DBM"
 L.skins_minimap_buttons_mouseover = "Addons icons on mouseover" -- Need review
 
 -- Unit Frames options

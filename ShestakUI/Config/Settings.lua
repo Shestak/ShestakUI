@@ -60,7 +60,6 @@ C["skins"] = {
 	["clique"] = false,							-- Clique skin
 	["cool_line"] = false,						-- CoolLine skin
 	["dbm"] = false,							-- DBM skin
-	["dbm_movable"] = false,					-- Allow to move DBM bars
 	["details"] = false,						-- Details skin
 	["dominos"] = false,						-- Dominos skin
 	["flyout_button"] = false,					-- FlyoutButtonCustom skin

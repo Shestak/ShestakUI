@@ -81,7 +81,6 @@ L_GUI_SKINS_SUBTEXT = "Изменение внешнего вида станда
 L_GUI_SKINS_BLIZZARD = "Стилизация элементов интерфейса Blizzard"
 L_GUI_SKINS_MINIMAP_BUTTONS = "Стилизация кнопок модификаций у миникарты"
 L_GUI_SKINS_SUBHEADER = "Стилизация сторонних модификаций"
-L_GUI_SKINS_DBM_MOVABLE = "Позволить перемещать таймеры DBM"
 L.skins_minimap_buttons_mouseover = "Кнопки по наведению курсора"
 
 -- Unit Frames options

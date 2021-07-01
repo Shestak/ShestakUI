@@ -951,13 +951,8 @@ do
 	local dbm = ns.CreateCheckBox(parent, "dbm", L_GUI_SKINS_DBM)
 	dbm:SetPoint("TOPLEFT", clique, "BOTTOMLEFT", 0, 0)
 
-	local dbm_movable = ns.CreateCheckBox(parent, "dbm_movable", L_GUI_SKINS_DBM_MOVABLE)
-	dbm_movable:SetPoint("TOPLEFT", dbm, "BOTTOMLEFT", 20, 0)
-
-	dbm.children = {dbm_movable}
-
 	local details = ns.CreateCheckBox(parent, "details", L_GUI_SKINS_DETAILS)
-	details:SetPoint("TOPLEFT", dbm_movable, "BOTTOMLEFT", -20, 0)
+	details:SetPoint("TOPLEFT", dbm, "BOTTOMLEFT", -20, 0)
 
 	local dominos = ns.CreateCheckBox(parent, "dominos", L_GUI_SKINS_DOMINOS)
 	dominos:SetPoint("LEFT", details, "RIGHT", 320, 0)

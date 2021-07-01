@@ -81,7 +81,6 @@ L_GUI_SKINS_SUBTEXT = "对游戏默认界面和单体插件界面进行美化"
 L_GUI_SKINS_BLIZZARD = "美化暴雪默认界面"
 L_GUI_SKINS_MINIMAP_BUTTONS = "小地图插件图标"
 L_GUI_SKINS_SUBHEADER = "单体插件"
-L_GUI_SKINS_DBM_MOVABLE = "允许移动DBM计时条"
 L.skins_minimap_buttons_mouseover = "鼠标悬停显示插件图标"
 
 -- Unit Frames options

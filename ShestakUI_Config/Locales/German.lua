@@ -81,7 +81,6 @@ L_GUI_SKINS_SUBTEXT = "Ändert das Erscheinungsbild der Standard UI."
 L_GUI_SKINS_BLIZZARD = "Aktiviere Styles für Blizzardfenster"
 L_GUI_SKINS_MINIMAP_BUTTONS = "Aktiviere styling Addonincons an der Minimap"
 L_GUI_SKINS_SUBHEADER = "Design/Skins für Addons"
-L_GUI_SKINS_DBM_MOVABLE = "Erlaube das bewegen der DBM Leisten"
 L.skins_minimap_buttons_mouseover = "Addons-Symbole bei Mouseover"
 
 -- Unit Frames options
