@@ -449,16 +449,6 @@ ScenarioStageBlock:HookScript("OnEnter", function(self)
 	end
 end)
 
-do
-	if IsFramePositionedLeft(ObjectiveTrackerFrame) then
-		local list = ScenarioBlocksFrame.MawBuffsBlock.Container.List
-		if list then
-			list:ClearAllPoints()
-			list:SetPoint("TOPLEFT", ScenarioBlocksFrame.MawBuffsBlock.Container, "TOPRIGHT", 15, 0)
-		end
-	end
-end
-
 ----------------------------------------------------------------------------------------
 --	Kill reward animation when finished dungeon or bonus objectives
 ----------------------------------------------------------------------------------------
@@ -505,10 +495,33 @@ ChallengeBlock.StatusBar:SetFrameLevel(ChallengeBlock.StatusBar:GetFrameLevel() 
 ----------------------------------------------------------------------------------------
 --	Skin MawBuffsBlock
 ----------------------------------------------------------------------------------------
+TopScenarioWidgetContainerBlock.WidgetContainer:ClearAllPoints()
+TopScenarioWidgetContainerBlock.WidgetContainer:SetPoint("TOP", ScenarioStageBlock.backdrop, "BOTTOM", 0, -3)
+
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:SetScript("OnEvent", function()
+	C_Timer.After(0.1, function()
+		local list = ScenarioBlocksFrame.MawBuffsBlock.Container.List
+		if list then
+			list:ClearAllPoints()
+			if IsFramePositionedLeft(ObjectiveTrackerFrame) then
+				list:SetPoint("TOPLEFT", ScenarioBlocksFrame.MawBuffsBlock.Container, "TOPRIGHT", 15, 0)
+			else
+				list:SetPoint("TOPRIGHT", ScenarioBlocksFrame.MawBuffsBlock.Container, "TOPLEFT", -15, 0)
+			end
+		end
+
+		-- TODO check
+		-- BottomScenarioWidgetContainerBlock.WidgetContainer:ClearAllPoints()
+		-- BottomScenarioWidgetContainerBlock.WidgetContainer:SetPoint("TOPLEFT", ScenarioStageBlock.backdrop, "TOPRIGHT", 10, 0)
+	end)
+end)
+
 local Maw = ScenarioBlocksFrame.MawBuffsBlock.Container
 Maw:SkinButton()
 Maw:ClearAllPoints()
-Maw:SetPoint("TOPLEFT", ScenarioStageBlock.backdrop, "BOTTOMLEFT", 0, -20)
+Maw:SetPoint("TOPLEFT", ScenarioStageBlock.backdrop, "BOTTOMLEFT", 0, -35)
 Maw.List.button:SetSize(234, 30)
 Maw.List:StripTextures()
 Maw.List:SetTemplate("Overlay")
