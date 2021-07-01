@@ -34,7 +34,7 @@ local function LoadSkin()
 			frame.CloseButton.Border:SetAlpha(0)
 		end
 
-		local IsAnima = PlayerChoiceToggleButton and PlayerChoiceToggleButton:IsShown()
+		local IsAnima = frame.uiTextureKit and frame.uiTextureKit == "jailerstower"
 		frame.backdrop:SetShown(not IsAnima)
 
 		for option in self.optionPools:EnumerateActiveByTemplate(self.optionFrameTemplate) do
