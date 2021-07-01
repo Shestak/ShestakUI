@@ -320,8 +320,8 @@ local lower_instance = _detalhes:GetLowerInstanceNumber()
 if lower_instance then
 	for i = lower_instance, #_detalhes.tabela_instancias do
 		local instance = Details:GetInstance(i)
-		if instance then
-			for j = 1, instance:GetNumRows() do
+		if instance and instance.rows_fit_in_window then
+			for j = 1, instance.rows_fit_in_window do
 				local bar = _G["DetailsBarra_Statusbar_"..i.."_"..j]
 				local icon = _G["DetailsBarra_IconFrame_"..i.."_"..j]
 				if bar and not bar.backdrop then
