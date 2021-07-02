@@ -67,7 +67,6 @@
 	<Script file="PvP.lua"/>
 	<Script file="PvPMatch.lua"/>
 	<Script file="Quest.lua"/>
-	<Script file="QuestLog.lua"/>
 	<Script file="Raid.lua"/>
 	<Script file="RaidInfo.lua"/>
 	<Script file="Runeforge.lua"/>
