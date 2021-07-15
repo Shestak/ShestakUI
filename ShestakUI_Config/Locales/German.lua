@@ -39,6 +39,7 @@ L.general_color_picker_desc = "Hinzufügen von Kopieren/Einfügen-Schaltflächen
 L.general_minimize_mouseover = "Mouseover für Quest minimieren Taste"
 L.general_hide_banner = "Autoverstecken des Boss Loot Frame"
 L.general_hide_talking_head = "Verstecke Talking Head Frame"
+L.general_hide_maw_buffs = "Hide Maw Buffs frame in instances" -- Need review
 
 -- Media options
 L.media_border_color = "Farbe für Rahmen"

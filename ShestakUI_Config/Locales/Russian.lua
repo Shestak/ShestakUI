@@ -39,6 +39,7 @@ L.general_color_picker_desc = "В стандартное окно подбора
 L.general_minimize_mouseover = "Кнопка сворачивания квестов по наведению курсора"
 L.general_hide_banner = "Скрыть подсказку добычи после победы над боссом"
 L.general_hide_talking_head = "Скрыть рамку говорящей головы"
+L.general_hide_maw_buffs = "Скрыть Силу Анимы в подземельях"
 
 -- Media options
 L.media_border_color = "Цвет для окантовки"

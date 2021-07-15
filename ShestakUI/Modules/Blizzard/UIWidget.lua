@@ -3,7 +3,9 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	UIWidget position
 ----------------------------------------------------------------------------------------
-local top, below = _G["UIWidgetTopCenterContainerFrame"], _G["UIWidgetBelowMinimapContainerFrame"]
+local top, below, maw = _G["UIWidgetTopCenterContainerFrame"], _G["UIWidgetBelowMinimapContainerFrame"], _G["MawBuffsBelowMinimapFrame"]
+
+-- Top Widget
 local topAnchor = CreateFrame("Frame", "UIWidgetTopAnchor", UIParent)
 topAnchor:SetSize(200, 30)
 topAnchor:SetPoint(unpack(C.position.uiwidget_top))
@@ -11,6 +13,7 @@ topAnchor:SetPoint(unpack(C.position.uiwidget_top))
 top:ClearAllPoints()
 top:SetPoint("TOP", topAnchor)
 
+-- Below Widget
 local belowAnchor = CreateFrame("Frame", "UIWidgetBelowAnchor", UIParent)
 belowAnchor:SetSize(150, 30)
 
@@ -33,8 +36,21 @@ hooksecurefunc(below, "SetPoint", function(self, _, anchor)
 	end
 end)
 
-for _, frame in pairs({top, below}) do
-	local anchor = frame == top and topAnchor or belowAnchor
+-- Maw Buff Widget
+local mawAnchor = CreateFrame("Frame", "UIWidgetMawAnchor", UIParent)
+mawAnchor:SetSize(210, 30)
+mawAnchor:SetPoint("TOPRIGHT", BuffsAnchor, "BOTTOMRIGHT", 0, -3)
+
+hooksecurefunc(maw, "SetPoint", function(self, _, anchor)
+	if anchor and anchor ~= mawAnchor then
+		self:ClearAllPoints()
+		self:SetPoint("TOPRIGHT", mawAnchor)
+	end
+end)
+
+-- Mover for all widgets
+for _, frame in pairs({top, below, maw}) do
+	local anchor = frame == top and topAnchor or frame == below and belowAnchor or mawAnchor
 	anchor:SetMovable(true)
 	anchor:SetClampedToScreen(true)
 	frame:SetClampedToScreen(true)
@@ -46,8 +62,10 @@ for _, frame in pairs({top, below}) do
 			anchor:ClearAllPoints()
 			if frame == top then
 				anchor:SetPoint(unpack(C.position.uiwidget_top))
-			else
+			elseif frame == below then
 				anchor:SetPoint(unpack(C.position.uiwidget_below))
+			else
+				anchor:SetPoint("TOPRIGHT", BuffsAnchor, "BOTTOMRIGHT", 0, -3)
 			end
 			anchor:SetUserPlaced(false)
 		end
@@ -171,3 +189,34 @@ end)
 hooksecurefunc(UIWidgetTemplateStatusBarMixin, "Setup", function(widget)
 	SkinStatusBar(widget)
 end)
+
+-- Maw Buffs skin
+maw:SetSize(210, 40)
+maw.Container:SkinButton()
+maw.Container:SetSize(200, 30)
+
+maw.Container.List:StripTextures()
+maw.Container.List:SetTemplate("Overlay")
+maw.Container.List:ClearAllPoints()
+maw.Container.List:SetPoint("TOPRIGHT", maw.Container, "TOPLEFT", -15, 0)
+
+maw.Container.List:HookScript("OnShow", function(self)
+	self.button:SetPushedTexture("")
+	self.button:SetHighlightTexture("")
+	self.button:SetWidth(200)
+	self.button:SetButtonState("NORMAL")
+	self.button:SetPushedTextOffset(0, 0)
+	self.button:SetButtonState("PUSHED", true)
+end)
+
+maw.Container.List:HookScript("OnHide", function(self)
+	self.button:SetPushedTexture("")
+	self.button:SetHighlightTexture("")
+	self.button:SetWidth(200)
+end)
+
+-- Hide Maw Buffs
+if C.general.hide_maw_buffs then
+	maw:SetAlpha(0)
+	maw:SetScale(0.001)
+end

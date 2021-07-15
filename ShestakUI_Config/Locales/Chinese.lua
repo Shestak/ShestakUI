@@ -39,6 +39,7 @@ L.general_color_picker_desc = "增加按鈕：复制/粘上/职业 输入框：R
 L.general_minimize_mouseover = "任务栏最小化按钮鼠标悬停显示"
 L.general_hide_banner = "自动隐藏Boss额外拾取提示"
 L.general_hide_talking_head = "自动隐藏任务对话框"
+L.general_hide_maw_buffs = "Hide Maw Buffs frame in instances" -- Need review
 
 -- Media options
 L.media_border_color = "背景颜色"

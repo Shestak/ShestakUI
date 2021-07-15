@@ -39,6 +39,7 @@ L.general_color_picker_desc = "Add copy/paste buttons and digit text entry for B
 L.general_minimize_mouseover = "Pulsante per minimizzare le missioni al passaggio del mouse"
 L.general_hide_banner = "Nascondi il Boss Banner Loot Frame"
 L.general_hide_talking_head = "Nascondi il Talking Head Frame"
+L.general_hide_maw_buffs = "Hide Maw Buffs frame in instances" -- Need review
 
 -- Media options
 L.media_border_color = "Color for borders" -- Need review

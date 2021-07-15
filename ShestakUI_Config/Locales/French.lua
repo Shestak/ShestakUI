@@ -39,6 +39,7 @@ L.general_color_picker_desc = "Add copy/paste buttons and digit text entry for B
 L.general_minimize_mouseover = "Survol par la souris pour réduire les quêtes"
 L.general_hide_banner = "Masquer la fenêtre/bannière de loot des Boss"
 L.general_hide_talking_head = "Masquer la fenêtre de discussion principale"
+L.general_hide_maw_buffs = "Hide Maw Buffs frame in instances" -- Need review
 
 -- Media options
 L.media_border_color = "Couleurs des bordures (fenêtres, barres, info-bulles, etc)"

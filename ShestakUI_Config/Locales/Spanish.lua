@@ -39,6 +39,7 @@ L.general_color_picker_desc = "Add copy/paste buttons and digit text entry for B
 L.general_minimize_mouseover = "Mouseover for quest minimize button" -- Need review
 L.general_hide_banner = "Hide Boss Banner Loot Frame" -- Need review
 L.general_hide_talking_head = "Hide Talking Head Frame" -- Need review
+L.general_hide_maw_buffs = "Hide Maw Buffs frame in instances" -- Need review
 
 -- Media options
 L.media_border_color = "Color for borders" -- Need review

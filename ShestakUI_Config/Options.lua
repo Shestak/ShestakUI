@@ -575,6 +575,9 @@ do
 	local hide_talking_head = ns.CreateCheckBox(parent, "hide_talking_head")
 	hide_talking_head:SetPoint("TOPLEFT", hide_banner, "BOTTOMLEFT", 0, 0)
 
+	local hide_maw_buffs = ns.CreateCheckBox(parent, "hide_maw_buffs")
+	hide_maw_buffs:SetPoint("TOPLEFT", hide_talking_head, "BOTTOMLEFT", 0, 0)
+
 	-- Panel 2
 	local parent = ShestakUIOptionsPanel.general2
 
