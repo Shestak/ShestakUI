@@ -2246,9 +2246,6 @@ C["filger_spells"] = {
 			-- Mallet of Thunderous Skins
 			{spellID = 292686, unitID = "player", caster = "all", filter = "BUFF"},
 
-			-- Prideful (Seasonal Affix)
-			{spellID = 340880, unitID = "player", caster = "all", filter = "DEBUFF"},
-
 			-- Engineering
 			-- Goblin Glider [Goblin Glider Kit]
 			{spellID = 126389, unitID = "player", caster = "all", filter = "BUFF", absID = true},
