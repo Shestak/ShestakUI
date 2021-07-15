@@ -248,6 +248,8 @@ T.RaidDebuffs = {
 	[SpellName(209858)] = 4,	-- Necrotic Wound
 	[SpellName(240559)] = 4,	-- Grievous Wound
 	[SpellName(240443)] = 5,	-- Burst
+	[SpellName(356667)] = 4,	-- Biting Cold
+	[SpellName(355732)] = 4,	-- Melt Soul
 	-- Tazavesh, the Veiled Market
 	[SpellName(350804)] = 3,	-- Collapsing Energy
 	[SpellName(350885)] = 3,	-- Hyperlight Jolt
