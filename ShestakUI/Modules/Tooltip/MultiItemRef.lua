@@ -74,7 +74,7 @@ end
 local SetHyperlink = _G.ItemRefTooltip.SetHyperlink
 function _G.ItemRefTooltip:SetHyperlink(link, ...)
 	local handled = strsplit(":", link)
-	if not IsModifiedClick() and handled and types[handled] and not shown then
+	if not InCombatLockdown() and not IsModifiedClick() and handled and types[handled] and not shown then
 		local tip = CreateTip(link)
 		if tip then
 			ShowTip(tip, link)
