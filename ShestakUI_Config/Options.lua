@@ -1380,10 +1380,10 @@ do
 	local subheader = ns.addSubCategory(parent, L.raidframe_subheader_heal_size)
 	subheader:SetPoint("TOPLEFT", plugins_auto_resurrection, "BOTTOMLEFT", 0, -10)
 
-	local heal_width = ns.CreateNumberSlider(parent, "heal_width", nil, nil, 50, 120, 1, true)
+	local heal_width = ns.CreateNumberSlider(parent, "heal_width", nil, nil, 50, 200, 1, true)
 	heal_width:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -30)
 
-	local heal_height = ns.CreateNumberSlider(parent, "heal_height", nil, nil, 20, 60, 1, true)
+	local heal_height = ns.CreateNumberSlider(parent, "heal_height", nil, nil, 20, 200, 1, true)
 	heal_height:SetPoint("LEFT", heal_width, "RIGHT", 120, 0)
 
 	local heal_power_height = ns.CreateNumberSlider(parent, "heal_power_height", nil, nil, 0, 10, 1, true)
