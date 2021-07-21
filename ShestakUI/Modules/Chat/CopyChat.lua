@@ -66,25 +66,18 @@ local canChangeMessage = function(arg1, id)
 end
 
 local function MessageIsProtected(message)
-	return message and (message ~= gsub(message, '(:?|?)|K(.-)|k', canChangeMessage))
+	return message and (message ~= gsub(message, "(:?|?)|K(.-)|k", canChangeMessage))
 end
-
--- local function colorizeLine(text, r, g, b)
-	-- local hexCode = T.RGBToHex(r, g, b)
-	-- return format("%s%s|r", hexCode, text)
--- end
 
 local function Copy(cf)
 	if not isf then CreatCopyFrame() end
 	local text = ""
 	for i = 1, cf:GetNumMessages() do
-		local line, r, g, b = cf:GetMessageInfo(i)
+		local line = cf:GetMessageInfo(i)
 		if line and not MessageIsProtected(line) then
-			r, g, b = r or 1, g or 1, b or 1
 			font:SetFormattedText("%s \n", line)
 			local cleanLine = font:GetText() or ""
 			text = text..cleanLine
-			--FIXME text = colorizeLine(text, r, g, b)
 		end
 	end
 	text = text:gsub("|T[^\\]+\\[^\\]+\\[Uu][Ii]%-[Rr][Aa][Ii][Dd][Tt][Aa][Rr][Gg][Ee][Tt][Ii][Nn][Gg][Ii][Cc][Oo][Nn]_(%d)[^|]+|t", "{rt%1}")
