@@ -149,6 +149,9 @@ local QuickQuestDB = {
 			[54462] = true, -- Supplies from Zandalari Empire
 			[55348] = true, -- Supplies from the Rustbolt Resistance
 			[55976] = true, -- Supplies From the Waveblade Ankoan
+
+			-- 9.0 valuable resources
+			[64541] = true, -- The Cost of Death (Ve'nari)
 		},
 	},
 }
