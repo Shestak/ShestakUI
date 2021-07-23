@@ -149,19 +149,25 @@ LPSTAT_CONFIG = {
 			--	Haste [haste]%			Crit [crit]%			Mastery [mastery]%			Versatility [versatility]%
 			--	Armor [armor]			Dodge [dodge]%			Parry [parry]%				Block [block]%
 			--	Avoidance [avoidance]% 	Leech [leech]%			Resilience [resilience]%
-		spec1fmt = class"Power: ".."[power]"..class"  Crit: ".."[crit]%"..class"  Haste: ".."[haste]%",	-- Spec #1 string
-		spec2fmt = class"Power: ".."[power]"..class"  Crit: ".."[crit]%"..class"  Haste: ".."[haste]%",	-- Spec #2 string
-		spec3fmt = class"Power: ".."[power]"..class"  Crit: ".."[crit]%"..class"  Haste: ".."[haste]%",	-- Spec #3 string
-		spec4fmt = class"Power: ".."[power]"..class"  Crit: ".."[crit]%"..class"  Haste: ".."[haste]%",	-- Spec #4 string
-		spec5fmt = class"Power: ".."[power]"..class"  Crit: ".."[crit]%"..class"  Haste: ".."[haste]%",	-- Spec #5 string
+		fmt = class"Crit: ".."[crit]%"..class"  Haste: ".."[haste]%"..class"  Mastery: ".."[mastery]%"..class"  Vers: ".."[versatility]%",
 		anchor_frame = "TopPanel", anchor_to = "center", anchor_from = "center",
 		x_off = 0, y_off = 6,
+	},
+	Stat = {
+		enabled = C.toppanel.enable,
+		spec1fmt = class"Power: ".."[power]",	-- Spec #1 string
+		spec2fmt = class"Power: ".."[power]",	-- Spec #2 string
+		spec3fmt = class"Power: ".."[power]",	-- Spec #3 string
+		spec4fmt = class"Power: ".."[power]",	-- Spec #4 string
+		spec5fmt = class"Power: ".."[power]",	-- Spec #5 string
+		anchor_frame = "Stats", anchor_to = "topleft", anchor_from = "bottomleft",
+		x_off = 30, y_off = -5,
 	},
 	Bags = {
 		enabled = C.toppanel.enable,
 		fmt = class"B: ".."%d/%d",
-		anchor_frame = "Stats", anchor_to = "topleft", anchor_from = "bottomleft",
-		x_off = 20, y_off = -5,
+		anchor_frame = "Stat", anchor_to = "left", anchor_from = "right",
+		x_off = 3, y_off = 0,
 	},
 	Loot = {
 		enabled = C.toppanel.enable,
@@ -177,90 +183,25 @@ LPSTAT_CONFIG = {
 	},
 }
 
+-- Show armor for tanks instead of power
+local Armor = class"Armor: ".."[armor]"
 LPSTAT_PROFILES = {
-	-- Main stats like agil, str > power. Stamina and bonus armor not listed even if higher pri then other stats. This is not a guide, just a pointer!
 	DEATHKNIGHT = {
-		Stats = {
-			spec1fmt = class"Armor: ".."[armor]"..class" Mastery: ".."[mastery]%"..class"  Vers: ".."[versatility]%",	-- Blood 			-> Stamina > Bonus Armor = Armor > Strength > Versatility >= Haste > Mastery > Crit
-			spec2fmt = class"Power: ".."[power]"..class" Mastery: ".."[mastery]%"..class"  Vers: ".."[versatility]%",	-- Frost 			-> Strength > Mastery > Haste > Versatility > Crit
-			spec3fmt = class"Power: ".."[power]"..class" Vers: ".."[versatility]%"..class" Mastery: ".."[mastery]%",	-- Unholy 			-> Strength > Mastery > Crit >= Haste > Versatility
-		}
+		Stat = {spec1fmt = Armor}	-- Blood
 	},
 	DEMONHUNTER = {
-		Stats = {
-			spec1fmt = class"Power: ".."[power]"..class" Vers: ".."[versatility]%"..class" Crit: ".."[crit]%",			-- Havoc 			-> Agility > Versatility > Crit = Haste > Mastery
-			spec2fmt = class"Armor: ".."[armor]"..class" Haste: ".."[haste]%"..class" Vers: ".."[versatility]%",		-- Vengeance 		-> Armor > Stamina > Bonus Armor > Agility > Haste >= Versatility > Mastery > Crit
-		}
+		Stat = {spec2fmt = Armor}	-- Vengeance
 	},
 	DRUID = {
-		Stats = {
-			spec1fmt = class"Power: ".."[power]"..class" Mastery: ".."[mastery]%"..class"  Vers: ".."[versatility]%",	-- Balance 			-> Intellect > Mastery >= Crit >= Haste > Versatility
-			spec2fmt = class"Power: ".."[power]"..class" Crit: ".."[crit]%"..class"  Haste: ".."[haste]%",				-- Feral 			-> Agility > Crit > Versatility >= Haste > Mastery
-			spec3fmt = class"Armor: ".."[armor]"..class" Vers: ".."[versatility]%"..class" Mastery: ".."[mastery]%",	-- Guardian 		-> Armor > Stamina > Bonus Armor > Mastery > Versatility >= Agility = Haste > Crit
-			spec4fmt = class"Power: ".."[power]"..class" Haste: ".."[haste]%"..class" Mastery: ".."[mastery]%",			-- Restoration 		-> Intellect > Haste > Mastery > Crit > Versatility > Spirit
-		}
-	},
-	HUNTER = {
-		Stats = {
-			spec1fmt = class"Power: ".."[power]"..class" Mastery: ".."[mastery]%"..class"  Haste: ".."[haste]%",		-- Beast Mastery	-> Agility > Haste = Mastery > Crit > Versatility
-			spec2fmt = class"Power: ".."[power]"..class" Vers: ".."[versatility]%"..class"  Crit: ".."[crit]%",			-- Marksmanship		-> Agility > Crit > Mastery >= Versatility >= Haste
-			spec3fmt = class"Power: ".."[power]"..class" Vers: ".."[versatility]%"..class"  Crit: ".."[crit]%",			-- Survival			-> Agility > Crit >= Versatility > Mastery > Haste
-		}
-	},
-	MAGE = {
-		Stats = {
-			spec1fmt = class"Power: ".."[power]"..class" Mastery: ".."[mastery]%"..class" Haste: ".."[haste]%",			-- Arcane			-> Intellect > Mastery >= Haste >= Crit > Versatility
-			spec2fmt = class"Power: ".."[power]"..class" Crit: ".."[crit]%"..class" Mastery: ".."[mastery]%",			-- Fire				-> Intellect > Crit > Mastery >= Haste > Versatility
-			spec3fmt = class"Power: ".."[power]"..class" Vers: ".."[versatility]%"..class" Crit: ".."[crit]%",			-- Frost			-> Intellect > Crit > Versatility > Haste > Mastery
-		}
+		Stat = {spec3fmt = Armor}	-- Guardian
 	},
 	MONK = {
-		Stats = {
-			spec1fmt = class"Armor: ".."[armor]"..class" Mastery: ".."[mastery]%"..class" Vers: ".."[versatility]%",	-- Brewmaster		-> Stamina > Armor > Bonus Armor > Mastery > Versatility >= Agility > Crit > Haste
-			spec2fmt = class"Power: ".."[power]"..class" Vers: ".."[versatility]%"..class" Crit: ".."[crit]%",			-- Mistweaver		-> Intellect > Crit > Versatility > Haste > Mastery > Spirit
-			spec3fmt = class"Power: ".."[power]"..class" Crit: ".."[crit]%"..class" Vers: ".."[versatility]%",			-- Windwalker		-> Agility > Crit > Versatility >= Haste > Mastery
-		}
+		Stat = {spec1fmt = Armor}	-- Brewmaster
 	},
 	PALADIN = {
-		Stats = {
-			spec1fmt = class"Power: ".."[power]"..class" Crit: ".."[crit]%"..class" Vers: ".."[versatility]%",			-- Holy				-> Intellect > Crit > Mastery > Versatility > Haste > Spirit
-			spec2fmt = class"Armor: ".."[armor]"..class" Haste: ".."[haste]%"..class" Vers: ".."[versatility]%",		-- Protection		-> Stamina > Bonus Armor > Armor > Haste >= Versatility >= Strength >= Mastery > Crit
-			spec3fmt = class"Power: ".."[power]"..class" Mastery: ".."[mastery]%"..class" Vers: ".."[versatility]%",	-- Retribution		-> Strength > Mastery > Crit >= Versatility > Haste
-		}
-	},
-	PRIEST = {
-		Stats = {
-			spec1fmt = class"Power: ".."[power]"..class" Crit: ".."[crit]%"..class" Mastery: ".."[mastery]%",			-- Discipline		-> Intellect > Crit > Mastery > Versatility > Haste > Spirit
-			spec2fmt = class"Power: ".."[power]"..class" Vers: ".."[versatility]%"..class" Mastery: ".."[mastery]%",	-- Holy				-> Intellect > Mastery > Crit > Versatility > Haste > Spirit
-			spec3fmt = class"Power: ".."[power]"..class" Haste: ".."[haste]%"..class" Mastery: ".."[mastery]%",			-- Shadow			-> Intellect > Haste >= Mastery > Crit > Versatility
-		}
-	},
-	ROGUE = {
-		Stats = {
-			spec1fmt = class"Power: ".."[power]"..class" Crit: ".."[crit]%"..class" Vers: ".."[versatility]%",			-- Assassination	-> Agility > Crit > Mastery >= Haste = Versatility
-			spec2fmt = class"Power: ".."[power]"..class" Haste: ".."[haste]%"..class" Vers: ".."[versatility]%",		-- Combat			-> Agility > Haste > Crit >= Mastery >= Versatility
-			spec3fmt = class"Power: ".."[power]"..class" Vers: ".."[versatility]%"..class" Mastery: ".."[mastery]%",	-- Subtlety			-> Agility > Mastery > Versatility = Crit >= Haste
-		}
-	},
-	SHAMAN = {
-		Stats = {
-			spec1fmt = class"Power: ".."[power]"..class" Vers: ".."[versatility]%"..class" Haste: ".."[haste]%",		-- Elemental		-> Intellect > Haste > Crit > Versatility > Mastery
-			spec2fmt = class"Power: ".."[power]"..class" Haste: ".."[haste]%"..class" Vers: ".."[versatility]%",		-- Enhancement		-> Agility > Haste > Mastery > Versatility = Crit
-			spec3fmt = class"Power: ".."[power]"..class" Crit: ".."[crit]%"..class" Mastery: ".."[mastery]%",			-- Restoration		-> Intellect > Crit > Mastery > Versatility > Haste > Spirit
-		}
-	},
-	WARLOCK = {
-		Stats = {
-			spec1fmt = class"Power: ".."[power]"..class"  Haste: ".."[haste]%"..class"  Mastery: ".."[mastery]%",		-- Affliction		-> Intellect > Haste > Mastery > Crit > Versatility
-			spec2fmt = class"Power: ".."[power]"..class"  Haste: ".."[haste]%"..class"  Mastery: ".."[mastery]%",		-- Demonology		-> Intellect > Haste > Mastery > Crit > Versatility
-			spec3fmt = class"Power: ".."[power]"..class"  Crit: ".."[crit]%"..class"  Vers: ".."[versatility]%",		-- Destruction		-> Intellect > Crit > Haste > Mastery >= Versatility
-		}
+		Stat = {spec2fmt = Armor}	-- Protection
 	},
 	WARRIOR = {
-		Stats = {
-			spec1fmt = class"Power: ".."[power]"..class"  Crit: ".."[crit]%"..class"  Vers: ".."[versatility]%",		-- Arms				-> Strength > Crit > Haste > Versatility >= Mastery
-			spec2fmt = class"Power: ".."[power]"..class"  Crit: ".."[crit]%"..class"  Haste: ".."[haste]%",				-- Fury				-> Strength > Crit > Haste > Mastery > Versatility
-			spec3fmt = class"Armor: ".."[armor]"..class"  Vers: ".."[versatility]%"..class"  Crit: ".."[crit]%",		-- Protection		-> Stamina > Bonus Armor >= Armor > Versatility > Strength > Crit >= Mastery > Haste
-		}
+		Stat = {spec3fmt = Armor}	-- Protection
 	},
 }
