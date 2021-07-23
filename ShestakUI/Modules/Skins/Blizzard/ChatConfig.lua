@@ -274,7 +274,7 @@ local function LoadSkin()
 		if checkBoxTable then
 			local checkBoxNameString = frame:GetName().."CheckBox"
 			local checkBoxName, checkBox
-			for index, value in ipairs(checkBoxTable) do
+			for index in ipairs(checkBoxTable) do
 				checkBoxName = checkBoxNameString..index
 				checkBox = _G[checkBoxName]
 				if checkBox and not checkBox.styled then
