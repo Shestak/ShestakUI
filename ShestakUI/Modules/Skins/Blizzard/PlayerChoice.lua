@@ -21,7 +21,7 @@ local function LoadSkin()
 
 			T.SkinCloseButton(frame.CloseButton)
 
-			hooksecurefunc(frame.CloseButton, "SetPoint", function(self, point, anchor, attachTo, x, y)
+			hooksecurefunc(frame.CloseButton, "SetPoint", function(self, point, anchor, attachTo, x)
 				if x ~= -4 then
 					self:SetPoint(point, anchor, attachTo, -4, -4)
 				end

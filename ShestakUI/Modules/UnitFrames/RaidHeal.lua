@@ -541,7 +541,6 @@ do
 		if not moving then
 			oUF_PartyUnitButton1:Show()
 			local raid = {}
-			local raid_j = {}
 			if #frames == 0 then
 				for i = 1, 5 do
 					local frame = CreateFrame("Frame", nil, UIParent)
