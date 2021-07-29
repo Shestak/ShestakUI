@@ -406,8 +406,8 @@ function Stuffing:CreateReagentContainer()
 	Close:HookScript("OnLeave", tooltip_hide)
 
 	for i = 1, 98 do
-		local button = _G["ReagentBankFrameItem" .. i]
-		local icon = _G[button:GetName() .. "IconTexture"]
+		local button = _G["ReagentBankFrameItem"..i]
+		local icon = _G[button:GetName().."IconTexture"]
 		local count = _G[button:GetName().."Count"]
 
 		ReagentBankFrame:SetParent(Reagent)
@@ -1307,18 +1307,16 @@ function Stuffing:PLAYERBANKSLOTS_CHANGED(id)
 	end
 end
 
-function Stuffing:PLAYERREAGENTBANKSLOTS_CHANGED()
-	for i = 1, 98 do
-		local button = _G["ReagentBankFrameItem" .. i]
-		if not button then return end
-		local _, _, _, quality = GetContainerItemInfo(-3, i)
-		local clink = GetContainerItemLink(-3, i)
-		button:SetBackdropBorderColor(unpack(C.media.border_color))
+function Stuffing:PLAYERREAGENTBANKSLOTS_CHANGED(id)
+	local button = _G["ReagentBankFrameItem"..id]
+	if not button then return end
+	local clink = GetContainerItemLink(-3, id)
+	button:SetBackdropBorderColor(unpack(C.media.border_color))
 
-		if clink then
-			if quality and quality > 1 then
-				button:SetBackdropBorderColor(GetItemQualityColor(quality))
-			end
+	if clink then
+		local _, _, _, quality = GetContainerItemInfo(-3, id)
+		if quality and quality > 1 then
+			button:SetBackdropBorderColor(GetItemQualityColor(quality))
 		end
 	end
 end
