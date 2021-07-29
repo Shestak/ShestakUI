@@ -326,7 +326,9 @@ if C.minimap.hide_combat == true then
 		if event == "PLAYER_REGEN_ENABLED" then
 			self:Show()
 		elseif event == "PLAYER_REGEN_DISABLED" then
-			self:Hide()
+			if not T.FarmMode then
+				self:Hide()
+			end
 		end
 	end)
 end
