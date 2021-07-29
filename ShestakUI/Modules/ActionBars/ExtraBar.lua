@@ -18,9 +18,16 @@ RegisterStateDriver(anchor, "visibility", "[petbattle] hide; show")
 ExtraActionBarFrame:SetParent(anchor)
 ExtraActionBarFrame:ClearAllPoints()
 ExtraActionBarFrame:SetAllPoints()
+
+-- Prevent reanchor
 ExtraActionBarFrame.ignoreInLayout = true
-ExtraAbilityContainer.SetSize = T.dummy
 UIPARENT_MANAGED_FRAME_POSITIONS.ExtraAbilityContainer = nil
+ExtraAbilityContainer.ignoreFramePositionManager = true
+
+-- Prevent taint
+ExtraAbilityContainer.SetSize = T.dummy
+ExtraAbilityContainer:SetScript("OnShow", nil)
+ExtraAbilityContainer:SetScript("OnHide", nil)
 
 -- Zone Ability button
 local zoneAnchor = CreateFrame("Frame", "ZoneButtonAnchor", UIParent)
@@ -43,7 +50,7 @@ ZoneAbilityFrame.SpellButtonContainer.spacing = 3
 hooksecurefunc("ExtraActionBar_Update", function()
 	if ShestakUIPositions["ZoneButtonAnchor"] then return end
 	if HasExtraActionBar() then
-		zoneAnchor:SetPoint("BOTTOMRIGHT", ExtraActionBarFrame, "BOTTOMLEFT", -3, 0)
+		zoneAnchor:SetPoint("BOTTOMRIGHT", anchor, "BOTTOMLEFT", -3, 0)
 	else
 		if C.actionbar.split_bars then
 			zoneAnchor:SetPoint(C.position.zone_button[1], SplitBarLeft, C.position.zone_button[3], C.position.zone_button[4], C.position.zone_button[5])
