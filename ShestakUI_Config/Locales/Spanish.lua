@@ -303,6 +303,7 @@ L_GUI_CHAT_TABS_MOUSEOVER = "Chat tabs on mouseover" -- Needs review
 L_GUI_CHAT_STICKY = "Recordar último canal"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link" -- Needs review
 L.chat_loot_icons = "Icons for loot" -- Needs review
+L.chat_hide_combat = "Hide chat in combat" -- Needs review
 L.chat_custom_time_color = "Enable custom timestamp coloring" -- Needs review
 L.chat_time_color = "Color de la marca de tiempo"
 

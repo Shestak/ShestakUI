@@ -65,3 +65,20 @@ C.options = profile
 
 -- Load edited profile code
 loadstring("local T, C, L = unpack(ShestakUI)\n"..C["media"].profile)()
+
+-- Sync new settings
+if C.options.raidframe then
+	if C.options.raidframe.heal_width then
+		C.options.raidframe.heal_party_width = C.options.raidframe.heal_width
+		C.options.raidframe.heal_raid_width = C.options.raidframe.heal_width
+		C.options.raidframe.heal_width = nil
+	elseif C.options.raidframe.heal_height then
+		C.options.raidframe.heal_party_height = C.options.raidframe.heal_height
+		C.options.raidframe.heal_raid_height = C.options.raidframe.heal_height
+		C.options.raidframe.heal_height = nil
+	elseif C.options.raidframe.heal_power_height then
+		C.options.raidframe.heal_party_power_height = C.options.raidframe.heal_power_height
+		C.options.raidframe.heal_raid_power_height = C.options.raidframe.heal_power_height
+		C.options.raidframe.heal_power_height = nil
+	end
+end

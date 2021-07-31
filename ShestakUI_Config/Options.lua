@@ -1380,18 +1380,27 @@ do
 	local subheader = ns.addSubCategory(parent, L.raidframe_subheader_heal_size)
 	subheader:SetPoint("TOPLEFT", plugins_auto_resurrection, "BOTTOMLEFT", 0, -10)
 
-	local heal_width = ns.CreateNumberSlider(parent, "heal_width", nil, nil, 50, 200, 1, true)
-	heal_width:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -30)
+	local heal_party_width = ns.CreateNumberSlider(parent, "heal_party_width", nil, nil, 50, 200, 1, true, L.raidframe_dps_party_width)
+	heal_party_width:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -30)
 
-	local heal_height = ns.CreateNumberSlider(parent, "heal_height", nil, nil, 20, 200, 1, true)
-	heal_height:SetPoint("LEFT", heal_width, "RIGHT", 120, 0)
+	local heal_party_height = ns.CreateNumberSlider(parent, "heal_party_height", nil, nil, 20, 200, 1, true, L.raidframe_dps_party_height)
+	heal_party_height:SetPoint("LEFT", heal_party_width, "RIGHT", 120, 0)
 
-	local heal_power_height = ns.CreateNumberSlider(parent, "heal_power_height", nil, nil, 0, 10, 1, true)
-	heal_power_height:SetPoint("TOPLEFT", heal_width, "BOTTOMLEFT", 0, -20)
+	local heal_raid_width = ns.CreateNumberSlider(parent, "heal_raid_width", nil, nil, 50, 200, 1, true, L.raidframe_dps_raid_width)
+	heal_raid_width:SetPoint("TOPLEFT", heal_party_width, "BOTTOMLEFT", 0, -20)
+
+	local heal_raid_height = ns.CreateNumberSlider(parent, "heal_raid_height", nil, nil, 20, 200, 1, true, L.raidframe_dps_raid_height)
+	heal_raid_height:SetPoint("LEFT", heal_raid_width, "RIGHT", 120, 0)
+
+	local heal_party_power_height = ns.CreateNumberSlider(parent, "heal_party_power_height", nil, nil, 0, 10, 1, true, L.raidframe_dps_party_power_height)
+	heal_party_power_height:SetPoint("TOPLEFT", heal_raid_width, "BOTTOMLEFT", 0, -20)
+
+	local heal_raid_power_height = ns.CreateNumberSlider(parent, "heal_raid_power_height", nil, nil, 0, 10, 1, true, L.raidframe_dps_raid_power_height)
+	heal_raid_power_height:SetPoint("LEFT", heal_party_power_height, "RIGHT", 120, 0)
 
 	-- DPS layout size
 	local subheader = ns.addSubCategory(parent, L.raidframe_subheader_dps_size)
-	subheader:SetPoint("TOPLEFT", heal_power_height, "BOTTOMLEFT", 0, -10)
+	subheader:SetPoint("TOPLEFT", heal_party_power_height, "BOTTOMLEFT", 0, -10)
 
 	local dps_party_width = ns.CreateNumberSlider(parent, "dps_party_width", nil, nil, 80, 300, 1, true)
 	dps_party_width:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -30)
@@ -1762,8 +1771,11 @@ do
 	local history = ns.CreateCheckBox(parent, "history", HISTORY)
 	history:SetPoint("TOPLEFT", role_icons, "BOTTOMLEFT", 0, 0)
 
+	local hide_combat = ns.CreateCheckBox(parent, "hide_combat")
+	hide_combat:SetPoint("TOPLEFT", history, "BOTTOMLEFT", 0, 0)
+
 	local custom_time_color = ns.CreateCheckBox(parent, "custom_time_color")
-	custom_time_color:SetPoint("TOPLEFT", history, "BOTTOMLEFT", 0, 0)
+	custom_time_color:SetPoint("TOPLEFT", hide_combat, "BOTTOMLEFT", 0, 0)
 
 	local time_color = ns.CreateColourPicker(parent, "time_color", true)
 	time_color:SetPoint("TOPLEFT", custom_time_color, "BOTTOMLEFT", 24, -4)

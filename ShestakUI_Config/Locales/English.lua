@@ -326,6 +326,7 @@ L_GUI_CHAT_TABS_MOUSEOVER = "Chat tabs on mouseover"
 L_GUI_CHAT_STICKY = "Remember last channel"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "Merge damage meter spam in one line-link"
 L.chat_loot_icons = "Icons for loot"
+L.chat_hide_combat = "Hide chat in combat"
 L.chat_custom_time_color = "Enable custom timestamp coloring"
 L.chat_time_color = "Timestamp coloring"
 

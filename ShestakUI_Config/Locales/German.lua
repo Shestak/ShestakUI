@@ -303,6 +303,7 @@ L_GUI_CHAT_TABS_MOUSEOVER = "Zeige Chat-Reiter bei Mouseover"
 L_GUI_CHAT_STICKY = "Behalte den letzen Channel"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "Fasse DMG-Meterspam in einer Zeile zusammen"
 L.chat_loot_icons = "Symbole für Beute"
+L.chat_hide_combat = "Hide chat in combat" -- Needs review
 L.chat_custom_time_color = "Aktivieren der benutzerdefinierten Zeitstempelfärbung"
 L.chat_time_color = "Farbe des Zeitstempels"
 

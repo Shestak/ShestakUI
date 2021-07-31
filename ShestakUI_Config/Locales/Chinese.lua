@@ -303,6 +303,7 @@ L_GUI_CHAT_TABS_MOUSEOVER = "鼠标悬停显示频道标签"
 L_GUI_CHAT_STICKY = "记住上一次使用的频道"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "在链接中合并垃圾邮件"
 L.chat_loot_icons = "拾取信息带图标"
+L.chat_hide_combat = "Hide chat in combat" -- Needs review
 L.chat_custom_time_color = "自定义时间标签颜色"
 L.chat_time_color = "时间标签颜色"
 

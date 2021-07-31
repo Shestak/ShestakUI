@@ -303,6 +303,7 @@ L_GUI_CHAT_TABS_MOUSEOVER = "Affiche les onglets de discussion au survol de la s
 L_GUI_CHAT_STICKY = "Active le dernier canal utilisé(canal persistant)"
 L_GUI_CHAT_DAMAGE_METER_SPAM = "Rassemble les lignes de statistiques de dégâts en un seul lien/ligne"
 L.chat_loot_icons = "Icons for loot" -- Needs review
+L.chat_hide_combat = "Hide chat in combat" -- Needs review
 L.chat_custom_time_color = "Enable custom timestamp coloring" -- Needs review
 L.chat_time_color = "Coloration du temps"
 
