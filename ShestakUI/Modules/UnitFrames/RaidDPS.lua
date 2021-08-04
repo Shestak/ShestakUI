@@ -17,8 +17,8 @@ local partytarget_height = party_height
 local raid_width = C.raidframe.dps_raid_width
 local raid_height = C.raidframe.dps_raid_height
 local raid_power_height = C.raidframe.dps_raid_power_height
-local tank_width = C.raidframe.heal_width
-local tank_height = C.raidframe.heal_height
+local tank_width = C.raidframe.heal_raid_width
+local tank_height = C.raidframe.heal_raid_height
 
 -- Create layout
 local function Shared(self, unit)
