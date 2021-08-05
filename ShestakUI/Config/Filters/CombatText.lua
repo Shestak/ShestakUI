@@ -452,7 +452,7 @@ elseif T.class == "ROGUE" then
 		T.aoespam[1943] = 5			-- Rupture
 		T.aoespam[152150] = 3		-- Death from Above
 		T.aoespam[114014] = 3		-- Shuriken Toss
-		T.aoespam[114014] = 3		-- Shuriken Toss
+		T.aoespam[319175] = 3		-- Black Powder
 		T.merge[27576] = 5374		-- Mutilate Off-Hand
 		T.merge[113780] = 2818		-- Deadly Poison
 		T.merge[57842] = 57841		-- Killing Spree Off-Hand
