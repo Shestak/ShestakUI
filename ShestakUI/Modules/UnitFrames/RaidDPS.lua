@@ -416,7 +416,7 @@ oUF:Factory(function(self)
 			"template", C.raidframe.raid_tanks_tt and "oUF_MainTankTT" or "oUF_MainTank"
 		)
 		_G["RaidTankDPSAnchor"]:SetSize(tank_width, tank_height)
-		raidtank:SetPoint("TOPLEFT", _G["RaidTankDPSAnchor"])
+		raidtank:SetPoint("BOTTOMLEFT", _G["RaidTankDPSAnchor"])
 	end
 end)
 
