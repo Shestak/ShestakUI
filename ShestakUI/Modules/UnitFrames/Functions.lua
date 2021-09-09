@@ -508,7 +508,7 @@ T.PostCastStart = function(Castbar, unit)
 			local r, g, b = unpack(T.oUF_colors.class[class])
 			if C.unitframe.own_color == true then
 				Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
-				Castbar.bg:SetVertexColor(unpack(C.unitframe.uf_color_bg))
+				Castbar.bg:SetVertexColor(C.unitframe.uf_color_bg[1], C.unitframe.uf_color_bg[2], C.unitframe.uf_color_bg[3], 1)
 			else
 				if b then
 					Castbar:SetStatusBarColor(r, g, b)
@@ -518,7 +518,7 @@ T.PostCastStart = function(Castbar, unit)
 		else
 			if C.unitframe.own_color == true then
 				Castbar:SetStatusBarColor(unpack(C.unitframe.uf_color))
-				Castbar.bg:SetVertexColor(unpack(C.unitframe.uf_color_bg))
+				Castbar.bg:SetVertexColor(C.unitframe.uf_color_bg[1], C.unitframe.uf_color_bg[2], C.unitframe.uf_color_bg[3], 1)
 			else
 				local r, g, b = castColor(unit)
 				Castbar:SetStatusBarColor(r, g, b)
