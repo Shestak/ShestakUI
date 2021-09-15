@@ -54,19 +54,13 @@ for i = 1, 12 do
 			if i <= C.actionbar.bar5_num then
 				if i == 1 then
 					b:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
-				else
-					if C.actionbar.rightbars < 3 then
-						if i == NumPerRows + 1 then
-							b:SetPoint("TOPLEFT", NextRowButtonAnchor, "BOTTOMLEFT", 0, -C.actionbar.button_space)
+				elseif i == NumPerRows + 1 then
+					b:SetPoint("TOPLEFT", NextRowButtonAnchor, "BOTTOMLEFT", 0, -C.actionbar.button_space)
 
-							NumPerRows = NumPerRows + C.actionbar.bar5_row
-							NextRowButtonAnchor = _G["MultiBarBottomRightButton"..i]
-						else
-							b:SetPoint("LEFT", b2, "RIGHT", C.actionbar.button_space, 0)
-						end
-					else
-						b:SetPoint("TOP", b2, "BOTTOM", 0, -C.actionbar.button_space)
-					end
+					NumPerRows = NumPerRows + C.actionbar.bar5_row
+					NextRowButtonAnchor = _G["MultiBarBottomRightButton"..i]
+				else
+					b:SetPoint("LEFT", b2, "RIGHT", C.actionbar.button_space, 0)
 				end
 			else
 				b:SetPoint("TOP", UIParent, "TOP", 0, 200)
