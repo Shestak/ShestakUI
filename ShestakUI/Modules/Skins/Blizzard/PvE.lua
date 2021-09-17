@@ -378,14 +378,20 @@ local function LoadSkin()
 	T.SkinEditBox(LFGListFrame.EntryCreation.Name, nil, 17)
 	T.SkinEditBox(LFGListFrame.EntryCreation.ItemLevel.EditBox, nil, 17)
 	T.SkinEditBox(LFGListFrame.EntryCreation.VoiceChat.EditBox, nil, 17)
-	T.SkinEditBox(LFGListFrame.EntryCreation.HonorLevel.EditBox, nil, 17)
+	if not T.newPatch then
+		T.SkinEditBox(LFGListFrame.EntryCreation.HonorLevel.EditBox, nil, 17)
+	end
 	T.SkinEditBox(LFGListFrame.EntryCreation.Description)
-	T.SkinDropDownBox(LFGListFrame.EntryCreation.CategoryDropDown, 320)
+	if not T.newPatch then
+		T.SkinDropDownBox(LFGListFrame.EntryCreation.CategoryDropDown, 320)
+	end
 	T.SkinDropDownBox(LFGListFrame.EntryCreation.GroupDropDown)
 	T.SkinDropDownBox(LFGListFrame.EntryCreation.ActivityDropDown)
 	T.SkinCheckBox(LFGListFrame.EntryCreation.VoiceChat.CheckButton)
 	T.SkinCheckBox(LFGListFrame.EntryCreation.ItemLevel.CheckButton)
-	T.SkinCheckBox(LFGListFrame.EntryCreation.HonorLevel.CheckButton)
+	if not T.newPatch then
+		T.SkinCheckBox(LFGListFrame.EntryCreation.HonorLevel.CheckButton)
+	end
 	T.SkinCheckBox(LFGListFrame.EntryCreation.PrivateGroup.CheckButton)
 	LFGListFrame.EntryCreation.ListGroupButton:SkinButton()
 	LFGListFrame.EntryCreation.CancelButton:SkinButton()

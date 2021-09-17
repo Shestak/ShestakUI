@@ -190,7 +190,9 @@ local function OnEvent(self, event, ...)
 
 		_G.PaperDollFrame:HookScript("OnShow", function()
 			f:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
-			f:RegisterEvent("ITEM_UPGRADE_MASTER_UPDATE")
+			if not T.newPatch then
+				f:RegisterEvent("ITEM_UPGRADE_MASTER_UPDATE")
+			end
 			f:RegisterEvent("ARTIFACT_UPDATE")
 			f:RegisterEvent("SOCKET_INFO_UPDATE")
 			f:RegisterEvent("COMBAT_RATING_UPDATE")
@@ -200,7 +202,9 @@ local function OnEvent(self, event, ...)
 
 		_G.PaperDollFrame:HookScript("OnHide", function()
 			f:UnregisterEvent("PLAYER_EQUIPMENT_CHANGED")
-			f:UnregisterEvent("ITEM_UPGRADE_MASTER_UPDATE")
+			if not T.newPatch then
+				f:UnregisterEvent("ITEM_UPGRADE_MASTER_UPDATE")
+			end
 			f:UnregisterEvent("ARTIFACT_UPDATE")
 			f:UnregisterEvent("SOCKET_INFO_UPDATE")
 			f:UnregisterEvent("COMBAT_RATING_UPDATE")

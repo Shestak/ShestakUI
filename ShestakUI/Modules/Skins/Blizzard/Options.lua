@@ -188,7 +188,11 @@ local function LoadSkin()
 	_G["RaidGraphics_Quality"].SetBackdrop = T.dummy
 
 	local VUMeter = AudioOptionsVoicePanelTestInputDevice.VUMeter
-	VUMeter:SetBackdrop(nil)
+	if T.newPatch then -- TODO: detete in new patch
+		VUMeter.NineSlice:SetAlpha(0)
+	else
+		VUMeter:SetBackdrop(nil)
+	end
 	VUMeter.Status:CreateBackdrop("Overlay")
 
 	_G["VideoOptionsFrameDefaults"]:ClearAllPoints()

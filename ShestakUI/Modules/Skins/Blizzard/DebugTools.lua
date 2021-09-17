@@ -27,7 +27,11 @@ local function LoadSkin()
 	end
 
 	FrameStackTooltip:HookScript("OnShow", function(self)
-		self:SetTemplate("Transparent")
+		if T.newPatch then -- TODO: detete in new patch
+			self.NineSlice:SetTemplate("Transparent")
+		else
+			self:SetTemplate("Transparent")
+		end
 	end)
 end
 

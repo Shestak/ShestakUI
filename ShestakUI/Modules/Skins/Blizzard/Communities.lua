@@ -32,12 +32,15 @@ local function LoadSkin()
 		CommunitiesGuildLogFrameCloseButton,
 		CommunitiesFrameCloseButton,
 		CommunitiesFrame.GuildMemberDetailFrame.CloseButton,
-		CommunitiesGuildRecruitmentFrameCloseButton,
 		CommunitiesGuildTextEditFrameCloseButton
 	}
 
 	for i = 1, #closeButton do
 		T.SkinCloseButton(closeButton[i])
+	end
+
+	if not T.newPatch then
+		T.SkinCloseButton(CommunitiesGuildRecruitmentFrameCloseButton)
 	end
 
 	-- General Communities Frame
@@ -436,16 +439,18 @@ local function LoadSkin()
 	CommunitiesFrame.GuildMemberDetailFrame.RemoveButton:SetPoint("BOTTOMLEFT", CommunitiesFrame.GuildMemberDetailFrame, "BOTTOMLEFT", 9, 4)
 
 	-- Recruitment
-	CommunitiesGuildRecruitmentFrame:StripTextures()
-	CommunitiesGuildRecruitmentFrame:CreateBackdrop("Transparent")
+	if not T.newPatch then
+		CommunitiesGuildRecruitmentFrame:StripTextures()
+		CommunitiesGuildRecruitmentFrame:CreateBackdrop("Transparent")
 
-	for i = 1, 2 do
-		T.SkinTab(_G["CommunitiesGuildRecruitmentFrameTab"..i], true)
+		for i = 1, 2 do
+			T.SkinTab(_G["CommunitiesGuildRecruitmentFrameTab"..i], true)
+		end
+
+		CommunitiesGuildRecruitmentFrameApplicants.InviteButton:SkinButton()
+		CommunitiesGuildRecruitmentFrameApplicants.MessageButton:SkinButton()
+		CommunitiesGuildRecruitmentFrameApplicants.DeclineButton:SkinButton()
 	end
-
-	CommunitiesGuildRecruitmentFrameApplicants.InviteButton:SkinButton()
-	CommunitiesGuildRecruitmentFrameApplicants.MessageButton:SkinButton()
-	CommunitiesGuildRecruitmentFrameApplicants.DeclineButton:SkinButton()
 
 	-- Guild Perk
 	CommunitiesFrame.GuildBenefitsFrame:StripTextures()

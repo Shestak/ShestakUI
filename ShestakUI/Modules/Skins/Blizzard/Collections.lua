@@ -12,17 +12,21 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, _, addon)
 	end
 	if addon == "Blizzard_Collections" then
 		local tt = PetJournalPrimaryAbilityTooltip
-		tt.Background:SetTexture(nil)
-		tt.Delimiter1:SetTexture(nil)
-		tt.Delimiter2:SetTexture(nil)
-		tt.BorderTop:SetTexture(nil)
-		tt.BorderTopLeft:SetTexture(nil)
-		tt.BorderTopRight:SetTexture(nil)
-		tt.BorderLeft:SetTexture(nil)
-		tt.BorderRight:SetTexture(nil)
-		tt.BorderBottom:SetTexture(nil)
-		tt.BorderBottomRight:SetTexture(nil)
-		tt.BorderBottomLeft:SetTexture(nil)
+		if T.newPatch then
+			tt.NineSlice:SetAlpha(0)
+		else
+			tt.Background:SetTexture(nil)
+			tt.Delimiter1:SetTexture(nil)
+			tt.Delimiter2:SetTexture(nil)
+			tt.BorderTop:SetTexture(nil)
+			tt.BorderTopLeft:SetTexture(nil)
+			tt.BorderTopRight:SetTexture(nil)
+			tt.BorderLeft:SetTexture(nil)
+			tt.BorderRight:SetTexture(nil)
+			tt.BorderBottom:SetTexture(nil)
+			tt.BorderBottomRight:SetTexture(nil)
+			tt.BorderBottomLeft:SetTexture(nil)
+		end
 		tt:SetTemplate("Transparent")
 	end
 end)

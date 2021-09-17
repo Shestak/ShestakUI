@@ -35,7 +35,11 @@ local function LoadSkin()
 		for i = 1, _G[frame]:GetNumChildren() do
 			local child = select(i, _G[frame]:GetChildren())
 			if child and not child:GetName() then
-				child:SetBackdrop(nil)
+				if T.newPatch then
+					child.NineSlice:SetAlpha(0)
+				else
+					child:SetBackdrop(nil)
+				end
 			end
 		end
 	end

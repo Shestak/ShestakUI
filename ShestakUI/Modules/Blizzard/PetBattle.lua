@@ -356,16 +356,19 @@ local tooltips = {BattlePetTooltip, PetBattlePrimaryAbilityTooltip, PetBattlePri
 for _, tt in pairs(tooltips) do
 	tt:SetTemplate("Transparent")
 
-	tt.Background:SetTexture(nil)
-
-	tt.BorderLeft:SetTexture(nil)
-	tt.BorderRight:SetTexture(nil)
-	tt.BorderTop:SetTexture(nil)
-	tt.BorderTopLeft:SetTexture(nil)
-	tt.BorderTopRight:SetTexture(nil)
-	tt.BorderBottom:SetTexture(nil)
-	tt.BorderBottomLeft:SetTexture(nil)
-	tt.BorderBottomRight:SetTexture(nil)
+	if T.newPatch then -- TODO: detete in new patch
+		tt.NineSlice:SetAlpha(0)
+	else
+		tt.Background:SetTexture(nil)
+		tt.BorderLeft:SetTexture(nil)
+		tt.BorderRight:SetTexture(nil)
+		tt.BorderTop:SetTexture(nil)
+		tt.BorderTopLeft:SetTexture(nil)
+		tt.BorderTopRight:SetTexture(nil)
+		tt.BorderBottom:SetTexture(nil)
+		tt.BorderBottomLeft:SetTexture(nil)
+		tt.BorderBottomRight:SetTexture(nil)
+	end
 
 	if tt.CloseButton then
 		T.SkinCloseButton(tt.CloseButton)
