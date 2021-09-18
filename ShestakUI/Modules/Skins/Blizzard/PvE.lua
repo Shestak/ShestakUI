@@ -396,6 +396,15 @@ local function LoadSkin()
 	LFGListFrame.EntryCreation.ListGroupButton:SkinButton()
 	LFGListFrame.EntryCreation.CancelButton:SkinButton()
 
+	if T.newPatch then
+		T.SkinDropDownBox(LFGListEntryCreationPlayStyleDropdown)
+		T.SkinCheckBox(LFGListFrame.EntryCreation.MythicPlusRating.CheckButton)
+		T.SkinEditBox(LFGListFrame.EntryCreation.MythicPlusRating.EditBox, nil, 17)
+
+		T.SkinCheckBox(LFGListFrame.EntryCreation.PVPRating.CheckButton)
+		T.SkinEditBox(LFGListFrame.EntryCreation.PVPRating.EditBox, nil, 17)
+	end
+
 	LFGListFrame.EntryCreation.ActivityFinder.Dialog:StripTextures()
 	LFGListFrame.EntryCreation.ActivityFinder.Dialog:SetTemplate("Transparent")
 	LFGListFrame.EntryCreation.ActivityFinder.Dialog.BorderFrame:StripTextures()
