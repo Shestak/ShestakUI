@@ -5,27 +5,6 @@ if C.skins.blizzard_frames ~= true then return end
 --	DebugTools skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	if EventTraceFrame then
-		EventTraceFrame:StripTextures()
-		EventTraceFrame:SetTemplate("Transparent")
-		T.SkinCloseButton(EventTraceFrameCloseButton)
-		EventTraceFrameScrollBG:SetTexture(nil)
-
-		local scroll = EventTraceFrameScroll
-		scroll:GetThumbTexture():SetTexture(nil)
-		scroll.thumbbg = CreateFrame("Frame", nil, scroll)
-		scroll.thumbbg:SetPoint("TOPLEFT", scroll:GetThumbTexture(), "TOPLEFT", 1, 0)
-		scroll.thumbbg:SetPoint("BOTTOMRIGHT", scroll:GetThumbTexture(), "BOTTOMRIGHT", 3, -2)
-		scroll.thumbbg:SetTemplate("Overlay")
-
-		EventTraceTooltip:HookScript("OnShow", function(self)
-			self:SetTemplate("Transparent")
-		end)
-	else
-		-- TODO: add new skin
-		-- EventTrace
-	end
-
 	FrameStackTooltip:HookScript("OnShow", function(self)
 		if T.newPatch then -- TODO: detete in new patch
 			self.NineSlice:SetTemplate("Transparent")
