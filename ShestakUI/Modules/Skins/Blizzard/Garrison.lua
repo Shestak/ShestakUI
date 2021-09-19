@@ -76,6 +76,7 @@ local function LoadSkin()
 	GarrisonBuildingFrame:StripTextures()
 	GarrisonBuildingFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(GarrisonBuildingFrame.CloseButton)
+	GarrisonBuildingFrame.GarrCorners:Hide()
 
 	for _, button in pairs({GarrisonBuildingFrame.TownHallBox.UpgradeButton, GarrisonBuildingFrame.InfoBox.UpgradeButton}) do
 		button:StripTextures(true)
