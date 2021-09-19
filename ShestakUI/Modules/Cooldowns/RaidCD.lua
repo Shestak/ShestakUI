@@ -150,14 +150,11 @@ local OnMouseDown = function(self, button)
 	end
 end
 
+local barWidth = C.raidcooldown.width + (C.raidcooldown.show_icon and 28 or 0)
 local CreateBar = function()
 	local bar = CreateFrame("Statusbar", nil, UIParent)
 	bar:SetFrameStrata("MEDIUM")
-	if C.raidcooldown.show_icon == true then
-		bar:SetSize(C.raidcooldown.width, C.raidcooldown.height)
-	else
-		bar:SetSize(C.raidcooldown.width + 28, C.raidcooldown.height)
-	end
+	bar:SetSize(barWidth, C.raidcooldown.height)
 	bar:SetStatusBarTexture(C.media.texture)
 	bar:SetMinMaxValues(0, 100)
 	bar:CreateBackdrop("Default")
@@ -169,7 +166,7 @@ local CreateBar = function()
 	bar.left = CreateFS(bar)
 	bar.left:SetPoint("LEFT", 2, 0)
 	bar.left:SetJustifyH("LEFT")
-	bar.left:SetSize(C.raidcooldown.width - 30, C.font.raid_cooldowns_font_size)
+	bar.left:SetSize(barWidth - 30 - ((C.font.raid_cooldowns_font_size - 8) * 2), C.font.raid_cooldowns_font_size)
 
 	bar.right = CreateFS(bar)
 	bar.right:SetPoint("RIGHT", 1, 0)
