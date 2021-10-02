@@ -84,8 +84,8 @@ L_MAP_COORDS = "Coordonnées"
 
 -- Minimap
 L_MINIMAP_CALENDAR = "Calendrier"
-L_MINIMAP_FARM = "Minimap size" -- Need review
-L_MINIMAP_TOGGLE = "Toggle action bars" -- Need review
+L_MINIMAP_FARM = "Taille de la minimap"
+L_MINIMAP_TOGGLE = "Activer/Désactiver le mode d'extension des barres d'action"
 
 -- Chat
 L_CHAT_WHISPER = "De"
@@ -290,6 +290,6 @@ L_SLASHCMD_HELP = {
 	"/pulsecd - Lance un test local de Cooldown pulse.",
 	"/threat - Lance un test des barres de menace.",
 	"/testuf - Lance un test des cadres d'unité.",
-	"/moveui - Permet de déplacer des éléments de l'interface.", -- Need review
+	"/moveui - Permet le déplacement des éléments d’interface. Clic droit pour réinitialiser la position",
 	"/cfg - Ouvre les paramètres de l'interface.",
 }
