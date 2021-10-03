@@ -22,6 +22,40 @@ local function LoadSkin()
 	DressUpFrameResetButton:SetPoint("RIGHT", DressUpFrameCancelButton, "LEFT", -2, 0)
 	DressUpFrameUndressButton:SkinButton()
 
+	if T.newPatch then
+		local button = DressUpFrame.ToggleOutfitDetailsButton
+		button:SetNormalTexture(134331)
+		button:SetPushedTexture(134331)
+		button:StyleButton(true)
+		button:SetTemplate("Default")
+		button:GetNormalTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		button:GetNormalTexture():SetInside()
+		button:GetPushedTexture():SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		button:GetPushedTexture():SetInside()
+
+		DressUpFrame.OutfitDetailsPanel:StripTextures()
+		DressUpFrame.OutfitDetailsPanel:CreateBackdrop("Transparent")
+		DressUpFrame.OutfitDetailsPanel.backdrop:SetPoint("TOPLEFT", 11, 0)
+		DressUpFrame.OutfitDetailsPanel.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
+
+		hooksecurefunc(DressUpFrame.OutfitDetailsPanel, "Refresh", function(self)
+			if self.slotPool then
+				for slot in self.slotPool:EnumerateActive() do
+					if not slot.skinned then
+						if slot.Icon:GetHeight() > 19 then
+							slot.Icon:SetSize(19, 19)
+						end
+						slot.Icon:SkinIcon()
+						slot.IconBorder:SetAlpha(0)
+						slot.skinned = true
+					end
+				end
+			end
+		end)
+
+		DressUpFrame.LinkButton:SkinButton()
+	end
+
 	T.SkinDropDownBox(DressUpFrameOutfitDropDown)
 	DressUpFrameOutfitDropDown:SetSize(195, 34)
 	DressUpFrameOutfitDropDown.SaveButton:SkinButton()

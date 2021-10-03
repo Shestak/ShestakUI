@@ -401,6 +401,9 @@ local function LoadSkin()
 		T.SkinCheckBox(LFGListFrame.EntryCreation.MythicPlusRating.CheckButton)
 		T.SkinEditBox(LFGListFrame.EntryCreation.MythicPlusRating.EditBox, nil, 17)
 
+		T.SkinCheckBox(LFGListFrame.EntryCreation.PvpItemLevel.CheckButton)
+		T.SkinEditBox(LFGListFrame.EntryCreation.PvpItemLevel.EditBox, nil, 17)
+
 		T.SkinCheckBox(LFGListFrame.EntryCreation.PVPRating.CheckButton)
 		T.SkinEditBox(LFGListFrame.EntryCreation.PVPRating.EditBox, nil, 17)
 	end
