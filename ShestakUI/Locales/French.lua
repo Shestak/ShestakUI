@@ -3,7 +3,7 @@ if T.client ~= "frFR" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for frFR client
---	Translation: Cranan, Puree, AlbertDuval
+--	Translation: Cranan, Puree, AlbertDuval, Skyzo-be
 ----------------------------------------------------------------------------------------
 -- Announce flasks and food
 L_ANNOUNCE_FF_NOFOOD = "Sans nourriture : "

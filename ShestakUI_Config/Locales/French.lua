@@ -3,7 +3,7 @@ if GetLocale() ~= "frFR" then return end
 
 ----------------------------------------------------------------------------------------
 --	Localization for frFR client
---	Translation: Cranan, Puree, AlbertDuval
+--	Translation: Cranan, Puree, AlbertDuval, Skyzo-be
 ----------------------------------------------------------------------------------------
 L_GUI_SET_SAVED_SETTTINGS = "Définir les paramètres par personnage"
 L_GUI_SET_SAVED_SETTTINGS_DESC = "Basculez entre un profil qui s’applique à tous les personnages et un profil qui est unique à ce personnage."
@@ -140,7 +140,7 @@ L_GUI_UF_PLUGINS_POWER_PREDICTION = "Prédiction du coût des sorts sur le cadre
 L.unitframe_plugins_absorbs = "Valeur d'absorption sur le cadre du joueur"
 L.unitframe_subheader_player_width = "Taille du cadre du joueur et de la cible"
 L.unitframe_player_width = "Largeur"
-L.unitframe_subheader_boss_width = "Taille du cadre du boss et de l’aréne" 
+L.unitframe_subheader_boss_width = "Taille du cadre du boss et de l’aréne"
 L.unitframe_extra_height_auto = "Hauteur automatique pour la santé/puissance"
 L.unitframe_extra_height_auto_desc = "Ajustement intelligent en fonction de la taille de la police"
 L.unitframe_extra_health_height = "Hauteur supplémentaire pour la santé"
@@ -150,7 +150,7 @@ L.unitframe_castbar_height = "Hauteur"
 
 -- Unit Frames Class bar options
 L_GUI_UF_PLUGINS_CLASS_BAR = "Barres de classe"
-L_GUI_UF_PLUGINS_CLASS_BAR_SUBTEXT = "Contrôle des ressources spéciales des classes." 
+L_GUI_UF_PLUGINS_CLASS_BAR_SUBTEXT = "Contrôle des ressources spéciales des classes."
 L_GUI_UF_PLUGINS_COMBO_BAR = "Afficher la barre des points de combo pour les Voleurs/Druides"
 L_GUI_UF_PLUGINS_COMBO_BAR_ALWAYS = "Toujours montrer la barre des points de combo pour la classe Druide"
 L_GUI_UF_PLUGINS_COMBO_BAR_OLD = "Activer les points de Combo sur la cible"
@@ -521,7 +521,7 @@ L_GUI_REMINDER = "Contrôle des buffs"
 L_GUI_REMINDER_SUBTEXT = "Affichage des buffs manquants."
 L_GUI_REMINDER_SOLO_ENABLE = "Afficher les buffs personnelles manquants"
 L_GUI_REMINDER_SOLO_SOUND = "Notification sonore pour les buffs personnelles manquants"
-L_GUI_REMINDER_SOLO_SIZE = "Taille de l'icône" 
+L_GUI_REMINDER_SOLO_SIZE = "Taille de l'icône"
 L_GUI_REMINDER_SOLO_SIZE_DESC = "Taille de l'icône pour les buffs personnelles"
 L_GUI_REMINDER_SUBHEADER = "Buffs de raid"
 L_GUI_REMINDER_RAID_ENABLE = "Voir les buffs de raid manquants"
