@@ -78,7 +78,6 @@ local function InstallUI()
 	end
 
 	-- Reset saved variables on char
-	ShestakUIPositions = {}
 	ShestakUISettingsPerChar = {}
 
 	ShestakUISettingsPerChar.Install = true
