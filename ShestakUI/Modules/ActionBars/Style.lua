@@ -70,15 +70,17 @@ local function StyleNormalButton(button, size)
 			count:SetPoint("BOTTOMRIGHT", 0, 2)
 			count:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 			count:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
+			count:SetHeight(C.font.action_bars_font_size)
 		end
 
 		if btname then
 			if C.actionbar.macro == true then
 				btname:ClearAllPoints()
-				btname:SetPoint("BOTTOM", 0, 0)
+				btname:SetPoint("BOTTOM", 0, 1)
 				btname:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 				btname:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 				btname:SetWidth(C.actionbar.button_size - 1)
+				btname:SetHeight(C.font.action_bars_font_size)
 			else
 				btname:Kill()
 			end
@@ -86,10 +88,11 @@ local function StyleNormalButton(button, size)
 
 		if C.actionbar.hotkey == true then
 			hotkey:ClearAllPoints()
-			hotkey:SetPoint("TOPRIGHT", 0, 0)
+			hotkey:SetPoint("TOPRIGHT", 0, -1)
 			hotkey:SetFont(C.font.action_bars_font, C.font.action_bars_font_size, C.font.action_bars_font_style)
 			hotkey:SetShadowOffset(C.font.action_bars_font_shadow and 1 or 0, C.font.action_bars_font_shadow and -1 or 0)
 			hotkey:SetWidth(C.actionbar.button_size - 1)
+			hotkey:SetHeight(C.font.action_bars_font_size)
 		else
 			hotkey:Kill()
 		end
