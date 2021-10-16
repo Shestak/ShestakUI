@@ -27,6 +27,9 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[345466] = 3			-- Liquefying Ooze (Trinket)
 	T.aoespam[355759] = 3			-- Frozen Heart (Trinket)
 	T.aoespam[333526] = 3			-- Spiked Burrs (Night Fae Soulbind)
+	T.aoespam[355735] = 3			-- Winds of Winter (Frost Shard)
+	T.aoespam[355804] = 3			-- Blood Link (Blood Shard)
+	T.aoespam[355829] = 3			-- Chaos Bane (Unholy Shard)
 end
 
 -- Class config
