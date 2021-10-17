@@ -451,31 +451,31 @@ end
 
 for _, spell in pairs(C.filger.buff_spells_list) do
 	if spell[2] == T.class then
-		tinsert(T.CustomFilgerSpell, {"P_BUFF_ICON", {spellID = spell[1], unitID = "player", caster = "player", filter = "BUFF"}})
+		tinsert(T.CustomFilgerSpell, {"P_BUFF_ICON", {spellID = spell[1], unitID = "player", caster = "player", filter = "BUFF", absID = true}})
 	end
 end
 
 for _, spell in pairs(C.filger.proc_spells_list) do
 	if spell[2] == T.class then
-		tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = spell[1], unitID = "player", caster = "player", filter = "BUFF"}})
+		tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = spell[1], unitID = "player", caster = "player", filter = "BUFF", absID = true}})
 	end
 end
 
 for _, spell in pairs(C.filger.debuff_spells_list) do
 	if spell[2] == T.class then
-		tinsert(T.CustomFilgerSpell, {"T_DEBUFF_ICON", {spellID = spell[1], unitID = "target", caster = "player", filter = "DEBUFF"}})
+		tinsert(T.CustomFilgerSpell, {"T_DEBUFF_ICON", {spellID = spell[1], unitID = "target", caster = "player", filter = "DEBUFF", absID = true}})
 	end
 end
 
 for _, spell in pairs(C.filger.aura_bar_spells_list) do
 	if spell[2] == T.class then
-		tinsert(T.CustomFilgerSpell, {"T_DE/BUFF_BAR", {spellID = spell[1], unitID = "target", caster = "player", filter = "DEBUFF"}})
+		tinsert(T.CustomFilgerSpell, {"T_DE/BUFF_BAR", {spellID = spell[1], unitID = "target", caster = "player", filter = "DEBUFF", absID = true}})
 	end
 end
 
 for _, spell in pairs(C.filger.cd_spells_list) do
 	if spell[2] == T.class then
-		tinsert(T.CustomFilgerSpell, {"COOLDOWN", {spellID = spell[1], filter = "CD"}})
+		tinsert(T.CustomFilgerSpell, {"COOLDOWN", {spellID = spell[1], filter = "CD", absID = true}})
 	end
 end
 
