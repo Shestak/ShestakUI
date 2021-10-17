@@ -231,6 +231,7 @@ local function LoadSkin()
 			local btn = buttons.elements[i]
 			if btn and not btn.IsSkinned then
 				btn.Background:SetAlpha(0)
+				btn.BackgroundOverlay:SetAlpha(0)
 				btn.CircleMask:Hide()
 				btn.Icon:SetSize(50, 50)
 				btn.Icon:SkinIcon(true)
