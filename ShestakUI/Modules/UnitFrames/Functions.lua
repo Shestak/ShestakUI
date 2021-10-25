@@ -363,7 +363,7 @@ T.UpdateManaLevel = function(self, elapsed)
 	if UnitPowerType("player") == 0 then
 		local cur = UnitPower("player", 0)
 		local max = UnitPowerMax("player", 0)
-		local percMana = max > 0 and (cur / max * 100) or 0
+		local percMana = max > 0 and (cur / max * 100) or 100
 		if percMana <= 20 and not UnitIsDeadOrGhost("player") then
 			self.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
 			Flash(self)
@@ -383,7 +383,7 @@ T.UpdateClassMana = function(self)
 	if UnitPowerType("player") ~= 0 then
 		local min = UnitPower("player", 0)
 		local max = UnitPowerMax("player", 0)
-		local percMana = max > 0 and (min / max * 100) or 0
+		local percMana = max > 0 and (min / max * 100) or 100
 		if percMana <= 20 and not UnitIsDeadOrGhost("player") then
 			self.FlashInfo.ManaLevel:SetText("|cffaf5050"..MANA_LOW.."|r")
 			Flash(self.FlashInfo)
