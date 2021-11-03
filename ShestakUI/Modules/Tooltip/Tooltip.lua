@@ -89,13 +89,12 @@ end)
 
 if IsAddOnLoaded("RaiderIO") then
 	PVEFrame:HookScript("OnShow", function(self)
-		if not RaiderIOProfileTooltip.styled then
-			RaiderIOProfileTooltip:SetBackdrop(nil)
-			RaiderIOProfileTooltip.SetBackdrop = T.dummy
-			RaiderIOProfileTooltip:CreateBackdrop("Transparent")
-			RaiderIOProfileTooltip.backdrop:SetPoint("TOPLEFT", 3, 0)
-			RaiderIOProfileTooltip.backdrop:SetPoint("BOTTOMRIGHT", -2, 0)
-			RaiderIOProfileTooltip.styled = true
+		if not RaiderIO_ProfileTooltip.styled then
+			RaiderIO_ProfileTooltip.NineSlice:SetAlpha(0)
+			RaiderIO_ProfileTooltip:CreateBackdrop("Transparent")
+			RaiderIO_ProfileTooltip.backdrop:SetPoint("TOPLEFT", 3, 0)
+			RaiderIO_ProfileTooltip.backdrop:SetPoint("BOTTOMRIGHT", -2, 0)
+			RaiderIO_ProfileTooltip.styled = true
 
 			if DF_Frame and C.skins.blizzard_frames then
 				DF_Frame:StripTextures()
