@@ -60,8 +60,6 @@ local function UpdateColor(element, unit, cur, min, max, displayType)
 		r, g, b = t[1], t[2], t[3]
 	end
 
-	t = parent.colors.power[ptoken or ptype]
-
 	if(b) then
 		element:SetStatusBarColor(r, g, b)
 

@@ -31,7 +31,7 @@ local function UpdateColor(element, unit, cur, max)
 		r, g, b = t[1], t[2], t[3]
 	end
 
-	if(r or g or b) then
+	if(b) then
 		element:SetStatusBarColor(r, g, b)
 
 		local bg = element.bg
