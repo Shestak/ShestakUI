@@ -150,7 +150,7 @@ local OnMouseDown = function(self, button)
 	end
 end
 
-local barWidth = C.raidcooldown.width + (C.raidcooldown.show_icon and 28 or 0)
+local barWidth = C.raidcooldown.width + (C.raidcooldown.show_icon and 0 or 28)
 local CreateBar = function()
 	local bar = CreateFrame("Statusbar", nil, UIParent)
 	bar:SetFrameStrata("MEDIUM")
