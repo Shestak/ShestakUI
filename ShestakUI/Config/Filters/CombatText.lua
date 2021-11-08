@@ -29,7 +29,10 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[333526] = 3			-- Spiked Burrs (Night Fae Soulbind)
 	T.aoespam[355735] = 3			-- Winds of Winter (Frost Shard)
 	T.aoespam[355804] = 3			-- Blood Link (Blood Shard)
+	T.aoespam[355768] = 3			-- Blood Link (Blood Shard)
+	T.aoespam[355769] = 3			-- Blood Link (Blood Shard)
 	T.aoespam[355829] = 3			-- Chaos Bane (Unholy Shard)
+	T.aoespam[355605] = 3			-- Fusion Amplification (Trinket)
 end
 
 -- Class config
@@ -463,6 +466,7 @@ elseif T.class == "ROGUE" then
 		T.aoespam[152150] = 3		-- Death from Above
 		T.aoespam[114014] = 3		-- Shuriken Toss
 		T.aoespam[319175] = 3		-- Black Powder
+		T.aoespam[358126] = 3		-- Banshee's Blight [Edge of Night, Dagger]
 		T.merge[27576] = 5374		-- Mutilate Off-Hand
 		T.merge[113780] = 2818		-- Deadly Poison
 		T.merge[57842] = 57841		-- Killing Spree Off-Hand
