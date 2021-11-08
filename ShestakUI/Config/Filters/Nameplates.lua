@@ -170,6 +170,8 @@ T.ColorPlate = {
 	["166275"] = color2,	-- Mistveil Shaper
 	["165251"] = color,		-- Illusionary Vulpin
 	["167111"] = color,		-- Spinemaw Staghorn
+	-- Plaguefall
+	["169861"] = color,		-- Ickor Bileflesh
 	-- Theater of Pain
 	["174210"] = color,		-- Blighted Sludge-Spewer
 	-- Halls of Atonement
