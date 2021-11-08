@@ -39,10 +39,6 @@ local function LoadSkin()
 		T.SkinCloseButton(closeButton[i])
 	end
 
-	if not T.newPatch then
-		T.SkinCloseButton(CommunitiesGuildRecruitmentFrameCloseButton)
-	end
-
 	-- General Communities Frame
 	CommunitiesFrame:StripTextures()
 	CommunitiesFrame:CreateBackdrop("Transparent")
@@ -437,20 +433,6 @@ local function LoadSkin()
 	CommunitiesFrame.GuildMemberDetailFrame.GroupInviteButton:SkinButton()
 	CommunitiesFrame.GuildMemberDetailFrame.RemoveButton:ClearAllPoints()
 	CommunitiesFrame.GuildMemberDetailFrame.RemoveButton:SetPoint("BOTTOMLEFT", CommunitiesFrame.GuildMemberDetailFrame, "BOTTOMLEFT", 9, 4)
-
-	-- Recruitment
-	if not T.newPatch then
-		CommunitiesGuildRecruitmentFrame:StripTextures()
-		CommunitiesGuildRecruitmentFrame:CreateBackdrop("Transparent")
-
-		for i = 1, 2 do
-			T.SkinTab(_G["CommunitiesGuildRecruitmentFrameTab"..i], true)
-		end
-
-		CommunitiesGuildRecruitmentFrameApplicants.InviteButton:SkinButton()
-		CommunitiesGuildRecruitmentFrameApplicants.MessageButton:SkinButton()
-		CommunitiesGuildRecruitmentFrameApplicants.DeclineButton:SkinButton()
-	end
 
 	-- Guild Perk
 	CommunitiesFrame.GuildBenefitsFrame:StripTextures()

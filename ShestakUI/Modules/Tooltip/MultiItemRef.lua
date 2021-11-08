@@ -37,16 +37,8 @@ local CreateTip = function(link)
 	tip:RegisterForDrag("LeftButton")
 	tip:SetScript("OnDragStart", function(self) self:StartMoving() end)
 	tip:SetScript("OnDragStop", function(self) self:StopMovingOrSizing() end)
+	tip.NineSlice:SetAlpha(0)
 
-	if T.newPatch then -- TODO: detete in new patch
-		tip.NineSlice:SetAlpha(0)
-	else
-		tip:SetBackdrop(nil)
-		tip.SetBackdrop = T.dummy
-		if tip.BackdropFrame then
-			tip.BackdropFrame:SetBackdrop(nil)
-		end
-	end
 	local bg = CreateFrame("Frame", nil, tip)
 	bg:SetPoint("TOPLEFT")
 	bg:SetPoint("BOTTOMRIGHT")

@@ -15,7 +15,7 @@ LoadTootlipSkin:SetScript("OnEvent", function(self, _, addon)
 		local tooltip = EncounterJournalTooltip
 		local item1 = tooltip.Item1
 		local item2 = tooltip.Item2
-		tooltip:SetTemplate("Transparent")
+		tooltip.NineSlice:SetTemplate("Transparent")
 
 		local b = CreateFrame("Frame", "$parentBackdrop", item1)
 		b:SetPoint("TOPLEFT", item1.icon, -2, 2)
@@ -247,7 +247,7 @@ local function LoadSkin()
 
 	local items = EncounterJournal.encounter.info.lootScroll.buttons
 	for i = 1, #items do
-		local item = T.newPatch and items[i].lootFrame or items[i]
+		local item = items[i].lootFrame
 		hooksecurefunc(item.IconBorder, "SetVertexColor", function(self, r, g, b)
 			self:GetParent().IconBackdrop:SetBackdropBorderColor(r, g, b)
 			self:SetTexture("")

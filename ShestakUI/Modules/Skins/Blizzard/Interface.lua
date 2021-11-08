@@ -201,10 +201,7 @@ local function LoadSkin()
 	T.SkinDropDownBox(CompactUnitFrameProfilesGeneralOptionsFrameHealthTextDropdown)
 	T.SkinDropDownBox(CompactUnitFrameProfilesGeneralOptionsFrameSortByDropdown)
 	T.SkinDropDownBox(CompactUnitFrameProfilesProfileSelector)
-
-	if T.newPatch then
-		T.SkinDropDownBox(InterfaceOptionsAccessibilityPanelCursorSizeDropdown)
-	end
+	T.SkinDropDownBox(InterfaceOptionsAccessibilityPanelCursorSizeDropdown)
 
 	local buttons = {
 		"CompactUnitFrameProfilesGeneralOptionsFrameResetPositionButton",

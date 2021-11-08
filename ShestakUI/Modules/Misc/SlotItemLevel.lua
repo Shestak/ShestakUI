@@ -190,9 +190,6 @@ local function OnEvent(self, event, ...)
 
 		_G.PaperDollFrame:HookScript("OnShow", function()
 			f:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
-			if not T.newPatch then
-				f:RegisterEvent("ITEM_UPGRADE_MASTER_UPDATE")
-			end
 			f:RegisterEvent("ARTIFACT_UPDATE")
 			f:RegisterEvent("SOCKET_INFO_UPDATE")
 			f:RegisterEvent("COMBAT_RATING_UPDATE")
@@ -202,16 +199,12 @@ local function OnEvent(self, event, ...)
 
 		_G.PaperDollFrame:HookScript("OnHide", function()
 			f:UnregisterEvent("PLAYER_EQUIPMENT_CHANGED")
-			if not T.newPatch then
-				f:UnregisterEvent("ITEM_UPGRADE_MASTER_UPDATE")
-			end
 			f:UnregisterEvent("ARTIFACT_UPDATE")
 			f:UnregisterEvent("SOCKET_INFO_UPDATE")
 			f:UnregisterEvent("COMBAT_RATING_UPDATE")
 			f:Hide()
 		end)
-	elseif event == "PLAYER_EQUIPMENT_CHANGED" or event == "ITEM_UPGRADE_MASTER_UPDATE"
-	or event == "ARTIFACT_UPDATE" or event == "SOCKET_INFO_UPDATE" or event == "COMBAT_RATING_UPDATE" then
+	elseif event == "PLAYER_EQUIPMENT_CHANGED" or event == "ARTIFACT_UPDATE" or event == "SOCKET_INFO_UPDATE" or event == "COMBAT_RATING_UPDATE" then
 		if (...) == 16 then
 			equiped[16] = nil
 			equiped[17] = nil

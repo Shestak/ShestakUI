@@ -160,6 +160,7 @@ local function LoadSkin()
 		"Advanced_GammaSlider",
 		"Advanced_ContrastSlider",
 		"Advanced_BrightnessSlider",
+		"Advanced_ResampleSharpnessSlider",
 		"AudioOptionsSoundPanelMasterVolume",
 		"AudioOptionsSoundPanelSoundVolume",
 		"AudioOptionsSoundPanelMusicVolume",
@@ -184,19 +185,11 @@ local function LoadSkin()
 		end
 	end
 
-	if T.newPatch then
-		T.SkinSlider(Advanced_ResampleSharpnessSlider)
-	end
-
 	_G["Graphics_Quality"].SetBackdrop = T.dummy
 	_G["RaidGraphics_Quality"].SetBackdrop = T.dummy
 
 	local VUMeter = AudioOptionsVoicePanelTestInputDevice.VUMeter
-	if T.newPatch then -- TODO: detete in new patch
-		VUMeter.NineSlice:SetAlpha(0)
-	else
-		VUMeter:SetBackdrop(nil)
-	end
+	VUMeter.NineSlice:SetAlpha(0)
 	VUMeter.Status:CreateBackdrop("Overlay")
 
 	_G["VideoOptionsFrameDefaults"]:ClearAllPoints()
