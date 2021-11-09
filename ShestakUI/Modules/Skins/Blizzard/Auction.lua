@@ -308,7 +308,8 @@ local function LoadAuctionatorSkin()
 			T.SkinTab(AuctionatorTabs_Auctionator)
 
 			local frames = {
-				list.ScrollList,
+				list.ScrollListRecents,
+				list.ScrollListShoppingList,
 				list.ShoppingResultsInset,
 				selling.CurrentItemInset,
 				selling.HistoricalPriceInset,
@@ -319,18 +320,20 @@ local function LoadAuctionatorSkin()
 			}
 
 			for i = 1, #frames do
-				frames[i]:StripTextures()
+				if frames[i] then
+					frames[i]:StripTextures()
+				end
 			end
 
 			local buttons = {
-				_G.AuctionatorShoppingLists_AddItem,
+				list.AddItem,
 				list.ManualSearch,
-				list.CreateList,
-				list.DeleteList,
-				list.Rename,
+				list.SortItems,
 				list.Export,
 				list.Import,
 				list.ExportCSV,
+				list.OneItemSearchButton,
+				list.OneItemSearchExtendedButton,
 				selling.SaleItemFrame.MaxButton,
 				selling.SaleItemFrame.PostButton,
 				config.OptionsButton,
@@ -338,13 +341,16 @@ local function LoadAuctionatorSkin()
 			}
 
 			for i = 1, #buttons do
-				buttons[i]:SkinButton()
+				if buttons[i] then
+					buttons[i]:SkinButton()
+				end
 			end
 
 			local scrollbars = {
 				_G.AuctionatorSellingFrameScrollBar,
 				cancelling.ResultsListing.ScrollFrame.scrollBar,
-				list.ScrollList.ScrollFrame.scrollBar,
+				list.ScrollListShoppingList.ScrollFrame.scrollBar,
+				list.ScrollListRecents.ScrollFrame.scrollBar,
 				list.ResultsListing.ScrollFrame.scrollBar,
 				selling.CurrentItemListing.ScrollFrame.scrollBar,
 				selling.HistoricalPriceListing.ScrollFrame.scrollBar,
@@ -369,10 +375,12 @@ local function LoadAuctionatorSkin()
 			end
 
 			local editboxes = {
+				list.OneItemSearchBox,
 				selling.SaleItemFrame.Quantity.InputBox,
 				config.DiscordLink.InputBox,
 				config.TechnicalRoadmap.InputBox,
-				config.BugReportLink.InputBox
+				config.BugReportLink.InputBox,
+				cancelling.SearchFilter
 			}
 
 			for i = 1, #editboxes do
@@ -410,11 +418,13 @@ local function LoadAuctionatorSkin()
 			end
 
 			T.SkinDropDownBox(AuctionatorShoppingListFrame.ListDropdown, 230)
-			AuctionatorShoppingListFrame.CreateList:SetPoint("LEFT", AuctionatorShoppingListFrame.ListDropdown, "RIGHT", -5, 4)
+			list.OneItemSearchButton:SetPoint("TOPLEFT", list.OneItemSearchBox, "TOPRIGHT", 5, 1)
 
 			local tabs = {
 				selling.HistoryTabsContainer.RealmHistoryTab,
-				selling.HistoryTabsContainer.YourHistoryTab
+				selling.HistoryTabsContainer.YourHistoryTab,
+				list.RecentsTabsContainer.ListTab,
+				list.RecentsTabsContainer.RecentsTab
 			}
 
 			for i = 1, #tabs do
@@ -424,8 +434,13 @@ local function LoadAuctionatorSkin()
 				tab.backdrop = CreateFrame("Frame", nil, tab)
 				tab.backdrop:SetFrameLevel(tab:GetFrameLevel() - 1)
 				tab.backdrop:SetTemplate("Overlay")
-				tab.backdrop:SetPoint("TOPLEFT", 10, 0)
-				tab.backdrop:SetPoint("BOTTOMRIGHT", -10, 6)
+				if i < 3 then
+					tab.backdrop:SetPoint("TOPLEFT", 10, 0)
+					tab.backdrop:SetPoint("BOTTOMRIGHT", -10, 6)
+				else
+					tab.backdrop:SetPoint("TOPLEFT", 5, -5)
+					tab.backdrop:SetPoint("BOTTOMRIGHT", -5, 0)
+				end
 			end
 
 			AuctionatorSellingFrame.AuctionatorSaleItem.Icon.Icon:SkinIcon(true)
