@@ -40,7 +40,7 @@ local function LoadSkin()
 	GuildItemSearchBox:StripTextures(true)
 	GuildItemSearchBox:CreateBackdrop("Overlay")
 	GuildItemSearchBox.backdrop:SetPoint("TOPLEFT", 13, 0)
-	GuildItemSearchBox.backdrop:SetPoint("BOTTOMRIGHT", -5, 0)
+	GuildItemSearchBox.backdrop:SetPoint("BOTTOMRIGHT", -2, 0)
 
 	for i = 1, 7 do
 		local column = _G.GuildBankFrame["Column"..i]
@@ -63,7 +63,7 @@ local function LoadSkin()
 	end
 
 	for i = 1, 8 do
-		local tab = _G['GuildBankTab'..i]
+		local tab = _G["GuildBankTab"..i]
 		local button = tab.Button
 		local texture = button.IconTexture
 		tab:StripTextures(true)
@@ -77,8 +77,7 @@ local function LoadSkin()
 		if i == 1 then
 			button:SetPoint("TOPLEFT", GuildBankFrame, "TOPRIGHT", 1, 0)
 		else
-			local fixpos = i-1
-			button:SetPoint("TOP", _G["GuildBankTab"..fixpos.."Button"], "BOTTOM", 0, -20)
+			button:SetPoint("TOP", _G["GuildBankTab"..i-1].Button, "BOTTOM", 0, -20)
 		end
 
 		texture:ClearAllPoints()
