@@ -750,10 +750,10 @@ end
 
 function T.SkinIconSelectionFrame(frame, numIcons, buttonNameTemplate, frameNameOverride)
 	local frameName = frameNameOverride or frame:GetName()
-	local scrollFrame = _G[frameName.."ScrollFrame"]
-	local editBox = _G[frameName.."EditBox"]
-	local okayButton = _G[frameName.."OkayButton"] or _G[frameName.."Okay"] or frame.BorderBox.OkayButton
-	local cancelButton = _G[frameName.."CancelButton"] or _G[frameName.."Cancel"] or frame.BorderBox.CancelButton
+	local scrollFrame = frame.ScrollFrame or _G[frameName.."ScrollFrame"]
+	local editBox = frame.EditBox or _G[frameName.."EditBox"]
+	local okayButton = frame.OkayButton or frame.BorderBox.OkayButton or _G[frameName.."Okay"]
+	local cancelButton = frame.CancelButton or frame.BorderBox.CancelButton or _G[frameName.."Cancel"]
 
 	frame:StripTextures()
 	frame.BorderBox:StripTextures()
