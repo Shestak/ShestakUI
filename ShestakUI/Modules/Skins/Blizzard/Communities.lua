@@ -210,6 +210,8 @@ local function LoadSkin()
 
 	T.SkinNextPrevButton(ClubFinderGuildFinderFrame.GuildCards.PreviousPage)
 	T.SkinNextPrevButton(ClubFinderGuildFinderFrame.GuildCards.NextPage)
+	T.SkinNextPrevButton(ClubFinderGuildFinderFrame.PendingGuildCards.PreviousPage)
+	T.SkinNextPrevButton(ClubFinderGuildFinderFrame.PendingGuildCards.NextPage)
 
 	for _, button in pairs(ClubFinderCommunityAndGuildFinderFrame.CommunityCards.ListScrollFrame.buttons, ClubFinderCommunityAndGuildFinderFrame.PendingCommunityCards.ListScrollFrame.buttons) do
 		if not button.isSkinned then
