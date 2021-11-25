@@ -123,7 +123,6 @@ T.RaidDebuffs = {
 	[SpellName(354231)] = 3,	-- Soul Manacles
 	[SpellName(350927)] = 3,	-- Warmonger Shackle
 	-- Painsmith Raznal
-	[SpellName(356472)] = 3,	-- Lingering Flames
 	[SpellName(355505)] = 3,	-- Shadowsteel Chains
 	[SpellName(348456)] = 3,	-- Flameclasp Trap
 	[SpellName(356870)] = 3,	-- Flameclasp Eruption
