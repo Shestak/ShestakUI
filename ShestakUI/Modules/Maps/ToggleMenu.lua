@@ -513,3 +513,23 @@ for i = 1, GetNumAddOns() do
 end
 
 refreshAddOnMenu()
+
+----------------------------------------------------------------------------------------
+--	Reposition if minimap on top
+----------------------------------------------------------------------------------------
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:SetScript("OnEvent", function()
+	local _, y = Minimap:GetCenter()
+	local vhalf = (y > UIParent:GetHeight() / 2) and "TOP" or "BOTTOM"
+	if vhalf == "TOP" then
+		MenuBG:ClearAllPoints()
+		MenuBG:SetPoint("TOPRIGHT", Minimap, "BOTTOMRIGHT", 2, -3)
+
+		AddonBG:ClearAllPoints()
+		AddonBG:SetPoint("TOPRIGHT", MenuBG, "TOPRIGHT", 0, 0)
+
+		OpenMenuBG:ClearAllPoints()
+		OpenMenuBG:SetPoint("TOP", MenuBG, "TOP", 0, 0)
+	end
+end)
