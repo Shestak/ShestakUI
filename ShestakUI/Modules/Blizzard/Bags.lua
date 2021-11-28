@@ -791,14 +791,18 @@ function Stuffing:CreateBagFrame(w)
 		if IsAltKeyDown() or IsShiftKeyDown() then
 			self:StartMoving()
 			DragFunction(self, true)
+			f.moved = true
 		end
 	end)
 
 	f:SetScript("OnDragStop", function(self)
-		self:StopMovingOrSizing()
-		DragFunction(self, false)
-		local ap, _, rp, x, y = f:GetPoint()
-		ShestakUIPositions[f:GetName()] = {ap, "UIParent", rp, x, y}
+		if f.moved then	-- prevent false register without modifier key
+			self:StopMovingOrSizing()
+			DragFunction(self, false)
+			local ap, _, rp, x, y = f:GetPoint()
+			ShestakUIPositions[f:GetName()] = {ap, "UIParent", rp, x, y}
+			f.moved = nil
+		end
 	end)
 
 	f:SetScript("OnMouseDown", function(_, button)
