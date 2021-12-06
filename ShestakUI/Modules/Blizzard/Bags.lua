@@ -799,8 +799,9 @@ function Stuffing:CreateBagFrame(w)
 		if f.moved then	-- prevent false register without modifier key
 			self:StopMovingOrSizing()
 			DragFunction(self, false)
-			local ap, _, rp, x, y = f:GetPoint()
-			ShestakUIPositions[f:GetName()] = {ap, "UIParent", rp, x, y}
+			local ap, p, rp, x, y = f:GetPoint()
+			if not p then p = UIParent end
+			ShestakUIPositions[f:GetName()] = {ap, p:GetName(), rp, x, y}
 			f.moved = nil
 		end
 	end)
