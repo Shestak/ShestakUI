@@ -54,7 +54,30 @@ local function _getRealItemLevel(slotId, unit)
 	return realItemLevel
 end
 
+local function checkSpecID(unit)
+	local i = 0
+	local specID
+	if unit == "player" then
+		specID = GetSpecializationInfo(GetSpecialization())
+	else
+		specID = GetInspectSpecialization("target")
+	end
+
+	if specID then
+		if specID == 250 or specID == 251 or specID == 252 or specID == 66 or specID == 70 or specID == 71 or specID == 72 or specID == 73 then
+			i = INVSLOT_HAND
+		elseif specID == 577 or specID == 581 or specID == 103 or specID == 104 or specID == 253 or specID == 254 or specID == 255
+			or specID == 268 or specID == 269 or specID == 259 or specID == 260 or specID == 261 or specID == 263 then
+			i = INVSLOT_FEET
+		else
+			i = INVSLOT_WRIST
+		end
+	end
+	return i
+end
+
 local function _updateItems(unit, frame)
+	local itemSlot = checkSpecID(unit)
 	for i = 1, 17 do -- Only check changed player items or items without ilvl text, skip the shirt (4) and always update Inspects
 		local itemLink = GetInventoryItemLink(unit, i)
 		if i ~= 4 and ((frame == f and (equiped[i] ~= itemLink or frame[i]:GetText() == nil or itemLink == nil and frame[i]:GetText() ~= "")) or frame == g) then
@@ -69,7 +92,7 @@ local function _updateItems(unit, frame)
 			end
 
 			local color = "|cffFFFF00"
-			if itemLink and (i == 15 or i == 5 or i == 16 or i == 11 or i == 12) and (realItemLevel ~= "" and tonumber(realItemLevel) > 184) then
+			if itemLink and (i == 15 or i == 5 or i == 16 or i == 11 or i == 12 or i == itemSlot) and (realItemLevel ~= "" and tonumber(realItemLevel) > 197) then
 				local _, _, enchant = strsplit(":", itemLink)
 				if enchant and enchant == "" then
 					color = "|cffFF0000"
