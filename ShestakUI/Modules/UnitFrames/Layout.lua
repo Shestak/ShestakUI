@@ -687,12 +687,14 @@ local function Shared(self, unit)
 				self.Portrait.backdrop:Hide()
 				self.Portrait:SetAlpha(0.5)
 
-				local frame = CreateFrame("Frame")
-				frame:RegisterEvent("PLAYER_LOGIN")
-				frame:SetScript("OnEvent", function()
-					T_DE_BUFF_BAR_Anchor:ClearAllPoints()
-					T_DE_BUFF_BAR_Anchor:SetPoint(C.position.filger.target_bar[1], C.position.filger.target_bar[2], C.position.filger.target_bar[3], C.position.filger.target_bar[4], C.position.filger.target_bar[5])
-				end)
+				if C.filger.enable then
+					local frame = CreateFrame("Frame")
+					frame:RegisterEvent("PLAYER_LOGIN")
+					frame:SetScript("OnEvent", function()
+						T_DE_BUFF_BAR_Anchor:ClearAllPoints()
+						T_DE_BUFF_BAR_Anchor:SetPoint(C.position.filger.target_bar[1], C.position.filger.target_bar[2], C.position.filger.target_bar[3], C.position.filger.target_bar[4], C.position.filger.target_bar[5])
+					end)
+				end
 			end
 		end
 
