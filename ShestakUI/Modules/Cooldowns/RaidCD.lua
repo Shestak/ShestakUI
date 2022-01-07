@@ -217,8 +217,13 @@ local StartTimer = function(name, spellId)
 			bar:SetStatusBarColor(color.r, color.g, color.b)
 			bar.bg:SetVertexColor(color.r, color.g, color.b, 0.2)
 		else
-			bar:SetStatusBarColor(0.3, 0.7, 0.3)
-			bar.bg:SetVertexColor(0.3, 0.7, 0.3, 0.2)
+			if curCharges and curCharges > 0 then
+				bar:SetStatusBarColor(0.3, 0.7, 0.3)
+				bar.bg:SetVertexColor(0.3, 0.7, 0.3, 0.2)
+			else
+				bar:SetStatusBarColor(0.8, 0.3, 0.3)
+				bar.bg:SetVertexColor(0.8, 0.3, 0.3, 0.2)
+			end
 		end
 
 		bar:SetScript("OnUpdate", BarUpdate)
@@ -268,7 +273,7 @@ end
 
 local OnEvent = function(self, event)
 	if event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
-		if select(2, IsInInstance()) == "raid" and IsInGroup() then
+		if (select(2, IsInInstance()) == "raid" or select(2, IsInInstance()) == "party") and IsInGroup() then
 			self:RegisterEvent("SPELL_UPDATE_CHARGES")
 		else
 			self:UnregisterEvent("SPELL_UPDATE_CHARGES")
