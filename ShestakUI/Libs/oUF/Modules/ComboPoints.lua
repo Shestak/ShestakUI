@@ -55,17 +55,17 @@ local function Update(self, _, unit, powerType)
 	end
 
 	if T.class == "ROGUE" then
-		for i = 2, 4 do
+		for i = 2, 5 do
 			element[i]:SetStatusBarColor(unpack(element.Colors[i]))
 		end
 
-		local UnitChargedPowerPoints = GetUnitChargedPowerPoints("player")
-		local chargedPoint = UnitChargedPowerPoints and UnitChargedPowerPoints[1]
-
-		if chargedPoint then
-			element[chargedPoint]:SetStatusBarColor(unpack(element.Colors[7]))
-			if element[chargedPoint]:GetAlpha() == 0.2 then
-				element[chargedPoint]:SetAlpha(0.5)
+		local chargedPoints = GetUnitChargedPowerPoints("player")
+		if chargedPoints then
+			for _, chargedIndex in next, chargedPoints do
+				element[chargedIndex]:SetStatusBarColor(unpack(element.Colors[7]))
+				if element[chargedIndex]:GetAlpha() == 0.2 then
+					element[chargedIndex]:SetAlpha(0.5)
+				end
 			end
 		end
 	end
