@@ -446,9 +446,7 @@ function Stuffing:CreateReagentContainer()
 			NumButtons = NumButtons + 1
 		end
 
-		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		icon:SetPoint("TOPLEFT", 2, -2)
-		icon:SetPoint("BOTTOMRIGHT", -2, 2)
+		icon:CropIcon()
 
 		count:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
 		count:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
@@ -530,9 +528,7 @@ function Stuffing:BagFrameSlotNew(p, slot)
 	ret.frame:SetNormalTexture(nil)
 
 	ret.icon = _G[ret.frame:GetName().."IconTexture"]
-	ret.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	ret.icon:SetPoint("TOPLEFT", ret.frame, 2, -2)
-	ret.icon:SetPoint("BOTTOMRIGHT", ret.frame, -2, 2)
+	ret.icon:CropIcon()
 
 	return ret
 end
@@ -583,9 +579,7 @@ function Stuffing:SlotNew(bag, slot)
 		ret.frame:SetNormalTexture(nil)
 
 		ret.icon = _G[ret.frame:GetName().."IconTexture"]
-		ret.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		ret.icon:SetPoint("TOPLEFT", ret.frame, 2, -2)
-		ret.icon:SetPoint("BOTTOMRIGHT", ret.frame, -2, 2)
+		ret.icon:CropIcon()
 
 		ret.count = _G[ret.frame:GetName().."Count"]
 		ret.count:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)

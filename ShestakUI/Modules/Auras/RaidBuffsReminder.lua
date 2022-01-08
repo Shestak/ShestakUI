@@ -283,7 +283,5 @@ for i = 1, #buffButtons do
 	button:SetFrameLevel(RaidBuffReminder:GetFrameLevel() + 2)
 
 	button.t = button:CreateTexture(name..".t", "OVERLAY")
-	button.t:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	button.t:SetPoint("TOPLEFT", 2, -2)
-	button.t:SetPoint("BOTTOMRIGHT", -2, 2)
+	button.t:CropIcon()
 end
