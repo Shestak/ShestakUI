@@ -386,7 +386,7 @@ L_GUI_COMBATTEXT_SHORT_NUMBERS = "數值以K為單位顯示"
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Buff大小"
 L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "玩家Buff圖標大小"
-L.aura_player_debuff_size = "DeBuffs大小"
+L.aura_debuff_size = "DeBuffs大小"
 L_GUI_AURA_SHOW_SPIRAL = "漩渦冷卻樣式"
 L_GUI_AURA_SHOW_TIMER = "層數堆疊"
 L_GUI_AURA_PLAYER_AURAS = "玩家顯示法術效果"
@@ -395,11 +395,13 @@ L_GUI_AURA_FOCUS_DEBUFFS = "焦點顯示DeBuff"
 L_GUI_AURA_FOT_DEBUFFS = "焦點的目標顯示DeBuff"
 L_GUI_AURA_PET_DEBUFFS = "寵物顯示DeBuff"
 L_GUI_AURA_TOT_DEBUFFS = "目標的目標顯示DeBuff"
-L.aura_boss_buffs = "Boss顯示Buff/DeBuff"
+L.aura_subheader_boss = "Boss顯示Buff/DeBuff"
 L_GUI_AURA_PLAYER_AURA_ONLY = "目標只顯示自身施放的DeBuff"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "DeBuff按法術類型著色"
 L_GUI_AURA_CAST_BY = "提示Buff/DeBuff提供者"
 L_GUI_AURA_CLASSCOLOR_BORDER = "自身Buff圖標邊框按職業著色"
+L.aura_subheader_buffs = "Player buffs" -- Need review
+L.aura_subheader_debuffs = "Debuffs" -- Need review
 
 -- Bag options
 L_GUI_BAGS = "背包"

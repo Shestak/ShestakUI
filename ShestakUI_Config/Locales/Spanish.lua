@@ -386,7 +386,7 @@ L_GUI_COMBATTEXT_SHORT_NUMBERS = "Use short numbers ('25.3k' instead of '25342')
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size" -- Need review
 L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "Tamaño de las beneficios del jugador"
-L.aura_player_debuff_size = "Debuffs size" -- Need review
+L.aura_debuff_size = "Debuffs size" -- Need review
 L_GUI_AURA_SHOW_SPIRAL = "Espiral en los iconos de las auras"
 L_GUI_AURA_SHOW_TIMER = "Mostrar tiempo de reutilización en los iconos de las auras"
 L_GUI_AURA_PLAYER_AURAS = "Auras en el marco del jugador"
@@ -395,11 +395,13 @@ L_GUI_AURA_FOCUS_DEBUFFS = "Perjuicios en el marco del foco"
 L_GUI_AURA_FOT_DEBUFFS = "Perjuicios en el marco del objetivo del foco"
 L_GUI_AURA_PET_DEBUFFS = "Perjuicios en el marco de la mascota"
 L_GUI_AURA_TOT_DEBUFFS = "Perjuicios en el marco del objetivo del objetivo"
-L.aura_boss_buffs = "Beneficios en el marco del jefe" -- Need review
+L.aura_subheader_boss = "Beneficios en el marco del jefe" -- Need review
 L_GUI_AURA_PLAYER_AURA_ONLY = "Solo tus perjuicios en el marco del objetivo"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Color de los perjuicios por tipo"
 L_GUI_AURA_CAST_BY = "Mostrar quién lanza un beneficio/perjuicio en su descripción"
 L_GUI_AURA_CLASSCOLOR_BORDER = "Activar borde por color de clase para los beneficios del jugador"
+L.aura_subheader_buffs = "Player buffs" -- Need review
+L.aura_subheader_debuffs = "Debuffs" -- Need review
 
 -- Bag options
 L_GUI_BAGS = "Bolsas"

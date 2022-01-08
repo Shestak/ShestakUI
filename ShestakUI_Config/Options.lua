@@ -1050,12 +1050,6 @@ do
 	local arena_on_right = ns.CreateCheckBox(parent, "arena_on_right", L_GUI_UF_ARENA_RIGHT)
 	arena_on_right:SetPoint("LEFT", show_arena, "RIGHT", 248, 0)
 
-	local boss_debuffs = ns.CreateNumberSlider(parent, "boss_debuffs", nil, nil, 0, 5, 1, true, L_GUI_UF_BOSS_DEBUFFS, L_GUI_UF_BOSS_DEBUFFS_DESC)
-	boss_debuffs:SetPoint("TOPLEFT", show_arena, "BOTTOMLEFT", 0, -20)
-
-	local boss_buffs = ns.CreateNumberSlider(parent, "boss_buffs", nil, nil, 0, 3, 1, true, L_GUI_UF_BOSS_BUFFS, L_GUI_UF_BOSS_BUFFS_DESC)
-	boss_buffs:SetPoint("LEFT", boss_debuffs, "RIGHT", 120, 0)
-
 	-- Panel 2
 	local parent = ShestakUIOptionsPanel.unitframe2
 
@@ -1394,50 +1388,68 @@ end
 do
 	local parent = ShestakUIOptionsPanel.aura
 
-	local player_buff_size = ns.CreateNumberSlider(parent, "player_buff_size", nil, nil, 0, 50, 1, true, L_GUI_AURA_PLAYER_BUFF_SIZE, L_GUI_AURA_PLAYER_BUFF_SIZE_DESC)
-	player_buff_size:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, -20)
-
-	local player_debuff_size = ns.CreateNumberSlider(parent, "player_debuff_size", nil, nil, 0, 50, 1, true)
-	player_debuff_size:SetPoint("LEFT", player_buff_size, "RIGHT", 120, 0)
-
 	local show_spiral = ns.CreateCheckBox(parent, "show_spiral", L_GUI_AURA_SHOW_SPIRAL)
-	show_spiral:SetPoint("TOPLEFT", player_buff_size, "BOTTOMLEFT", 0, -10)
+	show_spiral:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
 	local show_timer = ns.CreateCheckBox(parent, "show_timer", L_GUI_AURA_SHOW_TIMER)
 	show_timer:SetPoint("TOPLEFT", show_spiral, "BOTTOMLEFT", 0, 0)
 
+	local cast_by = ns.CreateCheckBox(parent, "cast_by", L_GUI_AURA_CAST_BY)
+	cast_by:SetPoint("TOPLEFT", show_timer, "BOTTOMLEFT", 0, 0)
+
+	-- Buffs
+	local subheader = ns.addSubCategory(parent, L.aura_subheader_buffs)
+	subheader:SetPoint("TOPLEFT", cast_by, "BOTTOMLEFT", 0, -10)
+
 	local player_auras = ns.CreateCheckBox(parent, "player_auras", L_GUI_AURA_PLAYER_AURAS)
-	player_auras:SetPoint("TOPLEFT", show_timer, "BOTTOMLEFT", 0, 0)
+	player_auras:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -10)
+
+	local classcolor_border = ns.CreateCheckBox(parent, "classcolor_border", L_GUI_AURA_CLASSCOLOR_BORDER)
+	classcolor_border:SetPoint("TOPLEFT", player_auras, "BOTTOMLEFT", 0, 0)
+
+	local player_buff_size = ns.CreateNumberSlider(parent, "player_buff_size", nil, nil, 0, 50, 1, true, L_GUI_AURA_PLAYER_BUFF_SIZE, L_GUI_AURA_PLAYER_BUFF_SIZE_DESC)
+	player_buff_size:SetPoint("TOPLEFT", classcolor_border, "BOTTOMLEFT", 0, -20)
+
+	-- Debuffs
+	local subheader = ns.addSubCategory(parent, L.aura_subheader_debuffs)
+	subheader:SetPoint("TOPLEFT", player_buff_size, "BOTTOMLEFT", 0, -10)
 
 	local target_auras = ns.CreateCheckBox(parent, "target_auras", L_GUI_AURA_TARGET_AURAS)
-	target_auras:SetPoint("TOPLEFT", player_auras, "BOTTOMLEFT", 0, 0)
+	target_auras:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -10)
+
+	local tot_debuffs = ns.CreateCheckBox(parent, "tot_debuffs", L_GUI_AURA_TOT_DEBUFFS)
+	tot_debuffs:SetPoint("LEFT", target_auras, "RIGHT", 320, 0)
 
 	local focus_debuffs = ns.CreateCheckBox(parent, "focus_debuffs", L_GUI_AURA_FOCUS_DEBUFFS)
 	focus_debuffs:SetPoint("TOPLEFT", target_auras, "BOTTOMLEFT", 0, 0)
 
 	local fot_debuffs = ns.CreateCheckBox(parent, "fot_debuffs", L_GUI_AURA_FOT_DEBUFFS)
-	fot_debuffs:SetPoint("TOPLEFT", focus_debuffs, "BOTTOMLEFT", 0, 0)
+	fot_debuffs:SetPoint("LEFT", focus_debuffs, "RIGHT", 320, 0)
 
 	local pet_debuffs = ns.CreateCheckBox(parent, "pet_debuffs", L_GUI_AURA_PET_DEBUFFS)
-	pet_debuffs:SetPoint("TOPLEFT", fot_debuffs, "BOTTOMLEFT", 0, 0)
-
-	local tot_debuffs = ns.CreateCheckBox(parent, "tot_debuffs", L_GUI_AURA_TOT_DEBUFFS)
-	tot_debuffs:SetPoint("TOPLEFT", pet_debuffs, "BOTTOMLEFT", 0, 0)
-
-	local boss_buffs = ns.CreateCheckBox(parent, "boss_buffs")
-	boss_buffs:SetPoint("TOPLEFT", tot_debuffs, "BOTTOMLEFT", 0, 0)
+	pet_debuffs:SetPoint("TOPLEFT", focus_debuffs, "BOTTOMLEFT", 0, 0)
 
 	local player_aura_only = ns.CreateCheckBox(parent, "player_aura_only", L_GUI_AURA_PLAYER_AURA_ONLY)
-	player_aura_only:SetPoint("TOPLEFT", boss_buffs, "BOTTOMLEFT", 0, 0)
+	player_aura_only:SetPoint("TOPLEFT", pet_debuffs, "BOTTOMLEFT", 0, 0)
 
 	local debuff_color_type = ns.CreateCheckBox(parent, "debuff_color_type", L_GUI_AURA_DEBUFF_COLOR_TYPE)
 	debuff_color_type:SetPoint("TOPLEFT", player_aura_only, "BOTTOMLEFT", 0, 0)
 
-	local classcolor_border = ns.CreateCheckBox(parent, "classcolor_border", L_GUI_AURA_CLASSCOLOR_BORDER)
-	classcolor_border:SetPoint("TOPLEFT", debuff_color_type, "BOTTOMLEFT", 0, 0)
+	local debuff_size = ns.CreateNumberSlider(parent, "debuff_size", nil, nil, 0, 50, 1, true)
+	debuff_size:SetPoint("TOPLEFT", debuff_color_type, "BOTTOMLEFT", 0, -20)
 
-	local cast_by = ns.CreateCheckBox(parent, "cast_by", L_GUI_AURA_CAST_BY)
-	cast_by:SetPoint("TOPLEFT", classcolor_border, "BOTTOMLEFT", 0, 0)
+	-- Boss auras
+	local subheader = ns.addSubCategory(parent, L.aura_subheader_boss)
+	subheader:SetPoint("TOPLEFT", debuff_size, "BOTTOMLEFT", 0, -10)
+
+	local boss_auras = ns.CreateCheckBox(parent, "boss_auras", ENABLE)
+	boss_auras:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -10)
+
+	local boss_debuffs = ns.CreateNumberSlider(parent, "boss_debuffs", nil, nil, 0, 5, 1, true, L_GUI_UF_BOSS_DEBUFFS, L_GUI_UF_BOSS_DEBUFFS_DESC)
+	boss_debuffs:SetPoint("TOPLEFT", boss_auras, "BOTTOMLEFT", 0, -20)
+
+	local boss_buffs = ns.CreateNumberSlider(parent, "boss_buffs", nil, nil, 0, 3, 1, true, L_GUI_UF_BOSS_BUFFS, L_GUI_UF_BOSS_BUFFS_DESC)
+	boss_buffs:SetPoint("LEFT", boss_debuffs, "RIGHT", 120, 0)
 end
 
 -- ActionBar

@@ -386,7 +386,7 @@ L_GUI_COMBATTEXT_SHORT_NUMBERS = "Usa abbreviazioni numeriche ('25.3k' invece di
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Buffs size" -- Need review
 L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "Dimensione benefici giocatore"
-L.aura_player_debuff_size = "Debuffs size" -- Need review
+L.aura_debuff_size = "Debuffs size" -- Need review
 L_GUI_AURA_SHOW_SPIRAL = "Spirale trascorrere tempo sulle icone delle auree"
 L_GUI_AURA_SHOW_TIMER = "Mostra il timer del recupero sulle icone delle auree"
 L_GUI_AURA_PLAYER_AURAS = "Auree sul riquadro del giocatore"
@@ -395,11 +395,13 @@ L_GUI_AURA_FOCUS_DEBUFFS = "Penalità sul riquadro del focus"
 L_GUI_AURA_FOT_DEBUFFS = "Penalità sul riquadro del bersaglio del focus"
 L_GUI_AURA_PET_DEBUFFS = "Penalità sul riquadro del famiglio"
 L_GUI_AURA_TOT_DEBUFFS = "Penalità sul riquadro del bersaglio del bersaglio"
-L.aura_boss_buffs = "Benefici sul riquadro del boss" -- Need review
+L.aura_subheader_boss = "Benefici sul riquadro del boss" -- Need review
 L_GUI_AURA_PLAYER_AURA_ONLY = "Mostra solo le tue penalità sul riquadro del bersaglio"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Colora le penalità a seconda del tipo"
 L_GUI_AURA_CAST_BY = "Mostra chi ha lanciato un beneficio o una penalità nei suggerimenti"
 L_GUI_AURA_CLASSCOLOR_BORDER = "Colora i bordi dei benefici del giocatore in base al colore della classi"
+L.aura_subheader_buffs = "Player buffs" -- Need review
+L.aura_subheader_debuffs = "Debuffs" -- Need review
 
 -- Bag options
 L_GUI_BAGS = "Sacche"

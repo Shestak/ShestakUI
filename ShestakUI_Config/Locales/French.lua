@@ -386,7 +386,7 @@ L_GUI_COMBATTEXT_SHORT_NUMBERS = "Rendre plus lisible les nombres ('25.3k' au li
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Taille des buffs"
 L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "Taille des buffs du joueur"
-L.aura_player_debuff_size = "Taille des debuffs"
+L.aura_debuff_size = "Taille des debuffs"
 L_GUI_AURA_SHOW_SPIRAL = "Spirale sur les icones de buff"
 L_GUI_AURA_SHOW_TIMER = "Afficher le cooldown sur les icônes de buff"
 L_GUI_AURA_PLAYER_AURAS = "Afficher les buffs du joueur"
@@ -395,11 +395,13 @@ L_GUI_AURA_FOCUS_DEBUFFS = "Afficher les debuffs du focus"
 L_GUI_AURA_FOT_DEBUFFS = "Afficher les debuffs de la cible du focus"
 L_GUI_AURA_PET_DEBUFFS = "Afficher les debuffs du pet"
 L_GUI_AURA_TOT_DEBUFFS = "Afficher les debuffs de la cible de la cible"
-L.aura_boss_buffs = "Afficher les buffs du Boss"
+L.aura_subheader_boss = "Afficher les buffs du Boss"
 L_GUI_AURA_PLAYER_AURA_ONLY = "Afficher seulement ses propres debuffs sur la cible"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Couleur de debuff par type"
 L_GUI_AURA_CAST_BY = "Montrer qui a lancé un buff/debuff dans son tooltip"
 L_GUI_AURA_CLASSCOLOR_BORDER = "Activer la couleur de votre classe pour la bordure de vos buffs"
+L.aura_subheader_buffs = "Player buffs" -- Need review
+L.aura_subheader_debuffs = "Debuffs" -- Need review
 
 -- Bag options
 L_GUI_BAGS = "Sacs"

@@ -66,7 +66,7 @@ C.options = profile
 -- Load edited profile code
 loadstring("local T, C, L = unpack(ShestakUI)\n"..C["media"].profile)()
 
--- Sync new settings
+-- Sync new settings -- TODO: delete after while
 if C.options.raidframe then
 	if C.options.raidframe.heal_width then
 		C.options.raidframe.heal_party_width = C.options.raidframe.heal_width
@@ -80,5 +80,24 @@ if C.options.raidframe then
 		C.options.raidframe.heal_party_power_height = C.options.raidframe.heal_power_height
 		C.options.raidframe.heal_raid_power_height = C.options.raidframe.heal_power_height
 		C.options.raidframe.heal_power_height = nil
+	end
+end
+
+if C.options.unitframe then
+	if C.options.unitframe.boss_debuffs then
+		if not C.options.aura then C.options.aura = {} end
+		C.options.aura.boss_debuffs = C.options.unitframe.boss_debuffs
+		C.options.unitframe.boss_debuffs = nil
+	elseif C.options.unitframe.boss_buffs then
+		if not C.options.aura then C.options.aura = {} end
+		C.options.aura.boss_buffs = C.options.unitframe.boss_buffs
+		C.options.unitframe.boss_buffs = nil
+	end
+end
+
+if C.options.aura then
+	if C.options.aura.player_debuff_size then
+		C.options.aura.debuff_size = C.options.aura.player_debuff_size
+		C.options.aura.player_debuff_size = nil
 	end
 end

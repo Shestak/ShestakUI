@@ -386,7 +386,7 @@ L_GUI_COMBATTEXT_SHORT_NUMBERS = "Zeige kurze Zahlen an ('25.3k' statt '25342')"
 -- Auras/Buffs/Debuffs
 L_GUI_AURA_PLAYER_BUFF_SIZE = "Buff größe"
 L_GUI_AURA_PLAYER_BUFF_SIZE_DESC = "Größe der Spielerbuffs"
-L.aura_player_debuff_size = "Debuff größe"
+L.aura_debuff_size = "Debuff größe"
 L_GUI_AURA_SHOW_SPIRAL = "Spirale auf Buffsymbolen"
 L_GUI_AURA_SHOW_TIMER = "Zeige Abklingzeit für Buffs"
 L_GUI_AURA_PLAYER_AURAS = "Buffs auf dem Spielerfenster"
@@ -395,11 +395,13 @@ L_GUI_AURA_FOCUS_DEBUFFS = "Debuffs auf dem Fokusfenster"
 L_GUI_AURA_FOT_DEBUFFS = "Debuffs auf dem Fokusziel"
 L_GUI_AURA_PET_DEBUFFS = "Debuffs auf dem Begleiterfenster"
 L_GUI_AURA_TOT_DEBUFFS = "Debuffs bei Ziel des Ziels anzeigen"
-L.aura_boss_buffs = "Stärkungszauber auf dem Bossframe anzeigen." -- Need review
+L.aura_subheader_boss = "Stärkungszauber auf dem Bossframe anzeigen." -- Need review
 L_GUI_AURA_PLAYER_AURA_ONLY = "Nur eigenen Debuffs bei dem Zielfenster anzeigen"
 L_GUI_AURA_DEBUFF_COLOR_TYPE = "Debuffs nach Art einfärben"
 L_GUI_AURA_CAST_BY = "Zeige im Tooltip an von wem ein Buff- bzw. Debuff gewirkt wurde"
 L_GUI_AURA_CLASSCOLOR_BORDER = "Aktiviere Klassenfarbe für Spielerbuffs"
+L.aura_subheader_buffs = "Player buffs" -- Need review
+L.aura_subheader_debuffs = "Debuffs" -- Need review
 
 -- Bag options
 L_GUI_BAGS = "Taschen"
