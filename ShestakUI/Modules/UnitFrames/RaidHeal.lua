@@ -88,9 +88,24 @@ local function Shared(self, unit)
 	if (suffix == "pet" or suffix == "target") and unit ~= "tank" then
 		self.Info:SetPoint("LEFT", self.Health, "LEFT", 0, 0)
 		self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
+	elseif unit == "party" then
+		if C.raidframe.hide_health_value then
+			self.Info:SetPoint("LEFT", self.Health, "LEFT", 0, 0)
+			self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
+		else
+			local center = (party_height - (C.font.unit_frames_font_size * 2 + 2)) / 2
+			self.Info:SetPoint("TOPLEFT", self.Health, "TOPLEFT", 0, -center)
+			self.Info:SetPoint("TOPRIGHT", self.Health, "TOPRIGHT", 0, -center)
+		end
 	else
-		self.Info:SetPoint("TOPLEFT", self.Health, "TOPLEFT", 0, -4)
-		self.Info:SetPoint("TOPRIGHT", self.Health, "TOPRIGHT", 0, -4)
+		if C.raidframe.hide_health_value then
+			self.Info:SetPoint("LEFT", self.Health, "LEFT", 0, 0)
+			self.Info:SetPoint("RIGHT", self.Health, "RIGHT", 0, 0)
+		else
+			local center = (raid_height - (C.font.unit_frames_font_size * 2 + 2)) / 2
+			self.Info:SetPoint("TOPLEFT", self.Health, "TOPLEFT", 0, -center)
+			self.Info:SetPoint("TOPRIGHT", self.Health, "TOPRIGHT", 0, -center)
+		end
 	end
 	self:Tag(self.Info, "[GetNameColor][NameShort]")
 
