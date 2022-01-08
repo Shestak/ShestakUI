@@ -328,6 +328,11 @@ local function SkinIcon(icon, t, parent)
 	icon:SetParent(t and icon.b or parent)
 end
 
+local function CropIcon(icon)
+	icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	icon:SetInside()
+end
+
 ----------------------------------------------------------------------------------------
 --	Font function
 ----------------------------------------------------------------------------------------
@@ -370,6 +375,7 @@ local function addAPI(object)
 	if not object.StyleButton then mt.StyleButton = StyleButton end
 	if not object.SkinButton then mt.SkinButton = SkinButton end
 	if not object.SkinIcon then mt.SkinIcon = SkinIcon end
+	if not object.CropIcon then mt.CropIcon = CropIcon end
 	if not object.FontString then mt.FontString = FontString end
 	if not object.FadeIn then mt.FadeIn = FadeIn end
 	if not object.FadeOut then mt.FadeOut = FadeOut end

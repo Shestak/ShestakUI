@@ -43,9 +43,7 @@ for i = 1, NUM_TEMP_ENCHANT_FRAMES do
 
 	buff:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
 
-	icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	icon:SetPoint("TOPLEFT", buff, 2, -2)
-	icon:SetPoint("BOTTOMRIGHT", buff, -2, 2)
+	icon:CropIcon()
 	icon:SetDrawLayer("BORDER")
 
 	duration:ClearAllPoints()
@@ -72,9 +70,7 @@ local function StyleBuffs(buttonName, index)
 
 		buff:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
 
-		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		icon:SetPoint("TOPLEFT", buff, 2, -2)
-		icon:SetPoint("BOTTOMRIGHT", buff, -2, 2)
+		icon:CropIcon()
 		icon:SetDrawLayer("BORDER")
 
 		duration:ClearAllPoints()
