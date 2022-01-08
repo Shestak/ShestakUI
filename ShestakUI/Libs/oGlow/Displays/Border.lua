@@ -1,5 +1,10 @@
 local T, C, L, _ = unpack(select(2, ...))
 
+local Mult = T.mult
+if T.screenHeight > 1200 then
+	Mult = T.Scale(1)
+end
+
 local colorTable = setmetatable(
 	{},
 	{__index = function(self, val)
@@ -22,7 +27,7 @@ local createBorder = function(self, point)
 
 			bc:SetBackdrop({
 				edgeFile = C.media.blank,
-				edgeSize = 1,
+				edgeSize = Mult,
 			})
 
 			if self.backdrop then
