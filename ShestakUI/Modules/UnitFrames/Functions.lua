@@ -813,3 +813,46 @@ T.CreateAuraWatch = function(self)
 
 	self.AuraWatch = auras
 end
+
+T.CreateHealthPrediction = function(self)
+	local mhpb = self.Health:CreateTexture(nil, "ARTWORK")
+	mhpb:SetTexture(C.media.texture)
+	mhpb:SetVertexColor(0, 1, 0.5, 0.2)
+
+	local ohpb = self.Health:CreateTexture(nil, "ARTWORK")
+	ohpb:SetTexture(C.media.texture)
+	ohpb:SetVertexColor(0, 1, 0, 0.2)
+
+	local ahpb = self.Health:CreateTexture(nil, "ARTWORK")
+	ahpb:SetTexture(C.media.texture)
+	ahpb:SetVertexColor(1, 1, 0, 0.2)
+
+	local hab = self.Health:CreateTexture(nil, "ARTWORK")
+	hab:SetTexture(C.media.texture)
+	hab:SetVertexColor(1, 0, 0, 0.4)
+
+	local oa = self.Health:CreateTexture(nil, "ARTWORK")
+	oa:SetTexture([[Interface\AddOns\ShestakUI\Media\Textures\Cross.tga]], "REPEAT", "REPEAT")
+	oa:SetVertexColor(0.5, 0.5, 1)
+	oa:SetHorizTile(true)
+	oa:SetVertTile(true)
+	oa:SetAlpha(0.4)
+	oa:SetBlendMode("ADD")
+
+	local oha = self.Health:CreateTexture(nil, "ARTWORK")
+	oha:SetTexture([[Interface\AddOns\ShestakUI\Media\Textures\Cross.tga]], "REPEAT", "REPEAT")
+	oha:SetVertexColor(1, 0, 0)
+	oha:SetHorizTile(true)
+	oha:SetVertTile(true)
+	oha:SetAlpha(0.4)
+	oha:SetBlendMode("ADD")
+
+	self.HealthPrediction = {
+		myBar = mhpb,
+		otherBar = ohpb,
+		absorbBar = ahpb,
+		healAbsorbBar = hab,
+		overAbsorb = C.raidframe.plugins_over_absorb and oa,
+		overHealAbsorb = C.raidframe.plugins_over_heal_absorb and oha
+	}
+end

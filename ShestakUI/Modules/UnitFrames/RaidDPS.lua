@@ -236,39 +236,9 @@ local function Shared(self, unit)
 	self.DebuffHighlightAlpha = 1
 	self.DebuffHighlightFilter = true
 
-	-- Incoming heal text/bar
+	-- Incoming heals and heal/damage absorbs
 	if C.raidframe.plugins_healcomm == true then
-		local mhpb = self.Health:CreateTexture(nil, "ARTWORK")
-		mhpb:SetTexture(C.media.texture)
-		mhpb:SetVertexColor(0, 1, 0.5, 0.2)
-
-		local ohpb = self.Health:CreateTexture(nil, "ARTWORK")
-		ohpb:SetTexture(C.media.texture)
-		ohpb:SetVertexColor(0, 1, 0, 0.2)
-
-		local ahpb = self.Health:CreateTexture(nil, "ARTWORK")
-		ahpb:SetTexture(C.media.texture)
-		ahpb:SetVertexColor(1, 1, 0, 0.2)
-
-		local hab = self.Health:CreateTexture(nil, "ARTWORK")
-		hab:SetTexture(C.media.texture)
-		hab:SetVertexColor(1, 0, 0, 0.4)
-
-		local oa = self.Health:CreateTexture(nil, "ARTWORK")
-		oa:SetTexture([[Interface\AddOns\ShestakUI\Media\Textures\Cross.tga]], "REPEAT", "REPEAT")
-		oa:SetVertexColor(0.5, 0.5, 1)
-		oa:SetHorizTile(true)
-		oa:SetVertTile(true)
-		oa:SetAlpha(0.4)
-		oa:SetBlendMode("ADD")
-
-		self.HealthPrediction = {
-			myBar = mhpb,
-			otherBar = ohpb,
-			absorbBar = ahpb,
-			healAbsorbBar = hab,
-			overAbsorb = oa
-		}
+		T.CreateHealthPrediction(self)
 	end
 
 	-- Range alpha

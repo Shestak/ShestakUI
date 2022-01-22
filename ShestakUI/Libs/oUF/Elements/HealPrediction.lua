@@ -51,6 +51,7 @@ local function Update(self, event, unit)
 	local healAbsorb = UnitGetTotalHealAbsorbs(unit) or 0
 	local health, maxHealth = UnitHealth(unit), UnitHealthMax(unit)
 	local overAbsorb = 0
+	local overHealAbsorb = 0
 
 	if healAbsorb > allIncomingHeal then
 		healAbsorb = healAbsorb - allIncomingHeal
@@ -59,7 +60,9 @@ local function Update(self, event, unit)
 		absorb = 0
 
 		if health + healAbsorb > maxHealth then
+			overHealAbsorb = min(maxHealth, healAbsorb)
 			healAbsorb = maxHealth - health
+			overHealAbsorb = overHealAbsorb - healAbsorb
 		end
 	else
 		allIncomingHeal = allIncomingHeal - healAbsorb
@@ -103,6 +106,10 @@ local function Update(self, event, unit)
 
 	if element.overAbsorb then
 		previousTexture = UpdateFillBar(self, self.Health, element.overAbsorb, overAbsorb, maxHealth, true)
+	end
+
+	if element.overHealAbsorb then
+		previousTexture = UpdateFillBar(self, self.Health, element.overHealAbsorb, overHealAbsorb, maxHealth, true)
 	end
 
 	if(element.PostUpdate) then

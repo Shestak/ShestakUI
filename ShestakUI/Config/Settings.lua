@@ -196,6 +196,8 @@ C["raidframe"] = {
 	["plugins_debuffhighlight_icon"] = false,	-- Show dispellable debuff icon (texture will be shown anyway)
 	["plugins_pvp_debuffs"] = false,			-- Show PvP debuff icons (from the list)
 	["plugins_healcomm"] = true,				-- Incoming heal bar on raid frame
+	["plugins_over_absorb"] = false,			-- Show over absorb bar on raid frame
+	["plugins_over_heal_absorb"] = false,		-- Show over heal absorb on raid frame (from enemy debuffs)
 	["plugins_auto_resurrection"] = false,		-- Auto cast resurrection on middle-click (doesn't work with Clique)
 	-- Heal layout size
 	["heal_party_width"] = 60.2,				-- Party width

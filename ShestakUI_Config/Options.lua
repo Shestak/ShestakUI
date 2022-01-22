@@ -1336,8 +1336,14 @@ do
 	local plugins_healcomm = ns.CreateCheckBox(parent, "plugins_healcomm", L_GUI_UF_PLUGINS_HEALCOMM)
 	plugins_healcomm:SetPoint("TOPLEFT", plugins_pvp_debuffs, "BOTTOMLEFT", -20, 0)
 
+	local plugins_over_absorb = ns.CreateCheckBox(parent, "plugins_over_absorb")
+	plugins_over_absorb:SetPoint("TOPLEFT", plugins_healcomm, "BOTTOMLEFT", 20, 0)
+
+	local plugins_over_heal_absorb = ns.CreateCheckBox(parent, "plugins_over_heal_absorb")
+	plugins_over_heal_absorb:SetPoint("TOPLEFT", plugins_over_absorb, "BOTTOMLEFT", 0, 0)
+
 	local plugins_auto_resurrection = ns.CreateCheckBox(parent, "plugins_auto_resurrection")
-	plugins_auto_resurrection:SetPoint("TOPLEFT", plugins_healcomm, "BOTTOMLEFT", 0, 0)
+	plugins_auto_resurrection:SetPoint("TOPLEFT", plugins_over_heal_absorb, "BOTTOMLEFT", -20, 0)
 
 	-- Heal layout size
 	local subheader = ns.addSubCategory(parent, L.raidframe_subheader_heal_size)
