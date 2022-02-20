@@ -729,7 +729,7 @@ local function Shared(self, unit)
 			self.Auras.numDebuffs = 16
 			self.Auras.numBuffs = 32
 			self.Auras:SetHeight(165)
-			self.Auras:SetWidth(player_width + 4 - (C.aura.debuff_size - 25) * 4)
+			self.Auras:SetWidth(player_width + 4)
 			self.Auras.spacing = T.Scale(3)
 			self.Auras.size = T.Scale(C.aura.debuff_size)
 			self.Auras.gap = true
