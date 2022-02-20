@@ -186,6 +186,7 @@ local function LoadSkin()
 		end
 
 		if portrait.PuckBorder then portrait.PuckBorder:SetAlpha(0) end
+		if portrait.TroopStackBorder2 then portrait.TroopStackBorder2:SetAlpha(0) end
 
 		local level = portrait.Level or portrait.LevelText
 		if level then
