@@ -3,7 +3,7 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	UIWidget position
 ----------------------------------------------------------------------------------------
-local top, below, maw = _G["UIWidgetTopCenterContainerFrame"], _G["UIWidgetBelowMinimapContainerFrame"], _G["MawBuffsBelowMinimapFrame"]
+local top, below, power, maw = _G["UIWidgetTopCenterContainerFrame"], _G["UIWidgetBelowMinimapContainerFrame"], _G["UIWidgetPowerBarContainerFrame"], _G["MawBuffsBelowMinimapFrame"]
 
 -- Top Widget
 local topAnchor = CreateFrame("Frame", "UIWidgetTopAnchor", UIParent)
@@ -33,6 +33,18 @@ hooksecurefunc(below, "SetPoint", function(self, _, anchor)
 	if anchor and anchor ~= belowAnchor then
 		self:ClearAllPoints()
 		self:SetPoint("TOP", belowAnchor)
+	end
+end)
+
+-- Power Bar Widget
+local powerAnchor = CreateFrame("Frame", "UIWidgetPowerBarAnchor", UIParent)
+powerAnchor:SetSize(210, 30)
+powerAnchor:SetPoint(unpack(C.position.uiwidget_below))
+
+hooksecurefunc(power, "SetPoint", function(self, _, anchor)
+	if anchor and anchor ~= powerAnchor then
+		self:ClearAllPoints()
+		self:SetPoint("TOP", powerAnchor)
 	end
 end)
 
