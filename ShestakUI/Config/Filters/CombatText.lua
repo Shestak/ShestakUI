@@ -33,6 +33,7 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[355769] = 3			-- Blood Link (Blood Shard)
 	T.aoespam[355829] = 3			-- Chaos Bane (Unholy Shard)
 	T.aoespam[355605] = 3			-- Fusion Amplification (Trinket)
+	T.aoespam[351687] = 3			-- Mnemonic Equipment (Maldraxxus)
 end
 
 -- Class config
