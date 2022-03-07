@@ -23,7 +23,7 @@ vehicle:GetNormalTexture():SetPoint("BOTTOMRIGHT", -2, 2)
 vehicle:SetTemplate("Default")
 vehicle:StyleButton(true)
 vehicle:RegisterForClicks("AnyUp")
-vehicle:SetFrameLevel(3)
+vehicle:SetFrameLevel(6)
 
 hooksecurefunc("MainMenuBarVehicleLeaveButton_Update", function()
 	if CanExitVehicle() then
