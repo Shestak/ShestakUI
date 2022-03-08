@@ -32,7 +32,7 @@ C["media"] = {
 C["general"] = {
 	["welcome_message"] = true,					-- Enable welcome message in chat
 	["auto_scale"] = true,						-- Autoscale
-	["uiscale"] = 0.96,							-- Your value (between 0.2 and 1) if "auto_scale" is disable
+	["uiscale"] = 0.75,							-- Your value (between 0.2 and 1) if "auto_scale" is disable
 	-- Blizzard UI
 	["error_filter"] = "BLACKLIST",				-- Filter Blizzard red errors (BLACKLIST, WHITELIST, COMBAT, NONE)
 	["move_blizzard"] = false,					-- Move some Blizzard frames
@@ -43,6 +43,11 @@ C["general"] = {
 	["hide_talking_head"] = false,				-- Hide Talking Head Frame
 	["hide_maw_buffs"] = false,					-- Hide Maw Buffs frame in instances
 }
+
+if T.screenHeight == 1440 then
+	C.general.auto_scale = false
+	C.general.uiscale = 0.64
+end
 
 ----------------------------------------------------------------------------------------
 --	Skins options
