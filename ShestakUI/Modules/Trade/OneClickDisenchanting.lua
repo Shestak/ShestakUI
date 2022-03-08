@@ -95,6 +95,7 @@ local herbs = {
 	[169701] = true,	-- Deathblossom
 	[170554] = true,	-- Vigil's Torch
 	[171315] = true,	-- Nightshade
+	[187699] = true,	-- First Flower
 }
 
 local ores = {
@@ -130,6 +131,7 @@ local ores = {
 	[171831] = true,	-- Phaedrum
 	[171832] = true,	-- Sinvyr
 	[171833] = true,	-- Elethium
+	[187700] = true,	-- Progenium Ore
 }
 
 function button:PLAYER_LOGIN()
