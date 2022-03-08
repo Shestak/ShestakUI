@@ -78,6 +78,26 @@ end
 
 T.RaidDebuffs = {
 -----------------------------------------------------------------
+-- Sepulcher of the First Ones
+-----------------------------------------------------------------
+	-- Vigilant Guardian
+	[SpellName(364447)] = 3,	-- Dissonance
+	[SpellName(364904)] = 3,	-- Anti-Matter
+	[SpellName(364881)] = 3,	-- Matter Disolution
+	[SpellName(360415)] = 3,	-- Defenseless
+	[SpellName(360412)] = 3,	-- Exposed Core
+	[SpellName(366393)] = 3,	-- Searing Ablation
+	-- Skolex, the Insatiable Ravener
+	-- Artificer Xy'mox
+	-- Dausegne, The Fallen Oracle
+	-- Prototype Pantheon
+	-- Lihuvim, Principle Architect
+	-- Halondrus the Reclaimer
+	-- Anduin Wrynn
+	-- Lords of Dread
+	-- Rygelon
+	-- The Jailer
+-----------------------------------------------------------------
 -- Sanctum of Domination
 -----------------------------------------------------------------
 	-- The Tarragrue
