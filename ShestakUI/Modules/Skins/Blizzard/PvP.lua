@@ -76,7 +76,7 @@ local function LoadSkin()
 	RewardFrameSeason.CircleMask:Hide()
 	RewardFrameSeason.Icon:SkinIcon()
 
-	for _, i in pairs({"RandomBGButton", "RandomEpicBGButton", "Arena1Button", "BrawlButton", "SpecialEventButton"}) do
+	for _, i in pairs({"RandomBGButton", "RandomEpicBGButton", "Arena1Button", "BrawlButton", "BrawlButton2"}) do
 		local button = HonorFrame.BonusFrame[i]
 		button:StripTextures()
 		button:SetTemplate("Overlay")
