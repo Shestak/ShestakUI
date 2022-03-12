@@ -325,6 +325,7 @@ L.nameplate_ad_width_desc = "Additional width for selected nameplate" -- Needs r
 L_GUI_NAMEPLATE_CASTBAR_NAME = "Mostrar nombre del hechizo en la barra de lanzamiento"
 L_GUI_NAMEPLATE_CLASS_ICON = "Iconos de clase en JcJ"
 L_GUI_NAMEPLATE_NAME_ABBREV = "Mostrar los nombres abreviados"
+L.nameplate_short_name = "Replace names with short ones" -- Need review
 L.nameplate_clamp = "Clamp nameplates to the top of the screen when outside of view" -- Need review
 L.nameplate_clamp_desc = "Clamp nameplates to the top of the screen when outside of view" -- Need review
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Mostrar perjuicios (Nombres abreviados debe ser desactivado)"

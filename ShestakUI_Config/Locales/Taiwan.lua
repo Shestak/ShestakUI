@@ -325,6 +325,7 @@ L.nameplate_ad_width_desc = "目標的單位名條額外寬度"
 L_GUI_NAMEPLATE_CASTBAR_NAME = "法術名稱"
 L_GUI_NAMEPLATE_CLASS_ICON = "PvP時顯示職業圖標"
 L_GUI_NAMEPLATE_NAME_ABBREV = "名字縮寫"
+L.nameplate_short_name = "Replace names with short ones" -- Need review
 L.nameplate_clamp = "貼邊顯示"
 L.nameplate_clamp_desc = "當單位名條超出屏幕時仍貼邊顯示"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "顯示DeBuff(需要關閉名字縮寫)"

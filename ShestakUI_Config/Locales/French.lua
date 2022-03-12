@@ -325,6 +325,7 @@ L.nameplate_ad_width_desc = "LArgeur additionnelle pour la barre de Noms de la c
 L_GUI_NAMEPLATE_CASTBAR_NAME = "Afficher le nom du sort"
 L_GUI_NAMEPLATE_CLASS_ICON = "Icône de classe en JcJ"
 L_GUI_NAMEPLATE_NAME_ABBREV = "Afficher les noms abrégés"
+L.nameplate_short_name = "Replace names with short ones" -- Need review
 L.nameplate_clamp = "Afficher les barres en haut de l'écran quand celles-ci sont hors champs"
 L.nameplate_clamp_desc = "Afficher les barres en haut de l'écran quand celles-ci sont hors champs"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Afficher vos debuffs (de la liste)"

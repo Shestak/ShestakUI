@@ -146,6 +146,13 @@ oUF.Tags.Methods["NameplateNameColor"] = function(unit)
 end
 oUF.Tags.Events["NameplateNameColor"] = "UNIT_POWER_UPDATE UNIT_FLAGS"
 
+oUF.Tags.Methods["NameplateNameShort"] = function(unit)
+	local name = UnitName(unit)
+	name = T.ShortNames[name] or name
+	return T.UTF(name, 18, true)
+end
+oUF.Tags.Events["NameplateNameShort"] = "UNIT_NAME_UPDATE"
+
 oUF.Tags.Methods["NameplateHealth"] = function(unit)
 	local hp = UnitHealth(unit)
 	local maxhp = UnitHealthMax(unit)

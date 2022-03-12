@@ -1807,8 +1807,11 @@ do
 	local name_abbrev = ns.CreateCheckBox(parent, "name_abbrev", L_GUI_NAMEPLATE_NAME_ABBREV)
 	name_abbrev:SetPoint("TOPLEFT", class_icons, "BOTTOMLEFT", 0, 0)
 
+	local short_name = ns.CreateCheckBox(parent, "short_name")
+	short_name:SetPoint("TOPLEFT", name_abbrev, "BOTTOMLEFT", 0, 0)
+
 	local clamp = ns.CreateCheckBox(parent, "clamp")
-	clamp:SetPoint("TOPLEFT", name_abbrev, "BOTTOMLEFT", 0, 0)
+	clamp:SetPoint("TOPLEFT", short_name, "BOTTOMLEFT", 0, 0)
 
 	local track_debuffs = ns.CreateCheckBox(parent, "track_debuffs", L_GUI_NAMEPLATE_SHOW_DEBUFFS)
 	track_debuffs:SetPoint("TOPLEFT", clamp, "BOTTOMLEFT", 0, 0)

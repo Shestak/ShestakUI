@@ -705,8 +705,10 @@ local function style(self, unit)
 	self.Name:SetPoint("BOTTOMRIGHT", self, "TOPRIGHT", 3, 4)
 	self.Name:SetWordWrap(false)
 
-	if C.nameplate.name_abbrev == true then
+	if C.nameplate.name_abbrev then
 		self:Tag(self.Name, "[NameplateNameColor][NameLongAbbrev]")
+	elseif C.nameplate.short_name then
+		self:Tag(self.Name, "[NameplateNameColor][NameplateNameShort]")
 	else
 		self:Tag(self.Name, "[NameplateNameColor][NameLong]")
 	end

@@ -325,6 +325,7 @@ L.nameplate_ad_width_desc = "Additional width for selected nameplate" -- Needs r
 L_GUI_NAMEPLATE_CASTBAR_NAME = "Mostra il nome di incantesimi/abilità sulle barre incantesimi"
 L_GUI_NAMEPLATE_CLASS_ICON = "Icone delle classi in PvP"
 L_GUI_NAMEPLATE_NAME_ABBREV = "Mostra nomi abbreviati"
+L.nameplate_short_name = "Replace names with short ones" -- Need review
 L.nameplate_clamp = "Aggancia le barre delle unità in cima allo schermo quando sono fuori portata visiva" -- Need review
 L.nameplate_clamp_desc = "Aggancia le barre delle unità in cima allo schermo quando sono fuori portata visiva"
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Mostra le penalità sulle barre delle unità (l'ozpione 'Mostra nomi abbreviati' deve essere disabilitata)"

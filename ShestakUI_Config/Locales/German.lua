@@ -325,6 +325,7 @@ L.nameplate_ad_width_desc = "Zusätzliche Breite für ausgewählte Nameplate"
 L_GUI_NAMEPLATE_CASTBAR_NAME = "Zeige den Namen in der Zauberleiste"
 L_GUI_NAMEPLATE_CLASS_ICON = "Zeige Klassensymbole an (PvP)"
 L_GUI_NAMEPLATE_NAME_ABBREV = "Namen abgekürzt anzeigen"
+L.nameplate_short_name = "Replace names with short ones" -- Need review
 L.nameplate_clamp = "Namensschilder am oberen Rand des Bildschirms, wenn außerhalb der Sichtweite." -- Need review
 L.nameplate_clamp_desc = "Namensschilder am oberen Rand des Bildschirms, wenn außerhalb der Sichtweite."
 L_GUI_NAMEPLATE_SHOW_DEBUFFS = "Zeige Schwächungszauber (Abgekürzte Namen müssen deaktiviert sein)"
