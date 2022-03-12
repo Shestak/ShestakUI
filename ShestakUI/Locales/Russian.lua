@@ -167,6 +167,10 @@ L_INFO_NOT_INSTALLED = " не установлен."
 L_INFO_SKIN_DISABLED1 = "Стилизация для "
 L_INFO_SKIN_DISABLED2 = " выключена."
 
+-- Moving elements
+L_MOVE_RIGHT_CLICK = "Правый клик - сбросить позицию"
+L_MOVE_MIDDLE_CLICK = "Средний клик - временно скрыть"
+
 -- Popups
 L_POPUP_INSTALLUI = "Это первый запуск ShestakUI для этого персонажа. Необходимо перезагрузить интерфейс для его настройки."
 L_POPUP_RESETUI = "Вы уверены, что хотите сбросить настройки ShestakUI?"

@@ -163,6 +163,10 @@ L_INFO_NOT_INSTALLED = " is not installed."
 L_INFO_SKIN_DISABLED1 = "Stylization for "
 L_INFO_SKIN_DISABLED2 = " is disabled."
 
+-- Moving elements
+L_MOVE_RIGHT_CLICK = "Right-click to reset position"
+L_MOVE_MIDDLE_CLICK = "Middle-click to temp hide"
+
 -- Popups
 L_POPUP_INSTALLUI = "First time on ShestakUI with this Character. You must reload UI to configure it."
 L_POPUP_RESETUI = "Are you sure you want to reset all settings for ShestakUI?"

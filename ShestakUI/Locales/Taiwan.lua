@@ -167,6 +167,10 @@ L_INFO_NOT_INSTALLED = " 沒有安裝"
 L_INFO_SKIN_DISABLED1 = "界面美化啟用"
 L_INFO_SKIN_DISABLED2 = " 已禁用"
 
+-- Moving elements
+L_MOVE_RIGHT_CLICK = "Right-click to reset position" -- Needs review
+L_MOVE_MIDDLE_CLICK = "Middle-click to temp hide" -- Needs review
+
 -- Popups
 L_POPUP_INSTALLUI = "該角色首次使用ShestakUI，你必須重新加載UI來配置。"
 L_POPUP_RESETUI = "你確定要重新加載ShestakUI?"

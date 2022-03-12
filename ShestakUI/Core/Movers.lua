@@ -118,7 +118,7 @@ local controls = CreateFrame("frame", nil, UIParent)
 controls:SetPoint("CENTER", UIParent)
 controls:SetSize(65, 25)
 controls:SetFrameStrata("TOOLTIP")
-controls:SetFrameLevel(100)
+controls:SetFrameLevel(200)
 controls:SetClampedToScreen(true)
 controls:Hide()
 controls:SetScript("OnLeave", function(self)
@@ -213,7 +213,7 @@ controls.shadow = controls:CreateTexture(nil, "OVERLAY")
 controls.shadow:SetPoint("TOPLEFT", controls.x, "TOPLEFT", -5, 5)
 controls.shadow:SetPoint("BOTTOMRIGHT", controls.y, "BOTTOMRIGHT", 2, -5)
 controls.shadow:SetTexture(C.media.texture)
-controls.shadow:SetVertexColor(0.1, 0.1, 0.1, 0.8)
+controls.shadow:SetVertexColor(0.2, 0.2, 0.2, 0.8)
 
 local function GetQuadrant(frame)
 	local _, y = frame:GetCenter()
@@ -282,26 +282,77 @@ local RestoreDefaults = function(self, button)
 	end
 end
 
+local chatInfo = CreateFrame("Frame", nil, UIParent)
+chatInfo:SetFrameStrata("TOOLTIP")
+chatInfo:SetPoint("TOPLEFT", ChatFrame1, "TOPLEFT", -3, 1)
+chatInfo:SetSize(C.chat.width + 7, C.chat.height + 4)
+chatInfo:SetTemplate("Overlay")
+chatInfo:Hide()
+
+local title = chatInfo:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+title:SetPoint("TOP", chatInfo, "TOP", 0, -10)
+title:SetTextColor(0.40, 0.78, 1)
+
+local subTitle1 = chatInfo:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+subTitle1:SetPoint("TOP", title, "TOP", 0, -20)
+subTitle1:SetText(L_MOVE_RIGHT_CLICK)
+subTitle1:SetTextColor(0.75, 0.9, 1)
+
+local subTitle2 = chatInfo:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+subTitle2:SetPoint("TOP", subTitle1, "TOP", 0, -20)
+subTitle2:SetText(L_MOVE_MIDDLE_CLICK)
+subTitle2:SetTextColor(0.75, 0.9, 1)
+
+local ResetButton = CreateFrame("Button", nil, chatInfo, "UIPanelButtonTemplate")
+ResetButton:SetSize(100, 23)
+ResetButton:SetText(DEFAULT)
+ResetButton:SetPoint("BOTTOMLEFT", chatInfo, "BOTTOMLEFT", 10, 7)
+ResetButton:SetScript("OnClick", function()
+	StaticPopup_Show("MOVEUI_RESET")
+end)
+ResetButton:SkinButton()
+
+local CloseButton = CreateFrame("Button", nil, chatInfo, "UIPanelButtonTemplate")
+CloseButton:SetPoint("TOPRIGHT", chatInfo, "BOTTOMRIGHT", -10, 30)
+CloseButton:SetSize(100, 23)
+CloseButton:SetText(CLOSE)
+CloseButton:SetScript("OnClick", function()
+	PlaySound(SOUNDKIT.IG_MAINMENU_OPTION)
+	SlashCmdList.MOVING()
+end)
+CloseButton:SkinButton()
+
+local index = 200
 local CreateMover = function(frame, unit)
 	local mover = CreateFrame("Frame", nil, UIParent)
 	if unit then
 		mover:CreateBackdrop("Transparent")
-		mover.backdrop:SetBackdropBorderColor(1, 0, 0)
+		mover.backdrop:SetBackdropBorderColor(0, 0.6, 0.6)
 	else
 		mover:SetTemplate("Transparent")
-		mover:SetBackdropBorderColor(1, 0, 0)
+		mover:SetBackdropBorderColor(0, 0.6, 0.6)
 	end
 	mover.backdrop = mover.backdrop or mover
 	mover:SetAllPoints(frame)
 	mover:SetFrameStrata("TOOLTIP")
+	mover:SetFrameLevel(index)
 	mover:EnableMouse(true)
 	mover:SetMovable(true)
 	mover:SetClampedToScreen(true)
 	mover:RegisterForDrag("LeftButton")
 	mover:SetScript("OnDragStart", OnDragStart)
 	mover:SetScript("OnDragStop", OnDragStop)
-	mover:SetScript("OnEnter", function(self) self.backdrop:SetBackdropBorderColor(unpack(C.media.classborder_color)) ShowControls(self) end)
-	mover:SetScript("OnLeave", function(self) self.backdrop:SetBackdropBorderColor(1, 0, 0) if not MouseIsOver(controls) then controls:Hide() end end)
+	mover:SetScript("OnEnter", function(self)
+		self.backdrop:SetBackdropColor(0.4, 0.4, 0.4, C.media.backdrop_alpha)
+		self.backdrop:SetBackdropBorderColor(unpack(C.media.classborder_color))
+		ShowControls(self)
+		title:SetText(mover.name:GetText())
+	end)
+	mover:SetScript("OnLeave", function(self)
+		self.backdrop:SetBackdropColor(C.media.backdrop_color[1], C.media.backdrop_color[2], C.media.backdrop_color[3], C.media.backdrop_alpha)
+		self.backdrop:SetBackdropBorderColor(0, 0.6, 0.6)
+		if not MouseIsOver(controls) then controls:Hide() end
+	end)
 	mover:SetScript("OnMouseUp", RestoreDefaults)
 	mover.frame = frame
 
@@ -316,6 +367,7 @@ local CreateMover = function(frame, unit)
 	mover.name:SetText(text)
 	mover.name:SetWidth(frame:GetWidth() - 4)
 	movers[frame:GetName()] = mover
+	index = index - 2
 end
 
 local GetMover = function(frame, unit)
@@ -349,6 +401,7 @@ local InitMove = function(msg)
 		end
 		moving = true
 		SlashCmdList.GRIDONSCREEN()
+		chatInfo:Show()
 	else
 		for _, v in pairs(movers) do
 			v:Hide()
@@ -356,6 +409,7 @@ local InitMove = function(msg)
 		moving = false
 		SlashCmdList.GRIDONSCREEN("hide")
 		controls:Hide()
+		chatInfo:Hide()
 	end
 end
 
@@ -376,7 +430,6 @@ local RestoreUI = function(self)
 			for frame_name, point in pairs(ShestakUIPositions.UnitFrame) do
 				if _G[frame_name] then
 					for _, frame in pairs(unitFrames) do
-						print(frame:GetName(), _G[frame_name]:GetName())
 						if frame:GetName() and frame:GetName() == _G[frame_name]:GetName() then
 							_G[frame_name]:ClearAllPoints()
 							_G[frame_name]:SetPoint(unpack(point))
@@ -433,3 +486,23 @@ StaticPopupDialogs.RESET_UF = {
 
 SlashCmdList.RESETUF = function() StaticPopup_Show("RESET_UF") end
 SLASH_RESETUF1 = "/resetuf"
+
+StaticPopupDialogs.MOVEUI_RESET = {
+	text = L_POPUP_RESETUI,
+	button1 = ACCEPT,
+	button2 = CANCEL,
+	OnAccept = function() if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") else
+		ShestakUIPositions = {}
+		for _, v in pairs(placed) do
+			if _G[v] then
+				_G[v]:SetUserPlaced(false)
+			end
+		end
+		ReloadUI()
+		end
+	end,
+	timeout = 0,
+	whileDead = 1,
+	hideOnEscape = true,
+	preferredIndex = 5,
+}
