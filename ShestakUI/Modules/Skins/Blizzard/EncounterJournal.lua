@@ -217,34 +217,6 @@ local function LoadSkin()
 	end
 	hooksecurefunc("EncounterJournal_DisplayInstance", SkinBosses)
 
-
-	local LootJournal = EncounterJournal.LootJournal
-	LootJournal:DisableDrawLayer("BACKGROUND")
-	LootJournal.ClassDropDownButton:SkinButton(true)
-	LootJournal.RuneforgePowerFilterDropDownButton:SkinButton(true)
-	T.SkinScrollBar(LootJournal.PowersFrame.ScrollBar)
-
-	hooksecurefunc(LootJournal.PowersFrame, "RefreshListDisplay", function(buttons)
-		if not buttons.elements then return end
-
-		for i = 1, buttons:GetNumElementFrames() do
-			local btn = buttons.elements[i]
-			if btn and not btn.IsSkinned then
-				btn.Background:SetAlpha(0)
-				btn.BackgroundOverlay:SetAlpha(0)
-				btn.CircleMask:Hide()
-				btn.Icon:SetSize(50, 50)
-				btn.Icon:SkinIcon(true)
-
-				btn:CreateBackdrop("Overlay")
-				btn.backdrop:SetPoint("TOPLEFT", 2, -2)
-				btn.backdrop:SetPoint("BOTTOMRIGHT", 2, 2)
-
-				btn.IsSkinned = true
-			end
-		end
-	end)
-
 	local items = EncounterJournal.encounter.info.lootScroll.buttons
 	for i = 1, #items do
 		local item = items[i].lootFrame
@@ -399,6 +371,66 @@ local function LoadSkin()
 			suggestion.reward.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		end
 	end)
+
+	local LootJournal = EncounterJournal.LootJournal
+	LootJournal:DisableDrawLayer("BACKGROUND")
+	LootJournal.ClassDropDownButton:SkinButton(true)
+	LootJournal.RuneforgePowerFilterDropDownButton:SkinButton(true)
+	T.SkinScrollBar(LootJournal.PowersFrame.ScrollBar)
+
+	hooksecurefunc(LootJournal.PowersFrame, "RefreshListDisplay", function(buttons)
+		if not buttons.elements then return end
+
+		for i = 1, buttons:GetNumElementFrames() do
+			local btn = buttons.elements[i]
+			if btn and not btn.IsSkinned then
+				btn.Background:SetAlpha(0)
+				btn.BackgroundOverlay:SetAlpha(0)
+				btn.CircleMask:Hide()
+				btn.Icon:SetSize(50, 50)
+				btn.Icon:SkinIcon(true)
+
+				btn:CreateBackdrop("Overlay")
+				btn.backdrop:SetPoint("TOPLEFT", 2, -2)
+				btn.backdrop:SetPoint("BOTTOMRIGHT", 2, 2)
+
+				btn.IsSkinned = true
+			end
+		end
+	end)
+
+	EncounterJournal.LootJournalItems:DisableDrawLayer("BACKGROUND")
+	T.SkinDropDownBox(EncounterJournalLootJournalViewDropDown)
+
+	local itemSetsFrame = EncounterJournal.LootJournalItems.ItemSetsFrame
+	itemSetsFrame.ClassButton:SkinButton(true)
+	T.SkinScrollBar(itemSetsFrame.scrollBar)
+
+	hooksecurefunc(itemSetsFrame, "ConfigureItemButton", function(_, button)
+		if not button.styled then
+			button.Border:SetAlpha(0)
+			button:CreateBackdrop("Overlay")
+			button.backdrop:SetPoint("TOPLEFT", button.Border, 5, -5)
+			button.backdrop:SetPoint("BOTTOMRIGHT", button.Border, -4, 3)
+			button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			button.styled = true
+		end
+
+		local quality = select(3, GetItemInfo(button.itemID))
+		local color = ITEM_QUALITY_COLORS[quality or 1]
+		button.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
+	end)
+
+	local button = itemSetsFrame.buttons
+	for i = 1, #button do
+		local button = button[i]
+		button:CreateBackdrop("Overlay")
+		button.backdrop:SetPoint("TOPLEFT", 2, 2)
+		button.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
+		button.Background:Hide()
+		button.ItemLevel:SetTextColor(1, 1, 1)
+	end
+
 end
 
 T.SkinFuncs["Blizzard_EncounterJournal"] = LoadSkin
