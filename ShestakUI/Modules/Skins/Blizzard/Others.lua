@@ -135,6 +135,48 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 			end
 		end)
 
+		hooksecurefunc("ToggleDropDownMenu", function(level)
+			if not level then
+				level = 1
+			end
+
+			for i = 1, _G.UIDROPDOWNMENU_MAXBUTTONS do
+				local button = _G["DropDownList"..level.."Button"..i]
+				local check = _G["DropDownList"..level.."Button"..i.."Check"]
+				local uncheck = _G["DropDownList"..level.."Button"..i.."UnCheck"]
+
+				if not button.backdrop then
+					button:CreateBackdrop("Transparent")
+					button.backdrop:SetBackdropColor(C.media.backdrop_color[1], C.media.backdrop_color[2], C.media.backdrop_color[3], 0.3)
+				end
+
+				button.backdrop:Hide()
+
+				if not button.notCheckable then
+					uncheck:SetTexture()
+					local _, co = check:GetTexCoord()
+					if co == 0 then
+						check:SetTexture([[Interface\Buttons\UI-CheckBox-Check]])
+						check:SetVertexColor(1, 0.9, 0, 1)
+						check:SetSize(18, 18)
+						check:SetDesaturated(true)
+						button.backdrop:SetInside(check, 4, 4)
+					else
+						check:SetTexture(C.media.blank)
+						check:SetVertexColor(1, 0.82, 0, 0.8)
+						check:SetSize(5, 5)
+						check:SetDesaturated(false)
+						button.backdrop:SetOutside(check)
+					end
+
+					button.backdrop:Show()
+					check:SetTexCoord(0, 1, 0, 1)
+				else
+					check:SetSize(16, 16)
+				end
+			end
+		end)
+
 		if RaiderIO_CustomDropDownListMenuBackdrop then
 			RaiderIO_CustomDropDownListMenuBackdrop:StripTextures()
 		end
