@@ -472,6 +472,8 @@ elseif T.class == "ROGUE" then
 		T.merge[113780] = 2818		-- Deadly Poison
 		T.merge[57842] = 57841		-- Killing Spree Off-Hand
 		T.aoespam[324073] = 3		-- Serrated Bone Spike (Necrolord)
+		T.merge[328547] = 324073	-- Serrated Bone Spike (Necrolord)
+		T.merge[341277] = 324073	-- Serrated Bone Spike (Necrolord)
 	end
 elseif T.class == "SHAMAN" then
 	if C.combattext.merge_aoe_spam then
