@@ -12,8 +12,8 @@ end
 --	Position functions
 ----------------------------------------------------------------------------------------
 local function SetOutside(obj, anchor, xOffset, yOffset)
-	xOffset = xOffset and Mult * xOffset or Mult * 2
-	yOffset = yOffset and Mult * yOffset or Mult * 2
+	xOffset = xOffset or 2
+	yOffset = yOffset or 2
 	anchor = anchor or obj:GetParent()
 
 	if obj:GetPoint() then
@@ -25,8 +25,8 @@ local function SetOutside(obj, anchor, xOffset, yOffset)
 end
 
 local function SetInside(obj, anchor, xOffset, yOffset)
-	xOffset = xOffset and Mult * xOffset or Mult * 2
-	yOffset = yOffset and Mult * yOffset or Mult * 2
+	xOffset = xOffset or 2
+	yOffset = yOffset or 2
 	anchor = anchor or obj:GetParent()
 
 	if obj:GetPoint() then
@@ -94,8 +94,8 @@ local function SetTemplate(f, t)
 	GetTemplate(t)
 
 	f:SetBackdrop({
-		bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = T.Scale(1),
-		insets = {left = -T.Scale(1), right = -T.Scale(1), top = -T.Scale(1), bottom = -T.Scale(1)}
+		bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = Mult,
+		insets = {left = -Mult, right = -Mult, top = -Mult, bottom = -Mult}
 	})
 
 	if t == "Transparent" then
@@ -116,14 +116,14 @@ local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 	Mixin(f, BackdropTemplateMixin) -- 9.0 to set backdrop
 	GetTemplate(t)
 
-	f:SetWidth(T.Scale(w))
-	f:SetHeight(T.Scale(h))
+	f:SetWidth(w)
+	f:SetHeight(h)
 	f:SetFrameLevel(3)
 	f:SetFrameStrata("BACKGROUND")
 	f:SetPoint(a1, p, a2, x, y)
 	f:SetBackdrop({
-		bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = T.Scale(1),
-		insets = {left = -T.Scale(1), right = -T.Scale(1), top = -T.Scale(1), bottom = -T.Scale(1)}
+		bgFile = C.media.blank, edgeFile = C.media.blank, edgeSize = Mult,
+		insets = {left = -Mult, right = -Mult, top = -Mult, bottom = -Mult}
 	})
 
 	if t == "Transparent" then
@@ -220,7 +220,7 @@ end
 --	Style ActionBars/Bags buttons function(by Chiril & Karudon)
 ----------------------------------------------------------------------------------------
 local function StyleButton(button, t, size)
-	if not size then size = T.Scale(2) end
+	if not size then size = 2 end
 	if button.SetHighlightTexture and not button.hover then
 		local hover = button:CreateTexture()
 		hover:SetColorTexture(1, 1, 1, 0.3)
@@ -658,7 +658,6 @@ end
 
 function T.SkinCheckBox(frame, size)
 	if size then
-		size = T.Scale(size)
 		frame:SetSize(size, size)
 	end
 	frame:SetNormalTexture("")
@@ -671,24 +670,24 @@ function T.SkinCheckBox(frame, size)
 	if frame.SetHighlightTexture then
 		local highligh = frame:CreateTexture()
 		highligh:SetColorTexture(1, 1, 1, 0.3)
-		highligh:SetPoint("TOPLEFT", frame, T.Scale(6), -T.Scale(6))
-		highligh:SetPoint("BOTTOMRIGHT", frame, -T.Scale(6), T.Scale(6))
+		highligh:SetPoint("TOPLEFT", frame, 6, -6)
+		highligh:SetPoint("BOTTOMRIGHT", frame, -6, 6)
 		frame:SetHighlightTexture(highligh)
 	end
 
 	if frame.SetCheckedTexture then
 		local checked = frame:CreateTexture()
 		checked:SetColorTexture(1, 0.82, 0, 0.8)
-		checked:SetPoint("TOPLEFT", frame, T.Scale(6), -T.Scale(6))
-		checked:SetPoint("BOTTOMRIGHT", frame, -T.Scale(6), T.Scale(6))
+		checked:SetPoint("TOPLEFT", frame, 6, -6)
+		checked:SetPoint("BOTTOMRIGHT", frame, -6, 6)
 		frame:SetCheckedTexture(checked)
 	end
 
 	if frame.SetDisabledCheckedTexture then
 		local disabled = frame:CreateTexture()
 		disabled:SetColorTexture(0.6, 0.6, 0.6, 0.75)
-		disabled:SetPoint("TOPLEFT", frame, T.Scale(6), -T.Scale(6))
-		disabled:SetPoint("BOTTOMRIGHT", frame, -T.Scale(6), T.Scale(6))
+		disabled:SetPoint("TOPLEFT", frame, 6, -6)
+		disabled:SetPoint("BOTTOMRIGHT", frame, -6, 6)
 		frame:SetDisabledCheckedTexture(disabled)
 	end
 end

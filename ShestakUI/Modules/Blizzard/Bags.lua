@@ -1154,7 +1154,7 @@ function Stuffing:Layout(isBank)
 				yoff = yoff * -1
 
 				b.frame:ClearAllPoints()
-				b.frame:SetPoint("TOPLEFT", f, "TOPLEFT", T.Scale(xoff), T.Scale(yoff))
+				b.frame:SetPoint("TOPLEFT", f, "TOPLEFT", xoff, yoff)
 				b.frame:SetSize(C.bag.button_size, C.bag.button_size)
 				b.frame.lock = false
 				b.frame:SetAlpha(1)
