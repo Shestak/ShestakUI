@@ -88,15 +88,62 @@ T.RaidDebuffs = {
 	[SpellName(360412)] = 3,	-- Exposed Core
 	[SpellName(366393)] = 3,	-- Searing Ablation
 	-- Skolex, the Insatiable Ravener
+	[SpellName(364522)] = 3,	-- Devouring Blood
+	[SpellName(359976)] = 3,	-- Riftmaw
+	[SpellName(359981)] = 3,	-- Rend
+	[SpellName(360098)] = 3,	-- Warp Sickness
+	[SpellName(366070)] = 3,	-- Volatile Residue
 	-- Artificer Xy'mox
+	[SpellName(364030)] = 3,	-- Debilitating Ray
+	[SpellName(365681)] = 3,	-- System Shock
+	[SpellName(363413)] = 3,	-- Forerunner Rings
+	[SpellName(362615)] = 3,	-- Dimensional Tear
+	[SpellName(362803)] = 3,	-- Glyph of Relocation
 	-- Dausegne, The Fallen Oracle
+	[SpellName(361751)] = 3,	-- Disintegration Halo
+	[SpellName(364289)] = 3,	-- Staggering Barrage
+	[SpellName(361225)] = 3,	-- Encroaching Dominion
+	[SpellName(361966)] = 3,	-- Infused Strikes
 	-- Prototype Pantheon
+	[SpellName(365306)] = 3,	-- Invigorating Bloom
+	[SpellName(361689)] = 3,	-- Wracking Pain
+	[SpellName(366232)] = 3,	-- Animastorm
+	[SpellName(364839)] = 3,	-- Sinful Projection
+	[SpellName(360259)] = 3,	-- Gloom Bolt
+	[SpellName(362383)] = 3,	-- Anima Bolt
+	[SpellName(362352)] = 3,	-- Pinned
 	-- Lihuvim, Principle Architect
+	[SpellName(360159)] = 3,	-- Unstable Protoform Energy
+	[SpellName(363681)] = 3,	-- Deconstructing Blast
+	[SpellName(363676)] = 3,	-- Deconstructing Energy
+	[SpellName(464312)] = 3,	-- Ephemeral Barrier
 	-- Halondrus the Reclaimer
+	[SpellName(361309)] = 3,	-- Lightshatter Beam
+	[SpellName(361002)] = 3,	-- Ephemeral Fissure
 	-- Anduin Wrynn
+	[SpellName(365293)] = 3,	-- Befouled Barrier
+	[SpellName(363020)] = 3,	-- Necrotic Claws
+	[SpellName(365021)] = 3,	-- Wicked Star
+	[SpellName(365445)] = 3,	-- Scarred Soul
+	[SpellName(365008)] = 3,	-- Psychic Terror
+	[SpellName(366849)] = 3,	-- Domination Word: Pain
 	-- Lords of Dread
+	[SpellName(360148)] = 3,	-- Bursting Dread
+	[SpellName(360012)] = 3,	-- Cloud of Carrion
+	[SpellName(360146)] = 3,	-- Fearful Trepidation
+	[SpellName(360241)] = 3,	-- Unsettling Dreams
 	-- Rygelon
+	[SpellName(362206)] = 3,	-- Event Horizon
+	[SpellName(362137)] = 3,	-- Corrupted Wound
+	[SpellName(361548)] = 3,	-- Dark Eclipse
 	-- The Jailer
+	[SpellName(362075)] = 3,	-- Domination
+	[SpellName(365150)] = 3,	-- Rune of Domination
+	[SpellName(363893)] = 3,	-- Martyrdom
+	[SpellName(363886)] = 3,	-- Imprisonment
+	[SpellName(365219)] = 3,	-- Chains of Anguish
+	[SpellName(366285)] = 3,	-- Rune of Compulsion
+	[SpellName(363332)] = 3,	-- Unbreaking Grasp
 -----------------------------------------------------------------
 -- Sanctum of Domination
 -----------------------------------------------------------------
