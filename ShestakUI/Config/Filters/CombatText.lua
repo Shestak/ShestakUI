@@ -34,6 +34,11 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[355829] = 3			-- Chaos Bane (Unholy Shard)
 	T.aoespam[355605] = 3			-- Fusion Amplification (Trinket)
 	T.aoespam[351687] = 3			-- Mnemonic Equipment (Maldraxxus)
+	T.aoespam[353248] = 3			-- Effusive Anima Accelerator
+	T.aoespam[368651] = 3			-- Vicious Wound
+	T.aoespam[336463] = 5			-- Shadowcore Oil Blast
+	T.aoespam[353466] = 4			-- Sadistic Glee
+	T.aoespam[321937] = 4			-- Phantom Fire
 end
 
 -- Class config
@@ -145,6 +150,8 @@ elseif T.class == "DEMONHUNTER" then
 		T.aoespam[345423] = 6		-- The Hunt (Heal)
 		T.aoespam[342857] = 3		-- Glaive Tempest
 		T.aoespam[346278] = 3		-- Burning Wound (Legendary)
+		T.aoespam[346503] = 3		-- Fel Devastation
+		T.aoespam[317009] = 3		-- Sinful Brand (Venthyr)
 	end
 elseif T.class == "DRUID" then
 	if C.combattext.merge_aoe_spam then
@@ -467,6 +474,8 @@ elseif T.class == "ROGUE" then
 		T.aoespam[152150] = 3		-- Death from Above
 		T.aoespam[114014] = 3		-- Shuriken Toss
 		T.aoespam[319175] = 3		-- Black Powder
+		T.aoespam[279043] = 3		-- Shadow Blades
+		T.aoespam[315585] = 3		-- Instant Poison
 		T.aoespam[358126] = 3		-- Banshee's Blight [Edge of Night, Dagger]
 		T.merge[27576] = 5374		-- Mutilate Off-Hand
 		T.merge[113780] = 2818		-- Deadly Poison
