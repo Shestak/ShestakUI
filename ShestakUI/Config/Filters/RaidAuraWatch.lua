@@ -116,7 +116,6 @@ T.RaidDebuffs = {
 	[SpellName(360159)] = 3,	-- Unstable Protoform Energy
 	[SpellName(363681)] = 3,	-- Deconstructing Blast
 	[SpellName(363676)] = 3,	-- Deconstructing Energy
-	[SpellName(464312)] = 3,	-- Ephemeral Barrier
 	-- Halondrus the Reclaimer
 	[SpellName(361309)] = 3,	-- Lightshatter Beam
 	[SpellName(361002)] = 3,	-- Ephemeral Fissure
