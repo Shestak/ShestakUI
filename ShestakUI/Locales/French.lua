@@ -168,8 +168,8 @@ L_INFO_SKIN_DISABLED1 = "Personnalisation pour "
 L_INFO_SKIN_DISABLED2 = " est désactivé."
 
 -- Moving elements
-L_MOVE_RIGHT_CLICK = "Right-click to reset position" -- Needs review
-L_MOVE_MIDDLE_CLICK = "Middle-click to temp hide" -- Needs review
+L_MOVE_RIGHT_CLICK = "Clique droit de la souris pour réinitialiser la position"
+L_MOVE_MIDDLE_CLICK = "Clique du milieu de la souris pour cacher temporairement"
 
 -- Popups
 L_POPUP_INSTALLUI = "Première utilisation de ShestakUI avec ce personnage. Vous devez recharger l'interface utilisateur pour le configurer."
