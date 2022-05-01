@@ -753,9 +753,11 @@ if friends.enabled then
 			if BNtotal > 0 then
 				for i = 1, BNtotal do
 					local accountInfo = C_BattleNet.GetFriendAccountInfo(i)
-					BNTableEnter[i] = {accountInfo, accountInfo.gameAccountInfo.clientProgram}
-					if accountInfo.gameAccountInfo.isOnline then
-						BNonline = BNonline + 1
+					if accountInfo then
+						BNTableEnter[i] = {accountInfo, accountInfo.gameAccountInfo.clientProgram}
+						if accountInfo.gameAccountInfo.isOnline then
+							BNonline = BNonline + 1
+						end
 					end
 				end
 			end
