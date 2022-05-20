@@ -79,4 +79,5 @@ T.ABItems = {
 	[183045] = true,	-- Korinna's Allaying Crook
 	[180170] = true,	-- Pulsing Animacone
 	[180876] = true,	-- Aqueous Material Accumulator
+	[188697] = true,	-- Kinematic Micro-Life Recalibrator
 }
