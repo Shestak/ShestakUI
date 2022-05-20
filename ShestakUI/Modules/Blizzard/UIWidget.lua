@@ -41,12 +41,8 @@ local powerAnchor = CreateFrame("Frame", "UIWidgetPowerBarAnchor", UIParent)
 powerAnchor:SetSize(210, 30)
 powerAnchor:SetPoint(unpack(C.position.uiwidget_below))
 
-hooksecurefunc(power, "SetPoint", function(self, _, anchor)
-	if anchor and anchor ~= powerAnchor then
-		self:ClearAllPoints()
-		self:SetPoint("TOP", powerAnchor)
-	end
-end)
+power:ClearAllPoints()
+power:SetPoint("TOP", powerAnchor)
 
 -- Maw Buff Widget
 local mawAnchor = CreateFrame("Frame", "UIWidgetMawAnchor", UIParent)
@@ -105,6 +101,17 @@ local function SkinStatusBar(widget)
 		bar:SetStatusBarTexture(C.media.texture)
 		bar:SetStatusBarColor(unpack(atlasColors[atlas]))
 	end
+
+	if widget:GetParent() == power then
+		-- power:ClearAllPoints()
+		-- power:SetPoint("TOP", powerAnchor)
+
+		-- Don't skin Cosmic Energy bar
+		if widget.widgetSetID == 283 then
+			bar.styled = true
+		end
+	end
+
 	if not bar.styled then
 		bar.BGLeft:SetAlpha(0)
 		bar.BGRight:SetAlpha(0)
