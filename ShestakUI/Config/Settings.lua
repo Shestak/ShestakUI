@@ -421,7 +421,7 @@ C["combattext"] = {
 	["max_lines"] = 15,							-- Max lines to keep in scrollable mode (more lines = more memory)
 	["time_visible"] = 3,						-- Time (seconds) a single message will be visible
 	["short_numbers"] = true,					-- Use short numbers ("25.3k" instead of "25342")
-	["merge_aoe_spam"] = true,					-- Merges multiple aoe damage spam into single message
+	["merge_aoe_spam"] = true,					-- Merges multiple aoe damage/heal spam into single message
 	["merge_melee"] = true,						-- Merges multiple auto attack damage spam
 	["direction"] = true,						-- Change scrolling direction from bottom to top
 	["dk_runes"] = true,						-- Show Death Knight rune recharge

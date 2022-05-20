@@ -1299,7 +1299,7 @@ do
 	plugins_aura_watch:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
 	local ListButton = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
-	ListButton:SetPoint("LEFT", plugins_aura_watch.Text, "RIGHT", 20, 0)
+	ListButton:SetPoint("LEFT", plugins_aura_watch, "RIGHT", 400, 0)
 	ListButton:SetSize(100, 23)
 	ListButton:SetText(ADD)
 	ListButton:SetWidth(ListButton.Text:GetWidth() + 15)
@@ -1985,8 +1985,33 @@ do
 	local short_numbers = ns.CreateCheckBox(parent, "short_numbers", L_GUI_COMBATTEXT_SHORT_NUMBERS)
 	short_numbers:SetPoint("TOPLEFT", max_lines, "BOTTOMLEFT", 0, -8)
 
-	local merge_aoe_spam = ns.CreateCheckBox(parent, "merge_aoe_spam", L_GUI_COMBATTEXT_MERGE_AOE_SPAM)
+	local merge_aoe_spam = ns.CreateCheckBox(parent, "merge_aoe_spam")
 	merge_aoe_spam:SetPoint("TOPLEFT", short_numbers, "BOTTOMLEFT", 0, 0)
+
+	local ListButton = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
+	ListButton:SetPoint("LEFT", merge_aoe_spam, "RIGHT", 400, 0)
+	ListButton:SetSize(100, 23)
+	ListButton:SetText(ADD)
+	ListButton:SetWidth(ListButton.Text:GetWidth() + 15)
+	ListButton.tooltipText = "|cffFFD100"..L_GUI_RESET_SPELLS_DESC.."|r"
+	ListButton:SetScript("OnClick", function()
+		if not C.options["combattext"] then
+			C.options["combattext"] = {}
+		end
+		if not C.options["combattext"]["spells_list"] then
+			C.options["combattext"]["spells_list"] = {}
+		end
+		BuildSpellList(C.options["combattext"]["spells_list"], true)
+	end)
+	tinsert(ns.buttons, ListButton)
+
+	local function toggleListButton()
+		local shown = merge_aoe_spam:GetChecked()
+		ListButton:SetEnabled(shown)
+	end
+
+	merge_aoe_spam:HookScript("OnClick", toggleListButton)
+	ListButton:HookScript("OnShow", toggleListButton)
 
 	local merge_melee = ns.CreateCheckBox(parent, "merge_melee", L_GUI_COMBATTEXT_MERGE_MELEE)
 	merge_melee:SetPoint("TOPLEFT", merge_aoe_spam, "BOTTOMLEFT", 20, 0)
@@ -2207,7 +2232,7 @@ do
 	spells:SetPoint("TOPLEFT", interrupts, "BOTTOMLEFT", 0, 0)
 
 	local ListButton = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
-	ListButton:SetPoint("LEFT", spells.Text, "RIGHT", 20, 0)
+	ListButton:SetPoint("LEFT", spells, "RIGHT", 400, 0)
 	ListButton:SetSize(100, 23)
 	ListButton:SetText(">>")
 	ListButton:SetWidth(ListButton.Text:GetWidth() + 15)

@@ -39,6 +39,11 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam[336463] = 5			-- Shadowcore Oil Blast
 	T.aoespam[353466] = 4			-- Sadistic Glee
 	T.aoespam[321937] = 4			-- Phantom Fire
+
+	-- GUI list
+	for _, spell in pairs(C.combattext.spells_list) do
+		T.aoespam[spell[1]] = spell[2]
+	end
 end
 
 -- Class config
