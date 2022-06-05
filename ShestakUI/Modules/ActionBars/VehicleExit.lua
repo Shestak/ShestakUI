@@ -24,6 +24,7 @@ vehicle:SetTemplate("Default")
 vehicle:StyleButton(true)
 vehicle:RegisterForClicks("AnyUp")
 vehicle:SetFrameLevel(6)
+vehicle:SetFrameStrata("HIGH")
 
 hooksecurefunc("MainMenuBarVehicleLeaveButton_Update", function()
 	if CanExitVehicle() then
