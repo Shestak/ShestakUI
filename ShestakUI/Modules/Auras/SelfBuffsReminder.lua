@@ -135,9 +135,7 @@ for i = 1, #tab do
 	frame.id = i
 
 	frame.icon = frame:CreateTexture(nil, "OVERLAY")
-	frame.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	frame.icon:SetPoint("TOPLEFT", frame, "TOPLEFT", 2, -2)
-	frame.icon:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -2, 2)
+	frame.icon:CropIcon()
 	frame.icon:SetSize(C.reminder.solo_buffs_size, C.reminder.solo_buffs_size)
 
 	frame:Hide()
