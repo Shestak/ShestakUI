@@ -1,8 +1,8 @@
-local parent, ns = ...
+local _, ns = ...
 local oUF = ns.oUF
 local Private = oUF.Private
 
-local enableTargetUpdate = Private.enableTargetUpdate
+local unitExists = Private.unitExists
 
 local function updateArenaPreparationElements(self, event, elementName, specID)
 	local element = self[elementName]
@@ -46,22 +46,22 @@ local function updateArenaPreparationElements(self, event, elementName, specID)
 			element:UpdateColorArenaPreparation(specID)
 		else
 			-- this section just replicates the color options available to the Health and Power elements
-			local r, g, b, t, _
+			local r, g, b, color, _
 			-- if(element.colorPower and elementName == 'Power') then
-				-- no idea if we can get power type here without the unit
+				-- FIXME: no idea if we can get power type here without the unit
 			if(element.colorClass) then
 				local _, _, _, _, _, class = GetSpecializationInfoByID(specID)
-				t = self.colors.class[class]
+				color = self.colors.class[class]
 			elseif(element.colorReaction) then
-				t = self.colors.reaction[2]
+				color = self.colors.reaction[2]
 			elseif(element.colorSmooth) then
 				_, _, _, _, _, _, r, g, b = unpack(element.smoothGradient or self.colors.smooth)
 			elseif(element.colorHealth and elementName == 'Health') then
-				t = self.colors.health
+				color = self.colors.health
 			end
 
-			if(t) then
-				r, g, b = t[1], t[2], t[3]
+			if(color) then
+				r, g, b = color[1], color[2], color[3]
 			end
 
 			if(r or g or b) then
@@ -119,6 +119,12 @@ local function updateArenaPreparation(self, event)
 		-- semi-recursive call for when the player zones into an arena
 		updateArenaPreparation(self, 'ARENA_PREP_OPPONENT_SPECIALIZATIONS')
 	elseif(event == 'ARENA_PREP_OPPONENT_SPECIALIZATIONS') then
+		if(InCombatLockdown()) then
+			-- prevent calling protected functions if entering arena while in combat
+			self:RegisterEvent('PLAYER_REGEN_ENABLED', updateArenaPreparation, true)
+			return
+		end
+
 		if(self.PreUpdate) then
 			self:PreUpdate(event)
 		end
@@ -159,12 +165,15 @@ local function updateArenaPreparation(self, event)
 		if(self.PostUpdate) then
 			self:PostUpdate(event)
 		end
+	elseif(event == 'PLAYER_REGEN_ENABLED') then
+		self:UnregisterEvent(event, updateArenaPreparation)
+		updateArenaPreparation(self, 'ARENA_PREP_OPPONENT_SPECIALIZATIONS')
 	end
 end
 
 -- Handles unit specific actions.
 function oUF:HandleUnit(object, unit)
-	local unit = object.unit or unit
+	unit = object.unit or unit
 	if(unit == 'target') then
 		object:RegisterEvent('PLAYER_TARGET_CHANGED', object.UpdateAllElements, true)
 	elseif(unit == 'mouseover') then
@@ -180,7 +189,57 @@ function oUF:HandleUnit(object, unit)
 		object:SetAttribute('oUF-enableArenaPrep', true)
 		-- the event handler only fires for visible frames, so we have to hook it for arena prep
 		object:HookScript('OnEvent', updateArenaPreparation)
-	elseif(unit:match('%w+target')) then
-		enableTargetUpdate(object)
 	end
+end
+
+local eventlessObjects = {}
+local onUpdates = {}
+
+local function createOnUpdate(timer)
+	if(not onUpdates[timer]) then
+		local frame = CreateFrame('Frame')
+		local objects = eventlessObjects[timer]
+
+		frame:SetScript('OnUpdate', function(self, elapsed)
+			self.elapsed = (self.elapsed or 0) + elapsed
+			if(self.elapsed > timer) then
+				for _, object in next, objects do
+					if(object.unit and unitExists(object.unit)) then
+						object:UpdateAllElements('OnUpdate')
+					end
+				end
+
+				self.elapsed = 0
+			end
+		end)
+
+		onUpdates[timer] = frame
+	end
+end
+
+function oUF:HandleEventlessUnit(object)
+	object.__eventless = true
+
+	-- It's impossible to set onUpdateFrequency before the frame is created, so
+	-- by default all eventless frames are created with the 0.5s timer.
+	-- To change it you'll need to call oUF:HandleEventlessUnit(frame) one more
+	-- time from the layout code after oUF:Spawn(unit) returns the frame.
+	local timer = object.onUpdateFrequency or 0.5
+
+	-- Remove it, in case it's registered with another timer previously
+	for t, objects in next, eventlessObjects do
+		if(t ~= timer) then
+			for i, obj in next, objects do
+				if(obj == object) then
+					table.remove(objects, i)
+					break
+				end
+			end
+		end
+	end
+
+	if(not eventlessObjects[timer]) then eventlessObjects[timer] = {} end
+	table.insert(eventlessObjects[timer], object)
+
+	createOnUpdate(timer)
 end
