@@ -48,6 +48,8 @@ local function LoadSkin()
 		end
 	end
 
+	InterfaceOptionsCombatPanel.clickCastingButton:SkinButton()
+
 	local checkboxes = {
 		-- Controls
 		"ControlsPanelStickyTargeting",
@@ -62,6 +64,7 @@ local function LoadSkin()
 		"CombatPanelLossOfControl",
 		"CombatPanelFlashLowHealthWarning",
 		"CombatPanelEnableFloatingCombatText",
+		"CombatPanelEnableMouseoverCast",
 		-- Display
 		"DisplayPanelRotateMinimap",
 		"DisplayPanelAJAlerts",
@@ -178,6 +181,7 @@ local function LoadSkin()
 		"CameraPanelStyleDropDown",
 		"CombatPanelFocusCastKeyDropDown",
 		"CombatPanelSelfCastKeyDropDown",
+		"CombatPanelMouseoverCastKeyDropDown",
 		"ControlsPanelAutoLootKeyDropDown",
 		"DisplayPanelChatBubblesDropDown",
 		"DisplayPanelDisplayDropDown",
