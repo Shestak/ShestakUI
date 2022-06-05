@@ -384,6 +384,7 @@ local function LoadSkin()
 	T.SkinCheckBox(LFGListFrame.EntryCreation.VoiceChat.CheckButton)
 	T.SkinCheckBox(LFGListFrame.EntryCreation.ItemLevel.CheckButton)
 	T.SkinCheckBox(LFGListFrame.EntryCreation.PrivateGroup.CheckButton)
+	T.SkinCheckBox(LFGListFrame.EntryCreation.CrossFactionGroup.CheckButton)
 	LFGListFrame.EntryCreation.ListGroupButton:SkinButton()
 	LFGListFrame.EntryCreation.CancelButton:SkinButton()
 
