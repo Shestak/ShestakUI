@@ -24,6 +24,7 @@ hooksecurefunc(_detalhes.gump, "CreateNewLine", function(_, instancia, index)
 		frame.b:SetTemplate("Overlay")
 		frame.b:SetPoint("TOPLEFT", frame, "TOPLEFT", -23, 2)
 		frame.b:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 34, 4)
+		frame.b:SetFrameLevel(frame:GetFrameLevel() - 1)
 	end
 end)
 
@@ -340,6 +341,7 @@ if lower_instance then
 			frame.b:SetTemplate("Overlay")
 			frame.b:SetPoint("TOPLEFT", frame, "TOPLEFT", -23, 2)
 			frame.b:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 34, 4)
+			frame.b:SetFrameLevel(frame:GetFrameLevel() - 1)
 
 			instance:ChangeSkin("Minimalistic v2")
 		end
