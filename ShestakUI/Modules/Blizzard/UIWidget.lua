@@ -111,11 +111,8 @@ local function SkinStatusBar(widget)
 	end
 
 	if widget:GetParent() == power then
-		-- power:ClearAllPoints()
-		-- power:SetPoint("TOP", powerAnchor)
-
 		-- Don't skin Cosmic Energy bar
-		if widget.widgetSetID == 283 then
+		if widget.widgetID == 3463 then
 			bar.styled = true
 		end
 	end
