@@ -95,9 +95,15 @@ local atlasColors = {
 }
 
 local function SkinStatusBar(widget)
-	if widget:IsForbidden() then return end
-
 	local bar = widget.Bar
+
+	if widget:IsForbidden() then
+		if bar and bar.tooltip then
+			bar.tooltip = nil
+		end
+		return
+	end
+
 	local atlas = bar:GetStatusBarAtlas()
 	if atlasColors[atlas] then
 		bar:SetStatusBarTexture(C.media.texture)
