@@ -417,7 +417,6 @@ elseif T.class == "PRIEST" then
 		T.aoespam[139] = 3			-- Renew
 		T.aoespam[596] = 0			-- Prayer of Healing
 		T.aoespam[64844] = 3		-- Divine Hymn
-		T.aoespam[32546] = 3		-- Binding Heal
 		T.aoespam[77489] = 3		-- Echo of Light
 		T.aoespam[33110] = 3		-- Prayer of Mending
 		T.aoespam[34861] = 3		-- Holy Word: Sanctify
