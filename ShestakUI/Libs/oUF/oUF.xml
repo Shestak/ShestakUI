@@ -3,6 +3,7 @@
 	<Script file="Private.lua"/>
 	<Script file="oUF.lua"/>
 	<Script file="Events.lua"/>
+	<Script file="CombatEvents.lua"/>
 	<Script file="Factory.lua"/>
 	<Script file="Blizzard.lua"/>
 	<Script file="Units.lua"/>
