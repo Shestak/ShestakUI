@@ -130,7 +130,9 @@ Butsu:RegisterEvent("LOOT_OPENED")
 function Butsu:LOOT_SLOT_CLEARED(_, slot)
 	if not self:IsShown() then return end
 
-	_NS.slots[slot]:Hide()
+	if _NS.slots[slot] then
+		_NS.slots[slot]:Hide()
+	end
 	self:AnchorSlots()
 end
 Butsu:RegisterEvent("LOOT_SLOT_CLEARED")
