@@ -5,27 +5,42 @@ if C.skins.blizzard_frames ~= true then return end
 --	ItemUpgrade skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	ItemUpgradeFrame:StripTextures()
-	ItemUpgradeFrame:SetTemplate("Transparent")
+	local frame = ItemUpgradeFrame
+	T.SkinCloseButton(frame.CloseButton)
 
-	ItemUpgradeFrame.UpgradeItemButton:StripTextures()
-	ItemUpgradeFrame.UpgradeItemButton:SetTemplate("Default")
-	ItemUpgradeFrame.UpgradeItemButton:StyleButton()
-	ItemUpgradeFrame.UpgradeItemButton:GetNormalTexture():SetInside()
-	ItemUpgradeFrame.UpgradeItemButton.IconBorder:SetAlpha(0)
-	ItemUpgradeFrame.UpgradeItemButton.icon:SetInside()
-	ItemUpgradeFrame.UpgradeItemButton.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	frame:StripTextures()
+	frame:SetTemplate("Transparent")
 
-	T.SkinDropDownBox(ItemUpgradeFrame.ItemInfo.Dropdown)
+	frame.UpgradeItemButton:StripTextures()
+	frame.UpgradeItemButton:SetTemplate("Default")
+	frame.UpgradeItemButton:StyleButton()
+	frame.UpgradeItemButton:GetNormalTexture():SetInside()
+	frame.UpgradeItemButton.IconBorder:SetAlpha(0)
+	frame.UpgradeItemButton.icon:SetInside()
+	frame.UpgradeItemButton.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-	ItemUpgradeFrame.UpgradeButton:SkinButton(true)
+	T.SkinDropDownBox(frame.ItemInfo.Dropdown)
 
-	ItemUpgradeFrameLeftItemPreviewFrame.NineSlice:SetTemplate("Default")
-	ItemUpgradeFrameRightItemPreviewFrame.NineSlice:SetTemplate("Default")
+	frame.UpgradeButton:SkinButton(true)
+
+	frame.UpgradeCostFrame.BGTex:Hide()
+
+	ItemUpgradeFrameLeftItemPreviewFrame.NineSlice:SetTemplate("Overlay")
+	ItemUpgradeFrameRightItemPreviewFrame.NineSlice:SetTemplate("Overlay")
 
 	ItemUpgradeFramePlayerCurrenciesBorder:StripTextures()
 
-	T.SkinCloseButton(ItemUpgradeFrameCloseButton)
+	local function reskinCurrencyIcon(self)
+		for frame in self.iconPool:EnumerateActive() do
+			if not frame.Icon.styled then
+				frame.Icon:SkinIcon(true)
+				frame.Icon.styled = true
+			end
+		end
+	end
+
+	hooksecurefunc(frame.UpgradeCostFrame, "GetIconFrame", reskinCurrencyIcon)
+	hooksecurefunc(frame.PlayerCurrencies, "GetIconFrame", reskinCurrencyIcon)
 end
 
 T.SkinFuncs["Blizzard_ItemUpgradeUI"] = LoadSkin
