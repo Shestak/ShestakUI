@@ -78,7 +78,7 @@ local function OnEvent(self, event, arg1)
 	-- Check event to play sound
 	if (event == "ZONE_CHANGED_NEW_AREA" or event == "PLAYER_REGEN_DISABLED") and C.reminder.solo_buffs_sound == true then canplaysound = true end
 
-	if ((group.combat and UnitAffectingCombat("player")) or (group.instance and difficultyID ~= 0) or (group.pvp and (instanceType == "arena" or instanceType == "pvp"))) and
+	if ((group.combat and UnitAffectingCombat("player")) or (group.instance and difficultyID ~= 0 and not C_Garrison.IsOnGarrisonMap()) or (group.pvp and (instanceType == "arena" or instanceType == "pvp"))) and
 	specpass == true and rolepass == true and not UnitInVehicle("player") then
 		if group.mainhand then
 			local hasMainHandEnchant = GetWeaponEnchantInfo()
