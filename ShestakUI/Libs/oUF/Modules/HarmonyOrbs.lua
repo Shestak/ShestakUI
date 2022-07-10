@@ -1,4 +1,5 @@
-if select(2, UnitClass("player")) ~= "MONK" then return end
+local T, C, L = unpack(select(2, ...))
+if C.unitframe.enable ~= true or T.class ~= "MONK" then return end
 
 local _, ns = ...
 local oUF = ns.oUF
