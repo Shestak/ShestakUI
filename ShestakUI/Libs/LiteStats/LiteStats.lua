@@ -876,6 +876,7 @@ end
 --	Guild
 ----------------------------------------------------------------------------------------
 if guild.enabled then
+	local CURRENT_GUILD_SORTING
 	local guildTable = {}
 	local function BuildGuildTable()
 		wipe(guildTable)
@@ -891,7 +892,6 @@ if guild.enabled then
 			end
 		end)
 	end
-	hooksecurefunc("SortGuildRoster", function(type) CURRENT_GUILD_SORTING = type end)
 	Inject("Guild", {
 		text = {
 			string = function()
@@ -905,6 +905,7 @@ if guild.enabled then
 			C_GuildInfo.GuildRoster()
 			SortGuildRoster(guild.sorting == "note" and "rank" or "note")
 			SortGuildRoster(guild.sorting)
+			CURRENT_GUILD_SORTING = guild.sorting
 			self:RegisterEvent("GROUP_ROSTER_UPDATE")
 			self:RegisterEvent("GUILD_ROSTER_UPDATE")
 		end,
@@ -931,7 +932,15 @@ if guild.enabled then
 				ToggleGuildFrame()
 			elseif b == "MiddleButton" and IsInGuild() then
 				local s = CURRENT_GUILD_SORTING
-				SortGuildRoster(IsShiftKeyDown() and s or (IsAltKeyDown() and (s == "rank" and "note" or "rank") or s == "class" and "name" or s == "name" and "level" or s == "level" and "zone" or "class"))
+				if IsShiftKeyDown() and s then
+					SortGuildRoster(s)
+				elseif IsAltKeyDown() then
+					CURRENT_GUILD_SORTING = s == "rank" and "note" or "rank"
+					SortGuildRoster(CURRENT_GUILD_SORTING)
+				else
+					CURRENT_GUILD_SORTING = s == "class" and "name" or s == "name" and "level" or s == "level" and "zone" or "class"
+					SortGuildRoster(CURRENT_GUILD_SORTING)
+				end
 				self:GetScript("OnEnter")(self)
 			elseif b == "RightButton" and IsInGuild() then
 				HideTT(self)
