@@ -11,6 +11,7 @@ local oUF = ns.oUF
 local party_width = C.raidframe.heal_party_width
 local party_height = C.raidframe.heal_party_height
 local party_power_height = C.raidframe.heal_party_power_height
+C.raidframe.icon_multiplier = C.raidframe.heal_party_height / 26
 -- Raid size
 local raid_width = C.raidframe.heal_raid_width
 local raid_height = C.raidframe.heal_raid_height
@@ -23,6 +24,12 @@ local function Shared(self, unit)
 	or (self:GetParent():GetName():match("oUF_MainTank")) and "tank" or unit
 
 	local suffix = self:GetAttribute("unitsuffix")
+
+	if unit == "party" then
+		C.raidframe.icon_multiplier = C.raidframe.heal_party_height / 26
+	elseif unit == "raid" then
+		C.raidframe.icon_multiplier = C.raidframe.heal_raid_height / 26
+	end
 
 	-- Set our own colors
 	self.colors = T.oUF_colors
@@ -158,35 +165,35 @@ local function Shared(self, unit)
 	-- Raid marks
 	if C.raidframe.icons_raid_mark == true then
 		self.RaidTargetIndicator = self.Health:CreateTexture(nil, "OVERLAY")
-		self.RaidTargetIndicator:SetSize(12, 12)
+		self.RaidTargetIndicator:SetSize(12 * C.raidframe.icon_multiplier, 12 * C.raidframe.icon_multiplier)
 		self.RaidTargetIndicator:SetPoint("BOTTOMLEFT", self.Health, -2, -5)
 	end
 
 	-- LFD role icons
 	if C.raidframe.icons_role == true and not (suffix == "target") then
 		self.GroupRoleIndicator = self.Health:CreateTexture(nil, "OVERLAY")
-		self.GroupRoleIndicator:SetSize(10, 10)
+		self.GroupRoleIndicator:SetSize(10 * C.raidframe.icon_multiplier, 10 * C.raidframe.icon_multiplier)
 		self.GroupRoleIndicator:SetPoint("TOP", self.Health, 0, 6)
 	end
 
 	-- Ready check icons
 	if C.raidframe.icons_ready_check == true and not (suffix == "target" or suffix == "targettarget") then
 		self.ReadyCheckIndicator = self.Health:CreateTexture(nil, "OVERLAY")
-		self.ReadyCheckIndicator:SetSize(12, 12)
+		self.ReadyCheckIndicator:SetSize(12 * C.raidframe.icon_multiplier, 12 * C.raidframe.icon_multiplier)
 		self.ReadyCheckIndicator:SetPoint("BOTTOMRIGHT", self.Health, 2, 1)
 	end
 
 	-- Summon icons
 	if C.raidframe.icons_sumon == true and not (suffix == "target" or suffix == "targettarget") then
 		self.SummonIndicator = self.Health:CreateTexture(nil, "OVERLAY")
-		self.SummonIndicator:SetSize(24, 24)
+		self.SummonIndicator:SetSize(24 * C.raidframe.icon_multiplier, 24 * C.raidframe.icon_multiplier)
 		self.SummonIndicator:SetPoint("BOTTOMRIGHT", self.Health, 7, -11)
 	end
 
 	-- Phase icons
 	if C.raidframe.icons_phase == true and not (suffix == "target" or suffix == "targettarget") then
 		self.PhaseIndicator = self.Health:CreateTexture(nil, "OVERLAY")
-		self.PhaseIndicator:SetSize(20, 20)
+		self.PhaseIndicator:SetSize(20 * C.raidframe.icon_multiplier, 20 * C.raidframe.icon_multiplier)
 		self.PhaseIndicator:SetPoint("TOPRIGHT", self.Health, 5, 5)
 	end
 
@@ -194,19 +201,19 @@ local function Shared(self, unit)
 	if C.raidframe.icons_leader == true and not (suffix == "target" or suffix == "targettarget") then
 		-- Leader icon
 		self.LeaderIndicator = self.Health:CreateTexture(nil, "OVERLAY")
-		self.LeaderIndicator:SetSize(12, 12)
+		self.LeaderIndicator:SetSize(12 * C.raidframe.icon_multiplier, 12 * C.raidframe.icon_multiplier)
 		self.LeaderIndicator:SetPoint("TOPLEFT", self.Health, -3, 8)
 
 		-- Assistant icon
 		self.AssistantIndicator = self.Health:CreateTexture(nil, "OVERLAY")
-		self.AssistantIndicator:SetSize(12, 12)
+		self.AssistantIndicator:SetSize(12 * C.raidframe.icon_multiplier, 12 * C.raidframe.icon_multiplier)
 		self.AssistantIndicator:SetPoint("TOPLEFT", self.Health, -3, 8)
 	end
 
 	-- Resurrect icon
 	if not (suffix == "target" or suffix == "targettarget") then
 		self.ResurrectIndicator = self.Health:CreateTexture(nil, "OVERLAY")
-		self.ResurrectIndicator:SetSize(13, 13)
+		self.ResurrectIndicator:SetSize(13 * C.raidframe.icon_multiplier, 13 * C.raidframe.icon_multiplier)
 		self.ResurrectIndicator:SetPoint("BOTTOMRIGHT", self.Health, 2, -7)
 	end
 

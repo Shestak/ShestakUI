@@ -790,8 +790,7 @@ T.CreateAuraWatch = function(self)
 			icon.spellID = spell[1]
 			icon.anyUnit = spell[4]
 			icon.strictMatching = spell[5]
-			icon:SetWidth(7)
-			icon:SetHeight(7)
+			icon:SetSize(7 * C.raidframe.icon_multiplier, 7 * C.raidframe.icon_multiplier)
 			icon:SetPoint(spell[2], 0, 0)
 
 			local tex = icon:CreateTexture(nil, "OVERLAY")
