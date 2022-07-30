@@ -239,9 +239,9 @@ SlashCmdList.MOUSEOVERBIND = function()
 				if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
 					PetBarMouseOver(1)
 				end
-			end
-			if C.extra_bar and C.extra_bar.enable == true and C.extra_bar.mouseover == true then
-				ExtraBarMouseOver(1)
+				if C.actionbar.custom_bar_enable and C.actionbar.custom_bar_mouseover then
+					CustomBarMouseOver(1)
+				end
 			end
 		end
 
@@ -271,9 +271,9 @@ SlashCmdList.MOUSEOVERBIND = function()
 				if C.actionbar.petbar_mouseover == true and C.actionbar.petbar_horizontal == true then
 					PetBarMouseOver(0)
 				end
-			end
-			if C.extra_bar and C.extra_bar.enable == true and C.extra_bar.mouseover == true then
-				ExtraBarMouseOver(0)
+				if C.actionbar.custom_bar_enable and C.actionbar.custom_bar_mouseover then
+					CustomBarMouseOver(0)
+				end
 			end
 		end
 
@@ -305,6 +305,13 @@ SlashCmdList.MOUSEOVERBIND = function()
 
 			b = _G["MultiBarBottomRightButton"..i]
 			b:HookScript("OnEnter", function(self) bind:Update(self) end)
+		end
+
+		if C.actionbar.custom_bar_enable then
+			for i = 1, 12 do
+				local b = _G["CustomBarButton"..i]
+				b:HookScript("OnEnter", function(self) bind:Update(self) end)
+			end
 		end
 
 		for i = 1, NUM_STANCE_SLOTS do

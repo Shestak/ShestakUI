@@ -506,7 +506,7 @@ ns.addCategory("unitframe", UNITFRAME_LABEL, L_GUI_UF_SUBTEXT, 3)
 ns.addCategory("unitframe_class_bar", L_GUI_UF_PLUGINS_CLASS_BAR, L_GUI_UF_PLUGINS_CLASS_BAR_SUBTEXT)
 ns.addCategory("raidframe", RAID_FRAMES_LABEL, L_GUI_UF_RAIDFRAMES_SUBTEXT, 2)
 ns.addCategory("aura", BUFFOPTIONS_LABEL, BUFFOPTIONS_SUBTEXT)
-ns.addCategory("actionbar", L_GUI_ACTIONBAR, ACTIONBARS_SUBTEXT, 2)
+ns.addCategory("actionbar", L_GUI_ACTIONBAR, ACTIONBARS_SUBTEXT, 3)
 ns.addCategory("tooltip", L.tooltip, L.tooltip_subtext)
 ns.addCategory("chat", SOCIALS, L_GUI_CHAT_SUBTEXT)
 ns.addCategory("nameplate", UNIT_NAMEPLATES, L_GUI_NAMEPLATE_SUBTEXT, 2)
@@ -1619,6 +1619,28 @@ do
 
 	local bar5_mouseover = ns.CreateCheckBox(parent, "bar5_mouseover", L.actionbar_bar1_mouseover)
 	bar5_mouseover:SetPoint("LEFT", bar5_size, "RIGHT", 130, 0)
+
+	-- Panel 2
+	local parent = ShestakUIOptionsPanel.actionbar3
+
+	-- Bar 6
+	local subheader = ns.addSubCategory(parent, BINDING_HEADER_ACTIONBAR.." 6")
+	subheader:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, -10)
+
+	local custom_bar_enable = ns.CreateCheckBox(parent, "custom_bar_enable", ENABLE)
+	custom_bar_enable:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -10)
+
+	local custom_bar_num = ns.CreateNumberSlider(parent, "custom_bar_num", nil, nil, 0, 12, 1, true, L.actionbar_bar1_num)
+	custom_bar_num:SetPoint("TOPLEFT", custom_bar_enable, "BOTTOMLEFT", 0, -20)
+
+	local custom_bar_row = ns.CreateNumberSlider(parent, "custom_bar_row", nil, nil, 1, 12, 1, true, L.actionbar_bar1_row)
+	custom_bar_row:SetPoint("LEFT", custom_bar_num, "RIGHT", 120, 0)
+
+	local custom_bar_size = ns.CreateNumberSlider(parent, "custom_bar_size", nil, nil, 0, 50, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	custom_bar_size:SetPoint("TOPLEFT", custom_bar_num, "BOTTOMLEFT", 0, -20)
+
+	local custom_bar_mouseover = ns.CreateCheckBox(parent, "custom_bar_mouseover", L.actionbar_bar1_mouseover)
+	custom_bar_mouseover:SetPoint("LEFT", custom_bar_size, "RIGHT", 130, 0)
 end
 
 -- Tooltip

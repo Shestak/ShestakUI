@@ -91,6 +91,7 @@
 	<Script file="Modules\ActionBars\Bar3.lua"/>
 	<Script file="Modules\ActionBars\Bar4.lua"/>
 	<Script file="Modules\ActionBars\Bar5.lua"/>
+	<Script file="Modules\ActionBars\Bar6.lua"/>
 	<Script file="Modules\ActionBars\BarPet.lua"/>
 	<Script file="Modules\ActionBars\BarStance.lua"/>
 	<Script file="Modules\ActionBars\Toggle.lua"/>

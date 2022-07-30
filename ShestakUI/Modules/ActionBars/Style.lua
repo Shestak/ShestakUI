@@ -1,44 +1,9 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+﻿local T, C, L, _ = unpack(ShestakUI)
 if C.actionbar.enable ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Style ActionBars buttons(by Tukz)
 ----------------------------------------------------------------------------------------
-local gsub = string.gsub
-local function UpdateHotkey(self)
-	local hotkey = _G[self:GetName().."HotKey"]
-	local text = hotkey:GetText()
-	if not text then return end
-
-	text = gsub(text, "(s%-)", "S")
-	text = gsub(text, "(a%-)", "A")
-	text = gsub(text, "(а%-)", "A") -- fix ruRU
-	text = gsub(text, "(c%-)", "C")
-	text = gsub(text, "(Mouse Button )", "M")
-	text = gsub(text, "(Кнопка мыши )", "M")
-	text = gsub(text, KEY_BUTTON3, "M3")
-	text = gsub(text, KEY_PAGEUP, "PU")
-	text = gsub(text, KEY_PAGEDOWN, "PD")
-	text = gsub(text, KEY_SPACE, "SpB")
-	text = gsub(text, KEY_INSERT, "Ins")
-	text = gsub(text, KEY_HOME, "Hm")
-	text = gsub(text, KEY_DELETE, "Del")
-	text = gsub(text, KEY_NUMPADDECIMAL, "Nu.")
-	text = gsub(text, KEY_NUMPADDIVIDE, "Nu/")
-	text = gsub(text, KEY_NUMPADMINUS, "Nu-")
-	text = gsub(text, KEY_NUMPADMULTIPLY, "Nu*")
-	text = gsub(text, KEY_NUMPADPLUS, "Nu+")
-	text = gsub(text, KEY_NUMLOCK, "NuL")
-	text = gsub(text, KEY_MOUSEWHEELDOWN, "MWD")
-	text = gsub(text, KEY_MOUSEWHEELUP, "MWU")
-
-	if hotkey:GetText() == _G["RANGE_INDICATOR"] then
-		hotkey:SetText("")
-	else
-		hotkey:SetText(text)
-	end
-end
-
 local function StyleNormalButton(button, size)
 	if not button.isSkinned then
 		local name = button:GetName()
@@ -53,6 +18,8 @@ local function StyleNormalButton(button, size)
 		local highlight = button.SpellHighlightTexture
 		local isExtraAction = name:match("ExtraAction")
 		local isFlyout = name:match("Flyout")
+		local flyoutBorder = _G[name.."FlyoutBorder"]
+		local flyoutBorderShadow = _G[name.."FlyoutBorderShadow"]
 
 		flash:SetTexture("")
 		button:SetNormalTexture("")
@@ -125,6 +92,13 @@ local function StyleNormalButton(button, size)
 
 		if button.QuickKeybindHighlightTexture then
 			button.QuickKeybindHighlightTexture:SetTexture("")
+		end
+
+		if flyoutBorder then
+			flyoutBorder:SetTexture("")
+		end
+		if flyoutBorderShadow then
+			flyoutBorderShadow:SetTexture("")
 		end
 
 		button:StyleButton()
@@ -221,68 +195,6 @@ function T.StylePet()
 	end
 end
 
-local buttons = 0
-local function SetupFlyoutButton()
-	for i = 1, buttons do
-		local button = _G["SpellFlyoutButton"..i]
-		if button then
-			if button:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() then
-				button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
-			end
-
-			if not button.IsSkinned then
-				StyleNormalButton(button)
-
-				if C.actionbar.rightbars_mouseover == true then
-					SpellFlyout:HookScript("OnEnter", function() RightBarMouseOver(1) end)
-					SpellFlyout:HookScript("OnLeave", function() RightBarMouseOver(0) end)
-					button:HookScript("OnEnter", function() RightBarMouseOver(1) end)
-					button:HookScript("OnLeave", function() RightBarMouseOver(0) end)
-				end
-
-				if C.actionbar.bottombars_mouseover == true then
-					SpellFlyout:HookScript("OnEnter", function() BottomBarMouseOver(1) end)
-					SpellFlyout:HookScript("OnLeave", function() BottomBarMouseOver(0) end)
-					button:HookScript("OnEnter", function() BottomBarMouseOver(1) end)
-					button:HookScript("OnLeave", function() BottomBarMouseOver(0) end)
-				end
-				button.IsSkinned = true
-			end
-		end
-	end
-end
-
-local function StyleFlyoutButton(self)
-	if self.FlyoutBorder then
-		self.FlyoutBorder:SetAlpha(0)
-	end
-	if self.FlyoutBorderShadow then
-		self.FlyoutBorderShadow:SetAlpha(0)
-	end
-
-	SpellFlyoutHorizontalBackground:SetAlpha(0)
-	SpellFlyoutVerticalBackground:SetAlpha(0)
-	SpellFlyoutBackgroundEnd:SetAlpha(0)
-
-	for i = 1, GetNumFlyouts() do
-		local x = GetFlyoutID(i)
-		local _, _, numSlots, isKnown = GetFlyoutInfo(x)
-		if isKnown then
-			if numSlots > buttons then
-				buttons = numSlots
-			end
-		end
-	end
-	SetupFlyoutButton()
-end
-
-local function HideHighlightButton(self)
-	if self.overlay then
-		self.overlay:Hide()
-		ActionButton_HideOverlayGlow(self)
-	end
-end
-
 do
 	for i = 1, 12 do
 		StyleNormalButton(_G["ActionButton"..i], C.actionbar.editor and C.actionbar.bar1_size)
@@ -292,12 +204,92 @@ do
 		StyleNormalButton(_G["MultiBarBottomRightButton"..i], C.actionbar.editor and C.actionbar.bar5_size)
 	end
 
+	if C.actionbar.custom_bar_enable then
+		for i = 1, 12 do
+			StyleNormalButton(_G["CustomBarButton"..i], C.actionbar.custom_bar_size)
+		end
+	end
+
 	StyleNormalButton(ExtraActionButton1)
 end
 
-hooksecurefunc("ActionButton_UpdateFlyout", StyleFlyoutButton)
+local function SetupFlyoutButton(button, self)
+	if button:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() then
+		button:SetSize(C.actionbar.button_size, C.actionbar.button_size)
+	end
+
+	if not button.IsSkinned then
+		StyleNormalButton(button)
+
+		if C.actionbar.rightbars_mouseover == true then
+			SpellFlyout:HookScript("OnEnter", function() RightBarMouseOver(1) end)
+			SpellFlyout:HookScript("OnLeave", function() RightBarMouseOver(0) end)
+			button:HookScript("OnEnter", function() RightBarMouseOver(1) end)
+			button:HookScript("OnLeave", function() RightBarMouseOver(0) end)
+		end
+
+		if C.actionbar.bottombars_mouseover == true then
+			SpellFlyout:HookScript("OnEnter", function() BottomBarMouseOver(1) end)
+			SpellFlyout:HookScript("OnLeave", function() BottomBarMouseOver(0) end)
+			button:HookScript("OnEnter", function() BottomBarMouseOver(1) end)
+			button:HookScript("OnLeave", function() BottomBarMouseOver(0) end)
+		end
+		button.IsSkinned = true
+	end
+end
+
+local function StyleFlyoutButton(self)
+	local button, i = _G["SpellFlyoutButton1"], 1
+	while button do
+		SetupFlyoutButton(button, self)
+
+		i = i + 1
+		button = _G["SpellFlyoutButton"..i]
+	end
+end
+
+SpellFlyout:HookScript("OnShow", StyleFlyoutButton)
 hooksecurefunc("SpellButton_OnClick", StyleFlyoutButton)
+SpellFlyoutHorizontalBackground:SetAlpha(0)
+SpellFlyoutVerticalBackground:SetAlpha(0)
+SpellFlyoutBackgroundEnd:SetAlpha(0)
+
 if C.actionbar.hotkey == true then
+	local gsub = string.gsub
+	local function UpdateHotkey(self)
+		local hotkey = _G[self:GetName().."HotKey"]
+		local text = hotkey:GetText()
+		if not text then return end
+
+		text = gsub(text, "(s%-)", "S")
+		text = gsub(text, "(a%-)", "A")
+		text = gsub(text, "(а%-)", "A") -- fix ruRU
+		text = gsub(text, "(c%-)", "C")
+		text = gsub(text, "(Mouse Button )", "M")
+		text = gsub(text, "(Кнопка мыши )", "M")
+		text = gsub(text, KEY_BUTTON3, "M3")
+		text = gsub(text, KEY_PAGEUP, "PU")
+		text = gsub(text, KEY_PAGEDOWN, "PD")
+		text = gsub(text, KEY_SPACE, "SpB")
+		text = gsub(text, KEY_INSERT, "Ins")
+		text = gsub(text, KEY_HOME, "Hm")
+		text = gsub(text, KEY_DELETE, "Del")
+		text = gsub(text, KEY_NUMPADDECIMAL, "Nu.")
+		text = gsub(text, KEY_NUMPADDIVIDE, "Nu/")
+		text = gsub(text, KEY_NUMPADMINUS, "Nu-")
+		text = gsub(text, KEY_NUMPADMULTIPLY, "Nu*")
+		text = gsub(text, KEY_NUMPADPLUS, "Nu+")
+		text = gsub(text, KEY_NUMLOCK, "NuL")
+		text = gsub(text, KEY_MOUSEWHEELDOWN, "MWD")
+		text = gsub(text, KEY_MOUSEWHEELUP, "MWU")
+
+		if hotkey:GetText() == _G["RANGE_INDICATOR"] then
+			hotkey:SetText("")
+		else
+			hotkey:SetText(text)
+		end
+	end
+
 	local frame = CreateFrame("Frame")
 	frame:RegisterEvent("UPDATE_BINDINGS")
 	frame:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -316,6 +308,14 @@ if C.actionbar.hotkey == true then
 		UpdateHotkey(ExtraActionButton1)
 	end)
 end
+
 if C.actionbar.hide_highlight == true then
+	local function HideHighlightButton(self)
+		if self.overlay then
+			self.overlay:Hide()
+			ActionButton_HideOverlayGlow(self)
+		end
+	end
+
 	hooksecurefunc("ActionButton_ShowOverlayGlow", HideHighlightButton)
 end

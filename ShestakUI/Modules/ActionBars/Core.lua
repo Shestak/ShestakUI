@@ -255,6 +255,15 @@ function Bar5MouseOver(alpha)
 	end
 end
 
+function CustomBarMouseOver(alpha)
+	for i = 1, 12 do
+		local b = _G["CustomBarButton"..i]
+		b:SetAlpha(alpha)
+		local c = _G["CustomBarButton"..i.."Cooldown"]
+		T.HideSpiral(c, alpha)
+	end
+end
+
 ----------------------------------------------------------------------------------------
 --	Fix cooldown spiral alpha (WoD bug)
 ----------------------------------------------------------------------------------------
