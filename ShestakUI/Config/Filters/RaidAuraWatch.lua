@@ -9,16 +9,16 @@ if C.raidframe.plugins_aura_watch ~= true then return end
 T.RaidBuffs = {
 	DRUID = {
 		{774, "TOPRIGHT", {0.8, 0.4, 0.8}},					-- Rejuvenation
+		{48438, "BOTTOMRIGHT", {0.8, 0.4, 0}},				-- Wild Growth
 		{8936, "BOTTOMLEFT", {0.2, 0.8, 0.2}},				-- Regrowth
 		{33763, "TOPLEFT", {0.4, 0.8, 0.2}},				-- Lifebloom
-		{48438, "BOTTOMRIGHT", {0.8, 0.4, 0}},				-- Wild Growth
 		{102342, "LEFT", {0.45, 0.3, 0.2}, true},			-- Ironbark
 		{155777, "RIGHT", {0.4, 0.9, 0.4}},					-- Rejuvenation (Germination)
 	},
 	MONK = {
 		{119611, "TOPRIGHT", {0.2, 0.7, 0.7}},				-- Renewing Mist
-		{124682, "BOTTOMLEFT", {0.4, 0.8, 0.2}},			-- Enveloping Mist
 		{115175, "BOTTOMRIGHT", {0.7, 0.4, 0}},				-- Soothing Mist
+		{124682, "BOTTOMLEFT", {0.4, 0.8, 0.2}},			-- Enveloping Mist
 		{191840, "TOPLEFT", {0.1, 0.4, 0.9}},				-- Essence Font
 		{116849, "LEFT", {0.81, 0.85, 0.1}, true},			-- Life Cocoon
 	},
@@ -35,8 +35,8 @@ T.RaidBuffs = {
 	},
 	PRIEST = {
 		{194384, "TOPRIGHT", {0.8, 0.4, 0.2}},				-- Atonement
+		{139, "TOPRIGHT", {0.4, 0.7, 0.2}},					-- Renew
 		{41635, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},			-- Prayer of Mending
-		{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}},				-- Renew
 		{6788, "BOTTOMLEFT", {1, 0, 0}},					-- Weakened Soul
 		{17, "TOPLEFT", {0.81, 0.85, 0.1}},					-- Power Word: Shield
 		{33206, "LEFT", {0.89, 0.1, 0.1}, true},			-- Pain Suppression
