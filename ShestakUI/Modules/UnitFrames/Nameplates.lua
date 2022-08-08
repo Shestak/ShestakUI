@@ -215,7 +215,7 @@ local AurasCustomFilter = function(_, unit, button, name, _, _, _, _, _, _, isSt
 
 	if not UnitIsFriend("player", unit) then
 		if button.isDebuff then
-			if button.isPlayer then
+			if button.isPlayer or button.caster == "pet" then
 				if ((nameplateShowAll or nameplateShowSelf) and not T.DebuffBlackList[name]) then
 					allow = true
 				elseif T.DebuffWhiteList[name] then
