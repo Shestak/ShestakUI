@@ -283,6 +283,32 @@ local RestoreDefaults = function(self, button)
 	end
 end
 
+local UpdatePosition = function(moveX, moveY)
+	moveX = moveX or 0
+	moveY = moveY or 0
+	local frame = controls._frame
+	if not frame then return end
+	local point, relativeTo, relativePoint, xOfs, yOfs = frame.frame:GetPoint()
+	SaveDefaultPosition(frame)
+	frame.frame:SetPoint(point, relativeTo, relativePoint, xOfs + (moveX * 1), yOfs + (moveY * 1))
+	local point, relativeTo, relativePoint, xOfs, yOfs = frame.frame:GetPoint()
+	if not relativeTo then
+		relativeTo = UIParent
+	end
+	ShestakUIPositions[frame.frame:GetName()] = {point, relativeTo:GetName(), relativePoint, xOfs, yOfs}
+	frame:SetAllPoints(frame.frame)
+	controls.x:SetText(T.Round(xOfs))
+	controls.y:SetText(T.Round(yOfs))
+end
+
+local OnMouseWheel = function(self, offset)
+	if IsShiftKeyDown() then
+		UpdatePosition(0, offset)
+	elseif IsControlKeyDown() then
+		UpdatePosition(offset, 0)
+	end
+end
+
 local chatInfo = CreateFrame("Frame", nil, UIParent)
 chatInfo:SetFrameStrata("TOOLTIP")
 chatInfo:SetPoint("TOPLEFT", ChatFrame1, "TOPLEFT", -3, 1)
@@ -355,6 +381,7 @@ local CreateMover = function(frame, unit)
 		if not MouseIsOver(controls) then controls:Hide() end
 	end)
 	mover:SetScript("OnMouseUp", RestoreDefaults)
+	mover:SetScript("OnMouseWheel", OnMouseWheel)
 	mover.frame = frame
 
 	mover.name = mover:CreateFontString(nil, "OVERLAY")
