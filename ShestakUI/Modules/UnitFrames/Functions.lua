@@ -737,14 +737,14 @@ T.UpdateThreat = function(self, unit, status, r, g, b)
 end
 
 local CountOffSets = {
-	TOPLEFT = {9, 0},
-	TOPRIGHT = {-8, 0},
-	BOTTOMLEFT = {9, 0},
-	BOTTOMRIGHT = {-8, 0},
-	LEFT = {9, 0},
-	RIGHT = {-8, 0},
-	TOP = {0, 0},
-	BOTTOM = {0, 0},
+	TOPLEFT = {"LEFT", "RIGHT", 1, 0},
+	TOPRIGHT = {"RIGHT", "LEFT", 2, 0},
+	BOTTOMLEFT = {"LEFT", "RIGHT", 1, 0},
+	BOTTOMRIGHT = {"RIGHT", "LEFT", 2, 0},
+	LEFT = {"LEFT", "RIGHT", 1, 0},
+	RIGHT = {"RIGHT", "LEFT", 2, 0},
+	TOP = {"RIGHT", "LEFT", 2, 0},
+	BOTTOM = {"RIGHT", "LEFT", 2, 0},
 }
 
 T.CreateAuraWatchIcon = function(_, icon)
@@ -803,7 +803,8 @@ T.CreateAuraWatch = function(self)
 			end
 
 			local count = T.SetFontString(icon, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
-			count:SetPoint("CENTER", unpack(CountOffSets[spell[2]]))
+			local point, anchorPoint, x, y = unpack(CountOffSets[spell[2]])
+			count:SetPoint(point, icon, anchorPoint, x, y)
 			icon.count = count
 
 			auras.icons[spell[1]] = icon
