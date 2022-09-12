@@ -17,6 +17,8 @@ L_GUI_TIME_INPUT = "Time"
 L_GUI_EXPERT_MODE = "Expert mode"
 L_GUI_EXPERT_MODE_DESC = "Custom editing of Lua profile"
 L_GUI_RESET_SPELLS_DESC = "CTRL-click to reset list"
+L_GUI_INFO = "Info & Help"
+L_GUI_WIKI_URL = "https://github.com/Wetxius/ShestakUI_Help/wiki/English"
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "These settings control the general user interface settings. Type in chat '/uihelp' for help."

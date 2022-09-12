@@ -440,6 +440,123 @@ end)
 AddSpellButton:Disable()
 tinsert(ns.buttons, AddSpellButton)
 
+-- Info frame
+do
+	local frame = CreateFrame("Frame", "ShestakUIInfoFrame", UIParent)
+	frame:SetWidth(800)
+	frame:SetHeight(770)
+	frame:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+	frame:SetFrameStrata("DIALOG")
+	tinsert(UISpecialFrames, "ShestakUIInfoFrame")
+	frame:Hide()
+	frame:EnableMouse(true)
+
+	local title = frame:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
+	title:SetPoint("TOPLEFT", 26, -26)
+	title:SetText("Links:")
+
+	local HelpButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
+	HelpButton:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -20)
+	HelpButton:SetSize(100, 23)
+	HelpButton:SetText("Wiki page")
+	HelpButton:SetWidth(HelpButton.Text:GetWidth() + 15)
+	local url = L_GUI_WIKI_URL
+	HelpButton:SetScript("OnClick", function()
+		StaticPopup_Show("LINK_URL", _, _, url)
+	end)
+
+	local DiscordButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
+	DiscordButton:SetPoint("LEFT", HelpButton, "RIGHT", 10, 0)
+	DiscordButton:SetSize(100, 23)
+	DiscordButton:SetText("Discord")
+	DiscordButton:SetWidth(DiscordButton.Text:GetWidth() + 15)
+	local url = "https://discord.gg/vwHwnTt"
+	DiscordButton:SetScript("OnClick", function()
+		StaticPopup_Show("LINK_URL", _, _, url)
+	end)
+
+	local GithubButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
+	GithubButton:SetPoint("LEFT", DiscordButton, "RIGHT", 10, 0)
+	GithubButton:SetSize(100, 23)
+	GithubButton:SetText("Github")
+	GithubButton:SetWidth(GithubButton.Text:GetWidth() + 15)
+	local url = "https://github.com/Shestak/ShestakUI"
+	GithubButton:SetScript("OnClick", function()
+		StaticPopup_Show("LINK_URL", _, _, url)
+	end)
+
+	tinsert(ns.buttons, DiscordButton)
+	tinsert(ns.buttons, HelpButton)
+	tinsert(ns.buttons, GithubButton)
+
+	local title2 = frame:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
+	title2:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -66)
+	title2:SetText("Credits:")
+
+	local subtitle2 = frame:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+	subtitle2:SetWidth(750)
+	subtitle2:SetPoint("TOPLEFT", title2, "BOTTOMLEFT", 0, -8)
+	subtitle2:SetJustifyH("LEFT")
+	subtitle2:SetText(GetAddOnMetadata("ShestakUI", "X-Credits"))
+
+	local title3 = frame:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
+	title3:SetPoint("TOPLEFT", subtitle2, "BOTTOMLEFT", 0, -16)
+	title3:SetText("Translation:")
+
+	local subtitle3 = frame:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+	subtitle3:SetWidth(750)
+	subtitle3:SetPoint("TOPLEFT", title3, "BOTTOMLEFT", 0, -8)
+	subtitle3:SetJustifyH("LEFT")
+	subtitle3:SetText(GetAddOnMetadata("ShestakUI", "X-Translation"))
+
+	local title4 = frame:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
+	title4:SetPoint("TOPLEFT", subtitle3, "BOTTOMLEFT", 0, -16)
+	title4:SetText("Thanks:")
+
+	local subtitle4 = frame:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+	subtitle4:SetWidth(750)
+	subtitle4:SetPoint("TOPLEFT", title4, "BOTTOMLEFT", 0, -8)
+	subtitle4:SetJustifyH("LEFT")
+	subtitle4:SetText(GetAddOnMetadata("ShestakUI", "X-Thanks"))
+
+	local CancelButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
+	CancelButton:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -10, 10)
+	CancelButton:SetSize(100, 23)
+	CancelButton:SetText(CLOSE)
+	CancelButton:SetWidth(CancelButton.Text:GetWidth() + 15)
+	CancelButton:SetScript("OnClick", function()
+		frame:Hide()
+	end)
+
+	tinsert(ns.buttons, CancelButton)
+
+	StaticPopupDialogs.LINK_URL = {
+		text = "Help",
+		button1 = OKAY,
+		timeout = 0,
+		whileDead = true,
+		hasEditBox = true,
+		editBoxWidth = 350,
+		OnShow = function(self, text)
+			self.editBox:SetMaxLetters(0)
+			self.editBox:SetText(text)
+			self.editBox:HighlightText()
+			selfText = text
+		end,
+		EditBoxOnEnterPressed = function(self) self:GetParent():Hide() end,
+		EditBoxOnEscapePressed = function(self) self:GetParent():Hide() end,
+		EditBoxOnTextChanged = function(self)
+			if self:GetText():len() < 1 then
+				self:GetParent():Hide()
+			else
+				self:SetText(selfText)
+				self:HighlightText()
+			end
+		end,
+		preferredIndex = 5,
+	}
+end
+
 -- Expert mode
 do
 	local frame = CreateFrame("Frame", "ShestakUIProfileFrame", UIParent)
@@ -575,6 +692,17 @@ do
 
 	local hide_maw_buffs = ns.CreateCheckBox(parent, "hide_maw_buffs")
 	hide_maw_buffs:SetPoint("TOPLEFT", hide_talking_head, "BOTTOMLEFT", 0, 0)
+
+	local InfoButton = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
+	InfoButton:SetPoint("BOTTOMRIGHT", parent, "BOTTOMRIGHT", -20, 5)
+	InfoButton:SetSize(100, 23)
+	InfoButton:SetText(L_GUI_INFO)
+	InfoButton:SetWidth(InfoButton.Text:GetWidth() + 15)
+	InfoButton:SetScript("OnClick", function()
+		ShestakUIInfoFrame:Show()
+	end)
+
+	tinsert(ns.buttons, InfoButton)
 
 	-- Panel 2
 	local parent = ShestakUIOptionsPanel.general2
@@ -2744,73 +2872,14 @@ f:SetScript("OnEvent", function()
 	T.SkinEditBox(SpellListTextInput)
 	T.SkinEditBox(SpellListTextInput2)
 
+	ShestakUIInfoFrame:SetTemplate("Overlay")
+
 	ShestakUIProfileFrame:SetTemplate("Transparent")
 	T.SkinScrollBar(ShestakUIProfileFrameScrollScrollBar)
 	ShestakUIProfileFrameScroll:CreateBackdrop("Overlay")
 	ShestakUIProfileFrameScroll.backdrop:SetPoint("TOPLEFT", -4, 4)
 	ShestakUIProfileFrameScroll.backdrop:SetPoint("BOTTOMRIGHT", 4, -4)
 end)
-
-----------------------------------------------------------------------------------------
---	Information
-----------------------------------------------------------------------------------------
-do
-	local frame = CreateFrame("Frame", nil, InterfaceOptionsFramePanelContainer)
-	frame:Hide()
-
-	frame.name = "ShestakUI"
-	frame:SetScript("OnShow", function(self)
-		if self.show then return end
-		local T = unpack(ShestakUI)
-		local title = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
-		title:SetPoint("TOPLEFT", 16, -16)
-		title:SetText("Info:")
-
-		local subtitle = self:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
-		subtitle:SetWidth(580)
-		subtitle:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -8)
-		subtitle:SetJustifyH("LEFT")
-		subtitle:SetText("UI Site: |cff298F00http//shestak.org|r\nGitHub: |cff298F00https://github.com/Shestak/ShestakUI|r\nCurse: |cff298F00https://www.curseforge.com/wow/addons/shestakui/|r\nWoWInterface: |cff298F00https://www.wowinterface.com/downloads/info19033-ShestakUI.html|r\nChange Log: |cff298F00https://github.com/Shestak/ShestakUI/commits/master/|r")
-
-		local title2 = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
-		title2:SetPoint("TOPLEFT", subtitle, "BOTTOMLEFT", 0, -16)
-		title2:SetText("Credits:")
-
-		local subtitle2 = self:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
-		subtitle2:SetWidth(580)
-		subtitle2:SetPoint("TOPLEFT", title2, "BOTTOMLEFT", 0, -8)
-		subtitle2:SetJustifyH("LEFT")
-		subtitle2:SetText(GetAddOnMetadata("ShestakUI", "X-Credits"))
-
-		local title3 = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
-		title3:SetPoint("TOPLEFT", subtitle2, "BOTTOMLEFT", 0, -16)
-		title3:SetText("Translation:")
-
-		local subtitle3 = self:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
-		subtitle3:SetWidth(580)
-		subtitle3:SetPoint("TOPLEFT", title3, "BOTTOMLEFT", 0, -8)
-		subtitle3:SetJustifyH("LEFT")
-		subtitle3:SetText(GetAddOnMetadata("ShestakUI", "X-Translation"))
-
-		local title4 = self:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
-		title4:SetPoint("TOPLEFT", subtitle3, "BOTTOMLEFT", 0, -16)
-		title4:SetText("Thanks:")
-
-		local subtitle4 = self:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
-		subtitle4:SetWidth(580)
-		subtitle4:SetPoint("TOPLEFT", title4, "BOTTOMLEFT", 0, -8)
-		subtitle4:SetJustifyH("LEFT")
-		subtitle4:SetText(GetAddOnMetadata("ShestakUI", "X-Thanks"))
-
-		local version = self:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-		version:SetPoint("BOTTOMRIGHT", -16, 16)
-		version:SetText("Version: "..T.version)
-
-		self.show = true
-	end)
-
-	InterfaceOptions_AddCategory(frame)
-end
 
 ----------------------------------------------------------------------------------------
 --	Slash commands
