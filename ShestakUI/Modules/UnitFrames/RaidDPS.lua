@@ -504,3 +504,67 @@ if C.raidframe.layout == "AUTO" then
 	frame:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
 	frame:SetScript("OnEvent", CheckSpec)
 end
+
+----------------------------------------------------------------------------------------
+--	Test RaidFrames
+----------------------------------------------------------------------------------------
+do
+	local frames = {}
+	local moving = false
+	SlashCmdList.TEST_RAID_DPS = function()
+		if InCombatLockdown() then print("|cffffff00"..ERR_NOT_IN_COMBAT.."|r") return end
+		if not moving then
+			oUF_RaidDPS1:Show()
+			local raid = {}
+			local raid_j = {}
+			if #frames == 0 then
+				for j = 1, C.raidframe.raid_groups do
+					for i = 1, 5 do
+						local frame = CreateFrame("Frame", nil, UIParent)
+						frame:SetSize(raid_width, raid_height)
+						if j == 1 then
+							if i == 1 then
+								frame:SetPoint("TOPLEFT", oUF_RaidDPS1, "TOPLEFT", 0, 0)
+							else
+								frame:SetPoint("TOP", raid[i-1], "BOTTOM", 0, -7)
+							end
+						elseif j == 5 then
+							if i == 1 then
+								frame:SetPoint("TOPLEFT", oUF_RaidDPS1, "TOPRIGHT", 7, 0)
+							else
+								frame:SetPoint("TOP", raid[i-1], "BOTTOM", 0, -7)
+							end
+						else
+							if i == 1 then
+								frame:SetPoint("TOPLEFT", raid_j[j-1], "BOTTOMLEFT", 0, -7)
+							else
+								frame:SetPoint("TOP", raid[i-1], "BOTTOM", 0, -7)
+							end
+						end
+						if i == 5 then
+							raid_j[j] = frame
+						end
+						frame:CreateBackdrop("Overlay")
+						frame.backdrop.overlay:SetVertexColor(0.1, 0.9 - (j * 0.08) , 0.1)
+						raid[i] = frame
+						table.insert(frames, frame)
+					end
+				end
+			else
+				for _, frame in pairs(frames) do
+					frame:Show()
+				end
+			end
+			moving = true
+		else
+			for _, frame in pairs(frames) do
+				frame:Hide()
+			end
+			moving = false
+		end
+	end
+	SLASH_TEST_RAID_DPS1 = "/testraiddps"
+	SLASH_TEST_RAID_DPS2 = "/еуыекфшввзы"
+	SLASH_TEST_RAID_DPS3 = "/raiddpstest"
+	SLASH_TEST_RAID_DPS4 = "/кфшввзыеуые"
+end
