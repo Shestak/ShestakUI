@@ -457,8 +457,9 @@ C["bag"] = {
 ----------------------------------------------------------------------------------------
 C["minimap"] = {
 	["enable"] = true,							-- Enable minimap
+	["on_top"] = false,							-- Move minimap on top right corner
 	["tracking_icon"] = false,					-- Tracking icon
-	["garrison_icon"] = false,					-- Garrison icon
+	["garrison_icon"] = false,					-- Covenant icon
 	["size"] = 130,								-- Minimap size
 	["hide_combat"] = false,					-- Hide minimap in combat
 	["toggle_menu"] = true,						-- Show toggle menu

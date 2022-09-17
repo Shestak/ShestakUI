@@ -421,6 +421,7 @@ L_GUI_BAGS_BAG = "Nombre de colonne pour les sacs"
 -- Minimap options
 L_GUI_MINIMAP_SUBTEXT = "Paramètres de la minimap"
 L_GUI_MINIMAP_ENABLE = "Activer minimap"
+L.minimap_on_top = "Move minimap on top right corner" -- Need review
 L_GUI_MINIMAP_ICON = "Icone de pistage"
 L_GUI_GARRISON_ICON = "Icône de Covenant"
 L_GUI_MINIMAP_SIZE = "Taille de la minicarte"

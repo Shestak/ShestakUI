@@ -421,6 +421,7 @@ L_GUI_BAGS_BAG = "Número de columnas en la bolsa principal"
 -- Minimap options
 L_GUI_MINIMAP_SUBTEXT = "Minimap settings." -- Need review
 L_GUI_MINIMAP_ENABLE = "Activar minimapa"
+L.minimap_on_top = "Move minimap on top right corner" -- Need review
 L_GUI_MINIMAP_ICON = "Icono de seguimiento"
 L_GUI_GARRISON_ICON = "Covenant icon" -- Need review
 L_GUI_MINIMAP_SIZE = "Tamaño del minimapa"

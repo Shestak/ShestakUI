@@ -2227,8 +2227,11 @@ do
 	local enable = ns.CreateCheckBox(parent, "enable", L_GUI_MINIMAP_ENABLE)
 	enable:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, 0)
 
+	local on_top = ns.CreateCheckBox(parent, "on_top")
+	on_top:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
+
 	local tracking_icon = ns.CreateCheckBox(parent, "tracking_icon", L_GUI_MINIMAP_ICON)
-	tracking_icon:SetPoint("TOPLEFT", enable, "BOTTOMLEFT", 0, 0)
+	tracking_icon:SetPoint("TOPLEFT", on_top, "BOTTOMLEFT", 0, 0)
 
 	local garrison_icon = ns.CreateCheckBox(parent, "garrison_icon", L_GUI_GARRISON_ICON)
 	garrison_icon:SetPoint("TOPLEFT", tracking_icon, "BOTTOMLEFT", 0, 0)

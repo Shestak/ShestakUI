@@ -446,6 +446,7 @@ L_GUI_BAGS_BAG = "Number of columns in main bag"
 -- Minimap options
 L_GUI_MINIMAP_SUBTEXT = "Minimap settings."
 L_GUI_MINIMAP_ENABLE = "Enable minimap"
+L.minimap_on_top = "Move minimap on top right corner"
 L_GUI_MINIMAP_ICON = "Tracking icon"
 L_GUI_GARRISON_ICON = "Covenant icon"
 L_GUI_MINIMAP_SIZE = "Map size"

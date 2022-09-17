@@ -421,6 +421,7 @@ L_GUI_BAGS_BAG = "背包每行格数"
 -- Minimap options
 L_GUI_MINIMAP_SUBTEXT = "小地图设置"
 L_GUI_MINIMAP_ENABLE = "小地图增强"
+L.minimap_on_top = "Move minimap on top right corner" -- Need review
 L_GUI_MINIMAP_ICON = "追踪菜单"
 L_GUI_GARRISON_ICON = "圣所报告图标"
 L_GUI_MINIMAP_SIZE = "小地图大小"

@@ -421,6 +421,7 @@ L_GUI_BAGS_BAG = "Anzahl der Spalten in der Tasche"
 -- Minimap options
 L_GUI_MINIMAP_SUBTEXT = "Minimap Einstellungen."
 L_GUI_MINIMAP_ENABLE = "Minimap aktivieren"
+L.minimap_on_top = "Move minimap on top right corner" -- Need review
 L_GUI_MINIMAP_ICON = "Aufspüren Symbol"
 L_GUI_GARRISON_ICON = "Garrisons Symbol" -- Need review
 L_GUI_MINIMAP_SIZE = "Minimap-Größe"

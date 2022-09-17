@@ -421,6 +421,7 @@ L_GUI_BAGS_BAG = "Numero di colonne nella sacca principale"
 -- Minimap options
 L_GUI_MINIMAP_SUBTEXT = "Minimap settings." -- Need review
 L_GUI_MINIMAP_ENABLE = "Attiva la minimappa"
+L.minimap_on_top = "Move minimap on top right corner" -- Need review
 L_GUI_MINIMAP_ICON = "Icona tracciamento"
 L_GUI_GARRISON_ICON = "Icona della guarnigione" -- Need review
 L_GUI_MINIMAP_SIZE = "Dimensioni della minimappa"

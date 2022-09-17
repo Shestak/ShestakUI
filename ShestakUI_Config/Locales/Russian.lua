@@ -424,6 +424,7 @@ L_GUI_BAGS_BAG = "Cтолбцов в сумках"
 -- Minimap options
 L_GUI_MINIMAP_SUBTEXT = "Настройка миникарты."
 L_GUI_MINIMAP_ENABLE = "Включить миникарту"
+L.minimap_on_top = "Переместить в правый верхний угол"
 L_GUI_MINIMAP_ICON = "Иконка отслеживания объектов"
 L_GUI_GARRISON_ICON = "Иконка ковенанта"
 L_GUI_MINIMAP_SIZE = "Размер миникарты"

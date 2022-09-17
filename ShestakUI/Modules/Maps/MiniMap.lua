@@ -352,3 +352,78 @@ if C.minimap.tracking_icon then
 else
 	MiniMapTracking:Hide()
 end
+
+----------------------------------------------------------------------------------------
+--	Move minimap on top
+----------------------------------------------------------------------------------------
+if C.minimap.on_top then
+	MinimapAnchor:ClearAllPoints()
+	MinimapAnchor:SetPoint("TOPRIGHT", UIParent, "TOPRIGHT", -21, -21)
+	BuffsAnchor:ClearAllPoints()
+	BuffsAnchor:SetPoint("TOPRIGHT", MinimapAnchor, "TOPLEFT", -25, 0)
+
+	LPSTAT_CONFIG.Location.tip_frame = MinimapAnchor
+	LPSTAT_CONFIG.Location.tip_anchor = "BOTTOMRIGHT"
+	LPSTAT_CONFIG.Location.tip_x = 0
+	LPSTAT_CONFIG.Location.tip_y = -50
+
+	local frame = CreateFrame("Frame")
+	frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+	frame:SetScript("OnEvent", function()
+		frame:UnregisterEvent("PLAYER_ENTERING_WORLD")
+		if LP_Coords then
+			LP_Coords:ClearAllPoints()
+			LP_Coords:SetPoint("BOTTOMRIGHT", MinimapAnchor, "TOPRIGHT", 0, 5)
+		end
+		if TeleportMenu then
+			TeleportMenu:ClearAllPoints()
+			TeleportMenu:SetPoint("TOPLEFT", MinimapAnchor, "BOTTOMLEFT", 0, -13)
+		end
+		if RaidBuffsAnchor and not ShestakUIPositions[RaidBuffsAnchor:GetName()] then
+			RaidBuffsAnchor:ClearAllPoints()
+			RaidBuffsAnchor:SetPoint("TOPLEFT", MinimapAnchor, "BOTTOMLEFT", 0, -3)
+		end
+		if not ShestakUIPositions[VehicleAnchor:GetName()] then
+			VehicleAnchor:ClearAllPoints()
+			VehicleAnchor:SetPoint("TOP", Minimap, "BOTTOM", 0, -27)
+		end
+		if TooltipAnchor and not ShestakUIPositions[TooltipAnchor:GetName()] then
+			TooltipAnchor:ClearAllPoints()
+			TooltipAnchor:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 20)
+		end
+
+		GhostFrame:ClearAllPoints()
+		GhostFrame:SetPoint("TOP", Minimap, "BOTTOM", 0, -5)
+
+		if stArchaeologyFrame then
+			stArchaeologyFrame:ClearAllPoints()
+			stArchaeologyFrame:SetPoint("TOPRIGHT", Minimap, "BOTTOMRIGHT", 2, -5)
+		end
+
+		if AutoButtonAnchor and not ShestakUIPositions[AutoButtonAnchor:GetName()] then
+			AutoButtonAnchor:ClearAllPoints()
+			AutoButtonAnchor:SetPoint("TOPLEFT", Minimap, "BOTTOMLEFT", -2, -27)
+		end
+
+		if AutoButtonAnchor and not ShestakUIPositions[AutoButtonAnchor:GetName()] then
+			AutoButtonAnchor:ClearAllPoints()
+			AutoButtonAnchor:SetPoint("TOPLEFT", Minimap, "BOTTOMLEFT", -2, -27)
+		end
+
+		if StuffingFrameBags and not ShestakUIPositions[StuffingFrameBags:GetName()] then
+			StuffingFrameBags:ClearAllPoints()
+			StuffingFrameBags:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 20)
+		end
+
+		if TTMenuBackground then
+			TTMenuBackground:ClearAllPoints()
+			TTMenuBackground:SetPoint("TOPRIGHT", Minimap, "BOTTOMRIGHT", 2, -5)
+
+			TTOpenMenuBackground:ClearAllPoints()
+			TTOpenMenuBackground:SetPoint("TOP", Minimap, "BOTTOM", 0, -5)
+
+			TTMenuAddOnBackground:ClearAllPoints()
+			TTMenuAddOnBackground:SetPoint("TOP", TTMenuBackground, "TOP", 0, 0)
+		end
+	end)
+end
