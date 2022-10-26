@@ -13,60 +13,66 @@ MinimapAnchor:CreatePanel("ClassColor", C.minimap.size, C.minimap.size, unpack(C
 -- Disable Minimap Cluster
 MinimapCluster:EnableMouse(false)
 
--- Parent Minimap into our frame
-Minimap:SetParent(MinimapAnchor)
-Minimap:ClearAllPoints()
-Minimap:SetPoint("TOPLEFT", MinimapAnchor, "TOPLEFT", 2, -2)
-Minimap:SetPoint("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", -2, 2)
-Minimap:SetSize(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:SetScript("OnEvent", function(self, event)
+	self:UnregisterEvent(event)
+	-- Parent Minimap into our frame
+	Minimap:SetParent(MinimapAnchor)
+	Minimap:ClearAllPoints()
+	Minimap:SetPoint("TOPLEFT", MinimapAnchor, "TOPLEFT", 2, -2)
+	Minimap:SetPoint("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", -2, 2)
+	Minimap:SetSize(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
 
-MinimapBackdrop:ClearAllPoints()
-MinimapBackdrop:SetPoint("TOPLEFT", MinimapAnchor, "TOPLEFT", 2, -2)
-MinimapBackdrop:SetPoint("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", -2, 2)
-MinimapBackdrop:SetSize(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
+	MinimapBackdrop:ClearAllPoints()
+	MinimapBackdrop:SetPoint("TOPLEFT", MinimapAnchor, "TOPLEFT", 2, -2)
+	MinimapBackdrop:SetPoint("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", -2, 2)
+	MinimapBackdrop:SetSize(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
+end)
 
 -- Adjusting for patch 9.0.1 Minimap.xml
 Minimap:SetFrameStrata("LOW")
 Minimap:SetFrameLevel(2)
 
 -- Hide Border
-MinimapBorder:Hide()
-MinimapBorderTop:Hide()
+--BETA MinimapBorder:Hide()
+-- MinimapBorderTop:Hide()
+MinimapCompassTexture:Hide()
 
 -- Hide Zoom Buttons
-MinimapZoomIn:Hide()
-MinimapZoomOut:Hide()
+Minimap.ZoomIn:Kill()
+Minimap.ZoomOut:Kill()
 
 -- Hide Blob Ring
 Minimap:SetArchBlobRingScalar(0)
 Minimap:SetQuestBlobRingScalar(0)
 
 -- Hide North texture at top
-MinimapNorthTag:SetTexture(nil)
+--BETA MinimapNorthTag:SetTexture(nil)
 
 -- Hide Zone Frame
-MinimapZoneTextButton:Hide()
+MinimapCluster.ZoneTextButton:Hide()
 
 -- Hide Game Time
 GameTimeFrame:Hide()
 
 -- Move Mail icon
-MiniMapMailFrame:ClearAllPoints()
-MiniMapMailFrame:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 8, -10)
-MiniMapMailBorder:Hide()
-MiniMapMailIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Mail.tga")
-MiniMapMailIcon:SetSize(16, 16)
+-- MiniMapMailFrame:ClearAllPoints()
+-- MiniMapMailFrame:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 8, -10)
+-- MiniMapMailBorder:Hide()
+-- MiniMapMailIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Mail.tga")
+-- MiniMapMailIcon:SetSize(16, 16)
 
 -- Move QueueStatus icon
 QueueStatusFrame:SetClampedToScreen(true)
 QueueStatusFrame:SetFrameStrata("TOOLTIP")
-QueueStatusMinimapButton:ClearAllPoints()
-QueueStatusMinimapButton:SetPoint("TOP", Minimap, "TOP", 1, 6)
-QueueStatusMinimapButton:SetHighlightTexture(nil)
-QueueStatusMinimapButtonBorder:Hide()
+-- QueueStatusMinimapButton:ClearAllPoints()
+-- QueueStatusMinimapButton:SetPoint("TOP", Minimap, "TOP", 1, 6)
+-- QueueStatusMinimapButton:SetHighlightTexture(nil)
+-- QueueStatusMinimapButtonBorder:Hide()
 
 -- Hide world map button
-MiniMapWorldMapButton:Hide()
+-- MiniMapWorldMapButton:Hide()
 
 -- Garrison icon
 if C.minimap.garrison_icon == true then
@@ -76,36 +82,36 @@ if C.minimap.garrison_icon == true then
 		self:SetPoint("TOPLEFT", Minimap, "TOPLEFT", 0, 2)
 	end)
 else
-	GarrisonLandingPageMinimapButton:SetScale(0.0001)
-	GarrisonLandingPageMinimapButton:SetAlpha(0)
+	-- GarrisonLandingPageMinimapButton:SetScale(0.0001)
+	-- GarrisonLandingPageMinimapButton:SetAlpha(0)
 end
 
 -- Instance Difficulty icon
-MiniMapInstanceDifficulty:SetParent(Minimap)
-MiniMapInstanceDifficulty:ClearAllPoints()
-MiniMapInstanceDifficulty:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 3, 2)
-MiniMapInstanceDifficulty:SetScale(0.75)
+-- MiniMapInstanceDifficulty:SetParent(Minimap)
+-- MiniMapInstanceDifficulty:ClearAllPoints()
+-- MiniMapInstanceDifficulty:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 3, 2)
+-- MiniMapInstanceDifficulty:SetScale(0.75)
 
 -- Guild Instance Difficulty icon
-GuildInstanceDifficulty:SetParent(Minimap)
-GuildInstanceDifficulty:ClearAllPoints()
-GuildInstanceDifficulty:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -2, 2)
-GuildInstanceDifficulty:SetScale(0.75)
+-- GuildInstanceDifficulty:SetParent(Minimap)
+-- GuildInstanceDifficulty:ClearAllPoints()
+-- GuildInstanceDifficulty:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -2, 2)
+-- GuildInstanceDifficulty:SetScale(0.75)
 
 -- Challenge Mode icon
-MiniMapChallengeMode:SetParent(Minimap)
-MiniMapChallengeMode:ClearAllPoints()
-MiniMapChallengeMode:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -2, -2)
-MiniMapChallengeMode:SetScale(0.75)
+-- MiniMapChallengeMode:SetParent(Minimap)
+-- MiniMapChallengeMode:ClearAllPoints()
+-- MiniMapChallengeMode:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -2, -2)
+-- MiniMapChallengeMode:SetScale(0.75)
 
 -- Invites icon
-GameTimeCalendarInvitesTexture:ClearAllPoints()
-GameTimeCalendarInvitesTexture:SetParent(Minimap)
-GameTimeCalendarInvitesTexture:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 0, 0)
+-- GameTimeCalendarInvitesTexture:ClearAllPoints()
+-- GameTimeCalendarInvitesTexture:SetParent(Minimap)
+-- GameTimeCalendarInvitesTexture:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 0, 0)
 
 -- Default LFG icon
-LFG_EYE_TEXTURES.raid = LFG_EYE_TEXTURES.default
-LFG_EYE_TEXTURES.unknown = LFG_EYE_TEXTURES.default
+-- LFG_EYE_TEXTURES.raid = LFG_EYE_TEXTURES.default
+-- LFG_EYE_TEXTURES.unknown = LFG_EYE_TEXTURES.default
 
 -- Feedback icon
 if FeedbackUIButton then
@@ -139,9 +145,9 @@ GhostFrameContentsFrame.backdrop:SetPoint("BOTTOMRIGHT", GhostFrameContentsFrame
 Minimap:EnableMouseWheel(true)
 Minimap:SetScript("OnMouseWheel", function(_, d)
 	if d > 0 then
-		_G.MinimapZoomIn:Click()
+		_G.Minimap.ZoomIn:Click()
 	elseif d < 0 then
-		_G.MinimapZoomOut:Click()
+		_G.Minimap.ZoomOut:Click()
 	end
 end)
 
@@ -350,7 +356,7 @@ if C.minimap.tracking_icon then
 	MiniMapTracking.backdrop:SetPoint("TOPLEFT", MiniMapTrackingIcon, -2, 2)
 	MiniMapTracking.backdrop:SetPoint("BOTTOMRIGHT", MiniMapTrackingIcon, 2, -2)
 else
-	MiniMapTracking:Hide()
+	--BETA MiniMapTracking:Hide()
 end
 
 ----------------------------------------------------------------------------------------

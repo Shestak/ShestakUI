@@ -15,36 +15,38 @@ else
 end
 MultiBarBottomLeft:SetParent(bar)
 
-local NumPerRows = C.actionbar.bar2_row
-local NextRowButtonAnchor = _G["MultiBarBottomLeftButton1"]
-for i = 1, 12 do
-	local b = _G["MultiBarBottomLeftButton"..i]
-	local b2 = _G["MultiBarBottomLeftButton"..i-1]
-	b:ClearAllPoints()
-	if C.actionbar.editor then
-		if i <= C.actionbar.bar2_num then
-			if i == 1 then
-				b:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
-			elseif i == NumPerRows + 1 then
-				b:SetPoint("TOPLEFT", NextRowButtonAnchor, "BOTTOMLEFT", 0, -C.actionbar.button_space)
+bar:RegisterEvent("PLAYER_ENTERING_WORLD")
+bar:SetScript("OnEvent", function(self, event)
+	local NumPerRows = C.actionbar.bar2_row
+	local NextRowButtonAnchor = _G["MultiBarBottomLeftButton1"]
+	for i = 1, 12 do
+		local b = _G["MultiBarBottomLeftButton"..i]
+		local b2 = _G["MultiBarBottomLeftButton"..i-1]
+		b:ClearAllPoints()
+		if C.actionbar.editor then
+			if i <= C.actionbar.bar2_num then
+				if i == 1 then
+					b:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
+				elseif i == NumPerRows + 1 then
+					b:SetPoint("TOPLEFT", NextRowButtonAnchor, "BOTTOMLEFT", 0, -C.actionbar.button_space)
 
-				NumPerRows = NumPerRows + C.actionbar.bar2_row
-				NextRowButtonAnchor = _G["MultiBarBottomLeftButton"..i]
+					NumPerRows = NumPerRows + C.actionbar.bar2_row
+					NextRowButtonAnchor = _G["MultiBarBottomLeftButton"..i]
+				else
+					b:SetPoint("LEFT", b2, "RIGHT", T.Scale(C.actionbar.button_space), 0)
+				end
+			else
+				b:SetPoint("TOP", UIParent, "TOP", 0, 200)
+			end
+		else
+			if i == 1 then
+				b:SetPoint("BOTTOM", ActionButton1, "TOP", 0, C.actionbar.button_space)
 			else
 				b:SetPoint("LEFT", b2, "RIGHT", T.Scale(C.actionbar.button_space), 0)
 			end
-		else
-			b:SetPoint("TOP", UIParent, "TOP", 0, 200)
-		end
-	else
-		if i == 1 then
-			b:SetPoint("BOTTOM", ActionButton1, "TOP", 0, C.actionbar.button_space)
-		else
-			b:SetPoint("LEFT", b2, "RIGHT", T.Scale(C.actionbar.button_space), 0)
 		end
 	end
-end
-
+end)
 -- Hide bar
 if C.actionbar.bottombars == 1 then
 	bar:Hide()

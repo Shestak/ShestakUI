@@ -89,6 +89,10 @@ local function InstallUI()
 	ShestakUISettingsPerChar.RightBars = C.actionbar.rightbars
 	ShestakUISettingsPerChar.BottomBars = C.actionbar.bottombars
 
+	if C_ClassTrial.IsClassTrialCharacter() and IsWetxius then
+		SlashCmdList.ONLY_UI()
+	end
+
 	ReloadUI()
 end
 

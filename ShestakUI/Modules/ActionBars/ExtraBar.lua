@@ -21,7 +21,7 @@ ExtraActionBarFrame:SetAllPoints()
 
 -- Prevent reanchor
 ExtraActionBarFrame.ignoreInLayout = true
-UIPARENT_MANAGED_FRAME_POSITIONS.ExtraAbilityContainer = nil
+--BETA UIPARENT_MANAGED_FRAME_POSITIONS.ExtraAbilityContainer = nil
 ExtraAbilityContainer.ignoreFramePositionManager = true
 
 -- Prevent taint

@@ -269,13 +269,13 @@ if IsWetxius then
 	C["position"].unitframes.arena = {"BOTTOMRIGHT", UIParent, "RIGHT", -55, -70}
 	C["position"].stance_bar = {"TOPRIGHT", "ActionBarAnchor", "TOPLEFT", -3, 0}
 
-	local frame = CreateFrame("Frame")
-	frame:RegisterEvent("PLAYER_LOGIN")
-	frame:SetScript("OnEvent", function()
-		xCT3:SetPoint("CENTER", 0, 305)
-		xCT3:SetWidth(400)
-		C["combattext"].heal_treshold = UnitHealthMax("player")/100
-	end)
+	--BETA local frame = CreateFrame("Frame")
+	-- frame:RegisterEvent("PLAYER_LOGIN")
+	-- frame:SetScript("OnEvent", function()
+		-- xCT3:SetPoint("CENTER", 0, 305)
+		-- xCT3:SetWidth(400)
+		-- C["combattext"].heal_treshold = UnitHealthMax("player")/100
+	-- end)
 
 	T.CustomFilgerSpell = {
 		{"P_PROC_ICON", {spellID = 328908, unitID = "player", caster = "player", filter = "BUFF"}}, -- Combat Meditation {Kyrian)

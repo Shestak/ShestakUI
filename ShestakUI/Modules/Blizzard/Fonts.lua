@@ -5,7 +5,7 @@
 ----------------------------------------------------------------------------------------
 local SetFont = function(obj, font, size, style, r, g, b, sr, sg, sb, sox, soy)
 	if not obj then return end
-	obj:SetFont(font, size, style)
+	obj:SetFont(font, size, style or "")
 	if sr and sg and sb then obj:SetShadowColor(sr, sg, sb) end
 	if sox and soy then obj:SetShadowOffset(sox, soy) end
 	if r and g and b then obj:SetTextColor(r, g, b) end
@@ -112,7 +112,7 @@ frame:SetScript("OnEvent", function(_, _, addon)
 	SetFont(NumberFontNormalSmall, NORMAL, 11, "OUTLINE")
 
 	-- Player title
-	for _, butt in pairs(PaperDollTitlesPane.buttons) do butt.text:SetFontObject(GameFontHighlightSmallLeft) end
+	--BETA for _, butt in pairs(PaperDollTitlesPane.buttons) do butt.text:SetFontObject(GameFontHighlightSmallLeft) end
 end)
 
 -- Registering fonts in LibSharedMedia

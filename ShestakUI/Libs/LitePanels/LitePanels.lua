@@ -186,7 +186,7 @@ function lpanels:MakePanel(f)
 
 			-- Texts string
 			if not t.string then t.string = d.text.string end
-			text:SetText(is(t.string, "function") and t.string(text) or t.string)
+			--BETA text:SetText(is(t.string, "function") and t.string(text) or t.string)
 
 			-- Texts color
 			local tx_r, tx_g, tx_b = setcolor(t.color or d.text.color)
@@ -293,7 +293,7 @@ function lpanels.CreateFrame(_, frame)
 		local panel = _G[child]
 		if not panel.anchor_frame or _G[panel.anchor_frame] then
 			local points = {panel:GetPoint()} points[2] = _G[panel.anchor_frame] or frame
-			panel:SetParent(frame or UIParent)
+			--BETA panel:SetParent(frame or UIParent)
 			panel:ClearAllPoints()
 			panel:SetPoint(unpack(points))
 			Resize(panel, panel.width, panel.height)

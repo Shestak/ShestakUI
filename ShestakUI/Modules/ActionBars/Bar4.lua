@@ -15,35 +15,38 @@ else
 end
 MultiBarRight:SetParent(bar)
 
-local NumPerRows = C.actionbar.bar4_row
-local NextRowButtonAnchor = _G["MultiBarRightButton1"]
-for i = 1, 12 do
-	local b = _G["MultiBarRightButton"..i]
-	local b2 = _G["MultiBarRightButton"..i-1]
-	b:ClearAllPoints()
-	if C.actionbar.editor then
-		if i <= C.actionbar.bar4_num then
-			if i == 1 then
-				b:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
-			elseif i == NumPerRows + 1 then
-				b:SetPoint("TOPLEFT", NextRowButtonAnchor, "BOTTOMLEFT", 0, -C.actionbar.button_space)
+bar:RegisterEvent("PLAYER_ENTERING_WORLD")
+bar:SetScript("OnEvent", function(self, event)
+	local NumPerRows = C.actionbar.bar4_row
+	local NextRowButtonAnchor = _G["MultiBarRightButton1"]
+	for i = 1, 12 do
+		local b = _G["MultiBarRightButton"..i]
+		local b2 = _G["MultiBarRightButton"..i-1]
+		b:ClearAllPoints()
+		if C.actionbar.editor then
+			if i <= C.actionbar.bar4_num then
+				if i == 1 then
+					b:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
+				elseif i == NumPerRows + 1 then
+					b:SetPoint("TOPLEFT", NextRowButtonAnchor, "BOTTOMLEFT", 0, -C.actionbar.button_space)
 
-				NumPerRows = NumPerRows + C.actionbar.bar4_row
-				NextRowButtonAnchor = _G["MultiBarRightButton"..i]
+					NumPerRows = NumPerRows + C.actionbar.bar4_row
+					NextRowButtonAnchor = _G["MultiBarRightButton"..i]
+				else
+					b:SetPoint("LEFT", b2, "RIGHT", T.Scale(C.actionbar.button_space), 0)
+				end
 			else
-				b:SetPoint("LEFT", b2, "RIGHT", T.Scale(C.actionbar.button_space), 0)
+				b:SetPoint("TOP", UIParent, "TOP", 0, 200)
 			end
 		else
-			b:SetPoint("TOP", UIParent, "TOP", 0, 200)
-		end
-	else
-		if i == 1 then
-			b:SetPoint("TOPRIGHT", RightActionBarAnchor, "TOPRIGHT", 0, 0)
-		else
-			b:SetPoint("TOP", b2, "BOTTOM", 0, -C.actionbar.button_space)
+			if i == 1 then
+				b:SetPoint("TOPRIGHT", RightActionBarAnchor, "TOPRIGHT", 0, 0)
+			else
+				b:SetPoint("TOP", b2, "BOTTOM", 0, -C.actionbar.button_space)
+			end
 		end
 	end
-end
+end)
 
 -- Hide bar
 if C.actionbar.rightbars < 1 then

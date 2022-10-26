@@ -21,37 +21,37 @@ local BuffsAnchor = CreateFrame("Frame", "BuffsAnchor", UIParent)
 BuffsAnchor:SetPoint(unpack(C.position.player_buffs))
 BuffsAnchor:SetSize((15 * C.aura.player_buff_size) + 42, (C.aura.player_buff_size * 2) + 3)
 
-TemporaryEnchantFrame:SetPoint("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
+--BETA TemporaryEnchantFrame:SetPoint("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
 
-_G["TempEnchant2"]:ClearAllPoints()
-_G["TempEnchant2"]:SetPoint("RIGHT", _G["TempEnchant1"], "LEFT", -3, 0)
+-- _G["TempEnchant2"]:ClearAllPoints()
+-- _G["TempEnchant2"]:SetPoint("RIGHT", _G["TempEnchant1"], "LEFT", -3, 0)
 
-for i = 1, NUM_TEMP_ENCHANT_FRAMES do
-	local buff = _G["TempEnchant"..i]
-	local icon = _G["TempEnchant"..i.."Icon"]
-	local border = _G["TempEnchant"..i.."Border"]
-	local duration = _G["TempEnchant"..i.."Duration"]
+-- for i = 1, NUM_TEMP_ENCHANT_FRAMES do
+	-- local buff = _G["TempEnchant"..i]
+	-- local icon = _G["TempEnchant"..i.."Icon"]
+	-- local border = _G["TempEnchant"..i.."Border"]
+	-- local duration = _G["TempEnchant"..i.."Duration"]
 
-	if border then border:Hide() end
+	-- if border then border:Hide() end
 
-	if i ~= 3 then
-		buff:SetTemplate("Default")
-		if C.aura.classcolor_border == true then
-			buff:SetBackdropBorderColor(unpack(C.media.classborder_color))
-		end
-	end
+	-- if i ~= 3 then
+		-- buff:SetTemplate("Default")
+		-- if C.aura.classcolor_border == true then
+			-- buff:SetBackdropBorderColor(unpack(C.media.classborder_color))
+		-- end
+	-- end
 
-	buff:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
+	-- buff:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
 
-	icon:CropIcon()
-	icon:SetDrawLayer("BORDER")
+	-- icon:CropIcon()
+	-- icon:SetDrawLayer("BORDER")
 
-	duration:ClearAllPoints()
-	duration:SetPoint("CENTER", 2, 1)
-	duration:SetDrawLayer("ARTWORK")
-	duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
-	duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
-end
+	-- duration:ClearAllPoints()
+	-- duration:SetPoint("CENTER", 2, 1)
+	-- duration:SetDrawLayer("ARTWORK")
+	-- duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
+	-- duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
+-- end
 
 local function StyleBuffs(buttonName, index)
 	local buff = _G[buttonName..index]
@@ -150,8 +150,8 @@ local function UpdateDebuffAnchors(buttonName, index)
 	_G[buttonName..index]:Hide()
 end
 
-hooksecurefunc("BuffFrame_UpdateAllBuffAnchors", UpdateBuffAnchors)
-hooksecurefunc("DebuffButton_UpdateAnchors", UpdateDebuffAnchors)
+-- hooksecurefunc("BuffFrame_UpdateAllBuffAnchors", UpdateBuffAnchors)
+-- hooksecurefunc("DebuffButton_UpdateAnchors", UpdateDebuffAnchors)
 
 function AuraButton_UpdateDuration(buff, timeLeft)
 	local name = buff:GetName()

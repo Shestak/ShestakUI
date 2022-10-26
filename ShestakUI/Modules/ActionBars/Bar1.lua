@@ -20,7 +20,7 @@ for i = 1, 12 do
 	local b = _G["ActionButton"..i]
 	b:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 	b:ClearAllPoints()
-	b:SetParent(Bar1Holder)
+	-- b:SetParent(Bar1Holder)
 	if C.actionbar.editor then
 		if i <= C.actionbar.bar1_num then
 			if i == 1 then
@@ -71,6 +71,7 @@ bar:SetScript("OnEvent", function(self, event)
 		for i = 1, NUM_ACTIONBAR_BUTTONS do
 			local button = _G["ActionButton"..i]
 			self:SetFrameRef("ActionButton"..i, button)
+			button:SetParent(Bar1Holder)
 		end
 
 		self:Execute([[

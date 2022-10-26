@@ -13,8 +13,8 @@ frame:SetScript("OnEvent", function(_, _, addon)
 	end
 
 	if C.unitframe.enable and C.raidframe.layout ~= "BLIZZARD" then
-		InterfaceOptionsFrameCategoriesButton10:SetScale(0.00001)
-		InterfaceOptionsFrameCategoriesButton10:SetAlpha(0)
+		--BETA InterfaceOptionsFrameCategoriesButton10:SetScale(0.00001)
+		-- InterfaceOptionsFrameCategoriesButton10:SetAlpha(0)
 		if not InCombatLockdown() then
 			CompactRaidFrameManager:Kill()
 			CompactRaidFrameContainer:Kill()
@@ -26,18 +26,18 @@ frame:SetScript("OnEvent", function(_, _, addon)
 		CompactRaidFrameManager_UpdateOptionsFlowContainer = T.dummy
 	end
 
-	Display_UseUIScale:Kill()
-	Display_UIScaleSlider:Kill()
+	--BETA Display_UseUIScale:Kill()
+	-- Display_UIScaleSlider:Kill()
 	TutorialFrameAlertButton:Kill()
 	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_WORLD_MAP_FRAME, true)
 	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_PET_JOURNAL, true)
 	SetCVarBitfield("closedInfoFrames", LE_FRAME_TUTORIAL_GARRISON_BUILDING, true)
 
 	SetCVar("countdownForCooldowns", 0)
-	InterfaceOptionsActionBarsPanelCountdownCooldowns:Hide()
+	--BETA InterfaceOptionsActionBarsPanelCountdownCooldowns:Hide()
 
 	if C.chat.enable then
-		InterfaceOptionsSocialPanelChatStyle:Hide()
+		--BETA InterfaceOptionsSocialPanelChatStyle:Hide()
 		SetCVar("chatStyle", "im")
 	end
 
@@ -45,18 +45,18 @@ frame:SetScript("OnEvent", function(_, _, addon)
 		if T.class == "DEATHKNIGHT" and C.unitframe_class_bar.rune ~= true then
 			RuneFrame:Kill()
 		end
-		InterfaceOptionsDisplayPanelDisplayDropDown:Hide()
-		InterfaceOptionsCombatPanelTargetOfTarget:Hide()
+		--BETA InterfaceOptionsDisplayPanelDisplayDropDown:Hide()
+		--BETA InterfaceOptionsCombatPanelTargetOfTarget:Hide()
 		SetCVar("showPartyBackground", 0)
 	end
 
 	if C.actionbar.enable then
-		InterfaceOptionsActionBarsPanelBottomLeft:Hide()
-		InterfaceOptionsActionBarsPanelBottomRight:Hide()
-		InterfaceOptionsActionBarsPanelRight:Hide()
-		InterfaceOptionsActionBarsPanelRightTwo:Hide()
-		InterfaceOptionsActionBarsPanelAlwaysShowActionBars:Hide()
-		InterfaceOptionsActionBarsPanelStackRightBars:Hide()
+		--BETA InterfaceOptionsActionBarsPanelBottomLeft:Hide()
+		-- InterfaceOptionsActionBarsPanelBottomRight:Hide()
+		-- InterfaceOptionsActionBarsPanelRight:Hide()
+		-- InterfaceOptionsActionBarsPanelRightTwo:Hide()
+		-- InterfaceOptionsActionBarsPanelAlwaysShowActionBars:Hide()
+		-- InterfaceOptionsActionBarsPanelStackRightBars:Hide()
 		if not InCombatLockdown() then
 			SetCVar("multiBarRightVerticalLayout", 0)
 		end
@@ -67,7 +67,7 @@ frame:SetScript("OnEvent", function(_, _, addon)
 	end
 
 	if C.minimap.enable then
-		InterfaceOptionsDisplayPanelRotateMinimap:Hide()
+		--BETA InterfaceOptionsDisplayPanelRotateMinimap:Hide()
 	end
 
 	if C.bag.enable then
@@ -76,7 +76,7 @@ frame:SetScript("OnEvent", function(_, _, addon)
 	end
 
 	if C.combattext.enable then
-		InterfaceOptionsCombatPanelEnableFloatingCombatText:Hide()
+		--BETA InterfaceOptionsCombatPanelEnableFloatingCombatText:Hide()
 		if C.combattext.incoming then
 			SetCVar("enableFloatingCombatText", 1)
 		else

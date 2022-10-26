@@ -31,57 +31,60 @@ end
 MultiBarBottomRight:SetParent(bar)
 bar:SetFrameStrata("LOW")
 
-local NumPerRows = C.actionbar.bar5_row
-local NextRowButtonAnchor = _G["MultiBarBottomRightButton1"]
-for i = 1, 12 do
-	local b = _G["MultiBarBottomRightButton"..i]
-	local b2 = _G["MultiBarBottomRightButton"..i-1]
-	b:ClearAllPoints()
-	if C.actionbar.split_bars == true and C.actionbar.rightbars < 3 then
-		if i == 1 then
-			b:SetPoint("TOPLEFT", SplitBarLeft, "TOPLEFT", 0, 0)
-		elseif i == 4 then
-			b:SetPoint("BOTTOMLEFT", SplitBarLeft, "BOTTOMLEFT", 0, 0)
-		elseif i == 7 then
-			b:SetPoint("TOPLEFT", SplitBarRight, "TOPLEFT", C.actionbar.button_space, 0)
-		elseif i == 10 then
-			b:SetPoint("BOTTOMLEFT", SplitBarRight, "BOTTOMLEFT", C.actionbar.button_space, 0)
-		else
-			b:SetPoint("LEFT", b2, "RIGHT", C.actionbar.button_space, 0)
-		end
-	else
-		if C.actionbar.editor then
-			if i <= C.actionbar.bar5_num then
-				if i == 1 then
-					b:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
-				elseif i == NumPerRows + 1 then
-					b:SetPoint("TOPLEFT", NextRowButtonAnchor, "BOTTOMLEFT", 0, -C.actionbar.button_space)
-
-					NumPerRows = NumPerRows + C.actionbar.bar5_row
-					NextRowButtonAnchor = _G["MultiBarBottomRightButton"..i]
-				else
-					b:SetPoint("LEFT", b2, "RIGHT", T.Scale(C.actionbar.button_space), 0)
-				end
+bar:RegisterEvent("PLAYER_ENTERING_WORLD")
+bar:SetScript("OnEvent", function(self, event)
+	local NumPerRows = C.actionbar.bar5_row
+	local NextRowButtonAnchor = _G["MultiBarBottomRightButton1"]
+	for i = 1, 12 do
+		local b = _G["MultiBarBottomRightButton"..i]
+		local b2 = _G["MultiBarBottomRightButton"..i-1]
+		b:ClearAllPoints()
+		if C.actionbar.split_bars == true and C.actionbar.rightbars < 3 then
+			if i == 1 then
+				b:SetPoint("TOPLEFT", SplitBarLeft, "TOPLEFT", 0, 0)
+			elseif i == 4 then
+				b:SetPoint("BOTTOMLEFT", SplitBarLeft, "BOTTOMLEFT", 0, 0)
+			elseif i == 7 then
+				b:SetPoint("TOPLEFT", SplitBarRight, "TOPLEFT", C.actionbar.button_space, 0)
+			elseif i == 10 then
+				b:SetPoint("BOTTOMLEFT", SplitBarRight, "BOTTOMLEFT", C.actionbar.button_space, 0)
 			else
-				b:SetPoint("TOP", UIParent, "TOP", 0, 200)
+				b:SetPoint("LEFT", b2, "RIGHT", C.actionbar.button_space, 0)
 			end
 		else
-			if i == 1 then
-				if C.actionbar.rightbars < 3 then
-					b:SetPoint("TOPLEFT", Bar1Holder, 0, 0)
+			if C.actionbar.editor then
+				if i <= C.actionbar.bar5_num then
+					if i == 1 then
+						b:SetPoint("TOPLEFT", bar, "TOPLEFT", 0, 0)
+					elseif i == NumPerRows + 1 then
+						b:SetPoint("TOPLEFT", NextRowButtonAnchor, "BOTTOMLEFT", 0, -C.actionbar.button_space)
+
+						NumPerRows = NumPerRows + C.actionbar.bar5_row
+						NextRowButtonAnchor = _G["MultiBarBottomRightButton"..i]
+					else
+						b:SetPoint("LEFT", b2, "RIGHT", T.Scale(C.actionbar.button_space), 0)
+					end
 				else
-					b:SetPoint("TOPLEFT", RightActionBarAnchor, "TOPLEFT", 0, 0)
+					b:SetPoint("TOP", UIParent, "TOP", 0, 200)
 				end
 			else
-				if C.actionbar.rightbars < 3 then
-					b:SetPoint("LEFT", b2, "RIGHT", T.Scale(C.actionbar.button_space), 0)
+				if i == 1 then
+					if C.actionbar.rightbars < 3 then
+						b:SetPoint("TOPLEFT", Bar1Holder, 0, 0)
+					else
+						b:SetPoint("TOPLEFT", RightActionBarAnchor, "TOPLEFT", 0, 0)
+					end
 				else
-					b:SetPoint("TOP", b2, "BOTTOM", 0, -C.actionbar.button_space)
+					if C.actionbar.rightbars < 3 then
+						b:SetPoint("LEFT", b2, "RIGHT", T.Scale(C.actionbar.button_space), 0)
+					else
+						b:SetPoint("TOP", b2, "BOTTOM", 0, -C.actionbar.button_space)
+					end
 				end
 			end
 		end
 	end
-end
+end)
 
 -- Hide bar
 if C.actionbar.rightbars < 3 and C.actionbar.bottombars < 3 then

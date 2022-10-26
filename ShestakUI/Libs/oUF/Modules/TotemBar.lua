@@ -81,25 +81,29 @@ local function Enable(self)
 			for i = 1, MAX_TOTEMS do
 				if element[i] then
 					local t = _G["TotemFrameTotem"..i]
-					t:ClearAllPoints()
-					t:SetParent(element[i])
-					t:SetAllPoints(element[i])
-					t:SetFrameLevel(element[i]:GetFrameLevel() + 1)
-					t:SetFrameStrata(element[i]:GetFrameStrata())
-					t:SetAlpha(0)
-					_G["TotemFrameTotem"..i.."Icon"]:Hide()
-				end
-			end
-			hooksecurefunc("TotemFrame_Update", function()
-				for i = 1, MAX_TOTEMS do
-					local t = _G["TotemFrameTotem"..i]
-					local slot = t.slot
-					if slot and slot > 0 then
+					if t then
 						t:ClearAllPoints()
-						t:SetAllPoints(element[slot])
+						t:SetParent(element[i])
+						t:SetAllPoints(element[i])
+						t:SetFrameLevel(element[i]:GetFrameLevel() + 1)
+						t:SetFrameStrata(element[i]:GetFrameStrata())
+						t:SetAlpha(0)
+						_G["TotemFrameTotem"..i.."Icon"]:Hide()
 					end
 				end
-			end)
+			end
+			--BETA hooksecurefunc("TotemFrame_Update", function()
+				-- for i = 1, MAX_TOTEMS do
+					-- local t = _G["TotemFrameTotem"..i]
+					-- if t then
+						-- local slot = t.slot
+						-- if slot and slot > 0 then
+							-- t:ClearAllPoints()
+							-- t:SetAllPoints(element[slot])
+						-- end
+					-- end
+				-- end
+			-- end)
 		end
 		return true
 	end
