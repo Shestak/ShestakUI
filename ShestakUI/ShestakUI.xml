@@ -132,7 +132,7 @@
 	<Script file="Modules\Automation\Summon.lua"/>
 	<Script file="Modules\Automation\TabBinder.lua"/>
 
-	<!-- <Include file="Modules\Blizzard\TaintLess.xml"/> -->
+	<Include file="Modules\Blizzard\TaintLess.xml"/>
 	<Script file="Modules\Blizzard\AlertFrames.lua"/>
 	<Script file="Modules\Blizzard\AltPowerBar.lua"/>
 	<!-- <Script file="Modules\Blizzard\Bags.lua"/> -->
@@ -193,7 +193,7 @@
 	<Script file="Modules\Quests\ObjectiveTracker.lua"/>
 	<Script file="Modules\Quests\WowheadLink.lua"/>
 
-	<!-- <Include file="Modules\Skins\Blizzard\LoadFrames.xml"/> -->
+	<Include file="Modules\Skins\Blizzard\LoadFrames.xml"/>
 	<!-- <Script file="Modules\Skins\Ace3.lua"/> -->
 	<!-- <Script file="Modules\Skins\AtlasLoot.lua"/> -->
 	<!-- <Script file="Modules\Skins\Aurora.lua"/> -->
