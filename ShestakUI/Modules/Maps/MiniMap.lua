@@ -38,6 +38,7 @@ Minimap:SetFrameLevel(2)
 --BETA MinimapBorder:Hide()
 -- MinimapBorderTop:Hide()
 MinimapCompassTexture:Hide()
+MinimapCluster.BorderTop:StripTextures()
 
 -- Hide Zoom Buttons
 Minimap.ZoomIn:Kill()
@@ -310,7 +311,7 @@ Minimap:SetScript("OnMouseUp", function(self, button)
 			ToggleDropDownMenu(nil, nil, MiniMapTrackingDropDown, "cursor", -160, 0, "MENU", 2)
 		end
 	elseif button == "LeftButton" then
-		Minimap_OnClick(self)
+		Minimap.OnClick(self)
 	end
 end)
 
@@ -343,20 +344,20 @@ end
 --	Tracking icon
 ----------------------------------------------------------------------------------------
 if C.minimap.tracking_icon then
-	MiniMapTrackingBackground:Hide()
-	MiniMapTracking:ClearAllPoints()
-	MiniMapTracking:SetPoint("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 0, -4)
-	MiniMapTrackingButton:SetHighlightTexture(nil)
-	MiniMapTrackingButtonBorder:Hide()
-	MiniMapTrackingIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	MiniMapTrackingIcon:SetSize(16, 16)
-	MiniMapTrackingIcon.SetPoint = T.dummy
+	--BETA MiniMapTrackingBackground:Hide()
+	-- MiniMapTracking:ClearAllPoints()
+	-- MiniMapTracking:SetPoint("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 0, -4)
+	-- MiniMapTrackingButton:SetHighlightTexture(nil)
+	-- MiniMapTrackingButtonBorder:Hide()
+	-- MiniMapTrackingIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	-- MiniMapTrackingIcon:SetSize(16, 16)
+	-- MiniMapTrackingIcon.SetPoint = T.dummy
 
-	MiniMapTracking:CreateBackdrop("ClassColor")
-	MiniMapTracking.backdrop:SetPoint("TOPLEFT", MiniMapTrackingIcon, -2, 2)
-	MiniMapTracking.backdrop:SetPoint("BOTTOMRIGHT", MiniMapTrackingIcon, 2, -2)
+	-- MiniMapTracking:CreateBackdrop("ClassColor")
+	-- MiniMapTracking.backdrop:SetPoint("TOPLEFT", MiniMapTrackingIcon, -2, 2)
+	-- MiniMapTracking.backdrop:SetPoint("BOTTOMRIGHT", MiniMapTrackingIcon, 2, -2)
 else
-	--BETA MiniMapTracking:Hide()
+	MinimapCluster.Tracking:Hide()
 end
 
 ----------------------------------------------------------------------------------------
