@@ -30,7 +30,7 @@ local function StyleNormalButton(button, size)
 		end
 
 		if button.SlotArt then
-			button.SlotArt:Hide()
+			button.SlotArt:SetAlpha(0)
 		end
 
 		if button.RightDivider then
@@ -38,20 +38,24 @@ local function StyleNormalButton(button, size)
 		end
 
 		if button.SlotBackground then
-			button.SlotBackground:Hide()
+			button.SlotBackground:SetAlpha(0)
 		end
 
 		if button.NewActionTexture then
 			button.NewActionTexture:SetAlpha(0)
 		end
 
-		if normal then normal:SetTexture() normal:Hide() normal:SetAlpha(0) end
-		if normal2 then normal2:SetTexture() normal2:Hide() normal2:SetAlpha(0) end
+		if normal then
+			normal:SetTexture()
+			normal:Hide()
+			normal:SetAlpha(0)
+		end
 
-		-- _G[button:GetName().."NormalTexture"]:SetAlpha(0)
-		-- _G[button:GetName().."NormalTexture"]:Hide()
-		-- button:GetNormalTexture():SetAlpha(0)
-		-- button:GetNormalTexture():Hide()
+		if normal2 then
+			normal2:SetTexture()
+			normal2:Hide()
+			normal2:SetAlpha(0)
+		end
 
 		flash:SetTexture("")
 		button:SetNormalTexture("")
@@ -228,7 +232,9 @@ function T.StylePet()
 	end
 end
 
-do
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:SetScript("OnEvent", function(self, event)
 	for i = 1, 12 do
 		StyleNormalButton(_G["ActionButton"..i], C.actionbar.editor and C.actionbar.bar1_size)
 		StyleNormalButton(_G["MultiBarBottomLeftButton"..i], C.actionbar.editor and C.actionbar.bar2_size)
@@ -244,7 +250,7 @@ do
 	end
 
 	StyleNormalButton(ExtraActionButton1)
-end
+end)
 
 local function SetupFlyoutButton(button, self)
 	if button:GetHeight() ~= C.actionbar.button_size and not InCombatLockdown() then
