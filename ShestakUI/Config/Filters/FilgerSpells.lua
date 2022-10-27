@@ -1590,6 +1590,8 @@ C["filger_spells"] = {
 			{spellID = 1966, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Subterfuge
 			{spellID = 115192, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Dreadblades
+			{spellID = 343142, unitID = "player", caster = "player", filter = "DEBUFF"},
 		},
 		{
 			Name = "P_PROC_ICON",
