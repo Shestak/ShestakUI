@@ -279,7 +279,7 @@ local function SkinButton(f, strip)
 	if strip then f:StripTextures() end
 
 	if f.SetNormalTexture then f:SetNormalTexture("") end
-	if f.SetHighlightTexture then f:SetHighlightTexture("") end
+	if f.SetHighlightTexture then f:SetHighlightTexture(C.media.empty) end
 	if f.SetPushedTexture then f:SetPushedTexture("") end
 	if f.SetDisabledTexture then f:SetDisabledTexture("") end
 
@@ -660,8 +660,8 @@ function T.SkinCheckBox(frame, size)
 	if size then
 		frame:SetSize(size, size)
 	end
-	frame:SetNormalTexture("")
-	frame:SetPushedTexture("")
+	frame:SetNormalTexture(C.media.empty)
+	frame:SetPushedTexture(C.media.empty)
 	frame:CreateBackdrop("Overlay")
 	frame:SetFrameLevel(frame:GetFrameLevel() + 2)
 	frame.backdrop:SetPoint("TOPLEFT", 4, -4)
@@ -732,7 +732,7 @@ function T.SkinCloseButton(f, point, text, pixel)
 end
 
 function T.SkinSlider(f)
-	f:SetBackdrop(nil)
+	f:StripTextures()
 
 	local bd = CreateFrame("Frame", nil, f)
 	bd:SetTemplate("Overlay")
