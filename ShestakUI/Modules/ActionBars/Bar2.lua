@@ -47,6 +47,7 @@ bar:SetScript("OnEvent", function(self, event)
 		end
 	end
 end)
+
 -- Hide bar
 if C.actionbar.bottombars == 1 then
 	bar:Hide()
