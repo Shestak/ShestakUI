@@ -43,7 +43,7 @@ end
 local function CreateOverlay(f)
 	if f.overlay then return end
 
-	local overlay = f:CreateTexture("$parentOverlay", "BORDER", f)
+	local overlay = f:CreateTexture("$parentOverlay", "BORDER")
 	overlay:SetInside()
 	overlay:SetTexture(C.media.blank)
 	overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
