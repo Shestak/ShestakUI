@@ -2828,7 +2828,7 @@ C["filger_spells"] = {
 			-- Phantasm
 			{spellID = 114239, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Greater Fade
-			{spellID = 213602, unitID = "target", caster = "all", filter = "BUFF"},
+			--BETA {spellID = 213602, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Holy Ward
 			{spellID = 213610, unitID = "target", caster = "all", filter = "BUFF"},
 			-- Debuffs
