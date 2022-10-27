@@ -2,8 +2,8 @@ local _, ns = ...
 local oUF = ns.oUF
 
 -- sourced from FrameXML/AlternatePowerBar.lua
-local ADDITIONAL_POWER_BAR_INDEX = ADDITIONAL_POWER_BAR_INDEX or 0
-local ALT_MANA_BAR_PAIR_DISPLAY_INFO = ALT_MANA_BAR_PAIR_DISPLAY_INFO
+local ADDITIONAL_POWER_BAR_INDEX = _G.ADDITIONAL_POWER_BAR_INDEX or 0
+local ALT_MANA_BAR_PAIR_DISPLAY_INFO = _G.ALT_MANA_BAR_PAIR_DISPLAY_INFO
 
 local _, playerClass = UnitClass('player')
 
@@ -113,15 +113,13 @@ local function Enable(self, unit)
 		self:RegisterEvent('UNIT_DISPLAYPOWER', Path)
 
 		if(element.mainBar) then
-			if(element.mainBar:IsObjectType('StatusBar')
-				and not (element.mainBar:GetStatusBarTexture() or element.mainBar:GetStatusBarAtlas())) then
+			if(element.mainBar:IsObjectType('StatusBar') and not element.mainBar:GetStatusBarTexture()) then
 				element.mainBar:SetStatusBarTexture([[Interface\TargetingFrame\UI-StatusBar]])
 			end
 		end
 
 		if(element.altBar) then
-			if(element.altBar:IsObjectType('StatusBar')
-				and not (element.altBar:GetStatusBarTexture() or element.altBar:GetStatusBarAtlas())) then
+			if(element.altBar:IsObjectType('StatusBar') and not element.altBar:GetStatusBarTexture()) then
 				element.altBar:SetStatusBarTexture([[Interface\TargetingFrame\UI-StatusBar]])
 			end
 		end

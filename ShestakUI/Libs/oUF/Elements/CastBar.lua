@@ -1,92 +1,3 @@
---[[
-# Element: Castbar
-
-Handles the visibility and updating of spell castbars.
-
-## Widget
-
-Castbar - A `StatusBar` to represent spell cast/channel progress.
-
-## Sub-Widgets
-
-.Icon     - A `Texture` to represent spell icon.
-.SafeZone - A `Texture` to represent latency.
-.Shield   - A `Texture` to represent if it's possible to interrupt or spell steal.
-.Spark    - A `Texture` to represent the castbar's edge.
-.Text     - A `FontString` to represent spell name.
-.Time     - A `FontString` to represent spell duration.
-
-## Notes
-
-A default texture will be applied to the StatusBar and Texture widgets if they don't have a texture or a color set.
-
-## Options
-
-.timeToHold      - Indicates for how many seconds the castbar should be visible after a _FAILED or _INTERRUPTED
-                   event. Defaults to 0 (number)
-.hideTradeSkills - Makes the element ignore casts related to crafting professions (boolean)
-
-## Attributes
-
-.castID           - A globally unique identifier of the currently cast spell (string?)
-.casting          - Indicates whether the current spell is an ordinary cast (boolean)
-.channeling       - Indicates whether the current spell is a channeled cast (boolean)
-.empowering       - Indicates whether the current spell is an empowering cast (boolean)
-.notInterruptible - Indicates whether the current spell is interruptible (boolean)
-.spellID          - The spell identifier of the currently cast/channeled/empowering spell (number)
-
-## Examples
-
-    -- Position and size
-    local Castbar = CreateFrame('StatusBar', nil, self)
-    Castbar:SetSize(20, 20)
-    Castbar:SetPoint('TOP')
-    Castbar:SetPoint('LEFT')
-    Castbar:SetPoint('RIGHT')
-
-    -- Add a background
-    local Background = Castbar:CreateTexture(nil, 'BACKGROUND')
-    Background:SetAllPoints(Castbar)
-    Background:SetColorTexture(1, 1, 1, .5)
-
-    -- Add a spark
-    local Spark = Castbar:CreateTexture(nil, 'OVERLAY')
-    Spark:SetSize(20, 20)
-    Spark:SetBlendMode('ADD')
-    Spark:SetPoint('CENTER', Castbar:GetStatusBarTexture(), 'RIGHT', 0, 0)
-
-    -- Add a timer
-    local Time = Castbar:CreateFontString(nil, 'OVERLAY', 'GameFontNormalSmall')
-    Time:SetPoint('RIGHT', Castbar)
-
-    -- Add spell text
-    local Text = Castbar:CreateFontString(nil, 'OVERLAY', 'GameFontNormalSmall')
-    Text:SetPoint('LEFT', Castbar)
-
-    -- Add spell icon
-    local Icon = Castbar:CreateTexture(nil, 'OVERLAY')
-    Icon:SetSize(20, 20)
-    Icon:SetPoint('TOPLEFT', Castbar, 'TOPLEFT')
-
-    -- Add Shield
-    local Shield = Castbar:CreateTexture(nil, 'OVERLAY')
-    Shield:SetSize(20, 20)
-    Shield:SetPoint('CENTER', Castbar)
-
-    -- Add safezone
-    local SafeZone = Castbar:CreateTexture(nil, 'OVERLAY')
-
-    -- Register it with oUF
-    Castbar.bg = Background
-    Castbar.Spark = Spark
-    Castbar.Time = Time
-    Castbar.Text = Text
-    Castbar.Icon = Icon
-    Castbar.Shield = Shield
-    Castbar.SafeZone = SafeZone
-    self.Castbar = Castbar
---]]
-
 local _, ns = ...
 local oUF = ns.oUF
 
@@ -103,20 +14,20 @@ local function resetAttributes(self)
 	self.notInterruptible = nil
 	self.spellID = nil
 
-	for _, pip in ipairs(self.pips) do
+	for _, pip in next, self.Pips do
 		pip:Hide()
 	end
 end
 
-local function createChannelPip(element)
-	-- TODO
+local function CreatePip(element)
 	return CreateFrame('Frame', nil, element, 'CastingBarFrameStagePipTemplate')
 end
 
-local function updateChannelPips(element, numStages)
+local function UpdatePips(element, numStages)
 	local stageTotalDuration = 0
 	local stageMaxValue = element.max * 1000
-	local elementWidth = element:GetRight() - element:GetLeft()
+	local isHoriz = element:GetOrientation() == 'HORIZONTAL'
+	local elementSize = isHoriz and element:GetWidth() or element:GetHeight()
 
 	for stage = 1, numStages do
 		local duration
@@ -130,21 +41,47 @@ local function updateChannelPips(element, numStages)
 			stageTotalDuration = stageTotalDuration + duration
 
 			local portion = stageTotalDuration / stageMaxValue
-			local offset = elementWidth * portion
+			local offset = elementSize * portion
 
-			local pip = element.pips[stage]
+			local pip = element.Pips[stage]
 			if(not pip) then
-				--[[ Override: Castbar:CreatePip(index)
-				TODO
+				--[[ Override: Castbar:CreatePip(stage)
+				Creates a "pip" for the given stage, used for empowered casts.
+
+				* self - the Castbar widget
+
+				## Returns
+
+				* pip - a frame used to depict an empowered stage boundary, typically with a line texture (frame)
 				--]]
-				pip = (element.CreatePip or createChannelPip)(element, stage)
-				element.pips[stage] = pip
+				pip = (element.CreatePip or CreatePip) (element, stage)
+				element.Pips[stage] = pip
 			end
 
 			pip:ClearAllPoints()
-			pip:SetPoint('TOP', element, 'TOPLEFT', offset, -1)
-			pip:SetPoint('BOTTOM', element, 'BOTTOMLEFT', offset, 1)
 			pip:Show()
+
+			if(isHoriz) then
+				pip:RotateTextures(0)
+
+				if(element:GetReverseFill()) then
+					pip:SetPoint('TOP', element, 'TOPRIGHT', -offset, 0)
+					pip:SetPoint('BOTTOM', element, 'BOTTOMRIGHT', -offset, 0)
+				else
+					pip:SetPoint('TOP', element, 'TOPLEFT', offset, 0)
+					pip:SetPoint('BOTTOM', element, 'BOTTOMLEFT', offset, 0)
+				end
+			else
+				pip:RotateTextures(1.5708)
+
+				if(element:GetReverseFill()) then
+					pip:SetPoint('LEFT', element, 'TOPLEFT', 0, -offset)
+					pip:SetPoint('RIGHT', element, 'TOPRIGHT', 0, -offset)
+				else
+					pip:SetPoint('LEFT', element, 'BOTTOMLEFT', 0, offset)
+					pip:SetPoint('RIGHT', element, 'BOTTOMRIGHT', 0, offset)
+				end
+			end
 		end
 	end
 end
@@ -227,9 +164,12 @@ local function CastStart(self, event, unit)
 
 	if(element.empowering) then
 		--[[ Override: Castbar:UpdatePips(numStages)
-		TODO
+		Handles updates for stage separators (pips) in an empowered cast.
+
+		* self      - the Castbar widget
+		* numStages - the number of stages in the current cast (number)
 		--]]
-		(element.UpdatePips or updateChannelPips)(element, numStages)
+		(element.UpdatePips or UpdatePips) (element, numStages)
 	end
 
 	--[[ Callback: Castbar:PostCastStart(unit)
@@ -463,7 +403,7 @@ local function Enable(self, unit)
 		self:RegisterEvent('UNIT_SPELLCAST_NOT_INTERRUPTIBLE', CastInterruptible)
 
 		element.holdTime = 0
-		element.pips = {}
+		element.Pips = {}
 
 		element:SetScript('OnUpdate', element.OnUpdate or onUpdate)
 

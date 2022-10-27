@@ -43,22 +43,70 @@ do
 	end
 end
 
+local function formatTime(s)
+	if s > 60 then
+		return format("%dm", floor(s / 60 + 0.5))
+	else
+		return floor(s + 0.5)
+	end
+end
+
+local function OnUpdate(self, elapsed)
+	self.elapsed = (self.elapsed or 0) + elapsed
+	if self.elapsed >= 0.1 then
+		local timeLeft = self.expirationTime - GetTime()
+		if timeLeft > 0 then
+			local text = formatTime(timeLeft)
+			self.time:SetText(text)
+			if timeLeft <= 5 then
+				self.time:SetTextColor(1, 1, 0.2)
+			else
+				self.time:SetTextColor(1, 1, 1)
+			end
+		else
+			self:SetScript("OnUpdate", nil)
+			self.time:Hide()
+		end
+		self.elapsed = 0
+	end
+end
+
 local function resetIcon(icon, count, duration, remaining)
 	icon:Show()
 	if icon.cd then
 		if duration and duration > 0 then
 			icon.cd:SetCooldown(remaining - duration, duration)
 			icon.cd:Show()
+
+			if icon.time then
+				icon.expirationTime = remaining
+				icon.nextUpdate = 0
+				icon:SetScript("OnUpdate", OnUpdate)
+				icon.time:Show()
+				if icon.time.only then
+					icon.icon:SetAlpha(0)
+					icon:SetBackdrop()
+					icon.cd:Hide()
+				end
+			end
 		else
 			icon.cd:Hide()
+
+			if icon.time then
+				icon:SetScript("OnUpdate", nil)
+				icon.time:Hide()
+				if icon.time.only then
+					icon.icon:SetAlpha(1)
+				end
+			end
 		end
 	end
 	if icon.count then
 		icon.count:SetText((count > 1 and count))
 	end
-	if icon.overlay then
-		icon.overlay:Hide()
-	end
+	-- if icon.overlay then
+		-- icon.overlay:Hide()
+	-- end
 	icon:SetAlpha(1)
 end
 
@@ -66,9 +114,9 @@ local function expireIcon(icon)
 	if icon.cd then icon.cd:Hide() end
 	if icon.count then icon.count:SetText() end
 	icon:SetAlpha(0)
-	if icon.overlay then
-		icon.overlay:Show()
-	end
+	-- if icon.overlay then
+		-- icon.overlay:Show()
+	-- end
 	icon:Show()
 end
 
@@ -129,7 +177,6 @@ local function setupIcons(self)
 	watch.watched = {}
 
 	for _, icon in pairs(icons) do
-
 		local name, _, image = GetSpellInfo(icon.spellID)
 		if name then
 			icon.name = name
@@ -139,21 +186,33 @@ local function setupIcons(self)
 				cd:SetAllPoints(icon)
 				cd:SetDrawEdge(false)
 				icon.cd = cd
+
+				if watch.showTimer then
+					icon.parent = CreateFrame("Frame", nil, icon)
+					icon.parent:SetFrameLevel(icon.cd:GetFrameLevel() + 1)
+					icon.time = T.SetFontString(icon.parent, C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
+					icon.time:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
+					icon.time:SetPoint("CENTER", icon, "CENTER", 1, 0)
+					icon.time:SetJustifyH("CENTER")
+					if watch.onlyTimer then
+						icon.time.only = true
+					end
+				end
 			end
 
-			if not icon.icon then
+			if not icon.icon and watch.showIcon then
 				local tex = icon:CreateTexture(nil, "BACKGROUND")
 				tex:SetAllPoints(icon)
 				tex:SetTexture(image)
 				icon.icon = tex
-				if not icon.overlay then
-					local overlay = icon:CreateTexture(nil, "OVERLAY")
-					overlay:SetTexture("Interface\\Buttons\\UI-Debuff-Overlays")
-					overlay:SetAllPoints(icon)
-					overlay:SetTexCoord(0.296875, 0.5703125, 0, 0.515625)
-					overlay:SetVertexColor(1, 0, 0)
-					icon.overlay = overlay
-				end
+				-- if not icon.overlay then
+					-- local overlay = icon:CreateTexture(nil, "OVERLAY")
+					-- overlay:SetTexture("Interface\\Buttons\\UI-Debuff-Overlays")
+					-- overlay:SetAllPoints(icon)
+					-- overlay:SetTexCoord(0.296875, 0.5703125, 0, 0.515625)
+					-- overlay:SetVertexColor(1, 0, 0)
+					-- icon.overlay = overlay
+				-- end
 			end
 
 			if not icon.count and not (watch.hideCount or icon.hideCount) then

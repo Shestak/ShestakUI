@@ -214,24 +214,24 @@ local AurasCustomFilter = function(element, unit, data)
 	local allow = false
 
 	if not UnitIsFriend("player", unit) then
-		if element.isDebuff then
-			if element.isPlayer or element.caster == "pet" then
-				if ((data.nameplateShowAll or data.nameplateShowSelf) and not T.DebuffBlackList[data.name]) then
+		if data.isHarmful then
+			if data.isPlayerAura or element.caster == "pet" then
+				if ((data.nameplateShowAll or data.nameplateShowPersonal) and not T.DebuffBlackList[data.name]) then
 					allow = true
 				elseif T.DebuffWhiteList[data.name] then
 					allow = true
 				end
 				if C.nameplate.track_buffs then
-					SetColorBorder(element, unpack(C.media.border_color))
+					--BETA SetColorBorder(element, unpack(C.media.border_color))
 				end
 			end
 		else
 			if T.BuffWhiteList[data.name] then
 				allow = true
-				SetColorBorder(element, 0, 0.5, 0)
+				-- SetColorBorder(element, 0, 0.5, 0)
 			elseif data.isStealable then
 				allow = true
-				SetColorBorder(element, 1, 0.85, 0)
+				-- SetColorBorder(element, 1, 0.85, 0)
 			end
 		end
 	end
@@ -252,38 +252,38 @@ local AurasPostCreateIcon = function(element, button)
 	button.remaining:SetPoint("CENTER", button, "CENTER", 1, 0)
 	button.remaining:SetJustifyH("CENTER")
 
-	button.cd.noCooldownCount = true
+	button.Cooldown.noCooldownCount = true
 
-	button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-	button.count:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 1, 0)
-	button.count:SetJustifyH("RIGHT")
-	button.count:SetFont(C.font.auras_font, C.font.auras_font_size * T.noscalemult / Mult, C.font.auras_font_style)
-	button.count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
+	button.Count:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 1, 0)
+	button.Count:SetJustifyH("RIGHT")
+	button.Count:SetFont(C.font.auras_font, C.font.auras_font_size * T.noscalemult / Mult, C.font.auras_font_style)
+	button.Count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
 	if C.aura.show_spiral == true then
 		element.disableCooldown = false
-		button.cd:SetReverse(true)
+		button.Cooldown:SetReverse(true)
 		button.parent = CreateFrame("Frame", nil, button)
-		button.parent:SetFrameLevel(button.cd:GetFrameLevel() + 1)
-		button.count:SetParent(button.parent)
+		button.parent:SetFrameLevel(button.Cooldown:GetFrameLevel() + 1)
+		button.Count:SetParent(button.parent)
 		button.remaining:SetParent(button.parent)
 	else
 		element.disableCooldown = true
 	end
 end
 
-local AurasPostUpdateIcon = function(_, _, icon, _, _, duration, expiration)
-	--BETA if duration and duration > 0 and C.aura.show_timer == true then
-		-- icon.remaining:Show()
-		-- icon.timeLeft = expiration
-		-- icon:SetScript("OnUpdate", T.CreateAuraTimer)
-	-- else
-		-- icon.remaining:Hide()
-		-- icon.timeLeft = math.huge
-		-- icon:SetScript("OnUpdate", nil)
-	-- end
-	-- icon.first = true
+local AurasPostUpdateIcon = function(_, button, _, data)
+	if data.duration and data.duration > 0 and C.aura.show_timer == true then
+		button.remaining:Show()
+		button.timeLeft = data.expirationTime
+		button:SetScript("OnUpdate", T.CreateAuraTimer)
+	else
+		button.remaining:Hide()
+		button.timeLeft = math.huge
+		button:SetScript("OnUpdate", nil)
+	end
+	button.first = true
 end
 
 local function UpdateTarget(self)
@@ -844,8 +844,8 @@ local function style(self, unit)
 		self.Auras.disableMouse = true
 
 		self.Auras.FilterAura = AurasCustomFilter
-		self.Auras.PostCreateIcon = AurasPostCreateIcon
-		self.Auras.PostUpdateIcon = AurasPostUpdateIcon
+		self.Auras.PostCreateButton = AurasPostCreateIcon
+		self.Auras.PostUpdateButton = AurasPostUpdateIcon
 	end
 
 	-- Health color

@@ -596,25 +596,25 @@ T.PostCreateIcon = function(element, button)
 	button.remaining:SetPoint("CENTER", button, "CENTER", 1, 1)
 	button.remaining:SetJustifyH("CENTER")
 
-	button.cd.noCooldownCount = true
+	button.Cooldown.noCooldownCount = true
 
-	button.icon:SetPoint("TOPLEFT", 2, -2)
-	button.icon:SetPoint("BOTTOMRIGHT", -2, 2)
-	button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	button.Icon:SetPoint("TOPLEFT", 2, -2)
+	button.Icon:SetPoint("BOTTOMRIGHT", -2, 2)
+	button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-	button.count:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 1, 0)
-	button.count:SetJustifyH("RIGHT")
-	button.count:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
-	button.count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
+	button.Count:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", 1, 0)
+	button.Count:SetJustifyH("RIGHT")
+	button.Count:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
+	button.Count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
 	if C.aura.show_spiral == true then
 		element.disableCooldown = false
-		button.cd:SetReverse(true)
-		button.cd:SetPoint("TOPLEFT", button, "TOPLEFT", 2, -2)
-		button.cd:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
+		button.Cooldown:SetReverse(true)
+		button.Cooldown:SetPoint("TOPLEFT", button, "TOPLEFT", 2, -2)
+		button.Cooldown:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -2, 2)
 		button.parent = CreateFrame("Frame", nil, button)
-		button.parent:SetFrameLevel(button.cd:GetFrameLevel() + 1)
-		button.count:SetParent(button.parent)
+		button.parent:SetFrameLevel(button.Cooldown:GetFrameLevel() + 1)
+		button.Count:SetParent(button.parent)
 		button.remaining:SetParent(button.parent)
 	else
 		element.disableCooldown = true
@@ -664,34 +664,34 @@ local playerUnits = {
 	vehicle = true,
 }
 
-T.PostUpdateIcon = function(_, unit, button, _, _, duration, expiration, debuffType, isStealable)
+T.PostUpdateIcon = function(_, button, unit, data)
 	if button.isDebuff then
 		if not UnitIsFriend("player", unit) and not playerUnits[button.caster] then
 			if not C.aura.player_aura_only then
 				button:SetBackdropBorderColor(unpack(C.media.border_color))
-				button.icon:SetDesaturated(true)
+				button.Icon:SetDesaturated(true)
 			end
 		else
 			if C.aura.debuff_color_type == true then
-				local color = DebuffTypeColor[debuffType] or DebuffTypeColor.none
+				local color = DebuffTypeColor[data.dispelName] or DebuffTypeColor.none
 				button:SetBackdropBorderColor(color.r, color.g, color.b)
-				button.icon:SetDesaturated(false)
+				button.Icon:SetDesaturated(false)
 			else
 				button:SetBackdropBorderColor(1, 0, 0)
 			end
 		end
 	else
-		if (isStealable or ((T.class == "MAGE" or T.class == "PRIEST" or T.class == "SHAMAN" or T.class == "HUNTER") and debuffType == "Magic")) and not UnitIsFriend("player", unit) then
+		if (data.isStealable or ((T.class == "MAGE" or T.class == "PRIEST" or T.class == "SHAMAN" or T.class == "HUNTER") and data.dispelName == "Magic")) and not UnitIsFriend("player", unit) then
 			button:SetBackdropBorderColor(1, 0.85, 0)
 		else
 			button:SetBackdropBorderColor(unpack(C.media.border_color))
 		end
-		button.icon:SetDesaturated(false)
+		button.Icon:SetDesaturated(false)
 	end
 
-	if duration and duration > 0 and C.aura.show_timer == true then
+	if data.duration and data.duration > 0 and C.aura.show_timer == true then
 		button.remaining:Show()
-		button.timeLeft = expiration
+		button.timeLeft = data.expirationTime
 		button:SetScript("OnUpdate", T.CreateAuraTimer)
 	else
 		button.remaining:Hide()
@@ -702,10 +702,10 @@ T.PostUpdateIcon = function(_, unit, button, _, _, duration, expiration, debuffT
 	button.first = true
 end
 
-T.CustomFilter = function(_, unit, button, _, _, _, _, _, _, caster)
+T.CustomFilter = function(element, unit, data)
 	if C.aura.player_aura_only then
-		if button.isDebuff then
-			if not UnitIsFriend("player", unit) and not playerUnits[caster] then
+		if element.isDebuff then
+			if not UnitIsFriend("player", unit) and not playerUnits[element.caster] then
 				return false
 			end
 		end
@@ -713,10 +713,10 @@ T.CustomFilter = function(_, unit, button, _, _, _, _, _, _, caster)
 	return true
 end
 
-T.CustomFilterBoss = function(_, unit, button, name, _, _, _, _, _, caster)
-	if button.isDebuff then
-		if (playerUnits[caster] or caster == unit) then
-			if (T.DebuffBlackList and not T.DebuffBlackList[name]) or not T.DebuffBlackList then
+T.CustomFilterBoss = function(element, unit, data)
+	if element.isDebuff then
+		if (playerUnits[element.caster] or element.caster == unit) then
+			if (T.DebuffBlackList and not T.DebuffBlackList[data.name]) or not T.DebuffBlackList then
 				return true
 			end
 		end
@@ -764,7 +764,7 @@ T.CreateAuraWatch = function(self)
 	auras:SetPoint("TOPLEFT", self.Health, 0, 0)
 	auras:SetPoint("BOTTOMRIGHT", self.Health, 0, 0)
 	auras.icons = {}
-	auras.PostCreateIcon = T.CreateAuraWatchIcon
+	auras.PostCreateButton = T.CreateAuraWatchIcon
 
 	if not C.aura.show_timer then
 		auras.hideCooldown = true
