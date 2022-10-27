@@ -507,7 +507,7 @@ local function LoadSkin()
 		end
 	end)
 
-	CommunitiesFrameGuildDetailsFrameNews.SetFiltersButton:GetRegions():SetFont(C.media.normal_font, 10)
+	CommunitiesFrameGuildDetailsFrameNews.SetFiltersButton:GetRegions():SetFont(C.media.normal_font, 10, "")
 
 	local backdrop1 = CreateFrame("Frame", nil, CommunitiesFrameGuildDetailsFrameInfo)
 	backdrop1:SetTemplate("Overlay")

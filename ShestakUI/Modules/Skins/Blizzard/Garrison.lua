@@ -400,7 +400,7 @@ local function LoadSkin()
 
 		tab.Text:ClearAllPoints()
 		tab.Text:SetPoint("CENTER")
-		tab.Text:SetFont(C.media.normal_font, 15)
+		tab.Text:SetFont(C.media.normal_font, 15, "")
 	end
 
 	hooksecurefunc("GarrisonLandingPageReport_SetTab", function(self)
@@ -1031,7 +1031,7 @@ local function LoadSkin()
 	FollowerTab.HealFollowerFrame.ButtonFrame:Hide()
 	HealFollowerButtonTemplate:SkinButton()
 
-	FollowerTab.HealFollowerFrame.CostFrame.CostLabel:SetFont(C.media.normal_font, 14)
+	FollowerTab.HealFollowerFrame.CostFrame.CostLabel:SetFont(C.media.normal_font, 14, "")
 	FollowerTab.HealFollowerFrame.CostFrame.CostIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	-- Mission
@@ -1044,7 +1044,7 @@ local function LoadSkin()
 
 	HandleGarrisonPortrait(GarrisonLandingPage.FollowerTab.CovenantFollowerPortraitFrame)
 
-	CovenantMissionFrame.MissionTab.MissionPage.CostFrame.CostLabel:SetFont(C.media.normal_font, 14)
+	CovenantMissionFrame.MissionTab.MissionPage.CostFrame.CostLabel:SetFont(C.media.normal_font, 14, "")
 	CovenantMissionFrame.MissionTab.MissionPage.CostFrame.CostIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	----------------------------------------------------------------------------------------

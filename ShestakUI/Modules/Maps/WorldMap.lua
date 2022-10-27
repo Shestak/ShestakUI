@@ -3,7 +3,7 @@ local T, C, L, _ = unpack(select(2, ...))
 ----------------------------------------------------------------------------------------
 --	Font replacement
 ----------------------------------------------------------------------------------------
-MapQuestInfoRewardsFrame.XPFrame.Name:SetFont(C.media.normal_font, 13)
+MapQuestInfoRewardsFrame.XPFrame.Name:SetFont(C.media.normal_font, 13, "")
 
 ----------------------------------------------------------------------------------------
 --	Change position

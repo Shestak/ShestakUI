@@ -44,7 +44,7 @@ local function LoadSkin()
 		local texture = _G["QuestProgressItem"..i.."IconTexture"]
 
 		if button.NameFrame then button.NameFrame:Hide() end
-		button.Name:SetFont(C.media.normal_font, 12)
+		button.Name:SetFont(C.media.normal_font, 12, "")
 
 		button:CreateBackdrop("Default")
 		button.backdrop:ClearAllPoints()

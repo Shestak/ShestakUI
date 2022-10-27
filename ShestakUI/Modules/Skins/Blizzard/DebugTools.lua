@@ -27,7 +27,7 @@ local function LoadSecondarySkin()
 
 	ScriptErrorsFrame.ScrollFrame:CreateBackdrop("Overlay")
 	ScriptErrorsFrame.ScrollFrame:SetSize(ScriptErrorsFrame:GetWidth() - 45, ScriptErrorsFrame:GetHeight() - 72)
-	ScriptErrorsFrame.ScrollFrame.Text:SetFont(C.media.normal_font, 12)
+	ScriptErrorsFrame.ScrollFrame.Text:SetFont(C.media.normal_font, 12, "")
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSecondarySkin)

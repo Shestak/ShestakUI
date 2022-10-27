@@ -177,7 +177,7 @@ local function LoadSkin()
 		border:SetBackdropBorderColor(unpack(C.media.backdrop_color))
 	end
 
-	CharacterStatsPane.ItemLevelFrame.Value:SetFont(C.media.normal_font, 18)
+	CharacterStatsPane.ItemLevelFrame.Value:SetFont(C.media.normal_font, 18, "")
 	CharacterStatsPane.ItemLevelFrame.Value:SetShadowOffset(1, -1)
 	CharacterStatsPane.ItemLevelFrame.Background:Hide()
 
