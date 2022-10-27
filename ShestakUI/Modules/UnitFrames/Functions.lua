@@ -764,7 +764,7 @@ T.CreateAuraWatch = function(self)
 	auras:SetPoint("TOPLEFT", self.Health, 0, 0)
 	auras:SetPoint("BOTTOMRIGHT", self.Health, 0, 0)
 	auras.icons = {}
-	auras.PostCreateButton = T.CreateAuraWatchIcon
+	auras.PostCreateIcon = T.CreateAuraWatchIcon
 
 	if not C.aura.show_timer then
 		auras.hideCooldown = true
