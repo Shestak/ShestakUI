@@ -704,8 +704,8 @@ end
 
 T.CustomFilter = function(element, unit, data)
 	if C.aura.player_aura_only then
-		if element.isDebuff then
-			if not UnitIsFriend("player", unit) and not playerUnits[element.caster] then
+		if data.isHarmful then
+			if not UnitIsFriend("player", unit) and not playerUnits[data.sourceUnit] then
 				return false
 			end
 		end
@@ -714,8 +714,8 @@ T.CustomFilter = function(element, unit, data)
 end
 
 T.CustomFilterBoss = function(element, unit, data)
-	if element.isDebuff then
-		if (playerUnits[element.caster] or element.caster == unit) then
+	if data.isHarmful then
+		if (playerUnits[data.sourceUnit] or data.sourceUnit == unit) then
 			if (T.DebuffBlackList and not T.DebuffBlackList[data.name]) or not T.DebuffBlackList then
 				return true
 			end

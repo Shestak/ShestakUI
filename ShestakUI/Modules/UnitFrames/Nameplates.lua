@@ -215,7 +215,7 @@ local AurasCustomFilter = function(element, unit, data)
 
 	if not UnitIsFriend("player", unit) then
 		if data.isHarmful then
-			if data.isPlayerAura or element.caster == "pet" then
+			if data.isPlayerAura or data.sourceUnit == "pet" then
 				if ((data.nameplateShowAll or data.nameplateShowPersonal) and not T.DebuffBlackList[data.name]) then
 					allow = true
 				elseif T.DebuffWhiteList[data.name] then
