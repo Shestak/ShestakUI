@@ -22,7 +22,7 @@ for i = 1, 12 do
 	if C.actionbar.show_grid == true then
 		b.noGrid = nil
 		b:SetAttribute("showgrid", 1)
-		b:ShowGrid(ACTION_BUTTON_SHOW_GRID_REASON_EVENT)
+		-- BETA b:ShowGrid(ACTION_BUTTON_SHOW_GRID_REASON_EVENT)
 		b:SetAttribute("statehidden", true)
 	end
 	NextRowButtonAnchor = NextRowButtonAnchor or _G["CustomBarButton1"]
