@@ -83,6 +83,8 @@ frame:SetScript("OnEvent", function(_, _, addon)
 			SetCVar("enableFloatingCombatText", 0)
 		end
 	end
+
+	SetCVar('ActionButtonUseKeyDown', 0) -- BETA
 end)
 
 local function AcknowledgeTips()
