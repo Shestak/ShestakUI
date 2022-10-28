@@ -53,7 +53,7 @@ local function LoadSkin()
 				button.TextBackground2:Hide()
 				button.UnlearnedFrame:SetAlpha(0)
 				button:SetCheckedTexture("")
-				button:SetPushedTexture("")
+				button:SetPushedTexture(C.media.empty)
 			end
 
 			if _G["SpellButton"..i.."Highlight"] then

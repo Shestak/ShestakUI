@@ -27,9 +27,9 @@ local function SkinFrame(frame)
 end
 
 local function SkinButton(frame, text)
-	if frame.SetNormalTexture then frame:SetNormalTexture("") end
-	if frame.SetHighlightTexture then frame:SetHighlightTexture("") end
-	if frame.SetPushedTexture then frame:SetPushedTexture("") end
+	if frame.SetNormalTexture then frame:SetNormalTexture(C.media.empty) end
+	if frame.SetHighlightTexture then frame:SetHighlightTexture(C.media.empty) end
+	if frame.SetPushedTexture then frame:SetPushedTexture(C.media.empty) end
 
 	if not frame.text then
 		frame:FontString("text", C.font.stylization_font, C.font.stylization_font_size, C.font.stylization_font_style)

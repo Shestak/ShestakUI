@@ -26,7 +26,7 @@ frame:SetScript("OnEvent", function()
 			if button and not button.isSkinned then
 				button.cd.noCooldownCount = true
 				button:StyleButton()
-				button:SetNormalTexture("")
+				button:SetNormalTexture(C.media.empty)
 				button:CreateBackdrop("Transparent")
 				button.backdrop:SetAllPoints()
 

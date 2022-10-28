@@ -58,7 +58,7 @@ local function StyleNormalButton(button, size)
 		end
 
 		flash:SetTexture("")
-		button:SetNormalTexture("")
+		button:SetNormalTexture(C.media.empty)
 
 		if float then
 			float:SetTexture("")
@@ -149,11 +149,11 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 		local flash = _G[name.."Flash"]
 		local hotkey = _G[name.."HotKey"]
 
-		button:SetNormalTexture("")
+		button:SetNormalTexture(C.media.empty)
 
 		hooksecurefunc(button, "SetNormalTexture", function(self, texture)
 			if texture and texture ~= "" then
-				self:SetNormalTexture("")
+				self:SetNormalTexture(C.media.empty)
 			end
 		end)
 

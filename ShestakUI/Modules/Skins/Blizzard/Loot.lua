@@ -102,7 +102,7 @@ local function LoadSkin()
 		_G["LootButton"..i.."IconQuestTexture"]:SetAlpha(0)
 
 		slot:StyleButton()
-		slot:SetNormalTexture("")
+		slot:SetNormalTexture(C.media.empty)
 		slot:SetTemplate("Default")
 
 		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)

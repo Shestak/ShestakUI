@@ -63,7 +63,7 @@ local function LoadSkin()
 
 		border:Kill()
 		slot:StyleButton()
-		slot:SetNormalTexture("")
+		slot:SetNormalTexture(C.media.empty)
 		slot.SetHighlightTexture = T.dummy
 		slot:GetHighlightTexture().SetAllPoints = T.dummy
 		slot:SetFrameLevel(slot:GetFrameLevel() + 2)

@@ -51,7 +51,7 @@ local function LoadSkin()
 
 			border:Kill()
 
-			item:SetNormalTexture("")
+			item:SetNormalTexture(C.media.empty)
 			item:StyleButton()
 			item:SetTemplate("Default")
 
@@ -108,7 +108,7 @@ local function LoadSkin()
 
 		border:Kill()
 
-		item:SetNormalTexture(nil)
+		item:SetNormalTexture(C.media.empty)
 		item:StyleButton()
 		item:SetTemplate("Default")
 
@@ -166,7 +166,7 @@ local function LoadSkin()
 
 			border:Kill()
 
-			item:SetNormalTexture(nil)
+			item:SetNormalTexture(C.media.empty)
 			item:StyleButton()
 			item:SetTemplate("Default")
 
