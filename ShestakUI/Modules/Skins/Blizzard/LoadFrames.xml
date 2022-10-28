@@ -3,7 +3,7 @@
 	<!-- <Script file="Achievement.lua"/> -->
 	<!-- <Script file="AddonList.lua"/> -->
 	<!-- <Script file="AdventureMap.lua"/> -->
-	<!-- <Script file="AlertFrames.lua"/> -->
+	<Script file="AlertFrames.lua"/>
 	<!-- <Script file="AlliedRaces.lua"/> -->
 	<!-- <Script file="AnimaDiversion.lua"/> -->
 	<!-- <Script file="Archeology.lua"/> -->

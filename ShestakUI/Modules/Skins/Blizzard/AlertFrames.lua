@@ -153,7 +153,7 @@ local function LoadSkin()
 		-- Background
 		local region = select(2, frame:GetRegions())
 		if region:GetObjectType() == "Texture" then
-			if region:GetTexture() == "Interface\\GuildFrame\\GuildChallenges" then
+			if region:GetTexture() == 516664 then
 				region:Kill()
 			end
 		end
