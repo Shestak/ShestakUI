@@ -41,6 +41,7 @@ local durability = modules.Durability
 local experience = modules.Experience
 local talents = modules.Talents
 local location = modules.Location
+local damage = modules.Damage
 local coords = modules.Coords
 local ping = modules.Ping
 local gold = modules.Gold
@@ -1262,7 +1263,7 @@ if experience.enabled then
 			elseif (event == "UPDATE_FACTION" or event == "PLAYER_LOGIN") and conf.ExpMode == "rep" then
 				local standing, factionID
 				repname, standing, minrep, maxrep, currep, factionID = GetWatchedFactionInfo()
-				local friendID, _, _, _, _, _, standingText, _, nextThreshold = GetFriendshipReputation(factionID)
+				local friendID, _, _, _, _, _, standingText, _, nextThreshold = C_GossipInfo.GetFriendshipReputation(factionID)
 				if friendID then
 					if not nextThreshold then
 						minrep, maxrep, currep = 0, 1, 1
@@ -1542,6 +1543,23 @@ if talents.enabled then
 end
 
 ----------------------------------------------------------------------------------------
+--	Coordinates
+----------------------------------------------------------------------------------------
+if coords.enabled then
+	Inject("Coords", {
+		text = {string = Coords},
+		OnClick = function()
+			if IsShiftKeyDown() then
+				ChatEdit_ActivateChat(ChatEdit_ChooseBoxForSend())
+				ChatEdit_ChooseBoxForSend():Insert(format(" (%s: %s)", GetZoneText(), Coords()))
+			else
+				ToggleFrame(WorldMapFrame)
+			end
+		end
+	})
+end
+
+----------------------------------------------------------------------------------------
 --	Location
 ----------------------------------------------------------------------------------------
 if location.enabled then
@@ -1606,17 +1624,35 @@ if location.enabled then
 end
 
 ----------------------------------------------------------------------------------------
---	Coordinates
+--	Damage
 ----------------------------------------------------------------------------------------
-if coords.enabled then
-	Inject("Coords", {
-		text = {string = Coords},
-		OnClick = function()
-			if IsShiftKeyDown() then
-				ChatEdit_ActivateChat(ChatEdit_ChooseBoxForSend())
-				ChatEdit_ChooseBoxForSend():Insert(format(" (%s: %s)", GetZoneText(), Coords()))
-			else
-				ToggleFrame(WorldMapFrame)
+if damage.enabled then
+	Inject("Damage", {
+		text = {
+			string = function()
+				if IsAddOnLoaded("Details") then
+					local combat = Details:GetCurrentCombat()
+					local player = combat:GetActor(DETAILS_ATTRIBUTE_DAMAGE, T.name)
+					if player then
+						local damageDone = player.total
+						local combatTime = combat:GetCombatTime()
+						local effectiveDPS = damageDone / combatTime
+
+						return format(damage.fmt, DAMAGE, effectiveDPS)
+					end
+				elseif IsAddOnLoaded("Numeration") then
+					local text = LibStub:GetLibrary("LibDataBroker-1.1"):GetDataObjectByName("Numeration").text
+					if text and text ~= "Numeration" then
+						return format(damage.alt_fmt, DAMAGE, text)
+					end
+				end
+			end
+		},
+		OnClick = function(self, button)
+			if IsAddOnLoaded("Details") then
+				_detalhes:ToggleWindows()
+			elseif IsAddOnLoaded("Numeration") then
+				Numeration:ToggleVisibility()
 			end
 		end
 	})

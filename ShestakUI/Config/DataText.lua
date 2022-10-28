@@ -119,6 +119,13 @@ LPSTAT_CONFIG = {
 		anchor_frame = "Coords", anchor_to = "right", anchor_from = "left",
 		x_off = C.stats.coords and -3 or 0, y_off = 0, tip_frame = "UIParent", tip_anchor = "BOTTOMRIGHT", tip_x = -21, tip_y = 20
 	},
+	Damage = {
+		enabled = C.stats.damage,
+		fmt = class"%s: ".."%d",
+		alt_fmt = class"%s: ".."%s",
+		anchor_frame = C.bag.enable and "Location" or "Gold", anchor_to = "right", anchor_from = "left",
+		x_off = C.stats.coords and -3 or 0, y_off = 0
+	},
 -- MiniMap block
 	Ping = {
 		enabled = true,
