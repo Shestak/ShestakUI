@@ -377,7 +377,7 @@ local function SkinBarIcon(_, _, line)
 
 		icon:SetPoint("RIGHT", 24, 0)
 		icon:SetSize(20, 20)
-		icon:SetMask(nil)
+		icon:SetMask("")
 
 		local border = CreateFrame("Frame", "$parentBorder", bar)
 		border:SetAllPoints(icon)
