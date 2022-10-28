@@ -100,11 +100,11 @@ local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")
 frame:SetScript("OnEvent", function(_, _, addon)
 	if addon == "Blizzard_AchievementUI" then
-		hooksecurefunc("AchievementButton_OnClick", function(self)
-			if self.id and IsControlKeyDown() then
-				local text = linkAchievement:format(self.id)
-				StaticPopup_Show("WATCHFRAME_URL", _, _, text)
-			end
-		end)
+		--BETA hooksecurefunc("AchievementButton_OnClick", function(self)
+			-- if self.id and IsControlKeyDown() then
+				-- local text = linkAchievement:format(self.id)
+				-- StaticPopup_Show("WATCHFRAME_URL", _, _, text)
+			-- end
+		-- end)
 	end
 end)

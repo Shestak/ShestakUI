@@ -9,15 +9,15 @@ local function LoadSkin()
 		"AchievementFrame",
 		"AchievementFrameCategories",
 		"AchievementFrameSummary",
-		"AchievementFrameHeader",
+		-- "AchievementFrameHeader",
 		"AchievementFrameSummaryCategoriesHeader",
 		"AchievementFrameSummaryAchievementsHeader",
 		"AchievementFrameStatsBG",
 		"AchievementFrameAchievements",
 		"AchievementFrameComparison",
 		"AchievementFrameComparisonHeader",
-		"AchievementFrameComparisonSummaryPlayer",
-		"AchievementFrameComparisonSummaryFriend"
+		-- "AchievementFrameComparisonSummaryPlayer",
+		-- "AchievementFrameComparisonSummaryFriend"
 	}
 
 	for _, frame in pairs(frames) do
@@ -35,7 +35,7 @@ local function LoadSkin()
 		for i = 1, _G[frame]:GetNumChildren() do
 			local child = select(i, _G[frame]:GetChildren())
 			if child and not child:GetName() then
-				child.NineSlice:SetAlpha(0)
+				--BETA child.NineSlice:SetAlpha(0)
 			end
 		end
 	end
@@ -43,24 +43,24 @@ local function LoadSkin()
 	AchievementFrame:CreateBackdrop("Transparent")
 	AchievementFrame.backdrop:SetPoint("TOPLEFT", 0, 7)
 	AchievementFrame.backdrop:SetPoint("BOTTOMRIGHT")
-	AchievementFrameHeaderTitle:ClearAllPoints()
-	AchievementFrameHeaderTitle:SetPoint("TOPLEFT", AchievementFrame.backdrop, "TOPLEFT", -22, -8)
-	AchievementFrameHeaderPoints:ClearAllPoints()
-	AchievementFrameHeaderPoints:SetPoint("LEFT", AchievementFrameHeaderTitle, "RIGHT", -2, 0)
+	AchievementFrame.Header.Title:ClearAllPoints()
+	AchievementFrame.Header.Title:SetPoint("TOPLEFT", AchievementFrame.backdrop, "TOPLEFT", -22, -8)
+	AchievementFrame.Header.Points:ClearAllPoints()
+	AchievementFrame.Header.Points:SetPoint("LEFT", AchievementFrame.Header.Title, "RIGHT", -2, 0)
 
 	-- Backdrops
-	AchievementFrameCategoriesContainer:CreateBackdrop("Overlay")
-	AchievementFrameCategoriesContainer.backdrop:SetPoint("TOPLEFT", 0, 4)
-	AchievementFrameCategoriesContainer.backdrop:SetPoint("BOTTOMRIGHT", -2, -3)
-	AchievementFrameAchievementsContainer:CreateBackdrop("Overlay")
-	AchievementFrameAchievementsContainer.backdrop:SetPoint("TOPLEFT", -3, 2)
-	AchievementFrameAchievementsContainer.backdrop:SetPoint("BOTTOMRIGHT", -3, -3)
-	AchievementFrameStatsContainer:CreateBackdrop("Overlay")
-	AchievementFrameStatsContainer.backdrop:SetPoint("TOPLEFT", -2, 2)
-	AchievementFrameStatsContainer.backdrop:SetPoint("BOTTOMRIGHT", -2, -3)
-	AchievementFrameComparisonStatsContainer:CreateBackdrop("Overlay")
-	AchievementFrameComparisonStatsContainer.backdrop:SetPoint("TOPLEFT", -3, 2)
-	AchievementFrameComparisonStatsContainer.backdrop:SetPoint("BOTTOMRIGHT", -2, -3)
+	-- AchievementFrameCategoriesContainer:CreateBackdrop("Overlay")
+	-- AchievementFrameCategoriesContainer.backdrop:SetPoint("TOPLEFT", 0, 4)
+	-- AchievementFrameCategoriesContainer.backdrop:SetPoint("BOTTOMRIGHT", -2, -3)
+	-- AchievementFrameAchievementsContainer:CreateBackdrop("Overlay")
+	-- AchievementFrameAchievementsContainer.backdrop:SetPoint("TOPLEFT", -3, 2)
+	-- AchievementFrameAchievementsContainer.backdrop:SetPoint("BOTTOMRIGHT", -3, -3)
+	-- AchievementFrameStatsContainer:CreateBackdrop("Overlay")
+	-- AchievementFrameStatsContainer.backdrop:SetPoint("TOPLEFT", -2, 2)
+	-- AchievementFrameStatsContainer.backdrop:SetPoint("BOTTOMRIGHT", -2, -3)
+	-- AchievementFrameComparisonStatsContainer:CreateBackdrop("Overlay")
+	-- AchievementFrameComparisonStatsContainer.backdrop:SetPoint("TOPLEFT", -3, 2)
+	-- AchievementFrameComparisonStatsContainer.backdrop:SetPoint("BOTTOMRIGHT", -2, -3)
 
 	T.SkinCloseButton(AchievementFrameCloseButton, AchievementFrame.backdrop)
 	T.SkinDropDownBox(AchievementFrameFilterDropDown)
@@ -76,24 +76,24 @@ local function LoadSkin()
 		AchievementFrameFilterDropDown:SetPoint("TOPLEFT", AchievementFrameAchievements, "TOPLEFT", -19, 24)
 	end)
 
-	T.SkinEditBox(AchievementFrame.searchBox)
-	AchievementFrame.searchBox:SetHeight(15)
-	AchievementFrame.searchBox:ClearAllPoints()
-	AchievementFrame.searchBox:SetPoint("TOPRIGHT", AchievementFrame, "TOPRIGHT", -51, 0)
+	T.SkinEditBox(AchievementFrame.SearchBox)
+	AchievementFrame.SearchBox:SetHeight(15)
+	AchievementFrame.SearchBox:ClearAllPoints()
+	AchievementFrame.SearchBox:SetPoint("TOPRIGHT", AchievementFrame, "TOPRIGHT", -51, 0)
 
-	AchievementFrame.searchResults:StripTextures()
-	AchievementFrame.searchResults:SetTemplate("Transparent")
-	T.SkinCloseButton(AchievementFrame.searchResults.closeButton)
+	-- AchievementFrame.searchResults:StripTextures()
+	-- AchievementFrame.searchResults:SetTemplate("Transparent")
+	-- T.SkinCloseButton(AchievementFrame.searchResults.closeButton)
 
 	-- ScrollBars
-	T.SkinScrollBar(AchievementFrameCategoriesContainerScrollBar)
-	T.SkinScrollBar(AchievementFrameAchievementsContainerScrollBar)
-	T.SkinScrollBar(AchievementFrameStatsContainerScrollBar)
-	T.SkinScrollBar(AchievementFrameComparisonContainerScrollBar)
-	T.SkinScrollBar(AchievementFrameComparisonStatsContainerScrollBar)
-	T.SkinScrollBar(AchievementFrameScrollFrameScrollBar)
+	-- T.SkinScrollBar(AchievementFrameCategoriesContainerScrollBar)
+	-- T.SkinScrollBar(AchievementFrameAchievementsContainerScrollBar)
+	-- T.SkinScrollBar(AchievementFrameStatsContainerScrollBar)
+	-- T.SkinScrollBar(AchievementFrameComparisonContainerScrollBar)
+	-- T.SkinScrollBar(AchievementFrameComparisonStatsContainerScrollBar)
+	-- T.SkinScrollBar(AchievementFrameScrollFrameScrollBar)
 
-	AchievementFrameScrollFrameScrollBar:SetPoint("TOPLEFT", AchievementFrameScrollFrame, "TOPRIGHT", -3, -16)
+	-- AchievementFrameScrollFrameScrollBar:SetPoint("TOPLEFT", AchievementFrameScrollFrame, "TOPRIGHT", -3, -16)
 
 	-- Tabs
 	for i = 1, 3 do
@@ -120,12 +120,12 @@ local function LoadSkin()
 		end
 	end
 
-	SkinStatusBar(AchievementFrameSummaryCategoriesStatusBar)
-	SkinStatusBar(AchievementFrameComparisonSummaryPlayerStatusBar)
-	SkinStatusBar(AchievementFrameComparisonSummaryFriendStatusBar)
-	AchievementFrameComparisonSummaryFriendStatusBar.text:ClearAllPoints()
-	AchievementFrameComparisonSummaryFriendStatusBar.text:SetPoint("CENTER")
-	AchievementFrameComparisonHeader:SetPoint("BOTTOMRIGHT", AchievementFrameComparison, "TOPRIGHT", 45, -20)
+	-- SkinStatusBar(AchievementFrameSummaryCategoriesStatusBar)
+	-- SkinStatusBar(AchievementFrameComparisonSummaryPlayerStatusBar)
+	-- SkinStatusBar(AchievementFrameComparisonSummaryFriendStatusBar)
+	-- AchievementFrameComparisonSummaryFriendStatusBar.text:ClearAllPoints()
+	-- AchievementFrameComparisonSummaryFriendStatusBar.text:SetPoint("CENTER")
+	-- AchievementFrameComparisonHeader:SetPoint("BOTTOMRIGHT", AchievementFrameComparison, "TOPRIGHT", 45, -20)
 
 	for i = 1, 12 do
 		local frame = _G["AchievementFrameSummaryCategoriesCategory"..i]
@@ -170,186 +170,186 @@ local function LoadSkin()
 		end
 	end)
 
-	hooksecurefunc("AchievementButton_DisplayAchievement", function(frame, category, achievement)
-		local _, _, _, completed = GetAchievementInfo(category, achievement)
-		if completed then
-			if frame.accountWide and frame.bg3 then
-				frame.bg3:SetColorTexture(0.1, 0.6, 0.8)
-				frame.label:SetTextColor(0.1, 0.6, 0.8)
-			elseif frame.bg3 then
-				frame.bg3:SetColorTexture(unpack(C.media.border_color))
-				frame.label:SetTextColor(1, 0.82, 0)
-			end
-		else
-			if frame.accountWide and frame.bg3 then
-				frame.bg3:SetColorTexture(0.1, 0.6, 0.8)
-				frame.label:SetTextColor(0.6, 0.6, 0.6)
-			elseif frame.bg3 then
-				frame.bg3:SetColorTexture(unpack(C.media.border_color))
-				frame.label:SetTextColor(0.6, 0.6, 0.6)
-			end
-		end
-	end)
+	-- hooksecurefunc("AchievementButton_DisplayAchievement", function(frame, category, achievement)
+		-- local _, _, _, completed = GetAchievementInfo(category, achievement)
+		-- if completed then
+			-- if frame.accountWide and frame.bg3 then
+				-- frame.bg3:SetColorTexture(0.1, 0.6, 0.8)
+				-- frame.label:SetTextColor(0.1, 0.6, 0.8)
+			-- elseif frame.bg3 then
+				-- frame.bg3:SetColorTexture(unpack(C.media.border_color))
+				-- frame.label:SetTextColor(1, 0.82, 0)
+			-- end
+		-- else
+			-- if frame.accountWide and frame.bg3 then
+				-- frame.bg3:SetColorTexture(0.1, 0.6, 0.8)
+				-- frame.label:SetTextColor(0.6, 0.6, 0.6)
+			-- elseif frame.bg3 then
+				-- frame.bg3:SetColorTexture(unpack(C.media.border_color))
+				-- frame.label:SetTextColor(0.6, 0.6, 0.6)
+			-- end
+		-- end
+	-- end)
 
-	hooksecurefunc("AchievementFrameSummary_UpdateAchievements", function()
-		for i = 1, ACHIEVEMENTUI_MAX_SUMMARY_ACHIEVEMENTS do
-			local frame = _G["AchievementFrameSummaryAchievement"..i]
-			_G["AchievementFrameSummaryAchievement"..i.."Highlight"]:Kill()
-			frame:StripTextures()
+	-- hooksecurefunc("AchievementFrameSummary_UpdateAchievements", function()
+		-- for i = 1, ACHIEVEMENTUI_MAX_SUMMARY_ACHIEVEMENTS do
+			-- local frame = _G["AchievementFrameSummaryAchievement"..i]
+			-- _G["AchievementFrameSummaryAchievement"..i.."Highlight"]:Kill()
+			-- frame:StripTextures()
 
-			_G["AchievementFrameSummaryAchievement"..i.."Description"]:SetTextColor(0.6, 0.6, 0.6)
-			_G["AchievementFrameSummaryAchievement"..i.."Description"]:SetShadowOffset(1, -1)
+			-- _G["AchievementFrameSummaryAchievement"..i.."Description"]:SetTextColor(0.6, 0.6, 0.6)
+			-- _G["AchievementFrameSummaryAchievement"..i.."Description"]:SetShadowOffset(1, -1)
 
-			if not frame.backdrop then
-				frame:CreateBackdrop("Overlay")
-				frame.backdrop:SetPoint("TOPLEFT", 2, -2)
-				frame.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+			-- if not frame.backdrop then
+				-- frame:CreateBackdrop("Overlay")
+				-- frame.backdrop:SetPoint("TOPLEFT", 2, -2)
+				-- frame.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
 
-				_G["AchievementFrameSummaryAchievement"..i.."IconBling"]:Kill()
-				_G["AchievementFrameSummaryAchievement"..i.."IconOverlay"]:Kill()
-				_G["AchievementFrameSummaryAchievement"..i.."Icon"]:SetTemplate("Default")
-				_G["AchievementFrameSummaryAchievement"..i.."Icon"]:SetHeight(_G["AchievementFrameSummaryAchievement"..i.."Icon"]:GetHeight() - 14)
-				_G["AchievementFrameSummaryAchievement"..i.."Icon"]:SetWidth(_G["AchievementFrameSummaryAchievement"..i.."Icon"]:GetWidth() - 14)
-				_G["AchievementFrameSummaryAchievement"..i.."Icon"]:ClearAllPoints()
-				_G["AchievementFrameSummaryAchievement"..i.."Icon"]:SetPoint("LEFT", 6, 0)
-				_G["AchievementFrameSummaryAchievement"..i.."IconTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				_G["AchievementFrameSummaryAchievement"..i.."IconTexture"]:ClearAllPoints()
-				_G["AchievementFrameSummaryAchievement"..i.."IconTexture"]:SetPoint("TOPLEFT", 2, -2)
-				_G["AchievementFrameSummaryAchievement"..i.."IconTexture"]:SetPoint("BOTTOMRIGHT", -2, 2)
-			end
+				-- _G["AchievementFrameSummaryAchievement"..i.."IconBling"]:Kill()
+				-- _G["AchievementFrameSummaryAchievement"..i.."IconOverlay"]:Kill()
+				-- _G["AchievementFrameSummaryAchievement"..i.."Icon"]:SetTemplate("Default")
+				-- _G["AchievementFrameSummaryAchievement"..i.."Icon"]:SetHeight(_G["AchievementFrameSummaryAchievement"..i.."Icon"]:GetHeight() - 14)
+				-- _G["AchievementFrameSummaryAchievement"..i.."Icon"]:SetWidth(_G["AchievementFrameSummaryAchievement"..i.."Icon"]:GetWidth() - 14)
+				-- _G["AchievementFrameSummaryAchievement"..i.."Icon"]:ClearAllPoints()
+				-- _G["AchievementFrameSummaryAchievement"..i.."Icon"]:SetPoint("LEFT", 6, 0)
+				-- _G["AchievementFrameSummaryAchievement"..i.."IconTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				-- _G["AchievementFrameSummaryAchievement"..i.."IconTexture"]:ClearAllPoints()
+				-- _G["AchievementFrameSummaryAchievement"..i.."IconTexture"]:SetPoint("TOPLEFT", 2, -2)
+				-- _G["AchievementFrameSummaryAchievement"..i.."IconTexture"]:SetPoint("BOTTOMRIGHT", -2, 2)
+			-- end
 
-			if frame.accountWide and AchievementFrameHeaderTitle:GetText() == _G.ACHIEVEMENT_TITLE then
-				frame.backdrop:SetBackdropBorderColor(ACHIEVEMENT_BLUE_BORDER_COLOR:GetRGB())
-			else
-				frame.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-			end
-		end
-	end)
+			-- if frame.accountWide and AchievementFrameHeaderTitle:GetText() == _G.ACHIEVEMENT_TITLE then
+				-- frame.backdrop:SetBackdropBorderColor(ACHIEVEMENT_BLUE_BORDER_COLOR:GetRGB())
+			-- else
+				-- frame.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+			-- end
+		-- end
+	-- end)
 
-	for i = 1, 7 do
-		local frame = _G["AchievementFrameAchievementsContainerButton"..i]
-		_G["AchievementFrameAchievementsContainerButton"..i.."Highlight"]:Kill()
-		frame:StripTextures(true)
+	-- for i = 1, 7 do
+		-- local frame = _G["AchievementFrameAchievementsContainerButton"..i]
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Highlight"]:Kill()
+		-- frame:StripTextures(true)
 
-		-- Initiate method of creating a backdrop
-		frame.bg1 = frame:CreateTexture(nil, "BACKGROUND")
-		frame.bg1:SetDrawLayer("BACKGROUND", 4)
-		frame.bg1:SetTexture(C.media.blank)
-		frame.bg1:SetVertexColor(0.1, 0.1, 0.1)
-		frame.bg1:SetPoint("TOPLEFT", T.mult * 4, -T.mult * 4)
-		frame.bg1:SetPoint("BOTTOMRIGHT", -T.mult * 4, T.mult * 4)
+		-- -- Initiate method of creating a backdrop
+		-- frame.bg1 = frame:CreateTexture(nil, "BACKGROUND")
+		-- frame.bg1:SetDrawLayer("BACKGROUND", 4)
+		-- frame.bg1:SetTexture(C.media.blank)
+		-- frame.bg1:SetVertexColor(0.1, 0.1, 0.1)
+		-- frame.bg1:SetPoint("TOPLEFT", T.mult * 4, -T.mult * 4)
+		-- frame.bg1:SetPoint("BOTTOMRIGHT", -T.mult * 4, T.mult * 4)
 
-		frame.bg2 = frame:CreateTexture(nil, "BACKGROUND")
-		frame.bg2:SetDrawLayer("BACKGROUND", 3)
-		frame.bg2:SetColorTexture(0, 0, 0)
-		frame.bg2:SetPoint("TOPLEFT", T.mult * 3, -T.mult * 3)
-		frame.bg2:SetPoint("BOTTOMRIGHT", -T.mult * 3, T.mult * 3)
+		-- frame.bg2 = frame:CreateTexture(nil, "BACKGROUND")
+		-- frame.bg2:SetDrawLayer("BACKGROUND", 3)
+		-- frame.bg2:SetColorTexture(0, 0, 0)
+		-- frame.bg2:SetPoint("TOPLEFT", T.mult * 3, -T.mult * 3)
+		-- frame.bg2:SetPoint("BOTTOMRIGHT", -T.mult * 3, T.mult * 3)
 
-		frame.bg3 = frame:CreateTexture(nil, "BACKGROUND")
-		frame.bg3:SetDrawLayer("BACKGROUND", 2)
-		frame.bg3:SetColorTexture(unpack(C.media.border_color))
-		frame.bg3:SetPoint("TOPLEFT", T.mult * 2, -T.mult * 2)
-		frame.bg3:SetPoint("BOTTOMRIGHT", -T.mult * 2, T.mult * 2)
+		-- frame.bg3 = frame:CreateTexture(nil, "BACKGROUND")
+		-- frame.bg3:SetDrawLayer("BACKGROUND", 2)
+		-- frame.bg3:SetColorTexture(unpack(C.media.border_color))
+		-- frame.bg3:SetPoint("TOPLEFT", T.mult * 2, -T.mult * 2)
+		-- frame.bg3:SetPoint("BOTTOMRIGHT", -T.mult * 2, T.mult * 2)
 
-		frame.bg4 = frame:CreateTexture(nil, "BACKGROUND")
-		frame.bg4:SetDrawLayer("BACKGROUND", 1)
-		frame.bg4:SetColorTexture(0, 0, 0)
-		frame.bg4:SetPoint("TOPLEFT", T.mult, -T.mult)
-		frame.bg4:SetPoint("BOTTOMRIGHT", -T.mult, T.mult)
+		-- frame.bg4 = frame:CreateTexture(nil, "BACKGROUND")
+		-- frame.bg4:SetDrawLayer("BACKGROUND", 1)
+		-- frame.bg4:SetColorTexture(0, 0, 0)
+		-- frame.bg4:SetPoint("TOPLEFT", T.mult, -T.mult)
+		-- frame.bg4:SetPoint("BOTTOMRIGHT", -T.mult, T.mult)
 
-		_G["AchievementFrameAchievementsContainerButton"..i.."Description"]:SetTextColor(0.6, 0.6, 0.6)
-		_G["AchievementFrameAchievementsContainerButton"..i.."Description"].SetTextColor = T.dummy
-		_G["AchievementFrameAchievementsContainerButton"..i.."Description"]:SetShadowOffset(1, -1)
-		_G["AchievementFrameAchievementsContainerButton"..i.."Description"].SetShadowOffset = T.dummy
-		_G["AchievementFrameAchievementsContainerButton"..i.."HiddenDescription"]:SetTextColor(1, 1, 1)
-		_G["AchievementFrameAchievementsContainerButton"..i.."HiddenDescription"].SetTextColor = T.dummy
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Description"]:SetTextColor(0.6, 0.6, 0.6)
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Description"].SetTextColor = T.dummy
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Description"]:SetShadowOffset(1, -1)
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Description"].SetShadowOffset = T.dummy
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."HiddenDescription"]:SetTextColor(1, 1, 1)
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."HiddenDescription"].SetTextColor = T.dummy
 
-		_G["AchievementFrameAchievementsContainerButton"..i.."IconBling"]:Kill()
-		_G["AchievementFrameAchievementsContainerButton"..i.."IconOverlay"]:Kill()
-		_G["AchievementFrameAchievementsContainerButton"..i.."Icon"]:SetTemplate("Default")
-		_G["AchievementFrameAchievementsContainerButton"..i.."Icon"]:SetHeight(_G["AchievementFrameAchievementsContainerButton"..i.."Icon"]:GetHeight() - 14)
-		_G["AchievementFrameAchievementsContainerButton"..i.."Icon"]:SetWidth(_G["AchievementFrameAchievementsContainerButton"..i.."Icon"]:GetWidth() - 14)
-		_G["AchievementFrameAchievementsContainerButton"..i.."Icon"]:ClearAllPoints()
-		_G["AchievementFrameAchievementsContainerButton"..i.."Icon"]:SetPoint("LEFT", 6, 0)
-		_G["AchievementFrameAchievementsContainerButton"..i.."IconTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		_G["AchievementFrameAchievementsContainerButton"..i.."IconTexture"]:ClearAllPoints()
-		_G["AchievementFrameAchievementsContainerButton"..i.."IconTexture"]:SetPoint("TOPLEFT", 2, -2)
-		_G["AchievementFrameAchievementsContainerButton"..i.."IconTexture"]:SetPoint("BOTTOMRIGHT", -2, 2)
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."IconBling"]:Kill()
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."IconOverlay"]:Kill()
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Icon"]:SetTemplate("Default")
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Icon"]:SetHeight(_G["AchievementFrameAchievementsContainerButton"..i.."Icon"]:GetHeight() - 14)
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Icon"]:SetWidth(_G["AchievementFrameAchievementsContainerButton"..i.."Icon"]:GetWidth() - 14)
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Icon"]:ClearAllPoints()
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Icon"]:SetPoint("LEFT", 6, 0)
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."IconTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."IconTexture"]:ClearAllPoints()
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."IconTexture"]:SetPoint("TOPLEFT", 2, -2)
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."IconTexture"]:SetPoint("BOTTOMRIGHT", -2, 2)
 
-		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:StripTextures()
-		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:SetTemplate("Default")
-		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:SetCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check")
-		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:SetSize(12, 12)
-		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:GetCheckedTexture():SetPoint("TOPLEFT", -4, 4)
-		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:GetCheckedTexture():SetPoint("BOTTOMRIGHT", 4, -4)
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:StripTextures()
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:SetTemplate("Default")
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:SetCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check")
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:SetSize(12, 12)
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:GetCheckedTexture():SetPoint("TOPLEFT", -4, 4)
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:GetCheckedTexture():SetPoint("BOTTOMRIGHT", 4, -4)
 
-		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:ClearAllPoints()
-		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 5, 5)
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:ClearAllPoints()
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Tracked"]:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 5, 5)
 
-		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"].ClearAllPoints = T.dummy
-		_G["AchievementFrameAchievementsContainerButton"..i.."Tracked"].SetPoint = T.dummy
-	end
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Tracked"].ClearAllPoints = T.dummy
+		-- _G["AchievementFrameAchievementsContainerButton"..i.."Tracked"].SetPoint = T.dummy
+	-- end
 
 	local compares = {
 		"Player",
 		"Friend"
 	}
 
-	for _, compare in pairs(compares) do
-		for i = 1, 9 do
-			local frame = "AchievementFrameComparisonContainerButton"..i..compare
+	-- for _, compare in pairs(compares) do
+		-- for i = 1, 9 do
+			-- local frame = "AchievementFrameComparisonContainerButton"..i..compare
 
-			_G[frame]:StripTextures()
-			_G[frame.."Background"]:Kill()
+			-- _G[frame]:StripTextures()
+			-- _G[frame.."Background"]:Kill()
 
-			if _G[frame.."Description"] then
-				_G[frame.."Description"]:SetTextColor(0.6, 0.6, 0.6)
-				_G[frame.."Description"].SetTextColor = T.dummy
-			end
+			-- if _G[frame.."Description"] then
+				-- _G[frame.."Description"]:SetTextColor(0.6, 0.6, 0.6)
+				-- _G[frame.."Description"].SetTextColor = T.dummy
+			-- end
 
-			-- Initiate method of creating a backdrop
-			_G[frame].bg1 = _G[frame]:CreateTexture(nil, "BACKGROUND")
-			_G[frame].bg1:SetDrawLayer("BACKGROUND", 4)
-			_G[frame].bg1:SetTexture(C.media.blank)
-			_G[frame].bg1:SetVertexColor(0.1, 0.1, 0.1)
-			_G[frame].bg1:SetPoint("TOPLEFT", T.mult * 4, -T.mult * 4)
-			_G[frame].bg1:SetPoint("BOTTOMRIGHT", -T.mult * 4, T.mult * 4)
+			Initiate method of creating a backdrop
+			-- _G[frame].bg1 = _G[frame]:CreateTexture(nil, "BACKGROUND")
+			-- _G[frame].bg1:SetDrawLayer("BACKGROUND", 4)
+			-- _G[frame].bg1:SetTexture(C.media.blank)
+			-- _G[frame].bg1:SetVertexColor(0.1, 0.1, 0.1)
+			-- _G[frame].bg1:SetPoint("TOPLEFT", T.mult * 4, -T.mult * 4)
+			-- _G[frame].bg1:SetPoint("BOTTOMRIGHT", -T.mult * 4, T.mult * 4)
 
-			_G[frame].bg2 = _G[frame]:CreateTexture(nil, "BACKGROUND")
-			_G[frame].bg2:SetDrawLayer("BACKGROUND", 3)
-			_G[frame].bg2:SetColorTexture(0, 0, 0)
-			_G[frame].bg2:SetPoint("TOPLEFT", T.mult * 3, -T.mult * 3)
-			_G[frame].bg2:SetPoint("BOTTOMRIGHT", -T.mult * 3, T.mult * 3)
+			-- _G[frame].bg2 = _G[frame]:CreateTexture(nil, "BACKGROUND")
+			-- _G[frame].bg2:SetDrawLayer("BACKGROUND", 3)
+			-- _G[frame].bg2:SetColorTexture(0, 0, 0)
+			-- _G[frame].bg2:SetPoint("TOPLEFT", T.mult * 3, -T.mult * 3)
+			-- _G[frame].bg2:SetPoint("BOTTOMRIGHT", -T.mult * 3, T.mult * 3)
 
-			_G[frame].bg3 = _G[frame]:CreateTexture(nil, "BACKGROUND")
-			_G[frame].bg3:SetDrawLayer("BACKGROUND", 2)
-			_G[frame].bg3:SetColorTexture(unpack(C.media.border_color))
-			_G[frame].bg3:SetPoint("TOPLEFT", T.mult * 2, -T.mult * 2)
-			_G[frame].bg3:SetPoint("BOTTOMRIGHT", -T.mult * 2, T.mult * 2)
+			-- _G[frame].bg3 = _G[frame]:CreateTexture(nil, "BACKGROUND")
+			-- _G[frame].bg3:SetDrawLayer("BACKGROUND", 2)
+			-- _G[frame].bg3:SetColorTexture(unpack(C.media.border_color))
+			-- _G[frame].bg3:SetPoint("TOPLEFT", T.mult * 2, -T.mult * 2)
+			-- _G[frame].bg3:SetPoint("BOTTOMRIGHT", -T.mult * 2, T.mult * 2)
 
-			_G[frame].bg4 = _G[frame]:CreateTexture(nil, "BACKGROUND")
-			_G[frame].bg4:SetDrawLayer("BACKGROUND", 1)
-			_G[frame].bg4:SetColorTexture(0, 0, 0)
-			_G[frame].bg4:SetPoint("TOPLEFT", T.mult, -T.mult)
-			_G[frame].bg4:SetPoint("BOTTOMRIGHT", -T.mult, T.mult)
+			-- _G[frame].bg4 = _G[frame]:CreateTexture(nil, "BACKGROUND")
+			-- _G[frame].bg4:SetDrawLayer("BACKGROUND", 1)
+			-- _G[frame].bg4:SetColorTexture(0, 0, 0)
+			-- _G[frame].bg4:SetPoint("TOPLEFT", T.mult, -T.mult)
+			-- _G[frame].bg4:SetPoint("BOTTOMRIGHT", -T.mult, T.mult)
 
-			if compare == "Friend" then
-				_G[frame.."Shield"]:SetPoint("TOPRIGHT", _G["AchievementFrameComparisonContainerButton"..i.."Friend"], "TOPRIGHT", -20, -2)
-			end
+			-- if compare == "Friend" then
+				-- _G[frame.."Shield"]:SetPoint("TOPRIGHT", _G["AchievementFrameComparisonContainerButton"..i.."Friend"], "TOPRIGHT", -20, -2)
+			-- end
 
-			_G[frame.."IconBling"]:Kill()
-			_G[frame.."IconOverlay"]:Kill()
-			_G[frame.."Icon"]:SetTemplate("Default")
-			_G[frame.."Icon"]:SetHeight(_G[frame.."Icon"]:GetHeight() - 14)
-			_G[frame.."Icon"]:SetWidth(_G[frame.."Icon"]:GetWidth() - 14)
-			_G[frame.."Icon"]:ClearAllPoints()
-			_G[frame.."Icon"]:SetPoint("LEFT", 6, 0)
-			_G[frame.."IconTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			_G[frame.."IconTexture"]:ClearAllPoints()
-			_G[frame.."IconTexture"]:SetPoint("TOPLEFT", 2, -2)
-			_G[frame.."IconTexture"]:SetPoint("BOTTOMRIGHT", -2, 2)
-		end
-	end
+			-- _G[frame.."IconBling"]:Kill()
+			-- _G[frame.."IconOverlay"]:Kill()
+			-- _G[frame.."Icon"]:SetTemplate("Default")
+			-- _G[frame.."Icon"]:SetHeight(_G[frame.."Icon"]:GetHeight() - 14)
+			-- _G[frame.."Icon"]:SetWidth(_G[frame.."Icon"]:GetWidth() - 14)
+			-- _G[frame.."Icon"]:ClearAllPoints()
+			-- _G[frame.."Icon"]:SetPoint("LEFT", 6, 0)
+			-- _G[frame.."IconTexture"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			-- _G[frame.."IconTexture"]:ClearAllPoints()
+			-- _G[frame.."IconTexture"]:SetPoint("TOPLEFT", 2, -2)
+			-- _G[frame.."IconTexture"]:SetPoint("BOTTOMRIGHT", -2, 2)
+		-- end
+	-- end
 
 	hooksecurefunc("AchievementFrameComparison_DisplayAchievement", function(button)
 		local player = button.player
