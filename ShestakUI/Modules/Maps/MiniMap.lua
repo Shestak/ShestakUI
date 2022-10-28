@@ -58,11 +58,11 @@ MinimapCluster.ZoneTextButton:Hide()
 GameTimeFrame:Hide()
 
 -- Move Mail icon
--- MiniMapMailFrame:ClearAllPoints()
--- MiniMapMailFrame:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 8, -10)
+MinimapCluster.MailFrame:ClearAllPoints()
+MinimapCluster.MailFrame:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 8, -10)
 -- MiniMapMailBorder:Hide()
--- MiniMapMailIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Mail.tga")
--- MiniMapMailIcon:SetSize(16, 16)
+MiniMapMailIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Mail.tga")
+MiniMapMailIcon:SetSize(16, 16)
 
 -- Move QueueStatus icon
 QueueStatusFrame:SetClampedToScreen(true)
