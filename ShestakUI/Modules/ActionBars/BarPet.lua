@@ -11,7 +11,7 @@ if C.actionbar.petbar_hide then PetActionBarAnchor:Hide() return end
 local bar = CreateFrame("Frame", "PetHolder", UIParent, "SecureHandlerStateTemplate")
 bar:SetAllPoints(PetActionBarAnchor)
 
-bar:RegisterEvent("PLAYER_LOGIN")
+bar:RegisterEvent("PLAYER_ENTERING_WORLD")
 bar:RegisterEvent("PLAYER_CONTROL_LOST")
 bar:RegisterEvent("PLAYER_CONTROL_GAINED")
 bar:RegisterEvent("PLAYER_FARSIGHT_FOCUS_CHANGED")
@@ -22,11 +22,11 @@ bar:RegisterEvent("UNIT_PET")
 bar:RegisterEvent("UNIT_FLAGS")
 bar:RegisterEvent("UNIT_AURA")
 bar:SetScript("OnEvent", function(self, event, arg1)
-	if event == "PLAYER_LOGIN" then
+	if event == "PLAYER_ENTERING_WORLD" then
 		T.StylePet()
 		PetActionBar_ShowGrid = T.dummy
 		PetActionBar_HideGrid = T.dummy
-		--BETA PetActionBarFrame.showgrid = nil
+		PetActionBar.showgrid = nil
 		for i = 1, 10 do
 			local button = _G["PetActionButton"..i]
 			button:ClearAllPoints()
@@ -54,7 +54,7 @@ bar:SetScript("OnEvent", function(self, event, arg1)
 	or event == "UNIT_FLAGS" or (event == "UNIT_PET" and arg1 == "player") or (event == "UNIT_AURA" and arg1 == "pet") then
 		T.PetBarUpdate()
 	elseif event == "PET_BAR_UPDATE_COOLDOWN" then
-		PetActionBar_UpdateCooldowns()
+		--BETA PetActionBar_UpdateCooldowns()
 	end
 end)
 

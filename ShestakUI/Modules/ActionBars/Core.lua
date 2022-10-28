@@ -12,8 +12,8 @@ frame:SetScript("OnEvent", function()
 	MainMenuBar:EnableMouse(false)
 	OverrideActionBar:SetScale(0.00001)
 	OverrideActionBar:EnableMouse(false)
-	--BETA PetActionBarFrame:EnableMouse(false)
-	-- StanceBarFrame:EnableMouse(false)
+	PetActionBar:EnableMouse(false)
+	StanceBar:EnableMouse(false)
 	MicroButtonAndBagsBar:SetScale(0.00001)
 	MicroButtonAndBagsBar:EnableMouse(false)
 	MicroButtonAndBagsBar:ClearAllPoints()
@@ -25,7 +25,7 @@ frame:SetScript("OnEvent", function()
 	MainMenuBar:SetAttribute("ignoreFramePositionManager", true)
 
 	local elements = {
-		MainMenuBar, MainMenuBarArtFrame, OverrideActionBar, PossessBarFrame, PetActionBarFrame, StanceBarFrame,
+		MainMenuBar, MainMenuBarArtFrame, OverrideActionBar, PossessBarFrame, PetActionBar, StanceBar,
 		MultiBarBottomLeft.QuickKeybindGlow, MultiBarLeft.QuickKeybindGlow, MultiBarBottomRight.QuickKeybindGlow, MultiBarRight.QuickKeybindGlow,
 		StatusTrackingBarManager
 	}
@@ -409,7 +409,7 @@ T.ShiftBarUpdate = function()
 			CooldownFrame_Set(cooldown, start, duration, enable)
 
 			if isActive then
-				--BETA StanceBarFrame.lastSelected = button:GetID()
+				--BETA StanceBar.lastSelected = button:GetID()
 				button:SetChecked(true)
 			else
 				button:SetChecked(false)
@@ -430,7 +430,7 @@ T.PetBarUpdate = function()
 		local buttonName = "PetActionButton"..i
 		petActionButton = _G[buttonName]
 		petActionIcon = _G[buttonName.."Icon"]
-		petAutoCastableTexture = _G[buttonName.."AutoCastable"]
+		petAutoCastableTexture = _G["PetActionButton"..i].AutoCastable or _G[buttonName.."AutoCastable"]
 		petAutoCastShine = _G[buttonName.."Shine"]
 		local name, texture, isToken, isActive, autoCastAllowed, autoCastEnabled = GetPetActionInfo(i)
 
@@ -447,20 +447,20 @@ T.PetBarUpdate = function()
 		if isActive and name ~= "PET_ACTION_FOLLOW" then
 			petActionButton:SetChecked(true)
 			if IsPetAttackAction(i) then
-				PetActionButton_StartFlash(petActionButton)
+				petActionButton:StartFlash()
 			end
 		else
 			petActionButton:SetChecked(false)
 			if IsPetAttackAction(i) then
-				PetActionButton_StopFlash(petActionButton)
+				petActionButton:StopFlash()
 			end
 		end
 
-		--BETA if autoCastAllowed then
-			-- petAutoCastableTexture:Show()
-		-- else
-			-- petAutoCastableTexture:Hide()
-		-- end
+		if autoCastAllowed then
+			petAutoCastableTexture:Show()
+		else
+			petAutoCastableTexture:Hide()
+		end
 
 		if autoCastEnabled then
 			AutoCastShine_AutoCastStart(petAutoCastShine)
@@ -490,7 +490,7 @@ T.PetBarUpdate = function()
 		end
 
 		if not PetHasActionBar() and texture and name ~= "PET_ACTION_FOLLOW" then
-			PetActionButton_StopFlash(petActionButton)
+			petActionButton:StopFlash()
 			SetDesaturation(petActionIcon, 1)
 			petActionButton:SetChecked(false)
 		end
