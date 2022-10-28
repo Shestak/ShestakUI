@@ -67,7 +67,7 @@
 	<!-- <Script file="PvE.lua"/> -->
 	<!-- <Script file="PvP.lua"/> -->
 	<!-- <Script file="PvPMatch.lua"/> -->
-	<!-- <Script file="Quest.lua"/> -->
+	<Script file="Quest.lua"/>
 	<!-- <Script file="Raid.lua"/> -->
 	<!-- <Script file="RaidInfo.lua"/> -->
 	<!-- <Script file="Runeforge.lua"/> -->
@@ -87,5 +87,5 @@
 	<!-- <Script file="Tutorial.lua"/> -->
 	<!-- <Script file="VoidStorage.lua"/> -->
 	<!-- <Script file="WeeklyRewards.lua"/> -->
-	<!-- <Script file="WorldMap.lua"/> -->
+	<Script file="WorldMap.lua"/>
 </Ui>

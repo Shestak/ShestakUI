@@ -14,6 +14,7 @@ local function LoadSkin()
 	end)
 
 	WorldMapFrame:StripTextures()
+	WorldMapFramePortrait:SetAlpha(0)
 	WorldMapFrame:CreateBackdrop("Default")
 	WorldMapFrame.backdrop:ClearAllPoints()
 	WorldMapFrame.backdrop:SetPoint("TOPLEFT", 1, -66)
@@ -135,8 +136,8 @@ local function LoadSkin()
 	end
 
 	WorldMapFrame.NavBar:Hide()
-	WorldMapFrame.BorderFrame.TitleText:ClearAllPoints()
-	WorldMapFrame.BorderFrame.TitleText:SetPoint("CENTER", WorldMapFrame.Header)
+	WorldMapFrame.BorderFrame.TitleContainer.TitleText:ClearAllPoints()
+	WorldMapFrame.BorderFrame.TitleContainer.TitleText:SetPoint("CENTER", WorldMapFrame.Header)
 
 	T.SkinCloseButton(WorldMapFrameCloseButton)
 	WorldMapFrameCloseButton:ClearAllPoints()
@@ -203,9 +204,9 @@ local function LoadSkin()
 	}
 
 	hooksecurefunc(QuestMapFrame.QuestSessionManagement, "UpdateExecuteCommandAtlases", function(self, command)
-		self.ExecuteSessionCommand:SetNormalTexture("")
-		self.ExecuteSessionCommand:SetPushedTexture("")
-		self.ExecuteSessionCommand:SetDisabledTexture("")
+		self.ExecuteSessionCommand:SetNormalTexture(C.media.empty)
+		self.ExecuteSessionCommand:SetPushedTexture(C.media.empty)
+		self.ExecuteSessionCommand:SetDisabledTexture(C.media.empty)
 
 		local atlas = sessionCommandToButtonAtlas[command]
 		if atlas then
