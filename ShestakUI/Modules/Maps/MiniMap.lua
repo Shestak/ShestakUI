@@ -77,14 +77,14 @@ QueueStatusFrame:SetFrameStrata("TOOLTIP")
 
 -- Garrison icon
 if C.minimap.garrison_icon == true then
-	--BETA GarrisonLandingPageMinimapButton:SetScale(0.75)
-	-- hooksecurefunc("GarrisonLandingPageMinimapButton_UpdateIcon", function(self)
-		-- self:ClearAllPoints()
-		-- self:SetPoint("TOPLEFT", Minimap, "TOPLEFT", 0, 2)
-	-- end)
+	ExpansionLandingPageMinimapButton:SetScale(0.75)
+	hooksecurefunc(ExpansionLandingPageMinimapButton, "UpdateIconForGarrison", function()
+		ExpansionLandingPageMinimapButton:ClearAllPoints()
+		ExpansionLandingPageMinimapButton:SetPoint("TOPLEFT", Minimap, "TOPLEFT", 0, 2)
+	end)
 else
-	-- GarrisonLandingPageMinimapButton:SetScale(0.0001)
-	-- GarrisonLandingPageMinimapButton:SetAlpha(0)
+	ExpansionLandingPageMinimapButton:SetScale(0.0001)
+	ExpansionLandingPageMinimapButton:SetAlpha(0)
 end
 
 -- Instance Difficulty icon
