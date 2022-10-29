@@ -49,7 +49,7 @@ local function UpdateData()
 	end
 	wipe(collapsed)
 end
-hooksecurefunc("BackpackTokenFrame_Update", UpdateData)
+hooksecurefunc(BackpackTokenFrame, "Update", UpdateData)
 hooksecurefunc("TokenFrame_Update", UpdateData)
 
 local function AddTooltipInfo(tooltip, currency, includePlayer)
