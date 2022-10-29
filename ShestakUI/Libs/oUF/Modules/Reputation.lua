@@ -28,7 +28,7 @@ local function GetReputation()
 	local pendingReward
 	local name, standingID, min, max, cur, factionID = GetWatchedFactionInfo()
 
-	local friendID, _, _, _, _, _, standingText, _, nextThreshold = GetFriendshipReputation(factionID)
+	local friendID, _, _, _, _, _, standingText, _, nextThreshold = C_GossipInfo.GetFriendshipReputation(factionID)
 	if(friendID) then
 		if(not nextThreshold) then
 			min, max, cur = 0, 1, 1 -- force a full bar when maxed out
