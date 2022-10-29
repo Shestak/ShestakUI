@@ -22,7 +22,7 @@ if C.general.hide_talking_head == true then
 	frame:RegisterEvent("ADDON_LOADED")
 	frame:SetScript("OnEvent", function(self, event, addon)
 		if addon == "Blizzard_TalkingHeadUI" or (addon == "ShestakUI" and TalkingHeadFrame) then
-			hooksecurefunc("TalkingHeadFrame_PlayCurrent", function()
+			hooksecurefunc(TalkingHeadFrame, "PlayCurrent", function()
 				TalkingHeadFrame:Hide()
 			end)
 			self:UnregisterEvent(event)
