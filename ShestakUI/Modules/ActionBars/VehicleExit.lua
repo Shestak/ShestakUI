@@ -25,41 +25,40 @@ vehicle:StyleButton(true)
 vehicle:RegisterForClicks("AnyUp")
 vehicle:SetFrameLevel(6)
 vehicle:SetFrameStrata("HIGH")
+vehicle:Hide()
 
-vehicle:Hide() -- BETA
+hooksecurefunc(MainMenuBarVehicleLeaveButton, "Update", function()
+	if CanExitVehicle() then
+		if UnitOnTaxi("player") then
+			vehicle:SetScript("OnClick", function(self)
+				TaxiRequestEarlyLanding()
+				self:LockHighlight()
+			end)
+		else
+			vehicle:SetScript("OnClick", function()
+				VehicleExit()
+			end)
+		end
+		vehicle:Show()
+	else
+		vehicle:UnlockHighlight()
+		vehicle:Hide()
+	end
+end)
 
---BETA hooksecurefunc("MainMenuBarVehicleLeaveButton_Update", function()
-	-- if CanExitVehicle() then
-		-- if UnitOnTaxi("player") then
-			-- vehicle:SetScript("OnClick", function(self)
-				-- TaxiRequestEarlyLanding()
-				-- self:LockHighlight()
-			-- end)
-		-- else
-			-- vehicle:SetScript("OnClick", function()
-				-- VehicleExit()
-			-- end)
-		-- end
-		-- vehicle:Show()
-	-- else
-		-- vehicle:UnlockHighlight()
-		-- vehicle:Hide()
-	-- end
--- end)
-
--- hooksecurefunc("PossessBar_UpdateState", function()
-	-- for i = 1, NUM_POSSESS_SLOTS do
-		-- local _, _, enabled = GetPossessInfo(i)
-		-- if enabled then
-			-- vehicle:SetScript("OnClick", function()
-				-- CancelPetPossess()
-			-- end)
-			-- vehicle:Show()
-		-- else
-			-- vehicle:Hide()
-		-- end
-	-- end
--- end)
+hooksecurefunc(PossessActionBar, "UpdateState", function()
+	for i = 1, NUM_POSSESS_SLOTS do
+		local _, _, enabled = GetPossessInfo(i)
+		if enabled then
+			vehicle:SetScript("OnClick", function()
+				CancelPetPossess()
+			end)
+			vehicle:Show()
+		else
+			vehicle:Hide()
+		end
+	end
+end)
 
 -- Set tooltip
 vehicle:SetScript("OnEnter", function(self)
