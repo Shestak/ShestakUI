@@ -277,7 +277,7 @@ local function START_LOOT_ROLL(rollID, time)
 	f.status:SetMinMaxValues(0, time)
 	f.status:SetValue(time)
 
-	f:SetPoint("CENTER", WorldFrame, "CENTER")
+	--BETA f:SetPoint("CENTER", WorldFrame, "CENTER")
 	f:Show()
 end
 
