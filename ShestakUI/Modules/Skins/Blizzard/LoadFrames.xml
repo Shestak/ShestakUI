@@ -24,7 +24,7 @@
 	<!-- <Script file="ChromieTime.lua"/> -->
 	<!-- <Script file="Collections.lua"/> -->
 	<!-- <Script file="Communities.lua"/> -->
-	<!-- <Script file="Container.lua"/> -->
+	<Script file="Container.lua"/>
 	<!-- <Script file="Contribution.lua"/> -->
 	<!-- <Script file="CovenantPreview.lua"/> -->
 	<!-- <Script file="CovenantRenown.lua"/> -->
