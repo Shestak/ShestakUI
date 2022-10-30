@@ -306,9 +306,9 @@ Minimap:SetScript("OnMouseUp", function(self, button)
 		end
 	elseif button == "MiddleButton" then
 		if position:match("LEFT") then
-			ToggleDropDownMenu(nil, nil, MiniMapTrackingDropDown, "cursor", 0, 0, "MENU", 2)
+			ToggleDropDownMenu(1, nil, MinimapCluster.Tracking.DropDown, "cursor", 0, 0, "MENU", 2)
 		else
-			ToggleDropDownMenu(nil, nil, MiniMapTrackingDropDown, "cursor", -160, 0, "MENU", 2)
+			ToggleDropDownMenu(1, nil, MinimapCluster.Tracking.DropDown, "cursor", -160, 0, "MENU", 2)
 		end
 	elseif button == "LeftButton" then
 		Minimap.OnClick(self)
