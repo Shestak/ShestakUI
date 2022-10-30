@@ -263,7 +263,10 @@ function Stuffing:SlotUpdate(b)
 
 		-- Color slot according to item quality
 		if not b.frame.lock and quality and quality > 1 and not (isQuestItem or questId) then
-			--BETA b.frame:SetBackdropBorderColor(GetItemQualityColor(quality))
+			local R, G, B = GetItemQualityColor(quality)
+			if b.frame then
+				b.frame:SetBackdropBorderColor(R, G, B)
+			end
 		elseif questId and not isActiveQuest then
 			b.frame:SetBackdropBorderColor(1, 0.3, 0.3)
 		elseif questId or isQuestItem then
@@ -425,11 +428,11 @@ function Stuffing:CreateReagentContainer()
 
 		local _, _, _, quality = GetContainerItemInfo(-3, i)
 		local clink = GetContainerItemLink(-3, i)
-		if clink then
-			if quality and quality > 1 then
-				button:SetBackdropBorderColor(GetItemQualityColor(quality))
-			end
-		end
+		-- BETA if clink then
+			--if quality and quality > 1 then
+				--button:SetBackdropBorderColor(GetItemQualityColor(quality))
+			--end
+		--end
 
 		if i == 1 then
 			button:SetPoint("TOPLEFT", Reagent, "TOPLEFT", 10, -27)
@@ -579,6 +582,7 @@ function Stuffing:SlotNew(bag, slot)
 		ret.frame:StyleButton()
 		ret.frame:SetTemplate("Default")
 		ret.frame:SetNormalTexture(0)
+		ret.frame:SetFrameStrata("HIGH")
 
 		ret.icon = _G[ret.frame:GetName().."IconTexture"]
 		ret.icon:CropIcon()
