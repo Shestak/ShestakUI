@@ -64,7 +64,7 @@ hooksecurefunc("QuestObjectiveSetupBlockButton_Item", function(block)
 		item:SetTemplate("Default")
 		item:StyleButton()
 
-		item:SetNormalTexture(C.media.empty)
+		item:SetNormalTexture(0)
 
 		item.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		item.icon:SetPoint("TOPLEFT", item, 2, -2)
@@ -97,9 +97,9 @@ hooksecurefunc("QuestObjectiveSetupBlockButton_FindGroup", function(block)
 	if block.groupFinderButton and not block.groupFinderButton.styled then
 		local icon = block.groupFinderButton
 		icon:SetSize(26, 26)
-		icon:SetNormalTexture(C.media.empty)
-		icon:SetHighlightTexture(C.media.empty)
-		icon:SetPushedTexture(C.media.empty)
+		icon:SetNormalTexture(0)
+		icon:SetHighlightTexture(0)
+		icon:SetPushedTexture(0)
 		icon.b = CreateFrame("Frame", nil, icon)
 		icon.b:SetTemplate("Overlay")
 		icon.b:SetPoint("TOPLEFT", icon, "TOPLEFT", 2, -3)
@@ -144,7 +144,7 @@ frame:SetScript("OnEvent", function()
 				b:SetSize(20, 20)
 				b.texture:SetAtlas("socialqueuing-icon-eye")
 				b.texture:SetSize(12, 12)
-				b:SetHighlightTexture(C.media.empty)
+				b:SetHighlightTexture(0)
 
 				local point, anchor, point2, x, y = b:GetPoint()
 				if x == -18 then
@@ -220,8 +220,8 @@ if C.skins.blizzard_frames == true then
 	button.plus:Hide()
 	hooksecurefunc("ObjectiveTracker_Collapse", function()
 		button.plus:Show()
-		button:SetNormalTexture(C.media.empty)
-		button:SetPushedTexture(C.media.empty)
+		button:SetNormalTexture(0)
+		button:SetPushedTexture(0)
 		if C.general.minimize_mouseover then
 			button:SetAlpha(0)
 			button:HookScript("OnEnter", function() button:SetAlpha(1) end)
@@ -231,8 +231,8 @@ if C.skins.blizzard_frames == true then
 
 	hooksecurefunc("ObjectiveTracker_Expand", function()
 		button.plus:Hide()
-		button:SetNormalTexture(C.media.empty)
-		button:SetPushedTexture(C.media.empty)
+		button:SetNormalTexture(0)
+		button:SetPushedTexture(0)
 		if C.general.minimize_mouseover then
 			button:SetAlpha(1)
 			button:HookScript("OnEnter", function() button:SetAlpha(1) end)
@@ -266,8 +266,8 @@ if C.skins.blizzard_frames == true then
 			else
 				button.plus:Hide()
 			end
-			button:SetNormalTexture(C.media.empty)
-			button:SetPushedTexture(C.media.empty)
+			button:SetNormalTexture(0)
+			button:SetPushedTexture(0)
 		end)
 	end
 
@@ -527,8 +527,8 @@ Maw.List:StripTextures()
 Maw.List:SetTemplate("Overlay")
 
 Maw.List:HookScript("OnShow", function(self)
-	self.button:SetPushedTexture(C.media.empty)
-	self.button:SetHighlightTexture(C.media.empty)
+	self.button:SetPushedTexture(0)
+	self.button:SetHighlightTexture(0)
 	self.button:SetWidth(234)
 	self.button:SetButtonState("NORMAL")
 	self.button:SetPushedTextOffset(0, 0)
@@ -536,8 +536,8 @@ Maw.List:HookScript("OnShow", function(self)
 end)
 
 Maw.List:HookScript("OnHide", function(self)
-	self.button:SetPushedTexture(C.media.empty)
-	self.button:SetHighlightTexture(C.media.empty)
+	self.button:SetPushedTexture(0)
+	self.button:SetHighlightTexture(0)
 	self.button:SetWidth(234)
 end)
 

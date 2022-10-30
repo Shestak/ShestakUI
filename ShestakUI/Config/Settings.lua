@@ -17,7 +17,6 @@ C["media"] = {
 	["blank"] = [[Interface\AddOns\ShestakUI\Media\Textures\White.tga]],			-- Texture for borders
 	["texture"] = [[Interface\AddOns\ShestakUI\Media\Textures\Texture.tga]],		-- Texture for status bars
 	["highlight"] = [[Interface\AddOns\ShestakUI\Media\Textures\Highlight.tga]],	-- Texture for debuffs highlight
-	["empty"] = [[Interface\AddOns\ShestakUI\Media\Textures\Invisible.tga]],		-- Invisible texture
 	["whisp_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Whisper.ogg]],		-- Sound for whispers
 	["warning_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Warning.ogg]],	-- Sound for warning
 	["proc_sound"] = [[Interface\AddOns\ShestakUI\Media\Sounds\Proc.ogg]],			-- Sound for procs

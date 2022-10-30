@@ -27,9 +27,9 @@ local function LoadSkin()
 
 	for i = 1, #smallButtons do
 		local button = smallButtons[i]
-		button:SetNormalTexture(C.media.empty)
-		button:SetPushedTexture(C.media.empty)
-		button:SetHighlightTexture(C.media.empty)
+		button:SetNormalTexture(0)
+		button:SetPushedTexture(0)
+		button:SetHighlightTexture(0)
 	end
 end
 

@@ -51,7 +51,7 @@ local function LoadSkin()
 			local icon = button.icon
 
 			button.IconBorder:Kill()
-			button:SetNormalTexture(C.media.empty)
+			button:SetNormalTexture(0)
 			button:StyleButton()
 			button:SetTemplate("Default")
 

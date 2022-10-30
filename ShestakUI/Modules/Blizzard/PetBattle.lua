@@ -280,7 +280,7 @@ end)
 
 -- Function to skin pet action buttons
 local function SkinPetButton(self)
-	self:SetNormalTexture(C.media.empty)
+	self:SetNormalTexture(0)
 
 	self:CreateBackdrop("Transparent")
 	self.backdrop:SetAllPoints()

@@ -27,7 +27,7 @@ local function LoadSkin()
 
 	for i = 1, NUM_CONTAINER_FRAMES do
 		local frame = _G["ContainerFrame"..i]
-		local close = _G["ContainerFrame"..i.."CloseButton"]
+		local close = _G["ContainerFrame"..i].CloseButton
 
 		frame:StripTextures(true)
 		frame:CreateBackdrop("Transparent")
@@ -51,7 +51,7 @@ local function LoadSkin()
 
 			border:Kill()
 
-			item:SetNormalTexture(C.media.empty)
+			item:SetNormalTexture(0)
 			item:StyleButton()
 			item:SetTemplate("Default")
 
@@ -65,9 +65,9 @@ local function LoadSkin()
 
 		if i == 1 then
 			BackpackTokenFrame:StripTextures(true)
-			for i = 1, MAX_WATCHED_TOKENS do
-				_G["BackpackTokenFrameToken"..i].icon:SkinIcon()
-				_G["BackpackTokenFrameToken"..i].count:SetPoint("RIGHT", _G["BackpackTokenFrameToken"..i].icon, "LEFT", -5, 0)
+			for i = 1, 10 do
+				-- _G["BackpackTokenFrameToken"..i].icon:SkinIcon()
+				-- _G["BackpackTokenFrameToken"..i].count:SetPoint("RIGHT", _G["BackpackTokenFrameToken"..i].icon, "LEFT", -5, 0)
 			end
 		end
 	end
@@ -108,7 +108,7 @@ local function LoadSkin()
 
 		border:Kill()
 
-		item:SetNormalTexture(C.media.empty)
+		item:SetNormalTexture(0)
 		item:StyleButton()
 		item:SetTemplate("Default")
 
@@ -166,7 +166,7 @@ local function LoadSkin()
 
 			border:Kill()
 
-			item:SetNormalTexture(C.media.empty)
+			item:SetNormalTexture(0)
 			item:StyleButton()
 			item:SetTemplate("Default")
 
@@ -178,18 +178,18 @@ local function LoadSkin()
 	end)
 
 	-- Color QuestItem
-	hooksecurefunc("ContainerFrame_Update", function(frame)
-		local name = frame:GetName()
-		local item
-		for i = 1, 36 do
-			item = _G[name.."Item"..i]
-			if _G[name.."Item"..i.."IconQuestTexture"]:IsShown() then
-				item:SetBackdropBorderColor(1, 1, 0)
-			else
-				item:SetBackdropBorderColor(unpack(C.media.border_color))
-			end
-		end
-	end)
+	--BETA hooksecurefunc("ContainerFrame_Update", function(frame)
+		-- local name = frame:GetName()
+		-- local item
+		-- for i = 1, 36 do
+			-- item = _G[name.."Item"..i]
+			-- if _G[name.."Item"..i.."IconQuestTexture"]:IsShown() then
+				-- item:SetBackdropBorderColor(1, 1, 0)
+			-- else
+				-- item:SetBackdropBorderColor(unpack(C.media.border_color))
+			-- end
+		-- end
+	-- end)
 
 	hooksecurefunc("BankFrameItemButton_Update", function(frame)
 		if not frame.isBag and frame.IconQuestTexture:IsShown() then

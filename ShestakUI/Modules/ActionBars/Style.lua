@@ -58,7 +58,7 @@ local function StyleNormalButton(button, size)
 		end
 
 		flash:SetTexture("")
-		button:SetNormalTexture(C.media.empty)
+		button:SetNormalTexture(0)
 
 		if float then
 			float:SetTexture("")
@@ -149,11 +149,11 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 		local flash = _G[name.."Flash"]
 		local hotkey = _G[name.."HotKey"]
 
-		button:SetNormalTexture(C.media.empty)
+		button:SetNormalTexture(0)
 
 		hooksecurefunc(button, "SetNormalTexture", function(self, texture)
 			if texture and texture ~= "" then
-				self:SetNormalTexture(C.media.empty)
+				self:SetNormalTexture(0)
 			end
 		end)
 
@@ -177,10 +177,7 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 			button:SetBackdropBorderColor(unpack(C.media.classborder_color))
 		end
 
-		icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		icon:ClearAllPoints()
-		icon:SetPoint("TOPLEFT", button, 2, -2)
-		icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
+		icon:CropIcon()
 		icon:SetDrawLayer("BACKGROUND", 7)
 
 		if pet then

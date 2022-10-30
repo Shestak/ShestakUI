@@ -69,7 +69,7 @@ QueueStatusFrame:SetClampedToScreen(true)
 QueueStatusFrame:SetFrameStrata("TOOLTIP")
 -- QueueStatusMinimapButton:ClearAllPoints()
 -- QueueStatusMinimapButton:SetPoint("TOP", Minimap, "TOP", 1, 6)
--- QueueStatusMinimapButton:SetHighlightTexture(C.media.empty)
+-- QueueStatusMinimapButton:SetHighlightTexture(0)
 -- QueueStatusMinimapButtonBorder:Hide()
 
 -- Hide world map button
@@ -347,7 +347,7 @@ if C.minimap.tracking_icon then
 	--BETA MiniMapTrackingBackground:Hide()
 	-- MiniMapTracking:ClearAllPoints()
 	-- MiniMapTracking:SetPoint("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 0, -4)
-	-- MiniMapTrackingButton:SetHighlightTexture(C.media.empty)
+	-- MiniMapTrackingButton:SetHighlightTexture(0)
 	-- MiniMapTrackingButtonBorder:Hide()
 	-- MiniMapTrackingIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	-- MiniMapTrackingIcon:SetSize(16, 16)

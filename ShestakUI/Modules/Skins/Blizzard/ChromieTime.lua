@@ -41,7 +41,7 @@ local function LoadSkin()
 			self.ArtBackdrop:SetPoint("BOTTOMRIGHT", self.Background, 2, -2)
 			self.ArtBackdrop:SetTemplate("Default")
 			self.Background:SetTexCoord(0.01602564102564, 0.97109826589595, 0.02890173410405, 0.97109826589595)
-			self:SetNormalTexture(C.media.empty)
+			self:SetNormalTexture(0)
 			if self.SetHighlightTexture then
 				local highlight = self:CreateTexture()
 				highlight:SetColorTexture(1, 1, 1, 0.3)
@@ -53,12 +53,12 @@ local function LoadSkin()
 	end)
 
 	hooksecurefunc(ChromieTimeExpansionButtonMixin, "OnClick", function(self)
-		self:SetNormalTexture(C.media.empty)
+		self:SetNormalTexture(0)
 		self.ArtBackdrop:SetBackdropBorderColor(1, 1, 0)
 	end)
 
 	hooksecurefunc(ChromieTimeExpansionButtonMixin, "ClearSelection", function(self)
-		self:SetNormalTexture(C.media.empty)
+		self:SetNormalTexture(0)
 		self.ArtBackdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 	end)
 end

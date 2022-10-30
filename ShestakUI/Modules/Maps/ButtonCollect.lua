@@ -22,9 +22,9 @@ local texList = {
 }
 
 local function SkinButton(f)
-	f:SetPushedTexture(C.media.empty)
-	f:SetHighlightTexture(C.media.empty)
-	f:SetDisabledTexture(C.media.empty)
+	f:SetPushedTexture(0)
+	f:SetHighlightTexture(0)
+	f:SetDisabledTexture(0)
 	f:SetSize(20.8, 20.8)
 
 	for i = 1, f:GetNumRegions() do

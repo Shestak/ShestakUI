@@ -53,7 +53,7 @@ local function LoadSkin()
 				button.TextBackground2:Hide()
 				button.UnlearnedFrame:SetAlpha(0)
 				button:SetCheckedTexture("")
-				button:SetPushedTexture(C.media.empty)
+				button:SetPushedTexture(0)
 			end
 
 			if _G["SpellButton"..i.."Highlight"] then
@@ -83,7 +83,7 @@ local function LoadSkin()
 		end
 	end
 	SpellButtons(nil, true)
-	hooksecurefunc("SpellButton_UpdateButton", SpellButtons)
+	--BETA hooksecurefunc("SpellButton_UpdateButton", SpellButtons)
 
 	SpellBookPageText:SetTextColor(0.6, 0.6, 0.6)
 

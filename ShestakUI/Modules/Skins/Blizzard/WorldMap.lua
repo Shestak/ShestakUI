@@ -204,9 +204,9 @@ local function LoadSkin()
 	}
 
 	hooksecurefunc(QuestMapFrame.QuestSessionManagement, "UpdateExecuteCommandAtlases", function(self, command)
-		self.ExecuteSessionCommand:SetNormalTexture(C.media.empty)
-		self.ExecuteSessionCommand:SetPushedTexture(C.media.empty)
-		self.ExecuteSessionCommand:SetDisabledTexture(C.media.empty)
+		self.ExecuteSessionCommand:SetNormalTexture(0)
+		self.ExecuteSessionCommand:SetPushedTexture(0)
+		self.ExecuteSessionCommand:SetDisabledTexture(0)
 
 		local atlas = sessionCommandToButtonAtlas[command]
 		if atlas then

@@ -447,7 +447,7 @@ local function LoadSkin()
 		hooksecurefunc(f, "SetNormalAtlas", function(self, texture)
 			if self.settingTexture then return end
 			self.settingTexture = true
-			self:SetNormalTexture(C.media.empty)
+			self:SetNormalTexture(0)
 
 			if texture and texture ~= "" then
 				if texture:find("Closed") then
@@ -465,14 +465,14 @@ local function LoadSkin()
 		hooksecurefunc(f, "SetPushedAtlas", function(self)
 			if self.settingTexture then return end
 			self.settingTexture = true
-			self:SetPushedTexture(C.media.empty)
+			self:SetPushedTexture(0)
 
 			self.settingTexture = nil
 		end)
 
 		hooksecurefunc(f, "SetHighlightTexture", function(self, texture)
 			if texture == "Interface\\Buttons\\UI-PlusButton-Hilight" then
-				self:SetHighlightTexture(C.media.empty)
+				self:SetHighlightTexture(0)
 			end
 		end)
 

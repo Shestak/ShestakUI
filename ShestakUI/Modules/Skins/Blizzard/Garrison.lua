@@ -410,11 +410,11 @@ local function LoadSkin()
 		self:SetWidth(198)
 		unselectedTab:SetWidth(198)
 
-		unselectedTab:SetNormalTexture(C.media.empty)
+		unselectedTab:SetNormalTexture(0)
 		unselectedTab.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 		unselectedTab.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
 
-		self:SetNormalTexture(C.media.empty)
+		self:SetNormalTexture(0)
 		self.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
 		self.backdrop.overlay:SetVertexColor(1 * 0.3, 0.82 * 0.3, 0, 1)
 	end)
