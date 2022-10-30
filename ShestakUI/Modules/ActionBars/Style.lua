@@ -151,6 +151,10 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 
 		button:SetNormalTexture(0)
 
+		if button.IconMask then
+			button.IconMask:Hide()
+		end
+
 		hooksecurefunc(button, "SetNormalTexture", function(self, texture)
 			if texture and texture ~= "" then
 				self:SetNormalTexture(0)
