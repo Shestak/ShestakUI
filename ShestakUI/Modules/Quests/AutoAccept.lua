@@ -339,7 +339,7 @@ EventHandler:Register('GOSSIP_SHOW', function()
 		return
 	end
 
-	if C_GossipInfo.GetNumOptions() == 1 and QuickQuestDB.general.skipgossip then
+	if #C_GossipInfo.GetOptions() == 1 and QuickQuestDB.general.skipgossip then
 		-- automatically skip single dialogue under certain conditions
 		local _, instanceType = GetInstanceInfo()
 		if instanceType == 'raid' and QuickQuestDB.general.skipgossipwhen > 0 then
