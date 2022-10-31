@@ -64,18 +64,18 @@
 
 	<Script file="Modules\Misc\BattlefieldScore.lua"/>
 	<Script file="Modules\Misc\CharsCurrency.lua"/>
-	<!-- <Script file="Modules\Misc\ClickCast.lua"/> -->
+	<Script file="Modules\Misc\ClickCast.lua"/>
 	<Script file="Modules\Misc\LFGQueueTimer.lua"/>
 	<Script file="Modules\Misc\MagePortals.lua"/>
 	<Script file="Modules\Misc\Marking.lua"/>
 	<Script file="Modules\Misc\Misc.lua"/>
 	<Script file="Modules\Misc\Mounts.lua"/>
 	<Script file="Modules\Misc\PvPQueueTimer.lua"/>
-	<!-- <Script file="Modules\Misc\RaidUtility.lua"/> -->
+	<Script file="Modules\Misc\RaidUtility.lua"/>
 	<Script file="Modules\Misc\SlotItemLevel.lua"/>
 	<Script file="Modules\Misc\Threat.lua"/>
 
-	<!-- <Script file="Modules\Trade\AlreadyKnown.lua"/> -->
+	<Script file="Modules\Trade\AlreadyKnown.lua"/>
 	<Script file="Modules\Trade\Archaeology.lua"/>
 	<Script file="Modules\Trade\Merchant.lua"/>
 	<Script file="Modules\Trade\OneClickDisenchanting.lua"/>

@@ -145,7 +145,7 @@ local function whoFrame()
 end
 
 hooksecurefunc("WhoList_Update", whoFrame)
-hooksecurefunc(WhoListScrollFrame, "update", whoFrame)
+--BETA hooksecurefunc(WhoListScrollFrame, "update", whoFrame)
 
 -- LFRBrowseList
 hooksecurefunc("LFRBrowseFrameListButton_SetData", function(button, index)
@@ -367,5 +367,5 @@ local function friendsFrame()
 		end
 	end
 end
-hooksecurefunc(FriendsListFrameScrollFrame, "update", friendsFrame)
-hooksecurefunc("FriendsFrame_UpdateFriends", friendsFrame)
+--BETA hooksecurefunc(FriendsListFrameScrollFrame, "update", friendsFrame)
+-- hooksecurefunc("FriendsFrame_UpdateFriends", friendsFrame)

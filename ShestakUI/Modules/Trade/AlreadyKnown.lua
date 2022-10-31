@@ -95,7 +95,7 @@ local function LootFrame_UpdateButton(index)
 		end
 	end
 end
-hooksecurefunc("LootFrame_UpdateButton", LootFrame_UpdateButton)
+--BETA hooksecurefunc("LootFrame_UpdateButton", LootFrame_UpdateButton)
 
 -- Merchant frame
 local function MerchantFrame_UpdateMerchantInfo()
@@ -338,7 +338,7 @@ if not (isBlizzard_GuildUILoaded and isBlizzard_GuildBankUILoaded and isBlizzard
 			hooksecurefunc(GuildBankFrame, "Update", GuildBankFrame_Update)
 		elseif addon == "Blizzard_AuctionHouseUI" then
 			isBlizzard_AuctionUILoaded = true
-			hooksecurefunc(AuctionHouseFrame.BrowseResultsFrame.ItemList, "RefreshScrollFrame", AuctionHouseFrame_RefreshScrollFrame)
+			--BETA hooksecurefunc(AuctionHouseFrame.BrowseResultsFrame.ItemList, "RefreshScrollFrame", AuctionHouseFrame_RefreshScrollFrame)
 		elseif addon == "Blizzard_BlackMarketUI" then
 			isBlizzard_BlackMarketUILoaded = true
 			hooksecurefunc("BlackMarketFrame_UpdateHotItem", BlackMarketFrame_UpdateHotItem)
