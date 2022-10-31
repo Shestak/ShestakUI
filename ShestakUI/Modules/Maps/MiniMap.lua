@@ -35,8 +35,6 @@ Minimap:SetFrameStrata("LOW")
 Minimap:SetFrameLevel(2)
 
 -- Hide Border
---BETA MinimapBorder:Hide()
--- MinimapBorderTop:Hide()
 MinimapCompassTexture:Hide()
 MinimapCluster.BorderTop:StripTextures()
 
@@ -48,9 +46,6 @@ Minimap.ZoomOut:Kill()
 Minimap:SetArchBlobRingScalar(0)
 Minimap:SetQuestBlobRingScalar(0)
 
--- Hide North texture at top
---BETA MinimapNorthTag:SetTexture(nil)
-
 -- Hide Zone Frame
 MinimapCluster.ZoneTextButton:Hide()
 
@@ -59,8 +54,7 @@ GameTimeFrame:Hide()
 
 -- Move Mail icon
 MinimapCluster.MailFrame:ClearAllPoints()
-MinimapCluster.MailFrame:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 8, -10)
--- MiniMapMailBorder:Hide()
+MinimapCluster.MailFrame:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 4, -1)
 MiniMapMailIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Mail.tga")
 MiniMapMailIcon:SetSize(16, 16)
 
@@ -344,18 +338,15 @@ end
 --	Tracking icon
 ----------------------------------------------------------------------------------------
 if C.minimap.tracking_icon then
-	--BETA MiniMapTrackingBackground:Hide()
-	-- MiniMapTracking:ClearAllPoints()
-	-- MiniMapTracking:SetPoint("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 0, -4)
-	-- MiniMapTrackingButton:SetHighlightTexture(0)
-	-- MiniMapTrackingButtonBorder:Hide()
-	-- MiniMapTrackingIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	-- MiniMapTrackingIcon:SetSize(16, 16)
-	-- MiniMapTrackingIcon.SetPoint = T.dummy
+	MinimapCluster.Tracking.Background:Hide()
+	MinimapCluster.Tracking:ClearAllPoints()
+	MinimapCluster.Tracking:SetPoint("BOTTOMLEFT", MinimapAnchor, "BOTTOMLEFT", 5, 6)
+	MinimapCluster.Tracking.Button:SetHighlightTexture(0)
+	MinimapCluster.Tracking.Button:SetSize(16, 16)
 
-	-- MiniMapTracking:CreateBackdrop("ClassColor")
-	-- MiniMapTracking.backdrop:SetPoint("TOPLEFT", MiniMapTrackingIcon, -2, 2)
-	-- MiniMapTracking.backdrop:SetPoint("BOTTOMRIGHT", MiniMapTrackingIcon, 2, -2)
+	MinimapCluster.Tracking:CreateBackdrop("ClassColor")
+	MinimapCluster.Tracking.backdrop:SetPoint("TOPLEFT", MinimapCluster.Tracking.Button, -2, 2)
+	MinimapCluster.Tracking.backdrop:SetPoint("BOTTOMRIGHT", MinimapCluster.Tracking.Button, 2, -2)
 else
 	MinimapCluster.Tracking:Hide()
 end
