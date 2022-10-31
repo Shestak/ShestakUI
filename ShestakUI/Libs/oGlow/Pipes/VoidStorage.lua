@@ -53,8 +53,8 @@ local enable = function(self)
 	self:RegisterEvent("VOID_STORAGE_DEPOSIT_UPDATE", updateDeposit)
 	self:RegisterEvent("VOID_STORAGE_UPDATE", update)
 	self:RegisterEvent("VOID_TRANSFER_DONE", update)
-	self:RegisterEvent("VOID_STORAGE_OPEN", update)
-	self:RegisterEvent("VOID_STORAGE_OPEN", hookCheck)
+	-- self:RegisterEvent("VOID_STORAGE_OPEN", update)
+	-- self:RegisterEvent("VOID_STORAGE_OPEN", hookCheck)
 end
 
 local disable = function(self)
@@ -64,8 +64,8 @@ local disable = function(self)
 	self:UnregisterEvent("VOID_STORAGE_DEPOSIT_UPDATE", updateDeposit)
 	self:UnregisterEvent("VOID_STORAGE_UPDATE", update)
 	self:UnregisterEvent("VOID_TRANSFER_DONE", update)
-	self:UnregisterEvent("VOID_STORAGE_OPEN", update)
-	self:UnregisterEvent("VOID_STORAGE_OPEN", hookCheck)
+	-- self:UnregisterEvent("VOID_STORAGE_OPEN", update)
+	-- self:UnregisterEvent("VOID_STORAGE_OPEN", hookCheck)
 end
 
 oGlow:RegisterPipe("voidstore", enable, disable, update, "Void storage frame")

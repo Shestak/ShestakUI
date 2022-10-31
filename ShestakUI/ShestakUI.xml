@@ -20,7 +20,7 @@
 	<Script file="Core\PixelPerfect.lua"/>
 
 	<Include file="Libs\oUF\oUF.xml"/>
-	<!-- <Include file="Libs\oGlow\oGlow.xml"/> -->
+	<Include file="Libs\oGlow\oGlow.xml"/>
 	<Script file="Modules\Blizzard\LibShowUIPanel.lua"/>
 	<Script file="Libs\LitePanels\LitePanels.lua"/>
 	<Script file="Libs\LitePanels\Layout.lua"/>
