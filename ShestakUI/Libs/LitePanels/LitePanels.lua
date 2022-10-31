@@ -293,7 +293,7 @@ function lpanels.CreateFrame(_, frame)
 		local panel = _G[child]
 		if not panel.anchor_frame or _G[panel.anchor_frame] then
 			local points = {panel:GetPoint()} points[2] = _G[panel.anchor_frame] or frame
-			panel:SetParent(frame or UIParent)
+			--BETA panel:SetParent(frame or UIParent)
 			panel:ClearAllPoints()
 			panel:SetPoint(unpack(points))
 			Resize(panel, panel.width, panel.height)
