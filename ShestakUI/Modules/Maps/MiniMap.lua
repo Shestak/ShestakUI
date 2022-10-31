@@ -61,13 +61,10 @@ MiniMapMailIcon:SetSize(16, 16)
 -- Move QueueStatus icon
 QueueStatusFrame:SetClampedToScreen(true)
 QueueStatusFrame:SetFrameStrata("TOOLTIP")
--- QueueStatusMinimapButton:ClearAllPoints()
--- QueueStatusMinimapButton:SetPoint("TOP", Minimap, "TOP", 1, 6)
--- QueueStatusMinimapButton:SetHighlightTexture(0)
--- QueueStatusMinimapButtonBorder:Hide()
-
--- Hide world map button
--- MiniMapWorldMapButton:Hide()
+QueueStatusButton:ClearAllPoints()
+QueueStatusButton:SetPoint("TOP", Minimap, "TOP", 1, -1)
+QueueStatusButton:SetParent(Minimap)
+QueueStatusButton:SetScale(0.5)
 
 -- Garrison icon
 if C.minimap.garrison_icon == true then
