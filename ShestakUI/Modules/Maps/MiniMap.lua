@@ -7,9 +7,6 @@ if C.minimap.enable ~= true then return end
 local MinimapAnchor = CreateFrame("Frame", "MinimapAnchor", UIParent)
 MinimapAnchor:CreatePanel("ClassColor", C.minimap.size, C.minimap.size, unpack(C.position.minimap))
 
-----------------------------------------------------------------------------------------
---	Shape, location and scale
-----------------------------------------------------------------------------------------
 -- Disable Minimap Cluster
 MinimapCluster:EnableMouse(false)
 
@@ -28,6 +25,41 @@ frame:SetScript("OnEvent", function(self, event)
 	MinimapBackdrop:SetPoint("TOPLEFT", MinimapAnchor, "TOPLEFT", 2, -2)
 	MinimapBackdrop:SetPoint("BOTTOMRIGHT", MinimapAnchor, "BOTTOMRIGHT", -2, 2)
 	MinimapBackdrop:SetSize(MinimapAnchor:GetWidth(), MinimapAnchor:GetWidth())
+
+	-- Instance Difficulty icon
+	MinimapCluster.InstanceDifficulty:SetParent(Minimap)
+	MinimapCluster.InstanceDifficulty:ClearAllPoints()
+	MinimapCluster.InstanceDifficulty:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 1, 3)
+	MinimapCluster.InstanceDifficulty.Instance.Border:Hide()
+	MinimapCluster.InstanceDifficulty.Instance.Background:SetSize(28, 28)
+	MinimapCluster.InstanceDifficulty.Instance.Background:SetVertexColor(0.6, 0.3, 0)
+
+	-- Guild Instance Difficulty icon
+	MinimapCluster.InstanceDifficulty.Guild.Border:Hide()
+	MinimapCluster.InstanceDifficulty.Guild.Background:SetSize(28, 28)
+	MinimapCluster.InstanceDifficulty.Guild.Background:ClearAllPoints()
+	MinimapCluster.InstanceDifficulty.Guild.Background:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -1, 0)
+
+	-- Challenge Mode icon
+	MinimapCluster.InstanceDifficulty.ChallengeMode.Border:Hide()
+	MinimapCluster.InstanceDifficulty.ChallengeMode.Background:SetSize(28, 28)
+	MinimapCluster.InstanceDifficulty.ChallengeMode.Background:SetVertexColor(0.8, 0.8, 0)
+	MinimapCluster.InstanceDifficulty.ChallengeMode.Background:ClearAllPoints()
+	MinimapCluster.InstanceDifficulty.ChallengeMode.Background:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -1, 0)
+
+	-- Move QueueStatus icon
+	QueueStatusFrame:SetClampedToScreen(true)
+	QueueStatusFrame:SetFrameStrata("TOOLTIP")
+	QueueStatusButton:ClearAllPoints()
+	QueueStatusButton:SetPoint("TOP", Minimap, "TOP", 1, -1)
+	QueueStatusButton:SetParent(Minimap)
+	QueueStatusButton:SetScale(0.5)
+
+	-- Invites icon
+	GameTimeCalendarInvitesTexture:ClearAllPoints()
+	GameTimeCalendarInvitesTexture:SetParent(Minimap)
+	GameTimeCalendarInvitesTexture:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -1, -4)
+	GameTimeFrame:Hide() -- BETA Need another solution to keep showing calendar invites
 end)
 
 -- Adjusting for patch 9.0.1 Minimap.xml
@@ -49,22 +81,11 @@ Minimap:SetQuestBlobRingScalar(0)
 -- Hide Zone Frame
 MinimapCluster.ZoneTextButton:Hide()
 
--- Hide Game Time
-GameTimeFrame:Hide()
-
 -- Move Mail icon
 MinimapCluster.MailFrame:ClearAllPoints()
 MinimapCluster.MailFrame:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 4, -1)
 MiniMapMailIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Mail.tga")
 MiniMapMailIcon:SetSize(16, 16)
-
--- Move QueueStatus icon
-QueueStatusFrame:SetClampedToScreen(true)
-QueueStatusFrame:SetFrameStrata("TOOLTIP")
-QueueStatusButton:ClearAllPoints()
-QueueStatusButton:SetPoint("TOP", Minimap, "TOP", 1, -1)
-QueueStatusButton:SetParent(Minimap)
-QueueStatusButton:SetScale(0.5)
 
 -- Garrison icon
 if C.minimap.garrison_icon == true then
@@ -77,33 +98,6 @@ else
 	ExpansionLandingPageMinimapButton:SetScale(0.0001)
 	ExpansionLandingPageMinimapButton:SetAlpha(0)
 end
-
--- Instance Difficulty icon
--- MiniMapInstanceDifficulty:SetParent(Minimap)
--- MiniMapInstanceDifficulty:ClearAllPoints()
--- MiniMapInstanceDifficulty:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 3, 2)
--- MiniMapInstanceDifficulty:SetScale(0.75)
-
--- Guild Instance Difficulty icon
--- GuildInstanceDifficulty:SetParent(Minimap)
--- GuildInstanceDifficulty:ClearAllPoints()
--- GuildInstanceDifficulty:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -2, 2)
--- GuildInstanceDifficulty:SetScale(0.75)
-
--- Challenge Mode icon
--- MiniMapChallengeMode:SetParent(Minimap)
--- MiniMapChallengeMode:ClearAllPoints()
--- MiniMapChallengeMode:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", -2, -2)
--- MiniMapChallengeMode:SetScale(0.75)
-
--- Invites icon
--- GameTimeCalendarInvitesTexture:ClearAllPoints()
--- GameTimeCalendarInvitesTexture:SetParent(Minimap)
--- GameTimeCalendarInvitesTexture:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 0, 0)
-
--- Default LFG icon
--- LFG_EYE_TEXTURES.raid = LFG_EYE_TEXTURES.default
--- LFG_EYE_TEXTURES.unknown = LFG_EYE_TEXTURES.default
 
 -- Feedback icon
 if FeedbackUIButton then
