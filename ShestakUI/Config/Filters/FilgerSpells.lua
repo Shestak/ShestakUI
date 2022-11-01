@@ -1374,7 +1374,7 @@ C["filger_spells"] = {
 			-- Power of the Dark Side
 			{spellID = 198069, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lingering Insanity
-			{spellID = 197937, unitID = "player", caster = "player", filter = "BUFF"},
+			--BETA {spellID = 197937, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shadowy Insight
 			{spellID = 124430, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Surge of Light
