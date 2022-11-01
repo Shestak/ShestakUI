@@ -21,162 +21,72 @@ local BuffsAnchor = CreateFrame("Frame", "BuffsAnchor", UIParent)
 BuffsAnchor:SetPoint(unpack(C.position.player_buffs))
 BuffsAnchor:SetSize((15 * C.aura.player_buff_size) + 42, (C.aura.player_buff_size * 2) + 3)
 
---BETA TemporaryEnchantFrame:SetPoint("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
-
--- _G["TempEnchant2"]:ClearAllPoints()
--- _G["TempEnchant2"]:SetPoint("RIGHT", _G["TempEnchant1"], "LEFT", -3, 0)
-
--- for i = 1, NUM_TEMP_ENCHANT_FRAMES do
-	-- local buff = _G["TempEnchant"..i]
-	-- local icon = _G["TempEnchant"..i.."Icon"]
-	-- local border = _G["TempEnchant"..i.."Border"]
-	-- local duration = _G["TempEnchant"..i.."Duration"]
-
-	-- if border then border:Hide() end
-
-	-- if i ~= 3 then
-		-- buff:SetTemplate("Default")
-		-- if C.aura.classcolor_border == true then
-			-- buff:SetBackdropBorderColor(unpack(C.media.classborder_color))
-		-- end
-	-- end
-
-	-- buff:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
-
-	-- icon:CropIcon()
-	-- icon:SetDrawLayer("BORDER")
-
-	-- duration:ClearAllPoints()
-	-- duration:SetPoint("CENTER", 2, 1)
-	-- duration:SetDrawLayer("ARTWORK")
-	-- duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
-	-- duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
--- end
-
-local function StyleBuffs(buttonName, index)
-	local buff = _G[buttonName..index]
-	local icon = _G[buttonName..index.."Icon"]
-	local border = _G[buttonName..index.."Border"]
-	local duration = _G[buttonName..index.."Duration"]
-	local count = _G[buttonName..index.."Count"]
-
-	if border then border:Hide() end
-
-	if icon and not buff.isSkinned then
-		buff:SetTemplate("Default")
-		if C.aura.classcolor_border == true then
-			buff:SetBackdropBorderColor(unpack(C.media.classborder_color))
-		end
-
-		buff:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
-
-		icon:CropIcon()
-		icon:SetDrawLayer("BORDER")
-
-		duration:ClearAllPoints()
-		duration:SetPoint("CENTER", 2, 1)
-		duration:SetDrawLayer("ARTWORK")
-		duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
-		duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
-
-		if not buff.timer then
-			buff.timer = buff:CreateAnimationGroup()
-			buff.timerAnim = buff.timer:CreateAnimation()
-			buff.timerAnim:SetDuration(0.1)
-
-			buff.timer:SetScript("OnFinished", function(self, requested)
-				if not requested then
-					if buff.timeLeft and C.aura.show_timer == true then
-						buff.duration:SetFormattedText(GetFormattedTime(buff.timeLeft))
-						buff.duration:SetVertexColor(1, 1, 1)
-					else
-						self:Stop()
-					end
-					self:Play()
-				end
-			end)
-			buff.timer:Play()
-		end
-
-		count:ClearAllPoints()
-		count:SetPoint("BOTTOMRIGHT", 2, 0)
-		count:SetDrawLayer("ARTWORK")
-		count:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
-		count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
-
-		buff.isSkinned = true
+local function UpdateDuration(aura, timeLeft)
+	if timeLeft and C.aura.show_timer == true then
+		aura.duration:SetVertexColor(1, 1, 1)
+		aura.duration:SetFormattedText(GetFormattedTime(timeLeft))
+	else
+		aura.duration:Hide()
 	end
 end
 
-local function UpdateBuffAnchors()
-	local buttonName = "BuffButton"
+hooksecurefunc(BuffButtonMixin, "UpdateDuration", function(aura, timeLeft)
+	UpdateDuration(aura, timeLeft)
+end)
+
+hooksecurefunc(TempEnchantButtonMixin, "UpdateDuration", function(aura, timeLeft)
+	UpdateDuration(aura, timeLeft)
+end)
+
+hooksecurefunc(BuffFrame.AuraContainer, "UpdateGridLayout", function(self, auras)
 	local previousBuff, aboveBuff
-	local numBuffs = 0
-	local slack = BuffFrame.numEnchants
-	local mainhand, _, _, _, offhand = GetWeaponEnchantInfo()
+	for index, aura in ipairs(auras) do
+		aura:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
+		aura:SetTemplate("Default")
 
-	for index = 1, BUFF_ACTUAL_DISPLAY do
-		StyleBuffs(buttonName, index)
-		local buff = _G[buttonName..index]
-		numBuffs = numBuffs + 1
-		index = numBuffs + slack
-		buff:ClearAllPoints()
-		if (index > 1) and (mod(index, rowbuffs) == 1) then
-			buff:SetPoint("TOP", aboveBuff, "BOTTOM", 0, -3)
-			aboveBuff = buff
-		elseif index == 1 then
-			buff:SetPoint("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
-			aboveBuff = buff
+		if aura.Border then
+			aura.Border:SetAlpha(0)
+			aura:SetBackdropBorderColor(0.6, 0.1, 0.6)
 		else
-			if numBuffs == 1 then
-				if mainhand and offhand and not UnitHasVehicleUI("player") then
-					buff:SetPoint("RIGHT", TempEnchant2, "LEFT", -3, 0)
-					aboveBuff = TempEnchant1
-				elseif ((mainhand and not offhand) or (offhand and not mainhand)) and not UnitHasVehicleUI("player") then
-					buff:SetPoint("RIGHT", TempEnchant1, "LEFT", -3, 0)
-					aboveBuff = TempEnchant1
-				else
-					buff:SetPoint("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
-				end
+			if C.aura.classcolor_border == true then
+				aura:SetBackdropBorderColor(unpack(C.media.classborder_color))
 			else
-				buff:SetPoint("RIGHT", previousBuff, "LEFT", -3, 0)
+				aura:SetBackdropBorderColor(unpack(C.media.border_color))
 			end
 		end
-		previousBuff = buff
+
+		aura:ClearAllPoints()
+		if (index > 1) and (mod(index, rowbuffs) == 1) then
+			aura:SetPoint("TOP", aboveBuff, "BOTTOM", 0, -3)
+			aboveBuff = aura
+		elseif index == 1 then
+			aura:SetPoint("TOPRIGHT", BuffsAnchor, "TOPRIGHT", 0, 0)
+			aboveBuff = aura
+		else
+			aura:SetPoint("RIGHT", previousBuff, "LEFT", -3, 0)
+		end
+
+		previousBuff = aura
+
+		aura.Icon:CropIcon()
+		aura.Icon:SetDrawLayer("BORDER")
+
+		aura.duration:ClearAllPoints()
+		aura.duration:SetPoint("CENTER", 2, 1)
+		aura.duration:SetDrawLayer("ARTWORK")
+		aura.duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
+		aura.duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
+
+		aura.count:ClearAllPoints()
+		aura.count:SetPoint("BOTTOMRIGHT", 2, 0)
+		aura.count:SetDrawLayer("ARTWORK")
+		aura.count:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
+		aura.count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 	end
-end
+end)
 
-local function UpdateDebuffAnchors(buttonName, index)
-	_G[buttonName..index]:Hide()
-end
+-- Hide collapse button
+BuffFrame.CollapseAndExpandButton:Kill()
 
--- hooksecurefunc("BuffFrame_UpdateAllBuffAnchors", UpdateBuffAnchors)
--- hooksecurefunc("DebuffButton_UpdateAnchors", UpdateDebuffAnchors)
-
-function AuraButton_UpdateDuration(buff, timeLeft)
-	local name = buff:GetName()
-	if not strmatch(name, "TempEnchant") then return end
-
-	buff.timeLeft = timeLeft
-	if not buff.timerEnchant then
-		buff.timerEnchant = buff:CreateAnimationGroup()
-		buff.timerAnim = buff.timerEnchant:CreateAnimation()
-		buff.timerAnim:SetDuration(0.1)
-
-		buff.timerEnchant:SetScript("OnFinished", function(self, requested)
-			if not requested then
-				if buff.timeLeft and C.aura.show_timer == true then
-					buff.duration:SetFormattedText(GetFormattedTime(buff.timeLeft))
-					buff.duration:SetVertexColor(1, 1, 1)
-					buff.duration:Show()
-				else
-					self:Stop()
-				end
-				self:Play()
-			end
-		end)
-		buff.timerEnchant:Play()
-	end
-end
-
-BuffFrame:SetScript("OnUpdate", nil) -- Disable BuffFrame_OnUpdate that change alpha
+-- Hide debuffs
+DebuffFrame.AuraContainer:Hide()
