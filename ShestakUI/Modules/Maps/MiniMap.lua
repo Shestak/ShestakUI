@@ -92,7 +92,7 @@ if C.minimap.garrison_icon == true then
 	ExpansionLandingPageMinimapButton:SetScale(0.75)
 	hooksecurefunc(ExpansionLandingPageMinimapButton, "UpdateIconForGarrison", function()
 		ExpansionLandingPageMinimapButton:ClearAllPoints()
-		ExpansionLandingPageMinimapButton:SetPoint("TOPLEFT", Minimap, "TOPLEFT", 0, 2)
+		ExpansionLandingPageMinimapButton:SetPoint("TOPLEFT", Minimap, "TOPLEFT", -5, 2)
 	end)
 else
 	ExpansionLandingPageMinimapButton:SetScale(0.0001)
