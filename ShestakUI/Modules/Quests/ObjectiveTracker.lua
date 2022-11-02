@@ -333,11 +333,12 @@ local function SkinBar(_, _, line)
 	local label = bar.Label
 
 	if not progressBar.styled then
-		bar:SetSize(200, 20)
+		if bar.BorderLeft then bar.BorderLeft:SetAlpha(0) end
+		if bar.BorderRight then bar.BorderRight:SetAlpha(0) end
+		if bar.BorderMid then bar.BorderMid:SetAlpha(0) end
+		bar:SetSize(200, 16)
 		bar:SetStatusBarTexture(C.media.texture)
-		bar:SetTemplate("Transparent")
-		bar:SetBackdropColor(0, 0, 0, 0)
-		bar:DisableDrawLayer("ARTWORK")
+		bar:CreateBackdrop("Transparent")
 
 		label:ClearAllPoints()
 		label:SetPoint("CENTER", 0, -1)
@@ -366,16 +367,15 @@ local function SkinBarIcon(_, _, line)
 		bar.BarGlow:Kill()
 		bar.Sheen:Hide()
 		bar.IconBG:Kill()
-		bar:SetSize(200, 20)
+		bar:SetSize(200, 16)
 		bar:SetStatusBarTexture(C.media.texture)
-		bar:SetTemplate("Transparent")
-		bar:SetBackdropColor(0, 0, 0, 0)
+		bar:CreateBackdrop("Transparent")
 
 		label:ClearAllPoints()
 		label:SetPoint("CENTER", 0, -1)
 		label:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 
-		icon:SetPoint("RIGHT", 24, 0)
+		icon:SetPoint("RIGHT", 26, 0)
 		icon:SetSize(20, 20)
 		icon:SetMask("")
 
