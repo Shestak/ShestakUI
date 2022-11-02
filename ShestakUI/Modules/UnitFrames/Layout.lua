@@ -432,9 +432,9 @@ local function Shared(self, unit)
 			self.ComboPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 			self.ComboPoints:SetSize(player_width, 7)
 
-			for i = 1, 6 do
+			for i = 1, 7 do
 				self.ComboPoints[i] = CreateFrame("StatusBar", self:GetName().."_Combo"..i, self.ComboPoints)
-				self.ComboPoints[i]:SetSize((player_width - 5) / 6, 7)
+				self.ComboPoints[i]:SetSize((player_width - 5) / 7, 7)
 				if i == 1 then
 					self.ComboPoints[i]:SetPoint("LEFT", self.ComboPoints)
 				else
@@ -744,9 +744,9 @@ local function Shared(self, unit)
 				self.ComboPoints:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
 				self.ComboPoints:SetSize(player_width, 7)
 
-				for i = 1, 6 do
+				for i = 1, 7 do
 					self.ComboPoints[i] = CreateFrame("StatusBar", self:GetName().."_Combo"..i, self.ComboPoints)
-					self.ComboPoints[i]:SetSize((player_width - 5) / 6, 7)
+					self.ComboPoints[i]:SetSize((player_width - 5) / 7, 7)
 					if i == 1 then
 						self.ComboPoints[i]:SetPoint("LEFT", self.ComboPoints)
 					else

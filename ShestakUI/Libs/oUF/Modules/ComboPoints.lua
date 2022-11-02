@@ -20,7 +20,7 @@ local function Update(self, _, unit, powerType)
 		max = UnitPowerMax("player", 4)
 	end
 
-	if max == 0 or max > 6 then
+	if max == 0 or max > 7 then
 		max = MAX_COMBO_POINTS
 	end
 
@@ -29,9 +29,14 @@ local function Update(self, _, unit, powerType)
 	local s = 0
 
 	if element.max ~= max then
-		if max == 6 then
+		if max == 7 then
+			element[7]:Show()
+			element[6]:Show()
+		elseif max == 6 then
+			element[7]:Hide()
 			element[6]:Show()
 		else
+			element[7]:Hide()
 			element[6]:Hide()
 		end
 
@@ -63,7 +68,7 @@ local function Update(self, _, unit, powerType)
 		local chargedPoints = GetUnitChargedPowerPoints("player")
 		if chargedPoints then
 			for _, chargedIndex in next, chargedPoints do
-				element[chargedIndex]:SetStatusBarColor(unpack(element.Colors[7]))
+				element[chargedIndex]:SetStatusBarColor(unpack(element.Colors[8]))
 				if element[chargedIndex]:GetAlpha() == 0.2 then
 					element[chargedIndex]:SetAlpha(0.5)
 				end
@@ -126,7 +131,8 @@ local Enable = function(self)
 			[4] = {0.9, 0.9, 0.1},
 			[5] = {0.1, 0.9, 0.1},
 			[6] = {0.1, 0.9, 0.1},
-			[7] = {0.33, 0.73, 1},	-- Echoing Reprimand
+			[7] = {0.1, 0.9, 0.1},
+			[8] = {0.33, 0.73, 1},	-- Echoing Reprimand
 		}
 
 		self:RegisterEvent("UNIT_POWER_UPDATE", Path, true)
@@ -140,7 +146,7 @@ local Enable = function(self)
 			element.handler:SetScript("OnEvent", function() Visibility(self) end)
 		end
 
-		for i = 1, 6 do
+		for i = 1, 7 do
 			element[i]:SetStatusBarColor(unpack(element.Colors[i]))
 		end
 
