@@ -448,11 +448,13 @@ T.PetBarUpdate = function()
 			petActionButton:SetChecked(true)
 			if IsPetAttackAction(i) then
 				petActionButton:StartFlash()
+				petActionButton:GetCheckedTexture():SetAlpha(0.5)
 			end
 		else
 			petActionButton:SetChecked(false)
 			if IsPetAttackAction(i) then
 				petActionButton:StopFlash()
+				petActionButton:GetCheckedTexture():SetAlpha(1.0)
 			end
 		end
 

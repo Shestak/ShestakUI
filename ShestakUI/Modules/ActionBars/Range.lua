@@ -228,11 +228,18 @@ function Addon:PLAYER_LOGIN(event)
 		-- hook any pet button events we need to take care of
 		-- register events on update initially, and wipe out their individual on
 		-- update handlers.
-		--BETA hooksecurefunc('PetActionButton_OnUpdate', petButton_OnUpdate)
-		-- hooksecurefunc('PetActionBar_Update', petActionBar_Update)
 
-		if self:EnableFlashAnimations() then
-			-- hooksecurefunc('PetActionButton_StartFlash', button_StartFlash)
+		local PetActionBar = _G.PetActionBar
+		if type(PetActionBar.Update) == "function" then
+			hooksecurefunc(PetActionBar, 'Update', petActionBar_Update)
+		end
+
+		local buttons = PetActionBar.actionButtons
+		if type(buttons) == "table" then
+			for _, button in pairs(PetActionBar.actionButtons) do
+				hooksecurefunc(button, 'OnUpdate', petButton_OnUpdate)
+				hooksecurefunc(button, 'StartFlash', button_StartFlash)
+			end
 		end
 	end
 

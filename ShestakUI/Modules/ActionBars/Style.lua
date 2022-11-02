@@ -21,6 +21,8 @@ local function StyleNormalButton(button, size)
 		local isFlyout = name:match("Flyout")
 		local flyoutBorder = _G[name.."FlyoutBorder"]
 		local flyoutBorderShadow = _G[name.."FlyoutBorderShadow"]
+		local autocast = button.AutoCastable
+		local shine = _G[name.."Shine"]
 
 		local normal = button.NormalTexture or _G[name..'NormalTexture']
 		local normal2 = button:GetNormalTexture()
@@ -136,6 +138,16 @@ local function StyleNormalButton(button, size)
 		end
 		if flyoutBorderShadow then
 			flyoutBorderShadow:SetTexture("")
+		end
+
+		if autocast then
+			autocast:SetSize((C.actionbar.button_size * 2) - 10, (C.actionbar.button_size * 2) - 10)
+			autocast:ClearAllPoints()
+			autocast:SetPoint("CENTER", button, 0, 0)
+		end
+
+		if shine then
+			shine:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		end
 
 		button:StyleButton()
