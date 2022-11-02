@@ -104,7 +104,7 @@ local function SkinStatusBar(widget)
 		return
 	end
 
-	local atlas = bar:GetStatusBarAtlas()
+	local atlas = bar:GetStatusBarTexture()
 	if atlasColors[atlas] then
 		bar:SetStatusBarTexture(C.media.texture)
 		bar:SetStatusBarColor(unpack(atlasColors[atlas]))
@@ -142,7 +142,7 @@ end
 
 local function SkinDoubleStatusBar(widget)
 	for _, bar in pairs({widget.LeftBar, widget.RightBar}) do
-		local atlas = bar:GetStatusBarAtlas()
+		local atlas = bar:GetStatusBarTexture()
 		if atlasColors[atlas] then
 			bar:SetStatusBarTexture(C.media.texture)
 			bar:SetStatusBarColor(unpack(atlasColors[atlas]))
