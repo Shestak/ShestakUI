@@ -666,7 +666,7 @@ local playerUnits = {
 
 T.PostUpdateIcon = function(_, button, unit, data)
 	if data.isHarmful then
-		if not UnitIsFriend("player", unit) and not playerUnits[button.caster] then
+		if not UnitIsFriend("player", unit) and not playerUnits[data.sourceUnit] then
 			if not C.aura.player_aura_only then
 				button:SetBackdropBorderColor(unpack(C.media.border_color))
 				button.Icon:SetDesaturated(true)
