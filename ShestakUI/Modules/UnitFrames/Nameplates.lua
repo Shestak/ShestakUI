@@ -215,23 +215,18 @@ local AurasCustomFilter = function(element, unit, data)
 
 	if not UnitIsFriend("player", unit) then
 		if data.isHarmful then
-			if data.isPlayerAura or data.sourceUnit == "pet" then
+			if C.nameplate.track_debuffs and data.isPlayerAura or data.sourceUnit == "pet" then
 				if ((data.nameplateShowAll or data.nameplateShowPersonal) and not T.DebuffBlackList[data.name]) then
 					allow = true
 				elseif T.DebuffWhiteList[data.name] then
 					allow = true
 				end
-				if C.nameplate.track_buffs then
-					--BETA SetColorBorder(element, unpack(C.media.border_color))
-				end
 			end
 		else
 			if T.BuffWhiteList[data.name] then
 				allow = true
-				-- SetColorBorder(element, 0, 0.5, 0)
 			elseif data.isStealable then
 				allow = true
-				-- SetColorBorder(element, 1, 0.85, 0)
 			end
 		end
 	end
@@ -273,7 +268,23 @@ local AurasPostCreateIcon = function(element, button)
 	end
 end
 
-local AurasPostUpdateIcon = function(_, button, _, data)
+local AurasPostUpdateIcon = function(_, button, unit, data)
+	if not UnitIsFriend("player", unit) then
+		if data.isHarmful then
+			if C.nameplate.track_debuffs and data.isPlayerAura or data.sourceUnit == "pet" then
+				if C.nameplate.track_buffs then
+					SetColorBorder(button, unpack(C.media.border_color))
+				end
+			end
+		else
+			if T.BuffWhiteList[data.name] then
+				SetColorBorder(button, 0, 0.5, 0)
+			elseif data.isStealable then
+				SetColorBorder(button, 1, 0.85, 0)
+			end
+		end
+	end
+
 	if data.duration and data.duration > 0 and C.aura.show_timer == true then
 		button.remaining:Show()
 		button.timeLeft = data.expirationTime
