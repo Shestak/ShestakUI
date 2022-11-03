@@ -169,11 +169,8 @@ local micromenu = {
 		ToggleFrame(SpellBookFrame)
 	end},
 	{text = TALENTS_BUTTON, notCheckable = 1, func = function()
-		if not PlayerTalentFrame then
-			TalentFrame_LoadUI()
-		end
 		if T.level >= 10 then
-			ShowUIPanel(PlayerTalentFrame)
+			ToggleTalentFrame()
 		else
 			if C.general.error_filter ~= "WHITELIST" then
 				UIErrorsFrame:AddMessage(format(FEATURE_BECOMES_AVAILABLE_AT_LEVEL, 10), 1, 0.1, 0.1)

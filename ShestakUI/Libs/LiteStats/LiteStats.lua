@@ -1502,11 +1502,8 @@ if talents.enabled then
 				return
 			end
 			if b == "LeftButton" then
-				if not PlayerTalentFrame then
-					LoadAddOn("Blizzard_TalentUI")
-				end
 				if IsShiftKeyDown() then
-					PlayerTalentFrame_Toggle()
+					ToggleTalentFrame()
 				else
 					for index = 1, 4 do
 						local id, name, _, texture = GetSpecializationInfo(index)
