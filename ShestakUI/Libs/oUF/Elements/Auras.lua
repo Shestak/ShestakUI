@@ -344,12 +344,10 @@ local function UpdateAuras(self, event, unit, updateInfo)
 					end
 				end
 			end
-		end
 
-		if(buffsChanged or debuffsChanged) then
+			-- instead of removing auras one by one, just wipe the tables entirely
+			-- and repopulate them, multiple table.remove calls are insanely slow
 			if(buffsChanged) then
-				-- instead of removing auras one by one, just wipe the tables entirely
-				-- and repopulate them, multiple table.remove calls are insanely slow
 				auras.sortedBuffs = table.wipe(auras.sortedBuffs or {})
 
 				for _, data in next, auras.activeBuffs do
@@ -369,45 +367,6 @@ local function UpdateAuras(self, event, unit, updateInfo)
 				Overridden by the more specific SortBuffs and/or SortDebuffs overrides if they are defined.
 				--]]
 				table.sort(auras.sortedBuffs, auras.SortBuffs or auras.SortAuras or SortAuras)
-
-				for i = 1, #auras.sortedBuffs do
-					updateAura(auras, unit, auras.sortedBuffs[i], i)
-				end
-			end
-
-			local offset = #auras.sortedBuffs
-
-			if(auras.gap and #auras.sortedDebuffs > 0) then
-				offset = offset + 1
-
-				local button = auras[offset]
-				if(not button) then
-					button = (auras.CreateButton or CreateButton) (auras, offset)
-					table.insert(auras, button)
-					auras.createdButtons = auras.createdButtons + 1
-				end
-
-				-- prevent the button from displaying anything
-				if(button.Cooldown) then button.Cooldown:Hide() end
-				if(button.Icon) then button.Icon:SetTexture() end
-				if(button.Overlay) then button.Overlay:Hide() end
-				if(button.Stealable) then button.Stealable:Hide() end
-				if(button.Count) then button.Count:SetText() end
-
-				button:EnableMouse(false)
-				button:Hide() -- ShestakUI
-
-				--[[ Callback: Auras:PostUpdateGapButton(unit, gapButton, offset)
-				Called after an invisible aura button has been created. Only used by Auras when the `gap` option is enabled.
-
-				* self      - the widget holding the aura buttons
-				* unit      - the unit that has the invisible aura button (string)
-				* gapButton - the invisible aura button (Button)
-				* offset    - the position of the invisible aura button (number)
-				--]]
-				if(auras.PostUpdateGapButton) then
-					auras:PostUpdateGapButton(unit, button, offset)
-				end
 			end
 
 			if(debuffsChanged) then
@@ -424,38 +383,80 @@ local function UpdateAuras(self, event, unit, updateInfo)
 				--]]
 				table.sort(auras.sortedDebuffs, auras.SortDebuffs or auras.SortAuras or SortAuras)
 			end
-
-			-- any changes to buffs will affect debuffs, so just redraw them even
-			-- if nothing changed
-			for i = 1, #auras.sortedDebuffs do
-				updateAura(auras, unit, auras.sortedDebuffs[i], i + offset)
-			end
-
-			for i = offset + #auras.sortedDebuffs + 1, #auras do
-				auras[i]:Hide()
-			end
-
-			if(auras.createdButtons > auras.anchoredButtons) then
-				--[[ Override: Auras:SetPosition(from, to)
-				Used to (re-)anchor the aura buttons.
-				Called when new aura buttons have been created or if :PreSetPosition is defined.
-
-				* self - the widget that holds the aura buttons
-				* from - the offset of the first aura button to be (re-)anchored (number)
-				* to   - the offset of the last aura button to be (re-)anchored (number)
-				--]]
-				(auras.SetPosition or SetPosition) (auras, auras.anchoredButtons + 1, auras.createdButtons)
-				auras.anchoredButtons = auras.createdButtons
-			end
-
-			--[[ Callback: Auras:PostUpdate(unit)
-			Called after the element has been updated.
-
-			* self - the widget holding the aura buttons
-			* unit - the unit for which the update has been triggered (string)
-			--]]
-			if(auras.PostUpdate) then auras:PostUpdate(unit) end
 		end
+
+		if(not (buffsChanged or debuffsChanged)) then return end
+
+		if(buffsChanged) then
+			for i = 1, #auras.sortedBuffs do
+				updateAura(auras, unit, auras.sortedBuffs[i], i)
+			end
+		end
+
+		local offset = #auras.sortedBuffs
+
+		if(auras.gap and #auras.sortedDebuffs > 0) then
+			offset = offset + 1
+
+			local button = auras[offset]
+			if(not button) then
+				button = (auras.CreateButton or CreateButton) (auras, offset)
+				table.insert(auras, button)
+				auras.createdButtons = auras.createdButtons + 1
+			end
+
+			-- Prevent the button from displaying anything.
+			if(button.Cooldown) then button.Cooldown:Hide() end
+			if(button.Icon) then button.Icon:SetTexture() end
+			if(button.Overlay) then button.Overlay:Hide() end
+			if(button.Stealable) then button.Stealable:Hide() end
+			if(button.Count) then button.Count:SetText("") end
+
+			button:EnableMouse(false)
+			button:Hide()	-- ShestakUI
+
+			--[[ Callback: Auras:PostUpdateGapButton(unit, gapButton, offset)
+			Called after an invisible aura button has been created. Only used by Auras when the `gap` option is enabled.
+
+			* self      - the widget holding the aura buttons
+			* unit      - the unit that has the invisible aura button (string)
+			* gapButton - the invisible aura button (Button)
+			* offset    - the position of the invisible aura button (number)
+			--]]
+			if(auras.PostUpdateGapButton) then
+				auras:PostUpdateGapButton(unit, button, offset)
+			end
+		end
+
+		-- any changes to buffs will affect debuffs, so just redraw them
+		for i = 1, #auras.sortedDebuffs do
+			updateAura(auras, unit, auras.sortedDebuffs[i], i + offset)
+		end
+
+		for i = offset + #auras.sortedDebuffs + 1, #auras do
+			auras[i]:Hide()
+		end
+
+		if(auras.createdButtons > auras.anchoredButtons) then
+			--[[ Override: Auras:SetPosition(from, to)
+			Used to (re-)anchor the aura buttons.
+			Called when new aura buttons have been created or if :PreSetPosition is defined.
+
+			* self - the widget that holds the aura buttons
+			* from - the offset of the first aura button to be (re-)anchored (number)
+			* to   - the offset of the last aura button to be (re-)anchored (number)
+			--]]
+			(auras.SetPosition or SetPosition) (auras, auras.anchoredButtons + 1, auras.createdButtons)
+			auras.anchoredButtons = auras.createdButtons
+		end
+
+		--[[ Callback: Auras:PostUpdate(unit)
+		Called after the element has been updated.
+
+		* self - the widget holding the aura buttons
+		* unit - the unit for which the update has been triggered (string)
+		--]]
+		if(auras.PostUpdate) then auras:PostUpdate(unit) end
 	end
 
 	local buffs = self.Buffs
@@ -528,32 +529,34 @@ local function UpdateAuras(self, event, unit, updateInfo)
 					end
 				end
 			end
+
+			if(buffsChanged) then
+				buffs.sorted = table.wipe(buffs.sorted or {})
+
+				for _, data in next, buffs.active do
+					table.insert(buffs.sorted, data)
+				end
+
+				table.sort(buffs.sorted, buffs.SortBuffs or buffs.SortAuras or SortAuras)
+			end
 		end
 
-		if(buffsChanged) then
-			buffs.sorted = table.wipe(buffs.sorted or {})
+		if(not buffsChanged) then return end
 
-			for _, data in next, buffs.active do
-				table.insert(buffs.sorted, data)
-			end
-
-			table.sort(buffs.sorted, buffs.SortBuffs or buffs.SortAuras or SortAuras)
-
-			for i = 1, #buffs.sorted do
-				updateAura(buffs, unit, buffs.sorted[i], i)
-			end
-
-			for i = #buffs.sorted + 1, #buffs do
-				buffs[i]:Hide()
-			end
-
-			if(buffs.createdButtons > buffs.anchoredButtons) then
-				(buffs.SetPosition or SetPosition) (buffs, buffs.anchoredButtons + 1, buffs.createdButtons)
-				buffs.anchoredButtons = buffs.createdButtons
-			end
-
-			if(buffs.PostUpdate) then buffs:PostUpdate(unit) end
+		for i = 1, #buffs.sorted do
+			updateAura(buffs, unit, buffs.sorted[i], i)
 		end
+
+		for i = #buffs.sorted + 1, #buffs do
+			buffs[i]:Hide()
+		end
+
+		if(buffs.createdButtons > buffs.anchoredButtons) then
+			(buffs.SetPosition or SetPosition) (buffs, buffs.anchoredButtons + 1, buffs.createdButtons)
+			buffs.anchoredButtons = buffs.createdButtons
+		end
+
+		if(buffs.PostUpdate) then buffs:PostUpdate(unit) end
 	end
 
 	local debuffs = self.Debuffs
@@ -626,31 +629,58 @@ local function UpdateAuras(self, event, unit, updateInfo)
 					end
 				end
 			end
+
+			if(debuffsChanged) then
+				debuffs.sorted = table.wipe(debuffs.sorted or {})
+
+				for _, data in next, debuffs.active do
+					table.insert(debuffs.sorted, data)
+				end
+
+				table.sort(debuffs.sorted, debuffs.SortDebuffs or debuffs.SortAuras or SortAuras)
+			end
 		end
 
-		if(debuffsChanged) then
-			debuffs.sorted = table.wipe(debuffs.sorted or {})
+		if(not debuffsChanged) then return end
 
-			for _, data in next, debuffs.active do
-				table.insert(debuffs.sorted, data)
-			end
+		for i = 1, #debuffs.sorted do
+			updateAura(debuffs, unit, debuffs.sorted[i], i)
+		end
 
-			table.sort(debuffs.sorted, debuffs.SortDebuffs or debuffs.SortAuras or SortAuras)
+		for i = #debuffs.sorted + 1, #debuffs do
+			debuffs[i]:Hide()
+		end
 
-			for i = 1, #debuffs.sorted do
-				updateAura(debuffs, unit, debuffs.sorted[i], i)
-			end
+		if(debuffs.createdButtons > debuffs.anchoredButtons) then
+			(debuffs.SetPosition or SetPosition) (debuffs, debuffs.anchoredButtons + 1, debuffs.createdButtons)
+			debuffs.anchoredButtons = debuffs.createdButtons
+		end
 
-			for i = #debuffs.sorted + 1, #debuffs do
-				debuffs[i]:Hide()
-			end
+		if(debuffs.PostUpdate) then debuffs:PostUpdate(unit) end
+	end
+end
 
-			if(debuffs.createdButtons > debuffs.anchoredButtons) then
-				(debuffs.SetPosition or SetPosition) (debuffs, debuffs.anchoredButtons + 1, debuffs.createdButtons)
-				debuffs.anchoredButtons = debuffs.createdButtons
-			end
+local function Update(self, event, unit, updateInfo)
+	if(self.unit ~= unit) then return end
 
-			if(debuffs.PostUpdate) then debuffs:PostUpdate(unit) end
+	UpdateAuras(self, event, unit, updateInfo)
+
+	-- Assume no event means someone wants to re-anchor things. This is usually
+	-- done by UpdateAllElements and :ForceUpdate.
+	if(event == 'ForceUpdate' or not event) then
+		local auras = self.Auras
+		if(auras) then
+			(auras.SetPosition or SetPosition) (auras, 1, auras.createdButtons)
+		end
+
+		local buffs = self.Buffs
+		if(buffs) then
+			(buffs.SetPosition or SetPosition) (buffs, 1, buffs.createdButtons)
+		end
+
+		local debuffs = self.Debuffs
+		if(debuffs) then
+			(debuffs.SetPosition or SetPosition) (debuffs, 1, debuffs.createdButtons)
 		end
 	end
 end
