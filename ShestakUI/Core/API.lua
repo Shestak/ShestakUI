@@ -407,9 +407,13 @@ function T.SkinScrollBar(frame)
 	frame:StripTextures()
 
 	local frameName = frame.GetName and frame:GetName()
-	local UpButton = frame.ScrollUpButton or frame.ScrollUp or frame.UpButton or _G[frameName and frameName.."ScrollUpButton"] or frame:GetParent().scrollUp
-	local DownButton = frame.ScrollDownButton or frame.ScrollDown or frame.DownButton or _G[frameName and frameName.."ScrollDownButton"] or frame:GetParent().scrollDown
+	local UpButton = frame.ScrollUpButton or frame.ScrollUp or frame.UpButton or frame.Back or _G[frameName and frameName.."ScrollUpButton"] or frame:GetParent().scrollUp
+	local DownButton = frame.ScrollDownButton or frame.ScrollDown or frame.DownButton or frame.Forward or _G[frameName and frameName.."ScrollDownButton"] or frame:GetParent().scrollDown
 	local ThumbTexture = frame.ThumbTexture or frame.thumbTexture or _G[frameName and frameName.."ThumbTexture"]
+
+	if frame.Background then
+		frame.Background:Hide()
+	end
 
 	if UpButton and DownButton then
 		if not UpButton.icon then
@@ -586,8 +590,10 @@ function T.SkinNextPrevButton(btn, left, scroll)
 		if btn:GetPushedTexture() then
 			btn:GetPushedTexture():SetAllPoints(btn:GetNormalTexture())
 		end
-		btn:GetHighlightTexture():SetColorTexture(1, 1, 1, 0.3)
-		btn:GetHighlightTexture():SetAllPoints(btn:GetNormalTexture())
+		if btn:GetHighlightTexture() then
+			btn:GetHighlightTexture():SetColorTexture(1, 1, 1, 0.3)
+			btn:GetHighlightTexture():SetAllPoints(btn:GetNormalTexture())
+		end
 	end
 end
 
