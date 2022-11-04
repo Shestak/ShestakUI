@@ -98,54 +98,40 @@ if CUSTOM_CLASS_COLORS then
 end
 
 -- WhoList
-local function whoFrame()
-	local scrollFrame = WhoListScrollFrame
-	local offset = HybridScrollFrame_GetOffset(scrollFrame)
-	local buttons = scrollFrame.buttons
-	local numWhos = C_FriendList.GetNumWhoResults()
-
+local function whoFrame(self)
 	local playerZone = GetRealZoneText()
 	local playerGuild = GetGuildInfo("player")
 	local playerRace = UnitRace("player")
 
-	for i = 1, #buttons do
-		local button = buttons[i]
-		local index = offset + i
-		if index <= numWhos then
-			local nameText = button.Name
-			local levelText = button.Level
-			local variableText = button.Variable
+	 for i = 1, self.ScrollTarget:GetNumChildren() do
+		local button = select(i, self.ScrollTarget:GetChildren())
 
-			local info = C_FriendList.GetWhoInfo(index)
-			if info then
-				local guild = info.fullGuildName
-				local level = info.level
-				local race = info.raceStr
-				local zone = info.area
-				local classFileName = info.filename
+		local nameText = button.Name
+		local levelText = button.Level
+		local variableText = button.Variable
 
-				if zone == playerZone then
-					zone = "|cff00ff00"..zone
-				end
-				if guild == playerGuild then
-					guild = "|cff00ff00"..guild
-				end
-				if race == playerRace then
-					race = "|cff00ff00"..race
-				end
-				local columnTable = {zone, guild, race}
-
-				local c = classColorRaw[classFileName]
-				nameText:SetTextColor(c.r, c.g, c.b)
-				levelText:SetText(diffColor[level]..level)
-				variableText:SetText(columnTable[UIDropDownMenu_GetSelectedID(WhoFrameDropDown)])
-			end
+		local info = C_FriendList.GetWhoInfo(button.index)
+		local guild, level, race, zone, class = info.fullGuildName, info.level, info.raceStr, info.area, info.filename
+		if zone == playerZone then
+			zone = "|cff00ff00"..zone
 		end
+		if guild == playerGuild then
+			guild = "|cff00ff00"..guild
+		end
+		if race == playerRace then
+			race = "|cff00ff00"..race
+		end
+
+		local columnTable = {zone, guild, race}
+
+		local c = classColorRaw[class]
+		nameText:SetTextColor(c.r, c.g, c.b)
+		levelText:SetText(diffColor[level]..level)
+		variableText:SetText(columnTable[UIDropDownMenu_GetSelectedID(_G.WhoFrameDropDown)])
 	end
 end
 
-hooksecurefunc("WhoList_Update", whoFrame)
---BETA hooksecurefunc(WhoListScrollFrame, "update", whoFrame)
+hooksecurefunc(_G.WhoFrame.ScrollBox, "Update", whoFrame)
 
 -- LFRBrowseList
 hooksecurefunc("LFRBrowseFrameListButton_SetData", function(button, index)
