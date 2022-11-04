@@ -31,6 +31,16 @@ hooksecurefunc(GameTooltip, "SetUnitAura", function(self, ...)
 	if debuginfo == true and id and IsModifierKeyDown() then print(UnitAura(...)..": "..id) end
 end)
 
+local function attachByAuraInstanceID(self, ...)
+	local aura = C_UnitAuras.GetAuraDataByAuraInstanceID(...)
+	local id = aura and aura.spellId
+	if id then addLine(self, id) end
+	if debuginfo == true and id and IsModifierKeyDown() then print(UnitAura(...)..": "..id) end
+end
+
+hooksecurefunc(GameTooltip, "SetUnitBuffByAuraInstanceID", attachByAuraInstanceID)
+hooksecurefunc(GameTooltip, "SetUnitDebuffByAuraInstanceID", attachByAuraInstanceID)
+
 hooksecurefunc("SetItemRef", function(link)
 	local id = tonumber(link:match("spell:(%d+)"))
 	if id then addLine(ItemRefTooltip, id) end
