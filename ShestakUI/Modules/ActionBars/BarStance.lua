@@ -5,8 +5,19 @@ if C.actionbar.enable ~= true then return end
 --	StanceBar(by Tukz)
 ----------------------------------------------------------------------------------------
 local NUM_STANCE_SLOTS = NUM_STANCE_SLOTS or 10
+
 -- Hide bar
-if C.actionbar.stancebar_hide then StanceBar:SetParent(StanceBarAnchor) StanceBarAnchor:Hide() return end
+if C.actionbar.stancebar_hide then
+	StanceBar:SetParent(StanceBarAnchor)
+	StanceBar:UnregisterAllEvents()
+	for _, button in pairs(StanceBar.actionButtons) do
+		button:UnregisterAllEvents()
+		button:SetAttribute("statehidden", true)
+		button:Hide()
+	end
+	StanceBarAnchor:Hide()
+	return
+end
 
 -- Create bar
 local bar = CreateFrame("Frame", "StanceHolder", UIParent, "SecureHandlerStateTemplate")
