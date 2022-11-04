@@ -410,10 +410,7 @@ function T.SkinScrollBar(frame)
 	local UpButton = frame.ScrollUpButton or frame.ScrollUp or frame.UpButton or frame.Back or _G[frameName and frameName.."ScrollUpButton"] or frame:GetParent().scrollUp
 	local DownButton = frame.ScrollDownButton or frame.ScrollDown or frame.DownButton or frame.Forward or _G[frameName and frameName.."ScrollDownButton"] or frame:GetParent().scrollDown
 	local ThumbTexture = frame.ThumbTexture or frame.thumbTexture or _G[frameName and frameName.."ThumbTexture"]
-
-	if frame.Background then
-		frame.Background:Hide()
-	end
+	local newThumb = frame.Back and frame:GetThumb()
 
 	if UpButton and DownButton then
 		if not UpButton.icon then
@@ -460,6 +457,25 @@ function T.SkinScrollBar(frame)
 					frame:SetAlpha(1)
 				end)
 			end
+		elseif newThumb then
+			if frame.Background then
+				frame.Background:Hide()
+			end
+			newThumb:DisableDrawLayer('BACKGROUND')
+			if not frame.thumbbg then
+				frame.thumbbg = CreateFrame("Frame", nil, frame)
+				frame.thumbbg:SetPoint("TOPLEFT", newThumb, "TOPLEFT", 0, -3)
+				frame.thumbbg:SetPoint("BOTTOMRIGHT", newThumb, "BOTTOMRIGHT", 0, 3)
+				frame.thumbbg:SetTemplate("Overlay")
+
+				hooksecurefunc(newThumb, "Hide", function(self)
+					frame:SetAlpha(0)
+				end)
+
+				hooksecurefunc(newThumb, "Show", function(self)
+					frame:SetAlpha(1)
+				end)
+			end
 		end
 	end
 end
@@ -497,8 +513,8 @@ function T.SkinTab(tab, bg)
 		tab.backdrop:SetPoint("BOTTOMRIGHT", -3, 2)
 	else
 		tab.backdrop:SetTemplate("Transparent")
-		tab.backdrop:SetPoint("TOPLEFT", 10, -3)
-		tab.backdrop:SetPoint("BOTTOMRIGHT", -10, 3)
+		tab.backdrop:SetPoint("TOPLEFT", 0, -3)
+		tab.backdrop:SetPoint("BOTTOMRIGHT", 0, 3)
 	end
 end
 
