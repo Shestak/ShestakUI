@@ -378,7 +378,7 @@ elseif T.class == "PALADIN" then
 		T.aoespam[119952] = 3		-- Arcing Light
 		T.aoespam[183811] = 6		-- Judgment of Light
 		T.aoespam[225311] = 1		-- Light of Dawn
-		T.aoespam[339119] = 3		-- Golden Path
+		T.aoespam[377129] = 3		-- Golden Path
 		-- Damaging spells
 		T.aoespam[53600] = 0.5		-- Shield of the Righteous
 		T.aoespam[184689] = 1		-- Shield of Vengeance
