@@ -5,7 +5,7 @@
 	<!-- <Script file="AdventureMap.lua"/> -->
 	<Script file="AlertFrames.lua"/>
 	<!-- <Script file="AlliedRaces.lua"/> -->
-	<!-- <Script file="AnimaDiversion.lua"/> -->
+	<Script file="AnimaDiversion.lua"/>
 	<!-- <Script file="Archeology.lua"/> -->
 	<!-- <Script file="Artifact.lua"/> -->
 	<!-- <Script file="Auction.lua"/> -->
@@ -27,7 +27,7 @@
 	<Script file="Container.lua"/>
 	<!-- <Script file="Contribution.lua"/> -->
 	<!-- <Script file="CovenantPreview.lua"/> -->
-	<!-- <Script file="CovenantRenown.lua"/> -->
+	<Script file="CovenantRenown.lua"/>
 	<Script file="CovenantSanctum.lua"/>
 	<!-- <Script file="DebugTools.lua"/> -->
 	<!-- <Script file="DeathRecap.lua"/> -->
@@ -50,13 +50,13 @@
 	<!-- <Script file="ItemInteraction.lua"/> -->
 	<!-- <Script file="ItemSocketing.lua"/> -->
 	<!-- <Script file="ItemText.lua"/> -->
-	<!-- <Script file="ItemUpgrade.lua"/> -->
+	<Script file="ItemUpgrade.lua"/>
 	<!-- <Script file="Loot.lua"/> -->
 	<!-- <Script file="LossOfControl.lua"/> -->
 	<!-- <Script file="MacClient.lua"/> -->
 	<!-- <Script file="Macro.lua"/> -->
 	<!-- <Script file="Mail.lua"/> -->
-	<!-- <Script file="Merchant.lua"/> -->
+	<Script file="Merchant.lua"/>
 	<!-- <Script file="Obliterum.lua"/> -->
 	<!-- <Script file="Options.lua"/> -->
 	<!-- <Script file="OrderHall.lua"/> -->
@@ -72,7 +72,7 @@
 	<!-- <Script file="RaidInfo.lua"/> -->
 	<!-- <Script file="Runeforge.lua"/> -->
 	<!-- <Script file="Scrapping.lua"/> -->
-	<!-- <Script file="Soulbinds.lua"/> -->
+	<Script file="Soulbinds.lua"/>
 	<!-- <Script file="SpellBook.lua"/> -->
 	<!-- <Script file="Subscription.lua"/> -->
 	<!-- <Script file="Tabard.lua"/> -->

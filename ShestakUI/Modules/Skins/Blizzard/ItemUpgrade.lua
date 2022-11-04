@@ -10,6 +10,7 @@ local function LoadSkin()
 
 	frame:StripTextures()
 	frame:SetTemplate("Transparent")
+	ItemUpgradeFramePortrait:SetAlpha(0)
 
 	frame.UpgradeItemButton:StripTextures()
 	frame.UpgradeItemButton:SetTemplate("Default")
