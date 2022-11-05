@@ -74,7 +74,8 @@ local isCaster = {
 	ROGUE = {nil, nil, nil},
 	SHAMAN = {true},				-- Elemental
 	WARLOCK = {true, true, true},
-	WARRIOR = {nil, nil, nil}
+	WARRIOR = {nil, nil, nil},
+	EVOKER = {true}
 }
 
 local function CheckRole()
