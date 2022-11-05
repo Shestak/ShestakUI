@@ -79,6 +79,9 @@ frame:SetScript("OnEvent", function(_, _, addon)
 		if not T.newPatch then -- BETA
 			SetSortBagsRightToLeft(true)
 			SetInsertItemsLeftToRight(false)
+		else
+			C_Container.SetSortBagsRightToLeft(true)
+			C_Container.SetInsertItemsLeftToRight(false)
 		end
 	end
 
