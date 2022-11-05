@@ -25,7 +25,7 @@ frame:SetScript("OnEvent", function()
 	MainMenuBar:SetAttribute("ignoreFramePositionManager", true)
 
 	local elements = {
-		MainMenuBar, MainMenuBarArtFrame, OverrideActionBar, PossessBarFrame, PetActionBar, StanceBar,
+		MainMenuBar, MainMenuBarArtFrame, OverrideActionBar, PossessBarFrame,
 		MultiBarBottomLeft.QuickKeybindGlow, MultiBarLeft.QuickKeybindGlow, MultiBarBottomRight.QuickKeybindGlow, MultiBarRight.QuickKeybindGlow,
 		StatusTrackingBarManager
 	}
