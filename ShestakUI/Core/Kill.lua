@@ -72,6 +72,7 @@ frame:SetScript("OnEvent", function(_, _, addon)
 
 	if C.minimap.enable then
 		--BETA InterfaceOptionsDisplayPanelRotateMinimap:Hide()
+		SetCVar("minimapTrackingShowAll", 1)
 	end
 
 	if C.bag.enable then
