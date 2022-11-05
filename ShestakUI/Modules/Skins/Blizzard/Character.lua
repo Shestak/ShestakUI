@@ -52,8 +52,8 @@ local function LoadSkin()
 		"SecondaryHandSlot"
 	}
 
-	select(17, _G["CharacterMainHandSlot"]:GetRegions()):Hide()
-	select(17, _G["CharacterSecondaryHandSlot"]:GetRegions()):Hide()
+	select(16, CharacterMainHandSlot:GetRegions()):Hide()
+	select(16, CharacterSecondaryHandSlot:GetRegions()):Hide()
 
 	for _, i in pairs(slots) do
 		_G["Character"..i.."Frame"]:Hide()
@@ -86,17 +86,18 @@ local function LoadSkin()
 
 	-- Strip Textures
 	local charframe = {
-		"CharacterFrame",
-		"CharacterModelFrame",
-		"CharacterFrameInset",
-		"CharacterStatsPane",
-		"CharacterFrameInsetRight",
-		"PaperDollSidebarTabs",
-		"PaperDollEquipmentManagerPane"
+		CharacterFrame,
+		-- CharacterModelFrame,
+		CharacterFrameInset,
+		CharacterStatsPane,
+		CharacterFrameInsetRight,
+		PaperDollSidebarTabs,
+		-- PaperDollEquipmentManagerPane
 	}
 
-	for _, object in pairs(charframe) do
-		_G[object]:StripTextures()
+	for i = 1, #charframe do
+		local button = charframe[i]
+		button:StripTextures()
 	end
 
 	EquipmentFlyoutFrameHighlight:Kill()
@@ -140,9 +141,9 @@ local function LoadSkin()
 	-- Icon in upper right corner of character frame
 	CharacterFramePortrait:Kill()
 	CharacterModelFrameBackgroundOverlay:SetColorTexture(0, 0, 0)
-	CharacterModelFrame:CreateBackdrop("Default")
-	CharacterModelFrame.backdrop:SetPoint("TOPLEFT", -3, 4)
-	CharacterModelFrame.backdrop:SetPoint("BOTTOMRIGHT", 4, 0)
+	-- CharacterModelFrame:CreateBackdrop("Default")
+	-- CharacterModelFrame.backdrop:SetPoint("TOPLEFT", -3, 4)
+	-- CharacterModelFrame.backdrop:SetPoint("BOTTOMRIGHT", 4, 0)
 
 	local scrollbars = {
 		"PaperDollTitlesPaneScrollBar",
@@ -153,7 +154,18 @@ local function LoadSkin()
 	}
 
 	for _, scrollbar in pairs(scrollbars) do
-		T.SkinScrollBar(_G[scrollbar])
+		-- T.SkinScrollBar(_G[scrollbar])
+	end
+
+	local scrollbars = {
+		PaperDollFrame.TitleManagerPane.ScrollBar,
+		PaperDollFrame.EquipmentManagerPane.ScrollBar,
+		ReputationFrame.ScrollBar,
+		TokenFrame.ScrollBar
+	}
+
+	for i = 1, #scrollbars do
+		T.SkinScrollBar(scrollbars[i])
 	end
 
 	local function SkinStatsPane(frame)
@@ -186,48 +198,48 @@ local function LoadSkin()
 	SkinStatsPane(CharacterStatsPane.EnhancementsCategory)
 
 	-- Titles
-	PaperDollTitlesPane:HookScript("OnShow", function()
-		for _, object in pairs(PaperDollTitlesPane.buttons) do
-			object.BgTop:SetTexture(nil)
-			object.BgBottom:SetTexture(nil)
-			object.BgMiddle:SetTexture(nil)
-			object.Check:SetTexture(nil)
-		end
-	end)
+	-- PaperDollTitlesPane:HookScript("OnShow", function()
+		-- for _, object in pairs(PaperDollTitlesPane.buttons) do
+			-- object.BgTop:SetTexture(nil)
+			-- object.BgBottom:SetTexture(nil)
+			-- object.BgMiddle:SetTexture(nil)
+			-- object.Check:SetTexture(nil)
+		-- end
+	-- end)
 
 	-- Equipement Manager
-	PaperDollEquipmentManagerPaneEquipSet:SkinButton()
-	PaperDollEquipmentManagerPaneSaveSet:SkinButton()
-	PaperDollEquipmentManagerPaneEquipSet:SetWidth(PaperDollEquipmentManagerPaneEquipSet:GetWidth() - 8)
-	PaperDollEquipmentManagerPaneSaveSet:SetWidth(PaperDollEquipmentManagerPaneSaveSet:GetWidth() - 8)
-	PaperDollEquipmentManagerPaneEquipSet:SetPoint("TOPLEFT", PaperDollEquipmentManagerPane, "TOPLEFT", 8, 0)
-	PaperDollEquipmentManagerPaneSaveSet:SetPoint("LEFT", PaperDollEquipmentManagerPaneEquipSet, "RIGHT", 4, 0)
-	PaperDollEquipmentManagerPane:HookScript("OnShow", function()
-		for _, object in pairs(PaperDollEquipmentManagerPane.buttons) do
-			object.BgTop:SetTexture(nil)
-			object.BgBottom:SetTexture(nil)
-			object.BgMiddle:SetTexture(nil)
+	-- PaperDollEquipmentManagerPaneEquipSet:SkinButton()
+	-- PaperDollEquipmentManagerPaneSaveSet:SkinButton()
+	-- PaperDollEquipmentManagerPaneEquipSet:SetWidth(PaperDollEquipmentManagerPaneEquipSet:GetWidth() - 8)
+	-- PaperDollEquipmentManagerPaneSaveSet:SetWidth(PaperDollEquipmentManagerPaneSaveSet:GetWidth() - 8)
+	-- PaperDollEquipmentManagerPaneEquipSet:SetPoint("TOPLEFT", PaperDollEquipmentManagerPane, "TOPLEFT", 8, 0)
+	-- PaperDollEquipmentManagerPaneSaveSet:SetPoint("LEFT", PaperDollEquipmentManagerPaneEquipSet, "RIGHT", 4, 0)
+	-- PaperDollEquipmentManagerPane:HookScript("OnShow", function()
+		-- for _, object in pairs(PaperDollEquipmentManagerPane.buttons) do
+			-- object.BgTop:SetTexture(nil)
+			-- object.BgBottom:SetTexture(nil)
+			-- object.BgMiddle:SetTexture(nil)
 
-			object.Check:SetTexture(nil)
-			object.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			-- object.Check:SetTexture(nil)
+			-- object.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-			if not object.backdrop then
-				object:CreateBackdrop("Default")
-			end
+			-- if not object.backdrop then
+				-- object:CreateBackdrop("Default")
+			-- end
 
-			object.backdrop:SetPoint("TOPLEFT", object.icon, "TOPLEFT", -2, 2)
-			object.backdrop:SetPoint("BOTTOMRIGHT", object.icon, "BOTTOMRIGHT", 2, -2)
-			object.icon:SetParent(object.backdrop)
+			-- object.backdrop:SetPoint("TOPLEFT", object.icon, "TOPLEFT", -2, 2)
+			-- object.backdrop:SetPoint("BOTTOMRIGHT", object.icon, "BOTTOMRIGHT", 2, -2)
+			-- object.icon:SetParent(object.backdrop)
 
 			-- Making all icons the same size and position because otherwise BlizzardUI tries to attach itself to itself when it refreshes
-			object.icon:SetPoint("LEFT", object, "LEFT", 4, 0)
-			object.icon.SetPoint = T.dummy
-			object.icon:SetSize(36, 36)
-			object.icon.SetSize = T.dummy
-		end
-	end)
+			-- object.icon:SetPoint("LEFT", object, "LEFT", 4, 0)
+			-- object.icon.SetPoint = T.dummy
+			-- object.icon:SetSize(36, 36)
+			-- object.icon.SetSize = T.dummy
+		-- end
+	-- end)
 
-	T.SkinIconSelectionFrame(GearManagerDialogPopup, NUM_GEARSET_ICONS_SHOWN, "GearManagerDialogPopupButton")
+	-- T.SkinIconSelectionFrame(GearManagerDialogPopup, NUM_GEARSET_ICONS_SHOWN, "GearManagerDialogPopupButton")
 
 	-- Handle Tabs at bottom of character frame
 	for i = 1, 4 do
@@ -263,89 +275,89 @@ local function LoadSkin()
 	hooksecurefunc("PaperDollFrame_UpdateSidebarTabs", FixSidebarTabCoords)
 
 	-- Reputation
-	local function UpdateFactionSkins()
-		ReputationListScrollFrame:StripTextures()
-		ReputationFrame:StripTextures(true)
-		local factionOffset = FauxScrollFrame_GetOffset(ReputationListScrollFrame)
-		for i = 1, GetNumFactions() do
-			local statusbar = _G["ReputationBar"..i.."ReputationBar"]
-			local button = _G["ReputationBar"..i.."ExpandOrCollapseButton"]
-			local factionIndex = factionOffset + i
-			local _, _, _, _, _, _, _, _, _, isCollapsed = GetFactionInfo(factionIndex)
+	-- local function UpdateFactionSkins()
+		-- -- ReputationListScrollFrame:StripTextures()
+		-- ReputationFrame:StripTextures(true)
+		-- local factionOffset = FauxScrollFrame_GetOffset(ReputationListScrollFrame)
+		-- for i = 1, GetNumFactions() do
+			-- local statusbar = _G["ReputationBar"..i.."ReputationBar"]
+			-- local button = _G["ReputationBar"..i.."ExpandOrCollapseButton"]
+			-- local factionIndex = factionOffset + i
+			-- local _, _, _, _, _, _, _, _, _, isCollapsed = GetFactionInfo(factionIndex)
 
-			if statusbar then
-				statusbar:SetStatusBarTexture(C.media.texture)
+			-- if statusbar then
+				-- statusbar:SetStatusBarTexture(C.media.texture)
 
-				if not statusbar.backdrop then
-					statusbar:CreateBackdrop("Overlay")
-				end
+				-- if not statusbar.backdrop then
+					-- statusbar:CreateBackdrop("Overlay")
+				-- end
 
-				_G["ReputationBar"..i.."Background"]:SetTexture(nil)
-				_G["ReputationBar"..i.."ReputationBarHighlight1"]:SetTexture(nil)
-				_G["ReputationBar"..i.."ReputationBarHighlight2"]:SetTexture(nil)
-				_G["ReputationBar"..i.."ReputationBarAtWarHighlight1"]:SetTexture(nil)
-				_G["ReputationBar"..i.."ReputationBarAtWarHighlight2"]:SetTexture(nil)
-				_G["ReputationBar"..i.."ReputationBarLeftTexture"]:SetTexture(nil)
-				_G["ReputationBar"..i.."ReputationBarRightTexture"]:SetTexture(nil)
-			end
+				-- _G["ReputationBar"..i.."Background"]:SetTexture(nil)
+				-- _G["ReputationBar"..i.."ReputationBarHighlight1"]:SetTexture(nil)
+				-- _G["ReputationBar"..i.."ReputationBarHighlight2"]:SetTexture(nil)
+				-- _G["ReputationBar"..i.."ReputationBarAtWarHighlight1"]:SetTexture(nil)
+				-- _G["ReputationBar"..i.."ReputationBarAtWarHighlight2"]:SetTexture(nil)
+				-- _G["ReputationBar"..i.."ReputationBarLeftTexture"]:SetTexture(nil)
+				-- _G["ReputationBar"..i.."ReputationBarRightTexture"]:SetTexture(nil)
+			-- end
 
-			if button then
-				if not button.isSkinned then
-					T.SkinExpandOrCollapse(button)
-					if isCollapsed then
-						button.bg.plus:Show()
-					else
-						button.bg.plus:Hide()
-					end
-					button.isSkinned = true
-				end
-			end
-		end
-		ReputationDetailFrame:StripTextures()
-		ReputationDetailFrame:SetTemplate("Transparent")
-		ReputationDetailFrame:SetPoint("TOPLEFT", ReputationFrame, "TOPRIGHT", 3, 0)
-		T.SkinCloseButton(ReputationDetailCloseButton)
-		T.SkinCheckBox(ReputationDetailMainScreenCheckBox)
-		T.SkinCheckBox(ReputationDetailInactiveCheckBox)
-		T.SkinCheckBox(ReputationDetailAtWarCheckBox)
-	end
-	ReputationFrame:HookScript("OnShow", UpdateFactionSkins)
-	hooksecurefunc("ExpandFactionHeader", UpdateFactionSkins)
-	hooksecurefunc("CollapseFactionHeader", UpdateFactionSkins)
+			-- if button then
+				-- if not button.isSkinned then
+					-- T.SkinExpandOrCollapse(button)
+					-- if isCollapsed then
+						-- button.bg.plus:Show()
+					-- else
+						-- button.bg.plus:Hide()
+					-- end
+					-- button.isSkinned = true
+				-- end
+			-- end
+		-- end
+		-- ReputationDetailFrame:StripTextures()
+		-- ReputationDetailFrame:SetTemplate("Transparent")
+		-- ReputationDetailFrame:SetPoint("TOPLEFT", ReputationFrame, "TOPRIGHT", 3, 0)
+		-- T.SkinCloseButton(ReputationDetailCloseButton)
+		-- T.SkinCheckBox(ReputationDetailMainScreenCheckBox)
+		-- T.SkinCheckBox(ReputationDetailInactiveCheckBox)
+		-- T.SkinCheckBox(ReputationDetailAtWarCheckBox)
+	-- end
+	-- ReputationFrame:HookScript("OnShow", UpdateFactionSkins)
+	-- hooksecurefunc("ExpandFactionHeader", UpdateFactionSkins)
+	-- hooksecurefunc("CollapseFactionHeader", UpdateFactionSkins)
 
 	-- Currency
-	TokenFrame:HookScript("OnShow", function()
-		local buttons = TokenFrameContainer.buttons
-		local numButtons = #buttons
+	-- TokenFrame:HookScript("OnShow", function()
+		-- local buttons = TokenFrameContainer.buttons
+		-- local numButtons = #buttons
 
-		for i = 1, numButtons do
-			local button = buttons[i]
-			if button then
-				button.highlight:Kill()
-				button.categoryMiddle:Kill()
-				button.categoryLeft:Kill()
-				button.categoryRight:Kill()
+		-- for i = 1, numButtons do
+			-- local button = buttons[i]
+			-- if button then
+				-- button.highlight:Kill()
+				-- button.categoryMiddle:Kill()
+				-- button.categoryLeft:Kill()
+				-- button.categoryRight:Kill()
 
-				if button.icon then
-					button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				end
-			end
-		end
-		TokenFramePopup:StripTextures()
-		TokenFramePopup:SetTemplate("Transparent")
-		TokenFramePopup:SetPoint("TOPLEFT", TokenFrame, "TOPRIGHT", 3, 0)
-		T.SkinCloseButton(TokenFramePopupCloseButton)
-		T.SkinCheckBox(TokenFramePopupBackpackCheckBox)
-		T.SkinCheckBox(TokenFramePopupInactiveCheckBox)
-	end)
+				-- if button.icon then
+					-- button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				-- end
+			-- end
+		-- end
+		-- TokenFramePopup:StripTextures()
+		-- TokenFramePopup:SetTemplate("Transparent")
+		-- TokenFramePopup:SetPoint("TOPLEFT", TokenFrame, "TOPRIGHT", 3, 0)
+		-- T.SkinCloseButton(TokenFramePopupCloseButton)
+		-- T.SkinCheckBox(TokenFramePopupBackpackCheckBox)
+		-- T.SkinCheckBox(TokenFramePopupInactiveCheckBox)
+	-- end)
 
 	CharacterFrame:SetTemplate("Transparent")
 
 	-- Unit Background Texture
-	CharacterModelFrameBackgroundTopLeft:SetPoint("TOPLEFT", CharacterModelFrame.backdrop, "TOPLEFT", 2, -2)
-	CharacterModelFrameBackgroundTopRight:SetPoint("TOPRIGHT", CharacterModelFrame.backdrop, "TOPRIGHT", -2, -2)
-	CharacterModelFrameBackgroundBotLeft:SetPoint("BOTTOMLEFT", CharacterModelFrame.backdrop, "BOTTOMLEFT", 2, -50)
-	CharacterModelFrameBackgroundBotRight:SetPoint("BOTTOMRIGHT", CharacterModelFrame.backdrop, "BOTTOMRIGHT", -2, -50)
+	-- CharacterModelFrameBackgroundTopLeft:SetPoint("TOPLEFT", CharacterModelFrame.backdrop, "TOPLEFT", 2, -2)
+	-- CharacterModelFrameBackgroundTopRight:SetPoint("TOPRIGHT", CharacterModelFrame.backdrop, "TOPRIGHT", -2, -2)
+	-- CharacterModelFrameBackgroundBotLeft:SetPoint("BOTTOMLEFT", CharacterModelFrame.backdrop, "BOTTOMLEFT", 2, -50)
+	-- CharacterModelFrameBackgroundBotRight:SetPoint("BOTTOMRIGHT", CharacterModelFrame.backdrop, "BOTTOMRIGHT", -2, -50)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)

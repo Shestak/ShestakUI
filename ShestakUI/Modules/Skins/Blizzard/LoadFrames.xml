@@ -19,7 +19,7 @@
 	<!-- <Script file="Bubbles.lua"/> -->
 	<!-- <Script file="Calendar.lua"/> -->
 	<!-- <Script file="Channels.lua"/> -->
-	<!-- <Script file="Character.lua"/> -->
+	<Script file="Character.lua"/>
 	<!-- <Script file="ChatConfig.lua"/> -->
 	<!-- <Script file="ChromieTime.lua"/> -->
 	<!-- <Script file="Collections.lua"/> -->
