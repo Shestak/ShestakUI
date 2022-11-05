@@ -1,10 +1,9 @@
-﻿local T, C, L, _ = unpack(select(2, ...))
+local T, C, L, _ = unpack(select(2, ...))
 if C.tooltip.enable ~= true or C.tooltip.spell_id ~= true then return end
 
 ----------------------------------------------------------------------------------------
 --	Spell/Item IDs(idTip by Silverwind)
 ----------------------------------------------------------------------------------------
-if T.newPatch then return end -- BETA
 local debuginfo = false
 local function addLine(self, id, isItem)
 	for i = 1, self:NumLines() do
@@ -21,10 +20,10 @@ local function addLine(self, id, isItem)
 	self:Show()
 end
 
-GameTooltip:HookScript("OnTooltipSetSpell", function(self)
+local function OnTooltipSetSpell(self)
 	local _, id = self:GetSpell()
 	if id then addLine(self, id) end
-end)
+end
 
 hooksecurefunc(GameTooltip, "SetUnitAura", function(self, ...)
 	local id = select(10, UnitAura(...))
@@ -54,12 +53,18 @@ local function attachItemTooltip(self)
 	if id then addLine(self, id, true) end
 end
 
-GameTooltip:HookScript("OnTooltipSetItem", attachItemTooltip)
-ItemRefTooltip:HookScript("OnTooltipSetItem", attachItemTooltip)
-ItemRefShoppingTooltip1:HookScript("OnTooltipSetItem", attachItemTooltip)
-ItemRefShoppingTooltip2:HookScript("OnTooltipSetItem", attachItemTooltip)
-ShoppingTooltip1:HookScript("OnTooltipSetItem", attachItemTooltip)
-ShoppingTooltip2:HookScript("OnTooltipSetItem", attachItemTooltip)
+if T.newPatch then
+	TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Spell, OnTooltipSetSpell)
+	TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, attachItemTooltip)
+else
+	GameTooltip:HookScript("OnTooltipSetSpell", OnTooltipSetSpell)
+	GameTooltip:HookScript("OnTooltipSetItem", attachItemTooltip)
+	ItemRefTooltip:HookScript("OnTooltipSetItem", attachItemTooltip)
+	ItemRefShoppingTooltip1:HookScript("OnTooltipSetItem", attachItemTooltip)
+	ItemRefShoppingTooltip2:HookScript("OnTooltipSetItem", attachItemTooltip)
+	ShoppingTooltip1:HookScript("OnTooltipSetItem", attachItemTooltip)
+	ShoppingTooltip2:HookScript("OnTooltipSetItem", attachItemTooltip)
+end
 
 SlashCmdList.SHOWSPELLID = function()
 	if not debuginfo then
