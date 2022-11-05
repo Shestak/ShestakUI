@@ -16,6 +16,7 @@ local function LoadSkin()
 	QuestGreetingScrollFrame:StripTextures(true)
 	QuestFrameProgressPanel:StripTextures(true)
 	QuestFrameRewardPanel:StripTextures(true)
+	QuestFramePortrait:SetAlpha(0)
 
 	QuestFrameProgressPanelMaterialTopLeft:SetAlpha(0)
 	QuestFrameProgressPanelMaterialTopRight:SetAlpha(0)
