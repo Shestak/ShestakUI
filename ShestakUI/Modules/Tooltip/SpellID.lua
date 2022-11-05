@@ -4,6 +4,7 @@ if C.tooltip.enable ~= true or C.tooltip.spell_id ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Spell/Item IDs(idTip by Silverwind)
 ----------------------------------------------------------------------------------------
+if T.newPatch then return end -- BETA
 local debuginfo = false
 local function addLine(self, id, isItem)
 	for i = 1, self:NumLines() do

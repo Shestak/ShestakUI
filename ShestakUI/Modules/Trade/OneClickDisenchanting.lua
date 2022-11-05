@@ -153,7 +153,7 @@ function button:PLAYER_LOGIN()
 		rogue = ITEM_MIN_SKILL:gsub("%%s", (T.client == "ruRU" and "Взлом замков" or GetSpellInfo(1809))):gsub("%%d", "%(.*%)")
 	end
 
-	GameTooltip:HookScript("OnTooltipSetItem", function(self)
+	local function OnTooltipSetUnit(self)
 		local _, link = self:GetItem()
 
 		if link and not InCombatLockdown() and IsAltKeyDown() and not (AuctionHouseFrame and AuctionHouseFrame:IsShown()) then
@@ -184,7 +184,13 @@ function button:PLAYER_LOGIN()
 				AutoCastShine_AutoCastStart(button, r, g, b)
 			end
 		end
-	end)
+	end
+
+	if T.newPatch then
+		TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, OnTooltipSetUnit)
+	else
+		GameTooltip:HookScript("OnTooltipSetUnit", OnTooltipSetUnit)
+	end
 
 	self:SetFrameStrata("TOOLTIP")
 	self:SetAttribute("*type1", "macro")

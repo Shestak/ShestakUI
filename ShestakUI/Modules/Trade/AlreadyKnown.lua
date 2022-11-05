@@ -4,6 +4,7 @@ if C.trade.already_known ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Colorizes recipes/mounts/pets/toys that is already known(AlreadyKnown by Villiv)
 ----------------------------------------------------------------------------------------
+if T.newPatch then return end -- BETA
 local color = {r = 0.1, g = 1, b = 0.1}
 local knowns, lines = {}, {}
 local recipe = LE_ITEM_CLASS_RECIPE

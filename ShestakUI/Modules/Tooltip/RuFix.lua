@@ -71,7 +71,11 @@ local function UpdateTooltip(self)
 	ttext = nil
 end
 
-GameTooltip:HookScript("OnTooltipSetItem", UpdateTooltip)
-ItemRefTooltip:HookScript("OnTooltipSetItem", UpdateTooltip)
-ShoppingTooltip1:HookScript("OnTooltipSetItem", UpdateTooltip)
-ShoppingTooltip2:HookScript("OnTooltipSetItem", UpdateTooltip)
+if T.newPatch then
+	TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, UpdateTooltip)
+else
+	GameTooltip:HookScript("OnTooltipSetItem", UpdateTooltip)
+	ItemRefTooltip:HookScript("OnTooltipSetItem", UpdateTooltip)
+	ShoppingTooltip1:HookScript("OnTooltipSetItem", UpdateTooltip)
+	ShoppingTooltip2:HookScript("OnTooltipSetItem", UpdateTooltip)
+end
