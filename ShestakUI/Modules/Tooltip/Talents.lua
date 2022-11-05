@@ -94,7 +94,7 @@ ttt:SetScript("OnUpdate", function(self, elapsed)
 end)
 
 -- HOOK: OnTooltipSetUnit
-GameTooltip:HookScript("OnTooltipSetUnit", function(self)
+local function OnTooltipSetUnit(self)
 	-- Abort any delayed inspect in progress
 	ttt:Hide()
 
@@ -154,4 +154,10 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 			self:AddLine(TALENTS_PREFIX..L_TOOLTIP_INSPECT_OPEN)
 		end
 	end
-end)
+end
+
+if T.newPatch then
+	TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, OnTooltipSetUnit)
+else
+	GameTooltip:HookScript("OnTooltipSetUnit", OnTooltipSetUnit)
+end
