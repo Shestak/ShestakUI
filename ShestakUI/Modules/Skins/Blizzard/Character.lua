@@ -61,7 +61,7 @@ local function LoadSkin()
 		local slot = _G["Character"..i]
 		local border = _G["Character"..i].IconBorder
 
-		border:Kill()
+		border:SetAlpha(0)
 		slot:StyleButton()
 		slot:SetNormalTexture(0)
 		slot.SetHighlightTexture = T.dummy
@@ -87,7 +87,7 @@ local function LoadSkin()
 	-- Strip Textures
 	local charframe = {
 		CharacterFrame,
-		-- CharacterModelFrame,
+		CharacterModelScene,
 		CharacterFrameInset,
 		CharacterStatsPane,
 		CharacterFrameInsetRight,
@@ -139,23 +139,18 @@ local function LoadSkin()
 	hooksecurefunc("EquipmentFlyout_Show", SkinItemFlyouts)
 
 	-- Icon in upper right corner of character frame
+	CharacterFrame:SetTemplate("Transparent")
 	CharacterFramePortrait:Kill()
 	CharacterModelFrameBackgroundOverlay:SetColorTexture(0, 0, 0)
-	-- CharacterModelFrame:CreateBackdrop("Default")
-	-- CharacterModelFrame.backdrop:SetPoint("TOPLEFT", -3, 4)
-	-- CharacterModelFrame.backdrop:SetPoint("BOTTOMRIGHT", 4, 0)
+	CharacterModelScene:CreateBackdrop("Default")
+	CharacterModelScene.backdrop:SetPoint("TOPLEFT", -3, 4)
+	CharacterModelScene.backdrop:SetPoint("BOTTOMRIGHT", 4, 0)
 
-	local scrollbars = {
-		"PaperDollTitlesPaneScrollBar",
-		"PaperDollEquipmentManagerPaneScrollBar",
-		"TokenFrameContainerScrollBar",
-		"ReputationListScrollFrameScrollBar",
-		"GearManagerDialogPopupScrollFrameScrollBar"
-	}
-
-	for _, scrollbar in pairs(scrollbars) do
-		-- T.SkinScrollBar(_G[scrollbar])
-	end
+	-- Unit Background Texture
+	CharacterModelFrameBackgroundTopLeft:SetPoint("TOPLEFT", CharacterModelScene.backdrop, "TOPLEFT", 2, -2)
+	CharacterModelFrameBackgroundTopRight:SetPoint("TOPRIGHT", CharacterModelScene.backdrop, "TOPRIGHT", -2, -2)
+	CharacterModelFrameBackgroundBotLeft:SetPoint("BOTTOMLEFT", CharacterModelScene.backdrop, "BOTTOMLEFT", 2, -50)
+	CharacterModelFrameBackgroundBotRight:SetPoint("BOTTOMRIGHT", CharacterModelScene.backdrop, "BOTTOMRIGHT", -2, -50)
 
 	local scrollbars = {
 		PaperDollFrame.TitleManagerPane.ScrollBar,
@@ -198,48 +193,53 @@ local function LoadSkin()
 	SkinStatsPane(CharacterStatsPane.EnhancementsCategory)
 
 	-- Titles
-	-- PaperDollTitlesPane:HookScript("OnShow", function()
-		-- for _, object in pairs(PaperDollTitlesPane.buttons) do
-			-- object.BgTop:SetTexture(nil)
-			-- object.BgBottom:SetTexture(nil)
-			-- object.BgMiddle:SetTexture(nil)
-			-- object.Check:SetTexture(nil)
-		-- end
-	-- end)
+	hooksecurefunc(_G.PaperDollFrame.TitleManagerPane.ScrollBox, "Update", function(frame)
+		for _, child in next, {frame.ScrollTarget:GetChildren()} do
+			if not child.isSkinned then
+				child:DisableDrawLayer('BACKGROUND')
+				child.isSkinned = true
+			end
+		end
+	end)
 
 	-- Equipement Manager
-	-- PaperDollEquipmentManagerPaneEquipSet:SkinButton()
-	-- PaperDollEquipmentManagerPaneSaveSet:SkinButton()
-	-- PaperDollEquipmentManagerPaneEquipSet:SetWidth(PaperDollEquipmentManagerPaneEquipSet:GetWidth() - 8)
-	-- PaperDollEquipmentManagerPaneSaveSet:SetWidth(PaperDollEquipmentManagerPaneSaveSet:GetWidth() - 8)
-	-- PaperDollEquipmentManagerPaneEquipSet:SetPoint("TOPLEFT", PaperDollEquipmentManagerPane, "TOPLEFT", 8, 0)
-	-- PaperDollEquipmentManagerPaneSaveSet:SetPoint("LEFT", PaperDollEquipmentManagerPaneEquipSet, "RIGHT", 4, 0)
-	-- PaperDollEquipmentManagerPane:HookScript("OnShow", function()
-		-- for _, object in pairs(PaperDollEquipmentManagerPane.buttons) do
-			-- object.BgTop:SetTexture(nil)
-			-- object.BgBottom:SetTexture(nil)
-			-- object.BgMiddle:SetTexture(nil)
+	PaperDollFrameEquipSet:SkinButton()
+	PaperDollFrameSaveSet:SkinButton()
+	PaperDollFrameEquipSet:SetWidth(PaperDollFrameEquipSet:GetWidth() - 8)
+	PaperDollFrameSaveSet:SetWidth(PaperDollFrameSaveSet:GetWidth() - 8)
+	PaperDollFrameEquipSet:SetPoint("TOPLEFT", PaperDollFrame.EquipmentManagerPane, "TOPLEFT", 8, 0)
+	PaperDollFrameSaveSet:SetPoint("LEFT", PaperDollFrameEquipSet, "RIGHT", 4, 0)
+	hooksecurefunc(_G.PaperDollFrame.EquipmentManagerPane.ScrollBox, "Update", function(frame)
+		for _, child in next, {frame.ScrollTarget:GetChildren()} do
+			if child.icon and not child.isSkinned then
 
-			-- object.Check:SetTexture(nil)
-			-- object.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				child.BgTop:SetTexture(nil)
+				child.BgBottom:SetTexture(nil)
+				child.BgMiddle:SetTexture(nil)
 
-			-- if not object.backdrop then
-				-- object:CreateBackdrop("Default")
-			-- end
+				child.Check:SetTexture(nil)
+				child.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-			-- object.backdrop:SetPoint("TOPLEFT", object.icon, "TOPLEFT", -2, 2)
-			-- object.backdrop:SetPoint("BOTTOMRIGHT", object.icon, "BOTTOMRIGHT", 2, -2)
-			-- object.icon:SetParent(object.backdrop)
+				if not child.backdrop then
+					child:CreateBackdrop("Default")
+				end
 
-			-- Making all icons the same size and position because otherwise BlizzardUI tries to attach itself to itself when it refreshes
-			-- object.icon:SetPoint("LEFT", object, "LEFT", 4, 0)
-			-- object.icon.SetPoint = T.dummy
-			-- object.icon:SetSize(36, 36)
-			-- object.icon.SetSize = T.dummy
-		-- end
-	-- end)
+				child.backdrop:SetPoint("TOPLEFT", child.icon, "TOPLEFT", -2, 2)
+				child.backdrop:SetPoint("BOTTOMRIGHT", child.icon, "BOTTOMRIGHT", 2, -2)
+				child.icon:SetParent(child.backdrop)
 
-	-- T.SkinIconSelectionFrame(GearManagerDialogPopup, NUM_GEARSET_ICONS_SHOWN, "GearManagerDialogPopupButton")
+				-- Making all icons the same size and position because otherwise BlizzardUI tries to attach itself to itself when it refreshes
+				child.icon:SetPoint("LEFT", child, "LEFT", 4, 0)
+				child.icon.SetPoint = T.dummy
+				child.icon:SetSize(36, 36)
+				child.icon.SetSize = T.dummy
+
+				child.isSkinned = true
+			end
+		end
+	end)
+
+	-- BETA T.SkinIconSelectionFrame(GearManagerDialogPopup, NUM_GEARSET_ICONS_SHOWN, "GearManagerDialogPopupButton")
 
 	-- Handle Tabs at bottom of character frame
 	for i = 1, 4 do
@@ -275,89 +275,61 @@ local function LoadSkin()
 	hooksecurefunc("PaperDollFrame_UpdateSidebarTabs", FixSidebarTabCoords)
 
 	-- Reputation
-	-- local function UpdateFactionSkins()
-		-- -- ReputationListScrollFrame:StripTextures()
-		-- ReputationFrame:StripTextures(true)
-		-- local factionOffset = FauxScrollFrame_GetOffset(ReputationListScrollFrame)
-		-- for i = 1, GetNumFactions() do
-			-- local statusbar = _G["ReputationBar"..i.."ReputationBar"]
-			-- local button = _G["ReputationBar"..i.."ExpandOrCollapseButton"]
-			-- local factionIndex = factionOffset + i
-			-- local _, _, _, _, _, _, _, _, _, isCollapsed = GetFactionInfo(factionIndex)
+	hooksecurefunc(_G.ReputationFrame.ScrollBox, 'Update', function(frame)
+		for _, child in next, { frame.ScrollTarget:GetChildren() } do
+			local container = child.Container
+			if container and not container.IsSkinned then
+				container:StripTextures()
 
-			-- if statusbar then
-				-- statusbar:SetStatusBarTexture(C.media.texture)
+				if container.ExpandOrCollapseButton then
+					T.SkinExpandOrCollapse(container.ExpandOrCollapseButton)
+				end
 
-				-- if not statusbar.backdrop then
-					-- statusbar:CreateBackdrop("Overlay")
-				-- end
+				if container.ReputationBar then
+					container.ReputationBar:StripTextures()
+					container.ReputationBar:SetStatusBarTexture(C.media.texture)
+					if not container.ReputationBar.backdrop then
+						container.ReputationBar:CreateBackdrop("Overlay")
+					end
+				end
 
-				-- _G["ReputationBar"..i.."Background"]:SetTexture(nil)
-				-- _G["ReputationBar"..i.."ReputationBarHighlight1"]:SetTexture(nil)
-				-- _G["ReputationBar"..i.."ReputationBarHighlight2"]:SetTexture(nil)
-				-- _G["ReputationBar"..i.."ReputationBarAtWarHighlight1"]:SetTexture(nil)
-				-- _G["ReputationBar"..i.."ReputationBarAtWarHighlight2"]:SetTexture(nil)
-				-- _G["ReputationBar"..i.."ReputationBarLeftTexture"]:SetTexture(nil)
-				-- _G["ReputationBar"..i.."ReputationBarRightTexture"]:SetTexture(nil)
-			-- end
+				container.IsSkinned = true
+			end
+		end
+	end)
 
-			-- if button then
-				-- if not button.isSkinned then
-					-- T.SkinExpandOrCollapse(button)
-					-- if isCollapsed then
-						-- button.bg.plus:Show()
-					-- else
-						-- button.bg.plus:Hide()
-					-- end
-					-- button.isSkinned = true
-				-- end
-			-- end
-		-- end
-		-- ReputationDetailFrame:StripTextures()
-		-- ReputationDetailFrame:SetTemplate("Transparent")
-		-- ReputationDetailFrame:SetPoint("TOPLEFT", ReputationFrame, "TOPRIGHT", 3, 0)
-		-- T.SkinCloseButton(ReputationDetailCloseButton)
-		-- T.SkinCheckBox(ReputationDetailMainScreenCheckBox)
-		-- T.SkinCheckBox(ReputationDetailInactiveCheckBox)
-		-- T.SkinCheckBox(ReputationDetailAtWarCheckBox)
-	-- end
-	-- ReputationFrame:HookScript("OnShow", UpdateFactionSkins)
-	-- hooksecurefunc("ExpandFactionHeader", UpdateFactionSkins)
-	-- hooksecurefunc("CollapseFactionHeader", UpdateFactionSkins)
+	ReputationDetailFrame:StripTextures()
+	ReputationDetailFrame:SetTemplate("Transparent")
+	ReputationDetailFrame:SetPoint("TOPLEFT", ReputationFrame, "TOPRIGHT", 3, 0)
+	T.SkinCloseButton(ReputationDetailCloseButton)
+	T.SkinCheckBox(ReputationDetailMainScreenCheckBox)
+	T.SkinCheckBox(ReputationDetailInactiveCheckBox)
+	T.SkinCheckBox(ReputationDetailAtWarCheckBox)
 
 	-- Currency
-	-- TokenFrame:HookScript("OnShow", function()
-		-- local buttons = TokenFrameContainer.buttons
-		-- local numButtons = #buttons
+	TokenFramePopup:StripTextures()
+	TokenFramePopup:SetTemplate("Transparent")
+	TokenFramePopup:SetPoint("TOPLEFT", TokenFrame, "TOPRIGHT", 3, 0)
+	if TokenFramePopup.CloseButton then
+		T.SkinCloseButton(TokenFramePopup.CloseButton)
+	end
+	T.SkinCheckBox(TokenFramePopup.InactiveCheckBox)
+	T.SkinCheckBox(TokenFramePopup.BackpackCheckBox)
 
-		-- for i = 1, numButtons do
-			-- local button = buttons[i]
-			-- if button then
-				-- button.highlight:Kill()
-				-- button.categoryMiddle:Kill()
-				-- button.categoryLeft:Kill()
-				-- button.categoryRight:Kill()
+	hooksecurefunc(_G.TokenFrame.ScrollBox, "Update", function(frame)
+		for _, child in next, {frame.ScrollTarget:GetChildren()} do
+			if child.Highlight and not child.styled then
+				child.CategoryLeft:SetAlpha(0)
+				child.CategoryRight:SetAlpha(0)
+				child.CategoryMiddle:SetAlpha(0)
+				child.Highlight:Kill()
 
-				-- if button.icon then
-					-- button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				-- end
-			-- end
-		-- end
-		-- TokenFramePopup:StripTextures()
-		-- TokenFramePopup:SetTemplate("Transparent")
-		-- TokenFramePopup:SetPoint("TOPLEFT", TokenFrame, "TOPRIGHT", 3, 0)
-		-- T.SkinCloseButton(TokenFramePopupCloseButton)
-		-- T.SkinCheckBox(TokenFramePopupBackpackCheckBox)
-		-- T.SkinCheckBox(TokenFramePopupInactiveCheckBox)
-	-- end)
+				child.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-	CharacterFrame:SetTemplate("Transparent")
-
-	-- Unit Background Texture
-	-- CharacterModelFrameBackgroundTopLeft:SetPoint("TOPLEFT", CharacterModelFrame.backdrop, "TOPLEFT", 2, -2)
-	-- CharacterModelFrameBackgroundTopRight:SetPoint("TOPRIGHT", CharacterModelFrame.backdrop, "TOPRIGHT", -2, -2)
-	-- CharacterModelFrameBackgroundBotLeft:SetPoint("BOTTOMLEFT", CharacterModelFrame.backdrop, "BOTTOMLEFT", 2, -50)
-	-- CharacterModelFrameBackgroundBotRight:SetPoint("BOTTOMRIGHT", CharacterModelFrame.backdrop, "BOTTOMRIGHT", -2, -50)
+				child.styled = true
+			end
+		end
+	end)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
