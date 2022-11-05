@@ -22,7 +22,14 @@ if T.newPatch then
 	GetContainerItemCooldown = _G.GetContainerItemCooldown or C_Container.GetContainerItemCooldown
 	UseContainerItem = _G.UseContainerItem or C_Container.UseContainerItem
 	GetContainerItemID = _G.GetContainerItemID or C_Container.GetContainerItemID
-
+	SortBags = C_Container.SortBags
+	SortBankBags = C_Container.SortBankBags
+	SortReagentBankBags = C_Container.SortReagentBankBags
+	SetSortBagsRightToLeft = C_Container.SetSortBagsRightToLeft
+	SetInsertItemsLeftToRight = C_Container.SetInsertItemsLeftToRight
+	PickupContainerItem = C_Container.PickupContainerItem
+	--GetContainerItemInfo = C_Container.GetContainerItemInfo //-- It's in use more places.
+	
 	GetContainerItemInfo = function(bagIndex, slotIndex)
 		local info = C_Container.GetContainerItemInfo(bagIndex, slotIndex)
 		if info then
