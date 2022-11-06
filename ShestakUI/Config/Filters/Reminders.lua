@@ -175,5 +175,15 @@ if C.reminder.solo_buffs_enable == true then
 				["pvp"] = true,
 			},
 		},
+		EVOKER = {
+			[1] = {	-- Blessing of the Bronze
+				["spells"] = {
+					SpellName(381748),	-- Blessing of the Bronze
+				},
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
+			},
+		},
 	}
 end
