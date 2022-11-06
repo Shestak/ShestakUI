@@ -40,6 +40,12 @@ do
 			["Curse"] = true,
 			["Poison"] = true,
 		},
+		["EVOKER"] = {
+			["Magic"] = false,
+			["Curse"] = true,
+			["Poison"] = true,
+			["Disease"] = true,
+		},
 		["MAGE"] = {
 			["Curse"] = true,
 		},
