@@ -424,7 +424,33 @@ local function Shared(self, unit)
 				self.SoulShards[i].bg:SetVertexColor(0.9, 0.37, 0.37, 0.2)
 			end
 		end
+		
+		-- Essence bar
+		if C.unitframe_class_bar.essence == true and T.class == "EVOKER" then
+			self.Essence = CreateFrame("Frame", self:GetName().."_Essence", self, "BackdropTemplate", "BackdropTemplate")
+			local maxEssence = UnitPowerMax(self.unit, Enum.PowerType.Essence)
+			self.Essence:CreateBackdrop("Default")
+			self.Essence:SetPoint("BOTTOMLEFT", self, "TOPLEFT", 0, 7)
+			self.Essence:SetSize(player_width, 7)
 
+			for i = 1, 6 do
+				self.Essence[i] = CreateFrame("StatusBar", self:GetName().."_Essence"..i, self.Essence, "BackdropTemplate")
+				self.Essence[i]:SetSize((player_width - 5) / 6, 7)
+				if i == 1 then
+					self.Essence[i]:SetPoint("LEFT", self.Essence)
+				else
+					self.Essence[i]:SetPoint("TOPLEFT", self.Essence[i-1], "TOPRIGHT", 1, 0)
+				end
+				self.Essence[i]:SetStatusBarTexture(C.media.texture)
+				self.Essence[i]:SetStatusBarColor(0.2, 0.58, 0.5)
+
+				self.Essence[i].bg = self.Essence[i]:CreateTexture(nil, "BORDER")
+				self.Essence[i].bg:SetAllPoints()
+				self.Essence[i].bg:SetTexture(C.media.texture)
+				self.Essence[i].bg:SetVertexColor(0.2, 0.58, 0.5, 0.2)
+			end
+		end
+		
 		-- Rogue/Druid Combo bar
 		if C.unitframe_class_bar.combo == true and C.unitframe_class_bar.combo_old ~= true and (T.class == "ROGUE" or T.class == "DRUID") then
 			self.ComboPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)

@@ -1309,9 +1309,12 @@ do
 
 	local chi = ns.CreateCheckBox(parent, "chi", L_GUI_UF_PLUGINS_CHI_BAR)
 	chi:SetPoint("TOPLEFT", arcane, "BOTTOMLEFT", 0, 0)
+	
+	local essence = ns.CreateCheckBox(parent, "essence")
+	essence:SetPoint("TOPLEFT", chi, "BOTTOMLEFT", 0, 0)
 
 	local stagger = ns.CreateCheckBox(parent, "stagger", L_GUI_UF_PLUGINS_STAGGER_BAR)
-	stagger:SetPoint("TOPLEFT", chi, "BOTTOMLEFT", 0, 0)
+	stagger:SetPoint("TOPLEFT", essence, "BOTTOMLEFT", 0, 0)
 
 	local holy = ns.CreateCheckBox(parent, "holy", L_GUI_UF_PLUGINS_HOLY_BAR)
 	holy:SetPoint("TOPLEFT", stagger, "BOTTOMLEFT", 0, 0)

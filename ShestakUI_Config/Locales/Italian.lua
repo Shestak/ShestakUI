@@ -162,6 +162,7 @@ L_GUI_UF_PLUGINS_SHARD_BAR = "Attiva la barra di classe dello stregone"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Attiva la barra di classe del cavaliere della morte"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Attiva la barra dei totems dello sciamano"
 L.unitframe_class_bar_totem_other = "Enable Totem bar for other classes" -- Need review
+L.unitframe_class_bar_essence = "Enable Essence bar for Evoker" -- Need review
 
 -- Raid Frames options
 L_GUI_UF_RAIDFRAMES_SUBTEXT = "Customize the appearance of the raid frames." -- Need review

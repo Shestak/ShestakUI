@@ -154,6 +154,7 @@ C["unitframe_class_bar"] = {
 	["combo_old"] = false,						-- Show combo point on the target
 	["arcane"] = true,							-- Arcane Charge bar
 	["chi"] = true,								-- Chi bar
+	["essence"] = true,							-- Essence bar	
 	["stagger"] = true,							-- Stagger bar (for Monk Tanks)
 	["holy"] = true,							-- Holy Power bar
 	["shard"] = true,							-- Shard/Burning bar

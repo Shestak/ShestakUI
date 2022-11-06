@@ -162,6 +162,7 @@ L_GUI_UF_PLUGINS_SHARD_BAR = "灵魂碎片"
 L_GUI_UF_PLUGINS_RUNE_BAR = "符文"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "图腾"
 L.unitframe_class_bar_totem_other = "其他职业图腾"
+L.unitframe_class_bar_essence = "Enable Essence bar for Evoker" -- Need review
 
 -- Raid Frames options
 L_GUI_UF_RAIDFRAMES_SUBTEXT = "定制队伍/团队框架"

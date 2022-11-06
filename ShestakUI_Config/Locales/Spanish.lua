@@ -162,6 +162,7 @@ L_GUI_UF_PLUGINS_SHARD_BAR = "Activar barra de fragmentos"
 L_GUI_UF_PLUGINS_RUNE_BAR = "Activar barra de Runas"
 L_GUI_UF_PLUGINS_TOTEM_BAR = "Activar barra de totems"
 L.unitframe_class_bar_totem_other = "Enable Totem bar for other classes" -- Need review
+L.unitframe_class_bar_essence = "Enable Essence bar for Evoker" -- Need review
 
 -- Raid Frames options
 L_GUI_UF_RAIDFRAMES_SUBTEXT = "Customize the appearance of the raid frames." -- Need review
