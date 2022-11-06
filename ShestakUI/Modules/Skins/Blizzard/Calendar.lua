@@ -69,10 +69,10 @@ local function LoadSkin()
 	bg:SetPoint("TOPLEFT", 10, -72)
 	bg:SetPoint("BOTTOMRIGHT", -8, 3)
 
-	CalendarContextMenu:SetTemplate("Transparent")
-	CalendarContextMenu.SetBackdropColor = T.dummy
-	CalendarContextMenu.SetBackdropBorderColor = T.dummy
-	CalendarInviteStatusContextMenu:SetTemplate("Transparent")
+	CalendarContextMenu.NineSlice:SetTemplate("Transparent")
+	-- CalendarContextMenu.SetBackdropColor = T.dummy
+	-- CalendarContextMenu.SetBackdropBorderColor = T.dummy
+	CalendarInviteStatusContextMenu.NineSlice:SetTemplate("Transparent")
 
 	-- Boost frame levels
 	for i = 1, 42 do
@@ -131,9 +131,9 @@ local function LoadSkin()
 	-- Texture Picker Frame
 	CalendarTexturePickerFrame:SetTemplate("Transparent")
 
-	T.SkinScrollBar(CalendarTexturePickerScrollBar)
-	T.SkinScrollBar(CalendarViewEventInviteListScrollFrameScrollBar)
-	T.SkinScrollBar(CalendarCreateEventDescriptionScrollFrameScrollBar)
+	T.SkinScrollBar(CalendarTexturePickerFrame.ScrollBar)
+	--BETA T.SkinScrollBar(CalendarViewEventInviteListScrollFrame.ScrollBar)
+	-- T.SkinScrollBar(CalendarCreateEventDescriptionScrollFrame.ScrollBar)
 	CalendarTexturePickerAcceptButton:SkinButton(true)
 	CalendarTexturePickerCancelButton:SkinButton(true)
 	CalendarCreateEventRaidInviteButton:SkinButton(true)
@@ -146,6 +146,7 @@ local function LoadSkin()
 	T.SkinEditBox(CalendarMassInviteMaxLevelEdit)
 	CalendarMassInviteAcceptButton:SkinButton()
 	T.SkinCloseButton(CalendarMassInviteCloseButton)
+	T.SkinDropDownBox(CalendarCreateEventCommunityDropDown, 240)
 
 	-- Raid View
 	CalendarViewRaidFrame:SetTemplate("Transparent")
@@ -166,7 +167,7 @@ local function LoadSkin()
 	T.SkinCloseButton(CalendarViewEventCloseButton)
 
 	CalendarEventPickerFrame:SetTemplate("Transparent")
-	T.SkinScrollBar(CalendarEventPickerScrollBar)
+	-- T.SkinScrollBar(CalendarEventPicker.ScrollBar)
 	CalendarEventPickerCloseButton:SkinButton(true)
 
 	local buttons = {

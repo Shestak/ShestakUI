@@ -16,8 +16,8 @@
 	<!-- <Script file="Binding.lua"/> -->
 	<!-- <Script file="BlackMarket.lua"/> -->
 	<!-- <Script file="BonusRoll.lua"/> -->
-	<!-- <Script file="Bubbles.lua"/> -->
-	<!-- <Script file="Calendar.lua"/> -->
+	<Script file="Bubbles.lua"/>
+	<Script file="Calendar.lua"/>
 	<!-- <Script file="Channels.lua"/> -->
 	<Script file="Character.lua"/>
 	<!-- <Script file="ChatConfig.lua"/> -->
@@ -77,9 +77,9 @@
 	<!-- <Script file="Subscription.lua"/> -->
 	<!-- <Script file="Tabard.lua"/> -->
 	<!-- <Script file="Talent.lua"/> -->
-	<!-- <Script file="TalkingHead.lua"/> -->
+	<Script file="TalkingHead.lua"/>
 	<!-- <Script file="Taxi.lua"/> -->
-	<!-- <Script file="TimeManager.lua"/> -->
+	<Script file="TimeManager.lua"/>
 	<!-- <Script file="TorghastLevelPicker.lua"/> -->
 	<!-- <Script file="Trade.lua"/> -->
 	<!-- <Script file="TradeSkill.lua"/> -->
