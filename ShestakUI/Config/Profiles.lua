@@ -216,7 +216,7 @@ if IsWetxius then
 	C["chat"].chat_bar_mouseover = true
 	C["chat"].combatlog = false
 	C["chat"].loot_icons = true
-	C["chat"].history = true
+	-- C["chat"].history = true
 	C["chat"].role_icons = true
 	C["chat"].custom_time_color = false
 	C["nameplate"].health_value = true
@@ -265,17 +265,17 @@ if IsWetxius then
 	C["position"].raid_cooldown = {"TOPLEFT", UIParent, "TOPLEFT", 300, -14}
 	C["position"].bag = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 20}
 	C["position"].bank = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 20}
-	C["position"].auto_button = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 33, 83}
+	C["position"].auto_button = {"BOTTOMLEFT", "oUF_Player" or ChatFrame1, "TOPRIGHT", 33, 83}
 	C["position"].unitframes.arena = {"BOTTOMRIGHT", UIParent, "RIGHT", -55, -70}
 	C["position"].stance_bar = {"TOPRIGHT", "ActionBarAnchor", "TOPLEFT", -3, 0}
 
-	--BETA local frame = CreateFrame("Frame")
-	-- frame:RegisterEvent("PLAYER_LOGIN")
-	-- frame:SetScript("OnEvent", function()
-		-- xCT3:SetPoint("CENTER", 0, 305)
-		-- xCT3:SetWidth(400)
-		-- C["combattext"].heal_treshold = UnitHealthMax("player")/100
-	-- end)
+	local frame = CreateFrame("Frame")
+	frame:RegisterEvent("PLAYER_LOGIN")
+	frame:SetScript("OnEvent", function()
+		xCT3:SetPoint("CENTER", 0, 305)
+		xCT3:SetWidth(400)
+		C["combattext"].heal_treshold = UnitHealthMax("player")/100
+	end)
 
 	T.CustomFilgerSpell = {
 		{"P_PROC_ICON", {spellID = 328908, unitID = "player", caster = "player", filter = "BUFF"}}, -- Combat Meditation {Kyrian)
