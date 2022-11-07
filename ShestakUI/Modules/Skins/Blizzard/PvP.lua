@@ -63,9 +63,9 @@ local function LoadSkin()
 
 	T.SkinDropDownBox(HonorFrameTypeDropDown, 165)
 	HonorFrameTypeDropDown:SetPoint("BOTTOMRIGHT", HonorFrame.Inset, "TOPRIGHT", -6, -1)
-	T.SkinScrollBar(HonorFrameSpecificFrameScrollBar)
-	HonorFrameSpecificFrameScrollBar:SetPoint("TOPLEFT", HonorFrameSpecificFrame, "TOPRIGHT", 0, -15)
-	HonorFrameSpecificFrameScrollBar:SetPoint("BOTTOMLEFT", HonorFrameSpecificFrame, "BOTTOMRIGHT", 0, 15)
+	T.SkinScrollBar(HonorFrame.SpecificScrollBar)
+	--HonorFrame.SpecificScrollBar:SetPoint("TOPLEFT", HonorFrameSpecificFrame, "TOPRIGHT", 0, -15)
+	--HonorFrame.SpecificScrollBar:SetPoint("BOTTOMLEFT", HonorFrameSpecificFrame, "BOTTOMRIGHT", 0, 15)
 	HonorFrameQueueButton:SkinButton(true)
 
 	PVPQueueFrame.HonorInset:StripTextures()
@@ -112,14 +112,14 @@ local function LoadSkin()
 		EnlistmentBonusIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 
-	hooksecurefunc("PVPUIFrame_ConfigureRewardFrame", function(rewardFrame, _, _, itemRewards, currencyRewards)
+	hooksecurefunc('PVPUIFrame_ConfigureRewardFrame', function(rewardFrame, _, _, itemRewards, currencyRewards)
 		local rewardTexture, rewardQuaility, _ = nil, 1
 
 		if currencyRewards then
 			for _, reward in ipairs(currencyRewards) do
 				local info = C_CurrencyInfo.GetCurrencyInfo(reward.id)
-				if infon and info.quality == Enum.ItemQuality.Legendary then
-					_, rewardTexture, _, rewardQuaility = CurrencyContainerUtil.GetCurrencyContainerInfo(reward.id, reward.quantity, info.name, info.iconFileID, info.quality)
+				if info and info.quality == ITEMQUALITY_ARTIFACT then
+					_, rewardTexture, _, rewardQuaility = CurrencyContainerUtil_GetCurrencyContainerInfo(reward.id, reward.quantity, info.name, info.iconFileID, info.quality)
 				end
 			end
 		end
@@ -132,27 +132,33 @@ local function LoadSkin()
 		end
 
 		if rewardTexture then
+			local r, g, b = GetItemQualityColor(rewardQuaility)
 			rewardFrame.Icon:SetTexture(rewardTexture)
-			rewardFrame:SetBackdropBorderColor(GetItemQualityColor(rewardQuaility))
+			--rewardFrame.Icon.backdrop:SetBackdropBorderColor(r, g, b)
 		end
 	end)
-
-	for i = 1, #HonorFrame.SpecificFrame.buttons do
-		local button = HonorFrame.SpecificFrame.buttons[i]
-		button:SetSize(368, 38)
-		button:StripTextures()
-		button:SetTemplate("Overlay")
-		button:StyleButton()
-		button.SelectedTexture:SetDrawLayer("ARTWORK")
-		button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
-		button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
-		button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
-		if i == 1 then
-			button:SetPoint("TOPLEFT", HonorFrameSpecificFrameScrollChild, "TOPLEFT", 0, -1)
-		else
-			button:SetPoint("TOPLEFT", HonorFrame.SpecificFrame.buttons[i-1], "BOTTOMLEFT", 0, -2)
+	
+	hooksecurefunc(HonorFrame.SpecificScrollBox, 'Update', function (self)
+		for i = 1, self.ScrollTarget:GetNumChildren() do
+			local button = select(i, self.ScrollTarget:GetChildren())
+			if not button.IsSkinned then
+				button:SetSize(368, 38)
+				button:StripTextures()
+				button:SetTemplate("Overlay")
+				button:StyleButton()
+				button.SelectedTexture:SetDrawLayer("ARTWORK")
+				button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
+				button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
+				button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
+				if i == 1 then
+					--button:SetPoint("TOPLEFT", HonorFrameSpecificFrameScrollChild, "TOPLEFT", 0, -1)
+				else
+					--button:SetPoint("TOPLEFT", HonorFrame.SpecificFrame.buttons[i-1], "BOTTOMLEFT", 0, -2)
+				end
+				button.IsSkinned = true
+			end
 		end
-	end
+	end)
 
 	local checkButtons = {
 		HonorFrame.TankIcon,
@@ -199,7 +205,7 @@ local function LoadSkin()
 	ConquestFrame.Inset:StripTextures()
 	ConquestFrame.ShadowOverlay:StripTextures()
 
-	for _, button in pairs({ConquestFrame.Arena2v2, ConquestFrame.Arena3v3, ConquestFrame.RatedBG}) do
+	for _, button in pairs({ConquestFrame.RatedSoloShuffle, ConquestFrame.Arena2v2, ConquestFrame.Arena3v3, ConquestFrame.RatedBG}) do
 		button:StripTextures()
 		button:SetTemplate("Overlay")
 		button:StyleButton()

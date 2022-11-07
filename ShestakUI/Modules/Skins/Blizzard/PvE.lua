@@ -99,13 +99,12 @@ local function LoadSkin()
 		LFDQueueFrameRandomScrollFrameScrollBar,
 		RaidFinderQueueFrameScrollFrameScrollBar,
 		LFGListEntryCreationSearchScrollFrameScrollBar,
-		LFGListFrame.SearchPanel.ScrollFrame.scrollBar
 	}
 
 	for i = 1, #scrollbars do
 		T.SkinScrollBar(scrollbars[i])
 	end
-
+	
 	-- Set texture to hide circle
 	_G.GroupFinderFrame.groupButton1.icon:SetTexture("Interface\\Icons\\INV_Helmet_08")
 	_G.GroupFinderFrame.groupButton2.icon:SetTexture("Interface\\LFGFrame\\UI-LFR-PORTRAIT")
@@ -244,6 +243,7 @@ local function LoadSkin()
 	RaidFinderQueueFramePartyBackfill.backdrop:SetPoint("BOTTOMRIGHT", 0, 8)
 
 	T.SkinDropDownBox(LFDQueueFrameTypeDropDown, 300)
+	LFDQueueFrameTypeDropDownBackdrop:SetFrameStrata("LOW") --// FIXME - Both text and dropdownbutton is behind backdrop
 	LFDQueueFrameTypeDropDown:SetPoint("RIGHT", -10, 0)
 
 	T.SkinDropDownBox(RaidFinderQueueFrameSelectionDropDown, 300)
@@ -257,21 +257,22 @@ local function LoadSkin()
 	LFGListFrame.CategorySelection.StartGroupButton:SkinButton()
 	LFGListFrame.SearchPanel.BackButton:SkinButton()
 	LFGListFrame.SearchPanel.SignUpButton:SkinButton()
-	LFGListSearchPanelScrollFrameScrollChild.StartGroupButton:SkinButton()
+	LFGListFrame.SearchPanel.ScrollBox.StartGroupButton:SkinButton()
 	LFGListFrame.SearchPanel.RefreshButton:SkinButton()
 	LFGListFrame.SearchPanel.RefreshButton:SetSize(24, 24)
 	LFGListFrame.SearchPanel.RefreshButton.Icon:SetPoint("CENTER")
 	LFGListFrame.SearchPanel.FilterButton:SkinButton()
 	LFGListFrame.SearchPanel.FilterButton:SetPoint("LEFT", LFGListFrame.SearchPanel.SearchBox, "RIGHT", 5, 0)
+	T.SkinScrollBar(LFGListFrame.SearchPanel.ScrollBar)
 
 	hooksecurefunc("LFGListApplicationViewer_UpdateApplicant", function(button)
 		if not button.DeclineButton.isSkinned then
 			button.DeclineButton:SkinButton()
 			button.DeclineButton.isSkinned = true
 		end
-		if not button.InviteButton.isSkinned then
-			button.InviteButton:SkinButton()
-			button.InviteButton.isSkinned = true
+		if not button.InviteButtonSmall.isSkinned then
+			button.InviteButtonSmall:SkinButton()
+			button.InviteButtonSmall.isSkinned = true
 		end
 	end)
 
@@ -320,8 +321,6 @@ local function LoadSkin()
 	T.SkinCloseButton(LFGDungeonReadyStatusCloseButton, nil, "-")
 	T.SkinCloseButton(LFGDungeonReadyDialogCloseButton, LFGDungeonReadyDialog, "-")
 
-	LFDQueueFrameSpecificListScrollFrameScrollBackgroundTopLeft:SetTexture(nil)
-	LFDQueueFrameSpecificListScrollFrameScrollBackgroundBottomRight:SetTexture(nil)
 	LFDQueueFrameRandomScrollFrameScrollBackground:SetTexture(nil)
 	LFDQueueFrameRandomScrollFrameScrollBackgroundTopLeft:SetTexture(nil)
 	LFDQueueFrameRandomScrollFrameScrollBackgroundBottomRight:SetTexture(nil)
@@ -426,6 +425,11 @@ local function LoadSkin()
 	LFGListFrame.ApplicationViewer.ItemLevelColumnHeader:SetPoint("LEFT", LFGListFrame.ApplicationViewer.RoleColumnHeader, "RIGHT", 1, 0)
 	LFGListFrame.ApplicationViewer.ItemLevelColumnHeader.Label:SetFont(C.media.normal_font, 10, "")
 
+	LFGListFrame.ApplicationViewer.RatingColumnHeader:SkinButton(true)
+	LFGListFrame.ApplicationViewer.RatingColumnHeader:ClearAllPoints()
+	LFGListFrame.ApplicationViewer.RatingColumnHeader:SetPoint("LEFT", LFGListFrame.ApplicationViewer.ItemLevelColumnHeader, "RIGHT", 1, 0)
+	LFGListFrame.ApplicationViewer.RatingColumnHeader.Label:SetFont(C.media.normal_font, 10, "")
+
 	LFGListFrame.ApplicationViewer.RefreshButton:SkinButton()
 	LFGListFrame.ApplicationViewer.RefreshButton:SetSize(24,24)
 	LFGListFrame.ApplicationViewer.RefreshButton:ClearAllPoints()
@@ -433,19 +437,24 @@ local function LoadSkin()
 
 	LFGListFrame.ApplicationViewer.RemoveEntryButton:SkinButton(true)
 	LFGListFrame.ApplicationViewer.RemoveEntryButton:ClearAllPoints()
-	LFGListFrame.ApplicationViewer.RemoveEntryButton:SetPoint("BOTTOMLEFT", -1, 3)
+	LFGListFrame.ApplicationViewer.RemoveEntryButton:SetPoint("BOTTOMLEFT", -1, 2)
+	LFGListFrame.ApplicationViewer.RemoveEntryButton:SetWidth(80)
 
 	LFGListFrame.ApplicationViewer.EditButton:SkinButton(true)
 	LFGListFrame.ApplicationViewer.EditButton:ClearAllPoints()
-	LFGListFrame.ApplicationViewer.EditButton:SetPoint("BOTTOMRIGHT", -6, 3)
-
-	LFGListApplicationViewerScrollFrameScrollBar:ClearAllPoints()
-	LFGListApplicationViewerScrollFrameScrollBar:SetPoint("TOPLEFT", LFGListFrame.ApplicationViewer.Inset, "TOPRIGHT", 0, -14)
-	LFGListApplicationViewerScrollFrameScrollBar:SetPoint("BOTTOMLEFT", LFGListFrame.ApplicationViewer.Inset, "BOTTOMRIGHT", 0, 14)
-
+	LFGListFrame.ApplicationViewer.EditButton:SetPoint("BOTTOMRIGHT", -6, 2)
+	LFGListFrame.ApplicationViewer.EditButton:SetWidth(80)
+	
+	LFGListFrame.ApplicationViewer.BrowseGroupsButton:SkinButton(true)
+	
+	LFGListFrame.ApplicationViewer.ScrollBar:ClearAllPoints()
+	LFGListFrame.ApplicationViewer.ScrollBar:SetPoint("TOPLEFT", LFGListFrame.ApplicationViewer.Inset, "TOPRIGHT", 0, -14)
+	LFGListFrame.ApplicationViewer.ScrollBar:SetPoint("BOTTOMLEFT", LFGListFrame.ApplicationViewer.Inset, "BOTTOMRIGHT", 0, 14)
+	T.SkinScrollBar(LFGListFrame.ApplicationViewer.ScrollBar)
+	
 	LFGListFrame.ApplicationViewer.InfoBackground:SkinIcon()
 	LFGListFrame.ApplicationViewer.InfoBackground:SetPoint("TOPLEFT", 1, -27)
-	LFGListFrame.ApplicationViewer.InfoBackground:SetSize(326, 90)
+	LFGListFrame.ApplicationViewer.InfoBackground:SetSize(324, 90)
 
 	if IsAddOnLoaded("PremadeGroupsFilter") then
 		T.SkinCheckBox(UsePFGButton)
@@ -457,27 +466,23 @@ local function LoadSkin()
 		PremadeGroupsFilterDialog.RefreshButton:SkinButton()
 		T.SkinCloseButton(PremadeGroupsFilterDialog.CloseButton)
 
-		T.SkinCloseButton(PremadeGroupsFilterDialog.MinimizeButton, nil, "-")
-		PremadeGroupsFilterDialog.MinimizeButton:SetHitRectInsets(0, 0, 0, 0)
-		PremadeGroupsFilterDialog.MinimizeButton:ClearAllPoints()
-		PremadeGroupsFilterDialog.MinimizeButton:SetPoint("TOPRIGHT", PremadeGroupsFilterDialog.CloseButton, "TOPLEFT", -3, 0)
-		T.SkinCloseButton(PremadeGroupsFilterDialog.MaximizeButton, nil, "+")
-		PremadeGroupsFilterDialog.MaximizeButton:SetHitRectInsets(0, 0, 0, 0)
-		PremadeGroupsFilterDialog.MaximizeButton:ClearAllPoints()
-		PremadeGroupsFilterDialog.MaximizeButton:SetPoint("TOPRIGHT", PremadeGroupsFilterDialog.CloseButton, "TOPLEFT", -3, 0)
-		PremadeGroupsFilterDialog.MoveableToggle:SetPoint("LEFT", PremadeGroupsFilterDialog, "LEFT", 0, 0)
+		T.SkinCloseButton(PremadeGroupsFilterDialog.MaxMinButtonFrame.MinimizeButton, nil, "-")
+		PremadeGroupsFilterDialog.MaxMinButtonFrame.MinimizeButton:SetHitRectInsets(0, 0, 0, 0)
+		PremadeGroupsFilterDialog.MaxMinButtonFrame.MinimizeButton:ClearAllPoints()
+		PremadeGroupsFilterDialog.MaxMinButtonFrame.MinimizeButton:SetPoint("TOPRIGHT", PremadeGroupsFilterDialog.CloseButton, "TOPLEFT", -3, 0)
+		T.SkinCloseButton(PremadeGroupsFilterDialog.MaxMinButtonFrame.MaximizeButton, nil, "+")
+		PremadeGroupsFilterDialog.MaxMinButtonFrame.MaximizeButton:SetHitRectInsets(0, 0, 0, 0)
+		PremadeGroupsFilterDialog.MaxMinButtonFrame.MaximizeButton:ClearAllPoints()
+		PremadeGroupsFilterDialog.MaxMinButtonFrame.MaximizeButton:SetPoint("TOPRIGHT", PremadeGroupsFilterDialog.CloseButton, "TOPLEFT", -3, 0)
 
 		T.SkinDropDownBox(PremadeGroupsFilterDialog.Difficulty.DropDown)
 		T.SkinEditBox(PremadeGroupsFilterDialog.Expression)
-		PremadeGroupsFilterDialog.Advanced:StripTextures()
 		PremadeGroupsFilterDialog.Difficulty.DropDown:SetPoint("TOPRIGHT", PremadeGroupsFilterDialog.Difficulty, "TOPRIGHT", 5, 1)
-		PremadeGroupsFilterDialog.ResetButton:SetPoint("BOTTOMLEFT", PremadeGroupsFilterDialog, "BOTTOMLEFT", 9, 3)
-		PremadeGroupsFilterDialog.RefreshButton:SetPoint("BOTTOMRIGHT", PremadeGroupsFilterDialog, "BOTTOMRIGHT", -11, 3)
 
 		local checkButtons = {
 			PremadeGroupsFilterDialog.Difficulty.Act,
-			PremadeGroupsFilterDialog.Ilvl.Act,
-			PremadeGroupsFilterDialog.Noilvl.Act,
+			PremadeGroupsFilterDialog.MPRating.Act,
+			PremadeGroupsFilterDialog.PVPRating.Act,
 			PremadeGroupsFilterDialog.Defeated.Act,
 			PremadeGroupsFilterDialog.Members.Act,
 			PremadeGroupsFilterDialog.Tanks.Act,
@@ -491,10 +496,12 @@ local function LoadSkin()
 		end
 
 		local editBoxes = {
-			PremadeGroupsFilterDialog.Ilvl.Min,
-			PremadeGroupsFilterDialog.Ilvl.Max,
+			PremadeGroupsFilterDialog.MPRating.Min,
+			PremadeGroupsFilterDialog.MPRating.Max,
 			PremadeGroupsFilterDialog.Defeated.Min,
 			PremadeGroupsFilterDialog.Defeated.Max,
+			PremadeGroupsFilterDialog.PVPRating.Min,
+			PremadeGroupsFilterDialog.PVPRating.Max,
 			PremadeGroupsFilterDialog.Members.Min,
 			PremadeGroupsFilterDialog.Members.Max,
 			PremadeGroupsFilterDialog.Tanks.Min,
@@ -518,7 +525,7 @@ local function LoadSecondarySkin()
 	ChallengesFrame:DisableDrawLayer("BACKGROUND")
 	ChallengesFrame.WeeklyInfo.Child:DisableDrawLayer("BACKGROUND")
 
-	hooksecurefunc("ChallengesFrame_Update", function(self)
+	hooksecurefunc(ChallengesFrame, "Update", function(self)
 		for _, frame in ipairs(self.DungeonIcons) do
 			if not frame.backdrop then
 				frame:CreateBackdrop("Transparent")
