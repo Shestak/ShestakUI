@@ -303,22 +303,19 @@ hooksecurefunc("Communities_LoadUI", function()
 		return
 	else
 		loaded = true
-		hooksecurefunc(CommunitiesFrame.MemberList, "RefreshListDisplay", RefreshList)
+		--BETA hooksecurefunc(CommunitiesFrame.MemberList, "RefreshListDisplay", RefreshList)
 	end
 end)
 
 -- FriendsList
 local FRIENDS_LEVEL_TEMPLATE = FRIENDS_LEVEL_TEMPLATE:gsub("%%d", "%%s")
 FRIENDS_LEVEL_TEMPLATE = FRIENDS_LEVEL_TEMPLATE:gsub("%$d", "%$s")
-local function friendsFrame()
-	local scrollFrame = FriendsListFrameScrollFrame
-	local buttons = scrollFrame.buttons
-
+local function friendsFrame(self)
 	local playerArea = GetRealZoneText()
 
-	for i = 1, #buttons do
+	for i = 1, self.ScrollTarget:GetNumChildren() do
 		local nameText, infoText
-		local button = buttons[i]
+		local button = select(i, self.ScrollTarget:GetChildren())
 		if button:IsShown() then
 			if button.buttonType == FRIENDS_BUTTON_TYPE_WOW then
 				local info = C_FriendList.GetFriendInfoByIndex(button.id)
@@ -353,5 +350,5 @@ local function friendsFrame()
 		end
 	end
 end
---BETA hooksecurefunc(FriendsListFrameScrollFrame, "update", friendsFrame)
--- hooksecurefunc("FriendsFrame_UpdateFriends", friendsFrame)
+
+hooksecurefunc(FriendsListFrame.ScrollBox, "Update", friendsFrame)
