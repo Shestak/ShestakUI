@@ -727,6 +727,14 @@ function Stuffing:BagNew(bag, f)
 	return ret
 end
 
+local bind = {
+	[0] = "",
+	[1] = "bop bound"..ITEM_BIND_ON_PICKUP,
+	[2] = "boe"..ITEM_BIND_ON_EQUIP,
+	[3] = ITEM_BIND_ON_USE,
+	[4] = ITEM_BIND_QUEST
+}
+
 function Stuffing:SearchUpdate(str)
 	str = string.lower(str)
 
@@ -744,14 +752,10 @@ function Stuffing:SearchUpdate(str)
 				local _, setName = GetContainerItemEquipmentSetInfo(b.bag, b.slot)
 				setName = setName or ""
 				local _, _, _, _, minLevel, class, subclass, _, equipSlot, _, _, _, _, bindType = GetItemInfo(ilink)
-				if bindType == 2 then
-					bindType = "boe"
-				else
-					bindType = ""
-				end
 				class = _G[class] or ""
 				subclass = _G[subclass] or ""
 				equipSlot = _G[equipSlot] or ""
+				bindType = bind[bindType] or ""
 				minLevel = minLevel or 1
 				if not string.find(string.lower(b.name), str) and not string.find(string.lower(setName), str) and not string.find(string.lower(class), str) and not string.find(string.lower(subclass), str) and not string.find(string.lower(equipSlot), str) and not string.find(string.lower(bindType), str) then
 					if IsItemUnusable(b.name) or minLevel > T.level then
