@@ -13,9 +13,11 @@ frame:SetScript("OnEvent", function()
 	end
 end)
 
-hooksecurefunc(GameTooltip, "SetUnitAura", function(self, ...)
+hooksecurefunc(GameTooltip, "SetUnitBuffByAuraInstanceID", function(self, ...)
 	if not UnitIsPlayer(...) or UnitIsUnit(..., "player") then return end
-	local id = select(10, UnitAura(...))
+	local aura = C_UnitAuras.GetAuraDataByAuraInstanceID(...)
+	local id = aura and aura.spellId
+	-- local id = select(10, UnitAura(...))
 
 	if id and MountCache[id] then
 		local text = NOT_COLLECTED
