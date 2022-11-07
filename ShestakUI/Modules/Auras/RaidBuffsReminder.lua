@@ -9,8 +9,9 @@ local battleelixirbuffs = T.ReminderBuffs["BattleElixir"]
 local guardianelixirbuffs = T.ReminderBuffs["GuardianElixir"]
 local foodbuffs = T.ReminderBuffs["Food"]
 local staminabuffs = T.ReminderBuffs["Stamina"]
+local versbuffs = T.ReminderBuffs["Vers"]
 local custombuffs = T.ReminderBuffs["Custom"]
-local visible, flask, battleelixir, guardianelixir, food, stamina, spell4, custom, weapon, armor
+local visible, flask, battleelixir, guardianelixir, food, stamina, vers, spell4, custom, weapon, armor
 local playerBuff = {}
 
 local function CheckElixir()
@@ -186,6 +187,21 @@ local function OnAuraChange(_, event, arg1)
 		end
 	end
 
+	for i = 1, #versbuffs do
+		local name, icon = unpack(versbuffs[i])
+		if i == 1 then
+			VersFrame.t:SetTexture(icon)
+		end
+		if playerBuff[name] then
+			VersFrame:SetAlpha(C.reminder.raid_buffs_alpha)
+			stamina = true
+			break
+		else
+			VersFrame:SetAlpha(1)
+			stamina = false
+		end
+	end
+
 	for i = 1, #Spell4Buff do
 		local name, icon = unpack(Spell4Buff[i])
 		if i == 1 then
@@ -266,6 +282,7 @@ local buffButtons = {
 	"WeaponFrame",
 	"ArmorFrame",
 	"StaminaFrame",
+	"VersFrame",
 	"Spell4Frame",
 	"CustomFrame",
 }

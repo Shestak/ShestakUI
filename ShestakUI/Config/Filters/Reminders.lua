@@ -35,6 +35,9 @@ if C.reminder.raid_buffs_enable == true or C.announcements.flask_food == true th
 		Stamina = {
 			SpellName(21562),	-- Power Word: Fortitude
 		},
+		Vers = {
+			SpellName(1126),	-- Mark of the Wild
+		},
 		Custom = {
 			-- SpellName(spellID),	-- Spell name
 		}
@@ -80,6 +83,16 @@ end
 ]]--------------------------------------------------------------------------------------
 if C.reminder.solo_buffs_enable == true then
 	T.ReminderSelfBuffs = {
+		DRUID = {
+			[1] = {	-- Mark of the Wild group
+				["spells"] = {
+					SpellName(1126),	-- Mark of the Wild
+				},
+				["combat"] = true,
+				["instance"] = true,
+				["pvp"] = true,
+			},
+		},
 		MAGE = {
 			[1] = {	-- Intellect group
 				["spells"] = {
