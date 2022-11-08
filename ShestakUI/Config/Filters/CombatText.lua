@@ -536,9 +536,9 @@ elseif T.class == "SHAMAN" then
 		T.merge[115360] = 115357	-- Windstrike Off-Hand
 		T.aoespam[192231] = 3		-- Liquid Magma
 		T.aoespam[157331] = 3		-- Wind Gust
-		T.aoespam[197385] = 6		-- Fury of Air
-		T.aoespam[210801] = 6		-- Crashing Storm
-		T.aoespam[210854] = 4		-- Hailstorm
+		--BETA T.aoespam[197385] = 6		-- Fury of Air
+		--BETA T.aoespam[210801] = 6		-- Crashing Storm
+		--BETA T.aoespam[210854] = 4		-- Hailstorm
 		T.aoespam[187874] = 1		-- Crash Lightning
 		T.aoespam[195592] = 1		-- Crash Lightning
 	end
