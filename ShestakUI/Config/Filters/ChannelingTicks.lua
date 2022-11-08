@@ -36,6 +36,8 @@ T.CastBarTicks = {
 	[SpellName(755)] = 5,		-- Health Funnel
 	[SpellName(198590)] = 5,	-- Drain Soul
 	[SpellName(234153)] = 5,	-- Drain Life
+	-- Evoker
+	[SpellName(356995)] = 3,	-- Disintegrate
 	-- Racials
 	[SpellName(291944)] = 6,	-- Regeneratin (Zandalari)
 }
