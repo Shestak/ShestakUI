@@ -71,11 +71,11 @@ local function LoadSkin()
 	MountJournal.MountDisplay.backdrop:SetPoint("BOTTOMRIGHT", 1, -2)
 
 	T.SkinEditBox(MountJournalSearchBox, nil, 18)
-	T.SkinScrollBar(MountJournalListScrollFrameScrollBar)
+	T.SkinScrollBar(MountJournal.ScrollBar)
 	T.SkinRotateButton(MountJournal.MountDisplay.ModelScene.RotateLeftButton)
 	T.SkinRotateButton(MountJournal.MountDisplay.ModelScene.RotateRightButton)
 
-	MountJournalListScrollFrameScrollBar:SetPoint("TOPLEFT", MountJournalListScrollFrame, "TOPRIGHT", 4, 17)
+	--MountJournal.ScrollBar:SetPoint("TOPLEFT", MountJournalListScrollFrame, "TOPRIGHT", 4, 17)
 	MountJournalFilterButton:SetPoint("TOPLEFT", MountJournalSearchBox, "TOPRIGHT", 5, 2)
 	T.SkinCloseButton(_G.MountJournalFilterButton.ResetButton)
 	_G.MountJournalFilterButton.ResetButton:ClearAllPoints()
@@ -91,7 +91,7 @@ local function LoadSkin()
 
 	T.SkinCheckBox(MountJournal.MountDisplay.ModelScene.TogglePlayer, 26)
 
-	for i = 1, #MountJournal.ListScrollFrame.buttons do
+	for i = 1, #MountJournal.ScrollBox do
 		local button = _G["MountJournalListScrollFrameButton"..i]
 
 		if not button.isSkinned then
@@ -124,7 +124,7 @@ local function LoadSkin()
 	end
 
 	local function ColorSelectedMount()
-		for i = 1, #MountJournal.ListScrollFrame.buttons do
+		for i = 1, #MountJournal.ScrollBox do
 			local button = _G["MountJournalListScrollFrameButton"..i]
 
 			if button.selectedTexture:IsShown() then
@@ -140,8 +140,8 @@ local function LoadSkin()
 	end
 	hooksecurefunc("MountJournal_UpdateMountList", ColorSelectedMount)
 
-	MountJournalListScrollFrame:HookScript("OnVerticalScroll", ColorSelectedMount)
-	MountJournalListScrollFrame:HookScript("OnMouseWheel", ColorSelectedMount)
+	--MountJournal.ScrollBox:HookScript("OnVerticalScroll", ColorSelectedMount)
+	MountJournal.ScrollBox:HookScript("OnMouseWheel", ColorSelectedMount)
 
 	StyleItemButton(MountJournalSummonRandomFavoriteButton)
 
@@ -175,14 +175,14 @@ local function LoadSkin()
 	PetJournalLoadoutBorderSlotHeaderText:SetParent(PetJournal)
 	PetJournalLoadoutBorderSlotHeaderText:SetPoint("CENTER", PetJournalLoadoutBorderTop, "TOP", 0, 4)
 
-	PetJournalListScrollFrameScrollBar:SetPoint("TOPLEFT", PetJournalListScrollFrame, "TOPRIGHT", 4, 17)
-	PetJournalListScrollFrameScrollBar:SetPoint("BOTTOMLEFT", PetJournalListScrollFrame, "BOTTOMRIGHT", 4, 14)
-	T.SkinScrollBar(PetJournalListScrollFrameScrollBar)
+	--PetJournalListScrollFrameScrollBar:SetPoint("TOPLEFT", PetJournalListScrollFrame, "TOPRIGHT", 4, 17)
+	--PetJournalListScrollFrameScrollBar:SetPoint("BOTTOMLEFT", PetJournalListScrollFrame, "BOTTOMRIGHT", 4, 14)
+	T.SkinScrollBar(PetJournal.ScrollBar)
 
-	for i = 1, #PetJournal.listScroll.buttons do
-		local button = _G["PetJournalListScrollFrameButton"..i]
-		local name = _G["PetJournalListScrollFrameButton"..i.."Name"]
-		local level = _G["PetJournalListScrollFrameButton"..i.."Level"]
+	for i = 1, #PetJournal.ScrollBox do
+		local button = _G["PetJournalScrollBoxButton"..i]
+		local name = _G["PetJournalScrollBoxButton"..i.."Name"]
+		local level = _G["PetJournalScrollBoxButton"..i.."Level"]
 
 		if not button.isSkinned then
 			button:GetRegions():Hide()
@@ -223,12 +223,12 @@ local function LoadSkin()
 	end
 
 	local function ColorSelectedPet()
-		if PetJournal.listScroll.buttons then
-			for i = 1, #PetJournal.listScroll.buttons do
-				local button = PetJournal.listScroll.buttons[i]
+		if PetJournal.ScrollBox then
+			for i = 1, #PetJournal.ScrollBox do
+				local button = PetJournal.ScrollBox.buttons[i]
 
-				if PetJournal.listScroll.buttons[i].index then
-					local petID, _, isOwned = C_PetJournal.GetPetInfoByIndex(PetJournal.listScroll.buttons[i].index)
+				if PetJournal.ScrollBox.buttons[i].index then
+					local petID, _, isOwned = C_PetJournal.GetPetInfoByIndex(PetJournal.ScrollBox.buttons[i].index)
 
 					if petID and isOwned then
 						local _, _, _, _, rarity = C_PetJournal.GetPetStats(petID)
@@ -258,7 +258,7 @@ local function LoadSkin()
 	end
 
 	hooksecurefunc("PetJournal_UpdatePetList", ColorSelectedPet)
-	hooksecurefunc(PetJournalListScrollFrame, "update", ColorSelectedPet)
+	hooksecurefunc(PetJournal.ScrollBox, 'Update', ColorSelectedPet)
 	PetJournalAchievementStatus:DisableDrawLayer("BACKGROUND")
 
 	StyleItemButton(PetJournalHealPetButton)
@@ -551,9 +551,9 @@ local function LoadSkin()
 	WardrobeCollectionFrame.SetsCollectionFrame.DetailsFrame.backdrop:SetPoint("TOPLEFT", 4, -4)
 	WardrobeCollectionFrame.SetsCollectionFrame.DetailsFrame.backdrop:SetPoint("BOTTOMRIGHT", 1, 4)
 	WardrobeSetsCollectionVariantSetsButton:SkinButton()
-	T.SkinScrollBar(WardrobeCollectionFrameScrollFrameScrollBar)
-	WardrobeCollectionFrameScrollFrameScrollBar:SetPoint("TOPLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame, "TOPRIGHT", 4, 15)
-	WardrobeCollectionFrameScrollFrameScrollBar:SetPoint("BOTTOMLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame, "BOTTOMRIGHT", 4, 14)
+	--T.SkinScrollBar(WardrobeCollectionFrameScrollFrameScrollBar)
+	--WardrobeCollectionFrameScrollFrameScrollBar:SetPoint("TOPLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame, "TOPRIGHT", 4, 15)
+	--WardrobeCollectionFrameScrollFrameScrollBar:SetPoint("BOTTOMLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame, "BOTTOMRIGHT", 4, 14)
 
 	local function SetItemQuality(_, itemFrame)
 		if (itemFrame.backdrop) then
@@ -577,7 +577,7 @@ local function LoadSkin()
 		T.SkinTab(_G["WardrobeCollectionFrameTab"..i], true)
 	end
 
-	for i = 1, #WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame.buttons do
+	for i = 1, #WardrobeCollectionFrame.SetsCollectionFrame do
 		local button = _G["WardrobeCollectionFrameScrollFrameButton"..i]
 
 		if not button.isSkinned then
@@ -616,8 +616,8 @@ local function LoadSkin()
 			end
 		end
 	end
-	hooksecurefunc(WardrobeCollectionFrame.SetsCollectionFrame, "SelectSet", ColorSelectedSet)
-	hooksecurefunc(WardrobeCollectionFrameScrollFrame, "update", ColorSelectedSet)
+	--hooksecurefunc(WardrobeCollectionFrame.SetsCollectionFrame, "SelectSet", ColorSelectedSet)
+	--hooksecurefunc(WardrobeCollectionFrameScrollFrame, "update", ColorSelectedSet)
 
 	hooksecurefunc(WardrobeCollectionFrame.SetsCollectionFrame, "DisplaySet", function()
 		for _, child in ipairs({WardrobeCollectionFrame.SetsCollectionFrame.DetailsFrame:GetChildren()}) do

@@ -125,7 +125,7 @@ local function LoadSkin()
 	T.SkinScrollBar(OpenMailScrollFrameScrollBar)
 
 	SendMailBodyEditBox:SetTextColor(1, 1, 1)
-	OpenMailBodyText:SetTextColor(1, 1, 1)
+	MailTextFontNormal:SetTextColor(1, 1, 1)
 	InvoiceTextFontNormal:SetTextColor(1, 1, 1)
 	OpenMailArithmeticLine:Kill()
 

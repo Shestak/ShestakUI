@@ -4,7 +4,8 @@ if C.skins.rematch ~= true or not IsAddOnLoaded("Rematch") then return end
 ----------------------------------------------------------------------------------------
 --	Rematch skin
 ----------------------------------------------------------------------------------------
-local _, skin = ...
+local _,skin = ...
+Skin = skin
 
 local rematch = Rematch
 local roster = rematch.Roster
@@ -15,7 +16,8 @@ skin.panels = {
 		self:StripTextures()
 		self:SetTemplate("Transparent")
 		self.TitleBar:StripTextures()
-		T.SkinCloseButton(self.TitleBar.CloseButton)
+		T.SkinCloseButton(RematchFrame.CloseButton)
+		self.TitleBar.LockButton:Kill()										   											  
 		skin:SetButtonIcon(self.TitleBar.LockButton,"Locked")
 		for _,tab in ipairs(self.PanelTabs.Tabs) do
 			skin:HandlePanelTab(tab)
@@ -25,6 +27,10 @@ skin.panels = {
 			skin:SetButtonIcon(titlebar.LockButton,RematchSettings.LockPosition and "Locked" or "Unlocked")
 			titlebar.SinglePanelButton:SetShown(not RematchSettings.Minimized)
 		end)
+		T.SkinCloseButton(RematchFrame.TitleBar.MinimizeButton, nil, "+")
+		RematchFrame.TitleBar.MinimizeButton:SetSize(18,18)
+		RematchFrame.TitleBar.MinimizeButton:SetPoint("TOPRIGHT", RematchFrame.CloseButton, "TOPLEFT", -3, 0)
+		T.SkinNextPrevButton(RematchFrame.TitleBar.SinglePanelButton, nil)
 	end,
 
 	Journal = function(self)
@@ -121,6 +127,38 @@ skin.panels = {
 		end
 	end,
 
+	LoadoutPanel = function(self)
+		self:StripTextures()
+		self.Target:StripTextures()
+		self.Target:SetTemplate("Transparent")
+	  for i=1,3 do
+	    self.Loadouts[i]:StripTextures()
+	    self.Loadouts[i]:SetTemplate("Default")
+	  end
+		self.Target.TargetButton:SkinButton()
+		self.Target.LoadSaveButton:SkinButton()
+		for i=1,3 do
+		  for j=1,3 do
+		    self.Loadouts[i].Abilities[j]:SkinButton()
+		    self.Loadouts[i].Abilities[j].IconBorder:Hide()
+		  end
+		end
+		self.Flyout:SetTemplate("Transparent")
+		for i=1,2 do
+			self.Flyout.Abilities[i]:SkinButton()
+			self.Flyout.Abilities[i].IconBorder:Hide()
+		end
+	end,
+
+	LoadedTeamPanel = function(self)
+		self:StripTextures()
+		self:SetTemplate("Transparent")
+		self.Footnotes:StripTextures()
+		self.Footnotes:SetTemplate("Transparent")
+		T.SkinCloseButton(self.Footnotes.Close)
+		T.SkinCloseButton(self.Footnotes.Maximize,nil,"-")
+	end,
+	
 	PetPanel = function(self)
 		skin:HandleAutoScrollFrame(self.List)
 		-- top
@@ -130,6 +168,7 @@ skin.panels = {
 		self.Top.Toggle:SkinButton()
 		T.SkinEditBox(self.Top.SearchBox)
 		self.Top.SearchBox:SetBackdrop({})
+		self.Top.SearchBox.NineSlice:Hide()
 		for _,region in ipairs({self.Top.SearchBox:GetRegions()}) do
 			if region:GetDrawLayer()=="BACKGROUND" then
 				region:Hide()
@@ -199,7 +238,9 @@ skin.panels = {
 		self.Target.Pet2.IconBorder:SetAlpha(0)
 		self.Target.Pet3:SkinButton()
 		self.Target.Pet3.IconBorder:SetAlpha(0)
-		self.Target.Model:CreateBackdrop("Overlay")
+		self.Target.Model:CreateBackdrop("Transparent")
+		self.Target.Model.backdrop:SetPoint("TOPLEFT", 0, 0)
+		self.Target.Model.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 		self.Target.ModelBorder:SetAlpha(0)
 
 		for i = 1, 3 do
@@ -324,6 +365,9 @@ skin.panels = {
 
 	QueuePanel = function(self)
 		skin:HandleAutoScrollFrame(self.List)
+		self.List:StripTextures()
+		self.List:SetTemplate("Transparent")
+		T.SkinScrollBar(self.List.ScrollFrame.ScrollBar)
 		self.Top:StripTextures()
 		self.Top.QueueButton:SkinButton()
 		self.Status:StripTextures()
@@ -345,6 +389,12 @@ skin.panels = {
 			  button:SetSize(40,40)
 			  button.Icon:SetPoint("CENTER")
 			end
+			self.UpButton:SkinButton()
+			self.UpButton:SetSize(40,40)
+			self.UpButton.Icon:SetPoint("CENTER")
+			self.DownButton:SkinButton()
+			self.DownButton:SetSize(40,40)
+			self.DownButton.Icon:SetPoint("CENTER")
 		end)
 	end,
 
@@ -409,7 +459,7 @@ skin.panels = {
 		self.Controls.UndoButton:SkinButton()
 		self.Controls.DeleteButton:SkinButton()
 		T.SkinCloseButton(self.CloseButton)
-
+		self.LockButton:Kill()
 		hooksecurefunc(self,"UpdateLockState",function()
 			skin:SetButtonIcon(self.LockButton,RematchSettings.LockNotesPosition and "Locked" or "Unlocked")
 		end)
@@ -489,16 +539,49 @@ function skin:SetButtonIcon(button,icon)
 		button.RematchElvUISkinIcon:SetPoint("TOPLEFT",button,"TOPLEFT",10,-10)
 		button.RematchElvUISkinIcon:SetPoint("BOTTOMRIGHT",button,"BOTTOMRIGHT",-10,10)
 		button.RematchElvUISkinIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\icons.tga")
+		button:HookScript("OnEnter",function(self)
+			button.RematchElvUISkinIcon:SetVertexColor(1, 0.48235, 0.17255)
+		end)
+		button:HookScript("OnLeave",function(self)
+			button.RematchElvUISkinIcon:SetVertexColor(0.9,0.9,0.9)
+		end)
+		button.RematchElvUISkinIcon:SetVertexColor(0.9,0.9,0.9)
 	end
 	if icons[icon] then
 		button.RematchElvUISkinIcon:SetTexCoord(unpack(icons[icon]))
+		button.RematchElvUISkinIcon:SetAlpha(1)										 
+		if button.Texture then -- hide ElvUI's icon texture; it's being replaced with RematchElvUISkinIcon
+			button.Texture:SetAlpha(0)
+		end
 	end
 end
 
 function skin:ColorPetListBordersPet()
 	for _,button in ipairs(self.buttons) do
+									  
 		if (button.index ~= nil) then
 			local petID = roster.petList[button.index]
+							  
+			if type(petID) == "string" then
+				local _, _, _, _, rarity = C_PetJournal.GetPetStats(petID)
+				if rarity then
+					local color = ITEM_QUALITY_COLORS[rarity-1]
+					button.Name:SetTextColor(color.r, color.g, color.b)
+				else
+					button.Name:SetTextColor(1, 1, 1)
+				end
+			else
+				button.Name:SetTextColor(0.5, 0.5, 0.5)
+			end
+													 
+		end
+	end
+end
+
+function skin:ColorPetListBordersQueue()
+	for _,button in ipairs(self.buttons) do
+		if (button.index ~= nil) then
+			local petID = RematchSettings.LevelingQueue[button.index]
 			if type(petID) == "string" then
 				local _, _, _, _, rarity = C_PetJournal.GetPetStats(petID)
 				if rarity then
@@ -562,7 +645,7 @@ function skin:HandleAutoScrollFrame(listFrame)
 	scrollBar:GetThumbTexture():SetTexture(nil)
 	scrollBar.thumbbg = CreateFrame("Frame", nil, scrollBar)
 	scrollBar.thumbbg:SetPoint("TOPLEFT", scrollBar:GetThumbTexture(), "TOPLEFT", 0, -3)
-	scrollBar.thumbbg:SetPoint("BOTTOMRIGHT", scrollBar:GetThumbTexture(), "BOTTOMRIGHT", 0, 3)
+	scrollBar.thumbbg:SetPoint("BOTTOMRIGHT", scrollBar:GetThumbTexture(), "BOTTOMRIGHT", 0, 3)														 
 	scrollBar.thumbbg:SetTemplate("Overlay")
 end
 
