@@ -54,6 +54,12 @@ local function attachItemTooltip(self)
 end
 
 if T.newPatch then
+	local function attachItemTooltip(self)
+		local _, link = TooltipUtil.GetDisplayedItem(self)
+		if not link then return end
+		local id = link:match("item:(%d+):")
+		if id then addLine(self, id, true) end
+	end
 	TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Spell, OnTooltipSetSpell)
 	TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, attachItemTooltip)
 else

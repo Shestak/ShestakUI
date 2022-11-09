@@ -187,7 +187,12 @@ function button:PLAYER_LOGIN()
 	end
 
 	if T.newPatch then
-		TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, OnTooltipSetUnit)
+		local function onTooltipFunction(tooltip, tooltipData)
+			if tooltip == GameTooltip then
+				OnTooltipSetUnit(tooltip)
+			end
+		end
+		TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, onTooltipFunction)
 	else
 		GameTooltip:HookScript("OnTooltipSetUnit", OnTooltipSetUnit)
 	end
