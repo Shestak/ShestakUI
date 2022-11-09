@@ -138,13 +138,13 @@
 	<Script file="Modules\Blizzard\AlertFrames.lua"/>
 	<Script file="Modules\Blizzard\AltPowerBar.lua"/>
 	<Script file="Modules\Blizzard\Bags.lua"/>
+	<Script file="Modules\Blizzard\ClassColorNames.lua"/>
 	<Script file="Modules\Blizzard\ColorPicker.lua"/>
 	<Script file="Modules\Blizzard\CombatText.lua"/>
 	<Script file="Modules\Blizzard\Durability.lua"/>
 	<Script file="Modules\Blizzard\Errors.lua"/>
 	<Script file="Modules\Blizzard\Fixes.lua"/>
 	<Script file="Modules\Blizzard\Fonts.lua"/>
-	<Script file="Modules\Blizzard\FriendList.lua"/>
 	<Script file="Modules\Blizzard\Mail.lua"/>
 	<Script file="Modules\Blizzard\MirrorBars.lua"/>
 	<Script file="Modules\Blizzard\MoveBlizzFrames.lua"/>
