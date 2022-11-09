@@ -4,8 +4,14 @@ if C.aura.cast_by ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Tells you who cast a buff or debuff in its tooltip(prButler by Renstrom)
 ----------------------------------------------------------------------------------------
-local function addAuraSource(self, func, unit, index, filter)
-	local srcUnit = select(7, func(unit, index, filter))
+local function addAuraSource(self, func, unit, index, filter, instanceID)
+	local srcUnit
+	if instanceID then
+		local aura = C_UnitAuras.GetAuraDataByAuraInstanceID(unit, index)
+		srcUnit = aura and aura.sourceUnit
+	else
+		srcUnit = select(7, func(unit, index, filter))
+	end
 	if srcUnit then
 		local src = GetUnitName(srcUnit, true)
 		if srcUnit == "pet" or srcUnit == "vehicle" then
@@ -39,10 +45,18 @@ local funcs = {
 	SetUnitAura = UnitAura,
 	SetUnitBuff = UnitBuff,
 	SetUnitDebuff = UnitDebuff,
+	SetUnitBuffByAuraInstanceID = UnitBuff,
+	SetUnitDebuffByAuraInstanceID = UnitDebuff,
 }
 
 for k, v in pairs(funcs) do
-	hooksecurefunc(GameTooltip, k, function(self, unit, index, filter)
-		addAuraSource(self, v, unit, index, filter)
-	end)
+	if k == "SetUnitBuffByAuraInstanceID" or k == "SetUnitBuffByAuraInstanceID" then
+		hooksecurefunc(GameTooltip, k, function(self, unit, index, filter)
+			addAuraSource(self, v, unit, index, filter, true)
+		end)
+	else
+		hooksecurefunc(GameTooltip, k, function(self, unit, index, filter)
+			addAuraSource(self, v, unit, index, filter)
+		end)
+	end
 end
