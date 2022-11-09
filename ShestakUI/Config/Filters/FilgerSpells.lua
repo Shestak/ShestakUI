@@ -582,26 +582,26 @@ C["filger_spells"] = {
 
 			-- Tip the scales
 			{spellID = 370553, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Living Flame Healing 
+			-- Living Flame Healing
 			{spellID = 361509, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Obsidian Scales
 			{spellID = 363916, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Time Spiral
-			{spellID = 375234, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 375234, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Renewing Blaze
-			{spellID = 374348, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 374348, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dragonrage
-			{spellID = 375087, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 375087, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Hover
-			{spellID = 358267, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 358267, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Deep Breath
-			{spellID = 357210, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 357210, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Recall
 			{spellID = 371807, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Time Dilation
 			{spellID = 357170, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Time Stop (PVP Talent)
-			{spellID = 378441, unitID = "player", caster = "player", filter = "BUFF"},	
+			{spellID = 378441, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Echo
 			{spellID = 364343, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Reversion
@@ -670,7 +670,7 @@ C["filger_spells"] = {
 			Position = {"LEFT", T_DE_BUFF_BAR_Anchor},
 
 			-- Obsidian Scales
-			{spellID = 363916, unitID = "player", caster = "player", filter = "BUFF"},			
+			{spellID = 363916, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Renewing Blaze
 			{spellID = 374348, unitID = "player", caster = "player", filter = "BUFF"},
 		},
@@ -688,7 +688,7 @@ C["filger_spells"] = {
 			-- Landslide
 			{spellID = 355689, unitID = "focus", caster = "all", filter = "DEBUFF"},
 			-- Sleep Walk
-			{spellID = 360806, unitID = "focus", caster = "all", filter = "DEBUFF"},			
+			{spellID = 360806, unitID = "focus", caster = "all", filter = "DEBUFF"},
 			-- Permeating Chill
 			{spellID = 370898, unitID = "focus", caster = "all", filter = "DEBUFF"},
 		},
@@ -731,7 +731,7 @@ C["filger_spells"] = {
 			-- Time Stop (PVP Talent)
 			{spellID = 378441, filter = "CD"},
 			-- Chrono Loop (PVP Talent)
-			{spellID = 383005, filter = "CD"},			
+			{spellID = 383005, filter = "CD"},
 			-- Emerald Communion
 			{spellID = 370960, filter = "CD"},
 		},

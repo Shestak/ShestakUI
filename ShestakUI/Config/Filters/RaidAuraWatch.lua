@@ -355,11 +355,11 @@ T.RaidDebuffs = {
 	[SpellName(375620)] = 6, -- Ionizing Charge
 	[SpellName(375578)] = 4, -- Flame Sentry
 	-- Raszageth the Storm-Eater
-		-- TODO: DF	
+		-- TODO: DF
 -----------------------------------------------------------------
 -- Dungeons
 -----------------------------------------------------------------
-	
+
 -------------------- Mythic+ Specific --------------------
 -- General Affixes
 	[SpellName(209858)] = 3, -- Necrotic
@@ -620,8 +620,8 @@ T.RaidDebuffs = {
 	[SpellName(300650)] = 3, -- Suffocating Smog
 	[SpellName(301712)] = 3, -- Pounce
 	[SpellName(299475)] = 3, -- B.O.R.K
-	[SpellName(293670)] = 3, -- Chain Blade	
--- Shadowlands Dungeons	
+	[SpellName(293670)] = 3, -- Chain Blade
+-- Shadowlands Dungeons
 	-- Tazavesh, the Veiled Market
 	[SpellName(350804)] = 3, -- Collapsing Energy
 	[SpellName(350885)] = 3, -- Hyperlight Jolt

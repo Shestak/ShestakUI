@@ -17,7 +17,7 @@ skin.panels = {
 		self:SetTemplate("Transparent")
 		self.TitleBar:StripTextures()
 		T.SkinCloseButton(RematchFrame.CloseButton)
-		self.TitleBar.LockButton:Kill()										   											  
+		self.TitleBar.LockButton:Kill()
 		skin:SetButtonIcon(self.TitleBar.LockButton,"Locked")
 		for _,tab in ipairs(self.PanelTabs.Tabs) do
 			skin:HandlePanelTab(tab)
@@ -158,7 +158,7 @@ skin.panels = {
 		T.SkinCloseButton(self.Footnotes.Close)
 		T.SkinCloseButton(self.Footnotes.Maximize,nil,"-")
 	end,
-	
+
 	PetPanel = function(self)
 		skin:HandleAutoScrollFrame(self.List)
 		-- top
@@ -549,7 +549,7 @@ function skin:SetButtonIcon(button,icon)
 	end
 	if icons[icon] then
 		button.RematchElvUISkinIcon:SetTexCoord(unpack(icons[icon]))
-		button.RematchElvUISkinIcon:SetAlpha(1)										 
+		button.RematchElvUISkinIcon:SetAlpha(1)
 		if button.Texture then -- hide ElvUI's icon texture; it's being replaced with RematchElvUISkinIcon
 			button.Texture:SetAlpha(0)
 		end
@@ -558,10 +558,10 @@ end
 
 function skin:ColorPetListBordersPet()
 	for _,button in ipairs(self.buttons) do
-									  
+
 		if (button.index ~= nil) then
 			local petID = roster.petList[button.index]
-							  
+
 			if type(petID) == "string" then
 				local _, _, _, _, rarity = C_PetJournal.GetPetStats(petID)
 				if rarity then
@@ -573,7 +573,7 @@ function skin:ColorPetListBordersPet()
 			else
 				button.Name:SetTextColor(0.5, 0.5, 0.5)
 			end
-													 
+
 		end
 	end
 end
@@ -645,7 +645,7 @@ function skin:HandleAutoScrollFrame(listFrame)
 	scrollBar:GetThumbTexture():SetTexture(nil)
 	scrollBar.thumbbg = CreateFrame("Frame", nil, scrollBar)
 	scrollBar.thumbbg:SetPoint("TOPLEFT", scrollBar:GetThumbTexture(), "TOPLEFT", 0, -3)
-	scrollBar.thumbbg:SetPoint("BOTTOMRIGHT", scrollBar:GetThumbTexture(), "BOTTOMRIGHT", 0, 3)														 
+	scrollBar.thumbbg:SetPoint("BOTTOMRIGHT", scrollBar:GetThumbTexture(), "BOTTOMRIGHT", 0, 3)
 	scrollBar.thumbbg:SetTemplate("Overlay")
 end
 
