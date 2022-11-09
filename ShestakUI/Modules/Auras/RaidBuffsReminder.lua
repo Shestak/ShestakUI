@@ -13,6 +13,8 @@ local versbuffs = T.ReminderBuffs["Vers"]
 local custombuffs = T.ReminderBuffs["Custom"]
 local visible, flask, battleelixir, guardianelixir, food, stamina, vers, spell4, custom, weapon, armor
 local playerBuff = {}
+local icons = {}
+local UpdatePositions
 
 local function CheckElixir()
 	if #battleelixirbuffs > 0 then
@@ -80,11 +82,11 @@ scanner:SetOwner(UIParent, "ANCHOR_NONE")
 
 local KitPattern = "(.+) %(%d+ .+%)$"
 if T.client == "zhTW" then
-    KitPattern = "%(%+%d+.+"
+	KitPattern = "%(%+%d+.+"
 elseif T.client == "zhCN" then
-    KitPattern = "%（%+%d+ .+"
+	KitPattern = "%（%+%d+ .+"
 elseif T.client == "koKR" then
-    KitPattern = "%(.+ %+%d+%)"
+	KitPattern = "%(.+ %+%d+%)"
 end
 
 local function CheckArmorBuff()
@@ -194,11 +196,11 @@ local function OnAuraChange(_, event, arg1)
 		end
 		if playerBuff[name] then
 			VersFrame:SetAlpha(C.reminder.raid_buffs_alpha)
-			stamina = true
+			vers = true
 			break
 		else
 			VersFrame:SetAlpha(1)
-			stamina = false
+			vers = false
 		end
 	end
 
@@ -237,11 +239,12 @@ local function OnAuraChange(_, event, arg1)
 		custom = true
 	end
 
+	UpdatePositions()
 	local _, instanceType = IsInInstance()
 	if (not IsInGroup() or instanceType ~= "raid") and C.reminder.raid_buffs_always == false then
 		RaidBuffReminder:SetAlpha(0)
 		visible = false
-	elseif flask == true and food == true and stamina == true and spell4 == true and custom == true and weapon == true and armor == true then
+	elseif flask == true and food == true and stamina == true and spell4 == true and custom == true and weapon == true and armor == true and vers == true then
 		if not visible then
 			RaidBuffReminder:SetAlpha(0)
 			visible = false
@@ -301,4 +304,31 @@ for i = 1, #buffButtons do
 
 	button.t = button:CreateTexture(name..".t", "OVERLAY")
 	button.t:CropIcon()
+	tinsert(icons, button)
+end
+
+function UpdatePositions()
+	local line = math.ceil(C.minimap.size / (C.reminder.raid_buffs_size + 2))
+	local first
+	for i = 1, #icons do
+		local buff = icons[i]
+		buff:ClearAllPoints()
+		if buff:GetAlpha() == C.reminder.raid_buffs_alpha then
+			-- buff:SetPoint("TOP", UIParent, "TOP", 0, 900)
+			line = line + 1
+		else
+			if not first then
+				buff:SetPoint("BOTTOMLEFT", RaidBuffReminder, "BOTTOMLEFT", 0, 0)
+				first = true
+			else
+				buff:SetPoint("LEFT", previousBuff, "RIGHT", 3, 0)
+			end
+			previousBuff = buff
+			if i >= line then
+				buff:SetAlpha(0)
+			else
+				buff:SetAlpha(1)
+			end
+		end
+	end
 end
