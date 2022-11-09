@@ -83,235 +83,8 @@ local function SpellName(id)
 	end
 end
 
+if T.newPatch then
 T.RaidDebuffs = {
------------------------------------------------------------------
--- Sepulcher of the First Ones
------------------------------------------------------------------
-	-- Vigilant Guardian
-	[SpellName(364447)] = 3,	-- Dissonance
-	[SpellName(364904)] = 3,	-- Anti-Matter
-	[SpellName(364881)] = 3,	-- Matter Disolution
-	[SpellName(360415)] = 3,	-- Defenseless
-	[SpellName(360412)] = 3,	-- Exposed Core
-	[SpellName(366393)] = 3,	-- Searing Ablation
-	-- Skolex, the Insatiable Ravener
-	[SpellName(364522)] = 3,	-- Devouring Blood
-	[SpellName(359976)] = 3,	-- Riftmaw
-	[SpellName(359981)] = 3,	-- Rend
-	[SpellName(360098)] = 3,	-- Warp Sickness
-	[SpellName(366070)] = 3,	-- Volatile Residue
-	-- Artificer Xy'mox
-	[SpellName(364030)] = 3,	-- Debilitating Ray
-	[SpellName(365681)] = 3,	-- System Shock
-	[SpellName(363413)] = 3,	-- Forerunner Rings
-	[SpellName(362615)] = 3,	-- Dimensional Tear
-	[SpellName(362803)] = 3,	-- Glyph of Relocation
-	-- Dausegne, The Fallen Oracle
-	[SpellName(361751)] = 3,	-- Disintegration Halo
-	[SpellName(364289)] = 3,	-- Staggering Barrage
-	[SpellName(361225)] = 3,	-- Encroaching Dominion
-	[SpellName(361966)] = 3,	-- Infused Strikes
-	-- Prototype Pantheon
-	[SpellName(365306)] = 3,	-- Invigorating Bloom
-	[SpellName(361689)] = 3,	-- Wracking Pain
-	[SpellName(366232)] = 3,	-- Animastorm
-	[SpellName(364839)] = 3,	-- Sinful Projection
-	[SpellName(360259)] = 3,	-- Gloom Bolt
-	[SpellName(362383)] = 3,	-- Anima Bolt
-	[SpellName(362352)] = 3,	-- Pinned
-	-- Lihuvim, Principle Architect
-	[SpellName(360159)] = 3,	-- Unstable Protoform Energy
-	[SpellName(363681)] = 3,	-- Deconstructing Blast
-	[SpellName(363676)] = 3,	-- Deconstructing Energy
-	-- Halondrus the Reclaimer
-	[SpellName(361309)] = 3,	-- Lightshatter Beam
-	[SpellName(361002)] = 3,	-- Ephemeral Fissure
-	-- Anduin Wrynn
-	[SpellName(365293)] = 3,	-- Befouled Barrier
-	[SpellName(363020)] = 3,	-- Necrotic Claws
-	[SpellName(365021)] = 3,	-- Wicked Star
-	[SpellName(365445)] = 3,	-- Scarred Soul
-	[SpellName(365008)] = 3,	-- Psychic Terror
-	[SpellName(366849)] = 3,	-- Domination Word: Pain
-	-- Lords of Dread
-	[SpellName(360148)] = 3,	-- Bursting Dread
-	[SpellName(360012)] = 3,	-- Cloud of Carrion
-	[SpellName(360146)] = 3,	-- Fearful Trepidation
-	[SpellName(360241)] = 3,	-- Unsettling Dreams
-	-- Rygelon
-	[SpellName(362206)] = 3,	-- Event Horizon
-	[SpellName(362137)] = 3,	-- Corrupted Wound
-	[SpellName(361548)] = 3,	-- Dark Eclipse
-	-- The Jailer
-	[SpellName(362075)] = 3,	-- Domination
-	[SpellName(365150)] = 3,	-- Rune of Domination
-	[SpellName(363893)] = 3,	-- Martyrdom
-	[SpellName(363886)] = 3,	-- Imprisonment
-	[SpellName(365219)] = 3,	-- Chains of Anguish
-	[SpellName(366285)] = 3,	-- Rune of Compulsion
-	[SpellName(363332)] = 3,	-- Unbreaking Grasp
------------------------------------------------------------------
--- Sanctum of Domination
------------------------------------------------------------------
-	-- The Tarragrue
-	[SpellName(347283)] = 3,	-- Predator's Howl
-	[SpellName(347286)] = 3,	-- Unshakeable Dread
-	[SpellName(346986)] = 3,	-- Crushed Armor
-	[SpellName(347991)] = 3,	-- Ten of Towers
-	[SpellName(347269)] = 3,	-- Chains of Eternity
-	[SpellName(346985)] = 3,	-- Overpower
-	[SpellName(347274)] = 3,	-- Annihilating Smash
-	-- Eye of the Jailer
-	[SpellName(350606)] = 3,	-- Hopeless Lethargy
-	[SpellName(355240)] = 3,	-- Scorn
-	[SpellName(355245)] = 3,	-- Ire
-	[SpellName(349979)] = 3,	-- Dragging Chains
-	[SpellName(348074)] = 3,	-- Assailing Lance
-	[SpellName(351827)] = 3,	-- Spreading Misery
-	[SpellName(355143)] = 3,	-- Deathlink
-	[SpellName(350763)] = 3,	-- Annihilating Glare
-	-- The Nine
-	[SpellName(350287)] = 3,	-- Song of Dissolution
-	[SpellName(350542)] = 3,	-- Fragments of Destiny
-	[SpellName(350202)] = 3,	-- Unending Strike
-	[SpellName(350475)] = 3,	-- Pierce Soul
-	[SpellName(350555)] = 3,	-- Shard of Destiny
-	[SpellName(350109)] = 3,	-- Brynja's Mournful Dirge
-	[SpellName(350483)] = 3,	-- Link Essence
-	[SpellName(350039)] = 3,	-- Arthura's Crushing Gaze
-	[SpellName(350184)] = 3,	-- Daschla's Mighty Impact
-	[SpellName(350374)] = 3,	-- Wings of Rage
-	-- Remnant of Ner'zhul
-	[SpellName(350073)] = 3,	-- Torment
-	[SpellName(349890)] = 3,	-- Suffering
-	[SpellName(350469)] = 3,	-- Malevolence
-	[SpellName(354534)] = 3,	-- Spite
-	-- Soulrender Dormazain
-	[SpellName(353429)] = 3,	-- Tormented
-	[SpellName(353023)] = 3,	-- Torment
-	[SpellName(351787)] = 3,	-- Agonizing Spike
-	[SpellName(350647)] = 3,	-- Brand of Torment
-	[SpellName(350422)] = 3,	-- Ruinblade
-	[SpellName(350851)] = 3,	-- Vessel of Torment
-	[SpellName(354231)] = 3,	-- Soul Manacles
-	[SpellName(350927)] = 3,	-- Warmonger Shackle
-	-- Painsmith Raznal
-	[SpellName(355505)] = 3,	-- Shadowsteel Chains
-	[SpellName(348456)] = 3,	-- Flameclasp Trap
-	[SpellName(356870)] = 3,	-- Flameclasp Eruption
-	[SpellName(355568)] = 3,	-- Cruciform Axe
-	[SpellName(355786)] = 3,	-- Blackened Armor
-	-- Guardian of the First Ones
-	[SpellName(352394)] = 3,	-- Radiant Energy
-	[SpellName(350496)] = 3,	-- Threat Neutralization
-	[SpellName(347359)] = 3,	-- Suppression Field
-	[SpellName(355357)] = 3,	-- Obliterate
-	[SpellName(350732)] = 3,	-- Sunder
-	[SpellName(352833)] = 3,	-- Disintegration
-	-- Fatescribe Roh-Kalo
-	[SpellName(354365)] = 3,	-- Grim Portent
-	[SpellName(350568)] = 3,	-- Call of Eternity
-	[SpellName(353435)] = 3,	-- Overwhelming Burden
-	[SpellName(351680)] = 3,	-- Invoke Destiny
-	[SpellName(353432)] = 3,	-- Burden of Destiny
-	[SpellName(353693)] = 3,	-- Unstable Accretion
-	[SpellName(350355)] = 3,	-- Fated Conjunction
-	[SpellName(353931)] = 3,	-- Twist Fate
-	-- Kel'Thuzad
-	[SpellName(346530)] = 3,	-- Frozen Destruction
-	[SpellName(354289)] = 3,	-- Sinister Miasma
-	[SpellName(347292)] = 3,	-- Oblivion's Echo
-	[SpellName(348978)] = 3,	-- Soul Exhaustion
-	[SpellName(355389)] = 3,	-- Relentless Haunt
-	[SpellName(357298)] = 3,	-- Frozen Binds
-	[SpellName(355137)] = 3,	-- Shadow Pool
-	[SpellName(348638)] = 3,	-- Return of the Damned
-	[SpellName(348760)] = 3,	-- Frost Blast
-	-- Sylvanas Windrunner
-	[SpellName(349458)] = 3,	-- Domination Chains
-	[SpellName(347704)] = 3,	-- Veil of Darkness
-	[SpellName(347607)] = 3,	-- Banshee's Mark
-	[SpellName(347670)] = 3,	-- Shadow Dagger
-	[SpellName(351117)] = 3,	-- Crushing Dread
-	[SpellName(351870)] = 3,	-- Haunting Wave
-	[SpellName(351253)] = 3,	-- Banshee Wail
-	[SpellName(351451)] = 3,	-- Curse of Lethargy
-	[SpellName(351091)] = 3,	-- Destabilize
-	[SpellName(348064)] = 3,	-- Wailing Arrow
------------------------------------------------------------------
--- Castle Nathria
------------------------------------------------------------------
-	-- Shriekwing
-	[SpellName(328897)] = 3,	-- Exsanguinated
-	[SpellName(330713)] = 3,	-- Reverberating Pain
-	[SpellName(342923)] = 3,	-- Deadly Descent
-	[SpellName(342863)] = 3,	-- Echo Screech
-	-- Huntsman Altimor
-	[SpellName(335304)] = 3,	-- Sinseeker
-	[SpellName(334971)] = 3,	-- Jagged Claws
-	[SpellName(335111)] = 3,	-- Huntsman's Mark
-	[SpellName(334945)] = 3,	-- Vicious Lunge
-	[SpellName(334852)] = 3,	-- Petrifying Howl
-	-- Hungering Destroyer
-	[SpellName(334228)] = 3,	-- Volatile Ejection
-	[SpellName(329298)] = 3,	-- Gluttonous Miasma
-	-- Lady Inerva Darkvein
-	[SpellName(325936)] = 3,	-- Shared Cognition
-	[SpellName(335396)] = 3,	-- Hidden Desire
-	[SpellName(324983)] = 3,	-- Shared Suffering
-	[SpellName(324982)] = 3,	-- Shared Suffering (Partner)
-	[SpellName(332664)] = 3,	-- Concentrate Anima
-	[SpellName(325382)] = 3,	-- Warped Desires
-	-- Sun King's Salvation
-	[SpellName(333002)] = 3,	-- Vulgar Brand
-	[SpellName(326078)] = 3,	-- Infuser's Boon
-	[SpellName(325251)] = 3,	-- Sin of Pride
-	[SpellName(341475)] = 3,	-- Crimson Flurry
-	[SpellName(328479)] = 3,	-- Eyes on Target
-	[SpellName(328889)] = 3,	-- Greater Castigation
-	-- Artificer Xy'mox
-	[SpellName(327902)] = 3,	-- Fixate
-	[SpellName(326302)] = 3,	-- Stasis Trap
-	[SpellName(325236)] = 3,	-- Glyph of Destruction
-	[SpellName(327414)] = 3,	-- Possession
-	[SpellName(328468)] = 3,	-- Dimensional Tear
-	-- The Council of Blood
-	[SpellName(327052)] = 3,	-- Drain Essence
-	[SpellName(346651)] = 3,	-- Drain Essence Mythic
-	[SpellName(328334)] = 3,	-- Tactical Advance
-	[SpellName(330848)] = 3,	-- Wrong Moves
-	[SpellName(331706)] = 3,	-- Scarlet Letter
-	[SpellName(331636)] = 3,	-- Dark Recital
-	-- Sludgefist
-	[SpellName(335470)] = 3,	-- Chain Slam
-	[SpellName(339181)] = 3,	-- Chain Slam (Root)
-	[SpellName(331209)] = 3,	-- Hateful Gaze
-	[SpellName(335293)] = 3,	-- Chain Link
-	[SpellName(342420)] = 3,	-- Chain Them!
-	[SpellName(335295)] = 3,	-- Shattering Chain
-	-- Stone Legion Generals
-	[SpellName(334498)] = 3,	-- Seismic Upheaval
-	[SpellName(337643)] = 3,	-- Unstable Footing
-	[SpellName(334765)] = 3,	-- Heart Rend
-	[SpellName(333377)] = 3,	-- Wicked Mark
-	[SpellName(334616)] = 3,	-- Petrified
-	[SpellName(334541)] = 3,	-- Curse of Petrification
-	[SpellName(339690)] = 3,	-- Crystalize
-	[SpellName(342655)] = 3,	-- Volatile Anima Infusion
-	[SpellName(342698)] = 3,	-- Volatile Anima Infection
-	[SpellName(343881)] = 3,	-- Serrated Tear
-	-- Sire Denathrius
-	[SpellName(326851)] = 3,	-- Blood Price
-	[SpellName(327796)] = 3,	-- Night Hunter
-	[SpellName(327992)] = 3,	-- Desolation
-	[SpellName(328276)] = 3,	-- March of the Penitent
-	[SpellName(326699)] = 3,	-- Burden of Sin
-	[SpellName(329181)] = 3,	-- Wracking Pain
-	[SpellName(335873)] = 3,	-- Rancor
-	[SpellName(329951)] = 3,	-- Impale
-	[SpellName(327039)] = 3,	-- Feeding Time
-	[SpellName(332794)] = 3,	-- Fatal Finesse
-
 	---------------------------------------------------------
 	---------------- Vault of the Incarnates ----------------
 	---------------------------------------------------------
@@ -366,27 +139,6 @@ T.RaidDebuffs = {
 	[SpellName(226512)] = 3, -- Sanguine
 	[SpellName(240559)] = 3, -- Grievous
 	[SpellName(240443)] = 3, -- Bursting
--- Shadowlands Season 2
-	[SpellName(356667)] = 6, -- Biting Cold 1
-	[SpellName(356666)] = 6, -- Biting Cold 2
-	[SpellName(355732)] = 6, -- Melt Soul
-	[SpellName(356925)] = 6, -- Carnage
-	[SpellName(358777)] = 6, -- Bindings of Misery
--- Shadowlands Season 3
-	[SpellName(368241)] = 3, -- Decrypted Urh Cypher
-	[SpellName(368244)] = 4, -- Urh Cloaking Field
-	[SpellName(368240)] = 3, -- Decrypted Wo Cypher
-	[SpellName(368239)] = 3, -- Decrypted Vy Cypher
-	[SpellName(366297)] = 6, -- Deconstruct (Tank Debuff)
-	[SpellName(366288)] = 6, -- Force Slam (Stun)
--- Shadowlands Season 4
-	[SpellName(373364)] = 6, -- Vampiric Claws
-	[SpellName(373429)] = 6, -- Carrion Swarm
-	[SpellName(373370)] = 6, -- Nightmare Cloud
-	[SpellName(373391)] = 6, -- Nightmare
-	[SpellName(373570)] = 6, -- Hypnosis
-	[SpellName(373607)] = 6, -- Shadowy Barrier (Hypnosis)
-	[SpellName(373509)] = 6, -- Shadow Claws (Stacking)
 	-- Dragonflight Season 1
 	[SpellName(396369)] = 6, -- Mark of Lightning
 	[SpellName(396364)] = 6, -- Mark of Wind
@@ -530,6 +282,304 @@ T.RaidDebuffs = {
 -- Halls of Infusion
 -- Neltharus
 -- Uldaman: Legacy of Tyr
+
+-----------------------------------------------------------------
+-- Other
+-----------------------------------------------------------------
+	[SpellName(87023)] = 4,		-- Cauterize
+	[SpellName(94794)] = 4,		-- Rocket Fuel Leak
+	[SpellName(116888)] = 4,	-- Shroud of Purgatory
+	[SpellName(121175)] = 2,	-- Orb of Power
+}
+
+end
+if not T.newPatch then
+T.RaidDebuffs = {
+-----------------------------------------------------------------
+-- Castle Nathria
+-----------------------------------------------------------------
+	-- Shriekwing
+	[SpellName(328897)] = 3,	-- Exsanguinated
+	[SpellName(330713)] = 3,	-- Reverberating Pain
+	[SpellName(342923)] = 3,	-- Deadly Descent
+	[SpellName(342863)] = 3,	-- Echo Screech
+	-- Huntsman Altimor
+	[SpellName(335304)] = 3,	-- Sinseeker
+	[SpellName(334971)] = 3,	-- Jagged Claws
+	[SpellName(335111)] = 3,	-- Huntsman's Mark
+	[SpellName(334945)] = 3,	-- Vicious Lunge
+	[SpellName(334852)] = 3,	-- Petrifying Howl
+	-- Hungering Destroyer
+	[SpellName(334228)] = 3,	-- Volatile Ejection
+	[SpellName(329298)] = 3,	-- Gluttonous Miasma
+	-- Lady Inerva Darkvein
+	[SpellName(325936)] = 3,	-- Shared Cognition
+	[SpellName(335396)] = 3,	-- Hidden Desire
+	[SpellName(324983)] = 3,	-- Shared Suffering
+	[SpellName(324982)] = 3,	-- Shared Suffering (Partner)
+	[SpellName(332664)] = 3,	-- Concentrate Anima
+	[SpellName(325382)] = 3,	-- Warped Desires
+	-- Sun King's Salvation
+	[SpellName(333002)] = 3,	-- Vulgar Brand
+	[SpellName(326078)] = 3,	-- Infuser's Boon
+	[SpellName(325251)] = 3,	-- Sin of Pride
+	[SpellName(341475)] = 3,	-- Crimson Flurry
+	[SpellName(328479)] = 3,	-- Eyes on Target
+	[SpellName(328889)] = 3,	-- Greater Castigation
+	-- Artificer Xy'mox
+	[SpellName(327902)] = 3,	-- Fixate
+	[SpellName(326302)] = 3,	-- Stasis Trap
+	[SpellName(325236)] = 3,	-- Glyph of Destruction
+	[SpellName(327414)] = 3,	-- Possession
+	[SpellName(328468)] = 3,	-- Dimensional Tear
+	-- The Council of Blood
+	[SpellName(327052)] = 3,	-- Drain Essence
+	[SpellName(346651)] = 3,	-- Drain Essence Mythic
+	[SpellName(328334)] = 3,	-- Tactical Advance
+	[SpellName(330848)] = 3,	-- Wrong Moves
+	[SpellName(331706)] = 3,	-- Scarlet Letter
+	[SpellName(331636)] = 3,	-- Dark Recital
+	-- Sludgefist
+	[SpellName(335470)] = 3,	-- Chain Slam
+	[SpellName(339181)] = 3,	-- Chain Slam (Root)
+	[SpellName(331209)] = 3,	-- Hateful Gaze
+	[SpellName(335293)] = 3,	-- Chain Link
+	[SpellName(342420)] = 3,	-- Chain Them!
+	[SpellName(335295)] = 3,	-- Shattering Chain
+	-- Stone Legion Generals
+	[SpellName(334498)] = 3,	-- Seismic Upheaval
+	[SpellName(337643)] = 3,	-- Unstable Footing
+	[SpellName(334765)] = 3,	-- Heart Rend
+	[SpellName(333377)] = 3,	-- Wicked Mark
+	[SpellName(334616)] = 3,	-- Petrified
+	[SpellName(334541)] = 3,	-- Curse of Petrification
+	[SpellName(339690)] = 3,	-- Crystalize
+	[SpellName(342655)] = 3,	-- Volatile Anima Infusion
+	[SpellName(342698)] = 3,	-- Volatile Anima Infection
+	[SpellName(343881)] = 3,	-- Serrated Tear
+	-- Sire Denathrius
+	[SpellName(326851)] = 3,	-- Blood Price
+	[SpellName(327796)] = 3,	-- Night Hunter
+	[SpellName(327992)] = 3,	-- Desolation
+	[SpellName(328276)] = 3,	-- March of the Penitent
+	[SpellName(326699)] = 3,	-- Burden of Sin
+	[SpellName(329181)] = 3,	-- Wracking Pain
+	[SpellName(335873)] = 3,	-- Rancor
+	[SpellName(329951)] = 3,	-- Impale
+	[SpellName(327039)] = 3,	-- Feeding Time
+	[SpellName(332794)] = 3,	-- Fatal Finesse
+	
+-----------------------------------------------------------------
+-- Sanctum of Domination
+-----------------------------------------------------------------
+	-- The Tarragrue
+	[SpellName(347283)] = 3, -- Predator's Howl
+	[SpellName(347286)] = 3, -- Unshakeable Dread
+	[SpellName(346986)] = 3, -- Crushed Armor
+	[SpellName(347991)] = 3, -- Ten of Towers
+	[SpellName(347269)] = 3, -- Chains of Eternity
+	[SpellName(346985)] = 3, -- Overpower
+	[SpellName(347274)] = 3, -- Annihilating Smash
+
+	-- Eye of the Jailer
+	[SpellName(350606)] = 3, -- Hopeless Lethargy
+	[SpellName(355240)] = 3, -- Scorn
+	[SpellName(355245)] = 3, -- Ire
+	[SpellName(349979)] = 3, -- Dragging Chains
+	[SpellName(348074)] = 3, -- Assailing Lance
+	[SpellName(351827)] = 3, -- Spreading Misery
+	[SpellName(355143)] = 3, -- Deathlink
+	[SpellName(350763)] = 3, -- Annihilating Glare
+
+	-- The Nine
+	[SpellName(350287)] = 3, -- Song of Dissolution
+	[SpellName(350542)] = 3, -- Fragments of Destiny
+	[SpellName(350202)] = 3, -- Unending Strike
+	[SpellName(350475)] = 3, -- Pierce Soul
+	[SpellName(350555)] = 3, -- Shard of Destiny
+	[SpellName(350109)] = 3, -- Brynja's Mournful Dirge
+	[SpellName(350483)] = 3, -- Link Essence
+	[SpellName(350039)] = 3, -- Arthura's Crushing Gaze
+	[SpellName(350184)] = 3, -- Daschla's Mighty Impact
+	[SpellName(350374)] = 3, -- Wings of Rage
+	
+	-- Remnant of Ner'zhul
+	[SpellName(350073)] = 3, -- Torment
+	[SpellName(349890)] = 3, -- Suffering
+	[SpellName(350469)] = 3, -- Malevolence
+	[SpellName(354634)] = 3, -- Spite 1
+	[SpellName(354479)] = 3, -- Spite 2
+	[SpellName(354534)] = 3, -- Spite 3
+
+	-- Soulrender Dormazain
+	[SpellName(353429)] = 3, -- Tormented
+	[SpellName(353023)] = 3, -- Torment
+	[SpellName(351787)] = 3, -- Agonizing Spike
+	[SpellName(350647)] = 3, -- Brand of Torment
+	[SpellName(350422)] = 3, -- Ruinblade
+	[SpellName(350851)] = 3, -- Vessel of Torment
+	[SpellName(354231)] = 3, -- Soul Manacles
+	[SpellName(348987)] = 3, -- Warmonger Shackle 1
+	[SpellName(350927)] = 3, -- Warmonger Shackle 2
+
+	-- Painsmith Raznal
+	[SpellName(356472)] = 3, -- Lingering Flames
+	[SpellName(355505)] = 3, -- Shadowsteel Chains 1
+	[SpellName(355506)] = 3, -- Shadowsteel Chains 2
+	[SpellName(348456)] = 3, -- Flameclasp Trap
+	[SpellName(356870)] = 3, -- Flameclasp Eruption
+	[SpellName(355568)] = 3, -- Cruciform Axe
+	[SpellName(355786)] = 3, -- Blackened Armor
+
+	-- Guardian of the First Ones
+	[SpellName(352394)] = 3, -- Radiant Energy
+	[SpellName(350496)] = 3, -- Threat Neutralization
+	[SpellName(347359)] = 3, -- Suppression Field
+	[SpellName(355357)] = 3, -- Obliterate
+	[SpellName(350732)] = 3, -- Sunder
+	[SpellName(352833)] = 3, -- Disintegration
+
+	-- Fatescribe Roh-Kalo
+	[SpellName(354365)] = 3, -- Grim Portent
+	[SpellName(350568)] = 3, -- Call of Eternity
+	[SpellName(353435)] = 3, -- Overwhelming Burden
+	[SpellName(351680)] = 3, -- Invoke Destiny
+	[SpellName(353432)] = 3, -- Burden of Destiny
+	[SpellName(353693)] = 3, -- Unstable Accretion
+	[SpellName(350355)] = 3, -- Fated Conjunction
+	[SpellName(353931)] = 3, -- Twist Fate
+
+	-- Kel'Thuzad
+	[SpellName(346530)] = 3, -- Frozen Destruction
+	[SpellName(354289)] = 3, -- Sinister Miasma
+	[SpellName(347454)] = 3, -- Oblivion's Echo 1
+	[SpellName(347518)] = 3, -- Oblivion's Echo 2
+	[SpellName(347292)] = 3, -- Oblivion's Echo 3
+	[SpellName(348978)] = 3, -- Soul Exhaustion
+	[SpellName(355389)] = 3, -- Relentless Haunt (Fixate)
+	[SpellName(357298)] = 3, -- Frozen Binds
+	[SpellName(355137)] = 3, -- Shadow Pool
+	[SpellName(348638)] = 3, -- Return of the Damned
+	[SpellName(348760)] = 3, -- Frost Blast
+
+	-- Sylvanas Windrunner
+	[SpellName(349458)] = 3, -- Domination Chains
+	[SpellName(347704)] = 3, -- Veil of Darkness
+	[SpellName(347607)] = 3, -- Banshee's Mark
+	[SpellName(347670)] = 3, -- Shadow Dagger
+	[SpellName(351117)] = 3, -- Crushing Dread
+	[SpellName(351870)] = 3, -- Haunting Wave
+	[SpellName(351253)] = 3, -- Banshee Wail
+	[SpellName(351451)] = 3, -- Curse of Lethargy
+	[SpellName(351092)] = 3, -- Destabilize 1
+	[SpellName(351091)] = 3, -- Destabilize 2
+	[SpellName(348064)] = 3, -- Wailing Arrow
+	
+----------------------------------------------------------
+-------------- Sepulcher of the First Ones ---------------
+----------------------------------------------------------
+	-- Vigilant Guardian
+	[SpellName(364447)] = 3, -- Dissonance
+	[SpellName(364904)] = 6, -- Anti-Matter
+	[SpellName(364881)] = 5, -- Matter Disolution
+	[SpellName(360415)] = 5, -- Defenseless
+	[SpellName(360412)] = 4, -- Exposed Core
+	[SpellName(366393)] = 5, -- Searing Ablation
+	-- Skolex, the Insatiable Ravener
+	[SpellName(364522)] = 2, -- Devouring Blood
+	[SpellName(359976)] = 2, -- Riftmaw
+	[SpellName(359981)] = 2, -- Rend
+	[SpellName(360098)] = 3, -- Warp Sickness
+	[SpellName(366070)] = 3, -- Volatile Residue
+	-- Artificer Xy'mox
+	[SpellName(364030)] = 3, -- Debilitating Ray
+	[SpellName(365681)] = 2, -- System Shock
+	[SpellName(363413)] = 4, -- Forerunner Rings A
+	[SpellName(364604)] = 4, -- Forerunner Rings B
+	[SpellName(362615)] = 6, -- Interdimensional Wormhole Player 1
+	[SpellName(362614)] = 6, -- Interdimensional Wormhole Player 2
+	[SpellName(362803)] = 5, -- Glyph of Relocation
+	-- Dausegne, The Fallen Oracle
+	[SpellName(361751)] = 2, -- Disintegration Halo
+	[SpellName(364289)] = 2, -- Staggering Barrage
+	[SpellName(361018)] = 2, -- Staggering Barrage Mythic 1
+	[SpellName(360960)] = 2, -- Staggering Barrage Mythic 2
+	[SpellName(361225)] = 2, -- Encroaching Dominion
+	[SpellName(361966)] = 2, -- Infused Strikes
+	-- Prototype Pantheon
+	[SpellName(365306)] = 2, -- Invigorating Bloom
+	[SpellName(361689)] = 3, -- Wracking Pain
+	[SpellName(366232)] = 4, -- Animastorm
+	[SpellName(364839)] = 2, -- Sinful Projection
+	[SpellName(360259)] = 5, -- Gloom Bolt
+	[SpellName(362383)] = 5, -- Anima Bolt
+	[SpellName(362352)] = 6, -- Pinned
+	-- Lihuvim, Principle Architect
+	[SpellName(360159)] = 5, -- Unstable Protoform Energy
+	[SpellName(363681)] = 3, -- Deconstructing Blast
+	[SpellName(363676)] = 4, -- Deconstructing Energy Player 1
+	[SpellName(363795)] = 4, -- Deconstructing Energy Player 2
+	[SpellName(364312)] = 5, -- Ephemeral Barrier
+	-- Halondrus the Reclaimer
+	[SpellName(361309)] = 3, -- Lightshatter Beam
+	[SpellName(361002)] = 4, -- Ephemeral Fissure
+	[SpellName(360114)] = 4, -- Ephemeral Fissure II
+	-- Anduin Wrynn
+	[SpellName(365293)] = 2, -- Befouled Barrier
+	[SpellName(363020)] = 3, -- Necrotic Claws
+	[SpellName(365021)] = 5, -- Wicked Star (marked)
+	[SpellName(365024)] = 6, -- Wicked Star (hit)
+	[SpellName(365445)] = 3, -- Scarred Soul
+	[SpellName(365008)] = 4, -- Psychic Terror
+	[SpellName(366849)] = 6, -- Domination Word: Pain
+	-- Lords of Dread
+	[SpellName(360148)] = 5, -- Bursting Dread
+	[SpellName(360012)] = 4, -- Cloud of Carrion
+	[SpellName(360146)] = 4, -- Fearful Trepidation
+	[SpellName(360241)] = 6, -- Unsettling Dreams
+	-- Rygelon
+	[SpellName(362206)] = 6, -- Event Horizon
+	[SpellName(362137)] = 4, -- Corrupted Wound
+	[SpellName(361548)] = 5, -- Dark Eclipse
+	-- The Jailer
+	[SpellName(362075)] = 6, -- Domination
+	[SpellName(365150)] = 6, -- Rune of Domination
+	[SpellName(363893)] = 5, -- Martyrdom
+	[SpellName(363886)] = 5, -- Imprisonment
+	[SpellName(365219)] = 5, -- Chains of Anguish
+	[SpellName(366285)] = 6, -- Rune of Compulsion
+	[SpellName(363332)] = 5, -- Unbreaking Grasp
+-----------------------------------------------------------------
+-- Dungeons
+-----------------------------------------------------------------
+	
+-------------------- Mythic+ Specific --------------------
+-- General Affixes
+	[SpellName(209858)] = 3, -- Necrotic
+	[SpellName(226512)] = 3, -- Sanguine
+	[SpellName(240559)] = 3, -- Grievous
+	[SpellName(240443)] = 3, -- Bursting
+-- Shadowlands Season 2
+	[SpellName(356667)] = 6, -- Biting Cold 1
+	[SpellName(356666)] = 6, -- Biting Cold 2
+	[SpellName(355732)] = 6, -- Melt Soul
+	[SpellName(356925)] = 6, -- Carnage
+	[SpellName(358777)] = 6, -- Bindings of Misery
+-- Shadowlands Season 3
+	[SpellName(368241)] = 3, -- Decrypted Urh Cypher
+	[SpellName(368244)] = 4, -- Urh Cloaking Field
+	[SpellName(368240)] = 3, -- Decrypted Wo Cypher
+	[SpellName(368239)] = 3, -- Decrypted Vy Cypher
+	[SpellName(366297)] = 6, -- Deconstruct (Tank Debuff)
+	[SpellName(366288)] = 6, -- Force Slam (Stun)
+-- Shadowlands Season 4
+	[SpellName(373364)] = 6, -- Vampiric Claws
+	[SpellName(373429)] = 6, -- Carrion Swarm
+	[SpellName(373370)] = 6, -- Nightmare Cloud
+	[SpellName(373391)] = 6, -- Nightmare
+	[SpellName(373570)] = 6, -- Hypnosis
+	[SpellName(373607)] = 6, -- Shadowy Barrier (Hypnosis)
+	[SpellName(373509)] = 6, -- Shadow Claws (Stacking)
 ----------------------------------------------------------
 ---------------- Old Dungeons (Season 4) -----------------
 ----------------------------------------------------------
@@ -779,7 +829,7 @@ T.RaidDebuffs = {
 	[SpellName(116888)] = 4,	-- Shroud of Purgatory
 	[SpellName(121175)] = 2,	-- Orb of Power
 }
-
+end
 -----------------------------------------------------------------
 -- PvP
 -----------------------------------------------------------------
