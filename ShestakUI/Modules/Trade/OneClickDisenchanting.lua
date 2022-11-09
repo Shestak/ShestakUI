@@ -166,7 +166,11 @@ function button:PLAYER_LOGIN()
 				spell, r, g, b = GetSpellInfo(31252), 1, 0.33, 0.33
 			elseif disenchanter then
 				local _, _, itemRarity, _, _, _, _, _, _, _, _, class, subClass = GetItemInfo(link)
-				if not (class == LE_ITEM_CLASS_WEAPON or class == LE_ITEM_CLASS_ARMOR or (class == 3 and subClass == 11)) or not (itemRarity and (itemRarity > 1 and (itemRarity < 5 or itemRarity == 6))) then return end
+				if T.newPatch then
+					if not (itemRarity and (itemRarity > 1 and (itemRarity < 5 or itemRarity == 6))) then return end
+				else
+					if not (class == LE_ITEM_CLASS_WEAPON or class == LE_ITEM_CLASS_ARMOR or (class == 3 and subClass == 11)) or not (itemRarity and (itemRarity > 1 and (itemRarity < 5 or itemRarity == 6))) then return end
+				end
 				spell, r, g, b = GetSpellInfo(13262), 0.5, 0.5, 1
 			elseif rogue then
 				for index = 1, self:NumLines() do
@@ -192,9 +196,9 @@ function button:PLAYER_LOGIN()
 				OnTooltipSetUnit(tooltip)
 			end
 		end
-		TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, onTooltipFunction)
+		TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, onTooltipFunction)
 	else
-		GameTooltip:HookScript("OnTooltipSetUnit", OnTooltipSetUnit)
+		GameTooltip:HookScript("OnTooltipSetItem", OnTooltipSetUnit)
 	end
 
 	self:SetFrameStrata("TOOLTIP")
