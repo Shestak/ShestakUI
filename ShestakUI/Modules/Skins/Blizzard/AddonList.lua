@@ -24,10 +24,24 @@ local function LoadSkin()
 	AddonListInset:SetTemplate("Overlay")
 	AddonListInset:SetPoint("BOTTOMRIGHT", -6, 29)
 
-	-- BETA for i = 1, MAX_ADDONS_DISPLAYED do
-		--T.SkinCheckBox(_G["AddonList"..i.."Enabled"])
-		--_G['AddonList'..i].LoadAddonButton:SkinButton(nil, nil, true)
-	--end
+	local function forceSaturation(self, _, force)
+		if force then return end
+		self:SetVertexColor(0.6, 0.6, 0.6)
+		self:SetDesaturated(true, true)
+	end
+
+	hooksecurefunc(AddonList.ScrollBox, "Update", function(self)
+		for i = 1, self.ScrollTarget:GetNumChildren() do
+			local child = select(i, self.ScrollTarget:GetChildren())
+			if not child.styled then
+				T.SkinCheckBox(child.Enabled)
+				child.LoadAddonButton:SkinButton()
+				hooksecurefunc(child.Enabled:GetCheckedTexture(), "SetDesaturated", forceSaturation)
+
+				child.styled = true
+			end
+		end
+	end)
 
 	T.SkinScrollBar(AddonList.ScrollBar)
 	T.SkinCloseButton(AddonListCloseButton)
