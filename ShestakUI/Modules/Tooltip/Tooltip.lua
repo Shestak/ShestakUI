@@ -472,12 +472,12 @@ hooksecurefunc("SetTooltipMoney", function()
 		end
 	end
 	for i = 1, 2 do
-		if _G["ItemRefTooltipMoneyFrame"..i] then
-			_G["ItemRefTooltipMoneyFrame"..i.."PrefixText"]:SetFontObject("GameTooltipText")
-			_G["ItemRefTooltipMoneyFrame"..i.."SuffixText"]:SetFontObject("GameTooltipText")
-			_G["ItemRefTooltipMoneyFrame"..i.."GoldButton"]:SetNormalFontObject("GameTooltipText")
-			_G["ItemRefTooltipMoneyFrame"..i.."SilverButton"]:SetNormalFontObject("GameTooltipText")
-			_G["ItemRefTooltipMoneyFrame"..i.."CopperButton"]:SetNormalFontObject("GameTooltipText")
+		if _G["ShoppingTooltip1MoneyFrame"..i] then
+			_G["ShoppingTooltip1MoneyFrame"..i.."PrefixText"]:SetFontObject("GameTooltipText")
+			_G["ShoppingTooltip1MoneyFrame"..i.."SuffixText"]:SetFontObject("GameTooltipText")
+			_G["ShoppingTooltip1MoneyFrame"..i.."GoldButton"]:SetNormalFontObject("GameTooltipText")
+			_G["ShoppingTooltip1MoneyFrame"..i.."SilverButton"]:SetNormalFontObject("GameTooltipText")
+			_G["ShoppingTooltip1MoneyFrame"..i.."CopperButton"]:SetNormalFontObject("GameTooltipText")
 		end
 	end
 end)
