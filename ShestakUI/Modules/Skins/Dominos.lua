@@ -105,7 +105,7 @@ frame:SetScript("OnEvent", function()
 			icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
 
 			if pet then
-				local autocast = _G[name.."AutoCastable"]
+				local autocast = button.AutoCastable
 				autocast:SetSize((button:GetWidth() * 2) - 10, (button:GetWidth() * 2) - 10)
 				autocast:ClearAllPoints()
 				autocast:SetPoint("CENTER", button, 0, 0)
@@ -122,7 +122,7 @@ frame:SetScript("OnEvent", function()
 	end
 
 	do
-		for i = 1, 60 do
+		for i = 1, 168 do
 			if _G["DominosActionButton"..i] then
 				_G["DominosActionButton"..i]:StyleButton()
 				StyleNormalButton(_G["DominosActionButton"..i])
@@ -142,8 +142,8 @@ frame:SetScript("OnEvent", function()
 			StyleNormalButton(_G["MultiBarRightButton"..i])
 		end
 
-		for i = 1, NUM_STANCE_SLOTS do
-			local name = "StanceButton"..i
+		for i = 1, 10 do
+			local name = "DominosStanceButton"..i
 			local button = _G[name]
 			local icon = _G[name.."Icon"]
 			local hotkey = _G[name.."HotKey"]
@@ -151,7 +151,7 @@ frame:SetScript("OnEvent", function()
 		end
 
 		for i = 1, NUM_PET_ACTION_SLOTS do
-			local name = "PetActionButton"..i
+			local name = "DominosPetActionButton"..i
 			local button = _G[name]
 			local icon = _G[name.."Icon"]
 			local hotkey = _G[name.."HotKey"]

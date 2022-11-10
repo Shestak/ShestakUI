@@ -206,7 +206,7 @@
 	<!-- <Script file="Modules\Skins\CoolLine.lua"/> -->
 	<!-- <Script file="Modules\Skins\DBM.lua"/> -->
 	<!-- <Script file="Modules\Skins\Details.lua"/> -->
-	<!-- <Script file="Modules\Skins\Dominos.lua"/> -->
+	<Script file="Modules\Skins\Dominos.lua"/>
 	<!-- <Script file="Modules\Skins\FlyoutButtonCustom.lua"/> -->
 	<!-- <Script file="Modules\Skins\MageNuggets.lua"/> -->
 	<!-- <Script file="Modules\Skins\MyRolePlay.lua"/> -->
