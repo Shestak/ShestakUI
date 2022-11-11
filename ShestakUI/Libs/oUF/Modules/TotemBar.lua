@@ -71,39 +71,29 @@ local function Event(self, event, ...)
 	end
 end
 
+local function anchorTotems(element)
+	for t in next, _G.TotemFrame.totemPool.activeObjects do
+		local i = t.slot
+		t:ClearAllPoints()
+		t:SetParent(element[i])
+		t:SetAllPoints(element[i])
+		t:SetFrameLevel(element[i]:GetFrameLevel() + 1)
+		t:SetFrameStrata(element[i]:GetFrameStrata())
+		t:SetAlpha(0)
+		t.Icon:Hide()
+	end
+end
+
 local function Enable(self)
 	local element = self.TotemBar
-
 	if element then
 		self:RegisterEvent("PLAYER_TOTEM_UPDATE", Event, true)
 		element.colors = setmetatable(element.colors or {}, {__index = colors})
 		if element.Destroy then
-			for i = 1, MAX_TOTEMS do
-				if element[i] then
-					local t = _G["TotemFrameTotem"..i]
-					if t then
-						t:ClearAllPoints()
-						t:SetParent(element[i])
-						t:SetAllPoints(element[i])
-						t:SetFrameLevel(element[i]:GetFrameLevel() + 1)
-						t:SetFrameStrata(element[i]:GetFrameStrata())
-						t:SetAlpha(0)
-						_G["TotemFrameTotem"..i.."Icon"]:Hide()
-					end
-				end
-			end
-			--BETA hooksecurefunc("TotemFrame_Update", function()
-				-- for i = 1, MAX_TOTEMS do
-					-- local t = _G["TotemFrameTotem"..i]
-					-- if t then
-						-- local slot = t.slot
-						-- if slot and slot > 0 then
-							-- t:ClearAllPoints()
-							-- t:SetAllPoints(element[slot])
-						-- end
-					-- end
-				-- end
-			-- end)
+			anchorTotems(element)
+			hooksecurefunc(TotemFrame, "Update", function()
+				anchorTotems(element)
+			end)
 		end
 		return true
 	end
