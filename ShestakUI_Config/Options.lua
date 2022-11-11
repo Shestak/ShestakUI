@@ -196,7 +196,7 @@ SpellList:SetPoint("TOPLEFT", ShestakUIOptionsPanel, "TOPRIGHT", 22, 0)
 SpellList:SetSize(290, 420)
 SpellList:Hide()
 
-_G["SpellListPortrait"]:SetTexture("Interface\\Spellbook\\Spellbook-Icon")
+SpellListPortrait:SetAlpha(0)
 
 SpellList.title = _G["SpellListTitle"] or SpellList:CreateFontString("SpellListTitle", "OVERLAY", "GameFontNormal")
 SpellList.title:SetPoint("TOP", _G["SpellList"], "TOP", 0, -5)
@@ -1309,7 +1309,7 @@ do
 
 	local chi = ns.CreateCheckBox(parent, "chi", L_GUI_UF_PLUGINS_CHI_BAR)
 	chi:SetPoint("TOPLEFT", arcane, "BOTTOMLEFT", 0, 0)
-	
+
 	local essence = ns.CreateCheckBox(parent, "essence")
 	essence:SetPoint("TOPLEFT", chi, "BOTTOMLEFT", 0, 0)
 
