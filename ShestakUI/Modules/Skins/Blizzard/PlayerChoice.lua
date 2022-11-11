@@ -7,7 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	local frame = _G.PlayerChoiceFrame
 
-	hooksecurefunc(frame, "TryShow", function(self)
+	hooksecurefunc(frame, "SetupOptions", function(self)
 		if not frame.IsSkinned then
 			frame.BlackBackground:SetAlpha(0)
 			frame.Background:SetAlpha(0)

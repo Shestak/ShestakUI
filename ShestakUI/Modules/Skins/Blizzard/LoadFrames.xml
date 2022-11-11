@@ -26,7 +26,7 @@
 	<!-- <Script file="Communities.lua"/> -->
 	<Script file="Container.lua"/>
 	<!-- <Script file="Contribution.lua"/> -->
-	<!-- <Script file="CovenantPreview.lua"/> -->
+	<Script file="CovenantPreview.lua"/>
 	<Script file="CovenantRenown.lua"/>
 	<Script file="CovenantSanctum.lua"/>
 	<!-- <Script file="DebugTools.lua"/> -->
@@ -63,7 +63,7 @@
 	<!-- <Script file="PartyPoseUI.lua"/> -->
 	<!-- <Script file="Petition.lua"/> -->
 	<!-- <Script file="PetStable.lua"/> -->
-	<!-- <Script file="PlayerChoice.lua"/> -->
+	<Script file="PlayerChoice.lua"/>
 	<Script file="PvE.lua"/>
 	<Script file="PvP.lua"/>
 	<!-- <Script file="PvPMatch.lua"/> -->
