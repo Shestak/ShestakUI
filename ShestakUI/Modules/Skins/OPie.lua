@@ -210,4 +210,4 @@ local function CreateIndicator(name, parent, size)
 	return button
 end
 
-OneRingLib.ext.OPieUI:SetIndicatorConstructor(CreateIndicator)
+--BETA OneRingLib.ext.OPieUI:SetIndicatorConstructor(CreateIndicator)
