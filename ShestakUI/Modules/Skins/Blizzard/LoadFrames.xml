@@ -10,7 +10,7 @@
 	<!-- <Script file="Artifact.lua"/> -->
 	<!-- <Script file="Auction.lua"/> -->
 	<!-- <Script file="Azerite.lua"/> -->
-	<!-- <Script file="AzeriteEssence.lua"/> -->
+	<Script file="AzeriteEssence.lua"/>
 	<!-- <Script file="AzeriteRespec.lua"/> -->
 	<!-- <Script file="BarberShop.lua"/> -->
 	<!-- <Script file="Binding.lua"/> -->
@@ -59,7 +59,7 @@
 	<Script file="Merchant.lua"/>
 	<!-- <Script file="Obliterum.lua"/> -->
 	<!-- <Script file="Options.lua"/> -->
-	<!-- <Script file="OrderHall.lua"/> -->
+	<Script file="OrderHall.lua"/>
 	<!-- <Script file="PartyPoseUI.lua"/> -->
 	<!-- <Script file="Petition.lua"/> -->
 	<!-- <Script file="PetStable.lua"/> -->

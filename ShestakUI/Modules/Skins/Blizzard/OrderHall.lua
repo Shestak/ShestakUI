@@ -16,6 +16,7 @@ local function LoadSkin()
 	OrderHallCommandBar.AreaName:SetPoint("LEFT", OrderHallCommandBar.CurrencyIcon, "RIGHT", 25, 0)
 	OrderHallCommandBar.AreaName:SetVertexColor(unpack(C.media.classborder_color))
 	OrderHallCommandBar.WorldMapButton:Kill()
+	OrderHallTalentFramePortrait:SetAlpha(0)
 
 	hooksecurefunc(OrderHallCommandBar, "RefreshCategories", function(self)
 		local index = 0
