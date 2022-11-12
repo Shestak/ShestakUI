@@ -296,12 +296,14 @@ if C.automation.auto_collapse ~= "NONE" then
 			local inInstance, instanceType = IsInInstance()
 			if inInstance then
 				if instanceType == "party" or instanceType == "scenario" then
-					for i = 3, #headers do
-						local button = headers[i].Header.MinimizeButton
-						if button and not headers[i].collapsed then
-							button:Click()
+					C_Timer.After(0.1, function() -- for some reason it got error after reload in instance
+						for i = 3, #headers do
+							local button = headers[i].Header.MinimizeButton
+							if button and not headers[i].collapsed then
+								button:Click()
+							end
 						end
-					end
+					end)
 				else
 					ObjectiveTracker_Collapse()
 				end
