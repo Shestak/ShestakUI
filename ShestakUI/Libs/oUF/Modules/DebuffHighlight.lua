@@ -7,8 +7,9 @@ if C.unitframe.enable ~= true then return end
 local _, ns = ...
 local oUF = ns.oUF
 
-local CanDispel = {
+T.CanDispel = {
 	DRUID = {Magic = false, Curse = true, Poison = true},
+	EVOKER = {Magic = false, Curse = true, Poison = true, Disease = true},
 	MAGE = {Curse = true},
 	MONK = {Magic = false, Poison = true, Disease = true},
 	PALADIN = {Magic = false, Poison = true, Disease = true},
@@ -16,7 +17,7 @@ local CanDispel = {
 	SHAMAN = {Magic = false, Curse = true}
 }
 
-local dispellist = CanDispel[T.class] or {}
+local dispellist = T.CanDispel[T.class] or {}
 local origColors = {}
 local origBorderColors = {}
 
@@ -112,7 +113,7 @@ local function Enable(object)
 		return
 	end
 	-- If we're filtering highlights and we're not of the dispelling type, return
-	if object.DebuffHighlightFilter and not CanDispel[T.class] then
+	if object.DebuffHighlightFilter and not T.CanDispel[T.class] then
 		return
 	end
 
