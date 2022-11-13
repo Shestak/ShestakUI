@@ -7,8 +7,6 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	local StripAllTextures = {
 		"ClassTrainerFrame",
-		"ClassTrainerFrameInset",
-		"ClassTrainerScrollFrameScrollChild",
 		"ClassTrainerFrameSkillStepButton",
 		"ClassTrainerFrameBottomInset"
 	}
@@ -19,26 +17,24 @@ local function LoadSkin()
 
 	local KillTextures = {
 		"ClassTrainerFramePortrait",
-		"ClassTrainerScrollFrameScrollBarBG",
-		"ClassTrainerScrollFrameScrollBarTop",
-		"ClassTrainerScrollFrameScrollBarBottom",
-		"ClassTrainerScrollFrameScrollBarMiddle"
 	}
 
-	for i = 1, 8 do
-		_G["ClassTrainerScrollFrameButton"..i]:StripTextures()
-		_G["ClassTrainerScrollFrameButton"..i]:StyleButton()
-		_G["ClassTrainerScrollFrameButton"..i.."Icon"]:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		_G["ClassTrainerScrollFrameButton"..i]:CreateBackdrop("Default")
-		_G["ClassTrainerScrollFrameButton"..i].backdrop:SetPoint("TOPLEFT", _G["ClassTrainerScrollFrameButton"..i.."Icon"], "TOPLEFT", -2, 2)
-		_G["ClassTrainerScrollFrameButton"..i].backdrop:SetPoint("BOTTOMRIGHT", _G["ClassTrainerScrollFrameButton"..i.."Icon"], "BOTTOMRIGHT", 2, -2)
-		_G["ClassTrainerScrollFrameButton"..i.."Icon"]:SetParent(_G["ClassTrainerScrollFrameButton"..i].backdrop)
+	hooksecurefunc(ClassTrainerFrame.ScrollBox, "Update", function(frame)
+		for _, button in next, {frame.ScrollTarget:GetChildren()} do
+			if not button.IsSkinned then
+				button:StyleButton()
+				button.icon:SkinIcon()
+				button:SetNormalTexture(0)
+				button.disabledBG:SetTexture()
+				button.selectedTex:ClearAllPoints()
+				button.selectedTex:SetPoint("TOPLEFT", 2, -2)
+				button.selectedTex:SetPoint("BOTTOMRIGHT", -2, 2)
+				button.selectedTex:SetColorTexture(1, 1, 1, 0.3)
 
-		_G["ClassTrainerScrollFrameButton"..i].selectedTex:SetColorTexture(1, 1, 1, 0.3)
-		_G["ClassTrainerScrollFrameButton"..i].selectedTex:ClearAllPoints()
-		_G["ClassTrainerScrollFrameButton"..i].selectedTex:SetPoint("TOPLEFT", 2, -2)
-		_G["ClassTrainerScrollFrameButton"..i].selectedTex:SetPoint("BOTTOMRIGHT", -2, 2)
-	end
+				button.IsSkinned = true
+			end
+		end
+	end)
 
 	for _, object in pairs(StripAllTextures) do
 		_G[object]:StripTextures()
@@ -62,17 +58,18 @@ local function LoadSkin()
 
 	T.SkinCloseButton(ClassTrainerFrameCloseButton, ClassTrainerFrame)
 
-	ClassTrainerFrameSkillStepButton:ClearAllPoints()
-	ClassTrainerFrameSkillStepButton:SetPoint("TOPRIGHT", ClassTrainerFrameFilterDropDown, "BOTTOMRIGHT", -16, 0)
-	ClassTrainerFrameSkillStepButton.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-	ClassTrainerFrameSkillStepButton:CreateBackdrop("Default")
-	ClassTrainerFrameSkillStepButton.backdrop:SetPoint("TOPLEFT", ClassTrainerFrameSkillStepButton.icon, "TOPLEFT", -2, 2)
-	ClassTrainerFrameSkillStepButton.backdrop:SetPoint("BOTTOMRIGHT", ClassTrainerFrameSkillStepButton.icon, "BOTTOMRIGHT", 2, -2)
-	ClassTrainerFrameSkillStepButton.icon:SetParent(ClassTrainerFrameSkillStepButton.backdrop)
+	local stepButton = ClassTrainerFrameSkillStepButton
+	stepButton:ClearAllPoints()
+	stepButton:SetPoint("TOPRIGHT", ClassTrainerFrameFilterDropDown, "BOTTOMRIGHT", -16, 0)
+	stepButton.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	stepButton:CreateBackdrop("Default")
+	stepButton.backdrop:SetPoint("TOPLEFT", stepButton.icon, "TOPLEFT", -2, 2)
+	stepButton.backdrop:SetPoint("BOTTOMRIGHT", stepButton.icon, "BOTTOMRIGHT", 2, -2)
+	stepButton.icon:SetParent(stepButton.backdrop)
 	ClassTrainerFrameSkillStepButtonHighlight:SetColorTexture(1, 1, 1, 0.3)
-	ClassTrainerFrameSkillStepButton.selectedTex:SetColorTexture(1, 1, 1, 0.3)
+	stepButton.selectedTex:SetColorTexture(1, 1, 1, 0.3)
 
-	T.SkinScrollBar(ClassTrainerScrollFrameScrollBar)
+	T.SkinScrollBar(ClassTrainerFrame.ScrollBar)
 
 	ClassTrainerStatusBar:StripTextures()
 	ClassTrainerStatusBar:SetStatusBarTexture(C.media.texture)

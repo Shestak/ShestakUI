@@ -461,7 +461,10 @@ function T.SkinScrollBar(frame)
 			if frame.Background then
 				frame.Background:Hide()
 			end
-			newThumb:DisableDrawLayer('BACKGROUND')
+			if frame.Track then
+				frame.Track:DisableDrawLayer("ARTWORK")
+			end
+			newThumb:DisableDrawLayer("BACKGROUND")
 			if not frame.thumbbg then
 				frame.thumbbg = CreateFrame("Frame", nil, frame)
 				frame.thumbbg:SetPoint("TOPLEFT", newThumb, "TOPLEFT", 0, -3)
