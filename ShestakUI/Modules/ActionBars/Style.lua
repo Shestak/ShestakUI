@@ -67,7 +67,7 @@ local function StyleNormalButton(button, size)
 		end
 
 		if border then
-			border:Kill()
+			border:SetTexture("")
 		end
 
 		if not isExtraAction then
