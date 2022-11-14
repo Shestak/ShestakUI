@@ -7,6 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	ArchaeologyFrame:StripTextures(true)
 	ArchaeologyFrame:SetTemplate("Transparent")
+	ArchaeologyFramePortrait:SetAlpha(0)
 
 	ArchaeologyFrameArtifactPageSolveFrameSolveButton:SkinButton(true)
 	ArchaeologyFrameArtifactPageBackButton:SkinButton(true)
