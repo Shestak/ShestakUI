@@ -293,22 +293,10 @@ local function BlackMarketFrame_UpdateHotItem(self)
 	end
 end
 
-local function BlackMarketScrollFrame_Update()
-	local numItems = C_BlackMarket.GetNumItems()
-	local offset = HybridScrollFrame_GetOffset(BlackMarketScrollFrame)
-	local buttons = BlackMarketScrollFrame.buttons
-
-	for i = 1, #buttons do
-		local index = offset + i
-		if type(numItems) == "number" and index <= numItems then
-			local texture = buttons[i].Item.IconTexture
-			if texture and texture:IsShown() then
-				local name, _, _, _, usable, _, _, _, _, _, _, _, _, _, link = C_BlackMarket.GetItemInfoByIndex(index)
-				if name and usable and IsKnown(link) then
-					texture:SetVertexColor(color.r, color.g, color.b)
-				end
-			end
-		end
+local function BlackMarketScrollFrame_Update(self, elementData)
+	local name, _, _, _, usable, _, _, _, _, _, _, _, _, _, link = C_BlackMarket.GetItemInfoByIndex(elementData.index)
+	if name and usable and IsKnown(link) then
+		self.Item.IconTexture:SetVertexColor(color.r, color.g, color.b)
 	end
 end
 
@@ -316,8 +304,7 @@ local isBlizzard_BlackMarketUILoaded
 if IsAddOnLoaded("Blizzard_BlackMarketUI") then
 	isBlizzard_BlackMarketUILoaded = true
 	hooksecurefunc("BlackMarketFrame_UpdateHotItem", BlackMarketFrame_UpdateHotItem)
-	hooksecurefunc("BlackMarketScrollFrame_Update", BlackMarketScrollFrame_Update)
-	hooksecurefunc(BlackMarketScrollFrame, "update", BlackMarketScrollFrame_Update)
+	hooksecurefunc(BlackMarketItemMixin, "Init", BlackMarketScrollFrame_Update)
 end
 
 -- LoD addons
@@ -336,8 +323,7 @@ if not (isBlizzard_GuildUILoaded and isBlizzard_GuildBankUILoaded and isBlizzard
 		elseif addon == "Blizzard_BlackMarketUI" then
 			isBlizzard_BlackMarketUILoaded = true
 			hooksecurefunc("BlackMarketFrame_UpdateHotItem", BlackMarketFrame_UpdateHotItem)
-			hooksecurefunc("BlackMarketScrollFrame_Update", BlackMarketScrollFrame_Update)
-			hooksecurefunc(BlackMarketScrollFrame, "update", BlackMarketScrollFrame_Update)
+			hooksecurefunc(BlackMarketItemMixin, "Init", BlackMarketScrollFrame_Update)
 		end
 
 		if isBlizzard_GuildUILoaded and isBlizzard_GuildBankUILoaded and isBlizzard_AuctionUILoaded and isBlizzard_BlackMarketUILoaded then
