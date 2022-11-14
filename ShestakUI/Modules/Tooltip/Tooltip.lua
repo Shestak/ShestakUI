@@ -249,6 +249,7 @@ if C.tooltip.health_value == true then
 end
 
 local OnTooltipSetUnit = function(self)
+	if T.newPatch and (self ~= GameTooltip or self:IsForbidden()) then return end
 	local lines = self:NumLines()
 	local unit = (select(2, self:GetUnit())) or (GetMouseFocus() and GetMouseFocus().GetAttribute and GetMouseFocus():GetAttribute("unit")) or (UnitExists("mouseover") and "mouseover") or nil
 
