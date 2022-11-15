@@ -53,7 +53,6 @@
 	<Script file="ItemUpgrade.lua"/>
 	<Script file="Loot.lua"/>
 	<!-- <Script file="LossOfControl.lua"/> -->
-	<!-- <Script file="MacClient.lua"/> -->
 	<!-- <Script file="Macro.lua"/> -->
 	<Script file="Mail.lua"/>
 	<Script file="Merchant.lua"/>
