@@ -5,7 +5,7 @@ if C.minimap.enable ~= true or C.skins.minimap_buttons ~= true then return end
 --	Collect minimap buttons in one line
 ----------------------------------------------------------------------------------------
 local BlackList = {
-	["QueueStatusMinimapButton"] = true,
+	["QueueStatusButton"] = true,
 	["MiniMapTracking"] = true,
 	["MiniMapMailFrame"] = true,
 	["HelpOpenTicketButton"] = true,
