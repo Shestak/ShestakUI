@@ -77,11 +77,13 @@ hooksecurefunc(BuffFrame.AuraContainer, "UpdateGridLayout", function(self, auras
 		aura.duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 		aura.duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
-		aura.count:ClearAllPoints()
-		aura.count:SetPoint("BOTTOMRIGHT", 2, 0)
-		aura.count:SetDrawLayer("ARTWORK")
-		aura.count:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
-		aura.count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
+		if aura.count then -- fix error in EditMode
+			aura.count:ClearAllPoints()
+			aura.count:SetPoint("BOTTOMRIGHT", 2, 0)
+			aura.count:SetDrawLayer("ARTWORK")
+			aura.count:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
+			aura.count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
+		end
 	end
 end)
 
