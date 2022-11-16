@@ -154,7 +154,7 @@ function button:PLAYER_LOGIN()
 	end
 
 	local function OnTooltipSetUnit(self)
-		local _, link = self:GetItem()
+		local _, link = TooltipUtil.GetDisplayedItem(self)
 
 		if link and not InCombatLockdown() and IsAltKeyDown() and not (AuctionHouseFrame and AuctionHouseFrame:IsShown()) then
 			local itemID = GetItemInfoFromHyperlink(link)
