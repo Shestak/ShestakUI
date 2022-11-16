@@ -184,9 +184,10 @@ for _, slot in pairs(InventorySlots) do
 	tip:SetOwner(WorldFrame, "ANCHOR_NONE")
 	TestTips[slot] = tip
 	tip.slot = slot
-	tip:SetScript("OnTooltipSetItem", function(self)
+	TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(self)
+		if self ~= tip then return end
 		local slot = self.slot
-		local _, itemLink = self:GetItem()
+		local _, itemLink = TooltipUtil.GetDisplayedItem(self)
 		local tipName = self:GetName()
 		if self.itemLink then itemLink = self.itemLink end
 		if itemLink then
@@ -468,7 +469,8 @@ function E:ItemScanComplete(guid)
 	DecorateTooltip(guid)
 end
 
-GameTooltip:HookScript("OnTooltipSetUnit", function(self)
+TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, function(self)
+	if self ~= GameTooltip then return end
 	if C.tooltip.show_shift and not IsShiftKeyDown() then return end
 	local _, unitID = self:GetUnit()
 	local guid = unitID and UnitGUID(unitID)
