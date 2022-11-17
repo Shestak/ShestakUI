@@ -1463,7 +1463,7 @@ function Stuffing:BAG_CLOSED(id)
 			break
 		end
 	end
-	if id > 4 then
+	if id > 5 then
 		Stuffing_Close() -- prevent graphical bug with empty slots
 	end
 end
@@ -1482,7 +1482,7 @@ end
 
 function Stuffing:BAG_CONTAINER_UPDATE()
 	for _, v in ipairs(self.bagframe_buttons) do
-		if v.frame and v.slot < 4 then -- exclude bank
+		if v.frame and v.slot < 5 then -- exclude bank
 			v.frame.ID = ContainerIDToInventoryID(v.slot + 1)
 
 			local slotLink = GetInventoryItemLink("player", v.frame.ID)
@@ -1571,7 +1571,7 @@ function Stuffing:SortBags()
 	if _G["StuffingFrameReagent"] and _G["StuffingFrameReagent"]:IsShown() then
 		bagList = {-3}
 	elseif Stuffing.bankFrame and Stuffing.bankFrame:IsShown() then
-		bagList = {11, 10, 9, 8, 7, 6, 5, -1}
+		bagList = {12, 11, 10, 9, 8, 7, 6, -1}
 	else
 		bagList = {4, 3, 2, 1, 0}
 	end
