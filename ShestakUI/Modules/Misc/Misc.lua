@@ -206,3 +206,9 @@ hooksecurefunc(StaticPopupDialogs["DELETE_GOOD_ITEM"], "OnShow", function(s) s.e
 --	Change UIErrorsFrame strata
 ----------------------------------------------------------------------------------------
 UIErrorsFrame:SetFrameLevel(0)
+
+----------------------------------------------------------------------------------------
+--	Increase speed for AddonList scroll
+----------------------------------------------------------------------------------------
+AddonList.ScrollBox.wheelPanScalar = 6
+AddonList.ScrollBar.wheelPanScalar = 6
