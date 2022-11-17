@@ -216,7 +216,7 @@ function Stuffing:SlotUpdate(b)
 		if IsAddOnLoaded("Pawn") then
 			itemIsUpgrade = PawnIsContainerItemAnUpgrade(b.frame:GetParent():GetID(), b.frame:GetID())
 		else
-			itemIsUpgrade = IsContainerItemAnUpgrade(b.frame:GetParent():GetID(), b.frame:GetID())
+			-- Still Not Working, Blizz error: itemIsUpgrade = IsContainerItemAnUpgrade(b.frame:GetParent():GetID(), b.frame:GetID())
 		end
 		if itemIsUpgrade and itemIsUpgrade == true then
 			b.frame.UpgradeIcon:SetShown(true)
