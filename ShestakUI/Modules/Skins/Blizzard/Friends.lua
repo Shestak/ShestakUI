@@ -9,7 +9,7 @@ local function LoadSkin()
 		FriendsFrame,
 		FriendsListFrame,
 		FriendsTabHeader,
-		FriendsListFrameScrollFrame,
+		-- FriendsListFrameScrollFrame,
 		WhoFrameColumnHeader1,
 		WhoFrameColumnHeader2,
 		WhoFrameColumnHeader3,
@@ -25,7 +25,7 @@ local function LoadSkin()
 		LFRQueueFrameCommentInset,
 		FriendsFrameBattlenetFrame,
 		BattleTagInviteFrame,
-		QuickJoinScrollFrame,
+		-- QuickJoinScrollFrame,
 		QuickJoinRoleSelectionFrame,
 		FriendsFrameBattlenetFrame.BroadcastFrame,
 		FriendsFrameBattlenetFrame.UnavailableInfoFrame,
@@ -37,6 +37,9 @@ local function LoadSkin()
 	}
 
 	for i = 1, #StripAllTextures do
+		if not StripAllTextures[i] then
+			print(i)
+		end
 		StripAllTextures[i]:StripTextures()
 	end
 
@@ -62,13 +65,13 @@ local function LoadSkin()
 		QuickJoinFrame.JoinQueueButton,
 		QuickJoinRoleSelectionFrame.AcceptButton,
 		QuickJoinRoleSelectionFrame.CancelButton,
-		FriendsListFrameScrollFrame.PendingInvitesHeaderButton,
+		-- FriendsListFrameScrollFrame.PendingInvitesHeaderButton,
 		FriendsFrameBattlenetFrame.BroadcastFrame.CancelButton,
 		FriendsFrameBattlenetFrame.BroadcastFrame.UpdateButton,
 		RecruitAFriendFrame.RewardClaiming.ClaimOrViewRewardButton,
 		RecruitAFriendFrame.RecruitmentButton,
 		RecruitAFriendFrame.SplashFrame.OKButton,
-		RecruitAFriendRecruitmentFrame.GenerateOrCopyLinkButton
+		RecruitAFriendRecruitmentFrame.GenerateOrCopyLinkButton,
 	}
 
 	for i = 1, #buttons do
@@ -76,12 +79,11 @@ local function LoadSkin()
 	end
 
 	local scrollbars = {
-		FriendsListFrameScrollFrame.scrollBar,
-		FriendsFriendsScrollFrame.scrollBar,
-		IgnoreListFrameScrollFrame.scrollBar,
-		WhoListScrollFrame.scrollBar,
-		QuickJoinScrollFrame.scrollBar,
-		RecruitAFriendFrame.RecruitList.ScrollFrame.Slider
+		FriendsListFrame.ScrollBar,
+		IgnoreListFrame.ScrollBar,
+		WhoFrame.ScrollBar,
+		QuickJoinFrame.ScrollBar,
+		RecruitAFriendFrame.RecruitList.ScrollBar,
 	}
 
 	for i = 1, #scrollbars do
@@ -169,22 +171,22 @@ local function LoadSkin()
 			frame.isSkinned = true
 		end
 	end
-	hooksecurefunc(FriendsListFrameScrollFrame.invitePool, "Acquire", function()
-		for object in pairs(FriendsListFrameScrollFrame.invitePool.activeObjects) do
-			SkinFriendRequest(object)
-		end
-	end)
+	-- hooksecurefunc(FriendsListFrameScrollFrame.invitePool, "Acquire", function()
+		-- for object in pairs(FriendsListFrameScrollFrame.invitePool.activeObjects) do
+			-- SkinFriendRequest(object)
+		-- end
+	-- end)
 
 	-- Who Frame
 	local function UpdateWhoSkins()
-		WhoListScrollFrame:StripTextures()
+		-- WhoListScrollFrame:StripTextures()
 	end
 
 	WhoFrame:HookScript("OnShow", UpdateWhoSkins)
 	hooksecurefunc("FriendsFrame_OnEvent", UpdateWhoSkins)
 
-	WhoListScrollFrame:ClearAllPoints()
-	WhoListScrollFrame:SetPoint("TOPRIGHT", WhoFrameListInset, -25, 0)
+	-- WhoListScrollFrame:ClearAllPoints()
+	-- WhoListScrollFrame:SetPoint("TOPRIGHT", WhoFrameListInset, -25, 0)
 
 	-- BNet Frame
 	FriendsFrameBattlenetFrame.BroadcastButton:SetAlpha(0)
@@ -212,31 +214,31 @@ local function LoadSkin()
 	FriendsFrame:SetTemplate("Transparent")
 	FriendsFrameStatusDropDown:SetPoint("TOPLEFT", 1, -27)
 
-	for i = 1, FRIENDS_TO_DISPLAY do
-		local button = _G["FriendsListFrameScrollFrameButton"..i]
-		local icon = button.gameIcon
+	-- for i = 1, FRIENDS_TO_DISPLAY do
+		-- local button = _G["FriendsListFrameScrollFrameButton"..i]
+		-- local icon = button.gameIcon
 
-		icon.b = CreateFrame("Frame", nil, button)
-		icon.b:SetTemplate("Default")
-		icon.b:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
-		icon.b:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
+		-- icon.b = CreateFrame("Frame", nil, button)
+		-- icon.b:SetTemplate("Default")
+		-- icon.b:SetPoint("TOPLEFT", icon, "TOPLEFT", -2, 2)
+		-- icon.b:SetPoint("BOTTOMRIGHT", icon, "BOTTOMRIGHT", 2, -2)
 
-		icon:SetParent(icon.b)
-		icon:SetSize(22, 22)
-		icon:SetTexCoord(.15, .85, .15, .85)
-		icon:ClearAllPoints()
-		icon:SetPoint("RIGHT", button, "RIGHT", -24, 0)
-		icon.SetPoint = T.dummy
+		-- icon:SetParent(icon.b)
+		-- icon:SetSize(22, 22)
+		-- icon:SetTexCoord(.15, .85, .15, .85)
+		-- icon:ClearAllPoints()
+		-- icon:SetPoint("RIGHT", button, "RIGHT", -24, 0)
+		-- icon.SetPoint = T.dummy
 
-		button.travelPassButton:SetSize(20, 32)
-		button.travelPassButton:SkinButton()
-		button.background:Hide()
+		-- button.travelPassButton:SetSize(20, 32)
+		-- button.travelPassButton:SkinButton()
+		-- button.background:Hide()
 
-		button.inv = button.travelPassButton:CreateTexture(nil, "OVERLAY", nil, 7)
-		button.inv:SetTexture([[Interface\FriendsFrame\PlusManz-PlusManz]])
-		button.inv:SetPoint("TOPRIGHT", 1, -4)
-		button.inv:SetSize(22, 22)
-	end
+		-- button.inv = button.travelPassButton:CreateTexture(nil, "OVERLAY", nil, 7)
+		-- button.inv:SetTexture([[Interface\FriendsFrame\PlusManz-PlusManz]])
+		-- button.inv:SetPoint("TOPRIGHT", 1, -4)
+		-- button.inv:SetSize(22, 22)
+	-- end
 
 	hooksecurefunc("FriendsFrame_UpdateFriendButton", function(button)
 		if button.buttonType == FRIENDS_BUTTON_TYPE_BNET and button.travelPassButton then

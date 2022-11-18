@@ -98,7 +98,7 @@ local function LoadSkin()
 	local MissionList = MissionTab.MissionList
 	local MissionPage = GarrisonMissionFrame.MissionTab.MissionPage
 	MissionList:DisableDrawLayer("BORDER")
-	T.SkinScrollBar(MissionList.listScroll.scrollBar)
+	-- T.SkinScrollBar(MissionList.listScroll.scrollBar)
 	T.SkinCloseButton(MissionPage.CloseButton)
 	MissionPage.CloseButton:SetFrameLevel(MissionPage:GetFrameLevel() + 2)
 	MissionList.CompleteDialog.BorderFrame.ViewButton:SkinButton()
@@ -128,8 +128,9 @@ local function LoadSkin()
 		end
 	end)
 
-	for i = 1, #GarrisonMissionFrame.MissionTab.MissionList.listScroll.buttons do
-		local button = GarrisonMissionFrame.MissionTab.MissionList.listScroll.buttons[i]
+	for _, button in next, {GarrisonMissionFrame.MissionTab.MissionList:GetChildren()} do
+	-- for i = 1, #GarrisonMissionFrame.MissionTab.MissionList.listScroll.buttons do
+		-- local button = GarrisonMissionFrame.MissionTab.MissionList.listScroll.buttons[i]
 		if not button.backdrop then
 			button:StripTextures()
 			button:CreateBackdrop("Overlay")
@@ -144,7 +145,7 @@ local function LoadSkin()
 	T.SkinEditBox(GarrisonMissionFrameFollowers.SearchBox)
 	GarrisonMissionFrameFollowers.SearchBox:SetPoint("TOPLEFT", 2, 25)
 	GarrisonMissionFrameFollowers.SearchBox:SetSize(301, 20)
-	T.SkinScrollBar(GarrisonMissionFrameFollowersListScrollFrameScrollBar)
+	-- T.SkinScrollBar(GarrisonMissionFrameFollowersListScrollFrameScrollBar)
 	GarrisonMissionFrameFollowers.MaterialFrame:GetRegions():Hide()
 	GarrisonMissionFrameMissions.MaterialFrame:GetRegions():Hide()
 
@@ -368,12 +369,12 @@ local function LoadSkin()
 		_G["GarrisonLandingPageTab"..i].Text:SetPoint("CENTER")
 	end
 
-	T.SkinScrollBar(GarrisonLandingPageReportListListScrollFrameScrollBar)
+	-- T.SkinScrollBar(GarrisonLandingPageReportListListScrollFrameScrollBar)
 
 	GarrisonLandingPage.FollowerList:StripTextures()
 	GarrisonLandingPage.FollowerList.SearchBox:SetPoint("TOPLEFT", -1, 33)
 	T.SkinEditBox(GarrisonLandingPage.FollowerList.SearchBox)
-	T.SkinScrollBar(GarrisonLandingPageFollowerListListScrollFrameScrollBar)
+	-- T.SkinScrollBar(GarrisonLandingPageFollowerListListScrollFrameScrollBar)
 
 	GarrisonLandingPage.FollowerTab:CreateBackdrop("Overlay")
 	GarrisonLandingPage.FollowerTab.backdrop:SetPoint("TOPLEFT", 13, 0)
@@ -386,7 +387,7 @@ local function LoadSkin()
 
 	GarrisonLandingPageShipFollowerList.SearchBox:SetPoint("TOPLEFT", 2, 25)
 	T.SkinEditBox(GarrisonLandingPageShipFollowerList.SearchBox)
-	T.SkinScrollBar(GarrisonLandingPageShipFollowerListListScrollFrameScrollBar)
+	-- T.SkinScrollBar(GarrisonLandingPageShipFollowerListListScrollFrameScrollBar)
 
 	GarrisonLandingPage.Report.InProgress:ClearAllPoints()
 	GarrisonLandingPage.Report.InProgress:SetPoint("BOTTOMLEFT", GarrisonLandingPageReportList, "TOPLEFT", 5, 2)
@@ -419,8 +420,9 @@ local function LoadSkin()
 		self.backdrop.overlay:SetVertexColor(1 * 0.3, 0.82 * 0.3, 0, 1)
 	end)
 
-	for i = 1, #GarrisonLandingPage.Report.List.listScroll.buttons do
-		local button = GarrisonLandingPage.Report.List.listScroll.buttons[i]
+	for _, button in next, {GarrisonLandingPage.Report.List:GetChildren()} do
+	-- for i = 1, #GarrisonLandingPage.Report.List.listScroll.buttons do
+		-- local button = GarrisonLandingPage.Report.List.listScroll.buttons[i]
 		for _, reward in pairs(button.Rewards) do
 			reward.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 			if not reward.backdrop then
@@ -575,7 +577,7 @@ local function LoadSkin()
 	GarrisonShipyardFrameFollowers.MaterialFrame:GetRegions():Hide()
 	GarrisonShipyardFrame.FollowerTab:StripTextures()
 	GarrisonShipyardFrame.FollowerTab:SetTemplate("Overlay")
-	T.SkinScrollBar(GarrisonShipyardFrameFollowersListScrollFrameScrollBar)
+	-- T.SkinScrollBar(GarrisonShipyardFrameFollowersListScrollFrameScrollBar)
 
 	local function UpdateDataShip(self)
 		local numFollowers = #self.followersList
@@ -667,7 +669,7 @@ local function LoadSkin()
 
 	GarrisonRecruitSelectFrame.FollowerList:StripTextures()
 	GarrisonRecruitSelectFrame.FollowerList:SetTemplate("Transparent")
-	T.SkinScrollBar(GarrisonRecruitSelectFrameListScrollFrameScrollBar)
+	-- T.SkinScrollBar(GarrisonRecruitSelectFrameListScrollFrameScrollBar)
 	T.SkinEditBox(GarrisonRecruitSelectFrame.FollowerList.SearchBox)
 	GarrisonRecruitSelectFrame.FollowerList.SearchBox:SetPoint("TOPLEFT", 2, 25)
 	GarrisonRecruitSelectFrame.FollowerList.SearchBox:SetSize(301, 20)
@@ -801,7 +803,7 @@ local function LoadSkin()
 
 	OrderHallMissionFrameMissions:StripTextures()
 	OrderHallMissionFrameMissionsListScrollFrame:StripTextures()
-	T.SkinScrollBar(OrderHallMissionFrameMissionsListScrollFrameScrollBar)
+	-- T.SkinScrollBar(OrderHallMissionFrameMissionsListScrollFrameScrollBar)
 
 	OrderHallMissionFrameMissions.CombatAllyUI:StripTextures()
 	OrderHallMissionFrameMissions.CombatAllyUI:CreateBackdrop("Overlay")
@@ -852,7 +854,7 @@ local function LoadSkin()
 	T.SkinEditBox(Follower.SearchBox)
 	Follower.SearchBox:SetPoint("TOPLEFT", 2, 25)
 	Follower.SearchBox:SetSize(301, 20)
-	T.SkinScrollBar(OrderHallMissionFrameFollowersListScrollFrameScrollBar)
+	-- T.SkinScrollBar(OrderHallMissionFrameFollowersListScrollFrameScrollBar)
 	Follower.MaterialFrame:StripTextures()
 	T.SkinCloseButton(OrderHallMissionFrame.MissionTab.MissionPage.CloseButton)
 	OrderHallMissionFrame.MissionTab.MissionPage.StartMissionButton:SkinButton()
@@ -906,7 +908,7 @@ local function LoadSkin()
 
 	BFAMissionFrameMissions:StripTextures()
 	BFAMissionFrameMissionsListScrollFrame:StripTextures()
-	T.SkinScrollBar(BFAMissionFrameMissionsListScrollFrameScrollBar)
+	-- T.SkinScrollBar(BFAMissionFrameMissionsListScrollFrameScrollBar)
 
 	BFAMissionFrameMissions.MaterialFrame:GetRegions():Hide()
 	BFAMissionFrameMissions.MaterialFrame.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
@@ -930,7 +932,7 @@ local function LoadSkin()
 	T.SkinEditBox(Follower.SearchBox)
 	Follower.SearchBox:SetPoint("TOPLEFT", 2, 25)
 	Follower.SearchBox:SetSize(301, 20)
-	T.SkinScrollBar(BFAMissionFrameFollowersListScrollFrameScrollBar)
+	-- T.SkinScrollBar(BFAMissionFrameFollowersListScrollFrameScrollBar)
 	Follower.MaterialFrame:StripTextures()
 	T.SkinCloseButton(BFAMissionFrame.MissionTab.MissionPage.CloseButton)
 	BFAMissionFrame.MissionTab.MissionPage.StartMissionButton:SkinButton()
@@ -976,7 +978,7 @@ local function LoadSkin()
 	CovenantMissionFrameMissions:StripTextures()
 	CovenantMissionFrameMissions.MaterialFrame:StripTextures()
 	CovenantMissionFrameMissions.RaisedFrameEdges:StripTextures()
-	T.SkinScrollBar(CovenantMissionFrameMissionsListScrollFrameScrollBar)
+	-- T.SkinScrollBar(CovenantMissionFrameMissionsListScrollFrameScrollBar)
 
 	CovenantMissionFrameMissionsListScrollFrameScrollBarScrollUpButton:SetSize(17, 15)
 	CovenantMissionFrameMissionsListScrollFrameScrollBarThumbTexture:SetWidth(17)
@@ -1014,7 +1016,7 @@ local function LoadSkin()
 
 	hooksecurefunc(Follower, "ShowFollower", onShowFollower)
 
-	T.SkinScrollBar(CovenantMissionFrameFollowersListScrollFrameScrollBar)
+	-- T.SkinScrollBar(CovenantMissionFrameFollowersListScrollFrameScrollBar)
 	CovenantMissionFrameFollowersListScrollFrameScrollBarScrollUpButton:SetSize(17, 15)
 	CovenantMissionFrameFollowersListScrollFrameScrollBarThumbTexture:SetWidth(17)
 	CovenantMissionFrameFollowersListScrollFrameScrollBarScrollDownButton:SetSize(17, 15)

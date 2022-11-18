@@ -11,6 +11,7 @@ local function LoadSkin()
 	InspectFrame.backdrop:SetAllPoints()
 	T.SkinCloseButton(InspectFrameCloseButton)
 	InspectPaperDollFrame.ViewButton:SkinButton()
+	InspectFramePortrait:SetAlpha(0)
 
 	for i = 1, 4 do
 		T.SkinTab(_G["InspectFrameTab"..i])
@@ -74,29 +75,15 @@ local function LoadSkin()
 	local portrait = InspectPVPFrame:CreateTexture(nil, "OVERLAY")
 	portrait:SetSize(55, 55)
 	portrait:SetPoint("CENTER", InspectPVPFrame.PortraitBackground, "CENTER", 0, 0)
-	InspectPVPFrame.PortraitBackground:Kill()
-	InspectPVPFrame.PortraitBackground:ClearAllPoints()
-	InspectPVPFrame.PortraitBackground:SetPoint("TOPLEFT", 10, -5)
+	-- InspectPVPFrame.PortraitBackground:Kill()
+	-- InspectPVPFrame.PortraitBackground:ClearAllPoints()
+	-- InspectPVPFrame.PortraitBackground:SetPoint("TOPLEFT", 10, -5)
 	InspectPVPFrame.SmallWreath:ClearAllPoints()
 	InspectPVPFrame.SmallWreath:SetPoint("TOPLEFT", 3, -25)
 
-	local function SkinPvpTalents(slot)
-		local icon = slot.Texture
-		slot:StripTextures()
-		slot:CreateBackdrop("Default")
-		slot.backdrop:SetPoint("TOPLEFT", icon, -2, 2)
-		slot.backdrop:SetPoint("BOTTOMRIGHT", icon, 2, -2)
-
-		slot.Border:Hide()
-
-		icon:SetTexCoord(.15, .85, .15, .85)
-	end
-
-	for i = 1, 3 do
-		SkinPvpTalents(InspectPVPFrame["TalentSlot"..i])
-	end
-
 	InspectPVPFrame.BG:Kill()
+
+	InspectPaperDollItemsFrame.InspectTalents:SkinButton()
 
 	SpecializationRing:Hide()
 	SpecializationSpecIcon:SkinIcon()
@@ -104,20 +91,6 @@ local function LoadSkin()
 	SpecializationSpecName:SetFont(C.media.normal_font, 20, "")
 	InspectTalentFrame:DisableDrawLayer("BACKGROUND")
 	InspectTalentFrame:DisableDrawLayer("BORDER")
-
-	for i = 1, 7 do
-		for j = 1, 3 do
-			local button = _G["TalentsTalentRow"..i.."Talent"..j]
-			local icon = _G["TalentsTalentRow"..i.."Talent"..j.."IconTexture"]
-
-			button:StripTextures()
-			button:CreateBackdrop("Default")
-			button.backdrop:SetPoint("TOPLEFT", icon, -2, 2)
-			button.backdrop:SetPoint("BOTTOMRIGHT", icon, 2, -2)
-
-			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		end
-	end
 
 	InspectGuildFrameBG:Kill()
 end
