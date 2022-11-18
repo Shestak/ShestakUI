@@ -12,6 +12,13 @@ Load:SetScript("OnEvent", function()
 	Load:UnregisterEvent("PLAYER_ENTERING_WORLD")
 end)
 
+hooksecurefunc(TalkingHeadFrame, "SetPoint", function(self, _, _, _, x)
+	if x ~= C.position.talking_head[4] then
+		self:ClearAllPoints()
+		self:SetPoint(unpack(C.position.talking_head))
+	end
+end)
+
 ----------------------------------------------------------------------------------------
 --	Hide TalkingHeadFrame
 ----------------------------------------------------------------------------------------
