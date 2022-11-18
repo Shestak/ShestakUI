@@ -95,7 +95,12 @@ local function LoadSkin()
 	GuildBankFrameTab1:SetPoint("TOPLEFT", GuildBankFrame, "BOTTOMLEFT", 0, 2)
 
 	-- Popup
-	T.SkinIconSelectionFrame(GuildBankPopupFrame, 90, nil, "GuildBankPopup")
+	GuildBankPopupFrame:HookScript("OnShow", function(frame)
+		if not frame.isSkinned then
+			T.SkinIconSelectionFrame(frame, nil, nil, "GuildBankPopup")
+			frame.isSkinned = true
+		end
+	end)
 end
 
 T.SkinFuncs["Blizzard_GuildBankUI"] = LoadSkin

@@ -239,7 +239,11 @@ local function LoadSkin()
 		end
 	end)
 
-	-- BETA T.SkinIconSelectionFrame(GearManagerDialogPopup, NUM_GEARSET_ICONS_SHOWN, "GearManagerDialogPopupButton")
+	GearManagerPopupFrame:HookScript("OnShow", function(frame)
+		if not frame.isSkinned then
+			T.SkinIconSelectionFrame(frame)
+		end
+	end)
 
 	-- Handle Tabs at bottom of character frame
 	for i = 1, 4 do
