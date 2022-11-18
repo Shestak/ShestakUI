@@ -214,7 +214,7 @@ function Stuffing:SlotUpdate(b)
 		b.frame.UpgradeIcon:SetPoint("TOPLEFT", C.bag.button_size/2.7, -C.bag.button_size/2.7)
 		b.frame.UpgradeIcon:SetSize(C.bag.button_size/1.7, C.bag.button_size/1.7)
 		if IsAddOnLoaded("Pawn") then
-			itemIsUpgrade = PawnIsContainerItemAnUpgrade(b.frame:GetParent():GetID(), b.frame:GetID())
+			-- Disable for now, running on reagent bag casue nil error spam?: itemIsUpgrade = PawnIsContainerItemAnUpgrade(b.frame:GetParent():GetID(), b.frame:GetID())
 		else
 			-- Still Not Working, Blizz error: itemIsUpgrade = IsContainerItemAnUpgrade(b.frame:GetParent():GetID(), b.frame:GetID())
 		end
