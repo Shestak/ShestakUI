@@ -57,25 +57,27 @@ local function TranslateClass(text)
 	end
 end
 
+local whiteTooltip = {
+	[GameTooltip] = true,
+	[ItemRefTooltip] = true,
+	[ShoppingTooltip1] = true,
+	[ShoppingTooltip2] = true,
+}
+
 local function UpdateTooltip(self)
-	if not self:GetItem() then return end
-	local tname = self:GetName()
-	for i = 3, self:NumLines() do
-		ttext = _G[tname.."TextLeft"..i]
-		local class = ttext:GetText() and (string.find(ttext:GetText(), "Класс") or string.find(ttext:GetText(), "Требуется"))
-		if ttext then ttext:SetText(Translate(ttext:GetText())) end
-		if ttext and class then ttext:SetText(TranslateClass(ttext:GetText())) end
-		ttext = _G[tname.."TextRight"..i]
-		if ttext then ttext:SetText(Translate(ttext:GetText())) end
+	if whiteTooltip[self] and not self:IsForbidden() then
+		if not TooltipUtil.GetDisplayedItem(self) then return end
+		local tname = self:GetName()
+		for i = 3, self:NumLines() do
+			ttext = _G[tname.."TextLeft"..i]
+			local class = ttext:GetText() and (string.find(ttext:GetText(), "Класс") or string.find(ttext:GetText(), "Требуется"))
+			if ttext then ttext:SetText(Translate(ttext:GetText())) end
+			if ttext and class then ttext:SetText(TranslateClass(ttext:GetText())) end
+			ttext = _G[tname.."TextRight"..i]
+			if ttext then ttext:SetText(Translate(ttext:GetText())) end
+		end
+		ttext = nil
 	end
-	ttext = nil
 end
 
-if T.newPatch then
-	TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, UpdateTooltip)
-else
-	GameTooltip:HookScript("OnTooltipSetItem", UpdateTooltip)
-	ItemRefTooltip:HookScript("OnTooltipSetItem", UpdateTooltip)
-	ShoppingTooltip1:HookScript("OnTooltipSetItem", UpdateTooltip)
-	ShoppingTooltip2:HookScript("OnTooltipSetItem", UpdateTooltip)
-end
+TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, UpdateTooltip)

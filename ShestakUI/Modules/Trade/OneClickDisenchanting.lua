@@ -154,6 +154,7 @@ function button:PLAYER_LOGIN()
 	end
 
 	local function OnTooltipSetUnit(self)
+		if self ~= GameTooltip or self:IsForbidden() then return end
 		local _, link = TooltipUtil.GetDisplayedItem(self)
 
 		if link and not InCombatLockdown() and IsAltKeyDown() and not (AuctionHouseFrame and AuctionHouseFrame:IsShown()) then
@@ -190,16 +191,7 @@ function button:PLAYER_LOGIN()
 		end
 	end
 
-	if T.newPatch then
-		local function onTooltipFunction(tooltip, tooltipData)
-			if tooltip == GameTooltip then
-				OnTooltipSetUnit(tooltip)
-			end
-		end
-		TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, onTooltipFunction)
-	else
-		GameTooltip:HookScript("OnTooltipSetItem", OnTooltipSetUnit)
-	end
+	TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, OnTooltipSetUnit)
 
 	self:SetFrameStrata("TOOLTIP")
 	self:SetAttribute("*type1", "macro")

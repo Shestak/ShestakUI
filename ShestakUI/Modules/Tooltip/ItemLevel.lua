@@ -470,7 +470,7 @@ function E:ItemScanComplete(guid)
 end
 
 TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, function(self)
-	if self ~= GameTooltip then return end
+	if self ~= GameTooltip or self:IsForbidden() then return end
 	if C.tooltip.show_shift and not IsShiftKeyDown() then return end
 	local _, unitID = self:GetUnit()
 	local guid = unitID and UnitGUID(unitID)

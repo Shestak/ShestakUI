@@ -249,7 +249,7 @@ if C.tooltip.health_value == true then
 end
 
 local OnTooltipSetUnit = function(self)
-	if T.newPatch and (self ~= GameTooltip or self:IsForbidden()) then return end
+	if self ~= GameTooltip or self:IsForbidden() then return end
 	local lines = self:NumLines()
 	local unit = (select(2, self:GetUnit())) or (GetMouseFocus() and GetMouseFocus().GetAttribute and GetMouseFocus():GetAttribute("unit")) or (UnitExists("mouseover") and "mouseover") or nil
 
@@ -381,11 +381,7 @@ local OnTooltipSetUnit = function(self)
 	end
 end
 
-if T.newPatch then
-	TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, OnTooltipSetUnit)
-else
-	GameTooltip:HookScript("OnTooltipSetUnit", OnTooltipSetUnit)
-end
+TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, OnTooltipSetUnit)
 
 ----------------------------------------------------------------------------------------
 --	Hide tooltips in combat for action bars, pet bar and stance bar
