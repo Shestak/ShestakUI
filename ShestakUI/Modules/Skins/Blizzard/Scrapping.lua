@@ -5,10 +5,12 @@ if C.skins.blizzard_frames ~= true then return end
 --	ScrappingMachine skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	ScrappingMachineFrame:StripTextures()
-	ScrappingMachineFrame:SetTemplate("Transparent")
+	local frame = ScrappingMachineFrame
+	T.SkinFrame(frame)
 
-	local ItemSlots = ScrappingMachineFrame.ItemSlots
+	frame.ScrapButton:SkinButton()
+
+	local ItemSlots = frame.ItemSlots
 	ItemSlots:StripTextures()
 
 	for button in pairs(ItemSlots.scrapButtons.activeObjects) do
@@ -22,9 +24,6 @@ local function LoadSkin()
 			button.styled = true
 		end
 	end
-
-	ScrappingMachineFrame.ScrapButton:SkinButton()
-	T.SkinCloseButton(ScrappingMachineFrameCloseButton)
 end
 
 T.SkinFuncs["Blizzard_ScrappingMachineUI"] = LoadSkin
