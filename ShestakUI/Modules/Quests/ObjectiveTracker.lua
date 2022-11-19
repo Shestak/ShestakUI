@@ -432,27 +432,15 @@ hooksecurefunc(ACHIEVEMENT_TRACKER_MODULE, "AddTimerBar", SkinTimer)
 ----------------------------------------------------------------------------------------
 --	Set tooltip depending on position
 ----------------------------------------------------------------------------------------
-local function IsFramePositionedLeft(frame)
-	local x = frame:GetCenter()
-	local screenWidth = GetScreenWidth()
-	local positionedLeft = false
-
-	if x and x < (screenWidth / 2) then
-		positionedLeft = true
-	end
-
-	return positionedLeft
-end
-
 hooksecurefunc("BonusObjectiveTracker_ShowRewardsTooltip", function(block)
-	if IsFramePositionedLeft(ObjectiveTrackerFrame) then
+	if T.IsFramePositionedLeft(ObjectiveTrackerFrame) then
 		GameTooltip:ClearAllPoints()
 		GameTooltip:SetPoint("TOPLEFT", block, "TOPRIGHT", 0, 0)
 	end
 end)
 
 ScenarioStageBlock:HookScript("OnEnter", function(self)
-	if IsFramePositionedLeft(ObjectiveTrackerFrame) then
+	if T.IsFramePositionedLeft(ObjectiveTrackerFrame) then
 		GameTooltip:ClearAllPoints()
 		GameTooltip:SetPoint("TOPLEFT", self, "TOPRIGHT", 50, -3)
 	end
@@ -514,12 +502,13 @@ frame:SetScript("OnEvent", function()
 		local list = ScenarioBlocksFrame.MawBuffsBlock.Container.List
 		if list then
 			list:ClearAllPoints()
-			if IsFramePositionedLeft(ObjectiveTrackerFrame) then
+			if T.IsFramePositionedLeft(ObjectiveTrackerFrame) then
 				list:SetPoint("TOPLEFT", ScenarioBlocksFrame.MawBuffsBlock.Container, "TOPRIGHT", 15, 0)
 			else
 				list:SetPoint("TOPRIGHT", ScenarioBlocksFrame.MawBuffsBlock.Container, "TOPLEFT", -15, 0)
 			end
 		end
+		ObjectiveTracker_Update()	-- Fixed position of MinimizeButton if frame on right side
 
 		-- TODO check
 		-- BottomScenarioWidgetContainerBlock.WidgetContainer:ClearAllPoints()
