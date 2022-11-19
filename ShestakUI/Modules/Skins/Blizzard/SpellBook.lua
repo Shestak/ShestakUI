@@ -36,54 +36,67 @@ local function LoadSkin()
 	SpellBookNextPageButton:SetPoint("BOTTOMRIGHT", pagebackdrop, "BOTTOMRIGHT", -15, 10)
 	SpellBookPrevPageButton:SetPoint("BOTTOMRIGHT", SpellBookNextPageButton, "BOTTOMLEFT", -6, 0)
 
+	SpellBookFramePortrait:SetAlpha(0)
 	SpellBookFrameTutorialButton.Ring:Hide()
 	SpellBookFrameTutorialButton:SetPoint("TOPLEFT", SpellBookFrame, "TOPLEFT", -5, 10)
 
 	-- Skin SpellButtons
-	local function SpellButtons(_, first)
-		for i = 1, SPELLS_PER_PAGE do
+	local function SpellButtons()
+		if _G.SpellBookFrame.bookType == BOOKTYPE_PROFESSION then return end
+
+		for i = 1, _G.SPELLS_PER_PAGE do
 			local button = _G["SpellButton"..i]
-			local icon = _G["SpellButton"..i.."IconTexture"]
 
-			if first then
-				_G["SpellButton"..i.."SlotFrame"]:SetAlpha(0)
+			button.SpellSubName:SetTextColor(0.6, 0.6, 0.6)
+			button.RequiredLevelString:SetTextColor(0.6, 0.6, 0.6)
 
-				button.EmptySlot:SetAlpha(0)
-				button.TextBackground:Hide()
-				button.TextBackground2:Hide()
-				button.UnlearnedFrame:SetAlpha(0)
-				button:SetCheckedTexture("")
-				button:SetPushedTexture(0)
-			end
-
-			if _G["SpellButton"..i.."Highlight"] then
-				_G["SpellButton"..i.."Highlight"]:SetColorTexture(1, 1, 1, 0.3)
-				_G["SpellButton"..i.."Highlight"]:ClearAllPoints()
-				_G["SpellButton"..i.."Highlight"]:SetAllPoints(icon)
-			end
-
-			if icon then
-				icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				icon:ClearAllPoints()
-				icon:SetAllPoints()
-
-				if not button.backdrop then
-					button:SetFrameLevel(button:GetFrameLevel() + 1)
-					button:CreateBackdrop("Default")
-				end
-			end
-
-			local r = _G["SpellButton"..i.."SpellName"]:GetTextColor()
-
+			local r = button.SpellName:GetTextColor()
 			if r < 0.8 then
-				_G["SpellButton"..i.."SpellName"]:SetTextColor(0.6, 0.6, 0.6)
+				button.SpellName:SetTextColor(0.6, 0.6, 0.6)
+			elseif r ~= 1 then
+				button.SpellName:SetTextColor(1, 1, 1)
 			end
-			_G["SpellButton"..i.."SubSpellName"]:SetTextColor(0.6, 0.6, 0.6)
-			_G["SpellButton"..i.."RequiredLevelString"]:SetTextColor(0.6, 0.6, 0.6)
 		end
 	end
-	SpellButtons(nil, true)
-	--BETA hooksecurefunc("SpellButton_UpdateButton", SpellButtons)
+
+	for i = 1, SPELLS_PER_PAGE do
+		local button = _G["SpellButton"..i]
+		local icon = _G["SpellButton"..i.."IconTexture"]
+		local highlight = _G["SpellButton"..i.."Highlight"]
+
+		_G["SpellButton"..i.."SlotFrame"]:SetAlpha(0)
+
+		button.EmptySlot:SetAlpha(0)
+		button.TextBackground:Hide()
+		button.TextBackground2:Hide()
+		button.UnlearnedFrame:SetAlpha(0)
+		button:SetCheckedTexture(0)
+		button:SetPushedTexture(0)
+
+		if highlight then
+			highlight:ClearAllPoints()
+			highlight:SetAllPoints(icon)
+
+			hooksecurefunc(highlight, "SetTexture", function(button, texture)
+				if texture == [[Interface\Buttons\ButtonHilight-Square]] then
+					button:SetColorTexture(1, 1, 1, 0.3)
+				end
+			end)
+		end
+
+		if icon then
+			icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			icon:ClearAllPoints()
+			icon:SetAllPoints()
+
+			if not button.backdrop then
+				button:SetFrameLevel(button:GetFrameLevel() + 1)
+				button:CreateBackdrop("Default")
+			end
+		end
+
+		hooksecurefunc(button, "UpdateButton", SpellButtons)
+	end
 
 	SpellBookPageText:SetTextColor(0.6, 0.6, 0.6)
 

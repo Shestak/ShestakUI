@@ -20,7 +20,7 @@
 	<Script file="Calendar.lua"/>
 	<Script file="Channels.lua"/>
 	<Script file="Character.lua"/>
-	<!-- <Script file="ChatConfig.lua"/> -->
+	<Script file="ChatConfig.lua"/>
 	<Script file="ChromieTime.lua"/>
 	<Script file="Collections.lua"/>
 	<Script file="Communities.lua"/>
@@ -72,7 +72,7 @@
 	<Script file="Runeforge.lua"/>
 	<Script file="Scrapping.lua"/>
 	<Script file="Soulbinds.lua"/>
-	<!-- <Script file="SpellBook.lua"/> -->
+	<Script file="SpellBook.lua"/>
 	<Script file="Subscription.lua"/>
 	<Script file="Tabard.lua"/>
 	<Script file="Talent.lua"/>

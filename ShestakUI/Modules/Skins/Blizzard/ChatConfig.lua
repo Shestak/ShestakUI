@@ -34,6 +34,7 @@ local function LoadSkin()
 	for i = 1, getn(frames) do
 		local frame = _G[frames[i]]
 		if frame then
+			frame:StripTextures()
 			frame:SetTemplate("Overlay")
 		end
 	end
@@ -163,7 +164,7 @@ local function LoadSkin()
 			local swatchName = nameString..index
 			local swatch = _G[swatchName]
 
-			swatch:SetBackdrop(nil)
+			-- swatch:SetBackdrop(nil)
 
 			local bg = CreateFrame("Frame", nil, swatch)
 			bg:SetPoint("TOPLEFT", 0, 0)
@@ -207,17 +208,22 @@ local function LoadSkin()
 	for i = 1, #COMBAT_CONFIG_TABS do
 		local tab = _G["CombatConfigTab"..i]
 		if tab then
+			tab:StripTextures()
 			T.SkinTab(tab, true)
-			tab:SetHeight(tab:GetHeight() - 2)
+			tab:SetHeight(tab:GetHeight() - 3)
 			tab:ClearAllPoints()
 			if i == 1 then
-				tab:SetPoint("BOTTOMLEFT", _G["ChatConfigBackgroundFrame"], "TOPLEFT", 0, 1)
+				tab:SetPoint("BOTTOMLEFT", _G["ChatConfigBackgroundFrame"], "TOPLEFT", -2, 1)
 			else
 				tab:SetPoint("LEFT", _G["CombatConfigTab"..i-1], "RIGHT", 1, 0)
 			end
-			_G["CombatConfigTab"..i.."Text"]:SetPoint("BOTTOM", 0, 7)
+			local text = tab.Text
+			if text then
+				text:SetWidth(text:GetWidth() + 10)
+			end
 		end
 	end
+	T.SkinScrollBar(ChatConfigCombatSettingsFilters.ScrollBar)
 
 	T.SkinEditBox(_G["CombatConfigSettingsNameEditBox"], nil, _G["CombatConfigSettingsNameEditBox"]:GetHeight() - 2)
 	T.SkinNextPrevButton(_G["ChatConfigMoveFilterUpButton"], nil, "Up")
