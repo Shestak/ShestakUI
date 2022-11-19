@@ -5,13 +5,10 @@ if C.skins.blizzard_frames ~= true then return end
 --	PetStable skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
-	PetStableFrame:StripTextures(true)
-	PetStableLeftInset:StripTextures(true)
-	PetStableFrameInset:StripTextures(true)
-	PetStableBottomInset:StripTextures(true)
-	PetStableModelShadow:StripTextures(true)
+	local frame = PetStableFrame
+	T.SkinFrame(frame)
 
-	PetStableFrame:CreateBackdrop("Transparent")
+	PetStableFrameInset:SetTemplate("Overlay")
 
 	T.SkinRotateButton(PetStableModelRotateLeftButton)
 	T.SkinRotateButton(PetStableModelRotateRightButton)
@@ -20,8 +17,6 @@ local function LoadSkin()
 
 	T.SkinNextPrevButton(PetStablePrevPageButton, nil, "Any")
 	T.SkinNextPrevButton(PetStableNextPageButton, nil, "Any")
-
-	T.SkinCloseButton(PetStableFrameCloseButton)
 
 	for i = 1, NUM_PET_ACTIVE_SLOTS do
 		local button = _G["PetStableActivePet"..i]

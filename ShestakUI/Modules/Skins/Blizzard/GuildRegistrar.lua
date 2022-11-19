@@ -10,6 +10,7 @@ local function LoadSkin()
 	GuildRegistrarFrame.backdrop:SetAllPoints()
 	GuildRegistrarGreetingFrame:StripTextures()
 	GuildRegistrarFrameInset:StripTextures()
+	GuildRegistrarFramePortrait:SetAlpha(0)
 
 	GuildRegistrarFramePurchaseButton:SkinButton()
 	GuildRegistrarFrameCancelButton:SkinButton()

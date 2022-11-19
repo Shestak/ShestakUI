@@ -9,6 +9,7 @@ local function LoadSkin()
 	PetitionFrameInset:StripTextures()
 	PetitionFrame:CreateBackdrop("Transparent")
 	PetitionFrame.backdrop:SetAllPoints()
+	PetitionFramePortrait:SetAlpha(0)
 
 	PetitionFrameSignButton:SkinButton()
 	PetitionFrameRequestButton:SkinButton()

@@ -7,7 +7,7 @@ if C.skins.blizzard_frames ~= true then return end
 local function LoadSkin()
 	local frame = RuneforgeFrame
 	T.SkinCloseButton(frame.CloseButton)
-	frame.CloseButton:SetPoint("TOPRIGHT", -50, 50)
+	frame.CloseButton:SetPoint("TOPRIGHT", -50, 0)
 
 	frame.CreateFrame.CraftItemButton:SkinButton()
 

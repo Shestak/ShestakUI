@@ -13,7 +13,7 @@ local function LoadSkin()
 
 	PVPMatchScoreboard.Content:StripTextures()
 
-	T.SkinScrollBar(PVPMatchScoreboard.Content.ScrollFrame.ScrollBar)
+	T.SkinScrollBar(PVPMatchScoreboard.Content.ScrollBar)
 	T.SkinCloseButton(PVPMatchScoreboard.CloseButton)
 
 	for i = 1, 3 do
@@ -29,7 +29,7 @@ local function LoadSkin()
 	PVPMatchResults.content:StripTextures()
 	PVPMatchResults.content.tabContainer:StripTextures()
 
-	T.SkinScrollBar(PVPMatchResults.content.scrollFrame.scrollBar)
+	T.SkinScrollBar(PVPMatchResults.content.scrollBar)
 	T.SkinCloseButton(PVPMatchResults.CloseButton)
 	PVPMatchResults.buttonContainer.leaveButton:SkinButton()
 	PVPMatchResults.buttonContainer.requeueButton:SkinButton()

@@ -15,7 +15,7 @@ local function LoadSkin()
 	T.SkinNextPrevButton(ItemTextPrevPageButton)
 	T.SkinNextPrevButton(ItemTextNextPageButton)
 	T.SkinScrollBar(ItemTextScrollFrameScrollBar)
-	ItemTextPageText:SetTextColor(1, 1, 1)
+	ItemTextPageText:SetTextColor("P", 1, 1, 1)
 	ItemTextPageText.SetTextColor = T.dummy
 end
 
