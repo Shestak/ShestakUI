@@ -25,8 +25,8 @@ local function LoadSkin()
 	GuildBankFrame.WithdrawButton:SetPoint("RIGHT", GuildBankFrame.DepositButton, "LEFT", -2, 0)
 
 	GuildBankInfoScrollFrame:StripTextures()
-	GuildBankTransactionsScrollFrame:StripTextures()
-	T.SkinScrollBar(GuildBankPopupFrameScrollBar)
+	GuildBankInfoScrollFrame:SetPoint("TOPLEFT", _G.GuildBankInfo, "TOPLEFT", -7, 12)
+	GuildBankInfoScrollFrame:SetWidth(_G.GuildBankInfoScrollFrame:GetWidth() - 8)
 	T.SkinScrollBar(GuildBankInfoScrollFrameScrollBar)
 	T.SkinScrollBar(GuildBankTransactionsScrollFrameScrollBar)
 	GuildBankInfoScrollFrame:SetHeight(GuildBankInfoScrollFrame:GetHeight() - 5)
@@ -50,7 +50,7 @@ local function LoadSkin()
 			local button = column["Button"..j]
 			local icon = button.icon
 
-			button.IconBorder:Kill()
+			button.IconBorder:SetAlpha(0)
 			button:SetNormalTexture(0)
 			button:StyleButton()
 			button:SetTemplate("Default")
