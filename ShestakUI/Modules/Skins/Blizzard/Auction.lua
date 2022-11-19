@@ -53,8 +53,9 @@ local function LoadSkin()
 	end
 
 	local scrollbars = {
-		AuctionHouseFrameScrollBar,
-		AuctionHouseFrameAuctionsFrame.SummaryList.ScrollFrame.scrollBar,
+		AuctionHouseFrame.CategoriesList.ScrollBar,
+		AuctionHouseFrame.CommoditiesBuyFrame.ItemList.ScrollBar,
+		AuctionHouseFrameAuctionsFrame.SummaryList.ScrollBar,
 		AuctionHouseFrame.WoWTokenResults.DummyScrollBar
 	}
 
@@ -88,31 +89,15 @@ local function LoadSkin()
 	AuctionHouseFrameBuyTab:SetPoint("BOTTOMLEFT", AuctionHouseFrame, "BOTTOMLEFT", 0, -32)
 
 	AuctionHouseFrame.CategoriesList:StripTextures()
-	AuctionHouseFrame.CategoriesList.ScrollFrame:StripTextures()
 
-	for i = 1, NUM_FILTERS_TO_DISPLAY do
-		local button = AuctionHouseFrame.CategoriesList.FilterButtons[i]
-		button:StripTextures(true)
+	hooksecurefunc('AuctionHouseFilterButton_SetUp', function(button, info)
 		button:CreateBackdrop("Overlay")
 		button.backdrop:SetPoint("TOPLEFT", button.SelectedTexture, "TOPLEFT", 1, -1)
 		button.backdrop:SetPoint("BOTTOMRIGHT", button.SelectedTexture, "BOTTOMRIGHT", -1, 1)
-	end
 
-	hooksecurefunc("AuctionFrameFilters_UpdateCategories", function(categoriesList)
-		for _, button in ipairs(categoriesList.FilterButtons) do
-			button.SelectedTexture:SetAtlas(nil)
-			if button.SelectedTexture:IsShown() then
-				button.backdrop:SetBackdropBorderColor(1, 0.82, 0, 1)
-				button.backdrop.overlay:SetVertexColor(1, 0.82, 0, 0.3)
-			else
-				button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-				button.backdrop.overlay:SetVertexColor(0.1, 0.1, 0.1, 1)
-			end
-			if button.type == "subSubCategory" then
-				button.SelectedTexture:SetHeight(21)
-				button.SelectedTexture:SetPoint("TOPRIGHT", 0, 0)
-			end
-		end
+		button.NormalTexture:SetAlpha(0)
+		button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.2)
+		button.HighlightTexture:SetColorTexture(1, 1, 1, 0.2)
 	end)
 
 	local function SkinListIcon(frame)
@@ -154,33 +139,27 @@ local function LoadSkin()
 		SkinListIcon(frame)
 	end
 
-	local function SkinSummaryIcons(frame)
-		for i = 1, 23 do
-			local child = select(i, frame.ScrollFrame.scrollChild:GetChildren())
-
-			if child and child.Icon then
-				if not child.IsSkinned then
-					child.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-
-					if child.IconBorder then
-						child.IconBorder:SetAlpha(0)
+	hooksecurefunc(AuctionHouseFrameAuctionsFrame.SummaryList.ScrollBox, "Update", function(frame)
+		for _, button in next, {frame.ScrollTarget:GetChildren()} do
+			if not button.styled then
+				if button.Icon then
+					button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+					 if button.IconBorder then
+						button.IconBorder:SetAlpha(0)
 					end
-
-					child.IsSkinned = true
 				end
+				button.styled = true
 			end
 		end
-	end
-
-	hooksecurefunc(AuctionHouseFrameAuctionsFrame.SummaryList, "RefreshListDisplay", SkinSummaryIcons)
+	end)
 
 	local function SkinAuctionFrame(frame, scroll)
 		frame:StripTextures()
 		frame.RefreshFrame.RefreshButton:SkinButton()
 		frame.RefreshFrame.RefreshButton:SetSize(24, 24)
-		T.SkinScrollBar(frame.ScrollFrame.scrollBar)
+		T.SkinScrollBar(frame.ScrollBar)
 		if scroll then
-			frame.ScrollFrame.scrollBar:SetPoint("BOTTOMLEFT", frame.ScrollFrame, "BOTTOMRIGHT", 4, 15)
+			frame.ScrollBar:SetPoint("BOTTOMLEFT", frame, "BOTTOMRIGHT", 4, 15)
 		end
 		hooksecurefunc(frame, "RefreshScrollFrame", SkinHeaders)
 	end
@@ -212,8 +191,6 @@ local function LoadSkin()
 	buyFrame.BuyDisplay.BuyButton:SkinButton()
 	buyFrame.ItemList.RefreshFrame.RefreshButton:SkinButton()
 	buyFrame.ItemList.RefreshFrame.RefreshButton:SetSize(24, 24)
-
-	T.SkinScrollBar(buyFrame.ItemList.ScrollFrame.scrollBar)
 
 	buyFrame.BuyDisplay:StripTextures()
 	buyFrame.ItemList:StripTextures()
@@ -274,7 +251,6 @@ local function LoadSkin()
 
 	local TokenTutorial = AuctionHouseFrame.WoWTokenResults.GameTimeTutorial
 	TokenTutorial.NineSlice:Hide()
-	TokenTutorial.TitleBg:Hide()
 	TokenTutorial:CreateBackdrop("Transparent")
 	T.SkinCloseButton(TokenTutorial.CloseButton)
 	TokenTutorial.Bg:SetAlpha(0)
