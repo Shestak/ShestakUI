@@ -14,6 +14,7 @@ local function LoadSkin()
 	MailFrameInset:StripTextures()
 	SendMailMoneyInset:StripTextures()
 	SendMailMoneyBg:StripTextures()
+	MailFramePortrait:SetAlpha(0)
 
 	for i = 1, INBOXITEMS_TO_DISPLAY do
 		local bg = _G["MailItem"..i]
