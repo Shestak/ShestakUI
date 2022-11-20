@@ -93,13 +93,8 @@ frame:SetScript("OnEvent", function(_, _, addon)
 	end
 
 	if C.bag.enable then
-		if not T.newPatch then -- BETA
-			SetSortBagsRightToLeft(true)
-			SetInsertItemsLeftToRight(false)
-		else
-			C_Container.SetSortBagsRightToLeft(true)
-			C_Container.SetInsertItemsLeftToRight(false)
-		end
+		C_Container.SetSortBagsRightToLeft(true)
+		C_Container.SetInsertItemsLeftToRight(false)
 	end
 
 	if C.combattext.enable then

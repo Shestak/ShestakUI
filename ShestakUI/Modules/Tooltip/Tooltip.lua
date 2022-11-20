@@ -401,60 +401,34 @@ end
 ----------------------------------------------------------------------------------------
 --	Fix compare tooltips(by Blizzard)(../FrameXML/GameTooltip.lua)
 ----------------------------------------------------------------------------------------
-if not T.newPatch then
-	hooksecurefunc("GameTooltip_AnchorComparisonTooltips", function(_, anchorFrame, shoppingTooltip1, shoppingTooltip2, _, secondaryItemShown)
-		local point = shoppingTooltip1:GetPoint(2)
-		if secondaryItemShown then
-			if point == "TOP" then
-				shoppingTooltip1:ClearAllPoints()
-				shoppingTooltip2:ClearAllPoints()
-				shoppingTooltip1:SetPoint("TOPLEFT", anchorFrame, "TOPRIGHT", 3, -10)
-				shoppingTooltip2:SetPoint("TOPLEFT", shoppingTooltip1, "TOPRIGHT", 3, 0)
-			elseif point == "RIGHT" then
-				shoppingTooltip1:ClearAllPoints()
-				shoppingTooltip2:ClearAllPoints()
-				shoppingTooltip1:SetPoint("TOPRIGHT", anchorFrame, "TOPLEFT", -3, -10)
-				shoppingTooltip2:SetPoint("TOPRIGHT", shoppingTooltip1, "TOPLEFT", -3, 0)
-			end
-		else
-			if point == "LEFT" then
-				shoppingTooltip1:ClearAllPoints()
-				shoppingTooltip1:SetPoint("TOPLEFT", anchorFrame, "TOPRIGHT", 3, -10)
-			elseif point == "RIGHT" then
-				shoppingTooltip1:ClearAllPoints()
-				shoppingTooltip1:SetPoint("TOPRIGHT", anchorFrame, "TOPLEFT", -3, -10)
-			end
+hooksecurefunc(TooltipComparisonManager, "AnchorShoppingTooltips", function(self, primaryShown, secondaryItemShown)
+	local tooltip = self.tooltip;
+	local shoppingTooltip1 = tooltip.shoppingTooltips[1];
+	local shoppingTooltip2 = tooltip.shoppingTooltips[2];
+	local point = shoppingTooltip1:GetPoint(2)
+	if secondaryItemShown then
+		if point == "TOP" then
+			shoppingTooltip1:ClearAllPoints()
+			shoppingTooltip2:ClearAllPoints()
+			shoppingTooltip1:SetPoint("TOPLEFT", self.anchorFrame, "TOPRIGHT", 3, -10)
+			shoppingTooltip2:SetPoint("TOPLEFT", shoppingTooltip1, "TOPRIGHT", 3, 0)
+		elseif point == "RIGHT" then
+			shoppingTooltip1:ClearAllPoints()
+			shoppingTooltip2:ClearAllPoints()
+			shoppingTooltip1:SetPoint("TOPRIGHT", self.anchorFrame, "TOPLEFT", -3, -10)
+			shoppingTooltip2:SetPoint("TOPRIGHT", shoppingTooltip1, "TOPLEFT", -3, 0)
 		end
-	end)
-else -- BETA
-	hooksecurefunc(TooltipComparisonManager, "AnchorShoppingTooltips", function(self, primaryShown, secondaryItemShown)
-		local tooltip = self.tooltip;
-		local shoppingTooltip1 = tooltip.shoppingTooltips[1];
-		local shoppingTooltip2 = tooltip.shoppingTooltips[2];
-		local point = shoppingTooltip1:GetPoint(2)
-		if secondaryItemShown then
-			if point == "TOP" then
-				shoppingTooltip1:ClearAllPoints()
-				shoppingTooltip2:ClearAllPoints()
-				shoppingTooltip1:SetPoint("TOPLEFT", self.anchorFrame, "TOPRIGHT", 3, -10)
-				shoppingTooltip2:SetPoint("TOPLEFT", shoppingTooltip1, "TOPRIGHT", 3, 0)
-			elseif point == "RIGHT" then
-				shoppingTooltip1:ClearAllPoints()
-				shoppingTooltip2:ClearAllPoints()
-				shoppingTooltip1:SetPoint("TOPRIGHT", self.anchorFrame, "TOPLEFT", -3, -10)
-				shoppingTooltip2:SetPoint("TOPRIGHT", shoppingTooltip1, "TOPLEFT", -3, 0)
-			end
-		else
-			if point == "LEFT" then
-				shoppingTooltip1:ClearAllPoints()
-				shoppingTooltip1:SetPoint("TOPLEFT", self.anchorFrame, "TOPRIGHT", 3, -10)
-			elseif point == "RIGHT" then
-				shoppingTooltip1:ClearAllPoints()
-				shoppingTooltip1:SetPoint("TOPRIGHT", self.anchorFrame, "TOPLEFT", -3, -10)
-			end
+	else
+		if point == "LEFT" then
+			shoppingTooltip1:ClearAllPoints()
+			shoppingTooltip1:SetPoint("TOPLEFT", self.anchorFrame, "TOPRIGHT", 3, -10)
+		elseif point == "RIGHT" then
+			shoppingTooltip1:ClearAllPoints()
+			shoppingTooltip1:SetPoint("TOPRIGHT", self.anchorFrame, "TOPLEFT", -3, -10)
 		end
-	end)
-end
+	end
+end)
+
 ----------------------------------------------------------------------------------------
 --	Fix GameTooltipMoneyFrame font size
 ----------------------------------------------------------------------------------------

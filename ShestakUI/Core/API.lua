@@ -175,18 +175,23 @@ local StripTexturesBlizzFrames = {
 	"BottomInset",
 	"bgLeft",
 	"bgRight",
-	"FilligreeOverlay"
+	"FilligreeOverlay",
+	"PortraitOverlay",
+	"ArtOverlayFrame",
+	"Portrait",
+	"portrait",
+	"ScrollFrameBorder",
 }
 
 local function StripTextures(object, kill)
 	if object.GetNumRegions then
-		for i = 1, object:GetNumRegions() do
-			local region = select(i, object:GetRegions())
-			if region and region:GetObjectType() == "Texture" then
+		for _, region in next, {object:GetRegions()} do
+			if region and region.IsObjectType and region:IsObjectType("Texture") then
 				if kill then
 					region:Kill()
 				else
-					region:SetTexture(nil)
+					region:SetTexture("")
+					region:SetAtlas("")
 				end
 			end
 		end
