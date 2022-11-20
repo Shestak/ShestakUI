@@ -424,7 +424,7 @@ local function Shared(self, unit)
 				self.SoulShards[i].bg:SetVertexColor(0.9, 0.37, 0.37, 0.2)
 			end
 		end
-		
+
 		-- Essence bar
 		if C.unitframe_class_bar.essence == true and T.class == "EVOKER" then
 			self.Essence = CreateFrame("Frame", self:GetName().."_Essence", self, "BackdropTemplate", "BackdropTemplate")
@@ -450,7 +450,7 @@ local function Shared(self, unit)
 				self.Essence[i].bg:SetVertexColor(0.2, 0.58, 0.5, 0.2)
 			end
 		end
-		
+
 		-- Rogue/Druid Combo bar
 		if C.unitframe_class_bar.combo == true and C.unitframe_class_bar.combo_old ~= true and (T.class == "ROGUE" or T.class == "DRUID") then
 			self.ComboPoints = CreateFrame("Frame", self:GetName().."_ComboBar", self)
