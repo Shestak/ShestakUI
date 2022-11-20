@@ -44,6 +44,7 @@ local function LoadSkin()
 	EncounterJournal:CreateBackdrop("Transparent")
 	EncounterJournal.backdrop:SetPoint("TOPLEFT", -3, 0)
 	EncounterJournal.backdrop:SetPoint("BOTTOMRIGHT", 0, -2)
+	EncounterJournalPortrait:SetAlpha(0)
 
 	EncounterJournalNavBar:StripTextures(true)
 	EncounterJournalNavBar.overlay:StripTextures(true)
@@ -52,26 +53,35 @@ local function LoadSkin()
 	EncounterJournalNavBar.backdrop:SetPoint("TOPLEFT", -3, 1)
 	EncounterJournalNavBar.backdrop:SetPoint("BOTTOMRIGHT", 0, -1)
 	EncounterJournalNavBarHomeButton:SkinButton(true)
-	EncounterJournalEncounterFrameInfoLootScrollFrameFilterToggle:SkinButton(true)
-	EncounterJournalEncounterFrameInfoLootScrollFrameSlotFilterToggle:SkinButton(true)
-	EncounterJournalEncounterFrameInfoLootScrollFrameClassFilterClearFrame:GetRegions():SetAlpha(0)
+	EncounterJournalEncounterFrameInfoFilterToggle:SkinButton(true)
+	EncounterJournalEncounterFrameInfoSlotFilterToggle:SkinButton(true)
+	EncounterJournalEncounterFrameInfoClassFilterClearFrame:GetRegions():SetAlpha(0)
 	EncounterJournalEncounterFrameInfoDifficulty:SkinButton(true)
 	EncounterJournalEncounterFrameInfoDifficulty:SetWidth(95)
 	EncounterJournalEncounterFrameInfoDifficulty:SetPoint("TOPRIGHT", EncounterJournalEncounterFrameInfo, "TOPRIGHT", -7, -13)
-	EncounterJournalEncounterFrameInfoLootScrollFrameFilterToggle:SetPoint("TOPLEFT", EncounterJournalEncounterFrameInfo, "TOPRIGHT", -349, -13)
+	-- EncounterJournalEncounterFrameInfoLootScrollFrameFilterToggle:SetPoint("TOPLEFT", EncounterJournalEncounterFrameInfo, "TOPRIGHT", -349, -13)
 	hooksecurefunc(EncounterJournalEncounterFrameInfoResetButton, "SetPoint", function(self, _, _, _, x)
 		if x == -10 then
 			self:SetPoint("RIGHT", EncounterJournalEncounterFrameInfoDifficulty, "LEFT", -5, 0)
 		end
 	end)
 
+	local mainTabs = {
+		EncounterJournalSuggestTab,
+		EncounterJournalDungeonTab,
+		EncounterJournalRaidTab,
+		EncounterJournalLootJournalTab
+	}
+
+	for _, tab in pairs(mainTabs) do
+		T.SkinTab(tab)
+	end
+
+	EncounterJournalSuggestTab:SetPoint("TOPLEFT", EncounterJournal, "BOTTOMLEFT", 11, 0)
+
 	T.SkinEditBox(EncounterJournalSearchBox)
 	T.SkinCloseButton(EncounterJournalCloseButton)
 	T.SkinDropDownBox(EncounterJournalInstanceSelectTierDropDown)
-	T.SkinTab(EncounterJournalInstanceSelectSuggestTab, true)
-	T.SkinTab(EncounterJournalInstanceSelectDungeonTab, true)
-	T.SkinTab(EncounterJournalInstanceSelectRaidTab, true)
-	T.SkinTab(EncounterJournalInstanceSelectLootJournalTab, true)
 
 	EncounterJournalInstanceSelect.bg:Kill()
 	EncounterJournalEncounterFrameInfoBG:Kill()
@@ -88,18 +98,11 @@ local function LoadSkin()
 	EncounterJournalEncounterFrameInfoOverviewScrollFrameScrollChildHeader:SetAlpha(0)
 	EncounterJournalEncounterFrameInfoOverviewScrollFrameScrollChildTitle:SetFont(C.media.normal_font, 16, "")
 	EncounterJournalEncounterFrameInfoOverviewScrollFrameScrollChildTitle:SetTextColor(1, 1, 1)
-	EncounterJournal.encounter.info.overviewScroll.child.overviewDescription.Text:SetTextColor(1, 1, 1)
+	EncounterJournalEncounterFrameInfoOverviewScrollFrameScrollChild.overviewDescription.Text:SetTextColor("P", 1, 1, 1)
 	EncounterJournal.encounter.info.reset:StripTextures()
 	EncounterJournal.encounter.info.reset:SkinButton()
 	EncounterJournalEncounterFrameInfoResetButtonTexture:SetTexture("Interface\\EncounterJournal\\UI-EncounterJournalTextures")
 	EncounterJournalEncounterFrameInfoResetButtonTexture:SetTexCoord(0.90625000, 0.94726563, 0.00097656, 0.02050781)
-
-	EncounterJournalInstanceSelectDungeonTab:ClearAllPoints()
-	EncounterJournalInstanceSelectDungeonTab:SetPoint("BOTTOMLEFT", EncounterJournalInstanceSelectSuggestTab, "BOTTOMRIGHT", 10, 0)
-	EncounterJournalInstanceSelectRaidTab:ClearAllPoints()
-	EncounterJournalInstanceSelectRaidTab:SetPoint("BOTTOMLEFT", EncounterJournalInstanceSelectDungeonTab, "BOTTOMRIGHT", 10, 0)
-	EncounterJournalInstanceSelectLootJournalTab:ClearAllPoints()
-	EncounterJournalInstanceSelectLootJournalTab:SetPoint("BOTTOMLEFT", EncounterJournalInstanceSelectRaidTab, "BOTTOMRIGHT", 10, 0)
 
 	local tabs = {
 		EncounterJournalEncounterFrameInfoOverviewTab,
@@ -120,12 +123,12 @@ local function LoadSkin()
 	EncounterJournalEncounterFrameInfoOverviewTab:SetPoint("TOPLEFT", EncounterJournalEncounterFrameInfo, "TOPRIGHT", 8, -40)
 	EncounterJournalEncounterFrameInfoOverviewTab.SetPoint = T.dummy
 
-	T.SkinScrollBar(EncounterJournalInstanceSelectScrollFrame.ScrollBar)
+	T.SkinScrollBar(EncounterJournalInstanceSelect.ScrollBar)
+	T.SkinScrollBar(EncounterJournalEncounterFrameInfo.LootContainer.ScrollBar)
+	T.SkinScrollBar(EncounterJournalEncounterFrameInstanceFrame.LoreScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoDetailsScrollFrameScrollBar)
-	T.SkinScrollBar(EncounterJournalEncounterFrameInfoLootScrollFrameScrollBar)
-	T.SkinScrollBar(EncounterJournalEncounterFrameInstanceFrameLoreScrollFrameScrollBar)
+	T.SkinScrollBar(EncounterJournalEncounterFrameInfo.BossesScrollBar)
 	T.SkinScrollBar(EncounterJournalEncounterFrameInfoOverviewScrollFrameScrollBar)
-	T.SkinScrollBar(EncounterJournalEncounterFrameInfoBossesScrollFrameScrollBar)
 
 	for i = 1, AJ_MAX_NUM_SUGGESTIONS do
 		local suggestion = EncounterJournal.suggestFrame["Suggestion"..i]
@@ -162,93 +165,103 @@ local function LoadSkin()
 		end
 	end
 
-	EncounterJournal.encounter.instance:SetHeight(EncounterJournal.encounter.info.bossesScroll:GetHeight() - 8)
-	EncounterJournal.encounter.instance:ClearAllPoints()
-	EncounterJournal.encounter.instance:SetPoint("BOTTOMRIGHT", EncounterJournalEncounterFrame, "BOTTOMRIGHT", -4, 7)
-	EncounterJournal.encounter.instance.loreBG:SetSize(325, 280)
-	EncounterJournal.encounter.instance.loreBG:ClearAllPoints()
-	EncounterJournal.encounter.instance.loreBG:SetPoint("TOP", EncounterJournal.encounter.instance, "TOP", 0, 0)
-	EncounterJournal.encounter.instance.mapButton:ClearAllPoints()
-	EncounterJournal.encounter.instance.mapButton:SetPoint("BOTTOMLEFT", EncounterJournal.encounter.instance.loreBG, "BOTTOMLEFT", 25, 35)
-	T.SkinScrollBar(EncounterJournal.encounter.instance.loreScroll.ScrollBar)
-	EncounterJournal.encounter.instance.loreScroll.child.lore:SetTextColor(1, 1, 1)
+	EncounterJournalEncounterFrameInstanceFrame.titleBG:SetAlpha(0)
+	EncounterJournalEncounterFrameInstanceFrameBG:SetTexCoord(0.69, 0.06, 0.58, 0.09)
+	EncounterJournalEncounterFrameInstanceFrameBG:SetRotation(rad(180))
+	EncounterJournalEncounterFrameInstanceFrame:CreateBackdrop("Default")
+	EncounterJournalEncounterFrameInstanceFrame.backdrop:SetOutside(EncounterJournalEncounterFrameInstanceFrameBG)
+	EncounterJournalEncounterFrameInstanceFrameBG:SetSize(325, 240)
+	EncounterJournalEncounterFrameInstanceFrameBG:ClearAllPoints()
+	EncounterJournalEncounterFrameInstanceFrameBG:SetPoint("TOP", EncounterJournalEncounterFrameInstanceFrame, "TOP", 0, -45)
+	EncounterJournalEncounterFrameInstanceFrameMapButton:ClearAllPoints()
+	EncounterJournalEncounterFrameInstanceFrameMapButton:SetPoint("BOTTOMLEFT", EncounterJournalEncounterFrameInstanceFrameBG, "BOTTOMLEFT", 5, 5)
+	EncounterJournalEncounterFrameInstanceFrame.LoreScrollingFont:SetHeight(EncounterJournalEncounterFrameInstanceFrame.LoreScrollingFont:GetHeight() + 25)
 
-	local function SkinDungeons()
-		local b1 = EncounterJournalInstanceSelectScrollFrameScrollChildInstanceButton1
-		if b1 and not b1.isSkinned then
-			b1:SkinButton()
-			b1.bgImage:SetPoint("TOPLEFT", 2, -2)
-			b1.bgImage:SetPoint("BOTTOMRIGHT", -2, 2)
-			b1.bgImage:SetTexCoord(0.08, 0.6, 0.08, 0.6)
-			b1.bgImage:SetDrawLayer("ARTWORK")
-			b1.isSkinned = true
+	for _, child in next, { _G.EncounterJournalEncounterFrameInstanceFrame.LoreScrollingFont.ScrollBox.ScrollTarget:GetChildren() } do
+		if child.FontString then
+			child.FontString:SetTextColor(1, 1, 1)
 		end
+	end
 
-		for i = 1, 100 do
-			local b = _G["EncounterJournalInstanceSelectScrollFrameinstance"..i]
-			if b and not b.isSkinned then
+	hooksecurefunc(_G.EncounterJournal.instanceSelect.ScrollBox, "Update", function(frame)
+		for _, b in next, {frame.ScrollTarget:GetChildren()} do
+			if not b.isSkinned then
 				b:SkinButton()
-				b.bgImage:SetPoint("TOPLEFT", 2, -2)
-				b.bgImage:SetPoint("BOTTOMRIGHT", -2, 2)
-				b.bgImage:SetTexCoord(0.08, 0.6, 0.08, 0.6)
-				b.bgImage:SetDrawLayer("ARTWORK")
+				if b.bgImage then
+					b.bgImage:SetPoint("TOPLEFT", 2, -2)
+					b.bgImage:SetPoint("BOTTOMRIGHT", -2, 2)
+					b.bgImage:SetTexCoord(0.08, 0.6, 0.08, 0.6)
+					b.bgImage:SetDrawLayer("ARTWORK")
+				end
+
 				b.isSkinned = true
 			end
 		end
-	end
-	hooksecurefunc("EncounterJournal_ListInstances", SkinDungeons)
-	EncounterJournal_ListInstances()
+	end)
 
-	local function SkinBosses()
-		local bossIndex = 1
-		local _, _, bossID = EJ_GetEncounterInfoByIndex(bossIndex)
-		local bossButton
-
-		while bossID do
-			bossButton = _G["EncounterJournalBossButton"..bossIndex]
-			if bossButton and not bossButton.isSkinned then
-				bossButton:SkinButton()
-				bossButton.isSkinned = true
+	hooksecurefunc(_G.EncounterJournal.encounter.info.BossesScrollBox, "Update", function(frame)
+		for _, child in next, {frame.ScrollTarget:GetChildren()} do
+			if not child.isSkinned then
+				child:SkinButton()
+				child.isSkinned = true
 			end
-
-			bossIndex = bossIndex + 1
-			_, _, bossID = EJ_GetEncounterInfoByIndex(bossIndex)
 		end
-	end
-	hooksecurefunc("EncounterJournal_DisplayInstance", SkinBosses)
+	end)
 
-	local items = EncounterJournal.encounter.info.lootScroll.buttons
-	for i = 1, #items do
-		local item = items[i].lootFrame
-		hooksecurefunc(item.IconBorder, "SetVertexColor", function(self, r, g, b)
-			self:GetParent().IconBackdrop:SetBackdropBorderColor(r, g, b)
-			self:SetTexture("")
-		end)
-		item:CreateBackdrop("Overlay")
-		item.backdrop:SetPoint("TOPLEFT", 1, -4)
-		item.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
+	hooksecurefunc(_G.EncounterJournal.encounter.info.LootContainer.ScrollBox, "Update", function(frame)
+		for _, child in next, {frame.ScrollTarget:GetChildren()} do
+			if not child.isSkinned then
+				if child.bossTexture then child.bossTexture:SetAlpha(0) end
+				if child.bosslessTexture then child.bosslessTexture:SetAlpha(0) end
 
-		item.icon:SetSize(30, 30)
-		item.icon:SetPoint("TOPLEFT", T.mult*6, -(T.mult*10))
-		item.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-		item.icon:SetDrawLayer("ARTWORK")
+				if child.boss then
+					child.boss:ClearAllPoints()
+					child.boss:SetPoint("BOTTOMLEFT", 4, 4)
+					child.boss:SetTextColor(1, 1, 1)
+				end
 
-		item.IconBackdrop = CreateFrame("Frame", nil, item)
-		item.IconBackdrop:SetFrameLevel(item:GetFrameLevel())
-		item.IconBackdrop:SetPoint("TOPLEFT", item.icon, -2, 2)
-		item.IconBackdrop:SetPoint("BOTTOMRIGHT", item.icon, 2, -2)
-		item.IconBackdrop:SetTemplate("Default")
+				if child.slot then
+					child.slot:ClearAllPoints()
+					child.slot:SetPoint("BOTTOMLEFT", child.icon, "BOTTOMRIGHT", 7, -2)
+					child.slot:SetTextColor(1, 1, 1)
+				end
 
-		item.boss:SetTextColor(1, 1, 1)
-		item.boss:ClearAllPoints()
-		item.boss:SetPoint("BOTTOMLEFT", 4, 4)
-		item.bossTexture:SetAlpha(0)
-		item.bosslessTexture:SetAlpha(0)
-		item.slot:SetTextColor(1, 1, 1)
-		item.slot:SetPoint("BOTTOMLEFT", item.icon, "BOTTOMRIGHT", 7, -2)
-		item.armorType:SetTextColor(1, 1, 1)
-		item.armorType:SetPoint("BOTTOMRIGHT", item.name, "TOPLEFT", 264, -25)
-	end
+				if child.armorType then
+					child.armorType:ClearAllPoints()
+					child.armorType:SetPoint("BOTTOMRIGHT", child.name, "TOPLEFT", 264, -25)
+					child.armorType:SetTextColor(1, 1, 1)
+				end
+
+				if child.icon then
+					child.icon:SetSize(30, 30)
+					child.icon:SetPoint("TOPLEFT", T.mult*6, -(T.mult*10))
+					child.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+					child.icon:SetDrawLayer("ARTWORK")
+
+					if not child.IconBackdrop then
+						child.IconBackdrop = CreateFrame("Frame", nil, child)
+						child.IconBackdrop:SetFrameLevel(child:GetFrameLevel())
+						child.IconBackdrop:SetPoint("TOPLEFT", child.icon, -2, 2)
+						child.IconBackdrop:SetPoint("BOTTOMRIGHT", child.icon, 2, -2)
+						child.IconBackdrop:SetTemplate("Default")
+
+						hooksecurefunc(child.IconBorder, "SetVertexColor", function(self, r, g, b)
+							self:GetParent().IconBackdrop:SetBackdropBorderColor(r, g, b)
+							self:SetTexture("")
+						end)
+					end
+				end
+
+				if not child.backdrop and not child.TipButton then
+					child:CreateBackdrop("Overlay")
+					child.backdrop:SetPoint("TOPLEFT", 0, -4)
+					child.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
+				end
+
+				child.isSkinned = true
+			end
+		end
+	end)
 
 	local function SkinOverviewInfo(self, _, index)
 		local header = self.overviews[index]
@@ -277,7 +290,7 @@ local function LoadSkin()
 		if parent.Bullets then
 			for _, bullet in pairs(parent.Bullets) do
 				if not bullet.styled then
-					bullet.Text:SetTextColor(1, 1, 1)
+					bullet.Text:SetTextColor("P", 1, 1, 1)
 					bullet.styled = true
 				end
 			end
@@ -376,28 +389,6 @@ local function LoadSkin()
 	LootJournal:DisableDrawLayer("BACKGROUND")
 	LootJournal.ClassDropDownButton:SkinButton(true)
 	LootJournal.RuneforgePowerFilterDropDownButton:SkinButton(true)
-	T.SkinScrollBar(LootJournal.PowersFrame.ScrollBar)
-
-	hooksecurefunc(LootJournal.PowersFrame, "RefreshListDisplay", function(buttons)
-		if not buttons.elements then return end
-
-		for i = 1, buttons:GetNumElementFrames() do
-			local btn = buttons.elements[i]
-			if btn and not btn.IsSkinned then
-				btn.Background:SetAlpha(0)
-				btn.BackgroundOverlay:SetAlpha(0)
-				btn.CircleMask:Hide()
-				btn.Icon:SetSize(50, 50)
-				btn.Icon:SkinIcon(true)
-
-				btn:CreateBackdrop("Overlay")
-				btn.backdrop:SetPoint("TOPLEFT", 2, -2)
-				btn.backdrop:SetPoint("BOTTOMRIGHT", 2, 2)
-
-				btn.IsSkinned = true
-			end
-		end
-	end)
 
 	EncounterJournal.LootJournalItems:DisableDrawLayer("BACKGROUND")
 	T.SkinDropDownBox(EncounterJournalLootJournalViewDropDown)
@@ -431,6 +422,25 @@ local function LoadSkin()
 		button.ItemLevel:SetTextColor(1, 1, 1)
 	end
 
+	T.SkinScrollBar(EncounterJournal.LootJournal.ScrollBar)
+
+	hooksecurefunc(_G.EncounterJournal.LootJournal.ScrollBox, "Update", function(frame)
+		for _, btn in next, {frame.ScrollTarget:GetChildren()} do
+			if not btn.isSkinned then
+				btn.Background:SetAlpha(0)
+				btn.BackgroundOverlay:SetAlpha(0)
+				btn.CircleMask:Hide()
+				btn.Icon:SetSize(50, 50)
+				btn.Icon:SkinIcon(true)
+
+				btn:CreateBackdrop("Overlay")
+				btn.backdrop:SetPoint("TOPLEFT", 2, -2)
+				btn.backdrop:SetPoint("BOTTOMRIGHT", 2, 2)
+
+				btn.IsSkinned = true
+			end
+		end
+	end)
 end
 
 T.SkinFuncs["Blizzard_EncounterJournal"] = LoadSkin
