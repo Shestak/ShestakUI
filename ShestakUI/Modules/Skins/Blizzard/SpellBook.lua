@@ -231,7 +231,7 @@ local function LoadSkin()
 		T.SkinTab(_G["SpellBookFrameTabButton"..i])
 	end
 	_G["SpellBookFrameTabButton1"]:ClearAllPoints()
-	_G["SpellBookFrameTabButton1"]:SetPoint("TOPLEFT", _G["SpellBookFrame"], "BOTTOMLEFT", -5, 1)
+	_G["SpellBookFrameTabButton1"]:SetPoint("TOPLEFT", _G["SpellBookFrame"], "BOTTOMLEFT", 5, 1)
 end
 
 tinsert(T.SkinFuncs["ShestakUI"], LoadSkin)
