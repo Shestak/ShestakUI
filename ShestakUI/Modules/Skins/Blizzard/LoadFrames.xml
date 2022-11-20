@@ -36,7 +36,7 @@
 	<Script file="EventTrace.lua"/>
 	<Script file="FlightMap.lua"/>
 	<Script file="Friends.lua"/>
-	<!-- <Script file="Garrison.lua"/> -->
+	<Script file="Garrison.lua"/>
 	<Script file="Gossip.lua"/>
 	<!-- <Script file="Guide.lua"/> -->
 	<!-- <Script file="Guild.lua"/> -->
