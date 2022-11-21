@@ -314,7 +314,7 @@ SlashCmdList.MOUSEOVERBIND = function()
 			end
 		end
 
-		for i = 1, NUM_STANCE_SLOTS do
+		for i = 1, 10 do
 			local b = _G["StanceButton"..i]
 			b:HookScript("OnEnter", function(self) bind:Update(self, "STANCE") end)
 		end
