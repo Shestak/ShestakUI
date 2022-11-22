@@ -67,9 +67,13 @@ local function LoadSkin()
 	stepButton.backdrop:SetPoint("BOTTOMRIGHT", stepButton.icon, "BOTTOMRIGHT", 2, -2)
 	stepButton.icon:SetParent(stepButton.backdrop)
 	ClassTrainerFrameSkillStepButtonHighlight:SetColorTexture(1, 1, 1, 0.3)
+	ClassTrainerFrameSkillStepButtonHighlight:SetPoint("TOPLEFT", 2, 0)
+	ClassTrainerFrameSkillStepButtonHighlight:SetPoint("BOTTOMRIGHT", -2, 0)
 	stepButton.selectedTex:SetColorTexture(1, 1, 1, 0.3)
 
 	T.SkinScrollBar(ClassTrainerFrame.ScrollBar)
+	ClassTrainerFrame.ScrollBar:SetPoint("TOPLEFT", ClassTrainerFrame.ScrollBox, "TOPRIGHT", 0, 4)
+	ClassTrainerFrame.ScrollBar:SetPoint("BOTTOMLEFT", ClassTrainerFrame.ScrollBox, "BOTTOMRIGHT", 0, -4)
 
 	ClassTrainerStatusBar:StripTextures()
 	ClassTrainerStatusBar:SetStatusBarTexture(C.media.texture)
