@@ -49,7 +49,7 @@ function prototype:SetDominantColor(r, g, b)
 	self.Border:SetAlpha(SPECIAL_COLOR_ALPHA)
 end
 
-function prototype:SetOverlayIcon(texture, w, h, ...) -- not entirely sure what this is for
+function prototype:SetOverlayIcon(texture, w, h, ...)
 	if not texture then
 		self.OverlayIcon:Hide()
 	else
@@ -64,6 +64,10 @@ end
 
 function prototype:SetCount(count)
 	self.Count:SetText(count or "")
+end
+
+function prototype:SetOverlayIconVertexColor(...)
+	self.overIcon:SetVertexColor(...)
 end
 
 local displaySubs = {
@@ -109,7 +113,7 @@ function prototype:SetCooldown(remain, duration, usable)
 	end
 end
 
-function prototype:SetCooldownFormattedText()
+function prototype:SetCooldownFormattedText(pattern, ...)
 	-- do nothing
 end
 
@@ -145,7 +149,7 @@ end
 
 local id = 0
 
-local function CreateIndicator(name, parent, size)
+local function CreateIndicator(name, parent, size, ghost)
 	id = id + 1
 	name = name or "OPieSliceButton"..id
 	parent = parent or UIParent
@@ -164,7 +168,7 @@ local function CreateIndicator(name, parent, size)
 	button.NormalTexture = _G[name .. "NormalTexture"] -- border
 
 	-- Overlay icon (???)
-	button.OverlayIcon = button:CreateTexture(nil, "BACKGROUND", 1)
+	button.OverlayIcon = button:CreateTexture(nil, "ARTWORK", nil, 1)
 	button.OverlayIcon:SetPoint("BOTTOMLEFT", button, "BOTTOMLEFT", 4, 4)
 
 	-- Outer glow (doesn't seem to do anything?)
@@ -174,13 +178,13 @@ local function CreateIndicator(name, parent, size)
 		button[k] = v
 	end
 
-	-- ShestakUI Skin
+	-- ViksUI Skin
 
 	if not button.isSkinned then
-		button.NormalTexture:SetTexture(nil)
+		button.NormalTexture:SetTexture(0)
 		button:CreateBackdrop("Overlay")
 		button:StyleButton(nil, 4)
-		button:CreateBackdrop("Default")
+		button.backdrop:SetAllPoints()
 
 		button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 		button.icon:SetDrawLayer("ARTWORK")
@@ -210,4 +214,4 @@ local function CreateIndicator(name, parent, size)
 	return button
 end
 
---BETA OneRingLib.ext.OPieUI:SetIndicatorConstructor(CreateIndicator)
+OPie.UI:RegisterIndicatorConstructor("OpieMasque", {CreateIndicator=CreateIndicator, name="OpieMasque", apiLevel=1})
