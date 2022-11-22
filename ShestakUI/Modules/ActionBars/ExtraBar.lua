@@ -36,7 +36,7 @@ if C.actionbar.split_bars then
 else
 	zoneAnchor:SetPoint(unpack(C.position.zone_button))
 end
-zoneAnchor:SetSize(109, size)
+zoneAnchor:SetSize(size * 2, size)
 zoneAnchor:SetFrameStrata("LOW")
 RegisterStateDriver(zoneAnchor, "visibility", "[petbattle] hide; show")
 
