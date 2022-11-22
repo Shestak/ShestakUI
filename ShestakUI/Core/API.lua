@@ -968,6 +968,49 @@ function T.SkinFrame(frame, backdrop, x, y)
 	if artFrameOverlay then artFrameOverlay:SetAlpha(0) end
 end
 
+local iconColors = {
+	["auctionhouse-itemicon-border-gray"]		= {r = borderr, g = borderg, b = borderb},
+	["auctionhouse-itemicon-border-white"]		= {r = borderr, g = borderg, b = borderb},
+	["auctionhouse-itemicon-border-green"]		= BAG_ITEM_QUALITY_COLORS[2],
+	["auctionhouse-itemicon-border-blue"]		= BAG_ITEM_QUALITY_COLORS[3],
+	["auctionhouse-itemicon-border-purple"]		= BAG_ITEM_QUALITY_COLORS[4],
+	["auctionhouse-itemicon-border-orange"]		= BAG_ITEM_QUALITY_COLORS[5],
+	["auctionhouse-itemicon-border-artifact"]	= BAG_ITEM_QUALITY_COLORS[6],
+	["auctionhouse-itemicon-border-account"]	= BAG_ITEM_QUALITY_COLORS[7]
+}
+
+function T.SkinIconBorder(frame, border)
+	local backdrop = border or frame:GetParent().backdrop
+	hooksecurefunc(frame, "SetVertexColor", function(self, r, g, b)
+		if r ~= BAG_ITEM_QUALITY_COLORS[1].r ~= r and g ~= BAG_ITEM_QUALITY_COLORS[1].g then
+			backdrop:SetBackdropBorderColor(r, g, b)
+		else
+			backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+		end
+		frame:SetAlpha(0)
+	end)
+
+	hooksecurefunc(frame, "SetAtlas", function(self, atlas)
+		local color = iconColors[atlas]
+		frame:SetAlpha(0)
+		if color then
+			backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
+		else
+			-- backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+		end
+	end)
+
+	hooksecurefunc(frame, "Hide", function(self)
+		backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+	end)
+
+	hooksecurefunc(frame, "SetShown", function(self, show)
+		if not show then
+			backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+		end
+	end)
+end
+
 local LoadBlizzardSkin = CreateFrame("Frame")
 LoadBlizzardSkin:RegisterEvent("ADDON_LOADED")
 LoadBlizzardSkin:SetScript("OnEvent", function(self, _, addon)
