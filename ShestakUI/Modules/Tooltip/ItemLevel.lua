@@ -76,7 +76,7 @@ local function GetUnitIDFromGUID(guid)
 		return "target", name
 	elseif GetCVar("nameplateShowFriends") == "1" then -- friendly nameplates are visible
 		for i = 1, 30 do
-			local unitID = "nameplate" .. i
+			local unitID = "nameplate"..i
 			local nameplateGUID = UnitGUID(unitID)
 			if nameplateGUID then
 				if nameplateGUID == guid then
@@ -92,7 +92,7 @@ local function GetUnitIDFromGUID(guid)
 			local unitPrefix = IsInRaid() and "raid" or "party"
 			if unitPrefix == "party" then numMembers = numMembers - 1 end
 			for i = 1, numMembers do
-				local unitID = unitPrefix .. i .. "-target"
+				local unitID = unitPrefix..i.."-target"
 				local targetGUID = UnitGUID(unitID)
 				if targetGUID == guid then
 					return unitID, name
@@ -140,10 +140,6 @@ local function IsArtifact(itemLink)
 	return itemLink:find("|cffe6cc80") -- this is probably a horrible way to find whether it"s an artifact
 end
 
--- local function IsLegendary()
-	-- return false
--- end
-
 local function IsCached(itemLink) -- we can"t get the correct level of an artifact until all of its relics have been cached
 	local cached = true
 	local _, itemID, _, relic1, relic2, relic3 = strsplit(":", itemLink)
@@ -176,117 +172,120 @@ local function AddLine(sekret, leftText, rightText, prefixColor, detailColor, do
 	end
 end
 
-local SlotCache = {}
-local ItemCache = {}
+local SlotCache = {} -- [slot] = itemLevel or false
+local ItemCache = {} -- [slot] = itemLink
 local TestTips = {}
 for _, slot in pairs(InventorySlots) do
 	local tip = CreateFrame("GameTooltip", "AverageItemLevelTooltip"..slot, nil, "GameTooltipTemplate")
 	tip:SetOwner(WorldFrame, "ANCHOR_NONE")
 	TestTips[slot] = tip
 	tip.slot = slot
-	TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(self)
-		if self ~= tip then return end
-		local slot = self.slot
-		local _, itemLink = TooltipUtil.GetDisplayedItem(self)
-		local tipName = self:GetName()
-		if self.itemLink then itemLink = self.itemLink end
-		if itemLink then
-			local isCached = IsCached(itemLink)
-			if isCached then
-				for i = 2, self:NumLines() do
-					local str = _G[tipName .. "TextLeft" .. i]
-					local text = str and str:GetText()
-					if text then
-						local ilevel = text:match(ItemLevelPattern1)
-						if not ilevel then
-							ilevel = text:match(ItemLevelPattern2)
-						end
-						if ilevel then
-							SlotCache[slot] = tonumber(ilevel)
-							ItemCache[slot] = itemLink
-						end
-					end
-				end
-			end
-		end
-
-		local finished = true
-		local totalItemLevel = 0
-		for slot, ilevel in pairs(SlotCache) do
-			if not ilevel then
-				finished = false
-				break
-			else
-				if slot ~= 16 and slot ~= 17 then
-					totalItemLevel = totalItemLevel + ilevel
-				end
-			end
-		end
-
-		if finished then
-			local weaponLevel = 0
-			local isDual = false
-			if SlotCache[16] and SlotCache[17] then -- we have 2 weapons
-				isDual = true
-				if IsArtifact(ItemCache[16]) or IsArtifact(ItemCache[17]) then -- take the higher of the 2 weapons and double it
-					local ilevelMain = SlotCache[16]
-					local ilevelOff = SlotCache[17]
-					weaponLevel = ilevelMain > ilevelOff and ilevelMain or ilevelOff
-					totalItemLevel = totalItemLevel + (weaponLevel * 2)
-				else
-					local ilevelMain = SlotCache[16]
-					local ilevelOff = SlotCache[17]
-					totalItemLevel = totalItemLevel + ilevelMain + ilevelOff
-					if ilevelMain > ilevelOff then
-						weaponLevel = ilevelMain
-					else
-						weaponLevel = ilevelOff
-					end
-				end
-			elseif SlotCache[16] then -- main hand only
-				local _, _, _, weaponType = GetItemInfoInstant(ItemCache[16])
-				local ilevelMain = SlotCache[16]
-				weaponLevel = ilevelMain
-				if TwoHanders[weaponType] then -- 2 handed, count it twice
-					totalItemLevel = totalItemLevel + (ilevelMain * 2)
-				else
-					totalItemLevel = totalItemLevel + ilevelMain
-				end
-			elseif SlotCache[17] then -- off hand only?
-				local ilevelOff = SlotCache[17]
-				totalItemLevel = totalItemLevel + ilevelOff
-				weaponLevel = ilevelOff
-			end
-
-			if weaponLevel >= 900 and ScannedGUID ~= UnitGUID("player") then
-				weaponLevel = weaponLevel + 15
-				if isDual then
-					totalItemLevel = totalItemLevel + 15
-				else
-					totalItemLevel = totalItemLevel + 30
-				end
-			end
-
-			local averageItemLevel = totalItemLevel / 16
-
-			local guid = ScannedGUID
-			if not GuidCache[guid] then GuidCache[guid] = {} end
-			GuidCache[guid].ilevel = averageItemLevel
-			GuidCache[guid].weaponLevel = weaponLevel
-			GuidCache[guid].neckLevel = SlotCache[2]
-			GuidCache[guid].timestamp = GetTime()
-
-			-- wipe(GuidCache[guid].legos)
-			-- for _, link in pairs(ItemCache) do
-				-- if IsLegendary(link) then
-					-- tinsert(GuidCache[guid].legos, link)
-				-- end
-			-- end
-
-			E("ItemScanComplete", guid, GuidCache[guid])
-		end
-	end)
 end
+
+function OnTooltipSetItem(self)
+	local slot = self.slot
+	if(not slot) then
+		return
+	end
+	local _, itemLink = self:GetItem()
+	local tipName = self:GetName()
+	if self.itemLink then
+		itemLink = self.itemLink
+	end
+	if itemLink then
+		local isCached = IsCached(itemLink)
+		if isCached then
+			for i = 2, self:NumLines() do
+				local str = _G[tipName.."TextLeft"..i]
+				local text = str and str:GetText()
+				if text then
+					local ilevel = text:match(ItemLevelPattern1)
+					if not ilevel then
+						ilevel = text:match(ItemLevelPattern2)
+					end
+					if ilevel then
+						SlotCache[slot] = tonumber(ilevel)
+						ItemCache[slot] = itemLink
+					end
+				end
+			end
+		end
+	end
+
+	local finished = true
+	local totalItemLevel = 0
+	for slot, ilevel in pairs(SlotCache) do
+		if not ilevel then
+			finished = false
+			break
+		else
+			if slot ~= 16 and slot ~= 17 then
+				totalItemLevel = totalItemLevel + ilevel
+			end
+		end
+	end
+
+	if finished then
+		local weaponLevel = 0
+		local isDual = false
+		if SlotCache[16] and SlotCache[17] then -- we have 2 weapons
+			isDual = true
+			if IsArtifact(ItemCache[16]) or IsArtifact(ItemCache[17]) then -- take the higher of the 2 weapons and double it
+				local ilevelMain = SlotCache[16]
+				local ilevelOff = SlotCache[17]
+				weaponLevel = ilevelMain > ilevelOff and ilevelMain or ilevelOff
+				totalItemLevel = totalItemLevel + (weaponLevel * 2)
+			else
+				local ilevelMain = SlotCache[16]
+				local ilevelOff = SlotCache[17]
+				totalItemLevel = totalItemLevel + ilevelMain + ilevelOff
+				if ilevelMain > ilevelOff then
+					weaponLevel = ilevelMain
+				else
+					weaponLevel = ilevelOff
+				end
+			end
+		elseif SlotCache[16] then -- main hand only
+			local _, _, _, weaponType = GetItemInfoInstant(ItemCache[16])
+			local ilevelMain = SlotCache[16]
+			weaponLevel = ilevelMain
+			if TwoHanders[weaponType] then -- 2 handed, count it twice
+				totalItemLevel = totalItemLevel + (ilevelMain * 2)
+			else
+				totalItemLevel = totalItemLevel + ilevelMain
+			end
+		elseif SlotCache[17] then -- off hand only?
+			local ilevelOff = SlotCache[17]
+			totalItemLevel = totalItemLevel + ilevelOff
+			weaponLevel = ilevelOff
+		end
+
+		if weaponLevel >= 900 and ScannedGUID ~= UnitGUID("player") then
+			weaponLevel = weaponLevel + 15
+			if isDual then
+				totalItemLevel = totalItemLevel + 15
+			else
+				totalItemLevel = totalItemLevel + 30
+			end
+		end
+
+		local averageItemLevel = totalItemLevel / 16
+
+		-- should we just return the cache for this GUID?
+		local guid = ScannedGUID
+		if not GuidCache[guid] then
+			GuidCache[guid] = {}
+		end
+
+		GuidCache[guid].ilevel = averageItemLevel
+		GuidCache[guid].weaponLevel = weaponLevel
+		GuidCache[guid].timestamp = GetTime()
+
+		E("ItemScanComplete", guid, GuidCache[guid])
+	end
+end
+
+TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, OnTooltipSetItem)
 
 local function GetTooltipGUID()
 	local _, unitID = GameTooltip:GetUnit()
@@ -358,33 +357,20 @@ local function DecorateTooltip(guid, isInspect)
 	if GetTooltipGUID() == guid or (isInspect and guid == UnitGUID("target")) then
 		local _, ourEquippedItemLevel = GetAverageItemLevel()
 		local averageItemLevel = cache.ilevel or 0
-		local neckLevel = cache.neckLevel or 0
-		local ourNeck = GetInventoryItemLink("player", 2)
-		local ourNeckLevel = GetDetailedItemLevelInfo(ourNeck or "") or 0
-
 		local r1, g1, b1 = ColorDiff(ourEquippedItemLevel, averageItemLevel)
-		local r2, g2, b2 = ColorDiff(ourNeckLevel, neckLevel)
 
 		local _, unitID = GameTooltip:GetUnit()
 		if isInspect then
 			unitID = "target"
 		end
-		local levelText
-		if UnitLevel(unitID) == 120 then
-			levelText = format("|cff%2x%2x%2x%.1f|r |cff%2x%2x%2x(%s)|r", r1 * 255, g1 * 255, b1 * 255, averageItemLevel, r2 * 255, g2 * 255, b2 * 255, neckLevel)
-		else
-			levelText = format("|cff%2x%2x%2x%.1f|r", r1 * 255, g1 * 255, b1 * 255, averageItemLevel, r2 * 255, g2 * 255, b2 * 255)
-		end
+
+		local levelText = format("|cff%2x%2x%2x%.1f|r", r1 * 255, g1 * 255, b1 * 255, averageItemLevel)
 
 		if isInspect and averageItemLevel > 0 then
 			InspectFrameiLvL:SetText(levelText)
 		end
 
 		AddLine(Sekret, STAT_AVERAGE_ITEM_LEVEL..": ", levelText, "|cffF9D700", "|cffffffff")
-
-		-- for i, lego in ipairs(cache.legos) do
-			-- AddLine("|Hlego" .. i .. "|h", lego, " ", "|cffffffff", "|cffffffff")
-		-- end
 	end
 end
 
@@ -392,7 +378,6 @@ local function ScanUnit(unitID)
 	ScannedGUID = UnitGUID(unitID)
 	wipe(SlotCache)
 	wipe(ItemCache)
-	-- wipe(GuidCache[ScannedGUID].legos)
 	local numEquipped = 0
 	for _, slot in pairs(InventorySlots) do
 		if GetInventoryItemTexture(unitID, slot) then
@@ -428,17 +413,22 @@ function E:INSPECT_READY(guid)
 		-- if not specName and specID and specID ~= 0 then
 			-- specID, specName = GetSpecializationInfoByID(specID, UnitSex(unitID))
 			-- if colors then
-				-- specName = "|c" .. colors.colorStr .. specName .. "|r"
+				-- specName = "|c"..colors.colorStr..specName.."|r"
 			-- end
 		-- end
 
 		if not GuidCache[guid] then
-			GuidCache[guid] = {ilevel = 0, weaponLevel = 0, timestamp = 0, legos = {}}
+			GuidCache[guid] = {
+				ilevel = 0,
+				weaponLevel = 0,
+				timestamp = 0,
+			}
 		end
 		-- local cache = GuidCache[guid]
 		-- cache.specID = specID
 		-- cache.class = class
 		-- cache.specName = specName
+		-- cache.itemLevel = C_PaperDollInfo.GetInspectItemLevel(unitID)
 
 		ScanUnit(unitID)
 	end
