@@ -54,7 +54,7 @@ end
 ----------------------------------------------------------------------------------------
 local PetBarAnchor = CreateFrame("Frame", "PetActionBarAnchor", T_PetBattleFrameHider)
 if C.actionbar.petbar_horizontal == true then
-	PetBarAnchor:CreatePanel("Invisible", (C.actionbar.button_size * 10) + (C.actionbar.button_space * 9), (C.actionbar.button_size + C.actionbar.button_space), unpack(C.position.pet_horizontal))
+	PetBarAnchor:CreatePanel("Invisible", (C.actionbar.button_size * 10) + (C.actionbar.button_space * 9), C.actionbar.button_size, unpack(C.position.pet_horizontal))
 elseif C.actionbar.rightbars > 0 then
 	PetBarAnchor:CreatePanel("Invisible", C.actionbar.button_size + C.actionbar.button_space, (C.actionbar.button_size * 10) + (C.actionbar.button_space * 9), "RIGHT", RightBarAnchor, "LEFT", 0, 0)
 else

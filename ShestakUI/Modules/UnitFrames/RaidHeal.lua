@@ -478,10 +478,14 @@ local party_pet = CreateFrame("Frame", "PartyPetAnchor", UIParent)
 party_pet:SetPoint("TOPLEFT", party, "BOTTOMLEFT", 0, -((party_height / 2) + 14.5))
 
 local raidtank = CreateFrame("Frame", "RaidTankAnchor", UIParent)
-if C.actionbar.split_bars then
-	raidtank:SetPoint(C.position.unitframes.tank[1], SplitBarRight, C.position.unitframes.tank[3], C.position.unitframes.tank[4], C.position.unitframes.tank[5])
+if C.threat.enable then
+	raidtank:SetPoint(C.position.unitframes.tank[1], C.position.unitframes.tank[2], C.position.unitframes.tank[3], C.position.unitframes.tank[4] + C.threat.width + 6, C.position.unitframes.tank[5])
 else
-	raidtank:SetPoint(unpack(C.position.unitframes.tank))
+	if C.actionbar.split_bars then
+		raidtank:SetPoint(C.position.unitframes.tank[1], SplitBarRight, C.position.unitframes.tank[3], C.position.unitframes.tank[4], C.position.unitframes.tank[5])
+	else
+		raidtank:SetPoint(unpack(C.position.unitframes.tank))
+	end
 end
 
 ----------------------------------------------------------------------------------------

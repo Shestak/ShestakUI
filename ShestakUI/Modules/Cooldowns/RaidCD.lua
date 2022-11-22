@@ -49,7 +49,7 @@ end
 
 local UpdatePositions = function()
 	if charges and Ressesbars[1] then
-		Ressesbars[1]:SetPoint("TOPRIGHT", RaidCDAnchor, "TOPRIGHT", 0, 0)
+		Ressesbars[1]:SetPoint("TOPRIGHT", RaidCDAnchor, "TOPRIGHT", -2, C.raidcooldown.show_icon and -8 or -2)
 		Ressesbars[1].id = 1
 		for i = 1, #bars do
 			bars[i]:ClearAllPoints()
@@ -72,7 +72,7 @@ local UpdatePositions = function()
 		for i = 1, #bars do
 			bars[i]:ClearAllPoints()
 			if i == 1 then
-				bars[i]:SetPoint("TOPRIGHT", RaidCDAnchor, "TOPRIGHT", 0, 0)
+				bars[i]:SetPoint("TOPRIGHT", RaidCDAnchor, "TOPRIGHT", -2, C.raidcooldown.show_icon and -8 or -2)
 			else
 				if C.raidcooldown.upwards == true then
 					bars[i]:SetPoint("BOTTOMRIGHT", bars[i-1], "TOPRIGHT", 0, 13)

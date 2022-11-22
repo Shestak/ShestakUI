@@ -262,7 +262,7 @@ if IsWetxius then
 	C["font"].stats_font = C.media.normal_font
 	C["font"].stats_font_style = "OUTLINE"
 	C["font"].stats_font_size = 12
-	C["position"].raid_cooldown = {"TOPLEFT", UIParent, "TOPLEFT", 300, -14}
+	-- C["position"].raid_cooldown = {"TOPLEFT", UIParent, "TOPLEFT", 300, -14}
 	C["position"].bag = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 20}
 	C["position"].bank = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 20}
 	C["position"].auto_button = {"BOTTOMLEFT", "oUF_Player" or ChatFrame1, "TOPRIGHT", 33, 83}
