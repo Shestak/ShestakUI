@@ -133,6 +133,15 @@ ns.CreateCheckBox = function(parent, option, text, textDesc)
 
 	f.tooltipText = ns[parent.tag.."_"..option.."_desc"] or textDesc or ns[parent.tag.."_"..option] or text
 
+	f:SetScript("OnEnter", function()
+		GameTooltip:SetOwner(f, "ANCHOR_RIGHT", 0, 0)
+		GameTooltip:SetText(f.tooltipText, nil, nil, nil, nil, true)
+	end)
+
+	f:SetScript("OnLeave", function()
+		GameTooltip:Hide()
+	end)
+
 	f.needsReload = true
 
 	f:SetScript("OnClick", toggle)
@@ -259,6 +268,15 @@ local function createSlider(parent, option, lowText, highText, low, high, step, 
 	f:SetWidth(150)
 
 	f.tooltipText = ns[parent.tag.."_"..option.."_desc"] or textDesc or ns[parent.tag.."_"..option] or text
+
+	f:SetScript("OnEnter", function()
+		GameTooltip:SetOwner(f, "ANCHOR_RIGHT", 0, 0)
+		GameTooltip:SetText(f.tooltipText, nil, nil, nil, nil, true)
+	end)
+
+	f:SetScript("OnLeave", function()
+		GameTooltip:Hide()
+	end)
 
 	f.needsReload = needsReload
 	f.step = step
