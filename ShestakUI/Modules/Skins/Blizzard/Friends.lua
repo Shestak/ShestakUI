@@ -168,8 +168,8 @@ local function LoadSkin()
 	end)
 
 	-- Who Frame
-	-- WhoListScrollFrame:ClearAllPoints()
-	-- WhoListScrollFrame:SetPoint("TOPRIGHT", WhoFrameListInset, -25, 0)
+	WhoFrame.ScrollBar:SetPoint("TOPLEFT", WhoFrame.ScrollBox, "TOPRIGHT", 2, 1)
+	WhoFrame.ScrollBar:SetPoint("BOTTOMLEFT", WhoFrame.ScrollBox, "BOTTOMRIGHT", 5, -16)
 
 	-- BNet Frame
 	FriendsFrameBattlenetFrame.BroadcastButton:SetAlpha(0)
