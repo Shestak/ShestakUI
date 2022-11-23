@@ -23,6 +23,7 @@ local tooltips = {
 	CampaignTooltip,
 	EmbeddedItemTooltip,
 	QuickKeybindTooltip,
+	SettingsTooltip,
 	-- Addons
 	AtlasLootTooltip,
 	QuestGuru_QuestWatchTooltip,
@@ -44,7 +45,11 @@ for _, tt in pairs(tooltips) do
 		local bg = CreateFrame("Frame", nil, tt)
 		bg:SetPoint("TOPLEFT")
 		bg:SetPoint("BOTTOMRIGHT")
-		bg:SetFrameLevel(tt:GetFrameLevel() - 1)
+		if tt:GetFrameLevel() - 1 >= 0 then
+			bg:SetFrameLevel(tt:GetFrameLevel() - 1)
+		else
+			bg:SetFrameLevel(0)
+		end
 		bg:SetTemplate("Transparent")
 
 		tt.GetBackdrop = function() return backdrop end
