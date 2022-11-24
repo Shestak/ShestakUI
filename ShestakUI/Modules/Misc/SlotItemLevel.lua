@@ -17,12 +17,6 @@ fontObject:SetFontObject("SystemFont_Outline_Small")
 
 -- Tooltip and scanning by Phanx @ http://www.wowinterface.com/forums/showthread.php?p=271406
 local itemLevelString = "^"..gsub(ITEM_LEVEL, "%%d", "")
-
-local scanner = CreateFrame("GameTooltip", "SlotScanningTooltip", nil, "GameTooltipTemplate")
-scanner:SetOwner(UIParent, "ANCHOR_NONE")
-
-local scannerName = scanner:GetName()
-
 local function _getRealItemLevel(slotId, unit)
 	local data = C_TooltipInfo.GetInventoryItem(unit, slotId)
 	if not data then return nil end -- With this we don't get ilvl for offhand if we equip 2h weapon
@@ -38,6 +32,7 @@ local function _getRealItemLevel(slotId, unit)
 				local level = strmatch(text, "(%d+)%)?$")
 				if level and (tonumber(level) > 0) then
 					realItemLevel = level
+					break
 				end
 			end
 		end
