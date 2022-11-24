@@ -77,9 +77,6 @@ local function CheckWeaponBuff()
 	end
 end
 
-local scanner = CreateFrame("GameTooltip", "ArmorScanningTooltip", nil, "GameTooltipTemplate")
-scanner:SetOwner(UIParent, "ANCHOR_NONE")
-
 local KitPattern = "(.+) %(%d+ .+%)$"
 if T.client == "zhTW" then
 	KitPattern = "%(%+%d+.+"
@@ -91,13 +88,15 @@ end
 
 local function CheckArmorBuff()
 	local armorBuff = false
-	local hasItem = scanner:SetInventoryItem("player", 5)
-	if hasItem then
-		for i = 2, scanner:NumLines() do
-			local tooltipLine = _G["ArmorScanningTooltipTextLeft"..i]
-			local text = tooltipLine:GetText()
-			if text and text ~= "" then
-				if text:find(KitPattern) then
+	local data = C_TooltipInfo.GetInventoryItem("player", 5)
+	if data then
+		for i = 2, #data.lines do
+			local lineData = data.lines[i]
+			local argVal = lineData and lineData.args
+			if argVal then
+				local text = argVal[2] and argVal[2].stringVal
+				local found = text and strfind(text, KitPattern)
+				if found then
 					armorBuff = true
 					break
 				end
@@ -314,7 +313,6 @@ function UpdatePositions()
 		local buff = icons[i]
 		buff:ClearAllPoints()
 		if buff:GetAlpha() == C.reminder.raid_buffs_alpha then
-			-- buff:SetPoint("TOP", UIParent, "TOP", 0, 900)
 			line = line + 1
 		else
 			if not first then
