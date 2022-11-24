@@ -20,6 +20,7 @@ local function LoadSkin()
 		CommunitiesFrameGuildDetailsFrameNews.ScrollBar,
 		CommunitiesGuildLogFrameScrollBar,
 		CommunitiesGuildTextEditFrameScrollBar,
+		CommunitiesFrame.ApplicantList.ScrollBar
 	}
 
 	for i = 1, #scrollbars do
@@ -29,6 +30,7 @@ local function LoadSkin()
 	CommunitiesFrameCommunitiesList.ScrollBar:GetChildren():Hide()
 	CommunitiesFrame.MemberList.ScrollBar:GetChildren():Hide()
 	CommunitiesFrameGuildDetailsFrameNews.ScrollBar:GetChildren():Hide()
+	CommunitiesFrame.ApplicantList.ScrollBar:GetChildren():Hide()
 
 	local closeButton = {
 		CommunitiesGuildNewsFiltersFrame.CloseButton,
@@ -419,6 +421,37 @@ local function LoadSkin()
 		header.backdrop:SetPoint("TOPLEFT", 1, -1)
 		header.backdrop:SetPoint("BOTTOMRIGHT", -1, 1)
 		header.styled = true
+	end)
+
+	local ApplicantList = CommunitiesFrame.ApplicantList
+	ApplicantList:StripTextures()
+	ApplicantList.ColumnDisplay:StripTextures()
+
+	hooksecurefunc(ApplicantList, "BuildList", function(list)
+		local columnDisplay = list.ColumnDisplay
+		for _, child in next, {columnDisplay:GetChildren()} do
+			if not child.IsSkinned then
+				child:StripTextures()
+				child:CreateBackdrop("Overlay")
+				child.backdrop:SetPoint("TOPLEFT", 4, -2)
+				child.backdrop:SetPoint("BOTTOMRIGHT", 0, 2)
+
+				child.IsSkinned = true
+			end
+		end
+	end)
+
+	hooksecurefunc(ApplicantList.ScrollBox, "Update", function(frame)
+		for _, child in next, {frame.ScrollTarget:GetChildren()} do
+			if not child.isSkinned then
+				child.InviteButton:SetSize(66, 18)
+				child.CancelInvitationButton:SetSize(20, 18)
+				child.InviteButton:SkinButton()
+				child.CancelInvitationButton:SkinButton()
+
+				child.isSkinned = true
+			end
+		end
 	end)
 
 	-- Member Detail Frame
