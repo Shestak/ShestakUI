@@ -1289,14 +1289,13 @@ function Stuffing:ADDON_LOADED(addon)
 	self:RegisterEvent("ITEM_LOCK_CHANGED")
 	self:RegisterEvent("BANKFRAME_OPENED")
 	self:RegisterEvent("BANKFRAME_CLOSED")
-	self:RegisterEvent("GUILDBANKFRAME_OPENED")
-	self:RegisterEvent("GUILDBANKFRAME_CLOSED")
+	self:RegisterEvent("PLAYER_INTERACTION_MANAGER_FRAME_SHOW")
+	self:RegisterEvent("PLAYER_INTERACTION_MANAGER_FRAME_HIDE")
 	self:RegisterEvent("PLAYERBANKSLOTS_CHANGED")
 	self:RegisterEvent("PLAYERBANKBAGSLOTS_CHANGED")
 	self:RegisterEvent("PLAYERREAGENTBANKSLOTS_CHANGED")
 	self:RegisterEvent("BAG_CLOSED")
 	self:RegisterEvent("BAG_UPDATE_COOLDOWN")
-	--BETA self:RegisterEvent("SCRAPPING_MACHINE_SHOW")
 	self:RegisterEvent("BAG_CONTAINER_UPDATE")
 	self:RegisterEvent("BAG_UPDATE_DELAYED")
 
@@ -1418,12 +1417,22 @@ function Stuffing:BANKFRAME_CLOSED()
 	end
 end
 
-function Stuffing:GUILDBANKFRAME_OPENED()
-	Stuffing_Open()
+function Stuffing:PLAYER_INTERACTION_MANAGER_FRAME_SHOW(...)
+	local type = ...
+	if type == 10 then	-- Guild bank
+		Stuffing_Open()
+	elseif type == 40 then	-- ScrappingMachine
+		for i = 0, #BAGS_BACKPACK - 1 do
+			Stuffing:BAG_UPDATE(i)
+		end
+	end
 end
 
-function Stuffing:GUILDBANKFRAME_CLOSED()
-	Stuffing_Close()
+function Stuffing:PLAYER_INTERACTION_MANAGER_FRAME_HIDE(...)
+	local type = ...
+	if type == 10 then	-- Guild bank
+		Stuffing_Close()
+	end
 end
 
 function Stuffing:BAG_CLOSED(id)
@@ -1466,11 +1475,11 @@ function Stuffing:BAG_UPDATE_COOLDOWN()
 	end
 end
 
-function Stuffing:SCRAPPING_MACHINE_SHOW()
-	for i = 0, #BAGS_BACKPACK - 1 do
-		Stuffing:BAG_UPDATE(i)
-	end
-end
+-- function Stuffing:SCRAPPING_MACHINE_SHOW()
+	-- for i = 0, #BAGS_BACKPACK - 1 do
+		-- Stuffing:BAG_UPDATE(i)
+	-- end
+-- end
 
 function Stuffing:BAG_CONTAINER_UPDATE()
 	for _, v in ipairs(self.bagframe_buttons) do
