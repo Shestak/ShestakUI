@@ -1,6 +1,6 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
 	<Script file="Others.lua"/>
-	<!-- <Script file="Achievement.lua"/> -->
+	<Script file="Achievement.lua"/>
 	<Script file="AddonList.lua"/>
 	<Script file="AdventureMap.lua"/>
 	<Script file="AlertFrames.lua"/>
@@ -39,7 +39,6 @@
 	<Script file="Garrison.lua"/>
 	<Script file="Gossip.lua"/>
 	<Script file="Guide.lua"/>
-	<!-- <Script file="Guild.lua"/> -->
 	<Script file="GuildBank.lua"/>
 	<Script file="GuildControl.lua"/>
 	<Script file="GuildRegistrar.lua"/>
