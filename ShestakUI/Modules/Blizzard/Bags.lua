@@ -744,9 +744,9 @@ function Stuffing:SearchUpdate(str)
 				local _, setName = GetContainerItemEquipmentSetInfo(b.bag, b.slot)
 				setName = setName or ""
 				local _, _, _, _, minLevel, class, subclass, _, equipSlot, _, _, _, _, bindType = GetItemInfo(ilink)
-				class = _G[class] or ""
-				subclass = _G[subclass] or ""
-				equipSlot = _G[equipSlot] or ""
+				class = class or ""
+				subclass = subclass or ""
+				equipSlot = equipSlot or ""
 				bindType = bind[bindType] or ""
 				minLevel = minLevel or 1
 				if not string.find(string.lower(b.name), str) and not string.find(string.lower(setName), str) and not string.find(string.lower(class), str) and not string.find(string.lower(subclass), str) and not string.find(string.lower(equipSlot), str) and not string.find(string.lower(bindType), str) then
@@ -798,9 +798,14 @@ function Stuffing:SearchReset()
 		if IsItemUnusable(b.name) or (b.level and b.level > T.level) then
 			_G[b.frame:GetName().."IconTexture"]:SetVertexColor(1, 0.1, 0.1)
 		end
-		b.frame:SetAlpha(1)
+		b.frame.searchOverlay:Hide()
 		SetItemButtonDesaturated(b.frame, false)
 	end
+
+	self.frame.editbox:SetText("")
+	self.frame.editbox:Hide()
+	self.frame.editbox:ClearFocus()
+	self.frame.detail:Show()
 end
 
 local function DragFunction(self, mode)
@@ -979,24 +984,24 @@ function Stuffing:InitBags()
 	-- Search editbox (tekKonfigAboutPanel.lua)
 	local editbox = CreateFrame("EditBox", nil, f)
 	editbox:Hide()
-	editbox:SetAutoFocus(true)
+	editbox:SetAutoFocus(false)
 	editbox:SetHeight(32)
-	editbox:CreateBackdrop("Default")
+	editbox:CreateBackdrop("Overlay")
 	editbox.backdrop:SetPoint("TOPLEFT", -2, 1)
 	editbox.backdrop:SetPoint("BOTTOMRIGHT", 2, -1)
 
 	local fullReset = function(self)
-		self:GetParent().detail:Show()
-		self:ClearFocus()
-		editbox:SetText("")
-		Stuffing:SearchUpdate("")
+		Stuffing:SearchReset()
 	end
 
-	-- local resetAndClear = function(self)
-		-- self:GetParent().detail:Show()
-		-- self:ClearFocus()
-		-- Stuffing:SearchReset()
-	-- end
+	local clearFocus = function(self)
+		self:HighlightText(0, 0)
+		self:ClearFocus()
+	end
+
+	local gainFocus = function(self)
+		self:HighlightText()
+	end
 
 	local updateSearch = function(self, t)
 		if t == true then
@@ -1004,21 +1009,16 @@ function Stuffing:InitBags()
 		end
 	end
 
-	local hideSearch = function(self)
-		self:Hide()
-		self:GetParent().detail:Show()
-	end
-
 	editbox:SetScript("OnEscapePressed", fullReset)
-	editbox:SetScript("OnEnterPressed", function(self) self:ClearFocus() end)
-	editbox:SetScript("OnEditFocusLost", hideSearch)
-	editbox:SetScript("OnEditFocusGained", function(self) self:HighlightText() end)
+	editbox:SetScript("OnEnterPressed", clearFocus)
+	editbox:SetScript("OnEditFocusLost", clearFocus)
+	editbox:SetScript("OnEditFocusGained", gainFocus)
 	editbox:SetScript("OnTextChanged", updateSearch)
-	editbox:SetText(SEARCH)
+	-- editbox:SetText(SEARCH)
 
 	local detail = f:CreateFontString(nil, "ARTWORK", "GameFontHighlightLarge")
-	detail:SetPoint("TOPLEFT", f, 11, -10)
-	detail:SetPoint("RIGHT", f, -140, -10)
+	detail:SetPoint("TOPLEFT", f, 12, -8)
+	detail:SetPoint("RIGHT", f, -150, -8)
 	detail:SetHeight(13)
 	detail:SetShadowColor(0, 0, 0, 0)
 	detail:SetJustifyH("LEFT")
@@ -1035,11 +1035,9 @@ function Stuffing:InitBags()
 			self:GetParent().detail:Hide()
 			self:GetParent().editbox:Show()
 			self:GetParent().editbox:HighlightText()
+			self:GetParent().editbox:SetFocus()
 		else
 			if self:GetParent().editbox:IsShown() then
-				self:GetParent().editbox:Hide()
-				self:GetParent().editbox:ClearFocus()
-				self:GetParent().detail:Show()
 				Stuffing:SearchReset()
 			end
 		end
@@ -1084,10 +1082,6 @@ function Stuffing:Layout(isBank)
 		f.editbox:SetFont(C.media.normal_font, C.font.bags_font_size + 3, "")
 		f.detail:SetFont(C.font.bags_font, C.font.bags_font_size, C.font.bags_font_style)
 		f.detail:SetShadowOffset(C.font.bags_font_shadow and 1 or 0, C.font.bags_font_shadow and -1 or 0)
-
-		f.detail:ClearAllPoints()
-		f.detail:SetPoint("TOPLEFT", f, 12, -8)
-		f.detail:SetPoint("RIGHT", f, -140, 0)
 	end
 
 	f:SetClampedToScreen(1)
