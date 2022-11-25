@@ -521,3 +521,16 @@ hooksecurefunc("GameTooltip_ShowProgressBar", function(tt)
 		label:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 	end
 end)
+
+hooksecurefunc("GameTooltip_ShowStatusBar", function(tt)
+	if not tt or tt:IsForbidden() or not tt.statusBarPool then return end
+
+	local frame = tt.statusBarPool:GetNextActive()
+
+	if frame and not frame.backdrop then
+		frame:StripTextures()
+		frame:CreateBackdrop("Transparent")
+		frame.backdrop:SetBackdropColor(0.1, 0.1, 0.1, 1)
+		frame:SetStatusBarTexture(C.media.texture)
+	end
+end)
