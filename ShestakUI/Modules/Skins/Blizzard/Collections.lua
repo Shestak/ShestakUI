@@ -75,7 +75,9 @@ local function LoadSkin()
 	T.SkinRotateButton(MountJournal.MountDisplay.ModelScene.RotateLeftButton)
 	T.SkinRotateButton(MountJournal.MountDisplay.ModelScene.RotateRightButton)
 
-	--MountJournal.ScrollBar:SetPoint("TOPLEFT", MountJournalListScrollFrame, "TOPRIGHT", 4, 17)
+	MountJournal.ScrollBar:SetPoint("TOPLEFT", MountJournal.ScrollBox, "TOPRIGHT", 2, 35)
+	MountJournal.ScrollBar:SetPoint("BOTTOMLEFT", MountJournal.ScrollBox, "BOTTOMRIGHT", 2, 0)
+
 	MountJournalFilterButton:SetPoint("TOPLEFT", MountJournalSearchBox, "TOPRIGHT", 5, 2)
 	T.SkinCloseButton(_G.MountJournalFilterButton.ResetButton)
 	_G.MountJournalFilterButton.ResetButton:ClearAllPoints()
@@ -175,8 +177,8 @@ local function LoadSkin()
 	PetJournalLoadoutBorderSlotHeaderText:SetParent(PetJournal)
 	PetJournalLoadoutBorderSlotHeaderText:SetPoint("CENTER", PetJournalLoadoutBorderTop, "TOP", 0, 4)
 
-	--PetJournalListScrollFrameScrollBar:SetPoint("TOPLEFT", PetJournalListScrollFrame, "TOPRIGHT", 4, 17)
-	--PetJournalListScrollFrameScrollBar:SetPoint("BOTTOMLEFT", PetJournalListScrollFrame, "BOTTOMRIGHT", 4, 14)
+	PetJournal.ScrollBar:SetPoint("TOPLEFT", PetJournal.ScrollBox, "TOPRIGHT", 2, 35)
+	PetJournal.ScrollBar:SetPoint("BOTTOMLEFT", PetJournal.ScrollBox, "BOTTOMRIGHT", 2, -2)
 	T.SkinScrollBar(PetJournal.ScrollBar)
 
 	for i = 1, #PetJournal.ScrollBox do
@@ -551,9 +553,9 @@ local function LoadSkin()
 	WardrobeCollectionFrame.SetsCollectionFrame.DetailsFrame.backdrop:SetPoint("TOPLEFT", 4, -4)
 	WardrobeCollectionFrame.SetsCollectionFrame.DetailsFrame.backdrop:SetPoint("BOTTOMRIGHT", 1, 4)
 	WardrobeSetsCollectionVariantSetsButton:SkinButton()
-	--T.SkinScrollBar(WardrobeCollectionFrameScrollFrameScrollBar)
-	--WardrobeCollectionFrameScrollFrameScrollBar:SetPoint("TOPLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame, "TOPRIGHT", 4, 15)
-	--WardrobeCollectionFrameScrollFrameScrollBar:SetPoint("BOTTOMLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame, "BOTTOMRIGHT", 4, 14)
+	T.SkinScrollBar(WardrobeCollectionFrame.SetsCollectionFrame.ListContainer.ScrollBar)
+	WardrobeCollectionFrame.SetsCollectionFrame.ListContainer.ScrollBar:SetPoint("TOPLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ListContainer, "TOPRIGHT", 2, 33)
+	WardrobeCollectionFrame.SetsCollectionFrame.ListContainer.ScrollBar:SetPoint("BOTTOMLEFT", WardrobeCollectionFrame.SetsCollectionFrame.ListContainer, "BOTTOMRIGHT", 2, -4)
 
 	local function SetItemQuality(_, itemFrame)
 		if (itemFrame.backdrop) then
