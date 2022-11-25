@@ -1475,12 +1475,6 @@ function Stuffing:BAG_UPDATE_COOLDOWN()
 	end
 end
 
--- function Stuffing:SCRAPPING_MACHINE_SHOW()
-	-- for i = 0, #BAGS_BACKPACK - 1 do
-		-- Stuffing:BAG_UPDATE(i)
-	-- end
--- end
-
 function Stuffing:BAG_CONTAINER_UPDATE()
 	for _, v in ipairs(self.bagframe_buttons) do
 		if v.frame and v.slot < 5 then -- exclude bank
