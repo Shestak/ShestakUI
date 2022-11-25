@@ -75,8 +75,8 @@ local function LoadSkin()
 	T.SkinRotateButton(MountJournal.MountDisplay.ModelScene.RotateLeftButton)
 	T.SkinRotateButton(MountJournal.MountDisplay.ModelScene.RotateRightButton)
 
-	MountJournal.ScrollBar:SetPoint("TOPLEFT", MountJournal.ScrollBox, "TOPRIGHT", 2, 35)
-	MountJournal.ScrollBar:SetPoint("BOTTOMLEFT", MountJournal.ScrollBox, "BOTTOMRIGHT", 2, 0)
+	MountJournal.ScrollBar:SetPoint("TOPLEFT", MountJournal.ScrollBox, "TOPRIGHT", 1, 35)
+	MountJournal.ScrollBar:SetPoint("BOTTOMLEFT", MountJournal.ScrollBox, "BOTTOMRIGHT", 1, 0)
 
 	MountJournalFilterButton:SetPoint("TOPLEFT", MountJournalSearchBox, "TOPRIGHT", 5, 2)
 	T.SkinCloseButton(_G.MountJournalFilterButton.ResetButton)
@@ -93,42 +93,40 @@ local function LoadSkin()
 
 	T.SkinCheckBox(MountJournal.MountDisplay.ModelScene.TogglePlayer, 26)
 
-	for i = 1, #MountJournal.ScrollBox do
-		local button = _G["MountJournalListScrollFrameButton"..i]
+	hooksecurefunc(MountJournal.ScrollBox, "Update", function(frame)
+		for _, button in next, {frame.ScrollTarget:GetChildren()} do
+			if not button.isSkinned then
+				button:GetRegions():Hide()
+				button.selectedTexture:SetTexture(nil)
+				button:CreateBackdrop("Overlay")
+				button.backdrop:SetPoint("TOPLEFT", 2, -2)
+				button.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+				button:StyleButton(nil, 4)
 
-		if not button.isSkinned then
-			button:GetRegions():Hide()
-			button.selectedTexture:SetTexture(nil)
-			button:CreateBackdrop("Overlay")
-			button.backdrop:SetPoint("TOPLEFT", 2, -2)
-			button.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
-			button:StyleButton(nil, 4)
+				button.DragButton:CreateBackdrop("Default")
+				button.DragButton.backdrop:SetPoint("TOPLEFT", -1, 1)
+				button.DragButton.backdrop:SetPoint("BOTTOMRIGHT", 1, -1)
+				button.DragButton:StyleButton(nil, 1)
+				button.DragButton.ActiveTexture:SetColorTexture(0, 1, 0, 0.3)
+				button.DragButton.ActiveTexture:SetPoint("TOPLEFT", 1, -1)
+				button.DragButton.ActiveTexture:SetPoint("BOTTOMRIGHT", -1, 1)
 
-			button.DragButton:CreateBackdrop("Default")
-			button.DragButton.backdrop:SetPoint("TOPLEFT", -1, 1)
-			button.DragButton.backdrop:SetPoint("BOTTOMRIGHT", 1, -1)
-			button.DragButton:StyleButton(nil, 1)
-			button.DragButton.ActiveTexture:SetColorTexture(0, 1, 0, 0.3)
-			button.DragButton.ActiveTexture:SetPoint("TOPLEFT", 1, -1)
-			button.DragButton.ActiveTexture:SetPoint("BOTTOMRIGHT", -1, 1)
+				button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				button.icon:ClearAllPoints()
 
-			button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			button.icon:ClearAllPoints()
+				if i == 1 then
+					button.icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMLEFT", -3, 3)
+				else
+					button.icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMLEFT", -3, 4)
+				end
 
-			if i == 1 then
-				button.icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMLEFT", -3, 3)
-			else
-				button.icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMLEFT", -3, 4)
+				button.isSkinned = true
 			end
-
-			button.isSkinned = true
 		end
-	end
+	end)
 
-	local function ColorSelectedMount()
-		for i = 1, #MountJournal.ScrollBox do
-			local button = _G["MountJournalListScrollFrameButton"..i]
-
+	local function ColorSelectedMount(button)
+		if button and button.backdrop then
 			if button.selectedTexture:IsShown() then
 				button.name:SetTextColor(1, 1, 0)
 				button.backdrop:SetBackdropBorderColor(1, 1, 0)
@@ -140,10 +138,7 @@ local function LoadSkin()
 			end
 		end
 	end
-	hooksecurefunc("MountJournal_UpdateMountList", ColorSelectedMount)
-
-	--MountJournal.ScrollBox:HookScript("OnVerticalScroll", ColorSelectedMount)
-	MountJournal.ScrollBox:HookScript("OnMouseWheel", ColorSelectedMount)
+	hooksecurefunc("MountJournal_InitMountButton", ColorSelectedMount)
 
 	StyleItemButton(MountJournalSummonRandomFavoriteButton)
 
@@ -162,6 +157,7 @@ local function LoadSkin()
 	PetJournal.PetCardInset:StripTextures()
 	PetJournal.loadoutBorder:StripTextures()
 	PetJournalPetCardBG:Hide()
+	PetJournalAchievementStatus:DisableDrawLayer("BACKGROUND")
 
 	PetJournalTutorialButton.Ring:Hide()
 	PetJournalTutorialButton:SetPoint("TOPLEFT", PetJournal, "TOPLEFT", -5, 10)
@@ -177,91 +173,83 @@ local function LoadSkin()
 	PetJournalLoadoutBorderSlotHeaderText:SetParent(PetJournal)
 	PetJournalLoadoutBorderSlotHeaderText:SetPoint("CENTER", PetJournalLoadoutBorderTop, "TOP", 0, 4)
 
-	PetJournal.ScrollBar:SetPoint("TOPLEFT", PetJournal.ScrollBox, "TOPRIGHT", 2, 35)
-	PetJournal.ScrollBar:SetPoint("BOTTOMLEFT", PetJournal.ScrollBox, "BOTTOMRIGHT", 2, -2)
+	PetJournal.ScrollBar:SetPoint("TOPLEFT", PetJournal.ScrollBox, "TOPRIGHT", 1, 35)
+	PetJournal.ScrollBar:SetPoint("BOTTOMLEFT", PetJournal.ScrollBox, "BOTTOMRIGHT", 1, -2)
 	T.SkinScrollBar(PetJournal.ScrollBar)
 
-	for i = 1, #PetJournal.ScrollBox do
-		local button = _G["PetJournalScrollBoxButton"..i]
-		local name = _G["PetJournalScrollBoxButton"..i.."Name"]
-		local level = _G["PetJournalScrollBoxButton"..i.."Level"]
+	hooksecurefunc(PetJournal.ScrollBox, "Update", function(frame)
+		for _, button in next, {frame.ScrollTarget:GetChildren()} do
+			local name = button.name
 
-		if not button.isSkinned then
-			button:GetRegions():Hide()
-			button.selectedTexture:SetTexture(nil)
-			button:CreateBackdrop("Overlay")
-			button.backdrop:SetPoint("TOPLEFT", 2, -2)
-			button.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
-			button:StyleButton(nil, 4)
+			if not button.isSkinned then
+				button:GetRegions():Hide()
+				button.selectedTexture:SetTexture(nil)
+				button:CreateBackdrop("Overlay")
+				button.backdrop:SetPoint("TOPLEFT", 2, -2)
+				button.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+				button:StyleButton(nil, 4)
 
-			button.dragButton:CreateBackdrop("Default")
-			button.dragButton.backdrop:SetPoint("TOPLEFT", -1, 1)
-			button.dragButton.backdrop:SetPoint("BOTTOMRIGHT", 1, -1)
-			button.dragButton:StyleButton(nil, 1)
-			button.dragButton.ActiveTexture:SetColorTexture(0, 1, 0, 0.3)
-			button.dragButton.ActiveTexture:SetPoint("TOPLEFT", 1, -1)
-			button.dragButton.ActiveTexture:SetPoint("BOTTOMRIGHT", -1, 1)
-			button.dragButton.favorite:SetParent(button.dragButton.backdrop)
-			button.dragButton.levelBG:SetAlpha(0)
+				button.dragButton:CreateBackdrop("Default")
+				button.dragButton.backdrop:SetPoint("TOPLEFT", -1, 1)
+				button.dragButton.backdrop:SetPoint("BOTTOMRIGHT", 1, -1)
+				button.dragButton:StyleButton(nil, 1)
+				button.dragButton.ActiveTexture:SetColorTexture(0, 1, 0, 0.3)
+				button.dragButton.ActiveTexture:SetPoint("TOPLEFT", 1, -1)
+				button.dragButton.ActiveTexture:SetPoint("BOTTOMRIGHT", -1, 1)
+				button.dragButton.favorite:SetParent(button.dragButton.backdrop)
+				button.dragButton.levelBG:SetAlpha(0)
 
-			button.petTypeIcon:SetParent(button.backdrop)
-			button.petTypeIcon:SetDrawLayer("OVERLAY")
-			button.isDead:SetParent(button.dragButton.backdrop)
+				button.petTypeIcon:SetParent(button.backdrop)
+				button.petTypeIcon:SetDrawLayer("OVERLAY")
+				button.isDead:SetParent(button.dragButton.backdrop)
 
-			name:SetParent(button.backdrop)
+				name:SetParent(button.backdrop)
 
-			level:SetParent(button.dragButton.backdrop)
-			level:SetFontObject("SystemFont_Outline_Small")
-			level:SetDrawLayer("OVERLAY")
+				button.dragButton.level:SetParent(button.dragButton.backdrop)
+				button.dragButton.level:SetFontObject("SystemFont_Outline_Small")
+				button.dragButton.level:SetDrawLayer("OVERLAY")
 
-			button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-			button.icon:SetDrawLayer("ARTWORK")
-			button.icon:SetParent(button.dragButton.backdrop)
-			button.icon:ClearAllPoints()
-			button.icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMLEFT", -3, 4)
+				button.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				button.icon:SetDrawLayer("ARTWORK")
+				button.icon:SetParent(button.dragButton.backdrop)
+				button.icon:ClearAllPoints()
+				button.icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMLEFT", -3, 4)
 
-			button.isSkinned = true
-		end
-	end
-
-	local function ColorSelectedPet()
-		if PetJournal.ScrollBox then
-			for i = 1, #PetJournal.ScrollBox do
-				local button = PetJournal.ScrollBox.buttons[i]
-
-				if PetJournal.ScrollBox.buttons[i].index then
-					local petID, _, isOwned = C_PetJournal.GetPetInfoByIndex(PetJournal.ScrollBox.buttons[i].index)
-
-					if petID and isOwned then
-						local _, _, _, _, rarity = C_PetJournal.GetPetStats(petID)
-
-						if rarity then
-							local color = ITEM_QUALITY_COLORS[rarity-1]
-							button.name:SetTextColor(color.r, color.g, color.b)
-							button.dragButton.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
-						else
-							button.name:SetTextColor(1, 1, 1)
-							button.dragButton.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-						end
-					else
-						button.name:SetTextColor(0.5, 0.5, 0.5)
-					end
-
-					if button.selectedTexture:IsShown() then
-						button.backdrop:SetBackdropBorderColor(1, 1, 0)
-						button.dragButton.backdrop:SetBackdropBorderColor(1, 1, 0)
-					else
-						button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-						button.dragButton.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-					end
-				end
+				button.isSkinned = true
 			end
 		end
+	end)
+
+	local function ColorSelectedPet(button, elementData)
+		if not button or not button.backdrop then return end
+		local index = elementData.index
+		local petID, _, isOwned = C_PetJournal.GetPetInfoByIndex(index)
+
+		if petID and isOwned then
+			local _, _, _, _, rarity = C_PetJournal.GetPetStats(petID)
+
+			if rarity then
+				local color = ITEM_QUALITY_COLORS[rarity-1]
+				button.name:SetTextColor(color.r, color.g, color.b)
+				button.dragButton.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
+			else
+				button.name:SetTextColor(1, 1, 1)
+				button.dragButton.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+			end
+		else
+			button.name:SetTextColor(0.5, 0.5, 0.5)
+		end
+
+		if button.selectedTexture:IsShown() then
+			button.backdrop:SetBackdropBorderColor(1, 1, 0)
+			button.dragButton.backdrop:SetBackdropBorderColor(1, 1, 0)
+		else
+			button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+			button.dragButton.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+		end
 	end
 
-	hooksecurefunc("PetJournal_UpdatePetList", ColorSelectedPet)
-	hooksecurefunc(PetJournal.ScrollBox, 'Update', ColorSelectedPet)
-	PetJournalAchievementStatus:DisableDrawLayer("BACKGROUND")
+	hooksecurefunc("PetJournal_InitPetButton", ColorSelectedPet)
 
 	StyleItemButton(PetJournalHealPetButton)
 	StyleItemButton(PetJournalSummonRandomFavoritePetButton)
@@ -579,47 +567,43 @@ local function LoadSkin()
 		T.SkinTab(_G["WardrobeCollectionFrameTab"..i], true)
 	end
 
-	for i = 1, #WardrobeCollectionFrame.SetsCollectionFrame do
-		local button = _G["WardrobeCollectionFrameScrollFrameButton"..i]
+	hooksecurefunc(WardrobeCollectionFrame.SetsCollectionFrame.ListContainer.ScrollBox, "Update", function(frame)
+		for _, button in next, {frame.ScrollTarget:GetChildren()} do
+			if not button.isSkinned then
+				button:GetRegions():Hide()
+				button:CreateBackdrop("Overlay")
+				button.backdrop:SetPoint("TOPLEFT", 2, -2)
+				button.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
+				button:StyleButton(nil, 4)
 
-		if not button.isSkinned then
-			button:GetRegions():Hide()
-			button:CreateBackdrop("Overlay")
-			button.backdrop:SetPoint("TOPLEFT", 2, -2)
-			button.backdrop:SetPoint("BOTTOMRIGHT", -2, 2)
-			button:StyleButton(nil, 4)
+				button.HighlightTexture:SetTexture(nil)
+				button.SelectedTexture:SetTexture(nil)
 
-			button.HighlightTexture:SetTexture(nil)
-			button.SelectedTexture:SetTexture(nil)
+				button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
-			button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				button.border = CreateFrame("Frame", nil, button)
+				button.border:CreateBackdrop("Default")
+				button.border.backdrop:SetPoint("TOPLEFT", button.Icon, -2, 2)
+				button.border.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, 2, -2)
 
-			button.border = CreateFrame("Frame", nil, button)
-			button.border:CreateBackdrop("Default")
-			button.border.backdrop:SetPoint("TOPLEFT", button.Icon, -2, 2)
-			button.border.backdrop:SetPoint("BOTTOMRIGHT", button.Icon, 2, -2)
+				button.ProgressBar:SetPoint("TOPLEFT", button.backdrop, "BOTTOMLEFT", 2, 4)
 
-			button.ProgressBar:SetPoint("TOPLEFT", button.backdrop, "BOTTOMLEFT", 2, 4)
-
-			button.isSkinned = true
-		end
-	end
-
-	local function ColorSelectedSet()
-		for i = 1, #WardrobeCollectionFrame.SetsCollectionFrame.ScrollFrame.buttons do
-			local button = _G["WardrobeCollectionFrameScrollFrameButton"..i]
-
-			if button.SelectedTexture:IsShown() then
-				button.backdrop:SetBackdropBorderColor(1, 1, 0)
-				button.border.backdrop:SetBackdropBorderColor(1, 1, 0)
-			else
-				button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
-				button.border.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+				button.isSkinned = true
 			end
 		end
+	end)
+
+	local function ColorSelectedSet(button)
+		if not button or not button.backdrop then return end
+		if button.SelectedTexture:IsShown() then
+			button.backdrop:SetBackdropBorderColor(1, 1, 0)
+			button.border.backdrop:SetBackdropBorderColor(1, 1, 0)
+		else
+			button.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+			button.border.backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+		end
 	end
-	--hooksecurefunc(WardrobeCollectionFrame.SetsCollectionFrame, "SelectSet", ColorSelectedSet)
-	--hooksecurefunc(WardrobeCollectionFrameScrollFrame, "update", ColorSelectedSet)
+	hooksecurefunc(WardrobeSetsScrollFrameButtonMixin, "SetSelected", ColorSelectedSet)
 
 	hooksecurefunc(WardrobeCollectionFrame.SetsCollectionFrame, "DisplaySet", function()
 		for _, child in ipairs({WardrobeCollectionFrame.SetsCollectionFrame.DetailsFrame:GetChildren()}) do
@@ -635,8 +619,8 @@ local function LoadSkin()
 		end
 	end)
 
-    for i = 1, #WardrobeCollectionFrame.ItemsCollectionFrame.Models do
-        local model = WardrobeCollectionFrame.ItemsCollectionFrame.Models[i]
+	for i = 1, #WardrobeCollectionFrame.ItemsCollectionFrame.Models do
+		local model = WardrobeCollectionFrame.ItemsCollectionFrame.Models[i]
 		model.Border:SetAlpha(0)
 		local bg = CreateFrame("Frame", nil, model)
 		bg:CreateBackdrop("Overlay")
@@ -653,15 +637,15 @@ local function LoadSkin()
 			end
 			bg.backdrop:SetBackdropBorderColor(unpack(color))
 		end)
-    end
+	end
 
 	for i = 1, #WardrobeCollectionFrame.SetsTransmogFrame.Models do
-        local model = WardrobeCollectionFrame.SetsTransmogFrame.Models[i]
+		local model = WardrobeCollectionFrame.SetsTransmogFrame.Models[i]
 		model.Border:SetAlpha(0)
 		local bg = CreateFrame("Frame", nil, model)
 		bg:CreateBackdrop("Overlay")
 		bg.backdrop:SetOutside(model, 3, 3)
-    end
+	end
 
 	local function SkinSetItemButtons(self)
 		for itemFrame in self.DetailsFrame.itemFramesPool:EnumerateActive() do
