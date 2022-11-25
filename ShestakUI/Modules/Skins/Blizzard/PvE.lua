@@ -94,17 +94,17 @@ local function LoadSkin()
 	end)
 
 	local scrollbars = {
-		LFGListApplicationViewerScrollFrameScrollBar,
-		LFDQueueFrameSpecificListScrollFrameScrollBar,
+		-- LFGListApplicationViewerScrollFrameScrollBar,
+		LFDQueueFrameSpecific.ScrollBar,
 		LFDQueueFrameRandomScrollFrameScrollBar,
 		RaidFinderQueueFrameScrollFrameScrollBar,
-		LFGListEntryCreationSearchScrollFrameScrollBar,
+		-- LFGListEntryCreationSearchScrollFrameScrollBar,
 	}
 
 	for i = 1, #scrollbars do
 		T.SkinScrollBar(scrollbars[i])
 	end
-	
+
 	-- Set texture to hide circle
 	_G.GroupFinderFrame.groupButton1.icon:SetTexture("Interface\\Icons\\INV_Helmet_08")
 	_G.GroupFinderFrame.groupButton2.icon:SetTexture("Interface\\LFGFrame\\UI-LFR-PORTRAIT")
@@ -243,7 +243,6 @@ local function LoadSkin()
 	RaidFinderQueueFramePartyBackfill.backdrop:SetPoint("BOTTOMRIGHT", 0, 8)
 
 	T.SkinDropDownBox(LFDQueueFrameTypeDropDown, 300)
-	LFDQueueFrameTypeDropDownBackdrop:SetFrameStrata("LOW") --// FIXME - Both text and dropdownbutton is behind backdrop
 	LFDQueueFrameTypeDropDown:SetPoint("RIGHT", -10, 0)
 
 	T.SkinDropDownBox(RaidFinderQueueFrameSelectionDropDown, 300)
@@ -444,14 +443,14 @@ local function LoadSkin()
 	LFGListFrame.ApplicationViewer.EditButton:ClearAllPoints()
 	LFGListFrame.ApplicationViewer.EditButton:SetPoint("BOTTOMRIGHT", -6, 2)
 	LFGListFrame.ApplicationViewer.EditButton:SetWidth(80)
-	
+
 	LFGListFrame.ApplicationViewer.BrowseGroupsButton:SkinButton(true)
-	
+
 	LFGListFrame.ApplicationViewer.ScrollBar:ClearAllPoints()
 	LFGListFrame.ApplicationViewer.ScrollBar:SetPoint("TOPLEFT", LFGListFrame.ApplicationViewer.Inset, "TOPRIGHT", 0, -14)
 	LFGListFrame.ApplicationViewer.ScrollBar:SetPoint("BOTTOMLEFT", LFGListFrame.ApplicationViewer.Inset, "BOTTOMRIGHT", 0, 14)
 	T.SkinScrollBar(LFGListFrame.ApplicationViewer.ScrollBar)
-	
+
 	LFGListFrame.ApplicationViewer.InfoBackground:SkinIcon()
 	LFGListFrame.ApplicationViewer.InfoBackground:SetPoint("TOPLEFT", 1, -27)
 	LFGListFrame.ApplicationViewer.InfoBackground:SetSize(324, 90)
