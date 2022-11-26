@@ -1626,10 +1626,15 @@ function Stuffing:SortBags()
 
 					local newItem = {}
 
-					local n, _, q, iL, rL, c1, c2, _, Sl = GetItemInfo(itemLink)
+					local n, _, q, iL, rL, c1, c2, _, Sl, _, _, classID = GetItemInfo(itemLink)
+					local p = 1
 					-- Hearthstone
 					if n == GetItemInfo(6948) or n == GetItemInfo(110560) or n == GetItemInfo(140192) then
-						q = 9
+						p = 99
+					elseif n == GetItemInfo(141605) then
+						p = 98
+					elseif n == GetItemInfo(128353) then
+						p = 97
 					end
 					-- Fix for battle pets
 					if not n then
@@ -1642,7 +1647,13 @@ function Stuffing:SortBags()
 						Sl = ""
 					end
 
-					newItem.sort = q..c1..c2..rL..n..iL..Sl
+					if classID == 0 then	-- Consumable
+						p = 9
+					elseif classID == 2 or classID == 4 then	-- Weapon and Armor
+						p = 8
+					end
+
+					newItem.sort = p..q..c1..c2..rL..n..iL..Sl
 
 					tinsert(group.itemList, newItem)
 
