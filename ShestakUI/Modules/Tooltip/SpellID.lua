@@ -10,14 +10,13 @@ local function addLine(self, id, isItem)
 		local line = _G[self:GetName().."TextLeft"..i]
 		if not line then break end
 		local text = line:GetText()
-		if text and (text:match(L_TOOLTIP_ITEM_ID) or text:match(L_TOOLTIP_SPELL_ID)) then return end
+		if text and strfind(text, id) then return end
 	end
 	if isItem then
 		self:AddLine("|cffffffff"..L_TOOLTIP_ITEM_ID.." "..id)
 	else
 		self:AddLine("|cffffffff"..L_TOOLTIP_SPELL_ID.." "..id)
 	end
-	self:Show()
 end
 
 -- Spells
