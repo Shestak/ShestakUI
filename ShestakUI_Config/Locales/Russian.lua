@@ -417,6 +417,7 @@ L_GUI_BAGS_SUBTEXT = "Правый клик по кнопке закрытия, 
 L_GUI_BAGS_ENABLE = "Включить сумки"
 L_GUI_BAGS_ILVL = "Показывать уровень предметов для оружия и брони"
 L.bag_new_items = "Анимация для новых предметов"
+L.bag_filter = "Всегда отображать панель фильтров"
 L_GUI_BAGS_BUTTON_SIZE = "Размер ячеек"
 L_GUI_BAGS_BUTTON_SPACE = "Промежуток"
 L_GUI_BAGS_BANK = "Cтолбцов в банке"

@@ -439,6 +439,7 @@ L_GUI_BAGS_SUBTEXT = "Right click on the close button to open the menu. To move 
 L_GUI_BAGS_ENABLE = "Enable bags"
 L_GUI_BAGS_ILVL = "Show item level for weapons and armor"
 L.bag_new_items = "Show animation for new items"
+L.bag_filter = "Always show filter buttons"
 L_GUI_BAGS_BUTTON_SIZE = "Buttons size"
 L_GUI_BAGS_BUTTON_SPACE = "Buttons space"
 L_GUI_BAGS_BANK = "Number of columns in bank"

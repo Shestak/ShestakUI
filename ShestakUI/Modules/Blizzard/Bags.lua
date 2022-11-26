@@ -1025,6 +1025,41 @@ function Stuffing:InitBags()
 	detail:SetText("|cff9999ff"..SEARCH.."|r")
 	editbox:SetAllPoints(detail)
 
+	local buttons = {}
+	local filterTable = {
+		[1] = {3566860, GetItemClassInfo(0)},	-- Consumable
+		[2] = {135280, GetItemClassInfo(2)},	-- Weapon
+		[3] = {132341, GetItemClassInfo(4)},	-- Armor
+		[4] = {132281, GetItemClassInfo(7)},	-- Tradeskill
+		[5] = {236667, ITEM_BIND_QUEST},		-- Quest
+		[6] = {133784, ITEM_BIND_ON_EQUIP},		-- BoE
+	}
+	for i = 1, #filterTable do
+		local button = CreateFrame("Button", "BagsFilterButton"..i, C.bag.filter and f or editbox)
+		button:SetSize(25, 25)
+		button:SetTemplate("Overlay")
+		button:EnableMouse(true)
+		button:RegisterForClicks("AnyUp")
+		if i == 1 then
+			button:SetPoint("TOPRIGHT", f, "TOPLEFT", -1, 0)
+		else
+			button:SetPoint("TOP", buttons[i-1], "BOTTOM", 0, -1)
+		end
+		buttons[i] = button
+		local icon, text = unpack(filterTable[i])
+		button.Icon = button:CreateTexture(nil, "OVERLAY")
+		button.Icon:SetTexture(icon)
+		button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+		button.Icon:SetPoint("TOPLEFT", button, 2, -2)
+		button.Icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
+		button:SetScript("OnClick", function(self)
+			detail:Hide()
+			editbox:Show()
+			editbox:SetText(text)
+			Stuffing:SearchUpdate(text)
+		end)
+	end
+
 	local button = CreateFrame("Button", nil, f)
 	button:EnableMouse(true)
 	button:RegisterForClicks("LeftButtonUp", "RightButtonUp")

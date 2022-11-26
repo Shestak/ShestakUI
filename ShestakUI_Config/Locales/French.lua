@@ -414,6 +414,7 @@ L_GUI_BAGS_SUBTEXT = "Cliquez avec le bouton droit de la souris sur le bouton de
 L_GUI_BAGS_ENABLE = "Activer les sacs"
 L_GUI_BAGS_ILVL = "Afficher le niveau d'objet des armes et armures"
 L.bag_new_items = "Afficher l’animation pour les nouveaux objets"
+L.bag_filter = "Always show filter buttons" -- Need review
 L_GUI_BAGS_BUTTON_SIZE = "Taille des boutons"
 L_GUI_BAGS_BUTTON_SPACE = "Espacement des boutons"
 L_GUI_BAGS_BANK = "Nombre de colonne pour la banque"
