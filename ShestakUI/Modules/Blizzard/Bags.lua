@@ -519,7 +519,7 @@ function Stuffing:BagFrameSlotNew(p, slot)
 			self:GetParent():SetBackdropBorderColor(unpack(C.media.border_color))
 		end)
 
-		ret.frame.ID = ContainerIDToInventoryID(slot + 1)
+		ret.frame.ID = C_Container.ContainerIDToInventoryID(slot + 1)
 		local bag_tex = GetInventoryItemTexture("player", ret.frame.ID)
 		_G[ret.frame:GetName().."IconTexture"]:SetTexture(bag_tex)
 		ret.frame:SetID(ret.frame.ID)
@@ -742,7 +742,7 @@ function Stuffing:SearchUpdate(str)
 		if b.name then
 			local ilink = GetContainerItemLink(b.bag, b.slot)
 			if ilink then
-				local _, setName = GetContainerItemEquipmentSetInfo(b.bag, b.slot)
+				local _, setName = C_Container.GetContainerItemEquipmentSetInfo(b.bag, b.slot)
 				setName = setName or ""
 				local _, _, _, _, minLevel, class, subclass, _, equipSlot, _, _, _, _, bindType = GetItemInfo(ilink)
 				class = class or ""
@@ -1525,7 +1525,7 @@ end
 function Stuffing:BAG_CONTAINER_UPDATE()
 	for _, v in ipairs(self.bagframe_buttons) do
 		if v.frame and v.slot < 5 then -- exclude bank
-			v.frame.ID = ContainerIDToInventoryID(v.slot + 1)
+			v.frame.ID = C_Container.ContainerIDToInventoryID(v.slot + 1)
 
 			local slotLink = GetInventoryItemLink("player", v.frame.ID)
 			v.frame:SetBackdropBorderColor(unpack(C.media.border_color))
@@ -1587,8 +1587,8 @@ function Stuffing:SortOnUpdate(elapsed)
 			if locked1 or locked2 then
 				blocked = true
 			elseif bagIndex ~= destinationBag or slotIndex ~= destinationSlot then
-				PickupContainerItem(bagIndex, slotIndex)
-				PickupContainerItem(destinationBag, destinationSlot)
+				C_Container.PickupContainerItem(bagIndex, slotIndex)
+				C_Container.PickupContainerItem(destinationBag, destinationSlot)
 
 				local tempItem = BS_itemSwapGrid[destinationBag][destinationSlot]
 				BS_itemSwapGrid[destinationBag][destinationSlot] = BS_itemSwapGrid[bagIndex][slotIndex]
@@ -1752,8 +1752,8 @@ function Stuffing:Restack()
 					if l1 or l2 then
 						did_restack = true
 					else
-						PickupContainerItem(-3, a.item)
-						PickupContainerItem(-3, b.item)
+						C_Container.PickupContainerItem(-3, a.item)
+						C_Container.PickupContainerItem(-3, b.item)
 						did_restack = true
 					end
 				end
@@ -1786,8 +1786,8 @@ function Stuffing:Restack()
 					if l1 or l2 then
 						did_restack = true
 					else
-						PickupContainerItem(a.item.bag, a.item.slot)
-						PickupContainerItem(b.item.bag, b.item.slot)
+						C_Container.PickupContainerItem(a.item.bag, a.item.slot)
+						C_Container.PickupContainerItem(b.item.bag, b.item.slot)
 						did_restack = true
 					end
 				end
@@ -1838,11 +1838,11 @@ function Stuffing.Menu(self, level)
 	info.notCheckable = 1
 	info.func = function()
 		if _G["StuffingFrameReagent"] and _G["StuffingFrameReagent"]:IsShown() then
-			SortReagentBankBags()
+			C_Container.SortReagentBankBags()
 		elseif Stuffing.bankFrame and Stuffing.bankFrame:IsShown() then
-			SortBankBags()
+			C_Container.SortBankBags()
 		else
-			SortBags()
+			C_Container.SortBags()
 		end
 	end
 	UIDropDownMenu_AddButton(info, level)
