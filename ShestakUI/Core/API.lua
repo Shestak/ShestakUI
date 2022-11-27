@@ -981,18 +981,19 @@ local iconColors = {
 
 function T.SkinIconBorder(frame, border)
 	local backdrop = border or frame:GetParent().backdrop
+	frame:SetAlpha(0)
 	hooksecurefunc(frame, "SetVertexColor", function(self, r, g, b)
 		if r ~= BAG_ITEM_QUALITY_COLORS[1].r ~= r and g ~= BAG_ITEM_QUALITY_COLORS[1].g then
 			backdrop:SetBackdropBorderColor(r, g, b)
 		else
 			backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
 		end
-		frame:SetAlpha(0)
+		-- frame:SetAlpha(0)
 	end)
 
 	hooksecurefunc(frame, "SetAtlas", function(self, atlas)
 		local color = iconColors[atlas]
-		frame:SetAlpha(0)
+		-- frame:SetAlpha(0)
 		if color then
 			backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
 		else
