@@ -89,6 +89,11 @@ local function LoadSkin()
 				selected:SetPoint("TOPLEFT", 2, -2)
 				selected:SetPoint("BOTTOMRIGHT", -2, 2)
 				selected:SetColorTexture(1, 0.82, 0, 0.3)
+
+				selected = panel.Button2.SelectedHighlight
+				selected:SetPoint("TOPLEFT", 2, -2)
+				selected:SetPoint("BOTTOMRIGHT", -2, 2)
+				selected:SetColorTexture(1, 0.82, 0, 0.3)
 				panel.isSkinned = true
 			end
 		end
