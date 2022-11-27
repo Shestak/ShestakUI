@@ -5,6 +5,11 @@ if C.skins.blizzard_frames ~= true then return end
 --	Communities skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
+	CommunitiesFrameCommunitiesList.ScrollBar:GetChildren():Hide()
+	CommunitiesFrame.MemberList.ScrollBar:GetChildren():Hide()
+	CommunitiesFrameGuildDetailsFrameNews.ScrollBar:GetChildren():Hide()
+	CommunitiesFrame.ApplicantList.ScrollBar:GetChildren():Hide()
+
 	local scrollbars = {
 		ClubFinderCommunityAndGuildFinderFrame.CommunityCards.ScrollBar,
 		ClubFinderCommunityAndGuildFinderFrame.PendingCommunityCards.ScrollBar,
@@ -26,11 +31,6 @@ local function LoadSkin()
 	for i = 1, #scrollbars do
 		T.SkinScrollBar(scrollbars[i])
 	end
-
-	CommunitiesFrameCommunitiesList.ScrollBar:GetChildren():Hide()
-	CommunitiesFrame.MemberList.ScrollBar:GetChildren():Hide()
-	CommunitiesFrameGuildDetailsFrameNews.ScrollBar:GetChildren():Hide()
-	CommunitiesFrame.ApplicantList.ScrollBar:GetChildren():Hide()
 
 	local closeButton = {
 		CommunitiesGuildNewsFiltersFrame.CloseButton,
