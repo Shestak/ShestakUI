@@ -11,6 +11,12 @@ local function LoadSkin()
 	frame.TutorialButton.Ring:Hide()
 	frame.TutorialButton:SetPoint("TOPLEFT", frame, "TOPLEFT", -12, 12)
 
+	T.SkinScrollBar(ClickBindingFrame.ScrollBar)
+	T.SkinCheckBox(frame.EnableMouseoverCastCheckbox)
+	T.SkinDropDownBox(frame.MouseoverCastKeyDropDown)
+
+	ClickBindingFrame.MacrosPortrait:SetPoint("TOPRIGHT", -40, -60)
+
 	local function updateNewGlow(self)
 		if self.NewOutline:IsShown() then
 			self.backdrop:SetBackdropBorderColor(0, 0.8, 0)
