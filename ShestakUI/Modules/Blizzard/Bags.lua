@@ -1054,11 +1054,28 @@ function Stuffing:InitBags()
 		button.Icon:SetPoint("TOPLEFT", button, 2, -2)
 		button.Icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
 		button:SetScript("OnClick", function(self)
-			detail:Hide()
-			editbox:Show()
-			editbox:SetText(text)
-			Stuffing:SearchUpdate(text)
+			if editbox:GetText() == text then
+				Stuffing:SearchReset()
+			else
+				detail:Hide()
+				editbox:Show()
+				editbox:SetText(text)
+				Stuffing:SearchUpdate(text)
+			end
 		end)
+
+		local tooltip_hide = function()
+			GameTooltip:Hide()
+		end
+
+		local tooltip_show = function(self)
+			GameTooltip:SetOwner(self, "ANCHOR_TOPRIGHT", -5, 5)
+			GameTooltip:ClearLines()
+			GameTooltip:SetText(text)
+		end
+
+		button:SetScript("OnEnter", tooltip_show)
+		button:SetScript("OnLeave", tooltip_hide)
 	end
 
 	local button = CreateFrame("Button", nil, f)
@@ -1620,10 +1637,8 @@ function Stuffing:SortBags()
 		group.itemList = {}
 		for _, bagSlot in pairs(group.bagSlotNumbers) do
 			for itemSlot = 1, GetContainerNumSlots(bagSlot) do
-
 				local itemLink = GetContainerItemLink(bagSlot, itemSlot)
 				if itemLink ~= nil then
-
 					local newItem = {}
 
 					local n, _, q, iL, rL, c1, c2, _, Sl, _, _, classID = GetItemInfo(itemLink)
@@ -1631,9 +1646,9 @@ function Stuffing:SortBags()
 					-- Hearthstone
 					if n == GetItemInfo(6948) or n == GetItemInfo(110560) or n == GetItemInfo(140192) then
 						p = 99
-					elseif n == GetItemInfo(141605) then
+					elseif n == GetItemInfo(141605) then -- Flight Master's Whistle
 						p = 98
-					elseif n == GetItemInfo(128353) then
+					elseif n == GetItemInfo(128353) then -- Admiral's Compass
 						p = 97
 					end
 					-- Fix for battle pets
@@ -1645,6 +1660,12 @@ function Stuffing:SortBags()
 						c1 = "Pet"
 						c2 = "Pet"
 						Sl = ""
+					end
+
+					-- Keystone
+					local ks = strmatch(itemLink, "keystone:(%d+)")
+					if ks then
+						p = 10
 					end
 
 					if classID == 0 then	-- Consumable
