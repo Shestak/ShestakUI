@@ -14,18 +14,13 @@ local knowables = {[recipe] = true, [pet] = true, [mount] = true}
 local pattern = ITEM_PET_KNOWN:gsub("%(", "%%(")
 pattern = pattern:gsub("%)", "%%)")
 
-local tooltip = CreateFrame("GameTooltip")
+local tooltip = CreateFrame("GameTooltip", "AKScanningTooltip", nil, "GameTooltipTemplate")
 tooltip:SetOwner(WorldFrame, "ANCHOR_NONE")
-
-for i = 1, 40 do
-	lines[i] = tooltip:CreateFontString()
-	tooltip:AddFontStrings(lines[i], tooltip:CreateFontString())
-end
 
 local function Scan(line, numLines)
 	if line > numLines then return end
 
-	local text = lines[line]:GetText()
+	local text = _G["AKScanningTooltipTextLeft"..line]:GetText()
 	if not text or text == "" or text ~= ITEM_SPELL_KNOWN and not text:match(pattern) then return Scan(line + 1, numLines) end
 
 	return true
@@ -54,7 +49,6 @@ local function IsKnown(itemLink)
 	local _, _, _, _, _, _, _, _, _, _, _, class, subClass = GetItemInfo(itemID)
 	if not (knowables[class] or knowables[subClass]) then return end
 
-	if T.newPatch then return end -- BETA
 	tooltip:ClearLines()
 	tooltip:SetHyperlink(itemLink)
 	if not Scan(2, tooltip:NumLines()) then return end
