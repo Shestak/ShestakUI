@@ -271,30 +271,19 @@ end)
 -- CommunitiesFrame
 local function RefreshList(self)
 	local playerArea = GetRealZoneText()
-	local scrollFrame = self.ListScrollFrame
-	local offset = HybridScrollFrame_GetOffset(scrollFrame)
-	local buttons = scrollFrame.buttons
+	local memberInfo = self:GetMemberInfo()
+	if memberInfo then
+		if memberInfo.presence == Enum.ClubMemberPresence.Offline then return end
+		if memberInfo.zone and memberInfo.zone == playerArea then
+			self.Zone:SetText("|cff4cff4c"..memberInfo.zone)
+		end
 
-	local displayingProfessions = self:IsDisplayingProfessions()
-	local memberList = displayingProfessions and (self.sortedProfessionList) or (self.sortedMemberList or {})
-	for i = 1, #buttons do
-		local displayIndex = i + offset
-		local button = buttons[i]
-		if displayIndex <= #memberList then
-			local memberInfo = memberList[displayIndex]
-			if memberInfo.presence == Enum.ClubMemberPresence.Offline then return end
+		if memberInfo.level then
+			self.Level:SetText(diffColor[memberInfo.level]..memberInfo.level)
+		end
 
-			if memberInfo.zone and memberInfo.zone == playerArea then
-				button.Zone:SetText("|cff4cff4c"..memberInfo.zone)
-			end
-
-			if memberInfo.level then
-				button.Level:SetText(diffColor[memberInfo.level]..memberInfo.level)
-			end
-
-			if memberInfo.guildRankOrder and memberInfo.guildRank then
-				button.Rank:SetText(guildRankColor[memberInfo.guildRankOrder]..memberInfo.guildRank)
-			end
+		if memberInfo.guildRankOrder and memberInfo.guildRank then
+			self.Rank:SetText(guildRankColor[memberInfo.guildRankOrder]..memberInfo.guildRank)
 		end
 	end
 end
@@ -305,7 +294,7 @@ hooksecurefunc("Communities_LoadUI", function()
 		return
 	else
 		loaded = true
-		--BETA hooksecurefunc(CommunitiesFrame.MemberList, "RefreshListDisplay", RefreshList)
+		hooksecurefunc(CommunitiesMemberListEntryMixin, "RefreshExpandedColumns", RefreshList)
 	end
 end)
 
