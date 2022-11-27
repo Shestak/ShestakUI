@@ -196,7 +196,7 @@ local function LoadSkin()
 	hooksecurefunc(_G.PaperDollFrame.TitleManagerPane.ScrollBox, "Update", function(frame)
 		for _, child in next, {frame.ScrollTarget:GetChildren()} do
 			if not child.isSkinned then
-				child:DisableDrawLayer('BACKGROUND')
+				child:DisableDrawLayer("BACKGROUND")
 				child.isSkinned = true
 			end
 		end
@@ -279,7 +279,7 @@ local function LoadSkin()
 	hooksecurefunc("PaperDollFrame_UpdateSidebarTabs", FixSidebarTabCoords)
 
 	-- Reputation
-	hooksecurefunc(_G.ReputationFrame.ScrollBox, 'Update', function(frame)
+	hooksecurefunc(_G.ReputationFrame.ScrollBox, "Update", function(frame)
 		for _, child in next, { frame.ScrollTarget:GetChildren() } do
 			local container = child.Container
 			if container and not container.IsSkinned then
