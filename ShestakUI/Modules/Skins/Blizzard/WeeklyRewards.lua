@@ -5,14 +5,34 @@ if C.skins.blizzard_frames ~= true then return end
 --	Weekly Rewards skin
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
+	hooksecurefunc(WeeklyRewardsFrame, "SetupTextures", function()
+		local frame = WeeklyRewardsFrame
+		frame:StripTextures()
+
+		frame.HeaderFrame:StripTextures()
+		frame.SelectRewardButton:StripTextures()
+
+		local headers = {
+			frame.RaidFrame,
+			frame.MythicFrame,
+			frame.PVPFrame
+		}
+
+		for i = 1, #headers do
+			local header = headers[i]
+			header.Border:Hide()
+		end
+	end)
+
+
 	local frame = WeeklyRewardsFrame
 	T.SkinCloseButton(frame.CloseButton)
 
-	frame:StripTextures()
+	-- frame:StripTextures()
 	frame:CreateBackdrop("Transparent")
 
-	frame.HeaderFrame:StripTextures()
-	frame.SelectRewardButton:StripTextures()
+	-- frame.HeaderFrame:StripTextures()
+	-- frame.SelectRewardButton:StripTextures()
 	frame.SelectRewardButton:SkinButton()
 
 	local headers = {
@@ -23,7 +43,7 @@ local function LoadSkin()
 
 	for i = 1, #headers do
 		local header = headers[i]
-		header.Border:Hide()
+		-- header.Border:Hide()
 		header:CreateBackdrop("Default")
 		header.backdrop:SetOutside(header.Background)
 		header.Background:SetTexCoord(0.01602564102564, 0.97109826589595, 0.02890173410405, 0.97109826589595)
