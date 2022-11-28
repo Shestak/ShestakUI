@@ -93,6 +93,9 @@ local function InstallUI()
 		SlashCmdList.ONLY_UI()
 	end
 
+	-- Set to default layout of Blizzard Edit Mode
+	C_EditMode.SetActiveLayout(1)
+
 	ReloadUI()
 end
 
