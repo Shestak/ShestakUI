@@ -89,6 +89,11 @@ local function LoadSkin()
 		if slot then
 			skinReagentIcon(slot.Button)
 		end
+
+		local slot = SchematicForm.enchantSlot
+		if slot then
+			skinReagentIcon(slot.Button)
+		end
 	end)
 
 	hooksecurefunc("OpenProfessionsItemFlyout", function(_, parent)
