@@ -18,6 +18,66 @@ handler:RegisterEvent("TRADE_SHOW")
 handler:RegisterEvent("SKILL_LINES_CHANGED")
 handler:RegisterEvent("CURRENT_SPELL_CAST_CHANGED")
 
+local buttonList = {
+	[1] = {"Professions-Icon-Skill-High", TRADESKILL_FILTER_HAS_SKILL_UP, C_TradeSkillUI.GetOnlyShowSkillUpRecipes, C_TradeSkillUI.SetOnlyShowSkillUpRecipes},
+	[2] = {"Interface\\RAIDFRAME\\ReadyCheck-Ready", CRAFT_IS_MAKEABLE, C_TradeSkillUI.GetOnlyShowMakeableRecipes, C_TradeSkillUI.SetOnlyShowMakeableRecipes},
+}
+
+local function filterClick(self)
+	local value = self.__value
+	if value[3]() then
+		value[4](false)
+		self:SetBackdropBorderColor(unpack(C.media.border_color))
+	else
+		value[4](true)
+		self:SetBackdropBorderColor(1, 0.8, 0)
+	end
+end
+
+local buttons = {}
+for index, value in pairs(buttonList) do
+	local button = CreateFrame("Button", nil, ProfessionsFrame.CraftingPage, "BackdropTemplate")
+	button:SetSize(22, 22)
+	button:SetPoint("BOTTOMRIGHT", ProfessionsFrame.CraftingPage.RecipeList.FilterButton, "TOPRIGHT", -(index-1)*27, 10)
+	button:SetTemplate("Overlay")
+	button.Icon = button:CreateTexture(nil, "OVERLAY")
+	if index == 1 then
+		button.Icon:SetAtlas(value[1])
+	else
+		button.Icon:SetTexture(value[1])
+	end
+	button.Icon:SetPoint("TOPLEFT", button, 2, -2)
+	button.Icon:SetPoint("BOTTOMRIGHT", button, -2, 2)
+
+	local tooltip_hide = function()
+		GameTooltip:Hide()
+	end
+
+	local tooltip_show = function(self)
+		GameTooltip:SetOwner(self, "ANCHOR_TOPRIGHT", 0, 3)
+		GameTooltip:ClearLines()
+		GameTooltip:SetText(value[2])
+	end
+	button:SetScript("OnEnter", tooltip_show)
+	button:SetScript("OnLeave", tooltip_hide)
+
+	button.__value = value
+	button:SetScript("OnClick", filterClick)
+
+	buttons[index] = button
+end
+
+function handler:TRADE_SKILL_LIST_UPDATE()
+	for index, value in pairs(buttonList) do
+		if value[3]() then
+			buttons[index]:SetBackdropBorderColor(1, 0.8, 0)
+		else
+			buttons[index]:SetBackdropBorderColor(unpack(C.media.border_color))
+		end
+	end
+end
+handler:RegisterEvent("TRADE_SKILL_LIST_UPDATE")
+
 local defaults = {
 	-- Primary Professions
 	[171] = {true, false},	-- Alchemy
