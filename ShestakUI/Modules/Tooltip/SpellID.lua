@@ -16,6 +16,7 @@ local function addLine(self, id, isItem)
 		self:AddLine("|cffffffff"..L_TOOLTIP_ITEM_ID.." "..id)
 	else
 		self:AddLine("|cffffffff"..L_TOOLTIP_SPELL_ID.." "..id)
+		self:Show()
 	end
 end
 
