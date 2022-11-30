@@ -70,19 +70,10 @@ local function LoadSkin()
 
 	T.SkinScrollBar(GossipFrame.GreetingPanel.ScrollBar)
 
-	-- NPCFriendshipStatusBar:StripTextures()
-	-- NPCFriendshipStatusBar:SetStatusBarTexture(C.media.texture)
-	-- NPCFriendshipStatusBar:CreateBackdrop("Overlay")
-	-- NPCFriendshipStatusBar.icon:SetPoint("TOPLEFT", -30, 7)
-
-	-- for i = 1, 4 do
-		-- local notch = GossipFrame.FriendshipStatusBar["Notch"..i]
-		-- if notch then
-			-- notch:SetColorTexture(0, 0, 0)
-			-- notch:SetSize(C.mult, 16)
-		-- end
-	-- end
-	GossipFrame.FriendshipStatusBar.BarBorder:Hide()
+	GossipFrame.FriendshipStatusBar:StripTextures()
+	GossipFrame.FriendshipStatusBar:SetStatusBarTexture(C.media.texture)
+	GossipFrame.FriendshipStatusBar:CreateBackdrop("Overlay")
+	GossipFrame.FriendshipStatusBar.icon:SetPoint("TOPLEFT", -30, 7)
 
 	-- Extreme hackage, blizzard makes button text on quest frame use hex color codes for some reason
 	hooksecurefunc(GossipFrame.GreetingPanel.ScrollBox, "Update", function(frame)
