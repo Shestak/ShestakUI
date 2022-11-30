@@ -84,11 +84,11 @@ local function _updateItems(unit, frame)
 			-- Check missing enchants and gems
 			if itemLink and (realItemLevel ~= "" and tonumber(realItemLevel) > minItemLevel) then
 				local _, _, enchant, gem1, gem2, gem3 = strsplit(":", itemLink)
-				if i == 15 or i == 5 or i == 16 or i == 11 or i == 12 or i == itemSlot then
-					if enchant and enchant == "" then
-						color = "|cffFF0000"
-					end
-				end
+				--BETA if i == 15 or i == 5 or i == 16 or i == 11 or i == 12 or i == itemSlot then
+					-- if enchant and enchant == "" then
+						-- color = "|cffFF0000"
+					-- end
+				-- end
 
 				local info = GetItemStats(itemLink)
 				local numSocket = info["EMPTY_SOCKET_PRISMATIC"] or 0
