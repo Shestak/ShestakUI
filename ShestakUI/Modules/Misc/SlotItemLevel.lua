@@ -4,6 +4,7 @@ if C.misc.item_level ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Item level on slot buttons in Character/InspectFrame(iLevel by Sanex)
 ----------------------------------------------------------------------------------------
+local minItemLevel = 197 -- For missing enchant and gems checking
 local _G = getfenv(0)
 local equiped = {} -- Table to store equiped items
 
@@ -79,10 +80,29 @@ local function _updateItems(unit, frame)
 			end
 
 			local color = "|cffFFFF00"
-			if itemLink and (i == 15 or i == 5 or i == 16 or i == 11 or i == 12 or i == itemSlot) and (realItemLevel ~= "" and tonumber(realItemLevel) > 197) then
-				local _, _, enchant = strsplit(":", itemLink)
-				if enchant and enchant == "" then
-					color = "|cffFF0000"
+
+			-- Check missing enchants and gems
+			if itemLink and (realItemLevel ~= "" and tonumber(realItemLevel) > minItemLevel) then
+				local _, _, enchant, gem1, gem2, gem3 = strsplit(":", itemLink)
+				if i == 15 or i == 5 or i == 16 or i == 11 or i == 12 or i == itemSlot then
+					if enchant and enchant == "" then
+						color = "|cffFF0000"
+					end
+				end
+
+				local info = GetItemStats(itemLink)
+				local numSocket = info["EMPTY_SOCKET_PRISMATIC"] or 0
+				local numGem = 0
+
+				if gem1 and gem1 ~= "" then
+					numGem = numGem + 1
+				elseif gem2 and gem2 ~= "" then
+					numGem = numGem + 1
+				elseif gem3 and gem3 ~= "" then
+					numGem = numGem + 1
+				end
+				if numGem < numSocket then
+					color = "|cffFF00CC"
 				end
 			end
 
