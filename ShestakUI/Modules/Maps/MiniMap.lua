@@ -261,19 +261,24 @@ local frame = CreateFrame("Frame")
 frame:RegisterEvent("GARRISON_SHOW_LANDING_PAGE")
 frame:SetScript("OnEvent", function()
 	local textTitle
-	local garrisonType = C_Garrison.GetLandingPageGarrisonType()
-	if garrisonType == Enum.GarrisonType.Type_6_0 then
-		textTitle = GARRISON_LANDING_PAGE_TITLE
-	elseif garrisonType == Enum.GarrisonType.Type_7_0 then
-		textTitle = ORDER_HALL_LANDING_PAGE_TITLE
-	elseif garrisonType == Enum.GarrisonType.Type_8_0 then
-		textTitle = GARRISON_TYPE_8_0_LANDING_PAGE_TITLE
-	elseif garrisonType == Enum.GarrisonType.Type_9_0 then
-		textTitle = GARRISON_TYPE_9_0_LANDING_PAGE_TITLE
-	end
+	if ExpansionLandingPageMinimapButton.garrisonMode then
+		local garrisonType = C_Garrison.GetLandingPageGarrisonType()
+		if garrisonType == Enum.GarrisonType.Type_6_0 then
+			textTitle = GARRISON_LANDING_PAGE_TITLE
+		elseif garrisonType == Enum.GarrisonType.Type_7_0 then
+			textTitle = ORDER_HALL_LANDING_PAGE_TITLE
+		elseif garrisonType == Enum.GarrisonType.Type_8_0 then
+			textTitle = GARRISON_TYPE_8_0_LANDING_PAGE_TITLE
+		elseif garrisonType == Enum.GarrisonType.Type_9_0 then
+			textTitle = GARRISON_TYPE_9_0_LANDING_PAGE_TITLE
+		end
 
-	if textTitle then
-		tinsert(micromenu, {text = textTitle, notCheckable = 1, func = function() GarrisonLandingPage_Toggle() end})
+		if textTitle then
+			tinsert(micromenu, {text = textTitle, notCheckable = 1, func = function() GarrisonLandingPage_Toggle() end})
+		end
+	else
+		textTitle = DRAGONFLIGHT_LANDING_PAGE_TITLE
+		tinsert(micromenu, {text = textTitle, notCheckable = 1, func = function() ToggleExpansionLandingPage() end})
 	end
 	frame:UnregisterAllEvents()
 end)
