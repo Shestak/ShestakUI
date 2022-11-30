@@ -702,7 +702,9 @@ C["filger_spells"] = {
 			Position = {"TOP", COOLDOWN_Anchor},
 
 			-- Self
-			-- Tip the scales
+			-- Quell
+			{spellID = 351338, filter = "CD"},
+			-- Tip the Scales
 			{spellID = 370553, filter = "CD"},
 			-- Emerald Blossom
 			{spellID = 355913, filter = "CD"},
@@ -728,9 +730,9 @@ C["filger_spells"] = {
 			{spellID = 382266, filter = "CD"},
 			-- Time Dilation
 			{spellID = 357170, filter = "CD"},
-			-- Time Stop (PVP Talent)
+			-- Time Stop (PvP Talent)
 			{spellID = 378441, filter = "CD"},
-			-- Chrono Loop (PVP Talent)
+			-- Chrono Loop (PvP Talent)
 			{spellID = 383005, filter = "CD"},
 			-- Emerald Communion
 			{spellID = 370960, filter = "CD"},
@@ -2409,6 +2411,8 @@ C["filger_spells"] = {
 			{spellID = 264667, unitID = "player", caster = "all", filter = "BUFF", absID = true},
 			-- Time Warp
 			{spellID = 80353, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Fury of the Aspects
+			{spellID = 390386, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Drums of Deathly Ferocity
 			{spellID = 309658, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mallet of Thunderous Skins
@@ -3218,6 +3222,11 @@ do
 	elseif race == "MagharOrc" then
 		-- Ancestral Call
 		tinsert(T.CustomFilgerSpell, {"COOLDOWN", {spellID = 274738, filter = "CD"}})
+	elseif race == "Dracthyr" then
+		-- Tail Swipe
+		tinsert(T.CustomFilgerSpell, {"COOLDOWN", {spellID = 368970, filter = "CD"}})
+		-- Wing Buffet
+		tinsert(T.CustomFilgerSpell, {"COOLDOWN", {spellID = 357214, filter = "CD"}})
 	end
 
 	-- Items
