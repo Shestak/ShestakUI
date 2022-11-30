@@ -72,10 +72,7 @@ AutoButton.cd = CreateFrame("Cooldown", nil, AutoButton, "CooldownFrameTemplate"
 AutoButton.cd:SetAllPoints(AutoButton.t)
 AutoButton.cd:SetFrameLevel(1)
 
-local Scanner = CreateFrame("Frame")
-Scanner:RegisterEvent("BAG_UPDATE")
-Scanner:RegisterEvent("UNIT_INVENTORY_CHANGED")
-Scanner:SetScript("OnEvent", function()
+local function startScanningBags()
 	AutoButtonHide()
 	-- Scan bags for Item matchs
 	for b = 0, NUM_BAG_SLOTS do
@@ -114,4 +111,22 @@ Scanner:SetScript("OnEvent", function()
 			end
 		end
 	end
+end
+
+-- Add all items from quest to our table
+hooksecurefunc("QuestObjectiveItem_Initialize", function(_, questLogIndex)
+	local link = GetQuestLogSpecialItemInfo(questLogIndex)
+	if link then
+		local _, itemID = strsplit(":", link)
+		itemID = tonumber(itemID)
+		T.ABItems[itemID] = true
+		startScanningBags()
+	end
+end)
+
+local Scanner = CreateFrame("Frame")
+Scanner:RegisterEvent("BAG_UPDATE")
+Scanner:RegisterEvent("UNIT_INVENTORY_CHANGED")
+Scanner:SetScript("OnEvent", function()
+	startScanningBags()
 end)
