@@ -15,14 +15,18 @@ local function SpellName(id)
 end
 
 local spells = {
+	DRUID = {
+		[SpellName(1126)] = true,	-- Mark of the Wild
+	},
+	EVOKER = {
+		[SpellName(364342)] = true,	-- Blessing of the Bronze
+	},
 	MAGE = {
 		[SpellName(1459)] = true,	-- Arcane Intellect
 	},
-
 	PRIEST = {
 		[SpellName(21562)] = true,	-- Power Word: Fortitude
 	},
-
 	WARRIOR = {
 		[SpellName(6673)] = true,	-- Battle Shout
 	},
