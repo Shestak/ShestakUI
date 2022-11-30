@@ -53,6 +53,7 @@
 	<Script file="LossOfControl.lua"/>
 	<Script file="Macro.lua"/>
 	<Script file="Mail.lua"/>
+	<Script file="MajorFaction.lua"/>
 	<Script file="Merchant.lua"/>
 	<Script file="Options.lua"/>
 	<Script file="OrderHall.lua"/>
