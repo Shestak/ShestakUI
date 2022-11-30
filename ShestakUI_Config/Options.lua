@@ -2594,7 +2594,7 @@ do
 		end
 		if not C.options["raidcooldown"]["spells_list"] then
 			C.options["raidcooldown"]["spells_list"] = T.raid_spells
-			C.options.raidcooldown.spells_list_ver = 2
+			C.options.raidcooldown.spells_list_ver = 3
 		end
 		if IsControlKeyDown() then
 			C.options["raidcooldown"]["spells_list"] = nil

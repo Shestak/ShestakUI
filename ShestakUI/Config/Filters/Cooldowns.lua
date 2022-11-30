@@ -11,11 +11,13 @@ if C.raidcooldown.enable == true then
 		{20484, 600},	-- Rebirth
 		{61999, 600},	-- Raise Ally
 		{20707, 600},	-- Soulstone
+		{391054, 600},	-- Intercession
 		{345130, 600},	-- Disposable Spectrophasic Reanimator
 		-- Heroism
 		{32182, 300},	-- Heroism
 		{2825, 300},	-- Bloodlust
 		{80353, 300},	-- Time Warp
+		{390386, 300},	-- Fury of the Aspects
 		{264667, 300},	-- Primal Rage {Hunter's pet]
 		-- Healing
 		{633, 600},		-- Lay on Hands
@@ -45,9 +47,10 @@ if C.raidcooldown.enable == true then
 
 	if #C.raidcooldown.spells_list > 0 then
 		-- Sync spell list with new changes
-		if not C.options.raidcooldown.spells_list_ver or C.options.raidcooldown.spells_list_ver < 2 then
-			tinsert(C.raidcooldown.spells_list, {345130, 600})
-			C.options.raidcooldown.spells_list_ver = 2
+		if not C.options.raidcooldown.spells_list_ver or C.options.raidcooldown.spells_list_ver < 3 then
+			tinsert(C.raidcooldown.spells_list, {390386, 300})
+			tinsert(C.raidcooldown.spells_list, {391054, 600})
+			C.options.raidcooldown.spells_list_ver = 3
 		end
 		T.raid_spells = C.raidcooldown.spells_list
 	else
@@ -77,6 +80,7 @@ if C.enemycooldown.enable == true then
 		{2139, 24},		-- Counterspell
 		{19647, 24},	-- Spell Lock
 		{115781, 24},	-- Optical Blast
+		{351338, 40},	-- Quell
 		{15487, 45},	-- Silence
 		{47476, 60},	-- Strangulate
 		{78675, 60},	-- Solar Beam
@@ -110,23 +114,23 @@ if C.enemycooldown.enable == true then
 	if #C.enemycooldown.spells_list > 0 then
 		-- Sync spell list with new changes
 		if not C.options.enemycooldown.spells_list_ver or C.options.enemycooldown.spells_list_ver < 2 then
-			for i, spell in pairs(C.enemycooldown.spells_list) do
-				if spell[1] == 51514 then
-					spell[2] = 20
-				elseif spell[1] == 187650 then
-					spell[2] = 25
-				elseif spell[1] == 115078 then
-					spell[2] = 30
-				elseif spell[1] == 49039 then
-					spell[2] = 120
-				elseif spell[1] == 31224 then
-					spell[2] = 120
-				elseif spell[1] == 213664 or spell[1] == 19386 then
-					tremove(C.enemycooldown.spells_list, i)
-				end
-			end
+			--BETA for i, spell in pairs(C.enemycooldown.spells_list) do
+				-- if spell[1] == 51514 then
+					-- spell[2] = 20
+				-- elseif spell[1] == 187650 then
+					-- spell[2] = 25
+				-- elseif spell[1] == 115078 then
+					-- spell[2] = 30
+				-- elseif spell[1] == 49039 then
+					-- spell[2] = 120
+				-- elseif spell[1] == 31224 then
+					-- spell[2] = 120
+				-- elseif spell[1] == 213664 or spell[1] == 19386 then
+					-- tremove(C.enemycooldown.spells_list, i)
+				-- end
+			-- end
 
-			tinsert(C.enemycooldown.spells_list, {187707, 15})
+			-- tinsert(C.enemycooldown.spells_list, {351338, 40})
 			C.options.enemycooldown.spells_list_ver = 2
 		end
 		T.enemy_spells = C.enemycooldown.spells_list
