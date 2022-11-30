@@ -453,24 +453,6 @@ local RestoreUI = function(self)
 		return
 	end
 	if ShestakUIPositions then
-		-- TODO: delete after while
-		if ShestakUIPositions.UnitFrame then
-			for frame_name, point in pairs(ShestakUIPositions.UnitFrame) do
-				if _G[frame_name] then
-					for _, frame in pairs(unitFrames) do
-						if frame:GetName() and frame:GetName() == _G[frame_name]:GetName() then
-							_G[frame_name]:ClearAllPoints()
-							_G[frame_name]:SetPoint(unpack(point))
-							ShestakUIPositions[frame_name] = point
-						end
-					end
-				end
-			end
-			ShestakUIPositions.UnitFrame = nil
-			ShestakUIPositions.UFPos = nil
-		end
-		-- End of block to delete
-
 		for frame_name, point in pairs(ShestakUIPositions) do
 			if _G[frame_name] then
 				_G[frame_name]:ClearAllPoints()
