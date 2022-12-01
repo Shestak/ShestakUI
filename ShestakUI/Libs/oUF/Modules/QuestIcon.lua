@@ -155,10 +155,7 @@ local function Enable(self)
 		element.ForceUpdate = ForceUpdate
 
 		if element:IsObjectType("Texture") and not element:GetAtlas() then
-			-- element:SetAtlas("SmallQuestBang")
-			-- element:SetAtlas("adventureguide-microbutton-alert")
 			element:SetAtlas("worldquest-tracker-questmarker")
-			-- element:SetTexture([[Interface\TargetingFrame\PortraitQuestBadge]])
 		end
 
 		self:RegisterEvent("QUEST_LOG_UPDATE", Path, true)
