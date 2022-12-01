@@ -224,13 +224,17 @@ end
 ----------------------------------------------------------------------------------------
 --	Style ActionBars/Bags buttons function(by Chiril & Karudon)
 ----------------------------------------------------------------------------------------
-local function StyleButton(button, t, size)
+local function StyleButton(button, t, size, setBackdrop)
 	if not size then size = 2 end
 	if button.SetHighlightTexture and not button.hover then
 		local hover = button:CreateTexture()
 		hover:SetColorTexture(1, 1, 1, 0.3)
-		hover:SetPoint("TOPLEFT", button, size, -size)
-		hover:SetPoint("BOTTOMRIGHT", button, -size, size)
+		if setBackdrop then
+			hover:SetInside(button.backdrop)
+		else
+			hover:SetPoint("TOPLEFT", button, size, -size)
+			hover:SetPoint("BOTTOMRIGHT", button, -size, size)
+		end
 		button.hover = hover
 		button:SetHighlightTexture(hover)
 	end
@@ -238,8 +242,12 @@ local function StyleButton(button, t, size)
 	if not t and button.SetPushedTexture and not button.pushed then
 		local pushed = button:CreateTexture()
 		pushed:SetColorTexture(0.9, 0.8, 0.1, 0.3)
-		pushed:SetPoint("TOPLEFT", button, size, -size)
-		pushed:SetPoint("BOTTOMRIGHT", button, -size, size)
+		if setBackdrop then
+			pushed:SetInside(button.backdrop)
+		else
+			pushed:SetPoint("TOPLEFT", button, size, -size)
+			pushed:SetPoint("BOTTOMRIGHT", button, -size, size)
+		end
 		button.pushed = pushed
 		button:SetPushedTexture(pushed)
 	end
@@ -247,8 +255,12 @@ local function StyleButton(button, t, size)
 	if button.SetCheckedTexture and not button.checked then
 		local checked = button:CreateTexture()
 		checked:SetColorTexture(0, 1, 0, 0.3)
-		checked:SetPoint("TOPLEFT", button, size, -size)
-		checked:SetPoint("BOTTOMRIGHT", button, -size, size)
+		if setBackdrop then
+			checked:SetInside(button.backdrop)
+		else
+			checked:SetPoint("TOPLEFT", button, size, -size)
+			checked:SetPoint("BOTTOMRIGHT", button, -size, size)
+		end
 		button.checked = checked
 		button:SetCheckedTexture(checked)
 	end

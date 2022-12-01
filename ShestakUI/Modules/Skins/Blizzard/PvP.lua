@@ -112,7 +112,7 @@ local function LoadSkin()
 		EnlistmentBonusIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 	end
 
-	hooksecurefunc('PVPUIFrame_ConfigureRewardFrame', function(rewardFrame, _, _, itemRewards, currencyRewards)
+	hooksecurefunc("PVPUIFrame_ConfigureRewardFrame", function(rewardFrame, _, _, itemRewards, currencyRewards)
 		local rewardTexture, rewardQuaility, _ = nil, 1
 
 		if currencyRewards then
@@ -137,24 +137,22 @@ local function LoadSkin()
 			--rewardFrame.Icon.backdrop:SetBackdropBorderColor(r, g, b)
 		end
 	end)
-	
-	hooksecurefunc(HonorFrame.SpecificScrollBox, 'Update', function (self)
+
+	hooksecurefunc(HonorFrame.SpecificScrollBox, "Update", function (self)
 		for i = 1, self.ScrollTarget:GetNumChildren() do
 			local button = select(i, self.ScrollTarget:GetChildren())
 			if not button.IsSkinned then
 				button:SetSize(368, 38)
 				button:StripTextures()
-				button:SetTemplate("Overlay")
-				button:StyleButton()
+				button:CreateBackdrop("Overlay")
+				button.backdrop:SetPoint("TOPLEFT", 0, 0)
+				button.backdrop:SetPoint("BOTTOMRIGHT", 0, 2)
+				button:StyleButton(nil, nil, true)
 				button.SelectedTexture:SetDrawLayer("ARTWORK")
 				button.SelectedTexture:SetColorTexture(1, 0.82, 0, 0.3)
-				button.SelectedTexture:SetPoint("TOPLEFT", 2, -2)
-				button.SelectedTexture:SetPoint("BOTTOMRIGHT", -2, 2)
-				if i == 1 then
-					--button:SetPoint("TOPLEFT", HonorFrameSpecificFrameScrollChild, "TOPLEFT", 0, -1)
-				else
-					--button:SetPoint("TOPLEFT", HonorFrame.SpecificFrame.buttons[i-1], "BOTTOMLEFT", 0, -2)
-				end
+				button.SelectedTexture:SetInside(button.backdrop)
+				button.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+				button.Icon:SetPoint("TOPLEFT", 5, -3)
 				button.IsSkinned = true
 			end
 		end
