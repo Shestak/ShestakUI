@@ -6,10 +6,10 @@ if C.skins.blizzard_frames ~= true then return end
 ----------------------------------------------------------------------------------------
 local function LoadSkin()
 	local buttons = {
+		"MacroEditButton",
 		"MacroDeleteButton",
 		"MacroNewButton",
 		"MacroExitButton",
-		"MacroEditButton",
 		"MacroFrameTab1",
 		"MacroFrameTab2",
 		"MacroSaveButton",
@@ -19,6 +19,13 @@ local function LoadSkin()
 	for i = 1, #buttons do
 		_G[buttons[i]]:SkinButton(true)
 	end
+
+	hooksecurefunc(MacroFrame, "UpdateButtons", function()
+		for i = 1, 3 do -- Prevent disappear our scripts
+			_G[buttons[i]]:HookScript("OnEnter", T.SetModifiedBackdrop)
+			_G[buttons[i]]:HookScript("OnLeave", T.SetOriginalBackdrop)
+		end
+	end)
 
 	for i = 1, 2 do
 		local tab = _G[format("MacroFrameTab%s", i)]
