@@ -142,7 +142,7 @@ if C.misc.raid_tools == true then
 	button:EnableMouse(true)
 	button:SetScript("OnMouseUp", function() run() end)
 
-	local t = button:CreateFontString(nil, "OVERLAY", button)
+	local t = button:CreateFontString(nil, "OVERLAY")
 	t:SetFont(C.media.pixel_font, C.media.pixel_font_size, C.media.pixel_font_style)
 	t:SetPoint("CENTER")
 	t:SetJustifyH("CENTER")
