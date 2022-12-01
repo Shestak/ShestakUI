@@ -10,13 +10,6 @@ frame:SetScript("OnEvent", function(_, _, addon)
 		local cost, num
 		local button = CreateFrame("Button", "ClassTrainerTrainAllButton", ClassTrainerFrame, "UIPanelButtonTemplate")
 		button:SetText(ACHIEVEMENTFRAME_FILTER_ALL)
-		if C.skins.blizzard_frames == true then
-			button:SkinButton()
-			button:SetPoint("TOPRIGHT", ClassTrainerTrainButton, "TOPLEFT", -3, 0)
-		else
-			button:SetPoint("TOPRIGHT", ClassTrainerTrainButton, "TOPLEFT", 0, 0)
-		end
-		button:SetWidth(min(50, button:GetTextWidth() + 15))
 		button:SetScript("OnEnter", function()
 			GameTooltip:SetOwner(button, "ANCHOR_RIGHT")
 			GameTooltip:SetText(AVAILABLE..": "..num.."\n"..COSTS_LABEL.." "..GetMoneyString(cost))
@@ -24,6 +17,13 @@ frame:SetScript("OnEvent", function(_, _, addon)
 		button:SetScript("OnLeave", function()
 			GameTooltip:Hide()
 		end)
+		if C.skins.blizzard_frames == true then
+			button:SkinButton()
+			button:SetPoint("TOPRIGHT", ClassTrainerTrainButton, "TOPLEFT", -3, 0)
+		else
+			button:SetPoint("TOPRIGHT", ClassTrainerTrainButton, "TOPLEFT", 0, 0)
+		end
+		button:SetWidth(min(50, button:GetTextWidth() + 15))
 		button:SetScript("OnClick", function()
 			for i = 1, GetNumTrainerServices() do
 				if select(2, GetTrainerServiceInfo(i)) == "available" then
