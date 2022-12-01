@@ -37,7 +37,7 @@ local function LoadSkin()
 		if button then
 			button:StripTextures()
 			button.icon:SkinIcon()
-			-- T.SkinIconBorder(button.IconBorder, button.backdrop)
+			T.SkinIconBorder(button.IconBorder, button.icon:GetParent().backdrop)
 			button:SetNormalTexture(0)
 			button:SetPushedTexture(0)
 		end
@@ -70,13 +70,16 @@ local function LoadSkin()
 	end
 
 	local function skinReagentIcon(button)
-		button.Icon:SkinIcon()
-		button:SetNormalTexture(0)
-		button:SetPushedTexture(0)
-		button:GetHighlightTexture():Hide()
-		T.SkinIconBorder(button.IconBorder, button.Icon:GetParent().backdrop)
-		if button.SlotBackground then
-			button.SlotBackground:Hide()
+		if button and not button.styled then
+			button.Icon:SkinIcon()
+			button:SetNormalTexture(0)
+			button:SetPushedTexture(0)
+			button:GetHighlightTexture():Hide()
+			T.SkinIconBorder(button.IconBorder, button.Icon:GetParent().backdrop)
+			if button.SlotBackground then
+				button.SlotBackground:Hide()
+			end
+			button.styled = true
 		end
 	end
 
