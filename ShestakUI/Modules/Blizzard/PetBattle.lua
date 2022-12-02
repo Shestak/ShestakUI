@@ -206,7 +206,7 @@ f.Enemy3:SetPoint("TOPLEFT", f.Enemy2, "TOPRIGHT", 8, 0)
 
 -- Weather
 hooksecurefunc("PetBattleWeatherFrame_Update", function(self)
-	local weather = C_PetBattles.GetAuraInfo(LE_BATTLE_PET_WEATHER, PET_BATTLE_PAD_INDEX, 1)
+	local weather = C_PetBattles.GetAuraInfo(Enum.BattlePetOwner.Weather, PET_BATTLE_PAD_INDEX, 1)
 	if weather then
 		self.Icon:Hide()
 		self.Name:Hide()
