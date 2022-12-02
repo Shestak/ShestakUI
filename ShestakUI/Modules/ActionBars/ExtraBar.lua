@@ -20,14 +20,12 @@ ExtraActionBarFrame:ClearAllPoints()
 ExtraActionBarFrame:SetAllPoints()
 
 -- Prevent reanchor
-ExtraActionBarFrame.ignoreInLayout = true
---BETA UIPARENT_MANAGED_FRAME_POSITIONS.ExtraAbilityContainer = nil
 ExtraAbilityContainer.ignoreFramePositionManager = true
-
--- Prevent taint
-ExtraAbilityContainer.SetSize = T.dummy
-ExtraAbilityContainer:SetScript("OnShow", nil)
-ExtraAbilityContainer:SetScript("OnHide", nil)
+hooksecurefunc(ExtraActionBarFrame, "SetParent", function(self, parent)
+	if parent == ExtraAbilityContainer then
+		self:SetParent(anchor)
+	end
+end)
 
 -- Zone Ability button
 local zoneAnchor = CreateFrame("Frame", "ZoneButtonAnchor", UIParent)
@@ -46,6 +44,15 @@ ZoneAbilityFrame:SetAllPoints()
 ZoneAbilityFrame.ignoreInLayout = true
 ZoneAbilityFrame.SpellButtonContainer:SetPoint("TOPRIGHT", zoneAnchor)
 ZoneAbilityFrame.SpellButtonContainer.spacing = 3
+hooksecurefunc(ZoneAbilityFrame, "SetParent", function(self, parent)
+	if parent == ExtraAbilityContainer then
+		self:SetParent(zoneAnchor)
+	end
+end)
+
+C_Timer.After(0.1, function()
+	ZoneAbilityFrame.SpellButtonContainer:SetSize(size, size)
+end)
 
 hooksecurefunc("ExtraActionBar_Update", function()
 	if ShestakUIPositions["ZoneButtonAnchor"] then return end
