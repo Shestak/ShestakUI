@@ -10,6 +10,7 @@ frame:SetScript("OnEvent", function(_, _, addon)
 	if addon == "Blizzard_Collections" then
 		if not PlayerHasToy(92738) then return end
 		local button = CreateFrame("Button", "PetJournalSafariButton", PetJournal, "SecureActionButtonTemplate, ActionButtonTemplate")
+		button:SetSize(36, 36)
 		button:SetAttribute("type", "toy")
 		button:SetAttribute("toy", 92738)
 		if C.skins.blizzard_frames == true then
