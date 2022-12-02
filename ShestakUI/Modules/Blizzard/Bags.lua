@@ -158,7 +158,11 @@ local function Stuffing_Open()
 end
 
 local function Stuffing_Close()
-	Stuffing.frame:Hide()
+	C_Timer.After(0.01, function() -- fix showing GameMenu when pressing ESC
+		if Stuffing.frame:IsShown() then
+			Stuffing.frame:Hide()
+		end
+	end)
 end
 
 local function Stuffing_Toggle()
