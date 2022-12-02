@@ -186,7 +186,7 @@ local function Enable(self)
 		self:RegisterEvent('UNIT_FACTION', Path) -- For tapping
 		self:RegisterEvent('UNIT_FLAGS', Path) -- For selection
 
-		if(element:IsObjectType('StatusBar') and not (element:GetStatusBarTexture() or element:GetStatusBarAtlas())) then
+		if(element:IsObjectType('StatusBar') and not element:GetStatusBarTexture()) then
 			element:SetStatusBarTexture([[Interface\TargetingFrame\UI-StatusBar]])
 		end
 
