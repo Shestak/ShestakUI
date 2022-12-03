@@ -17,6 +17,7 @@ MultiBar7:SetParent(bar)
 
 bar:RegisterEvent("PLAYER_ENTERING_WORLD")
 bar:SetScript("OnEvent", function(self, event)
+	self:UnregisterAllEvents()
 	local NumPerRows = C.actionbar.bar4_row
 	local NextRowButtonAnchor = _G["MultiBar7Button1"]
 	for i = 1, 12 do
