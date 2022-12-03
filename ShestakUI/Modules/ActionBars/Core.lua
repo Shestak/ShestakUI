@@ -334,54 +334,51 @@ end
 ----------------------------------------------------------------------------------------
 --	Show grid function
 ----------------------------------------------------------------------------------------
+local actionFrame = {
+	MultiBarBottomLeft,
+	MultiBarLeft,
+	MultiBarRight,
+	MultiBarBottomRight,
+	MultiBar5,
+	MultiBar6,
+	MultiBar7,
+}
+
+EditModeUtil.GetRightContainerAnchor = T.dummy -- Prevent error with offset
+
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:SetScript("OnEvent", function(self)
 	self:UnregisterEvent("PLAYER_ENTERING_WORLD")
-	SetActionBarToggles(1, 1, 1, 1, 0)
+
+	-- Fix errors from EditMode
+	for i = 1, #actionFrame do
+		actionFrame[i].SetPointBase = T.dummy
+		actionFrame[i].SetScaleBase = T.dummy
+		actionFrame[i].ShowBase = T.dummy
+		actionFrame[i].HideBase = T.dummy
+	end
 	if C.actionbar.show_grid == true then
 		SetCVar("alwaysShowActionBars", 1)
-		-- for i = 1, 12 do
-			-- local reason = ACTION_BUTTON_SHOW_GRID_REASON_CVAR
-			-- local button = _G[format("ActionButton%d", i)]
-			-- button.noGrid = nil
-			-- button:SetAttribute("showgrid", 1)
-			-- --BETA button:ShowGrid(reason)
-			-- button:SetAttribute("statehidden", true)
-
-			-- button = _G[format("MultiBarRightButton%d", i)]
-			-- button.noGrid = nil
-			-- button:SetAttribute("showgrid", 1)
-			-- -- button:ShowGrid(reason)
-			-- button:SetAttribute("statehidden", true)
-
-			-- button = _G[format("MultiBarBottomRightButton%d", i)]
-			-- button.noGrid = nil
-			-- button:SetAttribute("showgrid", 1)
-			-- -- button:ShowGrid(reason)
-			-- button:SetAttribute("statehidden", true)
-
-			-- button = _G[format("MultiBarLeftButton%d", i)]
-			-- button.noGrid = nil
-			-- button:SetAttribute("showgrid", 1)
-			-- -- button:ShowGrid(reason)
-			-- button:SetAttribute("statehidden", true)
-
-			-- button = _G[format("MultiBarBottomLeftButton%d", i)]
-			-- button.noGrid = nil
-			-- button:SetAttribute("showgrid", 1)
-			-- -- button:ShowGrid(reason)
-			-- button:SetAttribute("statehidden", true)
-
-			-- if _G["VehicleMenuBarActionButton"..i] then
-				-- _G["VehicleMenuBarActionButton"..i]:SetAttribute("statehidden", true)
-			-- end
-
-			-- _G["MultiCastActionButton"..i]:SetAttribute("showgrid", 1)
-			-- _G["MultiCastActionButton"..i]:SetAttribute("statehidden", true)
-		-- end
 	else
 		SetCVar("alwaysShowActionBars", 0)
+		for i = 1, 12 do
+			local button = _G[format("MultiBarRightButton%d", i)]
+			button:SetAttribute("showgrid", 0)
+
+			button = _G[format("MultiBarBottomRightButton%d", i)]
+			button:SetAttribute("showgrid", 0)
+
+			button = _G[format("MultiBarLeftButton%d", i)]
+			button:SetAttribute("showgrid", 0)
+
+			button = _G[format("MultiBarBottomLeftButton%d", i)]
+			button:SetAttribute("showgrid", 0)
+		end
+		local reason = ACTION_BUTTON_SHOW_GRID_REASON_EVENT
+		for i = 1, #actionFrame do
+			actionFrame[i]:SetShowGrid(false, reason)
+		end
 	end
 end)
 

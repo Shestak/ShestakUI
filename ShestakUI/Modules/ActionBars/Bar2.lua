@@ -45,6 +45,7 @@ bar:SetScript("OnEvent", function(self, event)
 				b:SetPoint("LEFT", b2, "RIGHT", T.Scale(C.actionbar.button_space), 0)
 			end
 		end
+		b.SetPoint = T.dummy -- Prevent moving by EditMode
 	end
 end)
 

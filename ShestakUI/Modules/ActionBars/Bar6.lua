@@ -45,6 +45,7 @@ if C.actionbar.enable then
 					b:SetPoint("TOP", b2, "BOTTOM", 0, -C.actionbar.button_space)
 				end
 			-- end
+			b.SetPoint = T.dummy -- Prevent moving by EditMode
 		end
 	end)
 
