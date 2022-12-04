@@ -89,10 +89,12 @@ MinimapCluster.ZoneTextButton:Hide()
 
 -- Garrison icon
 if C.minimap.garrison_icon == true then
-	ExpansionLandingPageMinimapButton:SetScale(0.75)
+	ExpansionLandingPageMinimapButton:SetScale(0.6)
+	ExpansionLandingPageMinimapButton:ClearAllPoints()
+	ExpansionLandingPageMinimapButton:SetPoint("TOPLEFT", Minimap, "TOPLEFT", -3, 1)
 	hooksecurefunc(ExpansionLandingPageMinimapButton, "UpdateIconForGarrison", function()
 		ExpansionLandingPageMinimapButton:ClearAllPoints()
-		ExpansionLandingPageMinimapButton:SetPoint("TOPLEFT", Minimap, "TOPLEFT", -5, 2)
+		ExpansionLandingPageMinimapButton:SetPoint("TOPLEFT", Minimap, "TOPLEFT", -3, 1)
 	end)
 else
 	ExpansionLandingPageMinimapButton:SetScale(0.0001)
