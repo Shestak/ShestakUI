@@ -17,7 +17,7 @@ if C.actionbar.enable then
 
 	bar:RegisterEvent("PLAYER_ENTERING_WORLD")
 	bar:SetScript("OnEvent", function(self, event)
-		self:UnregisterAllEvents()
+		-- self:UnregisterAllEvents()
 		local NumPerRows = C.actionbar.bar4_row
 		local NextRowButtonAnchor = _G["MultiBar5Button1"]
 		for i = 1, 12 do
@@ -46,7 +46,7 @@ if C.actionbar.enable then
 					b:SetPoint("TOP", b2, "BOTTOM", 0, -C.actionbar.button_space)
 				end
 			-- end
-			b.SetPoint = T.dummy -- Prevent moving by EditMode
+			-- b.SetPoint = T.dummy -- Prevent moving by EditMode
 		end
 	end)
 
