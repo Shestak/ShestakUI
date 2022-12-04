@@ -38,7 +38,8 @@ T.MoverFrames = {
 	T_DE_BUFF_BAR_Anchor,
 	SplitBarLeft,
 	SplitBarRight,
-	CustomBarAnchor
+	CustomBarAnchor,
+	UIWidgetPowerBarAnchor
 }
 
 if C.actionbar.editor then
