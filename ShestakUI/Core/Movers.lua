@@ -39,6 +39,8 @@ T.MoverFrames = {
 	SplitBarLeft,
 	SplitBarRight,
 	CustomBarAnchor,
+	Bar7Holder,
+	Bar8Holder,
 	UIWidgetPowerBarAnchor
 }
 

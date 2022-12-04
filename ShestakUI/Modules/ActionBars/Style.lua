@@ -130,7 +130,7 @@ local function StyleNormalButton(button, size)
 		button.iborder:SetFrameLevel(button:GetFrameLevel())
 
 		if button.QuickKeybindHighlightTexture then
-			button.QuickKeybindHighlightTexture:SetTexture("")
+			button.QuickKeybindHighlightTexture:SetScale(0.0001)
 		end
 
 		if flyoutBorder then
@@ -254,6 +254,8 @@ frame:SetScript("OnEvent", function(self, event)
 		StyleNormalButton(_G["MultiBarLeftButton"..i], C.actionbar.editor and C.actionbar.bar3_size)
 		StyleNormalButton(_G["MultiBarRightButton"..i], C.actionbar.editor and C.actionbar.bar4_size)
 		StyleNormalButton(_G["MultiBarBottomRightButton"..i], C.actionbar.editor and C.actionbar.bar5_size)
+		StyleNormalButton(_G["MultiBar6Button"..i], C.actionbar.bar7_size)
+		StyleNormalButton(_G["MultiBar7Button"..i], C.actionbar.bar8_size)
 	end
 
 	if C.actionbar.custom_bar_enable then

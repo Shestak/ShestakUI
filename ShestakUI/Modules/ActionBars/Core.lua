@@ -268,6 +268,28 @@ function CustomBarMouseOver(alpha)
 	end
 end
 
+function Bar7MouseOver(alpha)
+	if MultiBarBottomRight:IsShown() then
+		for i = 1, 12 do
+			local b = _G["MultiBar6Button"..i]
+			b:SetAlpha(alpha)
+			local c = _G["MultiBar6Button"..i.."Cooldown"]
+			T.HideSpiral(c, alpha)
+		end
+	end
+end
+
+function Bar8MouseOver(alpha)
+	if MultiBarBottomRight:IsShown() then
+		for i = 1, 12 do
+			local b = _G["MultiBar7Button"..i]
+			b:SetAlpha(alpha)
+			local c = _G["MultiBar7Button"..i.."Cooldown"]
+			T.HideSpiral(c, alpha)
+		end
+	end
+end
+
 ----------------------------------------------------------------------------------------
 --	Fix cooldown spiral alpha (WoD bug)
 ----------------------------------------------------------------------------------------

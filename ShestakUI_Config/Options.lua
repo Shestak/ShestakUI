@@ -1772,6 +1772,44 @@ do
 
 	local custom_bar_mouseover = ns.CreateCheckBox(parent, "custom_bar_mouseover", L.actionbar_bar1_mouseover)
 	custom_bar_mouseover:SetPoint("LEFT", custom_bar_size, "RIGHT", 130, 0)
+
+	-- Bar 7
+	local subheader = ns.addSubCategory(parent, BINDING_HEADER_ACTIONBAR.." 7")
+	subheader:SetPoint("TOPLEFT", custom_bar_size, "BOTTOMLEFT", 0, -10)
+
+	local bar7_enable = ns.CreateCheckBox(parent, "bar7_enable", ENABLE)
+	bar7_enable:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -10)
+
+	local bar7_num = ns.CreateNumberSlider(parent, "bar7_num", nil, nil, 0, 12, 1, true, L.actionbar_bar1_num)
+	bar7_num:SetPoint("TOPLEFT", bar7_enable, "BOTTOMLEFT", 0, -20)
+
+	local bar7_row = ns.CreateNumberSlider(parent, "bar7_row", nil, nil, 1, 12, 1, true, L.actionbar_bar1_row)
+	bar7_row:SetPoint("LEFT", bar7_num, "RIGHT", 120, 0)
+
+	local bar7_size = ns.CreateNumberSlider(parent, "bar7_size", nil, nil, 0, 50, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	bar7_size:SetPoint("TOPLEFT", bar7_num, "BOTTOMLEFT", 0, -20)
+
+	local bar7_mouseover = ns.CreateCheckBox(parent, "bar7_mouseover", L.actionbar_bar1_mouseover)
+	bar7_mouseover:SetPoint("LEFT", bar7_size, "RIGHT", 130, 0)
+
+	-- Bar 8
+	local subheader = ns.addSubCategory(parent, BINDING_HEADER_ACTIONBAR.." 8")
+	subheader:SetPoint("TOPLEFT", bar7_size, "BOTTOMLEFT", 0, -10)
+
+	local bar8_enable = ns.CreateCheckBox(parent, "bar8_enable", ENABLE)
+	bar8_enable:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -10)
+
+	local bar8_num = ns.CreateNumberSlider(parent, "bar8_num", nil, nil, 0, 12, 1, true, L.actionbar_bar1_num)
+	bar8_num:SetPoint("TOPLEFT", bar8_enable, "BOTTOMLEFT", 0, -20)
+
+	local bar8_row = ns.CreateNumberSlider(parent, "bar8_row", nil, nil, 1, 12, 1, true, L.actionbar_bar1_row)
+	bar8_row:SetPoint("LEFT", bar8_num, "RIGHT", 120, 0)
+
+	local bar8_size = ns.CreateNumberSlider(parent, "bar8_size", nil, nil, 0, 50, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	bar8_size:SetPoint("TOPLEFT", bar8_num, "BOTTOMLEFT", 0, -20)
+
+	local bar8_mouseover = ns.CreateCheckBox(parent, "bar8_mouseover", L.actionbar_bar1_mouseover)
+	bar8_mouseover:SetPoint("LEFT", bar8_size, "RIGHT", 130, 0)
 end
 
 -- Tooltip
