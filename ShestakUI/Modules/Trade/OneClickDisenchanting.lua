@@ -134,6 +134,42 @@ local ores = {
 	[187700] = true,	-- Progenium Ore
 }
 
+local enchantingItems = {
+	-- Legion enchanting quest line
+	[137195] = true, -- Highmountain Armor
+	[137221] = true, -- Enchanted Raven Sigil
+	[137286] = true, -- Fel-Crusted Rune
+
+	-- Shadowlands profession world quests
+	[182021] = true, -- Antique Kyrian Javelin
+	[182043] = true, -- Antique Necromancer's Staff
+	[182067] = true, -- Antique Duelist's Rapier
+	[181991] = true, -- Antique Stalker's Bow
+
+	-- Dragonflight profession items
+	-- https://www.wowhead.com/items?filter=104;0;amount+of+magical+power+can+be+sensed+from+within
+	[200939] = true, -- Chromatic Pocketwatch
+	[200940] = true, -- Everflowing Inkwell
+	[200941] = true, -- Seal of Order
+	[200942] = true, -- Vibrant Emulsion
+	[200943] = true, -- Whispering Band
+	[200945] = true, -- Valiant Hammer
+	[200946] = true, -- Thunderous Blade
+	[200947] = true, -- Carving of Awakening
+	-- https://www.wowhead.com/items?filter=104;0;Disenchant+to+gain+Enchanting+knowledge
+	[198694] = true, -- Enriched Earthen Shard
+	[198798] = true, -- Flashfrozen Scroll
+	[198800] = true, -- Fractured Titanic Sphere
+	[198689] = true, -- Stormbound Horn
+	[198799] = true, -- Forgotten Arcane Tome
+	[198675] = true, -- Lava-Infused Seed
+	[201360] = true, -- Glimmer of Order
+	[201358] = true, -- Glimmer of Air
+	[201357] = true, -- Glimmer of Frost
+	[201359] = true, -- Glimmer of Earth
+	[201356] = true, -- Glimmer of Fire
+}
+
 function button:PLAYER_LOGIN()
 	local milling, prospect, disenchanter, rogue
 
@@ -166,9 +202,19 @@ function button:PLAYER_LOGIN()
 			elseif prospect and GetItemCount(itemID) >= 5 and ores[itemID] then
 				spell, r, g, b = GetSpellInfo(31252), 1, 0.33, 0.33
 			elseif disenchanter then
-				local _, _, itemRarity, _, _, _, _, _, _, _, _, class, subClass = GetItemInfo(link)
-				if not (class == Enum.ItemClass.Weapon or class == Enum.ItemClass.Armor or (class == 3 and subClass == 11)) or not (itemRarity and (itemRarity > 1 and (itemRarity < 5 or itemRarity == 6))) then return end
-				spell, r, g, b = GetSpellInfo(13262), 0.5, 0.5, 1
+				if enchantingItems[itemID] then
+					spell, r, g, b = GetSpellInfo(13262), 0.5, 0.5, 1
+				else
+					local _, _, quality, _, _, _, _, _, _, _, _, class, subClass = GetItemInfo(link)
+					if quality and ((quality >= Enum.ItemQuality.Uncommon and quality <= Enum.ItemQuality.Epic)
+						and C_Item.GetItemInventoryTypeByID(itemID) ~= Enum.InventoryType.IndexBodyType
+						and (class == Enum.ItemClass.Weapon
+							or (class == Enum.ItemClass.Armor and subClass ~= Enum.ItemClass.Cosmetic)
+							or (class == Enum.ItemClass.Gem and subClass == 11)
+							or class == Enum.ItemClass.Profession)) then
+						spell, r, g, b = GetSpellInfo(13262), 0.5, 0.5, 1
+					end
+				end
 			elseif rogue then
 				for index = 1, self:NumLines() do
 					if string.match(_G["GameTooltipTextLeft"..index]:GetText() or "", rogue) then
