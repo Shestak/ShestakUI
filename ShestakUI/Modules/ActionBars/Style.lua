@@ -301,10 +301,6 @@ local function StyleFlyoutButton(self)
 end
 
 SpellFlyout:HookScript("OnShow", StyleFlyoutButton)
---BETA hooksecurefunc("SpellButton_OnClick", StyleFlyoutButton)
--- SpellFlyoutHorizontalBackground:SetAlpha(0)
--- SpellFlyoutVerticalBackground:SetAlpha(0)
--- SpellFlyoutBackgroundEnd:SetAlpha(0)
 SpellFlyout.Background:Hide()
 
 if C.actionbar.hotkey == true then
