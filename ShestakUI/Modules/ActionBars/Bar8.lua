@@ -13,6 +13,7 @@ MultiBar7:SetParent(bar)
 
 bar:RegisterEvent("PLAYER_ENTERING_WORLD")
 bar:SetScript("OnEvent", function(self, event)
+	Settings.SetValue("PROXY_SHOW_ACTIONBAR_8", true)
 	-- self:UnregisterAllEvents()
 	local NumPerRows = C.actionbar.bar8_row
 	local NextRowButtonAnchor = _G["MultiBar7Button1"]
