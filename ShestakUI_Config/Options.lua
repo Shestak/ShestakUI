@@ -2277,7 +2277,7 @@ do
 	local tracking_icon = ns.CreateCheckBox(parent, "tracking_icon", L_GUI_MINIMAP_ICON)
 	tracking_icon:SetPoint("TOPLEFT", on_top, "BOTTOMLEFT", 0, 0)
 
-	local garrison_icon = ns.CreateCheckBox(parent, "garrison_icon", L_GUI_GARRISON_ICON)
+	local garrison_icon = ns.CreateCheckBox(parent, "garrison_icon", DRAGONFLIGHT_LANDING_PAGE_TITLE)
 	garrison_icon:SetPoint("TOPLEFT", tracking_icon, "BOTTOMLEFT", 0, 0)
 
 	local size = ns.CreateNumberSlider(parent, "size", nil, nil, 0, 300, 1, true, L_GUI_MINIMAP_SIZE)
