@@ -4,8 +4,6 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	StanceBar(by Tukz)
 ----------------------------------------------------------------------------------------
-local NUM_STANCE_SLOTS = NUM_STANCE_SLOTS or 10
-
 -- Hide bar
 if C.actionbar.stancebar_hide then
 	StanceBar:SetParent(StanceBarAnchor)
@@ -31,7 +29,7 @@ bar:RegisterEvent("UPDATE_SHAPESHIFT_COOLDOWN")
 bar:RegisterEvent("ACTIONBAR_PAGE_CHANGED")
 bar:SetScript("OnEvent", function(self, event)
 	if event == "PLAYER_LOGIN" then
-		for i = 1, NUM_STANCE_SLOTS do
+		for i = 1, 10 do
 			local button = _G["StanceButton"..i]
 			button:ClearAllPoints()
 			button:SetParent(self)
@@ -58,7 +56,7 @@ bar:SetScript("OnEvent", function(self, event)
 		end
 	elseif event == "UPDATE_SHAPESHIFT_FORMS" then
 		if InCombatLockdown() then return end
-		for i = 1, NUM_STANCE_SLOTS do
+		for i = 1, 10 do
 			local button = _G["StanceButton"..i]
 			local icon = GetShapeshiftFormInfo(i)
 			if icon then
@@ -80,7 +78,7 @@ if C.actionbar.rightbars_mouseover == true and C.actionbar.stancebar_horizontal 
 	StanceBarAnchor:SetAlpha(0)
 	StanceBarAnchor:SetScript("OnEnter", function() if StanceButton1:IsShown() then RightBarMouseOver(1) end end)
 	StanceBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then RightBarMouseOver(0) end end)
-	for i = 1, NUM_STANCE_SLOTS do
+	for i = 1, 10 do
 		local b = _G["StanceButton"..i]
 		b:SetAlpha(0)
 		b:HookScript("OnEnter", function() RightBarMouseOver(1) end)
@@ -91,7 +89,7 @@ if C.actionbar.stancebar_mouseover == true and (C.actionbar.stancebar_horizontal
 	StanceBarAnchor:SetAlpha(0)
 	StanceBarAnchor:SetScript("OnEnter", function() StanceBarMouseOver(1) end)
 	StanceBarAnchor:SetScript("OnLeave", function() if not HoverBind.enabled then StanceBarMouseOver(0) end end)
-	for i = 1, NUM_STANCE_SLOTS do
+	for i = 1, 10 do
 		local b = _G["StanceButton"..i]
 		b:SetAlpha(0)
 		b:HookScript("OnEnter", function() StanceBarMouseOver(1) end)

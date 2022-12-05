@@ -4,7 +4,6 @@ if C.actionbar.enable ~= true then return end
 ----------------------------------------------------------------------------------------
 --	Style ActionBars buttons(by Tukz)
 ----------------------------------------------------------------------------------------
-local NUM_STANCE_SLOTS = NUM_STANCE_SLOTS or 10
 local function StyleNormalButton(button, size)
 	if not button.isSkinned then
 		local name = button:GetName()
@@ -226,7 +225,7 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 end
 
 function T.StyleShift()
-	for i = 1, NUM_STANCE_SLOTS do
+	for i = 1, 10 do
 		local name = "StanceButton"..i
 		local button = _G[name]
 		local icon = _G[name.."Icon"]
