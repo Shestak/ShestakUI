@@ -15,10 +15,14 @@ local classList = {
 		combat = GetSpellInfo(20484),	-- Rebirth
 		ooc = GetSpellInfo(50769),		-- Revive
 	},
+	["EVOKER"] = {
+		ooc = GetSpellInfo(361227),		-- Return
+	},
 	["MONK"] = {
 		ooc = GetSpellInfo(115178),		-- Resuscitate
 	},
 	["PALADIN"] = {
+		combat = GetSpellInfo(391054),	-- Intercession
 		ooc = GetSpellInfo(7328),		-- Redemption
 	},
 	["PRIEST"] = {
