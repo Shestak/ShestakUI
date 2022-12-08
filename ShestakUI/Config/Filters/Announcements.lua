@@ -87,6 +87,7 @@ if C.announcements.portals == true then
 		[120146] = true,	-- Ancient Dalaran
 		[224871] = true,	-- Dalaran, Broken Isles
 		[344597] = true,	-- Oribos
+		[395289] = true,	-- Valdrakken
 	}
 end
 
