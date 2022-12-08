@@ -92,7 +92,6 @@ C["filger_spells"] = {
 			-- IconSize = C.filger.buffs_size,
 			-- Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
-
 		-- },
 		{
 			Name = "T_DE/BUFF_BAR",
