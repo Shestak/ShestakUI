@@ -1758,24 +1758,21 @@ do
 	local subheader = ns.addSubCategory(parent, BINDING_HEADER_ACTIONBAR.." 6")
 	subheader:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, -10)
 
-	local custom_bar_enable = ns.CreateCheckBox(parent, "custom_bar_enable", ENABLE)
-	custom_bar_enable:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -10)
+	local bar6_num = ns.CreateNumberSlider(parent, "bar6_num", nil, nil, 0, 12, 1, true, L.actionbar_bar1_num)
+	bar6_num:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -30)
 
-	local custom_bar_num = ns.CreateNumberSlider(parent, "custom_bar_num", nil, nil, 0, 12, 1, true, L.actionbar_bar1_num)
-	custom_bar_num:SetPoint("TOPLEFT", custom_bar_enable, "BOTTOMLEFT", 0, -20)
+	local bar6_row = ns.CreateNumberSlider(parent, "bar6_row", nil, nil, 1, 12, 1, true, L.actionbar_bar1_row)
+	bar6_row:SetPoint("LEFT", bar6_num, "RIGHT", 120, 0)
 
-	local custom_bar_row = ns.CreateNumberSlider(parent, "custom_bar_row", nil, nil, 1, 12, 1, true, L.actionbar_bar1_row)
-	custom_bar_row:SetPoint("LEFT", custom_bar_num, "RIGHT", 120, 0)
+	local bar6_size = ns.CreateNumberSlider(parent, "bar6_size", nil, nil, 0, 50, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
+	bar6_size:SetPoint("TOPLEFT", bar6_num, "BOTTOMLEFT", 0, -20)
 
-	local custom_bar_size = ns.CreateNumberSlider(parent, "custom_bar_size", nil, nil, 0, 50, 1, true, L_GUI_ACTIONBAR_BUTTON_SIZE)
-	custom_bar_size:SetPoint("TOPLEFT", custom_bar_num, "BOTTOMLEFT", 0, -20)
-
-	local custom_bar_mouseover = ns.CreateCheckBox(parent, "custom_bar_mouseover", L.actionbar_bar1_mouseover)
-	custom_bar_mouseover:SetPoint("LEFT", custom_bar_size, "RIGHT", 130, 0)
+	local bar6_mouseover = ns.CreateCheckBox(parent, "bar6_mouseover", L.actionbar_bar1_mouseover)
+	bar6_mouseover:SetPoint("LEFT", bar6_size, "RIGHT", 130, 0)
 
 	-- Bar 7
 	local subheader = ns.addSubCategory(parent, BINDING_HEADER_ACTIONBAR.." 7")
-	subheader:SetPoint("TOPLEFT", custom_bar_size, "BOTTOMLEFT", 0, -10)
+	subheader:SetPoint("TOPLEFT", bar6_size, "BOTTOMLEFT", 0, -10)
 
 	local bar7_enable = ns.CreateCheckBox(parent, "bar7_enable", ENABLE)
 	bar7_enable:SetPoint("TOPLEFT", subheader, "BOTTOMLEFT", 0, -10)

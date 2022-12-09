@@ -300,15 +300,14 @@ C["actionbar"] = {
 	["bar4_mouseover"] = false,					-- Bar on mouseover
 	-- Bar 5
 	["bar5_num"] = 12,							-- Number of buttons
-	["bar5_row"] = 1,							-- Buttons per row
+	["bar5_row"] = 12,							-- Buttons per row
 	["bar5_size"] = 25,							-- Buttons size
 	["bar5_mouseover"] = false,					-- Bar on mouseover
-	-- Custom Bar
-	["custom_bar_enable"] = false,				-- Enable custom bar 6
-	["custom_bar_num"] = 12,					-- Number of buttons
-	["custom_bar_row"] = 12,					-- Buttons per row
-	["custom_bar_size"] = 25,					-- Buttons size
-	["custom_bar_mouseover"] = false,			-- Bar on mouseover
+	-- Bar 6
+	["bar6_num"] = 12,							-- Number of buttons
+	["bar6_row"] = 1,							-- Buttons per row
+	["bar6_size"] = 25,							-- Buttons size
+	["bar6_mouseover"] = false,					-- Bar on mouseover
 	-- Bar 7
 	["bar7_enable"] = false,					-- Enable custom bar 7
 	["bar7_num"] = 12,							-- Number of buttons
