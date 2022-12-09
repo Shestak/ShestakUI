@@ -1,3 +1,4 @@
+local T, C, L = unpack(select(2, ...))
 local _, ns = ...
 local oUF = ns.oUF
 
@@ -16,11 +17,37 @@ local function resetAttributes(self)
 
 	for _, pip in next, self.Pips do
 		pip:Hide()
+		if pip.texture then
+			pip.texture:Hide()
+			pip.gap:Hide()
+		end
 	end
 end
 
-local function CreatePip(element)
-	return CreateFrame('Frame', nil, element, 'CastingBarFrameStagePipTemplate')
+local colorStage = {
+	[1] = {1, 0, 0},
+	[2] = {1, 0.4, 0},
+	[3] = {1, 0.9, 0},
+	[4] = {0, 1, 0.5},
+}
+
+local function CreatePip(element, stage)
+	local frame = CreateFrame("Frame", nil, element)
+	frame:SetSize(2, element:GetHeight())
+
+	local color = colorStage[stage] or {0, 0, 0}
+
+	frame.texture = element:CreateTexture(nil, "BORDER", nil, -2)
+	frame.texture:SetTexture(C.media.texture)
+	frame.texture:SetVertexColor(unpack(color))
+
+	local r, g, b = frame.texture:GetVertexColor()
+	frame.gap = element:CreateTexture(nil, "ARTWORK")
+	frame.gap:SetAllPoints(frame)
+	frame.gap:SetTexture(C.media.texture)
+	frame.gap:SetVertexColor(r * 0.75, g * 0.75, b * 0.75)
+
+	return frame
 end
 
 local function UpdatePips(element, numStages)
@@ -81,6 +108,32 @@ local function UpdatePips(element, numStages)
 					pip:SetPoint('LEFT', element, 'BOTTOMLEFT', 0, offset)
 					pip:SetPoint('RIGHT', element, 'BOTTOMRIGHT', 0, offset)
 				end
+			end
+		end
+	end
+	local maxStage = #element.Pips
+	for i, pip in next, element.Pips do
+		pip.texture:Show()
+		pip.gap:Show()
+		pip.texture:ClearAllPoints()
+
+		if(element:GetReverseFill()) then
+			if i == maxStage then
+				pip.texture:SetPoint('TOPLEFT', element, 0, 0)
+				pip.texture:SetPoint('BOTTOMRIGHT', pip, 0, 0)
+			else
+				local anchor = element.Pips[i + 1]
+				pip.texture:SetPoint('TOPLEFT', anchor, 0, 0)
+				pip.texture:SetPoint('BOTTOMRIGHT', pip, 0, 0)
+			end
+		else
+			if i == maxStage then
+				pip.texture:SetPoint('TOPRIGHT', element, 0, 0)
+				pip.texture:SetPoint('BOTTOMLEFT', pip, 0, 0)
+			else
+				local anchor = element.Pips[i + 1]
+				pip.texture:SetPoint('TOPRIGHT', anchor, 0, 0)
+				pip.texture:SetPoint('BOTTOMLEFT', pip, 0, 0)
 			end
 		end
 	end
