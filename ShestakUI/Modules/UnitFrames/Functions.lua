@@ -575,9 +575,7 @@ end
 T.HideAuraFrame = function(self)
 	if self.unit == "player" then
 		if not C.aura.player_auras then
-			--BETA BuffFrame:UnregisterEvent("UNIT_AURA")
-			-- BuffFrame:Hide()
-			-- TemporaryEnchantFrame:Hide()
+			BuffFrame:Hide()
 			self.Debuffs:Hide()
 		end
 	elseif self.unit == "pet" and not C.aura.pet_debuffs or self.unit == "focus" and not C.aura.focus_debuffs
