@@ -254,7 +254,7 @@ function handler:TRADE_SKILL_SHOW(event)
 		self:UnregisterEvent(event)
 	else
 		HandleTabs(owner)
-		self[event] = function() for object in next, tabs do UpdateSelectedTabs(object) end end
+		UpdateSelectedTabs(owner)
 	end
 end
 
