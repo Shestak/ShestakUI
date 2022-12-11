@@ -51,7 +51,7 @@ AutoButton:SetSize(40, 40)
 AutoButton:SetPoint("CENTER", AutoButtonAnchor, "CENTER", 0, 0)
 AutoButton:SetTemplate("Default")
 AutoButton:StyleButton()
-AutoButton:RegisterForClicks("AnyUp")
+AutoButton:RegisterForClicks("AnyUp", "AnyDown")
 AutoButton:SetAttribute("type", "item")
 AutoButtonHide()
 
