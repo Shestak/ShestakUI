@@ -187,6 +187,81 @@ local function SkinCaptureBar(widget)
 	end
 end
 
+local VigorBar = CreateFrame("Frame", "VigotBar", UIParent)
+VigorBar:CreateBackdrop("Default")
+VigorBar:SetPoint("TOP", powerAnchor, "TOP", 0, -2)
+VigorBar:SetSize(250, 12)
+VigorBar:Hide()
+
+for i = 1, 6 do
+	VigorBar[i] = CreateFrame("StatusBar", "Vigor"..i, VigorBar)
+	VigorBar[i]:SetSize((250 - 5) / 6, 12)
+
+	if i == 1 then
+		VigorBar[i]:SetPoint("TOPLEFT", VigorBar, "TOPLEFT", 0, 0)
+	else
+		VigorBar[i]:SetPoint("TOPLEFT", VigorBar[i-1], "TOPRIGHT", 1, 0)
+	end
+	VigorBar[i]:SetStatusBarTexture(C.media.texture)
+	VigorBar[i]:SetMinMaxValues(0, 100)
+	VigorBar[i]:SetStatusBarColor(0.2, 0.58, 0.8)
+
+	VigorBar[i].bg = VigorBar[i]:CreateTexture(nil, "BORDER")
+	VigorBar[i].bg:SetAllPoints()
+	VigorBar[i].bg:SetTexture(C.media.texture)
+	VigorBar[i].bg:SetVertexColor(0.2, 0.58, 0.8, 0.2)
+
+	VigorBar[i]:SetValue(0)
+end
+
+local function SkinVigorBar(widget)
+	VigorBar:Show()
+	local widgetInfo = C_UIWidgetManager.GetFillUpFramesWidgetVisualizationInfo(4460)
+	local total = widgetInfo.numTotalFrames
+	for i = 1, total do
+		local value = 0
+
+		if widgetInfo.numFullFrames >= i then
+			value = widgetInfo.fillMax
+		elseif widgetInfo.numFullFrames + 1 == i then
+			value = widgetInfo.fillValue
+		else
+			value = widgetInfo.fillMin
+		end
+		VigorBar[i]:SetValue(value)
+	end
+
+	if total ~= 6 then
+		for i = total + 1, 6 do
+			VigorBar[i]:Hide()
+			VigorBar[i]:SetValue(0)
+		end
+
+		local spacing = select(4, VigorBar[6]:GetPoint())
+		local w = VigorBar:GetWidth()
+		local s = 0
+
+		for i = 1, total do
+			VigorBar[i]:Show()
+			if i ~= total then
+				VigorBar[i]:SetWidth(w / total - spacing)
+				s = s + (w / total)
+			else
+				VigorBar[i]:SetWidth(w - s)
+			end
+		end
+	end
+
+	widget:SetAlpha(0)
+
+	if not widget.hook then
+		hooksecurefunc(widget, "Hide", function(self)
+			VigorBar:Hide()
+		end)
+		widget.hook = true
+	end
+end
+
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("UPDATE_UI_WIDGET")
 frame:RegisterEvent("UPDATE_ALL_UI_WIDGETS")
@@ -203,6 +278,12 @@ frame:SetScript("OnEvent", function()
 	for _, widget in pairs(UIWidgetBelowMinimapContainerFrame.widgetFrames) do
 		if widget.widgetType == Enum.UIWidgetVisualizationType.CaptureBar then
 			SkinCaptureBar(widget)
+		end
+	end
+
+	for _, widget in pairs(UIWidgetPowerBarContainerFrame.widgetFrames) do
+		if widget.widgetID == 4460 then
+			SkinVigorBar(widget)
 		end
 	end
 end)
