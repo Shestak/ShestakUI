@@ -5,6 +5,7 @@ if C.trade.disenchanting ~= true then return end
 --	One-click Milling, Prospecting and Disenchanting(Molinari by p3lim)
 ----------------------------------------------------------------------------------------
 local button = CreateFrame("Button", "OneClickMPD", UIParent, "SecureActionButtonTemplate, AutoCastShineTemplate")
+button:RegisterForClicks("AnyUp", "AnyDown")
 button:SetScript("OnEvent", function(self, event, ...) self[event](self, ...) end)
 button:RegisterEvent("PLAYER_LOGIN")
 

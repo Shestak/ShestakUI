@@ -123,6 +123,7 @@ end
 local function UpdateTab(object, name, rank, texture, hat)
 	local index = tabs[object].index + 1
 	local tab = tabs[object][index] or CreateFrame("CheckButton", "ProTabs"..tabs[object].index, object, "SpellBookSkillLineTabTemplate, SecureActionButtonTemplate")
+	tab:RegisterForClicks("LeftButtonUp", "LeftButtonDown")
 
 	tab:ClearAllPoints()
 
