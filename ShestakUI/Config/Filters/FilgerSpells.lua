@@ -3244,9 +3244,38 @@ do
 	tinsert(T.CustomFilgerSpell, {"COOLDOWN", {slotID = 13, filter = "CD"}})
 	tinsert(T.CustomFilgerSpell, {"COOLDOWN", {slotID = 14, filter = "CD"}})
 
-	-- Shard of Domination [9.1]
-	-- Soul Fragment
-	tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 356042, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
-	-- Chaos Bane
-	tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 356043, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
+	local strengthClass = {
+		["DEATHKNIGHT"] = true,
+		["PALADIN"] = true,
+		["WARRIOR"] = true,
+	}
+
+	local agilityClass = {
+		["DEMONHUNTER"] = true,
+		["DRUID"] = true,
+		["HUNTER"] = true,
+		["MONK"] = true,
+		["ROGUE"] = true,
+		["SHAMAN"] = true,
+	}
+
+	local intellectClass = {
+		["DRUID"] = true,
+		["EVOKER"] = true,
+		["MAGE"] = true,
+		["MONK"] = true,
+		["PALADIN"] = true,
+		["PRIEST"] = true,
+		["SHAMAN"] = true,
+		["WARLOCK"] = true,
+	}
+
+	-- Trinkets
+	-- Strength classes
+	if strengthClass[T.class] then
+		-- Bound by Fire and Blaze [Blazebinder's Hoof]
+		tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 383926, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
+		-- Bonemaw's Big Toe [Bonemaw's Big Toe]
+		tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 397400, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
+	end
 end
