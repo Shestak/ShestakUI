@@ -200,7 +200,10 @@ end
 ----------------------------------------------------------------------------------------
 --	Easy delete good items
 ----------------------------------------------------------------------------------------
-hooksecurefunc(StaticPopupDialogs["DELETE_GOOD_ITEM"], "OnShow", function(s) s.editBox:SetText(DELETE_ITEM_CONFIRM_STRING) s.editBox:SetAutoFocus(false) s.editBox:ClearFocus() end)
+local deleteDialog = StaticPopupDialogs["DELETE_GOOD_ITEM"]
+if deleteDialog.OnShow then
+	hooksecurefunc(deleteDialog, "OnShow", function(s) s.editBox:SetText(DELETE_ITEM_CONFIRM_STRING) s.editBox:SetAutoFocus(false) s.editBox:ClearFocus() end)
+end
 
 ----------------------------------------------------------------------------------------
 --	Change UIErrorsFrame strata
