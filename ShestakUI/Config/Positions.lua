@@ -42,8 +42,8 @@ C["position"] = {
 	-- ActionBar positions
 	["bottom_bars"] = {"BOTTOM", UIParent, "BOTTOM", 0, 8},							-- Bottom bars
 	["right_bars"] = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 330},			-- Right bars
-	["pet_horizontal"] = {"BOTTOMRIGHT", ActionButton1, "TOPLEFT", -7, 134},		-- Horizontal pet bar
-	["stance_bar"] = {"BOTTOMRIGHT", ActionButton1, "TOPLEFT", -7, 134},			-- Stance bar
+	["pet_horizontal"] = {"TOPRIGHT", "ActionBarAnchor", "TOPLEFT", -7, 102},		-- Horizontal pet bar
+	["stance_bar"] = {"TOPRIGHT", "ActionBarAnchor", "TOPLEFT", -7, 102},			-- Stance bar
 	["vehicle_bar"] = {"BOTTOMRIGHT", ActionButton1, "BOTTOMLEFT", -3, 0},			-- Vehicle button
 	["micro_menu"] = {"TOPLEFT", UIParent, "TOPLEFT", 2, -2},						-- Micro menu
 	-- UnitFrame positions
