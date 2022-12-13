@@ -159,8 +159,13 @@ local function StyleSmallButton(normal, button, icon, name, pet)
 	if not button.isSkinned then
 		local flash = _G[name.."Flash"]
 		local hotkey = _G[name.."HotKey"]
+		local normal = _G[name.."NormalTexture"]
 
 		button:SetNormalTexture(0)
+
+		if normal then
+			normal:SetAlpha(0)
+		end
 
 		if button.IconMask then
 			button.IconMask:Hide()
