@@ -93,44 +93,76 @@ end
 
 
 if C.announcements.bad_gear == true then
+	local badRings = {
+		[40585] = true,		-- Signet of the Kirin Tor
+		[40586] = true,		-- Band of the Kirin Tor
+		[44934] = true,		-- Loop of the Kirin Tor
+		[44935] = true,		-- Ring of the Kirin Tor
+		[45688] = true,		-- Inscribed Band of the Kirin Tor
+		[45689] = true,		-- Inscribed Loop of the Kirin Tor
+		[45690] = true,		-- Inscribed Ring of the Kirin Tor
+		[45691] = true,		-- Inscribed Signet of the Kirin Tor
+		[48954] = true,		-- Etched Band of the Kirin Tor
+		[48955] = true,		-- Etched Loop of the Kirin Tor
+		[48956] = true,		-- Etched Ring of the Kirin Tor
+		[48957] = true,		-- Etched Signet of the Kirin Tor
+		[51557] = true,		-- Runed Signet of the Kirin Tor
+		[51558] = true,		-- Runed Loop of the Kirin Tor
+		[51559] = true,		-- Runed Ring of the Kirin Tor
+		[51560] = true,		-- Runed Band of the Kirin Tor
+		[95050] = true,		-- Brassiest Knuckle (Horde)
+		[95051] = true,		-- Brassiest Knuckle (Alliance)
+		[118907] = true,	-- Pit Fighter's Punching Ring (Alliance)
+		[118908] = true,	-- Pit Fighter's Punching Ring (Horde)
+		[139599] = true,	-- Empowered Ring of the Kirin Tor (new Dalaran)
+		[142469] = true,	-- Violet Seal of the Grand Magus
+		[144391] = true,	-- Pugilist's Powerful Punching Ring (Alliance)
+		[144392] = true,	-- Pugilist's Powerful Punching Ring (Horde)
+		[166559] = true,	-- Commander's Signet of Battle
+		[166560] = true,	-- Captain's Signet of Command
+	}
+
 	T.AnnounceBadGear = {
 		-- Head
 		[1] = {
-			88710,	-- Nat's Hat
-			33820,	-- Weather-Beaten Fishing Hat
-			19972,	-- Lucky Fishing Hat
+			[88710] = true,		-- Nat's Hat
+			[33820] = true,		-- Weather-Beaten Fishing Hat
+			[19972] = true,		-- Lucky Fishing Hat
 		},
 		-- Neck
 		[2] = {
-			32757,	-- Blessed Medallion of Karabor
+			[32757] = true,		-- Blessed Medallion of Karabor
 		},
 		-- Feet
 		[8] = {
-			50287,	-- Boots of the Bay
-			19969,	-- Nat Pagle's Extreme Anglin' Boots
+			[50287] = true,		-- Boots of the Bay
+			[19969] = true,		-- Nat Pagle's Extreme Anglin' Boots
 		},
+		-- Rings
+		[11] = badRings,
+		[12] = badRings,
 		-- Back
 		[15] = {
-			65360,	-- Cloak of Coordination (Alliance)
-			65274,	-- Cloak of Coordination (Horde)
+			[65360] = true,		-- Cloak of Coordination (Alliance)
+			[65274] = true,		-- Cloak of Coordination (Horde)
 		},
 		-- Main-Hand
 		[16] = {
-			180136,	-- The Brokers Angle'r
-			133755,	-- Underlight Angler
-			44050,	-- Mastercraft Kalu'ak Fishing Pole
-			19970,	-- Arcanite Fishing Pole
-			84660,	-- Pandaren Fishing Pole
-			84661,	-- Dragon Fishing Pole
-			45992,	-- Jeweled Fishing Pole
-			45991,	-- Bone Fishing Pole
-			116826,	-- Draenic Fishing Pole
-			116825,	-- Savage Fishing Pole
-			86559,	-- Frying Pan
+			[180136] = true,	-- The Brokers Angle'r
+			[133755] = true,	-- Underlight Angler
+			[44050] = true,		-- Mastercraft Kalu'ak Fishing Pole
+			[19970] = true,		-- Arcanite Fishing Pole
+			[84660] = true,		-- Pandaren Fishing Pole
+			[84661] = true,		-- Dragon Fishing Pole
+			[45992] = true,		-- Jeweled Fishing Pole
+			[45991] = true,		-- Bone Fishing Pole
+			[116826] = true,	-- Draenic Fishing Pole
+			[116825] = true,	-- Savage Fishing Pole
+			[86559] = true,		-- Frying Pan
 		},
 		-- Off-hand
 		[17] = {
-			86558,	-- Rolling Pin
+			[86558] = true,		-- Rolling Pin
 		},
 	}
 end
