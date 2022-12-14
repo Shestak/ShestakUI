@@ -12,7 +12,7 @@ local staminabuffs = T.ReminderBuffs["Stamina"]
 local versbuffs = T.ReminderBuffs["Vers"]
 local reducebuffs = T.ReminderBuffs["Reduce"]
 local custombuffs = T.ReminderBuffs["Custom"]
-local visible, flask, battleelixir, guardianelixir, food, stamina, vers, spell4, reduce, custom, weapon, armor
+local visible, flask, battleelixir, guardianelixir, food, stamina, vers, spell4, reduce, custom, weapon
 local playerBuff = {}
 local icons = {}
 local UpdatePositions
@@ -78,43 +78,6 @@ local function CheckWeaponBuff()
 	end
 end
 
-local KitPattern = "(.+) %(%d+ .+%)$"
-if T.client == "zhTW" then
-	KitPattern = "%(%+%d+.+"
-elseif T.client == "zhCN" then
-	KitPattern = "%（%+%d+ .+"
-elseif T.client == "koKR" then
-	KitPattern = "%(.+ %+%d+%)"
-end
-
-local function CheckArmorBuff()
-	local armorBuff = false
-	local data = C_TooltipInfo.GetInventoryItem("player", 5)
-	if data then
-		for i = 2, #data.lines do
-			local lineData = data.lines[i]
-			local argVal = lineData and lineData.args
-			if argVal then
-				local text = argVal[2] and argVal[2].stringVal
-				local found = text and strfind(text, KitPattern)
-				if found then
-					armorBuff = true
-					break
-				end
-			end
-		end
-	end
-
-	if armorBuff == true then
-		ArmorFrame:SetAlpha(C.reminder.raid_buffs_alpha)
-		armor = true
-		return
-	else
-		ArmorFrame:SetAlpha(1)
-		armor = false
-	end
-end
-
 local function OnAuraChange(_, event, arg1)
 	if (event == "UNIT_AURA" or event == "UNIT_INVENTORY_CHANGED") and arg1 ~= "player" then return end
 
@@ -165,13 +128,8 @@ local function OnAuraChange(_, event, arg1)
 	end
 
 	do
-		WeaponFrame.t:SetTexture(463543)
+		WeaponFrame.t:SetTexture(135250)
 		CheckWeaponBuff()
-	end
-
-	do
-		ArmorFrame.t:SetTexture(3528447)
-		CheckArmorBuff()
 	end
 
 	for i = 1, #staminabuffs do
@@ -259,7 +217,7 @@ local function OnAuraChange(_, event, arg1)
 	if (not IsInGroup() or instanceType ~= "raid") and C.reminder.raid_buffs_always == false then
 		RaidBuffReminder:SetAlpha(0)
 		visible = false
-	elseif flask == true and food == true and stamina == true and spell4 == true and custom == true and weapon == true and armor == true and vers == true and reduce == true then
+	elseif flask == true and food == true and stamina == true and spell4 == true and custom == true and weapon == true and vers == true and reduce == true then
 		if not visible then
 			RaidBuffReminder:SetAlpha(0)
 			visible = false
@@ -298,7 +256,6 @@ local buffButtons = {
 	"FlaskFrame",
 	"FoodFrame",
 	"WeaponFrame",
-	"ArmorFrame",
 	"StaminaFrame",
 	"VersFrame",
 	"Spell4Frame",
