@@ -60,7 +60,7 @@ end)
 
 hooksecurefunc(PetActionButton10, "SetPoint", function(_, _, anchor)
 	if InCombatLockdown() then return end
-	if anchor == PetActionBar then
+	if anchor and anchor == PetActionBar then
 		for i = 1, 10 do
 			local button = _G["PetActionButton"..i]
 			button:ClearAllPoints()

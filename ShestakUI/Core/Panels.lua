@@ -89,6 +89,7 @@ else
 end
 
 StanceAnchor:RegisterEvent("PLAYER_LOGIN")
+StanceAnchor:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
 StanceAnchor:SetScript("OnEvent", function()
 	local forms = GetNumShapeshiftForms()
 	if forms > 0 then
@@ -98,7 +99,10 @@ StanceAnchor:SetScript("OnEvent", function()
 			StanceAnchor:SetHeight((C.actionbar.button_size * forms) + (C.actionbar.button_space * (forms - 1)))
 		end
 	end
-	RegisterStateDriver(StanceAnchor, "visibility", GetNumShapeshiftForms() == 0 and "hide" or "show")
+	if not StanceAnchor.hook then
+		RegisterStateDriver(StanceAnchor, "visibility", GetNumShapeshiftForms() == 0 and "hide" or "show")
+		StanceAnchor.hook = true
+	end
 end)
 
 ----------------------------------------------------------------------------------------
