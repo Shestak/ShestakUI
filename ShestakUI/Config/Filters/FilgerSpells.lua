@@ -3244,31 +3244,11 @@ do
 	tinsert(T.CustomFilgerSpell, {"COOLDOWN", {slotID = 13, filter = "CD"}})
 	tinsert(T.CustomFilgerSpell, {"COOLDOWN", {slotID = 14, filter = "CD"}})
 
-	local strengthClass = {
-		["DEATHKNIGHT"] = true,
-		["PALADIN"] = true,
-		["WARRIOR"] = true,
-	}
-
-	local agilityClass = {
-		["DEMONHUNTER"] = true,
-		["DRUID"] = true,
-		["HUNTER"] = true,
-		["MONK"] = true,
-		["ROGUE"] = true,
-		["SHAMAN"] = true,
-	}
-
-	local intellectClass = {
-		["DRUID"] = true,
-		["EVOKER"] = true,
-		["MAGE"] = true,
-		["MONK"] = true,
-		["PALADIN"] = true,
-		["PRIEST"] = true,
-		["SHAMAN"] = true,
-		["WARLOCK"] = true,
-	}
+	local isTank = {["DEATHKNIGHT"] = true, ["DEMONHUNTER"] = true, ["DRUID"] = true, ["MONK"] = true, ["PALADIN"] = true, ["WARRIOR"] = true}
+	local isHealer = {["DRUID"] = true, ["EVOKER"] = true, ["MONK"] = true, ["PALADIN"] = true, ["PRIEST"] = true, ["SHAMAN"] = true}
+	local strengthClass = {["DEATHKNIGHT"] = true, ["PALADIN"] = true, ["WARRIOR"] = true}
+	local agilityClass = {["DEMONHUNTER"] = true, ["DRUID"] = true, ["HUNTER"] = true, ["MONK"] = true, ["ROGUE"] = true, ["SHAMAN"] = true}
+	local intellectClass = {["DRUID"] = true, ["EVOKER"] = true, ["MAGE"] = true, ["MONK"] = true, ["PALADIN"] = true, ["PRIEST"] = true, ["SHAMAN"] = true, ["WARLOCK"] = true}
 
 	-- Trinkets
 	-- Strength classes
@@ -3278,4 +3258,16 @@ do
 		-- Bonemaw's Big Toe [Bonemaw's Big Toe]
 		tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 397400, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
 	end
+
+	if isHealer[T.class] then
+		-- Broodkeeper's Promise
+		tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 377462, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
+		-- Voidmender's Shadowgem
+		tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 397399, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
+	end
+
+	-- Whispering Incarnate Icon
+	tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 377452, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
+	-- Valarjar's Path [Horn of Valor]
+	tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 215956, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
 end
