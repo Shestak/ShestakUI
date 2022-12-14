@@ -431,7 +431,7 @@ end
 if C.raidframe.layout == "AUTO" then
 	local function CheckSpec(self, event, unit)
 		if event == "PLAYER_SPECIALIZATION_CHANGED" and unit ~= "player" then return end
-		if (T.class == "DRUID" and GetSpecialization() == 4) or (T.class == "MONK" and GetSpecialization() == 2) or (T.class == "PALADIN" and GetSpecialization() == 1) or (T.class == "PRIEST" and GetSpecialization() ~= 3) or (T.class == "SHAMAN" and GetSpecialization() == 3) then
+		if T.IsHealerSpec() then
 			-- Disable DPS
 			for _, party in pairs({oUF_PartyDPS, oUF_PartyTargetDPS, oUF_PartyPetDPS}) do
 				party:SetAttribute("showSolo", false)
