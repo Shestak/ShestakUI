@@ -58,6 +58,30 @@ bar:SetScript("OnEvent", function(self, event, arg1)
 	end
 end)
 
+hooksecurefunc(PetActionButton10, "SetPoint", function(_, _, anchor)
+	if InCombatLockdown() then return end
+	if anchor == PetActionBar then
+		for i = 1, 10 do
+			local button = _G["PetActionButton"..i]
+			button:ClearAllPoints()
+			if i == 1 then
+				if C.actionbar.petbar_horizontal == true then
+					button:SetPoint("BOTTOMLEFT", 0, 0)
+				else
+					button:SetPoint("TOPLEFT", 0, 0)
+				end
+			else
+				local previous = _G["PetActionButton"..i-1]
+				if C.actionbar.petbar_horizontal == true then
+					button:SetPoint("LEFT", previous, "RIGHT", C.actionbar.button_space, 0)
+				else
+					button:SetPoint("TOP", previous, "BOTTOM", 0, -C.actionbar.button_space)
+				end
+			end
+		end
+	end
+end)
+
 -- Mouseover bar
 if C.actionbar.rightbars_mouseover == true and C.actionbar.petbar_horizontal == false then
 	PetActionBarAnchor:SetAlpha(0)
