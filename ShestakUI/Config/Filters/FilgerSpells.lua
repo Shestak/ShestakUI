@@ -2383,6 +2383,12 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", SPECIAL_P_BUFF_ICON_Anchor},
 
+			-- Potions: Power
+			-- Elemental Potion of Power
+			{spellID = 371024, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Elemental Potion of Ultimate Power
+			{spellID = 371028, unitID = "player", caster = "player", filter = "BUFF"},
+
 			-- Potions: Miscellaneous
 			-- Invisible [Potion of the Hidden Spirit]
 			{spellID = 307195, unitID = "player", caster = "player", filter = "BUFF", absID = true},
@@ -3251,12 +3257,30 @@ do
 	local intellectClass = {["DRUID"] = true, ["EVOKER"] = true, ["MAGE"] = true, ["MONK"] = true, ["PALADIN"] = true, ["PRIEST"] = true, ["SHAMAN"] = true, ["WARLOCK"] = true}
 
 	-- Trinkets
-	-- Strength classes
 	if strengthClass[T.class] then
 		-- Bound by Fire and Blaze [Blazebinder's Hoof]
 		tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 383926, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
-		-- Bonemaw's Big Toe [Bonemaw's Big Toe]
+		-- Bonemaw's Big Toe
 		tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 397400, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
+	end
+
+	if agilityClass[T.class] then
+		-- Bottle of Spiraling Winds
+		tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 383751, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
+		-- Windswept Pages
+		tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 126483, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
+	end
+
+	if agilityClass[T.class] or strengthClass[T.class] then
+		-- Scent of Blood [Hunger of the Pack]
+		tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 213888, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
+		-- Algeth'ar Puzzle
+		tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 383781, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
+	end
+
+	if intellectClass[T.class] then
+		-- Power Theft
+		tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 382126, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
 	end
 
 	if isHealer[T.class] then
@@ -3266,6 +3290,8 @@ do
 		tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 397399, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
 	end
 
+	-- Crumbling Power [Irideus Fragment]
+	tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 383941, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
 	-- Whispering Incarnate Icon
 	tinsert(T.CustomFilgerSpell, {"P_PROC_ICON", {spellID = 377452, unitID = "player", caster = "all", filter = "BUFF", absID = true}})
 	-- Valarjar's Path [Horn of Valor]
