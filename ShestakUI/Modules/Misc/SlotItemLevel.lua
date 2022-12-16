@@ -96,9 +96,11 @@ local function _updateItems(unit, frame)
 
 				if gem1 and gem1 ~= "" then
 					numGem = numGem + 1
-				elseif gem2 and gem2 ~= "" then
+				end
+				if gem2 and gem2 ~= "" then
 					numGem = numGem + 1
-				elseif gem3 and gem3 ~= "" then
+				end
+				if gem3 and gem3 ~= "" then
 					numGem = numGem + 1
 				end
 				if numGem < numSocket then
