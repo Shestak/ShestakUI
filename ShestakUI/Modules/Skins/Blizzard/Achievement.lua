@@ -185,6 +185,10 @@ local function LoadSkin()
 				T.SkinCheckBox(child.Tracked)
 				child.Tracked:SetSize(20, 20)
 				child.Check:SetAlpha(0)
+				child.Tracked:ClearAllPoints()
+				child.Tracked:SetPoint("BOTTOMLEFT", child, "BOTTOMLEFT", 7, 2)
+				child.Tracked.ClearAllPoints = T.dummy
+				child.Tracked.SetPoint = T.dummy
 
 				hooksecurefunc(child, "UpdatePlusMinusTexture", function (button)
 					if button.DateCompleted:IsShown() then
