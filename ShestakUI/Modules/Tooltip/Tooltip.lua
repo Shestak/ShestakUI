@@ -456,6 +456,25 @@ hooksecurefunc("SetTooltipMoney", function()
 			_G["ShoppingTooltip1MoneyFrame"..i.."CopperButton"]:SetNormalFontObject("GameTooltipText")
 		end
 	end
+
+	-- Custom tooltip from MultiItemRef.lua
+	if _G["ItemRefTooltipMoneyFrame1"] then
+		_G["ItemRefTooltipMoneyFrame1PrefixText"]:SetFontObject("GameTooltipText")
+		_G["ItemRefTooltipMoneyFrame1SuffixText"]:SetFontObject("GameTooltipText")
+		_G["ItemRefTooltipMoneyFrame1GoldButton"]:SetNormalFontObject("GameTooltipText")
+		_G["ItemRefTooltipMoneyFrame1SilverButton"]:SetNormalFontObject("GameTooltipText")
+		_G["ItemRefTooltipMoneyFrame1CopperButton"]:SetNormalFontObject("GameTooltipText")
+	end
+
+	for i = 2, 4 do
+		if _G["ItemRefTooltip"..i.."MoneyFrame1"] then
+			_G["ItemRefTooltip"..i.."MoneyFrame1PrefixText"]:SetFontObject("GameTooltipText")
+			_G["ItemRefTooltip"..i.."MoneyFrame1SuffixText"]:SetFontObject("GameTooltipText")
+			_G["ItemRefTooltip"..i.."MoneyFrame1GoldButton"]:SetNormalFontObject("GameTooltipText")
+			_G["ItemRefTooltip"..i.."MoneyFrame1SilverButton"]:SetNormalFontObject("GameTooltipText")
+			_G["ItemRefTooltip"..i.."MoneyFrame1CopperButton"]:SetNormalFontObject("GameTooltipText")
+		end
+	end
 end)
 
 ----------------------------------------------------------------------------------------
