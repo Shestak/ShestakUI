@@ -225,7 +225,7 @@ function button:PLAYER_LOGIN()
 			end
 
 			local bag, slot = GetMouseFocus():GetParent(), GetMouseFocus()
-			if spell and GetContainerItemLink(bag:GetID(), slot:GetID()) == link then
+			if spell and C_Container.GetContainerItemLink(bag:GetID(), slot:GetID()) == link then
 				button:SetAttribute("macrotext", string.format("/cast %s\n/use %s %s", spell, bag:GetID(), slot:GetID()))
 				button:SetAllPoints(slot)
 				button:Show()

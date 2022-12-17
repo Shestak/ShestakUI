@@ -7,7 +7,7 @@ local update = function(self)
 	if BankFrame:IsShown() then
 		for i = 1, NUM_BANKGENERIC_SLOTS or 28 do
 			local slotFrame = _G["BankFrameItem"..i]
-			local slotLink = GetContainerItemLink(-1, i)
+			local slotLink = C_Container.GetContainerItemLink(-1, i)
 
 			self:CallFilters("bank", slotFrame, _E and slotLink)
 		end

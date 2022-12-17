@@ -246,14 +246,6 @@ hooksecurefunc("UseInventoryItem", function(slot)
 	end
 end)
 
-hooksecurefunc("UseContainerItem", function(bag, slot)
-	local itemID = GetContainerItemID(bag, slot)
-	if itemID then
-		local texture = select(10, GetItemInfo(itemID))
-		watching[itemID] = {GetTime(), "item", texture}
-	end
-end)
-
 SlashCmdList.PulseCD = function()
 	tinsert(animating, {GetSpellTexture(87214)})
 	if C.pulsecooldown.sound == true then

@@ -12,7 +12,7 @@
 	-- for i = 1, size do
 		-- local bid = size - i + 1
 		-- local slotFrame = _G[name.."Item"..bid]
-		-- local slotLink = GetContainerItemLink(id, i)
+		-- local slotLink = C_Container.GetContainerItemLink(id, i)
 
 		-- oGlow:CallFilters("bags", slotFrame, _E and slotLink)
 	-- end

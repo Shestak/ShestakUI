@@ -444,7 +444,6 @@ T.ShiftBarUpdate = function()
 			CooldownFrame_Set(cooldown, start, duration, enable)
 
 			if isActive then
-				--BETA StanceBar.lastSelected = button:GetID()
 				button:SetChecked(true)
 			else
 				button:SetChecked(false)

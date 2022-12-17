@@ -296,8 +296,8 @@ function stArch:updateArtifact(index)
 		artifact["canSolve"] = CanSolveArtifact()
 
 		for i = 0, 4 do
-			for j = 1, GetContainerNumSlots(i) do
-				local slotID = GetContainerItemID(i, j)
+			for j = 1, C_Container.GetContainerNumSlots(i) do
+				local slotID = C_Container.GetContainerItemID(i, j)
 				if slotID == artifact["keyID"] then
 					local _, count = GetContainerItemInfo(i, j)
 					if artifact["numKeystones"] < artifact["numKeysockets"] then

@@ -8,7 +8,7 @@ local getID = function(loc)
 	if not bags then
 		return GetInventoryItemLink("player", slot)
 	else
-		return GetContainerItemLink(bag, slot)
+		return C_Container.GetContainerItemLink(bag, slot)
 	end
 end
 

@@ -275,7 +275,7 @@ local function SetupFlyoutLevel(button, bag, slot)
 
 	local link, level
 	if bag then
-		link = GetContainerItemLink(bag, slot)
+		link = C_Container.GetContainerItemLink(bag, slot)
 		level = _getRealItemLevel(link, bag, slot)
 	else
 		link = GetInventoryItemLink("player", slot)
