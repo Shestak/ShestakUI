@@ -17,7 +17,6 @@ MultiBarBottomLeft:SetParent(bar)
 
 bar:RegisterEvent("PLAYER_ENTERING_WORLD")
 bar:SetScript("OnEvent", function(self, event)
-	-- self:UnregisterAllEvents()
 	local NumPerRows = C.actionbar.bar2_row
 	local NextRowButtonAnchor = _G["MultiBarBottomLeftButton1"]
 	for i = 1, 12 do
@@ -46,7 +45,6 @@ bar:SetScript("OnEvent", function(self, event)
 				b:SetPoint("LEFT", b2, "RIGHT", T.Scale(C.actionbar.button_space), 0)
 			end
 		end
-		-- b.SetPoint = T.dummy -- Prevent moving by EditMode
 	end
 end)
 
