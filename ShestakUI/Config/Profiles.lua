@@ -279,10 +279,10 @@ if IsWetxius then
 			PTR_IssueReporter:SetAlpha(0)
 			PTR_IssueReporter:SetScale(0.001)
 		end
+		SetCVar("lootUnderMouse", 1)
 	end)
 
 	T.CustomFilgerSpell = {
-		{"P_PROC_ICON", {spellID = 328908, unitID = "player", caster = "player", filter = "BUFF"}}, -- Combat Meditation {Kyrian)
 		{"P_PROC_ICON", {spellID = 26573, filter = "ICD", trigger = "NONE", totem = true}}, 		-- Consecration
 	}
 end
