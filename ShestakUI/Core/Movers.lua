@@ -38,10 +38,16 @@ T.MoverFrames = {
 	T_DE_BUFF_BAR_Anchor,
 	SplitBarLeft,
 	SplitBarRight,
-	Bar7Holder,
-	Bar8Holder,
 	UIWidgetPowerBarAnchor
 }
+
+if C.actionbar.bar7_enable then
+	tinsert(T.MoverFrames, Bar7Holder)
+end
+
+if C.actionbar.bar8_enable then
+	tinsert(T.MoverFrames, Bar8Holder)
+end
 
 if C.actionbar.editor then
 	tinsert(T.MoverFrames, Bar1Holder)
