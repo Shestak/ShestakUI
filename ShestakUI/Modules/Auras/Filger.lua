@@ -409,7 +409,7 @@ function Filger:OnEvent(event, unit, _, castID)
 						start, duration = GetInventoryItemCooldown("player", data.slotID)
 					end
 				end
-				if name and (duration or 0) > 1.5 then
+				if name and (duration or 0) > 1.5 and duration < 900 then
 					if not (T.class == "DEATHKNIGHT" and data.filter == "CD" and duration < 10) then -- Filter rune cd
 						self.actives[spid] = {data = data, name = name, icon = icon, count = nil, start = start, duration = duration, spid = spid, sort = data.sort}
 					end
