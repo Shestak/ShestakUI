@@ -59,6 +59,7 @@ local function LoadSkin()
 	SchematicForm.Background:SetInside(SchematicForm, 4, 4)
 
 	T.SkinCheckBox(SchematicForm.TrackRecipeCheckBox, 24)
+	T.SkinCheckBox(SchematicForm.AllocateBestQualityCheckBox, 24)
 
 	local OutputIcon = SchematicForm.OutputIcon
 	if OutputIcon then
