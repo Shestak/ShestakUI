@@ -83,6 +83,7 @@ local function Copy(cf)
 	text = text:gsub("|T[^\\]+\\[^\\]+\\[Uu][Ii]%-[Rr][Aa][Ii][Dd][Tt][Aa][Rr][Gg][Ee][Tt][Ii][Nn][Gg][Ii][Cc][Oo][Nn]_(%d)[^|]+|t", "{rt%1}")
 	text = text:gsub("|T13700([1-8])[^|]+|t", "{rt%1}")
 	text = text:gsub("|T[^|]+|t", "")
+	text = text:gsub("|A[^|]+|a", "")
 	if frame:IsShown() then frame:Hide() return end
 	frame:Show()
 	editBox:SetText(text)
