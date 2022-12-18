@@ -371,76 +371,59 @@ end
 --	Show grid function
 ----------------------------------------------------------------------------------------
 if not C.actionbar.show_grid then
+	local allButtons = {}
+	for i = 1, 12 do
+		local button = _G[format("ActionButton%d", i)]
+		tinsert(allButtons, button)
+
+		local button = _G[format("MultiBarRightButton%d", i)]
+		tinsert(allButtons, button)
+
+		button = _G[format("MultiBarBottomRightButton%d", i)]
+		tinsert(allButtons, button)
+
+		button = _G[format("MultiBarLeftButton%d", i)]
+		tinsert(allButtons, button)
+
+		button = _G[format("MultiBarBottomLeftButton%d", i)]
+		tinsert(allButtons, button)
+
+		button = _G[format("MultiBar5Button%d", i)]
+		tinsert(allButtons, button)
+
+		button = _G[format("MultiBar6Button%d", i)]
+		tinsert(allButtons, button)
+
+		button = _G[format("MultiBar7Button%d", i)]
+		tinsert(allButtons, button)
+	end
+
 	local frame = CreateFrame("Frame")
 	frame:RegisterEvent("ACTIONBAR_SHOWGRID")
 	frame:RegisterEvent("ACTIONBAR_HIDEGRID")
 	frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+	frame:RegisterEvent("ACTIONBAR_PAGE_CHANGED")
+	frame:RegisterEvent("ACTIONBAR_UPDATE_STATE")
+	frame:RegisterEvent("UPDATE_VEHICLE_ACTIONBAR")
 	frame:SetScript("OnEvent", function(self, event)
 		if event == "ACTIONBAR_SHOWGRID" then
-			for i = 1, 12 do
-				local button = _G[format("ActionButton%d", i)]
-				button:SetAlpha(1)
-
-				local button = _G[format("MultiBarRightButton%d", i)]
-				button:SetAlpha(1)
-
-				button = _G[format("MultiBarBottomRightButton%d", i)]
-				button:SetAlpha(1)
-
-				button = _G[format("MultiBarLeftButton%d", i)]
-				button:SetAlpha(1)
-
-				button = _G[format("MultiBarBottomLeftButton%d", i)]
-				button:SetAlpha(1)
-
-				button = _G[format("MultiBar5Button%d", i)]
-				button:SetAlpha(1)
-
-				button = _G[format("MultiBar6Button%d", i)]
-				button:SetAlpha(1)
-
-				button = _G[format("MultiBar7Button%d", i)]
-				button:SetAlpha(1)
+			for i = 1, #allButtons do
+				allButtons[i]:SetAlpha(1)
 			end
+		elseif event == "ACTIONBAR_PAGE_CHANGED" or event == "ACTIONBAR_UPDATE_STATE" or event == "UPDATE_VEHICLE_ACTIONBAR" then
+			C_Timer.After(0.02, function()
+				for i = 1, #allButtons do
+					local button = allButtons[i]
+					button:SetAlpha(1)
+					if not button:HasAction() then
+						button:SetAlpha(0)
+					end
+				end
+			end)
 		else
 			C_Timer.After(0.05, function()
-				for i = 1, 12 do
-					local button = _G[format("ActionButton%d", i)]
-					if not button:HasAction() then
-						button:SetAlpha(0)
-					end
-
-					local button = _G[format("MultiBarRightButton%d", i)]
-					if not button:HasAction() then
-						button:SetAlpha(0)
-					end
-
-					button = _G[format("MultiBarBottomRightButton%d", i)]
-					if not button:HasAction() then
-						button:SetAlpha(0)
-					end
-
-					button = _G[format("MultiBarLeftButton%d", i)]
-					if not button:HasAction() then
-						button:SetAlpha(0)
-					end
-
-					button = _G[format("MultiBarBottomLeftButton%d", i)]
-					if not button:HasAction() then
-						button:SetAlpha(0)
-					end
-
-					button = _G[format("MultiBar5Button%d", i)]
-					if not button:HasAction() then
-						button:SetAlpha(0)
-					end
-
-					button = _G[format("MultiBar6Button%d", i)]
-					if not button:HasAction() then
-						button:SetAlpha(0)
-					end
-
-					button = _G[format("MultiBar7Button%d", i)]
+				for i = 1, #allButtons do
+					local button = allButtons[i]
 					if not button:HasAction() then
 						button:SetAlpha(0)
 					end
