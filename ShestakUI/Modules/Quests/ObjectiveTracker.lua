@@ -479,10 +479,10 @@ ChallengeBlock.backdrop:SetPoint("BOTTOMRIGHT", ChallengeBlock, -6, 3)
 ChallengeBlock.backdrop.overlay:SetVertexColor(0.12, 0.12, 0.12, 1)
 
 local bg = select(3, ChallengeBlock:GetRegions())
-bg:Hide()
+bg:SetAlpha(0)
 
-ChallengeBlock.TimerBGBack:Hide()
-ChallengeBlock.TimerBG:Hide()
+ChallengeBlock.TimerBGBack:SetAlpha(0)
+ChallengeBlock.TimerBG:SetAlpha(0)
 
 ChallengeBlock.StatusBar:SetStatusBarTexture(C.media.texture)
 ChallengeBlock.StatusBar:CreateBackdrop("Overlay")
