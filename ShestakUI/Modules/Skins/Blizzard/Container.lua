@@ -35,6 +35,7 @@ local function LoadSkin()
 	-- ContainerFrameCombinedBags.SetPoint = T.dummy
 
 	ContainerFrameCombinedBags.MoneyFrame.Border:Hide()
+	ContainerFrame1MoneyFrame.Border:Hide()
 
 	ContainerFrameCombinedBagsPortrait:SetAlpha(0)
 	ContainerFrameCombinedBagsPortraitButton.Highlight:SetAlpha(0)
@@ -54,13 +55,14 @@ local function LoadSkin()
 		frame.backdrop:SetPoint("BOTTOMRIGHT", 0, 2)
 		frame.Bg:Hide()
 
-		_G["ContainerFrame"..i.."Portrait"]:SetAlpha(0)
-		frame.PortraitButton.Highlight:SetAlpha(0)
-		frame.PortraitButtonTexture = frame.PortraitButton:CreateTexture(nil, "OVERLAY")
-		frame.PortraitButtonTexture:SetSize(30, 30)
-		frame.PortraitButtonTexture:SetPoint("CENTER", 0, 0)
-		frame.PortraitButtonTexture:SetTexture("Interface\\Icons\\inv_misc_bag_08")
-		frame.PortraitButtonTexture:SkinIcon()
+		local portrait = _G["ContainerFrame"..i.."Portrait"]
+		portrait:SetSize(30, 30)
+		portrait:SetPoint("TOPLEFT", frame, "TOPLEFT", 10, -8)
+		portrait:SetTexCoord(0.2, 0.85, 0.2, 0.85)
+
+		frame.b = CreateFrame("Frame", nil, frame)
+		frame.b:SetTemplate("Default")
+		frame.b:SetOutside(portrait)
 
 		T.SkinCloseButton(close, frame.backdrop)
 
@@ -70,7 +72,7 @@ local function LoadSkin()
 			local quest = _G["ContainerFrame"..i.."Item"..j.."IconQuestTexture"]
 			local border = _G["ContainerFrame"..i.."Item"..j].IconBorder
 
-			-- border:SetAlpha(0)
+			border:SetAlpha(0)
 
 			item:SetNormalTexture(0)
 			item:StyleButton()
@@ -97,15 +99,19 @@ local function LoadSkin()
 				-- end
 			-- end
 		-- end)
+	end
 
-		if i == 1 then
-			BackpackTokenFrame:StripTextures(true)
-			for i = 1, 10 do
-				-- _G["BackpackTokenFrameToken"..i].icon:SkinIcon()
-				-- _G["BackpackTokenFrameToken"..i].count:SetPoint("RIGHT", _G["BackpackTokenFrameToken"..i].icon, "LEFT", -5, 0)
+	BackpackTokenFrame:StripTextures(true)
+	hooksecurefunc(_G.BackpackTokenFrame, "Update", function (container)
+		for _, token in next, container.Tokens do
+			if not token.Icon.styled then
+				token.Icon:SkinIcon()
+				token.Count:ClearAllPoints()
+				token.Count:SetPoint("RIGHT", token.Icon, "LEFT", -5, 0)
+				token.Icon.styled = true
 			end
 		end
-	end
+	end)
 
 	-- Bank Frame
 	BankFrame:StripTextures(true)
@@ -141,7 +147,7 @@ local function LoadSkin()
 		local quest = _G["BankFrameItem"..i].IconQuestTexture
 		local border = _G["BankFrameItem"..i].IconBorder
 
-		-- border:Kill()
+		border:SetAlpha(0)
 
 		item:SetNormalTexture(0)
 		item:StyleButton()
@@ -279,7 +285,7 @@ local function LoadSkin()
 		freeScreenHeight = screenHeight - yOffset
 		column = 0
 
-		local bagsPerColumn = 0
+		-- local bagsPerColumn = 0
 		-- for index, frameName in ipairs(ContainerFrame1.bags) do
 			-- frame = _G[frameName]
 			-- frame:SetScale(1)
