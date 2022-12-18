@@ -90,36 +90,34 @@ local function LoadSkin()
 	LootFrame:SetTemplate("Transparent")
 	T.SkinCloseButton(LootFrame.ClosePanelButton)
 
-	hooksecurefunc(LootFrame.ScrollBox, "Update", function(frame)
-		for _, button in next, {frame.ScrollTarget:GetChildren()} do
-			local item = button.Item
-			if item and not item.styled then
-				item:StyleButton()
-				item:SetNormalTexture(0)
-				item:SetTemplate("Default")
+	hooksecurefunc(LootFrameElementMixin, "Init", function(button)
+		local item = button.Item
+		if item and not item.styled then
+			item:StyleButton()
+			item:SetNormalTexture(0)
+			item:SetTemplate("Default")
 
-				item.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-				item.icon:ClearAllPoints()
-				item.icon:SetPoint("TOPLEFT", 2, -2)
-				item.icon:SetPoint("BOTTOMRIGHT", -2, 2)
+			item.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+			item.icon:ClearAllPoints()
+			item.icon:SetPoint("TOPLEFT", 2, -2)
+			item.icon:SetPoint("BOTTOMRIGHT", -2, 2)
 
-				button:CreateBackdrop("Overlay")
-				button.backdrop:SetPoint("TOPLEFT", 0, 0)
-				button.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
+			button:CreateBackdrop("Overlay")
+			button.backdrop:SetPoint("TOPLEFT", 0, 0)
+			button.backdrop:SetPoint("BOTTOMRIGHT", 0, 0)
 
-				button.HighlightNameFrame:SetAlpha(0)
-				button.PushedNameFrame:SetAlpha(0)
-				item.IconBorder:SetAlpha(0)
-				button.NameFrame:Hide()
+			button.HighlightNameFrame:SetAlpha(0)
+			button.PushedNameFrame:SetAlpha(0)
+			item.IconBorder:SetAlpha(0)
+			button.NameFrame:Hide()
 
-				item.styled = true
-			end
+			item.styled = true
+		end
 
-			button.IconQuestTexture:SetAlpha(0)
-			button.BorderFrame:SetAlpha(0)
-			if button.QualityStripe then
-				button.QualityStripe:SetAlpha(0)
-			end
+		button.IconQuestTexture:SetAlpha(0)
+		button.BorderFrame:SetAlpha(0)
+		if button.QualityStripe then
+			button.QualityStripe:SetAlpha(0)
 		end
 	end)
 end
