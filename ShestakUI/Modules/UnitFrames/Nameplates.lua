@@ -390,6 +390,8 @@ if C.nameplate.kick_color then
 		kickID = 183752
 	elseif T.class == "DRUID" then
 		kickID = 106839
+	elseif T.class == "EVOKER" then
+		kickID = 351338
 	elseif T.class == "HUNTER" then
 		kickID = GetSpecialization() == 3 and 187707 or 147362
 	elseif T.class == "MAGE" then
