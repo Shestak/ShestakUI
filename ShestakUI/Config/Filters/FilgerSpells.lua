@@ -2553,6 +2553,10 @@ C["filger_spells"] = {
 			-- Rake
 			{spellID = 163505, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 
+			-- Evoker
+			-- Sleep Walk
+			{spellID = 360806, unitID = "player", caster = "all", filter = "DEBUFF"},
+
 			-- Hunter
 			-- Freezing Trap
 			{spellID = 3355, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -2890,6 +2894,11 @@ C["filger_spells"] = {
 			{spellID = 78675, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Entangling Roots
 			{spellID = 339, unitID = "target", caster = "all", filter = "DEBUFF"},
+
+			-- Evoker
+			-- Debuffs
+			-- Sleep Walk
+			{spellID = 360806, unitID = "target", caster = "all", filter = "DEBUFF"},
 
 			-- Hunter
 			-- Aspect of the Turtle

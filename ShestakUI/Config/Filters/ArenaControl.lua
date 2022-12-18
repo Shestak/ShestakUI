@@ -33,6 +33,8 @@ T.ArenaControl = {
 	[SpellName(5211)] = 5,		-- Mighty Bash
 	[SpellName(22570)] = 5,		-- Maim
 	[SpellName(99)] = 5,		-- Incapacitating Roar
+	-- Evoker
+	[SpellName(360806)] = 5,	-- Sleep Walk
 	-- Hunter
 	[SpellName(3355)] = 5,		-- Freezing Trap
 	[SpellName(24394)] = 5,		-- Intimidation

@@ -304,6 +304,8 @@ if C.raidframe.plugins_pvp_debuffs == true then
 		[SpellName(22570)] = 4,		-- Maim
 		[SpellName(78675)] = 3,		-- Solar Beam
 		[SpellName(339)] = 2,		-- Entangling Roots
+		-- Evoker
+		[SpellName(360806)] = 4,	-- Sleep Walk
 		-- Hunter
 		[SpellName(3355)] = 4,		-- Freezing Trap
 		[SpellName(24394)] = 4,		-- Intimidation

@@ -30,6 +30,8 @@ T.DebuffWhiteList = {
 	[SpellName(58180)] = true,	-- Infected Wounds
 	[SpellName(155722)] = true,	-- Rake
 	[SpellName(1079)] = true,	-- Rip
+	-- Evoker
+	[SpellName(360806)] = true,	-- Sleep Walk
 	-- Hunter
 	[SpellName(3355)] = true,	-- Freezing Trap
 	[SpellName(194279)] = true,	-- Caltrops
