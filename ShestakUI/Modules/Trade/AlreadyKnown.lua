@@ -72,25 +72,14 @@ end
 hooksecurefunc("OpenMailFrame_UpdateButtonPositions", OpenMailFrame_UpdateButtonPositions)
 
 -- Loot frame
-local function LootFrame_UpdateButton(index)
-	local numLootItems = LootFrame.numLootItems
-	local numLootToShow = LOOTFRAME_NUMBUTTONS
-	if numLootItems > LOOTFRAME_NUMBUTTONS then
-		numLootToShow = numLootToShow - 1
-	end
-
-	local button = _G["LootButton"..index]
-	if button and button:IsShown() then
-		local slot = (numLootToShow * (LootFrame.page - 1)) + index
-		if slot <= numLootItems and LootSlotHasItem(slot) and index <= numLootToShow then
-			local texture, _, _, _, _, locked = GetLootSlotInfo(slot)
-			if texture and not locked and IsKnown(GetLootSlotLink(slot)) then
-				SetItemButtonTextureVertexColor(button, color.r, color.g, color.b)
-			end
-		end
+local function LootFrame_UpdateButton(self)
+	local slotIndex = self:GetSlotIndex()
+	local texture, _, _, _, _, locked = GetLootSlotInfo(slotIndex)
+	if texture and not locked and IsKnown(GetLootSlotLink(slotIndex)) then
+		SetItemButtonTextureVertexColor(self.Item, color.r, color.g, color.b)
 	end
 end
---BETA hooksecurefunc("LootFrame_UpdateButton", LootFrame_UpdateButton)
+hooksecurefunc(LootFrameElementMixin, "Init", LootFrame_UpdateButton)
 
 -- Merchant frame
 local function MerchantFrame_UpdateMerchantInfo()
