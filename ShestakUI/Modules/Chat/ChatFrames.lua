@@ -288,6 +288,16 @@ local function SetupChatPosAndFont()
 	end)
 end
 
+for i = 3, NUM_CHAT_WINDOWS do
+	local tab = _G[format("ChatFrame%sTab", i)]
+	hooksecurefunc(tab, "SetPoint", function(self, point, anchor, attachTo, x, y)
+		if anchor == GeneralDockManagerScrollFrameChild and y == -1 then
+			self:ClearAllPoints()
+			self:SetPoint(point, anchor, attachTo, x, -2)
+		end
+	end)
+end
+
 GeneralDockManagerOverflowButton:SetPoint("BOTTOMRIGHT", ChatFrame1, "TOPRIGHT", 0, 5)
 hooksecurefunc(GeneralDockManagerScrollFrame, "SetPoint", function(self, point, anchor, attachTo, x, y)
 	if anchor == GeneralDockManagerOverflowButton and x == 0 and y == 0 then
