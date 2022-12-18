@@ -41,9 +41,9 @@ end
 
 if C.announcements.feasts == true then
 	T.AnnounceFeast = {
-		[308458] = true,	-- Surprisingly Palatable Feast
-		[308462] = true,	-- Feast of Gluttonous Hedonism
-		[307157] = true,	-- Eternal Cauldron
+		[382427] = true,	-- Grand Banquet of the Kalu'a
+		[371521] = true,	-- Potion Cauldron of Power
+		[371611] = true,	-- Prepare Potion Cauldron of Ultimate Power
 	}
 	T.AnnounceBots = {
 		[22700] = true,		-- Field Repair Bot 74A
