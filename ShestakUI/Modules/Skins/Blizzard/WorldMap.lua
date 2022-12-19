@@ -181,10 +181,30 @@ local function LoadSkin()
 		tex:SetAllPoints(button.Icon)
 	end
 
+	local function HandyNotesButton(button)
+		local shadow = button:GetRegions()
+		shadow:Hide()
+
+		button.Background:Hide()
+		button.IconOverlay:SetAlpha(0)
+		button.Border:Hide()
+
+		local tex = button:GetHighlightTexture()
+		tex:SetAtlas(button.Icon:GetTexture())
+		tex:SetAllPoints(button.Icon)
+	end
+
 	-- Elements
 	WorldMapFloorNavigationDropDown(WorldMapFrame.overlayFrames[1])
 	WorldMapTrackingOptionsButton(WorldMapFrame.overlayFrames[2])
 	WorldMapTrackingPinButton(WorldMapFrame.overlayFrames[3])
+
+	for i = 1, 3 do
+		local button = _G["Krowi_WorldMapButtons"..i]
+		if button then
+			HandyNotesButton(button)
+		end
+	end
 
 	-- QuestSessionManagement skin (based on skin from Aurora)
 	QuestMapFrame.QuestSessionManagement:StripTextures()
