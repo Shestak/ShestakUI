@@ -45,6 +45,16 @@ local function LoadSkin()
 	ContainerFrameCombinedBagsPortraitButtonTexture:SetTexture("Interface\\Icons\\inv_misc_bag_08")
 	ContainerFrameCombinedBagsPortraitButtonTexture:SkinIcon()
 
+	local function updateQuestItems(self)
+		for _, button in self:EnumerateValidItems() do
+			if button.IconQuestTexture:IsShown() then
+				button:SetBackdropBorderColor(1, 1, 0)
+			else
+				button:SetBackdropBorderColor(unpack(C.media.border_color))
+			end
+		end
+	end
+
 	for i = 1, NUM_CONTAINER_FRAMES do
 		local frame = _G["ContainerFrame"..i]
 		local close = _G["ContainerFrame"..i].CloseButton
@@ -87,18 +97,9 @@ local function LoadSkin()
 		end
 
 		-- Color QuestItem
-		--BETA hooksecurefunc(frame, "UpdateItems", function()
-			-- local name = frame:GetName()
-			-- local item
-			-- for i = 1, 36 do
-				-- item = _G[name.."Item"..i]
-				-- if _G[name.."Item"..i.."IconQuestTexture"]:IsShown() then
-					-- item:SetBackdropBorderColor(1, 1, 0)
-				-- else
-					-- item:SetBackdropBorderColor(unpack(C.media.border_color))
-				-- end
-			-- end
-		-- end)
+		hooksecurefunc(frame, "UpdateItems", function(self)
+			updateQuestItems(self)
+		end)
 	end
 
 	BackpackTokenFrame:StripTextures(true)
@@ -219,26 +220,17 @@ local function LoadSkin()
 	end)
 
 	-- Color QuestItem
-	-- hooksecurefunc(ContainerFrame, "UpdateItems", function(frame)
-		-- local name = frame:GetName()
-		-- local item
-		-- for i = 1, 36 do
-			-- item = _G[name.."Item"..i]
-			-- if _G[name.."Item"..i.."IconQuestTexture"]:IsShown() then
-				-- item:SetBackdropBorderColor(1, 1, 0)
-			-- else
-				-- item:SetBackdropBorderColor(unpack(C.media.border_color))
-			-- end
-		-- end
-	-- end)
+	hooksecurefunc(ContainerFrameCombinedBags, "UpdateItems", function(self)
+		updateQuestItems(self)
+	end)
 
-	-- hooksecurefunc("BankFrameItemButton_Update", function(frame)
-		-- if not frame.isBag and frame.IconQuestTexture:IsShown() then
-			-- frame:SetBackdropBorderColor(1, 1, 0)
-		-- else
-			-- frame:SetBackdropBorderColor(unpack(C.media.border_color))
-		-- end
-	-- end)
+	hooksecurefunc("BankFrameItemButton_Update", function(frame)
+		if not frame.isBag and frame.IconQuestTexture:IsShown() then
+			frame:SetBackdropBorderColor(1, 1, 0)
+		else
+			frame:SetBackdropBorderColor(unpack(C.media.border_color))
+		end
+	end)
 
 	-- Frame Anchors
 	hooksecurefunc("UpdateContainerFrameAnchors", function()
