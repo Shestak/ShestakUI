@@ -126,12 +126,16 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 		_G["PetBattleQueueReadyFrame"].DeclineButton:SkinButton()
 
 		-- Reskin Dropdown menu
+		local dropdowns = {"DropDownList", "L_DropDownList", "Lib_DropDownList"}
 		hooksecurefunc("UIDropDownMenu_InitializeHelper", function()
-			for i = 1, UIDROPDOWNMENU_MAXLEVELS do
-				_G["DropDownList"..i.."MenuBackdrop"].NineSlice:SetAlpha(0)
-				_G["DropDownList"..i]["Border"]:StripTextures()
-				_G["DropDownList"..i.."Backdrop"]:SetTemplate("Transparent")
-				_G["DropDownList"..i.."MenuBackdrop"]:SetTemplate("Transparent")
+			for _, name in next, dropdowns do
+				for i = 1, UIDROPDOWNMENU_MAXLEVELS do
+					local backdrop = _G[name..i.."Backdrop"]
+					if backdrop then
+						backdrop:SetTemplate("Transparent")
+						_G[name..i.."MenuBackdrop"].NineSlice:SetTemplate("Transparent")
+					end
+				end
 			end
 		end)
 
@@ -152,7 +156,8 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 
 				button.backdrop:Hide()
 
-				if not button.notCheckable then
+				local texture = check:GetTexture()
+				if not button.notCheckable and texture == 375502 then
 					uncheck:SetTexture()
 					local _, co = check:GetTexCoord()
 					if co == 0 then
@@ -164,7 +169,7 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 					else
 						check:SetTexture(C.media.blank)
 						check:SetVertexColor(1, 0.82, 0, 0.8)
-						check:SetSize(5, 5)
+						check:SetSize(6, 6)
 						check:SetDesaturated(false)
 						button.backdrop:SetOutside(check)
 					end
