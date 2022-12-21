@@ -162,6 +162,8 @@ T.RaidDebuffs = {
 	[SpellName(198944)] = 3,	-- Breach Armor
 	[SpellName(215429)] = 3,	-- Thunderstrike
 	[SpellName(203963)] = 3,	-- Eye of the Storm
+	[SpellName(196497)] = 3,	-- Ravenous Leap
+	[SpellName(193660)] = 3,	-- Felblaze Rush
 	-- Shadowmoon Burial Grounds
 	[SpellName(156776)] = 3,	-- Rending Voidlash
 	[SpellName(153692)] = 3,	-- Necrotic Pitch
@@ -247,6 +249,7 @@ T.RaidDebuffs = {
 	[SpellName(371007)] = 3,	-- Splintering Shards
 	[SpellName(375591)] = 3,	-- Sappy Burst
 	[SpellName(385409)] = 3,	-- Ouch, ouch, ouch!
+	[SpellName(386549)] = 3,	-- Waking Bane
 	-- Algeth'ar Academy
 	[SpellName(389033)] = 3,	-- Lasher Toxin
 	[SpellName(391977)] = 3,	-- Oversurge
