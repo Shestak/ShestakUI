@@ -441,6 +441,7 @@ C["combattext"] = {
 	["short_numbers"] = true,					-- Use short numbers ("25.3k" instead of "25342")
 	["merge_aoe_spam"] = true,					-- Merges multiple aoe damage/heal spam into single message
 	["merge_melee"] = true,						-- Merges multiple auto attack damage spam
+	["merge_all"] = false,						-- Merges all spells
 	["direction"] = true,						-- Change scrolling direction from bottom to top
 	["dk_runes"] = true,						-- Show Death Knight rune recharge
 	["killingblow"] = false,					-- Tells you about your killingblows

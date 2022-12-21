@@ -878,7 +878,7 @@ if C.combattext.damage then
 						if bit.band(sourceFlags, COMBATLOG_OBJECT_AFFILIATION_MINE) ~= COMBATLOG_OBJECT_AFFILIATION_MINE then
 							spellId = 6603
 						end
-						if (sourceGUID == UnitGUID("pet") or sourceFlags == gflags) and not T.aoespam[spellId] then
+						if (sourceGUID == UnitGUID("pet") or sourceFlags == gflags or C.combattext.merge_all) and not T.aoespam[spellId] then
 							T.aoespam[spellId] = 3
 							SQ[spellId] = {queue = 0, msg = "", color = {}, count = 0, utime = 0, locked = false}
 						end

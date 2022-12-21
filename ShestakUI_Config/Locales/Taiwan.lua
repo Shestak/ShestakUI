@@ -383,6 +383,7 @@ L_GUI_COMBATTEXT_KILLINGBLOW = "擊殺信息"
 L.combattext_merge_aoe_spam = "將AOE傷害合併為一條信息"
 L.combattext_merge_aoe_spam_desc = "將AOE傷害合併為一條信息"
 L_GUI_COMBATTEXT_MERGE_MELEE = "將多個自動攻擊傷害合併為一條信息"
+L.combattext_merge_all = "Merges all spells" -- Needs review
 L_GUI_COMBATTEXT_DISPEL = "當你驅散成功時提示"
 L_GUI_COMBATTEXT_INTERRUPT = "當你斷法成功時提示"
 L_GUI_COMBATTEXT_DIRECTION = "滾動方向從下向上"

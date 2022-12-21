@@ -383,6 +383,7 @@ L_GUI_COMBATTEXT_KILLINGBLOW = "Afficher les coups fatals"
 L.combattext_merge_aoe_spam = "Merges spell spam into single message" -- Needs review
 L.combattext_merge_aoe_spam_desc = "Rassembler tous les dégâts d'un aoe en un seul message"
 L_GUI_COMBATTEXT_MERGE_MELEE = "Rassemble les dégâts multiples en auto attaque"
+L.combattext_merge_all = "Merges all spells" -- Needs review
 L_GUI_COMBATTEXT_DISPEL = "Affiche les sorts que vous avez dissipé"
 L_GUI_COMBATTEXT_INTERRUPT = "Affiche les sorts que vous avez interrompu"
 L_GUI_COMBATTEXT_DIRECTION = "Changer la direction de défilement de bas en haut"

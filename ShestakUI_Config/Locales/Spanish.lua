@@ -383,6 +383,7 @@ L_GUI_COMBATTEXT_KILLINGBLOW = "Mostrar tus golpes de gracia"
 L.combattext_merge_aoe_spam = "Merges spell spam into single message" -- Needs review
 L.combattext_merge_aoe_spam_desc = "Unir el spam de daño de area en un solo mensaje"
 L_GUI_COMBATTEXT_MERGE_MELEE = "Merges multiple auto attack damage spam" -- Needs review
+L.combattext_merge_all = "Merges all spells" -- Needs review
 L_GUI_COMBATTEXT_DISPEL = "Mostrar tus disipaciones"
 L_GUI_COMBATTEXT_INTERRUPT = "Mostrar tus interrupciones"
 L_GUI_COMBATTEXT_DIRECTION = "Change scrolling direction from bottom to top" -- Need review

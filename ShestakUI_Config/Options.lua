@@ -2204,8 +2204,11 @@ do
 	local merge_melee = ns.CreateCheckBox(parent, "merge_melee", L_GUI_COMBATTEXT_MERGE_MELEE)
 	merge_melee:SetPoint("TOPLEFT", merge_aoe_spam, "BOTTOMLEFT", 20, 0)
 
+	local merge_all = ns.CreateCheckBox(parent, "merge_all")
+	merge_all:SetPoint("TOPLEFT", merge_melee, "BOTTOMLEFT", 0, 0)
+
 	local direction = ns.CreateCheckBox(parent, "direction", L_GUI_COMBATTEXT_DIRECTION)
-	direction:SetPoint("TOPLEFT", merge_melee, "BOTTOMLEFT", -20, 0)
+	direction:SetPoint("TOPLEFT", merge_all, "BOTTOMLEFT", -20, 0)
 
 	-- Panel 2
 	local parent = ShestakUIOptionsPanel.combattext2
