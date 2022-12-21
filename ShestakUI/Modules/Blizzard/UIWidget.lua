@@ -215,8 +215,9 @@ for i = 1, 6 do
 end
 
 local function SkinVigorBar(widget)
-	VigorBar:Show()
 	local widgetInfo = C_UIWidgetManager.GetFillUpFramesWidgetVisualizationInfo(4460)
+	if not widgetInfo then return end
+	VigorBar:Show()
 	local total = widgetInfo.numTotalFrames
 	for i = 1, total do
 		local value = 0
