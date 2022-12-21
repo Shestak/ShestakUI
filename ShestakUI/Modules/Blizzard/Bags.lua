@@ -219,6 +219,7 @@ function Stuffing:SlotUpdate(b)
 	b.frame.Azerite:Hide()
 	b.frame.Conduit:Hide()
 	b.frame.Conduit2:Hide()
+	b.frame.profQuality:Hide()
 
 	b.frame:UpdateItemContextMatching() -- Update Scrap items
 
@@ -259,6 +260,13 @@ function Stuffing:SlotUpdate(b)
 			end
 			b.frame.Conduit2:SetAtlas("ConduitIconFrame-Corners")
 			b.frame.Conduit2:Show()
+		end
+
+		local profQual = C_TradeSkillUI.GetItemReagentQualityByItemInfo(clink) or C_TradeSkillUI.GetItemCraftedQualityByItemInfo(clink)
+		if profQual then
+			local atlas = ("Professions-Icon-Quality-Tier%d-Inv"):format(profQual)
+			b.frame.profQuality:SetAtlas(atlas, TextureKitConstants.UseAtlasSize)
+			b.frame.profQuality:Show()
 		end
 
 		if (IsItemUnusable(clink) or b.level and b.level > T.level) and not locked then
@@ -667,6 +675,10 @@ function Stuffing:SlotNew(bag, slot)
 		ret.frame.Conduit2:SetPoint("TOPLEFT", ret.frame, 2, -2)
 		ret.frame.Conduit2:SetPoint("BOTTOMRIGHT", ret.frame, -2, 2)
 		ret.frame.Conduit2:Hide()
+
+		ret.frame.profQuality = ret.frame:CreateTexture(nil, "ARTWORK")
+		ret.frame.profQuality:SetPoint("TOPLEFT", ret.frame, 0, 0)
+		ret.frame.profQuality:Hide()
 
 		local Battlepay = _G[ret.frame:GetName()].BattlepayItemTexture
 		if Battlepay then
