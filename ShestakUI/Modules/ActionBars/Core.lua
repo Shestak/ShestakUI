@@ -20,6 +20,16 @@ frame:SetScript("OnEvent", function()
 	MicroButtonAndBagsBar:ClearAllPoints()
 	MicroButtonAndBagsBar:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", 0, -99) -- Prevent scaling for right panels
 
+	if T.newPatch then
+		if not C.actionbar.micromenu then
+			MicroMenu:Hide()
+		end
+
+		if C.bag.enable then
+			BagsBar:Hide()
+		end
+	end
+
 	MainMenuBar:SetMovable(true)
 	MainMenuBar:SetUserPlaced(true)
 	MainMenuBar.ignoreFramePositionManager = true
