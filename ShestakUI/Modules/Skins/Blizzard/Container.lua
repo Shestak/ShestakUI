@@ -14,6 +14,7 @@ local function LoadSkin()
 	BagItemSearchBox.backdrop:SetPoint("BOTTOMRIGHT", -2, 0)
 	BagItemSearchBox:ClearAllPoints()
 	BagItemSearchBox:SetPoint("TOPRIGHT", BagItemAutoSortButton, "TOPLEFT", -3, 0)
+	BagItemSearchBox.ClearAllPoints = T.dummy
 	BagItemSearchBox.SetPoint = T.dummy
 
 	BagItemAutoSortButton:SetSize(18, 18)
@@ -48,7 +49,11 @@ local function LoadSkin()
 	local function updateQuestItems(self)
 		for _, button in self:EnumerateValidItems() do
 			if button.IconQuestTexture:IsShown() then
-				button:SetBackdropBorderColor(1, 1, 0)
+				if button.IconQuestTexture:GetTexture() == 368362 then
+					button:SetBackdropBorderColor(1, 0.3, 0.3)
+				else
+					button:SetBackdropBorderColor(1, 1, 0)
+				end
 			else
 				button:SetBackdropBorderColor(unpack(C.media.border_color))
 			end
@@ -65,10 +70,13 @@ local function LoadSkin()
 		frame.backdrop:SetPoint("BOTTOMRIGHT", 0, 2)
 		frame.Bg:Hide()
 
+		frame.TitleContainer:SetPoint("TOPLEFT", frame, "TOPLEFT", 40, -1)
+
 		local portrait = _G["ContainerFrame"..i.."Portrait"]
-		portrait:SetSize(30, 30)
+		portrait:SetSize(28, 28)
 		portrait:SetPoint("TOPLEFT", frame, "TOPLEFT", 10, -8)
 		portrait:SetTexCoord(0.2, 0.85, 0.2, 0.85)
+		frame.PortraitContainer.CircleMask:Hide()
 
 		frame.b = CreateFrame("Frame", nil, frame)
 		frame.b:SetTemplate("Default")
@@ -118,6 +126,7 @@ local function LoadSkin()
 	BankFrame:StripTextures(true)
 	BankFrame:CreateBackdrop("Transparent")
 	BankFrame.backdrop:SetAllPoints()
+	BankFramePortrait:SetAlpha(0)
 
 	BankItemSearchBox:StripTextures(true)
 	BankItemSearchBox:CreateBackdrop("Overlay")
@@ -168,7 +177,7 @@ local function LoadSkin()
 		local bag = BankSlotsFrame["Bag"..i]
 		local icon = bag.icon
 
-		bag.IconBorder:Kill()
+		bag.IconBorder:SetAlpha(0)
 
 		bag:StripTextures()
 		bag:StyleButton()
@@ -206,7 +215,7 @@ local function LoadSkin()
 			local icon = _G["ReagentBankFrameItem"..i].icon
 			local border = _G["ReagentBankFrameItem"..i].IconBorder
 
-			border:Kill()
+			border:SetAlpha(0)
 
 			item:SetNormalTexture(0)
 			item:StyleButton()
@@ -226,9 +235,15 @@ local function LoadSkin()
 
 	hooksecurefunc("BankFrameItemButton_Update", function(frame)
 		if not frame.isBag and frame.IconQuestTexture:IsShown() then
-			frame:SetBackdropBorderColor(1, 1, 0)
+			if frame.IconQuestTexture:GetTexture() == 368362 then
+				frame:SetBackdropBorderColor(1, 0.3, 0.3)
+			else
+				frame:SetBackdropBorderColor(1, 1, 0)
+			end
 		else
-			frame:SetBackdropBorderColor(unpack(C.media.border_color))
+			if frame.SetBackdropBorderColor then -- ReagentBank
+				frame:SetBackdropBorderColor(unpack(C.media.border_color))
+			end
 		end
 	end)
 
