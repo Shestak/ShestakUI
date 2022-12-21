@@ -104,6 +104,16 @@ local function StyleNormalButton(button, size)
 
 		if not isFlyout and not isExtraAction then
 			button:SetSize(size or C.actionbar.button_size, size or C.actionbar.button_size)
+
+			-- Dragonflight - Hide profession quality icons
+			if button.ProfessionQualityOverlayFrame then
+				button.ProfessionQualityOverlayFrame:SetAlpha(0)
+			end
+			hooksecurefunc(button, "UpdateProfessionQuality", function(self)
+				if self.ProfessionQualityOverlayFrame then
+					self.ProfessionQualityOverlayFrame:SetAlpha(0)
+				end
+			end)
 		end
 		button:SetTemplate("Transparent")
 		if C.actionbar.classcolor_border == true then
