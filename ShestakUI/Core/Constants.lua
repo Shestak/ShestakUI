@@ -12,14 +12,12 @@ T.realm = GetRealmName()
 T.color = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[T.class]
 T.version = GetAddOnMetadata("ShestakUI", "Version")
 T.screenWidth, T.screenHeight = GetPhysicalScreenSize()
-T.newPatch = select(4, GetBuildInfo()) >= 100002
+T.newPatch = select(4, GetBuildInfo()) >= 100005
 
 -- BETA
-if T.newPatch then
-	GetContainerItemInfo = function(bagIndex, slotIndex)
-		local info = C_Container.GetContainerItemInfo(bagIndex, slotIndex)
-		if info then
-			return info.iconFileID, info.stackCount, info.isLocked, info.quality, info.isReadable, info.hasLoot, info.hyperlink, info.isFiltered, info.hasNoValue, info.itemID, info.isBound
-		end
+GetContainerItemInfo = function(bagIndex, slotIndex)
+	local info = C_Container.GetContainerItemInfo(bagIndex, slotIndex)
+	if info then
+		return info.iconFileID, info.stackCount, info.isLocked, info.quality, info.isReadable, info.hasLoot, info.hyperlink, info.isFiltered, info.hasNoValue, info.itemID, info.isBound
 	end
 end
