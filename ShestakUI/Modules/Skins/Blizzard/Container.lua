@@ -76,7 +76,7 @@ local function LoadSkin()
 		portrait:SetSize(28, 28)
 		portrait:SetPoint("TOPLEFT", frame, "TOPLEFT", 10, -8)
 		portrait:SetTexCoord(0.2, 0.85, 0.2, 0.85)
-		frame.PortraitContainer.CircleMask:Hide()
+		if frame.PortraitContainer.CircleMask then frame.PortraitContainer.CircleMask:Hide() end
 
 		frame.b = CreateFrame("Frame", nil, frame)
 		frame.b:SetTemplate("Default")
