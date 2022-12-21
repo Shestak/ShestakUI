@@ -68,6 +68,7 @@ local function LoadSkin()
 		OutputIcon.IconBorder:SetAlpha(0)
 		OutputIcon:GetHighlightTexture():Hide()
 		OutputIcon.CircleMask:Hide()
+		if OutputIcon.CountShadow then OutputIcon.CountShadow:SetAlpha(0) end
 	end
 
 	local function skinReagentIcon(button)
