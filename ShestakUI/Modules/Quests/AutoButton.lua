@@ -67,6 +67,45 @@ AutoButton.c:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_si
 AutoButton.c:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
 AutoButton.c:SetPoint("BOTTOMRIGHT", 1, -2)
 
+-- Hotkey text for our button
+C_Timer.After(0.05, function()
+	local bind = GetBindingKey("QUEST_BUTTON")
+	if bind then
+		SetOverrideBinding(AutoButton, false, bind, "CLICK AutoButton:LeftButton")
+		AutoButton.k = AutoButton:CreateFontString(nil, "OVERLAY")
+		AutoButton.k:SetFont(C.font.cooldown_timers_font, C.font.cooldown_timers_font_size, C.font.cooldown_timers_font_style)
+		AutoButton.k:SetShadowOffset(C.font.cooldown_timers_font_shadow and 1 or 0, C.font.cooldown_timers_font_shadow and -1 or 0)
+		AutoButton.k:SetTextColor(0.8, 0.8, 0.8)
+		AutoButton.k:SetPoint("TOPRIGHT", 0, 0)
+		AutoButton.k:SetJustifyH("RIGHT")
+		AutoButton.k:SetWidth(AutoButton:GetWidth() - 1)
+		AutoButton.k:SetWordWrap(false)
+
+		bind = gsub(bind, "(ALT%-)", "A")
+		bind = gsub(bind, "(CTRL%-)", "C")
+		bind = gsub(bind, "(SHIFT%-)", "S")
+		bind = gsub(bind, "(Mouse Button )", "M")
+		bind = gsub(bind, "(Кнопка мыши )", "M")
+		bind = gsub(bind, KEY_BUTTON3, "M3")
+		bind = gsub(bind, KEY_PAGEUP, "PU")
+		bind = gsub(bind, KEY_PAGEDOWN, "PD")
+		bind = gsub(bind, KEY_SPACE, "SpB")
+		bind = gsub(bind, KEY_INSERT, "Ins")
+		bind = gsub(bind, KEY_HOME, "Hm")
+		bind = gsub(bind, KEY_DELETE, "Del")
+		bind = gsub(bind, KEY_NUMPADDECIMAL, "Nu.")
+		bind = gsub(bind, KEY_NUMPADDIVIDE, "Nu/")
+		bind = gsub(bind, KEY_NUMPADMINUS, "Nu-")
+		bind = gsub(bind, KEY_NUMPADMULTIPLY, "Nu*")
+		bind = gsub(bind, KEY_NUMPADPLUS, "Nu+")
+		bind = gsub(bind, KEY_NUMLOCK, "NuL")
+		bind = gsub(bind, KEY_MOUSEWHEELDOWN, "MWD")
+		bind = gsub(bind, KEY_MOUSEWHEELUP, "MWU")
+
+		AutoButton.k:SetText(bind)
+	end
+end)
+
 -- Cooldown
 AutoButton.cd = CreateFrame("Cooldown", nil, AutoButton, "CooldownFrameTemplate")
 AutoButton.cd:SetAllPoints(AutoButton.t)

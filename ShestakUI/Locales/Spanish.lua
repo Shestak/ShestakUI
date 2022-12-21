@@ -50,6 +50,7 @@ L_MISC_UI_OUTDATED = "Tu versión de ShestakUI no está actualizada. Puedes desc
 L_MISC_HEADER_MARK = "Mouseover Raid Icons" -- Needs review
 L_MISC_BINDER_OPEN = "Mouse Bindings" -- Needs review
 L_MISC_SCROLL = "Pergamino"
+L_MISC_HEADER_QUEST = "Auto quest button" -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Disolver grupo"

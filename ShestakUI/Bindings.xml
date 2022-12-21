@@ -47,4 +47,6 @@
 	<Binding category="BINDING_HEADER_TAR_MARK_HEADER" name="TAR_MARK_0">
 		if UnitExists("mouseover") then SetRaidTargetIcon("mouseover", 0) else SetRaidTargetIcon("target", 0) end
 	</Binding>
+	<Binding category="L_MISC_HEADER_QUEST" name= "QUEST_BUTTON">
+	</Binding>
 </Bindings>

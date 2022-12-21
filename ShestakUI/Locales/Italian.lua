@@ -50,6 +50,7 @@ L_MISC_UI_OUTDATED = "La tua versione della ShestakUI non è aggiornata: puoi sc
 L_MISC_HEADER_MARK = "Marchi d'incursione al passaggio del mouse"
 L_MISC_BINDER_OPEN = "Assegnazione pulsanti mouse"
 L_MISC_SCROLL = "Pergamena"
+L_MISC_HEADER_QUEST = "Auto quest button" -- Needs review
 
 -- Raid Utility
 L_RAID_UTIL_DISBAND = "Sciogli il gruppo"
