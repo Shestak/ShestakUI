@@ -2390,22 +2390,8 @@ C["filger_spells"] = {
 			{spellID = 371028, unitID = "player", caster = "player", filter = "BUFF"},
 
 			-- Potions: Miscellaneous
-			-- Invisible [Potion of the Hidden Spirit]
-			{spellID = 307195, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Invisibility [Invisibility Potion]
-			{spellID = 11392, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Invisibility [Draenic Invisibility Potion]
-			{spellID = 175833, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Spirit Realm [Skaggldrynk]
-			{spellID = 188023, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Draenic Swiftness Potion
-			{spellID = 175790, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Darkwater Potion
-			{spellID = 105707, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Speed [Swiftness Potion]
-			{spellID = 2379, unitID = "player", caster = "player", filter = "BUFF", absID = true},
-			-- Potion of the Psychopomp's Speed
-			{spellID = 344314, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Invisible [Potion of the Hushed Zephyr]
+			{spellID = 371124, unitID = "player", caster = "player", filter = "BUFF", absID = true},
 
 			-- Raid Amplifiers
 			-- Bloodlust
@@ -2418,8 +2404,8 @@ C["filger_spells"] = {
 			{spellID = 80353, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Fury of the Aspects
 			{spellID = 390386, unitID = "player", caster = "all", filter = "BUFF"},
-			-- Drums of Deathly Ferocity
-			{spellID = 309658, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Feral Hide Drums
+			{spellID = 381301, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mallet of Thunderous Skins
 			{spellID = 292686, unitID = "player", caster = "all", filter = "BUFF"},
 
