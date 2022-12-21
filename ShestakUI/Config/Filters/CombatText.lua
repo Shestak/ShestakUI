@@ -19,7 +19,6 @@ if C.combattext.merge_aoe_spam then
 	T.aoespam = {}
 	T.aoespam[6603] = 3				-- Auto Attack
 	T.aoespam[195222] = 4			-- Stormlash [Shaman]
-	--BETA T.aoespam[195256] = 4			-- Stormlash [Shaman]
 	T.aoespam[259756] = 6			-- Entropic Embrace (Void Elves)
 	T.aoespam[321519] = 5			-- Paralytic Poison (Covenant Night Fae)
 	T.aoespam[344155] = 1			-- Gluttonous Spike (Trinket)
@@ -394,8 +393,8 @@ elseif T.class == "PALADIN" then
 		T.aoespam[114919] = 3		-- Arcing Light
 		T.aoespam[86704] = 0		-- Ancient Fury
 		T.aoespam[157122] = 3		-- Holy Shield
-		T.aoespam[209478] = 1		-- Tyr's Enforcer
-		T.aoespam[209202] = 1		-- Eye of Tyr
+		T.aoespam[378286] = 1		-- Tyr's Enforcer
+		T.aoespam[387174] = 1		-- Eye of Tyr
 		T.aoespam[105421] = 1		-- Blinding Light
 		T.aoespam[204301] = 8		-- Blessed Hammer
 		T.aoespam[224239] = 1		-- Divine Storm
@@ -536,9 +535,6 @@ elseif T.class == "SHAMAN" then
 		T.merge[115360] = 115357	-- Windstrike Off-Hand
 		T.aoespam[192231] = 3		-- Liquid Magma
 		T.aoespam[157331] = 3		-- Wind Gust
-		--BETA T.aoespam[197385] = 6		-- Fury of Air
-		--BETA T.aoespam[210801] = 6		-- Crashing Storm
-		--BETA T.aoespam[210854] = 4		-- Hailstorm
 		T.aoespam[187874] = 1		-- Crash Lightning
 		T.aoespam[195592] = 1		-- Crash Lightning
 	end
