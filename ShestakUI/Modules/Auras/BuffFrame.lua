@@ -22,21 +22,24 @@ BuffsAnchor:SetPoint(unpack(C.position.player_buffs))
 BuffsAnchor:SetSize((15 * C.aura.player_buff_size) + 42, (C.aura.player_buff_size * 2) + 3)
 
 local function UpdateDuration(aura, timeLeft)
+	local duration = T.newPatch and aura.Duration or aura.duration
 	if timeLeft and C.aura.show_timer == true then
-		aura.duration:SetVertexColor(1, 1, 1)
-		aura.duration:SetFormattedText(GetFormattedTime(timeLeft))
+		duration:SetVertexColor(1, 1, 1)
+		duration:SetFormattedText(GetFormattedTime(timeLeft))
 	else
-		aura.duration:Hide()
+		duration:Hide()
 	end
 end
 
-hooksecurefunc(BuffButtonMixin, "UpdateDuration", function(aura, timeLeft)
-	UpdateDuration(aura, timeLeft)
-end)
+if not T.newPatch then
+	hooksecurefunc(BuffButtonMixin, "UpdateDuration", function(aura, timeLeft)
+		UpdateDuration(aura, timeLeft)
+	end)
 
-hooksecurefunc(TempEnchantButtonMixin, "UpdateDuration", function(aura, timeLeft)
-	UpdateDuration(aura, timeLeft)
-end)
+	hooksecurefunc(TempEnchantButtonMixin, "UpdateDuration", function(aura, timeLeft)
+		UpdateDuration(aura, timeLeft)
+	end)
+end
 
 hooksecurefunc(BuffFrame.AuraContainer, "UpdateGridLayout", function(self, auras)
 	local previousBuff, aboveBuff
@@ -71,11 +74,19 @@ hooksecurefunc(BuffFrame.AuraContainer, "UpdateGridLayout", function(self, auras
 		aura.Icon:CropIcon()
 		aura.Icon:SetDrawLayer("BORDER")
 
-		aura.duration:ClearAllPoints()
-		aura.duration:SetPoint("CENTER", 2, 1)
-		aura.duration:SetDrawLayer("ARTWORK")
-		aura.duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
-		aura.duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
+		local duration = T.newPatch and aura.Duration or aura.duration
+		duration:ClearAllPoints()
+		duration:SetPoint("CENTER", 2, 1)
+		duration:SetDrawLayer("ARTWORK")
+		duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
+		duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
+
+		if T.newPatch and not aura.hook then
+			hooksecurefunc(aura, "UpdateDuration", function(aura, timeLeft)
+				UpdateDuration(aura, timeLeft)
+			end)
+			aura.hook = true
+		end
 
 		if aura.count then -- fix error in EditMode
 			aura.count:ClearAllPoints()
