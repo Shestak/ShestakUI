@@ -1,50 +1,50 @@
 ﻿<Bindings>
-	<Binding name="RW_MESSAGE" header="CHATKEY">
+	<Binding category="BINDING_HEADER_CHATKEY" name="RW_MESSAGE">
 		ChatKey_Chat("/rw")
 	</Binding>
-	<Binding name="RAID_MESSAGE">
+	<Binding category="BINDING_HEADER_CHATKEY" name="RAID_MESSAGE">
 		ChatKey_Chat("/ra")
 	</Binding>
-	<Binding name="GUILD_MESSAGE">
+	<Binding category="BINDING_HEADER_CHATKEY" name="GUILD_MESSAGE">
 		ChatKey_Chat("/g")
 	</Binding>
-	<Binding name="PARTY_MESSAGE">
+	<Binding category="BINDING_HEADER_CHATKEY" name="PARTY_MESSAGE">
 		ChatKey_Chat("/p")
 	</Binding>
-	<Binding name="IC_MESSAGE">
+	<Binding category="BINDING_HEADER_CHATKEY" name="IC_MESSAGE">
 		ChatKey_Chat("/i")
 	</Binding>
-	<Binding name="TARGET_MESSAGE">
+	<Binding category="BINDING_HEADER_CHATKEY" name="TARGET_MESSAGE">
 		ChatKey_Chat("/tt ")
 	</Binding>
-	<Binding name="SAY_MESSAGE">
+	<Binding category="BINDING_HEADER_CHATKEY" name="SAY_MESSAGE">
 		ChatKey_Chat("/s")
 	</Binding>
-	<Binding name="TAR_MARK_1" header="TAR_MARK_HEADER">
+	<Binding category="BINDING_HEADER_TAR_MARK_HEADER" name="TAR_MARK_1">
 		if UnitExists("mouseover") then SetRaidTargetIcon("mouseover", 1) else SetRaidTargetIcon("target", 1) end
 	</Binding>
-	<Binding name="TAR_MARK_2">
+	<Binding category="BINDING_HEADER_TAR_MARK_HEADER" name="TAR_MARK_2">
 		if UnitExists("mouseover") then SetRaidTargetIcon("mouseover", 2) else SetRaidTargetIcon("target", 2) end
 	</Binding>
-	<Binding name="TAR_MARK_3">
+	<Binding category="BINDING_HEADER_TAR_MARK_HEADER" name="TAR_MARK_3">
 		if UnitExists("mouseover") then SetRaidTargetIcon("mouseover", 3) else SetRaidTargetIcon("target", 3) end
 	</Binding>
-	<Binding name="TAR_MARK_4">
+	<Binding category="BINDING_HEADER_TAR_MARK_HEADER" name="TAR_MARK_4">
 		if UnitExists("mouseover") then SetRaidTargetIcon("mouseover", 4) else SetRaidTargetIcon("target", 4) end
 	</Binding>
-	<Binding name="TAR_MARK_5">
+	<Binding category="BINDING_HEADER_TAR_MARK_HEADER" name="TAR_MARK_5">
 		if UnitExists("mouseover") then SetRaidTargetIcon("mouseover", 5) else SetRaidTargetIcon("target", 5) end
 	</Binding>
-	<Binding name="TAR_MARK_6">
+	<Binding category="BINDING_HEADER_TAR_MARK_HEADER" name="TAR_MARK_6">
 		if UnitExists("mouseover") then SetRaidTargetIcon("mouseover", 6) else SetRaidTargetIcon("target", 6) end
 	</Binding>
-	<Binding name="TAR_MARK_7">
+	<Binding category="BINDING_HEADER_TAR_MARK_HEADER" name="TAR_MARK_7">
 		if UnitExists("mouseover") then SetRaidTargetIcon("mouseover", 7) else SetRaidTargetIcon("target", 7) end
 	</Binding>
-	<Binding name="TAR_MARK_8">
+	<Binding category="BINDING_HEADER_TAR_MARK_HEADER" name="TAR_MARK_8">
 		if UnitExists("mouseover") then SetRaidTargetIcon("mouseover", 8) else SetRaidTargetIcon("target", 8) end
 	</Binding>
-	<Binding name="TAR_MARK_0">
+	<Binding category="BINDING_HEADER_TAR_MARK_HEADER" name="TAR_MARK_0">
 		if UnitExists("mouseover") then SetRaidTargetIcon("mouseover", 0) else SetRaidTargetIcon("target", 0) end
 	</Binding>
 </Bindings>
