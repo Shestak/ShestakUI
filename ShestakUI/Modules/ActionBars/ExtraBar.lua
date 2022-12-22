@@ -122,3 +122,22 @@ end
 
 hooksecurefunc(ZoneAbilityFrame, "UpdateDisplayedZoneAbilities", SkinZoneAbilities)
 ZoneAbilityFrame.Style:SetAlpha(0)
+
+------------------------------------------------------------------------------------------
+--	Skin ExtraQuestButton
+------------------------------------------------------------------------------------------
+if IsAddOnLoaded("ExtraQuestButton") then
+	local button = ExtraQuestButton
+	ExtraQuestButtonArtwork:Hide()
+	button:StyleButton()
+	ExtraQuestButtonNormalTexture:SetAlpha(0)
+	ExtraQuestButtonIcon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	ExtraQuestButtonIcon:SetPoint("TOPLEFT", button, 2, -2)
+	ExtraQuestButtonIcon:SetPoint("BOTTOMRIGHT", button, -2, 2)
+	ExtraQuestButtonIcon:SetDrawLayer("BACKGROUND", 7)
+	ExtraQuestButtonCooldown:SetDrawEdge(false)
+	button:SetTemplate("Transparent")
+	if C.actionbar.classcolor_border == true then
+		button:SetBackdropBorderColor(unpack(C.media.classborder_color))
+	end
+end
