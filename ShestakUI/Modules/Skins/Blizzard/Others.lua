@@ -133,7 +133,13 @@ SkinBlizzUI:SetScript("OnEvent", function(_, _, addon)
 					local backdrop = _G[name..i.."Backdrop"]
 					if backdrop then
 						backdrop:SetTemplate("Transparent")
-						_G[name..i.."MenuBackdrop"].NineSlice:SetTemplate("Transparent")
+						local menu = _G[name..i.."MenuBackdrop"].NineSlice or _G[name..i.."MenuBackdrop"]
+						if menu then
+							menu:SetTemplate("Transparent")
+						end
+						if backdrop.Bg then
+							backdrop.Bg:SetAlpha(0)
+						end
 					end
 				end
 			end
