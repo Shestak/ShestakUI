@@ -146,6 +146,8 @@ local function startScanningBags()
 				AutoButton:SetScript("OnEnter", function(self)
 					GameTooltip:SetOwner(self, "ANCHOR_LEFT")
 					GameTooltip:SetHyperlink(format("item:%s", itemID))
+					GameTooltip:AddLine(" ")
+					GameTooltip:AddLine(L_MOVE_MIDDLE_CLICK, 0.75, 0.9, 1)
 					GameTooltip:Show()
 				end)
 
