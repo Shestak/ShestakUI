@@ -52,7 +52,9 @@ AutoButton:SetPoint("CENTER", AutoButtonAnchor, "CENTER", 0, 0)
 AutoButton:SetTemplate("Default")
 AutoButton:StyleButton()
 AutoButton:RegisterForClicks("AnyUp", "AnyDown")
-AutoButton:SetAttribute("type", "item")
+AutoButton:SetAttribute("type1", "item")
+AutoButton:SetAttribute("type2", "item")
+AutoButton:SetAttribute("type3", "macro")
 AutoButtonHide()
 
 -- Texture for our button
@@ -121,7 +123,7 @@ local function startScanningBags()
 		for s = 1, C_Container.GetContainerNumSlots(b) do
 			local itemID = C_Container.GetContainerItemID(b, s)
 			itemID = tonumber(itemID)
-			if T.ABItems[itemID] then
+			if T.ABItems[itemID] and not T.ABItemsIgnore[itemID] then
 				local itemName = GetItemInfo(itemID)
 				local count = GetItemCount(itemID)
 				local itemIcon = GetItemIcon(itemID)
@@ -148,6 +150,7 @@ local function startScanningBags()
 				end)
 
 				AutoButton:SetScript("OnLeave", GameTooltip_Hide)
+				AutoButton:SetID(itemID)
 
 				AutoButtonShow(itemName)
 			end
@@ -172,3 +175,9 @@ Scanner:RegisterEvent("UNIT_INVENTORY_CHANGED")
 Scanner:SetScript("OnEvent", function()
 	startScanningBags()
 end)
+
+-- Temp hide quest item by middle-click
+T.startScanningBags = startScanningBags
+
+local macro = "/run local T = unpack(ShestakUI) T.ABItemsIgnore[AutoButton:GetID()] = true T.startScanningBags() C_Timer.After(0.05, function() AutoButton:SetButtonState('NORMAL') end)"
+AutoButton:SetAttribute("macrotext3", macro)

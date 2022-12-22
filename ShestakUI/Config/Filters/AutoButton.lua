@@ -81,3 +81,7 @@ T.ABItems = {
 	[180876] = true,	-- Aqueous Material Accumulator
 	[188697] = true,	-- Kinematic Micro-Life Recalibrator
 }
+
+T.ABItemsIgnore = {
+	-- [itemID] = true,	-- Item name to ignore
+}
