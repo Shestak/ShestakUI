@@ -499,6 +499,7 @@ local function LoadSkin()
 	T.SkinCloseButton(WardrobeCollectionFrame.FilterButton.ResetButton)
 	WardrobeCollectionFrame.FilterButton.ResetButton:ClearAllPoints()
 	WardrobeCollectionFrame.FilterButton.ResetButton:SetPoint("CENTER", WardrobeCollectionFrame.FilterButton, "TOPRIGHT", 0, 0)
+	WardrobeCollectionFrame.FilterButton:SetWidth(90)
 
 	for i = 1, #WardrobeTransmogFrame.SlotButtons do
 		local slot = WardrobeTransmogFrame.SlotButtons[i]
