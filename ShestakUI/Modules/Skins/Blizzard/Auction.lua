@@ -254,31 +254,18 @@ local function LoadSkin()
 	TokenTutorial:CreateBackdrop("Transparent")
 	T.SkinCloseButton(TokenTutorial.CloseButton)
 	TokenTutorial.Bg:SetAlpha(0)
-end
 
-T.SkinFuncs["Blizzard_AuctionHouseUI"] = LoadSkin
-
--- Auctionator skin (from AddOnSkins)
-local function LoadAuctionatorSkin()
-	if not IsAddOnLoaded("Auctionator") then return end
-	local frame = CreateFrame("Frame")
-	frame:RegisterEvent("AUCTION_HOUSE_SHOW")
-	frame:RegisterEvent("TRADE_SKILL_SHOW")
-	frame:SetScript("OnEvent", function(_, event)
-		if event == "TRADE_SKILL_SHOW" then
-			if AuctionatorTradeSkillSearch then
-				AuctionatorTradeSkillSearch:SkinButton(true)
-				frame:UnregisterEvent("TRADE_SKILL_SHOW")
-			end
-		else
-			local list = _G.AuctionatorShoppingListFrame
+	-- Auctionator skin (from AddOnSkins)
+	if IsAddOnLoaded("Auctionator") then
+		C_Timer.After(0.05, function()
+			local list = _G.AuctionatorShoppingFrame
 			if not list then return end
 
 			local config = _G.AuctionatorConfigFrame
 			local selling = _G.AuctionatorSellingFrame
 			local cancelling = _G.AuctionatorCancellingFrame
 
-			T.SkinTab(AuctionatorTabs_ShoppingLists)
+			T.SkinTab(AuctionatorTabs_Shopping)
 			T.SkinTab(AuctionatorTabs_Selling)
 			T.SkinTab(AuctionatorTabs_Cancelling)
 			T.SkinTab(AuctionatorTabs_Auctionator)
@@ -308,8 +295,8 @@ local function LoadAuctionatorSkin()
 				list.Export,
 				list.Import,
 				list.ExportCSV,
-				list.OneItemSearchButton,
-				list.OneItemSearchExtendedButton,
+				list.OneItemSearch.SearchButton,
+				list.OneItemSearch.ExtendedButton,
 				selling.SaleItemFrame.MaxButton,
 				selling.SaleItemFrame.PostButton,
 				config.OptionsButton,
@@ -322,15 +309,17 @@ local function LoadAuctionatorSkin()
 				end
 			end
 
+			list.ManualSearch:SetPoint("TOPRIGHT", list.ScrollListShoppingList, "BOTTOMRIGHT", -7, -4)
+
 			local scrollbars = {
-				_G.AuctionatorSellingFrameScrollBar,
-				cancelling.ResultsListing.ScrollFrame.scrollBar,
-				list.ScrollListShoppingList.ScrollFrame.scrollBar,
-				list.ScrollListRecents.ScrollFrame.scrollBar,
-				list.ResultsListing.ScrollFrame.scrollBar,
-				selling.CurrentItemListing.ScrollFrame.scrollBar,
-				selling.HistoricalPriceListing.ScrollFrame.scrollBar,
-				selling.ResultsListing.ScrollFrame.scrollBar
+				list.ScrollListShoppingList.ScrollBar,
+				list.ScrollListRecents.ScrollBar,
+				list.ResultsListing.ScrollArea.ScrollBar,
+				selling.CurrentPricesListing.ScrollArea.ScrollBar,
+				selling.HistoricalPriceListing.ScrollArea.ScrollBar,
+				selling.BagListing.ScrollBar,
+				selling.ResultsListing.ScrollArea.ScrollBar,
+				cancelling.ResultsListing.ScrollArea.ScrollBar
 			}
 
 			for i = 1, #scrollbars do
@@ -351,10 +340,9 @@ local function LoadAuctionatorSkin()
 			end
 
 			local editboxes = {
-				list.OneItemSearchBox,
+				list.OneItemSearch.SearchBox,
 				selling.SaleItemFrame.Quantity.InputBox,
 				config.DiscordLink.InputBox,
-				config.TechnicalRoadmap.InputBox,
 				config.BugReportLink.InputBox,
 				cancelling.SearchFilter
 			}
@@ -384,7 +372,7 @@ local function LoadAuctionatorSkin()
 			local headers = {
 				list.ResultsListing.HeaderContainer,
 				cancelling.ResultsListing.HeaderContainer,
-				selling.CurrentItemListing.HeaderContainer,
+				selling.CurrentPricesListing.HeaderContainer,
 				selling.HistoricalPriceListing.HeaderContainer,
 				selling.ResultsListing.HeaderContainer
 			}
@@ -393,29 +381,30 @@ local function LoadAuctionatorSkin()
 				SkinHeaders(headers[i])
 			end
 
-			T.SkinDropDownBox(AuctionatorShoppingListFrame.ListDropdown, 230)
-			list.OneItemSearchButton:SetPoint("TOPLEFT", list.OneItemSearchBox, "TOPRIGHT", 5, 1)
+			T.SkinDropDownBox(list.ListDropdown, 230)
+			list.OneItemSearch.SearchButton:SetPoint("TOPLEFT", list.OneItemSearch.SearchBox, "TOPRIGHT", 5, 1)
 
 			local tabs = {
-				selling.HistoryTabsContainer.RealmHistoryTab,
-				selling.HistoryTabsContainer.YourHistoryTab,
 				list.RecentsTabsContainer.ListTab,
-				list.RecentsTabsContainer.RecentsTab
+				list.RecentsTabsContainer.RecentsTab,
+				selling.PricesTabsContainer.CurrentPricesTab,
+				selling.PricesTabsContainer.PriceHistoryTab,
+				selling.PricesTabsContainer.YourHistoryTab,
 			}
 
 			for i = 1, #tabs do
 				local tab = tabs[i]
 				tab:DisableDrawLayer("BACKGROUND")
-				tab:GetHighlightTexture():SetTexture(nil)
+				tab:StripTextures()
 				tab.backdrop = CreateFrame("Frame", nil, tab)
 				tab.backdrop:SetFrameLevel(tab:GetFrameLevel() - 1)
 				tab.backdrop:SetTemplate("Overlay")
-				if i < 3 then
-					tab.backdrop:SetPoint("TOPLEFT", 10, 0)
-					tab.backdrop:SetPoint("BOTTOMRIGHT", -10, 6)
+				if i > 2 then
+					tab.backdrop:SetPoint("TOPLEFT", 8, -3)
+					tab.backdrop:SetPoint("BOTTOMRIGHT", -8, 3)
 				else
-					tab.backdrop:SetPoint("TOPLEFT", 5, -5)
-					tab.backdrop:SetPoint("BOTTOMRIGHT", -5, 0)
+					tab.backdrop:SetPoint("TOPLEFT", 5, -7)
+					tab.backdrop:SetPoint("BOTTOMRIGHT", -5, -3)
 				end
 			end
 
@@ -432,12 +421,11 @@ local function LoadAuctionatorSkin()
 				if child.StartScanButton then
 					child.StartScanButton:SkinButton()
 					child.CancelNextButton:SkinButton()
+					child.StartScanButton:SetPoint("TOPRIGHT", child.CancelNextButton, "TOPLEFT", -2, 0)
 				end
 			end
-
-			frame:UnregisterEvent("AUCTION_HOUSE_SHOW")
-		end
-	end)
+		end)
+	end
 end
 
-tinsert(T.SkinFuncs["ShestakUI"], LoadAuctionatorSkin)
+T.SkinFuncs["Blizzard_AuctionHouseUI"] = LoadSkin
