@@ -198,7 +198,7 @@ skin.panels = {
 				region:Hide()
 			end
 		end
-		self.Top.SearchBox:SetHeight(22)
+		self.Top.SearchBox:SetHeight(20)
 		self.Top.SearchBox:SetPoint("LEFT",self.Top.Toggle,"RIGHT",4,0)
 		self.Top.SearchBox:SetPoint("RIGHT",self.Top.Filter,"LEFT",-4,0)
 		Mixin(self.Results, BackdropTemplateMixin)
@@ -359,6 +359,7 @@ skin.panels = {
 		T.SkinEditBox(self.Top.SearchBox)
 		Mixin(self.Top.SearchBox, BackdropTemplateMixin)
 		self.Top.SearchBox:SetBackdrop({})
+		self.Top.SearchBox.NineSlice:Hide()
 		for _,region in ipairs({self.Top.SearchBox:GetRegions()}) do
 			if region:GetDrawLayer()=="BACKGROUND" then
 				region:Hide()
@@ -647,8 +648,8 @@ function skin:HandlePanelTab(tab)
 		tab.backdrop:SetPoint("BOTTOMRIGHT", -3, 2)
 	else
 		tab.backdrop:SetTemplate("Transparent")
-		tab.backdrop:SetPoint("TOPLEFT", 10, -3)
-		tab.backdrop:SetPoint("BOTTOMRIGHT", -10, 3)
+		tab.backdrop:SetPoint("TOPLEFT", 3, -3)
+		tab.backdrop:SetPoint("BOTTOMRIGHT", -3, 3)
 	end
 end
 
@@ -660,7 +661,7 @@ function skin:HandleAutoScrollFrame(listFrame)
 	Mixin(listFrame.Background, BackdropTemplateMixin)
 	listFrame:StripTextures()
 	listFrame.Background:StripTextures()
-	
+
 	Mixin(listFrame.ScrollFrame, BackdropTemplateMixin)
 	Mixin(listFrame.ScrollFrame.ScrollBar, BackdropTemplateMixin)
 	listFrame.ScrollFrame:StripTextures()
