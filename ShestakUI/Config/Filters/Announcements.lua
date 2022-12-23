@@ -9,6 +9,7 @@ if C.announcements.spells == true then
 	T.announce_spells = {
 		61999,	-- Raise Ally
 		20484,	-- Rebirth
+		391054,	-- Intercession
 		20707,	-- Soulstone
 		345130,	-- Disposable Spectrophasic Reanimator
 		31821,	-- Aura Mastery
