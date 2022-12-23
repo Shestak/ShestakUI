@@ -19,6 +19,8 @@ end
 T.CastBarTicks = {
 	-- Druid
 	[SpellName(740)] = 4,		-- Tranquility
+	-- Evoker
+	[SpellName(356995)] = 3,	-- Disintegrate
 	-- Mage
 	[SpellName(5143)] = 5,		-- Arcane Missiles
 	[SpellName(12051)] = 6,		-- Evocation
@@ -36,8 +38,6 @@ T.CastBarTicks = {
 	[SpellName(755)] = 5,		-- Health Funnel
 	[SpellName(198590)] = 5,	-- Drain Soul
 	[SpellName(234153)] = 5,	-- Drain Life
-	-- Evoker
-	[SpellName(356995)] = 3,	-- Disintegrate
 	-- Racials
 	[SpellName(291944)] = 6,	-- Regeneratin (Zandalari)
 }
