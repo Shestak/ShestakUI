@@ -128,11 +128,17 @@ T.InterruptCast = {
 	-- The Nokhud Offensive
 	[386024] = true,	-- Tempest
 	[373395] = true,	-- Bloodcurdling Shout
+	-- Halls of Valor
+	[215433] = true,	-- Holy Radiance
+	-- Shadowmoon Burial Grounds
+	[152818] = true,	-- Shadow Mend
 }
 
 T.ImportantCast = {
 	-- The Nokhud Offensive
 	[383823] = true,	-- Rally the Clan
+	-- Ruby Life Pools
+	[372743] = true,	-- Ice Shield
 }
 
 local color = C.nameplate.mob_color
