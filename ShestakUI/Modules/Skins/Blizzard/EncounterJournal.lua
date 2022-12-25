@@ -87,6 +87,10 @@ local function LoadSkin()
 	T.SkinCloseButton(EncounterJournalCloseButton)
 	T.SkinDropDownBox(EncounterJournalInstanceSelectTierDropDown)
 
+	if T.newPatch then
+		EncounterJournalInstanceSelectBG:SetAlpha(0)
+	end
+
 	EncounterJournalInstanceSelect.bg:Kill()
 	EncounterJournalEncounterFrameInfoBG:Kill()
 	EncounterJournal.encounter.info.leftShadow:Kill()
