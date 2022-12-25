@@ -132,6 +132,8 @@ T.InterruptCast = {
 	[215433] = true,	-- Holy Radiance
 	-- Shadowmoon Burial Grounds
 	[152818] = true,	-- Shadow Mend
+	-- Temple of the Jade Serpent
+	[395859] = true,	-- Haunting Scream
 }
 
 T.ImportantCast = {
@@ -148,6 +150,8 @@ T.ColorPlate = {
 	["196548"] = color,		-- Ancient Branch
 	-- The Azure Vault
 	["187159"] = color_alt,	-- Shrieking Whelp
+	-- Temple of the Jade Serpent
+	["59555"] = color,		-- Haunting Sha
 	-- PvP
 	["5925"] = color,		-- Grounding Totem
 }
