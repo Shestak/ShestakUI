@@ -167,10 +167,11 @@ if C.reminder.solo_buffs_enable == true then
 			},
 		},
 		SHAMAN = {
-			[1] = {	-- Water/Earth Shield
+			[1] = {	-- Shields group
 				["spells"] = {
 					SpellName(52127),	-- Water Shield
-					SpellName(974),	-- Earth Shield
+					SpellName(974),		-- Earth Shield
+					SpellName(192106),	-- Lightning Shield
 				},
 				["combat"] = true,
 				["instance"] = true,
