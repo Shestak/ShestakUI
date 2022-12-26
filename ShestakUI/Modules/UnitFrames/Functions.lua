@@ -754,7 +754,6 @@ T.CreateAuraWatchIcon = function(_, icon)
 	if icon.cd then
 		icon.cd:SetReverse(true)
 	end
-	icon.overlay:SetTexture()
 end
 
 T.CreateAuraWatch = function(self)
@@ -799,6 +798,7 @@ T.CreateAuraWatch = function(self)
 			else
 				tex:SetVertexColor(0.8, 0.8, 0.8)
 			end
+			icon.icon = tex
 
 			local count = T.SetFontString(icon, C.font.unit_frames_font, C.font.unit_frames_font_size, C.font.unit_frames_font_style)
 			local point, anchorPoint, x, y = unpack(CountOffSets[spell[2]])
