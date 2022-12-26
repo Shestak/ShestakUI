@@ -113,9 +113,6 @@ frame:SetScript("OnEvent", function(_, _, addon)
 	SetFont(PVPArenaTextString, NORMAL, 22, "THINOUTLINE")
 	SetFont(QuestMapRewardsFont, NORMAL, 12, nil, nil, nil, nil, 0, 0, 0, 1, -1)
 	SetFont(NumberFontNormalSmall, NORMAL, 11, "OUTLINE")
-
-	-- Player title
-	--BETA for _, butt in pairs(PaperDollTitlesPane.buttons) do butt.text:SetFontObject(GameFontHighlightSmallLeft) end
 end)
 
 -- Registering fonts in LibSharedMedia
