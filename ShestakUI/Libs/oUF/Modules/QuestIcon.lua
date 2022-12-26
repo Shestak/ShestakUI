@@ -135,6 +135,10 @@ local function Update(self, event, arg1)
 		end
 	end
 
+	if element:IsShown() then
+		self.Level:SetAlpha(0)
+	end
+
 	if element.PostUpdate then
 		return element:PostUpdate()
 	end
