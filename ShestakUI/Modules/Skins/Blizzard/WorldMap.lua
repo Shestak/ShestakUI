@@ -206,6 +206,14 @@ local function LoadSkin()
 		end
 	end
 
+	for i = 3, #WorldMapFrame.overlayFrames do
+		local frame = WorldMapFrame.overlayFrames[i]
+		if frame.BountyDropdownButton then
+			T.SkinNextPrevButton(frame.BountyDropdownButton)
+			break
+		end
+	end
+
 	-- QuestSessionManagement skin (based on skin from Aurora)
 	QuestMapFrame.QuestSessionManagement:StripTextures()
 
