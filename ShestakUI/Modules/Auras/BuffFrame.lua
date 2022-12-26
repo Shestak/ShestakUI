@@ -47,14 +47,26 @@ hooksecurefunc(BuffFrame.AuraContainer, "UpdateGridLayout", function(self, auras
 		aura:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
 		aura:SetTemplate("Default")
 
-		if aura.Border then
-			aura.Border:SetAlpha(0)
-			aura:SetBackdropBorderColor(0.6, 0.1, 0.6)
-		else
+		if T.newPatch then
+			aura.TempEnchantBorder:SetAlpha(0)
 			if C.aura.classcolor_border == true then
 				aura:SetBackdropBorderColor(unpack(C.media.classborder_color))
 			else
 				aura:SetBackdropBorderColor(unpack(C.media.border_color))
+			end
+			if aura.TempEnchantBorder:IsShown() then
+				aura:SetBackdropBorderColor(0.6, 0.1, 0.6)
+			end
+		else
+			if aura.Border then
+				aura.Border:SetAlpha(0)
+				aura:SetBackdropBorderColor(0.6, 0.1, 0.6)
+			else
+				if C.aura.classcolor_border == true then
+					aura:SetBackdropBorderColor(unpack(C.media.classborder_color))
+				else
+					aura:SetBackdropBorderColor(unpack(C.media.border_color))
+				end
 			end
 		end
 
