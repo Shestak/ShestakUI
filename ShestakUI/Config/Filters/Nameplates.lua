@@ -141,6 +141,8 @@ T.ImportantCast = {
 	[383823] = true,	-- Rally the Clan
 	-- Ruby Life Pools
 	[372743] = true,	-- Ice Shield
+	-- Court of Stars
+	[210261] = true,	-- Sound Alarm
 }
 
 local color = C.nameplate.mob_color
@@ -152,6 +154,8 @@ T.ColorPlate = {
 	["187159"] = color_alt,	-- Shrieking Whelp
 	-- Temple of the Jade Serpent
 	["59555"] = color,		-- Haunting Sha
+	-- Court of Stars
+	["104251"] = color_alt,	-- Duskwatch Sentry
 	-- PvP
 	["5925"] = color,		-- Grounding Totem
 }
@@ -173,4 +177,10 @@ T.ShortNames = {
 	["Громовой кулак из клана Нокхуд"] = "Кулак",
 	["Псарь из клана Нокхуд"] = "Псарь",
 	["Заступник из клана Нокхуд"] = "Заступник",
+	-- Квартал Звезд
+	["Караульный из Сумеречной стражи"] = "Караульный",
+	["Часовой из Сумеречной стражи"] = "Часовой",
+	["Бдительный инквизитор"] = "Инквизитор",
+	["Пылающий бес"] = "Бес",
+	["Порабощенная Скверной карательница"] = "Карательница",
 }
