@@ -551,6 +551,12 @@ local function LoadSkin()
 				callingHeader.Divider:SetAlpha(0)
 			end
 		end
+		for header in QuestScrollFrame.campaignHeaderMinimalFramePool:EnumerateActive() do
+			if not header.CollapseButton.styled then
+				SkinExpandOrCollapse(header.CollapseButton)
+				header.CollapseButton.styled = true
+			end
+		end
 	end)
 end
 
