@@ -65,7 +65,9 @@ frame:SetScript("OnEvent", function(self, event)
 	-- Create button to show invite tooltip and allow open calendar
 	local button = CreateFrame("Button", nil, Minimap)
 	button:SetAllPoints(InviteTexture)
-	button:Hide()
+	if not GameTimeCalendarInvitesTexture:IsShown() then
+		button:Hide()
+	end
 
 	button:SetScript("OnEnter", function()
 		if InCombatLockdown() then return end
