@@ -200,6 +200,11 @@ local function GameTooltipDefault(tooltip, parent)
 		tooltip:SetPoint("BOTTOMRIGHT", TooltipAnchor, "BOTTOMRIGHT", 0, 0)
 		tooltip.default = 1
 	end
+	if not C.tooltip.shift_modifer then
+		if InCombatLockdown() and C.tooltip.hide_combat and not IsShiftKeyDown() then
+			tooltip:Hide()
+		end
+	end
 end
 hooksecurefunc("GameTooltip_SetDefaultAnchor", GameTooltipDefault)
 
@@ -213,24 +218,6 @@ if C.tooltip.shift_modifer == true then
 			end
 		end
 	end)
-else
-	if C.tooltip.cursor == true then
-		hooksecurefunc("GameTooltip_SetDefaultAnchor", function(self, parent)
-			if InCombatLockdown() and C.tooltip.hide_combat and not IsShiftKeyDown() then
-				self:Hide()
-			else
-				self:SetOwner(parent, "ANCHOR_CURSOR_RIGHT", 20, 20)
-			end
-		end)
-	else
-		hooksecurefunc("GameTooltip_SetDefaultAnchor", function(self)
-			if InCombatLockdown() and C.tooltip.hide_combat and not IsShiftKeyDown() then
-				self:Hide()
-			else
-				self:SetPoint("BOTTOMRIGHT", TooltipAnchor, "BOTTOMRIGHT", 0, 0)
-			end
-		end)
-	end
 end
 
 if C.tooltip.health_value == true then
