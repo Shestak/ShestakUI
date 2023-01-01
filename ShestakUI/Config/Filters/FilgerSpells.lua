@@ -734,7 +734,15 @@ C["filger_spells"] = {
 			-- Chrono Loop (PvP Talent)
 			{spellID = 383005, filter = "CD"},
 			-- Emerald Communion
-			{spellID = 370960, filter = "CD"},
+			{spellID = 370960, filter = "CD"},	
+			-- Dream Breath
+			{spellID = 355941, filter = "CD"},
+			-- Spiritbloom
+			{spellID = 382731, filter = "CD"},
+			-- Rewind
+			{spellID = 363534, filter = "CD"},
+			-- Verdant Embrace
+			{spellID = 360995, filter = "CD"},
 		},
 	},
 	["HUNTER"] = {
