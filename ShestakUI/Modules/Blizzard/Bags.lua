@@ -558,8 +558,8 @@ function Stuffing:BagFrameSlotNew(p, slot)
 		local tooltip_show = function(self)
 			GameTooltip:SetOwner(self, "ANCHOR_LEFT", 19, 7)
 			GameTooltip:ClearLines()
-			if ret.quality then
-				GameTooltip:SetInventoryItem('player', self:GetID())
+			if GetInventoryItemLink("player", ret.frame.ID) then
+				GameTooltip:SetInventoryItem("player", self:GetID())
 			else
 				local text = ret.slot == 4 and EQUIP_CONTAINER_REAGENT or EQUIP_CONTAINER
 				GameTooltip:AddLine(text)
