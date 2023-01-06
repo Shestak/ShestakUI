@@ -1792,6 +1792,10 @@ C["filger_spells"] = {
 			{spellID = 193356, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Shark Infested Waters
 			{spellID = 193357, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Opportunity
+			{spellID = 195627, unitID = "player", caster = "player", filter = "BUFF"},
+			-- Audacity
+			{spellID = 386270, unitID = "player", caster = "player", filter = "BUFF"},
 		},
 		{
 			Name = "T_DEBUFF_ICON",
