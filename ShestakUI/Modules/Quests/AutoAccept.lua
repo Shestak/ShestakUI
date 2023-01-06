@@ -94,7 +94,6 @@ local QuickQuestDB = {
 			[95146] = true,
 			[95200] = true,
 			[95201] = true,
-
 		},
 		quests = {
 			-- 6.0 coins
@@ -152,6 +151,19 @@ local QuickQuestDB = {
 
 			-- 9.0 valuable resources
 			[64541] = true, -- The Cost of Death (Ve'nari)
+
+			-- 10.0 valuable resources
+			[70183] = true, -- Specialized Secrets: Alchemy (Khadin)
+			[70184] = true, -- Specialized Secrets: Blacksmithing (Khadin)
+			[70186] = true, -- Specialized Secrets: Enchanting (Khadin)
+			[70187] = true, -- Specialized Secrets: Engineering (Khadin)
+			[70190] = true, -- Specialized Secrets: Herbalism (Khadin)
+			[70188] = true, -- Specialized Secrets: Inscription (Khadin)
+			[70189] = true, -- Specialized Secrets: Jewelcrafting (Khadin)
+			[70191] = true, -- Specialized Secrets: Leatherworking (Khadin)
+			[70192] = true, -- Specialized Secrets: Mining (Khadin)
+			[70193] = true, -- Specialized Secrets: Skinning (Khadin)
+			[70194] = true, -- Specialized Secrets: Tailoring (Khadin)
 		},
 	},
 }
