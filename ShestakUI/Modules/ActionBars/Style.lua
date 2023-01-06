@@ -273,6 +273,12 @@ frame:SetScript("OnEvent", function(self, event)
 	end
 
 	StyleNormalButton(ExtraActionButton1)
+
+	local spellAlert = ActionButton1.SpellActivationAlert
+	if spellAlert then
+		spellAlert:SetSize((C.actionbar.editor and C.actionbar.bar1_size or C.actionbar.button_size) * 1.4, (C.actionbar.editor and C.actionbar.bar1_size or C.actionbar.button_size) * 1.4)
+		ActionButton_HideOverlayGlow(ActionButton1)
+	end
 end)
 
 local function SetupFlyoutButton(button, self)
