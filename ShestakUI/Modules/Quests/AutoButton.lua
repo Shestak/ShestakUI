@@ -152,7 +152,7 @@ local function startScanningBags()
 				end)
 
 				AutoButton:SetScript("OnLeave", GameTooltip_Hide)
-				AutoButton:SetID(itemID)
+				AutoButton.id = itemID
 
 				AutoButtonShow(itemName)
 			end
@@ -181,5 +181,5 @@ end)
 -- Temp hide quest item by middle-click
 T.startScanningBags = startScanningBags
 
-local macro = "/run local T = unpack(ShestakUI) T.ABItemsIgnore[AutoButton:GetID()] = true T.startScanningBags() C_Timer.After(0.05, function() AutoButton:SetButtonState('NORMAL') end)"
+local macro = "/run local T = unpack(ShestakUI) T.ABItemsIgnore[AutoButton.id] = true T.startScanningBags() C_Timer.After(0.05, function() AutoButton:SetButtonState('NORMAL') end)"
 AutoButton:SetAttribute("macrotext3", macro)
