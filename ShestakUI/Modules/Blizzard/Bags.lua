@@ -757,6 +757,12 @@ local bind = {
 	[4] = ITEM_BIND_QUEST
 }
 
+local bindAccount = {
+	[ITEM_ACCOUNTBOUND] = true,
+	[ITEM_BIND_TO_ACCOUNT] = true,
+	[ITEM_BNETACCOUNTBOUND] = true,
+}
+
 function Stuffing:SearchUpdate(str)
 	str = string.lower(str)
 
@@ -779,7 +785,27 @@ function Stuffing:SearchUpdate(str)
 				equipSlot = equipSlot or ""
 				bindType = bind[bindType] or ""
 				minLevel = minLevel or 1
-				if not string.find(string.lower(b.name), str) and not string.find(string.lower(setName), str) and not string.find(string.lower(class), str) and not string.find(string.lower(subclass), str) and not string.find(string.lower(equipSlot), str) and not string.find(string.lower(bindType), str) then
+				local isBoA = false
+				if str and str == "boa" then
+					local data = C_TooltipInfo.GetBagItem(b.bag, b.slot)
+					if data then
+						for j = 2, 5 do
+							local lineData = data.lines[j]
+							if not lineData then break end
+							local argVal = lineData.args
+							if argVal then
+								local lineText = argVal[2] and argVal[2].stringVal
+								local bindOn = lineText and bindAccount[lineText]
+								if bindOn then
+									isBoA = true
+									break
+								end
+							end
+						end
+					end
+				end
+
+				if not isBoA and not string.find(string.lower(b.name), str) and not string.find(string.lower(setName), str) and not string.find(string.lower(class), str) and not string.find(string.lower(subclass), str) and not string.find(string.lower(equipSlot), str) and not string.find(string.lower(bindType), str) then
 					if IsItemUnusable(b.name) or minLevel > T.level then
 						_G[b.frame:GetName().."IconTexture"]:SetVertexColor(0.5, 0.5, 0.5)
 					end
@@ -802,8 +828,8 @@ function Stuffing:SearchUpdate(str)
 			local button = _G["ReagentBankFrameItem"..slotID]
 			if ilink then
 				local name, _, _, _, minLevel, class, subclass = GetItemInfo(ilink)
-				class = _G[class] or ""
-				subclass = _G[subclass] or ""
+				class = class or ""
+				subclass = subclass or ""
 				minLevel = minLevel or 1
 				if not string.find(string.lower(name), str) and not string.find(string.lower(class), str) and not string.find(string.lower(subclass), str) then
 					if IsItemUnusable(name) or minLevel > T.level then
