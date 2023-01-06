@@ -41,18 +41,20 @@ local function LoadSkin()
 		if self.slotPool then
 			for slot in self.slotPool:EnumerateActive() do
 				if not slot.skinned then
-					if slot.Icon:GetHeight() > 19 then
-						slot.Icon:SetSize(19, 19)
-					end
 					slot.Icon:SkinIcon()
 					slot.IconBorder:SetAlpha(0)
 					slot.skinned = true
+				end
+				local point, relativeTo, relativePoint, xOfs, yOfs = slot:GetPoint()
+				if yOfs == 0 then
+					slot:SetPoint(point, relativeTo, relativePoint, xOfs, yOfs - 3)
 				end
 			end
 		end
 	end)
 
 	DressUpFrame.LinkButton:SkinButton()
+	DressUpFrame.LinkButton:SetPoint("BOTTOMLEFT", 4, 4)
 
 	T.SkinDropDownBox(DressUpFrameOutfitDropDown)
 	DressUpFrameOutfitDropDown:SetSize(195, 34)
