@@ -5,7 +5,7 @@
 ## Version: 9.17
 ## OptionalDeps: Blizzard_CombatText, ShestakUI_Config, ShestakUI_Profile, AtlasLoot, cargBags, Clique, epgp, Grid, Grid2, ls_Toasts, Mapster, Omen, OPie, PitBull4, Postal, Prat-3.0, Quartz, Recount, Rematch, ShadowedUnitFrames, TidyPlates, TipTac, TipTacTalents, tullaCC, VuhDo, WeakAuras
 ## SavedVariables: ShestakUISettings, ShestakUIStats, ShestakUIBindings, ShestakUICurrency, ShestakUIPositions
-## SavedVariablesPerCharacter: ShestakUISettingsPerChar, ShestakUIChatHistory
+## SavedVariablesPerCharacter: ShestakUISettingsPerChar, ShestakUIChatHistory, ShestakUIPositionsPerChar
 
 ## X-Website: http://shestak.org
 ## X-Credits: AcidWeb, Aezay, Affli, Ailae, Allez, ALZA, Ammo, Astromech, Beoko, Bitbyte, Blamdarot, Bozo, Caellian, Califpornia, Camealion, Chiril, CrusaderHeimdall, Cybey, Dawn, Dencer, Don Kaban, Dridzt, Duffed, Durcyn, Eclipse, Egingell, Elv22, Evilpaul, Evl, Favorit, Fernir, Foof, Freebaser, g0st, Gethe, Gorlasch, Gsuz, Haleth, Haste, Hoochie, Hungtar, Hydra, HyPeRnIcS, Ildyria, iSpawnAtHome, Jaslm, Kanegasi, Karl_w_w, Karudon, Katae, Kellett, Kemayo, Killakhan, Kraftman, Leatrix, m2jest1c, Magdain, Monolit, MrRuben5, Nathanyel, Nefarion, Nightcracker, Nils Ruesch, p3lim, Partha, Phanx, Renstrom, RustamIrzaev, Safturento, Sanex, Sara.Festung, SDPhantom, Semlar, Sildor, Silverwind, SinaC, Slakah, Soeters, Starlon, Suicidal Katt, Syzgyn, Tekkub, Telroth, Thalyra, Thizzelle, Tia Lynn, Tohveli, Tukz, Tuller, Urtgard, Veev, Villiv, Wetxius, Woffle of Dark Iron, Wrug, Xuerian, Yleaf, Zork

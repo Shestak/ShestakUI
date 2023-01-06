@@ -21,6 +21,17 @@ L_GUI_EXPERT_MODE = "Mode expert"
 L_GUI_EXPERT_MODE_DESC = "Modification personnalisée du profil Lua"
 L_GUI_RESET_SPELLS_DESC = "CTRL+Click pour réinitialiser la liste"
 
+-- Profile
+L.profile = "Profile" -- Need review
+L.profile_title = "Profile options" -- Need review
+L.profile_choose = "Choose profile" -- Need review
+L.profile_options = "Settings" -- Need review
+L.profile_movers = "Moving elements" -- Need review
+L.profile_export = "Export" -- Need review
+L.profile_import = "Import" -- Need review
+L.profile_error_lib = "To enable export and import - install WeakAuras" -- Need review
+L.profile_error_code = "Error in imported code!" -- Need review
+
 -- General options
 L_GUI_GENERAL_SUBTEXT = "Ces paramètres contrôlent les paramètres généraux de l’interface utilisateur. \nTapez '/uihelp' dans le chat pour obtenir de l’aide."
 L_GUI_GENERAL_WELCOME_MESSAGE = "Message de bienvenue dans le chat"
@@ -83,6 +94,7 @@ L_GUI_SKINS_BLIZZARD = "Activer la personnalisation des fenêtres Blizzard"
 L_GUI_SKINS_MINIMAP_BUTTONS = "Activer la personnalisation des icônes de la minimap"
 L_GUI_SKINS_SUBHEADER = "Change l’apparence des addons"
 L.skins_minimap_buttons_mouseover = "Icônes de la minimap au survol de la souris"
+L.skins_bubbles = "Skin de l'infobulle"
 
 -- Unit Frames options
 L_GUI_UF_SUBTEXT = "Personnalisez le cadre du joueur, de la cible, etc..."
@@ -286,25 +298,24 @@ L.tooltip_instance_lock = "Afficher le verrouillage de votre instance"
 L.tooltip_mount = "Source de la monture"
 
 -- Chat options
-L_GUI_CHAT_SUBTEXT = "Ici vous pouvez modifier les paramètres de la fenêtre de chat."
-L_GUI_CHAT_ENABLE = "Activer le chat"
-L_GUI_CHAT_BACKGROUND = "Activer l'arrière plan"
-L_GUI_CHAT_BACKGROUND_ALPHA = "Transparence de l'arrière plan"
+L.chat_subtext = "Ici vous pouvez modifier les paramètres de la fenêtre de chat."
+L.chat_enable = "Activer le chat"
+L.chat_background = "Activer l'arrière plan"
+L.chat_background_alpha = "Transparence de l'arrière plan"
 L.chat_filter = "Suppression de certains spams du système"
 L.chat_filter_desc = "Duels, changement de talents, dialogue PNJ en ville"
 L.chat_spam = "Suppression du spam des joueurs (de la liste noire)"
 L.chat_spam_list = "Liste noire"
 L.chat_spam_list_desc = "Liste de mots (séparés par des espaces, lettres minuscules) pour masquer les messages"
-L_GUI_CHAT_WIDTH = "Largeur de la fenêtre"
-L_GUI_CHAT_HEIGHT = "Hauteur de la fenêtre"
-L_GUI_CHAT_BAR = "Barre de boutons pour changer de canal de chat"
-L_GUI_CHAT_BAR_MOUSEOVER = "Affiche les boutons pour changer de canal au survol de la souris"
-L_GUI_CHAT_WHISP = "Alerte sonore quand murmure"
-L_GUI_CHAT_SKIN_BUBBLE = "Skin de l'infobulle"
-L_GUI_CHAT_CL_TAB = "Afficher l'onglet du journal de combat"
-L_GUI_CHAT_TABS_MOUSEOVER = "Affiche les onglets de discussion au survol de la souris"
-L_GUI_CHAT_STICKY = "Active le dernier canal utilisé(canal persistant)"
-L_GUI_CHAT_DAMAGE_METER_SPAM = "Fusionnez le spam de compteur de dégâts dans un seul lien/ligne"
+L.chat_width = "Largeur de la fenêtre"
+L.chat_height = "Hauteur de la fenêtre"
+L.chat_chat_bar = "Barre de boutons pour changer de canal de chat"
+L.chat_chat_bar_mouseover = "Affiche les boutons pour changer de canal au survol de la souris"
+L.chat_whisp_sound = "Alerte sonore quand murmure"
+L.chat_combatlog = "Afficher l'onglet du journal de combat"
+L.chat_tabs_mouseover = "Affiche les onglets de discussion au survol de la souris"
+L.chat_sticky = "Active le dernier canal utilisé(canal persistant)"
+L.chat_damage_meter_spam = "Fusionnez le spam de compteur de dégâts dans un seul lien/ligne"
 L.chat_loot_icons = "Affiche une icône à côté du butin dans le chat"
 L.chat_hide_combat = "Cacher le chat en combat"
 L.chat_custom_time_color = "Activer la coloration personnalisée de l'heure"

@@ -5,7 +5,7 @@ if GetLocale() ~= "ruRU" then return end
 --	Localization for ruRU client
 --	Translation: Shestak, Wetxius
 ----------------------------------------------------------------------------------------
-L_GUI_SET_SAVED_SETTTINGS = "Установить настройки для персонажа"
+L_GUI_SET_SAVED_SETTTINGS = "Персональный профиль"
 L_GUI_SET_SAVED_SETTTINGS_DESC = "Переключение между профилем, который применяется ко всем персонажам, и профилем, уникальным для этого персонажа."
 L_GUI_RESET_CHAR = "Вы уверены, что хотите сбросить все настройки ShestakUI для этого персонажа?"
 L_GUI_RESET_ALL = "Вы уверены, что хотите сбросить все настройки ShestakUI?"
@@ -22,6 +22,17 @@ L_GUI_EXPERT_MODE_DESC = "Редактирование профиля Lua"
 L_GUI_RESET_SPELLS_DESC = "CTRL-клик, чтобы сбросить список"
 L_GUI_INFO = "Помощь"
 L_GUI_WIKI_URL = "https://github.com/Wetxius/ShestakUI_Help/wiki/Русский"
+
+-- Profile
+L.profile = "Профиль"
+L.profile_title = "Настройка профиля"
+L.profile_choose = "Выбор профиля"
+L.profile_options = "Настройки"
+L.profile_movers = "Перемещение элементов"
+L.profile_export = "Экспорт"
+L.profile_import = "Импорт"
+L.profile_error_lib = "Для включения импорта и экспорта - установите WeakAuras"
+L.profile_error_code = "Ошибка в импортируемом коде!"
 
 -- General options
 L_GUI_GENERAL_SUBTEXT = "Эти настройки контролируют общие параметры UI. Наберите в чат '/uihelp' для помощи."
@@ -85,6 +96,7 @@ L_GUI_SKINS_BLIZZARD = "Стилизация элементов интерфей
 L_GUI_SKINS_MINIMAP_BUTTONS = "Стилизация кнопок модификаций у миникарты"
 L_GUI_SKINS_SUBHEADER = "Стилизация сторонних модификаций"
 L.skins_minimap_buttons_mouseover = "Кнопки по наведению курсора"
+L.skins_bubbles = "Стилизация облачков чата"
 
 -- Unit Frames options
 L_GUI_UF_SUBTEXT = "Настройка рамок игрока, цели и т.д."
@@ -289,25 +301,24 @@ L.tooltip_instance_lock = "Ваш статус прохождения подзе
 L.tooltip_mount = "Источник средства передвижения"
 
 -- Chat options
-L_GUI_CHAT_SUBTEXT = "Здесь можно изменить настройки окна чата."
-L_GUI_CHAT_ENABLE = "Включить чат"
-L_GUI_CHAT_BACKGROUND = "Включить фон чата"
-L_GUI_CHAT_BACKGROUND_ALPHA = "Прозрачность фона"
+L.chat_subtext = "Здесь можно изменить настройки окна чата."
+L.chat_enable = "Включить чат"
+L.chat_background = "Включить фон чата"
+L.chat_background_alpha = "Прозрачность фона"
 L.chat_filter = "Удаление системных сообщений"
 L.chat_filter_desc = "Дуэли, смена талантов, диалоги NPC в городах"
 L.chat_spam = "Удаление спама от игроков"
 L.chat_spam_list = "Черный список"
 L.chat_spam_list_desc = "Список слов (через пробел, строчными буквами) для скрытия сообщений"
-L_GUI_CHAT_WIDTH = "Ширина чата"
-L_GUI_CHAT_HEIGHT = "Высота чата"
-L_GUI_CHAT_BAR = "Панель кнопок каналов"
-L_GUI_CHAT_BAR_MOUSEOVER = "Панель по наведению курсора"
-L_GUI_CHAT_WHISP = "Звуковое оповещение во время шепота"
-L_GUI_CHAT_SKIN_BUBBLE = "Стилизация облачков чата"
-L_GUI_CHAT_CL_TAB = "Показывать вкладку журнала боя"
-L_GUI_CHAT_TABS_MOUSEOVER = "Вкладки чата по наведению курсора"
-L_GUI_CHAT_STICKY = "Запоминать последний канал чата"
-L_GUI_CHAT_DAMAGE_METER_SPAM = "Объединять спам измерителей урона в одну строку"
+L.chat_width = "Ширина чата"
+L.chat_height = "Высота чата"
+L.chat_chat_bar = "Панель кнопок каналов"
+L.chat_chat_bar_mouseover = "Панель по наведению курсора"
+L.chat_whisp_sound = "Звуковое оповещение во время шепота"
+L.chat_combatlog = "Показывать вкладку журнала боя"
+L.chat_tabs_mouseover = "Вкладки чата по наведению курсора"
+L.chat_sticky = "Запоминать последний канал чата"
+L.chat_damage_meter_spam = "Объединять спам измерителей урона в одну строку"
 L.chat_loot_icons = "Иконки для добычи"
 L.chat_hide_combat = "Скрывать чат в бою"
 L.chat_custom_time_color = "Задать свой цвет времени"

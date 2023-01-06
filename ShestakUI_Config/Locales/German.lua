@@ -21,6 +21,17 @@ L_GUI_EXPERT_MODE = "Expert mode" -- Need review
 L_GUI_EXPERT_MODE_DESC = "Custom editing of Lua profile" -- Need review
 L_GUI_RESET_SPELLS_DESC = "CTRL-click to reset list" -- Need review
 
+-- Profile
+L.profile = "Profile" -- Need review
+L.profile_title = "Profile options" -- Need review
+L.profile_choose = "Choose profile" -- Need review
+L.profile_options = "Settings" -- Need review
+L.profile_movers = "Moving elements" -- Need review
+L.profile_export = "Export" -- Need review
+L.profile_import = "Import" -- Need review
+L.profile_error_lib = "To enable export and import - install WeakAuras" -- Need review
+L.profile_error_code = "Error in imported code!" -- Need review
+
 -- General options
 L_GUI_GENERAL_SUBTEXT = "Diese Einstellungen steuern die allgemeinen Einstellungen der Benutzeroberfläche. Geben Sie im Chat '/uihelp ein, um Hilfe zu erhalten."
 L_GUI_GENERAL_WELCOME_MESSAGE = "Welcome message in chat"
@@ -83,6 +94,7 @@ L_GUI_SKINS_BLIZZARD = "Aktiviere Styles für Blizzardfenster"
 L_GUI_SKINS_MINIMAP_BUTTONS = "Aktiviere styling Addonincons an der Minimap"
 L_GUI_SKINS_SUBHEADER = "Design/Skins für Addons"
 L.skins_minimap_buttons_mouseover = "Addons-Symbole bei Mouseover"
+L.skins_bubbles = "Blizzard Chat Blasen verändern"
 
 -- Unit Frames options
 L_GUI_UF_SUBTEXT = "Anpassen von Player, Zielframes usw."
@@ -286,25 +298,24 @@ L.tooltip_instance_lock = "Deine abgeschlossenen Instanzen im Tooltip"
 L.tooltip_mount = "Source of mount" -- Needs review
 
 -- Chat options
-L_GUI_CHAT_SUBTEXT = "Hier Einstellungen des Chat-Fensters ändern."
-L_GUI_CHAT_ENABLE = "Chat aktivieren"
-L_GUI_CHAT_BACKGROUND = "Chathintergrund aktivieren"
-L_GUI_CHAT_BACKGROUND_ALPHA = "Transparenz des Hintergrunds"
+L.chat_subtext = "Hier Einstellungen des Chat-Fensters ändern."
+L.chat_enable = "Chat aktivieren"
+L.chat_background = "Chathintergrund aktivieren"
+L.chat_background_alpha = "Transparenz des Hintergrunds"
 L.chat_filter = "Entferne Systemspam"
 L.chat_filter_desc = "Duels, change talents, NPC dialogue in city" -- Need review
 L.chat_spam = "Entferne einigen Spam vom Server"
 L.chat_spam_list = "Black list" -- Need review
 L.chat_spam_list_desc = "List of words (separated by space, lowercase letters) to hide messages" -- Need review
-L_GUI_CHAT_WIDTH = "Breite des Chatfensters"
-L_GUI_CHAT_HEIGHT = "Höhe desChatfensters"
-L_GUI_CHAT_BAR = "Kleine Leiste um den Chatchannel zu wechseln"
-L_GUI_CHAT_BAR_MOUSEOVER = "Aktionsleiste bei Mousover hervorheben"
-L_GUI_CHAT_WHISP = "Geräusch abspielen wenn eine private Nachricht empfangen wird"
-L_GUI_CHAT_SKIN_BUBBLE = "Blizzard Chat Blasen verändern"
-L_GUI_CHAT_CL_TAB = "Kampflog Reiter anzeigen"
-L_GUI_CHAT_TABS_MOUSEOVER = "Zeige Chat-Reiter bei Mouseover"
-L_GUI_CHAT_STICKY = "Behalte den letzen Channel"
-L_GUI_CHAT_DAMAGE_METER_SPAM = "Fasse DMG-Meterspam in einer Zeile zusammen"
+L.chat_width = "Breite des Chatfensters"
+L.chat_height = "Höhe desChatfensters"
+L.chat_chat_bar = "Kleine Leiste um den Chatchannel zu wechseln"
+L.chat_chat_bar_mouseover = "Aktionsleiste bei Mousover hervorheben"
+L.chat_whisp_sound = "Geräusch abspielen wenn eine private Nachricht empfangen wird"
+L.chat_combatlog = "Kampflog Reiter anzeigen"
+L.chat_tabs_mouseover = "Zeige Chat-Reiter bei Mouseover"
+L.chat_sticky = "Behalte den letzen Channel"
+L.chat_damage_meter_spam = "Fasse DMG-Meterspam in einer Zeile zusammen"
 L.chat_loot_icons = "Symbole für Beute"
 L.chat_hide_combat = "Hide chat in combat" -- Needs review
 L.chat_custom_time_color = "Aktivieren der benutzerdefinierten Zeitstempelfärbung"

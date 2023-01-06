@@ -21,6 +21,17 @@ L_GUI_EXPERT_MODE = "專家模式"
 L_GUI_EXPERT_MODE_DESC = "編寫你的插件代碼"
 L_GUI_RESET_SPELLS_DESC = "Ctrl+左鍵重置列表"
 
+-- Profile
+L.profile = "Profile" -- Need review
+L.profile_title = "Profile options" -- Need review
+L.profile_choose = "Choose profile" -- Need review
+L.profile_options = "Settings" -- Need review
+L.profile_movers = "Moving elements" -- Need review
+L.profile_export = "Export" -- Need review
+L.profile_import = "Import" -- Need review
+L.profile_error_lib = "To enable export and import - install WeakAuras" -- Need review
+L.profile_error_code = "Error in imported code!" -- Need review
+
 -- General options
 L_GUI_GENERAL_SUBTEXT = "一般用戶界面設置，鍵入 /uihelp 獲取更多可用命令。"
 L_GUI_GENERAL_WELCOME_MESSAGE = "歡迎信息"
@@ -83,6 +94,7 @@ L_GUI_SKINS_BLIZZARD = "美化暴雪默認界面"
 L_GUI_SKINS_MINIMAP_BUTTONS = "小地圖插件圖標"
 L_GUI_SKINS_SUBHEADER = "單體插件"
 L.skins_minimap_buttons_mouseover = "滑鼠懸停顯示"
+L.skins_bubbles = "美化聊天泡泡"
 
 -- Unit Frames options
 L_GUI_UF_SUBTEXT = "定制玩家/目標框架/其他框架"
@@ -286,25 +298,24 @@ L.tooltip_instance_lock = "副本進度比較"
 L.tooltip_mount = "坐騎來源"
 
 -- Chat options
-L_GUI_CHAT_SUBTEXT = "這裡可以設置你的聊天框"
-L_GUI_CHAT_ENABLE = "聊天框增強"
-L_GUI_CHAT_BACKGROUND = "聊天框背景"
-L_GUI_CHAT_BACKGROUND_ALPHA = "聊天框背景透明度"
+L.chat_subtext = "這裡可以設置你的聊天框"
+L.chat_enable = "聊天框增強"
+L.chat_background = "聊天框背景"
+L.chat_background_alpha = "聊天框背景透明度"
 L.chat_filter = "屏蔽無用系統信息"
 L.chat_filter_desc = "決鬥, 切換專精, 城中NPC對話"
 L.chat_spam = "屏蔽玩家垃圾信息"
 L.chat_spam_list = "過濾詞列表"
 L.chat_spam_list_desc = "添加過濾詞(中文詞用空格分隔，英文詞用小寫分隔)"
-L_GUI_CHAT_WIDTH = "聊天框寬度"
-L_GUI_CHAT_HEIGHT = "聊天框高度"
-L_GUI_CHAT_BAR = "聊天頻道快捷鍵"
-L_GUI_CHAT_BAR_MOUSEOVER = "滑鼠懸停顯示聊天頻道快捷鍵"
-L_GUI_CHAT_WHISP = "接受密語時聲音提示"
-L_GUI_CHAT_SKIN_BUBBLE = "美化聊天泡泡"
-L_GUI_CHAT_CL_TAB = "戰鬥記錄標籤"
-L_GUI_CHAT_TABS_MOUSEOVER = "滑鼠懸停顯示頻道標籤"
-L_GUI_CHAT_STICKY = "記住上一次使用的頻道"
-L_GUI_CHAT_DAMAGE_METER_SPAM = "在鏈接中合併垃圾郵件"
+L.chat_width = "聊天框寬度"
+L.chat_height = "聊天框高度"
+L.chat_chat_bar = "聊天頻道快捷鍵"
+L.chat_chat_bar_mouseover = "滑鼠懸停顯示聊天頻道快捷鍵"
+L.chat_whisp_sound = "接受密語時聲音提示"
+L.chat_combatlog = "戰鬥記錄標籤"
+L.chat_tabs_mouseover = "滑鼠懸停顯示頻道標籤"
+L.chat_sticky = "記住上一次使用的頻道"
+L.chat_damage_meter_spam = "在鏈接中合併垃圾郵件"
 L.chat_loot_icons = "拾取信息帶圖標"
 L.chat_hide_combat = "戰鬥中隱藏"
 L.chat_custom_time_color = "自定義時間標籤顏色"

@@ -216,3 +216,28 @@ T.IsFramePositionedLeft = function(frame)
 
 	return positionedLeft
 end
+
+T.CurrentProfile = function(reset)
+	if ShestakUIOptionsGlobal[T.realm][T.name] then
+		if ShestakUIPositionsPerChar == nil then
+			ShestakUIPositionsPerChar = ShestakUIPositions
+		end
+		if not ShestakUIPositionsPerChar then return {} end
+		local i = tostring(ShestakUIOptionsGlobal[T.realm]["Current_Profile"][T.name])
+		ShestakUIPositionsPerChar[i] = ShestakUIPositionsPerChar[i] or {}
+		if reset then
+			ShestakUIPositionsPerChar[i] = {}
+		else
+			return ShestakUIPositionsPerChar[i]
+		end
+	else
+		if not ShestakUIPositions then return {} end
+		local i = tostring(ShestakUIOptionsGlobal["Current_Profile"])
+		ShestakUIPositions[i] = ShestakUIPositions[i] or {}
+		if reset then
+			ShestakUIPositions[i] = {}
+		else
+			return ShestakUIPositions[i]
+		end
+	end
+end

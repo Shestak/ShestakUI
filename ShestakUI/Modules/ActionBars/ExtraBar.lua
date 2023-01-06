@@ -55,7 +55,8 @@ C_Timer.After(0.1, function()
 end)
 
 hooksecurefunc("ExtraActionBar_Update", function()
-	if ShestakUIPositions["ZoneButtonAnchor"] then return end
+	local positionTable = T.CurrentProfile()
+	if positionTable["ZoneButtonAnchor"] then return end
 	if HasExtraActionBar() then
 		zoneAnchor:SetPoint("BOTTOMRIGHT", anchor, "BOTTOMLEFT", -3, 0)
 	else

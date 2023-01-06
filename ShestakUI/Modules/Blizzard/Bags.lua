@@ -98,7 +98,7 @@ end
 
 local function IsClassUnusable(class, subclass, slot)
 	if class and subclass and _unusable[class] then
-		return slot ~= '' and _unusable[class][subclass] or slot == 'INVTYPE_WEAPONOFFHAND' and unusable[3]
+		return slot ~= "" and _unusable[class][subclass] or slot == "INVTYPE_WEAPONOFFHAND" and unusable[3]
 	end
 end
 
@@ -240,7 +240,7 @@ function Stuffing:SlotUpdate(b)
 	if clink then
 		b.name, _, _, b.itemlevel, b.level, _, _, _, _, _, _, b.itemClassID, b.itemSubClassID = GetItemInfo(clink)
 		if not b.name then	-- Keystone bug
-			b.name = clink:match('%[(.-)%]') or ""
+			b.name = clink:match("%[(.-)%]") or ""
 		end
 
 		if C.bag.ilvl == true and b.itemlevel and quality > 1 and (b.itemClassID == 2 or b.itemClassID == 4 or (b.itemClassID == 3 and b.itemSubClassID == 11)) then
@@ -543,11 +543,11 @@ function Stuffing:BagFrameSlotNew(p, slot)
 		_G[ret.frame:GetName().."IconTexture"]:SetTexture(bag_tex)
 		ret.frame:SetID(ret.frame.ID)
 
-		ret.frame:RegisterForDrag('LeftButton')
-		ret.frame:SetScript('OnDragStart', function(self)
+		ret.frame:RegisterForDrag("LeftButton")
+		ret.frame:SetScript("OnDragStart", function(self)
 			PickupBagFromSlot(self:GetID())
 		end)
-		ret.frame:SetScript('OnReceiveDrag', function(self)
+		ret.frame:SetScript("OnReceiveDrag", function(self)
 			PutItemInBag(self:GetID())
 		end)
 
@@ -899,7 +899,8 @@ function Stuffing:CreateBagFrame(w)
 			DragFunction(self, false)
 			local ap, p, rp, x, y = f:GetPoint()
 			if not p then p = UIParent end
-			ShestakUIPositions[f:GetName()] = {ap, p:GetName(), rp, x, y}
+			local positionTable = T.CurrentProfile()
+			positionTable[f:GetName()] = {ap, p:GetName(), rp, x, y}
 			f.moved = nil
 		end
 	end)
@@ -913,12 +914,14 @@ function Stuffing:CreateBagFrame(w)
 				f:SetPoint(unpack(C.position.bag))
 			end
 			f:SetUserPlaced(false)
-			ShestakUIPositions[f:GetName()] = nil
+			local positionTable = T.CurrentProfile()
+			positionTable[f:GetName()] = nil
 		end
 	end)
 
-	if ShestakUIPositions[f:GetName()] then
-		f:SetPoint(unpack(ShestakUIPositions[f:GetName()]))
+	local positionTable = T.CurrentProfile()
+	if positionTable[f:GetName()] then
+		f:SetPoint(unpack(positionTable[f:GetName()]))
 	else
 		if w == "Bank" then
 			f:SetPoint(unpack(C.position.bank))
@@ -1235,10 +1238,8 @@ function Stuffing:Layout(isBank)
 
 				for _, val in ipairs(btns) do
 					if val.bag == bag then
-						-- val.frame:SetAlpha(1)
 						val.frame.searchOverlay:Hide()
 					else
-						-- val.frame:SetAlpha(0.2)
 						val.frame.searchOverlay:Show()
 					end
 				end
@@ -1246,7 +1247,6 @@ function Stuffing:Layout(isBank)
 
 			b.frame:HookScript("OnLeave", function()
 				for _, btn in ipairs(btns) do
-					-- btn.frame:SetAlpha(1)
 					btn.frame.searchOverlay:Hide()
 				end
 			end)
@@ -1441,7 +1441,6 @@ function Stuffing:PLAYERBANKSLOTS_CHANGED(id)
 	if id > 28 then
 		for _, v in ipairs(self.bagframe_buttons) do
 			if v.frame and v.frame.GetInventorySlot then
-
 				BankFrameItemButton_Update(v.frame)
 				BankFrameItemButton_UpdateLocked(v.frame)
 
