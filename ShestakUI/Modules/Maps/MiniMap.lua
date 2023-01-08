@@ -100,8 +100,18 @@ frame:SetScript("OnEvent", function(self, event)
 	end)
 
 	-- Move Mail icon
-	MinimapCluster.MailFrame:ClearAllPoints()
-	MinimapCluster.MailFrame:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 4, -1)
+	local MailFrame = T.newPatch and MinimapCluster.IndicatorFrame.MailFrame or MinimapCluster.MailFrame
+	if T.newPatch then
+		hooksecurefunc(MailFrame, "SetPoint", function(self, _, anchor)
+			if anchor ~= Minimap then
+				self:ClearAllPoints()
+				self:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 4, -1)
+			end
+		end)
+	else
+		MailFrame:ClearAllPoints()
+		MailFrame:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT", 4, -1)
+	end
 	MiniMapMailIcon:SetTexture("Interface\\AddOns\\ShestakUI\\Media\\Textures\\Mail.tga")
 	MiniMapMailIcon:SetSize(16, 16)
 end)
