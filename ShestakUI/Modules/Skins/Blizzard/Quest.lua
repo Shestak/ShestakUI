@@ -346,6 +346,14 @@ local function LoadSkin()
 				end
 			end
 		end
+
+		-- Reputation Rewards
+		for repReward in rewardsFrame.reputationRewardPool:EnumerateActive() do
+			if not repReward.isSkinned then
+				SkinReward(repReward, isMapQuest)
+				repReward.isSkinned = true
+			end
+		end
 	end)
 
 	hooksecurefunc(QuestInfoRequiredMoneyText, "SetTextColor", function(self, r)
