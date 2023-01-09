@@ -1507,8 +1507,6 @@ C["filger_spells"] = {
 			{spellID = 194249, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Dispersion
 			{spellID = 47585, unitID = "player", caster = "player", filter = "BUFF"},
-			-- Power Infusion
-			{spellID = 10060, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Apotheosis
 			{spellID = 200183, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Blessing of T'uure
@@ -2420,6 +2418,8 @@ C["filger_spells"] = {
 			{spellID = 381301, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Mallet of Thunderous Skins
 			{spellID = 292686, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Power Infusion
+			{spellID = 10060, unitID = "player", caster = "all", filter = "BUFF"},
 
 			-- Engineering
 			-- Goblin Glider [Goblin Glider Kit]
@@ -2498,6 +2498,8 @@ C["filger_spells"] = {
 			{spellID = 77764, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Blessing of Freedom
 			{spellID = 1044, unitID = "player", caster = "all", filter = "BUFF"},
+			-- Time Spiral
+			{spellID = 375226, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Tricks of the Trade
 			{spellID = 57934, unitID = "player", caster = "all", filter = "BUFF"},
 			-- Slow Fall
