@@ -742,6 +742,29 @@ function T.SkinCheckBox(frame, size)
 	end
 end
 
+function T.SkinCheckBoxAtlas(checkbox, size)
+	if size then
+		checkbox:SetSize(size, size)
+	end
+
+	checkbox:CreateBackdrop("Overlay")
+	checkbox.backdrop:SetInside(nil, 4, 4)
+
+	for _, region in next, { checkbox:GetRegions() } do
+		if region:IsObjectType("Texture") then
+			if region:GetAtlas() == "checkmark-minimal" or region:GetTexture() == 130751 then
+				region:SetTexture(C.media.texture)
+
+				local checkedTexture = checkbox:GetCheckedTexture()
+				checkedTexture:SetColorTexture(1, 0.82, 0, 0.8)
+				checkedTexture:SetInside(checkbox.backdrop)
+			else
+				region:SetTexture("")
+			end
+		end
+	end
+end
+
 function T.SkinCloseButton(f, point, text, pixel)
 	f:StripTextures()
 	f:SetTemplate("Overlay")
@@ -798,6 +821,38 @@ function T.SkinSlider(f)
 
 	f:SetThumbTexture("Interface\\CastingBar\\UI-CastingBar-Spark")
 	f:GetThumbTexture():SetBlendMode("ADD")
+end
+
+function T.SkinSliderStep(frame, minimal)
+	frame:StripTextures()
+
+	local slider = frame.Slider
+	if not slider then return end
+
+	slider:DisableDrawLayer("ARTWORK")
+
+	local thumb = slider.Thumb
+	if thumb then
+		thumb:SetTexture([[Interface\CastingBar\UI-CastingBar-Spark]])
+		thumb:SetBlendMode("ADD")
+		thumb:SetSize(20, 30)
+	end
+
+	local offset = minimal and 10 or 13
+	slider:CreateBackdrop("Overlay")
+	slider.backdrop:SetPoint("TOPLEFT", 10, -offset)
+	slider.backdrop:SetPoint("BOTTOMRIGHT", -10, offset)
+
+	if not slider.barStep then
+		local step = CreateFrame("StatusBar", nil, slider.backdrop)
+		step:SetStatusBarTexture(C.media.texture)
+		step:SetStatusBarColor(1, 0.82, 0, 1)
+		step:SetPoint("TOPLEFT", slider.backdrop, T.mult * 2, -T.mult * 2)
+		step:SetPoint("BOTTOMLEFT", slider.backdrop, T.mult * 2, T.mult * 2)
+		step:SetPoint("RIGHT", thumb, "CENTER")
+
+		slider.barStep = step
+	end
 end
 
 function T.SkinIconSelectionFrame(frame, numIcons, buttonNameTemplate, frameNameOverride)
