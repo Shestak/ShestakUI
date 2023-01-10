@@ -636,16 +636,12 @@ C["filger_spells"] = {
 			IconSize = C.filger.buffs_size,
 			Position = {"TOP", T_DEBUFF_ICON_Anchor},
 
-			-- Living Flame Debuff
+			-- Living Flame [Damage]
 			{spellID = 361500, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Leaping Flames Healing
+			-- Living Flame [Healing]
 			{spellID = 361509, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Fire Breath
 			{spellID = 357209, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Landslide
-			{spellID = 355689, unitID = "target", caster = "player", filter = "DEBUFF"},
-			-- Permeating Chill
-			{spellID = 370898, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Disintegrate
 			{spellID = 356995, unitID = "target", caster = "player", filter = "DEBUFF"},
 			-- Echo
@@ -688,8 +684,6 @@ C["filger_spells"] = {
 			{spellID = 355689, unitID = "focus", caster = "all", filter = "DEBUFF"},
 			-- Sleep Walk
 			{spellID = 360806, unitID = "focus", caster = "all", filter = "DEBUFF"},
-			-- Permeating Chill
-			{spellID = 370898, unitID = "focus", caster = "all", filter = "DEBUFF"},
 		},
 		{
 			Name = "COOLDOWN",
@@ -734,7 +728,7 @@ C["filger_spells"] = {
 			-- Chrono Loop (PvP Talent)
 			{spellID = 383005, filter = "CD"},
 			-- Emerald Communion
-			{spellID = 370960, filter = "CD"},	
+			{spellID = 370960, filter = "CD"},
 			-- Dream Breath
 			{spellID = 355941, filter = "CD"},
 			-- Spiritbloom
@@ -2698,6 +2692,8 @@ C["filger_spells"] = {
 			{spellID = 31117, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 
 			-- Roots
+			-- Landslide
+			{spellID = 355689, unitID = "player", caster = "all", filter = "DEBUFF", absID = true},
 			-- Chains of Ice
 			{spellID = 45524, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Entangling Roots
@@ -2734,6 +2730,8 @@ C["filger_spells"] = {
 			{spellID = 58180, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Typhoon
 			{spellID = 61391, unitID = "player", caster = "all", filter = "DEBUFF"},
+			-- Permeating Chill
+			{spellID = 370898, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Concussive Shot
 			{spellID = 5116, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Frost Breath (Chimaera)
@@ -2899,6 +2897,8 @@ C["filger_spells"] = {
 			-- Debuffs
 			-- Sleep Walk
 			{spellID = 360806, unitID = "target", caster = "all", filter = "DEBUFF"},
+			-- Landslide
+			{spellID = 355689, unitID = "target", caster = "all", filter = "DEBUFF", absID = true},
 
 			-- Hunter
 			-- Aspect of the Turtle
