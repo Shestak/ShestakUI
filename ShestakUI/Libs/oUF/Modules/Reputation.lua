@@ -48,7 +48,14 @@ local function GetReputation()
 		standingID = MAX_REPUTATION_REACTION + 2
 		standingText = RENOWN_LEVEL_LABEL..majorFactionData.renownLevel
 	elseif friendshipID and friendshipID > 0 then
-		standingText = repInfo.reaction
+		local rankInfo = C_GossipInfo.GetFriendshipReputationRanks(factionID)
+		local currentRank = rankInfo and rankInfo.currentLevel
+		local maxRank = rankInfo and rankInfo.maxLevel
+		local rankText
+		if currentRank and maxRank and currentRank > 0 and maxRank > 0 then
+			rankText = (' %s / %s'):format(currentRank, maxRank)
+		end
+		standingText = repInfo.reaction..rankText
 		if repInfo.nextThreshold then
 			min, max, cur = repInfo.reactionThreshold, repInfo.nextThreshold, repInfo.standing
 		else
@@ -76,6 +83,7 @@ local function UpdateTooltip(element)
 	local cur, max, name, _, standingID, standingText, pendingReward = GetReputation()
 	local rewardAtlas = pendingReward and "|A:ParagonReputation_Bag:0:0:0:0|a" or ""
 	local color = element.__owner.colors.reaction[standingID]
+	if not name then element:Hide() return end
 
 	GameTooltip:SetText(format("%s (%s)", name, standingText), color[1], color[2], color[3])
 	if(cur ~= max) then

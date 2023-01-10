@@ -1186,7 +1186,7 @@ if experience.enabled then
 			or sub == "playedlevel" and fmttime(playedlevel + GetTime() - playedmsg, t)
 			or sub == "playedsession" and fmttime(GetTime() - logintime,t)
 			-- rep tags
-			or sub == "repname" and (t.faction_subs[repname] or repname)
+			or sub == "repname" and (t.faction_subs[repname] or T.UTF(repname, 25, true))
 			or sub == "repcolor" and "|cff"..repcolor
 			or sub == "standing" and standingname
 			or sub == "currep" and (currep ~= maxrep and abs(currep - minrep) or currep > 0 and 1 or 0)
@@ -1240,8 +1240,15 @@ if experience.enabled then
 				local reputationInfo = C_GossipInfo.GetFriendshipReputation(factionID)
 				local friendshipID = reputationInfo and reputationInfo.friendshipFactionID
 				if friendshipID and friendshipID > 0 then
+					local rankInfo = C_GossipInfo.GetFriendshipReputationRanks(factionID)
+					local currentRank = rankInfo and rankInfo.currentLevel
+					local maxRank = rankInfo and rankInfo.maxLevel
+					local rankText
+					if currentRank and maxRank and currentRank > 0 and maxRank > 0 then
+						rankText = (' %s / %s'):format(currentRank, maxRank)
+					end
 					local repInfo = C_GossipInfo.GetFriendshipReputation(factionID)
-					standingText = repInfo.reaction
+					standingText = repInfo.reaction..rankText
 					if repInfo.nextThreshold then
 						minrep, maxrep, currep = repInfo.reactionThreshold, repInfo.nextThreshold, repInfo.standing
 					else
