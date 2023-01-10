@@ -34,9 +34,11 @@
 	<Script file="DressUp.lua"/>
 	<Script file="EncounterJournal.lua"/>
 	<Script file="EventTrace.lua"/>
+	<Script file="ExpansionLandingPage.lua"/>
 	<Script file="FlightMap.lua"/>
 	<Script file="Friends.lua"/>
 	<Script file="Garrison.lua"/>
+	<Script file="GenericTrait.lua"/>
 	<Script file="Gossip.lua"/>
 	<Script file="Guide.lua"/>
 	<Script file="GuildBank.lua"/>
