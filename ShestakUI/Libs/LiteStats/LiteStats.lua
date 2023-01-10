@@ -1439,6 +1439,7 @@ if talents.enabled then
 			lootSpecName = lootSpec and select(2, GetSpecializationInfoByID(lootSpec)) or NO
 			specName = spec and select(2, GetSpecializationInfo(spec)) or NO
 
+			local specText = L_STATS_SPEC..":"
 			local specIcon, lootIcon = "", ""
 			local lootText = LOOT..":"
 
@@ -1449,8 +1450,8 @@ if talents.enabled then
 			end
 
 			if lootSpec == 0 then
-				lootIcon = specIcon
-				lootText = "|cff55ff55"..lootText.."|r"
+				specText = "|cff55ff55"..specText.."|r"
+				lootText = ""
 				lootSpecName = "|cff55ff55"..specName.."|r"
 			else
 				local _, _, _, texture = GetSpecializationInfoByID(lootSpec)
@@ -1459,7 +1460,7 @@ if talents.enabled then
 				end
 			end
 
-			self.text:SetText(L_STATS_SPEC..":")
+			self.text:SetText(specText)
 			self.text2:SetText(specIcon.." ")
 			self.text3:SetText(lootText)
 			self.text4:SetText(lootIcon)
