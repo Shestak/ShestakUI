@@ -49,14 +49,17 @@ hooksecurefunc(BuffFrame.AuraContainer, "UpdateGridLayout", function(self, auras
 
 		if T.newPatch then
 			aura.TempEnchantBorder:SetAlpha(0)
-			if C.aura.classcolor_border == true then
-				aura:SetBackdropBorderColor(unpack(C.media.classborder_color))
-			else
-				aura:SetBackdropBorderColor(unpack(C.media.border_color))
-			end
-			if aura.TempEnchantBorder:IsShown() then
+			hooksecurefunc(aura.TempEnchantBorder, "Show", function(self)
 				aura:SetBackdropBorderColor(0.6, 0.1, 0.6)
-			end
+			end)
+
+			hooksecurefunc(aura.TempEnchantBorder, "Hide", function(self)
+				if C.aura.classcolor_border == true then
+					aura:SetBackdropBorderColor(unpack(C.media.classborder_color))
+				else
+					aura:SetBackdropBorderColor(unpack(C.media.border_color))
+				end
+			end)
 		else
 			if aura.Border then
 				aura.Border:SetAlpha(0)
