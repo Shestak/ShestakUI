@@ -290,7 +290,7 @@ local OnTooltipSetUnit = function(self)
 			self:AppendText((" %s"):format("|cffFF0000"..L_CHAT_DND.."|r"))
 		end
 
-		if isPlayer and englishRace == "Pandaren" and faction ~= nil and faction ~= playerFaction then
+		if isPlayer and (englishRace == "Pandaren" or englishRace == "Dracthyr") and faction ~= nil and faction ~= playerFaction then
 			local hex = "cffff3333"
 			if faction == "Alliance" then
 				hex = "cff69ccf0"
