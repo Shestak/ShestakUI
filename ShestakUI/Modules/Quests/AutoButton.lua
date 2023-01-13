@@ -50,7 +50,7 @@ local AutoButton = CreateFrame("Button", "AutoButton", UIParent, "SecureActionBu
 AutoButton:SetSize(40, 40)
 AutoButton:SetPoint("CENTER", AutoButtonAnchor, "CENTER", 0, 0)
 AutoButton:SetTemplate("Default")
-AutoButton:StyleButton()
+AutoButton:StyleButton(true)
 AutoButton:RegisterForClicks("AnyUp", "AnyDown")
 AutoButton:SetAttribute("type1", "item")
 AutoButton:SetAttribute("type2", "item")
