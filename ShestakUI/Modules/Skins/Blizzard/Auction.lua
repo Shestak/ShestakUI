@@ -90,7 +90,7 @@ local function LoadSkin()
 
 	AuctionHouseFrame.CategoriesList:StripTextures()
 
-	hooksecurefunc('AuctionHouseFilterButton_SetUp', function(button, info)
+	hooksecurefunc("AuctionHouseFilterButton_SetUp", function(button, info)
 		button:CreateBackdrop("Overlay")
 		button.backdrop:SetPoint("TOPLEFT", button.SelectedTexture, "TOPLEFT", 1, -1)
 		button.backdrop:SetPoint("BOTTOMRIGHT", button.SelectedTexture, "BOTTOMRIGHT", -1, 1)

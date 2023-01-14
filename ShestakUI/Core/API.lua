@@ -144,6 +144,7 @@ local function CreatePanel(f, t, w, h, a1, p, a2, x, y)
 end
 
 local function CreateBackdrop(f, t)
+	local f = (f.IsObjectType and f:IsObjectType("Texture") and f:GetParent()) or f
 	if f.backdrop then return end
 	if not t then t = "Default" end
 
@@ -420,7 +421,7 @@ addAPI(scrollFrame)
 T.SkinFuncs = {}
 T.SkinFuncs["ShestakUI"] = {}
 
-function T.SkinScrollBar(frame)
+function T.SkinScrollBar(frame, minimal)
 	frame:StripTextures()
 
 	local frameName = frame.GetName and frame:GetName()
@@ -495,6 +496,12 @@ function T.SkinScrollBar(frame)
 				hooksecurefunc(newThumb, "Show", function(self)
 					frame:SetAlpha(1)
 				end)
+			end
+
+			if minimal then
+				UpButton:SetSize(17, 15)
+				DownButton:SetSize(17, 15)
+				newThumb:SetWidth(17)
 			end
 		end
 	end
