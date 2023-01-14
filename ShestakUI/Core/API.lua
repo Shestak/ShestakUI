@@ -1053,35 +1053,33 @@ local iconColors = {
 	["auctionhouse-itemicon-border-account"]	= BAG_ITEM_QUALITY_COLORS[7]
 }
 
-function T.SkinIconBorder(frame, border)
-	local backdrop = border or frame:GetParent().backdrop
+function T.SkinIconBorder(frame, parent)
+	local border = parent or frame:GetParent().backdrop
 	frame:SetAlpha(0)
 	hooksecurefunc(frame, "SetVertexColor", function(self, r, g, b)
 		if r ~= BAG_ITEM_QUALITY_COLORS[1].r ~= r and g ~= BAG_ITEM_QUALITY_COLORS[1].g then
-			backdrop:SetBackdropBorderColor(r, g, b)
+			border:SetBackdropBorderColor(r, g, b)
 		else
-			backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+			border:SetBackdropBorderColor(unpack(C.media.border_color))
 		end
-		-- frame:SetAlpha(0)
 	end)
 
 	hooksecurefunc(frame, "SetAtlas", function(self, atlas)
 		local color = iconColors[atlas]
-		-- frame:SetAlpha(0)
 		if color then
-			backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
+			border:SetBackdropBorderColor(color.r, color.g, color.b)
 		else
-			-- backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+			-- border:SetBackdropBorderColor(unpack(C.media.border_color))
 		end
 	end)
 
 	hooksecurefunc(frame, "Hide", function(self)
-		backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+		border:SetBackdropBorderColor(unpack(C.media.border_color))
 	end)
 
 	hooksecurefunc(frame, "SetShown", function(self, show)
 		if not show then
-			backdrop:SetBackdropBorderColor(unpack(C.media.border_color))
+			border:SetBackdropBorderColor(unpack(C.media.border_color))
 		end
 	end)
 end

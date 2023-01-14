@@ -155,6 +155,36 @@ local function LoadSkin()
 	OutputIcon:GetHighlightTexture():Hide()
 	OutputIcon.CircleMask:Hide()
 
+	local qualityDialog = form.QualityDialog
+	qualityDialog:StripTextures()
+	qualityDialog:SetTemplate("Transparent")
+	T.SkinCloseButton(qualityDialog.ClosePanelButton)
+	qualityDialog.AcceptButton:SkinButton()
+	qualityDialog.CancelButton:SkinButton()
+
+	local function ReskinQualityContainer(container)
+		local button = container.Button
+		button:StripTextures()
+		button:SetNormalTexture(0)
+		button:SetPushedTexture(0)
+		button:GetHighlightTexture():Hide()
+		button.Icon:SkinIcon()
+		T.SkinIconBorder(button.IconBorder, button.Icon:GetParent().backdrop)
+
+		local box = container.EditBox
+		box:DisableDrawLayer("BACKGROUND")
+		T.SkinEditBox(box, nil, 18)
+		T.SkinNextPrevButton(box.DecrementButton, true)
+		T.SkinNextPrevButton(box.IncrementButton)
+		box.DecrementButton:SetSize(22, 22)
+		box.IncrementButton:SetSize(22, 22)
+		box.IncrementButton:SetPoint("LEFT", box, "RIGHT", 6, 0)
+	end
+
+	ReskinQualityContainer(qualityDialog.Container1)
+	ReskinQualityContainer(qualityDialog.Container2)
+	ReskinQualityContainer(qualityDialog.Container3)
+
 	hooksecurefunc(form, "Init", function(self)
 		for slot in self.reagentSlotPool:EnumerateActive() do
 			local button = slot.Button

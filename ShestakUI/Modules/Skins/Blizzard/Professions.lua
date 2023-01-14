@@ -80,6 +80,36 @@ local function LoadSkin()
 		if OutputIcon.CountShadow then OutputIcon.CountShadow:SetAlpha(0) end
 	end
 
+	local qualityDialog = SchematicForm.QualityDialog
+	qualityDialog:StripTextures()
+	qualityDialog:SetTemplate("Transparent")
+	T.SkinCloseButton(qualityDialog.ClosePanelButton)
+	qualityDialog.AcceptButton:SkinButton()
+	qualityDialog.CancelButton:SkinButton()
+
+	local function ReskinQualityContainer(container)
+		local button = container.Button
+		button:StripTextures()
+		button:SetNormalTexture(0)
+		button:SetPushedTexture(0)
+		button:GetHighlightTexture():Hide()
+		button.Icon:SkinIcon()
+		T.SkinIconBorder(button.IconBorder, button.Icon:GetParent().backdrop)
+
+		local box = container.EditBox
+		box:DisableDrawLayer("BACKGROUND")
+		T.SkinEditBox(box, nil, 18)
+		T.SkinNextPrevButton(box.DecrementButton, true)
+		T.SkinNextPrevButton(box.IncrementButton)
+		box.DecrementButton:SetSize(22, 22)
+		box.IncrementButton:SetSize(22, 22)
+		box.IncrementButton:SetPoint("LEFT", box, "RIGHT", 6, 0)
+	end
+
+	ReskinQualityContainer(qualityDialog.Container1)
+	ReskinQualityContainer(qualityDialog.Container2)
+	ReskinQualityContainer(qualityDialog.Container3)
+
 	local function skinReagentIcon(button)
 		if button and not button.styled then
 			button.Icon:SkinIcon()
@@ -164,15 +194,14 @@ local function LoadSkin()
 					item:SetHighlightTexture(0)
 
 					local icon = item:GetRegions()
-
 					icon:SkinIcon()
-					T.SkinIconBorder(item.IconBorder, icon:GetParent().backdrop)
+					item.IconBorder:Kill()
 
 					itemContainer.CritFrame:SetAlpha(0)
 					itemContainer.BorderFrame:Hide()
 					itemContainer.HighlightNameFrame:SetAlpha(0)
 					itemContainer.PushedNameFrame:SetAlpha(0)
-					itemContainer.HighlightNameFrame:CreateBackdrop("Transparent")
+					itemContainer.NameFrame:Hide()
 				end
 
 				local bonus = child.CreationBonus
@@ -188,16 +217,8 @@ local function LoadSkin()
 
 			local itemContainer = child.ItemContainer
 			if itemContainer then
+				itemContainer.Item.IconBorder:Hide()
 				itemContainer.Item.IconBorder:SetAlpha(0)
-
-				local itemBG = itemContainer.backdrop
-				if itemBG then
-					if itemContainer.CritFrame:IsShown() then
-						itemBG:SetBackdropBorderColor(1, 0.8, 0)
-					else
-						itemBG:SetBackdropBorderColor(0, 0, 0)
-					end
-				end
 			end
 		end
 	end
