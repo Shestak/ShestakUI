@@ -22,6 +22,7 @@ local function StyleNormalButton(button, size)
 		local flyoutBorderShadow = _G[name.."FlyoutBorderShadow"]
 		local autocast = button.AutoCastable
 		local shine = _G[name.."Shine"]
+		local spellAlert = button.SpellActivationAlert
 
 		local normal = button.NormalTexture or _G[name..'NormalTexture']
 		local normal2 = button:GetNormalTexture()
@@ -158,6 +159,11 @@ local function StyleNormalButton(button, size)
 			shine:SetSize(C.actionbar.button_size, C.actionbar.button_size)
 		end
 
+		if spellAlert then
+			spellAlert:SetSize((size or C.actionbar.button_size) * 1.4, (size or C.actionbar.button_size) * 1.4)
+			ActionButton_HideOverlayGlow(button)
+		end
+
 		button:StyleButton()
 
 		button.isSkinned = true
@@ -273,12 +279,6 @@ frame:SetScript("OnEvent", function(self, event)
 	end
 
 	StyleNormalButton(ExtraActionButton1)
-
-	local spellAlert = ActionButton1.SpellActivationAlert
-	if spellAlert then
-		spellAlert:SetSize((C.actionbar.editor and C.actionbar.bar1_size or C.actionbar.button_size) * 1.4, (C.actionbar.editor and C.actionbar.bar1_size or C.actionbar.button_size) * 1.4)
-		ActionButton_HideOverlayGlow(ActionButton1)
-	end
 end)
 
 local function SetupFlyoutButton(button, self)
