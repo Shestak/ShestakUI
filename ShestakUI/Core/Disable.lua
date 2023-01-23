@@ -35,6 +35,7 @@ end
 if IsAddOnLoaded("Grid") or IsAddOnLoaded("Grid2") or IsAddOnLoaded("HealBot") or IsAddOnLoaded("VuhDo") or IsAddOnLoaded("Cell") or IsAddOnLoaded("Aptechka") then
 	C.raidframe.show_party = false
 	C.raidframe.show_raid = false
+	C.raidframe.auto_position = "NONE"
 end
 
 if IsAddOnLoaded("TidyPlates") or IsAddOnLoaded("nPlates") or IsAddOnLoaded("Kui_Nameplates") or IsAddOnLoaded("rNamePlates") or IsAddOnLoaded("EKplates") or IsAddOnLoaded("bdNameplates") or IsAddOnLoaded("Plater") or IsAddOnLoaded("Nameplates") or IsAddOnLoaded("NeatPlates") then
