@@ -6,10 +6,10 @@ if C.skins.weak_auras ~= true then return end
 ----------------------------------------------------------------------------------------
 if not IsAddOnLoaded("WeakAuras") then return end
 
+local i = 0
 local function Skin_WeakAuras(frame, type)
-	if not frame.backdrop then
+	if not frame.styled then
 		if type == "icon" then
-			if frame.b then return end
 			frame.b = CreateFrame("Frame", nil, frame)
 			frame.b:CreateBackdrop("Transparent")
 			frame.b:SetInside(frame)
@@ -18,9 +18,17 @@ local function Skin_WeakAuras(frame, type)
 				self:SetAlpha(frame.icon:GetAlpha())
 			end)
 			frame.icon:SetAllPoints(frame.b)
-		else
-			frame:CreateBackdrop("Transparent")
-			frame.backdrop:SetBackdropColor(0, 0, 0, 0)
+			frame.styled = true
+		elseif type == "aurabar" then
+			if i < 50 then
+				frame.bar:CreateBackdrop("Transparent")
+				frame.bar.backdrop:SetBackdropColor(0, 0, 0, 0)
+			else
+				frame.bar:CreateBackdrop("Default")
+			end
+			i = i + 1
+
+			frame.styled = true
 		end
 	end
 
