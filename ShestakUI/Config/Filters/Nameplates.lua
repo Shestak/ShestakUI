@@ -117,7 +117,7 @@ T.PlateBlacklist = {
 	["167966"] = true,	-- Experimental Sludge (De Other Side)
 }
 
-T.InterruptCast = {
+T.InterruptCast = { -- Yellow border for interruptible cast
 	-- Algeth'ar Academy
 	[396812] = true,	-- Mystic Blast
 	[332612] = true,	-- Healing Touch
@@ -136,7 +136,7 @@ T.InterruptCast = {
 	[395859] = true,	-- Haunting Scream
 }
 
-T.ImportantCast = {
+T.ImportantCast = { -- Red border for non-interruptible cast
 	-- The Nokhud Offensive
 	[383823] = true,	-- Rally the Clan
 	-- Ruby Life Pools
