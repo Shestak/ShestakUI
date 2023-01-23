@@ -83,8 +83,11 @@ oUF.Tags.Events["NameLong"] = "UNIT_NAME_UPDATE"
 
 oUF.Tags.Methods["NameLongAbbrev"] = function(unit)
 	local name = UnitName(unit)
-	local newname = (string.len(name) > 18) and string.gsub(name, "%s?(.[\128-\191]*)%S+%s", "%1. ") or name
-	return T.UTF(newname, 18, false)
+	if string.len(name) > 18 then
+		name = string.gsub(name, "-", "")
+		name = string.gsub(name, "%s?(.[\128-\191]*)%S+%s", "%1. ")
+	end
+	return T.UTF(name, 18, false)
 end
 oUF.Tags.Events["NameLongAbbrev"] = "UNIT_NAME_UPDATE"
 
