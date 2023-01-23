@@ -255,6 +255,7 @@ local function LoadSkin()
 
 	LFGListFrame.CategorySelection.FindGroupButton:SkinButton()
 	LFGListFrame.CategorySelection.StartGroupButton:SkinButton()
+	LFGListFrame.SearchPanel.BackToGroupButton:SkinButton()
 	LFGListFrame.SearchPanel.BackButton:SkinButton()
 	LFGListFrame.SearchPanel.SignUpButton:SkinButton()
 	LFGListFrame.SearchPanel.ScrollBox.StartGroupButton:SkinButton()
@@ -435,17 +436,17 @@ local function LoadSkin()
 	LFGListFrame.ApplicationViewer.RefreshButton:ClearAllPoints()
 	LFGListFrame.ApplicationViewer.RefreshButton:SetPoint("BOTTOMRIGHT", LFGListFrame.ApplicationViewer.Inset, "TOPRIGHT", 16, 4)
 
+	LFGListFrame.ApplicationViewer.BrowseGroupsButton:SkinButton(true)
+	LFGListFrame.ApplicationViewer.BrowseGroupsButton:ClearAllPoints()
+	LFGListFrame.ApplicationViewer.BrowseGroupsButton:SetPoint("BOTTOMLEFT", -1, 2)
+
 	LFGListFrame.ApplicationViewer.RemoveEntryButton:SkinButton(true)
-	LFGListFrame.ApplicationViewer.RemoveEntryButton:ClearAllPoints()
-	LFGListFrame.ApplicationViewer.RemoveEntryButton:SetPoint("BOTTOMLEFT", -1, 2)
 	LFGListFrame.ApplicationViewer.RemoveEntryButton:SetWidth(80)
 
 	LFGListFrame.ApplicationViewer.EditButton:SkinButton(true)
 	LFGListFrame.ApplicationViewer.EditButton:ClearAllPoints()
 	LFGListFrame.ApplicationViewer.EditButton:SetPoint("BOTTOMRIGHT", -6, 2)
 	LFGListFrame.ApplicationViewer.EditButton:SetWidth(80)
-
-	LFGListFrame.ApplicationViewer.BrowseGroupsButton:SkinButton(true)
 
 	LFGListFrame.ApplicationViewer.ScrollBar:ClearAllPoints()
 	LFGListFrame.ApplicationViewer.ScrollBar:SetPoint("TOPLEFT", LFGListFrame.ApplicationViewer.Inset, "TOPRIGHT", 0, -14)
