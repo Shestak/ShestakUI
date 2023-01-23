@@ -893,7 +893,7 @@ local function displaySettings()
 	end
 
 	for _, dropdown in pairs(dropdowns) do
-		local text = DropDownText[C[dropdown.group][dropdown.option]] or C[dropdown.group][dropdown.option]
+		local text = DropDownText[C[dropdown.group][dropdown.option]] or C[dropdown.group][dropdown.option] or ""
 		UIDropDownMenu_SetText(dropdown, text)
 		dropdown.selectedValue = C[dropdown.group][dropdown.option]
 		dropdown.oldValue = C[dropdown.group][dropdown.option]
