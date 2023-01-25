@@ -99,7 +99,7 @@ hooksecurefunc(StanceButton1, "SetPoint", function(_, _, anchor)
 	if anchor and anchor == StanceBar then
 		local forms = GetNumShapeshiftForms()
 		local button = _G["StanceButton"..forms]
-		if not button.hook then
+		if button and not button.hook then
 			hooksecurefunc(button, "SetPoint", function(_, _, anchor)
 				if InCombatLockdown() then return end
 				if anchor and anchor == StanceBar then
