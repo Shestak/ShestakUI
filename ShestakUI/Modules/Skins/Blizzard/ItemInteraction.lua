@@ -27,7 +27,7 @@ local function LoadSkin()
 
 	ItemSlot.GlowOverlay:SetAlpha(0)
 
-	ItemInteractionFrame.ButtonFrame.Currency.icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+	ItemInteractionFrame.ButtonFrame.Currency.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
 
 	ItemInteractionFrame.ButtonFrame.ActionButton:SkinButton()
 	T.SkinCloseButton(ItemInteractionFrameCloseButton)
