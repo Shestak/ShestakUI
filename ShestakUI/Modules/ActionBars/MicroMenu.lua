@@ -8,7 +8,6 @@ local frame = CreateFrame("Frame", "MicroAnchor", T_PetBattleFrameHider)
 frame:SetPoint(unpack(C.position.micro_menu))
 frame:SetSize(250, 25)
 
-UpdateMicroButtonsParent(frame)
 if C.actionbar.micromenu_mouseover == true then frame:SetAlpha(0) end
 
 local MICRO_BUTTONS = {
@@ -21,9 +20,9 @@ local MICRO_BUTTONS = {
 	"LFDMicroButton",
 	"EJMicroButton",
 	"CollectionsMicroButton",
+	"StoreMicroButton",
 	"MainMenuMicroButton",
 	"HelpMicroButton",
-	"StoreMicroButton",
 }
 
 local colors = {
@@ -48,8 +47,15 @@ for i, button in pairs(MICRO_BUTTONS) do
 	local disabled = bu:GetDisabledTexture()
 	bu:SetSize(22, 29)
 
-	bu:SetParent(frame)
-	bu.SetParent = T.dummy
+	local point = bu:GetPoint()
+	if point then
+		bu:ClearAllPoints()
+		if i == 1 then
+			bu:SetPoint("TOPLEFT", frame, "TOPLEFT", -1, 2)
+		else
+			bu:SetPoint("TOPLEFT", frame, "TOPLEFT", ((i - 1) * 23) - 1, 2)
+		end
+	end
 
 	bu:SetHighlightTexture(0)
 	bu.SetHighlightTexture = T.dummy
@@ -72,7 +78,7 @@ for i, button in pairs(MICRO_BUTTONS) do
 
 	local highlight = bu:GetHighlightTexture()
 	if highlight then
-		highlight:SetInside(f)
+		highlight:SetAlpha(0)
 	end
 
 	normal:SetTexCoord(0.1, 0.85, 0.12, 0.78)
@@ -108,12 +114,6 @@ for i, button in pairs(MICRO_BUTTONS) do
 end
 
 -- Fix textures for buttons
-hooksecurefunc("UpdateMicroButtons", function()
-	CharacterMicroButton:ClearAllPoints()
-	CharacterMicroButton:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", -1, -2)
-
-	MainMenuMicroButton.MainMenuBarPerformanceBar:SetPoint("BOTTOM", MainMenuMicroButton, "BOTTOM", 0, 4)
-end)
-
 MainMenuMicroButton.MainMenuBarPerformanceBar:SetTexture(C.media.texture)
 MainMenuMicroButton.MainMenuBarPerformanceBar:SetSize(16, 2)
+MainMenuMicroButton.MainMenuBarPerformanceBar:SetPoint("BOTTOM", MainMenuMicroButton, "BOTTOM", 0, 4)
