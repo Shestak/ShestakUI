@@ -2486,8 +2486,11 @@ do
 	local low_health_value = ns.CreateNumberSlider(parent, "low_health_value", nil, nil, 0.1, 1, 0.05, true)
 	low_health_value:SetPoint("TOPLEFT", parent.subText, "BOTTOMLEFT", 0, -20)
 
+	local low_health_color = ns.CreateColourPicker(parent, "low_health_color", true)
+	low_health_color:SetPoint("LEFT", low_health_value, "RIGHT", 85, 0)
+
 	local low_health = ns.CreateCheckBox(parent, "low_health")
-	low_health:SetPoint("LEFT", low_health_value, "RIGHT", 70, 0)
+	low_health:SetPoint("LEFT", low_health_color, "RIGHT", 15, 0)
 
 	local cast_color = ns.CreateCheckBox(parent, "cast_color")
 	cast_color:SetPoint("TOPLEFT", low_health_value, "BOTTOMLEFT", 0, -8)

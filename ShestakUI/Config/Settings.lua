@@ -404,6 +404,7 @@ C["nameplate"] = {
 	["quests"] = false,							-- Show quest icon
 	["low_health"] = false,						-- Show red border when low health
 	["low_health_value"] = 0.2,					-- Value for low health (between 0.1 and 1)
+	["low_health_color"] = {0.8, 0, 0},			-- Color for low health border
 	["cast_color"] = false,						-- Show color border for casting important spells
 	["kick_color"] = false,						-- Change cast color if interrupt on cd
 	-- Threat
