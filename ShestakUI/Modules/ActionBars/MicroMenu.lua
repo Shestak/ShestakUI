@@ -8,7 +8,11 @@ local frame = CreateFrame("Frame", "MicroAnchor", T_PetBattleFrameHider)
 frame:SetPoint(unpack(C.position.micro_menu))
 frame:SetSize(250, 25)
 
-if C.actionbar.micromenu_mouseover == true then frame:SetAlpha(0) end
+if C.actionbar.micromenu_mouseover then
+	frame:SetAlpha(0)
+	frame:SetScript("OnEnter", function() frame:SetAlpha(1) end)
+	frame:SetScript("OnLeave", function() frame:SetAlpha(0) end)
+end
 
 local MICRO_BUTTONS = {
 	"CharacterMicroButton",
@@ -35,9 +39,9 @@ local colors = {
 	[7]	= {0.7, 0.7, 1},
 	[8]	= {1, 1, 1},
 	[9]	= {1, 0.7, 0.58},
-	[10] = {1, 0.4, 0.4},
-	[11] = {1, 1, 1},
-	[12] = {1, 0.83, 0.50},
+	[10] = {1, 0.83, 0.50},
+	[11] = {1, 0.4, 0.4},
+	[12] = {1, 1, 1},
 }
 
 for i, button in pairs(MICRO_BUTTONS) do
@@ -56,6 +60,9 @@ for i, button in pairs(MICRO_BUTTONS) do
 			bu:SetPoint("TOPLEFT", frame, "TOPLEFT", ((i - 1) * 23) - 1, 2)
 		end
 	end
+
+	bu:SetParent(frame)
+	bu.SetParent = T.dummy
 
 	bu:SetHighlightTexture(0)
 	bu.SetHighlightTexture = T.dummy
