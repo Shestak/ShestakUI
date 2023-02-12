@@ -22,7 +22,7 @@ BuffsAnchor:SetPoint(unpack(C.position.player_buffs))
 BuffsAnchor:SetSize((15 * C.aura.player_buff_size) + 42, (C.aura.player_buff_size * 2) + 3)
 
 local function UpdateDuration(aura, timeLeft)
-	local duration = T.newPatch and aura.Duration or aura.duration
+	local duration = aura.Duration
 	if timeLeft and C.aura.show_timer == true then
 		duration:SetVertexColor(1, 1, 1)
 		duration:SetFormattedText(GetFormattedTime(timeLeft))
@@ -31,47 +31,24 @@ local function UpdateDuration(aura, timeLeft)
 	end
 end
 
-if not T.newPatch then
-	hooksecurefunc(BuffButtonMixin, "UpdateDuration", function(aura, timeLeft)
-		UpdateDuration(aura, timeLeft)
-	end)
-
-	hooksecurefunc(TempEnchantButtonMixin, "UpdateDuration", function(aura, timeLeft)
-		UpdateDuration(aura, timeLeft)
-	end)
-end
-
 hooksecurefunc(BuffFrame.AuraContainer, "UpdateGridLayout", function(self, auras)
 	local previousBuff, aboveBuff
 	for index, aura in ipairs(auras) do
 		aura:SetSize(C.aura.player_buff_size, C.aura.player_buff_size)
 		aura:SetTemplate("Default")
 
-		if T.newPatch then
-			aura.TempEnchantBorder:SetAlpha(0)
-			hooksecurefunc(aura.TempEnchantBorder, "Show", function(self)
-				aura:SetBackdropBorderColor(0.6, 0.1, 0.6)
-			end)
+		aura.TempEnchantBorder:SetAlpha(0)
+		hooksecurefunc(aura.TempEnchantBorder, "Show", function(self)
+			aura:SetBackdropBorderColor(0.6, 0.1, 0.6)
+		end)
 
-			hooksecurefunc(aura.TempEnchantBorder, "Hide", function(self)
-				if C.aura.classcolor_border == true then
-					aura:SetBackdropBorderColor(unpack(C.media.classborder_color))
-				else
-					aura:SetBackdropBorderColor(unpack(C.media.border_color))
-				end
-			end)
-		else
-			if aura.Border then
-				aura.Border:SetAlpha(0)
-				aura:SetBackdropBorderColor(0.6, 0.1, 0.6)
+		hooksecurefunc(aura.TempEnchantBorder, "Hide", function(self)
+			if C.aura.classcolor_border == true then
+				aura:SetBackdropBorderColor(unpack(C.media.classborder_color))
 			else
-				if C.aura.classcolor_border == true then
-					aura:SetBackdropBorderColor(unpack(C.media.classborder_color))
-				else
-					aura:SetBackdropBorderColor(unpack(C.media.border_color))
-				end
+				aura:SetBackdropBorderColor(unpack(C.media.border_color))
 			end
-		end
+		end)
 
 		aura:ClearAllPoints()
 		if (index > 1) and (mod(index, rowbuffs) == 1) then
@@ -89,26 +66,26 @@ hooksecurefunc(BuffFrame.AuraContainer, "UpdateGridLayout", function(self, auras
 		aura.Icon:CropIcon()
 		aura.Icon:SetDrawLayer("BORDER")
 
-		local duration = T.newPatch and aura.Duration or aura.duration
+		local duration = aura.Duration
 		duration:ClearAllPoints()
 		duration:SetPoint("CENTER", 2, 1)
 		duration:SetDrawLayer("ARTWORK")
 		duration:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
 		duration:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 
-		if T.newPatch and not aura.hook then
+		if not aura.hook then
 			hooksecurefunc(aura, "UpdateDuration", function(aura, timeLeft)
 				UpdateDuration(aura, timeLeft)
 			end)
 			aura.hook = true
 		end
 
-		if aura.count then -- fix error in EditMode
-			aura.count:ClearAllPoints()
-			aura.count:SetPoint("BOTTOMRIGHT", 2, 0)
-			aura.count:SetDrawLayer("ARTWORK")
-			aura.count:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
-			aura.count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
+		if aura.Count then -- need to check exist to prevent error in EditMode
+			aura.Count:ClearAllPoints()
+			aura.Count:SetPoint("BOTTOMRIGHT", 2, 0)
+			aura.Count:SetDrawLayer("ARTWORK")
+			aura.Count:SetFont(C.font.auras_font, C.font.auras_font_size, C.font.auras_font_style)
+			aura.Count:SetShadowOffset(C.font.auras_font_shadow and 1 or 0, C.font.auras_font_shadow and -1 or 0)
 		end
 	end
 end)
