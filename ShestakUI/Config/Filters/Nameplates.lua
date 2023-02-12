@@ -154,6 +154,7 @@ T.ColorPlate = {
 	["187159"] = color_alt,	-- Shrieking Whelp
 	-- Temple of the Jade Serpent
 	["59555"] = color,		-- Haunting Sha
+	["59545"] = color,		-- The Golden Beetle
 	-- Court of Stars
 	["104251"] = color_alt,	-- Duskwatch Sentry
 	-- PvP
