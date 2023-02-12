@@ -300,6 +300,7 @@ for i = 1, 5 do
 			end
 
 			LockCheck(i)
+			ToggleBar[i]:GetScript("OnEnter")(ToggleBar[i])
 		end)
 		ToggleBar[i]:SetScript("OnEvent", function() LockCheck(i) end)
 	end
@@ -351,7 +352,8 @@ for i = 1, 5 do
 		end
 		if i == 5 then
 			GameTooltip:SetOwner(ToggleBar[i], "ANCHOR_LEFT")
-			GameTooltip:AddLine(L_MINIMAP_TOGGLE)
+			GameTooltip:AddLine(L_MINIMAP_TOGGLE, 0.40, 0.78, 1)
+			GameTooltip:AddDoubleLine(" ", TALENT_TREE_LOCKED..": "..(ShestakUISettingsPerChar.BarsLocked and "|cff55ff55"..L_STATS_ON or "|cffff5555"..strupper(OFF)), 1, 1, 1, 0.75, 0.90, 1)
 			GameTooltip:Show()
 		end
 	end)
