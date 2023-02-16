@@ -12,8 +12,10 @@ T.RaidBuffs = {
 		{48438, "BOTTOMRIGHT", {0.8, 0.4, 0}},				-- Wild Growth
 		{8936, "BOTTOMLEFT", {0.2, 0.8, 0.2}},				-- Regrowth
 		{33763, "TOPLEFT", {0.4, 0.8, 0.2}},				-- Lifebloom
+		{391891, "TOP", {0.2, 0.7, 0.2}},				-- Adaptive Swarm
+		{102351, "BOTTOM", {0.2, 0.7, 0.2}},				-- Cenarion Ward
 		{102342, "LEFT", {0.45, 0.3, 0.2}, true},			-- Ironbark
-		{155777, "RIGHT", {0.4, 0.9, 0.4}},					-- Rejuvenation (Germination)
+		{155777, "RIGHT", {0.4, 0.9, 0.4}},				-- Rejuvenation (Germination)
 	},
 	EVOKER = {
 		{355941, "TOPRIGHT", {0.20, 0.58, 0.50}},			-- Dream Breath
