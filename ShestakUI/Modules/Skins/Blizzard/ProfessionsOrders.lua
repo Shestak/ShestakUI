@@ -139,7 +139,9 @@ local function LoadSkin()
 	form.RightPanelBackground:StripTextures()
 
 	T.SkinCheckBox(form.TrackRecipeCheckBox.Checkbox, 20)
-	T.SkinCheckBox(form.AllocateBestQualityCheckBox)
+	if form.AllocateBestQualityCheckBox then
+		T.SkinCheckBox(form.AllocateBestQualityCheckBox)
+	end
 	T.SkinDropDownBox(form.OrderRecipientDropDown)
 
 	form.OrderRecipientDropDown:SetPoint("TOPRIGHT", form, "TOPRIGHT", -3, -10)
