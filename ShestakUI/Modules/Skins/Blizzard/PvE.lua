@@ -458,7 +458,6 @@ local function LoadSkin()
 	LFGListFrame.ApplicationViewer.InfoBackground:SetSize(324, 90)
 
 	if IsAddOnLoaded("PremadeGroupsFilter") then
-		T.SkinCheckBox(UsePFGButton)
 		PremadeGroupsFilterDialog:StripTextures()
 		PremadeGroupsFilterDialog:CreateBackdrop("Transparent")
 		PremadeGroupsFilterDialog.backdrop:SetPoint("TOPLEFT", 3, 0)
@@ -515,6 +514,11 @@ local function LoadSkin()
 
 		for _, box in pairs(editBoxes) do
 			T.SkinEditBox(box, nil, 17)
+		end
+
+		local button = UsePFGButton or UsePGFButton
+		if button then
+			T.SkinCheckBox(button)
 		end
 	end
 end
