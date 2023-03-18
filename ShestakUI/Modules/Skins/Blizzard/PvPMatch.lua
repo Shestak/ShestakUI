@@ -59,13 +59,15 @@ local function LoadSkin()
 				itemFrame.Icon:SkinIcon()
 			end
 			local atlas = itemFrame.IconBorder:GetAtlas()
+			local r, g, b = unpack(C.media.border_color)
 			if atlas:find("green") then
-				itemFrame.backdrop:SetBackdropBorderColor(GetItemQualityColor(2))
+				r, g, b = GetItemQualityColor(2)
 			elseif atlas:find("blue") then
-				itemFrame.backdrop:SetBackdropBorderColor(GetItemQualityColor(3))
+				r, g, b = GetItemQualityColor(3)
 			elseif atlas:find("purple") then
-				itemFrame.backdrop:SetBackdropBorderColor(GetItemQualityColor(4))
+				r, g, b = GetItemQualityColor(4)
 			end
+			itemFrame.backdrop:SetBackdropBorderColor(r, g, b)
 		end
 	end)
 end
