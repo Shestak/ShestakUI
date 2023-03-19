@@ -187,7 +187,7 @@ local function SkinCaptureBar(widget)
 	end
 end
 
-local VigorBar = CreateFrame("Frame", "VigotBar", UIParent)
+local VigorBar = CreateFrame("Frame", "VigorBar", UIParent)
 VigorBar:CreateBackdrop("Default")
 VigorBar:SetPoint("TOP", powerAnchor, "TOP", 0, -2)
 VigorBar:SetSize(250, 12)
